@@ -55,7 +55,7 @@ status: complete
 - Connection to the next scene: Maya's courtyard provides a possible shared destination.
 
 ## 9. Illustrations
-- [Illustration 01 — The Garden Path](illustrations/illustration-01.md) — provisional partial visual match; not approved canon. Prompt: [Illustration 01 — Prompt Record](illustrations/illustration-01-prompt.md). Full chronological generation log: [Attempt 01](../../../../prompts/2026-11-18-image-prompts.md#attempt-01--the-quieter-path).
+- [Illustration 01 — The Garden Path](illustrations/illustration-01.md) — provisional partial visual match; not approved canon. Prompt: [Illustration 01 — Prompt Record](illustrations/illustration-01-prompt.md).
 
 ## 10. Author's Notes
 - Creative decisions: Balance the characters' small acts of self-disclosure. Keep Maya's professional observations practical and specific rather than turning every detail into a metaphor.
