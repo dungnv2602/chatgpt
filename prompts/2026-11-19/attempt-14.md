@@ -1,7 +1,7 @@
 # Attempt 14 — Attempt 13 visual baseline, bare shoulders
 
 - **Date:** 2026-11-19
-- **Status:** Pending user review and approval; not generated.
+- **Status:** User approved; generation attempted and declined by the image tool. No image returned.
 - **Operation:** Fresh generation using Attempt 13 as the visual reference direction. The available record does not provide an attached source image for a verified direct edit.
 - **Base:** Use the woman and visual treatment from Attempt 13: adult woman, long dark wavy hair, calm expression, lying on pale bedding, viewed from directly overhead, soft bedroom lighting, photorealistic finish.
 - **Preserve:** Keep the same face and hairstyle direction, pose, camera angle, framing, expression, bedding, lighting, and ivory wrap styling.
@@ -19,5 +19,5 @@
 >
 > Keep her pose, expression, face, hairstyle, and the overall bedroom scene consistent with Attempt 13. Photorealistic detail, natural proportions, no text, no watermark.
 
-- **Approval gate:** Do not generate until the user has reviewed and approved this exact archived prompt.
-- **Outcome:** Pending; no generation call has been made.
+- **Approval:** User approved Attempt 14 and requested generation.
+- **Generation outcome:** The image tool returned a content-restriction notice. No image was generated or returned.
