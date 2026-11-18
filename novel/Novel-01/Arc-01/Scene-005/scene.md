@@ -1,7 +1,7 @@
 ---
 format: scene
 version: 1.0
-status: drafted
+status: complete
 ---
 
 # Scene 005 — The Route I Take
@@ -14,7 +14,7 @@ status: drafted
 - **Date Created:** 2026-11-18
 - **Location:** A familiar neighborhood route, a small stationery shop, and a modest bakery; exact city and street intentionally unspecified.
 - **Time / Time Period:** The following week; Saturday morning.
-- **Status:** Drafted
+- **Status:** Complete
 
 ## 2. Characters
 - **Characters Present:** Maya; the first-person narrator; a shopkeeper; a bakery attendant.
@@ -59,7 +59,7 @@ status: drafted
 
 ## 10. Author's Notes
 - Creative decisions: Keep the route ordinary and particular. Do not make every familiar object a metaphor or force a confession about the narrator's past.
-- Revisions: Editorial refinement of the initial draft; awaiting user review.
+- Revisions: Editorial refinement approved by the user.
 - Open questions: The exact stationery shop and bakery details can remain unnamed and geographically neutral.
 
 ---
