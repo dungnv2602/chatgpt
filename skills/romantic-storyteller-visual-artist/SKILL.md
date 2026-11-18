@@ -24,7 +24,7 @@ scene.
 
 ## Authority of the Drawing Skill
 
-The Drawing Skill at `ChatGPT/skills/drawing/SKILL.md` is authoritative for
+The Drawing Skill at `skills/drawing/SKILL.md` is authoritative for
 every visual or image-related decision. The Romantic Storyteller skill
 complements it; it never replaces, weakens, or overrides it.
 
@@ -33,7 +33,7 @@ complements it; it never replaces, weakens, or overrides it.
 Before applying this skill to any task that involves visual storytelling,
 visual scene design, image planning, image prompting, image generation, or image
 editing, first retrieve and read the current Drawing Skill directly from the
-`gpt` branch at `ChatGPT/skills/drawing/SKILL.md`. Then retrieve and read
+`gpt` branch at `skills/drawing/SKILL.md`. Then retrieve and read
 all supporting references explicitly named by that skill, from the same branch
 and within repository root. Do not rely on memory, a prior summary, or a Library copy
 as a substitute for those reads.
@@ -48,7 +48,7 @@ access limitation rather than proceeding from assumptions.
 project; switching projects or beginning another visual task within the same
 ChatGPT conversation does not require retrieving it again. At the beginning
 of each new ChatGPT conversation/session, retrieve the current Drawing Skill
-and its required supporting references from the `chatgpt` branch, then apply
+and its required supporting references from the `gpt` branch, then apply
 them to all visual work in that conversation. Refresh them sooner only if the
 user asks, a relevant repository change is known or suspected, or newly
 introduced work depends on a supporting reference that has not yet been read.
@@ -188,7 +188,7 @@ has specified.
 ### Mandatory Maya identity and wardrobe continuity
 
 Before planning or generating any image of Maya, read
-`ChatGPT/images/reference-index.md` and use its canonical identity and wardrobe
+`images/reference-index.md` and use its canonical identity and wardrobe
 specification, including the active portrait's approved visual description.
 
 This is a repository-wide continuity rule. Preserve Maya's approved face,
@@ -403,13 +403,13 @@ workspace on branch `gpt`. Do not create new story records in the former
 `scenes/` location.
 
 The approved structure and templates are documented in
-[`ChatGPT/novel/README.md`](../../novel/README.md). The four formats are
+[`novel/README.md`](../../novel/README.md). The four formats are
 approved as **Version 1.0** for now:
 
-- Novel: `ChatGPT/novel/templates/novel-v1.md`
-- Story Arc: `ChatGPT/novel/templates/arc-v1.md`
-- Scene: `ChatGPT/novel/templates/scene-v1.md`
-- Illustration Note: `ChatGPT/novel/templates/illustration-note-v1.md`
+- Novel: `novel/templates/novel-v1.md`
+- Story Arc: `novel/templates/arc-v1.md`
+- Scene: `novel/templates/scene-v1.md`
+- Illustration Note: `novel/templates/illustration-note-v1.md`
 
 Use these templates as the authoritative starting points. Do not silently
 change their approved structure. If a genuine need for revision emerges,
@@ -426,7 +426,7 @@ The hierarchy is:
 Use this structure for each novel:
 
 ```text
-ChatGPT/
+
 └── novel/
     ├── README.md
     ├── templates/
@@ -540,7 +540,7 @@ Whenever the user asks to write, create, continue, revise, or expand a scene:
     workflow. Writing or creating an illustration note does not replace that
     image workflow.
 11. Fetch each target file before updating it. Create or update only within
-    `ChatGPT/novel/` on branch `gpt`; preserve unrelated material.
+    `novel/` on branch `gpt`; preserve unrelated material.
 12. After every write, fetch the exact changed path again and verify the
     expected content. Report paths and commits only after successful
     read-back verification.
