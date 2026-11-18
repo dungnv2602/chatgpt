@@ -69,6 +69,7 @@ status: approved
 | SCN-002 | A Place Between Pages | First planned meeting; shared reading becomes a language for gentle disagreement. | Drafted | [Scene 002](Scene-002/scene.md) |
 | SCN-003 | The Shape of a Pause | A third meeting develops mutual preference and introduces Maya's work. | Complete | [Scene 003](Scene-003/scene.md) |
 | SCN-004 | What People Leave Behind | The narrator visits Maya's courtyard project and sees how she responds to its imperfect, lived-in reality. | Complete | [Scene 004](Scene-004/scene.md) |
+| SCN-005 | The Route I Take | The narrator initiates a meeting and shares a familiar part of his own everyday world. | Drafted | [Scene 005](Scene-005/scene.md) |
 
 ## 8. Continuity and References
 - Confirmed character facts: The leads are Maya and a first-person narrator.
