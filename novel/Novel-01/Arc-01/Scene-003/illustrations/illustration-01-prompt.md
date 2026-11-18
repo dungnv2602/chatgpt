@@ -13,7 +13,7 @@ status: historical-record
 - **Generation ID:** `51fc9618-eae3-4c86-a1ec-e39eede6cabc`
 - **Operation:** Fresh text-to-image generation
 - **Outcome:** Provisional partial visual match; not approved canon.
-- **Full generation log:** [Image prompt archive — Attempt 01](../../../../../../prompts/2026-11-18-image-prompts.md#attempt-01--the-quieter-path)
+- **Full generation log:** [Image prompt archive — Attempt 01](../../../../../prompts/2026-11-18-image-prompts.md#attempt-01--the-quieter-path)
 
 ## 2. Intended Authored Prompt
 
