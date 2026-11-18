@@ -107,15 +107,15 @@ When the user switches modes:
 ## 6. Skill source of truth and Library synchronization
 
 GitHub is the canonical source of truth for all project skills. The repository is
-`dungnv2602/chatgpt`, and the authorized working branch is `chatgpt`.
+`dungnv2602/chatgpt`, and the authorized working branch is `gpt`.
 The canonical skill files live under `skills/`.
 
 Whenever the user asks to read, inspect, or follow a project skill:
 
-1. Fetch the requested skill from the GitHub `chatgpt` branch before relying on
+1. Fetch the requested skill from the GitHub `gpt` branch before relying on
    any Library copy.
 2. If the skill refers to supporting files, resolve and read those files from
-   the same GitHub branch, staying within the authorized `ChatGPT/` workspace.
+   the same GitHub branch, staying within the authorized `` workspace.
 3. Treat the ChatGPT Library as a mirror for convenient access, never as an
    independent authority.
 4. If GitHub cannot be accessed or a file cannot be verified, disclose that
