@@ -73,6 +73,10 @@ Use a medium-wide environmental two-shot at natural eye level, with both figures
 **Illustration approved.** Attempt 04 is the approved Scene 004 canon image. The user confirmed Maya matches the canonical reference 1:1 and explicitly requested that the image remain unchanged. Attempts 02 and 03 remain failed, non-canon attempts. The tool's compiled internal prompt was not exposed; the archived text is the exact authored direction, not a claim about hidden tool wording.
 
 
+## Attempt 04 — Exact authored prompt
+
+**Not preserved in the available generation record.** The original authored prompt text is not present in the repository or the conversation record available for this audit. It cannot be recovered from the generation ID or the rendered image. No reconstructed text should be represented as the exact prompt used.
+
 ## Attempt 04 — Approved reference-guided generation
 
 - **Generation ID:** `c37e4907-ac4c-4f5a-8544-0ba99d93d85c`.
