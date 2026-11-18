@@ -71,3 +71,14 @@ Use a medium-wide environmental two-shot at natural eye level, with both figures
 ## Overall status
 
 **Illustration outstanding.** Neither generated image is approved canon or a valid reference for Maya's face or wardrobe. The tool's compiled internal prompt was not exposed; the archived text is the exact authored direction, not a claim about hidden tool wording.
+
+
+## Attempt 04 — Approved reference-guided generation
+
+- **Generation ID:** `c37e4907-ac4c-4f5a-8544-0ba99d93d85c`.
+- **Conversation artifact:** `a_warm_sunlit_outdoor_courtyard_garden_scene_with.png`.
+- **Operation:** Fresh generation using the user-uploaded canonical Maya reference as visual guidance; not an edit of the reference image.
+- **User approval:** Explicitly approved. The user confirmed Maya looks exactly 1:1 like the reference and instructed that the image be kept unchanged.
+- **Assessment:** Maya's face, long hair, and ivory silk-wrap appearance match the approved reference. The courtyard composition includes the trellis, planted area, courtyard seating, and a child watering plants. The narrator is shown from behind. The user accepted the composition as-is; no revisions are requested.
+- **Classification:** Approved canon for Scene 004.
+- **Asset note:** The generated image is available as a conversation artifact. The current GitHub integration supports text-file and Git-object operations but does not expose a direct binary upload from the mounted conversation file; therefore this record does not claim that the image binary has been committed to the repository.
