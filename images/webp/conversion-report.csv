@@ -1,1 +1,7 @@
 source_path,webp_path,source_format,profile,original_bytes,webp_bytes,size_change_percent,metadata_copied,cwebp_version,status,error
+images/temp/file_000000001ebc8211a0698e23362a1abd.png,images/webp/temp/file_000000001ebc8211a0698e23362a1abd.png.webp,png,lossless-exact-q100-m6,2259063,1486726,34.19,ICC only,"1.5.0
+libsharpyuv: 0.4.1",CREATED,
+images/temp/file_0000000057ec821184cf5d6ad71d1356.png,images/webp/temp/file_0000000057ec821184cf5d6ad71d1356.png.webp,png,lossless-exact-q100-m6,2112700,1405320,33.48,ICC only,"1.5.0
+libsharpyuv: 0.4.1",CREATED,
+images/temp/file_0000000074c48207895f0a7751959963.png,images/webp/temp/file_0000000074c48207895f0a7751959963.png.webp,png,lossless-exact-q100-m6,2128133,1417964,33.37,ICC only,"1.5.0
+libsharpyuv: 0.4.1",CREATED,
