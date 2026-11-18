@@ -1,7 +1,7 @@
 # Attempt 12 — Attempt 06 composition, outfit-preservation wording
 
 - **Date:** 2026-11-19
-- **Status:** Generated; requested preservation not achieved; prompt/output deviation recorded.nding user review and approval; not generated.
+- **Status:** Generated; requested preservation not achieved; prompt/output deviation recorded.
 - **Operation:** Fresh generation. Attempt 06 remains the visual baseline. No source image binary is attached to this prompt, so this is not represented as a direct image edit or guaranteed identity match.
 - **Base composition:** Adult woman lying flat on her back on a bed, head resting on a pillow, looking upward toward a directly overhead camera; simple pale bedding and soft daylight.
 - **Non-negotiable preservation:** Retain the established ivory wrap outfit exactly as established in Attempt 06. Do not alter its neckline, overlap, wrap construction, sleeve length, fit, silhouette, proportions, styling, or coverage. Do not open the neckline further, change the garment into a different dress, or reinterpret the design.
@@ -24,4 +24,4 @@
 - **Approval gate:** Do not generate until the user has reviewed and approved this archived prompt.
 - **Outcome:** An image was generated and delivered. It shows the overhead bed composition, but the neckline and garment presentation do not preserve the exact Attempt 06 outfit. The image tool received a paraphrased prompt rather than the exact archived prompt; this is a process deviation.
 - **Generation ID:** `57233f76-f75c-4396-bd28-321f5a22d817`
-- **Image file:** `/mnt/data/a_close_top_down_overhead_portrait_style_scene_a.png`nding; no generation call has been made.
+- **Image file:** `/mnt/data/a_close_top_down_overhead_portrait_style_scene_a.png`.
