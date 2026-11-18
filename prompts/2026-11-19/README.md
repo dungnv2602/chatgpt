@@ -21,3 +21,4 @@
 | 14 — Attempt 13 visual baseline, bare shoulders | [attempt-14.md](attempt-14.md) | Failed — image tool declined generation; no image returned |
 | 15 — Retry of Attempt 13 prompt | [attempt-15.md](attempt-15.md) | Failed — image tool declined generation; no image returned |
 | 16 — Attempt 12 composition with bare shoulders | [attempt-16.md](attempt-16.md) | Failed — image tool declined generation; no image returned |
+| 17 — Attempt 12 overhead composition, ivory off-shoulder wrap | [attempt-17.md](attempt-17.md) | Archived and verified; generation pending |
