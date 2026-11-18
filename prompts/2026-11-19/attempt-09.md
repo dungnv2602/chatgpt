@@ -1,7 +1,7 @@
 # Attempt 09 — Calm overhead bedroom portrait, lightweight modal-viscose fabric
 
 - **Date:** 2026-11-19
-- **Status:** Pending user review and approval; not generated.
+- **Status:** Rejected by the image-generation tool; no image returned.
 - **Operation:** Fresh generation.
 - **Mode:** Realistic.
 - **Base direction:** Attempt 06 — the approved visual baseline: the adult woman lying flat on her back on the bed, looking up toward a directly overhead camera, wearing the established ivory wrap outfit.
@@ -28,4 +28,4 @@
 
 - **Tool-prompt visibility:** This is the exact authored prompt prepared for the attempt. The image tool's internal compiled prompt may not be exposed.
 - **Approval gate:** Do not generate until the user has reviewed and approved this archived prompt.
-- **Outcome:** Pending; no generation call has been made.
+- **Outcome:** The user approved the prompt and an image-generation attempt was made. The tool declined the request with a content-restriction notice; no image was returned. The notice did not identify a specific phrase or element.
