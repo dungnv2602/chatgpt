@@ -1,12 +1,13 @@
 # Attempt 20 — Attempt 18 lingerie design, soft cotton voile fabric
 
 - **Date:** 2026-11-19
-- **Status:** Prompt archived; generation pending.
-- **Operation:** Fresh generation guided by Attempt 18's successful image. No source image is attached, so this is not a direct edit or guaranteed identity match.
-- **Preserve exactly:** Attempt 18's ivory camisole and matching high-waisted shorts, including their cut, silhouette, fit, trim, construction, coverage, and styling. Do not redesign or replace the outfit.
-- **Only change:** Replace the satin textile with soft, lightweight cotton voile. Keep it opaque through full lining, with a breathable, supple, matte surface and gentle natural folds.
+- **Status:** Generation blocked by image-generation guardrails; no image was produced.
+- **Operation:** Fresh generation guided by Attempt 18's successful image. No source image was attached, so this was not a direct edit or guaranteed identity match.
+- **Preserve exactly:** Attempt 18's ivory camisole and matching high-waisted shorts, including their cut, silhouette, fit, trim, construction, coverage, and styling. The outfit was not to be redesigned or replaced.
+- **Only intended change:** Replace the satin textile with soft, lightweight cotton voile. Keep it opaque through full lining, with a breathable, supple, matte surface and gentle natural folds.
 - **Preserve scene:** Same adult subject direction, overhead supine composition, pale bedding, pillow, soft daylight, relaxed pose, and calm expression.
-- **Prompt integrity:** Submit the exact authored prompt below without paraphrasing.
+- **Outcome:** The image-generation request was rejected with a guardrail notice concerning nudity, sexuality, or erotic content. No image was generated. This is a tool refusal, not a successful generation.
+- **Prompt integrity:** The exact prompt submitted is preserved below.
 
 ## Exact authored prompt
 
