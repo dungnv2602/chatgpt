@@ -530,15 +530,15 @@ Whenever the user asks to write, create, continue, revise, or expand a scene:
 8. Every illustration must have a scene-local prompt record beside its
    illustration note, named `[Illustration-ID]-prompt.md`. Store the exact
    authored prompt and generation/edit provenance there for quick navigation.
-   Keep the dated chronological attempt in `prompts/` as the project-wide
-   history; the local record must link to it, and the illustration note must
-   link to both records. These are complementary records, not alternatives.
-   Update the local record and chronological log after generation with the
+   Keep the complete prompt and chronological attempt history inside that
+   scene's `illustrations/` folder. Do not copy novel-scene prompts into the
+   root `prompts/` folder. Update the local record after generation with the
    actual direction submitted when known, result, deviations, and continuity
    assessment. Distinguish authored prompt text from any compiled tool payload
    that is not exposed.
-9. Each illustration note must link to its scene-local prompt record, its exact
-   chronological prompt/attempt, and the actual image asset where available.
+9. Each illustration note must link to its scene-local prompt record, the
+   relevant attempt section within that local record, and the actual image
+   asset where available.
    If an image exists only as a conversation-delivered asset and is not stored
    in the repository, state that plainly; never fabricate a repository path.
    Complete every field supported by evidence, and mark unknown or
