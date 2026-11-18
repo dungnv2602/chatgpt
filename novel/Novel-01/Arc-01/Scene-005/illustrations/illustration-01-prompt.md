@@ -41,3 +41,15 @@ Use a medium environmental two-shot at natural seated eye level, composed so bot
 - **Expected operation:** Fresh text-to-image generation, not an edit.
 - **Continuity limitation:** Written constraints can guide hair, wardrobe, and general appearance, but cannot guarantee exact face identity without the canonical image attached. The resulting face must be visually checked by the user before the illustration can be approved as canon.
 - **Generation result:** Pending.
+
+
+## Attempt 01 — Result and audit
+
+- **Generation ID:** `e94833b5-3bc4-48f3-83e2-64eec1147ddb`.
+- **Operation result:** Fresh generation (`edit_op: null`, `parent_gen_id: null`); not an edit and not source-linked to the canonical reference.
+- **Image artifact:** `a_cozy_softly_lit_cafe_interior_scene_photograph.png` (delivered in this conversation; binary not committed to GitHub).
+- **Actual prompt submitted to the image tool:** “In a warmly lit café-bakery, a young East Asian-looking woman with long dark hair, natural makeup, and a cream off-the-shoulder satin wrap top leans over a wooden table, resting her cheek on one hand as she smiles gently at the man seated across from her. Framed by pastries, daylight through a window, coffee cups, a dark notebook, and a small vase of white flowers, the cinematic scene uses soft focus and warm tones to create an intimate, romantic mood.”
+- **Prompt integrity:** The actual submitted direction above was shorter than and materially different from the exact authored prompt archived before generation. The tool call introduced an unapproved ethnicity descriptor, described the garment as a “satin wrap top” rather than carrying forward the full locked garment construction, and added a cheek-resting pose, natural makeup, and flowers. The authored prompt's instruction to keep the narrator's face out of view was not explicit in the submitted direction.
+- **Visible result assessment:** The image does capture the bakery encounter, long dark hair, ivory off-shoulder wrap styling, notebook, cups, and narrator viewed from behind. It is a tighter conversational portrait than the intended environmental two-shot. The face cannot be verified as identical to the canonical reference because that reference was not attached. Exact outfit construction also cannot be certified from the text-only call.
+- **Classification:** Fresh generation with partial scene success and continuity unverified. Not approved canon pending the user's visual review.
+- **Correction for future attempts:** Do not reuse the short submitted direction. If another attempt is requested, first archive and verify a new exact prompt and attach the canonical reference image through the supported image-reference mechanism if it is available. Do not describe ethnicity or redesign Maya's face or outfit.
