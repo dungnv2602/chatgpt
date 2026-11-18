@@ -25,4 +25,4 @@
 | 18 — Attempt 16 overhead bedroom composition, elegant lingerie | [attempt-18.md](attempt-18.md) | Generated successfully; user approved the image and lingerie design |
 | 19 — Attempt 18 design, Attempt 12 fabric qualities | [attempt-19.md](attempt-19.md) | Failed — image generation blocked by guardrails; no image returned |
 | 20 — Attempt 18 design, soft cotton voile fabric | [attempt-20.md](attempt-20.md) | Failed — image generation blocked by guardrails; no image returned |
-| 21 — Attempt 18 reference, minimal fabric-only revision | [attempt-21.md](attempt-21.md) | Prompt archived; awaiting user approval before generation |
+| 21 — Attempt 18 reference, minimal fabric-only revision | [attempt-21.md](attempt-21.md) | Generated; soft matte appearance achieved, but exact subject and outfit preservation incomplete |
