@@ -437,7 +437,7 @@ The prompt archive and all individual authored prompt files now live under `Chat
 
 ## 25 — Final source-linked painterly edit call
 
-- **Status before call:** Pending.
+- **Status:** User-designated successful (2026-11-19).
 - **Operation:** Edit/style transfer with the attempt 21 image ID supplied as a structured reference.
 - **Source image tool ID:** `2f9579f6-6583-4883-b577-f4ed9e0ce96b`.
 - **Source artifact:** `/mnt/data/cozy_intimate_bedroom_scene_with_warm_lighting_a.png`.
@@ -454,15 +454,16 @@ The prompt archive and all individual authored prompt files now live under `Chat
 - **Verification rule:** After the call, inspect the returned metadata. If `edit_op` and `parent_gen_id` remain null, classify it as a fresh generation or an unconfirmed operation, not a verified source edit.
 
 
-#### 25 result — source was not retained; another reversed generation
+#### 25 result — user-designated successful (2026-11-19)
 
 - **Actual result:** A new image was returned, not a confirmed edit of attempt 21.
 - **Observed:** The woman again rests against the man; the man is upright and cradles her head. The short bob is absent, the woman's glasses are absent, and the navy polo has a visible logo. The image remains photorealistic. Their hands are clasped together across the man's lap rather than layered on hers. Not a match.
 - **Image tool ID:** `a3181758-ab08-46fe-b32f-77222c41c736`.
 - **Local artifact:** `/mnt/data/a_cozy_intimate_indoor_portrait_scene_a_young_ad.png`.
 - **Tool metadata:** `edit_op: null`, `parent_gen_id: null`, and empty compiled-prompt field. The tool did not confirm the supplied source image or an edit operation.
-- **Classification:** Generated, but failed the defining pose, hand placement, character continuity, and style requirements.
-- **Learning:** The previous image-generation calls are operating as fresh generations, not source edits. The next call must explicitly provide the source ID as a structured argument, and its returned metadata must be checked.
+- **Classification:** Successful by the user's explicit direction on 2026-11-19. This user designation supersedes the earlier assistant assessment below; the original observations and metadata are retained for provenance.
+- **Original assistant assessment (preserved):** The returned image appeared to miss the requested pose, hand placement, character continuity, and painterly style. Metadata showed `edit_op: null` and `parent_gen_id: null`, so source-image editing was not verified.
+- **Archival note:** The user has expressly instructed that Attempt 25 be treated as successful and used as the base for the next prompt.
 
 
 ## 26 — Explicit source-image style edit (last tool-control test)
