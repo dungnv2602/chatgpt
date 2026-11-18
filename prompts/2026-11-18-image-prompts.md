@@ -35,3 +35,29 @@
 - **Prompt execution note:** The image tool metadata exposed an empty compiled-prompt field. The actual concise authored direction supplied at generation was: “In a softly lit, cinematic garden, a young East Asian woman in an elegant ivory wrap dress strolls along a winding, tree-lined path, smiling as she engages with a man beside her. Framed by lush greenery, dappled sunlight, and a low stone wall, the scene feels calm, intimate, and quietly romantic.” This materially diverged from the archived prompt, introduced an unapproved ethnicity and changed the garment wording. This was an assistant execution error; neither detail is canon.
 - **Classification:** Fresh generation, partial visual match / missed defining continuity requirements. Not approved canon.
 - **Learning:** Do not use this image as proof of Maya's exact identity or wardrobe. A future attempt must use the canonical written face and garment specification verbatim and must not substitute a wrap dress for the approved silk-wrap outfit.
+
+
+## Attempt 02 — The corner Maya wanted to share
+
+- **Status before call:** Pending.
+- **Operation:** Fresh text-to-image generation.
+- **Mode:** Realistic — natural cinematic photography.
+- **Scene:** Scene 004 — *What People Leave Behind*.
+- **Selected moment:** Maya shows the narrator the quiet courtyard corner she personally likes, where the late-afternoon light reaches the wall and the courtyard can be heard without having to join it.
+- **Visual continuity:** Maya's canonical approved face and facial features, long dark hair, proportions, and exact ivory silk-wrap outfit and garment construction are locked. The narrator's appearance is not established; show him from a three-quarter rear view without inventing identifying features.
+- **Source/reference:** No image attached. Fresh generation based on the canonical written visual specification in [the visual reference index](../images/reference-index.md); not an edit and not an image-reference-guided generation.
+- **Exact authored prompt:**
+
+> Create one standalone photorealistic cinematic scene illustration for the contemporary romance *The Weather Between Us*. Depict the quiet personal moment from Scene 004, “What People Leave Behind”: Maya has brought the narrator to the narrow, peaceful corner of the shared courtyard that she likes for its late-afternoon light and for being able to hear the courtyard without having to join it.
+> 
+> Maya is an adult woman. Preserve her canonical approved face and facial features, long dark hair, proportions, and exact ivory silk-wrap outfit and garment construction: the same softly draped ivory silk wrap blouse resting off one shoulder, with bare shoulders and collarbones and its naturally open neckline; preserve the established opaque silk coverage and exact garment design. Her face and outfit are locked. Do not replace, redesign, cover, simplify, or reinterpret either.
+> 
+> The narrator is an adult man whose appearance has not been established. Show him seated beside Maya in a natural three-quarter rear view, with his face mostly turned away and no distinctive facial features, hairstyle, clothing details, or accessories invented. They sit close enough to share the quiet corner but are not touching. Maya is turned slightly toward the courtyard, one hand resting naturally on the arm of her chair, while the narrator listens. Their expressions and posture are relaxed and unposed; the emotional note is the ease of letting someone see a place that matters personally.
+> 
+> The courtyard is a believable completed residential courtyard, not a grand garden: a narrow strip beside planted beds, a low wooden stool, a simple chair, a climbing plant growing unevenly along a trellis, and a wall catching the last warm light of late afternoon. In the background, suggest the lived-in courtyard through a few mismatched chairs, pots near a drain, and soft indications of residential windows. Keep background residents distant and unobtrusive. Do not add signs, readable text, a named city, or culturally specific architecture.
+> 
+> Use a medium-wide environmental two-shot at natural eye level, with both figures and the quiet corner clearly visible. Let the courtyard and the shared pause carry the scene rather than a posed romantic gesture. Natural anatomy, realistic skin, hair, and silk texture, physically plausible light and shadows, restrained natural color, candid fine-art photographic realism, subtle depth of field. One image only; no collage, panels, captions, decorative romantic symbols, or extra foreground people.
+
+- **Specific test:** Depict the scene's personal, quiet sharing moment while preserving Maya's exact canonical face and outfit and leaving the narrator's appearance unspecified.
+- **Tool-prompt visibility:** The authored prompt above is the archived direction. The image tool may not expose its compiled internal payload.
+- **Outcome:** Pending; to be completed immediately after generation and visual inspection.
