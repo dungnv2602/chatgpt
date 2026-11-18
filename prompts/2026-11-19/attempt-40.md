@@ -1,7 +1,7 @@
 # Attempt 40 — Attempt 36, more bust coverage and age-30 facial refinement
 
 - **Date:** 2026-11-19
-- **Status:** User-requested; prompt archived and verified; generation pending.
+- **Status:** Failed — two image-generation calls returned the same generic safeguard refusal; no image returned. Further near-identical retries stopped.
 - **Operation:** Localized image edit with two explicitly requested areas of change: garment drape/coverage and face.
 - **Source:** User-accepted Attempt 36 output; asset ID `file_00000000bd08821199dd53c88f31878c`.
 - **Base:** Attempt 36 accepted seated bedroom-bench portrait.
@@ -23,4 +23,4 @@
 
 - **Objective:** Retain the approved portrait and exact outfit while reducing visible bust/cleavage through fabric placement only, alongside the established age-30 facial refinement.
 - **Approval:** The user explicitly requested this new attempt and specified both changes and the unchanged outfit.
-- **Generation result:** Pending.
+- **Generation result:** First call refused with: “We’re so sorry, but the image we created may violate our guardrails around nudity, sexuality, or erotic content. If you think we got it wrong, please retry or edit your prompt.” A second call using a concise restatement of the same non-explicit request received the same refusal. No image or generation metadata was returned; source linkage therefore was not established. The tool did not identify a specific triggering element. Further near-identical retries are stopped.
