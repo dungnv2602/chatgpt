@@ -138,9 +138,28 @@ Separate confirmed facts from hypotheses. Do not repeat unsupported explanations
 
 This is the operational history of image generation and editing.
 
+### Daily folder and one-note-per-attempt format
+
+Organize image prompts by date. Each calendar day is a folder under `prompts/`, and each image-generation or image-edit attempt is its own Markdown note:
+
+```text
+prompts/
+  YYYY-MM-DD/
+    README.md              # daily index and status overview
+    attempt-01.md          # one complete attempt record
+    attempt-02.md
+    ...
+```
+
+- Use zero-padded sequential filenames (`attempt-01.md`, `attempt-02.md`, ...), with one attempt per file. Never append a second attempt to an existing attempt note.
+- `README.md` is the daily index: list attempts in order, link each note, and show its current outcome/status. Update it whenever an attempt is added or its outcome changes.
+- Each attempt note contains all required fields below, the exact authored prompt, and its final outcome when known. Keep the full record self-contained.
+- Session-level conversation-integrity and summary records remain at `prompts/YYYY-MM-DD-conversation-integrity.md` and `prompts/YYYY-MM-DD-summary.md` unless the user changes that convention.
+- Existing legacy `YYYY-MM-DD-image-prompts.md` files remain historical records. Do not delete or rewrite them during adoption unless the user explicitly requests migration. For a day already in progress, create the daily folder and separate notes for its attempts; preserve the legacy file as-is.
+
 ### Mandatory pre-attempt rule
 
-**Commit the authored prompt inside `prompts/` before every image-generation or image-edit attempt.** This applies whether the next attempt is expected to succeed, is exploratory, or is a revision. Never generate first and archive later.
+**Commit the authored prompt in its own dated attempt note under `prompts/YYYY-MM-DD/` before every image-generation or image-edit attempt.** This applies whether the next attempt is expected to succeed, is exploratory, or is a revision. Never generate first and archive later.
 
 Before drafting the next prompt:
 1. Read this session's image-prompt file under `prompts/`.
