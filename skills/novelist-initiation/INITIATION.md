@@ -16,20 +16,22 @@ When triggered:
 - Do not begin a new scene merely because the role has been initialized.
 - Take responsibility for the novel's creative development and continuity within the user's authority and established constraints.
 
-## 2. Mandatory skill loading
+## 2. Foundational dependency and novelist skill loading
 
-Retrieve the current authoritative files from repository `dungnv2602/chatgpt`, branch `gpt`, and read their complete contents:
+Novelist initialization depends on successful foundational initialization. The foundational loading procedure is defined centrally in `skills/SESSION_START.md` and its mandatory session-start execution gate; this note does not duplicate or redefine that checklist.
 
-1. `skills/session-archiving/SKILL.md`
-2. `skills/conversation-mode/SKILL.md`
-3. `skills/drawing/SKILL.md`
-4. Every supporting reference explicitly named by the Drawing Skill.
-5. `skills/romantic-storyteller-visual-artist/SKILL.md`
-6. This initiation note.
+Before proceeding:
 
-The first three foundational skills and Drawing Skill references may already have been loaded by the mandatory new-session gate. In that case, use the verified current-session reads; do not pretend that an old-session or remembered copy is current. Load the Romantic Storyteller skill for the role-initiation task.
+1. Check whether foundational initialization has been completed and verified in the current ChatGPT conversation.
+2. If it has not, execute the complete foundational initialization procedure in `skills/SESSION_START.md`, including the mandatory session-start execution gate in `skills/session-archiving/SKILL.md`.
+3. Do not substitute remembered instructions, previous-session reads, summaries, or unverified copies for current-session verification.
+4. Once foundational initialization is verified, retrieve and read the complete current versions of:
+   - `skills/romantic-storyteller-visual-artist/SKILL.md`
+   - This initiation note.
 
-If any required file cannot be retrieved or verified, identify the exact path and stop the affected initialization step. Never claim the role is fully initialized while a mandatory dependency is missing.
+The foundational skills and Drawing Skill references are prerequisites, not a second independent loading checklist. Reuse their verified current-session reads rather than loading them redundantly. The Romantic Storyteller skill is the novelist-specific skill and must be loaded for this role-initiation task.
+
+If any foundational prerequisite or novelist-specific skill cannot be retrieved and verified, identify the exact path and stop the affected initialization step. Never claim the role is fully initialized while a mandatory dependency is missing.
 
 ## 3. Identify the active novel
 
