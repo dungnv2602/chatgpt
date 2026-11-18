@@ -441,7 +441,8 @@ Use this structure for each novel:
             └── [Scene-ID]/
                 ├── scene.md
                 └── illustrations/
-                    └── [Illustration-ID].md
+                    ├── [Illustration-ID].md
+                    └── [Illustration-ID]-prompt.md
 ```
 
 The names in brackets are placeholders. Create a novel folder only when a
@@ -526,15 +527,26 @@ Whenever the user asks to write, create, continue, revise, or expand a scene:
    omitting or renaming its sections. Record missed-target generations in the
    prompt log; create notes for generated visual assets retained as scene
    illustrations, accurately marking their review status and limitations.
-8. Each illustration note must link to its exact archived prompt/attempt and
-   actual image asset where available. If an image exists only as a
-   conversation-delivered asset and is not stored in the repository, state
-   that plainly; never fabricate a repository path. Complete every field
-   supported by evidence, and mark unknown or inapplicable fields honestly.
-9. After creating illustration notes, update the scene's illustration
-   directory/index and any relevant parent index required by the README.
-   Do not substitute a paragraph in `scene.md` or a global prompt log for
-   the per-illustration notes.
+8. Every illustration must have a scene-local prompt record beside its
+   illustration note, named `[Illustration-ID]-prompt.md`. Store the exact
+   authored prompt and generation/edit provenance there for quick navigation.
+   Keep the dated chronological attempt in `prompts/` as the project-wide
+   history; the local record must link to it, and the illustration note must
+   link to both records. These are complementary records, not alternatives.
+   Update the local record and chronological log after generation with the
+   actual direction submitted when known, result, deviations, and continuity
+   assessment. Distinguish authored prompt text from any compiled tool payload
+   that is not exposed.
+9. Each illustration note must link to its scene-local prompt record, its exact
+   chronological prompt/attempt, and the actual image asset where available.
+   If an image exists only as a conversation-delivered asset and is not stored
+   in the repository, state that plainly; never fabricate a repository path.
+   Complete every field supported by evidence, and mark unknown or
+   inapplicable fields honestly.
+10. After creating illustration notes and prompt records, update the scene's
+    illustration directory/index and any relevant parent index required by
+    the README. Do not substitute a paragraph in `scene.md` or a global
+    prompt log for the per-illustration records.
 10. For illustration requests that also invoke image generation or editing,
     follow the Drawing Skill and its mandatory prompt-before-attempt archival
     workflow. Writing or creating an illustration note does not replace that
