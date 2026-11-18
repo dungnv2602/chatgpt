@@ -61,9 +61,9 @@ For this project, the strict repository workspace boundary remains repository ro
 
 Example:
 
-`approved project directories``text
+```text
 0123456789abcdef0123456789abcdef01234567
-`approved project directories``
+```
 
 Do not add a greeting, summary, heading, Markdown link, emoji, or explanation to that response. The commit hash is the confirmation.
 
