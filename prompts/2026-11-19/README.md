@@ -20,3 +20,5 @@ Attempt 02 is a clean standalone prompt and does not use Attempt 33 or any previ
 | 10 — Attempt 06 composition, minimal prompt retry | [attempt-10.md](attempt-10.md) | Rejected; image tool declined, no image returned |
 
 | 11 — Serene bedroom portrait, neutral wording | [attempt-11.md](attempt-11.md) | Generated; overhead composition achieved, outfit preservation incomplete; submitted prompt differed from archived prompt |
+
+| 12 — Attempt 06 composition, outfit-preservation wording | [attempt-12.md](attempt-12.md) | Pending user review and approval; not generated |
