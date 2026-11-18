@@ -22,3 +22,4 @@
 | 15 — Retry of Attempt 13 prompt | [attempt-15.md](attempt-15.md) | Failed — image tool declined generation; no image returned |
 | 16 — Attempt 12 composition with bare shoulders | [attempt-16.md](attempt-16.md) | Failed — image tool declined generation; no image returned |
 | 17 — Attempt 12 overhead composition, ivory off-shoulder wrap | [attempt-17.md](attempt-17.md) | Archived and verified; generation pending |
+| 18 — Attempt 16 overhead bedroom composition, elegant lingerie | [attempt-18.md](attempt-18.md) | Archived and verified; generation pending |
