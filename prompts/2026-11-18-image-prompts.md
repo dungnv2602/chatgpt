@@ -23,3 +23,15 @@
 > The garden is small and believable: uneven paving, a low wall, mature trees, restrained planted beds, and soft late-morning daylight. Frame as a medium-wide environmental two-shot at natural eye level, with both figures visible and the fork in the path clearly readable. Natural anatomy, realistic skin and hair, physically plausible light and shadows, restrained color, candid photographic realism. No text, captions, collage, extra foreground people, decorative romantic symbols, or invented signage.
 - **Specific test:** Capture the scene's mutual preference moment while preserving Maya's locked visual identity and wardrobe and leaving the narrator's appearance unspecified.
 - **Tool-prompt visibility:** The authored prompt above is the submitted direction; the image tool may not expose its compiled internal payload.
+
+
+### Attempt 01 result
+
+- **Actual result:** One fresh image returned.
+- **Generation ID:** `51fc9618-eae3-4c86-a1ec-e39eede6cabc`.
+- **Conversation artifact:** `a_serene_outdoor_park_garden_scene_with_soft_natu.png` (delivered in this conversation; not committed to GitHub).
+- **Observed match:** A woman and a man stand together in a leafy public garden. The man is shown from behind, so his facial appearance is not established. The woman has long dark hair, and the garden atmosphere is broadly consistent with the scene.
+- **Misses:** The returned garment reads as a long-sleeved ivory wrap dress rather than the exact canonical silk-wrap outfit and garment construction. The composition shows the pair facing one another on a path, not pausing at a clearly readable fork. The woman's exact facial identity cannot be verified because no reference image was attached.
+- **Prompt execution note:** The image tool metadata exposed an empty compiled-prompt field. The actual concise authored direction supplied at generation was: “In a softly lit, cinematic garden, a young East Asian woman in an elegant ivory wrap dress strolls along a winding, tree-lined path, smiling as she engages with a man beside her. Framed by lush greenery, dappled sunlight, and a low stone wall, the scene feels calm, intimate, and quietly romantic.” This materially diverged from the archived prompt, introduced an unapproved ethnicity and changed the garment wording. This was an assistant execution error; neither detail is canon.
+- **Classification:** Fresh generation, partial visual match / missed defining continuity requirements. Not approved canon.
+- **Learning:** Do not use this image as proof of Maya's exact identity or wardrobe. A future attempt must use the canonical written face and garment specification verbatim and must not substitute a wrap dress for the approved silk-wrap outfit.
