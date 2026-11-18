@@ -33,9 +33,9 @@ complements it; it never replaces, weakens, or overrides it.
 Before applying this skill to any task that involves visual storytelling,
 visual scene design, image planning, image prompting, image generation, or image
 editing, first retrieve and read the current Drawing Skill directly from the
-`chatgpt` branch at `ChatGPT/skills/drawing/SKILL.md`. Then retrieve and read
+`gpt` branch at `ChatGPT/skills/drawing/SKILL.md`. Then retrieve and read
 all supporting references explicitly named by that skill, from the same branch
-and within `ChatGPT/`. Do not rely on memory, a prior summary, or a Library copy
+and within repository root. Do not rely on memory, a prior summary, or a Library copy
 as a substitute for those reads.
 
 This is a prerequisite, not a reminder step: load the Drawing Skill and its
@@ -398,9 +398,9 @@ trust, longing, and mutual care.
 
 ## 10. Novel project structure and narrative records
 
-All durable story records belong in the repository's `ChatGPT/novel/`
-workspace on branch `chatgpt`. Do not create new story records in the former
-`ChatGPT/scenes/` location.
+All durable story records belong in the repository's `novel/`
+workspace on branch `gpt`. Do not create new story records in the former
+`scenes/` location.
 
 The approved structure and templates are documented in
 [`ChatGPT/novel/README.md`](../../novel/README.md). The four formats are
@@ -540,7 +540,7 @@ Whenever the user asks to write, create, continue, revise, or expand a scene:
     workflow. Writing or creating an illustration note does not replace that
     image workflow.
 11. Fetch each target file before updating it. Create or update only within
-    `ChatGPT/novel/` on branch `chatgpt`; preserve unrelated material.
+    `ChatGPT/novel/` on branch `gpt`; preserve unrelated material.
 12. After every write, fetch the exact changed path again and verify the
     expected content. Report paths and commits only after successful
     read-back verification.
