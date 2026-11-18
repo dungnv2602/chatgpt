@@ -1,7 +1,7 @@
 ---
 format: illustration-note
 version: 1.0
-status: provisional
+status: approved
 ---
 
 # Illustration Note 01 — The morning he shared
@@ -14,7 +14,7 @@ status: provisional
 - **Scene ID:** SCN-005
 - **Story Sequence:** 5
 - **Date Created:** 2026-11-18
-- **Status:** Provisional; awaiting user review.
+- **Status:** Approved by the user on 2026-11-18.
 
 ## 2. Image Reference
 - **Repository Image:** Not committed as a binary asset; image delivered in the conversation.
@@ -46,11 +46,11 @@ status: provisional
 ## 6. Generation Record
 - **Generation ID:** `e94833b5-3bc4-48f3-83e2-64eec1147ddb`.
 - **Prompt Record:** [Illustration 01 Prompt Record](illustration-01-prompt.md).
-- **Outcome:** Partial scene success; continuity unverified.
-- **Continuity issues:** The actual tool direction introduced an unapproved ethnicity descriptor. The canonical reference was not attached, so exact face identity and garment construction cannot be confirmed. The submitted direction diverged from the archived authored prompt.
-- **Canon status:** Not approved. User review required.
+- **Outcome:** User-approved illustration. Technical provenance and reference limitations remain documented below.
+- **Production audit:** The actual tool direction introduced an unapproved ethnicity descriptor and diverged from the archived authored prompt. The canonical reference was not attached, so technical 1:1 identity/source continuity cannot be independently verified. The user has nevertheless explicitly approved the delivered image as the illustration for this scene.
+- **Canon status:** Approved by the user; accepted as the Scene 005 illustration.
 - **Binary status:** Delivered in conversation only; not committed to the repository.
 
 ## 7. Approval
-- **User approval:** Pending.
+- **User approval:** Approved on 2026-11-18.
 - **Changes authorized:** None. Maya's face and outfit remain locked; do not propose changing either.
