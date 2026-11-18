@@ -1,7 +1,7 @@
 # Attempt 31 — Attempt 29, bench pose with bed outside frame (concise scene edit)
 
 - **Date:** 2026-11-19
-- **Status:** Prompt archived; awaiting approval.
+- **Status:** Generated, but not a successful source-preserving edit; user review required.
 - **Operation:** Edit the accepted Attempt 29 image; do not create a fresh image.
 - **Source:** Attempt 29 accepted output; generation ID `2c3427c6-6702-48dd-a7e1-bbaa054f1efe`; asset ID `file_0000000022408211abd38266b738f9f0`.
 - **Base:** Accepted Attempt 29 standing bedroom portrait.
@@ -24,3 +24,7 @@
 
 - **Objective:** Achieve the requested bench pose and bed-free composition while preserving all locked source-image properties.
 - **Policy note:** This concise wording does not guarantee acceptance by image safeguards. No outfit alteration is authorized.
+
+- **Generation result:** Image tool returned generation ID `84064782-3e24-4a0e-a527-5cb790a24df0`; asset ID `file_00000000bfbc82118e1007df88821333`.
+- **Source linkage:** Metadata reports `edit_op: null` and `parent_gen_id: null`; this is a fresh generation, not an edit of Attempt 29.
+- **Outcome:** The output depicts a seated woman on a bench with the bed out of frame, but it does not establish preservation of the exact Attempt 29 face or outfit. The image also visibly differs in outfit details. Do not describe it as a successful source-preserving edit.
