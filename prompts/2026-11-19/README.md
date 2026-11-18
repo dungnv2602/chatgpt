@@ -45,4 +45,4 @@
 | 38 — Attempt 36, age-30 mature and daring facial refinement | [attempt-38.md](attempt-38.md) | Rejected by image safeguards; no image returned |
 | 39 — Attempt 36, minimal age-30 facial refinement | [attempt-39.md](attempt-39.md) | Failed — two safeguard refusals; no image returned; further near-identical retries stopped |
 
-| 40 — Attempt 36, more bust coverage and age-30 facial refinement | [attempt-40.md](attempt-40.md) | User-requested; prompt archived and verified; generation pending |
+| 40 — Attempt 36, more bust coverage and age-30 facial refinement | [attempt-40.md](attempt-40.md) | Failed — two generic safeguard refusals; no image returned; further near-identical retries stopped |
