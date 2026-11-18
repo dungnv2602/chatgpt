@@ -30,4 +30,12 @@
 - **Tool-prompt visibility:** This is the exact authored prompt prepared for possible generation. The image tool's internal compiled prompt may not be exposed.
 - **Approval:** User explicitly approved this prompt on 2026-11-19.
 - **Generation gate:** Approval received; generation may proceed.
-- **Outcome:** Pending generation; no result recorded yet.
+## Generation result
+
+- **Outcome:** Generated successfully and followed the requested creative direction.
+- **Generation ID:** `bce9fed5-2e9e-4d7e-a5ae-7d4dd5f8c2ef`
+- **Operation confirmed by tool:** Fresh generation; no source image was attached.
+- **Visual review:** The result shows an adult Asian woman reclining on a bed, one hand supporting her cheek, wearing an ivory satin wrap garment. The bedroom is softly lit with warm shadows and a window in the background. The main requested composition, mood, and visual treatment are present.
+- **Reference limitation:** No canonical face reference was supplied, so identity matching to any previously approved face is not established.
+- **Tool-prompt visibility:** The generation metadata did not expose the compiled prompt (metadata prompt field was empty). The exact authored prompt above remains the archived prompt direction; it is not represented as a verbatim compiled tool payload.
+- **Asset location:** Delivered in this conversation. No GitHub image binary upload was performed.
