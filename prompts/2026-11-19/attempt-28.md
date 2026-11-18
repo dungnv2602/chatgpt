@@ -1,7 +1,7 @@
 # Attempt 28 — Attempt 27, long hair without glasses
 
 - **Date:** 2026-11-19
-- **Status:** Prompt archived and verified; awaiting user approval before editing.
+- **Status:** Superseded by Attempt 29 before execution; no edit was made.
 - **Operation:** Edit the exact Attempt 27 image; source image is the generation returned in this conversation.
 - **Mode:** Realistic; preserve Attempt 27's photographic rendering.
 - **Source image:** Generation ID `44e7770f-fa20-4abf-8ef2-c6d7af28363a`; conversation asset ID `file_0000000068808207b7beedf2334f567f`.
