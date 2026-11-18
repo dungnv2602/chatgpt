@@ -32,6 +32,12 @@ This is a curated index of (1) successful prompt attempts with a verified chrono
 - **Image 02:** [realistic-silk-wrap-portrait-close-framing-02.png](../images/realistic-silk-wrap-portrait-close-framing-02.png)
 - **Why included:** Two photorealistic images followed the archived silk-wrap art direction: long dark hair, ivory satin draped off one shoulder, bare shoulders and collarbones, a visibly open but covered neckline, warm light, and an affectionate direct gaze. The user explicitly approved both.
 
+## 25 — Cozy bedroom painterly scene (user-designated successful)
+
+- **Prompt:** [Attempt 25 — Final source-linked painterly edit call](2026-11-12-image-prompts.md#25--final-source-linked-painterly-edit-call)
+- **Image:** Returned in the conversation; no binary is currently indexed under `images/`.
+- **Why included:** The user explicitly instructed on 2026-11-19 that Attempt 25 is successful and should serve as the base for Attempt 26. The historical log retains the earlier tool metadata and assistant assessment for provenance; source-linked edit status was not verified.
+
 ## Inclusion rule
 
 **Prompt-attributed entries:** Include a prompt only when its result is classified as successful in the chronological archive and the generated image materially follows the defining visual direction. Do not promote rejected, failed, or partial attempts into this category. When a successful generation has an unverified detail, preserve that limitation.
