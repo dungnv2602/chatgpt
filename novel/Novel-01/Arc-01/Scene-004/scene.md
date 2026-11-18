@@ -1,7 +1,7 @@
 ---
 format: scene
 version: 1.0
-status: drafted
+status: revised
 ---
 
 # Scene 004 — What People Leave Behind
@@ -14,7 +14,7 @@ status: drafted
 - **Date Created:** 2026-11-18
 - **Location:** A shared courtyard in a completed building; exact city and address intentionally unspecified.
 - **Time / Time Period:** The following weekend; late afternoon.
-- **Status:** Drafted
+- **Status:** Revised
 
 ## 2. Characters
 - **Characters Present:** Maya; the first-person narrator; a few courtyard users in the background.
@@ -32,17 +32,17 @@ status: drafted
 - Immediate context: This is a place Maya knows well, but she has not previously shown it to someone she is getting to know.
 
 ## 5. Scene Development
-- Main actions and interactions: Maya guides the narrator through the courtyard, pointing out details of its original design and the changes made by residents. A conversation with a resident briefly interrupts their walk.
-- Dialogue and important exchanges: Maya explains the decisions behind the space without turning the visit into a formal presentation. The narrator asks questions about what she would change now; her answer is more complicated than he expects.
-- Emotional developments: Maya allows him to see both her pride in the work and her uncertainty about parts of it. The narrator resists the impulse to turn her uncertainty into reassurance.
+- Main actions and interactions: Maya guides the narrator through the courtyard, pointing out details of its original design and the changes made by residents. A resident asks Maya to help reposition a chair after the afternoon sun shifts; the practical interruption changes the direction of their visit.
+- Dialogue and important exchanges: Maya explains the decisions behind the space through specific details. A resident's request draws her into an unplanned adjustment, and the narrator sees her respond without treating the original plan as final.
+- Emotional developments: Maya shares a particular corner of the courtyard that she likes for reasons beyond the design brief. She also admits what she would change; the narrator listens without trying to make the admission easier.
 - New information or revelations: Maya values the ways people make a designed place their own, even when those changes complicate the original plan.
 
 ## 6. Central Moment
-- **Key Action, Revelation, Decision, or Turning Point:** Maya notices that a resident has moved and repurposed part of the courtyard furniture. Rather than correcting it, she asks the resident how the arrangement works for them.
-- **Why It Matters:** The moment reveals that Maya's openness to adaptation is not merely an attractive professional idea; it is a practice she has to keep choosing.
+- **Key Action, Revelation, Decision, or Turning Point:** A resident asks Maya to move a chair out of the late-afternoon glare. Maya asks what would make the spot more comfortable, listens to the answer, and helps test a different arrangement.
+- **Why It Matters:** Maya's willingness to revise the space becomes practical rather than rhetorical: she lets the person who uses it define what works.
 
 ## 7. Ending
-- How the scene concludes: They sit in the altered arrangement for a while. Maya admits there are parts of the courtyard she would design differently now, and the narrator lets the admission stand without trying to improve it.
+- How the scene concludes: After the small rearrangement, Maya takes the narrator to a corner she privately likes. She admits what she would change about the project, and he lets the admission stand.
 - What changes: Maya has shared something she cares about without presenting it as flawless.
 - What remains unresolved: Neither has yet named the personal histories that shape their habits around closeness.
 - Transition to the next scene: Their next meeting can move away from Maya's professional world and allow the narrator to initiate a more personal invitation.
@@ -59,7 +59,7 @@ status: drafted
 
 ## 10. Author's Notes
 - Creative decisions: Keep the courtyard tangible and inhabited. Avoid making the setting a neat metaphor for the relationship.
-- Revisions: First draft.
+- Revisions: Revised after editorial review: strengthened the resident interaction, added a personal reason for Maya to share a particular corner, varied the scene's rhythm, and reduced repeated explanation of the narrator's restraint.
 - Open questions: The exact nature of Maya's professional role in the courtyard project can be clarified if needed, without assigning a city or cultural setting.
 
 ---
@@ -126,25 +126,33 @@ She considered the question. “I used to think it meant I hadn't thought someth
 
 A woman came through the side entrance carrying a bag of groceries. She greeted Maya and glanced at me.
 
-“This is the designer,” she said, with the ease of someone identifying a familiar neighbor.
+“This is the designer,” she said.
 
 “Part of the design team,” Maya corrected.
 
-The woman pointed toward the chairs beneath the tree. “We moved those again. The other arrangement was too hot in the afternoon.”
+The woman set her bags down beside the chairs. “Could you help us with this one? The sun reaches it later now, and it's impossible to sit here.”
 
-“I noticed,” Maya said.
+Maya looked at the chair, then at the strip of shade beneath the tree. “Would you rather have it closer to the wall, or turned toward the plants?”
 
-“It's much better now.”
+“Closer to the wall, I think. We tried turning it, but then nobody can get past.”
 
-“Good. I'll have a look.”
+Maya took the chair by its back. “Let's try this.”
 
-The woman continued toward the building. Maya watched her go, then turned to me.
+I moved the small table out of the way while she shifted the chair. The woman sat down, tested the angle, then nodded.
 
-“I was going to ask her about that.”
+“That’s better. Thank you.”
 
-“You could have.”
+“Let me know if it gets in the way,” Maya said.
 
-“I could have. But she seems to have solved it.”
+The woman picked up her bags and went inside.
+
+Maya brushed her hands together. “That wasn't on the plan.”
+
+“Was it on the job description?”
+
+“Somewhere between planting schedules and apologizing for the drainage.”
+
+We looked at the chair. It was not perfectly aligned with the others, but the woman had already settled into it.
 
 We walked toward the chairs. The arrangement was not symmetrical. One chair faced the entrance, another the tree; a third had been pulled close enough to a small table that someone could reach it without standing. It looked less designed than assembled through repeated use.
 
@@ -161,6 +169,20 @@ She said it without hesitation, then looked at the space again.
 “Because people have decided they work. That's useful information.”
 
 She sat in the chair nearest the tree and moved it a few inches to make room for me. I chose the one beside her. From there, the courtyard felt quieter. A window opened somewhere above us; a voice called to someone inside. A scooter passed beyond the gate and faded into the street.
+
+“There's a corner I wanted to show you,” she said after a while. “Not because it's especially successful. I just like being there.”
+
+She led me to a narrow strip beside the planted beds, where the wall caught the last of the afternoon light. Someone had put a low wooden stool there. A climbing plant had begun to spread along the trellis, though its growth was uneven.
+
+“I come here when I visit,” she said. “It's usually empty.”
+
+“Why this spot?”
+
+“I like the light. And you can hear the courtyard without having to join in.” She glanced at me. “That probably sounds antisocial.”
+
+“It sounds like a very specific kind of company.”
+
+“Exactly.”
 
 “Do you like coming here?” I asked.
 
@@ -184,21 +206,17 @@ She rested one hand on the arm of the chair. There was a small scratch in the wo
 
 “Some of it. Not all of it.” She gave a short laugh. “I'm trying to learn that those aren't the same thing.”
 
-I had an answer ready. It was the sort of answer I often gave when someone admitted uncertainty: measured, reassuring, and designed to make the discomfort smaller. I stopped before saying it.
+I had an answer ready, something measured and reassuring. I let it go.
 
 Maya glanced at me. “What?”
 
-“Nothing. I was about to tell you that every project teaches you something.”
+“I was editing myself.”
 
-“That sounds like something printed on a conference tote bag.”
+“Occupational habit?”
 
-“It does.”
+“An occupational hazard.”
 
-“I'm glad you didn't say it.”
-
-“I thought better of it.”
-
-She smiled, not as though I had said something particularly clever, but as though she appreciated that I had left the sentence unsaid.
+She smiled. “Well, keep the revision.”
 
 We stayed there while the light shifted across the paving. A child came out with a small plastic watering can and began tending to the pots near the drain. The water missed most of the soil. The child seemed unconcerned.
 
@@ -246,6 +264,4 @@ She nodded, accepting the answer without asking me to explain it.
 
 We parted at the corner. I watched her return through the gate, then continued down the street.
 
-I thought about the chair she had left where someone else had put it, and about the sentence she had begun without knowing exactly how it would end. I had not tried to finish it for her. It was a small restraint, but it felt different from silence.
-
-For once, I had let a moment remain unfinished.
+The chair was still turned toward the shade when I looked back. Maya had not put it straight.
