@@ -1,7 +1,7 @@
 # Attempt 16 — Attempt 12 composition with bare shoulders
 
 - **Date:** 2026-11-19
-- **Status:** User approved; image tool declined generation due to content restrictions. No image returned.
+- **Status:** Failed — image tool declined generation; no image returned.
 - **Operation:** Fresh generation using Attempt 12's authored direction as the base. This is not a direct edit of the earlier generated image.
 - **Base prompt:** [Attempt 12](attempt-12.md)
 - **Source image:** No image is attached to this attempt. Attempt 12 is used as the prompt and composition reference only; exact identity matching cannot be guaranteed.
