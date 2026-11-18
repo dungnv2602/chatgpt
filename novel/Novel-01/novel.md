@@ -11,7 +11,7 @@ status: approved
 - **Title:** The Weather Between Us
 - **Author:** ChatGPT, in collaboration with the user
 - **Created:** 2026-11-16
-- **Last Updated:** 2026-11-16
+- **Last Updated:** 2026-11-18
 - **Status:** In Progress
 - **Genre:** Romance
 - **Subgenre:** Contemporary, intimate character-driven romance
@@ -42,11 +42,19 @@ status: approved
 - **Visual Reference:** Use only user-approved Maya references; preserve all locked identity and wardrobe details in any visual work.
 
 ### Character CH-02 — The Narrator
-- **Character Profile:** First-person narrator; name and detailed biography intentionally unspecified in this opening attempt.
+- **Character Profile:** A 34-year-old man. His name and cultural background remain deliberately unspecified. He is quiet, observant, intellectually curious, reflective, courteous, and occasionally dry-witted. He is comfortable with solitude and selective in his social life. He is emotionally sensitive but controlled.
 - **Role in the Novel:** Central romantic lead and narrative viewpoint.
-- **Motivations:** Drawn to sincerity, meaningful conversation, and the possibility of being known.
-- **Internal Conflicts:** Finds it easier to observe than to reveal; this is a provisional narrative direction.
-- **Character Development:** Learns to participate in intimacy rather than merely interpret it.
+- **Profession:** Editor at a publishing house. His work involves language, manuscripts, interpretation, and helping other people express ideas clearly.
+- **Intellectual and Personal Interests:** Reading, walking, independent cafés, bookshops, and unhurried observation of ordinary life.
+- **Family and Upbringing:** Raised in a stable, ordinary family. His parents were responsible and caring, but tended to express affection through practical actions rather than explicit emotional conversations. He has a reasonably good relationship with them, although their conversations rarely reach the more complicated parts of his inner life. He learned to associate love with dependability, to handle difficulties quietly, and to avoid making his needs burdensome to others.
+- **Previous Romantic Experience:** He has had one significant previous relationship. It ended without betrayal or a dramatic rupture; the partners wanted different forms of emotional closeness. His former partner wanted more spontaneous emotional expression, while he tended to offer loyalty, practical support, and consistency but struggled to communicate his feelings. Neither person was wholly at fault.
+- **Strengths:** Attentive listening, intellectual humility, reliability, understated humor, and sensitivity to emotional nuance.
+- **Weaknesses:** Overthinking ordinary emotional situations, delaying difficult conversations, mistaking self-sufficiency for emotional maturity, intellectualizing feelings, and assuming that withholding his needs is always considerate.
+- **Motivations:** Drawn to sincerity, meaningful conversation, and the possibility of being known. Wants to be understood without surrendering his individuality.
+- **Internal Conflict:** He wants to be understood but has developed habits that make understanding him difficult. He is not simply afraid of rejection; he is wary of the vulnerability of being genuinely known and losing control over what happens afterward.
+- **Mislearned Lesson:** From his previous relationship, he has partly concluded that keeping expectations modest and remaining self-sufficient prevents him from disappointing someone by needing too much.
+- **Character Development:** Learns to participate in intimacy rather than merely interpret it; to express feelings before they are perfectly organized; and to accept that loving someone requires allowing himself to be understood.
+- **Narrative Principle:** Maya does not enter his life to repair him. Their relationship should develop between two independent people who discover something worth building together.
 - **Visual Reference:** Do not invent or alter a real-person likeness. Use only references explicitly approved by the user.
 
 ## 5. Relationships and Character Dynamics
@@ -55,11 +63,13 @@ status: approved
 - Emotional development: Curiosity → ease → trust → vulnerability.
 - Major relationship milestones: To be developed.
 - Intended relationship direction: A mutual, adult, emotionally grounded partnership.
+- Narrator's relational pattern: He is more practiced at noticing and understanding others than at revealing himself. His attentiveness should be a genuine strength, not a substitute for vulnerability.
 
 ## 6. Story World
 - Primary settings: Contemporary urban life; the opening scene takes place in a small independent bookshop-café during an evening rain.
 - Important locations: To be established as the relationship develops.
 - Historical or temporal context: Present day.
+- Geographic setting: Deliberately unspecified. Do not assign a city, country, or cultural background without a later explicit creative decision.
 - Social and cultural context: Contemporary, grounded, and specific; details should be introduced naturally rather than assumed.
 - World rules and constraints: Realistic human behavior and consequences.
 - Important objects and symbols: Rain and books are introduced as motifs of chance, memory, and the things people choose to keep.
@@ -95,13 +105,13 @@ status: approved
 - Link to detailed chronology, if needed: Not yet required.
 
 ## 11. Character and Narrative Continuity
-- Confirmed character facts: The romantic leads are Maya and a first-person narrator.
+- Confirmed character facts: The romantic leads are Maya and a first-person narrator. The narrator's approved provisional-to-canon foundation is recorded in Section 4.
 - Character appearance and wardrobe references: User-approved references govern all visual depictions; face, identity, hair, and any locked outfit details must remain unchanged.
 - Relationship history: They meet in Scene 001.
 - Established narrative facts: Their first conversation takes place in a bookshop-café during rain.
 - Locations and important objects: The bookshop-café; a book Maya is considering; rain at the windows.
-- Continuity constraints: Do not invent fixed physical traits or biography before the narrative establishes them. In visual work, the user's explicit visual constraints and the Drawing Skill are authoritative.
-- Provisional ideas and unresolved decisions: Maya's detailed background, narrator's name and background, the wider conflict, and the novel's eventual structure remain open.
+- Continuity constraints: Do not invent fixed physical traits or biography for Maya before the narrative establishes them. The narrator's name, cultural background, and the novel's geographic setting remain unspecified. In visual work, the user's explicit visual constraints and the Drawing Skill are authoritative.
+- Provisional ideas and unresolved decisions: Maya's detailed background, narrator's name and cultural background, the wider conflict, and the novel's eventual structure remain open.
 
 ## 12. Visual Storytelling Direction
 - Overall visual identity: Follow the active Drawing Skill mode and approved project references.
@@ -115,10 +125,10 @@ status: approved
 - Completed arcs: None.
 - Active arc: ARC-001 — A Conversation in the Rain.
 - Planned arcs: To be determined after the opening arc develops.
-- Outstanding story decisions: Character biographies, broader conflict, and long-term structure.
+- Outstanding story decisions: Maya's detailed biography, narrator's name and cultural background, broader conflict, and long-term structure.
 
 ## 14. Author's Notes
-- Creative decisions: Begin with a modest, plausible encounter rather than a dramatic coincidence. Let attraction appear through attention, wit, and the choice to keep talking.
+- Creative decisions: Begin with a modest, plausible encounter rather than a dramatic coincidence. Let attraction appear through attention, wit, and the choice to keep talking. The narrator's emotional reserve should arise from ordinary family and relationship experiences, not an invented traumatic event.
 - Ideas for future development: Allow recurring details and private rituals to gain meaning over time.
 - Unresolved questions: Deliberately left open for discovery in the writing.
-- Important revisions: This is Attempt 1; revise only in response to narrative needs or the user's direction.
+- Important revisions: On 2026-11-18, the user approved the proposed narrator foundation: age 34, editor at a publishing house, stable practical-affection family background, one previous relationship that ended through differing emotional needs, and the associated strengths, weaknesses, and emotional conflict. The user explicitly chose to keep the city unspecified. His name and cultural background remain unresolved.
