@@ -1,7 +1,7 @@
 ---
 format: scene
 version: 1.0
-status: approved
+status: complete
 ---
 
 # Scene 001 — The Weather at the Window
@@ -14,7 +14,7 @@ status: approved
 - **Date Created:** 2026-11-16
 - **Location:** A small independent bookshop-café
 - **Time / Time Period:** Contemporary; early evening
-- **Status:** Drafted
+- **Status:** Complete
 
 ## 2. Characters
 - **Characters Present:** Maya; the first-person narrator.
