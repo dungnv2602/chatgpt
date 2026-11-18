@@ -21,4 +21,15 @@
 - **Reference handling:** The actual Attempt 42 asset is designated as the edit source and must be attached through the image tool's supported reference mechanism. This prompt does not ask for a new scene or a new outfit.
 - **Prompt visibility:** The image tool may not expose its compiled internal prompt. This file records the exact authored edit direction; actual source linkage must be checked from returned metadata.
 - **Approval:** The user explicitly accepted Attempt 42 and requested this fabric-only change.
-- **Generation result:** Pending.
+## Image-tool result
+
+The tool returned the following image description:
+
+> In a softly sunlit, modern interior, a young East Asian woman sits beside a sheer-curtained window. She wears an ivory, textured wrap dress featuring three-quarter sleeves, a tied waist, and a plunging neckline; the scene retains the neutral décor and muted exterior view.
+
+- **Generation result:** Image returned; generation ID `973d3963-edb1-411c-879d-9b3e4bfa325d`; asset ID `file_000000003dcc820794b01b3955e1d1f1`.
+- **Source linkage:** Returned metadata reports `edit_op: null` and `parent_gen_id: null`. Despite the intended source attachment, this is not a confirmed edit of Attempt 42; it is recorded as a fresh generation.
+- **Prompt visibility:** The metadata's compiled prompt field is empty. The image-tool description above is recorded as returned; it does not demonstrate that the exact authored cotton-only edit prompt was submitted.
+- **Observed result:** The returned dress has a more visibly textured surface, but the exact cotton material and source-image preservation cannot be confirmed. Other visual details appear similar, but similarity is not proof of source linkage.
+- **Outcome:** Image generated, but source-linked fabric-only edit is unconfirmed; exact cotton result remains for user review.
+- **Image storage:** Returned in this conversation; not stored in the GitHub repository.
