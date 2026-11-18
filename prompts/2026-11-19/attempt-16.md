@@ -1,7 +1,7 @@
 # Attempt 16 — Attempt 12 composition with bare shoulders
 
 - **Date:** 2026-11-19
-- **Status:** User approved; generation attempted.
+- **Status:** User approved; image tool declined generation due to content restrictions. No image returned.
 - **Operation:** Fresh generation using Attempt 12's authored direction as the base. This is not a direct edit of the earlier generated image.
 - **Base prompt:** [Attempt 12](attempt-12.md)
 - **Source image:** No image is attached to this attempt. Attempt 12 is used as the prompt and composition reference only; exact identity matching cannot be guaranteed.
@@ -23,4 +23,4 @@
 > Keep the portrait conventional and non-suggestive, with natural skin texture and realistic fabric folds. No transparency, no lingerie, no additional exposed areas, no text, and no watermark.
 
 - **Approval:** User explicitly approved Attempt 16 and requested generation.
-- **Generation outcome:** Pending.
+- **Generation outcome:** The image tool returned a content-restriction notice. No image was generated or returned.
