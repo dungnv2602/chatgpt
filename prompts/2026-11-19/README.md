@@ -20,4 +20,4 @@
 | 13 — Attempt 06 baseline, concise outfit-preservation retry | [attempt-13.md](attempt-13.md) | Earlier run generated a side-by-side diptych with outfit mismatch; subsequent independent retry was rejected, no new image returned |
 | 14 — Attempt 13 visual baseline, bare shoulders | [attempt-14.md](attempt-14.md) | User approved; image tool declined generation due to content restrictions; no image returned |
 | 15 — Retry of Attempt 13 prompt | [attempt-15.md](attempt-15.md) | User approved; image tool declined generation due to content restrictions; no image returned |
-| 16 — Attempt 12 composition with bare shoulders | [attempt-16.md](attempt-16.md) | Pending user review and approval; not generated |
+| 16 — Attempt 12 composition with bare shoulders | [attempt-16.md](attempt-16.md) | User approved; image tool declined generation due to content restrictions; no image returned |
