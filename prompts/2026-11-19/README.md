@@ -19,3 +19,4 @@
 | 12 — Attempt 06 composition, outfit-preservation wording | [attempt-12.md](attempt-12.md) | Generated; overhead composition achieved, exact outfit preservation failed; submitted prompt differed from archive |
 | 13 — Attempt 06 baseline, concise outfit-preservation retry | [attempt-13.md](attempt-13.md) | Earlier run generated a side-by-side diptych with outfit mismatch; subsequent independent retry was rejected, no new image returned |
 | 14 — Attempt 13 visual baseline, bare shoulders | [attempt-14.md](attempt-14.md) | Not approved by user; archived only; not generated |
+| 15 — Retry of Attempt 13 prompt | [attempt-15.md](attempt-15.md) | Pending user review and approval; not generated |
