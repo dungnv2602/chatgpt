@@ -1,7 +1,7 @@
 # Attempt 35 — Attempt 31 baseline, minimal seated-leg adjustment
 
 - **Date:** 2026-11-19
-- **Status:** User authorized; prompt archived and verified; generation pending.
+- **Status:** Rejected; generic image-safeguard refusal; no image returned.
 - **Operation:** Intended localized edit using the accepted Attempt 31 image as the source reference.
 - **Mode:** Realistic; preserve the accepted photographic appearance.
 - **Source:** Accepted Attempt 31 output; generation ID `84064782-3e24-4a0e-a527-5cb790a24df0`; asset ID `file_00000000bfbc82118e1007df88821333`.
