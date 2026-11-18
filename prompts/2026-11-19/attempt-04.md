@@ -1,7 +1,7 @@
 # Attempt 04 — Seated window portrait, same ivory wrap outfit
 
 - **Date:** 2026-11-19
-- **Status:** Prompt archived; awaiting user approval.
+- **Status:** Approved by the user; generation pending.
 - **Operation:** Fresh generation.
 - **Mode:** Realistic.
 - **Base prompt:** Attempt 02's successful clean-start visual direction, with the neutral editorial adjustments proposed after Attempt 03. Attempt 03 remains unchanged.
@@ -27,4 +27,5 @@
 > No nudity, no sexualized posing, no exaggerated anatomy, no text, no watermark.
 
 - **Tool-prompt visibility:** This is the exact authored prompt prepared for the attempt. The image tool's internal compiled prompt may not be exposed.
-- **Generation gate:** Do not generate until the user explicitly approves this prompt.
+- **Approval:** User explicitly approved this prompt on 2026-11-19.
+- **Generation gate:** Approval received; generation may proceed.
