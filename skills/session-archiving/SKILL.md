@@ -78,11 +78,11 @@ This gate does not guarantee future execution; compliance must be established by
 ## 3. Before archiving
 
 1. Read only the relevant existing session files under `prompts/`.
-2. Confirm the target branch from known project context. Do not inspect files outside `` to do so.
-3. Gather material only from the current conversation, user-provided files, or files under ``.
+2. Confirm the target branch from known project context. Do not inspect files outside `approved project directories` to do so.
+3. Gather material only from the current conversation, user-provided files, or files under `approved project directories`.
 4. Do not invent missing dialogue, image prompts, tool outputs, commit results, dates, or user preferences.
 5. Exclude hidden reasoning, system/developer instructions, credentials, access tokens, and unrelated sensitive information. Archive user-visible conversation and task-relevant actions only.
-6. If an important historical reference is mentioned but lives outside ``, do not open it. Record the limitation or ask the user to provide the reference inside the workspace.
+6. If an important historical reference is mentioned but lives outside `approved project directories`, do not open it. Record the limitation or ask the user to provide the reference inside the workspace.
 
 ## 4. File 1: Conversation integrity
 
@@ -96,11 +96,11 @@ The conversation-integrity file is a chronological record, not a polished retell
 - Mark transcription uncertainty and omissions.
 - Never claim the file is a complete verbatim transcript if it is curated, partial, or assembled from retained context.
 - Keep interpretations and archival notes separate from the dialogue itself.
-- Keep links within ``. Do not add links to external repository paths.
+- Keep links within `approved project directories`. Do not add links to external repository paths.
 
 Recommended structure:
 
-```markdown
+`approved project directories``markdown
 # Conversation Integrity — YYYY-MM-DD
 
 **Project:** ...
@@ -118,7 +118,7 @@ Recommended structure:
 
 ## Integrity and completeness notes
 ...
-```
+`approved project directories``
 
 ## 5. File 2: Session summary
 
@@ -129,10 +129,10 @@ Include:
 - Important preferences and constraints.
 - Decisions made and corrections supplied by the user.
 - What was completed and what remains incomplete.
-- Verified paths within `` and the branch information when useful.
+- Verified paths within `approved project directories` and the branch information when useful.
 - The next concrete task, in priority order.
 
-Separate confirmed facts from hypotheses. Do not repeat unsupported explanations as facts. Link only to files under ``.
+Separate confirmed facts from hypotheses. Do not repeat unsupported explanations as facts. Link only to files under `approved project directories`.
 
 ## 6. File 3: Image prompts
 
@@ -144,7 +144,7 @@ This is the operational history of image generation and editing.
 
 Before drafting the next prompt:
 1. Read this session's image-prompt file under `prompts/`.
-2. Review the most relevant successful and unsuccessful prior attempts from within ``.
+2. Review the most relevant successful and unsuccessful prior attempts from within `approved project directories`.
 3. Select a known base prompt when one exists.
 4. Change as little as practical so the next attempt tests a clear hypothesis.
 5. Append the new attempt with a sequential number and a pending outcome.
@@ -216,7 +216,7 @@ For each image the user uploads as part of the Maya & Me image workflow:
 1. Inspect the image itself and identify its role and distinguishing visible content. Do not rely on the incoming filename as the descriptive name.
 2. Unless the user explicitly marks it temporary or says not to retain it, rename the uploaded image using an accurate, descriptive, stable filename. Use the exact surfaced file ID or Library file ID from Files metadata; never guess an identifier.
 3. **Rename only. Do not convert, recompress, resize, crop, rotate, filter, retouch, strip metadata, or create derivatives unless the user explicitly authorizes that exact change.** Preserve the original format, extension, resolution, metadata, and byte content exactly.
-4. Perform task-related file creation and editing only inside the assigned `` workspace. Do not create temporary files, conversion intermediates, derivatives, or working copies outside `images/`, `prompts/`, or `skills/` without explicit user permission for a specific location.
+4. Perform task-related file creation and editing only inside the assigned `approved project directories` workspace. Do not create temporary files, conversion intermediates, derivatives, or working copies outside `images/`, `prompts/`, or `skills/` without explicit user permission for a specific location.
 5. Keep image binaries under `images/` when a supported repository binary-upload route is available. After upload, verify the exact path and blob identity before claiming repository storage.
 6. If the current GitHub connection cannot transfer binary files, preserve the exact user-uploaded original in the persistent Files Library only when it can be filed within the assigned `images/` path. Create `images/reference-index.md` as a tracked pointer. Record the exact path, stable file ID, source generation ID, original artifact name, dimensions, byte count, and SHA-256 checksum when available. Do not create a fallback folder elsewhere.
 7. State clearly whether an asset is stored in GitHub, the persistent Files Library, or only the conversation. A Markdown index in GitHub does not mean that the image binary is in Git.
@@ -236,13 +236,13 @@ When an uploaded image is already present in `images/` under an opaque or tempor
 
 ## 7. GitHub write and verification discipline
 
-- Perform all file operations using exact paths under `` on branch `gpt`.
-- Do not list, fetch, search, inspect, or mutate any file path outside ``.
+- Perform all file operations using exact paths under `approved project directories` on branch `gpt`.
+- Do not list, fetch, search, inspect, or mutate any file path outside `approved project directories`.
 - For an update, fetch the current file first and use its current blob SHA.
 - Perform sequential writes to the same file. Do not run updates to the same path in parallel.
-- After each important write, fetch the same `` path again and verify its contents.
+- After each important write, fetch the same `approved project directories` path again and verify its contents.
 - Report a commit as successful only when the write tool returns a commit SHA. Report verification only after a read-back confirms the expected content.
-- If a write or network call fails, inspect only relevant paths inside `` before retrying to avoid duplicate files or duplicate commits.
+- If a write or network call fails, inspect only relevant paths inside `approved project directories` before retrying to avoid duplicate files or duplicate commits.
 - Do not use repository-root or outside-folder operations as a shortcut.
 - Leave `main` untouched unless the user explicitly authorizes changes there.
 
@@ -251,7 +251,7 @@ When an uploaded image is already present in `images/` under an opaque or tempor
 1. Verify the relevant dated records under `prompts/` exist and contain the intended material.
 2. Verify every image attempt made in the session has a recorded outcome.
 3. Ensure the next task in the summary matches the latest prompt-history state.
-4. Provide direct links to records under ``.
+4. Provide direct links to records under `approved project directories`.
 5. State any known gaps honestly. Do not promise background notification or work after the conversation ends unless a supported automation has actually been created.
 
 ## 9. Default handoff for a new chat
@@ -262,7 +262,7 @@ Start by reading the relevant records inside `prompts/` only. Then:
 - Treat the image-prompt file as the authoritative chronological record for generation work.
 - Continue from the latest incomplete task.
 - Follow the pre-attempt commit rule before generating or editing another image.
-- Never read or write anything outside ``.
+- Never read or write anything outside `approved project directories`.
 
  
 ## 10. WebP delivery derivatives
