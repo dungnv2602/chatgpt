@@ -1,7 +1,7 @@
 ---
 format: scene
 version: 1.0
-status: revised
+status: complete
 ---
 
 # Scene 004 — What People Leave Behind
@@ -14,7 +14,7 @@ status: revised
 - **Date Created:** 2026-11-18
 - **Location:** A shared courtyard in a completed building; exact city and address intentionally unspecified.
 - **Time / Time Period:** The following weekend; late afternoon.
-- **Status:** Revised
+- **Status:** Complete
 
 ## 2. Characters
 - **Characters Present:** Maya; the first-person narrator; a few courtyard users in the background.
