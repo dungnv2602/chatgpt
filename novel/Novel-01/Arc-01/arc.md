@@ -66,14 +66,14 @@ status: approved
 | Scene ID | Scene Title | Narrative Role | Status | Scene Link |
 |---|---|---|---|---|
 | SCN-001 | The Weather at the Window | First meeting and the beginning of a conversation. | Drafted | [Scene 001](Scene-001/scene.md) |
-| SCN-002 | A Place Between Pages | First planned meeting; shared reading becomes a language for gentle disagreement. | Drafted | [Scene 002](Scene-002/scene.md) |
+| SCN-002 | A Place Between Pages | First planned meeting; shared reading becomes a language for gentle disagreement. | Drafted | [Scene 002](Scene-002/scene.md) |\n| SCN-003 | The Shape of a Pause | A third meeting introduces Maya's work and lets the narrator express a clear preference. | Drafted | [Scene 003](Scene-003/scene.md) |
 
 ## 8. Continuity and References
 - Confirmed character facts: The leads are Maya and a first-person narrator.
 - Locations and important objects: A contemporary bookshop-café, books, rain-covered windows.
-- Timeline constraints: Scene 001 precedes Scene 002; Scene 002 occurs a few days later and is their first planned meeting.
+- Timeline constraints: Scene 001 precedes Scene 002; Scene 002 occurs a few days later and is their first planned meeting. Scene 003 takes place the following weekend.
 - Relevant previous arcs: None.
-- Decisions that must remain consistent: The leads begin as strangers; no unconfirmed physical descriptions or backstory are canon.
+- Decisions that must remain consistent: The leads begin as strangers; no unconfirmed physical descriptions or backstory are canon. By Scene 003, Maya's profession as a landscape architect has been introduced, and the narrator has begun expressing his preferences more directly.
 
 ## 9. Connection to the Novel
 - Previous arc: None.
