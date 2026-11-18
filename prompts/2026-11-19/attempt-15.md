@@ -1,7 +1,7 @@
 # Attempt 15 — Retry of Attempt 13 prompt
 
 - **Date:** 2026-11-19
-- **Status:** Pending user review and approval; not generated.
+- **Status:** User approved; generation attempted and declined by the image tool. No image returned.
 - **Operation:** Fresh generation. This is a new generation attempt reusing the exact authored prompt from Attempt 13; it is not a direct edit of the earlier generated image.
 - **Source prompt:** [Attempt 13](attempt-13.md)
 - **Source image:** None attached for this call. The prompt refers to Attempt 06 as a visual baseline, but no source image is supplied to the image tool; exact identity or garment matching cannot be guaranteed.
@@ -22,5 +22,5 @@
 >
 > Photorealistic detail, natural proportions, no text, no watermark.
 
-- **Approval requirement:** Await explicit approval of this exact Attempt 15 prompt before image generation.
-- **Outcome:** Not generated.
+- **Approval:** User approved Attempt 15 and requested generation.
+- **Generation outcome:** The image tool returned a content-restriction notice. No image was generated or returned.
