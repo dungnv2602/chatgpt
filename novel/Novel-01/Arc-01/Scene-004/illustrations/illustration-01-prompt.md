@@ -36,7 +36,8 @@ Use a medium-wide environmental two-shot at natural eye level, with both figures
 - **Generation ID:** `c0ba5ae6-3082-44e8-9b90-3e6631c414a3`.
 - **Conversation artifact:** `a_warm_sunlit_outdoor_courtyard_garden_scene_in_a.png`.
 - The courtyard atmosphere broadly fit, but the generation introduced an unapproved ethnicity description and changed Maya's exact silk-wrap blouse into a wrap-style dress. Exact facial identity was not verifiable.
-- **Execution note:** The tool exposed an empty compiled-prompt field. The actual concise direction used at generation diverged from the authored prompt; the recorded deviation is not canon.
+- **Actual concise direction recorded as submitted:** “A cinematic late-afternoon courtyard scene shows a serene young East Asian woman in a softly shimmering cream wrap dress seated among flowering plants, latticework, and garden furniture, her profile turned toward the sunlit greenery. A dark-haired young man sits nearby with his back partly to the camera, while warm light, dappled shadows, apartment details, and blurred figures create an intimate, tranquil atmosphere.”
+- **Execution note:** The tool exposed an empty compiled-prompt field. This concise direction diverged from the authored prompt, introduced unapproved ethnicity wording, and changed the locked garment. Those changes are not canon.
 - **Classification:** Generated but missed defining continuity requirements; not approved canon.
 
 ## Attempt 02 — Summary
@@ -62,6 +63,7 @@ Use a medium-wide environmental two-shot at natural eye level, with both figures
 
 - **Generation ID:** `89d960dc-c69e-432a-bc62-0acf2346acd2`.
 - **Conversation artifact:** `a_bright_naturalistic_high_detail_shallow_depth.png`.
+- **Actual concise direction recorded as submitted:** “In a sunlit, landscaped courtyard, Maya and the partially seen narrator share a warm, quiet conversation in a romantic visual-novel style. Maya, dressed in her familiar ivory knit top, light cardigan, delicate jewelry, and tote bag, gazes thoughtfully at him while resting against a wooden bench; behind them, soft greenery, blooming flowers, an elderly woman, and a child watering plants create a peaceful slice-of-life setting with cinematic depth of field.”
 - The courtyard and background activity loosely relate to the scene, but Maya's exact ivory silk-wrap blouse was replaced by an ivory knit top and light cardigan; jewelry and a tote bag were also added. The composition became a close conversational portrait rather than the environmental view of her personal courtyard corner. Her exact canonical face cannot be verified.
 - **Classification:** Generated but missed defining continuity requirements; not approved canon.
 - **Stopping decision:** The second attempt again changed Maya's absolute outfit despite a corrected, pre-committed prompt. No further near-identical generation is being made in this run.
