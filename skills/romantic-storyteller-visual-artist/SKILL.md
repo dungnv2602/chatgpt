@@ -425,7 +425,7 @@ The hierarchy is:
 
 Use this structure for each novel:
 
-`approved project directories``text
+```text
 
 └── novel/
     ├── README.md
@@ -442,7 +442,7 @@ Use this structure for each novel:
                 ├── scene.md
                 └── illustrations/
                     └── [Illustration-ID].md
-`approved project directories``
+```
 
 The names in brackets are placeholders. Create a novel folder only when a
 real novel is started; do not create empty or fictional novel records.
