@@ -1,7 +1,7 @@
 ---
 format: scene
 version: 1.0
-status: drafted
+status: revised
 ---
 
 # Scene 003 — The Shape of a Pause
@@ -12,266 +12,220 @@ status: drafted
 - **Story Arc:** [Arc 01 — A Conversation in the Rain](../arc.md)
 - **Story Sequence:** 3
 - **Date Created:** 2026-11-18
-- **Location:** A small public garden and the surrounding streets; exact city and location intentionally unspecified.
+- **Location:** A small public garden and surrounding streets; exact city and location intentionally unspecified.
 - **Time / Time Period:** The weekend following Scene 002; late morning.
-- **Status:** Drafted
+- **Status:** Revised
 
 ## 2. Characters
 - **Characters Present:** Maya; the first-person narrator.
-- **Relevant Circumstances:** Their first planned meeting has gone well. They have exchanged a few messages since, but have not yet established a regular rhythm.
+- **Relevant Circumstances:** They have met twice and exchanged a few messages since their café conversation.
 - **Characters Mentioned but Not Present:** None.
 
 ## 3. Narrative Purpose
-- **Why This Scene Exists:** Give the characters a third encounter in a setting that allows them to move beyond the shared subject of books and begin noticing how each experiences the world.
-- **What It Contributes to the Story:** Introduce Maya's profession as a landscape architect through her natural attention to public space; let the narrator express a genuine preference instead of simply accommodating hers.
-- **Dramatic or Emotional Focus:** The small vulnerability of choosing and being chosen, without turning an ordinary walk into a declaration.
+- **Why This Scene Exists:** Move their connection beyond books and give them room to discover how each experiences the ordinary world.
+- **What It Contributes to the Story:** Establish Maya's profession through her observations; let both characters reveal preferences instead of allowing one to do all the accommodating.
+- **Dramatic or Emotional Focus:** The modest vulnerability of saying what one wants and allowing another person to do the same.
 
 ## 4. Opening Situation
-- Initial circumstances: The narrator sends Maya a message suggesting a walk. She accepts and proposes meeting near a small public garden she knows.
-- Character positions and relationship state: Interested acquaintances after two meetings; comfortable enough to initiate contact, still learning each other's habits.
-- Immediate context: They have no urgent destination and no need to fill every silence.
+- Initial circumstances: The narrator suggests a walk. Maya proposes a small public garden and gives him practical directions.
+- Character positions and relationship state: Interested acquaintances, increasingly comfortable initiating contact.
+- Immediate context: They have no urgent destination and have chosen to spend an ordinary morning together.
 
 ## 5. Scene Development
-- Main actions and interactions: They meet and walk through a modest public garden. Maya notices how people use the paths, shade, seating, and edges of the space. Through the conversation, she explains that she is a landscape architect. The narrator asks questions and begins to understand that her work concerns how people inhabit places, not simply how those places look.
-- Dialogue and important exchanges: Maya explains that a space can look beautiful in a plan and still fail the people who use it. When she offers to follow whichever route he prefers, the narrator chooses the longer, quieter path rather than automatically leaving the decision to her.
-- Emotional developments: Maya is briefly surprised by his clear preference, then accepts it without making it a test. He discovers that stating what he wants does not make him demanding. She shares her way of seeing without turning the walk into a lecture.
-- New information or revelations: Maya's profession is established. The narrator learns that she pays attention to the small negotiations between people and their surroundings.
+- Main actions and interactions: They walk through the garden. Maya notices practical details of its design and explains that she is a landscape architect. At a fork, she offers the narrator the choice of route, then admits that she herself would prefer the quieter path. He chooses it too.
+- Dialogue and important exchanges: Their conversation moves between her work, the garden's imperfect benches, and the small annoyances of their respective professions. The narrator asks what she wants rather than assuming her offer means she has no preference.
+- Emotional developments: The narrator expresses a preference without disguising it as indifference. Maya briefly catches herself accommodating him and allows her own preference to be known.
+- New information or revelations: Maya's work involves public spaces and how people actually use them. She notices that a place often becomes more interesting when its users alter the original plan.
 
 ## 6. Central Moment
-- **Key Action, Revelation, Decision, or Turning Point:** Asked which way he would like to go, the narrator gives an honest answer instead of saying that either route is fine.
-- **Why It Matters:** It is a small but concrete movement away from his habit of withholding preferences. Maya receives the answer simply, showing that he does not need to protect her from the existence of his own wishes.
+- **Key Action, Revelation, Decision, or Turning Point:** At the fork, the narrator chooses the quieter path; when he asks which route she wants, Maya admits she was hoping he would choose it.
+- **Why It Matters:** Their small exchange becomes mutual. He does not merely practice expressing a preference; she practices admitting one.
 
 ## 7. Ending
-- How the scene concludes: They reach the end of the garden and continue along the quieter route. The narrator asks whether she would show him another place she has spoken about; Maya says she would like that.
-- What changes: Their connection begins to include shared attention to the world outside books and conversation.
-- What remains unresolved: Neither has yet explained what they find difficult about closeness, and neither needs to do so here.
-- Transition to the next scene: Their next meeting can grow from Maya's work or from the place she has offered to show him.
+- How the scene concludes: Maya tells him about a courtyard she likes and asks whether he would be interested in seeing it another day. He says yes, then asks what she likes about it.
+- What changes: They begin to share not only conversation but also the places each person chooses for themselves.
+- What remains unresolved: Neither has yet explained their deeper difficulty with closeness.
+- Transition to the next scene: The courtyard offers a natural setting for their next meeting, if the story's pace calls for it.
 
 ## 8. Continuity
-- Established facts: This is their third meeting, after the rainy first encounter and the planned café meeting a few days later. Maya works as a landscape architect. She enjoys walking when she needs to think.
-- Character and relationship continuity: Attraction remains understated. Maya is observant and warm without being endlessly accommodating; the narrator is attentive but makes one clear choice of his own.
-- Timeline and location continuity: Takes place on the weekend following Scene 002. No city, country, or named venue is established.
-- Connection to the previous scene: The ease of their café conversation gives the narrator enough confidence to suggest spending time together again.
-- Connection to the next scene: Maya's work and her offer to show him another place provide possible threads for a later meeting.
+- Established facts: This is their third meeting. Maya is a landscape architect and enjoys walking when she needs to think.
+- Character and relationship continuity: Attraction remains understated. The narrator tends to withhold preferences; Maya tends to accommodate before stating her own.
+- Timeline and location continuity: The weekend following Scene 002. City, country, and named venues remain unspecified.
+- Connection to the previous scene: The ease of their café conversation gives the narrator confidence to suggest another meeting.
+- Connection to the next scene: Maya's courtyard provides a possible shared destination.
 
 ## 9. Illustrations
-- None planned at this stage.
+- Scene illustration: A single standalone image of Maya and the narrator pausing at the garden path fork, with the quieter tree-lined route ahead. See the scene's illustration note when generated and documented.
 
 ## 10. Author's Notes
-- Creative decisions: Introduce Maya's profession through what she notices and how she thinks, rather than a résumé-like explanation. Keep the narrator's act of expressing a preference small and unceremonious.
-- Revisions: Initial scene draft.
-- Open questions: The specific project Maya is working on and whether it will become relevant to a later scene remain open.
+- Creative decisions: Balance the characters' small acts of self-disclosure. Keep Maya's professional observations practical and specific rather than turning every detail into a metaphor.
+- Revisions: Revised after editorial review to reduce repeated emotional explanation, give Maya independent agency, and vary the scene's rhythm.
+- Open questions: Maya's specific project and the courtyard's eventual narrative role remain open.
 
 ---
 
 ## Scene Text
 
-On Saturday morning, I sent Maya a message.
+On Saturday morning, I asked Maya if she would like to go for a walk.
 
-I had spent a little too long deciding whether the suggestion should sound spontaneous. Eventually I concluded that spontaneity, when carefully edited, was probably just another form of hesitation.
+I wrote the message, read it once, and sent it before I could make it sound as though I had not meant it.
 
 *Would you like to go for a walk today?*
 
-Her reply came while I was making coffee.
-
-*Yes. I know a small garden not far from the café where we met. Eleven?*
+*Yes. There's a small garden I like. Eleven?*
 
 *I'll be there.*
 
-A moment later, another message appeared.
+A second message arrived.
 
-*Wear comfortable shoes. The paths are not especially forgiving.*
+*The entrance is easy to miss. I'll send you the street.*
 
-I looked down at my shoes, which had been selected for their ability to survive an ordinary pavement rather than an encounter with difficult terrain.
-
-*I'll try to dress for the occasion.*
-
-*The garden will appreciate the effort.*
-
-I arrived three minutes before eleven. The garden sat behind a low wall on a quiet street, easy to miss if one was looking for something more impressive. A narrow entrance opened onto a collection of trees, planted beds, winding paths, and benches that had acquired the patient appearance of objects used by many different kinds of people.
-
-Maya was standing near the entrance, reading a small notice fixed to the wall.
+I reached the garden three minutes early. It sat behind a low wall on a quiet street, with a narrow entrance that could have belonged to a private house. Maya was waiting beside it, holding a paper cup.
 
 “You found it,” she said.
 
-“I followed the instructions about the forgiving paths.”
+“Your directions were unusually clear.”
 
-“And?”
+“I work with plans. It would be embarrassing if I couldn't get someone through a gate.”
 
-“I haven't formed an opinion yet.”
+“Is that part of the profession?”
 
-“Good. It's important not to judge a place before you've been inconvenienced by it.”
+“Only on weekends.”
 
-We went inside.
+She finished her coffee and dropped the cup into a bin near the entrance. We went inside.
 
-The garden was not large. A path curved around a patch of flowering shrubs, then narrowed beside a tree whose branches cast a wide shadow over two benches. Somewhere beyond the wall, traffic moved with a muted, continuous sound. Inside, the air seemed slower.
+The garden was modest: a few winding paths, planted beds, trees that had grown beyond the neat shapes someone had once imagined for them. A man sat on a bench beside the path, his paper cup balanced on one knee. People passing him had to turn their shoulders to get around.
 
-Maya walked without hurrying. She looked at the garden in pieces: the edge of a bed, a gap between two trees, the place where the path widened and then narrowed again.
+Maya glanced at the bench.
 
-“You're looking at it as if it might answer you,” I said.
+“That's badly placed,” she said.
 
-“Most places do, if you give them enough time.”
+“He seems comfortable.”
 
-“Is that a professional opinion?”
+“He is. Everyone else is doing the adjusting.”
 
-She turned to me. “I suppose it is.”
+I looked again. The man had settled in with the calm of someone who had found exactly the right place to spend ten minutes.
 
-“What do you do, exactly?”
+“Perhaps that's the point,” I said.
 
-“I'm a landscape architect.”
+“Perhaps. Though I'd still move the bench.”
 
-I had known she was interested in walking and unfamiliar places. I had not known there was a profession behind the way she looked at them.
+“Do you often rearrange public spaces in your head?”
 
-“So you design gardens?”
+“More often than is useful.”
 
-“Sometimes. Public spaces, outdoor areas, places people are expected to use. Gardens are part of it, but the work is less about arranging attractive plants than people imagine.”
+She told me she was a landscape architect. Her work involved public spaces and outdoor areas, though she was quick to point out that designing a garden was not simply a matter of choosing attractive plants.
 
-“What is it about, then?”
+“People use places in ways the drawings don't always anticipate,” she said. “They take shortcuts. Move chairs. Sit where there's shade, even if the bench was intended for somewhere else.”
 
-“How people move through a place. Where they stop. Whether they can find shade when it's hot, whether someone can sit without feeling they're in the way, whether a path makes sense to a person who has never been there before.” She glanced toward a bench near the tree. “A space can look beautiful on a drawing and still be uncomfortable to inhabit.”
+“Does that annoy you?”
 
-I looked around again, trying to see what she saw.
+“Sometimes. Usually it tells me something I should have noticed.”
 
-“Does this one pass?”
+We passed the bench. The man looked up briefly, then returned to whatever occupied his attention.
 
-“Some parts do.”
+“What are you working on at the moment?” I asked.
 
-“And the others?”
+“A public courtyard. Nothing especially grand. The difficult part is making it useful without making it feel as though every activity has been assigned a designated square.”
 
-She pointed toward a bench placed beside a narrow section of path. A man sat there with a paper cup balanced on his knee. Every few moments, someone passing had to turn slightly to get around him.
+“That sounds familiar.”
 
-“That bench is in the wrong place,” she said. “Not terribly wrong. Just enough to make everyone negotiate around it.”
+“Does editing involve assigning people to squares?”
 
-The man looked perfectly content. I wondered whether he knew he was participating in a design problem.
+“Mostly moving sentences until they stop obstructing one another.”
 
-“Perhaps he likes the attention,” I said.
+She laughed. “Then perhaps we have similar problems.”
 
-“Then the bench is doing excellent work.”
+“Do your clients move the benches after you've finished?”
 
-We continued along the path. Maya told me about a project she was working on, though she kept the details general. She spoke less about the appearance of a finished place than about the small decisions that made it usable: where a path met a doorway, how much space a person needed to turn, the difference between a seat that invited someone to stay and one that merely filled an empty corner.
+“Of course. One person has already moved a chair into a patch of sun that doesn't appear on the plan.”
 
-I found myself asking more questions than I usually did. It was not difficult to follow her. She had a way of making practical details feel connected to something larger without insisting that they were profound.
+“Is that a failure?”
 
-“Do you always notice these things?” I asked.
+“I haven't decided. The chair is being used, which is more than I can say for some of my carefully considered arrangements.”
 
-“Not always. Sometimes I just want to walk somewhere and not think about why the paving is uneven.”
+We came to a fork in the path. One route curved back toward the flower beds and the entrance. The other followed the garden wall beneath a row of trees. It was narrower, less tidy, and quiet.
 
-“Does that happen often?”
+“Either way is fine,” Maya said. “You can choose.”
 
-“Less often than I would like.”
+I looked down both paths. The longer one appealed to me. I was about to say so when I noticed that Maya was already looking toward it.
 
-“That sounds like a professional hazard.”
+“What would you choose?” I asked.
 
-“It is. Yours must be reading menus for punctuation.”
+She blinked, then smiled at the question.
 
-“I try to leave restaurants out of my work.”
+“Honestly?”
 
-“Very generous of you.”
+“I hope so.”
 
-We reached a fork in the path. One route curved back toward the entrance, passing the flower beds. The other continued along the wall beneath a line of trees, less carefully planted and noticeably quieter.
+“The path along the wall. It's quieter.”
 
-Maya looked at both.
-
-“We can go either way,” she said. “Whichever you prefer.”
-
-The answer came to me before I could improve it.
-
-“The longer way,” I said. “Along the wall.”
-
-She looked at me, perhaps a little surprised. Then she nodded.
+“Then let's take that one.”
 
 “All right.”
 
-There was no ceremony in it. She did not praise my decisiveness or ask why I had chosen. She simply turned toward the path I had named.
+She started walking. I fell into step beside her.
 
-I followed.
+The path was uneven in places. A few roots had lifted the paving, and we had to move aside when a woman came through pushing a small bicycle. After she passed, Maya looked down at the raised stones.
 
-The trees made a loose canopy overhead. Their shade came and went as the branches shifted in the breeze. The path was uneven in places, and once we had to step aside for a woman pushing a small bicycle. We walked more slowly after that.
+“I should probably be annoyed by that,” she said.
 
-I had not realized how often I answered questions about preference by removing the preference from the conversation. Either was fine. Whatever you like. I don't mind. These phrases were not always untrue, but they were often convenient in a way that made it difficult for anyone to know me.
+“Because of your profession?”
 
-The longer path was what I wanted. That was all.
+“Because someone could trip. But I also like that the trees haven't entirely agreed to stay where we put them.”
 
-Maya stopped beside a low wall where a few leaves had gathered in a corner.
+“An uneasy compromise.”
 
-“It's quieter here,” she said.
+“Most useful things are.”
 
-“Yes.”
+We walked beneath the branches. The shade shifted across the path, and the traffic beyond the wall became a distant, steady sound.
 
-“I'm glad you chose it.”
-
-I looked at her. “You would have been happy with either.”
-
-“Probably.” She brushed a leaf from the top of the wall. “But that doesn't mean I don't like knowing what someone else wants.”
-
-I had no immediate answer. It was a simple sentence, offered without emphasis. I felt, unexpectedly, that I should keep it.
-
-We stood for a moment, watching a small bird search the ground near the shrubs. It moved with great seriousness, as if the garden had given it an appointment.
+I realized I had asked her to choose only after she had offered me the choice. It was a small distinction, but not an insignificant one. She had been ready to make the decision easy for me. I had wanted to know what she preferred.
 
 “Do you come here often?” I asked.
 
-“When I need to think. Or when I need to stop thinking.”
+“When I need to think. Sometimes when I need to stop.”
 
 “Does it work?”
 
-“Sometimes. The garden is not responsible for my success.”
+“Not reliably. But the garden is pleasant company.”
 
-“An unusually modest arrangement.”
+“Does it know that?”
 
-“I try not to burden public spaces with unreasonable expectations.”
+“I try not to make demands of it.”
 
-We resumed walking.
+We continued to the far end, where the path opened onto a paved space with two tables. A child was following a line of ants while a parent waited nearby. Maya watched for a moment.
 
-Near the far end, the path opened onto a small paved area with a few tables. A woman was reading beneath an umbrella, although there was no rain. A child was trying to persuade a parent to follow a trail of ants. The garden carried on with its modest business, neither performing for us nor asking to be admired.
+“There's another place I like,” she said. “A courtyard. It's part of a larger building, but the people who use it have changed it over time. Someone moved a chair. Someone planted something in a corner where nothing was supposed to grow.”
 
-I liked that.
+“Does that bother you?”
 
-At the gate, Maya turned toward the street.
+“No.” She paused. “I think I like seeing what people do when they stop treating a place as finished.”
 
-“There's another place I sometimes visit,” she said. “It's not really a garden. More of a courtyard. The design is interesting, though the people who use it have made a few changes of their own.”
+“Would you show it to me?”
 
-“Changes?”
-
-“Someone has moved a chair. Someone else has planted something where it wasn't intended to grow. The place is slowly becoming less like the plan.”
-
-“Is that a problem?”
-
-She considered it.
-
-“Not necessarily. A place belongs to the people who use it, eventually. You can design for them, but you can't decide every part of how they'll live in it.”
-
-I thought about the book we had discussed a few days earlier, about the temptation to make people easier to understand than they were.
-
-“Would you show it to me?” I asked.
-
-“If you'd like.”
+“If you'd like to see it.”
 
 “I would.”
 
-“Then we can go another day.”
+“Then we should go.”
 
-She said it as though another day were an ordinary thing to have. I was beginning to understand that it could be.
+She checked the time. She had work to finish that afternoon, she said, and I had no convincing reason to keep her from it. We walked together to the gate.
 
-We walked together to the next corner, where the street divided around a row of parked bicycles. Maya checked the time on her phone.
+At the corner, she turned toward the street she had come from.
 
-“I should go,” she said. “I have a few things to finish this afternoon.”
+“Thank you for the walk,” she said.
 
-“Work?”
+“Thank you for the directions.”
 
-“Unfortunately. The plants have no respect for weekends.”
+“They were good directions.”
 
-“Neither do manuscripts.”
+“They were.”
 
-“Then I hope they behave themselves.”
+She smiled, then left.
 
-“I'll speak to them.”
+I took the quieter route home. I thought about the bench, the chair in the courtyard, and the path Maya had wanted to take but had not mentioned until I asked.
 
-She smiled. We said goodbye without trying to extend the moment beyond its natural end.
+It occurred to me that a preference did not become less considerate simply because it belonged to me. It also occurred to me that I had not been the only one learning to say what I wanted.
 
-I took the quieter route home.
-
-The garden had not changed anything important. The benches were still where they were, the paths still imperfect, and the afternoon still waiting beyond the trees. But I found myself thinking about the fork in the path, and how easily I might have said that either way was fine.
-
-It had been a small choice.
-
-I was beginning to suspect that a life could be altered by small choices long before anyone thought to call them decisions.
+The morning had been ordinary. I was beginning to think that ordinary things were where most of the important work happened.
