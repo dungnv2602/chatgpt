@@ -32,3 +32,4 @@
 | 25 — Attempt 18 prompt, cotton fabric | [attempt-25.md](attempt-25.md) | Approved; exact Attempt 18 wording preserved except satin → cotton; generation pending |
 | 26 — Mature, refined facial revision of Attempt 25 | [attempt-26.md](attempt-26.md) | Approved prompt; pending generation |
 | 27 — Attempt 25 bedroom portrait, seated pose from Attempt 05 | [attempt-27.md](attempt-27.md) | Generated successfully; seated bedroom composition achieved; outfit-detail match incomplete |
+| 28 — Attempt 27, long hair without glasses | [attempt-28.md](attempt-28.md) | Prompt archived and verified; awaiting user approval before editing |
