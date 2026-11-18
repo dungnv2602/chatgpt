@@ -28,4 +28,3 @@
 | 21 — Attempt 18 reference, minimal fabric-only revision | [attempt-21.md](attempt-21.md) | Generated; soft matte appearance achieved, but exact subject and outfit preservation incomplete |
 | 22 — Concise overhead portrait, ivory lingerie | [attempt-22.md](attempt-22.md) | Failed — image generation blocked by content guardrails; no image returned |
 | 23 — Direct Attempt 18 fabric-only edit | [attempt-23.md](attempt-23.md) | Failed — source image was not attached to the image-editing interface; no edited image produced |
-| 24 — Repeat of approved Attempt 18 bedroom portrait | [attempt-24.md](attempt-24.md) | Pending — fresh generation using Attempt 18's exact authored prompt |
