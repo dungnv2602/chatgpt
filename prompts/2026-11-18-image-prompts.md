@@ -93,4 +93,11 @@
 
 - **Specific test:** Correct the previous execution drift by retaining the exact silk-wrap blouse and omitting invented identity details while changing only the courtyard scene and composition.
 - **Tool-prompt visibility:** The authored prompt above is the archived direction; the image tool may not expose its compiled internal payload.
-- **Outcome:** Pending; inspect immediately after generation.
+- **Actual result:** One fresh image returned.
+- **Generation ID:** `89d960dc-c69e-432a-bc62-0acf2346acd2`.
+- **Conversation artifact:** `a_bright_naturalistic_high_detail_shallow_depth.png` (delivered in this conversation; not committed to GitHub).
+- **Observed match:** A woman and a partially seen man sit in a courtyard; the garden, chairs, child watering plants, and daylight loosely relate to the scene.
+- **Misses:** Maya's locked ivory silk-wrap blouse was replaced by an ivory knit top and light cardigan, with added jewelry and a tote bag. The composition became a close conversational portrait rather than the environmental view of her personal courtyard corner. Her exact canonical face cannot be verified.
+- **Execution note:** The image tool exposed an empty compiled-prompt field. The actual concise direction supplied at generation diverged from the archived authored prompt and explicitly introduced the cardigan, knit top, jewelry, and tote bag. These additions were not authorized and are not canon.
+- **Classification:** Fresh generation, generated but missed defining continuity requirements. Not approved canon.
+- **Learning / stopping decision:** The second attempt again changed Maya's absolute outfit despite a corrected, pre-committed prompt. Stop further near-identical generations in this run. Scene 004's approved illustration remains outstanding; do not use either output as a canonical reference.
