@@ -127,7 +127,7 @@ the skill new and does not, by itself, require another retrieval.
 
 At the beginning of each new ChatGPT conversation/session, after loading the
 foundational session skills, retrieve the current Drawing Skill and its required
-supporting references from the `chatgpt` branch. Keep the verified instructions
+supporting references from the `gpt` branch. Keep the verified instructions
 in working context and apply them to every drawing project throughout that
 conversation. **Do not reread or refetch the full Drawing Skill merely because
 the user switches projects or starts another drawing task within the same
@@ -155,7 +155,7 @@ Separate essential requirements from optional decorative details.
 
 **Mandatory project-continuity check — before drafting any image prompt:**
 
-1. Read `ChatGPT/images/reference-index.md` on branch `chatgpt` and
+1. Read `ChatGPT/images/reference-index.md` on branch `gpt` and
    identify the active reference, its scope, and the approved visual features.
    This is a continuity-information check, not an instruction to attach the
    image to every generation.
@@ -209,7 +209,7 @@ essential to the picture.
 Before every generation or edit attempt:
 1. Follow `ChatGPT/skills/session-archiving/SKILL.md`.
 2. Read `ChatGPT/prompts/successful-image-prompts-index.md`, then the relevant
-   chronological image-prompt log in `ChatGPT/prompts/`.
+   chronological image-prompt log in `prompts/`.
 3. Read `ChatGPT/images/reference-index.md` for canonical continuity
    information and complete the project-continuity check in section A. Use an
    approved prompt as the base; image attachment is optional for fresh
@@ -218,7 +218,7 @@ Before every generation or edit attempt:
 5. Change as little as practical for a controlled revision.
 6. Record the exact authored prompt, operation type, source, mode, test
    objective, pending status, and every reference asset actually attached.
-7. Commit the prompt to branch `chatgpt`.
+7. Commit the prompt to branch `gpt`.
 8. Fetch and verify the committed prompt before calling the image tool.
 
 The authored prompt is not necessarily the tool's compiled prompt. If the tool
@@ -385,7 +385,7 @@ For every image the user uploads as part of the Maya_and_Me drawing workflow:
 1. Inspect the actual image. Do not infer its contents from its filename alone. Identify whether it is a successful output, an inspiration reference, an edit source, or a temporary comparison.
 2. Unless the user explicitly says the upload is temporary or not to be retained, give it a clear, descriptive, stable filename based on the visible subject and its distinguishing composition. For a set, use consistent names and numbered suffixes.
 3. **Renaming changes the filename only. Never convert or alter an uploaded image without explicit user permission.** Preserve its exact original bytes, file format, extension, resolution, dimensions, metadata, and visual content. Do not recompress, resize, crop, rotate, filter, retouch, strip metadata, create derivatives, or make convenience copies.
-4. Perform task-related file creation and editing only inside the assigned `ChatGPT/` workspace. Do not create, edit, convert, stage, or save task-related files outside `ChatGPT/images/`, `ChatGPT/prompts/`, or `ChatGPT/skills/` unless the user explicitly authorizes a specific outside location. This includes temporary files and conversion intermediates.
+4. Perform task-related file creation and editing only inside the assigned repository root workspace. Do not create, edit, convert, stage, or save task-related files outside `images/`, `ChatGPT/prompts/`, or `skills/` unless the user explicitly authorizes a specific outside location. This includes temporary files and conversion intermediates.
 5. Record its exact storage path and file ID, source generation ID when known, original upload name, dimensions, byte size, and checksum where available in `ChatGPT/images/reference-index.md`. State explicitly whether the binary is stored in GitHub, the persistent Files Library, or only the current conversation.
 6. When the image belongs to a successful generation, edit the corresponding successful result entry in `ChatGPT/prompts/YYYY-MM-DD-image-prompts.md` and add a direct relative Markdown link to its reference-index anchor, alongside the descriptive filename and stable asset ID. Do not leave the reference link only in a separate end-of-file note.
 7. In `ChatGPT/prompts/YYYY-MM-DD-conversation-integrity.md`, record the user's upload/approval and the rename/storage action as a chronological tool event. Add direct links to each image's reference-index anchor and to the corresponding successful prompt entry.
