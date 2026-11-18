@@ -26,3 +26,5 @@
 | 19 — Attempt 18 design, Attempt 12 fabric qualities | [attempt-19.md](attempt-19.md) | Failed — image generation blocked by guardrails; no image returned |
 | 20 — Attempt 18 design, soft cotton voile fabric | [attempt-20.md](attempt-20.md) | Failed — image generation blocked by guardrails; no image returned |
 | 21 — Attempt 18 reference, minimal fabric-only revision | [attempt-21.md](attempt-21.md) | Generated; soft matte appearance achieved, but exact subject and outfit preservation incomplete |
+| 22 — Concise overhead portrait, ivory lingerie | [attempt-22.md](attempt-22.md) | Prompt archived and verified; generation pending |
+| 23 — Direct Attempt 18 fabric-only edit | [attempt-23.md](attempt-23.md) | Prompt archived and verified; awaiting Attempt 18 image attachment before editing |
