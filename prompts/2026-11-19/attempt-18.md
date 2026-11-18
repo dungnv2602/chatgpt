@@ -1,7 +1,7 @@
 # Attempt 18 — Attempt 16 overhead bedroom composition, elegant lingerie
 
 - **Date:** 2026-11-19
-- **Status:** Generated successfully; image delivered in conversation.
+- **Status:** Two successful generations; both images delivered in conversation.
 - **Operation:** Fresh generation using Attempt 16's overhead bedroom composition.
 - **Mode:** Realistic.
 - **Base composition:** Attempt 16 — adult woman lying on her back on a bed, viewed from directly overhead, pale bedding, soft daylight, calm expression.
@@ -19,6 +19,8 @@
 > Keep the pose relaxed and non-suggestive, with natural proportions and a composed expression. Photorealistic fine-art photography, soft daylight, no nudity, no transparency, no text, no watermark.
 
 - **Prompt integrity:** The text above is the exact authored prompt prepared for submission. The image tool may compile it internally; hidden compiled wording is not represented as verbatim archive text.
-- **Outcome:** Image generated and delivered. It follows the overhead bedroom composition and ivory satin camisole-and-shorts wardrobe direction.
-- **Generation ID:** `b6079484-c1fc-4850-ac8b-882ffe2dab05`
-- **Image file:** `/mnt/data/a_high_resolution_intimate_indoor_bedroom_portrai.png`
+- **Outcome:** Two successful generations using this same authored prompt. The second image is a fresh generation, not an edit; no user-uploaded source image was used. Both outputs follow the overhead bedroom composition and ivory satin camisole-and-shorts wardrobe direction.
+- **Generation 1 ID:** `b6079484-c1fc-4850-ac8b-882ffe2dab05`
+- **Generation 1 image file:** `/mnt/data/a_high_resolution_intimate_indoor_bedroom_portrai.png`
+- **Generation 2 ID:** `69493f6d-b510-43c1-a4f1-9e6ab4f1e047`
+- **Generation 2 image file:** `/mnt/data/a_high_resolution_intimate_overhead_straight_on.png`
