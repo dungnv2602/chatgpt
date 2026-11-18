@@ -27,4 +27,7 @@
 
 - **Tool-prompt visibility:** This is the exact authored prompt prepared for the attempt. The image tool's internal compiled prompt may not be exposed.
 - **Approval gate:** Do not generate until the user has reviewed and approved this archived prompt.
-- **Outcome:** Pending; no generation call has been made.
+- **Approval:** User approved Attempt 08.
+- **Generation outcome:** The image-generation tool declined the request with a content-restriction notice; no image was returned.
+- **Outcome classification:** Rejected; no image returned. The notice did not identify a specific phrase or element as the cause.
+- **Next-step lesson:** Attempt 09 will use neutral, non-suggestive portrait language, emphasizing the calm expression, natural daylight, and fabric texture while preserving the user's approved outfit and composition.
