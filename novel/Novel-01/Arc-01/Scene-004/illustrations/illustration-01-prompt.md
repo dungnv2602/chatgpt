@@ -3,12 +3,10 @@
 **Novel:** *The Weather Between Us*  
 **Arc:** ARC-001 — *A Conversation in the Rain*  
 **Scene:** SCN-004 — *What People Leave Behind*  
-**Illustration ID:** ILL-001  
+**Illustration ID:** ILL-001 (not yet successfully generated)  
 **Date:** 2026-11-18  
-**Status before next call:** Pending  
-**Operation:** Fresh text-to-image generation  
 **Mode:** Realistic — natural cinematic photography  
-**Source/reference:** No image attached. Fresh generation based on the written canonical specification in [the visual reference index](../../../../../images/reference-index.md). Not an edit; not reference-image-guided.
+**Source/reference:** No image attached. Fresh generations were based on the written canonical specification in [the visual reference index](../../../../../images/reference-index.md); neither was an edit or image-reference-guided.
 
 ## Selected scene moment
 
@@ -21,9 +19,12 @@ Maya shares the quiet courtyard corner she personally likes for its late-afterno
 - The narrator's appearance is unestablished. Show him from a three-quarter rear view without inventing distinctive facial features, hairstyle, clothing details, or accessories.
 - Keep the city and country unspecified.
 
-## Attempt 02 — Outcome
+## Attempt 02 — Result
 
-A fresh image was returned (generation ID `c0ba5ae6-3082-44e8-9b90-3e6631c414a3`; conversation artifact `a_warm_sunlit_outdoor_courtyard_garden_scene_in_a.png`). It broadly captured the courtyard setting but introduced an unapproved ethnicity description and changed Maya's exact silk-wrap blouse into a wrap-style dress. Exact facial identity was not verifiable. **Generated but missed defining continuity requirements; not approved canon.**
+- **Generation ID:** `c0ba5ae6-3082-44e8-9b90-3e6631c414a3`.
+- **Conversation artifact:** `a_warm_sunlit_outdoor_courtyard_garden_scene_in_a.png`.
+- The courtyard atmosphere broadly fit, but the generation introduced an unapproved ethnicity description and changed Maya's exact silk-wrap blouse into a wrap-style dress. Exact facial identity was not verifiable.
+- **Classification:** Generated but missed defining continuity requirements; not approved canon.
 
 ## Attempt 03 — Exact authored prompt
 
@@ -37,10 +38,19 @@ The courtyard is a believable completed residential courtyard, not a grand garde
 
 Use a medium-wide environmental two-shot at natural eye level, with both figures and the quiet corner clearly visible. Let the courtyard and the shared pause carry the scene rather than a posed romantic gesture. Natural anatomy, realistic skin, hair, and silk texture, physically plausible light and shadows, restrained natural color, candid fine-art photographic realism, subtle depth of field. One image only; no collage, panels, captions, decorative romantic symbols, or extra foreground people.
 
+## Attempt 03 — Result
+
+- **Generation ID:** `89d960dc-c69e-432a-bc62-0acf2346acd2`.
+- **Conversation artifact:** `a_bright_naturalistic_high_detail_shallow_depth.png`.
+- The courtyard and background activity loosely relate to the scene, but Maya's exact ivory silk-wrap blouse was replaced by an ivory knit top and light cardigan; jewelry and a tote bag were also added. The composition became a close conversational portrait rather than the environmental view of her personal courtyard corner. Her exact canonical face cannot be verified.
+- **Classification:** Generated but missed defining continuity requirements; not approved canon.
+- **Stopping decision:** The second attempt again changed Maya's absolute outfit despite a corrected, pre-committed prompt. No further near-identical generation is being made in this run.
+
 ## Chronological prompt record
 
-[Attempt 03 — The corner Maya wanted to share, exact wardrobe continuity](../../../../../prompts/2026-11-18-image-prompts.md#attempt-03--the-corner-maya-wanted-to-share-exact-wardrobe-continuity)
+- [Attempt 02 — The corner Maya wanted to share](../../../../../prompts/2026-11-18-image-prompts.md#attempt-02--the-corner-maya-wanted-to-share)
+- [Attempt 03 — The corner Maya wanted to share, exact wardrobe continuity](../../../../../prompts/2026-11-18-image-prompts.md#attempt-03--the-corner-maya-wanted-to-share-exact-wardrobe-continuity)
 
-## Result
+## Overall status
 
-Pending generation and visual inspection. The image tool's compiled internal prompt may not be exposed; this file records the exact authored direction, not a claim about hidden tool wording.
+**Illustration outstanding.** Neither generated image is approved canon or a valid reference for Maya's face or wardrobe. The tool's compiled internal prompt was not exposed; the archived text is the exact authored direction, not a claim about hidden tool wording.
