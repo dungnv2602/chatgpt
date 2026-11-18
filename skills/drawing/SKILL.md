@@ -155,7 +155,7 @@ Separate essential requirements from optional decorative details.
 
 **Mandatory project-continuity check — before drafting any image prompt:**
 
-1. Read `ChatGPT/images/reference-index.md` on branch `gpt` and
+1. Read `images/reference-index.md` on branch `gpt` and
    identify the active reference, its scope, and the approved visual features.
    This is a continuity-information check, not an instruction to attach the
    image to every generation.
@@ -207,10 +207,10 @@ essential to the picture.
 
 ### C. Prepare and archive the prompt
 Before every generation or edit attempt:
-1. Follow `ChatGPT/skills/session-archiving/SKILL.md`.
-2. Read `ChatGPT/prompts/successful-image-prompts-index.md`, then the relevant
+1. Follow `skills/session-archiving/SKILL.md`.
+2. Read `prompts/successful-image-prompts-index.md`, then the relevant
    chronological image-prompt log in `prompts/`.
-3. Read `ChatGPT/images/reference-index.md` for canonical continuity
+3. Read `images/reference-index.md` for canonical continuity
    information and complete the project-continuity check in section A. Use an
    approved prompt as the base; image attachment is optional for fresh
    text-to-image generation.
@@ -280,7 +280,7 @@ interpretation before redesigning the brief.
 Before rewriting a prompt after a refusal, repeated failure, or user correction:
 
 1. **Return to the evidence.** Consult
-   `ChatGPT/prompts/successful-image-prompts-index.md` first, then inspect the
+   `prompts/successful-image-prompts-index.md` first, then inspect the
    full relevant entries in the chronological prompt history and the actual
    approved image assets. Do not rely on memory, a short summary, or the most
    recent failed prompt alone.
@@ -354,11 +354,11 @@ The November 13, 2026 silk-wrap sequence is a project-specific training example:
 - The user challenged the assistant's interpretation and directed it to
   examine the successful historical work.
 - Attempt 33 in
-  `ChatGPT/prompts/2026-11-12-image-prompts.md` had already produced two
+  `prompts/2026-11-12-image-prompts.md` had already produced two
   user-approved Realistic portraits with the intended ivory silk-wrap styling,
   open but covered neckline, warm lighting, and affectionate gaze.
 - Attempt 04 in
-  `ChatGPT/prompts/2026-11-13-image-prompts.md` restored Attempt 33's
+  `prompts/2026-11-13-image-prompts.md` restored Attempt 33's
   authored prompt verbatim and used a fresh generation without an attached
   reference. It recovered the broad visual direction, but the generated silk
   fell away from the bust instead of overlapping across it. The output
@@ -385,22 +385,22 @@ For every image the user uploads as part of the Maya_and_Me drawing workflow:
 1. Inspect the actual image. Do not infer its contents from its filename alone. Identify whether it is a successful output, an inspiration reference, an edit source, or a temporary comparison.
 2. Unless the user explicitly says the upload is temporary or not to be retained, give it a clear, descriptive, stable filename based on the visible subject and its distinguishing composition. For a set, use consistent names and numbered suffixes.
 3. **Renaming changes the filename only. Never convert or alter an uploaded image without explicit user permission.** Preserve its exact original bytes, file format, extension, resolution, dimensions, metadata, and visual content. Do not recompress, resize, crop, rotate, filter, retouch, strip metadata, create derivatives, or make convenience copies.
-4. Perform task-related file creation and editing only inside the assigned repository root workspace. Do not create, edit, convert, stage, or save task-related files outside `images/`, `ChatGPT/prompts/`, or `skills/` unless the user explicitly authorizes a specific outside location. This includes temporary files and conversion intermediates.
-5. Record its exact storage path and file ID, source generation ID when known, original upload name, dimensions, byte size, and checksum where available in `ChatGPT/images/reference-index.md`. State explicitly whether the binary is stored in GitHub, the persistent Files Library, or only the current conversation.
-6. When the image belongs to a successful generation, edit the corresponding successful result entry in `ChatGPT/prompts/YYYY-MM-DD-image-prompts.md` and add a direct relative Markdown link to its reference-index anchor, alongside the descriptive filename and stable asset ID. Do not leave the reference link only in a separate end-of-file note.
-7. In `ChatGPT/prompts/YYYY-MM-DD-conversation-integrity.md`, record the user's upload/approval and the rename/storage action as a chronological tool event. Add direct links to each image's reference-index anchor and to the corresponding successful prompt entry.
+4. Perform task-related file creation and editing only inside the assigned repository root workspace. Do not create, edit, convert, stage, or save task-related files outside `images/`, `prompts/`, or `skills/` unless the user explicitly authorizes a specific outside location. This includes temporary files and conversion intermediates.
+5. Record its exact storage path and file ID, source generation ID when known, original upload name, dimensions, byte size, and checksum where available in `images/reference-index.md`. State explicitly whether the binary is stored in GitHub, the persistent Files Library, or only the current conversation.
+6. When the image belongs to a successful generation, edit the corresponding successful result entry in `prompts/YYYY-MM-DD-image-prompts.md` and add a direct relative Markdown link to its reference-index anchor, alongside the descriptive filename and stable asset ID. Do not leave the reference link only in a separate end-of-file note.
+7. In `prompts/YYYY-MM-DD-conversation-integrity.md`, record the user's upload/approval and the rename/storage action as a chronological tool event. Add direct links to each image's reference-index anchor and to the corresponding successful prompt entry.
 8. Verify the renamed asset through Files metadata and read back every updated GitHub Markdown file. Never invent a Library URL or claim that a Markdown index means the binary is committed to Git.
 9. If the upload is an edit source rather than a keeper/inspiration, preserve that role explicitly. An uploaded image is not automatically proof that a later generation edited it; source linkage must still be verified separately.
 
 These steps are part of the normal drawing workflow, not optional cleanup after the session.
 
-**GitHub rename rule:** If the uploaded image already exists as a binary in `ChatGPT/images/` under an opaque filename, rename that existing Git tree path using the same blob SHA and remove the old path in the same commit. Verify that the old name is absent, the descriptive name exists, and the blob SHA and byte size are identical. Do not re-upload or re-encode the image merely to rename it.
+**GitHub rename rule:** If the uploaded image already exists as a binary in `images/` under an opaque filename, rename that existing Git tree path using the same blob SHA and remove the old path in the same commit. Verify that the old name is absent, the descriptive name exists, and the blob SHA and byte size are identical. Do not re-upload or re-encode the image merely to rename it.
 
 ### E3. Reuse user-approved visual references
 
-Before writing a new prompt, inspect `ChatGPT/images/reference-index.md` and the relevant chronological prompt history. A user-approved successful image is a stronger starting point than speculative rewording.
+Before writing a new prompt, inspect `images/reference-index.md` and the relevant chronological prompt history. A user-approved successful image is a stronger starting point than speculative rewording.
 
-For the realistic silk-wrap portrait direction, attempt 33 is the successful authored-prompt base. Its two approved reference images are indexed at `ChatGPT/images/reference-index.md`:
+For the realistic silk-wrap portrait direction, attempt 33 is the successful authored-prompt base. Its two approved reference images are indexed at `images/reference-index.md`:
 - `realistic-silk-wrap-portrait-soft-gaze-01.png`: slightly wider portrait and softer framing.
 - `realistic-silk-wrap-portrait-close-framing-02.png`: closer crop and more pronounced but still covered neckline.
 
@@ -416,7 +416,7 @@ When the user approves generated images for future inspiration, preserve their d
 
 ### E4. Consult and maintain the successful-prompt index
 
-Before drafting a new image prompt, consult `ChatGPT/prompts/successful-image-prompts-index.md` first, then the full chronological image log. Reuse the strongest relevant successful prompt and its linked image assets as the starting point; do not elevate partial, rejected, or missed-target results into successful references.
+Before drafting a new image prompt, consult `prompts/successful-image-prompts-index.md` first, then the full chronological image log. Reuse the strongest relevant successful prompt and its linked image assets as the starting point; do not elevate partial, rejected, or missed-target results into successful references.
 
 After an attempt is finalized:
 - If it is a genuine successful match, add it to the separate success-only index with a direct link to its prompt entry and the resulting image(s).
@@ -490,8 +490,8 @@ helpful. Be candid about partial matches, failed edits, and source-reference
 problems. Never claim repository storage of an image binary unless it was
 actually uploaded and verified.
 
-All repository work must use branch `chatgpt` and remain strictly inside
-`ChatGPT/`.
+All repository work must use branch `gpt` and remain strictly inside
+``.
 
 ## Supporting references
 - `references/style-guide.md` — detailed mode definitions and visual cues.
@@ -501,10 +501,10 @@ All repository work must use branch `chatgpt` and remain strictly inside
  
 ## 8. WebP delivery copies and master-image preservation
 
-The original PNG/JPEG in `ChatGPT/images/` is the master image. A WebP version is a delivery derivative, never a replacement.
+The original PNG/JPEG in `images/` is the master image. A WebP version is a delivery derivative, never a replacement.
 
 - Keep the source image byte-for-byte unchanged and keep its original extension.
-- Generated WebP companions live only in `ChatGPT/images/webp/`, with the source's relative path and full filename followed by `.webp`.
+- Generated WebP companions live only in `images/webp/`, with the source's relative path and full filename followed by `.webp`.
 - PNG masters use exact lossless conversion; JPEG masters use the documented high-quality lossy profile. Do not describe JPEG-to-WebP as lossless.
 - Keep every generated derivative even if it is larger than its source. The conversion report records the actual size difference; visual inspection by the user determines whether the derivative is suitable.
 - ICC color profiles are copied. EXIF/XMP metadata are not copied by the current workflow. Original metadata remains in the untouched master.
