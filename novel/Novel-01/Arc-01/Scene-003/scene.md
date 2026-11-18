@@ -1,7 +1,7 @@
 ---
 format: scene
 version: 1.0
-status: revised
+status: complete
 ---
 
 # Scene 003 — The Shape of a Pause
@@ -14,7 +14,7 @@ status: revised
 - **Date Created:** 2026-11-18
 - **Location:** A small public garden and surrounding streets; exact city and location intentionally unspecified.
 - **Time / Time Period:** The weekend following Scene 002; late morning.
-- **Status:** Revised
+- **Status:** Complete
 
 ## 2. Characters
 - **Characters Present:** Maya; the first-person narrator.
