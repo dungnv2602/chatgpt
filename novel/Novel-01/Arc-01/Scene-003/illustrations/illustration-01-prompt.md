@@ -13,7 +13,6 @@ status: historical-record
 - **Generation ID:** `51fc9618-eae3-4c86-a1ec-e39eede6cabc`
 - **Operation:** Fresh text-to-image generation
 - **Outcome:** Provisional partial visual match; not approved canon.
-- **Full generation log:** [Image prompt archive — Attempt 01](../../../../../prompts/2026-11-18-image-prompts.md#attempt-01--the-quieter-path)
 
 ## 2. Intended Authored Prompt
 
@@ -42,6 +41,13 @@ The generation record states that the concise direction actually supplied to the
 - Do not treat the image or the divergent prompt wording as canon.
 - Any replacement must preserve Maya's locked face and exact outfit. Adjust scene composition, environment, lighting, or pose instead.
 
-## 5. Source of Truth
+## 5. Chronological Attempt Record
 
-This file keeps the prompt history beside the illustration for convenient navigation. The dated archive remains the broader chronological record of the generation attempt and its execution notes.
+- **Attempt 01:** Fresh text-to-image generation; Realistic mode.
+- **Generation ID:** `51fc9618-eae3-4c86-a1ec-e39eede6cabc`.
+- **Result:** Partial garden-atmosphere match; not approved canon.
+- **Actual direction recorded as submitted:** “In a softly lit, cinematic garden, a young East Asian woman in an elegant ivory wrap dress strolls along a winding, tree-lined path, smiling as she engages with a man beside her. Framed by lush greenery, dappled sunlight, and a low stone wall, the scene feels calm, intimate, and quietly romantic.”
+- **Execution deviation:** The submitted direction diverged from the authored prompt, introduced unapproved ethnicity wording, changed the locked garment, and omitted the fork composition. The tool's compiled prompt field was empty; this is the recorded concise direction, not a claim about hidden internal payload.
+- **Continuity assessment:** The image does not establish Maya's exact face or outfit and must not be treated as canon.
+
+This scene-local file is the complete prompt and attempt history for this illustration. No root-level prompt archive is used.
