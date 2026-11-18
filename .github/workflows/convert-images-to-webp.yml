@@ -3,31 +3,35 @@ name: Create WebP Image Derivatives
 on:
   push:
     branches:
-      - chatgpt
+      - gpt
     paths:
-      - 'ChatGPT/images/**/*.png'
-      - 'ChatGPT/images/**/*.jpg'
-      - 'ChatGPT/images/**/*.jpeg'
+      - 'images/**/*.png'
+      - 'images/**/*.jpg'
+      - 'images/**/*.jpeg'
+      - 'images/**/*.PNG'
+      - 'images/**/*.JPG'
+      - 'images/**/*.JPEG'
       - '.github/workflows/convert-images-to-webp.yml'
   workflow_dispatch: {}
 
 concurrency:
   group: webp-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: write
 
 jobs:
   convert-webp:
-    if: github.ref == 'refs/heads/chatgpt'
+    if: github.ref == 'refs/heads/gpt'
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
-      - name: Check out chatgpt
+      - name: Check out gpt
         uses: actions/checkout@v7.0.1
         with:
-          ref: chatgpt
+          ref: gpt
           fetch-depth: 0
           persist-credentials: true
 
@@ -49,7 +53,7 @@ jobs:
           import sys
           from pathlib import Path
 
-          source_root = Path("ChatGPT/images")
+          source_root = Path("images")
           output_root = source_root / "webp"
           report_path = output_root / "conversion-report.csv"
           supported = {".png", ".jpg", ".jpeg"}
@@ -173,6 +177,7 @@ jobs:
                   )
               except Exception as error:
                   temporary.unlink(missing_ok=True)
+                  target.unlink(missing_ok=True)
                   conversion_failed = True
                   rows.append({
                       "source_path": source.as_posix(),
@@ -215,7 +220,7 @@ jobs:
           PY
 
       - name: Commit and safely publish WebP derivatives
-        if: always() && steps.convert.outcome != ''
+        if: always() && (steps.convert.outcome == 'success' || steps.convert.outcome == 'failure')
         shell: bash
         run: |
           set -euo pipefail
@@ -224,7 +229,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           # Stage only generated derivatives and the conversion report.
-          git add -- ChatGPT/images/webp/
+          git add -- images/webp/
           if git diff --cached --quiet; then
             echo "No WebP derivatives or report changes to publish."
             exit 0
@@ -233,19 +238,19 @@ jobs:
           git commit -m "chore(images): refresh WebP derivatives and size report"
 
           # Never force-push. Rebase our generated-only commit onto the latest
-          # chatgpt branch, then retry if another writer updates it during push.
+          # gpt branch, then retry if another writer updates it during push.
           max_attempts=5
           for attempt in $(seq 1 "$max_attempts"); do
             echo "Publish attempt $attempt/$max_attempts"
-            git fetch origin chatgpt
+            git fetch origin gpt
 
-            if ! git rebase origin/chatgpt; then
+            if ! git rebase origin/gpt; then
               git rebase --abort || true
               echo "::error::Could not rebase generated WebP files cleanly. No remote changes were overwritten."
               exit 1
             fi
 
-            if git push origin HEAD:refs/heads/chatgpt; then
+            if git push origin HEAD:refs/heads/gpt; then
               echo "WebP derivatives and report published successfully."
               exit 0
             fi
@@ -253,9 +258,9 @@ jobs:
             # A concurrent push may have advanced the branch between fetch
             # and push. Retry only when the remote is no longer an ancestor
             # of our rebased commit; otherwise surface the real push failure.
-            git fetch origin chatgpt
-            if git merge-base --is-ancestor origin/chatgpt HEAD; then
-              echo "::error::Push failed although origin/chatgpt did not advance. Check token permissions or branch protection."
+            git fetch origin gpt
+            if git merge-base --is-ancestor origin/gpt HEAD; then
+              echo "::error::Push failed although origin/gpt did not advance. Check token permissions or branch protection."
               exit 1
             fi
 
