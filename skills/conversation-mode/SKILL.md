@@ -61,9 +61,9 @@ For this project, the strict repository workspace boundary remains repository ro
 
 Example:
 
-```text
+`approved project directories``text
 0123456789abcdef0123456789abcdef01234567
-```
+`approved project directories``
 
 Do not add a greeting, summary, heading, Markdown link, emoji, or explanation to that response. The commit hash is the confirmation.
 
@@ -100,7 +100,7 @@ When the user switches modes:
 
 - The session-archiving skill continues to govern the three-file archive, chronological image-prompt history, and prompt-before-generation workflow.
 - Other task-specific skills continue to govern their respective tasks.
-- The ChatGPT-only workspace rule always applies, regardless of conversation mode.
+- The approved project-directory boundary always applies, regardless of conversation mode.
 - The only authorized project working branch is `gpt`. Perform all future repository reads, writes, and commits on this branch; do not resume the former `artwork/portrait-attempt-2026-11-10` branch or modify `main` unless the user explicitly authorizes it.
 - If skill instructions conflict, follow the higher-priority instruction and be honest about any limitation.
 
@@ -115,7 +115,7 @@ Whenever the user asks to read, inspect, or follow a project skill:
 1. Fetch the requested skill from the GitHub `gpt` branch before relying on
    any Library copy.
 2. If the skill refers to supporting files, resolve and read those files from
-   the same GitHub branch, staying within the authorized `` workspace.
+   the same GitHub branch, staying within the approved project directories.
 3. Treat the ChatGPT Library as a mirror for convenient access, never as an
    independent authority.
 4. If GitHub cannot be accessed or a file cannot be verified, disclose that
@@ -123,7 +123,7 @@ Whenever the user asks to read, inspect, or follow a project skill:
 
 Whenever a skill is created or changed in GitHub:
 
-1. Commit the authoritative change to the `chatgpt` branch.
+1. Commit the authoritative change to the `gpt` branch.
 2. Fetch the committed path again and verify its contents.
 3. Synchronize the corresponding Library copy from that verified GitHub
    version. Create the Library copy if it does not exist.
