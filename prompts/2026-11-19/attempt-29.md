@@ -1,7 +1,7 @@
 # Attempt 29 — Attempt 27, standing beside the bed, long hair, no glasses
 
 - **Date:** 2026-11-19
-- **Status:** Failed — the image tool returned a fresh generation rather than an edit of Attempt 27; source linkage is absent.
+- **Status:** Successful — accepted by the user as the desired result.
 - **Operation:** Edit the exact Attempt 27 image; do not create a fresh image.
 - **Mode:** Photorealistic; preserve Attempt 27's photographic rendering.
 - **Source image:** Generation ID `44e7770f-fa20-4abf-8ef2-c6d7af28363a`; conversation asset ID `file_0000000068808207b7beedf2334f567f`.
@@ -30,5 +30,5 @@
 > This is a localized edit of the supplied source image. The only intended changes are her position (standing on the floor beside the bed), her hair length, and removal of her glasses. Keep everything else unchanged to the greatest extent possible.
 
 - **Test objective:** Verify that she is clearly standing on the floor beside the same bed, has long dark hair and no glasses, while her face, outfit, and bedroom remain faithful to Attempt 27.
-- **Generation/edit result:** User approved the prompt and an image tool call was made. The returned output is generation ID `2c3427c6-6702-48dd-a7e1-bbaa054f1efe`, but metadata reports `edit_op: null` and `parent_gen_id: null`. This is a fresh generation, not an edit of Attempt 27; source-image continuity is not established. Do not count it as a successful Attempt 29 edit.
+- **Generation/edit result:** User approved the prompt and an image tool call was made. The returned output is generation ID `2c3427c6-6702-48dd-a7e1-bbaa054f1efe`, but metadata reports `edit_op: null` and `parent_gen_id: null`. The user explicitly accepted this output as successful for Attempt 29. Although the tool metadata contains no parent-image linkage, the user has designated the returned result as the successful outcome.
 - **Returned asset:** `file_0000000022408211abd38266b738f9f0` (delivered in conversation).
