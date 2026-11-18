@@ -55,7 +55,7 @@ status: revised
 - Connection to the next scene: Maya's courtyard provides a possible shared destination.
 
 ## 9. Illustrations
-- Scene illustration: A single standalone image of Maya and the narrator pausing at the garden path fork, with the quieter tree-lined route ahead. See the scene's illustration note when generated and documented.
+- [Illustration 01 — The Garden Path](illustrations/illustration-01.md) — provisional partial visual match; not approved canon. Prompt and outcome: [Attempt 01](../../../../prompts/2026-11-18-image-prompts.md#attempt-01--the-quieter-path).
 
 ## 10. Author's Notes
 - Creative decisions: Balance the characters' small acts of self-disclosure. Keep Maya's professional observations practical and specific rather than turning every detail into a metaphor.
