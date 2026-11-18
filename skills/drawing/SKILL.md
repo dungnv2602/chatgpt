@@ -385,7 +385,7 @@ For every image the user uploads as part of the Maya_and_Me drawing workflow:
 1. Inspect the actual image. Do not infer its contents from its filename alone. Identify whether it is a successful output, an inspiration reference, an edit source, or a temporary comparison.
 2. Unless the user explicitly says the upload is temporary or not to be retained, give it a clear, descriptive, stable filename based on the visible subject and its distinguishing composition. For a set, use consistent names and numbered suffixes.
 3. **Renaming changes the filename only. Never convert or alter an uploaded image without explicit user permission.** Preserve its exact original bytes, file format, extension, resolution, dimensions, metadata, and visual content. Do not recompress, resize, crop, rotate, filter, retouch, strip metadata, create derivatives, or make convenience copies.
-4. Perform task-related file creation and editing only inside the assigned repository root workspace. Do not create, edit, convert, stage, or save task-related files outside `images/`, `prompts/`, or `skills/` unless the user explicitly authorizes a specific outside location. This includes temporary files and conversion intermediates.
+4. Perform task-related file creation and editing only inside the assigned repository root workspace. Do not create, edit, convert, stage, or save task-related files outside `images/`, `master/`, `novel/`, `prompts/`, or `skills/` unless the user explicitly authorizes a specific outside location. This includes temporary files and conversion intermediates.
 5. Record its exact storage path and file ID, source generation ID when known, original upload name, dimensions, byte size, and checksum where available in `images/reference-index.md`. State explicitly whether the binary is stored in GitHub, the persistent Files Library, or only the current conversation.
 6. When the image belongs to a successful generation, edit the corresponding successful result entry in `prompts/YYYY-MM-DD-image-prompts.md` and add a direct relative Markdown link to its reference-index anchor, alongside the descriptive filename and stable asset ID. Do not leave the reference link only in a separate end-of-file note.
 7. In `prompts/YYYY-MM-DD-conversation-integrity.md`, record the user's upload/approval and the rename/storage action as a chronological tool event. Add direct links to each image's reference-index anchor and to the corresponding successful prompt entry.
@@ -491,7 +491,7 @@ problems. Never claim repository storage of an image binary unless it was
 actually uploaded and verified.
 
 All repository work must use branch `gpt` and remain strictly inside
-``.
+`approved project directories`.
 
 ## Supporting references
 - `references/style-guide.md` — detailed mode definitions and visual cues.
