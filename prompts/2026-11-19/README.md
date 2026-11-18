@@ -43,4 +43,4 @@
 | 36 — Attempt 31, subtle mature facial refinement | [attempt-36.md](attempt-36.md) | Accepted by the user; fresh-generation metadata, not verified as localized edit |
 | 37 — Attempt 36, more mature and daring facial expression | [attempt-37.md](attempt-37.md) | Superseded before generation by Attempt 38 after user specified an age target of approximately 30 |
 | 38 — Attempt 36, age-30 mature and daring facial refinement | [attempt-38.md](attempt-38.md) | Rejected by image safeguards; no image returned |
-| 39 — Attempt 36, minimal age-30 facial refinement | [attempt-39.md](attempt-39.md) | Recovery prompt; archived and verified; generation pending |
+| 39 — Attempt 36, minimal age-30 facial refinement | [attempt-39.md](attempt-39.md) | Failed — two safeguard refusals; no image returned; further near-identical retries stopped |
