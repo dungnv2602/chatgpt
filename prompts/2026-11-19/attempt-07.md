@@ -28,3 +28,12 @@
 - **Tool-prompt visibility:** This is the exact authored prompt prepared for the attempt. The image tool's internal compiled prompt may not be exposed.
 - **Approval gate:** Do not generate until the user has reviewed and approved this archived prompt.
 - **Outcome:** Pending; no generation call has been made.
+
+
+## Approval and generation outcome
+
+- **Approval:** User explicitly approved Attempt 07 on 2026-11-19.
+- **Generation result:** Image generated and delivered in the conversation.
+- **Generation ID:** `ef3d87f6-5aa1-40d2-8472-65e599fd034b`
+- **Outcome assessment:** The result is a photorealistic bedroom portrait of an adult Asian woman reclining on white bedding in an ivory wrap garment. The fabric appears fluid and soft, with visible folds and a subtle sheen. However, the composition differs from the Attempt 06 baseline: the generated woman is reclining on her side rather than lying flat on her back, and the camera is not directly overhead. The outfit's neckline and styling also appear more open than the written preservation requirements. Therefore, the fabric-softness objective was partly achieved, but pose/camera and strict outfit preservation were not fully met.
+- **Reference limitation:** No reference image was supplied to the image-generation call, so exact identity and direct visual matching to Attempt 06 were not established.
