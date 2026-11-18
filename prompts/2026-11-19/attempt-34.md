@@ -1,7 +1,7 @@
 # Attempt 34 — Re-execution of Attempt 33, naturally separated seated knees
 
 - **Date:** 2026-11-19
-- **Status:** Approved by the user; archived and verified; generation pending.
+- **Status:** Rejected; generic image-safeguard refusal; no image returned.
 - **Operation:** Intended localized edit of a reference image.
 - **Mode:** Realistic, following the accepted Attempt 31 photographic appearance.
 - **Source:** Accepted Attempt 31 output; generation ID `84064782-3e24-4a0e-a527-5cb790a24df0`; asset ID `file_00000000bfbc82118e1007df88821333`.
