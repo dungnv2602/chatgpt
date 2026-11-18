@@ -1,49 +1,31 @@
-# Attempt 26 — Mature, refined facial revision of Attempt 25
+# Attempt 26 — Text-based recreation of Attempt 25 with a mature facial design
 
 - **Date:** 2026-11-19
-- **Status before call:** Approved prompt; pending generation.
-- **Operation:** Fresh generation using Attempt 25 as the visual baseline. This is not a verified source-image edit unless the Attempt 25 image is actually attached to the generation call.
-- **Base:** [Attempt 25 — Final source-linked painterly edit call](../2026-11-12-image-prompts.md#25--final-source-linked-painterly-edit-call).
-- **Source image:** Attempt 25 image tool ID `a3181758-ab08-46fe-b32f-77222c41c736`. The archived artifact was `/mnt/data/a_cozy_intimate_indoor_portrait_scene_a_young_ad.png`. Attach this exact image if the operation is intended to be an edit; otherwise classify the operation as fresh generation.
-- **Specific change:** Refine only the woman's face to look more mature, naturally beautiful, and refined.
-- **Locked elements:** Her short dark chin-length bob, black-rimmed glasses, outfit and garment construction; the man's face, hair, glasses, and clothing; pose, physical contact, hands, room, lighting, framing, and composition.
-- **Tool-prompt visibility:** The text below is the exact authored prompt. The image tool may not expose its internal compiled payload.
+- **Status:** Approved prompt; pending generation.
+- **Operation:** Fresh text-to-image generation. No image or reference image is attached.
+- **Textual base:** [Attempt 25 — Final source-linked painterly edit call](../2026-11-12-image-prompts.md#25--final-source-linked-painterly-edit-call). Reuses its scene, character, clothing, pose, hand, environment, and style directions, rewritten as a self-contained generation prompt because no source image is being supplied.
+- **Specific refinement:** Give the woman a more mature, naturally beautiful, elegant adult face, approximately in her early thirties.
+- **Important limitation:** With no source image, exact pixel-level preservation is not possible. The prompt directs the model to recreate the described composition and details as closely as possible.
+- **Tool-prompt visibility:** The text below is the exact authored direction. The image tool may not expose its internal compiled payload.
 
 ## Exact authored prompt
 
-> Use Attempt 25 as the visual and compositional baseline.
+> Create a tender, quiet, fully clothed scene in a cozy bedroom, rendered as a softly hand-painted digital illustration with delicate visible brush texture, warm painterly shading, and refined natural forms. The image should feel like a polished painterly storybook illustration, not a photograph or photorealistic image.
 >
-> Change only the woman's face. Give her a more mature, naturally beautiful and refined adult appearance, approximately in her early thirties.
+> Show an adult couple in a calm, affectionate moment. The woman is seated upright on the bed. She has a short, dark, chin-length bob and wears black-rimmed glasses. Give her a mature, naturally beautiful, elegant face, approximately in her early thirties. Her beauty should feel sophisticated and feminine rather than youthful or doll-like: balanced facial proportions, gently defined cheekbones, a refined jawline, expressive eyes, a naturally elegant nose, and well-shaped lips. Keep her expression gentle, composed, and natural.
 >
-> Her facial beauty should feel elegant and sophisticated rather than youthful or doll-like:
-> - Beautifully balanced facial proportions.
-> - Gently defined cheekbones and a refined jawline.
-> - Expressive, captivating eyes.
-> - A naturally elegant nose and well-shaped lips.
-> - Subtle, graceful facial definition.
-> - A mature, feminine, naturally beautiful appearance.
+> The man is lying on his side, resting his head against the woman's upper shoulder/chest. He wears black-rimmed glasses and a plain dark navy polo shirt without a logo. Preserve the quiet physical closeness and the clear arrangement of their bodies: she remains seated upright while he rests on his side against her.
 >
-> Keep her established short dark chin-length bob and black-rimmed glasses unchanged.
+> The woman wears a cream knit cardigan over a modest light top. Preserve this outfit exactly in concept, including its colors, modest styling, knit texture, and garment construction. Do not redesign, replace, or accessorize it. Keep the man's plain dark navy polo unchanged in design and color.
 >
-> PRESERVE EVERYTHING ELSE EXACTLY:
-> - Her existing outfit, colors, fabric and garment construction.
-> - Her body proportions and posture.
-> - The man's face, hairstyle, glasses and clothing.
-> - Their original positions, pose and physical contact.
-> - The precise hand placement.
-> - Bedroom furniture, bedding, flowers and other objects.
-> - Camera angle, framing, lighting and composition.
+> The woman's left hand gently supports the man's hair. Their free hands rest together on her lap in a natural, clearly readable layered arrangement. Keep the hands anatomically plausible, with natural wrists and distinct fingers; do not fuse, duplicate, or distort them.
 >
-> Maintain Vintage Mode — Painterly Storybook, with delicate brush texture, warm painterly shading and refined natural forms.
+> Recreate the cozy bedroom setting: soft bedding, an upholstered headboard, a warm bedside lamp, pink flowers, and books. Use warm, gentle indoor lighting and a calm intimate atmosphere. Keep the camera at a natural angle and frame both people and their important points of contact clearly.
 >
-> The woman's facial appearance is the ONLY intended modification.
+> Preserve the described character styling, clothing, body positions, physical contact, hand arrangement, bedroom objects, warm lighting, and overall composition as closely as possible. The requested facial refinement applies to the woman's face; do not use it as a reason to redesign her hair, glasses, outfit, or the rest of the scene.
 >
-> Do not redesign the outfit.
-> Do not change the hairstyle.
-> Do not alter the man's appearance.
-> Do not introduce new accessories or decorative details.
-> Do not reinterpret or redesign the scene.
+> Do not reverse the resting roles. Do not make the woman lie down or make the man sit upright. Do not change the cream cardigan, light top, or navy polo. Do not remove either person's glasses. Do not change the woman's short dark bob. Do not add logos, new accessories, or decorative objects. Do not turn the image photorealistic.
 
-- **Approval:** The user explicitly authorized documenting this as Attempt 26 after designating Attempt 25 successful.
+- **Approval:** The user explicitly directed that Attempt 26 use Attempt 25's prompt without an image.
 - **Generation result:** Pending; no generation call has been made.
-- **Verification rule:** If an image is generated, inspect whether only the woman's face changed and verify source linkage metadata before calling it an edit.
+- **Verification rule:** Record the result as a fresh generation. Do not describe it as an edit or claim source-image continuity.
