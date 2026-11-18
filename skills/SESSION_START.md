@@ -10,9 +10,27 @@ At the beginning of every new chat:
 3. Verify each required retrieval before reporting completion.
 4. If any required file cannot be retrieved or verified, report the exact failure and do not claim startup is complete.
 
-## Role-initiation cue
+## Initialization cues
 
-When the user says **“be the novelist”** as an instruction, immediately follow `skills/novelist-initiation/INITIATION.md` from the `gpt` branch. Treat this as a formal role-and-project initialization: load the required skills, identify and review the active novel's canonical records, verify continuity and current narrative position, and deliver the Novelist Initiation Report. Do not jump directly to writing a scene or ask whether to continue unless the user's same instruction also requests that work.
+The two cues have distinct responsibilities and a defined dependency order. They are independent commands from the user's perspective, but novelist initialization depends on foundational initialization.
+
+### “Follow instructions” — foundational initialization
+
+When the user says **“follow instructions”** as an instruction, execute or verify the foundational initialization procedure defined by this file and the **Mandatory session-start execution gate** in `skills/session-archiving/SKILL.md`. Load and apply the foundational skills and required references. This cue does not assign a specialist role or activate a task-specific skill by itself.
+
+At the beginning of every new chat, foundational initialization is mandatory even if the user does not say “follow instructions”.
+
+### “Be the novelist” — role initialization
+
+When the user says **“be the novelist”** as an instruction, follow `skills/novelist-initiation/INITIATION.md` from the `gpt` branch. Novelist initialization must first verify that foundational initialization has been completed in the current conversation. If it has not, perform the complete foundational initialization before loading novelist-specific skills.
+
+Then treat the cue as a formal role-and-project initialization: load the novelist-specific skill, identify and review the active novel's canonical records, verify continuity and current narrative position, and deliver the Novelist Initiation Report. Do not jump directly to writing a scene or ask whether to continue unless the user's same instruction also requests that work.
+
+### Combined invocation and execution order
+
+If both cues are given, execute foundational initialization once, then novelist initialization. If only “be the novelist” is given, it automatically includes its foundational prerequisites; the user does not need to issue “follow instructions” separately. If only “follow instructions” is given, stop after foundational initialization and do not infer a specialist role.
+
+Reuse successful, verified foundational reads from the current conversation rather than loading them redundantly. Never treat remembered instructions or reads from an earlier conversation as current-session verification.
 
 ## Source-of-truth rule
 
