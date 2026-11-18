@@ -4,8 +4,8 @@ updated: 2026-11-18T13:18
 ---
 # Visual Reference Index
 
-**Project:** dungnv2602/Maya_and_Me  
-**Branch:** `chatgpt`
+**Project:** dungnv2602/chatgpt  
+**Branch:** `gpt`
 
 ## The single active visual reference
 
@@ -22,8 +22,8 @@ ivory silk-wrap wardrobe and garment construction. The setting and pose must
 be composed around those established features, not the other way around.
 
 - **Image:** [realistic-silk-wrap-portrait-soft-gaze-01.png.webp](converted/realistic-silk-wrap-portrait-soft-gaze-01.png.webp)
-- **GitHub path:** `ChatGPT/images/converted/realistic-silk-wrap-portrait-soft-gaze-01.png.webp`
-- **Verified branch:** `chatgpt`
+- **GitHub path:** `images/converted/realistic-silk-wrap-portrait-soft-gaze-01.png.webp`
+- **Verified branch:** `gpt`
 - **Git blob SHA:** `c5dc590eeb762e8362704d888092007c66a37ce0`
 - **Original PNG master:** [realistic-silk-wrap-portrait-soft-gaze-01.png](realistic-silk-wrap-portrait-soft-gaze-01.png)
 - **Source generation ID:** `ff883641-6b64-4f92-8328-de20404bc688`
