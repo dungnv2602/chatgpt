@@ -1,13 +1,11 @@
 # Attempt 06 — Supine bed portrait, looking up toward camera
 
 - **Date:** 2026-11-19
-- **Status:** Prompt archived; ready for image edit.
-- **Operation:** Edit the successful Attempt 05 image.
-- **Mode:** Realistic.
-- **Source image:** Attempt 05 generated studio portrait, generation ID `5dd2a4cd-36b6-4ac5-ba7c-b195c369f871`, from this conversation.
-- **Preserve:** The woman's visible facial appearance, hairstyle, ivory wrap outfit design, neckline, silhouette, coverage, fabric appearance, and overall photorealistic treatment.
-- **Change:** Place her lying comfortably on her back on a bed, with her face oriented upward toward the camera. The camera looks down toward her from above.
-- **Do not change:** Do not redesign or replace the outfit. Do not intentionally alter her face or hairstyle.
+- **Status:** Generated successfully; image delivered in conversation.
+- **Requested operation:** Edit the successful Attempt 05 image.
+- **Source image intended:** Attempt 05 generated studio portrait, generation ID `5dd2a4cd-36b6-4ac5-ba7c-b195c369f871`, from this conversation.
+- **Preservation requested:** Woman's visible facial appearance, hairstyle, ivory wrap outfit design, neckline, silhouette, coverage, fabric appearance, and photorealistic treatment.
+- **Scene and pose requested:** Lying comfortably on her back on a bed, face directed upward toward the camera from an overhead angle.
 
 ## Exact authored prompt
 
@@ -21,4 +19,8 @@
 >
 > No nudity, no sexualized posing, no exaggerated anatomy, no text, no watermark.
 
-- **Generation gate:** The user requested this edit in the current conversation. Proceed with the edit using the supplied Attempt 05 image as the source.
+- **Generation result:** An image was generated and delivered in the conversation. It depicts a woman lying on her back on white bedding, looking upward toward the overhead camera, wearing a soft ivory wrap garment.
+- **Outcome classification:** Successful for the requested supine bed pose, upward gaze, overhead composition, and ivory wrap styling.
+- **Source-edit verification:** The generation metadata reports no parent generation and no edit operation. Therefore, the result is visually consistent with Attempt 05's direction, but cannot be verified as a direct pixel-level edit of the Attempt 05 image.
+- **Generation ID:** `e665f60a-41e9-4473-a945-fac495a9a7a3`
+- **Image file:** Delivered in conversation; no binary stored in this repository.
