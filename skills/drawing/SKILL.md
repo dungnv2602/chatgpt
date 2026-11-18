@@ -221,6 +221,25 @@ Before every generation or edit attempt:
 7. Commit the prompt to branch `gpt`.
 8. Fetch and verify the committed prompt before calling the image tool.
 
+For every illustration belonging to a named novel scene, keep a convenient
+scene-local prompt record beside its illustration note:
+`novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/illustration-[NN]-prompt.md`.
+Create and commit this file before generation, alongside the chronological
+attempt entry in `prompts/`. The scene-local file is the quick-access record
+for that illustration; the dated file in `prompts/` remains the chronological
+project-wide history. Link both from the illustration note and link the
+scene-local prompt from the scene record where practical. Do not replace one
+with the other.
+
+The scene-local record must preserve the exact authored prompt, operation
+type, generation/edit identifier when available, source/reference details,
+and a link to the chronological attempt. After the image call, update both
+records with the actual direction submitted when known, outcome, deviations,
+and continuity assessment. Distinguish the authored prompt from the tool's
+compiled or internally submitted payload. If the tool does not expose its
+submitted payload, say so; never claim the authored text is verbatim internal
+wording.
+
 The authored prompt is not necessarily the tool's compiled prompt. If the tool
 does not expose its submitted payload, say the archive records the authored
 direction rather than claiming it is verbatim internal wording.
