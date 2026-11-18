@@ -53,3 +53,10 @@ Use a medium environmental two-shot at natural seated eye level, composed so bot
 - **Visible result assessment:** The image does capture the bakery encounter, long dark hair, ivory off-shoulder wrap styling, notebook, cups, and narrator viewed from behind. It is a tighter conversational portrait than the intended environmental two-shot. The face cannot be verified as identical to the canonical reference because that reference was not attached. Exact outfit construction also cannot be certified from the text-only call.
 - **Classification:** Fresh generation with partial scene success and continuity unverified. Not approved canon pending the user's visual review.
 - **Correction for future attempts:** Do not reuse the short submitted direction. If another attempt is requested, first archive and verify a new exact prompt and attach the canonical reference image through the supported image-reference mechanism if it is available. Do not describe ethnicity or redesign Maya's face or outfit.
+
+
+## User approval
+
+- **Approval:** The user explicitly approved the generated image on 2026-11-18.
+- **Accepted status:** Approved Scene 005 illustration.
+- **Scope:** User approval establishes this delivered image as the accepted illustration for the scene. It does not change the recorded technical facts: the canonical reference was not attached, the tool-submitted prompt diverged from the archived authored prompt, and the image binary remains a conversation artifact rather than a GitHub asset.
