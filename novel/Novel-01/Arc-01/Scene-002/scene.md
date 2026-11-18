@@ -1,6 +1,7 @@
 ---
 format: scene
 version: 1.0
+status: complete
 ---
 
 # Scene 002 — A Place Between Pages
@@ -13,7 +14,7 @@ version: 1.0
 - **Date Created:** 2026-11-16
 - **Location:** A small café on a quiet side street; exact city and venue intentionally unspecified.
 - **Time / Time Period:** A few days after Scene 001; late afternoon.
-- **Status:** Drafted
+- **Status:** Complete
 
 ## 2. Characters
 - **Characters Present:** Maya; the first-person narrator.
