@@ -1,7 +1,7 @@
 # Attempt 27 — Attempt 25 bedroom portrait, seated pose from Attempt 05
 
 - **Date:** 2026-11-19
-- **Status:** Draft prepared; awaiting user approval.
+- **Status:** Approved by the user; generated successfully.
 - **Operation:** Fresh text-to-image generation; no source image attached.
 - **Mode:** Photorealistic fine-art portrait.
 - **Base:** Attempt 25's bedroom scene, adult subject, ivory cotton outfit, and quiet natural-light treatment.
@@ -25,4 +25,7 @@
 > Fully clothed and non-suggestive. No nudity, no transparency, no sexualized posing, no exaggerated anatomy, no text, no watermark.
 
 - **Prompt integrity:** The bedroom, subject, cotton outfit, and lighting direction are retained from Attempt 25. Only the pose, camera viewpoint, and framing are changed to follow Attempt 05's upright seated portrait direction.
-- **Generation result:** Pending.
+- **Generation result:** Generated successfully and delivered in the conversation.
+- **Generation ID:** `44e7770f-fa20-4abf-8ef2-c6d7af28363a`
+- **Outcome review:** The result shows an adult Asian woman seated upright on a bed, facing the camera in a bedroom. The seated pose and bedroom setting were achieved. The ivory cotton two-piece is present, but some garment details differ from the written specification; exact outfit construction was not verified or preserved pixel-for-pixel because this was a fresh generation with no reference image attached.
+- **Asset location:** Delivered in this conversation; no image binary uploaded to the repository.
