@@ -39,4 +39,4 @@
 | 32 — Attempt 31, natural seated leg position | [attempt-32.md](attempt-32.md) | Rejected; generic image-safeguard refusal, no image returned |
 | 33 — Attempt 31, naturally separated seated knees | [attempt-33.md](attempt-33.md) | Tool call made before archival; outcome unconfirmed, no result metadata available |
 | 34 — Re-execution of Attempt 33, naturally separated seated knees | [attempt-34.md](attempt-34.md) | Rejected; generic image-safeguard refusal, no image returned |
-| 35 — Attempt 31 baseline, minimal seated-leg adjustment | [attempt-35.md](attempt-35.md) | User-authorized; prompt archived and verified; generation pending |
+| 35 — Attempt 31 baseline, minimal seated-leg adjustment | [attempt-35.md](attempt-35.md) | Rejected; generic image-safeguard refusal, no image returned |
