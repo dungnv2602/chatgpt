@@ -80,3 +80,9 @@ This is a curated index of (1) successful prompt attempts with a verified chrono
 - **Prompt:** [Attempt 02 — Quiet romantic bedroom portrait (clean start)](2026-11-19/attempt-02.md)
 - **Image:** Delivered in the conversation; no image binary is stored in this repository.
 - **Why included:** The attempt record classifies the generation as successful: the image followed the defining bedroom composition, relaxed side-reclining pose, ivory wrap outfit, and soft evening lighting. Exact identity matching was not established because no reference image was supplied.
+
+## 2026-11-19 — Neutral studio portrait (Attempt 05)
+
+- **Prompt:** [Attempt 05 — Neutral studio portrait, same ivory wrap outfit](2026-11-19/attempt-05.md)
+- **Image:** Delivered in the conversation; no image binary is stored in this repository.
+- **Why included:** The generated image followed the requested upright seated studio composition, bright neutral background, and soft flowing fabric direction. It retained an ivory wrap garment. Exact identity matching and strict garment-detail matching were not verified because no reference image was attached.
