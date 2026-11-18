@@ -1,7 +1,7 @@
 # Attempt 36 — Attempt 31, subtle mature facial refinement
 
 - **Date:** 2026-11-19
-- **Status:** Generated; localized face-only edit not verified.
+- **Status:** Accepted by the user; retained as an approved result.
 - **Operation:** Localized image edit.
 - **Source:** User-uploaded accepted Attempt 31 portrait; asset ID `file_00000000bfbc82118e1007df88821333`.
 - **Base:** Attempt 31 accepted seated bedroom-bench portrait.
@@ -27,3 +27,5 @@
 - **Generation result:** Image returned; generation ID `0f9342e7-f06f-4bea-9fa7-9d5c9f727b3c`; asset ID `file_00000000bd08821199dd53c88f31878c`.
 - **Source linkage:** Metadata reports `edit_op: null` and `parent_gen_id: null`; the returned image is a fresh generation, not a confirmed edit of the uploaded Attempt 31 image.
 - **Outcome:** The returned image appears very close to the source; the requested mature facial refinement is not clearly established. User acceptance is pending.
+
+- **User decision:** User explicitly accepted Attempt 36 despite the facial refinement being subtle.
