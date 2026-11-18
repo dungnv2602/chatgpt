@@ -100,7 +100,7 @@ The conversation-integrity file is a chronological record, not a polished retell
 
 Recommended structure:
 
-`approved project directories``markdown
+```markdown
 # Conversation Integrity — YYYY-MM-DD
 
 **Project:** ...
@@ -118,7 +118,7 @@ Recommended structure:
 
 ## Integrity and completeness notes
 ...
-`approved project directories``
+```
 
 ## 5. File 2: Session summary
 
@@ -216,7 +216,7 @@ For each image the user uploads as part of the Maya & Me image workflow:
 1. Inspect the image itself and identify its role and distinguishing visible content. Do not rely on the incoming filename as the descriptive name.
 2. Unless the user explicitly marks it temporary or says not to retain it, rename the uploaded image using an accurate, descriptive, stable filename. Use the exact surfaced file ID or Library file ID from Files metadata; never guess an identifier.
 3. **Rename only. Do not convert, recompress, resize, crop, rotate, filter, retouch, strip metadata, or create derivatives unless the user explicitly authorizes that exact change.** Preserve the original format, extension, resolution, metadata, and byte content exactly.
-4. Perform task-related file creation and editing only inside the assigned `approved project directories` workspace. Do not create temporary files, conversion intermediates, derivatives, or working copies outside `images/`, `prompts/`, or `skills/` without explicit user permission for a specific location.
+4. Perform task-related file creation and editing only inside the assigned `approved project directories` workspace. Do not create temporary files, conversion intermediates, derivatives, or working copies outside `images/`, `master/`, `novel/`, `prompts/`, or `skills/` without explicit user permission for a specific location.
 5. Keep image binaries under `images/` when a supported repository binary-upload route is available. After upload, verify the exact path and blob identity before claiming repository storage.
 6. If the current GitHub connection cannot transfer binary files, preserve the exact user-uploaded original in the persistent Files Library only when it can be filed within the assigned `images/` path. Create `images/reference-index.md` as a tracked pointer. Record the exact path, stable file ID, source generation ID, original artifact name, dimensions, byte count, and SHA-256 checksum when available. Do not create a fallback folder elsewhere.
 7. State clearly whether an asset is stored in GitHub, the persistent Files Library, or only the conversation. A Markdown index in GitHub does not mean that the image binary is in Git.
