@@ -16,4 +16,4 @@
 
 Attempt 02 is a clean standalone prompt and does not use Attempt 33 or any previous prompt as its base. Attempts 03 and 04 were rejected by the image-generation tool; neither warning identified a specific offending phrase. Attempt 05 produced the requested upright seated studio portrait and softer fabric direction. Attempt 06 produced the requested overhead bed portrait with an upward gaze and ivory wrap styling. Its generation metadata does not confirm a direct edit of Attempt 05; it is visually consistent with that direction, but direct source-image editing is unverified.
 
-| 09 — Calm overhead bedroom portrait, lightweight modal-viscose fabric | [attempt-09.md](attempt-09.md) | Pending user review and approval; not generated |
+| 09 — Calm overhead bedroom portrait, lightweight modal-viscose fabric | [attempt-09.md](attempt-09.md) | Rejected; image tool declined, no image returned |
