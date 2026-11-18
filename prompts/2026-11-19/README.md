@@ -23,5 +23,6 @@
 | 16 — Attempt 12 composition with bare shoulders | [attempt-16.md](attempt-16.md) | Failed — image tool declined generation; no image returned |
 | 17 — Attempt 12 overhead composition, ivory off-shoulder wrap | [attempt-17.md](attempt-17.md) | Archived and verified; generation status not confirmed in this session |
 | 18 — Attempt 16 overhead bedroom composition, elegant lingerie | [attempt-18.md](attempt-18.md) | Generated successfully; user approved the image and lingerie design |
-| 19 — Attempt 18 design, Attempt 12 fabric qualities | [attempt-19.md](attempt-19.md) | Archived; generation blocked by image-generation guardrails; no image returned |
-| 20 — Attempt 18 lingerie design, soft cotton voile fabric | [attempt-20.md](attempt-20.md) | Archived; generation blocked by image-generation guardrails; no image returned |
+| 19 — Attempt 18 design, Attempt 12 fabric qualities | [attempt-19.md](attempt-19.md) | Failed — image generation blocked by guardrails; no image returned |
+| 20 — Attempt 18 design, soft cotton voile fabric | [attempt-20.md](attempt-20.md) | Failed — image generation blocked by guardrails; no image returned |
+| 21 — Attempt 18 reference, minimal fabric-only revision | [attempt-21.md](attempt-21.md) | Prompt archived; awaiting user approval before generation |
