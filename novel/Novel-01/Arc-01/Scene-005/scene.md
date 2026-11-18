@@ -55,7 +55,7 @@ status: complete
 - Connection to the next scene: Their meetings now include places chosen by both characters, creating room for a more balanced rhythm of initiative.
 
 ## 9. Illustrations
-- Illustration outstanding; no image generated or approved yet.
+- **Illustration 01 — The morning he shared:** Approved by the user on 2026-11-18. See [illustration note](illustrations/illustration-01.md) and [prompt/attempt record](illustrations/illustration-01-prompt.md). The image binary was delivered in the conversation and is not committed to the repository.
 
 ## 10. Author's Notes
 - Creative decisions: Keep the route ordinary and particular. Do not make every familiar object a metaphor or force a confession about the narrator's past.
