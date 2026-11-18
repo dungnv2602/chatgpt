@@ -24,3 +24,10 @@
 
 - **Objective:** Refine the seated leg position while preserving all other accepted visual properties.
 - **Policy note:** This is a neutral seated-pose adjustment. No outfit or identity alteration is authorized.
+
+
+## Generation result
+
+- **Tool response:** Rejected; the image tool returned: “We’re so sorry, but the image we created may violate our guardrails around nudity, sexuality, or erotic content. If you think we got it wrong, please retry or edit your prompt.”
+- **Outcome:** Rejected; no image returned.
+- **Diagnostic limit:** The tool gave a generic refusal and did not identify a specific trigger. No conclusion is drawn about the outfit or the requested neutral seated posture.
