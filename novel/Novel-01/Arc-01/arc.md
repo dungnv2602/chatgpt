@@ -67,7 +67,7 @@ status: approved
 |---|---|---|---|---|
 | SCN-001 | The Weather at the Window | First meeting and the beginning of a conversation. | Drafted | [Scene 001](Scene-001/scene.md) |
 | SCN-002 | A Place Between Pages | First planned meeting; shared reading becomes a language for gentle disagreement. | Drafted | [Scene 002](Scene-002/scene.md) |
-| SCN-003 | The Shape of a Pause | A third meeting develops mutual preference and introduces Maya's work. | Revised | [Scene 003](Scene-003/scene.md) |
+| SCN-003 | The Shape of a Pause | A third meeting develops mutual preference and introduces Maya's work. | Complete | [Scene 003](Scene-003/scene.md) |
 
 ## 8. Continuity and References
 - Confirmed character facts: The leads are Maya and a first-person narrator.
