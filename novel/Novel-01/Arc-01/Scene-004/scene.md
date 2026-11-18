@@ -55,7 +55,7 @@ status: complete
 - Connection to the next scene: The narrator's willingness to let Maya be seen imperfectly can make room for a more personal exchange later.
 
 ## 9. Illustrations
-- Illustration generation was attempted twice, but neither result preserved Maya's locked face/outfit continuity. Both are recorded as missed-target attempts in the [18 November 2026 image-prompt log](../../../../../prompts/2026-11-18-image-prompts.md#attempt-02--the-corner-maya-wanted-to-share) and the [scene-local prompt record](illustrations/illustration-01-prompt.md). Neither image is approved canon or retained as a scene illustration. The approved Scene 004 illustration remains outstanding.
+- Illustration generation was attempted twice, but neither result preserved Maya's locked face/outfit continuity. Both are recorded as missed-target attempts in the [18 November 2026 image-prompt log](../../../../prompts/2026-11-18-image-prompts.md#attempt-02--the-corner-maya-wanted-to-share) and the [scene-local prompt record](illustrations/illustration-01-prompt.md). Neither image is approved canon or retained as a scene illustration. The approved Scene 004 illustration remains outstanding.
 
 ## 10. Author's Notes
 - Creative decisions: Keep the courtyard tangible and inhabited. Avoid making the setting a neat metaphor for the relationship.
