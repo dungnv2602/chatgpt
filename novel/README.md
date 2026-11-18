@@ -47,7 +47,8 @@ ChatGPT/
     │   │   └── Scene-001/
     │   │       ├── scene.md
     │   │       └── illustrations/
-    │   │           └── illustration-01.md
+    │   │           ├── illustration-01.md
+    │   │           └── illustration-01-prompt.md
     │   └── Arc-02/
     │       ├── arc.md
     │       └── ...
@@ -97,7 +98,15 @@ outstanding rather than silently delivering text alone.
 
 Every generated image receives its own illustration note in that scene's
 `illustrations/` subfolder, using the approved Illustration Note v1.0
-template. Follow the Drawing Skill's mandatory pre-attempt prompt archival,
+template, and its own scene-local prompt record named
+`[Illustration-ID]-prompt.md` in the same folder. The local prompt record
+keeps the exact authored prompt and links to the dated chronological attempt
+in `prompts/`; the illustration note links to both. Keep the chronological
+log as the project-wide history rather than moving or replacing it. After
+generation, update both prompt records with the actual direction submitted
+when known, outcome, deviations, and continuity assessment. Clearly
+distinguish authored prompt text from any compiled tool payload that is not
+exposed. Follow the Drawing Skill's mandatory pre-attempt prompt archival,
 continuity, generation, inspection, and outcome-recording workflow. An
 attached character image is optional for fresh text-to-image generation when
 the approved written prompt fully specifies the locked character design.
