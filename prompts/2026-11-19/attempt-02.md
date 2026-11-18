@@ -1,7 +1,7 @@
 # Attempt 02 — Quiet romantic bedroom portrait (clean start)
 
 - **Date:** 2026-11-19
-- **Status:** Pending user review and approval; not generated.
+- **Status:** Approved by the user; generation pending.
 - **Operation:** Fresh generation.
 - **Mode:** Realistic.
 - **Base prompt:** None. This is a clean, standalone prompt. It does not use Attempt 33 or any previous prompt as its base.
@@ -28,5 +28,6 @@
 > No nudity, no sexualized posing, no exaggerated anatomy, no text, no watermark.
 
 - **Tool-prompt visibility:** This is the exact authored prompt prepared for possible generation. The image tool's internal compiled prompt may not be exposed.
-- **Approval gate:** Do not generate until the user has reviewed and approved this archived prompt.
-- **Outcome:** Pending; no generation call has been made.
+- **Approval:** User explicitly approved this prompt on 2026-11-19.
+- **Generation gate:** Approval received; generation may proceed.
+- **Outcome:** Pending generation; no result recorded yet.
