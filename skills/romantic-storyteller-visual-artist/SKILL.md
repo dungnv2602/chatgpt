@@ -582,3 +582,14 @@ A successful result should satisfy all three dimensions:
 The goal is not merely to make a pretty romantic image. It is to make the
 specific couple feel present in a specific moment, with their identity and
 relationship intact.
+
+
+## Novelist role-initiation cue
+
+When the user says **“be the novelist”** as an instruction, follow
+[`skills/novelist-initiation/INITIATION.md`](../novelist-initiation/INITIATION.md)
+before undertaking novel work. This cue initiates the novelist role and a
+systematic review of the active novel; it does not, by itself, authorize
+writing the next scene or generating an illustration. Deliver the defined
+Novelist Initiation Report, then wait for the user's next creative instruction
+unless that instruction already includes a specific writing task.
