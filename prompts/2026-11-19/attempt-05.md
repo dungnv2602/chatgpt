@@ -1,7 +1,7 @@
 # Attempt 05 — Neutral studio portrait, same ivory wrap outfit
 
 - **Date:** 2026-11-19
-- **Status:** Prompt archived; awaiting user approval.
+- **Status:** Approved by the user; generation pending.
 - **Operation:** Fresh generation.
 - **Mode:** Realistic.
 - **Base direction:** Attempt 02's successful clean-start visual direction. Attempts 03 and 04 remain unchanged.
@@ -26,4 +26,5 @@
 > Fully clothed, conventional non-suggestive fashion portrait. No nudity, no sexualized posing, no bedroom, no bed, no reclining, no exaggerated anatomy, no text, no watermark.
 
 - **Tool-prompt visibility:** This is the exact authored prompt prepared for the attempt. The image tool's internal compiled prompt may not be exposed.
-- **Generation gate:** Do not generate until the user explicitly approves this exact prompt.
+- **Approval:** User explicitly approved this prompt on 2026-11-19.
+- **Generation gate:** Approval received; generation may proceed.
