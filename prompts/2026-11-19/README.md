@@ -16,5 +16,5 @@
 | 09 — Calm overhead bedroom portrait, lightweight modal-viscose fabric | [attempt-09.md](attempt-09.md) | Rejected; image tool declined, no image returned |
 | 10 — Attempt 06 composition, minimal prompt retry | [attempt-10.md](attempt-10.md) | Rejected; image tool declined, no image returned |
 | 11 — Serene bedroom portrait, neutral wording | [attempt-11.md](attempt-11.md) | Generated; overhead composition achieved, outfit preservation incomplete; submitted prompt differed from archived prompt |
-| 12 — Attempt 06 composition, outfit-preservation wording | [attempt-12.md](attempt-12.md) | Pending user review and approval; not generated |
-| 13 — Attempt 06 baseline, concise outfit-preservation retry | [attempt-13.md](attempt-13.md) | Draft archived; awaiting review of exact prompt; not generated |
+| 12 — Attempt 06 composition, outfit-preservation wording | [attempt-12.md](attempt-12.md) | Generated; overhead composition achieved, exact outfit preservation failed; submitted prompt differed from archive |
+| 13 — Attempt 06 baseline, concise outfit-preservation retry | [attempt-13.md](attempt-13.md) | Generated as a side-by-side diptych; exact outfit preservation failed; submitted prompt differed from archive |
