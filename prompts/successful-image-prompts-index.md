@@ -67,9 +67,16 @@ This is a curated index of (1) successful prompt attempts with a verified chrono
 - **Prompt:** Original originating attempt not reliably identified in the available chronological prompt log.
 - **Image:** [tender-evening-on-the-floral-sofa.png](../images/tender-evening-on-the-floral-sofa.png)
 - **Why included:** The user explicitly designated this image as successful. The woman in a cream knit cardigan gently strokes her partner's hair as he rests against her lap.
+
 ## User-approved — Attempt 04 silk-wrap portrait
 
 - **Prompt:** [Attempt 04 — Direct reuse of the proven silk-wrap portrait direction](2026-11-13-image-prompts.md#attempt-04--direct-reuse-of-the-proven-silk-wrap-portrait-direction)
 - **Reference:** [Reference 03 — Open drape, close golden-light composition](../images/reference-index.md#reference-03--open-drape-close-golden-light-composition)
 - **Image:** [realistic-silk-wrap-portrait-open-drape-03.png](../images/realistic-silk-wrap-portrait-open-drape-03.png)
 - **Why included:** The user explicitly reviewed this Attempt 04 result and confirmed it as successful. The close photorealistic portrait preserves the long dark chestnut hair, ivory silk draped off the shoulders, open neckline, warm golden bedroom lighting, and affectionate direct gaze. The user's assessment is the deciding success classification; the assistant's earlier narrower garment-construction judgment must not override it.
+
+## 2026-11-19 — Quiet romantic bedroom portrait (Attempt 02)
+
+- **Prompt:** [Attempt 02 — Quiet romantic bedroom portrait (clean start)](2026-11-19/attempt-02.md)
+- **Image:** Delivered in the conversation; no image binary is stored in this repository.
+- **Why included:** The attempt record classifies the generation as successful: the image followed the defining bedroom composition, relaxed side-reclining pose, ivory wrap outfit, and soft evening lighting. Exact identity matching was not established because no reference image was supplied.
