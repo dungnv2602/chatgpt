@@ -55,7 +55,7 @@ status: complete
 - Connection to the next scene: The narrator's willingness to let Maya be seen imperfectly can make room for a more personal exchange later.
 
 ## 9. Illustrations
-- Illustration generation was attempted twice, but neither result preserved Maya's locked face/outfit continuity. Both are recorded as missed-target attempts in the [scene-local prompt record](illustrations/illustration-01-prompt.md). Neither image is approved canon or retained as a scene illustration. The approved Scene 004 illustration remains outstanding.
+- [Illustration 01 — The corner Maya wanted to share](illustrations/illustration-01.md) — approved canon. Prompt and attempt history: [Illustration 01 Prompt Record](illustrations/illustration-01-prompt.md). The user confirmed Maya matches the canonical reference 1:1 and requested no changes. The reference-guided generation and approval are recorded in the [scene-local prompt record](illustrations/illustration-01-prompt.md) and [illustration note](illustrations/illustration-01.md).
 
 ## 10. Author's Notes
 - Creative decisions: Keep the courtyard tangible and inhabited. Avoid making the setting a neat metaphor for the relationship.
