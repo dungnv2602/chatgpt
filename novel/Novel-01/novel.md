@@ -120,7 +120,7 @@ status: approved
 - Confirmed character facts: The romantic leads are Maya and a first-person narrator. Their approved character foundations are recorded in Section 4.
 - Character appearance and wardrobe references: User-approved references govern all visual depictions; face, identity, hair, and any locked outfit details must remain unchanged.
 - Relationship history: They meet in Scene 001.
-- Established narrative facts: Their first conversation takes place in a bookshop-café during rain. Maya enjoys walking when she needs to think and is comfortable with differences of interpretation.
+- Established narrative facts: Their first conversation takes place in a bookshop-café during rain. Maya enjoys walking when she needs to think, is comfortable with differences of interpretation, and works as a landscape architect. During their third meeting, the narrator chooses the longer, quieter walking route rather than deferring automatically.
 - Locations and important objects: The bookshop-café; a book Maya is considering; rain at the windows.
 - Continuity constraints: Do not invent fixed physical traits for either character before they are established or approved. The narrator's name and cultural background, and the novel's geographic setting, remain unspecified. In visual work, the user's explicit visual constraints and the Drawing Skill are authoritative.
 - Provisional ideas and unresolved decisions: The narrator's name and cultural background, the wider conflict, and the novel's eventual structure remain open.
@@ -133,7 +133,7 @@ status: approved
 - Illustration continuity rules: Never change an approved face, identity, hair, or locked outfit. For the user's established artwork, preserve the original drawing and change only the scene when that is the instruction.
 
 ## 13. Novel Progress
-- Current narrative position: Two opening scenes drafted; the first encounter and their first planned meeting are established.
+- Current narrative position: Three opening scenes drafted. The first encounter, their first planned meeting, and a third meeting during a walk are established.
 - Completed arcs: None.
 - Active arc: ARC-001 — A Conversation in the Rain.
 - Planned arcs: To be determined after the opening arc develops.
@@ -143,4 +143,4 @@ status: approved
 - Creative decisions: Begin with a modest, plausible encounter rather than a dramatic coincidence. Let attraction appear through attention, wit, and the choice to keep talking. The narrator's emotional reserve should arise from ordinary family and relationship experiences, not an invented traumatic event. Maya's independence should be shown as both a strength and, at times, a protective habit; do not reduce her to a complementary list of traits or make her responsible for the narrator's development.
 - Ideas for future development: Allow recurring details and private rituals to gain meaning over time. Let both characters make mistakes and take part in repairing them.
 - Unresolved questions: Deliberately left open for discovery in the writing.
-- Important revisions: On 2026-11-18, the user approved the proposed narrator foundation: age 34, editor at a publishing house, stable practical-affection family background, one previous relationship that ended through differing emotional needs, and the associated strengths, weaknesses, and emotional conflict. The user explicitly chose to keep the city unspecified. His name and cultural background remain unresolved. The user also approved the proposed Maya foundation, including her work as a landscape architect, expressive but ordinary loving family, previous relationship shaped by her tendency to accommodate, and her central tension between independence and allowing herself to receive care.
+- Important revisions: On 2026-11-18, the user approved the proposed narrator foundation: age 34, editor at a publishing house, stable practical-affection family background, one previous relationship that ended through differing emotional needs, and the associated strengths, weaknesses, and emotional conflict. The user explicitly chose to keep the city unspecified. His name and cultural background remain unresolved. The user also approved the proposed Maya foundation, including her work as a landscape architect, expressive but ordinary loving family, previous relationship shaped by her tendency to accommodate, and her central tension between independence and allowing herself to receive care. Scene 003, 'The Shape of a Pause,' was drafted on 2026-11-18 and added to Arc 01. It introduces Maya's profession through her attention to public space and gives the narrator a small moment of expressing his own preference.
