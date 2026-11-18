@@ -9,21 +9,21 @@ updated: 2026-11-18T13:18
 
 ## 1. Absolute workspace boundary
 
-**Standing default:** All repository file work must stay inside the top-level `ChatGPT/` directory. Do not read, list, search, fetch, create, update, move, rename, or delete any repository file or directory outside `ChatGPT/`.
+**Standing default:** All repository file work must stay inside the explicitly approved project directories at the repository root: `images/`, `master/`, `novel/`, `prompts/`, and `skills/`. Do not read, list, search, fetch, create, update, move, rename, or delete files outside those directories, except for the specifically authorized workflow exception below.
 
-**One-time authorized WebP workflow exception (12 November 2026):** The user explicitly authorized creation of exactly `.github/workflows/convert-images-to-webp.yml` outside `ChatGPT/` for this specific task. This is a one-time exception for that exact file only. It does not authorize changes to other paths outside `ChatGPT/`, nor future edits to the workflow file. Obtain fresh, explicit permission before any later change to that outside-workspace file.
+**One-time authorized WebP workflow exception (12 November 2026):** The user explicitly authorized creation of exactly `.github/workflows/convert-images-to-webp.yml` outside the approved project directories for this specific task. This is a one-time exception for that exact file only. It does not authorize changes to other paths outside repository root, nor future edits to the workflow file. Obtain fresh, explicit permission before any later change to that outside-workspace file.
 
 This is a strict standing instruction from the user. It applies to every future task and every tool call, not only archiving.
 
 - The only permitted workspace roots are:
-  - `ChatGPT/images/`
-  - `ChatGPT/prompts/`
-  - `ChatGPT/skills/`
-- Read and write files only by exact paths beginning with `ChatGPT/`.
+  - `images/`
+  - `prompts/`
+  - `skills/`
+- Read and write files only by exact paths beginning with one of the approved directory names above.
 - Do not browse or search the repository root, parent directories, `Archive/`, or any other path outside `ChatGPT/`.
 - Do not use repository-wide code search, recursive root-tree listings, or directory listings outside `ChatGPT/`.
-- Do not consult, modify, or restore former root-level `images/`, `prompts/`, or `skills/` paths. They were migrated into this workspace.
-- Do not follow Markdown links that resolve outside `ChatGPT/`. If an essential reference is not inside this workspace or supplied directly in the current conversation, explain that it is unavailable under the current boundary and ask the user to place it in `ChatGPT/images/` or provide it in chat.
+- The root-level `images/`, `master/`, `novel/`, `prompts/`, and `skills/` directories are the current canonical locations. Do not recreate the obsolete `ChatGPT/` wrapper.
+- Do not follow Markdown links that resolve outside `ChatGPT/`. If an essential reference is not inside an approved project directory or supplied directly in the current conversation, explain that it is unavailable under the current boundary and ask the user to place it in the appropriate approved directory or provide it in chat.
 - A user's request to use an outside reference does not itself silently change this boundary. Obtain an explicit instruction that changes the boundary before accessing an outside repository path.
 - Repository and branch identifiers may be used to direct GitHub operations, but this does not authorize reading or writing repository files outside `ChatGPT/`.
 
@@ -31,9 +31,9 @@ This is a strict standing instruction from the user. It applies to every future 
 
 ## 2. Workspace layout and repository conventions
 
-- Repository: `dungnv2602/Maya_and_Me`
-- Working branch: `chatgpt`
-- Workspace root: `ChatGPT/`
+- Repository: `dungnv2602/chatgpt`
+- Working branch: `gpt`
+- Workspace root: repository root (approved directories only)
 - Images and visual references: `ChatGPT/images/`
 - Session records and individual image prompts: `ChatGPT/prompts/`
 - Reusable skills: `ChatGPT/skills/`
@@ -64,7 +64,7 @@ The startup gate is a prerequisite check, not the session archive itself. Do not
 At the beginning of **every new Maya_and_Me ChatGPT conversation/session**, complete this sequence before doing any project work, creative writing, visual planning, image prompting, or repository task:
 
 1. **Notify the user first.** State that the mandatory startup checks are beginning and that project work will wait until they are complete. This is an informational notice, not a request for approval.
-2. Retrieve and read this Session Archiving skill from the `chatgpt` branch.
+2. Retrieve and read this Session Archiving skill from the `gpt` branch.
 3. Retrieve and read `ChatGPT/skills/conversation-mode/SKILL.md` from the same branch.
 4. Retrieve and read `ChatGPT/skills/drawing/SKILL.md` from the same branch.
 5. Retrieve and read every supporting reference explicitly named by the Drawing skill, currently `ChatGPT/skills/drawing/references/style-guide.md` and `ChatGPT/skills/drawing/references/image-editing-protocol.md`.
@@ -217,7 +217,7 @@ When the user asks to retain generated or uploaded images as reusable references
 
 ### Mandatory uploaded-image rename and cross-link procedure
 
-For each image the user uploads as part of the Maya_and_Me image workflow:
+For each image the user uploads as part of the Maya & Me image workflow:
 
 1. Inspect the image itself and identify its role and distinguishing visible content. Do not rely on the incoming filename as the descriptive name.
 2. Unless the user explicitly marks it temporary or says not to retain it, rename the uploaded image using an accurate, descriptive, stable filename. Use the exact surfaced file ID or Library file ID from Files metadata; never guess an identifier.
@@ -242,7 +242,7 @@ When an uploaded image is already present in `ChatGPT/images/` under an opaque o
 
 ## 7. GitHub write and verification discipline
 
-- Perform all file operations using exact paths under `ChatGPT/` on branch `chatgpt`.
+- Perform all file operations using exact paths under `ChatGPT/` on branch `gpt`.
 - Do not list, fetch, search, inspect, or mutate any file path outside `ChatGPT/`.
 - For an update, fetch the current file first and use its current blob SHA.
 - Perform sequential writes to the same file. Do not run updates to the same path in parallel.
