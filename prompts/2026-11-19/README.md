@@ -47,4 +47,4 @@
 | 40 — Attempt 36, more bust coverage and age-30 facial refinement | [attempt-40.md](attempt-40.md) | Failed — two generic safeguard refusals; no image returned; further near-identical retries stopped |
 | 41 — Attempt 36, seated beside a large window | [attempt-41.md](attempt-41.md) | Failed — generic image-safeguard refusal; no image returned. Attempt 36 source was not attached, so no edit was confirmed |
 | 42 — Seated beside a large window, mature facial direction | [attempt-42.md](attempt-42.md) | Generated with prompt mismatch; window scene achieved, but archived prompt was not the actual input; exact identity/garment match unverified |
-| 43 — Attempt 42, cotton fabric only | [attempt-43.md](attempt-43.md) | Prompt archived and verified; approved for generation |
+| 43 — Attempt 42, cotton fabric only | [attempt-43.md](attempt-43.md) | Image generated; fabric texture visible, but source-linked fabric-only edit unconfirmed; cotton result pending user review |
