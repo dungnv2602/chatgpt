@@ -14,7 +14,6 @@ status: provisional
 - **Operation:** Fresh text-to-image generation
 - **Generation ID:** `51fc9618-eae3-4c86-a1ec-e39eede6cabc`
 - **Prompt record (beside illustration):** [Illustration 01 — Prompt Record](illustration-01-prompt.md)
-- **Chronological generation archive:** [Attempt 01 — The quieter path](../../../../../../prompts/2026-11-18-image-prompts.md#attempt-01--the-quieter-path)
 - **Image binary:** Delivered in the conversation; not committed to GitHub.
 
 ## 2. Visual Description
