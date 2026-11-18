@@ -1,7 +1,7 @@
 # Attempt 13 — Attempt 06 baseline, concise outfit-preservation retry
 
 - **Date:** 2026-11-19
-- **Status:** Draft archived; awaiting review of the exact prompt before generation.
+- **Status:** Generated; requested preservation not achieved; prompt/output deviation recorded.ng review of the exact prompt before generation.
 - **Operation:** Fresh generation. Attempt 06 remains the visual and compositional baseline. No source image binary is attached, so this is not claimed as a direct image edit or guaranteed identity match.
 - **Preserve:** The established adult woman, facial appearance and hairstyle direction, supine pose, overhead camera, framing, simple bedroom setting, and exact ivory wrap outfit from Attempt 06.
 - **Outfit constraint:** Preserve the original garment exactly: neckline, wrap overlap, construction, sleeves, silhouette, proportions, styling, and coverage. No redesign, substitution, opening, or added details.
@@ -23,4 +23,6 @@
 > Photorealistic detail, natural proportions, no text, no watermark.
 
 - **Approval note:** The user said “Attempt 13 approved,” but no Attempt 13 prompt existed in the repository at that point. This note therefore records a newly prepared prompt; the user's statement is not treated as approval of this previously unseen exact wording.
-- **Outcome:** Not generated.
+- **Outcome:** The image tool returned a side-by-side diptych rather than a single portrait. The output does not faithfully preserve the exact Attempt 06 outfit, and the submitted wording differed from the archived prompt. This is recorded as a generation with substantial prompt/output deviation, not as a successful preservation result.
+- **Generation ID:** `44750357-cfdc-40ec-ab65-1eadce75053f`
+- **Image file:** `/mnt/data/a_split_composite_image_side_by_side_diptych_of.png`nerated.
