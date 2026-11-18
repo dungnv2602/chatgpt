@@ -34,4 +34,5 @@
 | 27 — Attempt 25 bedroom portrait, seated pose from Attempt 05 | [attempt-27.md](attempt-27.md) | Generated successfully; seated bedroom composition achieved; outfit-detail match incomplete |
 | 28 — Attempt 27, long hair without glasses | [attempt-28.md](attempt-28.md) | Superseded by Attempt 29 before execution; no edit made |
 | 29 — Attempt 27, standing beside the bed, long hair, no glasses | [attempt-29.md](attempt-29.md) | Successful — accepted by the user |
-| 30 — Attempt 29, seated on a bedroom bench, bed outside frame | [attempt-30.md](attempt-30.md) | Prompt archived; awaiting user approval |
+| 30 — Attempt 29, seated on a bedroom bench, bed outside frame | [attempt-30.md](attempt-30.md) | Blocked by image safeguards; no image returned |
+| 31 — Attempt 29, bench pose with bed outside frame (concise scene edit) | [attempt-31.md](attempt-31.md) | Prompt archived; awaiting approval |
