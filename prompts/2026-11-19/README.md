@@ -38,3 +38,4 @@
 | 31 — Attempt 29, bench pose with bed outside frame (concise scene edit) | [attempt-31.md](attempt-31.md) | Successful — accepted by the user |
 | 32 — Attempt 31, natural seated leg position | [attempt-32.md](attempt-32.md) | Rejected; generic image-safeguard refusal, no image returned |
 | 33 — Attempt 31, naturally separated seated knees | [attempt-33.md](attempt-33.md) | Tool call made before archival; outcome unconfirmed, no result metadata available |
+| 34 — Re-execution of Attempt 33, naturally separated seated knees | [attempt-34.md](attempt-34.md) | User-approved; prompt archived and verified; generation pending |
