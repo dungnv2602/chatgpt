@@ -208,8 +208,11 @@ essential to the picture.
 ### C. Prepare and archive the prompt
 Before every generation or edit attempt:
 1. Follow `skills/session-archiving/SKILL.md`.
-2. Read `prompts/successful-image-prompts-index.md`, then the relevant
-   chronological image-prompt log in `prompts/`.
+2. For a named novel scene, read the relevant scene-local illustration prompt
+   records and outcomes under `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/`.
+   Keep all prompts and attempt history for that novel scene inside the novel.
+   For non-novel drawing work, read `prompts/successful-image-prompts-index.md`
+   and the relevant chronological image-prompt log in `prompts/`.
 3. Read `images/reference-index.md` for canonical continuity
    information and complete the project-continuity check in section A. Use an
    approved prompt as the base; image attachment is optional for fresh
@@ -224,21 +227,21 @@ Before every generation or edit attempt:
 For every illustration belonging to a named novel scene, keep a convenient
 scene-local prompt record beside its illustration note:
 `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/illustration-[NN]-prompt.md`.
-Create and commit this file before generation, alongside the chronological
-attempt entry in `prompts/`. The scene-local file is the quick-access record
-for that illustration; the dated file in `prompts/` remains the chronological
-project-wide history. Link both from the illustration note and link the
-scene-local prompt from the scene record where practical. Do not replace one
+Create and commit this file before generation. For novel illustrations, this
+scene-local file is the authoritative prompt and attempt record; keep all
+novel-specific prompt history inside the novel and do not duplicate it in the
+root `prompts/` folder. Link the local prompt from the illustration note and
+scene record where practical. Do not replace one
 with the other.
 
 The scene-local record must preserve the exact authored prompt, operation
 type, generation/edit identifier when available, source/reference details,
-and a link to the chronological attempt. After the image call, update both
-records with the actual direction submitted when known, outcome, deviations,
-and continuity assessment. Distinguish the authored prompt from the tool's
-compiled or internally submitted payload. If the tool does not expose its
-submitted payload, say so; never claim the authored text is verbatim internal
-wording.
+and the chronological sequence of attempts for that illustration. After the
+image call, update the local record with the actual direction submitted when
+known, outcome, deviations, and continuity assessment. Distinguish the authored
+prompt from the tool's compiled or internally submitted payload. If the tool
+does not expose its submitted payload, say so; never claim the authored text
+is verbatim internal wording.
 
 The authored prompt is not necessarily the tool's compiled prompt. If the tool
 does not expose its submitted payload, say the archive records the authored
