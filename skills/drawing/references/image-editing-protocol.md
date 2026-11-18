@@ -61,8 +61,8 @@ If several attempts revert to the same wrong pose or discard the source image:
 
 ## 6. Prompt-before-generation archive
 
-Follow `ChatGPT/skills/session-archiving/SKILL.md` for every attempt:
-- commit the authored prompt in `ChatGPT/prompts/` before the tool call;
+Follow `skills/session-archiving/SKILL.md` for every attempt:
+- commit the authored prompt in `prompts/` before the tool call;
 - record operation type and actual source reference;
 - verify the pre-attempt commit;
 - after the call, record the actual result, image ID, and mismatch;
