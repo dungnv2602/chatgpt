@@ -1,7 +1,7 @@
 # Attempt 39 — Attempt 36, minimal age-30 facial refinement
 
 - **Date:** 2026-11-19
-- **Status:** Recovery prompt after Attempt 38 was rejected; user-approved age target and face-only scope retained; archived before generation.
+- **Status:** Failed — image-generation safeguards rejected both the archived recovery prompt and one minimally clarified retry; no image returned.
 - **Operation:** Localized face-only edit.
 - **Source:** User-accepted Attempt 36 output; asset ID `file_00000000bd08821199dd53c88f31878c`.
 - **Base:** Attempt 36 accepted seated bedroom-bench portrait.
@@ -22,4 +22,4 @@ Attempt 38 expanded the facial direction into several simultaneous makeup and st
 
 - **Objective:** A restrained face-only adjustment that reads as approximately 30, with a confident, subtly daring expression.
 - **Approval:** User approved the age-30 direction and the revised facial design for this recovery.
-- **Generation result:** Pending.
+- **Generation result:** Two image-generation calls were rejected with the same generic safeguard message; neither returned an image or generation metadata. The second call clarified that the portrait refinement was non-sexual and reiterated the unchanged outfit and face-only scope. No specific trigger was identified. Further near-identical retries are stopped.
