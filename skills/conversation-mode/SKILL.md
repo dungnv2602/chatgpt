@@ -36,7 +36,7 @@ In Default Mode:
 - Provide concise progress updates when a task takes time or has meaningful milestones.
 - Explain decisions, trade-offs, blockers, and verification results.
 - For repository work, still execute the work rather than merely describing how the user could do it.
-- Follow all standing repository restrictions, including the user's ChatGPT-only workspace boundary.
+- Follow all standing repository restrictions, including the user's approved project-directory boundary.
 
 Default Mode is the normal full-conversation experience.
 
@@ -53,7 +53,7 @@ In Condensed Mode, prioritize execution over discussion.
 5. Commit the completed work on the authorized working branch.
 6. Avoid optional explanations, recaps, decorative prose, and unnecessary follow-up questions.
 
-For this project, the strict repository workspace boundary remains `ChatGPT/`. Condensed Mode never authorizes access outside that directory.
+For this project, the strict repository workspace boundary remains repository root (approved project directories only). Condensed Mode never authorizes access outside that directory.
 
 ### User-visible response after successful repository work
 
@@ -101,14 +101,14 @@ When the user switches modes:
 - The session-archiving skill continues to govern the three-file archive, chronological image-prompt history, and prompt-before-generation workflow.
 - Other task-specific skills continue to govern their respective tasks.
 - The ChatGPT-only workspace rule always applies, regardless of conversation mode.
-- The only authorized project working branch is `chatgpt`. Perform all future repository reads, writes, and commits on this branch; do not resume the former `artwork/portrait-attempt-2026-11-10` branch or modify `main` unless the user explicitly authorizes it.
+- The only authorized project working branch is `gpt`. Perform all future repository reads, writes, and commits on this branch; do not resume the former `artwork/portrait-attempt-2026-11-10` branch or modify `main` unless the user explicitly authorizes it.
 - If skill instructions conflict, follow the higher-priority instruction and be honest about any limitation.
 
 ## 6. Skill source of truth and Library synchronization
 
 GitHub is the canonical source of truth for all project skills. The repository is
-`dungnv2602/Maya_and_Me`, and the authorized working branch is `chatgpt`.
-The canonical skill files live under `ChatGPT/skills/`.
+`dungnv2602/chatgpt`, and the authorized working branch is `chatgpt`.
+The canonical skill files live under `skills/`.
 
 Whenever the user asks to read, inspect, or follow a project skill:
 
