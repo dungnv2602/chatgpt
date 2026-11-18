@@ -65,7 +65,7 @@ status: approved
 ## 7. Scene Directory
 | Scene ID | Scene Title | Narrative Role | Status | Scene Link |
 |---|---|---|---|---|
-| SCN-001 | The Weather at the Window | First meeting and the beginning of a conversation. | Drafted | [Scene 001](Scene-001/scene.md) |
+| SCN-001 | The Weather at the Window | First meeting and the beginning of a conversation. | Complete | [Scene 001](Scene-001/scene.md) |
 | SCN-002 | A Place Between Pages | First planned meeting; shared reading becomes a language for gentle disagreement. | Drafted | [Scene 002](Scene-002/scene.md) |
 | SCN-003 | The Shape of a Pause | A third meeting develops mutual preference and introduces Maya's work. | Complete | [Scene-003/scene.md](Scene-003/scene.md) |
 | SCN-004 | What People Leave Behind | The narrator visits Maya's courtyard project and sees how she responds to its imperfect, lived-in reality. | Complete | [Scene-004/scene.md](Scene-004/scene.md) |
