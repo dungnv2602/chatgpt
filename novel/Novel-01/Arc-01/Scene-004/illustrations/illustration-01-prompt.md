@@ -3,10 +3,10 @@
 **Novel:** *The Weather Between Us*  
 **Arc:** ARC-001 — *A Conversation in the Rain*  
 **Scene:** SCN-004 — *What People Leave Behind*  
-**Illustration ID:** ILL-001 (not yet successfully generated)  
+**Illustration ID:** ILL-001 (approved canon)  
 **Date:** 2026-11-18  
 **Mode:** Realistic — natural cinematic photography  
-**Source/reference:** No image attached. Fresh generations were based on the written canonical specification in [the visual reference index](../../../../../images/reference-index.md); neither was an edit or image-reference-guided.
+**Source/reference:** User-uploaded canonical Maya reference attached for Attempt 04. Attempt 04 was a fresh reference-guided generation, not an edit.
 
 ## Selected scene moment
 
@@ -70,7 +70,7 @@ Use a medium-wide environmental two-shot at natural eye level, with both figures
 
 ## Overall status
 
-**Illustration outstanding.** Neither generated image is approved canon or a valid reference for Maya's face or wardrobe. The tool's compiled internal prompt was not exposed; the archived text is the exact authored direction, not a claim about hidden tool wording.
+**Illustration approved.** Attempt 04 is the approved Scene 004 canon image. The user confirmed Maya matches the canonical reference 1:1 and explicitly requested that the image remain unchanged. Attempts 02 and 03 remain failed, non-canon attempts. The tool's compiled internal prompt was not exposed; the archived text is the exact authored direction, not a claim about hidden tool wording.
 
 
 ## Attempt 04 — Approved reference-guided generation
