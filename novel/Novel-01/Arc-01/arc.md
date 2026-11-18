@@ -68,7 +68,7 @@ status: approved
 | SCN-001 | The Weather at the Window | First meeting and the beginning of a conversation. | Drafted | [Scene 001](Scene-001/scene.md) |
 | SCN-002 | A Place Between Pages | First planned meeting; shared reading becomes a language for gentle disagreement. | Drafted | [Scene 002](Scene-002/scene.md) |
 | SCN-003 | The Shape of a Pause | A third meeting develops mutual preference and introduces Maya's work. | Complete | [Scene 003](Scene-003/scene.md) |
-| SCN-004 | What People Leave Behind | The narrator visits Maya's courtyard project and sees how she responds to its imperfect, lived-in reality. | Revised | [Scene 004](Scene-004/scene.md) |
+| SCN-004 | What People Leave Behind | The narrator visits Maya's courtyard project and sees how she responds to its imperfect, lived-in reality. | Complete | [Scene 004](Scene-004/scene.md) |
 
 ## 8. Continuity and References
 - Confirmed character facts: The leads are Maya and a first-person narrator.
