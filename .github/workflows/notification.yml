@@ -1,0 +1,28 @@
+name: Send Email on Notification Tag
+
+on:
+  push:
+    tags:
+      - 'notification-*'   # Triggers only when a tag named exactly "notification" is pushed
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send notification email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SERVER_ADDRESS || 'smtp.gmail.com' }}
+          server_port: ${{ secrets.SERVER_PORT || 465 }}
+          username: ${{ secrets.GMAIL_ID }}
+          password: ${{ secrets.GMAIL_PWD }}
+          subject: "[AI][Maya][${{ github.ref_name }}]"
+          to: ${{ secrets.MAIL_TO }}
+          from: ${{ secrets.MAIL_FROM }}
+          body: |
+            A new tag named "notification" was pushed to the repository.
+            Repository: ${{ github.repository }}
+            Tag: ${{ github.ref_name }}
+            Pushed by: ${{ github.actor }}
+            Commit SHA: ${{ github.sha }}
+          convert_markdown: true

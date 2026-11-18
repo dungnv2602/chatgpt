@@ -1,0 +1,272 @@
+name: Create WebP Image Derivatives
+
+on:
+  push:
+    branches:
+      - chatgpt
+    paths:
+      - 'ChatGPT/images/**/*.png'
+      - 'ChatGPT/images/**/*.jpg'
+      - 'ChatGPT/images/**/*.jpeg'
+      - '.github/workflows/convert-images-to-webp.yml'
+  workflow_dispatch: {}
+
+concurrency:
+  group: webp-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  convert-webp:
+    if: github.ref == 'refs/heads/chatgpt'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out chatgpt
+        uses: actions/checkout@v7.0.1
+        with:
+          ref: chatgpt
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Install WebP encoder
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes webp
+
+      - name: Generate WebP copies and size report
+        id: convert
+        continue-on-error: true
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import csv
+          import os
+          import struct
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          source_root = Path("ChatGPT/images")
+          output_root = source_root / "webp"
+          report_path = output_root / "conversion-report.csv"
+          supported = {".png", ".jpg", ".jpeg"}
+          output_root.mkdir(parents=True, exist_ok=True)
+
+          version_result = subprocess.run(
+              ["cwebp", "-version"], capture_output=True, text=True, check=True
+          )
+          cwebp_version = (version_result.stdout or version_result.stderr).strip()
+
+          def is_apng(path):
+              # Walk PNG chunks and detect the APNG animation-control chunk.
+              with path.open("rb") as handle:
+                  if handle.read(8) != b"\x89PNG\r\n\x1a\n":
+                      return False
+                  while True:
+                      header = handle.read(8)
+                      if len(header) != 8:
+                          return False
+                      length = struct.unpack(">I", header[:4])[0]
+                      chunk_type = header[4:]
+                      if chunk_type == b"acTL":
+                          return True
+                      if chunk_type == b"IEND":
+                          return False
+                      handle.seek(length + 4, os.SEEK_CUR)
+
+          sources = []
+          if source_root.exists():
+              for path in source_root.rglob("*"):
+                  if not path.is_file() or path.suffix.lower() not in supported:
+                      continue
+                  if output_root == path or output_root in path.parents:
+                      continue
+                  sources.append(path)
+          sources.sort(key=lambda p: p.as_posix().casefold())
+
+          rows = []
+          expected_outputs = set()
+          conversion_failed = False
+
+          for source in sources:
+              relative = source.relative_to(source_root)
+              output_relative = Path(relative.as_posix() + ".webp")
+              target = output_root / output_relative
+              target_rel = output_relative.as_posix()
+              original_bytes = source.stat().st_size
+              extension = source.suffix.lower()
+
+              if extension == ".png" and is_apng(source):
+                  # Do not silently flatten animation to a single frame.
+                  target.unlink(missing_ok=True)
+                  rows.append({
+                      "source_path": source.as_posix(),
+                      "webp_path": "",
+                      "source_format": extension.lstrip("."),
+                      "profile": "not converted",
+                      "original_bytes": original_bytes,
+                      "webp_bytes": "",
+                      "size_change_percent": "",
+                      "metadata_copied": "none",
+                      "cwebp_version": cwebp_version,
+                      "status": "SKIPPED_ANIMATED_PNG",
+                      "error": "Animated PNG is not supported by cwebp."
+                  })
+                  continue
+
+              expected_outputs.add(target_rel)
+              target.parent.mkdir(parents=True, exist_ok=True)
+              temporary = target.with_name("." + target.name + ".tmp.webp")
+
+              if extension == ".png":
+                  profile = "lossless-exact-q100-m6"
+                  command = [
+                      "cwebp", "-quiet", "-lossless", "-q", "100",
+                      "-m", "6", "-exact", "-metadata", "icc",
+                      str(source), "-o", str(temporary)
+                  ]
+              else:
+                  profile = "picture-q92-m6-sharp-yuv"
+                  command = [
+                      "cwebp", "-quiet", "-preset", "picture", "-q", "92",
+                      "-m", "6", "-sharp_yuv", "-metadata", "icc",
+                      str(source), "-o", str(temporary)
+                  ]
+
+              try:
+                  temporary.unlink(missing_ok=True)
+                  result = subprocess.run(
+                      command, capture_output=True, text=True
+                  )
+                  if result.returncode != 0:
+                      detail = (result.stderr or result.stdout).strip()
+                      raise RuntimeError(detail or f"cwebp exited {result.returncode}")
+
+                  with temporary.open("rb") as handle:
+                      signature = handle.read(12)
+                  if (len(signature) != 12 or signature[:4] != b"RIFF"
+                          or signature[8:12] != b"WEBP"):
+                      raise RuntimeError("Output failed the RIFF/WEBP signature check.")
+
+                  os.replace(temporary, target)
+                  webp_bytes = target.stat().st_size
+                  size_change = (original_bytes - webp_bytes) / original_bytes * 100
+                  rows.append({
+                      "source_path": source.as_posix(),
+                      "webp_path": (output_root / output_relative).as_posix(),
+                      "source_format": extension.lstrip("."),
+                      "profile": profile,
+                      "original_bytes": original_bytes,
+                      "webp_bytes": webp_bytes,
+                      "size_change_percent": f"{size_change:.2f}",
+                      "metadata_copied": "ICC only",
+                      "cwebp_version": cwebp_version,
+                      "status": "CREATED",
+                      "error": ""
+                  })
+                  print(
+                      f"{source}: {original_bytes:,} -> {webp_bytes:,} bytes "
+                      f"({size_change:+.2f}% size reduction)"
+                  )
+              except Exception as error:
+                  temporary.unlink(missing_ok=True)
+                  conversion_failed = True
+                  rows.append({
+                      "source_path": source.as_posix(),
+                      "webp_path": (output_root / output_relative).as_posix(),
+                      "source_format": extension.lstrip("."),
+                      "profile": profile,
+                      "original_bytes": original_bytes,
+                      "webp_bytes": "",
+                      "size_change_percent": "",
+                      "metadata_copied": "ICC only",
+                      "cwebp_version": cwebp_version,
+                      "status": "FAILED",
+                      "error": str(error).replace("\n", " ")
+                  })
+                  print(f"ERROR converting {source}: {error}", file=sys.stderr)
+
+          # Remove only orphaned generated WebP files. Never touch source images.
+          for existing in output_root.rglob("*.webp"):
+              relative_output = existing.relative_to(output_root).as_posix()
+              if relative_output not in expected_outputs:
+                  existing.unlink()
+
+          # Remove abandoned temporary outputs from interrupted older runs.
+          for temporary in output_root.rglob(".*.tmp.webp"):
+              temporary.unlink(missing_ok=True)
+
+          fieldnames = [
+              "source_path", "webp_path", "source_format", "profile",
+              "original_bytes", "webp_bytes", "size_change_percent",
+              "metadata_copied", "cwebp_version", "status", "error"
+          ]
+          with report_path.open("w", newline="", encoding="utf-8") as handle:
+              writer = csv.DictWriter(handle, fieldnames=fieldnames)
+              writer.writeheader()
+              writer.writerows(rows)
+
+          print(f"Wrote {report_path} with {len(rows)} source records.")
+          if conversion_failed:
+              sys.exit(1)
+          PY
+
+      - name: Commit and safely publish WebP derivatives
+        if: always() && steps.convert.outcome != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Stage only generated derivatives and the conversion report.
+          git add -- ChatGPT/images/webp/
+          if git diff --cached --quiet; then
+            echo "No WebP derivatives or report changes to publish."
+            exit 0
+          fi
+
+          git commit -m "chore(images): refresh WebP derivatives and size report"
+
+          # Never force-push. Rebase our generated-only commit onto the latest
+          # chatgpt branch, then retry if another writer updates it during push.
+          max_attempts=5
+          for attempt in $(seq 1 "$max_attempts"); do
+            echo "Publish attempt $attempt/$max_attempts"
+            git fetch origin chatgpt
+
+            if ! git rebase origin/chatgpt; then
+              git rebase --abort || true
+              echo "::error::Could not rebase generated WebP files cleanly. No remote changes were overwritten."
+              exit 1
+            fi
+
+            if git push origin HEAD:refs/heads/chatgpt; then
+              echo "WebP derivatives and report published successfully."
+              exit 0
+            fi
+
+            # A concurrent push may have advanced the branch between fetch
+            # and push. Retry only when the remote is no longer an ancestor
+            # of our rebased commit; otherwise surface the real push failure.
+            git fetch origin chatgpt
+            if git merge-base --is-ancestor origin/chatgpt HEAD; then
+              echo "::error::Push failed although origin/chatgpt did not advance. Check token permissions or branch protection."
+              exit 1
+            fi
+
+            echo "Remote branch advanced during push; synchronizing and retrying."
+          done
+
+          echo "::error::Could not publish after $max_attempts synchronization attempts."
+          exit 1
+
+      - name: Mark conversion failures
+        if: steps.convert.outcome == 'failure'
+        run: |
+          echo "One or more conversions failed. The report and any successful derivatives were committed for inspection."
+          exit 1
