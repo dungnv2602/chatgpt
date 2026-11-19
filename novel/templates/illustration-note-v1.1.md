@@ -1,7 +1,7 @@
 ---
 format: illustration-note
 version: 1.1
-status: generated
+status: approved
 ---
 
 # Illustration Note [Number] — [Title]
