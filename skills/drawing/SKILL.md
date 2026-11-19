@@ -18,10 +18,9 @@ This skill provides two distinct drawing modes:
 These are different visual targets, not quality levels. Neither is the universal
 default.
 
-For the current cozy-bedroom artwork thread, the most recent partial success is
-classified as **Vintage Mode**, specifically a warm painterly storybook
-treatment. Continue in Vintage Mode for that artwork unless the user explicitly
-switches to Realistic Mode.
+Mode and visual treatment are session-specific. A mode selected in an earlier
+drawing session does not carry into a new session unless the new session brief
+explicitly continues or adopts it. The active session-opening brief governs.
 
 ## 1. Mode selection and persistence
 
@@ -29,17 +28,20 @@ Accept direct commands:
 - `Realistic mode` / `Switch to realistic`
 - `Vintage mode` / `Switch to vintage`
 
-Apply the selected mode immediately to subsequent drawing work in the current
-conversation or continuous artwork task. Do not silently switch modes because a
-prompt is difficult or an earlier result failed.
+Apply the selected mode immediately to subsequent drawing work within the same
+specific drawing session. A new drawing session starts from its own opening
+brief, even when it begins in the same conversation or continues the same
+project. Do not silently switch modes because a prompt is difficult or an
+earlier result failed.
 
-When a new image request does not name a mode:
-1. Infer it from clear visual language or an attached style reference.
-2. Continue the active mode if the user is clearly continuing the same artwork.
-3. If the choice would materially change the result and context does not resolve
-   it, ask one short question: **Realistic or Vintage?**
-4. Do not assume a mode carries into an unrelated new conversation unless the
-   user or a session handoff specifies it.
+When the current session brief does not name a mode:
+1. Infer it from the visual language the user specifies in that session.
+2. Use a mode visible in a reference only when the user assigns that image as a
+   style reference for this session.
+3. If the choice would materially change the result and the session brief does
+   not resolve it, ask one short question: **Realistic or Vintage?**
+4. Do not inherit a mode from an earlier drawing session without the user's
+   explicit direction in the current session.
 
 If the user requests a hybrid, establish which mode should dominate. Do not blur
 the distinction so far that the result becomes neither.
@@ -706,26 +708,26 @@ changes.
 For a style-only transformation, freeze people, pose, hands, clothing, objects,
 lighting, camera position, and crop. Change only the rendering treatment.
 
-## 6. Continuity for the current cozy-bedroom artwork
+## 6. Session-specific scene and character continuity
 
-The current target is a fully clothed, quiet comfort scene between two adults:
+No scene composition, character identity, relationship, pose, wardrobe,
+hairstyle, prop, location, palette, or emotional treatment is a universal
+drawing default. These are determined by the active session-opening brief and
+the user's explicit updates within that session.
 
-- The woman sits upright, supported by pillows and a headboard.
-- The man lies on his side and rests against her upper shoulder/chest. He is the
-  one resting; do not reverse the roles.
-- Her left hand gently cradles or strokes his hair.
-- Their other hands rest together on her lap: her right hand underneath and his
-  left hand on top. Do not interlace fingers.
-- The woman wears a soft cream knit cardigan over a modest top.
-- The man wears a plain dark navy polo.
-- Both have their established black-rimmed glasses; the woman's established
-  short dark chin-length bob should be preserved.
-- The atmosphere is warm, calm, safe, and reassuring.
-
-The latest November 12, 2026 image is classified as **Vintage Mode → Painterly
-Storybook**. It has not satisfied all composition requirements. Do not call
-the artwork complete until the resting direction, hand arrangement, and selected
-mode are visibly correct.
+- For a day-drawing session, follow its own opening brief and amendments.
+- For a novel illustration, follow the scene-specific opening brief. Use the
+  novel text and scene records for narrative facts only where the user asks the
+  illustration to follow or adapt them.
+- Preserve a face, outfit, pose, design, or other feature as locked only when
+  the user explicitly locks it in the current session or explicitly adopts a
+  prior design for that session.
+- Do not carry a previous session's visual direction into a new one merely
+  because the project, character, relationship, or novel is the same.
+- A successful historical prompt is a prompt-lineage aid, not authority over
+  the current session brief. Reconcile it with the active brief before use.
+- Record scene-specific continuity in the session brief and its attempt notes,
+  not in a repository-wide visual index.
 
 ## 7. Response and delivery
 
