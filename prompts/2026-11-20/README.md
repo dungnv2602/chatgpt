@@ -15,4 +15,4 @@
 | 05 | [Localized nonphysical edge edit](attempt-05.md) | [Session 01](session-01-brief.md) | Samantha — Human Presence Without a Body | **User-approved casual path**; fresh generation, source not linked; edge cue still unmet |
 | 06 | [Corrected source-attached localized edge edit](attempt-06.md) | [Session 01](session-01-brief.md) | Samantha — Human Presence Without a Body | **User-approved sweet path**; fresh generation with no parent linkage; unwanted text panels |
 
-| 07 | [Sweet path cleanup — remove text panels](attempt-07.md) | [Session 01](session-01-brief.md) | Samantha — Human Presence Without a Body | Prompt archived and verified; cleanup pending |
+| 07 | [Sweet path cleanup — remove text panels](attempt-07.md) | [Session 01](session-01-brief.md) | Samantha — Human Presence Without a Body | **User-approved new sweet-path baseline**; prompt-first reconstruction, text panels removed
