@@ -1,5 +1,8 @@
 # Attempt 02 — Give Samantha a nonphysical edge
 
+- **Session ID:** SAMANTHA-2026-11-20-01.
+- **Session brief:** [session-01-brief.md](session-01-brief.md).
+- **Primary series / membership:** Samantha — Human Presence Without a Body (working thematic-series label).
 - **Status before call:** Pending.
 - **Intended operation:** Edit of a reference image.
 - **Intended source:** Attempt 01 output; generation ID `6ce20fc3-f98f-4a7f-994d-5f398969738f`; local artifact `/mnt/data/a_warm_cinematic_softly_lit_indoor_portrait_scen.png`.
