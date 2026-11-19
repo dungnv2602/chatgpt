@@ -29,7 +29,7 @@ This boundary applies to every future task and every tool call, not only archivi
 - Images and visual references: `images/`
 - Canonical master reference documents: `master/`
 - Novel and scene records: `novel/`
-- Session-level records and non-novel image-prompt logs: `prompts/`
+- Session-level records, drawing-session briefs, and non-novel image-prompt logs: `prompts/`
 - Reusable skills and supporting references: `skills/`
 - Use `gpt` as the sole working branch for all future repository operations. Do not use the former `artwork/portrait-attempt-2026-11-10` branch. Do not modify `main` unless the user explicitly authorizes it.
 - Session-level conversation-integrity and summary records belong in `prompts/`:
@@ -138,6 +138,39 @@ Separate confirmed facts from hypotheses. Do not repeat unsupported explanations
 
 This is the operational history of image generation and editing.
 
+### Drawing-session opening brief — visual authority
+
+Every distinct drawing session begins with a user-defined visual direction.
+This opening brief is the sole creative authority for that session, whether it
+is a day-drawing session or a novel-illustration session. No repository-wide
+image index, historical prompt, previous portrait, character sheet, stored
+image, or old project convention dictates the new session unless the user
+explicitly adopts it.
+
+- For non-novel/day drawing, archive the brief as
+  `prompts/YYYY-MM-DD/session-[NN]-brief.md`.
+- For a named novel scene, archive it as
+  `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/session-[YYYY-MM-DD]-[NN]-brief.md`.
+- Create and commit the brief before the first image prompt for that session.
+  Read it back and verify it.
+- Preserve the user's opening direction faithfully. Record specified, locked,
+  variable, excluded, and open details. Mark unspecified features as open;
+  never invent constraints.
+- Append later explicit user corrections or refinements as dated amendments
+  in the same brief. Preserve the original opening brief; do not silently
+  rewrite its history. The latest explicit user instruction controls the
+  property it changes.
+- Every attempt note must link to its session brief and identify its session ID.
+- A new drawing session gets a new brief even when it belongs to the same day,
+  character, novel, or series. Earlier images and prompts are historical
+  references only unless explicitly selected by the user in the new session.
+- In a novel session, scene and manuscript records provide narrative facts
+  only to the extent the user asks the illustration to follow or adapt them.
+  The session brief governs visual interpretation and design.
+- Do not create, maintain, or recreate `images/reference-index.md` or any
+  replacement repository-wide visual authority index. Session-specific image
+  provenance belongs in the session brief and relevant attempt record.
+
 ### Daily folder and one-note-per-attempt format for non-novel drawing work
 
 For non-novel drawing work, organize image prompts by date. Each calendar day is a folder under `prompts/`, and each image-generation or image-edit attempt is its own Markdown note. **Exception:** for an illustration belonging to a named novel scene, the scene-local prompt record under `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/` is authoritative. Keep that novel attempt there and do not duplicate it in the daily `prompts/` folder.
@@ -146,14 +179,15 @@ For non-novel drawing work, organize image prompts by date. Each calendar day is
 prompts/
   YYYY-MM-DD/
     README.md              # daily index and status overview
+    session-01-brief.md    # authoritative direction for this drawing session
     attempt-01.md          # one complete attempt record
     attempt-02.md
     ...
 ```
 
 - Use zero-padded sequential filenames (`attempt-01.md`, `attempt-02.md`, ...), with one attempt per file. Never append a second attempt to an existing attempt note.
-- `README.md` is the daily index: list attempts in order, link each note, and show its current outcome/status. Update it whenever an attempt is added or its outcome changes.
-- **README table format is mandatory:** use exactly one continuous Markdown table for the entire day's attempt index, with a single header row and consistent columns (at minimum `Attempt`, `Prompt note`, `Primary series / membership`, and `Status / outcome`). Every attempt, including the latest one, must be a row inside that same table. Use a stable series ID/name; write `standalone/unassigned` when no series is established. Do not place a second table below it, split the index into separate tables, or leave attempt rows outside the table. Keep rows in ascending attempt-number order.
+- `README.md` is the daily index: list attempts in order, link each note and its session brief, and show its current outcome/status. Update it whenever an attempt is added or its outcome changes.
+- **README table format is mandatory:** use exactly one continuous Markdown table for the entire day's attempt index, with a single header row and consistent columns (at minimum `Attempt`, `Prompt note`, `Session brief`, `Primary series / membership`, and `Status / outcome`). Every attempt, including the latest one, must be a row inside that same table. Use a stable series ID/name; write `standalone/unassigned` when no series is established. Do not place a second table below it, split the index into separate tables, or leave attempt rows outside the table. Keep rows in ascending attempt-number order.
 - **Keep table rows physically contiguous:** never insert a blank line between the header, separator, or any attempt row. A blank line terminates a Markdown table in many renderers and can make the newest attempt appear as a separate block. When appending an attempt, add its row immediately after the previous row with no empty line. When revising a status, edit the existing row in place; do not move it outside the table or create a second table.
 - **Validate before committing:** read back the complete daily `README.md` and verify that it contains exactly one attempt-index table, one header row, one separator row, and every numbered attempt exactly once in ascending order. Confirm there are no blank lines inside the table and that the final attempt row is part of the same contiguous table. Do not mark the index update complete until this read-back check passes.
 - **Status accuracy:** distinguish `not approved / not generated`, `approved / pending generation`, `generated successfully`, `generated with mismatch`, `rejected / no image returned`, and `technical failure`. If an attempt has multiple runs, preserve the sequence in the status cell (for example, an earlier image returned but a later retry was rejected); do not overwrite history with only the latest or earlier outcome. A user declining approval must never be represented as pending approval.
@@ -163,24 +197,27 @@ prompts/
 
 ### Mandatory pre-attempt rule
 
-**Commit the authored prompt in its authoritative location before every image-generation or image-edit attempt.** For non-novel work, use its own dated attempt note under `prompts/YYYY-MM-DD/`. For a named novel scene, use its scene-local illustration prompt record under `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/`. This applies whether the next attempt is expected to succeed, is exploratory, or is a revision. Never generate first and archive later, and never duplicate a novel-scene prompt in the root `prompts/` history.
+**Commit the session brief and authored prompt in their authoritative locations before the first image-generation or image-edit attempt.** For non-novel work, use the session brief and attempt notes under `prompts/YYYY-MM-DD/`. For a named novel scene, use the session brief and illustration prompt records under `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/`. This applies whether the next attempt is expected to succeed, is exploratory, or is a revision. Never generate first and archive later, and never duplicate a novel-scene prompt in the root `prompts/` history.
 
 Before drafting the next prompt:
-1. Read the authoritative chronological prompt history for the exact artwork thread
-   or novel scene. For novel illustrations, use the scene-local prompt records.
-2. Identify the active primary series and its theme. Search that series' history
-   and inspect the newest attempt for context; then locate the most recent
-   successful prompt in that same series.
-3. Use only that most recent successful prompt as the default text baseline.
-   Newer failed, rejected, partial, or missed-target prompts are diagnostic
-   evidence only. Extract only explicit user-requested/user-approved changes
-   from them and apply those changes to the successful baseline. Never use a
-   failed prompt as the base.
+1. Read the authoritative session-opening brief first. If it does not exist,
+   create it from the user's opening direction, commit it, and read it back
+   before drafting the first image prompt. For novel illustrations, place the
+   brief in the scene-local illustration folder.
+2. Read the authoritative chronological prompt history for the exact artwork
+   thread or novel scene. Identify the active primary series only when the
+   session brief explicitly continues/adopts it. Inspect later attempts for
+   context, then locate the most recent successful prompt in that same series.
+3. Use only that most recent successful prompt as the historical text baseline.
+   The current session brief outranks it: discard or rewrite every conflicting
+   feature. Newer failed, rejected, partial, or missed-target prompts are
+   diagnostic evidence only. Extract only explicit user-requested/user-approved
+   changes from them and apply those changes to the successful baseline. Never
+   use a failed prompt as the base.
 4. If no series applies, use the most recent successful prompt for the exact
-   artwork/thread. If no relevant success exists, start from the current brief
-   and applicable canonical specifications; do not borrow from an unrelated
-   series. For a new subseries, record any inherited parent-series seed and
-   branch point.
+   artwork/thread. If no relevant success exists, start from the current session
+   brief and explicit constraints; do not borrow from an unrelated series. For a
+   new subseries, record any inherited parent-series seed and branch point.
 5. Change as little as practical so the next attempt tests a clear hypothesis.
 6. Append a new attempt with a sequential number, required series metadata,
    baseline provenance, and a pending outcome.
@@ -193,9 +230,11 @@ Before drafting the next prompt:
 Record:
 - Sequential attempt number and a short descriptive title.
 - Status before the call: pending.
-- **Primary series ID/name and theme spine.** If no series is established, record `standalone/unassigned`; do not guess. Record secondary series only for a deliberate crossover.
+- **Drawing session ID and session-brief path.** Mandatory for every attempt.
+- **Opening direction authority:** link the active session brief and confirm it controls visual direction. Do not treat any prior index, prompt, or image as a replacement.
+- **Primary series ID/name and theme spine.** Record a series only when the current session brief explicitly continues/adopts it. Otherwise record `standalone/unassigned`; do not guess. Record secondary series only for a deliberate crossover.
 - **Membership role:** series seed, continuation, subseries, branch, crossover, standalone, or provisional. For a branch, record the parent series and branch point.
-- **Continuity anchors and permitted variation** relevant to this attempt; state which user-locked details must remain unchanged.
+- **Continuity anchors and permitted variation** relevant to this attempt, taken from the current session brief; state which user-locked details must remain unchanged. Do not import locks from an older session.
 - **Prompt baseline provenance:** exact path/attempt or scene-local record of the most recent successful prompt in the primary series (or exact artwork thread if not a series), its recorded outcome, and why it qualifies. If the next operation requires a full-scene prompt but the newest success is only a localized edit/style-only prompt, also record the most recent successful full-generation prompt from that same series as the operation-compatible text skeleton and explain the choice. If there is no such baseline, say so explicitly. For a new branch, record the inherited seed and its source.
 - **Latest-attempt diagnostic reference:** link the newest later attempt inspected when it differs from the selected successful baseline, and state what was or was not carried forward from it.
 - Operation type: **fresh generation** or **edit of a reference image**.
@@ -213,9 +252,9 @@ Update the same entry with the actual outcome:
 - **Failed for a technical reason.**
 - **Unconfirmed.**
 
-Do not mark an image attempt successful merely because an image was returned. Inspect whether it followed the user's key instructions. Record what worked, what failed, and one useful next-step lesson.
+Do not mark an image attempt successful merely because an image was returned. Inspect whether it followed the user's key instructions and the active session brief. Record what worked, what failed, and one useful next-step lesson.
 
-When one tool call returns multiple images, record each output separately within that attempt: its image/generation identifier or stored path, whether it meets the defining requirements, and whether the user approved it as a keeper/reference. Preserve mixed outcomes; one successful output does not make every image in the batch successful. The prompt/result pair may qualify as a successful prompt baseline when at least one output is explicitly judged successful for the intended purpose and the prompt-to-output link is reliable; use only the individually approved output(s) as visual references.
+When one tool call returns multiple images, record each output separately within that attempt: its image/generation identifier or stored path, whether it meets the defining requirements of the active session brief, and whether the user approved it as a keeper. Preserve mixed outcomes; one successful output does not make every image in the batch successful. The prompt/result pair may qualify as a successful prompt baseline when at least one output is explicitly judged successful for the intended purpose and the prompt-to-output link is reliable; use only individually approved output(s) as visual references, and only in future sessions when the user explicitly selects them.
 
 Keep two judgements distinct:
 - **Prompt/result success:** the prompt is linked to an output that meets the defining requirements, or the user explicitly accepts that attempt's result as successful for the intended purpose. This may qualify the exact prompt as a future series baseline.
@@ -247,34 +286,65 @@ Maintain one separate file at `prompts/successful-image-prompts-index.md`. This 
 
 Do not silently promote a merely generated image to a success. Use the outcome classification and visual inspection recorded in the chronological log. A user-approved image whose originating prompt is known may qualify as a successful prompt/result pair when the user's approval clearly accepts that attempt as successful; preserve the user's attribution. If the prompt mapping or scope of approval is uncertain, keep it as an approved visual asset only and continue using the latest verified successful prompt as the text baseline.
 
-### User-approved visual references and binary provenance
+### Session-local image asset handling and provenance
 
-When the user asks to retain generated or uploaded images as reusable references:
+When the user asks to retain generated or uploaded images, or when the active
+session workflow requires keeping a source asset:
 
-1. Give each approved image a stable, descriptive filename. Preserve the original image bytes whenever possible; do not overwrite a full-resolution original with a thumbnail.
-2. Keep image binaries under `images/` when a supported repository binary-upload route is available. After upload, verify the exact path and blob identity before claiming repository storage.
-3. If the current GitHub connection cannot transfer binary files, preserve the original image in the persistent Files Library using a descriptive name, and create `images/reference-index.md` as a tracked pointer. Record the exact Library path, stable file ID, source generation ID, original artifact name, dimensions, byte count, and SHA-256 checksum when available.
-4. State clearly whether an asset is stored in GitHub, the persistent Files Library, or only the conversation. A Markdown index in GitHub does not mean that the image binary is in Git.
-5. Link user-accessible Library assets through the supported file-navigation UI in the final response. Do not invent a URL for a Library item.
-6. In the authoritative attempt record (the dated non-novel log or the novel scene-local prompt record), link each successful attempt to the relevant reference-index entry. In the conversation-integrity file, record the user's approval and the exact storage actions as tool events.
-7. Update the drawing skill when the user-approved images establish a reusable visual direction. Distinguish visual inspiration references from verified edit sources.
+1. Give each retained image a clear, descriptive filename based on its visible
+   content. Preserve the original bytes; do not overwrite a full-resolution
+   original with a thumbnail.
+2. Keep image binaries under `images/` when a supported repository binary-upload
+   route is available. Verify the exact path and blob identity before claiming
+   repository storage.
+3. If the binary cannot be transferred to GitHub, retain it in the persistent
+   Files Library only when the user has requested retention and that storage is
+   available. Record its exact Library path, stable file ID, source generation
+   ID, original artifact name, dimensions, byte count, and checksum where
+   available in the current session brief or attempt record—not in a global
+   visual reference index.
+4. State clearly whether an asset is stored in GitHub, the persistent Files
+   Library, or only the current conversation. A Markdown note does not mean
+   that the image binary is in Git.
+5. Link the asset directly from the session brief or relevant attempt record
+   using a verified repository path or supported file-navigation reference.
+   Never invent a URL.
+6. Preserve the asset's role within that session: inspiration, identity,
+   composition, style, exact edit source, or approved keeper. A retained image
+   is not automatically a reference for future drawing sessions.
+7. Never create or maintain `images/reference-index.md` or any replacement
+   global index intended to dictate visual identity, wardrobe, style, or
+   composition. The session-opening brief is the only visual-direction
+   authority for its session.
 
-### Mandatory uploaded-image rename and cross-link procedure
+### Session-specific uploaded-image naming and cross-link procedure
 
-For each image the user uploads as part of the Maya & Me image workflow:
+For an image the user supplies within a drawing session:
 
-1. Inspect the image itself and identify its role and distinguishing visible content. Do not rely on the incoming filename as the descriptive name.
-2. Unless the user explicitly marks it temporary or says not to retain it, rename the uploaded image using an accurate, descriptive, stable filename. Use the exact surfaced file ID or Library file ID from Files metadata; never guess an identifier.
-3. **Rename only. Do not convert, recompress, resize, crop, rotate, filter, retouch, strip metadata, or create derivatives unless the user explicitly authorizes that exact change.** Preserve the original format, extension, resolution, metadata, and byte content exactly.
-4. Perform task-related file creation and editing only inside the assigned `approved project directories` workspace. Do not create temporary files, conversion intermediates, derivatives, or working copies outside `images/`, `master/`, `novel/`, `prompts/`, or `skills/` without explicit user permission for a specific location.
-5. Keep image binaries under `images/` when a supported repository binary-upload route is available. After upload, verify the exact path and blob identity before claiming repository storage.
-6. If the current GitHub connection cannot transfer binary files, preserve the exact user-uploaded original in the persistent Files Library only when it can be filed within the assigned `images/` path. Create `images/reference-index.md` as a tracked pointer. Record the exact path, stable file ID, source generation ID, original artifact name, dimensions, byte count, and SHA-256 checksum when available. Do not create a fallback folder elsewhere.
-7. State clearly whether an asset is stored in GitHub, the persistent Files Library, or only the conversation. A Markdown index in GitHub does not mean that the image binary is in Git.
-8. Link user-accessible Library assets through the supported file-navigation UI in the final response. Do not invent a URL for a Library item.
-9. In the authoritative attempt record (the dated non-novel log or the novel scene-local prompt record), link each successful attempt to the relevant reference-index entry. In the conversation-integrity file, record the user's approval and the exact storage actions as tool events.
-10. Update the drawing skill when the user-approved images establish a reusable visual direction. Distinguish visual inspiration references from verified edit sources.
+1. Inspect the image itself and identify its role as stated by the user or
+   assigned in the session brief. Do not rely on its incoming filename.
+2. If the user asks to retain it for later use, give it an accurate, descriptive,
+   stable filename. Use consistent numbered suffixes for a set. If it is only
+   for the current session, do not silently promote it to a future-session asset.
+3. **Rename only. Do not convert, recompress, resize, crop, rotate, filter,
+   retouch, strip metadata, or create derivatives unless explicitly authorized.**
+   Preserve original format, extension, resolution, metadata, and bytes.
+4. Record the exact path, stable file/Library ID, source generation ID when
+   known, original name, dimensions, byte size, checksum where available, and
+   session-specific role in the session brief or attempt record.
+5. When the image is associated with a successful output, link it directly in
+   the relevant attempt record and successful-prompt index if appropriate.
+   Do not add a global reference-index link.
+6. In conversation-integrity records, record the user's instruction/approval
+   and exact storage or rename actions as tool events. Preserve historical
+   facts, but do not treat them as current visual direction.
+7. Verify the renamed asset through Files metadata and read back every updated
+   GitHub Markdown file. Never claim a Library URL or GitHub storage unless
+   verified.
 
-Do not finish a drawing-session archive while an uploaded keeper image remains under an opaque temporary filename or while its successful prompt and conversation event lack direct links.
+Do not finish a session archive while a requested keeper image remains under an
+opaque temporary filename or while its session brief and successful prompt
+record lack direct links.
 
 ### When an opaque image cannot be visually inspected
 
@@ -306,11 +376,12 @@ When an uploaded image is already present in `images/` under an opaque or tempor
 
 ## 9. Default handoff for a new chat
 
-Start by reading the relevant session records inside `prompts/` and, when continuing a novel illustration, the relevant scene-local records inside `novel/`. Then:
+Start by reading the relevant session records inside `prompts/` and, when continuing a novel illustration, the relevant scene-local records inside `novel/`. Read the active drawing-session brief before relying on any previous prompt or image. Then:
 - Treat the conversation-integrity file as the source for what was said.
 - Treat the summary as a quick orientation, not a replacement for the record.
 - Treat the dated image-prompt notes as authoritative for non-novel generation work.
 - Treat the scene-local illustration prompt record as authoritative for that novel scene; it takes precedence over any general session summary and is not duplicated in `prompts/`.
+- Treat the current session-opening brief as the visual-direction authority. Historical prompts and approved images are technical or visual references only when the user explicitly adopts them.
 - Continue from the latest incomplete task.
 - Follow the pre-attempt commit rule before generating or editing another image.
 - Never read or write anything outside `approved project directories`.
