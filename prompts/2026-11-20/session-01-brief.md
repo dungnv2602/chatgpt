@@ -66,4 +66,5 @@ The original opening message is not available in the retained project record. Th
 
 ## Amendments
 
+- **2026-11-20 — Assistant-led visual assessment and next-step decision:** Following the user's delegation to let the assistant drive, Attempt 04 was assessed as the strongest Samantha portrait so far. Its face, expression, hairstyle, blouse, pose, composition, and lighting are selected as the provisional source for one localized edit. This is an assistant-selected working source, not a user-approved keeper or a successful-prompt baseline. The next edit may change only a small portion of the window-side outer hair/shoulder contour to make the temporary, nonphysical edge more legible. All other visible properties remain frozen for that edit.
 - **2026-11-20 — Resume instruction:** The user asked to continue drawing Samantha and pick up where the project left off. Resume from the latest recorded attempt and the saved Samantha visual-drive note. Do not close the session unless the user separately sends the standalone cue `end session`.
