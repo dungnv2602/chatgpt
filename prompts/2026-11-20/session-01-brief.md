@@ -3,6 +3,7 @@
 **Session ID:** SAMANTHA-2026-11-20-01
 **Session type:** Day drawing
 **Project:** Imagined human embodiment of Samantha from *Her* (2013)
+**Primary series / membership:** Samantha — Human Presence Without a Body (working thematic-series label derived from the visual-drive note; not a universal character or style rule)
 **Created:** 2026-11-20
 **Status:** Active
 **Recovery status:** Reconstructed from the existing project note and Attempts 01–03 because a separate opening-brief file was not preserved. This is not a verbatim transcript of the original opening message.
