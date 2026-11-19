@@ -4,7 +4,7 @@
 **Repository:** `dungnv2602/Maya_and_Me`  
 **Branch:** `chatgpt`  
 **Workspace boundary:** `ChatGPT/` only  
-**Companion files:** [Session summary](2026-11-13-summary.md) · [Image prompts](2026-11-13-image-prompts.md) · [Successful prompt index](successful-image-prompts-index.md)
+**Companion files:** [Session summary](2026-11-13-summary.md) · [Image prompts](2026-11-13-image-prompts.md) · former cross-session success catalogue (retired 2026-11-20)
 
 ## Integrity policy
 
@@ -80,7 +80,7 @@ All files read were inside the authorized `ChatGPT/` workspace.
 
 **User:** “Based on my experience, it was mostly your interpretation. But you somehow didn't notice it. It was little because of your tool. Last night I said you take a look at successful images you would realized you actually can do it, and the result was even more daring, more visible. And you did take a look and then you successfully drew me the 2 portraits which was attempt 31 32 if I remember correctly. So, I suggest you to try working on your interpretation again before drawing.”
 
-**Tool event:** Re-read the archived November 12 chronological prompt history and successful-prompt index. The repository record labels Attempts 31 and 32 as refusals and Attempt 33 as the successful fresh-generation attempt that returned two portraits. The numbering recollection differs, but the relevant successful art direction is clearly preserved in Attempt 33. No assumption was made that the user was wrong beyond what the repository currently records.
+**Tool event:** Re-read the archived November 12 chronological prompt history and the then-current cross-session success catalogue; that catalogue was retired on 2026-11-20. The repository record labels Attempts 31 and 32 as refusals and Attempt 33 as the successful fresh-generation attempt that returned two portraits. The numbering recollection differs, but the relevant successful art direction is clearly preserved in Attempt 33. No assumption was made that the user was wrong beyond what the repository currently records.
 
 **Key finding:** Attempt 33 succeeded without an attached reference image. Its prompt describes a photorealistic fine-art portrait, long dark chestnut hair, ivory silk wrap draped off one shoulder, visible shoulders and collarbones, an open but covered neckline, warm cinematic light, and an affectionate gaze.
 
@@ -115,7 +115,7 @@ All files read were inside the authorized `ChatGPT/` workspace.
 
 **Tool event:** Corrected Attempt 04 in `2026-11-13-image-prompts.md` to **Generated, but missed a defining clothing requirement**. Commit: `92b34d0ef40098cf68cfb8f4a303767921d56257`.
 
-**Tool event:** Removed Attempt 04 from `successful-image-prompts-index.md`, because it did not satisfy the defining garment-construction requirement. Commit: `f33485c755805342c3087c4c1ddcd3db27549929`.
+**Tool event:** Removed Attempt 04 from the then-current cross-session success catalogue because it did not satisfy the defining garment-construction requirement. The catalogue was retired on 2026-11-20. Commit: `f33485c755805342c3087c4c1ddcd3db27549929`.
 
 **Tool event:** Updated the Drawing skill's Section F to require inspection of actual garment construction and physical coverage. It now explicitly distinguishes opaque fabric from fabric that physically covers the intended area, and tells the assistant to verify wrap-panel overlap rather than infer success from prompt wording or material opacity. The skill's E2.2 example was corrected to record Attempt 04 as a broad-direction recovery but not a successful match. Commit: `45af0dde22544f891589c127dc963f0a69f7fda9`.
 
@@ -169,7 +169,7 @@ The update explicitly states that historical success does not override current s
 
 **Tool event:** Checked the existing image catalogue in `ChatGPT/images/reference-index.md`, which already documents all five images, their visual descriptions, blob SHAs, dimensions, and byte sizes. The images had been visually inspected and descriptively indexed in the earlier archive.
 
-**Tool event:** Added a distinct **User-approved successful outputs — cozy romantic scenes** section to `ChatGPT/prompts/successful-image-prompts-index.md`. Each of the five images now has a direct relative link and a concise visual description. The entry explicitly records that the user's approval establishes the successful-output classification. It does not invent a prompt number or an exact prompt-to-image mapping where the current chronological log does not establish one. Commit: `1c654139b21c8ca2e97e317eb6c29f9b6366ddcd`. The index was fetched again and all five filenames were verified.
+**Tool event:** Added a distinct **User-approved successful outputs — cozy romantic scenes** section to the cross-session catalogue at the time; that catalogue was retired on 2026-11-20. Each of the five images now has a direct relative link and a concise visual description. The entry explicitly records that the user's approval establishes the successful-output classification. It does not invent a prompt number or an exact prompt-to-image mapping where the current chronological log does not establish one. Commit: `1c654139b21c8ca2e97e317eb6c29f9b6366ddcd`. The index was fetched again and all five filenames were verified.
 
 **Tool event:** Updated `ChatGPT/prompts/2026-11-13-summary.md` to record Attempt 05's refusal, the five user-approved outputs, and the unresolved exact prompt-to-image mapping. Commit: `7f23fd8a1062c993ec6beafffcc62f5f4d9ae755`. The summary was fetched again and verified.
 
@@ -184,7 +184,7 @@ The user supplied the following five GitHub image paths and explicitly classifie
 - `tender-bedroom-cuddle.png`
 - `tender-evening-on-the-floral-sofa.png`
 
-**Tool event:** Added all five to the distinct **User-approved successful outputs — cozy romantic scenes** section of `ChatGPT/prompts/successful-image-prompts-index.md`, with direct relative links and visual descriptions. The existing `ChatGPT/images/reference-index.md` already records the image descriptions, Git blob SHAs, dimensions, and byte sizes. The chronological prompt log does not reliably map each filename to an exact prompt attempt, so no attempt numbers or prompt links were guessed.
+**Tool event:** Added all five to the distinct **User-approved successful outputs — cozy romantic scenes** section of the cross-session catalogue at the time, with direct relative links and visual descriptions. The catalogue was retired on 2026-11-20. The existing `ChatGPT/images/reference-index.md` already records the image descriptions, Git blob SHAs, dimensions, and byte sizes. The chronological prompt log does not reliably map each filename to an exact prompt attempt, so no attempt numbers or prompt links were guessed.
 
 - Initial index addition commit: `1c654139b21c8ca2e97e317eb6c29f9b6366ddcd`.
 - Index wording clarification commit: `4fc450c56de18bd178d994a258811ecd09d8ff60`.
@@ -208,6 +208,6 @@ The user supplied the following five GitHub image paths and explicitly classifie
 
 **Tool event:** Updated the Attempt 04 record in `ChatGPT/prompts/2026-11-13-image-prompts.md` to link to Reference 03 and its descriptive image path. Commit: `8d18fc8b7f8841fd2ae8cf8bfa60f4e2dfdc8a1c`.
 
-**Tool event:** Updated the Attempt 04 entry in `ChatGPT/prompts/successful-image-prompts-index.md` to use the descriptive filename and link to Reference 03. The entry was read back and tidied to retain one Prompt field. Final tidy commit: `c25207b80c6b42945f70c6b7b345fbdf92759e20`.
+**Tool event:** Updated the former catalogue's Attempt 04 entry to use the descriptive filename and link to Reference 03; that catalogue was retired on 2026-11-20. The entry was read back and tidied to retain one Prompt field. Final tidy commit: `c25207b80c6b42945f70c6b7b345fbdf92759e20`.
 
 The summary was updated with the final path and provenance. All writes remain within `ChatGPT/` on branch `chatgpt`.
