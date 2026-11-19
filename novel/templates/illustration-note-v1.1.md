@@ -36,7 +36,7 @@ When a master/WebP pair is stored, embed the WebP using a relative link to the c
 
 ![Illustration preview](../../../assets/illustrations/[ARC-ID]/[SCN-ID]/[ILL-ID]-[descriptive-slug].webp)
 
-## 3. Visual Description
+## 4. Visual Description
 Record only what is objectively visible in the returned image.
 - **Characters Present:**
 - **Facial Expressions and Gaze:**
@@ -47,19 +47,19 @@ Record only what is objectively visible in the returned image.
 - **Composition and Viewpoint:**
 - **Visible Deviations from the Brief:**
 
-## 4. Narrative Context
+## 5. Narrative Context
 - **Moment:** Before / During / After
 - **What Happens Immediately Before:**
 - **What Is Happening in This Moment:**
 - **What Happens Immediately After:**
 
-## 5. Emotional Meaning
+## 6. Emotional Meaning
 Describe interpretation rather than pretending it is directly visible.
 - **Emotional State by Character ID:**
 - **Unspoken Feelings or Subtext:**
 - **Meaning for the Relationship:**
 
-## 6. Character and Story Continuity
+## 7. Character and Story Continuity
 - **Character Identity and Appearance:**
 - **Locked Face, Hair, and Wardrobe Details:**
 - **Locations and Objects:**
@@ -67,19 +67,19 @@ Describe interpretation rather than pretending it is directly visible.
 - **Continuity Constraints:**
 - **Assessment:** Pass / Partial / Fail / Not Assessable, with observations
 
-## 7. Connection to the Story
+## 8. Connection to the Story
 - **Previous Illustration / Moment:**
 - **Next Illustration / Moment:**
 - **Role within the Scene:**
 - **Contribution to the Arc:**
 
-## 8. Review and Approval
+## 9. Review and Approval
 - **Review Status:**
 - **Critical Criteria Passed / Failed:**
 - **User Acceptance, if known:**
 - **Outstanding Corrections:**
 
-## 9. Author's Notes
+## 10. Author's Notes
 - **Creative Interpretation:**
 - **Decisions and Revisions:**
 - **Open Questions:**
