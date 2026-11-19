@@ -5,6 +5,9 @@ on:
     branches:
       - gpt
     paths:
+      # The intake is flat. Match all top-level filenames so mixed-case
+      # extensions and unexpected files still trigger validation/reporting.
+      - 'images/takeout/*'
       - 'images/takeout/*.png'
       - 'images/takeout/*.jpg'
       - 'images/takeout/*.jpeg'
