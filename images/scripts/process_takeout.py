@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Process one images/takeout hand-off as a verified, rollback-capable batch."""
 from __future__ import annotations
-import argparse, csv, hashlib, os, re, shutil, subprocess, sys, tempfile, unicodedata
+import argparse, csv, hashlib, os, re, shutil, subprocess, sys, unicodedata
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 from typing import Any
@@ -13,7 +13,7 @@ HANDOFF = "HANDOFF.yml"
 EMPTY_HANDOFF = "version: 1\nstatus: empty\nitems: []\n"
 FIELDS = [
     "source_filename", "source_path", "title", "asset_id", "destination_dir",
-    "master_path", "webp_path", "source_format", "conversion_profile",
+    "master_path", "webp_path", "staging_webp_path", "source_format", "conversion_profile",
     "original_bytes", "webp_bytes", "size_change_percent", "source_sha256",
     "master_sha256", "webp_sha256", "cwebp_version", "status", "error",
 ]
@@ -94,18 +94,36 @@ def valid_webp(path: Path) -> bool:
         header = f.read(12)
     return header[:4] == b"RIFF" and header[8:12] == b"WEBP" and int.from_bytes(header[4:8], "little") + 8 == path.stat().st_size
 
-def attempt_folder(history: Path, batch: str) -> Path:
-    if history.is_symlink():
-        raise ProcessingError("images/takeout/history must not be a symlink.")
+def attempt_folder(history: Path, batch: str, staging_root: Path | None = None) -> Path:
+    if history.is_symlink() or (history.exists() and not history.is_dir()):
+        raise ProcessingError("images/takeout/history must be a normal directory.")
     history.mkdir(parents=True, exist_ok=True)
     batch_root = history / batch
-    if batch_root.is_symlink():
-        raise ProcessingError(f"Batch history path must not be a symlink: {batch}")
+    if batch_root.is_symlink() or (batch_root.exists() and not batch_root.is_dir()):
+        raise ProcessingError(f"Batch history path must be a normal directory: {batch}")
     batch_root.mkdir(parents=True, exist_ok=True)
+
+    staging_batch_root = None
+    if staging_root is not None:
+        if staging_root.is_symlink() or (staging_root.exists() and not staging_root.is_dir()):
+            raise ProcessingError("images/takeout/webp must be a normal directory.")
+        staging_root.mkdir(parents=True, exist_ok=True)
+        staging_batch_root = staging_root / batch
+        if staging_batch_root.is_symlink() or (staging_batch_root.exists() and not staging_batch_root.is_dir()):
+            raise ProcessingError(f"WebP staging batch path must be a normal directory: {batch}")
+        staging_batch_root.mkdir(parents=True, exist_ok=True)
+
     n = 1
-    while (batch_root / f"attempt-{n:03d}").exists():
-        n += 1
-    return batch_root / f"attempt-{n:03d}"
+    while True:
+        attempt_name = f"attempt-{n:03d}"
+        history_attempt = batch_root / attempt_name
+        staging_attempt = staging_batch_root / attempt_name if staging_batch_root is not None else None
+        if history_attempt.exists() or history_attempt.is_symlink() or (
+            staging_attempt is not None and (staging_attempt.exists() or staging_attempt.is_symlink())
+        ):
+            n += 1
+            continue
+        return history_attempt
 
 def write_reports(folder: Path, handoff: bytes, rows: list[dict[str, Any]], batch: str,
                   state: str, checks: list[str], errors: list[str], count: int) -> None:
@@ -185,15 +203,15 @@ def main() -> int:
         print(str(exc), file=sys.stderr)
         return 1
 
-    folder = attempt_folder(inbox / "history", batch)
+    folder = attempt_folder(inbox / "history", batch, inbox / "webp")
     raw_items = data.get("items")
     items_report = raw_items if isinstance(raw_items, list) else []
     errors: list[str] = []
     checks: list[str] = []
     prepared: list[dict[str, Any]] = []
     moved: list[tuple[Path, Path]] = []
-    created_webps: list[Path] = []
-    temp: tempfile.TemporaryDirectory[str] | None = None
+    staged_moves: list[tuple[Path, Path]] = []
+    stage_root = inbox / "webp" / batch / folder.name
     encoder_version = ""
 
     try:
@@ -208,9 +226,9 @@ def main() -> int:
 
         inbox_images: set[str] = set()
         for child in inbox.iterdir():
-            if child.name == "history":
+            if child.name in {"history", "webp"}:
                 if child.is_symlink() or not child.is_dir():
-                    raise ProcessingError("images/takeout/history must be a normal directory.")
+                    raise ProcessingError(f"images/takeout/{child.name} must be a normal directory.")
                 continue
             if child.name == HANDOFF:
                 continue
@@ -222,7 +240,7 @@ def main() -> int:
                     raise ProcessingError(f"Unsupported image format {suffix} for {child.name}; only PNG, JPG and JPEG are accepted. Animated images are never flattened.")
                 raise ProcessingError(f"Unexpected non-image file in takeout: {child.name}")
             inbox_images.add(child.name)
-        checks.append("Inbox is flat and contains only PNG/JPG/JPEG files, HANDOFF.yml and history/.")
+        checks.append("Inbox is flat and contains only PNG/JPG/JPEG files, HANDOFF.yml, and the reserved history/ and webp/ directories.")
 
         sources: set[str] = set()
         ids: set[str] = set()
@@ -281,17 +299,19 @@ def main() -> int:
         checks.append("Every uploaded image is listed exactly once; no unlisted image will be processed.")
         checks.append("Destinations are restricted to images/ or novel/; duplicate and existing paths are rejected.")
 
-        temp = tempfile.TemporaryDirectory(prefix="takeout-webp-")
-        stage_root = Path(temp.name)
+        if stage_root.exists() or stage_root.is_symlink():
+            raise ProcessingError(f"WebP staging attempt already exists: {stage_root.relative_to(root).as_posix()}")
+        stage_root.mkdir(parents=True, exist_ok=False)
         conversion_errors = []
-        for idx, item in enumerate(prepared, start=1):
+        for item in prepared:
             source = item["source"]
             if source.suffix.lower() == ".png" and is_apng(source):
                 msg = f"{source.name}: animated PNG (APNG) cannot be flattened."
                 item["status"], item["error"] = "SKIPPED_ANIMATED_PNG", msg
                 conversion_errors.append(msg)
                 continue
-            staged = stage_root / f"{idx:04d}.webp"
+            staged = stage_root / f"{source.name}.webp"
+            item["stage_path"] = staged.relative_to(root).as_posix()
             if item["profile"] == "lossless-exact-q100-m6":
                 cmd = ["cwebp", "-quiet", "-lossless", "-q", "100", "-m", "6", "-exact", "-metadata", "icc", str(source), "-o", str(staged)]
             else:
@@ -299,6 +319,7 @@ def main() -> int:
             result = subprocess.run(cmd, capture_output=True, text=True)
             if result.returncode or not valid_webp(staged):
                 detail = (result.stderr or result.stdout).strip() or f"cwebp exit code {result.returncode}; invalid WebP output."
+                staged.unlink(missing_ok=True)
                 item["status"], item["error"] = "FAILED_CONVERSION", detail
                 conversion_errors.append(f"{source.name}: {detail}")
                 continue
@@ -309,14 +330,14 @@ def main() -> int:
             item["status"], item["error"] = "CONVERTED_STAGED", ""
         if conversion_errors:
             raise ProcessingError("Batch conversion failed; no files were relocated. " + " | ".join(conversion_errors))
-        checks.append("Every WebP passed RIFF/WEBP signature and container-length validation in temporary staging.")
+        checks.append(f"Every WebP passed RIFF/WEBP signature and container-length validation in persistent staging: {stage_root.relative_to(root).as_posix()}/.")
 
         for item in prepared:
             item["master"].parent.mkdir(parents=True, exist_ok=True)
             os.replace(item["source"], item["master"])
             moved.append((item["master"], item["source"]))
-            shutil.copyfile(item["staged"], item["webp"])
-            created_webps.append(item["webp"])
+            os.replace(item["staged"], item["webp"])
+            staged_moves.append((item["webp"], item["staged"]))
             if digest(item["master"]) != item["source_sha"]:
                 raise ProcessingError(f"Original master bytes changed during relocation: {item['master']}")
             if not valid_webp(item["webp"]) or digest(item["webp"]) != item["webp_sha"]:
@@ -324,7 +345,7 @@ def main() -> int:
             item["master_sha"] = digest(item["master"])
             item["status"] = "RELOCATED_AND_VERIFIED"
         checks.append("Each original master was relocated byte-for-byte; SHA-256 matches its uploaded source.")
-        checks.append("Each final WebP matches the staged output and is valid at its destination.")
+        checks.append("Each WebP was moved from persistent staging to its final destination and passed hash and container verification.")
 
         rows = []
         for item in prepared:
@@ -334,6 +355,7 @@ def main() -> int:
                 "destination_dir": item["directory"].relative_to(root).as_posix(),
                 "master_path": item["master"].relative_to(root).as_posix(),
                 "webp_path": item["webp"].relative_to(root).as_posix(),
+                "staging_webp_path": item.get("stage_path", ""),
                 "source_format": item["source"].suffix.lower().lstrip("."),
                 "conversion_profile": item["profile"], "original_bytes": item["original_bytes"],
                 "webp_bytes": item["webp_bytes"], "size_change_percent": item["size_change"],
@@ -342,6 +364,13 @@ def main() -> int:
                 "status": item["status"], "error": "",
             })
         write_reports(folder, raw, rows, batch, "SUCCESS", checks, [], len(prepared))
+        # All staged derivatives have moved to their final destinations. Remove
+        # the now-empty attempt directory before clearing the active hand-off.
+        stage_root.rmdir()
+        try:
+            stage_root.parent.rmdir()
+        except OSError:
+            pass  # Older failed attempts for the same batch may still be present.
         tmp_manifest = inbox / ".HANDOFF.yml.tmp"
         tmp_manifest.write_text(EMPTY_HANDOFF, encoding="utf-8")
         os.replace(tmp_manifest, manifest)
@@ -360,15 +389,15 @@ def main() -> int:
                     os.replace(master, source)
             except Exception as rollback_exc:
                 rollback_errors.append(f"Could not restore {source.name}: {rollback_exc}")
-        for webp in reversed(created_webps):
+        for webp, staged in reversed(staged_moves):
             try:
-                webp.unlink(missing_ok=True)
+                if webp.exists() and not staged.exists():
+                    staged.parent.mkdir(parents=True, exist_ok=True)
+                    os.replace(webp, staged)
             except Exception as rollback_exc:
-                rollback_errors.append(f"Could not remove incomplete WebP {webp}: {rollback_exc}")
+                rollback_errors.append(f"Could not restore staged WebP {staged}: {rollback_exc}")
         errors.extend(rollback_errors)
-        checks.append("Batch was not marked successful; sources were restored to takeout where rollback succeeded.")
-        if temp is not None:
-            temp.cleanup()
+        checks.append("Batch was not marked successful; sources were restored to takeout and converted WebPs were retained in staging where rollback succeeded.")
         rows = []
         for item in prepared:
             rows.append({
@@ -377,6 +406,7 @@ def main() -> int:
                 "destination_dir": item["directory"].relative_to(root).as_posix(),
                 "master_path": item["master"].relative_to(root).as_posix(),
                 "webp_path": item["webp"].relative_to(root).as_posix(),
+                "staging_webp_path": item.get("stage_path", ""),
                 "source_format": item["source"].suffix.lower().lstrip("."),
                 "conversion_profile": item["profile"], "original_bytes": item["original_bytes"],
                 "webp_bytes": item.get("webp_bytes", ""), "size_change_percent": item.get("size_change", ""),
@@ -392,9 +422,6 @@ def main() -> int:
             print(f"Could not write diagnostic history: {report_exc}", file=sys.stderr)
         print(f"Takeout batch {batch} failed: {message}", file=sys.stderr)
         return 1
-    finally:
-        if temp is not None:
-            temp.cleanup()
 
 if __name__ == "__main__":
     raise SystemExit(main())
