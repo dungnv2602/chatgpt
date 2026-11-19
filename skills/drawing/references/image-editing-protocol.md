@@ -62,8 +62,9 @@ If several attempts revert to the same wrong pose or discard the source image:
 ## 6. Prompt-before-generation archive
 
 Follow `skills/session-archiving/SKILL.md` for every attempt:
-- commit the authored prompt in `prompts/` before the tool call;
-- record operation type and actual source reference;
+- for non-novel work, commit the authored prompt in its dated `prompts/YYYY-MM-DD/` attempt note; for a named novel scene, commit it in the authoritative scene-local illustration prompt record under `novel/`;
+- identify the active series/artwork thread and use its most recent successful prompt as the text baseline; later failed, rejected, partial, or missed-target prompts are diagnostic evidence only, never the baseline;
+- record series ID/theme, selected baseline provenance, operation type, and the actual source reference attached;
 - verify the pre-attempt commit;
-- after the call, record the actual result, image ID, and mismatch;
+- after the call, record the actual result, image ID, user assessment, and mismatch;
 - do not store image binaries in Git unless requested and technically completed.
