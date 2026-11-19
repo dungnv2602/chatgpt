@@ -1,72 +1,93 @@
 # Image Reference and Editing Protocol
 
-## 1. Identify the reference's role
+## 1. Prompt-first editing: locate the successful baseline
 
-Determine whether the image is an identity reference, composition reference,
-style reference, or exact edit source. The user must assign that role within
-the active drawing session. A reference from an earlier session is not active
-by default, even if it was previously approved or stored. A reference can serve
-several roles, but establish priorities.
+When the user requests an edit to an existing image, the primary source of
+continuity is the **successful authored prompt that produced the target image**,
+not the image binary itself. Default to controlled prompt reconstruction:
+
+- Locate the exact successful prompt in the authoritative attempt record.
+- Verify that it produced the target image or that the user approved that
+  specific attempt as successful for the intended purpose.
+- Recover the complete authored prompt. If it is unavailable, disclose the gap;
+  do not invent, reconstruct from memory, or substitute an unrelated prompt.
+- Use the successful prompt as the baseline for rebuilding the image. Preserve
+  its established visual content and details unless the user requests a change.
+- Revise only the requested element, keeping unrequested elements unchanged.
+- Generate a fresh reconstruction from the revised prompt and assess it against
+  the baseline and the requested change.
+
+The source image may be used as a secondary visual reference when helpful and
+when the user assigns that role. It is not the default editing mechanism.
+
+## 2. Optional image-reference roles
+
+If an image is deliberately included, establish its role and priority:
 
 - **Identity:** preserve faces, hair, glasses, and stable visual features.
 - **Composition:** preserve subject placement, body geometry, camera view, and
   spatial relationships.
 - **Style:** transfer brushwork, palette, line, or print texture without
   importing unrelated subject matter.
-- **Edit source:** modify that exact image and keep all non-target properties.
+- **Visual comparison:** use the image to compare the reconstruction with the
+  approved result.
+- **Direct edit source (secondary workflow):** modify that exact image only when
+  the user explicitly requests direct editing or reconstruction is inadequate,
+  and when the actual source can be attached through the supported mechanism.
 
-Do not confuse "use this as inspiration" with "edit this exact image."
+Do not confuse "use this as inspiration" with "edit this exact image." Prompt-first
+reconstruction does not require an image attachment.
 
-## 2. Attach the actual image
+## 3. Revise the proven prompt, not the image
 
-- Use the currently uploaded image when the user says "this image", "the one I
-  uploaded", or equivalent, and retain the role assigned in the current session
-  brief.
-- Do not silently substitute an older generated image or repository asset.
-- The active session-opening brief controls visual direction. It overrides
-  conflicting features in historical prompts and images.
-- Use the image tool's supported reference attachment mechanism. A filename or
-  image ID written in prose is not an attachment.
-- If a reference ID or asset pointer is required, use the exact pointer exposed
-  by the current conversation or tool result.
-- Never invent an image ID or claim that a reference was attached when it was not.
+Lead with the single requested change. Use the verified successful authored prompt
+as the baseline, then revise it minimally.
 
-## 3. Write a constrained edit prompt
+- **Preserve:** every unrequested visual element, including identity/face,
+  hairstyle, wardrobe, pose, body geometry, composition, camera, lighting,
+  background, environment, mood, and rendering style, as applicable to the
+  baseline.
+- **Change:** only the element the user requested.
+- **Exclude:** unwanted additions, text, boxes, artifacts, or other details
+  specifically identified by the user or present only in unsuccessful attempts.
+- Do not add decorative improvements, substitute clothing, alter faces, or change
+  scenes to solve an unrelated issue.
+- Avoid wholesale rewording of a successful prompt. Unnecessary prompt drift can
+  change more than the requested target.
 
-Lead with the operation: "Edit the exact supplied image", "This is a style-only
-transformation", or "Change only [property]". Then define locked properties.
+For a style-only change, revise only the rendering treatment and preserve all
+scene and subject details.
 
-For composition-sensitive images, lock subjects, faces, body positions, pose
-direction, contact points, hand ownership and order, clothing, colors, objects,
-lighting, camera angle, and crop only as specified by the active session brief
-or explicit edit request. Do not import old-session locks. Keep the requested
-change singular.
+## 4. Optional direct-edit verification
 
-## 4. Verify the operation
+Direct editing is a secondary method, not the default. Use it only when the user
+explicitly requests a direct image edit or when prompt reconstruction is
+materially inadequate and the actual image source is accessible through the
+supported mechanism.
 
-Inspect both the rendered result and returned metadata when available.
-
-- If parent/source linkage is confirmed and the requested change is visible,
-  record a confirmed edit.
-- If metadata says no edit or no parent, do not claim source continuity even if
-  the new image resembles it.
+- Attach the exact image source; a filename or image ID in text is not enough.
+- Inspect the returned operation and parent/source metadata.
+- If source linkage is confirmed and the requested change is visible, classify
+  it as a confirmed edit.
+- If metadata shows no source or parent, do not claim source continuity even if
+  the output resembles the original.
 - If metadata is unavailable, state that source linkage is unconfirmed.
-- A good-looking output is not automatically a successful edit.
+- A successful-looking output is not automatically a confirmed edit.
 
-Classify outcomes precisely: confirmed edit, partial edit, fresh generation,
-fresh generation with missed target, rejected, or technical failure.
+## 5. Recovery when prompt reconstruction misses
 
-## 5. Stop repeating failed context-only calls
+If the revised prompt reconstruction repeatedly misses the requested detail:
 
-If several attempts revert to the same wrong pose or discard the source image:
-1. Stop repeating near-identical prompts.
-2. Check whether the image was actually attached to the tool call.
-3. Reduce the requested change to one operation.
-4. Prefer a localized edit or explicitly source-linked style transfer when supported.
-5. If the tool cannot retain the source, tell the user and preserve the best
-   partial image instead of claiming success.
+1. Stop repeating near-identical prompt revisions.
+2. Recheck the exact successful baseline and inspect assistant-added drift.
+3. Reduce the revision to the requested change only.
+4. If prompt reconstruction is materially inadequate, consider a direct edit as
+   a secondary approach only when the user explicitly requests it or its
+   limitations have been explained and the exact source can be attached.
+5. If neither method is reliable, explain the limitation and preserve the
+   best successful baseline rather than mislabeling the result.
 
-## 6. Prompt-before-generation archive
+# 6. Prompt-before-generation archive
 
 Follow `skills/session-archiving/SKILL.md` for every attempt:
 - create or retrieve the current session-opening brief and verify its exact path;
