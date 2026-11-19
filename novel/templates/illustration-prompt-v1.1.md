@@ -1,7 +1,7 @@
 ---
 format: illustration-prompt-record
 version: 1.1
-status: prepared
+status: approved
 ---
 
 # Illustration Prompt Record — [Illustration ID]
