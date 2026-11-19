@@ -181,9 +181,9 @@ class TakeoutProcessorTests(unittest.TestCase):
         encoder.write_text(
             FAKE_CWEBP.replace(
                 'if "-o" not in args:',
-                'if any(arg.endswith("broken.jpg") for arg in args):\\n'
-                '    print("simulated encoder failure", file=sys.stderr)\\n'
-                '    raise SystemExit(9)\\n'
+                'if any(arg.endswith("broken.jpg") for arg in args):\n'
+                '    print("simulated encoder failure", file=sys.stderr)\n'
+                '    raise SystemExit(9)\n'
                 'if "-o" not in args:',
             ),
             encoding="utf-8",
@@ -223,7 +223,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertTrue((self.inbox / "history/batch-retry/attempt-002/verification-report.md").is_file())
         self.assertEqual(
             (self.inbox / "HANDOFF.yml").read_text(encoding="utf-8"),
-            "version: 1\\nstatus: empty\\nitems: []\\n",
+            "version: 1\nstatus: empty\nitems: []\n",
         )
 
     def test_existing_webp_staging_tree_is_reserved_not_scanned_as_intake(self):
