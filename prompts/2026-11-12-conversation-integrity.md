@@ -264,9 +264,9 @@ And create a separated index note for successful image prompts only.”
 
 **Rename verification:** All 15 old paths are absent and all 15 descriptive paths are present in the `chatgpt` branch tree. Each new path retains its exact original Git blob SHA and byte size. No image file was converted, resized, recompressed, cropped, or edited. The JPEG names are intentionally timestamp-based until the images can be visually inspected.
 
-**Tool event:** Created [the separate successful-image-prompts-index.md](successful-image-prompts-index.md). It contains only prompts classified as successful in the chronological log (attempts 03, 04, 11, and 33), with direct links to each prompt entry and its associated image asset(s). Failed, rejected, and partial-match attempts remain in the complete chronological history but are not included in the success-only index.
+**Historical tool event:** Created a separate cross-session success catalogue at the time. It listed Attempts 03, 04, 11, and 33 with links to their chronological entries and associated image assets; failed, rejected, and partial-match attempts remained in the complete chronological history. The catalogue was retired on 2026-11-20; per-attempt outcome records remain authoritative.
 
-**Supporting records:** former image catalogue (retired 2026-11-20) · [Chronological prompt history](2026-11-12-image-prompts.md) · [Successful prompts only](successful-image-prompts-index.md)
+**Supporting records:** former image catalogue (retired 2026-11-20) · [Chronological prompt history](2026-11-12-image-prompts.md)
 
 
 ## Chronological tool event — WebP derivative workflow (12 November 2026)
