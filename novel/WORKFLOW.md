@@ -261,6 +261,9 @@ Keep progress status separate from canon status.
 ### Scene
 `Planned` · `Outlined` · `Drafted` · `Revised` · `Approved` · `Complete` · `Superseded`
 
+### Character profile
+`Working` · `Approved` · `Superseded`
+
 ### Development outline
 `Working` · `Ready for Review` · `Approved Direction` · `Superseded`
 
@@ -269,6 +272,14 @@ Keep progress status separate from canon status.
 
 ### Illustration
 `Planned` · `Generated` · `Reviewed` · `Approved` · `Superseded`
+
+### Illustration Prompt Record
+`Prepared` · `Attempts in Progress` · `Reviewed` · `Approved` · `Superseded`
+
+Use lowercase kebab-case equivalents in YAML frontmatter (for example,
+`ready-for-review` and `attempts-in-progress`). A template's own
+frontmatter status indicates the template's approval; when copying it, set
+the new record's status to the appropriate starting state.
 
 Use a separate canon-state label when needed. A scene can be a drafted document containing provisional story details; its existence does not make every detail approved canon.
 
