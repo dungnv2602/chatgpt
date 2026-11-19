@@ -171,6 +171,60 @@ explicitly adopts it.
   replacement repository-wide visual authority index. Session-specific image
   provenance belongs in the session brief and relevant attempt record.
 
+### Session brief structure
+
+Use this structure for each session brief. Preserve the user's actual opening
+wording in the first section; the structured fields summarize it and must not
+invent detail.
+
+```markdown
+# Drawing Session Brief
+
+**Session ID:** ...
+**Session type:** Day drawing / Novel illustration
+**Project or novel scene:** ...
+**Created:** YYYY-MM-DD
+**Status:** Active / Closed
+
+## User's opening brief
+> [Preserve the user's opening direction accurately.]
+
+## Active visual direction
+- Subject and theme:
+- Scene or story moment:
+- Mode / medium:
+- Character identity and appearance:
+- Wardrobe:
+- Pose and spatial relationships:
+- Camera / framing:
+- Environment:
+- Lighting and palette:
+- Mood / emotional intention:
+
+## Locked features
+- ...
+
+## Permitted variation
+- ...
+
+## Explicit exclusions
+- ...
+
+## References assigned to this session
+- Asset:
+- User-assigned role:
+- Actual attachment/source status:
+
+## Amendments
+- [Date/time] — [User's exact correction or concise faithful record]
+```
+
+Write `Not specified / open` for fields the user has not defined. Do not fill
+gaps from a former session, a global image catalogue, a successful prompt, or
+the assistant's aesthetic assumptions. A session brief may be compact when the
+user's request is compact; this is a record of the user's direction, not a
+questionnaire that must be completed before work.
+
 ### Daily folder and one-note-per-attempt format for non-novel drawing work
 
 For non-novel drawing work, organize image prompts by date. Each calendar day is a folder under `prompts/`, and each image-generation or image-edit attempt is its own Markdown note. **Exception:** for an illustration belonging to a named novel scene, the scene-local prompt record under `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/` is authoritative. Keep that novel attempt there and do not duplicate it in the daily `prompts/` folder.
