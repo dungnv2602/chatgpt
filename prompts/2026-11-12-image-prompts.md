@@ -671,13 +671,13 @@ The prompt archive and all individual authored prompt files now live under `Chat
 - **Learning:** Returning to the archived silk-wrap, bare-shoulder art direction was more effective than the structured evening-gown prompts. Preserve this prompt and visual treatment as the successful base for future revisions. Do not replace it with a high-neck or overly formal outfit.
 
 - **Approved visual references, uploaded by the user:**
-  - [Reference 01 — soft gaze, wider composition](../images/realistic-silk-wrap-portrait-soft-gaze-01.png) — [reference details](../images/reference-index.md#reference-01--soft-gaze-wider-composition) — `realistic-silk-wrap-portrait-soft-gaze-01.png` — Library file ID `file_00000000f2ac82118528bdff02083419` — Git blob `5a8974649c0338e936aa2d6b9fad3082a51b34eb`.
-  - [Reference 02 — closer framing, stronger neckline](../images/realistic-silk-wrap-portrait-close-framing-02.png) — [reference details](../images/reference-index.md#reference-02--closer-framing-stronger-neckline) — `realistic-silk-wrap-portrait-close-framing-02.png` — Library file ID `file_00000000f36c8211a4a7ace253f08e2e` — Git blob `95e33191602651f494b5e85905d1e670fdaeff5d`.
-  - Both are reusable inspiration references, not confirmed edit sources. Their provenance and persistent Library locations are recorded in the linked index.
+  - [Reference 01 — soft gaze, wider composition](../images/realistic-silk-wrap-portrait-soft-gaze-01.png) —  — `realistic-silk-wrap-portrait-soft-gaze-01.png` — Library file ID `file_00000000f2ac82118528bdff02083419` — Git blob `5a8974649c0338e936aa2d6b9fad3082a51b34eb`.
+  - [Reference 02 — closer framing, stronger neckline](../images/realistic-silk-wrap-portrait-close-framing-02.png) —  — `realistic-silk-wrap-portrait-close-framing-02.png` — Library file ID `file_00000000f36c8211a4a7ace253f08e2e` — Git blob `95e33191602651f494b5e85905d1e670fdaeff5d`.
+  - Both served as inspiration references for this November 12 session, not confirmed edit sources. Their historical provenance is retained in this dated archive. They are not automatic references for a later drawing session.
 
 ## User-approved visual reference files — added after attempt 33
 
-The user uploaded both attempt 33 results, confirmed liking both, and requested descriptive names and reusable inspiration links. Both full-resolution PNGs were renamed in the persistent Files Library and indexed in [the visual reference index](../images/reference-index.md).
+The user uploaded both attempt 33 results, confirmed liking both, and requested descriptive names and reusable inspiration links. Both full-resolution PNGs were renamed in the persistent Files Library; their provenance is documented in this dated session archive.
 
 - **Reference 01:** `realistic-silk-wrap-portrait-soft-gaze-01.png`, Library file ID `file_00000000f2ac82118528bdff02083419`, source generation `ff883641-6b64-4f92-8328-de20404bc688`.
 - **Reference 02:** `realistic-silk-wrap-portrait-close-framing-02.png`, Library file ID `file_00000000f36c8211a4a7ace253f08e2e`, source generation `770da3dd-5176-4c21-8b2e-1c4e26d78aee`.
