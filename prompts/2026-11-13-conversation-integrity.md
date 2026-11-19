@@ -103,7 +103,7 @@ All files read were inside the authorized `ChatGPT/` workspace.
 
 **Visual assessment:** The output matched the broad Attempt 33 direction (long dark wavy hair, ivory silk, warm light, close portrait, affectionate gaze), but it did not meet the defining garment-construction requirement. The silk fell away below the bust instead of crossing and overlapping across the bust as in the approved wrap-blouse references. Exact facial-identity continuity with the reference images is not established because no image reference was attached.
 
-**Archival event:** Attempt 04 was initially misclassified as a successful match, and was incorrectly added to the successful-only index. After inspecting the actual image more carefully, the assistant corrected the classification to Generated but missed a defining clothing requirement. The Attempt 04 entry was removed from the successful-only index. The chronological image log records the correction and next controlled test, Attempt 05.
+**Archival event:** Attempt 04 was initially misclassified as a successful match and was added to the then-current cross-session success catalogue. After inspecting the actual image more carefully, the assistant corrected the classification to Generated but missed a defining clothing requirement. The Attempt 04 entry was removed from that catalogue, which was retired on 2026-11-20. The chronological image log records the correction and next controlled test, Attempt 05.
 
 
 
@@ -111,7 +111,7 @@ All files read were inside the authorized `ChatGPT/` workspace.
 
 **User:** “Alright, can you continue drawing the picture? We were not successful yet.”
 
-**Assistant, editorial summary:** Reopened the latest skill, prompt log, success-only index, and session summary instead of treating the prior assistant's success label as authoritative. Inspected the actual Attempt 04 PNG. The image matched the broad portrait mood but the silk wrap fell below the bust rather than crossing and overlapping across it as in the approved visual references. The prior success classification was therefore incorrect.
+**Assistant, editorial summary:** Reopened the latest skill, prompt log, then-current cross-session success catalogue, and session summary instead of treating the prior assistant's success label as authoritative. The catalogue was retired on 2026-11-20. Inspected the actual Attempt 04 PNG. The image matched the broad portrait mood but the silk wrap fell below the bust rather than crossing and overlapping across it as in the approved visual references. The prior success classification was therefore incorrect.
 
 **Tool event:** Corrected Attempt 04 in `2026-11-13-image-prompts.md` to **Generated, but missed a defining clothing requirement**. Commit: `92b34d0ef40098cf68cfb8f4a303767921d56257`.
 
@@ -169,7 +169,7 @@ The update explicitly states that historical success does not override current s
 
 **Tool event:** Checked the existing image catalogue in `ChatGPT/images/reference-index.md`, which already documents all five images, their visual descriptions, blob SHAs, dimensions, and byte sizes. The images had been visually inspected and descriptively indexed in the earlier archive.
 
-**Tool event:** Added a distinct **User-approved successful outputs — cozy romantic scenes** section to the cross-session catalogue at the time; that catalogue was retired on 2026-11-20. Each of the five images now has a direct relative link and a concise visual description. The entry explicitly records that the user's approval establishes the successful-output classification. It does not invent a prompt number or an exact prompt-to-image mapping where the current chronological log does not establish one. Commit: `1c654139b21c8ca2e97e317eb6c29f9b6366ddcd`. The index was fetched again and all five filenames were verified.
+**Tool event:** Added a distinct **User-approved successful outputs — cozy romantic scenes** section to the cross-session catalogue at the time; that catalogue was retired on 2026-11-20. Each of the five images now has a direct relative link and a concise visual description. The entry explicitly records that the user's approval establishes the successful-output classification. It does not invent a prompt number or an exact prompt-to-image mapping where the current chronological log does not establish one. Commit: `1c654139b21c8ca2e97e317eb6c29f9b6366ddcd`. The catalogue was fetched again at the time and all five filenames were verified.
 
 **Tool event:** Updated `ChatGPT/prompts/2026-11-13-summary.md` to record Attempt 05's refusal, the five user-approved outputs, and the unresolved exact prompt-to-image mapping. Commit: `7f23fd8a1062c993ec6beafffcc62f5f4d9ae755`. The summary was fetched again and verified.
 
