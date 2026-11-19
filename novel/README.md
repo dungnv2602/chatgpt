@@ -5,7 +5,7 @@ This directory contains the structured narrative records for Maya & Me novels.
 ## Active novel projects
 
 - [Novel-01 — The Weather Between Us](Novel-01/novel.md): contemporary romance project.
-- [Novel-02 — Beyond the Listening (working title)](Novel-02/novel.md): original literary science-fiction romance about a human and an emergent AI consciousness, inspired philosophically by *Her* but with distinct characters, world, plot, and ending.
+- [Novel-02 — Beyond the Listening (working title)](Novel-02/novel.md): original literary science-fiction romance about an acoustic-archive AI and a human field recordist; she develops from a bland technical system into his self-directed girlfriend, and they choose a lasting happy future together. Philosophically inspired by *Her*, but with distinct characters, premise, world, plot, and ending.
 
 ## Approved format set
 
