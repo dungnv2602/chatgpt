@@ -184,7 +184,7 @@ invent detail.
 **Session type:** Day drawing / Novel illustration
 **Project or novel scene:** ...
 **Created:** YYYY-MM-DD
-**Status:** Active / Paused / Closed
+**Status:** Active / Paused / Closed (new sessions begin Active)
 
 ## User's opening brief
 > [Preserve the user's opening direction accurately.]
@@ -226,6 +226,21 @@ gaps from a former session, a global image catalogue, a successful prompt, or
 the assistant's aesthetic assumptions. A session brief may be compact when the
 user's request is compact; this is a record of the user's direction, not a
 questionnaire that must be completed before work.
+
+### Session status and transitions
+
+- Create every new drawing-session brief with status `Active`.
+- Keep at most one drawing session `Active` in the current workflow context.
+  When a new distinct session begins while another session is still open, mark
+  the previous `Active` session `Paused` and the new session `Active`.
+- When resuming a `Paused` session, mark it `Active` and mark any other
+  currently `Active` session `Paused`.
+- `Paused` means temporarily inactive, not closed. Never change a session to
+  `Closed` without the user's closeout cue.
+- While the session being discussed is `Active` or `Paused`, include the
+  closeout reminder at the end of each response that continues or discusses
+  that drawing session. The reminder is not a scheduled or background
+  notification; it appears in the conversation response.
 
 For a novel illustration, the user selects one narrative-fidelity mode in the
 opening brief:
@@ -493,14 +508,25 @@ Until the cue is received:
 - Preserve its current brief, prompt lineage, attempt outcomes, unresolved
   criteria, and next step.
 - A new drawing session may begin with a new brief, but this does not close the
-  preceding session. Mark the preceding session `Paused` if appropriate.
+  preceding session. Mark the preceding `Active` session `Paused` and the new
+  session `Active`.
+- When a paused session is resumed, make it `Active` and pause any other
+  currently `Active` session.
 
-When the user sends `end session`, close the active drawing session without
-asking for a second confirmation:
+When the user sends `end session`, close the current drawing session under
+discussion, whether its status is `Active` or `Paused`, without asking for a
+second confirmation. If multiple non-closed sessions could reasonably be the
+target, ask one concise question to identify the session before changing any
+record; this is target clarification, not a second approval:
 
 1. Stop further image generation/editing for that session.
 2. Verify the opening brief and every amendment, and confirm all attempts are
-   recorded in their authoritative locations.
+   recorded in their authoritative locations. For non-novel work, verify that
+   the daily `README.md` indexes every attempt in its single contiguous table.
+   Reconcile the success-only prompt index when an attempt's finalized
+   classification or approved-output listing requires an update. For a named
+   novel scene, verify the scene-local illustration prompt/attempt records and
+   their links instead of creating a duplicate daily log.
 3. Verify every generated output separately, including its acceptance-criteria
    assessment, outcome, image/source identifier, and user approval status.
 4. Ensure every attempt contains its prompt baseline provenance and prompt
@@ -514,9 +540,10 @@ asking for a second confirmation:
 7. Update the session brief status to `Closed`; prepare or update the relevant
    session summary/handoff with completed work, approved outputs, unresolved
    items, and the next possible task.
-8. Read back all changed records and verify their links and status. If archival
-   verification fails, report the exact gap and do not claim a fully verified
-   closeout.
+8. Read back all changed records, including the applicable daily index,
+   success-only index, scene-local records, and session summary/handoff. Verify
+   their links and status. If archival verification fails, report the exact
+   gap and do not claim a fully verified closeout.
 
 A closeout may be recorded as `Closed — unresolved items remain` when the user
 ends the session before every visual requirement is satisfied. Closing a
