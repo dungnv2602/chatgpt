@@ -36,7 +36,7 @@ This boundary applies to every future task and every tool call, not only archivi
   - `prompts/YYYY-MM-DD-conversation-integrity.md`
   - `prompts/YYYY-MM-DD-summary.md`
 - Non-novel image attempts use the dated `prompts/YYYY-MM-DD/` structure below. Named novel-scene illustrations use their authoritative scene-local prompt records under `novel/`; do not duplicate their prompt text or attempt history in `prompts/`.
-- Store new visual assets explicitly destined for the repository under `images/`.
+- Store non-novel visual assets under `images/`; store novel-scene illustration binaries under `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. New user uploads for either destination first enter `images/takeout/` and are routed by the approved hand-off.
 - Keep skills and supporting references under `skills/`.
 
 ### Conversation behavior
@@ -408,11 +408,11 @@ materially inadequate and the exact source image can be attached through a
 supported mechanism. Verify source linkage before calling it a confirmed edit.
 
 - Deliver generated images in the conversation.
-- Store repository image assets only under `images/`, and only when the user has requested repository storage or the established workflow requires it.
+- Store retained non-novel repository images under `images/`; store novel-scene illustration binaries in the novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library. New uploads for either destination enter through `images/takeout/` and its hand-off.
 - Never claim a fresh generation was an edit of the original.
 - Never claim a reference image was supplied unless the tool call actually included that reference.
 - Preserve source-image identity and distinguish an edit from a newly generated composition.
-- Use a reference image only from `images/` or from an image the user supplies directly in the current conversation.
+- Use a repository reference image from `images/` or a novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library, or from an image the user supplies directly in the current conversation.
 - If an image edit fails, state that the image was not modified; do not imply the source image changed.
 
 ### Separate successful-prompt index
@@ -421,7 +421,7 @@ Maintain one separate file at `prompts/successful-image-prompts-index.md`. This 
 
 1. Include only prompt attempts whose recorded outcome is a successful match or a successful generation that followed its defining creative direction. Do not include rejected attempts, failed generations, generated-but-missed-target results, or partial matches as prompt successes.
 2. For each included attempt, record its primary series ID/name and theme spine, plus any verified branch/subseries relationship. If historical membership cannot be established reliably, label it `legacy/unassigned` rather than guessing.
-3. Link directly to the original attempt heading or scene-local prompt record and each known associated image file under `images/`. Include more than one image when a single successful prompt produced multiple approved results.
+3. Link directly to the original attempt heading or scene-local prompt record and each known associated image file under `images/` or the novel's central illustration asset library. Include more than one image when a single successful prompt produced multiple approved results.
 4. Preserve caveats when a particular detail was not verified, when the successful output fulfilled a revised brief, or when a user-approved visual keeper is not itself proof of prompt success.
 5. Keep the success index as a discovery aid. Determine which prompt is most recent from the chronological source records within the active series; never infer recency from the order of index entries.
 6. Update the successful-only index when an attempt's result is finalized or when an image is renamed. Keep failed and partial attempts in the chronological history only, unless the user separately approves an image as a visual keeper; then list it in the user-approved-output section without disguising the prompt's actual outcome.
@@ -437,9 +437,11 @@ session workflow requires keeping a source asset:
 1. Give each retained image a clear, descriptive filename based on its visible
    content. Preserve the original bytes; do not overwrite a full-resolution
    original with a thumbnail.
-2. Keep image binaries under `images/` when a supported repository binary-upload
-   route is available. Verify the exact path and blob identity before claiming
-   repository storage.
+2. Keep non-novel image binaries under `images/` and novel-scene illustration
+   binaries under `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`
+   when a supported repository binary-upload route is available. New uploads
+   first enter `images/takeout/` and are routed through its hand-off. Verify
+   the exact final path and blob identity before claiming repository storage.
 3. If the binary cannot be transferred to GitHub, retain it in the persistent
    Files Library only when the user has requested retention and that storage is
    available. Record its exact Library path, stable file ID, source generation
