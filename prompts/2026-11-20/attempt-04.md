@@ -43,6 +43,26 @@
 > 
 > No android features, no obvious hologram, no ghostly apparition, no glowing skin, no circuitry, no digital grids, no interface graphics, no symbols, no neon, no dramatic energy beams, and no additional figures or decorative effects. Preserve the visual priority: intelligent emotional presence first, a subtle nonphysical edge second.
 
-## Result — pending generation
+## Per-output assessment — after generation/editing
+
+| Output | Criterion | Result | Visible evidence |
+|---|---|---|---|
+| Image 1 | 1. Original adult woman | Pass | Original-looking adult subject with natural anatomy and skin; no apparent actor or film-still recreation |
+| Image 1 | 2. Samantha emotional presence | Pass | Direct attentive gaze, quiet warmth, and a restrained, thoughtful half-smile |
+| Image 1 | 3. Established visual language | Pass | Auburn shoulder-length hair, freckles, hazel-brown eyes, coral-red relaxed blouse, warm window-side apartment |
+| Image 1 | 4. Perceptible nonphysical edge cue | Partial | A few amber glints appear near the window-side hair and shoulder, but the silhouette remains continuous and reads as physically solid |
+| Image 1 | 5. Naturalistic rather than science-fiction imagery | Pass | Photographic lighting and texture; no android, hologram, ghost, UI, circuitry, neon, or dramatic VFX |
+
+## Result — generated, defining cue only partially achieved
+
+- **Actual result:** One photorealistic image returned and was delivered in the conversation.
+- **Generation ID:** `061c1943-f7cc-4818-a897-3f07e16b38d4`.
+- **Asset ID:** `file_0000000047908207866f8f6e1b84ddb1`.
+- **Local artifact:** `/mnt/data/a_warm_cinematic_sunlit_indoor_portrait_scene_a.png`.
+- **Tool metadata:** `edit_op: null`, `parent_gen_id: null`, `prompt: ""`, `seed: null`. This is a fresh generation; no source image was attached and no parent linkage was returned. The compiled-prompt field was empty, so this record does not claim the authored prompt is the tool's internal payload.
+- **Outcome:** Partial match. The portrait and emotional direction are strong, but the defining nonphysical edge cue is only weakly suggested by a few amber glints; the figure still reads as fully corporeal.
+- **Approval status:** Awaiting the user's visual assessment. Do not treat this image as an approved identity reference or successful prompt baseline until the user accepts it for that purpose.
+- **Storage:** Delivered in the current conversation; not stored in GitHub or the persistent Files Library.
+- **Next-step constraint:** If the user wants another iteration, preserve this exact face, expression, hairstyle, blouse, pose, crop, room, and lighting only if the user approves this image as the visual base. An exact edit requires the actual image to be attached in that call. Otherwise use a fresh generation and the recovered session brief.
 
 The prompt was committed and read back before the image call. Record the returned image ID, metadata, visible match, and per-output assessment after generation. Do not describe this fresh generation as an edit or reference-guided result.
