@@ -313,8 +313,8 @@ explicitly fixed.
 Separate the brief into:
 - Required subjects and emotional beat.
 - Required pose, gesture, and spatial relationships.
-- Fixed character identity and wardrobe.
-- Setting, framing, and visual style.
+- Character identity and wardrobe details explicitly fixed by the active session brief.
+- Setting, framing, and visual style as specified or left open by the session brief.
 - Details that may be chosen creatively.
 - Details that must not change.
 
