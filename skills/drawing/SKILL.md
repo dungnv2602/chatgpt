@@ -148,7 +148,7 @@ prepare and commit the exact authored prompt, verify that commit, then generate
 or edit and record the actual outcome.
 
 
-### A. Read the brief and complete the reference preflight
+### A. Read the brief and complete the session-brief preflight
 
 Identify the subject, selected mode, composition, camera/viewpoint, orientation,
 character appearance, clothing, expression, pose, exact spatial relationships,
