@@ -105,7 +105,7 @@ Recommended structure:
 
 **Project:** ...
 **Branch:** ...
-**Companion files:** [Summary](YYYY-MM-DD-summary.md) · [Image prompts](YYYY-MM-DD-image-prompts.md)
+**Companion files:** [Summary](YYYY-MM-DD-summary.md) · [Image-prompt history](non-novel dated prompt record; for novel scenes, link the scene-local prompt record instead)
 
 ## Integrity policy
 ...
@@ -296,8 +296,8 @@ When an uploaded image is already present in `images/` under an opaque or tempor
 
 ## 8. Finishing a session
 
-1. Verify the relevant dated records under `prompts/` exist and contain the intended material.
-2. Verify every image attempt made in the session has a recorded outcome.
+1. Verify the relevant session records under `prompts/` exist. For non-novel drawing work, verify the dated attempt notes and README; for a named novel scene, verify its scene-local prompt records under `novel/` instead of creating duplicate attempt notes in `prompts/`.
+2. Verify every image attempt made in the session has a recorded outcome in its authoritative location.
 3. Ensure the next task in the summary matches the latest prompt-history state.
 4. Provide direct links to records under `approved project directories`.
 5. State any known gaps honestly. Do not promise background notification or work after the conversation ends unless a supported automation has actually been created.
