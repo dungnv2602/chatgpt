@@ -13,6 +13,23 @@ authoritative for exact prompt text, source IDs, tool metadata, visual
 assessment, and provenance. Do not infer an approval or direct edit from image
 delivery or a prompt's wording.
 
+## Field guide
+
+1. **Attempt / prompt:** attempt number, short descriptive title, and link to
+   the complete prompt/result record. Keep the full prompt in that record.
+2. **Session / brief:** session ID or name and link to the opening brief. State
+   when no separate brief was filed.
+3. **Series / baseline lineage:** verified series name/theme and known parent,
+   source, or successful baseline attempt. Use `not established` when the
+   relationship cannot be verified.
+4. **Execution outcome:** what the image tool actually returned and whether
+   the result met the defining requirements. A prompt approved for generation
+   is not evidence that an image was generated or approved.
+5. **User approval / output evidence:** record explicit user approval
+   separately from the execution result, and link the exact output or verified
+   asset. Otherwise state that no output was returned, approval was not
+   recorded, or storage/linkage was not verified.
+
 | Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence |
 |---|---|---|---|---|
 | [01 — Samantha, imagined as a presence](attempt-01.md) | [Session 01](session-01-brief.md) | Samantha series; initial attempt | Generated; missed the defining AI-presence cue, although the warm photographic portrait direction was achieved | User approval not recorded; output/provenance details are in Attempt 01 |
