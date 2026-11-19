@@ -746,16 +746,23 @@ Name each mismatch and retain a useful lesson for the next attempt. Update the
 prompt-difference record for the next iteration: preserve what succeeded, change
 only what is needed, and explicitly exclude rejected additions or drift.
 
-## 5. Editing discipline
+## 5. Prompt-first image editing and reconstruction
 
-For any request to change one property, treat all unmentioned properties as
-locked. State the single intended change near the beginning of the prompt.
-Repeat critical locked details only where necessary. Prefer localized edits when
-supported. Do not re-describe the entire scene in ways that invite composition
-changes.
+**Primary workflow: successful prompt → controlled prompt revision → fresh generation.**
 
-For a style-only transformation, freeze people, pose, hands, clothing, objects,
-lighting, camera position, and crop. Change only the rendering treatment.
+When the user requests a change to an existing image, use the exact successful authored prompt that produced the target image as the primary baseline. Reconstruct the image through that prompt, then revise only the requested element. Do not default to pixel-level editing of the image itself or make the image attachment the editing mechanism.
+
+1. Locate and verify the target image's originating prompt in the authoritative attempt record.
+2. Confirm that the prompt/output pair is successful or user-approved for the intended purpose. If the original prompt cannot be recovered, disclose that limitation; do not fabricate its wording or silently substitute an unrelated prompt.
+3. Treat the successful prompt as the reconstruction baseline. Preserve all unrequested details—identity/face, hairstyle, wardrobe, pose, composition, camera, lighting, environment, atmosphere, and other established elements—unless the user explicitly authorizes changes.
+4. Make the smallest prompt revision needed to accomplish the requested change. Lead with that change, and identify what is preserved, changed, and excluded. Avoid unnecessary rewording that could cause drift.
+5. Generate a new image from the revised prompt. This is a **fresh generation/reconstruction**, not a direct edit of the original image. Do not claim source-image edit provenance.
+6. Use the original image as an optional visual comparison/reference only when it materially helps and the user assigns that role. Prompt baseline remains primary; attaching an image is not required for prompt-first reconstruction.
+7. Inspect the result against the successful baseline and the specific requested change. Record deviations and the actual outcome.
+
+If the user explicitly asks for a direct image edit or source-image fidelity that prompt reconstruction cannot reliably preserve, direct editing may be considered as a secondary method only when the actual source image is accessible and supported. Do not silently switch away from the prompt-first method. If a direct edit is attempted, verify source linkage and classify it accurately.
+
+For a style-only change, use the successful prompt as the reconstruction baseline and revise only the rendering treatment; preserve people, pose, hands, clothing, objects, lighting, camera position, crop, and scene content unless the user explicitly requests otherwise.
 
 ## 6. Session-specific scene and character continuity
 
