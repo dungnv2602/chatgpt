@@ -56,10 +56,12 @@ are optional tools, not mandatory ingredients. Use sepia or monochrome only when
 asked or historically appropriate. Paper aging, scratches, cracks, and heavy
 grain are optional effects, not default markers.
 
-### Current artwork classification
-The latest cozy-bedroom image is **Vintage Mode → Painterly Storybook**:
-warm hand-painted-looking surfaces, brush texture, gentle forms, and a nostalgic
-cream-and-amber atmosphere. It is not a strict historical painting or sepia photo.
+### Historical example — not a current-session default
+An earlier cozy-bedroom image was classified as **Vintage Mode → Painterly
+Storybook**, based on its hand-painted-looking surfaces, brush texture, gentle
+forms, and nostalgic cream-and-amber atmosphere. This is a historical example
+only. It does not establish the mode, palette, scene, or visual direction for a
+new drawing session; the active session brief always controls those choices.
 
 ## Choosing a mode
 
