@@ -16,7 +16,7 @@ status: approved
 - **Location:**
 - **Time / Time Period:**
 - **Status:** Planned / Outlined / Drafted / Revised / Approved / Complete / Superseded
-- **Canon State:** Proposed / Partly Established / Established
+- **Canon State:** Established / Partly Established / Proposed / Open
 
 ## 2. Characters
 - **Characters Present:**
