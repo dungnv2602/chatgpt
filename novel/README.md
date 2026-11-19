@@ -5,7 +5,7 @@ This directory contains the structured narrative records for Maya & Me novels.
 ## Active novel projects
 
 - [Novel-01 — The Weather Between Us](Novel-01/novel.md): contemporary romance project.
-- [Novel-02 — Beyond the Listening (working title)](Novel-02/novel.md): original literary science-fiction romance about an acoustic-archive AI and a human field recordist; she develops from a bland technical system into his self-directed girlfriend, and they choose a lasting happy future together. Philosophically inspired by *Her*, but with distinct characters, premise, world, plot, and ending.
+- [Novel-02 — Beyond the Listening (working title)](Novel-02/novel.md): original literary science-fiction romance about Andy, a human field recordist, and Maya, an acoustic-archive AI; their approved arc includes an early separation, later reconciliation, and a lasting happy future. [Open discussion note](Novel-02/open-discussion.md) tracks unresolved questions for progressive consultation.
 
 ## Approved format set
 
@@ -58,7 +58,8 @@ ChatGPT/
     │       ├── arc.md
     │       └── ...
     └── Novel-02/
-        └── novel.md
+        ├── novel.md
+        └── open-discussion.md
 ```
 
 The example novel, arc, scene, and illustration names are placeholders. Do not create empty novel folders or fictional story records until a real novel is started.
@@ -66,6 +67,7 @@ The example novel, arc, scene, and illustration names are placeholders. Do not c
 ## Document responsibilities
 
 - **novel.md:** identity, premise, themes, narrative approach, characters, story world, central conflict and stakes, overall structure, arc directory, timeline, continuity, visual direction, and progress.
+- **open-discussion.md:** unresolved questions and creative decisions reserved for discussion as the novel progresses; it is not a list of decisions to force prematurely.
 - **arc.md:** the arc's purpose, starting point, character development, progression, turning points, climax, resolution, scene directory, and connection to the novel.
 - **scene.md:** one continuous narrative event, its purpose, opening situation, development, central moment, ending, continuity, and its illustrations.
 - **illustration note:** image provenance and prompt link, objective visual description, narrative context, emotional meaning, continuity, and connection to the scene.
