@@ -153,44 +153,56 @@ character appearance, clothing, expression, pose, exact spatial relationships,
 lighting, environment, mood, and what must remain unchanged in an edit.
 Separate essential requirements from optional decorative details.
 
-**Mandatory project-continuity check — before drafting any image prompt:**
+**Session-specific direction authority — the opening brief governs this drawing session:**
 
-1. Read `images/reference-index.md` on branch `gpt` and
-   identify the active reference, its scope, and the approved visual features.
-   This is a continuity-information check, not an instruction to attach the
-   image to every generation.
-2. For Maya, use the approved canonical prompt direction and the indexed
-   description as the identity/wardrobe specification. Preserve her approved
-   face, facial features, long dark hair, proportions, and exact ivory
-   silk-wrap outfit and garment construction. These are locked; do not
-   redesign, replace, simplify, or reinterpret them.
-3. **A written canonical prompt is sufficient for a fresh text-to-image
-   generation.** The actual reference image is optional, not a technical or
-   workflow prerequisite. When continuing an established series, use its most
-   recent successful prompt as the text baseline; inspect newer failed or partial
-   attempts only for user-requested changes and diagnostic lessons. If no series
-   applies, use the most recent successful prompt for the same artwork/thread, or
-   the strongest relevant approved prompt when starting a genuinely new task.
-   Carry forward canonical identity and wardrobe wording, and direct creative
-   variation toward the requested scene, pose, expression, setting, lighting,
-   and composition.
-4. Attach the actual image only when the user asks to use it as a visual
-   reference, when a task materially benefits from visual-reference guidance,
-   or when performing an edit of that exact image. If an image is attached,
-   record its exact path and attachment identifier and verify receipt where
-   metadata permits.
-5. Keep reference roles distinct: an **inspiration reference** guides a new
-   generation; an **edit source** is the exact image being modified. A
-   filename, repository link, or prompt mention is not an attachment.
-   Never claim an image was reference-guided or edited unless the tool call
-   actually supports and confirms that linkage.
-6. **Do not block a fresh generation merely because the canonical image
-   cannot be downloaded or attached.** Proceed from the approved canonical
-   prompt and written continuity specification. Stop only when the user
-   specifically requires an exact source-image edit or actual visual
-   attachment and that source cannot be supplied.
+The user's opening brief for a specific drawing session is the source of truth
+for its creative direction. This applies equally to a day-drawing session and a
+novel-illustration session. No repository-wide image index, past portrait,
+previous prompt, character sheet, successful image, or old project convention
+automatically dictates the current session's face, identity, outfit, scene,
+pose, style, palette, mood, setting, or composition.
 
-### B. Establish the visual hierarchy
+1. At the start of each distinct drawing session, identify the user's opening
+   vision and treat it as the active brief. Preserve the user's wording and
+   distinguish what is explicitly specified from what remains open for creative
+   choice. Do not turn unstated details into permanent locks.
+2. For non-novel/day drawing, use the session brief stored under
+   `prompts/YYYY-MM-DD/session-[NN]-brief.md`. For a named novel scene, use the
+   scene-local session brief under
+   `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/session-[YYYY-MM-DD]-[NN]-brief.md`.
+   The authoritative storage and verification procedure is in
+   `skills/session-archiving/SKILL.md`.
+3. A session brief records the intended subject/theme, scene or moment, mode,
+   character appearance, outfit, pose, framing, environment, lighting, mood,
+   continuity requirements, locked features, permitted variation, exclusions,
+   and any visual references the user explicitly assigns to this session.
+   Mark unspecified fields as open/not specified; never invent a lock.
+4. Later explicit user instructions within the same session amend the active
+   brief for the named property. Preserve the original opening brief and append
+   the amendment to the session record; do not silently rewrite history.
+5. A new drawing session starts with a new brief, even when it belongs to an
+   existing project, character, novel, or series. Reuse earlier work only when
+   the current brief explicitly continues that series or adopts those details.
+   Even then, the current session brief overrides any conflicting older prompt
+   or image.
+6. For novel illustrations, scene text and novel records provide narrative
+   facts only to the extent the user asks the image to follow or adapt them.
+   They do not independently dictate visual design. The session-opening brief
+   determines which moment, interpretation, appearance, outfit, mood, and
+   visual treatment are wanted.
+7. Use an uploaded or stored image as a reference only when the user assigns it
+   a role in this session (identity, composition, style, or exact edit source).
+   A historical image is not an active reference merely because it is stored,
+   linked, approved, or previously used. A generation ID or filename is not an
+   attachment.
+8. If a current-session brief conflicts with a successful historical prompt,
+   preserve the user's current brief and use the old prompt only as a technical
+   wording aid for compatible details. Do not import its outdated appearance,
+   clothing, setting, framing, or style.
+
+The session brief—not a global image catalogue—is the visual authority.
+
+### B. Establish the visual hierarchy### B. Establish the visual hierarchy
 Order prompts by importance:
 1. Main subject and defining pose/action.
 2. Relative positions and spatial relationships.
@@ -212,26 +224,24 @@ essential to the picture.
 ### C. Prepare and archive the prompt
 Before every generation or edit attempt:
 1. Follow `skills/session-archiving/SKILL.md`.
-2. For a named novel scene, read the relevant scene-local illustration prompt
-   records and outcomes under `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/`.
-   Keep all prompts and attempt history for that novel scene inside the novel.
-   For non-novel drawing work, identify the active series/artwork thread and read
-   its chronological prompt history first. Consult
-   `prompts/successful-image-prompts-index.md` as a discovery aid, then verify
-   the candidate prompt and outcome in the authoritative chronological record.
-3. Read `images/reference-index.md` for canonical continuity
-   information and complete the project-continuity check in section A. Use an
-   approved prompt as the base; image attachment is optional for fresh
-   text-to-image generation.
-4. Identify the active primary series and select the most recent successful
-   prompt in that series as the text-prompt baseline. The newest failed, rejected,
-   partial, or missed-target prompt is diagnostic context only; never use its
-   wording as the baseline. Apply only explicit user-requested or user-approved
-   changes from that later attempt to the successful baseline. If this is a
-   standalone iteration rather than a series, use the most recent successful
-   prompt for the same artwork/thread. If no relevant success exists, begin from
-   the current brief and applicable canonical specifications rather than
-   borrowing a prompt from an unrelated series.
+2. Read the active session-opening brief first. For a named novel scene, also
+   read the relevant scene-local scene and illustration records; for non-novel
+   work, read the session brief under `prompts/YYYY-MM-DD/`. The session brief
+   governs visual direction; scene records supply narrative facts only where the
+   brief asks the illustration to follow or adapt them.
+3. Review the relevant chronological prompt history for the same session and,
+   when the user explicitly continues a series, that series' history. The
+   successful-prompt index may help locate candidate prompt records, but it is
+   not a visual authority. Verify every candidate in its authoritative attempt
+   record. Do not consult or recreate a global image-reference index.
+4. Select the most recent successful prompt in the active series as the
+   historical text baseline, or the most recent successful prompt in the exact
+   artwork thread if no series applies. Newer failures remain diagnostic only.
+   The active session brief has higher authority than every historical prompt:
+   adapt the baseline to the current brief and omit or replace every conflicting
+   feature. If no relevant success exists, draft from the current session brief
+   and the user's explicit constraints; do not borrow a prompt from an unrelated
+   series.
 5. Change as little as practical for a controlled revision.
 6. Record the exact authored prompt, operation type, source, mode, test
    objective, pending status, and every reference asset actually attached.
@@ -367,17 +377,31 @@ One image can have multiple thematic connections, but every prompt used for an i
 
 Apply this order whenever an image belongs to an established series:
 
-1. **Identify the primary series.** Confirm its series ID/name, theme spine, continuity anchors, and any active subseries or branch. Do this before searching for candidate prompts.
+1. **Read the active session brief first.** Confirm what the user wants in this
+   session, which details are locked, and what may vary. Identify a primary
+   series only when the current brief explicitly continues or adopts it; do not
+   infer creative authority from project membership or a shared character.
 2. **Locate the most recent successful prompt in that series.** Determine recency from the authoritative chronological attempt records, not from the order of entries in the success index. The prompt must have a reliable link to an output recorded as successful.
-3. **Use that most recent successful prompt as the text baseline.** This is the prompt whose wording and direction should be carried forward and minimally revised. Do not use a later failed, rejected, partial, or missed-target prompt as the base merely because it is newer.
+3. **Use that most recent successful prompt as a historical text baseline.**
+   Carry forward only the wording and details that are compatible with the
+   active session brief. The session brief outranks the historical prompt and
+   overrides any conflicting face, identity, outfit, scene, pose, mood, style,
+   palette, setting, or composition. Do not use a later failed, rejected, partial,
+   or missed-target prompt as the base merely because it is newer.
 4. **Inspect later unsuccessful attempts only as diagnostics.** They can reveal what failed, what the user corrected, and what specific change the user still wants. Extract only explicit user-requested or user-approved changes, then apply those deltas to the most recent successful prompt. Do not copy assistant-added wording, speculative embellishments, or failed prompt structure simply because they appeared later.
 5. **A partial result does not displace the successful baseline.** Preserve useful visual observations from it, but build the next authored prompt from the most recent successful prompt. Promote a partial result to a successful series result only when the user explicitly accepts it as successful for the intended purpose; record that user decision and its exact originating prompt.
 6. **Separate prompt success from image approval.** A user-approved image is a valid visual keeper or reference. It also establishes a successful prompt baseline only when its originating attempt is reliably identified and the user's approval clearly accepts that attempt/result as successful for the requested purpose. If the image-to-prompt mapping is uncertain, use the image only as a visual reference or edit source; do not invent or infer its prompt.
 7. **Respect prompt lineage within branches.** A new subseries or spin-off may inherit the parent's most recent successful prompt as its initial seed at the moment the branch is created. Record that seed and branch point. Once the branch has its own successful prompt, use the branch's most recent successful prompt—not later prompts from the parent series.
-8. **Handle a series with no successful prompt honestly.** For its first entry, use the user's brief and applicable canonical references. For a new branch with no success of its own, use its documented parent-series seed only if the branch was explicitly derived from that parent. Do not borrow a successful prompt from an unrelated series.
+8. **Handle a series with no successful prompt honestly.** For its first entry,
+   use the active session brief and any visual references explicitly assigned
+   within that session. For a new branch with no success of its own, use its
+   documented parent-series seed only if the user has explicitly derived the
+   branch from that parent and the seed does not conflict with the session brief.
+   Do not borrow a successful prompt from an unrelated series.
 9. **For work that is not a series, preserve artwork continuity.** If the user is iterating on one standalone image or artwork thread, use the most recent successful prompt for that exact thread. Do not treat the word "standalone" as permission to search across unrelated projects for a loosely similar prompt.
 10. **Keep crossover lineage explicit.** A crossover has one primary series for baseline selection and one or more secondary memberships. Use the primary series' most recent successful prompt as the text baseline and carry secondary-series requirements as constraints. If no primary series is clear and the distinction materially changes the prompt, ask one focused question.
-11. **Match the baseline to the operation.** The newest successful prompt in the active series remains the latest-success anchor. Use it directly when its operation and scope fit the next task. If it is a localized edit or style-only prompt that cannot serve as a full-scene prompt for a new generation, use the most recent successful full-generation prompt from the same series as the full-scene text skeleton, and carry forward only the later successful, user-approved changes as constraints. Record both prompt references and why the older full-scene skeleton is necessary. This is an operation-compatibility exception, not permission to use a failed prompt or borrow from another series.
+11. **Match the baseline to the operation.** The newest successful prompt in the active series remains the latest-success anchor. Use it directly when its operation and scope fit the next task. If it is a localized edit or style-only prompt that cannot serve as a full-scene prompt for a new generation, use the most recent successful full-generation prompt from the same series as the full-scene text skeleton, and carry forward only later successful, user-approved details that remain
+   compatible with the active session brief. Record both prompt references and why the older full-scene skeleton is necessary. This is an operation-compatibility exception, not permission to use a failed prompt or borrow from another series.
 12. **Keep exact edits separate from prompt baselines.** When the user requests a visual edit of a specific successful image, the actual image is the edit source if it is accessible and can be attached through the supported mechanism. The successful prompt remains useful context, but it does not replace the source image. Conversely, an image filename or generation ID is not an attached source.
 13. **Honor explicit user selection.** If the user names a particular successful prompt as the baseline, use it after verifying the record. If the user names an image as the visual/edit baseline, use that image for the requested role when it is actually available; do not mislabel it as a prompt.
 14. **Resolve ambiguity proportionately.** If series membership or the primary branch is genuinely unclear and would materially alter baseline selection, ask one focused question. Otherwise use the clearest context, record provisional membership, and proceed.
@@ -542,9 +566,9 @@ successful work.
 
 ### E2.2. Documented silk-wrap series and baseline-selection case
 
-The November 12–13, 2026 silk-wrap portrait sequence demonstrates why the
-latest **successful** prompt—not the latest attempt—must control prompt
-lineage:
+The November 12–13, 2026 silk-wrap portrait sequence is a historical example
+of prompt lineage only. The current session brief controls creative direction;
+the latest **successful** prompt controls only historical prompt lineage:
 
 - **Attempt 33** in `prompts/2026-11-12-image-prompts.md` established the
   successful Realistic portrait direction and produced two user-approved
@@ -579,61 +603,64 @@ user's final assessment controls whether an output is accepted; an earlier
 assistant assessment must not override a later explicit user approval.
 
   
-### E2.5. Uploaded-image naming and cross-linking
+### E2.5. Session-local image asset naming and provenance
 
-For every image the user uploads as part of the Maya_and_Me drawing workflow:
+Images supplied or selected for a drawing session are session-specific unless
+the user explicitly says they should be retained for future use.
 
-1. Inspect the actual image. Do not infer its contents from its filename alone. Identify whether it is a successful output, an inspiration reference, an edit source, or a temporary comparison.
-2. Unless the user explicitly says the upload is temporary or not to be retained, give it a clear, descriptive, stable filename based on the visible subject and its distinguishing composition. For a set, use consistent names and numbered suffixes.
-3. **Renaming changes the filename only. Never convert or alter an uploaded image without explicit user permission.** Preserve its exact original bytes, file format, extension, resolution, dimensions, metadata, and visual content. Do not recompress, resize, crop, rotate, filter, retouch, strip metadata, create derivatives, or make convenience copies.
-4. Perform task-related file creation and editing only inside the assigned repository root workspace. Do not create, edit, convert, stage, or save task-related files outside `images/`, `master/`, `novel/`, `prompts/`, or `skills/` unless the user explicitly authorizes a specific outside location. This includes temporary files and conversion intermediates.
-5. Record its exact storage path and file ID, source generation ID when known, original upload name, dimensions, byte size, and checksum where available in `images/reference-index.md`. State explicitly whether the binary is stored in GitHub, the persistent Files Library, or only the current conversation.
-6. When the image belongs to a successful generation, edit the corresponding successful result entry in `prompts/YYYY-MM-DD-image-prompts.md` and add a direct relative Markdown link to its reference-index anchor, alongside the descriptive filename and stable asset ID. Do not leave the reference link only in a separate end-of-file note.
-7. In `prompts/YYYY-MM-DD-conversation-integrity.md`, record the user's upload/approval and the rename/storage action as a chronological tool event. Add direct links to each image's reference-index anchor and to the corresponding successful prompt entry.
-8. Verify the renamed asset through Files metadata and read back every updated GitHub Markdown file. Never invent a Library URL or claim that a Markdown index means the binary is committed to Git.
-9. If the upload is an edit source rather than a keeper/inspiration, preserve that role explicitly. An uploaded image is not automatically proof that a later generation edited it; source linkage must still be verified separately.
+1. Inspect the actual image and identify its role in the current session:
+   inspiration, identity, composition, style, exact edit source, keeper, or
+   temporary comparison. Do not infer its role from its filename.
+2. Use an image as a drawing reference only when the user assigns that role in
+   the active session brief or a later explicit instruction. Do not silently
+   promote a previously uploaded, approved, or stored image into a global or
+   future-session default.
+3. If the user requests retention in the repository, give the image a clear,
+   descriptive, stable filename based on its visible content. For a set, use
+   consistent names and numbered suffixes. If the user does not request
+   retention, use the supplied image only within the current session.
+4. **Rename only. Never convert or alter an uploaded image without explicit
+   permission.** Preserve its exact original bytes, format, extension,
+   resolution, dimensions, metadata, and visual content. Do not recompress,
+   resize, crop, rotate, filter, retouch, strip metadata, or create derivatives
+   as part of a rename.
+5. Record the exact asset path, file/attachment ID, source generation ID when
+   known, original upload name, dimensions, byte size, checksum where available,
+   and its session-specific role in that session's brief or attempt record.
+   State whether the binary is stored in GitHub, the persistent Files Library,
+   or only the conversation. Never claim repository storage unless verified.
+6. Link the image directly from the session brief or the relevant attempt note.
+   Do not create or maintain a global image reference index. Do not add
+   persistent face, outfit, palette, or style rules merely because an image was
+   approved in an earlier session.
+7. Keep inspiration references distinct from exact edit sources. A filename,
+   repository path, Library ID, or generation ID is not an attachment. Attach
+   the actual asset through the image tool's supported mechanism and verify
+   source linkage before claiming a reference-guided result or confirmed edit.
+8. For a user-approved output, record the approval and its exact originating
+   prompt when reliably known. Approval makes the image a keeper; it does not
+   make it a default visual direction for future sessions.
 
-These steps are part of the normal drawing workflow, not optional cleanup after the session.
-
-**GitHub rename rule:** If the uploaded image already exists as a binary in `images/` under an opaque filename, rename that existing Git tree path using the same blob SHA and remove the old path in the same commit. Verify that the old name is absent, the descriptive name exists, and the blob SHA and byte size are identical. Do not re-upload or re-encode the image merely to rename it.
-
-### E3. Reuse user-approved visual references
-
-Before writing a new prompt, identify the active series and inspect its chronological prompt history, then inspect `images/reference-index.md` for relevant approved assets. Within a series, the most recent successful prompt in that series is the normal prompt baseline; a user-approved successful image is a visual starting point when the exact asset is available and the requested operation supports it.
-
-For the Realistic silk-wrap portrait series, **Attempt 04** in
-`prompts/2026-11-13-image-prompts.md` is the latest user-approved successful
-prompt/output record currently verified. It reused Attempt 33's authored prompt
-verbatim, so Attempt 33 remains the earlier successful origin and the prompt
-wording is identical. Do not default to Attempt 33 over the later Attempt 04
-record. Attempts 05 and 06 are later failures and do not supersede Attempt 04.
-Any newer successful prompt in this same series will supersede Attempt 04.
-
-The approved reference images are indexed at `images/reference-index.md`:
-- `realistic-silk-wrap-portrait-soft-gaze-01.png`: slightly wider portrait and softer framing.
-- `realistic-silk-wrap-portrait-close-framing-02.png`: closer crop and more pronounced but still covered neckline.
-
-Preserve the visual features the user explicitly approved: long dark hair, ivory silk draped off one shoulder, bare shoulders and collarbones, an open natural neckline with opaque coverage, warm cinematic light, and an affectionate direct gaze. Do not silently replace this styling with a high neckline, a formal high-neck gown, or a generic conservative portrait. Do not exaggerate it into nudity or explicit sexual content.
-
-Keep **inspiration reference** and **edit source** separate:
-- An inspiration reference guides style, wardrobe, mood, and composition for a new generation.
-- An edit source is the exact image being modified. Claim an edit only when the image tool confirms source linkage.
-- A Library file ID, filename, or URL in prompt prose is not by itself an attached image. Retrieve and attach the actual image through a supported reference mechanism when available.
-- If a reference image cannot be attached, say so; do not pretend the prompt was source-guided.
-
-When the user approves generated images for future inspiration, preserve their descriptive filenames and provenance in the reference index. Keep each image's source generation ID, file dimensions, byte size, and checksum where available. Record whether the original binary lives in GitHub, the persistent Files Library, or only the current conversation. Never claim GitHub storage unless the binary itself has been committed and verified.
+**GitHub rename rule:** If the uploaded image already exists as a binary in
+`images/` under an opaque filename, rename that existing Git tree path using
+the same blob SHA and remove the old path in the same commit. Verify that the
+old name is absent, the descriptive name exists, and the blob SHA and byte size
+are identical. Do not re-upload or re-encode the image merely to rename it.
 
 ### E4. Consult and maintain the successful-prompt index
 
-Before drafting a new image prompt, identify the active series and consult its
-chronological history first. Inspect the newest attempt for context, then select
-only the most recent successful prompt in that same series as the text baseline.
+Before drafting a new image prompt, read the active session brief first. It is
+the authority for visual direction. If the user explicitly continues a series,
+consult its chronological history and select only the most recent successful
+prompt in that same series as a historical text baseline, adapting it to the
+session brief.
 Consult `prompts/successful-image-prompts-index.md` to find candidate successes,
 then verify their dates, outcomes, series membership, and prompt-to-output links
-in the authoritative attempt records. The index is a discovery aid, not the
-source of truth for chronology. Never let a stronger prompt from an unrelated
-series displace this lineage, and never use a newer failure or partial attempt
-as the prompt baseline.
+in the authoritative attempt records. The index is a discovery aid, not the source of truth for chronology or visual
+direction. It does not define a character's face, outfit, style, setting, mood,
+or any other feature of a new drawing session. Never let a stronger prompt from
+an unrelated series displace this lineage, and never use a newer failure or
+partial attempt as the prompt baseline.
 
 After an attempt is finalized:
 - If it is a genuine successful match, add it to the separate success-only index with a direct link to its prompt entry and the resulting image(s).
