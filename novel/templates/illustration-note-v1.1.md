@@ -17,11 +17,24 @@ status: approved
 
 ## 2. Asset and Provenance
 - **Actual Image Asset / Conversation Attachment:**
-- **Repository Image Path:** [Leave blank if not stored in repository]
+- **Original Upload Filename:**
+- **Takeout Batch ID:**
+- **Master Image Path:** [Central novel asset path; blank if not stored]
+- **WebP Derivative Path:** [Same directory as the master; blank if not generated/stored]
+- **Asset Verification:** Pending / Verified / Failed / Not Stored
+- **Master SHA-256:** [When available from the conversion report]
+- **WebP SHA-256:** [When available from the conversion report]
+- **Conversion Report:** [Relative link under images/takeout/history/ when available]
+- **Verification Report:** [Relative link under images/takeout/history/ when available]
 - **Prompt Record:** [Relative link]
 - **Relevant Attempt ID:**
 - **Generation or Edit:** Fresh Generation / Source-Guided Edit / Other
 - **Source or Reference Images Actually Used:**
+
+## 3. Repository Image Preview
+When a master/WebP pair is stored, embed the WebP using a relative link to the central binary library. From this scene-local note, the standard path begins with `../../../assets/illustrations/[ARC-ID]/[SCN-ID]/`.
+
+![Illustration preview](../../../assets/illustrations/[ARC-ID]/[SCN-ID]/[ILL-ID]-[descriptive-slug].webp)
 
 ## 3. Visual Description
 Record only what is objectively visible in the returned image.
