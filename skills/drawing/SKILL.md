@@ -2,7 +2,7 @@
 name: drawing
 description: "Create and refine images in two deliberate visual modes: Realistic and Vintage. Use for image generation, editing, style transformations, composition, character continuity, and iterative visual refinement."
 created: 2026-11-18T13:18
-updated: 2026-11-20T00:00
+updated: 2026-11-20T06:15
 ---
 
 # Drawing Skill
@@ -697,16 +697,22 @@ the user explicitly says they should be retained for future use.
   and destination, and prepare `images/takeout/HANDOFF.yml`; do not manually
   rename or move it. The hand-off uses the exact uploaded filename, optional
   stable asset ID, descriptive title, and destination directory.
-- The existing Action derives the filename as
-  `[asset-id-][slugified-title].[original-extension]`, keeps the original
-  bytes unchanged, creates a same-stem WebP derivative, and moves both to the
-  declared destination. It refuses collisions and verifies master SHA-256 and
-  WebP integrity before clearing the hand-off.
+- The existing Action derives the permanent filename as
+  `[asset-id-][slugified-title].[original-extension]` and keeps the original
+  bytes unchanged. It stages each WebP under
+  `images/takeout/webp/[batch-id]/attempt-NNN/`, appending `.webp` to the
+  exact incoming filename (for example, `upload.png.webp`). After verification,
+  it moves the master and WebP to the declared destination. It refuses
+  collisions and verifies master SHA-256 and WebP integrity before clearing
+  the hand-off.
+- Failed attempts retain successfully converted WebPs in their staging folder
+  for inspection; retries use a new attempt number. A successful attempt moves
+  its WebPs to final destinations and removes its now-empty staging folder.
 - Each successful or failed attempt is archived with the original hand-off,
   `conversion-report.csv`, and `verification-report.md` under
-  `images/takeout/history/[batch-id]/attempt-NNN/`. Do not claim repository
-  storage or a successful hand-off until the final paths and reports are read
-  back and verified.
+  `images/takeout/history/[batch-id]/attempt-NNN/`. The CSV records staging
+  and final paths. Do not claim repository storage or a successful hand-off
+  until the final paths and reports are read back and verified.
 
 ### E4. Consult and maintain the successful-prompt index
 
@@ -852,19 +858,23 @@ repository retention pass through the single intake at `images/takeout/`.
   the master. Novel illustrations use
   `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; retained
   non-novel assets use their declared destination under `images/`.
-- The Action converts the entire batch in temporary staging before moving any
-  original. It checks destination collisions, exact manifest coverage,
-  original/master SHA-256 equality, WebP signature, and final WebP hash.
-  It does not overwrite existing assets.
+- The Action converts the entire batch into persistent staging at
+  `images/takeout/webp/[batch-id]/attempt-NNN/` before moving any original.
+  Staged filenames append `.webp` to each exact incoming filename. It checks
+  destination collisions, exact manifest coverage, original/master SHA-256
+  equality, WebP signatures, and final WebP hashes. It does not overwrite
+  existing assets.
 - Every attempt is archived under
   `images/takeout/history/[batch-id]/attempt-NNN/` with the original hand-off,
   `conversion-report.csv`, and `verification-report.md`. The CSV records
-  filenames, paths, sizes, size difference, encoder profile/version, hashes,
-  status, and errors. History is never treated as new intake.
+  staging and final paths, sizes, size difference, encoder profile/version,
+  hashes, status, and errors. Both `history/` and `webp/` are excluded from
+  intake detection.
 - The active hand-off is cleared only after every image is converted,
   relocated, and verified and the reports are written. On failure, the ready
-  hand-off and source images remain available for correction; the report
-  records the failed attempt.
+  hand-off and source images remain available for correction, and successful
+  WebPs from that attempt remain in staging. A retry uses a fresh attempt
+  directory; successful processing removes its empty staging directory.
 - Never alter a master or WebP after conversion as part of this pipeline.
   Separate image edits require the normal prompt-archive and explicit editing
   workflow.
