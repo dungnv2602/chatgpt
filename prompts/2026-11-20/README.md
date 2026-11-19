@@ -30,6 +30,8 @@ delivery or a prompt's wording.
    asset. Otherwise state that no output was returned, approval was not
    recorded, or storage/linkage was not verified.
 
+For newly retained non-novel drawing outputs, the image file belongs in this day's `images/` subfolder (`attempt-XX.webp`; multiple outputs use numbered suffixes). Link only a verified asset in this field. Existing outputs are not migrated.
+
 | Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence |
 |---|---|---|---|---|
 | [01 — Samantha, imagined as a presence](attempt-01.md) | [Session 01](session-01-brief.md) | Samantha series; initial attempt | Generated; missed the defining AI-presence cue, although the warm photographic portrait direction was achieved | User approval not recorded; output/provenance details are in Attempt 01 |
