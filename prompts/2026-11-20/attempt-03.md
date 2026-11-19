@@ -1,5 +1,8 @@
 # Attempt 03 — Localized edit using the original portrait
 
+- **Session ID:** SAMANTHA-2026-11-20-01.
+- **Session brief:** [session-01-brief.md](session-01-brief.md).
+- **Primary series / membership:** Samantha — Human Presence Without a Body (working thematic-series label).
 - **Status before call:** Rejected; no image returned.
 - **Intended operation:** Edit of a reference image.
 - **Intended source:** Attempt 01 output; generation ID `6ce20fc3-f98f-4a7f-994d-5f398969738f`. The generation ID was cited in the authored prompt, but the available tool call did not provide verifiable evidence that the actual image asset was attached.
