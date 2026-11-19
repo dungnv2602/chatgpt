@@ -660,11 +660,15 @@ the user explicitly says they should be retained for future use.
    descriptive, stable filename based on its visible content. For a set, use
    consistent names and numbered suffixes. If the user does not request
    retention, use the supplied image only within the current session.
-4. **Rename only. Never convert or alter an uploaded image without explicit
-   permission.** Preserve its exact original bytes, format, extension,
-   resolution, dimensions, metadata, and visual content. Do not recompress,
-   resize, crop, rotate, filter, retouch, strip metadata, or create derivatives
-   as part of a rename.
+4. **Preserve the original image exactly.** The default is rename-only:
+   preserve its bytes, format, extension, resolution, dimensions, metadata, and
+   visual content. Do not recompress, resize, crop, rotate, filter, retouch, or
+   strip metadata. The user has explicitly authorized one repository workflow
+   exception: an image submitted through `images/takeout/` with a ready
+   `HANDOFF.yml` may be moved/renamed to its declared master path and converted
+   to a separate WebP derivative by the existing GitHub Action. The original
+   bytes and format must remain identical. Do not perform this conversion or
+   relocation manually outside that hand-off pipeline.
 5. Record the exact asset path, file/attachment ID, source generation ID when
    known, original upload name, dimensions, byte size, checksum where available,
    and its session-specific role in that session's brief or attempt record.
@@ -682,11 +686,27 @@ the user explicitly says they should be retained for future use.
    prompt when reliably known. Approval makes the image a keeper; it does not
    make it a default visual direction for future sessions.
 
-**GitHub rename rule:** If the uploaded image already exists as a binary in
-`images/` under an opaque filename, rename that existing Git tree path using
-the same blob SHA and remove the old path in the same commit. Verify that the
-old name is absent, the descriptive name exists, and the blob SHA and byte size
-are identical. Do not re-upload or re-encode the image merely to rename it.
+**GitHub rename and takeout rules:**
+
+- If an image is already tracked in its permanent location under an opaque
+  filename, rename that existing Git tree path using the same blob SHA. Verify
+  the old name is absent, the descriptive name exists, and the blob SHA and byte
+  size are identical.
+- For newly uploaded retained images, use the universal flat intake
+  `images/takeout/`. Inspect the actual image, determine its descriptive title
+  and destination, and prepare `images/takeout/HANDOFF.yml`; do not manually
+  rename or move it. The hand-off uses the exact uploaded filename, optional
+  stable asset ID, descriptive title, and destination directory.
+- The existing Action derives the filename as
+  `[asset-id-][slugified-title].[original-extension]`, keeps the original
+  bytes unchanged, creates a same-stem WebP derivative, and moves both to the
+  declared destination. It refuses collisions and verifies master SHA-256 and
+  WebP integrity before clearing the hand-off.
+- Each successful or failed attempt is archived with the original hand-off,
+  `conversion-report.csv`, and `verification-report.md` under
+  `images/takeout/history/[batch-id]/attempt-NNN/`. Do not claim repository
+  storage or a successful hand-off until the final paths and reports are read
+  back and verified.
 
 ### E4. Consult and maintain the successful-prompt index
 
@@ -812,12 +832,39 @@ All repository work must use branch `gpt` and remain strictly inside
  
 ## 8. WebP delivery copies and master-image preservation
 
-The original PNG/JPEG in `images/` is the master image. A WebP version is a delivery derivative, never a replacement.
+The original PNG/JPEG is the permanent master. WebP is a separate delivery
+derivative, never a replacement. All newly uploaded assets intended for
+repository retention pass through the single intake at `images/takeout/`.
 
-- Keep the source image byte-for-byte unchanged and keep its original extension.
-- Generated WebP companions live only in `images/webp/`, with the source's relative path and full filename followed by `.webp`.
-- PNG masters use exact lossless conversion; JPEG masters use the documented high-quality lossy profile. Do not describe JPEG-to-WebP as lossless.
-- Keep every generated derivative even if it is larger than its source. The conversion report records the actual size difference; visual inspection by the user determines whether the derivative is suitable.
-- ICC color profiles are copied. EXIF/XMP metadata are not copied by the current workflow. Original metadata remains in the untouched master.
-- APNG files are reported as skipped rather than flattened into a single still frame.
-- Do not edit, resize, crop, or otherwise transform either master or derivative during conversion. Any separate image edit requires the normal pre-generation archival and explicit workflow.
+- The incoming filename may be arbitrary. Inspect the actual image and prepare
+  the structured `HANDOFF.yml` with source filename, descriptive title,
+  optional stable ID, and exact destination directory.
+- The existing workflow runs on branch `gpt` and calls
+  `images/scripts/process_takeout.py`. It accepts static PNG, JPG, and JPEG.
+  APNG and other unsupported formats fail the batch; animation is never
+  flattened silently.
+- PNGs use exact lossless WebP encoding
+  (`-lossless -q 100 -m 6 -exact`); JPEGs use high-quality lossy encoding
+  (`-preset picture -q 92 -m 6 -sharp_yuv`). ICC profiles are copied.
+  EXIF/XMP metadata are not copied to WebP, but remain in the original master.
+- The original upload is moved and renamed to the hand-off-derived master path
+  without changing its bytes or format. The same-stem WebP is stored beside
+  the master. Novel illustrations use
+  `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; retained
+  non-novel assets use their declared destination under `images/`.
+- The Action converts the entire batch in temporary staging before moving any
+  original. It checks destination collisions, exact manifest coverage,
+  original/master SHA-256 equality, WebP signature, and final WebP hash.
+  It does not overwrite existing assets.
+- Every attempt is archived under
+  `images/takeout/history/[batch-id]/attempt-NNN/` with the original hand-off,
+  `conversion-report.csv`, and `verification-report.md`. The CSV records
+  filenames, paths, sizes, size difference, encoder profile/version, hashes,
+  status, and errors. History is never treated as new intake.
+- The active hand-off is cleared only after every image is converted,
+  relocated, and verified and the reports are written. On failure, the ready
+  hand-off and source images remain available for correction; the report
+  records the failed attempt.
+- Never alter a master or WebP after conversion as part of this pipeline.
+  Separate image edits require the normal prompt-archive and explicit editing
+  workflow.
