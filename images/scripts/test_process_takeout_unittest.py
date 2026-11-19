@@ -72,7 +72,7 @@ class TakeoutProcessorTests(unittest.TestCase):
             "items:",
         ]
         for index, item in enumerate(items):
-            asset_id = item.get("asset_id") or ("ILL-%03d" % (index + 1))
+            asset_id = item.get("asset_id", "ILL-%03d" % (index + 1))
             rows.extend([
                 f'  - source: "{item["source"]}"',
                 f'    asset_id: "{asset_id}"',
