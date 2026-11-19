@@ -105,6 +105,7 @@ The complete procedures, delivery matrix, approval rules, status definitions, an
 Keep artifact progress separate from story canon:
 
 - **Approved / Established:** explicitly accepted or directly established by the user.
+- **Partly Established:** the broad direction is approved while material details remain proposed or open.
 - **Proposed:** suggested, not yet decided.
 - **Open:** deliberately undecided.
 - **Superseded:** replaced by a later decision; retain its history.
