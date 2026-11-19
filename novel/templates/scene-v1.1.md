@@ -61,9 +61,11 @@ status: approved
 - **New Facts Requiring Promotion to Novel / Character / Arc Records:**
 
 ## 9. Illustrations
-| Illustration ID | Moment / Title | Status | Illustration Note | Prompt Record |
-|---|---|---|---|---|
-| | | | | |
+| Illustration ID | Moment / Title | Status | Master / WebP Asset | Illustration Note | Prompt Record |
+|---|---|---|---|---|---|
+| | | | | | |
+
+The asset cell links to both binary files in the novel's central library at `[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. For example: [PNG master](../../assets/illustrations/ARC-001/SCN-001/ILL-001-shared-discovery.png) · [WebP](../../assets/illustrations/ARC-001/SCN-001/ILL-001-shared-discovery.webp). Keep the Illustration Note and Prompt Record in this scene's `illustrations/` folder; do not store binary images there.
 
 ## 10. Scene Prose
 Write the complete, polished scene here. Include narrative prose, dialogue, action, sensory detail, and subtext. This section is the actual scene, not a synopsis or beat list.
