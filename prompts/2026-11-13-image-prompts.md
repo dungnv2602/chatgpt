@@ -63,7 +63,7 @@
 - **Operation:** Fresh generation with an approved visual-inspiration reference; not an edit of the source.
 - **Mode:** Realistic.
 - **Base:** Attempt 33's successful natural photographic rendering, warm light, long dark hair, ivory silk material, and direct gentle gaze.
-- **Actual inspiration source:** [Reference 02 — closer framing, stronger neckline](../images/reference-index.md#reference-02--closer-framing-stronger-neckline), `realistic-silk-wrap-portrait-close-framing-02.png`.
+- **Actual inspiration source:** [realistic-silk-wrap-portrait-close-framing-02.png](../images/realistic-silk-wrap-portrait-close-framing-02.png), `realistic-silk-wrap-portrait-close-framing-02.png`.
 - **Source asset:** Files Library file ID `file_00000000f36c8211a4a7ace253f08e2e`; `/ChatGPT/images/realistic-silk-wrap-portrait-close-framing-02.png`; 1122 × 1402; 2,269,742 bytes.
 - **Attachment plan:** Attach the actual surfaced image reference ID through `referenced_image_ids`. This is visual inspiration only, not an edit source.
 - **Reason for material revision:** Attempt 02 was refused by the image tool. This version changes the treatment to a conventional, fully clothed fashion portrait: no exposed chest, no cleavage, no bare-shoulder staging, and no romantic or sensual framing. It preserves the adult subject, long dark hair, ivory silk-wrap fabric, warm indoor light, close portrait, and natural photographic aesthetic.
