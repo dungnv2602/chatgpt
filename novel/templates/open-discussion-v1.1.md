@@ -1,7 +1,7 @@
 ---
 format: open-discussion
 version: 1.1
-status: active
+status: approved
 ---
 
 # Open Discussion — [Novel Title]
