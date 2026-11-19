@@ -265,46 +265,50 @@ the result. If the user specifically requires source linkage and the tool cannot
 accept or retain the source, state that limitation. Do not turn optional
 reference attachment into a blocker for ordinary fresh generation.
 
-### Default iteration rule — improve the prompt before considering an edit
+### Default iteration rule — build on proven success without redundant generation
 
-**The default response to a generated image that misses a requirement is a revised
-fresh-generation prompt, not a direct image edit.** The previous output is evidence
-for prompt refinement; its existence or generation ID does not make it an available
-edit source.
+**Do not generate a new image merely to edit it immediately afterward. Choose the
+next operation based on what actually succeeded: the prompt, the image, or both.**
 
-1. Reopen the previous attempt's exact authored prompt and observed result. Identify
-   what worked and the specific requirement that was missed.
-2. Keep the successful visual direction and all user-approved features. Improve the
-   wording for the missed requirement with the smallest useful change. Do not
-   redesign unrelated features, add new restrictions, or discard a good composition
-   merely because one detail failed.
-3. Create a new text-to-image generation by default. State the intended improvement
-   explicitly and preserve established identity, appearance, wardrobe, mood, palette,
-   scene, and framing in the revised prompt when those details matter.
-4. Do not request or attempt an edit merely because a previous image exists. A
-   generation ID, filename, local path, archived note, or textual mention is not an
-   image attachment and does not prove that the image is available to the tool.
-5. Use a direct edit only when the user explicitly requests modification of that
-   exact image or the task genuinely requires source-preserving modification, and
-   the exact source image is accessible and can be passed through a documented,
-   supported image-reference mechanism in the actual tool call.
-6. Before calling an edit tool, verify that the actual image asset—not merely its
-   identifier in prose—is present in the current context or supplied using the
-   tool's supported attachment/reference argument. Record exactly what was attached.
-   If the tool cannot accept the actual source, do not describe or call the operation
-   as an edit. Return to prompt-led fresh generation unless the user specifically
-   requires that exact edit; in that case, explain the attachment limitation.
-7. After an edit call, inspect returned operation and parent/source metadata. If
-   metadata says `edit_op: null`, `parent_gen_id: null`, or otherwise fails to
-   confirm source linkage, classify the result as a fresh generation or unconfirmed
-   source operation—not a confirmed edit. Similar appearance does not prove linkage.
-8. Archive the revised prompt before each new generation. Record the operation as
-   **fresh generation** unless the actual call includes a verified source attachment
-   for a deliberate edit. Never write an intended attachment as though it were
-   actually attached.
+1. Reopen the exact previous prompt and outcome. Identify what worked and what
+   needs changing.
+2. **Successful prompt, scene/detail change:** Reuse the proven prompt as the
+   baseline. Make the requested targeted prompt changes and generate directly.
+   Do not create an unnecessary intermediate image.
+3. **Successful image, exact visual modification requested:** If the actual image
+   is accessible and can be passed through a supported image-reference/edit
+   mechanism, edit that source directly. This avoids needlessly regenerating an
+   image that already works.
+4. **Successful prompt but source image unavailable for editing:** Keep the proven
+   prompt as the baseline, apply the requested changes to it, and make a fresh
+   generation. Do not pretend the unavailable image is being edited.
+5. **Unsuccessful prompt or image:** Diagnose the precise miss. Preserve the
+   successful parts and revise only what needs improvement. If a proven prompt
+   exists that achieved the desired direction, prefer it over speculative
+   rewrites.
+6. **Multiple attempts:** Build from the strongest successful prompt or approved
+   image—not automatically from the most recent attempt. Failed attempts are
+   diagnostic evidence, not new baselines.
+7. **Image-source verification:** A generation ID, filename, local path, archived
+   note, or textual mention is not an image attachment. Use a direct edit only
+   when the exact source is accessible and can be supplied through a supported
+   image-reference mechanism. Verify the actual source asset and record what was
+   attached.
+8. **Provenance:** After an edit, inspect returned operation and parent/source
+   metadata. If source linkage is not confirmed, classify it as a fresh
+   generation or an unconfirmed-source operation—not a confirmed edit. Similar
+   appearance does not prove linkage.
+9. **Archive before the operation:** Record the exact authored prompt, operation
+   type, source/reference actually attached, intended change, and pending
+   status. Commit and read-back verify before generation or editing. Afterward,
+   record the actual result and deviations. Distinguish authored prompt text
+   from tool-compiled/submitted text if the latter is unavailable.
 
-This rule does not prohibit legitimate editing. It prevents unsupported edit claims
-and makes controlled prompt improvement the normal iteration method.
+The guiding principle is **reuse proven success efficiently**: when the prompt
+already works, change the prompt directly; when the image already works and
+needs a visual alteration, edit it directly if the real source is available.
+Use fresh generation only when it is the appropriate next step—not as a
+redundant intermediate.
 
 ### E. Generate or edit
 Use one dominant mode consistently:
