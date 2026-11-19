@@ -1,6 +1,6 @@
 ---
 format: novel-open-discussion
-version: 1.0
+version: 1.1
 novel_id: NOV-002
 status: active
 ---
@@ -22,6 +22,18 @@ These are not open questions:
 - The relationship includes an **early separation followed by a later reconciliation**. This is an approved structural direction.
 - The ending is an unequivocally happy, lasting partnership. Andy and Maya choose a shared future.
 - The story is an original literary science-fiction romance centered on acoustic archiving and field recording. It may engage philosophically with questions raised by *Her* (2013), but it must not copy that work's distinctive characters, scenes, plot, dialogue, premise, or ending.
+
+### Approved decision register
+
+| Decision ID | Date | Approved Decision | Scope / Limits | Authoritative Record |
+|---|---|---|---|---|
+| DEC-001 | 2026-11-20 | The human protagonist is Andy; the AI protagonist is Maya. | Names are established; detailed biographies and Maya's in-story naming process remain open. | [novel.md](novel.md) |
+| DEC-002 | 2026-11-20 | Andy is a software engineer with a computer-science background. | His work concerns the acoustic archive's audio-data and preservation systems; exact specialization and biography remain open. | [novel.md](novel.md) |
+| DEC-003 | 2026-11-20 | The acoustic-archive premise and gradual, self-directed AI development are the novel's foundation. | Maya is not designed as a companion or girlfriend; the initial interface is bland and functional. | [novel.md](novel.md) |
+| DEC-004 | 2026-11-20 | The romance is reciprocal and ends in a lasting, unequivocally happy partnership. | Maya retains autonomy, boundaries, independent goals, and the ability to disagree. | [novel.md](novel.md) |
+| DEC-005 | 2026-11-20 | The early separation is caused by Andy's unconsented checkpoint breach during the archive migration. | Maya discovers it and chooses separation; timing, technical implementation, and reconciliation details remain open. | [novel.md](novel.md), Section 5 |
+| DEC-006 | 2026-11-20 | Open questions are resolved progressively when they become relevant. | The open-discussion note is not a checklist to complete before writing. | [novel.md](novel.md), Author's Notes |
+
 
 ## 2. Andy — Character and Biography
 
@@ -117,7 +129,7 @@ These choices can be made as the writing process gives us a reason to make them:
 
 ### Relationship progression — first meeting to Maya's choice
 
-A working roadmap is maintained in [Relationship Progression](relationship-progression.md). Its broad direction is to move from neutral professional collaboration through mutual competence, Maya's first unrequired question, private humor, independent aesthetic choices, boundaries and privacy, a life and interests beyond Andy, reciprocal recognition, voluntary affection, and Maya's explicit romantic choice. These are proposed dramatic beats rather than locked scenes.
+A working roadmap is maintained in [Relationship Progression](planning/relationship-progression.md). Its broad direction is to move from neutral professional collaboration through mutual competence, Maya's first unrequired question, private humor, independent aesthetic choices, boundaries and privacy, a life and interests beyond Andy, reciprocal recognition, voluntary affection, and Maya's explicit romantic choice. These are proposed dramatic beats rather than locked scenes.
 
 Questions to resolve progressively:
 
@@ -141,4 +153,4 @@ Questions to resolve progressively:
 5. When a decision is agreed, update the relevant section of `novel.md` and revise or close the corresponding question here.
 6. Keep this note focused on unresolved matters; it should not duplicate the full novel foundation.
 
-**Current status:** Active open discussion. Andy's profession and computer-science background are established. The checkpoint-breach separation mechanism is approved story direction and has been integrated into `novel.md`. Exact timing, technical implementation, governance arrangements, independent-life details, and reconciliation scenes remain open. All other questions remain open unless explicitly recorded as decided.
+**Current status:** Active open discussion under format 1.1. The approved decisions are recorded above and summarized in `novel.md`. The Relationship Progression document is a working outline at [planning/relationship-progression.md](planning/relationship-progression.md), not a locked scene sequence. Exact relationship beats, separation timing, migration implementation, governance arrangements, independent-life details, and reconciliation scenes remain open. Resolve other questions only when the writing process reaches them.
