@@ -262,7 +262,7 @@ Keep progress status separate from canon status.
 `Planned` · `Outlined` · `Drafted` · `Revised` · `Approved` · `Complete` · `Superseded`
 
 ### Character profile
-`Working` · `Approved` · `Superseded`
+`Working` · `Ready for Review` · `Approved` · `Superseded`
 
 ### Development outline
 `Working` · `Ready for Review` · `Approved Direction` · `Superseded`
