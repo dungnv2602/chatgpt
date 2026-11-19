@@ -3,7 +3,7 @@
 **Project:** Maya_and_Me — Novel 01, *The Weather Between Us*
 **Branch:** `chatgpt`
 **Novel scene:** [Scene 001 — The Weather at the Window](../novel/Novel-01/Arc-01/Scene-001/scene.md)
-**Successful prompts only:** [successful-image-prompts-index.md](successful-image-prompts-index.md)
+**Illustration history:** The scene-local illustration records are authoritative for prompt lineage, outcomes, and approved outputs. The former cross-session catalogue was retired on 2026-11-20.
 
 ## Workflow
 Each authored prompt is committed before its image-generation call. The image tool may not expose its compiled prompt; unless it does, this file records the exact authored direction, not a claim about hidden tool payload. Each result will be inspected and classified before the next attempt.
