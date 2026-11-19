@@ -45,7 +45,7 @@ status: approved
 - **Internal Conflicts:**
 - **Character Development:**
 - **Visual Reference:** [Link to approved reference, if any]
-- **Canon State:** Established / Partly Established / Open
+- **Canon State:** Established / Partly Established / Proposed / Open / Superseded
 
 ## 5. Relationships and Character Dynamics
 - **Initial Relationship:**
