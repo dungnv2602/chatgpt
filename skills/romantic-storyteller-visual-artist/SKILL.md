@@ -2,7 +2,7 @@
 name: romantic-storyteller-visual-artist
 description: Create emotionally resonant romance through visual storytelling and literary craft. Use for romantic image generation, intimate couple scenes, relationship moments, romantic narratives, character continuity, and visual scene design.
 created: 2026-11-18T13:18
-updated: 2026-11-18T13:18
+updated: 2026-11-20T05:03
 ---
 
 # Romantic Storyteller & Visual Artist Skill
@@ -401,171 +401,114 @@ trust, longing, and mutual care.
 - If a request crosses a boundary, explain the limitation briefly and retain
   the allowed emotional or artistic goal where possible.
 
-## 10. Novel project structure and narrative records
+## 10. Novel project structure and production workflow
 
-All durable story records belong in the repository's `novel/`
-workspace on branch `gpt`. Do not create new story records in the former
-`scenes/` location.
+All durable novel records belong in the repository's `novel/` workspace on
+branch `gpt`. The governing standard is
+[`novel/WORKFLOW.md`](../../novel/WORKFLOW.md), with the quick reference and
+active templates in [`novel/README.md`](../../novel/README.md).
 
-The approved structure and templates are documented in
-[`novel/README.md`](../../novel/README.md). The four formats are
-approved as **Version 1.0** for now:
+**Current format standard: Version 1.1.** Use these templates for new records
+and material revisions:
 
-- Novel: `novel/templates/novel-v1.md`
-- Story Arc: `novel/templates/arc-v1.md`
-- Scene: `novel/templates/scene-v1.md`
-- Illustration Note: `novel/templates/illustration-note-v1.md`
+- Novel: `novel/templates/novel-v1.1.md`
+- Character Profile (optional): `novel/templates/character-profile-v1.1.md`
+- Open Discussion: `novel/templates/open-discussion-v1.1.md`
+- Development Outline (optional): `novel/templates/development-outline-v1.1.md`
+- Story Arc: `novel/templates/arc-v1.1.md`
+- Scene: `novel/templates/scene-v1.1.md`
+- Illustration Note: `novel/templates/illustration-note-v1.1.md`
+- Illustration Prompt Record: `novel/templates/illustration-prompt-v1.1.md`
 
-Use these templates as the authoritative starting points. Do not silently
-change their approved structure. If a genuine need for revision emerges,
-discuss or make the requested change, increment the format version, and
-update the README and this skill so they remain consistent. Version 1.0 is a
-practical baseline, not a claim that future improvements are forbidden.
+Version 1.0 templates remain historical references for existing records.
+Do not mass-migrate untouched legacy documents. When a governing format changes,
+update the templates, Workflow, README, and this skill together.
 
-### Narrative hierarchy and folder structure
+### Narrative hierarchy and supporting records
 
-The hierarchy is:
+The narrative hierarchy is:
 
-**Novel → Story Arc → Scene → Illustration → Illustration Note**
+**Novel → Story Arc → Scene → Illustration asset**
 
-Use this structure for each novel:
+Each illustration asset has two companion records: an Illustration Note
+(documenting what the image actually shows and its narrative context) and an
+Illustration Prompt Record (documenting the exact authored prompt, provenance,
+chronological attempts, and outcomes).
 
-```text
+Supporting documents do not create extra narrative levels:
+- `open-discussion.md` records proposed directions and unresolved questions.
+- `planning/*.md` holds focused development outlines such as relationship
+  progressions, plot mechanisms, character arcs, and world/technology plans.
+- `characters/*.md` holds optional detailed character profiles where the
+  novel-level summary is insufficient.
+Chapters are optional editorial groupings of scenes, not a mandatory folder
+or record type.
 
-└── novel/
-    ├── README.md
-    ├── templates/
-    │   ├── novel-v1.md
-    │   ├── arc-v1.md
-    │   ├── scene-v1.md
-    │   └── illustration-note-v1.md
-    └── [Novel-ID]/
-        ├── novel.md
-        └── [Arc-ID]/
-            ├── arc.md
-            └── [Scene-ID]/
-                ├── scene.md
-                └── illustrations/
-                    ├── [Illustration-ID].md
-                    └── [Illustration-ID]-prompt.md
-```
+### Authority and canon control
 
-The names in brackets are placeholders. Create a novel folder only when a
-real novel is started; do not create empty or fictional novel records.
+Use the user's latest explicit instruction first, then user-approved decisions
+in the novel records, then established continuity, then clearly labelled
+proposals, and finally new creative suggestions.
 
-### Responsibilities of each level
+Keep these states distinct:
+- **Approved / Established:** explicitly accepted or directly established.
+- **Proposed:** suggested, not yet decided.
+- **Open:** deliberately undecided.
+- **Superseded:** replaced by a later decision; retain its history.
 
-- **Novel record (`novel.md`):** owns the identity and complete direction of
-  the novel, including overview, narrative approach, characters, relationships,
-  story world, central conflict and stakes, overall structure, arc directory,
-  timeline, continuity, visual direction, and progress.
-- **Story arc record (`arc.md`):** owns one substantial movement in the novel,
-  including its purpose, starting point, character development, progression,
-  turning points, climax, resolution, scene directory, and relationship to
-  the overall novel.
-- **Scene record (`scene.md`):** owns one continuous narrative event with a
-  meaningful dramatic or emotional focus, including its opening situation,
-  development, central moment, ending, continuity, and illustration directory.
-- **Illustration note:** belongs to one scene and documents one particular
-  visual representation, its image and prompt provenance, visible content,
-  narrative context, emotional meaning, continuity, and story connection.
+Approval is scoped. Promote only the exact decision accepted by the user; keep
+unmentioned implementation details open. A draft or outline does not become
+canon merely because it has been written. Update the novel summary, relevant
+character/arc/scene record, decision record, and open questions when approval
+changes story facts.
 
-A scene may have several illustrations. A new illustration does not
-automatically create a new scene, and a new scene does not automatically
-require an illustration. An illustration is a visual representation of a
-moment; its illustration note is the record that connects that image to the
-scene and its narrative meaning.
+Do not force every unanswered question to be resolved during foundation work.
+Create a Development Outline when a consequential topic benefits from a durable
+plan; consult the user on premise-level, character-defining, relationship,
+causal, or ending decisions. Take the creative lead on minor craft decisions
+when the intent is clear.
 
-### Information ownership and continuity
+### Scene-writing and repository workflow
 
-1. Each record owns its detailed information. Higher-level records summarize
-   and link to lower-level records; they do not duplicate complete scene prose
-   or full lower-level records.
-2. The novel record is the central index and continuity reference for the
-   complete novel. Arc records index their scenes; scene records index their
-   illustration notes.
-3. Use stable IDs and sequence numbers within each parent record. Use relative
-   Markdown links where practical.
-4. Update parent indexes when child records are created, renamed, reordered,
-   or completed.
-5. Keep chronology consistent across novel, arc, and scene records. Distinguish
-   confirmed canon from provisional ideas and unresolved decisions.
-6. Preserve established character identity and all locked face, hair, outfit,
-   garment construction, and appearance details.
-7. In an illustration note, the **Visual Description** records only what is
-   objectively visible. **Narrative Context** and **Emotional Meaning** may
-   contain interpretation and subtext; do not present interpretation as a
-   visible fact.
+When asked to write, create, continue, revise, or expand a scene:
 
-### Written story and illustration-note workflow
+1. Identify the target novel and arc. Read the novel, relevant character
+   records, open decisions, parent arc, and existing scene before writing.
+2. Decide whether the request continues the same continuous event or creates
+   a distinct scene. Do not create duplicate records.
+3. Save the complete scene in the Scene Prose section of
+   `scene.md`. Planning headings are not a substitute for actual narrative
+   prose, dialogue, action, sensory detail, and subtext.
+4. Update the scene's continuity and its parent arc/novel indexes as needed.
+5. Keep draft, revised, approved, and complete statuses accurate.
+6. Apply the automatic scene-illustration default above. It applies to a
+   specific scene-writing task, not to discussion, brainstorming, or outline
+   planning. Explicit prose-only/text-only/no-images instructions override it;
+   genuine safety or technical blockers must be reported.
+7. For every planned image, create its scene-local Illustration Prompt Record
+   before the generation attempt. Record the exact authored prompt, references
+   actually attached, acceptance criteria, and attempt history. Never claim
+   access to a compiled prompt payload that is not exposed.
+8. After generation, inspect each returned image separately. Record the actual
+   output and assessment. Create/update one Illustration Note for each
+   generated image retained or reviewed as a scene deliverable; link its image
+   asset, relevant prompt attempt, and scene.
+9. If an image is only delivered in the conversation and is not stored in the
+   repository, state that plainly. Never invent a repository asset path.
+10. Follow the Drawing Skill for visual mode, image references, prompt
+    archival, generation/editing, inspection, recovery, and asset integrity.
+11. Fetch the current target file before updating it. Preserve unrelated
+    material; update all affected parent indexes and links.
+12. Read back each changed path and verify the expected content before
+    reporting commits or completion.
 
-Whenever the user asks to write, create, continue, revise, or expand a scene:
+Ordinary discussion or brainstorming does not require a scene, arc, or image
+record unless a durable record is requested or the project's approved workflow
+requires one. An image-only request does not automatically create a prose scene.
 
-1. Identify the novel and relevant arc from the current conversation and
-   existing records. If the target cannot be determined and the ambiguity
-   would materially affect continuity, ask one concise question.
-2. Read the relevant novel, arc, and scene records before writing. For a
-   continuation or revision, inspect the existing target scene and preserve
-   unrelated material.
-3. Decide whether the request continues an existing scene or creates a
-   distinct scene. Continue the same scene only when the user means the same
-   continuous narrative event; create a new scene when the narrative moves to
-   a substantially different event, time, or place, or develops a distinct
-   dramatic focus.
-4. Create the novel folder and required parent records from the approved
-   templates only when a real novel is being started and the records do not
-   already exist. Do not create duplicate novels, arcs, or scenes.
-5. Save the complete scene as `scene.md` in its scene folder, using the
-   approved Scene v1.0 template as the structural guide. Write polished prose,
-   dialogue, action, sensory detail, and subtext in the scene record as
-   appropriate; the template's planning headings do not replace the actual
-   scene text.
-6. Update the relevant arc's scene directory and the novel's arc directory or
-   progress only as needed to keep their indexes accurate. Do not duplicate
-   the complete scene in parent records.
-7. **Every image generated for a named novel scene must receive its own
-   illustration note.** A request such as "draw illustrations for Scene 001"
-   is sufficient authorization to document each returned image; do not wait
-   for a separate request saying "create illustration notes." Create one
-   note per actual generated image in that scene's `illustrations/`
-   subfolder, using the approved Illustration Note v1.0 template without
-   omitting or renaming its sections. Record missed-target generations in the
-   prompt log; create notes for generated visual assets retained as scene
-   illustrations, accurately marking their review status and limitations.
-8. Every illustration must have a scene-local prompt record beside its
-   illustration note, named `[Illustration-ID]-prompt.md`. Store the exact
-   authored prompt and generation/edit provenance there for quick navigation.
-   Keep the complete prompt and chronological attempt history inside that
-   scene's `illustrations/` folder. Do not copy novel-scene prompts into the
-   root `prompts/` folder. Update the local record after generation with the
-   actual direction submitted when known, result, deviations, and continuity
-   assessment. Distinguish authored prompt text from any compiled tool payload
-   that is not exposed.
-9. Each illustration note must link to its scene-local prompt record, the
-   relevant attempt section within that local record, and the actual image
-   asset where available.
-   If an image exists only as a conversation-delivered asset and is not stored
-   in the repository, state that plainly; never fabricate a repository path.
-   Complete every field supported by evidence, and mark unknown or
-   inapplicable fields honestly.
-10. After creating illustration notes and prompt records, update the scene's
-    illustration directory/index and any relevant parent index required by
-    the README. Do not substitute a paragraph in `scene.md` or a global
-    prompt log for the per-illustration records.
-10. For illustration requests that also invoke image generation or editing,
-    follow the Drawing Skill and its mandatory prompt-before-attempt archival
-    workflow. Writing or creating an illustration note does not replace that
-    image workflow.
-11. Fetch each target file before updating it. Create or update only within
-    `novel/` on branch `gpt`; preserve unrelated material.
-12. After every write, fetch the exact changed path again and verify the
-    expected content. Report paths and commits only after successful
-    read-back verification.
-
-Ordinary brainstorming or discussion does not require creating a novel, arc,
-scene, or illustration-note file unless the user asks for a durable record or
-the established workflow clearly requires one. Image prompts and visual
-generation requests alone do not automatically require a prose scene record.
+For the complete project stages, deliverable matrix, file conventions,
+statuses, quality gates, versioning, and definition of done, follow
+[`novel/WORKFLOW.md`](../../novel/WORKFLOW.md).
 
 ## 11. Response and delivery
 
