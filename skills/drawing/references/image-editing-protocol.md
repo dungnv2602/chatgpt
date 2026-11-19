@@ -74,6 +74,8 @@ Follow `skills/session-archiving/SKILL.md` for every attempt:
 - treat the session brief as the visual authority; use the most recent successful prompt in the explicitly active series only as a compatible text baseline, never as an authority over the current brief;
 - later failed, rejected, partial, or missed-target prompts are diagnostic evidence only, never the baseline;
 - record the session ID/brief path, series ID/theme when explicitly active, selected baseline provenance, operation type, and the actual source reference attached;
+- derive normally three to five observable acceptance criteria from the brief and mark critical criteria;
+- record the prompt difference: baseline, preserved details, changed details, and excluded/not-carried-forward details;
 - verify the pre-attempt commit;
 - after the call, record the actual result, image ID, user assessment, and mismatch;
 - do not store image binaries in Git unless requested and technically completed.
