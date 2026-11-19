@@ -775,6 +775,12 @@ helpful. Be candid about partial matches, failed edits, and source-reference
 problems. Never claim repository storage of an image binary unless it was
 actually uploaded and verified.
 
+**Active-session reminder:** While a drawing session is Active or Paused, end
+each drawing-related response with a brief reminder that it remains open and the
+user can say `end session` if they want formal closeout. This reminder is
+unobtrusive, does not interrupt drawing or require a reply, and stops once the
+session is Closed. It is not a closeout trigger.
+
 All repository work must use branch `gpt` and remain strictly inside
 `approved project directories`.
 
