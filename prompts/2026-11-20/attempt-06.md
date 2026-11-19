@@ -38,6 +38,27 @@
 > 
 > Do not add floating particles, glitter, dust, sparks, glow, halos, smoke, haze, circuitry, grids, symbols, interface graphics, neon, holographic transparency, ghost effects, or new objects. Do not change the woman's face, expression, hair design, clothing, pose, body, background, window, lighting, or framing. If a convincing localized edge transition cannot be achieved without altering other parts of the portrait, preserve the source rather than redesigning it.
 
-## Result — pending edit
+## Per-output assessment — after generation/editing
+
+| Output | Criterion | Result | Visible evidence |
+|---|---|---|---|
+| Image 1 | 1. Exact Attempt 04 image attached as source | Not assessable | The call passed the recorded asset ID, but returned metadata contains no parent/source linkage |
+| Image 1 | 2. Only the localized contour changes | Fail | The pose, crop, body placement, and composition differ substantially from Attempt 04; the blouse presentation is also altered |
+| Image 1 | 3. The nonphysical edge is visible | Fail | No clear loss of physical contour; the hair has ordinary rim light rather than a dissolving edge |
+| Image 1 | 4. Naturalistic photography is preserved | Partial | The portrait remains photographic, but conspicuous non-diegetic text panels interrupt the scene |
+| Image 1 | 5. No unrelated changes/additions | Fail | Large assessment and next-step text panels are added despite explicit exclusion; composition and garment presentation also drift |
+
+## Result — fresh generation, not a confirmed edit; critical mismatches
+
+- **Actual result:** One image returned. It is a fresh generation, not a confirmed edit of Attempt 04.
+- **Generation ID:** `23aeb056-9115-4734-a146-2e4802b5b84d`.
+- **Asset ID:** `file_0000000093588207aecb418f8b7cf5c8`.
+- **Local artifact:** `/mnt/data/a_warm_intimate_indoor_portrait_scene_a_young_ad.png`.
+- **Tool metadata:** `edit_op: null`, `parent_gen_id: null`, `prompt: ""`, `seed: null`. The exact source linkage is unconfirmed even though the asset ID was passed through `referenced_image_ids`. The compiled-prompt field is empty.
+- **Defining mismatches:** The output does not preserve the exact Attempt 04 composition; it changes the pose/framing and blouse presentation, fails to create the requested dissolving contour, and adds conspicuous assessment/next-step text panels that were explicitly excluded.
+- **Outcome:** Fresh generation with critical mismatches; not a successful edit, not a successful prompt baseline, and not an approved keeper.
+- **Approval:** Not assessed by the user.
+- **Storage:** Delivered in the current conversation only; not stored in GitHub or the persistent Files Library.
+- **Assistant decision:** Stop further repeated source-edit attempts through this route. The tool has not demonstrated reliable parent linkage for the generated asset despite the explicit reference argument. Preserve Attempt 04 as the best provisional visual direction; do not let this failed result replace it. Do not change the face or outfit as a workaround. Any future exact edit must begin with the actual source image supplied through a verifiably supported image attachment route; otherwise a fresh generation must be described honestly as a new interpretation, not a localized edit.
 
 The prompt is committed before the image call. Record returned source/parent metadata, inspect the output, and score each criterion separately. If source linkage remains absent, classify it as a fresh generation, stop further edit retries, and report the limitation.
