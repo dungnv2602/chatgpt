@@ -95,6 +95,22 @@ A development outline is a planning aid, not a new hierarchy level. Examples inc
 
 Do not duplicate full scene prose in an arc or novel summary, full character biographies across multiple records, or full prompt histories in a global prompt archive.
 
+### 3.4 Illustration binary storage and takeout hand-off
+
+Keep illustration documentation beside its scene, but store binary image assets in one central library per novel:
+
+`novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`
+
+Each retained illustration has two binary files beside one another: the original PNG/JPEG master and its WebP delivery derivative. The master is the source of truth; WebP is a separate derivative. Stable illustration IDs do not change when titles or filenames are refined.
+
+All user-uploaded images, whether novel or non-novel, first enter the single flat intake at `images/takeout/`. Incoming filenames may be arbitrary. The assistant inspects the image, determines its descriptive title and intended destination from the conversation and project records, and writes `images/takeout/HANDOFF.yml`. A novel-illustration entry identifies its `ILL-NNN` ID, title, exact uploaded filename, and destination directory under the appropriate novel asset library. Non-novel retained images use a destination under `images/`.
+
+The existing GitHub Action reads the hand-off; it does not infer image contents, IDs, or story destinations. It slugifies the supplied title, prefixes the optional stable ID, converts PNG/JPEG to WebP, moves the original bytes unchanged to the named master location, and puts the WebP beside it. It refuses to overwrite an existing destination. All items must pass validation and conversion before any original is relocated.
+
+Every attempt, successful or failed, produces an archived hand-off, `conversion-report.csv`, and `verification-report.md` under `images/takeout/history/[batch-id]/attempt-NNN/`. The report records file paths, sizes, encoder profile/version, SHA-256 values, and verification outcomes. History is excluded from future intake detection. The active hand-off is reset to empty only after every master and WebP is verified and the archived records have been written. A failed batch retains its ready hand-off and source images for correction and retry.
+
+For every stored illustration, link the central master and WebP paths from its Illustration Note and scene index. Keep the Illustration Note and Prompt Record in the scene-local `illustrations/` directory; do not store the image binary there.
+
 ## 4. File and folder conventions
 
 Use one folder per novel, one folder per arc, and one folder per scene.
@@ -119,15 +135,22 @@ novel/
     │   └── [development-outline].md
     ├── characters/
     │   └── [Character-ID]-[name].md
+    ├── assets/
+    │   └── illustrations/
+    │       └── [ARC-ID]/
+    │           └── [SCN-ID]/
+    │               ├── [ILL-ID]-[descriptive-slug].png
+    │               └── [ILL-ID]-[descriptive-slug].webp
     └── Arc-01/
         ├── arc.md
         └── Scene-001/
             ├── scene.md
             └── illustrations/
                 ├── [Illustration-ID].md
-                ├── [Illustration-ID]-prompt.md
-                └── [actual-image-asset, if stored]
+                └── [Illustration-ID]-prompt.md
 ```
+
+The scene-local `illustrations/` folder stores documentation only. Image binaries use the central `assets/illustrations/[ARC-ID]/[SCN-ID]/` path shown above. All user uploads enter through `images/takeout/` and are routed by its structured hand-off; do not upload directly into a final asset directory.
 
 Only create the optional `planning/`, `characters/`, arc, scene, and illustration folders when they contain real records or assets. Existing projects may retain their current paths; use the standard structure for new records and migrate old paths only when useful and safe.
 
@@ -211,8 +234,9 @@ For every planned illustration:
 5. Inspect each returned image separately against the brief; classify the result honestly.
 6. Create or update an Illustration Note for each generated image retained or reviewed as a scene deliverable. Record visible facts separately from interpretation.
 7. Record every attempt and outcome in the Prompt Record, including failed or partial attempts. Preserve the accepted baseline and the precise changes made in later attempts.
-8. Link the image asset, Illustration Note, Prompt Record, and scene. If an image is only conversation-delivered and not stored in the repository, state that plainly and do not invent a repository path.
-9. Update the scene's illustration index. A generated image does not create a new scene automatically.
+8. For repository retention, place the uploaded image in `images/takeout/` and prepare its `HANDOFF.yml` entry with the incoming filename, descriptive title, stable illustration ID, and central asset destination. Do not rename or relocate the upload manually; the existing Action performs the validated master rename, WebP conversion, relocation, and verification.
+9. Link the verified master and WebP assets, Illustration Note, Prompt Record, and scene. If an image is only conversation-delivered and not stored in the repository, state that plainly and do not invent a repository path.
+10. Update the scene's illustration index. A generated image does not create a new scene automatically.
 
 The Drawing Skill governs visual mode, reference handling, prompt archival before each attempt, image generation/editing, inspection, and recovery. The Romantic Storyteller skill must not override it.
 
