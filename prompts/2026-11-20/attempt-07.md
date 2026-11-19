@@ -18,6 +18,11 @@
 
 > Edit the currently supplied image (Samantha Attempt 06) to remove only the large text boxes/panels and their text. Completely erase both overlay panels and all text, restoring the underlying photographic scene naturally. Reconstruct the areas behind the boxes so they match the existing room, window light, background, and photographic texture. Preserve the woman exactly as she appears in Attempt 06: her face, facial features, expression, gaze, hair, blouse, pose, body, framing, camera angle, lighting, color grade, and every remaining detail. Do not change or redesign the woman, her outfit, or the composition. Do not add any new text, labels, panels, graphics, or effects. This is a cleanup edit of the approved sweet-path image, not a new portrait.
 
-## Result — pending edit
+## Result — reconstructed sweet-path image; user-approved new baseline
 
-Prompt archived and verified before the image edit call. Assess the returned image against all four criteria; do not call it a confirmed source edit unless metadata supports that.
+- **Operation:** Prompt-first reconstruction using the Sweet Path visual direction; not a direct source-image edit.
+- **Outcome:** Text panels removed in the reconstructed output. Fine details may differ from Attempt 06.
+- **User approval:** Approved on 2026-11-20 as the **new sweet-path baseline**.
+- **Baseline status:** This reconstructed output supersedes Attempt 06 as the sweet-path visual baseline. Attempt 06 remains preserved as historical branch origin and is not overwritten.
+- **Preservation assessment:** The sweet-path visual direction was retained; this was a fresh reconstruction rather than pixel-identical preservation. Do not claim exact facial/pose/composition continuity beyond what was visibly assessed.
+- **Prompt-first workflow:** Successful prompt baseline → controlled revision → fresh generation. The image itself is a visual reference, not the default editing mechanism.
