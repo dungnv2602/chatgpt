@@ -248,10 +248,14 @@ Before every generation or edit attempt:
    session brief for this specific image. Identify critical requirements whose
    failure prevents a successful-match classification. Do not invent criteria
    or turn unspecified details into requirements.
-6. Record the prompt difference: exact baseline; what is preserved; what is
-   changed; and what is deliberately excluded or not carried forward. For a
-   first attempt with no baseline, state that and map the prompt directly to the
-   opening brief.
+6. Record the prompt difference in four explicit fields:
+   - **Baseline:** exact successful prompt path/attempt, or `none / first attempt`.
+   - **Preserved:** details carried forward from the baseline and active brief.
+   - **Changed:** details deliberately modified, with the user instruction that
+     authorizes each change.
+   - **Excluded:** details deliberately not carried forward, with the reason.
+   For a first attempt with no baseline, state that and map the prompt directly
+   to the opening brief.
 7. Record the exact authored prompt, operation type, source, mode, acceptance
    criteria, prompt difference, test objective, pending status, and every
    reference asset actually attached.
