@@ -63,15 +63,32 @@ novel/
     │   └── [development-outline].md
     ├── characters/
     │   └── [Character-ID]-[name].md
+    ├── assets/
+    │   └── illustrations/
+    │       └── [ARC-ID]/
+    │           └── [SCN-ID]/
+    │               ├── [ILL-ID]-[descriptive-slug].png
+    │               └── [ILL-ID]-[descriptive-slug].webp
     └── Arc-01/
         ├── arc.md
         └── Scene-001/
             ├── scene.md
             └── illustrations/
                 ├── [Illustration-ID].md
-                ├── [Illustration-ID]-prompt.md
-                └── [actual-image-asset, if stored]
+                └── [Illustration-ID]-prompt.md
 ```
+
+## Illustration binaries and upload intake
+
+Store novel illustration binaries centrally at:
+
+`[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`
+
+Keep the Illustration Note and Illustration Prompt Record in the scene-local `illustrations/` folder. The scene-local folder contains documentation, not image binaries. Each retained illustration has an original PNG/JPEG master and a WebP derivative beside it. The original remains the byte-identical master; WebP is a separate delivery copy.
+
+All user-uploaded images, for novels and other projects, first enter the single flat intake at `images/takeout/`. The assistant inspects each image and prepares `images/takeout/HANDOFF.yml` with its exact incoming filename, descriptive title, optional stable ID, and destination directory. The existing GitHub Action deterministically slugifies the title, renames and relocates the original without changing its bytes, creates and verifies the WebP, and records the result.
+
+The Action refuses destination collisions and processes the batch as a unit. It clears the active hand-off only after every master and WebP is verified and the original hand-off, `conversion-report.csv`, and `verification-report.md` have been archived under `images/takeout/history/[batch-id]/attempt-NNN/`. Failed batches retain their hand-off and source images for correction. See [Image Takeout](../images/takeout/README.md) and [Novel Production Workflow 1.1](WORKFLOW.md).
 
 ## Document responsibilities
 
