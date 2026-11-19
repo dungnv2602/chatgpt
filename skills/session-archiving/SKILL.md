@@ -184,7 +184,7 @@ invent detail.
 **Session type:** Day drawing / Novel illustration
 **Project or novel scene:** ...
 **Created:** YYYY-MM-DD
-**Status:** Active / Closed
+**Status:** Active / Paused / Closed
 
 ## User's opening brief
 > [Preserve the user's opening direction accurately.]
@@ -200,6 +200,7 @@ invent detail.
 - Environment:
 - Lighting and palette:
 - Mood / emotional intention:
+- **Narrative fidelity (novel illustration only):** Text-faithful / Interpretive / Adaptive / Not applicable
 
 ## Locked features
 - ...
@@ -224,6 +225,23 @@ gaps from a former session, a global image catalogue, a successful prompt, or
 the assistant's aesthetic assumptions. A session brief may be compact when the
 user's request is compact; this is a record of the user's direction, not a
 questionnaire that must be completed before work.
+
+For a novel illustration, the user selects one narrative-fidelity mode in the
+opening brief:
+- **Text-faithful:** Depict the stated events, relationships, chronology, and
+  scene facts closely. Do not invent or contradict manuscript facts. Creative
+  choices are limited to details the source and brief leave open.
+- **Interpretive:** Preserve established story facts, character intentions, and
+  the scene's emotional meaning, while allowing the assistant to choose visual
+  staging, gestures, framing, and other unspecified details.
+- **Adaptive:** Deliberately reinterpret or depart from literal staging while
+  preserving the story elements the user identifies as non-negotiable. State
+  the permitted adaptation scope in the brief.
+
+Do not choose a fidelity mode on the user's behalf when the distinction would
+materially change the illustration. Ask one focused question if the brief and
+context do not resolve it. Day-drawing sessions may mark this field
+`Not applicable` unless the user wants a source-faithfulness constraint.
 
 ### Daily folder and one-note-per-attempt format for non-novel drawing work
 
@@ -291,6 +309,8 @@ Record:
 - **Continuity anchors and permitted variation** relevant to this attempt, taken from the current session brief; state which user-locked details must remain unchanged. Do not import locks from an older session.
 - **Prompt baseline provenance:** exact path/attempt or scene-local record of the most recent successful prompt in the primary series (or exact artwork thread if not a series), its recorded outcome, and why it qualifies. If the next operation requires a full-scene prompt but the newest success is only a localized edit/style-only prompt, also record the most recent successful full-generation prompt from that same series as the operation-compatible text skeleton and explain the choice. If there is no such baseline, say so explicitly. For a new branch, record the inherited seed and its source.
 - **Latest-attempt diagnostic reference:** link the newest later attempt inspected when it differs from the selected successful baseline, and state what was or was not carried forward from it.
+- **Acceptance criteria:** normally three to five observable requirements derived from the active brief for this image; mark critical criteria and define the visible evidence for each. Record `Not applicable` only when no meaningful visual criterion can be derived.
+- **Prompt difference:** record (a) baseline prompt or `none / first attempt`, (b) details preserved, (c) details changed, and (d) details deliberately excluded/not carried forward. Identify the user instruction supporting each change.
 - Operation type: **fresh generation** or **edit of a reference image**.
 - Source image/reference, when applicable. Distinguish inspiration references from the exact edit source, and record the actual asset/attachment identifier only when it was supplied to the tool.
 - The exact **authored prompt** prepared for the attempt.
@@ -420,7 +440,50 @@ When an uploaded image is already present in `images/` under an opaque or tempor
 - Do not use repository-root or outside-folder operations as a shortcut.
 - Leave `main` untouched unless the user explicitly authorizes changes there.
 
-## 8. Finishing a session
+## 8. Drawing-session closeout — user cue required
+
+**The only closeout trigger is the user's direct cue: `end session`.**
+Recognize it only as a standalone instruction, case-insensitive and allowing
+surrounding punctuation. A quoted mention or discussion of the phrase does not
+invoke it. Do not infer closeout from a pause, goodbye, a topic change, an
+apparently final image, the start of another session, or the end of a chat.
+
+Until the cue is received:
+- Keep the drawing session marked `Active` or `Paused`; never mark it
+  `Closed` merely because work has stopped temporarily.
+- Preserve its current brief, prompt lineage, attempt outcomes, unresolved
+  criteria, and next step.
+- A new drawing session may begin with a new brief, but this does not close the
+  preceding session. Mark the preceding session `Paused` if appropriate.
+
+When the user sends `end session`, close the active drawing session without
+asking for a second confirmation:
+
+1. Stop further image generation/editing for that session.
+2. Verify the opening brief and every amendment, and confirm all attempts are
+   recorded in their authoritative locations.
+3. Verify every generated output separately, including its acceptance-criteria
+   assessment, outcome, image/source identifier, and user approval status.
+4. Ensure every attempt contains its prompt baseline provenance and prompt
+   difference record: preserved, changed, and excluded details.
+5. Identify the final approved image(s), their exact originating prompts, and
+   any storage location that is actually verified. Do not label an unapproved
+   or uncertain output as final.
+6. Record unresolved requirements, failed attempts, missing source links,
+   technical gaps, and any work intentionally left incomplete. Do not erase
+   failures or silently mark them successful.
+7. Update the session brief status to `Closed`; prepare or update the relevant
+   session summary/handoff with completed work, approved outputs, unresolved
+   items, and the next possible task.
+8. Read back all changed records and verify their links and status. If archival
+   verification fails, report the exact gap and do not claim a fully verified
+   closeout.
+
+A closeout may be recorded as `Closed — unresolved items remain` when the user
+ends the session before every visual requirement is satisfied. Closing a
+session records its state; it does not imply that every image succeeded.
+
+## 9. Finishing a session
 
 1. Verify the relevant session records under `prompts/` exist. For non-novel drawing work, verify the dated attempt notes and README; for a named novel scene, verify its scene-local prompt records under `novel/` instead of creating duplicate attempt notes in `prompts/`.
 2. Verify every image attempt made in the session has a recorded outcome in its authoritative location.
