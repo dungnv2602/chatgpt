@@ -231,7 +231,7 @@ Then make sure to archive the prompts, and this conversation according to our wo
 
 **Tool event:** The former reference index (retired 2026-11-20) and [attempt 33 successful prompt entry](2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode) were updated with direct links to the committed image files. This corrects the earlier state in which only the Files Library copies had descriptive names while GitHub still displayed opaque filenames.
 
-## 23. Remaining opaque image assets renamed and successful-prompt index created
+## 23. Remaining opaque image assets renamed and historical prompt-success catalogue created
 
 **User:** “Do the same with the rest of the images that has opaque names.
 
