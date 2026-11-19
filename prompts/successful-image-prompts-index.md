@@ -3,9 +3,8 @@
 **Project:** `dungnv2602/Maya_and_Me`  
 **Branch:** `gpt`  
 **Authoritative chronological log:** [2026-11-12-image-prompts.md](2026-11-12-image-prompts.md)  
-**Image catalogue:** [ChatGPT/images/reference-index.md](../images/reference-index.md)
 
-This is a curated index of (1) successful prompt attempts with a verified chronological record and (2) images the user has explicitly designated as successful. These categories are kept separate: a user-approved image may be listed even when its exact originating prompt cannot be reliably mapped. Never invent prompt numbers or prompt-to-image associations. Rejected attempts, outputs that missed a defining instruction, and partial matches are excluded from the success categories.
+This is a historical retrieval index of (1) successful prompt attempts with a verified chronological record and (2) images the user has explicitly designated as successful. It is not a visual-direction authority. The opening brief of each specific drawing session governs that session and supersedes all historical prompts and images where they differ. These categories are kept separate: a user-approved image may be listed even when its exact originating prompt cannot be reliably mapped. Never invent prompt numbers or prompt-to-image associations. Rejected attempts, outputs that missed a defining instruction, and partial matches are excluded from prompt-success entries.
 
 **Series-lineage rule:** Each newly added entry must include its verified primary series ID/name and theme. Legacy entries without reliable classification remain `legacy/unassigned`. This index is a discovery aid only: use the linked chronological attempt records to determine series membership and which successful prompt is most recent. A newer failed entry never replaces the most recent successful prompt as the baseline.
 
@@ -79,7 +78,6 @@ This is a curated index of (1) successful prompt attempts with a verified chrono
 ## User-approved — Attempt 04 silk-wrap portrait
 
 - **Prompt:** [Attempt 04 — Direct reuse of the proven silk-wrap portrait direction](2026-11-13-image-prompts.md#attempt-04--direct-reuse-of-the-proven-silk-wrap-portrait-direction)
-- **Reference:** [Reference 03 — Open drape, close golden-light composition](../images/reference-index.md#reference-03--open-drape-close-golden-light-composition)
 - **Image:** [realistic-silk-wrap-portrait-open-drape-03.png](../images/realistic-silk-wrap-portrait-open-drape-03.png)
 - **Why included:** The user explicitly reviewed this Attempt 04 result and confirmed it as successful. The close photorealistic portrait preserves the long dark chestnut hair, ivory silk draped off the shoulders, open neckline, warm golden bedroom lighting, and affectionate direct gaze. The user's assessment is the deciding success classification; the assistant's earlier narrower garment-construction judgment must not override it.
 
