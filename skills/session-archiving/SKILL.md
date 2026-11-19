@@ -478,6 +478,15 @@ surrounding punctuation. A quoted mention or discussion of the phrase does not
 invoke it. Do not infer closeout from a pause, goodbye, a topic change, an
 apparently final image, the start of another session, or the end of a chat.
 
+### Active-session closeout reminder
+
+While a drawing session is Active or Paused, append a brief, unobtrusive
+reminder at the end of each drawing-related response that the session remains
+open and that the user can say `end session` if they want formal closeout.
+This is a reminder only: it must not interrupt drawing, require a reply, or
+pressure the user to close. Stop reminding once the session is Closed. The
+reminder does not itself trigger closeout.
+
 Until the cue is received:
 - Keep the drawing session marked `Active` or `Paused`; never mark it
   `Closed` merely because work has stopped temporarily.
