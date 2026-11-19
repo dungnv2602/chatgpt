@@ -7,7 +7,7 @@
 **Session summary:** [2026-11-13-summary.md](2026-11-13-summary.md)  
 **Successful prompts only:** [successful-image-prompts-index.md](successful-image-prompts-index.md)  
 **Base prompt:** [Attempt 33 — Historical silk-wrap portrait direction](2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode)  
-**Approved close-framing reference:** [realistic-silk-wrap-portrait-close-framing-02.png](../images/realistic-silk-wrap-portrait-close-framing-02.png) · [reference-index entry](../images/reference-index.md#reference-02--closer-framing-stronger-neckline)
+**Approved close-framing reference:** [realistic-silk-wrap-portrait-close-framing-02.png](../images/realistic-silk-wrap-portrait-close-framing-02.png)
 
 ## Attempt 01 — Source-guided silk-wrap portrait
 
@@ -38,7 +38,7 @@
 - **Operation:** Fresh generation using an approved visual-inspiration reference; not an edit of the source image.
 - **Mode:** Realistic.
 - **Successful base:** [Attempt 33 — Historical silk-wrap portrait direction](2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode).
-- **Actual inspiration source:** [Reference 02 — closer framing, stronger neckline](../images/reference-index.md#reference-02--closer-framing-stronger-neckline), `realistic-silk-wrap-portrait-close-framing-02.png`.
+- **Actual inspiration source:** [realistic-silk-wrap-portrait-close-framing-02.png](../images/realistic-silk-wrap-portrait-close-framing-02.png), `realistic-silk-wrap-portrait-close-framing-02.png`.
 - **Source asset:** Files Library file ID `file_00000000f36c8211a4a7ace253f08e2e`; Library path `/ChatGPT/images/realistic-silk-wrap-portrait-close-framing-02.png`; 1122 × 1402; 2,269,742 bytes.
 - **Attachment method:** Retrieved and visually surfaced from the persistent Files Library in this conversation. The actual image asset is supplied to the image-generation call using the surfaced file reference ID. It is an inspiration reference, not an edit source.
 - **Specific test:** Determine whether attaching the approved close-framing PNG while closely reusing Attempt 33's successful art direction preserves the approved subject, silk-wrap wardrobe, crop, lighting, and affectionate expression.
@@ -111,7 +111,7 @@
 - **Returned artifact:** `a_warm_intimate_indoor_portrait_scene_a_close_s.png`.
 - **Artifact facts:** PNG, 1086 × 1448 pixels, 2,131,676 bytes; SHA-256 `f242397e72ed62b53e30ff75d04ee7fcce635d0a9f95a74667501708f74c3fac`.
 - **Tool metadata:** Fresh generation (`edit_op: null`, `parent_gen_id: null`); no source image was attached. The returned metadata did not expose the compiled prompt; the archived text above is the authored prompt, reused verbatim from Attempt 33.
-- **Approved image:** [Reference 03 — Open drape, close golden-light composition](../images/reference-index.md#reference-03--open-drape-close-golden-light-composition).
+- **Approved image:** [realistic-silk-wrap-portrait-open-drape-03.png](../images/realistic-silk-wrap-portrait-open-drape-03.png).
 - **GitHub image:** [realistic-silk-wrap-portrait-open-drape-03.png](../images/realistic-silk-wrap-portrait-open-drape-03.png).
 - **GitHub path:** `ChatGPT/images/realistic-silk-wrap-portrait-open-drape-03.png`.
 - **Original uploaded filename:** `file_000000005280821180bb6e444a0a80cd.png`.
