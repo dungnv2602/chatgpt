@@ -496,14 +496,14 @@ apparently final image, the start of another session, or the end of a chat.
 ### Active-session closeout reminder
 
 While a drawing session is Active or Paused, append a brief, unobtrusive
-reminder at the end of each drawing-related response that the session remains
-open and that the user can say `end session` if they want formal closeout.
-This is a reminder only: it must not interrupt drawing, require a reply, or
-pressure the user to close. Once the user invokes `end session`, suppress the
-reminder during closeout. If closeout cannot be completed and the session
-remains open, resume reminders in later responses that continue or discuss that
-session. Stop reminding once the session is Closed. The reminder does not
-itself trigger closeout.
+reminder at the end of each response that continues or discusses that session,
+stating that it remains open and the user can say `end session` for formal
+closeout. This is a reminder only: it must not interrupt drawing, require a
+reply, or pressure the user to close. Once the user invokes `end session`,
+suppress the reminder during closeout. If closeout cannot be completed and the
+session remains open, resume reminders in later responses that continue or
+discuss that session. Stop reminding once the session is Closed. The reminder
+does not itself trigger closeout.
 
 Until the cue is received:
 - Keep the drawing session marked `Active` or `Paused`; never mark it
