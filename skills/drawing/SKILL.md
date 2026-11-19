@@ -204,7 +204,7 @@ pose, style, palette, mood, setting, or composition.
 
 The session brief—not a global image catalogue—is the visual authority.
 
-### B. Establish the visual hierarchy### B. Establish the visual hierarchy
+### B. Establish the visual hierarchy
 Order prompts by importance:
 1. Main subject and defining pose/action.
 2. Relative positions and spatial relationships.
@@ -244,11 +244,19 @@ Before every generation or edit attempt:
    feature. If no relevant success exists, draft from the current session brief
    and the user's explicit constraints; do not borrow a prompt from an unrelated
    series.
-5. Change as little as practical for a controlled revision.
-6. Record the exact authored prompt, operation type, source, mode, test
-   objective, pending status, and every reference asset actually attached.
-7. Commit the prompt to branch `gpt`.
-8. Fetch and verify the committed prompt before calling the image tool.
+5. Derive normally three to five observable acceptance criteria from the active
+   session brief for this specific image. Identify critical requirements whose
+   failure prevents a successful-match classification. Do not invent criteria
+   or turn unspecified details into requirements.
+6. Record the prompt difference: exact baseline; what is preserved; what is
+   changed; and what is deliberately excluded or not carried forward. For a
+   first attempt with no baseline, state that and map the prompt directly to the
+   opening brief.
+7. Record the exact authored prompt, operation type, source, mode, acceptance
+   criteria, prompt difference, test objective, pending status, and every
+   reference asset actually attached.
+8. Commit the prompt to branch `gpt`.
+9. Fetch and verify the committed prompt before calling the image tool.
 
 For every illustration belonging to a named novel scene, keep a convenient
 scene-local prompt record beside its illustration note:
@@ -409,6 +417,23 @@ Apply this order whenever an image belongs to an established series:
 14. **Resolve ambiguity proportionately.** If series membership or the primary branch is genuinely unclear and would materially alter baseline selection, ask one focused question. Otherwise use the clearest context, record provisional membership, and proceed.
 
 The controlling rule is: **the newest successful prompt in the active series is the baseline; newer unsuccessful prompts are evidence, never the baseline.** Preserve the series' evolving creative spirit by applying only the requested changes to that successful foundation. Keep every unmentioned locked feature unchanged.
+
+### Session closeout cue
+
+Do not close, finalize, or archive a drawing session as complete on the
+assistant's initiative. The user's explicit cue is **`end session`**.
+
+Treat the cue as invoked only when the user sends `end session` as a direct,
+standalone instruction (case-insensitive; surrounding punctuation is harmless).
+A quoted mention, question about the cue, or discussion of the phrase is not an
+invocation. A pause, goodbye, topic change, last image, or beginning of another
+session does not substitute for it.
+
+Until the cue is given, keep the session status Active or Paused and preserve
+its open state. On a new distinct drawing brief, start a new session record;
+do not silently close the earlier session. When the cue is given, execute the
+closeout procedure in `skills/session-archiving/SKILL.md`. Do not generate
+another image as part of closeout unless the user separately requests it.
 
 ### Default iteration rule — build on proven success without redundant generation
 
@@ -672,9 +697,16 @@ After an attempt is finalized:
 - Do not add rejected, partial, or generated-but-missed-target results to the prompt-attributed success category. A user may nevertheless separately approve an image as a visual output; record that approval honestly without rewriting its historical prompt outcome.
 
 ### F. Inspect and classify
-Evaluate the image against the actual brief. Check mode, subject count, character
-continuity, pose direction, hands/fingers/wrists, clothing/colors, framing,
-lighting, background, artifacts, and whether the source was actually used.
+Evaluate the image against the pre-recorded acceptance criteria and the active
+session brief. For each criterion, record **Pass**, **Partial**, **Fail**, or
+**Not assessable**, with a brief visual observation as evidence. Evaluate every
+returned image separately. A critical criterion marked Fail or Not assessable
+prevents a successful-match classification unless the user explicitly accepts
+the result for the intended purpose.
+
+Also inspect mode, subject count, character continuity, pose direction,
+hands/fingers/wrists, clothing/colors, framing, lighting, background, artifacts,
+unrequested additions, and whether the source was actually used.
 
 For clothing, inspect **garment construction and coverage**, not just fabric
 material or neckline appearance. Verify that the fabric physically lies across
@@ -682,7 +714,8 @@ the body areas the brief says it should cover. An opaque garment draped below
 the bust does not count as a covered wrap blouse simply because the material is
 non-transparent. For wrap garments, check that the front panels visibly cross
 and overlap in the intended place; check that the neckline opens above that
-overlap. Compare the result with the user's approved reference when one exists.
+overlap. Compare the result with the active session brief and only those reference images
+the user explicitly assigned to this session.
 Do not infer success from phrases in the prompt or from the absence of visible
 nipples; inspect the actual garment boundaries and coverage.
 
@@ -695,7 +728,9 @@ Record one honest outcome:
 - **Fresh generation, not an edit:** a new image was produced.
 - **Rejected / failed:** no usable image was returned.
 
-Name the mismatch and retain a useful lesson for the next attempt.
+Name each mismatch and retain a useful lesson for the next attempt. Update the
+prompt-difference record for the next iteration: preserve what succeeded, change
+only what is needed, and explicitly exclude rejected additions or drift.
 
 ## 5. Editing discipline
 
