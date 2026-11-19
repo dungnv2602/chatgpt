@@ -499,8 +499,11 @@ While a drawing session is Active or Paused, append a brief, unobtrusive
 reminder at the end of each drawing-related response that the session remains
 open and that the user can say `end session` if they want formal closeout.
 This is a reminder only: it must not interrupt drawing, require a reply, or
-pressure the user to close. Stop reminding once the session is Closed. The
-reminder does not itself trigger closeout.
+pressure the user to close. Once the user invokes `end session`, suppress the
+reminder during closeout. If closeout cannot be completed and the session
+remains open, resume reminders in later responses that continue or discuss that
+session. Stop reminding once the session is Closed. The reminder does not
+itself trigger closeout.
 
 Until the cue is received:
 - Keep the drawing session marked `Active` or `Paused`; never mark it
@@ -545,9 +548,9 @@ record; this is target clarification, not a second approval:
    their links and status. If archival verification fails, report the exact
    gap and do not claim a fully verified closeout.
 
-A closeout may be recorded as `Closed — unresolved items remain` when the user
-ends the session before every visual requirement is satisfied. Closing a
-session records its state; it does not imply that every image succeeded.
+The session brief status remains `Closed` even when unresolved requirements
+remain. Record those unresolved items in the closeout summary/handoff; closure
+records the session's state and does not imply that every image succeeded.
 
 ## 9. Default handoff for a new chat
 
