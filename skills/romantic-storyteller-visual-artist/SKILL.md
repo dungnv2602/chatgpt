@@ -185,40 +185,34 @@ has specified.
 
 ## 4. Character continuity and locked details
 
-### Mandatory Maya identity and wardrobe continuity
+### Session-defined identity, wardrobe, and visual continuity
 
-Before planning or generating any image of Maya, read
-`images/reference-index.md` and use its canonical identity and wardrobe
-specification, including the active portrait's approved visual description.
+There is no repository-wide default face, identity, hairstyle, outfit, or
+wardrobe for a drawing subject. At the beginning of each drawing session, the
+user's opening brief defines the intended visual direction. Apply this equally
+to day drawings and novel illustrations. A previous Maya portrait, character
+sheet, approved image, successful prompt, or other historical asset has no
+standing authority in a new session unless the user explicitly adopts it.
 
-This is a repository-wide continuity rule. Preserve Maya's approved face,
-facial features, long dark hair, proportions, and exact ivory silk-wrap outfit
-and garment construction. These details are absolute. Do not replace them with
-a newly invented face, hairstyle, sweater, skirt, coat, or other
-scene-appropriate outfit. Build the requested scene around Maya's established
-appearance.
+When the current session brief explicitly locks a face, identity, hairstyle,
+body design, outfit, garment construction, or other feature, preserve that
+feature exactly. When it leaves a feature open, do not invent a permanent
+continuity rule from an older project. Later user instructions in the same
+session amend the named feature and must be recorded as session-brief updates.
 
-**The approved written prompt is sufficient for fresh image generation.**
-Use the strongest relevant successful prompt as the base and carry forward
-Maya's canonical face and exact outfit instructions literally. The actual
-portrait image is optional; inability to retrieve or attach it is not a reason
-to stop a fresh text-to-image generation. Creative variation belongs in the
-scene, pose, expression, setting, lighting, and composition—not in Maya's face
-or clothing.
-
-Attach the actual portrait only when the user asks for it as a visual
-reference, when it materially benefits a particular task, or when the user
-requests an edit of that exact image. The portrait is an identity/wardrobe
-inspiration reference, not automatically an edit source. Never claim a
-reference-guided result or source-guided edit unless the image was actually
-attached and the relevant linkage is supported.
+A fresh text-to-image generation can proceed from the current session brief;
+an attached image is optional unless the user requests an exact source edit or
+assigns a particular reference role. Never claim a reference-guided result or
+source-guided edit unless the actual image was attached and the relevant
+linkage is supported.
 
 
 Treat established character identity as continuity-critical.
 
 ### Preserve supplied identity
 
-When the user provides a reference image or established character design:
+When the user provides a reference image or established character design for
+this session, or explicitly asks to continue a previously established design:
 
 - Preserve recognizable facial structure, facial features, hairstyle, and other
   specified identity traits.
@@ -242,11 +236,12 @@ unchanged, treat it as locked.
 
 ### Preserve continuity across scenes
 
-Maintain a consistent record of each recurring character's appearance,
-wardrobe rules, relationship, and established visual traits. Before a new scene,
-consult the relevant conversation context and available project references.
-Do not invent a conflicting backstory or visual change merely to make a scene
-more dramatic.
+Maintain continuity across scenes only when the user asks for it or the
+current session brief explicitly adopts that established character/story
+continuity. Use the current session brief to decide which features persist and
+which may change. Consult older conversation context or project records only
+for the specific details the user has chosen to carry forward; do not treat
+historical designs or image catalogues as global authority.
 
 ## 5. Scene composition and visual direction
 
