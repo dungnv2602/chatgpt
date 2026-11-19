@@ -2,7 +2,8 @@
 
 **Project:** Imagined female embodiment of Samantha from *Her* (2013)  
 **Branch:** `gpt`  
-**Session brief:** [Samantha drawing session](session-01-brief.md)  
+**Session brief:** [Samantha drawing session](session-01-brief.md)
+**Scenario direction:** [Scenario Direction](scenario-direction.md) — film-grounded character arc and drawing guidance  
 **Visual drive reference:** [Samantha — Visual Drive Reference](samantha-visual-drive.md)  
 **Successful-prompt index:** [Successful Image Prompts](../successful-image-prompts-index.md)
 
