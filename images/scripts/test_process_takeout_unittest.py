@@ -62,19 +62,26 @@ class TakeoutProcessorTests(unittest.TestCase):
         )
 
     def manifest(self, item, batch="batch-test"):
+        self.manifest_many([item], batch)
+
+    def manifest_many(self, items, batch="batch-test"):
         rows = [
             "version: 1",
             f'batch_id: "{batch}"',
             "status: ready",
             "items:",
-            f'  - source: "{item["source"]}"',
-            f'    asset_id: "{item.get("asset_id", "ILL-001")}"',
-            f'    title: "{item.get("title", "Shared Discovery")}"',
-            (
-                "    destination_dir: "
-                f'"{item.get("destination_dir", "novel/Novel-02/assets/illustrations/ARC-001/SCN-001")}"'
-            ),
         ]
+        for index, item in enumerate(items):
+            prefix = "  -" if index == 0 else "  -"
+            rows.extend([
+                f'{prefix} source: "{item["source"]}"',
+                f'    asset_id: "{item.get("asset_id", f"ILL-{index + 1:03d}")}"',
+                f'    title: "{item.get("title", "Shared Discovery")}"',
+                (
+                    "    destination_dir: "
+                    f'"{item.get("destination_dir", "novel/Novel-02/assets/illustrations/ARC-001/SCN-001")}"'
+                ),
+            ])
         (self.inbox / "HANDOFF.yml").write_text("\n".join(rows) + "\n", encoding="utf-8")
 
     def test_success_moves_byte_identical_master_creates_webp_and_archives_reports(self):
@@ -107,6 +114,11 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertEqual(row["status"], "RELOCATED_AND_VERIFIED")
         self.assertEqual(row["master_sha256"], row["source_sha256"])
         self.assertTrue(row["webp_sha256"])
+        self.assertEqual(
+            row["staging_webp_path"],
+            "images/takeout/webp/batch-test/attempt-001/IMG_001.PNG.webp",
+        )
+        self.assertFalse((self.inbox / "webp/batch-test/attempt-001").exists())
 
     def test_unlisted_image_fails_without_moving_sources_or_clearing_handoff(self):
         (self.inbox / "listed.jpg").write_bytes(b"listed-image")
@@ -124,6 +136,107 @@ class TakeoutProcessorTests(unittest.TestCase):
             / "history/batch-unlisted/attempt-001/verification-report.md"
         ).read_text(encoding="utf-8")
         self.assertIn("not listed", report)
+
+    def test_bulk_staging_preserves_each_original_filename(self):
+        (self.inbox / "camera.png").write_bytes(b"png-original")
+        (self.inbox / "camera.jpg").write_bytes(b"jpeg-original")
+        self.manifest_many(
+            [
+                {
+                    "source": "camera.png",
+                    "asset_id": "ILL-001",
+                    "title": "Morning Window",
+                },
+                {
+                    "source": "camera.jpg",
+                    "asset_id": "ILL-002",
+                    "title": "Evening Window",
+                },
+            ],
+            batch="batch-bulk",
+        )
+
+        result = self.run_processor()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        destination = (
+            self.root
+            / "novel/Novel-02/assets/illustrations/ARC-001/SCN-001"
+        )
+        self.assertTrue((destination / "ILL-001-morning-window.webp").is_file())
+        self.assertTrue((destination / "ILL-002-evening-window.webp").is_file())
+        history = self.inbox / "history/batch-bulk/attempt-001"
+        with (history / "conversion-report.csv").open(encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle))
+        self.assertEqual(
+            {row["staging_webp_path"] for row in rows},
+            {
+                "images/takeout/webp/batch-bulk/attempt-001/camera.png.webp",
+                "images/takeout/webp/batch-bulk/attempt-001/camera.jpg.webp",
+            },
+        )
+        self.assertFalse((self.inbox / "webp/batch-bulk/attempt-001").exists())
+
+    def test_failed_batch_retains_successful_staging_and_retry_uses_next_attempt(self):
+        encoder = self.bin_dir / "cwebp"
+        encoder.write_text(
+            FAKE_CWEBP.replace(
+                'if "-o" not in args:',
+                'if any(arg.endswith("broken.jpg") for arg in args):\\n'
+                '    print("simulated encoder failure", file=sys.stderr)\\n'
+                '    raise SystemExit(9)\\n'
+                'if "-o" not in args:',
+            ),
+            encoding="utf-8",
+        )
+        encoder.chmod(0o755)
+        (self.inbox / "good.png").write_bytes(b"good-image")
+        (self.inbox / "broken.jpg").write_bytes(b"broken-image")
+        self.manifest_many(
+            [
+                {"source": "good.png", "asset_id": "ILL-001", "title": "Good Image"},
+                {"source": "broken.jpg", "asset_id": "ILL-002", "title": "Broken Image"},
+            ],
+            batch="batch-retry",
+        )
+        original_handoff = (self.inbox / "HANDOFF.yml").read_bytes()
+
+        failed = self.run_processor()
+        self.assertNotEqual(failed.returncode, 0)
+        staged = self.inbox / "webp/batch-retry/attempt-001/good.png.webp"
+        self.assertTrue(staged.is_file())
+        self.assertTrue((self.inbox / "good.png").is_file())
+        self.assertTrue((self.inbox / "broken.jpg").is_file())
+        self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), original_handoff)
+        self.assertFalse((self.root / "novel/Novel-02/assets/illustrations/ARC-001/SCN-001/ILL-001-good-image.webp").exists())
+
+        # Correct the batch, retaining the failed attempt as an inspectable record.
+        (self.inbox / "broken.jpg").unlink()
+        self.manifest(
+            {"source": "good.png", "asset_id": "ILL-001", "title": "Good Image"},
+            batch="batch-retry",
+        )
+        retried = self.run_processor()
+        self.assertEqual(retried.returncode, 0, retried.stderr)
+        self.assertTrue(staged.is_file(), "failed attempt staging must remain archived")
+        self.assertFalse((self.inbox / "webp/batch-retry/attempt-002").exists())
+        self.assertTrue((self.inbox / "history/batch-retry/attempt-001/verification-report.md").is_file())
+        self.assertTrue((self.inbox / "history/batch-retry/attempt-002/verification-report.md").is_file())
+        self.assertEqual(
+            (self.inbox / "HANDOFF.yml").read_text(encoding="utf-8"),
+            "version: 1\\nstatus: empty\\nitems: []\\n",
+        )
+
+    def test_existing_webp_staging_tree_is_reserved_not_scanned_as_intake(self):
+        leftover = self.inbox / "webp/older-batch/attempt-001/inspection-note.txt"
+        leftover.parent.mkdir(parents=True)
+        leftover.write_text("prior staging content", encoding="utf-8")
+        (self.inbox / "fresh.png").write_bytes(b"fresh-upload")
+        self.manifest({"source": "fresh.png"}, batch="batch-with-old-staging")
+
+        result = self.run_processor()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(leftover.read_text(encoding="utf-8"), "prior staging content")
+        self.assertFalse((self.inbox / "webp/batch-with-old-staging/attempt-001").exists())
 
     def test_destination_collision_fails_without_overwrite(self):
         (self.inbox / "photo.jpg").write_bytes(b"original-upload")
