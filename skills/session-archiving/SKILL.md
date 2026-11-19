@@ -383,6 +383,30 @@ A failed, rejected, partial, or missed-target prompt is never the default text b
 
 ### Image handling
 
+### Prompt-first image-editing records
+
+For a user-requested change to an existing image, default to **prompt-first
+reconstruction**: locate the successful authored prompt that produced the target,
+use it as the text baseline, make only the requested change, and generate a new
+image from the revised prompt. Do not describe this as a direct edit of the
+source image.
+
+Each such attempt must record:
+- The successful baseline prompt path/attempt and why it qualifies.
+- The requested delta, preserved details, changed details, and exclusions.
+- Whether the source image was attached. Prompt-first reconstruction does not
+  require source-image attachment; an attached image is optional visual
+  comparison/reference, not the editing mechanism.
+- Operation type as **fresh generation/reconstruction**, unless a direct edit
+  was actually performed and source linkage verified.
+- The output's comparison against the successful baseline and requested change.
+
+If the successful baseline prompt cannot be recovered, disclose the missing
+source and do not fabricate prompt text. Direct source-image editing is a
+secondary method, used only when explicitly requested or when reconstruction is
+materially inadequate and the exact source image can be attached through a
+supported mechanism. Verify source linkage before calling it a confirmed edit.
+
 - Deliver generated images in the conversation.
 - Store repository image assets only under `images/`, and only when the user has requested repository storage or the established workflow requires it.
 - Never claim a fresh generation was an edit of the original.
