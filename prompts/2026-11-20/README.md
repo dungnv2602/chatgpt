@@ -13,4 +13,6 @@
 | 03 | [Localized edit using the original portrait](attempt-03.md) | [Session 01](session-01-brief.md) | Samantha — Human Presence Without a Body | Rejected; no image returned. Source attachment was not verified; not a confirmed edit |
 | 04 | [Fresh generation — visible but restrained nonphysical edge](attempt-04.md) | [Session 01](session-01-brief.md) | Samantha — Human Presence Without a Body | Generated partial match; assistant selected output as provisional source, not user-approved keeper |
 | 05 | [Localized nonphysical edge edit](attempt-05.md) | [Session 01](session-01-brief.md) | Samantha — Human Presence Without a Body | **User-approved casual path**; fresh generation, source not linked; edge cue still unmet |
-| 06 | [Corrected source-attached localized edge edit](attempt-06.md) | [Session 01](session-01-brief.md) | Samantha — Human Presence Without a Body | **User-approved sweet path**; fresh generation with no parent linkage; unwanted text panels; edit target pending |
+| 06 | [Corrected source-attached localized edge edit](attempt-06.md) | [Session 01](session-01-brief.md) | Samantha — Human Presence Without a Body | **User-approved sweet path**; fresh generation with no parent linkage; unwanted text panels |
+
+| 07 | [Sweet path cleanup — remove text panels](attempt-07.md) | [Session 01](session-01-brief.md) | Samantha — Human Presence Without a Body | Prompt archived and verified; cleanup pending |
