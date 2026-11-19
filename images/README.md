@@ -6,7 +6,7 @@ This directory contains retained image masters, non-novel visual assets, and the
 
 All user-uploaded images intended for repository retention enter through [`images/takeout/`](takeout/README.md). Incoming filenames may be arbitrary. The assistant inspects the images, decides their descriptive titles and destinations, and writes the structured `HANDOFF.yml`. The Action never guesses image content or project membership.
 
-The intake is flat: place image files directly in `images/takeout/`, not in subfolders. The Action processes only a ready hand-off and only static PNG, JPG, and JPEG. Unsupported formats and APNG are reported as failures rather than silently flattened.
+The intake is flat: place image files directly in `images/takeout/`, not in upload subfolders. The Action manages two reserved subdirectories, `history/` and `webp/`; do not place uploads in them. It processes only a ready hand-off and only static PNG, JPG, and JPEG. Unsupported formats and APNG are reported as failures rather than silently flattened.
 
 ## Naming and destination rules
 
@@ -28,9 +28,9 @@ The original is moved byte-for-byte to the master path. The WebP is a separate d
 
 The existing [WebP/takeout workflow](../.github/workflows/convert-images-to-webp.yml) uses `cwebp` and the tested conversion profiles below. Its processor is [`images/scripts/process_takeout.py`](scripts/process_takeout.py).
 
-The workflow validates the complete hand-off and converts the complete batch into temporary runner storage before relocating any original. It verifies the original master by SHA-256, verifies WebP container signatures and output hashes, checks for destination collisions, and confirms every image in the intake is listed exactly once.
+The workflow validates the complete hand-off and converts the complete batch into persistent staging under `images/takeout/webp/[batch-id]/attempt-NNN/`. Each staged filename preserves the exact incoming filename and appends `.webp` (for example, `camera.png.webp`). It verifies every staged WebP before relocating any original, then moves the verified WebPs to their final destinations. It verifies the original master by SHA-256, checks WebP container signatures and output hashes, checks destination collisions, and confirms every image in the intake is listed exactly once.
 
-The workflow commits the completed operation together. A failed conversion or verification leaves the active hand-off ready and restores originals to the intake where rollback succeeds. It archives a diagnostic attempt and does not claim success.
+The workflow commits the completed operation together. A failed conversion or verification leaves the active hand-off ready and restores originals to the intake where rollback succeeds. Successfully converted WebPs remain in the matching `webp/[batch-id]/attempt-NNN/` folder for inspection; the next retry uses a new attempt directory. After a successful batch, staged WebPs have moved to their final destinations and the empty successful staging attempt folder is removed. The workflow archives a diagnostic attempt and does not claim success.
 
 ## Conversion profiles
 
@@ -52,8 +52,8 @@ images/takeout/history/[batch-id]/attempt-NNN/
   verification-report.md
 ```
 
-The CSV records source and destination paths, title and ID, format, encoder profile and version, original and WebP sizes, size difference, SHA-256 values, status, and errors. A negative size reduction means the WebP is larger than the original; the derivative is still retained for inspection.
+The CSV records source, staging, and destination paths, title and ID, format, encoder profile and version, original and WebP sizes, size difference, SHA-256 values, status, and errors. A negative size reduction means the WebP is larger than the original; the derivative is still retained for inspection.
 
-The verification report records the checks, outcome, warnings, and errors. The history tree is excluded from intake detection and is never processed as new uploaded content.
+The verification report records the checks, outcome, warnings, and errors. Both the `history/` archive and `webp/` staging tree are reserved and excluded from intake detection; failed staging is never processed as a new upload.
 
 See [the takeout instructions](takeout/README.md) for the complete hand-off schema and operating procedure.
