@@ -2,7 +2,7 @@
 name: drawing
 description: "Create and refine images in two deliberate visual modes: Realistic and Vintage. Use for image generation, editing, style transformations, composition, character continuity, and iterative visual refinement."
 created: 2026-11-18T13:18
-updated: 2026-11-18T13:18
+updated: 2026-11-20T00:00
 ---
 
 # Drawing Skill
@@ -264,6 +264,47 @@ fresh generation or did not confirm source linkage. Check metadata and inspect
 the result. If the user specifically requires source linkage and the tool cannot
 accept or retain the source, state that limitation. Do not turn optional
 reference attachment into a blocker for ordinary fresh generation.
+
+### Default iteration rule — improve the prompt before considering an edit
+
+**The default response to a generated image that misses a requirement is a revised
+fresh-generation prompt, not a direct image edit.** The previous output is evidence
+for prompt refinement; its existence or generation ID does not make it an available
+edit source.
+
+1. Reopen the previous attempt's exact authored prompt and observed result. Identify
+   what worked and the specific requirement that was missed.
+2. Keep the successful visual direction and all user-approved features. Improve the
+   wording for the missed requirement with the smallest useful change. Do not
+   redesign unrelated features, add new restrictions, or discard a good composition
+   merely because one detail failed.
+3. Create a new text-to-image generation by default. State the intended improvement
+   explicitly and preserve established identity, appearance, wardrobe, mood, palette,
+   scene, and framing in the revised prompt when those details matter.
+4. Do not request or attempt an edit merely because a previous image exists. A
+   generation ID, filename, local path, archived note, or textual mention is not an
+   image attachment and does not prove that the image is available to the tool.
+5. Use a direct edit only when the user explicitly requests modification of that
+   exact image or the task genuinely requires source-preserving modification, and
+   the exact source image is accessible and can be passed through a documented,
+   supported image-reference mechanism in the actual tool call.
+6. Before calling an edit tool, verify that the actual image asset—not merely its
+   identifier in prose—is present in the current context or supplied using the
+   tool's supported attachment/reference argument. Record exactly what was attached.
+   If the tool cannot accept the actual source, do not describe or call the operation
+   as an edit. Return to prompt-led fresh generation unless the user specifically
+   requires that exact edit; in that case, explain the attachment limitation.
+7. After an edit call, inspect returned operation and parent/source metadata. If
+   metadata says `edit_op: null`, `parent_gen_id: null`, or otherwise fails to
+   confirm source linkage, classify the result as a fresh generation or unconfirmed
+   source operation—not a confirmed edit. Similar appearance does not prove linkage.
+8. Archive the revised prompt before each new generation. Record the operation as
+   **fresh generation** unless the actual call includes a verified source attachment
+   for a deliberate edit. Never write an intended attachment as though it were
+   actually attached.
+
+This rule does not prohibit legitimate editing. It prevents unsupported edit claims
+and makes controlled prompt improvement the normal iteration method.
 
 ### E. Generate or edit
 Use one dominant mode consistently:
