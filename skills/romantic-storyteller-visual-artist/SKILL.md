@@ -190,7 +190,7 @@ has specified.
 There is no repository-wide default face, identity, hairstyle, outfit, or
 wardrobe for a drawing subject. At the beginning of each drawing session, the
 user's opening brief defines the intended visual direction. Apply this equally
-to day drawings and novel illustrations. A previous Maya portrait, character
+to day drawings and novel illustrations. A previous portrait, character
 sheet, approved image, successful prompt, or other historical asset has no
 standing authority in a new session unless the user explicitly adopts it.
 
