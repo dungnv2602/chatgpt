@@ -201,6 +201,7 @@ invent detail.
 - Lighting and palette:
 - Mood / emotional intention:
 - **Narrative fidelity (novel illustration only):** Text-faithful / Interpretive / Adaptive / Not applicable
+- **Source scene/version (novel illustration):** exact scene/chapter or supplied passage the user wants followed/adapted
 
 ## Locked features
 - ...
@@ -311,11 +312,40 @@ Record:
 - **Latest-attempt diagnostic reference:** link the newest later attempt inspected when it differs from the selected successful baseline, and state what was or was not carried forward from it.
 - **Acceptance criteria:** normally three to five observable requirements derived from the active brief for this image; mark critical criteria and define the visible evidence for each. Record `Not applicable` only when no meaningful visual criterion can be derived.
 - **Prompt difference:** record (a) baseline prompt or `none / first attempt`, (b) details preserved, (c) details changed, and (d) details deliberately excluded/not carried forward. Identify the user instruction supporting each change.
+- **Pre-generation acceptance criteria:** normally three to five observable requirements derived from the active brief, with critical/non-critical status and the visible evidence expected. These must be recorded before generation/editing, not reconstructed after seeing the output.
+- **Per-output assessment:** for every image returned, score each criterion Pass / Partial / Fail / Not assessable and cite the visible evidence. Keep outputs separate when one call returns multiple images.
 - Operation type: **fresh generation** or **edit of a reference image**.
 - Source image/reference, when applicable. Distinguish inspiration references from the exact edit source, and record the actual asset/attachment identifier only when it was supplied to the tool.
 - The exact **authored prompt** prepared for the attempt.
 - Whether the tool exposed the actual submitted/compiled prompt. If not, say the archived text is the authored direction and do not claim it is the verbatim internal payload.
 - The specific detail being tested or changed.
+
+### Acceptance-criteria and prompt-difference format
+
+Before the tool call, include this compact ledger in the attempt record:
+
+```markdown
+## Acceptance criteria — before generation/editing
+| # | Observable requirement | Critical? | Expected visible evidence |
+|---|---|---|---|
+| 1 | ... | Yes/No | ... |
+
+## Prompt difference
+- **Baseline:** [exact successful prompt path/attempt, or none / first attempt]
+- **Preserved:** [what is carried forward]
+- **Changed:** [what is different and the user's instruction authorizing it]
+- **Excluded:** [what is deliberately not carried forward and why]
+
+## Per-output assessment — after generation/editing
+| Output | Criterion | Result: Pass/Partial/Fail/Not assessable | Visible evidence |
+|---|---|---|---|
+| Image 1 | ... | ... | ... |
+```
+
+Keep acceptance criteria concise and testable. Do not use abstract criteria such as
+"beautiful" or "perfect" without translating the user's intent into observable
+features. Emotional criteria may be assessed through visible expression, gesture,
+posture, and staging, while acknowledging when the evidence is interpretive.
 
 ### Record the result immediately afterward
 
@@ -482,14 +512,6 @@ asking for a second confirmation:
 A closeout may be recorded as `Closed — unresolved items remain` when the user
 ends the session before every visual requirement is satisfied. Closing a
 session records its state; it does not imply that every image succeeded.
-
-## 9. Finishing a session
-
-1. Verify the relevant session records under `prompts/` exist. For non-novel drawing work, verify the dated attempt notes and README; for a named novel scene, verify its scene-local prompt records under `novel/` instead of creating duplicate attempt notes in `prompts/`.
-2. Verify every image attempt made in the session has a recorded outcome in its authoritative location.
-3. Ensure the next task in the summary matches the latest prompt-history state.
-4. Provide direct links to records under `approved project directories`.
-5. State any known gaps honestly. Do not promise background notification or work after the conversation ends unless a supported automation has actually been created.
 
 ## 9. Default handoff for a new chat
 
