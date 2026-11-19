@@ -5,7 +5,7 @@
 **Workspace:** `ChatGPT/` only  
 **Conversation integrity:** [2026-11-13-conversation-integrity.md](2026-11-13-conversation-integrity.md)  
 **Session summary:** [2026-11-13-summary.md](2026-11-13-summary.md)  
-**Successful prompts only:** [successful-image-prompts-index.md](successful-image-prompts-index.md)  
+**Outcome tracking:** Each attempt's actual result and approval status are recorded in this chronological log. The former cross-session success catalogue was retired on 2026-11-20.  
 **Base prompt:** [Attempt 33 — Historical silk-wrap portrait direction](2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode)  
 **Approved close-framing reference:** [realistic-silk-wrap-portrait-close-framing-02.png](../images/realistic-silk-wrap-portrait-close-framing-02.png)
 
