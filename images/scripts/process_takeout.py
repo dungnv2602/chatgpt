@@ -95,6 +95,9 @@ def valid_webp(path: Path) -> bool:
     return header[:4] == b"RIFF" and header[8:12] == b"WEBP" and int.from_bytes(header[4:8], "little") + 8 == path.stat().st_size
 
 def attempt_folder(history: Path, batch: str) -> Path:
+    if history.is_symlink():
+        raise ProcessingError("images/takeout/history must not be a symlink.")
+    history.mkdir(parents=True, exist_ok=True)
     batch_root = history / batch
     if batch_root.is_symlink():
         raise ProcessingError(f"Batch history path must not be a symlink: {batch}")
