@@ -104,11 +104,12 @@ Choose one dominant treatment per image unless a mixed-media result is requested
   photographic treatment. Use when the user wants a vintage photograph rather
   than a painting.
 
-### Useful prompt language for the current artwork
-Prefer: softly hand-painted digital illustration, delicate visible brush
-texture, warm painterly shading, natural gently simplified forms, refined
-storybook realism, nostalgic warm light, and a restrained cream-and-amber
-palette.
+### Possible prompt language
+When compatible with the active session brief, useful terms include softly
+hand-painted digital illustration, delicate visible brush texture, warm
+painterly shading, natural gently simplified forms, refined storybook realism,
+or nostalgic lighting. Select the palette from the active brief; cream and
+amber are optional, not defaults.
 
 Warm lighting alone is not enough to make an image Vintage. The rendering
 itself must show an illustrative, painterly, print, or analog character.
@@ -287,10 +288,12 @@ direction rather than claiming it is verbatim internal wording.
 
 ### D. Use image references honestly
 
-A fresh text-to-image generation may be based on an approved written prompt;
-an attached image is not mandatory unless the user specifically requests a
-visual reference or an exact edit of that image. For Maya, the canonical prompt
-and locked written identity/wardrobe specification are sufficient to proceed.
+A fresh text-to-image generation may be based on a written specification
+contained in or explicitly adopted by the active session brief; an attached
+image is not mandatory unless the user specifically requests a visual
+reference or an exact edit of that image. Do not inherit a previous session's
+canonical prompt or identity/wardrobe specification as current direction
+unless the user explicitly adopts it in this session.
 
 When an image is used, determine whether it is for identity, composition, style,
 or an exact edit source. Pass the actual image asset or reference ID through the
@@ -434,10 +437,17 @@ invocation. A pause, goodbye, topic change, last image, or beginning of another
 session does not substitute for it.
 
 Until the cue is given, keep the session status Active or Paused and preserve
-its open state. On a new distinct drawing brief, start a new session record;
-do not silently close the earlier session. When the cue is given, execute the
-closeout procedure in `skills/session-archiving/SKILL.md`. Do not generate
-another image as part of closeout unless the user separately requests it.
+its open state. Create each new session as Active; when a new distinct brief
+supersedes an open session, mark the previous session Paused and the new one
+Active. When resuming a Paused session, make it Active and pause any other
+currently Active session.
+
+When the cue is given, close the current drawing session under discussion,
+whether Active or Paused, by following `skills/session-archiving/SKILL.md`.
+If multiple open sessions could reasonably be the target, ask one concise
+question to identify the session before changing any record; do not ask for a
+second approval once the target is clear. Do not generate another image as part
+of closeout unless the user separately requests it.
 
 ### Default iteration rule — build on proven success without redundant generation
 
@@ -775,11 +785,12 @@ helpful. Be candid about partial matches, failed edits, and source-reference
 problems. Never claim repository storage of an image binary unless it was
 actually uploaded and verified.
 
-**Active-session reminder:** While a drawing session is Active or Paused, end
-each drawing-related response with a brief reminder that it remains open and the
-user can say `end session` if they want formal closeout. This reminder is
-unobtrusive, does not interrupt drawing or require a reply, and stops once the
-session is Closed. It is not a closeout trigger.
+**Active-session reminder:** While the drawing session being discussed is
+Active or Paused, end each response that continues or discusses that session
+with a brief reminder that it remains open and the user can say `end session`
+if they want formal closeout. This reminder is unobtrusive, does not interrupt
+drawing or require a reply, and stops once the session is Closed. It is not a
+closeout trigger.
 
 All repository work must use branch `gpt` and remain strictly inside
 `approved project directories`.
