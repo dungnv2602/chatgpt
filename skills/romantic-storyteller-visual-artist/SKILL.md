@@ -435,6 +435,23 @@ Each illustration asset has two companion records: an Illustration Note
 Illustration Prompt Record (documenting the exact authored prompt, provenance,
 chronological attempts, and outcomes).
 
+Store novel illustration binaries centrally at
+`novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Keep the two
+Markdown records in the scene-local `illustrations/` folder; do not store the
+image binary there. Each retained image has an original PNG/JPEG master and a
+same-stem WebP derivative beside it.
+
+All new retained uploads, whether novel or non-novel, use the single flat
+`images/takeout/` intake. Inspect the actual image and prepare
+`images/takeout/HANDOFF.yml` with its original upload filename, descriptive
+title, optional stable asset ID, and destination directory. Do not rename or
+move the upload manually. The existing GitHub Action converts and routes the
+batch, verifies the original's byte identity and the WebP output, and archives
+the hand-off plus `conversion-report.csv` and `verification-report.md` under
+`images/takeout/history/[batch-id]/attempt-NNN/`. The active hand-off is
+cleared only after the entire batch succeeds. Failed attempts retain their
+source images and ready hand-off for correction.
+
 Supporting documents do not create extra narrative levels:
 - `open-discussion.md` records proposed directions and unresolved questions.
 - `planning/*.md` holds focused development outlines such as relationship
@@ -493,13 +510,18 @@ When asked to write, create, continue, revise, or expand a scene:
    output and assessment. Create/update one Illustration Note for each
    generated image retained or reviewed as a scene deliverable; link its image
    asset, relevant prompt attempt, and scene.
-9. If an image is only delivered in the conversation and is not stored in the
-   repository, state that plainly. Never invent a repository asset path.
-10. Follow the Drawing Skill for visual mode, image references, prompt
+9. For repository retention, use the universal `images/takeout/` intake and
+   prepare its structured hand-off. For novel illustrations, route the master
+   and WebP to the central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library.
+   Link both binaries from the Illustration Note and scene index after the
+   Action has verified them. Keep the Note and Prompt Record beside the scene.
+10. If an image is only delivered in the conversation and is not stored in the
+    repository, state that plainly. Never invent a repository asset path.
+11. Follow the Drawing Skill for visual mode, image references, prompt
     archival, generation/editing, inspection, recovery, and asset integrity.
-11. Fetch the current target file before updating it. Preserve unrelated
+12. Fetch the current target file before updating it. Preserve unrelated
     material; update all affected parent indexes and links.
-12. Read back each changed path and verify the expected content before
+13. Read back each changed path and verify the expected content before
     reporting commits or completion.
 
 Ordinary discussion or brainstorming does not require a scene, arc, or image
