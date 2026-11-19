@@ -2,7 +2,7 @@
 
 **Project:** `dungnv2602/chatgpt`  
 **Branch:** `gpt`  
-**Session / brief:** 2026-11-19 Realistic portrait session. No separate opening-brief file is recorded for this date.
+**Session / brief:** 2026-11-19 Realistic portrait session. No separate opening-brief file is recorded for this date. A formal primary series ID was not assigned; the lineage column records only the relationships documented by each attempt.
 
 This README is the daily navigation ledger, not a replacement for the linked
 attempt records. The five fields are deliberately separate: attempt/prompt,
@@ -10,6 +10,23 @@ session/brief, series/baseline lineage, execution outcome, and user approval/out
 evidence. The attempt note is authoritative for exact prompt text, source IDs,
 tool metadata, visual assessment, and provenance. Unknown details remain
 explicitly unverified.
+
+## Field guide
+
+1. **Attempt / prompt:** attempt number, short descriptive title, and link to
+   the complete prompt/result record. Keep the full prompt in that record.
+2. **Session / brief:** session ID or name and link to the opening brief. State
+   when no separate brief was filed.
+3. **Series / baseline lineage:** verified series name/theme and known parent,
+   source, or successful baseline attempt. Use `not established` when the
+   relationship cannot be verified.
+4. **Execution outcome:** what the image tool actually returned and whether
+   the result met the defining requirements. A prompt approved for generation
+   is not evidence that an image was generated or approved.
+5. **User approval / output evidence:** record explicit user approval
+   separately from the execution result, and link the exact output or verified
+   asset. Otherwise state that no output was returned, approval was not
+   recorded, or storage/linkage was not verified.
 
 | Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence |
 |---|---|---|---|---|
