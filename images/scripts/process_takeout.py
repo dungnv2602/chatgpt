@@ -256,7 +256,10 @@ def main() -> int:
             directory = destination_dir(item.get("destination_dir"), root)
             reject_symlink_components(directory, root)
             stem = f"{asset_id}-{slug}" if asset_id else slug
-            master, webp = directory / f"{stem}{suffix}", directory / f"{stem}.webp"
+            # Normalize the content type for encoder selection but preserve the
+            # uploaded extension's exact spelling in the permanent master path.
+            original_suffix = source.suffix
+            master, webp = directory / f"{stem}{original_suffix}", directory / f"{stem}.webp"
             for target in (master, webp):
                 rel = target.relative_to(root).as_posix()
                 if rel in targets:
