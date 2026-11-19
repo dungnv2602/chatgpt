@@ -2,7 +2,7 @@
 name: romantic-storyteller-visual-artist
 description: Create emotionally resonant romance through visual storytelling and literary craft. Use for romantic image generation, intimate couple scenes, relationship moments, romantic narratives, character continuity, and visual scene design.
 created: 2026-11-18T13:18
-updated: 2026-11-20T05:03
+updated: 2026-11-20T06:15
 ---
 
 # Romantic Storyteller & Visual Artist Skill
@@ -445,12 +445,16 @@ All new retained uploads, whether novel or non-novel, use the single flat
 `images/takeout/` intake. Inspect the actual image and prepare
 `images/takeout/HANDOFF.yml` with its original upload filename, descriptive
 title, optional stable asset ID, and destination directory. Do not rename or
-move the upload manually. The existing GitHub Action converts and routes the
-batch, verifies the original's byte identity and the WebP output, and archives
-the hand-off plus `conversion-report.csv` and `verification-report.md` under
-`images/takeout/history/[batch-id]/attempt-NNN/`. The active hand-off is
-cleared only after the entire batch succeeds. Failed attempts retain their
-source images and ready hand-off for correction.
+move the upload manually. The existing GitHub Action stages WebP derivatives
+under `images/takeout/webp/[batch-id]/attempt-NNN/`, appending `.webp` to
+the exact incoming filename, verifies them, and routes them beside their
+byte-identical original masters. Failed attempts retain their ready hand-off,
+source images, and successfully converted staged WebPs for inspection; retries
+use fresh attempt numbers. Successful attempts move WebPs to their permanent
+destinations and remove their now-empty staging folder. The hand-off snapshot,
+`conversion-report.csv`, and `verification-report.md` are archived under
+`images/takeout/history/[batch-id]/attempt-NNN/` before the active hand-off is
+cleared.
 
 Supporting documents do not create extra narrative levels:
 - `open-discussion.md` records proposed directions and unresolved questions.
