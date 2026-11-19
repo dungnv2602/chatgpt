@@ -1,7 +1,7 @@
 ---
 format: scene
 version: 1.1
-status: planned
+status: approved
 ---
 
 # Scene [Number] — [Title]
