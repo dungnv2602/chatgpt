@@ -65,4 +65,4 @@
 - **Storage:** Delivered in the current conversation; not stored in GitHub or the persistent Files Library.
 - **Next-step constraint:** If the user wants another iteration, preserve this exact face, expression, hairstyle, blouse, pose, crop, room, and lighting only if the user approves this image as the visual base. An exact edit requires the actual image to be attached in that call. Otherwise use a fresh generation and the recovered session brief.
 
-The prompt was committed and read back before the image call. Record the returned image ID, metadata, visible match, and per-output assessment after generation. Do not describe this fresh generation as an edit or reference-guided result.
+
