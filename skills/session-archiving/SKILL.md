@@ -2,7 +2,7 @@
 
 **Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novel/`, `prompts/`, and `skills/`. Do not read, list, search, fetch, create, update, move, rename, or delete files outside those directories, except for the specifically authorized workflow exception below.
 
-**Authorized WebP workflow exception:** The user authorized creation of exactly `.github/workflows/convert-images-to-webp.yml` on 12 November 2026 and explicitly approved its takeout-pipeline modification on 20 November 2026. This authorization covers the current approved extension only; it does not authorize unrelated outside paths or any later workflow changes. Obtain fresh, explicit permission before future modifications.
+**Authorized WebP workflow exception:** The user authorized creation of exactly `.github/workflows/convert-images-to-webp.yml` on 12 November 2026 and explicitly approved its takeout-pipeline modification and persistent WebP staging extension on 20 November 2026. This authorization covers the current approved extension only; it does not authorize unrelated outside paths or any later workflow changes. Obtain fresh, explicit permission before future modifications.
 
 This boundary applies to every future task and every tool call, not only archiving.
 
@@ -504,9 +504,9 @@ If an image is present in `images/` but its binary cannot be surfaced through th
 
 When an image is already stored in its permanent `images/` or `novel/` location under an opaque filename, rename the existing Git tree path while reusing its exact blob SHA. Remove the old path in the same tree update and verify the new path, absence of the old path, identical blob SHA, and identical byte size.
 
-For new user uploads intended for repository retention, use the universal flat intake `images/takeout/`. Inspect the actual image and prepare `images/takeout/HANDOFF.yml` with its exact incoming filename, descriptive title, optional stable asset ID, and destination directory. Do not manually rename or relocate the incoming file. The existing Action derives the filename from the optional ID and a normalized title slug, moves the original byte-for-byte to its master location, creates a same-stem WebP derivative, and verifies both outputs. Novel illustration binaries belong in `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; retained non-novel assets use a destination under `images/`.
+For new user uploads intended for repository retention, use the universal flat intake `images/takeout/`. Inspect the actual image and prepare `images/takeout/HANDOFF.yml` with its exact incoming filename, descriptive title, optional stable asset ID, and destination directory. Do not manually rename or relocate the incoming file. The existing Action derives the permanent master filename from the optional ID and normalized title slug and preserves the original bytes. It stages each WebP under `images/takeout/webp/[batch-id]/attempt-NNN/`, appending `.webp` to the exact incoming filename, then verifies and moves the derivative beside the master. Novel illustration binaries belong in `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; retained non-novel assets use a destination under `images/`.
 
-Every attempt is archived under `images/takeout/history/[batch-id]/attempt-NNN/` with the original hand-off, `conversion-report.csv`, and `verification-report.md`. The Action does not clear the active hand-off unless the entire batch passes verification. Read back the archived reports and final asset paths before claiming success.
+Every attempt is archived under `images/takeout/history/[batch-id]/attempt-NNN/` with the original hand-off, `conversion-report.csv`, and `verification-report.md`. The CSV records both staging and final WebP paths. On failure, original uploads and the ready hand-off remain in the intake and successfully converted WebPs remain in the failed attempt's staging folder; a retry uses a fresh attempt number. On success, staged WebPs move to their permanent destinations and the empty successful staging attempt folder is removed. The Action does not clear the active hand-off unless the entire batch passes verification. Read back the archived reports and final asset paths before claiming success.
 
 ## 7. GitHub write and verification discipline
 
@@ -623,18 +623,23 @@ flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
   Novel illustration assets use
   `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; other retained
   assets use their declared directory under `images/`.
-- The processor validates the complete batch, converts every image to
-  temporary staging, and only then relocates any original. It rejects
-  unlisted uploads, missing sources, destination collisions, symlinks, and
-  invalid paths. It verifies source/master SHA-256 equality, WebP signatures,
-  and final WebP hashes before clearing the hand-off.
+- The processor validates the complete batch, converts every image into
+  persistent staging at `images/takeout/webp/[batch-id]/attempt-NNN/`, and
+  only then relocates any original. Each staged filename appends `.webp` to
+  the exact incoming filename. It rejects unlisted uploads, missing sources,
+  destination collisions, symlinks, and invalid paths. It verifies
+  source/master SHA-256 equality, WebP signatures, and final WebP hashes.
 - Every successful or failed attempt is preserved under
   `images/takeout/history/[batch-id]/attempt-NNN/` with the hand-off snapshot,
   `conversion-report.csv`, and `verification-report.md`. The CSV records
-  source and final paths, sizes, size difference, encoder profile/version,
-  SHA-256 values, result, and errors. History is excluded from intake.
-- The active hand-off is reset to empty only after every original and WebP has
-  been relocated and verified and both reports have been archived. Failed
-  attempts retain the ready hand-off and source images for correction and
-  retry. Never claim a successful Action run without observing its result and
+  source, staging, and final paths, sizes, size difference, encoder
+  profile/version, SHA-256 values, result, and errors. Both `history/` and
+  `webp/` are reserved and excluded from intake.
+- On failure, original uploads and the ready hand-off remain available and
+  successfully converted WebPs remain in that failed attempt's staging
+  folder. Retries use a new attempt directory. On success, staged WebPs move
+  to final destinations and the now-empty successful staging directory is
+  removed. The active hand-off is reset to empty only after every original and
+  WebP has been relocated and verified and both reports have been archived.
+  Never claim a successful Action run without observing its result and
   reading back the published assets and reports.
