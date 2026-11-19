@@ -36,6 +36,7 @@ A lower-priority source cannot silently overwrite a higher-priority one. When tw
 Use these terms consistently in prose and metadata:
 
 - **Approved / Established:** explicitly accepted by the user or otherwise directly established by the user's instruction.
+- **Partly Established:** the broad direction is established, but material components remain proposed or open.
 - **Proposed:** a suggested direction awaiting a decision.
 - **Open:** intentionally undecided.
 - **Superseded:** formerly approved or active, but replaced by a later decision. Preserve its history; do not continue treating it as current.
