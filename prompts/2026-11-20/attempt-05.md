@@ -37,6 +37,18 @@
 > 
 > Do not add floating particles, glitter, dust, sparks, glow, halos, smoke, haze, circuitry, grids, symbols, interface graphics, neon, holographic transparency, ghost effects, or new objects. Do not change the woman's face, expression, hair design, clothing, pose, body, background, window, lighting, or framing. If a convincing localized edge transition cannot be achieved without altering other parts of the portrait, preserve the source rather than redesigning it.
 
-## Result — pending edit
+## Result — fresh generation, not a confirmed edit
+
+- **Actual result:** One portrait was returned. Visually it is very close to Attempt 04, but similarity does not establish source continuity.
+- **Generation ID:** `86f0848c-6d9d-41f7-96c0-cf6c4f9b28bd`.
+- **Asset ID:** `file_000000009638820799fc4d49f7b1d885`.
+- **Local artifact:** `/mnt/data/a_warm_softly_lit_indoor_portrait_scene_in_a_cozy.png`.
+- **Tool metadata:** `edit_op: null`, `parent_gen_id: null`, `prompt: ""`, `seed: null`. No source linkage was confirmed. The compiled-prompt field was empty.
+- **Visual assessment:** The portrait remains naturalistic and close in appearance to Attempt 04. The outer hair/shoulder contour still reads as physically continuous; minor bright flecks/rim light do not communicate a body dissolving into air.
+- **Acceptance criteria:** Exact source preservation — Not assessable (no parent linkage); localized-only change — Not assessable as an edit; nonphysical edge cue — Fail; naturalistic appearance — Pass; no unrelated additions — Pass.
+- **Outcome:** Fresh generation, not a confirmed edit; the defining target remains unmet.
+- **Approval:** Not yet assessed by the user. Do not promote this image to a keeper or prompt baseline.
+- **Execution correction:** The authored note identified Attempt 04's asset ID, but the actual image-edit call did not pass that ID in `referenced_image_ids`. This was an assistant execution omission, not evidence that the tool cannot accept the reference.
+- **Next step:** One corrected attempt will pass the exact Attempt 04 asset ID explicitly via the image tool's reference argument. If returned metadata still lacks source linkage, stop further edit retries and explain the limitation rather than repeating context-only calls.
 
 The authored prompt was committed and read back before the image-edit call. After the call, record whether the tool actually confirms Attempt 04 as the parent/source, inspect the rendered result, score each criterion separately, and state any source-linkage uncertainty. Do not call it a confirmed edit merely because it looks similar.
