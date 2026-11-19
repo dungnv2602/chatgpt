@@ -153,7 +153,7 @@ prompts/
 
 - Use zero-padded sequential filenames (`attempt-01.md`, `attempt-02.md`, ...), with one attempt per file. Never append a second attempt to an existing attempt note.
 - `README.md` is the daily index: list attempts in order, link each note, and show its current outcome/status. Update it whenever an attempt is added or its outcome changes.
-- **README table format is mandatory:** use exactly one continuous Markdown table for the entire day's attempt index, with a single header row and consistent columns (at minimum `Attempt`, `Prompt note`, and `Status / outcome`). Every attempt, including the latest one, must be a row inside that same table. Do not place a second table below it, split the index into separate tables, or leave attempt rows outside the table. Keep rows in ascending attempt-number order.
+- **README table format is mandatory:** use exactly one continuous Markdown table for the entire day's attempt index, with a single header row and consistent columns (at minimum `Attempt`, `Prompt note`, `Primary series / membership`, and `Status / outcome`). Every attempt, including the latest one, must be a row inside that same table. Use a stable series ID/name; write `standalone/unassigned` when no series is established. Do not place a second table below it, split the index into separate tables, or leave attempt rows outside the table. Keep rows in ascending attempt-number order.
 - **Keep table rows physically contiguous:** never insert a blank line between the header, separator, or any attempt row. A blank line terminates a Markdown table in many renderers and can make the newest attempt appear as a separate block. When appending an attempt, add its row immediately after the previous row with no empty line. When revising a status, edit the existing row in place; do not move it outside the table or create a second table.
 - **Validate before committing:** read back the complete daily `README.md` and verify that it contains exactly one attempt-index table, one header row, one separator row, and every numbered attempt exactly once in ascending order. Confirm there are no blank lines inside the table and that the final attempt row is part of the same contiguous table. Do not mark the index update complete until this read-back check passes.
 - **Status accuracy:** distinguish `not approved / not generated`, `approved / pending generation`, `generated successfully`, `generated with mismatch`, `rejected / no image returned`, and `technical failure`. If an attempt has multiple runs, preserve the sequence in the status cell (for example, an earlier image returned but a later retry was rejected); do not overwrite history with only the latest or earlier outcome. A user declining approval must never be represented as pending approval.
@@ -166,22 +166,40 @@ prompts/
 **Commit the authored prompt in its own dated attempt note under `prompts/YYYY-MM-DD/` before every image-generation or image-edit attempt.** This applies whether the next attempt is expected to succeed, is exploratory, or is a revision. Never generate first and archive later.
 
 Before drafting the next prompt:
-1. Read this session's image-prompt file under `prompts/`.
-2. Review the most relevant successful and unsuccessful prior attempts from within `approved project directories`.
-3. Select a known base prompt when one exists.
-4. Change as little as practical so the next attempt tests a clear hypothesis.
-5. Append the new attempt with a sequential number and a pending outcome.
-6. Commit the updated file on the working branch.
-7. Verify the committed content by fetching the exact `prompts/...` path.
-8. Only then invoke image generation or editing.
+1. Read the authoritative chronological prompt history for the exact artwork thread
+   or novel scene. For novel illustrations, use the scene-local prompt records.
+2. Identify the active primary series and its theme. Search that series' history
+   and inspect the newest attempt for context; then locate the most recent
+   successful prompt in that same series.
+3. Use only that most recent successful prompt as the default text baseline.
+   Newer failed, rejected, partial, or missed-target prompts are diagnostic
+   evidence only. Extract only explicit user-requested/user-approved changes
+   from them and apply those changes to the successful baseline. Never use a
+   failed prompt as the base.
+4. If no series applies, use the most recent successful prompt for the exact
+   artwork/thread. If no relevant success exists, start from the current brief
+   and applicable canonical specifications; do not borrow from an unrelated
+   series. For a new subseries, record any inherited parent-series seed and
+   branch point.
+5. Change as little as practical so the next attempt tests a clear hypothesis.
+6. Append a new attempt with a sequential number, required series metadata,
+   baseline provenance, and a pending outcome.
+7. Commit the updated file on the working branch.
+8. Verify the committed content by fetching the exact prompt-record path.
+9. Only then invoke image generation or editing.
 
 ### Required fields for each attempt
 
 Record:
 - Sequential attempt number and a short descriptive title.
 - Status before the call: pending.
+- **Primary series ID/name and theme spine.** If no series is established, record `standalone/unassigned`; do not guess. Record secondary series only for a deliberate crossover.
+- **Membership role:** series seed, continuation, subseries, branch, crossover, standalone, or provisional. For a branch, record the parent series and branch point.
+- **Continuity anchors and permitted variation** relevant to this attempt; state which user-locked details must remain unchanged.
+- **Prompt baseline provenance:** exact path/attempt or scene-local record of the most recent successful prompt in the primary series (or exact artwork thread if not a series), its recorded outcome, and why it qualifies. If there is no such baseline, say so explicitly. For a new branch, record the inherited seed and its source.
+- **Latest-attempt diagnostic reference:** link the newest later attempt inspected when it differs from the selected successful baseline, and state what was or was not carried forward from it.
 - Operation type: **fresh generation** or **edit of a reference image**.
-- Source image/reference, when applicable. Use a path under `images/` or an image supplied in the current conversation.
+- Source image/reference, when applicable. Distinguish inspiration references from the exact edit source, and record the actual asset/attachment identifier only when it was supplied to the tool.
 - The exact **authored prompt** prepared for the attempt.
 - Whether the tool exposed the actual submitted/compiled prompt. If not, say the archived text is the authored direction and do not claim it is the verbatim internal payload.
 - The specific detail being tested or changed.
@@ -197,6 +215,12 @@ Update the same entry with the actual outcome:
 
 Do not mark an image attempt successful merely because an image was returned. Inspect whether it followed the user's key instructions. Record what worked, what failed, and one useful next-step lesson.
 
+Keep two judgements distinct:
+- **Prompt/result success:** the prompt is linked to an output that meets the defining requirements, or the user explicitly accepts that attempt's result as successful for the intended purpose. This may qualify the exact prompt as a future series baseline.
+- **User-approved visual keeper:** the user approves an image as a visual asset. This approval does not automatically validate an uncertain or separately unsuccessful originating prompt. When the exact prompt link is known and the user accepts the attempt/result as successful, record both the user-approved output and its prompt-baseline eligibility without erasing earlier assessment history.
+
+A failed, rejected, partial, or missed-target prompt is never the default text baseline. If a later successful prompt does not exist, return to the most recent successful prompt in the same series/artwork thread and apply only user-requested changes from later attempts.
+
 ### Image handling
 
 - Deliver generated images in the conversation.
@@ -211,14 +235,15 @@ Do not mark an image attempt successful merely because an image was returned. In
 
 Maintain one separate file at `prompts/successful-image-prompts-index.md`. This is a curated index, not a replacement for the complete chronological image log.
 
-1. Include only prompt attempts whose recorded outcome is a successful match or a successful generation that followed its defining creative direction. Do not include rejected attempts, failed generations, generated-but-missed-target results, or partial matches.
-2. For each included attempt, link directly to the original attempt heading in the chronological image log.
-3. Link directly to each known associated image file under `images/`. Include more than one image when a single successful prompt produced multiple approved results.
-4. Preserve caveats when a particular detail was not verified, or when the successful output fulfilled a revised prompt but was later superseded by a clarified brief.
-5. Update the successful-only index when an attempt's result is finalized or when an image is renamed. Keep failed and partial attempts in the chronological history only.
-6. Link the successful-only index from the chronological image log and from the session summary. Read back the index and all changed files after writing.
+1. Include only prompt attempts whose recorded outcome is a successful match or a successful generation that followed its defining creative direction. Do not include rejected attempts, failed generations, generated-but-missed-target results, or partial matches as prompt successes.
+2. For each included attempt, record its primary series ID/name and theme spine, plus any verified branch/subseries relationship. If historical membership cannot be established reliably, label it `legacy/unassigned` rather than guessing.
+3. Link directly to the original attempt heading or scene-local prompt record and each known associated image file under `images/`. Include more than one image when a single successful prompt produced multiple approved results.
+4. Preserve caveats when a particular detail was not verified, when the successful output fulfilled a revised brief, or when a user-approved visual keeper is not itself proof of prompt success.
+5. Keep the success index as a discovery aid. Determine which prompt is most recent from the chronological source records within the active series; never infer recency from the order of index entries.
+6. Update the successful-only index when an attempt's result is finalized or when an image is renamed. Keep failed and partial attempts in the chronological history only, unless the user separately approves an image as a visual keeper; then list it in the user-approved-output section without disguising the prompt's actual outcome.
+7. Link the successful-only index from the chronological image log and from the session summary. Read back the index and all changed files after writing.
 
-Do not silently promote a merely generated image to a success. Use the outcome classification and visual inspection recorded in the chronological log.
+Do not silently promote a merely generated image to a success. Use the outcome classification and visual inspection recorded in the chronological log. A user-approved image whose originating prompt is known may qualify as a successful prompt/result pair when the user's approval clearly accepts that attempt as successful; preserve the user's attribution. If the prompt mapping or scope of approval is uncertain, keep it as an approved visual asset only and continue using the latest verified successful prompt as the text baseline.
 
 ### User-approved visual references and binary provenance
 
