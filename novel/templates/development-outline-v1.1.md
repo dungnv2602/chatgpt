@@ -1,7 +1,7 @@
 ---
 format: development-outline
 version: 1.1
-status: working-outline
+status: approved
 ---
 
 # Development Outline — [Topic]
