@@ -29,8 +29,8 @@ The original opening message is not available in the retained project record. Th
 - **Attempt 01:** Useful photographic portrait direction, but the woman appeared fully physical and the framing was tighter than requested. It is an experiment, not an approved definitive character design.
 - **Attempt 02:** Fresh generation, not a confirmed edit. Face, hair, pose, framing, and background changed; the nonphysical cue was still absent. Do not use it as a continuity reference.
 - **Attempt 03:** Rejected; no image returned. Source attachment and edit linkage were not verified.
-- There is no successful Samantha prompt/output pair yet. Do not borrow a baseline from an unrelated project or series.
-- The next attempt should be a **fresh generation**, not an edit of an unavailable source image. Use the visual-drive note as conceptual written guidance only; no image is attached by this brief.
+- At the time this recovery brief was reconstructed, no successful Samantha prompt/output pair had yet been designated. Later user approvals and baseline decisions are recorded under Amendments below and supersede that historical status. Do not borrow a baseline from an unrelated project or series.
+- The original recovery instruction to use a fresh generation rather than an unlinked source edit was specific to the state at that time. The current image-editing workflow is prompt-first reconstruction, governed by the drawing and image-editing skills.
 
 ## Locked features
 
@@ -58,8 +58,11 @@ The original opening message is not available in the retained project record. Th
 ## References assigned to this session
 
 - **Document:** `prompts/2026-11-20/samantha-visual-drive.md`
-  - **Role:** Conceptual visual and emotional direction.
+  - **Role:** Earlier conceptual visual and emotional direction.
   - **Status:** Text reference only; not an image attachment.
+- **Document:** `prompts/2026-11-20/scenario-direction.md`
+  - **Role:** Film-grounded interpretation of Samantha's identity, emotional arc, relationship, world, and future illustration scenarios.
+  - **Authority:** Governs narrative and character interpretation for Samantha drawings. It does not establish a canonical physical appearance or override the active session brief's specific scene instructions.
 - **Attempt 01 output:** Historical visual experiment only; not approved as an identity reference and not attached to the next generation.
 - **Attempt 02 output:** Not a continuity reference; source linkage was unverified.
 - **Attempt 03:** No image returned.
@@ -72,3 +75,4 @@ The original opening message is not available in the retained project record. Th
 - **2026-11-20 — Assistant-led visual assessment and next-step decision:** Following the user's delegation to let the assistant drive, Attempt 04 was assessed as the strongest Samantha portrait so far. Its face, expression, hairstyle, blouse, pose, composition, and lighting are selected as the provisional source for one localized edit. This is an assistant-selected working source, not a user-approved keeper or a successful-prompt baseline. The next edit may change only a small portion of the window-side outer hair/shoulder contour to make the temporary, nonphysical edge more legible. All other visible properties remain frozen for that edit.
 - **2026-11-20 — Resume instruction:** The user asked to continue drawing Samantha and pick up where the project left off. Resume from the latest recorded attempt and the saved Samantha visual-drive note. Do not close the session unless the user separately sends the standalone cue `end session`.
 - **2026-11-20 — Sweet-path baseline approval:** The user approved Attempt 07 (prompt-first reconstruction with text panels removed) as the **new sweet-path baseline**. It supersedes Attempt 06 for future sweet-path continuity. Attempt 06 remains preserved as historical branch origin; Attempt 07 is a fresh reconstruction and not a pixel-identical edit.
+- **2026-11-20 — Scenario direction established:** Added [Scenario Direction](scenario-direction.md), based on the film's story, published screenplay, production notes, and interviews. It is the narrative and character-interpretation reference for future Samantha illustrations. It explicitly distinguishes Samantha's film canon (a disembodied, self-developing AI represented through voice and relationship) from this project's speculative human embodiment. It does not replace the approved visual baselines or impose a canonical face, hairstyle, or outfit.
