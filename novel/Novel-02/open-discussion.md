@@ -115,6 +115,23 @@ These choices can be made as the writing process gives us a reason to make them:
 - What ordinary details should make the final shared future tangible and emotionally convincing?
 - Is an epilogue useful, or should the final scene itself establish the lasting future?
 
+### Relationship progression — first meeting to Maya's choice
+
+A working roadmap is maintained in [Relationship Progression](relationship-progression.md). Its broad direction is to move from neutral professional collaboration through mutual competence, Maya's first unrequired question, private humor, independent aesthetic choices, boundaries and privacy, a life and interests beyond Andy, reciprocal recognition, voluntary affection, and Maya's explicit romantic choice. These are proposed dramatic beats rather than locked scenes.
+
+Questions to resolve progressively:
+
+- Which recording or field assignment best supports the first disagreement about context?
+- What recurring technical category or acoustic puzzle becomes their private joke?
+- What exact aesthetic project does Maya choose for herself, independently of Andy?
+- Which other people or systems become part of Maya's independent working life?
+- What is the first gesture Andy recognizes as affection without assuming romantic consent?
+- How does Maya develop her own understanding of romance without being reduced to a human imitation?
+- What work boundary or independent oversight addresses Andy's technical access before the relationship begins?
+- How much story time does this progression require, and which moments deserve full scenes rather than transitions?
+- At what point should Maya state her romantic choice, and what does Andy need to do before he can accept it responsibly?
+
+
 ## 7. How We Will Use This Note
 
 1. Keep questions open until the story reaches a point where an answer is useful.
