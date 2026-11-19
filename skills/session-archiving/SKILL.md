@@ -2,7 +2,7 @@
 
 **Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novel/`, `prompts/`, and `skills/`. Do not read, list, search, fetch, create, update, move, rename, or delete files outside those directories, except for the specifically authorized workflow exception below.
 
-**One-time authorized WebP workflow exception (12 November 2026):** The user explicitly authorized creation of exactly `.github/workflows/convert-images-to-webp.yml` outside the approved project directories for that specific task only. This exception does not authorize changes to other outside paths or future edits to that workflow. Obtain fresh, explicit permission before any later change to it.
+**Authorized WebP workflow exception:** The user authorized creation of exactly `.github/workflows/convert-images-to-webp.yml` on 12 November 2026 and explicitly approved its takeout-pipeline modification on 20 November 2026. This authorization covers the current approved extension only; it does not authorize unrelated outside paths or any later workflow changes. Obtain fresh, explicit permission before future modifications.
 
 This boundary applies to every future task and every tool call, not only archiving.
 
@@ -469,9 +469,14 @@ For an image the user supplies within a drawing session:
 2. If the user asks to retain it for later use, give it an accurate, descriptive,
    stable filename. Use consistent numbered suffixes for a set. If it is only
    for the current session, do not silently promote it to a future-session asset.
-3. **Rename only. Do not convert, recompress, resize, crop, rotate, filter,
-   retouch, strip metadata, or create derivatives unless explicitly authorized.**
-   Preserve original format, extension, resolution, metadata, and bytes.
+3. **Preserve the original image exactly.** The default is rename-only:
+   do not convert, recompress, resize, crop, rotate, filter, retouch, strip
+   metadata, or create derivatives. The user has explicitly authorized a
+   repository intake exception: images placed in `images/takeout/` and listed
+   in a ready `HANDOFF.yml` may be moved/renamed to their declared master path
+   and converted to a separate WebP by the existing GitHub Action. Original
+   bytes, format, resolution, metadata, and visual content must remain
+   unchanged. Do not perform the conversion or relocation manually.
 4. Record the exact path, stable file/Library ID, source generation ID when
    known, original name, dimensions, byte size, checksum where available, and
    session-specific role in the session brief or attempt record.
@@ -495,7 +500,11 @@ If an image is present in `images/` but its binary cannot be surfaced through th
 
 ### Renaming image files already tracked in GitHub
 
-When an uploaded image is already present in `images/` under an opaque or temporary filename, do not create another copy. Rename the existing Git tree path while reusing its exact blob SHA. Remove the old path in the same tree update, commit on `gpt`, and verify the new path, absence of the old path, identical blob SHA, and identical byte size. This is the preferred zero-byte-change rename. Never re-encode or re-upload the image merely to change its filename. If a safe same-blob rename cannot be performed, stop and explain the limitation rather than silently creating a derivative or claiming the rename is complete.
+When an image is already stored in its permanent `images/` or `novel/` location under an opaque filename, rename the existing Git tree path while reusing its exact blob SHA. Remove the old path in the same tree update and verify the new path, absence of the old path, identical blob SHA, and identical byte size.
+
+For new user uploads intended for repository retention, use the universal flat intake `images/takeout/`. Inspect the actual image and prepare `images/takeout/HANDOFF.yml` with its exact incoming filename, descriptive title, optional stable asset ID, and destination directory. Do not manually rename or relocate the incoming file. The existing Action derives the filename from the optional ID and a normalized title slug, moves the original byte-for-byte to its master location, creates a same-stem WebP derivative, and verifies both outputs. Novel illustration binaries belong in `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; retained non-novel assets use a destination under `images/`.
+
+Every attempt is archived under `images/takeout/history/[batch-id]/attempt-NNN/` with the original hand-off, `conversion-report.csv`, and `verification-report.md`. The Action does not clear the active hand-off unless the entire batch passes verification. Read back the archived reports and final asset paths before claiming success.
 
 ## 7. GitHub write and verification discipline
 
@@ -591,13 +600,39 @@ Start by reading the relevant session records inside `prompts/` and, when contin
  
 ## 10. WebP delivery derivatives
 
-The user approved keeping original PNG/JPEG master images alongside WebP delivery copies so they can inspect the results visually.
+Original PNG/JPEG files are permanent masters. WebP files are separate
+delivery derivatives, never replacements. New retained uploads use the shared
+flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
 
-- Source masters remain untouched. Never delete, overwrite, rename, resize, recompress, or edit a source image as part of WebP generation.
-- The generated-only directory is `images/webp/`. Mirror the source's relative path and append `.webp` to its full filename (for example, `portrait.png` becomes `webp/portrait.png.webp`). Do not manually store master images or unrelated assets in this directory.
-- Record each conversion in `images/webp/conversion-report.csv`, including source/output paths, byte counts, percentage size change, profile, ICC metadata handling, encoder version, and outcome. A negative saving is valid: keep the WebP and report that it is larger. Never discard a conversion based only on file size.
-- PNGs use exact lossless WebP encoding (`-lossless -q 100 -m 6 -exact`). The exact option preserves RGB values in fully transparent pixels. JPEGs use high-quality lossy WebP (`-preset picture -q 92 -m 6 -sharp_yuv`). Copy ICC profiles with `-metadata icc`; EXIF and XMP are not copied by this profile.
-- Animated PNG (APNG) files are skipped because `cwebp` does not encode animated PNG input. Record the skip in the CSV rather than silently creating a static substitute.
-- The workflow runs only on `gpt`; it may write generated files only below `images/webp/`. It must not change the source files.
-- The workflow definition is at `.github/workflows/convert-images-to-webp.yml`. The user's one-time authorization covers its initial creation only. Any future modification requires new explicit permission because it is outside the assigned workspace.
-- After installation, verify the workflow YAML, generated folder instructions, skill updates, and session records by reading back their exact paths. Do not claim a successful GitHub Actions run unless a run is observed as completed successfully.
+- Incoming filenames may be arbitrary. Inspect each image and prepare a hand-off
+  item with the exact source filename, descriptive title, optional stable ID,
+  and destination directory. The Action does not infer visual content or
+  project membership.
+- The existing workflow on branch `gpt` calls
+  `images/scripts/process_takeout.py`. It supports static PNG, JPG, and JPEG.
+  APNG and other unsupported formats fail the batch; animated content is never
+  silently flattened.
+- PNG uses exact lossless encoding
+  (`-lossless -q 100 -m 6 -exact`); JPEG uses high-quality lossy encoding
+  (`-preset picture -q 92 -m 6 -sharp_yuv`). ICC profiles are copied. EXIF/XMP
+  metadata remain in the unchanged original and are not copied to WebP.
+- The original is moved and renamed to the hand-off-derived master path without
+  changing its bytes or format. The WebP derivative is stored beside it.
+  Novel illustration assets use
+  `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; other retained
+  assets use their declared directory under `images/`.
+- The processor validates the complete batch, converts every image to
+  temporary staging, and only then relocates any original. It rejects
+  unlisted uploads, missing sources, destination collisions, symlinks, and
+  invalid paths. It verifies source/master SHA-256 equality, WebP signatures,
+  and final WebP hashes before clearing the hand-off.
+- Every successful or failed attempt is preserved under
+  `images/takeout/history/[batch-id]/attempt-NNN/` with the hand-off snapshot,
+  `conversion-report.csv`, and `verification-report.md`. The CSV records
+  source and final paths, sizes, size difference, encoder profile/version,
+  SHA-256 values, result, and errors. History is excluded from intake.
+- The active hand-off is reset to empty only after every original and WebP has
+  been relocated and verified and both reports have been archived. Failed
+  attempts retain the ready hand-off and source images for correction and
+  retry. Never claim a successful Action run without observing its result and
+  reading back the published assets and reports.
