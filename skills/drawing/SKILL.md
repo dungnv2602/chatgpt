@@ -166,11 +166,14 @@ Separate essential requirements from optional decorative details.
    redesign, replace, simplify, or reinterpret them.
 3. **A written canonical prompt is sufficient for a fresh text-to-image
    generation.** The actual reference image is optional, not a technical or
-   workflow prerequisite. When continuing an established series, first use the most recent successful
-   prompt in that same series as the base, while carrying forward the canonical
-   identity and wardrobe wording. If no series applies, use the strongest
-   approved comparable prompt. Direct creative variation toward the requested
-   scene, pose, expression, setting, lighting, and composition.
+   workflow prerequisite. When continuing an established series, use its most
+   recent successful prompt as the text baseline; inspect newer failed or partial
+   attempts only for user-requested changes and diagnostic lessons. If no series
+   applies, use the most recent successful prompt for the same artwork/thread, or
+   the strongest relevant approved prompt when starting a genuinely new task.
+   Carry forward canonical identity and wardrobe wording, and direct creative
+   variation toward the requested scene, pose, expression, setting, lighting,
+   and composition.
 4. Attach the actual image only when the user asks to use it as a visual
    reference, when a task materially benefits from visual-reference guidance,
    or when performing an edit of that exact image. If an image is attached,
@@ -212,17 +215,23 @@ Before every generation or edit attempt:
 2. For a named novel scene, read the relevant scene-local illustration prompt
    records and outcomes under `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/`.
    Keep all prompts and attempt history for that novel scene inside the novel.
-   For non-novel drawing work, read `prompts/successful-image-prompts-index.md`
-   and the relevant chronological image-prompt log in `prompts/`.
+   For non-novel drawing work, identify the active series/artwork thread and read
+   its chronological prompt history first. Consult
+   `prompts/successful-image-prompts-index.md` as a discovery aid, then verify
+   the candidate prompt and outcome in the authoritative chronological record.
 3. Read `images/reference-index.md` for canonical continuity
    information and complete the project-continuity check in section A. Use an
    approved prompt as the base; image attachment is optional for fresh
    text-to-image generation.
-4. Identify the active primary series, if any, and use its most recent prompt
-   as the first point of reference. For the execution baseline, use the most
-   recent successful prompt in that same series; consult the latest failed or
-   partial prompt for valid intended changes. If the work is standalone or no
-   series baseline exists, use the most relevant successful prompt or source image.
+4. Identify the active primary series and select the most recent successful
+   prompt in that series as the text-prompt baseline. The newest failed, rejected,
+   partial, or missed-target prompt is diagnostic context only; never use its
+   wording as the baseline. Apply only explicit user-requested or user-approved
+   changes from that later attempt to the successful baseline. If this is a
+   standalone iteration rather than a series, use the most recent successful
+   prompt for the same artwork/thread. If no relevant success exists, begin from
+   the current brief and applicable canonical specifications rather than
+   borrowing a prompt from an unrelated series.
 5. Change as little as practical for a controlled revision.
 6. Record the exact authored prompt, operation type, source, mode, test
    objective, pending status, and every reference asset actually attached.
@@ -272,13 +281,15 @@ reference attachment into a blocker for ordinary fresh generation.
 
 ### Series identity, membership, and prompt lineage
 
-A **series** is a connected body of image-making in which each image explores, extends, or varies a recognizable central theme. The theme is the series' creative spine. It may be narrative, conceptual, emotional, visual, subject-based, or functional. A series does not need chronological storytelling, an identical character, a fixed location, one outfit, or one rendering style. It does need a recognizable reason for its images to belong together.
+A **series** is a connected body of image-making organized around a shared creative theme or deliberate curatorial premise. The theme is the series' creative spine: it explains why these images belong together and what each new image is meant to explore, extend, revisit, or vary. It may be narrative, conceptual, emotional, relational, cultural, visual, subject-led, or editorial. A series need not be chronological and need not preserve the same character, location, outfit, or rendering style.
+
+A recurring attribute alone does **not** establish a series. The same character, outfit, palette, medium, location, camera angle, subject category, or image format may simply be a reusable feature appearing in unrelated work. It becomes a series-defining principle only when the user declares it as the organizing concept or the images deliberately explore that feature as a coherent theme or collection. For example, several images that happen to use the same character are not automatically one series; a character study exploring that character across distinct moments is. Likewise, a shared palette becomes a series premise when the palette itself is the deliberate subject of a visual study or collection, not merely because the same colors recur.
 
 **Series-first iteration rule:** When continuing a successful series, inspect and build from the most recent prompt in that same series. This keeps the work aligned with the series' current creative direction instead of importing a prompt that may be successful but belongs to a different project or aesthetic lineage. The most recent prompt is the first point of reference; the most recent successful prompt in that series is the execution baseline when the newest attempt did not succeed.
 
 #### A. What can define a series
 
-The following taxonomy is deliberately broad. These are common series types, not an exhaustive boundary on creativity. A series may combine several types or use another coherent theme not listed here.
+The following taxonomy is deliberately broad. These are possible organizing premises, not automatic classifications based on a feature's mere presence. A series may combine several types or use another coherent theme not listed here.
 
 1. **Character or identity series:** the same person, fictional character, avatar, creature, or recognizable identity across different images.
 2. **Relationship series:** a couple, family, friendship, rivalry, group, or recurring interpersonal dynamic.
@@ -307,14 +318,20 @@ The following taxonomy is deliberately broad. These are common series types, not
 25. **Hybrid or cross-disciplinary series:** a deliberate combination of two or more of the above, or a coherent theme crossing disciplines, genres, media, or subject categories.
 26. **Other user-defined series:** any other recurring creative premise the user identifies or the work demonstrably develops.
 
-A shared feature is not automatically a series. The same character, style, outfit, palette, location, or image format may appear in unrelated projects. Treat such features as global preferences or reusable assets unless they form part of a shared theme or the user explicitly groups the work together.
+Use this cohesion test when membership is inferred rather than explicitly declared:
+
+1. **Theme test:** Can the shared premise be stated in one clear sentence without merely listing common attributes?
+2. **Purpose test:** Does each image contribute to, interpret, or deliberately vary that premise?
+3. **Boundary test:** Can the series be distinguished from other work that happens to share a character, style, outfit, palette, location, or format?
+
+If the answers are unclear, do not force a series classification. Record the work as provisional or standalone/unassigned. The user may explicitly define even a one-image beginning as a series seed; do not require multiple images when the user has declared the intended series.
 
 #### B. How to recognize and classify a series
 
 A series may be established in any of these ways:
 
 - **Explicitly declared:** the user names it, calls the work a series, identifies its theme, or says that a new image belongs to an existing series.
-- **Clearly continued:** the user asks to continue the same project, storyline, character journey, collection, campaign, visual study, or recurring theme.
+- **Clearly continued:** the user asks to continue the same storyline, character journey, collection, campaign, visual study, or recurring theme. A shared project folder, character, or prior subject alone is not enough; the current request must continue the same organizing premise.
 - **Contextually evident:** multiple prompts or images share a distinctive central premise and the user is developing variations of that premise.
 - **Proposed by the assistant, confirmed by the user:** the assistant notices a coherent recurring theme, but must not silently impose a series label when that classification would affect prompt selection or continuity.
 
@@ -348,28 +365,33 @@ One image can have multiple thematic connections, but every prompt used for an i
 
 #### D. Choosing the correct prompt within a series
 
-Apply this order whenever an image is a continuation of a series:
+Apply this order whenever an image belongs to an established series:
 
-1. Identify the active primary series before choosing a prompt. Confirm its theme and continuity anchors from the user's direction and archived history.
-2. Inspect the **chronologically most recent prompt in that series first**, including its outcome and any user feedback. Do not start by searching for the strongest prompt across all projects.
-3. If that most recent prompt produced a successful match or a user-approved successful output and its prompt linkage is reliable, use it as the immediate baseline. Carry forward its current creative direction and approved details.
-4. If the latest prompt failed, was rejected, or missed a defining requirement, do not treat it as a successful baseline. Use the most recent successful prompt in the same series as the execution baseline. Also inspect the latest failed/partial prompt and retain only those deliberate changes that remain requested, valid, and consistent with the series.
-5. If the latest prompt was a partial match, preserve what visibly succeeded and correct the specific miss. Do not discard a newer accepted direction merely because an older prompt scored better overall.
-6. An older prompt in the same series may supply a proven detail when the latest prompt dropped or damaged it. Restore that detail selectively; do not automatically revert the whole series to the older prompt.
-7. A successful prompt from another series is not the default baseline, even if it appears stronger or more similar in one isolated detail. Use it only when the user requests a deliberate transfer or when the relevant method is clearly reusable without importing the other series' theme or continuity.
-8. If the current series has no successful prompt yet, use its latest relevant brief and attempts as development history. Be candid that the series has no proven prompt baseline; do not borrow success from another series and mislabel it as this series' lineage.
-9. If the user explicitly names a particular prompt or approved image as the baseline, follow that choice after verifying its identity and availability.
-10. If series membership or the correct branch is genuinely ambiguous and would materially change the result, ask one focused question. Otherwise use the clearest current context and record the classification as provisional.
+1. **Identify the primary series.** Confirm its series ID/name, theme spine, continuity anchors, and any active subseries or branch. Do this before searching for candidate prompts.
+2. **Locate the most recent successful prompt in that series.** Determine recency from the authoritative chronological attempt records, not from the order of entries in the success index. The prompt must have a reliable link to an output recorded as successful.
+3. **Use that most recent successful prompt as the text baseline.** This is the prompt whose wording and direction should be carried forward and minimally revised. Do not use a later failed, rejected, partial, or missed-target prompt as the base merely because it is newer.
+4. **Inspect later unsuccessful attempts only as diagnostics.** They can reveal what failed, what the user corrected, and what specific change the user still wants. Extract only explicit user-requested or user-approved changes, then apply those deltas to the most recent successful prompt. Do not copy assistant-added wording, speculative embellishments, or failed prompt structure simply because they appeared later.
+5. **A partial result does not displace the successful baseline.** Preserve useful visual observations from it, but build the next authored prompt from the most recent successful prompt. Promote a partial result to a successful series result only when the user explicitly accepts it as successful for the intended purpose; record that user decision and its exact originating prompt.
+6. **Separate prompt success from image approval.** A user-approved image is a valid visual keeper or reference. It also establishes a successful prompt baseline only when its originating attempt is reliably identified and the user's approval clearly accepts that attempt/result as successful for the requested purpose. If the image-to-prompt mapping is uncertain, use the image only as a visual reference or edit source; do not invent or infer its prompt.
+7. **Respect prompt lineage within branches.** A new subseries or spin-off may inherit the parent's most recent successful prompt as its initial seed at the moment the branch is created. Record that seed and branch point. Once the branch has its own successful prompt, use the branch's most recent successful prompt—not later prompts from the parent series.
+8. **Handle a series with no successful prompt honestly.** For its first entry, use the user's brief and applicable canonical references. For a new branch with no success of its own, use its documented parent-series seed only if the branch was explicitly derived from that parent. Do not borrow a successful prompt from an unrelated series.
+9. **For work that is not a series, preserve artwork continuity.** If the user is iterating on one standalone image or artwork thread, use the most recent successful prompt for that exact thread. Do not treat the word "standalone" as permission to search across unrelated projects for a loosely similar prompt.
+10. **Keep crossover lineage explicit.** A crossover has one primary series for baseline selection and one or more secondary memberships. Use the primary series' most recent successful prompt as the text baseline and carry secondary-series requirements as constraints. If no primary series is clear and the distinction materially changes the prompt, ask one focused question.
+11. **Keep exact edits separate from prompt baselines.** When the user requests a visual edit of a specific successful image, the actual image is the edit source if it is accessible and can be attached through the supported mechanism. The successful prompt remains useful context, but it does not replace the source image. Conversely, an image filename or generation ID is not an attached source.
+12. **Honor explicit user selection.** If the user names a particular successful prompt as the baseline, use it after verifying the record. If the user names an image as the visual/edit baseline, use that image for the requested role when it is actually available; do not mislabel it as a prompt.
+13. **Resolve ambiguity proportionately.** If series membership or the primary branch is genuinely unclear and would materially alter baseline selection, ask one focused question. Otherwise use the clearest context, record provisional membership, and proceed.
 
-The goal is not to copy the latest prompt mechanically. Preserve its series-specific creative spirit, established successes, and intentional evolution. Make only the changes requested for the next entry, and keep all unmentioned locked features unchanged.
+The controlling rule is: **the newest successful prompt in the active series is the baseline; newer unsuccessful prompts are evidence, never the baseline.** Preserve the series' evolving creative spirit by applying only the requested changes to that successful foundation. Keep every unmentioned locked feature unchanged.
 
 ### Default iteration rule — build on proven success without redundant generation
 
 **Do not generate a new image merely to edit it immediately afterward. Choose the
 next operation based on what actually succeeded: the prompt, the image, or both.**
 
-1. Reopen the exact previous prompt and outcome. Identify what worked and what
-   needs changing.
+1. Identify the active series or exact artwork thread. Locate its most recent
+   successful prompt and result first. Inspect any newer attempts for corrections
+   and diagnostic evidence, but do not treat a failed or partial prompt as the
+   baseline.
 2. **Successful prompt, scene/detail change:** Reuse the proven prompt as the
    baseline. Make the requested targeted prompt changes and generate directly.
    Do not create an unnecessary intermediate image.
@@ -380,17 +402,15 @@ next operation based on what actually succeeded: the prompt, the image, or both.
 4. **Successful prompt but source image unavailable for editing:** Keep the proven
    prompt as the baseline, apply the requested changes to it, and make a fresh
    generation. Do not pretend the unavailable image is being edited.
-5. **Unsuccessful prompt or image:** Diagnose the precise miss. Preserve the
-   successful parts and revise only what needs improvement. If a proven prompt
-   exists that achieved the desired direction, prefer it over speculative
-   rewrites.
-6. **Multiple attempts within a series:** Inspect the chronologically most recent
-   prompt in the active series first. When it succeeded, build from it. When it
-   failed or missed a defining requirement, use the most recent successful prompt
-   in that same series as the execution baseline and selectively retain valid
-   requested changes from the later attempt. Do not substitute the strongest
-   prompt from another series. Failed attempts remain diagnostic evidence, not
-   successful baselines.
+5. **Unsuccessful prompt or image:** Diagnose the precise miss. Keep the most
+   recent successful prompt in the active series/artwork thread as the text
+   baseline. Apply only the required correction to that baseline; do not build
+   the next prompt by editing the failed prompt itself.
+6. **Multiple attempts within a series:** The most recent successful prompt in
+   that series is the only default text baseline. A newer failed, rejected,
+   partial, or missed-target prompt is diagnostic context only. Extract a change
+   from it only when the user requested or approved that change, then apply the
+   change to the successful baseline. Never make the failed prompt the base.
 7. **Image-source verification:** A generation ID, filename, local path, archived
    note, or textual mention is not an image attachment. Use a direct edit only
    when the exact source is accessible and can be supplied through a supported
@@ -448,11 +468,13 @@ interpretation before redesigning the brief.
 
 Before rewriting a prompt after a refusal, repeated failure, or user correction:
 
-1. **Return to the evidence.** Consult
-   `prompts/successful-image-prompts-index.md` first, then inspect the
-   full relevant entries in the chronological prompt history and the actual
-   approved image assets. Do not rely on memory, a short summary, or the most
-   recent failed prompt alone.
+1. **Return to the evidence.** Identify the active series/artwork thread and
+   inspect its authoritative chronological prompt history first. Locate the
+   most recent successful prompt in that same series/thread and inspect the
+   actual approved image assets where relevant. Use
+   `prompts/successful-image-prompts-index.md` as a discovery aid, not as the
+   authority for chronology or series membership. Do not rely on memory, a
+   summary, or the most recent failed prompt alone.
 2. **Find the correct series baseline first.** Identify the active primary
    series and inspect its most recent prompt. Use the most recent successful
    prompt in that same series as the execution baseline. A success from another
@@ -514,41 +536,45 @@ guarantee that a tool will accept every prompt. The assistant owns its
 interpretation and must test its assumptions against the project's actual
 successful work.
 
-### E2.2. Documented silk-wrap recovery case
+### E2.2. Documented silk-wrap series and baseline-selection case
 
-The November 13, 2026 silk-wrap sequence is a project-specific training example:
+The November 12–13, 2026 silk-wrap portrait sequence demonstrates why the
+latest **successful** prompt—not the latest attempt—must control prompt
+lineage:
 
-- Attempts 02 and 03 introduced assistant-authored changes, including
-  identity-preservation language, an attached inspiration reference, repeated
-  restrictions, and a conservative wardrobe redesign. Both received the same
-  generic refusal. The tool did not reveal a precise trigger.
-- The user challenged the assistant's interpretation and directed it to
-  examine the successful historical work.
-- Attempt 33 in
-  `prompts/2026-11-12-image-prompts.md` had already produced two
-  user-approved Realistic portraits with the intended ivory silk-wrap styling,
-  open but covered neckline, warm lighting, and affectionate gaze.
-- Attempt 04 in
-  `prompts/2026-11-13-image-prompts.md` restored Attempt 33's
-  authored prompt verbatim and used a fresh generation without an attached
-  reference. It recovered the broad visual direction, but the generated silk
-  fell away from the bust instead of overlapping across it. The output
-  therefore missed a defining garment-construction requirement and must not
-  be classified as a successful match or treated as a keeper.
-- After inspecting Attempt 04, the user clarified that the work was not yet
-  successful. Attempt 05 adds only one positive spatial instruction to the
-  Attempt 33 baseline: the two silk front panels cross and overlap across the
-  bust, with the open neckline above that overlap. The result remains pending
-  until visually inspected.
+- **Attempt 33** in `prompts/2026-11-12-image-prompts.md` established the
+  successful Realistic portrait direction and produced two user-approved
+  images. It is the original successful prompt in this portrait series.
+- **Attempt 04** in `prompts/2026-11-13-image-prompts.md` reused Attempt 33's
+  authored wording verbatim in a fresh generation. The assistant initially
+  judged a garment-construction detail as missed. The user later explicitly
+  assessed the Attempt 04 result as successful. That final user assessment
+  supersedes the assistant's narrower preliminary judgment. Because the
+  prompt-to-output association is explicit, Attempt 04 is a user-approved
+  successful result and the most recent successful prompt record in this
+  series at the time of the archive.
+- **Attempt 05** added one positive sentence about the silk panels overlapping
+  across the bust, but the tool rejected the attempt and returned no image.
+  It is a failed attempt, not a new baseline. Its wording must not replace or
+  become the base prompt. The additional construction instruction is only a
+  pending delta if the user still requests it in a future task; it must not be
+  silently imposed on the approved Attempt 04 direction.
+- **Attempt 06** attempted a localized edit of the actual Attempt 04 image.
+  The source image was attached for that call, but the tool rejected the edit
+  and returned no edited image. The original Attempt 04 image remained
+  unchanged and user-approved. Attempt 06 is not a successful prompt or edit
+  baseline. A future exact edit still requires the actual source asset to be
+  attached in that future call; the historical file ID alone is not attachment.
 
-**Operational lesson:** Returning to a proven prompt can correct assistant
-prompt drift, but prompt reuse alone does not guarantee that every defining
-visual requirement will be followed. Inspect the actual garment construction,
-not just the material, neckline, or overall resemblance. For this portrait
-family, use Attempt 33 as the first-choice baseline and retain the approved
-silk-wrap styling without silently redesigning it.
+**Operational lesson:** Attempt 04—not the newer failed Attempts 05 or 06—is
+the latest user-approved successful prompt/output record in this series.
+Attempt 33 remains its earlier successful origin and has the same authored
+prompt wording. Any future successful prompt in this same series would
+supersede Attempt 04 by chronology. This case also demonstrates that the
+user's final assessment controls whether an output is accepted; an earlier
+assistant assessment must not override a later explicit user approval.
 
-
+  
 ### E2.5. Uploaded-image naming and cross-linking
 
 For every image the user uploads as part of the Maya_and_Me drawing workflow:
@@ -571,7 +597,15 @@ These steps are part of the normal drawing workflow, not optional cleanup after 
 
 Before writing a new prompt, identify the active series and inspect its chronological prompt history, then inspect `images/reference-index.md` for relevant approved assets. Within a series, the most recent successful prompt in that series is the normal prompt baseline; a user-approved successful image is a visual starting point when the exact asset is available and the requested operation supports it.
 
-For the realistic silk-wrap portrait direction, attempt 33 is the successful authored-prompt base. Its two approved reference images are indexed at `images/reference-index.md`:
+For the Realistic silk-wrap portrait series, **Attempt 04** in
+`prompts/2026-11-13-image-prompts.md` is the latest user-approved successful
+prompt/output record currently verified. It reused Attempt 33's authored prompt
+verbatim, so Attempt 33 remains the earlier successful origin and the prompt
+wording is identical. Do not default to Attempt 33 over the later Attempt 04
+record. Attempts 05 and 06 are later failures and do not supersede Attempt 04.
+Any newer successful prompt in this same series will supersede Attempt 04.
+
+The approved reference images are indexed at `images/reference-index.md`:
 - `realistic-silk-wrap-portrait-soft-gaze-01.png`: slightly wider portrait and softer framing.
 - `realistic-silk-wrap-portrait-close-framing-02.png`: closer crop and more pronounced but still covered neckline.
 
@@ -587,12 +621,20 @@ When the user approves generated images for future inspiration, preserve their d
 
 ### E4. Consult and maintain the successful-prompt index
 
-Before drafting a new image prompt, identify the active series. Consult its full chronological prompt history first, then `prompts/successful-image-prompts-index.md` and the broader chronological image log as needed. Within that series, inspect the newest prompt first and use the most recent successful prompt in that same series as the normal execution baseline. Do not let a stronger prompt from an unrelated series displace this lineage. Do not elevate partial, rejected, or missed-target results into successful prompt references.
+Before drafting a new image prompt, identify the active series and consult its
+chronological history first. Inspect the newest attempt for context, then select
+only the most recent successful prompt in that same series as the text baseline.
+Consult `prompts/successful-image-prompts-index.md` to find candidate successes,
+then verify their dates, outcomes, series membership, and prompt-to-output links
+in the authoritative attempt records. The index is a discovery aid, not the
+source of truth for chronology. Never let a stronger prompt from an unrelated
+series displace this lineage, and never use a newer failure or partial attempt
+as the prompt baseline.
 
 After an attempt is finalized:
 - If it is a genuine successful match, add it to the separate success-only index with a direct link to its prompt entry and the resulting image(s).
 - If the user explicitly identifies an existing image as successful, add it to a distinct **user-approved successful outputs** section with a direct image link and a concise visual description. The user's assessment is sufficient to classify the image as user-approved; do not require the assistant to independently agree with every detail of the original prompt.
-- Keep user-approved image outputs distinct from prompt-attributed successes. Link to an exact originating prompt only when the chronological record reliably establishes the relationship. If the mapping is uncertain, say so and do not invent an attempt number or prompt.
+- Keep user-approved image outputs distinct from assistant-classified prompt successes in the index. However, a user-approved output can also qualify as the latest successful prompt baseline when the user explicitly accepts that attempt's result as successful for the intended purpose and the originating prompt is reliably linked. Preserve the user-approved classification and attribution. If the mapping is uncertain, the image is a visual keeper only; do not invent or infer its prompt.
 - If an existing successful image is renamed, update its direct links in both the prompt result and the success-only index.
 - Do not add rejected, partial, or generated-but-missed-target results to the prompt-attributed success category. A user may nevertheless separately approve an image as a visual output; record that approval honestly without rewriting its historical prompt outcome.
 
