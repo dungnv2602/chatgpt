@@ -196,7 +196,7 @@ Record:
 - **Primary series ID/name and theme spine.** If no series is established, record `standalone/unassigned`; do not guess. Record secondary series only for a deliberate crossover.
 - **Membership role:** series seed, continuation, subseries, branch, crossover, standalone, or provisional. For a branch, record the parent series and branch point.
 - **Continuity anchors and permitted variation** relevant to this attempt; state which user-locked details must remain unchanged.
-- **Prompt baseline provenance:** exact path/attempt or scene-local record of the most recent successful prompt in the primary series (or exact artwork thread if not a series), its recorded outcome, and why it qualifies. If there is no such baseline, say so explicitly. For a new branch, record the inherited seed and its source.
+- **Prompt baseline provenance:** exact path/attempt or scene-local record of the most recent successful prompt in the primary series (or exact artwork thread if not a series), its recorded outcome, and why it qualifies. If the next operation requires a full-scene prompt but the newest success is only a localized edit/style-only prompt, also record the most recent successful full-generation prompt from that same series as the operation-compatible text skeleton and explain the choice. If there is no such baseline, say so explicitly. For a new branch, record the inherited seed and its source.
 - **Latest-attempt diagnostic reference:** link the newest later attempt inspected when it differs from the selected successful baseline, and state what was or was not carried forward from it.
 - Operation type: **fresh generation** or **edit of a reference image**.
 - Source image/reference, when applicable. Distinguish inspiration references from the exact edit source, and record the actual asset/attachment identifier only when it was supplied to the tool.
@@ -214,6 +214,8 @@ Update the same entry with the actual outcome:
 - **Unconfirmed.**
 
 Do not mark an image attempt successful merely because an image was returned. Inspect whether it followed the user's key instructions. Record what worked, what failed, and one useful next-step lesson.
+
+When one tool call returns multiple images, record each output separately within that attempt: its image/generation identifier or stored path, whether it meets the defining requirements, and whether the user approved it as a keeper/reference. Preserve mixed outcomes; one successful output does not make every image in the batch successful. The prompt/result pair may qualify as a successful prompt baseline when at least one output is explicitly judged successful for the intended purpose and the prompt-to-output link is reliable; use only the individually approved output(s) as visual references.
 
 Keep two judgements distinct:
 - **Prompt/result success:** the prompt is linked to an output that meets the defining requirements, or the user explicitly accepts that attempt's result as successful for the intended purpose. This may qualify the exact prompt as a future series baseline.
