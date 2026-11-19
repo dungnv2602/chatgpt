@@ -4,7 +4,7 @@
 **Branch:** `chatgpt`  
 **Conversation integrity:** [2026-11-12-conversation-integrity.md](2026-11-12-conversation-integrity.md)  
 **Session summary:** [2026-11-12-summary.md](2026-11-12-summary.md)  
-**Successful prompts only:** [successful-image-prompts-index.md](successful-image-prompts-index.md)
+**Outcome tracking:** Each attempt's actual result and approval status are recorded in this chronological log. The former cross-session success catalogue was retired on 2026-11-20.
 
 ## Workflow
 
