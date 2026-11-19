@@ -144,18 +144,9 @@ Andy then makes his own choice. Their relationship begins as a mutual commitment
 8. Keep the eventual checkpoint breach consistent with the privacy and consent practices established earlier. The betrayal must result from his fear and choice, not a convenient misunderstanding.
 9. Keep scene dialogue, exact sounds, settings, chapter placement, and the duration of each stage open until the world and character biographies are developed enough to support them.
 
-## Open development questions
+## Open questions
 
-These are not blockers and should be answered only when the next stage of writing requires them:
-
-- Which recording or field assignment best supports the first disagreement about context?
-- What recurring technical category or acoustic puzzle becomes their private joke?
-- What exact aesthetic project does Maya choose for herself?
-- Which other people or systems become part of Maya's independent working life?
-- What is the first gesture that Andy recognizes as affection without assuming it is romantic?
-- How does Maya learn about romance without being reduced to a human imitation?
-- What concrete work boundary or oversight arrangement addresses Andy's privileged access before the relationship begins?
-- How long does the progression take, and which beats deserve full scenes rather than brief transitions?
+The remaining choices for this progression are maintained in [Open Discussion](open-discussion.md), section 6. They are not blockers and should be answered only when the next stage of writing requires them.
 
 ## Recommended next writing milestone
 
