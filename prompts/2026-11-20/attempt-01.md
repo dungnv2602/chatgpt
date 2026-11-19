@@ -2,11 +2,11 @@
 
 - **Status before call:** Pending.
 - **Operation type:** Fresh generation.
-- **Source image/reference:** None. No image is attached; this is a new visual interpretation.
+- **Source image/reference:** None. No image was attached; this was a new visual interpretation.
 - **Mode:** Realistic — naturalistic cinematic photography.
-- **Concept:** An original, human-form embodiment of Samantha from *Her* (2013), which does not attempt to reproduce an actor or a film still.
+- **Concept:** An original, human-form embodiment of Samantha from *Her* (2013), not a recreation of an actor or a film still.
 - **Specific creative test:** Can Samantha be imagined as visibly human and emotionally present while a very restrained edge-of-light effect quietly suggests that she has no physical body?
-- **Tool-prompt visibility:** The authored prompt below is the prepared creative direction. The image tool may not expose its internally compiled or submitted prompt.
+- **Tool-prompt visibility:** The authored prompt below was archived before generation. The image tool returned an empty compiled-prompt field; the authored text is not claimed to be the tool's internal payload.
 
 ## Exact authored prompt
 
@@ -20,6 +20,13 @@
 >
 > Place her in a quiet, contemporary apartment with a softly defocused city beyond the window. Use warm late-afternoon daylight, soft amber and muted coral tones, gentle lifted shadows, natural skin highlights, shallow cinematic depth of field, an intimate eye-level camera, and calm negative space around her. The scene should feel like a quiet conversation rather than a technological demonstration. High-end naturalistic cinema photography, physically plausible light and anatomy, subtle restrained film texture, elegant and emotionally intimate.
 
-## Result
+## Result — generated with a defining mismatch
 
-Not yet generated. This note is committed before the image call.
+- **Actual result:** One photorealistic portrait was returned.
+- **Observed match:** Original-looking adult woman; softly tousled auburn hair; faint freckles; coral-red blouse; warm late-afternoon apartment light; softly blurred city background; intimate, attentive expression.
+- **Mismatch:** Her outline remained completely physical. The requested dissolving edge or other visual signal of her nonphysical AI presence was not visible. The crop was also closer to head-and-shoulders than the authored mid-torso framing.
+- **Image generation ID:** `6ce20fc3-f98f-4a7f-994d-5f398969738f`.
+- **Local artifact:** `/mnt/data/a_warm_cinematic_softly_lit_indoor_portrait_scen.png`.
+- **Tool metadata:** `edit_op: null`, `parent_gen_id: null`, `prompt: ""`, `seed: null`. This was a fresh generation; the tool did not expose its compiled prompt.
+- **Classification:** Generated, but missed the defining AI-presence cue.
+- **Next step:** Use this exact image as the edit source and change only the outer silhouette treatment. Preserve the generated face, expression, hair, blouse, pose, room, light, and crop.
