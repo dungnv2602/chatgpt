@@ -1,6 +1,7 @@
 ---
 format: development-outline
 version: 1.1
+outline_id: OUT-001
 novel_id: NOV-002
 status: working
 ---
