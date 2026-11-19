@@ -52,3 +52,8 @@
 - **Next step:** One corrected attempt will pass the exact Attempt 04 asset ID explicitly via the image tool's reference argument. If returned metadata still lacks source linkage, stop further edit retries and explain the limitation rather than repeating context-only calls.
 
 The authored prompt was committed and read back before the image-edit call. After the call, record whether the tool actually confirms Attempt 04 as the parent/source, inspect the rendered result, score each criterion separately, and state any source-linkage uncertainty. Do not call it a confirmed edit merely because it looks similar.
+
+
+## User approval — 2026-11-20
+- **Attempt 05:** Approved as the **casual path**. This is a user approval of the image/branch for casual-path continuity; it does not retroactively confirm source linkage or promote the prompt to a successful edit baseline.
+- **Attempt 06:** Approved as the **sweet path**. This is a user approval of the image/branch for sweet-path continuity; it does not retroactively confirm source linkage or erase recorded mismatches.
