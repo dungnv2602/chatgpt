@@ -23,7 +23,7 @@ Use these for new records and material revisions:
 7. [Illustration Note](templates/illustration-note-v1.1.md)
 8. [Illustration Prompt Record](templates/illustration-prompt-v1.1.md)
 
-The [Version 1.0 templates](templates/novel-v1.md) are retained as historical references for existing records. They are not the default for new work. Do not mass-migrate completed or untouched legacy records.
+The Version 1.0 templates are retained as historical references for existing records: [Novel](templates/novel-v1.md), [Story Arc](templates/arc-v1.md), [Scene](templates/scene-v1.md), and [Illustration Note](templates/illustration-note-v1.md). They are not the default for new work. Do not mass-migrate completed or untouched legacy records.
 
 ## Narrative hierarchy and supporting records
 
