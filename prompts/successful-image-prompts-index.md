@@ -1,11 +1,13 @@
 # Successful Image Prompts — Index
 
 **Project:** `dungnv2602/Maya_and_Me`  
-**Branch:** `chatgpt`  
+**Branch:** `gpt`  
 **Authoritative chronological log:** [2026-11-12-image-prompts.md](2026-11-12-image-prompts.md)  
 **Image catalogue:** [ChatGPT/images/reference-index.md](../images/reference-index.md)
 
 This is a curated index of (1) successful prompt attempts with a verified chronological record and (2) images the user has explicitly designated as successful. These categories are kept separate: a user-approved image may be listed even when its exact originating prompt cannot be reliably mapped. Never invent prompt numbers or prompt-to-image associations. Rejected attempts, outputs that missed a defining instruction, and partial matches are excluded from the success categories.
+
+**Series-lineage rule:** Each newly added entry must include its verified primary series ID/name and theme. Legacy entries without reliable classification remain `legacy/unassigned`. This index is a discovery aid only: use the linked chronological attempt records to determine series membership and which successful prompt is most recent. A newer failed entry never replaces the most recent successful prompt as the baseline.
 
 ## 03 — Reversed lap pose
 
