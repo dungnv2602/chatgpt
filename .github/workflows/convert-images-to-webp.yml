@@ -13,6 +13,7 @@ on:
       - 'images/takeout/*.JPEG'
       - 'images/takeout/HANDOFF.yml'
       - 'images/scripts/process_takeout.py'
+      - 'images/scripts/test_process_takeout_unittest.py'
       - '.github/workflows/convert-images-to-webp.yml'
   workflow_dispatch: {}
 
@@ -41,6 +42,13 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install --yes webp python3-yaml
+
+      - name: Test takeout processor
+        run: |
+          python3 -m unittest discover \
+            -s images/scripts \
+            -p 'test_process_takeout_unittest.py' \
+            -v
 
       - name: Process takeout hand-off
         id: process
