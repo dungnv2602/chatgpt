@@ -415,20 +415,56 @@ supported mechanism. Verify source linkage before calling it a confirmed edit.
 - Use a repository reference image from `images/` or a novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library, or from an image the user supplies directly in the current conversation.
 - If an image edit fails, state that the image was not modified; do not imply the source image changed.
 
-### Separate successful-prompt index
+### Daily attempt ledger
 
-Maintain one separate file at `prompts/successful-image-prompts-index.md`. This is a curated index, not a replacement for the complete chronological image log.
+Do not create a separate cross-session success catalogue. For each
+non-novel drawing date, maintain `prompts/YYYY-MM-DD/README.md` as the
+navigation ledger for that date's attempts. It must contain one contiguous
+Markdown table with exactly five fields:
 
-1. Include only prompt attempts whose recorded outcome is a successful match or a successful generation that followed its defining creative direction. Do not include rejected attempts, failed generations, generated-but-missed-target results, or partial matches as prompt successes.
-2. For each included attempt, record its primary series ID/name and theme spine, plus any verified branch/subseries relationship. If historical membership cannot be established reliably, label it `legacy/unassigned` rather than guessing.
-3. Link directly to the original attempt heading or scene-local prompt record and each known associated image file under `images/` or the novel's central illustration asset library. Include more than one image when a single successful prompt produced multiple approved results.
-4. Preserve caveats when a particular detail was not verified, when the successful output fulfilled a revised brief, or when a user-approved visual keeper is not itself proof of prompt success.
-5. Keep the success index as a discovery aid. Determine which prompt is most recent from the chronological source records within the active series; never infer recency from the order of index entries.
-6. Update the successful-only index when an attempt's result is finalized or when an image is renamed. Keep failed and partial attempts in the chronological history only, unless the user separately approves an image as a visual keeper; then list it in the user-approved-output section without disguising the prompt's actual outcome.
-7. Link the successful-only index from the chronological non-novel image log and from the session summary. For a novel-scene prompt, link the scene-local record without copying its prompt text into the root log. Read back the index and all changed files after writing.
+1. **Attempt / prompt:** attempt number or stable ID, concise descriptive title,
+   and direct link to the complete attempt record.
+2. **Session / brief:** session ID or name and direct link to the opening brief.
+   State explicitly when no separate brief was created.
+3. **Series / baseline lineage:** verified primary series ID/name and theme,
+   plus the parent attempt or successful baseline when known. Use
+   `legacy/unassigned` or `not established` when membership is uncertain.
+4. **Execution outcome:** what actually happened and whether the result met
+   the defining acceptance criteria. Distinguish generated, edited with
+   verified source linkage, rejected, blocked, pending, superseded, and
+   unconfirmed outcomes. A prompt approved for generation is not a successful
+   image result.
+5. **User approval / output evidence:** separate the user's explicit approval
+   from the assistant's visual assessment. Link the exact returned image or
+   verified repository asset where available; otherwise state whether the
+   image was delivered only in conversation, no output was returned, storage
+   is unverified, or approval was not recorded.
 
-Do not silently promote a merely generated image to a success. Use the outcome classification and visual inspection recorded in the chronological log. A user-approved image whose originating prompt is known may qualify as a successful prompt/result pair when the user's approval clearly accepts that attempt as successful; preserve the user's attribution. If the prompt mapping or scope of approval is uncertain, keep it as an approved visual asset only and continue using the latest verified successful prompt as the text baseline.
+Include every attempt, not only successful ones, and keep the rows in
+chronological order. The table is a compact navigation/status summary. Each
+linked attempt record remains authoritative for the exact prompt, source and
+operation metadata, acceptance criteria, visual assessment, user approval,
+output identity, and provenance. Never infer missing lineage, approval, or
+storage details. When a field is unknown, say so explicitly.
 
+After each attempt is finalized, update its attempt record first, then update
+the matching daily README row from the verified record. Keep exactly one row
+per attempt. When a user approves an image, record that approval in both the
+attempt record and the table's approval/output field without disguising a
+different execution outcome. When an approved image is renamed or moved,
+update the exact asset link in the attempt record and daily README.
+
+For a named novel scene, maintain the complete chronological prompt and output
+history in the scene-local illustration records. Do not create a duplicate
+daily prompt history or cross-session success catalogue for that scene. The
+scene record remains authoritative for prompt lineage, outcomes, approval,
+and image links.
+
+Determine the latest successful text baseline by reviewing finalized attempt
+records within the active series or exact artwork thread. The daily README
+helps locate those records but does not establish success, series membership,
+or visual authority.
+ 
 ### Session-local image asset handling and provenance
 
 When the user asks to retain generated or uploaded images, or when the active
@@ -482,8 +518,7 @@ For an image the user supplies within a drawing session:
 4. Record the exact path, stable file/Library ID, source generation ID when
    known, original name, dimensions, byte size, checksum where available, and
    session-specific role in the session brief or attempt record.
-5. When the image is associated with a successful output, link it directly in
-   the relevant attempt record and successful-prompt index if appropriate.
+5. When the image is associated with a successful or user-approved output, link it directly in the relevant attempt record and, for non-novel work, the corresponding daily README row.
    Do not add a global reference-index link.
 6. In conversation-integrity records, record the user's instruction/approval
    and exact storage or rename actions as tool events. Preserve historical
@@ -579,7 +614,7 @@ record; this is target clarification, not a second approval:
    session summary/handoff with completed work, approved outputs, unresolved
    items, and the next possible task.
 8. Read back all changed records, including the applicable daily index,
-   success-only index, scene-local records, and session summary/handoff. Verify
+   daily README and attempt records, scene-local records, and session summary/handoff. Verify
    their links and status. If archival verification fails, report the exact
    gap and do not claim a fully verified closeout.
 
