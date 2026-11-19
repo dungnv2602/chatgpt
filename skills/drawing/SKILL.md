@@ -2,7 +2,7 @@
 name: drawing
 description: "Create and refine images in two deliberate visual modes: Realistic and Vintage. Use for image generation, editing, style transformations, composition, character continuity, and iterative visual refinement."
 created: 2026-11-18T13:18
-updated: 2026-11-20T06:15
+updated: 2026-11-20
 ---
 
 # Drawing Skill
@@ -232,11 +232,14 @@ Before every generation or edit attempt:
    work, read the session brief under `prompts/YYYY-MM-DD/`. The session brief
    governs visual direction; scene records supply narrative facts only where the
    brief asks the illustration to follow or adapt them.
-3. Review the relevant chronological prompt history for the same session and,
-   when the user explicitly continues a series, that series' history. The
-   successful-prompt index may help locate candidate prompt records, but it is
-   not a visual authority. Verify every candidate in its authoritative attempt
-   record. Do not consult or recreate a global image-reference index.
+3. Review the relevant daily attempt ledger at
+   `prompts/YYYY-MM-DD/README.md` and the chronological prompt history for the
+   same session and, when the user explicitly continues a series, that series'
+   history. Use the ledger only to locate candidate attempts. Verify every
+   candidate's series membership, outcome, approval, and prompt/output linkage
+   in its authoritative attempt record. For a novel scene, use the
+   scene-local illustration records. Do not consult or recreate a global
+   image-reference index.
 4. Select the most recent successful prompt in the active series as the
    historical text baseline, or the most recent successful prompt in the exact
    artwork thread if no series applies. Newer failures remain diagnostic only.
@@ -537,10 +540,12 @@ Before rewriting a prompt after a refusal, repeated failure, or user correction:
 1. **Return to the evidence.** Identify the active series/artwork thread and
    inspect its authoritative chronological prompt history first. Locate the
    most recent successful prompt in that same series/thread and inspect the
-   actual approved image assets where relevant. Use
-   `prompts/successful-image-prompts-index.md` as a discovery aid, not as the
-   authority for chronology or series membership. Do not rely on memory, a
-   summary, or the most recent failed prompt alone.
+   actual approved image assets where relevant. Use the relevant
+   `prompts/YYYY-MM-DD/README.md` as a navigation aid, then verify chronology,
+   series membership, finalized outcome, and prompt/output linkage in the
+   authoritative attempt records. For a novel scene, use its scene-local
+   illustration history. Do not rely on memory, a summary, or the most recent
+   failed prompt alone.
 2. **Find the correct series baseline first.** Identify the active primary
    series and inspect its most recent prompt. Use the most recent successful
    prompt in that same series as the execution baseline. If no series applies
@@ -714,28 +719,67 @@ the user explicitly says they should be retained for future use.
   and final paths. Do not claim repository storage or a successful hand-off
   until the final paths and reports are read back and verified.
 
-### E4. Consult and maintain the successful-prompt index
+### E4. Use daily attempt ledgers and authoritative records
 
-Before drafting a new image prompt, read the active session brief first. It is
-the authority for visual direction. If the user explicitly continues a series,
-consult its chronological history and select only the most recent successful
-prompt in that same series as a historical text baseline, adapting it to the
-session brief.
-Consult `prompts/successful-image-prompts-index.md` to find candidate successes,
-then verify their dates, outcomes, series membership, and prompt-to-output links
-in the authoritative attempt records. The index is a discovery aid, not the source of truth for chronology or visual
-direction. It does not define a character's face, outfit, style, setting, mood,
-or any other feature of a new drawing session. Never let a stronger prompt from
-an unrelated series displace this lineage, and never use a newer failure or
-partial attempt as the prompt baseline.
+Do not create a separate cross-session success catalogue. For non-novel
+drawing sessions, use `prompts/YYYY-MM-DD/README.md` as the daily navigation
+ledger. It must contain one contiguous Markdown table with exactly five fields:
 
-After an attempt is finalized:
-- If it is a genuine successful match, add it to the separate success-only index with a direct link to its prompt entry and the resulting image(s).
-- If the user explicitly identifies an existing image as successful, add it to a distinct **user-approved successful outputs** section with a direct image link and a concise visual description. The user's assessment is sufficient to classify the image as user-approved; do not require the assistant to independently agree with every detail of the original prompt.
-- Keep user-approved image outputs distinct from assistant-classified prompt successes in the index. However, a user-approved output can also qualify as the latest successful prompt baseline when the user explicitly accepts that attempt's result as successful for the intended purpose and the originating prompt is reliably linked. Preserve the user-approved classification and attribution. If the mapping is uncertain, the image is a visual keeper only; do not invent or infer its prompt.
-- If an existing successful image is renamed, update its direct links in both the prompt result and the success-only index.
-- Do not add rejected, partial, or generated-but-missed-target results to the prompt-attributed success category. A user may nevertheless separately approve an image as a visual output; record that approval honestly without rewriting its historical prompt outcome.
+1. **Attempt / prompt:** the attempt number or stable ID, a concise descriptive
+   title, and a direct link to the full attempt record.
+2. **Session / brief:** the session ID or name and a direct link to the active
+   opening brief. If no separate brief exists, state that explicitly; do not
+   invent one.
+3. **Series / baseline lineage:** the verified primary series ID/name and
+   theme, plus the parent attempt or successful text baseline where known.
+   Mark uncertain membership `legacy/unassigned` or `not established`
+   rather than guessing.
+4. **Execution outcome:** what actually happened—generated, edited with
+   verified source linkage, rejected, blocked, pending, superseded, or
+   unconfirmed—and whether the result met the defining acceptance criteria.
+   Approval of a prompt for generation is not a successful image outcome.
+5. **User approval / output evidence:** record user approval separately from
+   the assistant's visual assessment, and link the exact returned image or
+   verified repository asset where available. Otherwise state
+   `delivered in conversation`, `no output returned`,
+   `output not stored`, or `not verified` as applicable.
 
+Include every attempt in chronological order, including rejected, failed,
+partial, pending, and superseded attempts. Do not turn the table into a
+success-only list. Keep its five fields populated with concise, evidence-based
+facts; put the complete prompt, source IDs, exact tool metadata, acceptance
+criteria, visual assessment, and detailed provenance in the linked attempt
+record.
+
+The daily README is a navigation and status summary, not an authority that can
+override the attempt record. The attempt record is the source of truth for the
+authored prompt, actual operation, source linkage, execution result, visual
+assessment, user approval, and output identity. When the table and attempt
+record disagree, correct the table from the verified attempt record.
+
+For a named novel scene, maintain the complete chronological prompt and output
+history in that scene's local illustration records instead of duplicating the
+prompt history in a daily non-novel ledger. The scene-local record remains
+authoritative.
+
+After each attempt is finalized:
+- Update the attempt record with the actual result and its evidence.
+- Update the corresponding row in the daily README, keeping each attempt in
+  exactly one row and preserving chronological order.
+- If the user explicitly approves an image, record that approval in the attempt
+  record and the table's approval/output field without rewriting a different
+  execution outcome. A user-approved keeper with uncertain prompt mapping must
+  remain unlinked to an invented prompt.
+- When an image is renamed or moved, update its direct link in the attempt
+  record and the relevant daily README row.
+- Do not omit unsuccessful attempts, promote a generated-but-missed-target
+  result to a success, or infer approval from delivery alone.
+
+The latest successful text baseline must be determined from the authoritative
+attempt records within the active series or exact artwork thread. The daily
+ledger helps locate those records; it does not define visual direction or
+baseline eligibility.
+ 
 ### F. Inspect and classify
 Evaluate the image against the pre-recorded acceptance criteria and the active
 session brief. For each criterion, record **Pass**, **Partial**, **Fail**, or
