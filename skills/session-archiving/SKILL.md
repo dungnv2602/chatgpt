@@ -36,7 +36,7 @@ This boundary applies to every future task and every tool call, not only archivi
   - `prompts/YYYY-MM-DD-conversation-integrity.md`
   - `prompts/YYYY-MM-DD-summary.md`
 - Non-novel image attempts use the dated `prompts/YYYY-MM-DD/` structure below. Named novel-scene illustrations use their authoritative scene-local prompt records under `novel/`; do not duplicate their prompt text or attempt history in `prompts/`.
-- Store non-novel visual assets under `images/`; store novel-scene illustration binaries under `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. New user uploads for either destination first enter `images/takeout/` and are routed by the approved hand-off.
+- Store new retained non-novel generated drawing outputs under `prompts/YYYY-MM-DD/images/` as `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.), linked from their attempt record and daily README when provenance is verified. This does not authorize migration of existing assets. Store non-novel reference/source assets under `images/`; store novel-scene illustration binaries under `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. New user uploads intended for those permanent destinations first enter `images/takeout/` and are routed by the approved hand-off.
 - Keep skills and supporting references under `skills/`.
 
 ### Conversation behavior
@@ -408,7 +408,7 @@ materially inadequate and the exact source image can be attached through a
 supported mechanism. Verify source linkage before calling it a confirmed edit.
 
 - Deliver generated images in the conversation.
-- Store retained non-novel repository images under `images/`; store novel-scene illustration binaries in the novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library. New uploads for either destination enter through `images/takeout/` and its hand-off.
+- Store new retained non-novel/day drawing outputs in `prompts/YYYY-MM-DD/images/` using `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.); link exact verified assets from the attempt note and daily README. Existing image assets are not migrated. Non-novel reference/source images remain under `images/`; novel-scene illustration binaries remain in the novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library. New uploads for permanent reference/novel destinations enter through `images/takeout/` and its hand-off.
 - Never claim a fresh generation was an edit of the original.
 - Never claim a reference image was supplied unless the tool call actually included that reference.
 - Preserve source-image identity and distinguish an edit from a newly generated composition.
@@ -473,11 +473,16 @@ session workflow requires keeping a source asset:
 1. Give each retained image a clear, descriptive filename based on its visible
    content. Preserve the original bytes; do not overwrite a full-resolution
    original with a thumbnail.
-2. Keep non-novel image binaries under `images/` and novel-scene illustration
+2. Keep new retained non-novel/day drawing outputs under the dated prompt
+   folder's `images/` subdirectory, using `attempt-XX.webp` or numbered
+   multiple-output suffixes, and link them from the attempt note and daily README
+   when provenance is verified. Do not migrate existing image assets. Keep
+   non-novel reference/source images under `images/` and novel-scene illustration
    binaries under `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`
    when a supported repository binary-upload route is available. New uploads
-   first enter `images/takeout/` and are routed through its hand-off. Verify
-   the exact final path and blob identity before claiming repository storage.
+   intended for permanent reference/novel destinations first enter
+   `images/takeout/` and are routed through its hand-off. Verify the exact
+   final path and blob identity before claiming repository storage.
 3. If the binary cannot be transferred to GitHub, retain it in the persistent
    Files Library only when the user has requested retention and that storage is
    available. Record its exact Library path, stable file ID, source generation
