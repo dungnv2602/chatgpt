@@ -69,3 +69,12 @@ Append one complete entry before each attempt; update that entry after the resul
 - **Continuity Review:**
 - **Unresolved Visual Issues:**
 - **Provenance Limitations:**
+
+### Repository Asset Handoff
+- **Takeout Batch ID:**
+- **Original Upload Filename:**
+- **Master Image Path:** [Central novel asset path]
+- **WebP Derivative Path:**
+- **Conversion Report:** [Link to images/takeout/history/[batch-id]/attempt-NNN/conversion-report.csv]
+- **Verification Report:** [Link to images/takeout/history/[batch-id]/attempt-NNN/verification-report.md]
+- **Asset Verification:** Pending / Verified / Failed / Not Stored
