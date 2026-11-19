@@ -1,5 +1,5 @@
 ---
-format: novel-open-discussion
+format: open-discussion
 version: 1.1
 novel_id: NOV-002
 status: active
