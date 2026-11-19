@@ -245,7 +245,9 @@ historical designs or image catalogues as global authority.
 
 ## 5. Scene composition and visual direction
 
-Before generating an image, identify:
+Before generating an image, identify the active session brief and, for a novel
+scene, its user-selected narrative-fidelity mode (Text-faithful, Interpretive,
+or Adaptive). Do not infer the mode from the fact that the source is a novel.
 
 1. **The moment:** what is happening between the couple?
 2. **The emotion:** what should the viewer understand or feel?
@@ -345,7 +347,13 @@ lists and excessive negative clauses that obscure the intended image.
 
 ### D. Inspect the result
 
-Compare the returned image with the actual brief. Check:
+Compare the returned image with the actual brief and its pre-recorded
+acceptance criteria. Assess each criterion as Pass, Partial, Fail, or Not
+assessable, with a brief visible observation. Assess each returned image
+separately. A critical failed criterion prevents a successful-match label unless
+the user explicitly accepts the output for its intended purpose.
+
+Check:
 
 - Correct number of people and adult presentation.
 - Character identity and continuity.
@@ -358,7 +366,9 @@ Compare the returned image with the actual brief. Check:
 
 Classify the result honestly as a successful match, partial match, missed target,
 confirmed edit, fresh generation, or failed attempt. State the specific mismatch
-when the image does not meet the brief.
+when the image does not meet the brief. For the next iteration, record the
+successful prompt baseline and the exact prompt difference: what is preserved,
+what is changed, and what is excluded.
 
 ### E. Recover intelligently
 
