@@ -72,10 +72,10 @@ class TakeoutProcessorTests(unittest.TestCase):
             "items:",
         ]
         for index, item in enumerate(items):
-            prefix = "  -" if index == 0 else "  -"
+            asset_id = item.get("asset_id") or ("ILL-%03d" % (index + 1))
             rows.extend([
-                f'{prefix} source: "{item["source"]}"',
-                f'    asset_id: "{item.get("asset_id", f"ILL-{index + 1:03d}")}"',
+                f'  - source: "{item["source"]}"',
+                f'    asset_id: "{asset_id}"',
                 f'    title: "{item.get("title", "Shared Discovery")}"',
                 (
                     "    destination_dir: "
