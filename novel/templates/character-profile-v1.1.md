@@ -13,7 +13,7 @@ status: approved
 - **Aliases / Naming History:**
 - **Role:** Protagonist / Supporting / Antagonist / Other
 - **Record Status:** Working / Ready for Review / Approved / Superseded
-- **Canon State:** Established / Partly Established / Proposed
+- **Canon State:** Established / Partly Established / Proposed / Open / Superseded
 
 ## 2. Character Essence
 - **One-Sentence Description:**
