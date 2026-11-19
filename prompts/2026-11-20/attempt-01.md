@@ -1,5 +1,8 @@
 # Attempt 01 — Samantha, imagined as a presence
 
+- **Session ID:** SAMANTHA-2026-11-20-01.
+- **Session brief:** [session-01-brief.md](session-01-brief.md).
+- **Primary series / membership:** Samantha — Human Presence Without a Body (working thematic-series label).
 - **Status before call:** Pending.
 - **Operation type:** Fresh generation.
 - **Source image/reference:** None. No image was attached; this was a new visual interpretation.
