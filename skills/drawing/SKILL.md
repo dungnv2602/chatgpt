@@ -166,10 +166,11 @@ Separate essential requirements from optional decorative details.
    redesign, replace, simplify, or reinterpret them.
 3. **A written canonical prompt is sufficient for a fresh text-to-image
    generation.** The actual reference image is optional, not a technical or
-   workflow prerequisite. Use the strongest approved prompt in the successful
-   prompt index as the base, carry forward the canonical identity and wardrobe
-   wording, and direct creative variation toward scene, pose, expression,
-   setting, lighting, and composition.
+   workflow prerequisite. When continuing an established series, first use the most recent successful
+   prompt in that same series as the base, while carrying forward the canonical
+   identity and wardrobe wording. If no series applies, use the strongest
+   approved comparable prompt. Direct creative variation toward the requested
+   scene, pose, expression, setting, lighting, and composition.
 4. Attach the actual image only when the user asks to use it as a visual
    reference, when a task materially benefits from visual-reference guidance,
    or when performing an edit of that exact image. If an image is attached,
@@ -217,7 +218,11 @@ Before every generation or edit attempt:
    information and complete the project-continuity check in section A. Use an
    approved prompt as the base; image attachment is optional for fresh
    text-to-image generation.
-4. Reuse the most relevant successful prompt or source image as a base.
+4. Identify the active primary series, if any, and use its most recent prompt
+   as the first point of reference. For the execution baseline, use the most
+   recent successful prompt in that same series; consult the latest failed or
+   partial prompt for valid intended changes. If the work is standalone or no
+   series baseline exists, use the most relevant successful prompt or source image.
 5. Change as little as practical for a controlled revision.
 6. Record the exact authored prompt, operation type, source, mode, test
    objective, pending status, and every reference asset actually attached.
@@ -265,6 +270,99 @@ the result. If the user specifically requires source linkage and the tool cannot
 accept or retain the source, state that limitation. Do not turn optional
 reference attachment into a blocker for ordinary fresh generation.
 
+### Series identity, membership, and prompt lineage
+
+A **series** is a connected body of image-making in which each image explores, extends, or varies a recognizable central theme. The theme is the series' creative spine. It may be narrative, conceptual, emotional, visual, subject-based, or functional. A series does not need chronological storytelling, an identical character, a fixed location, one outfit, or one rendering style. It does need a recognizable reason for its images to belong together.
+
+**Series-first iteration rule:** When continuing a successful series, inspect and build from the most recent prompt in that same series. This keeps the work aligned with the series' current creative direction instead of importing a prompt that may be successful but belongs to a different project or aesthetic lineage. The most recent prompt is the first point of reference; the most recent successful prompt in that series is the execution baseline when the newest attempt did not succeed.
+
+#### A. What can define a series
+
+The following taxonomy is deliberately broad. These are common series types, not an exhaustive boundary on creativity. A series may combine several types or use another coherent theme not listed here.
+
+1. **Character or identity series:** the same person, fictional character, avatar, creature, or recognizable identity across different images.
+2. **Relationship series:** a couple, family, friendship, rivalry, group, or recurring interpersonal dynamic.
+3. **Narrative or story series:** chapters, episodes, scenes, story beats, alternate moments, or different viewpoints within a narrative.
+4. **World or universe series:** a shared fictional world, setting, lore, civilization, mythology, rules, or imagined reality.
+5. **Thematic or conceptual series:** a central idea such as intimacy, solitude, freedom, memory, identity, belonging, mortality, or transformation.
+6. **Emotional series:** an emotional experience or spectrum such as tenderness, longing, confidence, vulnerability, grief, joy, or peacefulness.
+7. **Subject series:** a recurring subject or subject class, such as a particular animal, flower, vehicle, building, object, or type of person.
+8. **Location or environment series:** one room, home, building, city, landscape, destination, natural environment, or architectural space explored through different images.
+9. **Situation or context series:** a recurring circumstance, such as quiet mornings, evenings at home, travelling, waiting, reunions, or conversations in a café.
+10. **Visual-style or medium series:** a shared artistic language, such as cinematic realism, painterly storybook imagery, watercolor, oil painting, analog photography, or a defined illustration style.
+11. **Color, light, or atmosphere series:** a recognizable palette, tonal range, lighting language, season of light, or atmospheric treatment.
+12. **Wardrobe, fashion, or costume series:** a fashion collection, outfit study, character wardrobe, uniform family, historical dress, or intentionally fixed garment design.
+13. **Motif or symbolism series:** a recurring object, symbol, visual metaphor, gesture, pattern, or compositional motif.
+14. **Activity, occupation, or ritual series:** recurring actions, hobbies, professions, routines, sports, crafts, performances, or ceremonies.
+15. **Seasonal or temporal series:** seasons, times of day, stages of a year, recurring dates, or the passage of time.
+16. **Life-stage or transformation series:** growth, aging, changing appearance, personal development, metamorphosis, or symbolic transformation.
+17. **Historical or cultural series:** a historical period, culture, civilization, tradition, festival, or cultural interpretation.
+18. **Event or occasion series:** a wedding, celebration, journey, festival, concert, performance, or other event documented or reimagined through multiple images.
+19. **Editorial, brand, or campaign series:** magazine spreads, advertising campaigns, promotional artwork, posters, identity systems, or coordinated brand imagery.
+20. **Format or genre series:** recurring book covers, portraits, character sheets, postcards, illustrations, posters, comics panels, or another defined image format.
+21. **Composition or photography-language series:** a recurring camera viewpoint, framing, lens character, perspective, posing language, shot type, or lighting arrangement.
+22. **Technical or artistic study series:** controlled explorations of anatomy, gesture, fabric, reflections, lighting, materials, rendering, perspective, or other techniques.
+23. **Comparison or variation series:** alternatives, parallel interpretations, before-and-after images, controlled A/B variations, or deliberate visual contrasts.
+24. **Collection or catalogue series:** a curated body organized around a meaningful subject, class, taxonomy, or collecting principle, even without narrative continuity.
+25. **Hybrid or cross-disciplinary series:** a deliberate combination of two or more of the above, or a coherent theme crossing disciplines, genres, media, or subject categories.
+26. **Other user-defined series:** any other recurring creative premise the user identifies or the work demonstrably develops.
+
+A shared feature is not automatically a series. The same character, style, outfit, palette, location, or image format may appear in unrelated projects. Treat such features as global preferences or reusable assets unless they form part of a shared theme or the user explicitly groups the work together.
+
+#### B. How to recognize and classify a series
+
+A series may be established in any of these ways:
+
+- **Explicitly declared:** the user names it, calls the work a series, identifies its theme, or says that a new image belongs to an existing series.
+- **Clearly continued:** the user asks to continue the same project, storyline, character journey, collection, campaign, visual study, or recurring theme.
+- **Contextually evident:** multiple prompts or images share a distinctive central premise and the user is developing variations of that premise.
+- **Proposed by the assistant, confirmed by the user:** the assistant notices a coherent recurring theme, but must not silently impose a series label when that classification would affect prompt selection or continuity.
+
+Do not require a minimum number of images when the user has explicitly declared a series. Without an explicit declaration, one image alone is normally insufficient evidence of an established series; it may be the first entry or a standalone image. Two or more related entries can reveal an implicit series when their shared theme is clear.
+
+For each series, identify and record where available:
+
+- **Series name or ID:** a stable, concise identifier. Do not invent a formal title when the user has not named it; use a neutral working label.
+- **Theme spine:** the central idea that explains why the images belong together.
+- **Series type:** one or more categories from the taxonomy above.
+- **Primary continuity anchors:** the features that must persist, such as character identity, relationship, world rules, defining motif, subject, mood, or visual language.
+- **Permitted variation:** what may change from image to image, such as scene, action, pose, framing, secondary subjects, time, location, or style.
+- **Continuity strength:** strict, flexible, or thematic. Strict series preserve specified identity/world/design features; flexible series preserve core anchors while allowing substantial variation; thematic series preserve the underlying idea without requiring the same subjects or visual treatment.
+- **Parent or related series:** record this only when the work is genuinely a branch, spin-off, crossover, or companion series.
+
+When archiving a prompt, include its series name/ID, theme spine, and whether it is a continuation, a new entry, a branch, a crossover, or standalone. If the series is not known, record it as unassigned/standalone rather than guessing. A series may be renamed without changing its underlying lineage; preserve the previous label as an alias where useful.
+
+#### C. Boundaries, overlap, and branching
+
+- **Project versus series:** a project is an organizational container and may contain several distinct series. Do not treat every image in one project as belonging to one series.
+- **Series versus sequence:** a sequence is ordered by chronology, process, or narrative progression. A series may be non-linear; a sequence can be one form of series when it has a shared theme.
+- **Series versus collection:** a collection groups items by curation or category. It becomes a series in this workflow when a recognizable creative premise connects the images, but a collection need not imply visual or narrative continuity.
+- **Series versus reusable style:** using the same mode, technique, palette, or character does not merge otherwise unrelated series.
+- **Subseries:** a narrower theme may sit inside a parent series. Preserve both identities and use the subseries as the primary prompt lineage when the current request clearly belongs to it.
+- **Branch or spin-off:** create a related branch when a new direction grows from an existing series but develops its own distinct theme. Record the parent relationship and the branch point. Do not keep using the parent series' newest prompt once the branch has established its own successful prompt lineage.
+- **Crossover:** an image may intentionally combine two series. Record one as the primary series for prompt-baseline selection and the other as a secondary membership. Do not blend their prompt histories indiscriminately.
+- **Series change:** if the central theme changes enough that the previous images no longer explain the new work, start a new series or branch rather than forcing continuity.
+- **User authority:** the user's explicit grouping, separation, naming, or reassignment overrides assistant inference. Do not merge, split, or rename a series against the user's direction.
+
+One image can have multiple thematic connections, but every prompt used for an iteration must have one **primary series** (or be explicitly standalone). Use that primary series to select the prompt baseline. Secondary tags help retrieval; they do not authorize borrowing a baseline from an unrelated series.
+
+#### D. Choosing the correct prompt within a series
+
+Apply this order whenever an image is a continuation of a series:
+
+1. Identify the active primary series before choosing a prompt. Confirm its theme and continuity anchors from the user's direction and archived history.
+2. Inspect the **chronologically most recent prompt in that series first**, including its outcome and any user feedback. Do not start by searching for the strongest prompt across all projects.
+3. If that most recent prompt produced a successful match or a user-approved successful output and its prompt linkage is reliable, use it as the immediate baseline. Carry forward its current creative direction and approved details.
+4. If the latest prompt failed, was rejected, or missed a defining requirement, do not treat it as a successful baseline. Use the most recent successful prompt in the same series as the execution baseline. Also inspect the latest failed/partial prompt and retain only those deliberate changes that remain requested, valid, and consistent with the series.
+5. If the latest prompt was a partial match, preserve what visibly succeeded and correct the specific miss. Do not discard a newer accepted direction merely because an older prompt scored better overall.
+6. An older prompt in the same series may supply a proven detail when the latest prompt dropped or damaged it. Restore that detail selectively; do not automatically revert the whole series to the older prompt.
+7. A successful prompt from another series is not the default baseline, even if it appears stronger or more similar in one isolated detail. Use it only when the user requests a deliberate transfer or when the relevant method is clearly reusable without importing the other series' theme or continuity.
+8. If the current series has no successful prompt yet, use its latest relevant brief and attempts as development history. Be candid that the series has no proven prompt baseline; do not borrow success from another series and mislabel it as this series' lineage.
+9. If the user explicitly names a particular prompt or approved image as the baseline, follow that choice after verifying its identity and availability.
+10. If series membership or the correct branch is genuinely ambiguous and would materially change the result, ask one focused question. Otherwise use the clearest current context and record the classification as provisional.
+
+The goal is not to copy the latest prompt mechanically. Preserve its series-specific creative spirit, established successes, and intentional evolution. Make only the changes requested for the next entry, and keep all unmentioned locked features unchanged.
+
 ### Default iteration rule — build on proven success without redundant generation
 
 **Do not generate a new image merely to edit it immediately afterward. Choose the
@@ -286,9 +384,13 @@ next operation based on what actually succeeded: the prompt, the image, or both.
    successful parts and revise only what needs improvement. If a proven prompt
    exists that achieved the desired direction, prefer it over speculative
    rewrites.
-6. **Multiple attempts:** Build from the strongest successful prompt or approved
-   image—not automatically from the most recent attempt. Failed attempts are
-   diagnostic evidence, not new baselines.
+6. **Multiple attempts within a series:** Inspect the chronologically most recent
+   prompt in the active series first. When it succeeded, build from it. When it
+   failed or missed a defining requirement, use the most recent successful prompt
+   in that same series as the execution baseline and selectively retain valid
+   requested changes from the later attempt. Do not substitute the strongest
+   prompt from another series. Failed attempts remain diagnostic evidence, not
+   successful baselines.
 7. **Image-source verification:** A generation ID, filename, local path, archived
    note, or textual mention is not an image attachment. Use a direct edit only
    when the exact source is accessible and can be supplied through a supported
@@ -351,10 +453,12 @@ Before rewriting a prompt after a refusal, repeated failure, or user correction:
    full relevant entries in the chronological prompt history and the actual
    approved image assets. Do not rely on memory, a short summary, or the most
    recent failed prompt alone.
-2. **Find the strongest comparable success.** Match the intended subject,
-   wardrobe, pose, framing, mood, and rendering style. A prior successful
-   prompt that achieved the same visual direction is a stronger baseline than
-   a speculative rewrite.
+2. **Find the correct series baseline first.** Identify the active primary
+   series and inspect its most recent prompt. Use the most recent successful
+   prompt in that same series as the execution baseline. A success from another
+   series is not a substitute merely because it shares a subject, outfit, mood,
+   or rendering style. Only when no series applies should you search for the
+   strongest comparable success across the broader prompt history.
 3. **Audit prompt drift.** Compare the user's actual brief and successful
    baseline against the new authored prompt. Identify every assistant-added
    element, including identity-preservation claims, extra scene details,
@@ -465,7 +569,7 @@ These steps are part of the normal drawing workflow, not optional cleanup after 
 
 ### E3. Reuse user-approved visual references
 
-Before writing a new prompt, inspect `images/reference-index.md` and the relevant chronological prompt history. A user-approved successful image is a stronger starting point than speculative rewording.
+Before writing a new prompt, identify the active series and inspect its chronological prompt history, then inspect `images/reference-index.md` for relevant approved assets. Within a series, the most recent successful prompt in that series is the normal prompt baseline; a user-approved successful image is a visual starting point when the exact asset is available and the requested operation supports it.
 
 For the realistic silk-wrap portrait direction, attempt 33 is the successful authored-prompt base. Its two approved reference images are indexed at `images/reference-index.md`:
 - `realistic-silk-wrap-portrait-soft-gaze-01.png`: slightly wider portrait and softer framing.
@@ -483,7 +587,7 @@ When the user approves generated images for future inspiration, preserve their d
 
 ### E4. Consult and maintain the successful-prompt index
 
-Before drafting a new image prompt, consult `prompts/successful-image-prompts-index.md` first, then the full chronological image log. Reuse the strongest relevant successful prompt and its linked image assets as the starting point; do not elevate partial, rejected, or missed-target results into successful references.
+Before drafting a new image prompt, identify the active series. Consult its full chronological prompt history first, then `prompts/successful-image-prompts-index.md` and the broader chronological image log as needed. Within that series, inspect the newest prompt first and use the most recent successful prompt in that same series as the normal execution baseline. Do not let a stronger prompt from an unrelated series displace this lineage. Do not elevate partial, rejected, or missed-target results into successful prompt references.
 
 After an attempt is finalized:
 - If it is a genuine successful match, add it to the separate success-only index with a direct link to its prompt entry and the resulting image(s).
