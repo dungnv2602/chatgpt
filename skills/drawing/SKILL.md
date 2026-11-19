@@ -477,9 +477,12 @@ Before rewriting a prompt after a refusal, repeated failure, or user correction:
    summary, or the most recent failed prompt alone.
 2. **Find the correct series baseline first.** Identify the active primary
    series and inspect its most recent prompt. Use the most recent successful
-   prompt in that same series as the execution baseline. A success from another
-   series is not a substitute merely because it shares a subject, outfit, mood,
-   or rendering style. Only when no series applies should you search for the
+   prompt in that same series as the execution baseline. If no series applies
+   but the work is an identifiable continuation of one artwork/thread, use the
+   most recent successful prompt for that exact thread. A success from another
+   series or artwork is not a substitute merely because it shares a subject,
+   outfit, mood, or rendering style. Only when neither a series nor an exact
+   continuing artwork/thread can be identified should you search for the
    strongest comparable success across the broader prompt history.
 3. **Audit prompt drift.** Compare the user's actual brief and successful
    baseline against the new authored prompt. Identify every assistant-added
