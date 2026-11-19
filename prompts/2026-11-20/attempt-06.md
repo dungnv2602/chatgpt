@@ -62,3 +62,8 @@
 - **Assistant decision:** Stop further repeated source-edit attempts through this route. The tool has not demonstrated reliable parent linkage for the generated asset despite the explicit reference argument. Preserve Attempt 04 as the best provisional visual direction; do not let this failed result replace it. Do not change the face or outfit as a workaround. Any future exact edit must begin with the actual source image supplied through a verifiably supported image attachment route; otherwise a fresh generation must be described honestly as a new interpretation, not a localized edit.
 
 The prompt is committed before the image call. Record returned source/parent metadata, inspect the output, and score each criterion separately. If source linkage remains absent, classify it as a fresh generation, stop further edit retries, and report the limitation.
+
+
+## User approval — 2026-11-20
+- **Attempt 05:** Approved as the **casual path**. This is a user approval of the image/branch for casual-path continuity; it does not retroactively confirm source linkage or promote the prompt to a successful edit baseline.
+- **Attempt 06:** Approved as the **sweet path**. This is a user approval of the image/branch for sweet-path continuity; it does not retroactively confirm source linkage or erase recorded mismatches.
