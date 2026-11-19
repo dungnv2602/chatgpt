@@ -12,7 +12,7 @@ status: approved
 - **Sequence in Novel:**
 - **Status:** Planned / Outlined / In Progress / Completed / Superseded
 - **Timeline Covered:**
-- **Canon State of Arc Direction:** Approved / Partly Approved / Proposed
+- **Canon State of Arc Direction:** Established / Partly Established / Proposed / Open
 
 ## 2. Arc Overview
 - **Premise:**
