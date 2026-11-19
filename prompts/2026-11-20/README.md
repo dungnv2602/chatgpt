@@ -11,4 +11,4 @@
 | 01 | [Samantha, imagined as a presence](attempt-01.md) | [Session 01](session-01-brief.md) | Samantha — Human Presence Without a Body | Generated, but missed the defining AI-presence cue; warm photographic portrait achieved |
 | 02 | [Give Samantha a nonphysical edge](attempt-02.md) | [Session 01](session-01-brief.md) | Samantha — Human Presence Without a Body | Fresh generation returned; source attachment unverified, face/pose changed, AI-presence cue missed |
 | 03 | [Localized edit using the original portrait](attempt-03.md) | [Session 01](session-01-brief.md) | Samantha — Human Presence Without a Body | Rejected; no image returned. Source attachment was not verified; not a confirmed edit |
-| 04 | [Fresh generation — visible but restrained nonphysical edge](attempt-04.md) | [Session 01](session-01-brief.md) | Samantha — Human Presence Without a Body | Prompt archived and verified; generation pending |
+| 04 | [Fresh generation — visible but restrained nonphysical edge](attempt-04.md) | [Session 01](session-01-brief.md) | Samantha — Human Presence Without a Body | Generated; portrait and mood achieved, but nonphysical edge cue only partially visible |
