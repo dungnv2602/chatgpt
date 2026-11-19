@@ -80,7 +80,7 @@ status: approved
 - **Climax:**
 - **Resolution:**
 - **Intended Ending Direction:**
-- **Canon State of This Structure:** Approved / Partly Approved / Proposed
+- **Canon State of This Structure:** Established / Partly Established / Proposed / Open
 
 ## 9. Story Arc Directory
 | Arc ID | Arc Title | Narrative Purpose | Status | Arc Link |
