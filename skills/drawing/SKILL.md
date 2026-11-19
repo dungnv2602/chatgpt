@@ -788,9 +788,11 @@ actually uploaded and verified.
 **Active-session reminder:** While the drawing session being discussed is
 Active or Paused, end each response that continues or discusses that session
 with a brief reminder that it remains open and the user can say `end session`
-if they want formal closeout. This reminder is unobtrusive, does not interrupt
-drawing or require a reply, and stops once the session is Closed. It is not a
-closeout trigger.
+if they want formal closeout. This reminder is unobtrusive and does not
+interrupt drawing or require a reply. Once the user invokes `end session`,
+suppress the reminder during closeout; resume it only in later responses if
+closeout cannot be completed and the session remains open. Stop reminding once
+the session is Closed. The reminder is not a closeout trigger.
 
 All repository work must use branch `gpt` and remain strictly inside
 `approved project directories`.
