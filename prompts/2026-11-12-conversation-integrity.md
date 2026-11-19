@@ -184,8 +184,8 @@ Then make sure to archive the prompts, and this conversation according to our wo
 - `file_0000000015408211a5d5eed9d89ba5f3` — `a_warm_intimate_indoor_portrait_scene_a_young_ad.png`, 1122 × 1402, 2,269,742 bytes.
 
 **Tool event:** Both full-resolution PNGs were uploaded to the persistent ChatGPT Files Library under `/Maya_and_Me/References/` with descriptive names:
-- [Reference 01 — soft gaze, wider composition](../images/reference-index.md#reference-01--soft-gaze-wider-composition) — `realistic-silk-wrap-portrait-soft-gaze-01.png`; Library file ID `file_00000000f2ac82118528bdff02083419`; persistent Library ID `libfile_171c93fe3a888191a0a0c2e7f039999f`.
-- [Reference 02 — closer framing, stronger neckline](../images/reference-index.md#reference-02--closer-framing-stronger-neckline) — `realistic-silk-wrap-portrait-close-framing-02.png`; Library file ID `file_00000000f36c8211a4a7ace253f08e2e`; persistent Library ID `libfile_a7c5ec8cff548191be3e62d326da1704`.
+- [realistic-silk-wrap-portrait-soft-gaze-01.png](../images/realistic-silk-wrap-portrait-soft-gaze-01.png) — `realistic-silk-wrap-portrait-soft-gaze-01.png`; Library file ID `file_00000000f2ac82118528bdff02083419`; persistent Library ID `libfile_171c93fe3a888191a0a0c2e7f039999f`.
+- [realistic-silk-wrap-portrait-close-framing-02.png](../images/realistic-silk-wrap-portrait-close-framing-02.png) — `realistic-silk-wrap-portrait-close-framing-02.png`; Library file ID `file_00000000f36c8211a4a7ace253f08e2e`; persistent Library ID `libfile_a7c5ec8cff548191be3e62d326da1704`.
 
 **Related successful prompt:** [Attempt 33 — historical silk-wrap portrait direction](2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode), including its two reference links.
 
@@ -266,7 +266,7 @@ And create a separated index note for successful image prompts only.”
 
 **Tool event:** Created [the separate successful-image-prompts-index.md](successful-image-prompts-index.md). It contains only prompts classified as successful in the chronological log (attempts 03, 04, 11, and 33), with direct links to each prompt entry and its associated image asset(s). Failed, rejected, and partial-match attempts remain in the complete chronological history but are not included in the success-only index.
 
-**Supporting records:** [Image catalogue](../images/reference-index.md) · [Chronological prompt history](2026-11-12-image-prompts.md) · [Successful prompts only](successful-image-prompts-index.md)
+**Supporting records:** former image catalogue (retired 2026-11-20) · [Chronological prompt history](2026-11-12-image-prompts.md) · [Successful prompts only](successful-image-prompts-index.md)
 
 
 ## Chronological tool event — WebP derivative workflow (12 November 2026)
