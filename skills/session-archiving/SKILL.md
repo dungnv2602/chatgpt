@@ -29,13 +29,13 @@ This boundary applies to every future task and every tool call, not only archivi
 - Images and visual references: `images/`
 - Canonical master reference documents: `master/`
 - Novel and scene records: `novel/`
-- Session records and individual image prompts: `prompts/`
+- Session-level records and non-novel image-prompt logs: `prompts/`
 - Reusable skills and supporting references: `skills/`
 - Use `gpt` as the sole working branch for all future repository operations. Do not use the former `artwork/portrait-attempt-2026-11-10` branch. Do not modify `main` unless the user explicitly authorizes it.
-- New session records belong in `prompts/`:
+- Session-level conversation-integrity and summary records belong in `prompts/`:
   - `prompts/YYYY-MM-DD-conversation-integrity.md`
   - `prompts/YYYY-MM-DD-summary.md`
-  - `prompts/YYYY-MM-DD-image-prompts.md`
+- Non-novel image attempts use the dated `prompts/YYYY-MM-DD/` structure below. Named novel-scene illustrations use their authoritative scene-local prompt records under `novel/`; do not duplicate their prompt text or attempt history in `prompts/`.
 - Store new visual assets explicitly destined for the repository under `images/`.
 - Keep skills and supporting references under `skills/`.
 
@@ -138,9 +138,9 @@ Separate confirmed facts from hypotheses. Do not repeat unsupported explanations
 
 This is the operational history of image generation and editing.
 
-### Daily folder and one-note-per-attempt format
+### Daily folder and one-note-per-attempt format for non-novel drawing work
 
-Organize image prompts by date. Each calendar day is a folder under `prompts/`, and each image-generation or image-edit attempt is its own Markdown note:
+For non-novel drawing work, organize image prompts by date. Each calendar day is a folder under `prompts/`, and each image-generation or image-edit attempt is its own Markdown note. **Exception:** for an illustration belonging to a named novel scene, the scene-local prompt record under `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/` is authoritative. Keep that novel attempt there and do not duplicate it in the daily `prompts/` folder.
 
 ```text
 prompts/
@@ -163,7 +163,7 @@ prompts/
 
 ### Mandatory pre-attempt rule
 
-**Commit the authored prompt in its own dated attempt note under `prompts/YYYY-MM-DD/` before every image-generation or image-edit attempt.** This applies whether the next attempt is expected to succeed, is exploratory, or is a revision. Never generate first and archive later.
+**Commit the authored prompt in its authoritative location before every image-generation or image-edit attempt.** For non-novel work, use its own dated attempt note under `prompts/YYYY-MM-DD/`. For a named novel scene, use its scene-local illustration prompt record under `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/`. This applies whether the next attempt is expected to succeed, is exploratory, or is a revision. Never generate first and archive later, and never duplicate a novel-scene prompt in the root `prompts/` history.
 
 Before drafting the next prompt:
 1. Read the authoritative chronological prompt history for the exact artwork thread
@@ -241,7 +241,7 @@ Maintain one separate file at `prompts/successful-image-prompts-index.md`. This 
 4. Preserve caveats when a particular detail was not verified, when the successful output fulfilled a revised brief, or when a user-approved visual keeper is not itself proof of prompt success.
 5. Keep the success index as a discovery aid. Determine which prompt is most recent from the chronological source records within the active series; never infer recency from the order of index entries.
 6. Update the successful-only index when an attempt's result is finalized or when an image is renamed. Keep failed and partial attempts in the chronological history only, unless the user separately approves an image as a visual keeper; then list it in the user-approved-output section without disguising the prompt's actual outcome.
-7. Link the successful-only index from the chronological image log and from the session summary. Read back the index and all changed files after writing.
+7. Link the successful-only index from the chronological non-novel image log and from the session summary. For a novel-scene prompt, link the scene-local record without copying its prompt text into the root log. Read back the index and all changed files after writing.
 
 Do not silently promote a merely generated image to a success. Use the outcome classification and visual inspection recorded in the chronological log. A user-approved image whose originating prompt is known may qualify as a successful prompt/result pair when the user's approval clearly accepts that attempt as successful; preserve the user's attribution. If the prompt mapping or scope of approval is uncertain, keep it as an approved visual asset only and continue using the latest verified successful prompt as the text baseline.
 
@@ -254,7 +254,7 @@ When the user asks to retain generated or uploaded images as reusable references
 3. If the current GitHub connection cannot transfer binary files, preserve the original image in the persistent Files Library using a descriptive name, and create `images/reference-index.md` as a tracked pointer. Record the exact Library path, stable file ID, source generation ID, original artifact name, dimensions, byte count, and SHA-256 checksum when available.
 4. State clearly whether an asset is stored in GitHub, the persistent Files Library, or only the conversation. A Markdown index in GitHub does not mean that the image binary is in Git.
 5. Link user-accessible Library assets through the supported file-navigation UI in the final response. Do not invent a URL for a Library item.
-6. In the image-prompt log, link each successful attempt to the relevant reference-index entry. In the conversation-integrity file, record the user's approval and the exact storage actions as tool events.
+6. In the authoritative attempt record (the dated non-novel log or the novel scene-local prompt record), link each successful attempt to the relevant reference-index entry. In the conversation-integrity file, record the user's approval and the exact storage actions as tool events.
 7. Update the drawing skill when the user-approved images establish a reusable visual direction. Distinguish visual inspiration references from verified edit sources.
 
 ### Mandatory uploaded-image rename and cross-link procedure
@@ -269,7 +269,7 @@ For each image the user uploads as part of the Maya & Me image workflow:
 6. If the current GitHub connection cannot transfer binary files, preserve the exact user-uploaded original in the persistent Files Library only when it can be filed within the assigned `images/` path. Create `images/reference-index.md` as a tracked pointer. Record the exact path, stable file ID, source generation ID, original artifact name, dimensions, byte count, and SHA-256 checksum when available. Do not create a fallback folder elsewhere.
 7. State clearly whether an asset is stored in GitHub, the persistent Files Library, or only the conversation. A Markdown index in GitHub does not mean that the image binary is in Git.
 8. Link user-accessible Library assets through the supported file-navigation UI in the final response. Do not invent a URL for a Library item.
-9. In the image-prompt log, link each successful attempt to the relevant reference-index entry. In the conversation-integrity file, record the user's approval and the exact storage actions as tool events.
+9. In the authoritative attempt record (the dated non-novel log or the novel scene-local prompt record), link each successful attempt to the relevant reference-index entry. In the conversation-integrity file, record the user's approval and the exact storage actions as tool events.
 10. Update the drawing skill when the user-approved images establish a reusable visual direction. Distinguish visual inspiration references from verified edit sources.
 
 Do not finish a drawing-session archive while an uploaded keeper image remains under an opaque temporary filename or while its successful prompt and conversation event lack direct links.
@@ -304,10 +304,11 @@ When an uploaded image is already present in `images/` under an opaque or tempor
 
 ## 9. Default handoff for a new chat
 
-Start by reading the relevant records inside `prompts/` only. Then:
+Start by reading the relevant session records inside `prompts/` and, when continuing a novel illustration, the relevant scene-local records inside `novel/`. Then:
 - Treat the conversation-integrity file as the source for what was said.
 - Treat the summary as a quick orientation, not a replacement for the record.
-- Treat the image-prompt file as the authoritative chronological record for generation work.
+- Treat the dated image-prompt notes as authoritative for non-novel generation work.
+- Treat the scene-local illustration prompt record as authoritative for that novel scene; it takes precedence over any general session summary and is not duplicated in `prompts/`.
 - Continue from the latest incomplete task.
 - Follow the pre-attempt commit rule before generating or editing another image.
 - Never read or write anything outside `approved project directories`.
