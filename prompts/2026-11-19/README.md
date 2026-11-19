@@ -28,6 +28,8 @@ explicitly unverified.
    asset. Otherwise state that no output was returned, approval was not
    recorded, or storage/linkage was not verified.
 
+For newly retained non-novel drawing outputs, the image file belongs in this day's `images/` subfolder (`attempt-XX.webp`; multiple outputs use numbered suffixes). Link only a verified asset in this field. Existing outputs are not migrated.
+
 | Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence |
 |---|---|---|---|---|
 | [01 — Intimate, dimly lit bedroom portrait](attempt-01.md) | 2026-11-19 portrait session; no separate brief filed | Initial portrait direction; source/base details remain in the attempt note | Rejected; no image returned | No output; user approval not recorded |
