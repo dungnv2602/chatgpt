@@ -206,8 +206,8 @@ Then make sure to archive the prompts, and this conversation according to our wo
 > You're right. I overstepped by preparing JPEG derivatives and by placing the reference files in a separate Library folder. The originals are PNGs, and the workflow should preserve them exactly. I’m correcting the filing location to a `ChatGPT/images` reference folder, updating the links, and making the skills explicit: **no conversion, no resizing, no derivatives, and no file creation or editing outside the assigned workspace unless you explicitly authorize it.**
 
 **Tool event:** Both full-resolution PNG originals were moved, without content changes or format conversion, from the earlier persistent Library folder into `/ChatGPT/images/`:
-- [Reference 01 — soft gaze, wider composition](../images/reference-index.md#reference-01--soft-gaze-wider-composition) — `realistic-silk-wrap-portrait-soft-gaze-01.png`.
-- [Reference 02 — closer framing, stronger neckline](../images/reference-index.md#reference-02--closer-framing-stronger-neckline) — `realistic-silk-wrap-portrait-close-framing-02.png`.
+- [realistic-silk-wrap-portrait-soft-gaze-01.png](../images/realistic-silk-wrap-portrait-soft-gaze-01.png) — `realistic-silk-wrap-portrait-soft-gaze-01.png`.
+- [realistic-silk-wrap-portrait-close-framing-02.png](../images/realistic-silk-wrap-portrait-close-framing-02.png) — `realistic-silk-wrap-portrait-close-framing-02.png`.
 
 **Tool event:** The now-empty `/Maya_and_Me/References/` Library folder was deleted. The full-resolution PNG assets remain in the persistent Files Library, in the assigned `/ChatGPT/images/` folder. GitHub stores the Markdown reference index and cross-links; it does not contain the PNG binary blobs.
 
@@ -229,7 +229,7 @@ Then make sure to archive the prompts, and this conversation according to our wo
 
 **Rename commit:** `ba7d05ea479e101f61b999b86e1d965d7f957215` on branch `chatgpt`. The branch tree was read back: both descriptive filenames are present, both old opaque names are absent, and each new path retains its original blob SHA and byte size.
 
-**Tool event:** The [reference index](../images/reference-index.md) and [attempt 33 successful prompt entry](2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode) were updated with direct links to the committed image files. This corrects the earlier state in which only the Files Library copies had descriptive names while GitHub still displayed opaque filenames.
+**Tool event:** The former reference index (retired 2026-11-20) and [attempt 33 successful prompt entry](2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode) were updated with direct links to the committed image files. This corrects the earlier state in which only the Files Library copies had descriptive names while GitHub still displayed opaque filenames.
 
 ## 23. Remaining opaque image assets renamed and successful-prompt index created
 
