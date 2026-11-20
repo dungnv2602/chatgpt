@@ -388,3 +388,17 @@ Use this template:
 - **Additional file review:** Fetched `images/takeout/HANDOFF.yml` from branch `gpt`. It contains current `drawings/2026-11-19/images` destination paths. It contains no obsolete `prompts/`, `promts/`, or `ChatGPT/` workspace-root reference.
 - **Disposition:** No file change was needed. This entry corrects the inventory count. It does not claim a new full-repository link scan.
 - **Audit status:** The Version 17 relative-link and full-document lint results remain as recorded. The audit remains open while the 179 hard lint findings and the documented historical-link and heading-anchor work remain unresolved.
+
+### Version 19 — Active Markdown heading-anchor audit
+
+- **Date:** 2026-11-20
+- **Scope:** Checked links in 119 active Markdown files. The scan excluded `drawings/history/`, `master/`, `novels/templates/`, `skills/prompt-master/`, and `skills/asd-ste100/examples/` as source files.
+- **Destination inventory:** The checker indexed all 166 Markdown files. Excluded files remained valid link destinations.
+- **Link result:** Checked 262 local Markdown links. Found zero unresolved Markdown targets or heading anchors.
+- **Corrections:** Fixed five links in `drawings/2026-11-19/README.md`. The links now use the GitHub heading anchor with a double hyphen for the em dash.
+- **Checker:** Added `skills/asd-ste100/scripts/check_markdown_anchors.py`. Added the check to `.github/workflows/ste-lint-full-docs.yml`.
+- **CI:** Full-document run `44698774629` passed. Changed-document run `44698774600` passed. Both runs checked commit `837f415b040c8d0cbcc16eff77cedc732433acce`.
+- **Lint result:** The full run checked 37 technical Markdown files. It reported 179 hard findings and 300 advisory findings. Each file stayed at or below its recorded hard-finding baseline. The linter self-test passed.
+- **Scope reconciliation:** Version 17 reported 121 active Markdown files. This repeatable scan found 119 files under the exclusions listed above. The Version 17 entry does not record its exact file list, so the two counts are not equivalent. Keep this discrepancy open until the earlier scan scope can be reconstructed.
+- **Validation limits:** The checker does not test external URLs. It checks local Markdown file targets and GitHub-style heading anchors from active source files. It indexes excluded files as link destinations.
+- **Remaining work:** Reduce the 179 existing hard findings without raising baselines. Review historical link records only after the user authorizes changes. Reconcile the 121-file and 119-file scan scopes.
