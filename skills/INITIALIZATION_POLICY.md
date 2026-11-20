@@ -187,10 +187,32 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
 - **Manual screening:** Scans checked semicolons, selected phrasal verbs, marketing adjectives, selected nominalizations, and instruction sentence length in revised files. The scans found two semicolons, one missing sentence boundary, one nominalized verb phrase, and several long instructions. Those findings were corrected and read back.
 - **Latest reference scan:** A targeted scan of four Drawing, archive, and curriculum references found no semicolons, selected phrasal verbs, marketing adjectives, or tested nominalization patterns. The scans do not test every STE rule.
 - **Path-policy conflict:** The Session Archiving skill lists five approved roots: `images/`, `master/`, `novels/`, `prompts/`, and `skills/`. The same skill and its references also direct non-novel drawing assets to `drawings/YYYY-MM-DD/images/`. That path is outside the listed roots. I did not change the boundary or access the `drawings/` path. Resolve this conflict before further work in that path.
-- **Inventory limit:** The exact path `master/README.md` returned 404. The available GitHub tools do not provide a permitted directory listing for `master/`. Its other files remain uninspected.
-- **Remaining work:** Audit any remaining skill and technical reference documents. Run the official linter in a repository execution environment. Review every finding. Verify links and technical meaning.
+- **Master inventory:** The initial fetch of `master/README.md` returned 404. A later read-only directory listing found `master/Images.md`, `master/Poses.md`, and `master/Prompts.md`. The directory has no README. Review classified these files as prompt, pose, and creative source material. They remain unchanged.
+- **Remaining work:** Continue auditing any unreviewed technical documents. Run the official linter in a repository execution environment and review its findings. Resolve the `drawings/` workspace conflict before following historical archive links. The `prompts/` directory listing returned 404, so its contents remain unverified.
 - **Commits:** `1cc5e5d623e8200316d009dc2219a74287c591fc`, `f898c0bd2fc68a123df16f1b0b6ce44d13ba7e9d`, `82df4add11b03428ac1a49ba948e24ccf9e78e35`, `5bf95f28bc4cbbd645ae86fc4407fbdc32826b01`, `29a58b17304c56e986e39af15d2867b955e17665`, `2333a0378f0f6aebad5bdd7b31801d57ee04dfb0`, `5f1a78b68e655e10160d852fd81be65d937f4111`, `f47d07242b7605dded9d17b2ba82425e34e48cd2`, `3f223f69f1aaff0da7643f81ea58ce950746085d`, `11752c6e9eeaabe66580ae3d69de46e3ef6f649a`, `29103811aba608d25914d699473685f6b06cebc3`, `f56f8385c2f96ca0f8a29e64f925071511aa8363`, `91e427e1f4a63246a78b1c0eab596d2abb649284`, `01fde065c45c98b4ee7b4cce399417cfc2595e85`, `50a972bbbaa0a84231cc0dfeaf9b0305f3a19374`, `0e5e4d60adcd319fa0ad252d6bebed7e06b02122`, `2b3e4591b72bb32b61707c1e73efef4f03a99cf9`, `eae21daa515a6c6838259e72722f773c698c3d2e`, `055ee65bfe5b288100a69ea9087b7cbee469da88`, `cd8764c39910e6fd84e00824b4d506fa0408a80b`, `7071f87b33911da4f76a59aca9ffd64226b78a47`, `bfb881d37aa96b3efffcbe628053cc235ea1fbac`, `9dc453ea7df070edaa5a38bd5fa49b4459631a11`, `548fe068a33a5be753b55f0f04b96268c990b871`, `7148f3a9218845fc46a55d7d461c6b252fb73442`, `dcc8f6cc9eef17ae14babc2d9d7ee2cea398452d`, `248e444a8a8865b7e77efa0f89f63848f7cbe93b`, `2e68385e3cf4d8c9c8a8ac57c3e78f3cdd467b87`, `703e9f258adc015d76962f7e8484313cea6e0fbb`, `dbab4dbb61a714d53962cd2968e331ca9b61325c`, and `af6fac5b108cdfa061e72ee4f75f4837fb4b3f1c`.
  
+### Version 7 — Third repository documentation audit pass
+
+- **Date:** 2026-11-20
+- **Change:** Revise Prompt Master, Romantic Storyteller, and Drawing pattern documentation. Expand read-only directory inventory for approved repository roots.
+- **Files modified:**
+  - `skills/romantic-storyteller-visual-artist/SKILL.md`
+  - `skills/prompt-master/SKILL.md`
+  - `skills/prompt-master/references/templates.md`
+  - `skills/drawing/references/patterns/README.md`
+  - `skills/drawing/references/patterns/PATTERN-TEMPLATES.md`
+  - `skills/drawing/references/patterns/failure-patterns.md`
+  - `skills/drawing/references/patterns/successful-patterns.md`
+- **Review-only files:** `skills/prompt-master/references/patterns.md`, `skills/drawing/README.md`, `skills/asd-ste100/README.md`, `skills/philosophy-religion-asceticism/CHANGELOG.md`, and `skills/prompt-master/README.md`. The Prompt Master README contains marketing copy and product examples. The policy excludes marketing copy and approved examples from controlled-language rewrites.
+- **Preserved source material:** `master/Images.md`, `master/Poses.md`, and `master/Prompts.md` contain prompts, pose ideas, and creative text. They were inspected and left unchanged. Prompt templates, worked examples, and historical pattern evidence were also preserved except for nearby explanatory prose.
+- **Inventory:** Read-only listings verified the contents of `skills/`, `skills/*/references/`, `skills/drawing/references/patterns/`, and `master/`. The root `prompts/` listing returned 404. Do not infer that the directory is empty.
+- **Drawing archive links:** The pattern indexes contain historical links into `drawings/`. That root remains outside the approved workspace roots listed by Session Archiving. I did not follow or modify those links. Their targets remain unverified.
+- **Link checks:** Internal links in the revised Prompt Master, Romantic Storyteller, and Drawing pattern files point to existing repository paths. Historical `drawings/` links remain unverified.
+- **Manual screening:** The edited prose was checked for semicolons and selected sentence-length, phrasal-verb, and structural patterns. The identified findings were revised and read back. These checks are limited and do not replace the official linter.
+- **Validation limit:** The official `skills/asd-ste100/scripts/ste-lint.py` was not run. This environment provides repository file and read-only GitHub API operations, but no repository shell or workflow-dispatch action.
+- **Read-back verification:** Every changed file was fetched from branch `gpt` after its write. The returned content matched the submitted content.
+- **Commits:** `67d88bab7ae188d7c4c5651ebce2e631e88cdda1`, `b7c6d71540efa42d6537cb26cf4ff289a7d69691`, `67ef8472779deac010ba294650fbaa708dab1db1`, `9fa6cbaf7251014a84de3d6f90fda9a1602b467b`, `32d2b9b28e43e9166149bb9e8614ee46ec1b90f4`, `b9f1a49c61e5523eaa1f07d8f22d366869fda82d`, `7157070e5fc3182140ae2bfb5a43ef9d16f96030`, `75b7a9a9c577e48c2fa76b149c6328fbd4e88f4a`, `0a07bcedfa8d1f08a57885c68006dc418cfd1e70`, `b45db648a96f7043de442c5749ecf6b2eab169dc`, `3c5ef19ffc65eeadacad930e916eb90c40b62903`, and `07b42dad84ddda25eb14f242d62850918e876dc0`.
+
 ## Future revision log
 
 Append a new entry whenever the initialization policy or its dependencies change.
