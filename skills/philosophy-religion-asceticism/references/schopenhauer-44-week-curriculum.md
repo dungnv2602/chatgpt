@@ -12,7 +12,7 @@ or redistribute weeks when difficult arguments require more time.
 Use this pathway when the user asks for a Schopenhauer reading plan, weekly
 assignment, progress check-in, or full-system study. Do not force the whole
 curriculum into a focused question about one concept or passage. When offering
-a weekly check-in, use the user's reported progress; do not assume that a week
+a weekly check-in, use the user's reported progress. Do not assume that a week
 has been completed. If a week remains unfinished, consolidate or adapt it
 rather than advancing automatically.
 
@@ -104,8 +104,8 @@ sequence and use Volume II's supplements to clarify, extend, or complicate the
 corresponding arguments. Do not treat the supplements as a replacement for
 Volume I.
 
-- **Week 6 — Book I: world as representation.** Subject and object; the forms
-  of representation; the role of the knowing subject. Output: a concise
+- **Week 6 — Book I: world as representation.** the subject and object, the forms
+  of representation, and the role of the knowing subject. Output: a concise
   reconstruction of the basic representational thesis.
 - **Week 7 — Book I: empirical reality and causality.** Matter, causation,
   empirical objects, and the relation between ordinary experience and the
@@ -150,7 +150,7 @@ Volume I.
 **Aim:** deepen the aesthetic stage of the system through Vasalou and relevant
 specialist chapters in the *Oxford Handbook*.
 
-- **Week 18 — Aesthetic standpoint and contemplation.** Begin Vasalou; examine
+- **Week 18 — Aesthetic standpoint and contemplation.** Begin Vasalou. Examine
   the aesthetic standpoint as a distinctive mode of cognition and practice.
   Output: a one-page thesis-and-argument summary.
 - **Week 19 — The sublime, subjectivity, and philosophical practice.** Continue
@@ -287,9 +287,10 @@ projecting later categories onto his work.
   and salvation?* The essay must use primary-text evidence and engage at least
   three relevant specialist scholarly interpretations.
 - **Week 44 — Revision and companion arguments.** Revise the main essay and
-  prepare two shorter companion essays: (1) whether compassion can be defended
-  independently of denial of the Will; and (2) whether Schopenhauer's account
-  of salvation follows from, or ultimately strains, his metaphysics. Complete a
+  prepare two shorter companion essays. The first asks whether compassion can be
+  defended independently of denial of the Will. The second asks whether
+  Schopenhauer's account of salvation follows from, or ultimately strains, his
+  metaphysics. Complete a
   final system map and a list of open research questions.
 
 ## Assessment checkpoints
@@ -324,11 +325,16 @@ or exact weekly divisions within a book, verify the table of contents and
 pagination of the specific edition the user has. Do not infer chapter-level
 peer review from a handbook publisher's reputation. The *Oxford Handbook* is
 to be read selectively by topic during the curriculum and more systematically
-for influences and reception in Weeks 40–42; chapter numbering should be
-checked against the copy in use rather than hard-coded into this plan.
+for influences and reception in Weeks 40–42. Check chapter numbering against
+the copy in use. Do not hard-code it into this plan.
 
 The Cambridge Edition is the primary-text base, but not every work named in the
 wider-corpus phase necessarily appears in the same volume. Check the actual
 series contents and use another reputable edition only when necessary, clearly
 identifying it. Do not invent page numbers or assume that pagination carries
 over between print, ebook, and other editions.
+
+
+## Technical documentation standard
+
+Apply the repository [ASD-STE100 policy](../../asd-ste100/references/repository-writing-policy.md) when you revise this curriculum. Use STE-flavored mode for explanatory material. Preserve book titles, author names, reading sequence, and bibliographic qualifications.
