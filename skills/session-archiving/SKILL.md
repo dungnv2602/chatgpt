@@ -708,6 +708,23 @@ flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
   reading back the published assets and reports.
 
 
+## Generation provenance and output mapping workflow (approved 2026-11-20)
+
+Capture provenance at generation time for every drawing session; do not rely on retrospective reconstruction.
+
+- **Before generation:** assign internal session, attempt, and prompt IDs; reserve output IDs such as `A001-O01`, `A001-O02`. These are archive identifiers, not native platform identifiers. Preserve exact authored prompt and generation/edit operation.
+- **Immediately after generation:** capture every returned image in returned order and associate each directly with its attempt/output record. Record the actual output count. Remove unused reserved slots; do not create phantom outputs. Do not map by filename, visual similarity, chronology alone, or memory when direct association exists.
+- **Native IDs:** record platform Generation ID and image/output ID only when exposed. Keep them separate from internal IDs. If unavailable/not exposed, state that; never invent IDs.
+- **Original bytes:** preserve original image bytes when accessible. If not, record the limitation; screenshots, thumbnails, and recompressed copies are not substitutes for original bytes.
+- **Mapping evidence:** direct generation-return association or reliable source metadata can support Verified. Chronology and visual comparison may corroborate but cannot alone establish Verified. Mapping statuses are Verified, Corroborated, Probable, Unmapped, or Conflicting. Explain uncertainty and never silently promote a status.
+- **Integrity:** calculate SHA-256 from actual original bytes. Hashes prove byte identity only, not prompt linkage, generation identity, content, or approval. Store original and derivative hashes separately.
+- **Manifest:** one row per output; preserve existing required fields and add internal attempt/output IDs, native Generation ID, native image/output ID, mapping evidence/status, and original-byte availability. Never fabricate IDs, links, hashes, or verification results.
+- **Archive:** retain every output regardless of approval and preserve sequence and prompt association. Use established asset-intake procedures; verify exact paths, blob identity, direct links, and hashes before marking verified.
+- **Latency:** generation must not wait for GitHub, hashing, or archival. Capture/associate outputs immediately, then perform remaining archive work. If capture or archive is incomplete, leave explicit pending/incomplete status.
+- **Closeout:** reconcile generation records, attempt notes, README, manifest, and repository assets; read back changes and report unresolved gaps. Do not mark complete while mandatory checks remain unresolved.
+
+Provenance chain: **Session → Attempt → Prompt → Generation event (native ID if exposed) → Output (internal ID; native output ID if exposed) → original bytes → SHA-256 → archive asset/link**. Internal IDs are archive identifiers, never claims about platform metadata.
+
 ## Mandatory image archive manifest and SHA-256 verification (2026-11-20)
 
 For every drawing session, record **every generated image output**—approved, rejected, pending, partial, off-target, failed, or superseded—without treating approval as a condition for archival or linking. Preserve the generation sequence and exact prompt association. The daily README must link every image directly to its exact GitHub asset after the path/blob is verified. Keep approval status separate from outcome and storage/link verification.
