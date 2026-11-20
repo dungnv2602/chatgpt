@@ -1,6 +1,6 @@
 ---
 name: agent-skill-authoring
-description: Create, revise, validate, organize, and integrate Agent Skills-compatible skill folders. Use when adding or updating skills, editing SKILL.md metadata or references, validating a skill, or deciding whether a skill belongs in the foundational or task-specific loading workflow.
+description: Create, revise, validate, organize, and integrate Agent Skills-compatible skill folders. Use when you add or update a skill, edit its metadata or references, validate it, or choose its initialization tier.
 metadata:
   project-role: foundational
   format: agentskills
