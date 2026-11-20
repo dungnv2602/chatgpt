@@ -318,3 +318,13 @@ Use this template:
 - **Correction:** Changed that path to `drawings/YYYY-MM-DD/`, the canonical non-novel prompt and session archive.
 - **Verification:** Updated the file using its fetched SHA and read it back. Commit: `4914e860d12e7303cf770cd5909ef88aac8f91f3`. Read-back SHA: `dbf2f7fdf20c20a9a640362070f4f559ac5b7f77`.
 - **Limit:** This pass confirms the exact correction. It does not establish that every obsolete path in the repository has been found.
+
+
+### Version 15 — Historical prompt paths and archive template
+
+- **Date:** 2026-11-20
+- **Files updated:** `skills/drawing/references/generation-recovery-and-provenance.md` and `skills/session-archiving/references/archive-records-and-image-prompts.md`.
+- **Issues:** Two historical prompt records were linked through the obsolete `prompts/` root. The non-novel daily archive template also showed the former root.
+- **Corrections:** Updated the historical references to `drawings/history/2026-11-12-image-prompts.md` and `drawings/history/2026-11-13-image-prompts.md`. Updated the daily archive tree to use `drawings/`.
+- **Verification:** Fetched each file before editing and read each updated file back. Recovery-reference commit: `1fc167c692a4af5ada5a411b485247aa7714ff34`. Archive-template commit: `bc0a0b880409e162e39871c6c040123cee7d598a`.
+- **Limit:** Reviewed these exact references only. Other obsolete path references may remain.
