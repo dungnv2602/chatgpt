@@ -1,3 +1,11 @@
+### Completion-time estimate
+
+**Estimated remaining active work: approximately 1–2 hours after you authorize the historical-link review.** The active-source review is recorded as complete, and the latest completed runs for both applicable CI workflows succeeded. The remaining substantive gate is the historical-link review and any safe, link-only corrections in archived task and archive records, followed by the final audit record and closure checks.
+
+This is an estimate, not a guaranteed finish time. The amount of historical material that needs correction may change it. **Without your authorization for historical-record changes, I cannot mark the audit fully complete**; I can only leave it paused at that approval gate.
+
+---
+
 # Open Discussions
 
 ### 2026-11-20 14:25 UTC
