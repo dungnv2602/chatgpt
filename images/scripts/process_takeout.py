@@ -745,10 +745,10 @@ def main() -> int:
         print(msg, file=sys.stderr)
         return 1
     handoff_status = data.get("status")
-    if handoff_status in {"draft", "empty"}:
+    if isinstance(handoff_status, str) and handoff_status in {"draft", "empty"}:
         print(f"Hand-off status is {handoff_status!r}; no-op. Uploaded files remain untouched.")
         return 0
-    if handoff_status != "ready":
+    if handoff_status != "ready" or not isinstance(handoff_status, str):
         batch = f"invalid-run-{args.run_id}"
         folder = attempt_folder(inbox / "history", batch)
         msg = f"HANDOFF.yml status must be 'draft', 'empty', or 'ready'; got {handoff_status!r}."

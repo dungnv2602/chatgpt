@@ -395,6 +395,21 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertTrue((self.inbox / "not-yet-routed.png").exists())
         self.assertFalse((self.inbox / "history").exists())
 
+
+    def test_invalid_unhashable_handoff_status_is_reported_safely(self):
+        (self.inbox / "waiting.png").write_bytes(b"waiting-original")
+        (self.inbox / "HANDOFF.yml").write_text(
+            "version: 1\nstatus: []\nitems: []\n", encoding="utf-8"
+        )
+        result = self.run_processor()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertTrue((self.inbox / "waiting.png").is_file())
+        report = (
+            self.inbox
+            / "history/invalid-run-unit-test/attempt-001/verification-report.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("status must be 'draft', 'empty', or 'ready'", report)
+
     def test_not_ready_handoff_is_noop(self):
         (self.inbox / "waiting.png").write_bytes(b"waiting")
         (self.inbox / "HANDOFF.yml").write_text(
