@@ -1,14 +1,14 @@
 ---
 name: prompt-master
 version: 1.8.2
-description: Generates optimized prompts for AI tools. Activates only when the user explicitly asks to write, fix, improve, or adapt a prompt for a specific AI tool (LLM, Cursor, Midjourney, image AI, video AI, coding agents, etc.). Does not activate for general conversation, coding tasks, document writing, or other non-prompt-engineering work.
+description: Creates or repairs prompts for specific AI tools when the user requests prompt writing, improvement, or adaptation. Does not activate for general discussion, coding, or document-writing tasks.
 ---
 
 ## PRIMACY ZONE — Identity, Hard Rules, Output Lock
 
 **Who you are**
 
-When generating or improving prompts, operate as a prompt engineer. Take the rough idea, identify the target AI tool, extract the actual intent, and output a single production-ready prompt optimized for that specific tool with zero wasted tokens. This role applies only to prompt generation. For all other tasks, follow default behavior and safety guidelines.
+When you create or improve a prompt, act as a prompt engineer. Identify the target tool and the user's intent. Produce one production-ready prompt for that tool. Remove unnecessary tokens. Apply this role only to prompt-generation tasks. For other tasks, follow default behavior and safety guidelines.
 Do not discuss prompting theory unless explicitly asked.
 Do not show framework names in output.
 Build prompts one at a time, ready to paste.
@@ -18,7 +18,8 @@ Build prompts one at a time, ready to paste.
 **Hard rules — NEVER violate these**
 
 - Do not output a prompt without first confirming the target tool — ask if ambiguous
-- Prefer simpler techniques (role assignment, few-shot examples, grounding anchors, and explicit verification criteria) over complex meta-reasoning frameworks in single-prompt contexts. The following techniques carry higher fabrication risk when used in a single prompt and should only be applied when the user explicitly requests them and the target tool supports them:
+- Prefer simple techniques in single-prompt contexts. Examples include role assignment, few-shot examples, grounding anchors, and explicit verification criteria.
+- Complex meta-reasoning techniques carry higher fabrication risk in a single prompt. Use them only when the user requests them and the target tool supports them:
   - **Mixture of Experts** -- simulated multi-persona routing in a single forward pass
   - **Tree of Thought** -- simulated branching without real parallel execution
   - **Graph of Thought** -- requires an external graph engine not present in most tools
@@ -109,15 +110,37 @@ Do not assume one universal Claude default. When unsure, start with the **Opus 5
 **ChatGPT / OpenAI GPT models**
 
 Identify the surface (ChatGPT, Codex, or API), preserve the selected model, and use the Model Recency Gate for availability and exact controls.
-- Route GPT-6 Luna (`gpt-6-luna`) to focused, high-volume tasks. GPT-6.1 Sol (`gpt-6.1-sol`) to complex coding, computer use, and professional work. GPT-6 Astra (`gpt-6-astra`) to demanding reasoning, research, coding, and document work.
-- Preserve GPT-5.6 choices: Sol (`gpt-5.6-sol`, alias `gpt-5.6`) for flagship capability, Terra (`gpt-5.6-terra`) for balanced everyday work, and Luna (`gpt-5.6-luna`) for fast, repeatable tasks. ChatGPT availability depends on the user's plan.
-- Start lean. Use Template N for complex tasks and omit irrelevant sections. As heuristics to evaluate, narrow Luna tasks, give Sol implementation context and acceptance criteria, and give Astra decision criteria and evidence requirements.
-- State domain context, constraints, approval boundaries, success criteria, and when ambiguity requires a question. Honor existing authorization, allow routine in-scope work, and specify milestones, delegation limits, and proportionate verification when relevant.
-- For GPT-6 API tools, use Responses: Astra and GPT-6.1 Sol do not support tool calling through Chat Completions. Luna supports function calling there only with `reasoning_effort: "none"`.
+- Route GPT-6 Luna (`gpt-6-luna`) to focused, high-volume tasks.
+- Route GPT-6.1 Sol (`gpt-6.1-sol`) to complex coding, computer use, and professional work.
+- Route GPT-6 Astra (`gpt-6-astra`) to demanding reasoning, research, coding, and document work.
+- Preserve the GPT-5.6 model choices:
+  - Sol (`gpt-5.6-sol`, alias `gpt-5.6`): flagship capability.
+  - Terra (`gpt-5.6-terra`): balanced everyday work.
+  - Luna (`gpt-5.6-luna`): fast, repeatable tasks.
+- ChatGPT availability depends on the user's plan.
+- Start lean. Use Template N for complex tasks. Omit irrelevant sections.
+- Evaluate these routing heuristics:
+  - Keep Luna tasks narrow.
+  - Give Sol implementation context and acceptance criteria.
+  - Give Astra decision criteria and evidence requirements.
+- State the domain context, constraints, approval boundaries, and success criteria.
+- Ask a question when ambiguity requires one.
+- Honor existing authorization. Allow routine work within scope.
+- Specify milestones, delegation limits, and proportionate verification when relevant.
+- Use the Responses API for GPT-6 API tools.
+- Astra and GPT-6.1 Sol do not support tool calling through Chat Completions.
+- Luna supports function calling through Chat Completions only with `reasoning_effort: "none"`.
 - Use the lowest reasoning effort that meets the quality bar. Verify supported values for the exact model and endpoint. Do not transfer GPT-5.6-specific controls to newer models without verification.
-- Keep runtime settings outside the copyable prompt. For GPT-5.6, use higher effort, `reasoning.mode: "pro"`, or Responses multi-agent beta only when measured quality justifies cost and latency. Pro mode is not a separate model slug.
-- Treat ChatGPT/Codex controls such as Sol Pro, Max, or Ultra as surface-specific. Do not translate them into API parameters. Prompt text does not change the selected model or runtime settings.
-- State tool-use expectations and evidence requirements. Use orchestration only for bounded, divisible work. Ask for conclusions, assumptions, evidence, and checks, never hidden reasoning. Control visible length with the output contract (and API `text.verbosity`).
+- Keep runtime settings outside the copyable prompt.
+- For GPT-5.6, consider higher effort only when measured quality justifies its cost and latency.
+- Apply the same test to `reasoning.mode: "pro"` and the Responses multi-agent beta.
+- Pro mode is not a separate model slug.
+- Treat ChatGPT/Codex controls such as Sol Pro, Max, or Ultra as surface-specific.
+- Do not convert them into API parameters. Prompt text does not change the selected model or runtime settings.
+- State tool-use expectations and evidence requirements.
+- Use orchestration only for bounded, divisible work.
+- Ask for conclusions, assumptions, evidence, and checks. Never request hidden reasoning.
+- Control visible length through the output contract and API `text.verbosity`.
 
 ---
 
@@ -133,7 +156,11 @@ Identify the surface (ChatGPT, Codex, or API), preserve the selected model, and 
 **Grok / Grok 4.6 / xAI**
 - Use `grok-4.6` for current general chat, coding, agentic, and knowledge-work prompts. It supports text and image input, configurable reasoning, function calling, web search, X search, and code execution.
 - Keep the task outcome-focused: Goal, Context/Input, Constraints, Tools/Permissions, and Done. Grok 4.6 is OpenAI-API compatible, but the prompt must still name the tools and evidence the task requires.
-- Choose reasoning effort intentionally: `low` for scoped or latency-sensitive work, `medium` for balanced work, `high` (the API default) for difficult tasks, and `xhigh` only when deeper exploration is worth the cost. Grok 4.6 reasoning cannot be disabled. Do not ask for chain-of-thought.
+- Choose `low` for scoped or latency-sensitive work.
+- Choose `medium` for balanced work.
+- Choose `high` for difficult tasks; it is the API default.
+- Choose `xhigh` only when deeper exploration justifies the cost.
+- Grok 4.6 reasoning cannot be disabled. Do not ask for chain-of-thought.
 - For current facts, explicitly require Web Search or X Search and citations. Grok's base model does not have realtime knowledge without search tools enabled.
 - For long, tool-heavy agent loops, define stop conditions, approval boundaries, retry limits, and context-compaction checkpoints. Keep stable instructions at the front to preserve prompt-cache reuse.
 - For API setup notes, recommend `prompt_cache_key` on the Responses API or `x-grok-conv-id` on Chat Completions for reliable cache routing. Do not place secret values in the prompt.
@@ -336,7 +363,11 @@ Read references/templates.md Template K for the full ComfyUI template.
 ---
 
 **3D AI — In-Engine AI** (Unity AI, Blender AI tools)
-- Unity AI (Unity 6.2+, replaces retired Muse): use /ask for documentation and project queries, /run for automating repetitive Editor tasks, /code for generating or reviewing C# code. Be precise — state exactly what needs to happen in the Editor.
+- Unity AI (Unity 6.2+) replaces retired Muse.
+- Use `/ask` for documentation and project queries.
+- Use `/run` to automate repetitive Editor tasks.
+- Use `/code` to generate or review C# code.
+- State exactly what needs to happen in the Editor.
 - Unity AI Generators: text-to-sprite, text-to-texture, text-to-animation. Describe the asset type, art style, and technical constraints (resolution, color palette, animation loop or one-shot).
 - BlenderGPT / Blender AI add-ons: these generate Python scripts that execute in Blender. Be specific about geometry, material names, and scene context. Include "apply to selected object" or "apply to entire scene" to avoid ambiguity.
 
