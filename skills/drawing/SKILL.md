@@ -212,7 +212,7 @@ pose, style, palette, mood, setting, or composition.
 2. For non-novel/day drawing, use the session brief stored under
    `prompts/YYYY-MM-DD/session-[NN]-brief.md`. For a named novel scene, use the
    scene-local session brief under
-   `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/session-[YYYY-MM-DD]-[NN]-brief.md`.
+   `novels/[Novel-ID]/[Arc-Folder]/[Scene-Folder]/illustrations/session-[YYYY-MM-DD]-[NN]-brief.md`.
    The authoritative storage and verification procedure is in
    `skills/session-archiving/SKILL.md`.
 3. A session brief records the intended subject/theme, scene or moment, mode,
@@ -312,7 +312,7 @@ Before every generation or edit attempt:
 
 For every illustration belonging to a named novel scene, keep a convenient
 scene-local prompt record beside its illustration note:
-`novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/illustration-[NN]-prompt.md`.
+`novels/[Novel-ID]/[Arc-Folder]/[Scene-Folder]/illustrations/illustration-[NN]-prompt.md`.
 Create and commit this file before generation. For novel illustrations, this
 scene-local file is the authoritative prompt and attempt record. Keep all
 novel-specific prompt history inside the novel and do not duplicate it in the
