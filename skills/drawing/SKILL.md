@@ -228,8 +228,8 @@ The user's opening brief for a specific drawing session is the source of truth f
    A historical image is not an active reference merely because it is stored,
    linked, approved, or previously used. A generation ID or filename is not an
    attachment.
-8. If a current-session brief conflicts with a successful historical prompt,
-   preserve the user's current brief and use the old prompt only as a technical
+8. If the current-session brief conflicts with a successful historical prompt,
+   preserve the user's current brief. Use the old prompt only as a technical
    wording aid for compatible details. Do not import its outdated appearance,
    clothing, setting, framing, or style.
 
@@ -268,15 +268,16 @@ Before every generation or edit attempt:
    brief asks the illustration to follow or adapt them.
 3. Review the relevant daily attempt ledger at
    `drawings/YYYY-MM-DD/README.md` and the chronological prompt history for the
-   same session and, when the user explicitly continues a series, that series'
+   same session. If the user explicitly continues a series, review that series'
    history. Use the ledger only to locate candidate attempts. Check every
    candidate's series membership, outcome, approval, and prompt/output linkage
    in its authoritative attempt record. For a novel scene, use the
    scene-local illustration records. Do not consult or recreate a global
    image-reference index.
 4. Select the most recent successful prompt in the active series as the
-   historical text baseline, or the most recent successful prompt in the exact
-   artwork thread if no series applies. Newer failures remain diagnostic only.
+   historical text baseline. If no series applies, use the most recent
+   successful prompt in the exact artwork thread. Newer failures remain
+   diagnostic only.
    The active session brief has higher authority than every historical prompt:
    adapt the baseline to the current brief and omit or replace every conflicting
    feature. If no relevant success exists, draft from the current session brief
