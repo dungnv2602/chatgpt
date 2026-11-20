@@ -10,7 +10,7 @@ Task operations follow [The Worker skill](../skills/the-worker/SKILL.md).
 
 | Path | Purpose |
 |---|---|
-| [discussion.md](discussion.md) | Open discussions and the three most recent successful reports; used only in Condensed Mode |
+| [discussion.md](discussion.md) | Open discussions and the three most recent successful reports. Condensed Mode only |
 | [task_board.md](task_board.md) | Task index, priority, status, and selection order |
 | [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Template for individual task records |
 | [tasks/](tasks/) | Current task records |
