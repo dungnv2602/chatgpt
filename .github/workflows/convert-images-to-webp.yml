@@ -56,7 +56,7 @@ jobs:
       - name: Test takeout processor
         run: |
           python3 -m unittest discover \
-            -s images/scripts \
+            -s skills/session-archiving/scripts \
             -p 'test_process_takeout_unittest.py' \
             -v
 
