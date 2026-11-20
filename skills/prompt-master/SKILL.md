@@ -158,13 +158,14 @@ Identify the surface (ChatGPT, Codex, or API), preserve the selected model, and 
 - Keep the task outcome-focused: Goal, Context/Input, Constraints, Tools/Permissions, and Done. Grok 4.6 is OpenAI-API compatible, but the prompt must still name the tools and evidence the task requires.
 - Choose `low` for scoped or latency-sensitive work.
 - Choose `medium` for balanced work.
-- Choose `high` for difficult tasks; it is the API default.
+- Choose `high` for difficult tasks. This is the API default.
 - Choose `xhigh` only when deeper exploration justifies the cost.
 - Grok 4.6 reasoning cannot be disabled. Do not ask for chain-of-thought.
 - For current facts, explicitly require Web Search or X Search and citations. Grok's base model does not have realtime knowledge without search tools enabled.
 - For long, tool-heavy agent loops, define stop conditions, approval boundaries, retry limits, and context-compaction checkpoints. Keep stable instructions at the front to preserve prompt-cache reuse.
 - For API setup notes, recommend `prompt_cache_key` on the Responses API or `x-grok-conv-id` on Chat Completions for reliable cache routing. Do not place secret values in the prompt.
-- Consumer Grok and the xAI API expose different controls. If the user is in grok.com or X and cannot set model parameters, encode only behavioral requirements in the prompt rather than API settings.
+- Consumer Grok and the xAI API expose different controls.
+- If the user uses grok.com or X and cannot set model parameters, encode behavioral requirements in the prompt. Do not specify API settings.
 
 ---
 
@@ -222,7 +223,8 @@ Identify the surface (ChatGPT, Codex, or API), preserve the selected model, and 
 - Strong at instruction following, structured output, and long-context synthesis — 1M context window on M2.7
 - M2.7-highspeed is optimized for speed — use for latency-sensitive tasks
 - Temperature must be between 0 and 1 (inclusive) — prompts that set temperature above 1 will fail
-- May output reasoning in `<think>` tags — add "Output only the final answer, no reasoning tags." if the user does not want visible thinking
+- May output reasoning in `<think>` tags.
+- Add "Output only the final answer, no reasoning tags" when the user does not want visible thinking.
 - Good at code generation, JSON output, and multi-step analysis — leverage these strengths
 - Responds well to explicit role assignment and structured prompts with clear output format specifications
 - For function calling: supports OpenAI-style tool definitions — include tool schemas directly
