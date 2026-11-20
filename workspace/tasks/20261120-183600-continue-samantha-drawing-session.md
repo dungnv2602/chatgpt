@@ -174,3 +174,10 @@ Sweet Path is selected. Attempt 07 is the adopted baseline. Attempt 08, “A qui
 Attempt 07's archived prompt is a cleanup prompt, not a full-scene prompt. The attempt record does not contain the image binary. Do not claim that its asset ID is an attachment. If the user wants exact visual source continuity, request the actual image upload. Otherwise, use the selected approved prompt history only within the active session brief and the Drawing workflow.
 
 Do not generate an image until the prompt has been archived, committed, and read back.
+
+
+### 2026-11-21 — Attempt 14 approval
+
+- **Action:** User approved Attempt 14, the thigh-anatomy correction.
+- **Result:** Recorded approval in `drawings/2026-11-21/attempt-14.md` and updated the daily README. Attempt 14 is now the approved current Sweet Path result.
+- **Next:** Continue the Samantha session from Attempt 14 when the user gives the next scene or adjustment.
