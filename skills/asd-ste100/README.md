@@ -138,13 +138,7 @@ The dangling-conjunction pass does not track HTML blocks inside blockquotes.
 
 The file `examples/linter-edge-cases.md` contains intentionally incomplete list items.
 
-Run this command to test the expected findings:
-
-```bash
-python3 scripts/ste-lint.py examples/linter-edge-cases.md
-```
-
-Do not use the test fixture as compliant technical prose.
+The fixture records edge cases for the linter. Do not execute it locally. GitHub Actions runs the linter's built-in self-test. Do not use the fixture as compliant technical prose.
 
 The skill's own rule tables and examples contain intentional violations. The skill README and `SKILL.md` therefore do not pass the linter with its default baseline. The upstream skill uses baseline 36 for its own `SKILL.md`. Read findings as examples where appropriate, not as proof of defects.
 
