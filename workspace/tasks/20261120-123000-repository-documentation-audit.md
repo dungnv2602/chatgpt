@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 13:20 UTC
+- **Updated:** 2026-11-20 13:21 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -163,6 +163,16 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Commit:** `2b73e6760896238e72d3049c6a4f2453970887d9`.
 - **Read-back:** Fetched `skills/agent-skill-authoring/SKILL.md` from branch `gpt`. Confirmed the revised checklist.
 - **Next:** Continue the audit. Keep CI inspection gated by an explicit user request.
+
+### 2026-11-20 13:21 UTC
+
+- **Action:** Continued the manual review of the 17 files with configured lint baselines.
+- **Finding:** A targeted scan found phrasal-verb, marketing-adjective, and nominalization examples only in the ASD-STE100 skill's intentional teaching examples. Reviewed long-sentence candidates in context.
+- **Change:** Split one long description in `skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md` into two sentences without changing its meaning.
+- **Commit:** `f50abb4214f7988376954832fece6bb7483347e7`.
+- **Read-back:** Fetched the curriculum file from branch `gpt` and confirmed the revised wording.
+- **Validation:** Manual source review only. No baseline changed. Did not run the linter locally or inspect CI.
+- **Next:** Continue reviewing remaining supported lint patterns and preserve the user's CI inspection gate.
 
 ## 7. Current State
 
