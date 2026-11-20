@@ -127,15 +127,26 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Validation status:** The official linter and self-test remain unexecuted. Do not report a current lint result.
 - **Next:** Continue source-based review. Keep the execution limitation open until an authorized repository shell is available.
 
+### 2026-11-20 13:12 UTC
+
+- **Action:** Defined validation scope for active and historical task records.
+- **Decision:** Exclude `workspace/tasks/`, `archive/tasks/`, and `workspace/discussion.md` from technical lint and active link-source scans. Keep these Markdown files available as link targets. Keep `workspace/README.md`, `workspace/TASK_TEMPLATE.md`, and `workspace/task_board.md` in scope.
+- **Reason:** Task records and discussion entries preserve user prompts, decisions, and historical evidence. Do not rewrite them to satisfy technical-writing checks.
+- **Changed paths:** Both STE lint workflows, the Markdown link checker, the repository writing policy, and the lint wrapper.
+- **Commits:** Full workflow `bd085ad0333cd8e54f2d7af95f479ed0b32cbb34`, changed workflow `3bcafa5d775f401c0b95887e4cf7568841b772e4`, link checker `7060ecf6392984ce739da5652ceb5f9b63ad98e6`, writing policy `1f0b1a779ddd9a42033eb5e3238b0422362b12b4`, wrapper `07862068a7da6e3c7a82d6cf16555b29b911a98f`.
+- **Read-back:** Fetched all five paths. Confirmed that both lint workflows and the link checker exclude the record paths as sources. Confirmed that the link checker still indexes them as targets.
+- **Current inventory:** 176 Markdown files. The full lint workflow now selects 41 files. The active link-source scan now selects 123 files.
+- **Next:** Continue reviewing supported lint rules in the 41-file technical-document scope.
+
 ## 7. Current State
 
 The historical Version 19 inventory contained 166 Markdown files and 119 active source files. The Version 17 count of 121 used the same exclusions except for `skills/asd-ste100/examples/`. That directory contained two Markdown files, which explains the exact difference.
 
-The current branch contains 176 Markdown files. The same Version 19 source-file exclusions produce 129 active source files. The full-document lint workflow uses a different exclusion set and currently selects 47 Markdown files. These counts describe different scopes.
+The current branch contains 176 Markdown files. The same Version 19 source-file exclusions produce 129 active source files. Current link validation also excludes `archive/tasks/`, `workspace/tasks/`, and `workspace/discussion.md`, which produces 123 active source files. The full-document lint workflow selects 41 Markdown files.
 
 The Version 19 full lint reported 179 hard findings and 300 advisory findings. Those are historical results, not a fresh result for the current branch. The linter wrapper now has 17 baseline entries totaling 170. Every entry maps to an existing file. The historical 179-point threshold fell by four when two active-file baselines cleared. It fell by five when two deleted-file baselines were removed. The 170-point total is a configured threshold, not a current lint result.
 
-The active-link scan at Version 19 found zero unresolved local Markdown targets or heading anchors in its 119-file source scope. Current validation now excludes `archive/tasks/` as a source while retaining archived files as link targets. The historical-link review and external URL review remain open. No fresh full lint has run.
+The active-link scan at Version 19 found zero unresolved local Markdown targets or heading anchors in its 119-file source scope. Current validation excludes `archive/tasks/`, `workspace/tasks/`, and `workspace/discussion.md` as sources while retaining those files as link targets. The historical-link review and external URL review remain open. No fresh full lint has run.
 
 ## 8. Remaining Work
 
