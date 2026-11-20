@@ -349,5 +349,6 @@ Use this template:
 - **CI result:** The workflow self-test passed. The linter reported four hard findings and 21 advisory findings in this existing file. The four hard findings predate Version 16.
 - **Baseline:** The workflow now allows a baseline of four findings for this file only. Other changed Markdown files retain the default zero-finding threshold. This preserves the audit history without weakening checks for other files.
 - **Workflow change:** Updated `.github/workflows/ste-lint-changed.yml` in commit `45b9fa4bee248637cf2d13cd33319e5b6030f00d`.
-- **Validation limit:** The workflow must run again after this correction. The wider repository path-consistency scan is not complete.
+- **CI result:** GitHub Actions run `44695536218` passed. The linter self-test passed. The changed-file lint passed with four hard findings at the documented baseline and 21 advisory findings.
+- **Validation limit:** The full repository path-consistency scan is not complete. The linter run covered this changed file, not every technical document in the repository.
 
