@@ -59,13 +59,13 @@ During foundational initialization, read the [Conversation Mode skill](../conver
 
 ### Foundational skill loading cadence
 
-Load Session Archiving, Conversation Mode, The Worker, Agent Skill Authoring, ASD-STE100, and GitHub Actions for `start session`. Also load this foundational tier as a prerequisite when the user starts a drawing session or requests novelist initialization and the tier has not passed in the current conversation. See `skills/SESSION_START.md` for the complete dependency order.
+Load Session Archiving, Conversation Mode, The Worker, Agent Skill Authoring, ASD-STE100, and GitHub Actions for `start session`. Also load this tier before a drawing session or novelist initialization when foundational initialization has not passed in this conversation. See `skills/SESSION_START.md` for the complete dependency order.
 
 Maintain a per-conversation verified-load ledger. Retrieve and read each required path once, then reuse it for later tiers and tasks. Do not reload a skill or reference merely because a specialist workflow depends on it.
 
 Mark a path verified only after retrieval and reading succeed. A new ChatGPT conversation starts a new ledger. Do not use remembered content or a prior conversation's reads as current verification.
 
-Refresh only the affected file when the user asks, a relevant repository change is known or suspected, or an unresolved instruction requires the current authoritative file. Do not reload unrelated skills or a complete tier.
+Refresh only the affected file. Do this when the user asks, a relevant repository change is known or suspected, or an unresolved instruction requires the current authoritative file. Do not reload unrelated skills or a complete tier.
 
 This cadence does not remove the requirement to load a task-specific skill when needed or to read relevant project records before that task.
 
