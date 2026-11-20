@@ -1,6 +1,6 @@
 # Task Board
 
-Last updated: 2026-11-20 16:16 UTC
+Last updated: 2026-11-20 17:54 UTC
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
@@ -10,13 +10,15 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-| 20261120-123000 | Continue the repository documentation audit | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-123000-repository-documentation-audit.md) |
+| 20261120-123000 | Continue the repository documentation audit | P1 | Done | User | 2026-11-21 | [Archived record](../archive/tasks/20261120-123000-repository-documentation-audit.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/a0e4f8fe526d9c85ea8be8093953fcb2b7d82cd8) |
+| 20261120-175436 | Enforce automatic global task closeout and board reconciliation | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-175436-task-closeout-automation.md) |
 
 ## In Progress
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-| 20261120-123000 | Continue the repository documentation audit | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-123000-repository-documentation-audit.md) |
+| 20261120-175436 | Enforce automatic global task closeout and board reconciliation | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-175436-task-closeout-automation.md) |
+
 ## Ready
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
