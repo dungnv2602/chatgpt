@@ -3,9 +3,8 @@
 ## Purpose and use
 
 This pathway is a structured, text-led course for sustained study of Arthur
-Schopenhauer's philosophy, with particular attention to the movement from
-representation and the Will through aesthetics and ethics to denial of the Will,
-asceticism, and salvation. It is designed for independent study at approximately
+Schopenhauer's philosophy. It follows the movement from representation and the
+Will through aesthetics and ethics to denial of the Will, asceticism, and salvation. It is designed for independent study at approximately
 **4–6 hours per week**. It is a flexible sequence, not a deadline: repeat, extend,
 or redistribute weeks when difficult arguments require more time.
 
