@@ -29,3 +29,7 @@
 - **Generation ID:** `44e7770f-fa20-4abf-8ef2-c6d7af28363a`
 - **Outcome review:** The result shows an adult Asian woman seated upright on a bed, facing the camera in a bedroom. The seated pose and bedroom setting were achieved. The ivory cotton two-piece is present, but some garment details differ from the written specification; exact outfit construction was not verified or preserved pixel-for-pixel because this was a fresh generation with no reference image attached.
 - **Asset location:** Delivered in this conversation; no image binary uploaded to the repository.
+
+## Repository images
+
+- [file_0000000068808207b7beedf2334f567f.png.webp](images/file_0000000068808207b7beedf2334f567f.png.webp)
