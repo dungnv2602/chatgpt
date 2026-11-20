@@ -35,7 +35,7 @@ explicitly unverified.
 For newly retained non-novel drawing outputs, the image file belongs in this day's `images/` subfolder (`attempt-XX.webp`; multiple outputs use numbered suffixes). Link only a verified asset in the Image column. Successful outputs without a verified repository image say `Waiting for image upload`. Existing outputs are not migrated.
 
 | Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 | [01 — Intimate, dimly lit bedroom portrait](attempt-01.md) | 2026-11-19 portrait session; no separate brief filed | Initial portrait direction; source/base details remain in the attempt note | Rejected; no image returned | No output; user approval not recorded | — |
 | [02 — Quiet romantic bedroom portrait (clean start)](attempt-02.md) | 2026-11-19 portrait session; no separate brief filed | Clean start; standalone prompt, no prior baseline | Generated successfully; delivered in conversation | User approval not recorded; output delivered in conversation | Waiting for image upload |
 | [03 — Softer fabric, same ivory wrap outfit](attempt-03.md) | 2026-11-19 portrait session; no separate brief filed | Ivory-wrap portrait branch; exact source/base in attempt note | Rejected; no image returned | No output; user approval not recorded | — |
