@@ -5,7 +5,7 @@ metadata:
   project-role: foundational
   format: agentskills
   created: "2026-11-18T13:18"
-  updated: "2026-11-20T12:46"
+  updated: "2026-11-20T20:52"
 ---
 
 # Conversation Mode
@@ -61,62 +61,39 @@ In Condensed Mode, prioritize execution and navigation.
 
 The Worker applies in every conversation mode. Condensed Mode changes only the amount and format of user-visible communication.
 
-### Discussion register and final work report
+### Discussion register and assistant replies
 
-Use `workspace/discussion.md` for unresolved discussions and the latest completed-work report. This file is not a conversation transcript or task index.
+Use `workspace/discussion.md` as the single communication record in Condensed Mode. It contains user messages, assistant replies, decisions, progress, blockers, and final reports. Do not separate discussions from reports. A report is an assistant reply.
 
-Keep a separate `## Latest Work Report` section at the top of the file. Replace its contents only when a newer task reaches an outcome. Keep the report after the related discussion is resolved. Include:
-
-- Outcome.
-- Task link, when available.
-- Changed paths.
-- Commit link, when available.
-- Verification result.
-- Blocker or next action.
-
-Keep unresolved discussion entries below the report. Remove a resolved discussion entry only after its permanent documentation is complete and verified. Do not remove the latest work report during discussion cleanup.
+Keep one continuous stream. Put the newest information at the top. Add each new user message and the corresponding assistant reply at the top. Preserve the user's wording. Keep assistant replies complete enough to answer the user's message. Do not create topic-specific report sections or separate work-report sections.
 
 At the start of Condensed Mode work in each conversation:
 
 1. Read `workspace/discussion.md` once.
-2. Identify open topics and their latest status.
-3. Continue a matching topic when the user's prompt refers to it.
-4. Create a new topic when the user starts a distinct unresolved discussion.
+2. Review the latest messages and unresolved matters.
+3. Continue the relevant thread when the user's prompt refers to it.
+4. Start a new entry when the user raises a distinct matter.
 
-Record each relevant user prompt verbatim. Put the newest discussion first and the newest message at the top of its discussion. Keep assistant notes brief. Record only conclusions, proposals, findings, rejected options, and outstanding questions that help continue the discussion. Do not copy full assistant replies or hidden reasoning.
+Use clear date and time stamps in UTC. Do not label content as a discussion or a report. Do not duplicate the same message in multiple places.
 
-Each discussion entry must include:
+### Approval and clearing
 
-- A concise topic heading.
-- Its status: `Open`, `Awaiting approval`, or `Approved — documentation pending`.
-- The date and time in UTC for each recorded message.
-- User prompts as blockquotes, without paraphrasing.
-- Short assistant notes where they materially help recovery.
-- Outstanding decisions or questions, when any remain.
+An explicit user approval of any proposal, decision, or requested action is the clearing cue.
 
-When a new message changes a discussion, add it at the top of that discussion. Move the most recently updated discussion to the top of the file. Keep separate topics distinct. Do not add unrelated conversation or routine status messages.
+When the user approves:
 
-### Approval and cleanup
+1. Treat the approval as authorization for the stated scope.
+2. Complete the approved work and verify its permanent documentation.
+3. Clear the entire contents of `workspace/discussion.md`. Leave only the empty-state placeholder.
+4. Do not preserve separate report sections or retain approved entries in the file.
 
-A discussion remains open until the user explicitly approves, rejects, or withdraws it.
+Do not clear the file before an explicit approval. A question, acknowledgement, or ambiguous response is not approval. Approval does not authorize work outside the approved scope.
 
-When the user approves a proposal:
+When the user rejects or withdraws a proposal, record the decision in the same continuous stream. Do not clear the file unless the user also approves a separate matter.
 
-1. Mark the entry `Approved — documentation pending`.
-2. Transfer the original user prompts and relevant clarifications into the appropriate task record or permanent project document.
-3. Create or update the task board entry when the approved outcome requires a task.
-4. Read back every changed document and verify the required content.
-5. Remove only the resolved discussion entry after documentation is complete and verified.
+Keep the file present when it is clear. Use the `No open discussions` placeholder. Git history retains prior versions.
 
-Approval does not authorize work outside the approved scope. Do not clear an entry merely because the user approved it. Keep it until the required documentation is complete.
-
-When the user rejects or withdraws a proposal, record any lasting decision in the appropriate permanent record when needed. Then remove the resolved entry. Do not remove other open discussions.
-
-If documentation is incomplete, a write fails, or verification does not pass, keep the entry. Update its status and outstanding work. Do not claim that the discussion is finalized.
-
-Keep the file present when it has no open discussions. Use the `No open discussions` placeholder. Do not create a separate discussion archive. Git history retains committed prior versions.
-
-Do not record credentials, access tokens, hidden reasoning, or unrelated sensitive information. Preserve user prompts verbatim except for content that must not be retained for safety or privacy.
+Do not record credentials, access tokens, hidden reasoning, or unrelated sensitive information.
 
 ### User-visible output
 
