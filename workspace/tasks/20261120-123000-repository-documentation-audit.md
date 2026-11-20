@@ -138,6 +138,13 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Current inventory:** 176 Markdown files. The full lint workflow now selects 41 files. The active link-source scan now selects 123 files.
 - **Next:** Continue reviewing supported lint rules in the 41-file technical-document scope.
 
+### 2026-11-20 13:13 UTC
+
+- **Action:** Tested the updated full-lint path exclusion expression with representative repository paths.
+- **Result:** The filter excludes archived task records, active task records, and the discussion register. It retains `workspace/README.md`, `workspace/TASK_TEMPLATE.md`, `workspace/task_board.md`, and `archive/README.md`.
+- **Method:** Ran the exact `grep -vE` expression from the workflow against the representative path list in the local shell.
+- **Next:** Continue reviewing supported lint rules in the 41-file technical-document scope.
+
 ## 7. Current State
 
 The historical Version 19 inventory contained 166 Markdown files and 119 active source files. The Version 17 count of 121 used the same exclusions except for `skills/asd-ste100/examples/`. That directory contained two Markdown files, which explains the exact difference.
