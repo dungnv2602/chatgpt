@@ -10,7 +10,7 @@
 - **Origin:** User
 - **Approval:** Approved for session initialization and continuation
 - **Current execution:** Yes
-- **Dependencies:** None. Scene approved; prompt archived. Image generation pending.
+- **Dependencies:** None. Scene approved; prompt archived; two variants generated. User review pending.
 - **Related tasks:** None
 - **Archived:** No
 
@@ -108,9 +108,10 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 
 ### 2026-11-21 — Attempt 08
 
-- **Action:** User approved Scene 1, “A quiet morning together.” Recorded the scene in the session brief and drafted the complete generation prompt.
-- **Result:** Attempt 08 prompt archived at `drawings/2026-11-21/attempt-08.md`. The daily README indexes the attempt. Prompt-first reconstruction is necessary because the Attempt 07 image binary is unavailable; exact visual continuity is not claimed.
-- **Next:** Read back and verify the prompt and session records, then generate the image.
+- **Action:** User approved Scene 1, “A quiet morning together.” Recorded the scene in the session brief and archived the complete generation prompt before generation.
+- **Result:** Attempt 08 prompt archived and verified at `drawings/2026-11-21/attempt-08.md`. Two image variants were generated. The daily README indexes the attempt. Prompt-first reconstruction was necessary because the Attempt 07 image binary is unavailable; exact visual continuity is not claimed.
+- **Generation IDs:** `d6207139-8fbb-4c66-8320-9148bc1c2f7d`; `b61cbac5-fade-4f75-9904-14d2b776839b`.
+- **Next:** Obtain user review and record the selected variant or requested revision.
 
 ## 7. Current State
 
@@ -118,7 +119,7 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 - The Drawing skill and required references are loaded.
 - The new session brief and daily README exist and were read back.
 - The prior session is Paused. The new session is Active.
-- Attempt 08, “A Quiet Morning Together,” is approved and its complete prompt is archived. Image generation has not yet occurred.
+- Attempt 08, “A Quiet Morning Together,” is approved. Its complete prompt is archived and verified. Two image variants have been generated; user review is pending.
 - CI status remains unverified.
 - The user selected Sweet Path and approved Attempt 08, “A quiet morning together.” The full prompt is archived in `drawings/2026-11-21/attempt-08.md`. Generation is pending.
 
@@ -133,8 +134,9 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 
 1. Record the user's Sweet Path / Attempt 07 selection. This is complete.
 2. Record the user's approval of Scene 1 in the session brief. This is complete.
-3. Archive the complete Attempt 08 prompt before generation. This is complete.
-4. Verify the prompt and updated index, then generate Attempt 08.
+3. Archive and verify the complete Attempt 08 prompt before generation. This is complete.
+4. Generate Attempt 08. This is complete; two variants were produced.
+5. Obtain user review and update the attempt record.
 
 ## 10. References
 
@@ -164,7 +166,7 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 
 The active session is `SAMANTHA-2026-11-21-01`. The previous session is Paused. Sweet Path / Attempt 07 is selected.
 
-Sweet Path is selected. Attempt 07 is the adopted baseline. Attempt 08, “A quiet morning together,” is approved and its prompt is archived. Do not merge the Casual branch.
+Sweet Path is selected. Attempt 07 is the adopted baseline. Attempt 08, “A quiet morning together,” is approved. Its prompt is archived and verified, and two variants are generated. User review is pending. Do not merge the Casual branch.
 
 Attempt 07's archived prompt is a cleanup prompt, not a full-scene prompt. The attempt record does not contain the image binary. Do not claim that its asset ID is an attachment. If the user wants exact visual source continuity, request the actual image upload. Otherwise, use the selected approved prompt history only within the active session brief and the Drawing workflow.
 
