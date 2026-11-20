@@ -518,6 +518,44 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertIn("require explicit attempt metadata", report)
 
 
+
+    def test_existing_manifest_duplicate_output_id_blocks_new_upload(self):
+        session = self.root / "drawings/2026-11-19"
+        session.mkdir(parents=True)
+        (session / "attempt-01.md").write_text("# Attempt 01\n", encoding="utf-8")
+        (session / "README.md").write_text(
+            "# Drawing session\n\n"
+            "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+            "|---|---|---|---|---|---|\n"
+            "| [01 — New](attempt-01.md) | Session | Existing | Generated | Not recorded | — |\n",
+            encoding="utf-8",
+        )
+        (session / "manifest.csv").write_text(
+            "session_date,image_id,filename,prompt_id,approval_status,github_url,sha256,verification_status,attempt,output_id,webp_path,sha256\n"
+            "2026-11-19,prior-image,prior.png,,Not recorded,https://example.invalid/prior,old-sha,Not verifiable,01,A001-O01,drawings/2026-11-19/images/prior.webp,old-sha\n",
+            encoding="utf-8",
+        )
+        (self.inbox / "new.png").write_bytes(b"new-generated-original")
+        self.manifest_many(
+            [{
+                "source": "new.png",
+                "title": "New Output",
+                "destination_dir": "drawings/2026-11-19/images",
+                "attempt": "1",
+                "output_id": "A001-O01",
+            }],
+            batch="batch-existing-output-id",
+        )
+        result = self.run_processor()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertTrue((self.inbox / "new.png").is_file())
+        self.assertFalse((session / "images/original/new-output.png").exists())
+        report = (
+            self.inbox
+            / "history/batch-existing-output-id/attempt-001/verification-report.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Duplicate output_id", report)
+
     def test_identical_original_bytes_from_two_outputs_get_distinct_internal_image_ids(self):
         session = self.root / "drawings/2026-11-19"
         session.mkdir(parents=True)

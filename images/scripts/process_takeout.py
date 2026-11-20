@@ -614,7 +614,7 @@ def prepare_session_manifest_updates(prepared: list[dict[str, Any]], root: Path)
 
         seen_ids: dict[str, dict[str, str]] = {}
         seen_webps: dict[str, dict[str, str]] = {}
-        seen_output_ids: set[str] = set()
+        seen_output_ids: dict[str, dict[str, str]] = {}
         for row in rows:
             image_id = (row.get("image_id") or "").strip()
             webp_path = (row.get("webp_path") or "").strip()
@@ -630,7 +630,7 @@ def prepare_session_manifest_updates(prepared: list[dict[str, Any]], root: Path)
             if output_id:
                 if output_id in seen_output_ids:
                     raise ProcessingError(f"Duplicate output_id in session manifest: {output_id}")
-                seen_output_ids.add(output_id)
+                seen_output_ids[output_id] = row
 
         image_dir = session_dir / "images"
         if image_dir.is_symlink() or (image_dir.exists() and not image_dir.is_dir()):
@@ -782,17 +782,24 @@ def prepare_session_manifest_updates(prepared: list[dict[str, Any]], root: Path)
             }
             prior_by_id = seen_ids.get(image_id)
             prior_by_webp = seen_webps.get(relative_webp)
-            if prior_by_id or prior_by_webp:
-                prior = prior_by_id or prior_by_webp
-                if (prior.get("webp_path") == relative_webp
-                        and prior.get("sha256") == item["source_sha"]):
+            prior_by_output_id = seen_output_ids.get(item["output_id"]) if item["output_id"] else None
+            if prior_by_id or prior_by_webp or prior_by_output_id:
+                prior = prior_by_id or prior_by_webp or prior_by_output_id
+                if (
+                    prior.get("webp_path") == relative_webp
+                    and prior.get("sha256") == item["source_sha"]
+                    and (not item["output_id"] or prior.get("output_id") == item["output_id"])
+                ):
                     continue
                 raise ProcessingError(
-                    f"Conflicting session manifest identity for image {image_id} or {relative_webp}."
+                    f"Conflicting session manifest identity for image {image_id}, "
+                    f"{relative_webp}, or output ID {item['output_id']!r}."
                 )
             rows.append(row)
             seen_ids[image_id] = row
             seen_webps[relative_webp] = row
+            if item["output_id"]:
+                seen_output_ids[item["output_id"]] = row
 
         buffer = io.StringIO(newline="")
         writer = csv.DictWriter(buffer, fieldnames=fieldnames, extrasaction="ignore", lineterminator="\n")
