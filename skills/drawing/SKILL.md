@@ -237,7 +237,7 @@ Before every generation or edit attempt:
    governs visual direction; scene records supply narrative facts only where the
    brief asks the illustration to follow or adapt them.
 3. Review the relevant daily attempt ledger at
-   `prompts/YYYY-MM-DD/README.md` and the chronological prompt history for the
+   `drawings/YYYY-MM-DD/README.md` and the chronological prompt history for the
    same session and, when the user explicitly continues a series, that series'
    history. Use the ledger only to locate candidate attempts. Verify every
    candidate's series membership, outcome, approval, and prompt/output linkage
@@ -545,7 +545,7 @@ Before rewriting a prompt after a refusal, repeated failure, or user correction:
    inspect its authoritative chronological prompt history first. Locate the
    most recent successful prompt in that same series/thread and inspect the
    actual approved image assets where relevant. Use the relevant
-   `prompts/YYYY-MM-DD/README.md` as a navigation aid, then verify chronology,
+   `drawings/YYYY-MM-DD/README.md` as a navigation aid, then verify chronology,
    series membership, finalized outcome, and prompt/output linkage in the
    authoritative attempt records. For a novel scene, use its scene-local
    illustration history. Do not rely on memory, a summary, or the most recent
@@ -726,8 +726,8 @@ the user explicitly says they should be retained for future use.
 ### E4. Use daily attempt ledgers and authoritative records
 
 Do not create a separate cross-session success catalogue. For non-novel
-drawing sessions, use `prompts/YYYY-MM-DD/README.md` as the daily navigation
-ledger. It must contain one contiguous Markdown table with exactly five fields:
+drawing sessions, use `drawings/YYYY-MM-DD/README.md` as the daily navigation
+ledger. It must contain one contiguous Markdown table with exactly six fields:
 
 1. **Attempt / prompt:** the attempt number or stable ID, a concise descriptive
    title, and a direct link to the full attempt record.
@@ -743,14 +743,17 @@ ledger. It must contain one contiguous Markdown table with exactly five fields:
    unconfirmed—and whether the result met the defining acceptance criteria.
    Approval of a prompt for generation is not a successful image outcome.
 5. **User approval / output evidence:** record user approval separately from
-   the assistant's visual assessment, and link the exact returned image or
-   verified repository asset where available. Otherwise state
-   `delivered in conversation`, `no output returned`,
-   `output not stored`, or `not verified` as applicable.
+   the assistant's visual assessment. State whether an image was delivered in
+   conversation, no output was returned, approval was not recorded, or storage
+   and provenance remain unverified.
+6. **Image:** link the exact verified repository image for a successful output.
+   Until that output is uploaded and processed, write `Waiting for image upload`.
+   Use `—` for failed, rejected, superseded, partial, pending, or unconfirmed
+   results; do not imply those results are awaiting a keeper upload.
 
 Include every attempt in chronological order, including rejected, failed,
 partial, pending, and superseded attempts. Do not turn the table into a
-success-only list. Keep its five fields populated with concise, evidence-based
+success-only list. Keep its six fields populated with concise, evidence-based
 facts; put the complete prompt, source IDs, exact tool metadata, acceptance
 criteria, visual assessment, and detailed provenance in the linked attempt
 record.
@@ -774,8 +777,9 @@ After each attempt is finalized:
   record and the table's approval/output field without rewriting a different
   execution outcome. A user-approved keeper with uncertain prompt mapping must
   remain unlinked to an invented prompt.
-- When an image is renamed or moved, update its direct link in the attempt
-  record and the relevant daily README row.
+- When an image is retained through the takeout workflow, the verified WebP
+  link must appear in both the attempt record and the daily README's Image
+  column. Do not link an unverified filename or infer prompt association.
 - Do not omit unsuccessful attempts, promote a generated-but-missed-target
   result to a success, or infer approval from delivery alone.
 
@@ -892,7 +896,9 @@ repository retention pass through the single intake at `images/takeout/`.
 
 - The incoming filename may be arbitrary. Inspect the actual image and prepare
   the structured `HANDOFF.yml` with source filename, descriptive title,
-  optional stable ID, and exact destination directory.
+  optional stable ID, and exact destination directory. For an image belonging
+  to a non-novel drawing attempt, also include that attempt number in the item
+  as `attempt: NN` and target `drawings/YYYY-MM-DD/images` for its session.
 - The existing workflow runs on branch `gpt` and calls
   `images/scripts/process_takeout.py`. It accepts static PNG, JPG, and JPEG.
   APNG and other unsupported formats fail the batch; animation is never
@@ -906,6 +912,13 @@ repository retention pass through the single intake at `images/takeout/`.
   the master. Novel illustrations use
   `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; retained
   non-novel assets use their declared destination under `images/`.
+- When an item has `attempt: NN` and targets `drawings/YYYY-MM-DD/images`, the
+  processor validates the matching `attempt-NN.md` and six-column daily README,
+  then automatically adds the verified WebP link to both records. Multiple
+  images may identify the same attempt; their links are grouped in that row.
+  Items without `attempt` metadata are processed as ordinary assets and do not
+  alter a prompt record or daily README. The GitHub Action commits these
+  Markdown changes together with the processed assets.
 - The Action converts the entire batch into persistent staging at
   `images/takeout/webp/[batch-id]/attempt-NNN/` before moving any original.
   Staged filenames append `.webp` to each exact incoming filename. It checks
