@@ -137,20 +137,29 @@ Do not remove or overwrite a conflicting Library item until you verify its ident
 This synchronization is an explicit workflow requirement. It does not mean that GitHub and the ChatGPT Library sync automatically in the background.
 
 
-## 7. Repository CI checkpoint policy
+## 7. Repository CI preflight and checkpoint policy
 
-Apply this policy to every repository task, in both conversation modes.
+Apply this policy to every user turn that may involve repository work, in both conversation modes.
+
+### Before acting on a user request
+
+1. Inspect GitHub Actions runs for branch `gpt` before you execute the user's new repository request.
+2. Check the newest run for each applicable workflow. Also check every pending run ID carried from the previous turn.
+3. A newer run for the same workflow supersedes an older run on an earlier commit. Do not treat an obsolete cancelled run or a failure superseded by a later successful run as an active CI failure.
+4. If the latest applicable run failed, inspect its job logs, identify the cause, and fix the repository issue before you start the user's requested task. Do not defer a known failure.
+5. If the failure came from a previous assistant change, correct that change first. If it came from the user's existing project state, make the smallest relevant correction on branch `gpt`. Do not hide a failure by changing a lint baseline or weakening a check.
+6. After you commit the correction, read back the changed files. Then continue with the user's request. Do not wait for the correction's new CI run; track it as pending for the next turn.
+7. If a relevant run remains in progress, report that status once and continue with the user's request. Do not wait or poll repeatedly.
+8. If no applicable run exists, report that CI has no run for the relevant change. Do not imply that CI passed.
+
+### During and after repository work
 
 1. Do not wait for a GitHub Actions run during the task that triggered it.
 2. Do not poll a run repeatedly while it is in progress.
-3. At task completion, report each relevant run ID. Mark any incomplete run as pending.
-4. At the start of the next user turn, check all pending runs before other work.
-5. If a run remains in progress, report its status. Do not wait for it. Continue with the user's request.
-6. If a run failed, inspect its logs and address the failure when relevant to the current task.
-7. Report a run as passed only when GitHub reports a successful conclusion.
-8. Do not treat a pending run as a task failure. Do not claim that its checks passed.
-
-Keep a short list of pending run IDs in the conversation handoff. Remove a run from that list only after you check its final result.
+3. At task completion, report each relevant run ID and the exact commit SHA it tested. Mark incomplete runs as pending.
+4. Report a run as passed only when GitHub reports a successful conclusion.
+5. Do not treat a pending or cancelled run as a pass. Do not describe a pending run as a failure.
+6. Carry pending run IDs in the conversation handoff. At the next user turn, check their final results as part of the CI preflight.
 
 ## 8. Repository execution efficiency
 
