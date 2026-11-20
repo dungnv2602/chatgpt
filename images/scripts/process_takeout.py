@@ -949,14 +949,16 @@ def main() -> int:
         checks.append("Each original master was relocated byte-for-byte; SHA-256 matches its uploaded source.")
         checks.append("Each WebP was moved from persistent staging to its final destination and passed hash and container verification.")
 
+        manifest_updates = prepare_session_manifest_updates(prepared, root)
+        text_updates.update(manifest_updates)
+
+        # Publish attempt records, daily README, and session manifest as one
+        # transaction. Keep each original byte sequence for rollback.
         for text_path, updated_text in text_updates.items():
             previous_bytes = text_path.read_bytes() if text_path.exists() else None
             written_text_updates.append((text_path, previous_bytes))
             text_path.parent.mkdir(parents=True, exist_ok=True)
             text_path.write_text(updated_text, encoding="utf-8")
-        manifest_updates = prepare_session_manifest_updates(prepared, root)
-        for manifest_path, manifest_content in manifest_updates.items():
-            text_updates[manifest_path] = manifest_content
 
         if text_updates:
             checks.append("Verified WebP-only links and session manifest records were prepared for commit.")

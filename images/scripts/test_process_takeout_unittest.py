@@ -336,7 +336,8 @@ class TakeoutProcessorTests(unittest.TestCase):
         (self.inbox / "photo.jpg").write_bytes(b"original-upload")
         directory = self.root / "images/references"
         directory.mkdir(parents=True)
-        existing = directory / "shared-discovery.jpg"
+        existing = directory / "original" / "shared-discovery.jpg"
+        existing.parent.mkdir(parents=True)
         existing.write_bytes(b"keep-this-file")
         self.manifest(
             {
@@ -424,12 +425,14 @@ class TakeoutProcessorTests(unittest.TestCase):
             [
                 {
                     "source": "upload-six.png",
+                    "asset_id": "",
                     "title": "Attempt 06 Additional Image",
                     "destination_dir": "drawings/2026-11-19/images",
                     "attempt": "06",
                 },
                 {
                     "source": "upload-eleven.png",
+                    "asset_id": "",
                     "title": "Attempt 11 Additional Image",
                     "destination_dir": "drawings/2026-11-19/images",
                     "attempt": "11",
@@ -655,6 +658,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.manifest(
             {
                 "source": "mismatch.png",
+                "asset_id": "",
                 "title": "Mismatch Review",
                 "destination_dir": "drawings/2026-11-19/images",
                 "attempt": "1",
