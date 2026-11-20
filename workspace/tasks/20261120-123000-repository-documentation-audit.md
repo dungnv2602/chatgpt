@@ -140,11 +140,11 @@ The active-link scan at Version 19 found zero unresolved local Markdown targets 
 
 ## 9. Next Actions
 
-1. Verify the task file, initialization policy, and task board after the writes.
-2. Inspect the current linter configuration and latest recorded baselines.
-3. Establish a reproducible audit inventory and reconcile the 119/121 scope discrepancy.
-4. Continue lint remediation without increasing baselines.
-5. Run the linter and link checks in an authorized repository execution environment.
+1. Review remaining supported lint rules in the current full-document scope. Focus on long sentences, synonym rotation, and dangling conjunctions.
+2. Inspect any candidate finding in its full document context before editing.
+3. Keep historical audit entries and archived task records unchanged.
+4. Run the official linter self-test and full-document lint in an authorized repository execution environment.
+5. Review external URL availability if it remains within the approved audit scope.
 
 ## 10. References
 
@@ -158,9 +158,15 @@ The active-link scan at Version 19 found zero unresolved local Markdown targets 
 ## 11. Verification
 
 - **Check:** Identify and preserve all audit history from Version 5 onward.
-- **Method:** Extract Version 5–9 and Version 10–32 sections from the fetched policy file and place them in this record.
-- **Result:** Pending read-back.
-- **Limitations:** Historical lint and CI results do not establish the current repository's lint status.
+- **Method:** Compare the copied history with the source policy at parent commit `5358dace526dc38808dac3a8d2ad4eaea1214af2`.
+- **Result:** Passed. Confirmed an exact text match for all 28 entries from Version 5 through Version 32.
+- **Check:** Reconcile the Version 17 and Version 19 active-source counts.
+- **Method:** Rebuild both counts from the Version 19 commit tree and compare the exclusion sets.
+- **Result:** Passed. The two excluded ASD-STE100 example files explain the 121-versus-119 difference.
+- **Check:** Verify current lint baseline paths.
+- **Method:** Compare every configured baseline path with the current branch tree.
+- **Result:** Passed. All 17 current baseline paths exist. Their configured total is 170.
+- **Limitations:** The official linter and self-test have not run on the current branch. Historical lint and CI results do not establish the current repository's lint status.
 
 ## 12. Handoff Instructions
 
