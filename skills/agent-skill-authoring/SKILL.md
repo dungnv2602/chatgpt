@@ -236,7 +236,7 @@ Before considering a skill complete, check all of the following:
 - [ ] The correct ASD-STE100 mode applies to skill and technical documentation.
 - [ ] Sentence length, paragraph structure, and punctuation follow the repository writing policy.
 - [ ] Every rewrite preserves facts, conditions, scope, and modality.
-- [ ] Linter findings were reviewed when the linter was available.
+- [ ] Review GitHub Actions lint findings only when the user requests a CI review.
 
 ### Integration and integrity
 - [ ] The skill is connected to the correct activation path.
