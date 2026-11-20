@@ -26,11 +26,15 @@ delivery or a prompt's wording.
    the result met the defining requirements. A prompt approved for generation
    is not evidence that an image was generated or approved.
 5. **User approval / output evidence:** record explicit user approval
-   separately from the execution result, and link the exact output or verified
-   asset. Otherwise state that no output was returned, approval was not
-   recorded, or storage/linkage was not verified.
+   separately from the execution result. State whether the image was delivered
+   in conversation, no output was returned, approval was not recorded, or
+   storage/linkage was not verified.
+6. **Image:** link every generated image output after its repository asset is
+   uploaded and verified, regardless of user approval or prompt compliance.
+   Until upload, write `Waiting for image upload`; use `—` only when no image
+   was returned or generated.
 
-For newly retained non-novel drawing outputs, the image file belongs in this day's `images/` subfolder (`attempt-XX.webp`; multiple outputs use numbered suffixes). Link only a verified asset in this field. Existing outputs are not migrated.
+For newly retained non-novel drawing outputs, the image file belongs in this day's `images/` subfolder (`attempt-XX.webp`; multiple outputs use numbered suffixes). Link every generated output, including partial or unapproved results; approval is recorded separately. Existing outputs are not migrated.
 
 | Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |
 |---|---|---|---|---|---|
