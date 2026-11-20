@@ -317,8 +317,8 @@ A failed, rejected, partial, or missed-target prompt is never the default text b
 ### Prompt-first image-editing records
 
 For a user-requested change to an existing image, default to **prompt-first
-reconstruction**: locate the successful authored prompt that produced the target,
-use it as the text baseline, make only the requested change, and generate a new
+reconstruction**. Locate the successful authored prompt that produced the target.
+Use it as the text baseline. Make only the requested change. Generate a new
 image from the revised prompt. Do not describe this as a direct edit of the
 source image.
 
