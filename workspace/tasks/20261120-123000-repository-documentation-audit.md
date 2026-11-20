@@ -291,13 +291,12 @@ The Version 19 full lint reported 179 hard findings and 300 advisory findings. T
 
 The newest changed-document run `44750057903` failed on `9260346fb8e14c5c576fbf8f8e3676fb645833e4`. Its fallback full audit found new lint violations in Session Start, GitHub Actions, The Worker, and Initialization Policy. The linter self-test and active Markdown link checker passed. Commit `49a972741aeb69bf249afffb11cbe33d8574d05f` rewrote those findings without changing baselines. A subsequent source-review batch split long sentences in Drawing and the philosophy skill, fixed the dangling conjunction in Prompt Fidelity, and removed an unrelated Version 5 entry from Initialization Policy. The latest commits are `ccf8c055a99984f1c5ec1d835958e9b5afc14282` and `49a972741aeb69bf249afffb11cbe33d8574d05f`. No result for either repair batch has been awaited.
 
-The Version 19 active-link scan found zero unresolved local Markdown targets or heading anchors in its 119-file source scope. Current validation excludes `archive/tasks/`, `workspace/tasks/`, and `workspace/discussion.md` as sources while retaining those files as link targets. The historical-link review and external URL review remain open. The latest completed full audit identified one dangling-conjunction candidate, which the current audit has corrected. The full audit also reported 60 long-sentence candidates. Source review has now addressed all 60 long-sentence candidates from the earlier full-audit log. This is a source-review result, not a fresh official lint result. The edits cover Drawing, philosophy, curriculum, archive-reference, and generation-recovery documents. The 13 long-sentence examples in the ASD-STE100 skill preserve the quoted examples and the intended teaching content.
+The Version 19 active-link scan found zero unresolved local Markdown targets or heading anchors in its 119-file source scope. Current validation excludes `archive/tasks/`, `workspace/tasks/`, and `workspace/discussion.md` as sources while retaining those files as link targets. The historical-link review remains open. The external URL review is complete for all 41 files in the current full-document lint scope. It found 19 unique external URLs. Six GitHub repositories are available. The Agent Skills specification, Wikipedia, TechScribe, and the official ASD-STE100 Issue 9 PDF are accessible. Five GitHub Docs links redirected to current canonical pages and were updated. The official ASD-STE100 home and FAQ pages are indexed as official STEMG pages, although direct crawler access returns 403. ASD Europe and SKYbrary links remain unverified because automated access timed out or returned 403. These access failures do not prove that the pages are dead. The old ASD-STE100 About and downloads links were replaced with the current FAQ, homepage, and Issue 9 PDF. The latest completed full audit identified one dangling-conjunction candidate, which the current audit has corrected. The full audit also reported 60 long-sentence candidates. Source review has now addressed all 60 long-sentence candidates from the earlier full-audit log. This is a source-review result, not a fresh official lint result. The edits cover Drawing, philosophy, curriculum, archive-reference, and generation-recovery documents. The 13 long-sentence examples in the ASD-STE100 skill preserve the quoted examples and the intended teaching content.
 
 ## 8. Remaining Work
 
 - Reduce remaining hard lint findings without raising per-file baselines. The configured baseline total of 170 is not a current lint result.
 - Review historical archive links only after the user authorizes changes to those records.
-- Review external URL availability if it remains within the approved audit scope.
 - Confirm current audit scope and completion criteria against the repository state before closing the task.
 - Review remaining synonym-rotation findings in full context. Preserve deliberate examples and distinct technical meanings. Do not raise baselines.
 
@@ -306,8 +305,7 @@ The Version 19 active-link scan found zero unresolved local Markdown targets or 
 1. Review remaining synonym-rotation findings in full document context.
 2. Preserve deliberate examples and distinct technical meanings.
 3. Keep historical audit entries and archived task records unchanged.
-4. Review external URL availability if it remains within the approved audit scope.
-5. Push related edits to branch `gpt`. Let GitHub Actions execute independently. Review available results at a later mandatory preflight.
+4. Push related edits to branch `gpt`. Let GitHub Actions execute independently. Review available results at a later mandatory preflight.
 
 ## 10. References
 

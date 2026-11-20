@@ -1,5 +1,18 @@
 # Open Discussions
 
+### 2026-11-20 15:50 UTC
+
+**Assistant**
+
+Completed the external URL review for all 41 files in the current full-document lint scope. The review found 19 unique external URLs. Six GitHub repositories are available. The Agent Skills specification, Wikipedia, TechScribe, and the official ASD-STE100 Issue 9 PDF are accessible. Five GitHub Docs links redirected to current canonical pages and were updated.
+
+The official ASD-STE100 home and FAQ pages are indexed as official STEMG pages, although direct crawler access returns 403. ASD Europe and SKYbrary links remain unverified because automated access timed out or returned 403. I retained these references because access failure does not prove that a page is dead. The old ASD-STE100 About and downloads links were replaced with the current FAQ, homepage, and Issue 9 PDF.
+
+Historical-link review remains open and requires your authorization before any archived records change. Remaining active work is the synonym-rotation review and any final scope checks.
+
+---
+
+
 ### 2026-11-20 15:45 UTC
 
 **Assistant**
