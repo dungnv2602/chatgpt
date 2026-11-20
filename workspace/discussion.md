@@ -1,3 +1,19 @@
+### 2026-11-20 15:28 UTC
+
+**User**
+
+> Read your conversation mode skill
+
+**Assistant**
+
+Read `skills/conversation-mode/SKILL.md` from branch `gpt`.
+
+Condensed Mode requires execution-first work, with detailed progress and complete replies recorded in `workspace/discussion.md`. Keep one continuous stream, newest entries first, preserve the user's wording, and use UTC timestamps. At the start of Condensed Mode work in each conversation, read the discussion file once.
+
+In chat, provide only the direct link to the active task record or to `workspace/discussion.md`. Do not add labels, status text, summaries, or progress narration. Record decisions, blockers, verification, and outcomes in the discussion file. The Worker applies in every mode. The authorized repository branch is `gpt`; GitHub remains the source of truth.
+
+---
+
 ### Workflow implementation verification
 
 The archive exclusion is implemented and read back from branch `gpt`.
