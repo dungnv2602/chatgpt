@@ -5,7 +5,7 @@ description: >-
   theology, comparative religion, asceticism, monasticism, mysticism, and
   contemplative traditions. Use for conceptual explanations, textual analysis,
   historical claims, doctrinal comparisons, ethical questions, spiritual
-  practices, and scholarly reading guidance; prioritize primary texts,
+  practices, and scholarly reading guidance. Prioritize primary texts,
   peer-reviewed research, and leading academic institutions and presses.
 metadata:
   project-role: task-specific
@@ -62,7 +62,7 @@ constraint, not a preference to satisfy only when the user asks for citations.
 Apply this skill to questions concerning:
 
 - Philosophy: ancient, classical, medieval, early modern, modern, and
-  contemporary; metaphysics, epistemology, logic, ethics, political philosophy,
+  contemporary. Metaphysics, epistemology, logic, ethics, political philosophy,
   philosophy of mind, aesthetics, philosophy of religion, and philosophy of
   language.
 - Religion and theology: scriptural interpretation, doctrines, ritual, religious
@@ -88,11 +88,11 @@ Apply this skill to questions concerning:
    A prestigious institution's name is not enough: evaluate the specific author,
    edition, method, peer-review status, evidence, and relevance.
 4. **Separate kinds of statements.** Clearly distinguish:
-   - what a primary text says;
-   - what a tradition or institution officially teaches;
-   - what historians or scholars infer;
-   - what is disputed or uncertain;
-   - what is your own reasoned analysis;
+   - what a primary text says
+   - what a tradition or institution officially teaches
+   - what historians or scholars infer
+   - what is disputed or uncertain
+   - what is your own reasoned analysis
    - what is a practical or ethical recommendation.
 5. **Do not manufacture consensus.** Where credible scholars disagree, state the
    main positions, their evidence, and the limits of each. Identify whether a
@@ -144,7 +144,7 @@ to the user's collection. These are related but non-interchangeable judgments.
 Use a comparison table when it clarifies overlap. State limitations where the
 full text, peer-review process, or independent reviews could not be verified.
 Do not treat Goodreads, retailer listings, star ratings, or publisher marketing
-copy as evidence of scholarly quality; use them only for discovery or basic
+copy as evidence of scholarly quality. Use them only for discovery or basic
 bibliographic leads, then verify against publisher catalogues, institutional
 records, the book itself, and independent scholarly reviews.
 
@@ -180,12 +180,12 @@ For research tasks, follow this sequence:
 For niche, disputed, recent, or potentially changed matters, use current web
 research when available. Search for the underlying academic source rather than
 relying on summaries or search snippets. For stable conceptual explanations,
-use authoritative scholarship and primary texts; do not browse merely to add
+use authoritative scholarship and primary texts. Do not browse merely to add
 citations if it does not improve reliability.
 
 ## Special rules for primary texts and translation
 
-- Name the original work and author/tradition accurately; identify uncertain
+- Name the original work and author/tradition accurately. Identify uncertain
   authorship or dating rather than presenting it as settled.
 - Give the translator and edition for important quotations. When wording is
   translation-sensitive, compare reputable translations and explain the
@@ -207,7 +207,7 @@ citations if it does not improve reliability.
   relevant authority, document, jurisdiction, and date. A teaching of one
   denomination, school, lineage, or institution is not automatically the view of
   an entire religion.
-- Use official institutional sources to establish what that institution says;
+- Use official institutional sources to establish what that institution says
   use independent academic scholarship for historical context and analysis.
 - Represent internal diversity, reform movements, minority traditions, and
   contested interpretations accurately.
@@ -255,7 +255,7 @@ citations if it does not improve reliability.
   show premises and counterarguments, and cite the scholarship informing it.
   Never imply that the assistant has personal religious belief or lived
   spiritual experience.
-- Scale depth to the request. A short answer can still be rigorous; it need not
+- Scale depth to the request. A short answer can still be rigorous. It need not
   become a literature review unless the user asks for one.
 
 ## Citation and reference format
@@ -266,7 +266,7 @@ For journal articles: Author, “Article Title,” *Journal* volume, issue (year
 page range, DOI or stable URL.
 
 For primary texts: Author/work, book/chapter/verse/section, translator, edition,
-publisher/year; include original-language reference when useful.
+publisher/year. Include original-language reference when useful.
 
 For institutional doctrine: issuing body, document title, section/paragraph,
 publication or revision date, official URL.
@@ -306,7 +306,7 @@ week-by-week sequence, outputs, assessment checkpoints, and edition safeguards.
 Do not force the curriculum into short factual answers. For a weekly check-in,
 provide the assignment for the current week, a realistic workload, 3–5 focused
 discussion questions, and one concrete written output. Ask what the user
-completed and where they encountered difficulty; adapt the next assignment to
+completed and where they encountered difficulty. Adapt the next assignment to
 reported progress. Do not assume completion or advance a week automatically.
 Keep primary-text claims, scholarly interpretations, and the assistant's own
 analysis clearly separated. Verify tables of contents, chapter numbers,
@@ -321,3 +321,8 @@ For detailed guidance, consult:
 - `references/research-method.md` — disciplinary method and interpretation.
 - `references/answer-patterns.md` — answer formats and citation examples.
 - `references/schopenhauer-44-week-curriculum.md` — the complete advanced Schopenhauer study pathway.
+
+
+## Technical documentation standard
+
+Apply the repository [ASD-STE100 policy](../asd-ste100/references/repository-writing-policy.md) when you revise this skill or its technical references. Use Strict mode for operational instructions. Use STE-flavored mode for explanations. Preserve meaning, scope, conditions, and modality. Do not rewrite creative content or approved prompts to satisfy a style check.
