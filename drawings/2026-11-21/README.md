@@ -9,7 +9,8 @@
 
 This file is the daily navigation ledger. Each image attempt will have a separate note. The session brief governs this session's visual direction.
 
-No image attempts have been created for this session yet.
+Attempt 08 has been prepared and its complete prompt archived. Image generation is pending.
 
 | Attempt | Prompt note | Session brief | Primary series / membership | Status / outcome |
 |---|---|---|---|---|
+| 08 — A Quiet Morning Together | [Attempt 08 prompt](attempt-08.md) | [Session brief](session-01-brief.md) | Samantha — Human Presence Without a Body | Prompt archived and verified; generation pending |
