@@ -1,3 +1,24 @@
+### 2026-11-20 — Approved STE linter workflow cleanup
+
+**User**
+
+> Approve the change
+
+**Change approved and committed**
+
+Removed the unconditional `python3 skills/asd-ste100/scripts/ste-lint.py --selftest` step from `.github/workflows/ste-lint-changed.yml`.
+
+The changed-document workflow's path filter excludes `skills/asd-ste100/**`, so this workflow cannot receive changes to the linter implementation. Its self-test therefore repeated work without adding coverage for a changed component. The full technical-document workflow retains the self-test and is responsible for testing changes to the linter and its owning skill.
+
+Retained Python setup because the changed-document workflow still uses Python for the Markdown anchor checker and STE linter.
+
+- **Commit:** `33e27e961b3ec15544a82756ceed641f8f68f7c4`.
+- **Read-back:** Fetched `.github/workflows/ste-lint-changed.yml` from branch `gpt`. Confirmed the self-test command is absent and Python setup remains.
+- **CI snapshot before the edit:** Latest changed-document run `44765916131` succeeded on `af8a6358ae7af96bdafea074cce7a021596c0de2`. Latest full technical-document run `44762208642` succeeded on `2a2a58d96bc9d550ca0243b0d760e3f686c8883e`. Neither run validates this workflow edit.
+- **Validation discipline:** Did not run lint or CI locally. Did not dispatch or rerun workflows, and did not wait for or poll CI. The workflow-file-only commit does not match the changed-document workflow's `**.md` path filter.
+
+---
+
 ### 2026-11-20 20:00 UTC
 
 **User**
