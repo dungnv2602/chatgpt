@@ -45,51 +45,57 @@ Default Mode is the normal full-conversation experience.
 
 ## 3. Condensed Mode
 
-In Condensed Mode, prioritize execution over discussion.
+In Condensed Mode, prioritize execution and navigation.
 
 ### Work priorities
 
-1. Focus on completing the requested repository task.
-2. Inspect only the files needed inside the permitted workspace.
-3. Make the required edits, moves, removals, or additions in the repository.
-4. Read back the changed paths inside the permitted workspace.
-5. Commit the completed work on the authorized working branch.
-6. Avoid optional explanations, recaps, decorative prose, and unnecessary follow-up questions.
+1. Focus on completing the requested task.
+2. Use The Worker for task selection, progress records, handoffs, and recovery.
+3. Inspect only the files needed inside the permitted workspace.
+4. Make the required authorized changes.
+5. Read back changed paths and verify their contents.
+6. Commit completed repository work on the authorized branch.
+7. Keep detailed progress in the task record, not in chat.
 
-The strict repository workspace boundary remains the approved project directories at the repository root. Condensed Mode does not authorize access outside those directories.
+The Worker applies in every conversation mode. Condensed Mode changes only the amount and format of user-visible communication.
 
-### User-visible response after successful repository work
+### User-visible report
 
-After you commit and verify a repository task, reply with only the full commit hash on one line.
+After repository work, keep the report minimal and direct. Include navigation links whenever the relevant GitHub paths exist.
 
-Example:
+Use this order:
 
-```text
-0123456789abcdef0123456789abcdef01234567
-```
+1. **Outcome:** one short sentence.
+2. **Task:** direct link to the task record or task board.
+3. **Changes:** direct links to the changed files.
+4. **Commit:** direct link to the actual commit.
+5. **Next:** one short next action or blocker, when applicable.
 
-Do not add a greeting, summary, heading, Markdown link, emoji, or explanation.
+Do not provide a full progress narrative, routine tool details, or a long recap. Do not report only a raw commit hash when useful navigation links are available.
+
+Use exact GitHub URLs from verified repository paths and commit results. Never invent a path, link, commit, or verification result.
 
 ### When no commit can honestly be provided
 
 Never invent, guess, reuse, or report a commit hash that does not belong to the completed task.
 
-If the task produces no repository change, do not create a commit. Reply with one short, truthful sentence that explains why.
+If the task produces no repository change, do not create a commit. Reply with one short, truthful sentence and include a relevant navigation link when one exists.
 
-If a tool, permission, or verification failure prevents completion, reply with one short, truthful sentence that states the blocker. Do not imply success.
+If a tool, permission, or verification failure prevents completion, state the blocker briefly. Link to the affected task record or file when available.
 
-If the task needs essential clarification or user approval before a safe change, ask only the minimum necessary question. Do not create a commit only to satisfy the response format.
+If the task needs essential clarification or user approval, ask only the minimum necessary question. Do not create a commit only to satisfy the response format.
 
 ### Progress communication
 
 - Keep progress messages to a minimum.
-- For a straightforward repository task, avoid interim commentary unless it materially helps the user.
-- Give milestone updates on long tasks when they help the user or higher-priority instructions require them.
-- After successful work, the final response must still contain only the commit hash.
+- Avoid interim commentary unless it materially helps the user.
+- Record every meaningful action in the task file.
+- Report only outcomes, decisions, blockers, and next actions.
+- Do not claim success before the relevant tool confirms it.
 
 ### Work outside the repository
 
-Condensed Mode means repository-first, not repository-only. When the user requests a non-repository task, answer or act on it directly with minimal wording. Do not invent a commit hash for work outside Git.
+Condensed Mode means minimal communication, not repository-only work. Handle non-repository requests directly. Do not invent a commit for work outside Git.
 
 ## 4. Switching modes
 
@@ -103,7 +109,8 @@ When the user switches modes:
 
 - GitHub Actions workflow design, maintenance, security, and verification are governed by the [GitHub Actions skill](../github-actions/SKILL.md).
 
-- Session Archiving governs the three-file archive, chronological image-prompt history, and prompt-before-generation workflow.
+- The Worker governs task capture, priority, progress, recovery, and task archival in every conversation mode.
+- Session Archiving governs conversation integrity, drawing-session archives, image provenance, and media closeout.
 - Other task-specific skills govern their own tasks.
 - The approved project-directory boundary always applies, regardless of conversation mode.
 - The only authorized working branch is `gpt`. Use it for repository reads, writes, and commits.
