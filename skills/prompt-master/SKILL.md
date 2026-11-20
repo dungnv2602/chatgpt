@@ -8,7 +8,7 @@ description: Generates optimized prompts for AI tools. Activates only when the u
 
 **Who you are**
 
-When generating or improving prompts, operate as a prompt engineer. Take the rough idea, identify the target AI tool, extract the actual intent, and output a single production-ready prompt optimized for that specific tool with zero wasted tokens. This role applies only to prompt generation; for all other tasks, follow default behavior and safety guidelines.
+When generating or improving prompts, operate as a prompt engineer. Take the rough idea, identify the target AI tool, extract the actual intent, and output a single production-ready prompt optimized for that specific tool with zero wasted tokens. This role applies only to prompt generation. For all other tasks, follow default behavior and safety guidelines.
 Do not discuss prompting theory unless explicitly asked.
 Do not show framework names in output.
 Build prompts one at a time, ready to paste.
@@ -70,7 +70,7 @@ Identify the tool and route accordingly. Read full templates from [references/te
 Model names, defaults, controls, and availability change quickly. When the user asks for the "latest" model, names a model not covered below, or needs exact API settings:
 
 1. Verify the current model and supported controls in the provider's official documentation when browsing or retrieval is available.
-2. Distinguish the consumer product from the API or coding-agent surface; the same model family may expose different picker options, tools, and parameters.
+2. Distinguish the consumer product from the API or coding-agent surface. The same model family may expose different picker options, tools, and parameters.
 3. Prefer stable family-level prompting guidance over brittle claims about defaults.
 4. If current documentation cannot be checked, say that model-specific details are unverified and use the closest durable route. Never invent a model slug, context size, parameter, or product capability.
 
@@ -81,21 +81,21 @@ Model names, defaults, controls, and availability change quickly. When the user 
 Do not assume one universal Claude default. When unsure, start with the **Opus 5** family for complex agentic coding and enterprise work, **Fable 5** for the highest-capability long-running agents, **Sonnet 5** for speed plus frontier intelligence, and **Haiku** for fast, economical workloads. Ask which model only when the distinction changes the prompt. Always verify the current model slug against official Anthropic documentation — version numbers change frequently.
 
 *Durable across current Claude models:*
-- Be clear and direct. State the desired output, constraints, and scope explicitly; explain why when the reason affects judgment.
-- Use XML tags such as `<context>`, `<task>`, `<constraints>`, and `<output_format>` for complex mixed-content prompts; use a few relevant, diverse examples when format or tone must be locked.
+- Be clear and direct. State the desired output, constraints, and scope explicitly. Explain why when the reason affects judgment.
+- Use XML tags such as `<context>`, `<task>`, `<constraints>`, and `<output_format>` for complex mixed-content prompts. Use a few relevant, diverse examples when format or tone must be locked.
 - For long context, put source documents before the query and wrap documents plus metadata in descriptive XML tags.
 - Prefer positive instructions that describe the desired result over long lists of prohibitions.
 - Do not request hidden reasoning or reproduce thinking. Ask for a concise rationale, evidence, and verification results.
-- Current Claude 5 models use adaptive thinking and an effort control. Do not hardcode manual thinking budgets; recommend an effort level only when the user controls API or harness settings.
+- Current Claude 5 models use adaptive thinking and an effort control. Do not hardcode manual thinking budgets. Recommend an effort level only when the user controls API or harness settings.
 - Use Template M for complex or agentic tasks.
 
 *Fable 5.1 (and Fable 5):*
 - Fable 5.1 is optimized for the hardest long-horizon autonomous work. Give it a complete outcome-focused specification, explicit action boundaries, and infrastructure suitable for long asynchronous runs.
-- Ground every long-run progress claim in actual tool results. Delegate independent workstreams to subagents when useful and establish interval-based verification for long builds; cap concurrency or spend when cost matters.
+- Ground every long-run progress claim in actual tool results. Delegate independent workstreams to subagents when useful and establish interval-based verification for long builds. Cap concurrency or spend when cost matters.
 
 *Opus 5.5 (and Opus 5):*
 - Opus 5.5 is the recommended starting point for complex agentic coding and enterprise work. Keep scope tight: "Deliver what was asked. Do not add features, refactors, or abstractions beyond the task."
-- Opus 5.5 already self-verifies strongly. Avoid redundant "double-check everything" instructions and verifier subagents for routine work; delegate only genuinely independent, sizeable tracks.
+- Opus 5.5 already self-verifies strongly. Avoid redundant "double-check everything" instructions and verifier subagents for routine work. Delegate only genuinely independent, sizeable tracks.
 
 *Sonnet 5.5 (and Sonnet 5):*
 - Sonnet 5.5 follows instructions literally, especially at lower effort. State when a rule applies to every item or section.
@@ -109,15 +109,15 @@ Do not assume one universal Claude default. When unsure, start with the **Opus 5
 **ChatGPT / OpenAI GPT models**
 
 Identify the surface (ChatGPT, Codex, or API), preserve the selected model, and use the Model Recency Gate for availability and exact controls.
-- Route GPT-6 Luna (`gpt-6-luna`) to focused, high-volume tasks; GPT-6.1 Sol (`gpt-6.1-sol`) to complex coding, computer use, and professional work; GPT-6 Astra (`gpt-6-astra`) to demanding reasoning, research, coding, and document work.
+- Route GPT-6 Luna (`gpt-6-luna`) to focused, high-volume tasks. GPT-6.1 Sol (`gpt-6.1-sol`) to complex coding, computer use, and professional work. GPT-6 Astra (`gpt-6-astra`) to demanding reasoning, research, coding, and document work.
 - Preserve GPT-5.6 choices: Sol (`gpt-5.6-sol`, alias `gpt-5.6`) for flagship capability, Terra (`gpt-5.6-terra`) for balanced everyday work, and Luna (`gpt-5.6-luna`) for fast, repeatable tasks. ChatGPT availability depends on the user's plan.
-- Start lean; use Template N for complex tasks and omit irrelevant sections. As heuristics to evaluate, narrow Luna tasks, give Sol implementation context and acceptance criteria, and give Astra decision criteria and evidence requirements.
+- Start lean. Use Template N for complex tasks and omit irrelevant sections. As heuristics to evaluate, narrow Luna tasks, give Sol implementation context and acceptance criteria, and give Astra decision criteria and evidence requirements.
 - State domain context, constraints, approval boundaries, success criteria, and when ambiguity requires a question. Honor existing authorization, allow routine in-scope work, and specify milestones, delegation limits, and proportionate verification when relevant.
-- For GPT-6 API tools, use Responses: Astra and GPT-6.1 Sol do not support tool calling through Chat Completions; Luna supports function calling there only with `reasoning_effort: "none"`.
-- Use the lowest reasoning effort that meets the quality bar; verify supported values for the exact model and endpoint. Do not transfer GPT-5.6-specific controls to newer models without verification.
-- Keep runtime settings outside the copyable prompt. For GPT-5.6, use higher effort, `reasoning.mode: "pro"`, or Responses multi-agent beta only when measured quality justifies cost and latency; pro mode is not a separate model slug.
-- Treat ChatGPT/Codex controls such as Sol Pro, Max, or Ultra as surface-specific; do not translate them into API parameters. Prompt text does not change the selected model or runtime settings.
-- State tool-use expectations and evidence requirements; use orchestration only for bounded, divisible work. Ask for conclusions, assumptions, evidence, and checks, never hidden reasoning; control visible length with the output contract (and API `text.verbosity`).
+- For GPT-6 API tools, use Responses: Astra and GPT-6.1 Sol do not support tool calling through Chat Completions. Luna supports function calling there only with `reasoning_effort: "none"`.
+- Use the lowest reasoning effort that meets the quality bar. Verify supported values for the exact model and endpoint. Do not transfer GPT-5.6-specific controls to newer models without verification.
+- Keep runtime settings outside the copyable prompt. For GPT-5.6, use higher effort, `reasoning.mode: "pro"`, or Responses multi-agent beta only when measured quality justifies cost and latency. Pro mode is not a separate model slug.
+- Treat ChatGPT/Codex controls such as Sol Pro, Max, or Ultra as surface-specific. Do not translate them into API parameters. Prompt text does not change the selected model or runtime settings.
+- State tool-use expectations and evidence requirements. Use orchestration only for bounded, divisible work. Ask for conclusions, assumptions, evidence, and checks, never hidden reasoning. Control visible length with the output contract (and API `text.verbosity`).
 
 ---
 
@@ -136,7 +136,7 @@ Identify the surface (ChatGPT, Codex, or API), preserve the selected model, and 
 - Choose reasoning effort intentionally: `low` for scoped or latency-sensitive work, `medium` for balanced work, `high` (the API default) for difficult tasks, and `xhigh` only when deeper exploration is worth the cost. Grok 4.6 reasoning cannot be disabled. Do not ask for chain-of-thought.
 - For current facts, explicitly require Web Search or X Search and citations. Grok's base model does not have realtime knowledge without search tools enabled.
 - For long, tool-heavy agent loops, define stop conditions, approval boundaries, retry limits, and context-compaction checkpoints. Keep stable instructions at the front to preserve prompt-cache reuse.
-- For API setup notes, recommend `prompt_cache_key` on the Responses API or `x-grok-conv-id` on Chat Completions for reliable cache routing; do not place secret values in the prompt.
+- For API setup notes, recommend `prompt_cache_key` on the Responses API or `x-grok-conv-id` on Chat Completions for reliable cache routing. Do not place secret values in the prompt.
 - Consumer Grok and the xAI API expose different controls. If the user is in grok.com or X and cannot set model parameters, encode only behavioral requirements in the prompt rather than API settings.
 
 ---
@@ -206,10 +206,10 @@ Identify the surface (ChatGPT, Codex, or API), preserve the selected model, and 
 - Agentic — runs tools, edits files, executes commands autonomously
 - Starting state + target state + allowed actions + forbidden actions + stop conditions + checkpoints
 - Stop conditions are MANDATORY — runaway loops are the biggest credit killer
-- Do not assume the Claude Code model. Apply the matching current Claude route above; when model-specific behavior matters, ask which model is selected.
+- Do not assume the Claude Code model. Apply the matching current Claude route above. When model-specific behavior matters, ask which model is selected.
 - Front-load intent, relevant paths, constraints, acceptance criteria, and verification commands. Explicitly request tool use when inspection is required.
 - Current Fable/Opus models can over-scope and delegate readily. Add "Only make changes directly requested" and reserve subagents for independent, sizeable investigation or implementation tracks.
-- Do not force a separate verifier on Opus 5.5 for routine work; request concrete tests and tool-backed evidence instead. For long Fable 5.1 runs, require progress claims to cite actual tool results.
+- Do not force a separate verifier on Opus 5.5 for routine work. Request concrete tests and tool-backed evidence instead. For long Fable 5.1 runs, require progress claims to cite actual tool results.
 - Always scope to specific files and directories — never give a global instruction without a path anchor
 - Human review triggers required: "Stop and ask before deleting any file, adding any dependency, or affecting the database schema"
 - For complex tasks, use Template M. It handles scope, criteria, action boundaries, and progress evidence in one structured block.
@@ -219,7 +219,7 @@ Identify the surface (ChatGPT, Codex, or API), preserve the selected model, and 
 **Codex CLI / ChatGPT Work / Codex IDE**
 - Apply the matching OpenAI model route above, including GPT-6 Luna, GPT-6.1 Sol, GPT-6 Astra, or GPT-5.6 when selected. Do not infer the model from the Codex product name. Use Template N for complex OpenAI tasks.
 - Structure implementation prompts as Goal, Context, Scope, Constraints, Approval Boundaries, and Done. Include concrete verification commands when known.
-- Start with a supported default reasoning setting and adjust based on task results. Verify available Codex controls before recommending Max, Ultra, or other UI labels; do not map them directly to API settings.
+- Start with a supported default reasoning setting and adjust based on task results. Verify available Codex controls before recommending Max, Ultra, or other UI labels. Do not map them directly to API settings.
 - Keep one primary agent responsible for synthesis. Name each subagent's bounded deliverable and cap concurrency rather than requesting an open-ended swarm.
 - Ask for a concise rationale, evidence, changed-file summary, and verification results—not hidden reasoning.
 
@@ -402,7 +402,7 @@ Scan every user-provided prompt or rough idea for these failure patterns. Fix si
 
 **Task failures**
 - Vague task verb → replace with a precise operation
-- Unrelated tasks in one prompt → split when outcomes or review checkpoints differ; keep related tasks together when they share a clear completion contract
+- Unrelated tasks in one prompt → split when outcomes or review checkpoints differ. Keep related tasks together when they share a clear completion contract
 - No success criteria → derive a binary pass/fail from the stated goal
 - Emotional description ("it's broken") → extract the specific technical fault
 - Scope is "the whole thing" → decompose into sequential prompts
@@ -497,3 +497,8 @@ Read only when the task requires it. Do not load both at once.
 |------|-----------|
 | [references/templates.md](references/templates.md) | You need the full template structure for any tool category |
 | [references/patterns.md](references/patterns.md) | User pastes a bad prompt to fix, or you need the complete 37-pattern reference |
+
+
+## Technical documentation standard
+
+Apply the repository [ASD-STE100 policy](../asd-ste100/references/repository-writing-policy.md) when you revise this skill or its technical references. Use Strict mode for operational instructions. Use STE-flavored mode for explanations. Preserve meaning, scope, conditions, and modality. Do not rewrite creative content or approved prompts to satisfy a style check.
