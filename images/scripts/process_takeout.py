@@ -614,6 +614,7 @@ def prepare_session_manifest_updates(prepared: list[dict[str, Any]], root: Path)
 
         seen_ids: dict[str, dict[str, str]] = {}
         seen_webps: dict[str, dict[str, str]] = {}
+        seen_output_ids: set[str] = set()
         for row in rows:
             image_id = (row.get("image_id") or "").strip()
             webp_path = (row.get("webp_path") or "").strip()
@@ -625,6 +626,11 @@ def prepare_session_manifest_updates(prepared: list[dict[str, Any]], root: Path)
                 if webp_path in seen_webps:
                     raise ProcessingError(f"Duplicate webp_path in session manifest: {webp_path}")
                 seen_webps[webp_path] = row
+            output_id = (row.get("output_id") or "").strip()
+            if output_id:
+                if output_id in seen_output_ids:
+                    raise ProcessingError(f"Duplicate output_id in session manifest: {output_id}")
+                seen_output_ids.add(output_id)
 
         image_dir = session_dir / "images"
         if image_dir.is_symlink() or (image_dir.exists() and not image_dir.is_dir()):
@@ -732,7 +738,7 @@ def prepare_session_manifest_updates(prepared: list[dict[str, Any]], root: Path)
         for item in session_items:
             relative_master = item["master"].relative_to(root).as_posix()
             relative_webp = item["webp"].relative_to(root).as_posix()
-            image_id = item["output_id"] or f"A{item['attempt']}-O-{item['source_sha'][:12]}"
+            image_id = item["image_id"]
             if item["hash_match"] == "MATCH":
                 mapping_status = "Verified"
                 mapping_evidence = "Uploaded original SHA-256 matches the recorded generation-time SHA-256."
@@ -1018,7 +1024,11 @@ def main() -> int:
                 "attempt": attempt_ref, "expected_sha": expected_sha, "output_id": output_id, "prompt_id": prompt_id,
                 "native_generation_id": native_generation_id, "native_output_id": native_output_id,
                 "approval_status": approval_status, "mapping_evidence": mapping_evidence,
-                "image_id": output_id or (f"A{attempt_ref}-O-{source_sha[:12]}" if attempt_ref else ""),
+                "image_id": output_id or (
+                    f"A{attempt_ref}-O-{source_sha[:12]}-"
+                    f"{hashlib.sha256(name.encode('utf-8')).hexdigest()[:8]}"
+                    if attempt_ref else ""
+                ),
                 "hash_match": hash_match,
                 "directory": directory, "master": master, "webp": webp,
                 "profile": "lossless-exact-q100-m6" if suffix == ".png" else "picture-q92-m6-sharp-yuv",

@@ -517,6 +517,49 @@ class TakeoutProcessorTests(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("require explicit attempt metadata", report)
 
+
+    def test_identical_original_bytes_from_two_outputs_get_distinct_internal_image_ids(self):
+        session = self.root / "drawings/2026-11-19"
+        session.mkdir(parents=True)
+        (session / "attempt-01.md").write_text("# Attempt 01\n", encoding="utf-8")
+        readme = session / "README.md"
+        readme.write_text(
+            "# Drawing session\n\n"
+            "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+            "|---|---|---|---|---|---|\n"
+            "| [01 — Two outputs](attempt-01.md) | Session | Existing | Two outputs | Not recorded | — |\n",
+            encoding="utf-8",
+        )
+        identical = b"same-original-image-bytes"
+        (self.inbox / "output-one.png").write_bytes(identical)
+        (self.inbox / "output-two.png").write_bytes(identical)
+        self.manifest_many(
+            [
+                {
+                    "source": "output-one.png",
+                    "title": "Output One",
+                    "destination_dir": "drawings/2026-11-19/images",
+                    "attempt": "1",
+                },
+                {
+                    "source": "output-two.png",
+                    "title": "Output Two",
+                    "destination_dir": "drawings/2026-11-19/images",
+                    "attempt": "1",
+                },
+            ],
+            batch="batch-identical-outputs",
+        )
+        result = self.run_processor()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        with (session / "manifest.csv").open(encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle))
+        self.assertEqual(len(rows), 2)
+        self.assertEqual(len({row["image_id"] for row in rows}), 2)
+        self.assertEqual(len({row["sha256"] for row in rows}), 1)
+        self.assertEqual({row["attempt"] for row in rows}, {"01"})
+        self.assertTrue(all(row["image_id"].startswith("A01-O-") for row in rows))
+
     def test_duplicate_output_id_fails_before_relocation(self):
         (self.inbox / "first.png").write_bytes(b"first-original")
         (self.inbox / "second.png").write_bytes(b"second-original")
