@@ -60,7 +60,6 @@ jobs:
              ! git cat-file -e "${last_success}^{commit}" 2>/dev/null ||
              ! git merge-base --is-ancestor "$last_success" "$GITHUB_SHA"; then
             echo "full_audit=true" >> "$GITHUB_OUTPUT"
-            echo "skip_changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
