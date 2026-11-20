@@ -16,6 +16,15 @@ The selected mode remains active for the current conversation or continuous
 artwork task until explicitly changed. For a new unrelated task, infer from the
 request or ask which mode the user prefers when the distinction is unclear.
 
+## Mandatory prompt-fidelity standard
+
+The full rule is maintained separately in
+[Prompt Fidelity and Unrequested Restrictions](references/prompt-fidelity.md).
+This is the authoritative, exhaustive reference for preserving the user's
+approved prompt and creative direction, prohibiting unrequested restrictions
+and additions, and auditing the complete prompt before every generation or
+edit. Apply it together with the workflow in SKILL.md.
+
 ## Prompt interpretation and recovery
 
 Before rewriting a refused or unsuccessful prompt, compare it with the project's
@@ -33,3 +42,4 @@ Section F's garment-construction checks for the full procedure.
 - `SKILL.md` — core instructions and workflow.
 - `references/style-guide.md` — visual style definitions and distinctions.
 - `references/image-editing-protocol.md` — source handling and edit verification.
+- `references/prompt-fidelity.md` — exhaustive prompt-fidelity standard and pre-generation audit.
