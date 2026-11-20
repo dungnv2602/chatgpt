@@ -6,7 +6,7 @@
 - **Series / path:** Samantha — Human Presence Without a Body / Sweet Path
 - **Scene:** A quiet morning together; Samantha listens to someone outside the frame, holds a warm mug in her right hand, rests her empty left hand on the sofa, and has a more natural right-leg position.
 - **Operation:** Prompt-only adjustment followed by fresh generation
-- **Status:** Prompt committed; generation pending
+- **Status:** Generated; awaiting user review
 - **Prompt ID:** Not assigned
 - **Baseline:** Attempt 09 — `drawings/2026-11-21/attempt-09.md` (complete authored generation prompt; copied verbatim before the two requested pose adjustments)
 
@@ -46,23 +46,23 @@ Depict an original adult woman representing an imagined human embodiment of Sama
 
 ## Generation and outputs
 - **Authored prompt committed before generation:** Yes
-- **Actual submitted payload:** Pending
-- **Generation result:** Pending
-- **Output count and order:** Pending
+- **Actual submitted payload:** Not exposed by the generation metadata; the archived authored prompt is the verified text
+- **Generation result:** Generated
+- **Output count and order:** One output
 
 | Output ID | Native generation / image ID | Mapping evidence and status | Original / archive asset | SHA-256 |
 |---|---|---|---|---|
-| Pending | Unavailable | Not generated | Unavailable | Unavailable |
+| Output 01 | Generation ID: `0fb1bb90-44af-4045-b1a0-f808eef75c9b`; asset ID: `file_0000000066108207ac853d7dc9be1511` | Generation and asset IDs recorded together; local artifact path recorded; Corroborated | `/mnt/data/a_cozy_indoor_scene_in_a_modern_apartment_living_r.png` | `593570e0c84a58769ac36c5a15bcde2a33235dce442074c45865899a6e82c47f` |
 
 ## Review
 | Acceptance criterion | Result | Visual evidence |
 |---|---|---|
-| Right leg has a natural, relaxed, anatomically plausible seated alignment | Not assessable | Generation and user review pending |
+| Right leg has a natural, relaxed, anatomically plausible seated alignment | Not assessable | Generation complete; user review pending |
 | Left hand rests naturally on the sofa and is empty | Not assessable | Generation and user review pending |
 | Right hand holds the warm mug | Not assessable | Generation and user review pending |
 | Quiet morning scene and attentive interaction remain intact | Not assessable | Generation and user review pending |
 | Sweet Path character direction and cinematic realism remain intact | Not assessable | Generation and user review pending |
 
-- **Outcome:** Pending generation.
+- **Outcome:** Fresh prompt-based generation; not a direct image edit.
 - **User decision:** Pending.
-- **Next action:** Generate and await user review.
+- **Next action:** Await user review.
