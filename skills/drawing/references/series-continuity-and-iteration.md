@@ -90,7 +90,7 @@ One image can have multiple thematic connections, but every prompt used for an i
 
 Apply this order whenever an image belongs to an established series:
 
-1. **Read the active session brief first.** Confirm what the user wants in this
+1. **Read the active session brief first.** Check what the user wants in this
    session, which details are locked, and what may vary. Identify a primary
    series only when the current brief explicitly continues or adopts it. Do not
    infer creative authority from project membership or a shared character.
@@ -116,7 +116,7 @@ Apply this order whenever an image belongs to an established series:
    Carry forward only later successful, user-approved details that fit the active session brief. Record both prompt references. Explain why you need the older full-scene skeleton. This exception applies only to operation compatibility. It does not permit a failed prompt or a prompt from another series.
 12. **Keep edits separate from prompt baselines.** When the user requests an edit of a successful image, use the actual image as the source. Do this only when the image is accessible and can be attached. The successful prompt remains useful context. It does not replace the source image. An image filename or generation ID is not an attachment.
 13. **Honor explicit user selection.** If the user names a particular successful prompt as the baseline, use it after verifying the record. If the user names an image as the visual/edit baseline, use that image for the requested role when it is actually available. Do not mislabel it as a prompt.
-14. **Resolve ambiguity proportionately.** If series membership or the primary branch is genuinely unclear and would materially alter baseline selection, ask one focused question. Otherwise use the clearest context, record provisional membership, and proceed.
+14. **Resolve ambiguity proportionately.** If series membership or the primary branch is genuinely unclear and would materially change baseline selection, ask one focused question. Otherwise use the clearest context, record provisional membership, and proceed.
 
 The controlling rule is: **the newest successful prompt in the active series is the baseline. Newer unsuccessful prompts are evidence, never the baseline.** Preserve the series' evolving creative spirit by applying only the requested changes to that successful foundation. Keep every unmentioned locked feature unchanged.
 
@@ -175,7 +175,7 @@ next operation based on what actually succeeded: the prompt, the image, or both.
 7. **Image-source verification:** A generation ID, filename, local path, archived
    note, or textual mention is not an image attachment. Use a direct edit only
    when the exact source is accessible and can be supplied through a supported
-   image-reference mechanism. Verify the actual source asset and record what was
+   image-reference mechanism. Check the actual source asset and record what was
    attached.
 8. **Provenance:** After an edit, inspect returned operation and parent/source
    metadata. If source linkage is not confirmed, classify it as a fresh
@@ -183,7 +183,7 @@ next operation based on what actually succeeded: the prompt, the image, or both.
    appearance does not prove linkage.
 9. **Archive before the operation:** Record the exact authored prompt, operation
    type, source/reference actually attached, intended change, and pending
-   status. Commit and read-back verify before generation or editing. Afterward,
+   status. Commit and read-back check before generation or editing. Afterward,
    record the actual result and deviations. Distinguish authored prompt text
    from tool-compiled/submitted text if the latter is unavailable.
 
