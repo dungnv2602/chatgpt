@@ -15,7 +15,7 @@ FIELDS = [
     "source_filename", "source_path", "title", "asset_id", "attempt", "destination_dir",
     "master_path", "webp_path", "staging_webp_path", "source_format", "conversion_profile",
     "original_bytes", "webp_bytes", "size_change_percent", "source_sha256",
-    "master_sha256", "webp_sha256", "cwebp_version", "status", "error",
+    "master_sha256", "webp_sha256", "generation_sha256", "output_id", "prompt_id", "hash_match", "cwebp_version", "status", "error",
 ]
 
 class ProcessingError(Exception):
@@ -165,7 +165,9 @@ def failure_rows(items: list[Any], error: str, version: str) -> list[dict[str, A
             "source_format": Path(str(source)).suffix.lower().lstrip("."),
             "conversion_profile": "", "original_bytes": "", "webp_bytes": "",
             "size_change_percent": "", "source_sha256": "", "master_sha256": "",
-            "webp_sha256": "", "cwebp_version": version, "status": "FAILED", "error": error,
+            "webp_sha256": "", "generation_sha256": item.get("expected_sha256", ""),
+            "output_id": item.get("output_id", ""), "prompt_id": item.get("prompt_id", ""),
+            "hash_match": "NOT_CHECKED", "cwebp_version": version, "status": "FAILED", "error": error,
         })
     return rows
 
@@ -428,18 +430,35 @@ def main() -> int:
                 reject_symlink_components(target.parent, root)
                 if target.exists() or target.is_symlink():
                     raise ProcessingError(f"Destination already exists; refusing to overwrite: {rel}")
+            expected_sha = item.get("expected_sha256", "")
+            if expected_sha and (not isinstance(expected_sha, str) or not re.fullmatch(r"[a-fA-F0-9]{64}", expected_sha)):
+                raise ProcessingError(f"Item {number}: expected_sha256 must be a 64-character hexadecimal SHA-256.")
+            output_id = item.get("output_id", "")
+            prompt_id = item.get("prompt_id", "")
+            for field_name, field_value in (("output_id", output_id), ("prompt_id", prompt_id)):
+                if field_value and (not isinstance(field_value, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,79}", field_value)):
+                    raise ProcessingError(f"Item {number}: {field_name} must be a safe identifier.")
+            source_sha = digest(source)
+            hash_match = "MATCH" if expected_sha and source_sha.lower() == expected_sha.lower() else ("MISMATCH" if expected_sha else "NOT_PROVIDED")
+            if hash_match == "MISMATCH":
+                raise ProcessingError(f"Generation SHA-256 mismatch for {name}; uploaded bytes do not match the recorded generated original.")
             prepared.append({
                 "name": name, "source": source, "title": title.strip(), "asset_id": asset_id,
-                "attempt": attempt_ref,
+                "attempt": attempt_ref, "expected_sha": expected_sha, "output_id": output_id, "prompt_id": prompt_id,
+                "hash_match": hash_match,
                 "directory": directory, "master": master, "webp": webp,
                 "profile": "lossless-exact-q100-m6" if suffix == ".png" else "picture-q92-m6-sharp-yuv",
-                "original_bytes": source.stat().st_size, "source_sha": digest(source), "staged": None,
+                "original_bytes": source.stat().st_size, "source_sha": source_sha, "staged": None,
             })
         if inbox_images != sources:
             missing, unlisted = sorted(sources - inbox_images), sorted(inbox_images - sources)
             details = (["missing: " + ", ".join(missing)] if missing else []) + (["not listed: " + ", ".join(unlisted)] if unlisted else [])
             raise ProcessingError("Every image must appear exactly once in HANDOFF.yml; " + "; ".join(details))
         checks.append("Every uploaded image is listed exactly once; no unlisted image will be processed.")
+        if any(item["expected_sha"] for item in prepared):
+            checks.append("Generation-time SHA-256 values supplied in HANDOFF were compared against uploaded original bytes before conversion.")
+        else:
+            checks.append("Generation-time SHA-256 matching was not performed: HANDOFF items did not provide expected_sha256.")
         checks.append("Destinations are restricted to images/ or novel/; duplicate and existing paths are rejected.")
         text_updates = prepare_attempt_readme_updates(prepared, root)
         if text_updates:
@@ -513,7 +532,9 @@ def main() -> int:
                 "conversion_profile": item["profile"], "original_bytes": item["original_bytes"],
                 "webp_bytes": item["webp_bytes"], "size_change_percent": item["size_change"],
                 "source_sha256": item["source_sha"], "master_sha256": item["master_sha"],
-                "webp_sha256": item["webp_sha"], "cwebp_version": encoder_version,
+                "webp_sha256": item["webp_sha"], "generation_sha256": item["expected_sha"],
+                "output_id": item["output_id"], "prompt_id": item["prompt_id"], "hash_match": item["hash_match"],
+                "cwebp_version": encoder_version,
                 "status": item["status"], "error": "",
             })
         write_reports(folder, raw, rows, batch, "SUCCESS", checks, [], len(prepared))
@@ -569,7 +590,9 @@ def main() -> int:
                 "conversion_profile": item["profile"], "original_bytes": item["original_bytes"],
                 "webp_bytes": item.get("webp_bytes", ""), "size_change_percent": item.get("size_change", ""),
                 "source_sha256": item["source_sha"], "master_sha256": "",
-                "webp_sha256": item.get("webp_sha", ""), "cwebp_version": encoder_version,
+                "webp_sha256": item.get("webp_sha", ""), "generation_sha256": item.get("expected_sha", ""),
+                "output_id": item.get("output_id", ""), "prompt_id": item.get("prompt_id", ""), "hash_match": item.get("hash_match", "NOT_CHECKED"),
+                "cwebp_version": encoder_version,
                 "status": item.get("status", "FAILED"), "error": message,
             })
         if not rows:
