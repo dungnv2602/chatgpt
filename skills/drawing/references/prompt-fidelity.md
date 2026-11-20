@@ -59,7 +59,7 @@ When no prompt has yet been approved, use the active session brief and the user'
 
 The user's latest explicit correction or amendment controls the property it addresses. It supersedes conflicting wording in an older approved prompt, historical attempt, pattern, reference note, or assistant suggestion.
 
-A phrase that the user has rejected, deleted, or instructed the assistant not to use must not reappear in a later draft. Do not restore it because it exists in an older prompt, even if that prompt was previously successful.
+A phrase that the user has rejected, removed, or instructed the assistant not to use must not reappear in a later draft. Do not restore it because it exists in an older prompt, even if that prompt was previously successful.
 
 If the user asks for a specific, limited change, make that change and preserve the rest. Do not treat permission to revise one element as permission to redesign the entire prompt.
 
@@ -158,7 +158,7 @@ A prompt may be clarified for accuracy and usability, but clarification must not
 
 Permitted wording work includes these actions:
 
-- Correct grammar.
+- Fix grammar.
 - Resolve an unambiguous reference.
 - Clarify an already specified spatial relationship.
 - Remove accidental ambiguity.
@@ -193,8 +193,8 @@ If a requested element cannot be generated or edited because of a real tool limi
 
 A restriction may be included only in either of these circumstances:
 
-1. The user explicitly requests it, or
-2. An applicable safety rule genuinely requires it.
+1. The user explicitly requests the restriction.
+2. An applicable safety rule genuinely requires the restriction.
 
 The exception is narrow. Prudence, inclusion in a template, and failure of a prior attempt do not make a restriction necessary. Assistant speculation that a restriction could prevent a refusal also does not make it necessary.
 

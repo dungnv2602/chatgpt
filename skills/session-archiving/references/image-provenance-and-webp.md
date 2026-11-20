@@ -34,7 +34,7 @@ flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
   destination collisions, symlinks, and invalid paths. It verifies
   source/master SHA-256 equality, WebP signatures, and final WebP hashes.
 - When `attempt: NN` is present for a destination under
-  `drawings/YYYY-MM-DD/images`, the processor checks the matching attempt
+  `drawings/YYYY-MM-DD/images`, the processor validates the matching attempt
   record and six-column daily README. It then writes the verified WebP link to
   both records for every generated image. This includes partial, off-target,
   superseded, and unapproved results. Approval is not a linking condition.
@@ -73,7 +73,7 @@ Capture provenance at generation time for every drawing session. Do not rely on 
 - **Mapping evidence:** direct generation-return association or reliable source metadata can support Verified. Chronology and visual comparison may corroborate but cannot alone establish Verified. Mapping statuses are Verified, Corroborated, Probable, Unmapped, or Conflicting. Explain uncertainty and never silently promote a status.
 - **Integrity:** calculate SHA-256 from actual original bytes. Hashes prove byte identity only, not prompt linkage, generation identity, content, or approval. Store original and derivative hashes separately.
 - **Manifest:** one row per output. Preserve existing required fields and add internal attempt/output IDs, native Generation ID, native image/output ID, mapping evidence/status, and original-byte availability. Never fabricate IDs, links, hashes, or verification results.
-- **Archive:** retain every output regardless of approval and preserve sequence and prompt association. Use established asset-intake procedures. Verify exact paths, blob identity, direct links, and hashes before marking verified.
+- **Archive:** retain every output regardless of approval and preserve sequence and prompt association. Use established asset-intake procedures. Validate exact paths, blob identity, direct links, and hashes before marking verified.
 - **Latency:** generation must not wait for GitHub, hashing, or archival. Capture/associate outputs immediately, then perform remaining archive work. If capture or archive is incomplete, leave explicit pending/incomplete status.
 - **Closeout:** reconcile generation records, attempt notes, README, manifest, and repository assets. Read back changes and report unresolved gaps. Do not mark complete while mandatory checks remain unresolved.
 

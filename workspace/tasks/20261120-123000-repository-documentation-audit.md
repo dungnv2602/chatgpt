@@ -46,6 +46,15 @@ Continue and complete the repository documentation audit. Keep its complete hist
 
 ## 6. Progress Log
 
+### 2026-11-20 15:45 UTC
+
+- **Action:** Continued the remaining active-document synonym review.
+- **Change:** Reworded 12 further occurrences in Prompt Fidelity, Series Continuity, Philosophy, archive records, and image provenance. Rewrote the incomplete alternative list as two complete conditions. Preserved controlled status labels and the user-approval conditions.
+- **Baseline policy:** No lint baseline changed. No historical archive record changed.
+- **Validation:** Read the current source passages before editing. Did not run lint or CI locally. Did not wait for or poll CI.
+- **Next:** Continue reviewing the remaining external URLs and the residual synonym findings. Historical-link review remains gated on user authorization.
+
+
 ### 2026-11-20 15:35 UTC
 
 - **Action:** Continued the synonym-rotation cleanup using the latest completed full-lint findings as a guide.

@@ -64,7 +64,7 @@ This opening brief is the sole creative authority for that session. It applies t
 - For a named novel scene, archive it as
   `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/session-[YYYY-MM-DD]-[NN]-brief.md`.
 - Create and commit the brief before the first image prompt for that session.
-  Read it back and verify it.
+  Read it back and confirm it.
 - Preserve the user's opening direction faithfully. Record specified, locked,
   variable, excluded, and open details. Mark unspecified features as open.
   Never invent constraints.
@@ -191,7 +191,7 @@ drawings/
   Include every attempt exactly once in that table. Use a stable series ID or name. Write `standalone/unassigned` when no series is established. Do not add a second table or place attempt rows outside the table. Keep rows in ascending attempt-number order.
 - **Keep table rows physically contiguous:** Do not insert blank lines between the header, separator, or attempt rows. Many renderers treat a blank line as the end of a Markdown table. This can make the newest attempt appear as a separate block.
   When appending an attempt, place its row directly after the previous row. When revising a status, edit the existing row. Do not move it outside the table or create a second table.
-- **Verify before committing:** Read back the complete daily `README.md`. Verify that it contains one attempt-index table, one header row, and one separator row. Verify that every numbered attempt appears exactly once in ascending order. Verify that no blank line interrupts the table. Verify that the final attempt row belongs to the same table. Do not mark the index update complete until these checks pass.
+- **Verify before committing:** Read back the complete daily `README.md`. Verify that it contains one attempt-index table, one header row, and one separator row. Verify that every numbered attempt appears exactly once in ascending order. Verify that no blank line interrupts the table. Verify that the final attempt row belongs to the same table. Do not mark the index update complete until the table meets all listed conditions.
 - **Status accuracy:** distinguish `not approved / not generated`, `approved / pending generation`, `generated successfully`, `generated with mismatch`, `rejected / no image returned`, and `technical failure`. If an attempt has multiple runs, preserve the sequence in the status cell (for example, an earlier image returned but a later retry was rejected). Do not overwrite history with only the latest or earlier outcome. A user declining approval must never be represented as pending approval.
 - Each attempt note contains all required fields below, the exact authored prompt, and its final outcome when known. Keep the full record self-contained.
 - Session-level conversation-integrity and summary records remain at `drawings/YYYY-MM-DD-conversation-integrity.md` and `drawings/YYYY-MM-DD-summary.md` unless the user changes that convention.
@@ -228,7 +228,7 @@ Before drafting the next prompt:
 6. Append a new attempt with a sequential number, required series metadata,
    baseline provenance, and a pending outcome.
 7. Commit the updated file on the working branch.
-8. Verify the committed content by fetching the exact prompt-record path.
+8. Verify the committed content by reading the exact prompt-record path.
 9. Only then invoke image generation or editing.
 
 ### Required fields for each attempt
@@ -447,7 +447,7 @@ Do not finish a session archive while a requested keeper image has an opaque tem
 
 ### When an opaque image cannot be visually inspected
 
-If an image is present in `images/` but its binary cannot be displayed, do not invent a subject description. If its name contains a reliable timestamp, you may rename it to a neutral timestamp-based filename. Preserve the original extension (for example, `archive-photo-YYYY-MM-DD-HHMMSSZ.jpg`).
+If an image is present in `images/` but its binary cannot be viewed, do not invent a subject description. If its name contains a reliable timestamp, you may rename it to a neutral timestamp-based filename. Preserve the original extension (for example, `archive-photo-YYYY-MM-DD-HHMMSSZ.jpg`).
 
 Record that you did not inspect the pixels. State that the filename is based on time, not image content. If no reliable timestamp or identifying metadata exists, leave the file unchanged until its visual content is available. In either case, preserve the exact Git blob SHA and byte size.
 

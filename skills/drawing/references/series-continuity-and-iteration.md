@@ -86,11 +86,11 @@ When archiving a prompt, include the series name or ID and its theme spine. Also
 
 One image can have multiple thematic connections, but every prompt used for an iteration must have one **primary series** (or be explicitly standalone). Use that primary series to select the prompt baseline. Secondary tags help retrieval. They do not authorize borrowing a baseline from an unrelated series.
 
-#### D. Choosing the correct prompt within a series
+#### D. Selecting the appropriate prompt within a series
 
 Apply this order whenever an image belongs to an established series:
 
-1. **Read the active session brief first.** Check what the user wants in this
+1. **Read the active session brief first.** Read the user's direction for this
    session, which details are locked, and what may vary. Identify a primary
    series only when the current brief explicitly continues or adopts it. Do not
    infer creative authority from project membership or a shared character.
@@ -115,7 +115,7 @@ Apply this order whenever an image belongs to an established series:
    If it is a localized edit or style-only prompt, check whether it can serve as a full-scene prompt for a new generation. If it cannot, use the most recent successful full-generation prompt from the same series as the text skeleton.
    Carry forward only later successful, user-approved details that fit the active session brief. Record both prompt references. Explain why you need the older full-scene skeleton. This exception applies only to operation compatibility. It does not permit a failed prompt or a prompt from another series.
 12. **Keep edits separate from prompt baselines.** When the user requests an edit of a successful image, use the actual image as the source. Do this only when the image is accessible and can be attached. The successful prompt remains useful context. It does not replace the source image. An image filename or generation ID is not an attachment.
-13. **Honor explicit user selection.** If the user names a particular successful prompt as the baseline, use it after verifying the record. If the user names an image as the visual/edit baseline, use that image for the requested role when it is actually available. Do not mislabel it as a prompt.
+13. **Honor explicit user selection.** If the user names a particular successful prompt as the baseline, use it after reading the record. If the user names an image as the visual/edit baseline, use that image for the requested role when it is actually available. Do not mislabel it as a prompt.
 14. **Resolve ambiguity proportionately.** If series membership or the primary branch is genuinely unclear and would materially change baseline selection, ask one focused question. Otherwise use the clearest context, record provisional membership, and proceed.
 
 The controlling rule is: **the newest successful prompt in the active series is the baseline. Newer unsuccessful prompts are evidence, never the baseline.** Preserve the series' evolving creative spirit by applying only the requested changes to that successful foundation. Keep every unmentioned locked feature unchanged.
