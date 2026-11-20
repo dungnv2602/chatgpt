@@ -197,7 +197,7 @@ drawings/
   Include every attempt exactly once in that table. Use a stable series ID or name. Write `standalone/unassigned` when no series is established. Do not add a second table or place attempt rows outside the table. Keep rows in ascending attempt-number order.
 - **Keep table rows physically contiguous:** Do not insert blank lines between the header, separator, or attempt rows. Many renderers treat a blank line as the end of a Markdown table. This can make the newest attempt appear as a separate block.
   When appending an attempt, place its row directly after the previous row. When revising a status, edit the existing row. Do not move it outside the table or create a second table.
-- **Validate before committing:** Read back the complete daily `README.md`. Verify that it contains one attempt-index table, one header row, and one separator row. Check that every numbered attempt appears exactly once in ascending order. Confirm that no blank line interrupts the table. Confirm that the final attempt row belongs to the same table. Do not mark the index update complete until these checks pass.
+- **Verify before committing:** Read back the complete daily `README.md`. Verify that it contains one attempt-index table, one header row, and one separator row. Verify that every numbered attempt appears exactly once in ascending order. Verify that no blank line interrupts the table. Verify that the final attempt row belongs to the same table. Do not mark the index update complete until these checks pass.
 - **Status accuracy:** distinguish `not approved / not generated`, `approved / pending generation`, `generated successfully`, `generated with mismatch`, `rejected / no image returned`, and `technical failure`. If an attempt has multiple runs, preserve the sequence in the status cell (for example, an earlier image returned but a later retry was rejected). Do not overwrite history with only the latest or earlier outcome. A user declining approval must never be represented as pending approval.
 - Each attempt note contains all required fields below, the exact authored prompt, and its final outcome when known. Keep the full record self-contained.
 - Session-level conversation-integrity and summary records remain at `drawings/YYYY-MM-DD-conversation-integrity.md` and `drawings/YYYY-MM-DD-summary.md` unless the user changes that convention.
@@ -243,12 +243,12 @@ Record:
 - Sequential attempt number and a short descriptive title.
 - Status before the call: pending.
 - **Drawing session ID and session-brief path.** Mandatory for every attempt.
-- **Opening direction authority:** link the active session brief and confirm it controls visual direction. Do not treat any prior index, prompt, or image as a replacement.
+- **Opening direction authority:** link the active session brief and verify it controls visual direction. Do not treat any prior index, prompt, or image as a replacement.
 - **Primary series ID/name and theme spine.** Record a series only when the current session brief explicitly continues/adopts it. Otherwise record `standalone/unassigned`. Do not guess. Record secondary series only for a deliberate crossover.
 - **Membership role:** series seed, continuation, subseries, branch, crossover, standalone, or provisional. For a branch, record the parent series and branch point.
 - **Continuity anchors and permitted variation** relevant to this attempt, taken from the current session brief. State which user-locked details must remain unchanged. Do not import locks from an older session.
 - **Prompt baseline provenance:** Record the exact path and attempt, or the scene-local record, for the most recent successful prompt in the primary series. If the work is not a series, use the exact artwork thread. Record its outcome and why it qualifies.
-  If the next operation needs a full-scene prompt, check the newest success's scope. If it is only a localized edit or style-only prompt, record the newest successful full-generation prompt from that series. Use it as the compatible text skeleton and explain why.
+  If the next operation needs a full-scene prompt, verify the newest success's scope. If it is only a localized edit or style-only prompt, record the newest successful full-generation prompt from that series. Use it as the compatible text skeleton and explain why.
   If no baseline exists, state that fact. For a new branch, record the inherited seed and source.
 - **Latest-attempt diagnostic reference:** Link the newest later attempt you inspected when it differs from the selected successful baseline. State what you carried forward and what you did not.
 - **Acceptance criteria:** normally three to five observable requirements derived from the active brief for this image. Mark critical criteria and define the visible evidence for each. Record `Not applicable` only when no meaningful visual criterion can be derived.
@@ -307,7 +307,7 @@ Use only individually approved outputs as visual references. Use them in future 
 
 Keep two judgements distinct:
 - **Prompt/result success:** The prompt links to an output that meets the defining requirements. The user may also explicitly accept the attempt's result as successful for its intended purpose. This can qualify the exact prompt as a future series baseline.
-- **User-approved visual keeper:** The user approves the image as a visual asset. This approval does not validate an uncertain or unsuccessful originating prompt.
+- **User-approved visual keeper:** The user approves the image as a visual asset. This approval does not verify an uncertain or unsuccessful originating prompt.
   When the prompt link is known and the user accepts the attempt as successful, record the output and its baseline eligibility. Preserve earlier assessment history.
 
 A failed, rejected, partial, or missed-target prompt is never the default text baseline. If no later successful prompt exists, return to the most recent success in the same series or artwork thread. Apply only user-requested changes from later attempts.
@@ -467,7 +467,7 @@ For an image the user supplies within a drawing session:
    does not control image linking. After conversion and relocation succeed,
    the takeout processor automatically adds the verified WebP link to the
    attempt record and matching README Image cell. Do not add a global
-   reference-index link. Items without attempt metadata do not modify prompt
+   reference-index link. Items without attempt metadata do not change prompt
    records or daily ledgers.
 6. In conversation-integrity records, record the user's instruction/approval
    and exact storage or rename actions as tool events. Preserve historical
@@ -490,7 +490,7 @@ Record that you did not inspect the pixels. State that the filename is based on 
 
 When an image is already stored in its permanent `images/` or `novels/` location under an opaque filename, rename its Git tree path. Reuse its exact blob SHA.
 
-Remove the old path in the same tree update. Verify the new path and confirm that the old path is absent. Check that the blob SHA and byte size remain identical.
+Delete the old path in the same tree update. Verify the new path and verify that the old path is absent. Verify that the blob SHA and byte size remain identical.
 
 For new uploads that need repository retention, use the universal flat intake `images/takeout/`. Inspect the image. Prepare `images/takeout/HANDOFF.yml` with the exact incoming filename, descriptive title, optional stable asset ID, and destination directory.
 
@@ -504,7 +504,7 @@ Archive every attempt under `images/takeout/history/[batch-id]/attempt-NNN/`. In
 
 On failure, keep the original uploads and ready hand-off in the intake. Keep successfully converted WebPs in that attempt's staging folder. Use a new attempt number for each retry.
 
-On success, move staged WebPs to their permanent destinations. Remove the empty staging folder. The Action clears the active hand-off only after the full batch passes verification. Read back the reports and final asset paths before you claim success.
+On success, move staged WebPs to their permanent destinations. Delete the empty staging folder. The Action clears the active hand-off only after the full batch passes verification. Read back the reports and final asset paths before you claim success.
 
 
 
