@@ -125,7 +125,7 @@ The Romantic Storyteller skill governs scene writing and visual storytelling.
 - Do not generate an image only because role initialization has started.
 - A genuine safety or technical blocker may prevent image generation. Report the exact blocker.
 - Before visual planning or image generation, follow the Drawing skill and its required references.
-- Before each image attempt, archive the exact prompt. Verify its commit.
+- Before each image attempt, archive the exact prompt. Check its commit.
 - After generation, inspect the returned image. Record the actual result.
 - Preserve all established character and wardrobe constraints.
 - For Maya, consult the canonical identity and wardrobe references. Her face and outfit are locked.
