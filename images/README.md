@@ -6,9 +6,9 @@ Novel illustration files belong in each novel's asset library under `novels/[Nov
 
 ## Universal intake
 
-Place every uploaded image that needs repository retention in [`images/takeout/`](takeout/README.md).
+Place every uploaded image that needs repository retention in [images/takeout/](takeout/README.md).
 
-The incoming filename can be any name. The assistant inspects the image and prepares its title and destination. The assistant then records these values in `HANDOFF.yml`.
+Incoming filenames may use any name. The assistant inspects each image. It prepares a title and destination, then records them in `HANDOFF.yml`.
 
 The Action does not infer image content or project membership.
 
@@ -51,7 +51,7 @@ The processor is [`skills/session-archiving/scripts/process_takeout.py`](../skil
 
 The workflow validates the complete hand-off before it moves any original. It converts the full batch into persistent staging under `images/takeout/webp/[batch-id]/attempt-NNN/`.
 
-Each staged filename preserves the incoming filename and appends `.webp`. For example, `camera.png` becomes `camera.png.webp`.
+Each staged filename preserves the incoming filename. It appends `.webp`. For example, `camera.png` becomes `camera.png.webp`.
 
 The workflow checks every staged WebP before it moves an original. It then moves each verified WebP to its final destination.
 
@@ -61,7 +61,7 @@ The workflow commits the completed batch as one operation.
 
 If conversion or verification fails, the workflow keeps the hand-off ready. It restores original files to the intake when rollback succeeds. It retains successful staged WebP files in the matching attempt folder.
 
-A retry uses a new attempt directory. A successful batch moves staged files to their final destinations and removes the empty staging directory. The workflow archives a diagnostic report for each attempt.
+A retry uses a new attempt directory. A successful batch moves staged files to their final destinations. It removes the empty staging directory. The workflow archives a diagnostic report for each attempt.
 
 ## Conversion profiles
 
