@@ -35,15 +35,15 @@ The scheduled archive-retention workflow is owned by GitHub Actions.
 
 This gate applies before the assistant handles every new user prompt. It applies to all request types and conversation modes.
 
-1. Inspect the latest applicable run for each workflow on branch `gpt`. Also inspect the combined status of the current branch head.
-2. Wait for all relevant in-progress runs to finish. A cancelled latest run blocks progress unless a newer run exists for the same workflow and branch. Treat only older cancelled runs as superseded by that newer run.
-3. If a latest run fails, inspect its jobs, failed steps, and logs. Resolve the underlying cause on `gpt`. Do not weaken tests, path coverage, or baselines to force a pass.
-4. Push the repair through the normal repository workflow. Wait for all applicable latest runs to finish and pass. Repeat this cycle if any run fails.
-5. If logs show only a transient GitHub runner or service failure, rerun the failed job. Never rerun a repository failure to hide it.
-6. If GitHub Actions cannot be accessed, stop and report the blocker. Do not handle the user's prompt or claim CI is clear.
-7. Never run the STE linter locally. Let the configured GitHub Actions workflows run it.
+1. Inspect the latest available run for each applicable workflow on branch `gpt`. Also inspect the combined status and check runs for the current branch head.
+2. Do not wait for queued or in-progress runs. Do not poll GitHub Actions for completion. Continue with the user's prompt when no completed failure requires repair.
+3. If the latest completed applicable run failed, inspect its jobs, failed steps, and logs. Resolve the underlying cause on `gpt` before handling the user's prompt. Do not weaken tests, path coverage, or baselines to force a pass.
+4. After you push a repair or other change, do not wait for or poll its CI results. GitHub Actions owns execution. Review the available result at the next mandatory preflight.
+5. Do not manually dispatch, rerun, or locally reproduce a GitHub Actions workflow unless the user explicitly asks for that operation. Do not use a rerun to hide a repository failure.
+6. Never run the STE linter locally. Never run CI workflows or CI test suites locally as a substitute for GitHub Actions.
+7. If GitHub Actions cannot be accessed, record the access blocker in `workspace/discussion.md` in Condensed Mode. Do not claim that CI is clear.
 
-After loading skills in response to `start session`, `start a drawing session`, or `Be the novelist`, run this gate again. Do this after all required skills load and before project work or an initialization-complete report.
+After loading skills in response to `start session`, `start a drawing session`, or `Be the novelist`, run this gate again. Do not wait for in-progress runs. Inspect available completed results and repair any applicable completed failure before project work or an initialization-complete report.
 
 ## 4. Inspect and preserve validation scope
 
@@ -180,7 +180,7 @@ Use these questions when implementing an optimization:
 7. Are runner, timeout, artifact retention, and permissions appropriate to the actual workload?
 8. Can repeated logic be shared without creating needless abstraction?
 9. Are changes grouped into one coherent push?
-10. Has the assistant avoided manually dispatching, rerunning, or polling CI unless the user explicitly requested CI investigation?
+10. Does the assistant leave workflow execution to GitHub Actions, avoid local CI execution, and avoid waiting or polling for results?
 
 ## 14. Repository execution discipline
 
@@ -196,13 +196,13 @@ This section consolidates the former repository CI preflight and execution-effic
 
 ### CI gate
 
-Follow Section 3 before every user prompt and after cue-triggered skill loading. Do not defer this gate until the user asks. Wait for applicable runs to finish and resolve failures before continuing. Never run the STE linter locally.
+Follow Section 3 before every user prompt and after cue-triggered skill loading. Do not defer this gate until the user asks. Do not wait for or poll in-progress runs. Repair applicable completed failures. Never run the STE linter or CI workflows locally.
 
 ### After editing
 
 1. Read back each changed path after the commit when repository access supports it.
 2. Check the commit result and report its exact SHA.
-3. State which local checks or read-back checks you performed. Do not imply that CI was checked.
+3. State which read-back checks you performed. Do not run CI locally or wait for GitHub Actions results.
 4. Separate verified changes, unresolved blockers, and work that requires user authorization.
 5. Report the result once. Do not claim verification that did not occur.
 
