@@ -45,6 +45,6 @@ Reuse successful, verified foundational reads from the current conversation rath
 
 The GitHub repository `dungnv2602/chatgpt`, branch `gpt`, is the sole authoritative source for project files, skills, prompts, references, and archives. Do not create, copy, upload, synchronize, or maintain project materials in ChatGPT Library. Do not use Library as a fallback or secondary source. If a required repository file is missing, report that fact rather than consulting or reconstructing it from Library.
 
-The repository workspace is organized at its root. Canonical project directories are `images/`, `master/`, `novel/`, `prompts/`, and `skills/`. Do not prepend the obsolete `ChatGPT/` directory to paths.
+The repository workspace is organized at its root. Canonical project directories are `images/`, `master/`, `novels/`, `prompts/`, and `skills/`. Do not prepend the obsolete `ChatGPT/` directory to paths.
 
 Do not ask the user to issue both cues when one cue is sufficient. Do not create an archive merely because a chat has started.
