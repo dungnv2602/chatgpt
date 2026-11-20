@@ -27,7 +27,7 @@ Foundational initialization is not automatic. Run it only when one of the explic
 
 ### “Be the novelist” — role initialization
 
-When the user says **“be the novelist”** as an instruction, follow `skills/novelist-initiation/INITIATION.md` from the `gpt` branch. Novelist initialization must first verify that foundational initialization has been completed in the current conversation. If it has not, perform the complete foundational initialization before loading novelist-specific skills.
+When the user says **“be the novelist”** as an instruction, load `skills/novelist-initiation/SKILL.md` from the `gpt` branch and follow its `INITIATION.md` protocol. Novelist initialization must first verify that foundational initialization has been completed in the current conversation. If it has not, perform the complete foundational initialization before loading novelist-specific skills.
 
 Then treat the cue as a formal role-and-project initialization: load the novelist-specific skill, identify and review the active novel's canonical records, verify continuity and current narrative position, and deliver the Novelist Initiation Report. Do not jump directly to writing a scene or ask whether to continue unless the user's same instruction also requests that work.
 
