@@ -350,5 +350,9 @@ Use this template:
 - **Baseline:** The workflow now allows a baseline of four findings for this file only. Other changed Markdown files retain the default zero-finding threshold. This preserves the audit history without weakening checks for other files.
 - **Workflow change:** Updated `.github/workflows/ste-lint-changed.yml` in commit `45b9fa4bee248637cf2d13cd33319e5b6030f00d`.
 - **CI result:** GitHub Actions run `44695536218` passed. The linter self-test passed. The changed-file lint passed with four hard findings at the documented baseline and 21 advisory findings.
-- **Validation limit:** The full repository path-consistency scan is not complete. The linter run covered this changed file, not every technical document in the repository.
+- **Additional path scan:** Read the active branch copies of the 20 November session brief, Attempt 34, Scene-001, the Drawing recovery and editing references, and the archive reference. None contains an active `prompts/` root path.
+- **Historical exceptions:** The 12 November history, summary, and prompt-log files retain `prompts/`, `promts/`, and former `ChatGPT/` paths as records of earlier events. Preserved these historical statements without edits.
+- **Search limitation:** GitHub code search indexes the default branch `main`. Used its results only to identify candidate files. Fetched each reviewed file from branch `gpt` before classifying it.
+- **CI result:** GitHub Actions run `44695617915` passed after this audit update. The linter self-test and changed-file lint passed. The initialization policy file used its documented baseline of four hard findings.
+- **Validation limit:** The full 170-file Markdown/YAML path scan is not complete. The linter run covered the changed initialization policy file, not every technical document in the repository.
 
