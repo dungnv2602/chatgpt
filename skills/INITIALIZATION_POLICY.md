@@ -9,6 +9,7 @@ This file records the repository's conditional initialization policy. Operationa
 - Repository: `dungnv2602/chatgpt`
 - Branch: `gpt`
 - Foundational initialization: `skills/SESSION_START.md`
+- Task continuity: `skills/the-worker/SKILL.md`
 - Mandatory execution gate: `skills/session-archiving/SKILL.md`
 - Agent Skills format: `skills/agent-skill-authoring/SKILL.md`
 - Technical writing standard: `skills/asd-ste100/SKILL.md`
@@ -41,9 +42,10 @@ Foundational initialization loads these skills:
 
 1. Session Archiving.
 2. Conversation Mode.
-3. Agent Skill Authoring.
-4. ASD-STE100.
-5. GitHub Actions.
+3. The Worker.
+4. Agent Skill Authoring.
+5. ASD-STE100.
+6. GitHub Actions.
 
 The Drawing skill is tier 2, not foundational. Load it for a drawing session or as a prerequisite for novelist initialization. Its required references are `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`.
 
@@ -482,3 +484,15 @@ Use this template:
 - **Behavioral impact:** Drawing and novelist requests automatically load missing prerequisite tiers. Successfully read files are reused when moving between tiers or returning to a prior tier. Only missing or explicitly invalidated files are retrieved.
 - **Reason:** Prevent duplicate skill and reference loading while preserving dependency order.
 - **Canonical procedure:** `skills/SESSION_START.md`; execution gate: `skills/session-archiving/SKILL.md`.
+
+
+### Version 32 — Add The Worker and workspace continuity
+
+- **Date:** 2026-11-20
+- **Change:** Add The Worker as a foundational, conversation-mode-independent task continuity skill.
+- **Workspace:** Add the task board, task template, task records, and workspace instructions under `workspace/`.
+- **Archive:** Add `archive/` with a 14-day retention policy for archived task files.
+- **Integration:** Add The Worker to the canonical foundational sequence, mandatory execution gate, and skills index. Expand the Session Archiving workspace boundary.
+- **Conversation Mode:** Make Condensed Mode reports minimal and navigation-first. Keep task operations under The Worker.
+- **Task policy:** Use UTC timestamp IDs, every-step meaningful progress logs, automatic necessary follow-ups, and Proposed optional improvements.
+- **Initialization:** Preserve conditional initialization and the sole `start session` cue.
