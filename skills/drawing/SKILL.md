@@ -172,16 +172,7 @@ every drawing action.
    outrank pattern guidance. Patterns inform execution; they do not authorize
    creative changes.
 
-**Prompt-fidelity rule:** Draft only from the active brief and authorized
-historical baseline. Do not add, retain, paraphrase, relocate, or disguise
-unrequested restrictions, disclaimers, negative lists, scene elements, styling,
-or other creative directions. Preserve locked features exactly. Make only
-changes the user requested or changes genuinely required by the task and
-consistent with the brief. Before committing, compare the complete prompt
-against the brief and latest instructions; remove every unsupported addition.
-If an instruction is ambiguous, ask one concise question rather than inventing
-a constraint. Record intentional deviations and their authorization in the
-attempt record.
+**Mandatory prompt-fidelity reference:** The complete, exhaustive standard is maintained in [Prompt Fidelity and Unrequested Restrictions](references/prompt-fidelity.md). Read and apply that note when drafting, reusing, revising, archiving, verifying, and submitting every image prompt. It preserves the user's seven governing commitments and supplies the required checks; this skill's workflow does not shorten or override it.
 
 ### A. Read the brief and complete the session-brief preflight
 
