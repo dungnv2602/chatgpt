@@ -751,8 +751,10 @@ ledger. It must contain one contiguous Markdown table with exactly six fields:
    result met the prompt. Link partial, off-target, superseded, and unapproved
    outputs too; approval belongs only in field 5. If an image was generated
    but its asset has not yet been uploaded, write `Waiting for image upload`.
-   Use `—` only when no image was returned or generated. Never withhold a
-   generated-image link because the user rejected or did not approve the result.
+   Use `—` only when no image was returned or generated. Use `Not verified`
+   when the tool outcome is unconfirmed and no attempt-specific image can be
+   attributed. Never withhold a generated-image link because the user rejected
+   or did not approve the result.
 
 Include every attempt in chronological order, including rejected, failed,
 partial, pending, and superseded attempts. Do not turn the table into a
