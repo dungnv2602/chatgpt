@@ -17,6 +17,12 @@ The chronological logs remain the canonical source for full prompt wording and a
 
 ## Governance
 
+The operational consultation checkpoint and prompt-fidelity rules live in
+[Drawing Skill](../../skills/drawing/SKILL.md). That skill determines when the
+patterns are consulted; this index remains the library's navigation and
+governance reference. Do not repeatedly reread the full library when the
+relevant entries have already been reviewed and no refresh condition applies.
+
 1. Consult the relevant global patterns before drafting a new prompt.
 2. Treat the active drawing brief and its explicit constraints as the highest authority. Global patterns are guidance, never overrides.
 3. Evaluate the returned image against the actual requested requirements. A successful tool call is not automatically a successful prompt.
