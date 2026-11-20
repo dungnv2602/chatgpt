@@ -46,9 +46,5 @@ jobs:
         run: |
           while IFS= read -r file; do
             [ -z "$file" ] && continue
-            if [ "$file" = "skills/INITIALIZATION_POLICY.md" ]; then
-              python3 skills/asd-ste100/scripts/ste-lint.py --baseline 4 "$file"
-            else
-              python3 skills/asd-ste100/scripts/ste-lint.py "$file"
-            fi
+            bash skills/asd-ste100/scripts/ste-lint-repository.sh "$file"
           done <<< "$CHANGED_FILES"
