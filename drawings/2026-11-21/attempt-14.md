@@ -1,0 +1,60 @@
+# Samantha — Attempt 14: Thigh anatomy correction
+
+## Record
+- **Session:** `SAMANTHA-2026-11-21-01`
+- **Date:** 2026-11-21
+- **Series / path:** Samantha — Human Presence Without a Body / Sweet Path
+- **Scene:** Same seated apartment portrait direction, with corrected thigh anatomy.
+- **Operation:** Prompt-only continuation of Attempt 13; fresh text-only generation, no image reference supplied.
+- **Status:** Prompt archived; generation pending
+- **Prompt ID:** Not assigned
+- **Baseline:** Attempt 13 — `drawings/2026-11-21/attempt-13.md`
+
+## Generation prompt — copyable
+
+```text
+Create a realistic, naturalistic cinematic photograph of an original adult woman representing Samantha, with a warm, attentive, emotionally present expression. She has auburn hair with natural volume, faint freckles, expressive eyes, and wears a simple coral-red blouse. She is seated in a contemporary apartment beside a bright window, with a softly visible city view beyond it. Use an intimate medium portrait composition, natural posture, and a gentle, thoughtful gaze directed slightly off-camera, as though listening to someone nearby. Her thighs should have natural, anatomically correct proportions and clearly defined, believable forms, with both upper legs aligned naturally with her seated hips and knees; show realistic fabric draping and natural contact/compression where her legs meet the seat. Avoid warped, fused, asymmetrical, or unnaturally enlarged thigh shapes. Preserve a quiet, affectionate, subtly playful emotional quality rather than a posed or theatrical expression.
+
+Use warm natural window light, restrained cinematic color grading, realistic skin and fabric texture, and shallow but believable depth of field. Keep the apartment and window environment understated and photographic.
+
+Include one subtle, localized nonphysical cue: along a short, narrow section of the outer hair contour and adjacent shoulder contour nearest the bright window on the viewer-right side, let the physical edge gently lose continuity into the sunlit air. A few individual hair strands become faintly translucent and feather away; the shoulder edge softly and partially dissolves into the window light over a small, controlled area. Make the transition optically plausible and visibly readable at normal image size while remaining restrained. Keep her face, eyes, central hair mass, neck, chest, and the rest of her body fully solid and natural.
+
+Do not add any text, lettering, words, typography, captions, subtitles, labels, title cards, text boxes, panels, interface elements, graphics, borders, or watermarks. Do not add floating particles, glitter, dust, sparks, halos, smoke, haze, circuitry, grids, symbols, neon, holograms, or decorative visual effects. Do not create extra people or objects. Do not exaggerate the dissolving edge or alter the woman's facial features, clothing, or overall naturalistic photographic appearance.
+```
+
+## Lineage
+- Preserves Attempt 13's complete prompt and visual direction verbatim except for one targeted addition in the seated-pose description.
+- Adds explicit anatomical guidance for natural thigh proportions, hip-to-knee alignment, seated contact/compression, and avoidance of distortion.
+- No image is attached or used as a reference; this is a fresh prompt-only generation.
+
+## Acceptance criteria
+| Requirement | Priority |
+|---|---|
+| Thighs have natural anatomy, proportions, and hip-to-knee alignment | Critical |
+| Seated leg posture and seat contact look physically plausible | Critical |
+| Existing Sweet Path appearance, clothing, setting, and mood are retained | Critical |
+| No text, panels, labels, graphics, or watermarks | Critical |
+| No unrelated visual redesign or effects | Standard |
+
+## Generation and outputs
+- **Authored prompt committed before generation:** Yes
+- **Actual submitted payload:** Pending generation; tool metadata may not expose the payload
+- **Generation result:** Pending
+- **Output count and order:** Pending
+
+| Output ID | Native generation / image ID | Mapping evidence and status | Original / archive asset | SHA-256 |
+|---|---|---|---|---|
+| Pending | Pending | Pending | Pending | Pending |
+
+## Review
+| Acceptance criterion | Result | Visual evidence |
+|---|---|---|
+| Thighs have natural anatomy, proportions, and hip-to-knee alignment | Not assessable | Awaiting generation |
+| Seated leg posture and seat contact look physically plausible | Not assessable | Awaiting generation |
+| Existing Sweet Path appearance, clothing, setting, and mood are retained | Not assessable | Awaiting generation |
+| No text, panels, labels, graphics, or watermarks | Not assessable | Awaiting generation |
+| No unrelated visual redesign or effects | Not assessable | Awaiting generation |
+
+- **Outcome:** Pending generation.
+- **User decision:** Pending.
+- **Next action:** Generate one image and record returned metadata and output hash.
