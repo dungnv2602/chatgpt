@@ -418,9 +418,9 @@ supported mechanism. Verify source linkage before calling it a confirmed edit.
 ### Daily attempt ledger
 
 Do not create a separate cross-session success catalogue. For each
-non-novel drawing date, maintain `prompts/YYYY-MM-DD/README.md` as the
+non-novel drawing date, maintain `drawings/YYYY-MM-DD/README.md` as the
 navigation ledger for that date's attempts. It must contain one contiguous
-Markdown table with exactly five fields:
+Markdown table with exactly six fields:
 
 1. **Attempt / prompt:** attempt number or stable ID, concise descriptive title,
    and direct link to the complete attempt record.
@@ -435,10 +435,13 @@ Markdown table with exactly five fields:
    unconfirmed outcomes. A prompt approved for generation is not a successful
    image result.
 5. **User approval / output evidence:** separate the user's explicit approval
-   from the assistant's visual assessment. Link the exact returned image or
-   verified repository asset where available; otherwise state whether the
-   image was delivered only in conversation, no output was returned, storage
-   is unverified, or approval was not recorded.
+   from the assistant's visual assessment. State whether the image was delivered
+   only in conversation, no output was returned, storage is unverified, or
+   approval was not recorded.
+6. **Image:** link the exact verified repository image for each successful
+   output. Until the successful output is uploaded and processed, write
+   `Waiting for image upload`. Use `—` for failed, rejected, superseded, partial,
+   pending, or unconfirmed results.
 
 Include every attempt, not only successful ones, and keep the rows in
 chronological order. The table is a compact navigation/status summary. Each
@@ -523,8 +526,14 @@ For an image the user supplies within a drawing session:
 4. Record the exact path, stable file/Library ID, source generation ID when
    known, original name, dimensions, byte size, checksum where available, and
    session-specific role in the session brief or attempt record.
-5. When the image is associated with a successful or user-approved output, link it directly in the relevant attempt record and, for non-novel work, the corresponding daily README row.
-   Do not add a global reference-index link.
+5. When the image is associated with a successful or user-approved non-novel
+   drawing output, include the attempt number in its `HANDOFF.yml` item as
+   `attempt: NN` and set the destination to
+   `drawings/YYYY-MM-DD/images`. After conversion and relocation succeed, the
+   takeout processor automatically adds the verified WebP link to the attempt
+   record and the matching README Image cell. Do not add a global
+   reference-index link. Items without attempt metadata do not modify prompt
+   records or daily ledgers.
 6. In conversation-integrity records, record the user's instruction/approval
    and exact storage or rename actions as tool events. Preserve historical
    facts, but do not treat them as current visual direction.
@@ -544,7 +553,7 @@ If an image is present in `images/` but its binary cannot be surfaced through th
 
 When an image is already stored in its permanent `images/` or `novel/` location under an opaque filename, rename the existing Git tree path while reusing its exact blob SHA. Remove the old path in the same tree update and verify the new path, absence of the old path, identical blob SHA, and identical byte size.
 
-For new user uploads intended for repository retention, use the universal flat intake `images/takeout/`. Inspect the actual image and prepare `images/takeout/HANDOFF.yml` with its exact incoming filename, descriptive title, optional stable asset ID, and destination directory. Do not manually rename or relocate the incoming file. The existing Action derives the permanent master filename from the optional ID and normalized title slug and preserves the original bytes. It stages each WebP under `images/takeout/webp/[batch-id]/attempt-NNN/`, appending `.webp` to the exact incoming filename, then verifies and moves the derivative beside the master. Novel illustration binaries belong in `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; retained non-novel assets use a destination under `images/`.
+For new user uploads intended for repository retention, use the universal flat intake `images/takeout/`. Inspect the actual image and prepare `images/takeout/HANDOFF.yml` with its exact incoming filename, descriptive title, optional stable asset ID, and destination directory. For a session output associated with a non-novel drawing attempt, also include `attempt: NN` in that item and target exactly `drawings/YYYY-MM-DD/images`. Do not manually rename or relocate the incoming file. The existing Action derives the permanent master filename from the optional ID and normalized title slug and preserves the original bytes. It stages each WebP under `images/takeout/webp/[batch-id]/attempt-NNN/`, appending `.webp` to the exact incoming filename, then verifies and moves the derivative beside the master. Novel illustration binaries belong in `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; retained non-novel assets use a destination under `images/`.
 
 Every attempt is archived under `images/takeout/history/[batch-id]/attempt-NNN/` with the original hand-off, `conversion-report.csv`, and `verification-report.md`. The CSV records both staging and final WebP paths. On failure, original uploads and the ready hand-off remain in the intake and successfully converted WebPs remain in the failed attempt's staging folder; a retry uses a fresh attempt number. On success, staged WebPs move to their permanent destinations and the empty successful staging attempt folder is removed. The Action does not clear the active hand-off unless the entire batch passes verification. Read back the archived reports and final asset paths before claiming success.
 
@@ -649,7 +658,8 @@ flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
 - Incoming filenames may be arbitrary. Inspect each image and prepare a hand-off
   item with the exact source filename, descriptive title, optional stable ID,
   and destination directory. The Action does not infer visual content or
-  project membership.
+  project membership. The optional `attempt: NN` field is the explicit
+  prompt-to-output association used for automatic Markdown cross-linking.
 - The existing workflow on branch `gpt` calls
   `images/scripts/process_takeout.py`. It supports static PNG, JPG, and JPEG.
   APNG and other unsupported formats fail the batch; animated content is never
@@ -669,6 +679,13 @@ flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
   the exact incoming filename. It rejects unlisted uploads, missing sources,
   destination collisions, symlinks, and invalid paths. It verifies
   source/master SHA-256 equality, WebP signatures, and final WebP hashes.
+- When `attempt: NN` is present for a destination under
+  `drawings/YYYY-MM-DD/images`, the processor verifies the corresponding
+  attempt record and six-column daily README, then writes the verified WebP
+  link into both. Multiple uploads may point to the same attempt. The GitHub
+  Action commits these Markdown changes together with the image masters,
+  derivatives, and takeout reports. Items without `attempt` are not linked to
+  prompt records.
 - Every successful or failed attempt is preserved under
   `images/takeout/history/[batch-id]/attempt-NNN/` with the hand-off snapshot,
   `conversion-report.csv`, and `verification-report.md`. The CSV records
