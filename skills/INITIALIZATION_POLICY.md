@@ -411,3 +411,12 @@ Use this template:
 - **Baseline policy:** No lint baseline changed.
 - **Commit:** `939d19a16e533ab1e08e4f78ba7dbdb8c70c2fd5`.
 - **CI:** Pending. Check the result on the next user turn.
+
+
+### Version 21 — Additional technical-document lint cleanup
+
+- **Date:** 2026-11-20
+- **Scope:** Reword one synonym-rotation finding in the novelist-initiation skill. Split one long sentence in the scholarly source-standards reference.
+- **Baseline policy:** No lint baseline changed.
+- **Commits:** `e63664c41c381c7d769965103136f3f4178fbbc2` and `d7b12def70dfb49e8063243345cc328d7c348eea`.
+- **CI:** Pending. Check the result on the next user turn.
