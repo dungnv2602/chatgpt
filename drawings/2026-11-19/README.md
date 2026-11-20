@@ -83,7 +83,7 @@ For newly retained non-novel drawing outputs, the image file belongs in this day
 | [43 — Attempt 42, cotton fabric only](attempt-43.md) | 2026-11-19 portrait session; no separate brief filed | Attempt 42; cotton-fabric revision | Image generated; fabric texture visible, but source-linked fabric-only edit unconfirmed; user review pending | Output delivered in conversation; user review pending | [file_000000003dcc820794b01b3955e1d1f1.png.webp](images/file_000000003dcc820794b01b3955e1d1f1.png.webp) |
 | [44 — Attempt 43, slightly more natural seated leg position](attempt-44.md) | 2026-11-19 portrait session; no separate brief filed | Attempt 43; seated-leg revision | Prompt archived and verified; approved for generation | No output yet; generation approved but not executed | — |
 | [45 — Formal redo of Attempt 05](attempt-45.md) | 2026-11-20 redo; no separate brief filed | Direct prompt redo of Attempt 05 | Generated; user rejected | Rejected; output delivered; image archive pending | Waiting for image upload |
-| [46 — Redo of Attempt 05, closing restriction sentence removed](attempt-46.md) | 2026-11-20 redo; no separate brief filed | Attempt 05 prompt; only the specified final sentence removed | Prompt archived and verified; generation pending | No output yet | — |
+| [46 — Redo of Attempt 05, closing restriction sentence removed](attempt-46.md) | 2026-11-20 redo; no separate brief filed | Attempt 05 prompt; only the specified final sentence removed | Generated successfully; user review pending | Output delivered; approval pending; archive upload pending | Waiting for image upload |
 
 ## Image inventory — all 30 files
 
