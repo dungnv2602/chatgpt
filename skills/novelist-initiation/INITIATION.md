@@ -45,7 +45,7 @@ Determine the active novel from the current conversation and repository state.
 
 Read the current project records from branch `gpt`, starting with:
 
-1. `novel/README.md` and the applicable approved templates.
+1. `novels/README.md` and the applicable approved templates.
 2. The active novel's `novel.md`.
 3. Every existing arc record (`arc.md`) indexed by the novel.
 4. Every existing scene record (`scene.md`) indexed by those arcs, including the latest scene and any incomplete or active scene.
@@ -114,7 +114,7 @@ Do not ask “Shall I continue?” as the default ending. Initialization is comp
 
 - Repository: `dungnv2602/chatgpt`
 - Authorized branch: `gpt`
-- Novel records: `novel/`
+- Novel records: `novels/`
 - Visual references and assets: `images/`
 - Skills: `skills/`
 - Prompt history and session records: `prompts/`
