@@ -14,7 +14,7 @@ kind of claim and unsuitable for another.
 - Official doctrinal or institutional documents when the question is what a
   particular institution currently teaches.
 
-Primary sources establish what a source says or what an institution declares;
+Primary sources establish what a source says or what an institution declares
 they do not automatically establish that its metaphysical claims are true or
 that its account of past events is historically accurate.
 
@@ -36,7 +36,7 @@ These are starting points, not automatic endorsements of every title.
 ### Tier 3 — Expert reference works and scholarly syntheses
 
 Use these to establish orientation, terminology, bibliographies, and the state
-of a field; follow their references to primary and specialist research for
+of a field. Follow their references to primary and specialist research for
 important claims.
 
 Examples include:
@@ -136,7 +136,7 @@ method, source quality, and relevance to the exact claim.
 
 ### Philosophy and intellectual history
 - Stanford Encyclopedia of Philosophy (editorially reviewed expert entries).
-- PhilPapers (bibliographic discovery; verify the underlying publication).
+- PhilPapers (bibliographic discovery. Verify the underlying publication).
 - Oxford University Press, Cambridge University Press, Princeton University
   Press, Harvard University Press, Yale University Press, and University of
   Chicago Press for specialist monographs, companions, and critical editions.
@@ -151,7 +151,7 @@ method, source quality, and relevance to the exact claim.
 - Relevant national libraries, manuscript libraries, and university-based
   textual projects for provenance-aware primary materials.
 - Official bodies of a tradition only when establishing that body's own
-  current teaching, practice, or institutional position; do not treat them as
+  current teaching, practice, or institutional position. Do not treat them as
   neutral arbiters of historical or comparative claims.
 
 ### History, languages, and primary-text research
@@ -159,7 +159,7 @@ method, source quality, and relevance to the exact claim.
 - Perseus Digital Library and comparable scholarly text projects, while
   checking the edition and editorial provenance of each text.
 - Loeb Classical Library and other established critical/annotated series where
-  appropriate; identify the exact edition and translation used.
+  appropriate. Identify the exact edition and translation used.
 - WorldCat and national library catalogues for bibliographic verification,
   not as evidence for the content of a work.
 
@@ -178,11 +178,11 @@ question. Inspect the individual work and its editorial process.
 ## Mandatory source audit
 
 Before citing a source, confirm as far as access permits:
-- the exact title, author/editor, publication venue, and date;
-- the author's relevant subject expertise;
-- the publication's peer-review or editorial process;
-- the edition, translator, and textual locator for primary sources;
-- that the source actually supports the sentence being cited;
+- the exact title, author/editor, publication venue, and date
+- the author's relevant subject expertise
+- the publication's peer-review or editorial process
+- the edition, translator, and textual locator for primary sources
+- that the source actually supports the sentence being cited
 - whether the source is primary evidence, institutional self-description,
   specialist interpretation, empirical research, or a discovery tool.
 
@@ -195,7 +195,7 @@ quality, and collection value into one judgment. Evaluate them separately:
 
 - **Institutional and publisher standing:** Verify the publisher/imprint and
   distinguish university presses from commercial academic publishers. Verify
-  editor/author affiliations independently; an author's university is not the
+  editor/author affiliations independently. An author's university is not the
   book's publisher. Prestige is contextual, not a quality guarantee.
 - **The individual work:** Examine its editors and contributors, relevant
   expertise, editorial design, methods, primary-source engagement, bibliography,
