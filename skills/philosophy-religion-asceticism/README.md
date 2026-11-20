@@ -35,7 +35,7 @@ you cannot install this ZIP as a standalone ChatGPT Skill there.
 
 On Android/iOS, first check whether **Plugins → Skills** is visible in your
 sidebar. If it is not, use ChatGPT on the web at chatgpt.com and check the same
-menu; the feature still may not be enabled for your account. Uploading a file
+menu. The feature still may not be enabled for your account. Uploading a file
 into an ordinary chat does not install a Skill.
 
 ## Workaround if Skills upload is unavailable
@@ -51,7 +51,7 @@ You can still use the skill's instructions manually:
   installation.
 
 You can also place the extracted skill folder in a supported Codex skills
-directory if you use Codex; that is a separate product workflow from installing
+directory if you use Codex. That is a separate product workflow from installing
 a ChatGPT Skill.
 
 ## Version 4 update
