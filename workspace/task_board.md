@@ -1,6 +1,6 @@
 # Task Board
 
-Last updated: 2026-11-20 16:01 UTC
+Last updated: 2026-11-20 16:02 UTC
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
@@ -10,7 +10,7 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-| 20261120-160152 | Correct archive-operation and open-discussion lifecycle rules | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-160152-archive-and-discussion-lifecycle.md) |
+| 20261120-160152 | Correct archive-operation and open-discussion lifecycle rules | P1 | Done | User | 2026-11-20 | [Archived record](../archive/tasks/20261120-160152-archive-and-discussion-lifecycle.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/db60941e9aca5c47f10e926f03a73490b7594ef7) |
 
 ## In Progress
 
