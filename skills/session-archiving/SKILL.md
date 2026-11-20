@@ -55,17 +55,17 @@ During foundational initialization, read the [Conversation Mode skill](../conver
 
 ### Foundational skill loading cadence
 
-Load the Session Archiving, Conversation Mode, Agent Skill Authoring, ASD-STE100, GitHub Actions, Drawing, and required Drawing references only when the user invokes an explicit initialization cue. See `skills/SESSION_START.md` for the cues.\n\nLoad each required foundational file once during that conversation's foundational initialization. Apply its verified instructions for the rest of that conversation. Do not load these files automatically at the start of a new chat.\n\nRefresh a foundational file when the user asks. Also refresh it when you know or suspect a relevant repository change. Refresh it when an unresolved instruction requires the authoritative file.\n\nA new ChatGPT conversation starts a new loading cycle. This cadence does not remove the requirement to load a task-specific skill when needed. It also does not remove the requirement to read relevant project records before that task.
+Load the Session Archiving, Conversation Mode, Agent Skill Authoring, ASD-STE100, GitHub Actions, Drawing, and required Drawing references only when the user says `start session` as an instruction. See `skills/SESSION_START.md` for the complete procedure.\n\nLoad each required foundational file once during that conversation's foundational initialization. Apply its verified instructions for the rest of that conversation. Do not load these files automatically at the start of a new chat.\n\nRefresh a foundational file when the user asks. Also refresh it when you know or suspect a relevant repository change. Refresh it when an unresolved instruction requires the authoritative file.\n\nA new ChatGPT conversation starts a new loading cycle. This cadence does not remove the requirement to load a task-specific skill when needed. It also does not remove the requirement to read relevant project records before that task.
 
 ### First-response execution rule
 
-The first assistant response after an explicit foundational initialization cue must be a startup notice. It must not ask for the user's goal, confirmation, or more permission.\n\nAfter the notice, perform the required retrievals below. Do not ask the user to repeat or explain the cue. Do not claim that a check is underway unless you are performing its retrieval.
+The first assistant response after the user says `start session` must be a startup notice. It must not ask for the user's goal, confirmation, or more permission.\n\nAfter the notice, perform the required retrievals below. Do not ask the user to repeat or explain the cue. Do not claim that a check is underway unless you are performing its retrieval.
 
 The startup gate is a prerequisite check, not the session archive itself. Do not create or update dated archive records merely because a new conversation has started. Once the required skills and references have been retrieved and read successfully, report verification and then address the user's request. If a retrieval fails, stop project work and identify the exact missing path.
 
 ### Mandatory session-start execution gate
 
-When the user invokes **`Follow instructions`** or **`Be the novelist`**, run this sequence before project work or specialist initialization:
+When the user says **`start session`** as an instruction, run this sequence before project work or specialist initialization:
 
 1. **Notify the user first.** State that the requested foundational checks are starting. Do not begin project work until they pass.
 2. Retrieve and read this Session Archiving skill from branch `gpt`.
@@ -78,7 +78,7 @@ When the user invokes **`Follow instructions`** or **`Be the novelist`**, run th
 9. Verify that every required retrieval succeeded. Confirm that you read each file. Keep the verified instructions for the rest of the conversation.
 10. Report completion only after every check passes. If a required retrieval fails, report its exact path and stop project work.
 
-**No task-type exception after activation:** Foundational initialization always requires the Drawing skill and its required references. This rule applies even when the first task is prose-only or unrelated to drawing. A prose-only exception for a task does not cancel this requirement. Do not load these files before an explicit cue.
+**No task-type exception after activation:** Foundational initialization always requires the Drawing skill and its required references. This rule applies even when the first task is prose-only or unrelated to drawing. A prose-only exception for a task does not cancel this requirement. Do not load these files before the user says `start session`.
 
 **No premature-work exception after activation:** After the user invokes a foundational cue, do not begin project work until the required checks pass. Do not substitute memory, previous-session reads, Library copies, or readiness claims for fresh GitHub retrievals in this conversation.
 
