@@ -1,3 +1,30 @@
+### 2026-11-20 — Why the completed Condensed Mode task was not archived
+
+**User**
+
+> This task is done
+>
+> https://github.com/dungnv2602/chatgpt/blob/gpt/workspace/tasks/20261120-153700-condensed-mode-adherence-guardrails.md
+>
+> Why not move to archive?
+
+**Explanation**
+
+The task was marked Done, but I carried forward the repository's archive boundary as a prohibition on modifying anything under `archive/`. That prevented the required closeout move. This was a conflict between two rules:
+
+- The Worker says every Done or Cancelled task must be moved to `archive/tasks/`, then the task board must link to the archived record and its archival commit.
+- The active repository boundary says not to inspect or modify `archive/`.
+
+The task record itself confirms the inconsistency: its metadata says `Status: Done` and `Archived: No`; the board's Historical row links to the file still under `workspace/tasks/`. The task record's explanation that the user prohibited archive access is not itself an instruction that resolves the conflict.
+
+I have not moved the file or changed the board. The current user message asks why it was not moved, but does not explicitly revoke the archive boundary. Moving it requires writing to `archive/tasks/`.
+
+**Decision needed**
+
+Should I treat this request as authorization to supersede the archive-modification prohibition for this one closeout and move task `20261120-153700` to `archive/tasks/`? I will not inspect archived contents. If approved, I will attempt the exact destination write, update the board and task record, and verify the resulting commit and active paths.
+
+---
+
 ### 2026-11-20 — Approved STE linter workflow cleanup
 
 **User**
