@@ -58,7 +58,7 @@ This is a navigational index, not a replacement for the chronological records. T
 ### SP-05 — Direct reuse of the proven silk-wrap portrait direction
 
 - **Source:** [13 November 2026 — Attempt 04](2026-11-13-image-prompts.md#attempt-04--direct-reuse-of-the-proven-silk-wrap-portrait-direction)
-- **Image:** [file_000000005280821180bb6e444a0a80cd.png.webp](images/file_000000005280821180bb6e444a0a80cd.png.webp) — the archived binary name is retained; the November 13 record maps it to the user-approved “realistic-silk-wrap-portrait-open-drape-03.png” output.
+- **Image:** [realistic-silk-wrap-portrait-open-drape-03.png.webp](images/realistic-silk-wrap-portrait-open-drape-03.png.webp)
 - **Operation:** Fresh generation, without a reference attachment.
 - **Base prompt:** Reuses the authored wording of [12 November — Attempt 33](2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode) verbatim.
 - **Classification:** The prompt record's final user assessment is **successful**. An earlier technical assessment noted a garment-construction mismatch; that observation remains in the source record and is not erased by the later user classification.
