@@ -606,6 +606,96 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertTrue(new["sha256"])
         self.assertTrue((image_dir / "original/new-output.png").is_file())
 
+
+    def test_session_manifest_uses_a_matching_legacy_original_master_when_present(self):
+        session = self.root / "drawings/2026-11-19"
+        image_dir = session / "images"
+        original_dir = image_dir / "original"
+        original_dir.mkdir(parents=True)
+        attempt_record = session / "attempt-01.md"
+        attempt_record.write_text("# Attempt 01\n", encoding="utf-8")
+        readme = session / "README.md"
+        readme.write_text(
+            "# Drawing session\n\n"
+            "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+            "|---|---|---|---|---|---|\n"
+            "| [01 — Legacy](attempt-01.md) | Session | Existing | Generated | Not recorded | [legacy.webp](images/legacy.webp) |\n\n"
+            "## Image inventory — all 1 files\n",
+            encoding="utf-8",
+        )
+        legacy_original = b"legacy-original-master-bytes"
+        (original_dir / "legacy.png").write_bytes(legacy_original)
+        payload = b"legacy-webp-payload"
+        (image_dir / "legacy.webp").write_bytes(
+            b"RIFF" + (len(payload) + 4).to_bytes(4, "little") + b"WEBP" + payload
+        )
+
+        (self.inbox / "new.png").write_bytes(b"new-generated-original")
+        self.manifest_many(
+            [{
+                "source": "new.png",
+                "title": "New Output",
+                "destination_dir": "drawings/2026-11-19/images",
+                "attempt": "1",
+            }],
+            batch="batch-legacy-original-manifest",
+        )
+        result = self.run_processor()
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+        with (session / "manifest.csv").open(encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle))
+        legacy = next(row for row in rows if row["webp_path"].endswith("/legacy.webp"))
+        expected_master = "drawings/2026-11-19/images/original/legacy.png"
+        self.assertEqual(legacy["original_path"], expected_master)
+        self.assertEqual(legacy["filename"], expected_master)
+        self.assertEqual(legacy["sha256"], hashlib.sha256(legacy_original).hexdigest())
+        self.assertEqual(legacy["original_sha256"], hashlib.sha256(legacy_original).hexdigest())
+        self.assertEqual(legacy["original_bytes_available"], "Yes")
+        self.assertEqual(legacy["verification_status"], "Pending")
+        self.assertEqual(legacy["mapping_status"], "Corroborated")
+
+    def test_orphan_legacy_original_master_blocks_processing_and_rolls_back_new_upload(self):
+        session = self.root / "drawings/2026-11-19"
+        image_dir = session / "images"
+        original_dir = image_dir / "original"
+        original_dir.mkdir(parents=True)
+        (original_dir / "orphan.png").write_bytes(b"orphan-original")
+        (session / "attempt-01.md").write_text("# Attempt 01\n", encoding="utf-8")
+        readme = session / "README.md"
+        readme.write_text(
+            "# Drawing session\n\n"
+            "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+            "|---|---|---|---|---|---|\n"
+            "| [01 — New](attempt-01.md) | Session | Existing | Generated | Not recorded | — |\n",
+            encoding="utf-8",
+        )
+        (self.inbox / "new.png").write_bytes(b"new-generated-original")
+        self.manifest_many(
+            [{
+                "source": "new.png",
+                "title": "New Output",
+                "destination_dir": "drawings/2026-11-19/images",
+                "attempt": "1",
+            }],
+            batch="batch-orphan-master",
+        )
+        handoff_before = (self.inbox / "HANDOFF.yml").read_bytes()
+        readme_before = readme.read_bytes()
+
+        result = self.run_processor()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertTrue((self.inbox / "new.png").is_file())
+        self.assertTrue((original_dir / "orphan.png").is_file())
+        self.assertFalse((image_dir / "new-output.webp").exists())
+        self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), handoff_before)
+        self.assertEqual(readme.read_bytes(), readme_before)
+        report = (
+            self.inbox
+            / "history/batch-orphan-master/attempt-001/verification-report.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Original master has no same-stem WebP", report)
+
     def test_session_manifest_preserves_existing_rows_and_adds_new_columns(self):
         session = self.root / "drawings/2026-11-19"
         session.mkdir(parents=True)

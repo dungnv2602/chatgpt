@@ -521,16 +521,21 @@ def linked_attempt_assets(session_dir: Path) -> dict[str, list[str]]:
 
 
 def legacy_manifest_row(session_date: str, session_dir: Path, webp: Path,
-                        links: dict[str, list[str]]) -> dict[str, str]:
+                        links: dict[str, list[str]], original: Path | None = None) -> dict[str, str]:
     relative_webp = f"drawings/{session_date}/{webp.relative_to(session_dir).as_posix()}"
     session_relative_webp = webp.relative_to(session_dir).as_posix()
     webp_sha = digest(webp)
+    original_path = (
+        f"drawings/{session_date}/{original.relative_to(session_dir).as_posix()}"
+        if original is not None else ""
+    )
+    original_sha = digest(original) if original is not None else ""
     attempts = list(dict.fromkeys(links.get(session_relative_webp, [])))
     if len(attempts) == 1:
         attempt, mapping_status = attempts[0], "Corroborated"
         mapping_evidence = (
-            f"Existing attempt-{attempt}.md Repository images link; "
-            "generation-time output association and original hash were not recorded."
+            f"Existing attempt-{attempt}.md/README link corroborates the attempt association; "
+            "generation-time output ID and checksum were not recorded."
         )
     elif len(attempts) > 1:
         attempt, mapping_status = "", "Conflicting"
@@ -542,26 +547,30 @@ def legacy_manifest_row(session_date: str, session_dir: Path, webp: Path,
     return {
         "session_date": session_date,
         "image_id": f"LEGACY-{stable_key}",
-        "filename": relative_webp,
+        "filename": original_path or relative_webp,
         "prompt_id": "",
         "approval_status": "Not recorded",
         "github_url": github_blob_url(relative_webp),
-        "sha256": "",
-        "verification_status": "Not verifiable",
-        "verification_error": "Legacy derivative retained without an available original master or generation-time checksum.",
+        "sha256": original_sha,
+        "verification_status": "Pending" if original is not None else "Not verifiable",
+        "verification_error": (
+            "Awaiting GitHub post-push verification of retained original and WebP."
+            if original is not None else
+            "Legacy derivative retained without an available original master or generation-time checksum."
+        ),
         "attempt": attempt,
         "output_id": "",
         "native_generation_id": "",
         "native_output_id": "",
         "mapping_status": mapping_status,
         "mapping_evidence": mapping_evidence,
-        "original_path": "",
+        "original_path": original_path,
         "webp_path": relative_webp,
-        "original_sha256": "",
+        "original_sha256": original_sha,
         "webp_sha256": webp_sha,
         "generation_sha256": "",
         "hash_match": "NOT_PROVIDED",
-        "original_bytes_available": "No",
+        "original_bytes_available": "Yes" if original is not None else "No",
     }
 
 
@@ -626,16 +635,94 @@ def prepare_session_manifest_updates(prepared: list[dict[str, Any]], root: Path)
             for item in session_items
         }
 
+        original_dir = image_dir / "original"
+        if original_dir.is_symlink() or (original_dir.exists() and not original_dir.is_dir()):
+            raise ProcessingError(
+                f"Original-master directory is unsafe: {original_dir.relative_to(root).as_posix()}"
+            )
+        originals_by_stem: dict[str, Path] = {}
+        if original_dir.is_dir():
+            for master in sorted(original_dir.iterdir()):
+                if master.is_symlink() or not master.is_file():
+                    raise ProcessingError(
+                        f"Unexpected symlink or non-file in original-master directory: "
+                        f"{master.relative_to(root).as_posix()}"
+                    )
+                if master.suffix.lower() not in SUPPORTED:
+                    raise ProcessingError(
+                        f"Unsupported file in original-master directory: {master.relative_to(root).as_posix()}"
+                    )
+                if master.stem in originals_by_stem:
+                    raise ProcessingError(
+                        f"Ambiguous original masters share the same stem: {master.stem}"
+                    )
+                originals_by_stem[master.stem] = master
+
+        webps_by_stem: dict[str, Path] = {}
+        if image_dir.is_dir():
+            for delivery in sorted(image_dir.glob("*.webp")):
+                if delivery.is_symlink() or not delivery.is_file():
+                    raise ProcessingError(
+                        f"Legacy WebP is not a regular file: {delivery.relative_to(root).as_posix()}"
+                    )
+                if not valid_webp(delivery):
+                    raise ProcessingError(
+                        f"WebP failed container validation during manifest reconciliation: "
+                        f"{delivery.relative_to(root).as_posix()}"
+                    )
+                if delivery.stem in webps_by_stem:
+                    raise ProcessingError(f"Duplicate delivery WebP stem: {delivery.stem}")
+                webps_by_stem[delivery.stem] = delivery
+            for stem, master in originals_by_stem.items():
+                if stem not in webps_by_stem:
+                    raise ProcessingError(
+                        f"Original master has no same-stem WebP delivery file: "
+                        f"{master.relative_to(root).as_posix()}"
+                    )
+
+        # Reconcile any already-manifested or legacy WebP with a retained
+        # original master. Preserve evidence, but never overwrite a conflicting
+        # checksum or a conflicting original path.
+        for stem, master in originals_by_stem.items():
+            delivery = webps_by_stem[stem]
+            relative_webp = delivery.relative_to(root).as_posix()
+            relative_master = master.relative_to(root).as_posix()
+            master_sha = digest(master)
+            existing_row = seen_webps.get(relative_webp)
+            if existing_row is None:
+                continue
+            prior_path = (existing_row.get("original_path") or "").strip()
+            prior_sha = (existing_row.get("sha256") or "").strip().lower()
+            if prior_path and prior_path != relative_master:
+                raise ProcessingError(
+                    f"Conflicting original_path in session manifest for {relative_webp}."
+                )
+            if prior_sha and prior_sha != master_sha:
+                raise ProcessingError(
+                    f"Conflicting original SHA-256 in session manifest for {relative_webp}."
+                )
+            existing_row["filename"] = relative_master
+            existing_row["original_path"] = relative_master
+            existing_row["original_sha256"] = master_sha
+            existing_row["sha256"] = master_sha
+            existing_row["original_bytes_available"] = "Yes"
+            if existing_row.get("verification_status") == "Not verifiable":
+                existing_row["verification_status"] = "Pending"
+            existing_row["verification_error"] = (
+                "Awaiting GitHub post-push verification of retained original and WebP."
+            )
+
         if image_dir.is_dir():
             for legacy_webp in sorted(image_dir.glob("*.webp")):
-                if legacy_webp.is_symlink() or not legacy_webp.is_file():
-                    raise ProcessingError(f"Legacy WebP is not a regular file: {legacy_webp.relative_to(root).as_posix()}")
                 relative_webp = legacy_webp.relative_to(root).as_posix()
                 if relative_webp in new_webp_paths or relative_webp in seen_webps:
                     continue
                 if not valid_webp(legacy_webp):
                     raise ProcessingError(f"Legacy WebP failed container validation: {relative_webp}")
-                legacy_row = legacy_manifest_row(session_date, session_dir, legacy_webp, links)
+                legacy_row = legacy_manifest_row(
+                    session_date, session_dir, legacy_webp, links,
+                    originals_by_stem.get(legacy_webp.stem),
+                )
                 if legacy_row["image_id"] in seen_ids:
                     raise ProcessingError(f"Legacy manifest image_id collision: {legacy_row['image_id']}")
                 rows.append(legacy_row)
