@@ -225,6 +225,17 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
 - **Validation:** The two edited files were fetched after each write. Their read-back content matched the submitted text. Both now contain zero semicolons. The official ASD-STE100 linter has not run.
 - **Commits:** `0f0a381d042d08aaf3afe29cd8647c1f35d2ea9a` and `2acb3b2511aa8dcd3cd27c5f5574967805877888`.
 
+### Version 9 — Linter and CI capability review
+
+- **Date:** 2026-11-20
+- **Change:** Review the official linter source and existing GitHub Actions workflows to identify a valid execution route.
+- **Files reviewed:** `skills/asd-ste100/scripts/ste-lint.py`, `.github/workflows/convert-images-to-webp.yml`, and `.github/workflows/notification.yml`.
+- **Linter scope:** The linter checks semicolons, selected phrasal verbs, marketing adjectives, nominalizations, long sentences, synonym rotation, and dangling conjunctions. Passive voice and present-perfect findings are advisory. It protects hedges and does not claim to check noun clusters.
+- **Self-test:** Not run. This environment cannot execute the repository script.
+- **CI review:** Existing workflows process image takeout and send tag notifications. Neither runs the STE linter. No workflow-dispatch action is available through the connected GitHub tools.
+- **Next validation step:** Run `python3 skills/asd-ste100/scripts/ste-lint.py --selftest` in a repository shell. Then run it against the applicable operational files and review each finding.
+- **Validation status:** Source review only. The linter remains unexecuted.
+
 ## Future revision log
 
 Append a new entry whenever the initialization policy or its dependencies change.
