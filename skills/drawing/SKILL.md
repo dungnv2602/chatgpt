@@ -132,9 +132,9 @@ The Drawing Skill is universal: its rules govern every drawing project,
 regardless of subject, scene, or project switch. A project change does not make
 the skill new and does not, by itself, require another retrieval.
 
-At the beginning of each new ChatGPT conversation/session, after loading the
-foundational session skills, retrieve the current Drawing Skill and its
-mandatory foundational references from the `gpt` branch:
+When the user invokes an explicit foundational initialization cue,
+after the foundational session skills have been loaded, retrieve the current
+Drawing Skill and its mandatory foundational references from the `gpt` branch:
 `references/style-guide.md` and `references/image-editing-protocol.md`.
 Keep the verified instructions in working context and apply them to every
 drawing project throughout that conversation. Do not load every on-demand
@@ -148,8 +148,9 @@ conversation.**
 Refresh the skill and its supporting references if the user asks for an
 instruction refresh, if a relevant repository change is known or suspected, or
 if newly introduced work depends on a supporting reference that has not yet
-been read. A new ChatGPT conversation requires a fresh retrieval even when it
-continues an existing project, so the new conversation starts from the current
+been read. A new ChatGPT conversation requires a fresh retrieval when
+foundational initialization is invoked in that conversation, even when it
+continues an existing project, so the conversation starts from the current
 repository version.
 
 This session-level loading cadence does not reduce any per-attempt requirement
