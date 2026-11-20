@@ -41,8 +41,10 @@ jobs:
       - name: Run STE linter on changed Markdown files
         if: steps.changed.outputs.files != ''
         shell: bash
+        env:
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
         run: |
           while IFS= read -r file; do
             [ -z "$file" ] && continue
             python3 skills/asd-ste100/scripts/ste-lint.py "$file"
-          done <<< "${{ steps.changed.outputs.files }}"
+          done <<< "$CHANGED_FILES"
