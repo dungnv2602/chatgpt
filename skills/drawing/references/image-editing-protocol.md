@@ -19,17 +19,11 @@ For every request to adjust, revise, refine, or change an existing result, use t
 
 If the successful prompt is missing or incomplete, use the active session brief and the available authoritative attempt records. Disclose what prompt information could not be recovered. Do not ask for an image as a substitute. Ask a question only when an essential creative requirement cannot be resolved from the available written records.
 
-## 2. Optional image-reference roles
+## 2. Scope of the prompt-only rule
 
-When the user includes an image, establish its role and priority:
+The prompt-only rule applies whenever the user asks to adjust an existing result. Do not use an image attachment for identity, composition, style, comparison, or direct-edit reference during that adjustment. Resolve the intended visual content from the successful authored prompt and the user's written change request.
 
-- **Identity:** preserve faces, hair, glasses, and stable visual features.
-- **Composition:** preserve subject placement, body geometry, camera view, and spatial relationships.
-- **Style:** transfer brushwork, palette, line, or print texture. Do not import unrelated subject matter.
-- **Visual comparison:** compare the reconstruction with the approved result.
-- **Direct edit source (secondary workflow):** Change that exact image only when the user explicitly requests direct editing. You may also do so when reconstruction is inadequate and the user has approved this method. The actual source must be attachable through the supported mechanism.
-
-Do not treat "use this as inspiration" as "edit this exact image." No attachment is needed for prompt-first reconstruction.
+Image references may be used for other drawing tasks only when the user explicitly assigns a reference role and the task is not an adjustment of an existing result. This does not create an exception to the prompt-only adjustment rule.
 
 ## 3. Revise the proven prompt, not the image
 
@@ -43,26 +37,16 @@ Start with the single requested change. Use the verified successful authored pro
 
 For a style-only change, revise only the rendering treatment. Preserve all scene and subject details.
 
-## 4. Optional direct-edit verification
-
-Direct editing is a secondary method, not the default. Use it only when the user explicitly requests a direct image edit. Use it when reconstruction is materially inadequate and the actual image source is accessible through the supported mechanism.
-
-- Attach the exact image source. A filename or image ID in text is not enough.
-- Inspect the returned operation and parent/source metadata.
-- If the metadata shows source linkage and the requested change is visible, classify the result as a source-linked edit.
-- If the metadata shows no source or parent, do not claim source continuity. This rule applies even when the output resembles the original.
-- If metadata is unavailable, state that source linkage is unconfirmed.
-- A result that looks successful does not prove source linkage.
-
-## 5. Recovery when prompt reconstruction misses
+## 4. Recovery when prompt reconstruction misses
 
 If prompt reconstruction repeatedly misses the requested detail:
 
 1. Stop repeating near-identical prompt revisions.
-2. Recheck the exact successful baseline. Look for assistant-added changes.
+2. Recheck the exact successful baseline and identify assistant-added changes.
 3. Reduce the revision to the requested change only.
-4. Consider direct editing only when the user explicitly requests it. You may also consider it after explaining its limits, if the exact source can be attached.
-5. If neither method is reliable, explain the limit. Preserve the best successful baseline instead of mislabeling the result.
+4. Clarify the relevant spatial, anatomical, material, or compositional instruction in the prompt.
+5. If needed, return to the last successful prompt and rebuild the revision in smaller steps.
+6. If prompt-only reconstruction remains unreliable, explain the limitation and preserve the best successful result. Do not switch to image-based editing or request an image.
 
 ## 6. Prompt-before-generation archive
 
