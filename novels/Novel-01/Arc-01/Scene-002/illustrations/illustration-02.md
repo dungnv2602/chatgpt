@@ -18,7 +18,7 @@ status: generated
 
 ## 2. Image Reference
 - **Repository Image:** Not stored in GitHub; delivered in this conversation as `a_warm_cinematic_photorealistic_scene_in_a_cozy.png`.
-- **Archived Prompt / Attempt:** [2026-11-16 Image Prompts — Attempt 05](../../../../prompts/2026-11-16-image-prompts.md#attempt-05--a-closer-listening-moment)
+- **Archived Prompt / Attempt:** [2026-11-16 Image Prompts — Attempt 05](../../../../../drawings/history/2026-11-16-image-prompts.md#attempt-05--a-closer-listening-moment)
 - **Image Status:** Fresh generation; partial match; approval not established.
 - **Source or Reference Image:** None attached. Generated from written prompt direction only.
 
