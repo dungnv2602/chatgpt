@@ -1,5 +1,16 @@
 # Open Discussions
 
+### 2026-11-20 16:20 UTC
+
+**Assistant**
+
+The approved active-source audit work is complete for now: the 41-file external URL review is recorded, all 60 long-sentence candidates in the earlier full-audit log have received source review, and the remaining active-document synonym and conjunction cases have been revised. The latest source changes have not yet received a new completed CI result. GitHub Actions will validate them independently; I will inspect the newest available result at a later mandatory preflight without waiting or polling.
+
+One authorization gate remains. Do you authorize reviewing historical links and making link-only corrections in archived task and archive records when a target is stale? I will not alter historical records without your approval.
+
+---
+
+
 ### 2026-11-20 16:15 UTC
 
 **Assistant**
