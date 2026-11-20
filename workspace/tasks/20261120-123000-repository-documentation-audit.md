@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 15:25 UTC
+- **Updated:** 2026-11-20 14:54 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -35,7 +35,8 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - Preserve the future revision template, initialization review checklist, and maintenance rule in the initialization policy.
 - Track unresolved audit work and update this task record as work progresses.
 - Do not raise lint baselines to make findings disappear.
-- Do not alter historical archive records unless the user authorizes those changes.
+- Exclude the entire `archive/` tree from this audit. Do not read, scan, audit, lint, or modify any file under it.
+- For links from active documents to archived paths, check path existence only. Do not inspect archived content or heading anchors.
 - Verify every repository write by fetching the committed path from branch `gpt`.
 
 ## 5. Decisions
@@ -43,8 +44,18 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - The audit is an active P1 task because its prior records explicitly leave work open.
 - Versions 5–32 are moved verbatim into this task's Audit History section.
 - Branch `gpt` remains the sole working branch. Do not modify `main` without explicit authorization.
+- The entire `archive/` tree is outside the audit scope. This supersedes earlier progress notes that proposed a historical-link review or treated archive files as audit sources.
 
 ## 6. Progress Log
+
+### 2026-11-20 14:54 UTC
+
+- **Action:** Corrected the audit boundary after the user's clarification.
+- **Decision:** Exclude the entire `archive/` tree. Do not read, scan, audit, lint, or modify its contents. Archived task records are stored under `archive/`, not under `workspace/`.
+- **Workflow changes:** Updated both STE lint workflows to exclude `archive/` from source selection. Updated the Markdown link checker so it does not read archived files or inspect their anchors. It retains path-existence checks for active-document links to archived paths. Removed the obsolete archive README lint exception. Added the archive boundary to The Worker skill.
+- **Effect:** The historical-link review and its authorization gate are removed from the remaining audit work. Earlier progress notes remain historical and are superseded by this scope decision.
+- **Validation:** Read the source files before editing. GitHub Actions will validate the workflow changes independently. Did not run lint or CI locally and did not wait for or poll CI.
+- **Next:** Read back every changed path from branch `gpt`. Continue only the active, in-scope documentation audit.
 
 ### 2026-11-20 16:05 UTC
 
@@ -294,18 +305,18 @@ Continue and complete the repository documentation audit. Keep its complete hist
 
 The historical Version 19 inventory contained 166 Markdown files and 119 active source files. The Version 17 count of 121 used the same exclusions except for `skills/asd-ste100/examples/`. That directory contained two Markdown files, which explains the exact difference.
 
-The current branch contains 176 Markdown files. The same Version 19 source-file exclusions produce 129 active source files. Current link validation also excludes `archive/tasks/`, `workspace/tasks/`, and `workspace/discussion.md` as sources while retaining those files as link targets. The full-document lint workflow selects 41 Markdown files.
+The current branch contains 176 Markdown files. The same Version 19 source-file exclusions produce 129 active source files. Current link validation excludes the entire `archive/` tree, `workspace/tasks/`, and `workspace/discussion.md` as sources. Archived paths remain available only for existence checks when active documents link to them. The checker does not read archived files or inspect their heading anchors. The full-document lint workflow selects 41 Markdown files.
 
 The Version 19 full lint reported 179 hard findings and 300 advisory findings. Those are historical results, not a fresh result for the current branch. The linter wrapper now has 17 baseline entries totaling 170. Every entry maps to an existing file. The historical 179-point threshold fell by four when two active-file baselines cleared. It fell by five when two deleted-file baselines were removed. The 170-point total is a configured threshold, not a current lint result.
 
 The newest changed-document run `44750057903` failed on `9260346fb8e14c5c576fbf8f8e3676fb645833e4`. Its fallback full audit found new lint violations in Session Start, GitHub Actions, The Worker, and Initialization Policy. The linter self-test and active Markdown link checker passed. Commit `49a972741aeb69bf249afffb11cbe33d8574d05f` rewrote those findings without changing baselines. A subsequent source-review batch split long sentences in Drawing and the philosophy skill, fixed the dangling conjunction in Prompt Fidelity, and removed an unrelated Version 5 entry from Initialization Policy. The latest commits are `ccf8c055a99984f1c5ec1d835958e9b5afc14282` and `49a972741aeb69bf249afffb11cbe33d8574d05f`. No result for either repair batch has been awaited.
 
-The Version 19 active-link scan found zero unresolved local Markdown targets or heading anchors in its 119-file source scope. Current validation excludes `archive/tasks/`, `workspace/tasks/`, and `workspace/discussion.md` as sources while retaining those files as link targets. The historical-link review remains open. The external URL review is complete for all 41 files in the current full-document lint scope. It found 19 unique external URLs. Six GitHub repositories are available. The Agent Skills specification, Wikipedia, TechScribe, and the official ASD-STE100 Issue 9 PDF are accessible. Five GitHub Docs links redirected to current canonical pages and were updated. The official ASD-STE100 home and FAQ pages are indexed as official STEMG pages, although direct crawler access returns 403. ASD Europe and SKYbrary links remain unverified because automated access timed out or returned 403. These access failures do not prove that the pages are dead. The old ASD-STE100 About and downloads links were replaced with the current FAQ, homepage, and Issue 9 PDF. The latest completed full technical-document lint, run 44753554043 on commit 0178a7d30d09de220df9e3c3b75860e9054d8b73, passed and reported 69 hard and 262 advisory findings across 41 files. It reported 34 synonym-rotation findings, 22 long-sentence findings, and one dangling-conjunction finding. Later source-review commits targeted the active-document synonym cases, the dangling conjunction, and remaining long sentences. No CI result for those later commits has been awaited. The earlier full-audit log contained 60 long-sentence candidates, and source review has addressed all 60. This is a source-review result, not a fresh official lint result. The 13 long-sentence examples in the ASD-STE100 skill preserve the quoted examples and intended teaching content. The edits cover Drawing, philosophy, curriculum, archive-reference, and generation-recovery documents. The 13 long-sentence examples in the ASD-STE100 skill preserve the quoted examples and the intended teaching content.
+The Version 19 active-link scan found zero unresolved local Markdown targets or heading anchors in its 119-file source scope. Current validation excludes the entire `archive/` tree, `workspace/tasks/`, and `workspace/discussion.md` as sources. Archived paths are used only for target-existence checks from active documents. No archive content or anchors are inspected. The historical-link review is out of scope. The external URL review is complete for all 41 files in the current full-document lint scope. It found 19 unique external URLs. Six GitHub repositories are available. The Agent Skills specification, Wikipedia, TechScribe, and the official ASD-STE100 Issue 9 PDF are accessible. Five GitHub Docs links redirected to current canonical pages and were updated. The official ASD-STE100 home and FAQ pages are indexed as official STEMG pages, although direct crawler access returns 403. ASD Europe and SKYbrary links remain unverified because automated access timed out or returned 403. These access failures do not prove that the pages are dead. The old ASD-STE100 About and downloads links were replaced with the current FAQ, homepage, and Issue 9 PDF. The latest completed full technical-document lint, run 44753554043 on commit 0178a7d30d09de220df9e3c3b75860e9054d8b73, passed and reported 69 hard and 262 advisory findings across 41 files. It reported 34 synonym-rotation findings, 22 long-sentence findings, and one dangling-conjunction finding. Later source-review commits targeted the active-document synonym cases, the dangling conjunction, and remaining long sentences. No CI result for those later commits has been awaited. The earlier full-audit log contained 60 long-sentence candidates, and source review has addressed all 60. This is a source-review result, not a fresh official lint result. The 13 long-sentence examples in the ASD-STE100 skill preserve the quoted examples and intended teaching content. The edits cover Drawing, philosophy, curriculum, archive-reference, and generation-recovery documents. The 13 long-sentence examples in the ASD-STE100 skill preserve the quoted examples and the intended teaching content.
 
 ## 8. Remaining Work
 
 - Review the next available CI result and reduce any remaining hard lint findings without raising per-file baselines. The configured baseline total of 170 is not a current lint result.
-- Review historical archive links only after the user authorizes changes to those records.
+- Do not audit the `archive/` tree. Treat it as retention-only and outside the documentation audit scope.
 - Confirm current audit scope and completion criteria against the repository state before closing the task.
 - Review any residual synonym-rotation findings identified by the next completed CI run. Preserve deliberate examples and distinct technical meanings. Do not raise baselines.
 
@@ -314,7 +325,7 @@ The Version 19 active-link scan found zero unresolved local Markdown targets or 
 1. At the next mandatory preflight, review the newest available GitHub Actions result. Do not wait or poll.
 2. Repair any newest completed failure without raising per-file baselines.
 3. Preserve deliberate examples and distinct technical meanings.
-4. Keep historical audit entries and archived task records unchanged.
+4. Keep historical audit entries unchanged. Do not read, scan, audit, lint, or modify anything under `archive/`.
 
 ## 10. References
 
