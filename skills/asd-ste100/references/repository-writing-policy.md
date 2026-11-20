@@ -10,6 +10,8 @@ Use **STE-flavored mode** for READMEs, change logs, technical explanations, and 
 
 Do not apply controlled-language rules to creative writing, dialogue, marketing copy, or approved creative prompts. Do not rewrite quoted examples that intentionally show a violation.
 
+Do not rewrite archived task records under `archive/tasks/`. Treat them as historical records. Exclude them from lint and from active link-source scans. Keep them available as link targets.
+
 ## Writing rules
 
 1. Write one instruction in each sentence.
