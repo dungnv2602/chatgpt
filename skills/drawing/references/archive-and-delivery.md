@@ -32,7 +32,7 @@ repository retention pass through the single intake at `images/takeout/`.
   classification are irrelevant to link creation. Multiple images may identify the same attempt. Their links
   are grouped in that row.
   Items without `attempt` metadata are processed as ordinary assets and do not
-  alter a prompt record or daily README. The GitHub Action commits these
+  change a prompt record or daily README. The GitHub Action commits these
   Markdown changes together with the processed assets.
 - The Action converts the entire batch into persistent staging at
   `images/takeout/webp/[batch-id]/attempt-NNN/` before moving any original.
@@ -64,7 +64,7 @@ repository retention pass through the single intake at `images/takeout/`.
   directory. The Action then reads back the original and WebP Git blobs,
   canonical WebP URL, daily README inventory/table links, and attempt-note
   WebP link before publishing manifest verification statuses.
-- Never alter a master or WebP after conversion as part of this pipeline.
+- Never change a master or WebP after conversion as part of this pipeline.
   Separate image edits require the normal prompt-archive and explicit editing
   workflow.
 
@@ -123,7 +123,7 @@ When the user supplies a downloaded image's SHA-256, compare it with the recorde
 
 Renaming or moving a file does not change its checksum. Re-encoding, editing, resizing, or converting usually changes it. If you archive an original and a WebP derivative, calculate and record their hashes separately. Do not compare them as the same byte stream.
 
-README image links must point directly to the correct image asset. Check each link against the repository path and blob before marking it Verified. Do not mark a URL or checksum Verified in the manifest before you check it.
+README image links must point directly to the correct image asset. Verify each link against the repository path and blob before marking it Verified. Do not mark a URL or checksum Verified in the manifest before you verify it.
 
 After archive changes, read back the README and manifest. Reconcile every generated output against the chronological attempt record. Report any missing asset, link, prompt association, checksum, or verification.
 
@@ -140,7 +140,7 @@ The WebP is a derivative with different bytes and therefore is **not expected to
 The GitHub Action should automate these tasks:
 
 - Calculate and compare original hashes.
-- Validate output mapping.
+- Verify output mapping.
 - Convert, rename, and relocate files.
 - Add direct links to the README and attempt records.
 - Reconcile the manifest and write verification reports.
