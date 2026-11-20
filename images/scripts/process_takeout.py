@@ -51,10 +51,17 @@ def destination_dir(value: Any, root: Path) -> Path:
     parts = p.parts
     if p.is_absolute() or not parts or any(x in {".", ".."} for x in parts):
         raise ProcessingError(f"Unsafe destination_dir: {value!r}")
-    if parts[0] not in {"images", "novel"}:
-        raise ProcessingError("Destinations must be inside images/ or novel/.")
+    if parts[0] not in {"images", "novel", "drawings"}:
+        raise ProcessingError("Destinations must be inside images/, novel/, or a dated drawing session's images/ folder.")
     if parts[0] == "images" and len(parts) > 1 and parts[1] in {"takeout", "webp", "scripts"}:
         raise ProcessingError(f"Reserved image destination: {value!r}")
+    if parts[0] == "drawings":
+        if len(parts) != 3 or parts[2] != "images" or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", parts[1]):
+            raise ProcessingError("Drawing output destinations must be drawings/YYYY-MM-DD/images.")
+        try:
+            datetime.strptime(parts[1], "%Y-%m-%d")
+        except ValueError as exc:
+            raise ProcessingError(f"Invalid drawing-session date in destination: {parts[1]}") from exc
     result = root.joinpath(*parts)
     try:
         result.resolve(strict=False).relative_to(root.resolve())
