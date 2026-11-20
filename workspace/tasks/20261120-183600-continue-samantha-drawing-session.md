@@ -10,7 +10,7 @@
 - **Origin:** User
 - **Approval:** Approved for session initialization and continuation
 - **Current execution:** Yes
-- **Dependencies:** None. The next scene selection is pending.
+- **Dependencies:** None. Scene approved; prompt archived. Image generation pending.
 - **Related tasks:** None
 - **Archived:** No
 
@@ -44,7 +44,8 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 - The latest approved candidate is Sweet Path Attempt 07. It supersedes Attempt 06 for Sweet Path continuity.
 - Casual Path Attempt 05 remains a separately approved branch.
 - Do not merge the two paths.
-- User selected Sweet Path and adopted Attempt 07 as the session baseline. Its Realistic, naturalistic cinematic treatment and sweet emotional direction are active. The next scene is not selected.
+- User selected Sweet Path and adopted Attempt 07 as the session baseline. Its realistic, naturalistic cinematic treatment and sweet emotional direction are active.
+- User approved Scene 1, “A quiet morning together,” for Attempt 08.
 - GitHub Actions preflight is unverified. The current commit has no reported combined status entries. The available workflow-run lookup returned no runs, and the Actions-list endpoint was not accessible through the connector.
 
 ## 6. Progress Log
@@ -101,9 +102,15 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 ### 2026-11-21
 
 - **Action:** User selected the Sweet Path and adopted Attempt 07 as this session's visual baseline. Six scene concepts were suggested.
-- **Result:** The visual baseline decision is complete. The task is no longer blocked. The next scene remains unselected.
+- **Result:** The visual baseline decision is complete. The task is no longer blocked.
 - **References:** `drawings/2026-11-20/attempt-07.md`, `drawings/2026-11-21/session-01-brief.md`.
-- **Next:** Await the user's scene selection or delegated choice. Archive the full prompt before image generation.
+- **Next:** Obtain scene approval and archive the complete prompt before image generation.
+
+### 2026-11-21 — Attempt 08
+
+- **Action:** User approved Scene 1, “A quiet morning together.” Recorded the scene in the session brief and drafted the complete generation prompt.
+- **Result:** Attempt 08 prompt archived at `drawings/2026-11-21/attempt-08.md`. The daily README indexes the attempt. Prompt-first reconstruction is necessary because the Attempt 07 image binary is unavailable; exact visual continuity is not claimed.
+- **Next:** Read back and verify the prompt and session records, then generate the image.
 
 ## 7. Current State
 
@@ -111,9 +118,9 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 - The Drawing skill and required references are loaded.
 - The new session brief and daily README exist and were read back.
 - The prior session is Paused. The new session is Active.
-- No image prompt has been drafted or generated in this session.
+- Attempt 08, “A Quiet Morning Together,” is approved and its complete prompt is archived. Image generation has not yet occurred.
 - CI status remains unverified.
-- The user selected Sweet Path. Attempt 07 is adopted as this session's baseline. Six candidate scene concepts were suggested. No scene has been selected.
+- The user selected Sweet Path and approved Attempt 08, “A quiet morning together.” The full prompt is archived in `drawings/2026-11-21/attempt-08.md`. Generation is pending.
 
 ## 8. Remaining Work
 
@@ -125,9 +132,9 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 ## 9. Next Actions
 
 1. Record the user's Sweet Path / Attempt 07 selection. This is complete.
-2. Ask the user to select a candidate scene or delegate the choice.
-3. Confirm any essential scene-specific detail only if required.
-4. Prepare and commit the first attempt note before image generation.
+2. Record the user's approval of Scene 1 in the session brief. This is complete.
+3. Archive the complete Attempt 08 prompt before generation. This is complete.
+4. Verify the prompt and updated index, then generate Attempt 08.
 
 ## 10. References
 
@@ -157,7 +164,7 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 
 The active session is `SAMANTHA-2026-11-21-01`. The previous session is Paused. Sweet Path / Attempt 07 is selected.
 
-Sweet Path is selected. Attempt 07 is the adopted baseline. Do not merge the Casual branch.
+Sweet Path is selected. Attempt 07 is the adopted baseline. Attempt 08, “A quiet morning together,” is approved and its prompt is archived. Do not merge the Casual branch.
 
 Attempt 07's archived prompt is a cleanup prompt, not a full-scene prompt. The attempt record does not contain the image binary. Do not claim that its asset ID is an attachment. If the user wants exact visual source continuity, request the actual image upload. Otherwise, use the selected approved prompt history only within the active session brief and the Drawing workflow.
 
