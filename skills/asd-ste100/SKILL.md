@@ -96,7 +96,7 @@ These six habits cover most of what makes machine-written English hard to parse.
    - In STE-flavored mode, flag lexical rules. Do not enforce them in the rewrite.
    - The linter has no STE-flavored mode. Synonym rotation remains a hard finding.
    - Use `--disable synonym-rotation` to disable that check.
-   - Do not run the linter locally. Push the changes to branch `gpt` and let GitHub Actions validate them.
+   - Do not run the linter or CI workflows locally. Push the changes to branch `gpt` and let GitHub Actions validate them. Do not wait for or poll CI results.
    - Follow the mandatory pre-prompt and post-load CI gates in `../github-actions/SKILL.md`.
    - The `ste-lint-changed.yml` workflow checks changed Markdown files outside `skills/asd-ste100/`. The `ste-lint-full-docs.yml` workflow checks the technical documentation when files in `skills/asd-ste100/` change.
    - The workflows call `scripts/ste-lint-repository.sh`, which runs the linter. Use stdin or file arguments and `--json` only when you need to understand the linter interface or interpret workflow output.
