@@ -1,14 +1,12 @@
 # Task Board
 
-Last updated: 2026-11-20 11:25 UTC
+Last updated: 2026-11-20 11:51 UTC
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
 ## Current Execution
 
-| ID | Task | Priority | Status | Origin | Updated | Record |
-|---|---|---:|---|---|---|---|
-_No active execution task._
+_No unblocked execution task._
 
 ## Ready
 
@@ -16,7 +14,9 @@ _No ready tasks._
 
 ## Blocked
 
-_No blocked tasks._
+| ID | Task | Priority | Status | Origin | Updated | Record |
+|---|---|---:|---|---|---|---|
+| 20261120-115056 | Automate 14-day archive retention with GitHub Actions | P1 | Blocked | User | 2026-11-20 | [Task record](tasks/20261120-115056-scheduled-archive-retention.md) |
 
 ## Proposed
 
@@ -32,6 +32,6 @@ _No paused tasks._
 
 ## Selection rules
 
-Follow explicit user direction first. Otherwise select the highest-priority eligible task. Resolve dependencies before execution. For equal priorities, select the oldest task.
+Follow explicit user direction first. Otherwise select the highest-priority eligible task. Resolve dependencies first. For equal priorities, select the oldest task.
 
 Only one task is the current execution task. Other tasks may remain In Progress while they await selection.
