@@ -410,7 +410,7 @@ Use this template:
 - **Scope:** Reword four audit statements in this file to address synonym-rotation findings from the previous full lint.
 - **Baseline policy:** No lint baseline changed.
 - **Commit:** `939d19a16e533ab1e08e4f78ba7dbdb8c70c2fd5`.
-- **CI:** Pending. Check the result on the next user turn.
+- **CI:** Full-document run `44700856846` passed. Changed-document run `44700856776` passed. Both runs checked commit `d0f77537732af092a62a472d37425f0c41abeff`.
 
 
 ### Version 21 — Additional technical-document lint cleanup
@@ -419,4 +419,15 @@ Use this template:
 - **Scope:** Reword one synonym-rotation finding in the novelist-initiation skill. Split one long sentence in the scholarly source-standards reference.
 - **Baseline policy:** No lint baseline changed.
 - **Commits:** `e63664c41c381c7d769965103136f3f4178fbbc2` and `d7b12def70dfb49e8063243345cc328d7c348eea`.
+- **CI:** Pending. Check the result on the next user turn.
+
+
+### Version 22 — Further technical-document lint cleanup
+
+- **Date:** 2026-11-20
+- **Scope:** Reworded three synonym-rotation findings in the conversation-mode skill and two in this audit log.
+- **Files changed:** `skills/conversation-mode/SKILL.md` and `skills/INITIALIZATION_POLICY.md`.
+- **Baseline policy:** No lint baseline changed.
+- **Read-back:** Both committed files were fetched from branch `gpt`. The requested text changes were present.
+- **Commits:** `4cb4445ff4be63853e24a03312e9b290275dd2af`, `6df11cd446aeaf68def816db91e1b59d2f3fa69a`, and `55c54b11d9c2f941c4c553bcbc726db74a6cba18`.
 - **CI:** Pending. Check the result on the next user turn.
