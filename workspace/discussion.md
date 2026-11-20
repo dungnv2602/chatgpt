@@ -22,9 +22,11 @@ The source review then:
 
 These changes are in [ccf8c05](https://github.com/dungnv2602/chatgpt/commit/ccf8c055a99984f1c5ec1d835958e9b5afc14282). I fetched all changed source paths again from branch `gpt`.
 
-A further source-review batch split five long-sentence candidates in `skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md` and eight in `skills/session-archiving/references/archive-records-and-image-prompts.md`. These changes are in [0d7b7bf](https://github.com/dungnv2602/chatgpt/commit/0d7b7bffccca40c4ad9407256c51ea1219ac97f2). I fetched both files from branch `gpt` and confirmed the revised passages. The task record and task board also reflect the resumed audit. The verification update is in [8265e95](https://github.com/dungnv2602/chatgpt/commit/8265e95faeecbc1644e7c48fe96045e5bf038cb5).
+Further source-review batches split five long-sentence candidates in `skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md` and eight in `skills/session-archiving/references/archive-records-and-image-prompts.md`. These changes are in [0d7b7bf](https://github.com/dungnv2602/chatgpt/commit/0d7b7bffccca40c4ad9407256c51ea1219ac97f2).
 
-The full audit log listed 60 long-sentence candidates. Source review has addressed 26. Remaining work includes context review of the other candidates and synonym-rotation findings, external URL review, and historical-link review only with your authorization. The configured lint baseline total of 170 is a threshold, not a current lint result.
+I then split nine candidates in `skills/drawing/references/generation-recovery-and-provenance.md` in [f667a0e](https://github.com/dungnv2602/chatgpt/commit/f667a0e280ca53673cd083b6a564e8bf3a4ec072), and three more in `skills/drawing/SKILL.md` in [0178a7d](https://github.com/dungnv2602/chatgpt/commit/0178a7d30d09de220df9e3c3b75860e9054d8b73). I fetched all four paths from branch `gpt` and confirmed the revised passages. The task record and task board reflect the continued audit. The verification update is in [8265e95](https://github.com/dungnv2602/chatgpt/commit/8265e95faeecbc1644e7c48fe96045e5bf038cb5).
+
+The full audit log listed 60 long-sentence candidates. Source review has addressed 38. The remaining 22 original candidates require context review. Other open work includes synonym-rotation findings, external URL review, and historical-link review only with your authorization. The configured lint baseline total of 170 is a threshold, not a current lint result.
 
 I did not run lint or CI locally. I did not dispatch, rerun, wait for, or poll GitHub Actions. No CI result for the latest repair commits has been awaited. The audit remains In Progress.
 
