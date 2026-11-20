@@ -17,9 +17,12 @@ The chronological logs remain the canonical source for full prompt wording and a
 
 ## Governance
 
-The operational consultation checkpoint and prompt-fidelity rules live in
-[Drawing Skill](../../skills/drawing/SKILL.md). That skill determines when the
-patterns are consulted; this index remains the library's navigation and
+The operational consultation checkpoint lives in
+[Drawing Skill](../../skills/drawing/SKILL.md). The complete prompt-fidelity
+standard is maintained in the dedicated
+[Prompt Fidelity and Unrequested Restrictions note](../../skills/drawing/references/prompt-fidelity.md);
+that note is the authoritative, exhaustive rule for prompt drafting, revision,
+and pre-generation review. This index remains the library's navigation and
 governance reference. Do not repeatedly reread the full library when the
 relevant entries have already been reviewed and no refresh condition applies.
 
