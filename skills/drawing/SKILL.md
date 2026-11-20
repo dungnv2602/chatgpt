@@ -166,8 +166,8 @@ every drawing action.
 
 1. **At the beginning of each distinct drawing session**, after identifying
    the active brief and before drafting any prompt, read
-   `drawings/patterns/README.md` and consult the relevant entries in
-   `successful-patterns.md` and `failure-patterns.md`. Select entries by
+   `skills/drawing/references/patterns/README.md` and consult the relevant entries in
+   `skills/drawing/references/patterns/successful-patterns.md` and `skills/drawing/references/patterns/failure-patterns.md`. Select entries by
    relevance to the actual task, not by reading unrelated patterns in full.
 2. **Before each generation or edit attempt**, re-check the relevant pattern
    entries against the current objective and any failure from the preceding
@@ -176,7 +176,7 @@ every drawing action.
    unless the user requests a refresh, a repository change is known or
    suspected, or the new attempt introduces a relevant pattern not yet reviewed.
    This avoids redundant retrieval while preserving the per-attempt check.
-4. Review `PATTERN-TEMPLATES.md` only when creating or revising a pattern.
+4. Review `skills/drawing/references/patterns/PATTERN-TEMPLATES.md` only when creating or revising a pattern.
 5. The active session brief and the user's latest explicit instructions always
    outrank pattern guidance. Patterns inform execution; they do not authorize
    creative changes.
