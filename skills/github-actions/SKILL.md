@@ -20,11 +20,11 @@ Use this skill for GitHub Actions workflow design and maintenance. It governs wo
 
 ## 2. Scheduled archive cleanup
 
-The scheduled archive-retention workflow is owned by GitHub Actions.
+GitHub Actions runs the scheduled archive-retention workflow.
 
 - Run the schedule from the repository default branch because GitHub scheduled events only run there.
 - Check out `gpt`, which is the working/source branch.
-- Delete the complete contents of `archive/tasks/` as one batch only after the 14-day interval has elapsed. Do not calculate per-record expiry.
+- Delete the complete contents of `archive/tasks/` as one batch only after 14 days pass. Do not calculate per-record expiry.
 - Preserve `.gitkeep` and the task-board historical entries.
 - After cleanup, atomically fast-forward `main` to the resulting `gpt` commit. Never force-push or create an independent cleanup commit on `main`.
 - Check that `main` is an ancestor of `gpt` before pushing. If the branches diverge, fail safely without updating either ref.
@@ -38,8 +38,8 @@ Run one bounded CI snapshot before handling every new user prompt. This rule app
 1. Inspect the newest available run for each applicable workflow on branch `gpt`. Also inspect the current branch head's combined status and check runs.
 2. For each workflow, act only on its newest run. A completed success clears that workflow. A completed failure requires investigation and repair.
 3. Treat an older failure as superseded when a newer run for the same workflow succeeds.
-4. Treat queued, in-progress, cancelled, skipped, or absent runs as pending or unavailable. They do not block the user's request. Never wait, poll, dispatch, or rerun to obtain a result.
-5. When a newest completed run fails, inspect its jobs, failed steps, and logs. Fix the cause on `gpt` before handling the user's request. Do not weaken tests, path coverage, or baselines.
+4. Treat queued, in-progress, cancelled, skipped, or absent runs as pending or unavailable. They do not block the user's request. Never wait, poll, dispatch, or rerun to produce a result.
+5. When a newest completed run fails, inspect its jobs, failed steps, and logs. Repair the cause on `gpt` before handling the user's request. Do not weaken tests, path coverage, or baselines.
 6. After you push a repair, continue with the user's request. GitHub Actions owns validation. Review the result during the next mandatory preflight.
 7. Never run the STE linter, CI workflows, or CI test suites locally. Do not manually dispatch or rerun workflows unless the user explicitly asks.
 8. If GitHub Actions cannot be accessed, make one bounded access attempt. Record the status as unverified in `workspace/discussion.md` in Condensed Mode. Do not claim that CI passed. Continue with the user's request.

@@ -20,7 +20,7 @@ Conversation Mode controls communication style and access to the temporary discu
 
 Before handling every new user prompt, follow the one-time pre-prompt CI snapshot in `skills/github-actions/SKILL.md`. This rule applies in every conversation mode.
 
-Repair a failure only when the newest run for an applicable workflow is completed with a failure conclusion. Inspect its jobs and logs. Fix the cause on branch `gpt`.
+Repair a failure only when the newest run for an applicable workflow has finished with a failure conclusion. Inspect its jobs and logs. Repair the cause on branch `gpt`.
 
 Do not wait for or poll CI. Pending, in-progress, cancelled, skipped, or absent runs do not block the prompt. A newer successful run supersedes an older failure.
 
@@ -95,7 +95,7 @@ Never change an assigned task ID.
 
 **Assistant-generated tasks**
 
-- Create necessary follow-up tasks automatically when they are required to complete, check, or maintain an approved objective.
+- Create necessary follow-up tasks automatically when an approved objective requires them to complete, review, or maintain it.
 - Mark these tasks as Assistant-originated and Necessary.
 - Keep necessary follow-ups within the approved scope.
 - Create optional improvements automatically as Proposed tasks.
@@ -120,13 +120,13 @@ Use these statuses:
 |---|---|
 | Proposed | Optional assistant suggestion awaiting approval |
 | Ready | Approved and eligible for selection |
-| In Progress | Work has started and remains incomplete |
+| In Progress | Work started and remains incomplete |
 | Blocked | A dependency or external condition prevents progress |
 | Paused | Work is intentionally inactive |
 | Done | Acceptance criteria are met |
 | Cancelled | The task will not continue |
 
-A task may remain In Progress while another task is selected. Mark one task as the current execution task on the board.
+A task may remain In Progress while the board marks another task as current execution.
 
 ## Task board rules
 
@@ -194,7 +194,7 @@ During execution:
 - Update references when discoveries change the plan.
 - Create necessary follow-up tasks automatically.
 - Mark optional improvements Proposed.
-- Ask only when a user decision or approval is required.
+- Ask only when you need a user decision or approval.
 
 At a checkpoint:
 
@@ -230,9 +230,9 @@ Ask the user only when a genuine decision, missing requirement, or approval bloc
 
 ## Task completion and archive
 
-A task is Done only when its acceptance criteria are met and its verification record is accurate.
+A task qualifies as Done only after it meets its acceptance criteria and its verification record is accurate.
 
-When a task is Done or Cancelled:
+When the board marks a task Done or Cancelled:
 
 1. Record the final result and verification.
 2. Set the final status and archive timestamp.
@@ -262,7 +262,7 @@ The Worker applies in every conversation mode.
 Before handing off or closing a task, check:
 
 - The task board entry matches the task record.
-- The original user request and relevant clarifications are preserved.
+- The task record preserves the original user request and relevant clarifications.
 - Origin, approval, priority, status, and dependencies are accurate.
 - Progress entries record meaningful actions and results.
 - Current State describes the actual repository state.

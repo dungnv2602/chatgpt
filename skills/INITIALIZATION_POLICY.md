@@ -33,7 +33,7 @@ A specialist-role request does not change the `start session` cue. It authorizes
 - Load only the files required by the session-start procedure or the requested specialist task.
 - Do not load unrelated skills or references.
 - Report the exact path of a missing or unverified file.
-- Do not claim initialization is complete until every required skill retrieval succeeds and every actionable completed CI failure is repaired.
+- Do not claim initialization is complete until you retrieve every required skill and repair every actionable completed CI failure.
 - Use one bounded CI snapshot. Pending, cancelled, skipped, absent, or inaccessible CI results do not block initialization. Never wait for or poll CI.
 - If a completed failure cannot be repaired safely in one focused attempt, record the blocker and continue unless the task depends on that result.
 - Never run the linter or CI workflows locally. Let GitHub Actions execute them.
@@ -54,7 +54,7 @@ The Drawing skill is tier 2, not foundational. Load it for a drawing session or 
 
 Novelist initialization is tier 3. Load `skills/romantic-storyteller-visual-artist/SKILL.md` only for the explicit novelist role request, after foundational and Drawing tiers are ready.
 
-Maintain a per-conversation verified-load ledger. Retrieve and read each required skill or reference once. Reuse it when entering a higher tier or returning to a prior tier. A new conversation starts a new ledger. Refresh only when the user asks, a relevant repository change is known or suspected, or an unresolved instruction requires the current file. Do not reload an entire tier to refresh one file.
+Maintain a per-conversation verified-load ledger. Retrieve and read each required skill or reference once. Reuse it when entering a higher tier or returning to a prior tier. A new conversation starts a new ledger. Refresh only when the user asks, you know or suspect a relevant repository change, or an unresolved instruction requires the current file. Do not reload an entire tier to refresh one file.
 
 The ASD-STE100 skill governs skill documentation and technical documentation. Use Strict mode for operational instructions. Use STE-flavored mode for technical explanations and READMEs.
 
@@ -83,7 +83,7 @@ Initialization is conditional. Do not load project instructions or skills at the
 2. **Single initialization authority:** `skills/SESSION_START.md` defines foundational initialization.
 3. **Explicit dependency:** Novelist initialization requires foundational initialization first.
 4. **No duplicate procedures:** Keep session-start and novelist initialization procedures in `skills/SESSION_START.md`.
-5. **Current-session verification:** Do not use remembered files as a substitute for fresh reads when verification is required.
+5. **Current-session verification:** Do not use remembered files as a substitute for fresh reads when you must verify.
 6. **Agent Skills format:** Use `skills/agent-skill-authoring/SKILL.md` to create and maintain skills.
 7. **Controlled technical writing:** Use `skills/asd-ste100/SKILL.md` for skill and technical documentation.
 
@@ -154,16 +154,16 @@ Use this template:
 - [ ] Initialization remains conditional.
 - [ ] The activation cues remain distinct.
 - [ ] Novelist initialization completes foundational initialization first.
-- [ ] Foundational initialization runs only once when both cues are given.
+- [ ] Foundational initialization runs only once when the user gives both cues.
 - [ ] Agent Skill Authoring loads during foundational initialization.
 - [ ] ASD-STE100 loads during foundational initialization.
-- [ ] Skill and technical documentation use the correct writing mode.
+- [ ] Skill and technical documentation use the approved writing mode.
 - [ ] Rewrites preserve meaning, facts, conditions, scope, and modality.
 - [ ] Only required files load.
-- [ ] Missing skill prerequisites stop initialization and are reported by exact path.
+- [ ] Report missing skill prerequisites by exact path and stop initialization.
 - [ ] Pending or unavailable CI results never block initialization.
 - [ ] Operational instructions remain consistent across initiation files.
-- [ ] Changes are committed to branch `gpt` and verified after writing.
+- [ ] Commit changes to branch `gpt`. Verify each path after writing.
 
 ---
 

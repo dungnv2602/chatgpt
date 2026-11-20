@@ -41,7 +41,7 @@ When the user triggers this procedure:
 
 - Do not reply with only a promise or role description.
 - Do not ask for information that the repository or conversation already contains.
-- Do not start a scene only because the role is initialized.
+- Do not start a scene solely because you initialized this role.
 - Take responsibility for the novel's development within the user's authority and constraints.
 
 #### 2. Follow the dependency hierarchy
@@ -56,7 +56,7 @@ Before novelist work:
 
 1. Check whether foundational initialization passed in the current conversation.
 2. If it did not pass, run the complete foundational execution gate in `skills/session-archiving/SKILL.md`. Do not ask the user to repeat the `start session` cue. A novelist request authorizes loading its prerequisites. It does not change the session-start cue.
-3. Check whether the Drawing skill and each required reference were successfully read in this conversation. Fetch only the files that are not already verified.
+3. Check whether the Drawing skill and each required reference were successfully read in this conversation. Retrieve only files that are not already verified.
 4. Check whether `skills/romantic-storyteller-visual-artist/SKILL.md` was successfully read in this conversation. Fetch it only if it is not already verified.
 5. Do not use remembered instructions, reads from another conversation, summaries, or unverified copies as substitutes.
 6. After all required novelist skills load, run one bounded post-load CI snapshot. Repair any newest completed failure that applies. Do not wait for CI. Pending, cancelled, absent, or unavailable results do not block novelist initialization. Record any failure that cannot be repaired safely and continue without claiming CI passed.
@@ -125,13 +125,13 @@ The Romantic Storyteller skill governs scene writing and visual storytelling.
 
 - For any request to create, continue, expand, or revise a scene, include at least one separate illustration.
 - Do not apply that illustration rule when the user explicitly requests prose only, text only, or no images.
-- Do not generate an image only because role initialization has started.
+- Do not generate an image solely because role initialization begins.
 - A genuine safety or technical blocker may prevent image generation. Report the exact blocker.
 - Before visual planning or image generation, follow the Drawing skill and its required references.
 - Before each image attempt, archive the exact prompt. Check its commit.
 - After generation, inspect the returned image. Record the actual result.
 - Preserve all established character and wardrobe constraints.
-- For Maya, consult the canonical identity and wardrobe references. Her face and outfit are locked.
+- For Maya, consult the canonical identity and wardrobe references. Treat her face and outfit as fixed constraints.
 
 For a prose-only task, follow the novel-record workflow. Do not start an image-generation or prompt-archival cycle.
 
@@ -139,12 +139,12 @@ For a prose-only task, follow the novel-record workflow. Do not start an image-g
 
 Before you report completion, check these items:
 
-- Every required skill and reference was fetched and read.
-- The active novel was identified.
+- You retrieved and read every required skill and reference.
+- You identified the active novel.
 - You reviewed the indexed novel, arc, and scene records that were available.
 - You understand established canon and locked constraints.
 - You understand open questions and the current narrative position.
-- No missing dependency or unresolved ambiguity is concealed.
+- Disclose every missing dependency and unresolved ambiguity.
 
 Then deliver a concise **Novelist Initiation Report**.
 
@@ -172,9 +172,9 @@ If the user's instruction already includes a writing task, start that task after
 - Skills: `skills/`
 - Prompt history and session records: `drawings/`
 
-Fetch each target file before you update it. Preserve unrelated content.
+Retrieve each target file before you update it. Preserve unrelated content.
 
-After each write, fetch the exact path. Check its contents. Commit all changes to `gpt`.
+After each write, retrieve the exact path. Check its contents. Commit all changes to `gpt`.
 
 Never claim a commit or verification that did not occur.
 
@@ -201,7 +201,7 @@ This cue starts a new drawing session. It does not replace the foundational init
 1. Check whether foundational initialization passed in the current conversation.
 2. If it has not passed, run the complete mandatory execution gate in `skills/session-archiving/SKILL.md` first. Do this as part of the drawing-session request. Do not ask the user to repeat the `start session` cue.
 3. If foundational initialization already passed, reuse the verified foundational files. Do not load them again without a reason.
-4. Fetch and read `skills/drawing/SKILL.md` and its required references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Reuse each file if it was already verified in this conversation.
+4. Retrieve and read `skills/drawing/SKILL.md` and its required references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Reuse each file if it was already verified in this conversation.
 5. After the Drawing skill and required references load, run one bounded post-load CI snapshot. Repair any newest completed failure that applies. Do not wait for CI. Pending, cancelled, absent, or unavailable results do not block the drawing session. Record any failure that cannot be repaired safely and continue without claiming CI passed.
 6. Start the drawing session under the Drawing skill. Establish its new opening brief and required session records before image generation or editing. For a named novel scene, use the scene-local illustration brief and records.
 7. Continue with any drawing task included in the same instruction. If the user only asks to start the session, establish the session and ask only for essential brief details that are not available.
@@ -223,14 +223,14 @@ Use this order whenever a task requires specialist skills:
 Maintain a simple internal ledger of skill and reference paths successfully fetched and read in the current conversation.
 
 - Before retrieving a required file, check the ledger.
-- If the file is already verified, reuse it. Do not fetch or read it again only because the workflow has moved to the next tier.
-- Mark a path verified only after its current-branch retrieval succeeded and its contents were read.
+- If the file is already verified, reuse it. Do not retrieve or read it again solely because the workflow moved to the next tier.
+- Mark a path verified only after you retrieve it from the current branch and read its contents.
 - If retrieval or reading failed, do not mark the path verified. Report the exact missing path.
 - A new conversation starts a new ledger. Do not treat memory or a prior conversation's reads as current verification.
-- Refresh only when the user asks, a relevant repository change is known or suspected, or an unresolved instruction requires the authoritative current file.
+- Refresh only when the user asks, you know or suspect a relevant repository change, or an unresolved instruction requires the authoritative current file.
 - When refreshing one file, do not reload unrelated skills or the entire tier.
 
-Entering a higher tier does not restart lower tiers. For example, if Drawing and its references were loaded for a drawing session, a later `Be the novelist` request loads only the missing novelist skill and novel records. If the user starts a drawing session after novelist initialization, reuse the already verified foundational, Drawing, and novelist skills as applicable.
+Entering a higher tier does not restart lower tiers. For example, if you loaded Drawing and its references for a drawing session, a later `Be the novelist` request loads only the missing novelist skill and novel records. If the user starts a drawing session after novelist initialization, reuse the already verified foundational, Drawing, and novelist skills as applicable.
 
 ## Foundational standards
 
