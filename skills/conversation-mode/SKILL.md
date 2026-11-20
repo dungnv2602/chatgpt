@@ -173,6 +173,39 @@ Apply this workflow to every repository task. It supplements the CI checkpoint p
 - Do not wait for CI or poll an in-progress run. Follow Section 7.
 - Do not reduce verification to save time. Reduce redundant operations instead.
 
+## 9. GitHub Actions workflow operations
+
+This section is part of this foundational skill. Apply it to every GitHub Actions task in this repository.
+
+1. **Inspect the workflow first.** Read its triggers, path filters, jobs, permissions, concurrency, dependencies, runner, timeout, and artifact steps.
+2. **Batch related changes.** Make one coherent commit for related workflow, script, and documentation changes. Avoid intermediate commits that start duplicate runs.
+3. **Filter triggers.** Use `paths` to start a workflow only when relevant files change. Include the workflow files and scripts that control the checks.
+4. **Partition workflow scopes.** Keep full audits and incremental checks separate when their triggers or validation scopes differ. Avoid overlapping triggers for the same push.
+5. **Order path patterns.** Add positive patterns before negative patterns. Check that exclusions do not hide files that require validation.
+6. **Cancel obsolete CI runs safely.** Scope each concurrency group to its workflow and branch. Use `cancel-in-progress: true` for checks that validate the latest repository state.
+7. **Protect incremental checks.** A cancelled run may contain changes that the next push does not repeat. Compare against the latest successful run commit, not only `github.event.before`.
+8. **Use a safe fallback.** Run a full audit when the last successful commit is missing or is not an ancestor of the current commit.
+9. **Fetch the required history.** Use full checkout history when a job compares the current commit with an earlier successful run.
+10. **Cache only real dependencies.** Add a cache only when a job installs or downloads reusable dependencies. Do not cache standard-library-only jobs.
+11. **Control runner use.** Select the least costly runner that supports the job. Set a suitable `timeout-minutes` value.
+12. **Limit artifact storage.** Upload only required files. Compress large outputs and set `retention-days` for temporary artifacts.
+13. **Apply least privilege.** Grant only the permissions that each job needs. Pass untrusted values through environment variables.
+14. **Protect deployments.** Do not cancel an active deployment unless the deployment design makes cancellation safe.
+15. **Verify each change.** Read back every changed workflow. Check its run against the exact commit SHA. Follow Section 7 for pending CI runs.
+
+### Current documentation-lint workflow design
+
+- `.github/workflows/ste-lint-full-docs.yml` runs for ASD-STE100 tooling, policy, and lint-workflow changes.
+- `.github/workflows/ste-lint-changed.yml` runs for in-scope Markdown changes outside the ASD-STE100 directory.
+- The incremental workflow uses the latest successful run as its comparison baseline. It runs a full audit when that baseline is unavailable or invalid.
+- Both workflows use branch-scoped concurrency and job timeouts.
+- The linter uses Python's standard library. Do not add dependency caching unless the job gains external dependencies.
+- These workflows do not upload artifacts. Do not add artifact-retention settings unless a future job uploads files.
+
+### Cost and quota claims
+
+Do not copy fixed runner prices, storage limits, or retention limits from old notes. Check current GitHub billing and Actions documentation before you state exact limits or costs.
+
 ## Technical documentation standard
 
 Follow the [ASD-STE100 skill](../asd-ste100/SKILL.md) when you create or revise skill files or technical documentation. Use Strict mode for operational instructions. Use STE-flavored mode for explanatory documentation. Preserve meaning, scope, and modality.
