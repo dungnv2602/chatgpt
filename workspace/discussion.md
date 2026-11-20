@@ -1,3 +1,13 @@
+### Scope correction: exclude `archive/` entirely
+
+You are correct. Completed task records are archived in the `archive/` folder, not under `workspace/`. My reference to “archived task records under workspace” was incorrect.
+
+**The `archive/` folder is completely out of scope. Do not inspect, audit, link-check, or modify anything inside it.** This exclusion includes all completed/archived task records stored there.
+
+The documentation audit remains limited to its active, in-scope sources outside `archive/`. No historical/archive review or authorization gate remains. I will not include `archive/` in the audit.
+
+---
+
 ### Clarification: historical-link review scope
 
 No. I was referring to a **narrow link audit**, not a general audit of the contents or quality of the entire `archive/` folder.
