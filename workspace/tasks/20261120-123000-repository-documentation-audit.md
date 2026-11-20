@@ -105,7 +105,7 @@ The active-link scan at Version 19 found zero unresolved local Markdown targets 
 
 ## 10. References
 
-- `skills/INITIALIZATION_POLICY.md` — current initialization policy; retains Versions 1–4 and the policy review material.
+- `skills/INITIALIZATION_POLICY.md` — current initialization policy. It retains Versions 1–4 and the policy review material.
 - `skills/asd-ste100/scripts/ste-lint.py` — official linter.
 - `skills/asd-ste100/scripts/ste-lint-repository.sh` — repository lint modes and per-file baselines.
 - `.github/workflows/ste-lint-full-docs.yml` — full-document lint workflow.
@@ -434,7 +434,7 @@ Continue from the Next Actions. Keep this task In Progress until the remaining a
 - **Change:** Remove Drawing from foundational initialization. Add the separate `start a drawing session` cue. Retain Drawing as a prerequisite for novelist-role initialization.
 - **Behavioral impact:** Load Drawing and its required references only for drawing sessions or novelist initialization. Reuse files already verified in the current conversation.
 - **Reason:** Avoid loading specialist drawing procedures during unrelated sessions.
-- **Canonical procedure:** `skills/SESSION_START.md`; mandatory foundational gate: `skills/session-archiving/SKILL.md`.
+- **Canonical procedure:** `skills/SESSION_START.md`. Mandatory foundational gate: `skills/session-archiving/SKILL.md`.
 
 
 ### Version 30 — Remove duplicate novelist entry point and centralize CI policy
@@ -452,7 +452,7 @@ Continue from the Next Actions. Keep this task In Progress until the remaining a
 - **Change:** Define three ordered dependency tiers and a per-conversation verified-load ledger.
 - **Behavioral impact:** Drawing and novelist requests automatically load missing prerequisite tiers. Successfully read files are reused when moving between tiers or returning to a prior tier. Only missing or explicitly invalidated files are retrieved.
 - **Reason:** Prevent duplicate skill and reference loading while preserving dependency order.
-- **Canonical procedure:** `skills/SESSION_START.md`; execution gate: `skills/session-archiving/SKILL.md`.
+- **Canonical procedure:** `skills/SESSION_START.md`. Execution gate: `skills/session-archiving/SKILL.md`.
 
 
 ### Version 32 — Add The Worker and workspace continuity
