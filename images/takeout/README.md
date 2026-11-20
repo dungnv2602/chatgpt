@@ -50,7 +50,7 @@ For each item:
 - `source` is the exact uploaded filename at the top level of this folder.
 - `asset_id` is optional for general image assets. Novel illustrations use their stable `ILL-NNN` ID.
 - `title` is a concise descriptive title based on the inspected image and its intended role.
-- `destination_dir` is a repository-relative directory under `images/`, `novels/`, or `drawings/YYYY-MM-DD/images`. Do not use `images/takeout/`, `images/takeout/webp/`, `images/webp/`, or `images/scripts/`.
+- `destination_dir` is a repository-relative directory under `images/`, `novels/`, or `drawings/YYYY-MM-DD/images`. Do not use `images/takeout/`, `images/takeout/webp/`, `images/webp/`, or the reserved legacy path `images/scripts/`.
 - For drawing-session destinations, `attempt` is mandatory. The Action rejects drawing-session uploads without an explicit attempt number so they cannot be omitted from the session manifest and prompt records.
 
 The processor turns the title into a lowercase, hyphen-separated filename slug, removes common diacritics, and prefixes the asset ID when supplied. For the example above, it creates:
