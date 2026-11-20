@@ -2,22 +2,22 @@
 
 ## 10. Novel project structure and production workflow
 
-All durable novel records belong in the repository's `novel/` workspace on
+All durable novel records belong in the repository's `novels/` workspace on
 branch `gpt`. The governing standard is
-[`novel/WORKFLOW.md`](../../../novel/WORKFLOW.md), with the quick reference and
-active templates in [`novel/README.md`](../../../novel/README.md).
+[`novels/WORKFLOW.md`](../../../../novels/WORKFLOW.md), with the quick reference and
+active templates in [`novels/README.md`](../../../../novels/README.md).
 
 **Current format standard: Version 1.1.** Use these templates for new records
 and material revisions:
 
-- Novel: `novel/templates/novel-v1.1.md`
-- Character Profile (optional): `novel/templates/character-profile-v1.1.md`
-- Open Discussion: `novel/templates/open-discussion-v1.1.md`
-- Development Outline (optional): `novel/templates/development-outline-v1.1.md`
-- Story Arc: `novel/templates/arc-v1.1.md`
-- Scene: `novel/templates/scene-v1.1.md`
-- Illustration Note: `novel/templates/illustration-note-v1.1.md`
-- Illustration Prompt Record: `novel/templates/illustration-prompt-v1.1.md`
+- Novel: `novels/templates/novel-v1.1.md`
+- Character Profile (optional): `novels/templates/character-profile-v1.1.md`
+- Open Discussion: `novels/templates/open-discussion-v1.1.md`
+- Development Outline (optional): `novels/templates/development-outline-v1.1.md`
+- Story Arc: `novels/templates/arc-v1.1.md`
+- Scene: `novels/templates/scene-v1.1.md`
+- Illustration Note: `novels/templates/illustration-note-v1.1.md`
+- Illustration Prompt Record: `novels/templates/illustration-prompt-v1.1.md`
 
 Version 1.0 templates remain historical references for existing records.
 Do not mass-migrate untouched legacy documents. When a governing format changes,
@@ -35,7 +35,7 @@ Illustration Prompt Record (documenting the exact authored prompt, provenance,
 chronological attempts, and outcomes).
 
 Store novel illustration binaries centrally at
-`novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Keep the two
+`novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Keep the two
 Markdown records in the scene-local `illustrations/` folder; do not store the
 image binary there. Each retained image has an original PNG/JPEG master and a
 same-stem WebP derivative beside it.
@@ -133,5 +133,5 @@ requires one. An image-only request does not automatically create a prose scene.
 
 For the complete project stages, deliverable matrix, file conventions,
 statuses, quality gates, versioning, and definition of done, follow
-[`novel/WORKFLOW.md`](../../../novel/WORKFLOW.md).
+[`novels/WORKFLOW.md`](../../../../novels/WORKFLOW.md).
 
