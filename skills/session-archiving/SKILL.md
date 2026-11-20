@@ -706,3 +706,18 @@ flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
   WebP has been relocated and verified and both reports have been archived.
   Never claim a successful Action run without observing its result and
   reading back the published assets and reports.
+
+
+## Mandatory image archive manifest and SHA-256 verification (2026-11-20)
+
+For every drawing session, record **every generated image output**—approved, rejected, pending, partial, off-target, failed, or superseded—without treating approval as a condition for archival or linking. Preserve the generation sequence and exact prompt association. The daily README must link every image directly to its exact GitHub asset after the path/blob is verified. Keep approval status separate from outcome and storage/link verification.
+
+Maintain a session-level `manifest.csv`, with one row per generated output and these required columns:
+```csv
+session_date,image_id,filename,prompt_id,approval_status,github_url,sha256,verification_status
+```
+Use explicit approval values (Approved, Rejected, Pending, Not recorded) and verification values (Pending, Verified, Failed, Not verifiable). Never invent IDs, prompt associations, URLs, checksums, or verification results. Reconcile the manifest against the chronological attempt records and README; do not omit outputs when a tool returns multiple images for one attempt.
+
+Calculate SHA-256 from the actual original image bytes when accessible. Do not use a screenshot, thumbnail, or transformed derivative as a substitute for the original's checksum. If the original bytes are unavailable, leave the checksum unavailable/pending. SHA-256 establishes byte identity only; it does not independently prove the image's content, approval, prompt association, or provenance. A renamed or moved byte-identical file retains its checksum, but re-encoding, resizing, editing, or format conversion generally changes it. Record original and derivative checksums separately.
+
+When a user provides a downloaded image's SHA-256, compare it to the archive's recorded checksum. Mark it Verified only when values match; a mismatch is not byte-identical and must not be marked verified. Verify direct GitHub image URLs by checking the exact repository path/blob. Do not mark link or checksum verification complete without an actual check. After updating archival records, read back the README and manifest and verify they agree with attempt records and repository assets. Report unresolved gaps explicitly.
