@@ -32,20 +32,11 @@ jobs:
           failed=0
           while IFS= read -r file; do
             [ -z "$file" ] && continue
-            if [ "$file" = "skills/INITIALIZATION_POLICY.md" ]; then
-              if python3 skills/asd-ste100/scripts/ste-lint.py --baseline 4 "$file"; then
-                :
-              else
-                echo "Lint failure: $file"
-                failed=1
-              fi
+            if bash skills/asd-ste100/scripts/ste-lint-repository.sh "$file"; then
+              :
             else
-              if python3 skills/asd-ste100/scripts/ste-lint.py "$file"; then
-                :
-              else
-                echo "Lint failure: $file"
-                failed=1
-              fi
+              echo "Lint failure: $file"
+              failed=1
             fi
           done <<< "$files"
           exit "$failed"
