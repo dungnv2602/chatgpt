@@ -143,7 +143,7 @@ When the user invokes an explicit foundational initialization cue, load the foun
 Keep the verified instructions in working context and apply them to every
 drawing project throughout that conversation. Do not load every on-demand
 reference during foundational initialization. Load `prompt-fidelity.md`
-before drafting, reusing, revising, archiving, verifying, or submitting an
+before drafting, reusing, revising, archiving, checking, or submitting an
 image prompt. Load the series, recovery, and archive references when their
 specific task triggers below apply. **Do not reread or refetch the full Drawing Skill merely because
 the user switches projects or starts another drawing task within the same
@@ -447,7 +447,7 @@ helpful. Be candid about partial matches, failed edits, and source-reference
 problems. Never claim repository storage of an image binary unless it was
 actually uploaded and verified.
 
-**Active-session reminder:** While the drawing session being discussed is Active or Paused, end each response that continues or discusses it with a brief reminder that it remains open. Tell the user they can say `end session` for formal closeout. This reminder is unobtrusive and does not
+**Active-session reminder:** While the drawing session under discussion is Active or Paused, end each response that continues or discusses it with a brief reminder. State that the session remains open. Tell the user they can say `end session` for formal closeout. This reminder is unobtrusive and does not
 interrupt drawing or require a reply. Once the user invokes `end session`,
 suppress the reminder during closeout. Resume it only in later responses if
 closeout cannot be completed and the session remains open. Stop reminding once
