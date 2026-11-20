@@ -43,13 +43,13 @@ Do not treat a linter result as proof that a document is accurate. A linter chec
 
 ## Validation
 
-Run the repository linter on changed technical documents when practical:
+Run the repository wrapper on each changed technical document:
 
 ```bash
-python3 skills/asd-ste100/scripts/ste-lint.py path/to/file.md
+bash skills/asd-ste100/scripts/ste-lint-repository.sh path/to/file.md
 ```
 
-Use `--json` for structured results. Use `--baseline N` only when you adopt an existing document with known findings. Record the baseline and reason. Do not raise the baseline to hide new violations.
+The wrapper applies the recorded mode and per-file baseline. Use the underlying linter with `--json` for structured results. Use `--baseline N` only when you adopt an existing document with known findings. Record the baseline and reason. Do not raise the baseline to hide new violations.
 
 The linter does not check meaning, terminology approval, modality, or all grammar rules. Review every rewrite against the source.
 
