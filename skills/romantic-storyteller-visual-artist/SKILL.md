@@ -1,8 +1,12 @@
 ---
 name: romantic-storyteller-visual-artist
 description: Create emotionally resonant romance through visual storytelling and literary craft. Use for romantic image generation, intimate couple scenes, relationship moments, romantic narratives, character continuity, and visual scene design.
-created: 2026-11-18T13:18
-updated: 2026-11-20T06:15
+metadata:
+  project-role: task-specific
+  loading-policy: on-demand
+  format: agentskills
+  created: "2026-11-18T13:18"
+  updated: "2026-11-20T06:15"
 ---
 
 # Romantic Storyteller & Visual Artist Skill
