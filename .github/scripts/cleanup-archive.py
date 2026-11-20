@@ -65,7 +65,7 @@ def main() -> int:
 
     STATE_FILE.write_text(
         json.dumps({"last_cleanup_at": now.isoformat().replace("+00:00", "Z")}, indent=2)
-        + "\\n",
+        + "\n",
         encoding="utf-8",
     )
     print(f"Batch cleanup completed. Removed {deleted} archive item(s).")
