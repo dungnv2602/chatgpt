@@ -1,46 +1,62 @@
 # Drawing Skill
 
-A two-mode visual creation skill for ChatGPT image generation and editing.
+Use this skill for ChatGPT image generation and image editing.
 
-## Modes
-- **Realistic:** lifelike photographic rendering, natural materials, plausible lighting and anatomy.
-- **Vintage:** crafted, nostalgic rendering, including painterly storybook, oil, watercolor, gouache, editorial illustration, and selected retro-print treatments.
+## Visual modes
 
-The latest cozy-bedroom artwork is classified as **Vintage Mode → Painterly Storybook**.
+- **Realistic:** photographic rendering, natural materials, plausible lighting, and natural anatomy.
+- **Vintage:** painterly or print-inspired rendering. This mode includes storybook, oil, watercolor, gouache, editorial illustration, and selected retro-print styles.
+
+The latest cozy-bedroom artwork uses **Vintage Mode → Painterly Storybook**.
 
 ## Mode commands
+
 - `Realistic mode`
 - `Vintage mode`
 
-The selected mode remains active for the current conversation or continuous
-artwork task until explicitly changed. For a new unrelated task, infer from the
-request or ask which mode the user prefers when the distinction is unclear.
+The selected mode remains active during the current conversation or continuous artwork task. Change it only when the user requests a change.
 
-## Mandatory prompt-fidelity standard
+For an unrelated task, infer the mode from the request. Ask one concise question when the mode is unclear and materially affects the result.
 
-The full rule is maintained separately in
-[Prompt Fidelity and Unrequested Restrictions](references/prompt-fidelity.md).
-This is the authoritative, exhaustive reference for preserving the user's
-approved prompt and creative direction, prohibiting unrequested restrictions
-and additions, and auditing the complete prompt before every generation or
-edit. Apply it together with the workflow in SKILL.md.
+## Prompt fidelity
+
+The [Prompt Fidelity and Unrequested Restrictions](references/prompt-fidelity.md) file is the complete authority for prompt fidelity.
+
+Read it before you draft, reuse, revise, archive, verify, or submit an image prompt.
+
+Preserve the user's approved prompt and creative direction. Do not add unrequested restrictions or creative details. Audit the complete prompt before every generation or edit.
 
 ## Prompt interpretation and recovery
 
-Before rewriting a refused or unsuccessful prompt, compare it with the project's
-successful-prompt index and the full chronological history. Audit assistant-added
-details and avoid unnecessarily redesigning the user's creative direction.
-When a relevant successful baseline exists and the request remains allowed,
-restore that wording or make only the smallest requested change. A generic
-refusal does not reveal its exact trigger. After generation, inspect the actual
-garment construction and physical coverage, not just fabric opacity or the
-prompt's wording. See the core skill's **E2.1 Prompt-interpretation audit and
-proven-baseline recovery**, **E2.2 Documented silk-wrap recovery case**, and
-Section F's garment-construction checks for the full procedure.
+Before you revise a refused or unsuccessful prompt, inspect the successful-prompt index and the full chronological history.
+
+Check for assistant-added details. Avoid unnecessary changes to the user's creative direction.
+
+When a relevant successful baseline exists and the request remains allowed, restore that wording or make only the requested change.
+
+A generic refusal does not identify its exact trigger.
+
+After generation, inspect the actual garment construction and physical coverage. Do not rely only on fabric opacity or prompt wording.
+
+For the full process, read these sections in `SKILL.md`:
+
+- E2.1 Prompt-interpretation audit and proven-baseline recovery.
+- E2.2 Documented silk-wrap recovery case.
+- Section F garment-construction checks.
 
 ## Files
-- `SKILL.md` — core Agent Skill instructions and workflow.
-- `references/style-guide.md` — visual style definitions and distinctions.
+
+- `SKILL.md` — core instructions and workflow.
+- `references/style-guide.md` — visual-mode definitions and distinctions.
 - `references/image-editing-protocol.md` — source handling and edit verification.
-- `references/prompt-fidelity.md` — exhaustive prompt-fidelity standard and pre-generation audit.
-- `references/patterns/` — canonical successful-pattern and failure-pattern indexes, plus entry templates. Load the index and both pattern files once on the first drawing task in a conversation; consult the loaded content at each drawing session and relevant attempt. Record blob SHAs and refresh only changed or newly needed files. Load templates only when creating or revising patterns.
+- `references/prompt-fidelity.md` — prompt-fidelity rules and pre-generation audit.
+- `references/patterns/README.md` — canonical pattern index.
+- `references/patterns/successful-patterns.md` — successful techniques.
+- `references/patterns/failure-patterns.md` — failures and tested countermeasures.
+- `references/patterns/PATTERN-TEMPLATES.md` — templates for new or revised patterns.
+
+On the first drawing task in a conversation, read the pattern index and both pattern files. Consult the loaded patterns at each drawing session and relevant attempt. Record their blob SHAs. Refresh only changed or newly needed files. Load templates only when you create or revise a pattern.
+
+## Technical documentation standard
+
+Apply the repository [ASD-STE100 writing policy](../asd-ste100/references/repository-writing-policy.md) when you revise this README or other Drawing documentation. Preserve all user-approved creative content.
