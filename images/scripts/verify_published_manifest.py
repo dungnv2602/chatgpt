@@ -110,10 +110,11 @@ def verify_session_links(row: dict[str, str], blob_reader: BlobReader) -> str:
         r".*?(?=^## |\Z)"
     )
     inventory = inventory_pattern.search(readme)
-    if inventory:
-        inventory_links = {unquote(link) for link in link_pattern.findall(inventory.group(0))}
-        if relative_link not in inventory_links:
-            return f"Published daily README inventory does not link {relative_link}."
+    if not inventory:
+        return f"Published daily README has no image inventory section: {readme_path}"
+    inventory_links = {unquote(link) for link in link_pattern.findall(inventory.group(0))}
+    if relative_link not in inventory_links:
+        return f"Published daily README inventory does not link {relative_link}."
 
     attempt = (row.get("attempt") or "").strip()
     if not attempt:

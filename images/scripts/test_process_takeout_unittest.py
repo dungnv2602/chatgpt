@@ -202,6 +202,10 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertEqual({row["approval_status"] for row in manifest_rows}, {"Not recorded"})
         self.assertEqual({row["verification_status"] for row in manifest_rows}, {"Pending"})
         self.assertEqual({row["mapping_status"] for row in manifest_rows}, {"Corroborated"})
+        self.assertIn(
+            "## Image inventory — 2 WebP delivery files + 2 original masters (4 files total)",
+            readme_text,
+        )
         self.assertTrue(all(row["sha256"] for row in manifest_rows))
         self.assertTrue(all(row["webp_sha256"] for row in manifest_rows))
         self.assertTrue(all(row["github_url"].endswith(".webp") for row in manifest_rows))
@@ -581,7 +585,8 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertEqual(legacy["verification_status"], "Not verifiable")
         self.assertEqual(legacy["original_bytes_available"], "No")
         self.assertTrue(legacy["webp_sha256"])
-        self.assertEqual(new["verification_status"], "Verified")
+        self.assertEqual(new["verification_status"], "Pending")
+        self.assertIn("Awaiting GitHub post-push", new["verification_error"])
         self.assertEqual(new["mapping_status"], "Corroborated")
         self.assertTrue(new["sha256"])
         self.assertTrue((image_dir / "original/new-output.png").is_file())
@@ -756,6 +761,13 @@ class PublishedManifestVerificationTests(unittest.TestCase):
         ).encode("utf-8")
         error = verify_session_links(self.row, lambda path: self.blobs.get(path))
         self.assertIn("inventory does not link", error)
+
+    def test_missing_published_inventory_section_fails_verification(self):
+        self.blobs["drawings/2026-11-19/README.md"] = (
+            "# Drawing session\n"
+        ).encode("utf-8")
+        error = verify_session_links(self.row, lambda path: self.blobs.get(path))
+        self.assertIn("has no image inventory section", error)
 
     def test_published_original_and_webp_are_verified(self):
         status, error = verify_manifest_row(

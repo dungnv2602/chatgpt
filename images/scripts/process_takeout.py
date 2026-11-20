@@ -334,6 +334,58 @@ def prepare_attempt_readme_updates(prepared: list[dict[str, Any]], root: Path) -
             readme_content = readme_path.read_text(encoding="utf-8")
         headings = inventory_heading.findall(readme_content)
         if not headings:
+            image_dir = session_dir / "images"
+            if image_dir.is_symlink() or (image_dir.exists() and not image_dir.is_dir()):
+                raise ProcessingError(
+                    f"Session images directory is unsafe: {image_dir.relative_to(root).as_posix()}"
+                )
+            existing_webps = {
+                f"images/{path.name}"
+                for path in image_dir.glob("*.webp")
+                if path.is_file() and not path.is_symlink()
+            } if image_dir.is_dir() else set()
+            new_webps = {
+                link
+                for (date, _attempt), links in grouped.items()
+                if date == session_date
+                for link in links
+            }
+            all_webps = existing_webps | new_webps
+            original_dir = image_dir / "original"
+            if original_dir.is_symlink() or (original_dir.exists() and not original_dir.is_dir()):
+                raise ProcessingError(
+                    f"Original-master directory is unsafe: {original_dir.relative_to(root).as_posix()}"
+                )
+            existing_masters = (
+                [
+                    path for path in original_dir.iterdir()
+                    if path.is_file() and not path.is_symlink()
+                    and path.suffix.lower() in SUPPORTED
+                ]
+                if original_dir.is_dir() else []
+            )
+            new_masters = sum(
+                1 for item in prepared
+                if item["directory"].relative_to(root).as_posix()
+                == f"drawings/{session_date}/images"
+            )
+            master_count = len(existing_masters) + new_masters
+            total_count = len(all_webps) + master_count
+            master_label = "original master" if master_count == 1 else "original masters"
+            file_label = "file" if total_count == 1 else "files"
+            heading = (
+                f"## Image inventory — {len(all_webps)} WebP delivery files + "
+                f"{master_count} {master_label} ({total_count} {file_label} total)"
+            )
+            inventory_lines = "\n".join(
+                f"- [{Path(link).name}]({quote(link, safe='/')})"
+                for link in sorted(all_webps)
+            )
+            addition = "\n\n" + heading + "\n"
+            if inventory_lines:
+                addition += "\n" + inventory_lines
+            readme_content = readme_content.rstrip() + addition + "\n"
+            updates[readme_path] = readme_content
             continue
         if len(headings) != 1:
             raise ProcessingError(
