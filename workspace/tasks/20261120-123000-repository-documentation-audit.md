@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 16:03 UTC
+- **Updated:** 2026-11-20 22:45 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -863,3 +863,13 @@ Continue from the Next Actions. Keep this task In Progress until the remaining a
 - **Blocked edit:** A further start/begin normalization in `skills/session-archiving/references/archive-records-and-image-prompts.md` did not commit because GitHub returned a GraphQL API error. A branch read-back confirmed that the attempted change was not applied. Do not retry without new evidence.
 - **CI discipline:** Did not run lint or CI locally. Did not wait for or poll GitHub Actions.
 - **Next:** Continue context-based synonym review. Preserve terms that describe distinct technical actions and intentional examples.
+
+
+### 2026-11-20 22:45 UTC
+
+- **Action:** Added a manually dispatchable repository-wide lint workflow and a single replaceable report.
+- **Changes:** Extended `.github/workflows/ste-lint-full-docs.yml` with `workflow_dispatch`, restricted manual runs to branch `gpt`, retained the existing push trigger and push-run supersession guard, and made the workflow write a consolidated report to `lint_reports/latest-lint-report.md`. The report includes run metadata, self-test output, Markdown link/anchor results, per-file STE findings, and summary counts. The workflow commits the completed report to `gpt`; it does not upload an Actions artifact.
+- **Scope boundary:** Excluded `lint_reports/` from technical lint source scans and Markdown link-source checks. Existing `archive/` exclusions remain unchanged.
+- **Commits:** Workflow `5585f731415f6f36577234fc0ffa2e687c0e8fc1`; anchor-checker exclusion `36bdbc913cf8fc6b15a2ff218066cba777b966b9`; report placeholder `f1f26b98a13e08b36b92a257b8b80aaf6ad4546c`.
+- **Validation:** Read-back and workflow syntax review remain pending. Did not run lint locally or dispatch the workflow. The report is a placeholder until the user manually runs the workflow on `gpt`.
+- **Next:** Verify all changed files on `gpt`, open a pull request to `main`, and merge after confirming the PR contains only the approved workflow/report changes.
