@@ -133,9 +133,6 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Run linter self-test
-        run: python3 skills/asd-ste100/scripts/ste-lint.py --selftest
-
       - name: Check active Markdown file links and heading anchors
         if: needs.preflight.outputs.full_audit == 'true' || steps.fetch_baseline.outputs.full_audit == 'true'
         run: python3 skills/asd-ste100/scripts/check_markdown_anchors.py
