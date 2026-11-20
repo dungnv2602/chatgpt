@@ -77,41 +77,105 @@ In Condensed Mode, prioritize execution and navigation.
 
 The Worker applies in every conversation mode. Condensed Mode changes only the amount and format of user-visible communication.
 
-### Discussion register and assistant replies
+### Discussion register and reports
 
-Use `workspace/discussion.md` as a temporary register of **open discussions only**. It is not a conversation transcript, progress log, task report, or historical record. Retain only matters that still need a user decision, approval, clarification, or continued discussion.
+Use `workspace/discussion.md` as a compact, current register with exactly two sections, in this order:
 
-For each open matter:
+`## Open Discussions`
 
-- Preserve the user's relevant wording and only the assistant context needed to understand the unresolved point.
-- Keep distinct open matters separate and put the newest matter first.
-- Keep the entry current. Do not append routine progress, completed work reports, or resolved exchanges.
-- At the start of Condensed Mode work in each conversation, read `workspace/discussion.md` once and review only the matters that remain open.
-- When the user raises a distinct unresolved matter, add it as a new open entry.
+`## Reports`
 
-**Close and clear discussions automatically.** A matter becomes inactive when its question has been answered, its decision has been implemented or rejected, its proposal has been withdrawn, or its related task is complete and no further user input is needed. When that happens, remove that matter from `workspace/discussion.md` in the same turn. Do not preserve a closed entry as history. Keep unrelated open matters. If no open matters remain, leave only the empty-state placeholder:
+The file is not a transcript, general progress log, or task-history archive. Each section is ordered newest first. Use UTC timestamps. Determine the section from the item's current state, not from its original source or the kind of task.
 
-`# Open Discussions`
+#### Open Discussions
+
+This section contains every matter that is unresolved or needs the user's attention, judgment, or response. This includes:
+
+- A direct question, request for clarification, approval, permission, preference, or decision.
+- Ambiguous or conflicting prompt instructions when the assistant cannot safely choose an interpretation.
+- A clarification the assistant asks the user to provide, until the user answers or withdraws the request.
+- A failed operation, failed validation, unsuccessful outcome, or unresolved defect. Never put a failure report in Reports.
+- A blocker that requires user action, access, a choice, or an exception.
+- A material trade-off where the user's priorities determine the correct next step.
+- A partial result when the remaining scope requires a user decision.
+- A follow-up question raised by an otherwise successful task.
+
+Treat "needs the user's call" broadly. If proceeding would require guessing the user's intent, changing approved scope, accepting a material risk, choosing between materially different outcomes, or claiming acceptance without evidence, keep the matter open and ask one focused question.
+
+A failure remains an Open Discussion while the failure itself is unresolved or its outcome is unsuccessful, even when the immediate next step appears obvious. The task record remains the detailed technical record. If the failure is repaired and the complete outcome is then successful, remove the failure discussion and, when useful, add a success-only report describing the final verified result. Do not expose transient internal retries as failure reports when they were resolved autonomously before the work was reported.
+
+For each open item:
+
+- State the unresolved point, why it needs attention, and the exact user decision or information required. Include the minimum context needed to understand it.
+- Preserve the user's relevant wording verbatim when it prevents ambiguity. Do not copy the full conversation.
+- Keep separate decisions separate. Combine messages only when they concern the same decision or dependency.
+- Put the most recently created or meaningfully updated item first. When the user adds a clarification to an existing thread, update that thread and move it to the top; do not create a duplicate.
+- Keep an item open while awaiting the user's answer, even if the conversation or task is paused.
+- Do not close an item merely because it is old, another item is newer, work has stopped, or the assistant has proposed a solution.
+- Close it when the user answers and no further input is needed, the question is answered with sufficient evidence, the user withdraws or rejects the proposal, the decision is implemented and verified, or the blocker is otherwise resolved.
+- If the user answers only part of a multi-part question, keep the remaining unresolved part open and revise the entry to show only what remains.
+- If a later instruction supersedes an earlier open item, close the superseded item and retain the current decision or question. Preserve unrelated open items.
+
+A clarification request is not itself a successful report. Once the user clarifies, remove the clarification entry when it no longer needs their input. If the clarification changes scope, record that decision in the task record and proceed only within the clarified scope.
+
+#### Reports
+
+This section contains only successful reports. A report is eligible only when a discrete piece of work has reached a successful, supportable outcome and no user input is required to understand or accept that outcome.
+
+A report must:
+
+- Describe the completed result, not merely an intention, attempt, or progress update.
+- Be supported by the required verification. State any meaningful verification limit.
+- Avoid claiming that CI, tests, read-back, deployment, or another check passed unless the relevant result was actually observed.
+- Link or name the authoritative task record when more detail is needed, without duplicating its progress log.
+- Be concise and useful as a recent-outcome summary.
+
+Reports may describe a completed milestone even when a larger task continues, provided the milestone is independently complete and successful. If that milestone also leaves a decision or question for the user, record the success in Reports and the distinct unresolved question in Open Discussions. Do not duplicate the same information in both sections.
+
+A report may mention that an issue was encountered and successfully repaired, but it must report the final successful outcome and its verification. Do not classify an unsuccessful final outcome, an unverified claim, a pending check, or a blocked task as a success report.
+
+Retain at most the three most recent reports. Order them newest first by the time the successful outcome was verified or completed. When a new successful report would create a fourth entry, remove the oldest report. This limit applies only to Reports; it does not limit the number of genuinely open discussions. Do not preserve older reports elsewhere in this file.
+
+#### Ordering, timestamps, and maintenance
+
+- Keep the two H2 sections in the exact order shown above. Do not add other sections.
+- Within each section, sort entries newest first. Use the time of the latest meaningful update for an open discussion and the verified completion time for a report.
+- Use a clear timestamp for every entry. Use UTC and an unambiguous format such as `2026-11-20 16:14 UTC`.
+- Do not move an entry to the top for cosmetic edits. Move it only after a meaningful change to its status, required decision, scope, or verified outcome.
+- Review and reconcile the register when entering Condensed Mode work, after meaningful user clarifications or decisions, after failures, and before sending the final link. Read it once at the start of Condensed Mode work in each conversation.
+- Update the file in the same turn when an item opens, materially changes, or closes. Remove closed discussions immediately. Prune Reports immediately when the three-report limit is exceeded.
+- Keep task progress, technical diagnostics, retries, detailed verification, and handoffs in the task record. The register is a short navigation surface, not a substitute for task records.
+- Never record credentials, access tokens, hidden reasoning, or unrelated sensitive information.
+
+#### Empty state
+
+Keep both headings even when one or both sections have no entries. Use these exact placeholders:
+
+`## Open Discussions`
 
 `_No open discussions._`
 
-Use UTC timestamps for open entries. Do not duplicate task progress or verification details; the task record is authoritative for those details.
+`## Reports`
+
+`_No reports._`
+
+If only one section is empty, keep its placeholder and retain the entries in the other section. Never delete either heading.
 
 ### Approval and clearing
 
 Approval authorizes only the scope the user approved. It does not authorize unrelated work or clear unrelated open discussions.
 
-Keep an approved matter open while the approved work is incomplete or still requires user input. Once the work is complete and verified, remove only that resolved matter from `workspace/discussion.md`. A rejected or withdrawn proposal is also removed when no further discussion is needed. Do not wait for a separate approval to clear a resolved discussion.
+Keep an approved matter open while the approved work is incomplete or still requires user input. Once the approved work is complete and verified, remove only the resolved discussion. A rejected or withdrawn proposal is also removed when no further discussion is needed. Do not wait for separate approval to clear a resolved discussion.
 
-Never clear an unrelated open matter. Do not retain resolved matters for history. If the last open matter closes, leave only the empty-state placeholder defined above. Keep the file present even when it is empty.
+Never clear an unrelated open matter. Do not retain resolved discussions as history. Keep the three-report success history separate from open discussions. Do not clear reports merely because the associated discussion closes; retain them until they fall outside the three most recent successful reports.
 
-Do not record credentials, access tokens, hidden reasoning, or unrelated sensitive information.
+Do not treat silence as approval. Do not infer a decision from an unrelated user message. If the user gives a partial answer, retain only the unresolved part.
 
 ### User-visible output
 
-- In Condensed Mode, send only one of these two links:
-  1. The direct link to the task record for the task in progress.
-  2. The direct link to `workspace/discussion.md`.
+- In Condensed Mode, send only one direct link:
+  1. Link to `workspace/discussion.md` when it contains any open discussion or retained report.
+  2. Otherwise, link to the task record for the task in progress.
 - Do not send any other link in Condensed Mode.
 - Do not add labels, headings, status text, progress updates, summaries, or other chat text.
 - The only exception is the single response that switches into Condensed Mode. That response must contain only a brief mode acknowledgement. Starting with the next response, send only one permitted link.
@@ -120,14 +184,14 @@ Do not record credentials, access tokens, hidden reasoning, or unrelated sensiti
 - Task creation alone does not count as user approval.
 - Pause only when the task requires a decision or approval that the user has not already given.
 - Treat approval as authorization to execute the approved scope. Do not expand that scope without approval.
-- When communication requires user input, a decision, approval, or clarification, put only that unresolved matter in `workspace/discussion.md` and provide its direct link.
-- Keep progress, blockers that need no user input, verification results, and task outcomes in the task record. Do not place routine status or completed information in `workspace/discussion.md`.
-- At task completion, keep the factual work report in the task record. Add or retain a discussion entry only when a user decision, clarification, or follow-up remains open. Remove the resolved thread before the final response; if no open discussions remain, leave the empty-state placeholder.
+- When communication requires user input, a decision, approval, or clarification, put only that unresolved matter in Open Discussions and provide the discussion-file link.
+- Keep progress, blockers that do not constitute a reported failure, verification details, and task outcomes in the task record. Add a concise Reports entry only for a successful outcome.
+- At task completion, remove resolved discussions and add a success report only if the outcome is complete and verified. Keep any distinct follow-up requiring user input in Open Discussions.
 - Fetch the committed discussion file from branch `gpt` and verify its contents before providing its link.
 - If task creation fails, do not claim success or provide an invented task link.
-- If work fails or stops before completion, record durable progress in the task record. Put only a decision, clarification, or blocker that needs user input in `workspace/discussion.md`, then provide its link.
+- If work fails or stops before completion, record durable progress in the task record. Put the failure in Open Discussions, then provide the discussion link.
 
-The task link identifies active work. Use the discussion link only while one or more unresolved matters need user input; it is not a progress-report destination.
+The discussion link is the navigation surface whenever it contains open matters or recent success reports. Use the task link when the register has no entries and active work needs a direct destination.
 
 ### When no commit can honestly be provided
 
@@ -135,9 +199,9 @@ Never invent, guess, reuse, or report a commit hash that does not belong to the 
 
 If project work produces no project-file change, do not invent a project-change commit. A required discussion-register update is a separate repository change and may have its own commit.
 
-If a tool, permission, or verification failure prevents completion, record the blocker in the task record. Add it to `workspace/discussion.md` only when it requires user input or a decision; otherwise provide the task link.
+If a tool, permission, or verification failure prevents completion, record the blocker in the task record. Put the failure in Open Discussions when it remains an unsuccessful outcome; do not place it in Reports.
 
-If the task needs essential clarification or user approval, record the minimum necessary question in `workspace/discussion.md`. Provide only its direct link. Do not create a project-change commit only to satisfy the response format.
+If the task needs essential clarification or user approval, record the minimum necessary question in Open Discussions. Provide only the discussion-file link. Do not create a project-change commit only to satisfy the response format.
 
 ### Progress communication
 
