@@ -6,7 +6,7 @@
 - **Series / path:** Samantha — Human Presence Without a Body / Sweet Path
 - **Scene:** Same seated apartment portrait direction, with corrected thigh anatomy.
 - **Operation:** Prompt-only continuation of Attempt 13; fresh text-only generation, no image reference supplied.
-- **Status:** Generated; awaiting user review
+- **Status:** Approved by user
 - **Prompt ID:** Not assigned
 - **Baseline:** Attempt 13 — `drawings/2026-11-21/attempt-13.md`
 
@@ -56,5 +56,5 @@ Do not add any text, lettering, words, typography, captions, subtitles, labels, 
 | No unrelated visual redesign or effects | Pass | No added fantasy effects or extra subjects visible |
 
 - **Outcome:** Generated; visible thigh anatomy appears improved, but full leg alignment cannot be verified from this crop.
-- **User decision:** Pending.
-- **Next action:** Await user review.
+- **User decision:** Approved.
+- **Next action:** Continue from this approved result for the next requested scene or adjustment.
