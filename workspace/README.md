@@ -1,6 +1,6 @@
 # Workspace
 
-The workspace tracks project tasks and unresolved discussions across conversations.
+The workspace tracks project tasks and the Condensed Mode discussion and success-report register across conversations.
 
 Task operations follow [The Worker skill](../skills/the-worker/SKILL.md).
 
@@ -10,7 +10,7 @@ Task operations follow [The Worker skill](../skills/the-worker/SKILL.md).
 
 | Path | Purpose |
 |---|---|
-| [discussion.md](discussion.md) | Open discussions used only in Condensed Mode |
+| [discussion.md](discussion.md) | Open discussions and the three most recent successful reports; used only in Condensed Mode |
 | [task_board.md](task_board.md) | Task index, priority, status, and selection order |
 | [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Template for individual task records |
 | [tasks/](tasks/) | Current task records |
@@ -52,7 +52,7 @@ Use YYYYMMDD-HHMMSS-short-kebab-title.md for task filenames.
 
 Read this file, then [task_board.md](task_board.md), then the selected task record. Check the repository before resuming. Follow the task's Next Actions.
 
-In Condensed Mode, Conversation Mode also reads [discussion.md](discussion.md) to recover unresolved discussions. Default Mode does not use that file.
+In Condensed Mode, Conversation Mode reads [discussion.md](discussion.md) to recover open discussions and recent successful reports. The file has two sections in this order: Open Discussions, then Reports. Both sections are newest first. Open Discussions contains anything awaiting user input and all unresolved failure outcomes. Reports contains only completed, verified successes and retains at most the three most recent entries. Default Mode does not use that file.
 
 ## Navigation
 
