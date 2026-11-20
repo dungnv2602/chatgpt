@@ -242,6 +242,7 @@ The prompt author mixed internal provenance and workflow explanation into the te
 - Modify only the smallest passage required by the user's latest request.
 - Preserve every unaffected word and its order. Do not paraphrase, summarize, polish, or reconstruct the prompt.
 - Keep attempt labels, file names, paths, repository references, prompt-record references, IDs, and provenance details in the archive only.
+- Do not mention a prompt, earlier wording, previous instructions, or another record in the generation prompt. Avoid phrases such as "as described in the previous prompt", "same as before", or equivalent wording.
 - Keep references to images, attachments, and editing operations out of the generation prompt.
 - Compare the final submitted text with the assigned prompt before archiving and generation. Every changed passage must be justified by the user's request.
 
