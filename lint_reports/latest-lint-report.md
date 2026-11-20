@@ -1,9 +1,9 @@
 # Latest Repository-wide Lint Report
 
-- **Run:** [#101](https://github.com/dungnv2602/chatgpt/actions/runs/44779673108)
-- **Date (UTC):** 2026-11-20 17:04:36
+- **Run:** [#102](https://github.com/dungnv2602/chatgpt/actions/runs/44781823351)
+- **Date (UTC):** 2026-11-20 17:17:34
 - **Branch:** gpt
-- **Commit:** [27050bb8e076efa047c901ecd1ae36a88a5c68ba](https://github.com/dungnv2602/chatgpt/commit/27050bb8e076efa047c901ecd1ae36a88a5c68ba)
+- **Commit:** [bc3e2205fb469f22d6dd93017b7945231e1927c2](https://github.com/dungnv2602/chatgpt/commit/bc3e2205fb469f22d6dd93017b7945231e1927c2)
 - **Trigger:** workflow_dispatch
 
 This report is replaced by the next complete run. The generated report is excluded from subsequent lint source scans.
@@ -29,9 +29,9 @@ Found 0 unresolved local Markdown targets or anchors.
 
 - **Technical Markdown files scanned:** 40
 - **Files with findings:** 32
-- **Total STE findings (hard and advisory):** 295
-- **Files failing the configured hard-finding threshold or execution:** 1
-- **Overall result:** FAIL
+- **Total STE findings (hard and advisory):** 291
+- **Files failing the configured hard-finding threshold or execution:** 0
+- **Overall result:** PASS
 
 ## STE-100 Findings by File
 
@@ -148,24 +148,20 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~text
 skills/conversation-mode/SKILL.md:88:91 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is ordered]
 skills/conversation-mode/SKILL.md:92:41 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is unresolved]
-skills/conversation-mode/SKILL.md:111:175 synonym-rotation: 'fix' and 'correct' name the same action. Pick one and use it every time. [fix]
-skills/conversation-mode/SKILL.md:111:195 synonym-rotation: 'confirm' and 'check' name the same action. Pick one and use it every time. [confirm]
 skills/conversation-mode/SKILL.md:119:88 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is paused]
 skills/conversation-mode/SKILL.md:120:78 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has stopped]
 skills/conversation-mode/SKILL.md:120:108 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has proposed]
 skills/conversation-mode/SKILL.md:121:61 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
-skills/conversation-mode/SKILL.md:121:213 synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time. [verify]
-skills/conversation-mode/SKILL.md:121:260 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is resolved]
+skills/conversation-mode/SKILL.md:121:272 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is resolved]
 skills/conversation-mode/SKILL.md:136:63 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
 skills/conversation-mode/SKILL.md:141:36 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was encountered]
-skills/conversation-mode/SKILL.md:141:69 synonym-rotation: 'repair' and 'correct' name the same action. Pick one and use it every time. [repaired]
 skills/conversation-mode/SKILL.md:143:106 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was verified]
 skills/conversation-mode/SKILL.md:152:180 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is exceeded]
 skills/conversation-mode/SKILL.md:174:260 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
 skills/conversation-mode/SKILL.md:188:94 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has approved]
 skills/conversation-mode/SKILL.md:234:75 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are governed]
 
-18 violations (4 hard, baseline 3), 2689 words, 0.7 per 100 words
+14 violations (0 hard, baseline 3), 2689 words, 0.5 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
