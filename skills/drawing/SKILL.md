@@ -242,12 +242,14 @@ The user's opening brief for a specific drawing session is the source of truth f
    the smallest relevant passage. Do not paraphrase, summarize, rewrite, or
    reconstruct the prompt from notes. Do not replace its wording with a
    description of what the prompt says.
-10. **Keep archival and workflow metadata out of the generation prompt:** Never
-    mention attempt numbers, file names, folder paths, repository records,
-    prompt records, prompt IDs, generation IDs, source labels, or instructions
-    for retrieving another prompt. The image tool cannot locate those records.
-    These details belong only in the archive, never in the prompt submitted to
-    the image tool.
+10. **Keep all meta-references out of the generation prompt:** Never mention
+    attempt numbers, file names, folder paths, repository records, prompt
+    records, prompt IDs, generation IDs, source labels, or instructions to
+    retrieve or reuse external text. Do not refer to a prompt, earlier wording,
+    previous instructions, or another record. Do not write "as described in the
+    previous prompt", "same as before", or equivalent wording. The tool needs
+    the actual visual instructions, not references to inaccessible context.
+    Keep all provenance and workflow details in the archive only.
 11. **Keep image references out of the next prompt:** Write the revised prompt
     as a self-contained generation prompt. Do not refer to an image, source
     image, uploaded image, previous image, reference image, attachment, or an
@@ -255,12 +257,12 @@ The user's opening brief for a specific drawing session is the source of truth f
     the image", "use the attached image", or "preserve the image". The prompt
     must describe the intended final visual result directly and must not depend
     on an attachment or external record.
-10. If the successful prompt cannot be recovered, use the active session brief
+12. If the successful prompt cannot be recovered, use the active session brief
     and the available authoritative attempt records. Disclose that the prompt
     record is missing or incomplete; do not ask the user for an image as a
     substitute. Ask a question only if an essential creative requirement cannot
     be resolved from the brief or prompt history.
-11. If the current-session brief conflicts with a successful historical prompt,
+13. If the current-session brief conflicts with a successful historical prompt,
     preserve the user's current brief. Use the old prompt only as a technical
     wording aid for compatible details. Do not import its outdated appearance,
     clothing, setting, framing, or style.
