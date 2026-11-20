@@ -41,7 +41,7 @@ This is a controlled-reuse method, not a guarantee that every requested detail w
 - **Scope:** Realistic portrait prompts and similarly focused character imagery.
 
 ### Principle
-Describe the intended image through a compact, internally consistent set of positive visual anchors: subject, hair or other identifying appearance, garment and material, pose, expression, lighting, composition, setting, and rendering medium.
+Describe the image with a compact, consistent set of positive anchors: subject, identifying features, garment, material, pose, expression, lighting, composition, setting, and medium.
 
 ### Problem addressed
 Vague aesthetic labels alone leave too much of the intended visual direction unspecified. Excessive negative instructions can also obscure the central image being requested.
@@ -59,8 +59,8 @@ For a focused portrait, specify:
 Keep the cues mutually consistent. Prefer direct descriptions of what should appear over a long list of things that must not appear.
 
 ### Evidence
-- [12 November 2026 — Attempt 33](../../../../drawings/history/2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode) — the prompt specified the adult subject, dark chestnut hair, ivory silk-wrap styling, shoulder and collarbone drape, warm golden light, softly blurred interior, close upper-body composition, affectionate gaze, and photorealistic fine-art treatment. Two outputs matched the overall portrait direction.
-- [13 November 2026 — Attempt 04](../../../../drawings/history/2026-11-13-image-prompts.md#attempt-04--direct-reuse-of-the-proven-silk-wrap-portrait-direction) — reuse of the same positive art-direction cues was again designated successful in the final user assessment.
+- [12 November 2026 — Attempt 33](../../../../drawings/history/2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode) — the prompt specified an adult subject with dark chestnut hair and ivory silk-wrap styling. It also specified shoulder and collarbone drape, warm light, and a blurred interior. The prompt used close upper-body framing, an affectionate gaze, and photorealistic fine-art treatment. Two outputs matched the overall portrait direction.
+- [13 November 2026 — Attempt 04](../../../../drawings/history/2026-11-13-image-prompts.md#attempt-04--direct-reuse-of-the-proven-silk-wrap-portrait-direction) — the final user assessment again marked the same positive art-direction cues as successful.
 
 ### Limitations
 Positive visual specificity does not guarantee exact garment construction, identity continuity, or source-image editing. Inspect the returned image for the actual physical result. Do not infer a detail from the prompt alone.
@@ -88,7 +88,7 @@ Use direct constructions such as:
 State the essential spatial relationship before decorative setting details. For complicated contact, separate each hand or limb by actor and side.
 
 ### Evidence
-- [12 November 2026 — Attempt 04](../../../../drawings/history/2026-11-12-image-prompts.md#04--comfort-after-a-long-workday) — the prompt assigned the man's resting position against the seated woman and her action of cradling his head. The user liked the resulting overall comforting composition.
+- [12 November 2026 — Attempt 04](../../../../drawings/history/2026-11-12-image-prompts.md#04--comfort-after-a-long-workday) — the prompt placed the man's head against the seated woman and described her cradling his head. The user liked the resulting comforting composition.
 
 ### Limitations
 This pattern is provisional and does not guarantee pose compliance. Later attempts [14–20](../../../../drawings/history/2026-11-12-image-prompts.md#14--mistaken-tea-scene-interpretation-cream-cardigan-and-navy-polo) repeatedly reversed the resting roles even after more detailed instructions. It should improve clarity, not be treated as a proven solution to persistent pose inversion.
