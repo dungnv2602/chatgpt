@@ -47,7 +47,7 @@ Accept direct commands:
 
 Apply the selected mode immediately to subsequent drawing work within the same
 specific drawing session. A new drawing session starts from its own opening
-brief, even when it begins in the same conversation or continues the same
+brief, even when it starts in the same conversation or continues the same
 project. Do not silently switch modes because a prompt is difficult or an
 earlier result failed.
 
@@ -165,7 +165,7 @@ workflow, while avoiding redundant retrievals.
    (`README.md`), `successful-patterns.md`, and `failure-patterns.md`.
    Record each file's Git blob SHA in working context. Do not retrieve the
    same unchanged files again during that conversation.
-2. **Consult at each session and attempt.** At the beginning of each distinct
+2. **Consult at each session and attempt.** At the start of each distinct
    drawing session, identify the active brief. Consult the relevant entries in
    the already-loaded pattern content before drafting a prompt. Before each
    generation or edit attempt, re-check the relevant lessons against the current
