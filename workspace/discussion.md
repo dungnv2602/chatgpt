@@ -1,5 +1,20 @@
 # Open Discussions
 
+### 2026-11-20 15:20 UTC
+
+**Assistant**
+
+Reviewed 14 unique external URLs across 10 Agent Skills and ASD-STE100 documentation files.
+
+All six linked GitHub repositories are available. The Agent Skills specification, Wikipedia, and TechScribe are accessible. The official ASD-STE100 home page and FAQ are indexed as official STEMG pages, although direct crawler requests returned 403. The official Issue 9 PDF opens and identifies Issue 9 dated 2025-01-15. The ASD Europe deep page timed out or blocked automated access. The SKYbrary page returned 403. These access failures do not prove that those pages are dead.
+
+I replaced the obsolete ASD-STE100 About-page link with the current official FAQ. I also replaced the old STE_downloads.html request-form link with the official homepage and the verified Issue 9 PDF. I kept the ASD Europe and SKYbrary references because their availability remains inconclusive. I did not reproduce protected standard content.
+
+Next: continue external URL review in the remaining approved technical documents, then continue synonym and long-sentence cleanup. Historical-link review remains gated on your authorization.
+
+---
+
+
 ### 2026-11-20 14:40 UTC
 
 **User**

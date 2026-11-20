@@ -46,6 +46,15 @@ Continue and complete the repository documentation audit. Keep its complete hist
 
 ## 6. Progress Log
 
+### 2026-11-20 15:20 UTC
+
+- **Action:** Reviewed external references in the Agent Skills and ASD-STE100 documentation.
+- **Scope:** Checked 14 unique URLs across 10 files. All six linked GitHub repositories are available. The Agent Skills specification is accessible. Wikipedia and TechScribe are accessible. The official ASD-STE100 home page and FAQ are indexed as official STEMG pages, although direct crawler requests returned 403. The official Issue 9 PDF opens and identifies Issue 9 dated 2025-01-15. The ASD Europe deep page timed out or blocked automated access. The SKYbrary page returned 403. These access failures do not prove that the pages are dead.
+- **Change:** Replaced the obsolete ASD-STE100 About-page link with the current official FAQ. Replaced the old STE_downloads.html request-form link with the official homepage and the verified Issue 9 PDF. Kept the ASD Europe and SKYbrary references because their availability is inconclusive.
+- **Source protection:** Linked to the official PDF only. Did not reproduce any protected standard content.
+- **Next:** Continue external URL review in the remaining approved technical documents. Then continue synonym and long-sentence cleanup. Historical-link review remains gated on your authorization.
+
+
 ### 2026-11-20 14:35 UTC
 
 - **Action:** Continued the lint debt review using the completed GitHub Actions output from run `44751204773`.

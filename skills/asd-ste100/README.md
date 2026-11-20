@@ -234,7 +234,7 @@ These projects adapt the method for other languages. Their rules are not officia
 ## Sources
 
 - [ASD-STE100 official site](https://www.asd-ste100.org/)
-- [ASD-STE100 — About STE](https://www.asd-ste100.org/about_STE.html)
+- [ASD-STE100 official FAQ](https://www.asd-ste100.org/STE_faq.html)
 - [ASD Europe — Simplified Technical English](https://www.asd-europe.org/standards-specifications/simplified-technical-english/)
 - [Simplified Technical English — Wikipedia](https://en.wikipedia.org/wiki/Simplified_Technical_English)
 - [TechScribe — ASD-STE100 Simplified Technical English](https://www.techscribe.co.uk/techw/asd-simplified-technical-english.htm)
