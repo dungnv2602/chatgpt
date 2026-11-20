@@ -280,3 +280,13 @@ Use this template:
 - **Files modified:** `skills/INITIALIZATION_POLICY.md`, `skills/session-archiving/SKILL.md`, `skills/session-archiving/references/archive-records-and-image-prompts.md`, `skills/drawing/SKILL.md`, `skills/SESSION_START.md`, and `skills/novelist-initiation/INITIATION.md`.
 - **Verification:** Updated files were fetched from branch `gpt` after each write. Directory listings confirmed that `drawings/`, `drawings/history/`, and `drawings/2026-11-20/` exist. The prior root name `prompts/` is no longer used as a workspace path in the revised policy files.
 - **Commits:** 70c2148b6cd72be0085ab69129c86b0ce1020993, 2ec76f3eda760d6332ec94d579c731c1fe1712e0, 0f418426f7c787f76bb2ecfac46e8fadcfc2790e, 6e91db2546e201e899753844878ed3e970c0c78c, 624fec7c749e65ebec2f096a33aebddab2168d76, 3de6ea1ca5e735fd088760d3a3f5a86ad25675ef, and 1f57cf5ab070f60281abae37d1658a1cd287e26a.
+
+### Version 11 — Changed-file STE lint workflow
+
+- **Date:** 2026-11-20
+- **Requested change:** Add a GitHub Actions workflow that runs the STE linter on each push to branch `gpt` and checks changed Markdown files only.
+- **Implementation:** Added `.github/workflows/ste-lint-changed.yml`. The workflow runs the linter self-test and then lints changed Markdown files from the push range.
+- **Scope filters:** Excludes creative and historical content under `novels/`, `drawings/`, and `master/`, plus the Romantic Storyteller, Prompt Master, and STE example directories.
+- **Safety:** The changed-file list passes through an environment variable rather than shell-script interpolation.
+- **Verification:** Workflow source was fetched after each write. GitHub Actions execution is not yet confirmed.
+- **Commits:** ca7292d89b9967776bb456060f2c111762e709c0, a2573e61dd651fffb3bfdfda8f17e5670f03f990, and 4e1ab6dc9239514fb374aaa45e4685127bb23838.
