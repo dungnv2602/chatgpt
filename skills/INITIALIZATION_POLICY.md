@@ -290,3 +290,12 @@ Use this template:
 - **Safety:** The changed-file list passes through an environment variable rather than shell-script interpolation.
 - **Verification:** Workflow source was fetched after each write. GitHub Actions execution is not yet confirmed.
 - **Commits:** ca7292d89b9967776bb456060f2c111762e709c0, a2573e61dd651fffb3bfdfda8f17e5670f03f990, and 4e1ab6dc9239514fb374aaa45e4685127bb23838.
+
+### Version 12 — Remaining drawing and technical reference review
+
+- **Date:** 2026-11-20
+- **Files reviewed:** `skills/drawing/references/style-guide.md`, `skills/drawing/references/prompt-fidelity.md`, `skills/philosophy-religion-asceticism/references/answer-patterns.md`, `skills/philosophy-religion-asceticism/references/source-standards.md`, and `skills/agent-skill-authoring/SKILL.md`.
+- **Review:** Checked sentence structure, semicolon usage, long sentences, and local Markdown references.
+- **Disposition:** Review only. No edits in this pass. The prompt-fidelity note contains explicit user-direction preservation language. Any rewrite needs sentence-level comparison to avoid changing scope or intent.
+- **Link check:** Checked local Markdown links in the files reviewed. The internal references listed in those files were present in the fetched content.
+- **Limit:** This was a manual review. The STE linter and GitHub Actions run were not executed in this environment.
