@@ -21,7 +21,7 @@ discuss that session. Stop reminding once the session is Closed. The reminder
 does not itself trigger closeout.
 
 Until the cue is received:
-- Keep the drawing session marked `Active` or `Paused`; never mark it
+- Keep the drawing session marked `Active` or `Paused`. Never mark it
   `Closed` merely because work has stopped temporarily.
 - Preserve its current brief, prompt lineage, attempt outcomes, unresolved
   criteria, and next step.
@@ -35,7 +35,7 @@ When the user sends `end session`, close the current drawing session under
 discussion, whether its status is `Active` or `Paused`, without asking for a
 second confirmation. If multiple non-closed sessions could reasonably be the
 target, ask one concise question to identify the session before changing any
-record; this is target clarification, not a second approval:
+record. This is target clarification, not a second approval:
 
 1. Stop further image generation/editing for that session.
 2. Verify the opening brief and every amendment, and confirm all attempts are
@@ -55,7 +55,7 @@ record; this is target clarification, not a second approval:
 6. Record unresolved requirements, failed attempts, missing source links,
    technical gaps, and any work intentionally left incomplete. Do not erase
    failures or silently mark them successful.
-7. Update the session brief status to `Closed`; prepare or update the relevant
+7. Update the session brief status to `Closed`. Prepare or update the relevant
    session summary/handoff with completed work, approved outputs, unresolved
    items, and the next possible task.
 8. Read back all changed records, including the applicable daily index,
@@ -64,6 +64,6 @@ record; this is target clarification, not a second approval:
    gap and do not claim a fully verified closeout.
 
 The session brief status remains `Closed` even when unresolved requirements
-remain. Record those unresolved items in the closeout summary/handoff; closure
+remain. Record those unresolved items in the closeout summary/handoff. Closure
 records the session's state and does not imply that every image succeeded.
 
