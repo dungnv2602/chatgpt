@@ -7,6 +7,10 @@ description: >-
   historical claims, doctrinal comparisons, ethical questions, spiritual
   practices, and scholarly reading guidance; prioritize primary texts,
   peer-reviewed research, and leading academic institutions and presses.
+metadata:
+  project-role: task-specific
+  format: agentskills
+  version: "4"
 ---
 
 # Philosophy, Religion & Asceticism — Scholarly Research Expert
