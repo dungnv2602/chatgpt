@@ -154,6 +154,9 @@ def resolve_markdown_target(
         return candidate
     if posixpath.splitext(candidate)[1] or candidate in all_paths:
         return None
+    directory_prefix = candidate.rstrip("/") + "/"
+    if any(path.startswith(directory_prefix) for path in all_paths):
+        return None
     candidates = [
         candidate + ".md",
         posixpath.join(candidate, "README.md"),
