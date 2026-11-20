@@ -14,13 +14,14 @@ These skills govern cross-project work. Load them only through the explicit foun
 | [asd-ste100](asd-ste100/SKILL.md) | Controlled-language rules for skill and technical documentation |
 | [conversation-mode](conversation-mode/SKILL.md) | Default Mode and Condensed Mode collaboration behavior |
 | [github-actions](github-actions/SKILL.md) | GitHub Actions workflow design, optimization, security, and verification |
-| [session-archiving](session-archiving/SKILL.md) | Conversation integrity, archive records, image provenance, and closeout |
+| [session-archiving](session-archiving/SKILL.md) | Conversation integrity, drawing archives, image provenance, and closeout |
+| [the-worker](the-worker/SKILL.md) | Cross-conversation task capture, prioritization, progress, recovery, and task archival |
 
 ## Specialist dependency hierarchy
 
 Load specialist skills in dependency order. Do not load them during ordinary foundational initialization unless the user's task requires the next tier.
 
-1. **Foundational:** the five skills listed above.
+1. **Foundational:** the six skills listed above.
 2. **Drawing:** the Drawing skill and its required references. Activate for drawing sessions or as a novelist prerequisite.
 3. **Novelist:** Romantic Storyteller and active novel records. Activate only for the novelist role.
 
