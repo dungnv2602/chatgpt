@@ -21,7 +21,7 @@ The following taxonomy is deliberately broad. These are possible organizing prem
 7. **Subject series:** a recurring subject or subject class, such as a particular animal, flower, vehicle, building, object, or type of person.
 8. **Location or environment series:** one room, home, building, city, landscape, destination, natural environment, or architectural space explored through different images.
 9. **Situation or context series:** a recurring circumstance, such as quiet mornings, evenings at home, travelling, waiting, reunions, or conversations in a café.
-10. **Visual-style or medium series:** a shared artistic language, such as cinematic realism, painterly storybook imagery, watercolor, oil painting, analog photography, or a defined illustration style.
+10. **Visual-style or medium series:** a shared artistic language. Examples include cinematic realism, painterly storybook imagery, watercolor, oil painting, analog photography, or a defined illustration style.
 11. **Color, light, or atmosphere series:** a recognizable palette, tonal range, lighting language, season of light, or atmospheric treatment.
 12. **Wardrobe, fashion, or costume series:** a fashion collection, outfit study, character wardrobe, uniform family, historical dress, or intentionally fixed garment design.
 13. **Motif or symbolism series:** a recurring object, symbol, visual metaphor, gesture, pattern, or compositional motif.
@@ -36,7 +36,7 @@ The following taxonomy is deliberately broad. These are possible organizing prem
 22. **Technical or artistic study series:** controlled explorations of anatomy, gesture, fabric, reflections, lighting, materials, rendering, perspective, or other techniques.
 23. **Comparison or variation series:** alternatives, parallel interpretations, before-and-after images, controlled A/B variations, or deliberate visual contrasts.
 24. **Collection or catalogue series:** a curated body organized around a meaningful subject, class, taxonomy, or collecting principle, even without narrative continuity.
-25. **Hybrid or cross-disciplinary series:** a deliberate combination of two or more of the above, or a coherent theme crossing disciplines, genres, media, or subject categories.
+25. **Hybrid or cross-disciplinary series:** a deliberate combination of two or more types above, or a coherent theme across disciplines, genres, media, or subject categories.
 26. **Other user-defined series:** any other recurring creative premise the user identifies or the work demonstrably develops.
 
 Use this cohesion test when membership is inferred rather than explicitly declared:
@@ -92,7 +92,7 @@ Apply this order whenever an image belongs to an established series:
    session, which details are locked, and what may vary. Identify a primary
    series only when the current brief explicitly continues or adopts it. Do not
    infer creative authority from project membership or a shared character.
-2. **Locate the most recent successful prompt in that series.** Determine recency from the authoritative chronological attempt records, not from the order of entries in the success index. The prompt must have a reliable link to an output recorded as successful.
+2. **Locate the most recent successful prompt in that series.** Use the authoritative chronological attempt records to determine recency. Do not use the order of entries in the success index. The prompt must link reliably to an output recorded as successful.
 3. **Use that most recent successful prompt as a historical text baseline.**
    Carry forward only the wording and details that are compatible with the
    active session brief. The session brief outranks the historical prompt and
@@ -100,7 +100,7 @@ Apply this order whenever an image belongs to an established series:
    palette, setting, or composition. Do not use a later failed, rejected, partial,
    or missed-target prompt as the base merely because it is newer.
 4. **Inspect later unsuccessful attempts only as diagnostics.** They can reveal what failed, what the user corrected, and what specific change the user still wants. Extract only explicit user-requested or user-approved changes, then apply those deltas to the most recent successful prompt. Do not copy assistant-added wording, speculative embellishments, or failed prompt structure simply because they appeared later.
-5. **A partial result does not displace the successful baseline.** Preserve useful visual observations from it, but build the next authored prompt from the most recent successful prompt. Promote a partial result to a successful series result only when the user explicitly accepts it as successful for the intended purpose. Record that user decision and its exact originating prompt.
+5. **A partial result does not displace the successful baseline.** Preserve useful visual observations from it. Build the next authored prompt from the most recent successful prompt. Promote a partial result to a successful series result only when the user explicitly accepts it as successful for the intended purpose. Record that decision and the exact originating prompt.
 6. **Separate prompt success from image approval.** A user-approved image is a valid visual keeper or reference. It establishes a successful prompt baseline only when you can identify its originating attempt. The user's approval must also accept that attempt and result as successful for the requested purpose. If the image-to-prompt mapping is uncertain, use the image only as a visual reference or edit source. Do not invent or infer its prompt.
 7. **Respect prompt lineage within branches.** A new subseries or spin-off may inherit the parent's most recent successful prompt as its initial seed at the moment the branch is created. Record that seed and branch point. Once the branch has its own successful prompt, use the branch's most recent successful prompt—not later prompts from the parent series.
 8. **Handle a series with no successful prompt honestly.** For its first entry,
