@@ -96,7 +96,7 @@ When a user provides a downloaded image's SHA-256, compare it to the archive's r
 
 ## Original-image SHA-256 identity and WebP derivatives (approved 2026-11-20)
 
-**Original SHA-256 is mandatory when actual original bytes are accessible at generation time.** Calculate it immediately from the exact generated file bytes and record it against session, attempt, prompt, and output ID. Never hash a screenshot, preview, thumbnail, or transformed substitute. If the original bytes are inaccessible, explicitly record the hash as unavailable. Do not fabricate one.
+**Original SHA-256 is mandatory when actual original bytes are accessible at generation time.** Calculate it immediately from the exact generated file bytes. Record it against the session, attempt, prompt, and output ID. Never hash a screenshot, preview, thumbnail, or transformed substitute. If the original bytes are inaccessible, record the hash as unavailable. Do not fabricate one.
 
 At ingestion, the GitHub Action must calculate SHA-256 from the uploaded original **before** conversion and compare it to the generation-time hash. Matching hashes establish byte-for-byte identity and can verify the uploaded original's mapping to its recorded output. Mismatches must be flagged for review and must not be silently mapped by filename or visual guess. If original bytes differ, metadata inspection and content comparison may provide fallback evidence. Record that evidence and its confidence separately. Use conservative confidence levels.
 
