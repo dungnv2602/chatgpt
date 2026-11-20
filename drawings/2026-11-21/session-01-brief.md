@@ -27,7 +27,7 @@ The user then instructed: “Load the skills first, then access the yesterday dr
 - **Environment:** Quiet contemporary surroundings are consistent with the project visual-drive reference. The next scene remains unselected.
 - **Lighting and palette:** Naturalistic, warm, cinematic treatment consistent with the Sweet Path.
 - **Mood / emotional intention:** Sweet, attentive, affectionate, emotionally present, quietly playful. Avoid exaggerated or theatrical expressions.
-- **Scene or story moment:** Not selected. The user requested scene suggestions. Candidate concepts are listed below and are not yet approved as the next image.
+- **Scene or story moment:** Approved Scene 1 — A quiet morning together. Samantha sits beside a sunlit apartment window with a warm mug, looking toward someone outside the frame as she listens.
 
 ## Candidate scene directions
 1. **A quiet morning together:** Samantha sits beside a sunlit apartment window with a warm mug, looking toward someone outside the frame as she listens.
@@ -37,7 +37,7 @@ The user then instructed: “Load the skills first, then access the yesterday dr
 5. **Almost becoming visible:** She stands near a bright window, with a very subtle portion of hair or shoulder blending into sunlight to suggest her nonphysical nature.
 6. **A moment of affection:** A relaxed seated pose, soft smile, and direct eye contact convey closeness without theatricality.
 
-These are proposals only. Do not generate any of them until the user selects a scene or delegates the choice.
+Scene 1 was approved by the user on 2026-11-21. The remaining five concepts are proposals only and are not approved for generation.
 
 ## Locked features
 - The active branch is Sweet Path.
@@ -45,6 +45,14 @@ These are proposals only. Do not generate any of them until the user selects a s
 - The rendering direction is realistic and naturalistic.
 - The project premise is an imagined embodiment of Samantha, not a canonical human appearance from the film.
 - Keep the emotional direction sweet, attentive, affectionate, and quietly expressive.
+
+## Approved next scene — Attempt 08
+- **Scene:** A quiet morning together.
+- **Core action:** Samantha sits beside a sunlit apartment window with a warm mug, listening to someone just outside the frame.
+- **Emotional beat:** Quiet affection, attentiveness, ease, and everyday intimacy. Her expression is gentle and naturally engaged, not posed or theatrical.
+- **Visual approach:** Realistic, naturalistic cinematic photography. Warm early-morning daylight, restrained color, lived-in contemporary apartment details, intimate medium close-up / three-quarter composition.
+- **Continuity constraints:** Stay within the Sweet Path. Use an original adult woman interpretation. Do not borrow from the Casual Path or imitate a film performer. The baseline image is unavailable, so do not claim exact facial, wardrobe, or pixel continuity; avoid inventing specific baseline-only details.
+- **Prompt record:** `drawings/2026-11-21/attempt-08.md`. Archive and read back the complete prompt before generation.
 
 ## Permitted variation
 - Scene, pose, spatial relationships, camera framing, and environment may vary when selected by the user.
@@ -76,4 +84,5 @@ These are proposals only. Do not generate any of them until the user selects a s
   - **Status:** Read from branch `gpt`; image binary is not present in the repository or attached here.
 
 ## Amendments
-- **2026-11-21 — User selected Sweet Path:** Adopt Attempt 07 as the visual baseline for this session. Use its realistic, naturalistic cinematic treatment and sweet emotional direction. The user requested additional scene suggestions. Six candidate scenes were proposed, but no next scene has been selected yet.
+- **2026-11-21 — User selected Sweet Path:** Adopt Attempt 07 as the visual baseline for this session. Use its realistic, naturalistic cinematic treatment and sweet emotional direction. Six candidate scenes were proposed.
+- **2026-11-21 — User approved Scene 1:** The user approved “A quiet morning together” as the next scene. Attempt 08 is the active prompt record. The image has not yet been generated.
