@@ -141,9 +141,10 @@ editorial method, source quality, and relevance to the exact claim.
 
 - Stanford Encyclopedia of Philosophy (editorially reviewed expert entries).
 - PhilPapers for bibliographic discovery. Verify the underlying publication.
-- Oxford University Press, Cambridge University Press, Princeton University
-  Press, Harvard University Press, Yale University Press, and University of
-  Chicago Press for specialist monographs, companions, and critical editions.
+- Examples include Oxford University Press, Cambridge University Press,
+  Princeton University Press, and Harvard University Press.
+- Examples also include Yale University Press and University of Chicago Press
+  for specialist monographs, companions, and critical editions.
 
 ### Religious studies, theology, and textual traditions
 
