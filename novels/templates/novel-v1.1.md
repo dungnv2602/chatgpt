@@ -34,7 +34,7 @@ status: approved
 - **Tense:**
 - **Narrative Voice:**
 - **Storytelling Style:**
-- **Structural Approach:** [Novel → Arc → Scene; chapter grouping if useful]
+- **Structural Approach:** [Novel → Arc → Scene. Add chapter grouping when useful.]
 
 ## 4. Main Characters
 ### Character [ID] — [Name]
@@ -102,7 +102,7 @@ status: approved
 - **Established Narrative Facts:**
 - **Locations and Important Objects:**
 - **Continuity Constraints:**
-- **Approved Decisions:** [Concise summary; full detail may be linked]
+- **Approved Decisions:** [Concise summary. Link the full details when needed.]
 - **Proposals Not Yet Approved:**
 - **Provisional Ideas and Unresolved Decisions:** [Link to open-discussion.md]
 
@@ -123,7 +123,7 @@ status: approved
 - **Supporting Planning Documents:** [Links]
 
 ## 14. Author's Notes
-- **Creative Decisions:** [Date and scope; use only confirmed decisions]
+- **Creative Decisions:** [Date and scope. Include confirmed decisions only.]
 - **Ideas for Future Development:** [Label as proposals]
 - **Unresolved Questions:** [Link to open-discussion.md]
 - **Important Revisions:** [Date, reason, affected records]
