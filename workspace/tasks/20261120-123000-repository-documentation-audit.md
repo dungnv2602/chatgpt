@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 13:00 UTC
+- **Updated:** 2026-11-20 13:02 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -86,6 +86,14 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Read-back:** Fetched all six paths from branch `gpt`. Confirmed that none contains a semicolon.
 - **Validation limit:** This was a targeted text scan, not an execution of the official linter. The repository execution environment remains unavailable. No CI run was manually triggered or inspected.
 - **Next:** Review remaining supported lint patterns and obtain a fresh full lint result in an authorized repository execution environment.
+
+### 2026-11-20 13:02 UTC
+
+- **Action:** Reviewed the nominalization candidate in `archive/README.md`.
+- **Result:** Replaced "performs the deletion" with direct actions. The workflow now states that it deletes the contents of `archive/tasks/`.
+- **Commit:** `dac406fcad86586f4108fcdc149dc25f96e14115`.
+- **Read-back:** Fetched `archive/README.md` from branch `gpt`. Confirmed the direct wording and the absence of the matched nominalization pattern.
+- **Next:** Continue the supported-rule review. Obtain a fresh official lint result in an authorized repository execution environment.
 
 ## 7. Current State
 
