@@ -446,7 +446,7 @@ For long-running work, report progress only when it changes or when a checkpoint
 
 ## Template N — OpenAI Task Brief
 
-*Use for complex tasks targeting OpenAI models in ChatGPT, Codex, or the API. Keep simple requests short; omit sections that do not affect the result.*
+*Use for complex tasks targeting OpenAI models in ChatGPT, Codex, or the API. Keep simple requests short. Omit sections that do not affect the result.*
 
 ```text
 Goal:
@@ -474,9 +474,9 @@ Output:
 - Sol: emphasize implementation context and acceptance criteria.
 - Astra: include decision criteria and evidence requirements for difficult work.
 - Preserve an explicitly selected GPT-5.6 model and apply its compatibility guidance in SKILL.md.
-- Combine related tasks when they share one outcome; split when dependencies, review checkpoints, or context limits justify separate runs.
+- Combine related tasks when they share one outcome. Split when dependencies, review checkpoints, or context limits justify separate runs.
 - Ask for conclusions, assumptions, concise rationale, evidence, and checks rather than hidden chain-of-thought.
-- For current facts, request retrieval and citations when the environment provides those capabilities; disclose missing access rather than invent sources.
+- For current facts, request retrieval and citations when the environment provides those capabilities. Disclose missing access rather than invent sources.
 - Define tool access and authorization only for agentic tasks. For long work, request milestones and blockers instead of a message after every action.
 - Keep API and harness settings in setup notes outside the prompt. Verify supported controls for the exact model, endpoint, and surface.
 
