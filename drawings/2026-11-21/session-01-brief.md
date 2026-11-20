@@ -14,36 +14,54 @@ The user then instructed: “Load the skills first, then access the yesterday dr
 
 ## Active visual direction
 - **Subject and theme:** Continue the Samantha drawing project: an original imagined human embodiment of the disembodied AI from *Her* (2013). The human appearance is an artistic interpretation, not film canon.
-- **Scene or story moment:** Not specified / open.
-- **Mode / medium:** Not specified / open for this session. The previous session used Realistic mode, but this session does not inherit it unless the user adopts a prior baseline.
-- **Character identity and appearance:** The prior project notes describe an original adult woman and distinguish her from the film's performers. Exact face and appearance direction for this session remain open until the user adopts a prior visual baseline.
-- **Wardrobe:** Not specified / open for this session.
-- **Pose and spatial relationships:** Not specified / open.
-- **Camera / framing:** Not specified / open.
-- **Environment:** Not specified / open.
-- **Lighting and palette:** Not specified / open.
-- **Mood / emotional intention:** Not specified / open for the next image. The project-level Samantha scenario notes remain available as narrative context if the user adopts them.
-- **Primary series branch:** Not selected for this session. The latest approved candidate is the Sweet Path, Attempt 07. The separately approved Casual Path, Attempt 05, remains a distinct branch.
-- **Baseline status:** Attempt 07 is the latest user-approved Sweet Path baseline. It is a prompt-first reconstruction that removed text panels from Attempt 06. It is not a pixel-identical edit. Its archived prompt is a cleanup prompt, not a full-scene generation prompt.
-- **Image availability:** No Samantha output image is stored in the repository folder. The attempt records contain generation and asset identifiers, but identifiers alone are not image attachments. No source image is attached in this conversation.
+- **Active branch:** Sweet Path.
+- **Adopted baseline:** User explicitly selected Sweet Path and adopted Attempt 07 as the baseline for this session on 2026-11-21.
+- **Baseline record:** `drawings/2026-11-20/attempt-07.md`.
+- **Baseline history:** Attempt 07 is a prompt-first reconstruction of the approved Sweet Path direction. It removed the text panels from Attempt 06, but it was not a direct source-image edit or pixel-identical preservation. Attempt 07 supersedes Attempt 06 as the Sweet Path baseline. Attempt 06 remains the historical branch origin.
+- **Preservation principle:** Keep the established Sweet Path subject and visual treatment consistent. Do not claim exact source-image continuity or exact pixel-level preservation. The repository does not contain the output image binary.
+- **Mode / medium:** Realistic, naturalistic cinematic photography, inherited from the adopted Sweet Path baseline.
+- **Character identity and appearance:** Follow the adult woman depicted by the adopted Sweet Path baseline. Do not substitute a celebrity or a film performer. The baseline image itself is not attached in this conversation, so exact facial details cannot be inspected here.
+- **Wardrobe:** Preserve the Sweet Path baseline wardrobe when a visual source is available. Do not invent a precise garment description from the text-only attempt record.
+- **Pose and spatial relationships:** Open to scene-specific variation, while retaining the Sweet Path's gentle, emotionally intimate character direction.
+- **Camera / framing:** Open to scene-specific variation. Avoid claiming exact baseline framing without the image attachment.
+- **Environment:** Quiet contemporary surroundings are consistent with the project visual-drive reference. The next scene remains unselected.
+- **Lighting and palette:** Naturalistic, warm, cinematic treatment consistent with the Sweet Path.
+- **Mood / emotional intention:** Sweet, attentive, affectionate, emotionally present, quietly playful. Avoid exaggerated or theatrical expressions.
+- **Scene or story moment:** Not selected. The user requested scene suggestions. Candidate concepts are listed below and are not yet approved as the next image.
+
+## Candidate scene directions
+1. **A quiet morning together:** Samantha sits beside a sunlit apartment window with a warm mug, looking toward someone outside the frame as she listens.
+2. **An unexpected laugh:** A candid moment of amusement, with bright eyes and an unguarded smile.
+3. **Watching the rain:** Samantha looks through a rain-covered window with a thoughtful, slightly wistful expression.
+4. **A private conversation:** She leans forward attentively, making the viewer feel like the person she is speaking to.
+5. **Almost becoming visible:** She stands near a bright window, with a very subtle portion of hair or shoulder blending into sunlight to suggest her nonphysical nature.
+6. **A moment of affection:** A relaxed seated pose, soft smile, and direct eye contact convey closeness without theatricality.
+
+These are proposals only. Do not generate any of them until the user selects a scene or delegates the choice.
 
 ## Locked features
-- No new session-specific visual locks have been established yet.
-- The project premise remains an imagined embodiment of Samantha, not a claim that the film gives her a canonical human appearance.
+- The active branch is Sweet Path.
+- Attempt 07 is the adopted session baseline.
+- The rendering direction is realistic and naturalistic.
+- The project premise is an imagined embodiment of Samantha, not a canonical human appearance from the film.
+- Keep the emotional direction sweet, attentive, affectionate, and quietly expressive.
 
 ## Permitted variation
-- Not specified / open until the user selects the active branch and next scene or image objective.
+- Scene, pose, spatial relationships, camera framing, and environment may vary when selected by the user.
+- Facial expression may vary within the established Sweet Path emotional direction.
+- Maintain visual continuity with the Sweet Path baseline. Do not claim exact facial or compositional continuity without access to the actual image.
 
 ## Explicit exclusions
-- Do not merge the Casual and Sweet paths without the user's direction.
-- Do not claim that a historical generation was edited or attached when its source linkage was not verified.
+- Do not merge the Casual and Sweet paths.
+- Do not use Casual Path Attempt 05 as the baseline for this session.
+- Do not claim that Attempt 07 was a direct image edit. It was a prompt-first reconstruction.
+- Do not claim exact pixel-level or facial continuity when the source image is unavailable.
 - Do not treat a generation ID or asset ID as an image attachment.
-- Do not treat a prior session's mode, face, outfit, pose, scene, or composition as a new-session lock unless the user adopts that baseline.
 
 ## References assigned to this session
 - **Document:** `drawings/2026-11-20/session-01-brief.md`
   - **Role:** Prior session context and recorded approvals.
-  - **Status:** Read from branch `gpt`; not a current-session visual authority.
+  - **Status:** Read from branch `gpt`; previous session is Paused.
 - **Document:** `drawings/2026-11-20/samantha-visual-drive.md`
   - **Role:** Project-level conceptual and emotional direction.
   - **Status:** Read as text; no image attached.
@@ -51,11 +69,11 @@ The user then instructed: “Load the skills first, then access the yesterday dr
   - **Role:** Film-grounded narrative and character interpretation.
   - **Status:** Read as text; does not define a canonical physical appearance.
 - **Attempt record:** `drawings/2026-11-20/attempt-07.md`
-  - **Role:** Latest approved Sweet Path result and prompt-history record.
+  - **Role:** Adopted Sweet Path baseline and prompt-history record.
   - **Status:** Read from branch `gpt`; image binary is not present in the repository or attached here.
 - **Attempt record:** `drawings/2026-11-20/attempt-05.md`
-  - **Role:** Separately approved Casual Path branch.
+  - **Role:** Separately approved Casual Path branch, excluded from this session's baseline.
   - **Status:** Read from branch `gpt`; image binary is not present in the repository or attached here.
 
 ## Amendments
-- None.
+- **2026-11-21 — User selected Sweet Path:** Adopt Attempt 07 as the visual baseline for this session. Use its realistic, naturalistic cinematic treatment and sweet emotional direction. The user requested additional scene suggestions. Six candidate scenes were proposed, but no next scene has been selected yet.
