@@ -6,13 +6,13 @@
 - **Created:** 2026-11-20 18:36 UTC
 - **Updated:** 2026-11-21
 - **Priority:** P2
-- **Status:** In Progress
+- **Status:** Done
 - **Origin:** User
 - **Approval:** Approved for session initialization and continuation
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None. Scene approved; Attempt 09 prompt archived from successful Sweet Path Attempt 07 prompt; one variant generated; user review pending.
 - **Related tasks:** None
-- **Archived:** No
+- **Archived:** Yes
 
 ## 1. Original Request
 
@@ -181,3 +181,11 @@ Do not generate an image until the prompt has been archived, committed, and read
 - **Action:** User approved Attempt 14, the thigh-anatomy correction.
 - **Result:** Recorded approval in `drawings/2026-11-21/attempt-14.md` and updated the daily README. Attempt 14 is now the approved current Sweet Path result.
 - **Next:** Continue the Samantha session from Attempt 14 when the user gives the next scene or adjustment.
+
+
+### 2026-11-21 — Session closeout
+
+- **Action:** User requested closure of Samantha session `SAMANTHA-2026-11-21-01`.
+- **Result:** Marked the session brief and daily README Closed. Approved working baseline remains Attempt 14. Attempts 15 and 16 remain unapproved. Attempt 17's “An unexpected laugh” prompt was archived and verified, but image generation was not run because the image-generation tool returned a Free plan rate-limit error.
+- **Handoff:** A future session should resume from approved Attempt 14 unless the user selects another baseline. Attempt 17 may be resumed if the user still wants that scene.
+- **Task status:** Done; no active session remains.
