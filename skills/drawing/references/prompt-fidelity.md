@@ -194,7 +194,7 @@ Keep all provenance, baseline selection, and archival details in the attempt rec
 
 Before submission, compare the prompt with the assigned text. Confirm that every unchanged passage is verbatim and that every changed passage is required by the user's request. If a metadata reference or image reference appears in the prompt, remove it before archiving and generation.
 
-## 11. Reuse, redo, retry, and failure handling
+## 10. Reuse, redo, retry, and failure handling
 
 Before reusing a prompt, compare it with the current brief and every relevant later instruction. An older prompt is not automatically safe to reuse in full.
 
@@ -206,7 +206,7 @@ A prior refusal or generic error does not, by itself, identify which phrase or v
 
 If a requested element cannot be generated or edited because of a real tool limitation or applicable safety rule, state the specific limitation accurately. Do not disguise an unrelated redesign as a solution. Preserve all unaffected, permissible aspects of the user's direction.
 
-## 10. Restrictions that are expressly authorized or genuinely required
+## 11. Restrictions that are expressly authorized or genuinely required
 
 A restriction may be included only in either of these circumstances:
 
@@ -250,7 +250,7 @@ Ask all of the following:
 
 If any wording fails this audit, remove or fix it before archiving and verification. Do not proceed by leaving the wording in place and promising to ignore it later.
 
-## 12. Archiving, verification, and actual submission
+## 13. Archiving, verification, and actual submission
 
 The prompt-fidelity audit is a mandatory pre-generation gate.
 
@@ -268,7 +268,7 @@ If the image tool's actual submitted payload is exposed, record it accurately. I
 
 Do not retroactively change the archived authored prompt to make it appear that a different text was submitted. Record any actual deviation separately, identify what changed, and state whether it was authorized. A materially different submitted prompt is not a faithful execution of the archived prompt.
 
-## 13. Responsibilities after generation
+## 14. Responsibilities after generation
 
 Evaluate the returned image against the user's actual brief and the specific objective of the attempt. A successful tool call does not establish that the image followed the prompt.
 
@@ -276,7 +276,7 @@ Do not justify an unwanted result by claiming that an unrequested restriction or
 
 If the output exposes a prompt-fidelity error, record the error and fix the workflow for the next attempt. Do not repeat the unauthorized wording. Do not treat the failure as permission to change the user's locked features.
 
-## 14. Required decision rule
+## 15. Required decision rule
 
 When deciding whether to retain any phrase or detail, use this test:
 
@@ -289,7 +289,7 @@ When deciding whether to retain any phrase or detail, use this test:
 
 The prompt author must justify every addition. Use the active brief, the user's authorization, or a genuinely applicable safety requirement as the basis. The absence of an objection is not approval.
 
-## 15. Compact pre-generation checklist
+## 16. Compact pre-generation checklist
 
 Use this checklist before every image generation or edit:
 
@@ -303,5 +303,9 @@ Use this checklist before every image generation or edit:
 - [ ] The complete prompt—not merely the changed passage—has been audited.
 - [ ] Unsupported wording has been removed before archiving and verification.
 - [ ] The archived and verified prompt is the exact authored text that will be submitted.
+- [ ] When an existing successful prompt is assigned, the complete text was copied verbatim before the requested in-place change.
+- [ ] Every unchanged passage remains word-for-word identical and in the same order as the assigned prompt.
+- [ ] The generation prompt contains no attempt numbers, file names, paths, repository references, prompt-record references, IDs, or retrieval instructions.
+- [ ] The generation prompt contains no reference to an image, attachment, source image, or editing operation.
 
 **Generation gate:** Do not generate or edit until every applicable item passes. If an item does not pass, fix the prompt first. Do not weaken the rule to fetch an attempt through.
