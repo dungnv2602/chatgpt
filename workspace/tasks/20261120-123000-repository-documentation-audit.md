@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 15:37 UTC
+- **Updated:** 2026-11-20 16:01 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -47,7 +47,7 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - Preserve the future revision template, initialization review checklist, and maintenance rule in the initialization policy.
 - Track unresolved audit work and update this task record as work progresses.
 - Do not raise lint baselines to make findings disappear.
-- Exclude the entire `archive/` tree from this audit. Do not read, scan, audit, lint, or modify any file under it.
+- Exclude the entire `archive/` tree from content audits, linting, and link-source/heading-anchor inspection. Do not read, scan, audit, or lint archived contents. Required task archival and scheduled retention writes remain permitted; they do not authorize inspection of archived contents.
 - For links from active documents to archived paths, check path existence only. Do not inspect archived content or heading anchors.
 - Verify every repository write by fetching the committed path from branch `gpt`.
 
@@ -56,9 +56,17 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - The audit is an active P1 task because its prior records explicitly leave work open.
 - Versions 5–32 are moved verbatim into this task's Audit History section.
 - Branch `gpt` remains the sole working branch. Do not modify `main` without explicit authorization.
-- The entire `archive/` tree is outside the audit scope. This supersedes earlier progress notes that proposed a historical-link review or treated archive files as audit sources.
+- The entire `archive/` tree is outside content-audit scope. Do not inspect archived contents. Required task archival and retention operations remain permitted and are separate from auditing.
 
 ## 6. Progress Log
+
+### 2026-11-20 16:01 UTC
+
+- **Action:** Paused the documentation audit to address the user's explicit workflow correction.
+- **Result:** The audit remains In Progress. Its content-audit exclusion for `archive/` remains intact, but its blanket prohibition on required archival writes is superseded. The new task `20261120-160152` is the current execution task.
+- **References:** `skills/conversation-mode/SKILL.md`; `skills/the-worker/SKILL.md`; `workspace/discussion.md`.
+- **Next:** Resume the audit after the workflow correction is complete. Do not inspect archived contents.
+
 
 ### 2026-11-20 15:37 UTC
 

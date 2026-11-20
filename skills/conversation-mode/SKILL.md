@@ -79,35 +79,31 @@ The Worker applies in every conversation mode. Condensed Mode changes only the a
 
 ### Discussion register and assistant replies
 
-Use `workspace/discussion.md` as the single communication record in Condensed Mode. It contains user messages, assistant replies, decisions, progress, blockers, and final reports. Do not separate discussions from reports. A report is an assistant reply.
+Use `workspace/discussion.md` as a temporary register of **open discussions only**. It is not a conversation transcript, progress log, task report, or historical record. Retain only matters that still need a user decision, approval, clarification, or continued discussion.
 
-Keep one continuous stream. Put the newest information at the top. Add each new user message and the corresponding assistant reply at the top. Preserve the user's wording. Keep assistant replies complete enough to answer the user's message. Do not create topic-specific report sections or separate work-report sections.
+For each open matter:
 
-At the start of Condensed Mode work in each conversation:
+- Preserve the user's relevant wording and only the assistant context needed to understand the unresolved point.
+- Keep distinct open matters separate and put the newest matter first.
+- Keep the entry current. Do not append routine progress, completed work reports, or resolved exchanges.
+- At the start of Condensed Mode work in each conversation, read `workspace/discussion.md` once and review only the matters that remain open.
+- When the user raises a distinct unresolved matter, add it as a new open entry.
 
-1. Read `workspace/discussion.md` once.
-2. Review the latest messages and unresolved matters.
-3. Continue the relevant thread when the user's prompt refers to it.
-4. Start a new entry when the user raises a distinct matter.
+**Close and clear discussions automatically.** A matter becomes inactive when its question has been answered, its decision has been implemented or rejected, its proposal has been withdrawn, or its related task is complete and no further user input is needed. When that happens, remove that matter from `workspace/discussion.md` in the same turn. Do not preserve a closed entry as history. Keep unrelated open matters. If no open matters remain, leave only the empty-state placeholder:
 
-Use clear date and time stamps in UTC. Do not label content as a discussion or a report. Do not duplicate the same message in multiple places.
+`# Open Discussions`
+
+`_No open discussions._`
+
+Use UTC timestamps for open entries. Do not duplicate task progress or verification details; the task record is authoritative for those details.
 
 ### Approval and clearing
 
-An explicit user approval of any proposal, decision, or requested action is the clearing cue.
+Approval authorizes only the scope the user approved. It does not authorize unrelated work or clear unrelated open discussions.
 
-When the user approves:
+Keep an approved matter open while the approved work is incomplete or still requires user input. Once the work is complete and verified, remove only that resolved matter from `workspace/discussion.md`. A rejected or withdrawn proposal is also removed when no further discussion is needed. Do not wait for a separate approval to clear a resolved discussion.
 
-1. Treat the approval as authorization for the stated scope.
-2. Complete the approved work and verify its permanent documentation.
-3. Clear the entire contents of `workspace/discussion.md`. Leave only the empty-state placeholder.
-4. Do not preserve separate report sections or retain approved entries in the file.
-
-Do not clear the file before an explicit approval. A question, acknowledgement, or ambiguous response is not approval. Approval does not authorize work outside the approved scope.
-
-When the user rejects or withdraws a proposal, record the decision in the same continuous stream. Do not clear the file unless the user also approves a separate matter.
-
-Keep the file present when it is clear. Use the `No open discussions` placeholder. Git history retains prior versions.
+Never clear an unrelated open matter. Do not retain resolved matters for history. If the last open matter closes, leave only the empty-state placeholder defined above. Keep the file present even when it is empty.
 
 Do not record credentials, access tokens, hidden reasoning, or unrelated sensitive information.
 
@@ -126,10 +122,10 @@ Do not record credentials, access tokens, hidden reasoning, or unrelated sensiti
 - Treat approval as authorization to execute the approved scope. Do not expand that scope without approval.
 - When you need to communicate anything beyond the task link, write that information in `workspace/discussion.md` and provide only its direct link.
 - Put progress that the user needs to know, decisions, blockers, verification results, and task outcomes in `workspace/discussion.md`. Do not send these details as chat text.
-- At task completion, write the factual work report to `workspace/discussion.md`. Include the outcome, task link, changed paths, commit link when available, verification result, and blocker or next action.
+- At task completion, keep the factual work report in the task record. Add or retain a discussion entry only when a user decision, clarification, or follow-up remains open. Remove the resolved thread before the final response; if no open discussions remain, leave the empty-state placeholder.
 - Fetch the committed discussion file from branch `gpt` and verify its contents before providing its link.
 - If task creation fails, do not claim success or provide an invented task link.
-- If work fails or stops before completion, record the actual outcome and blocker in `workspace/discussion.md` and provide its link.
+- If work fails or stops before completion, record durable progress in the task record. Put only a decision, clarification, or blocker that needs user input in `workspace/discussion.md`, then provide its link.
 
 The task link identifies the active work. The discussion link carries all other user-facing communication.
 

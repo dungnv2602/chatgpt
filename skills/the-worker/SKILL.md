@@ -50,7 +50,7 @@ After cue-triggered skill loading, repeat the same one-time snapshot. Do not wai
 - workspace/tasks/ contains current task records.
 - archive/README.md defines archive retention.
 - archive/tasks/ contains completed or cancelled task records during retention.
-- Treat the entire `archive/` tree as retention-only. Never read, scan, audit, lint, or change its contents. When an active document links to an archived path, check only that the target path exists. Do not inspect archived file content or heading anchors.
+- Treat `archive/` as retention-only and outside content-audit scope. Never read, scan, audit, or lint archived contents. This restriction does not prohibit required archival and retention operations: create or move completed/cancelled task records into `archive/tasks/`, update the active task board to link to the archived record and archival commit, and allow the scheduled retention workflow to delete expired archive contents. Do not inspect archived contents as part of these operations. For links from active documents to archived paths, check only that the target path exists; do not inspect archived file content or heading anchors.
 
 Do not create a conversation transcript. The discussion register is a temporary record of unresolved topics, not a transcript.
 
