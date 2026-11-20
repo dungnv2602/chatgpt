@@ -41,7 +41,7 @@ For a style-only change, revise only the rendering treatment. Preserve all scene
 
 ## 4. Optional direct-edit verification
 
-Direct editing is a secondary method, not the default. Use it only when the user explicitly requests a direct image edit. You may also use it when prompt reconstruction is materially inadequate and the actual image source is accessible through the supported mechanism.
+Direct editing is a secondary method, not the default. Use it only when the user explicitly requests a direct image edit. Use it when reconstruction is materially inadequate and the actual image source is accessible through the supported mechanism.
 
 - Attach the exact image source. A filename or image ID in text is not enough.
 - Inspect the returned operation and parent/source metadata.
