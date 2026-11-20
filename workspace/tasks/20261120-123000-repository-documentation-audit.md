@@ -195,6 +195,15 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Validation:** Source review only. No lint baseline changed. Did not run the linter locally or inspect CI.
 - **Next:** Continue the remaining manual review. Let GitHub Actions validate matching pushes and inspect CI only when the user asks.
 
+### 2026-11-20 13:24 UTC
+
+- **Action:** Continued the sentence-length review in the Session Archiving reference.
+- **Change:** Split the image-provenance instruction into separate recording and storage-location sentences. Preserved all required metadata fields and the restriction against a global visual reference index.
+- **Commit:** `6977995437eb2c8b6d08d3ebe0459c60e6224398`.
+- **Read-back:** Fetched `skills/session-archiving/references/archive-records-and-image-prompts.md` from branch `gpt` and confirmed the revised instruction.
+- **Validation:** Manual source review only. Did not run the linter locally or inspect CI.
+- **Next:** Continue reviewing remaining long sentences and supported lint patterns. Keep CI inspection gated by an explicit user request.
+
 ## 7. Current State
 
 The historical Version 19 inventory contained 166 Markdown files and 119 active source files. The Version 17 count of 121 used the same exclusions except for `skills/asd-ste100/examples/`. That directory contained two Markdown files, which explains the exact difference.
