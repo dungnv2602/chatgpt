@@ -21,6 +21,7 @@ jobs:
     timeout-minutes: 2
     permissions:
       actions: write
+      contents: read
     outputs:
       proceed: ${{ steps.guard.outputs.proceed }}
     steps:
