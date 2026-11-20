@@ -155,6 +155,27 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
 - **Validation limit:** The ASD-STE100 linter and the full repository audit have not run. The audit remains in progress.
 - **Commits:** `683d0367f0fd171403990189dca0e2169b8f491e`, `8dd008db79fe086728d97cf85802e40ebc1b8fc1`, `44a624833db2e82f86da0dd34c140ee5eb5cffbf`, `8832f92875c057c1d4903f6ed800eb9481830e11`, and `48fd5805622c66f1a27786ee1640a1929cc5e479`.
 
+### Version 6 — Second repository documentation audit pass
+
+- **Date:** 2026-11-20
+- **Change:** Revise additional skill instructions, references, image documentation, and one current novel template.
+- **Files modified:**
+  - `skills/SESSION_START.md`
+  - `skills/novelist-initiation/INITIATION.md`
+  - `skills/drawing/references/image-editing-protocol.md`
+  - `skills/conversation-mode/SKILL.md`
+  - `skills/romantic-storyteller-visual-artist/references/novel-production-workflow.md`
+  - `skills/philosophy-religion-asceticism/README.md`
+  - `skills/philosophy-religion-asceticism/references/research-method.md`
+  - `skills/philosophy-religion-asceticism/references/source-standards.md`
+  - `images/README.md`
+  - `novels/templates/scene-v1.1.md`
+- **Verification:** Fetched the changed paths again from branch `gpt`. Read-back confirmed the new content.
+- **Validation limit:** The repository linter has not run. This environment does not provide a repository shell or action-dispatch tool. Manual review is not a substitute for the linter.
+- **Inventory limit:** The exact path `master/README.md` returned 404. The available GitHub tools do not provide a permitted directory listing for `master/`, so I could not inventory its other files.
+- **Remaining work:** Audit the remaining skill and technical reference documents. Run the linter in a repository execution environment. Review every linter finding and verify links and meaning.
+- **Commits:** `1cc5e5d623e8200316d009dc2219a74287c591fc`, `f898c0bd2fc68a123df16f1b0b6ce44d13ba7e9d`, `82df4add11b03428ac1a49ba948e24ccf9e78e35`, `5bf95f28bc4cbbd645ae86fc4407fbdc32826b01`, `29a58b17304c56e986e39af15d2867b955e17665`, `2333a0378f0f6aebad5bdd7b31801d57ee04dfb0`, `5f1a78b68e655e10160d852fd81be65d937f4111`, `f47d07242b7605dded9d17b2ba82425e34e48cd2`, `3f223f69f1aaff0da7643f81ea58ce950746085d`, and `11752c6e9eeaabe66580ae3d69de46e3ef6f649a`.
+
 ## Future revision log
 
 Append a new entry whenever the initialization policy or its dependencies change.
