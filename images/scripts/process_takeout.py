@@ -783,8 +783,17 @@ def prepare_session_manifest_updates(prepared: list[dict[str, Any]], root: Path)
             prior_by_id = seen_ids.get(image_id)
             prior_by_webp = seen_webps.get(relative_webp)
             prior_by_output_id = seen_output_ids.get(item["output_id"]) if item["output_id"] else None
-            if prior_by_id or prior_by_webp or prior_by_output_id:
-                prior = prior_by_id or prior_by_webp or prior_by_output_id
+            if prior_by_output_id:
+                if (
+                    prior_by_output_id.get("webp_path") == relative_webp
+                    and prior_by_output_id.get("sha256") == item["source_sha"]
+                ):
+                    continue
+                raise ProcessingError(
+                    f"Duplicate output_id in session manifest: {item['output_id']}"
+                )
+            if prior_by_id or prior_by_webp:
+                prior = prior_by_id or prior_by_webp
                 if (
                     prior.get("webp_path") == relative_webp
                     and prior.get("sha256") == item["source_sha"]
@@ -792,8 +801,7 @@ def prepare_session_manifest_updates(prepared: list[dict[str, Any]], root: Path)
                 ):
                     continue
                 raise ProcessingError(
-                    f"Conflicting session manifest identity for image {image_id}, "
-                    f"{relative_webp}, or output ID {item['output_id']!r}."
+                    f"Conflicting session manifest identity for image {image_id} or {relative_webp}."
                 )
             rows.append(row)
             seen_ids[image_id] = row
