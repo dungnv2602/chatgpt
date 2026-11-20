@@ -18,13 +18,13 @@ Activate only when the user explicitly requests formal novelist-role initializat
 
 1. Verify that foundational initialization has completed successfully in the current conversation.
 2. If it has not, stop and ask the user to say `start session`. Do not begin novelist initialization.
-3. Follow the complete canonical procedure in the “Be the novelist” section of `skills/SESSION_START.md`.
+3. Follow the complete canonical procedure in the Novelist role initialization section of `skills/SESSION_START.md`.
 4. Do not infer permission to write a new scene or generate an illustration merely from role initialization. Follow the user's actual task instruction.
 
 ## Authority
 
 - `skills/SESSION_START.md` defines foundational initialization.
-- The “Be the novelist” section of `skills/SESSION_START.md` defines the complete role-and-project onboarding procedure.
+- The Novelist role initialization section of `skills/SESSION_START.md` defines the complete role-and-project onboarding procedure.
 - The active novel's canonical records govern story facts and continuity.
 - User instructions and established project constraints remain authoritative.
 
