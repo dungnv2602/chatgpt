@@ -24,8 +24,6 @@ case "$file" in
   skills/drawing/references/image-editing-protocol.md) baseline=4 ;;
   skills/drawing/references/prompt-fidelity.md) baseline=15 ;;
   skills/drawing/references/series-continuity-and-iteration.md) baseline=9 ;;
-  skills/novelist-initiation/INITIATION.md) baseline=4 ;;
-  skills/novelist-initiation/SKILL.md) baseline=1 ;;
   skills/philosophy-religion-asceticism/SKILL.md) baseline=7 ;;
   skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md) baseline=7 ;;
   skills/philosophy-religion-asceticism/references/source-standards.md) baseline=1 ;;
