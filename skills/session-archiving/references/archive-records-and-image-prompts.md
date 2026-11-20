@@ -56,7 +56,7 @@ This is the operational history of image generation and editing.
 
 ### Drawing-session opening brief — visual authority
 
-Every distinct drawing session begins with a user-defined visual direction.
+Every distinct drawing session starts with a user-defined visual direction.
 This opening brief is the sole creative authority for that session. It applies to day-drawing and novel-illustration sessions. No repository-wide image index, historical prompt, previous portrait, character sheet, stored image, or old project convention dictates the new session. Use one only when the user explicitly adopts it.
 
 - For non-novels/day drawing, archive the brief as
@@ -64,7 +64,7 @@ This opening brief is the sole creative authority for that session. It applies t
 - For a named novel scene, archive it as
   `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/session-[YYYY-MM-DD]-[NN]-brief.md`.
 - Create and commit the brief before the first image prompt for that session.
-  Read it back and confirm it.
+  Read it back and verify it.
 - Preserve the user's opening direction faithfully. Record specified, locked,
   variable, excluded, and open details. Mark unspecified features as open.
   Never invent constraints.
@@ -96,7 +96,7 @@ invent detail.
 **Session type:** Day drawing / Novel illustration
 **Project or novel scene:** ...
 **Created:** YYYY-MM-DD
-**Status:** Active / Paused / Closed (new sessions begin Active)
+**Status:** Active / Paused / Closed (new sessions start Active)
 
 ## User's opening brief
 > [Preserve the user's opening direction accurately.]
@@ -143,7 +143,7 @@ questionnaire that must be completed before work.
 
 - Create every new drawing-session brief with status `Active`.
 - Keep at most one drawing session `Active` in the current workflow context.
-  When a new distinct session begins while another session is still open, mark
+  When a new distinct session starts while another session is still open, mark
   the previous `Active` session `Paused` and the new session `Active`.
 - When resuming a `Paused` session, mark it `Active` and mark any other
   currently `Active` session `Paused`.
@@ -221,7 +221,7 @@ Before drafting the next prompt:
    changes from them and apply those changes to the successful baseline. Never
    use a failed prompt as the base.
 4. If no series applies, use the most recent successful prompt for the exact
-   artwork/thread. If no relevant success exists, start from the current session
+   artwork/thread. If no relevant success exists, use the current session
    brief and explicit constraints. Do not borrow from an unrelated series. For a
    new subseries, record any inherited parent-series seed and branch point.
 5. Change as little as practical so the next attempt tests a clear hypothesis.
@@ -326,7 +326,7 @@ Each such attempt must record:
   was actually performed and source linkage verified.
 - The output's comparison against the successful baseline and requested change.
 
-If the successful baseline prompt cannot be recovered, disclose the missing source. Do not fabricate prompt text. Use direct source-image editing only when explicitly requested or when reconstruction is materially inadequate and the exact source image can be attached through a supported mechanism. Verify source linkage before calling it a confirmed edit.
+If the successful baseline prompt cannot be recovered, disclose the missing source. Do not fabricate prompt text. Use direct source-image editing only when explicitly requested. Also use it when reconstruction is materially inadequate and you can attach the exact source image through a supported mechanism. Verify source linkage before calling it a confirmed edit.
 
 - Deliver generated images in the conversation.
 - Store new retained non-novels/day drawing outputs in `drawings/YYYY-MM-DD/images/` using `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.). Link exact verified assets from the attempt note and daily README. Existing image assets are not migrated. Non-novel reference/source images remain under `images/`. Novel-scene illustration binaries remain in the novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library. New uploads for permanent reference/novel destinations enter through `images/takeout/` and its hand-off.
