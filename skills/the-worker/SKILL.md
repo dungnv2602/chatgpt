@@ -44,7 +44,7 @@ After cue-triggered skill loading, repeat the same one-time snapshot. Do not wai
 ## Workspace structure
 
 - workspace/README.md defines workspace navigation and operating rules.
-- workspace/discussion.md stores open discussions and the three most recent successful reports in Condensed Mode. Conversation Mode owns this file.
+- workspace/discussion.md stores anything awaiting user input, unresolved failures, and the three most recent successful reports in Condensed Mode. Conversation Mode owns this file.
 - workspace/task_board.md indexes active, ready, blocked, proposed, and historical tasks.
 - workspace/TASK_TEMPLATE.md defines the task record format.
 - workspace/tasks/ contains current task records.
