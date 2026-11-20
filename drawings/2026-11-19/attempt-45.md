@@ -1,7 +1,7 @@
 # Attempt 45 — Formal redo of Attempt 05 (November 19)
 
 - **Date:** 2026-11-20
-- **Status:** Prompt archived and verification pending generation.
+- **Status:** Generated; archival upload pending.
 - **Operation:** Fresh generation (redo; not an edit).
 - **Mode:** Realistic.
 - **Session:** Continuation/redo of the 2026-11-19 portrait work; no separate session brief exists in the repository.
@@ -20,7 +20,15 @@
 - **Prompt ID:** P45 (internal archive ID; not a native tool ID).
 - **Attempt ID:** A45 (internal archive ID).
 - **Output reservation:** A45-O01.
-- **Generation pending.**
+- **Outcome:** Generated. The result shows a seated waist-up studio portrait, warm-neutral background, soft lighting, and the ivory wrap silhouette. Outfit details and face continuity are not verifiable against an attached reference.
+- **Generation ID:** `c8771988-990d-4908-848a-0a12d490223d`
+- **Native output/image ID:** Not exposed.
+- **Output ID:** A45-O01 (internal archive ID).
+- **Original PNG:** `/mnt/data/a_clean_studio_portrait_scene_a_single_young_adul.png` (accessible in this session).
+- **Original size:** 1,881,690 bytes.
+- **Original SHA-256:** `be5eded42f206ce71256fcd79671ca0bfe328cbda6595440ca78c90174c2e143`
+- **Repository image asset:** Pending upload; no WebP derivative or GitHub image link verified.
+- **Approval:** Not recorded.
 
 ## Exact authored prompt
 
