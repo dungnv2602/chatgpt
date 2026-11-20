@@ -177,7 +177,7 @@ context do not resolve it. Day-drawing sessions may mark this field
 
 ### Daily folder and one-note-per-attempt format for non-novel drawing work
 
-For non-novel drawing work, organize image prompts by date. Each calendar day is a folder under `drawings/`, and each image-generation or image-edit attempt is its own Markdown note. **Exception:** for an illustration belonging to a named novel scene, the scene-local prompt record under `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/` is authoritative. Keep that novel attempt there and do not duplicate it in the daily `drawings/` folder.
+For non-novel drawing work, organize image prompts by date. Each calendar day is a folder under `drawings/`. Each image-generation or image-edit attempt is its own Markdown note. **Exception:** For an illustration in a named novel scene, the scene-local prompt record under `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/` is authoritative. Keep that novel attempt there. Do not duplicate it in the daily `drawings/` folder.
 
 ```text
 drawings/
@@ -203,7 +203,7 @@ drawings/
 
 ### Mandatory pre-attempt rule
 
-**Commit the session brief and authored prompt in their authoritative locations before the first image-generation or image-edit attempt.** For non-novel work, use the session brief and attempt notes under `drawings/YYYY-MM-DD/`. For a named novel scene, use the session brief and illustration prompt records under `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/`. This applies whether the next attempt is expected to succeed, is exploratory, or is a revision. Never generate first and archive later, and never duplicate a novel-scene prompt in the root `drawings/` history.
+**Commit the session brief and authored prompt in their authoritative locations before the first image-generation or image-edit attempt.** For non-novel work, use the session brief and attempt notes under `drawings/YYYY-MM-DD/`. For a named novel scene, use the session brief and illustration prompt records under `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/`. This rule applies to successful, exploratory, and revision attempts. Never generate first and archive later. Never duplicate a novel-scene prompt in the root `drawings/` history.
 
 Before drafting the next prompt:
 1. Read the authoritative session-opening brief first. If it does not exist,
