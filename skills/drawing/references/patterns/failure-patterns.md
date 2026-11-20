@@ -219,3 +219,34 @@ and the user's latest instructions. Do not restore wording merely because it app
 
 ### Limitations
 This entry documents one explicit correction sequence and a broader user-identified concern. It does not establish that every negative instruction is unnecessary. The active brief and applicable requirements remain controlling.
+---
+
+## F-008 — Workflow metadata is included in the image-generation prompt
+
+- **Confidence:** Supported
+- **Last reviewed:** 2026-11-21
+- **Scope:** Prompt-based reconstruction and adjustment of an existing successful result.
+
+### Observed failure
+The generation prompt referred to an archived attempt label (for example, an attempt number) and described the assigned prompt as a source. These references are repository and workflow metadata. The image tool cannot use them to retrieve the archived prompt. The prompt also failed to follow the required method of taking the assigned successful prompt as-is and modifying only the requested details.
+
+### Impact
+The submitted text is not a clean visual instruction. It can omit or distort the actual approved wording, add irrelevant references, and make the generation depend on records the image tool cannot access. It also violates the user's explicit instruction to use the assigned prompt itself as the baseline.
+
+### Cause
+The prompt author mixed internal provenance and workflow explanation into the text intended for the image tool. The exact internal model behavior is not established and is not needed to identify this workflow error.
+
+### Countermeasures
+
+- Copy the complete assigned successful prompt verbatim.
+- Modify only the smallest passage required by the user's latest request.
+- Preserve every unaffected word and its order. Do not paraphrase, summarize, polish, or reconstruct the prompt.
+- Keep attempt labels, file names, paths, repository references, prompt-record references, IDs, and provenance details in the archive only.
+- Keep references to images, attachments, and editing operations out of the generation prompt.
+- Compare the final submitted text with the assigned prompt before archiving and generation. Every changed passage must be justified by the user's request.
+
+### Effective prevention rule
+The mandatory rule is maintained in [Drawing Skill](../../SKILL.md), [Image Reference and Editing Protocol](../image-editing-protocol.md), and [Prompt Fidelity and Unrequested Restrictions](../prompt-fidelity.md). The assigned successful prompt is the literal text baseline. Copy it as-is, make only the requested in-place change, and submit a self-contained visual prompt with no workflow metadata or inaccessible references.
+
+### Limitations
+This entry documents a directly identified prompt-construction failure. It does not establish how the image model would interpret any particular metadata phrase. The failure is the inclusion of non-visual, inaccessible workflow references and the failure to preserve the assigned prompt verbatim.
