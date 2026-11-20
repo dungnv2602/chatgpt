@@ -101,7 +101,7 @@ Apply this order whenever an image belongs to an established series:
    overrides any conflicting face, identity, outfit, scene, pose, mood, style,
    palette, setting, or composition. Do not use a later failed, rejected, partial,
    or missed-target prompt as the base merely because it is newer.
-4. **Inspect later unsuccessful attempts only as diagnostics.** They can reveal what failed, what the user corrected, and what specific change the user still wants. Extract only explicit user-requested or user-approved changes, then apply those deltas to the most recent successful prompt. Do not copy assistant-added wording, speculative embellishments, or failed prompt structure simply because they appeared later.
+4. **Inspect later unsuccessful attempts only as diagnostics.** They can reveal what failed, what the user fixed, and what specific change the user still wants. Extract only explicit user-requested or user-approved changes, then apply those deltas to the most recent successful prompt. Do not copy assistant-added wording, speculative embellishments, or failed prompt structure simply because they appeared later.
 5. **A partial result does not displace the successful baseline.** Preserve useful visual observations from it. Build the next authored prompt from the most recent successful prompt. Promote a partial result to a successful series result only when the user explicitly accepts it as successful for the intended purpose. Record that decision and the exact originating prompt.
 6. **Separate prompt success from image approval.** A user-approved image is a valid visual keeper or reference. It establishes a successful prompt baseline only when you can identify its originating attempt. The user's approval must also accept that attempt and result as successful for the requested purpose. If the image-to-prompt mapping is uncertain, use the image only as a visual reference or edit source. Do not invent or infer its prompt.
 7. **Respect branch prompt lineage.** A new subseries or spin-off may use the parent's latest successful prompt as its seed. Record the seed and branch point. Once the branch has a successful prompt, use its latest success. Do not use later parent prompts.
@@ -112,7 +112,7 @@ Apply this order whenever an image belongs to an established series:
 9. **For non-series work, preserve artwork continuity.** When the user iterates on one standalone image or artwork thread, use its most recent successful prompt. Do not treat "standalone" as permission to search unrelated projects for a loosely similar prompt.
 10. **Keep crossover lineage explicit.** A crossover has one primary series for baseline selection and one or more secondary memberships. Use the primary series' most recent successful prompt as the text baseline and carry secondary-series requirements as constraints. If no primary series is clear and the distinction materially changes the prompt, ask one focused question.
 11. **Match the baseline to the operation.** The newest successful prompt in the active series remains the latest-success anchor. Use it directly when its operation and scope fit the next task.
-   If it is a localized edit or style-only prompt, check whether it can serve as a full-scene prompt for a new generation. If it cannot, use the most recent successful full-generation prompt from the same series as the text skeleton.
+   If it is a localized edit or style-only prompt, assess whether it can serve as a full-scene prompt for a new generation. If it cannot, use the most recent successful full-generation prompt from the same series as the text skeleton.
    Carry forward only later successful, user-approved details that fit the active session brief. Record both prompt references. Explain why you need the older full-scene skeleton. This exception applies only to operation compatibility. It does not permit a failed prompt or a prompt from another series.
 12. **Keep edits separate from prompt baselines.** When the user requests an edit of a successful image, use the actual image as the source. Do this only when the image is accessible and can be attached. The successful prompt remains useful context. It does not replace the source image. An image filename or generation ID is not an attachment.
 13. **Honor explicit user selection.** If the user names a particular successful prompt as the baseline, use it after reading the record. If the user names an image as the visual/edit baseline, use that image for the requested role when it is actually available. Do not mislabel it as a prompt.
@@ -160,9 +160,8 @@ next operation based on what actually succeeded: the prompt, the image, or both.
    image is accessible, pass it through a supported image-reference/edit
    mechanism. Edit that source directly. This avoids needless regeneration of
    an image that already works.
-4. **Successful prompt but source image unavailable for editing:** Keep the proven
-   prompt as the baseline, apply the requested changes to it, and make a fresh
-   generation. Do not pretend the unavailable image is being edited.
+4. **Successful prompt but source image unavailable for editing:** Keep the proven prompt as the baseline. Apply the requested changes to it
+   and make a fresh generation. Do not pretend the unavailable image is being edited.
 5. **Unsuccessful prompt or image:** Diagnose the precise miss. Keep the most
    recent successful prompt in the active series/artwork thread as the text
    baseline. Apply only the required correction to that baseline. Do not build
