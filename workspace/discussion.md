@@ -1,5 +1,20 @@
 # Open Discussions
 
+### 2026-11-20 16:15 UTC
+
+**Assistant**
+
+Completed the external URL review for the 41-file full-document lint scope. The task record now distinguishes the last completed full-lint result from later source edits that GitHub Actions has not yet validated.
+
+The latest completed full technical-document lint, run 44753554043 on commit 0178a7d30d09de220df9e3c3b75860e9054d8b73, passed with 69 hard and 262 advisory findings across 41 files. It reported 34 synonym-rotation findings, 22 long-sentence findings, and one dangling-conjunction finding. Later source-review commits target the active-document synonym cases, the dangling conjunction, and remaining long sentences. I have not waited for or polled their CI results.
+
+The 60 long-sentence candidates in the earlier full-audit log have all received source review. The 13 examples in ASD-STE100 remain unchanged to preserve their teaching content. Historical-link review remains gated on your authorization.
+
+Next: inspect the newest available CI result at a later mandatory preflight, repair any completed failure without raising baselines, and close the task only when the approved scope is complete.
+
+---
+
+
 ### 2026-11-20 16:05 UTC
 
 **Assistant**
