@@ -1,8 +1,12 @@
 ---
 name: drawing
 description: "Create and refine images in two deliberate visual modes: Realistic and Vintage. Use for image generation, editing, style transformations, composition, character continuity, and iterative visual refinement."
-created: 2026-11-18T13:18
-updated: 2026-11-20
+metadata:
+  project-role: task-specific
+  loading-policy: foundational-prerequisite
+  format: agentskills
+  created: "2026-11-18T13:18"
+  updated: "2026-11-20"
 ---
 
 # Drawing Skill
