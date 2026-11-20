@@ -4,7 +4,7 @@ The Session Archiving skill owns the image-intake and publication-verification t
 
 ## Files
 
-- `scripts/process_takeout.py` — validates one `images/takeout/` hand-off. It checks destination safety and source identity. It converts PNG and JPEG files to WebP. It stages the full batch before relocation. It updates drawing-session records and manifests. It writes success or failure reports and handles rollback.
+- `scripts/process_takeout.py` — checks one `images/takeout/` hand-off. It checks destination safety and source identity. It converts PNG and JPEG files to WebP. It stages the full batch before relocation. It updates drawing-session records and manifests. It writes success or failure reports and handles rollback.
 - `scripts/verify_published_manifest.py` — reads the pushed Git ref. It checks published master and WebP blobs, checksums, canonical WebP URLs, and drawing-session links. It then updates or checks manifest status.
 - `scripts/test_process_takeout_unittest.py` — tests the processor and publication verifier. It imports the verifier from this directory. It runs the processor by its sibling path. Keep all three files together.
 
