@@ -9,7 +9,7 @@ not the image binary itself. Default to controlled prompt reconstruction:
 - Locate the exact successful prompt in the authoritative attempt record.
 - Verify that it produced the target image or that the user approved that
   specific attempt as successful for the intended purpose.
-- Recover the complete authored prompt. If it is unavailable, disclose the gap;
+- Recover the complete authored prompt. If it is unavailable, disclose the gap
   do not invent, reconstruct from memory, or substitute an unrelated prompt.
 - Use the successful prompt as the baseline for rebuilding the image. Preserve
   its established visual content and details unless the user requests a change.
@@ -65,7 +65,7 @@ explicitly requests a direct image edit or when prompt reconstruction is
 materially inadequate and the actual image source is accessible through the
 supported mechanism.
 
-- Attach the exact image source; a filename or image ID in text is not enough.
+- Attach the exact image source. A filename or image ID in text is not enough.
 - Inspect the returned operation and parent/source metadata.
 - If source linkage is confirmed and the requested change is visible, classify
   it as a confirmed edit.
@@ -90,13 +90,13 @@ If the revised prompt reconstruction repeatedly misses the requested detail:
 # 6. Prompt-before-generation archive
 
 Follow `skills/session-archiving/SKILL.md` for every attempt:
-- create or retrieve the current session-opening brief and verify its exact path;
-- for non-novel work, commit the authored prompt in its dated `prompts/YYYY-MM-DD/` attempt note; for a named novel scene, commit it in the authoritative scene-local illustration prompt record under `novel/`;
-- treat the session brief as the visual authority; use the most recent successful prompt in the explicitly active series only as a compatible text baseline, never as an authority over the current brief;
-- later failed, rejected, partial, or missed-target prompts are diagnostic evidence only, never the baseline;
-- record the session ID/brief path, series ID/theme when explicitly active, selected baseline provenance, operation type, and the actual source reference attached;
-- derive normally three to five observable acceptance criteria from the brief and mark critical criteria;
-- record the prompt difference: baseline, preserved details, changed details, and excluded/not-carried-forward details;
-- verify the pre-attempt commit;
-- after the call, record the actual result, image ID, user assessment, and mismatch;
+- create or retrieve the current session-opening brief and verify its exact path
+- for non-novel work, commit the authored prompt in its dated `prompts/YYYY-MM-DD/` attempt note. For a named novel scene, commit it in the authoritative scene-local illustration prompt record under `novel/`
+- treat the session brief as the visual authority. Use the most recent successful prompt in the explicitly active series only as a compatible text baseline, never as an authority over the current brief
+- later failed, rejected, partial, or missed-target prompts are diagnostic evidence only, never the baseline
+- record the session ID/brief path, series ID/theme when explicitly active, selected baseline provenance, operation type, and the actual source reference attached
+- derive normally three to five observable acceptance criteria from the brief and mark critical criteria
+- record the prompt difference: baseline, preserved details, changed details, and excluded/not-carried-forward details
+- verify the pre-attempt commit
+- after the call, record the actual result, image ID, user assessment, and mismatch
 - do not store image binaries in Git unless requested and technically completed.
