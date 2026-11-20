@@ -10,7 +10,7 @@ metadata:
 
 ## 1. Absolute workspace boundary
 
-**Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `drawings/`, and `skills/`. Do not read, list, search, fetch, create, update, move, rename, or delete files outside those directories, except for the specifically authorized workflow exception below.
+**Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `drawings/`, `skills/`, `workspace/`, and `archive/`. Do not read, list, search, fetch, create, update, move, rename, or delete files outside those directories, except for the specifically authorized workflow exception below.
 
 **Authorized WebP workflow exception:** The user authorized creation of `.github/workflows/convert-images-to-webp.yml` on 12 November 2026. The user approved its takeout-pipeline and persistent staging changes on 20 November 2026. The user also approved moving its scripts into this skill and updating the required workflow paths. These changes define the current authorization. Obtain fresh permission before any further workflow changes.
 
@@ -22,6 +22,8 @@ This boundary applies to every future task and every tool call, not only archivi
   - `novels/` — structured narrative records
   - `drawings/` — session records and prompt history
   - `skills/` — reusable skills and supporting references
+  - `workspace/` — active task board and task records
+  - `archive/` — time-limited archive of completed and cancelled task records
 - Read and write files only by exact paths beginning with one of those approved directory names.
 - Do not recreate the obsolete `ChatGPT/` wrapper or consult former paths from the previous repository layout.
 - Do not use repository-wide code search or recursive root-tree listings. Use exact paths and narrowly scoped directory listings within approved project directories.
@@ -36,6 +38,8 @@ This boundary applies to every future task and every tool call, not only archivi
 - Repository: `dungnv2602/chatgpt`
 - Working branch: `gpt`
 - Workspace root: repository root, restricted to the approved directories above
+- Active task records: `workspace/`
+- Completed and cancelled task records: `archive/`, with 14-day retention
 - Images and visual references: `images/`
 - Canonical master reference documents: `master/`
 - Novel and scene records: `novels/`
@@ -55,7 +59,7 @@ During foundational initialization, read the [Conversation Mode skill](../conver
 
 ### Foundational skill loading cadence
 
-Load Session Archiving, Conversation Mode, Agent Skill Authoring, ASD-STE100, and GitHub Actions for `start session`. Also load this foundational tier as a prerequisite when the user starts a drawing session or requests novelist initialization and the tier has not passed in the current conversation. See `skills/SESSION_START.md` for the complete dependency order.
+Load Session Archiving, Conversation Mode, The Worker, Agent Skill Authoring, ASD-STE100, and GitHub Actions for `start session`. Also load this foundational tier as a prerequisite when the user starts a drawing session or requests novelist initialization and the tier has not passed in the current conversation. See `skills/SESSION_START.md` for the complete dependency order.
 
 Maintain a per-conversation verified-load ledger. Retrieve and read each required path once, then reuse it for later tiers and tasks. Do not reload a skill or reference merely because a specialist workflow depends on it.
 
@@ -78,11 +82,12 @@ When the user says **`start session`**, run this sequence before project work. A
 1. **Notify the user first.** State that the requested foundational checks are starting. Do not begin project work until they pass.
 2. Retrieve and read this Session Archiving skill from branch `gpt`.
 3. Retrieve and read `skills/conversation-mode/SKILL.md` from the same branch.
-4. Retrieve and read `skills/agent-skill-authoring/SKILL.md` from the same branch.
-5. Retrieve and read `skills/asd-ste100/SKILL.md` from the same branch.
-6. Retrieve and read `skills/github-actions/SKILL.md` from the same branch.
-7. Verify that every required retrieval succeeded. Confirm that you read each file. Keep the verified instructions for the rest of the conversation.
-8. Report completion only after every check passes. If a required retrieval fails, report its exact path and stop project work.
+4. Retrieve and read `skills/the-worker/SKILL.md` from the same branch.
+5. Retrieve and read `skills/agent-skill-authoring/SKILL.md` from the same branch.
+6. Retrieve and read `skills/asd-ste100/SKILL.md` from the same branch.
+7. Retrieve and read `skills/github-actions/SKILL.md` from the same branch.
+8. Verify that every required retrieval succeeded. Confirm that you read each file. Keep the verified instructions for the rest of the conversation.
+9. Report completion only after every check passes. If a required retrieval fails, report its exact path and stop project work.
 
 Do not load the Drawing skill or its references during foundational initialization. After the foundational gate passes, load Drawing only when the task requires it. For a drawing session or novelist request, first check the verified-load ledger. Reuse any Drawing files already read in this conversation and retrieve only missing files. If foundational initialization already passed, do not run this gate again.
 
