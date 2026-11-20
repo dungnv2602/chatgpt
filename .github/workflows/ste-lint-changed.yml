@@ -1,0 +1,44 @@
+name: STE Lint Changed Documentation
+
+on:
+  push:
+    branches:
+      - gpt
+
+permissions:
+  contents: read
+
+jobs:
+  ste-lint:
+    name: Lint changed Markdown files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Find changed Markdown files
+        id: changed
+        shell: bash
+        run: |
+          files=$(git diff --name-only --diff-filter=ACMR "${{ github.event.before }}" "${{ github.sha }}" -- '*.md')
+          {
+            echo "files<<EOF"
+            echo "$files"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Run STE linter on changed Markdown files
+        if: steps.changed.outputs.files != ''
+        shell: bash
+        run: |
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            python3 skills/asd-ste100/scripts/ste-lint.py "$file"
+          done <<< "${{ steps.changed.outputs.files }}"
