@@ -82,6 +82,9 @@ class TakeoutProcessorTests(unittest.TestCase):
                     f'"{item.get("destination_dir", "novel/Novel-02/assets/illustrations/ARC-001/SCN-001")}"'
                 ),
             ])
+            if "attempt" in item:
+                rows.append(f'    attempt: "{item["attempt"]}"')
+            ])
         (self.inbox / "HANDOFF.yml").write_text("\n".join(rows) + "\n", encoding="utf-8")
 
     def test_success_moves_byte_identical_master_creates_webp_and_archives_reports(self):
@@ -119,6 +122,50 @@ class TakeoutProcessorTests(unittest.TestCase):
             "images/takeout/webp/batch-test/attempt-001/IMG_001.PNG.webp",
         )
         self.assertFalse((self.inbox / "webp/batch-test/attempt-001").exists())
+
+
+    def test_attempt_output_upload_updates_attempt_record_and_readme(self):
+        session = self.root / "drawings/2026-11-19"
+        session.mkdir(parents=True)
+        attempt_record = session / "attempt-01.md"
+        attempt_record.write_text("# Attempt 01 — Approved portrait\n", encoding="utf-8")
+        readme = session / "README.md"
+        readme.write_text(
+            "# Drawing session\n\n"
+            "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+            "|---|---|---|---|---|---|\n"
+            "| [01 — Approved portrait](attempt-01.md) | Session | Standalone | Generated successfully | User approved | Waiting for image upload |\n",
+            encoding="utf-8",
+        )
+        (self.inbox / "portrait.png").write_bytes(b"portrait-original")
+        self.manifest(
+            {
+                "source": "portrait.png",
+                "asset_id": "",
+                "title": "Approved Portrait",
+                "destination_dir": "drawings/2026-11-19/images",
+                "attempt": "1",
+            },
+            batch="batch-session-link",
+        )
+
+        result = self.run_processor()
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+        image_dir = session / "images"
+        master = image_dir / "approved-portrait.png"
+        webp = image_dir / "approved-portrait.webp"
+        self.assertEqual(master.read_bytes(), b"portrait-original")
+        self.assertTrue(webp.is_file())
+        attempt_text = attempt_record.read_text(encoding="utf-8")
+        readme_text = readme.read_text(encoding="utf-8")
+        self.assertIn("[approved-portrait.webp](images/approved-portrait.webp)", attempt_text)
+        self.assertIn("[approved-portrait.webp](images/approved-portrait.webp)", readme_text)
+        self.assertNotIn("Waiting for image upload", readme_text)
+
+        with (self.inbox / "history/batch-session-link/attempt-001/conversion-report.csv").open(encoding="utf-8") as handle:
+            row = next(csv.DictReader(handle))
+        self.assertEqual(row["attempt"], "01")
 
     def test_unlisted_image_fails_without_moving_sources_or_clearing_handoff(self):
         (self.inbox / "listed.jpg").write_bytes(b"listed-image")
