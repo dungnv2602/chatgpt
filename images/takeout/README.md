@@ -1,20 +1,28 @@
 # Image Takeout
 
-This is the single intake location for user-uploaded images intended for retention in this repository, whether they belong to a novel, a drawing session, a visual-reference collection, or another project.
+Use this directory as the single intake location for images that need repository retention.
+
+Images can belong to a novel, a drawing session, a visual-reference collection, or another project.
 
 ## Upload rules
 
-- Upload every image directly into `images/takeout/`; do not create upload subfolders.
-- Incoming filenames may be arbitrary. The user does not need to rename them.
-- `history/` and `webp/` are system-managed reserved subdirectories. Never place incoming images in either directory.
+- Upload each image directly to `images/takeout/`.
+- Do not create upload subfolders.
+- Incoming filenames can be any name. The user does not need to rename them.
+- Do not place uploads in `history/` or `webp/`. The Action manages these reserved directories.
 - Keep one active batch in `HANDOFF.yml`.
-- The Action does nothing until `HANDOFF.yml` has `status: ready`.
-- When the hand-off is ready, every image in the top level of the intake folder must be listed exactly once.
-- Supported inputs are static PNG, JPG, and JPEG. APNG, GIF, WebP, HEIC, AVIF, TIFF, BMP, and other formats are not accepted by this pipeline. Animated images are never flattened.
+- The Action processes a batch only when `HANDOFF.yml` has `status: ready`.
+- List every top-level image in the ready hand-off exactly once.
+- The pipeline accepts static PNG, JPG, and JPEG files.
+- The pipeline rejects APNG, GIF, WebP, HEIC, AVIF, TIFF, BMP, and other formats. It does not flatten animated images.
 
 ## Hand-off format
 
-The assistant inspects each image, determines its descriptive title and intended destination from the project context, assigns a stable asset ID when appropriate, and writes the hand-off. The Action does not guess the image's subject, title, ID, project, or destination.
+The assistant inspects each image. The assistant then determines its title and destination from the project context.
+
+The assistant assigns a stable asset ID when needed. The assistant writes the values to the hand-off.
+
+The Action does not infer the image's subject, title, ID, project, or destination.
 
 ```yaml
 version: 1
@@ -35,59 +43,124 @@ items:
     mapping_evidence: "Direct generation-return association recorded at generation time"
 ```
 
+For a drawing-session output, include `expected_sha256` when the generation-time original hash exists.
 
-For drawing-session outputs, when the generation-time original SHA-256 was captured, include it as `expected_sha256` in the item. The processor calculates SHA-256 of the uploaded original and compares it before conversion. A mismatch is retained as a review flag: the image can still be archived, but mapping confidence is reduced to `Probable` and it is never marked `Verified` by that hash. Optional internal `output_id`, `prompt_id`, and exposed native IDs are recorded separately. Supply them only from generation-time records; never infer them from filenames.
+The processor hashes the uploaded original before conversion. It compares that hash with the expected value.
 
-The conversion report distinguishes `generation_sha256` (the expected hash recorded at generation) from `source_sha256` (the hash calculated from the upload), and includes `hash_match`. The WebP's own hash is independent because conversion changes bytes. The session processor also reconciles `drawings/YYYY-MM-DD/manifest.csv`: it
-records new outputs, inventories legacy WebPs, and pairs a same-stem master
-from `images/original/` when present. It records the actual master SHA-256 and
-leaves publication verification Pending until the remote blobs are checked. A
-legacy WebP with no original remains Not verifiable; an original master with
-no same-stem WebP blocks the batch rather than being silently omitted.
+A mismatch does not reject the image. The processor retains the image and marks its mapping status as `Probable`. It does not mark the mapping as `Verified` by that hash.
 
-For each item:
+Record internal `output_id`, `prompt_id`, and exposed native IDs separately. Use values from generation-time records. Do not infer them from filenames.
 
-- `source` is the exact uploaded filename at the top level of this folder.
-- `asset_id` is optional for general image assets. Novel illustrations use their stable `ILL-NNN` ID.
-- `title` is a concise descriptive title based on the inspected image and its intended role.
-- `destination_dir` is a repository-relative directory under `images/`, `novels/`, or `drawings/YYYY-MM-DD/images`. Do not use `images/takeout/`, `images/takeout/webp/`, `images/webp/`, or the reserved legacy path `images/scripts/`.
-- For drawing-session destinations, `attempt` is mandatory. The Action rejects drawing-session uploads without an explicit attempt number so they cannot be omitted from the session manifest and prompt records.
+The conversion report separates these hash fields:
 
-The processor turns the title into a lowercase, hyphen-separated filename slug, removes common diacritics, and prefixes the asset ID when supplied. For the example above, it creates:
+- `generation_sha256` is the expected hash from generation time.
+- `source_sha256` is the hash of the uploaded original.
+- `hash_match` records the comparison result.
+
+The WebP hash is separate because conversion changes the bytes.
+
+For drawing-session uploads, the processor also updates `drawings/YYYY-MM-DD/manifest.csv`. It records new outputs and inventories legacy WebP files. It pairs a legacy WebP with a same-stem master in `images/original/` when one exists.
+
+The processor records the actual master hash. Publication remains Pending until the workflow checks the remote Git blobs.
+
+A legacy WebP without an original remains Not verifiable. An original without a same-stem WebP blocks the batch.
+
+## Hand-off fields
+
+Each item uses these fields:
+
+- `source` is the exact uploaded filename in the top level of this directory.
+- `asset_id` is optional for general image assets. Novel illustrations use a stable `ILL-NNN` ID.
+- `title` is a short description based on the inspected image and its intended role.
+- `destination_dir` is a repository-relative directory under `images/`, `novels/`, or `drawings/YYYY-MM-DD/images`.
+- `attempt` is mandatory for drawing-session destinations.
+
+Do not use `images/takeout/`, `images/takeout/webp/`, `images/webp/`, or the reserved legacy path `images/scripts/` as a destination.
+
+The Action rejects drawing-session uploads without an explicit attempt number. This prevents outputs from being omitted from the session manifest and prompt records.
+
+## Output filenames
+
+The processor creates a lowercase, hyphen-separated slug from the title. It removes common diacritics. It prefixes the asset ID when the hand-off supplies one.
+
+The example item creates these files:
 
 - Original master: `novels/Novel-02/assets/illustrations/ARC-001/SCN-001/original/ILL-001-shared-discovery.png`
 - WebP delivery file: `novels/Novel-02/assets/illustrations/ARC-001/SCN-001/ILL-001-shared-discovery.webp`
 
-The original is moved byte-for-byte into the destination's `original/` subfolder. The WebP remains in the destination root and is the only format linked from attempt records and the daily README. Existing files are never overwritten.
+The processor moves the original bytes to the destination's `original/` folder. It stores the WebP file in the destination root.
 
-Before relocation, each WebP is written to persistent staging under `images/takeout/webp/[batch-id]/attempt-NNN/`. Its name is the exact incoming filename with `.webp` appended, so `IMG_001.png` becomes `IMG_001.png.webp` and `IMG_001.jpg` becomes `IMG_001.jpg.webp`. This retains the original extension in staging and avoids collisions between different source formats with the same basename.
+Attempt records and daily READMEs link only to the WebP file. The original master remains unchanged. The processor never overwrites an existing file.
+
+## WebP staging
+
+Before relocation, the processor writes each WebP file to persistent staging:
+
+```text
+images/takeout/webp/[batch-id]/attempt-NNN/
+```
+
+The staged filename preserves the exact incoming filename and appends `.webp`.
+
+For example:
+
+- `IMG_001.png` becomes `IMG_001.png.webp`.
+- `IMG_001.jpg` becomes `IMG_001.jpg.webp`.
+
+This naming rule preserves the source extension. It also avoids collisions between different formats that share a basename.
 
 ## Processing and success conditions
 
-The existing workflow, `.github/workflows/convert-images-to-webp.yml`, runs on pushes to the takeout files or hand-off and can also be started manually on branch `gpt`.
+The [WebP workflow](../../.github/workflows/convert-images-to-webp.yml) runs on pushes to intake files or the hand-off. You can also start it manually on branch `gpt`.
 
-It validates the entire batch, converts all images into the persistent attempt-specific staging folder `images/takeout/webp/[batch-id]/attempt-NNN/`, verifies the staged WebPs, and only then relocates the original masters and WebP derivatives to their permanent destinations. The CSV records each staging path as well as the final path. The processor checks source/master SHA-256 equality, WebP signatures and file lengths, destination collisions, exact hand-off coverage, and attempt metadata for every drawing-session upload.
+The workflow validates the complete batch. It converts every image into the attempt-specific staging folder. It verifies each staged WebP before it relocates any original.
 
-If validation or conversion fails, original uploads remain in the intake, the hand-off remains ready, and every successfully converted WebP remains in that failed attempt's staging folder for inspection. A retry uses a fresh numbered attempt and does not overwrite earlier staging. On success, staged WebPs are moved to their final destinations and the now-empty successful staging attempt directory is removed.
+The CSV records each staging path and final path.
 
-For drawing outputs, the session manifest initially records publication as
-`Pending`. After the Action pushes the assets and Markdown changes, a second
-step reads the exact blobs back from `origin/gpt`, verifies the original
-master SHA-256, WebP SHA-256, canonical WebP URL, daily README image-inventory
-link, attempt-table link, and attempt-note WebP link, then commits the updated
-manifest status. The final check-only pass confirms the published manifest
-itself matches the GitHub branch. Failed publication checks are recorded as
-`Failed` on-branch before the final verification step fails the Action. Legacy assets without retained originals
-remain `Not verifiable`; their WebP URL and derivative hash are still checked.
+The processor checks:
 
-A batch is successful only after every master and WebP is verified locally,
-the original hand-off and reports are archived, and the active hand-off is
-reset to empty. A failed attempt does not clear the hand-off; correcting it
-and retrying the same batch ID creates another numbered attempt.
+- Source and master SHA-256 equality.
+- WebP signatures and file lengths.
+- Destination collisions.
+- Exact hand-off coverage.
+- Attempt metadata for each drawing-session upload.
+
+If validation or conversion fails, the original uploads remain in the intake. The hand-off remains ready.
+
+Every WebP that the processor converted successfully remains in the failed attempt's staging folder. A retry uses a new numbered attempt. It does not overwrite earlier staging.
+
+On success, the processor moves staged WebP files to their final destinations. It then removes the empty staging directory.
+
+## Published drawing-session verification
+
+For drawing outputs, the session manifest starts with publication status `Pending`.
+
+After the Action pushes the assets and Markdown changes, a second step reads the exact blobs from `origin/gpt`.
+
+That step checks:
+
+- Original master SHA-256.
+- WebP SHA-256.
+- Canonical WebP URL.
+- Daily README image-inventory link.
+- Attempt-table link.
+- Attempt-note WebP link.
+
+The verifier updates the manifest after these checks.
+
+The final check-only pass confirms that the published manifest matches the Git branch.
+
+The workflow records failed publication checks as `Failed` before the final check fails.
+
+Legacy assets without retained originals remain `Not verifiable`. The workflow still checks their WebP URL and derivative hash.
+
+A batch succeeds only after local verification of every master and WebP. The processor must also archive the original hand-off and reports. It clears the active hand-off last.
+
+A failed attempt does not clear the hand-off. Correct the hand-off and retry the same batch ID to create another numbered attempt.
 
 ## History and reports
 
-Each attempt is retained under:
+The processor retains each attempt under:
 
 ```text
 images/takeout/history/
@@ -98,11 +171,15 @@ images/takeout/history/
         └── verification-report.md
 ```
 
-The CSV records source, staging, and final paths, title and ID, source format, encoder profile and version, original/WebP byte counts, size difference, SHA-256 values, verification status, and errors. A negative size reduction is valid: it means the WebP is larger than the original.
+The CSV records source, staging, and final paths. It also records the title, ID, source format, encoder profile, encoder version, original and WebP byte counts, size difference, SHA-256 values, verification status, and errors.
 
-The Markdown verification report records the batch outcome, checks, and warnings/errors. Failed attempts are retained for inspection. Both `history/` and `webp/` are reserved and excluded from intake detection; neither is reprocessed as uploaded content.
+A negative size reduction means the WebP is larger than the original. This is a valid result.
 
-The active hand-off starts empty:
+The Markdown report records the batch outcome, checks, warnings, and errors. The workflow retains failed attempts for review.
+
+The `history/` and `webp/` directories are reserved. The intake detector does not process them as new uploads.
+
+The active hand-off starts in this state:
 
 ```yaml
 version: 1
@@ -112,53 +189,54 @@ items: []
 
 ## Conversion profiles
 
-| Source | Encoder profile | Fidelity |
+| Source | Encoder profile | Result |
 |---|---|---|
-| PNG | `-lossless -q 100 -m 6 -exact` | Lossless; preserves RGB values in fully transparent pixels |
-| JPEG | `-preset picture -q 92 -m 6 -sharp_yuv` | High-quality lossy; not pixel-identical |
+| PNG | `-lossless -q 100 -m 6 -exact` | Lossless. Preserves RGB values in fully transparent pixels. |
+| JPEG | `-preset picture -q 92 -m 6 -sharp_yuv` | High-quality lossy output. It is not pixel-identical. |
 
-Both profiles request ICC profile copying. EXIF/XMP metadata are not copied to WebP; they remain in the unchanged original master.
+Both profiles copy ICC profiles.
 
+The WebP file does not retain EXIF or XMP metadata. The original master retains that metadata.
 
 ## Drawing-session manifest
 
-For every upload that includes an explicit `attempt` and targets
-`drawings/YYYY-MM-DD/images`, the processor updates that session's
-`manifest.csv` with one row per output. It preserves existing rows and columns,
-adds missing required columns, and inventories pre-existing top-level WebP
-assets that do not yet have a manifest row.
+For each upload with an explicit `attempt` and a destination under `drawings/YYYY-MM-DD/images`, the processor updates that session's `manifest.csv`.
 
-The required columns remain:
+It adds one row per output. It preserves existing rows and columns. It adds missing required columns. It also inventories top-level WebP files that do not have manifest rows.
+
+The required columns are:
 
 ```csv
 session_date,image_id,filename,prompt_id,approval_status,github_url,sha256,verification_status
 ```
 
-Additional columns keep the internal output ID, native Generation/output IDs,
-attempt, mapping evidence/status, original and WebP paths and hashes,
-generation-time hash, hash-match result, original-byte availability, and
-verification error separate.
+Additional columns keep these values separate:
 
-- New uploads record the actual uploaded-original SHA-256 in `sha256` and
-  `original_sha256`; WebP bytes have their own `webp_sha256`.
-- A generation-time hash match can set mapping status to `Verified`. When the
-  hand-off explicitly assigns an attempt but no generation-time hash is
-  available, mapping remains `Corroborated`; the processor does not infer a
-  mapping from filenames.
-- The processor writes `verification_status: Pending`. Only the post-push
-  verifier may change it to `Verified`, after reading the exact original and
-  WebP blobs from `origin/gpt` and checking the GitHub WebP URL.
-- Pre-existing WebP assets are paired with same-stem files in the `original/`
-  subfolder when available. The retained master SHA-256 is calculated and the
-  row remains `Pending` until the exact master and WebP blobs are read back.
-  WebPs without masters remain `Not verifiable`, with no fabricated original
-  checksum. Orphan masters without matching WebPs block processing.
-- Internal fallback image IDs include a per-upload filename discriminator so
-  separate outputs with identical image bytes still receive separate manifest
-  rows. These IDs are archive identifiers, not native platform IDs.
-- Approval stays separate from mapping and verification. Missing approval,
-  prompt IDs, native IDs, or generation hashes remain `Not recorded` or blank.
+- Internal output ID.
+- Native Generation ID and native output ID.
+- Attempt number.
+- Mapping evidence and mapping status.
+- Original and WebP paths and hashes.
+- Generation-time hash and hash-match result.
+- Original-byte availability and verification error.
 
-The README and attempt records intentionally link only the WebP delivery file;
-the unchanged original master is retained under the destination's `original/`
-subfolder and recorded in the session manifest.
+The processor applies these rules:
+
+- New uploads record the uploaded-original SHA-256 in `sha256` and `original_sha256`. WebP bytes use `webp_sha256`.
+- A generation-time hash match can set mapping status to `Verified`.
+- An explicit attempt without a generation-time hash keeps mapping status `Corroborated`. The processor does not infer mapping from filenames.
+- New rows start with `verification_status: Pending`.
+- Only the post-push verifier can change that status to `Verified`. It must read the exact original and WebP blobs from `origin/gpt` and check the WebP URL.
+- The processor pairs existing WebP files with same-stem files in the `original/` folder when available.
+- It calculates the retained master's SHA-256. The row remains `Pending` until the workflow reads back the master and WebP blobs.
+- WebP files without masters remain `Not verifiable`. The processor does not invent an original checksum.
+- An original master without a matching WebP blocks processing.
+- Internal fallback image IDs include a per-upload filename discriminator. Separate outputs with identical bytes therefore receive separate manifest rows.
+- These internal IDs are archive identifiers. They are not native platform IDs.
+- Approval remains separate from mapping and verification. Missing approval, prompt IDs, native IDs, or generation hashes remain blank or `Not recorded`.
+
+The README and attempt records link only to WebP delivery files. The unchanged original master remains in the destination's `original/` folder and in the session manifest.
+
+## Documentation standard
+
+This file defines an operational hand-off. Apply Strict mode from the repository [ASD-STE100 policy](../../skills/asd-ste100/references/repository-writing-policy.md) when you revise it.
