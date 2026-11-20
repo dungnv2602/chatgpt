@@ -2,11 +2,11 @@
 
 ### Series identity, membership, and prompt lineage
 
-A **series** is a connected body of image-making organized around a shared creative theme or deliberate curatorial premise. The theme is the series' creative spine: it explains why these images belong together and what each new image is meant to explore, extend, revisit, or vary. It may be narrative, conceptual, emotional, relational, cultural, visual, subject-led, or editorial. A series need not be chronological and need not preserve the same character, location, outfit, or rendering style.
+A **series** is a connected body of image-making organized around a shared creative theme or deliberate curatorial premise. The theme is the series' creative spine. It explains why the images belong together and what each new image explores, extends, revisits, or varies. It may be narrative, conceptual, emotional, relational, cultural, visual, subject-led, or editorial. A series need not be chronological and need not preserve the same character, location, outfit, or rendering style.
 
-A recurring attribute alone does **not** establish a series. The same character, outfit, palette, medium, location, camera angle, subject category, or image format may simply be a reusable feature appearing in unrelated work. It becomes a series-defining principle only when the user declares it as the organizing concept or the images deliberately explore that feature as a coherent theme or collection. For example, several images that happen to use the same character are not automatically one series. A character study exploring that character across distinct moments is. Likewise, a shared palette becomes a series premise when the palette itself is the deliberate subject of a visual study or collection, not merely because the same colors recur.
+A recurring attribute alone does **not** establish a series. The same character, outfit, palette, medium, location, camera angle, subject category, or image format may simply be a reusable feature appearing in unrelated work. It defines a series only when the user declares it as the organizing concept. It may also define a series when the images deliberately explore that feature as a coherent theme or collection. For example, several images that happen to use the same character are not automatically one series. A character study exploring that character across distinct moments is. A shared palette becomes a series premise when the palette itself is the subject of a visual study or collection. Recurring colors alone do not create a series.
 
-**Series-first baseline rule:** When continuing a series, inspect its newest attempt to understand the latest context, corrections, and outcome—but build the next authored prompt from the most recent successful prompt in that same series. This keeps the work aligned with the series' current creative direction without allowing a newer failed, partial, or rejected attempt to replace the proven prompt. A later successful prompt in the same series supersedes the earlier successful baseline by chronology.
+**Series-first baseline rule:** When continuing a series, inspect its newest attempt. Use it to understand the latest context, corrections, and outcome. Build the next authored prompt from the most recent successful prompt in that series.\n\nThis keeps the work aligned with the series' current creative direction. It prevents a newer failed, partial, or rejected attempt from replacing the proven prompt. A later successful prompt in the same series supersedes the earlier successful baseline by chronology.
 
 #### A. What can define a series
 
@@ -54,7 +54,7 @@ A series may be established in any of these ways:
 - **Explicitly declared:** the user names it, calls the work a series, identifies its theme, or says that a new image belongs to an existing series.
 - **Clearly continued:** the user asks to continue the same storyline, character journey, collection, campaign, visual study, or recurring theme. A shared project folder, character, or prior subject alone is not enough. The current request must continue the same organizing premise.
 - **Contextually evident:** multiple prompts or images share a distinctive central premise and the user is developing variations of that premise.
-- **Proposed by the assistant, confirmed by the user:** the assistant notices a coherent recurring theme, but must not silently impose a series label when that classification would affect prompt selection or continuity.
+- **Proposed by the assistant, confirmed by the user:** The assistant notices a coherent recurring theme. It must not impose a series label without confirmation when that label would affect prompt selection or continuity.
 
 Do not require a minimum number of images when the user has explicitly declared a series. Without an explicit declaration, one image alone is normally insufficient evidence of an established series. It may be the first entry or a standalone image. Two or more related entries can reveal an implicit series when their shared theme is clear.
 
@@ -68,7 +68,7 @@ For each series, identify and record where available:
 - **Continuity strength:** strict, flexible, or thematic. Strict series preserve specified identity/world/design features. Flexible series preserve core anchors while allowing substantial variation. Thematic series preserve the underlying idea without requiring the same subjects or visual treatment.
 - **Parent or related series:** record this only when the work is genuinely a branch, spin-off, crossover, or companion series.
 
-When archiving a prompt, include its series name/ID, theme spine, and whether it is a continuation, a new entry, a branch, a crossover, or standalone. If the series is not known, record it as unassigned/standalone rather than guessing. A series may be renamed without changing its underlying lineage. Preserve the previous label as an alias where useful.
+When archiving a prompt, include the series name or ID and its theme spine. Also state whether the prompt is a continuation, new entry, branch, crossover, or standalone. If the series is not known, record it as unassigned/standalone rather than guessing. A series may be renamed without changing its underlying lineage. Preserve the previous label as an alias where useful.
 
 #### C. Boundaries, overlap, and branching
 
@@ -79,7 +79,7 @@ When archiving a prompt, include its series name/ID, theme spine, and whether it
 - **Subseries:** a narrower theme may sit inside a parent series. Preserve both identities and use the subseries as the primary prompt lineage when the current request clearly belongs to it.
 - **Branch or spin-off:** create a related branch when a new direction grows from an existing series but develops its own distinct theme. Record the parent relationship and the branch point. Do not keep using the parent series' newest prompt once the branch has established its own successful prompt lineage.
 - **Crossover:** an image may intentionally combine two series. Record one as the primary series for prompt-baseline selection and the other as a secondary membership. Do not blend their prompt histories indiscriminately.
-- **Series change:** if the central theme changes enough that the previous images no longer explain the new work, start a new series or branch rather than forcing continuity.
+- **Series change:** Start a new series or branch when the central theme changes enough that previous images no longer explain the new work. Do not force continuity.
 - **User authority:** the user's explicit grouping, separation, naming, or reassignment overrides assistant inference. Do not merge, split, or rename a series against the user's direction.
 
 One image can have multiple thematic connections, but every prompt used for an iteration must have one **primary series** (or be explicitly standalone). Use that primary series to select the prompt baseline. Secondary tags help retrieval. They do not authorize borrowing a baseline from an unrelated series.
@@ -101,19 +101,16 @@ Apply this order whenever an image belongs to an established series:
    or missed-target prompt as the base merely because it is newer.
 4. **Inspect later unsuccessful attempts only as diagnostics.** They can reveal what failed, what the user corrected, and what specific change the user still wants. Extract only explicit user-requested or user-approved changes, then apply those deltas to the most recent successful prompt. Do not copy assistant-added wording, speculative embellishments, or failed prompt structure simply because they appeared later.
 5. **A partial result does not displace the successful baseline.** Preserve useful visual observations from it, but build the next authored prompt from the most recent successful prompt. Promote a partial result to a successful series result only when the user explicitly accepts it as successful for the intended purpose. Record that user decision and its exact originating prompt.
-6. **Separate prompt success from image approval.** A user-approved image is a valid visual keeper or reference. It also establishes a successful prompt baseline only when its originating attempt is reliably identified and the user's approval clearly accepts that attempt/result as successful for the requested purpose. If the image-to-prompt mapping is uncertain, use the image only as a visual reference or edit source. Do not invent or infer its prompt.
+6. **Separate prompt success from image approval.** A user-approved image is a valid visual keeper or reference. It establishes a successful prompt baseline only when you can identify its originating attempt. The user's approval must also accept that attempt and result as successful for the requested purpose. If the image-to-prompt mapping is uncertain, use the image only as a visual reference or edit source. Do not invent or infer its prompt.
 7. **Respect prompt lineage within branches.** A new subseries or spin-off may inherit the parent's most recent successful prompt as its initial seed at the moment the branch is created. Record that seed and branch point. Once the branch has its own successful prompt, use the branch's most recent successful prompt—not later prompts from the parent series.
 8. **Handle a series with no successful prompt honestly.** For its first entry,
    use the active session brief and any visual references explicitly assigned
-   within that session. For a new branch with no success of its own, use its
-   documented parent-series seed only if the user has explicitly derived the
-   branch from that parent and the seed does not conflict with the session brief.
+   within that session. For a new branch with no success of its own, use its documented parent-series seed only when the user explicitly derived the branch from that parent. The seed must not conflict with the session brief.
    Do not borrow a successful prompt from an unrelated series.
 9. **For work that is not a series, preserve artwork continuity.** If the user is iterating on one standalone image or artwork thread, use the most recent successful prompt for that exact thread. Do not treat the word "standalone" as permission to search across unrelated projects for a loosely similar prompt.
 10. **Keep crossover lineage explicit.** A crossover has one primary series for baseline selection and one or more secondary memberships. Use the primary series' most recent successful prompt as the text baseline and carry secondary-series requirements as constraints. If no primary series is clear and the distinction materially changes the prompt, ask one focused question.
-11. **Match the baseline to the operation.** The newest successful prompt in the active series remains the latest-success anchor. Use it directly when its operation and scope fit the next task. If it is a localized edit or style-only prompt that cannot serve as a full-scene prompt for a new generation, use the most recent successful full-generation prompt from the same series as the full-scene text skeleton, and carry forward only later successful, user-approved details that remain
-   compatible with the active session brief. Record both prompt references and why the older full-scene skeleton is necessary. This is an operation-compatibility exception, not permission to use a failed prompt or borrow from another series.
-12. **Keep exact edits separate from prompt baselines.** When the user requests a visual edit of a specific successful image, the actual image is the edit source if it is accessible and can be attached through the supported mechanism. The successful prompt remains useful context, but it does not replace the source image. Conversely, an image filename or generation ID is not an attached source.
+11. **Match the baseline to the operation.** The newest successful prompt in the active series remains the latest-success anchor. Use it directly when its operation and scope fit the next task.\n   If it is a localized edit or style-only prompt, check whether it can serve as a full-scene prompt for a new generation. If it cannot, use the most recent successful full-generation prompt from the same series as the text skeleton.\n   Carry forward only later successful, user-approved details that fit the active session brief. Record both prompt references. Explain why you need the older full-scene skeleton. This exception applies only to operation compatibility. It does not permit a failed prompt or a prompt from another series.
+12. **Keep exact edits separate from prompt baselines.** When the user requests a visual edit of a successful image, use the actual image as the edit source when it is accessible and can be attached. The successful prompt remains useful context. It does not replace the source image. An image filename or generation ID is not an attachment.
 13. **Honor explicit user selection.** If the user names a particular successful prompt as the baseline, use it after verifying the record. If the user names an image as the visual/edit baseline, use that image for the requested role when it is actually available. Do not mislabel it as a prompt.
 14. **Resolve ambiguity proportionately.** If series membership or the primary branch is genuinely unclear and would materially alter baseline selection, ask one focused question. Otherwise use the clearest context, record provisional membership, and proceed.
 
@@ -125,7 +122,7 @@ Do not close, finalize, or archive a drawing session as complete on the
 assistant's initiative. The user's explicit cue is **`end session`**.
 
 Treat the cue as invoked only when the user sends `end session` as a direct,
-standalone instruction (case-insensitive. Surrounding punctuation is harmless).
+standalone instruction. Match it without regard to case. Surrounding punctuation does not change the cue.
 A quoted mention, question about the cue, or discussion of the phrase is not an
 invocation. A pause, goodbye, topic change, last image, or beginning of another
 session does not substitute for it.
@@ -192,3 +189,8 @@ needs a visual alteration, edit it directly if the real source is available.
 Use fresh generation only when it is the appropriate next step—not as a
 redundant intermediate.
 
+
+
+## Technical documentation standard
+
+This reference defines operational series and prompt-lineage procedures. Apply Strict mode from the repository [ASD-STE100 policy](../../asd-ste100/references/repository-writing-policy.md) when you revise it. Preserve user authority, series membership, successful-prompt selection, and creative constraints.
