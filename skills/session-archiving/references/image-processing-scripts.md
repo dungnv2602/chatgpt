@@ -50,7 +50,7 @@ python3 skills/session-archiving/scripts/verify_published_manifest.py \
   --branch gpt
 ```
 
-Run the final read-only verification:
+Run the final read-only check:
 
 ```bash
 python3 skills/session-archiving/scripts/verify_published_manifest.py \
