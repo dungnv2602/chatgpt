@@ -93,20 +93,27 @@ Create a foundational The Worker skill and a GitHub workspace that preserves tas
 - **Action:** Added archive/tasks/.gitkeep and fetched every created or updated file from branch gpt.
 - **Result:** All 12 paths returned successfully. The required Worker, initialization, boundary, retention, task-template, and Condensed Mode markers were present.
 - **References:** dd1c3afea14d7f40254b90a4600c0111c0fd0e3d and the committed paths listed below.
-- **Next:** Archive this completed task and update the task board.
+- **Next:** None. Task closed.
+
+
+### 2026-11-20 11:25 UTC
+
+- **Action:** Moved the completed task record into archive/tasks/, removed the active workspace copy, and updated the task board.
+- **Result:** The board now lists this task as Done and links to the archived record and its archival commit. The active task directory remains available for new tasks.
+- **References:** Archival commit e0b531a72dbb12ee8c4e7eaeea8b8170b4f22965, active-copy removal ea1478accc80b48ba68eb71d4f65d4e759d98858, board update 37bde16fb10adc0ccb7b5e5874059cbef0e5dd65, task-directory marker 5ae03c19d550c97eac3d1db9a8936e14982d3aa1.
+- **Next:** None. Retain this record for 14 days, then remove it during Worker retention cleanup.
 
 ## 7. Current State
 
-Implementation is complete on branch gpt. All created and updated paths were fetched again. Required content checks passed.
+Implementation is complete on branch gpt. All created and updated paths were fetched again. Required content checks passed. The task is archived and marked Done on the task board.
 
 ## 8. Remaining Work
 
-None. The task record will move to archive/tasks/ as part of closeout.
+None. The task is closed.
 
 ## 9. Next Actions
 
-1. Retain this record in archive/tasks/ for 14 days.
-2. Keep the compact historical entry on the task board.
+No further task action is required. The archive retention policy applies.
 
 ## 10. References
 
@@ -124,4 +131,4 @@ None. The task record will move to archive/tasks/ as part of closeout.
 
 ## 12. Handoff Instructions
 
-Implementation is complete. The archived copy is the retained task record. Use the task board for future selection. The archive record expires after 14 days under archive/README.md.
+Implementation is complete and archived. Use workspace/task_board.md for future selection. This record becomes eligible for deletion after 14 days under archive/README.md.
