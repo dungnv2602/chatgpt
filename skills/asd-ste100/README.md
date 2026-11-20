@@ -1,105 +1,247 @@
-# ASD-STE100 Skill — Simplified Technical English for Agent Output
+# ASD-STE100 Skill
 
-A Claude Code skill that rewrites dense, ambiguous English into [ASD-STE100 Simplified Technical English](https://www.asd-ste100.org/) (STE) — the controlled-language standard the aerospace and defense industry built so aircraft maintenance instructions cannot be misread.
+This skill applies [ASD-STE100 Simplified Technical English](https://www.asd-ste100.org/) to English text.
 
-This skill repurposes that same discipline for a different reader: an **AI agent** parsing another agent's output, a tool description, an error message, or an inter-agent instruction, with no human in the loop to resolve ambiguity.
+It helps readers and agents interpret technical text without guessing its meaning.
 
-## Why STE, and Why for Agents
+## Purpose
 
-STE exists because a misread instruction on an aircraft can kill people, and the intended readers were often not native English speakers with no author to call for clarification. The standard's fix: one meaning per word, active voice, simple tenses, one instruction per sentence, short sentences, no dropped words.
+ASD-STE100 is a controlled-language standard for technical documentation. The aerospace and defense industry developed it to reduce ambiguity in aircraft maintenance instructions.
 
-An LLM agent parsing another agent's output is in a strikingly similar position — no back-channel, no way to ask "did you mean X or Y?" The same rules that keep a mechanic from misreading a torque spec keep a downstream agent from misreading a tool description or an inter-agent message.
+This skill applies the same discipline to agent output. Examples include tool descriptions, error messages, system prompts, and instructions between agents.
 
-## Before / After
+## Modes
 
-| Before | After |
-|---|---|
-| "This tool will attempt to synchronize state across the various backends that have been configured, and if a conflict is detected it may resolve it automatically depending on the strategy that has been set, or otherwise it will surface the conflict for manual review." | "The tool tries to synchronize state across the configured backends. If it finds a conflict, it reads the configured strategy. If the strategy allows automatic resolution, the tool may resolve the conflict without a user. If the tool does not resolve the conflict, it reports the conflict for manual review." |
-| "An error may have occurred while processing your request due to a possible mismatch in the expected data format, which could be caused by an outdated client version." | "Your request may have failed. The cause may be a data format that does not match what the server expects. An outdated client can cause this mismatch. Check your client version." |
+Choose a mode before you revise text.
 
-More examples, including illustrations of the official STE rules themselves, in [`examples/before-after.md`](examples/before-after.md).
+- **Strict:** Use for procedures, error messages, tool descriptions, inter-agent instructions, and safety text. Apply the structural and lexical rules.
+- **STE-flavored:** Use for READMEs, change logs, PR descriptions, and explanatory prose. Apply the structural rules. Treat lexical rules as guidance.
 
-## What This Skill Does
+Do not use this skill to rewrite creative writing, marketing copy, or persuasive text. Do not remove voice or nuance when those features are important.
 
-1. Picks a mode. **Strict** covers procedures, error messages, and tool descriptions. **STE-flavored** covers READMEs, PR descriptions, and explanatory prose. STE-flavored keeps the sentence discipline but not the fixed-vocabulary lockdown.
-2. Reads the input English text for meaning.
-3. Flags every rule violation sentence-by-sentence: ambiguous word choice, present-perfect/complex tense, passive voice with an unclear actor, multi-instruction sentences, oversized noun clusters, dropped words, sentences over length, phrasal verbs, nominalized actions, semicolons, hedge stacks, and marketing adjectives.
-4. Rewrites each flagged sentence — without dropping any fact, condition, or scope qualifier from the original. If a shorter phrasing would lose required precision, it keeps the longer phrasing and flags the trade-off instead of silently simplifying.
-5. Outputs the rewritten text on its own — no preamble, no mode announcement, no change summary — plus a one-line `Kept as-is:` note when it deliberately left something unsimplified.
+## Core rules
 
-Ask for the reasoning ("show the diff", "which rules did it break") and it outputs a before/after table naming each rule instead.
+Apply these structural rules:
 
-The structural rules it checks are mechanical — you can point at the word or punctuation mark that breaks each one. The rules that depend on ASD's dictionary are flagged as advisory rather than enforced, and the rules that need taste are left to you.
+- Use active voice when the actor is known and relevant.
+- Put one instruction in each sentence.
+- Keep instructions to 20 words or fewer.
+- Keep descriptions to 25 words or fewer.
+- Do not use semicolons.
+- Avoid phrasal verbs when a clear single verb exists.
+- Keep noun clusters to three words or fewer.
+- Use explicit subjects, verbs, and articles.
+- Keep each paragraph to one topic and six sentences or fewer.
+- Use a vertical list for three or more steps or conditions.
+- Preserve modality and uncertainty.
 
-The linter checks structural patterns only. It does not compare an original text with a rewrite, verify that requirement strength stayed the same, or prove that the rewrite preserved meaning. A zero-violation result means that the configured structural checks found no problems.
+Use simple tense forms when they preserve the source meaning.
 
-The deterministic linter checks semicolons, a short list of soft phrasal verbs (spin up, reach out, dive into, kick off, circle back, touch base), nominalizations, marketing adjectives, passive voice, present-perfect forms (including irregular participles such as "has run"), long sentences, synonym rotation, and dangling conjunctions in supported list items. It does not check noun-cluster length (that needs part-of-speech tagging) and it does not know phrasal verbs outside its list, so "take off the panel" passes. It never flags hedges or modality.
+Apply lexical rules as guidance when the official ASD dictionary is not available. Do not claim that a word is approved without checking the official dictionary.
 
-For the sentence-length check, a word is a whitespace-separated token with at least one letter or digit. Inline code in single backticks, list markers, blockquote markers, and bare punctuation such as a spaced em dash are not words.
+## Rewrite process
 
-The repo's own prose does not lint clean: the rule tables quote the patterns they forbid, and some sentences run long. Lint it with `python scripts/ste-lint.py --baseline 36 SKILL.md` and read the findings as examples, not defects.
+1. Select Strict or STE-flavored mode.
+2. Read the source for meaning before you edit it.
+3. Identify structural and lexical issues.
+4. Rewrite each affected sentence without changing its meaning.
+5. Keep longer wording when a shorter version would remove precision.
+6. Report a kept phrase only when the user asks for the rule table or when the output format requires it.
 
-The dangling-conjunction rule checks list markers at the start of a line with zero to three leading spaces and ASCII spaces after the marker. It supports unordered markers `-`, `*`, and `+`, and ordered numeric markers that end in `.` or `)`, such as `1.` or `1)`. It checks indented continuation lines up to the final meaningful line. It does not parse list syntax inside blockquotes, lazy continuation, or full nested-list semantics. A standalone line with four or more leading spaces is not treated as a list marker. Within an active list item, indentation at the computed content column is treated as continuation text. Fence detection follows CommonMark for blockquotes and for the fence itself. A fence opens on three or more backticks or tildes, also inside a blockquote. It closes on a run of the same character that is at least as long and has only spaces or tabs after it. A fence in a blockquote closes when the quote ends. In an HTML block, a `>` line is text and opens no fence. An HTML block starts on a block tag such as `<div>`, or on one complete tag alone on its line that does not continue a paragraph. Inline HTML such as `<span>` in a line of text starts no HTML block. In the main pass, no fence opens in an HTML block, at any quote depth. An HTML block can also sit in a blockquote, and it ends when its quote ends. The dangling-conjunction pass also tracks HTML blocks, in a list item and on the line of a list marker too. In an HTML block, no fence opens. A line with less indent than the item ends the item and the HTML block in it. On GitHub, a `<pre>` block holds code, and a comment or a `<?`, `<!X` or CDATA block holds hidden text. If such a block spans several lines, its lines before the last line are no item text, and no list item starts there. An open comment in a list item hides the text up to `-->`, also over the next items, and the text after `-->` joins the item. GitHub does the same. Outside list items, no list item starts in any HTML block. In a list item, the text of another HTML block, such as a `<div>` block, is item text with its tags. GitHub also shows the text of a `<script>`, `<style>` or `<textarea>` block, because it escapes these tags. A list marker there starts an item, and the block goes on in that item, so a fence line in it is still text. This pass does not track an HTML block in a blockquote. The main pass accepts a fence at any indent. It also accepts a closing fence up to three columns deeper than the opening fence, also at the top level. The main pass detects a fence on the line of a list marker. The marker has at most three leading spaces, and a space or a tab follows it. The closing line closes that fence. The main pass then reads the text after the fence. The dangling-conjunction pass detects such a fence, also after a tab. It also detects a fence in an empty item. Such a fence ends when the item ends. After a fence on a marker line, later fences in list items also end when their items end. Before that, a fence in a list item can go on after the item ends.
+Never remove a fact, condition, scope limit, number, or exception.
 
-The intentionally invalid examples/linter-edge-cases.md file demonstrates incomplete Markdown list items. Run python scripts/ste-lint.py examples/linter-edge-cases.md to confirm that the linter reports the two expected findings. The file is a test fixture and should not be used as compliant STE prose.
+Never change a hedge into a fact. Never add a cause or result that the source does not state.
 
-It does **not** reproduce ASD's official ~900-word approved dictionary. The standard is free to obtain but not free to redistribute: Issue 9 permits reproduction only with ASD's written authority, or by eight listed categories of organisation that this project does not belong to. This skill applies the underlying *principle* (plainest available word, used the same way every time) rather than checking against a fixed word list. For certified STE-compliant documentation, use the real standard.
+By default, return only the revised text. Do not add a preamble, mode announcement, violation count, or summary.
 
-Full rule summary and citations: [`references/writing-rules.md`](references/writing-rules.md).
+When the user asks for a diff or explanation, show a table with the rule, original text, and revised text.
 
-## Installation
+## Linter
 
-### Quick Install (npx skills)
+The skill includes `scripts/ste-lint.py`. It performs deterministic checks for selected structural patterns.
 
-The fastest way to install this skill is the [skills CLI](https://skills.sh/) — no clone, no path setup. Run it from your project root:
+Run it from the skill directory:
+
+```bash
+python3 scripts/ste-lint.py path/to/file.md
+```
+
+Use `--json` for structured output. Use `--selftest` to run its internal tests.
+
+Use `--baseline N` only when you adopt an existing document with known findings. Use `--disable rule1,rule2` to disable named checks.
+
+The linter does not prove that a rewrite preserves meaning. It does not verify modality or approved dictionary terms. It does not check every rule.
+
+### List-item checks
+
+The linter checks list markers at the start of a line. It accepts zero to three leading spaces and ASCII spaces after the marker.
+
+It supports these unordered markers:
+
+- `-`
+- `*`
+- `+`
+
+It supports ordered markers such as `1.` and `1)`.
+
+It checks indented continuation lines through the last meaningful line. It does not parse list syntax inside blockquotes, lazy continuation, or full nested-list semantics.
+
+A line with four or more leading spaces is not a list marker. Inside an active item, indentation at the computed content column is continuation text.
+
+### Fence checks
+
+The linter follows CommonMark fence rules for blockquotes and fenced code.
+
+A fence opens with three or more backticks or tildes. It can open inside a blockquote.
+
+A closing fence uses the same character. Its run must be at least as long as the opening run. Only spaces or tabs can follow it.
+
+A fence inside a blockquote closes when the quote ends.
+
+The main pass accepts a fence at any indentation. It accepts a top-level closing fence up to three columns deeper than the opening fence.
+
+The main pass can detect a fence on a list-marker line. The marker can have up to three leading spaces. A space or tab must follow the marker.
+
+The main pass reads text after a closing fence. The dangling-conjunction pass also detects fences after tabs and inside empty list items.
+
+A fence inside an empty item ends when the item ends. A fence on a marker line changes how later fences inside list items end.
+
+### HTML checks
+
+The linter recognizes HTML blocks that begin with a block tag, such as `<div>`. It also recognizes a complete tag on its own line when the tag does not continue a paragraph.
+
+Inline HTML, such as `<span>` inside a text line, does not start an HTML block.
+
+A line beginning with `>` inside an HTML block is text. It does not open a fence.
+
+The main pass does not open fences inside HTML blocks. This rule applies at every quote depth.
+
+The dangling-conjunction pass also tracks HTML blocks inside list items and on list-marker lines.
+
+An HTML block ends when its blockquote ends. In a list item, a line with less indentation than the item ends that item and its HTML block.
+
+GitHub treats these blocks as code or hidden text:
+
+- `<pre>`
+- HTML comments
+- `<?` blocks
+- `<!X` blocks
+- CDATA blocks
+
+When one of these blocks spans multiple lines, lines before the closing line are not item text. A list item does not start on those lines.
+
+An open comment inside a list item hides text through `-->`. The text after `-->` joins the current item. This behavior also applies across later items.
+
+Outside list items, the linter does not start a list item inside an HTML block.
+
+Inside a list item, another HTML block, such as `<div>`, counts as item text with its tags.
+
+GitHub displays the text of `<script>`, `<style>`, and `<textarea>` blocks because it escapes these tags. A list marker inside one of these blocks starts an item. A fence line there remains text.
+
+The dangling-conjunction pass does not track HTML blocks inside blockquotes.
+
+### Test fixtures
+
+The file `examples/linter-edge-cases.md` contains intentionally incomplete list items.
+
+Run this command to test the expected findings:
+
+```bash
+python3 scripts/ste-lint.py examples/linter-edge-cases.md
+```
+
+Do not use the test fixture as compliant technical prose.
+
+The skill's own rule tables and examples contain intentional violations. The skill README and `SKILL.md` therefore do not pass the linter with its default baseline. The upstream skill uses baseline 36 for its own `SKILL.md`. Read findings as examples where appropriate, not as proof of defects.
+
+## Dictionary and certification limits
+
+The skill does not reproduce ASD's official approved dictionary. Issue 9 restricts reproduction without written authority, except for specified eligible organizations.
+
+This skill applies the underlying principle. It chooses plain words and uses each term consistently. It does not check every word against the official dictionary.
+
+For certified ASD-STE100 documentation, obtain the official standard and check each term against its dictionary.
+
+See [the writing-rule summary](references/writing-rules.md) for the rule categories and sources.
+
+## Use in this repository
+
+This skill is foundational. The repository loads it during explicit foundational initialization.
+
+Use the [repository technical writing policy](references/repository-writing-policy.md) when you create or revise skill documentation or technical documentation.
+
+Use Strict mode for operational instructions. Use STE-flavored mode for READMEs and explanatory technical prose.
+
+Do not apply this policy to creative writing, dialogue, marketing copy, approved creative prompts, or examples that intentionally demonstrate a rule violation.
+
+## Installation outside this repository
+
+### Skills CLI
+
+Run this command from your project root:
 
 ```bash
 npx skills add danyuchn/asd-ste100-skill
 ```
 
-This pulls the skill from the GitHub repo and installs it for the current project. The CLI sends anonymous install telemetry (skill name and timestamp, no personal or device information) to help rank skills on the skills.sh leaderboard. Set `DISABLE_TELEMETRY=1` to opt out.
+The CLI installs the skill in the current project. It sends anonymous installation telemetry with the skill name and timestamp.
 
-Update later with `npx skills update`.
+Set `DISABLE_TELEMETRY=1` to disable this telemetry.
+
+Run `npx skills update` to update installed skills.
 
 ### Clone
+
+Clone the source repository into the Claude Code skills directory:
 
 ```bash
 git clone https://github.com/danyuchn/asd-ste100-skill ~/.claude/skills/asd-ste100
 ```
 
-This clones the repo into `~/.claude/skills/`, making the skill available in every Claude Code project. Best for contributors and anyone who wants a live checkout that updates with `git pull`.
+This installation makes the skill available in Claude Code projects.
 
 ## Usage
 
-Trigger with a request to simplify or clarify English text:
+Ask the agent to simplify or clarify English text.
 
+Examples:
+
+```text
+Disambiguate this tool description.
+Rewrite this error message so an agent cannot misread it.
+Apply ASD-STE100 to this instruction.
 ```
-Disambiguate this tool description
-Rewrite this error message so an agent can't misparse it
-Apply ASD-STE100 to this instruction
-```
 
-Or paste text and ask Claude to "disambiguate this" / "apply STE100 to this" / "reduce ambiguity in this output."
+By default, the skill returns the rewritten text only.
 
-You get the rewritten text back and nothing else. To see which rules were applied, add "show the diff" or "explain the changes" to the request.
+Ask for a diff or explanation to see the rules that the source text violated.
 
 ## Scope
 
-Built for: agent-to-agent messages, tool/function descriptions, error messages, system prompts, inter-agent instructions — any English text a machine or non-native reader has to parse without a human to ask.
+Use this skill for:
 
-Not built for: creative writing, marketing copy, or anything where voice and nuance are the point — STE is deliberately flat and literal by design.
+- Agent-to-agent messages.
+- Tool and function descriptions.
+- Error messages.
+- System prompts.
+- Inter-agent instructions.
+- Technical text for machine or non-native readers.
 
-One limit worth stating up front: this fixes the form of a text, not its substance. A paragraph with nothing to say comes out short, clean, and still empty.
+Do not use it for creative writing, marketing copy, or text where voice and nuance are the main goal.
 
-## Other Languages
+The skill improves the form of text. It does not improve weak or empty content.
 
-- **Hebrew:** [g4lb/asd-ste100-hebrew-skill](https://github.com/g4lb/asd-ste100-hebrew-skill) is a Hebrew port of this skill. It includes a Hebrew linter. ASD-STE100 defines English only, so the Hebrew rules are an adaptation, not an official standard.
-- **Indonesian:** [jshsinaga/asd-ste100-indonesian-skill](https://github.com/jshsinaga/asd-ste100-indonesian-skill) adapts this skill for Indonesian technical text. Its Indonesian rules are an adaptation, not an official ASD-STE100 standard.
-- **Russian:** [erwinete/asd-ste100-ru](https://github.com/erwinete/asd-ste100-ru) adapts this skill for Russian technical text. It includes a Russian linter. ASD-STE100 defines English only, so the Russian rules are an adaptation, not an official standard.
+## Other languages
 
-## Related Tools
+These projects adapt the method for other languages. Their rules are not official ASD-STE100 rules.
 
-- [meiluosi/rewrite-fidelity-skill](https://github.com/meiluosi/rewrite-fidelity-skill) compares the original text with the rewrite. It flags changes in meaning and modality. It uses pattern matching, so check each flag yourself.
+- **Hebrew:** [g4lb/asd-ste100-hebrew-skill](https://github.com/g4lb/asd-ste100-hebrew-skill).
+- **Indonesian:** [jshsinaga/asd-ste100-indonesian-skill](https://github.com/jshsinaga/asd-ste100-indonesian-skill).
+- **Russian:** [erwinete/asd-ste100-ru](https://github.com/erwinete/asd-ste100-ru).
+
+## Related tool
+
+[Rewrite Fidelity Skill](https://github.com/meiluosi/rewrite-fidelity-skill) compares source text with a rewrite. It flags possible changes in meaning and modality. It uses pattern matching, so review every finding.
 
 ## Sources
 
@@ -111,4 +253,4 @@ One limit worth stating up front: this fixes the form of a text, not its substan
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).
