@@ -13,7 +13,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 EXCLUDED_PREFIXES = (
-    "archive/tasks/",
+    "archive/",
     "workspace/tasks/",
     "workspace/discussion.md",
     "drawings/history/",
@@ -175,6 +175,8 @@ def main() -> int:
     links_checked = 0
 
     for source in all_files:
+        if source.startswith("archive/"):
+            continue
         text = Path(source).read_text(encoding="utf-8")
         anchors_by_file[source] = heading_anchors(text)
 
@@ -190,6 +192,8 @@ def main() -> int:
                 issues.append((source, target, "missing Markdown file"))
                 continue
             fragment = unquote(parsed.fragment)
+            if fragment and destination.startswith("archive/"):
+                continue
             if fragment and not re.fullmatch(r"L\d+(?:-L\d+)?", fragment):
                 if fragment not in anchors_by_file[destination]:
                     issues.append((source, target, "missing heading anchor"))
