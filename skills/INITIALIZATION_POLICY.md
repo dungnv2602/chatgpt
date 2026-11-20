@@ -107,6 +107,15 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
 - **Verification:** Read-back verified on branch `gpt`; Agent Skills metadata constraints and conditional-initialization consistency checks passed. The official `skills-ref` CLI validator was not run.
 - **Initial implementation commits:** `5bdb1b732c88fc4bb0d9e49fbeb78eb6048c7bc5` (new skill), `b26c37031399747ea204fa89a491a8ff26bce911` (session start), `a48f7264246734a73b02f41537f367f04fa09c55` (session archiving), `fee7c31d7c7b2f63efee3680796ac477b060eb45` (initial policy update).
 
+### Version 3 — Agent Skills directory restructure
+
+- **Date:** 2026-11-20
+- **Requested change:** Apply the Agent Skills format across the repository's skill folders and organize long procedures for progressive disclosure.
+- **Reason:** Make every skill discoverable through valid metadata, give novelist initiation a formal skill entry point, and reduce unnecessary loading of lengthy specialist procedures.
+- **Behavioral impact:** All seven skill folders now have a conforming `SKILL.md`; the novelist role cue routes through its task-specific skill entry point. Detailed drawing, archiving, and novel-production procedures are maintained in focused references. Foundational initialization remains conditional on the established user cues.
+- **Files modified:** See the commits on branch `gpt` for the Agent Skills folder restructure and supporting-reference extraction.
+- **Verification:** Manual frontmatter, naming, description, line-count, link, activation, and read-back checks passed. The official `skills-ref` CLI validator was not run.
+
 ## Future revision log
 
 Append a new entry whenever the policy or its activation cues change.
