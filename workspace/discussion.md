@@ -1,3 +1,68 @@
+### 2026-11-20 15:37 UTC
+
+**User**
+
+> Check your workflow to fix this any gaps regarding this matter
+
+**Assistant**
+
+I inspected the mode workflow and the related initialization and task-continuity rules.
+
+The earlier failure was an execution failure. It was not caused by an invalid cue or a missing foundational dependency.
+
+**Findings**
+
+1. `skills/conversation-mode/SKILL.md` already accepts natural-language mode commands. Your earlier cue, “Conversation mode: condensed mode,” was valid.
+2. `skills/SESSION_START.md` already lists Conversation Mode as a foundational skill. The explicit `start session` procedure loads it. Conditional initialization remains unchanged.
+3. The skill had no explicit per-turn gate that required the assistant to resolve the active mode before tool use, progress messages, or response composition.
+4. The mode-switch rule required an acknowledgement in the transition response. The Condensed Mode output rule allowed only a direct link. These rules conflicted.
+5. The no-commit rule required a sentence in chat when no project change occurred. That also conflicted with the link-only rule.
+6. The skill did not explicitly list the prefixed cue form, although its natural-language rule already covered it.
+
+**Changes**
+
+I updated `skills/conversation-mode/SKILL.md` to:
+
+- Explicitly accept “Conversation mode: default mode” and “Conversation mode: condensed mode”.
+- Require a mode-resolution gate at the start of every turn, before tool use or user-visible output.
+- Require the assistant to apply a mode command before processing other instructions in the same prompt.
+- Define the single transition-response exception: the response that switches into Condensed Mode contains only a brief acknowledgement. Later responses contain only one permitted direct link.
+- Route no-change, tool-failure, verification-failure, and clarification messages through `workspace/discussion.md`, preserving the link-only chat rule.
+- Clarify that a discussion-register commit is separate from a project-change commit.
+
+I created task `20261120-153700` for this repair and made it the current execution task. I checkpointed the documentation audit without changing its scope or status.
+
+**Changed paths**
+
+- `skills/conversation-mode/SKILL.md`
+- `workspace/tasks/20261120-153700-condensed-mode-adherence-guardrails.md`
+- `workspace/tasks/20261120-123000-repository-documentation-audit.md`
+- `workspace/task_board.md`
+- `workspace/discussion.md`
+
+**Commits**
+
+- Skill update: `f92cdb95ba3b1ceeda5ab88b6025acd0da4fb720`
+- Documentation-audit checkpoint: `fdeb690f7d93fa92bb32d476265fd93ecd9c7822`
+- Task-board update: `6eb0a08ca93b1c7e699617e2f8f9d298b8c5fb29`
+- New task: `1e11ec2be4bd104ba72b608a89e9669884af854c`
+
+**CI snapshot**
+
+The newest available changed-document run was `44763230785`. It succeeded on commit `808d1bca5ddb3af15ef9ddaf3f57cbc7ddb09282`. The current branch head at the start of this task was `56e58a688135d0bb90cadefb9a2a8cca77e442d3`, which had no corresponding run in the bounded snapshot. No CI result was awaited, and no workflow was dispatched or rerun. No lint or CI command was run locally.
+
+**Verification**
+
+The repository changes were committed to branch `gpt`. The final read-back check is the next action. Future CI validation remains non-blocking and will be reviewed at the next mandatory preflight.
+
+**Current state**
+
+The mode policy now contains an explicit per-turn enforcement gate and resolves the two output-rule conflicts. This makes the workflow clearer. It cannot guarantee that a model will follow the instructions in every future response.
+
+The repository documentation audit remains In Progress and is no longer the current execution task. Resume it after this task is complete.
+
+---
+
 ### 2026-11-20 15:34 UTC
 
 **User**
