@@ -170,7 +170,7 @@ A technical clarification must not:
 - Convert an optional detail into a mandatory requirement.
 - Turn an unspecified choice into a permanent lock.
 - Change the emotional, stylistic, narrative, or aesthetic meaning.
-- Alter a specified face, outfit, pose, scene, or composition.
+- Change a specified face, outfit, pose, scene, or composition.
 - Introduce a restriction that the user did not request.
 
 Do not silently decide an ambiguous detail when different interpretations would materially change the image. Ask one concise question about the unresolved point. Do not ask the user to reconfirm details already specified or approved.
@@ -241,23 +241,23 @@ The prompt-fidelity audit is a mandatory pre-generation gate.
 2. Perform the complete-prompt audit described above.
 3. Remove every unsupported addition and every unauthorized restriction, including disguised equivalents.
 4. Only then archive and commit the exact authored prompt under the drawing workflow.
-5. Fetch or otherwise read back the committed prompt and verify that it matches the audited text.
-6. Immediately before generation or editing, confirm that the text being submitted is the same as the verified prompt.
+5. Fetch or otherwise read back the committed prompt and check that it matches the audited text.
+6. Immediately before generation or editing, check that the text being submitted is the same as the verified prompt.
 7. Generate or edit only after these checks pass.
 
-If the text changes after it has been archived or verified, repeat the audit and update and verify the record before generation. A previously verified version does not authorize submitting a modified version.
+If the text changes after it has been archived or verified, repeat the audit and update and check the record before generation. A previously verified version does not authorize submitting a modified version.
 
 If the image tool's actual submitted payload is exposed, record it accurately. If it is not exposed, do not claim that the authored prompt is verbatim internal tool wording. Keep the authored prompt distinct from any known compiled or submitted payload.
 
-Do not retroactively alter the archived authored prompt to make it appear that a different text was submitted. Record any actual deviation separately, identify what changed, and state whether it was authorized. A materially different submitted prompt is not a faithful execution of the archived prompt.
+Do not retroactively change the archived authored prompt to make it appear that a different text was submitted. Record any actual deviation separately, identify what changed, and state whether it was authorized. A materially different submitted prompt is not a faithful execution of the archived prompt.
 
 ## 13. Responsibilities after generation
 
 Evaluate the returned image against the user's actual brief and the specific objective of the attempt. A successful tool call does not establish that the image followed the prompt.
 
-Do not justify an unwanted result by claiming that an unrequested restriction or creative addition was necessary when it was not. Do not silently modify the original brief to make the result appear compliant.
+Do not justify an unwanted result by claiming that an unrequested restriction or creative addition was necessary when it was not. Do not silently change the original brief to make the result appear compliant.
 
-If the output exposes a prompt-fidelity error, record the error and correct the workflow for the next attempt. Do not repeat the unauthorized wording. Do not treat the failure as permission to alter the user's locked features.
+If the output exposes a prompt-fidelity error, record the error and correct the workflow for the next attempt. Do not repeat the unauthorized wording. Do not treat the failure as permission to change the user's locked features.
 
 ## 14. Required decision rule
 
@@ -287,4 +287,4 @@ Use this checklist before every image generation or edit:
 - [ ] Unsupported wording has been removed before archiving and verification.
 - [ ] The archived and verified prompt is the exact authored text that will be submitted.
 
-**Generation gate:** Do not generate or edit until every applicable item passes. If an item does not pass, correct the prompt first. Do not weaken the rule to get an attempt through.
+**Generation gate:** Do not generate or edit until every applicable item passes. If an item does not pass, correct the prompt first. Do not weaken the rule to fetch an attempt through.
