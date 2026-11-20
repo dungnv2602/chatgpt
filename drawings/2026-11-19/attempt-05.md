@@ -34,6 +34,6 @@
 
 ## Repository images
 
-- [Generated Image November 19, 2026 - 4_05AM.png.webp](images/Generated%20Image%20November%2019,%202026%20-%204_05AM.png.webp)
+- [file_00000000ce548211bd83b29d5568432d.png.webp](images/file_00000000ce548211bd83b29d5568432d.png.webp)
 
-- **Association basis:** Manually matched by the visible upright studio-chair portrait and neutral studio setting described in this attempt. The archived generation record does not preserve a direct conversation asset ID for this file, so this is a visual archive match rather than an ID-verified link.
+- **Association basis:** Explicitly confirmed by the user: this file is the successful output for Attempt 05. The previously linked timestamp-named asset was incorrect and has been unlinked from this attempt.
