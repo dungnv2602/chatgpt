@@ -77,6 +77,15 @@ Make CI inspection and repair a mandatory gate before every user prompt. Repeat 
 - **CI:** Pending the normal push-triggered workflows. No local linter execution.
 - **Next:** Read back every changed path. Inspect and repair any failed applicable workflow before proceeding.
 
+### 2026-11-20 13:34 UTC
+
+- **Action:** Reviewed the first CI run after the workflow-policy update.
+- **Finding:** Both applicable workflows failed because the repository writing policy used `validate` after it already used `check` for the same action. The linter reported one hard synonym-rotation finding.
+- **Change:** Replaced `validate` with `check` in the policy. Preserved the mandatory CI-gate reference.
+- **Read-back:** Pending.
+- **CI:** The next push-triggered runs must pass before this task proceeds.
+- **Next:** Read back the policy and task record. Inspect the new workflow runs and repair any remaining failure.
+
 ## 7. Current State
 
 The initial CI preflight is clear. Both applicable workflows passed on commit `a5ce29072ba5a983c1c769e744dd86962d4a5c41`.

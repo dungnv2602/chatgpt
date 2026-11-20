@@ -45,7 +45,7 @@ Do not treat a linter result as proof that a document is accurate. A linter chec
 
 ## Validation
 
-Do not run the linter locally. Push changes to branch `gpt` and let GitHub Actions validate them. Follow the mandatory pre-prompt and post-load CI gates in the [GitHub Actions skill](../../github-actions/SKILL.md).
+Do not run the linter locally. Push changes to branch `gpt` and let GitHub Actions check them. Follow the mandatory pre-prompt and post-load CI gates in the [GitHub Actions skill](../../github-actions/SKILL.md).
 
 The repository has two lint workflows:
 
