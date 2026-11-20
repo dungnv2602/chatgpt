@@ -35,7 +35,6 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
           if ! latest_run=$(gh run list \
@@ -66,7 +65,6 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
           last_success=$(gh run list \

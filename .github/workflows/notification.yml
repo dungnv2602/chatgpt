@@ -3,11 +3,15 @@ name: Send Email on Notification Tag
 on:
   push:
     tags:
-      - 'notification-*'   # Triggers only when a tag named exactly "notification" is pushed
+      - 'notification-*'
+
+permissions: {}
 
 jobs:
   send-email:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions: {}
     steps:
       - name: Send notification email
         uses: dawidd6/action-send-mail@v3
@@ -20,7 +24,7 @@ jobs:
           to: ${{ secrets.MAIL_TO }}
           from: ${{ secrets.MAIL_FROM }}
           body: |
-            A new tag named "notification" was pushed to the repository.
+            A new notification tag was pushed to the repository.
             Repository: ${{ github.repository }}
             Tag: ${{ github.ref_name }}
             Pushed by: ${{ github.actor }}

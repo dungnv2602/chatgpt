@@ -1,6 +1,6 @@
 ---
 name: github-actions
-description: Design, maintain, optimize, secure, and check GitHub Actions workflows. Use when work changes CI workflows, triggers, path filters, concurrency, incremental checks, caching, runners, permissions, artifacts, or deployment automation.
+description: Design, maintain, optimize, and secure GitHub Actions workflows. Use when work changes CI workflows, triggers, path filters, concurrency, incremental checks, caching, runners, permissions, artifacts, or deployment automation.
 metadata:
   project-role: foundational
   format: agentskills
@@ -8,60 +8,53 @@ metadata:
 
 # GitHub Actions
 
-## 1. Purpose and activation
+## 1. Purpose and authority
 
-Use this skill for GitHub Actions workflow design and maintenance.
-
-Activate it when a task creates, revises, optimizes, debugs, secures, or validates workflow files. Use it for triggers, path filters, concurrency, caching, runners, permissions, artifacts, incremental checks, and deployment workflows.
-
-This skill governs workflow-specific decisions. The Conversation Mode skill governs general repository execution and CI checkpoint policy.
-
-## 2. Authority and boundaries
+Use this skill for GitHub Actions workflow design and maintenance. It governs workflow-specific decisions; the Conversation Mode skill governs general repository execution.
 
 1. Follow the user's current instructions and the repository's approved workspace boundary.
-2. Use repository `dungnv2602/chatgpt`, branch `gpt`, as the source of truth.
-3. Follow Sections 7 and 8 of `skills/conversation-mode/SKILL.md` for pending CI runs, batching, read-back, and commit verification.
-4. Do not infer permission to change files outside the approved project directories.
-5. Request the required authorization before you access or change workflow paths outside those directories.
-6. Do not change `main` unless the user authorizes that change.
+2. Use `dungnv2602/chatgpt`, branch `gpt`, as the source of truth.
+3. Follow the repository's approved project boundaries. Do not change `main` unless the user authorizes it.
+4. Inspect the target workflows and the scripts/configuration they use before editing.
+5. Do not treat historical notes, examples, or old cost figures as current GitHub policy.
 
-The imported optimization note is supporting source material. It is not an authority for current GitHub limits, prices, or default settings. See [the user-supplied optimization notes](references/user-supplied-optimization-notes.md).
+## 2. Execution policy: implement, then let CI report
 
-## 3. Inspect before editing
+The default workflow for repository changes is implementation-first and event-driven:
 
-1. check the current branch head.
-2. Check known pending CI run IDs from the previous task.
-3. Inspect each target workflow and every script or configuration file that it uses.
-4. Record its events, branch filters, path filters, jobs, dependencies, permissions, concurrency, runner, timeout, cache, and artifact settings.
-5. Identify required checks and their branch-protection role.
-6. Define the validation scope before you change the workflow.
+1. Implement the requested workflow and documentation changes directly.
+2. Commit related changes together so one coherent push produces the normal event-triggered CI run.
+3. Do not manually invoke `workflow_dispatch`, `gh workflow run`, the Actions API dispatch endpoint, or any equivalent manual trigger.
+4. Do not rerun, cancel, or otherwise stimulate CI manually.
+5. Do not poll or inspect CI status as a routine post-edit step. Let the normal GitHub event trigger the configured workflows; failed CI is the feedback signal.
+6. Do not add a workflow trigger solely to make a check run after an assistant edit.
+7. If the user explicitly asks to investigate a CI failure, inspect the relevant run and fix the underlying cause. Otherwise, do not turn implementation work into a manual CI-verification exercise.
 
-Do not optimize a workflow by removing a required test or weakening its validation scope.
+A workflow may retain a legitimate `workflow_dispatch` trigger for an operator's independent use. Its existence does not authorize the assistant to invoke it.
+
+## 3. Inspect and preserve validation scope
+
+Before changing a workflow, identify its events, branch/path filters, jobs, dependencies, permissions, concurrency, runner, timeout, cache, artifact behavior, and scripts. Identify which checks cover which files.
+
+- Do not optimize by removing a required test or weakening its validation scope.
+- Preserve required push, pull-request, release, and schedule events.
+- Include workflow files, scripts, configuration, lockfiles, and source data that affect the result in the appropriate path filters.
+- Keep full audits and incremental checks separate when they have different validation scopes.
+- Avoid duplicate runs caused by overlapping triggers.
 
 ## 4. Design precise triggers
 
-Use event filters to avoid runs that cannot check the changed files.
+Use branch and path filters to avoid work that cannot validate the changed files.
 
-- Use branch filters when a workflow only applies to selected branches.
-- Use `paths` when a workflow applies to a defined file set.
-- Include the workflow files, scripts, configuration, lockfiles, and source data that affect its result.
-- Keep full audits and incremental checks separate when they have different validation scopes.
-- Avoid overlapping event and path filters that start duplicate jobs.
-- Preserve required push, pull-request, release, and schedule events.
+- When both branch and path filters exist, both conditions must match.
+- GitHub evaluates path patterns in order. A later positive pattern can include a path excluded earlier; a later negative pattern can exclude a path included earlier.
+- When using negative patterns inside `paths`, include at least one positive pattern.
+- Do not use both `paths` and `paths-ignore` for the same event.
+- Check branch-protection requirements before adding workflow-level filters. A skipped workflow can leave a required check pending; use job-level conditions or a stable required check when every pull request needs a result.
 
-When both branch and path filters exist, both conditions must match. Check their combined effect.
+## 5. Control concurrency and superseded runs
 
-GitHub evaluates path patterns in order. A later positive pattern can include a path that an earlier negative pattern excluded. A later negative pattern can exclude a previously included path. Use at least one positive pattern when you use negative patterns. Do not reorder patterns without checking their effect.
-
-Do not use both `paths` and `paths-ignore` for the same event. Use negative patterns inside `paths` when one event needs both inclusion and exclusion rules.
-
-A workflow skipped by branch or path filters can leave a required check pending. Check branch-protection requirements before you add a workflow-level filter. Use job-level conditions or a stable required check when the repository needs a check on every pull request.
-
-## 5. Control concurrency safely
-
-Use a concurrency group that isolates the workflow and its branch or pull request.
-
-For replaceable push-based validation, a common pattern is:
+Use a concurrency group that isolates a workflow and its branch or pull request:
 
 ```yaml
 concurrency:
@@ -69,137 +62,114 @@ concurrency:
   cancel-in-progress: true
 ```
 
-Use `cancel-in-progress: true` when a newer run makes an older validation run obsolete.
+- Use `cancel-in-progress: true` for replaceable validation runs when a newer commit makes an older run obsolete.
+- Do not use one static group for unrelated workflows or branches.
+- Do not cancel an active deployment unless cancellation is safe for that deployment.
+- Keep deployment concurrency separate from ordinary validation concurrency.
 
-Do not use one static concurrency group for unrelated workflows or branches. Do not cancel an active deployment unless the deployment design makes cancellation safe. Use environment protection or a deployment-specific concurrency policy when required.
+### Reject stale pushes before checkout
 
-Check whether push and pull-request events share a concurrency group. check that the group does not cancel a run that the user still needs.
+For expensive push validation, a short preflight job can reject a superseded run before the validation job checks out the repository.
 
-### Reject superseded runs before checkout
+- Run the guard before checkout, dependency setup, or repository scripts.
+- Query the newest run for the same workflow, branch, and event; compare its run ID with `github.run_id`.
+- If a newer run exists, cancel the current run through the Actions API. The validation job must depend on the guard output and must not start for a superseded run.
+- Grant `actions: write` only to the guard job when it must cancel its own run. Grant only the read permissions needed for its queries; commit comparison requires `contents: read`.
+- Keep the guard short and give it a small timeout.
+- If the API cannot identify the newest run, emit a warning and continue validation. Never skip validation because the guard could not decide.
+- Retain `cancel-in-progress: true` as the primary race protection. A new push can arrive after the guard passes; concurrency cancellation handles that race.
 
-Concurrency cancellation remains the primary control for replaceable push validation. Add a lightweight preflight job when a run can spend meaningful time or bandwidth on checkout before it reaches its first useful check.
-
-- Run the preflight before any checkout, dependency setup, or repository script.
-- Query the newest run for the same workflow, branch, and event. Compare its run ID with `github.run_id`.
-- If a newer run exists, cancel the current run through the Actions API. Do not let a superseded run report a successful validation result.
-- Give the preflight job `actions: write` only when it must cancel its own run. Add read permissions only for its API queries; for example, the compare-commits endpoint needs `contents: read`. Keep the validation job on the permissions it needs, usually `contents: read`.
-- Make the validation job depend on the preflight output. If the preflight cancels the run, the validation job must not start.
-- If the API cannot identify the newest run, continue with validation and emit a warning. Do not skip validation because the guard could not decide.
-- Keep the preflight short and set a small job timeout.
-
-A narrow race remains: a newer push can arrive after the guard passes and before checkout finishes. Keep `cancel-in-progress: true` so GitHub cancels the older run when the new run starts. The guard prevents checkout when a newer run already exists; it cannot prevent every race after the check.
+A separate guard job costs an additional runner allocation. Use it when avoiding checkout and setup on superseded runs justifies that cost. Do not add one to trivial workflows.
 
 ## 6. Preserve incremental-check correctness
 
-For push-based incremental checks, use the latest successful run of the same workflow and branch as the comparison baseline.
-
-Do not rely only on `github.event.before`. A cancelled run can contain commits that the next push does not include in its event diff. A later incremental run can then omit those commits.
-
-Use this procedure:
+For push-based incremental checks, compare against the latest successful run of the same workflow and branch, not merely the previous push event.
 
 1. Query completed runs for the same workflow and branch.
-2. Select the latest run with a successful conclusion.
-3. Read its exact `head_sha`.
-4. Use the GitHub compare API to check whether the baseline is an ancestor of the current commit before checkout. Accept `ahead` or `identical`; treat missing, failed, or divergent comparisons as an invalid baseline.
-5. Check every relevant file changed since that baseline.
-6. Run a full audit when the baseline is missing or invalid.
+2. Select the latest successful run and read its exact `head_sha`.
+3. Use the GitHub compare API before checkout to confirm that the baseline is an ancestor of the current commit. Accept `ahead` or `identical`; treat missing, failed, or divergent comparisons as an invalid baseline.
+4. Check every relevant file changed since that baseline.
+5. Run a full audit when the baseline is missing or invalid.
 
-Prefer a shallow checkout with `fetch-depth: 1`. After checkout, fetch only the successful baseline commit with `git fetch --no-tags --depth=1 origin "$BASE_SHA"`. If that fetch fails, run a full audit instead of failing open or omitting changes. Use full checkout history only when the validation itself needs broader history. Do not use `git merge-base` as an ancestry test in a shallow checkout.
+Do not rely only on `github.event.before`: a cancelled run may contain commits omitted from the next push's event diff.
 
-Do not silently treat a failed, cancelled, queued, or in-progress run as a successful baseline.
+Prefer `fetch-depth: 1`. After checkout, fetch only the successful baseline commit with `git fetch --no-tags --depth=1 origin "$BASE_SHA"`. If that fetch fails, run a full audit rather than omitting changes. Use full history only when the workflow's Git operations genuinely require it. Do not use `git merge-base` as an ancestry test in a shallow checkout.
 
-For pull-request checks, compare the pull-request head with the appropriate base commit. Use the event payload and Git history that match the pull-request validation design. Do not reuse a push baseline without a reason.
+Do not treat failed, cancelled, queued, or in-progress runs as successful baselines. For pull-request checks, compare the pull-request head with the appropriate base commit; do not reuse a push baseline without a clear reason.
 
-Test the full-audit fallback. It protects the workflow when the branch has no successful baseline or its history has changed.
+## 7. Cache dependencies only when useful
 
-## 7. Cache dependencies only
-
-Add a cache when a job downloads or installs dependencies that later runs can reuse.
-
-- Build cache keys from the operating system, runtime, package manager, and dependency lockfiles.
-- Use restore prefixes only when the restored cache remains compatible.
+- Cache dependencies that are expensive to download or install and can be safely reused.
+- Build keys from the operating system, runtime, package manager, and dependency lockfiles.
+- Use restore prefixes only when older cache contents remain compatible.
 - Prefer supported cache options in official setup actions when they meet the requirement.
-- Do not cache standard-library-only jobs.
-- Do not cache secrets, authentication tokens, private keys, or sensitive build outputs.
-- Do not add a cache when the restore and save steps cost more than the work they avoid.
+- Do not cache standard-library-only jobs, secrets, credentials, or sensitive build outputs.
+- Do not add caching when restore/save overhead exceeds the work avoided.
+- Prevent untrusted jobs from writing cache content later consumed by privileged workflows.
 
-Review cache scope when pull requests can run untrusted code. Prevent untrusted jobs from writing cache content used by privileged workflows.
+## 8. Choose runners and timeouts
 
-## 8. Select runners and set timeouts
-
-Select a runner that meets the job's operating-system, architecture, toolchain, and security requirements.
-
-- Prefer a lower-cost supported runner when it meets the job requirements.
-- Do not select `ubuntu-latest` when the job requires Windows or macOS behavior.
+- Select the least costly supported runner that meets operating-system, architecture, toolchain, and security requirements.
+- Do not use Linux when the job requires Windows or macOS behavior.
 - Pin a runner image when reproducibility requires a specific environment.
-- Set `timeout-minutes` for every job.
-- Set a step timeout when one command can hang independently.
+- Set `timeout-minutes` for every job and a step timeout when an individual command can hang.
 - Use self-hosted runners only when their isolation and maintenance model are suitable.
 
-Do not quote runner prices or multipliers without checking current GitHub billing documentation.
+Do not repeat historical runner prices, billing multipliers, minute-rounding rules, or quotas as current facts without checking current official GitHub billing documentation.
 
 ## 9. Minimize artifact storage
 
-Upload only files that later jobs or users need.
-
+- Upload only outputs that later jobs or users need.
 - Exclude temporary and reproducible files when they are not required.
 - Compress large outputs when compression reduces transfer or storage cost.
-- Set `retention-days` to the shortest period that still supports the workflow.
-- Download only the artifacts that a later job needs.
+- Set `retention-days` to the shortest period that still meets the workflow's operational needs.
+- Download only artifacts required by a later job.
 - Do not add artifact settings to workflows that do not upload artifacts.
 
-Do not assume that logs and workflow artifacts share the same storage rules. Check current GitHub documentation before you report storage limits or retention defaults.
+Logs and workflow artifacts can have different storage rules. Check current GitHub documentation before stating limits or defaults.
 
 ## 10. Apply least privilege and protect inputs
 
-Set workflow permissions explicitly. Grant each job only the permissions that it needs.
+Set permissions explicitly at workflow or job level. Grant each job only what it needs.
 
-- Use `contents: read` when a job only needs repository checkout.
-- Add `actions: read` only when a job must query workflow runs or artifacts.
+- Use `contents: read` for checkout-only jobs.
+- Grant `actions: write` only to jobs that must cancel or modify workflow runs.
+- Use `permissions: {}` when a job does not need a GitHub token.
 - Grant write permissions at job level when only one job needs them.
-- Use short-lived credentials and OpenID Connect when the deployment provider supports it.
+- Prefer short-lived credentials and OpenID Connect when supported by the deployment provider.
 - Do not expose secrets to untrusted pull-request code.
 - Do not use `pull_request_target` to execute untrusted pull-request code with elevated permissions.
-- Pass event values to scripts through environment variables. Quote and check each value before use.
+- Pass event values to scripts through environment variables; quote and validate them.
 - Do not interpolate untrusted event data directly into shell commands.
-- Follow repository policy for action pinning. check the action owner and source before you adopt an action version.
-- Isolate self-hosted runners that execute untrusted code. Do not reuse a privileged persistent workspace across trust boundaries.
+- Follow repository policy for action pinning and verify an action's owner/source before adopting a version.
+- Isolate self-hosted runners that execute untrusted code.
 
 ## 11. Keep workflow structure maintainable
 
-Use separate workflows when they have different triggers, permissions, validation scopes, or operational lifecycles.
+- Use separate workflows when triggers, permissions, validation scopes, or operational lifecycles differ.
+- Use a reusable workflow when multiple workflows genuinely share a maintained job sequence. Do not abstract a single small job without a clear reuse case.
+- Keep permissions, concurrency, runner choice, and timeouts close to the job that uses them.
+- Explain non-obvious conditions that protect coverage or safety.
+- Do not duplicate checks without a distinct purpose.
+- Do not remove a full audit merely because an incremental check is faster.
+- Batch related workflow, script, and documentation edits into one coherent commit to avoid intermediate pushes and duplicate CI runs.
 
-Use a reusable workflow when multiple workflows need the same maintained job sequence. Do not build an abstraction for a single small job without a clear reuse case.
+## 12. Decision checklist
 
-Keep permissions, concurrency, runner choice, and timeouts close to the workflow or job that uses them. Add comments when a non-obvious condition protects coverage or safety.
+Use these questions when implementing an optimization:
 
-Do not duplicate checks across workflows unless each check has a distinct purpose. Do not remove a full audit merely because an incremental check is faster.
+1. Does the trigger match only relevant events, branches, and paths without bypassing required checks?
+2. Can concurrency safely cancel obsolete validation without interrupting important deployments?
+3. Is any preflight job worth its additional runner allocation?
+4. Does the incremental baseline include every commit since the last successful validation?
+5. Does a missing or unreachable baseline cause a full audit?
+6. Is dependency caching useful and safe for this job?
+7. Are runner, timeout, artifact retention, and permissions appropriate to the actual workload?
+8. Can repeated logic be shared without creating needless abstraction?
+9. Are changes grouped into one coherent push?
+10. Has the assistant avoided manually dispatching, rerunning, or polling CI unless the user explicitly requested CI investigation?
 
-Batch related workflow, script, and documentation edits into one coherent commit when the available write interface supports it. Avoid intermediate commits that trigger duplicate CI runs.
-
-## 12. check and report
-
-1. Parse every changed workflow as YAML.
-2. Run `actionlint` when it is available.
-3. Run the workflow's relevant scripts and tests when the execution environment supports them.
-4. Review event filters, permission scope, concurrency groups, baseline selection, and fallback behavior.
-5. Read back every changed path from branch `gpt`.
-6. check the final branch head and associate each CI result with the exact commit SHA it checked.
-7. Report run IDs and pending states. Follow the Conversation Mode CI checkpoint policy. Do not wait for or repeatedly poll an in-progress run.
-
-Do not claim that a workflow passed because a commit has no status entries. Report unavailable checks as unverified.
-
-## 13. Treat the imported note as historical input
-
-The reference file preserves the user's original optimization note. Use it to identify potential improvements.
-
-check mutable claims against current official GitHub documentation before you rely on them. This includes runner prices, billing multipliers, job-minute rounding, storage quotas, retention periods, and default settings.
-
-Do not copy example action versions or runtime versions without checking whether they remain supported. Do not add caching or artifact retention when the workflow has no dependency or artifact requirement.
-
-The note recommends dependency caching, safe concurrency cancellation, path filters, suitable runners, job timeouts, artifact compression, and shorter artifact retention. Evaluate each recommendation against the actual workflow. Do not apply it by default.
-
-## 14. Official references
+## 13. Official references
 
 - [Workflow syntax](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
 - [Workflow concurrency](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/control-the-concurrency-of-workflows-and-jobs)

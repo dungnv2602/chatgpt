@@ -25,14 +25,15 @@ concurrency:
   group: image-takeout-${{ github.ref }}
   cancel-in-progress: false
 
-permissions:
-  contents: write
+permissions: {}
 
 jobs:
   process-image-takeout:
     if: github.ref == 'refs/heads/gpt'
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    permissions:
+      contents: write
 
     steps:
       - name: Check out gpt
@@ -71,6 +72,8 @@ jobs:
       - name: Commit and safely publish processed assets and reports
         if: always() && steps.process.outcome != 'skipped'
         shell: bash
+        env:
+          PROCESS_OUTCOME: ${{ steps.process.outcome }}
         run: |
           set -euo pipefail
 
@@ -87,7 +90,7 @@ jobs:
             exit 0
           fi
 
-          if [[ "${{ steps.process.outcome }}" == "failure" ]]; then
+          if [[ "$PROCESS_OUTCOME" == "failure" ]]; then
             commit_message="chore(images): archive failed takeout diagnostics"
           else
             commit_message="chore(images): process takeout batch"
