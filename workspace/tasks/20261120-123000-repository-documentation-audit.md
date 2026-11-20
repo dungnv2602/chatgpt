@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 14:54 UTC
+- **Updated:** 2026-11-20 14:56 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -47,6 +47,16 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - The entire `archive/` tree is outside the audit scope. This supersedes earlier progress notes that proposed a historical-link review or treated archive files as audit sources.
 
 ## 6. Progress Log
+
+### 2026-11-20 14:56 UTC
+
+- **Action:** Completed and read back the archive-exclusion workflow changes.
+- **Changed paths:** `.github/workflows/ste-lint-full-docs.yml`, `.github/workflows/ste-lint-changed.yml`, `skills/asd-ste100/scripts/check_markdown_anchors.py`, `skills/asd-ste100/scripts/ste-lint-repository.sh`, `skills/the-worker/SKILL.md`, this task record, and `workspace/discussion.md`.
+- **Behavior:** Both lint workflows exclude all of `archive/`. The changed workflow also ignores archive-only pushes. The Markdown checker does not read archived files or validate their anchors. It checks only path existence when an active document links to an archived path. The Worker now defines `archive/` as retention-only.
+- **Commits:** Full lint `eb5f21a35f329739da9fae18ca204679b45cbc69`; changed lint `38a6491c1851b6e057dc08270ff4ff3bc9d2489b` and follow-up `cf5aa6e4a6cfb40afe55bd14ddcbd7a7f68daa1b`; link checker `dd24402c43dd3b4afc99dabdc7ad5afc428f1a0d`; lint wrapper `ef782ed6b0111de44b57027a5a4f953fbf2198f9`; Worker `3bbc4b5c8d7a0f6c3870a45d146c46a6f0c60066`; task scope `3df102e7da13b1ed31788dbbea396b6f7eeb4168`; discussion `c917bed87e5fe93c110f91158ddbc2789c51a8f2`.
+- **Read-back:** Fetched all changed paths from branch `gpt`. Corrected the changed-workflow full-audit fallback filter after read-back exposed one remaining `archive/tasks/`-only exclusion. Fetched the corrected workflow again and confirmed both lint paths exclude `archive/`.
+- **CI discipline:** Did not run lint or CI locally, dispatch or rerun workflows, or wait for/poll GitHub Actions. New runs will be reviewed at the next mandatory preflight.
+- **Next:** Continue the active documentation audit. Do not inspect or process `archive/`.
 
 ### 2026-11-20 14:54 UTC
 
