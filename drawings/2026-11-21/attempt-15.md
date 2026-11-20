@@ -6,7 +6,7 @@
 - **Series / path:** Samantha — Human Presence Without a Body / Sweet Path
 - **Scene:** Approved Attempt 14 apartment portrait with Attempt 04's recorded facial traits and expression.
 - **Operation:** Prompt-only continuation of Attempt 14; fresh text-only generation.
-- **Status:** Prompt archived; generation pending
+- **Status:** Generated; awaiting user review
 - **Prompt ID:** Not assigned
 - **Baseline:** Attempt 14 — `drawings/2026-11-21/attempt-14.md`; facial direction informed by the written description in `drawings/2026-11-20/attempt-04.md`.
 
@@ -38,23 +38,23 @@ Do not add any text, lettering, words, typography, captions, subtitles, labels, 
 
 ## Generation and outputs
 - **Authored prompt committed before generation:** Yes
-- **Actual submitted payload:** Pending; tool metadata may not expose it
-- **Generation result:** Pending
-- **Output count and order:** Pending
+- **Actual submitted payload:** Not exposed; returned metadata has an empty prompt field
+- **Generation result:** Generated
+- **Output count and order:** One output
 
 | Output ID | Native generation / image ID | Mapping evidence and status | Original / archive asset | SHA-256 |
 |---|---|---|---|---|
-| Pending | Pending | Pending | Pending | Pending |
+| Output 01 | Generation ID: `0c06b408-4508-4c68-b6ec-bf3268b56f32`; asset ID: `file_00000000f9108207bbd749f89003c6c2` | Generation and asset IDs returned together; local PNG verified; Corroborated | `/mnt/data/a_well_lit_indoor_portrait_scene_a_young_adult_wh.png` | `a79c934f14cab0026d384fa9cde1bd948b3f5694e04b4a39905d969dc3187bec` |
 
 ## Review
 | Acceptance criterion | Result | Visual evidence |
 |---|---|---|
-| Face conveys Attempt 04's documented dark-hazel eyes and attentive, intelligent, quietly amused expression | Not assessable | Awaiting generation |
-| Preserve Attempt 14's approved body direction, seated pose, thigh anatomy, clothing, and composition | Not assessable | Awaiting generation |
-| Preserve the Sweet Path apartment, window light, and naturalistic photographic treatment | Not assessable | Awaiting generation |
-| No text, panels, labels, graphics, or watermarks | Not assessable | Awaiting generation |
-| No unrelated visual redesign or effects | Not assessable | Awaiting generation |
+| Face conveys Attempt 04's documented dark-hazel eyes and attentive, intelligent, quietly amused expression | Pass | Hazel eyes, faint freckles, direct attentive gaze, and a restrained warm smile are visible |
+| Preserve Attempt 14's approved body direction, seated pose, thigh anatomy, clothing, and composition | Partial | Coral-red outfit and seated pose remain; thighs are visible with natural-looking contours, but the crop does not show the knees or full leg alignment |
+| Preserve the Sweet Path apartment, window light, and naturalistic photographic treatment | Pass | Warm apartment, bright window, city view, and photorealistic lighting remain |
+| No text, panels, labels, graphics, or watermarks | Pass | No text or overlays visible |
+| No unrelated visual redesign or effects | Pass | No extra subjects or unrelated decorative effects visible |
 
-- **Outcome:** Pending generation.
+- **Outcome:** Fresh prompt-based generation, not an exact face transfer or source-linked composite.
 - **User decision:** Pending.
-- **Next action:** Generate one image and record returned metadata and output hash.
+- **Next action:** Await user review.
