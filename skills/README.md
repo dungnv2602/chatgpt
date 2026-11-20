@@ -16,9 +16,15 @@ These skills govern cross-project work. Load them only through the explicit foun
 | [github-actions](github-actions/SKILL.md) | GitHub Actions workflow design, optimization, security, and verification |
 | [session-archiving](session-archiving/SKILL.md) | Conversation integrity, archive records, image provenance, and closeout |
 
-## On-demand prerequisite skills
+## Specialist dependency hierarchy
 
-Load these skills only when a drawing or novelist workflow requires them. They are not part of foundational initialization.
+Load specialist skills in dependency order. Do not load them during ordinary foundational initialization unless the user's task requires the next tier.
+
+1. **Foundational:** the five skills listed above.
+2. **Drawing:** the Drawing skill and its required references. Activate for drawing sessions or as a novelist prerequisite.
+3. **Novelist:** Romantic Storyteller and active novel records. Activate only for the novelist role.
+
+Use the per-conversation verified-load ledger in [SESSION_START.md](SESSION_START.md). A file that was successfully retrieved and read earlier in the same conversation must be reused, not loaded again.
 
 | Skill | Activation |
 |---|---|

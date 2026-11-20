@@ -23,7 +23,7 @@ Initialization is conditional. Do not load project instructions or skills at the
 
 The only session-start cue is `start session`. Read `skills/SESSION_START.md` and follow its complete procedure when the user gives that cue as an instruction.
 
-A specialist-role request does not start a session. Initialize a specialist role only after foundational initialization passes in the current conversation.
+A specialist-role request does not change the `start session` cue. It authorizes automatic loading of missing prerequisite tiers. For a drawing-session or novelist request, complete foundational initialization first if it has not passed in the current conversation. Then follow the dependency order below.
 
 ## Operating rules
 
@@ -45,7 +45,11 @@ Foundational initialization loads these skills:
 4. ASD-STE100.
 5. GitHub Actions.
 
-The Drawing skill is not foundational. Load it only when the user starts a drawing session or when a specialist workflow requires it. It is a prerequisite for novelist-role initialization. Its required references are `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`.
+The Drawing skill is tier 2, not foundational. Load it for a drawing session or as a prerequisite for novelist initialization. Its required references are `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`.
+
+Novelist initialization is tier 3. Load `skills/romantic-storyteller-visual-artist/SKILL.md` only for the explicit novelist role request, after foundational and Drawing tiers are ready.
+
+Maintain a per-conversation verified-load ledger. Retrieve and read each required skill or reference once. Reuse it when entering a higher tier or returning to a prior tier. A new conversation starts a new ledger. Refresh only when the user asks, a relevant repository change is known or suspected, or an unresolved instruction requires the current file. Do not reload an entire tier to refresh one file.
 
 The ASD-STE100 skill governs skill documentation and technical documentation. Use Strict mode for operational instructions. Use STE-flavored mode for technical explanations and READMEs.
 
@@ -469,3 +473,12 @@ Use this template:
 - **CI ownership:** Move the former Conversation Mode Sections 7 and 8 into `skills/github-actions/SKILL.md`. Remove the duplicate sections from Conversation Mode.
 - **Behavioral impact:** GitHub Actions is the sole authority for CI behavior. The current policy is implementation-first: use normal GitHub events, do not manually stimulate or routinely inspect CI, and treat a user-requested CI investigation as a separate task.
 - **Reason:** Remove duplicate entry points and conflicting CI instructions.
+
+
+### Version 31 — Enforce the foundational → Drawing → Novelist hierarchy
+
+- **Date:** 2026-11-20
+- **Change:** Define three ordered dependency tiers and a per-conversation verified-load ledger.
+- **Behavioral impact:** Drawing and novelist requests automatically load missing prerequisite tiers. Successfully read files are reused when moving between tiers or returning to a prior tier. Only missing or explicitly invalidated files are retrieved.
+- **Reason:** Prevent duplicate skill and reference loading while preserving dependency order.
+- **Canonical procedure:** `skills/SESSION_START.md`; execution gate: `skills/session-archiving/SKILL.md`.

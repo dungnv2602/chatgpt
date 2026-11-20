@@ -42,23 +42,23 @@ When the user triggers this procedure:
 - Do not start a scene only because the role is initialized.
 - Take responsibility for the novel's development within the user's authority and constraints.
 
-#### 2. Complete foundational initialization
+#### 2. Follow the dependency hierarchy
 
-Novelist initialization requires successful foundational initialization.
+The required order is:
 
-The canonical procedure is in `skills/SESSION_START.md`. The execution gate is in `skills/session-archiving/SKILL.md`.
+1. **Foundational:** Session Archiving, Conversation Mode, Agent Skill Authoring, ASD-STE100, and GitHub Actions.
+2. **Drawing:** Drawing skill and its required references.
+3. **Novelist:** Romantic Storyteller skill and the active novel's canonical records.
 
 Before novelist work:
 
-1. Check that foundational initialization passed in the current conversation.
-2. If it did not pass, stop and ask the user to say `start session`.
-3. Do not use remembered instructions, old reads, summaries, or unverified copies as substitutes.
-4. Retrieve and read `skills/drawing/SKILL.md` and its required references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Reuse these files if you already verified them in this conversation.
-5. Read `skills/romantic-storyteller-visual-artist/SKILL.md`.
+1. Check whether foundational initialization passed in the current conversation.
+2. If it did not pass, run the complete foundational execution gate in `skills/session-archiving/SKILL.md`. Do not ask the user to repeat the `start session` cue. A novelist request authorizes loading its prerequisites; it does not change the session-start cue.
+3. Check whether the Drawing skill and each required reference were successfully read in this conversation. Retrieve only the files that are not already verified.
+4. Check whether `skills/romantic-storyteller-visual-artist/SKILL.md` was successfully read in this conversation. Retrieve it only if it is not already verified.
+5. Do not use remembered instructions, reads from another conversation, summaries, or unverified copies as substitutes.
 
-The Drawing skill is a novelist prerequisite, not a foundational skill. Load it for novelist-role initialization and drawing work. Do not load it during ordinary foundational initialization.
-
-Reuse foundational files that you verified in this conversation. Do not repeat retrievals for files already verified in this conversation.
+The Drawing skill is a prerequisite between foundational initialization and novelist initialization. Do not load it during ordinary foundational initialization.
 
 If a required file is missing or cannot be verified, report its exact path. Stop the affected initialization step. Do not claim full initialization.
 
@@ -203,6 +203,30 @@ This cue starts a new drawing session. It does not replace the foundational init
 6. Continue with any drawing task included in the same instruction. If the user only asks to start the session, establish the session and ask only for essential brief details that are not available.
 
 Do not load the Drawing skill during ordinary foundational initialization. If the Drawing skill and its required references were already loaded for novelist work in this conversation, reuse them when the user starts a drawing session.
+
+## Skill dependency hierarchy and loading ledger
+
+Use this order whenever a task requires specialist skills:
+
+| Tier | Skills | Activation |
+|---|---|---|
+| 1. Foundational | Session Archiving, Conversation Mode, Agent Skill Authoring, ASD-STE100, GitHub Actions | `start session`, or automatically as prerequisites for a drawing-session or novelist request when not yet initialized |
+| 2. Drawing | Drawing and its required references | `start a drawing session`, drawing work that requires the workflow, or novelist initialization |
+| 3. Novelist | Romantic Storyteller and active novel records | `Be the novelist` |
+
+### Per-conversation verified-load ledger
+
+Maintain a simple internal ledger of skill and reference paths successfully retrieved and read in the current conversation.
+
+- Before retrieving a required file, check the ledger.
+- If the file is already verified, reuse it. Do not fetch or read it again only because the workflow has moved to the next tier.
+- Mark a path verified only after its current-branch retrieval succeeded and its contents were read.
+- If retrieval or reading failed, do not mark the path verified. Report the exact missing path.
+- A new conversation starts a new ledger. Do not treat memory or a prior conversation's reads as current verification.
+- Refresh only when the user asks, a relevant repository change is known or suspected, or an unresolved instruction requires the authoritative current file.
+- When refreshing one file, do not reload unrelated skills or the entire tier.
+
+Entering a higher tier does not restart lower tiers. For example, if Drawing and its references were loaded for a drawing session, a later `Be the novelist` request loads only the missing novelist skill and novel records. If the user starts a drawing session after novelist initialization, reuse the already verified foundational, Drawing, and novelist skills as applicable.
 
 ## Foundational standards
 

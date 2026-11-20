@@ -55,7 +55,15 @@ During foundational initialization, read the [Conversation Mode skill](../conver
 
 ### Foundational skill loading cadence
 
-Load Session Archiving, Conversation Mode, Agent Skill Authoring, ASD-STE100, and GitHub Actions only when the user says `start session` as an instruction. See `skills/SESSION_START.md` for the complete procedure.\n\nLoad each required foundational file once during that conversation's foundational initialization. Apply its verified instructions for the rest of that conversation. Do not load these files automatically at the start of a new chat.\n\nRefresh a foundational file when the user asks. Also refresh it when you know or suspect a relevant repository change. Refresh it when an unresolved instruction requires the authoritative file.\n\nA new ChatGPT conversation starts a new loading cycle. This cadence does not remove the requirement to load a task-specific skill when needed. It also does not remove the requirement to read relevant project records before that task.
+Load Session Archiving, Conversation Mode, Agent Skill Authoring, ASD-STE100, and GitHub Actions for `start session`. Also load this foundational tier as a prerequisite when the user starts a drawing session or requests novelist initialization and the tier has not passed in the current conversation. See `skills/SESSION_START.md` for the complete dependency order.
+
+Maintain a per-conversation verified-load ledger. Retrieve and read each required path once, then reuse it for later tiers and tasks. Do not reload a skill or reference merely because a specialist workflow depends on it.
+
+Mark a path verified only after retrieval and reading succeed. A new ChatGPT conversation starts a new ledger. Do not use remembered content or a prior conversation's reads as current verification.
+
+Refresh only the affected file when the user asks, a relevant repository change is known or suspected, or an unresolved instruction requires the current authoritative file. Do not reload unrelated skills or a complete tier.
+
+This cadence does not remove the requirement to load a task-specific skill when needed or to read relevant project records before that task.
 
 ### First-response execution rule
 
@@ -65,7 +73,7 @@ The startup gate is a prerequisite check, not the session archive itself. Do not
 
 ### Mandatory session-start execution gate
 
-When the user says **`start session`** as an instruction, run this sequence before project work or specialist initialization. Also run this sequence when the user says **`start a drawing session`** and foundational initialization has not yet passed in the current conversation:
+When the user says **`start session`**, run this sequence before project work. Also run it as a prerequisite when the user says **`start a drawing session`** or **`Be the novelist`** and foundational initialization has not passed in the current conversation:
 
 1. **Notify the user first.** State that the requested foundational checks are starting. Do not begin project work until they pass.
 2. Retrieve and read this Session Archiving skill from branch `gpt`.
@@ -76,7 +84,7 @@ When the user says **`start session`** as an instruction, run this sequence befo
 7. Verify that every required retrieval succeeded. Confirm that you read each file. Keep the verified instructions for the rest of the conversation.
 8. Report completion only after every check passes. If a required retrieval fails, report its exact path and stop project work.
 
-Do not load the Drawing skill or its references during foundational initialization. When the user starts a drawing session, load them after foundational initialization. If foundational initialization already passed in this conversation, do not run this gate again.
+Do not load the Drawing skill or its references during foundational initialization. After the foundational gate passes, load Drawing only when the task requires it. For a drawing session or novelist request, first check the verified-load ledger. Reuse any Drawing files already read in this conversation and retrieve only missing files. If foundational initialization already passed, do not run this gate again.
 
 **No premature-work exception after activation:** After the user invokes the cue that requires foundational initialization, do not begin project work until the required checks pass. Do not substitute memory, previous-session reads, Library copies, or readiness claims for fresh GitHub retrievals in this conversation.
 
