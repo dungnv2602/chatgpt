@@ -746,10 +746,13 @@ ledger. It must contain one contiguous Markdown table with exactly six fields:
    the assistant's visual assessment. State whether an image was delivered in
    conversation, no output was returned, approval was not recorded, or storage
    and provenance remain unverified.
-6. **Image:** link the exact verified repository image for a successful output.
-   Until that output is uploaded and processed, write `Waiting for image upload`.
-   Use `—` for failed, rejected, superseded, partial, pending, or unconfirmed
-   results; do not imply those results are awaiting a keeper upload.
+6. **Image:** link every generated image output once its exact repository asset
+   is uploaded and verified, regardless of whether the user approved it or the
+   result met the prompt. Link partial, off-target, superseded, and unapproved
+   outputs too; approval belongs only in field 5. If an image was generated
+   but its asset has not yet been uploaded, write `Waiting for image upload`.
+   Use `—` only when no image was returned or generated. Never withhold a
+   generated-image link because the user rejected or did not approve the result.
 
 Include every attempt in chronological order, including rejected, failed,
 partial, pending, and superseded attempts. Do not turn the table into a
@@ -777,9 +780,11 @@ After each attempt is finalized:
   record and the table's approval/output field without rewriting a different
   execution outcome. A user-approved keeper with uncertain prompt mapping must
   remain unlinked to an invented prompt.
-- When an image is retained through the takeout workflow, the verified WebP
-  link must appear in both the attempt record and the daily README's Image
-  column. Do not link an unverified filename or infer prompt association.
+- When any generated image is retained through the takeout workflow, the
+  verified WebP link must appear in both the attempt record and the daily
+  README's Image column, even if the result was partial, off-target, superseded,
+  or not approved. Do not make linking conditional on user approval. Do not
+  link an unverified filename or infer prompt association.
 - Do not omit unsuccessful attempts, promote a generated-but-missed-target
   result to a success, or infer approval from delivery alone.
 
@@ -914,8 +919,10 @@ repository retention pass through the single intake at `images/takeout/`.
   non-novel assets use their declared destination under `images/`.
 - When an item has `attempt: NN` and targets `drawings/YYYY-MM-DD/images`, the
   processor validates the matching `attempt-NN.md` and six-column daily README,
-  then automatically adds the verified WebP link to both records. Multiple
-  images may identify the same attempt; their links are grouped in that row.
+  then automatically adds the verified WebP link to both records for every
+  uploaded generated output; approval and success classification are irrelevant
+  to link creation. Multiple images may identify the same attempt; their links
+  are grouped in that row.
   Items without `attempt` metadata are processed as ordinary assets and do not
   alter a prompt record or daily README. The GitHub Action commits these
   Markdown changes together with the processed assets.
