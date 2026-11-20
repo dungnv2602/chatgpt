@@ -520,6 +520,60 @@ def linked_attempt_assets(session_dir: Path) -> dict[str, list[str]]:
     return linked
 
 
+def validate_session_image_links(session_dir: Path) -> None:
+    """Reject stale, unsafe, invalid, or non-WebP links in drawing records."""
+    link_pattern = re.compile(r"\[[^\]]+\]\((images/[^)]+)\)")
+    linked_paths: set[str] = set()
+    readme_path = session_dir / "README.md"
+    if readme_path.is_symlink() or not readme_path.is_file():
+        raise ProcessingError(
+            f"Daily README is missing or unsafe during link reconciliation: {readme_path}"
+        )
+    readme_text = readme_path.read_text(encoding="utf-8")
+    linked_paths.update(unquote(link) for link in link_pattern.findall(readme_text))
+
+    section_pattern = re.compile(r"(?ms)^## Repository images[ \t]*\n.*?(?=^## |\Z)")
+    for attempt_path in sorted(session_dir.glob("attempt-*.md")):
+        if attempt_path.is_symlink() or not attempt_path.is_file():
+            raise ProcessingError(
+                f"Attempt record is unsafe during link reconciliation: {attempt_path}"
+            )
+        content = attempt_path.read_text(encoding="utf-8")
+        section = section_pattern.search(content)
+        if section:
+            linked_paths.update(
+                unquote(link) for link in link_pattern.findall(section.group(0))
+            )
+
+    image_dir = session_dir / "images"
+    if image_dir.is_symlink() or (image_dir.exists() and not image_dir.is_dir()):
+        raise ProcessingError(
+            f"Session images directory is unsafe: {image_dir}"
+        )
+    for relative_link in sorted(linked_paths):
+        path = PurePosixPath(relative_link)
+        if (
+            path.is_absolute()
+            or len(path.parts) != 2
+            or path.parts[0] != "images"
+            or ".." in path.parts
+            or path.suffix.lower() != ".webp"
+        ):
+            raise ProcessingError(
+                f"Drawing records may link only top-level WebP delivery files; invalid link: {relative_link}"
+            )
+        target = session_dir / path.parts[0] / path.parts[1]
+        if target.is_symlink() or not target.is_file():
+            raise ProcessingError(
+                f"Drawing record links to a missing or unsafe WebP asset: {relative_link}"
+            )
+        if not valid_webp(target):
+            raise ProcessingError(
+                f"Drawing record links to an invalid WebP asset: {relative_link}"
+            )
+
+
+
 def legacy_manifest_row(session_date: str, session_dir: Path, webp: Path,
                         links: dict[str, list[str]], original: Path | None = None) -> dict[str, str]:
     relative_webp = f"drawings/{session_date}/{webp.relative_to(session_dir).as_posix()}"
@@ -636,6 +690,7 @@ def prepare_session_manifest_updates(prepared: list[dict[str, Any]], root: Path)
         if image_dir.is_symlink() or (image_dir.exists() and not image_dir.is_dir()):
             raise ProcessingError(f"Session images directory is unsafe: {image_dir.relative_to(root).as_posix()}")
         links = linked_attempt_assets(session_dir)
+        validate_session_image_links(session_dir)
         new_webp_paths = {
             item["webp"].relative_to(root).as_posix()
             for item in session_items

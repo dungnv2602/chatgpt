@@ -519,6 +519,87 @@ class TakeoutProcessorTests(unittest.TestCase):
 
 
 
+
+    def test_missing_existing_webp_link_blocks_upload_and_rolls_back(self):
+        session = self.root / "drawings/2026-11-19"
+        session.mkdir(parents=True)
+        (session / "attempt-01.md").write_text(
+            "# Attempt 01\n\n## Repository images\n\n"
+            "- [missing.webp](images/missing.webp)\n",
+            encoding="utf-8",
+        )
+        readme = session / "README.md"
+        readme.write_text(
+            "# Drawing session\n\n"
+            "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+            "|---|---|---|---|---|---|\n"
+            "| [01 — Existing](attempt-01.md) | Session | Existing | Generated | Not recorded | [missing.webp](images/missing.webp) |\n\n"
+            "## Image inventory — all 1 files\n\n"
+            "- [missing.webp](images/missing.webp)\n",
+            encoding="utf-8",
+        )
+        (self.inbox / "new.png").write_bytes(b"new-upload-original")
+        self.manifest_many(
+            [{
+                "source": "new.png",
+                "title": "New Output",
+                "destination_dir": "drawings/2026-11-19/images",
+                "attempt": "1",
+            }],
+            batch="batch-stale-webp-link",
+        )
+        handoff_before = (self.inbox / "HANDOFF.yml").read_bytes()
+        readme_before = readme.read_bytes()
+
+        result = self.run_processor()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertTrue((self.inbox / "new.png").is_file())
+        self.assertFalse((session / "images/original/new-output.png").exists())
+        self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), handoff_before)
+        self.assertEqual(readme.read_bytes(), readme_before)
+        report = (
+            self.inbox
+            / "history/batch-stale-webp-link/attempt-001/verification-report.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("missing or unsafe WebP asset", report)
+
+    def test_png_links_in_drawing_records_are_rejected(self):
+        session = self.root / "drawings/2026-11-19"
+        session.mkdir(parents=True)
+        (session / "attempt-01.md").write_text(
+            "# Attempt 01\n\n## Repository images\n\n"
+            "- [original.png](images/original.png)\n",
+            encoding="utf-8",
+        )
+        readme = session / "README.md"
+        readme.write_text(
+            "# Drawing session\n\n"
+            "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+            "|---|---|---|---|---|---|\n"
+            "| [01 — Existing](attempt-01.md) | Session | Existing | Generated | Not recorded | [original.png](images/original.png) |\n",
+            encoding="utf-8",
+        )
+        (session / "images").mkdir()
+        (session / "images/original.png").write_bytes(b"png-link-should-not-be-used")
+        (self.inbox / "new.png").write_bytes(b"new-upload-original")
+        self.manifest_many(
+            [{
+                "source": "new.png",
+                "title": "New Output",
+                "destination_dir": "drawings/2026-11-19/images",
+                "attempt": "1",
+            }],
+            batch="batch-png-link",
+        )
+        result = self.run_processor()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertTrue((self.inbox / "new.png").is_file())
+        report = (
+            self.inbox
+            / "history/batch-png-link/attempt-001/verification-report.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("link only top-level WebP", report)
+
     def test_existing_manifest_duplicate_output_id_blocks_new_upload(self):
         session = self.root / "drawings/2026-11-19"
         session.mkdir(parents=True)
