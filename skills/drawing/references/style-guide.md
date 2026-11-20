@@ -61,7 +61,7 @@ An earlier cozy-bedroom image was classified as **Vintage Mode → Painterly
 Storybook**, based on its hand-painted-looking surfaces, brush texture, gentle
 forms, and nostalgic cream-and-amber atmosphere. This is a historical example
 only. It does not establish the mode, palette, scene, or visual direction for a
-new drawing session; the active session brief always controls those choices.
+new drawing session. The active session brief always controls those choices.
 
 ## Choosing a mode
 
