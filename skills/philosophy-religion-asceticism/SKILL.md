@@ -115,10 +115,10 @@ Apply this skill to questions concerning:
 
 ## Mandatory evaluation rule for proposed books and collection additions
 
-Whenever the user asks whether to acquire, include, recommend, retain, or add a
-book or scholarly resource to a reading list or research collection, apply all
-three tests below. Do not recommend a work solely because its publisher or
-affiliated institution is prestigious.
+When the user asks whether to add a book or scholarly resource to a reading
+list or research collection, apply all three tests below. This includes
+requests to acquire, include, recommend, or retain a work. Do not recommend a
+work solely because its publisher or affiliated institution is prestigious.
 
 1. **Legitimacy:** Verify the exact edition, publisher, editors/authors,
    institutional affiliations, publication date, and the work's editorial or
@@ -139,9 +139,9 @@ affiliated institution is prestigious.
    **essential**, **valuable but optional**, or **redundant / low priority**,
    explaining the reasons.
 
-For every such assessment, separate (a) institutional and publisher prestige,
-(b) the scholarly quality of the particular book, and (c) its marginal value
-to the user's collection. These are related but non-interchangeable judgments.
+Separate three judgments in every assessment: institutional and publisher
+prestige, the scholarly quality of the particular book, and its marginal value
+to the user's collection. These judgments are related but not interchangeable.
 Use a comparison table when it clarifies overlap. State limitations where the
 full text, peer-review process, or independent reviews could not be verified.
 Do not treat Goodreads, retailer listings, star ratings, or publisher marketing
