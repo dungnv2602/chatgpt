@@ -49,7 +49,7 @@ The [WebP/takeout workflow](../.github/workflows/convert-images-to-webp.yml) run
 
 The processor is [`skills/session-archiving/scripts/process_takeout.py`](../skills/session-archiving/scripts/process_takeout.py).
 
-The workflow validates the complete hand-off before it moves any original. It converts the full batch into persistent staging under `images/takeout/webp/[batch-id]/attempt-NNN/`.
+The workflow checks the complete hand-off before it moves any original. It converts the full batch into persistent staging under `images/takeout/webp/[batch-id]/attempt-NNN/`.
 
 Each staged filename preserves the incoming filename. It appends `.webp`. For example, `camera.png` becomes `camera.png.webp`.
 
