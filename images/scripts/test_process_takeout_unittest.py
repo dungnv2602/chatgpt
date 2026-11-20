@@ -531,8 +531,8 @@ class TakeoutProcessorTests(unittest.TestCase):
             encoding="utf-8",
         )
         (session / "manifest.csv").write_text(
-            "session_date,image_id,filename,prompt_id,approval_status,github_url,sha256,verification_status,attempt,output_id,webp_path,sha256\n"
-            "2026-11-19,prior-image,prior.png,,Not recorded,https://example.invalid/prior,old-sha,Not verifiable,01,A001-O01,drawings/2026-11-19/images/prior.webp,old-sha\n",
+            "session_date,image_id,filename,prompt_id,approval_status,github_url,sha256,verification_status,attempt,output_id,webp_path\n"
+            "2026-11-19,prior-image,prior.png,,Not recorded,https://example.invalid/prior,old-sha,Not verifiable,01,A001-O01,drawings/2026-11-19/images/prior.webp\n",
             encoding="utf-8",
         )
         (self.inbox / "new.png").write_bytes(b"new-generated-original")
