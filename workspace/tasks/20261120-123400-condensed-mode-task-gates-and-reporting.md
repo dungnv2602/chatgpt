@@ -4,12 +4,12 @@
 
 - **ID:** 20261120-123400
 - **Created:** 2026-11-20 12:34 UTC
-- **Updated:** 2026-11-20 12:34 UTC
+- **Updated:** 2026-11-20 12:46 UTC
 - **Priority:** P1
-- **Status:** Ready
+- **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** None
 - **Archived:** No
@@ -20,7 +20,13 @@
 
 ## 2. Subsequent Instructions
 
-No subsequent clarifications recorded.
+### 2026-11-20 12:46 UTC
+
+> Your reply should be extremely short: links only. Update accordingly.
+
+> Approve. Remember it should be extremely short like that. Update your workflow.
+
+- **Approval:** User approved continuation after inspecting the task record.
 
 ## 3. Objective
 
@@ -55,7 +61,7 @@ Update Condensed Mode so task creation and task reporting follow explicit user-i
 
 ## 7. Current State
 
-Task record created. Implementation has not started. The current Condensed Mode skill remains unchanged.
+User approved continuation after inspecting the task record. The Condensed Mode skill now defines the task inspection gate, final report in `workspace/discussion.md`, and links-only replies. Repository read-back and final report remain pending.
 
 ## 8. Remaining Work
 
@@ -67,10 +73,10 @@ Task record created. Implementation has not started. The current Condensed Mode 
 
 ## 9. Next Actions
 
-1. Wait for the user to inspect this task record.
-2. Continue only after the user explicitly authorizes it.
-3. Implement and verify the Condensed Mode changes.
-4. Write the outcome report to `workspace/discussion.md` and provide its link.
+1. Update task tracking and the discussion register.
+2. Verify the changed skill and all task records from branch `gpt`.
+3. Write and verify the final report in `workspace/discussion.md`.
+4. Provide only the discussion report link.
 
 ## 10. References
 
@@ -82,11 +88,11 @@ Task record created. Implementation has not started. The current Condensed Mode 
 
 ## 11. Verification
 
-- **Check:** Confirm task record, board entry, and discussion report.
+- **Check:** Confirm task record, board entry, skill, and discussion report.
 - **Method:** Fetch each committed path from branch `gpt`.
 - **Result:** Pending read-back.
-- **Limitations:** Condensed Mode implementation is intentionally paused pending user inspection.
+- **Limitations:** Official STE lint has not been run.
 
 ## 12. Handoff Instructions
 
-Stop after presenting the task link. Do not modify the Condensed Mode skill or continue implementation until the user explicitly says to proceed.
+User approved continuation. Complete the approved changes on branch `gpt`. After task creation in future Condensed Mode work, stop and provide only the task link. After the work reaches an outcome, write and verify the report in `workspace/discussion.md`, then provide only that link.
