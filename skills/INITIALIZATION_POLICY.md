@@ -54,10 +54,17 @@ The Agent Skill Authoring skill governs skill structure, metadata, validation, a
 
 ## Copyable Custom Instructions
 
-Use this text when configuring the repository's project instructions:
+Use this exact text when configuring the repository's project instructions:
 
 ```text
+Repository: "dungnv2602/chatgpt"
+Branch: "gpt"
+
+The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of truth for project files, skills, prompts, references, and archives.
+
 Use "skills/SESSION_START.md" as the sole source of session-start instructions, and initialize only when I say "start session".
+
+Initialization is conditional. Do not load project instructions or skills at the start of a new conversation.
 ```
 
 ## Design principles
@@ -85,7 +92,7 @@ Use "skills/SESSION_START.md" as the sole source of session-start instructions, 
 
 - **Date:** 2026-11-20
 - **Change:** Adopt the Agent Skills open format.
-- **Reason:** Standardize metadata, structure, activation, progressive disclosure, and validation.
+- **Reason:** Standardize metadata, structure, description, progressive disclosure, and validation.
 - **Behavioral impact:** Agent Skill Authoring became a foundational skill.
 - **Verification:** Read-back checks passed. The official `skills-ref` CLI validator was not run.
 - **Initial commits:** `5bdb1b732c88fc4bb0d9e49fbeb78eb6048c7bc5`, `b26c37031399747ea204fa89a491a8ff26bce911`, `a48f7264246734a73b02f41537f367f04fa09c55`, and `fee7c31d7c7b2f63efee3680796ac477b060eb45`.
@@ -156,7 +163,7 @@ Use "skills/SESSION_START.md" as the sole source of session-start instructions, 
 - **Master inventory:** The initial fetch of `master/README.md` returned 404. A later read-only directory listing found `master/Images.md`, `master/Poses.md`, and `master/Prompts.md`. The directory has no README. Review classified these files as prompt, pose, and creative source material. They remain unchanged.
 - **Remaining work:** Continue auditing any unreviewed technical documents. Run the official linter in a repository execution environment and review its findings. Resolve the `drawings/` workspace conflict before following historical archive links. The `drawings/` directory listing returned 404, so its contents remain unverified.
 - **Commits:** `1cc5e5d623e8200316d009dc2219a74287c591fc`, `f898c0bd2fc68a123df16f1b0b6ce44d13ba7e9d`, `82df4add11b03428ac1a49ba948e24ccf9e78e35`, `5bf95f28bc4cbbd645ae86fc4407fbdc32826b01`, `29a58b17304c56e986e39af15d2867b955e17665`, `2333a0378f0f6aebad5bdd7b31801d57ee04dfb0`, `5f1a78b68e655e10160d852fd81be65d937f4111`, `f47d07242b7605dded9d17b2ba82425e34e48cd2`, `3f223f69f1aaff0da7643f81ea58ce950746085d`, `11752c6e9eeaabe66580ae3d69de46e3ef6f649a`, `29103811aba608d25914d699473685f6b06cebc3`, `f56f8385c2f96ca0f8a29e64f925071511aa8363`, `91e427e1f4a63246a78b1c0eab596d2abb649284`, `01fde065c45c98b4ee7b4cce399417cfc2595e85`, `50a972bbbaa0a84231cc0dfeaf9b0305f3a19374`, `0e5e4d60adcd319fa0ad252d6bebed7e06b02122`, `2b3e4591b72bb32b61707c1e73efef4f03a99cf9`, `eae21daa515a6c6838259e72722f773c698c3d2e`, `055ee65bfe5b288100a69ea9087b7cbee469da88`, `cd8764c39910e6fd84e00824b4d506fa0408a80b`, `7071f87b33911da4f76a59aca9ffd64226b78a47`, `bfb881d37aa96b3efffcbe628053cc235ea1fbac`, `9dc453ea7df070edaa5a38bd5fa49b4459631a11`, `548fe068a33a5be753b55f0f04b96268c990b871`, `7148f3a9218845fc46a55d7d461c6b252fb73442`, `dcc8f6cc9eef17ae14babc2d9d7ee2cea398452d`, `248e444a8a8865b7e77efa0f89f63848f7cbe93b`, `2e68385e3cf4d8c9c8a8ac57c3e78f3cdd467b87`, `703e9f258adc015d76962f7e8484313cea6e0fbb`, `dbab4dbb61a714d53962cd2968e331ca9b61325c`, and `af6fac5b108cdfa061e72ee4f75f4837fb4b3f1c`.
- 
+
 ### Version 7 — Third repository documentation audit pass
 
 - **Date:** 2026-11-20
@@ -266,7 +273,6 @@ Use this template:
 - **Link check:** Checked local Markdown links in the files reviewed. The internal references listed in those files were present in the fetched content.
 - **Limit:** This was a manual review. The STE linter and GitHub Actions run were not executed in this environment.
 
-
 ### Version 13 — Skills index and technical-reference review
 
 - **Date:** 2026-11-20
@@ -274,7 +280,6 @@ Use this template:
 - **Review:** Checked instructions, technical descriptions, sentence length, semicolons, and scope. Also checked directory references against the current `skills/` listing.
 - **Disposition:** Review only. No edits were needed. Preserve the product-access notes because their availability statements contain qualifications. Preserve the prompt-fidelity note because it records explicit user authority and restrictions on assistant-authored prompt changes.
 - **Limit:** This was a manual review. The official linter and the GitHub Actions workflow have not run in this environment.
-
 
 ### Version 14 — Correct obsolete prompt archive path
 
@@ -284,7 +289,6 @@ Use this template:
 - **Correction:** Changed that path to `drawings/YYYY-MM-DD/`, the canonical non-novel prompt and session archive.
 - **Verification:** Updated the file using its fetched SHA and read it back. Commit: `4914e860d12e7303cf770cd5909ef88aac8f91f3`. Read-back SHA: `dbf2f7fdf20c20a9a640362070f4f559ac5b7f77`.
 - **Limit:** This pass confirms the exact correction. It does not establish that every obsolete path in the repository has been found.
-
 
 ### Version 15 — Historical prompt paths and archive template
 
@@ -298,7 +302,7 @@ Use this template:
 ### Version 16 — Scene illustration archive-link consistency
 
 - **Date:** 2026-11-20
-- **Scope:** Checked active Scene-002 links to the archived 2026-11-16 image prompts after the workspace rename from `prompts/` to `drawings/`.
+- **Scope:** Checked links in active Scene-002 records to the archived 2026-11-16 image prompts after the workspace rename from `prompts/` to `drawings/`.
 - **Files updated:**
   - `drawings/2026-11-20/session-01-brief.md`
   - `drawings/2026-11-19/attempt-34.md`
@@ -369,7 +373,6 @@ Use this template:
 - **Validation limits:** The checker does not test external URLs. It checks local Markdown file targets and GitHub-style heading anchors from active source files. It indexes excluded files as link destinations.
 - **Remaining work:** Reduce the 179 existing hard findings without raising baselines. Review historical link records only after the user authorizes changes. Reconcile the 121-file and 119-file scan scopes.
 
-
 ### Version 20 — Audit-log lint cleanup
 
 - **Date:** 2026-11-20
@@ -378,7 +381,6 @@ Use this template:
 - **Commit:** `939d19a16e533ab1e08e4f78ba7dbdb8c70c2fd5`.
 - **CI:** Validated by the descendant commit and runs recorded in Version 21.
 
-
 ### Version 21 — Additional technical-document lint cleanup
 
 - **Date:** 2026-11-20
@@ -386,7 +388,6 @@ Use this template:
 - **Baseline policy:** No lint baseline changed.
 - **Commits:** `e63664c41c381c7d769965103136f3f4178fbbc2` and `d7b12def70dfb49e8063243345cc328d7c348eea`.
 - **CI:** Full-document run `44700856846` passed. Changed-document run `44700856776` passed. Both runs checked descendant commit `d0f77537732af092a62a472d37425f0c41abeff`, which includes these changes.
-
 
 ### Version 22 — Further technical-document lint cleanup
 
@@ -398,7 +399,6 @@ Use this template:
 - **Commits:** `4cb4445ff4be63853e24a03312e9b290275dd2af`, `6df11cd446aeaf68def816db91e1b59d2f3fa69a`, and `55c54b11d9c2f941c4c553bcbc726db74a6cba18`.
 - **CI:** Pending. Check the result on the next user turn.
 
-
 ### Version 23 — Novelist initiation lint cleanup
 
 - **Date:** 2026-11-20
@@ -409,7 +409,6 @@ Use this template:
 - **Commits:** `0653ef18680613263b415b95bea5e283128e1cea` and `e0a78c077559c9b2b95c53f2681d9c6fe24a8f04`.
 - **CI:** Pending. Check the result on the next user turn.
 
-
 ### Version 24 — GitHub Actions skill separation and foundational loading
 
 - **Date:** 2026-11-20
@@ -419,7 +418,6 @@ Use this template:
 - **Integration:** Add the skill to the foundational initialization sequence, mandatory execution gate, skills index, and copyable project instructions.
 - **Conversation Mode:** Retain only a link to the specialist workflow skill. Remove GitHub Actions procedures and repository workflow details.
 - **Reason:** Keep collaboration behavior separate from CI and workflow engineering.
-
 
 ### Version 25 — Consolidate novelist initiation procedure
 
@@ -438,7 +436,6 @@ Use this template:
 - **Reason:** Keep copied project instructions aligned with Conversation Mode Section 7.
 - **File changed:** `skills/INITIALIZATION_POLICY.md`.
 
-
 ### Version 27 — Use one session-start cue
 
 - **Date:** 2026-11-20
@@ -446,3 +443,10 @@ Use this template:
 - **Canonical instructions:** Keep all session-start procedures in `skills/SESSION_START.md` and its mandatory execution gate.
 - **Copyable instructions:** Reduce the custom-instructions block to one sentence that points to Session Start and names the sole cue.
 - **Specialist roles:** Require successful session initialization before role-specific onboarding.
+
+### Version 28 — Expand copyable repository instructions
+
+- **Date:** 2026-11-20
+- **Requested change:** Include the repository name, branch, sole-source-of-truth rule, conditional initialization rule, and startup-note reference in the copyable instructions.
+- **Behavioral impact:** The copyable block now contains the complete three-paragraph instruction text supplied by the user.
+- **File changed:** `skills/INITIALIZATION_POLICY.md`.
