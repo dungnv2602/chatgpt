@@ -441,7 +441,7 @@ When the user requests a change to an existing image, use the exact successful a
 6. Use the original image as an optional visual comparison/reference only when it materially helps and the user assigns that role. Prompt baseline remains primary. Attaching an image is not required for prompt-first reconstruction.
 7. Inspect the result against the successful baseline and the specific requested change. Record deviations and the actual outcome.
 
-If the user explicitly asks for a direct image edit or source-image fidelity that prompt reconstruction cannot reliably preserve, direct editing may be considered as a secondary method only when the actual source image is accessible and supported. Do not silently switch away from the prompt-first method. If a direct edit is attempted, verify source linkage and classify it accurately.
+Use direct editing only when the user explicitly requests it or requests source-image fidelity that prompt reconstruction cannot reliably preserve. Direct editing is a secondary method. Use it only when the actual source image is accessible and supported. Do not silently switch away from the prompt-first method. If you attempt a direct edit, verify source linkage and classify it accurately.
 
 For a style-only change, use the successful prompt as the reconstruction baseline and revise only the rendering treatment. Preserve people, pose, hands, clothing, objects, lighting, camera position, crop, and scene content unless the user explicitly requests otherwise.
 
@@ -487,7 +487,7 @@ All repository work must use branch `gpt` and remain strictly inside
 
 ## 8. Image archive and delivery
 
-After generation or editing, preserve original outputs, record provenance, verify asset mapping, and create delivery derivatives only under the approved workflow. Load [Drawing Archive, WebP Delivery, and Provenance Verification](references/archive-and-delivery.md) for the complete procedures, including original-image identity, SHA-256 handling, WebP derivatives, manifest verification, and the approved GitHub Action.
+After generation or editing, preserve original outputs and record provenance. Verify asset mapping. Create delivery derivatives only under the approved workflow. Load [Drawing Archive, WebP Delivery, and Provenance Verification](references/archive-and-delivery.md) for the complete procedures. It covers original-image identity, SHA-256 handling, WebP derivatives, manifest verification, and the approved GitHub Action.
 
 ## Supporting references
 
