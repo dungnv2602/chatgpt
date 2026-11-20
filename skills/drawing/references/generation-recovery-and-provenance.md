@@ -24,7 +24,7 @@ Before rewriting a prompt after a refusal, repeated failure, or user correction:
    inspect its authoritative chronological prompt history first. Locate the
    most recent successful prompt in that same series/thread and inspect the
    actual approved image assets where relevant. Use the relevant
-   `drawings/YYYY-MM-DD/README.md` as a navigation aid, then verify chronology,
+   `drawings/YYYY-MM-DD/README.md` as a navigation aid, then check chronology,
    series membership, finalized outcome, and prompt/output linkage in the
    authoritative attempt records. For a novel scene, use its scene-local
    illustration history. Do not rely on memory, a summary, or the most recent
@@ -63,7 +63,7 @@ Before rewriting a prompt after a refusal, repeated failure, or user correction:
    reference is needed for identity, style, or composition. If the proven
    successful method was fresh text-to-image generation without a reference,
    do not attach an image merely as ritual. Conversely, when a reference is
-   needed, attach the actual asset through the supported mechanism and verify
+   needed, attach the actual asset through the supported mechanism and check
    that it was included. Never confuse an inspiration reference with an edit
    source.
 7. **Separate observations from hypotheses.** Record the exact tool response.
@@ -167,7 +167,7 @@ the user explicitly says they should be retained for future use.
    approved in an earlier session.
 7. Keep inspiration references distinct from exact edit sources. A filename,
    repository path, Library ID, or generation ID is not an attachment. Attach
-   the actual asset through the image tool's supported mechanism and verify
+   the actual asset through the image tool's supported mechanism and check
    source linkage before claiming a reference-guided result or confirmed edit.
 8. For a user-approved output, record the approval and its exact originating
    prompt when reliably known. Approval makes the image a keeper. It does not
@@ -176,7 +176,7 @@ the user explicitly says they should be retained for future use.
 **GitHub rename and takeout rules:**
 
 - If an image is already tracked in its permanent location under an opaque
-  filename, rename that existing Git tree path using the same blob SHA. Verify
+  filename, rename that existing Git tree path using the same blob SHA. Check
   the old name is absent, the descriptive name exists, and the blob SHA and byte
   size are identical.
 - For newly uploaded retained images, use the universal flat intake
