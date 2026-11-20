@@ -12,7 +12,7 @@ repository retention pass through the single intake at `images/takeout/`.
   to a non-novel drawing attempt, also include that attempt number in the item
   as `attempt: NN` and target `drawings/YYYY-MM-DD/images` for its session.
 - The existing workflow runs on branch `gpt` and calls
-  `images/scripts/process_takeout.py`. It accepts static PNG, JPG, and JPEG.
+  `skills/session-archiving/scripts/process_takeout.py`. It accepts static PNG, JPG, and JPEG.
   APNG and other unsupported formats fail the batch; animation is never
   flattened silently.
 - PNGs use exact lossless WebP encoding
@@ -23,7 +23,7 @@ repository retention pass through the single intake at `images/takeout/`.
   `original/` subfolder under its hand-off-derived name. The same-stem WebP
   remains in the destination root. Attempt notes and the daily README link
   only the WebP delivery file. Novel illustrations use
-  `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; retained
+  `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; retained
   non-novel assets use their declared destination under `images/`.
 - When an item targets `drawings/YYYY-MM-DD/images`, an explicit `attempt: NN`
   is mandatory. The processor validates the matching `attempt-NN.md` and
