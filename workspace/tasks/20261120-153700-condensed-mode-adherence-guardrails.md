@@ -4,12 +4,12 @@
 
 - **ID:** 20261120-153700
 - **Created:** 2026-11-20 15:37 UTC
-- **Updated:** 2026-11-20 15:37 UTC
+- **Updated:** 2026-11-20 15:38 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Done
 - **Origin:** User
 - **Approval:** Approved
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** 20261120-123000
 - **Archived:** No
@@ -46,32 +46,28 @@ Inspect the Condensed Mode workflow and correct any instruction gaps that could 
 
 ## 6. Progress Log
 
-### 2026-11-20 15:37 UTC
+### 2026-11-20 15:38 UTC
 
-- **Action:** Read the current discussion register, Conversation Mode skill, Session Start procedure, The Worker skill, Initialization Policy, workspace instructions, task board, task template, and the active documentation-audit task.
-- **Result:** Conversation Mode is already a foundational skill loaded by the explicit `start session` procedure. The user's earlier cue `Conversation mode: condensed mode` is covered by the existing natural-language cue rule. The failure therefore was not caused by a missing foundational dependency.
-- **Findings:** Section 4 requires an acknowledgement when switching modes, while Section 3 prohibits all chat text except one direct link. The no-commit rule also requires a sentence in chat, which conflicts with the link-only rule. The skill has no explicit per-turn mode-resolution gate before response composition.
-- **CI snapshot:** Branch head was `56e58a688135d0bb90cadefb9a2a8cca77e442d3`. The newest available changed-document run was `44763230785`, successful on `808d1bca5ddb3af15ef9ddaf3f57cbc7ddb09282`. The current branch head had no corresponding run in the bounded snapshot. No CI result was awaited.
-- **References:** `skills/conversation-mode/SKILL.md`, `skills/SESSION_START.md`, `skills/the-worker/SKILL.md`, `skills/INITIALIZATION_POLICY.md`, `workspace/README.md`, `workspace/task_board.md`, `workspace/TASK_TEMPLATE.md`, `workspace/tasks/20261120-123000-repository-documentation-audit.md`.
-- **Next:** Add an explicit per-turn mode gate, document accepted prefixed cues, and resolve the output-rule conflicts. Update task continuity and the discussion record.
+- **Action:** Completed the Conversation Mode workflow repair and read back all five changed paths from branch `gpt`.
+- **Result:** All targeted checks passed. The skill now lists the prefixed mode cues, requires mode resolution before tools or response composition, defines the Condensed Mode transition acknowledgement exception, and routes blockers and no-change explanations through the discussion register. The task board identifies this task as Done and restores the documentation audit as current execution.
+- **Changed paths:** `skills/conversation-mode/SKILL.md`, this task record, `workspace/tasks/20261120-123000-repository-documentation-audit.md`, `workspace/task_board.md`, and `workspace/discussion.md`.
+- **Commits:** Skill `f92cdb95ba3b1ceeda5ab88b6025acd0da4fb720`; audit checkpoint `fdeb690f7d93fa92bb32d476265fd93ecd9c7822`; board `6eb0a08ca93b1c7e699617e2f8f9d298b8c5fb29`; task creation `1e11ec2be4bd104ba72b608a89e9669884af854c`; discussion `8e7b93cf70c69a8ecaa18d1e47e08f9affb19685`.
+- **Verification:** Fetched all five changed paths from branch `gpt`. Confirmed the mode gate and cue examples, both output-rule resolutions, the task-board entries, the audit checkpoint, and the discussion report.
+- **CI:** No local lint or CI execution occurred. No workflow was dispatched, rerun, or awaited. Review the next available run at the next mandatory preflight.
+- **Next:** Resume task `20261120-123000`. Do not inspect or modify `archive/`.
 
 ## 7. Current State
 
-The causes of the workflow ambiguity are identified. No repository changes for this task have been committed yet.
+The Conversation Mode skill contains the per-turn mode gate and consistent output rules. The task board identifies this task as Done. The repository documentation audit is restored as current execution.
 
 ## 8. Remaining Work
 
-- Revise `skills/conversation-mode/SKILL.md`.
-- Update the task board and checkpoint the repository documentation-audit task.
-- Record the complete answer in `workspace/discussion.md`.
-- Fetch all changed paths from branch `gpt` and verify the exact content.
+None for this task. Future CI results remain subject to the repository's non-blocking preflight policy.
 
 ## 9. Next Actions
 
-1. Revise the Conversation Mode skill with the explicit per-turn gate and consistent output rules.
-2. Update task metadata and the task board.
-3. Add the answer and verification report to the top of `workspace/discussion.md`.
-4. Fetch all changed paths and confirm the committed result.
+1. Resume task `20261120-123000` at its recorded checkpoint.
+2. Review the next available CI snapshot without waiting or polling.
 
 ## 10. References
 
@@ -84,11 +80,11 @@ The causes of the workflow ambiguity are identified. No repository changes for t
 
 ## 11. Verification
 
-- **Check:** Compare mode-selection, persistence, transition, and output requirements.
-- **Method:** Read the authoritative files from branch `gpt` and perform read-back after each commit.
-- **Result:** The conflicting requirements and missing response gate are identified.
-- **Limitations:** Repository instructions cannot guarantee model execution. The change makes the required behavior explicit and testable but cannot prove future compliance in every response.
+- **Check:** Mode selection, persistence, transition acknowledgement, Condensed Mode output, and task handoff.
+- **Method:** Fetch each changed path from branch `gpt` and check its expected content.
+- **Result:** All five changed paths were fetched. All targeted content checks passed.
+- **Limitations:** Repository instructions cannot guarantee model execution. The change makes the required behavior explicit but cannot prove future compliance in every response. The completed task record remains under `workspace/tasks/` because the user prohibits all access to `archive/`.
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. Keep Condensed Mode active. Do not inspect anything under `archive/`. Do not read or write `workspace/discussion.md` through The Worker. Conversation Mode owns that file. Do not run lint or CI locally, dispatch workflows, or wait for CI. Fetch and verify every changed path before reporting completion.
+This task is complete. Resume the repository documentation audit task `20261120-123000` on branch `gpt`. Keep Condensed Mode active. Do not inspect or modify anything under `archive/`. Do not read or write `workspace/discussion.md` through The Worker. Conversation Mode owns that file. Do not run lint or CI locally, dispatch workflows, or wait for CI. The task record remains in `workspace/tasks/` due the archive boundary.
