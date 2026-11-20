@@ -13,6 +13,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 EXCLUDED_PREFIXES = (
+    "archive/tasks/",
     "drawings/history/",
     "master/",
     "novels/templates/",
