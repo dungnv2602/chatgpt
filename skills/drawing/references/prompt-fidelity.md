@@ -309,6 +309,7 @@ Use this checklist before every image generation or edit:
 - [ ] When an existing successful prompt is assigned, the complete text was copied verbatim before the requested in-place change.
 - [ ] Every unchanged passage remains word-for-word identical and in the same order as the assigned prompt.
 - [ ] The generation prompt contains no attempt numbers, file names, paths, repository references, prompt-record references, IDs, or retrieval instructions.
+- [ ] The generation prompt contains no reference to a prompt, earlier wording, previous instructions, or another external record.
 - [ ] The generation prompt contains no reference to an image, attachment, source image, or editing operation.
 
 **Generation gate:** Do not generate or edit until every applicable item passes. If an item does not pass, fix the prompt first. Do not weaken the rule to fetch an attempt through.
