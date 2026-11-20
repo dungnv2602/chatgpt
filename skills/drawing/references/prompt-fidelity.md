@@ -231,7 +231,7 @@ Ask all of the following:
 - Is every restriction present because the user requested it or because an applicable safety rule genuinely requires it?
 - Does the complete prompt still describe the image the user asked for, rather than an assistant-modified alternative?
 
-If any wording fails this audit, remove or correct it before archiving and verification. Do not proceed by leaving the wording in place and promising to ignore it later.
+If any wording fails this audit, remove or fix it before archiving and verification. Do not proceed by leaving the wording in place and promising to ignore it later.
 
 ## 12. Archiving, verification, and actual submission
 
@@ -257,7 +257,7 @@ Evaluate the returned image against the user's actual brief and the specific obj
 
 Do not justify an unwanted result by claiming that an unrequested restriction or creative addition was necessary when it was not. Do not silently change the original brief to make the result appear compliant.
 
-If the output exposes a prompt-fidelity error, record the error and correct the workflow for the next attempt. Do not repeat the unauthorized wording. Do not treat the failure as permission to change the user's locked features.
+If the output exposes a prompt-fidelity error, record the error and fix the workflow for the next attempt. Do not repeat the unauthorized wording. Do not treat the failure as permission to change the user's locked features.
 
 ## 14. Required decision rule
 
@@ -287,4 +287,4 @@ Use this checklist before every image generation or edit:
 - [ ] Unsupported wording has been removed before archiving and verification.
 - [ ] The archived and verified prompt is the exact authored text that will be submitted.
 
-**Generation gate:** Do not generate or edit until every applicable item passes. If an item does not pass, correct the prompt first. Do not weaken the rule to fetch an attempt through.
+**Generation gate:** Do not generate or edit until every applicable item passes. If an item does not pass, fix the prompt first. Do not weaken the rule to fetch an attempt through.
