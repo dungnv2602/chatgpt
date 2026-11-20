@@ -328,3 +328,23 @@ Use this template:
 - **Corrections:** Updated the historical references to `drawings/history/2026-11-12-image-prompts.md` and `drawings/history/2026-11-13-image-prompts.md`. Updated the daily archive tree to use `drawings/`.
 - **Verification:** Fetched each file before editing and read each updated file back. Recovery-reference commit: `1fc167c692a4af5ada5a411b485247aa7714ff34`. Archive-template commit: `bc0a0b880409e162e39871c6c040123cee7d598a`.
 - **Limit:** Reviewed these exact references only. Other obsolete path references may remain.
+
+### Version 16 — Scene illustration archive-link consistency
+
+- **Date:** 2026-11-20
+- **Scope:** Verify active Scene-002 links to the archived 2026-11-16 image prompts after the workspace rename from `prompts/` to `drawings/`.
+- **Files updated:**
+  - `drawings/2026-11-20/session-01-brief.md`
+  - `drawings/2026-11-19/attempt-34.md`
+  - `novels/Novel-01/Arc-01/Scene-001/scene.md`
+  - `novels/Novel-01/Arc-01/Scene-002/illustrations/illustration-01.md`
+  - `novels/Novel-01/Arc-01/Scene-002/scene.md`
+  - `novels/Novel-01/Arc-01/Scene-002/illustrations/illustration-03.md`
+- **Corrections:** Replaced stale active archive links with the correct `drawings/history/2026-11-16-image-prompts.md` target. Used four parent-directory levels from `Scene-002/scene.md` and five from files under `illustrations/`.
+- **Review-only file:** `novels/Novel-01/Arc-01/Scene-002/illustrations/illustration-02.md` already used the correct five-level relative path. No update was needed.
+- **Target verification:** Confirmed that `drawings/history/2026-11-16-image-prompts.md` exists. Its exact headings match the links for Attempts 04, 05, and 06.
+- **Link verification:** Read back the updated Scene-002 scene and Illustration 03 files. All three scene links and the Illustration 02 and 03 links now use the correct archive root and anchors. The hand-off records the prior read-back verification for the other four updated files.
+- **Historical-content handling:** Preserved historical mentions of `prompts/` where they record the former directory structure or earlier events. This pass changed active broken links only.
+- **Commits:** Session brief `ffc46b6d1f9b1fad3741b97e6d03db2f78fd815a`, session brief second correction `4d9c16c8a6187622f6af966db2755049b2445bee`, attempt 34 `5fddd54ff1430ac28f7f21c18348a8f0c393895e`, Scene-001 `dd92093dbe7eac3c3e55776c61dca17f63de0e01`, Scene-002 Illustration 01 `3ad0dda79692f0c46135c4814fd5519a47e8efcf`, Scene-002 scene `2536c559bc20cae41e5b966a85ada23738c7334f`, and Scene-002 Illustration 03 `cec4af32f6fe0e4e940ea71528dfe74da3dcc417`.
+- **Validation limit:** This entry records path and link checks only. The official STE linter and GitHub Actions workflow remain unverified. The wider repository path-consistency scan is not complete.
+
