@@ -55,7 +55,7 @@ During foundational initialization, read the [Conversation Mode skill](../conver
 
 ### Foundational skill loading cadence
 
-Load the Session Archiving, Conversation Mode, Agent Skill Authoring, ASD-STE100, Drawing, and required Drawing references only when the user invokes an explicit initialization cue. See `skills/SESSION_START.md` for the cues.\n\nLoad each required foundational file once during that conversation's foundational initialization. Apply its verified instructions for the rest of that conversation. Do not load these files automatically at the start of a new chat.\n\nRefresh a foundational file when the user asks. Also refresh it when you know or suspect a relevant repository change. Refresh it when an unresolved instruction requires the authoritative file.\n\nA new ChatGPT conversation starts a new loading cycle. This cadence does not remove the requirement to load a task-specific skill when needed. It also does not remove the requirement to read relevant project records before that task.
+Load the Session Archiving, Conversation Mode, Agent Skill Authoring, ASD-STE100, GitHub Actions, Drawing, and required Drawing references only when the user invokes an explicit initialization cue. See `skills/SESSION_START.md` for the cues.\n\nLoad each required foundational file once during that conversation's foundational initialization. Apply its verified instructions for the rest of that conversation. Do not load these files automatically at the start of a new chat.\n\nRefresh a foundational file when the user asks. Also refresh it when you know or suspect a relevant repository change. Refresh it when an unresolved instruction requires the authoritative file.\n\nA new ChatGPT conversation starts a new loading cycle. This cadence does not remove the requirement to load a task-specific skill when needed. It also does not remove the requirement to read relevant project records before that task.
 
 ### First-response execution rule
 
@@ -72,10 +72,11 @@ When the user invokes **`Follow instructions`** or **`Be the novelist`**, run th
 3. Retrieve and read `skills/conversation-mode/SKILL.md` from the same branch.
 4. Retrieve and read `skills/agent-skill-authoring/SKILL.md` from the same branch.
 5. Retrieve and read `skills/asd-ste100/SKILL.md` from the same branch.
-6. Retrieve and read `skills/drawing/SKILL.md` from the same branch.
-7. Retrieve and read the Drawing skill's required foundational references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Load other Drawing references only when their task triggers apply.
-8. Verify that every required retrieval succeeded. Confirm that you read each file. Keep the verified instructions for the rest of the conversation.
-9. Report completion only after every check passes. If a required retrieval fails, report its exact path and stop project work.
+6. Retrieve and read `skills/github-actions/SKILL.md` from the same branch.
+7. Retrieve and read `skills/drawing/SKILL.md` from the same branch.
+8. Retrieve and read the Drawing skill's required foundational references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Load other Drawing references only when their task triggers apply.
+9. Verify that every required retrieval succeeded. Confirm that you read each file. Keep the verified instructions for the rest of the conversation.
+10. Report completion only after every check passes. If a required retrieval fails, report its exact path and stop project work.
 
 **No task-type exception after activation:** Foundational initialization always requires the Drawing skill and its required references. This rule applies even when the first task is prose-only or unrelated to drawing. A prose-only exception for a task does not cancel this requirement. Do not load these files before an explicit cue.
 

@@ -13,6 +13,7 @@ These skills govern cross-project work. Load them only through the explicit foun
 | [agent-skill-authoring](agent-skill-authoring/SKILL.md) | Agent Skills structure, metadata, authoring, validation, and integration |
 | [asd-ste100](asd-ste100/SKILL.md) | Controlled-language rules for skill and technical documentation |
 | [conversation-mode](conversation-mode/SKILL.md) | Default Mode and Condensed Mode collaboration behavior |
+| [github-actions](github-actions/SKILL.md) | GitHub Actions workflow design, optimization, security, and verification |
 | [session-archiving](session-archiving/SKILL.md) | Conversation integrity, archive records, image provenance, and closeout |
 
 ## Foundational prerequisite

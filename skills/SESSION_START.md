@@ -67,6 +67,12 @@ The repository policy is in `skills/asd-ste100/references/repository-writing-pol
 
 Neither the skill nor the linter certifies a document as fully ASD-STE100 compliant. The repository does not contain the official controlled dictionary.
 
+### GitHub Actions workflow operations
+
+`skills/github-actions/SKILL.md` is a required foundational skill. Load it during foundational initialization.
+
+Use it when you create, revise, optimize, secure, or verify GitHub Actions workflows. It defines workflow triggers, concurrency, incremental checks, caching, runners, permissions, artifacts, and validation.
+
 ## Source-of-truth rule
 
 The GitHub repository `dungnv2602/chatgpt`, branch `gpt`, is the sole source of truth for project files, skills, prompts, references, and archives.

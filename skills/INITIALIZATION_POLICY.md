@@ -46,7 +46,8 @@ Foundational initialization loads these skills:
 2. Conversation Mode.
 3. Agent Skill Authoring.
 4. ASD-STE100.
-5. Drawing and its required foundational references.
+5. GitHub Actions.
+6. Drawing and its required foundational references.
 
 The ASD-STE100 skill governs skill documentation and technical documentation. Use Strict mode for operational instructions. Use STE-flavored mode for technical explanations and READMEs.
 
@@ -86,6 +87,7 @@ Report the exact path of any missing or unverified file.
 Do not claim initialization is complete before all checks pass.
 
 Use "skills/asd-ste100/SKILL.md" for all skill documentation and technical documentation.
+Use "skills/github-actions/SKILL.md" for GitHub Actions workflow design, optimization, security, and verification.
 Use Strict mode for operational instructions.
 Use STE-flavored mode for technical explanations and READMEs.
 Preserve meaning, conditions, scope, and modality.
@@ -442,3 +444,14 @@ Use this template:
 - **Read-back:** The committed file was fetched from branch `gpt`. The revised instructions were present.
 - **Commits:** `0653ef18680613263b415b95bea5e283128e1cea` and `e0a78c077559c9b2b95c53f2681d9c6fe24a8f04`.
 - **CI:** Pending. Check the result on the next user turn.
+
+
+### Version 24 — GitHub Actions skill separation and foundational loading
+
+- **Date:** 2026-11-20
+- **Change:** Move GitHub Actions workflow instructions out of Conversation Mode and into a dedicated foundational skill.
+- **New skill:** `skills/github-actions/SKILL.md`.
+- **Imported source:** `skills/github-actions/references/user-supplied-optimization-notes.md`.
+- **Integration:** Add the skill to the foundational initialization sequence, mandatory execution gate, skills index, and copyable project instructions.
+- **Conversation Mode:** Retain only a link to the specialist workflow skill. Remove GitHub Actions procedures and repository workflow details.
+- **Reason:** Keep collaboration behavior separate from CI and workflow engineering.
