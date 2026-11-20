@@ -31,3 +31,9 @@
 - **Outcome classification:** Successful for the requested studio setting, seated composition, and soft-fabric direction. Exact identity matching and strict garment-detail matching against a reference were not verified because no reference image was attached.
 - **Generation ID:** `5dd2a4cd-36b6-4ac5-ba7c-b195c369f871`
 - **Image file:** Delivered in conversation; no binary stored in this repository.
+
+## Repository images
+
+- [Generated Image November 19, 2026 - 4_05AM.png.webp](images/Generated%20Image%20November%2019,%202026%20-%204_05AM.png.webp)
+
+- **Association basis:** Manually matched by the visible upright studio-chair portrait and neutral studio setting described in this attempt. The archived generation record does not preserve a direct conversation asset ID for this file, so this is a visual archive match rather than an ID-verified link.
