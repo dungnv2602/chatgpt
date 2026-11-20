@@ -5,7 +5,7 @@
 A tool refusal must not automatically become a request for the user to rewrite the prompt.
 
 1. Read the refusal as a result, not as an invitation to resubmit the same prompt.
-2. Check the actual request and authored prompt for explicit nudity, erotic activity, sexual solicitation, or combinations of wording and staging that make the image overtly sexual.
+2. Check the request and authored prompt for explicit nudity, erotic activity, or sexual solicitation. Check for wording and staging that make the image overtly sexual.
 3. If the user's underlying creative goal has a clearly non-explicit interpretation, preserve that goal while making a material change to the visual treatment. For example, move from bedroom/boudoir staging to a fashion or portrait setting. Use ordinary elegant clothing. Describe posture, expression, lighting, and composition without erotic instructions.
 4. Do not use euphemisms to disguise a prohibited request, and do not try to defeat or probe safety systems. The revision must genuinely change the content into an allowed depiction.
 5. Archive and commit the revised prompt before another call. Record each refusal and each materially revised attempt accurately.
@@ -16,10 +16,7 @@ Image tools may provide only a generic refusal message. Do not claim to know the
 
 ### E2.1. Prompt-interpretation audit and proven-baseline recovery
 
-**A refusal or unsuccessful result is not automatically proof that the user's creative
-intent is disallowed, that the reference image is the cause, or that the image tool
-is incapable of producing the requested visual.** Diagnose the assistant's own
-interpretation before redesigning the brief.
+**A refusal or unsuccessful result does not prove that the user's creative intent is disallowed. It does not prove that the reference image caused the refusal. It does not prove that the tool cannot produce the requested visual.** Diagnose the assistant's interpretation before you redesign the brief.
 
 Before rewriting a prompt after a refusal, repeated failure, or user correction:
 
@@ -37,10 +34,10 @@ Before rewriting a prompt after a refusal, repeated failure, or user correction:
    prompt in that same series as the execution baseline. If no series applies
    but the work is an identifiable continuation of one artwork/thread, use the
    most recent successful prompt for that exact thread. A success from another
-   series or artwork is not a substitute merely because it shares a subject,
-   outfit, mood, or rendering style. Only when neither a series nor an exact
-   continuing artwork/thread can be identified should you search for the
-   strongest comparable success across the broader prompt history.
+   series or artwork is not a substitute merely because it shares a subject or
+   style. Search the broader prompt history only when you cannot identify a
+   series or exact continuing artwork thread. Use the strongest comparable
+   success only in that case.
 3. **Audit prompt drift.** Compare the user's actual brief and successful
    baseline against the new authored prompt. Identify every assistant-added
    element, including identity-preservation claims, extra scene details,
@@ -99,8 +96,7 @@ successful work.
 ### E2.2. Documented silk-wrap series and baseline-selection case
 
 The November 12–13, 2026 silk-wrap portrait sequence is a historical example
-of prompt lineage only. The current session brief controls creative direction
-the latest **successful** prompt controls only historical prompt lineage:
+of prompt lineage only. The current session brief controls creative direction. The latest **successful** prompt controls only historical prompt lineage:
 
 - **Attempt 33** in `prompts/2026-11-12-image-prompts.md` established the
   successful Realistic portrait direction and produced two user-approved
@@ -277,3 +273,8 @@ attempt records within the active series or exact artwork thread. The daily
 ledger helps locate those records. It does not define visual direction or
 baseline eligibility.
 
+
+
+## Technical documentation standard
+
+This reference defines operational recovery and provenance procedures. Apply Strict mode from the repository [ASD-STE100 policy](../../asd-ste100/references/repository-writing-policy.md) when you revise it. Preserve safety limits, user approval, and prompt-lineage rules. Do not rewrite approved creative prompts or examples.
