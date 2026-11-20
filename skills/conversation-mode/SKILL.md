@@ -96,7 +96,7 @@ This section contains every matter that is unresolved or needs the user's attent
 - A clarification the assistant asks the user to provide, until the user answers or withdraws the request.
 - A failed operation, failed validation, unsuccessful outcome, or unresolved defect. Never put a failure report in Reports.
 - A blocker that requires user action, access, a choice, or an exception.
-- A material trade-off where the user's priorities determine the correct next step.
+- A material trade-off where the user's priorities determine the appropriate next step.
 - A partial result when the remaining scope requires a user decision.
 - A follow-up question raised by an otherwise successful task.
 
@@ -108,7 +108,7 @@ Treat "needs the user's call" broadly. Keep the matter open and ask one focused 
 - Choosing between materially different outcomes.
 - Claiming acceptance without evidence.
 
-Keep a failure in Open Discussions while it remains unresolved or unsuccessful, even when the next step seems obvious. The task record holds the technical details. After you fix the failure and confirm the complete outcome, remove the discussion. When useful, add a success-only report with the final result. Do not report internal retries that you resolved before you reported the work.
+Keep a failure in Open Discussions while it remains unresolved or unsuccessful, even when the next step seems obvious. The task record holds the technical details. After you resolve the failure and establish the outcome, remove the discussion. When useful, add a success-only report with the final result. Do not report internal retries that you resolved before you reported the work.
 
 For each open item:
 
@@ -118,7 +118,7 @@ For each open item:
 - Put the item with the latest creation or meaningful update first. When the user adds a clarification to an existing thread, update that thread and move it to the top. Do not create a duplicate.
 - Keep an item open while awaiting the user's answer, even if the conversation or task is paused.
 - Do not close an item merely because it is old, another item is newer, work has stopped, or the assistant has proposed a solution.
-- Close the item when the user answers and no further input is needed. Also close it when evidence answers the question. Close it when the user withdraws or rejects the proposal. Close it after you implement and verify the decision. Close it when the blocker is resolved.
+- Close the item when the user answers and no further input is needed. Also close it when evidence answers the question. Close it when the user withdraws or rejects the proposal. Close it after you implement the decision and resolve the matter. Close it when the blocker is resolved.
 - If the user answers only part of a multi-part question, keep the remaining unresolved part open and revise the entry to show only what remains.
 - If a later instruction supersedes an earlier open item, close the superseded item and retain the current decision or question. Preserve unrelated open items.
 
@@ -138,14 +138,14 @@ A report must:
 
 Reports may describe a completed milestone even when a larger task continues, provided the milestone is independently complete and successful. If that milestone also leaves a decision or question for the user, record the success in Reports and the distinct unresolved question in Open Discussions. Do not duplicate the same information in both sections.
 
-A report may mention that an issue was encountered and successfully repaired, but it must report the final successful outcome and its verification. Do not classify an unsuccessful final outcome, an unverified claim, a pending check, or a blocked task as a success report.
+A report may mention that an issue was encountered and successfully addressed, but it must report the final successful outcome and its verification. Do not classify an unsuccessful final outcome, an unverified claim, a pending check, or a blocked task as a success report.
 
 Retain at most the three most recent reports. Order them newest first by the time the successful outcome was verified or completed. When a new successful report would create a fourth entry, remove the oldest report. This limit applies only to Reports. It does not limit the number of genuinely open discussions. Do not preserve older reports elsewhere in this file.
 
 #### Ordering, timestamps, and maintenance
 
 - Keep the two H2 sections in the exact order shown above. Do not add other sections.
-- Within each section, sort entries newest first. Use the time of the latest meaningful update for an open discussion and the verified completion time for a report.
+- Within each section, sort entries newest first. Use the time of the latest meaningful update for an open discussion and the completion time for a report.
 - Use a clear timestamp for every entry. Use UTC and an unambiguous format such as `2026-11-20 16:14 UTC`.
 - Do not move an entry to the top for cosmetic edits. Move it only after a meaningful change to its status, required decision, scope, or verified outcome.
 - Review and reconcile the register when entering Condensed Mode work, after meaningful user clarifications or decisions, after failures, and before sending the final link. Read it once at the start of Condensed Mode work in each conversation.
@@ -193,7 +193,7 @@ Do not treat silence as approval. Do not infer a decision from an unrelated user
 - When communication requires user input, a decision, approval, or clarification, put only that unresolved matter in Open Discussions and provide the discussion-file link.
 - Keep progress, blockers that do not constitute a reported failure, verification details, and task outcomes in the task record. Add a concise Reports entry only for a successful outcome.
 - At task completion, remove resolved discussions and add a success report only if the outcome is complete and verified. Keep any distinct follow-up requiring user input in Open Discussions.
-- Fetch the committed discussion file from branch `gpt` and verify its contents before providing its link.
+- Fetch the committed discussion file from branch `gpt` and inspect its contents before providing its link.
 - If task creation fails, do not claim success or provide an invented task link.
 - If work fails or stops before completion, record durable progress in the task record. Put the failure in Open Discussions, then provide the discussion link.
 
@@ -257,7 +257,7 @@ Whenever you create or change a skill:
 
 1. Commit the authoritative change to branch `gpt`.
 2. Fetch the committed path again.
-3. Verify its contents.
+3. Inspect its contents.
 4. Do not access or synchronize the ChatGPT Library.
 
 ## Technical documentation standard
