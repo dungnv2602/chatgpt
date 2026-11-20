@@ -443,7 +443,7 @@ Whenever the user asks to adjust, revise, refine, or change an existing result, 
 2. Copy the complete prompt verbatim. Do not paraphrase, summarize, reconstruct, or rewrite it.
 3. Apply only the user's requested changes directly to the copied text. Preserve every other word, order, and detail.
 4. Remove or amend only text that the user's latest instruction changes. Do not add unrelated improvements.
-5. Keep all archival metadata out of the submitted prompt. Never include attempt numbers, file names, paths, repository or prompt-record references, generation IDs, or retrieval instructions.
+5. Keep all archival and workflow metadata out of the submitted prompt. Never include attempt numbers, file names, paths, repository or prompt-record references, generation IDs, retrieval instructions, or references to a prompt, earlier wording, previous instructions, or another record. Do not write "as described in the previous prompt", "same as before", or equivalent wording.
 6. Keep all image references and editing-operation language out of the submitted prompt. Describe the final visual result directly; do not refer to an image, source image, previous image, attachment, or edit operation.
 7. Never request, attach, pass, or use an existing image as the base or reference for an adjustment, even if it is present in the conversation.
 8. Generate a fresh result from the revised prompt. Record it as a prompt-based fresh generation. Do not claim direct-edit or source-linked provenance.
