@@ -10,7 +10,7 @@ status: generated
 - **Illustration ID:** ILL-002-02
 - **Title:** A closer listening moment
 - **Novel:** [Novel 01 — The Weather Between Us](../../../novel.md)
-- **Story Arc:** [Arc 01 — A Conversation in the Rain](../arc.md)
+- **Story Arc:** [Arc 01 — A Conversation in the Rain](../../arc.md)
 - **Scene ID:** SCN-002
 - **Story Sequence:** 2
 - **Date Created:** 2026-11-16
