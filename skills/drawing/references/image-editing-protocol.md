@@ -25,7 +25,7 @@ When the user includes an image, establish its role and priority:
 - **Visual comparison:** compare the reconstruction with the approved result.
 - **Direct edit source (secondary workflow):** Modify that exact image only when the user explicitly requests direct editing. You may also do so when reconstruction is inadequate and the user has approved this method. The actual source must be attachable through the supported mechanism.
 
-Do not treat "use this as inspiration" as "edit this exact image." Prompt-first reconstruction does not require an image attachment.
+Do not treat "use this as inspiration" as "edit this exact image." No attachment is needed for prompt-first reconstruction.
 
 ## 3. Revise the proven prompt, not the image
 
