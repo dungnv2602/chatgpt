@@ -24,6 +24,7 @@ jobs:
     timeout-minutes: 2
     permissions:
       actions: write
+      contents: read
     outputs:
       proceed: ${{ steps.guard.outputs.proceed }}
       base_sha: ${{ steps.baseline.outputs.base_sha }}
@@ -98,7 +99,6 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: read
-      actions: read
     steps:
       - name: Check out current commit
         uses: actions/checkout@v4

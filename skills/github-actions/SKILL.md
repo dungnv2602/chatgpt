@@ -82,7 +82,7 @@ Concurrency cancellation remains the primary control for replaceable push valida
 - Run the preflight before any checkout, dependency setup, or repository script.
 - Query the newest run for the same workflow, branch, and event. Compare its run ID with `github.run_id`.
 - If a newer run exists, cancel the current run through the Actions API. Do not let a superseded run report a successful validation result.
-- Give only the preflight job `actions: write` when it must cancel its own run. Keep the validation job on the permissions it needs, such as `contents: read` and `actions: read`.
+- Give the preflight job `actions: write` only when it must cancel its own run. Add read permissions only for its API queries; for example, the compare-commits endpoint needs `contents: read`. Keep the validation job on the permissions it needs, usually `contents: read`.
 - Make the validation job depend on the preflight output. If the preflight cancels the run, the validation job must not start.
 - If the API cannot identify the newest run, continue with validation and emit a warning. Do not skip validation because the guard could not decide.
 - Keep the preflight short and set a small job timeout.
