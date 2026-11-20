@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 15:15 UTC
+- **Updated:** 2026-11-20 15:20 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -263,7 +263,6 @@ The Version 19 active-link scan found zero unresolved local Markdown targets or 
 - Review historical archive links only after the user authorizes changes to those records.
 - Review external URL availability if it remains within the approved audit scope.
 - Confirm current audit scope and completion criteria against the repository state before closing the task.
-- Review the remaining long-sentence and synonym-rotation findings in full context. Do not change intentional examples or raise baselines.
 - Review remaining synonym-rotation findings in full context. Preserve deliberate examples and distinct technical meanings. Do not raise baselines.
 
 ## 9. Next Actions
@@ -700,3 +699,12 @@ Continue from the Next Actions. Keep this task In Progress until the remaining a
 - **Validation limit:** This does not establish a fresh official lint result. The latest CI run has not been awaited.
 - **Baseline policy:** No lint baseline changed.
 - **Next:** Review remaining synonym-rotation findings and external URL availability. Historical archive records remain unchanged without user authorization.
+
+
+### 2026-11-20 15:20 UTC
+
+- **Action:** Reviewed the Drawing skill's remaining start/begin synonym pair from the earlier lint log.
+- **Change:** Standardized both uses on `start` in the session-opening and pattern-consultation instructions.
+- **Commit:** `2ab1a8366737148a1c3a60db5b37651f2865fc40`.
+- **Read-back:** Fetched `skills/drawing/SKILL.md` from branch `gpt`. Confirmed both phrases use `start`.
+- **Next:** Continue reviewing synonym-rotation findings in context. Preserve distinct technical meanings and intentional examples.
