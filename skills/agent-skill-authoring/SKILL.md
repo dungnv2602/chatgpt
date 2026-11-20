@@ -200,7 +200,7 @@ Do not rewrite creative writing, dialogue, marketing copy, approved creative pro
 
 Do not run the linter or CI workflows locally. Push technical-document changes to branch `gpt`. Let GitHub Actions validate them.
 
-During each mandatory preflight, inspect one bounded snapshot. Repair the newest completed failure for an applicable workflow before handling the prompt. Do not wait or poll. Pending, cancelled, absent, or inaccessible results do not block work. Review new CI results at the next preflight.
+During each mandatory preflight, inspect one bounded snapshot. Repair the newest completed failure for an applicable workflow before handling the prompt. Do not wait or poll. Pending, cancelled, absent, or inaccessible results do not block work. Record any failure that cannot be repaired safely in one focused attempt, then continue unless the task depends on that result. Review new CI results at the next preflight.
 
 The linter checks only supported patterns. It cannot prove meaning or dictionary compliance.
 

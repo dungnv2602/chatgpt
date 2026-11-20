@@ -35,6 +35,7 @@ A specialist-role request does not change the `start session` cue. It authorizes
 - Report the exact path of a missing or unverified file.
 - Do not claim initialization is complete until every required skill retrieval succeeds and every actionable completed CI failure is repaired.
 - Use one bounded CI snapshot. Pending, cancelled, skipped, absent, or inaccessible CI results do not block initialization. Never wait for or poll CI.
+- If a completed failure cannot be repaired safely in one focused attempt, record the blocker and continue unless the task depends on that result.
 - Never run the linter or CI workflows locally. Let GitHub Actions execute them.
 - Treat the GitHub repository and branch `gpt` as the sole source of truth.
 

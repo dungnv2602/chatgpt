@@ -92,7 +92,7 @@ When the user says **`start session`**, run this sequence before project work. A
 7. Fetch and read `skills/github-actions/SKILL.md` from the same branch.
 8. Confirm that every required retrieval succeeded and that you read each file. Keep the verified instructions for the rest of the conversation.
 9. After all six foundational skills load, run one bounded CI snapshot as defined in `skills/github-actions/SKILL.md`. Repair any newest completed failure that applies. Never wait or poll.
-10. Stop initialization only if a required skill retrieval fails or an actionable completed failure remains unrepaired. Pending, cancelled, absent, or inaccessible CI results do not block initialization. Record an unverified result without claiming success.
+10. Stop initialization only if a required skill retrieval fails. If a completed CI failure cannot be repaired safely during one focused preflight, record the exact blocker and continue initialization. Pending, cancelled, absent, or inaccessible results do not block initialization. Never claim an unverified result passed.
 
 Do not load the Drawing skill or its references during foundational initialization. After the foundational gate passes, load Drawing only when the task requires it. For a drawing session or novelist request, first verify the verified-load ledger. Reuse any Drawing files already read in this conversation and fetch only missing files. If foundational initialization already passed, do not run this gate again.
 

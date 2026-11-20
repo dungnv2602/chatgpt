@@ -42,7 +42,8 @@ Run one bounded CI snapshot before handling every new user prompt. This rule app
 5. When a newest completed run fails, inspect its jobs, failed steps, and logs. Fix the cause on `gpt` before handling the user's request. Do not weaken tests, path coverage, or baselines.
 6. After you push a repair, continue with the user's request. GitHub Actions owns validation. Review the result during the next mandatory preflight.
 7. Never run the STE linter, CI workflows, or CI test suites locally. Do not manually dispatch or rerun workflows unless the user explicitly asks.
-8. If GitHub Actions cannot be accessed, make one bounded access attempt. Record the status as unverified in `workspace/discussion.md` in Condensed Mode. Do not claim that CI passed. Continue with the user's request. Do not let unavailable CI access deadlock the conversation.
+8. If GitHub Actions cannot be accessed, make one bounded access attempt. Record the status as unverified in `workspace/discussion.md` in Condensed Mode. Do not claim that CI passed. Continue with the user's request.
+9. If a completed failure cannot be repaired safely during one focused preflight, record the exact blocker. Do not repeat the same attempt without new evidence. Continue with the user's request unless it depends on that CI result.
 
 After loading skills for `start session`, `start a drawing session`, or `Be the novelist`, run the same one-time snapshot. Repair any visible newest completed failure before project work. Do not wait for pending or unavailable results. If a repair starts new CI runs, continue initialization without waiting for them.
 

@@ -9,7 +9,7 @@ Initialization is conditional. Do not load project instructions, skills, or refe
 
 The only session-start cue is **`start session`**.
 
-When the user gives this cue as an instruction, perform foundational initialization. Run the mandatory execution gate in `skills/session-archiving/SKILL.md`. Retrieve all required skills before project work. Repair any newest completed CI failure that applies. Never wait for or poll CI. Pending, cancelled, absent, or unavailable results do not block initialization.
+When the user gives this cue as an instruction, perform foundational initialization. Run the mandatory execution gate in `skills/session-archiving/SKILL.md`. Retrieve all required skills before project work. Repair any newest completed CI failure that applies. Never wait for or poll CI. Pending, cancelled, absent, or unavailable results do not block initialization. Record an unrepairable failure and continue without claiming CI passed.
 
 Ignore quoted, discussed, or hypothetical uses of the cue. Do not treat a specialist-role request as a session-start cue.
 
@@ -59,7 +59,7 @@ Before novelist work:
 3. Check whether the Drawing skill and each required reference were successfully read in this conversation. Fetch only the files that are not already verified.
 4. Check whether `skills/romantic-storyteller-visual-artist/SKILL.md` was successfully read in this conversation. Fetch it only if it is not already verified.
 5. Do not use remembered instructions, reads from another conversation, summaries, or unverified copies as substitutes.
-6. After all required novelist skills load, run one bounded post-load CI snapshot. Repair any newest completed failure that applies. Do not wait for CI. Pending, cancelled, absent, or unavailable results do not block novelist initialization.
+6. After all required novelist skills load, run one bounded post-load CI snapshot. Repair any newest completed failure that applies. Do not wait for CI. Pending, cancelled, absent, or unavailable results do not block novelist initialization. Record any failure that cannot be repaired safely and continue without claiming CI passed.
 
 The Drawing skill is a prerequisite between foundational initialization and novelist initialization. Do not load it during ordinary foundational initialization.
 
@@ -202,7 +202,7 @@ This cue starts a new drawing session. It does not replace the foundational init
 2. If it has not passed, run the complete mandatory execution gate in `skills/session-archiving/SKILL.md` first. Do this as part of the drawing-session request. Do not ask the user to repeat the `start session` cue.
 3. If foundational initialization already passed, reuse the verified foundational files. Do not load them again without a reason.
 4. Fetch and read `skills/drawing/SKILL.md` and its required references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Reuse each file if it was already verified in this conversation.
-5. After the Drawing skill and required references load, run one bounded post-load CI snapshot. Repair any newest completed failure that applies. Do not wait for CI. Pending, cancelled, absent, or unavailable results do not block the drawing session.
+5. After the Drawing skill and required references load, run one bounded post-load CI snapshot. Repair any newest completed failure that applies. Do not wait for CI. Pending, cancelled, absent, or unavailable results do not block the drawing session. Record any failure that cannot be repaired safely and continue without claiming CI passed.
 6. Start the drawing session under the Drawing skill. Establish its new opening brief and required session records before image generation or editing. For a named novel scene, use the scene-local illustration brief and records.
 7. Continue with any drawing task included in the same instruction. If the user only asks to start the session, establish the session and ask only for essential brief details that are not available.
 

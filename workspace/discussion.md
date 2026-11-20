@@ -50,4 +50,4 @@ I did not run the linter locally. I did not run CI locally, manually dispatch a 
 
 **Additional check:** The ASD-STE100 skill and repository writing policy already prohibit local linter and CI execution. Their existing rules were retained.
 
-**Verification:** The updated files will be read back from branch `gpt`. The task deletion will be checked through the resulting repository tree. GitHub Actions will execute any triggered checks independently. No result will be awaited.
+**Verification:** Read back all eight updated paths from branch `gpt`. The deleted task returned HTTP 404 and was absent from the branch tree. The task board no longer contains its ID. GitHub Actions will execute triggered checks independently. No result was awaited.

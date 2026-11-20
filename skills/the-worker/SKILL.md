@@ -26,6 +26,8 @@ Do not wait for or poll CI. Pending, in-progress, cancelled, skipped, or absent 
 
 If GitHub Actions is unavailable after one bounded access attempt, record the status as unverified. Continue with the user's request. Do not claim that CI passed.
 
+If a failure cannot be repaired safely during one focused preflight, record the exact blocker. Do not repeat the same attempt without new evidence. Continue with the request unless it depends on that CI result.
+
 After cue-triggered skill loading, repeat the same one-time snapshot. Do not wait for new runs after a repair or other push.
 
 ## Activation and authority
