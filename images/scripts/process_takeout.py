@@ -374,7 +374,12 @@ def prepare_attempt_readme_updates(prepared: list[dict[str, Any]], root: Path) -
             ]
             if original_dir.is_dir() else []
         )
-        original_master_count = len(original_masters) + len(session_items)
+        new_original_count = sum(
+            1 for item in prepared
+            if item["directory"].relative_to(root).as_posix()
+            == f"drawings/{session_date}/images"
+        )
+        original_master_count = len(original_masters) + new_original_count
         total_assets = len(all_webps) + original_master_count
         original_label = "original master" if original_master_count == 1 else "original masters"
         file_label = "file" if total_assets == 1 else "files"

@@ -1031,14 +1031,17 @@ and original/derivative hashes remain separate fields.
 
 New manifest records remain `Pending` until the post-push verifier reads the
 exact original and WebP Git blobs from `origin/gpt`, validates their SHA-256
-values and WebP format, and checks the canonical GitHub URL. Legacy records
-without an original master remain `Not verifiable`; their retained WebP URL
-and derivative hash are still checked.
+values and WebP format, and checks the canonical GitHub URL, daily README
+inventory/table links, and the corresponding attempt-note WebP link. Legacy
+records without an original master remain `Not verifiable`; their retained
+WebP URL, derivative hash, and available README links are still checked.
 
 The Action does not query image-generation history or autonomously discover
 native platform IDs. It consumes the explicit `attempt`, prompt/output IDs,
 and generation hash supplied in `HANDOFF.yml`; missing provenance remains
-blank and mapping confidence is never upgraded by filename. The workflow runs
+blank and mapping confidence is never upgraded by filename. A supplied
+generation-hash mismatch is retained for review, with mapping status
+`Probable`, rather than rejecting the uploaded image. The workflow runs
 Python compilation and regression tests before processing. The GitHub Actions
 run must pass and its published output must be read back before the workflow
 is described as fully verified.
