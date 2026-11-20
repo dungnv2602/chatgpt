@@ -80,10 +80,10 @@ Continue and complete the repository documentation audit. Keep its complete hist
 ### 2026-11-20 13:00 UTC
 
 - **Action:** Scanned all 47 Markdown files in the current full-document workflow scope for semicolons and selected structural lint patterns.
-- **Result:** The preliminary scan found 20 semicolon occurrences in six editable files. Removed all 20. The six files are `skills/github-actions/SKILL.md`, `skills/SESSION_START.md`, `skills/drawing/SKILL.md`, `skills/session-archiving/references/archive-records-and-image-prompts.md`, `workspace/task_board.md`, and this task record.
+- **Result:** The preliminary scan found 20 semicolon occurrences in six editable files. Removed all 20. The six files are `skills/github-actions/SKILL.md`, `skills/SESSION_START.md`, `skills/drawing/SKILL.md`, `skills/session-archiving/references/archive-records-and-image-prompts.md`, `workspace/task_board.md`, and this task record. Two semicolons in this task record's copied audit history were later restored to preserve the source text.
 - **Preserved exceptions:** Did not edit archived task records. The ASD-STE100 writing-rules reference contains a quoted semicolon example and its wrapper disables the semicolon rule for that file. The ASD-STE100 skill contains intentional rule examples and retains its recorded baseline.
 - **Commits:** GitHub Actions skill `9a12123fadc3776ebe0ef16750168f2437389b04`; Session Start `b01570973ee52391bafa9a02bceab6cf09b67db6`; Drawing skill `a6e665e99f0dff10b8a43c2cf32d89e91a2a5184`; archive reference `6b99a7fa7d5af1b8ec93d4870f925b2d498552c4`; task board `a71692b6118068667d18f37aa06fd8de662613f2`; audit task `f7c17ef3838af9cff0fa5ffdba862a939ba47b07`.
-- **Read-back:** Fetched all six paths from branch `gpt`. Confirmed that none contains a semicolon.
+- **Read-back:** Fetched all six paths from branch `gpt`. Confirmed that five contain no semicolons. Restored the two historical semicolons in this task record.
 - **Validation limit:** This was a targeted text scan, not an execution of the official linter. The repository execution environment remains unavailable. No CI run was manually triggered or inspected.
 - **Next:** Review remaining supported lint patterns and obtain a fresh full lint result in an authorized repository execution environment.
 
@@ -469,7 +469,7 @@ Continue from the Next Actions. Keep this task In Progress until the remaining a
 - **Change:** Remove Drawing from foundational initialization. Add the separate `start a drawing session` cue. Retain Drawing as a prerequisite for novelist-role initialization.
 - **Behavioral impact:** Load Drawing and its required references only for drawing sessions or novelist initialization. Reuse files already verified in the current conversation.
 - **Reason:** Avoid loading specialist drawing procedures during unrelated sessions.
-- **Canonical procedure:** `skills/SESSION_START.md`. Mandatory foundational gate: `skills/session-archiving/SKILL.md`.
+- **Canonical procedure:** `skills/SESSION_START.md`; mandatory foundational gate: `skills/session-archiving/SKILL.md`.
 
 
 ### Version 30 — Remove duplicate novelist entry point and centralize CI policy
@@ -487,7 +487,7 @@ Continue from the Next Actions. Keep this task In Progress until the remaining a
 - **Change:** Define three ordered dependency tiers and a per-conversation verified-load ledger.
 - **Behavioral impact:** Drawing and novelist requests automatically load missing prerequisite tiers. Successfully read files are reused when moving between tiers or returning to a prior tier. Only missing or explicitly invalidated files are retrieved.
 - **Reason:** Prevent duplicate skill and reference loading while preserving dependency order.
-- **Canonical procedure:** `skills/SESSION_START.md`. Execution gate: `skills/session-archiving/SKILL.md`.
+- **Canonical procedure:** `skills/SESSION_START.md`; execution gate: `skills/session-archiving/SKILL.md`.
 
 
 ### Version 32 — Add The Worker and workspace continuity
