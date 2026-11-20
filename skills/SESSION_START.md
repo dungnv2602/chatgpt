@@ -3,12 +3,17 @@
 Repository: `dungnv2602/chatgpt`
 Working branch: `gpt`
 
-At the beginning of every new chat:
+## Initialization rule
 
-1. Retrieve and read `skills/session-archiving/SKILL.md` from the `gpt` branch.
-2. Follow its **Mandatory session-start execution gate** exactly, including retrieving and reading every file it specifies.
-3. Verify each required retrieval before reporting completion.
-4. If any required file cannot be retrieved or verified, report the exact failure and do not claim startup is complete.
+Initialization is conditional. Do not retrieve or load project instructions, skills, or references automatically at the beginning of a new conversation.
+
+Wait for an explicit cue:
+
+- `Follow instructions` — perform foundational initialization.
+- `Be the novelist` — perform foundational initialization first, then novelist-specific initialization.
+- Both cues — perform foundational initialization once, then novelist-specific initialization.
+
+The foundational execution sequence is defined by this file together with the **Mandatory session-start execution gate** in `skills/session-archiving/SKILL.md`. Do not run that gate without an applicable explicit cue.
 
 ## Initialization cues
 
@@ -18,7 +23,7 @@ The two cues have distinct responsibilities and a defined dependency order. They
 
 When the user says **“follow instructions”** as an instruction, execute or verify the foundational initialization procedure defined by this file and the **Mandatory session-start execution gate** in `skills/session-archiving/SKILL.md`. Load and apply the foundational skills and required references. This cue does not assign a specialist role or activate a task-specific skill by itself.
 
-At the beginning of every new chat, foundational initialization is mandatory even if the user does not say “follow instructions”.
+Foundational initialization is not automatic. Run it only when one of the explicit cues above is invoked.
 
 ### “Be the novelist” — role initialization
 
@@ -32,10 +37,14 @@ If both cues are given, execute foundational initialization once, then novelist 
 
 Reuse successful, verified foundational reads from the current conversation rather than loading them redundantly. Never treat remembered instructions or reads from an earlier conversation as current-session verification.
 
+## Foundational Agent Skills standard
+
+`skills/agent-skill-authoring/SKILL.md` is a required foundational skill. Load and apply it during foundational initialization, and use it whenever a skill is created, revised, validated, or integrated. It defines the repository's implementation of the Agent Skills open format. Its inclusion does not activate a specialist role or authorize automatic initialization without an explicit cue.
+
 ## Source-of-truth rule
 
 The GitHub repository `dungnv2602/chatgpt`, branch `gpt`, is the sole authoritative source for project files, skills, prompts, references, and archives. Do not create, copy, upload, synchronize, or maintain project materials in ChatGPT Library. Do not use Library as a fallback or secondary source. If a required repository file is missing, report that fact rather than consulting or reconstructing it from Library.
 
 The repository workspace is organized at its root. Canonical project directories are `images/`, `master/`, `novel/`, `prompts/`, and `skills/`. Do not prepend the obsolete `ChatGPT/` directory to paths.
 
-Do not ask the user to activate the project or repeat these instructions. Do not create an archive merely because a chat has started.
+Do not ask the user to issue both cues when one cue is sufficient. Do not create an archive merely because a chat has started.
