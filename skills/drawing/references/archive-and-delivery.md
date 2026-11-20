@@ -69,6 +69,48 @@ repository retention pass through the single intake at `images/takeout/`.
   workflow.
 
 
+## Mandatory takeout hand-off closeout
+
+The assistant owns the hand-off. The user should not have to create or repair
+`images/takeout/HANDOFF.yml` after a generation workflow.
+
+For each generation event:
+1. Immediately capture the returned image count, sequence, internal output IDs,
+   exposed native IDs, exact authored prompt, attempt number, and generation-time
+   original SHA-256 when the original bytes are accessible.
+2. Record each output in its attempt record before asking for review. Keep
+   approval separate from archival eligibility.
+3. When the user uploads generated originals to `images/takeout/`, inspect
+   each image and match it to the generation-time output record. Use direct
+   generation-return association, native metadata, or a documented corroborating
+   source. Prompt text helps establish the intended title and scene, but does
+   not by itself prove which uploaded file is which output.
+4. Write every mapped upload to `HANDOFF.yml` with its exact top-level source
+   filename, descriptive title, explicit attempt, destination, internal output
+   ID, exposed native IDs, approval status, mapping evidence, and
+   `expected_sha256` when the generation-time original hash exists. Do not
+   fabricate unavailable fields. Do not leave placeholder entries.
+5. Reconcile the hand-off against the actual intake directory. Every supported
+   top-level image must appear exactly once. No unlisted images, duplicate
+   source names, unresolved placeholders, missing attempt values, or invalid
+   destinations are allowed.
+6. Keep `status: draft` while any image, mapping, or required metadata is
+   unresolved. Set `status: ready` only after the exact-coverage and metadata
+   checks pass. Then run the workflow. A green CI result with a draft hand-off
+   is a no-op, not a successful conversion.
+7. If a generation output has not yet been uploaded, keep it recorded as
+   awaiting upload in the attempt record. Do not invent an intake filename or
+   add a speculative hand-off item. Resume the hand-off as soon as the upload
+   appears.
+8. After processing, verify the archived report, original master, WebP
+   derivative, manifest row, attempt link, and daily README link. Read back
+   every changed repository record before reporting completion.
+
+This closeout is mandatory for every image-generation workflow that retains
+outputs in the repository. It applies to approved, pending, rejected,
+superseded, partial, and off-target outputs. It does not authorize changing a
+closed drawing session's creative brief or approval state.
+
 ## Mandatory generated-image archive verification (2026-11-20)
 
 For every drawing session, archive **every generated image output**. This includes approved, rejected, pending, partial, off-target, failed, and superseded outputs.
