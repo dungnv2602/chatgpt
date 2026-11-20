@@ -16,7 +16,7 @@
 > Make a restrained, non-sexual, everyday seated-pose edit to the supplied image. Adjust only the lower-body posture: position her knees a little farther apart in a comfortable, natural seated stance, with her lower legs relaxed and both feet flat on the floor. Keep the pose modest, neutral, and practical, like someone sitting comfortably on a bench for a casual portrait. No suggestive posing, no emphasis on intimate areas, and no change to clothing coverage. Preserve the exact existing outfit and all garment details, face and identity, expression, body proportions, long dark hair, and no glasses. Keep her seated on the same upholstered bench, with the same upper-body posture, hands, bedroom setting, bed entirely outside the frame, camera angle, crop, lighting, color palette, and photorealistic style. Change nothing else.
 
 - **Specific test:** Re-execute Attempt 33's exact authored prompt as a new, explicitly approved attempt.
-- **Prompt provenance:** Exact authored text copied from `prompts/2026-11-19/attempt-33.md`; no wording changes.
+- **Prompt provenance:** Exact authored text copied from `drawings/2026-11-19/attempt-33.md`; no wording changes.
 - **Preflight:** Reviewed the successful-prompt index, the relevant Attempt 31–33 history, and the canonical visual reference index. Attempt 31 is the user-accepted scene baseline. Attempt 32's generic refusal did not identify a specific trigger.
 - **Authored-prompt caveat:** This record preserves the authored direction; it does not claim to reproduce any hidden compiled tool prompt.
 - **Generation result:** Pending.
