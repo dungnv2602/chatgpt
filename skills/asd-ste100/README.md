@@ -60,15 +60,9 @@ When the user asks for a diff or explanation, show a table with the rule, origin
 
 The skill includes `scripts/ste-lint.py`. It performs deterministic checks for selected structural patterns.
 
-Run it from the skill directory:
+Do not run the linter locally. Push technical-document changes to branch `gpt` and let the existing GitHub Actions workflows run the linter and its self-test. The workflows apply the repository wrapper and configured per-file baselines.
 
-```bash
-python3 scripts/ste-lint.py path/to/file.md
-```
-
-Use `--json` for structured output. Use `--selftest` to run its internal tests.
-
-Use `--baseline N` only when you adopt an existing document with known findings. Use `--disable rule1,rule2` to disable named checks.
+Use `--json` to interpret structured output when reviewing a workflow result. Use `--baseline N` only when you adopt an existing document with known findings. Use `--disable rule1,rule2` only when the repository wrapper or an authorized workflow requires it.
 
 The linter does not prove that a rewrite preserves meaning. It does not verify modality or approved dictionary terms. It does not check every rule.
 
