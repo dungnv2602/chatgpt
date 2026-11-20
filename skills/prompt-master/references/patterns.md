@@ -9,7 +9,7 @@
 | # | Pattern | Bad Example | Fixed |
 |---|---------|------------|-------|
 | 1 | **Vague task verb** | "help me with my code" | "Refactor `getUserData()` to use async/await and handle null returns" |
-| 2 | **Unrelated tasks in one prompt** | "fix login and write a sales email" | Split unrelated outcomes; combine related work with shared acceptance criteria |
+| 2 | **Unrelated tasks in one prompt** | "fix login and write a sales email" | Split unrelated outcomes. Combine related work with shared acceptance criteria |
 | 3 | **No success criteria** | "make it better" | "Done when the function passes existing unit tests and handles null input without throwing" |
 | 4 | **Over-permissive agent** | "do whatever it takes" | Explicit allowed actions list + explicit forbidden actions list |
 | 5 | **Emotional task description** | "it's totally broken, fix everything" | "Throws uncaught TypeError on line 43 when `user` is null" |
@@ -79,4 +79,9 @@
 | 34 | **Unlocked filesystem** | No file restrictions | "Only edit files inside `src/`. Do not touch `package.json`, `.env`, or any config file." |
 | 35 | **No human review trigger** | Agent decides everything autonomously | "Stop and ask before: deleting any file, adding any dependency, or changing the database schema" |
 | 36 | **Vague first turn for an agentic model** | "fix the auth bug" with no scope, files, or criteria | Use Template M for Claude or Template N for OpenAI tasks. Front-load the outcome, relevant context, file scope, constraints, action boundaries, and acceptance criteria. |
-| 37 | **Context rot on long sessions** | Repeats corrections while stale assumptions remain in context | Start a new session for unrelated work; otherwise compact around current decisions, constraints, failures, and target state. Delegate only independent, sizeable investigation. |
+| 37 | **Context rot on long sessions** | Repeats corrections while stale assumptions remain in context | Start a new session for unrelated work. For ongoing work, compact around current decisions, constraints, failures, and target state. Delegate only independent, sizeable investigation. |
+
+
+## Documentation standard
+
+Apply the repository [ASD-STE100 policy](../../asd-ste100/references/repository-writing-policy.md) to explanatory text in this reference. Keep prompt examples intact when they serve as source material or intentional demonstrations.
