@@ -955,6 +955,36 @@ repository retention pass through the single intake at `images/takeout/`.
 For every drawing session, archive **every generated image output**, regardless of approval, rejection, prompt compliance, or whether it is superseded. Each output must be individually recorded and directly linked from the session README once its exact repository asset exists and is verified. Preserve generation order and prompt-to-output association. Approval is a separate field and never determines archival or linking eligibility.
 
 
+## Generation provenance and output mapping workflow (approved 2026-11-20)
+
+Use capture-at-generation-time to avoid retrospective image-to-attempt guesses. This is mandatory for every drawing session and applies to approved, rejected, pending, partial, off-target, failed, and superseded outputs.
+
+### Before generation
+1. Assign internal session, attempt, and prompt IDs before invoking image generation (for example, session `2026-11-20`, attempt `A001`, prompt `P001`). These are archive IDs, not platform Generation IDs.
+2. Reserve output IDs such as `A001-O01`, `A001-O02`. Reconcile reserved slots against actual outputs; do not assume the number returned.
+3. Preserve the exact authored prompt and operation type. Follow the existing pre-generation prompt commit and read-back requirement.
+
+### Immediately after generation
+4. Capture every returned image in its returned sequence and associate it directly with its attempt/output record. Do not map by filename, visual similarity, chronology alone, or memory when direct association is available.
+5. Record platform Generation ID and native image/output ID only when exposed by the generation system. Keep native IDs separate from internal archive IDs. If unavailable, explicitly mark them unavailable/not exposed; never invent IDs.
+6. Preserve original bytes when accessible. If they cannot be retrieved, record the limitation; do not substitute a screenshot, thumbnail, or recompressed preview as the original.
+7. Record the actual output count and sequence. Remove unused reserved slots; do not create phantom outputs. If the association cannot be established reliably, mark it Unmapped or Unverified.
+
+### Mapping evidence and identity
+8. Use internal output IDs (e.g. `A001-O01`) as stable archive identifiers when native IDs are not exposed. They must not be represented as native platform IDs.
+9. Keep internal session/attempt/prompt/output IDs, native Generation ID, native image/output ID, approval, outcome, mapping evidence/status, original-byte availability, archive path, SHA-256, and verification status separate.
+10. Direct generation-return association or reliable original metadata can support Verified mapping. Chronology and visual comparison may corroborate but cannot alone make a mapping Verified. Filename numbering is never proof.
+11. Mapping statuses: `Verified`, `Corroborated`, `Probable`, `Unmapped`, or `Conflicting`. Explain uncertain or retrospective evidence; never silently upgrade status.
+12. Calculate SHA-256 only from original image bytes when accessible. A hash proves byte identity, not generation event, prompt association, visual content, or approval. Record original and derivative hashes separately.
+
+### Archive and verify
+13. Archive every output regardless of approval. Preserve sequence, prompt association, direct links, and statuses; use the established asset-intake procedure.
+14. Extend the session `manifest.csv` with one row per output and include internal attempt/output IDs, native Generation ID, native image/output ID, mapping evidence/status, and original-byte availability. Preserve existing required columns. Unavailable native IDs remain empty or explicitly unavailable.
+15. Reconcile generation records, attempt notes, README, manifest, and actual assets. Verify paths, links, and hashes only after checking them; read back all edited records.
+16. Do not block drawing on GitHub, hashing, or archival latency. Generate, capture outputs and their associations immediately, then complete metadata, hashing, archive, and verification. If capture or archival is incomplete, retain an explicit pending/incomplete status; do not claim complete closeout.
+
+Provenance chain: **Session → Attempt → Prompt → Generation event (native ID if exposed) → Output (internal ID; native output ID if exposed) → original bytes → SHA-256 → archived asset/link**. Every link is evidence-backed; missing native IDs are stated honestly.
+
 Maintain a session-level `manifest.csv` as the machine-readable source for archival tracking. Required columns:
 ```csv
 session_date,image_id,filename,prompt_id,approval_status,github_url,sha256,verification_status
