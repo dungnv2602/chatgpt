@@ -1,3 +1,15 @@
+### 2026-11-20 20:00 UTC
+
+**User**
+
+> If conversation mode is a foundational skill, then it should be included in "start session" cue. Correct?
+
+**Assistant**
+
+Correct. If Conversation Mode is foundational to how a session must be conducted, then `skills/SESSION_START.md` should explicitly include `skills/conversation-mode/SKILL.md` in the files loaded by the `start session` cue. The session-start procedure should load it before applying mode-specific behavior. This makes the foundational skill part of initialization rather than relying on it being loaded separately or remembered from a prior session.
+
+---
+
 ### 2026-11-20 15:29 UTC
 
 **User**
