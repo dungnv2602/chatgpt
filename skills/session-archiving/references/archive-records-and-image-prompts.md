@@ -21,7 +21,7 @@ Recommended structure:
 
 **Project:** ...
 **Branch:** ...
-**Companion files:** Summary file: `prompts/YYYY-MM-DD-summary.md` · Image-prompt history: non-novel dated prompt record; for novel scenes, link the scene-local prompt record instead
+**Companion files:** Summary file: `drawings/YYYY-MM-DD-summary.md` · Image-prompt history: non-novel dated prompt record; for novel scenes, link the scene-local prompt record instead
 
 ## Integrity policy
 ...
@@ -64,7 +64,7 @@ image, or old project convention dictates the new session unless the user
 explicitly adopts it.
 
 - For non-novels/day drawing, archive the brief as
-  `prompts/YYYY-MM-DD/session-[NN]-brief.md`.
+  `drawings/YYYY-MM-DD/session-[NN]-brief.md`.
 - For a named novel scene, archive it as
   `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/session-[YYYY-MM-DD]-[NN]-brief.md`.
 - Create and commit the brief before the first image prompt for that session.
@@ -177,7 +177,7 @@ context do not resolve it. Day-drawing sessions may mark this field
 
 ### Daily folder and one-note-per-attempt format for non-novel drawing work
 
-For non-novel drawing work, organize image prompts by date. Each calendar day is a folder under `prompts/`, and each image-generation or image-edit attempt is its own Markdown note. **Exception:** for an illustration belonging to a named novel scene, the scene-local prompt record under `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/` is authoritative. Keep that novel attempt there and do not duplicate it in the daily `prompts/` folder.
+For non-novel drawing work, organize image prompts by date. Each calendar day is a folder under `drawings/`, and each image-generation or image-edit attempt is its own Markdown note. **Exception:** for an illustration belonging to a named novel scene, the scene-local prompt record under `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/` is authoritative. Keep that novel attempt there and do not duplicate it in the daily `drawings/` folder.
 
 ```text
 prompts/
@@ -196,12 +196,12 @@ prompts/
 - **Validate before committing:** Read back the complete daily `README.md`. Verify that it contains one attempt-index table, one header row, and one separator row. Check that every numbered attempt appears exactly once in ascending order. Confirm that no blank line interrupts the table. Confirm that the final attempt row belongs to the same table. Do not mark the index update complete until these checks pass.
 - **Status accuracy:** distinguish `not approved / not generated`, `approved / pending generation`, `generated successfully`, `generated with mismatch`, `rejected / no image returned`, and `technical failure`. If an attempt has multiple runs, preserve the sequence in the status cell (for example, an earlier image returned but a later retry was rejected). Do not overwrite history with only the latest or earlier outcome. A user declining approval must never be represented as pending approval.
 - Each attempt note contains all required fields below, the exact authored prompt, and its final outcome when known. Keep the full record self-contained.
-- Session-level conversation-integrity and summary records remain at `prompts/YYYY-MM-DD-conversation-integrity.md` and `prompts/YYYY-MM-DD-summary.md` unless the user changes that convention.
+- Session-level conversation-integrity and summary records remain at `drawings/YYYY-MM-DD-conversation-integrity.md` and `drawings/YYYY-MM-DD-summary.md` unless the user changes that convention.
 - Existing legacy `YYYY-MM-DD-image-prompts.md` files remain historical records. Do not delete or rewrite them during adoption unless the user explicitly requests migration. For a day already in progress, create the daily folder and separate notes for its attempts. Preserve the legacy file as-is.
 
 ### Mandatory pre-attempt rule
 
-**Commit the session brief and authored prompt in their authoritative locations before the first image-generation or image-edit attempt.** For non-novel work, use the session brief and attempt notes under `prompts/YYYY-MM-DD/`. For a named novel scene, use the session brief and illustration prompt records under `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/`. This applies whether the next attempt is expected to succeed, is exploratory, or is a revision. Never generate first and archive later, and never duplicate a novel-scene prompt in the root `prompts/` history.
+**Commit the session brief and authored prompt in their authoritative locations before the first image-generation or image-edit attempt.** For non-novel work, use the session brief and attempt notes under `drawings/YYYY-MM-DD/`. For a named novel scene, use the session brief and illustration prompt records under `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/`. This applies whether the next attempt is expected to succeed, is exploratory, or is a revision. Never generate first and archive later, and never duplicate a novel-scene prompt in the root `drawings/` history.
 
 Before drafting the next prompt:
 1. Read the authoritative session-opening brief first. If it does not exist,
