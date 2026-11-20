@@ -172,7 +172,7 @@ Agent Skills metadata helps a compatible client discover a skill. It does not it
 
 ## 7. ASD-STE100 technical writing standard
 
-Use the [ASD-STE100 skill](../asd-ste100/SKILL.md) and the [repository writing policy](../asd-ste100/references/repository-writing-policy.md) whenever you create or revise skill documentation or technical documentation.
+Use the [ASD-STE100 skill](../asd-ste100/SKILL.md) whenever you create or revise skill documentation. Use the [repository writing policy](../asd-ste100/references/repository-writing-policy.md) for technical documentation.
 
 Choose the mode before you write:
 
@@ -263,6 +263,6 @@ For this project:
 
 ## 11. Completion standard
 
-A skill is complete only when its format is valid, its workflow is operationally coherent, its local dependencies are resolvable, its activation path is correct, and its committed content has been read back and checked.
+A skill is complete only when its format is valid and its workflow is coherent. Its local dependencies must resolve. Its activation path must be correct. Read back and check the committed content.
 
-A directory that merely contains a Markdown file is not sufficient. A valid skill must be discoverable through accurate metadata, activatable at the correct time, executable from clear instructions, and maintainable without duplicating or contradicting project policy.
+A directory that contains only a Markdown file is not sufficient. Accurate metadata must make the skill discoverable. The activation path must load it at the correct time. Its instructions must be executable and must not duplicate or contradict project policy.
