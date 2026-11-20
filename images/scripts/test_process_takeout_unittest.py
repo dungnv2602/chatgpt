@@ -84,6 +84,9 @@ class TakeoutProcessorTests(unittest.TestCase):
             ])
             if "attempt" in item:
                 rows.append(f'    attempt: "{item["attempt"]}"')
+            for key in ("expected_sha256", "output_id", "prompt_id"):
+                if item.get(key):
+                    rows.append(f'    {key}: "{item[key]}"')
         (self.inbox / "HANDOFF.yml").write_text("\n".join(rows) + "\n", encoding="utf-8")
 
     def test_success_moves_byte_identical_master_creates_webp_and_archives_reports(self):
@@ -376,6 +379,35 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertTrue((self.inbox / "waiting.png").exists())
         self.assertFalse((self.inbox / "history").exists())
+
+    def test_generation_hash_matches_uploaded_original_and_is_reported(self):
+        original = b\"generation-original-byte-sequence\"
+        import hashlib
+        expected = hashlib.sha256(original).hexdigest()
+        (self.inbox / \"unchanged.png\").write_bytes(original)
+        self.manifest({\"source\": \"unchanged.png\", \"expected_sha256\": expected, \"output_id\": \"A001-O01\", \"prompt_id\": \"P001\"}, batch=\"batch-hash-match\")
+        result = self.run_processor()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        with (self.inbox / \"history/batch-hash-match/attempt-001/conversion-report.csv\").open(encoding=\"utf-8\") as handle:
+            row = next(csv.DictReader(handle))
+        self.assertEqual(row[\"generation_sha256\"], expected)
+        self.assertEqual(row[\"source_sha256\"], expected)
+        self.assertEqual(row[\"hash_match\"], \"MATCH\")
+        self.assertEqual(row[\"output_id\"], \"A001-O01\")
+        self.assertEqual(row[\"prompt_id\"], \"P001\")
+
+    def test_generation_hash_mismatch_fails_and_preserves_original_upload(self):
+        original = b\"different-original-bytes\"
+        (self.inbox / \"mismatch.png\").write_bytes(original)
+        wrong = \"0\" * 64
+        self.manifest({\"source\": \"mismatch.png\", \"expected_sha256\": wrong}, batch=\"batch-hash-mismatch\")
+        handoff_before = (self.inbox / \"HANDOFF.yml\").read_bytes()
+        result = self.run_processor()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertTrue((self.inbox / \"mismatch.png\").exists())
+        self.assertEqual((self.inbox / \"HANDOFF.yml\").read_bytes(), handoff_before)
+        report = (self.inbox / \"history/batch-hash-mismatch/attempt-001/verification-report.md\").read_text(encoding=\"utf-8\")
+        self.assertIn(\"Generation SHA-256 mismatch\", report)
 
 
 if __name__ == "__main__":
