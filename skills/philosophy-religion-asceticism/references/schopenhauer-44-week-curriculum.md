@@ -273,7 +273,7 @@ projecting later categories onto his work.
 ### Phase IX — Final synthesis
 **Weeks 43–44**
 
-- **Week 43 — Main thesis.** Draft a **2,500–3,500-word integrative essay**. Answer a question such as: *How does Schopenhauer move from the limits of representation and the metaphysics of the Will to compassion, ascetic denial, and salvation?* The essay must use primary-text evidence and engage at least
+- **Week 43 — Main thesis.** Draft a **2,500–3,500-word integrative essay**. Address: *How does Schopenhauer move from the limits of representation and the metaphysics of the Will to compassion, ascetic denial, and salvation?* The essay must use primary-text evidence and engage at least
   three relevant specialist scholarly interpretations.
 - **Week 44 — Revision and companion arguments.** Revise the main essay and
   prepare two shorter companion essays. The first asks whether compassion can be
