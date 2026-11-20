@@ -63,7 +63,7 @@ repository retention pass through the single intake at `images/takeout/`.
   attempt directory. Successful processing removes its empty staging
   directory. The Action then reads back the original and WebP Git blobs,
   canonical WebP URL, daily README inventory/table links, and attempt-note
-  WebP link before publishing manifest verification statuses.
+  WebP link. It publishes manifest verification statuses after these checks.
 - Never change a master or WebP after conversion as part of this pipeline.
   Separate image edits require the normal prompt-archive and explicit editing
   workflow.

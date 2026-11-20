@@ -224,10 +224,10 @@ The user's opening brief for a specific drawing session is the source of truth f
    determines which moment, interpretation, appearance, outfit, mood, and
    visual treatment are wanted.
 7. Use an uploaded or stored image as a reference only when the user assigns it
-   a role in this session (identity, composition, style, or exact edit source).
-   A historical image is not an active reference merely because it is stored,
-   linked, approved, or previously used. A generation ID or filename is not an
-   attachment.
+   a role in this session. Valid roles include identity, composition, style, or
+   exact edit source. A historical image is not an active reference merely
+   because it is stored, linked, approved, or previously used. A generation ID
+   or filename is not an attachment.
 8. If the current-session brief conflicts with a successful historical prompt,
    preserve the user's current brief. Use the old prompt only as a technical
    wording aid for compatible details. Do not import its outdated appearance,
@@ -256,7 +256,7 @@ essential to the picture.
 
 ### Generated-output storage
 
-For non-novel/day drawing sessions, store repository-retained generated image outputs in the current daily session folder at `drawings/YYYY-MM-DD/images/`. Use `attempt-XX.webp` for one output from an attempt, and `attempt-XX-01.webp`, `attempt-XX-02.webp`, etc. when an attempt returns multiple images. Deliver images in the conversation as usual. When the exact output asset is stored in the repository, link it from the attempt record and daily README using a relative path such as `images/attempt-07.webp`. Only link assets whose attempt provenance is verified. Do not create empty image folders solely for rejected or output-less attempts. This policy applies to new retained outputs. It does not authorize migrating, moving, renaming, or deleting existing image assets. Novel-scene illustration binaries continue to use their established scene-local asset library.
+For non-novel/day drawing sessions, store repository-retained generated image outputs in the current daily session folder at `drawings/YYYY-MM-DD/images/`. Use `attempt-XX.webp` for one output from an attempt, and `attempt-XX-01.webp`, `attempt-XX-02.webp`, etc. when an attempt returns multiple images. Deliver images in the conversation as usual. When the exact output asset is stored in the repository, link it from the attempt record and daily README. Use a relative path such as `images/attempt-07.webp`. Only link assets whose attempt provenance is verified. Do not create empty image folders solely for rejected or output-less attempts. This policy applies to new retained outputs. It does not authorize migrating, moving, renaming, or deleting existing image assets. Novel-scene illustration binaries continue to use their established scene-local asset library.
 
 ### C. Prepare and archive the prompt
 Before every generation or edit attempt:

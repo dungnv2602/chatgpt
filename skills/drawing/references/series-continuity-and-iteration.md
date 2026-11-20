@@ -156,10 +156,10 @@ next operation based on what actually succeeded: the prompt, the image, or both.
 2. **Successful prompt, scene/detail change:** Reuse the proven prompt as the
    baseline. Make the requested targeted prompt changes and generate directly.
    Do not create an unnecessary intermediate image.
-3. **Successful image, exact visual modification requested:** If the actual image
-   is accessible and can be passed through a supported image-reference/edit
-   mechanism, edit that source directly. This avoids needlessly regenerating an
-   image that already works.
+3. **Successful image, exact visual modification requested:** If the actual
+   image is accessible, pass it through a supported image-reference/edit
+   mechanism. Edit that source directly. This avoids needless regeneration of
+   an image that already works.
 4. **Successful prompt but source image unavailable for editing:** Keep the proven
    prompt as the baseline, apply the requested changes to it, and make a fresh
    generation. Do not pretend the unavailable image is being edited.
