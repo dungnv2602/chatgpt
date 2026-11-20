@@ -17,7 +17,7 @@ The Agent Skills open specification is the format authority:
 - Specification: https://agentskills.io/specification
 - Source repository: https://github.com/agentskills/agentskills
 
-The repository `dungnv2602/chatgpt`, branch `gpt`, remains the sole source of truth for this project's files and operational decisions. The external specification defines the portable skill format; it does not override user instructions, repository policy, or the meaning of a project's activation cues.
+The repository `dungnv2602/chatgpt`, branch `gpt`, is the sole source of truth for project files and decisions. The external specification defines the portable skill format. It does not override user instructions, repository policy, or activation cues.
 
 Do not assume that placing a folder in `skills/` automatically makes a client load it. Format compliance, discoverability, activation, and foundational initialization are separate concerns and must each be handled explicitly.
 
@@ -101,9 +101,9 @@ Avoid vague descriptions such as “Helps with writing” or descriptions that l
 Use optional frontmatter only when it provides real value:
 
 - `license`: a license name or a reference to a bundled license file.
-- `compatibility`: environment requirements, intended product, required packages, or network needs; keep within the specification's 500-character limit.
+- `compatibility`: environment requirements, intended product, required packages, or network needs. Keep this field within the specification's 500-character limit.
 - `metadata`: a YAML mapping of additional keys to string values. Prefer stable, namespaced or project-specific keys.
-- `allowed-tools`: a space-separated tool list. This field is experimental and support varies by client; do not rely on it for mandatory permissions or safety controls.
+- `allowed-tools`: a space-separated tool list. This field is experimental. Client support varies. Do not rely on it for mandatory permissions or safety controls.
 
 Do not invent a license, compatibility requirement, author, version, or tool grant. Omit fields that are not known or needed.
 
@@ -208,7 +208,7 @@ Do not claim certified ASD-STE100 compliance. The repository does not contain th
 - Prefer direct references one level below the skill root, such as `references/guide.md`.
 - Avoid long chains where one reference points to another reference that points elsewhere.
 - Check every local link after moving or renaming files.
-- Keep canonical policy in one location; other skills should link to it rather than copy a second version.
+- Keep each canonical policy in one location. Other skills should link to that policy rather than copy it.
 - Do not link to a file that has not been created and verified.
 - If a skill depends on external standards, name the canonical source and summarize the rules needed for reliable local execution.
 
