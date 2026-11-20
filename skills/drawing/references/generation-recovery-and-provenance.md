@@ -181,7 +181,7 @@ ledger. It must contain one contiguous Markdown table with exactly six fields:
    the assistant's visual assessment. State whether an image was delivered in
    conversation, no output was returned, approval was not recorded, or storage
    and provenance remain unverified.
-6. **Image:** link every generated image output once you upload and verify its exact repository asset. Link it whether or not the user approved it or the result met the prompt. Include partial, off-target, superseded, and unapproved outputs. Approval belongs only in field 5. If an image was generated but its asset has not yet been uploaded, write `Waiting for image upload`.
+6. **Image:** link every generated image output after you upload its exact repository asset and read it back. Link it whether or not the user approved it or the result met the prompt. Include partial, off-target, superseded, and unapproved outputs. Approval belongs only in field 5. If an image was generated but its asset has not yet been uploaded, write `Waiting for image upload`.
    Use `—` only when no image was returned or generated. Use `Not verified`
    when the tool outcome is unconfirmed and no attempt-specific image can be
    attributed. Never withhold a generated-image link because the user rejected
