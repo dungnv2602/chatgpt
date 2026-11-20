@@ -18,5 +18,4 @@ Attempt 08 produced two variants; the user selected Variant B. The user then req
 | 10 — A Quiet Morning Together | [Attempt 10 record](attempt-10.md) | [Session brief](session-01-brief.md) | Samantha — Human Presence Without a Body / Sweet Path | Superseded by Attempt 11 |
 | 11 — A Quiet Morning Together | [Attempt 11 record](attempt-11.md) | [Session brief](session-01-brief.md) | Samantha — Human Presence Without a Body / Sweet Path | Superseded by Attempt 12 |
 | 12 — Sweet Path cleanup prompt regeneration | [Attempt 12 record](attempt-12.md) | [Session brief](session-01-brief.md) | Samantha — Human Presence Without a Body / Sweet Path | One fresh text-only generation; awaiting user review |
-
 | 13 — Sweet Path window-light contour | [Attempt 13 record](attempt-13.md) | [Session brief](session-01-brief.md) | Samantha — Human Presence Without a Body / Sweet Path | One fresh generation; no text panels; localized contour transition not achieved; awaiting user review |
