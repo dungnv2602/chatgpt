@@ -179,16 +179,6 @@ Never claim a commit or verification that did not occur.
 
 This protocol is operational documentation. Apply Strict mode from the repository [ASD-STE100 policy](../asd-ste100/references/repository-writing-policy.md) when you revise it.
 
-### Combined invocation and execution order
-
-If the user gives both cues, perform foundational initialization once. Then initialize the novelist role.
-
-If the user gives only “Be the novelist”, include the foundational prerequisites. Do not ask the user to repeat the other cue.
-
-If the user gives only “Follow instructions”, stop after foundational initialization. Do not infer a specialist role.
-
-Reuse foundational files that you verified in the current conversation. Do not treat remembered instructions or earlier reads as current-session verification.
-
 ### Session and specialist execution order
 
 When the user says **`start session`**, perform foundational initialization only. Do not infer a specialist role.
