@@ -424,17 +424,17 @@ Use this template:
 
 - **Date:** 2026-11-20
 - **Change:** Move the detailed novelist onboarding procedure into the canonical `skills/SESSION_START.md` file.
-- **Entry point:** Keep `skills/novelist-initiation/SKILL.md` as the task-specific Agent Skills entry point.
+- **Historical entry point:** The task-specific `skills/novelist-initiation/SKILL.md` entry point was retained at that time. Version 30 records its later removal.
 - **Removed duplicate:** Delete `skills/novelist-initiation/INITIATION.md`.
-- **Activation:** The `Be the novelist` cue still requires foundational initialization before novelist-specific work.
+- **Activation:** The `Be the novelist` cue requires foundational initialization before novelist-specific work.
 - **Reason:** Keep the full initialization sequence and specialist procedure in one authoritative startup document.
 
 ### Version 26 — Add CI checkpoint rules to copyable instructions
 
 - **Date:** 2026-11-20
 - **Change:** Add the repository CI checkpoint policy to the copyable custom-instructions block.
-- **Behavioral impact:** Do not wait for or repeatedly poll current-task runs. Check pending runs at the start of the next user turn.
-- **Reason:** Keep copied project instructions aligned with Conversation Mode Section 7.
+- **Historical behavior:** The former preflight and pending-run checks were later superseded by Version 30. The current policy is maintained only in `skills/github-actions/SKILL.md`.
+- **Reason:** This records the earlier policy state.
 - **File changed:** `skills/INITIALIZATION_POLICY.md`.
 
 ### Version 27 — Use one session-start cue
@@ -460,3 +460,12 @@ Use this template:
 - **Behavioral impact:** Load Drawing and its required references only for drawing sessions or novelist initialization. Reuse files already verified in the current conversation.
 - **Reason:** Avoid loading specialist drawing procedures during unrelated sessions.
 - **Canonical procedure:** `skills/SESSION_START.md`; mandatory foundational gate: `skills/session-archiving/SKILL.md`.
+
+
+### Version 30 — Remove duplicate novelist entry point and centralize CI policy
+
+- **Date:** 2026-11-20
+- **Change:** Delete `skills/novelist-initiation/SKILL.md` because the complete novelist initialization procedure is already maintained in `skills/SESSION_START.md`. Remove its active references.
+- **CI ownership:** Move the former Conversation Mode Sections 7 and 8 into `skills/github-actions/SKILL.md`. Remove the duplicate sections from Conversation Mode.
+- **Behavioral impact:** GitHub Actions is the sole authority for CI behavior. The current policy is implementation-first: use normal GitHub events, do not manually stimulate or routinely inspect CI, and treat a user-requested CI investigation as a separate task.
+- **Reason:** Remove duplicate entry points and conflicting CI instructions.
