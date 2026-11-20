@@ -1,68 +1,68 @@
-# Samantha — Attempt 09: A Quiet Morning Together (Sweet Path Baseline Redo)
+# Samantha — Attempt 09: A Quiet Morning Together
 
-## Metadata
-
+## Record
 - **Session:** `SAMANTHA-2026-11-21-01`
 - **Date:** 2026-11-21
-- **Series:** Samantha — Human Presence Without a Body
-- **Active path:** Sweet Path
-- **Approved baseline:** Attempt 07 — user-approved Sweet Path image
-- **Baseline prompt source:** `drawings/2026-11-20/attempt-07.md`, exact authored prompt under “Exact authored edit prompt”
-- **Supporting visual direction:** `drawings/2026-11-20/samantha-visual-drive.md`
-- **Scene:** User-approved “A quiet morning together”
-- **Operation:** Prompt-first reconstruction, adapting the successful Sweet Path baseline prompt to the approved new scene
-- **Status:** Generated; awaiting user review
+- **Series / path:** Samantha — Human Presence Without a Body / Sweet Path
+- **Scene:** A quiet morning together; Samantha sits near a window with a mug and listens to someone outside the frame.
+- **Operation:** Prompt-only continuation followed by fresh generation
+- **Status:** Awaiting review
+- **Prompt ID:** Not assigned
+- **Baseline:** Attempt 07 — `drawings/2026-11-20/attempt-07.md` (user-approved Sweet Path baseline and successful authored prompt)
 
-## Baseline prompt provenance
+## Generation prompt — copyable
 
-Attempt 07 is the successful, user-approved Sweet Path baseline. Its exact authored prompt is a cleanup instruction for removing text panels from the approved Attempt 06 image while preserving Samantha's appearance and photographic composition. This attempt uses that successful prompt as its continuity source. It does not treat Attempt 08's generated variants as the character-design authority.
+```text
+Depict an original adult woman representing an imagined human embodiment of Samantha from *Her* (2013), with a distinctive, original face; natural skin texture and faint freckles; expressive dark-hazel eyes; softly tousled, shoulder-length copper/auburn hair; and simple, contemporary clothing in a coral-red signature color with matte fabric. Give her a warm, attentive, emotionally perceptive quality and a natural, believable human presence.
 
-The Attempt 07 prompt's preservation requirements are carried forward: preserve Samantha's face and appearance, expression, gaze, hair, blouse, pose language, body presentation, cinematic naturalism, lighting treatment, color grade, camera language, and photographic texture as compatible with the newly approved morning scene. The prompt's specific instruction to erase text panels is not relevant to this new scene and is not repeated as a scene objective.
+**Scene and action:** It is a quiet morning in a contemporary apartment. Samantha is seated comfortably near a window, holding a simple warm mug. She is listening to the person just outside the frame. Her gaze and expression communicate that she is fully engaged in the conversation. The moment feels shared and spontaneous, as though the viewer is sitting with her.
 
-The project visual-drive note supplies the recorded character design direction: an original adult woman, natural skin texture and faint freckles, expressive dark-hazel eyes, softly tousled shoulder-length copper/auburn hair, and a coral-red signature color in simple contemporary clothing. These are project-recorded visual features, not claims of pixel-level identity matching.
+**Expression and emotional tone:** Keep her attentive eyes and gentle, quietly affectionate expression. A small, natural smile may suggest familiarity and a trace of playful warmth. Her face should feel responsive and emotionally alive, not posed for a portrait session. Preserve a sense of tenderness and quiet confidence.
 
-## Complete generation prompt
+**Composition and camera:** Use an intimate, natural eye-level cinematic composition that keeps her face clearly readable and gives enough context to understand the seated morning moment. Maintain grounded, candid photographic language. Avoid a fashion-editorial or staged advertising composition.
 
-Recreate the user-approved Sweet Path version of Samantha, using the successful Attempt 07 prompt as the authoritative continuity baseline. Depict an original adult woman representing an imagined human embodiment of Samantha from *Her* (2013), with the same established Sweet Path character direction and realistic cinematic photographic treatment.
-
-Preserve the character design and visual language established by the approved Sweet Path baseline: a distinctive, original adult woman's face; natural skin texture and faint freckles; expressive dark-hazel eyes; softly tousled, shoulder-length copper/auburn hair; and the established coral-red wardrobe language in simple, contemporary, matte fabric. Preserve the warm, attentive, emotionally perceptive quality of her expression and the natural, believable human presence of the approved path. Do not reinterpret her as a different person or shift to the Casual Path.
-
-**Scene and action:** It is a quiet morning in the same kind of contemporary apartment world established by the Sweet Path. Samantha is seated comfortably near a window, holding a simple warm mug. She is listening to the person just outside the frame. Her gaze and expression communicate that she is fully engaged in the conversation. The moment feels shared and spontaneous, as though the viewer is sitting with her.
-
-**Expression and emotional tone:** Keep her characteristic attentive eyes and gentle, quietly affectionate expression. A small, natural smile may suggest familiarity and a trace of playful warmth. Her face should feel responsive and emotionally alive, not posed for a portrait session. Preserve the Sweet Path's tenderness and quiet confidence.
-
-**Composition and camera:** Use an intimate, natural eye-level cinematic composition that keeps her face clearly readable and gives enough context to understand the seated morning moment. Maintain the grounded, candid photographic language of the approved Sweet Path. Avoid a fashion-editorial or staged advertising composition.
-
-**Lighting and color:** Use soft natural window daylight with the warm, restrained cinematic color treatment of the Sweet Path baseline. Keep skin tones natural and shadows gentle. The image should feel luminous and tactile, with realistic photographic texture rather than a stylized illustration.
+**Lighting and color:** Use soft natural window daylight with a warm, restrained cinematic color treatment. Keep skin tones natural and shadows gentle. The image should feel luminous and tactile, with realistic photographic texture rather than a stylized illustration.
 
 **Environment:** A quiet contemporary apartment, with the window and only the everyday details needed to establish the morning setting. Keep the environment visually subordinate to Samantha and the intimate interaction.
 
-**Overall fidelity:** This is a continuation of the approved Sweet Path, not a new character design. Use Attempt 07's successful authored prompt as the baseline for character continuity and photographic treatment. Apply only the scene change required for “A quiet morning together.” Do not import Casual Path elements. Do not treat the unsuccessful Attempt 06 source-edit attempt as a successful image-edit baseline. This is a prompt-first reconstruction, not a pixel-level edit of the unavailable image.
+**Overall visual treatment:** Realistic cinematic photography, natural skin texture, warm and restrained color, gentle shadows, believable ambient light, and a quiet, emotionally close atmosphere. Keep the character within the Sweet Path direction rather than shifting to a different visual interpretation.
 
-## Prompt difference
+**Avoid:** Casual Path styling, celebrity or film-performer likeness, exaggerated or theatrical expression, staged advertising or fashion-editorial composition, text panels, captions, typography, watermarks, logos, holographic effects, and visible interface graphics.
+```
 
-- **Baseline:** Attempt 07's successful authored prompt, which cleans the approved Sweet Path reconstruction by removing text panels while preserving the woman and photographic scene.
-- **Preserved:** Sweet Path character identity direction; face and appearance continuity; auburn hair, freckles, dark-hazel eyes, coral-red wardrobe language; naturalistic cinematic photography; warm, intimate emotional register.
-- **Changed:** Scene/action becomes a quiet morning conversation with Samantha seated by a window and holding a mug.
-- **Omitted as irrelevant to this new scene:** The source-specific instruction to erase the two text overlay panels. This is not an image cleanup operation.
-- **Not used as authority:** Attempt 08's generated prompt and its Variant B output are not the baseline for this redo.
+## Lineage
+- Continues the user-approved Sweet Path character direction and naturalistic cinematic treatment.
+- Adapts the scene to the approved quiet-morning conversation, adding the window and mug.
+- This is a prompt-based fresh generation, not a direct image edit or a claim of pixel-level identity matching; the baseline image binary was unavailable.
 
 ## Acceptance criteria
+| Requirement | Priority |
+|---|---|
+| Samantha remains within the established Sweet Path direction | Critical |
+| Quiet morning scene with Samantha listening to someone outside the frame | Critical |
+| Copper/auburn hair, faint freckles, dark-hazel eyes, and coral-red wardrobe language | Critical |
+| Naturalistic cinematic photography and warm, restrained window light | Standard |
+| Attentive, affectionate, quietly playful expression without theatricality | Critical |
 
-1. **Critical — Sweet Path continuity:** Samantha reads as the same established Sweet Path character, not a new interpretation or the Casual Path.
-2. **Critical — Approved scene:** The image clearly depicts a quiet morning together, with Samantha listening to someone outside the frame.
-3. **Critical — Character details:** Auburn hair, faint freckles, expressive dark-hazel eyes, and coral-red wardrobe language follow the recorded project design.
-4. **Photographic treatment:** Naturalistic cinematic photography with warm, restrained window light and realistic skin texture.
-5. **Emotional fidelity:** Attentive, affectionate, quietly playful presence without an exaggerated or staged expression.
+## Generation and outputs
+- **Authored prompt committed before generation:** Yes
+- **Actual submitted payload:** Not exposed by the generation metadata; archived authored direction is recorded above.
+- **Generation result:** Generated
+- **Output count and order:** One output
 
-## Generation record
+| Output ID | Native generation / image ID | Mapping evidence and status | Original / archive asset | SHA-256 |
+|---|---|---|---|---|
+| Output 01 | Generation ID: `8455999f-c9dc-4b54-9747-7f6c4cd9fd77`; asset ID: `file_0000000089c8821182f53369d6fd3d0e` | Generation and asset IDs recorded together; local artifact path recorded; Corroborated | Local artifact: `/mnt/data/a_cozy_indoor_scene_in_a_modern_apartment_a_close.png`; repository archive asset unavailable | Unavailable |
 
-- **Prompt archived before generation:** Yes
-- **Generation result:** One image generated from the archived Attempt 07-based continuity prompt.
-- **Generation ID:** `8455999f-c9dc-4b54-9747-7f6c4cd9fd77`
-- **Asset ID:** `file_0000000089c8821182f53369d6fd3d0e`
-- **Local artifact:** `/mnt/data/a_cozy_indoor_scene_in_a_modern_apartment_a_close.png`
-- **Tool metadata:** `edit_op: null`, `parent_gen_id: null`, `prompt: ""`, `seed: null`. This is a fresh prompt-first reconstruction; source-image linkage is not claimed.
-- **Initial visual review:** The image follows the warm Sweet Path direction: auburn hair, freckles, coral-red knit top, intimate apartment setting, warm window light, and a mug. The subject is seated close to camera with a gentle expression. The exact mug/pose/wardrobe details are newly generated interpretations, not verified matches to the unavailable baseline image.
-- **User review:** Pending.
-- **Follow-up edit prompt:** Pending.
+## Review
+| Acceptance criterion | Result | Visual evidence |
+|---|---|---|
+| Samantha remains within the established Sweet Path direction | Not assessable | User review pending |
+| Quiet morning scene with Samantha listening to someone outside the frame | Not assessable | User review pending |
+| Copper/auburn hair, faint freckles, dark-hazel eyes, and coral-red wardrobe language | Not assessable | User review pending |
+| Naturalistic cinematic photography and warm, restrained window light | Not assessable | User review pending |
+| Attentive, affectionate, quietly playful expression without theatricality | Not assessable | User review pending |
+
+- **Outcome:** Fresh generation, not an edit.
+- **User decision:** Pending.
+- **Next action:** Await user review.
