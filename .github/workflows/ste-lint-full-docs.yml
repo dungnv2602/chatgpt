@@ -84,7 +84,7 @@ jobs:
         run: |
           set -euo pipefail
           files=$(git ls-files '*.md' |
-            grep -vE '^(novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))')
+            grep -vE '^(archive/tasks/|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))')
           failed=0
           while IFS= read -r file; do
             [ -z "$file" ] && continue
