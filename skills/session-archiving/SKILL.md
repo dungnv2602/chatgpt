@@ -92,6 +92,12 @@ This gate does not guarantee future execution; compliance must be established by
 - `references/drawing-session-closeout.md` — explicit closeout trigger, closeout checklist, and verification.
 - `references/image-provenance-and-webp.md` — original-image identity, SHA-256, provenance mapping, and WebP delivery.
 
+## Supporting references
+
+- `references/archive-records-and-image-prompts.md` — conversation records, session briefs, prompt history, attempt ledgers, and image handling.
+- `references/drawing-session-closeout.md` — explicit closeout trigger, closeout checklist, and verification.
+- `references/image-provenance-and-webp.md` — original-image identity, SHA-256, provenance mapping, and WebP delivery.
+
 ## 3. Before archiving
 
 1. Read only the relevant existing session files under `prompts/`.
@@ -100,6 +106,10 @@ This gate does not guarantee future execution; compliance must be established by
 4. Do not invent missing dialogue, image prompts, tool outputs, commit results, dates, or user preferences.
 5. Exclude hidden reasoning, system/developer instructions, credentials, access tokens, and unrelated sensitive information. Archive user-visible conversation and task-relevant actions only.
 6. If an important historical reference is mentioned but lives outside `approved project directories`, do not open it. Record the limitation or ask the user to provide the reference inside the workspace.
+
+## 4. Archive records and drawing prompts
+
+When creating conversation-integrity records, summaries, drawing-session briefs, prompt records, attempt ledgers, or image mappings, load [Archive Records and Drawing-Prompt Procedures](references/archive-records-and-image-prompts.md). That reference contains the complete templates, required fields, and detailed procedures. Do not improvise or omit required records.
 
 ## 7. GitHub write and verification discipline
 
@@ -113,6 +123,10 @@ This gate does not guarantee future execution; compliance must be established by
 - Do not use repository-root or outside-folder operations as a shortcut.
 - Leave `main` untouched unless the user explicitly authorizes changes there.
 
+## 8. Drawing-session closeout — user cue required
+
+Close a drawing session only when the user explicitly requests closeout. A pause, goodbye, or temporary stop is not a closeout cue. Before reporting completion, follow [Drawing-Session Closeout](references/drawing-session-closeout.md) and verify every required archive item.
+
 ## 9. Default handoff for a new chat
 
 Start by reading the relevant session records inside `prompts/` and, when continuing a novel illustration, the relevant scene-local records inside `novel/`. Read the active drawing-session brief before relying on any previous prompt or image. Then:
@@ -125,4 +139,6 @@ Start by reading the relevant session records inside `prompts/` and, when contin
 - Follow the pre-attempt commit rule before generating or editing another image.
 - Never read or write anything outside `approved project directories`.
 
- 
+## 10. WebP delivery derivatives
+
+For image conversion, original-image preservation, SHA-256 identity, provenance mapping, or WebP delivery, load [Image Provenance and WebP Delivery](references/image-provenance-and-webp.md). Never substitute a derivative hash for the original-generation identity or claim verification without read-back evidence.
