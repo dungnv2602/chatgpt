@@ -15,9 +15,9 @@ on:
       - 'images/takeout/*.JPG'
       - 'images/takeout/*.JPEG'
       - 'images/takeout/HANDOFF.yml'
-      - 'images/scripts/process_takeout.py'
-      - 'images/scripts/test_process_takeout_unittest.py'
-      - 'images/scripts/verify_published_manifest.py'
+      - 'skills/session-archiving/scripts/process_takeout.py'
+      - 'skills/session-archiving/scripts/test_process_takeout_unittest.py'
+      - 'skills/session-archiving/scripts/verify_published_manifest.py'
       - '.github/workflows/convert-images-to-webp.yml'
   workflow_dispatch: {}
 
@@ -50,8 +50,8 @@ jobs:
       - name: Compile takeout processor and publication verifier
         run: |
           python3 -m py_compile \
-            images/scripts/process_takeout.py \
-            images/scripts/verify_published_manifest.py
+            skills/session-archiving/scripts/process_takeout.py \
+            skills/session-archiving/scripts/verify_published_manifest.py
 
       - name: Test takeout processor
         run: |
@@ -64,7 +64,7 @@ jobs:
         id: process
         continue-on-error: true
         run: |
-          python3 images/scripts/process_takeout.py \
+          python3 skills/session-archiving/scripts/process_takeout.py \
             --repo-root . \
             --run-id "$GITHUB_RUN_ID"
 
@@ -79,8 +79,8 @@ jobs:
 
           # Include only working-tree changes created by the takeout processor.
           git add -A -- images/ drawings/
-          if [[ -d novel/ ]]; then
-            git add -A -- novel/
+          if [[ -d novels/ ]]; then
+            git add -A -- novels/
           fi
           if git diff --cached --quiet; then
             echo "No takeout processing changes to publish."
@@ -133,7 +133,7 @@ jobs:
 
           # This verifies the first published commit and changes Pending
           # manifest rows only after the exact remote blobs and URLs match.
-          python3 images/scripts/verify_published_manifest.py \
+          python3 skills/session-archiving/scripts/verify_published_manifest.py \
             --repo-root . \
             --git-ref origin/gpt \
             --branch gpt
@@ -170,7 +170,7 @@ jobs:
           fi
 
           git fetch origin gpt
-          python3 images/scripts/verify_published_manifest.py \
+          python3 skills/session-archiving/scripts/verify_published_manifest.py \
             --repo-root . \
             --git-ref origin/gpt \
             --branch gpt \
