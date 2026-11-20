@@ -15,7 +15,7 @@ These are copy-ready templates, not pattern records. Do not place illustrative o
 - Describe observed results separately from interpretations or hypotheses.
 - Keep entries generalizable. Individual attempt details belong in the daily archive.
 - Use one confidence field with one of these values:
-  - **Provisional** — one meaningful observation; further testing is needed.
+  - **Provisional** — one meaningful observation. Further testing is needed.
   - **Supported** — repeated evidence in comparable situations.
   - **Validated** — repeated evidence across sufficiently distinct attempts or sessions.
   - **Retired** — disproven, superseded, or no longer reliable.
