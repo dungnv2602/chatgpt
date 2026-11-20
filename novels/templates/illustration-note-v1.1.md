@@ -19,8 +19,8 @@ status: approved
 - **Actual Image Asset / Conversation Attachment:**
 - **Original Upload Filename:**
 - **Takeout Batch ID:**
-- **Master Image Path:** [Central novel asset path; blank if not stored]
-- **WebP Derivative Path:** [Same directory as the master; blank if not generated/stored]
+- **Master Image Path:** [Central novel asset path. Leave blank if not stored.]
+- **WebP Derivative Path:** [Same directory as the master. Leave blank if not generated or stored.]
 - **Asset Verification:** Pending / Verified / Failed / Not Stored
 - **Master SHA-256:** [When available from the conversion report]
 - **WebP SHA-256:** [When available from the conversion report]
