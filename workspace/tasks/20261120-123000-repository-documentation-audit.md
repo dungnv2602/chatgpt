@@ -70,7 +70,9 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **CI finding:** The newest full and changed lint runs failed during their full-audit paths. The Worker skill has one hard synonym-rotation finding in its task-ID instruction.
 - **Change:** Added the archive boundary to the GitHub Actions skill. Reworded the task-ID instruction without changing its meaning.
 - **Validation:** Did not run lint or CI locally. Did not dispatch, rerun, wait for, or poll GitHub Actions.
-- **Next:** Commit the documentation and lint repair together. Read back every changed path from branch `gpt`. Review the next CI result at the next mandatory preflight.
+- **Commit:** `46ef4f33a7336b081c72f504ce31b59b6aa5882a`.
+- **Read-back:** Fetched all three changed paths from branch `gpt`. Confirmed the Worker wording, permanent GitHub Actions archive policy, and task record. The branch head matches the commit.
+- **Next:** Continue the active documentation audit. Review the next CI result at the next mandatory preflight.
 
 ### 2026-11-20 14:56 UTC
 
@@ -376,7 +378,7 @@ The Version 19 active-link scan found zero unresolved local Markdown targets or 
 
 - **Check:** Verify the permanent archive boundary and repair the latest completed lint failures.
 - **Method:** Read both lint workflows, the Markdown checker, lint wrapper, The Worker skill, and the GitHub Actions skill from branch `gpt`. Inspect the newest failed workflow jobs and logs.
-- **Result:** Confirmed full and changed lint exclude `archive/`. Confirmed archived Markdown files are not link sources or anchor inputs. Active links into the archive receive path-existence checks only. Confirmed no separate `archive/README.md` exception remains. Corrected the Worker synonym finding and documented the boundary in the GitHub Actions skill. Commit and read-back results are recorded below after the write.
+- **Result:** Confirmed full and changed lint exclude `archive/`. Confirmed archived Markdown files are not link sources or anchor inputs. Active links into the archive receive path-existence checks only. Confirmed no separate `archive/README.md` exception remains. Corrected the Worker synonym finding and documented the boundary in the GitHub Actions skill. Committed as `46ef4f33a7336b081c72f504ce31b59b6aa5882a`. Read-back confirmed all three changed paths.
 
 - **Check:** Identify and preserve all audit history from Version 5 onward.
 - **Method:** Compare the copied history with the source policy at parent commit `5358dace526dc38808dac3a8d2ad4eaea1214af2`.
