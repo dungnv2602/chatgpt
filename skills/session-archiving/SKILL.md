@@ -6,6 +6,8 @@ metadata:
   format: agentskills
 ---
 
+# Session Archiving
+
 ## 1. Absolute workspace boundary
 
 **Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novel/`, `prompts/`, and `skills/`. Do not read, list, search, fetch, create, update, move, rename, or delete files outside those directories, except for the specifically authorized workflow exception below.
