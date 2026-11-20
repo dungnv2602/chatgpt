@@ -58,16 +58,25 @@ Correct the global task workflow so task closeout automatically archives the tas
 - **References:** `skills/the-worker/SKILL.md`; archival commit [a0e4f8fe526d9c85ea8be8093953fcb2b7d82cd8](https://github.com/dungnv2602/chatgpt/commit/a0e4f8fe526d9c85ea8be8093953fcb2b7d82cd8).
 - **Next:** Reconcile the board and verify all active changed paths.
 
+## 7. Current State
+
+The global Worker closeout gate is committed. The audit task is archived, its active path is absent, and the board reconciliation is now corrected. Final read-back remains.
+
+### 2026-11-20 17:58 UTC
+
+- **Action:** Read back the Worker skill, task board, active workflow task, and archival commit metadata. Checked the former active audit-task path.
+- **Result:** The Worker closeout gate and archive commit are present. The old active audit-task path returns 404, and commit `a0e4f8fe526d9c85ea8be8093953fcb2b7d82cd8` includes the archived record. Read-back found that the first board update placed the audit historical row in Current Execution instead of Historical. This update corrects the row placement. Archived contents were not inspected.
+- **References:** `skills/the-worker/SKILL.md`; `workspace/task_board.md`; [archival commit](https://github.com/dungnv2602/chatgpt/commit/a0e4f8fe526d9c85ea8be8093953fcb2b7d82cd8).
+- **Next:** Verify the corrected board and task record from branch `gpt`.
+
 ## 8. Remaining Work
 
-- Reconcile the task board with the archived audit record and this active task.
-- Verify the task board, this task record, Worker skill, and branch head.
+- Verify the corrected task board, this task record, Worker skill, and branch head.
 
 ## 9. Next Actions
 
-1. Commit the reconciled task board and updated progress checkpoint.
-2. Fetch and verify all changed active paths and the resulting branch head.
-3. Confirm the archival commit contains the archive path using commit metadata only.
+1. Fetch and verify all changed active paths and the resulting branch head.
+2. Confirm the archival commit contains the archive path using commit metadata only.
 
 ## 10. References
 
