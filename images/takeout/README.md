@@ -38,7 +38,12 @@ items:
 
 For drawing-session outputs, when the generation-time original SHA-256 was captured, include it as `expected_sha256` in the item. The processor calculates SHA-256 of the uploaded original and compares it before conversion. A mismatch is retained as a review flag: the image can still be archived, but mapping confidence is reduced to `Probable` and it is never marked `Verified` by that hash. Optional internal `output_id`, `prompt_id`, and exposed native IDs are recorded separately. Supply them only from generation-time records; never infer them from filenames.
 
-The conversion report distinguishes `generation_sha256` (the expected hash recorded at generation) from `source_sha256` (the hash calculated from the upload), and includes `hash_match`. The WebP's own hash is independent because conversion changes bytes. The session processor also reconciles `drawings/YYYY-MM-DD/manifest.csv`: it records new outputs and backfills unlisted legacy WebP assets without pretending their missing original hashes or uncertain mappings are verified.
+The conversion report distinguishes `generation_sha256` (the expected hash recorded at generation) from `source_sha256` (the hash calculated from the upload), and includes `hash_match`. The WebP's own hash is independent because conversion changes bytes. The session processor also reconciles `drawings/YYYY-MM-DD/manifest.csv`: it
+records new outputs, inventories legacy WebPs, and pairs a same-stem master
+from `images/original/` when present. It records the actual master SHA-256 and
+leaves publication verification Pending until the remote blobs are checked. A
+legacy WebP with no original remains Not verifiable; an original master with
+no same-stem WebP blocks the batch rather than being silently omitted.
 
 For each item:
 
@@ -143,11 +148,16 @@ verification error separate.
 - The processor writes \`verification_status: Pending\`. Only the post-push
   verifier may change it to \`Verified\`, after reading the exact original and
   WebP blobs from \`origin/gpt\` and checking the GitHub WebP URL.
-- Pre-existing WebP assets without an archived original are added as
-  \`Not verifiable\`, with no fabricated original checksum. A unique internal
-  legacy row ID is not a native generation or output ID.
+- Pre-existing WebP assets are paired with same-stem files in the `original/`
+  subfolder when available. The retained master SHA-256 is calculated and the
+  row remains `Pending` until the exact master and WebP blobs are read back.
+  WebPs without masters remain `Not verifiable`, with no fabricated original
+  checksum. Orphan masters without matching WebPs block processing.
+- Internal fallback image IDs include a per-upload filename discriminator so
+  separate outputs with identical image bytes still receive separate manifest
+  rows. These IDs are archive identifiers, not native platform IDs.
 - Approval stays separate from mapping and verification. Missing approval,
-  prompt IDs, native IDs, or generation hashes remain \`Not recorded\` or blank.
+  prompt IDs, native IDs, or generation hashes remain `Not recorded` or blank.
 
 The README and attempt records intentionally link only the WebP delivery file;
 the unchanged original master is retained under the destination's \`original/\`

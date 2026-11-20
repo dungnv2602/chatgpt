@@ -764,16 +764,14 @@ The takeout processor retains original PNG/JPEG masters in each destination's
 `original/` subfolder and places WebP delivery files in the destination root.
 Attempt records and daily README rows link only the WebP. Drawing-session
 `manifest.csv` updates preserve existing rows and columns, append one record
-per new output, and backfill legacy WebP assets conservatively. Generation-time
-hash matches, explicit attempt associations, native identifiers, approval,
-and original/derivative hashes remain separate fields.
-
-New manifest records remain `Pending` until the post-push verifier reads the
-exact original and WebP Git blobs from `origin/gpt`, validates their SHA-256
-values and WebP format, and checks the canonical GitHub URL, daily README
-inventory/table links, and the corresponding attempt-note WebP link. Legacy
-records without an original master remain `Not verifiable`; their retained
-WebP URL, derivative hash, and available README links are still checked.
+per new output, and inventory legacy WebPs. A same-stem original in the
+destination's `original/` subfolder is paired by deterministic filename stem;
+its actual SHA-256 is recorded and publication stays Pending until the pushed
+Git blob is verified. A WebP without a retained original remains Not verifiable.
+An original master without a same-stem WebP blocks processing rather than
+silently disappearing from the manifest. Generation-time hash matches,
+explicit attempt associations, native identifiers, approval, and
+original/derivative hashes remain separate fields.
 
 The Action does not query image-generation history or autonomously discover
 native platform IDs. It consumes the explicit `attempt`, prompt/output IDs,

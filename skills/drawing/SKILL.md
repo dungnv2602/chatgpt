@@ -936,10 +936,15 @@ repository retention pass through the single intake at `images/takeout/`.
   equality, WebP signatures, and final WebP hashes. It does not overwrite
   existing assets.
 - For drawing sessions, the processor maintains `manifest.csv` one row per
-  output, preserving existing rows/columns and conservatively inventorying
-  legacy WebPs. New rows are `Pending` until the post-push verifier reads the
-  exact published master and WebP blobs, verifies both hashes, and checks the
-  canonical WebP URL. Legacy assets without originals remain `Not verifiable`.
+  output, preserving existing rows/columns and inventorying legacy WebPs.
+  Legacy WebPs are paired with same-stem masters in `images/original/` when
+  present; their original SHA-256 is recorded and publication remains
+  `Pending` until the pushed master and WebP blobs are verified. WebPs without
+  originals remain `Not verifiable`; orphan originals without matching WebPs
+  block the batch.
+- Internal fallback image IDs include a per-upload filename discriminator so
+  separate outputs with identical bytes are still represented by separate
+  manifest rows. These are archive IDs, not native platform IDs.
 - Every attempt is archived under
   `images/takeout/history/[batch-id]/attempt-NNN/` with the original hand-off,
   `conversion-report.csv`, and `verification-report.md`. The CSV records
@@ -1025,16 +1030,14 @@ The takeout processor retains original PNG/JPEG masters in each destination's
 `original/` subfolder and places WebP delivery files in the destination root.
 Attempt records and daily README rows link only the WebP. Drawing-session
 `manifest.csv` updates preserve existing rows and columns, append one record
-per new output, and backfill legacy WebP assets conservatively. Generation-time
-hash matches, explicit attempt associations, native identifiers, approval,
-and original/derivative hashes remain separate fields.
-
-New manifest records remain `Pending` until the post-push verifier reads the
-exact original and WebP Git blobs from `origin/gpt`, validates their SHA-256
-values and WebP format, and checks the canonical GitHub URL, daily README
-inventory/table links, and the corresponding attempt-note WebP link. Legacy
-records without an original master remain `Not verifiable`; their retained
-WebP URL, derivative hash, and available README links are still checked.
+per new output, and inventory legacy WebPs. A same-stem original in the
+destination's `original/` subfolder is paired by deterministic filename stem;
+its actual SHA-256 is recorded and publication stays Pending until the pushed
+Git blob is verified. A WebP without a retained original remains Not verifiable.
+An original master without a same-stem WebP blocks processing rather than
+silently disappearing from the manifest. Generation-time hash matches,
+explicit attempt associations, native identifiers, approval, and
+original/derivative hashes remain separate fields.
 
 The Action does not query image-generation history or autonomously discover
 native platform IDs. It consumes the explicit `attempt`, prompt/output IDs,
