@@ -122,32 +122,32 @@ Both profiles request ICC profile copying. EXIF/XMP metadata are not copied to W
 
 ## Drawing-session manifest
 
-For every upload that includes an explicit \`attempt\` and targets
-\`drawings/YYYY-MM-DD/images\`, the processor updates that session's
-\`manifest.csv\` with one row per output. It preserves existing rows and columns,
+For every upload that includes an explicit `attempt` and targets
+`drawings/YYYY-MM-DD/images`, the processor updates that session's
+`manifest.csv` with one row per output. It preserves existing rows and columns,
 adds missing required columns, and inventories pre-existing top-level WebP
 assets that do not yet have a manifest row.
 
 The required columns remain:
 
-\`\`\`csv
+```csv
 session_date,image_id,filename,prompt_id,approval_status,github_url,sha256,verification_status
-\`\`\`
+```
 
 Additional columns keep the internal output ID, native Generation/output IDs,
 attempt, mapping evidence/status, original and WebP paths and hashes,
 generation-time hash, hash-match result, original-byte availability, and
 verification error separate.
 
-- New uploads record the actual uploaded-original SHA-256 in \`sha256\` and
-  \`original_sha256\`; WebP bytes have their own \`webp_sha256\`.
-- A generation-time hash match can set mapping status to \`Verified\`. When the
+- New uploads record the actual uploaded-original SHA-256 in `sha256` and
+  `original_sha256`; WebP bytes have their own `webp_sha256`.
+- A generation-time hash match can set mapping status to `Verified`. When the
   hand-off explicitly assigns an attempt but no generation-time hash is
-  available, mapping remains \`Corroborated\`; the processor does not infer a
+  available, mapping remains `Corroborated`; the processor does not infer a
   mapping from filenames.
-- The processor writes \`verification_status: Pending\`. Only the post-push
-  verifier may change it to \`Verified\`, after reading the exact original and
-  WebP blobs from \`origin/gpt\` and checking the GitHub WebP URL.
+- The processor writes `verification_status: Pending`. Only the post-push
+  verifier may change it to `Verified`, after reading the exact original and
+  WebP blobs from `origin/gpt` and checking the GitHub WebP URL.
 - Pre-existing WebP assets are paired with same-stem files in the `original/`
   subfolder when available. The retained master SHA-256 is calculated and the
   row remains `Pending` until the exact master and WebP blobs are read back.
@@ -160,5 +160,5 @@ verification error separate.
   prompt IDs, native IDs, or generation hashes remain `Not recorded` or blank.
 
 The README and attempt records intentionally link only the WebP delivery file;
-the unchanged original master is retained under the destination's \`original/\`
+the unchanged original master is retained under the destination's `original/`
 subfolder and recorded in the session manifest.
