@@ -27,7 +27,7 @@ The scheduled archive-retention workflow is owned by GitHub Actions.
 - Delete the complete contents of `archive/tasks/` as one batch only after the 14-day interval has elapsed. Do not calculate per-record expiry.
 - Preserve `.gitkeep` and the task-board historical entries.
 - After cleanup, atomically fast-forward `main` to the resulting `gpt` commit. Never force-push or create an independent cleanup commit on `main`.
-- Verify that `main` is an ancestor of `gpt` before pushing. If the branches diverge, fail safely without updating either ref.
+- Check that `main` is an ancestor of `gpt` before pushing. If the branches diverge, fail safely without updating either ref.
 - Keep the cleanup implementation reusable through `workflow_call` and operator-accessible through `workflow_dispatch`. A forced manual run must be an explicit input.
 - GitHub cron has no exact every-14-days syntax. Use a weekly schedule plus a committed UTC last-cleanup marker to enforce a minimum 14-day interval.
 
@@ -57,7 +57,7 @@ Before changing a workflow, identify its events, branch/path filters, jobs, depe
 
 ## 4. Design precise triggers
 
-Use branch and path filters to avoid work that cannot validate the changed files.
+Use branch and path filters to avoid work that cannot check the changed files.
 
 - When both branch and path filters exist, both conditions must match.
 - GitHub evaluates path patterns in order. A later positive pattern can include a path that an earlier pattern excluded. A later negative pattern can exclude a path that an earlier pattern included.
@@ -100,7 +100,7 @@ For push-based incremental checks, compare against the latest successful run of 
 
 1. Query completed runs for the same workflow and branch.
 2. Select the latest successful run and read its exact `head_sha`.
-3. Use the GitHub compare API before checkout to confirm that the baseline is an ancestor of the current commit. Accept `ahead` or `identical`. Treat missing, failed, or divergent comparisons as an invalid baseline.
+3. Use the GitHub compare API before checkout to check that the baseline is an ancestor of the current commit. Accept `ahead` or `identical`. Treat missing, failed, or divergent comparisons as an invalid baseline.
 4. Check every relevant file changed since that baseline.
 5. Run a full audit when the baseline is missing or invalid.
 
@@ -146,15 +146,15 @@ Logs and workflow artifacts can have different storage rules. Check current GitH
 Set permissions explicitly at workflow or job level. Grant each job only what it needs.
 
 - Use `contents: read` for checkout-only jobs.
-- Grant `actions: write` only to jobs that must cancel or modify workflow runs.
+- Grant `actions: write` only to jobs that must cancel or change workflow runs.
 - Use `permissions: {}` when a job does not need a GitHub token.
 - Grant write permissions at job level when only one job needs them.
 - Prefer short-lived credentials and OpenID Connect when supported by the deployment provider.
 - Do not expose secrets to untrusted pull-request code.
 - Do not use `pull_request_target` to execute untrusted pull-request code with elevated permissions.
-- Pass event values to scripts through environment variables. Quote and validate them.
+- Pass event values to scripts through environment variables. Quote and check them.
 - Do not interpolate untrusted event data directly into shell commands.
-- Follow repository policy for action pinning and verify an action's owner/source before adopting a version.
+- Follow repository policy for action pinning and check an action's owner/source before adopting a version.
 - Isolate self-hosted runners that execute untrusted code.
 
 ## 11. Keep workflow structure maintainable
@@ -164,7 +164,7 @@ Set permissions explicitly at workflow or job level. Grant each job only what it
 - Keep permissions, concurrency, runner choice, and timeouts close to the job that uses them.
 - Explain non-obvious conditions that protect coverage or safety.
 - Do not duplicate checks without a distinct purpose.
-- Do not remove a full audit merely because an incremental check is faster.
+- Do not delete a full audit merely because an incremental check is faster.
 - Batch related workflow, script, and documentation edits into one coherent commit to avoid intermediate pushes and duplicate CI runs.
 
 ## 12. Decision checklist
@@ -206,7 +206,7 @@ This section consolidates the former repository CI preflight and execution-effic
 ### After editing
 
 1. Read back each changed path after the commit when repository access supports it.
-2. Confirm the commit result and report its exact SHA.
+2. Check the commit result and report its exact SHA.
 3. State which local checks or read-back checks you performed. Do not imply that CI was checked.
 4. Separate verified changes, unresolved blockers, and work that requires user authorization.
 5. Report the result once. Do not claim verification that did not occur.
