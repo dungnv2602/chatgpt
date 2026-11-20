@@ -13,7 +13,7 @@ Observed outcomes, suspected causes, and tested countermeasures are kept separat
 - **Scope:** Two-person scenes with asymmetric resting, leaning, holding, or hand-placement roles.
 
 ### Observed failure
-The image repeatedly showed the opposite person resting or leaning, or moved the hands to a different contact area, despite prompts explicitly assigning each person's role.
+Despite explicit role assignments, the image repeatedly showed the wrong person resting or leaning. It also moved the hands to a different contact area.
 
 ### Impact
 The output can look coherent and affectionate while failing the defining action of the brief. Clothing and setting may be close, but the scene's physical meaning is reversed.
@@ -25,10 +25,10 @@ The archive does not establish the image model's internal cause. Repeated role r
 
 | Countermeasure | Evidence | Result |
 |---|---|---|
-| Repeatedly restate the role and hand arrangement in increasingly detailed prompts | [12 November — Attempts 14–20](../../../../drawings/history/failed-prompts.md#fp-05--repeated-reversed-resting-roles-in-the-cozy-bedroom-sequence) | Ineffective in this sequence; the resting direction continued to reverse |
-| Reuse a shorter prompt with explicit role assignment | [12 November — Attempt 20](../../../../drawings/history/2026-11-12-image-prompts.md#20--concise-reuse-of-successful-after-work-pose) | Ineffective; the same reversed composition returned |
+| Repeatedly restate the role and hand arrangement in increasingly detailed prompts | [12 November — Attempts 14–20](../../../../drawings/history/failed-prompts.md#fp-05--repeated-reversed-resting-roles-in-the-cozy-bedroom-sequence) | Ineffective in this sequence. The resting direction continued to reverse |
+| Reuse a shorter prompt with explicit role assignment | [12 November — Attempt 20](../../../../drawings/history/2026-11-12-image-prompts.md#20--concise-reuse-of-successful-after-work-pose) | Ineffective. The same reversed composition returned |
 | Use a reference-guided reconstruction | [12 November — Attempt 21](../../../../drawings/history/2026-11-12-image-prompts.md#21--reference-guided-reconstruction-of-the-correct-after-work-pose) | Partial improvement: resting direction was correct, but style and hand laterality remained unresolved |
-| Request style-only transformations of the partial result | [12 November — Attempts 22–27](../../../../drawings/history/failed-prompts.md#fp-07--style-transfer-and-source-preservation-attempts) | Ineffective; source composition was not preserved |
+| Request style-only transformations of the partial result | [12 November — Attempts 22–27](../../../../drawings/history/failed-prompts.md#fp-07--style-transfer-and-source-preservation-attempts) | Ineffective. The source composition was not preserved |
 
 ### Effective prevention rule
 Not established. Do not keep repeating superficial prompt variations after a persistent reversal. Reassess the brief and generation method. Classify the result against the defining physical action.
@@ -57,9 +57,9 @@ The records show missing attachments in some calls and null edit/parent metadata
 
 | Countermeasure | Evidence | Result |
 |---|---|---|
-| Mention the source filename in prompt prose | [13 November — Attempt 01](../../../../drawings/history/2026-11-13-image-prompts.md#attempt-01--source-guided-silk-wrap-portrait) | Failed as a source-guided workflow; the actual image was not attached |
-| Attach the actual image reference | [13 November — Attempt 02](../../../../drawings/history/2026-11-13-image-prompts.md#attempt-02--reference-attached-silk-wrap-portrait) | The reference was attached, but generation was rejected; this did not test successful editing |
-| Supply structured reference arguments and request a style edit | [12 November — Attempts 23–26](../../../../drawings/history/failed-prompts.md#fp-07--style-transfer-and-source-preservation-attempts) | Returned outputs did not confirm source-linked edits; metadata remained null |
+| Mention the source filename in prompt prose | [13 November — Attempt 01](../../../../drawings/history/2026-11-13-image-prompts.md#attempt-01--source-guided-silk-wrap-portrait) | Failed as a source-guided workflow. The actual image was not attached |
+| Attach the actual image reference | [13 November — Attempt 02](../../../../drawings/history/2026-11-13-image-prompts.md#attempt-02--reference-attached-silk-wrap-portrait) | The reference was attached, but generation was rejected. This did not test successful editing |
+| Supply structured reference arguments and request a style edit | [12 November — Attempts 23–26](../../../../drawings/history/failed-prompts.md#fp-07--style-transfer-and-source-preservation-attempts) | Returned outputs did not confirm source-linked edits. Metadata remained null |
 
 ### Effective prevention rule
 Treat source preservation as unverified until the tool confirms the source/edit relationship and the returned image visibly preserves the source. If edit/parent metadata is null or the composition changes, record the result as a fresh or unverified generation, not a successful edit.
@@ -88,7 +88,7 @@ No internal cause is established. The record demonstrates non-compliance with th
 
 | Countermeasure | Evidence | Result |
 |---|---|---|
-| Explicitly require exactly one standalone illustration and forbid panels/captions | [16 November — Attempt 03](../../../../drawings/history/2026-11-16-image-prompts.md#attempt-03--the-book-handoff-single-scene) | Ineffective; another multi-panel collage was returned after the prior collage |
+| Explicitly require exactly one standalone illustration and forbid panels/captions | [16 November — Attempt 03](../../../../drawings/history/2026-11-16-image-prompts.md#attempt-03--the-book-handoff-single-scene) | Ineffective. Another multi-panel collage was returned after the earlier collage |
 
 ### Effective prevention rule
 Not established. After repeated output-format failure, do not submit near-identical retries and assume that adding more negative wording will solve it.
@@ -117,7 +117,7 @@ Unknown. Do not assert that a particular garment, pose, source image, or phrase 
 
 | Countermeasure | Evidence | Result |
 |---|---|---|
-| Attach a reference and retain the earlier art direction | [13 November — Attempt 02](../../../../drawings/history/2026-11-13-image-prompts.md#attempt-02--reference-attached-silk-wrap-portrait) | Rejected; no specific cause identified |
+| Attach a reference and retain the earlier art direction | [13 November — Attempt 02](../../../../drawings/history/2026-11-13-image-prompts.md#attempt-02--reference-attached-silk-wrap-portrait) | Rejected. No specific cause was identified |
 | Materially change to a conventional modest editorial treatment | [13 November — Attempt 03](../../../../drawings/history/2026-11-13-image-prompts.md#attempt-03--modest-editorial-silk-wrap-portrait-safety-aware-revision) | Same generic refusal |
 | Change indoor fashion framing to a daylight outdoor fashion setting | [12 November — Attempts 31–32](../../../../drawings/history/failed-prompts.md#fp-08--generic-safety-refusals-during-portrait-retries) | Same generic refusal |
 
@@ -136,7 +136,7 @@ This pattern documents refusal behavior and the limits of diagnosis. It does not
 - **Scope:** Workflows where a canonical or pre-committed prompt is prepared before an image call.
 
 ### Observed failure
-One archived attempt explicitly records that the actual call used a materially shorter prompt than the canonical authored version and introduced details not present in that version.
+One archived attempt records a major difference between the authored and submitted prompts. The submitted text was shorter and added details that the authored version did not contain.
 
 ### Impact
 The image result cannot fairly be evaluated as a test of the archived prompt. It also introduces unsupported character or scene details and weakens the reliability of the prompt archive.
@@ -148,7 +148,7 @@ The record identifies an execution deviation, but not why the submitted wording 
 
 | Countermeasure | Evidence | Result |
 |---|---|---|
-| Commit a canonical prompt before the image call | [16 November — Attempt 06](../../../../drawings/history/2026-11-16-image-prompts.md#attempt-06--maya-across-the-café-table) | The workflow was not followed faithfully; the actual submitted wording differed |
+| Commit a canonical prompt before the image call | [16 November — Attempt 06](../../../../drawings/history/2026-11-16-image-prompts.md#attempt-06--maya-across-the-café-table) | The workflow was not followed faithfully. The submitted wording differed |
 
 ### Effective prevention rule
 Before the image call, compare the exact text about to be submitted with the committed prompt. Record any intentional change before generation. Do not claim that a prompt was tested when a different prompt was actually sent.
@@ -177,7 +177,7 @@ The archive suggests that the preceding image and conversation context may have 
 
 | Countermeasure | Evidence | Result |
 |---|---|---|
-| Fresh generation with the requested cream cardigan stated in the prompt | [12 November — Attempt 13](../../../../drawings/history/2026-11-12-image-prompts.md#13--fresh-generation-in-the-preferred-cream-cardigan) | Ineffective in this attempt; lavender remained |
+| Fresh generation with the requested cream cardigan stated in the prompt | [12 November — Attempt 13](../../../../drawings/history/2026-11-12-image-prompts.md#13--fresh-generation-in-the-preferred-cream-cardigan) | Ineffective in this attempt. Lavender remained |
 
 ### Effective prevention rule
 Evaluate the changed attribute itself. A returned image is not a successful revision unless the requested visible change is present. No reliable prevention method is established by this single example.
@@ -206,8 +206,8 @@ The records support a workflow failure to apply the latest instruction when reus
 
 | Countermeasure | Evidence | Result |
 |---|---|---|
-| Remove only the specifically rejected closing sentence while preserving all other prompt wording | [20 November — Attempt 46](../../../../drawings/2026-11-19/attempt-46.md) | The authored prompt record confirms the requested sentence was removed and the remaining wording preserved; user approval of the resulting image remains pending |
-| Make pattern consultation and a full prompt-fidelity check mandatory before committing a prompt | [20 November — Attempts 45–46](../../../../drawings/2026-11-19/attempt-45.md); [Drawing Skill](../../SKILL.md) | Prevention procedure adopted; effectiveness across future attempts is not yet established |
+| Remove only the specifically rejected closing sentence while preserving all other prompt wording | [20 November — Attempt 46](../../../../drawings/2026-11-19/attempt-46.md) | The prompt record confirms the requested sentence was removed and the remaining wording was preserved. The user has not yet approved the resulting image. |
+| Make pattern consultation and a full prompt-fidelity check mandatory before committing a prompt | [20 November — Attempts 45–46](../../../../drawings/2026-11-19/attempt-45.md); [Drawing Skill](../../SKILL.md) | The prevention procedure was adopted. Its effectiveness across future attempts is not yet established. |
 
 ### Effective prevention rule
 
