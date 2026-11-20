@@ -91,7 +91,7 @@ Use STE-flavored mode for technical explanations and READMEs.
 Preserve meaning, conditions, scope, and modality.
 Do not apply the standard to creative writing or approved creative prompts.
 
-The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of truth for project files, skills, prompts, and references.
+The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of truth for project files, skills, prompts, references, and archives.
 ```
 
 ## Design principles
@@ -144,14 +144,16 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
 ### Version 5 — First repository documentation audit pass
 
 - **Date:** 2026-11-20
-- **Change:** Rewrite three technical documents under the repository ASD-STE100 policy.
+- **Change:** Rewrite five technical documents under the repository ASD-STE100 policy.
 - **Files modified:**
   - `skills/session-archiving/references/image-processing-scripts.md`
   - `skills/session-archiving/references/drawing-session-closeout.md`
   - `novels/README.md`
-- **Verification:** Retrieved each changed path from branch `gpt` after the write. Read-back confirmed the committed content.
+  - `novels/WORKFLOW.md`
+  - `images/takeout/README.md`
+- **Verification:** Retrieved each changed path from branch `gpt` after the write. Read-back confirmed the committed content and required sections.
 - **Validation limit:** The ASD-STE100 linter and the full repository audit have not run. The audit remains in progress.
-- **Commits:** `683d0367f0fd171403990189dca0e2169b8f491e`, `8dd008db79fe086728d97cf85802e40ebc1b8fc1`, and `44a624833db2e82f86da0dd34c140ee5eb5cffbf`.
+- **Commits:** `683d0367f0fd171403990189dca0e2169b8f491e`, `8dd008db79fe086728d97cf85802e40ebc1b8fc1`, `44a624833db2e82f86da0dd34c140ee5eb5cffbf`, `8832f92875c057c1d4903f6ed800eb9481830e11`, and `48fd5805622c66f1a27786ee1640a1929cc5e479`.
 
 ## Future revision log
 
