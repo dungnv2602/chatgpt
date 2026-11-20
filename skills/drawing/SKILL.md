@@ -346,23 +346,19 @@ direction rather than claiming it is verbatim internal wording.
 
 ### D. Use image references honestly
 
-A fresh text-to-image generation may be based on a written specification
-contained in or explicitly adopted by the active session brief. An attached
-image is not mandatory unless the user specifically requests a visual
-reference or an exact edit of that image. Do not inherit a previous session's
-canonical prompt or identity/wardrobe specification as current direction
-unless the user explicitly adopts it in this session.
+For a new drawing task that is not an adjustment of an existing result, a
+reference image may be used only when the user explicitly assigns it a role in
+the active session. Determine whether that role is identity, composition, or
+style. Use the supported reference mechanism when the task requires it.
 
-When an image is used, determine whether it is for identity, composition, style,
-or an exact edit source. Pass the actual image asset or reference ID through the
-image tool's supported reference mechanism. Merely naming a filename or image
-ID in prompt text does not attach it.
+**Adjustment requests are governed by Section 5 and the mandatory prompt-only
+protocol.** Never attach or use the existing result as a source or reference
+when adjusting it. Never write image-reference or image-edit instructions into
+the next generation prompt. Use the successful authored prompt as the sole
+baseline and describe the intended result directly.
 
-Never claim an image was edited or reference-guided if the tool returned a
-fresh generation or did not check source linkage. Check metadata and inspect
-the result. If the user specifically requires source linkage and the tool cannot
-accept or retain the source, state that limitation. Do not turn optional
-reference attachment into a blocker for ordinary fresh generation.
+Do not claim reference-guided generation when no reference was used. Record
+fresh generations accurately.
 
 ### Series identity and iteration
 
