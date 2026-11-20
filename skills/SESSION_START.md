@@ -202,7 +202,7 @@ This cue starts a new drawing session. It does not replace the foundational init
 5. Start the drawing session under the Drawing skill. Establish its new opening brief and required session records before image generation or editing. For a named novel scene, use the scene-local illustration brief and records.
 6. Continue with any drawing task included in the same instruction. If the user only asks to start the session, establish the session and ask only for essential brief details that are not available.
 
-Do not load the Drawing skill during ordinary foundational initialization. If the Drawing skill and its required references were already loaded for novelist work in this conversation, reuse them when the user starts a drawing session.
+Do not load the Drawing skill during ordinary foundational initialization. If you loaded the Drawing skill and its required references for novelist work, reuse them when the user starts a drawing session.
 
 ## Skill dependency hierarchy and loading ledger
 
