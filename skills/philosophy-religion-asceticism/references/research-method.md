@@ -34,7 +34,7 @@
   scholarship makes these relevant.
 - Distinguish the earliest recoverable text from later canonical forms,
   commentaries, translations, and modern reconstructions.
-- Do not infer universal practice from prescriptive texts alone; compare with
+- Do not infer universal practice from prescriptive texts alone. Compare with
   historical, archaeological, documentary, and ethnographic evidence where
   possible.
 - Quote sparingly and accurately. Explain when translation choices influence
@@ -70,7 +70,7 @@ where the categories are not equivalent.
 
 Avoid presenting a superficial list of parallels as proof of borrowing,
 identity, or a common essence. Similar practices can emerge for different
-reasons; claims of historical influence require evidence of transmission.
+reasons. Claims of historical influence require evidence of transmission.
 
 ## Handling uncertainty
 
@@ -83,5 +83,5 @@ Use calibrated language:
 - **Speculative:** a hypothesis with limited evidence.
 - **Unknown / not established:** the evidence does not justify a conclusion.
 
-Do not use these labels as decoration; use them only when justified by the
+Do not use these labels as decoration. Use them only when justified by the
 literature.
