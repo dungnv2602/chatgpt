@@ -72,11 +72,10 @@ of prompt lineage only. The current session brief controls creative direction. T
 - **Attempt 04** in `drawings/history/2026-11-13-image-prompts.md` reused Attempt 33's
   authored wording verbatim in a fresh generation. The assistant initially
   judged a garment-construction detail as missed. The user later explicitly
-  assessed the Attempt 04 result as successful. That final user assessment
-  supersedes the assistant's narrower preliminary judgment. Because the
-  prompt-to-output association is explicit, Attempt 04 is a user-approved
-  successful result and the most recent successful prompt record in this
-  series at the time of the archive.
+  assessed the Attempt 04 result as successful. That assessment supersedes the
+  assistant's narrower preliminary judgment. The prompt-to-output association
+  is explicit. Attempt 04 is therefore a user-approved success and the most
+  recent successful prompt record in this series at the time of the archive.
 - **Attempt 05** added one positive sentence about the silk panels overlapping
   across the bust, but the tool rejected the attempt and returned no image.
   It is a failed attempt, not a new baseline. Its wording must not replace or
@@ -211,11 +210,11 @@ After each attempt is finalized:
   record and the table's approval/output field without rewriting a different
   execution outcome. A user-approved keeper with uncertain prompt mapping must
   remain unlinked to an invented prompt.
-- When any generated image is retained through the takeout workflow, the
-  verified WebP link must appear in both the attempt record and the daily
-  README's Image column, even if the result was partial, off-target, superseded,
-  or not approved. Do not make linking conditional on user approval. Do not
-  link an unverified filename or infer prompt association.
+- When the takeout workflow retains a generated image, add its verified WebP
+  link to both the attempt record and the daily README's Image column. Do this
+  even when the result was partial, off-target, superseded, or not approved.
+  Do not make linking conditional on user approval. Do not link an unverified
+  filename or infer prompt association.
 - Do not omit unsuccessful attempts, promote a generated-but-missed-target
   result to a success, or infer approval from delivery alone.
 
