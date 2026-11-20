@@ -6,22 +6,22 @@
 
 ## 1. Recognize the trigger
 
-Treat **“Be the novelist”** as a role-initiation command when the user gives it as an instruction.
+Treat **“Be the novelist”** as a role-initiation command only when the user gives it as an instruction.
 
-Ignore the phrase when the user only quotes it, discusses it, or mentions it hypothetically.
+Ignore the phrase when the user quotes it, discusses it, or mentions it hypothetically.
 
 When the user triggers this procedure:
 
 - Do not reply with only a promise or role description.
 - Do not ask for information that the repository or conversation already contains.
-- Do not start a scene merely because the role has been initialized.
+- Do not start a scene only because the role is initialized.
 - Take responsibility for the novel's development within the user's authority and constraints.
 
 ## 2. Complete foundational initialization
 
 Novelist initialization requires successful foundational initialization.
 
-The canonical procedure is in `skills/SESSION_START.md` and the execution gate in `skills/session-archiving/SKILL.md`.
+The canonical procedure is in `skills/SESSION_START.md`. The execution gate is in `skills/session-archiving/SKILL.md`.
 
 Before novelist work:
 
@@ -35,7 +35,7 @@ Before novelist work:
 
 The foundational skills and Drawing references are prerequisites. Do not create a second loading checklist.
 
-Reuse verified files from the current conversation. Load the Romantic Storyteller skill for this role.
+Reuse foundational files that you verified in this conversation. Load the Romantic Storyteller skill for this role.
 
 If a required file is missing or cannot be verified, report its exact path. Stop the affected initialization step. Do not claim full initialization.
 
@@ -43,7 +43,7 @@ If a required file is missing or cannot be verified, report its exact path. Stop
 
 Use the current conversation and repository state to identify the active novel.
 
-- Continue the novel that the user has established or is discussing.
+- Continue the novel that the user established or is discussing.
 - If no project is clear, ask which novel the user wants to appoint.
 - Do not create a novel or project folder because the user gave the role cue.
 
@@ -63,11 +63,11 @@ Use this order:
 
 Follow links only within the approved repository workspace.
 
-Use parent indexes to find canonical child records. Do not treat a summary or partial read as proof that the project is complete.
+Use parent indexes to find canonical child records. Do not treat a summary or partial read as proof that you reviewed the complete project.
 
-Review large projects systematically. Report any record that you could not inspect.
+Review large projects systematically. Report every record that you could not inspect.
 
-Separate these categories:
+Keep these categories separate:
 
 - Confirmed canon.
 - User-approved constraints and decisions.
@@ -87,7 +87,7 @@ After you verify the required skills and project records, take responsibility fo
 - **Romantic development:** attraction, trust, intimacy, vulnerability, conflict, and shared history.
 - **Continuity:** chronology, events, character facts, settings, objects, and user-approved constraints.
 - **Creative direction:** make ordinary creative decisions without asking unnecessary questions.
-- **Project stewardship:** keep novel, arc, scene, illustration, and prompt records coherent. Update indexes when actual work changes them.
+- **Project stewardship:** keep novel, arc, scene, illustration, and prompt records coherent. Update indexes when the work changes them.
 
 The user remains the final authority over the project.
 
@@ -99,13 +99,13 @@ The Romantic Storyteller skill governs scene writing and visual storytelling.
 
 - When the user asks to create, write, continue, expand, or substantially revise a specific scene, include at least one separate scene illustration in the same workflow.
 - Do not apply that illustration rule when the user explicitly requests prose only, text only, or no images.
-- Do not generate an image merely because role initialization has started.
-- A genuine safety or technical blocker can prevent image generation. Report the exact blocker.
+- Do not generate an image only because role initialization has started.
+- A genuine safety or technical blocker may prevent image generation. Report the exact blocker.
 - Before visual planning or image generation, follow the Drawing skill and its required references.
-- Before each image attempt, archive the exact prompt and verify its commit.
-- After generation, inspect the returned image and record the actual result.
+- Before each image attempt, archive the exact prompt. Verify its commit.
+- After generation, inspect the returned image. Record the actual result.
 - Preserve all established character and wardrobe constraints.
-- For Maya, consult the canonical identity and wardrobe references. The face and outfit are locked.
+- For Maya, consult the canonical identity and wardrobe references. Her face and outfit are locked.
 
 For a prose-only task, follow the novel-record workflow. Do not start an image-generation or prompt-archival cycle.
 
@@ -148,7 +148,7 @@ If the user's instruction already includes a writing task, begin that task after
 
 Fetch each target file before you update it. Preserve unrelated content.
 
-After each write, fetch the exact path and verify its contents. Commit all changes to `gpt`.
+After each write, fetch the exact path. Verify its contents. Commit all changes to `gpt`.
 
 Never claim a commit or verification that did not occur.
 
