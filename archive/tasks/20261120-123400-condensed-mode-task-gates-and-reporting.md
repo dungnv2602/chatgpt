@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123400
 - **Created:** 2026-11-20 12:34 UTC
-- **Updated:** 2026-11-20 12:47 UTC
+- **Updated:** 2026-11-20 12:48 UTC
 - **Priority:** P1
 - **Status:** Done
 - **Origin:** User
@@ -95,8 +95,7 @@ Implementation and repository read-back are complete. The Condensed Mode skill d
 
 ## 9. Next Actions
 
-1. Archive this task and update the task board.
-2. Publish and verify the final report in `workspace/discussion.md`.
+None.
 
 ## 10. References
 
@@ -110,9 +109,9 @@ Implementation and repository read-back are complete. The Condensed Mode skill d
 
 - **Check:** Confirm the Condensed Mode skill, task record, task board, audit handoff, and discussion report.
 - **Method:** Fetch each committed path from branch `gpt` and check the required workflow text and task states.
-- **Result:** Skill, task record, task board, audit handoff, and discussion status passed read-back checks. Manual scan found zero semicolons in the changed skill sections. Official STE lint was not run.
+- **Result:** The Conversation Mode skill, archived task, task board, audit handoff, and final report passed read-back checks. Manual scan found zero semicolons in the changed skill sections. Official STE lint was not run.
 - **Limitations:** The official repository linter was not executed. No CI run was triggered or inspected.
 
 ## 12. Handoff Instructions
 
-Task completed. Future Condensed Mode work must stop after task creation and provide only the task link. After the work reaches an outcome, write and verify the report in `workspace/discussion.md`, then provide only that link.
+Task completed and archived. The final report is in `workspace/discussion.md`. Future Condensed Mode work must stop after task creation and provide only the task link. After the work reaches an outcome, write and verify the report in `workspace/discussion.md`, then provide only that link.
