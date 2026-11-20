@@ -82,7 +82,7 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Action:** Scanned all 47 Markdown files in the current full-document workflow scope for semicolons and selected structural lint patterns.
 - **Result:** The preliminary scan found 20 semicolon occurrences in six editable files. Removed all 20. The six files are `skills/github-actions/SKILL.md`, `skills/SESSION_START.md`, `skills/drawing/SKILL.md`, `skills/session-archiving/references/archive-records-and-image-prompts.md`, `workspace/task_board.md`, and this task record. Two semicolons in this task record's copied audit history were later restored to preserve the source text.
 - **Preserved exceptions:** Did not edit archived task records. The ASD-STE100 writing-rules reference contains a quoted semicolon example and its wrapper disables the semicolon rule for that file. The ASD-STE100 skill contains intentional rule examples and retains its recorded baseline.
-- **Commits:** GitHub Actions skill `9a12123fadc3776ebe0ef16750168f2437389b04`; Session Start `b01570973ee52391bafa9a02bceab6cf09b67db6`; Drawing skill `a6e665e99f0dff10b8a43c2cf32d89e91a2a5184`; archive reference `6b99a7fa7d5af1b8ec93d4870f925b2d498552c4`; task board `a71692b6118068667d18f37aa06fd8de662613f2`; audit task `f7c17ef3838af9cff0fa5ffdba862a939ba47b07`.
+- **Commits:** GitHub Actions skill `9a12123fadc3776ebe0ef16750168f2437389b04`, Session Start `b01570973ee52391bafa9a02bceab6cf09b67db6`; Drawing skill `a6e665e99f0dff10b8a43c2cf32d89e91a2a5184`; archive reference `6b99a7fa7d5af1b8ec93d4870f925b2d498552c4`, task board `a71692b6118068667d18f37aa06fd8de662613f2`; audit task `f7c17ef3838af9cff0fa5ffdba862a939ba47b07`.
 - **Read-back:** Fetched all six paths from branch `gpt`. Confirmed that five contain no semicolons. Restored the two historical semicolons in this task record.
 - **Validation limit:** This was a targeted text scan, not an execution of the official linter. The repository execution environment remains unavailable. No CI run was manually triggered or inspected.
 - **Next:** Review remaining supported lint patterns and obtain a fresh full lint result in an authorized repository execution environment.
@@ -108,9 +108,17 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Finding:** The full lint workflow and changed-file workflow included `archive/tasks/`. The active-link checker also scanned archived records as source files. These records are historical snapshots. The audit task prohibits edits to them without user authorization.
 - **Decision:** Exclude `archive/tasks/` from full and incremental lint source sets and from active link-source scans. Keep archived Markdown files in the link-target inventory. Keep `archive/README.md` in the active documentation scope.
 - **Changed paths:** `.github/workflows/ste-lint-full-docs.yml`, `.github/workflows/ste-lint-changed.yml`, `skills/asd-ste100/scripts/check_markdown_anchors.py`, and `skills/asd-ste100/references/repository-writing-policy.md`.
-- **Commits:** Full workflow `6a8fb7886a5c47cb9f0b3fb484d5025c517b02d8`; changed workflow `a87d2c1e8b81f7844500ee5e638c19b7310c687e`; link checker `ea32a73d0e01ac48ecc8b39d3984c85d283acf15`; writing policy `f9ca178b721df1d086ac7e741405c5e8dec23788`.
+- **Commits:** Full workflow `6a8fb7886a5c47cb9f0b3fb484d5025c517b02d8`, changed workflow `a87d2c1e8b81f7844500ee5e638c19b7310c687e`; link checker `ea32a73d0e01ac48ecc8b39d3984c85d283acf15`, writing policy `f9ca178b721df1d086ac7e741405c5e8dec23788`.
 - **Read-back:** Fetched all four paths from branch `gpt`. Confirmed that both lint modes and the active-link checker exclude archived task records as sources. Confirmed that the policy keeps those files available as link targets.
 - **Next:** Continue reviewing current in-scope technical documentation and validation coverage. Do not edit archived task records.
+
+### 2026-11-20 13:04 UTC
+
+- **Action:** Compared the copied audit history with the source policy at the parent of the move commit.
+- **Result:** Confirmed an exact text match for all 28 entries from Version 5 through Version 32. The source stored Versions 5–9 and Versions 10–32 in separate locations. The task record joins both ranges without changing their text.
+- **Lint exception:** The wrapper disables only the semicolon rule for this task record. This preserves the two semicolons in the verbatim historical entries. All other supported rules remain active.
+- **Read-back:** Fetched the task record and wrapper from branch `gpt`. Confirmed the exact historical match and the path-specific rule exception.
+- **Next:** Continue the audit without changing the copied historical entries.
 
 ## 7. Current State
 
