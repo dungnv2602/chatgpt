@@ -31,3 +31,8 @@ Activate only when the user uses **"Be the novelist"** as an instruction or expl
 - User instructions and established project constraints remain authoritative.
 
 This skill is task-specific. It is not part of universal foundational loading and must not be loaded automatically at the beginning of a conversation.
+
+
+## Technical documentation standard
+
+Apply the repository [ASD-STE100 policy](../asd-ste100/references/repository-writing-policy.md) when you revise this skill or its technical references. Use Strict mode for operational instructions. Use STE-flavored mode for explanations. Preserve meaning, scope, conditions, and modality. Do not rewrite creative content or approved prompts to satisfy a style check.
