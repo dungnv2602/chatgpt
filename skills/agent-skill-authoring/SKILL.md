@@ -260,6 +260,7 @@ For this project:
 - Do not change `main` or unrelated files.
 - After each important write, fetch the same path and verify the expected content.
 - Follow the deferred CI verification policy in `../conversation-mode/SKILL.md`. Do not wait for or poll CI during the current task.
+- Follow the repository execution efficiency workflow in `../conversation-mode/SKILL.md`. Batch related edits, avoid redundant tool calls, and preserve exact commit-to-check attribution.
 - Do not report a commit or verification as successful unless the tool result and read-back support that statement.
 
 ## 11. Completion standard
