@@ -319,10 +319,10 @@ At the end of each phase, the student should be able to:
 
 ## Bibliographic and chapter-level safeguards
 
-The weekly sequence is thematic. Before assigning chapter numbers, page ranges,
-or exact weekly divisions within a book, verify the table of contents and
-pagination of the specific edition the user has. Do not infer chapter-level
-peer review from a handbook publisher's reputation. The *Oxford Handbook* is
+The weekly sequence is thematic. Verify the table of contents and pagination
+of the specific edition. Do this before assigning chapter numbers, page ranges,
+or exact weekly divisions within a book. Do not infer chapter-level peer review
+from a handbook publisher's reputation. The *Oxford Handbook* is
 to be read selectively by topic during the curriculum and more systematically
 for influences and reception in Weeks 40–42. Check chapter numbering against
 the copy in use. Do not hard-code it into this plan.
