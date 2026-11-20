@@ -1,0 +1,39 @@
+name: STE Lint Full Technical Documentation
+
+on:
+  push:
+    branches:
+      - gpt
+
+permissions:
+  contents: read
+
+jobs:
+  ste-lint:
+    name: Lint all in-scope technical Markdown files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out commit
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run linter self-test
+        run: python3 skills/asd-ste100/scripts/ste-lint.py --selftest
+
+      - name: Lint all in-scope technical Markdown files
+        shell: bash
+        run: |
+          files=$(git ls-files '*.md' |
+            grep -vE '^(novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))')
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            if [ "$file" = "skills/INITIALIZATION_POLICY.md" ]; then
+              python3 skills/asd-ste100/scripts/ste-lint.py --baseline 4 "$file"
+            else
+              python3 skills/asd-ste100/scripts/ste-lint.py "$file"
+            fi
+          done <<< "$files"
