@@ -122,7 +122,7 @@ A task may remain In Progress while another task is selected. Mark one task as t
 - Group tasks by status.
 - Show dependencies and approval state when relevant.
 - Keep at most the 7 most recently completed or cancelled tasks in the Historical section, ordered newest first.
-- When adding a historical entry would exceed 7, delete the oldest board entry or entries until the limit is met. This removes only index rows, never Git history or commits.
+- When adding a historical entry would exceed 7, delete the oldest board entry or entries until the limit is met. This deletes only index rows, never Git history or commits.
 - Link each retained historical entry to the commit that contains the archived record.
 - Update the board whenever task metadata, priority, status, ownership, or location changes.
 

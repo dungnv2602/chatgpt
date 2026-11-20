@@ -216,7 +216,7 @@ Use this order whenever a task requires specialist skills:
 
 ### Per-conversation verified-load ledger
 
-Maintain a simple internal ledger of skill and reference paths successfully retrieved and read in the current conversation.
+Maintain a simple internal ledger of skill and reference paths successfully fetched and read in the current conversation.
 
 - Before retrieving a required file, check the ledger.
 - If the file is already verified, reuse it. Do not fetch or read it again only because the workflow has moved to the next tier.

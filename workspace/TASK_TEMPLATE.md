@@ -28,7 +28,7 @@
 
 ## 4. Requirements
 
-[List confirmed requirements and acceptance criteria.]
+[List agreed requirements and acceptance criteria.]
 
 ## 5. Decisions
 
