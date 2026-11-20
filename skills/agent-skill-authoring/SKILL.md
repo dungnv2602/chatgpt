@@ -272,4 +272,4 @@ For this project:
 
 A skill is complete only when its format is valid and its workflow is coherent. Its local dependencies must resolve. Its activation path must function. Read back and check the committed content.
 
-A directory that contains only a Markdown file is not sufficient. Accurate metadata must make the skill discoverable. The activation path must load it at the correct time. Its instructions must be executable and must not duplicate or contradict project policy.
+A directory that contains only a Markdown file is not sufficient. Accurate metadata must make the skill discoverable. The activation path must load it at the required time. Its instructions must be executable and must not duplicate or contradict project policy.
