@@ -19,7 +19,7 @@ The image repeatedly showed the opposite person resting or leaning, or moved the
 The output can look coherent and affectionate while failing the defining action of the brief. Clothing and setting may be close, but the scene's physical meaning is reversed.
 
 ### Suspected cause
-The archive does not establish the image model's internal cause. Repeated role reversal is observed; claims about prompt length, model bias, or hidden context are hypotheses, not findings.
+The archive does not establish the image model's internal cause. Repeated role reversal is observed. Claims about prompt length, model bias, or hidden context are hypotheses, not findings.
 
 ### Countermeasures tested
 
@@ -31,7 +31,7 @@ The archive does not establish the image model's internal cause. Repeated role r
 | Request style-only transformations of the partial result | [12 November — Attempts 22–27](../../../../drawings/history/failed-prompts.md#fp-07--style-transfer-and-source-preservation-attempts) | Ineffective; source composition was not preserved |
 
 ### Effective prevention rule
-Not established. Do not keep repeating superficial prompt variations after a persistent reversal. Reassess the brief and generation method; classify the result against the defining physical action.
+Not established. Do not keep repeating superficial prompt variations after a persistent reversal. Reassess the brief and generation method. Classify the result against the defining physical action.
 
 ### Limitations
 The evidence is concentrated in one cozy-bedroom task. It does not prove that all two-person compositions are equally difficult.
@@ -65,7 +65,7 @@ The records show missing attachments in some calls and null edit/parent metadata
 Treat source preservation as unverified until the tool confirms the source/edit relationship and the returned image visibly preserves the source. If edit/parent metadata is null or the composition changes, record the result as a fresh or unverified generation, not a successful edit.
 
 ### Limitations
-Metadata checks prevent false claims; they do not themselves make the tool perform a valid edit.
+Metadata checks prevent false claims. They do not themselves make the tool perform a valid edit.
 
 ---
 
@@ -122,7 +122,7 @@ Unknown. Do not assert that a particular garment, pose, source image, or phrase 
 | Change indoor fashion framing to a daylight outdoor fashion setting | [12 November — Attempts 31–32](../../../../drawings/history/failed-prompts.md#fp-08--generic-safety-refusals-during-portrait-retries) | Same generic refusal |
 
 ### Effective prevention rule
-Do not claim to know the trigger. Make at most a genuinely meaningful, policy-compliant revision when appropriate; if it is also refused, stop the retry loop rather than probing with superficial wording changes.
+Do not claim to know the trigger. Make at most a genuinely meaningful, policy-compliant revision when appropriate. If it is also refused, stop the retry loop rather than probing with superficial wording changes.
 
 ### Limitations
 This pattern documents refusal behavior and the limits of diagnosis. It does not classify the underlying content or imply that a future version would necessarily be refused.
@@ -154,7 +154,7 @@ The record identifies an execution deviation, but not why the submitted wording 
 Before the image call, compare the exact text about to be submitted with the committed prompt. Record any intentional change before generation. Do not claim that a prompt was tested when a different prompt was actually sent.
 
 ### Limitations
-The archive provides one clearly documented instance; confidence remains provisional.
+The archive provides one clearly documented instance. Confidence remains provisional.
 
 ---
 
@@ -218,4 +218,4 @@ generation. In particular, compare the complete draft with the active brief
 and the user's latest instructions. Do not restore wording merely because it appears in an older successful prompt. Do not add or relocate equivalent restrictions after the user has rejected them. Keep only language supported by the current brief or genuinely required by the task.
 
 ### Limitations
-This entry documents one explicit correction sequence and a broader user-identified concern. It does not establish that every negative instruction is unnecessary; the active brief and applicable requirements remain controlling.
+This entry documents one explicit correction sequence and a broader user-identified concern. It does not establish that every negative instruction is unnecessary. The active brief and applicable requirements remain controlling.
