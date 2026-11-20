@@ -46,6 +46,15 @@ Continue and complete the repository documentation audit. Keep its complete hist
 
 ## 6. Progress Log
 
+### 2026-11-20 15:35 UTC
+
+- **Action:** Continued the synonym-rotation cleanup using the latest completed full-lint findings as a guide.
+- **Change:** Reworded 14 occurrences across Agent Skill Authoring, Session Archiving, Drawing, Archive and Delivery, and Generation Recovery. The changes remove inconsistent synonym variants while preserving controlled status terms and workflow meaning.
+- **Baseline policy:** No lint baseline changed. No historical archive record changed.
+- **Validation:** Read the current source text before editing. Did not run lint or CI locally. Did not wait for or poll a CI result.
+- **Next:** Continue the remaining synonym cases in Prompt Fidelity, Series Continuity, Philosophy, archive records, and image provenance. Then review the remaining external URLs and link status.
+
+
 ### 2026-11-20 15:25 UTC
 
 - **Action:** Continued the external URL review across approved technical-document paths.

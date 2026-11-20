@@ -1,5 +1,18 @@
 # Open Discussions
 
+### 2026-11-20 15:35 UTC
+
+**Assistant**
+
+Continued the synonym-rotation cleanup. I reworded 14 occurrences across Agent Skill Authoring, Session Archiving, Drawing, Archive and Delivery, and Generation Recovery. The changes preserve controlled status terms and workflow meaning.
+
+No lint baseline or historical archive record changed. I did not run lint or CI locally, and I did not wait for or poll a CI result.
+
+Next: continue the remaining synonym cases in Prompt Fidelity, Series Continuity, Philosophy, archive records, and image provenance.
+
+---
+
+
 ### 2026-11-20 15:25 UTC
 
 **Assistant**

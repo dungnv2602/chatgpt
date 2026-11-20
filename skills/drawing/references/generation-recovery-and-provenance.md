@@ -5,7 +5,7 @@
 A tool refusal must not automatically become a request for the user to rewrite the prompt.
 
 1. Read the refusal as a result, not as an invitation to resubmit the same prompt.
-2. Check the request and authored prompt for explicit nudity, erotic activity, or sexual solicitation. Check for wording and staging that make the image overtly sexual.
+2. Review the request and authored prompt for explicit nudity, erotic activity, or sexual solicitation. Assess wording and staging that make the image overtly sexual.
 3. If the user's underlying creative goal has a clearly non-explicit interpretation, preserve that goal while making a material change to the visual treatment. For example, move from bedroom/boudoir staging to a fashion or portrait setting. Use ordinary elegant clothing. Describe posture, expression, lighting, and composition without erotic instructions.
 4. Do not use euphemisms to disguise a prohibited request, and do not try to defeat or probe safety systems. The revision must genuinely change the content into an allowed depiction.
 5. Archive and commit the revised prompt before another call. Record each refusal and each materially revised attempt accurately.
@@ -24,7 +24,7 @@ Before rewriting a prompt after a refusal, repeated failure, or user correction:
    inspect its authoritative chronological prompt history first. Locate the
    most recent successful prompt in that same series/thread and inspect the
    actual approved image assets where relevant. Use the relevant
-   `drawings/YYYY-MM-DD/README.md` as a navigation aid, then check chronology,
+   `drawings/YYYY-MM-DD/README.md` as a navigation aid, then review chronology,
    series membership, finalized outcome, and prompt/output linkage in the
    authoritative attempt records. For a novel scene, use its scene-local
    illustration history. Do not rely on memory, a summary, or the most recent
@@ -38,8 +38,8 @@ Before rewriting a prompt after a refusal, repeated failure, or user correction:
    style. Search the broader prompt history only when you cannot identify a
    series or exact continuing artwork thread. Use the strongest comparable
    success only in that case.
-3. **Audit prompt drift.** Compare the user's actual brief and successful baseline against the new authored prompt. Identify every element the assistant added. Examples include identity-preservation claims, extra scene details, wardrobe changes, more restrictive coverage, altered framing, sensuality labels, repeated negative clauses, and unnecessary safety disclaimers. Ask which changes the user requested and which are genuinely necessary.
-4. **Restore before redesigning.** First confirm that the user's goal is unchanged, the relevant archived baseline achieved it, and the content remains within applicable policy. Then restore the successful authored prompt verbatim or make only the smallest user-requested change. An earlier refusal does not justify replacing an approved open neckline, off-shoulder garment, romantic mood, or other defining feature. Do not substitute a high neckline, conservative fashion portrait, different outfit, or different setting without user direction.
+3. **Audit prompt drift.** Compare the user's actual brief and successful baseline against the new authored prompt. Identify every element the assistant added. Examples include identity-preservation claims, extra scene details, wardrobe changes, more restrictive coverage, modified framing, sensuality labels, repeated negative clauses, and unnecessary safety disclaimers. Ask which changes the user requested and which are genuinely necessary.
+4. **Restore before redesigning.** First determine that the user's goal is unchanged, the relevant archived baseline achieved it, and the content remains within applicable policy. Then restore the successful authored prompt verbatim or make only the smallest user-requested change. An earlier refusal does not justify replacing an approved open neckline, off-shoulder garment, romantic mood, or other defining feature. Do not substitute a high neckline, conservative fashion portrait, different outfit, or different setting without user direction.
 5. **Do not over-engineer safety language.** Use clear positive descriptions of the intended allowed image. Do not stack unnecessary phrases such as repeated "no nudity / no cleavage / no suggestive pose" clauses. Avoid those clauses when they were not part of the successful baseline and do not address a concrete issue. Such additions can distort the user's brief. They may also foreground interpretations the user did not request. This does not reduce or bypass the actual safety review.
 6. **Treat references as a deliberate choice.** Determine whether an image
    reference is needed for identity, style, or composition. If the proven
@@ -125,7 +125,7 @@ the user explicitly says they should be retained for future use.
 7. Keep inspiration references distinct from exact edit sources. A filename,
    repository path, Library ID, or generation ID is not an attachment. Attach
    the actual asset through the image tool's supported mechanism and check
-   source linkage before claiming a reference-guided result or confirmed edit.
+   source linkage before claiming a reference-guided result or source-linked edit.
 8. For a user-approved output, record the approval and its exact originating
    prompt when reliably known. Approval makes the image a keeper. It does not
    make it a default visual direction for future sessions.

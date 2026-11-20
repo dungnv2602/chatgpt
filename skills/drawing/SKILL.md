@@ -183,7 +183,7 @@ workflow, while avoiding redundant retrievals.
    outrank pattern guidance. Patterns inform execution. They do not authorize
    creative changes.
 
-**Mandatory prompt-fidelity reference:** The complete, exhaustive standard is maintained in [Prompt Fidelity and Unrequested Restrictions](references/prompt-fidelity.md). Read and apply that note when drafting, reusing, revising, archiving, verifying, and submitting every image prompt. It preserves the user's seven governing commitments and supplies the required checks. This skill's workflow does not shorten or override it.
+**Mandatory prompt-fidelity reference:** The complete, exhaustive standard is maintained in [Prompt Fidelity and Unrequested Restrictions](references/prompt-fidelity.md). Read and apply that note when drafting, reusing, revising, archiving, checking, and submitting every image prompt. It preserves the user's seven governing commitments and supplies the required checks. This skill's workflow does not shorten or override it.
 
 ### A. Read the brief and complete the session-brief preflight
 
@@ -395,7 +395,7 @@ Record one honest outcome:
 - **Partial match:** the central idea works, but one or more requirements are
   missing or uncertain.
 - **Generated but missed target:** an image exists but misses a defining detail.
-- **Edit confirmed:** source linkage is verified and the requested change is visible.
+- **Source-linked edit:** source linkage is verified and the requested change is visible.
 - **Fresh generation, not an edit:** a new image was produced.
 - **Rejected / failed:** no usable image was returned.
 

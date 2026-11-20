@@ -73,7 +73,7 @@ repository retention pass through the single intake at `images/takeout/`.
 
 For every drawing session, archive **every generated image output**. This includes approved, rejected, pending, partial, off-target, failed, and superseded outputs.
 
-Record each output separately. Link it from the session README after you verify its exact repository asset. Preserve generation order and prompt-to-output association. Record approval in a separate field. Approval does not control archival or linking eligibility.
+Record each output separately. Link it from the session README after you validate its exact repository asset. Preserve generation order and prompt-to-output association. Record approval in a separate field. Approval does not control archival or linking eligibility.
 
 
 ## Generation provenance and output mapping workflow (approved 2026-11-20)
@@ -119,7 +119,7 @@ Use these `approval_status` values: Approved, Rejected, Pending, or Not recorded
 
 Calculate SHA-256 from the actual original image bytes whenever those bytes are accessible. Do not calculate a checksum from screenshots, thumbnails, or recompressed derivatives and misrepresent it as the original checksum. If the original is unavailable, record SHA-256 as unavailable/pending rather than guessing. A checksum identifies exact file bytes. It does not establish visual content, prompt lineage, approval, or authenticity by itself.
 
-When the user supplies a downloaded image's SHA-256, compare it with the recorded checksum for the candidate original. A match confirms byte identity. A mismatch means the files are not byte-identical. Do not mark the file verified.
+When the user supplies a downloaded image's SHA-256, compare it with the recorded checksum for the candidate original. A match establishes byte identity. A mismatch means the files are not byte-identical. Do not mark the file verified.
 
 Renaming or moving a file does not change its checksum. Re-encoding, editing, resizing, or converting usually changes it. If you archive an original and a WebP derivative, calculate and record their hashes separately. Do not compare them as the same byte stream.
 

@@ -98,7 +98,7 @@ Do not load the Drawing skill or its references during foundational initializati
 
 **No premature-work exception after activation:** After the user invokes an initialization cue, retrieve every required file before project work. Repair any newest completed CI failure that applies. Do not wait for pending, cancelled, or unavailable CI results. Do not substitute memory, previous-session reads, Library copies, or readiness claims for fresh GitHub retrievals.
 
-**Notification and disconnection limitation:** Deliver the startup notice in the active conversation before retrieval starts. Do not promise to continue checks after a voice call ends or claim an independent callback/notification will occur. Complete and report the checks in the active conversation.
+**Notification and disconnection limitation:** Deliver the startup notice in the active conversation before retrieval starts. Do not promise to continue checks after a voice call ends or claim an independent callback/notification will occur. Complete and report the verification in the active conversation.
 
 This gate does not guarantee future execution. Verify compliance through retrieval and read-back in each new conversation.
 - Do not create parallel prompt folders. `drawings/` is the single canonical prompt location.
@@ -132,7 +132,7 @@ Load [Archive Records and Drawing-Prompt Procedures](references/archive-records-
 - For an update, retrieve the current file first and use its current blob SHA.
 - Perform sequential writes to the same file. Do not run updates to the same path in parallel.
 - After each important write, retrieve the same `approved project directories` path again and verify its contents.
-- Report a commit as successful only when the write tool returns a commit SHA. Report verification only after a read-back confirms the expected content.
+- Report a commit as successful only when the write tool returns a commit SHA. Report verification only after a read-back shows the expected content.
 - If a write or network call fails, inspect only relevant paths inside `approved project directories` before retrying to avoid duplicate files or duplicate commits.
 - Do not use repository-root or outside-folder operations as a shortcut.
 - Leave `main` untouched unless the user explicitly authorizes changes there.

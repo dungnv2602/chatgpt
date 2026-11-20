@@ -198,7 +198,7 @@ Preserve all facts, conditions, exceptions, numbers, scope limits, and modality.
 
 Do not rewrite creative writing, dialogue, marketing copy, approved creative prompts, code, or examples that intentionally demonstrate a rule violation.
 
-Do not run the linter or CI workflows locally. Push technical-document changes to branch `gpt`. Let GitHub Actions validate them.
+Do not run the linter or CI workflows locally. Push technical-document changes to branch `gpt`. Let GitHub Actions check them.
 
 During each mandatory preflight, inspect one bounded snapshot. Repair the newest completed failure for an applicable workflow before handling the prompt. Do not wait or poll. Pending, cancelled, absent, or inaccessible results do not block work. Record any failure that cannot be repaired safely in one focused attempt, then continue unless the task depends on that result. Review new CI results at the next preflight.
 
@@ -244,7 +244,7 @@ Before considering a skill complete, check all of the following:
 - [ ] Do not wait for CI, poll for results, or run lint and CI workflows locally.
 
 ### Integration and integrity
-- [ ] The skill is connected to the correct activation path.
+- [ ] The skill is connected to the intended activation path.
 - [ ] Foundational loading remains conditional on the user's established cues.
 - [ ] No unrelated specialist skill has been made foundational.
 - [ ] Every referenced local file exists and every relative link resolves.
