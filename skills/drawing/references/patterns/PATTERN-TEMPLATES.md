@@ -9,7 +9,9 @@ These are copy-ready templates, not pattern records. Do not place illustrative o
 
 ## Shared conventions
 
-- Assign each entry a permanent, unique ID: `S-001`, `S-002` for successful patterns; `F-001`, `F-002` for failure patterns.
+- Assign each entry a permanent, unique ID.
+- Use `S-001`, `S-002`, and similar IDs for successful patterns.
+- Use `F-001`, `F-002`, and similar IDs for failure patterns.
 - Do not reuse an ID, even if an entry is retired.
 - Link evidence to the relevant daily attempt record. Include a direct image link only when the image's provenance and path are verified.
 - Describe observed results separately from interpretations or hypotheses.
