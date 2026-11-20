@@ -29,3 +29,7 @@
 - **Outcome:** The returned image appears very close to the source; the requested mature facial refinement is not clearly established. User acceptance is pending.
 
 - **User decision:** User explicitly accepted Attempt 36 despite the facial refinement being subtle.
+
+## Repository images
+
+- [file_00000000bd08821199dd53c88f31878c.png.webp](images/file_00000000bd08821199dd53c88f31878c.png.webp)
