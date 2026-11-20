@@ -4,6 +4,8 @@ Last updated: 2026-11-20 12:24 UTC
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
+The Historical section retains at most the 7 most recently completed or cancelled tasks. Older index entries are removed when the limit is exceeded; Git history is preserved.
+
 ## Current Execution
 
 _No unblocked execution task._
