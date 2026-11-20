@@ -70,6 +70,6 @@ new drawing session. The active session brief always controls those choices.
 | Photorealistic, lifelike, camera-like, natural photo | Realistic |
 | Painting, hand-painted, storybook, watercolor, oil, gouache | Vintage |
 | Nostalgic, retro, aged print, old film | Vintage, then choose a print or analog-photo substyle |
-| Warm, cozy, cinematic | Not enough by itself; infer from other cues or ask |
+| Warm, cozy, cinematic | Not enough by itself. Infer from other cues or ask. |
 | Realistic illustration | Ask which should dominate if unclear |
 
