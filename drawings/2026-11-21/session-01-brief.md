@@ -5,7 +5,7 @@
 **Project:** Imagined human embodiment of Samantha from *Her* (2013)
 **Primary series / membership:** Samantha — Human Presence Without a Body; continuation explicitly requested by the user
 **Created:** 2026-11-21
-**Status:** Active
+**Status:** Closed — user requested session close on 2026-11-21
 
 ## User's opening brief
 > Start the drawing session, we continue drawing Samantha
@@ -89,3 +89,13 @@ Scene 1 was approved by the user on 2026-11-21. The remaining five concepts are 
 - **2026-11-21 — User approved Scene 1:** The user approved “A quiet morning together” as the next scene. Attempt 08 is the active prompt record. The complete prompt was archived and verified before generation.
 - **2026-11-21 — Attempt 08 generated:** Two variants were generated. The user selected Image B. The user then requested a redo using the successful Sweet Path baseline prompt.
 - **2026-11-21 — Attempt 09 prompt archived and generated:** Attempt 09 uses Attempt 07's successful authored prompt as its continuity source, adapted to the approved morning scene. One variant was generated; see `drawings/2026-11-21/attempt-09.md` for its generation ID and review status.
+
+
+## Session closeout — 2026-11-21
+
+- **Closed by:** User request (“Close session”).
+- **Approved working baseline:** Attempt 14.
+- **Latest scene decision:** User approved the proposed “An unexpected laugh” scene; Attempt 17 prompt was archived and verified.
+- **Generation status:** Attempt 17 was not generated because the image-generation tool returned a Free plan rate-limit error. No image output exists for Attempt 17.
+- **Unreviewed records:** Attempts 15 and 16 remain unapproved; neither supersedes the approved Attempt 14 baseline.
+- **Next session:** Resume from approved Attempt 14 unless the user explicitly selects another baseline. Attempt 17's archived prompt may be used after confirming it remains desired.
