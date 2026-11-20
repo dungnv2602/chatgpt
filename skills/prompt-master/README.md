@@ -202,7 +202,7 @@ Prompt Master includes specific profiles for 20+ tools. For anything not on the 
 | Tool | Category | What Prompt Master Fixes |
 |------|----------|--------------------------|
 | **Claude 5 / current Claude** | Reasoning and agentic LLM | Model-aware effort, scope, XML structure, and delegation control |
-| **ChatGPT / OpenAI GPT models** | Reasoning and agentic LLM | GPT-6 Luna, GPT-6.1 Sol, GPT-6 Astra, and GPT-5.6 compatibility; lean contracts and verified controls |
+| **ChatGPT / OpenAI GPT models** | Reasoning and agentic LLM | GPT-6 Luna, GPT-6.1 Sol, GPT-6 Astra, and GPT-5.6 compatibility. Use lean contracts and verified controls |
 | **Codex** | Coding agent | File scope, approval boundaries, verification, bounded subagents |
 | **Grok 4.6** | Reasoning and agentic LLM | Search grounding, reasoning effort, tools, caching, and stop conditions |
 | **Gemini 2.x** | Reasoning LLM | Grounding anchors, citation rules, format locks |
@@ -265,7 +265,7 @@ Prompt Master picks the right architecture for every task automatically and rout
 | **ComfyUI** | Node-based image workflows — positive/negative split per checkpoint |
 | **Prompt Decompiler** | Breaking down, adapting, simplifying, or splitting existing prompts |
 | **Current Claude Task Brief** | Complex, multi-step, or agentic tasks on current Claude models |
-| **OpenAI Task Brief** | Complex tasks in ChatGPT, Codex, or the API; GPT-6 guidance alongside GPT-5.6 compatibility |
+| **OpenAI Task Brief** | Complex tasks in ChatGPT, Codex, or the API. GPT-6 guidance with GPT-5.6 compatibility |
 
 </details>
 
@@ -293,7 +293,7 @@ Prompt Master only uses techniques with reliable, bounded effects. Methods known
 | # | Pattern | Before | After |
 |---|---------|--------|-------|
 | 1 | **Vague task verb** | "help me with my code" | "Refactor `getUserData()` to use async/await and handle null returns" |
-| 2 | **Unrelated tasks in one prompt** | "fix login and write a sales email" | Split unrelated outcomes; combine related work with shared acceptance criteria |
+| 2 | **Unrelated tasks in one prompt** | "fix login and write a sales email" | Split unrelated outcomes. Combine related work with shared acceptance criteria |
 | 3 | **No success criteria** | "make it better" | "Done when function passes existing unit tests and handles null input" |
 | 4 | **Over-permissive agent** | "do whatever it takes" | Explicit allowed + forbidden actions list |
 | 5 | **Emotional task description** | "it's totally broken, fix everything" | "Throws uncaught TypeError on line 43 when `user` is null" |
