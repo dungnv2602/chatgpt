@@ -141,6 +141,18 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
 - **Files modified:** ASD-STE100, Session Start, Session Archiving, Agent Skill Authoring, Skills README, and this policy file.
 - **Verification:** Initial read-back completed. The current documentation audit remains in progress.
 
+### Version 5 — First repository documentation audit pass
+
+- **Date:** 2026-11-20
+- **Change:** Rewrite three technical documents under the repository ASD-STE100 policy.
+- **Files modified:**
+  - `skills/session-archiving/references/image-processing-scripts.md`
+  - `skills/session-archiving/references/drawing-session-closeout.md`
+  - `novels/README.md`
+- **Verification:** Retrieved each changed path from branch `gpt` after the write. Read-back confirmed the committed content.
+- **Validation limit:** The ASD-STE100 linter and the full repository audit have not run. The audit remains in progress.
+- **Commits:** `683d0367f0fd171403990189dca0e2169b8f491e`, `8dd008db79fe086728d97cf85802e40ebc1b8fc1`, and `44a624833db2e82f86da0dd34c140ee5eb5cffbf`.
+
 ## Future revision log
 
 Append a new entry whenever the initialization policy or its dependencies change.
