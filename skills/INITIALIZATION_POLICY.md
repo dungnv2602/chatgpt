@@ -308,3 +308,13 @@ Use this template:
 - **Review:** Checked instructions, technical descriptions, sentence length, semicolons, and scope. Also checked directory references against the current `skills/` listing.
 - **Disposition:** Review only. No edits were needed. Preserve the product-access notes because their availability statements contain qualifications. Preserve the prompt-fidelity note because it records explicit user authority and restrictions on assistant-authored prompt changes.
 - **Limit:** This was a manual review. The official linter and the GitHub Actions workflow have not run in this environment.
+
+
+### Version 14 — Correct obsolete prompt archive path
+
+- **Date:** 2026-11-20
+- **File updated:** `skills/drawing/references/image-editing-protocol.md`
+- **Issue:** Section 6 still directed non-novel prompts to the former `prompts/YYYY-MM-DD/` location.
+- **Correction:** Changed that path to `drawings/YYYY-MM-DD/`, the canonical non-novel prompt and session archive.
+- **Verification:** Updated the file using its fetched SHA and read it back. Commit: `4914e860d12e7303cf770cd5909ef88aac8f91f3`. Read-back SHA: `dbf2f7fdf20c20a9a640362070f4f559ac5b7f77`.
+- **Limit:** This pass confirms the exact correction. It does not establish that every obsolete path in the repository has been found.
