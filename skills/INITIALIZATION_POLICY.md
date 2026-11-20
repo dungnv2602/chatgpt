@@ -9,6 +9,7 @@ Track the design, current behavior, and revision history of ChatGPT's conditiona
 - **Repository:** `dungnv2602/chatgpt`
 - **Branch:** `gpt`
 - **Foundational initiation:** `skills/SESSION_START.md`
+- **Foundational skill-authoring standard:** `skills/agent-skill-authoring/SKILL.md`
 - **Novelist initiation:** `skills/novelist-initiation/INITIATION.md`
 
 Do not treat this note as a replacement for either operational file.
@@ -77,6 +78,7 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
 3. **Explicit dependency:** Novelist initialization must complete foundational prerequisites before loading novelist-specific materials.
 4. **No duplicated procedures:** Specialist initiation notes should reference the foundational process rather than maintain a competing checklist.
 5. **Current-session verification:** Do not substitute remembered instructions, summaries, or reads from a previous conversation for required verification in the current conversation.
+6. **Standardized skills:** Create and maintain skill folders using the Agent Skills format defined in `skills/agent-skill-authoring/SKILL.md`; load that standard during foundational initialization.
 
 ## Change history
 
@@ -90,6 +92,20 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
 - **Operational files:**
   - `skills/SESSION_START.md`
   - `skills/novelist-initiation/INITIATION.md`
+
+### Version 2 — Agent Skills format made foundational
+
+- **Date:** 2026-11-20
+- **Requested change:** Adopt the Agent Skills open format for project skills and establish a foundational skill-authoring standard.
+- **Reason:** Make skill metadata, structure, activation, progressive disclosure, and validation consistent and portable.
+- **Behavioral impact:** `skills/agent-skill-authoring/SKILL.md` is loaded during explicit foundational initialization and governs skill creation and maintenance. Initialization remains conditional on the established cues.
+- **Files modified:** 
+  - `skills/agent-skill-authoring/SKILL.md`
+  - `skills/SESSION_START.md`
+  - `skills/session-archiving/SKILL.md`
+  - `skills/INITIALIZATION_POLICY.md`
+- **Verification:** Pending read-back verification.
+- **Commit(s):** Pending.
 
 ## Future revision log
 
@@ -115,6 +131,8 @@ Before approving a future change, verify:
 - [ ] The activation cues and their distinct responsibilities are unambiguous.
 - [ ] Foundational initialization precedes novelist-specific initialization.
 - [ ] Foundational initialization is not duplicated when both cues are used.
+- [ ] The Agent Skill Authoring skill is loaded during foundational initialization.
+- [ ] New or revised skills satisfy the Agent Skills frontmatter, naming, structure, and validation requirements.
 - [ ] Only necessary files are loaded.
 - [ ] Missing or unverifiable prerequisites stop initialization and are reported by exact path.
 - [ ] Operational instructions remain consistent across the two initiation files.
