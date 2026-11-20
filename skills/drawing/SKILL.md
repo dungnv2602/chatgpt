@@ -229,11 +229,12 @@ pose, style, palette, mood, setting, or composition.
    `novels/[Novel-ID]/[Arc-Folder]/[Scene-Folder]/illustrations/session-[YYYY-MM-DD]-[NN]-brief.md`.
    The authoritative storage and verification procedure is in
    `skills/session-archiving/SKILL.md`.
-3. A session brief records the intended subject/theme, scene or moment, mode,
-   character appearance, outfit, pose, framing, environment, lighting, mood,
-   continuity requirements, locked features, permitted variation, exclusions,
-   and any visual references the user explicitly assigns to this session.
-   Mark unspecified fields as open/not specified. Never invent a lock.
+3. Record the subject/theme, scene or moment, selected mode, character
+   appearance, outfit, pose, framing, environment, lighting, and mood in the
+   session brief. Also record continuity requirements, locked features,
+   permitted variation, exclusions, and visual references the user explicitly
+   assigns to the session. Mark unspecified fields as open/not specified.
+   Never invent a lock.
 4. Later explicit user instructions within the same session amend the active
    brief for the named property. Preserve the original opening brief and append
    the amendment to the session record. Do not silently rewrite history.
