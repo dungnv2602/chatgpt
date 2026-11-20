@@ -91,7 +91,17 @@ These six habits cover most of what makes machine-written English hard to parse.
 
 1. Pick the mode (Strict or STE-flavored). Say which only when the user asked for the rule table — see Output Format.
 2. Read the input text once for meaning — do not start rewriting before you understand what it must still say afterward.
-3. Walk it sentence by sentence. Flag every rule violation from the Core Rewrite Rules tables and every habit from the Scan Checklist. In STE-flavored mode, flag the lexical rules but do not enforce them. That choice is for the rewrite. The linter has no flavored mode, and synonym rotation stays a hard finding. Pass `--disable synonym-rotation` to drop it. For a mechanical first pass over the structural rules, run `scripts/ste-lint.py` (stdin or file args, `--json` for structured output); it checks semicolons, sentence length, phrasal verbs, nominalization, marketing adjectives, synonym rotation, dangling-conjunction in supported list items, passive voice, and compound tenses, and by design never flags hedges or modality. `--baseline N` tolerates N hard violations (for adopting on existing docs); `--disable rule1,rule2` silences named rules.
+3. Walk the text sentence by sentence.
+   - Flag violations from the Core Rewrite Rules and the Scan Checklist.
+   - In STE-flavored mode, flag lexical rules. Do not enforce them in the rewrite.
+   - The linter has no STE-flavored mode. Synonym rotation remains a hard finding.
+   - Use `--disable synonym-rotation` to disable that check.
+   - Run `scripts/ste-lint.py` for a mechanical check of supported structural rules.
+   - Use stdin or file arguments. Use `--json` for structured output.
+   - The linter checks semicolons, sentence length, phrasal verbs, nominalization, marketing adjectives, synonym rotation, supported dangling conjunctions, passive voice, and compound tenses.
+   - The linter does not flag hedges or modality.
+   - Use `--baseline N` to allow N hard findings when you adopt an existing document.
+   - Use `--disable rule1,rule2` to disable named checks.
 4. Rewrite each flagged sentence to fix the violation while preserving the original meaning exactly. If a rewrite would drop necessary precision (a safety condition, a scope qualifier, a number), keep the longer phrasing and flag it instead of silently simplifying.
    - **Check modality before you commit to a rewrite.** Hedges ("may", "could", "sometimes", "is likely to") carry the author's confidence, and confidence is content. A shorter sentence that upgrades a hedge to a fact is not a simplification — it is a different claim. This is the most common way a well-intentioned STE rewrite goes wrong, because hedges are exactly what a length cap tempts you to cut.
    - Never add a fact the source did not state. A rewrite that reads better because it supplies a cause, a frequency, or a mechanism has stopped being a rewrite.
@@ -137,6 +147,8 @@ Follow the table with a one-line note on anything you deliberately did **not** s
 
 ## Additional Resources
 
+- **`references/repository-writing-policy.md`** — repository-wide rules for skill and technical documentation. It defines Strict and STE-flavored modes.
+
 - **`references/writing-rules.md`** — fuller summary of the 9 rule sections and dictionary structure, with citations to the official standard and secondary sources.
 - **`examples/before-after.md`** — worked examples: rule illustrations, and agent-output examples built for this skill.
-- **`scripts/ste-lint.py`** — deterministic, stdlib-only linter for the structural rules, including dangling-conjunction in supported list items, plus a synonym-rotation check (one word, one meaning) scoped per file. Exit 1 when hard violations exceed `--baseline` (default 0); advisory findings (passive voice, compound tenses) never fail the run; `--disable` silences named rules. It never flags hedges or modality: those are content, not style, and `--selftest` asserts that "may have failed" passes clean.
+- **`scripts/ste-lint.py`** — deterministic, standard-library-only linter for selected structural rules. It checks supported dangling conjunctions and synonym rotation within each file. It exits with code 1 when hard findings exceed `--baseline` (default 0). Advisory findings for passive voice and compound tenses do not fail the run. Use `--disable` to silence named checks. The linter does not flag hedges or modality. Its `--selftest` confirms that "may have failed" passes clean.
