@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 12:49 UTC
+- **Updated:** 2026-11-20 12:57 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -65,13 +65,30 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **References:** `workspace/task_board.md`, `archive/tasks/20261120-123400-condensed-mode-task-gates-and-reporting.md`, `workspace/discussion.md`.
 - **Next:** Continue from the existing audit Next Actions.
 
+### 2026-11-20 12:57 UTC
+
+- **Action:** Rebuilt the Markdown inventory at the Version 17/19 audit commit and at the current branch head. Compared the historical source-file exclusion rules.
+- **Result:** Reconciled the 121-versus-119 discrepancy. The 121-file count did not exclude the two files under `skills/asd-ste100/examples/`. Version 19 excluded those two files and correctly reported 119. At the same historical commit, the repository contained 166 Markdown files. The current branch contains 176 Markdown files and 129 files under the same Version 19 source-file exclusions.
+- **Current workflow scope:** The full-document lint workflow uses a different exclusion set. Its current tree contains 47 in-scope Markdown files. Do not compare this count directly with the 119/129 active-link source count.
+- **Linter configuration:** Compared all 19 historical baseline entries with the current branch tree. Two entries referred to deleted `skills/novelist-initiation/` files. Removed those stale entries. All 17 remaining baseline paths exist in the current tree. No baseline value changed.
+- **Changed path:** `skills/asd-ste100/scripts/ste-lint-repository.sh`.
+- **Commit:** `94cedba3c786ff78ec57385f8a18d0b1f5475bfd`.
+- **Read-back:** Fetched the updated wrapper from branch `gpt`. Confirmed that all 17 baseline paths exist in the current tree and that both stale paths are absent.
+- **Validation limit:** Did not run the linter or its self-test. The connected repository tools do not provide a repository shell. No CI run was manually triggered or inspected.
+- **Next:** Reduce current lint findings and obtain a fresh full-document lint result in an authorized repository execution environment.
+
 ## 7. Current State
 
-The latest recorded audit state is Version 19–23's full-document and link-check work, followed by policy and initialization changes through Version 32. The recorded full lint reported 179 hard findings and 300 advisory findings in Version 19. The active Markdown link check reported zero unresolved local targets or heading anchors across 262 links, but its scan-scope discrepancy remains unresolved. These are historical results, not a fresh verification of the current repository.
+The historical Version 19 inventory contained 166 Markdown files and 119 active source files. The Version 17 count of 121 used the same exclusions except for `skills/asd-ste100/examples/`. That directory contained two Markdown files, which explains the exact difference.
+
+The current branch contains 176 Markdown files. The same Version 19 source-file exclusions produce 129 active source files. The full-document lint workflow uses a different exclusion set and currently selects 47 Markdown files. These counts describe different scopes.
+
+The Version 19 full lint reported 179 hard findings and 300 advisory findings. Those are historical results, not a fresh result for the current branch. The linter wrapper now has 17 baseline entries. Every entry maps to an existing file. Two stale entries for deleted `skills/novelist-initiation/` files were removed without changing any baseline value.
+
+The active-link scan at Version 19 found zero unresolved local Markdown targets or heading anchors in its 119-file source scope. The historical-link review and external URL review remain open. No fresh full lint has run.
 
 ## 8. Remaining Work
 
-- Reconcile the Version 17 count of 121 active Markdown files with the Version 19 count of 119.
 - Reduce the recorded 179 hard lint findings without raising per-file baselines.
 - Re-run the official linter and its self-test in a repository execution environment.
 - Review historical archive links only after the user authorizes changes to those records.
