@@ -1,6 +1,6 @@
 ---
 name: agent-skill-authoring
-description: Create, revise, validate, organize, and integrate Agent Skills-compatible skill folders. Use when you add or update a skill, edit its metadata or references, validate it, or choose its initialization tier.
+description: Create, revise, check, organize, and integrate Agent Skills-compatible skill folders. Use when you add or update a skill, edit its metadata or references, check it, or choose its initialization tier.
 metadata:
   project-role: foundational
   format: agentskills
@@ -133,13 +133,13 @@ For each new skill or material revision:
 2. **Identify authority.** Determine which user instructions, project policies, canonical records, and other skills govern the task. Do not invent a new authority hierarchy.
 3. **Inspect existing material.** Read the exact current files and relevant links before changing them. Reuse established terminology and avoid creating a competing skill for an existing responsibility.
 4. **Choose the directory name.** Use a concise, descriptive, lowercase hyphenated name that satisfies the specification.
-5. **Write frontmatter first.** Validate the name-directory match and the description before drafting the body.
+5. **Write frontmatter first.** Check the name-directory match and the description before drafting the body.
 6. **Write executable instructions.** Use clear activation criteria, ordered steps, decision points, edge cases, and verification requirements. Distinguish mandatory rules from recommendations.
 7. **Separate supporting material.** Add references, scripts, or assets only when needed. Keep references focused and avoid deep chains of linked references.
 8. **Integrate activation.** Decide whether the skill is foundational or task-specific. Update only the appropriate initiation file, index, or dependency record.
 9. **Check consistency.** Resolve contradictions with the authoritative project rules. Do not silently change user preferences, activation cues, or established workflow boundaries.
-10. **Validate.** Check frontmatter, paths, links, references, line length where relevant, and the complete operational logic.
-11. **Commit and read back.** Follow repository write discipline, then retrieve the exact committed path and verify the final content.
+10. **Check.** Check frontmatter, paths, links, references, line length where relevant, and the complete operational logic.
+11. **Commit and read back.** Follow repository write discipline, then fetch the exact committed path and check the final content.
 12. **Report precisely.** Identify the created or changed paths, the commit result, the verification performed, and any limitation that remains.
 
 ## 6. Foundational versus task-specific skills
@@ -152,13 +152,13 @@ A skill is foundational only when it governs baseline collaboration, repository 
 
 To make a skill foundational:
 
-1. Obtain explicit user direction when the classification is not already clear from the request.
+1. Ask for explicit user direction when the classification is not already clear from the request.
 2. Add the skill to the canonical foundational initialization sequence in `skills/SESSION_START.md`.
 3. Add it to the mandatory execution gate in `skills/session-archiving/SKILL.md`, if that gate defines the files required for foundational initialization.
 4. Record the foundational dependency in `skills/INITIALIZATION_POLICY.md` when it changes the initialization contract.
 5. Keep its activation conditional on the project's explicit initialization cues. Do not introduce automatic loading at the beginning of every conversation unless the user explicitly requests that policy.
 6. Define whether the skill is loaded once per conversation, refreshed only when changed, or consulted on demand. Avoid redundant retrievals.
-7. Verify that the new dependency does not activate a specialist role or load unrelated task-specific materials.
+7. Check that the new dependency does not activate a specialist role or load unrelated task-specific materials.
 
 This skill is foundational because its rules govern the creation and maintenance of all other skills. It is loaded as part of foundational initialization and is also the relevant on-demand skill for skill-authoring work.
 
@@ -196,7 +196,7 @@ Strict mode also requires one clear meaning for each term. It requires simple wo
 
 Preserve all facts, conditions, exceptions, numbers, scope limits, and modality. Never turn an uncertain claim into a certain claim. Never add a cause or result that the source does not state.
 
-Do not rewrite creative writing, dialogue, marketing copy, approved creative prompts, code, or examples that intentionally show a rule violation.
+Do not rewrite creative writing, dialogue, marketing copy, approved creative prompts, code, or examples that intentionally demonstrate a rule violation.
 
 Run `skills/asd-ste100/scripts/ste-lint.py` on changed technical documents when practical. Review its findings against the source. The linter checks only supported patterns. It cannot prove that a rewrite preserves meaning or follows the official dictionary.
 
@@ -214,7 +214,7 @@ Do not claim certified ASD-STE100 compliance. The repository does not contain th
 
 ## 9. Validation checklist
 
-Before considering a skill complete, verify all of the following:
+Before considering a skill complete, check all of the following:
 
 ### Format
 - [ ] The skill is a directory containing `SKILL.md`.
@@ -246,7 +246,7 @@ Before considering a skill complete, verify all of the following:
 - [ ] The exact committed file has been read back and verified.
 - [ ] The final report distinguishes completed checks from checks that were unavailable.
 
-When the official `skills-ref` validator is available, run `skills-ref validate path/to/skill-folder`. If it is unavailable, perform the checks above directly and state that the official validator was not run. Never claim tool-based validation that did not occur.
+When the official `skills-ref` validator is available, run `skills-ref check path/to/skill-folder`. If it is unavailable, perform the checks above directly and state that the official validator was not run. Never claim tool-based validation that did not occur.
 
 ## 10. Repository write discipline
 
@@ -258,7 +258,7 @@ For this project:
 - Never overwrite existing content without inspecting it.
 - Make sequential writes to the same path.
 - Do not change `main` or unrelated files.
-- After each important write, fetch the same path and verify the expected content.
+- After each important write, fetch the same path and check the expected content.
 - Follow the deferred CI verification policy in `../conversation-mode/SKILL.md`. Do not wait for or poll CI during the current task.
 - Follow the repository execution efficiency workflow in `../conversation-mode/SKILL.md`. Batch related edits, avoid redundant tool calls, and preserve exact commit-to-check attribution.
 - Do not report a commit or verification as successful unless the tool result and read-back support that statement.
