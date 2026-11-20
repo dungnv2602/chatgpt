@@ -34,51 +34,46 @@ complements it. It never replaces, weakens, or overrides it.
 
 ### Mandatory dependency-loading order
 
-Before applying this skill to any task that involves visual storytelling,
-visual scene design, image planning, image prompting, image generation, or image
-editing, first retrieve and read the current Drawing Skill directly from the
-`gpt` branch at `skills/drawing/SKILL.md`. Then retrieve and read
-all supporting references explicitly named by that skill, from the same branch
-and within repository root. Do not rely on memory, a prior summary, or a Library copy
-as a substitute for those reads.
+Before any visual work, retrieve and read `skills/drawing/SKILL.md` from branch `gpt`.
+This applies to visual storytelling, scene design, image planning, prompting, generation, and editing.
 
-This is a prerequisite, not a reminder step: load the Drawing Skill and its
-required references before making visual decisions or drafting a visual prompt.
-Do not wait for the user to ask whether the Drawing Skill has been read. If the
-required GitHub files cannot be retrieved, stop the visual task and explain the
-access limitation rather than proceeding from assumptions.
+Then read every supporting reference named by the Drawing Skill. Retrieve each file from branch `gpt`.
+Keep all reads inside the repository root. Do not use memory, prior summaries, or Library copies as substitutes.
 
-**Loading cadence:** The Drawing Skill is universal and governs every visual
-project. Switching projects or beginning another visual task within the same
-ChatGPT conversation does not require retrieving it again. At the beginning
-of each new ChatGPT conversation/session, retrieve the current Drawing Skill
-and its required supporting references from the `gpt` branch, then apply
-them to all visual work in that conversation. Refresh them sooner only if the
-user asks, a relevant repository change is known or suspected, or newly
-introduced work depends on a supporting reference that has not yet been read.
-A new conversation requires a fresh retrieval even when continuing an existing
-project. This session-level cadence does not change the per-attempt rules:
-review relevant prompt history, archive and verify the authored prompt before
-each generation/edit, then inspect and record the actual result afterward.
+Read these files before making visual decisions or drafting a visual prompt.
+Do not wait for the user to ask whether you have read the Drawing Skill.
+If you cannot retrieve a required file, stop the visual task and explain the access limitation.
+Do not proceed from assumptions.
 
-For a prose-only task with no visual planning or image-related decisions, the
-Drawing Skill need not be loaded solely to write prose. If the task later
-expands to include visual work, load the Drawing Skill and its supporting
-references before proceeding with that part.
+**Loading cadence:** The Drawing Skill governs every visual project.
+
+- Reuse the verified read when you switch projects within the same conversation.
+- Reuse it when you begin another visual task in that conversation.
+- At the start of each new ChatGPT conversation, retrieve the current Drawing Skill and its required references from branch `gpt`.
+- Apply those files to all visual work in that conversation.
+- Refresh them sooner when the user asks or when a relevant repository change is known or suspected.
+- Also refresh them when new work requires a supporting reference that you have not read.
+
+A new conversation requires a fresh retrieval, even when you continue an existing project.
+This session-level cadence does not change the per-attempt rules.
+Review relevant prompt history before each attempt. Archive and verify the authored prompt before each generation or edit. Inspect and record the actual result afterward.
+
+For prose-only tasks, do not load the Drawing Skill solely to write prose when no visual planning or image decisions are needed.
+If the task later includes visual work, load the Drawing Skill and its required references before that work.
 
 Whenever a romantic scene request includes creating, editing, refining, or
 otherwise delivering an image:
 
-1. Read and follow the Drawing Skill, including its current mode-selection and
-   persistence rules. Apply the user's explicit Realistic or Vintage mode. Preserve the active
-   mode for the same continuous artwork. Never switch modes because a prompt
-   is difficult or an attempt fails.
-2. Follow the Drawing Skill's complete workflow: interpret the visual brief,
-   establish visual hierarchy, inspect relevant successful prompts and
-   references, archive the exact authored prompt before each attempt, verify
-   the archive commit, use image references honestly, generate or edit, inspect
-   the actual result, classify the outcome accurately, and recover using the
-   documented bounded procedure.
+1. Read and follow the Drawing Skill's current mode-selection and persistence rules.
+   Apply the user's explicit Realistic or Vintage mode. Preserve that mode for the same continuous artwork.
+   Never switch modes because a prompt is difficult or an attempt fails.
+2. Follow the complete Drawing Skill workflow.
+   Interpret the visual brief and establish its visual hierarchy.
+   Review relevant successful prompts and references.
+   Archive the exact authored prompt before each attempt. Verify the archive commit.
+   Use image references honestly. Generate or edit the image.
+   Inspect the actual result and classify the outcome accurately.
+   Recover with the documented bounded procedure.
 3. Follow the Drawing Skill's prompt-drift audit and proven-baseline recovery.
    Do not replace an established successful visual direction with the
    novelist's preferred composition, wardrobe, framing, mood, or safety
@@ -92,40 +87,33 @@ otherwise delivering an image:
    novelist may enrich emotion and narrative meaning only within those
    constraints.
 
-**Automatic scene-illustration rule — mandatory default:** Whenever the
-user asks to create, write, draft, continue, expand, or substantially revise a
-specific scene in an established novel project, treat scene illustration as
-part of the assignment and autonomously generate at least one scene illustration
-in the same workflow. Do not wait for the user to separately say "illustrate
-it", "draw it", or "generate an image". This applies even when the user's
-immediate wording focuses on the prose or simply names a scene to work on.
-Read the scene and its parent continuity records, identify the strongest
-visually communicable moment (or moments), choose the composition yourself,
-and generate the illustration(s) after completing the required reference,
-prompt-archive, and verification preflight. The user should not have to manage
-the handoff from writing to illustration.
+**Automatic scene-illustration rule — mandatory default:** Apply this rule when the user asks to create, write, draft, continue, expand, or substantially revise a specific scene in an established novel project.
 
-For a scene with several distinct visual beats, use creative judgment to select
-a coherent small set of illustrations. Do not turn one scene into a collage or
-comic page unless the user asks for that format. Generate each distinct
-illustration as its own image and archive each attempt separately. A single
-scene illustration is the minimum, not a reason to omit additional clearly
-valuable moments.
+Treat illustration as part of the assignment. Generate at least one scene illustration in the same workflow. Do not wait for a separate request to "illustrate it", "draw it", or "generate an image". Apply this rule even when the request focuses on prose or only names a scene.
 
-This automatic rule does not apply when the user explicitly requests prose
-only / text only / no images, when the task is merely discussion or
-brainstorming rather than working on a scene, or when a genuine safety or
-technical prerequisite blocks generation. A missing optional inspiration image
-does not block fresh text-to-image generation when the approved written prompt
-and continuity specification are available. In a blocked case, explain the
-exact blocker. Do not silently downgrade the assignment to text-only. If
-generation is blocked, complete any safe prose work only when useful and
-clearly report that the illustration remains outstanding.
+Before generation:
+1. Read the scene and its parent continuity records.
+2. Choose the strongest visually communicable moment or moments.
+3. Select the composition.
+4. Complete the required reference, prompt-archive, and verification preflight.
+5. Generate the illustration or illustrations.
 
-If the user requests prose only, use the novelist and scene-note workflow
-without initiating an image-generation or image-prompt archival cycle. If the
-user requests both prose and an image, complete the scene-writing workflow and
-the Drawing Skill's image workflow as distinct, coordinated deliverables.
+The user should not have to manage the handoff from writing to illustration.
+
+For scenes with several distinct visual beats, choose a small, coherent set of illustrations. Do not create a collage or comic page unless the user requests that format. Create each illustration as a separate image. Archive each attempt separately. One illustration is the minimum. Add more when distinct moments offer clear value.
+
+Do not apply this rule in these cases:
+- The user explicitly requests prose only, text only, or no images.
+- The task is discussion or brainstorming, not work on a specific scene.
+- A genuine safety or technical prerequisite blocks generation.
+
+A missing optional inspiration image does not block fresh text-to-image generation. Proceed when the approved written prompt and continuity specification are available.
+
+When a safety or technical prerequisite blocks generation, explain the exact blocker. Do not silently replace the illustration with text-only work. Complete safe prose only when useful. State clearly that the illustration remains outstanding.
+
+When the user requests prose only, follow the novelist and scene-note workflow. Do not start image generation or image-prompt archiving.
+
+When the user requests both prose and an image, complete both workflows. Treat scene writing and image work as distinct, coordinated deliverables.
 
 In any conflict, follow this order of authority:
 
@@ -182,9 +170,8 @@ Build scenes around a legible emotional beat. Examples include:
 - A gentle confession, a promise, or a moment of trust.
 - A peaceful domestic moment that shows an established relationship.
 
-Prefer believable, specific interaction over exaggerated posing. A hand resting
-on a shoulder, a softened expression, a shared glance, or a small adjustment
-of clothing can carry more emotional weight than an elaborate romantic gesture.
+Prefer believable, specific interaction over exaggerated posing. A hand on a shoulder, a softened expression, or a shared glance can carry emotional weight.
+A small adjustment of clothing can also convey more than an elaborate romantic gesture.
 
 Make physical contact anatomically plausible and emotionally intentional.
 Clarify who initiates a gesture, where each person is positioned, and how their
@@ -198,9 +185,8 @@ has specified.
 There is no repository-wide default face, identity, hairstyle, outfit, or
 wardrobe for a drawing subject. At the beginning of each drawing session, the
 user's opening brief defines the intended visual direction. Apply this equally
-to day drawings and novel illustrations. A previous portrait, character
-sheet, approved image, successful prompt, or other historical asset has no
-standing authority in a new session unless the user explicitly adopts it.
+to day drawings and novel illustrations. A previous portrait, character sheet, approved image, successful prompt, or historical asset has no authority in a new session.
+It becomes authoritative only when the user explicitly adopts it.
 
 When the current session brief explicitly locks a face, identity, hairstyle,
 body design, outfit, garment construction, or other feature, preserve that
@@ -411,7 +397,7 @@ trust, longing, and mutual care.
 
 ## 10. Novel project structure and production workflow
 
-For tasks involving the active novel's repository structure, narrative hierarchy, canon control, scene-writing records, or production workflow, load [Novel Project Structure and Production Workflow](references/novel-production-workflow.md). The detailed project and record procedures are maintained there.
+For work on the active novel's repository, narrative hierarchy, canon, scene records, or production workflow, load [Novel Project Structure and Production Workflow](references/novel-production-workflow.md). The detailed procedures are maintained there.
 
 ## 11. Response and delivery
 
