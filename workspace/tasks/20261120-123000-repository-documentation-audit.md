@@ -60,6 +60,13 @@ Continue and complete the repository documentation audit. Keep its complete hist
 
 ## 6. Progress Log
 
+### 2026-11-20 15:12 UTC
+
+- **Action:** Inspected the newest changed-document lint failure, run `44760753995`.
+- **Finding:** The archive link checker and linter self-test passed. The full-audit fallback found hard synonym-rotation findings in the GitHub Actions and Worker skills.
+- **Repair:** Standardized the GitHub Actions link-check instruction and the Worker task-board instruction. No lint baseline changed.
+- **Next:** Commit the focused repair and read back both skills. Review the next CI result at the next mandatory preflight. Do not wait or poll.
+
 ### 2026-11-20 15:07 UTC
 
 - **Action:** Recovered the archive-boundary work and reviewed the latest CI preflight.
