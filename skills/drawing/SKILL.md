@@ -476,12 +476,15 @@ All repository work must use branch `gpt` and remain strictly inside
 After generation or editing, preserve original outputs, record provenance, verify asset mapping, and create delivery derivatives only under the approved workflow. Load [Drawing Archive, WebP Delivery, and Provenance Verification](references/archive-and-delivery.md) for the complete procedures, including original-image identity, SHA-256 handling, WebP derivatives, manifest verification, and the approved GitHub Action.
 
 ## Supporting references
+
+- `references/style-guide.md` — mandatory foundational visual-mode definitions and cues.
+- `references/image-editing-protocol.md` — mandatory foundational source-reference and edit-verification procedure.
+- `references/prompt-fidelity.md` — required before drafting, reusing, revising, archiving, verifying, or submitting image prompts.
+- `references/patterns/README.md` — canonical pattern index; load the index and both pattern files once per conversation.
+- `references/patterns/successful-patterns.md` — evidence-backed successful techniques.
+- `references/patterns/failure-patterns.md` — documented failures and tested countermeasures.
+- `references/patterns/PATTERN-TEMPLATES.md` — load only when creating or revising a pattern.
 - `references/series-continuity-and-iteration.md` — series identity, prompt lineage, closeout, and iteration.
 - `references/generation-recovery-and-provenance.md` — refusal-aware recovery, prompt audits, attempt ledgers, and provenance.
 - `references/archive-and-delivery.md` — original-image preservation, hashes, WebP delivery, and archive verification.
 
-- `references/style-guide.md` — detailed mode definitions and visual cues.
-- `references/image-editing-protocol.md` — source references, edit, and
-  verification procedure.
-
- 
