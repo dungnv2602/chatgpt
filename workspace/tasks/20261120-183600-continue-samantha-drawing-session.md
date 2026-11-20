@@ -91,6 +91,13 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 - **References:** `drawings/2026-11-21/session-01-brief.md`, `drawings/2026-11-21/README.md`, `drawings/2026-11-20/session-01-brief.md`.
 - **Next:** Ask the user whether to adopt Attempt 07 as this session's visual baseline.
 
+### 2026-11-20 18:36 UTC
+
+- **Action:** Added the session task to the task board and fetched the board after the update.
+- **Result:** The Samantha session is the sole Current Execution task. The board marks it Blocked on the user's baseline selection. The seven-entry Historical limit remains satisfied.
+- **References:** `workspace/task_board.md`; commit `84dcec2698703857d284a4661a5c42244035702c`.
+- **Next:** Ask the user to select the visual baseline.
+
 ## 7. Current State
 
 - Foundational initialization passed. The required skills and references were retrieved from branch `gpt`.
