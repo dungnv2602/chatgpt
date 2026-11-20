@@ -210,7 +210,12 @@ The records support a workflow failure to apply the latest instruction when reus
 | Make pattern consultation and a full prompt-fidelity check mandatory before committing a prompt | [20 November — Attempts 45–46](../2026-11-19/attempt-45.md); [Drawing Skill](../../skills/drawing/SKILL.md) | Prevention procedure adopted; effectiveness across future attempts is not yet established |
 
 ### Effective prevention rule
-Before every prompt commit, compare the complete draft with the active brief and the user's latest instructions. Do not restore wording merely because it appears in an older successful prompt. Do not add or relocate equivalent restrictions after the user has rejected them. Keep only language supported by the current brief or genuinely required by the task.
+
+The mandatory, exhaustive rule is maintained in
+[Prompt Fidelity and Unrequested Restrictions](../../skills/drawing/references/prompt-fidelity.md).
+Apply that reference before every prompt draft, reuse, revision, archive, and
+generation. In particular, compare the complete draft with the active brief
+and the user's latest instructions. Do not restore wording merely because it appears in an older successful prompt. Do not add or relocate equivalent restrictions after the user has rejected them. Keep only language supported by the current brief or genuinely required by the task.
 
 ### Limitations
 This entry documents one explicit correction sequence and a broader user-identified concern. It does not establish that every negative instruction is unnecessary; the active brief and applicable requirements remain controlling.
