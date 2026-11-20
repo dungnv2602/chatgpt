@@ -6,12 +6,12 @@ Original PNG/JPEG files are permanent masters. WebP files are separate
 delivery derivatives, never replacements. New retained uploads use the shared
 flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
 
-- Incoming filenames may be arbitrary. Inspect each image and prepare a hand-off
+- Incoming filenames may be arbitrary. Inspect each image. Prepare a hand-off
   item with the exact source filename, descriptive title, optional stable ID,
-  and destination directory. The Action does not infer visual content or
-  project membership. For drawing-session destinations, `attempt: NN` is
-  mandatory and is the explicit prompt-to-output association used for automatic
-  Markdown cross-linking. Non-drawing assets may omit it.
+  and destination directory. The Action does not infer image content or project
+  membership. For drawing-session destinations, `attempt: NN` is required. It
+  links the prompt to the output for automatic Markdown cross-linking. Non-drawing
+  assets may omit it.
 - The existing workflow on branch `gpt` calls
   `skills/session-archiving/scripts/process_takeout.py`. It supports static PNG, JPG, and JPEG.
   APNG and other unsupported formats fail the batch. Animated content is never
@@ -34,33 +34,32 @@ flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
   destination collisions, symlinks, and invalid paths. It verifies
   source/master SHA-256 equality, WebP signatures, and final WebP hashes.
 - When `attempt: NN` is present for a destination under
-  `drawings/YYYY-MM-DD/images`, the processor verifies the corresponding
-  attempt record and six-column daily README, then writes the verified WebP
-  link into both for every generated image, including partial, off-target,
+  `drawings/YYYY-MM-DD/images`, the processor checks the matching attempt
+  record and six-column daily README. It then writes the verified WebP link to
+  both records for every generated image. This includes partial, off-target,
   superseded, and unapproved results. Approval is not a linking condition.
-  Multiple uploads may point to the same attempt. The GitHub Action commits
-  these Markdown changes together with the image masters, derivatives,
-  session `manifest.csv`, and takeout reports. Items without `attempt` are
-  processed as ordinary assets and do not enter a drawing session manifest or
-  prompt records.
+  Multiple uploads may point to one attempt. The GitHub Action commits these
+  Markdown changes with the image masters, derivatives, session `manifest.csv`,
+  and takeout reports. Items without `attempt` are ordinary assets. They do not
+  enter a drawing-session manifest or prompt records.
 - Every successful or failed attempt is preserved under
   `images/takeout/history/[batch-id]/attempt-NNN/` with the hand-off snapshot,
   `conversion-report.csv`, and `verification-report.md`. The CSV records
   source, staging, and final paths, sizes, size difference, encoder
   profile/version, SHA-256 values, result, and errors. Both `history/` and
   `webp/` are reserved and excluded from intake.
-- On failure, original uploads and the ready hand-off remain available and
-  successfully converted WebPs remain in that failed attempt's staging
-  folder. Retries use a new attempt directory. On success, staged WebPs move
-  to final destinations and the now-empty successful staging directory is
-  removed. The active hand-off is reset to empty only after every original and
-  WebP has been relocated and verified and both reports have been archived.
-  After the first push, a separate verifier reads original and WebP blobs from
-  `origin/gpt`, validates the direct WebP URL, and upgrades only eligible
-  `Pending` manifest rows. Legacy entries without their original master stay
-  `Not verifiable`. The Action re-reads the published manifest after the
-  verification commit. Never claim a successful Action run without observing
-  its result and reading back the published assets, links, and reports.
+- On failure, original uploads and the ready hand-off remain available.
+  Successfully converted WebPs remain in the failed attempt's staging folder.
+  Each retry uses a new attempt directory. On success, staged WebPs move to
+  their final destinations. The Action then removes the empty staging folder.
+  It resets the active hand-off only after it verifies every original and WebP
+  and archives both reports.
+- After the first push, a separate verifier reads original and WebP blobs from
+  `origin/gpt`. It validates the direct WebP URL and upgrades eligible
+  `Pending` manifest rows. Legacy entries without an original master remain
+  `Not verifiable`. The Action reads the published manifest again after the
+  verification commit. Do not report a successful Action run until you observe
+  its result and read back the published assets, links, and reports.
 
 
 ## Generation provenance and output mapping workflow (approved 2026-11-20)
@@ -78,11 +77,11 @@ Capture provenance at generation time for every drawing session. Do not rely on 
 - **Latency:** generation must not wait for GitHub, hashing, or archival. Capture/associate outputs immediately, then perform remaining archive work. If capture or archive is incomplete, leave explicit pending/incomplete status.
 - **Closeout:** reconcile generation records, attempt notes, README, manifest, and repository assets. Read back changes and report unresolved gaps. Do not mark complete while mandatory checks remain unresolved.
 
-Provenance chain: **Session → Attempt → Prompt → Generation event (native ID if exposed) → Output (internal ID. Native output ID if exposed) → original bytes → SHA-256 → archive asset/link**. Internal IDs are archive identifiers, never claims about platform metadata.
+Provenance chain: **Session → Attempt → Prompt → Generation event (native ID if exposed) → Output (internal ID and native output ID, if exposed) → original bytes → SHA-256 → archive asset/link**. Internal IDs identify archive records. They do not claim to be platform metadata.
 
 ## Mandatory image archive manifest and SHA-256 verification (2026-11-20)
 
-For every drawing session, record **every generated image output**—approved, rejected, pending, partial, off-target, failed, or superseded—without treating approval as a condition for archival or linking. Preserve the generation sequence and exact prompt association. The daily README must link every image directly to its exact GitHub asset after the path/blob is verified. Keep approval status separate from outcome and storage/link verification.
+For every drawing session, record **every generated image output**. This includes approved, rejected, pending, partial, off-target, failed, and superseded results. Approval does not control archival or linking. Preserve the generation sequence and exact prompt association. The daily README must link each image to its exact GitHub asset after you verify the path and blob. Keep approval status separate from outcome and storage or link verification.
 
 Maintain a session-level `manifest.csv`, with one row per generated output and these required columns:
 ```csv
@@ -103,7 +102,7 @@ At ingestion, the GitHub Action must calculate SHA-256 from the uploaded origina
 
 WebP conversion changes bytes. Therefore, the original hash is the identity key and the WebP is a derivative linked to the same output ID. The WebP hash is optional and only for derivative-integrity checking. Never expect or require original and WebP hashes to match.
 
-The Action is intended to automate: original SHA-256 calculation and comparison. Output-to-attempt/prompt mapping validation. Conversion. Renaming and relocation. Direct image links in attempt records and README. Manifest update/reconciliation. And verification reporting. Preserve incoming original filenames, but never treat them as mapping evidence. This policy supersedes earlier wording that made hashing unavailable, optional, or mandatory on transformed derivatives. It does not claim the Action has been implemented until its code is actually updated and verified.
+The Action is intended to automate these tasks: calculate and compare original SHA-256 values, validate output-to-attempt and prompt mapping, convert files, rename and relocate assets, add direct image links, reconcile the manifest, and write verification reports. Preserve incoming original filenames. Do not treat filenames as mapping evidence. This policy supersedes earlier wording that made hashing unavailable, optional, or mandatory on transformed derivatives. It does not claim that the Action implements these tasks until its code is updated and verified.
 
 
 ## GitHub Action implementation status (2026-11-20)
@@ -112,9 +111,9 @@ The takeout processor retains original PNG/JPEG masters in each destination's
 Attempt records and daily README rows link only the WebP. Drawing-session
 `manifest.csv` updates preserve existing rows and columns, append one record
 per new output, and inventory legacy WebPs. A same-stem original in the
-destination's `original/` subfolder is paired by deterministic filename stem
-its actual SHA-256 is recorded and publication stays Pending until the pushed
-Git blob is verified. A WebP without a retained original remains Not verifiable.
+destination's `original/` subfolder is paired by filename stem. The processor
+records its SHA-256. Publication remains Pending until the pushed Git blob is
+verified. A WebP without a retained original remains Not verifiable.
 An original master without a same-stem WebP blocks processing rather than
 silently disappearing from the manifest. Generation-time hash matches,
 explicit attempt associations, native identifiers, approval, and
@@ -130,3 +129,8 @@ Python compilation and regression tests before processing. The GitHub Actions
 run must pass and its published output must be read back before the workflow
 is described as fully verified.
 
+
+
+## Technical documentation standard
+
+This file defines technical and operational procedures. Apply Strict mode from the repository [ASD-STE100 policy](../../asd-ste100/references/repository-writing-policy.md) when you revise it. Preserve every provenance, integrity, status, and verification requirement.
