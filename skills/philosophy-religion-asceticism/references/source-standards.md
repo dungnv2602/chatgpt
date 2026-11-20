@@ -226,4 +226,4 @@ that limitation. Do not guess.
 
 ## Technical documentation standard
 
-Apply the repository [ASD-STE100 policy](../asd-ste100/references/repository-writing-policy.md) when you revise this reference. Preserve scholarly qualifications, source limits, and uncertainty.
+Apply the repository [ASD-STE100 policy](../../asd-ste100/references/repository-writing-policy.md) when you revise this reference. Preserve scholarly qualifications, source limits, and uncertainty.
