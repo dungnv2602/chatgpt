@@ -31,21 +31,21 @@ The scheduled archive-retention workflow is owned by GitHub Actions.
 - Keep the cleanup implementation reusable through `workflow_call` and operator-accessible through `workflow_dispatch`. A forced manual run must be an explicit input.
 - GitHub cron has no exact every-14-days syntax. Use a weekly schedule plus a committed UTC last-cleanup marker to enforce a minimum 14-day interval.
 
-## 3. Execution policy: implement, then let CI report
+## 3. Mandatory CI preflight and repair
 
-The default workflow for repository changes is implementation-first and event-driven:
+This gate applies before the assistant handles every new user prompt. It applies to all request types and conversation modes.
 
-1. Implement the requested workflow and documentation changes directly.
-2. Commit related changes together so one coherent push produces the normal event-triggered CI run.
-3. Do not manually invoke `workflow_dispatch`, `gh workflow run`, the Actions API dispatch endpoint, or any equivalent manual trigger.
-4. Do not rerun, cancel, or otherwise stimulate CI manually.
-5. Do not poll or inspect CI status as a routine post-edit step. Let the normal GitHub event trigger the configured workflows. Failed CI is the feedback signal.
-6. Do not add a workflow trigger solely to make a check run after an assistant edit.
-7. If the user explicitly asks to investigate a CI failure, inspect the relevant run and fix the underlying cause. Otherwise, do not turn implementation work into a manual CI-verification exercise.
+1. Inspect the latest applicable run for each workflow on branch `gpt`. Also inspect the combined status of the current branch head.
+2. Wait for all relevant in-progress runs to finish. Treat an older cancelled run as superseded only when a newer run exists for the same workflow and branch.
+3. If a latest run fails, inspect its jobs, failed steps, and logs. Resolve the underlying cause on `gpt`. Do not weaken tests, path coverage, or baselines to force a pass.
+4. Push the repair through the normal repository workflow. Wait for all applicable latest runs to finish and pass. Repeat this cycle if any run fails.
+5. If logs show only a transient GitHub runner or service failure, rerun the failed job. Never rerun a repository failure to hide it.
+6. If GitHub Actions cannot be accessed, stop and report the blocker. Do not handle the user's prompt or claim CI is clear.
+7. Never run the STE linter locally. Let the configured GitHub Actions workflows run it.
 
-A workflow may retain a legitimate `workflow_dispatch` trigger for an operator's independent use. Its existence does not authorize the assistant to invoke it.
+After loading skills in response to `start session`, `start a drawing session`, or `Be the novelist`, run this gate again. Do this after all required skills load and before project work or an initialization-complete report.
 
-## 3. Inspect and preserve validation scope
+## 4. Inspect and preserve validation scope
 
 Before changing a workflow, identify its events, branch/path filters, jobs, dependencies, permissions, concurrency, runner, timeout, cache, artifact behavior, and scripts. Identify which checks cover which files.
 
@@ -55,7 +55,7 @@ Before changing a workflow, identify its events, branch/path filters, jobs, depe
 - Keep full audits and incremental checks separate when they have different validation scopes.
 - Avoid duplicate runs caused by overlapping triggers.
 
-## 4. Design precise triggers
+## 5. Design precise triggers
 
 Use branch and path filters to avoid work that cannot check the changed files.
 
@@ -65,7 +65,7 @@ Use branch and path filters to avoid work that cannot check the changed files.
 - Do not use both `paths` and `paths-ignore` for the same event.
 - Check branch-protection requirements before adding workflow-level filters. A skipped workflow can leave a required check pending. Use job-level conditions or a stable required check when every pull request needs a result.
 
-## 5. Control concurrency and superseded runs
+## 6. Control concurrency and superseded runs
 
 Use a concurrency group that isolates a workflow and its branch or pull request:
 
@@ -94,7 +94,7 @@ For expensive push validation, a short preflight job can reject a superseded run
 
 A separate guard job costs an additional runner allocation. Use it when avoiding checkout and setup on superseded runs justifies that cost. Do not add one to trivial workflows.
 
-## 6. Preserve incremental-check correctness
+## 7. Preserve incremental-check correctness
 
 For push-based incremental checks, compare against the latest successful run of the same workflow and branch, not merely the previous push event.
 
@@ -110,7 +110,7 @@ Prefer `fetch-depth: 1`. After checkout, fetch only the successful baseline comm
 
 Do not treat failed, cancelled, queued, or in-progress runs as successful baselines. For pull-request checks, compare the pull-request head with the appropriate base commit. Do not reuse a push baseline without a clear reason.
 
-## 7. Cache dependencies only when useful
+## 8. Cache dependencies only when useful
 
 - Cache dependencies that are expensive to download or install and can be safely reused.
 - Build keys from the operating system, runtime, package manager, and dependency lockfiles.
@@ -120,7 +120,7 @@ Do not treat failed, cancelled, queued, or in-progress runs as successful baseli
 - Do not add caching when restore/save overhead exceeds the work avoided.
 - Prevent untrusted jobs from writing cache content later consumed by privileged workflows.
 
-## 8. Choose runners and timeouts
+## 9. Choose runners and timeouts
 
 - Select the least costly supported runner that meets operating-system, architecture, toolchain, and security requirements.
 - Do not use Linux when the job requires Windows or macOS behavior.
@@ -130,7 +130,7 @@ Do not treat failed, cancelled, queued, or in-progress runs as successful baseli
 
 Do not repeat historical runner prices, billing multipliers, minute-rounding rules, or quotas as current facts without checking current official GitHub billing documentation.
 
-## 9. Minimize artifact storage
+## 10. Minimize artifact storage
 
 - Upload only outputs that later jobs or users need.
 - Exclude temporary and reproducible files when they are not required.
@@ -141,7 +141,7 @@ Do not repeat historical runner prices, billing multipliers, minute-rounding rul
 
 Logs and workflow artifacts can have different storage rules. Check current GitHub documentation before stating limits or defaults.
 
-## 10. Apply least privilege and protect inputs
+## 11. Apply least privilege and protect inputs
 
 Set permissions explicitly at workflow or job level. Grant each job only what it needs.
 
@@ -157,7 +157,7 @@ Set permissions explicitly at workflow or job level. Grant each job only what it
 - Follow repository policy for action pinning and check an action's owner/source before adopting a version.
 - Isolate self-hosted runners that execute untrusted code.
 
-## 11. Keep workflow structure maintainable
+## 12. Keep workflow structure maintainable
 
 - Use separate workflows when triggers, permissions, validation scopes, or operational lifecycles differ.
 - Use a reusable workflow when multiple workflows genuinely share a maintained job sequence. Do not abstract a single small job without a clear reuse case.
@@ -167,7 +167,7 @@ Set permissions explicitly at workflow or job level. Grant each job only what it
 - Do not delete a full audit merely because an incremental check is faster.
 - Batch related workflow, script, and documentation edits into one coherent commit to avoid intermediate pushes and duplicate CI runs.
 
-## 12. Decision checklist
+## 13. Decision checklist
 
 Use these questions when implementing an optimization:
 
@@ -182,7 +182,7 @@ Use these questions when implementing an optimization:
 9. Are changes grouped into one coherent push?
 10. Has the assistant avoided manually dispatching, rerunning, or polling CI unless the user explicitly requested CI investigation?
 
-## 13. Repository execution discipline
+## 14. Repository execution discipline
 
 This section consolidates the former repository CI preflight and execution-efficiency rules from Conversation Mode. This skill is the sole authority for CI and GitHub Actions behavior.
 
@@ -194,14 +194,9 @@ This section consolidates the former repository CI preflight and execution-effic
 4. Batch related edits into one coherent commit. Avoid intermediate commits that create duplicate push-triggered runs.
 5. Review the complete changed sections. Preserve facts, conditions, exceptions, numbers, scope, and modality.
 
-### CI feedback policy
+### CI gate
 
-1. Do not inspect or poll GitHub Actions runs before starting an ordinary repository task.
-2. Do not manually dispatch, rerun, cancel, or otherwise stimulate CI.
-3. Do not wait for a CI run created by the current task. Do not track pending run IDs between turns.
-4. Let normal GitHub events trigger the configured workflows. Treat a failed CI run as feedback. Do not claim that a run passed or failed unless the user asks you to investigate that run and you inspect its reported result.
-5. When the user explicitly asks to investigate a CI failure, inspect the relevant run and logs, identify the cause, and fix the underlying repository issue. Do not hide failures by weakening checks or changing a baseline without justification.
-6. Do not add workflow triggers only to make CI run after an assistant edit.
+Follow Section 3 before every user prompt and after cue-triggered skill loading. Do not defer this gate until the user asks. Wait for applicable runs to finish and resolve failures before continuing. Never run the STE linter locally.
 
 ### After editing
 
@@ -218,7 +213,7 @@ This section consolidates the former repository CI preflight and execution-effic
 - Do not repeat wording reviews without a defined rule or finding.
 - Do not reduce necessary file verification to save time. Reduce redundant operations instead.
 
-## 14. Official references
+## 15. Official references
 
 - [Workflow syntax](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
 - [Workflow concurrency](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/control-the-concurrency-of-workflows-and-jobs)

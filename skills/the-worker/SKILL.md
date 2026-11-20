@@ -16,6 +16,16 @@ The Worker owns task capture, task selection, progress records, handoffs, recove
 
 Conversation Mode controls communication style and access to the temporary discussion register. The Worker controls task operations.
 
+## Mandatory CI gate before every prompt
+
+Before handling any new user prompt, follow the pre-prompt CI gate in `skills/github-actions/SKILL.md`. This rule applies to every request and conversation mode.
+
+If the latest applicable run failed, inspect its jobs and logs. Resolve the cause on branch `gpt`. Wait until all applicable latest runs pass before handling the prompt.
+
+If GitHub Actions cannot be accessed, stop and report the blocker. Do not process the user's request.
+
+After cue-triggered skill loading, run the post-load CI gate before project work.
+
 ## Activation and authority
 
 - Load this skill during foundational initialization.

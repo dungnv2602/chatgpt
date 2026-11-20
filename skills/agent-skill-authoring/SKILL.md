@@ -198,7 +198,7 @@ Preserve all facts, conditions, exceptions, numbers, scope limits, and modality.
 
 Do not rewrite creative writing, dialogue, marketing copy, approved creative prompts, code, or examples that intentionally demonstrate a rule violation.
 
-Do not run the linter locally. Push changed technical documents to branch `gpt` and let GitHub Actions validate them. Review workflow findings against the source when the user requests a CI review. The linter checks only supported patterns. It cannot prove that a rewrite preserves meaning or follows the official dictionary.
+Do not run the linter locally. Push technical-document changes to branch `gpt`. Let GitHub Actions validate them. Review findings during every mandatory CI preflight. Resolve failures before handling the user's prompt. The linter checks only supported patterns. It cannot prove meaning or dictionary compliance.
 
 Do not claim certified ASD-STE100 compliance. The repository does not contain the official controlled dictionary.
 
@@ -236,7 +236,7 @@ Before considering a skill complete, check all of the following:
 - [ ] The correct ASD-STE100 mode applies to skill and technical documentation.
 - [ ] Sentence length, paragraph structure, and punctuation follow the repository writing policy.
 - [ ] Every rewrite preserves facts, conditions, scope, and modality.
-- [ ] Review GitHub Actions lint findings only when the user requests a CI review.
+- [ ] Complete the mandatory CI preflight before work and after cue-triggered skill loading.
 
 ### Integration and integrity
 - [ ] The skill is connected to the correct activation path.
@@ -259,7 +259,7 @@ For this project:
 - Make sequential writes to the same path.
 - Do not change `main` or unrelated files.
 - After each important write, fetch the same path and check the expected content.
-- Follow the deferred CI verification policy in `../conversation-mode/SKILL.md`. Do not wait for or poll CI during the current task.
+- Follow the mandatory CI preflight and repair policy in `../github-actions/SKILL.md` before every prompt and after cue-triggered skill loading.
 - Follow the repository execution efficiency workflow in `../conversation-mode/SKILL.md`. Batch related edits, avoid redundant tool calls, and preserve exact commit-to-check attribution.
 - Do not report a commit or verification as successful unless the tool result and read-back support that statement.
 

@@ -15,6 +15,8 @@ Ignore quoted, discussed, or hypothetical uses of the cue. Do not treat a specia
 
 This file and the Session Archiving execution gate define the complete session-start procedure.
 
+After any cue-triggered skill loading, run the post-load CI preflight in `skills/github-actions/SKILL.md`. Do this before project work or an initialization-complete report.
+
 ## Novelist role initialization
 
 Initialize a specialist role only after foundational initialization passes in the current conversation. A request to initialize the novelist role does not start a new session.
@@ -57,6 +59,7 @@ Before novelist work:
 3. Check whether the Drawing skill and each required reference were successfully read in this conversation. Fetch only the files that are not already verified.
 4. Check whether `skills/romantic-storyteller-visual-artist/SKILL.md` was successfully read in this conversation. Fetch it only if it is not already verified.
 5. Do not use remembered instructions, reads from another conversation, summaries, or unverified copies as substitutes.
+6. After all required novelist skills load, run the post-load CI preflight. Do not identify the active novel or start project work until it passes.
 
 The Drawing skill is a prerequisite between foundational initialization and novelist initialization. Do not load it during ordinary foundational initialization.
 
@@ -199,8 +202,9 @@ This cue starts a new drawing session. It does not replace the foundational init
 2. If it has not passed, run the complete mandatory execution gate in `skills/session-archiving/SKILL.md` first. Do this as part of the drawing-session request. Do not ask the user to repeat the `start session` cue.
 3. If foundational initialization already passed, reuse the verified foundational files. Do not load them again without a reason.
 4. Fetch and read `skills/drawing/SKILL.md` and its required references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Reuse each file if it was already verified in this conversation.
-5. Start the drawing session under the Drawing skill. Establish its new opening brief and required session records before image generation or editing. For a named novel scene, use the scene-local illustration brief and records.
-6. Continue with any drawing task included in the same instruction. If the user only asks to start the session, establish the session and ask only for essential brief details that are not available.
+5. After the Drawing skill and required references load, run the post-load CI preflight. Do not start the drawing session until it passes.
+6. Start the drawing session under the Drawing skill. Establish its new opening brief and required session records before image generation or editing. For a named novel scene, use the scene-local illustration brief and records.
+7. Continue with any drawing task included in the same instruction. If the user only asks to start the session, establish the session and ask only for essential brief details that are not available.
 
 Do not load the Drawing skill during ordinary foundational initialization. If you loaded the Drawing skill and its required references for novelist work, reuse them when the user starts a drawing session.
 

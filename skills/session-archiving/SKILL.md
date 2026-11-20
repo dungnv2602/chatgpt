@@ -88,8 +88,9 @@ When the user says **`start session`**, run this sequence before project work. A
 5. Fetch and read `skills/agent-skill-authoring/SKILL.md` from the same branch.
 6. Fetch and read `skills/asd-ste100/SKILL.md` from the same branch.
 7. Fetch and read `skills/github-actions/SKILL.md` from the same branch.
-8. Verify that every required retrieval succeeded. Verify that you read each file. Keep the verified instructions for the rest of the conversation.
-9. Report completion only after every verify passes. If a required retrieval fails, report its exact path and stop project work.
+8. Confirm that every required retrieval succeeded and that you read each file. Keep the verified instructions for the rest of the conversation.
+9. After all six foundational skills load, run the mandatory CI preflight in `skills/github-actions/SKILL.md`. Do not start project work or report initialization complete until the preflight passes.
+10. Report completion only after retrieval and CI checks pass. If a required retrieval or CI access fails, report its exact blocker and stop project work.
 
 Do not load the Drawing skill or its references during foundational initialization. After the foundational gate passes, load Drawing only when the task requires it. For a drawing session or novelist request, first verify the verified-load ledger. Reuse any Drawing files already read in this conversation and fetch only missing files. If foundational initialization already passed, do not run this gate again.
 

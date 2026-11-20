@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-133053
 - **Created:** 2026-11-20 13:30 UTC
-- **Updated:** 2026-11-20 13:30 UTC
+- **Updated:** 2026-11-20 13:33 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -67,6 +67,15 @@ Make CI inspection and repair a mandatory gate before every user prompt. Repeat 
 - **Read-back:** Fetched all five lint-repair paths and confirmed their changes. The anchor-check step and full technical-document lint passed in GitHub Actions.
 - **Validation:** Did not run the linter locally. Did not change a lint baseline.
 - **Next:** Update the authoritative CI policy and every cue-based initialization path. Remove obsolete instructions that defer CI inspection until the user asks.
+
+### 2026-11-20 13:33 UTC
+
+- **Action:** Updated the authoritative CI policy and its task-execution and skill-loading integrations.
+- **Result:** The GitHub Actions skill now requires a pre-prompt gate and a second gate after cue-triggered skill loading. The Worker, Session Archiving, and Session Start now enforce those gates. Agent Skill Authoring and ASD-STE100 documentation no longer defer CI review until the user asks.
+- **Changed paths:** `skills/github-actions/SKILL.md`, `skills/the-worker/SKILL.md`, `skills/session-archiving/SKILL.md`, `skills/SESSION_START.md`, `skills/agent-skill-authoring/SKILL.md`, `skills/asd-ste100/SKILL.md`, `skills/asd-ste100/references/repository-writing-policy.md`.
+- **Read-back:** Pending.
+- **CI:** Pending the normal push-triggered workflows. No local linter execution.
+- **Next:** Read back every changed path. Inspect and repair any failed applicable workflow before proceeding.
 
 ## 7. Current State
 
