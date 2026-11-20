@@ -12,7 +12,8 @@ This file records the repository's conditional initialization policy. Operationa
 - Mandatory execution gate: `skills/session-archiving/SKILL.md`
 - Agent Skills format: `skills/agent-skill-authoring/SKILL.md`
 - Technical writing standard: `skills/asd-ste100/SKILL.md`
-- Novelist initialization: `skills/novelist-initiation/SKILL.md`
+- Novelist skill entry point: `skills/novelist-initiation/SKILL.md`
+- Canonical novelist procedure: the “Be the novelist” section in `skills/SESSION_START.md`
 
 This file does not replace an operational skill or initiation procedure.
 
@@ -25,7 +26,7 @@ Wait for an explicit cue:
 | Cue | Required behavior |
 |---|---|
 | `Follow instructions` | Read `skills/SESSION_START.md`. Complete the foundational execution gate. Do not activate a specialist role. |
-| `Be the novelist` | Complete foundational initialization first. Then follow `skills/novelist-initiation/SKILL.md`. Load the novelist skills and review the active novel. |
+| `Be the novelist` | Complete foundational initialization first. Then load `skills/novelist-initiation/SKILL.md` and follow its canonical procedure in `skills/SESSION_START.md`. |
 | Both cues | Complete foundational initialization once. Then complete novelist initialization. |
 
 ## Operating rules
@@ -74,8 +75,8 @@ Wait for an explicit cue:
 
 2. "Be the novelist"
    - Complete foundational initialization first.
-   - Then follow "skills/novelist-initiation/SKILL.md".
-   - Load the novelist skills and review the active novel.
+   - Load "skills/novelist-initiation/SKILL.md".
+   - Follow its canonical procedure in the "Be the novelist" section of "skills/SESSION_START.md".
    - Do not require me to give "Follow instructions" first.
 
 3. Both cues
@@ -101,7 +102,7 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
 1. **On-demand loading:** Load only what the requested task requires.
 2. **Single initialization authority:** `skills/SESSION_START.md` defines foundational initialization.
 3. **Explicit dependency:** Novelist initialization requires foundational initialization first.
-4. **No duplicate procedures:** Specialist initiation files link to the foundational procedure.
+4. **No duplicate procedures:** Task-specific skill entry points link to their canonical procedure in `skills/SESSION_START.md`.
 5. **Current-session verification:** Do not use remembered files as a substitute for fresh reads when verification is required.
 6. **Agent Skills format:** Use `skills/agent-skill-authoring/SKILL.md` to create and maintain skills.
 7. **Controlled technical writing:** Use `skills/asd-ste100/SKILL.md` for skill and technical documentation.
@@ -455,3 +456,13 @@ Use this template:
 - **Integration:** Add the skill to the foundational initialization sequence, mandatory execution gate, skills index, and copyable project instructions.
 - **Conversation Mode:** Retain only a link to the specialist workflow skill. Remove GitHub Actions procedures and repository workflow details.
 - **Reason:** Keep collaboration behavior separate from CI and workflow engineering.
+
+
+### Version 25 — Consolidate novelist initiation procedure
+
+- **Date:** 2026-11-20
+- **Change:** Move the detailed novelist onboarding procedure into the canonical `skills/SESSION_START.md` file.
+- **Entry point:** Keep `skills/novelist-initiation/SKILL.md` as the task-specific Agent Skills entry point.
+- **Removed duplicate:** Delete `skills/novelist-initiation/INITIATION.md`.
+- **Activation:** The `Be the novelist` cue still requires foundational initialization before novelist-specific work.
+- **Reason:** Keep the full initialization sequence and specialist procedure in one authoritative startup document.
