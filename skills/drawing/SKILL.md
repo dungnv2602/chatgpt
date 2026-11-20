@@ -342,6 +342,12 @@ the result. If the user specifically requires source linkage and the tool cannot
 accept or retain the source, state that limitation. Do not turn optional
 reference attachment into a blocker for ordinary fresh generation.
 
+### Series identity and iteration
+
+For multi-image series, recurring characters, prompt lineage, or iterative work, load and apply [Series Continuity and Iteration](references/series-continuity-and-iteration.md) before preparing the next attempt. Preserve established identities, membership, sequence, and user-approved visual decisions.
+
+The detailed rules include the session closeout cue and default iteration procedure. A pause or goodbye is not session closeout; close only when the user explicitly requests it and archive verification requirements are satisfied.
+
 ### E. Generate or edit
 Use one dominant mode consistently:
 - Realistic: photographic rendering vocabulary and physical plausibility.
@@ -354,6 +360,12 @@ introduce unrelated improvements.
 If repeated attempts fail the central requirement, change the method, reduce
 the scope, or stop and explain the limitation instead of repeating near-identical
 prompts.
+
+### Refusal-aware recovery and provenance
+
+When a generation is refused, fails, or needs recovery, load [Drawing Recovery, Retry, and Provenance](references/generation-recovery-and-provenance.md). It contains detailed recovery, prompt-audit, baseline-selection, attempt-ledger, and provenance procedures.
+
+Do not respond to a failure by changing locked identity, face, outfit, or other protected creative direction. Preserve the user's approved prompt and make only authorized changes.
 
 ### F. Inspect and classify
 Evaluate the image against the pre-recorded acceptance criteria and the active
@@ -449,7 +461,14 @@ the session is Closed. The reminder is not a closeout trigger.
 All repository work must use branch `gpt` and remain strictly inside
 `approved project directories`.
 
+## 8. Image archive and delivery
+
+After generation or editing, preserve original outputs, record provenance, verify asset mapping, and create delivery derivatives only under the approved workflow. Load [Drawing Archive, WebP Delivery, and Provenance Verification](references/archive-and-delivery.md) for the complete procedures, including original-image identity, SHA-256 handling, WebP derivatives, manifest verification, and the approved GitHub Action.
+
 ## Supporting references
+- `references/series-continuity-and-iteration.md` — series identity, prompt lineage, closeout, and iteration.
+- `references/generation-recovery-and-provenance.md` — refusal-aware recovery, prompt audits, attempt ledgers, and provenance.
+- `references/archive-and-delivery.md` — original-image preservation, hashes, WebP delivery, and archive verification.
 
 - `references/series-continuity-and-iteration.md` — series identity, prompt lineage, closeout, and iteration.
 - `references/generation-recovery-and-provenance.md` — refusal-aware recovery, prompt audits, attempt ledgers, and provenance.
