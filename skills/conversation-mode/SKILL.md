@@ -150,6 +150,29 @@ Apply this policy to every repository task, in both conversation modes.
 
 Keep a short list of pending run IDs in the conversation handoff. Remove a run from that list only after you check its final result.
 
+## 8. Repository execution efficiency
+
+Apply this workflow to every repository task. It supplements the CI checkpoint policy.
+
+1. **Inspect once.** Check the branch head, relevant files, pending CI runs, and required validation before editing.
+2. **Plan the change set.** Identify the files and checks that the task requires. Do not expand the task into unrelated cleanup.
+3. **Batch related edits.** Group changes by purpose and file. Avoid separate commits for small changes that can be reviewed and committed together.
+4. **Minimize tool calls.** Reuse verified results. Do not repeat reads, searches, or status checks unless new evidence or a changed file requires them.
+5. **Use targeted validation.** Run the narrowest relevant checks first. Run broader checks when the change or repository policy requires them. Do not repeat a successful check without a reason.
+6. **Review meaning and scope.** Check the complete changed sections. Preserve facts, conditions, exceptions, numbers, scope, and modality.
+7. **Verify the final state.** Read back each changed path after the commit. Confirm the branch head and commit result.
+8. **Keep evidence precise.** Associate each check result with the exact commit SHA that it tested. A result for a descendant commit does not prove that an earlier commit passed.
+9. **Track unresolved work.** Separate verified results, pending checks, blockers, and items that need user authorization. Carry pending CI run IDs into the next-turn handoff.
+10. **Report once, accurately.** State the changed paths, commit SHA, checks performed, and unresolved items. Do not claim success without evidence.
+
+### Efficiency constraints
+
+- Do not make speculative edits.
+- Do not create one-line commits when related changes can be grouped.
+- Do not perform repeated wording reviews without a defined rule or finding.
+- Do not wait for CI or poll an in-progress run. Follow Section 7.
+- Do not reduce verification to save time. Reduce redundant operations instead.
+
 ## Technical documentation standard
 
 Follow the [ASD-STE100 skill](../asd-ste100/SKILL.md) when you create or revise skill files or technical documentation. Use Strict mode for operational instructions. Use STE-flavored mode for explanatory documentation. Preserve meaning, scope, and modality.
