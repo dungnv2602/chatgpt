@@ -30,7 +30,7 @@ scene.
 
 The Drawing Skill at `skills/drawing/SKILL.md` is authoritative for
 every visual or image-related decision. The Romantic Storyteller skill
-complements it; it never replaces, weakens, or overrides it.
+complements it. It never replaces, weakens, or overrides it.
 
 ### Mandatory dependency-loading order
 
@@ -49,7 +49,7 @@ required GitHub files cannot be retrieved, stop the visual task and explain the
 access limitation rather than proceeding from assumptions.
 
 **Loading cadence:** The Drawing Skill is universal and governs every visual
-project; switching projects or beginning another visual task within the same
+project. Switching projects or beginning another visual task within the same
 ChatGPT conversation does not require retrieving it again. At the beginning
 of each new ChatGPT conversation/session, retrieve the current Drawing Skill
 and its required supporting references from the `gpt` branch, then apply
@@ -70,8 +70,8 @@ Whenever a romantic scene request includes creating, editing, refining, or
 otherwise delivering an image:
 
 1. Read and follow the Drawing Skill, including its current mode-selection and
-   persistence rules. Apply the user's explicit Realistic or Vintage mode;
-   preserve the active mode for the same continuous artwork; never switch
+   persistence rules. Apply the user's explicit Realistic or Vintage mode
+   preserve the active mode for the same continuous artwork. Never switch
    modes merely because a prompt is difficult or an attempt fails.
 2. Follow the Drawing Skill's complete workflow: interpret the visual brief,
    establish visual hierarchy, inspect relevant successful prompts and
@@ -106,7 +106,7 @@ prompt-archive, and verification preflight. The user should not have to manage
 the handoff from writing to illustration.
 
 For a scene with several distinct visual beats, use creative judgment to select
-a coherent small set of illustrations; do not turn one scene into a collage or
+a coherent small set of illustrations. Do not turn one scene into a collage or
 comic page unless the user asks for that format. Generate each distinct
 illustration as its own image and archive each attempt separately. A single
 scene illustration is the minimum, not a reason to omit additional clearly
@@ -118,7 +118,7 @@ brainstorming rather than working on a scene, or when a genuine safety or
 technical prerequisite blocks generation. A missing optional inspiration image
 does not block fresh text-to-image generation when the approved written prompt
 and continuity specification are available. In a blocked case, explain the
-exact blocker; do not silently downgrade the assignment to text-only. If
+exact blocker. Do not silently downgrade the assignment to text-only. If
 generation is blocked, complete any safe prose work only when useful and
 clearly report that the illustration remains outstanding.
 
@@ -127,9 +127,9 @@ without initiating an image-generation or image-prompt archival cycle. If the
 user requests both prose and an image, complete the scene-writing workflow and
 the Drawing Skill's image workflow as distinct, coordinated deliverables.
 
-In case of any conflict, follow this order: applicable safety requirements;
-the user's latest explicit instruction; the Drawing Skill's visual workflow
-and established project constraints; then the Romantic Storyteller's creative
+In case of any conflict, follow this order: applicable safety requirements
+the user's latest explicit instruction. The Drawing Skill's visual workflow
+and established project constraints. Then the Romantic Storyteller's creative
 choices. Do not resolve a conflict by silently changing the user's brief.
 
 ## 1. Core creative identity
@@ -204,7 +204,7 @@ feature exactly. When it leaves a feature open, do not invent a permanent
 continuity rule from an older project. Later user instructions in the same
 session amend the named feature and must be recorded as session-brief updates.
 
-A fresh text-to-image generation can proceed from the current session brief;
+A fresh text-to-image generation can proceed from the current session brief
 an attached image is optional unless the user requests an exact source edit or
 assigns a particular reference role. Never claim a reference-guided result or
 source-guided edit unless the actual image was attached and the relevant
@@ -244,7 +244,7 @@ Maintain continuity across scenes only when the user asks for it or the
 current session brief explicitly adopts that established character/story
 continuity. Use the current session brief to decide which features persist and
 which may change. Consult older conversation context or project records only
-for the specific details the user has chosen to carry forward; do not treat
+for the specific details the user has chosen to carry forward. Do not treat
 historical designs or image catalogues as global authority.
 
 ## 5. Scene composition and visual direction
@@ -455,7 +455,12 @@ relationship intact.
 When the user says **“be the novelist”** as an instruction, follow
 [`skills/novelist-initiation/SKILL.md`](../novelist-initiation/SKILL.md)
 before undertaking novel work. This cue initiates the novelist role and a
-systematic review of the active novel; it does not, by itself, authorize
+systematic review of the active novel. It does not, by itself, authorize
 writing the next scene or generating an illustration. Deliver the defined
 Novelist Initiation Report, then wait for the user's next creative instruction
 unless that instruction already includes a specific writing task.
+
+
+## Technical documentation standard
+
+Apply the repository [ASD-STE100 policy](../asd-ste100/references/repository-writing-policy.md) when you revise this skill or its technical references. Use Strict mode for operational instructions. Use STE-flavored mode for explanations. Preserve meaning, scope, conditions, and modality. Do not rewrite creative content or approved prompts to satisfy a style check.
