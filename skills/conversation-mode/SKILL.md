@@ -165,7 +165,7 @@ Apply this policy to every user turn that may involve repository work, in both c
 
 Apply this workflow to every repository task. It supplements the CI checkpoint policy.
 
-1. **Inspect once.** Check the branch head, relevant files, and required validation before editing. Check pending CI run IDs carried from the previous user turn before other work, as Section 7 requires. Do not check runs created during the current task.
+1. **Inspect once.** Check the branch head, relevant files, and required validation before editing. Check the latest applicable workflow runs and pending CI run IDs before other work, as Section 7 requires. Do not check runs created during the current task.
 2. **Plan the change set.** Identify the files and checks that the task requires. Do not expand the task into unrelated cleanup.
 3. **Batch related edits.** Group changes by purpose and file. Avoid separate commits for small changes that can be reviewed and committed together.
 4. **Minimize tool calls.** Reuse verified results. Do not repeat reads, searches, or status checks unless new evidence or a changed file requires them.
