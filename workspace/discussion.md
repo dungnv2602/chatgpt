@@ -1,3 +1,15 @@
+### Audit scope correction and workflow update
+
+The entire `archive/` directory is excluded from the repository documentation audit. Completed task records are stored under `archive/`, not under `workspace/`.
+
+The workflow now treats `archive/` as retention-only:
+- Do not read, scan, audit, lint, or modify files under `archive/`.
+- Exclude the directory from full and changed-document lint source selection.
+- Exclude it from active Markdown link-source scans.
+- For links from active documents to archived paths, check only target-path existence. Do not inspect archived file contents or heading anchors.
+
+The historical-link review and its approval gate are removed from the remaining audit work. Earlier task-log statements about a proposed archive review are historical and superseded by this scope correction.
+
 ### Scope correction: exclude `archive/` entirely
 
 You are correct. Completed task records are archived in the `archive/` folder, not under `workspace/`. My reference to “archived task records under workspace” was incorrect.
