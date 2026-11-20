@@ -25,7 +25,7 @@ Task operations follow [The Worker skill](../skills/the-worker/SKILL.md).
 - Preserve original user requests and relevant clarifications in task records.
 - Record every meaningful action and result in the task file.
 - Keep the board as an index. Do not duplicate detailed progress there.
-- Verify repository state before resuming a task.
+- Check repository state before resuming a task.
 - Update the task record before switching tasks or ending work.
 - Create necessary assistant follow-ups automatically.
 - Mark optional assistant improvements as Proposed. Wait for user approval before execution.
@@ -50,7 +50,7 @@ Use YYYYMMDD-HHMMSS-short-kebab-title.md for task filenames.
 
 ## Recovery
 
-Read this file, then [task_board.md](task_board.md), then the selected task record. Verify the repository before resuming. Follow the task's Next Actions.
+Read this file, then [task_board.md](task_board.md), then the selected task record. Check the repository before resuming. Follow the task's Next Actions.
 
 In Condensed Mode, Conversation Mode also reads [discussion.md](discussion.md) to recover unresolved discussions. Default Mode does not use that file.
 
