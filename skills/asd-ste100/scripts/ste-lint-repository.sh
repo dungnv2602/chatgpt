@@ -31,7 +31,6 @@ case "$file" in
   skills/philosophy-religion-asceticism/references/source-standards.md) baseline=1 ;;
   skills/session-archiving/SKILL.md) baseline=7 ;;
   skills/session-archiving/references/archive-records-and-image-prompts.md) baseline=20 ;;
-  skills/session-archiving/references/drawing-session-closeout.md) baseline=2 ;;
   skills/session-archiving/references/image-provenance-and-webp.md) baseline=2 ;;
 esac
 
