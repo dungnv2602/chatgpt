@@ -96,8 +96,9 @@ These six habits cover most of what makes machine-written English hard to parse.
    - In STE-flavored mode, flag lexical rules. Do not enforce them in the rewrite.
    - The linter has no STE-flavored mode. Synonym rotation remains a hard finding.
    - Use `--disable synonym-rotation` to disable that check.
-   - Run `scripts/ste-lint.py` for a mechanical check of supported structural rules.
-   - Use stdin or file arguments. Use `--json` for structured output.
+   - Do not run the linter locally. Push the changes to branch `gpt` and let GitHub Actions validate them.
+   - The `ste-lint-changed.yml` workflow checks changed Markdown files outside `skills/asd-ste100/`. The `ste-lint-full-docs.yml` workflow checks the technical documentation when files in `skills/asd-ste100/` change.
+   - The workflows call `scripts/ste-lint-repository.sh`, which runs the linter. Use stdin or file arguments and `--json` only when you need to understand the linter interface or interpret workflow output.
    - The linter checks semicolons, sentence length, phrasal verbs, nominalization, marketing adjectives, synonym rotation, supported dangling conjunctions, passive voice, and compound tenses.
    - The linter does not flag hedges or modality.
    - Use `--baseline N` to allow N hard findings when you adopt an existing document.
