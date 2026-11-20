@@ -1,8 +1,11 @@
 ---
 name: conversation-mode
 description: Control how ChatGPT collaborates with the user through Default Mode or Condensed Mode. Use when the user asks to switch conversation style, work mainly in the repository with minimal chat output, or return to normal conversational responses.
-created: 2026-11-18T13:18
-updated: 2026-11-18T13:18
+metadata:
+  project-role: foundational
+  format: agentskills
+  created: "2026-11-18T13:18"
+  updated: "2026-11-18T13:18"
 ---
 
 # Conversation Mode
