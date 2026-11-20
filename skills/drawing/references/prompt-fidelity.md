@@ -177,7 +177,24 @@ Do not silently decide an ambiguous detail when different interpretations would 
 
 Do not use "prompt optimization" as a general license to add negative lists, generic safety language, extra scene details, or assistant preferences. Optimization is acceptable only when it improves the expression of the same authorized direction.
 
-## 9. Reuse, redo, retry, and failure handling
+## 9. Verbatim prompt reuse and metadata isolation
+
+When the user assigns an existing successful prompt as the baseline for an adjustment, use its exact complete text. Copy it verbatim, then modify only the smallest passage needed to implement the user's latest request.
+
+Do not paraphrase, summarize, reconstruct, polish, reorganize, or replace the assigned prompt. Do not turn it into a description of the prompt or explain its provenance inside the generation text. Preserve every unaffected word and its order.
+
+The generation prompt is for the image tool, not for the repository or the assistant's workflow. Never include:
+- Attempt numbers or attempt labels.
+- File names, folder paths, repository paths, or commit references.
+- Prompt-record names, prompt IDs, archive labels, or instructions to retrieve a prompt.
+- Generation IDs, asset IDs, or provenance notes.
+- References to an image, source image, prior image, uploaded image, reference image, attachment, or image-editing operation.
+
+Keep all provenance, baseline selection, and archival details in the attempt record. The submitted generation prompt must contain only the visual instructions needed to produce the requested final result.
+
+Before submission, compare the prompt with the assigned text. Confirm that every unchanged passage is verbatim and that every changed passage is required by the user's request. If a metadata reference or image reference appears in the prompt, remove it before archiving and generation.
+
+## 11. Reuse, redo, retry, and failure handling
 
 Before reusing a prompt, compare it with the current brief and every relevant later instruction. An older prompt is not automatically safe to reuse in full.
 
@@ -204,7 +221,7 @@ When an applicable safety rule genuinely requires a restriction, apply only what
 
 Do not use the safety exception as a pretext to preserve wording the user has rejected. If a particular rejected instruction is genuinely mandatory, distinguish that specific requirement from optional wording and do not add anything beyond it.
 
-## 11. Complete-prompt audit before every generation or edit
+## 12. Complete-prompt audit before every generation or edit
 
 Before generation or editing, inspect the complete prompt—not just the newly edited sentence or the most visible paragraph.
 
