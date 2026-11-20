@@ -236,21 +236,31 @@ The user's opening brief for a specific drawing session is the source of truth f
    Never attach, pass, or otherwise use the existing image as the source or
    reference for the adjustment. This rule applies even when the image is
    available in the conversation.
-9. **Keep image references out of the next prompt:** Write the revised prompt
-   as a self-contained generation prompt describing the desired final result.
-   Do not refer to an image, source image, uploaded image, previous image,
-   reference image, attachment, or an edit operation. Do not use wording such
-   as "edit this image", "based on the image", "use the attached image", or
-   "preserve the image". Translate the successful prompt's visual content into
-   direct scene and subject instructions, then state only the requested
-   changes and the details to preserve. The prompt must not depend on an image
-   being attached.
+9. **Copy the assigned prompt as-is before changing it:** Start with the
+   complete, exact text of the assigned successful prompt. Keep its wording,
+   order, and details unchanged. Apply the user's requested change directly to
+   the smallest relevant passage. Do not paraphrase, summarize, rewrite, or
+   reconstruct the prompt from notes. Do not replace its wording with a
+   description of what the prompt says.
+10. **Keep archival and workflow metadata out of the generation prompt:** Never
+    mention attempt numbers, file names, folder paths, repository records,
+    prompt records, prompt IDs, generation IDs, source labels, or instructions
+    for retrieving another prompt. The image tool cannot locate those records.
+    These details belong only in the archive, never in the prompt submitted to
+    the image tool.
+11. **Keep image references out of the next prompt:** Write the revised prompt
+    as a self-contained generation prompt. Do not refer to an image, source
+    image, uploaded image, previous image, reference image, attachment, or an
+    edit operation. Do not use wording such as "edit this image", "based on
+    the image", "use the attached image", or "preserve the image". The prompt
+    must describe the intended final visual result directly and must not depend
+    on an attachment or external record.
 10. If the successful prompt cannot be recovered, use the active session brief
     and the available authoritative attempt records. Disclose that the prompt
     record is missing or incomplete; do not ask the user for an image as a
     substitute. Ask a question only if an essential creative requirement cannot
     be resolved from the brief or prompt history.
-10. If the current-session brief conflicts with a successful historical prompt,
+11. If the current-session brief conflicts with a successful historical prompt,
     preserve the user's current brief. Use the old prompt only as a technical
     wording aid for compatible details. Do not import its outdated appearance,
     clothing, setting, framing, or style.
@@ -427,14 +437,16 @@ only what is needed, and explicitly exclude rejected additions or drift.
 
 Whenever the user asks to adjust, revise, refine, or change an existing result, use the exact successful authored prompt that produced that result as the sole baseline. Revise the prompt and generate a new result. This is the required method, not an optional preference.
 
-1. Locate and verify the target result's originating successful prompt in its authoritative attempt record.
-2. Preserve all unrequested details specified by that prompt, including subject identity, face, hairstyle, wardrobe, pose, composition, camera, lighting, environment, atmosphere, and rendering treatment.
-3. Apply only the user's requested changes. Make the smallest necessary prompt revision. Do not add unrelated improvements or rewrite successful details without a reason.
-4. Write the next prompt as a complete, self-contained description of the desired final result. Describe the subject and scene directly. Never mention an image, source image, uploaded image, prior image, reference image, attachment, or image-editing operation in the prompt. Do not write instructions such as "edit this image", "use the attached image", "based on the previous image", or "preserve the image".
-5. Never request an image from the user for an adjustment. Never attach, pass, or use an existing image as the base or reference for that adjustment, even if it is present in the conversation. The successful authored prompt is the base.
-6. Generate a fresh result from the revised prompt. Record it as a prompt-based fresh generation/reconstruction. Do not claim direct-edit or source-linked provenance.
-7. Inspect the result against the successful prompt baseline and the requested changes. Record deviations and the actual outcome.
-8. If the successful prompt is missing, use the active session brief and any authoritative attempt record that remains available. Disclose the missing prompt details. Do not ask for an image to fill the gap.
+1. Locate and verify the exact successful authored prompt assigned as the baseline.
+2. Copy the complete prompt verbatim. Do not paraphrase, summarize, reconstruct, or rewrite it.
+3. Apply only the user's requested changes directly to the copied text. Preserve every other word, order, and detail.
+4. Remove or amend only text that the user's latest instruction changes. Do not add unrelated improvements.
+5. Keep all archival metadata out of the submitted prompt. Never include attempt numbers, file names, paths, repository or prompt-record references, generation IDs, or retrieval instructions.
+6. Keep all image references and editing-operation language out of the submitted prompt. Describe the final visual result directly; do not refer to an image, source image, previous image, attachment, or edit operation.
+7. Never request, attach, pass, or use an existing image as the base or reference for an adjustment, even if it is present in the conversation.
+8. Generate a fresh result from the revised prompt. Record it as a prompt-based fresh generation. Do not claim direct-edit or source-linked provenance.
+9. Inspect the result against the assigned prompt and requested changes. Record deviations and the actual outcome.
+10. If the assigned prompt is missing, use the active session brief and available authoritative written records. Disclose the missing text. Do not ask for an image to fill the gap.
 
 There is no direct-edit exception in this workflow. Even when the user asks to adjust an existing result, perform a prompt-only revision and fresh generation.
 
