@@ -33,3 +33,7 @@ The tool returned the following image description:
 - **Observed result:** The returned dress has a more visibly textured surface, but the exact cotton material and source-image preservation cannot be confirmed. Other visual details appear similar, but similarity is not proof of source linkage.
 - **Outcome:** Image generated, but source-linked fabric-only edit is unconfirmed; exact cotton result remains for user review.
 - **Image storage:** Returned in this conversation; not stored in the GitHub repository.
+
+## Repository images
+
+- [file_000000003dcc820794b01b3955e1d1f1.png.webp](images/file_000000003dcc820794b01b3955e1d1f1.png.webp)
