@@ -71,17 +71,19 @@ This cadence does not delete the requirement to load a task-specific skill when 
 
 ### First-response execution rule
 
-The first assistant response after the user says `start session` must be a startup notice. It must not ask for the user's goal, confirmation, or more permission.
+The first response after `start session` must give a startup notice. Do not ask for the user's goal, confirmation, or extra permission.
 
-After the notice, perform the required retrievals below. Do not ask the user to repeat or explain the cue. Do not claim that a verify is underway unless you are performing its retrieval.
+In Condensed Mode, put the notice in `workspace/discussion.md` and provide only its direct link. In Default Mode, give the notice in chat.
 
-The startup gate is a prerequisite verify, not the session archive itself. Do not create or update dated archive records merely because a new conversation has started. Once the required skills and references have been retrieved and read successfully, report verification and then address the user's request. If a retrieval fails, stop project work and identify the exact missing path.
+Then perform the required retrievals. Do not ask the user to repeat the cue. Do not claim a retrieval is underway unless you are performing it.
+
+The startup gate checks prerequisites. It is not a session archive. Do not create dated archive records merely because a new conversation started. Stop project work only when a required file retrieval fails. Report the exact missing path.
 
 ### Mandatory session-start execution gate
 
 When the user says **`start session`**, run this sequence before project work. Also run it as a prerequisite when the user says **`start a drawing session`** or **`Be the novelist`** and foundational initialization has not passed in the current conversation:
 
-1. **Notify the user first.** State that the requested foundational checks are starting. Do not start project work until they pass.
+1. **Notify the user first.** State that foundational retrievals are starting. In Condensed Mode, put this notice in `workspace/discussion.md` and provide only its direct link.
 2. Fetch and read this Session Archiving skill from branch `gpt`.
 3. Fetch and read `skills/conversation-mode/SKILL.md` from the same branch.
 4. Fetch and read `skills/the-worker/SKILL.md` from the same branch.
@@ -89,12 +91,12 @@ When the user says **`start session`**, run this sequence before project work. A
 6. Fetch and read `skills/asd-ste100/SKILL.md` from the same branch.
 7. Fetch and read `skills/github-actions/SKILL.md` from the same branch.
 8. Confirm that every required retrieval succeeded and that you read each file. Keep the verified instructions for the rest of the conversation.
-9. After all six foundational skills load, run the mandatory CI preflight in `skills/github-actions/SKILL.md`. Inspect available results and repair applicable completed failures. Do not wait for in-progress runs or poll for completion. Start project work when the preflight finds no completed failure that requires repair.
-10. Report completion only after retrieval and CI checks pass. If a required retrieval or CI access fails, report its exact blocker and stop project work.
+9. After all six foundational skills load, run one bounded CI snapshot as defined in `skills/github-actions/SKILL.md`. Repair any newest completed failure that applies. Never wait or poll.
+10. Stop initialization only if a required skill retrieval fails or an actionable completed failure remains unrepaired. Pending, cancelled, absent, or inaccessible CI results do not block initialization. Record an unverified result without claiming success.
 
 Do not load the Drawing skill or its references during foundational initialization. After the foundational gate passes, load Drawing only when the task requires it. For a drawing session or novelist request, first verify the verified-load ledger. Reuse any Drawing files already read in this conversation and fetch only missing files. If foundational initialization already passed, do not run this gate again.
 
-**No premature-work exception after activation:** After the user invokes the cue that requires foundational initialization, do not start project work until the required checks pass. Do not substitute memory, previous-session reads, Library copies, or readiness claims for fresh GitHub retrievals in this conversation.
+**No premature-work exception after activation:** After the user invokes an initialization cue, retrieve every required file before project work. Repair any newest completed CI failure that applies. Do not wait for pending, cancelled, or unavailable CI results. Do not substitute memory, previous-session reads, Library copies, or readiness claims for fresh GitHub retrievals.
 
 **Notification and disconnection limitation:** Deliver the startup notice in the active conversation before retrieval begins. Do not promise to continue checks after a voice call ends or claim an independent callback/notification will occur. Complete and report the checks in the active conversation.
 

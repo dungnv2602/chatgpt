@@ -33,17 +33,18 @@ The scheduled archive-retention workflow is owned by GitHub Actions.
 
 ## 3. Mandatory CI preflight and repair
 
-This gate applies before the assistant handles every new user prompt. It applies to all request types and conversation modes.
+Run one bounded CI snapshot before handling every new user prompt. This rule applies to all request types and conversation modes.
 
-1. Inspect the latest available run for each applicable workflow on branch `gpt`. Also inspect the combined status and check runs for the current branch head.
-2. Do not wait for queued or in-progress runs. Do not poll GitHub Actions for completion. Continue with the user's prompt when no completed failure requires repair.
-3. If the latest completed applicable run failed, inspect its jobs, failed steps, and logs. Resolve the underlying cause on `gpt` before handling the user's prompt. Do not weaken tests, path coverage, or baselines to force a pass.
-4. After you push a repair or other change, do not wait for or poll its CI results. GitHub Actions owns execution. Review the available result at the next mandatory preflight.
-5. Do not manually dispatch, rerun, or locally reproduce a GitHub Actions workflow unless the user explicitly asks for that operation. Do not use a rerun to hide a repository failure.
-6. Never run the STE linter locally. Never run CI workflows or CI test suites locally as a substitute for GitHub Actions.
-7. If GitHub Actions cannot be accessed, record the access blocker in `workspace/discussion.md` in Condensed Mode. Do not claim that CI is clear.
+1. Inspect the newest available run for each applicable workflow on branch `gpt`. Also inspect the current branch head's combined status and check runs.
+2. For each workflow, act only on its newest run. A completed success clears that workflow. A completed failure requires investigation and repair.
+3. Treat an older failure as superseded when a newer run for the same workflow succeeds.
+4. Treat queued, in-progress, cancelled, skipped, or absent runs as pending or unavailable. They do not block the user's request. Never wait, poll, dispatch, or rerun to obtain a result.
+5. When a newest completed run fails, inspect its jobs, failed steps, and logs. Fix the cause on `gpt` before handling the user's request. Do not weaken tests, path coverage, or baselines.
+6. After you push a repair, continue with the user's request. GitHub Actions owns validation. Review the result during the next mandatory preflight.
+7. Never run the STE linter, CI workflows, or CI test suites locally. Do not manually dispatch or rerun workflows unless the user explicitly asks.
+8. If GitHub Actions cannot be accessed, make one bounded access attempt. Record the status as unverified in `workspace/discussion.md` in Condensed Mode. Do not claim that CI passed. Continue with the user's request. Do not let unavailable CI access deadlock the conversation.
 
-After loading skills in response to `start session`, `start a drawing session`, or `Be the novelist`, run this gate again. Do not wait for in-progress runs. Inspect available completed results and repair any applicable completed failure before project work or an initialization-complete report.
+After loading skills for `start session`, `start a drawing session`, or `Be the novelist`, run the same one-time snapshot. Repair any visible newest completed failure before project work. Do not wait for pending or unavailable results. If a repair starts new CI runs, continue initialization without waiting for them.
 
 ## 4. Inspect and preserve validation scope
 

@@ -1,6 +1,6 @@
 # Task Board
 
-Last updated: 2026-11-20 13:30 UTC
+Last updated: 2026-11-20 14:02 UTC
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
@@ -8,9 +8,7 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## Current Execution
 
-| ID | Task | Priority | Status | Origin | Updated | Record |
-|---|---|---:|---|---|---|---|
-| 20261120-133053 | Require CI preflight before every prompt and after skill loading | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-133053-ci-preflight-before-every-prompt.md) |
+_No current execution task._
 
 ## In Progress
 

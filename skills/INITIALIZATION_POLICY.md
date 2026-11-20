@@ -33,7 +33,9 @@ A specialist-role request does not change the `start session` cue. It authorizes
 - Load only the files required by the session-start procedure or the requested specialist task.
 - Do not load unrelated skills or references.
 - Report the exact path of a missing or unverified file.
-- Do not claim initialization is complete until every required check passes.
+- Do not claim initialization is complete until every required skill retrieval succeeds and every actionable completed CI failure is repaired.
+- Use one bounded CI snapshot. Pending, cancelled, skipped, absent, or inaccessible CI results do not block initialization. Never wait for or poll CI.
+- Never run the linter or CI workflows locally. Let GitHub Actions execute them.
 - Treat the GitHub repository and branch `gpt` as the sole source of truth.
 
 ## Foundational standards
@@ -112,6 +114,15 @@ Initialization is conditional. Do not load project instructions or skills at the
 - **Behavioral impact:** Every skill folder gained a conforming `SKILL.md`. Detailed procedures moved into focused references. Foundational initialization remained conditional.
 - **Verification:** Manual metadata, naming, description, line-count, link, activation, and read-back checks passed. The official validator was not run.
 
+### Version 5 — Non-blocking CI preflight
+
+- **Date:** 2026-11-20
+- **Requested change:** Prevent CI preflight from blocking the conversation while GitHub Actions runs.
+- **Reason:** Pending or inaccessible results must not create a deadlock.
+- **Behavioral impact:** Use one bounded snapshot. Repair visible newest completed failures. Do not wait or poll. Pending, cancelled, absent, or inaccessible results do not block initialization.
+- **Files modified:** GitHub Actions, The Worker, Session Archiving, Session Start, Agent Skill Authoring, and this policy.
+- **Verification:** Read back all changed paths. Do not run lint or CI locally. Delegate CI execution to GitHub Actions.
+
 ### Version 4 — ASD-STE100 made foundational
 
 - **Date:** 2026-11-20
@@ -148,7 +159,8 @@ Use this template:
 - [ ] Skill and technical documentation use the correct writing mode.
 - [ ] Rewrites preserve meaning, facts, conditions, scope, and modality.
 - [ ] Only required files load.
-- [ ] Missing prerequisites stop initialization and are reported by exact path.
+- [ ] Missing skill prerequisites stop initialization and are reported by exact path.
+- [ ] Pending or unavailable CI results never block initialization.
 - [ ] Operational instructions remain consistent across initiation files.
 - [ ] Changes are committed to branch `gpt` and verified after writing.
 

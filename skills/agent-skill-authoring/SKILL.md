@@ -198,7 +198,11 @@ Preserve all facts, conditions, exceptions, numbers, scope limits, and modality.
 
 Do not rewrite creative writing, dialogue, marketing copy, approved creative prompts, code, or examples that intentionally demonstrate a rule violation.
 
-Do not run the linter locally. Push technical-document changes to branch `gpt`. Let GitHub Actions validate them. Review findings during every mandatory CI preflight. Resolve failures before handling the user's prompt. The linter checks only supported patterns. It cannot prove meaning or dictionary compliance.
+Do not run the linter or CI workflows locally. Push technical-document changes to branch `gpt`. Let GitHub Actions validate them.
+
+During each mandatory preflight, inspect one bounded snapshot. Repair the newest completed failure for an applicable workflow before handling the prompt. Do not wait or poll. Pending, cancelled, absent, or inaccessible results do not block work. Review new CI results at the next preflight.
+
+The linter checks only supported patterns. It cannot prove meaning or dictionary compliance.
 
 Do not claim certified ASD-STE100 compliance. The repository does not contain the official controlled dictionary.
 
@@ -236,7 +240,8 @@ Before considering a skill complete, check all of the following:
 - [ ] The correct ASD-STE100 mode applies to skill and technical documentation.
 - [ ] Sentence length, paragraph structure, and punctuation follow the repository writing policy.
 - [ ] Every rewrite preserves facts, conditions, scope, and modality.
-- [ ] Complete the mandatory CI preflight before work and after cue-triggered skill loading.
+- [ ] Complete the one-time CI snapshot before work and after cue-triggered skill loading.
+- [ ] Do not wait for CI, poll for results, or run lint and CI workflows locally.
 
 ### Integration and integrity
 - [ ] The skill is connected to the correct activation path.

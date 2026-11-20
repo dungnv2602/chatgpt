@@ -18,13 +18,15 @@ Conversation Mode controls communication style and access to the temporary discu
 
 ## Mandatory CI gate before every prompt
 
-Before handling any new user prompt, follow the pre-prompt CI gate in `skills/github-actions/SKILL.md`. This rule applies to every request and conversation mode.
+Before handling every new user prompt, follow the one-time pre-prompt CI snapshot in `skills/github-actions/SKILL.md`. This rule applies in every conversation mode.
 
-If the latest applicable run failed, inspect its jobs and logs. Resolve the cause on branch `gpt`. Wait until all applicable latest runs pass before handling the prompt.
+Repair a failure only when the newest run for an applicable workflow is completed with a failure conclusion. Inspect its jobs and logs. Fix the cause on branch `gpt`.
 
-If GitHub Actions cannot be accessed, stop and report the blocker. Do not process the user's request.
+Do not wait for or poll CI. Pending, in-progress, cancelled, skipped, or absent runs do not block the prompt. A newer successful run supersedes an older failure.
 
-After cue-triggered skill loading, run the post-load CI gate before project work.
+If GitHub Actions is unavailable after one bounded access attempt, record the status as unverified. Continue with the user's request. Do not claim that CI passed.
+
+After cue-triggered skill loading, repeat the same one-time snapshot. Do not wait for new runs after a repair or other push.
 
 ## Activation and authority
 
