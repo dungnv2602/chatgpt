@@ -120,14 +120,14 @@ Do not record credentials, access tokens, hidden reasoning, or unrelated sensiti
 - Task creation alone does not count as user approval.
 - Pause only when the task requires a decision or approval that the user has not already given.
 - Treat approval as authorization to execute the approved scope. Do not expand that scope without approval.
-- When you need to communicate anything beyond the task link, write that information in `workspace/discussion.md` and provide only its direct link.
-- Put progress that the user needs to know, decisions, blockers, verification results, and task outcomes in `workspace/discussion.md`. Do not send these details as chat text.
+- When communication requires user input, a decision, approval, or clarification, put only that unresolved matter in `workspace/discussion.md` and provide its direct link.
+- Keep progress, blockers that need no user input, verification results, and task outcomes in the task record. Do not place routine status or completed information in `workspace/discussion.md`.
 - At task completion, keep the factual work report in the task record. Add or retain a discussion entry only when a user decision, clarification, or follow-up remains open. Remove the resolved thread before the final response; if no open discussions remain, leave the empty-state placeholder.
 - Fetch the committed discussion file from branch `gpt` and verify its contents before providing its link.
 - If task creation fails, do not claim success or provide an invented task link.
 - If work fails or stops before completion, record durable progress in the task record. Put only a decision, clarification, or blocker that needs user input in `workspace/discussion.md`, then provide its link.
 
-The task link identifies the active work. The discussion link carries all other user-facing communication.
+The task link identifies active work. Use the discussion link only while one or more unresolved matters need user input; it is not a progress-report destination.
 
 ### When no commit can honestly be provided
 
@@ -135,7 +135,7 @@ Never invent, guess, reuse, or report a commit hash that does not belong to the 
 
 If project work produces no project-file change, do not invent a project-change commit. A required discussion-register update is a separate repository change and may have its own commit.
 
-If a tool, permission, or verification failure prevents completion, record the blocker in `workspace/discussion.md`. Provide only its direct link.
+If a tool, permission, or verification failure prevents completion, record the blocker in the task record. Add it to `workspace/discussion.md` only when it requires user input or a decision; otherwise provide the task link.
 
 If the task needs essential clarification or user approval, record the minimum necessary question in `workspace/discussion.md`. Provide only its direct link. Do not create a project-change commit only to satisfy the response format.
 
