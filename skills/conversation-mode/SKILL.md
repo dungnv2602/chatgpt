@@ -120,22 +120,24 @@ Do not record credentials, access tokens, hidden reasoning, or unrelated sensiti
 
 ### User-visible output
 
-- Condensed Mode replies contain direct GitHub links only.
-- Do not add labels, headings, status text, progress updates, or summaries.
-- After successful task creation, provide only the direct task-record link.
-- Continue the task immediately after you provide the link when the user has already approved the work or the work does not require approval.
+- In Condensed Mode, send only one of these two links:
+  1. The direct link to the task record for the task in progress.
+  2. The direct link to `workspace/discussion.md`.
+- Do not send any other link in Condensed Mode.
+- Do not add labels, headings, status text, progress updates, summaries, or other chat text.
+- After task creation, provide the task-record link. Continue work immediately when the user has approved the task or the task does not require approval.
 - Do not ask for approval again when the user has already approved the task.
 - Task creation alone does not count as user approval.
 - Pause only when the task requires a decision or approval that the user has not already given.
 - Treat approval as authorization to execute the approved scope. Do not expand that scope without approval.
-- When the task reaches an outcome, write a factual report to `workspace/discussion.md`.
-- Include the outcome, task link, changed paths, commit link when available, verification result, and blocker or next action.
-- Fetch the committed report from branch `gpt` and verify it before replying.
-- After verification, provide only the direct link to `workspace/discussion.md`.
+- When you need to communicate anything beyond the task link, write that information in `workspace/discussion.md` and provide only its direct link.
+- Put progress that the user needs to know, decisions, blockers, verification results, and task outcomes in `workspace/discussion.md`. Do not send these details as chat text.
+- At task completion, write the factual work report to `workspace/discussion.md`. Include the outcome, task link, changed paths, commit link when available, verification result, and blocker or next action.
+- Fetch the committed discussion file from branch `gpt` and verify its contents before providing its link.
 - If task creation fails, do not claim success or provide an invented task link.
-- If work fails or stops before completion, still report the actual outcome and blocker in `workspace/discussion.md`.
+- If work fails or stops before completion, record the actual outcome and blocker in `workspace/discussion.md` and provide its link.
 
-The task link is the inspection gate. The discussion link is the final report.
+The task link identifies the active work. The discussion link carries all other user-facing communication.
 
 ### When no commit can honestly be provided
 
