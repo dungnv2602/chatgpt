@@ -207,7 +207,7 @@ The records support a workflow failure to apply the latest instruction when reus
 | Countermeasure | Evidence | Result |
 |---|---|---|
 | Remove only the specifically rejected closing sentence while preserving all other prompt wording | [20 November — Attempt 46](../../../../drawings/2026-11-19/attempt-46.md) | The prompt record confirms the requested sentence was removed and the remaining wording was preserved. The user has not yet approved the resulting image. |
-| Make pattern consultation and a full prompt-fidelity check mandatory before committing a prompt | [20 November — Attempts 45–46](../../../../drawings/2026-11-19/attempt-45.md); [Drawing Skill](../../SKILL.md) | The prevention procedure was adopted. Its effectiveness across future attempts is not yet established. |
+| Make pattern consultation and a full prompt-fidelity check mandatory before committing a prompt | [20 November — Attempts 45–46](../../../../drawings/2026-11-19/attempt-45.md) and [Drawing Skill](../../SKILL.md) | The prevention procedure was adopted. Its effectiveness across future attempts is not yet established. |
 
 ### Effective prevention rule
 
