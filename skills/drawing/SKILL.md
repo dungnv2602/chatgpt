@@ -464,7 +464,7 @@ After generation or editing, preserve original outputs and record provenance. Ch
 
 - `references/style-guide.md` — mandatory foundational visual-mode definitions and cues.
 - `references/image-editing-protocol.md` — mandatory foundational source-reference and edit-verification procedure.
-- `references/prompt-fidelity.md` — required before drafting, reusing, revising, archiving, verifying, or submitting image prompts.
+- `references/prompt-fidelity.md` — required before drafting, reusing, revising, archiving, checking, or submitting image prompts.
 - `references/patterns/README.md` — canonical pattern index. Load the index and both pattern files once per conversation.
 - `references/patterns/successful-patterns.md` — evidence-backed successful techniques.
 - `references/patterns/failure-patterns.md` — documented failures and tested countermeasures.
