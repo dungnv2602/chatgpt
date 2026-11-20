@@ -65,7 +65,7 @@ If prompt reconstruction repeatedly misses the requested detail:
 Follow `skills/session-archiving/SKILL.md` for every attempt:
 
 1. Create or retrieve the current session-opening brief. Verify its exact path.
-2. For non-novel work, commit the authored prompt in its dated `prompts/YYYY-MM-DD/` attempt note. For a named novel scene, commit it in the authoritative scene-local illustration prompt record under `novels/[Novel-ID]/[Arc-Folder]/[Scene-Folder]/illustrations/`.
+2. For non-novel work, commit the authored prompt in its dated `drawings/YYYY-MM-DD/` attempt note. For a named novel scene, commit it in the authoritative scene-local illustration prompt record under `novels/[Novel-ID]/[Arc-Folder]/[Scene-Folder]/illustrations/`.
 3. Treat the session brief as the visual authority. Use the most recent successful prompt in the explicitly active series only as a compatible text baseline. Do not treat it as authority over the current brief.
 4. Treat later failed, rejected, partial, or missed-target prompts as diagnostic evidence only. Do not use them as the baseline.
 5. Record the session ID or brief path. Record the series ID or theme when it is explicitly active. Record the selected baseline source, operation type, and attached source reference.
