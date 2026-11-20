@@ -15,6 +15,10 @@ Use controlled prompt reconstruction by default:
 
 The source image may serve as a secondary visual reference. Use it only when helpful and when the user assigns that role. It is not the default editing method.
 
+**Do not request an image upload for continuity.** If the user asks to continue a series, use the most recent successful prompt in that series. If the user says to take a previous, approved, or assigned image as the base, locate the successful prompt linked to that image and use that prompt as the baseline. Do not ask the user to reattach the image. Continue through prompt-first reconstruction even when the image binary is unavailable. Explain that the operation is a reconstruction rather than a pixel-level edit only when that distinction is material to the user's request.
+
+If the relevant successful prompt is missing, use the active session brief and disclose that the prompt record could not be recovered. Do not ask for the image as a replacement for missing prompt history. Request an image only if the user specifically requires visual inspection of details not captured in the records, or a literal source-pixel edit that cannot be performed from prompt reconstruction.
+
 ## 2. Optional image-reference roles
 
 When the user includes an image, establish its role and priority:
