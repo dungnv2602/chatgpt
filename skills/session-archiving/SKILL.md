@@ -10,7 +10,7 @@ metadata:
 
 ## 1. Absolute workspace boundary
 
-**Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novel/`, `prompts/`, and `skills/`. Do not read, list, search, fetch, create, update, move, rename, or delete files outside those directories, except for the specifically authorized workflow exception below.
+**Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `prompts/`, and `skills/`. Do not read, list, search, fetch, create, update, move, rename, or delete files outside those directories, except for the specifically authorized workflow exception below.
 
 **Authorized WebP workflow exception:** The user authorized creation of exactly `.github/workflows/convert-images-to-webp.yml` on 12 November 2026 and explicitly approved its takeout-pipeline modification and persistent WebP staging extension on 20 November 2026. This authorization covers the current approved extension only; it does not authorize unrelated outside paths or any later workflow changes. Obtain fresh, explicit permission before future modifications.
 
@@ -19,7 +19,7 @@ This boundary applies to every future task and every tool call, not only archivi
 - The only permitted workspace roots are:
   - `images/` — images and visual references
   - `master/` — canonical master reference documents
-  - `novel/` — structured narrative records
+  - `novels/` — structured narrative records
   - `prompts/` — session records and prompt history
   - `skills/` — reusable skills and supporting references
 - Read and write files only by exact paths beginning with one of those approved directory names.
@@ -38,14 +38,14 @@ This boundary applies to every future task and every tool call, not only archivi
 - Workspace root: repository root, restricted to the approved directories above
 - Images and visual references: `images/`
 - Canonical master reference documents: `master/`
-- Novel and scene records: `novel/`
+- Novel and scene records: `novels/`
 - Session-level records, drawing-session briefs, and non-novel image-prompt logs: `prompts/`
 - Reusable skills and supporting references: `skills/`
 - Use `gpt` as the sole working branch for all future repository operations. Do not use the former `artwork/portrait-attempt-2026-11-10` branch. Do not modify `main` unless the user explicitly authorizes it.
 - Session-level conversation-integrity and summary records belong in `prompts/`:
   - `prompts/YYYY-MM-DD-conversation-integrity.md`
   - `prompts/YYYY-MM-DD-summary.md`
-- Non-novel image attempts use the dated `prompts/YYYY-MM-DD/` structure below. Named novel-scene illustrations use their authoritative scene-local prompt records under `novel/`; do not duplicate their prompt text or attempt history in `prompts/`.
+- Non-novel image attempts use the dated `prompts/YYYY-MM-DD/` structure below. Named novel-scene illustrations use their authoritative scene-local prompt records under `novels/`; do not duplicate their prompt text or attempt history in `prompts/`.
 - Store new retained non-novel generated drawing outputs under `drawings/YYYY-MM-DD/images/` as `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.), linked from their attempt record and daily README when provenance is verified. This does not authorize migration of existing assets. Store non-novel reference/source assets under `images/`; store novel-scene illustration binaries under `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. New user uploads intended for those permanent destinations first enter `images/takeout/` and are routed by the approved hand-off.
 - Keep skills and supporting references under `skills/`.
 
@@ -129,7 +129,7 @@ Close a drawing session only when the user explicitly requests closeout. A pause
 
 ## 9. Default handoff for a new chat
 
-Start by reading the relevant session records inside `prompts/` and, when continuing a novel illustration, the relevant scene-local records inside `novel/`. Read the active drawing-session brief before relying on any previous prompt or image. Then:
+Start by reading the relevant session records inside `prompts/` and, when continuing a novel illustration, the relevant scene-local records inside `novels/`. Read the active drawing-session brief before relying on any previous prompt or image. Then:
 - Treat the conversation-integrity file as the source for what was said.
 - Treat the summary as a quick orientation, not a replacement for the record.
 - Treat the dated image-prompt notes as authoritative for non-novel generation work.
