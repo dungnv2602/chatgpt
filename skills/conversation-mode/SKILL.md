@@ -123,8 +123,11 @@ Do not record credentials, access tokens, hidden reasoning, or unrelated sensiti
 - Condensed Mode replies contain direct GitHub links only.
 - Do not add labels, headings, status text, progress updates, or summaries.
 - After successful task creation, provide only the direct task-record link.
-- Stop after providing the task link. Wait for the user's explicit instruction to continue.
-- Do not treat task creation or a recorded approval state as permission to pass this inspection gate.
+- Continue the task immediately after you provide the link when the user has already approved the work or the work does not require approval.
+- Do not ask for approval again when the user has already approved the task.
+- Task creation alone does not count as user approval.
+- Pause only when the task requires a decision or approval that the user has not already given.
+- Treat approval as authorization to execute the approved scope. Do not expand that scope without approval.
 - When the task reaches an outcome, write a factual report to `workspace/discussion.md`.
 - Include the outcome, task link, changed paths, commit link when available, verification result, and blocker or next action.
 - Fetch the committed report from branch `gpt` and verify it before replying.
