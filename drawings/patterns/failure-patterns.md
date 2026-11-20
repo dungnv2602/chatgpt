@@ -184,3 +184,33 @@ Evaluate the changed attribute itself. A returned image is not a successful revi
 
 ### Limitations
 This is one observed clothing revision and does not prove that preceding visual context is the cause.
+
+---
+
+## F-007 — Prompt language can be retained after the user has explicitly rejected it
+
+- **Confidence:** Provisional
+- **Last reviewed:** 2026-11-20
+- **Scope:** Prompt reuse and revision when a user has corrected or withdrawn specific wording, especially restrictions or negative instructions.
+
+### Observed failure
+During the formal redo of the November 19 portrait, the assistant reused the earlier prompt with its closing restrictive sentence still present. The user then explicitly instructed that the sentence be removed. The next formal attempt removed that sentence and preserved the remaining authored wording. The user also identified unnecessary additions and restrictive boilerplate as an unwanted recurring behavior.
+
+### Impact
+The prompt no longer follows the user's latest direction. Reusing a historical prompt verbatim can become incorrect when the user has since amended or rejected part of it. It can also undermine trust and make the resulting generation an invalid test of the current brief.
+
+### Suspected cause
+The records support a workflow failure to apply the latest instruction when reusing a historical baseline. They do not establish a technical image-model cause.
+
+### Countermeasures tested
+
+| Countermeasure | Evidence | Result |
+|---|---|---|
+| Remove only the specifically rejected closing sentence while preserving all other prompt wording | [20 November — Attempt 46](../2026-11-19/attempt-46.md) | The authored prompt record confirms the requested sentence was removed and the remaining wording preserved; user approval of the resulting image remains pending |
+| Make pattern consultation and a full prompt-fidelity check mandatory before committing a prompt | [20 November — Attempts 45–46](../2026-11-19/attempt-45.md); [Drawing Skill](../../skills/drawing/SKILL.md) | Prevention procedure adopted; effectiveness across future attempts is not yet established |
+
+### Effective prevention rule
+Before every prompt commit, compare the complete draft with the active brief and the user's latest instructions. Do not restore wording merely because it appears in an older successful prompt. Do not add or relocate equivalent restrictions after the user has rejected them. Keep only language supported by the current brief or genuinely required by the task.
+
+### Limitations
+This entry documents one explicit correction sequence and a broader user-identified concern. It does not establish that every negative instruction is unnecessary; the active brief and applicable requirements remain controlling.
