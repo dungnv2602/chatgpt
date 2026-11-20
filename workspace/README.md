@@ -2,7 +2,7 @@
 
 The workspace tracks project tasks and unresolved discussions across conversations.
 
-The Worker skill defines the task operating procedure. Read [The Worker](../skills/the-worker/SKILL.md) before you manage tasks.
+Task operations follow [The Worker skill](../skills/the-worker/SKILL.md).
 
 [Conversation Mode](../skills/conversation-mode/SKILL.md) owns the temporary discussion register.
 
