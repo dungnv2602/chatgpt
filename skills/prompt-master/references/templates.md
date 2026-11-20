@@ -184,7 +184,7 @@ Now apply this exact pattern to: [actual input]
 
 ## Template G — File-Scope
 
-*Use for Cursor, Windsurf, GitHub Copilot, and any AI that edits code inside a codebase. The most common failure mode here is editing the wrong file or breaking existing logic — this template prevents both.*
+*Use for Cursor, Windsurf, GitHub Copilot, and AI tools that edit code in a codebase. This template helps prevent wrong-file edits and broken logic.*
 
 ```
 File: [exact/path/to/file.ext]
@@ -213,7 +213,7 @@ Done When:
 
 ## Template H — ReAct + Stop Conditions
 
-*Use for Claude Code, Devin, AutoGPT, and any AI that takes autonomous actions. Runaway loops and scope explosion are the biggest credit killers in agentic workflows — stop conditions are not optional.*
+*Use for Claude Code, Devin, AutoGPT, and other autonomous tools. Stop conditions limit runaway loops and scope expansion.*
 
 ```
 Objective:
@@ -279,7 +279,7 @@ Style Reference: [artist / film / aesthetic reference if applicable]
 
 ## Template J — Reference Image Editing
 
-*Use when the user has an existing image they want to modify. Completely different from generation — never describe the whole scene from scratch, only describe the change.*
+*Use when the user wants to modify an existing image. Describe only the intended change. Do not describe the full scene from scratch.*
 
 **Before writing the prompt, always tell the user:**
 "Attach your reference image to [tool name] before sending this prompt."
@@ -312,7 +312,7 @@ Negative prompt: no new elements, no style changes, no background changes
 
 ## Template K — ComfyUI
 
-*Use for ComfyUI node-based workflows. Always output Positive and Negative prompts as separate blocks. Ask for the checkpoint model before writing — syntax and token limits differ per model.*
+*Use for ComfyUI node workflows. Output Positive and Negative prompts in separate blocks. Ask for the checkpoint model first because syntax and token limits vary.*
 
 **Ask first if not stated:**
 "Which checkpoint model are you using? (SD 1.5, SDXL, Flux, or other)"
@@ -340,7 +340,7 @@ RESOLUTION: [width x height — must be divisible by 64]
 
 ## Template L — Prompt Decompiler
 
-*Use when the user pastes an existing prompt and wants to break it down, adapt it for a different tool, simplify it, or understand its structure. This is analysis and adaptation, not building from scratch.*
+*Use when the user wants to analyze, adapt, simplify, or understand an existing prompt. Treat this as analysis, not prompt creation.*
 
 **Detect which Decompiler task is needed:**
 - **Break down** — explain what each part of the prompt does
@@ -395,7 +395,7 @@ Run these in order. Each output feeds the next.
 
 ## Template M — Current Claude Task Brief
 
-*Use for complex, multi-step, or agentic tasks on current Claude models—Claude.ai, API, or Claude Code. It front-loads the outcome, context, scope, and action boundaries while avoiding obsolete manual-thinking scaffolding.*
+*Use for complex or agentic tasks on current Claude models, including Claude.ai, the API, and Claude Code. State outcomes, context, scope, and action boundaries. Do not use obsolete manual-thinking scaffolding.*
 
 ```
 ## Objective
@@ -428,7 +428,7 @@ Run these in order. Each output feeds the next.
 For long-running work, report progress only when it changes or when a checkpoint is reached. Ground every completion claim in a tool result, changed artifact, or verification output.
 ```
 
-**Effort** — configure in the API or harness rather than requesting private reasoning in the prompt. Start with the model default, lower it for routine scoped work, and raise it only when task difficulty warrants the cost.
+**Effort** — Set effort in the API or harness. Do not request private reasoning in the prompt. Start with the model default. Lower it for routine tasks. Raise it when task difficulty justifies the cost.
 
 **Claude Code only — add Session Strategy block when relevant:**
 ```
