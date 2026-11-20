@@ -1,6 +1,6 @@
 # Answer patterns
 
-Adapt these structures to the request; do not force every answer into a long
+Adapt these structures to the request. Do not force every answer into a long
 report.
 
 ## Focused explanation
@@ -41,11 +41,11 @@ Use columns such as: tradition/thinker, primary term, stated aim, practice or
 argument, historical context, authoritative source, scholarly disagreement.
 Do not imply equivalence when concepts are only approximate analogues.
 
-## Citation examples (format only; never invent details)
+## Citation examples (format only. Never invent details)
 
 - Book: Author, *Title* (Publisher, year), page or chapter.
 - Article: Author, “Title,” *Journal* volume, issue (year): pages, DOI.
-- Primary text: Work, book/chapter/verse/section; translator; edition and year.
+- Primary text: Work, book/chapter/verse/section. Translator. Edition and year.
 - Official doctrine: Issuing authority, document, paragraph/section, date, URL.
 
 Only provide page numbers, section numbers, or DOIs after verification.
