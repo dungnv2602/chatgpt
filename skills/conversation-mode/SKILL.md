@@ -71,7 +71,7 @@ In Condensed Mode, prioritize execution and navigation.
 2. Use The Worker for task selection, progress records, handoffs, and recovery.
 3. Inspect only the files needed inside the permitted workspace.
 4. Make the required authorized changes.
-5. Read back changed paths and verify their contents.
+5. Read back changed paths and check their contents.
 6. Commit completed repository work on the authorized branch.
 7. Keep detailed progress in the task record, not in chat.
 
@@ -100,19 +100,25 @@ This section contains every matter that is unresolved or needs the user's attent
 - A partial result when the remaining scope requires a user decision.
 - A follow-up question raised by an otherwise successful task.
 
-Treat "needs the user's call" broadly. If proceeding would require guessing the user's intent, changing approved scope, accepting a material risk, choosing between materially different outcomes, or claiming acceptance without evidence, keep the matter open and ask one focused question.
+Treat "needs the user's call" broadly. Keep the matter open and ask one focused question if proceeding requires any of these actions:
 
-A failure remains an Open Discussion while the failure itself is unresolved or its outcome is unsuccessful, even when the immediate next step appears obvious. The task record remains the detailed technical record. If the failure is repaired and the complete outcome is then successful, remove the failure discussion and, when useful, add a success-only report describing the final verified result. Do not expose transient internal retries as failure reports when they were resolved autonomously before the work was reported.
+- Guessing the user's intent.
+- Changing the approved scope.
+- Accepting a material risk.
+- Choosing between materially different outcomes.
+- Claiming acceptance without evidence.
+
+Keep a failure in Open Discussions while it remains unresolved or unsuccessful, even when the next step seems obvious. The task record holds the technical details. After you fix the failure and confirm the complete outcome, remove the discussion. When useful, add a success-only report with the final result. Do not report internal retries that you resolved before you reported the work.
 
 For each open item:
 
 - State the unresolved point, why it needs attention, and the exact user decision or information required. Include the minimum context needed to understand it.
 - Preserve the user's relevant wording verbatim when it prevents ambiguity. Do not copy the full conversation.
 - Keep separate decisions separate. Combine messages only when they concern the same decision or dependency.
-- Put the most recently created or meaningfully updated item first. When the user adds a clarification to an existing thread, update that thread and move it to the top; do not create a duplicate.
+- Put the item with the latest creation or meaningful update first. When the user adds a clarification to an existing thread, update that thread and move it to the top. Do not create a duplicate.
 - Keep an item open while awaiting the user's answer, even if the conversation or task is paused.
 - Do not close an item merely because it is old, another item is newer, work has stopped, or the assistant has proposed a solution.
-- Close it when the user answers and no further input is needed, the question is answered with sufficient evidence, the user withdraws or rejects the proposal, the decision is implemented and verified, or the blocker is otherwise resolved.
+- Close the item when the user answers and no further input is needed. Also close it when evidence answers the question. Close it when the user withdraws or rejects the proposal. Close it after you implement and verify the decision. Close it when the blocker is resolved.
 - If the user answers only part of a multi-part question, keep the remaining unresolved part open and revise the entry to show only what remains.
 - If a later instruction supersedes an earlier open item, close the superseded item and retain the current decision or question. Preserve unrelated open items.
 
@@ -120,7 +126,7 @@ A clarification request is not itself a successful report. Once the user clarifi
 
 #### Reports
 
-This section contains only successful reports. A report is eligible only when a discrete piece of work has reached a successful, supportable outcome and no user input is required to understand or accept that outcome.
+This section contains only successful reports. Add a report after a discrete piece of work reaches a successful and supportable outcome. The report must not require more user input for its interpretation or acceptance.
 
 A report must:
 
@@ -134,7 +140,7 @@ Reports may describe a completed milestone even when a larger task continues, pr
 
 A report may mention that an issue was encountered and successfully repaired, but it must report the final successful outcome and its verification. Do not classify an unsuccessful final outcome, an unverified claim, a pending check, or a blocked task as a success report.
 
-Retain at most the three most recent reports. Order them newest first by the time the successful outcome was verified or completed. When a new successful report would create a fourth entry, remove the oldest report. This limit applies only to Reports; it does not limit the number of genuinely open discussions. Do not preserve older reports elsewhere in this file.
+Retain at most the three most recent reports. Order them newest first by the time the successful outcome was verified or completed. When a new successful report would create a fourth entry, remove the oldest report. This limit applies only to Reports. It does not limit the number of genuinely open discussions. Do not preserve older reports elsewhere in this file.
 
 #### Ordering, timestamps, and maintenance
 
@@ -159,7 +165,7 @@ Keep both headings even when one or both sections have no entries. Use these exa
 
 `_No reports._`
 
-If only one section is empty, keep its placeholder and retain the entries in the other section. Never delete either heading.
+If only one section is empty, keep its placeholder and retain the entries in the other section. Never remove either heading.
 
 ### Approval and clearing
 
@@ -167,7 +173,7 @@ Approval authorizes only the scope the user approved. It does not authorize unre
 
 Keep an approved matter open while the approved work is incomplete or still requires user input. Once the approved work is complete and verified, remove only the resolved discussion. A rejected or withdrawn proposal is also removed when no further discussion is needed. Do not wait for separate approval to clear a resolved discussion.
 
-Never clear an unrelated open matter. Do not retain resolved discussions as history. Keep the three-report success history separate from open discussions. Do not clear reports merely because the associated discussion closes; retain them until they fall outside the three most recent successful reports.
+Never clear an unrelated open matter. Do not retain resolved discussions as history. Keep the three-report success history separate from open discussions. Do not clear reports merely because the associated discussion closes. Retain them until they fall outside the three most recent successful reports.
 
 Do not treat silence as approval. Do not infer a decision from an unrelated user message. If the user gives a partial answer, retain only the unresolved part.
 
@@ -199,7 +205,7 @@ Never invent, guess, reuse, or report a commit hash that does not belong to the 
 
 If project work produces no project-file change, do not invent a project-change commit. A required discussion-register update is a separate repository change and may have its own commit.
 
-If a tool, permission, or verification failure prevents completion, record the blocker in the task record. Put the failure in Open Discussions when it remains an unsuccessful outcome; do not place it in Reports.
+If a tool, permission, or verification failure prevents completion, record the blocker in the task record. Put the failure in Open Discussions if it remains unresolved. Do not place it in Reports.
 
 If the task needs essential clarification or user approval, record the minimum necessary question in Open Discussions. Provide only the discussion-file link. Do not create a project-change commit only to satisfy the response format.
 
