@@ -1,7 +1,7 @@
 # Attempt 45 — Formal redo of Attempt 05 (November 19)
 
 - **Date:** 2026-11-20
-- **Status:** Generated; archival upload pending.
+- **Status:** Rejected by user; retained in the record.
 - **Operation:** Fresh generation (redo; not an edit).
 - **Mode:** Realistic.
 - **Session:** Continuation/redo of the 2026-11-19 portrait work; no separate session brief exists in the repository.
@@ -28,7 +28,7 @@
 - **Original size:** 1,881,690 bytes.
 - **Original SHA-256:** `be5eded42f206ce71256fcd79671ca0bfe328cbda6595440ca78c90174c2e143`
 - **Repository image asset:** Pending upload; no WebP derivative or GitHub image link verified.
-- **Approval:** Not recorded.
+- **Approval:** Rejected by user.
 
 ## Exact authored prompt
 
