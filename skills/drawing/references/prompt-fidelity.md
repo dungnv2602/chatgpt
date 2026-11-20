@@ -188,7 +188,10 @@ The generation prompt is for the image tool, not for the repository or the assis
 - File names, folder paths, repository paths, or commit references.
 - Prompt-record names, prompt IDs, archive labels, or instructions to retrieve a prompt.
 - Generation IDs, asset IDs, or provenance notes.
+- References to a prompt, earlier wording, previous instructions, or another external record.
 - References to an image, source image, prior image, uploaded image, reference image, attachment, or image-editing operation.
+
+Do not write "as described in the previous prompt", "same as before", "use the earlier version", or equivalent wording. These are inaccessible references, not visual instructions.
 
 Keep all provenance, baseline selection, and archival details in the attempt record. The submitted generation prompt must contain only the visual instructions needed to produce the requested final result.
 
