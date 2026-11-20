@@ -53,13 +53,17 @@ The newest available changed-document run was `44763230785`. It succeeded on com
 
 **Verification**
 
-The repository changes were committed to branch `gpt`. The final read-back check is the next action. Future CI validation remains non-blocking and will be reviewed at the next mandatory preflight.
+Fetched all five changed paths from branch `gpt`. Confirmed the per-turn mode gate, prefixed cue examples, transition-response exception, link-only error handling, task-board state, audit checkpoint, and this report.
+
+The task was marked Done in commit `5075dfe29342c978e77fc760ca481e193c986fa2`. The task board was updated in commit `af8a6358ae7af96bdafea074cce7a021596c0de2`. The completed task record remains under `workspace/tasks/` because the archive boundary prohibits all access to `archive/`.
+
+Future CI validation remains non-blocking and will be reviewed at the next mandatory preflight.
 
 **Current state**
 
 The mode policy now contains an explicit per-turn enforcement gate and resolves the two output-rule conflicts. This makes the workflow clearer. It cannot guarantee that a model will follow the instructions in every future response.
 
-The repository documentation audit remains In Progress and is no longer the current execution task. Resume it after this task is complete.
+The repository documentation audit remains In Progress and is restored as the current execution task.
 
 ---
 
