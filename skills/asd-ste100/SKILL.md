@@ -44,7 +44,7 @@ Instead, this skill applies the *underlying principle*: choose the plainest, mos
 
 STE's rules divide into two kinds, and this skill can only fully deliver one of them. **Structural rules** are self-contained: they describe sentence shape, and you can apply them from the description alone. **Lexical rules** are defined entirely by the official ~900-word dictionary, which this skill deliberately does not reproduce (see Source and Scope). Without that dictionary, the lexical rules degrade from a checkable standard into a preference for plain words.
 
-Apply the structural rules with confidence. Apply the lexical rules as a direction of travel, and say so in your output rather than implying dictionary compliance you cannot verify.
+Apply the structural rules with confidence. Apply the lexical rules as a direction of travel, and say so in your output rather than implying dictionary compliance you cannot establish.
 
 ### Structural rules — apply these
 
