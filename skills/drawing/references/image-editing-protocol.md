@@ -49,7 +49,7 @@ If prompt reconstruction repeatedly misses the requested detail:
 5. If needed, return to the last successful prompt and rebuild the revision in smaller steps.
 6. If prompt-only reconstruction remains unreliable, explain the limitation and preserve the best successful result. Do not switch to image-based editing or request an image.
 
-## 6. Prompt-before-generation archive
+## 5. Prompt-before-generation archive
 
 Follow `skills/session-archiving/SKILL.md` for every attempt:
 
