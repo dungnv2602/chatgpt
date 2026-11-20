@@ -134,6 +134,22 @@ Do not delete or overwrite a conflicting Library item until you check its identi
 
 This synchronization is an explicit workflow requirement. It does not mean that GitHub and the ChatGPT Library sync automatically in the background.
 
+
+## 7. Repository CI checkpoint policy
+
+Apply this policy to every repository task, in both conversation modes.
+
+1. Do not wait for a GitHub Actions run during the task that triggered it.
+2. Do not poll a run repeatedly while it is in progress.
+3. At task completion, report each relevant run ID. Mark any incomplete run as pending.
+4. At the start of the next user turn, check all pending runs before other work.
+5. If a run remains in progress, report its status. Do not wait for it. Continue with the user's request.
+6. If a run failed, inspect its logs and address the failure when relevant to the current task.
+7. Report a run as passed only when GitHub reports a successful conclusion.
+8. Do not treat a pending run as a task failure. Do not claim that its checks passed.
+
+Keep a short list of pending run IDs in the conversation handoff. Remove a run from that list only after you check its final result.
+
 ## Technical documentation standard
 
 Follow the [ASD-STE100 skill](../asd-ste100/SKILL.md) when you create or revise skill files or technical documentation. Use Strict mode for operational instructions. Use STE-flavored mode for explanatory documentation. Preserve meaning, scope, and modality.
