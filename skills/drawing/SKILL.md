@@ -166,10 +166,10 @@ workflow, while avoiding redundant retrievals.
    Record each file's Git blob SHA in working context. Do not retrieve the
    same unchanged files again during that conversation.
 2. **Consult at each session and attempt.** At the beginning of each distinct
-   drawing session, after identifying the active brief and before drafting a
-   prompt, consult the relevant entries in the already-loaded pattern content.
-   Before each generation or edit attempt, re-check the relevant lessons
-   against the current objective and any failure from the preceding attempt.
+   drawing session, identify the active brief. Consult the relevant entries in
+   the already-loaded pattern content before drafting a prompt. Before each
+   generation or edit attempt, re-check the relevant lessons against the current
+   objective and any failure from the preceding attempt.
    Consultation does not require another retrieval when the content is already
    loaded.
 3. **Refresh selectively.** Re-retrieve a pattern file only under these conditions:
