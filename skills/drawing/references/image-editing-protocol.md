@@ -23,7 +23,7 @@ When the user includes an image, establish its role and priority:
 - **Composition:** preserve subject placement, body geometry, camera view, and spatial relationships.
 - **Style:** transfer brushwork, palette, line, or print texture. Do not import unrelated subject matter.
 - **Visual comparison:** compare the reconstruction with the approved result.
-- **Direct edit source (secondary workflow):** Modify that exact image only when the user explicitly requests direct editing. You may also do so when reconstruction is inadequate and the user has approved this method. The actual source must be attachable through the supported mechanism.
+- **Direct edit source (secondary workflow):** Change that exact image only when the user explicitly requests direct editing. You may also do so when reconstruction is inadequate and the user has approved this method. The actual source must be attachable through the supported mechanism.
 
 Do not treat "use this as inspiration" as "edit this exact image." No attachment is needed for prompt-first reconstruction.
 
@@ -34,7 +34,7 @@ Start with the single requested change. Use the verified successful authored pro
 - **Preserve:** every unrequested visual element. This includes identity and face, hairstyle, wardrobe, pose, and body geometry. It also includes composition, camera, lighting, background, environment, mood, and rendering style when the baseline specifies them.
 - **Change:** only the element the user requested.
 - **Exclude:** unwanted additions, text, boxes, artifacts, or other details that the user identified or that appear only in unsuccessful attempts.
-- Do not add decorative improvements. Do not substitute clothing, alter faces, or change scenes to solve an unrelated issue.
+- Do not add decorative improvements. Do not substitute clothing, change faces, or change scenes to solve an unrelated issue.
 - Avoid wholesale rewording of a successful prompt. Unnecessary prompt changes can affect more than the requested target.
 
 For a style-only change, revise only the rendering treatment. Preserve all scene and subject details.
@@ -64,14 +64,14 @@ If prompt reconstruction repeatedly misses the requested detail:
 
 Follow `skills/session-archiving/SKILL.md` for every attempt:
 
-1. Create or retrieve the current session-opening brief. Verify its exact path.
+1. Create or retrieve the current session-opening brief. Check its exact path.
 2. For non-novel work, commit the authored prompt in its dated `drawings/YYYY-MM-DD/` attempt note. For a named novel scene, commit it in the authoritative scene-local illustration prompt record under `novels/[Novel-ID]/[Arc-Folder]/[Scene-Folder]/illustrations/`.
 3. Treat the session brief as the visual authority. Use the most recent successful prompt in the explicitly active series only as a compatible text baseline. Do not treat it as authority over the current brief.
 4. Treat later failed, rejected, partial, or missed-target prompts as diagnostic evidence only. Do not use them as the baseline.
 5. Record the session ID or brief path. Record the series ID or theme when it is explicitly active. Record the selected baseline source, operation type, and attached source reference.
 6. Derive three to five observable acceptance criteria from the brief. Mark critical criteria.
 7. Record the prompt difference. State the baseline, preserved details, changed details, and excluded or omitted details.
-8. Verify the pre-attempt commit.
+8. Check the pre-attempt commit.
 9. After the call, record the actual result, image ID, user assessment, and mismatch.
 10. Do not store image binaries in Git unless the user requests storage and the operation completes.
 
