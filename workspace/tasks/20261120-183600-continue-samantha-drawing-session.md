@@ -4,13 +4,13 @@
 
 - **ID:** 20261120-183600
 - **Created:** 2026-11-20 18:36 UTC
-- **Updated:** 2026-11-20 18:36 UTC
+- **Updated:** 2026-11-21
 - **Priority:** P2
-- **Status:** Blocked
+- **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved for session initialization and continuation
 - **Current execution:** Yes
-- **Dependencies:** User selection of the visual baseline for this session
+- **Dependencies:** None. The next scene selection is pending.
 - **Related tasks:** None
 - **Archived:** No
 
@@ -44,7 +44,7 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 - The latest approved candidate is Sweet Path Attempt 07. It supersedes Attempt 06 for Sweet Path continuity.
 - Casual Path Attempt 05 remains a separately approved branch.
 - Do not merge the two paths.
-- No mode or new scene has been selected for this session.
+- User selected Sweet Path and adopted Attempt 07 as the session baseline. Its Realistic, naturalistic cinematic treatment and sweet emotional direction are active. The next scene is not selected.
 - GitHub Actions preflight is unverified. The current commit has no reported combined status entries. The available workflow-run lookup returned no runs, and the Actions-list endpoint was not accessible through the connector.
 
 ## 6. Progress Log
@@ -98,6 +98,13 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 - **References:** `workspace/task_board.md`; commit `84dcec2698703857d284a4661a5c42244035702c`.
 - **Next:** Ask the user to select the visual baseline.
 
+### 2026-11-21
+
+- **Action:** User selected the Sweet Path and adopted Attempt 07 as this session's visual baseline. Six scene concepts were suggested.
+- **Result:** The visual baseline decision is complete. The task is no longer blocked. The next scene remains unselected.
+- **References:** `drawings/2026-11-20/attempt-07.md`, `drawings/2026-11-21/session-01-brief.md`.
+- **Next:** Await the user's scene selection or delegated choice. Archive the full prompt before image generation.
+
 ## 7. Current State
 
 - Foundational initialization passed. The required skills and references were retrieved from branch `gpt`.
@@ -106,20 +113,20 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 - The prior session is Paused. The new session is Active.
 - No image prompt has been drafted or generated in this session.
 - CI status remains unverified.
-- The user has not selected the Sweet or Casual path for this session.
+- The user selected Sweet Path. Attempt 07 is adopted as this session's baseline. Six candidate scene concepts were suggested. No scene has been selected.
 
 ## 8. Remaining Work
 
-- Obtain the user's choice of visual baseline.
+- Obtain the user's choice of next scene, or delegated authority to choose.
 - Confirm the next image's scene or objective and mode if the selected baseline does not resolve them.
 - Update the new session brief with the user's decision.
 - Draft and archive the first prompt only after the active brief is clear.
 
 ## 9. Next Actions
 
-1. Ask whether the user wants to adopt Sweet Path Attempt 07 as the new session's visual baseline.
-2. If the user selects it, record that adoption and its Realistic visual treatment in the active brief.
-3. Ask for any essential scene or image change not already specified.
+1. Record the user's Sweet Path / Attempt 07 selection. This is complete.
+2. Ask the user to select a candidate scene or delegate the choice.
+3. Confirm any essential scene-specific detail only if required.
 4. Prepare and commit the first attempt note before image generation.
 
 ## 10. References
@@ -148,9 +155,9 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 
 ## 12. Handoff Instructions
 
-The active session is `SAMANTHA-2026-11-21-01`. The previous session is Paused.
+The active session is `SAMANTHA-2026-11-21-01`. The previous session is Paused. Sweet Path / Attempt 07 is selected.
 
-Ask the user whether to adopt the latest approved Sweet Path baseline, Attempt 07, or continue the separately approved Casual Path, Attempt 05. Do not merge the branches.
+Sweet Path is selected. Attempt 07 is the adopted baseline. Do not merge the Casual branch.
 
 Attempt 07's archived prompt is a cleanup prompt, not a full-scene prompt. The attempt record does not contain the image binary. Do not claim that its asset ID is an attachment. If the user wants exact visual source continuity, request the actual image upload. Otherwise, use the selected approved prompt history only within the active session brief and the Drawing workflow.
 
