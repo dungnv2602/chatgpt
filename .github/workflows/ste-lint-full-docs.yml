@@ -32,12 +32,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          if ! latest_run=$(gh api \
-            "repos/$GITHUB_REPOSITORY/actions/workflows/424743410/runs" \
-            -f branch="$GITHUB_REF_NAME" \
-            -f event=push \
-            -F per_page=100 \
-            --jq '[.workflow_runs[]] | max_by(.run_number).id // empty' 2>/dev/null); then
+          if ! latest_run=$(gh run list \
+            --workflow ".github/workflows/ste-lint-full-docs.yml" \
+            --branch "$GITHUB_REF_NAME" \
+            --event push \
+            --limit 100 \
+            --json databaseId,number \
+            --jq 'max_by(.number).databaseId // empty' 2>/dev/null); then
             latest_run=""
           fi
 
