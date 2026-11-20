@@ -9,8 +9,8 @@
 
 This file is the daily navigation ledger. Each image attempt will have a separate note. The session brief governs this session's visual direction.
 
-Attempt 08 has two generated variants. User review is pending.
+Attempt 08 has two generated variants. Image B was selected by the user.
 
 | Attempt | Prompt note | Session brief | Primary series / membership | Status / outcome |
 |---|---|---|---|---|
-| 08 — A Quiet Morning Together | [Attempt 08 prompt](attempt-08.md) | [Session brief](session-01-brief.md) | Samantha — Human Presence Without a Body | Two variants generated; awaiting user review |
+| 08 — A Quiet Morning Together | [Attempt 08 prompt](attempt-08.md) | [Session brief](session-01-brief.md) | Samantha — Human Presence Without a Body | Variant B selected by user; approved output |
