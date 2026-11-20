@@ -441,7 +441,7 @@ For an image the user supplies within a drawing session:
    in a ready `HANDOFF.yml` may be moved/renamed to their declared master path
    and converted to a separate WebP by the existing GitHub Action. Original
    bytes, format, resolution, metadata, and visual content must remain
-   unchanged. Do not perform the conversion or relocation manually.
+   unchanged. Do not convert or relocate the file manually.
 4. Record the exact path, stable file/Library ID, source generation ID when
    known, original name, dimensions, byte size, checksum where available, and
    session-specific role in the session brief or attempt record.
