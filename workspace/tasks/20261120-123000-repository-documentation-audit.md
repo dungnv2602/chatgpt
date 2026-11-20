@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 13:19 UTC
+- **Updated:** 2026-11-20 13:20 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -154,6 +154,15 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Read-back:** Fetched both changed files from branch `gpt`. Confirmed the new delegation text and removal of the old direct-run instructions.
 - **Validation:** Source inspection only. Did not run the linter locally. Did not inspect CI.
 - **Next:** Continue the source review for remaining supported lint issues. Let matching GitHub Actions workflows run naturally. Inspect CI only on explicit user request.
+
+### 2026-11-20 13:20 UTC
+
+- **Action:** Reviewed the Agent Skill Authoring validation checklist after updating its linter execution rule.
+- **Finding:** The checklist still allowed review whenever the linter was available. This wording did not preserve the user's instruction to inspect CI only on explicit request.
+- **Change:** Reworded the checklist to require review of GitHub Actions lint findings only when the user requests a CI review.
+- **Commit:** `2b73e6760896238e72d3049c6a4f2453970887d9`.
+- **Read-back:** Fetched `skills/agent-skill-authoring/SKILL.md` from branch `gpt`. Confirmed the revised checklist.
+- **Next:** Continue the audit. Keep CI inspection gated by an explicit user request.
 
 ## 7. Current State
 
