@@ -26,8 +26,8 @@ Unnecessary assistant-added wording and creative reinterpretation can move a new
 5. Record whether the new result actually follows the changed requirement.
 
 ### Evidence
-- [12 November 2026 — Attempt 33](../../../../drawings/history/2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode) — successful historical silk-wrap portrait direction; two outputs were returned and later approved by the user.
-- [13 November 2026 — Attempt 04](../../../../drawings/history/2026-11-13-image-prompts.md#attempt-04--direct-reuse-of-the-proven-silk-wrap-portrait-direction) — the same authored prompt was reused verbatim in a later session; the prompt record's final user assessment is successful.
+- [12 November 2026 — Attempt 33](../../../../drawings/history/2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode) — successful historical silk-wrap portrait direction. Two outputs were returned and later approved by the user.
+- [13 November 2026 — Attempt 04](../../../../drawings/history/2026-11-13-image-prompts.md#attempt-04--direct-reuse-of-the-proven-silk-wrap-portrait-direction) — the same authored prompt was reused verbatim in a later session. The prompt record's final user assessment is successful.
 
 ### Limitations
 This is a controlled-reuse method, not a guarantee that every requested detail will be reproduced. Retain any technical caveats in the source record, and never assume that an earlier success authorizes changes to a current locked requirement.
@@ -63,7 +63,7 @@ Keep the cues mutually consistent. Prefer direct descriptions of what should app
 - [13 November 2026 — Attempt 04](../../../../drawings/history/2026-11-13-image-prompts.md#attempt-04--direct-reuse-of-the-proven-silk-wrap-portrait-direction) — reuse of the same positive art-direction cues was again designated successful in the final user assessment.
 
 ### Limitations
-Positive visual specificity does not guarantee exact garment construction, identity continuity, or source-image editing. Inspect the returned image for the actual physical result; do not infer a detail from the prompt alone.
+Positive visual specificity does not guarantee exact garment construction, identity continuity, or source-image editing. Inspect the returned image for the actual physical result. Do not infer a detail from the prompt alone.
 
 ---
 
@@ -83,12 +83,12 @@ Two-person poses can be reversed while still producing a plausible or attractive
 Use direct constructions such as:
 - “The man lies on his side with his head resting against the woman's shoulder.”
 - “The woman sits upright and supports the back of his head with her left hand.”
-- “Her right hand is underneath; his left hand rests on top.”
+- “Her right hand is underneath. His left hand rests on top.”
 
 State the essential spatial relationship before decorative setting details. For complicated contact, separate each hand or limb by actor and side.
 
 ### Evidence
-- [12 November 2026 — Attempt 04](../../../../drawings/history/2026-11-12-image-prompts.md#04--comfort-after-a-long-workday) — the prompt assigned the man's resting position against the seated woman and her action of cradling his head; the user liked the resulting overall comforting composition.
+- [12 November 2026 — Attempt 04](../../../../drawings/history/2026-11-12-image-prompts.md#04--comfort-after-a-long-workday) — the prompt assigned the man's resting position against the seated woman and her action of cradling his head. The user liked the resulting overall comforting composition.
 
 ### Limitations
 This pattern is provisional and does not guarantee pose compliance. Later attempts [14–20](../../../../drawings/history/2026-11-12-image-prompts.md#14--mistaken-tea-scene-interpretation-cream-cardigan-and-navy-polo) repeatedly reversed the resting roles even after more detailed instructions. It should improve clarity, not be treated as a proven solution to persistent pose inversion.
