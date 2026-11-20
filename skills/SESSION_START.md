@@ -23,8 +23,7 @@ Initialize a specialist role only after foundational initialization passes in th
 
 Activate this procedure only after foundational initialization passes and the user explicitly requests the novelist role. Treat “Be the novelist” as a role request, not a session-start cue.
 
-Load `skills/novelist-initiation/SKILL.md` from branch `gpt`. This file is the Agent Skills entry point.
-Follow the complete novelist initialization procedure below.
+Follow the complete novelist initialization procedure below. This file is the sole canonical procedure.
 
 **Role request:** `Be the novelist`
 
@@ -54,11 +53,12 @@ Before novelist work:
 1. Check that foundational initialization passed in the current conversation.
 2. If it did not pass, stop and ask the user to say `start session`.
 3. Do not use remembered instructions, old reads, summaries, or unverified copies as substitutes.
-4. After foundational initialization passes, read `skills/romantic-storyteller-visual-artist/SKILL.md`.
+4. Retrieve and read `skills/drawing/SKILL.md` and its required references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Reuse these files if you already verified them in this conversation.
+5. Read `skills/romantic-storyteller-visual-artist/SKILL.md`.
 
-The foundational skills and Drawing references are prerequisites. Do not create a second loading checklist.
+The Drawing skill is a novelist prerequisite, not a foundational skill. Load it for novelist-role initialization and drawing work. Do not load it during ordinary foundational initialization.
 
-Reuse foundational files that you verified in this conversation. Load the Romantic Storyteller skill for this role.
+Reuse foundational files that you verified in this conversation. Do not repeat retrievals for files already verified in this conversation.
 
 If a required file is missing or cannot be verified, report its exact path. Stop the affected initialization step. Do not claim full initialization.
 
@@ -188,6 +188,21 @@ If the user also requests the novelist role, complete foundational initializatio
 If the user requests the novelist role before session initialization passes, stop and ask the user to say `start session`.
 
 Reuse foundational files that you verified in the current conversation. Do not treat remembered instructions or earlier reads as current-session verification.
+
+## Drawing session activation
+
+The separate drawing-session cue is **`start a drawing session`**. Treat it as an instruction only. Ignore quoted, discussed, or hypothetical uses.
+
+This cue starts a new drawing session. It does not replace the foundational initialization procedure.
+
+1. Check whether foundational initialization passed in the current conversation.
+2. If it has not passed, run the complete mandatory execution gate in `skills/session-archiving/SKILL.md` first. Do this as part of the drawing-session request; do not ask the user to repeat the `start session` cue.
+3. If foundational initialization already passed, reuse the verified foundational files. Do not load them again without a reason.
+4. Retrieve and read `skills/drawing/SKILL.md` and its required references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Reuse each file if it was already verified in this conversation.
+5. Start the drawing session under the Drawing skill. Establish its new opening brief and required session records before image generation or editing. For a named novel scene, use the scene-local illustration brief and records.
+6. Continue with any drawing task included in the same instruction. If the user only asks to start the session, establish the session and ask only for essential brief details that are not available.
+
+Do not load the Drawing skill during ordinary foundational initialization. If the Drawing skill and its required references were already loaded for novelist work in this conversation, reuse them when the user starts a drawing session.
 
 ## Foundational standards
 

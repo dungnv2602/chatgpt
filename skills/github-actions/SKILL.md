@@ -169,7 +169,43 @@ Use these questions when implementing an optimization:
 9. Are changes grouped into one coherent push?
 10. Has the assistant avoided manually dispatching, rerunning, or polling CI unless the user explicitly requested CI investigation?
 
-## 13. Official references
+## 13. Repository execution discipline
+
+This section consolidates the former repository CI preflight and execution-efficiency rules from Conversation Mode. This skill is the sole authority for CI and GitHub Actions behavior.
+
+### Before editing
+
+1. Inspect the branch head and the exact files, scripts, and configuration relevant to the request.
+2. Identify the required change set. Do not expand the task into unrelated cleanup.
+3. Reuse verified reads and tool results. Do not repeat searches or status checks without new evidence.
+4. Batch related edits into one coherent commit. Avoid intermediate commits that create duplicate push-triggered runs.
+5. Review the complete changed sections. Preserve facts, conditions, exceptions, numbers, scope, and modality.
+
+### CI feedback policy
+
+1. Do not inspect or poll GitHub Actions runs before starting an ordinary repository task.
+2. Do not manually dispatch, rerun, cancel, or otherwise stimulate CI.
+3. Do not wait for a CI run created by the current task. Do not track pending run IDs between turns.
+4. Let normal GitHub events trigger the configured workflows. Treat a failed CI run as feedback; do not claim that a run passed or failed unless the user asks you to investigate that run and you inspect its reported result.
+5. When the user explicitly asks to investigate a CI failure, inspect the relevant run and logs, identify the cause, and fix the underlying repository issue. Do not hide failures by weakening checks or changing a baseline without justification.
+6. Do not add workflow triggers only to make CI run after an assistant edit.
+
+### After editing
+
+1. Read back each changed path after the commit when repository access supports it.
+2. Confirm the commit result and report its exact SHA.
+3. State which local checks or read-back checks you performed. Do not imply that CI was checked.
+4. Separate verified changes, unresolved blockers, and work that requires user authorization.
+5. Report the result once. Do not claim verification that did not occur.
+
+### Efficiency constraints
+
+- Do not make speculative edits.
+- Do not create one-line commits when related changes can be grouped.
+- Do not repeat wording reviews without a defined rule or finding.
+- Do not reduce necessary file verification to save time. Reduce redundant operations instead.
+
+## 14. Official references
 
 - [Workflow syntax](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
 - [Workflow concurrency](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/control-the-concurrency-of-workflows-and-jobs)

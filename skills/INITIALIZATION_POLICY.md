@@ -12,8 +12,8 @@ This file records the repository's conditional initialization policy. Operationa
 - Mandatory execution gate: `skills/session-archiving/SKILL.md`
 - Agent Skills format: `skills/agent-skill-authoring/SKILL.md`
 - Technical writing standard: `skills/asd-ste100/SKILL.md`
-- Novelist skill entry point: `skills/novelist-initiation/SKILL.md`
 - Canonical novelist procedure: the Novelist role initialization section in `skills/SESSION_START.md`
+- Drawing prerequisite: `skills/drawing/SKILL.md`, loaded for novelist initialization or a drawing session
 
 This file does not replace an operational skill or initiation procedure.
 
@@ -44,7 +44,8 @@ Foundational initialization loads these skills:
 3. Agent Skill Authoring.
 4. ASD-STE100.
 5. GitHub Actions.
-6. Drawing and its required foundational references.
+
+The Drawing skill is not foundational. Load it only when the user starts a drawing session or when a specialist workflow requires it. It is a prerequisite for novelist-role initialization. Its required references are `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`.
 
 The ASD-STE100 skill governs skill documentation and technical documentation. Use Strict mode for operational instructions. Use STE-flavored mode for technical explanations and READMEs.
 
@@ -72,7 +73,7 @@ Initialization is conditional. Do not load project instructions or skills at the
 1. **On-demand loading:** Load only what the requested task requires.
 2. **Single initialization authority:** `skills/SESSION_START.md` defines foundational initialization.
 3. **Explicit dependency:** Novelist initialization requires foundational initialization first.
-4. **No duplicate procedures:** Task-specific skill entry points link to their canonical procedure in `skills/SESSION_START.md`.
+4. **No duplicate procedures:** Keep session-start and novelist initialization procedures in `skills/SESSION_START.md`.
 5. **Current-session verification:** Do not use remembered files as a substitute for fresh reads when verification is required.
 6. **Agent Skills format:** Use `skills/agent-skill-authoring/SKILL.md` to create and maintain skills.
 7. **Controlled technical writing:** Use `skills/asd-ste100/SKILL.md` for skill and technical documentation.
@@ -450,3 +451,12 @@ Use this template:
 - **Requested change:** Include the repository name, branch, sole-source-of-truth rule, conditional initialization rule, and startup-note reference in the copyable instructions.
 - **Behavioral impact:** The copyable block now contains the complete three-paragraph instruction text supplied by the user.
 - **File changed:** `skills/INITIALIZATION_POLICY.md`.
+
+
+### Version 29 — Make Drawing an on-demand prerequisite
+
+- **Date:** 2026-11-20
+- **Change:** Remove Drawing from foundational initialization. Add the separate `start a drawing session` cue. Retain Drawing as a prerequisite for novelist-role initialization.
+- **Behavioral impact:** Load Drawing and its required references only for drawing sessions or novelist initialization. Reuse files already verified in the current conversation.
+- **Reason:** Avoid loading specialist drawing procedures during unrelated sessions.
+- **Canonical procedure:** `skills/SESSION_START.md`; mandatory foundational gate: `skills/session-archiving/SKILL.md`.

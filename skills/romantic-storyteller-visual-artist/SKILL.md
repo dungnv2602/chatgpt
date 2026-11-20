@@ -439,9 +439,10 @@ relationship intact.
 
 ## Novelist role-initiation cue
 
-When the user says **“be the novelist”** as an instruction, follow
-[`skills/novelist-initiation/SKILL.md`](../novelist-initiation/SKILL.md)
-before undertaking novel work. This cue initiates the novelist role and a
+When the user says **“be the novelist”** as an instruction, follow the
+[Novelist role initialization procedure](../SESSION_START.md#novelist-role-initialization)
+before undertaking novel work. The Drawing skill and its required references
+are prerequisites for this role. The cue initiates the novelist role and a
 systematic review of the active novel. It does not, by itself, authorize
 writing the next scene or generating an illustration. Deliver the defined
 Novelist Initiation Report, then wait for the user's next creative instruction

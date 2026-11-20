@@ -16,13 +16,13 @@ These skills govern cross-project work. Load them only through the explicit foun
 | [github-actions](github-actions/SKILL.md) | GitHub Actions workflow design, optimization, security, and verification |
 | [session-archiving](session-archiving/SKILL.md) | Conversation integrity, archive records, image provenance, and closeout |
 
-## Foundational prerequisite
+## On-demand prerequisite skills
 
-| Skill | Responsibility |
+Load these skills only when a drawing or novelist workflow requires them. They are not part of foundational initialization.
+
+| Skill | Activation |
 |---|---|
-| [drawing](drawing/SKILL.md) | Image generation and editing procedures. The foundational execution gate also requires this skill. |
-
-The Drawing skill remains a domain skill. The execution gate lists it as a required prerequisite.
+| [drawing](drawing/SKILL.md) | The user says “start a drawing session”, requests drawing work, or activates the novelist role. It is a prerequisite for novelist work. |
 
 ## Task-specific skills
 
@@ -30,10 +30,9 @@ Load these skills only when the request or an explicit role-initiation procedure
 
 | Skill | Activation |
 |---|---|
-| [novelist-initiation](novelist-initiation/SKILL.md) | The user says “Be the novelist”. Follow its `INITIATION.md` procedure. |
 | [philosophy-religion-asceticism](philosophy-religion-asceticism/SKILL.md) | Philosophy, religion, theology, asceticism, or contemplative-tradition research |
 | [prompt-master](prompt-master/SKILL.md) | Prompt analysis, design, adaptation, or optimization |
-| [romantic-storyteller-visual-artist](romantic-storyteller-visual-artist/SKILL.md) | Romantic narrative or visual storytelling. The Drawing skill governs visual work. |
+| [romantic-storyteller-visual-artist](romantic-storyteller-visual-artist/SKILL.md) | Romantic narrative or visual storytelling. The Drawing skill is a prerequisite for novelist-role initialization and governs visual work. |
 
 ## Foundational initialization
 

@@ -137,53 +137,6 @@ Do not remove or overwrite a conflicting Library item until you verify its ident
 This synchronization is an explicit workflow requirement. It does not mean that GitHub and the ChatGPT Library sync automatically in the background.
 
 
-## 7. Repository CI preflight and checkpoint policy
-
-Apply this policy to every user turn that may involve repository work, in both conversation modes.
-
-### Before acting on a user request
-
-1. Inspect GitHub Actions runs for branch `gpt` before you execute the user's new repository request.
-2. Check the newest run for each applicable workflow. Also check every pending run ID carried from the previous turn.
-3. A newer run for the same workflow supersedes an older run on an earlier commit. Do not treat an obsolete cancelled run or a failure superseded by a later successful run as an active CI failure.
-4. If the latest applicable run failed, inspect its job logs, identify the cause, and fix the repository issue before you start the user's requested task. Do not defer a known failure.
-5. If the failure came from a previous assistant change, correct that change first. If it came from the user's existing project state, make the smallest relevant correction on branch `gpt`. Do not hide a failure by changing a lint baseline or weakening a check.
-6. After you commit the correction, read back the changed files. Then continue with the user's request. Do not wait for the correction's new CI run; track it as pending for the next turn.
-7. If a relevant run remains in progress, report that status once and continue with the user's request. Do not wait or poll repeatedly.
-8. If no applicable run exists, report that CI has no run for the relevant change. Do not imply that CI passed.
-
-### During and after repository work
-
-1. Do not wait for a GitHub Actions run during the task that triggered it.
-2. Do not poll a run repeatedly while it is in progress.
-3. At task completion, report each relevant run ID and the exact commit SHA it tested. Mark incomplete runs as pending.
-4. Report a run as passed only when GitHub reports a successful conclusion.
-5. Do not treat a pending or cancelled run as a pass. Do not describe a pending run as a failure.
-6. Carry pending run IDs in the conversation handoff. At the next user turn, check their final results as part of the CI preflight.
-
-## 8. Repository execution efficiency
-
-Apply this workflow to every repository task. It supplements the CI checkpoint policy.
-
-1. **Inspect once.** Check the branch head, relevant files, and required validation before editing. Check the latest applicable workflow runs and pending CI run IDs before other work, as Section 7 requires. Do not check runs created during the current task.
-2. **Plan the change set.** Identify the files and checks that the task requires. Do not expand the task into unrelated cleanup.
-3. **Batch related edits.** Group changes by purpose and file. Avoid separate commits for small changes that can be reviewed and committed together.
-4. **Minimize tool calls.** Reuse verified results. Do not repeat reads, searches, or status checks unless new evidence or a changed file requires them.
-5. **Use targeted validation.** Run the narrowest relevant checks first. Run broader checks when the change or repository policy requires them. Do not repeat a successful check without a reason.
-6. **Review meaning and scope.** Check the complete changed sections. Preserve facts, conditions, exceptions, numbers, scope, and modality.
-7. **Verify the final state.** Read back each changed path after the commit. Confirm the branch head and commit result.
-8. **Keep evidence precise.** Associate each check result with the exact commit SHA that it tested. A result for a descendant commit does not prove that an earlier commit passed.
-9. **Track unresolved work.** Separate verified results, pending checks, blockers, and items that need user authorization. Carry pending CI run IDs into the next-turn handoff.
-10. **Report once, accurately.** State the changed paths, commit SHA, checks performed, and unresolved items. Do not claim success without evidence.
-
-### Efficiency constraints
-
-- Do not make speculative edits.
-- Do not create one-line commits when related changes can be grouped.
-- Do not perform repeated wording reviews without a defined rule or finding.
-- Do not wait for CI or poll an in-progress run. Follow Section 7.
-- Do not reduce verification to save time. Reduce redundant operations instead.
-
 ## Technical documentation standard
 
 Follow the [ASD-STE100 skill](../asd-ste100/SKILL.md) when you create or revise skill files or technical documentation. Use Strict mode for operational instructions. Use STE-flavored mode for explanatory documentation. Preserve meaning, scope, and modality.

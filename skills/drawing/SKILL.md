@@ -3,7 +3,7 @@ name: drawing
 description: "Create and refine images in two deliberate visual modes: Realistic and Vintage. Use for image generation, editing, style transformations, composition, character continuity, and iterative visual refinement."
 metadata:
   project-role: task-specific
-  loading-policy: foundational-prerequisite
+  loading-policy: on-demand-prerequisite
   format: agentskills
   created: "2026-11-18T13:18"
   updated: "2026-11-20"
@@ -25,6 +25,19 @@ default.
 Mode and visual treatment are session-specific. A mode selected in an earlier
 drawing session does not carry into a new session unless the new session brief
 explicitly continues or adopts it. The active session-opening brief governs.
+
+## Activation and loading
+
+This is an on-demand skill, not a foundational skill. Do not load it during ordinary `start session` initialization.
+
+Load this skill and its required references when:
+- The user says `start a drawing session`.
+- The user requests drawing work that requires this workflow.
+- The user activates the novelist role; Drawing is a prerequisite for the novelist workflow.
+
+For `start a drawing session`, follow the cue and dependency procedure in `skills/SESSION_START.md`. If foundational initialization has not passed in the current conversation, complete it first. If it has passed, reuse the verified foundational files without loading them again.
+
+The required references for initial drawing work are `references/style-guide.md` and `references/image-editing-protocol.md`. Load each once per conversation. Load other Drawing references only when their documented task triggers apply.
 
 ## 1. Mode selection and persistence
 
