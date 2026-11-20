@@ -24,11 +24,27 @@ This skill controls response style and workflow priorities. It does not override
 - Default Mode applies at the start of each new conversation unless the user selects another mode.
 - A mode remains active for the current conversation until the user switches it.
 - Accept natural-language commands such as:
-  - "Default mode" or "Switch to default mode".
-  - "Condensed mode" or "Switch to condensed mode".
+  - "Default mode", "Switch to default mode", or "Conversation mode: default mode".
+  - "Condensed mode", "Switch to condensed mode", or "Conversation mode: condensed mode".
+- Treat an unquoted mode command as valid when it appears with other task instructions.
+- Ignore mode commands that the user quotes, discusses, or presents as hypothetical examples.
+- At the start of every turn, resolve the active mode before processing the rest of the prompt.
+- Apply a mode command in the same turn that contains it.
 - When the user asks which mode is active, answer directly and briefly.
 - Do not switch modes silently because of task length, urgency, or complexity.
 - Do not assume that a mode selection carries into a new conversation. Carry it forward only when the user or an available session handoff explicitly does so.
+
+### Per-turn mode gate
+
+Before any tool call, progress message, or answer:
+
+1. Check the current user message for an unquoted mode command.
+2. If there is no new command, retain the mode already active in this conversation.
+3. At the start of a new conversation, use an explicit mode in the session handoff when one exists.
+4. Otherwise, use Default Mode.
+5. Apply the resolved mode to the entire turn, including tool use, error handling, and the final response.
+
+If a mode command and a task appear in the same message, switch modes first. Then handle the task under the selected mode.
 
 ## 2. Default Mode
 
@@ -102,6 +118,7 @@ Do not record credentials, access tokens, hidden reasoning, or unrelated sensiti
   2. The direct link to `workspace/discussion.md`.
 - Do not send any other link in Condensed Mode.
 - Do not add labels, headings, status text, progress updates, summaries, or other chat text.
+- The only exception is the single response that switches into Condensed Mode. That response must contain only a brief mode acknowledgement. Starting with the next response, send only one permitted link.
 - After task creation, provide the task-record link. Continue work immediately when the user has approved the task or the task does not require approval.
 - Do not ask for approval again when the user has already approved the task.
 - Task creation alone does not count as user approval.
@@ -120,11 +137,11 @@ The task link identifies the active work. The discussion link carries all other 
 
 Never invent, guess, reuse, or report a commit hash that does not belong to the completed task.
 
-If the task produces no repository change, do not create a commit. Reply with one short, truthful sentence and include a relevant navigation link when one exists.
+If project work produces no project-file change, do not invent a project-change commit. A required discussion-register update is a separate repository change and may have its own commit.
 
-If a tool, permission, or verification failure prevents completion, state the blocker briefly. Link to the affected task record or file when available.
+If a tool, permission, or verification failure prevents completion, record the blocker in `workspace/discussion.md`. Provide only its direct link.
 
-If the task needs essential clarification or user approval, ask only the minimum necessary question. Do not create a commit only to satisfy the response format.
+If the task needs essential clarification or user approval, record the minimum necessary question in `workspace/discussion.md`. Provide only its direct link. Do not create a project-change commit only to satisfy the response format.
 
 ### Progress communication
 
