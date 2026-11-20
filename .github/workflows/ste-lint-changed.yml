@@ -23,11 +23,15 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Run linter self-test
+        run: python3 skills/asd-ste100/scripts/ste-lint.py --selftest
+
       - name: Find changed Markdown files
         id: changed
         shell: bash
         run: |
-          files=$(git diff --name-only --diff-filter=ACMR "${{ github.event.before }}" "${{ github.sha }}" -- '*.md')
+          files=$(git diff --name-only --diff-filter=ACMR "${{ github.event.before }}" "${{ github.sha }}" -- '*.md' |
+            grep -vE '^(novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' || true)
           {
             echo "files<<EOF"
             echo "$files"
