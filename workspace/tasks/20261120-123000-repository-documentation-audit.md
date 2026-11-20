@@ -66,6 +66,7 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Result:** The linter self-test, active Markdown link check, and full technical-document lint passed. The log still reports hard findings below existing per-file baselines, including 22 in the ASD-STE100 skill.
 - **Changes:** Rewrote the flagged long sentences and synonym-rotation cases in `skills/asd-ste100/SKILL.md`. Preserved quoted license text and teaching examples. Did not change baselines or inspect `archive/`.
 - **Commits:** `38bb33812e94835d3b0a1922a1bb3e4fc959d5fb`; `2a2a58d96bc9d550ca0243b0d760e3f686c8883e`.
+- **Additional edits:** Standardized the historical verification wording in `skills/INITIALIZATION_POLICY.md` and clarified activation timing in `skills/agent-skill-authoring/SKILL.md`. Commits: `303678a6af2b8e17549e0d6493ab6f7f6731dff0`; `66a464ec53c4c6265ffb2a3118db4ee0b4681569`.
 - **Next:** Continue source review of remaining hard findings in active documents. Review the next CI result at the next mandatory preflight; do not wait or poll.
 
 ### 2026-11-20 16:20 UTC
