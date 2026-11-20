@@ -24,7 +24,7 @@ items:
   - source: "IMG_20261120_091522.png"
     asset_id: "ILL-001"
     title: "Shared Discovery"
-    destination_dir: "novel/Novel-02/assets/illustrations/ARC-001/SCN-001"
+    destination_dir: "novels/Novel-02/assets/illustrations/ARC-001/SCN-001"
     # Include only provenance values actually captured:
     expected_sha256: "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
     output_id: "A001-O01"
@@ -50,13 +50,13 @@ For each item:
 - `source` is the exact uploaded filename at the top level of this folder.
 - `asset_id` is optional for general image assets. Novel illustrations use their stable `ILL-NNN` ID.
 - `title` is a concise descriptive title based on the inspected image and its intended role.
-- `destination_dir` is a repository-relative directory under `images/`, `novel/`, or `drawings/YYYY-MM-DD/images`. Do not use `images/takeout/`, `images/takeout/webp/`, `images/webp/`, or `images/scripts/`.
+- `destination_dir` is a repository-relative directory under `images/`, `novels/`, or `drawings/YYYY-MM-DD/images`. Do not use `images/takeout/`, `images/takeout/webp/`, `images/webp/`, or `images/scripts/`.
 - For drawing-session destinations, `attempt` is mandatory. The Action rejects drawing-session uploads without an explicit attempt number so they cannot be omitted from the session manifest and prompt records.
 
 The processor turns the title into a lowercase, hyphen-separated filename slug, removes common diacritics, and prefixes the asset ID when supplied. For the example above, it creates:
 
-- Original master: `novel/Novel-02/assets/illustrations/ARC-001/SCN-001/original/ILL-001-shared-discovery.png`
-- WebP delivery file: `novel/Novel-02/assets/illustrations/ARC-001/SCN-001/ILL-001-shared-discovery.webp`
+- Original master: `novels/Novel-02/assets/illustrations/ARC-001/SCN-001/original/ILL-001-shared-discovery.png`
+- WebP delivery file: `novels/Novel-02/assets/illustrations/ARC-001/SCN-001/ILL-001-shared-discovery.webp`
 
 The original is moved byte-for-byte into the destination's `original/` subfolder. The WebP remains in the destination root and is the only format linked from attempt records and the daily README. Existing files are never overwritten.
 
