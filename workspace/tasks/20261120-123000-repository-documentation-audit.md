@@ -20,7 +20,8 @@
 
 ## 2. Subsequent Instructions
 
-No subsequent clarifications recorded.
+- 2026-11-20: The user explicitly resumed this audit after a prior stop. Continue from the recorded remaining work.
+- Follow the current bounded CI preflight policy. Do not run lint or CI locally. Do not wait for or poll GitHub Actions results.
 
 ## 3. Objective
 
@@ -247,30 +248,29 @@ Continue and complete the repository documentation audit. Keep its complete hist
 
 The historical Version 19 inventory contained 166 Markdown files and 119 active source files. The Version 17 count of 121 used the same exclusions except for `skills/asd-ste100/examples/`. That directory contained two Markdown files, which explains the exact difference.
 
-The current branch contains 176 Markdown files. The same Version 19 source-file exclusions produce 129 active source files. Current link validation also excludes `archive/tasks/`, `workspace/tasks/`, and `workspace/discussion.md`, which produces 123 active source files. The full-document lint workflow selects 41 Markdown files.
+The current branch contains 176 Markdown files. The same Version 19 source-file exclusions produce 129 active source files. Current link validation also excludes `archive/tasks/`, `workspace/tasks/`, and `workspace/discussion.md` as sources while retaining those files as link targets. The full-document lint workflow selects 41 Markdown files.
 
 The Version 19 full lint reported 179 hard findings and 300 advisory findings. Those are historical results, not a fresh result for the current branch. The linter wrapper now has 17 baseline entries totaling 170. Every entry maps to an existing file. The historical 179-point threshold fell by four when two active-file baselines cleared. It fell by five when two deleted-file baselines were removed. The 170-point total is a configured threshold, not a current lint result.
 
-CI policy has since changed. The linter must never run locally. The latest applicable GitHub Actions runs passed on commit `a5ce29072ba5a983c1c769e744dd86962d4a5c41`. The current execution task `20261120-133053` updates the pre-prompt and post-load CI gates.
+The newest changed-document run `44750057903` failed on `9260346fb8e14c5c576fbf8f8e3676fb645833e4`. Its fallback full audit found new lint violations in Session Start, GitHub Actions, The Worker, and Initialization Policy. The linter self-test and active Markdown link checker passed. Commit `49a972741aeb69bf249afffb11cbe33d8574d05f` rewrote those findings without changing baselines. A subsequent source-review batch split long sentences in Drawing and the philosophy skill, fixed the dangling conjunction in Prompt Fidelity, and removed an unrelated Version 5 entry from Initialization Policy. The latest commits are `ccf8c055a99984f1c5ec1d835958e9b5afc14282` and `49a972741aeb69bf249afffb11cbe33d8574d05f`. No result for either repair batch has been awaited.
 
-The active-link scan at Version 19 found zero unresolved local Markdown targets or heading anchors in its 119-file source scope. Current validation excludes `archive/tasks/`, `workspace/tasks/`, and `workspace/discussion.md` as sources while retaining those files as link targets. The historical-link review and external URL review remain open. No fresh full lint has run.
+The Version 19 active-link scan found zero unresolved local Markdown targets or heading anchors in its 119-file source scope. Current validation excludes `archive/tasks/`, `workspace/tasks/`, and `workspace/discussion.md` as sources while retaining those files as link targets. The historical-link review and external URL review remain open. The latest completed full audit identified one dangling-conjunction candidate, which the current audit has corrected. The full audit also reported 60 long-sentence candidates. This batch addressed 13 candidates. The remaining candidates require context review.
 
 ## 8. Remaining Work
 
 - Reduce remaining hard lint findings without raising per-file baselines. The configured baseline total of 170 is not a current lint result.
-- Let the existing GitHub Actions workflows run the official linter and self-test after matching pushes. Never run the linter locally. Follow the mandatory pre-prompt and post-load CI gates in the current workflow task.
 - Review historical archive links only after the user authorizes changes to those records.
 - Review external URL availability if it remains within the approved audit scope.
 - Confirm current audit scope and completion criteria against the repository state before closing the task.
+- Review the remaining long-sentence and synonym-rotation findings in full context. Do not change intentional examples or raise baselines.
 
 ## 9. Next Actions
 
-1. Review remaining supported lint rules in the current full-document scope. Focus on long sentences, synonym rotation, and dangling conjunctions.
-2. Inspect any candidate finding in its full document context before editing.
+1. Review the remaining long-sentence and synonym-rotation candidates in their full document context.
+2. Inspect each candidate before editing. Preserve the source meaning and any intentional examples.
 3. Keep historical audit entries and archived task records unchanged.
-4. Push validation-triggering changes to branch `gpt`. Let GitHub Actions validate them. Do not run the linter locally.
-5. Resume this audit after task `20261120-133053` reaches an outcome.
-5. Review external URL availability if it remains within the approved audit scope.
+4. Review external URL availability if it remains within the approved audit scope.
+5. Push related edits to branch `gpt`. Let GitHub Actions execute independently. Review available results at a later mandatory preflight.
 
 ## 10. References
 
@@ -641,3 +641,14 @@ Continue from the Next Actions. Keep this task In Progress until the remaining a
 - **Task policy:** Use UTC timestamp IDs, every-step meaningful progress logs, automatic necessary follow-ups, and Proposed optional improvements.
 - **Initialization:** Preserve conditional initialization and the sole `start session` cue.
 
+
+
+### 2026-11-20 14:25 UTC
+
+- **Action:** Continued the source-based lint audit after repairing the latest completed CI failure.
+- **Changes:** Split 10 long-sentence candidates in `skills/drawing/SKILL.md` and three in `skills/philosophy-religion-asceticism/SKILL.md`. Corrected one dangling conjunction in `skills/drawing/references/prompt-fidelity.md`. Removed the misplaced Version 5 CI entry from `skills/INITIALIZATION_POLICY.md` so its recorded history remains Versions 1–4.
+- **Commit:** `ccf8c055a99984f1c5ec1d835958e9b5afc14282`.
+- **Read-back:** Pending for this batch.
+- **Lint discipline:** Did not run the linter locally. Did not change any lint baseline.
+- **CI discipline:** Did not wait for or poll GitHub Actions. Review the result at a later mandatory preflight.
+- **Next:** Review remaining long-sentence candidates in the drawing, archive, and philosophy references. Review synonym-rotation findings without changing intentional examples.
