@@ -10,21 +10,59 @@ on:
       - '.github/workflows/ste-lint-changed.yml'
       - '!skills/asd-ste100/examples/**'
 
-permissions:
-  contents: read
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
+  preflight:
+    name: Reject superseded runs before checkout
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions:
+      actions: write
+    outputs:
+      proceed: ${{ steps.guard.outputs.proceed }}
+    steps:
+      - name: Cancel superseded run before checkout
+        id: guard
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          latest_run=$(gh api \
+            "repos/$GITHUB_REPOSITORY/actions/workflows/ste-lint-full-docs.yml/runs" \
+            -f branch="$GITHUB_REF_NAME" \
+            -f event=push \
+            -F per_page=100 \
+            --jq '[.workflow_runs[]] | max_by(.run_number).id // empty' || true)
+
+          if [[ -n "$latest_run" && "$latest_run" != "$GITHUB_RUN_ID" ]]; then
+            echo "A newer run ($latest_run) supersedes this run ($GITHUB_RUN_ID)."
+            gh api --method POST \
+              "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/cancel" >/dev/null
+            exit 0
+          fi
+
+          if [[ -z "$latest_run" ]]; then
+            echo "::warning::Could not identify the latest run. Continue with validation."
+          fi
+          echo "proceed=true" >> "$GITHUB_OUTPUT"
+
   ste-lint:
     name: Lint all in-scope technical Markdown files
+    needs: preflight
+    if: needs.preflight.outputs.proceed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    permissions:
+      contents: read
     steps:
       - name: Check out commit
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - name: Set up Python
         uses: actions/setup-python@v5

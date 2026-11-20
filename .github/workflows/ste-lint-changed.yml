@@ -13,35 +13,51 @@ on:
       - '!skills/prompt-master/**'
       - '!skills/asd-ste100/**'
 
-permissions:
-  contents: read
-  actions: read
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  ste-lint:
-    name: Lint changed Markdown files
+  preflight:
+    name: Reject superseded runs and find lint baseline
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 2
+    permissions:
+      actions: write
+    outputs:
+      proceed: ${{ steps.guard.outputs.proceed }}
+      base_sha: ${{ steps.baseline.outputs.base_sha }}
+      full_audit: ${{ steps.baseline.outputs.full_audit }}
     steps:
-      - name: Check out commit history
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Cancel superseded run before checkout
+        id: guard
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          latest_run=$(gh api \
+            "repos/$GITHUB_REPOSITORY/actions/workflows/ste-lint-changed.yml/runs" \
+            -f branch="$GITHUB_REF_NAME" \
+            -f event=push \
+            -F per_page=100 \
+            --jq '[.workflow_runs[]] | max_by(.run_number).id // empty' || true)
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
+          if [[ -n "$latest_run" && "$latest_run" != "$GITHUB_RUN_ID" ]]; then
+            echo "A newer run ($latest_run) supersedes this run ($GITHUB_RUN_ID)."
+            gh api --method POST \
+              "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/cancel" >/dev/null
+            exit 0
+          fi
 
-      - name: Run linter self-test
-        run: python3 skills/asd-ste100/scripts/ste-lint.py --selftest
+          if [[ -z "$latest_run" ]]; then
+            echo "::warning::Could not identify the latest run. Continue with validation."
+          fi
+          echo "proceed=true" >> "$GITHUB_OUTPUT"
 
-      - name: Find the last successful lint commit
+      - name: Find the last successful lint baseline
         id: baseline
+        if: steps.guard.outputs.proceed == 'true'
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
@@ -56,9 +72,17 @@ jobs:
             --json conclusion,headSha \
             --jq '[.[] | select(.conclusion == "success")][0].headSha // empty' || true)
 
-          if [[ -z "$last_success" ]] ||
-             ! git cat-file -e "${last_success}^{commit}" 2>/dev/null ||
-             ! git merge-base --is-ancestor "$last_success" "$GITHUB_SHA"; then
+          if [[ -z "$last_success" ]]; then
+            echo "full_audit=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          compare_status=$(gh api \
+            "repos/$GITHUB_REPOSITORY/compare/${last_success}...${GITHUB_SHA}" \
+            --jq '.status' 2>/dev/null || true)
+
+          if [[ "$compare_status" != "ahead" && "$compare_status" != "identical" ]]; then
+            echo "::warning::The previous successful commit is missing or is not an ancestor. Run a full audit."
             echo "full_audit=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -66,12 +90,52 @@ jobs:
           echo "base_sha=$last_success" >> "$GITHUB_OUTPUT"
           echo "full_audit=false" >> "$GITHUB_OUTPUT"
 
+  ste-lint:
+    name: Lint changed Markdown files
+    needs: preflight
+    if: needs.preflight.outputs.proceed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Check out current commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Fetch only the successful baseline commit
+        id: fetch_baseline
+        if: needs.preflight.outputs.full_audit == 'false'
+        shell: bash
+        env:
+          BASE_SHA: ${{ needs.preflight.outputs.base_sha }}
+        run: |
+          set -euo pipefail
+          if [[ "$BASE_SHA" == "$GITHUB_SHA" ]]; then
+            echo "full_audit=false" >> "$GITHUB_OUTPUT"
+          elif git fetch --no-tags --depth=1 origin "$BASE_SHA"; then
+            echo "full_audit=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::Could not fetch the baseline commit. Run a full audit."
+            echo "full_audit=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run linter self-test
+        run: python3 skills/asd-ste100/scripts/ste-lint.py --selftest
+
       - name: Check active Markdown file links and heading anchors
-        if: steps.baseline.outputs.full_audit == 'true'
+        if: needs.preflight.outputs.full_audit == 'true' || steps.fetch_baseline.outputs.full_audit == 'true'
         run: python3 skills/asd-ste100/scripts/check_markdown_anchors.py
 
       - name: Run full technical-document lint
-        if: steps.baseline.outputs.full_audit == 'true'
+        if: needs.preflight.outputs.full_audit == 'true' || steps.fetch_baseline.outputs.full_audit == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -91,10 +155,10 @@ jobs:
 
       - name: Find Markdown files changed since the last successful run
         id: changed
-        if: steps.baseline.outputs.full_audit == 'false'
+        if: needs.preflight.outputs.full_audit == 'false' && steps.fetch_baseline.outputs.full_audit != 'true'
         shell: bash
         env:
-          BASE_SHA: ${{ steps.baseline.outputs.base_sha }}
+          BASE_SHA: ${{ needs.preflight.outputs.base_sha }}
         run: |
           set -euo pipefail
           files=$(git diff --name-only --diff-filter=ACMR "$BASE_SHA" "$GITHUB_SHA" -- '*.md' |

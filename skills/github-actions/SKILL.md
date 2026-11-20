@@ -75,6 +75,20 @@ Do not use one static concurrency group for unrelated workflows or branches. Do 
 
 Check whether push and pull-request events share a concurrency group. check that the group does not cancel a run that the user still needs.
 
+### Reject superseded runs before checkout
+
+Concurrency cancellation remains the primary control for replaceable push validation. Add a lightweight preflight job when a run can spend meaningful time or bandwidth on checkout before it reaches its first useful check.
+
+- Run the preflight before any checkout, dependency setup, or repository script.
+- Query the newest run for the same workflow, branch, and event. Compare its run ID with `github.run_id`.
+- If a newer run exists, cancel the current run through the Actions API. Do not let a superseded run report a successful validation result.
+- Give only the preflight job `actions: write` when it must cancel its own run. Keep the validation job on the permissions it needs, such as `contents: read` and `actions: read`.
+- Make the validation job depend on the preflight output. If the preflight cancels the run, the validation job must not start.
+- If the API cannot identify the newest run, continue with validation and emit a warning. Do not skip validation because the guard could not decide.
+- Keep the preflight short and set a small job timeout.
+
+A narrow race remains: a newer push can arrive after the guard passes and before checkout finishes. Keep `cancel-in-progress: true` so GitHub cancels the older run when the new run starts. The guard prevents checkout when a newer run already exists; it cannot prevent every race after the check.
+
 ## 6. Preserve incremental-check correctness
 
 For push-based incremental checks, use the latest successful run of the same workflow and branch as the comparison baseline.
@@ -86,12 +100,13 @@ Use this procedure:
 1. Query completed runs for the same workflow and branch.
 2. Select the latest run with a successful conclusion.
 3. Read its exact `head_sha`.
-4. Fetch enough Git history to compare that commit with the current commit.
-5. check that the baseline is an ancestor of the current commit.
-6. Check every relevant file changed since that baseline.
-7. Run a full audit when the baseline is missing or invalid.
+4. Use the GitHub compare API to check whether the baseline is an ancestor of the current commit before checkout. Accept `ahead` or `identical`; treat missing, failed, or divergent comparisons as an invalid baseline.
+5. Check every relevant file changed since that baseline.
+6. Run a full audit when the baseline is missing or invalid.
 
-Use full checkout history when the comparison requires earlier commits. Do not silently treat a failed, cancelled, queued, or in-progress run as a successful baseline.
+Prefer a shallow checkout with `fetch-depth: 1`. After checkout, fetch only the successful baseline commit with `git fetch --no-tags --depth=1 origin "$BASE_SHA"`. If that fetch fails, run a full audit instead of failing open or omitting changes. Use full checkout history only when the validation itself needs broader history. Do not use `git merge-base` as an ancestry test in a shallow checkout.
+
+Do not silently treat a failed, cancelled, queued, or in-progress run as a successful baseline.
 
 For pull-request checks, compare the pull-request head with the appropriate base commit. Use the event payload and Git history that match the pull-request validation design. Do not reuse a push baseline without a reason.
 
