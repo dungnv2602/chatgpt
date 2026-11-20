@@ -180,7 +180,7 @@ context do not resolve it. Day-drawing sessions may mark this field
 For non-novel drawing work, organize image prompts by date. Each calendar day is a folder under `drawings/`, and each image-generation or image-edit attempt is its own Markdown note. **Exception:** for an illustration belonging to a named novel scene, the scene-local prompt record under `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/` is authoritative. Keep that novel attempt there and do not duplicate it in the daily `drawings/` folder.
 
 ```text
-prompts/
+drawings/
   YYYY-MM-DD/
     README.md              # daily index and status overview
     session-01-brief.md    # authoritative direction for this drawing session
