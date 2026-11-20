@@ -1,5 +1,20 @@
 # Open Discussions
 
+### 2026-11-20 15:25 UTC
+
+**Assistant**
+
+Continued the external URL review. I reviewed 19 unique external URLs across the scanned technical documents. All six linked GitHub repositories are available. Five GitHub Docs links work but redirect to newer canonical documentation paths, so I updated them.
+
+The Agent Skills specification, Wikipedia, TechScribe, and the official ASD-STE100 Issue 9 PDF are accessible. The official ASD-STE100 home and FAQ pages are indexed but direct crawler access returns 403. The ASD Europe and SKYbrary deep links remain unverified because automated access timed out or returned 403. I retained them because access failure alone does not prove that a page is dead.
+
+Earlier in this review, I replaced the old ASD-STE100 About and downloads links with the official FAQ, homepage, and Issue 9 PDF.
+
+Next: continue the remaining scoped URL review, then complete the active-document synonym review. Historical-link review remains gated on your authorization.
+
+---
+
+
 ### 2026-11-20 15:20 UTC
 
 **Assistant**

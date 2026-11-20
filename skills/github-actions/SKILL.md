@@ -217,8 +217,8 @@ Follow Section 3 before every user prompt and after cue-triggered skill loading.
 
 ## 15. Official references
 
-- [Workflow syntax](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
-- [Workflow concurrency](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/control-the-concurrency-of-workflows-and-jobs)
-- [Dependency caching](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows)
-- [Workflow artifacts](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts)
-- [Secure use reference](https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions)
+- [Workflow syntax](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax)
+- [Workflow concurrency](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency)
+- [Dependency caching](https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching)
+- [Workflow artifacts](https://docs.github.com/en/actions/tutorials/store-and-share-data)
+- [Secure use reference](https://docs.github.com/en/actions/reference/security/secure-use)

@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 15:20 UTC
+- **Updated:** 2026-11-20 15:25 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -45,6 +45,15 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - Branch `gpt` remains the sole working branch. Do not modify `main` without explicit authorization.
 
 ## 6. Progress Log
+
+### 2026-11-20 15:25 UTC
+
+- **Action:** Continued the external URL review across approved technical-document paths.
+- **Finding:** Reviewed 19 unique external URLs across the scanned documents. All six linked GitHub repositories are available. Five GitHub Docs links work but redirect to newer canonical documentation paths. The Agent Skills specification, Wikipedia, TechScribe, and the official ASD-STE100 Issue 9 PDF are accessible. Official ASD-STE100 home and FAQ pages are indexed but direct crawler access returns 403. ASD Europe and SKYbrary deep links remain unverified because automated access timed out or returned 403.
+- **Change:** Updated all five GitHub Docs references in the GitHub Actions skill to their current canonical paths. Earlier changes replaced the old ASD-STE100 About and downloads links with the official FAQ, homepage, and Issue 9 PDF.
+- **Decision:** Retained the ASD Europe and SKYbrary links because access failure alone does not prove that the pages are dead.
+- **Next:** Continue the remaining scoped URL review. Then complete the active-document synonym review and verify the latest CI run at a later preflight. Historical-link review remains gated on user authorization.
+
 
 ### 2026-11-20 15:20 UTC
 
