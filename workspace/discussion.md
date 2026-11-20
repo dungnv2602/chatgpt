@@ -1,3 +1,15 @@
+### 2026-11-20 15:29 UTC
+
+**User**
+
+> Check if cue "start session" already included conversation mode skill
+
+**Assistant**
+
+No. `skills/conversation-mode/SKILL.md` defines the “start of Condensed Mode work” procedure, but it does not define or mention the exact cue “start session”. That cue is governed by the session-start instructions, not Conversation Mode.
+
+---
+
 ### 2026-11-20 15:28 UTC
 
 **User**
