@@ -6,6 +6,7 @@ on:
       - gpt
     paths:
       - '**.md'
+      - '!archive/tasks/**'
       - '!novels/**'
       - '!drawings/**'
       - '!master/**'
@@ -143,7 +144,7 @@ jobs:
         run: |
           set -euo pipefail
           files=$(git ls-files '*.md' |
-            grep -vE '^(novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))')
+            grep -vE '^(archive/tasks/|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))')
           failed=0
           while IFS= read -r file; do
             [ -z "$file" ] && continue
@@ -165,7 +166,7 @@ jobs:
         run: |
           set -euo pipefail
           files=$(git diff --name-only --diff-filter=ACMR "$BASE_SHA" "$GITHUB_SHA" -- '*.md' |
-            grep -vE '^(novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/))' || true)
+            grep -vE '^(archive/tasks/|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/))' || true)
           {
             echo "files<<EOF"
             echo "$files"
