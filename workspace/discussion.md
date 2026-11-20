@@ -24,10 +24,10 @@
 **Commits:**
 - [Conversation Mode skill](https://github.com/dungnv2602/chatgpt/commit/4b89e7cd27f6d9094b0e9666917b135b9204ff17)
 - [Task completion record](https://github.com/dungnv2602/chatgpt/commit/a6f1a2853687d668186cc38904a4684065cd38a2)
-- [Task archival](https://github.com/dungnv2602/chatgpt/commit/fb496ef7a178b06029521c043667aecfa56b3614)
+- [Task archival](https://github.com/dungnv2602/chatgpt/commit/3247253793951ae4d55f06e2ad49673766da67bc)
 - [Active task record removal](https://github.com/dungnv2602/chatgpt/commit/2adcbaad5ff37c170e67846e9733f4edadc63013)
-- [Task board update](https://github.com/dungnv2602/chatgpt/commit/20b8f37b31a96592a45eb5b3d5ce7d2b1ed11239)
-- [Repository audit checkpoint](https://github.com/dungnv2602/chatgpt/commit/58fdbda207e7721e5d8217344dee8f2cdcae7756)
+- [Task board update](https://github.com/dungnv2602/chatgpt/commit/70e4ad528dcdff8b8badd4574cd7d4a23a7c81f3)
+- [Repository audit checkpoint](https://github.com/dungnv2602/chatgpt/commit/a1c736e601cf3e8d13c8089d4feb9d752f1aac35)
 
 **Verification:** Fetched the changed skill, task archive, task board, audit task, and this report from branch `gpt`. The task gate, links-only output rule, report requirements, and task-board states passed read-back checks. Manual scan found zero semicolons in the changed skill sections.
 
