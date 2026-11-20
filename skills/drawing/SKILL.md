@@ -33,7 +33,7 @@ This is an on-demand skill, not a foundational skill. Do not load it during ordi
 Load this skill and its required references when:
 - The user says `start a drawing session`.
 - The user requests drawing work that requires this workflow.
-- The user activates the novelist role; Drawing is a prerequisite for the novelist workflow.
+- The user activates the novelist role. Drawing is a prerequisite for the novelist workflow.
 
 For `start a drawing session`, follow the cue and dependency procedure in `skills/SESSION_START.md`. If foundational initialization has not passed in the current conversation, complete it first. Reuse all verified foundational files.
 
