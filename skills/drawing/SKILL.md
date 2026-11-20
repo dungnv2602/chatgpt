@@ -321,14 +321,9 @@ Before every generation or edit attempt:
    session brief for this specific image. Identify critical requirements whose
    failure prevents a successful-match classification. Do not invent criteria
    or turn unspecified details into requirements.
-6. Record the prompt difference in four explicit fields:
-   - **Baseline:** exact successful prompt path/attempt, or `none / first attempt`.
-   - **Preserved:** details carried forward from the baseline and active brief.
-   - **Changed:** details deliberately modified, with the user instruction that
-     authorizes each change.
-   - **Excluded:** details deliberately not carried forward, with the reason.
-   For a first attempt with no baseline, state that and map the prompt directly
-   to the opening brief.
+6. Record the baseline in the template. Summarize only the
+   changes authorized for this attempt. For a first attempt, state that it
+   derives from the active session brief.
 7. Create every attempt record from
    [the standard attempt template](assets/attempt-template.md). Use its headings
    and order without adding a parallel format. Keep the complete authored
