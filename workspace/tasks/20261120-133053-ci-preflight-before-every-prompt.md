@@ -86,6 +86,15 @@ Make CI inspection and repair a mandatory gate before every user prompt. Repeat 
 - **CI:** The next push-triggered runs must pass before this task proceeds.
 - **Next:** Read back the policy and task record. Inspect the new workflow runs and repair any remaining failure.
 
+### 2026-11-20 13:35 UTC
+
+- **Action:** Inspected the next full-document CI result after the first policy update.
+- **Finding:** The full-document run failed on one hard synonym-rotation finding in the repository writing policy. The policy used `validate` after it used `check` for the same action.
+- **Repair:** Changed `validate` to `check`. Full-document run [44745555375](https://github.com/dungnv2602/chatgpt/actions/runs/44745555375) passed on commit `a259f689d470299bac74d08e62f4b60965aaf1da`.
+- **Additional clarification:** Made a cancelled latest run an explicit CI blocker unless a newer run supersedes it. This change will trigger the changed-document workflow.
+- **Read-back:** The repository writing policy was fetched after its update. The GitHub Actions skill will be read back after this commit.
+- **Next:** Inspect the changed-document run triggered by this clarification. Resolve any failure before completing the task.
+
 ## 7. Current State
 
 The initial CI preflight is clear. Both applicable workflows passed on commit `a5ce29072ba5a983c1c769e744dd86962d4a5c41`.

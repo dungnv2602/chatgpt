@@ -36,7 +36,7 @@ The scheduled archive-retention workflow is owned by GitHub Actions.
 This gate applies before the assistant handles every new user prompt. It applies to all request types and conversation modes.
 
 1. Inspect the latest applicable run for each workflow on branch `gpt`. Also inspect the combined status of the current branch head.
-2. Wait for all relevant in-progress runs to finish. Treat an older cancelled run as superseded only when a newer run exists for the same workflow and branch.
+2. Wait for all relevant in-progress runs to finish. A cancelled latest run blocks progress unless a newer run exists for the same workflow and branch. Treat only older cancelled runs as superseded by that newer run.
 3. If a latest run fails, inspect its jobs, failed steps, and logs. Resolve the underlying cause on `gpt`. Do not weaken tests, path coverage, or baselines to force a pass.
 4. Push the repair through the normal repository workflow. Wait for all applicable latest runs to finish and pass. Repeat this cycle if any run fails.
 5. If logs show only a transient GitHub runner or service failure, rerun the failed job. Never rerun a repository failure to hide it.
