@@ -168,7 +168,7 @@ jobs:
         run: |
           set -euo pipefail
           files=$(git diff --name-only --diff-filter=ACMR "$BASE_SHA" "$GITHUB_SHA" -- '*.md' |
-            grep -vE '^(archive/tasks/|workspace/tasks/|workspace/discussion\.md$|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/))' || true)
+            grep -vE '^(archive/|workspace/tasks/|workspace/discussion\.md$|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/))' || true)
           {
             echo "files<<EOF"
             echo "$files"
