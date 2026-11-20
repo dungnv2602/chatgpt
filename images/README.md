@@ -1,6 +1,6 @@
 # Image Assets and WebP Delivery
 
-This directory contains retained image masters, non-novel visual assets, and the universal user-upload intake. Novel illustration binaries live inside each novel's central asset library under `novel/[Novel-ID]/assets/illustrations/`.
+This directory contains retained image masters, non-novel visual assets, and the universal user-upload intake. Novel illustration binaries live inside each novel's central asset library under `novels/[Novel-ID]/assets/illustrations/`.
 
 ## Universal intake
 
@@ -15,7 +15,7 @@ Each hand-off item specifies:
 - the exact incoming filename (`source`);
 - an optional stable ID (`asset_id`, e.g. `ILL-001`);
 - a descriptive title (`title`);
-- a repository-relative `destination_dir` under `images/` or `novel/`.
+- a repository-relative `destination_dir` under `images/` or `novels/`.
 
 The processor converts the title into a lowercase, hyphen-separated slug, removes common diacritics, and prefixes the stable ID when supplied. For example, an item with ID `ILL-001` and title `Shared Discovery` becomes:
 
@@ -26,7 +26,7 @@ The original is moved byte-for-byte to the master path. The WebP is a separate d
 
 ## Existing GitHub Action
 
-The existing [WebP/takeout workflow](../.github/workflows/convert-images-to-webp.yml) uses `cwebp` and the tested conversion profiles below. Its processor is [`images/scripts/process_takeout.py`](scripts/process_takeout.py).
+The existing [WebP/takeout workflow](../.github/workflows/convert-images-to-webp.yml) uses `cwebp` and the tested conversion profiles below. Its processor is [`skills/session-archiving/scripts/process_takeout.py`](../skills/session-archiving/scripts/process_takeout.py).
 
 The workflow validates the complete hand-off and converts the complete batch into persistent staging under `images/takeout/webp/[batch-id]/attempt-NNN/`. Each staged filename preserves the exact incoming filename and appends `.webp` (for example, `camera.png.webp`). It verifies every staged WebP before relocating any original, then moves the verified WebPs to their final destinations. It verifies the original master by SHA-256, checks WebP container signatures and output hashes, checks destination collisions, and confirms every image in the intake is listed exactly once.
 
