@@ -32,12 +32,6 @@ case "$file" in
   skills/session-archiving/references/image-provenance-and-webp.md) baseline=2 ;;
 esac
 
-# The active audit record contains verbatim historical entries moved from the initialization policy.
-# Preserve those entries and exempt only their semicolon punctuation from lint.
-if [ "$file" = "workspace/tasks/20261120-123000-repository-documentation-audit.md" ]; then
-  disable="semicolon"
-fi
-
 # STE-flavored prose does not enforce synonym rotation.
 case "$file" in
   images/README.md|images/takeout/README.md|skills/asd-ste100/README.md|skills/drawing/README.md|skills/drawing/references/patterns/*.md|skills/drawing/references/style-guide.md|skills/philosophy-religion-asceticism/README.md|skills/philosophy-religion-asceticism/CHANGELOG.md|skills/philosophy-religion-asceticism/references/*.md)
