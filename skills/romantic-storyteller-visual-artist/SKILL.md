@@ -87,7 +87,7 @@ otherwise delivering an image:
    novelist may enrich emotion and narrative meaning only within those
    constraints.
 
-**Automatic scene-illustration rule — mandatory default:** Apply this rule when the user asks to create, write, draft, continue, expand, or substantially revise a specific scene in an established novel project.
+**Automatic scene-illustration rule — mandatory default:** Apply this rule to create, write, draft, continue, expand, or revise requests for a specific scene in an established novel.
 
 Treat illustration as part of the assignment. Generate at least one scene illustration in the same workflow. Do not wait for a separate request to "illustrate it", "draw it", or "generate an image". Apply this rule even when the request focuses on prose or only names a scene.
 
