@@ -6,10 +6,10 @@
 
 This README is the daily navigation ledger, not a replacement for the linked
 attempt records. The six fields are deliberately separate: attempt/prompt,
-session/brief, series/baseline lineage, execution outcome, and user approval/output
-evidence, and image linkage. The attempt note is authoritative for exact prompt text, source IDs,
-tool metadata, visual assessment, and provenance. Unknown details remain
-explicitly unverified.
+session/brief, series/baseline lineage, execution outcome, user approval/output
+evidence, and image linkage. The attempt note is authoritative for exact prompt
+text, source IDs, tool metadata, visual assessment, and provenance. Unknown
+details remain explicitly unverified.
 
 ## Field guide
 
@@ -27,20 +27,22 @@ explicitly unverified.
    separately from the execution result. State whether the image was delivered
    in conversation, no output was returned, approval was not recorded, or
    storage/linkage was not verified.
-6. **Image:** link the exact, verified repository image for successful outputs.
-   Until a successful output is uploaded and processed, write `Waiting for image upload`.
-   Use `—` for failed, rejected, superseded, partial, or otherwise unsuccessful
-   results; do not imply they are waiting for a keeper upload.
+6. **Image:** link every generated image output once its exact repository asset
+   is uploaded and verified, regardless of user approval or prompt compliance.
+   Include partial, off-target, superseded, and unapproved outputs. Approval
+   remains separate in field 5. If an image was generated but its asset has not
+   yet been uploaded, write `Waiting for image upload`. Use `—` only when no
+   image was returned or generated.
 
-For newly retained non-novel drawing outputs, the image file belongs in this day's `images/` subfolder (`attempt-XX.webp`; multiple outputs use numbered suffixes). Link only a verified asset in the Image column. Successful outputs without a verified repository image say `Waiting for image upload`. Existing outputs are not migrated.
+For newly retained non-novel drawing outputs, the image file belongs in this day's `images/` subfolder (`attempt-XX.webp`; multiple outputs use numbered suffixes). Link every generated output, not only approved keepers. Existing outputs are not migrated.
 
 | Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |
 |---|---|---|---|---|---|
 | [01 — Intimate, dimly lit bedroom portrait](attempt-01.md) | 2026-11-19 portrait session; no separate brief filed | Initial portrait direction; source/base details remain in the attempt note | Rejected; no image returned | No output; user approval not recorded | — |
 | [02 — Quiet romantic bedroom portrait (clean start)](attempt-02.md) | 2026-11-19 portrait session; no separate brief filed | Clean start; standalone prompt, no prior baseline | Generated successfully; delivered in conversation | User approval not recorded; output delivered in conversation | See [image inventory](#image-inventory-all-30-files); exact attempt mapping is unverified |
 | [03 — Softer fabric, same ivory wrap outfit](attempt-03.md) | 2026-11-19 portrait session; no separate brief filed | Ivory-wrap portrait branch; exact source/base in attempt note | Rejected; no image returned | No output; user approval not recorded | — |
-| [04 — Seated window portrait, same ivory wrap outfit](attempt-04.md) | 2026-11-19 portrait session; no separate brief filed | Ivory-wrap seated/window branch; exact source/base in attempt note | Rejected; no image returned | No output; user approval not recorded | — |
-| [05 — Neutral studio portrait, same ivory wrap outfit](attempt-05.md) | 2026-11-19 portrait session; no separate brief filed | Ivory-wrap neutral-studio branch; exact source/base in attempt note | Rejected; no image returned | No output; user approval not recorded | See [image inventory](#image-inventory-all-30-files); exact attempt mapping is unverified |
+| [04 — Seated window portrait, same ivory wrap outfit](attempt-04.md) | 2026-11-19 portrait session; no separate brief filed | Ivory-wrap seated/window branch; exact source/base in attempt note | Prompt approved; generation pending; no result recorded | Prompt approved; no image output recorded | — |
+| [05 — Neutral studio portrait, same ivory wrap outfit](attempt-05.md) | 2026-11-19 portrait session; no separate brief filed | Ivory-wrap neutral-studio branch; exact source/base in attempt note | Generated successfully; image delivered in conversation | Prompt approved; image approval not recorded; output delivered | See [image inventory](#image-inventory-all-30-files); exact attempt mapping is unverified |
 | [06 — Supine bed portrait, looking up toward camera](attempt-06.md) | 2026-11-19 portrait session; no separate brief filed | Supine-bed composition; designated as the approved composition baseline | Generated successfully; composition baseline retained | Output delivered in conversation; approval/baseline rationale is detailed in the attempt note | See [image inventory](#image-inventory-all-30-files); exact attempt mapping is unverified |
 | [07 — Supine bed portrait, softer ivory wrap fabric](attempt-07.md) | 2026-11-19 portrait session; no separate brief filed | Attempt 06 composition; fabric-softness revision | Generated; fabric softness partly achieved, pose/outfit preservation incomplete | Output delivered in conversation; user approval not recorded | See [image inventory](#image-inventory-all-30-files); exact attempt mapping is unverified |
 | [08 — Overhead bed portrait, airy modal-viscose fabric](attempt-08.md) | 2026-11-19 portrait session; no separate brief filed | Overhead-bed / modal-viscose branch | Rejected by image tool; no image returned | No output; user approval not recorded | — |
