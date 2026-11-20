@@ -707,17 +707,17 @@ class PublishedManifestVerificationTests(unittest.TestCase):
             self.webp_path: self.webp_bytes,
             self.original_path: self.original_bytes,
             "drawings/2026-11-19/README.md": (
-                b"# Drawing session\\n\\n"
-                b"| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\\n"
-                b"|---|---|---|---|---|---|\\n"
-                b"| [01 — Output](attempt-01.md) | Session | Existing | Generated | Not recorded | [result.webp](images/result.webp) |\\n"
-                b"\\n## Image inventory — 1 WebP delivery files + 1 original master (2 files total)\\n\\n"
-                b"- [result.webp](images/result.webp)\\n"
-            ),
+                "# Drawing session\n\n"
+                "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+                "|---|---|---|---|---|---|\n"
+                "| [01 - Output](attempt-01.md) | Session | Existing | Generated | Not recorded | [result.webp](images/result.webp) |\n"
+                "\n## Image inventory — 1 WebP delivery files + 1 original master (2 files total)\n\n"
+                "- [result.webp](images/result.webp)\n"
+            ).encode("utf-8"),
             "drawings/2026-11-19/attempt-01.md": (
-                b"# Attempt 01\\n\\n## Repository images\\n\\n"
-                b"- [result.webp](images/result.webp)\\n"
-            ),
+                "# Attempt 01\n\n## Repository images\n\n"
+                "- [result.webp](images/result.webp)\n"
+            ).encode("utf-8"),
         }
 
 
@@ -744,12 +744,12 @@ class PublishedManifestVerificationTests(unittest.TestCase):
 
     def test_missing_published_inventory_link_fails_verification(self):
         self.blobs["drawings/2026-11-19/README.md"] = (
-            b"# Drawing session\n\n"
-            b"| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
-            b"|---|---|---|---|---|---|\n"
-            b"| [01 — Output](attempt-01.md) | Session | Existing | Generated | Not recorded | [result.webp](images/result.webp) |\n"
-            b"\n## Image inventory — 0 WebP delivery files + 1 original master (1 file total)\n"
-        )
+            "# Drawing session\n\n"
+            "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+            "|---|---|---|---|---|---|\n"
+            "| [01 - Output](attempt-01.md) | Session | Existing | Generated | Not recorded | [result.webp](images/result.webp) |\n"
+            "\n## Image inventory — 0 WebP delivery files + 1 original master (1 file total)\n"
+        ).encode("utf-8")
         error = verify_session_links(self.row, lambda path: self.blobs.get(path))
         self.assertIn("inventory does not link", error)
 
