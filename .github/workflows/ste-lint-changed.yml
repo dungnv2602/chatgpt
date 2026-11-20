@@ -37,12 +37,14 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          latest_run=$(gh api \
-            "repos/$GITHUB_REPOSITORY/actions/workflows/ste-lint-changed.yml/runs" \
+          if ! latest_run=$(gh api \
+            "repos/$GITHUB_REPOSITORY/actions/workflows/424715662/runs" \
             -f branch="$GITHUB_REF_NAME" \
             -f event=push \
             -F per_page=100 \
-            --jq '[.workflow_runs[]] | max_by(.run_number).id // empty' || true)
+            --jq '[.workflow_runs[]] | max_by(.run_number).id // empty' 2>/dev/null); then
+            latest_run=""
+          fi
 
           if [[ -n "$latest_run" && "$latest_run" != "$GITHUB_RUN_ID" ]]; then
             echo "A newer run ($latest_run) supersedes this run ($GITHUB_RUN_ID)."
