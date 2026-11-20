@@ -443,7 +443,8 @@ Markdown table with exactly six fields:
    Include partial, off-target, superseded, and unapproved outputs. Approval is
    recorded separately in field 5. If an image was generated but is not yet
    uploaded, write `Waiting for image upload`. Use `—` only when no image was
-   returned or generated.
+   returned or generated. Use `Not verified` when the tool outcome is
+   unconfirmed and no attempt-specific image can be attributed.
 
 Include every attempt, not only successful ones, and keep the rows in
 chronological order. The table is a compact navigation/status summary. Each
