@@ -5,7 +5,7 @@
 **Project:** Imagined human embodiment of Samantha from *Her* (2013)
 **Primary series / membership:** Samantha — Human Presence Without a Body (working thematic-series label derived from the visual-drive note; not a universal character or style rule)
 **Created:** 2026-11-20
-**Status:** Active
+**Status:** Paused
 **Recovery status:** Reconstructed from the existing project note and Attempts 01–03 because a separate opening-brief file was not preserved. This is not a verbatim transcript of the original opening message.
 
 ## Original opening brief
@@ -76,3 +76,4 @@ The original opening message is not available in the retained project record. Th
 - **2026-11-20 — Resume instruction:** The user asked to continue drawing Samantha and pick up where the project left off. Resume from the latest recorded attempt and the saved Samantha visual-drive note. Do not close the session unless the user separately sends the standalone cue `end session`.
 - **2026-11-20 — Sweet-path baseline approval:** The user approved Attempt 07 (prompt-first reconstruction with text panels removed) as the **new sweet-path baseline**. It supersedes Attempt 06 for future sweet-path continuity. Attempt 06 remains preserved as historical branch origin; Attempt 07 is a fresh reconstruction and not a pixel-identical edit.
 - **2026-11-20 — Scenario direction established:** Added [Scenario Direction](scenario-direction.md), based on the film's story, published screenplay, production notes, and interviews. It is the narrative and character-interpretation reference for future Samantha illustrations. It explicitly distinguishes Samantha's film canon (a disembodied, self-developing AI represented through voice and relationship) from this project's speculative human embodiment. It does not replace the approved visual baselines or impose a canonical face, hairstyle, or outfit.
+- **2026-11-21 — New session opened:** Session `SAMANTHA-2026-11-21-01` started. This session is Paused; its records remain unchanged.
