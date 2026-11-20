@@ -8,7 +8,7 @@ This file is an index. The individual task record is authoritative for detailed 
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-| 20261120-112500 | Implement The Worker and workspace continuity | P1 | In Progress | User | 2026-11-20 11:25 UTC | [Task record](tasks/20261120-112500-the-worker-workspace-continuity.md) |
+_No active execution task._
 
 ## Ready
 
@@ -28,7 +28,7 @@ _No paused tasks._
 
 ## Historical
 
-_Completed and cancelled tasks remain here as compact entries. Link each entry to its archival commit after its archive file expires._
+| 20261120-112500 | Implement The Worker and workspace continuity | P1 | Done | User | 2026-11-20 | [Archived record](../archive/tasks/20261120-112500-the-worker-workspace-continuity.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/e0b531a72dbb12ee8c4e7eaeea8b8170b4f22965) |
 
 ## Selection rules
 
