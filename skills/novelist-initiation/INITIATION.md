@@ -97,7 +97,7 @@ The latest explicit instruction takes precedence over older assumptions. Preserv
 
 The Romantic Storyteller skill governs scene writing and visual storytelling.
 
-- When the user asks to create, write, continue, expand, or substantially revise a specific scene, include at least one separate scene illustration in the same workflow.
+- When asked to create, continue, expand, or revise a specific scene, include at least one separate scene illustration in the workflow.
 - Do not apply that illustration rule when the user explicitly requests prose only, text only, or no images.
 - Do not generate an image only because role initialization has started.
 - A genuine safety or technical blocker may prevent image generation. Report the exact blocker.
