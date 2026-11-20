@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 12:57 UTC
+- **Updated:** 2026-11-20 13:00 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -76,6 +76,16 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Read-back:** Fetched the updated wrapper from branch `gpt`. Confirmed that all 17 baseline paths exist in the current tree and that both stale paths are absent.
 - **Validation limit:** Did not run the linter or its self-test. The connected repository tools do not provide a repository shell. No CI run was manually triggered or inspected.
 - **Next:** Reduce current lint findings and obtain a fresh full-document lint result in an authorized repository execution environment.
+
+### 2026-11-20 13:00 UTC
+
+- **Action:** Scanned all 47 Markdown files in the current full-document workflow scope for semicolons and selected structural lint patterns.
+- **Result:** The preliminary scan found 20 semicolon occurrences in six editable files. Removed all 20. The six files are `skills/github-actions/SKILL.md`, `skills/SESSION_START.md`, `skills/drawing/SKILL.md`, `skills/session-archiving/references/archive-records-and-image-prompts.md`, `workspace/task_board.md`, and this task record.
+- **Preserved exceptions:** Did not edit archived task records. The ASD-STE100 writing-rules reference contains a quoted semicolon example and its wrapper disables the semicolon rule for that file. The ASD-STE100 skill contains intentional rule examples and retains its recorded baseline.
+- **Commits:** GitHub Actions skill `9a12123fadc3776ebe0ef16750168f2437389b04`; Session Start `b01570973ee52391bafa9a02bceab6cf09b67db6`; Drawing skill `a6e665e99f0dff10b8a43c2cf32d89e91a2a5184`; archive reference `6b99a7fa7d5af1b8ec93d4870f925b2d498552c4`; task board `a71692b6118068667d18f37aa06fd8de662613f2`; audit task `f7c17ef3838af9cff0fa5ffdba862a939ba47b07`.
+- **Read-back:** Fetched all six paths from branch `gpt`. Confirmed that none contains a semicolon.
+- **Validation limit:** This was a targeted text scan, not an execution of the official linter. The repository execution environment remains unavailable. No CI run was manually triggered or inspected.
+- **Next:** Review remaining supported lint patterns and obtain a fresh full lint result in an authorized repository execution environment.
 
 ## 7. Current State
 
