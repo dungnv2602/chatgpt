@@ -84,11 +84,15 @@ Store novel illustration binaries centrally at:
 
 `[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`
 
-Keep the Illustration Note and Illustration Prompt Record in the scene-local `illustrations/` folder. The scene-local folder contains documentation, not image binaries. Each retained illustration has an original PNG/JPEG master and a WebP derivative beside it. The original remains the byte-identical master; WebP is a separate delivery copy.
+Keep the Illustration Note and Illustration Prompt Record in the scene-local `illustrations/` folder. This folder stores documentation, not image binaries. Each retained illustration has an original PNG/JPEG master and a WebP derivative beside it. The original remains the byte-identical master. WebP is a separate delivery copy.
 
-All user-uploaded images, for novels and other projects, first enter the single flat intake at `images/takeout/`. The assistant inspects each image and prepares `images/takeout/HANDOFF.yml` with its exact incoming filename, descriptive title, optional stable ID, and destination directory. The existing GitHub Action deterministically slugifies the title, preserves the original bytes, and stages each WebP under `images/takeout/webp/[batch-id]/attempt-NNN/` using the exact incoming filename plus `.webp` (for example, `photo.png.webp`). After verification, the master and staged derivative move to their permanent destination.
+All user-uploaded images first enter the single flat intake at `images/takeout/`. This rule applies to novel and non-novel projects. The assistant inspects each image and prepares `images/takeout/HANDOFF.yml`. Each hand-off item records the exact incoming filename, descriptive title, optional stable ID, and destination directory.
 
-The Action refuses destination collisions and processes the batch as a unit. On success it removes the empty staging attempt folder and clears the active hand-off only after every master and WebP is verified and the original hand-off, `conversion-report.csv`, and `verification-report.md` have been archived under `images/takeout/history/[batch-id]/attempt-NNN/`. On failure, source images and the ready hand-off remain in the intake, while successfully converted WebPs remain in the failed attempt's staging folder for inspection. A retry receives a new attempt number and preserves the earlier failed staging. See [Image Takeout](../images/takeout/README.md) and [Novel Production Workflow 1.1](WORKFLOW.md).
+The existing GitHub Action converts the supplied title to a slug. It preserves the original bytes. It stages each WebP under `images/takeout/webp/[batch-id]/attempt-NNN/`. Each staged filename uses the exact incoming filename plus `.webp` (for example, `photo.png.webp`). After verification, the master and staged derivative move to their permanent destination.
+
+The Action refuses destination collisions and processes the batch as a unit. On success, it removes the empty staging attempt folder. It clears the active hand-off only after it verifies every master and WebP. It also archives the original hand-off, `conversion-report.csv`, and `verification-report.md` under `images/takeout/history/[batch-id]/attempt-NNN/`.
+
+On failure, source images and the ready hand-off remain in the intake. Successfully converted WebPs remain in the failed attempt's staging folder for inspection. A retry receives a new attempt number and preserves earlier failed staging. See [Image Takeout](../images/takeout/README.md) and [Novel Production Workflow 1.1](WORKFLOW.md).
 
 ## Document responsibilities
 
@@ -145,9 +149,9 @@ A draft's existence does not automatically make every detail approved canon. A b
 
 When the user asks to create, write, draft, continue, expand, or substantially revise a specific novel scene, generate at least one standalone illustration as part of the same assignment. This default is not triggered by brainstorming, discussion, or outline planning.
 
-Do not generate images when the user explicitly requests prose-only/text-only/no-images. If safety or a genuine technical prerequisite blocks generation, state the exact blocker and leave the illustration outstanding rather than silently downgrading the deliverable.
+Do not generate images when the user explicitly requests prose-only, text-only, or no-images. If safety or a genuine technical prerequisite blocks generation, state the exact blocker and leave the illustration outstanding rather than silently downgrading the deliverable.
 
-Before every generation/edit attempt, follow the Drawing Skill's prompt-archive and reference rules. Create the scene-local Illustration Prompt Record before the attempt. After the result, record the actual outcome and create/update the Illustration Note. Do not invent an image path or claim an image was stored in the repository if it was only delivered in the conversation.
+Before every generation or edit attempt, follow the Drawing Skill's prompt-archive and reference rules. Create the scene-local Illustration Prompt Record before the attempt. After the result, record the actual outcome and create/update the Illustration Note. Do not invent an image path or claim an image was stored in the repository if it was only delivered in the conversation.
 
 ## Versioning
 
