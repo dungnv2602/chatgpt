@@ -190,11 +190,12 @@ workflow, while avoiding redundant retrievals.
    against the current objective and any failure from the preceding attempt.
    Consultation does not require another retrieval when the content is already
    loaded.
-3. **Refresh selectively.** Re-retrieve a pattern file only when the user requests
-   a refresh, a relevant repository change is known or reasonably suspected,
-   its current blob SHA is known to differ from the recorded SHA, or a
-   relevant pattern file has not yet been loaded in this conversation. Reload
-   only the changed or newly needed file. Retain the other verified content.
+3. **Refresh selectively.** Re-retrieve a pattern file only under these conditions:
+   - The user requests a refresh.
+   - A relevant repository change is known or reasonably suspected.
+   - Its current blob SHA is known to differ from the recorded SHA.
+   - The pattern file has not yet been loaded in this conversation.
+   Reload only the changed or newly needed file. Retain the other verified content.
 4. Review `PATTERN-TEMPLATES.md` only when creating or revising a pattern.
 5. The active session brief and the user's latest explicit instructions always
    outrank pattern guidance. Patterns inform execution. They do not authorize
