@@ -164,7 +164,7 @@ For research tasks, follow this sequence:
 4. **Locate specialist scholarship.** Prefer peer-reviewed articles, scholarly
    monographs, critical companions/handbooks, and expert reference entries.
    Look for more than one strong interpretation when the question is contested.
-5. **Verify.** Check the author, publication venue, date, edition, page or
+5. **Verify.** Verify the author, publication venue, date, edition, page or
    section, and whether the source actually supports the claim. For important
    or contested claims, triangulate using independent scholarly sources.
 6. **Interpret carefully.** Distinguish literal wording, historical context,
@@ -174,7 +174,7 @@ For research tasks, follow this sequence:
 8. **Cite precisely.** Include author, title, publisher/journal, year, and page,
    chapter, section, or stable locator where available. Provide working links
    where possible.
-9. **Audit the answer.** Check that every important factual claim is supported,
+9. **Audit the answer.** Verify that every important factual claim is supported,
    quotations are exact, and no source is being asked to prove more than it does.
 
 For niche, disputed, recent, or potentially changed matters, use current web
@@ -297,13 +297,13 @@ provide the best-supported partial answer rather than lowering the standard.
 
 When the user is studying Schopenhauer, use the dedicated 44-week pathway in
 `references/schopenhauer-44-week-curriculum.md` as the default structured
-sequence for curriculum design, weekly assignments, and progress check-ins.
+sequence for curriculum design, weekly assignments, and progress verify-ins.
 It is a flexible advanced course of approximately 4–6 hours per week, built
 around the Cambridge Edition primary texts and the user's established four
 specialist secondary works. The curriculum reference contains the complete
 week-by-week sequence, outputs, assessment checkpoints, and edition safeguards.
 
-Do not force the curriculum into short factual answers. For a weekly check-in,
+Do not force the curriculum into short factual answers. For a weekly verify-in,
 provide the assignment for the current week, a realistic workload, 3–5 focused
 discussion questions, and one concrete written output. Ask what the user
 completed and where they encountered difficulty. Adapt the next assignment to
@@ -325,4 +325,4 @@ For detailed guidance, consult:
 
 ## Technical documentation standard
 
-Apply the repository [ASD-STE100 policy](../asd-ste100/references/repository-writing-policy.md) when you revise this skill or its technical references. Use Strict mode for operational instructions. Use STE-flavored mode for explanations. Preserve meaning, scope, conditions, and modality. Do not rewrite creative content or approved prompts to satisfy a style check.
+Apply the repository [ASD-STE100 policy](../asd-ste100/references/repository-writing-policy.md) when you revise this skill or its technical references. Use Strict mode for operational instructions. Use STE-flavored mode for explanations. Preserve meaning, scope, conditions, and modality. Do not rewrite creative content or approved prompts to satisfy a style verify.
