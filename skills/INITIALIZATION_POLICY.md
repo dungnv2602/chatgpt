@@ -431,3 +431,14 @@ Use this template:
 - **Read-back:** Both committed files were fetched from branch `gpt`. The requested text changes were present.
 - **Commits:** `4cb4445ff4be63853e24a03312e9b290275dd2af`, `6df11cd446aeaf68def816db91e1b59d2f3fa69a`, and `55c54b11d9c2f941c4c553bcbc726db74a6cba18`.
 - **CI:** Pending. Check the result on the next user turn.
+
+
+### Version 23 — Novelist initiation lint cleanup
+
+- **Date:** 2026-11-20
+- **Scope:** Align verification terms and reduce synonym-rotation findings in the novelist initiation protocol. Preserve all initiation gates and user-authority conditions.
+- **File changed:** `skills/novelist-initiation/INITIATION.md`.
+- **Baseline policy:** No lint baseline changed.
+- **Read-back:** The committed file was fetched from branch `gpt`. The revised instructions were present.
+- **Commits:** `0653ef18680613263b415b95bea5e283128e1cea` and `e0a78c077559c9b2b95c53f2681d9c6fe24a8f04`.
+- **CI:** Pending. Check the result on the next user turn.
