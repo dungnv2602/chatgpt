@@ -8,7 +8,9 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## Current Execution
 
-_No unblocked execution task._
+| ID | Task | Priority | Status | Origin | Updated | Record |
+|---|---|---:|---|---|---|---|
+| 20261120-123000 | Continue the repository documentation audit | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-123000-repository-documentation-audit.md) |
 
 ## Ready
 
