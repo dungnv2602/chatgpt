@@ -71,7 +71,9 @@ This cadence does not remove the requirement to load a task-specific skill when 
 
 ### First-response execution rule
 
-The first assistant response after the user says `start session` must be a startup notice. It must not ask for the user's goal, confirmation, or more permission.\n\nAfter the notice, perform the required retrievals below. Do not ask the user to repeat or explain the cue. Do not claim that a check is underway unless you are performing its retrieval.
+The first assistant response after the user says `start session` must be a startup notice. It must not ask for the user's goal, confirmation, or more permission.
+
+After the notice, perform the required retrievals below. Do not ask the user to repeat or explain the cue. Do not claim that a check is underway unless you are performing its retrieval.
 
 The startup gate is a prerequisite check, not the session archive itself. Do not create or update dated archive records merely because a new conversation has started. Once the required skills and references have been retrieved and read successfully, report verification and then address the user's request. If a retrieval fails, stop project work and identify the exact missing path.
 
