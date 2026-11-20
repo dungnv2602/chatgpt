@@ -71,7 +71,7 @@ Neither the skill nor the linter certifies a document as fully ASD-STE100 compli
 
 `skills/github-actions/SKILL.md` is a required foundational skill. Load it during foundational initialization.
 
-Use it when you create, revise, optimize, secure, or verify GitHub Actions workflows. It defines workflow triggers, concurrency, incremental checks, caching, runners, permissions, artifacts, and validation.
+Use it when you create, revise, optimize, secure, or check GitHub Actions workflows. It defines workflow triggers, concurrency, incremental checks, caching, runners, permissions, artifacts, and validation.
 
 ## Source-of-truth rule
 

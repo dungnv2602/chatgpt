@@ -1,6 +1,6 @@
 ---
 name: github-actions
-description: Design, maintain, optimize, secure, and verify GitHub Actions workflows. Use when work changes CI workflows, triggers, path filters, concurrency, incremental checks, caching, runners, permissions, artifacts, or deployment automation.
+description: Design, maintain, optimize, secure, and check GitHub Actions workflows. Use when work changes CI workflows, triggers, path filters, concurrency, incremental checks, caching, runners, permissions, artifacts, or deployment automation.
 metadata:
   project-role: foundational
   format: agentskills
@@ -21,15 +21,15 @@ This skill governs workflow-specific decisions. The Conversation Mode skill gove
 1. Follow the user's current instructions and the repository's approved workspace boundary.
 2. Use repository `dungnv2602/chatgpt`, branch `gpt`, as the source of truth.
 3. Follow Sections 7 and 8 of `skills/conversation-mode/SKILL.md` for pending CI runs, batching, read-back, and commit verification.
-4. Do not infer permission to modify files outside the approved project directories.
-5. Obtain the required authorization before you access or change workflow paths outside those directories.
+4. Do not infer permission to change files outside the approved project directories.
+5. Request the required authorization before you access or change workflow paths outside those directories.
 6. Do not change `main` unless the user authorizes that change.
 
 The imported optimization note is supporting source material. It is not an authority for current GitHub limits, prices, or default settings. See [the user-supplied optimization notes](references/user-supplied-optimization-notes.md).
 
 ## 3. Inspect before editing
 
-1. Confirm the current branch head.
+1. check the current branch head.
 2. Check known pending CI run IDs from the previous task.
 3. Inspect each target workflow and every script or configuration file that it uses.
 4. Record its events, branch filters, path filters, jobs, dependencies, permissions, concurrency, runner, timeout, cache, and artifact settings.
@@ -40,7 +40,7 @@ Do not optimize a workflow by removing a required test or weakening its validati
 
 ## 4. Design precise triggers
 
-Use event filters to avoid runs that cannot validate the changed files.
+Use event filters to avoid runs that cannot check the changed files.
 
 - Use branch filters when a workflow only applies to selected branches.
 - Use `paths` when a workflow applies to a defined file set.
@@ -73,7 +73,7 @@ Use `cancel-in-progress: true` when a newer run makes an older validation run ob
 
 Do not use one static concurrency group for unrelated workflows or branches. Do not cancel an active deployment unless the deployment design makes cancellation safe. Use environment protection or a deployment-specific concurrency policy when required.
 
-Check whether push and pull-request events share a concurrency group. Confirm that the group does not cancel a run that the user still needs.
+Check whether push and pull-request events share a concurrency group. check that the group does not cancel a run that the user still needs.
 
 ## 6. Preserve incremental-check correctness
 
@@ -87,7 +87,7 @@ Use this procedure:
 2. Select the latest run with a successful conclusion.
 3. Read its exact `head_sha`.
 4. Fetch enough Git history to compare that commit with the current commit.
-5. Confirm that the baseline is an ancestor of the current commit.
+5. check that the baseline is an ancestor of the current commit.
 6. Check every relevant file changed since that baseline.
 7. Run a full audit when the baseline is missing or invalid.
 
@@ -145,9 +145,9 @@ Set workflow permissions explicitly. Grant each job only the permissions that it
 - Use short-lived credentials and OpenID Connect when the deployment provider supports it.
 - Do not expose secrets to untrusted pull-request code.
 - Do not use `pull_request_target` to execute untrusted pull-request code with elevated permissions.
-- Pass event values to scripts through environment variables. Quote and validate each value before use.
+- Pass event values to scripts through environment variables. Quote and check each value before use.
 - Do not interpolate untrusted event data directly into shell commands.
-- Follow repository policy for action pinning. Verify the action owner and source before you adopt an action version.
+- Follow repository policy for action pinning. check the action owner and source before you adopt an action version.
 - Isolate self-hosted runners that execute untrusted code. Do not reuse a privileged persistent workspace across trust boundaries.
 
 ## 11. Keep workflow structure maintainable
@@ -162,14 +162,14 @@ Do not duplicate checks across workflows unless each check has a distinct purpos
 
 Batch related workflow, script, and documentation edits into one coherent commit when the available write interface supports it. Avoid intermediate commits that trigger duplicate CI runs.
 
-## 12. Validate and report
+## 12. check and report
 
 1. Parse every changed workflow as YAML.
 2. Run `actionlint` when it is available.
 3. Run the workflow's relevant scripts and tests when the execution environment supports them.
 4. Review event filters, permission scope, concurrency groups, baseline selection, and fallback behavior.
 5. Read back every changed path from branch `gpt`.
-6. Confirm the final branch head and associate each CI result with the exact commit SHA it checked.
+6. check the final branch head and associate each CI result with the exact commit SHA it checked.
 7. Report run IDs and pending states. Follow the Conversation Mode CI checkpoint policy. Do not wait for or repeatedly poll an in-progress run.
 
 Do not claim that a workflow passed because a commit has no status entries. Report unavailable checks as unverified.
@@ -178,7 +178,7 @@ Do not claim that a workflow passed because a commit has no status entries. Repo
 
 The reference file preserves the user's original optimization note. Use it to identify potential improvements.
 
-Verify mutable claims against current official GitHub documentation before you rely on them. This includes runner prices, billing multipliers, job-minute rounding, storage quotas, retention periods, and default settings.
+check mutable claims against current official GitHub documentation before you rely on them. This includes runner prices, billing multipliers, job-minute rounding, storage quotas, retention periods, and default settings.
 
 Do not copy example action versions or runtime versions without checking whether they remain supported. Do not add caching or artifact retention when the workflow has no dependency or artifact requirement.
 
