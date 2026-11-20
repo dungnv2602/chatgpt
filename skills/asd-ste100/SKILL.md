@@ -11,7 +11,7 @@ metadata:
 
 ASD-STE100 is a controlled-language standard developed by the aerospace and defense industry (ASD, the AeroSpace and Defense Industries Association of Europe). It helps maintenance technicians interpret English instructions correctly. The standard addresses two major sources of misreading: words with more than one meaning and sentences with more than one possible structure.
 
-This skill applies that discipline to a different reader: an **AI agent or a downstream system**. Such a system must parse an English string, such as an error message, a tool description, an inter-agent instruction, or a status report, without a human to resolve ambiguity. A maintenance technician can misread "close the valve" as an adjective ("the valve that is near") instead of a command. A language model can make the same error.
+This skill applies that discipline to a different reader: an **AI agent or a downstream system**. Such a system must parse an English string without a human to resolve ambiguity. Examples include an error message, a tool description, an inter-agent instruction, or a status report. A maintenance technician can misread "close the valve" as an adjective ("the valve that is near") instead of a command. A language model can make the same error.
 
 ## When to Use This Skill
 
@@ -30,13 +30,13 @@ Pick a mode before rewriting. If the user does not say which, infer it from the 
 
 **STE-flavored** — Use for READMEs, PR descriptions, changelogs, and explanatory prose. Apply the structural rules in full. Treat lexical rules as advisory (see Core Rewrite Rules for that split). Keep sentence-length caps, active voice, simple tenses, no phrasal verbs, no semicolons, no nominalization, and no marketing adjectives. Do not enforce the one-word-one-meaning lockdown. Prose needs some range. A strict rewrite of prose reads as a personality transplant rather than a clarification.
 
-The two modes and the structural/lexical split are the same distinction seen from two directions. The split says which rules this skill can verify without ASD's dictionary. The modes say which of them to enforce for a given kind of text.
+The two modes and the structural/lexical split are the same distinction seen from two directions. The split says which rules this skill can check without ASD's dictionary. The modes say which of them to enforce for a given kind of text.
 
 ## Source and Scope
 
 This skill encodes the **rule categories** of ASD-STE100 Issue 9 (Jan 2025). The standard contains 53 writing rules across 9 sections. These rules cover word choice, grammar, sentence structure, and style. A dictionary supports them. It contains about 900 approved words (one meaning and one part of speech each) and about 1,200 words to avoid with suggested replacements. See `references/writing-rules.md` for the full rule summary and citations.
 
-It does **not** reproduce ASD's ~900-word approved dictionary verbatim. ASD-STE100 is free to obtain, but not free to redistribute. Issue 9, page 2, states: "no reproduction or publication of it, in whole or in part, shall be made without the written authority of an officer of ASD." It grants free reproduction rights only to eight listed categories: ASD/AIA/AIAC member associations and their member companies and customers, member-state defence ministries, A4A, airworthiness authorities, and universities and research institutes for educational purposes. This project is not in any of those categories. Therefore, the dictionary stays out of this repository.
+It does **not** reproduce ASD's ~900-word approved dictionary verbatim. ASD-STE100 is free to obtain, but not free to redistribute. Issue 9, page 2, states: "no reproduction or publication of it, in whole or in part, shall be made without the written authority of an officer of ASD." It grants free reproduction rights to eight categories. These include ASD/AIA/AIAC member associations, their member companies and customers, and member-state defence ministries. They also include A4A, airworthiness authorities, and universities and research institutes for educational purposes. This project is not in any of those categories. Therefore, the dictionary stays out of this repository.
 
 Instead, this skill applies the *underlying principle*: choose the plainest, most common word available and use it consistently. It does not check words against a fixed list. When exact ASD-approved wording matters, such as in aircraft maintenance documentation, obtain the standard and check each word against the official dictionary. Use the [official ASD-STE100 site](https://www.asd-ste100.org/) to request the current standard. The [official Issue 9 PDF](https://www.asd-ste100.org/assets/files/ASD-STE100_ISSUE9.pdf) is also available directly.
 
@@ -50,7 +50,7 @@ Apply the structural rules with confidence. Apply the lexical rules as a directi
 
 | Rule | Do | Don't |
 |---|---|---|
-| Active voice | "The agent deletes the file." | "The file is deleted (by the agent)." — unless the actor is genuinely unknown or irrelevant |
+| Active voice | "The agent removes the file." | "The file is removed (by the agent)." — unless the actor is genuinely unknown or irrelevant |
 | No phrasal verbs (Rule 9.3) | "Remove the panel." / "Start the job." | "Take off the panel." / "Spin up the job." — a two-word verb has meanings the parts do not predict |
 | One instruction per sentence | "Open the file. Read line 3." | "Open the file and read line 3, then check if it matches." |
 | Sentence length | ≤20 words for instructions/procedures, ≤25 words for descriptions | Long compound/subordinate-clause sentences |
@@ -65,7 +65,7 @@ Apply the structural rules with confidence. Apply the lexical rules as a directi
 
 | Rule | Do | Don't | Why it is weaker here |
 |---|---|---|---|
-| One word, one meaning | Pick one verb for one action and reuse it every time (e.g. always "check", never mix "check"/"verify"/"confirm" for the same action) | Rotate synonyms for the same idea across a document | Consistency within a document is checkable. Which word is the *approved* one is not, without the dictionary. |
+| One word, one meaning | Pick one verb for one action and reuse it every time (e.g. always "check", never use a different verb for the same action) | Rotate synonyms for the same idea across a document | Consistency within a document is checkable. Which word is the *approved* one is not, without the dictionary. |
 | One part of speech per word | "Apply oil to the valve" (oil = noun) | "Oil the valve" (oil = verb) | Whether "oil" is approved as a noun only is a dictionary fact. Prefer the noun form when both read equally well. Do not claim compliance. |
 | Verb, not noun (Rule 3.7) | "Analyze the log." | "Perform an analysis of the log." — a noun form of an action makes the sentence longer and hides who acts | Rule 3.7 says "use an **approved** verb to describe an action." Preferring the verb form is safe to apply anywhere. Knowing which verb is the approved one needs the dictionary. |
 | Domain terms | Keep necessary technical nouns/verbs, but define them once if not common English (STE allows a project-specific glossary beyond its base dictionary) | Use jargon without ever defining it | The glossary allowance is real STE, but the base dictionary it extends is absent. |
@@ -80,12 +80,12 @@ Aircraft manuals do not need the present perfect, so the exclusion does not redu
 
 These six habits cover most of what makes machine-written English hard to parse. Each one is mechanical: you can point at the exact word or punctuation mark that breaks the rule, with no judgment call. Scan for all six before you rewrite anything.
 
-1. **Synonym rotation** — the same thing gets several names in one document ("the user", "the customer", "the client"). The reader cannot tell whether they are one thing or three. Fix: pick one name, use it every time.
+1. **Synonym rotation** — the same thing uses several names in one document ("the user", "the customer", "the client"). The reader cannot tell whether they are one thing or three. Fix: pick one name, use it every time.
 2. **Hedge stacking** — helper verbs and qualifiers pile up until the sentence asserts nothing ("it is important to note that this may potentially help to improve"). Fix: state the claim, or delete it.
 3. **Nominalization** — an action frozen into a noun ("perform an analysis of", "provides assistance to"). Fix: use the verb ("analyze", "helps").
 4. **Marketing adjectives** — words that claim quality instead of showing it: seamless, robust, powerful, cutting-edge, effortless, blazing-fast. Fix: delete, or replace with the measurement that earns the claim.
 5. **Run-on sentences** — several ideas joined by semicolons or em dashes. Fix: one idea per sentence.
-6. **Soft phrasal verbs** — spin up, reach out, dive into, kick off. Fix: use the single plain verb (start, contact, read, begin).
+6. **Soft phrasal verbs** — spin up, reach out, dive into, kick off. Fix: use the single plain verb (start, contact, read).
 
 ## Process
 
@@ -96,7 +96,7 @@ These six habits cover most of what makes machine-written English hard to parse.
    - In STE-flavored mode, flag lexical rules. Do not enforce them in the rewrite.
    - The linter has no STE-flavored mode. Synonym rotation remains a hard finding.
    - Use `--disable synonym-rotation` to disable that check.
-   - Do not run the linter or CI workflows locally. Push the changes to branch `gpt` and let GitHub Actions validate them. Do not wait for or poll CI results.
+   - Do not run the linter or CI workflows locally. Push the changes to branch `gpt` and let GitHub Actions check them. Do not wait for or poll CI results.
    - Follow the mandatory pre-prompt and post-load CI gates in `../github-actions/SKILL.md`.
    - The `ste-lint-changed.yml` workflow checks changed Markdown files outside `skills/asd-ste100/`. The `ste-lint-full-docs.yml` workflow checks the technical documentation when files in `skills/asd-ste100/` change.
    - The workflows call `scripts/ste-lint-repository.sh`, which runs the linter. Use stdin or file arguments and `--json` only when you need to understand the linter interface or interpret workflow output.
@@ -112,7 +112,7 @@ These six habits cover most of what makes machine-written English hard to parse.
 
 ## Output Format
 
-**Default: the rewritten text, and nothing else.** Most callers want text they can paste into a tool description, an error string, or a prompt. Print the simplified text on its own. Do not add a preamble about this skill, a mode announcement, a violation count, a summary of changes, a rule table, or a closing offer to explain further.
+**Default: the rewritten text, and nothing else.** Most callers want text they can paste into a tool description, an error string, or a prompt. Print the simplified text on its own. Do not add a preamble about this skill, a mode announcement, or a violation count. Do not add a summary of changes, a rule table, or a closing offer to explain further.
 
 The one permitted addition applies when step 4 keeps a longer phrasing on purpose. Add one line after the text. Prefix it with `Kept as-is:`. Name the phrase and the precision that would be lost. Omit this line when there is nothing to report.
 
