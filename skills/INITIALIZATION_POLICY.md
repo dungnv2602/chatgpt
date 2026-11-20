@@ -402,3 +402,12 @@ Use this template:
 - **Scope reconciliation:** Version 17 reported 121 active Markdown files. This repeatable scan found 119 files under the exclusions listed above. The Version 17 entry does not record its exact file list, so the two counts are not equivalent. Keep this discrepancy open until the earlier scan scope can be reconstructed.
 - **Validation limits:** The checker does not test external URLs. It checks local Markdown file targets and GitHub-style heading anchors from active source files. It indexes excluded files as link destinations.
 - **Remaining work:** Reduce the 179 existing hard findings without raising baselines. Review historical link records only after the user authorizes changes. Reconcile the 121-file and 119-file scan scopes.
+
+
+### Version 20 — Audit-log lint cleanup
+
+- **Date:** 2026-11-20
+- **Scope:** Reword four audit statements in this file to address synonym-rotation findings from the previous full lint.
+- **Baseline policy:** No lint baseline changed.
+- **Commit:** `939d19a16e533ab1e08e4f78ba7dbdb8c70c2fd5`.
+- **CI:** Pending. Check the result on the next user turn.
