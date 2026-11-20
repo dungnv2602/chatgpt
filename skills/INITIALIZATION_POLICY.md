@@ -356,3 +356,25 @@ Use this template:
 - **CI result:** GitHub Actions run `44695617915` passed after this audit update. The linter self-test and changed-file lint passed. The initialization policy file used its documented baseline of four hard findings.
 - **Validation limit:** The full 170-file Markdown/YAML path scan is not complete. The linter run covered the changed initialization policy file, not every technical document in the repository.
 
+### Version 17 — Active-link and full-document lint audit
+
+- **Date:** 2026-11-20
+- **Repository inventory:** The complete branch tree contains 170 Markdown and YAML files. The inventory contains 166 Markdown files and four YAML files.
+- **Active-link scope:** The relative-link scan covered 121 active Markdown files. It excluded historical archives, novel templates, master source files, and Prompt Master material.
+- **Active-link result:** All relative Markdown file targets in the 121-file scope resolve to files in branch `gpt`.
+- **Link corrections:** Updated one image path, three Story Arc links, and one Novel 02 Open Discussion link.
+- **Historical exceptions:** Nine historical archive files retain unresolved relative links to former image, skill, and novel paths. Some links target records that no longer exist. Preserved these historical records.
+- **Template exceptions:** Three novel templates contain placeholder asset or relative paths. These paths do not identify committed assets. Left the templates unchanged.
+- **Link-scan limit:** The scan did not check Markdown heading anchors or external URL availability.
+- **Technical lint scope:** The full-document workflow checked 37 in-scope technical Markdown files. The linter self-test passed.
+- **Mode handling:** The runner disables synonym rotation for STE-flavored prose. It disables the semicolon rule only for the writing-rules reference, which quotes the prohibited mark.
+- **Baseline policy:** Twenty-one files use fixed per-file baselines. The combined hard-finding baseline is 179. The full run reported 179 hard findings and 299 advisory findings. No file exceeded its baseline.
+- **Intentional examples:** The ASD-STE100 skill has a baseline of 31 hard findings because it contains examples that intentionally violate the rules it teaches.
+- **CI interpretation:** Both lint workflows passed against the recorded baselines. The 179 hard findings remain open technical debt. The baselines do not indicate full writing-policy compliance.
+- **Lint configuration:** `skills/asd-ste100/scripts/ste-lint-repository.sh` defines the modes and per-file baselines.
+- **Full-document workflow:** `.github/workflows/ste-lint-full-docs.yml`.
+- **Changed-file workflow:** `.github/workflows/ste-lint-changed.yml`.
+- **CI runs:** Full-document run `44697368559` passed. Changed-file run `44697368507` passed.
+- **Relevant commits:** Image index `93d1bb6f6df4250736cf6dd55fb56eb6e799d69e`; Scene-002 illustrations 01–03 `b39eed6a2d04cf4581a8e01967435467a5a44ae5`, `6aa685c6f2d30da3eb137d31b6124e9b40071bf2`, and `79dfb067d1f4b299ebe498df43975e8a85390bb0`; Novel 02 link `4a1acd71cbacb4cc0db64cdde5c51ba00a72d164`; lint helper `20eb2e71ec88248dcc52259af122f814f00376da`; changed workflow `a961b693fdfacff11cf355e6e7689e7d92923616`; full workflow `ee628081f7909aa822d53026b3a1f42150c70011`.
+- **Remaining work:** Reduce the existing hard findings. Review historical links only if the user authorizes archive-link repair. Check heading anchors in a separate pass.
+
