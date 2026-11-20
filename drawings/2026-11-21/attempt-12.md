@@ -6,7 +6,7 @@
 - **Series / path:** Samantha — Human Presence Without a Body / Sweet Path
 - **Scene:** Reconstruct the approved Sweet Path composition without text panels.
 - **Operation:** Fresh generation using the exact archived Attempt 07 prompt text; no image supplied.
-- **Status:** Prompt committed; generation pending
+- **Status:** Generated; awaiting user review
 - **Prompt ID:** Not assigned
 - **Baseline:** Attempt 07 — `drawings/2026-11-20/attempt-07.md`; exact authored prompt reused verbatim.
 
@@ -32,23 +32,27 @@ Edit the currently supplied image (Samantha Attempt 06) to remove only the large
 
 ## Generation and outputs
 - **Authored prompt committed before generation:** Yes
-- **Actual submitted payload:** Pending
-- **Generation result:** Pending
-- **Output count and order:** Pending
+- **Actual submitted payload:** Tool metadata did not expose the submitted prompt; archived authored prompt was verified verbatim before the call
+- **Generation result:** Generated
+- **Output count and order:** One output
 
 | Output ID | Native generation / image ID | Mapping evidence and status | Original / archive asset | SHA-256 |
 |---|---|---|---|---|
-| Pending | Unavailable | Not generated | Unavailable | Unavailable |
+| Output 01 | Generation ID: `545b5f8d-2609-4f62-a684-b7f994a2fef9`; asset ID: `file_000000003a088207af254e352a9cb34a` | Generation and asset IDs returned together; local artifact verified; Corroborated | `/mnt/data/a_bright_well_lit_indoor_living_room_portrait_sce.png` | `85a08c75ecdfa7701cb87fb1aa023493ad88a0f93f6b0e525b734571d329bc60` |
 
 ## Review
 | Acceptance criterion | Result | Visual evidence |
 |---|---|---|
-| No text panels or overlay text appear | Not assessable | Generation and user review pending |
-| Underlying photographic scene is naturally rendered | Not assessable | Generation and user review pending |
-| Sweet Path woman and visual direction are retained as closely as text-only generation permits | Not assessable | Generation and user review pending |
-| No new labels, panels, graphics, or effects | Not assessable | Generation and user review pending |
+| No text panels or overlay text appear | Pass | No overlay panels or text are visible |
+
+| Underlying photographic scene is naturally rendered | Partial | A naturalistic living-room portrait was generated, but it is a new composition rather than a reconstruction of covered image areas |
+
+| Sweet Path woman and visual direction are retained as closely as text-only generation permits | Partial | Auburn-haired adult woman, freckles, coral-red top, warm apartment lighting; exact appearance cannot be established from text alone |
+
+| No new labels, panels, graphics, or effects | Pass | No labels, panels, graphics, or effects visible |
+
 | Result is honestly classified as a fresh generation, not a source-image cleanup edit | Pass | No source image or image reference will be supplied |
 
-- **Outcome:** Pending generation.
+- **Outcome:** Fresh text-only generation; not a cleanup edit or reconstruction of the original covered areas.
 - **User decision:** Pending.
-- **Next action:** Generate from the exact prompt text and await user review.
+- **Next action:** Await user review.
