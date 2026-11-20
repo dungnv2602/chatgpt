@@ -6,4 +6,14 @@
 >
 > When no discussions remain, keep this placeholder.
 
-_No open discussions._
+## Condensed Mode task-inspection and final-report workflow
+
+**Status:** Approved — documentation pending
+
+### 2026-11-20 12:34 UTC
+
+> Modify the condensed mode, when you successfully created a task, give me the link here to inspect before continue doing the work. When you done, be it successful or failed, you put your report in discussion.md, then give me the link here. This is what minimized actually is.
+
+- **Assistant note:** Created task `20261120-123400` to implement this workflow. Per the requested inspection gate, implementation is paused until the user reviews the task and authorizes continuation.
+- **Task record:** [Add task-inspection gates and discussion reports to Condensed Mode](tasks/20261120-123400-condensed-mode-task-gates-and-reporting.md)
+- **Outstanding:** User inspection and authorization to proceed.
