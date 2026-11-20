@@ -226,7 +226,7 @@ When a task is Done or Cancelled:
 5. Link the historical entry to the commit that contains the archived record.
 6. Do not change the task ID.
 
-Follow archive/README.md for the 14-day retention policy. GitHub Actions owns scheduled archive deletion. The Worker must not scan or delete archived records during activation or task closeout.
+Follow archive/README.md for the 14-day batch-cleanup policy. GitHub Actions owns scheduled deletion of the entire `archive/tasks/` contents on each due run. The Worker must not scan or delete archived records during activation or task closeout.
 
 Do not delete active, ready, blocked, paused, or proposed tasks.
 

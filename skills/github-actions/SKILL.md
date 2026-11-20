@@ -18,7 +18,20 @@ Use this skill for GitHub Actions workflow design and maintenance. It governs wo
 4. Inspect the target workflows and the scripts/configuration they use before editing.
 5. Do not treat historical notes, examples, or old cost figures as current GitHub policy.
 
-## 2. Execution policy: implement, then let CI report
+## 2. Scheduled archive cleanup
+
+The scheduled archive-retention workflow is owned by GitHub Actions.
+
+- Run the schedule from the repository default branch because GitHub scheduled events only run there.
+- Check out `gpt`, which is the working/source branch.
+- Delete the complete contents of `archive/tasks/` as one batch only after the 14-day interval has elapsed; do not calculate per-record expiry.
+- Preserve `.gitkeep` and the task-board historical entries.
+- After cleanup, atomically fast-forward `main` to the resulting `gpt` commit. Never force-push or create an independent cleanup commit on `main`.
+- Verify that `main` is an ancestor of `gpt` before pushing. If the branches diverge, fail safely without updating either ref.
+- Keep the cleanup implementation reusable through `workflow_call` and operator-accessible through `workflow_dispatch`. A forced manual run must be an explicit input.
+- GitHub cron has no exact every-14-days syntax. Use a weekly schedule plus a committed UTC last-cleanup marker to enforce a minimum 14-day interval.
+
+## 3. Execution policy: implement, then let CI report
 
 The default workflow for repository changes is implementation-first and event-driven:
 

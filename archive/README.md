@@ -1,6 +1,6 @@
 # Task Archive
 
-This directory stores completed and cancelled task records for a limited period.
+This directory stores completed and cancelled task records temporarily.
 
 The Worker skill defines task completion and archival procedures.
 
@@ -13,21 +13,22 @@ The Worker skill defines task completion and archival procedures.
 
 ## Retention policy
 
-The retention period is **14 days** from the recorded archive timestamp.
+GitHub Actions performs a **batch cleanup every 14 days**.
 
-- Keep an archived task record for 14 days.
-- Treat a record as eligible for deletion when its age reaches 14 days.
-- Check for expired records during each Worker activation and task closeout.
-- Delete every eligible task record from the archive folder.
-- Do not delete active task records.
-- If no Worker activity occurs, cleanup waits until the next Worker activation or closeout.
+- The cleanup is periodic, not a rolling per-record retention period.
+- On each due cleanup, delete the entire contents of `archive/tasks/`, regardless of each record's individual archive timestamp.
+- Preserve `.gitkeep` so the directory remains in the repository.
+- The workflow runs on the default branch, checks out `gpt`, performs the deletion there, and then fast-forwards `main` to the same commit.
+- The Worker must not scan or delete archived records during activation or task closeout.
 - Git history retains prior committed versions. This policy controls files in the current archive folder.
+
+GitHub Actions cron does not provide an exact every-14-days expression. The workflow checks weekly and uses a committed UTC timestamp to ensure a batch purge occurs only after at least 14 days have elapsed. The first purge occurs on the first scheduled run after that interval.
 
 ## Task board history
 
-Keep a compact historical entry on the task board after an archive file expires.
+Keep a compact historical entry on the task board after an archive file is deleted.
 
-Before deleting an expired file, ensure the board entry links to the commit that contains the archived record. Do not leave a dead link to the removed path.
+Before deleting an archived file, ensure the board entry links to the commit that contains the archived record. Do not leave a dead link to the removed path.
 
 ## Archive record requirements
 

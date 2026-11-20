@@ -1,0 +1,78 @@
+name: Scheduled Archive Batch Cleanup
+
+on:
+  # GitHub cron has no native every-14-days interval. Run weekly and use
+  # the committed timestamp marker to execute a purge only after 14 days.
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Run the batch cleanup now, even if 14 days have not elapsed"
+        required: false
+        type: boolean
+        default: false
+  workflow_call:
+    inputs:
+      force:
+        description: "Run the batch cleanup now, even if 14 days have not elapsed"
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: archive-retention
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    name: Purge archive on gpt and fast-forward main
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out gpt
+        uses: actions/checkout@v4
+        with:
+          ref: gpt
+          fetch-depth: 0
+
+      - name: Verify branch ancestry and update archive
+        shell: bash
+        env:
+          FORCE_CLEANUP: ${{ inputs.force || false }}
+        run: |
+          set -euo pipefail
+
+          git fetch --no-tags origin \
+            +refs/heads/main:refs/remotes/origin/main \
+            +refs/heads/gpt:refs/remotes/origin/gpt
+          git checkout --force -B gpt origin/gpt
+
+          # Never overwrite an independently advanced or divergent main.
+          if ! git merge-base --is-ancestor origin/main origin/gpt; then
+            echo "::error::main is not an ancestor of gpt. Refusing to update either branch."
+            exit 1
+          fi
+
+          if [[ "$FORCE_CLEANUP" == "true" ]]; then
+            python3 .github/scripts/cleanup-archive.py --force
+          else
+            python3 .github/scripts/cleanup-archive.py
+          fi
+
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "No cleanup is due. No commit was created."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archive/tasks .github/archive-retention-state.json
+          git commit -m "chore(archive): purge task archive batch"
+
+          # Update both refs to the same commit atomically. This is a
+          # fast-forward of main to gpt; no merge commit or force push.
+          git push --atomic origin HEAD:refs/heads/gpt HEAD:refs/heads/main

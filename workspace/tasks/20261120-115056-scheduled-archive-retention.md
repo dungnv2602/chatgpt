@@ -4,13 +4,13 @@
 
 - **ID:** 20261120-115056
 - **Created:** 2026-11-20 11:50 UTC
-- **Updated:** 2026-11-20 12:03 UTC
+- **Updated:** 2026-11-20 12:30 UTC
 - **Priority:** P1
-- **Status:** Blocked
+- **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
-- **Current execution:** No
-- **Dependencies:** User decision on GitHub default-branch strategy
+- **Current execution:** Yes
+- **Dependencies:** None
 - **Related tasks:** 20261120-112500
 - **Archived:** No
 
@@ -23,101 +23,81 @@
 - 2026-11-20 11:50 UTC — User: "The scheduled deletion workflow should be reusable when it done its job."
 - 2026-11-20 11:50 UTC — User: "Approve."
 - 2026-11-20 11:50 UTC — User: "Start session."
-- 2026-11-20 11:52 UTC — User corrected the retention policy: "My mistake, the policy is 14 days." This confirms a 14-day period, but does not resolve the default-branch blocker.
+- 2026-11-20 11:52 UTC — User: "My mistake, the policy is 14 days."
+- 2026-11-20 12:xx UTC — User clarified that retention is a periodic batch operation: delete the contents of `archive/tasks/` together every 14 days, not 14 days after each record's own archive timestamp.
+- 2026-11-20 12:xx UTC — User approved the branch strategy: cleanup only on `gpt`, then merge/fast-forward `gpt` to `main`; do not run a separate cleanup on `main`. The user expects `gpt` to remain ahead of `main`.
 
 ## 3. Objective
 
-Replace Worker-triggered archive cleanup with a reusable GitHub Actions scheduled cleanup workflow. Assign workflow ownership and operational instructions to the GitHub Actions skill.
+Implement a reusable GitHub Actions workflow that periodically purges the complete task archive in one batch every 14 days, then fast-forwards `main` to the updated `gpt` branch. GitHub Actions owns scheduled archive deletion.
 
 ## 4. Requirements
 
-- Use GitHub's native `schedule` event with a recurring cron expression.
-- Retain archived task records for 14 days from their recorded UTC archive timestamp.
-- Delete only expired records from `archive/tasks/`.
+- Use GitHub's native `schedule` event.
+- Perform a full-folder batch purge of `archive/tasks/` after each 14-day interval. Do not use per-record archive timestamps to determine deletion.
+- Preserve `.gitkeep`.
 - Preserve compact historical task-board entries and links to archival commits.
-- Make cleanup reusable by supporting an operator-triggered run and reusable cleanup logic.
-- Make cleanup idempotent. Repeated runs must not change unexpired records.
-- Minimize reads. Do not scan unrelated workspace files.
+- Make cleanup reusable through `workflow_call` and operator-accessible through `workflow_dispatch`.
+- Allow an explicit forced manual run; scheduled runs must respect the 14-day interval.
+- Use a committed UTC marker to enforce the 14-day interval because GitHub cron does not express an exact 14-day cadence.
+- Run the scheduled workflow from default branch `main`, check out and clean `gpt`, then atomically fast-forward `main` to the same commit.
+- Never force-push. Verify `main` is an ancestor of `gpt`; if not, fail safely.
+- Keep cleanup scoped to `archive/tasks/` and its state marker.
 - Remove archive-cleanup responsibility from The Worker skill.
 - Assign scheduled deletion ownership to the GitHub Actions skill.
-- Work on branch `gpt`. Do not modify `main` or repository settings without explicit user authorization.
+- Work on branch `gpt`; update `main` only by the authorized fast-forward strategy.
 
 ## 5. Decisions
 
 - User approved implementation.
-- The user confirmed the retention policy is 14 days.
-- The workflow should use a reusable cleanup implementation and support manual invocation.
-- GitHub Actions `schedule` only runs when the workflow file exists on the repository's default branch.
-- The repository default branch is currently `main`. The authorized working branch is `gpt`.
-- **Blocked:** Obtain explicit user authorization to change the default branch to `gpt`, or to place the required scheduled workflow on `main`. Do not proceed with either change without that authorization.
+- Retention semantics: batch purge of the entire archive folder every 14 days.
+- Branch strategy: clean `gpt` only, then fast-forward `main` to the same resulting commit. No independent cleanup on `main`.
+- The schedule runs weekly and checks a committed last-cleanup timestamp. This enforces at least 14 days between batch purges while avoiding a misleading day-of-month cron expression.
+- A manual run may force cleanup only when the operator explicitly sets the `force` input.
+- Preserve `.gitkeep` and task-board history.
 
 ## 6. Progress Log
 
-### 2026-11-20 11:50 UTC
+### 2026-11-20 12:20 UTC
 
-- **Action:** Completed foundational session initialization and recovered the task workspace.
-- **Result:** All required foundational skills were retrieved from branch `gpt`. The task board had no active task. The existing archive policy assigns cleanup to Worker activation and task closeout.
-- **References:** `skills/SESSION_START.md`, `skills/session-archiving/SKILL.md`, `skills/conversation-mode/SKILL.md`, `skills/the-worker/SKILL.md`, `skills/agent-skill-authoring/SKILL.md`, `skills/asd-ste100/SKILL.md`, `skills/github-actions/SKILL.md`, `workspace/README.md`, `workspace/task_board.md`, `archive/README.md`.
-- **Next:** Resolve the default-branch authorization blocker.
-
-### 2026-11-20 11:52 UTC
-
-- **Action:** Created the task record and added it to the task board. Read back both changed files.
-- **Result:** Both files match the intended content. Task record commit: `4a4a02ace9b3c9bb98405ddaa411de5d3b88de7c`. Task board commit: `e059a34dc942e0bb6c5e8500223b8b02bf448017`.
-- **References:** [Task record commit](https://github.com/dungnv2602/chatgpt/commit/4a4a02ace9b3c9bb98405ddaa411de5d3b88de7c), [Task board commit](https://github.com/dungnv2602/chatgpt/commit/e059a34dc942e0bb6c5e8500223b8b02bf448017).
-- **Next:** Resolve the default-branch authorization blocker.
-
-### 2026-11-20 11:51 UTC
-
-- **Action:** Inspected the repository branch and workflow directory. Checked GitHub's current schedule-event documentation.
-- **Result:** Branch `gpt` points to `f9e1705417c3d9646b51a0b8c72a540391b936dd`. The repository default branch is `main`. GitHub states that scheduled workflows run only from the default branch. No archive-cleanup workflow exists in `.github/workflows/`.
-- **References:** [Branch gpt](https://github.com/dungnv2602/chatgpt/tree/gpt), [workflow directory](https://github.com/dungnv2602/chatgpt/tree/gpt/.github/workflows), [GitHub schedule event documentation](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows).
-- **Next:** Ask the user to authorize one default-branch strategy. Do not modify `main` or repository settings before approval.
+- **Action:** Recovered the approved task and inspected the GitHub Actions skill, existing workflow conventions, Worker skill, archive policy, task board, archive contents, and current branch heads.
+- **Result:** `main` and `gpt` both point to `a6647fe3db4418645b9f660c1182e68d8d468db7`. The archive contains two task records and `.gitkeep`. Existing Worker instructions already prohibit archive scanning/deletion; documentation still incorrectly describes rolling per-record expiry.
+- **Decision:** Implement cleanup on `gpt` only and atomically push the same cleanup commit to both refs after verifying `main` is an ancestor of `gpt`.
+- **Next:** Add the scheduled/reusable workflow, cleanup script, state marker, and policy/skill documentation.
 
 ## 7. Current State
 
-No implementation changes have been made. The task is blocked by GitHub's default-branch requirement and the repository's branch authorization rule.
+Implementation is being added on `gpt`. The workflow is designed to run from default branch `main`, clean `gpt`, and atomically fast-forward `main` to the same commit. The cleanup script uses a weekly schedule and UTC state marker to enforce the 14-day batch interval.
 
 ## 8. Remaining Work
 
-- Resolve the default-branch strategy.
-- Inspect only the existing workflow and cleanup-related paths required for implementation.
-- Implement reusable cleanup logic and the scheduled workflow.
-- Update GitHub Actions, Worker, and archive-retention documentation.
-- Validate the cleanup logic, workflow syntax, retention boundary, and idempotency.
-- Commit the related changes coherently to the authorized branch.
-- Read back and verify every changed path.
+- Commit the workflow, script, state marker, and documentation changes on `gpt`.
+- Read back all changed paths.
+- Fast-forward `main` to the resulting `gpt` commit, as authorized.
+- Verify both branch heads and report the commit.
 
 ## 9. Next Actions
 
-1. Obtain explicit authorization to change the repository default branch to `gpt`, or to add the scheduled workflow to `main`.
-2. Resume implementation only after the user resolves this authorization blocker.
+1. Create the coherent implementation commit on `gpt`.
+2. Verify changed files and branch ancestry.
+3. Fast-forward `main` to `gpt`.
+4. Read back and verify the final branch heads.
 
 ## 10. References
 
 - [GitHub Actions skill](../../skills/github-actions/SKILL.md)
 - [The Worker skill](../../skills/the-worker/SKILL.md)
 - [Archive policy](../../archive/README.md)
-- [GitHub schedule event documentation](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows)
-- Related task: `20261120-112500`
+- [GitHub Actions schedule event documentation](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows)
+- Related task: 20261120-112500
 
 ## 11. Verification
 
-- **Check:** Foundational initialization.
-- **Method:** Retrieved and read all six required skill files from branch `gpt`.
-- **Result:** Passed.
-- **Limitations:** This does not validate the future workflow.
-
-- **Check:** Repository default branch and branch head.
-- **Method:** Read GitHub repository and branch metadata.
-- **Result:** Default branch is `main`. Branch `gpt` points to `f8c83048627821b11f95d0e3cc15eb96ea7e3c1e`.
-- **Limitations:** No branch settings were changed.
-
-- **Check:** Scheduled workflow requirement.
-- **Method:** Reviewed current GitHub documentation.
-- **Result:** GitHub runs scheduled workflows only when the workflow file exists on the default branch.
-- **Limitations:** The workflow has not been created or run.
+- **Check:** Current branch heads.
+- **Method:** Read GitHub branch metadata for `main` and `gpt`.
+- **Result:** Both point to `a6647fe3db4418645b9f660c1182e68d8d468db7`; neither branch is protected.
+- **Limitations:** This does not validate the workflow or cleanup script.
 
 ## 12. Handoff Instructions
 
-Wait for the user's explicit decision on the default-branch strategy. Keep all project changes on `gpt` unless the user authorizes a narrowly scoped change on `main`. Do not manually dispatch, poll, or inspect CI. Resume from the default-branch decision.
+Keep implementation on `gpt`. The authorized synchronization method is a fast-forward of `main` to the resulting `gpt` commit after cleanup changes are committed. Never perform a separate cleanup on `main`, create a merge commit, or force-push.
