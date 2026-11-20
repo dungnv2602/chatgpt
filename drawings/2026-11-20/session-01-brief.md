@@ -60,7 +60,7 @@ The original opening message is not available in the retained project record. Th
 - **Document:** `drawings/2026-11-20/samantha-visual-drive.md`
   - **Role:** Earlier conceptual visual and emotional direction.
   - **Status:** Text reference only; not an image attachment.
-- **Document:** `prompts/2026-11-20/scenario-direction.md`
+- **Document:** `drawings/2026-11-20/scenario-direction.md`
   - **Role:** Film-grounded interpretation of Samantha's identity, emotional arc, relationship, world, and future illustration scenarios.
   - **Authority:** Governs narrative and character interpretation for Samantha drawings. It does not establish a canonical physical appearance or override the active session brief's specific scene instructions.
 - **Attempt 01 output:** Historical visual experiment only; not approved as an identity reference and not attached to the next generation.
