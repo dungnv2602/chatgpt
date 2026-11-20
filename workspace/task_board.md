@@ -1,6 +1,6 @@
 # Task Board
 
-Last updated: 2026-11-20 14:02 UTC
+Last updated: 2026-11-20 14:15 UTC
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
@@ -8,13 +8,13 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## Current Execution
 
-_No current execution task._
-
-## In Progress
-
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
 | 20261120-123000 | Continue the repository documentation audit | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-123000-repository-documentation-audit.md) |
+
+## In Progress
+
+_No other in-progress tasks._
 ## Ready
 
 | ID | Task | Priority | Status | Origin | Updated | Record |

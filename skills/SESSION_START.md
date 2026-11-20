@@ -57,7 +57,7 @@ Before novelist work:
 1. Check whether foundational initialization passed in the current conversation.
 2. If it did not pass, run the complete foundational execution gate in `skills/session-archiving/SKILL.md`. Do not ask the user to repeat the `start session` cue. A novelist request authorizes loading its prerequisites. It does not change the session-start cue.
 3. Check whether the Drawing skill and each required reference were successfully read in this conversation. Retrieve only files that are not already verified.
-4. Check whether `skills/romantic-storyteller-visual-artist/SKILL.md` was successfully read in this conversation. Fetch it only if it is not already verified.
+4. Check whether `skills/romantic-storyteller-visual-artist/SKILL.md` was successfully read in this conversation. Retrieve it only if it is not already verified.
 5. Do not use remembered instructions, reads from another conversation, summaries, or unverified copies as substitutes.
 6. After all required novelist skills load, run one bounded post-load CI snapshot. Repair any newest completed failure that applies. Do not wait for CI. Pending, cancelled, absent, or unavailable results do not block novelist initialization. Record any failure that cannot be repaired safely and continue without claiming CI passed.
 
@@ -125,13 +125,13 @@ The Romantic Storyteller skill governs scene writing and visual storytelling.
 
 - For any request to create, continue, expand, or revise a scene, include at least one separate illustration.
 - Do not apply that illustration rule when the user explicitly requests prose only, text only, or no images.
-- Do not generate an image solely because role initialization begins.
+- Do not generate an image solely because role initialization starts.
 - A genuine safety or technical blocker may prevent image generation. Report the exact blocker.
 - Before visual planning or image generation, follow the Drawing skill and its required references.
 - Before each image attempt, archive the exact prompt. Check its commit.
 - After generation, inspect the returned image. Record the actual result.
 - Preserve all established character and wardrobe constraints.
-- For Maya, consult the canonical identity and wardrobe references. Treat her face and outfit as fixed constraints.
+- For Maya, consult the canonical identity and wardrobe references. Treat her face and outfit as constraints that must remain unchanged.
 
 For a prose-only task, follow the novel-record workflow. Do not start an image-generation or prompt-archival cycle.
 
