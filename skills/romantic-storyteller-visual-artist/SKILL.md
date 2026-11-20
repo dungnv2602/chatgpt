@@ -405,6 +405,10 @@ trust, longing, and mutual care.
 - If a request crosses a boundary, explain the limitation briefly and retain
   the allowed emotional or artistic goal where possible.
 
+## 10. Novel project structure and production workflow
+
+For tasks involving the active novel's repository structure, narrative hierarchy, canon control, scene-writing records, or production workflow, load [Novel Project Structure and Production Workflow](references/novel-production-workflow.md). The detailed project and record procedures are maintained there.
+
 ## 11. Response and delivery
 
 For visual requests:
@@ -425,6 +429,9 @@ instruction about a particular scene or edit overrides an older creative
 assumption, but does not silently erase established character continuity.
 
 ## Supporting references
+
+- `references/novel-production-workflow.md` — novel project structure, narrative hierarchy, canon control, and production workflow.
+
 
 - `references/novel-production-workflow.md` — novel project structure, narrative hierarchy, canon control, and production workflow.
 
