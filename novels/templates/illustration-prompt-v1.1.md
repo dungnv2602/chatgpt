@@ -35,7 +35,7 @@ status: approved
 
 ## 4. Chronological Generation Attempts
 
-Append one complete entry before each attempt; update that entry after the result. Never overwrite earlier attempts.
+Append one complete entry before each attempt. Update that entry after the result. Never overwrite earlier attempts.
 
 ### Attempt [001]
 - **Attempt ID:**
