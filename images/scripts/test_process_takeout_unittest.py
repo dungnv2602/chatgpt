@@ -142,14 +142,24 @@ class TakeoutProcessorTests(unittest.TestCase):
             encoding="utf-8",
         )
         (self.inbox / "portrait.png").write_bytes(b"portrait-original")
-        self.manifest(
-            {
-                "source": "portrait.png",
-                "asset_id": "",
-                "title": "Approved Portrait",
-                "destination_dir": "drawings/2026-11-19/images",
-                "attempt": "1",
-            },
+        (self.inbox / "portrait-alt.png").write_bytes(b"portrait-alternative-original")
+        self.manifest_many(
+            [
+                {
+                    "source": "portrait.png",
+                    "asset_id": "",
+                    "title": "Partial Portrait",
+                    "destination_dir": "drawings/2026-11-19/images",
+                    "attempt": "1",
+                },
+                {
+                    "source": "portrait-alt.png",
+                    "asset_id": "",
+                    "title": "Partial Portrait Alternative",
+                    "destination_dir": "drawings/2026-11-19/images",
+                    "attempt": "1",
+                },
+            ],
             batch="batch-session-link",
         )
 
@@ -157,21 +167,28 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
 
         image_dir = session / "images"
-        master = image_dir / "approved-portrait.png"
-        webp = image_dir / "approved-portrait.webp"
+        master = image_dir / "partial-portrait.png"
+        webp = image_dir / "partial-portrait.webp"
+        alt_master = image_dir / "partial-portrait-alternative.png"
+        alt_webp = image_dir / "partial-portrait-alternative.webp"
         self.assertEqual(master.read_bytes(), b"portrait-original")
+        self.assertEqual(alt_master.read_bytes(), b"portrait-alternative-original")
         self.assertTrue(webp.is_file())
+        self.assertTrue(alt_webp.is_file())
         attempt_text = attempt_record.read_text(encoding="utf-8")
         readme_text = readme.read_text(encoding="utf-8")
-        self.assertIn("[approved-portrait.webp](images/approved-portrait.webp)", attempt_text)
-        self.assertIn("[approved-portrait.webp](images/approved-portrait.webp)", readme_text)
+        self.assertIn("[partial-portrait.webp](images/partial-portrait.webp)", attempt_text)
+        self.assertIn("[partial-portrait-alternative.webp](images/partial-portrait-alternative.webp)", attempt_text)
+        self.assertIn("[partial-portrait.webp](images/partial-portrait.webp)", readme_text)
+        self.assertIn("[partial-portrait-alternative.webp](images/partial-portrait-alternative.webp)", readme_text)
         self.assertNotIn("Waiting for image upload", readme_text)
         self.assertIn("User review pending", readme_text)
         self.assertIn("Generated; partial result", readme_text)
 
         with (self.inbox / "history/batch-session-link/attempt-001/conversion-report.csv").open(encoding="utf-8") as handle:
-            row = next(csv.DictReader(handle))
-        self.assertEqual(row["attempt"], "01")
+            rows = list(csv.DictReader(handle))
+        self.assertEqual(len(rows), 2)
+        self.assertEqual({row["attempt"] for row in rows}, {"01"})
 
     def test_unlisted_image_fails_without_moving_sources_or_clearing_handoff(self):
         (self.inbox / "listed.jpg").write_bytes(b"listed-image")
