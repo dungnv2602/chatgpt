@@ -104,7 +104,7 @@ When the user switches modes:
 - The session-archiving skill continues to govern the three-file archive, chronological image-prompt history, and prompt-before-generation workflow.
 - Other task-specific skills continue to govern their respective tasks.
 - The approved project-directory boundary always applies, regardless of conversation mode.
-- The only authorized project working branch is `gpt`. Perform all future repository reads, writes, and commits on this branch; do not resume the former `artwork/portrait-attempt-2026-11-10` branch or modify `main` unless the user explicitly authorizes it.
+- The only authorized working branch is `gpt`. Use it for repository reads, writes, and commits. Do not resume the former `artwork/portrait-attempt-2026-11-10` branch. Do not modify `main` unless the user authorizes it.
 - If skill instructions conflict, follow the higher-priority instruction and be honest about any limitation.
 
 ## 6. Skill source of truth and Library synchronization
@@ -144,6 +144,11 @@ contents have been checked. Preserve unrelated Library artifacts, including
 archives and ZIP packages, unless the user explicitly asks to replace or
 remove them.
 
-This synchronization is an explicit workflow requirement; it is not a claim
+This synchronization is an explicit workflow requirement. It is not a claim
 that GitHub and the ChatGPT Library synchronize automatically in the
 background.
+
+
+## Technical documentation standard
+
+Follow the [ASD-STE100 skill](../asd-ste100/SKILL.md) when you create or revise skill files or technical documentation. Use Strict mode for operational instructions. Use STE-flavored mode for explanatory documentation. Preserve meaning, scope, and modality.
