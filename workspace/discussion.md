@@ -1,3 +1,15 @@
+### 2026-11-20 15:33 UTC
+
+**User**
+
+> Are you saying skills/conversation-mode/SKILL.md is not included in "start session"?
+
+**Assistant**
+
+No. I am confirming the opposite: `skills/conversation-mode/SKILL.md` **is included** in the `start session` foundational initialization. I checked `skills/SESSION_START.md`: its foundational skill dependency table explicitly lists Conversation Mode, and its foundational hierarchy names it as a required Tier 1 skill. My earlier replies did not check this authoritative session-start file and therefore did not answer the question correctly.
+
+---
+
 ### 2026-11-20 20:00 UTC
 
 **User**
