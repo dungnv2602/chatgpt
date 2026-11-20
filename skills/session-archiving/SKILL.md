@@ -106,7 +106,7 @@ This gate does not guarantee future execution. Verify compliance through retriev
 
 ## 4. Archive records and drawing prompts
 
-For conversation-integrity records, summaries, drawing-session briefs, prompt records, attempt ledgers, or image mappings, load [Archive Records and Drawing-Prompt Procedures](references/archive-records-and-image-prompts.md). It contains the templates, required fields, and procedures. Do not omit required records.
+Load [Archive Records and Drawing-Prompt Procedures](references/archive-records-and-image-prompts.md) when you create archive records. Use it for summaries, session briefs, prompt records, attempt ledgers, and image mappings. It contains the required templates and fields. Do not omit required records.
 
 ## 7. GitHub write and verification discipline
 
@@ -138,7 +138,7 @@ Start by reading the relevant session records inside `prompts/` and, when contin
 
 ## 10. WebP delivery derivatives
 
-For image conversion, original-image preservation, SHA-256 identity, provenance mapping, or WebP delivery, load [Image Provenance and WebP Delivery](references/image-provenance-and-webp.md). Never use a derivative hash as the original-generation identity. Never claim verification without read-back evidence.
+For image conversion or WebP delivery, load [Image Provenance and WebP Delivery](references/image-provenance-and-webp.md). Use it for original-image preservation, SHA-256 identity, and provenance mapping. Never use a derivative hash as the original-generation identity. Never claim verification without read-back evidence.
 
 ## 11. Image-processing scripts
 
