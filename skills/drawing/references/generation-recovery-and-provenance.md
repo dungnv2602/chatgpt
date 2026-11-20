@@ -98,10 +98,10 @@ successful work.
 The November 12–13, 2026 silk-wrap portrait sequence is a historical example
 of prompt lineage only. The current session brief controls creative direction. The latest **successful** prompt controls only historical prompt lineage:
 
-- **Attempt 33** in `prompts/2026-11-12-image-prompts.md` established the
+- **Attempt 33** in `drawings/history/2026-11-12-image-prompts.md` established the
   successful Realistic portrait direction and produced two user-approved
   images. It is the original successful prompt in this portrait series.
-- **Attempt 04** in `prompts/2026-11-13-image-prompts.md` reused Attempt 33's
+- **Attempt 04** in `drawings/history/2026-11-13-image-prompts.md` reused Attempt 33's
   authored wording verbatim in a fresh generation. The assistant initially
   judged a garment-construction detail as missed. The user later explicitly
   assessed the Attempt 04 result as successful. That final user assessment
