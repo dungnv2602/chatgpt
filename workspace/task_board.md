@@ -28,7 +28,7 @@ _No paused tasks._
 
 ## Historical
 
-| 20261120-112500 | Implement The Worker and workspace continuity | P1 | Done | User | 2026-11-20 | [Archived record](../archive/tasks/20261120-112500-the-worker-workspace-continuity.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/e0b531a72dbb12ee8c4e7eaeea8b8170b4f22965) |
+| 20261120-112500 | Implement The Worker and workspace continuity | P1 | Done | User | 2026-11-20 | [Archived record](../archive/tasks/20261120-112500-the-worker-workspace-continuity.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/e0f24ce2a7aad195be3b694ba9a0ee5f15758caf) |
 
 ## Selection rules
 
