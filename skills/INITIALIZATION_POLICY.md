@@ -104,7 +104,7 @@ Initialization is conditional. Do not load project instructions or skills at the
 - **Change:** Adopt the Agent Skills open format.
 - **Reason:** Standardize metadata, structure, description, progressive disclosure, and validation.
 - **Behavioral impact:** Agent Skill Authoring became a foundational skill.
-- **Verification:** Read-back checks passed. The official `skills-ref` CLI validator was not run.
+- **Verification:** Read-back verification passed. The official `skills-ref` CLI validator was not run.
 - **Initial commits:** `5bdb1b732c88fc4bb0d9e49fbeb78eb6048c7bc5`, `b26c37031399747ea204fa89a491a8ff26bce911`, `a48f7264246734a73b02f41537f367f04fa09c55`, and `fee7c31d7c7b2f63efee3680796ac477b060eb45`.
 
 ### Version 3 — Skill directory restructure

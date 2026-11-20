@@ -50,7 +50,7 @@ After cue-triggered skill loading, repeat the same one-time snapshot. Do not wai
 - workspace/tasks/ contains current task records.
 - archive/README.md defines archive retention.
 - archive/tasks/ contains completed or cancelled task records during retention.
-- Treat the entire `archive/` tree as retention-only. Never read, scan, audit, lint, or modify its contents. When an active document links to an archived path, check only that the target path exists. Do not inspect archived file content or heading anchors.
+- Treat the entire `archive/` tree as retention-only. Never read, scan, audit, lint, or change its contents. When an active document links to an archived path, check only that the target path exists. Do not inspect archived file content or heading anchors.
 
 Do not create a conversation transcript. The discussion register is a temporary record of unresolved topics, not a transcript.
 
@@ -139,7 +139,7 @@ A task may remain In Progress while the board marks another task as current exec
 - Keep at most the 7 most recently completed or cancelled tasks in the Historical section, ordered newest first.
 - When adding a historical entry would exceed 7, delete the oldest board entry or entries until the limit is met. This deletes only index rows, never Git history or commits.
 - Link each retained historical entry to the commit that contains the archived record.
-- Update the board after you modify task metadata, priority, status, ownership, or location.
+- Update the board after you change task metadata, priority, status, ownership, or location.
 
 Select work in this order:
 

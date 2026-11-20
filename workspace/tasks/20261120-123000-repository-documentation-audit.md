@@ -60,6 +60,14 @@ Continue and complete the repository documentation audit. Keep its complete hist
 
 ## 6. Progress Log
 
+### 2026-11-20 16:20 UTC
+
+- **Action:** Continued the audit from the latest mandatory CI preflight.
+- **Latest runs:** Full lint run `44758993893` and changed lint run `44761069656` failed. Both passed the linter self-test and active Markdown link checks. The changed workflow fell back to full lint because it had no successful baseline for its head.
+- **Findings:** The full-audit logs identify remaining hard synonym-rotation findings in active documents, including ASD-STE100, Initialization Policy, Agent Skill Authoring, Drawing, Session Archiving, and The Worker. Several long-sentence findings also remain.
+- **Changes:** Standardized three local wording findings in The Worker, Initialization Policy, and Agent Skill Authoring. No baseline changed. The archive boundary remains intact.
+- **Next:** Continue the source-based review of the remaining hard findings, starting with ASD-STE100. Do not read or modify `archive/`. Do not run lint locally or wait/poll CI.
+ 
 ### 2026-11-20 15:12 UTC
 
 - **Action:** Inspected the newest changed-document lint failure, run `44760753995`.
