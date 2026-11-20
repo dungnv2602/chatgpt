@@ -2,13 +2,13 @@
 
 Use this directory as the single intake location for images that need repository retention.
 
-Images can belong to a novel, a drawing session, a visual-reference collection, or another project.
+Images may belong to a novel, a drawing session, a visual-reference collection, or another project.
 
 ## Upload rules
 
 - Upload each image directly to `images/takeout/`.
 - Do not create upload subfolders.
-- Incoming filenames can be any name. The user does not need to rename them.
+- Incoming filenames may use any name. The user does not need to rename them.
 - Do not place uploads in `history/` or `webp/`. The Action manages these reserved directories.
 - Keep one active batch in `HANDOFF.yml`.
 - The Action processes a batch only when `HANDOFF.yml` has `status: ready`.
@@ -18,9 +18,9 @@ Images can belong to a novel, a drawing session, a visual-reference collection, 
 
 ## Hand-off format
 
-The assistant inspects each image. The assistant then determines its title and destination from the project context.
+The assistant inspects each image. It then determines the title and destination from the project context.
 
-The assistant assigns a stable asset ID when needed. The assistant writes the values to the hand-off.
+The assistant assigns a stable asset ID when needed. It writes these values to the hand-off.
 
 The Action does not infer the image's subject, title, ID, project, or destination.
 
@@ -47,11 +47,11 @@ For a drawing-session output, include `expected_sha256` when the generation-time
 
 The processor hashes the uploaded original before conversion. It compares that hash with the expected value.
 
-A mismatch does not reject the image. The processor retains the image and marks its mapping status as `Probable`. It does not mark the mapping as `Verified` by that hash.
+A mismatch does not reject the image. The processor retains the image and marks its mapping status as `Probable`. It does not mark the mapping as `Verified` from that hash.
 
 Record internal `output_id`, `prompt_id`, and exposed native IDs separately. Use values from generation-time records. Do not infer them from filenames.
 
-The conversion report separates these hash fields:
+The conversion report keeps these hash fields separate:
 
 - `generation_sha256` is the expected hash from generation time.
 - `source_sha256` is the hash of the uploaded original.
@@ -69,7 +69,7 @@ A legacy WebP without an original remains Not verifiable. An original without a 
 
 Each item uses these fields:
 
-- `source` is the exact uploaded filename in the top level of this directory.
+- `source` is the exact uploaded filename in this directory's top level.
 - `asset_id` is optional for general image assets. Novel illustrations use a stable `ILL-NNN` ID.
 - `title` is a short description based on the inspected image and its intended role.
 - `destination_dir` is a repository-relative directory under `images/`, `novels/`, or `drawings/YYYY-MM-DD/images`.
@@ -77,7 +77,7 @@ Each item uses these fields:
 
 Do not use `images/takeout/`, `images/takeout/webp/`, `images/webp/`, or the reserved legacy path `images/scripts/` as a destination.
 
-The Action rejects drawing-session uploads without an explicit attempt number. This prevents outputs from being omitted from the session manifest and prompt records.
+The Action rejects drawing-session uploads without an explicit attempt number. This rule prevents omissions from the session manifest and prompt records.
 
 ## Output filenames
 
@@ -100,18 +100,18 @@ Before relocation, the processor writes each WebP file to persistent staging:
 images/takeout/webp/[batch-id]/attempt-NNN/
 ```
 
-The staged filename preserves the exact incoming filename and appends `.webp`.
+The staged filename preserves the exact incoming filename. It appends `.webp`.
 
 For example:
 
 - `IMG_001.png` becomes `IMG_001.png.webp`.
 - `IMG_001.jpg` becomes `IMG_001.jpg.webp`.
 
-This naming rule preserves the source extension. It also avoids collisions between different formats that share a basename.
+This naming rule preserves the source extension. It also prevents collisions between formats that share a basename.
 
 ## Processing and success conditions
 
-The [WebP workflow](../../.github/workflows/convert-images-to-webp.yml) runs on pushes to intake files or the hand-off. You can also start it manually on branch `gpt`.
+The [WebP workflow](../../.github/workflows/convert-images-to-webp.yml) runs when intake files or the hand-off change. You can also start it manually on branch `gpt`.
 
 The workflow validates the complete batch. It converts every image into the attempt-specific staging folder. It verifies each staged WebP before it relocates any original.
 
@@ -156,7 +156,7 @@ Legacy assets without retained originals remain `Not verifiable`. The workflow s
 
 A batch succeeds only after local verification of every master and WebP. The processor must also archive the original hand-off and reports. It clears the active hand-off last.
 
-A failed attempt does not clear the hand-off. Correct the hand-off and retry the same batch ID to create another numbered attempt.
+A failed attempt does not clear the hand-off. Correct the hand-off and retry the same batch ID. The retry creates another numbered attempt.
 
 ## History and reports
 
@@ -202,7 +202,7 @@ The WebP file does not retain EXIF or XMP metadata. The original master retains 
 
 For each upload with an explicit `attempt` and a destination under `drawings/YYYY-MM-DD/images`, the processor updates that session's `manifest.csv`.
 
-It adds one row per output. It preserves existing rows and columns. It adds missing required columns. It also inventories top-level WebP files that do not have manifest rows.
+It adds one row per output. It preserves existing rows and columns. It adds missing required columns. It also inventories top-level WebP files that lack manifest rows.
 
 The required columns are:
 
@@ -239,4 +239,4 @@ The README and attempt records link only to WebP delivery files. The unchanged o
 
 ## Documentation standard
 
-This file defines an operational hand-off. Apply Strict mode from the repository [ASD-STE100 policy](../../skills/asd-ste100/references/repository-writing-policy.md) when you revise it.
+This file defines an operational hand-off. Apply Strict mode from the repository [ASD-STE100 policy](../../skills/asd-ste100/references/repository-writing-policy.md) when you revise it. Preserve every field, status, path, conversion rule, and verification requirement.
