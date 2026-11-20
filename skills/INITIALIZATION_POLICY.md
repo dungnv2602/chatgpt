@@ -182,7 +182,7 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
   - `novels/templates/scene-v1.1.md`
   - `novels/templates/illustration-prompt-v1.1.md`
   - `novels/README.md`
-- **Verification:** Retrieved changed paths from branch `gpt` after each write. Read-back confirmed committed content.
+- **Verification:** Fetched changed paths from branch `gpt` after each write. Read-back checked the committed content.
 - **Validation limit:** The repository linter has not run. This environment has no repository shell or GitHub Action dispatch tool. Manual screening does not replace the linter.
 - **Manual screening:** Scans checked semicolons, selected phrasal verbs, marketing adjectives, selected nominalizations, and instruction sentence length in revised files. The scans found two semicolons, one missing sentence boundary, one nominalized verb phrase, and several long instructions. Those findings were corrected and read back.
 - **Latest reference scan:** A targeted scan of four Drawing, archive, and curriculum references found no semicolons, selected phrasal verbs, marketing adjectives, or tested nominalization patterns. The scans do not test every STE rule.
