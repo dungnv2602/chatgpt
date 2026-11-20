@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 14:35 UTC
+- **Updated:** 2026-11-20 14:40 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -20,7 +20,8 @@
 
 ## 2. Subsequent Instructions
 
-- 2026-11-20: The user explicitly resumed this audit after a prior stop. Continue from the recorded remaining work.
+> Continue with the audit.
+
 - Follow the current bounded CI preflight policy. Do not run lint or CI locally. Do not wait for or poll GitHub Actions results.
 
 ## 3. Objective
@@ -292,7 +293,13 @@ The Version 19 active-link scan found zero unresolved local Markdown targets or 
 - **Check:** Verify current lint baseline paths.
 - **Method:** Compare every configured baseline path with the current branch tree.
 - **Result:** Passed. All 17 current baseline paths exist. Their configured total is 170.
-- **Limitations:** The official linter and self-test have not run on the current branch. Historical lint and CI results do not establish the current repository's lint status.
+- **Limitations:** The official linter and self-test have not run on the current branch after the latest source edits. Historical lint and CI results do not establish the current repository's lint status.
+- **Check:** Repair the latest completed changed-document CI failure.
+- **Method:** Inspect run `44750057903`, its failed job, and the job log. Rewrite only the reported violations.
+- **Result:** Committed the four-file repair in `49a972741aeb69bf249afffb11cbe33d8574d05f`. Did not increase any baseline or await CI.
+- **Check:** Continue long-sentence and dangling-conjunction review.
+- **Method:** Inspect candidate sentences in their full document context.
+- **Result:** Split 13 long-sentence candidates and corrected one dangling conjunction. Read back all seven changed source paths from branch `gpt` after commit `ccf8c055a99984f1c5ec1d835958e9b5afc14282`. No lint baseline changed.
 
 ## 12. Handoff Instructions
 
@@ -648,7 +655,7 @@ Continue from the Next Actions. Keep this task In Progress until the remaining a
 - **Action:** Continued the source-based lint audit after repairing the latest completed CI failure.
 - **Changes:** Split 10 long-sentence candidates in `skills/drawing/SKILL.md` and three in `skills/philosophy-religion-asceticism/SKILL.md`. Corrected one dangling conjunction in `skills/drawing/references/prompt-fidelity.md`. Removed the misplaced Version 5 CI entry from `skills/INITIALIZATION_POLICY.md` so its recorded history remains Versions 1–4.
 - **Commit:** `ccf8c055a99984f1c5ec1d835958e9b5afc14282`.
-- **Read-back:** Pending for this batch.
+- **Read-back:** Fetched all seven changed paths from branch `gpt`. Confirmed the policy retains Versions 1–4, the dangling conjunction is corrected, and the source edits are present.
 - **Lint discipline:** Did not run the linter locally. Did not change any lint baseline.
 - **CI discipline:** Did not wait for or poll GitHub Actions. Review the result at a later mandatory preflight.
 - **Next:** Review remaining long-sentence candidates in the drawing, archive, and philosophy references. Review synonym-rotation findings without changing intentional examples.
