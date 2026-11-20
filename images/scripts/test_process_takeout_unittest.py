@@ -84,7 +84,6 @@ class TakeoutProcessorTests(unittest.TestCase):
             ])
             if "attempt" in item:
                 rows.append(f'    attempt: "{item["attempt"]}"')
-            ])
         (self.inbox / "HANDOFF.yml").write_text("\n".join(rows) + "\n", encoding="utf-8")
 
     def test_success_moves_byte_identical_master_creates_webp_and_archives_reports(self):
