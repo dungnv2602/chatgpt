@@ -1,7 +1,7 @@
 # Attempt 46 — Redo of Attempt 05 (remove closing restriction sentence)
 
 - **Date:** 2026-11-20
-- **Status:** Prompt archived and read-back verified; generation pending.
+- **Status:** Generated; image archive pending.
 - **Operation:** Fresh generation (redo).
 - **Mode:** Realistic.
 - **Redo target:** Attempt 05 — Neutral studio portrait, same ivory wrap outfit.
@@ -31,3 +31,15 @@ Photograph her in a bright, uncluttered studio with a plain warm-neutral backgro
 Photographic realism, natural anatomy, realistic skin texture, accurate garment construction, faithful outfit design, soft fabric texture, balanced daylight, restrained professional fashion photography.
 
 - **Prompt visibility:** Exact authored prompt; compiled image-tool prompt may not be exposed.
+
+## Generation result
+
+- **Outcome:** Generated successfully. The result depicts the seated studio portrait with warm-neutral background, soft lighting, and ivory wrap outfit. User approval is pending.
+- **Generation ID:** `1b8d552f-3445-4c68-96a6-f6c1ef4749cc`
+- **Native output/image ID:** Not exposed.
+- **Output ID:** A46-O01 (internal archive ID).
+- **Original PNG:** `/mnt/data/a_clean_softly_lit_studio_portrait_of_a_young_eas.png`
+- **Original size:** 1,863,926 bytes.
+- **Original SHA-256:** `371e1010d60863c8286084ecfe85268fd56f0ef1d6c70578ceb833e75df23581`
+- **Repository image asset:** Pending upload; WebP derivative and GitHub image link not yet verified.
+- **Approval:** Pending user review.
