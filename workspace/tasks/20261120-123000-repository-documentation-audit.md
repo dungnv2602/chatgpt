@@ -4,14 +4,14 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 13:24 UTC
+- **Updated:** 2026-11-20 13:30 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
-- **Related tasks:** None
+- **Related tasks:** 20261120-133053
 - **Archived:** No
 
 ## 1. Original Request
@@ -204,6 +204,17 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Validation:** Manual source review only. Did not run the linter locally or inspect CI.
 - **Next:** Continue reviewing remaining long sentences and supported lint patterns. Keep CI inspection gated by an explicit user request.
 
+### 2026-11-20 13:30 UTC
+
+- **Action:** Completed the mandatory CI preflight before switching to a new user-directed workflow task.
+- **Finding:** The latest changed-document and full-document runs failed. The changed-document run exposed two valid directory links that the anchor checker rejected. The full-document run also found hard lint counts above the configured baselines in five files.
+- **Repairs:** Updated the anchor checker to accept tracked directories. Corrected mode-specific synonym use in the archive README, Session Start, The Worker, and the task template. Split the ASD-STE100 skill description. Updated the wrapper to disable synonym rotation for the STE-flavored archive README.
+- **Commits:** Anchor-checker repair `c7bf4c17a6343a1ced9780d3fa8d5daa8deaf8f8`. Lint repairs `a5ce29072ba5a983c1c769e744dd86962d4a5c41`.
+- **CI:** Full-document run [44744854167](https://github.com/dungnv2602/chatgpt/actions/runs/44744854167) and changed-document run [44744854156](https://github.com/dungnv2602/chatgpt/actions/runs/44744854156) both passed.
+- **Read-back:** Fetched all five lint-repair paths from branch `gpt`. Confirmed the expected changes. GitHub Actions confirmed the anchor check and full technical-document lint.
+- **Validation:** No local linter execution. No lint baseline increase.
+- **Next:** Resume this documentation audit after task `20261120-133053` completes.
+
 ## 7. Current State
 
 The historical Version 19 inventory contained 166 Markdown files and 119 active source files. The Version 17 count of 121 used the same exclusions except for `skills/asd-ste100/examples/`. That directory contained two Markdown files, which explains the exact difference.
@@ -212,16 +223,14 @@ The current branch contains 176 Markdown files. The same Version 19 source-file 
 
 The Version 19 full lint reported 179 hard findings and 300 advisory findings. Those are historical results, not a fresh result for the current branch. The linter wrapper now has 17 baseline entries totaling 170. Every entry maps to an existing file. The historical 179-point threshold fell by four when two active-file baselines cleared. It fell by five when two deleted-file baselines were removed. The 170-point total is a configured threshold, not a current lint result.
 
-The user clarified that the linter must never run locally. Both existing GitHub Actions workflows are present on branch `gpt`. The changed-document workflow runs on Markdown pushes outside `skills/asd-ste100/`. The full-document workflow runs when files under `skills/asd-ste100/` or either lint workflow change. Both workflows run the linter self-test and invoke the repository wrapper for linting. Do not inspect CI results unless the user explicitly asks.
-
-A source search found two active documentation conflicts with this execution policy. Updated `skills/agent-skill-authoring/SKILL.md` and `skills/asd-ste100/README.md` to delegate lint execution to GitHub Actions. Read back both committed files. No linter was run and no CI result was inspected.
+CI policy has since changed. The linter must never run locally. The latest applicable GitHub Actions runs passed on commit `a5ce29072ba5a983c1c769e744dd86962d4a5c41`. The current execution task `20261120-133053` updates the pre-prompt and post-load CI gates.
 
 The active-link scan at Version 19 found zero unresolved local Markdown targets or heading anchors in its 119-file source scope. Current validation excludes `archive/tasks/`, `workspace/tasks/`, and `workspace/discussion.md` as sources while retaining those files as link targets. The historical-link review and external URL review remain open. No fresh full lint has run.
 
 ## 8. Remaining Work
 
 - Reduce remaining hard lint findings without raising per-file baselines. The configured baseline total of 170 is not a current lint result.
-- Let the existing GitHub Actions workflows run the official linter and self-test after matching pushes. Never run the linter locally. Inspect CI only when the user explicitly asks.
+- Let the existing GitHub Actions workflows run the official linter and self-test after matching pushes. Never run the linter locally. Follow the mandatory pre-prompt and post-load CI gates in the current workflow task.
 - Review historical archive links only after the user authorizes changes to those records.
 - Review external URL availability if it remains within the approved audit scope.
 - Confirm current audit scope and completion criteria against the repository state before closing the task.
@@ -231,7 +240,8 @@ The active-link scan at Version 19 found zero unresolved local Markdown targets 
 1. Review remaining supported lint rules in the current full-document scope. Focus on long sentences, synonym rotation, and dangling conjunctions.
 2. Inspect any candidate finding in its full document context before editing.
 3. Keep historical audit entries and archived task records unchanged.
-4. Push any validation-triggering changes to branch `gpt` and let the existing GitHub Actions workflows validate them. Do not run the linter locally or inspect CI unless the user explicitly asks.
+4. Push validation-triggering changes to branch `gpt`. Let GitHub Actions validate them. Do not run the linter locally.
+5. Resume this audit after task `20261120-133053` reaches an outcome.
 5. Review external URL availability if it remains within the approved audit scope.
 
 ## 10. References

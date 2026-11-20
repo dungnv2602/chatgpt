@@ -25,4 +25,24 @@
 
 **Blocker / Next:** Continue the active repository documentation audit.
 
+## CI preflight before every prompt
+
+**Status:** Approved — documentation pending
+
+### 2026-11-20 13:30 UTC — User
+
+> ---
+> Do not inspect CI results unless you explicitly ask. When you ask, inspect failures and fix them.
+> ---
+>
+> Wrong. You must check and fix CI before taking my prompt, ve whatever it is. You always check CI and fix first. You also must check and fix CI after loading skills by following my cue.
+>
+> ---
+>
+> Update your workflow accordingly.
+
+**Assistant note:** The user replaced the previous deferred-inspection policy. The approved change requires a CI preflight before every prompt and another preflight after cue-triggered skill loading. The initial CI failures were repaired before this task began. Both applicable workflows passed on commit `a5ce29072ba5a983c1c769e744dd86962d4a5c41`.
+
+**Outstanding:** Update the authoritative GitHub Actions policy and all related skill-loading and task-execution instructions. Verify the changes and their CI runs.
+
 ## No open discussions
