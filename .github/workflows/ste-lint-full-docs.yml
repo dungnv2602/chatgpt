@@ -29,11 +29,23 @@ jobs:
         run: |
           files=$(git ls-files '*.md' |
             grep -vE '^(novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))')
+          failed=0
           while IFS= read -r file; do
             [ -z "$file" ] && continue
             if [ "$file" = "skills/INITIALIZATION_POLICY.md" ]; then
-              python3 skills/asd-ste100/scripts/ste-lint.py --baseline 4 "$file"
+              if python3 skills/asd-ste100/scripts/ste-lint.py --baseline 4 "$file"; then
+                :
+              else
+                echo "Lint failure: $file"
+                failed=1
+              fi
             else
-              python3 skills/asd-ste100/scripts/ste-lint.py "$file"
+              if python3 skills/asd-ste100/scripts/ste-lint.py "$file"; then
+                :
+              else
+                echo "Lint failure: $file"
+                failed=1
+              fi
             fi
           done <<< "$files"
+          exit "$failed"
