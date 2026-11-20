@@ -1,14 +1,12 @@
 # Task Board
 
-Last updated: 2026-11-20 12:03 UTC
+Last updated: 2026-11-20 12:06 UTC
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
 ## Current Execution
 
-| ID | Task | Priority | Status | Origin | Updated | Record |
-|---|---|---:|---|---|---|---|
-| 20261120-120302 | Add a Condensed Mode discussion register | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-120302-condensed-mode-discussion-register.md) |
+_No unblocked execution task._
 
 ## Ready
 
@@ -30,6 +28,9 @@ _No paused tasks._
 
 ## Historical
 
+| ID | Task | Priority | Status | Origin | Updated | Record |
+|---|---|---:|---|---|---|---|
+| 20261120-120302 | Add a Condensed Mode discussion register | P1 | Done | User | 2026-11-20 | [Archived record](../archive/tasks/20261120-120302-condensed-mode-discussion-register.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/76ab55d636668a80ee365af28953ec1fecf24eb6) |
 | 20261120-112500 | Implement The Worker and workspace continuity | P1 | Done | User | 2026-11-20 | [Archived record](../archive/tasks/20261120-112500-the-worker-workspace-continuity.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/e0f24ce2a7aad195be3b694ba9a0ee5f15758caf) |
 
 ## Selection rules
