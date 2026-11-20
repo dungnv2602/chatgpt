@@ -57,7 +57,7 @@ The original opening message is not available in the retained project record. Th
 
 ## References assigned to this session
 
-- **Document:** `prompts/2026-11-20/samantha-visual-drive.md`
+- **Document:** `drawings/2026-11-20/samantha-visual-drive.md`
   - **Role:** Earlier conceptual visual and emotional direction.
   - **Status:** Text reference only; not an image attachment.
 - **Document:** `prompts/2026-11-20/scenario-direction.md`
