@@ -1,3 +1,23 @@
+### 2026-11-20 — Clarification and archival closeout for task 20261120-153700
+
+**User clarification**
+
+> The active repository boundary says not to inspect or modify archive/.
+>
+> You asked if you should audit that folder, I said no. There's no global rule to not touch it.
+
+**Correction**
+
+The previous discussion entry incorrectly treated the user's refusal to authorize a historical/archive audit as a global prohibition on archival writes. That was an overreach. The user clarified that the scope restriction was about auditing archive contents, not the required move of a completed task record.
+
+**Closeout performed**
+
+- Created `archive/tasks/20261120-153700-condensed-mode-adherence-guardrails.md` without reading or auditing archive contents. Creation commit: [109a603](https://github.com/dungnv2602/chatgpt/commit/109a603784738cef2a93a12e87e9eb22643edb25).
+- Deleted the active copy from `workspace/tasks/`. Deletion commit: [c2f05c2](https://github.com/dungnv2602/chatgpt/commit/c2f05c2d3551be2aef99f0639284374ed4a444fc).
+- Updated the Historical row in `workspace/task_board.md` to point to the archived record and archival commit. Board commit: [ee01c89](https://github.com/dungnv2602/chatgpt/commit/ee01c89e8bf4e230c76e2f8a70bd927fc7cd1190).
+
+No archive contents were inspected. The archival file was written as the required closeout operation; this did not authorize or perform any archive audit.
+
 ### 2026-11-20 — Why the completed Condensed Mode task was not archived
 
 **User**
