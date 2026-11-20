@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 13:21 UTC
+- **Updated:** 2026-11-20 13:24 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -185,6 +185,15 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Commit samples:** [Session Start](https://github.com/dungnv2602/chatgpt/commit/84274185a50f128c365012f8eafebfe43a6bb40f), [The Worker](https://github.com/dungnv2602/chatgpt/commit/7206b8a537561436585652833dec0c605de5ad62), [GitHub Actions](https://github.com/dungnv2602/chatgpt/commit/6be7c60e56813ef125425e2f020da24d2010c353), [Drawing skill](https://github.com/dungnv2602/chatgpt/commit/4baca7df32f57160a26f13f1dc6072305d24fe04), [Prompt fidelity](https://github.com/dungnv2602/chatgpt/commit/79ccd0e9cc2e22ee6bc708ce91b2ad07a107cf13), [Series continuity](https://github.com/dungnv2602/chatgpt/commit/8a046135c4b9f351900e5a11bae9ebf8881f36b0), [Session Archiving](https://github.com/dungnv2602/chatgpt/commit/fc1f962849845ea714e11f24d4b2b40e1e9e89df), [Archive records](https://github.com/dungnv2602/chatgpt/commit/aef721709f3acc799a5dad2f5af8eb2f82de6be5), [Writing rules](https://github.com/dungnv2602/chatgpt/commit/7843463413daa63ed5db431b521d960bbad2dbb0), and [Archive README](https://github.com/dungnv2602/chatgpt/commit/dac406fcad86586f4108fcdc149dc25f96e14115).
 - **Validation limit:** These are source-based scans, not an official linter result. The official linter and self-test remain unexecuted because the container cannot resolve GitHub and has no repository checkout.
 - **Next:** Obtain an authorized repository shell, run the official self-test and full lint, then reconcile the remaining baseline against actual findings.
+
+### 2026-11-20 13:24 UTC
+
+- **Action:** Continued the manual sentence-length review in the Drawing, Session Archiving, Philosophy, and Religion skills.
+- **Changes:** Split the pattern-refresh conditions in `skills/drawing/SKILL.md`, the session-brief content instruction in the same file, and the prompt-first reconstruction instruction in `skills/session-archiving/references/archive-records-and-image-prompts.md`. Split the scholarly-excellence and collection-assessment criteria in `skills/philosophy-religion-asceticism/SKILL.md`. Split the edition-verification instruction in `skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md`.
+- **Commits:** Drawing skill `ccf9f2640e70fda262fa8de52d61c65ac4c5bdd9` and `0d3a9c2cc43464b8982315a6646fab9df68fd34e`; Session Archiving reference `ac38d5d812d6a1847a78b3edc2bf845431b04826`; Philosophy skill `9dbf49828cd5da24093075947764b9958814438c` and `5cc0fd796c1568444d47f249e2ef0f8d4bd4f408`; Schopenhauer curriculum `e83c49280bdb78114f63ddd78767ada6c6130e63`.
+- **Read-back:** Fetched each changed path from branch `gpt` and confirmed the revised text.
+- **Validation:** Source review only. No lint baseline changed. Did not run the linter locally or inspect CI.
+- **Next:** Continue the remaining manual review. Let GitHub Actions validate matching pushes and inspect CI only when the user asks.
 
 ## 7. Current State
 
