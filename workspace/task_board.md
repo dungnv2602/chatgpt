@@ -14,7 +14,10 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## Ready
 
-_No ready tasks._
+| ID | Task | Priority | Status | Origin | Updated | Record |
+|---|---|---:|---|---|---|---|
+| 20261120-123400 | Add task-inspection gates and discussion reports to Condensed Mode | P1 | Ready | User | 2026-11-20 | [Task record](tasks/20261120-123400-condensed-mode-task-gates-and-reporting.md) |
+
 
 ## Blocked
 
