@@ -151,7 +151,7 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
   - `novels/README.md`
   - `novels/WORKFLOW.md`
   - `images/takeout/README.md`
-- **Verification:** Retrieved each changed path from branch `gpt` after the write. Read-back confirmed the committed content and required sections.
+- **Verification:** Retrieved each changed path from branch `gpt` after the write. The read-back matched the committed content and required sections.
 - **Validation limit:** The ASD-STE100 linter and the full repository audit have not run. The audit remains in progress.
 - **Commits:** `683d0367f0fd171403990189dca0e2169b8f491e`, `8dd008db79fe086728d97cf85802e40ebc1b8fc1`, `44a624833db2e82f86da0dd34c140ee5eb5cffbf`, `8832f92875c057c1d4903f6ed800eb9481830e11`, and `48fd5805622c66f1a27786ee1640a1929cc5e479`.
 
@@ -182,7 +182,7 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
   - `novels/templates/scene-v1.1.md`
   - `novels/templates/illustration-prompt-v1.1.md`
   - `novels/README.md`
-- **Verification:** Fetched changed paths from branch `gpt` after each write. Read-back confirmed committed content.
+- **Verification:** Retrieved changed paths from branch `gpt` after each write. Read-back confirmed committed content.
 - **Validation limit:** The repository linter has not run. This environment has no repository shell or GitHub Action dispatch tool. Manual screening does not replace the linter.
 - **Manual screening:** Scans checked semicolons, selected phrasal verbs, marketing adjectives, selected nominalizations, and instruction sentence length in revised files. The scans found two semicolons, one missing sentence boundary, one nominalized verb phrase, and several long instructions. Those findings were corrected and read back.
 - **Latest reference scan:** A targeted scan of four Drawing, archive, and curriculum references found no semicolons, selected phrasal verbs, marketing adjectives, or tested nominalization patterns. The scans do not test every STE rule.
@@ -206,7 +206,7 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
 - **Review-only files:** `skills/prompt-master/references/patterns.md`, `skills/drawing/README.md`, `skills/asd-ste100/README.md`, `skills/philosophy-religion-asceticism/CHANGELOG.md`, and `skills/prompt-master/README.md`. The Prompt Master README contains marketing copy and product examples. The policy excludes marketing copy and approved examples from controlled-language rewrites.
 - **Preserved source material:** `master/Images.md`, `master/Poses.md`, and `master/Prompts.md` contain prompts, pose ideas, and creative text. They were inspected and left unchanged. Prompt templates, worked examples, and historical pattern evidence were also preserved except for nearby explanatory prose.
 - **Inventory:** Read-only listings verified the contents of `skills/`, `skills/*/references/`, `skills/drawing/references/patterns/`, and `master/`. The root `drawings/` listing returned 404. Do not infer that the directory is empty.
-- **Drawing archive links:** The pattern indexes contain historical links into `drawings/`. That root remains outside the approved workspace roots listed by Session Archiving. I did not follow or modify those links. Their targets remain unverified.
+- **Drawing archive links:** The pattern indexes contain historical links into `drawings/`. That root remains outside the approved workspace roots listed by Session Archiving. I did not follow or change those links. Their targets remain unverified.
 - **Link checks:** Internal links in the revised Prompt Master, Romantic Storyteller, and Drawing pattern files point to existing repository paths. Historical `drawings/` links remain unverified.
 - **Manual screening:** The edited prose was checked for semicolons and selected sentence-length, phrasal-verb, and structural patterns. The identified findings were revised and read back. These checks are limited and do not replace the official linter.
 - **Validation limit:** The official `skills/asd-ste100/scripts/ste-lint.py` was not run. This environment provides repository file and read-only GitHub API operations, but no repository shell or workflow-dispatch action.
@@ -332,7 +332,7 @@ Use this template:
 ### Version 16 — Scene illustration archive-link consistency
 
 - **Date:** 2026-11-20
-- **Scope:** Verify active Scene-002 links to the archived 2026-11-16 image prompts after the workspace rename from `prompts/` to `drawings/`.
+- **Scope:** Checked active Scene-002 links to the archived 2026-11-16 image prompts after the workspace rename from `prompts/` to `drawings/`.
 - **Files updated:**
   - `drawings/2026-11-20/session-01-brief.md`
   - `drawings/2026-11-19/attempt-34.md`
