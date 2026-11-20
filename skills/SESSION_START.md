@@ -177,7 +177,7 @@ Never claim a commit or verification that did not occur.
 
 #### 9. Technical writing standard
 
-This protocol is operational documentation. Apply Strict mode from the repository [ASD-STE100 policy](../asd-ste100/references/repository-writing-policy.md) when you revise it.
+This protocol is operational documentation. Apply Strict mode from the repository [ASD-STE100 policy](asd-ste100/references/repository-writing-policy.md) when you revise it.
 
 ### Session and specialist execution order
 
