@@ -24,11 +24,11 @@ FENCE_RE = re.compile(r"^\s{0,3}(" + re.escape(BACKTICK) + r"{3,}|~{3,})")
 HEADING_RE = re.compile(r"^ {0,3}(#{1,6})\s+(.+?)\s*#*\s*$")
 SETEXT_RE = re.compile(r"^ {0,3}(=+|-+)\s*$")
 INLINE_LINK_RE = re.compile(
-    r"!?\\[[^\\]]*\\]\\(\\s*(<[^>]+>|[^\\s)]+)(?:\\s+[^)]*)?\\)"
+    r"!?\[[^\]]*\]\(\s*(<[^>]+>|[^\s)]+)(?:\s+[^)]*)?\)"
 )
-REFERENCE_RE = re.compile(r"^\\s{0,3}\\[[^\\]]+\\]:\\s*(<[^>]+>|\\S+)")
-HTML_LINK_RE = re.compile(r"\\b(?:href|src)\\s*=\\s*([\\"'])(.*?)\\1", re.I)
-HTML_ID_RE = re.compile(r"\\b(?:id|name)\\s*=\\s*([\\"'])(.*?)\\1", re.I)
+REFERENCE_RE = re.compile(r"^\s{0,3}\[[^\]]+\]:\s*(<[^>]+>|\S+)")
+HTML_LINK_RE = re.compile(r"\b(?:href|src)\s*=\s*([\"'])(.*?)\1", re.I)
+HTML_ID_RE = re.compile(r"\b(?:id|name)\s*=\s*([\"'])(.*?)\1", re.I)
 
 
 def tracked_markdown() -> list[str]:
@@ -61,15 +61,15 @@ def remove_fenced_blocks(text: str) -> str:
             continue
         if fence_char is None:
             kept.append(line)
-    return "\\n".join(kept)
+    return "\n".join(kept)
 
 
 def clean_heading(text: str) -> str:
-    text = re.sub(r"!\\[([^\\]]*)\\]\\([^)]*\\)", r"\\1", text)
-    text = re.sub(r"\\[([^\\]]+)\\]\\([^)]*\\)", r"\\1", text)
+    text = re.sub(r"!\[([^\]]*)\]\([^)]*\)", r"\1", text)
+    text = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", text)
     text = re.sub(r"<[^>]+>", "", text)
     code_pattern = re.escape(BACKTICK) + r"+([^" + re.escape(BACKTICK) + r"]*)" + re.escape(BACKTICK) + r"+"
-    text = re.sub(code_pattern, r"\\1", text)
+    text = re.sub(code_pattern, r"\1", text)
     text = re.sub(r"[*_~]", "", text)
     return html.unescape(text).strip()
 
@@ -167,7 +167,7 @@ def main() -> int:
                 issues.append((source, target, "missing Markdown file"))
                 continue
             fragment = unquote(parsed.fragment)
-            if fragment and not re.fullmatch(r"L\\d+(?:-L\\d+)?", fragment):
+            if fragment and not re.fullmatch(r"L\d+(?:-L\d+)?", fragment):
                 if fragment not in anchors_by_file[destination]:
                     issues.append((source, target, "missing heading anchor"))
 
