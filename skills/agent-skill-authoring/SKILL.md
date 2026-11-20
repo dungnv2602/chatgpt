@@ -259,6 +259,7 @@ For this project:
 - Make sequential writes to the same path.
 - Do not change `main` or unrelated files.
 - After each important write, fetch the same path and verify the expected content.
+- Follow the deferred CI verification policy in `../conversation-mode/SKILL.md`. Do not wait for or poll CI during the current task.
 - Do not report a commit or verification as successful unless the tool result and read-back support that statement.
 
 ## 11. Completion standard
