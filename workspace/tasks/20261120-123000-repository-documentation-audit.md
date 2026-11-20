@@ -68,6 +68,7 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Commits:** `38bb33812e94835d3b0a1922a1bb3e4fc959d5fb`; `2a2a58d96bc9d550ca0243b0d760e3f686c8883e`.
 - **Additional edits:** Standardized the historical verification wording in `skills/INITIALIZATION_POLICY.md` and clarified activation timing in `skills/agent-skill-authoring/SKILL.md`. Commits: `303678a6af2b8e17549e0d6493ab6f7f6731dff0`; `66a464ec53c4c6265ffb2a3118db4ee0b4681569`.
 - **Further edits:** Reduced a long-sentence and synonym-rotation finding in `skills/drawing/SKILL.md`, and clarified the active-conversation completion rule in `skills/session-archiving/SKILL.md`. Commits: `440efa62be43a20ad6ce4543a2703654d20cbf96`; `3be74e5544811cfa296cf45572b42b0f0c2e7868`.
+- **Follow-up:** Standardized the remaining prompt-fidelity reference trigger wording in `skills/drawing/SKILL.md`. Commit: `504acfb796907ecaf21574ae9f79c767bab4a2da`.
 - **Next:** Continue source review of remaining hard findings in active documents. Review the next CI result at the next mandatory preflight; do not wait or poll.
 
 ### 2026-11-20 16:20 UTC
