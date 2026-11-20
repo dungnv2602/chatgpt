@@ -9,7 +9,7 @@ Initialization is conditional. Do not load project instructions, skills, or refe
 
 The only session-start cue is **`start session`**.
 
-When the user gives this cue as an instruction, perform foundational initialization. Run the mandatory execution gate in `skills/session-archiving/SKILL.md`. Do not begin project work until every required check passes.
+When the user gives this cue as an instruction, perform foundational initialization. Run the mandatory execution gate in `skills/session-archiving/SKILL.md`. Do not start project work until every required check passes.
 
 Ignore quoted, discussed, or hypothetical uses of the cue. Do not treat a specialist-role request as a session-start cue.
 
@@ -51,7 +51,7 @@ The canonical procedure is in `skills/SESSION_START.md`. The execution gate is i
 
 Before novelist work:
 
-1. Verify that foundational initialization passed in the current conversation.
+1. Check that foundational initialization passed in the current conversation.
 2. If it did not pass, stop and ask the user to say `start session`.
 3. Do not use remembered instructions, old reads, summaries, or unverified copies as substitutes.
 4. After foundational initialization passes, read `skills/romantic-storyteller-visual-artist/SKILL.md`.
