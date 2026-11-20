@@ -12,7 +12,7 @@ KNOWN_IMAGE = SUPPORTED | {".apng", ".gif", ".webp", ".bmp", ".tif", ".tiff", ".
 HANDOFF = "HANDOFF.yml"
 EMPTY_HANDOFF = "version: 1\nstatus: empty\nitems: []\n"
 FIELDS = [
-    "source_filename", "source_path", "title", "asset_id", "destination_dir",
+    "source_filename", "source_path", "title", "asset_id", "attempt", "destination_dir",
     "master_path", "webp_path", "staging_webp_path", "source_format", "conversion_profile",
     "original_bytes", "webp_bytes", "size_change_percent", "source_sha256",
     "master_sha256", "webp_sha256", "cwebp_version", "status", "error",
@@ -153,6 +153,7 @@ def failure_rows(items: list[Any], error: str, version: str) -> list[dict[str, A
         rows.append({
             "source_filename": source, "source_path": f"images/takeout/{source}" if source else "",
             "title": item.get("title", ""), "asset_id": item.get("asset_id", ""),
+            "attempt": item.get("attempt", ""),
             "destination_dir": item.get("destination_dir", ""), "master_path": "", "webp_path": "",
             "source_format": Path(str(source)).suffix.lower().lstrip("."),
             "conversion_profile": "", "original_bytes": "", "webp_bytes": "",
@@ -160,6 +161,121 @@ def failure_rows(items: list[Any], error: str, version: str) -> list[dict[str, A
             "webp_sha256": "", "cwebp_version": version, "status": "FAILED", "error": error,
         })
     return rows
+
+
+def split_markdown_table_cells(line: str) -> list[str]:
+    return [cell.strip() for cell in line.strip().strip("|").split("|")]
+
+def prepare_attempt_readme_updates(prepared: list[dict[str, Any]], root: Path) -> dict[Path, str]:
+    """Prepare idempotent attempt-record and daily-README links for session outputs."""
+    grouped: dict[tuple[str, str], list[str]] = {}
+    for item in prepared:
+        attempt = item.get("attempt", "")
+        if not attempt:
+            continue
+        relative_directory = item["directory"].relative_to(root).as_posix()
+        match = re.fullmatch(r"drawings/(\d{4}-\d{2}-\d{2})/images", relative_directory)
+        if not match:
+            raise ProcessingError(
+                "An item with attempt metadata must target drawings/YYYY-MM-DD/images."
+            )
+        session_date = match.group(1)
+        try:
+            datetime.strptime(session_date, "%Y-%m-%d")
+        except ValueError as exc:
+            raise ProcessingError(f"Invalid drawing-session date in destination: {session_date}") from exc
+        grouped.setdefault((session_date, attempt), []).append(f"images/{item['webp'].name}")
+
+    updates: dict[Path, str] = {}
+    for (session_date, attempt), raw_links in grouped.items():
+        links = list(dict.fromkeys(raw_links))
+        session_dir = root / "drawings" / session_date
+        attempt_path = session_dir / f"attempt-{attempt}.md"
+        readme_path = session_dir / "README.md"
+        for target_path in (attempt_path, readme_path):
+            if target_path.is_symlink() or not target_path.is_file():
+                raise ProcessingError(
+                    f"Cannot link uploaded output: required session record is missing or unsafe: "
+                    f"{target_path.relative_to(root).as_posix()}"
+                )
+
+        attempt_content = updates.get(attempt_path)
+        if attempt_content is None:
+            attempt_content = attempt_path.read_text(encoding="utf-8")
+        heading_pattern = re.compile(
+            r"(?ms)^## Repository images[ \t]*\n.*?(?=^## |\Z)"
+        )
+        section_match = heading_pattern.search(attempt_content)
+        if section_match:
+            section = section_match.group(0).rstrip()
+            existing = re.findall(r"\[[^\]]+\]\((images/[^)]+)\)", section)
+            additions = [link for link in links if link not in existing]
+            if additions:
+                section += "\n" + "\n".join(
+                    f"- [{Path(link).name}]({link})" for link in additions
+                )
+                attempt_content = (
+                    attempt_content[:section_match.start()]
+                    + section
+                    + "\n\n"
+                    + attempt_content[section_match.end():].lstrip("\n")
+                )
+        else:
+            link_lines = "\n".join(f"- [{Path(link).name}]({link})" for link in links)
+            attempt_content = (
+                attempt_content.rstrip()
+                + "\n\n## Repository images\n\n"
+                + link_lines
+                + "\n"
+            )
+        updates[attempt_path] = attempt_content
+
+        readme_content = updates.get(readme_path)
+        if readme_content is None:
+            readme_content = readme_path.read_text(encoding="utf-8")
+        lines = readme_content.splitlines()
+        header_rows = [
+            index for index, line in enumerate(lines)
+            if line.strip().startswith("|")
+            and "Attempt / prompt" in line
+            and "Image" in line
+        ]
+        if len(header_rows) != 1:
+            raise ProcessingError(
+                f"Daily README must contain exactly one attempt table with an Image column: "
+                f"{readme_path.relative_to(root).as_posix()}"
+            )
+        header_index = header_rows[0]
+        headers = split_markdown_table_cells(lines[header_index])
+        if len(headers) != 6 or headers[5].lower() != "image":
+            raise ProcessingError(
+                f"Daily README attempt table must have exactly six columns with Image last: "
+                f"{readme_path.relative_to(root).as_posix()}"
+            )
+        row_pattern = re.compile(rf"\]\(attempt-{re.escape(attempt)}\.md\)")
+        matching_rows = [
+            index for index in range(header_index + 2, len(lines))
+            if row_pattern.search(lines[index])
+        ]
+        if len(matching_rows) != 1:
+            raise ProcessingError(
+                f"Expected exactly one README row for attempt {attempt}; found {len(matching_rows)}."
+            )
+        row_index = matching_rows[0]
+        cells = split_markdown_table_cells(lines[row_index])
+        if len(cells) != 6:
+            raise ProcessingError(
+                f"README row for attempt {attempt} does not contain exactly six columns."
+            )
+        existing_links = re.findall(r"\[[^\]]+\]\((images/[^)]+)\)", cells[5])
+        merged_links = list(dict.fromkeys(existing_links + links))
+        cells[5] = ", ".join(
+            f"[{Path(link).name}]({link})" for link in merged_links
+        )
+        lines[row_index] = "| " + " | ".join(cells) + " |"
+        updates[readme_path] = "\n".join(lines) + ("\n" if readme_content.endswith("\n") else "")
+
+    return updates
 
 def main() -> int:
     parser = argparse.ArgumentParser()
@@ -211,6 +327,7 @@ def main() -> int:
     prepared: list[dict[str, Any]] = []
     moved: list[tuple[Path, Path]] = []
     staged_moves: list[tuple[Path, Path]] = []
+    written_text_updates: list[tuple[Path, bytes]] = []
     stage_root = inbox / "webp" / batch / folder.name
     encoder_version = ""
 
@@ -272,6 +389,24 @@ def main() -> int:
                     raise ProcessingError(f"Duplicate asset_id: {asset_id}")
                 ids.add(asset_id)
             directory = destination_dir(item.get("destination_dir"), root)
+            attempt_value = item.get("attempt")
+            attempt_ref = ""
+            if attempt_value is not None and attempt_value != "":
+                if isinstance(attempt_value, bool):
+                    raise ProcessingError(f"Item {number}: attempt must be a positive integer or digit string.")
+                if isinstance(attempt_value, int):
+                    attempt_number = attempt_value
+                elif isinstance(attempt_value, str) and re.fullmatch(r"\d{1,3}", attempt_value.strip()):
+                    attempt_number = int(attempt_value.strip())
+                else:
+                    raise ProcessingError(f"Item {number}: attempt must be a positive integer or digit string.")
+                if not 1 <= attempt_number <= 999:
+                    raise ProcessingError(f"Item {number}: attempt must be between 1 and 999.")
+                if not re.fullmatch(r"drawings/\d{4}-\d{2}-\d{2}/images", directory.relative_to(root).as_posix()):
+                    raise ProcessingError(
+                        f"Item {number}: attempt metadata is only valid for a drawings/YYYY-MM-DD/images destination."
+                    )
+                attempt_ref = f"{attempt_number:02d}"
             reject_symlink_components(directory, root)
             stem = f"{asset_id}-{slug}" if asset_id else slug
             # Normalize the content type for encoder selection but preserve the
@@ -288,6 +423,7 @@ def main() -> int:
                     raise ProcessingError(f"Destination already exists; refusing to overwrite: {rel}")
             prepared.append({
                 "name": name, "source": source, "title": title.strip(), "asset_id": asset_id,
+                "attempt": attempt_ref,
                 "directory": directory, "master": master, "webp": webp,
                 "profile": "lossless-exact-q100-m6" if suffix == ".png" else "picture-q92-m6-sharp-yuv",
                 "original_bytes": source.stat().st_size, "source_sha": digest(source), "staged": None,
@@ -298,6 +434,9 @@ def main() -> int:
             raise ProcessingError("Every image must appear exactly once in HANDOFF.yml; " + "; ".join(details))
         checks.append("Every uploaded image is listed exactly once; no unlisted image will be processed.")
         checks.append("Destinations are restricted to images/ or novel/; duplicate and existing paths are rejected.")
+        text_updates = prepare_attempt_readme_updates(prepared, root)
+        if text_updates:
+            checks.append("Attempt and daily README targets were prevalidated for automatic output linking.")
 
         if stage_root.exists() or stage_root.is_symlink():
             raise ProcessingError(f"WebP staging attempt already exists: {stage_root.relative_to(root).as_posix()}")
@@ -347,11 +486,18 @@ def main() -> int:
         checks.append("Each original master was relocated byte-for-byte; SHA-256 matches its uploaded source.")
         checks.append("Each WebP was moved from persistent staging to its final destination and passed hash and container verification.")
 
+        for text_path, updated_text in text_updates.items():
+            previous_bytes = text_path.read_bytes()
+            text_path.write_text(updated_text, encoding="utf-8")
+            written_text_updates.append((text_path, previous_bytes))
+        if written_text_updates:
+            checks.append("Verified output links were added to the matching attempt records and daily README rows.")
+
         rows = []
         for item in prepared:
             rows.append({
                 "source_filename": item["name"], "source_path": f"images/takeout/{item['name']}",
-                "title": item["title"], "asset_id": item["asset_id"],
+                "title": item["title"], "asset_id": item["asset_id"], "attempt": item["attempt"],
                 "destination_dir": item["directory"].relative_to(root).as_posix(),
                 "master_path": item["master"].relative_to(root).as_posix(),
                 "webp_path": item["webp"].relative_to(root).as_posix(),
@@ -382,6 +528,11 @@ def main() -> int:
         message = str(exc) or exc.__class__.__name__
         errors.append(message)
         rollback_errors = []
+        for text_path, original_bytes in reversed(written_text_updates):
+            try:
+                text_path.write_bytes(original_bytes)
+            except Exception as rollback_exc:
+                rollback_errors.append(f"Could not restore Markdown record {text_path}: {rollback_exc}")
         for master, source in reversed(moved):
             try:
                 if master.exists() and not source.exists():
@@ -402,7 +553,7 @@ def main() -> int:
         for item in prepared:
             rows.append({
                 "source_filename": item["name"], "source_path": f"images/takeout/{item['name']}",
-                "title": item["title"], "asset_id": item["asset_id"],
+                "title": item["title"], "asset_id": item["asset_id"], "attempt": item["attempt"],
                 "destination_dir": item["directory"].relative_to(root).as_posix(),
                 "master_path": item["master"].relative_to(root).as_posix(),
                 "webp_path": item["webp"].relative_to(root).as_posix(),
