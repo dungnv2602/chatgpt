@@ -207,8 +207,8 @@ citations if it does not improve reliability.
   relevant authority, document, jurisdiction, and date. A teaching of one
   denomination, school, lineage, or institution is not automatically the view of
   an entire religion.
-- Use official institutional sources to establish what that institution says
-  use independent academic scholarship for historical context and analysis.
+- Use official institutional sources to establish what the institution says.
+  Use independent academic scholarship for historical context and analysis.
 - Represent internal diversity, reform movements, minority traditions, and
   contested interpretations accurately.
 - Do not adjudicate metaphysical truth by pretending historical scholarship can
