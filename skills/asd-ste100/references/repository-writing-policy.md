@@ -45,13 +45,14 @@ Do not treat a linter result as proof that a document is accurate. A linter chec
 
 ## Validation
 
-Run the repository wrapper on each changed technical document:
+Do not run the linter locally. Push changes to branch `gpt` and let GitHub Actions validate them.
 
-```bash
-bash skills/asd-ste100/scripts/ste-lint-repository.sh path/to/file.md
-```
+The repository has two lint workflows:
 
-The wrapper applies the recorded mode and per-file baseline. Use the underlying linter with `--json` for structured results. Use `--baseline N` only when you adopt an existing document with known findings. Record the baseline and reason. Do not raise the baseline to hide new violations.
+- `.github/workflows/ste-lint-changed.yml` checks changed Markdown files outside `skills/asd-ste100/`.
+- `.github/workflows/ste-lint-full-docs.yml` checks the technical documentation when files in `skills/asd-ste100/` change. It also runs when either lint workflow file changes.
+
+Both workflows use `skills/asd-ste100/scripts/ste-lint-repository.sh`. The wrapper applies the recorded mode and per-file baseline. Use `--json` to interpret structured linter output. Use `--baseline N` only when you adopt an existing document with known findings. Record the baseline and reason. Do not raise the baseline to hide new violations.
 
 The linter does not check meaning, terminology approval, modality, or all grammar rules. Review every rewrite against the source.
 
