@@ -4,18 +4,19 @@
 
 For every request to adjust, revise, refine, or change an existing result, use the **successful authored prompt that produced the target result** as the sole baseline. Revise that prompt and generate a fresh result. Never use the existing image itself as the editing source or as a visual reference.
 
-- Locate the exact successful prompt in the authoritative attempt record.
-- Verify that it produced the target result, or that the user approved that specific attempt for its intended purpose.
-- Recover the complete authored prompt. If it is unavailable, disclose the gap. Do not fabricate wording or silently substitute an unrelated prompt.
-- Preserve all unrequested visual content specified by the successful prompt.
-- Revise only the requested details. Keep all other details unchanged.
-- Generate a fresh result from the revised prompt and assess it against the successful baseline and the requested changes.
+- Locate the exact successful prompt assigned as the baseline.
+- Verify that it produced the target result, or that the user approved it for the intended purpose.
+- Copy the complete authored prompt verbatim. Do not paraphrase, summarize, reconstruct, or rewrite it.
+- Apply only the requested change directly to the copied text. Preserve every other word, order, and detail.
+- Keep archival metadata out of the submitted prompt. Never include attempt numbers, file names, paths, repository records, prompt-record references, generation IDs, or retrieval instructions.
+- Keep image references and editing-operation language out of the submitted prompt. Describe the final visual result directly.
+- Generate a fresh result from the revised prompt and assess it against the assigned prompt and the requested changes.
 
 **Never ask the user to upload, attach, or reattach an image for an adjustment.** This applies even when the image is not available in the conversation.
 
 **Never use an existing image as the base or reference.** Do not attach, pass, or otherwise supply the prior image to the image-generation tool for an adjustment. The successful authored prompt is the base.
 
-**Never mention the image or image-editing operation in the next prompt.** Write a self-contained generation prompt that describes the desired final subject and scene directly. Do not refer to an image, source image, uploaded image, previous image, reference image, attachment, or an edit. Avoid wording such as "edit this image", "based on the image", "use the attached image", or "preserve the image". Describe the visual content from the successful prompt in direct scene language, then incorporate only the requested changes.
+**Never mention the image, image-editing operation, or workflow metadata in the next prompt.** Start with the exact successful authored prompt and retain it verbatim. Modify only the text needed for the requested change. Do not refer to an image, source image, uploaded image, previous image, reference image, attachment, or an edit. Do not mention attempt numbers, file names, paths, repository records, prompt records, prompt IDs, generation IDs, or instructions to retrieve another prompt. The submitted prompt must contain only direct visual instructions for the intended final result.
 
 If the successful prompt is missing or incomplete, use the active session brief and the available authoritative attempt records. Disclose what prompt information could not be recovered. Do not ask for an image as a substitute. Ask a question only when an essential creative requirement cannot be resolved from the available written records.
 
@@ -27,13 +28,13 @@ Image references may be used for other drawing tasks only when the user explicit
 
 ## 3. Revise the proven prompt, not the image
 
-Start with the single requested change. Use the verified successful authored prompt as the baseline. Make only the necessary revision.
+Copy the complete assigned successful authored prompt verbatim. Make the smallest possible in-place change to the exact words that must change. Do not retype it from memory, paraphrase it, summarize it, or replace it with a newly composed description.
 
-- **Preserve:** every unrequested visual element. This includes identity and face, hairstyle, wardrobe, pose, and body geometry. It also includes composition, camera, lighting, background, environment, mood, and rendering style when the baseline specifies them.
-- **Change:** only the element the user requested.
-- **Exclude:** unwanted additions, text, boxes, artifacts, or other details that the user identified or that appear only in unsuccessful attempts.
-- Do not add decorative improvements. Do not substitute clothing, change faces, or change scenes to solve an unrelated issue.
-- Avoid wholesale rewording of a successful prompt. Unnecessary prompt changes can affect more than the requested target.
+- **Preserve:** every unrequested word and visual detail in the assigned prompt.
+- **Change:** only the wording necessary to express the user's requested adjustment.
+- **Exclude:** workflow metadata and all references to images or editing operations.
+- Do not add decorative improvements or unrelated changes.
+- Keep the original sentence order and structure unless the requested change makes a local wording adjustment necessary.
 
 For a style-only change, revise only the rendering treatment. Preserve all scene and subject details.
 
