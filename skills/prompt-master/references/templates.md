@@ -481,3 +481,8 @@ Output:
 - Keep API and harness settings in setup notes outside the prompt. Verify supported controls for the exact model, endpoint, and surface.
 
 The task brief and adaptation heuristics are Prompt Master recommendations, not an official OpenAI template or benchmark result.
+
+
+## Documentation standard
+
+Apply the repository [ASD-STE100 policy](../../asd-ste100/references/repository-writing-policy.md) to explanatory text in this reference. Preserve prompt templates and worked examples as source material unless the user asks to revise them.
