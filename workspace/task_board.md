@@ -1,6 +1,6 @@
 # Task Board
 
-Last updated: 2026-11-20 16:15 UTC
+Last updated: 2026-11-20 15:37 UTC
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
@@ -10,11 +10,13 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-| 20261120-123000 | Continue the repository documentation audit | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-123000-repository-documentation-audit.md) |
+| 20261120-153700 | Fix Condensed Mode adherence gaps | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-153700-condensed-mode-adherence-guardrails.md) |
 
 ## In Progress
 
-_No other in-progress tasks._
+| ID | Task | Priority | Status | Origin | Updated | Record |
+|---|---|---:|---|---|---|---|
+| 20261120-123000 | Continue the repository documentation audit | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-123000-repository-documentation-audit.md) |
 ## Ready
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
