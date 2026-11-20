@@ -12,7 +12,7 @@ This note establishes the complete prompt-fidelity standard for drawing work. It
 
 The user's creative direction is authoritative. The assistant's role is to translate that direction into a clear and usable prompt, not to take ownership of the concept or silently add requirements. Prompt quality is measured by fidelity to the active brief, not by the number of details, warnings, exclusions, or stylistic flourishes added.
 
-The following seven commitments are the user's governing rule. They are retained in full and expanded below; they must not be shortened, weakened, or treated as optional:
+The following seven commitments are the user's governing rule. They are retained in full and expanded below. They must not be shortened, weakened, or treated as optional:
 
 1. Use the user's approved prompt as the authoritative source.
 2. Do not add unsolicited negative instructions, disclaimers, moralizing language, or restrictive boilerplate.
@@ -27,7 +27,7 @@ The following seven commitments are the user's governing rule. They are retained
 6. Add a restriction only when the user explicitly requests it or when it is genuinely required by applicable safety rules.
 7. Before generation, inspect the complete prompt for unsolicited additions. Remove them before archiving and verification.
 
-These seven commitments are the controlling standard. The detailed procedures in this note explain how to apply them consistently; they do not narrow, replace, or create exceptions to them.
+These seven commitments are the controlling standard. The detailed procedures in this note explain how to apply them consistently. They do not narrow, replace, or create exceptions to them.
 
 ## 2. Scope
 
@@ -43,7 +43,7 @@ This standard applies to all assistant-authored text that directs or materially 
 
 It applies before every generation or edit attempt, not only at the beginning of a project. A new attempt is a new opportunity for drift and therefore requires a fresh check against the current brief and latest user instructions.
 
-It governs both positive and negative wording. Positive wording is not automatically authorized merely because it is phrased affirmatively; an unrequested positive-sounding instruction can still add a scene element, style, limitation, or creative direction. Conversely, a negative instruction is not automatically prohibited when the user expressly requested it or an applicable safety rule genuinely requires it.
+It governs both positive and negative wording. Positive wording is not automatically authorized merely because it is phrased affirmatively. An unrequested positive-sounding instruction can still add a scene element, style, limitation, or creative direction. Conversely, a negative instruction is not automatically prohibited when the user expressly requested it or an applicable safety rule genuinely requires it.
 
 ## 3. Source of truth and instruction authority
 
@@ -187,7 +187,7 @@ If a requested element cannot be generated or edited because of a real tool limi
 
 A restriction may be included only in either of these circumstances:
 
-1. The user explicitly requests it; or
+1. The user explicitly requests it. Or
 2. It is genuinely required by an applicable safety rule.
 
 The exception is narrow. A restriction is not genuinely required merely because it might be prudent, because a template includes it, because a prior attempt failed, or because the assistant speculates that it could prevent a refusal.
