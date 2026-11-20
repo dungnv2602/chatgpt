@@ -4,15 +4,16 @@
 
 - **ID:** 20261120-175436
 - **Created:** 2026-11-20 17:54 UTC
-- **Updated:** 2026-11-20 17:54 UTC
+- **Updated:** 2026-11-20 17:59 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Done
 - **Origin:** User
 - **Approval:** Approved
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** 20261120-123000
-- **Archived:** No
+- **Archived:** Yes
+- **Archived at:** 2026-11-20 17:59 UTC
 
 ## 1. Original Request
 
@@ -58,9 +59,16 @@ Correct the global task workflow so task closeout automatically archives the tas
 - **References:** `skills/the-worker/SKILL.md`; archival commit [a0e4f8fe526d9c85ea8be8093953fcb2b7d82cd8](https://github.com/dungnv2602/chatgpt/commit/a0e4f8fe526d9c85ea8be8093953fcb2b7d82cd8).
 - **Next:** Reconcile the board and verify all active changed paths.
 
+### 2026-11-20 17:59 UTC
+
+- **Action:** Completed the global Worker closeout repair and reconciled the task board. Prepared this final task record for archival.
+- **Result:** The Worker now enforces closeout in every mode. The prior audit record is archived and its board row is correct. The task board has seven historical entries and identifies this task as the sole current execution. Final task archival and board reconciliation are the remaining closeout operations.
+- **References:** `skills/the-worker/SKILL.md`; `workspace/task_board.md`; commits [a0e4f8fe526d9c85ea8be8093953fcb2b7d82cd8](https://github.com/dungnv2602/chatgpt/commit/a0e4f8fe526d9c85ea8be8093953fcb2b7d82cd8) and [50e9c43cc77193872225a48b1aa5036cdf6ab616](https://github.com/dungnv2602/chatgpt/commit/50e9c43cc77193872225a48b1aa5036cdf6ab616).
+- **Next:** Archive this task, clear its active board rows, and verify the final board and commit metadata.
+
 ## 7. Current State
 
-The global Worker closeout gate is committed. The audit task is archived, its active path is absent, and the board reconciliation is now corrected. Final read-back remains.
+The global Worker closeout gate is committed and read back. The prior audit task is archived and correctly indexed. This task's final archive and board reconciliation are being completed.
 
 ### 2026-11-20 17:58 UTC
 
@@ -71,12 +79,13 @@ The global Worker closeout gate is committed. The audit task is archived, its ac
 
 ## 8. Remaining Work
 
-- Verify the corrected task board, this task record, Worker skill, and branch head.
+- Complete archival of this task and reconcile the board.
+- Verify the final task board, Worker skill, and branch head.
 
 ## 9. Next Actions
 
-1. Fetch and verify all changed active paths and the resulting branch head.
-2. Confirm the archival commit contains the archive path using commit metadata only.
+1. Archive this record and remove its active path.
+2. Reconcile the board and verify the archival commit metadata.
 
 ## 10. References
 
