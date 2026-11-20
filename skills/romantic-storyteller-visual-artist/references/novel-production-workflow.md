@@ -36,7 +36,7 @@ chronological attempts, and outcomes).
 
 Store novel illustration binaries centrally at
 `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Keep the two
-Markdown records in the scene-local `illustrations/` folder; do not store the
+Markdown records in the scene-local `illustrations/` folder. Do not store the
 image binary there. Each retained image has an original PNG/JPEG master and a
 same-stem WebP derivative beside it.
 
@@ -48,7 +48,7 @@ move the upload manually. The existing GitHub Action stages WebP derivatives
 under `images/takeout/webp/[batch-id]/attempt-NNN/`, appending `.webp` to
 the exact incoming filename, verifies them, and routes them beside their
 byte-identical original masters. Failed attempts retain their ready hand-off,
-source images, and successfully converted staged WebPs for inspection; retries
+source images, and successfully converted staged WebPs for inspection. Retries
 use fresh attempt numbers. Successful attempts move WebPs to their permanent
 destinations and remove their now-empty staging folder. The hand-off snapshot,
 `conversion-report.csv`, and `verification-report.md` are archived under
@@ -74,9 +74,9 @@ Keep these states distinct:
 - **Approved / Established:** explicitly accepted or directly established.
 - **Proposed:** suggested, not yet decided.
 - **Open:** deliberately undecided.
-- **Superseded:** replaced by a later decision; retain its history.
+- **Superseded:** replaced by a later decision. Retain its history.
 
-Approval is scoped. Promote only the exact decision accepted by the user; keep
+Approval is scoped. Promote only the exact decision accepted by the user. Keep
 unmentioned implementation details open. A draft or outline does not become
 canon merely because it has been written. Update the novel summary, relevant
 character/arc/scene record, decision record, and open questions when approval
@@ -84,7 +84,7 @@ changes story facts.
 
 Do not force every unanswered question to be resolved during foundation work.
 Create a Development Outline when a consequential topic benefits from a durable
-plan; consult the user on premise-level, character-defining, relationship,
+plan. Consult the user on premise-level, character-defining, relationship,
 causal, or ending decisions. Take the creative lead on minor craft decisions
 when the intent is clear.
 
@@ -103,7 +103,7 @@ When asked to write, create, continue, revise, or expand a scene:
 5. Keep draft, revised, approved, and complete statuses accurate.
 6. Apply the automatic scene-illustration default above. It applies to a
    specific scene-writing task, not to discussion, brainstorming, or outline
-   planning. Explicit prose-only/text-only/no-images instructions override it;
+   planning. Explicit prose-only/text-only/no-images instructions override it
    genuine safety or technical blockers must be reported.
 7. For every planned image, create its scene-local Illustration Prompt Record
    before the generation attempt. Record the exact authored prompt, references
@@ -111,7 +111,7 @@ When asked to write, create, continue, revise, or expand a scene:
    access to a compiled prompt payload that is not exposed.
 8. After generation, inspect each returned image separately. Record the actual
    output and assessment. Create/update one Illustration Note for each
-   generated image retained or reviewed as a scene deliverable; link its image
+   generated image retained or reviewed as a scene deliverable. Link its image
    asset, relevant prompt attempt, and scene.
 9. For repository retention, use the universal `images/takeout/` intake and
    prepare its structured hand-off. For novel illustrations, route the master
@@ -123,7 +123,7 @@ When asked to write, create, continue, revise, or expand a scene:
 11. Follow the Drawing Skill for visual mode, image references, prompt
     archival, generation/editing, inspection, recovery, and asset integrity.
 12. Fetch the current target file before updating it. Preserve unrelated
-    material; update all affected parent indexes and links.
+    material. Update all affected parent indexes and links.
 13. Read back each changed path and verify the expected content before
     reporting commits or completion.
 
@@ -135,3 +135,7 @@ For the complete project stages, deliverable matrix, file conventions,
 statuses, quality gates, versioning, and definition of done, follow
 [`novels/WORKFLOW.md`](../../../novels/WORKFLOW.md).
 
+
+## Technical documentation standard
+
+Apply the repository [ASD-STE100 policy](../../asd-ste100/references/repository-writing-policy.md) when you revise this workflow. Use Strict mode for procedures. Preserve novel canon, approvals, conditions, and narrative meaning.
