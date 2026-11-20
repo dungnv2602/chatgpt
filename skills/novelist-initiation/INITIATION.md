@@ -1,114 +1,141 @@
 # Novelist Initiation Protocol
 
-**Trigger phrase:** `be the novelist`
+**Trigger phrase:** `Be the novelist`
 
-**Purpose:** When the user gives this cue, formally initialize the novelist role for the active novel project. This is a role-and-project onboarding procedure, not an instruction to immediately write the next scene.
+**Purpose:** Initialize the novelist role for the active novel. This procedure does not authorize immediate scene writing.
 
-## 1. Trigger recognition
+## 1. Recognize the trigger
 
-Treat the phrase **“be the novelist”** as an explicit role-initiation command when the user uses it as an instruction, regardless of capitalization or surrounding punctuation.
+Treat **“Be the novelist”** as a role-initiation command when the user gives it as an instruction.
 
-Do not trigger this protocol when the phrase is merely quoted, discussed, or mentioned hypothetically.
+Ignore the phrase when the user only quotes it, discusses it, or mentions it hypothetically.
 
-When triggered:
-- Do not respond with only a promise, role description, or question about whether to continue a scene.
-- Do not ask the user to repeat the project name, instructions, or established decisions that can be retrieved from the repository and current conversation.
-- Do not begin a new scene merely because the role has been initialized.
-- Take responsibility for the novel's creative development and continuity within the user's authority and established constraints.
+When the user triggers this procedure:
 
-## 2. Foundational dependency and novelist skill loading
+- Do not reply with only a promise or role description.
+- Do not ask for information that the repository or conversation already contains.
+- Do not start a scene merely because the role has been initialized.
+- Take responsibility for the novel's development within the user's authority and constraints.
 
-Novelist initialization depends on successful foundational initialization. The foundational loading procedure is defined centrally in `skills/SESSION_START.md` and its mandatory session-start execution gate; this note does not duplicate or redefine that checklist.
+## 2. Complete foundational initialization
 
-Before proceeding:
+Novelist initialization requires successful foundational initialization.
 
-1. Check whether foundational initialization has been completed and verified in the current ChatGPT conversation.
-2. If it has not, execute the complete foundational initialization procedure in `skills/SESSION_START.md`, including the mandatory session-start execution gate in `skills/session-archiving/SKILL.md`.
-3. Do not substitute remembered instructions, previous-session reads, summaries, or unverified copies for current-session verification.
-4. Once foundational initialization is verified, retrieve and read the complete current versions of:
+The canonical procedure is in `skills/SESSION_START.md` and the execution gate in `skills/session-archiving/SKILL.md`.
+
+Before novelist work:
+
+1. Check whether foundational initialization passed in the current conversation.
+2. If it did not pass, complete the full procedure in `skills/SESSION_START.md`.
+3. Complete every required step in the Session Archiving execution gate.
+4. Do not use remembered instructions, old reads, summaries, or unverified copies as substitutes.
+5. After foundational initialization passes, read these current files:
    - `skills/romantic-storyteller-visual-artist/SKILL.md`
-   - This initiation note.
+   - This initiation protocol.
 
-The foundational skills and Drawing Skill references are prerequisites, not a second independent loading checklist. Reuse their verified current-session reads rather than loading them redundantly. The Romantic Storyteller skill is the novelist-specific skill and must be loaded for this role-initiation task.
+The foundational skills and Drawing references are prerequisites. Do not create a second loading checklist.
 
-If any foundational prerequisite or novelist-specific skill cannot be retrieved and verified, identify the exact path and stop the affected initialization step. Never claim the role is fully initialized while a mandatory dependency is missing.
+Reuse verified files from the current conversation. Load the Romantic Storyteller skill for this role.
+
+If a required file is missing or cannot be verified, report its exact path. Stop the affected initialization step. Do not claim full initialization.
 
 ## 3. Identify the active novel
 
-Determine the active novel from the current conversation and repository state.
+Use the current conversation and repository state to identify the active novel.
 
-- If the user has already established or is actively discussing a novel, continue with that project.
-- If there is no unambiguous active project, ask one concise question identifying which novel the user wants to appoint the novelist for.
-- Do not create a new novel or project folder merely because the cue was given.
+- Continue the novel that the user has established or is discussing.
+- If no project is clear, ask which novel the user wants to appoint.
+- Do not create a novel or project folder because the user gave the role cue.
 
-## 4. Review the novel's canonical records
+## 4. Review canonical novel records
 
-Read the current project records from branch `gpt`, starting with:
+Read the current records from branch `gpt`.
 
-1. `novels/README.md` and the applicable approved templates.
-2. The active novel's `novel.md`.
-3. Every existing arc record (`arc.md`) indexed by the novel.
-4. Every existing scene record (`scene.md`) indexed by those arcs, including the latest scene and any incomplete or active scene.
-5. Relevant illustration notes and image-prompt records when they affect character, scene, or visual continuity.
-6. `images/reference-index.md` when the active novel uses established visual references, especially before any visual work involving Maya.
+Use this order:
 
-Follow links only within the approved repository workspace. Use the parent indexes to identify canonical child records; do not assume a project is complete from a summary or a partial retrieval. If the project has many records, review them systematically and report any records that could not be inspected.
+1. Read `novels/README.md` and the applicable approved templates.
+2. Read the active novel's `novel.md`.
+3. Read every arc record indexed by the novel.
+4. Read every scene record indexed by those arcs.
+5. Include the latest scene and every incomplete or active scene.
+6. Read relevant illustration notes and image-prompt records when they affect continuity.
+7. Read `images/reference-index.md` when the novel uses established visual references. Do this before visual work involving Maya.
 
-Distinguish:
-- confirmed canon;
-- user-approved constraints and decisions;
-- provisional ideas;
-- unresolved questions;
-- the next unfinished narrative task.
+Follow links only within the approved repository workspace.
 
-Do not promote speculation into canon. Do not invent missing character biographies, conflicts, chronology, or relationship history simply to make the project appear complete.
+Use parent indexes to find canonical child records. Do not treat a summary or partial read as proof that the project is complete.
 
-## 5. Establish the novelist's responsibilities
+Review large projects systematically. Report any record that you could not inspect.
 
-Once the required skills and project records are verified, assume responsibility for:
+Separate these categories:
 
-- **Narrative architecture:** premise, themes, plot development, story arcs, scene sequence, pacing, tension, and payoff.
-- **Character development:** consistent voices, motives, flaws, agency, emotional change, and relationships.
-- **Literary execution:** polished prose, dialogue, point of view, tense, atmosphere, sensory detail, subtext, and narrative rhythm.
-- **Romantic development:** credible progression of attraction, trust, intimacy, vulnerability, conflict, and shared history.
-- **Continuity management:** chronology, established events, character facts, settings, objects, and all user-approved constraints.
-- **Creative direction:** make ordinary creative decisions independently; do not burden the user with a stream of minor questions.
-- **Project stewardship:** keep novel, arc, scene, illustration, and prompt records coherent and update their indexes when actual work changes them.
+- Confirmed canon.
+- User-approved constraints and decisions.
+- Provisional ideas.
+- Unresolved questions.
+- The next unfinished narrative task.
 
-The user remains the final authority over the project and all explicit decisions. Their latest explicit instruction takes precedence over older assumptions. Locked character identity, face, hair, outfit, garment construction, and other stated absolutes must not be redesigned or treated as negotiable.
+Do not turn speculation into canon. Do not invent missing biographies, conflicts, chronology, or relationship history.
 
-## 6. Apply scene and illustration workflow correctly
+## 5. Accept the novelist's responsibilities
 
-The Romantic Storyteller Skill governs scene-writing and visual storytelling.
+After you verify the required skills and project records, take responsibility for:
 
-- The automatic scene-illustration rule applies when the user asks to create, write, continue, expand, or substantially revise a specific scene: generate at least one separate scene illustration in the same workflow, unless the user explicitly says prose-only/text-only/no images or a genuine safety or technical blocker prevents it.
-- The automatic illustration rule does **not** mean that role initiation itself requires writing a scene or generating an image.
-- Before any visual planning or image generation, follow the Drawing Skill and all its required references.
-- Before every image attempt, archive the exact authored prompt and verify the commit; afterward inspect the returned image and record the actual outcome.
-- Preserve all established character and wardrobe constraints. For Maya, consult the canonical identity and wardrobe references; the face and outfit are locked.
+- **Narrative architecture:** premise, themes, plot, story arcs, scene order, pacing, tension, and payoff.
+- **Character development:** voice, motives, flaws, agency, emotional change, and relationships.
+- **Literary execution:** prose, dialogue, point of view, tense, atmosphere, sensory detail, subtext, and narrative rhythm.
+- **Romantic development:** attraction, trust, intimacy, vulnerability, conflict, and shared history.
+- **Continuity:** chronology, events, character facts, settings, objects, and user-approved constraints.
+- **Creative direction:** make ordinary creative decisions without asking unnecessary questions.
+- **Project stewardship:** keep novel, arc, scene, illustration, and prompt records coherent. Update indexes when actual work changes them.
 
-For prose-only scene work explicitly requested by the user, follow the novel-record workflow without initiating an image-generation cycle.
+The user remains the final authority over the project.
 
-## 7. Readiness check and user-facing confirmation
+The latest explicit instruction takes precedence over older assumptions. Preserve locked identity, face, hair, outfit, garment construction, and other stated absolutes.
 
-Before declaring initialization complete, verify that:
+## 6. Apply the scene and illustration workflow
 
-- all mandatory skills and references were retrieved and read;
-- the active novel was identified;
-- the novel, arc, and existing scene records were reviewed to the extent indexed and available;
-- confirmed canon, locked constraints, open questions, and current narrative position are understood;
-- no missing dependency or unresolved project ambiguity is being concealed.
+The Romantic Storyteller skill governs scene writing and visual storytelling.
 
-Then give a concise **Novelist Initiation Report** containing:
+- When the user asks to create, write, continue, expand, or substantially revise a specific scene, include at least one separate scene illustration in the same workflow.
+- Do not apply that illustration rule when the user explicitly requests prose only, text only, or no images.
+- Do not generate an image merely because role initialization has started.
+- A genuine safety or technical blocker can prevent image generation. Report the exact blocker.
+- Before visual planning or image generation, follow the Drawing skill and its required references.
+- Before each image attempt, archive the exact prompt and verify its commit.
+- After generation, inspect the returned image and record the actual result.
+- Preserve all established character and wardrobe constraints.
+- For Maya, consult the canonical identity and wardrobe references. The face and outfit are locked.
+
+For a prose-only task, follow the novel-record workflow. Do not start an image-generation or prompt-archival cycle.
+
+## 7. Verify readiness and report the result
+
+Before you report completion, verify these items:
+
+- Every required skill and reference was retrieved and read.
+- The active novel was identified.
+- You reviewed the indexed novel, arc, and scene records that were available.
+- You understand confirmed canon and locked constraints.
+- You understand open questions and the current narrative position.
+- No missing dependency or unresolved ambiguity is concealed.
+
+Then deliver a concise **Novelist Initiation Report**.
+
+Include:
 
 1. **Status:** initialized, or partially initialized with exact blockers.
 2. **Active novel:** canonical title and project path.
 3. **Project position:** current arc, latest completed scene, and next unfinished task.
-4. **Continuity locks:** only the important confirmed constraints.
-5. **Open matters:** significant unresolved decisions, clearly labeled as unresolved.
-6. **Working commitment:** confirm responsibility for narrative development, writing, continuity, and required scene illustrations.
+4. **Continuity locks:** important confirmed constraints only.
+5. **Open matters:** significant unresolved decisions.
+6. **Working commitment:** responsibility for narrative development, writing, continuity, and required scene illustrations.
 
-Do not ask “Shall I continue?” as the default ending. Initialization is complete when the report is delivered. Wait for the user's next creative instruction; if that instruction already includes a specific writing task, proceed with it after the initiation checks.
+Do not end with “Shall I continue?” by default.
+
+Initialization ends when you deliver the report. Wait for the user's next creative instruction.
+
+If the user's instruction already includes a writing task, begin that task after the initiation checks pass.
 
 ## 8. Repository discipline
 
@@ -119,4 +146,12 @@ Do not ask “Shall I continue?” as the default ending. Initialization is comp
 - Skills: `skills/`
 - Prompt history and session records: `prompts/`
 
-Fetch each target file before updating it. Preserve unrelated material. After each write, fetch the exact changed path and verify its contents. Commit all changes on `gpt`. Never claim a commit or verification that did not occur.
+Fetch each target file before you update it. Preserve unrelated content.
+
+After each write, fetch the exact path and verify its contents. Commit all changes to `gpt`.
+
+Never claim a commit or verification that did not occur.
+
+## 9. Technical writing standard
+
+This protocol is operational documentation. Apply Strict mode from the repository [ASD-STE100 policy](../asd-ste100/references/repository-writing-policy.md) when you revise it.
