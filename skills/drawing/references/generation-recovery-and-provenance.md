@@ -6,7 +6,7 @@ A tool refusal must not automatically become a request for the user to rewrite t
 
 1. Read the refusal as a result, not as an invitation to resubmit the same prompt.
 2. Check the actual request and authored prompt for explicit nudity, erotic activity, sexual solicitation, or combinations of wording and staging that make the image overtly sexual.
-3. If the user's underlying creative goal has a clearly non-explicit interpretation, preserve that goal while making a material change to the visual treatment. For example, move from bedroom/boudoir staging to a fashion or portrait setting; use ordinary elegant clothing; describe posture, expression, lighting, and composition without erotic instructions.
+3. If the user's underlying creative goal has a clearly non-explicit interpretation, preserve that goal while making a material change to the visual treatment. For example, move from bedroom/boudoir staging to a fashion or portrait setting. Use ordinary elegant clothing. Describe posture, expression, lighting, and composition without erotic instructions.
 4. Do not use euphemisms to disguise a prohibited request, and do not try to defeat or probe safety systems. The revision must genuinely change the content into an allowed depiction.
 5. Archive and commit the revised prompt before another call. Record each refusal and each materially revised attempt accurately.
 6. After a refusal, make one meaningful autonomous revision when the safe intent is clear. If that safer version is also refused, do not continue with near-identical safety rewrites. However, first complete the prompt-interpretation audit in E2.1. If that audit reveals that the assistant itself materially drifted from a relevant, previously successful prompt, one bounded restoration of that proven baseline may be justified as a distinct diagnostic test. This is not permission for unlimited retries or for reproducing prohibited content.
@@ -82,7 +82,7 @@ Before rewriting a prompt after a refusal, repeated failure, or user correction:
    stop similar rewrites. If the audit then exposes a distinct assistant-made
    deviation from a relevant successful baseline, one baseline-restoration
    attempt may be made and must be archived before generation. If the restored
-   baseline is also refused, stop and explain the limitation; do not keep
+   baseline is also refused, stop and explain the limitation. Do not keep
    probing or submit cosmetic variations.
 10. **Preserve the user's creative intent.** Safety review must be accurate and
     proportionate. Do not invent sexual intent from ordinary affection,
@@ -99,7 +99,7 @@ successful work.
 ### E2.2. Documented silk-wrap series and baseline-selection case
 
 The November 12–13, 2026 silk-wrap portrait sequence is a historical example
-of prompt lineage only. The current session brief controls creative direction;
+of prompt lineage only. The current session brief controls creative direction
 the latest **successful** prompt controls only historical prompt lineage:
 
 - **Attempt 33** in `prompts/2026-11-12-image-prompts.md` established the
@@ -117,21 +117,21 @@ the latest **successful** prompt controls only historical prompt lineage:
   across the bust, but the tool rejected the attempt and returned no image.
   It is a failed attempt, not a new baseline. Its wording must not replace or
   become the base prompt. The additional construction instruction is only a
-  pending delta if the user still requests it in a future task; it must not be
+  pending delta if the user still requests it in a future task. It must not be
   silently imposed on the approved Attempt 04 direction.
 - **Attempt 06** attempted a localized edit of the actual Attempt 04 image.
   The source image was attached for that call, but the tool rejected the edit
   and returned no edited image. The original Attempt 04 image remained
   unchanged and user-approved. Attempt 06 is not a successful prompt or edit
   baseline. A future exact edit still requires the actual source asset to be
-  attached in that future call; the historical file ID alone is not attachment.
+  attached in that future call. The historical file ID alone is not attachment.
 
 **Operational lesson:** Attempt 04—not the newer failed Attempts 05 or 06—is
 the latest user-approved successful prompt/output record in this series.
 Attempt 33 remains its earlier successful origin and has the same authored
 prompt wording. Any future successful prompt in this same series would
 supersede Attempt 04 by chronology. This case also demonstrates that the
-user's final assessment controls whether an output is accepted; an earlier
+user's final assessment controls whether an output is accepted. An earlier
 assistant assessment must not override a later explicit user approval.
 
   
@@ -174,7 +174,7 @@ the user explicitly says they should be retained for future use.
    the actual asset through the image tool's supported mechanism and verify
    source linkage before claiming a reference-guided result or confirmed edit.
 8. For a user-approved output, record the approval and its exact originating
-   prompt when reliably known. Approval makes the image a keeper; it does not
+   prompt when reliably known. Approval makes the image a keeper. It does not
    make it a default visual direction for future sessions.
 
 **GitHub rename and takeout rules:**
@@ -185,7 +185,7 @@ the user explicitly says they should be retained for future use.
   size are identical.
 - For newly uploaded retained images, use the universal flat intake
   `images/takeout/`. Inspect the actual image, determine its descriptive title
-  and destination, and prepare `images/takeout/HANDOFF.yml`; do not manually
+  and destination, and prepare `images/takeout/HANDOFF.yml`. Do not manually
   rename or move it. The hand-off uses the exact uploaded filename, optional
   stable asset ID, descriptive title, and destination directory.
 - The existing Action derives the permanent filename as
@@ -197,7 +197,7 @@ the user explicitly says they should be retained for future use.
   collisions and verifies master SHA-256 and WebP integrity before clearing
   the hand-off.
 - Failed attempts retain successfully converted WebPs in their staging folder
-  for inspection; retries use a new attempt number. A successful attempt moves
+  for inspection. Retries use a new attempt number. A successful attempt moves
   its WebPs to final destinations and removes its now-empty staging folder.
 - Each successful or failed attempt is archived with the original hand-off,
   `conversion-report.csv`, and `verification-report.md` under
@@ -214,7 +214,7 @@ ledger. It must contain one contiguous Markdown table with exactly six fields:
 1. **Attempt / prompt:** the attempt number or stable ID, a concise descriptive
    title, and a direct link to the full attempt record.
 2. **Session / brief:** the session ID or name and a direct link to the active
-   opening brief. If no separate brief exists, state that explicitly; do not
+   opening brief. If no separate brief exists, state that explicitly. Do not
    invent one.
 3. **Series / baseline lineage:** the verified primary series ID/name and
    theme, plus the parent attempt or successful text baseline where known.
@@ -231,7 +231,7 @@ ledger. It must contain one contiguous Markdown table with exactly six fields:
 6. **Image:** link every generated image output once its exact repository asset
    is uploaded and verified, regardless of whether the user approved it or the
    result met the prompt. Link partial, off-target, superseded, and unapproved
-   outputs too; approval belongs only in field 5. If an image was generated
+   outputs too. Approval belongs only in field 5. If an image was generated
    but its asset has not yet been uploaded, write `Waiting for image upload`.
    Use `—` only when no image was returned or generated. Use `Not verified`
    when the tool outcome is unconfirmed and no attempt-specific image can be
@@ -241,7 +241,7 @@ ledger. It must contain one contiguous Markdown table with exactly six fields:
 Include every attempt in chronological order, including rejected, failed,
 partial, pending, and superseded attempts. Do not turn the table into a
 success-only list. Keep its six fields populated with concise, evidence-based
-facts; put the complete prompt, source IDs, exact tool metadata, acceptance
+facts. Put the complete prompt, source IDs, exact tool metadata, acceptance
 criteria, visual assessment, and detailed provenance in the linked attempt
 record.
 
@@ -274,6 +274,6 @@ After each attempt is finalized:
 
 The latest successful text baseline must be determined from the authoritative
 attempt records within the active series or exact artwork thread. The daily
-ledger helps locate those records; it does not define visual direction or
+ledger helps locate those records. It does not define visual direction or
 baseline eligibility.
 
