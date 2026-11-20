@@ -421,3 +421,8 @@ MIT: See [LICENSE](LICENSE) for details.
 [![Star History Chart](https://star-history.dera.page/svg?repos=nidhinjs/prompt-master&type=Date)](https://star-history.dera.page/#nidhinjs/prompt-master&Date)
 
 ---
+
+
+## Technical documentation standard
+
+Apply the repository [ASD-STE100 policy](../asd-ste100/references/repository-writing-policy.md) when you revise this README or other technical prompt-engineering documentation.
