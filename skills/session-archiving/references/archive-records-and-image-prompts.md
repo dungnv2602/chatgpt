@@ -63,10 +63,10 @@ image index, historical prompt, previous portrait, character sheet, stored
 image, or old project convention dictates the new session unless the user
 explicitly adopts it.
 
-- For non-novel/day drawing, archive the brief as
+- For non-novels/day drawing, archive the brief as
   `prompts/YYYY-MM-DD/session-[NN]-brief.md`.
 - For a named novel scene, archive it as
-  `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/session-[YYYY-MM-DD]-[NN]-brief.md`.
+  `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/session-[YYYY-MM-DD]-[NN]-brief.md`.
 - Create and commit the brief before the first image prompt for that session.
   Read it back and verify it.
 - Preserve the user's opening direction faithfully. Record specified, locked,
@@ -177,7 +177,7 @@ context do not resolve it. Day-drawing sessions may mark this field
 
 ### Daily folder and one-note-per-attempt format for non-novel drawing work
 
-For non-novel drawing work, organize image prompts by date. Each calendar day is a folder under `prompts/`, and each image-generation or image-edit attempt is its own Markdown note. **Exception:** for an illustration belonging to a named novel scene, the scene-local prompt record under `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/` is authoritative. Keep that novel attempt there and do not duplicate it in the daily `prompts/` folder.
+For non-novel drawing work, organize image prompts by date. Each calendar day is a folder under `prompts/`, and each image-generation or image-edit attempt is its own Markdown note. **Exception:** for an illustration belonging to a named novel scene, the scene-local prompt record under `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/` is authoritative. Keep that novel attempt there and do not duplicate it in the daily `prompts/` folder.
 
 ```text
 prompts/
@@ -201,7 +201,7 @@ prompts/
 
 ### Mandatory pre-attempt rule
 
-**Commit the session brief and authored prompt in their authoritative locations before the first image-generation or image-edit attempt.** For non-novel work, use the session brief and attempt notes under `prompts/YYYY-MM-DD/`. For a named novel scene, use the session brief and illustration prompt records under `novel/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/`. This applies whether the next attempt is expected to succeed, is exploratory, or is a revision. Never generate first and archive later, and never duplicate a novel-scene prompt in the root `prompts/` history.
+**Commit the session brief and authored prompt in their authoritative locations before the first image-generation or image-edit attempt.** For non-novel work, use the session brief and attempt notes under `prompts/YYYY-MM-DD/`. For a named novel scene, use the session brief and illustration prompt records under `novels/[Novel-ID]/[Arc-ID]/[Scene-ID]/illustrations/`. This applies whether the next attempt is expected to succeed, is exploratory, or is a revision. Never generate first and archive later, and never duplicate a novel-scene prompt in the root `prompts/` history.
 
 Before drafting the next prompt:
 1. Read the authoritative session-opening brief first. If it does not exist,
@@ -324,7 +324,7 @@ materially inadequate and the exact source image can be attached through a
 supported mechanism. Verify source linkage before calling it a confirmed edit.
 
 - Deliver generated images in the conversation.
-- Store new retained non-novel/day drawing outputs in `drawings/YYYY-MM-DD/images/` using `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.); link exact verified assets from the attempt note and daily README. Existing image assets are not migrated. Non-novel reference/source images remain under `images/`; novel-scene illustration binaries remain in the novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library. New uploads for permanent reference/novel destinations enter through `images/takeout/` and its hand-off.
+- Store new retained non-novels/day drawing outputs in `drawings/YYYY-MM-DD/images/` using `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.); link exact verified assets from the attempt note and daily README. Existing image assets are not migrated. Non-novel reference/source images remain under `images/`; novel-scene illustration binaries remain in the novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library. New uploads for permanent reference/novel destinations enter through `images/takeout/` and its hand-off.
 - Never claim a fresh generation was an edit of the original.
 - Never claim a reference image was supplied unless the tool call actually included that reference.
 - Preserve source-image identity and distinguish an edit from a newly generated composition.
@@ -395,7 +395,7 @@ session workflow requires keeping a source asset:
 1. Give each retained image a clear, descriptive filename based on its visible
    content. Preserve the original bytes; do not overwrite a full-resolution
    original with a thumbnail.
-2. Keep new retained non-novel/day drawing outputs under the dated prompt
+2. Keep new retained non-novels/day drawing outputs under the dated prompt
    folder's `images/` subdirectory, using `attempt-XX.webp` or numbered
    multiple-output suffixes, and link them from the attempt note and daily README
    when provenance is verified. Do not migrate existing image assets. Keep
@@ -471,7 +471,7 @@ If an image is present in `images/` but its binary cannot be surfaced through th
 
 ### Renaming image files already tracked in GitHub
 
-When an image is already stored in its permanent `images/` or `novel/` location under an opaque filename, rename the existing Git tree path while reusing its exact blob SHA. Remove the old path in the same tree update and verify the new path, absence of the old path, identical blob SHA, and identical byte size.
+When an image is already stored in its permanent `images/` or `novels/` location under an opaque filename, rename the existing Git tree path while reusing its exact blob SHA. Remove the old path in the same tree update and verify the new path, absence of the old path, identical blob SHA, and identical byte size.
 
 For new user uploads intended for repository retention, use the universal flat intake `images/takeout/`. Inspect the actual image and prepare `images/takeout/HANDOFF.yml` with its exact incoming filename, descriptive title, optional stable asset ID, and destination directory. For a session output associated with a non-novel drawing attempt, also include `attempt: NN` in that item and target exactly `drawings/YYYY-MM-DD/images`. Do not manually rename or relocate the incoming file. The existing Action derives the permanent master filename from the optional ID and normalized title slug and preserves the original bytes. It stages each WebP under `images/takeout/webp/[batch-id]/attempt-NNN/`, appending `.webp` to the exact incoming filename, then verifies and moves the derivative beside the master. Novel illustration binaries belong in `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; retained non-novel assets use a destination under `images/`.
 
