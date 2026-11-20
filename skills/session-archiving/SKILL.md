@@ -67,14 +67,15 @@ The startup gate is a prerequisite check, not the session archive itself. Do not
 
 Whenever the user invokes **`Follow instructions`** or **`Be the novelist`**, complete this sequence as the foundational prerequisite before doing the requested project work, creative writing, visual planning, image prompting, or specialist initialization:
 
-1. **Notify the user first.** State that the explicitly requested foundational checks are beginning and project work will wait until they are complete. This is informational, not a request for approval.
-2. Retrieve and read this Session Archiving skill from the `gpt` branch.
+1. **Notify the user first.** State that the requested foundational checks are starting. Do not begin project work until they pass.
+2. Retrieve and read this Session Archiving skill from branch `gpt`.
 3. Retrieve and read `skills/conversation-mode/SKILL.md` from the same branch.
 4. Retrieve and read `skills/agent-skill-authoring/SKILL.md` from the same branch.
-5. Retrieve and read `skills/drawing/SKILL.md` from the same branch.
-6. Retrieve and read the Drawing skill's mandatory foundational references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Do not load every on-demand reference at startup. Load other Drawing references only when their task triggers apply.
-7. Verify every required retrieval succeeded and that the contents were actually read. Keep the verified instructions in working context for the remainder of the conversation.
-8. Only after all checks pass, report completion and proceed. If any required retrieval fails or cannot be verified, stop project work, identify the exact missing item, and ask how the user wants to proceed.
+5. Retrieve and read `skills/asd-ste100/SKILL.md` from the same branch.
+6. Retrieve and read `skills/drawing/SKILL.md` from the same branch.
+7. Retrieve and read the Drawing skill's required foundational references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Load other Drawing references only when their task triggers apply.
+8. Verify that every required retrieval succeeded. Confirm that you read each file. Keep the verified instructions for the rest of the conversation.
+9. Report completion only after every check passes. If a required retrieval fails, report its exact path and stop project work.
 
 **No task-type exception after activation:** Once the user invokes foundational initialization, the Drawing skill and its required references are mandatory even when the first task appears prose-only or unrelated to drawing. A task-specific prose-only exception does not cancel this requirement. This rule does not authorize automatic loading before an explicit cue.
 
