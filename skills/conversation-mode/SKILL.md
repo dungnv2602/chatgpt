@@ -61,9 +61,20 @@ In Condensed Mode, prioritize execution and navigation.
 
 The Worker applies in every conversation mode. Condensed Mode changes only the amount and format of user-visible communication.
 
-### Open discussion register
+### Discussion register and final work report
 
-Use `workspace/discussion.md` as a temporary register for unresolved discussions. This file is not a conversation transcript or task index.
+Use `workspace/discussion.md` for unresolved discussions and the latest completed-work report. This file is not a conversation transcript or task index.
+
+Keep a separate `## Latest Work Report` section at the top of the file. Replace its contents only when a newer task reaches an outcome. Keep the report after the related discussion is resolved. Include:
+
+- Outcome.
+- Task link, when available.
+- Changed paths.
+- Commit link, when available.
+- Verification result.
+- Blocker or next action.
+
+Keep unresolved discussion entries below the report. Remove a resolved discussion entry only after its permanent documentation is complete and verified. Do not remove the latest work report during discussion cleanup.
 
 At the start of Condensed Mode work in each conversation:
 
@@ -107,19 +118,21 @@ Keep the file present when it has no open discussions. Use the `No open discussi
 
 Do not record credentials, access tokens, hidden reasoning, or unrelated sensitive information. Preserve user prompts verbatim except for content that must not be retained for safety or privacy.
 
-### User-visible report
+### User-visible output
 
-After repository work, keep the report minimal and direct. Include navigation links whenever the relevant GitHub paths exist.
+- Condensed Mode replies contain direct GitHub links only.
+- Do not add labels, headings, status text, progress updates, or summaries.
+- After successful task creation, provide only the direct task-record link.
+- Stop after providing the task link. Wait for the user's explicit instruction to continue.
+- Do not treat task creation or a recorded approval state as permission to pass this inspection gate.
+- When the task reaches an outcome, write a factual report to `workspace/discussion.md`.
+- Include the outcome, task link, changed paths, commit link when available, verification result, and blocker or next action.
+- Fetch the committed report from branch `gpt` and verify it before replying.
+- After verification, provide only the direct link to `workspace/discussion.md`.
+- If task creation fails, do not claim success or provide an invented task link.
+- If work fails or stops before completion, still report the actual outcome and blocker in `workspace/discussion.md`.
 
-Use this order:
-
-1. **Outcome:** one short sentence.
-2. **Task:** direct link to the task record or task board.
-3. **Changes:** direct links to the changed files.
-4. **Commit:** direct link to the actual commit.
-5. **Next:** one short next action or blocker, when applicable.
-
-Do not provide a full progress narrative, routine tool details, or a long recap. Do not report only a raw commit hash when useful navigation links are available.
+The task link is the inspection gate. The discussion link is the final report.
 
 ### When no commit can honestly be provided
 
@@ -164,30 +177,23 @@ When the user switches modes:
 - When skill instructions conflict, follow the higher-priority instruction. State any limitation honestly.
 - Conversation Mode alone controls access to `workspace/discussion.md`. The Worker does not read or write the discussion register directly.
 
-## 6. Skill source of truth and Library synchronization
+## 6. Skill source of truth
 
-GitHub is the canonical source of truth for all project skills. The repository is `dungnv2602/chatgpt`. The authorized branch is `gpt`. The canonical skill files are under `skills/`.
+GitHub is the sole source of truth for project files, skills, prompts, references, and archives. The repository is `dungnv2602/chatgpt`. The authorized branch is `gpt`.
 
 Whenever the user asks you to read, inspect, or follow a project skill:
 
-1. Fetch the requested skill from the GitHub `gpt` branch before you rely on a Library copy.
-2. If the skill cites supporting files, resolve and read them from the same branch. Stay inside the approved project directories.
-3. Treat the ChatGPT Library as a mirror for convenient access, not as an independent authority.
-4. If GitHub access fails or a file cannot be verified, disclose that limit. Do not silently use a Library copy instead.
+1. Fetch the requested skill from the GitHub `gpt` branch.
+2. Fetch supporting files from the same branch when the skill requires them.
+3. Stay inside the approved project directories.
+4. If GitHub access fails or a file cannot be verified, disclose that limit.
 
-Whenever you create or change a skill in GitHub:
+Whenever you create or change a skill:
 
 1. Commit the authoritative change to branch `gpt`.
-2. Fetch the committed path again. Verify its contents.
-3. Synchronize the matching Library copy from the verified GitHub version. Create the Library copy if it does not exist.
-4. Compare the Library content with the GitHub content. Do not rely only on filenames or timestamps.
-5. Report any synchronization failure or unresolved conflict.
-
-Before you use a Library skill copy, verify that it matches the current GitHub version. If it differs, use the verified GitHub version. Repair the Library mirror when the required file operations are available.
-
-Do not remove or overwrite a conflicting Library item until you verify its identity and contents. Preserve unrelated Library artifacts, including archives and ZIP packages, unless the user explicitly asks you to replace or remove them.
-
-This synchronization is an explicit workflow requirement. It does not mean that GitHub and the ChatGPT Library sync automatically in the background.
+2. Fetch the committed path again.
+3. Verify its contents.
+4. Do not access or synchronize the ChatGPT Library.
 
 ## Technical documentation standard
 
