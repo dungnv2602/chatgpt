@@ -36,3 +36,7 @@
 - **Outcome:** Generated with prompt mismatch. The window-side scene was achieved, but the archived prompt was not the actual input; exact identity and garment-detail match remain unverified. User review pending.
 - **Tool prompt metadata:** The tool returned an empty compiled prompt field. The archived text is the authored prompt, not a claim about the tool's hidden compiled payload.
 - **Image storage:** Returned in this conversation; not stored in the GitHub repository.
+
+## Repository images
+
+- [file_0000000020c88207a415afbf700bddd8.png.webp](images/file_0000000020c88207a415afbf700bddd8.png.webp)
