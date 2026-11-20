@@ -8,7 +8,8 @@ For every request to adjust, revise, refine, or change an existing result, use t
 - Verify that it produced the target result, or that the user approved it for the intended purpose.
 - Copy the complete authored prompt verbatim. Do not paraphrase, summarize, reconstruct, or rewrite it.
 - Apply only the requested change directly to the copied text. Preserve every other word, order, and detail.
-- Keep archival metadata out of the submitted prompt. Never include attempt numbers, file names, paths, repository records, prompt-record references, generation IDs, or retrieval instructions.
+- Keep all meta-references out of the submitted prompt. Never include attempt numbers, file names, paths, repository records, prompt-record references, generation IDs, retrieval instructions, or references to a prompt, earlier wording, previous instructions, or another record.
+- Do not write phrases such as "as described in the previous prompt", "same as before", "use the earlier version", or equivalent wording.
 - Keep image references and editing-operation language out of the submitted prompt. Describe the final visual result directly.
 - Generate a fresh result from the revised prompt and assess it against the assigned prompt and the requested changes.
 
