@@ -4,15 +4,16 @@
 
 - **ID:** 20261120-123400
 - **Created:** 2026-11-20 12:34 UTC
-- **Updated:** 2026-11-20 12:46 UTC
+- **Updated:** 2026-11-20 12:47 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Done
 - **Origin:** User
 - **Approval:** Approved
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** None
-- **Archived:** No
+- **Archived:** Yes
+- **Archive timestamp:** 2026-11-20 12:47 UTC
 
 ## 1. Original Request
 
@@ -73,9 +74,16 @@ Update Condensed Mode so task creation and task reporting follow explicit user-i
 - **References:** [Skill](../conversation-mode/SKILL.md), [task board](../task_board.md), [discussion register](../discussion.md), commits `4c4a0f0a0b5031643ea0af60cbfe538f8cc58b10`, `ee40c6a022b755a0ccbd0ddb772a01c9df3829d0`, `58fdbda207e7721e5d8217344dee8f2cdcae7756`, `f5996b5667e766aae56fe005a73869c9763e52b3`, and `8f05cf726156ba1e9f616af18107c42808fe4bca`.
 - **Next:** Run available validation, complete read-back verification, and publish the final report.
 
+### 2026-11-20 12:47 UTC
+
+- **Action:** Completed implementation and repository verification.
+- **Result:** Condensed Mode now pauses after task creation for user inspection, waits for explicit authorization, writes the final outcome report to `workspace/discussion.md`, and limits user-facing replies to direct GitHub links. The task and discussion records are ready for closeout.
+- **References:** `skills/conversation-mode/SKILL.md`, `workspace/task_board.md`, `workspace/discussion.md`, and `workspace/tasks/20261120-123000-repository-documentation-audit.md`. Skill commit: `4b89e7cd27f6d9094b0e9666917b135b9204ff17`. Task tracking commits: `ee40c6a022b755a0ccbd0ddb772a01c9df3829d0`, `58fdbda207e7721e5d8217344dee8f2cdcae7756`, `f5996b5667e766aae56fe005a73869c9763e52b3`, `b5161e168dba4c75bf95b1adbca74b8a15d82ddb`.
+- **Next:** Archive this completed task, update the task board, publish the final report, and verify the report.
+
 ## 7. Current State
 
-User approved continuation after inspecting the task record. The Condensed Mode skill now defines the task inspection gate, final report in `workspace/discussion.md`, and links-only replies. Repository read-back and final report remain pending.
+Implementation and repository read-back are complete. The Condensed Mode skill defines the task inspection gate, final report in `workspace/discussion.md`, and links-only replies. The official STE linter was not run.
 
 ## 8. Remaining Work
 
@@ -87,10 +95,8 @@ User approved continuation after inspecting the task record. The Condensed Mode 
 
 ## 9. Next Actions
 
-1. Update task tracking and the discussion register.
-2. Verify the changed skill and all task records from branch `gpt`.
-3. Write and verify the final report in `workspace/discussion.md`.
-4. Provide only the discussion report link.
+1. Archive this task and update the task board.
+2. Publish and verify the final report in `workspace/discussion.md`.
 
 ## 10. References
 
@@ -102,11 +108,11 @@ User approved continuation after inspecting the task record. The Condensed Mode 
 
 ## 11. Verification
 
-- **Check:** Confirm task record, board entry, skill, and discussion report.
-- **Method:** Fetch each committed path from branch `gpt`.
-- **Result:** Pending read-back.
-- **Limitations:** Official STE lint has not been run.
+- **Check:** Confirm the Condensed Mode skill, task record, task board, audit handoff, and discussion report.
+- **Method:** Fetch each committed path from branch `gpt` and check the required workflow text and task states.
+- **Result:** Skill, task record, task board, audit handoff, and discussion status passed read-back checks. Manual scan found zero semicolons in the changed skill sections. Official STE lint was not run.
+- **Limitations:** The official repository linter was not executed. No CI run was triggered or inspected.
 
 ## 12. Handoff Instructions
 
-User approved continuation. Complete the approved changes on branch `gpt`. After task creation in future Condensed Mode work, stop and provide only the task link. After the work reaches an outcome, write and verify the report in `workspace/discussion.md`, then provide only that link.
+Task completed. Future Condensed Mode work must stop after task creation and provide only the task link. After the work reaches an outcome, write and verify the report in `workspace/discussion.md`, then provide only that link.
