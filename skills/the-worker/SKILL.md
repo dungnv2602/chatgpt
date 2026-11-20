@@ -236,20 +236,33 @@ Ask the user only when a genuine decision, missing requirement, or approval bloc
 
 ## Task completion and archive
 
-A task qualifies as Done only after it meets its acceptance criteria and its verification record is accurate.
+Task closeout is a mandatory workflow transaction. The Worker owns it in every conversation mode. Condensed Mode does not change or shorten these steps.
 
-When the board marks a task Done or Cancelled:
+Use only the canonical task statuses in this skill: Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Do not use alternate values such as "Completed".
 
-1. Record the final result and verification.
-2. Set the final status and archive timestamp.
-3. Move the task file to archive/tasks/.
-4. Update the board and retain a compact historical entry.
-5. Link the historical entry to the commit that contains the archived record.
-6. Do not change the task ID.
+A task is not closed when its task record alone says Done. Closeout is complete only when the task record is archived and the task board is reconciled and verified.
+
+When acceptance criteria are met:
+
+1. Confirm the final result, acceptance criteria, and verification evidence.
+2. Prepare the final task record with status Done or Cancelled, an archive timestamp in UTC, complete verification, and a final handoff. Set Archived to Yes.
+3. Create the archived record at `archive/tasks/<same-filename>`. Preserve its task ID and filename. Do not inspect archived contents.
+4. Confirm that the archive-write operation succeeded. Only then remove the active record from `workspace/tasks/`. If the available Git operation supports a single commit for both path changes, use it. Otherwise, create the archive copy first and delete the active path in a later commit. Never delete the active record before the archive copy exists.
+5. Update `workspace/task_board.md` in the same closeout pass:
+   - Remove the task from Current Execution.
+   - Remove its active row from every status section.
+   - Add one Historical row with status Done or Cancelled, the archive path, and the exact commit that contains the archived record.
+   - Apply the seven-entry history limit. Remove only the oldest index rows when required.
+   - Select or identify the next current execution task according to the selection rules. Do not invent a task when no eligible task exists.
+6. Fetch the committed task board and verify that the closed task is absent from active sections, appears exactly once in Historical, links to the archive path and archival commit, and that Current Execution is correct.
+7. Check that the archived record was included in the archival commit by inspecting the commit's changed-path metadata. Do not fetch or inspect the archived file contents.
+8. Only after these checks, report the task as closed and provide the appropriate handoff.
+
+Treat the task record, archive path, and task board as one logical transaction even when the GitHub API requires more than one commit. Do not stop after changing task metadata, after creating the archive copy, or after deleting the active record.
+
+If any closeout step fails, keep the task open as In Progress or record the exact recovery blocker. Reconcile the partial repository state before switching tasks or ending work. Do not claim completion while the board and task record disagree. Do not ask the user to approve routine archival or board maintenance; these are required parts of an approved task.
 
 Follow archive/README.md for the 14-day batch-cleanup policy. GitHub Actions owns scheduled deletion of the entire `archive/tasks/` contents on each due run. The Worker must not scan or delete archived records during activation or task closeout.
-
-Do not delete active, ready, blocked, paused, or proposed tasks.
 
 ## Conversation Mode integration
 

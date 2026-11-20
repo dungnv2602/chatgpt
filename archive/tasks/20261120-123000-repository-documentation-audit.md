@@ -4,15 +4,16 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-21
+- **Updated:** 2026-11-20 17:54 UTC
 - **Priority:** P1
-- **Status:** Completed
+- **Status:** Done
 - **Origin:** User
 - **Approval:** Approved
 - **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** None
-- **Archived:** No
+- **Archived:** Yes
+- **Archived at:** 2026-11-20 17:54 UTC
 
 ## 1. Original Request
 
