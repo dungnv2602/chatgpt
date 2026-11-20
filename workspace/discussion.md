@@ -1,5 +1,21 @@
 # Open Discussions
 
+### 2026-11-20 14:25 UTC
+
+**User**
+
+> You done?
+
+**Assistant**
+
+No. The repository documentation audit remains in progress.
+
+The latest mandatory CI snapshot is clear for the two applicable workflows: changed-document run `44756500388` succeeded, and full-document run `44755300347` succeeded. Both are completed runs. No local lint or CI execution was performed.
+
+The audit has completed the historical source-count reconciliation, stale lint-baseline path cleanup, and the initial targeted writing cleanup. Remaining work includes reviewing the workspace-boundary conflict around `drawings/`, reducing existing hard findings without raising baselines, and completing the audit record. The most recent attempted follow-up edit did not commit because its exact-text precondition failed. I have not marked the audit complete.
+
+---
+
 ### 2026-11-20 16:20 UTC
 
 **Assistant**
