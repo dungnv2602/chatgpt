@@ -36,7 +36,7 @@ repository retention pass through the single intake at `images/takeout/`.
   Markdown changes together with the processed assets.
 - The Action converts the entire batch into persistent staging at
   `images/takeout/webp/[batch-id]/attempt-NNN/` before moving any original.
-  Staged filenames append `.webp` to each exact incoming filename. It checks
+  Staged filenames append `.webp` to each exact incoming filename. It verifies
   destination collisions, exact hand-off coverage, original/master SHA-256
   equality, WebP signatures, and final WebP hashes. It does not overwrite
   existing assets.
@@ -73,7 +73,7 @@ repository retention pass through the single intake at `images/takeout/`.
 
 For every drawing session, archive **every generated image output**. This includes approved, rejected, pending, partial, off-target, failed, and superseded outputs.
 
-Record each output separately. Link it from the session README after you validate its exact repository asset. Preserve generation order and prompt-to-output association. Record approval in a separate field. Approval does not control archival or linking eligibility.
+Record each output separately. Link it from the session README after you verify its exact repository asset. Preserve generation order and prompt-to-output association. Record approval in a separate field. Approval does not control archival or linking eligibility.
 
 
 ## Generation provenance and output mapping workflow (approved 2026-11-20)
@@ -101,7 +101,7 @@ Capture provenance at generation time. Do not rely on retrospective image-to-att
 ### Archive and verify
 13. Archive every output regardless of approval. Preserve sequence, prompt association, direct links, and statuses. Use the established asset-intake procedure.
 14. Extend the session `manifest.csv` with one row per output. Include internal attempt and output IDs, native Generation ID, native image or output ID, mapping evidence and status, and original-byte availability. Preserve existing required columns. Leave unavailable native IDs empty or mark them unavailable.
-15. Reconcile generation records, attempt notes, README, manifest, and actual assets. Verify paths, links, and hashes only after checking them. Read back all edited records.
+15. Reconcile generation records, attempt notes, README, manifest, and actual assets. Verify paths, links, and hashes only after you verify them. Read back all edited records.
 16. Do not delay drawing for GitHub, hashing, or archive work. Generate the image and capture its output association immediately. Then complete metadata, hashing, archival, and verification.
 
 If capture or archival is incomplete, use a pending or incomplete status. Do not claim complete closeout.
