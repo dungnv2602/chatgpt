@@ -1,3 +1,18 @@
+### Workflow implementation verification
+
+The archive exclusion is implemented and read back from branch `gpt`.
+
+- Full and changed-document lint source selection excludes all of `archive/`.
+- Archive-only changes do not trigger the changed-document workflow.
+- The Markdown link checker does not read archived files or inspect archived heading anchors. It uses archived paths only to check whether active-document links have an existing destination.
+- The Worker skill defines `archive/` as retention-only and prohibits reading, scanning, auditing, linting, or modifying its contents.
+
+Changed commits: full lint `eb5f21a35f329739da9fae18ca204679b45cbc69`; changed lint final `cf5aa6e4a6cfb40afe55bd14ddcbd7a7f68daa1b`; link checker `dd24402c43dd3b4afc99dabdc7ad5afc428f1a0d`; lint wrapper `ef782ed6b0111de44b57027a5a4f953fbf2198f9`; Worker `3bbc4b5c8d7a0f6c3870a45d146c46a6f0c60066`; task scope `3df102e7da13b1ed31788dbbea396b6f7eeb4168`.
+
+No CI result has been awaited. Review the newest runs at the next mandatory preflight.
+
+---
+
 ### Audit scope correction and workflow update
 
 The entire `archive/` directory is excluded from the repository documentation audit. Completed task records are stored under `archive/`, not under `workspace/`.
