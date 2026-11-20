@@ -9,9 +9,9 @@ metadata:
 
 # Simplified Technical English (ASD-STE100)
 
-ASD-STE100 is a controlled-language standard built by the aerospace and defense industry (ASD, the AeroSpace and Defense Industries Association of Europe) to stop maintenance technicians from misreading English instructions. The standard removes the two biggest sources of misreading: words with more than one meaning, and sentences with more than one possible structure.
+ASD-STE100 is a controlled-language standard developed by the aerospace and defense industry (ASD, the AeroSpace and Defense Industries Association of Europe). It helps maintenance technicians interpret English instructions correctly. The standard addresses two major sources of misreading: words with more than one meaning and sentences with more than one possible structure.
 
-This skill borrows that same discipline for a different reader: an **AI agent or a downstream system** that has to parse an English string — an error message, a tool description, an inter-agent instruction, a status report — without a human in the loop to resolve ambiguity. If a maintenance technician can misread "close the valve" as an adjective ("the valve that is near") instead of a command, so can a language model.
+This skill applies that discipline to a different reader: an **AI agent or a downstream system**. Such a system must parse an English string, such as an error message, a tool description, an inter-agent instruction, or a status report, without a human to resolve ambiguity. A maintenance technician can misread "close the valve" as an adjective ("the valve that is near") instead of a command. A language model can make the same error.
 
 ## When to Use This Skill
 
@@ -28,17 +28,17 @@ Pick a mode before rewriting. If the user does not say which, infer it from the 
 
 **Strict** — procedures, error messages, tool and function descriptions, inter-agent instructions, safety text. Anywhere a wrong reading has a cost. Apply every rule below, including the hard length caps and one-word-one-meaning discipline.
 
-**STE-flavored** — READMEs, PR descriptions, changelogs, explanatory prose. Apply the structural rules in full and treat the lexical rules as advisory (see Core Rewrite Rules for that split). In practice that means keeping the sentence length caps, active voice, simple tenses, no phrasal verbs, no semicolons, no nominalization and no marketing adjectives, while dropping the one-word-one-meaning lockdown: prose needs some range, and a strict rewrite of prose reads as a personality transplant rather than a clarification.
+**STE-flavored** — Use for READMEs, PR descriptions, changelogs, and explanatory prose. Apply the structural rules in full. Treat lexical rules as advisory (see Core Rewrite Rules for that split). Keep sentence-length caps, active voice, simple tenses, no phrasal verbs, no semicolons, no nominalization, and no marketing adjectives. Do not enforce the one-word-one-meaning lockdown. Prose needs some range. A strict rewrite of prose reads as a personality transplant rather than a clarification.
 
 The two modes and the structural/lexical split are the same distinction seen from two directions. The split says which rules this skill can verify without ASD's dictionary. The modes say which of them to enforce for a given kind of text.
 
 ## Source and Scope
 
-This skill encodes the **rule categories** of ASD-STE100 Issue 9 (Jan 2025): 53 writing rules across 9 sections covering word choice, grammar, sentence structure, and style, backed by a dictionary of ~900 approved words (one meaning, one part of speech each) and ~1,200 words to avoid with suggested replacements. See `references/writing-rules.md` for the full rule summary and citations.
+This skill encodes the **rule categories** of ASD-STE100 Issue 9 (Jan 2025). The standard contains 53 writing rules across 9 sections. These rules cover word choice, grammar, sentence structure, and style. A dictionary supports them. It contains about 900 approved words (one meaning and one part of speech each) and about 1,200 words to avoid with suggested replacements. See `references/writing-rules.md` for the full rule summary and citations.
 
-It does **not** reproduce ASD's ~900-word approved dictionary verbatim. ASD-STE100 is free to obtain, but it is not free to redistribute: Issue 9, page 2 states that "no reproduction or publication of it, in whole or in part, shall be made without the written authority of an officer of ASD," and grants free reproduction rights only to eight listed categories (ASD/AIA/AIAC member associations and their member companies and customers, member-state defence ministries, A4A, airworthiness authorities, and universities and research institutes for educational purposes). This project is in none of them, so the dictionary stays out of this repo.
+It does **not** reproduce ASD's ~900-word approved dictionary verbatim. ASD-STE100 is free to obtain, but not free to redistribute. Issue 9, page 2, states: "no reproduction or publication of it, in whole or in part, shall be made without the written authority of an officer of ASD." It grants free reproduction rights only to eight listed categories: ASD/AIA/AIAC member associations and their member companies and customers, member-state defence ministries, A4A, airworthiness authorities, and universities and research institutes for educational purposes. This project is not in any of those categories. Therefore, the dictionary stays out of this repository.
 
-Instead, this skill applies the *underlying principle* (pick the plainest, most common word available and use it the same way every time) rather than checking against a fixed word list. When exact ASD-approved wording matters (e.g. actual aircraft maintenance documentation), get the standard and check word-by-word against the real dictionary. Request it from the [official downloads page](https://www.asd-ste100.org/STE_downloads.html) — note that this is a request form that emails you a link, not a direct download.
+Instead, this skill applies the *underlying principle*: choose the plainest, most common word available and use it consistently. It does not check words against a fixed list. When exact ASD-approved wording matters, such as in aircraft maintenance documentation, obtain the standard and check each word against the official dictionary. Request the standard from the [official downloads page](https://www.asd-ste100.org/STE_downloads.html). This is a request form that emails you a link, not a direct download.
 
 ## Core Rewrite Rules
 
@@ -74,7 +74,7 @@ Apply the structural rules with confidence. Apply the lexical rules as a directi
 
 STE permits infinitive, imperative, simple present, simple past, simple future, and past participle as adjective. It excludes present perfect and other compound forms: "we received the report", not "we have received the report".
 
-Aircraft manuals never need present perfect, so the exclusion costs the standard nothing. Other text is not always so lucky. "The job has completed" (and its output is available now) and "the job completed" (at some past point) are different statements, and status text frequently needs the first. **Where the compound form carries information the simple form cannot — current relevance, or a hedge as in "may have failed" — keep it and flag the departure.** Elsewhere, follow the rule.
+Aircraft manuals do not need the present perfect, so the exclusion does not reduce the standard's value. Other text is different. "The job has completed" (and its output is available now) and "the job completed" (at some past point) express different meanings. Status text often needs the first form. Keep the compound form when it carries information the simple form cannot, such as current relevance or a hedge in "may have failed". Flag the departure. Elsewhere, follow the rule.
 
 ## Scan Checklist
 
@@ -104,17 +104,17 @@ These six habits cover most of what makes machine-written English hard to parse.
    - The linter does not flag hedges or modality.
    - Use `--baseline N` to allow N hard findings when you adopt an existing document.
    - Use `--disable rule1,rule2` to disable named checks.
-4. Rewrite each flagged sentence to fix the violation while preserving the original meaning exactly. If a rewrite would drop necessary precision (a safety condition, a scope qualifier, a number), keep the longer phrasing and flag it instead of silently simplifying.
-   - **Check modality before you commit to a rewrite.** Hedges ("may", "could", "sometimes", "is likely to") carry the author's confidence, and confidence is content. A shorter sentence that upgrades a hedge to a fact is not a simplification — it is a different claim. This is the most common way a well-intentioned STE rewrite goes wrong, because hedges are exactly what a length cap tempts you to cut.
+4. Rewrite each flagged sentence. Preserve the original meaning exactly. If a rewrite would drop necessary precision, keep the longer phrasing and flag it instead of simplifying it. Necessary precision includes a safety condition, a scope qualifier, or a number.
+   - **Check modality before you commit to a rewrite.** Hedges such as "may", "could", "sometimes", and "is likely to" carry the author's confidence. Confidence is content. A shorter sentence that upgrades a hedge to a fact makes a different claim. This is a common failure in well-intentioned STE rewrites. Length caps can tempt the writer to cut hedges.
    - Never add a fact the source did not state. A rewrite that reads better because it supplies a cause, a frequency, or a mechanism has stopped being a rewrite.
 5. Output the rewritten text (see Output Format). Keep the mode choice and the rule analysis internal unless the user asked to see them.
 6. If the input already complies, say so — do not force changes onto compliant text.
 
 ## Output Format
 
-**Default: the rewritten text, and nothing else.** Most callers want a result they can paste straight into a tool description, an error string, or a prompt. Print the simplified text on its own. Do not add a preamble about this skill, a mode announcement, a violation count, a summary of what changed, a rule table, or a closing offer to explain further.
+**Default: the rewritten text, and nothing else.** Most callers want text they can paste into a tool description, an error string, or a prompt. Print the simplified text on its own. Do not add a preamble about this skill, a mode announcement, a violation count, a summary of changes, a rule table, or a closing offer to explain further.
 
-The one permitted addition: if step 4 kept a longer phrasing on purpose, add a single line after the text, prefixed `Kept as-is:`, naming the phrase and the precision that would have been lost. Omit the line when there is nothing to report.
+The one permitted addition applies when step 4 keeps a longer phrasing on purpose. Add one line after the text. Prefix it with `Kept as-is:`. Name the phrase and the precision that would be lost. Omit this line when there is nothing to report.
 
 **On request: the rule table.** When the user asks to see the reasoning — "show the diff", "which rules did it break", "explain the changes", "before/after" — output this table instead:
 
@@ -145,7 +145,7 @@ Follow the table with a one-line note on anything you deliberately did **not** s
 - Convert "may have failed" into "failed", or "could be caused by X" into "X is the cause" — losing a hedge changes the claim.
 - Guarantee an aerospace/defense-grade STE-compliant document. This is a general-purpose clarity tool inspired by STE, not a certified STE authoring tool.
 - Make weak content true or useful. STE fixes the *form* of a text, not its substance. A hollow paragraph rewritten under these rules becomes a clean, short, well-punctuated hollow paragraph. If the text has nothing to say, no rewrite fixes that — say so instead of polishing it.
-- Shorten past the point of clarity. Cutting words is not the goal. Removing ambiguity is the goal. Past a certain point compression starts costing the reader time rather than saving it, so stop when the sentence is unambiguous, not when it is shortest.
+- Do not shorten text past the point of clarity. Cutting words is not the goal. Removing ambiguity is the goal. Compression can eventually cost the reader time instead of saving it. Stop when the sentence is unambiguous, not when it is shortest.
 
 ## Additional Resources
 
