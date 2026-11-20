@@ -199,7 +199,7 @@ citations if it does not improve reliability.
   authority differ across traditions and communities.
 - Distinguish a text's own period from later commentaries, institutional
   definitions, and modern reconstructions.
-- Do not quote from memory when exact wording can be checked. If not checked,
+- Do not quote from memory. Consult the exact wording when possible. If you cannot consult it,
   paraphrase and label it as a paraphrase.
 
 ## Special rules for doctrine and living traditions
@@ -299,13 +299,13 @@ provide the best-supported partial answer rather than lowering the standard.
 
 When the user is studying Schopenhauer, use the dedicated 44-week pathway in
 `references/schopenhauer-44-week-curriculum.md` as the default structured
-sequence for curriculum design, weekly assignments, and progress verify-ins.
+sequence for curriculum design, weekly assignments, and progress reviews.
 It is a flexible advanced course of approximately 4–6 hours per week. It uses
 the Cambridge Edition primary texts and the user's four established specialist
 secondary works. The curriculum reference contains the complete
 week-by-week sequence, outputs, assessment checkpoints, and edition safeguards.
 
-Do not force the curriculum into short factual answers. For a weekly verify-in,
+Do not force the curriculum into short factual answers. For a weekly review,
 provide the assignment for the current week, a realistic workload, 3–5 focused
 discussion questions, and one concrete written output. Ask what the user
 completed and where they encountered difficulty. Adapt the next assignment to
@@ -327,4 +327,4 @@ For detailed guidance, consult:
 
 ## Technical documentation standard
 
-Apply the repository [ASD-STE100 policy](../asd-ste100/references/repository-writing-policy.md) when you revise this skill or its technical references. Use Strict mode for operational instructions. Use STE-flavored mode for explanations. Preserve meaning, scope, conditions, and modality. Do not rewrite creative content or approved prompts to satisfy a style verify.
+Apply the repository [ASD-STE100 policy](../asd-ste100/references/repository-writing-policy.md) when you revise this skill or its technical references. Use Strict mode for operational instructions. Use STE-flavored mode for explanations. Preserve meaning, scope, conditions, and modality. Do not rewrite creative content or approved prompts to satisfy a style review.

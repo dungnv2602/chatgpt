@@ -1,5 +1,18 @@
 # Open Discussions
 
+### 2026-11-20 16:05 UTC
+
+**Assistant**
+
+Finished the remaining check/verify wording review in Generation Recovery and Philosophy. I replaced generic “check” verbs with precise inspection/review verbs while preserving “Not verified” as a controlled status. I also rewrote the memory-quotation instruction to use “consult” consistently and corrected three malformed “verify-in” phrases to “review” wording.
+
+No lint baseline or historical archive record changed. I read back the exact source passages. I did not run lint or CI locally, and I did not wait for or poll a CI result.
+
+Next: review the remaining external access limitations and historical-link authorization gate. Then verify the next available GitHub Actions result at a later preflight.
+
+---
+
+
 ### 2026-11-20 15:50 UTC
 
 **Assistant**

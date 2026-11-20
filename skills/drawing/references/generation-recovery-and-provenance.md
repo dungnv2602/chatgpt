@@ -45,7 +45,7 @@ Before rewriting a prompt after a refusal, repeated failure, or user correction:
    reference is needed for identity, style, or composition. If the proven
    successful method was fresh text-to-image generation without a reference,
    do not attach an image merely as ritual. Conversely, when a reference is
-   needed, attach the actual asset through the supported mechanism and check
+   needed, attach the actual asset through the supported mechanism and inspect
    that it was included. Never confuse an inspiration reference with an edit
    source.
 7. **Separate observations from hypotheses.** Record the exact tool response.
@@ -133,7 +133,7 @@ the user explicitly says they should be retained for future use.
 **GitHub rename and takeout rules:**
 
 - If an image is already tracked in its permanent location under an opaque
-  filename, rename that existing Git tree path using the same blob SHA. Check
+  filename, rename that existing Git tree path using the same blob SHA. Review
   the old name is absent, the descriptive name exists, and the blob SHA and byte
   size are identical.
 - For newly uploaded retained images, use the universal flat intake

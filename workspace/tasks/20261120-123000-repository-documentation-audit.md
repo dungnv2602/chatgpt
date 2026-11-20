@@ -46,6 +46,15 @@ Continue and complete the repository documentation audit. Keep its complete hist
 
 ## 6. Progress Log
 
+### 2026-11-20 16:05 UTC
+
+- **Action:** Finished the remaining check/verify wording review in Generation Recovery and Philosophy.
+- **Change:** Replaced generic “check” verbs with precise inspection/review verbs while preserving “Not verified” as a controlled status. Rewrote the memory-quotation instruction to use “consult” consistently. Corrected three malformed “verify-in” phrases to “review” wording.
+- **Baseline policy:** No lint baseline changed. No historical archive record changed.
+- **Validation:** Read back the exact source passages. Did not run lint or CI locally. Did not wait for or poll a CI result.
+- **Next:** Review the remaining external access limitations and historical-link authorization gate. Then verify the next available GitHub Actions result at a later preflight.
+
+
 ### 2026-11-20 15:45 UTC
 
 - **Action:** Continued the remaining active-document synonym review.
