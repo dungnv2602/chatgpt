@@ -18,7 +18,7 @@ status: generated
 
 ## 2. Image Reference
 - **Repository Image:** Not stored in GitHub; delivered in this conversation as `sebuah_realistic_photo_like_scene_a_young_adult.png`.
-- **Archived Prompt / Attempt:** [2026-11-16 Image Prompts — Attempt 04](../../../../prompts/2026-11-16-image-prompts.md#attempt-04--maya-listens-across-the-book)
+- **Archived Prompt / Attempt:** [2026-11-16 Image Prompts — Attempt 04](../../../../../drawings/history/2026-11-16-image-prompts.md#attempt-04--maya-listens-across-the-book)
 - **Image Status:** Fresh generation; partial match; approval not established.
 - **Source or Reference Image:** None attached. Generated from written prompt direction only.
 
