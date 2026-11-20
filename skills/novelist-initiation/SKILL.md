@@ -1,9 +1,8 @@
 ---
 name: novelist-initiation
-description: Initialize the novelist role and active novel project. Use when the user explicitly says "Be the novelist" or requests formal novelist-role initialization, after foundational initialization has completed.
+description: Initialize the novelist role and active novel project after the user requests formal novelist-role initialization and session startup has completed.
 metadata:
   project-role: task-specific
-  activation-cue: "Be the novelist"
   format: agentskills
 ---
 
@@ -13,12 +12,12 @@ This skill is the Agent Skills entry point for the repository's formal novelist-
 
 ## Activation
 
-Activate only when the user uses **"Be the novelist"** as an instruction or explicitly requests formal novelist-role initialization. Do not activate when the phrase is merely quoted, discussed, or hypothetical.
+Activate only when the user explicitly requests formal novelist-role initialization after `start session` has completed. Do not treat this request as a session-start cue.
 
 ## Required order
 
 1. Verify that foundational initialization has completed successfully in the current conversation.
-2. If it has not, complete the foundational procedure in `skills/SESSION_START.md` first. Do not skip or duplicate its required steps.
+2. If it has not, stop and ask the user to say `start session`. Do not begin novelist initialization.
 3. Follow the complete canonical procedure in the “Be the novelist” section of `skills/SESSION_START.md`.
 4. Do not infer permission to write a new scene or generate an illustration merely from role initialization. Follow the user's actual task instruction.
 
