@@ -104,8 +104,8 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
   - `skills/SESSION_START.md`
   - `skills/session-archiving/SKILL.md`
   - `skills/INITIALIZATION_POLICY.md`
-- **Verification:** Pending read-back verification.
-- **Commit(s):** Pending.
+- **Verification:** Read-back verified on branch `gpt`; Agent Skills metadata constraints and conditional-initialization consistency checks passed. The official `skills-ref` CLI validator was not run.
+- **Initial implementation commits:** `5bdb1b732c88fc4bb0d9e49fbeb78eb6048c7bc5` (new skill), `b26c37031399747ea204fa89a491a8ff26bce911` (session start), `a48f7264246734a73b02f41537f367f04fa09c55` (session archiving), `fee7c31d7c7b2f63efee3680796ac477b060eb45` (initial policy update).
 
 ## Future revision log
 
