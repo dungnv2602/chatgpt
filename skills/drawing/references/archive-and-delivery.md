@@ -6,11 +6,10 @@ The original PNG/JPEG is the permanent master. WebP is a separate delivery
 derivative, never a replacement. All newly uploaded assets intended for
 repository retention pass through the single intake at `images/takeout/`.
 
-- The incoming filename may be arbitrary. Inspect the actual image and prepare
-  the structured `HANDOFF.yml` with source filename, descriptive title,
-  optional stable ID, and exact destination directory. For an image belonging
-  to a non-novel drawing attempt, also include that attempt number in the item
-  as `attempt: NN` and target `drawings/YYYY-MM-DD/images` for its session.
+- Incoming filenames may be arbitrary. Inspect the image. Prepare the structured
+  `HANDOFF.yml` with the exact source filename, descriptive title, optional
+  stable ID, and destination directory.\n- For a non-novel drawing attempt, include its number as `attempt: NN`. Use
+  `drawings/YYYY-MM-DD/images` as the destination for that session.
 - The existing workflow runs on branch `gpt` and calls
   `skills/session-archiving/scripts/process_takeout.py`. It accepts static PNG, JPG, and JPEG.
   APNG and other unsupported formats fail the batch. Animation is never
@@ -71,12 +70,12 @@ repository retention pass through the single intake at `images/takeout/`.
 
 ## Mandatory generated-image archive verification (2026-11-20)
 
-For every drawing session, archive **every generated image output**, regardless of approval, rejection, prompt compliance, or whether it is superseded. Each output must be individually recorded and directly linked from the session README once its exact repository asset exists and is verified. Preserve generation order and prompt-to-output association. Approval is a separate field and never determines archival or linking eligibility.
+For every drawing session, archive **every generated image output**. This includes approved, rejected, pending, partial, off-target, failed, and superseded outputs.\n\nRecord each output separately. Link it from the session README after you verify its exact repository asset. Preserve generation order and prompt-to-output association. Record approval in a separate field. Approval does not control archival or linking eligibility.
 
 
 ## Generation provenance and output mapping workflow (approved 2026-11-20)
 
-Use capture-at-generation-time to avoid retrospective image-to-attempt guesses. This is mandatory for every drawing session and applies to approved, rejected, pending, partial, off-target, failed, and superseded outputs.
+Capture provenance at generation time. Do not rely on retrospective image-to-attempt guesses. This rule applies to every drawing session and every output status. It includes approved, rejected, pending, partial, off-target, failed, and superseded outputs.
 
 ### Before generation
 1. Assign internal session, attempt, and prompt IDs before invoking image generation (for example, session `2026-11-20`, attempt `A001`, prompt `P001`). These are archive IDs, not platform Generation IDs.
@@ -84,38 +83,38 @@ Use capture-at-generation-time to avoid retrospective image-to-attempt guesses. 
 3. Preserve the exact authored prompt and operation type. Follow the existing pre-generation prompt commit and read-back requirement.
 
 ### Immediately after generation
-4. Capture every returned image in its returned sequence and associate it directly with its attempt/output record. Do not map by filename, visual similarity, chronology alone, or memory when direct association is available.
-5. Record platform Generation ID and native image/output ID only when exposed by the generation system. Keep native IDs separate from internal archive IDs. If unavailable, explicitly mark them unavailable/not exposed. Never invent IDs.
+4. Capture every returned image in its returned sequence. Associate each image directly with its attempt and output record. Do not map by filename, visual similarity, chronology alone, or memory when direct association is available.
+5. Record the platform Generation ID and native image or output ID only when the system exposes them. Keep native IDs separate from internal archive IDs. If an ID is not exposed, mark it unavailable. Never invent IDs.
 6. Preserve original bytes when accessible. If they cannot be retrieved, record the limitation. Do not substitute a screenshot, thumbnail, or recompressed preview as the original.
 7. Record the actual output count and sequence. Remove unused reserved slots. Do not create phantom outputs. If the association cannot be established reliably, mark it Unmapped or Unverified.
 
 ### Mapping evidence and identity
 8. Use internal output IDs (e.g. `A001-O01`) as stable archive identifiers when native IDs are not exposed. They must not be represented as native platform IDs.
 9. Keep internal session/attempt/prompt/output IDs, native Generation ID, native image/output ID, approval, outcome, mapping evidence/status, original-byte availability, archive path, SHA-256, and verification status separate.
-10. Direct generation-return association or reliable original metadata can support Verified mapping. Chronology and visual comparison may corroborate but cannot alone make a mapping Verified. Filename numbering is never proof.
+10. Direct generation-return association or reliable original metadata can support Verified mapping. Chronology and visual comparison may provide corroboration. They cannot establish Verified mapping by themselves. Filename numbering is never proof.
 11. Mapping statuses: `Verified`, `Corroborated`, `Probable`, `Unmapped`, or `Conflicting`. Explain uncertain or retrospective evidence. Never silently upgrade status.
-12. Calculate SHA-256 only from original image bytes when accessible. A hash proves byte identity, not generation event, prompt association, visual content, or approval. Record original and derivative hashes separately.
+12. Calculate SHA-256 only from original image bytes when they are accessible. A hash proves byte identity only. It does not prove the generation event, prompt association, visual content, or approval. Record original and derivative hashes separately.
 
 ### Archive and verify
 13. Archive every output regardless of approval. Preserve sequence, prompt association, direct links, and statuses. Use the established asset-intake procedure.
-14. Extend the session `manifest.csv` with one row per output and include internal attempt/output IDs, native Generation ID, native image/output ID, mapping evidence/status, and original-byte availability. Preserve existing required columns. Unavailable native IDs remain empty or explicitly unavailable.
+14. Extend the session `manifest.csv` with one row per output. Include internal attempt and output IDs, native Generation ID, native image or output ID, mapping evidence and status, and original-byte availability. Preserve existing required columns. Leave unavailable native IDs empty or mark them unavailable.
 15. Reconcile generation records, attempt notes, README, manifest, and actual assets. Verify paths, links, and hashes only after checking them. Read back all edited records.
-16. Do not block drawing on GitHub, hashing, or archival latency. Generate, capture outputs and their associations immediately, then complete metadata, hashing, archive, and verification. If capture or archival is incomplete, retain an explicit pending/incomplete status. Do not claim complete closeout.
+16. Do not delay drawing for GitHub, hashing, or archive work. Generate the image and capture its output association immediately. Then complete metadata, hashing, archival, and verification.\n\nIf capture or archival is incomplete, use a pending or incomplete status. Do not claim complete closeout.
 
-Provenance chain: **Session → Attempt → Prompt → Generation event (native ID if exposed) → Output (internal ID. Native output ID if exposed) → original bytes → SHA-256 → archived asset/link**. Every link is evidence-backed. Missing native IDs are stated honestly.
+Provenance chain: **Session → Attempt → Prompt → Generation event → Output → original bytes → SHA-256 → archived asset/link**. Record native IDs when exposed. Record internal IDs as archive identifiers, not platform metadata. Every link must have evidence. State when native IDs are unavailable.
 
 Maintain a session-level `manifest.csv` as the machine-readable source for archival tracking. Required columns:
 ```csv
 session_date,image_id,filename,prompt_id,approval_status,github_url,sha256,verification_status
 ```
-Use one row per generated output (not merely one row per prompt when an attempt yields multiple images). Record `approval_status` as Approved, Rejected, Pending, or Not recorded. Use `verification_status` values that distinguish Pending, Verified, Failed, and Not verifiable. Do not invent identifiers, URLs, checksums, or statuses. Keep prompt IDs and image IDs stable and unambiguous.
+Use one row per generated output. Do not use one row per prompt when an attempt yields multiple images.\n\nUse these `approval_status` values: Approved, Rejected, Pending, or Not recorded. Use these `verification_status` values: Pending, Verified, Failed, or Not verifiable. Do not invent IDs, URLs, checksums, or statuses. Keep prompt IDs and image IDs stable and unambiguous.
 
 
 Calculate SHA-256 from the actual original image bytes whenever those bytes are accessible. Do not calculate a checksum from screenshots, thumbnails, or recompressed derivatives and misrepresent it as the original checksum. If the original is unavailable, record SHA-256 as unavailable/pending rather than guessing. A checksum identifies exact file bytes. It does not establish visual content, prompt lineage, approval, or authenticity by itself.
 
-When the user supplies a downloaded image's SHA-256, compare it with the recorded checksum for the candidate archived original. A match verifies byte-identical files. A mismatch means the files are not byte-identical and must not be marked verified. Renaming or moving a file does not change its checksum. Re-encoding, editing, resizing, or converting usually does. If a source original and a WebP derivative are both archived, calculate and record their checksums separately and do not compare them as if they were the same byte stream.
+When the user supplies a downloaded image's SHA-256, compare it with the recorded checksum for the candidate original. A match confirms byte identity. A mismatch means the files are not byte-identical. Do not mark the file verified.\n\nRenaming or moving a file does not change its checksum. Re-encoding, editing, resizing, or converting usually changes it. If you archive an original and a WebP derivative, calculate and record their hashes separately. Do not compare them as the same byte stream.
 
-README image links must point directly to the correct image asset and be checked against the repository path/blob before they are marked Verified. The manifest must not mark a URL or checksum Verified until the corresponding verification actually occurs. After archive changes, read back the README and manifest and reconcile every generated output against the chronological attempt record. Report any missing asset, link, prompt association, checksum, or verification explicitly.
+README image links must point directly to the correct image asset. Check each link against the repository path and blob before marking it Verified. Do not mark a URL or checksum Verified in the manifest before you check it.\n\nAfter archive changes, read back the README and manifest. Reconcile every generated output against the chronological attempt record. Report any missing asset, link, prompt association, checksum, or verification.
 
 
 ## Original-image SHA-256 identity and WebP derivatives (approved 2026-11-20)
@@ -127,7 +126,7 @@ When the user later uploads an unchanged original, the GitHub Action calculates 
 
 The WebP is a derivative with different bytes and therefore is **not expected to match the original SHA-256**. The original hash remains the identity key for the output. Record the derivative's path and link under the same output ID. A WebP SHA-256 is optional and only for independent derivative integrity checks. Never compare original PNG/JPEG hashes against converted WebP hashes as if equality were expected.
 
-The GitHub Action should automate original-hash calculation and matching, mapping validation, conversion, renaming/relocation, direct README and attempt-record links, manifest reconciliation, and verification reporting. Preserve existing upload filenames unchanged. Filenames are not identity evidence. Do not claim implementation is present until the Action itself has been inspected and modified.
+The GitHub Action should automate these tasks:\n\n- Calculate and compare original hashes.\n- Validate output mapping.\n- Convert, rename, and relocate files.\n- Add direct links to the README and attempt records.\n- Reconcile the manifest and write verification reports.\n\nPreserve incoming upload filenames. Filenames are not identity evidence. Do not claim implementation until you inspect and update the Action.
 
 
 ## GitHub Action implementation status (2026-11-20)
@@ -136,9 +135,9 @@ The takeout processor retains original PNG/JPEG masters in each destination's
 Attempt records and daily README rows link only the WebP. Drawing-session
 `manifest.csv` updates preserve existing rows and columns, append one record
 per new output, and inventory legacy WebPs. A same-stem original in the
-destination's `original/` subfolder is paired by deterministic filename stem
-its actual SHA-256 is recorded and publication stays Pending until the pushed
-Git blob is verified. A WebP without a retained original remains Not verifiable.
+destination's `original/` subfolder is paired by filename stem. The processor
+records its SHA-256. Publication remains Pending until the pushed Git blob is
+verified. A WebP without a retained original remains Not verifiable.
 An original master without a same-stem WebP blocks processing rather than
 silently disappearing from the manifest. Generation-time hash matches,
 explicit attempt associations, native identifiers, approval, and
@@ -154,3 +153,8 @@ Python compilation and regression tests before processing. The GitHub Actions
 run must pass and its published output must be read back before the workflow
 is described as fully verified.
 
+
+
+## Technical documentation standard
+
+This file defines operational image archive and delivery procedures. Apply Strict mode from the repository [ASD-STE100 policy](../../asd-ste100/references/repository-writing-policy.md) when you revise it. Preserve byte identity, provenance, mapping, and verification requirements.
