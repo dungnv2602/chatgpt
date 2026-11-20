@@ -1,3 +1,16 @@
+### Clarification: historical-link review scope
+
+No. I was referring to a **narrow link audit**, not a general audit of the contents or quality of the entire `archive/` folder.
+
+The proposed scope was:
+- Inspect links inside archived task records and files under `archive/`.
+- Identify links whose targets no longer exist or whose paths are stale.
+- If needed, make only link-destination corrections. Do not rewrite historical content, reorganize archives, or change task history.
+
+So yes, files in the `archive/` folder are included, but only their links. I also meant archived task records under `workspace/`. No changes to either group have been authorized yet. The existing active-document audit is separate.
+
+---
+
 ### Completion-time estimate
 
 **Estimated remaining active work: approximately 1–2 hours after you authorize the historical-link review.** The active-source review is recorded as complete, and the latest completed runs for both applicable CI workflows succeeded. The remaining substantive gate is the historical-link review and any safe, link-only corrections in archived task and archive records, followed by the final audit record and closure checks.
