@@ -1,6 +1,6 @@
 # Task Board
 
-Last updated: 2026-11-20 15:38 UTC
+Last updated: 2026-11-20 22:00 UTC
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
@@ -35,7 +35,7 @@ _No paused tasks._
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-| 20261120-153700 | Fix Condensed Mode adherence gaps | P1 | Done | User | 2026-11-20 | [Task record](tasks/20261120-153700-condensed-mode-adherence-guardrails.md) · [Completion commit](https://github.com/dungnv2602/chatgpt/commit/5075dfe29342c978e77fc760ca481e193c986fa2) |
+| 20261120-153700 | Fix Condensed Mode adherence gaps | P1 | Done | User | 2026-11-20 | [Archived record](../archive/tasks/20261120-153700-condensed-mode-adherence-guardrails.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/109a603784738cef2a93a12e87e9eb22643edb25) |
 | 20261120-123400 | Add task-inspection gates and discussion reports to Condensed Mode | P1 | Done | User | 2026-11-20 | [Archived record](../archive/tasks/20261120-123400-condensed-mode-task-gates-and-reporting.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/3247253793951ae4d55f06e2ad49673766da67bc) |
 | 20261120-115056 | Automate 14-day archive retention with GitHub Actions | P1 | Done | User | 2026-11-20 | [Archived record](../archive/tasks/20261120-115056-scheduled-archive-retention.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/3c99e8c3809dae1d0f17a17edeb02b3fc05df94d) |
 | 20261120-120302 | Add a Condensed Mode discussion register | P1 | Done | User | 2026-11-20 | [Archived record](../archive/tasks/20261120-120302-condensed-mode-discussion-register.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/76ab55d636668a80ee365af28953ec1fecf24eb6) |
