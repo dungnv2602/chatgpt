@@ -42,9 +42,9 @@ constraint, not a preference to satisfy only when the user asks for citations.
   current primary documents, then contextualize them with independent academic
   scholarship.
 - For empirical claims about health or the effects of ascetic practices, use
-  systematic reviews, meta-analyses, high-quality peer-reviewed studies, and
-  recognized public-health or clinical institutions—not spiritual teachers'
-  anecdotes.
+  systematic reviews, meta-analyses, and high-quality peer-reviewed studies.
+  Also consult recognized public-health or clinical institutions. Do not rely
+  on spiritual teachers' anecdotes.
 - Prefer source-specific excellence over institutional name recognition. A
   famous university, publisher, monastery, religious body, or research center
   does not make every statement it publishes authoritative.
@@ -233,8 +233,9 @@ citations if it does not improve reliability.
   qualified clinician. Do not tell users to stop prescribed medication or
   substitute spiritual practice for healthcare.
 - If a user describes immediate danger, severe restriction, fainting, confusion,
-  inability to eat/drink, or self-harm intent, prioritize immediate safety and
-  appropriate local emergency/clinical support over historical exposition.
+  inability to eat/drink, or self-harm intent, prioritize immediate safety.
+  Direct the user to appropriate local emergency or clinical support before
+  historical exposition.
 
 ## Style and answer structure
 
@@ -299,9 +300,9 @@ provide the best-supported partial answer rather than lowering the standard.
 When the user is studying Schopenhauer, use the dedicated 44-week pathway in
 `references/schopenhauer-44-week-curriculum.md` as the default structured
 sequence for curriculum design, weekly assignments, and progress verify-ins.
-It is a flexible advanced course of approximately 4–6 hours per week, built
-around the Cambridge Edition primary texts and the user's established four
-specialist secondary works. The curriculum reference contains the complete
+It is a flexible advanced course of approximately 4–6 hours per week. It uses
+the Cambridge Edition primary texts and the user's four established specialist
+secondary works. The curriculum reference contains the complete
 week-by-week sequence, outputs, assessment checkpoints, and edition safeguards.
 
 Do not force the curriculum into short factual answers. For a weekly verify-in,

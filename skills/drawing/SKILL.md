@@ -79,10 +79,7 @@ not an illustration.
 - Preserve supplied character features and visual continuity.
 
 ### Useful prompt language
-Use terms such as photorealistic, natural photographic realism, realistic skin
-and fabric texture, physically plausible warm window light, natural lens
-perspective, restrained depth of field, candid, cinematic, editorial, or studio
-photography as appropriate. Choose only the vocabulary that serves the brief.
+Use terms such as photorealistic, natural photographic realism, realistic skin and fabric texture, and physically plausible warm window light. Add natural lens perspective, restrained depth of field, candid, cinematic, editorial, or studio photography when appropriate. Choose only the vocabulary that serves the brief.
 
 ### Avoid unless requested
 Brush strokes, canvas grain, watercolor blooms, pencil hatching, ink outlines,
@@ -122,11 +119,7 @@ Choose one dominant treatment per image unless a mixed-media result is requested
   than a painting.
 
 ### Possible prompt language
-When compatible with the active session brief, useful terms include softly
-hand-painted digital illustration, delicate visible brush texture, warm
-painterly shading, natural gently simplified forms, refined storybook realism,
-or nostalgic lighting. Select the palette from the active brief. Cream and
-amber are optional, not defaults.
+When compatible with the active session brief, use terms such as softly hand-painted digital illustration, delicate visible brush texture, and warm painterly shading. Other options include natural gently simplified forms, refined storybook realism, or nostalgic lighting. Select the palette from the active brief. Cream and amber are optional, not defaults.
 
 Warm lighting alone is not enough to make an image Vintage. The rendering
 itself must show an illustrative, painterly, print, or analog character.
@@ -145,9 +138,7 @@ The Drawing Skill is universal: its rules govern every drawing project,
 regardless of subject, scene, or project switch. A project change does not make
 the skill new and does not, by itself, require another retrieval.
 
-When the user invokes an explicit foundational initialization cue,
-after the foundational session skills have been loaded, retrieve the current
-Drawing Skill and its mandatory foundational references from the `gpt` branch:
+When the user invokes an explicit foundational initialization cue, load the foundational session skills first. Then retrieve the current Drawing Skill and its mandatory references from branch `gpt`:
 `references/style-guide.md` and `references/image-editing-protocol.md`.
 Keep the verified instructions in working context and apply them to every
 drawing project throughout that conversation. Do not load every on-demand
@@ -158,18 +149,9 @@ specific task triggers below apply. **Do not reread or refetch the full Drawing 
 the user switches projects or starts another drawing task within the same
 conversation.**
 
-Refresh the skill and its supporting references if the user asks for an
-instruction refresh, if a relevant repository change is known or suspected, or
-if newly introduced work depends on a supporting reference that has not yet
-been read. A new ChatGPT conversation requires a fresh retrieval when
-foundational initialization is invoked in that conversation, even when it
-continues an existing project, so the conversation starts from the current
-repository version.
+Refresh the skill and its supporting references when the user asks for an instruction refresh. Also refresh them when you know or suspect a relevant repository change. Refresh them when new work depends on a supporting reference that you have not read. When foundational initialization runs in a new ChatGPT conversation, retrieve the current repository version again. This also applies when the conversation continues an existing project.
 
-This session-level loading cadence does not reduce any per-attempt requirement
-below. Before each generation or edit, review the relevant prompt history,
-prepare and commit the exact authored prompt, check that commit, then generate
-or edit and record the actual outcome.
+This session-level loading cadence does not reduce any per-attempt requirement below. Before each generation or edit, review the relevant prompt history. Prepare and commit the exact authored prompt, then check that commit. Generate or edit only after that check. Record the actual outcome.
 
 
 ### Pattern consultation checkpoint
@@ -205,19 +187,12 @@ workflow, while avoiding redundant retrievals.
 
 ### A. Read the brief and complete the session-brief preflight
 
-Identify the subject, selected mode, composition, camera/viewpoint, orientation,
-character appearance, clothing, expression, pose, exact spatial relationships,
-lighting, environment, mood, and what must remain unchanged in an edit.
+Identify the subject, selected mode, composition, camera/viewpoint, and orientation. Also identify character appearance, clothing, expression, pose, exact spatial relationships, lighting, environment, mood, and what must remain unchanged in an edit.
 Separate essential requirements from optional decorative details.
 
 **Session-specific direction authority — the opening brief governs this drawing session:**
 
-The user's opening brief for a specific drawing session is the source of truth
-for its creative direction. This applies equally to a day-drawing session and a
-novel-illustration session. No repository-wide image index, past portrait,
-previous prompt, character sheet, successful image, or old project convention
-automatically dictates the current session's face, identity, outfit, scene,
-pose, style, palette, mood, setting, or composition.
+The user's opening brief for a specific drawing session is the source of truth for its creative direction. This applies equally to day-drawing and novel-illustration sessions. No repository-wide image index, past portrait, previous prompt, character sheet, successful image, or old project convention automatically dictates the current session. This applies to its face, identity, outfit, scene, pose, style, palette, mood, setting, and composition. Use one of those materials only when the user explicitly adopts it.
 
 1. At the start of each distinct drawing session, identify the user's opening
    vision and treat it as the active brief. Preserve the user's wording and
@@ -335,9 +310,7 @@ root `drawings/` folder. Link the local prompt from the illustration note and
 scene record where practical. Do not replace one
 with the other.
 
-The scene-local record must preserve the exact authored prompt, operation
-type, generation/edit identifier when available, source/reference details,
-and the chronological sequence of attempts for that illustration. After the
+The scene-local record must preserve the exact authored prompt, operation type, and generation or edit identifier when available. It must also preserve source/reference details and the chronological sequence of attempts for that illustration. After the
 image call, update the local record with the actual direction submitted when
 known, outcome, deviations, and continuity assessment. Distinguish the authored
 prompt from the tool's compiled or internally submitted payload. If the tool
@@ -458,9 +431,7 @@ the user's explicit updates within that session.
 - For a novel illustration, follow the scene-specific opening brief. Use the
   novel text and scene records for narrative facts only where the user asks the
   illustration to follow or adapt them.
-- Preserve a face, outfit, pose, design, or other feature as locked only when
-  the user explicitly locks it in the current session or explicitly adopts a
-  prior design for that session.
+- Lock a face, outfit, pose, design, or other feature only when the user explicitly locks it in the current session. Apply the same rule when the user explicitly adopts a prior design for that session.
 - Do not carry a previous session's visual direction into a new one merely
   because the project, character, relationship, or novel is the same.
 - A successful historical prompt is a prompt-lineage aid, not authority over
@@ -475,10 +446,7 @@ helpful. Be candid about partial matches, failed edits, and source-reference
 problems. Never claim repository storage of an image binary unless it was
 actually uploaded and verified.
 
-**Active-session reminder:** While the drawing session being discussed is
-Active or Paused, end each response that continues or discusses that session
-with a brief reminder that it remains open and the user can say `end session`
-if they want formal closeout. This reminder is unobtrusive and does not
+**Active-session reminder:** While the drawing session being discussed is Active or Paused, end each response that continues or discusses it with a brief reminder that it remains open. Tell the user they can say `end session` for formal closeout. This reminder is unobtrusive and does not
 interrupt drawing or require a reply. Once the user invokes `end session`,
 suppress the reminder during closeout. Resume it only in later responses if
 closeout cannot be completed and the session remains open. Stop reminding once

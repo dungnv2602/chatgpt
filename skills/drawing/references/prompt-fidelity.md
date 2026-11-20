@@ -193,8 +193,8 @@ If a requested element cannot be generated or edited because of a real tool limi
 
 A restriction may be included only in either of these circumstances:
 
-1. The user explicitly requests it. Or
-2. It is genuinely required by an applicable safety rule.
+1. The user explicitly requests it, or
+2. An applicable safety rule genuinely requires it.
 
 The exception is narrow. Prudence, inclusion in a template, and failure of a prior attempt do not make a restriction necessary. Assistant speculation that a restriction could prevent a refusal also does not make it necessary.
 

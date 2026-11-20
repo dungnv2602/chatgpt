@@ -115,15 +115,6 @@ Initialization is conditional. Do not load project instructions or skills at the
 - **Behavioral impact:** Every skill folder gained a conforming `SKILL.md`. Detailed procedures moved into focused references. Foundational initialization remained conditional.
 - **Verification:** Manual metadata, naming, description, line-count, link, activation, and read-back checks passed. The official validator was not run.
 
-### Version 5 — Non-blocking CI preflight
-
-- **Date:** 2026-11-20
-- **Requested change:** Prevent CI preflight from blocking the conversation while GitHub Actions runs.
-- **Reason:** Pending or inaccessible results must not create a deadlock.
-- **Behavioral impact:** Use one bounded snapshot. Repair visible newest completed failures. Do not wait or poll. Pending, cancelled, absent, or inaccessible results do not block initialization.
-- **Files modified:** GitHub Actions, The Worker, Session Archiving, Session Start, Agent Skill Authoring, and this policy.
-- **Verification:** Read back all changed paths. Do not run lint or CI locally. Delegate CI execution to GitHub Actions.
-
 ### Version 4 — ASD-STE100 made foundational
 
 - **Date:** 2026-11-20
