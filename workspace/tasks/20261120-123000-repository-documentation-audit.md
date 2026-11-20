@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 15:07 UTC
+- **Updated:** 2026-11-20 15:12 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -65,7 +65,9 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Action:** Inspected the newest changed-document lint failure, run `44760753995`.
 - **Finding:** The archive link checker and linter self-test passed. The full-audit fallback found hard synonym-rotation findings in the GitHub Actions and Worker skills.
 - **Repair:** Standardized the GitHub Actions link-check instruction and the Worker task-board instruction. No lint baseline changed.
-- **Next:** Commit the focused repair and read back both skills. Review the next CI result at the next mandatory preflight. Do not wait or poll.
+- **Commit:** `553df9777a494efc849bb7cf8a3622ad60b1a5f4`.
+- **Read-back:** Fetched both skills and this task record from branch `gpt`. Confirmed the repaired wording and the archive boundary. The branch head matches the commit.
+- **Next:** Continue the active documentation audit. Review the next CI result at the next mandatory preflight. Do not wait or poll.
 
 ### 2026-11-20 15:07 UTC
 
