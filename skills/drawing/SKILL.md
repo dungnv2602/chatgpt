@@ -133,10 +133,15 @@ regardless of subject, scene, or project switch. A project change does not make
 the skill new and does not, by itself, require another retrieval.
 
 At the beginning of each new ChatGPT conversation/session, after loading the
-foundational session skills, retrieve the current Drawing Skill and its required
-supporting references from the `gpt` branch. Keep the verified instructions
-in working context and apply them to every drawing project throughout that
-conversation. **Do not reread or refetch the full Drawing Skill merely because
+foundational session skills, retrieve the current Drawing Skill and its
+mandatory foundational references from the `gpt` branch:
+`references/style-guide.md` and `references/image-editing-protocol.md`.
+Keep the verified instructions in working context and apply them to every
+drawing project throughout that conversation. Do not load every on-demand
+reference during foundational initialization. Load `prompt-fidelity.md`
+before drafting, reusing, revising, archiving, verifying, or submitting an
+image prompt; load the series, recovery, and archive references when their
+specific task triggers below apply. **Do not reread or refetch the full Drawing Skill merely because
 the user switches projects or starts another drawing task within the same
 conversation.**
 
@@ -466,10 +471,6 @@ All repository work must use branch `gpt` and remain strictly inside
 After generation or editing, preserve original outputs, record provenance, verify asset mapping, and create delivery derivatives only under the approved workflow. Load [Drawing Archive, WebP Delivery, and Provenance Verification](references/archive-and-delivery.md) for the complete procedures, including original-image identity, SHA-256 handling, WebP derivatives, manifest verification, and the approved GitHub Action.
 
 ## Supporting references
-- `references/series-continuity-and-iteration.md` — series identity, prompt lineage, closeout, and iteration.
-- `references/generation-recovery-and-provenance.md` — refusal-aware recovery, prompt audits, attempt ledgers, and provenance.
-- `references/archive-and-delivery.md` — original-image preservation, hashes, WebP delivery, and archive verification.
-
 - `references/series-continuity-and-iteration.md` — series identity, prompt lineage, closeout, and iteration.
 - `references/generation-recovery-and-provenance.md` — refusal-aware recovery, prompt audits, attempt ledgers, and provenance.
 - `references/archive-and-delivery.md` — original-image preservation, hashes, WebP delivery, and archive verification.
