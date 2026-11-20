@@ -2,7 +2,7 @@
 
 ## 1. Prompt-first editing: locate the successful baseline
 
-When the user requests an edit to an existing image, use the **successful authored prompt that produced the target image** as the primary continuity source. Do not use the image binary as the primary source.
+For an image edit, use the **successful authored prompt that produced the target image** as the primary continuity source. Do not use the image binary as the primary source.
 
 Use controlled prompt reconstruction by default:
 
@@ -23,7 +23,7 @@ When the user includes an image, establish its role and priority:
 - **Composition:** preserve subject placement, body geometry, camera view, and spatial relationships.
 - **Style:** transfer brushwork, palette, line, or print texture. Do not import unrelated subject matter.
 - **Visual comparison:** compare the reconstruction with the approved result.
-- **Direct edit source (secondary workflow):** modify that exact image only when the user explicitly requests direct editing, or when reconstruction is inadequate and the user has approved this method. The actual source must be attachable through the supported mechanism.
+- **Direct edit source (secondary workflow):** Modify that exact image only when the user explicitly requests direct editing. You may also do so when reconstruction is inadequate and the user has approved this method. The actual source must be attachable through the supported mechanism.
 
 Do not treat "use this as inspiration" as "edit this exact image." Prompt-first reconstruction does not require an image attachment.
 
@@ -31,7 +31,7 @@ Do not treat "use this as inspiration" as "edit this exact image." Prompt-first 
 
 Start with the single requested change. Use the verified successful authored prompt as the baseline. Make only the necessary revision.
 
-- **Preserve:** every unrequested visual element. This includes identity and face, hairstyle, wardrobe, pose, body geometry, composition, camera, lighting, background, environment, mood, and rendering style when the baseline specifies them.
+- **Preserve:** every unrequested visual element. This includes identity and face, hairstyle, wardrobe, pose, and body geometry. It also includes composition, camera, lighting, background, environment, mood, and rendering style when the baseline specifies them.
 - **Change:** only the element the user requested.
 - **Exclude:** unwanted additions, text, boxes, artifacts, or other details that the user identified or that appear only in unsuccessful attempts.
 - Do not add decorative improvements. Do not substitute clothing, alter faces, or change scenes to solve an unrelated issue.
@@ -41,7 +41,7 @@ For a style-only change, revise only the rendering treatment. Preserve all scene
 
 ## 4. Optional direct-edit verification
 
-Direct editing is a secondary method, not the default. Use it only when the user explicitly requests a direct image edit, or when prompt reconstruction is materially inadequate and the actual image source is accessible through the supported mechanism.
+Direct editing is a secondary method, not the default. Use it only when the user explicitly requests a direct image edit. You may also use it when prompt reconstruction is materially inadequate and the actual image source is accessible through the supported mechanism.
 
 - Attach the exact image source. A filename or image ID in text is not enough.
 - Inspect the returned operation and parent/source metadata.
@@ -57,7 +57,7 @@ If prompt reconstruction repeatedly misses the requested detail:
 1. Stop repeating near-identical prompt revisions.
 2. Recheck the exact successful baseline. Look for assistant-added changes.
 3. Reduce the revision to the requested change only.
-4. Consider direct editing only when the user explicitly requests it, or when you explain its limits and the exact source can be attached.
+4. Consider direct editing only when the user explicitly requests it. You may also consider it after explaining its limits, if the exact source can be attached.
 5. If neither method is reliable, explain the limit. Preserve the best successful baseline instead of mislabeling the result.
 
 ## 6. Prompt-before-generation archive
@@ -68,7 +68,7 @@ Follow `skills/session-archiving/SKILL.md` for every attempt:
 2. For non-novel work, commit the authored prompt in its dated `prompts/YYYY-MM-DD/` attempt note. For a named novel scene, commit it in the authoritative scene-local illustration prompt record under `novels/[Novel-ID]/[Arc-Folder]/[Scene-Folder]/illustrations/`.
 3. Treat the session brief as the visual authority. Use the most recent successful prompt in the explicitly active series only as a compatible text baseline. Do not treat it as authority over the current brief.
 4. Treat later failed, rejected, partial, or missed-target prompts as diagnostic evidence only. Do not use them as the baseline.
-5. Record the session ID or brief path, series ID or theme when explicitly active, selected baseline source, operation type, and actual attached source reference.
+5. Record the session ID or brief path. Record the series ID or theme when it is explicitly active. Record the selected baseline source, operation type, and attached source reference.
 6. Derive three to five observable acceptance criteria from the brief. Mark critical criteria.
 7. Record the prompt difference. State the baseline, preserved details, changed details, and excluded or omitted details.
 8. Verify the pre-attempt commit.
