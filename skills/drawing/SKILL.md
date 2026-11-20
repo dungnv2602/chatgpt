@@ -6,7 +6,7 @@ metadata:
   loading-policy: on-demand-prerequisite
   format: agentskills
   created: "2026-11-18T13:18"
-  updated: "2026-11-20"
+  updated: "2026-11-21"
 ---
 
 # Drawing Skill
@@ -329,11 +329,22 @@ Before every generation or edit attempt:
    - **Excluded:** details deliberately not carried forward, with the reason.
    For a first attempt with no baseline, state that and map the prompt directly
    to the opening brief.
-7. Record the exact authored prompt, operation type, source, mode, acceptance
-   criteria, prompt difference, test objective, pending status, and every
-   reference asset actually attached.
-8. Commit the prompt to branch `gpt`.
-9. Retrieve and check the committed prompt before calling the image tool.
+7. Create every attempt record from
+   [the standard attempt template](assets/attempt-template.md). Use its headings
+   and order without adding a parallel format. Keep the complete authored
+   generation prompt in one standalone `text` code block under
+   **Generation prompt — copyable**. This block must contain only the visual
+   instructions. Do not split the prompt across sections or repeat it elsewhere.
+8. Keep lineage concise. State the baseline and summarize only the changes
+   authorized for this attempt. Do not repeat the session brief or restate
+   details already clear from the complete prompt.
+9. Keep acceptance criteria observable and traceable to the active brief.
+   Record each generated output separately in the template's output table.
+   Preserve native IDs, mapping evidence, asset paths, hashes, and unavailable
+   values accurately.
+10. Commit the completed attempt record to branch `gpt` before generation.
+11. Retrieve and check the committed record. Confirm that the copyable prompt
+    matches the exact authored text to be submitted before calling the image tool.
 
 For every illustration belonging to a named novel scene, keep a convenient
 scene-local prompt record beside its illustration note:
@@ -505,6 +516,7 @@ After generation or editing, preserve original outputs and record provenance. Ch
 - `references/series-continuity-and-iteration.md` — series identity, prompt lineage, closeout, and iteration.
 - `references/generation-recovery-and-provenance.md` — refusal-aware recovery, prompt audits, attempt ledgers, and provenance.
 - `references/archive-and-delivery.md` — original-image preservation, hashes, WebP delivery, and archive verification.
+- `assets/attempt-template.md` — mandatory compact layout for every drawing attempt, with a standalone copyable prompt block.
 - `../asd-ste100/references/repository-writing-policy.md` — required language rules for skill and technical documentation.
 
 
