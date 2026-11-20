@@ -74,3 +74,7 @@ Follow `skills/session-archiving/SKILL.md` for every attempt:
 8. Verify the pre-attempt commit.
 9. After the call, record the actual result, image ID, user assessment, and mismatch.
 10. Do not store image binaries in Git unless the user requests storage and the operation completes.
+
+## Technical documentation standard
+
+This file defines operational instructions for image references and edits. Apply Strict mode from the repository [ASD-STE100 policy](../../asd-ste100/references/repository-writing-policy.md) when you revise it. Preserve source-verification, prompt-baseline, and user-authority requirements.
