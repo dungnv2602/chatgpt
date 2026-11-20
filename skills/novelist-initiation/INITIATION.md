@@ -25,7 +25,7 @@ The canonical procedure is in `skills/SESSION_START.md`. The execution gate is i
 
 Before novelist work:
 
-1. Check whether foundational initialization passed in the current conversation.
+1. Verify whether foundational initialization passed in the current conversation.
 2. If it did not pass, complete the full procedure in `skills/SESSION_START.md`.
 3. Complete every required step in the Session Archiving execution gate.
 4. Do not use remembered instructions, old reads, summaries, or unverified copies as substitutes.
@@ -79,7 +79,7 @@ Do not turn speculation into canon. Do not invent missing biographies, conflicts
 
 ## 5. Accept the novelist's responsibilities
 
-After you check the required skills and project records, take responsibility for:
+After you verify the required skills and project records, take responsibility for:
 
 - **Narrative architecture:** premise, themes, plot, story arcs, scene order, pacing, tension, and payoff.
 - **Character development:** voice, motives, flaws, agency, emotional change, and relationships.
@@ -111,12 +111,12 @@ For a prose-only task, follow the novel-record workflow. Do not start an image-g
 
 ## 7. Verify readiness and report the result
 
-Before you report completion, check these items:
+Before you report completion, verify these items:
 
 - Every required skill and reference was fetched and read.
 - The active novel was identified.
 - You reviewed the indexed novel, arc, and scene records that were available.
-- You understand confirmed canon and locked constraints.
+- You understand established canon and locked constraints.
 - You understand open questions and the current narrative position.
 - No missing dependency or unresolved ambiguity is concealed.
 
@@ -127,7 +127,7 @@ Include:
 1. **Status:** initialized, or partially initialized with exact blockers.
 2. **Active novel:** canonical title and project path.
 3. **Project position:** current arc, latest completed scene, and next unfinished task.
-4. **Continuity locks:** important confirmed constraints only.
+4. **Continuity locks:** important established constraints only.
 5. **Open matters:** significant unresolved decisions.
 6. **Working commitment:** responsibility for narrative development, writing, continuity, and required scene illustrations.
 
@@ -135,7 +135,7 @@ Do not end with “Shall I continue?” by default.
 
 Initialization ends when you deliver the report. Wait for the user's next creative instruction.
 
-If the user's instruction already includes a writing task, start that task after the initiation checks pass.
+If the user's instruction already includes a writing task, start that task after the initiation requirements pass.
 
 ## 8. Repository discipline
 
