@@ -213,6 +213,18 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
 - **Read-back verification:** Every changed file was fetched from branch `gpt` after its write. The returned content matched the submitted content.
 - **Commits:** `67d88bab7ae188d7c4c5651ebce2e631e88cdda1`, `b7c6d71540efa42d6537cb26cf4ff289a7d69691`, `67ef8472779deac010ba294650fbaa708dab1db1`, `9fa6cbaf7251014a84de3d6f90fda9a1602b467b`, `32d2b9b28e43e9166149bb9e8614ee46ec1b90f4`, `b9f1a49c61e5523eaa1f07d8f22d366869fda82d`, `7157070e5fc3182140ae2bfb5a43ef9d16f96030`, `75b7a9a9c577e48c2fa76b149c6328fbd4e88f4a`, `0a07bcedfa8d1f08a57885c68006dc418cfd1e70`, `b45db648a96f7043de442c5749ecf6b2eab169dc`, `3c5ef19ffc65eeadacad930e916eb90c40b62903`, and `07b42dad84ddda25eb14f242d62850918e876dc0`.
 
+### Version 8 — Active novel template review
+
+- **Date:** 2026-11-20
+- **Change:** Complete the review of the active v1.1 novel templates. Remove semicolons from two template placeholder fields.
+- **Files modified:**
+  - `novels/templates/novel-v1.1.md`
+  - `novels/templates/illustration-note-v1.1.md`
+- **Review-only files:** `novels/templates/arc-v1.1.md`, `novels/templates/character-profile-v1.1.md`, `novels/templates/development-outline-v1.1.md`, and `novels/templates/open-discussion-v1.1.md` had no identified findings. The v1.1 scene and illustration-prompt templates were reviewed in the earlier pass. Their apparent long lines contain multiple short sentences or creative-writing placeholders.
+- **Preserved files:** The v1.0 templates remain historical references. No mass migration or rewrite was performed.
+- **Validation:** The two edited files were fetched after each write. Their read-back content matched the submitted text. Both now contain zero semicolons. The official ASD-STE100 linter has not run.
+- **Commits:** `0f0a381d042d08aaf3afe29cd8647c1f35d2ea9a` and `2acb3b2511aa8dcd3cd27c5f5574967805877888`.
+
 ## Future revision log
 
 Append a new entry whenever the initialization policy or its dependencies change.
