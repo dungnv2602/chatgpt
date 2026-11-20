@@ -5,7 +5,7 @@ metadata:
   project-role: foundational
   format: agentskills
   created: "2026-11-18T13:18"
-  updated: "2026-11-20T12:03"
+  updated: "2026-11-20T12:46"
 ---
 
 # Conversation Mode
