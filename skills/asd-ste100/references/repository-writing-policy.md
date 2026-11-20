@@ -51,7 +51,7 @@ python3 skills/asd-ste100/scripts/ste-lint.py path/to/file.md
 
 Use `--json` for structured results. Use `--baseline N` only when you adopt an existing document with known findings. Record the baseline and reason. Do not raise the baseline to hide new violations.
 
-The linter does not verify meaning, terminology approval, modality, or all grammar rules. Review every rewrite against the source.
+The linter does not check meaning, terminology approval, modality, or all grammar rules. Review every rewrite against the source.
 
 The repository does not include ASD's controlled dictionary. Do not claim certified ASD-STE100 compliance. Describe the result as STE-based or STE-flavored unless you checked the official standard and dictionary.
 
