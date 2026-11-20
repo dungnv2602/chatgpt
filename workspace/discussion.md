@@ -1,5 +1,32 @@
-
 # Open Discussions
+
+### 2026-11-20 14:40 UTC
+
+**User**
+
+> Continue with the audit
+
+**Assistant**
+
+Resumed task [20261120-123000](https://github.com/dungnv2602/chatgpt/blob/gpt/workspace/tasks/20261120-123000-repository-documentation-audit.md) as the current execution task. Removed the obsolete related-task reference and updated the task board.
+
+The mandatory CI snapshot found that changed-document run [44750057903](https://github.com/dungnv2602/chatgpt/actions/runs/44750057903) failed on commit `9260346fb8e14c5c576fbf8f8e3676fb645833e4`. Its fallback full audit found new lint violations in Session Start, GitHub Actions, The Worker, and Initialization Policy. The linter self-test and active Markdown link checker passed.
+
+I corrected those findings in [49a9727](https://github.com/dungnv2602/chatgpt/commit/49a972741aeb69bf249afffb11cbe33d8574d05f). I did not change lint baselines.
+
+The source review then:
+- Split 10 long-sentence candidates in `skills/drawing/SKILL.md`.
+- Split three long-sentence candidates in `skills/philosophy-religion-asceticism/SKILL.md`.
+- Corrected one dangling conjunction in `skills/drawing/references/prompt-fidelity.md`.
+- Removed the misplaced Version 5 entry from `skills/INITIALIZATION_POLICY.md`. Its change history now contains Versions 1–4 only.
+
+These changes are in [ccf8c05](https://github.com/dungnv2602/chatgpt/commit/ccf8c055a99984f1c5ec1d835958e9b5afc14282). I fetched all changed source paths again from branch `gpt`. The task record and task board also reflect the resumed audit. The verification update is in [8265e95](https://github.com/dungnv2602/chatgpt/commit/8265e95faeecbc1644e7c48fe96045e5bf038cb5).
+
+The full audit log listed 60 long-sentence candidates. This batch addressed 13. Remaining work includes context review of the other candidates and synonym-rotation findings, external URL review, and historical-link review only with your authorization. The configured lint baseline total of 170 is a threshold, not a current lint result.
+
+I did not run lint or CI locally. I did not dispatch, rerun, wait for, or poll GitHub Actions. No CI result for the latest repair commits has been awaited. The audit remains In Progress.
+
+---
 
 ### 2026-11-20 14:35 UTC
 
