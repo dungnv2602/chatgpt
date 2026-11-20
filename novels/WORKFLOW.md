@@ -2,9 +2,9 @@
 
 **Current standard:** 1.1  
 **Applies to:** All novel projects stored in this repository  
-**Canonical workspace:** `novel/` on branch `gpt`
+**Canonical workspace:** `novels/` on branch `gpt`
 
-This document is the governing procedure for planning, structuring, writing, illustrating, revising, and maintaining a novel. The [workspace README](README.md) is the quick reference; the [Romantic Storyteller skill](../skills/romantic-storyteller-visual-artist/SKILL.md) supplies role-specific creative and visual procedures. Where this workflow and an older template disagree, use the current Version 1.1 template.
+This document is the governing procedure for planning, structuring, writing, illustrating, revising, and maintaining a novel. The [workspace README](README.md) is the quick reference. The [Romantic Storyteller skill](../skills/romantic-storyteller-visual-artist/SKILL.md) supplies role-specific creative and visual procedures. Where this workflow and an older template disagree, use the current Version 1.1 template.
 
 ## 1. Governing principles
 
@@ -12,7 +12,7 @@ This document is the governing procedure for planning, structuring, writing, ill
 2. **The novel record is the central story index and continuity authority.** Detailed information belongs in its appropriate child or support record.
 3. **Separate canon from proposals.** A suggestion, brainstorm, outline, draft, or unanswered question does not become approved story fact merely because it appears in a file.
 4. **Approval is scoped.** When the user approves a proposal, promote only the decision actually presented and approved. Keep implementation details, scene choices, and adjacent questions open unless they were also approved.
-5. **Do not force premature decisions.** Keep unresolved matters in the novel's `open-discussion.md`; revisit them when the next writing decision depends on them.
+5. **Do not force premature decisions.** Keep unresolved matters in the novel's `open-discussion.md`. Revisit them when the next writing decision depends on them.
 6. **Take creative responsibility when delegated.** Make low-risk craft decisions without asking the user to select every detail. Consult the user on consequential decisions that alter the premise, character identity, relationship direction, major plot causality, or ending.
 7. **Do not create empty structure.** Create records when the story needs them, not merely because a template exists.
 8. **Preserve provenance and truth.** Never claim that an image was generated, a reference was used, a file was stored, or an artifact was verified unless the relevant result supports that claim.
@@ -39,7 +39,7 @@ Use these terms consistently in prose and metadata:
 - **Partly Established:** the broad direction is established, but material components remain proposed or open.
 - **Proposed:** a suggested direction awaiting a decision.
 - **Open:** intentionally undecided.
-- **Superseded:** formerly approved or active, but replaced by a later decision. Preserve its history; do not continue treating it as current.
+- **Superseded:** formerly approved or active, but replaced by a later decision. Preserve its history. Do not continue treating it as current.
 
 A working outline may contain a mixture of approved premises and proposed scene beats. Label the state of each material section. Do not label an entire outline canon merely because its broad direction was approved.
 
@@ -50,7 +50,7 @@ When the user approves a proposal:
 1. Identify the exact scope of approval.
 2. Update the relevant detailed record.
 3. Update the novel-level summary/continuity record where the decision changes the novel's governing facts.
-4. Remove the resolved item from the open-question list or mark it resolved; retain genuinely open subquestions.
+4. Remove the resolved item from the open-question list or mark it resolved. Retain genuinely open subquestions.
 5. Add a dated decision/revision entry.
 6. Read back every changed file and verify the links and status.
 
@@ -88,7 +88,7 @@ A development outline is a planning aid, not a new hierarchy level. Examples inc
 - `novel.md` owns the novel-wide summary, master indexes, approved decisions, and continuity overview.
 - `open-discussion.md` owns unresolved questions and the record of what remains open. It links to proposals rather than duplicating entire outlines.
 - Character profiles own detailed character information; `novel.md` keeps the concise summary and link.
-- Development outlines own focused planning work; approved decisions are promoted to the novel or relevant arc/character record.
+- Development outlines own focused planning work. Approved decisions are promoted to the novel or relevant arc/character record.
 - `arc.md` owns arc-level design and indexes its scenes.
 - `scene.md` owns the actual scene prose and scene-specific continuity.
 - Illustration Notes describe the actual image; Prompt Records document how it was authored and generated.
@@ -99,24 +99,24 @@ Do not duplicate full scene prose in an arc or novel summary, full character bio
 
 Keep illustration documentation beside its scene, but store binary image assets in one central library per novel:
 
-`novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`
+`novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`
 
 Each retained illustration has two binary files beside one another: the original PNG/JPEG master and its WebP delivery derivative. The master is the source of truth; WebP is a separate derivative. Stable illustration IDs do not change when titles or filenames are refined.
 
 All user-uploaded images, whether novel or non-novel, first enter the single flat intake at `images/takeout/`. Incoming filenames may be arbitrary. The assistant inspects the image, determines its descriptive title and intended destination from the conversation and project records, and writes `images/takeout/HANDOFF.yml`. A novel-illustration entry identifies its `ILL-NNN` ID, title, exact uploaded filename, and destination directory under the appropriate novel asset library. Non-novel retained images use a destination under `images/`.
 
-The existing GitHub Action reads the hand-off; it does not infer image contents, IDs, or story destinations. It slugifies the supplied title, prefixes the optional stable ID, and converts PNG/JPEG to WebP. Before relocating anything, it writes each derivative to persistent staging under `images/takeout/webp/[batch-id]/attempt-NNN/`, appending `.webp` to the exact incoming filename (for example, `IMG_001.png.webp`). All staged files are validated before the original bytes are moved unchanged to the named master location and the staged WebPs are moved beside them. It refuses to overwrite an existing destination.
+The existing GitHub Action reads the hand-off. It does not infer image contents, IDs, or story destinations. It slugifies the supplied title, prefixes the optional stable ID, and converts PNG/JPEG to WebP. Before relocating anything, it writes each derivative to persistent staging under `images/takeout/webp/[batch-id]/attempt-NNN/`, appending `.webp` to the exact incoming filename (for example, `IMG_001.png.webp`). All staged files are validated before the original bytes are moved unchanged to the named master location and the staged WebPs are moved beside them. It refuses to overwrite an existing destination.
 
 Every attempt, successful or failed, produces an archived hand-off, `conversion-report.csv`, and `verification-report.md` under `images/takeout/history/[batch-id]/attempt-NNN/`. The report records source, staging, and final paths, sizes, encoder profile/version, SHA-256 values, and verification outcomes. Both `history/` and `webp/` are reserved and excluded from future intake detection. On success, the staged files move to their permanent destinations and the empty successful staging attempt directory is removed. On failure, original uploads and the ready hand-off remain available, and successfully converted WebPs stay in that attempt's staging folder for inspection. A retry uses a new attempt number and does not overwrite previous staging. The active hand-off is reset to empty only after every master and WebP is verified and the archived records have been written.
 
-For every stored illustration, link the central master and WebP paths from its Illustration Note and scene index. Keep the Illustration Note and Prompt Record in the scene-local `illustrations/` directory; do not store the image binary there.
+For every stored illustration, link the central master and WebP paths from its Illustration Note and scene index. Keep the Illustration Note and Prompt Record in the scene-local `illustrations/` directory. Do not store the image binary there.
 
 ## 4. File and folder conventions
 
 Use one folder per novel, one folder per arc, and one folder per scene.
 
 ```text
-novel/
+novels/
 ├── README.md
 ├── WORKFLOW.md
 ├── templates/
@@ -150,9 +150,9 @@ novel/
                 └── [Illustration-ID]-prompt.md
 ```
 
-The scene-local `illustrations/` folder stores documentation only. Image binaries use the central `assets/illustrations/[ARC-ID]/[SCN-ID]/` path shown above. All user uploads enter through `images/takeout/` and are routed by its structured hand-off; do not upload directly into a final asset directory.
+The scene-local `illustrations/` folder stores documentation only. Image binaries use the central `assets/illustrations/[ARC-ID]/[SCN-ID]/` path shown above. All user uploads enter through `images/takeout/` and are routed by its structured hand-off. Do not upload directly into a final asset directory.
 
-Only create the optional `planning/`, `characters/`, arc, scene, and illustration folders when they contain real records or assets. Existing projects may retain their current paths; use the standard structure for new records and migrate old paths only when useful and safe.
+Only create the optional `planning/`, `characters/`, arc, scene, and illustration folders when they contain real records or assets. Existing projects may retain their current paths. Use the standard structure for new records and migrate old paths only when useful and safe.
 
 ### 4.1 IDs and names
 
@@ -166,7 +166,7 @@ Use stable IDs:
 - Development outline: `OUT-001`
 - Decision: `DEC-001` (when a decision register needs stable references)
 
-IDs are unique within their project and do not change when a title or filename changes. Folder sequence labels may use `Arc-01` and `Scene-001`; the record itself retains its stable ID.
+IDs are unique within their project and do not change when a title or filename changes. Folder sequence labels may use `Arc-01` and `Scene-001`. The record itself retains its stable ID.
 
 Use descriptive, stable filenames and relative Markdown links. Update all inbound links and parent indexes when a file is moved or renamed.
 
@@ -177,8 +177,8 @@ Use descriptive, stable filenames and relative Markdown links. Update all inboun
 1. Create the novel folder only for a real project.
 2. Create `novel.md` and `open-discussion.md` from the current templates.
 3. Record the premise, intended genre, core reader experience, main characters, central relationship, stakes, and ending direction to the extent known.
-4. Mark the title, setting, character details, plot mechanics, and other undecided elements as open; do not invent them as facts.
-5. Establish stable IDs and link the project from `novel/README.md`.
+4. Mark the title, setting, character details, plot mechanics, and other undecided elements as open. Do not invent them as facts.
+5. Establish stable IDs and link the project from `novels/README.md`.
 
 **Foundation deliverable:** a usable novel foundation and an open-discussion register. A complete biography, world encyclopedia, or chapter plan is not a prerequisite.
 
@@ -231,10 +231,10 @@ For every planned illustration:
 2. Create its scene-local Illustration Prompt Record **before** the generation attempt.
 3. Record the exact authored prompt, acceptance criteria, references actually attached, and intended changes. Do not claim access to a hidden compiled payload.
 4. Generate/edit under the Drawing Skill's rules.
-5. Inspect each returned image separately against the brief; classify the result honestly.
+5. Inspect each returned image separately against the brief. Classify the result honestly.
 6. Create or update an Illustration Note for each generated image retained or reviewed as a scene deliverable. Record visible facts separately from interpretation.
 7. Record every attempt and outcome in the Prompt Record, including failed or partial attempts. Preserve the accepted baseline and the precise changes made in later attempts.
-8. For repository retention, place the uploaded image in `images/takeout/` and prepare its `HANDOFF.yml` entry with the incoming filename, descriptive title, stable illustration ID, and central asset destination. Do not rename or relocate the upload manually; the existing Action performs the validated master rename, WebP conversion, relocation, and verification.
+8. For repository retention, place the uploaded image in `images/takeout/` and prepare its `HANDOFF.yml` entry with the incoming filename, descriptive title, stable illustration ID, and central asset destination. Do not rename or relocate the upload manually. The existing Action performs the validated master rename, WebP conversion, relocation, and verification.
 9. Link the verified master and WebP assets, Illustration Note, Prompt Record, and scene. If an image is only conversation-delivered and not stored in the repository, state that plainly and do not invent a repository path.
 10. Update the scene's illustration index. A generated image does not create a new scene automatically.
 
@@ -260,15 +260,15 @@ A project is **Completed** only when the planned narrative has been delivered, t
 
 | User request | Normal deliverable | Do not create by default |
 |---|---|---|
-| Brainstorm or discuss | A direct response; optionally identify a proposal and its open points | New scene, arc, or image |
+| Brainstorm or discuss | A direct response. Optionally identify a proposal and its open points | New scene, arc, or image |
 | Save a decision or discussion | Updated `open-discussion.md` and relevant authoritative summary | Unrequested prose scene |
 | Develop a focused plot/relationship/world question | A Development Outline when a durable plan is useful, plus updated open questions | A locked arc or scene without approval |
-| Approve a proposal | Decision promoted to canon in relevant records; open subquestions retained | Approval of adjacent details not presented |
+| Approve a proposal | Decision promoted to canon in relevant records. Open subquestions retained | Approval of adjacent details not presented |
 | Plan a story arc | `arc.md`, scene sequence, parent index update | Full scene prose unless requested |
-| Write/continue/revise a specific scene | Complete `scene.md` prose and continuity updates; at least one illustration by default | A new arc or chapter unless needed |
+| Write/continue/revise a specific scene | Complete `scene.md` prose and continuity updates. At least one illustration by default | A new arc or chapter unless needed |
 | Explicit prose-only scene request | Complete scene prose and continuity updates | Image generation, prompt log, illustration note |
 | Request an illustration for an existing scene | Image generation/edit, prompt record, note, and scene index update | A new scene unless requested |
-| Character development | Update novel summary or character profile; optional development outline | A fixed biography from a passing possibility |
+| Character development | Update novel summary or character profile. Optional development outline | A fixed biography from a passing possibility |
 | Review/audit the novel workflow | Updated workflow documentation and affected templates/records | Story scenes or illustrations |
 
 Deliver only the records relevant to the task. Do not create an artifact just because a template exists.
@@ -303,15 +303,15 @@ Keep progress status separate from canon status.
 
 Use lowercase kebab-case equivalents in YAML frontmatter (for example,
 `ready-for-review` and `attempts-in-progress`). A template's own
-frontmatter status indicates the template's approval; when copying it, set
+frontmatter status indicates the template's approval. When copying it, set
 the new record's status to the appropriate starting state.
 
-Use a separate canon-state label when needed. A scene can be a drafted document containing provisional story details; its existence does not make every detail approved canon.
+Use a separate canon-state label when needed. A scene can be a drafted document containing provisional story details. Its existence does not make every detail approved canon.
 
 ## 8. Quality gates
 
 ### Story gate
-- The scene or arc changes something; it is not merely decorative.
+- The scene or arc changes something. It is not merely decorative.
 - Character choices arise from established motives and pressures.
 - Maya/AI characters retain agency and a distinct interiority where applicable.
 - Emotional development is earned through actions and consequences.
@@ -343,7 +343,7 @@ Use a separate canon-state label when needed. A scene can be a drafted document 
 Version 1.1 is the current standard. Version 1.0 templates remain in the repository as historical references for records created under that format.
 
 - Use Version 1.1 templates for new records.
-- When materially revising an existing record, migrate it to 1.1 if the revised structure is relevant; do not force a migration of untouched legacy records.
+- When materially revising an existing record, migrate it to 1.1 if the revised structure is relevant. Do not force a migration of untouched legacy records.
 - Never mass-rewrite completed scenes or approved artwork solely to change a template version.
 - If a template changes in a way that affects the workflow, update this document, `README.md`, and the Romantic Storyteller skill in the same change set.
 - Record format/version metadata in each document. Preserve stable IDs and approved content through migration.
@@ -352,10 +352,15 @@ Version 1.1 is the current standard. Version 1.0 templates remain in the reposit
 
 A documentation or story-record task is complete only when:
 
-- the correct artifact(s) are created or updated;
-- every new document uses the current template or documents a justified exception;
-- statuses distinguish draft, proposal, and approved material;
-- all affected parent and cross-document links are updated;
-- stale statements and contradictory instructions are removed;
-- files are fetched again from the target branch and the critical changes are verified;
+- the correct artifact(s) are created or updated
+- every new document uses the current template or documents a justified exception
+- statuses distinguish draft, proposal, and approved material
+- all affected parent and cross-document links are updated
+- stale statements and contradictory instructions are removed
+- files are fetched again from the target branch and the critical changes are verified
 - the final report names the updated files and any remaining open questions accurately.
+
+
+## Technical documentation standard
+
+Apply the repository [ASD-STE100 policy](../skills/asd-ste100/references/repository-writing-policy.md) when you revise this document. Use Strict mode for procedures. Preserve novel canon, approval scope, and narrative meaning.
