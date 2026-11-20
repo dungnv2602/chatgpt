@@ -14,6 +14,7 @@ from urllib.parse import unquote, urlsplit
 
 EXCLUDED_PREFIXES = (
     "archive/",
+    "lint_reports/",
     "workspace/tasks/",
     "workspace/discussion.md",
     "drawings/history/",
