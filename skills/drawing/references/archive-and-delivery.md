@@ -101,7 +101,7 @@ Capture provenance at generation time. Do not rely on retrospective image-to-att
 ### Archive and verify
 13. Archive every output regardless of approval. Preserve sequence, prompt association, direct links, and statuses. Use the established asset-intake procedure.
 14. Extend the session `manifest.csv` with one row per output. Include internal attempt and output IDs, native Generation ID, native image or output ID, mapping evidence and status, and original-byte availability. Preserve existing required columns. Leave unavailable native IDs empty or mark them unavailable.
-15. Reconcile generation records, attempt notes, README, manifest, and actual assets. Verify paths, links, and hashes only after you verify them. Read back all edited records.
+15. Reconcile generation records, attempt notes, README, manifest, and actual assets. Compare each path, link, and hash with its recorded value. Read back all edited records.
 16. Do not delay drawing for GitHub, hashing, or archive work. Generate the image and capture its output association immediately. Then complete metadata, hashing, archival, and verification.
 
 If capture or archival is incomplete, use a pending or incomplete status. Do not claim complete closeout.
