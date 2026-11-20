@@ -80,7 +80,7 @@ When the user says **`start session`** as an instruction, run this sequence befo
 
 **No task-type exception after activation:** Foundational initialization always requires the Drawing skill and its required references. This rule applies even when the first task is prose-only or unrelated to drawing. A prose-only exception for a task does not cancel this requirement. Do not load these files before the user says `start session`.
 
-**No premature-work exception after activation:** After the user invokes a foundational cue, do not begin project work until the required checks pass. Do not substitute memory, previous-session reads, Library copies, or readiness claims for fresh GitHub retrievals in this conversation.
+**No premature-work exception after activation:** After the user says `start session`, do not begin project work until the required checks pass. Do not substitute memory, previous-session reads, Library copies, or readiness claims for fresh GitHub retrievals in this conversation.
 
 **Notification and disconnection limitation:** Deliver the startup notice in the active conversation before retrieval begins. Do not promise to continue checks after a voice call ends or claim an independent callback/notification will occur. Complete and report the checks in the active conversation.
 
