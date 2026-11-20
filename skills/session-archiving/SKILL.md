@@ -438,10 +438,12 @@ Markdown table with exactly six fields:
    from the assistant's visual assessment. State whether the image was delivered
    only in conversation, no output was returned, storage is unverified, or
    approval was not recorded.
-6. **Image:** link the exact verified repository image for each successful
-   output. Until the successful output is uploaded and processed, write
-   `Waiting for image upload`. Use `—` for failed, rejected, superseded, partial,
-   pending, or unconfirmed results.
+6. **Image:** link every generated image output once its exact repository asset
+   is uploaded and verified, regardless of user approval or prompt compliance.
+   Include partial, off-target, superseded, and unapproved outputs. Approval is
+   recorded separately in field 5. If an image was generated but is not yet
+   uploaded, write `Waiting for image upload`. Use `—` only when no image was
+   returned or generated.
 
 Include every attempt, not only successful ones, and keep the rows in
 chronological order. The table is a compact navigation/status summary. Each
@@ -526,12 +528,13 @@ For an image the user supplies within a drawing session:
 4. Record the exact path, stable file/Library ID, source generation ID when
    known, original name, dimensions, byte size, checksum where available, and
    session-specific role in the session brief or attempt record.
-5. When the image is associated with a successful or user-approved non-novel
-   drawing output, include the attempt number in its `HANDOFF.yml` item as
-   `attempt: NN` and set the destination to
-   `drawings/YYYY-MM-DD/images`. After conversion and relocation succeed, the
-   takeout processor automatically adds the verified WebP link to the attempt
-   record and the matching README Image cell. Do not add a global
+5. For every generated non-novel drawing output retained in the repository,
+   include its attempt number in the `HANDOFF.yml` item as `attempt: NN` and
+   set the destination to `drawings/YYYY-MM-DD/images`. Do this whether the
+   user approved the result, rejected it, or has not reviewed it; user approval
+   does not control image linking. After conversion and relocation succeed,
+   the takeout processor automatically adds the verified WebP link to the
+   attempt record and matching README Image cell. Do not add a global
    reference-index link. Items without attempt metadata do not modify prompt
    records or daily ledgers.
 6. In conversation-integrity records, record the user's instruction/approval
@@ -682,8 +685,10 @@ flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
 - When `attempt: NN` is present for a destination under
   `drawings/YYYY-MM-DD/images`, the processor verifies the corresponding
   attempt record and six-column daily README, then writes the verified WebP
-  link into both. Multiple uploads may point to the same attempt. The GitHub
-  Action commits these Markdown changes together with the image masters,
+  link into both for every generated image, including partial, off-target,
+  superseded, and unapproved results. Approval is not a linking condition.
+  Multiple uploads may point to the same attempt. The GitHub Action commits
+  these Markdown changes together with the image masters,
   derivatives, and takeout reports. Items without `attempt` are not linked to
   prompt records.
 - Every successful or failed attempt is preserved under
