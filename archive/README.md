@@ -13,12 +13,12 @@ The Worker skill defines task completion and archival procedures.
 
 ## Retention policy
 
-GitHub Actions performs a **batch cleanup every 14 days**.
+GitHub Actions deletes archived task records in one batch every 14 days.
 
 - The cleanup is periodic, not a rolling per-record retention period.
 - On each due cleanup, delete the entire contents of `archive/tasks/`, regardless of each record's individual archive timestamp.
 - Preserve `.gitkeep` so the directory remains in the repository.
-- The workflow runs on the default branch, checks out `gpt`, performs the deletion there, and then fast-forwards `main` to the same commit.
+- The workflow runs on the default branch. It checks out `gpt`. It deletes the contents of `archive/tasks/`. It then fast-forwards `main` to the same commit.
 - The Worker must not scan or delete archived records during activation or task closeout.
 - Git history retains prior committed versions. This policy controls files in the current archive folder.
 
