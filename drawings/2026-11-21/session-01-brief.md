@@ -53,7 +53,7 @@ Scene 1 was approved by the user on 2026-11-21. The remaining five concepts are 
 - **Visual approach:** Realistic, naturalistic cinematic photography. Warm early-morning daylight, restrained color, lived-in contemporary apartment details, intimate medium close-up / three-quarter composition.
 - **Continuity constraints:** Stay within the Sweet Path. Use an original adult woman interpretation. Do not borrow from the Casual Path or imitate a film performer. The baseline image is unavailable, so do not claim exact facial, wardrobe, or pixel continuity; avoid inventing specific baseline-only details.
 - **Prompt record:** Attempt 09 at `drawings/2026-11-21/attempt-09.md` supersedes Attempt 08's generation approach. It uses the successful authored prompt from Sweet Path Attempt 07 as its continuity baseline.
-- **Generation result:** Attempt 08 Variant B remains archived as a selected output, but this redo is intended to correct the baseline-prompt choice. Attempt 09 generation is pending.
+- **Generation result:** Attempt 08 Variant B remains archived as a selected output, but this redo is intended to correct the baseline-prompt choice. Attempt 09 generated one variant; user review is pending.
 
 ## Permitted variation
 - Scene, pose, spatial relationships, camera framing, and environment may vary when selected by the user.
@@ -88,4 +88,4 @@ Scene 1 was approved by the user on 2026-11-21. The remaining five concepts are 
 - **2026-11-21 — User selected Sweet Path:** Adopt Attempt 07 as the visual baseline for this session. Use its realistic, naturalistic cinematic treatment and sweet emotional direction. Six candidate scenes were proposed.
 - **2026-11-21 — User approved Scene 1:** The user approved “A quiet morning together” as the next scene. Attempt 08 is the active prompt record. The complete prompt was archived and verified before generation.
 - **2026-11-21 — Attempt 08 generated:** Two variants were generated. The user selected Image B. The user then requested a redo using the successful Sweet Path baseline prompt.
-- **2026-11-21 — Attempt 09 prompt archived:** Attempt 09 uses Attempt 07's successful authored prompt as its continuity source, adapted to the already approved morning scene. The full prompt was read back before generation; generation is pending.
+- **2026-11-21 — Attempt 09 prompt archived and generated:** Attempt 09 uses Attempt 07's successful authored prompt as its continuity source, adapted to the approved morning scene. One variant was generated; see `drawings/2026-11-21/attempt-09.md` for its generation ID and review status.
