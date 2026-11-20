@@ -997,3 +997,15 @@ Calculate SHA-256 from the actual original image bytes whenever those bytes are 
 When the user supplies a downloaded image's SHA-256, compare it with the recorded checksum for the candidate archived original. A match verifies byte-identical files; a mismatch means the files are not byte-identical and must not be marked verified. Renaming or moving a file does not change its checksum; re-encoding, editing, resizing, or converting usually does. If a source original and a WebP derivative are both archived, calculate and record their checksums separately and do not compare them as if they were the same byte stream.
 
 README image links must point directly to the correct image asset and be checked against the repository path/blob before they are marked Verified. The manifest must not mark a URL or checksum Verified until the corresponding verification actually occurs. After archive changes, read back the README and manifest and reconcile every generated output against the chronological attempt record. Report any missing asset, link, prompt association, checksum, or verification explicitly.
+
+
+## Original-image SHA-256 identity and WebP derivatives (approved 2026-11-20)
+
+SHA-256 is mandatory **when the actual original generated image bytes are accessible immediately after generation**. Calculate the hash from those exact original bytes, never from a preview, screenshot, thumbnail, or recompressed copy. Record it against the session, attempt, prompt, and output ID before the user downloads the image. If original bytes are not accessible, state that the generation-time hash is unavailable; do not invent or calculate a hash from a substitute.
+
+
+When the user later uploads an unchanged original, the GitHub Action calculates SHA-256 from the uploaded original before conversion and compares it with the generation-time hash. A match establishes byte-for-byte identity and may verify the original-to-output mapping. A mismatch is a review flag—not an automatic rejection—because metadata alteration, recompression, or conversion may change bytes. Do not silently fall back to filenames or visual guessing to claim a verified match. Use metadata and image-content comparison only as separately documented fallback evidence, with conservative mapping status.
+
+The WebP is a derivative with different bytes and therefore is **not expected to match the original SHA-256**. The original hash remains the identity key for the output; record the derivative's path and link under the same output ID. A WebP SHA-256 is optional and only for independent derivative integrity checks. Never compare original PNG/JPEG hashes against converted WebP hashes as if equality were expected.
+
+The GitHub Action should automate original-hash calculation and matching, mapping validation, conversion, renaming/relocation, direct README and attempt-record links, manifest reconciliation, and verification reporting. Preserve existing upload filenames unchanged; filenames are not identity evidence. Do not claim implementation is present until the Action itself has been inspected and modified.
