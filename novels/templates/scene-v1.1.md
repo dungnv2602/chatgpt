@@ -65,10 +65,14 @@ status: approved
 |---|---|---|---|---|---|
 | | | | | | |
 
-The asset cell links to both binary files in the novel's central library at `[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. For example: [PNG master](../../assets/illustrations/ARC-001/SCN-001/ILL-001-shared-discovery.png) · [WebP](../../assets/illustrations/ARC-001/SCN-001/ILL-001-shared-discovery.webp). Keep the Illustration Note and Prompt Record in this scene's `illustrations/` folder; do not store binary images there.
+The asset cell must link to both binary files in the novel's central library. Use this path: `[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`.
+
+Example: [PNG master](../../assets/illustrations/ARC-001/SCN-001/ILL-001-shared-discovery.png) and [WebP](../../assets/illustrations/ARC-001/SCN-001/ILL-001-shared-discovery.webp).
+
+Keep the Illustration Note and Prompt Record in this scene's `illustrations/` folder. Do not store binary images there.
 
 ## 10. Scene Prose
-Write the complete, polished scene here. Include narrative prose, dialogue, action, sensory detail, and subtext. This section is the actual scene, not a synopsis or beat list.
+Write the complete, polished scene here. Include narrative prose, dialogue, action, sensory detail, and subtext. This section contains the actual scene, not a synopsis or beat list.
 
 [Scene prose begins]
 
