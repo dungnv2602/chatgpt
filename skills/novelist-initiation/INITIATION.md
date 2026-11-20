@@ -144,7 +144,7 @@ If the user's instruction already includes a writing task, begin that task after
 - Novel records: `novels/`
 - Visual references and assets: `images/`
 - Skills: `skills/`
-- Prompt history and session records: `prompts/`
+- Prompt history and session records: `drawings/`
 
 Fetch each target file before you update it. Preserve unrelated content.
 
