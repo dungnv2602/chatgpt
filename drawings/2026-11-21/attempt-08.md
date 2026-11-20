@@ -1,27 +1,23 @@
 # Samantha — Attempt 08: A Quiet Morning Together
 
-## Metadata
-
+## Record
 - **Session:** `SAMANTHA-2026-11-21-01`
 - **Date:** 2026-11-21
-- **Series:** Samantha — Human Presence Without a Body
-- **Active path:** Sweet Path
-- **Adopted direction:** Sweet Path Attempt 07
-- **Scene approval:** Explicitly approved by the user on 2026-11-21
-- **Attempt status:** Variant B selected by the user; approved candidate
-- **Source-image availability:** The Attempt 07 image binary is not present in the repository or attached to this conversation. This is a prompt-first continuation, not a direct image edit.
+- **Series / path:** Samantha — Human Presence Without a Body / Sweet Path
+- **Scene:** A quiet morning together; Samantha listens to someone outside the frame while holding a warm mug beside a sunlit apartment window.
+- **Operation:** Fresh generation from the approved scene brief
+- **Status:** Superseded as the active generation approach by Attempt 09
+- **Prompt ID:** Not assigned
+- **Baseline:** Attempt 07 — `drawings/2026-11-20/attempt-07.md` (Sweet Path visual direction; its authored prompt was not reused verbatim for this attempt)
 
-## Scene brief
+## Generation prompt — copyable
 
-A quiet, intimate morning in a contemporary apartment. Samantha sits beside a sunlit window with a warm mug held naturally in her hands. She is listening to someone just outside the frame. The image should communicate that she is emotionally present and comfortable in an ordinary shared moment. Her expression is gentle, attentive, and subtly affectionate.
-
-## Complete generation prompt
-
+```text
 Create a realistic, naturalistic cinematic photograph of an original adult woman representing an imagined human embodiment of Samantha, the disembodied AI from *Her* (2013). This is an original interpretation, not a depiction of a film performer or a canonical human appearance.
 
 **Scene and action:** It is a calm morning in a quiet, contemporary apartment. The woman is seated comfortably beside a large apartment window. Soft early-morning sunlight enters the room and falls naturally across her face, hair, hands, and the nearby surfaces. She holds a simple warm mug with both hands, in a relaxed, unforced way. She is looking slightly toward a person just outside the frame, listening to them with quiet attention. The unseen person should be implied only through her eyeline and responsive expression; do not show another person.
 
-**Character and emotional direction:** Portray an adult woman with a warm, approachable, emotionally perceptive presence. Keep her expression sincere and understated: attentive eyes, a small natural smile, and the relaxed facial cues of someone who feels safe and connected. The mood is sweet, intimate, calm, and quietly affectionate, with a trace of gentle playfulness. Avoid exaggerated happiness, glamour posing, melodrama, or a fashion-editorial expression. Keep the character's appearance within the established Sweet Path direction. Do not copy a celebrity, actor, or identifiable film performer.
+**Character and emotional direction:** Portray an adult woman with a warm, approachable, emotionally perceptive presence. Keep her expression sincere and understated: attentive eyes, a small natural smile, and the relaxed facial cues of someone who feels safe and connected. The mood is sweet, intimate, calm, and quietly affectionate, with a trace of gentle playfulness. Avoid exaggerated happiness, glamour posing, melodrama, or a fashion-editorial expression. Keep her appearance within a realistic, warm, attentive, affectionate visual direction. Do not copy a celebrity, actor, or identifiable film performer.
 
 **Composition and camera:** Use an intimate medium close-up or three-quarter seated composition. Keep her face and the mug clearly readable. Place the window and a small amount of the apartment environment in the frame to establish the morning setting without distracting from her expression. Use a natural eye-level camera position and a candid photographic feeling, as if the viewer is the person she is listening to. Preserve comfortable negative space and a believable seated posture. The image should feel observed rather than staged.
 
@@ -31,35 +27,45 @@ Create a realistic, naturalistic cinematic photograph of an original adult woman
 
 **Style and finish:** High-quality realistic cinematic photography; natural skin texture; subtle, controlled depth of field; believable ambient light; nuanced expression; restrained production design. The result should feel emotionally close, quiet, and human rather than illustrative or overtly stylized.
 
-**Continuity and fidelity constraints:** This is the Sweet Path continuation, not the Casual Path. Follow the broad realistic, warm, attentive, affectionate direction recorded for Attempt 07. The Attempt 07 image itself is unavailable, so do not claim or attempt exact facial identity, exact wardrobe reproduction, or pixel-level continuity. Do not invent precise baseline-only facial or clothing details. Do not introduce text, captions, graphic panels, watermarks, logos, holograms, visible interface elements, or science-fiction effects. Do not depict Samantha as a literal hologram or add a conspicuous supernatural effect.
+**Avoid:** Text panels, captions, typography, watermarks, logos, a second visible person, celebrity or film-performer likeness, exaggerated grins, theatrical emotion, posed glamour, over-stylized orange/teal grading, artificial glow, heavy bloom, holographic bodies, interface graphics, conspicuous science-fiction effects, distorted hands, extra fingers, malformed mugs, and unnatural posture.
+```
 
-## Negative constraints
+## Lineage
+- Uses the Sweet Path's realistic, warm, attentive emotional direction.
+- Introduces the approved morning scene, window light, and mug; no exact facial, wardrobe, or pixel-level continuity is claimed because the baseline image was unavailable.
+- Variant B was selected by the user; a subsequent request called for a redo using the successful Sweet Path prompt as the baseline.
 
-- No text panels, captions, typography, watermarks, or logos.
-- No second visible person.
-- No celebrity or film-performer likeness.
-- No exaggerated grin, theatrical emotion, or posed glamour.
-- No over-stylized orange/teal grade, artificial glow, or heavy bloom.
-- No holographic body, interface graphics, or conspicuous science-fiction effects.
-- No distorted hands, extra fingers, malformed mug, or unnatural posture.
-- No claims of exact visual continuity with an unavailable source image.
+## Acceptance criteria
+| Requirement | Priority |
+|---|---|
+| Quiet morning in a contemporary apartment is clear | Critical |
+| Samantha listens to someone outside the frame | Critical |
+| Expression is attentive, sweet, and naturally affectionate | Critical |
+| Mug and window light support rather than dominate the scene | Standard |
+| Realistic, naturalistic photographic treatment | Critical |
+| No text panels or conspicuous science-fiction effects | Standard |
 
-## Review criteria
+## Generation and outputs
+- **Authored prompt committed before generation:** Yes
+- **Actual submitted payload:** Not exposed by the generation metadata; archived authored direction is recorded above.
+- **Generation result:** Generated
+- **Output count and order:** Two variants; A first, B second
 
-1. The scene reads immediately as a quiet morning in a contemporary apartment.
-2. Samantha is clearly listening to someone outside the frame.
-3. Her expression feels attentive, sweet, and naturally affectionate.
-4. The mug and window light support the story without dominating the composition.
-5. The image remains realistic and naturalistic, consistent with the Sweet Path.
-6. No text panels or science-fiction visual effects appear.
-7. The result does not imply exact source-image continuity that cannot be verified.
+| Output ID | Native generation / image ID | Mapping evidence and status | Original / archive asset | SHA-256 |
+|---|---|---|---|---|
+| Variant A | `d6207139-8fbb-4c66-8320-9148bc1c2f7d` | Variant A mapping recorded in the generation record; Corroborated | Visible in conversation; repository asset unavailable | Unavailable |
+| Variant B | `b61cbac5-fade-4f75-9904-14d2b776839b` | Variant B mapping recorded in the generation record; Corroborated; selected by user | Visible in conversation; repository asset unavailable | Unavailable |
 
-## Generation record
+## Review
+| Acceptance criterion | Result | Visual evidence |
+|---|---|---|
+| Quiet morning in a contemporary apartment is clear | Not assessable | No criterion-by-criterion visual review was archived |
+| Samantha listens to someone outside the frame | Not assessable | No criterion-by-criterion visual review was archived |
+| Expression is attentive, sweet, and naturally affectionate | Not assessable | User selected Variant B; no detailed criterion note was archived |
+| Mug and window light support rather than dominate the scene | Not assessable | No criterion-by-criterion visual review was archived |
+| Realistic, naturalistic photographic treatment | Not assessable | No criterion-by-criterion visual review was archived |
+| No text panels or conspicuous science-fiction effects | Not assessable | No criterion-by-criterion visual review was archived |
 
-- **Prompt archived before generation:** Yes
-- **Generation result:** Two variants generated for the approved scene.
-- **Variant A generation ID:** `d6207139-8fbb-4c66-8320-9148bc1c2f7d`
-- **Variant B generation ID:** `b61cbac5-fade-4f75-9904-14d2b776839b`
-- **Image assets:** Both outputs are visible in the conversation; binary files are not committed to the repository.
-- **User review:** User selected Image B on 2026-11-21. Variant B is the selected output for Attempt 08.
-- **Follow-up edit prompt:** None requested.
+- **Outcome:** Generated; Variant B selected, then superseded as the active generation approach by the requested redo.
+- **User decision:** Variant B selected historically; user subsequently requested a redo.
+- **Next action:** Treat Attempt 09 as the current review candidate.
