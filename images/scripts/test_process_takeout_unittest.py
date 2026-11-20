@@ -127,13 +127,18 @@ class TakeoutProcessorTests(unittest.TestCase):
         session = self.root / "drawings/2026-11-19"
         session.mkdir(parents=True)
         attempt_record = session / "attempt-01.md"
-        attempt_record.write_text("# Attempt 01 — Approved portrait\n", encoding="utf-8")
+        attempt_record.write_text(
+            "# Attempt 01 — Partial unapproved portrait\n\n"
+            "- **Outcome:** Generated, but the requested visual target was only partially met.\n"
+            "- **User approval:** Not approved; user review pending.\n",
+            encoding="utf-8",
+        )
         readme = session / "README.md"
         readme.write_text(
             "# Drawing session\n\n"
             "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
             "|---|---|---|---|---|---|\n"
-            "| [01 — Approved portrait](attempt-01.md) | Session | Standalone | Generated successfully | User approved | Waiting for image upload |\n",
+            "| [01 — Partial unapproved portrait](attempt-01.md) | Session | Standalone | Generated; partial result | User review pending | Waiting for image upload |\n",
             encoding="utf-8",
         )
         (self.inbox / "portrait.png").write_bytes(b"portrait-original")
@@ -161,6 +166,8 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertIn("[approved-portrait.webp](images/approved-portrait.webp)", attempt_text)
         self.assertIn("[approved-portrait.webp](images/approved-portrait.webp)", readme_text)
         self.assertNotIn("Waiting for image upload", readme_text)
+        self.assertIn("User review pending", readme_text)
+        self.assertIn("Generated; partial result", readme_text)
 
         with (self.inbox / "history/batch-session-link/attempt-001/conversion-report.csv").open(encoding="utf-8") as handle:
             row = next(csv.DictReader(handle))
