@@ -270,3 +270,13 @@ Use this template:
 ---
 
 **Maintenance rule:** Update this file when the initialization policy, cues, dependencies, or verification requirements change. Keep operational instructions in their authoritative files.
+
+### Version 10 — Workspace root renamed to drawings
+
+- **Date:** 2026-11-20
+- **Requested change:** Replace the former `prompts/` workspace root with `drawings/`.
+- **Reason:** The workspace folder was renamed.
+- **Behavioral impact:** Session records, session briefs, non-novel prompt histories, and drawing assets now use paths under `drawings/`. The approved roots are `images/`, `master/`, `novels/`, `drawings/`, and `skills/`.
+- **Files modified:** `skills/INITIALIZATION_POLICY.md`, `skills/session-archiving/SKILL.md`, `skills/session-archiving/references/archive-records-and-image-prompts.md`, `skills/drawing/SKILL.md`, `skills/SESSION_START.md`, and `skills/novelist-initiation/INITIATION.md`.
+- **Verification:** Updated files were fetched from branch `gpt` after each write. Directory listings confirmed that `drawings/`, `drawings/history/`, and `drawings/2026-11-20/` exist. The prior root name `prompts/` is no longer used as a workspace path in the revised policy files.
+- **Commits:** 70c2148b6cd72be0085ab69129c86b0ce1020993 and 2ec76f3eda760d6332ec94d579c731c1fe1712e0.
