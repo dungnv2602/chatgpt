@@ -53,7 +53,7 @@ Reuse foundational files that you verified in the current conversation. Do not t
 
 `skills/agent-skill-authoring/SKILL.md` is a required foundational skill. Load it during foundational initialization.
 
-Use it when you create, revise, validate, or integrate a skill. It defines this repository's implementation of the Agent Skills format.
+Use it when you create, revise, check, or integrate a skill. It defines this repository's implementation of the Agent Skills format.
 
 ### ASD-STE100 technical writing
 
