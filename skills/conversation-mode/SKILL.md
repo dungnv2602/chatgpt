@@ -130,7 +130,7 @@ Whenever you create or change a skill in GitHub:
 
 Before you use a Library skill copy, verify that it matches the current GitHub version. If it differs, use the verified GitHub version. Repair the Library mirror when the required file operations are available.
 
-Do not remove or overwrite a conflicting Library item until you check its identity and contents. Preserve unrelated Library artifacts, including archives and ZIP packages, unless the user explicitly asks you to replace or remove them.
+Do not remove or overwrite a conflicting Library item until you verify its identity and contents. Preserve unrelated Library artifacts, including archives and ZIP packages, unless the user explicitly asks you to replace or remove them.
 
 This synchronization is an explicit workflow requirement. It does not mean that GitHub and the ChatGPT Library sync automatically in the background.
 
