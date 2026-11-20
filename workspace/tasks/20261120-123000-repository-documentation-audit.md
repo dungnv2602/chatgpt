@@ -102,6 +102,16 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Verification:** Checked the current wrapper against the current branch tree. All 17 remaining baseline paths exist. The aggregate baseline is a configured threshold, not a current lint result.
 - **Next:** Continue the review of supported lint findings. Do not report the current lint count until the official linter runs.
 
+### 2026-11-20 13:03 UTC
+
+- **Action:** Reviewed lint and active-link validation scope for archived task records.
+- **Finding:** The full lint workflow and changed-file workflow included `archive/tasks/`. The active-link checker also scanned archived records as source files. These records are historical snapshots. The audit task prohibits edits to them without user authorization.
+- **Decision:** Exclude `archive/tasks/` from full and incremental lint source sets and from active link-source scans. Keep archived Markdown files in the link-target inventory. Keep `archive/README.md` in the active documentation scope.
+- **Changed paths:** `.github/workflows/ste-lint-full-docs.yml`, `.github/workflows/ste-lint-changed.yml`, `skills/asd-ste100/scripts/check_markdown_anchors.py`, and `skills/asd-ste100/references/repository-writing-policy.md`.
+- **Commits:** Full workflow `6a8fb7886a5c47cb9f0b3fb484d5025c517b02d8`; changed workflow `a87d2c1e8b81f7844500ee5e638c19b7310c687e`; link checker `ea32a73d0e01ac48ecc8b39d3984c85d283acf15`; writing policy `f9ca178b721df1d086ac7e741405c5e8dec23788`.
+- **Read-back:** Fetched all four paths from branch `gpt`. Confirmed that both lint modes and the active-link checker exclude archived task records as sources. Confirmed that the policy keeps those files available as link targets.
+- **Next:** Continue reviewing current in-scope technical documentation and validation coverage. Do not edit archived task records.
+
 ## 7. Current State
 
 The historical Version 19 inventory contained 166 Markdown files and 119 active source files. The Version 17 count of 121 used the same exclusions except for `skills/asd-ste100/examples/`. That directory contained two Markdown files, which explains the exact difference.
@@ -110,7 +120,7 @@ The current branch contains 176 Markdown files. The same Version 19 source-file 
 
 The Version 19 full lint reported 179 hard findings and 300 advisory findings. Those are historical results, not a fresh result for the current branch. The linter wrapper now has 17 baseline entries totaling 170. Every entry maps to an existing file. The historical 179-point threshold fell by four when two active-file baselines cleared. It fell by five when two deleted-file baselines were removed. The 170-point total is a configured threshold, not a current lint result.
 
-The active-link scan at Version 19 found zero unresolved local Markdown targets or heading anchors in its 119-file source scope. The historical-link review and external URL review remain open. No fresh full lint has run.
+The active-link scan at Version 19 found zero unresolved local Markdown targets or heading anchors in its 119-file source scope. Current validation now excludes `archive/tasks/` as a source while retaining archived files as link targets. The historical-link review and external URL review remain open. No fresh full lint has run.
 
 ## 8. Remaining Work
 
