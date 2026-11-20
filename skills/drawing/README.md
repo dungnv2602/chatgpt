@@ -39,6 +39,8 @@ proven-baseline recovery**, **E2.2 Documented silk-wrap recovery case**, and
 Section F's garment-construction checks for the full procedure.
 
 ## Files
+- `SKILL.md` — core Agent Skill instructions and workflow.
+- `references/patterns/` — canonical successful-pattern and failure-pattern indexes, plus entry templates. Consult the relevant entries at the beginning of each drawing session and before relevant attempts; reuse already-reviewed content and refresh only when a relevant pattern file changes or a refresh is requested.
 - `SKILL.md` — core instructions and workflow.
 - `references/style-guide.md` — visual style definitions and distinctions.
 - `references/image-editing-protocol.md` — source handling and edit verification.
