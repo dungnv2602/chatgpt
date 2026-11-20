@@ -20,7 +20,7 @@ The chronological logs remain the canonical source for full prompt wording and a
 The operational consultation checkpoint lives in
 [Drawing Skill](../../SKILL.md). The complete prompt-fidelity
 standard is maintained in the dedicated
-[Prompt Fidelity and Unrequested Restrictions note](../prompt-fidelity.md);
+[Prompt Fidelity and Unrequested Restrictions note](../prompt-fidelity.md)
 that note is the authoritative, exhaustive rule for prompt drafting, revision,
 and pre-generation review. This index remains the library's navigation and
 governance reference. Do not repeatedly reread the full library when the
