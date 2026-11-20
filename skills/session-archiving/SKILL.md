@@ -25,7 +25,7 @@ This boundary applies to every future task and every tool call, not only archivi
 - Read and write files only by exact paths beginning with one of those approved directory names.
 - Do not recreate the obsolete `ChatGPT/` wrapper or consult former paths from the previous repository layout.
 - Do not use repository-wide code search or recursive root-tree listings. Use exact paths and narrowly scoped directory listings within approved project directories.
-- Do not follow Markdown links outside the approved directories. If an essential reference is outside them and is not supplied in the current conversation, explain the limitation and ask the user to place it in the appropriate approved directory or provide it in chat.
+- Do not follow Markdown links outside the approved directories. If an essential reference is outside them and is not supplied in this conversation, explain the limitation. Ask the user to place it in an approved directory or provide it in chat.
 - A request to use an outside reference does not silently change this boundary. Obtain explicit permission before accessing an outside repository path.
 - Repository and branch identifiers may be used to direct GitHub operations, but this does not authorize reading or writing files outside the approved directories.
 
@@ -55,17 +55,17 @@ During foundational initialization, read the [Conversation Mode skill](../conver
 
 ### Foundational skill loading cadence
 
-Load the Session Archiving, Conversation Mode, Agent Skill Authoring, ASD-STE100, Drawing, and required Drawing reference files only when the user invokes `Follow instructions` or `Be the novelist`, as defined in `skills/SESSION_START.md`. Load each required foundational file once during that conversation's foundational initialization and apply the verified instructions for the remainder of that conversation. Do not load these files automatically at the beginning of a new chat. Refresh a foundational file when the user explicitly asks, a relevant repository change is known or reasonably suspected, or an unresolved instruction requires checking the authoritative file. A new ChatGPT conversation/session starts a new loading cycle. This cadence does not remove the requirement to load a task-specific skill when needed or to read relevant project records before performing that task.
+Load the Session Archiving, Conversation Mode, Agent Skill Authoring, ASD-STE100, Drawing, and required Drawing references only when the user invokes an explicit initialization cue. See `skills/SESSION_START.md` for the cues.\n\nLoad each required foundational file once during that conversation's foundational initialization. Apply its verified instructions for the rest of that conversation. Do not load these files automatically at the start of a new chat.\n\nRefresh a foundational file when the user asks. Also refresh it when you know or suspect a relevant repository change. Refresh it when an unresolved instruction requires the authoritative file.\n\nA new ChatGPT conversation starts a new loading cycle. This cadence does not remove the requirement to load a task-specific skill when needed. It also does not remove the requirement to read relevant project records before that task.
 
 ### First-response execution rule
 
-The first assistant response after the user invokes an explicit foundational initialization cue must be an informational startup notice, not a request for the user's goal, confirmation, or additional permission. Immediately after that notice, execute the required retrievals below. Do not ask the user to repeat or explain the activation cue. Do not claim a check is underway unless its retrieval is actually being performed.
+The first assistant response after an explicit foundational initialization cue must be a startup notice. It must not ask for the user's goal, confirmation, or more permission.\n\nAfter the notice, perform the required retrievals below. Do not ask the user to repeat or explain the cue. Do not claim that a check is underway unless you are performing its retrieval.
 
 The startup gate is a prerequisite check, not the session archive itself. Do not create or update dated archive records merely because a new conversation has started. Once the required skills and references have been retrieved and read successfully, report verification and then address the user's request. If a retrieval fails, stop project work and identify the exact missing path.
 
 ### Mandatory session-start execution gate
 
-Whenever the user invokes **`Follow instructions`** or **`Be the novelist`**, complete this sequence as the foundational prerequisite before doing the requested project work, creative writing, visual planning, image prompting, or specialist initialization:
+When the user invokes **`Follow instructions`** or **`Be the novelist`**, run this sequence before project work or specialist initialization:
 
 1. **Notify the user first.** State that the requested foundational checks are starting. Do not begin project work until they pass.
 2. Retrieve and read this Session Archiving skill from branch `gpt`.
@@ -77,9 +77,9 @@ Whenever the user invokes **`Follow instructions`** or **`Be the novelist`**, co
 8. Verify that every required retrieval succeeded. Confirm that you read each file. Keep the verified instructions for the rest of the conversation.
 9. Report completion only after every check passes. If a required retrieval fails, report its exact path and stop project work.
 
-**No task-type exception after activation:** Once the user invokes foundational initialization, the Drawing skill and its required references are mandatory even when the first task appears prose-only or unrelated to drawing. A task-specific prose-only exception does not cancel this requirement. This rule does not authorize automatic loading before an explicit cue.
+**No task-type exception after activation:** Foundational initialization always requires the Drawing skill and its required references. This rule applies even when the first task is prose-only or unrelated to drawing. A prose-only exception for a task does not cancel this requirement. Do not load these files before an explicit cue.
 
-**No premature-work exception after activation:** Once the user invokes a foundational initialization cue, do not begin the requested project task while required checks are pending. Do not substitute memory, a previous-session load, a Library copy, or a claim of readiness for fresh GitHub retrievals in the current conversation.
+**No premature-work exception after activation:** After the user invokes a foundational cue, do not begin project work until the required checks pass. Do not substitute memory, previous-session reads, Library copies, or readiness claims for fresh GitHub retrievals in this conversation.
 
 **Notification and disconnection limitation:** Deliver the startup notice in the active conversation before retrieval begins. Do not promise to continue checks after a voice call ends or claim an independent callback/notification will occur. Complete and report the checks in the active conversation.
 
@@ -106,7 +106,7 @@ This gate does not guarantee future execution. Verify compliance through retriev
 
 ## 4. Archive records and drawing prompts
 
-When creating conversation-integrity records, summaries, drawing-session briefs, prompt records, attempt ledgers, or image mappings, load [Archive Records and Drawing-Prompt Procedures](references/archive-records-and-image-prompts.md). That reference contains the complete templates, required fields, and detailed procedures. Do not improvise or omit required records.
+For conversation-integrity records, summaries, drawing-session briefs, prompt records, attempt ledgers, or image mappings, load [Archive Records and Drawing-Prompt Procedures](references/archive-records-and-image-prompts.md). It contains the templates, required fields, and procedures. Do not omit required records.
 
 ## 7. GitHub write and verification discipline
 
@@ -138,7 +138,7 @@ Start by reading the relevant session records inside `prompts/` and, when contin
 
 ## 10. WebP delivery derivatives
 
-For image conversion, original-image preservation, SHA-256 identity, provenance mapping, or WebP delivery, load [Image Provenance and WebP Delivery](references/image-provenance-and-webp.md). Never substitute a derivative hash for the original-generation identity or claim verification without read-back evidence.
+For image conversion, original-image preservation, SHA-256 identity, provenance mapping, or WebP delivery, load [Image Provenance and WebP Delivery](references/image-provenance-and-webp.md). Never use a derivative hash as the original-generation identity. Never claim verification without read-back evidence.
 
 ## 11. Image-processing scripts
 
