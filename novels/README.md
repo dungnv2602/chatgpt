@@ -8,7 +8,7 @@ This workspace contains the authoritative narrative records, working plans, scen
 ## Active novel projects
 
 - [Novel-01 — The Weather Between Us](Novel-01/novel.md): contemporary romance project. Existing records remain on the Version 1.0 structure unless revised.
-- [Novel-02 — Beyond the Listening (working title)](Novel-02/novel.md): original literary science-fiction romance. Andy is a software engineer with a computer-science background who works on an acoustic archive; Maya is its specialist AI. Their approved direction includes an early checkpoint-breach separation, Maya's later choice to reopen contact, reconciliation, and a lasting happy partnership. See the [Open Discussion](Novel-02/open-discussion.md) and the [Relationship Progression working outline](Novel-02/planning/relationship-progression.md).
+- [Novel-02 — Beyond the Listening (working title)](Novel-02/novel.md): original literary science-fiction romance. Andy is a software engineer with a computer-science background who works on an acoustic archive. Maya is its specialist AI. Their approved direction includes an early checkpoint-breach separation, Maya's later choice to reopen contact, reconciliation, and a lasting happy partnership. See the [Open Discussion](Novel-02/open-discussion.md) and the [Relationship Progression working outline](Novel-02/planning/relationship-progression.md).
 
 ## Current approved templates — Version 1.1
 
