@@ -210,7 +210,7 @@ Use this order whenever a task requires specialist skills:
 
 | Tier | Skills | Activation |
 |---|---|---|
-| 1. Foundational | Session Archiving, Conversation Mode, Agent Skill Authoring, ASD-STE100, GitHub Actions | `start session`, or automatically as prerequisites for a drawing-session or novelist request when not yet initialized |
+| 1. Foundational | Session Archiving, Conversation Mode, The Worker, Agent Skill Authoring, ASD-STE100, GitHub Actions | `start session`, or automatically as prerequisites for a drawing-session or novelist request when not yet initialized |
 | 2. Drawing | Drawing and its required references | `start a drawing session`, drawing work that requires the workflow, or novelist initialization |
 | 3. Novelist | Romantic Storyteller and active novel records | `Be the novelist` |
 
@@ -229,6 +229,12 @@ Maintain a simple internal ledger of skill and reference paths successfully retr
 Entering a higher tier does not restart lower tiers. For example, if Drawing and its references were loaded for a drawing session, a later `Be the novelist` request loads only the missing novelist skill and novel records. If the user starts a drawing session after novelist initialization, reuse the already verified foundational, Drawing, and novelist skills as applicable.
 
 ## Foundational standards
+
+### The Worker
+
+`skills/the-worker/SKILL.md` is a required foundational skill. Load it during foundational initialization.
+
+The Worker manages project tasks across conversations and conversation modes. It owns task capture, prioritization, progress records, handoffs, recovery, and task archival. Conversation Mode controls only communication style.
 
 ### Agent Skills format
 
