@@ -21,19 +21,15 @@ This file does not replace an operational skill or initiation procedure.
 
 Initialization is conditional. Do not load project instructions or skills at the start of a new conversation.
 
-Wait for an explicit cue:
+The only session-start cue is `start session`. Read `skills/SESSION_START.md` and follow its complete procedure when the user gives that cue as an instruction.
 
-| Cue | Required behavior |
-|---|---|
-| `Follow instructions` | Read `skills/SESSION_START.md`. Complete the foundational execution gate. Do not activate a specialist role. |
-| `Be the novelist` | Complete foundational initialization first. Then load `skills/novelist-initiation/SKILL.md` and follow its canonical procedure in `skills/SESSION_START.md`. |
-| Both cues | Complete foundational initialization once. Then complete novelist initialization. |
+A specialist-role request does not start a session. Initialize a specialist role only after foundational initialization passes in the current conversation.
 
 ## Operating rules
 
 - Do not initialize automatically.
-- Do not ask the user to give both cues when `Be the novelist` is sufficient.
-- Load only the files required by the selected initialization path.
+- Do not treat specialist-role requests as session-start cues.
+- Load only the files required by the session-start procedure or the requested specialist task.
 - Do not load unrelated skills or references.
 - Report the exact path of a missing or unverified file.
 - Do not claim initialization is complete until every required check passes.
@@ -61,50 +57,7 @@ The Agent Skill Authoring skill governs skill structure, metadata, validation, a
 Use this text when configuring the repository's project instructions:
 
 ```text
-Repository: "dungnv2602/chatgpt"
-Branch: "gpt"
-
-Initialization is conditional. Do not load project instructions or skills at the start of a new conversation.
-
-Wait for an explicit cue:
-
-1. "Follow instructions"
-   - Read "skills/SESSION_START.md".
-   - Complete its foundational execution gate.
-   - Do not activate a specialist role.
-
-2. "Be the novelist"
-   - Complete foundational initialization first.
-   - Load "skills/novelist-initiation/SKILL.md".
-   - Follow its canonical procedure in the "Be the novelist" section of "skills/SESSION_START.md".
-   - Do not require me to give "Follow instructions" first.
-
-3. Both cues
-   - Complete foundational initialization once.
-   - Then complete novelist initialization.
-
-Do not load unrelated skills or references.
-Report the exact path of any missing or unverified file.
-Do not claim initialization is complete before all checks pass.
-
-CI checkpoint policy:
-- Do not wait for CI during the task that triggers it.
-- Do not poll in-progress runs repeatedly.
-- At task completion, report relevant run IDs and mark incomplete runs as pending.
-- At the start of the next user turn, check all pending runs before other work.
-- If a run is still in progress, report its status and continue without waiting.
-- If a run failed, inspect its logs and address the failure when relevant.
-- Report a run as passed only when GitHub reports success.
-- Keep pending run IDs in the conversation handoff. Remove each ID only after you check its final result.
-
-Use "skills/asd-ste100/SKILL.md" for all skill documentation and technical documentation.
-Use "skills/github-actions/SKILL.md" for GitHub Actions workflow design, optimization, security, and verification.
-Use Strict mode for operational instructions.
-Use STE-flavored mode for technical explanations and READMEs.
-Preserve meaning, conditions, scope, and modality.
-Do not apply the standard to creative writing or approved creative prompts.
-
-The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of truth for project files, skills, prompts, references, and archives.
+Use "skills/SESSION_START.md" as the sole source of session-start instructions, and initialize only when I say "start session".
 ```
 
 ## Design principles
@@ -484,3 +437,12 @@ Use this template:
 - **Behavioral impact:** Do not wait for or repeatedly poll current-task runs. Check pending runs at the start of the next user turn.
 - **Reason:** Keep copied project instructions aligned with Conversation Mode Section 7.
 - **File changed:** `skills/INITIALIZATION_POLICY.md`.
+
+
+### Version 27 — Use one session-start cue
+
+- **Date:** 2026-11-20
+- **Change:** Make `start session` the only session-start cue.
+- **Canonical instructions:** Keep all session-start procedures in `skills/SESSION_START.md` and its mandatory execution gate.
+- **Copyable instructions:** Reduce the custom-instructions block to one sentence that points to Session Start and names the sole cue.
+- **Specialist roles:** Require successful session initialization before role-specific onboarding.
