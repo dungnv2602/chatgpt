@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """Regression tests for the exact takeout processor used by the GitHub Action."""
 import csv
+import hashlib
 import os
 import subprocess
 import sys
 import tempfile
 import unittest
 from pathlib import Path
+
+from verify_published_manifest import github_blob_url, verify_manifest_row, verify_session_links
 
 PROCESSOR = Path(__file__).with_name("process_takeout.py")
 
@@ -101,7 +104,7 @@ class TakeoutProcessorTests(unittest.TestCase):
             self.root
             / "novel/Novel-02/assets/illustrations/ARC-001/SCN-001"
         )
-        master = destination / "ILL-001-shared-discovery.PNG"
+        master = destination / "original/ILL-001-shared-discovery.PNG"
         webp = destination / "ILL-001-shared-discovery.webp"
         self.assertEqual(master.read_bytes(), original)
         self.assertTrue(webp.read_bytes().startswith(b"RIFF"))
@@ -170,9 +173,9 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
 
         image_dir = session / "images"
-        master = image_dir / "partial-portrait.png"
+        master = image_dir / "original/partial-portrait.png"
         webp = image_dir / "partial-portrait.webp"
-        alt_master = image_dir / "partial-portrait-alternative.png"
+        alt_master = image_dir / "original/partial-portrait-alternative.png"
         alt_webp = image_dir / "partial-portrait-alternative.webp"
         self.assertEqual(master.read_bytes(), b"portrait-original")
         self.assertEqual(alt_master.read_bytes(), b"portrait-alternative-original")
@@ -184,7 +187,25 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertIn("[partial-portrait-alternative.webp](images/partial-portrait-alternative.webp)", attempt_text)
         self.assertIn("[partial-portrait.webp](images/partial-portrait.webp)", readme_text)
         self.assertIn("[partial-portrait-alternative.webp](images/partial-portrait-alternative.webp)", readme_text)
+        self.assertNotIn("partial-portrait.png", attempt_text)
+        self.assertNotIn("partial-portrait-alternative.png", attempt_text)
+        self.assertNotIn("partial-portrait.png", readme_text)
+        self.assertNotIn("partial-portrait-alternative.png", readme_text)
         self.assertNotIn("Waiting for image upload", readme_text)
+
+        manifest_path = session / "manifest.csv"
+        self.assertTrue(manifest_path.is_file())
+        with manifest_path.open(encoding="utf-8", newline="") as handle:
+            manifest_rows = list(csv.DictReader(handle))
+        self.assertEqual(len(manifest_rows), 2)
+        self.assertEqual({row["attempt"] for row in manifest_rows}, {"01"})
+        self.assertEqual({row["approval_status"] for row in manifest_rows}, {"Not recorded"})
+        self.assertEqual({row["verification_status"] for row in manifest_rows}, {"Pending"})
+        self.assertEqual({row["mapping_status"] for row in manifest_rows}, {"Corroborated"})
+        self.assertTrue(all(row["sha256"] for row in manifest_rows))
+        self.assertTrue(all(row["webp_sha256"] for row in manifest_rows))
+        self.assertTrue(all(row["github_url"].endswith(".webp") for row in manifest_rows))
+        self.assertTrue(all("/original/" in row["original_path"] for row in manifest_rows))
         self.assertIn("User review pending", readme_text)
         self.assertIn("Generated; partial result", readme_text)
 
@@ -380,34 +401,404 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertTrue((self.inbox / "waiting.png").exists())
         self.assertFalse((self.inbox / "history").exists())
 
-    def test_generation_hash_matches_uploaded_original_and_is_reported(self):
-        original = b\"generation-original-byte-sequence\"
-        import hashlib
-        expected = hashlib.sha256(original).hexdigest()
-        (self.inbox / \"unchanged.png\").write_bytes(original)
-        self.manifest({\"source\": \"unchanged.png\", \"expected_sha256\": expected, \"output_id\": \"A001-O01\", \"prompt_id\": \"P001\"}, batch=\"batch-hash-match\")
+
+
+    def test_attempt_06_and_11_uploads_retain_pngs_and_link_only_webps(self):
+        session = self.root / "drawings/2026-11-19"
+        session.mkdir(parents=True)
+        (session / "attempt-06.md").write_text("# Attempt 06\n", encoding="utf-8")
+        (session / "attempt-11.md").write_text("# Attempt 11\n", encoding="utf-8")
+        readme = session / "README.md"
+        readme.write_text(
+            "# Drawing session\n\n"
+            "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+            "|---|---|---|---|---|---|\n"
+            "| [06 — Portrait](attempt-06.md) | Session | Baseline | Generated | Not recorded | — |\n"
+            "| [11 — Portrait](attempt-11.md) | Session | Baseline | Generated | Not recorded | — |\n"
+            "\n## Image inventory — all 0 files\n",
+            encoding="utf-8",
+        )
+        (self.inbox / "upload-six.png").write_bytes(b"attempt-six-original")
+        (self.inbox / "upload-eleven.png").write_bytes(b"attempt-eleven-original")
+        self.manifest_many(
+            [
+                {
+                    "source": "upload-six.png",
+                    "title": "Attempt 06 Additional Image",
+                    "destination_dir": "drawings/2026-11-19/images",
+                    "attempt": "06",
+                },
+                {
+                    "source": "upload-eleven.png",
+                    "title": "Attempt 11 Additional Image",
+                    "destination_dir": "drawings/2026-11-19/images",
+                    "attempt": "11",
+                },
+            ],
+            batch="batch-attempt-six-eleven",
+        )
+
         result = self.run_processor()
         self.assertEqual(result.returncode, 0, result.stderr)
-        with (self.inbox / \"history/batch-hash-match/attempt-001/conversion-report.csv\").open(encoding=\"utf-8\") as handle:
-            row = next(csv.DictReader(handle))
-        self.assertEqual(row[\"generation_sha256\"], expected)
-        self.assertEqual(row[\"source_sha256\"], expected)
-        self.assertEqual(row[\"hash_match\"], \"MATCH\")
-        self.assertEqual(row[\"output_id\"], \"A001-O01\")
-        self.assertEqual(row[\"prompt_id\"], \"P001\")
+        image_dir = session / "images"
+        for slug, original in (
+            ("attempt-06-additional-image", b"attempt-six-original"),
+            ("attempt-11-additional-image", b"attempt-eleven-original"),
+        ):
+            self.assertEqual((image_dir / "original" / f"{slug}.png").read_bytes(), original)
+            self.assertTrue((image_dir / f"{slug}.webp").is_file())
 
-    def test_generation_hash_mismatch_fails_and_preserves_original_upload(self):
-        original = b\"different-original-bytes\"
-        (self.inbox / \"mismatch.png\").write_bytes(original)
-        wrong = \"0\" * 64
-        self.manifest({\"source\": \"mismatch.png\", \"expected_sha256\": wrong}, batch=\"batch-hash-mismatch\")
-        handoff_before = (self.inbox / \"HANDOFF.yml\").read_bytes()
+        attempt_six = (session / "attempt-06.md").read_text(encoding="utf-8")
+        attempt_eleven = (session / "attempt-11.md").read_text(encoding="utf-8")
+        self.assertIn("[attempt-06-additional-image.webp](images/attempt-06-additional-image.webp)", attempt_six)
+        self.assertIn("[attempt-11-additional-image.webp](images/attempt-11-additional-image.webp)", attempt_eleven)
+        self.assertNotIn(".png", attempt_six)
+        self.assertNotIn(".png", attempt_eleven)
+        readme_text = readme.read_text(encoding="utf-8")
+        self.assertIn("[attempt-06-additional-image.webp](images/attempt-06-additional-image.webp)", readme_text)
+        self.assertIn("[attempt-11-additional-image.webp](images/attempt-11-additional-image.webp)", readme_text)
+        self.assertIn("## Image inventory — 2 WebP delivery files + 2 original masters (4 files total)", readme_text)
+        self.assertNotIn("attempt-06-additional-image.png", readme_text)
+        self.assertNotIn("attempt-11-additional-image.png", readme_text)
+
+        with (session / "manifest.csv").open(encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle))
+        self.assertEqual(len(rows), 2)
+        self.assertEqual({row["attempt"] for row in rows}, {"06", "11"})
+        self.assertEqual({row["verification_status"] for row in rows}, {"Pending"})
+
+
+    def test_drawing_session_upload_without_attempt_metadata_is_rejected(self):
+        session = self.root / "drawings/2026-11-19"
+        session.mkdir(parents=True)
+        (session / "README.md").write_text(
+            "# Drawing session\n\n"
+            "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+            "|---|---|---|---|---|---|\n",
+            encoding="utf-8",
+        )
+        (self.inbox / "missing-attempt.png").write_bytes(b"missing-attempt")
+        self.manifest_many(
+            [{
+                "source": "missing-attempt.png",
+                "title": "Missing Attempt",
+                "destination_dir": "drawings/2026-11-19/images",
+            }],
+            batch="batch-missing-attempt",
+        )
         result = self.run_processor()
         self.assertNotEqual(result.returncode, 0)
-        self.assertTrue((self.inbox / \"mismatch.png\").exists())
-        self.assertEqual((self.inbox / \"HANDOFF.yml\").read_bytes(), handoff_before)
-        report = (self.inbox / \"history/batch-hash-mismatch/attempt-001/verification-report.md\").read_text(encoding=\"utf-8\")
-        self.assertIn(\"Generation SHA-256 mismatch\", report)
+        self.assertTrue((self.inbox / "missing-attempt.png").is_file())
+        report = (
+            self.inbox
+            / "history/batch-missing-attempt/attempt-001/verification-report.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("require explicit attempt metadata", report)
+
+    def test_duplicate_output_id_fails_before_relocation(self):
+        (self.inbox / "first.png").write_bytes(b"first-original")
+        (self.inbox / "second.png").write_bytes(b"second-original")
+        self.manifest_many(
+            [
+                {"source": "first.png", "output_id": "A001-O01", "title": "First"},
+                {"source": "second.png", "output_id": "A001-O01", "title": "Second"},
+            ],
+            batch="batch-duplicate-output-id",
+        )
+        handoff_before = (self.inbox / "HANDOFF.yml").read_bytes()
+        result = self.run_processor()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertTrue((self.inbox / "first.png").is_file())
+        self.assertTrue((self.inbox / "second.png").is_file())
+        self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), handoff_before)
+        report = (
+            self.inbox
+            / "history/batch-duplicate-output-id/attempt-001/verification-report.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Duplicate output_id", report)
+
+    def test_non_mapping_handoff_is_rejected_not_silently_ignored(self):
+        (self.inbox / "waiting.png").write_bytes(b"waiting-original")
+        (self.inbox / "HANDOFF.yml").write_text("- malformed\\n- top-level\\n", encoding="utf-8")
+        result = self.run_processor()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertTrue((self.inbox / "waiting.png").is_file())
+        report = (
+            self.inbox
+            / "history/invalid-run-unit-test/attempt-001/verification-report.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("top level", report)
+
+    def test_session_manifest_backfills_legacy_webps_conservatively(self):
+        session = self.root / "drawings/2026-11-19"
+        image_dir = session / "images"
+        image_dir.mkdir(parents=True)
+        attempt_record = session / "attempt-01.md"
+        attempt_record.write_text("# Attempt 01\n", encoding="utf-8")
+        readme = session / "README.md"
+        readme.write_text(
+            "# Drawing session\n\n"
+            "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+            "|---|---|---|---|---|---|\n"
+            "| [01 — Legacy](attempt-01.md) | Session | Existing | Generated | Not recorded | [legacy.webp](images/legacy.webp) |\n\n"
+            "## Image inventory — all 1 files\n",
+            encoding="utf-8",
+        )
+        payload = b"legacy-webp-payload"
+        legacy_webp = b"RIFF" + (len(payload) + 4).to_bytes(4, "little") + b"WEBP" + payload
+        (image_dir / "legacy.webp").write_bytes(legacy_webp)
+
+        (self.inbox / "new.png").write_bytes(b"new-generated-original")
+        self.manifest_many(
+            [{
+                "source": "new.png",
+                "asset_id": "",
+                "title": "New Output",
+                "destination_dir": "drawings/2026-11-19/images",
+                "attempt": "1",
+            }],
+            batch="batch-legacy-manifest",
+        )
+        result = self.run_processor()
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+        with (session / "manifest.csv").open(encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle))
+        self.assertEqual(len(rows), 2)
+        inventory = readme.read_text(encoding="utf-8")
+        self.assertIn("## Image inventory — 2 WebP delivery files + 1 original master (3 files total)", inventory)
+        self.assertIn("[new-output.webp](images/new-output.webp)", inventory)
+        self.assertIn("[legacy.webp](images/legacy.webp)", inventory)
+        legacy = next(row for row in rows if row["webp_path"].endswith("/legacy.webp"))
+        new = next(row for row in rows if row["webp_path"].endswith("/new-output.webp"))
+        self.assertEqual(legacy["mapping_status"], "Corroborated")
+        self.assertEqual(legacy["attempt"], "01")
+        self.assertIn("[legacy.webp](images/legacy.webp)", attempt_record.read_text(encoding="utf-8"))
+        self.assertEqual(legacy["sha256"], "")
+        self.assertEqual(legacy["verification_status"], "Not verifiable")
+        self.assertEqual(legacy["original_bytes_available"], "No")
+        self.assertTrue(legacy["webp_sha256"])
+        self.assertEqual(new["verification_status"], "Verified")
+        self.assertEqual(new["mapping_status"], "Corroborated")
+        self.assertTrue(new["sha256"])
+        self.assertTrue((image_dir / "original/new-output.png").is_file())
+
+    def test_session_manifest_preserves_existing_rows_and_adds_new_columns(self):
+        session = self.root / "drawings/2026-11-19"
+        session.mkdir(parents=True)
+        (session / "attempt-01.md").write_text("# Attempt 01\n", encoding="utf-8")
+        (session / "README.md").write_text(
+            "# Drawing session\n\n"
+            "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+            "|---|---|---|---|---|---|\n"
+            "| [01 — Existing](attempt-01.md) | Session | Existing | Generated | Not recorded | — |\n",
+            encoding="utf-8",
+        )
+        (session / "manifest.csv").write_text(
+            "session_date,image_id,filename,prompt_id,approval_status,github_url,sha256,verification_status,custom_note\n"
+            "2026-11-19,prior-id,prior.webp,,Not recorded,https://example.invalid/prior,,Not verifiable,preserve-me\n",
+            encoding="utf-8",
+        )
+        (self.inbox / "fresh.png").write_bytes(b"fresh-original")
+        self.manifest_many(
+            [{
+                "source": "fresh.png",
+                "asset_id": "",
+                "title": "Fresh Output",
+                "destination_dir": "drawings/2026-11-19/images",
+                "attempt": "1",
+            }],
+            batch="batch-manifest-migration",
+        )
+        result = self.run_processor()
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+        with (session / "manifest.csv").open(encoding="utf-8", newline="") as handle:
+            reader = csv.DictReader(handle)
+            rows = list(reader)
+            self.assertIn("custom_note", reader.fieldnames)
+            self.assertIn("native_generation_id", reader.fieldnames)
+        prior = next(row for row in rows if row["image_id"] == "prior-id")
+        self.assertEqual(prior["custom_note"], "preserve-me")
+        self.assertEqual(len(rows), 2)
+
+    def test_generation_hash_matches_uploaded_original_and_is_reported(self):
+        original = b"generation-original-byte-sequence"
+        import hashlib
+        expected = hashlib.sha256(original).hexdigest()
+        (self.inbox / "unchanged.png").write_bytes(original)
+        self.manifest({"source": "unchanged.png", "expected_sha256": expected, "output_id": "A001-O01", "prompt_id": "P001"}, batch="batch-hash-match")
+        result = self.run_processor()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        with (self.inbox / "history/batch-hash-match/attempt-001/conversion-report.csv").open(encoding="utf-8") as handle:
+            row = next(csv.DictReader(handle))
+        self.assertEqual(row["generation_sha256"], expected)
+        self.assertEqual(row["source_sha256"], expected)
+        self.assertEqual(row["hash_match"], "MATCH")
+        self.assertEqual(row["output_id"], "A001-O01")
+        self.assertEqual(row["prompt_id"], "P001")
+
+    def test_generation_hash_mismatch_is_a_review_flag_not_a_batch_rejection(self):
+        original = b"different-original-bytes"
+        (self.inbox / "mismatch.png").write_bytes(original)
+        wrong = "0" * 64
+        session = self.root / "drawings/2026-11-19"
+        session.mkdir(parents=True)
+        (session / "attempt-01.md").write_text("# Attempt 01\n", encoding="utf-8")
+        (session / "README.md").write_text(
+            "# Drawing session\n\n"
+            "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+            "|---|---|---|---|---|---|\n"
+            "| [01 — Mismatch](attempt-01.md) | Session | Existing | Generated | Not recorded | — |\n",
+            encoding="utf-8",
+        )
+        self.manifest(
+            {
+                "source": "mismatch.png",
+                "title": "Mismatch Review",
+                "destination_dir": "drawings/2026-11-19/images",
+                "attempt": "1",
+                "expected_sha256": wrong,
+            },
+            batch="batch-hash-mismatch",
+        )
+        result = self.run_processor()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertFalse((self.inbox / "mismatch.png").exists())
+        master = session / "images/original/mismatch-review.png"
+        self.assertEqual(master.read_bytes(), original)
+        report = (self.inbox / "history/batch-hash-mismatch/attempt-001/verification-report.md").read_text(encoding="utf-8")
+        self.assertIn("retained and flagged for mapping review, not automatically rejected", report)
+        with (session / "manifest.csv").open(encoding="utf-8", newline="") as handle:
+            row = next(csv.DictReader(handle))
+        self.assertEqual(row["hash_match"], "MISMATCH")
+        self.assertEqual(row["mapping_status"], "Probable")
+        self.assertEqual(row["verification_status"], "Pending")
+        with (self.inbox / "history/batch-hash-mismatch/attempt-001/conversion-report.csv").open(encoding="utf-8") as handle:
+            report_row = next(csv.DictReader(handle))
+        self.assertEqual(report_row["hash_match"], "MISMATCH")
+        self.assertEqual(report_row["mapping_status"], "Probable")
+
+
+class PublishedManifestVerificationTests(unittest.TestCase):
+    def setUp(self):
+        self.repository = "dungnv2602/chatgpt"
+        self.branch = "gpt"
+        self.webp_payload = b"verified-webp-payload"
+        self.webp_bytes = (
+            b"RIFF" + (len(self.webp_payload) + 4).to_bytes(4, "little")
+            + b"WEBP" + self.webp_payload
+        )
+        self.original_bytes = b"unchanged-original-master"
+        self.webp_path = "drawings/2026-11-19/images/result.webp"
+        self.original_path = "drawings/2026-11-19/images/original/result.png"
+        self.row = {
+            "image_id": "A01-O01",
+            "attempt": "01",
+            "github_url": github_blob_url(self.webp_path, self.repository, self.branch),
+            "webp_path": self.webp_path,
+            "webp_sha256": hashlib.sha256(self.webp_bytes).hexdigest(),
+            "original_path": self.original_path,
+            "sha256": hashlib.sha256(self.original_bytes).hexdigest(),
+            "original_sha256": hashlib.sha256(self.original_bytes).hexdigest(),
+            "generation_sha256": "",
+        }
+        self.blobs = {
+            self.webp_path: self.webp_bytes,
+            self.original_path: self.original_bytes,
+            "drawings/2026-11-19/README.md": (
+                b"# Drawing session\\n\\n"
+                b"| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\\n"
+                b"|---|---|---|---|---|---|\\n"
+                b"| [01 — Output](attempt-01.md) | Session | Existing | Generated | Not recorded | [result.webp](images/result.webp) |\\n"
+                b"\\n## Image inventory — 1 WebP delivery files + 1 original master (2 files total)\\n\\n"
+                b"- [result.webp](images/result.webp)\\n"
+            ),
+            "drawings/2026-11-19/attempt-01.md": (
+                b"# Attempt 01\\n\\n## Repository images\\n\\n"
+                b"- [result.webp](images/result.webp)\\n"
+            ),
+        }
+
+
+    def test_generation_hash_mismatch_does_not_fail_published_storage_verification(self):
+        row = dict(self.row)
+        row["generation_sha256"] = "0" * 64
+        status, error = verify_manifest_row(
+            row, lambda path: self.blobs.get(path),
+            github_blob_url(self.webp_path, self.repository, self.branch),
+        )
+        self.assertEqual(status, "Verified")
+        self.assertEqual(error, "")
+
+    def test_published_daily_readme_and_attempt_links_are_verified(self):
+        error = verify_session_links(self.row, lambda path: self.blobs.get(path))
+        self.assertEqual(error, "")
+
+    def test_missing_published_attempt_link_fails_verification(self):
+        self.blobs["drawings/2026-11-19/attempt-01.md"] = (
+            b"# Attempt 01\n\n## Repository images\n\n- [other.webp](images/other.webp)\n"
+        )
+        error = verify_session_links(self.row, lambda path: self.blobs.get(path))
+        self.assertIn("attempt record does not link", error)
+
+    def test_missing_published_inventory_link_fails_verification(self):
+        self.blobs["drawings/2026-11-19/README.md"] = (
+            b"# Drawing session\n\n"
+            b"| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+            b"|---|---|---|---|---|---|\n"
+            b"| [01 — Output](attempt-01.md) | Session | Existing | Generated | Not recorded | [result.webp](images/result.webp) |\n"
+            b"\n## Image inventory — 0 WebP delivery files + 1 original master (1 file total)\n"
+        )
+        error = verify_session_links(self.row, lambda path: self.blobs.get(path))
+        self.assertIn("inventory does not link", error)
+
+    def test_published_original_and_webp_are_verified(self):
+        status, error = verify_manifest_row(
+            self.row, lambda path: self.blobs.get(path),
+            github_blob_url(self.webp_path, self.repository, self.branch),
+        )
+        self.assertEqual(status, "Verified")
+        self.assertEqual(error, "")
+
+    def test_legacy_webp_is_checked_but_original_mapping_remains_not_verifiable(self):
+        row = dict(self.row)
+        row["original_path"] = ""
+        row["sha256"] = ""
+        status, error = verify_manifest_row(
+            row, lambda path: self.blobs.get(path),
+            github_blob_url(self.webp_path, self.repository, self.branch),
+        )
+        self.assertEqual(status, "Not verifiable")
+        self.assertIn("original master", error)
+
+    def test_published_original_hash_mismatch_fails(self):
+        self.blobs[self.original_path] = b"changed-original-master"
+        status, error = verify_manifest_row(
+            self.row, lambda path: self.blobs.get(path),
+            github_blob_url(self.webp_path, self.repository, self.branch),
+        )
+        self.assertEqual(status, "Failed")
+        self.assertIn("original master SHA-256", error)
+
+    def test_published_webp_hash_mismatch_fails(self):
+        self.blobs[self.webp_path] = b"changed"
+        status, error = verify_manifest_row(
+            self.row, lambda path: self.blobs.get(path),
+            github_blob_url(self.webp_path, self.repository, self.branch),
+        )
+        self.assertEqual(status, "Failed")
+        self.assertIn("valid RIFF/WEBP", error)
+
+    def test_github_url_must_match_exact_published_path(self):
+        row = dict(self.row)
+        row["github_url"] = "https://github.com/dungnv2602/chatgpt/blob/gpt/wrong.webp"
+        status, error = verify_manifest_row(
+            row, lambda path: self.blobs.get(path),
+            github_blob_url(self.webp_path, self.repository, self.branch),
+        )
+        self.assertEqual(status, "Failed")
+        self.assertIn("expected published WebP path", error)
 
 
 if __name__ == "__main__":

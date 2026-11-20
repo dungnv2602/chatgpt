@@ -662,8 +662,9 @@ flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
 - Incoming filenames may be arbitrary. Inspect each image and prepare a hand-off
   item with the exact source filename, descriptive title, optional stable ID,
   and destination directory. The Action does not infer visual content or
-  project membership. The optional `attempt: NN` field is the explicit
-  prompt-to-output association used for automatic Markdown cross-linking.
+  project membership. For drawing-session destinations, `attempt: NN` is
+  mandatory and is the explicit prompt-to-output association used for automatic
+  Markdown cross-linking. Non-drawing assets may omit it.
 - The existing workflow on branch `gpt` calls
   `images/scripts/process_takeout.py`. It supports static PNG, JPG, and JPEG.
   APNG and other unsupported formats fail the batch; animated content is never
@@ -672,11 +673,13 @@ flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
   (`-lossless -q 100 -m 6 -exact`); JPEG uses high-quality lossy encoding
   (`-preset picture -q 92 -m 6 -sharp_yuv`). ICC profiles are copied. EXIF/XMP
   metadata remain in the unchanged original and are not copied to WebP.
-- The original is moved and renamed to the hand-off-derived master path without
-  changing its bytes or format. The WebP derivative is stored beside it.
-  Novel illustration assets use
+- The original is moved byte-for-byte into the destination's `original/`
+  subfolder, using the hand-off-derived name. The WebP derivative remains in
+  the destination root. Novel illustration assets use
   `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; other retained
-  assets use their declared directory under `images/`.
+  assets use their declared directory under `images/`. Attempt notes and the
+  daily README link only the WebP delivery file; the original master is not
+  linked there.
 - The processor validates the complete batch, converts every image into
   persistent staging at `images/takeout/webp/[batch-id]/attempt-NNN/`, and
   only then relocates any original. Each staged filename appends `.webp` to
@@ -689,8 +692,9 @@ flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
   link into both for every generated image, including partial, off-target,
   superseded, and unapproved results. Approval is not a linking condition.
   Multiple uploads may point to the same attempt. The GitHub Action commits
-  these Markdown changes together with the image masters,
-  derivatives, and takeout reports. Items without `attempt` are not linked to
+  these Markdown changes together with the image masters, derivatives,
+  session `manifest.csv`, and takeout reports. Items without `attempt` are
+  processed as ordinary assets and do not enter a drawing session manifest or
   prompt records.
 - Every successful or failed attempt is preserved under
   `images/takeout/history/[batch-id]/attempt-NNN/` with the hand-off snapshot,
@@ -704,8 +708,12 @@ flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
   to final destinations and the now-empty successful staging directory is
   removed. The active hand-off is reset to empty only after every original and
   WebP has been relocated and verified and both reports have been archived.
-  Never claim a successful Action run without observing its result and
-  reading back the published assets and reports.
+  After the first push, a separate verifier reads original and WebP blobs from
+  `origin/gpt`, validates the direct WebP URL, and upgrades only eligible
+  `Pending` manifest rows. Legacy entries without their original master stay
+  `Not verifiable`. The Action re-reads the published manifest after the
+  verification commit. Never claim a successful Action run without observing
+  its result and reading back the published assets, links, and reports.
 
 
 ## Generation provenance and output mapping workflow (approved 2026-11-20)
@@ -752,4 +760,27 @@ The Action is intended to automate: original SHA-256 calculation and comparison;
 
 
 ## GitHub Action implementation status (2026-11-20)
-The takeout processor now accepts `expected_sha256`, `output_id`, and `prompt_id` in HANDOFF items. When `expected_sha256` is provided, it compares the uploaded original's SHA-256 before conversion and fails safely on mismatch, retaining the originals and ready hand-off. The conversion report includes the expected generation hash, uploaded-source hash, output/prompt IDs, and hash-match status. This is an implemented, read-back-verified code change, but the processor tests have not yet been executed in a runtime in this session. The Action still does not automatically discover mappings from generation records or maintain/reconcile the drawing session-level `manifest.csv`; those remain unimplemented. Do not describe the Action as fully automated until those features are implemented and tested.
+The takeout processor retains original PNG/JPEG masters in each destination's
+`original/` subfolder and places WebP delivery files in the destination root.
+Attempt records and daily README rows link only the WebP. Drawing-session
+`manifest.csv` updates preserve existing rows and columns, append one record
+per new output, and backfill legacy WebP assets conservatively. Generation-time
+hash matches, explicit attempt associations, native identifiers, approval,
+and original/derivative hashes remain separate fields.
+
+New manifest records remain `Pending` until the post-push verifier reads the
+exact original and WebP Git blobs from `origin/gpt`, validates their SHA-256
+values and WebP format, and checks the canonical GitHub URL, daily README
+inventory/table links, and the corresponding attempt-note WebP link. Legacy
+records without an original master remain `Not verifiable`; their retained
+WebP URL, derivative hash, and available README links are still checked.
+
+The Action does not query image-generation history or autonomously discover
+native platform IDs. It consumes the explicit `attempt`, prompt/output IDs,
+and generation hash supplied in `HANDOFF.yml`; missing provenance remains
+blank and mapping confidence is never upgraded by filename. A supplied
+generation-hash mismatch is retained for review, with mapping status
+`Probable`, rather than rejecting the uploaded image. The workflow runs
+Python compilation and regression tests before processing. The GitHub Actions
+run must pass and its published output must be read back before the workflow
+is described as fully verified.

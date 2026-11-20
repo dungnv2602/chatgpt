@@ -6,9 +6,11 @@ items:
     title: "Attempt 06 — additional image"
     attempt: "06"
     destination_dir: "drawings/2026-11-19/images"
-    # Generation-time SHA-256 and native output/prompt IDs were not available.
+    approval_status: "Not recorded"
+    mapping_evidence: "User-designated association with Attempt 06; generation-time SHA-256 and native IDs were not captured."
   - source: "__UPLOAD_FILENAME_FOR_ATTEMPT_11__"
     title: "Attempt 11 — additional image"
     attempt: "11"
     destination_dir: "drawings/2026-11-19/images"
-    # Generation-time SHA-256 and native output/prompt IDs were not available.
+    approval_status: "Not recorded"
+    mapping_evidence: "User-designated association with Attempt 11; generation-time SHA-256 and native IDs were not captured."

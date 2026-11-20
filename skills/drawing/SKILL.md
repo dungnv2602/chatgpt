@@ -914,16 +914,17 @@ repository retention pass through the single intake at `images/takeout/`.
   (`-lossless -q 100 -m 6 -exact`); JPEGs use high-quality lossy encoding
   (`-preset picture -q 92 -m 6 -sharp_yuv`). ICC profiles are copied.
   EXIF/XMP metadata are not copied to WebP, but remain in the original master.
-- The original upload is moved and renamed to the hand-off-derived master path
-  without changing its bytes or format. The same-stem WebP is stored beside
-  the master. Novel illustrations use
+- The original upload is moved byte-for-byte into the destination's
+  `original/` subfolder under its hand-off-derived name. The same-stem WebP
+  remains in the destination root. Attempt notes and the daily README link
+  only the WebP delivery file. Novel illustrations use
   `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; retained
   non-novel assets use their declared destination under `images/`.
-- When an item has `attempt: NN` and targets `drawings/YYYY-MM-DD/images`, the
-  processor validates the matching `attempt-NN.md` and six-column daily README,
-  then automatically adds the verified WebP link to both records for every
-  uploaded generated output; approval and success classification are irrelevant
-  to link creation. Multiple images may identify the same attempt; their links
+- When an item targets `drawings/YYYY-MM-DD/images`, an explicit `attempt: NN`
+  is mandatory. The processor validates the matching `attempt-NN.md` and
+  six-column daily README, then automatically adds the verified WebP link to
+  both records for every uploaded generated output; approval and success
+  classification are irrelevant to link creation. Multiple images may identify the same attempt; their links
   are grouped in that row.
   Items without `attempt` metadata are processed as ordinary assets and do not
   alter a prompt record or daily README. The GitHub Action commits these
@@ -931,9 +932,14 @@ repository retention pass through the single intake at `images/takeout/`.
 - The Action converts the entire batch into persistent staging at
   `images/takeout/webp/[batch-id]/attempt-NNN/` before moving any original.
   Staged filenames append `.webp` to each exact incoming filename. It checks
-  destination collisions, exact manifest coverage, original/master SHA-256
+  destination collisions, exact hand-off coverage, original/master SHA-256
   equality, WebP signatures, and final WebP hashes. It does not overwrite
   existing assets.
+- For drawing sessions, the processor maintains `manifest.csv` one row per
+  output, preserving existing rows/columns and conservatively inventorying
+  legacy WebPs. New rows are `Pending` until the post-push verifier reads the
+  exact published master and WebP blobs, verifies both hashes, and checks the
+  canonical WebP URL. Legacy assets without originals remain `Not verifiable`.
 - Every attempt is archived under
   `images/takeout/history/[batch-id]/attempt-NNN/` with the original hand-off,
   `conversion-report.csv`, and `verification-report.md`. The CSV records
@@ -941,10 +947,13 @@ repository retention pass through the single intake at `images/takeout/`.
   hashes, status, and errors. Both `history/` and `webp/` are excluded from
   intake detection.
 - The active hand-off is cleared only after every image is converted,
-  relocated, and verified and the reports are written. On failure, the ready
-  hand-off and source images remain available for correction, and successful
-  WebPs from that attempt remain in staging. A retry uses a fresh attempt
-  directory; successful processing removes its empty staging directory.
+  relocated, and verified locally and the reports are written. On failure, the
+  ready hand-off and source images remain available for correction, and
+  successful WebPs from that attempt remain in staging. A retry uses a fresh
+  attempt directory; successful processing removes its empty staging
+  directory. The Action then reads back the original and WebP Git blobs,
+  canonical WebP URL, daily README inventory/table links, and attempt-note
+  WebP link before publishing manifest verification statuses.
 - Never alter a master or WebP after conversion as part of this pipeline.
   Separate image edits require the normal prompt-archive and explicit editing
   workflow.
@@ -1012,4 +1021,24 @@ The GitHub Action should automate original-hash calculation and matching, mappin
 
 
 ## GitHub Action implementation status (2026-11-20)
-The takeout processor now accepts `expected_sha256`, `output_id`, and `prompt_id` in HANDOFF items. When `expected_sha256` is provided, it compares the uploaded original's SHA-256 before conversion and fails safely on mismatch, retaining the originals and ready hand-off. The conversion report includes the expected generation hash, uploaded-source hash, output/prompt IDs, and hash-match status. This is an implemented, read-back-verified code change, but the processor tests have not yet been executed in a runtime in this session. The Action still does not automatically discover mappings from generation records or maintain/reconcile the drawing session-level `manifest.csv`; those remain unimplemented. Do not describe the Action as fully automated until those features are implemented and tested.
+The takeout processor retains original PNG/JPEG masters in each destination's
+`original/` subfolder and places WebP delivery files in the destination root.
+Attempt records and daily README rows link only the WebP. Drawing-session
+`manifest.csv` updates preserve existing rows and columns, append one record
+per new output, and backfill legacy WebP assets conservatively. Generation-time
+hash matches, explicit attempt associations, native identifiers, approval,
+and original/derivative hashes remain separate fields.
+
+New manifest records remain `Pending` until the post-push verifier reads the
+exact original and WebP Git blobs from `origin/gpt`, validates their SHA-256
+values and WebP format, and checks the canonical GitHub URL. Legacy records
+without an original master remain `Not verifiable`; their retained WebP URL
+and derivative hash are still checked.
+
+The Action does not query image-generation history or autonomously discover
+native platform IDs. It consumes the explicit `attempt`, prompt/output IDs,
+and generation hash supplied in `HANDOFF.yml`; missing provenance remains
+blank and mapping confidence is never upgraded by filename. The workflow runs
+Python compilation and regression tests before processing. The GitHub Actions
+run must pass and its published output must be read back before the workflow
+is described as fully verified.
