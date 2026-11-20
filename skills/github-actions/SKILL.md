@@ -10,7 +10,7 @@ metadata:
 
 ## 1. Purpose and authority
 
-Use this skill for GitHub Actions workflow design and maintenance. It governs workflow-specific decisions; the Conversation Mode skill governs general repository execution.
+Use this skill for GitHub Actions workflow design and maintenance. It governs workflow-specific decisions. The Conversation Mode skill governs general repository execution.
 
 1. Follow the user's current instructions and the repository's approved workspace boundary.
 2. Use `dungnv2602/chatgpt`, branch `gpt`, as the source of truth.
@@ -24,7 +24,7 @@ The scheduled archive-retention workflow is owned by GitHub Actions.
 
 - Run the schedule from the repository default branch because GitHub scheduled events only run there.
 - Check out `gpt`, which is the working/source branch.
-- Delete the complete contents of `archive/tasks/` as one batch only after the 14-day interval has elapsed; do not calculate per-record expiry.
+- Delete the complete contents of `archive/tasks/` as one batch only after the 14-day interval has elapsed. Do not calculate per-record expiry.
 - Preserve `.gitkeep` and the task-board historical entries.
 - After cleanup, atomically fast-forward `main` to the resulting `gpt` commit. Never force-push or create an independent cleanup commit on `main`.
 - Verify that `main` is an ancestor of `gpt` before pushing. If the branches diverge, fail safely without updating either ref.
@@ -39,7 +39,7 @@ The default workflow for repository changes is implementation-first and event-dr
 2. Commit related changes together so one coherent push produces the normal event-triggered CI run.
 3. Do not manually invoke `workflow_dispatch`, `gh workflow run`, the Actions API dispatch endpoint, or any equivalent manual trigger.
 4. Do not rerun, cancel, or otherwise stimulate CI manually.
-5. Do not poll or inspect CI status as a routine post-edit step. Let the normal GitHub event trigger the configured workflows; failed CI is the feedback signal.
+5. Do not poll or inspect CI status as a routine post-edit step. Let the normal GitHub event trigger the configured workflows. Failed CI is the feedback signal.
 6. Do not add a workflow trigger solely to make a check run after an assistant edit.
 7. If the user explicitly asks to investigate a CI failure, inspect the relevant run and fix the underlying cause. Otherwise, do not turn implementation work into a manual CI-verification exercise.
 
@@ -60,10 +60,10 @@ Before changing a workflow, identify its events, branch/path filters, jobs, depe
 Use branch and path filters to avoid work that cannot validate the changed files.
 
 - When both branch and path filters exist, both conditions must match.
-- GitHub evaluates path patterns in order. A later positive pattern can include a path excluded earlier; a later negative pattern can exclude a path included earlier.
+- GitHub evaluates path patterns in order. A later positive pattern can include a path that an earlier pattern excluded. A later negative pattern can exclude a path that an earlier pattern included.
 - When using negative patterns inside `paths`, include at least one positive pattern.
 - Do not use both `paths` and `paths-ignore` for the same event.
-- Check branch-protection requirements before adding workflow-level filters. A skipped workflow can leave a required check pending; use job-level conditions or a stable required check when every pull request needs a result.
+- Check branch-protection requirements before adding workflow-level filters. A skipped workflow can leave a required check pending. Use job-level conditions or a stable required check when every pull request needs a result.
 
 ## 5. Control concurrency and superseded runs
 
@@ -85,12 +85,12 @@ concurrency:
 For expensive push validation, a short preflight job can reject a superseded run before the validation job checks out the repository.
 
 - Run the guard before checkout, dependency setup, or repository scripts.
-- Query the newest run for the same workflow, branch, and event; compare its run ID with `github.run_id`.
+- Query the newest run for the same workflow, branch, and event. Compare its run ID with `github.run_id`.
 - If a newer run exists, cancel the current run through the Actions API. The validation job must depend on the guard output and must not start for a superseded run.
-- Grant `actions: write` only to the guard job when it must cancel its own run. Grant only the read permissions needed for its queries; commit comparison requires `contents: read`.
+- Grant `actions: write` only to the guard job when it must cancel its own run. Grant only the read permissions needed for its queries. Commit comparison requires `contents: read`.
 - Keep the guard short and give it a small timeout.
 - If the API cannot identify the newest run, emit a warning and continue validation. Never skip validation because the guard could not decide.
-- Retain `cancel-in-progress: true` as the primary race protection. A new push can arrive after the guard passes; concurrency cancellation handles that race.
+- Retain `cancel-in-progress: true` as the primary race protection. A new push can arrive after the guard passes. Concurrency cancellation handles that race.
 
 A separate guard job costs an additional runner allocation. Use it when avoiding checkout and setup on superseded runs justifies that cost. Do not add one to trivial workflows.
 
@@ -100,7 +100,7 @@ For push-based incremental checks, compare against the latest successful run of 
 
 1. Query completed runs for the same workflow and branch.
 2. Select the latest successful run and read its exact `head_sha`.
-3. Use the GitHub compare API before checkout to confirm that the baseline is an ancestor of the current commit. Accept `ahead` or `identical`; treat missing, failed, or divergent comparisons as an invalid baseline.
+3. Use the GitHub compare API before checkout to confirm that the baseline is an ancestor of the current commit. Accept `ahead` or `identical`. Treat missing, failed, or divergent comparisons as an invalid baseline.
 4. Check every relevant file changed since that baseline.
 5. Run a full audit when the baseline is missing or invalid.
 
@@ -108,7 +108,7 @@ Do not rely only on `github.event.before`: a cancelled run may contain commits o
 
 Prefer `fetch-depth: 1`. After checkout, fetch only the successful baseline commit with `git fetch --no-tags --depth=1 origin "$BASE_SHA"`. If that fetch fails, run a full audit rather than omitting changes. Use full history only when the workflow's Git operations genuinely require it. Do not use `git merge-base` as an ancestry test in a shallow checkout.
 
-Do not treat failed, cancelled, queued, or in-progress runs as successful baselines. For pull-request checks, compare the pull-request head with the appropriate base commit; do not reuse a push baseline without a clear reason.
+Do not treat failed, cancelled, queued, or in-progress runs as successful baselines. For pull-request checks, compare the pull-request head with the appropriate base commit. Do not reuse a push baseline without a clear reason.
 
 ## 7. Cache dependencies only when useful
 
@@ -152,7 +152,7 @@ Set permissions explicitly at workflow or job level. Grant each job only what it
 - Prefer short-lived credentials and OpenID Connect when supported by the deployment provider.
 - Do not expose secrets to untrusted pull-request code.
 - Do not use `pull_request_target` to execute untrusted pull-request code with elevated permissions.
-- Pass event values to scripts through environment variables; quote and validate them.
+- Pass event values to scripts through environment variables. Quote and validate them.
 - Do not interpolate untrusted event data directly into shell commands.
 - Follow repository policy for action pinning and verify an action's owner/source before adopting a version.
 - Isolate self-hosted runners that execute untrusted code.
@@ -199,7 +199,7 @@ This section consolidates the former repository CI preflight and execution-effic
 1. Do not inspect or poll GitHub Actions runs before starting an ordinary repository task.
 2. Do not manually dispatch, rerun, cancel, or otherwise stimulate CI.
 3. Do not wait for a CI run created by the current task. Do not track pending run IDs between turns.
-4. Let normal GitHub events trigger the configured workflows. Treat a failed CI run as feedback; do not claim that a run passed or failed unless the user asks you to investigate that run and you inspect its reported result.
+4. Let normal GitHub events trigger the configured workflows. Treat a failed CI run as feedback. Do not claim that a run passed or failed unless the user asks you to investigate that run and you inspect its reported result.
 5. When the user explicitly asks to investigate a CI failure, inspect the relevant run and logs, identify the cause, and fix the underlying repository issue. Do not hide failures by weakening checks or changing a baseline without justification.
 6. Do not add workflow triggers only to make CI run after an assistant edit.
 
