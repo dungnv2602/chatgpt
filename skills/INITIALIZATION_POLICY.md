@@ -87,6 +87,16 @@ Do not load unrelated skills or references.
 Report the exact path of any missing or unverified file.
 Do not claim initialization is complete before all checks pass.
 
+CI checkpoint policy:
+- Do not wait for CI during the task that triggers it.
+- Do not poll in-progress runs repeatedly.
+- At task completion, report relevant run IDs and mark incomplete runs as pending.
+- At the start of the next user turn, check all pending runs before other work.
+- If a run is still in progress, report its status and continue without waiting.
+- If a run failed, inspect its logs and address the failure when relevant.
+- Report a run as passed only when GitHub reports success.
+- Keep pending run IDs in the conversation handoff. Remove each ID only after you check its final result.
+
 Use "skills/asd-ste100/SKILL.md" for all skill documentation and technical documentation.
 Use "skills/github-actions/SKILL.md" for GitHub Actions workflow design, optimization, security, and verification.
 Use Strict mode for operational instructions.
@@ -466,3 +476,11 @@ Use this template:
 - **Removed duplicate:** Delete `skills/novelist-initiation/INITIATION.md`.
 - **Activation:** The `Be the novelist` cue still requires foundational initialization before novelist-specific work.
 - **Reason:** Keep the full initialization sequence and specialist procedure in one authoritative startup document.
+
+### Version 26 — Add CI checkpoint rules to copyable instructions
+
+- **Date:** 2026-11-20
+- **Change:** Add the repository CI checkpoint policy to the copyable custom-instructions block.
+- **Behavioral impact:** Do not wait for or repeatedly poll current-task runs. Check pending runs at the start of the next user turn.
+- **Reason:** Keep copied project instructions aligned with Conversation Mode Section 7.
+- **File changed:** `skills/INITIALIZATION_POLICY.md`.
