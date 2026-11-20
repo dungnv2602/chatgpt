@@ -77,7 +77,7 @@ Capture provenance at generation time for every drawing session. Do not rely on 
 - **Latency:** generation must not wait for GitHub, hashing, or archival. Capture/associate outputs immediately, then perform remaining archive work. If capture or archive is incomplete, leave explicit pending/incomplete status.
 - **Closeout:** reconcile generation records, attempt notes, README, manifest, and repository assets. Read back changes and report unresolved gaps. Do not mark complete while mandatory checks remain unresolved.
 
-Provenance chain: **Session → Attempt → Prompt → Generation event (native ID if exposed) → Output (internal ID and native output ID, if exposed) → original bytes → SHA-256 → archive asset/link**. Internal IDs identify archive records. They do not claim to be platform metadata.
+Provenance chain: **Session → Attempt → Prompt → Generation event → Output → original bytes → SHA-256 → archive asset/link**. Record native IDs when exposed. Record internal IDs as archive identifiers, not platform metadata.
 
 ## Mandatory image archive manifest and SHA-256 verification (2026-11-20)
 
@@ -98,11 +98,19 @@ When a user provides a downloaded image's SHA-256, compare it to the archive's r
 
 **Original SHA-256 is mandatory when actual original bytes are accessible at generation time.** Calculate it immediately from the exact generated file bytes and record it against session, attempt, prompt, and output ID. Never hash a screenshot, preview, thumbnail, or transformed substitute. If the original bytes are inaccessible, explicitly record the hash as unavailable. Do not fabricate one.
 
-At ingestion, the GitHub Action must calculate SHA-256 from the uploaded original **before** conversion and compare it to the generation-time hash. Matching hashes establish byte-for-byte identity and can verify the uploaded original's mapping to its recorded output. Mismatches must be flagged for review and must not be silently mapped by filename or visual guess. If original bytes differ, metadata inspection and content comparison may be used as fallback evidence, but their evidence and confidence must be recorded separately and conservatively.
+At ingestion, the GitHub Action must calculate SHA-256 from the uploaded original **before** conversion and compare it to the generation-time hash. Matching hashes establish byte-for-byte identity and can verify the uploaded original's mapping to its recorded output. Mismatches must be flagged for review and must not be silently mapped by filename or visual guess. If original bytes differ, metadata inspection and content comparison may provide fallback evidence. Record that evidence and its confidence separately. Use conservative confidence levels.
 
 WebP conversion changes bytes. Therefore, the original hash is the identity key and the WebP is a derivative linked to the same output ID. The WebP hash is optional and only for derivative-integrity checking. Never expect or require original and WebP hashes to match.
 
-The Action is intended to automate these tasks: calculate and compare original SHA-256 values, validate output-to-attempt and prompt mapping, convert files, rename and relocate assets, add direct image links, reconcile the manifest, and write verification reports. Preserve incoming original filenames. Do not treat filenames as mapping evidence. This policy supersedes earlier wording that made hashing unavailable, optional, or mandatory on transformed derivatives. It does not claim that the Action implements these tasks until its code is updated and verified.
+The Action is intended to automate these tasks:
+
+- Calculate and compare original SHA-256 values.
+- Validate output-to-attempt and prompt mapping.
+- Convert, rename, and relocate files.
+- Add direct image links to attempt records and the README.
+- Reconcile the manifest and write verification reports.
+
+Preserve incoming original filenames. Do not treat filenames as mapping evidence. This policy supersedes earlier wording that made hashing unavailable, optional, or mandatory on transformed derivatives. It does not claim that the Action implements these tasks until its code is updated and verified.
 
 
 ## GitHub Action implementation status (2026-11-20)
