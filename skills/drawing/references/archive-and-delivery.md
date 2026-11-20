@@ -90,7 +90,7 @@ Capture provenance at generation time. Do not rely on retrospective image-to-att
 
 ### Mapping evidence and identity
 8. Use internal output IDs (e.g. `A001-O01`) as stable archive identifiers when native IDs are not exposed. They must not be represented as native platform IDs.
-9. Keep internal session/attempt/prompt/output IDs, native Generation ID, native image/output ID, approval, outcome, mapping evidence/status, original-byte availability, archive path, SHA-256, and verification status separate.
+9. Keep internal session, attempt, prompt, and output IDs separate from native Generation IDs and native image or output IDs. Record approval, outcome, mapping evidence and status, original-byte availability, archive path, SHA-256, and verification status separately.
 10. Direct generation-return association or reliable original metadata can support Verified mapping. Chronology and visual comparison may provide corroboration. They cannot establish Verified mapping by themselves. Filename numbering is never proof.
 11. Mapping statuses: `Verified`, `Corroborated`, `Probable`, `Unmapped`, or `Conflicting`. Explain uncertain or retrospective evidence. Never silently upgrade status.
 12. Calculate SHA-256 only from original image bytes when they are accessible. A hash proves byte identity only. It does not prove the generation event, prompt association, visual content, or approval. Record original and derivative hashes separately.
@@ -122,11 +122,19 @@ README image links must point directly to the correct image asset. Check each li
 SHA-256 is mandatory **when the actual original generated image bytes are accessible immediately after generation**. Calculate the hash from those exact original bytes, never from a preview, screenshot, thumbnail, or recompressed copy. Record it against the session, attempt, prompt, and output ID before the user downloads the image. If original bytes are not accessible, state that the generation-time hash is unavailable. Do not invent or calculate a hash from a substitute.
 
 
-When the user later uploads an unchanged original, the GitHub Action calculates SHA-256 from the uploaded original before conversion and compares it with the generation-time hash. A match establishes byte-for-byte identity and may verify the original-to-output mapping. A mismatch is a review flag—not an automatic rejection—because metadata alteration, recompression, or conversion may change bytes. Do not silently fall back to filenames or visual guessing to claim a verified match. Use metadata and image-content comparison only as separately documented fallback evidence, with conservative mapping status.
+When the user later uploads an unchanged original, the GitHub Action calculates SHA-256 before conversion. It compares this hash with the generation-time hash. A match establishes byte-for-byte identity. It may also verify the original-to-output mapping. A mismatch is a review flag, not an automatic rejection. Metadata alteration, recompression, or conversion may change the bytes. Do not claim a verified match based only on filenames or visual guessing. Use metadata and image-content comparison only as separately documented fallback evidence. Keep the mapping status conservative.
 
 The WebP is a derivative with different bytes and therefore is **not expected to match the original SHA-256**. The original hash remains the identity key for the output. Record the derivative's path and link under the same output ID. A WebP SHA-256 is optional and only for independent derivative integrity checks. Never compare original PNG/JPEG hashes against converted WebP hashes as if equality were expected.
 
-The GitHub Action should automate these tasks:\n\n- Calculate and compare original hashes.\n- Validate output mapping.\n- Convert, rename, and relocate files.\n- Add direct links to the README and attempt records.\n- Reconcile the manifest and write verification reports.\n\nPreserve incoming upload filenames. Filenames are not identity evidence. Do not claim implementation until you inspect and update the Action.
+The GitHub Action should automate these tasks:
+
+- Calculate and compare original hashes.
+- Validate output mapping.
+- Convert, rename, and relocate files.
+- Add direct links to the README and attempt records.
+- Reconcile the manifest and write verification reports.
+
+Preserve incoming upload filenames. Filenames are not identity evidence. Do not claim implementation until you inspect and update the Action.
 
 
 ## GitHub Action implementation status (2026-11-20)
