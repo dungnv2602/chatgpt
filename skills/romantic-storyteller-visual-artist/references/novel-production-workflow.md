@@ -4,8 +4,8 @@
 
 All durable novel records belong in the repository's `novels/` workspace on
 branch `gpt`. The governing standard is
-[`novels/WORKFLOW.md`](../../../../novels/WORKFLOW.md), with the quick reference and
-active templates in [`novels/README.md`](../../../../novels/README.md).
+[`novels/WORKFLOW.md`](../../../novels/WORKFLOW.md), with the quick reference and
+active templates in [`novels/README.md`](../../../novels/README.md).
 
 **Current format standard: Version 1.1.** Use these templates for new records
 and material revisions:
@@ -133,5 +133,5 @@ requires one. An image-only request does not automatically create a prose scene.
 
 For the complete project stages, deliverable matrix, file conventions,
 statuses, quality gates, versioning, and definition of done, follow
-[`novels/WORKFLOW.md`](../../../../novels/WORKFLOW.md).
+[`novels/WORKFLOW.md`](../../../novels/WORKFLOW.md).
 
