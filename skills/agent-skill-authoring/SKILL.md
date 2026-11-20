@@ -198,7 +198,7 @@ Preserve all facts, conditions, exceptions, numbers, scope limits, and modality.
 
 Do not rewrite creative writing, dialogue, marketing copy, approved creative prompts, code, or examples that intentionally demonstrate a rule violation.
 
-Run `skills/asd-ste100/scripts/ste-lint.py` on changed technical documents when practical. Review its findings against the source. The linter checks only supported patterns. It cannot prove that a rewrite preserves meaning or follows the official dictionary.
+Do not run the linter locally. Push changed technical documents to branch `gpt` and let GitHub Actions validate them. Review workflow findings against the source when the user requests a CI review. The linter checks only supported patterns. It cannot prove that a rewrite preserves meaning or follows the official dictionary.
 
 Do not claim certified ASD-STE100 compliance. The repository does not contain the official controlled dictionary.
 
