@@ -64,24 +64,8 @@ jobs:
             exit 0
           fi
 
-          changed_files=$(git diff --name-only --diff-filter=ACMRD "$last_success" "$GITHUB_SHA")
-          full_audit_change=false
-          while IFS= read -r file; do
-            case "$file" in
-              skills/asd-ste100/examples/*) ;;
-              skills/asd-ste100/*|.github/workflows/ste-lint-full-docs.yml|.github/workflows/ste-lint-changed.yml)
-                full_audit_change=true
-                ;;
-            esac
-          done <<< "$changed_files"
-
           echo "base_sha=$last_success" >> "$GITHUB_OUTPUT"
           echo "full_audit=false" >> "$GITHUB_OUTPUT"
-          if [[ "$full_audit_change" == true ]]; then
-            echo "skip_changed=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "skip_changed=false" >> "$GITHUB_OUTPUT"
-          fi
 
       - name: Check active Markdown file links and heading anchors
         if: steps.baseline.outputs.full_audit == 'true'
@@ -108,7 +92,7 @@ jobs:
 
       - name: Find Markdown files changed since the last successful run
         id: changed
-        if: steps.baseline.outputs.full_audit == 'false' && steps.baseline.outputs.skip_changed == 'false'
+        if: steps.baseline.outputs.full_audit == 'false'
         shell: bash
         env:
           BASE_SHA: ${{ steps.baseline.outputs.base_sha }}
