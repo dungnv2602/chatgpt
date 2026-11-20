@@ -1,6 +1,6 @@
 # Task Board
 
-Last updated: 2026-11-20 18:36 UTC
+Last updated: 2026-11-21
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
@@ -10,7 +10,7 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-| 20261120-183600 | Continue the Samantha drawing session | P2 | Blocked | User | 2026-11-20 | [Task record](tasks/20261120-183600-continue-samantha-drawing-session.md) |
+| 20261120-183600 | Continue the Samantha drawing session | P2 | In Progress | User | 2026-11-21 | [Task record](tasks/20261120-183600-continue-samantha-drawing-session.md) |
 
 ## In Progress
 
@@ -23,7 +23,7 @@ The Historical section retains at most the 7 most recently completed or cancelle
 |---|---|---:|---|---|---|---|
 ## Blocked
 
-_Current execution is blocked on the user's visual-baseline selection. See above._
+_No blocked tasks._
 
 ## Proposed
 
