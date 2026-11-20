@@ -168,7 +168,7 @@ jobs:
             if [[ "$count" -gt 0 ]]; then
               files_with_findings=$((files_with_findings + 1))
               {
-                echo "#### `$file`"
+                printf '#### `%s`\n' "$file"
                 echo
                 echo '~~~text'
                 cat "$output"
@@ -182,7 +182,7 @@ jobs:
               overall_failed=1
               if [[ "$count" -eq 0 ]]; then
                 {
-                  echo "#### `$file` (execution error, exit $status)"
+                  printf '#### `%s` (execution error, exit %s)\n' "$file" "$status"
                   echo
                   echo '~~~text'
                   cat "$output"
