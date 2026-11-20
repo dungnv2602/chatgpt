@@ -75,4 +75,4 @@ Do not create, copy, upload, or synchronize project materials in ChatGPT Library
 
 If a required repository file is missing, report that fact. Do not reconstruct it from Library.
 
-The canonical project directories are `images/`, `master/`, `novels/`, `prompts/`, and `skills/`. Do not use the obsolete `ChatGPT/` wrapper path.
+The canonical project directories are `images/`, `master/`, `novels/`, `drawings/`, and `skills/`. Do not use the obsolete `ChatGPT/` wrapper path.
