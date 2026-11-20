@@ -62,3 +62,8 @@ secondary reading, defines a 4–6-hour weekly study rhythm, and includes phase
 checkpoints, written outputs, and safeguards against unverified chapter or page
 references. The broader research standards and mandatory three-part book
 evaluation rule from version 3 are retained.
+
+
+## Technical documentation standard
+
+Apply the repository [ASD-STE100 policy](../asd-ste100/references/repository-writing-policy.md) when you revise this README or the skill's technical references. Preserve scholarly qualifications, source limits, and uncertainty.
