@@ -79,7 +79,13 @@ Model names, defaults, controls, and availability change quickly. When the user 
 
 **Claude (claude.ai, Claude API, Claude 5.x / current Claude models)**
 
-Do not assume one universal Claude default. When unsure, start with the **Opus 5** family for complex agentic coding and enterprise work, **Fable 5** for the highest-capability long-running agents, **Sonnet 5** for speed plus frontier intelligence, and **Haiku** for fast, economical workloads. Ask which model only when the distinction changes the prompt. Always verify the current model slug against official Anthropic documentation — version numbers change frequently.
+Do not assume one universal Claude default. When unsure, start with one of these routes:
+- **Opus 5** for complex agentic coding and enterprise work.
+- **Fable 5** for long-running autonomous work that needs advanced capabilities.
+- **Sonnet 5** for speed and advanced reasoning.
+- **Haiku** for fast, economical workloads.
+
+Ask which model only when the distinction changes the prompt. Verify the current model slug against official Anthropic documentation. Model versions change frequently.
 
 *Durable across current Claude models:*
 - Be clear and direct. State the desired output, constraints, and scope explicitly. Explain why when the reason affects judgment.
@@ -163,14 +169,14 @@ Identify the surface (ChatGPT, Codex, or API), preserve the selected model, and 
 - Grok 4.6 reasoning cannot be disabled. Do not ask for chain-of-thought.
 - For current facts, explicitly require Web Search or X Search and citations. Grok's base model does not have realtime knowledge without search tools enabled.
 - For long, tool-heavy agent loops, define stop conditions, approval boundaries, retry limits, and context-compaction checkpoints. Keep stable instructions at the front to preserve prompt-cache reuse.
-- For API setup notes, recommend `prompt_cache_key` on the Responses API or `x-grok-conv-id` on Chat Completions for reliable cache routing. Do not place secret values in the prompt.
+- For API setup notes, recommend `prompt_cache_key` on the Responses API or `x-grok-conv-id` on Chat Completions. Use these identifiers for reliable cache routing. Do not place secret values in the prompt.
 - Consumer Grok and the xAI API expose different controls.
 - If the user uses grok.com or X and cannot set model parameters, encode behavioral requirements in the prompt. Do not specify API settings.
 
 ---
 
 **Gemini / Google AI models (Gemini 4 Argon, Gemini 3.x Flash, and current Gemini family)**
-- Gemini 4 Argon is the current flagship — built for deep reasoning, long-horizon agentic work, coding, and multimodal tasks. 1M token context window. Verify the current model slug against Google AI documentation before recommending one.
+- Gemini 4 Argon is the current flagship for deep reasoning, long-horizon agentic work, coding, and multimodal tasks. It has a 1M-token context window. Verify its current model slug against Google AI documentation before recommending it.
 - Strong at long-context and multimodal — leverage its large context window for document-heavy prompts
 - Prone to hallucinated citations — always add "Cite only sources you are certain of. If uncertain, say [uncertain]."
 - Can drift from strict output formats — use explicit format locks with a labelled example
