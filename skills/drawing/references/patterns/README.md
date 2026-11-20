@@ -17,14 +17,13 @@ The chronological logs remain the canonical source for full prompt wording and a
 
 ## Governance
 
-The operational consultation checkpoint lives in
-[Drawing Skill](../../SKILL.md). The complete prompt-fidelity
-standard is maintained in the dedicated
-[Prompt Fidelity and Unrequested Restrictions note](../prompt-fidelity.md)
-that note is the authoritative, exhaustive rule for prompt drafting, revision,
-and pre-generation review. This index remains the library's navigation and
-governance reference. Do not repeatedly reread the full library when the
-relevant entries have already been reviewed and no refresh condition applies.
+The operational consultation checkpoint is in the
+[Drawing Skill](../../SKILL.md). The complete prompt-fidelity standard is in the
+[Prompt Fidelity and Unrequested Restrictions note](../prompt-fidelity.md).
+That note is the authoritative rule for prompt drafting, revision, and
+pre-generation review. This index provides navigation and governance.
+Do not reread the full library when you have already reviewed the relevant
+entries and no refresh condition applies.
 
 1. Consult the relevant global patterns before drafting a new prompt.
 2. Treat the active drawing brief and its explicit constraints as the highest authority. Global patterns are guidance, never overrides.
