@@ -10,9 +10,9 @@ metadata:
 
 ## 1. Absolute workspace boundary
 
-**Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `drawings/`, `skills/`, `workspace/`, and `archive/`. Do not read, list, search, fetch, create, update, move, rename, or delete files outside those directories, except for the specifically authorized workflow exception below.
+**Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `drawings/`, `skills/`, `workspace/`, and `archive/`. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specifically authorized workflow exception below.
 
-**Authorized WebP workflow exception:** The user authorized creation of `.github/workflows/convert-images-to-webp.yml` on 12 November 2026. The user approved its takeout-pipeline and persistent staging changes on 20 November 2026. The user also approved moving its scripts into this skill and updating the required workflow paths. These changes define the current authorization. Fetch fresh permission before any further workflow changes.
+**Authorized WebP workflow exception:** The user authorized creation of `.github/workflows/convert-images-to-webp.yml` on 12 November 2026. The user approved its takeout-pipeline and persistent staging changes on 20 November 2026. The user also approved moving its scripts into this skill and updating the required workflow paths. These changes define the current authorization. Ask for fresh permission before any further workflow changes.
 
 This boundary applies to every future task and every tool call, not only archiving.
 
@@ -28,7 +28,7 @@ This boundary applies to every future task and every tool call, not only archivi
 - Do not recreate the obsolete `ChatGPT/` wrapper or consult former paths from the previous repository layout.
 - Do not use repository-wide code search or recursive root-tree listings. Use exact paths and narrowly scoped directory listings within approved project directories.
 - Do not follow Markdown links outside the approved directories. If an essential reference is outside them and is not supplied in this conversation, explain the limitation. Ask the user to place it in an approved directory or provide it in chat.
-- A request to use an outside reference does not silently change this boundary. Fetch explicit permission before accessing an outside repository path.
+- A request to use an outside reference does not silently change this boundary. Ask for explicit permission before accessing an outside repository path.
 - Repository and branch identifiers may be used to direct GitHub operations, but this does not authorize reading or writing files outside the approved directories.
 
 **If a task cannot be completed without accessing something outside the approved project directories, stop and explain the limitation rather than crossing the boundary.**
@@ -55,15 +55,15 @@ This boundary applies to every future task and every tool call, not only archivi
 
 ### Conversation behavior
 
-During foundational initialization, read the [Conversation Mode skill](../conversation-mode/SKILL.md) after this skill. Read it from branch `gpt` before project work begins. Apply its mode selection and response rules throughout the conversation. Session Archiving governs archival work. Conversation Mode governs collaboration.
+During foundational initialization, read the [Conversation Mode skill](../conversation-mode/SKILL.md) after this skill. Read it from branch `gpt` before project work starts. Apply its mode selection and response rules throughout the conversation. Session Archiving governs archival work. Conversation Mode governs collaboration.
 
 ### Foundational skill loading cadence
 
 Load Session Archiving, Conversation Mode, The Worker, Agent Skill Authoring, ASD-STE100, and GitHub Actions for `start session`. Also load this tier before a drawing session or novelist initialization when foundational initialization has not passed in this conversation. See `skills/SESSION_START.md` for the complete dependency order.
 
-Maintain a per-conversation verified-load ledger. Fetch and read each required path once, then reuse it for later tiers and tasks. Do not reload a skill or reference merely because a specialist workflow depends on it.
+Maintain a per-conversation verified-load ledger. Retrieve and read each required path once, then reuse it for later tiers and tasks. Do not reload a skill or reference merely because a specialist workflow depends on it.
 
-Mark a path verified only after retrieval and reading succeed. A new ChatGPT conversation starts a new ledger. Do not use remembered content or a prior conversation's reads as current verification.
+Mark a path verified only after retrieval and reading succeed. A new ChatGPT conversation creates a new ledger. Do not use remembered content or a prior conversation's reads as current verification.
 
 Refresh only the affected file. Do this when the user asks, a relevant repository change is known or suspected, or an unresolved instruction requires the current authoritative file. Do not reload unrelated skills or a complete tier.
 
@@ -77,24 +77,24 @@ In Condensed Mode, put the notice in `workspace/discussion.md` and provide only 
 
 Then perform the required retrievals. Do not ask the user to repeat the cue. Do not claim a retrieval is underway unless you are performing it.
 
-The startup gate checks prerequisites. It is not a session archive. Do not create dated archive records merely because a new conversation started. Stop project work only when a required file retrieval fails. Report the exact missing path.
+The startup gate defines prerequisites. It is not a session archive. Do not create dated archive records merely because a new conversation started. Stop project work only when a required file retrieval fails. Report the exact missing path.
 
 ### Mandatory session-start execution gate
 
 When the user says **`start session`**, run this sequence before project work. Also run it as a prerequisite when the user says **`start a drawing session`** or **`Be the novelist`** and foundational initialization has not passed in the current conversation:
 
 1. **Notify the user first.** State that foundational retrievals are starting. In Condensed Mode, put this notice in `workspace/discussion.md` and provide only its direct link.
-2. Fetch and read this Session Archiving skill from branch `gpt`.
-3. Fetch and read `skills/conversation-mode/SKILL.md` from the same branch.
-4. Fetch and read `skills/the-worker/SKILL.md` from the same branch.
-5. Fetch and read `skills/agent-skill-authoring/SKILL.md` from the same branch.
-6. Fetch and read `skills/asd-ste100/SKILL.md` from the same branch.
-7. Fetch and read `skills/github-actions/SKILL.md` from the same branch.
-8. Confirm that every required retrieval succeeded and that you read each file. Keep the verified instructions for the rest of the conversation.
+2. Retrieve and read this Session Archiving skill from branch `gpt`.
+3. Retrieve and read `skills/conversation-mode/SKILL.md` from the same branch.
+4. Retrieve and read `skills/the-worker/SKILL.md` from the same branch.
+5. Retrieve and read `skills/agent-skill-authoring/SKILL.md` from the same branch.
+6. Retrieve and read `skills/asd-ste100/SKILL.md` from the same branch.
+7. Retrieve and read `skills/github-actions/SKILL.md` from the same branch.
+8. Verify that every required retrieval succeeded and that you read each file. Keep the verified instructions for the rest of the conversation.
 9. After all six foundational skills load, run one bounded CI snapshot as defined in `skills/github-actions/SKILL.md`. Repair any newest completed failure that applies. Never wait or poll.
 10. Stop initialization only if a required skill retrieval fails. If a completed CI failure cannot be repaired safely during one focused preflight, record the exact blocker and continue initialization. Pending, cancelled, absent, or inaccessible results do not block initialization. Never claim an unverified result passed.
 
-Do not load the Drawing skill or its references during foundational initialization. After the foundational gate passes, load Drawing only when the task requires it. For a drawing session or novelist request, first verify the verified-load ledger. Reuse any Drawing files already read in this conversation and fetch only missing files. If foundational initialization already passed, do not run this gate again.
+Do not load the Drawing skill or its references during foundational initialization. After the foundational gate passes, load Drawing only when the task requires it. For a drawing session or novelist request, first verify the verified-load ledger. Reuse any Drawing files already read in this conversation and retrieve only missing files. If foundational initialization already passed, do not run this gate again.
 
 **No premature-work exception after activation:** After the user invokes an initialization cue, retrieve every required file before project work. Repair any newest completed CI failure that applies. Do not wait for pending, cancelled, or unavailable CI results. Do not substitute memory, previous-session reads, Library copies, or readiness claims for fresh GitHub retrievals.
 
@@ -102,7 +102,7 @@ Do not load the Drawing skill or its references during foundational initializati
 
 This gate does not guarantee future execution. Verify compliance through retrieval and read-back in each new conversation.
 - Do not create parallel prompt folders. `drawings/` is the single canonical prompt location.
-- Do not overwrite pre-existing files without fetching the exact path first and preserving their contents.
+- Do not overwrite pre-existing files without retrieving the exact path first and preserving their contents.
 
 ## Supporting references
 
@@ -128,10 +128,10 @@ Load [Archive Records and Drawing-Prompt Procedures](references/archive-records-
 ## 7. GitHub write and verification discipline
 
 - Perform all file operations using exact paths under `approved project directories` on branch `gpt`.
-- Do not list, fetch, search, inspect, or mutate any file path outside `approved project directories`.
-- For an update, fetch the current file first and use its current blob SHA.
+- Do not list, retrieve, search, inspect, or mutate any file path outside `approved project directories`.
+- For an update, retrieve the current file first and use its current blob SHA.
 - Perform sequential writes to the same file. Do not run updates to the same path in parallel.
-- After each important write, fetch the same `approved project directories` path again and verify its contents.
+- After each important write, retrieve the same `approved project directories` path again and verify its contents.
 - Report a commit as successful only when the write tool returns a commit SHA. Report verification only after a read-back confirms the expected content.
 - If a write or network call fails, inspect only relevant paths inside `approved project directories` before retrying to avoid duplicate files or duplicate commits.
 - Do not use repository-root or outside-folder operations as a shortcut.

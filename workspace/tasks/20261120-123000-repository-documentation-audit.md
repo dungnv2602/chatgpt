@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 14:25 UTC
+- **Updated:** 2026-11-20 14:35 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -43,6 +43,16 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - Branch `gpt` remains the sole working branch. Do not modify `main` without explicit authorization.
 
 ## 6. Progress Log
+
+### 2026-11-20 14:35 UTC
+
+- **Action:** Continued the lint debt review using the completed GitHub Actions output from run `44751204773`.
+- **Finding:** Identified eight low-risk synonym-rotation findings in Session Archiving, Agent Skill Authoring, Conversation Mode, and the image-editing protocol. The findings mixed retrieval/fetch, start/begin, check/verify, confirm/verify, validate/check, and correct/repair wording.
+- **Change:** Standardized the affected terms without changing technical conditions or lint baselines. Kept literal Git command names unchanged.
+- **Workspace boundary:** The current Session Archiving policy explicitly includes `drawings/` among approved roots. A targeted listing of `drawings/` on branch `gpt` returned `2026-11-19/`, `2026-11-20/`, and `history/`. This resolves the earlier recorded uncertainty about whether the root exists and whether it falls outside the approved boundary.
+- **Validation:** Read the relevant policy and reference sections and inspected the CI log. Did not run lint or CI locally. Did not wait for or poll a result.
+- **Next:** Continue reviewing the remaining hard findings in active technical documentation. Preserve historical archive records unless the user authorizes changes.
+
 
 ### 2026-11-20 14:25 UTC
 

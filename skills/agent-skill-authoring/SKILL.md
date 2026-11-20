@@ -11,7 +11,7 @@ metadata:
 
 ## 1. Purpose and authority
 
-Use this skill whenever a skill folder or any of its operational instructions are created, revised, reorganized, validated, or integrated into the repository's loading workflow.
+Use this skill whenever a skill folder or any of its operational instructions are created, revised, reorganized, checked, or integrated into the repository's loading workflow.
 
 The Agent Skills open specification is the format authority:
 - Specification: https://agentskills.io/specification
@@ -237,7 +237,7 @@ Before considering a skill complete, check all of the following:
 - [ ] The main file is concise enough to activate without unnecessary context burden.
 - [ ] Supporting resources are focused and loaded only as needed.
 - [ ] No contradictory, duplicated, stale, or unrequested rules have been introduced.
-- [ ] The correct ASD-STE100 mode applies to skill and technical documentation.
+- [ ] Use the applicable ASD-STE100 mode for skill and technical documentation.
 - [ ] Sentence length, paragraph structure, and punctuation follow the repository writing policy.
 - [ ] Every rewrite preserves facts, conditions, scope, and modality.
 - [ ] Complete the one-time CI snapshot before work and after cue-triggered skill loading.

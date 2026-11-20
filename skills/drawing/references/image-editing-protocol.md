@@ -45,10 +45,10 @@ Direct editing is a secondary method, not the default. Use it only when the user
 
 - Attach the exact image source. A filename or image ID in text is not enough.
 - Inspect the returned operation and parent/source metadata.
-- If the metadata confirms source linkage and the requested change is visible, classify the result as a confirmed edit.
+- If the metadata shows source linkage and the requested change is visible, classify the result as a source-linked edit.
 - If the metadata shows no source or parent, do not claim source continuity. This rule applies even when the output resembles the original.
 - If metadata is unavailable, state that source linkage is unconfirmed.
-- A result that looks successful is not automatically a confirmed edit.
+- A result that looks successful does not prove source linkage.
 
 ## 5. Recovery when prompt reconstruction misses
 

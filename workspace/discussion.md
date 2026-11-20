@@ -1,6 +1,26 @@
 
 # Open Discussions
 
+### 2026-11-20 14:35 UTC
+
+**Assistant**
+
+Continued the audit and reduced eight hard synonym-rotation findings across four active technical documents:
+
+- `skills/session-archiving/SKILL.md`
+- `skills/agent-skill-authoring/SKILL.md`
+- `skills/conversation-mode/SKILL.md`
+- `skills/drawing/references/image-editing-protocol.md`
+
+The edits standardize retrieval, start, check, verify, confirm, validate, and repair wording. They do not change technical conditions or lint baselines. Literal Git command names remain unchanged.
+
+I also resolved the earlier `drawings/` boundary uncertainty. The current Session Archiving policy lists `drawings/` as an approved root, and its targeted directory listing contains `2026-11-19/`, `2026-11-20/`, and `history/`.
+
+I did not run lint or CI locally, and I did not wait for or poll a CI result. The audit continues with the remaining hard findings in active technical documents. Historical archive records remain unchanged without your authorization.
+
+---
+
+
 ### 2026-11-20 14:25 UTC
 
 **Assistant**

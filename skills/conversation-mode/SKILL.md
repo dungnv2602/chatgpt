@@ -132,7 +132,7 @@ If the task needs essential clarification or user approval, ask only the minimum
 - Avoid interim commentary unless it materially helps the user.
 - Record every meaningful action in the task file.
 - Report only outcomes, decisions, blockers, and next actions.
-- Do not claim success before the relevant tool confirms it.
+- Do not claim success before the relevant tool reports success.
 
 ### Work outside the repository
 
