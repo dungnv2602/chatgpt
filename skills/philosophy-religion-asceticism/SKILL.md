@@ -125,11 +125,12 @@ affiliated institution is prestigious.
    peer-review process as far as the available evidence permits. Distinguish a
    university press from a commercial academic publisher, and distinguish the
    publisher's reputation from the standing of the author's institution.
-2. **Scholarly excellence:** Assess the actual work: contributors' relevant
-   expertise, quality and transparency of methods, engagement with primary
-   texts and current specialist literature, editorial coherence, independent
-   scholarly reviews, and substantive strengths and criticisms. Do not infer
-   chapter-level peer review from the publisher's general reputation.
+2. **Scholarly excellence:** Assess the actual work. Consider the contributors'
+   relevant expertise, the quality and transparency of the methods, and
+   engagement with primary texts and current specialist literature. Also
+   consider editorial coherence, independent scholarly reviews, and
+   substantive strengths and criticisms. Do not infer chapter-level peer
+   review from the publisher's general reputation.
 3. **Incremental necessity:** Compare the work against the user's existing
    collection and identify what it adds, what it duplicates, and what gaps it
    leaves unfilled. Consider subject coverage, depth, originality, currency,
