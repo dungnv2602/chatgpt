@@ -158,28 +158,33 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
 ### Version 6 — Second repository documentation audit pass
 
 - **Date:** 2026-11-20
-- **Change:** Revise additional skill instructions, references, image documentation, and one current novel template.
+- **Change:** Revise additional skill instructions, references, image documentation, and current novel templates.
 - **Files modified:**
   - `skills/SESSION_START.md`
   - `skills/novelist-initiation/INITIATION.md`
   - `skills/drawing/references/image-editing-protocol.md`
   - `skills/conversation-mode/SKILL.md`
+  - `skills/agent-skill-authoring/SKILL.md`
+  - `skills/session-archiving/SKILL.md`
+  - `skills/session-archiving/references/image-provenance-and-webp.md`
+  - `skills/session-archiving/references/archive-records-and-image-prompts.md`
   - `skills/romantic-storyteller-visual-artist/references/novel-production-workflow.md`
   - `skills/philosophy-religion-asceticism/README.md`
+  - `skills/philosophy-religion-asceticism/SKILL.md`
   - `skills/philosophy-religion-asceticism/references/research-method.md`
   - `skills/philosophy-religion-asceticism/references/source-standards.md`
   - `images/README.md`
   - `novels/templates/scene-v1.1.md`
   - `novels/templates/illustration-prompt-v1.1.md`
-  - `skills/philosophy-religion-asceticism/SKILL.md`
-  - `novels/README.md` (semicolon correction)
-- **Verification:** Fetched the changed paths again from branch `gpt`. Read-back confirmed the new content.
-- **Validation limit:** The repository linter has not run. This environment does not provide a repository shell or action-dispatch tool. Manual review is not a substitute for the linter.
-- **Manual screening:** A limited JavaScript scan checked semicolons, selected phrasal verbs, marketing adjectives, and selected nominalizations in inspected files. It found two semicolons. Both were corrected and read back. This scan does not replace the official linter.
-- **Inventory limit:** The exact path `master/README.md` returned 404. The available GitHub tools do not provide a permitted directory listing for `master/`, so I could not inventory its other files.
-- **Remaining work:** Audit the remaining skill and technical reference documents. Run the linter in a repository execution environment. Review every linter finding and verify links and meaning.
-- **Commits:** `1cc5e5d623e8200316d009dc2219a74287c591fc`, `f898c0bd2fc68a123df16f1b0b6ce44d13ba7e9d`, `82df4add11b03428ac1a49ba948e24ccf9e78e35`, `5bf95f28bc4cbbd645ae86fc4407fbdc32826b01`, `29a58b17304c56e986e39af15d2867b955e17665`, `2333a0378f0f6aebad5bdd7b31801d57ee04dfb0`, `5f1a78b68e655e10160d852fd81be65d937f4111`, `f47d07242b7605dded9d17b2ba82425e34e48cd2`, `3f223f69f1aaff0da7643f81ea58ce950746085d`, `11752c6e9eeaabe66580ae3d69de46e3ef6f649a`, `29103811aba608d25914d699473685f6b06cebc3`, `f56f8385c2f96ca0f8a29e64f925071511aa8363`, `91e427e1f4a63246a78b1c0eab596d2abb649284`, and `01fde065c45c98b4ee7b4cce399417cfc2595e85`.
-
+  - `novels/README.md`
+- **Verification:** Fetched changed paths from branch `gpt` after each write. Read-back confirmed the committed content.
+- **Validation limit:** The repository linter has not run. This environment has no repository shell or GitHub Action dispatch tool. Manual screening does not replace the linter.
+- **Manual screening:** Scans checked semicolons, selected phrasal verbs, marketing adjectives, selected nominalizations, and instruction sentence length in revised files. The scans found two semicolons, one missing sentence boundary, one nominalized verb phrase, and several long instructions. Those findings were corrected and read back. These scans are manual aids, not official validation.
+- **Path-policy conflict:** The Session Archiving skill lists five approved roots: `images/`, `master/`, `novels/`, `prompts/`, and `skills/`. The same skill and its references also direct non-novel drawing assets to `drawings/YYYY-MM-DD/images/`. That path is outside the listed roots. I did not change the boundary or access the `drawings/` path. Resolve this conflict before further work in that path.
+- **Inventory limit:** The exact path `master/README.md` returned 404. The available GitHub tools do not provide a permitted directory listing for `master/`. Its other files remain uninspected.
+- **Remaining work:** Audit the remaining skill and technical reference documents. Run the official linter in a repository execution environment. Review every finding. Verify links and technical meaning.
+- **Commits:** `1cc5e5d623e8200316d009dc2219a74287c591fc`, `f898c0bd2fc68a123df16f1b0b6ce44d13ba7e9d`, `82df4add11b03428ac1a49ba948e24ccf9e78e35`, `5bf95f28bc4cbbd645ae86fc4407fbdc32826b01`, `29a58b17304c56e986e39af15d2867b955e17665`, `2333a0378f0f6aebad5bdd7b31801d57ee04dfb0`, `5f1a78b68e655e10160d852fd81be65d937f4111`, `f47d07242b7605dded9d17b2ba82425e34e48cd2`, `3f223f69f1aaff0da7643f81ea58ce950746085d`, `11752c6e9eeaabe66580ae3d69de46e3ef6f649a`, `29103811aba608d25914d699473685f6b06cebc3`, `f56f8385c2f96ca0f8a29e64f925071511aa8363`, `91e427e1f4a63246a78b1c0eab596d2abb649284`, `01fde065c45c98b4ee7b4cce399417cfc2595e85`, `50a972bbbaa0a84231cc0dfeaf9b0305f3a19374`, `0e5e4d60adcd319fa0ad252d6bebed7e06b02122`, `2b3e4591b72bb32b61707c1e73efef4f03a99cf9`, `eae21daa515a6c6838259e72722f773c698c3d2e`, `055ee65bfe5b288100a69ea9087b7cbee469da88`, `cd8764c39910e6fd84e00824b4d506fa0408a80b`, `7071f87b33911da4f76a59aca9ffd64226b78a47`, `bfb881d37aa96b3efffcbe628053cc235ea1fbac`, `9dc453ea7df070edaa5a38bd5fa49b4459631a11`, `548fe068a33a5be753b55f0f04b96268c990b871`, `7148f3a9218845fc46a55d7d461c6b252fb73442`, `dcc8f6cc9eef17ae14babc2d9d7ee2cea398452d`, `248e444a8a8865b7e77efa0f89f63848f7cbe93b`.
+ 
 ## Future revision log
 
 Append a new entry whenever the initialization policy or its dependencies change.
