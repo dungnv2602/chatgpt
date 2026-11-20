@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 15:00 UTC
+- **Updated:** 2026-11-20 15:15 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -255,7 +255,7 @@ The Version 19 full lint reported 179 hard findings and 300 advisory findings. T
 
 The newest changed-document run `44750057903` failed on `9260346fb8e14c5c576fbf8f8e3676fb645833e4`. Its fallback full audit found new lint violations in Session Start, GitHub Actions, The Worker, and Initialization Policy. The linter self-test and active Markdown link checker passed. Commit `49a972741aeb69bf249afffb11cbe33d8574d05f` rewrote those findings without changing baselines. A subsequent source-review batch split long sentences in Drawing and the philosophy skill, fixed the dangling conjunction in Prompt Fidelity, and removed an unrelated Version 5 entry from Initialization Policy. The latest commits are `ccf8c055a99984f1c5ec1d835958e9b5afc14282` and `49a972741aeb69bf249afffb11cbe33d8574d05f`. No result for either repair batch has been awaited.
 
-The Version 19 active-link scan found zero unresolved local Markdown targets or heading anchors in its 119-file source scope. Current validation excludes `archive/tasks/`, `workspace/tasks/`, and `workspace/discussion.md` as sources while retaining those files as link targets. The historical-link review and external URL review remain open. The latest completed full audit identified one dangling-conjunction candidate, which the current audit has corrected. The full audit also reported 60 long-sentence candidates. Source review has now addressed 41 of the 60 candidates from the earlier full-audit log. The edits cover Drawing, philosophy, curriculum, archive-reference, and generation-recovery documents. The remaining 19 original candidates require context review.
+The Version 19 active-link scan found zero unresolved local Markdown targets or heading anchors in its 119-file source scope. Current validation excludes `archive/tasks/`, `workspace/tasks/`, and `workspace/discussion.md` as sources while retaining those files as link targets. The historical-link review and external URL review remain open. The latest completed full audit identified one dangling-conjunction candidate, which the current audit has corrected. The full audit also reported 60 long-sentence candidates. Source review has now addressed all 60 long-sentence candidates from the earlier full-audit log. This is a source-review result, not a fresh official lint result. The edits cover Drawing, philosophy, curriculum, archive-reference, and generation-recovery documents. The 13 long-sentence examples in the ASD-STE100 skill preserve the quoted examples and the intended teaching content.
 
 ## 8. Remaining Work
 
@@ -264,16 +264,15 @@ The Version 19 active-link scan found zero unresolved local Markdown targets or 
 - Review external URL availability if it remains within the approved audit scope.
 - Confirm current audit scope and completion criteria against the repository state before closing the task.
 - Review the remaining long-sentence and synonym-rotation findings in full context. Do not change intentional examples or raise baselines.
-- Review the remaining 19 original long-sentence candidates in their current document context. The historical candidate count may change after the next GitHub Actions result.
+- Review remaining synonym-rotation findings in full context. Preserve deliberate examples and distinct technical meanings. Do not raise baselines.
 
 ## 9. Next Actions
 
-1. Continue context review of the 19 remaining original long-sentence candidates.
-2. Inspect each candidate before editing. Preserve the source meaning and intentional examples.
-3. Review remaining synonym-rotation findings without changing intentional examples.
-4. Keep historical audit entries and archived task records unchanged.
-5. Review external URL availability if it remains within the approved audit scope.
-6. Push related edits to branch `gpt`. Let GitHub Actions execute independently. Review available results at a later mandatory preflight.
+1. Review remaining synonym-rotation findings in full document context.
+2. Preserve deliberate examples and distinct technical meanings.
+3. Keep historical audit entries and archived task records unchanged.
+4. Review external URL availability if it remains within the approved audit scope.
+5. Push related edits to branch `gpt`. Let GitHub Actions execute independently. Review available results at a later mandatory preflight.
 
 ## 10. References
 
@@ -690,3 +689,14 @@ Continue from the Next Actions. Keep this task In Progress until the remaining a
 - **Commit:** `a7fb608bb27365c606a603278aa446daf0bd28a8`.
 - **Read-back:** Fetched the reference from branch `gpt`. Confirmed both revised passages and the absence of the previous wording.
 - **Next:** Continue with the 19 remaining original candidates and review synonym-rotation findings.
+
+
+### 2026-11-20 15:15 UTC
+
+- **Action:** Completed the source-based review of all 60 long-sentence candidates from the earlier full-audit run.
+- **Changes:** Split the final pattern-consultation sentence in the Drawing skill, one archive-delivery sentence, one series-continuity sentence, and the remaining long sentences in the ASD-STE100 skill. Preserved quoted teaching examples, technical distinctions, and source meaning.
+- **Commits:** Drawing/archive/series `1aeb818b89dc4c06204b270c8ba69778d235a0f6`; final Drawing pattern instruction `9b4303f7da9f4b033ab7a44220d2c93fca70db0f`; ASD-STE100 `985d7f8d509b4006feb09d9c668321e0e09f0ce5`.
+- **Read-back:** Fetched all five changed paths from branch `gpt`. Confirmed the revised passages and preserved quoted examples.
+- **Validation limit:** This does not establish a fresh official lint result. The latest CI run has not been awaited.
+- **Baseline policy:** No lint baseline changed.
+- **Next:** Review remaining synonym-rotation findings and external URL availability. Historical archive records remain unchanged without user authorization.
