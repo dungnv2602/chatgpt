@@ -55,7 +55,7 @@ During explicit foundational initialization, after retrieving and reading this f
 
 ### Foundational skill loading cadence
 
-Load the Session Archiving, Conversation Mode, Agent Skill Authoring, Drawing, and required Drawing reference files only when the user invokes `Follow instructions` or `Be the novelist`, as defined in `skills/SESSION_START.md`. Load each required foundational file once during that conversation's foundational initialization and apply the verified instructions for the remainder of that conversation. Do not load these files automatically at the beginning of a new chat. Refresh a foundational file when the user explicitly asks, a relevant repository change is known or reasonably suspected, or an unresolved instruction requires checking the authoritative file. A new ChatGPT conversation/session starts a new loading cycle. This cadence does not remove the requirement to load a task-specific skill when needed or to read relevant project records before performing that task.
+Load the Session Archiving, Conversation Mode, Agent Skill Authoring, ASD-STE100, Drawing, and required Drawing reference files only when the user invokes `Follow instructions` or `Be the novelist`, as defined in `skills/SESSION_START.md`. Load each required foundational file once during that conversation's foundational initialization and apply the verified instructions for the remainder of that conversation. Do not load these files automatically at the beginning of a new chat. Refresh a foundational file when the user explicitly asks, a relevant repository change is known or reasonably suspected, or an unresolved instruction requires checking the authoritative file. A new ChatGPT conversation/session starts a new loading cycle. This cadence does not remove the requirement to load a task-specific skill when needed or to read relevant project records before performing that task.
 
 ### First-response execution rule
 
@@ -92,6 +92,7 @@ This gate does not guarantee future execution; compliance must be established by
 - `references/drawing-session-closeout.md` — explicit closeout trigger, closeout checklist, and verification.
 - `references/image-provenance-and-webp.md` — original-image identity, SHA-256, provenance mapping, and WebP delivery.
 - `references/image-processing-scripts.md` — script responsibilities, dependencies, commands, and operating rules.
+- `../asd-ste100/references/repository-writing-policy.md` — the required writing modes and rules for skill and technical documentation.
 
 ## 3. Before archiving
 
@@ -141,3 +142,7 @@ For image conversion, original-image preservation, SHA-256 identity, provenance 
 ## 11. Image-processing scripts
 
 For the takeout processor, regression suite, or published-manifest verifier, load [Image Processing Scripts](references/image-processing-scripts.md). Keep the three executable files together under `scripts/`; the GitHub workflow calls these paths. The scripts and their regression tests are owned by Session Archiving, not by the general `images/` asset directory. Novel-scene destinations use `novels/` (plural).
+
+## 12. Technical documentation standard
+
+Follow the [ASD-STE100 skill](../asd-ste100/SKILL.md) and its repository writing policy when you create or revise skill files or technical documentation. Use Strict mode for operational instructions. Use STE-flavored mode for explanatory documentation. Preserve meaning, modality, scope, and technical precision. Do not apply the standard to creative content or intentional examples.
