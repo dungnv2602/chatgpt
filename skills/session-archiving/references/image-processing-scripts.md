@@ -41,7 +41,7 @@ python3 skills/session-archiving/scripts/process_takeout.py \
   --run-id "$GITHUB_RUN_ID"
 ```
 
-Verify published assets after the first push:
+Check published assets after the first push:
 
 ```bash
 python3 skills/session-archiving/scripts/verify_published_manifest.py \
