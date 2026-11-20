@@ -12,7 +12,7 @@ metadata:
 
 **Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `prompts/`, and `skills/`. Do not read, list, search, fetch, create, update, move, rename, or delete files outside those directories, except for the specifically authorized workflow exception below.
 
-**Authorized WebP workflow exception:** The user authorized creation of exactly `.github/workflows/convert-images-to-webp.yml` on 12 November 2026 and explicitly approved its takeout-pipeline modification and persistent WebP staging extension on 20 November 2026. This authorization covers the current approved extension only; it does not authorize unrelated outside paths or any later workflow changes. Obtain fresh, explicit permission before future modifications.
+**Authorized WebP workflow exception:** The user authorized creation of exactly `.github/workflows/convert-images-to-webp.yml` on 12 November 2026, approved its takeout-pipeline modification and persistent WebP staging extension on 20 November 2026, and on 20 November 2026 explicitly approved relocating the workflow's scripts into this skill and updating the workflow paths required by that relocation. These are the approved workflow changes; obtain fresh, explicit permission before any further workflow modifications.
 
 This boundary applies to every future task and every tool call, not only archiving.
 
@@ -91,6 +91,7 @@ This gate does not guarantee future execution; compliance must be established by
 - `references/archive-records-and-image-prompts.md` — conversation records, session briefs, prompt history, attempt ledgers, and image handling.
 - `references/drawing-session-closeout.md` — explicit closeout trigger, closeout checklist, and verification.
 - `references/image-provenance-and-webp.md` — original-image identity, SHA-256, provenance mapping, and WebP delivery.
+- `references/image-processing-scripts.md` — script responsibilities, dependencies, commands, and operating rules.
 
 ## 3. Before archiving
 
@@ -136,3 +137,7 @@ Start by reading the relevant session records inside `prompts/` and, when contin
 ## 10. WebP delivery derivatives
 
 For image conversion, original-image preservation, SHA-256 identity, provenance mapping, or WebP delivery, load [Image Provenance and WebP Delivery](references/image-provenance-and-webp.md). Never substitute a derivative hash for the original-generation identity or claim verification without read-back evidence.
+
+## 11. Image-processing scripts
+
+For the takeout processor, regression suite, or published-manifest verifier, load [Image Processing Scripts](references/image-processing-scripts.md). Keep the three executable files together under `scripts/`; the GitHub workflow calls these paths. The scripts and their regression tests are owned by Session Archiving, not by the general `images/` asset directory. Novel-scene destinations use `novels/` (plural).
