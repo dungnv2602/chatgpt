@@ -50,7 +50,12 @@ After cue-triggered skill loading, repeat the same one-time snapshot. Do not wai
 - workspace/tasks/ contains current task records.
 - archive/README.md defines archive retention.
 - archive/tasks/ contains completed or cancelled task records during retention.
-- Treat `archive/` as retention-only and outside content-audit scope. Never read, scan, audit, or lint archived contents. This restriction does not prohibit required archival and retention operations: create or move completed/cancelled task records into `archive/tasks/`, update the active task board to link to the archived record and archival commit, and allow the scheduled retention workflow to delete expired archive contents. Do not inspect archived contents as part of these operations. For links from active documents to archived paths, check only that the target path exists; do not inspect archived file content or heading anchors.
+- Treat `archive/` as retention-only and outside content-audit scope. Never read, scan, audit, or lint archived contents. This restriction does not prevent required archival and retention operations.
+  - Create or move completed or cancelled task records into `archive/tasks/`.
+  - Update the active task board with a link to the archived record and the archival commit.
+  - Allow the scheduled retention workflow to delete expired archive contents.
+  - Do not inspect archived contents during these operations.
+  - For links from active documents to archived paths, check only that the target path exists. Do not inspect archived file content or heading anchors.
 
 Do not create a conversation transcript. The discussion register is a temporary record of open discussions and a short success-report window, not a transcript or task history.
 
@@ -254,7 +259,7 @@ The Worker applies in every conversation mode.
 - Condensed Mode uses minimal status reports and direct navigation links.
 - Neither mode changes task authority, approval state, progress logging, or recovery.
 - Record detailed progress in task files instead of repeating it in chat.
-- Conversation Mode owns the temporary register. The Worker does not read or write workspace/discussion.md. The register contains unresolved discussions and up to three recent successful reports; task records remain authoritative for detailed progress and verification.
+- Conversation Mode owns the temporary register. The Worker does not read or write workspace/discussion.md. The register contains unresolved discussions and up to three recent successful reports. Task records remain authoritative for detailed progress and verification.
 - When an unresolved discussion receives approval, preserve its original user prompts and relevant clarifications in the resulting task record.
 - Do not claim an action, commit, or verification that did not occur.
 
