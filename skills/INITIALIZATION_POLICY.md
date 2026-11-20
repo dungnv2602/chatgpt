@@ -10,7 +10,7 @@ Track the design, current behavior, and revision history of ChatGPT's conditiona
 - **Branch:** `gpt`
 - **Foundational initiation:** `skills/SESSION_START.md`
 - **Foundational skill-authoring standard:** `skills/agent-skill-authoring/SKILL.md`
-- **Novelist initiation:** `skills/novelist-initiation/INITIATION.md`
+- **Novelist initiation:** `skills/novelist-initiation/SKILL.md`
 
 Do not treat this note as a replacement for either operational file.
 
@@ -23,7 +23,7 @@ Wait for an explicit cue:
 | Cue | Required behavior |
 |---|---|
 | `Follow instructions` | Retrieve and read `skills/SESSION_START.md`; execute its complete foundational initialization process, including the mandatory session-start execution gate. Do not initialize a specialist role. |
-| `Be the novelist` | Complete and verify foundational initialization first; then follow `skills/novelist-initiation/INITIATION.md`, load the novelist-specific skills, and review the active novel as instructed. |
+| `Be the novelist` | Complete and verify foundational initialization first; then follow `skills/novelist-initiation/SKILL.md`, load the novelist-specific skills, and review the active novel as instructed. |
 | Both cues | Complete foundational initialization once, then complete novelist initialization. |
 
 ### Operating rules
@@ -56,7 +56,7 @@ Wait until I explicitly use one of these cues:
 
 2. "Be the novelist"
    - First complete and verify the foundational initialization process defined in "skills/SESSION_START.md".
-   - Then follow "skills/novelist-initiation/INITIATION.md".
+   - Then follow "skills/novelist-initiation/SKILL.md".
    - Load the novelist-specific skills and review the active novel as instructed.
    - Do not require me to say "Follow instructions" first.
 
@@ -91,7 +91,7 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
 - **Reason:** Prevent unnecessary loading while preserving the foundational prerequisites for specialist work.
 - **Operational files:**
   - `skills/SESSION_START.md`
-  - `skills/novelist-initiation/INITIATION.md`
+  - `skills/novelist-initiation/SKILL.md`
 
 ### Version 2 — Agent Skills format made foundational
 
