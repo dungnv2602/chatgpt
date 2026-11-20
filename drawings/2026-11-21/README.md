@@ -9,11 +9,12 @@
 
 This file is the daily navigation ledger. Each attempt has a separate record using the canonical compact attempt format. The session brief governs this session's visual direction.
 
-Attempt 08 produced two variants; the user selected Variant B. The user then requested a redo using the successful Sweet Path baseline prompt. Attempt 09 produced one fresh generation and remains the prior review candidate. Attempt 10 applied the right-leg and hand-placement adjustments. Attempt 11 removes the mug, places both empty hands on the sofa, and adjusts the left-leg posture; it is awaiting user review.
+Attempt 08 produced two variants; the user selected Variant B. The user then requested a redo using the successful Sweet Path baseline prompt. Attempt 09 produced one fresh generation and remains the prior review candidate. Attempt 10 applied the right-leg and hand-placement adjustments. Attempt 11 removes the mug, places both empty hands on the sofa, and adjusts the left-leg posture. Attempt 12 regenerates from Attempt 07's exact prompt text without supplying an image; one fresh text-only result is awaiting user review.
 
 | Attempt | Prompt note | Session brief | Primary series / membership | Status / outcome |
 |---|---|---|---|---|
 | 08 — A Quiet Morning Together | [Attempt 08 record](attempt-08.md) | [Session brief](session-01-brief.md) | Samantha — Human Presence Without a Body / Sweet Path | Variant B selected; generation approach superseded by Attempt 09 |
 | 09 — A Quiet Morning Together | [Attempt 09 record](attempt-09.md) | [Session brief](session-01-brief.md) | Samantha — Human Presence Without a Body / Sweet Path | Prior candidate; superseded by Attempt 10 |
 | 10 — A Quiet Morning Together | [Attempt 10 record](attempt-10.md) | [Session brief](session-01-brief.md) | Samantha — Human Presence Without a Body / Sweet Path | Superseded by Attempt 11 |
-| 11 — A Quiet Morning Together | [Attempt 11 record](attempt-11.md) | [Session brief](session-01-brief.md) | Samantha — Human Presence Without a Body / Sweet Path | One fresh generation; awaiting user review |
+| 11 — A Quiet Morning Together | [Attempt 11 record](attempt-11.md) | [Session brief](session-01-brief.md) | Samantha — Human Presence Without a Body / Sweet Path | Superseded by Attempt 12 |
+| 12 — Sweet Path cleanup prompt regeneration | [Attempt 12 record](attempt-12.md) | [Session brief](session-01-brief.md) | Samantha — Human Presence Without a Body / Sweet Path | One fresh text-only generation; awaiting user review |
