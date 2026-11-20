@@ -1,3 +1,49 @@
+### 2026-11-20 20:00 UTC
+
+**User**
+
+> ste-lint.py --selftest 
+>
+> Explain why need to run this, isn't it redundant?
+
+**Assistant**
+
+`ste-lint.py --selftest` is a regression test for the linter implementation. It is not another pass over the repository's Markdown documents.
+
+The self-test calls the linter's internal functions with controlled input and checks expected results. It verifies that the linter still detects known violations and does not flag protected or structurally valid content. The test suite covers the rule detectors and difficult Markdown parsing cases, including code fences and spans, lists, block quotes, links, tables, HTML blocks, long sentences, synonym rotation, and command-line behavior. The built-in test body is substantial. It spans approximately lines 2218–3345 of `skills/asd-ste100/scripts/ste-lint.py`.
+
+This matters because the linter is a custom heuristic parser. A defect could make the normal document-lint step pass while silently missing a violation, or could create false positives. Testing the linter against a small set of known inputs checks its behavior. Linting the repository checks the current documents. These checks have different purposes.
+
+**But the current workflow runs the self-test redundantly in one place.**
+
+- `.github/workflows/ste-lint-full-docs.yml` runs the self-test. This is justified. Its path filter includes `skills/asd-ste100/**`, where the linter, its wrapper, and related implementation live. A change to that code must exercise the regression suite.
+- `.github/workflows/ste-lint-changed.yml` also runs the self-test unconditionally. Its path filter explicitly excludes `skills/asd-ste100/**`. Ordinary documentation changes handled by this workflow cannot change the linter implementation. Repeating the same deterministic test on every such push adds runner time without testing a changed component.
+
+**Conclusion**
+
+The self-test itself is not redundant. Its unconditional invocation in the changed-document workflow is.
+
+The clean design is to retain `--selftest` in the full technical-document workflow and remove it from the changed-document workflow. The changed-document workflow should continue to lint the changed Markdown files. The full workflow will run the self-test whenever the linter implementation or its owning skill changes. A separate dedicated test workflow is possible, but it would add another workflow and is not needed for this repository's current structure.
+
+I have not changed either workflow because your question asks for an explanation, not an implementation change.
+
+**CI snapshot**
+
+- Latest full technical-document lint: run `44762208642`, success, commit `2a2a58d96bc9d550ca0243b0d760e3f686c8883e`.
+- Latest changed-document lint: run `44765916131`, success, commit `af8a6358ae7af96bdafea074cce7a021596c0de2`.
+- Current branch head: `67ac677aa147e1796846c8a34826e50335625cc2`.
+- No local lint or CI command was run. No workflow was dispatched, rerun, or awaited.
+
+**Source paths reviewed**
+
+- `skills/asd-ste100/scripts/ste-lint.py`
+- `skills/asd-ste100/scripts/ste-lint-repository.sh`
+- `.github/workflows/ste-lint-full-docs.yml`
+- `.github/workflows/ste-lint-changed.yml`
+- `skills/github-actions/SKILL.md`
+
+---
+
 ### 2026-11-20 15:37 UTC
 
 **User**
