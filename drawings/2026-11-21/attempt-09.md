@@ -11,7 +11,7 @@
 - **Supporting visual direction:** `drawings/2026-11-20/samantha-visual-drive.md`
 - **Scene:** User-approved “A quiet morning together”
 - **Operation:** Prompt-first reconstruction, adapting the successful Sweet Path baseline prompt to the approved new scene
-- **Status before generation:** Prompt archived and verified; generation pending
+- **Status:** Generated; awaiting user review
 
 ## Baseline prompt provenance
 
@@ -58,7 +58,11 @@ Preserve the character design and visual language established by the approved Sw
 ## Generation record
 
 - **Prompt archived before generation:** Yes
-- **Generation result:** Pending
-- **Image asset / generation ID:** Pending
-- **User review:** Pending
-- **Follow-up edit prompt:** Pending
+- **Generation result:** One image generated from the archived Attempt 07-based continuity prompt.
+- **Generation ID:** `8455999f-c9dc-4b54-9747-7f6c4cd9fd77`
+- **Asset ID:** `file_0000000089c8821182f53369d6fd3d0e`
+- **Local artifact:** `/mnt/data/a_cozy_indoor_scene_in_a_modern_apartment_a_close.png`
+- **Tool metadata:** `edit_op: null`, `parent_gen_id: null`, `prompt: ""`, `seed: null`. This is a fresh prompt-first reconstruction; source-image linkage is not claimed.
+- **Initial visual review:** The image follows the warm Sweet Path direction: auburn hair, freckles, coral-red knit top, intimate apartment setting, warm window light, and a mug. The subject is seated close to camera with a gentle expression. The exact mug/pose/wardrobe details are newly generated interpretations, not verified matches to the unavailable baseline image.
+- **User review:** Pending.
+- **Follow-up edit prompt:** Pending.
