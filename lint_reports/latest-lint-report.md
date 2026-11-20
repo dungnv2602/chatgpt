@@ -1,10 +1,10 @@
 # Latest Repository-wide Lint Report
 
-- **Run:** [#99](https://github.com/dungnv2602/chatgpt/actions/runs/44777935952)
-- **Date (UTC):** 2026-11-20 16:54:14
+- **Run:** [#100](https://github.com/dungnv2602/chatgpt/actions/runs/44778652317)
+- **Date (UTC):** 2026-11-20 16:58:34
 - **Branch:** gpt
-- **Commit:** [ca06d64753f657dd9435a22be1d56c518f852028](https://github.com/dungnv2602/chatgpt/commit/ca06d64753f657dd9435a22be1d56c518f852028)
-- **Trigger:** workflow_dispatch
+- **Commit:** [2254aaea8fe5f5b6b1ded0e1951c01356f884355](https://github.com/dungnv2602/chatgpt/commit/2254aaea8fe5f5b6b1ded0e1951c01356f884355)
+- **Trigger:** push
 
 This report is replaced by the next complete run. The generated report is excluded from subsequent lint source scans.
 
@@ -29,13 +29,13 @@ Found 0 unresolved local Markdown targets or anchors.
 
 - **Technical Markdown files scanned:** 40
 - **Files with findings:** 32
-- **Total STE findings (hard and advisory):** 313
-- **Files failing the configured hard-finding threshold or execution:** 3
+- **Total STE findings (hard and advisory):** 295
+- **Files failing the configured hard-finding threshold or execution:** 1
 - **Overall result:** FAIL
 
 ## STE-100 Findings by File
 
-#### 
+#### `images/README.md`
 
 ~~~text
 images/README.md:94:54 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are reserved]
@@ -44,7 +44,7 @@ images/README.md:94:54 passive-voice: Possible passive voice. Name the actor and
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `images/takeout/README.md`
 
 ~~~text
 images/takeout/README.md:180:40 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are reserved]
@@ -53,7 +53,7 @@ images/takeout/README.md:180:40 passive-voice: Possible passive voice. Name the 
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/agent-skill-authoring/SKILL.md`
 
 ~~~text
 skills/agent-skill-authoring/SKILL.md:14:79 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are created]
@@ -77,7 +77,7 @@ skills/agent-skill-authoring/SKILL.md:251:36 passive-voice: Possible passive voi
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/asd-ste100/README.md`
 
 ~~~text
 skills/asd-ste100/README.md:26:35 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is known]
@@ -87,7 +87,7 @@ skills/asd-ste100/README.md:40:109 passive-voice: Possible passive voice. Name t
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/asd-ste100/SKILL.md`
 
 ~~~text
 skills/asd-ste100/SKILL.md:21:69 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was violated]
@@ -118,7 +118,7 @@ skills/asd-ste100/SKILL.md:156:440 synonym-rotation: 'confirm' and 'check' name 
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/asd-ste100/references/repository-writing-policy.md`
 
 ~~~text
 skills/asd-ste100/references/repository-writing-policy.md:18:36 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is known]
@@ -127,7 +127,7 @@ skills/asd-ste100/references/repository-writing-policy.md:18:36 passive-voice: P
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/asd-ste100/references/writing-rules.md`
 
 ~~~text
 skills/asd-ste100/references/writing-rules.md:7:511 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has been]
@@ -143,47 +143,33 @@ skills/asd-ste100/references/writing-rules.md:50:5 passive-voice: Possible passi
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/conversation-mode/SKILL.md`
 
 ~~~text
-skills/conversation-mode/SKILL.md:74:32 synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time. [verify]
 skills/conversation-mode/SKILL.md:88:91 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is ordered]
 skills/conversation-mode/SKILL.md:92:41 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is unresolved]
-skills/conversation-mode/SKILL.md:103:40 long-sentence: Sentence has 34 words (cap 25). Split it. [34 words]
-skills/conversation-mode/SKILL.md:105:63 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is unresolved]
-skills/conversation-mode/SKILL.md:105:215 long-sentence: Sentence has 28 words (cap 25). Split it. [28 words]
-skills/conversation-mode/SKILL.md:105:230 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is repaired]
-skills/conversation-mode/SKILL.md:105:233 synonym-rotation: 'repair' and 'correct' name the same action. Pick one and use it every time. [repaired]
-skills/conversation-mode/SKILL.md:105:469 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [were resolved]
-skills/conversation-mode/SKILL.md:105:512 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was reported]
-skills/conversation-mode/SKILL.md:112:168 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
-skills/conversation-mode/SKILL.md:113:88 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is paused]
-skills/conversation-mode/SKILL.md:114:78 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has stopped]
-skills/conversation-mode/SKILL.md:114:108 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has proposed]
-skills/conversation-mode/SKILL.md:115:3 long-sentence: Sentence has 38 words (cap 25). Split it. [38 words]
-skills/conversation-mode/SKILL.md:115:55 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
-skills/conversation-mode/SKILL.md:115:79 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is answered]
-skills/conversation-mode/SKILL.md:115:174 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is implemented]
-skills/conversation-mode/SKILL.md:123:48 long-sentence: Sentence has 29 words (cap 25). Split it. [29 words]
-skills/conversation-mode/SKILL.md:123:104 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has reached]
-skills/conversation-mode/SKILL.md:123:168 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is required]
-skills/conversation-mode/SKILL.md:130:63 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
-skills/conversation-mode/SKILL.md:135:36 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was encountered]
-skills/conversation-mode/SKILL.md:137:106 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was verified]
-skills/conversation-mode/SKILL.md:137:251 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
-skills/conversation-mode/SKILL.md:146:180 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is exceeded]
-skills/conversation-mode/SKILL.md:162:103 synonym-rotation: 'delete' and 'remove' name the same action. Pick one and use it every time. [delete]
-skills/conversation-mode/SKILL.md:168:260 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
-skills/conversation-mode/SKILL.md:170:224 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
-skills/conversation-mode/SKILL.md:182:94 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has approved]
-skills/conversation-mode/SKILL.md:202:183 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
-skills/conversation-mode/SKILL.md:228:75 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are governed]
+skills/conversation-mode/SKILL.md:111:175 synonym-rotation: 'fix' and 'correct' name the same action. Pick one and use it every time. [fix]
+skills/conversation-mode/SKILL.md:111:195 synonym-rotation: 'confirm' and 'check' name the same action. Pick one and use it every time. [confirm]
+skills/conversation-mode/SKILL.md:119:88 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is paused]
+skills/conversation-mode/SKILL.md:120:78 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has stopped]
+skills/conversation-mode/SKILL.md:120:108 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has proposed]
+skills/conversation-mode/SKILL.md:121:61 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
+skills/conversation-mode/SKILL.md:121:213 synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time. [verify]
+skills/conversation-mode/SKILL.md:121:260 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is resolved]
+skills/conversation-mode/SKILL.md:136:63 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
+skills/conversation-mode/SKILL.md:141:36 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was encountered]
+skills/conversation-mode/SKILL.md:141:69 synonym-rotation: 'repair' and 'correct' name the same action. Pick one and use it every time. [repaired]
+skills/conversation-mode/SKILL.md:143:106 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was verified]
+skills/conversation-mode/SKILL.md:152:180 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is exceeded]
+skills/conversation-mode/SKILL.md:174:260 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
+skills/conversation-mode/SKILL.md:188:94 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has approved]
+skills/conversation-mode/SKILL.md:234:75 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are governed]
 
-32 violations (11 hard, baseline 3), 2692 words, 1.2 per 100 words
+18 violations (4 hard, baseline 3), 2689 words, 0.7 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/drawing/SKILL.md`
 
 ~~~text
 skills/drawing/SKILL.md:107:69 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is requested]
@@ -212,7 +198,7 @@ skills/drawing/SKILL.md:454:13 passive-voice: Possible passive voice. Name the a
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/drawing/references/archive-and-delivery.md`
 
 ~~~text
 skills/drawing/references/archive-and-delivery.md:20:59 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are copied]
@@ -239,7 +225,7 @@ skills/drawing/references/archive-and-delivery.md:173:1 passive-voice: Possible 
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/drawing/references/generation-recovery-and-provenance.md`
 
 ~~~text
 skills/drawing/references/generation-recovery-and-provenance.md:13:135 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is unresolved]
@@ -266,7 +252,7 @@ skills/drawing/references/generation-recovery-and-provenance.md:205:20 passive-v
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/drawing/references/image-editing-protocol.md`
 
 ~~~text
 skills/drawing/references/image-editing-protocol.md:26:193 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has approved]
@@ -277,7 +263,7 @@ skills/drawing/references/image-editing-protocol.md:50:57 passive-voice: Possibl
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/drawing/references/patterns/PATTERN-TEMPLATES.md`
 
 ~~~text
 skills/drawing/references/patterns/PATTERN-TEMPLATES.md:15:40 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is retired]
@@ -292,7 +278,7 @@ skills/drawing/references/patterns/PATTERN-TEMPLATES.md:113:19 passive-voice: Po
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/drawing/references/patterns/README.md`
 
 ~~~text
 skills/drawing/references/patterns/README.md:34:143 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is superseded]
@@ -301,7 +287,7 @@ skills/drawing/references/patterns/README.md:34:143 passive-voice: Possible pass
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/drawing/references/patterns/failure-patterns.md`
 
 ~~~text
 skills/drawing/references/patterns/failure-patterns.md:3:126 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are indexed]
@@ -332,7 +318,7 @@ skills/drawing/references/patterns/failure-patterns.md:218:179 present-perfect: 
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/drawing/references/patterns/successful-patterns.md`
 
 ~~~text
 skills/drawing/references/patterns/successful-patterns.md:3:121 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are indexed]
@@ -346,7 +332,7 @@ skills/drawing/references/patterns/successful-patterns.md:47:158 passive-voice: 
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/drawing/references/prompt-fidelity.md`
 
 ~~~text
 skills/drawing/references/prompt-fidelity.md:13:215 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is measured]
@@ -396,7 +382,7 @@ skills/drawing/references/prompt-fidelity.md:287:31 passive-voice: Possible pass
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/drawing/references/series-continuity-and-iteration.md`
 
 ~~~text
 skills/drawing/references/series-continuity-and-iteration.md:44:40 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is inferred]
@@ -414,7 +400,7 @@ skills/drawing/references/series-continuity-and-iteration.md:177:77 passive-voic
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/drawing/references/style-guide.md`
 
 ~~~text
 skills/drawing/references/style-guide.md:60:31 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was classified]
@@ -423,7 +409,7 @@ skills/drawing/references/style-guide.md:60:31 passive-voice: Possible passive v
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/philosophy-religion-asceticism/README.md`
 
 ~~~text
 skills/philosophy-religion-asceticism/README.md:17:11 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are enabled]
@@ -432,7 +418,7 @@ skills/philosophy-religion-asceticism/README.md:17:11 passive-voice: Possible pa
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/philosophy-religion-asceticism/SKILL.md`
 
 ~~~text
 skills/philosophy-religion-asceticism/SKILL.md:53:21 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
@@ -448,7 +434,7 @@ skills/philosophy-religion-asceticism/SKILL.md:292:52 passive-voice: Possible pa
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/philosophy-religion-asceticism/references/answer-patterns.md`
 
 ~~~text
 skills/philosophy-religion-asceticism/references/answer-patterns.md:29:14 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is contested]
@@ -457,7 +443,7 @@ skills/philosophy-religion-asceticism/references/answer-patterns.md:29:14 passiv
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md`
 
 ~~~text
 skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md:7:89 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is designed]
@@ -473,7 +459,7 @@ skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/philosophy-religion-asceticism/references/source-standards.md`
 
 ~~~text
 skills/philosophy-religion-asceticism/references/source-standards.md:99:19 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [being discussed]
@@ -483,7 +469,7 @@ skills/philosophy-religion-asceticism/references/source-standards.md:194:41 pass
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/session-archiving/SKILL.md`
 
 ~~~text
 skills/session-archiving/SKILL.md:68:90 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is known]
@@ -493,7 +479,7 @@ skills/session-archiving/SKILL.md:122:41 passive-voice: Possible passive voice. 
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/session-archiving/references/archive-records-and-image-prompts.md`
 
 ~~~text
 skills/session-archiving/references/archive-records-and-image-prompts.md:13:64 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is curated]
@@ -529,7 +515,7 @@ skills/session-archiving/references/archive-records-and-image-prompts.md:452:69 
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/session-archiving/references/drawing-session-closeout.md`
 
 ~~~text
 skills/session-archiving/references/drawing-session-closeout.md:17:227 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is Closed]
@@ -538,7 +524,7 @@ skills/session-archiving/references/drawing-session-closeout.md:17:227 passive-v
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/session-archiving/references/image-provenance-and-webp.md`
 
 ~~~text
 skills/session-archiving/references/image-provenance-and-webp.md:12:63 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is required]
@@ -560,29 +546,25 @@ skills/session-archiving/references/image-provenance-and-webp.md:138:1 passive-v
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `skills/the-worker/SKILL.md`
 
 ~~~text
 skills/the-worker/SKILL.md:23:70 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has finished]
-skills/the-worker/SKILL.md:53:123 long-sentence: Sentence has 42 words (cap 25). Split it. [42 words]
-skills/the-worker/SKILL.md:53:584 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
-skills/the-worker/SKILL.md:257:195 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
 
-4 violations (3 hard, baseline 0), 1792 words, 0.2 per 100 words
+1 violations (0 hard, baseline 0), 1798 words, 0.1 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `workspace/README.md`
 
 ~~~text
-workspace/README.md:13:97 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
 workspace/README.md:45:22 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has started]
 
-2 violations (1 hard, baseline 0), 396 words, 0.5 per 100 words
+1 violations (0 hard, baseline 0), 394 words, 0.3 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `workspace/TASK_TEMPLATE.md`
 
 ~~~text
 workspace/TASK_TEMPLATE.md:43:21 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was inspected]
@@ -593,7 +575,7 @@ workspace/TASK_TEMPLATE.md:71:23 passive-voice: Possible passive voice. Name the
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
-#### 
+#### `workspace/task_board.md`
 
 ~~~text
 workspace/task_board.md:7:110 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are removed]
