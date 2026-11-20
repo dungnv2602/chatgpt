@@ -72,7 +72,7 @@ Whenever the user invokes **`Follow instructions`** or **`Be the novelist`**, co
 3. Retrieve and read `skills/conversation-mode/SKILL.md` from the same branch.
 4. Retrieve and read `skills/agent-skill-authoring/SKILL.md` from the same branch.
 5. Retrieve and read `skills/drawing/SKILL.md` from the same branch.
-6. Retrieve and read every supporting reference explicitly named by the Drawing skill, currently `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`.
+6. Retrieve and read the Drawing skill's mandatory foundational references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Do not load every on-demand reference at startup; load additional Drawing references when their task-specific triggers apply.
 7. Verify every required retrieval succeeded and that the contents were actually read. Keep the verified instructions in working context for the remainder of the conversation.
 8. Only after all checks pass, report completion and proceed. If any required retrieval fails or cannot be verified, stop project work, identify the exact missing item, and ask how the user wants to proceed.
 
@@ -85,12 +85,6 @@ Whenever the user invokes **`Follow instructions`** or **`Be the novelist`**, co
 This gate does not guarantee future execution; compliance must be established by actual retrievals and read-back evidence in each new conversation.
 - Do not create parallel prompt folders. `prompts/` is the single canonical prompt location.
 - Do not overwrite pre-existing files without fetching the exact path first and preserving their contents.
-
-## Supporting references
-
-- `references/archive-records-and-image-prompts.md` — conversation records, session briefs, prompt history, attempt ledgers, and image handling.
-- `references/drawing-session-closeout.md` — explicit closeout trigger, closeout checklist, and verification.
-- `references/image-provenance-and-webp.md` — original-image identity, SHA-256, provenance mapping, and WebP delivery.
 
 ## Supporting references
 
