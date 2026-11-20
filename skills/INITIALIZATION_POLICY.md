@@ -299,3 +299,12 @@ Use this template:
 - **Disposition:** Review only. No edits in this pass. The prompt-fidelity note contains explicit user-direction preservation language. Any rewrite needs sentence-level comparison to avoid changing scope or intent.
 - **Link check:** Checked local Markdown links in the files reviewed. The internal references listed in those files were present in the fetched content.
 - **Limit:** This was a manual review. The STE linter and GitHub Actions run were not executed in this environment.
+
+
+### Version 13 — Skills index and technical-reference review
+
+- **Date:** 2026-11-20
+- **Files reviewed:** `skills/README.md`, `skills/philosophy-religion-asceticism/README.md`, `skills/philosophy-religion-asceticism/CHANGELOG.md`, `skills/session-archiving/references/image-processing-scripts.md`, `skills/session-archiving/references/drawing-session-closeout.md`, and `skills/drawing/references/prompt-fidelity.md`.
+- **Review:** Checked instructions, technical descriptions, sentence length, semicolons, and scope. Also checked directory references against the current `skills/` listing.
+- **Disposition:** Review only. No edits were needed. Preserve the product-access notes because their availability statements contain qualifications. Preserve the prompt-fidelity note because it records explicit user authority and restrictions on assistant-authored prompt changes.
+- **Limit:** This was a manual review. The official linter and the GitHub Actions workflow have not run in this environment.
