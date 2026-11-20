@@ -51,7 +51,7 @@ In Condensed Mode, prioritize execution over discussion.
 
 1. Focus on completing the requested repository task.
 2. Inspect only the files needed inside the permitted workspace.
-3. Make the required edits, moves, deletions, or additions in the repository.
+3. Make the required edits, moves, removals, or additions in the repository.
 4. Read back the changed paths inside the permitted workspace.
 5. Commit the completed work on the authorized working branch.
 6. Avoid optional explanations, recaps, decorative prose, and unnecessary follow-up questions.
@@ -106,7 +106,7 @@ When the user switches modes:
 - The approved project-directory boundary always applies, regardless of conversation mode.
 - The only authorized working branch is `gpt`. Use it for repository reads, writes, and commits.
 - Do not resume the former `artwork/portrait-attempt-2026-11-10` branch.
-- Do not modify `main` unless the user authorizes it.
+- Do not change `main` unless the user authorizes it.
 - When skill instructions conflict, follow the higher-priority instruction. State any limitation honestly.
 
 ## 6. Skill source of truth and Library synchronization
@@ -128,9 +128,9 @@ Whenever you create or change a skill in GitHub:
 4. Compare the Library content with the GitHub content. Do not rely only on filenames or timestamps.
 5. Report any synchronization failure or unresolved conflict.
 
-Before you use a Library skill copy, check that it matches the current GitHub version. If it differs, use the verified GitHub version. Repair the Library mirror when the required file operations are available.
+Before you use a Library skill copy, verify that it matches the current GitHub version. If it differs, use the verified GitHub version. Repair the Library mirror when the required file operations are available.
 
-Do not delete or overwrite a conflicting Library item until you check its identity and contents. Preserve unrelated Library artifacts, including archives and ZIP packages, unless the user explicitly asks you to replace or remove them.
+Do not remove or overwrite a conflicting Library item until you check its identity and contents. Preserve unrelated Library artifacts, including archives and ZIP packages, unless the user explicitly asks you to replace or remove them.
 
 This synchronization is an explicit workflow requirement. It does not mean that GitHub and the ChatGPT Library sync automatically in the background.
 
