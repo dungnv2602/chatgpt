@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 13:02 UTC
+- **Updated:** 2026-11-20 13:03 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -95,13 +95,20 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - **Read-back:** Fetched `archive/README.md` from branch `gpt`. Confirmed the direct wording and the absence of the matched nominalization pattern.
 - **Next:** Continue the supported-rule review. Obtain a fresh official lint result in an authorized repository execution environment.
 
+### 2026-11-20 13:03 UTC
+
+- **Action:** Compared the current linter wrapper with its Version 19 version at commit `837f415b040c8d0cbcc16eff77cedc732433acce`.
+- **Result:** The historical wrapper had 21 baseline entries totaling 179. The current wrapper has 17 entries totaling 170. Two entries totaling four were removed earlier after their findings were cleared. Two entries totaling five referred to deleted novelist-initiation files and were removed in commit `94cedba3c786ff78ec57385f8a18d0b1f5475bfd`.
+- **Verification:** Checked the current wrapper against the current branch tree. All 17 remaining baseline paths exist. The aggregate baseline is a configured threshold, not a current lint result.
+- **Next:** Continue the review of supported lint findings. Do not report the current lint count until the official linter runs.
+
 ## 7. Current State
 
 The historical Version 19 inventory contained 166 Markdown files and 119 active source files. The Version 17 count of 121 used the same exclusions except for `skills/asd-ste100/examples/`. That directory contained two Markdown files, which explains the exact difference.
 
 The current branch contains 176 Markdown files. The same Version 19 source-file exclusions produce 129 active source files. The full-document lint workflow uses a different exclusion set and currently selects 47 Markdown files. These counts describe different scopes.
 
-The Version 19 full lint reported 179 hard findings and 300 advisory findings. Those are historical results, not a fresh result for the current branch. The linter wrapper now has 17 baseline entries. Every entry maps to an existing file. Two stale entries for deleted `skills/novelist-initiation/` files were removed without changing any baseline value.
+The Version 19 full lint reported 179 hard findings and 300 advisory findings. Those are historical results, not a fresh result for the current branch. The linter wrapper now has 17 baseline entries totaling 170. Every entry maps to an existing file. The historical 179-point threshold fell by four when two active-file baselines cleared. It fell by five when two deleted-file baselines were removed. The 170-point total is a configured threshold, not a current lint result.
 
 The active-link scan at Version 19 found zero unresolved local Markdown targets or heading anchors in its 119-file source scope. The historical-link review and external URL review remain open. No fresh full lint has run.
 
