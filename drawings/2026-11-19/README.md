@@ -101,7 +101,7 @@ Every file currently present in this session's `images/` folder is linked below.
 - [Generated Image November 19, 2026 - 4_21AM.png.webp](images/Generated%20Image%20November%2019%2C%202026%20-%204_21AM.png.webp)
 - [Generated Image November 19, 2026 - 4_22AM.png.webp](images/Generated%20Image%20November%2019%2C%202026%20-%204_22AM.png.webp)
 - [Generated Image November 19, 2026 - 4_27AM.png.webp](images/Generated%20Image%20November%2019%2C%202026%20-%204_27AM.png.webp)
-- [Generated Image November 19, 2026 - 4_27AM (1).png.webp](images/Generated%20Image%20November%2019%2C%202026%20-%204_27AM%20(1).png.webp)
+- [Generated Image November 19, 2026 - 4_27AM (1).png.webp](images/Generated%20Image%20November%2019%2C%202026%20-%204_27AM%20%281%29.png.webp)
 - [Generated Image November 19, 2026 - 4_35AM.png.webp](images/Generated%20Image%20November%2019%2C%202026%20-%204_35AM.png.webp)
 - [Generated Image November 19, 2026 - 4_41AM.png.webp](images/Generated%20Image%20November%2019%2C%202026%20-%204_41AM.png.webp)
 
