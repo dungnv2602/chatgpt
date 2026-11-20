@@ -170,7 +170,39 @@ A task-specific skill is loaded when a request matches its description or when a
 
 Agent Skills metadata helps a compatible client discover a skill. It does not itself change this repository's activation cues or prove that a skill has been loaded. Repository-specific loading must be explicitly connected to the authoritative initialization procedure.
 
-## 7. Reference and path rules
+## 7. ASD-STE100 technical writing standard
+
+Use the [ASD-STE100 skill](../asd-ste100/SKILL.md) and the [repository writing policy](../asd-ste100/references/repository-writing-policy.md) whenever you create or revise skill documentation or technical documentation.
+
+Choose the mode before you write:
+
+- **Strict mode** applies to procedures, tool descriptions, system prompts, error messages, safety instructions, and inter-agent instructions.
+- **STE-flavored mode** applies to READMEs, change logs, technical explanations, and reference prose.
+
+Apply these rules in both modes:
+
+1. Use active voice when the actor is known and relevant.
+2. Put one instruction in each sentence.
+3. Keep instructions within 20 words.
+4. Keep descriptive sentences within 25 words.
+5. Use no more than six sentences per paragraph.
+6. Use a list for sequences with three or more steps or conditions.
+7. Do not use semicolons.
+8. Prefer clear verbs over phrasal verbs and nominalizations.
+9. Keep noun clusters to three words or fewer.
+10. Use consistent names for the same concept.
+
+Strict mode also requires one clear meaning for each term. It requires simple words when they preserve technical meaning. STE-flavored mode treats those lexical rules as guidance.
+
+Preserve all facts, conditions, exceptions, numbers, scope limits, and modality. Never turn an uncertain claim into a certain claim. Never add a cause or result that the source does not state.
+
+Do not rewrite creative writing, dialogue, marketing copy, approved creative prompts, code, or examples that intentionally show a rule violation.
+
+Run `skills/asd-ste100/scripts/ste-lint.py` on changed technical documents when practical. Review its findings against the source. The linter checks only supported patterns. It cannot prove that a rewrite preserves meaning or follows the official dictionary.
+
+Do not claim certified ASD-STE100 compliance. The repository does not contain the official controlled dictionary.
+
+## 8. Reference and path rules
 
 - Resolve relative file references from the skill root.
 - Prefer direct references one level below the skill root, such as `references/guide.md`.
@@ -180,7 +212,7 @@ Agent Skills metadata helps a compatible client discover a skill. It does not it
 - Do not link to a file that has not been created and verified.
 - If a skill depends on external standards, name the canonical source and summarize the rules needed for reliable local execution.
 
-## 8. Validation checklist
+## 9. Validation checklist
 
 Before considering a skill complete, verify all of the following:
 
@@ -201,6 +233,10 @@ Before considering a skill complete, verify all of the following:
 - [ ] The main file is concise enough to activate without unnecessary context burden.
 - [ ] Supporting resources are focused and loaded only as needed.
 - [ ] No contradictory, duplicated, stale, or unrequested rules have been introduced.
+- [ ] The correct ASD-STE100 mode applies to skill and technical documentation.
+- [ ] Sentence length, paragraph structure, and punctuation follow the repository writing policy.
+- [ ] Every rewrite preserves facts, conditions, scope, and modality.
+- [ ] Linter findings were reviewed when the linter was available.
 
 ### Integration and integrity
 - [ ] The skill is connected to the correct activation path.
@@ -212,7 +248,7 @@ Before considering a skill complete, verify all of the following:
 
 When the official `skills-ref` validator is available, run `skills-ref validate path/to/skill-folder`. If it is unavailable, perform the checks above directly and state that the official validator was not run. Never claim tool-based validation that did not occur.
 
-## 9. Repository write discipline
+## 10. Repository write discipline
 
 For this project:
 
@@ -225,7 +261,7 @@ For this project:
 - After each important write, fetch the same path and verify the expected content.
 - Do not report a commit or verification as successful unless the tool result and read-back support that statement.
 
-## 10. Completion standard
+## 11. Completion standard
 
 A skill is complete only when its format is valid, its workflow is operationally coherent, its local dependencies are resolvable, its activation path is correct, and its committed content has been read back and checked.
 
