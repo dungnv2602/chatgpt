@@ -1,136 +1,149 @@
-# ChatGPT Initialization Policy — Maintenance Note
+# ChatGPT Initialization Policy
 
 ## Purpose
 
-Track the design, current behavior, and revision history of ChatGPT's conditional initialization instructions. This note is a maintenance record; the operational instructions remain in the files listed below.
+This file records the repository's conditional initialization policy. Operational instructions remain in the files listed below.
 
-## Source of truth
+## Sources of truth
 
-- **Repository:** `dungnv2602/chatgpt`
-- **Branch:** `gpt`
-- **Foundational initiation:** `skills/SESSION_START.md`
-- **Foundational skill-authoring standard:** `skills/agent-skill-authoring/SKILL.md`
-- **Foundational technical-writing standard:** `skills/asd-ste100/SKILL.md`
-- **Novelist initiation:** `skills/novelist-initiation/SKILL.md`
+- Repository: `dungnv2602/chatgpt`
+- Branch: `gpt`
+- Foundational initialization: `skills/SESSION_START.md`
+- Mandatory execution gate: `skills/session-archiving/SKILL.md`
+- Agent Skills format: `skills/agent-skill-authoring/SKILL.md`
+- Technical writing standard: `skills/asd-ste100/SKILL.md`
+- Novelist initialization: `skills/novelist-initiation/SKILL.md`
 
-Do not treat this note as a replacement for either operational file.
+This file does not replace an operational skill or initiation procedure.
 
 ## Current policy
 
-**Initialization is conditional.** Do not retrieve or load project instructions, skills, or references automatically at the beginning of a new conversation.
+Initialization is conditional. Do not load project instructions or skills at the start of a new conversation.
 
 Wait for an explicit cue:
 
 | Cue | Required behavior |
 |---|---|
-| `Follow instructions` | Retrieve and read `skills/SESSION_START.md`; execute its complete foundational initialization process, including the mandatory session-start execution gate. Do not initialize a specialist role. |
-| `Be the novelist` | Complete and verify foundational initialization first; then follow `skills/novelist-initiation/SKILL.md`, load the novelist-specific skills, and review the active novel as instructed. |
-| Both cues | Complete foundational initialization once, then complete novelist initialization. |
+| `Follow instructions` | Read `skills/SESSION_START.md`. Complete the foundational execution gate. Do not activate a specialist role. |
+| `Be the novelist` | Complete foundational initialization first. Then follow `skills/novelist-initiation/SKILL.md`. Load the novelist skills and review the active novel. |
+| Both cues | Complete foundational initialization once. Then complete novelist initialization. |
 
-### Operating rules
+## Operating rules
 
-- Do not initialize automatically at the start of a conversation.
-- Do not require the user to say both cues when they say `Be the novelist`; that cue includes the foundational prerequisites.
-- Load only the files required by the applicable initiation process.
-- Do not load unrelated skills, references, or specialist roles.
-- If a required file cannot be retrieved or verified, report its exact path.
-- Never claim initialization is complete unless the required retrievals and checks have succeeded.
-- The GitHub repository and the `gpt` branch are the sole source of truth for project files, skills, prompts, and references.
+- Do not initialize automatically.
+- Do not ask the user to give both cues when `Be the novelist` is sufficient.
+- Load only the files required by the selected initialization path.
+- Do not load unrelated skills or references.
+- Report the exact path of a missing or unverified file.
+- Do not claim initialization is complete until every required check passes.
+- Treat the GitHub repository and branch `gpt` as the sole source of truth.
+
+## Foundational standards
+
+Foundational initialization loads these skills:
+
+1. Session Archiving.
+2. Conversation Mode.
+3. Agent Skill Authoring.
+4. ASD-STE100.
+5. Drawing and its required foundational references.
+
+The ASD-STE100 skill governs skill documentation and technical documentation. Use Strict mode for operational instructions. Use STE-flavored mode for technical explanations and READMEs.
+
+Preserve facts, conditions, exceptions, scope, and modality. Do not apply the standard to creative writing, dialogue, marketing copy, or approved creative prompts.
+
+The Agent Skill Authoring skill governs skill structure, metadata, validation, and activation. The ASD-STE100 skill governs technical language.
 
 ## Copyable Custom Instructions
 
-The following is the current Custom Instructions text. Copy this block when configuring ChatGPT, and update it whenever the policy changes.
+Use this text when configuring the repository's project instructions:
 
 ```text
 Repository: "dungnv2602/chatgpt"
-
 Branch: "gpt"
 
-Initialization is conditional. Do not retrieve or load project instructions, skills, or references automatically at the beginning of a new conversation.
+Initialization is conditional. Do not load project instructions or skills at the start of a new conversation.
 
-Wait until I explicitly use one of these cues:
+Wait for an explicit cue:
 
 1. "Follow instructions"
-   - Retrieve and read "skills/SESSION_START.md".
-   - Execute the complete foundational initialization process defined there, including its mandatory session-start execution gate.
-   - Do not initialize a specialist role.
+   - Read "skills/SESSION_START.md".
+   - Complete its foundational execution gate.
+   - Do not activate a specialist role.
 
 2. "Be the novelist"
-   - First complete and verify the foundational initialization process defined in "skills/SESSION_START.md".
+   - Complete foundational initialization first.
    - Then follow "skills/novelist-initiation/SKILL.md".
-   - Load the novelist-specific skills and review the active novel as instructed.
-   - Do not require me to say "Follow instructions" first.
+   - Load the novelist skills and review the active novel.
+   - Do not require me to give "Follow instructions" first.
 
 3. Both cues
-   - Complete foundational initialization only once.
+   - Complete foundational initialization once.
    - Then complete novelist initialization.
 
-Do not load unrelated skills or references. Load only what the applicable initiation instructions require.
+Do not load unrelated skills or references.
+Report the exact path of any missing or unverified file.
+Do not claim initialization is complete before all checks pass.
 
-If a required file cannot be retrieved or verified, report its exact path. Never claim initialization is complete when it is not.
+Use "skills/asd-ste100/SKILL.md" for all skill documentation and technical documentation.
+Use Strict mode for operational instructions.
+Use STE-flavored mode for technical explanations and READMEs.
+Preserve meaning, conditions, scope, and modality.
+Do not apply the standard to creative writing or approved creative prompts.
 
 The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of truth for project files, skills, prompts, and references.
 ```
 
 ## Design principles
 
-1. **On-demand loading:** Avoid unnecessary retrieval and initialization.
-2. **Single foundational authority:** `skills/SESSION_START.md` defines the foundational process.
-3. **Explicit dependency:** Novelist initialization must complete foundational prerequisites before loading novelist-specific materials.
-4. **No duplicated procedures:** Specialist initiation notes should reference the foundational process rather than maintain a competing checklist.
-5. **Current-session verification:** Do not substitute remembered instructions, summaries, or reads from a previous conversation for required verification in the current conversation.
-6. **Standardized skills:** Create and maintain skill folders using the Agent Skills format defined in `skills/agent-skill-authoring/SKILL.md`. Load that standard during foundational initialization.
-7. **Controlled technical writing:** Apply `skills/asd-ste100/SKILL.md` to all skill documentation and technical documentation. Load it during foundational initialization.
+1. **On-demand loading:** Load only what the requested task requires.
+2. **Single initialization authority:** `skills/SESSION_START.md` defines foundational initialization.
+3. **Explicit dependency:** Novelist initialization requires foundational initialization first.
+4. **No duplicate procedures:** Specialist initiation files link to the foundational procedure.
+5. **Current-session verification:** Do not use remembered files as a substitute for fresh reads when verification is required.
+6. **Agent Skills format:** Use `skills/agent-skill-authoring/SKILL.md` to create and maintain skills.
+7. **Controlled technical writing:** Use `skills/asd-ste100/SKILL.md` for skill and technical documentation.
 
 ## Change history
 
-### Version 1 — Conditional, cue-based initialization
+### Version 1 — Conditional initialization
 
 - **Date:** 2026-11-18
-- **Change:** Initialization is performed only after an explicit activation cue; automatic startup loading is disabled.
-- **Dependency:** `Be the novelist` automatically includes foundational initialization before novelist-specific initialization.
-- **Duplicate prevention:** When both cues are used, foundational initialization runs only once.
-- **Reason:** Prevent unnecessary loading while preserving the foundational prerequisites for specialist work.
-- **Operational files:**
-  - `skills/SESSION_START.md`
-  - `skills/novelist-initiation/SKILL.md`
+- **Change:** Initialization requires an explicit activation cue.
+- **Dependency:** `Be the novelist` includes foundational initialization.
+- **Duplicate prevention:** Both cues trigger foundational initialization only once.
+- **Reason:** Avoid unnecessary loading while preserving specialist prerequisites.
+- **Operational files:** `skills/SESSION_START.md` and `skills/novelist-initiation/SKILL.md`.
 
-### Version 2 — Agent Skills format made foundational
+### Version 2 — Agent Skills format
 
 - **Date:** 2026-11-20
-- **Requested change:** Adopt the Agent Skills open format for project skills and establish a foundational skill-authoring standard.
-- **Reason:** Make skill metadata, structure, activation, progressive disclosure, and validation consistent and portable.
-- **Behavioral impact:** `skills/agent-skill-authoring/SKILL.md` is loaded during explicit foundational initialization and governs skill creation and maintenance. Initialization remains conditional on the established cues.
-- **Files modified:** 
-  - `skills/agent-skill-authoring/SKILL.md`
-  - `skills/SESSION_START.md`
-  - `skills/session-archiving/SKILL.md`
-  - `skills/INITIALIZATION_POLICY.md`
-- **Verification:** Read-back verified on branch `gpt`; Agent Skills metadata constraints and conditional-initialization consistency checks passed. The official `skills-ref` CLI validator was not run.
-- **Initial implementation commits:** `5bdb1b732c88fc4bb0d9e49fbeb78eb6048c7bc5` (new skill), `b26c37031399747ea204fa89a491a8ff26bce911` (session start), `a48f7264246734a73b02f41537f367f04fa09c55` (session archiving), `fee7c31d7c7b2f63efee3680796ac477b060eb45` (initial policy update).
+- **Change:** Adopt the Agent Skills open format.
+- **Reason:** Standardize metadata, structure, activation, progressive disclosure, and validation.
+- **Behavioral impact:** Agent Skill Authoring became a foundational skill.
+- **Verification:** Read-back checks passed. The official `skills-ref` CLI validator was not run.
+- **Initial commits:** `5bdb1b732c88fc4bb0d9e49fbeb78eb6048c7bc5`, `b26c37031399747ea204fa89a491a8ff26bce911`, `a48f7264246734a73b02f41537f367f04fa09c55`, and `fee7c31d7c7b2f63efee3680796ac477b060eb45`.
 
-### Version 3 — Agent Skills directory restructure
+### Version 3 — Skill directory restructure
 
 - **Date:** 2026-11-20
-- **Requested change:** Apply the Agent Skills format across the repository's skill folders and organize long procedures for progressive disclosure.
-- **Reason:** Make every skill discoverable through valid metadata, give novelist initiation a formal skill entry point, and reduce unnecessary loading of lengthy specialist procedures.
-- **Behavioral impact:** All seven skill folders now have a conforming `SKILL.md`; the novelist role cue routes through its task-specific skill entry point. Detailed drawing, archiving, and novel-production procedures are maintained in focused references. Foundational initialization remains conditional on the established user cues.
-- **Files modified:** See the commits on branch `gpt` for the Agent Skills folder restructure and supporting-reference extraction.
-- **Verification:** Manual frontmatter, naming, description, line-count, link, activation, and read-back checks passed. The official `skills-ref` CLI validator was not run.
-
+- **Change:** Apply Agent Skills format to the repository's skill folders.
+- **Reason:** Make skills discoverable and reduce unnecessary loading.
+- **Behavioral impact:** Every skill folder gained a conforming `SKILL.md`. Detailed procedures moved into focused references. Foundational initialization remained conditional.
+- **Verification:** Manual metadata, naming, description, line-count, link, activation, and read-back checks passed. The official validator was not run.
 
 ### Version 4 — ASD-STE100 made foundational
 
 - **Date:** 2026-11-20
-- **Requested change:** Make the ASD-STE100 skill foundational and apply its controlled-language standard to skill and technical documentation.
-- **Reason:** Reduce ambiguity in instructions and technical explanations without changing technical meaning.
-- **Behavioral impact:** Foundational initialization now loads the ASD-STE100 skill. Skill and technical documentation use Strict mode or STE-flavored mode according to their purpose. Creative content and intentional examples remain outside the policy.
-- **Files modified:** `skills/asd-ste100/SKILL.md`, `skills/asd-ste100/references/repository-writing-policy.md`, `skills/SESSION_START.md`, `skills/session-archiving/SKILL.md`, `skills/agent-skill-authoring/SKILL.md`, `skills/README.md`, and this policy file.
-- **Verification:** Pending final repository read-back and technical-document review.
+- **Change:** Make ASD-STE100 a foundational skill. Apply its writing modes to skill documentation and technical documentation.
+- **Reason:** Reduce ambiguity without changing technical meaning.
+- **Behavioral impact:** Foundational initialization now loads ASD-STE100. Use Strict mode for operational instructions and STE-flavored mode for technical explanations. Creative content and intentional examples remain outside the policy.
+- **Files modified:** ASD-STE100, Session Start, Session Archiving, Agent Skill Authoring, Skills README, and this policy file.
+- **Verification:** Initial read-back completed. The current documentation audit remains in progress.
 
 ## Future revision log
 
-Append a new entry whenever the policy or its activation cues change.
+Append a new entry whenever the initialization policy or its dependencies change.
 
 Use this template:
 
@@ -146,21 +159,19 @@ Use this template:
 
 ## Review checklist
 
-Before approving a future change, verify:
-
-- [ ] Initialization remains conditional unless explicitly changed by the user.
-- [ ] The activation cues and their distinct responsibilities are unambiguous.
-- [ ] Foundational initialization precedes novelist-specific initialization.
-- [ ] Foundational initialization is not duplicated when both cues are used.
-- [ ] The Agent Skill Authoring skill is loaded during foundational initialization.
-- [ ] The ASD-STE100 skill is loaded during foundational initialization.
-- [ ] Skill and technical documentation use the correct ASD-STE100 mode and preserve meaning.
-- [ ] New or revised skills satisfy the Agent Skills frontmatter, naming, structure, and validation requirements.
-- [ ] Only necessary files are loaded.
-- [ ] Missing or unverifiable prerequisites stop initialization and are reported by exact path.
-- [ ] Operational instructions remain consistent across the two initiation files.
-- [ ] The change is committed to the `gpt` branch and verified after writing.
+- [ ] Initialization remains conditional.
+- [ ] The activation cues remain distinct.
+- [ ] Novelist initialization completes foundational initialization first.
+- [ ] Foundational initialization runs only once when both cues are given.
+- [ ] Agent Skill Authoring loads during foundational initialization.
+- [ ] ASD-STE100 loads during foundational initialization.
+- [ ] Skill and technical documentation use the correct writing mode.
+- [ ] Rewrites preserve meaning, facts, conditions, scope, and modality.
+- [ ] Only required files load.
+- [ ] Missing prerequisites stop initialization and are reported by exact path.
+- [ ] Operational instructions remain consistent across initiation files.
+- [ ] Changes are committed to branch `gpt` and verified after writing.
 
 ---
 
-**Maintenance rule:** Update this note whenever the initialization policy, activation cues, dependencies, or verification requirements change. Keep executable instructions in the operational files; use this note to track why and how they evolve.
+**Maintenance rule:** Update this file when the initialization policy, cues, dependencies, or verification requirements change. Keep operational instructions in their authoritative files.
