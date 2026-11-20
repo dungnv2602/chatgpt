@@ -91,7 +91,7 @@ Use explicit approval values (Approved, Rejected, Pending, Not recorded) and ver
 
 Calculate SHA-256 from the actual original image bytes when accessible. Do not use a screenshot, thumbnail, or transformed derivative as a substitute for the original's checksum. If the original bytes are unavailable, leave the checksum unavailable/pending. SHA-256 establishes byte identity only. It does not independently prove the image's content, approval, prompt association, or provenance. A renamed or moved byte-identical file retains its checksum, but re-encoding, resizing, editing, or format conversion generally changes it. Record original and derivative checksums separately.
 
-When a user provides a downloaded image's SHA-256, compare it to the archive's recorded checksum. Mark it Verified only when values match. A mismatch is not byte-identical and must not be marked verified. Verify direct GitHub image URLs by checking the exact repository path/blob. Do not mark link or checksum verification complete without an actual check. After updating archival records, read back the README and manifest and verify they agree with attempt records and repository assets. Report unresolved gaps explicitly.
+When a user provides a downloaded image's SHA-256, compare it to the archive's recorded checksum. Mark it Verified only when values match. A mismatch is not byte-identical and must not be marked verified. Verify direct GitHub image URLs by checking the exact repository path/blob. Do not mark link or checksum verification complete without an actual verify. After updating archival records, read back the README and manifest and verify they agree with attempt records and repository assets. Report unresolved gaps explicitly.
 
 
 ## Original-image SHA-256 identity and WebP derivatives (approved 2026-11-20)
@@ -105,7 +105,7 @@ WebP conversion changes bytes. Therefore, the original hash is the identity key 
 The Action is intended to automate these tasks:
 
 - Calculate and compare original SHA-256 values.
-- Validate output-to-attempt and prompt mapping.
+- Verify output-to-attempt and prompt mapping.
 - Convert, rename, and relocate files.
 - Add direct image links to attempt records and the README.
 - Reconcile the manifest and write verification reports.
