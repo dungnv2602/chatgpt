@@ -4,13 +4,13 @@ This file summarizes the public, official description of ASD-STE100 (Simplified 
 
 ## What ASD-STE100 Is
 
-ASD-STE100 is a controlled natural language, first released in 1986 (as AECMA Document PSC-85-16598) by what is now ASD (the AeroSpace and Defense Industries Association of Europe). It was built at the request of European airlines — most staffed by non-native English speakers — who needed maintenance documentation that could not be misread, because a misread instruction on an aircraft can kill people. The standard is maintained by the Simplified Technical English Maintenance Group (STEMG) and has been free to download since Issue 6 (2013). The current edition is Issue 9 (January 2025).
+ASD-STE100 is a controlled natural language. It was first released in 1986 as AECMA Document PSC-85-16598. The current standards body is ASD, the AeroSpace and Defense Industries Association of Europe. European airlines requested the standard. Most airline staff did not speak English as a first language. They needed maintenance documentation that readers could not misread. A misread aircraft instruction can kill people. The Simplified Technical English Maintenance Group (STEMG) maintains the standard. It has been free to download since Issue 6 (2013). The current edition is Issue 9 (January 2025).
 
 ## Structure
 
 - **53 writing rules across 9 sections** covering word choice, grammar, sentence structure, and style.
-- **A dictionary** of roughly 900 approved words, each restricted to one meaning and one part of speech, plus roughly 1,200 words to avoid with suggested replacements.
-- **A terminology allowance**: organizations may define their own dictionary of approved technical nouns and verbs beyond the base ~900 words, for domain-specific vocabulary the base dictionary can't cover.
+- **A dictionary** of roughly 900 approved words. Each word has one meaning and one part of speech. The standard also lists roughly 1,200 words to avoid. It gives suggested replacements.
+- **A terminology allowance:** Organizations may define approved technical nouns and verbs for their domains. These words extend the base dictionary of roughly 900 words.
 
 ## Rule Categories (Paraphrased)
 
@@ -47,7 +47,7 @@ ASD-STE100 is a controlled natural language, first released in 1986 (as AECMA Do
 
 ## Why This Skill Repurposes STE for Agent Output
 
-STE was designed to eliminate ambiguity for a reader who cannot ask a follow-up question — a technician on a tarmac, working from a manual, with no author to call. An AI agent parsing another agent's output, a tool description, or a system message is in the same position: no back-channel to resolve "does this passive-voice sentence mean the caller does X, or the callee does X?" The same rule set that protects an airline mechanic from a misread torque spec protects a downstream agent from a misread instruction.
+STE was designed to eliminate ambiguity for a reader who cannot ask a follow-up question. A technician on a tarmac may work from a manual with no author to call. An AI agent that parses another agent's output, a tool description, or a system message is in the same position. It has no back-channel to resolve whether a passive-voice sentence means the caller or the callee does X. The same rule set protects an airline mechanic from a misread torque specification. It also protects a downstream agent from a misread instruction.
 
 ## Sources
 
