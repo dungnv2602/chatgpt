@@ -13,7 +13,7 @@ This file records the repository's conditional initialization policy. Operationa
 - Agent Skills format: `skills/agent-skill-authoring/SKILL.md`
 - Technical writing standard: `skills/asd-ste100/SKILL.md`
 - Novelist skill entry point: `skills/novelist-initiation/SKILL.md`
-- Canonical novelist procedure: the “Be the novelist” section in `skills/SESSION_START.md`
+- Canonical novelist procedure: the Novelist role initialization section in `skills/SESSION_START.md`
 
 This file does not replace an operational skill or initiation procedure.
 
