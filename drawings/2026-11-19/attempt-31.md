@@ -28,3 +28,7 @@
 - **Generation result:** Image tool returned generation ID `84064782-3e24-4a0e-a527-5cb790a24df0`; asset ID `file_00000000bfbc82118e1007df88821333`.
 - **Source linkage:** Metadata reports `edit_op: null` and `parent_gen_id: null`; this is a fresh generation, not an edit of Attempt 29.
 - **Outcome:** The user explicitly accepted this output as successful for Attempt 31. Record it as a successful result according to the user's acceptance.
+
+## Repository images
+
+- [file_00000000bfbc82118e1007df88821333.png.webp](images/file_00000000bfbc82118e1007df88821333.png.webp)
