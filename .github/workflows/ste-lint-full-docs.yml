@@ -9,14 +9,15 @@ on:
       - '.github/workflows/ste-lint-full-docs.yml'
       - '.github/workflows/ste-lint-changed.yml'
       - '!skills/asd-ste100/examples/**'
+  workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event_name }}
   cancel-in-progress: true
 
 jobs:
   preflight:
-    name: Reject superseded runs before checkout
+    name: Validate target branch and reject superseded push runs
     runs-on: ubuntu-latest
     timeout-minutes: 2
     permissions:
@@ -25,13 +26,24 @@ jobs:
     outputs:
       proceed: ${{ steps.guard.outputs.proceed }}
     steps:
-      - name: Cancel superseded run before checkout
+      - name: Validate branch and guard push runs
         id: guard
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
+          if [[ "$GITHUB_REF_NAME" != "gpt" ]]; then
+            echo "::error::Select the gpt branch when manually dispatching this workflow."
+            exit 1
+          fi
+
+          if [[ "$GITHUB_EVENT_NAME" != "push" ]]; then
+            echo "Manual run on gpt. Continue."
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
           if ! latest_run=$(gh run list \
             --workflow ".github/workflows/ste-lint-full-docs.yml" \
             --branch "$GITHUB_REF_NAME" \
@@ -43,56 +55,194 @@ jobs:
           fi
 
           if [[ -n "$latest_run" && "$latest_run" != "$GITHUB_RUN_ID" ]]; then
-            echo "A newer run ($latest_run) supersedes this run ($GITHUB_RUN_ID)."
+            echo "A newer push run ($latest_run) supersedes this run ($GITHUB_RUN_ID)."
             gh api --method POST \
               "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/cancel" >/dev/null
             exit 0
           fi
 
           if [[ -z "$latest_run" ]]; then
-            echo "::warning::Could not identify the latest run. Continue with validation."
+            echo "::warning::Could not identify the latest push run. Continue with validation."
           fi
           echo "proceed=true" >> "$GITHUB_OUTPUT"
 
   ste-lint:
-    name: Lint all in-scope technical Markdown files
+    name: Full audit and update consolidated report
     needs: preflight
     if: needs.preflight.outputs.proceed == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     permissions:
-      contents: read
+      contents: write
     steps:
       - name: Check out commit
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          ref: ${{ github.ref }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Run linter self-test
-        run: python3 skills/asd-ste100/scripts/ste-lint.py --selftest
-
-      - name: Check active Markdown file links and heading anchors
-        run: python3 skills/asd-ste100/scripts/check_markdown_anchors.py
-
-      - name: Lint all in-scope technical Markdown files
+      - name: Run full audit and generate report
+        id: audit
         shell: bash
         run: |
-          set -euo pipefail
-          files=$(git ls-files '*.md' |
-            grep -vE '^(novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))')
-          failed=0
-          while IFS= read -r file; do
-            [ -z "$file" ] && continue
-            if bash skills/asd-ste100/scripts/ste-lint-repository.sh "$file"; then
-              :
-            else
-              echo "Lint failure: $file"
-              failed=1
+          set -uo pipefail
+          report="lint_reports/latest-lint-report.md"
+          mkdir -p lint_reports
+          tmpdir=$(mktemp -d)
+          trap 'rm -rf "$tmpdir"' EXIT
+
+          overall_failed=0
+          total_findings=0
+          files_scanned=0
+          files_with_findings=0
+          lint_failed_files=0
+
+          {
+            echo "# Latest Repository-wide Lint Report"
+            echo
+            echo "- **Run:** [#${GITHUB_RUN_NUMBER}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})"
+            echo "- **Date (UTC):** $(date -u '+%Y-%m-%d %H:%M:%S')"
+            echo "- **Branch:** ${GITHUB_REF_NAME}"
+            echo "- **Commit:** [${GITHUB_SHA}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA})"
+            echo "- **Trigger:** ${GITHUB_EVENT_NAME}"
+            echo
+            echo "This report is replaced by the next complete run. The generated report is excluded from subsequent lint source scans."
+            echo
+            echo "## Summary"
+            echo
+          } > "$report"
+
+          run_check() {
+            local title="$1"
+            shift
+            local output="$tmpdir/check-$RANDOM.txt"
+            local status=0
+            "$@" > "$output" 2>&1 || status=$?
+            if [[ "$status" -ne 0 ]]; then overall_failed=1; fi
+            {
+              echo "### $title"
+              echo
+              if [[ "$status" -eq 0 ]]; then
+                echo "**Status:** PASS"
+              else
+                echo "**Status:** FAIL (exit $status)"
+              fi
+              echo
+              echo '~~~text'
+              cat "$output"
+              echo '~~~'
+              echo
+            } >> "$report"
+          }
+
+          run_check "Linter self-test" python3 skills/asd-ste100/scripts/ste-lint.py --selftest
+          run_check "Markdown links and heading anchors" python3 skills/asd-ste100/scripts/check_markdown_anchors.py
+
+          mapfile -t files < <(
+            git ls-files '*.md' |
+              grep -vE '^(archive/|lint_reports/|workspace/tasks/|workspace/discussion\.md$|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' || true
+          )
+
+          findings_file="$tmpdir/findings.md"
+          : > "$findings_file"
+
+          for file in "${files[@]}"; do
+            [[ -z "$file" ]] && continue
+            files_scanned=$((files_scanned + 1))
+            output="$tmpdir/file-lint.txt"
+            status=0
+            bash skills/asd-ste100/scripts/ste-lint-repository.sh "$file" > "$output" 2>&1 || status=$?
+
+            summary=$(grep -E '^[0-9]+ violations \(' "$output" | tail -n 1 || true)
+            count=$(printf '%s\n' "$summary" | sed -nE 's/^([0-9]+) violations.*/\1/p')
+            hard=$(printf '%s\n' "$summary" | sed -nE 's/.*\(([0-9]+) hard,.*/\1/p')
+            count=${count:-0}
+            hard=${hard:-0}
+            total_findings=$((total_findings + count))
+
+            if [[ "$count" -gt 0 ]]; then
+              files_with_findings=$((files_with_findings + 1))
+              {
+                echo "#### `$file`"
+                echo
+                echo '~~~text'
+                cat "$output"
+                echo '~~~'
+                echo
+              } >> "$findings_file"
             fi
-          done <<< "$files"
-          exit "$failed"
+
+            if [[ "$status" -ne 0 ]]; then
+              lint_failed_files=$((lint_failed_files + 1))
+              overall_failed=1
+              if [[ "$count" -eq 0 ]]; then
+                {
+                  echo "#### `$file` (execution error, exit $status)"
+                  echo
+                  echo '~~~text'
+                  cat "$output"
+                  echo '~~~'
+                  echo
+                } >> "$findings_file"
+              fi
+            fi
+          done
+
+          {
+            echo "- **Technical Markdown files scanned:** $files_scanned"
+            echo "- **Files with findings:** $files_with_findings"
+            echo "- **Total STE findings (hard and advisory):** $total_findings"
+            echo "- **Files failing the configured hard-finding threshold or execution:** $lint_failed_files"
+            if [[ "$overall_failed" -eq 0 ]]; then
+              echo "- **Overall result:** PASS"
+            else
+              echo "- **Overall result:** FAIL"
+            fi
+            echo
+            echo "## STE-100 Findings by File"
+            echo
+            if [[ -s "$findings_file" ]]; then
+              cat "$findings_file"
+            else
+              echo "No STE findings."
+              echo
+            fi
+          } >> "$report"
+
+          echo "overall_failed=$overall_failed" >> "$GITHUB_OUTPUT"
+          echo "files_scanned=$files_scanned" >> "$GITHUB_OUTPUT"
+          echo "files_with_findings=$files_with_findings" >> "$GITHUB_OUTPUT"
+          echo "total_findings=$total_findings" >> "$GITHUB_OUTPUT"
+          echo "lint_failed_files=$lint_failed_files" >> "$GITHUB_OUTPUT"
+
+      - name: Commit the latest report to gpt
+        if: always() && steps.audit.outcome != 'skipped'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lint_reports/latest-lint-report.md
+          if git diff --cached --quiet; then
+            echo "The report has no changes."
+            exit 0
+          fi
+          git commit -m "Update latest repository-wide lint report"
+          git push origin "HEAD:gpt"
+
+      - name: Set workflow result from audit findings
+        if: always() && steps.audit.outcome != 'skipped'
+        shell: bash
+        run: |
+          if [[ "${{ steps.audit.outputs.overall_failed }}" == "1" ]]; then
+            echo "::error::The full audit found lint failures. See lint_reports/latest-lint-report.md."
+            exit 1
+          fi
+          echo "All full-audit checks passed."
