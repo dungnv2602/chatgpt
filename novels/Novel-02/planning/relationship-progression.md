@@ -147,7 +147,7 @@ Andy then makes his own choice. Their relationship begins as a mutual commitment
 
 ## Open questions
 
-The remaining choices for this progression are maintained in [Open Discussion](open-discussion.md), section 6. They are not blockers and should be answered only when the next stage of writing requires them.
+The remaining choices for this progression are maintained in [Open Discussion](../open-discussion.md), section 6. They are not blockers and should be answered only when the next stage of writing requires them.
 
 ## Recommended next writing milestone
 
