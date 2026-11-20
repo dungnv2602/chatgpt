@@ -7,7 +7,7 @@
 This README is the daily navigation ledger, not a replacement for the linked
 attempt records. The six fields are deliberately separate: attempt/prompt,
 session/brief, series/baseline lineage, execution outcome, and user approval/output
-evidence. The attempt note is authoritative for exact prompt text, source IDs,
+evidence, and image linkage. The attempt note is authoritative for exact prompt text, source IDs,
 tool metadata, visual assessment, and provenance. Unknown details remain
 explicitly unverified.
 
