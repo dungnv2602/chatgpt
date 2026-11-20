@@ -228,10 +228,29 @@ The user's opening brief for a specific drawing session is the source of truth f
    exact edit source. A historical image is not an active reference merely
    because it is stored, linked, approved, or previously used. A generation ID
    or filename is not an attachment.
-8. If the current-session brief conflicts with a successful historical prompt,
-   preserve the user's current brief. Use the old prompt only as a technical
-   wording aid for compatible details. Do not import its outdated appearance,
-   clothing, setting, framing, or style.
+8. **Series-continuation and assigned-image base rule:** When the user says to
+   continue an established series, continue from the most recent successful
+   prompt in that series. When the user explicitly says to use an image, prior
+   image, or approved output as the base, resolve that image to its authoritative
+   successful attempt record and use the associated successful prompt as the
+   text baseline. Do not ask the user to upload or reattach the image for this
+   purpose. The prompt record—not a request for the image binary—is the default
+   continuity source. Preserve compatible details and apply the current brief
+   and latest requested changes. If the image binary is unavailable, proceed
+   with prompt-first reconstruction and state that it is not a pixel-level edit
+   only when that distinction matters.
+9. Ask for an image only when the task genuinely requires inspecting image
+   content that cannot be established from the authoritative prompt/record, or
+   when the user explicitly requires a literal source-pixel operation that
+   cannot be performed without the actual binary. Do not ask for an image merely
+   to continue a series, preserve an established character, or use an approved
+   image as a prompt base. If the successful prompt cannot be found, use the
+   current brief and disclose the missing prompt record; do not ask for the
+   image as a substitute for missing prompt history.
+10. If the current-session brief conflicts with a successful historical prompt,
+    preserve the user's current brief. Use the old prompt only as a technical
+    wording aid for compatible details. Do not import its outdated appearance,
+    clothing, setting, framing, or style.
 
 The session brief—not a global image catalogue—is the visual authority.
 
