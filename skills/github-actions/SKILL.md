@@ -49,6 +49,14 @@ After loading skills for `start session`, `start a drawing session`, or `Be the 
 
 ## 4. Inspect and preserve validation scope
 
+### Archive boundary for Markdown checks
+
+- Exclude all paths under `archive/` from full-document and changed-document lint.
+- Exclude archived Markdown files from link-source and heading-anchor checks.
+- For links from active documents to `archive/`, check only whether the target path exists. Ignore fragments for these targets.
+- Never read archived files to validate links or heading anchors.
+- Do not add an `archive/README.md` lint exception. The entire `archive/` tree is outside lint scope.
+
 Before changing a workflow, identify its events, branch/path filters, jobs, dependencies, permissions, concurrency, runner, timeout, cache, artifact behavior, and scripts. Identify which checks cover which files.
 
 - Do not optimize by removing a required test or weakening its validation scope.

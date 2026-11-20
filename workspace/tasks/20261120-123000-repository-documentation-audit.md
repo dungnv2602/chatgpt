@@ -4,7 +4,7 @@
 
 - **ID:** 20261120-123000
 - **Created:** 2026-11-20 12:30 UTC
-- **Updated:** 2026-11-20 14:56 UTC
+- **Updated:** 2026-11-20 15:07 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -21,6 +21,18 @@
 ## 2. Subsequent Instructions
 
 > Continue with the audit.
+
+> Exclude all of archive/ from full and changed-document linting.
+>
+> Exclude archived files from Markdown link-source and heading-anchor checks.
+>
+> For links from active documents into archive/, check target-path existence only.
+>
+> Remove the obsolete archive/README.md lint exception.
+>
+> Update the task record and workflow instructions to make this boundary permanent.
+>
+> No changes from that prepared batch have been committed. I need to reapply them and verify the branch read-back.
 
 - Follow the current bounded CI preflight policy. Do not run lint or CI locally. Do not wait for or poll GitHub Actions results.
 
@@ -47,6 +59,18 @@ Continue and complete the repository documentation audit. Keep its complete hist
 - The entire `archive/` tree is outside the audit scope. This supersedes earlier progress notes that proposed a historical-link review or treated archive files as audit sources.
 
 ## 6. Progress Log
+
+### 2026-11-20 15:07 UTC
+
+- **Action:** Recovered the archive-boundary work and reviewed the latest CI preflight.
+- **Branch read-back:** Branch `gpt` already contains the requested workflow and link-checker behavior. This differs from the latest prompt's statement that the prepared batch was not committed. Do not duplicate existing implementation.
+- **Workflow checks:** Both lint workflows exclude every path under `archive/`. The changed workflow also excludes archive-only Markdown pushes.
+- **Link checks:** The Markdown checker excludes archived files as sources and does not read their headings. For active links into `archive/`, it checks target existence and skips fragment validation.
+- **Lint exception:** The current workflows and lint wrapper contain no separate `archive/README.md` exception. The whole archive tree is excluded.
+- **CI finding:** The newest full and changed lint runs failed during their full-audit paths. The Worker skill has one hard synonym-rotation finding in its task-ID instruction.
+- **Change:** Added the archive boundary to the GitHub Actions skill. Reworded the task-ID instruction without changing its meaning.
+- **Validation:** Did not run lint or CI locally. Did not dispatch, rerun, wait for, or poll GitHub Actions.
+- **Next:** Commit the documentation and lint repair together. Read back every changed path from branch `gpt`. Review the next CI result at the next mandatory preflight.
 
 ### 2026-11-20 14:56 UTC
 
@@ -313,6 +337,8 @@ Continue and complete the repository documentation audit. Keep its complete hist
 
 ## 7. Current State
 
+**Latest branch inspection (2026-11-20 15:07 UTC):** The requested archive exclusions and path-only link behavior already exist on branch `gpt`. The GitHub Actions skill now records these rules as permanent workflow policy. The Worker skill retains the retention-only rule. The previous prompt's claim that the prepared implementation was uncommitted does not match the branch read-back.
+
 The historical Version 19 inventory contained 166 Markdown files and 119 active source files. The Version 17 count of 121 used the same exclusions except for `skills/asd-ste100/examples/`. That directory contained two Markdown files, which explains the exact difference.
 
 The current branch contains 176 Markdown files. The same Version 19 source-file exclusions produce 129 active source files. Current link validation excludes the entire `archive/` tree, `workspace/tasks/`, and `workspace/discussion.md` as sources. Archived paths remain available only for existence checks when active documents link to them. The checker does not read archived files or inspect their heading anchors. The full-document lint workflow selects 41 Markdown files.
@@ -347,6 +373,10 @@ The Version 19 active-link scan found zero unresolved local Markdown targets or 
 - `workspace/task_board.md` — task index.
 
 ## 11. Verification
+
+- **Check:** Verify the permanent archive boundary and repair the latest completed lint failures.
+- **Method:** Read both lint workflows, the Markdown checker, lint wrapper, The Worker skill, and the GitHub Actions skill from branch `gpt`. Inspect the newest failed workflow jobs and logs.
+- **Result:** Confirmed full and changed lint exclude `archive/`. Confirmed archived Markdown files are not link sources or anchor inputs. Active links into the archive receive path-existence checks only. Confirmed no separate `archive/README.md` exception remains. Corrected the Worker synonym finding and documented the boundary in the GitHub Actions skill. Commit and read-back results are recorded below after the write.
 
 - **Check:** Identify and preserve all audit history from Version 5 onward.
 - **Method:** Compare the copied history with the source policy at parent commit `5358dace526dc38808dac3a8d2ad4eaea1214af2`.

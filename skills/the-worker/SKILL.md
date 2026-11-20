@@ -83,7 +83,7 @@ Use this filename format:
 
 YYYYMMDD-HHMMSS-short-kebab-title.md
 
-Never change an assigned task ID.
+Keep assigned task IDs unchanged.
 
 ### 3. Apply origin and approval rules
 
