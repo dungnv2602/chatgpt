@@ -49,7 +49,7 @@ It governs both positive and negative wording. Positive wording is not automatic
 
 ### 3.1 Use the approved prompt as the authoritative source
 
-When the user has approved a prompt and asks for a revision, treat that approved wording as the authoritative baseline for all details that have not been changed by later instructions.
+When the user approves a prompt and later asks for a revision, treat that wording as the authoritative baseline. Preserve all details that later instructions have not changed.
 
 Do not replace the approved prompt with a newly invented version merely because the assistant prefers its own phrasing. Do not rewrite unrelated sentences, rearrange the concept, or insert additional instructions under the label of polishing, optimization, clarification, or improvement.
 
@@ -65,7 +65,7 @@ If the user asks for a specific, limited change, make that change and preserve t
 
 ### 3.3 Use historical material only within the active authority
 
-A successful historical prompt may serve as a wording or technical baseline only when the user has authorized its reuse or the active workflow establishes it as the relevant baseline. It remains subordinate to the current brief and the user's latest instructions.
+A successful historical prompt may serve as a wording or technical baseline only when the user authorizes its reuse. The active workflow may also establish it as the relevant baseline. Keep it subordinate to the current brief and the user's latest instructions.
 
 A historical image, prompt, character sheet, pattern, or project convention does not independently authorize importing old creative choices into a new session. Reuse only the details that are compatible with and authorized by the current brief.
 
@@ -148,7 +148,7 @@ Do not independently add or change:
 
 These are examples of possible creative additions, not a demand to mention or exclude each category in every prompt.
 
-Do not add decorative details to make a scene feel more complete when the user has not requested them. Do not turn an open detail into a fixed creative decision unless the user has delegated creative discretion or the detail is genuinely necessary to make the requested image coherent.
+Do not add decorative details to complete a scene when the user has not requested them. Do not turn an open detail into a fixed creative decision unless the user has delegated creative discretion. An open detail may also become fixed when that choice is genuinely necessary to make the requested image coherent.
 
 When the user expressly grants creative freedom, exercise it only within the scope of that permission. Creative freedom over one aspect does not authorize changing specified or locked elements, inserting restrictions, or expanding the task into a different concept.
 
@@ -156,7 +156,13 @@ When the user expressly grants creative freedom, exercise it only within the sco
 
 A prompt may be clarified for accuracy and usability, but clarification must not change the user's intended content.
 
-Permitted wording work includes correcting grammar, resolving an unambiguous reference, making an already specified spatial relationship clearer, removing accidental ambiguity, or organizing the same authorized details into a clearer sequence.
+Permitted wording work includes these actions:
+
+- Correct grammar.
+- Resolve an unambiguous reference.
+- Clarify an already specified spatial relationship.
+- Remove accidental ambiguity.
+- Organize the same authorized details into a clearer sequence.
 
 A technical clarification must not:
 
@@ -190,7 +196,7 @@ A restriction may be included only in either of these circumstances:
 1. The user explicitly requests it. Or
 2. It is genuinely required by an applicable safety rule.
 
-The exception is narrow. A restriction is not genuinely required merely because it might be prudent, because a template includes it, because a prior attempt failed, or because the assistant speculates that it could prevent a refusal.
+The exception is narrow. Prudence, inclusion in a template, and failure of a prior attempt do not make a restriction necessary. Assistant speculation that a restriction could prevent a refusal also does not make it necessary.
 
 When the user requests a restriction, apply it to the scope the user specified. Do not expand it into additional restrictions or use it as authority to redesign unrelated parts of the image.
 
