@@ -948,3 +948,22 @@ repository retention pass through the single intake at `images/takeout/`.
 - Never alter a master or WebP after conversion as part of this pipeline.
   Separate image edits require the normal prompt-archive and explicit editing
   workflow.
+
+
+## Mandatory generated-image archive verification (2026-11-20)
+
+For every drawing session, archive **every generated image output**, regardless of approval, rejection, prompt compliance, or whether it is superseded. Each output must be individually recorded and directly linked from the session README once its exact repository asset exists and is verified. Preserve generation order and prompt-to-output association. Approval is a separate field and never determines archival or linking eligibility.
+
+
+Maintain a session-level `manifest.csv` as the machine-readable source for archival tracking. Required columns:
+```csv
+session_date,image_id,filename,prompt_id,approval_status,github_url,sha256,verification_status
+```
+Use one row per generated output (not merely one row per prompt when an attempt yields multiple images). Record `approval_status` as Approved, Rejected, Pending, or Not recorded; use `verification_status` values that distinguish Pending, Verified, Failed, and Not verifiable. Do not invent identifiers, URLs, checksums, or statuses. Keep prompt IDs and image IDs stable and unambiguous.
+
+
+Calculate SHA-256 from the actual original image bytes whenever those bytes are accessible. Do not calculate a checksum from screenshots, thumbnails, or recompressed derivatives and misrepresent it as the original checksum. If the original is unavailable, record SHA-256 as unavailable/pending rather than guessing. A checksum identifies exact file bytes; it does not establish visual content, prompt lineage, approval, or authenticity by itself.
+
+When the user supplies a downloaded image's SHA-256, compare it with the recorded checksum for the candidate archived original. A match verifies byte-identical files; a mismatch means the files are not byte-identical and must not be marked verified. Renaming or moving a file does not change its checksum; re-encoding, editing, resizing, or converting usually does. If a source original and a WebP derivative are both archived, calculate and record their checksums separately and do not compare them as if they were the same byte stream.
+
+README image links must point directly to the correct image asset and be checked against the repository path/blob before they are marked Verified. The manifest must not mark a URL or checksum Verified until the corresponding verification actually occurs. After archive changes, read back the README and manifest and reconcile every generated output against the chronological attempt record. Report any missing asset, link, prompt association, checksum, or verification explicitly.
