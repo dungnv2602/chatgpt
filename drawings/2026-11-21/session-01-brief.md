@@ -53,7 +53,7 @@ Scene 1 was approved by the user on 2026-11-21. The remaining five concepts are 
 - **Visual approach:** Realistic, naturalistic cinematic photography. Warm early-morning daylight, restrained color, lived-in contemporary apartment details, intimate medium close-up / three-quarter composition.
 - **Continuity constraints:** Stay within the Sweet Path. Use an original adult woman interpretation. Do not borrow from the Casual Path or imitate a film performer. The baseline image is unavailable, so do not claim exact facial, wardrobe, or pixel continuity; avoid inventing specific baseline-only details.
 - **Prompt record:** `drawings/2026-11-21/attempt-08.md`. Complete prompt was archived and read back before generation.
-- **Generation result:** Two variants generated; awaiting user review.
+- **Generation result:** Two variants generated. User selected Variant B on 2026-11-21; Variant B is the approved output for Attempt 08.
 
 ## Permitted variation
 - Scene, pose, spatial relationships, camera framing, and environment may vary when selected by the user.
@@ -87,4 +87,4 @@ Scene 1 was approved by the user on 2026-11-21. The remaining five concepts are 
 ## Amendments
 - **2026-11-21 — User selected Sweet Path:** Adopt Attempt 07 as the visual baseline for this session. Use its realistic, naturalistic cinematic treatment and sweet emotional direction. Six candidate scenes were proposed.
 - **2026-11-21 — User approved Scene 1:** The user approved “A quiet morning together” as the next scene. Attempt 08 is the active prompt record. The complete prompt was archived and verified before generation.
-- **2026-11-21 — Attempt 08 generated:** Two variants were generated for user review. See `drawings/2026-11-21/attempt-08.md` for generation IDs and review status.
+- **2026-11-21 — Attempt 08 generated:** Two variants were generated. The user selected Image B as the approved output. See `drawings/2026-11-21/attempt-08.md` for generation IDs and selection status.
