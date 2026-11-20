@@ -25,7 +25,16 @@ items:
     asset_id: "ILL-001"
     title: "Shared Discovery"
     destination_dir: "novel/Novel-02/assets/illustrations/ARC-001/SCN-001"
+    # For generated drawings, include the generation-time hash and IDs:
+    expected_sha256: "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    output_id: "A001-O01"
+    prompt_id: "P001"
 ```
+
+
+For drawing-session outputs, when the generation-time original SHA-256 was captured, include it as `expected_sha256` in the item. The processor calculates SHA-256 of the uploaded original and rejects a mismatch before conversion/relocation, retaining the upload and hand-off for review. Optional `output_id` and `prompt_id` fields are recorded in the conversion report for traceability. These IDs must be supplied from generation-time records; never infer them from filenames.
+
+The conversion report distinguishes `generation_sha256` (the expected hash recorded at generation) from `source_sha256` (the hash calculated from the upload), and includes `hash_match`. The WebP's own hash is independent because conversion changes bytes. Generation-hash matching is not yet a session-level `manifest.csv` reconciler; that remains a separate enhancement.
 
 For each item:
 
