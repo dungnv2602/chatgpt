@@ -726,3 +726,14 @@ Continue from the Next Actions. Keep this task In Progress until the remaining a
 - **Commit:** `2ab1a8366737148a1c3a60db5b37651f2865fc40`.
 - **Read-back:** Fetched `skills/drawing/SKILL.md` from branch `gpt`. Confirmed both phrases use `start`.
 - **Next:** Continue reviewing synonym-rotation findings in context. Preserve distinct technical meanings and intentional examples.
+
+
+### 2026-11-20 15:25 UTC
+
+- **Action:** Continued synonym-rotation review after completing the source-based long-sentence review.
+- **Changes:** Standardized the start/begin pair in `skills/drawing/SKILL.md` and the retrieval start wording in `skills/session-archiving/SKILL.md`.
+- **Commits:** Drawing `2ab1a8366737148a1c3a60db5b37651f2865fc40`; Session Archiving `43d3c22e3c1445f0c5d204300d901d0af5fb52ae`.
+- **Read-back:** Fetched both files from branch `gpt` and confirmed the revised wording.
+- **Blocked edit:** A further start/begin normalization in `skills/session-archiving/references/archive-records-and-image-prompts.md` did not commit because GitHub returned a GraphQL API error. A branch read-back confirmed that the attempted change was not applied. Do not retry without new evidence.
+- **CI discipline:** Did not run lint or CI locally. Did not wait for or poll GitHub Actions.
+- **Next:** Continue context-based synonym review. Preserve terms that describe distinct technical actions and intentional examples.

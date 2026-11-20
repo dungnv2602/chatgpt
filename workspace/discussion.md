@@ -62,6 +62,8 @@ The final source-review batch split one pattern-consultation sentence in `skills
 
 The full audit log listed 60 long-sentence candidates. Source review has addressed all 60, including the ASD-STE100 skill examples. Quoted teaching examples and technical distinctions remain intact. This is a source-review result, not a fresh official lint result. Other open work includes synonym-rotation findings, external URL review, and historical-link review only with your authorization. The configured lint baseline total of 170 is a threshold, not a current lint result. A source-based synonym review also standardized the session-opening and pattern-consultation wording in `skills/drawing/SKILL.md`. See [2ab1a83](https://github.com/dungnv2602/chatgpt/commit/2ab1a8366737148a1c3a60db5b37651f2865fc40). I fetched the file from branch `gpt` and confirmed both uses.
 
+The synonym review also standardized the retrieval-start wording in `skills/session-archiving/SKILL.md`. See [43d3c22](https://github.com/dungnv2602/chatgpt/commit/43d3c22e3c1445f0c5d204300d901d0af5fb52ae). I fetched the file from branch `gpt` and confirmed the change. A further attempt to standardize start/begin wording in the archive-records reference failed before commit because GitHub returned a GraphQL API error. A branch read-back confirmed that edit was not applied. I recorded the blocker and will not repeat the same attempt without new evidence.
+
 I did not run lint or CI locally. I did not dispatch, rerun, wait for, or poll GitHub Actions. No CI result for the latest repair commits has been awaited. The audit remains In Progress.
 
 ---
