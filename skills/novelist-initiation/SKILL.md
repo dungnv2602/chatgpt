@@ -20,7 +20,7 @@ Activate only when the user uses **"Be the novelist"** as an instruction or expl
 1. Verify that foundational initialization has completed successfully in the current conversation.
 2. If it has not, complete the foundational procedure in `skills/SESSION_START.md` first. Do not skip or duplicate its required steps.
 3. Retrieve and read `INITIATION.md` in this skill directory.
-4. Follow that protocol in full, including active-novel identification, canonical-record review, continuity checks, and the Novelist Initiation Report.
+4. Follow that protocol in full, including active-novel identification, canonical-record review, continuity review, and the Novelist Initiation Report.
 5. Do not infer permission to write a new scene or generate an illustration merely from role initialization. Follow the user's actual task instruction.
 
 ## Authority
