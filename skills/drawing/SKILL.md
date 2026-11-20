@@ -168,7 +168,7 @@ repository version.
 
 This session-level loading cadence does not reduce any per-attempt requirement
 below. Before each generation or edit, review the relevant prompt history,
-prepare and commit the exact authored prompt, verify that commit, then generate
+prepare and commit the exact authored prompt, check that commit, then generate
 or edit and record the actual outcome.
 
 
@@ -190,7 +190,7 @@ workflow, while avoiding redundant retrievals.
    against the current objective and any failure from the preceding attempt.
    Consultation does not require another retrieval when the content is already
    loaded.
-3. **Refresh selectively.** Re-fetch a pattern file only when the user requests
+3. **Refresh selectively.** Re-retrieve a pattern file only when the user requests
    a refresh, a relevant repository change is known or reasonably suspected,
    its current blob SHA is known to differ from the recorded SHA, or a
    relevant pattern file has not yet been loaded in this conversation. Reload
@@ -292,7 +292,7 @@ Before every generation or edit attempt:
 3. Review the relevant daily attempt ledger at
    `drawings/YYYY-MM-DD/README.md` and the chronological prompt history for the
    same session and, when the user explicitly continues a series, that series'
-   history. Use the ledger only to locate candidate attempts. Verify every
+   history. Use the ledger only to locate candidate attempts. Check every
    candidate's series membership, outcome, approval, and prompt/output linkage
    in its authoritative attempt record. For a novel scene, use the
    scene-local illustration records. Do not consult or recreate a global
@@ -321,7 +321,7 @@ Before every generation or edit attempt:
    criteria, prompt difference, test objective, pending status, and every
    reference asset actually attached.
 8. Commit the prompt to branch `gpt`.
-9. Fetch and verify the committed prompt before calling the image tool.
+9. Retrieve and check the committed prompt before calling the image tool.
 
 For every illustration belonging to a named novel scene, keep a convenient
 scene-local prompt record beside its illustration note:
@@ -361,7 +361,7 @@ image tool's supported reference mechanism. Merely naming a filename or image
 ID in prompt text does not attach it.
 
 Never claim an image was edited or reference-guided if the tool returned a
-fresh generation or did not confirm source linkage. Check metadata and inspect
+fresh generation or did not check source linkage. Check metadata and inspect
 the result. If the user specifically requires source linkage and the tool cannot
 accept or retain the source, state that limitation. Do not turn optional
 reference attachment into a blocker for ordinary fresh generation.
@@ -404,7 +404,7 @@ hands/fingers/wrists, clothing/colors, framing, lighting, background, artifacts,
 unrequested additions, and whether the source was actually used.
 
 For clothing, inspect **garment construction and coverage**, not just fabric
-material or neckline appearance. Verify that the fabric physically lies across
+material or neckline appearance. Check that the fabric physically lies across
 the body areas the brief says it should cover. An opaque garment draped below
 the bust does not count as a covered wrap blouse simply because the material is
 non-transparent. For wrap garments, check that the front panels visibly cross
@@ -433,15 +433,15 @@ only what is needed, and explicitly exclude rejected additions or drift.
 
 When the user requests a change to an existing image, use the exact successful authored prompt that produced the target image as the primary baseline. Reconstruct the image through that prompt, then revise only the requested element. Do not default to pixel-level editing of the image itself or make the image attachment the editing mechanism.
 
-1. Locate and verify the target image's originating prompt in the authoritative attempt record.
-2. Confirm that the prompt/output pair is successful or user-approved for the intended purpose. If the original prompt cannot be recovered, disclose that limitation. Do not fabricate its wording or silently substitute an unrelated prompt.
+1. Locate and check the target image's originating prompt in the authoritative attempt record.
+2. Check that the prompt/output pair is successful or user-approved for the intended purpose. If the original prompt cannot be recovered, disclose that limitation. Do not fabricate its wording or silently substitute an unrelated prompt.
 3. Treat the successful prompt as the reconstruction baseline. Preserve all unrequested details—identity/face, hairstyle, wardrobe, pose, composition, camera, lighting, environment, atmosphere, and other established elements—unless the user explicitly authorizes changes.
 4. Make the smallest prompt revision needed to accomplish the requested change. Lead with that change, and identify what is preserved, changed, and excluded. Avoid unnecessary rewording that could cause drift.
 5. Generate a new image from the revised prompt. This is a **fresh generation/reconstruction**, not a direct edit of the original image. Do not claim source-image edit provenance.
 6. Use the original image as an optional visual comparison/reference only when it materially helps and the user assigns that role. Prompt baseline remains primary. Attaching an image is not required for prompt-first reconstruction.
 7. Inspect the result against the successful baseline and the specific requested change. Record deviations and the actual outcome.
 
-Use direct editing only when the user explicitly requests it or requests source-image fidelity that prompt reconstruction cannot reliably preserve. Direct editing is a secondary method. Use it only when the actual source image is accessible and supported. Do not silently switch away from the prompt-first method. If you attempt a direct edit, verify source linkage and classify it accurately.
+Use direct editing only when the user explicitly requests it or requests source-image fidelity that prompt reconstruction cannot reliably preserve. Direct editing is a secondary method. Use it only when the actual source image is accessible and supported. Do not silently switch away from the prompt-first method. If you attempt a direct edit, check source linkage and classify it accurately.
 
 For a style-only change, use the successful prompt as the reconstruction baseline and revise only the rendering treatment. Preserve people, pose, hands, clothing, objects, lighting, camera position, crop, and scene content unless the user explicitly requests otherwise.
 
@@ -487,7 +487,7 @@ All repository work must use branch `gpt` and remain strictly inside
 
 ## 8. Image archive and delivery
 
-After generation or editing, preserve original outputs and record provenance. Verify asset mapping. Create delivery derivatives only under the approved workflow. Load [Drawing Archive, WebP Delivery, and Provenance Verification](references/archive-and-delivery.md) for the complete procedures. It covers original-image identity, SHA-256 handling, WebP derivatives, manifest verification, and the approved GitHub Action.
+After generation or editing, preserve original outputs and record provenance. Check asset mapping. Create delivery derivatives only under the approved workflow. Load [Drawing Archive, WebP Delivery, and Provenance Verification](references/archive-and-delivery.md) for the complete procedures. It covers original-image identity, SHA-256 handling, WebP derivatives, manifest verification, and the approved GitHub Action.
 
 ## Supporting references
 
