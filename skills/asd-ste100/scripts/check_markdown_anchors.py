@@ -31,14 +31,18 @@ HTML_LINK_RE = re.compile(r"\b(?:href|src)\s*=\s*([\"'])(.*?)\1", re.I)
 HTML_ID_RE = re.compile(r"\b(?:id|name)\s*=\s*([\"'])(.*?)\1", re.I)
 
 
-def tracked_markdown() -> list[str]:
+def tracked_paths() -> list[str]:
     result = subprocess.run(
-        ["git", "ls-files", "*.md"],
+        ["git", "ls-files"],
         check=True,
         capture_output=True,
         text=True,
     )
     return result.stdout.splitlines()
+
+
+def tracked_markdown() -> list[str]:
+    return [path for path in tracked_paths() if path.lower().endswith(".md")]
 
 
 def active_markdown(files: list[str]) -> list[str]:
@@ -87,8 +91,7 @@ def github_slug(text: str) -> str:
             output.append("-")
         elif char in "-_" or not category.startswith("P"):
             output.append(char)
-    slug = "".join(output).strip("-")
-    return re.sub(r"-+", "-", slug)
+    return "".join(output).strip("-")
 
 
 def heading_anchors(text: str) -> set[str]:
@@ -129,7 +132,7 @@ def link_targets(text: str) -> list[str]:
 
 
 def resolve_markdown_target(
-    source: str, target: str, file_set: set[str]
+    source: str, target: str, file_set: set[str], all_paths: set[str]
 ) -> str | None:
     parsed = urlsplit(target)
     if parsed.scheme or parsed.netloc:
@@ -144,24 +147,21 @@ def resolve_markdown_target(
     )
     if candidate.startswith("../") or candidate == "..":
         return None
-    if candidate.endswith("/"):
-        candidates = [
-            posixpath.join(candidate, "README.md"),
-            posixpath.join(candidate, "index.md"),
-        ]
-    elif candidate.lower().endswith(".md"):
-        candidates = [candidate]
-    else:
-        candidates = [
-            candidate + ".md",
-            posixpath.join(candidate, "README.md"),
-            posixpath.join(candidate, "index.md"),
-        ]
+    if candidate.lower().endswith(".md"):
+        return candidate
+    if posixpath.splitext(candidate)[1] or candidate in all_paths:
+        return None
+    candidates = [
+        candidate + ".md",
+        posixpath.join(candidate, "README.md"),
+        posixpath.join(candidate, "index.md"),
+    ]
     return next((path for path in candidates if path in file_set), candidates[0])
 
 
 def main() -> int:
-    all_files = tracked_markdown()
+    all_paths = set(tracked_paths())
+    all_files = sorted(path for path in all_paths if path.lower().endswith(".md"))
     active_files = active_markdown(all_files)
     file_set = set(all_files)
     anchors_by_file = {}
@@ -176,7 +176,7 @@ def main() -> int:
         text = Path(source).read_text(encoding="utf-8")
         for target in link_targets(text):
             parsed = urlsplit(target)
-            destination = resolve_markdown_target(source, target, file_set)
+            destination = resolve_markdown_target(source, target, file_set, all_paths)
             if destination is None:
                 continue
             links_checked += 1
