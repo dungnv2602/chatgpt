@@ -70,10 +70,10 @@ explicitly adopts it.
 - Create and commit the brief before the first image prompt for that session.
   Read it back and verify it.
 - Preserve the user's opening direction faithfully. Record specified, locked,
-  variable, excluded, and open details. Mark unspecified features as open;
+  variable, excluded, and open details. Mark unspecified features as open
   never invent constraints.
 - Append later explicit user corrections or refinements as dated amendments
-  in the same brief. Preserve the original opening brief; do not silently
+  in the same brief. Preserve the original opening brief. Do not silently
   rewrite its history. The latest explicit user instruction controls the
   property it changes.
 - Every attempt note must link to its session brief and identify its session ID.
@@ -90,7 +90,7 @@ explicitly adopts it.
 ### Session brief structure
 
 Use this structure for each session brief. Preserve the user's actual opening
-wording in the first section; the structured fields summarize it and must not
+wording in the first section. The structured fields summarize it and must not
 invent detail.
 
 ```markdown
@@ -140,7 +140,7 @@ invent detail.
 Write `Not specified / open` for fields the user has not defined. Do not fill
 gaps from a former session, a global image catalogue, a successful prompt, or
 the assistant's aesthetic assumptions. A session brief may be compact when the
-user's request is compact; this is a record of the user's direction, not a
+user's request is compact. This is a record of the user's direction, not a
 questionnaire that must be completed before work.
 
 ### Session status and transitions
@@ -156,7 +156,7 @@ questionnaire that must be completed before work.
 - While the session being discussed is `Active` or `Paused`, include the
   closeout reminder at the end of each response that continues or discusses
   that drawing session. The reminder is not a scheduled or background
-  notification; it appears in the conversation response.
+  notification. It appears in the conversation response.
 
 For a novel illustration, the user selects one narrative-fidelity mode in the
 opening brief:
@@ -191,13 +191,13 @@ prompts/
 
 - Use zero-padded sequential filenames (`attempt-01.md`, `attempt-02.md`, ...), with one attempt per file. Never append a second attempt to an existing attempt note.
 - `README.md` is the daily index: list attempts in order, link each note and its session brief, and show its current outcome/status. Update it whenever an attempt is added or its outcome changes.
-- **README table format is mandatory:** use exactly one continuous Markdown table for the entire day's attempt index, with a single header row and consistent columns (at minimum `Attempt`, `Prompt note`, `Session brief`, `Primary series / membership`, and `Status / outcome`). Every attempt, including the latest one, must be a row inside that same table. Use a stable series ID/name; write `standalone/unassigned` when no series is established. Do not place a second table below it, split the index into separate tables, or leave attempt rows outside the table. Keep rows in ascending attempt-number order.
-- **Keep table rows physically contiguous:** never insert a blank line between the header, separator, or any attempt row. A blank line terminates a Markdown table in many renderers and can make the newest attempt appear as a separate block. When appending an attempt, add its row immediately after the previous row with no empty line. When revising a status, edit the existing row in place; do not move it outside the table or create a second table.
+- **README table format is mandatory:** use exactly one continuous Markdown table for the entire day's attempt index, with a single header row and consistent columns (at minimum `Attempt`, `Prompt note`, `Session brief`, `Primary series / membership`, and `Status / outcome`). Every attempt, including the latest one, must be a row inside that same table. Use a stable series ID/name. Write `standalone/unassigned` when no series is established. Do not place a second table below it, split the index into separate tables, or leave attempt rows outside the table. Keep rows in ascending attempt-number order.
+- **Keep table rows physically contiguous:** never insert a blank line between the header, separator, or any attempt row. A blank line terminates a Markdown table in many renderers and can make the newest attempt appear as a separate block. When appending an attempt, add its row immediately after the previous row with no empty line. When revising a status, edit the existing row in place. Do not move it outside the table or create a second table.
 - **Validate before committing:** read back the complete daily `README.md` and verify that it contains exactly one attempt-index table, one header row, one separator row, and every numbered attempt exactly once in ascending order. Confirm there are no blank lines inside the table and that the final attempt row is part of the same contiguous table. Do not mark the index update complete until this read-back check passes.
-- **Status accuracy:** distinguish `not approved / not generated`, `approved / pending generation`, `generated successfully`, `generated with mismatch`, `rejected / no image returned`, and `technical failure`. If an attempt has multiple runs, preserve the sequence in the status cell (for example, an earlier image returned but a later retry was rejected); do not overwrite history with only the latest or earlier outcome. A user declining approval must never be represented as pending approval.
+- **Status accuracy:** distinguish `not approved / not generated`, `approved / pending generation`, `generated successfully`, `generated with mismatch`, `rejected / no image returned`, and `technical failure`. If an attempt has multiple runs, preserve the sequence in the status cell (for example, an earlier image returned but a later retry was rejected). Do not overwrite history with only the latest or earlier outcome. A user declining approval must never be represented as pending approval.
 - Each attempt note contains all required fields below, the exact authored prompt, and its final outcome when known. Keep the full record self-contained.
 - Session-level conversation-integrity and summary records remain at `prompts/YYYY-MM-DD-conversation-integrity.md` and `prompts/YYYY-MM-DD-summary.md` unless the user changes that convention.
-- Existing legacy `YYYY-MM-DD-image-prompts.md` files remain historical records. Do not delete or rewrite them during adoption unless the user explicitly requests migration. For a day already in progress, create the daily folder and separate notes for its attempts; preserve the legacy file as-is.
+- Existing legacy `YYYY-MM-DD-image-prompts.md` files remain historical records. Do not delete or rewrite them during adoption unless the user explicitly requests migration. For a day already in progress, create the daily folder and separate notes for its attempts. Preserve the legacy file as-is.
 
 ### Mandatory pre-attempt rule
 
@@ -220,7 +220,7 @@ Before drafting the next prompt:
    use a failed prompt as the base.
 4. If no series applies, use the most recent successful prompt for the exact
    artwork/thread. If no relevant success exists, start from the current session
-   brief and explicit constraints; do not borrow from an unrelated series. For a
+   brief and explicit constraints. Do not borrow from an unrelated series. For a
    new subseries, record any inherited parent-series seed and branch point.
 5. Change as little as practical so the next attempt tests a clear hypothesis.
 6. Append a new attempt with a sequential number, required series metadata,
@@ -236,12 +236,12 @@ Record:
 - Status before the call: pending.
 - **Drawing session ID and session-brief path.** Mandatory for every attempt.
 - **Opening direction authority:** link the active session brief and confirm it controls visual direction. Do not treat any prior index, prompt, or image as a replacement.
-- **Primary series ID/name and theme spine.** Record a series only when the current session brief explicitly continues/adopts it. Otherwise record `standalone/unassigned`; do not guess. Record secondary series only for a deliberate crossover.
+- **Primary series ID/name and theme spine.** Record a series only when the current session brief explicitly continues/adopts it. Otherwise record `standalone/unassigned`. Do not guess. Record secondary series only for a deliberate crossover.
 - **Membership role:** series seed, continuation, subseries, branch, crossover, standalone, or provisional. For a branch, record the parent series and branch point.
-- **Continuity anchors and permitted variation** relevant to this attempt, taken from the current session brief; state which user-locked details must remain unchanged. Do not import locks from an older session.
+- **Continuity anchors and permitted variation** relevant to this attempt, taken from the current session brief. State which user-locked details must remain unchanged. Do not import locks from an older session.
 - **Prompt baseline provenance:** exact path/attempt or scene-local record of the most recent successful prompt in the primary series (or exact artwork thread if not a series), its recorded outcome, and why it qualifies. If the next operation requires a full-scene prompt but the newest success is only a localized edit/style-only prompt, also record the most recent successful full-generation prompt from that same series as the operation-compatible text skeleton and explain the choice. If there is no such baseline, say so explicitly. For a new branch, record the inherited seed and its source.
 - **Latest-attempt diagnostic reference:** link the newest later attempt inspected when it differs from the selected successful baseline, and state what was or was not carried forward from it.
-- **Acceptance criteria:** normally three to five observable requirements derived from the active brief for this image; mark critical criteria and define the visible evidence for each. Record `Not applicable` only when no meaningful visual criterion can be derived.
+- **Acceptance criteria:** normally three to five observable requirements derived from the active brief for this image. Mark critical criteria and define the visible evidence for each. Record `Not applicable` only when no meaningful visual criterion can be derived.
 - **Prompt difference:** record (a) baseline prompt or `none / first attempt`, (b) details preserved, (c) details changed, and (d) details deliberately excluded/not carried forward. Identify the user instruction supporting each change.
 - **Pre-generation acceptance criteria:** normally three to five observable requirements derived from the active brief, with critical/non-critical status and the visible evidence expected. These must be recorded before generation/editing, not reconstructed after seeing the output.
 - **Per-output assessment:** for every image returned, score each criterion Pass / Partial / Fail / Not assessable and cite the visible evidence. Keep outputs separate when one call returns multiple images.
@@ -283,13 +283,13 @@ posture, and staging, while acknowledging when the evidence is interpretive.
 Update the same entry with the actual outcome:
 - **Generated successfully and followed the requested details.**
 - **Generated, but missed a requested detail.** Name the mismatch.
-- **Rejected; no image returned.**
+- **Rejected. No image returned.**
 - **Failed for a technical reason.**
 - **Unconfirmed.**
 
 Do not mark an image attempt successful merely because an image was returned. Inspect whether it followed the user's key instructions and the active session brief. Record what worked, what failed, and one useful next-step lesson.
 
-When one tool call returns multiple images, record each output separately within that attempt: its image/generation identifier or stored path, whether it meets the defining requirements of the active session brief, and whether the user approved it as a keeper. Preserve mixed outcomes; one successful output does not make every image in the batch successful. The prompt/result pair may qualify as a successful prompt baseline when at least one output is explicitly judged successful for the intended purpose and the prompt-to-output link is reliable; use only individually approved output(s) as visual references, and only in future sessions when the user explicitly selects them.
+When one tool call returns multiple images, record each output separately within that attempt: its image/generation identifier or stored path, whether it meets the defining requirements of the active session brief, and whether the user approved it as a keeper. Preserve mixed outcomes. One successful output does not make every image in the batch successful. The prompt/result pair may qualify as a successful prompt baseline when at least one output is explicitly judged successful for the intended purpose and the prompt-to-output link is reliable. Use only individually approved output(s) as visual references, and only in future sessions when the user explicitly selects them.
 
 Keep two judgements distinct:
 - **Prompt/result success:** the prompt is linked to an output that meets the defining requirements, or the user explicitly accepts that attempt's result as successful for the intended purpose. This may qualify the exact prompt as a future series baseline.
@@ -311,7 +311,7 @@ Each such attempt must record:
 - The successful baseline prompt path/attempt and why it qualifies.
 - The requested delta, preserved details, changed details, and exclusions.
 - Whether the source image was attached. Prompt-first reconstruction does not
-  require source-image attachment; an attached image is optional visual
+  require source-image attachment. An attached image is optional visual
   comparison/reference, not the editing mechanism.
 - Operation type as **fresh generation/reconstruction**, unless a direct edit
   was actually performed and source linkage verified.
@@ -324,12 +324,12 @@ materially inadequate and the exact source image can be attached through a
 supported mechanism. Verify source linkage before calling it a confirmed edit.
 
 - Deliver generated images in the conversation.
-- Store new retained non-novels/day drawing outputs in `drawings/YYYY-MM-DD/images/` using `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.); link exact verified assets from the attempt note and daily README. Existing image assets are not migrated. Non-novel reference/source images remain under `images/`; novel-scene illustration binaries remain in the novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library. New uploads for permanent reference/novel destinations enter through `images/takeout/` and its hand-off.
+- Store new retained non-novels/day drawing outputs in `drawings/YYYY-MM-DD/images/` using `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.). Link exact verified assets from the attempt note and daily README. Existing image assets are not migrated. Non-novel reference/source images remain under `images/`. Novel-scene illustration binaries remain in the novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library. New uploads for permanent reference/novel destinations enter through `images/takeout/` and its hand-off.
 - Never claim a fresh generation was an edit of the original.
 - Never claim a reference image was supplied unless the tool call actually included that reference.
 - Preserve source-image identity and distinguish an edit from a newly generated composition.
 - Use a repository reference image from `images/` or a novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library, or from an image the user supplies directly in the current conversation.
-- If an image edit fails, state that the image was not modified; do not imply the source image changed.
+- If an image edit fails, state that the image was not modified. Do not imply the source image changed.
 
 ### Daily attempt ledger
 
@@ -393,7 +393,7 @@ When the user asks to retain generated or uploaded images, or when the active
 session workflow requires keeping a source asset:
 
 1. Give each retained image a clear, descriptive filename based on its visible
-   content. Preserve the original bytes; do not overwrite a full-resolution
+   content. Preserve the original bytes. Do not overwrite a full-resolution
    original with a thumbnail.
 2. Keep new retained non-novels/day drawing outputs under the dated prompt
    folder's `images/` subdirectory, using `attempt-XX.webp` or numbered
@@ -448,7 +448,7 @@ For an image the user supplies within a drawing session:
 5. For every generated non-novel drawing output retained in the repository,
    include its attempt number in the `HANDOFF.yml` item as `attempt: NN` and
    set the destination to `drawings/YYYY-MM-DD/images`. Do this whether the
-   user approved the result, rejected it, or has not reviewed it; user approval
+   user approved the result, rejected it, or has not reviewed it. User approval
    does not control image linking. After conversion and relocation succeed,
    the takeout processor automatically adds the verified WebP link to the
    attempt record and matching README Image cell. Do not add a global
@@ -473,7 +473,7 @@ If an image is present in `images/` but its binary cannot be surfaced through th
 
 When an image is already stored in its permanent `images/` or `novels/` location under an opaque filename, rename the existing Git tree path while reusing its exact blob SHA. Remove the old path in the same tree update and verify the new path, absence of the old path, identical blob SHA, and identical byte size.
 
-For new user uploads intended for repository retention, use the universal flat intake `images/takeout/`. Inspect the actual image and prepare `images/takeout/HANDOFF.yml` with its exact incoming filename, descriptive title, optional stable asset ID, and destination directory. For a session output associated with a non-novel drawing attempt, also include `attempt: NN` in that item and target exactly `drawings/YYYY-MM-DD/images`. Do not manually rename or relocate the incoming file. The existing Action derives the permanent master filename from the optional ID and normalized title slug and preserves the original bytes. It stages each WebP under `images/takeout/webp/[batch-id]/attempt-NNN/`, appending `.webp` to the exact incoming filename, then verifies and moves the derivative beside the master. Novel illustration binaries belong in `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; retained non-novel assets use a destination under `images/`.
+For new user uploads intended for repository retention, use the universal flat intake `images/takeout/`. Inspect the actual image and prepare `images/takeout/HANDOFF.yml` with its exact incoming filename, descriptive title, optional stable asset ID, and destination directory. For a session output associated with a non-novel drawing attempt, also include `attempt: NN` in that item and target exactly `drawings/YYYY-MM-DD/images`. Do not manually rename or relocate the incoming file. The existing Action derives the permanent master filename from the optional ID and normalized title slug and preserves the original bytes. It stages each WebP under `images/takeout/webp/[batch-id]/attempt-NNN/`, appending `.webp` to the exact incoming filename, then verifies and moves the derivative beside the master. Novel illustration binaries belong in `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Retained non-novel assets use a destination under `images/`.
 
-Every attempt is archived under `images/takeout/history/[batch-id]/attempt-NNN/` with the original hand-off, `conversion-report.csv`, and `verification-report.md`. The CSV records both staging and final WebP paths. On failure, original uploads and the ready hand-off remain in the intake and successfully converted WebPs remain in the failed attempt's staging folder; a retry uses a fresh attempt number. On success, staged WebPs move to their permanent destinations and the empty successful staging attempt folder is removed. The Action does not clear the active hand-off unless the entire batch passes verification. Read back the archived reports and final asset paths before claiming success.
+Every attempt is archived under `images/takeout/history/[batch-id]/attempt-NNN/` with the original hand-off, `conversion-report.csv`, and `verification-report.md`. The CSV records both staging and final WebP paths. On failure, original uploads and the ready hand-off remain in the intake and successfully converted WebPs remain in the failed attempt's staging folder. A retry uses a fresh attempt number. On success, staged WebPs move to their permanent destinations and the empty successful staging attempt folder is removed. The Action does not clear the active hand-off unless the entire batch passes verification. Read back the archived reports and final asset paths before claiming success.
 
