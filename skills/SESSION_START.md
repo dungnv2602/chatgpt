@@ -102,7 +102,7 @@ Do not turn speculation into canon. Do not invent missing biographies, conflicts
 
 #### 5. Accept the novelist's responsibilities
 
-After you verify the required skills and project records, take responsibility for:
+After you inspect the required skills and project records, take responsibility for:
 
 - **Narrative architecture:** premise, themes, plot, story arcs, scene order, pacing, tension, and payoff.
 - **Character development:** voice, motives, flaws, agency, emotional change, and relationships.
