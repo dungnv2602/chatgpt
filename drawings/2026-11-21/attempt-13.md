@@ -6,7 +6,7 @@
 - **Series / path:** Samantha — Human Presence Without a Body / Sweet Path
 - **Scene:** Quiet apartment portrait with a subtle window-side contour transition.
 - **Operation:** Fresh text-only generation derived from Attempt 06's visual instructions; source/edit wording removed and text-overlay exclusions made explicit.
-- **Status:** Prompt archived; generation pending
+- **Status:** Generated; awaiting user review
 - **Prompt ID:** Not assigned
 - **Baseline:** Attempt 06 — `drawings/2026-11-20/attempt-06.md` (visual direction only; no successful prompt baseline)
 
@@ -38,23 +38,23 @@ Do not add any text, lettering, words, typography, captions, subtitles, labels, 
 
 ## Generation and outputs
 - **Authored prompt committed before generation:** Yes
-- **Actual submitted payload:** Pending generation; tool metadata may not expose the payload
-- **Generation result:** Pending
-- **Output count and order:** Pending
+- **Actual submitted payload:** Not exposed; returned metadata has an empty prompt field
+- **Generation result:** Generated
+- **Output count and order:** One output
 
 | Output ID | Native generation / image ID | Mapping evidence and status | Original / archive asset | SHA-256 |
 |---|---|---|---|---|
-| Pending | Pending | Pending | Pending | Pending |
+| Output 01 | Generation ID: `c721165e-1b95-4f2d-8bf8-7e9f3d39fdcf`; asset ID: `file_00000000081c82078133f71b2fa24c59` | Generation and asset IDs returned together; local PNG verified; Corroborated | `/mnt/data/indoor_living_room_bedroom_style_scene_with_a_clos.png` | `52ea62f008f012d350b4ea667f9605688ed9c775501ae3125aa13d33c00ba3be` |
 
 ## Review
 | Acceptance criterion | Result | Visual evidence |
 |---|---|---|
-| Original adult Samantha interpretation in naturalistic cinematic photography | Not assessable | Awaiting generation |
-| Auburn hair, faint freckles, coral-red blouse, apartment window, and city view | Not assessable | Awaiting generation |
-| Subtle localized viewer-right hair/shoulder contour transition into window light | Not assessable | Awaiting generation |
-| No text, lettering, captions, panels, labels, graphics, or watermarks | Not assessable | Awaiting generation |
-| No unrelated fantasy effects, particles, or additional subjects | Not assessable | Awaiting generation |
+| Original adult Samantha interpretation in naturalistic cinematic photography | Pass | Photographic apartment portrait of an adult auburn-haired woman with a warm, attentive expression |
+| Auburn hair, faint freckles, coral-red blouse, apartment window, and city view | Pass | Auburn hair, freckles, coral-red button-front top, bright apartment window, and blurred city buildings are visible |
+| Subtle localized viewer-right hair/shoulder contour transition into window light | Fail | The hair and shoulder contours remain physically continuous; no clear dissolving transition is visible |
+| No text, lettering, captions, panels, labels, graphics, or watermarks | Pass | No text or overlay panels are visible |
+| No unrelated fantasy effects, particles, or additional subjects | Pass | No particles, fantasy effects, or additional people are visible |
 
-- **Outcome:** Pending generation.
+- **Outcome:** Generated, but missed the localized contour-transition target.
 - **User decision:** Pending.
-- **Next action:** Generate one image and record returned metadata and output hash.
+- **Next action:** Await user review.
