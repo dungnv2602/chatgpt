@@ -38,27 +38,9 @@ Before rewriting a prompt after a refusal, repeated failure, or user correction:
    style. Search the broader prompt history only when you cannot identify a
    series or exact continuing artwork thread. Use the strongest comparable
    success only in that case.
-3. **Audit prompt drift.** Compare the user's actual brief and successful
-   baseline against the new authored prompt. Identify every assistant-added
-   element, including identity-preservation claims, extra scene details,
-   wardrobe changes, more restrictive coverage, altered framing, sensuality
-   labels, repeated negative clauses, and unnecessary safety disclaimers.
-   Ask which changes the user requested and which are genuinely necessary.
-4. **Restore before redesigning.** When the user's goal is unchanged, the
-   relevant archived baseline achieved that goal, and the content remains
-   within applicable policy, restore the successful authored prompt verbatim
-   or make only the smallest user-requested change. Do not automatically
-   replace an approved open neckline, off-shoulder garment, romantic mood, or
-   other defining feature with a high neckline, conservative fashion portrait,
-   different outfit, or different setting merely because an earlier attempt
-   was refused.
-5. **Do not over-engineer safety language.** Use clear positive descriptions
-   of the intended allowed image. Do not stack unnecessary phrases such as
-   repeated "no nudity / no cleavage / no suggestive pose" clauses when they
-   were not part of the successful baseline and do not address a concrete
-   issue. Such additions can distort the user's brief and may themselves
-   foreground interpretations the user did not request. This does not reduce
-   or bypass the actual safety review.
+3. **Audit prompt drift.** Compare the user's actual brief and successful baseline against the new authored prompt. Identify every element the assistant added. Examples include identity-preservation claims, extra scene details, wardrobe changes, more restrictive coverage, altered framing, sensuality labels, repeated negative clauses, and unnecessary safety disclaimers. Ask which changes the user requested and which are genuinely necessary.
+4. **Restore before redesigning.** First confirm that the user's goal is unchanged, the relevant archived baseline achieved it, and the content remains within applicable policy. Then restore the successful authored prompt verbatim or make only the smallest user-requested change. An earlier refusal does not justify replacing an approved open neckline, off-shoulder garment, romantic mood, or other defining feature. Do not substitute a high neckline, conservative fashion portrait, different outfit, or different setting without user direction.
+5. **Do not over-engineer safety language.** Use clear positive descriptions of the intended allowed image. Do not stack unnecessary phrases such as repeated "no nudity / no cleavage / no suggestive pose" clauses. Avoid those clauses when they were not part of the successful baseline and do not address a concrete issue. Such additions can distort the user's brief. They may also foreground interpretations the user did not request. This does not reduce or bypass the actual safety review.
 6. **Treat references as a deliberate choice.** Determine whether an image
    reference is needed for identity, style, or composition. If the proven
    successful method was fresh text-to-image generation without a reference,
@@ -70,23 +52,9 @@ Before rewriting a prompt after a refusal, repeated failure, or user correction:
    A generic refusal does not identify the offending word, visual feature,
    context, or attached reference. Label possible causes as hypotheses only.
    Do not present the assistant's interpretation as an internal tool diagnosis.
-8. **Take user corrections seriously.** When the user says the assistant has
-   misread or over-restricted the request, reopen the successful history and
-   audit the assistant's own additions before defending the previous approach
-   or blaming the tool. Do not make the user repeat a sufficiently clear brief.
-9. **Use a bounded recovery sequence.** After a refusal, first make one
-   genuinely safety-aware revision if needed. If that revision also fails,
-   stop similar rewrites. If the audit then exposes a distinct assistant-made
-   deviation from a relevant successful baseline, one baseline-restoration
-   attempt may be made and must be archived before generation. If the restored
-   baseline is also refused, stop and explain the limitation. Do not keep
-   probing or submit cosmetic variations.
-10. **Preserve the user's creative intent.** Safety review must be accurate and
-    proportionate. Do not invent sexual intent from ordinary affection,
-    fashion, exposed shoulders, or non-explicit anatomy. At the same time,
-    successful historical outputs do not override current policy: never
-    recreate disallowed content or use prior acceptance as a way to evade
-    safeguards.
+8. **Take user corrections seriously.** When the user says the assistant misread or over-restricted the request, reopen the successful history. Audit the assistant's own additions before defending the previous approach or blaming the tool. Do not make the user repeat a sufficiently clear brief.
+9. **Use a bounded recovery sequence.** After a refusal, make one genuinely safety-aware revision if needed. If that revision also fails, stop similar rewrites. If the audit exposes a distinct assistant-made deviation from a relevant successful baseline, you may make one baseline-restoration attempt. Archive it before generation. If the restored baseline is also refused, stop and explain the limitation. Do not keep probing or submit cosmetic variations.
+10. **Preserve the user's creative intent.** Keep safety review accurate and proportionate. Do not infer sexual intent from ordinary affection, fashion, exposed shoulders, or non-explicit anatomy. Successful historical outputs do not override current policy. Never recreate disallowed content or use prior acceptance to evade safeguards.
 
 The purpose of this audit is to prevent assistant-created prompt drift, not to
 guarantee that a tool will accept every prompt. The assistant owns its
@@ -147,18 +115,8 @@ the user explicitly says they should be retained for future use.
    descriptive, stable filename based on its visible content. For a set, use
    consistent names and numbered suffixes. If the user does not request
    retention, use the supplied image only within the current session.
-4. **Preserve the original image exactly.** The default is rename-only:
-   preserve its bytes, format, extension, resolution, dimensions, metadata, and
-   visual content. Do not recompress, resize, crop, rotate, filter, retouch, or
-   strip metadata. The user has explicitly authorized one repository workflow
-   exception: an image submitted through `images/takeout/` with a ready
-   `HANDOFF.yml` may be moved/renamed to its declared master path and converted
-   to a separate WebP derivative by the existing GitHub Action. The original
-   bytes and format must remain identical. Do not perform this conversion or
-   relocation manually outside that hand-off pipeline.
-5. Record the exact asset path, file/attachment ID, source generation ID when
-   known, original upload name, dimensions, byte size, checksum where available,
-   and its session-specific role in that session's brief or attempt record.
+4. **Preserve the original image exactly.** The default is rename-only. Preserve its bytes, format, extension, resolution, dimensions, metadata, and visual content. Do not recompress, resize, crop, rotate, filter, retouch, or strip metadata. The user authorized one repository workflow exception. An image submitted through `images/takeout/` with a ready `HANDOFF.yml` may move to its declared master path. The existing GitHub Action converts it to a separate WebP derivative. Keep the original bytes and format identical. Do not perform this conversion or relocation manually outside that hand-off pipeline.
+5. Record the exact asset path, file/attachment ID, and source generation ID when known. Also record the original upload name, dimensions, byte size, checksum where available, and its session-specific role in that session's brief or attempt record.
    State whether the binary is stored in GitHub, the persistent Files Library,
    or only the conversation. Never claim repository storage unless verified.
 6. Link the image directly from the session brief or the relevant attempt note.
@@ -224,11 +182,7 @@ ledger. It must contain one contiguous Markdown table with exactly six fields:
    the assistant's visual assessment. State whether an image was delivered in
    conversation, no output was returned, approval was not recorded, or storage
    and provenance remain unverified.
-6. **Image:** link every generated image output once its exact repository asset
-   is uploaded and verified, regardless of whether the user approved it or the
-   result met the prompt. Link partial, off-target, superseded, and unapproved
-   outputs too. Approval belongs only in field 5. If an image was generated
-   but its asset has not yet been uploaded, write `Waiting for image upload`.
+6. **Image:** link every generated image output once you upload and verify its exact repository asset. Link it whether or not the user approved it or the result met the prompt. Include partial, off-target, superseded, and unapproved outputs. Approval belongs only in field 5. If an image was generated but its asset has not yet been uploaded, write `Waiting for image upload`.
    Use `—` only when no image was returned or generated. Use `Not verified`
    when the tool outcome is unconfirmed and no attempt-specific image can be
    attributed. Never withhold a generated-image link because the user rejected
@@ -247,10 +201,7 @@ authored prompt, actual operation, source linkage, execution result, visual
 assessment, user approval, and output identity. When the table and attempt
 record disagree, correct the table from the verified attempt record.
 
-For a named novel scene, maintain the complete chronological prompt and output
-history in that scene's local illustration records instead of duplicating the
-prompt history in a daily non-novel ledger. The scene-local record remains
-authoritative.
+For a named novel scene, keep the complete chronological prompt and output history in its local illustration records. Do not duplicate that history in a daily non-novel ledger. The scene-local record remains authoritative.
 
 After each attempt is finalized:
 - Update the attempt record with the actual result and its evidence.
