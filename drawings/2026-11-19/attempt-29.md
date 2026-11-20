@@ -32,3 +32,7 @@
 - **Test objective:** Verify that she is clearly standing on the floor beside the same bed, has long dark hair and no glasses, while her face, outfit, and bedroom remain faithful to Attempt 27.
 - **Generation/edit result:** User approved the prompt and an image tool call was made. The returned output is generation ID `2c3427c6-6702-48dd-a7e1-bbaa054f1efe`, but metadata reports `edit_op: null` and `parent_gen_id: null`. The user explicitly accepted this output as successful for Attempt 29. Although the tool metadata contains no parent-image linkage, the user has designated the returned result as the successful outcome.
 - **Returned asset:** `file_0000000022408211abd38266b738f9f0` (delivered in conversation).
+
+## Repository images
+
+- [file_0000000022408211abd38266b738f9f0.png.webp](images/file_0000000022408211abd38266b738f9f0.png.webp)
