@@ -57,11 +57,7 @@ This is the operational history of image generation and editing.
 ### Drawing-session opening brief — visual authority
 
 Every distinct drawing session begins with a user-defined visual direction.
-This opening brief is the sole creative authority for that session, whether it
-is a day-drawing session or a novel-illustration session. No repository-wide
-image index, historical prompt, previous portrait, character sheet, stored
-image, or old project convention dictates the new session unless the user
-explicitly adopts it.
+This opening brief is the sole creative authority for that session. It applies to day-drawing and novel-illustration sessions. No repository-wide image index, historical prompt, previous portrait, character sheet, stored image, or old project convention dictates the new session. Use one only when the user explicitly adopts it.
 
 - For non-novels/day drawing, archive the brief as
   `drawings/YYYY-MM-DD/session-[NN]-brief.md`.
@@ -163,9 +159,7 @@ opening brief:
 - **Text-faithful:** Depict the stated events, relationships, chronology, and
   scene facts closely. Do not invent or contradict manuscript facts. Creative
   choices are limited to details the source and brief leave open.
-- **Interpretive:** Preserve established story facts, character intentions, and
-  the scene's emotional meaning, while allowing the assistant to choose visual
-  staging, gestures, framing, and other unspecified details.
+- **Interpretive:** Preserve established story facts, character intentions, and the scene's emotional meaning. The assistant may choose visual staging, gestures, framing, and other unspecified details.
 - **Adaptive:** Deliberately reinterpret or depart from literal staging while
   preserving the story elements the user identifies as non-negotiable. State
   the permitted adaptation scope in the brief.
@@ -332,11 +326,7 @@ Each such attempt must record:
   was actually performed and source linkage verified.
 - The output's comparison against the successful baseline and requested change.
 
-If the successful baseline prompt cannot be recovered, disclose the missing
-source and do not fabricate prompt text. Direct source-image editing is a
-secondary method, used only when explicitly requested or when reconstruction is
-materially inadequate and the exact source image can be attached through a
-supported mechanism. Verify source linkage before calling it a confirmed edit.
+If the successful baseline prompt cannot be recovered, disclose the missing source. Do not fabricate prompt text. Use direct source-image editing only when explicitly requested or when reconstruction is materially inadequate and the exact source image can be attached through a supported mechanism. Verify source linkage before calling it a confirmed edit.
 
 - Deliver generated images in the conversation.
 - Store new retained non-novels/day drawing outputs in `drawings/YYYY-MM-DD/images/` using `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.). Link exact verified assets from the attempt note and daily README. Existing image assets are not migrated. Non-novel reference/source images remain under `images/`. Novel-scene illustration binaries remain in the novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library. New uploads for permanent reference/novel destinations enter through `images/takeout/` and its hand-off.
@@ -410,22 +400,8 @@ session workflow requires keeping a source asset:
 1. Give each retained image a clear, descriptive filename based on its visible
    content. Preserve the original bytes. Do not overwrite a full-resolution
    original with a thumbnail.
-2. Keep new retained non-novels/day drawing outputs under the dated prompt
-   folder's `images/` subdirectory, using `attempt-XX.webp` or numbered
-   multiple-output suffixes, and link them from the attempt note and daily README
-   when provenance is verified. Do not migrate existing image assets. Keep
-   non-novel reference/source images under `images/` and novel-scene illustration
-   binaries under `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`
-   when a supported repository binary-upload route is available. New uploads
-   intended for permanent reference/novel destinations first enter
-   `images/takeout/` and are routed through its hand-off. Verify the exact
-   final path and blob identity before claiming repository storage.
-3. If the binary cannot be transferred to GitHub, retain it in the persistent
-   Files Library only when the user has requested retention and that storage is
-   available. Record its exact Library path, stable file ID, source generation
-   ID, original artifact name, dimensions, byte count, and checksum where
-   available. Put these details in the current session brief or attempt
-   record, not in a global visual reference index.
+2. Keep new retained non-novel/day-drawing outputs in the dated prompt folder's `images/` subdirectory. Use `attempt-XX.webp` or numbered suffixes for multiple outputs. Link each output from the attempt note and daily README when provenance is verified. Do not migrate existing image assets. Keep non-novel reference/source images under `images/`. Keep novel-scene illustration binaries under `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/` when a supported repository upload route is available. Route new uploads for permanent reference or novel destinations through `images/takeout/`. Verify the exact final path and blob identity before claiming repository storage.
+3. If you cannot transfer the binary to GitHub, retain it in the Files Library only when the user requested retention and that storage is available. Record its exact Library path, stable file ID, source generation ID, original artifact name, dimensions, byte count, and checksum where available. Put these details in the current session brief or attempt record, not in a global visual reference index.
 4. State clearly whether an asset is stored in GitHub, the persistent Files
    Library, or only the current conversation. A Markdown note does not mean
    that the image binary is in Git.
@@ -449,17 +425,8 @@ For an image the user supplies within a drawing session:
 2. If the user asks to retain it for later use, give it an accurate, descriptive,
    stable filename. Use consistent numbered suffixes for a set. If it is only
    for the current session, do not silently promote it to a future-session asset.
-3. **Preserve the original image exactly.** The default is rename-only:
-   do not convert, recompress, resize, crop, rotate, filter, retouch, strip
-   metadata, or create derivatives. The user has explicitly authorized a
-   repository intake exception: images placed in `images/takeout/` and listed
-   in a ready `HANDOFF.yml` may be moved/renamed to their declared master path
-   and converted to a separate WebP by the existing GitHub Action. Original
-   bytes, format, resolution, metadata, and visual content must remain
-   unchanged. Do not convert or relocate the file manually.
-4. Record the exact path, stable file/Library ID, source generation ID when
-   known, original name, dimensions, byte size, checksum where available, and
-   session-specific role in the session brief or attempt record.
+3. **Preserve the original image exactly.** The default is rename-only. Do not convert, recompress, resize, crop, rotate, filter, retouch, strip metadata, or create derivatives. The user has explicitly authorized one repository intake exception. Images placed in `images/takeout/` and listed in a ready `HANDOFF.yml` may move to their declared master path. The existing GitHub Action converts them to a separate WebP. Keep the original bytes, format, resolution, metadata, and visual content unchanged. Do not convert or relocate the file manually.
+4. Record the exact path, stable file or Library ID, and source generation ID when known. Also record the original name, dimensions, byte size, checksum where available, and session-specific role in the session brief or attempt record.
 5. For every generated non-novel drawing output retained in the repository,
    include its attempt number in the `HANDOFF.yml` item as `attempt: NN` and
    set the destination to `drawings/YYYY-MM-DD/images`. Do this whether the
@@ -476,9 +443,7 @@ For an image the user supplies within a drawing session:
    GitHub Markdown file. Never claim a Library URL or GitHub storage unless
    verified.
 
-Do not finish a session archive while a requested keeper image remains under an
-opaque temporary filename or while its session brief and successful prompt
-record lack direct links.
+Do not finish a session archive while a requested keeper image has an opaque temporary filename. Also add direct links to its session brief and successful prompt record.
 
 ### When an opaque image cannot be visually inspected
 

@@ -73,10 +73,7 @@ traditions in their own terms.
 **Aim:** establish the architecture of Schopenhauer's system and the epistemic
 problem that frames it.
 
-- **Week 1 — Orientation and system map.** Establish the historical setting,
-  Schopenhauer's relation to Kant, and the broad architecture of the system:
-  world as representation, world as Will, aesthetic contemplation, ethics, and
-  denial of the Will. Read the relevant introductory material in the primary
+- **Week 1 — Orientation and system map.** Establish the historical setting and Schopenhauer's relation to Kant. Map the system's broad architecture: world as representation, world as Will, aesthetic contemplation, ethics, and denial of the Will. Read the relevant introductory material in the primary
   edition and the *Oxford Handbook*'s general orientation. Output: a one-page
   provisional system map and a glossary of key terms.
 - **Week 2 — Kant as the critical background.** Review the distinctions needed
@@ -90,9 +87,7 @@ problem that frames it.
 - **Week 4 — Fourfold Root II.** Examine the relation between subject and
   object, the limits of explanation, and the conditions under which grounds
   and reasons operate. Output: a 500–800-word argument reconstruction.
-- **Week 5 — From epistemology to metaphysics.** Explain what the principle of
-  sufficient reason can and cannot explain, and why Schopenhauer thinks the
-  inner awareness of one's body matters to the move toward the Will. Output: a
+- **Week 5 — From epistemology to metaphysics.** Explain what the principle of sufficient reason can and cannot explain. Then explain why Schopenhauer thinks inner awareness of one's body matters to the move toward the Will. Output: a
   two-page bridge essay from representation to Will.
 
 ### Phase II — *The World as Will and Representation*
@@ -199,9 +194,7 @@ position reconstructed from the primary texts.
 - **Week 29 — Shapshay IV.** Complete the work and assess its strengths,
   interpretive choices, and unresolved tensions. Output: a critical review of
   the book's contribution.
-- **Week 30 — Persson I.** Read *Morality from Compassion* as a contemporary
-  analysis of compassion-based moral theory, focusing on empathy, impartiality,
-  justice, suffering and happiness, and the demands morality can make. Output:
+- **Week 30 — Persson I.** Read *Morality from Compassion* as a contemporary analysis of compassion-based moral theory. Focus on empathy, impartiality, justice, suffering and happiness, and the demands morality can make. Output:
   a map of Persson's core argument and its relation to Schopenhauer.
 - **Week 31 — Persson II and comparative ethics.** Complete the book and assess
   whether a compassion-based morality requires Schopenhauer's metaphysics, and
@@ -280,10 +273,7 @@ projecting later categories onto his work.
 ### Phase IX — Final synthesis
 **Weeks 43–44**
 
-- **Week 43 — Main thesis.** Draft a **2,500–3,500-word integrative essay**
-  answering a question such as: *How does Schopenhauer move from the limits of
-  representation and the metaphysics of the Will to compassion, ascetic denial,
-  and salvation?* The essay must use primary-text evidence and engage at least
+- **Week 43 — Main thesis.** Draft a **2,500–3,500-word integrative essay**. Answer a question such as: *How does Schopenhauer move from the limits of representation and the metaphysics of the Will to compassion, ascetic denial, and salvation?* The essay must use primary-text evidence and engage at least
   three relevant specialist scholarly interpretations.
 - **Week 44 — Revision and companion arguments.** Revise the main essay and
   prepare two shorter companion essays. The first asks whether compassion can be
@@ -298,9 +288,7 @@ At the end of each phase, the student should be able to:
 
 - **Phase I:** explain the principle of sufficient reason and why Schopenhauer
   believes it cannot by itself disclose the inner nature of the world.
-- **Phase II:** explain the two aspects of the world, the role of the body, the
-  objectification of the Will, the function of aesthetic cognition, and the
-  ethical culmination of the system.
+- **Phase II:** Explain the two aspects of the world, the role of the body, and the objectification of the Will. Then explain the function of aesthetic cognition and the ethical culmination of the system.
 - **Phase III:** distinguish ordinary cognition, aesthetic contemplation, the
   beautiful, and the sublime, and explain their place in the system.
 - **Phase IV:** reconstruct the arguments about freedom, character, motivation,
