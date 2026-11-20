@@ -1,23 +1,23 @@
 # Image Reference and Editing Protocol
 
-## 1. Prompt-first editing: locate the successful baseline
+## 1. Mandatory prompt-only adjustment
 
-For an image edit, use the **successful authored prompt that produced the target image** as the primary continuity source. Do not use the image binary as the primary source.
-
-Use controlled prompt reconstruction by default:
+For every request to adjust, revise, refine, or change an existing result, use the **successful authored prompt that produced the target result** as the sole baseline. Revise that prompt and generate a fresh result. Never use the existing image itself as the editing source or as a visual reference.
 
 - Locate the exact successful prompt in the authoritative attempt record.
-- Check that it produced the target image. Alternatively, check that the user approved that specific attempt for its intended purpose.
-- Recover the complete authored prompt. If it is unavailable, disclose the gap. Do not invent it, reconstruct it from memory, or substitute an unrelated prompt.
-- Use the successful prompt as the baseline for rebuilding the image. Preserve its established visual content unless the user requests a change.
-- Revise only the requested element. Keep all unrequested elements unchanged.
-- Generate a fresh reconstruction from the revised prompt. Assess it against the baseline and the requested change.
+- Verify that it produced the target result, or that the user approved that specific attempt for its intended purpose.
+- Recover the complete authored prompt. If it is unavailable, disclose the gap. Do not fabricate wording or silently substitute an unrelated prompt.
+- Preserve all unrequested visual content specified by the successful prompt.
+- Revise only the requested details. Keep all other details unchanged.
+- Generate a fresh result from the revised prompt and assess it against the successful baseline and the requested changes.
 
-The source image may serve as a secondary visual reference. Use it only when helpful and when the user assigns that role. It is not the default editing method.
+**Never ask the user to upload, attach, or reattach an image for an adjustment.** This applies even when the image is not available in the conversation.
 
-**Do not request an image upload for continuity.** If the user asks to continue a series, use the most recent successful prompt in that series. If the user says to take a previous, approved, or assigned image as the base, locate the successful prompt linked to that image and use that prompt as the baseline. Do not ask the user to reattach the image. Continue through prompt-first reconstruction even when the image binary is unavailable. Explain that the operation is a reconstruction rather than a pixel-level edit only when that distinction is material to the user's request.
+**Never use an existing image as the base or reference.** Do not attach, pass, or otherwise supply the prior image to the image-generation tool for an adjustment. The successful authored prompt is the base.
 
-If the relevant successful prompt is missing, use the active session brief and disclose that the prompt record could not be recovered. Do not ask for the image as a replacement for missing prompt history. Request an image only if the user specifically requires visual inspection of details not captured in the records, or a literal source-pixel edit that cannot be performed from prompt reconstruction.
+**Never mention the image or image-editing operation in the next prompt.** Write a self-contained generation prompt that describes the desired final subject and scene directly. Do not refer to an image, source image, uploaded image, previous image, reference image, attachment, or an edit. Avoid wording such as "edit this image", "based on the image", "use the attached image", or "preserve the image". Describe the visual content from the successful prompt in direct scene language, then incorporate only the requested changes.
+
+If the successful prompt is missing or incomplete, use the active session brief and the available authoritative attempt records. Disclose what prompt information could not be recovered. Do not ask for an image as a substitute. Ask a question only when an essential creative requirement cannot be resolved from the available written records.
 
 ## 2. Optional image-reference roles
 
