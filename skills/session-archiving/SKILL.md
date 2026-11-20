@@ -12,7 +12,7 @@ metadata:
 
 **Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `prompts/`, and `skills/`. Do not read, list, search, fetch, create, update, move, rename, or delete files outside those directories, except for the specifically authorized workflow exception below.
 
-**Authorized WebP workflow exception:** The user authorized creation of exactly `.github/workflows/convert-images-to-webp.yml` on 12 November 2026, approved its takeout-pipeline modification and persistent WebP staging extension on 20 November 2026, and on 20 November 2026 explicitly approved relocating the workflow's scripts into this skill and updating the workflow paths required by that relocation. These are the approved workflow changes; obtain fresh, explicit permission before any further workflow modifications.
+**Authorized WebP workflow exception:** The user authorized creation of `.github/workflows/convert-images-to-webp.yml` on 12 November 2026. The user approved its takeout-pipeline and persistent staging changes on 20 November 2026. The user also approved moving its scripts into this skill and updating the required workflow paths. These changes define the current authorization. Obtain fresh permission before any further workflow changes.
 
 This boundary applies to every future task and every tool call, not only archiving.
 
@@ -45,13 +45,13 @@ This boundary applies to every future task and every tool call, not only archivi
 - Session-level conversation-integrity and summary records belong in `prompts/`:
   - `prompts/YYYY-MM-DD-conversation-integrity.md`
   - `prompts/YYYY-MM-DD-summary.md`
-- Non-novel image attempts use the dated `prompts/YYYY-MM-DD/` structure below. Named novel-scene illustrations use their authoritative scene-local prompt records under `novels/`; do not duplicate their prompt text or attempt history in `prompts/`.
-- Store new retained non-novel generated drawing outputs under `drawings/YYYY-MM-DD/images/` as `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.), linked from their attempt record and daily README when provenance is verified. This does not authorize migration of existing assets. Store non-novel reference/source assets under `images/`; store novel-scene illustration binaries under `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. New user uploads intended for those permanent destinations first enter `images/takeout/` and are routed by the approved hand-off.
+- Non-novel image attempts use the dated `prompts/YYYY-MM-DD/` structure below. Named novel-scene illustrations use their authoritative scene-local prompt records under `novels/`. Do not duplicate their prompt text or attempt history in `prompts/`.
+- Store new retained non-novel drawing outputs under `drawings/YYYY-MM-DD/images/`. Use `attempt-XX.webp` for one output. Use `attempt-XX-01.webp`, `attempt-XX-02.webp`, and so on for multiple outputs. Link verified assets from the attempt record and daily README. This rule does not authorize migration of existing assets. Store non-novel reference assets under `images/`. Store novel-scene illustration files under `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Route new uploads through `images/takeout/` and the approved hand-off.
 - Keep skills and supporting references under `skills/`.
 
 ### Conversation behavior
 
-During explicit foundational initialization, after retrieving and reading this foundational Session Archiving skill, retrieve and read the [Conversation Mode skill](../conversation-mode/SKILL.md) from the same `gpt` branch before continuing with project work. Apply its Default Mode / Condensed Mode selection, persistence, and response rules throughout the conversation. This skill governs archiving; the Conversation Mode skill governs collaboration. The two skills are complementary.
+During foundational initialization, read the [Conversation Mode skill](../conversation-mode/SKILL.md) after this skill. Read it from branch `gpt` before project work begins. Apply its mode selection and response rules throughout the conversation. Session Archiving governs archival work. Conversation Mode governs collaboration.
 
 ### Foundational skill loading cadence
 
@@ -72,7 +72,7 @@ Whenever the user invokes **`Follow instructions`** or **`Be the novelist`**, co
 3. Retrieve and read `skills/conversation-mode/SKILL.md` from the same branch.
 4. Retrieve and read `skills/agent-skill-authoring/SKILL.md` from the same branch.
 5. Retrieve and read `skills/drawing/SKILL.md` from the same branch.
-6. Retrieve and read the Drawing skill's mandatory foundational references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Do not load every on-demand reference at startup; load additional Drawing references when their task-specific triggers apply.
+6. Retrieve and read the Drawing skill's mandatory foundational references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Do not load every on-demand reference at startup. Load other Drawing references only when their task triggers apply.
 7. Verify every required retrieval succeeded and that the contents were actually read. Keep the verified instructions in working context for the remainder of the conversation.
 8. Only after all checks pass, report completion and proceed. If any required retrieval fails or cannot be verified, stop project work, identify the exact missing item, and ask how the user wants to proceed.
 
@@ -82,7 +82,7 @@ Whenever the user invokes **`Follow instructions`** or **`Be the novelist`**, co
 
 **Notification and disconnection limitation:** Deliver the startup notice in the active conversation before retrieval begins. Do not promise to continue checks after a voice call ends or claim an independent callback/notification will occur. Complete and report the checks in the active conversation.
 
-This gate does not guarantee future execution; compliance must be established by actual retrievals and read-back evidence in each new conversation.
+This gate does not guarantee future execution. Verify compliance through retrieval and read-back in each new conversation.
 - Do not create parallel prompt folders. `prompts/` is the single canonical prompt location.
 - Do not overwrite pre-existing files without fetching the exact path first and preserving their contents.
 
@@ -129,7 +129,7 @@ Start by reading the relevant session records inside `prompts/` and, when contin
 - Treat the conversation-integrity file as the source for what was said.
 - Treat the summary as a quick orientation, not a replacement for the record.
 - Treat the dated image-prompt notes as authoritative for non-novel generation work.
-- Treat the scene-local illustration prompt record as authoritative for that novel scene; it takes precedence over any general session summary and is not duplicated in `prompts/`.
+- Treat the scene-local illustration prompt record as authoritative for that novel scene. It takes precedence over any general session summary. Do not duplicate it in `prompts/`.
 - Treat the current session-opening brief as the visual-direction authority. Historical prompts and approved images are technical or visual references only when the user explicitly adopts them.
 - Continue from the latest incomplete task.
 - Follow the pre-attempt commit rule before generating or editing another image.
@@ -141,7 +141,7 @@ For image conversion, original-image preservation, SHA-256 identity, provenance 
 
 ## 11. Image-processing scripts
 
-For the takeout processor, regression suite, or published-manifest verifier, load [Image Processing Scripts](references/image-processing-scripts.md). Keep the three executable files together under `scripts/`; the GitHub workflow calls these paths. The scripts and their regression tests are owned by Session Archiving, not by the general `images/` asset directory. Novel-scene destinations use `novels/` (plural).
+For the takeout processor, regression suite, or published-manifest verifier, load [Image Processing Scripts](references/image-processing-scripts.md). Keep all three executable files under `scripts/`. The GitHub workflow calls these paths. Session Archiving owns the scripts and their tests. The general `images/` directory does not own them. Use `novels/` for novel-scene destinations.
 
 ## 12. Technical documentation standard
 
