@@ -44,7 +44,7 @@ After cue-triggered skill loading, repeat the same one-time snapshot. Do not wai
 ## Workspace structure
 
 - workspace/README.md defines workspace navigation and operating rules.
-- workspace/discussion.md stores unresolved discussions. Conversation Mode owns this file.
+- workspace/discussion.md stores open discussions and the three most recent successful reports in Condensed Mode. Conversation Mode owns this file.
 - workspace/task_board.md indexes active, ready, blocked, proposed, and historical tasks.
 - workspace/TASK_TEMPLATE.md defines the task record format.
 - workspace/tasks/ contains current task records.
@@ -52,7 +52,7 @@ After cue-triggered skill loading, repeat the same one-time snapshot. Do not wai
 - archive/tasks/ contains completed or cancelled task records during retention.
 - Treat `archive/` as retention-only and outside content-audit scope. Never read, scan, audit, or lint archived contents. This restriction does not prohibit required archival and retention operations: create or move completed/cancelled task records into `archive/tasks/`, update the active task board to link to the archived record and archival commit, and allow the scheduled retention workflow to delete expired archive contents. Do not inspect archived contents as part of these operations. For links from active documents to archived paths, check only that the target path exists; do not inspect archived file content or heading anchors.
 
-Do not create a conversation transcript. The discussion register is a temporary record of unresolved topics, not a transcript.
+Do not create a conversation transcript. The discussion register is a temporary record of open discussions and a short success-report window, not a transcript or task history.
 
 ## Task creation
 
@@ -223,7 +223,7 @@ When foundational initialization or a project-work request activates the Worker:
 
 Task records support recovery. They do not replace repository verification.
 
-Conversation Mode controls access to workspace/discussion.md. The Worker must not read or write that file directly. In Condensed Mode, Conversation Mode reads it and identifies unresolved discussions.
+Conversation Mode controls access to workspace/discussion.md. The Worker must not read or write that file directly. In Condensed Mode, Conversation Mode reads it and maintains open discussions plus up to three recent successful reports.
 
 If the board and task record disagree, reconcile them against the latest user instruction and actual repository state. Record the correction.
 
@@ -254,7 +254,7 @@ The Worker applies in every conversation mode.
 - Condensed Mode uses minimal status reports and direct navigation links.
 - Neither mode changes task authority, approval state, progress logging, or recovery.
 - Record detailed progress in task files instead of repeating it in chat.
-- Conversation Mode owns the temporary discussion register. The Worker does not read or write workspace/discussion.md.
+- Conversation Mode owns the temporary register. The Worker does not read or write workspace/discussion.md. The register contains unresolved discussions and up to three recent successful reports; task records remain authoritative for detailed progress and verification.
 - When an unresolved discussion receives approval, preserve its original user prompts and relevant clarifications in the resulting task record.
 - Do not claim an action, commit, or verification that did not occur.
 
