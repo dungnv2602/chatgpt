@@ -38,8 +38,12 @@ def tracked_markdown() -> list[str]:
         capture_output=True,
         text=True,
     )
+    return result.stdout.splitlines()
+
+
+def active_markdown(files: list[str]) -> list[str]:
     return [
-        path for path in result.stdout.splitlines()
+        path for path in files
         if not path.startswith(EXCLUDED_PREFIXES)
     ]
 
@@ -83,7 +87,8 @@ def github_slug(text: str) -> str:
             output.append("-")
         elif char in "-_" or not category.startswith("P"):
             output.append(char)
-    return "".join(output).strip("-")
+    slug = "".join(output).strip("-")
+    return re.sub(r"-+", "-", slug)
 
 
 def heading_anchors(text: str) -> set[str]:
@@ -123,43 +128,55 @@ def link_targets(text: str) -> list[str]:
     return targets
 
 
-def resolve_markdown_target(source: str, target: str) -> str | None:
+def resolve_markdown_target(
+    source: str, target: str, file_set: set[str]
+) -> str | None:
     parsed = urlsplit(target)
     if parsed.scheme or parsed.netloc:
         return None
     raw_path = unquote(parsed.path)
-    if raw_path:
-        base = posixpath.dirname(source)
-        candidate = posixpath.normpath(
-            raw_path.lstrip("/") if raw_path.startswith("/")
-            else posixpath.join(base, raw_path)
-        )
-        if candidate.startswith("../") or candidate == "..":
-            return None
-        if candidate.endswith("/"):
-            candidate = posixpath.join(candidate, "README.md")
-        if not candidate.lower().endswith(".md"):
-            return None
-        return candidate
-    return source
+    if not raw_path:
+        return source
+    base = posixpath.dirname(source)
+    candidate = posixpath.normpath(
+        raw_path.lstrip("/") if raw_path.startswith("/")
+        else posixpath.join(base, raw_path)
+    )
+    if candidate.startswith("../") or candidate == "..":
+        return None
+    if candidate.endswith("/"):
+        candidates = [
+            posixpath.join(candidate, "README.md"),
+            posixpath.join(candidate, "index.md"),
+        ]
+    elif candidate.lower().endswith(".md"):
+        candidates = [candidate]
+    else:
+        candidates = [
+            candidate + ".md",
+            posixpath.join(candidate, "README.md"),
+            posixpath.join(candidate, "index.md"),
+        ]
+    return next((path for path in candidates if path in file_set), candidates[0])
 
 
 def main() -> int:
-    files = tracked_markdown()
-    file_set = set(files)
+    all_files = tracked_markdown()
+    active_files = active_markdown(all_files)
+    file_set = set(all_files)
     anchors_by_file = {}
     issues = []
     links_checked = 0
 
-    for source in files:
+    for source in all_files:
         text = Path(source).read_text(encoding="utf-8")
         anchors_by_file[source] = heading_anchors(text)
 
-    for source in files:
+    for source in active_files:
         text = Path(source).read_text(encoding="utf-8")
         for target in link_targets(text):
             parsed = urlsplit(target)
-            destination = resolve_markdown_target(source, target)
+            destination = resolve_markdown_target(source, target, file_set)
             if destination is None:
                 continue
             links_checked += 1
@@ -172,7 +189,8 @@ def main() -> int:
                     issues.append((source, target, "missing heading anchor"))
 
     print(
-        f"Scanned {len(files)} active Markdown files and "
+        f"Scanned {len(active_files)} active Markdown files "
+        f"({len(all_files)} available as link targets) and "
         f"{links_checked} local Markdown links."
     )
     print(f"Found {len(issues)} unresolved local Markdown targets or anchors.")
