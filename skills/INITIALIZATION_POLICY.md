@@ -372,9 +372,10 @@ Use this template:
 - **Intentional examples:** The ASD-STE100 skill has a baseline of 31 hard findings because it contains examples that intentionally violate the rules it teaches.
 - **CI interpretation:** Both lint workflows passed against the recorded baselines. The 179 hard findings remain open technical debt. The baselines do not indicate full writing-policy compliance.
 - **Lint configuration:** `skills/asd-ste100/scripts/ste-lint-repository.sh` defines the modes and per-file baselines.
+- **Lint documentation:** Updated the repository writing policy to document the wrapper. Commit `2b82c740fd36f65eeafd69636df6fbaaf7399554`.
 - **Full-document workflow:** `.github/workflows/ste-lint-full-docs.yml`.
 - **Changed-file workflow:** `.github/workflows/ste-lint-changed.yml`.
-- **CI runs:** Full-document run `44697368559` passed. Changed-file run `44697368507` passed.
+- **CI runs:** Full-document run `44697789997` passed. Changed-file run `44697789995` passed.
 - **Relevant commits:** Image index `93d1bb6f6df4250736cf6dd55fb56eb6e799d69e`, Scene-002 Illustration 01 `b39eed6a2d04cf4581a8e01967435467a5a44ae5`, Illustration 02 `6aa685c6f2d30da3eb137d31b6124e9b40071bf2`, Illustration 03 `79dfb067d1f4b299ebe498df43975e8a85390bb0`, Novel 02 link `4a1acd71cbacb4cc0db64cdde5c51ba00a72d164`, lint helper `20eb2e71ec88248dcc52259af122f814f00376da`, changed workflow `a961b693fdfacff11cf355e6e7689e7d92923616`, full workflow `ee628081f7909aa822d53026b3a1f42150c70011`.
 - **Remaining work:** Reduce the existing hard findings. Review historical links only after the user authorizes changes to those records. Check heading anchors in a separate pass.
 
