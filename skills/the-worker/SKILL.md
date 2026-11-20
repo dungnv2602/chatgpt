@@ -81,7 +81,7 @@ Never change an assigned task ID.
 
 **Assistant-generated tasks**
 
-- Create necessary follow-up tasks automatically when they are required to complete, verify, or maintain an approved objective.
+- Create necessary follow-up tasks automatically when they are required to complete, check, or maintain an approved objective.
 - Mark these tasks as Assistant-originated and Necessary.
 - Keep necessary follow-ups within the approved scope.
 - Create optional improvements automatically as Proposed tasks.
@@ -122,7 +122,7 @@ A task may remain In Progress while another task is selected. Mark one task as t
 - Group tasks by status.
 - Show dependencies and approval state when relevant.
 - Keep at most the 7 most recently completed or cancelled tasks in the Historical section, ordered newest first.
-- When adding a historical entry would exceed 7, remove the oldest board entry or entries until the limit is met. This removes only index rows, never Git history or commits.
+- When adding a historical entry would exceed 7, delete the oldest board entry or entries until the limit is met. This removes only index rows, never Git history or commits.
 - Link each retained historical entry to the commit that contains the archived record.
 - Update the board whenever task metadata, priority, status, ownership, or location changes.
 
@@ -168,9 +168,9 @@ After each meaningful action, update the task record when the result affects the
 Before execution:
 
 1. Read the task record.
-2. Confirm its approval state and scope.
+2. Check its approval state and scope.
 3. Inspect the relevant repository state.
-4. Confirm dependencies and required references.
+4. Check dependencies and required references.
 5. Identify the next authorized action.
 
 During execution:
@@ -202,7 +202,7 @@ When foundational initialization or a project-work request activates the Worker:
 3. Identify the highest-priority eligible task.
 4. Read its complete task record.
 5. Read its referenced files and dependencies as needed.
-6. Verify the actual repository state.
+6. Check the actual repository state.
 7. Compare the repository with the recorded Current State.
 8. Resume from Next Actions.
 
@@ -245,7 +245,7 @@ The Worker applies in every conversation mode.
 
 ## Completion checks
 
-Before handing off or closing a task, verify:
+Before handing off or closing a task, check:
 
 - The task board entry matches the task record.
 - The original user request and relevant clarifications are preserved.
