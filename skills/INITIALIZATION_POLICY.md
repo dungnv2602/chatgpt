@@ -10,6 +10,7 @@ Track the design, current behavior, and revision history of ChatGPT's conditiona
 - **Branch:** `gpt`
 - **Foundational initiation:** `skills/SESSION_START.md`
 - **Foundational skill-authoring standard:** `skills/agent-skill-authoring/SKILL.md`
+- **Foundational technical-writing standard:** `skills/asd-ste100/SKILL.md`
 - **Novelist initiation:** `skills/novelist-initiation/SKILL.md`
 
 Do not treat this note as a replacement for either operational file.
@@ -78,7 +79,8 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
 3. **Explicit dependency:** Novelist initialization must complete foundational prerequisites before loading novelist-specific materials.
 4. **No duplicated procedures:** Specialist initiation notes should reference the foundational process rather than maintain a competing checklist.
 5. **Current-session verification:** Do not substitute remembered instructions, summaries, or reads from a previous conversation for required verification in the current conversation.
-6. **Standardized skills:** Create and maintain skill folders using the Agent Skills format defined in `skills/agent-skill-authoring/SKILL.md`; load that standard during foundational initialization.
+6. **Standardized skills:** Create and maintain skill folders using the Agent Skills format defined in `skills/agent-skill-authoring/SKILL.md`. Load that standard during foundational initialization.
+7. **Controlled technical writing:** Apply `skills/asd-ste100/SKILL.md` to all skill documentation and technical documentation. Load it during foundational initialization.
 
 ## Change history
 
@@ -116,6 +118,16 @@ The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of 
 - **Files modified:** See the commits on branch `gpt` for the Agent Skills folder restructure and supporting-reference extraction.
 - **Verification:** Manual frontmatter, naming, description, line-count, link, activation, and read-back checks passed. The official `skills-ref` CLI validator was not run.
 
+
+### Version 4 — ASD-STE100 made foundational
+
+- **Date:** 2026-11-20
+- **Requested change:** Make the ASD-STE100 skill foundational and apply its controlled-language standard to skill and technical documentation.
+- **Reason:** Reduce ambiguity in instructions and technical explanations without changing technical meaning.
+- **Behavioral impact:** Foundational initialization now loads the ASD-STE100 skill. Skill and technical documentation use Strict mode or STE-flavored mode according to their purpose. Creative content and intentional examples remain outside the policy.
+- **Files modified:** `skills/asd-ste100/SKILL.md`, `skills/asd-ste100/references/repository-writing-policy.md`, `skills/SESSION_START.md`, `skills/session-archiving/SKILL.md`, `skills/agent-skill-authoring/SKILL.md`, `skills/README.md`, and this policy file.
+- **Verification:** Pending final repository read-back and technical-document review.
+
 ## Future revision log
 
 Append a new entry whenever the policy or its activation cues change.
@@ -141,6 +153,8 @@ Before approving a future change, verify:
 - [ ] Foundational initialization precedes novelist-specific initialization.
 - [ ] Foundational initialization is not duplicated when both cues are used.
 - [ ] The Agent Skill Authoring skill is loaded during foundational initialization.
+- [ ] The ASD-STE100 skill is loaded during foundational initialization.
+- [ ] Skill and technical documentation use the correct ASD-STE100 mode and preserve meaning.
 - [ ] New or revised skills satisfy the Agent Skills frontmatter, naming, structure, and validation requirements.
 - [ ] Only necessary files are loaded.
 - [ ] Missing or unverifiable prerequisites stop initialization and are reported by exact path.
