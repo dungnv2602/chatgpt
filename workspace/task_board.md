@@ -1,6 +1,6 @@
 # Task Board
 
-Last updated: 2026-11-20 12:46 UTC
+Last updated: 2026-11-20 12:47 UTC
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
@@ -10,14 +10,18 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
+| 20261120-123400 | Add task-inspection gates and discussion reports to Condensed Mode | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-123400-condensed-mode-task-gates-and-reporting.md) |
+
+## In Progress
+
+| ID | Task | Priority | Status | Origin | Updated | Record |
+|---|---|---:|---|---|---|---|
+| 20261120-123000 | Continue the repository documentation audit | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-123000-repository-documentation-audit.md) |
 
 ## Ready
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-| 20261120-123400 | Add task-inspection gates and discussion reports to Condensed Mode | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-123400-condensed-mode-task-gates-and-reporting.md) |
-
-
 ## Blocked
 
 _No blocked tasks._
