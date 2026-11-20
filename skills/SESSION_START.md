@@ -3,46 +3,38 @@
 Repository: `dungnv2602/chatgpt`
 Working branch: `gpt`
 
-## Initialization rule
+## Session-start rule
 
 Initialization is conditional. Do not load project instructions, skills, or references at the start of a new conversation.
 
-Wait for an explicit cue:
+The only session-start cue is **`start session`**.
 
-- `Follow instructions` — perform foundational initialization.
-- `Be the novelist` — perform foundational initialization first. Then initialize the novelist role.
-- Both cues — perform foundational initialization once. Then initialize the novelist role.
+When the user gives this cue as an instruction, perform foundational initialization. Run the mandatory execution gate in `skills/session-archiving/SKILL.md`. Do not begin project work until every required check passes.
 
-This file and the mandatory execution gate in `skills/session-archiving/SKILL.md` define the foundational sequence. Run that gate only after an applicable cue.
+Ignore quoted, discussed, or hypothetical uses of the cue. Do not treat a specialist-role request as a session-start cue.
 
-## Initialization cues
+This file and the Session Archiving execution gate define the complete session-start procedure.
 
-Each cue has a separate role. Novelist initialization depends on foundational initialization.
+## Novelist role initialization
 
-### “Follow instructions” — foundational initialization
+Initialize a specialist role only after foundational initialization passes in the current conversation. A request to initialize the novelist role does not start a new session.
 
-When the user gives this instruction, perform the foundational initialization in this file and the execution gate in `skills/session-archiving/SKILL.md`.
+### Novelist role — explicit request after session start
 
-Load and apply the required foundational skills and references. Do not activate a specialist role.
-
-Run foundational initialization only after an explicit cue.
-
-### “Be the novelist” — role initialization
-
-Activate this procedure only when the user gives **“Be the novelist”** as an instruction. Ignore quoted or hypothetical uses.
+Activate this procedure only after foundational initialization passes and the user explicitly requests the novelist role. Treat “Be the novelist” as a role request, not a session-start cue.
 
 Load `skills/novelist-initiation/SKILL.md` from branch `gpt`. This file is the Agent Skills entry point.
 Follow the complete novelist initialization procedure below.
 
-**Trigger phrase:** `Be the novelist`
+**Role request:** `Be the novelist`
 
 **Purpose:** Initialize the novelist role for the active novel. This procedure does not authorize immediate scene writing.
 
 #### 1. Recognize the trigger
 
-Treat **“Be the novelist”** as a role-initiation command only when the user gives it as an instruction.
+Treat **“Be the novelist”** as a role request only after session initialization passes.
 
-Ignore the phrase when the user quotes it, discusses it, or mentions it hypothetically.
+Ignore quoted, discussed, or hypothetical uses.
 
 When the user triggers this procedure:
 
@@ -59,11 +51,10 @@ The canonical procedure is in `skills/SESSION_START.md`. The execution gate is i
 
 Before novelist work:
 
-1. Verify whether foundational initialization passed in the current conversation.
-2. If it did not pass, complete the full procedure in `skills/SESSION_START.md`.
-3. Complete every required step in the Session Archiving execution gate.
-4. Do not use remembered instructions, old reads, summaries, or unverified copies as substitutes.
-5. After foundational initialization passes, read `skills/romantic-storyteller-visual-artist/SKILL.md`.
+1. Verify that foundational initialization passed in the current conversation.
+2. If it did not pass, stop and ask the user to say `start session`.
+3. Do not use remembered instructions, old reads, summaries, or unverified copies as substitutes.
+4. After foundational initialization passes, read `skills/romantic-storyteller-visual-artist/SKILL.md`.
 
 The foundational skills and Drawing references are prerequisites. Do not create a second loading checklist.
 
@@ -77,7 +68,7 @@ Use the current conversation and repository state to identify the active novel.
 
 - Continue the novel that the user established or is discussing.
 - If no project is clear, ask which novel the user wants to appoint.
-- Do not create a novel or project folder because the user gave the role cue.
+- Do not create a novel or project folder because the user requested the novelist role.
 
 #### 4. Review canonical novel records
 
@@ -195,6 +186,16 @@ If the user gives both cues, perform foundational initialization once. Then init
 If the user gives only “Be the novelist”, include the foundational prerequisites. Do not ask the user to repeat the other cue.
 
 If the user gives only “Follow instructions”, stop after foundational initialization. Do not infer a specialist role.
+
+Reuse foundational files that you verified in the current conversation. Do not treat remembered instructions or earlier reads as current-session verification.
+
+### Session and specialist execution order
+
+When the user says **`start session`**, perform foundational initialization only. Do not infer a specialist role.
+
+If the user also requests the novelist role, complete foundational initialization first. Then follow the novelist procedure above.
+
+If the user requests the novelist role before session initialization passes, stop and ask the user to say `start session`.
 
 Reuse foundational files that you verified in the current conversation. Do not treat remembered instructions or earlier reads as current-session verification.
 
