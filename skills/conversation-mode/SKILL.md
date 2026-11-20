@@ -84,7 +84,7 @@ If the task needs essential clarification or user approval before a safe change,
 
 - Keep progress messages to a minimum.
 - For a straightforward repository task, avoid interim commentary unless it materially helps the user.
-- For long or multi-stage work, provide only essential milestone updates when needed to keep the user informed or when a higher-priority instruction requires them.
+- For long or multi-stage work, give essential milestone updates when they help the user or a higher-priority instruction requires them.
 - After successful work, the final response must still contain only the commit hash.
 
 ### Work outside the repository
