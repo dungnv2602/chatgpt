@@ -4,14 +4,24 @@ on:
   push:
     branches:
       - gpt
+    paths:
+      - 'skills/asd-ste100/**'
+      - '.github/workflows/ste-lint-full-docs.yml'
+      - '.github/workflows/ste-lint-changed.yml'
+      - '!skills/asd-ste100/examples/**'
 
 permissions:
   contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   ste-lint:
     name: Lint all in-scope technical Markdown files
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Check out commit
         uses: actions/checkout@v4
@@ -30,6 +40,7 @@ jobs:
       - name: Lint all in-scope technical Markdown files
         shell: bash
         run: |
+          set -euo pipefail
           files=$(git ls-files '*.md' |
             grep -vE '^(novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))')
           failed=0
