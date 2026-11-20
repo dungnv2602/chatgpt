@@ -266,11 +266,11 @@ When deciding whether to retain any phrase or detail, use this test:
 - **User specified or approved it:** retain it unless a later instruction changes it or an applicable safety requirement prevents it.
 - **User explicitly rejected or removed it:** do not restore it.
 - **It is a restriction the user did not request:** omit it unless an applicable safety rule genuinely requires it.
-- **It is a creative detail the user did not specify:** include it only when the user has delegated that creative choice or it is genuinely necessary to execute the request.
+- **It is a creative detail the user did not specify:** include it only when the user has delegated that choice. You may also include it when the detail is genuinely necessary to execute the request.
 - **It merely reflects the assistant's preference, template, assumption, or speculation:** omit it.
 - **Its status is materially ambiguous:** ask one concise question instead of inventing an answer.
 
-The burden is on the prompt author to justify every addition by reference to the active brief, the user's authorization, or a genuinely applicable safety requirement. The absence of an objection is not approval.
+The prompt author must justify every addition. Use the active brief, the user's authorization, or a genuinely applicable safety requirement as the basis. The absence of an objection is not approval.
 
 ## 15. Compact pre-generation checklist
 
