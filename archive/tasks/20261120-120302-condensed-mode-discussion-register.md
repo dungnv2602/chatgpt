@@ -92,7 +92,14 @@ Create a temporary, prompt-focused register for unresolved discussions. Use it o
 - **Action:** Fetched all seven committed paths from branch `gpt`. Created Library mirrors for both changed skills and read them back.
 - **Result:** Repository read-back succeeded. Library copies match the GitHub skill contents after excluding the final newline normalized by Files. The discussion register contains the empty-state placeholder.
 - **References:** [Conversation Mode skill](https://github.com/dungnv2602/chatgpt/blob/gpt/skills/conversation-mode/SKILL.md), [The Worker skill](https://github.com/dungnv2602/chatgpt/blob/gpt/skills/the-worker/SKILL.md), [Discussion register](https://github.com/dungnv2602/chatgpt/blob/gpt/workspace/discussion.md).
-- **Next:** Archive this completed task record and update the task board.
+- **Next:** None. The task record is archived and the board is updated.
+
+### 2026-11-20 12:06 UTC
+
+- **Action:** Moved the completed task record into `archive/tasks/`, removed the active copy, and updated the task board.
+- **Result:** The task now appears under Historical. The board links to the commit that contains the archived record.
+- **References:** [Archival commit](https://github.com/dungnv2602/chatgpt/commit/76ab55d636668a80ee365af28953ec1fecf24eb6), [Board update](https://github.com/dungnv2602/chatgpt/commit/b1cee05bdd461085d7453151ae77d042e0ab01ed).
+- **Next:** None. Task closed.
 
 ## 7. Current State
 
@@ -133,7 +140,7 @@ No further implementation action is required. The task is complete.
 - **Check:** Task board consistency.
 - **Method:** Read the board and task record after implementation.
 - **Result:** The task was the sole current execution item before archival. The archive update will move it to Historical.
-- **Limitations:** The archival board update is the final closeout action.
+- **Limitations:** None for task-board consistency.
 
 ## 12. Handoff Instructions
 
