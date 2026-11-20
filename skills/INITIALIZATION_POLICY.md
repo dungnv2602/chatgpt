@@ -395,7 +395,7 @@ Use this template:
 - **Scope:** Checked links in 119 active Markdown files. The scan excluded `drawings/history/`, `master/`, `novels/templates/`, `skills/prompt-master/`, and `skills/asd-ste100/examples/` as source files.
 - **Destination inventory:** The checker indexed all 166 Markdown files. Excluded files remained valid link destinations.
 - **Link result:** Checked 262 local Markdown links. Found zero unresolved Markdown targets or heading anchors.
-- **Corrections:** Fixed five links in `drawings/2026-11-19/README.md`. The links now use the GitHub heading anchor with a double hyphen for the em dash.
+- **Link update:** The five image-inventory links in `drawings/2026-11-19/README.md` now use the GitHub heading anchor with a double hyphen for the em dash.
 - **Checker:** Added `skills/asd-ste100/scripts/check_markdown_anchors.py`. Added the check to `.github/workflows/ste-lint-full-docs.yml`.
 - **CI:** Full-document run `44698774629` passed. Changed-document run `44698774600` passed. Both runs checked commit `837f415b040c8d0cbcc16eff77cedc732433acce`.
 - **Lint result:** The full run checked 37 technical Markdown files. It reported 179 hard findings and 300 advisory findings. Each file stayed at or below its recorded hard-finding baseline. The linter self-test passed.
