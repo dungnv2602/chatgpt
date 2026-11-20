@@ -75,13 +75,13 @@ Capture provenance at generation time for every drawing session. Do not rely on 
 - **Manifest:** one row per output. Preserve existing required fields and add internal attempt/output IDs, native Generation ID, native image/output ID, mapping evidence/status, and original-byte availability. Never fabricate IDs, links, hashes, or verification results.
 - **Archive:** retain every output regardless of approval and preserve sequence and prompt association. Use established asset-intake procedures. Validate exact paths, blob identity, direct links, and hashes before marking verified.
 - **Latency:** generation must not wait for GitHub, hashing, or archival. Capture/associate outputs immediately, then perform remaining archive work. If capture or archive is incomplete, leave explicit pending/incomplete status.
-- **Closeout:** reconcile generation records, attempt notes, README, manifest, and repository assets. Read back changes and report unresolved gaps. Do not mark complete while mandatory checks remain unresolved.
+- **Closeout:** reconcile generation records, attempt notes, README, manifest, and repository assets. Read back changes and report unresolved gaps. Do not mark complete while mandatory requirements remain unresolved.
 
 Provenance chain: **Session → Attempt → Prompt → Generation event → Output → original bytes → SHA-256 → archive asset/link**. Record native IDs when exposed. Record internal IDs as archive identifiers, not platform metadata.
 
 ## Mandatory image archive manifest and SHA-256 verification (2026-11-20)
 
-For every drawing session, record **every generated image output**. This includes approved, rejected, pending, partial, off-target, failed, and superseded results. Approval does not control archival or linking. Preserve the generation sequence and exact prompt association. The daily README must link each image to its exact GitHub asset after you verify the path and blob. Keep approval status separate from outcome and storage or link verification.
+For every drawing session, record **every generated image output**. This includes approved, rejected, pending, partial, off-target, failed, and superseded results. Approval does not control archival or linking. Preserve the generation sequence and exact prompt association. The daily README must link each image to its exact GitHub asset after you validate the path and blob. Keep approval status separate from outcome and storage or link verification.
 
 Maintain a session-level `manifest.csv`, with one row per generated output and these required columns:
 ```csv
