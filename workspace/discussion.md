@@ -45,4 +45,18 @@
 
 **Outstanding:** Update the authoritative GitHub Actions policy and all related skill-loading and task-execution instructions. Verify the changes and their CI runs.
 
+
+## Condensed Mode compliance
+
+**Status:** Active
+
+### 2026-11-20 — User
+
+> We're in condensed mode, why you text here?
+
+**Assistant correction:** The previous reply violated Condensed Mode. Do not place explanations, acknowledgements, status updates, or answers in chat. Put required communication in this file and provide only its direct GitHub link. In chat, the only permitted links are the active task link and this discussion-file link.
+
+**CI preflight:** Checked before handling this message. Current branch head `b1ba32ac693949bcd70829faf19c2c586c045a95` has a successful changed-document run. The latest full-document run also succeeded on its triggering commit `a259f689d470299bac74d08e62f4b60965aaf1da`. No pending runs were reported for the current head.
+
+
 ## No open discussions
