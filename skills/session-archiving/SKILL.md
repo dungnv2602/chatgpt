@@ -36,7 +36,7 @@ This boundary applies to every future task and every tool call, not only archivi
   - `prompts/YYYY-MM-DD-conversation-integrity.md`
   - `prompts/YYYY-MM-DD-summary.md`
 - Non-novel image attempts use the dated `prompts/YYYY-MM-DD/` structure below. Named novel-scene illustrations use their authoritative scene-local prompt records under `novel/`; do not duplicate their prompt text or attempt history in `prompts/`.
-- Store new retained non-novel generated drawing outputs under `prompts/YYYY-MM-DD/images/` as `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.), linked from their attempt record and daily README when provenance is verified. This does not authorize migration of existing assets. Store non-novel reference/source assets under `images/`; store novel-scene illustration binaries under `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. New user uploads intended for those permanent destinations first enter `images/takeout/` and are routed by the approved hand-off.
+- Store new retained non-novel generated drawing outputs under `drawings/YYYY-MM-DD/images/` as `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.), linked from their attempt record and daily README when provenance is verified. This does not authorize migration of existing assets. Store non-novel reference/source assets under `images/`; store novel-scene illustration binaries under `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. New user uploads intended for those permanent destinations first enter `images/takeout/` and are routed by the approved hand-off.
 - Keep skills and supporting references under `skills/`.
 
 ### Conversation behavior
@@ -408,7 +408,7 @@ materially inadequate and the exact source image can be attached through a
 supported mechanism. Verify source linkage before calling it a confirmed edit.
 
 - Deliver generated images in the conversation.
-- Store new retained non-novel/day drawing outputs in `prompts/YYYY-MM-DD/images/` using `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.); link exact verified assets from the attempt note and daily README. Existing image assets are not migrated. Non-novel reference/source images remain under `images/`; novel-scene illustration binaries remain in the novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library. New uploads for permanent reference/novel destinations enter through `images/takeout/` and its hand-off.
+- Store new retained non-novel/day drawing outputs in `drawings/YYYY-MM-DD/images/` using `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.); link exact verified assets from the attempt note and daily README. Existing image assets are not migrated. Non-novel reference/source images remain under `images/`; novel-scene illustration binaries remain in the novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library. New uploads for permanent reference/novel destinations enter through `images/takeout/` and its hand-off.
 - Never claim a fresh generation was an edit of the original.
 - Never claim a reference image was supplied unless the tool call actually included that reference.
 - Preserve source-image identity and distinguish an edit from a newly generated composition.
@@ -478,7 +478,7 @@ session workflow requires keeping a source asset:
    multiple-output suffixes, and link them from the attempt note and daily README
    when provenance is verified. Do not migrate existing image assets. Keep
    non-novel reference/source images under `images/` and novel-scene illustration
-   binaries under `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`
+   binaries under `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`
    when a supported repository binary-upload route is available. New uploads
    intended for permanent reference/novel destinations first enter
    `images/takeout/` and are routed through its hand-off. Verify the exact
@@ -544,7 +544,7 @@ If an image is present in `images/` but its binary cannot be surfaced through th
 
 When an image is already stored in its permanent `images/` or `novel/` location under an opaque filename, rename the existing Git tree path while reusing its exact blob SHA. Remove the old path in the same tree update and verify the new path, absence of the old path, identical blob SHA, and identical byte size.
 
-For new user uploads intended for repository retention, use the universal flat intake `images/takeout/`. Inspect the actual image and prepare `images/takeout/HANDOFF.yml` with its exact incoming filename, descriptive title, optional stable asset ID, and destination directory. Do not manually rename or relocate the incoming file. The existing Action derives the permanent master filename from the optional ID and normalized title slug and preserves the original bytes. It stages each WebP under `images/takeout/webp/[batch-id]/attempt-NNN/`, appending `.webp` to the exact incoming filename, then verifies and moves the derivative beside the master. Novel illustration binaries belong in `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; retained non-novel assets use a destination under `images/`.
+For new user uploads intended for repository retention, use the universal flat intake `images/takeout/`. Inspect the actual image and prepare `images/takeout/HANDOFF.yml` with its exact incoming filename, descriptive title, optional stable asset ID, and destination directory. Do not manually rename or relocate the incoming file. The existing Action derives the permanent master filename from the optional ID and normalized title slug and preserves the original bytes. It stages each WebP under `images/takeout/webp/[batch-id]/attempt-NNN/`, appending `.webp` to the exact incoming filename, then verifies and moves the derivative beside the master. Novel illustration binaries belong in `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; retained non-novel assets use a destination under `images/`.
 
 Every attempt is archived under `images/takeout/history/[batch-id]/attempt-NNN/` with the original hand-off, `conversion-report.csv`, and `verification-report.md`. The CSV records both staging and final WebP paths. On failure, original uploads and the ready hand-off remain in the intake and successfully converted WebPs remain in the failed attempt's staging folder; a retry uses a fresh attempt number. On success, staged WebPs move to their permanent destinations and the empty successful staging attempt folder is removed. The Action does not clear the active hand-off unless the entire batch passes verification. Read back the archived reports and final asset paths before claiming success.
 
@@ -661,7 +661,7 @@ flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
 - The original is moved and renamed to the hand-off-derived master path without
   changing its bytes or format. The WebP derivative is stored beside it.
   Novel illustration assets use
-  `novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; other retained
+  `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`; other retained
   assets use their declared directory under `images/`.
 - The processor validates the complete batch, converts every image into
   persistent staging at `images/takeout/webp/[batch-id]/attempt-NNN/`, and
