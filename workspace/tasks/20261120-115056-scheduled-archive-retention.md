@@ -4,12 +4,12 @@
 
 - **ID:** 20261120-115056
 - **Created:** 2026-11-20 11:50 UTC
-- **Updated:** 2026-11-20 11:52 UTC
+- **Updated:** 2026-11-20 12:03 UTC
 - **Priority:** P1
 - **Status:** Blocked
 - **Origin:** User
 - **Approval:** Approved
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** User decision on GitHub default-branch strategy
 - **Related tasks:** 20261120-112500
 - **Archived:** No
@@ -23,6 +23,7 @@
 - 2026-11-20 11:50 UTC — User: "The scheduled deletion workflow should be reusable when it done its job."
 - 2026-11-20 11:50 UTC — User: "Approve."
 - 2026-11-20 11:50 UTC — User: "Start session."
+- 2026-11-20 11:52 UTC — User corrected the retention policy: "My mistake, the policy is 14 days." This confirms a 14-day period, but does not resolve the default-branch blocker.
 
 ## 3. Objective
 
@@ -44,6 +45,7 @@ Replace Worker-triggered archive cleanup with a reusable GitHub Actions schedule
 ## 5. Decisions
 
 - User approved implementation.
+- The user confirmed the retention policy is 14 days.
 - The workflow should use a reusable cleanup implementation and support manual invocation.
 - GitHub Actions `schedule` only runs when the workflow file exists on the repository's default branch.
 - The repository default branch is currently `main`. The authorized working branch is `gpt`.
@@ -108,7 +110,7 @@ No implementation changes have been made. The task is blocked by GitHub's defaul
 
 - **Check:** Repository default branch and branch head.
 - **Method:** Read GitHub repository and branch metadata.
-- **Result:** Default branch is `main`. Branch `gpt` points to `f9e1705417c3d9646b51a0b8c72a540391b936dd`.
+- **Result:** Default branch is `main`. Branch `gpt` points to `f8c83048627821b11f95d0e3cc15eb96ea7e3c1e`.
 - **Limitations:** No branch settings were changed.
 
 - **Check:** Scheduled workflow requirement.

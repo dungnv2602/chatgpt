@@ -1,12 +1,14 @@
 # Task Board
 
-Last updated: 2026-11-20 11:51 UTC
+Last updated: 2026-11-20 12:03 UTC
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
 ## Current Execution
 
-_No unblocked execution task._
+| ID | Task | Priority | Status | Origin | Updated | Record |
+|---|---|---:|---|---|---|---|
+| 20261120-120302 | Add a Condensed Mode discussion register | P1 | In Progress | User | 2026-11-20 | [Task record](tasks/20261120-120302-condensed-mode-discussion-register.md) |
 
 ## Ready
 

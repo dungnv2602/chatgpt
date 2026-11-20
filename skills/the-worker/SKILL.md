@@ -14,7 +14,7 @@ The Worker maintains task continuity across conversations. It applies in every c
 
 The Worker owns task capture, task selection, progress records, handoffs, recovery, and task archival.
 
-Conversation Mode controls communication style. The Worker controls task operations.
+Conversation Mode controls communication style and access to the temporary discussion register. The Worker controls task operations.
 
 ## Activation and authority
 
@@ -30,13 +30,14 @@ Conversation Mode controls communication style. The Worker controls task operati
 ## Workspace structure
 
 - workspace/README.md defines workspace navigation and operating rules.
+- workspace/discussion.md stores unresolved discussions. Conversation Mode owns this file.
 - workspace/task_board.md indexes active, ready, blocked, proposed, and historical tasks.
 - workspace/TASK_TEMPLATE.md defines the task record format.
 - workspace/tasks/ contains current task records.
 - archive/README.md defines archive retention.
 - archive/tasks/ contains completed or cancelled task records during retention.
 
-Do not create a conversation transcript. Preserve the user's original request and relevant clarifications in the task record.
+Do not create a conversation transcript. The discussion register is a temporary record of unresolved topics, not a transcript.
 
 ## Task creation
 
@@ -121,7 +122,7 @@ A task may remain In Progress while another task is selected. Mark one task as t
 - Group tasks by status.
 - Show dependencies and approval state when relevant.
 - Keep compact historical entries after archival.
-- Link historical entries to the archival commit after the archive file expires.
+- Link historical entries to the commit that contains the archived record.
 - Update the board whenever task metadata, priority, status, ownership, or location changes.
 
 Select work in this order:
@@ -206,6 +207,8 @@ When foundational initialization or a project-work request activates the Worker:
 
 Task records support recovery. They do not replace repository verification.
 
+Conversation Mode controls access to workspace/discussion.md. The Worker must not read or write that file directly. In Condensed Mode, Conversation Mode reads it and identifies unresolved discussions.
+
 If the board and task record disagree, reconcile them against the latest user instruction and actual repository state. Record the correction.
 
 Ask the user only when a genuine decision, missing requirement, or approval blocks safe progress.
@@ -223,7 +226,7 @@ When a task is Done or Cancelled:
 5. Link the historical entry to the commit that contains the archived record.
 6. Do not change the task ID.
 
-Follow archive/README.md for the 14-day retention policy. Check retention during Worker activation and task closeout.
+Follow archive/README.md for the 14-day retention policy. GitHub Actions owns scheduled archive deletion. The Worker must not scan or delete archived records during activation or task closeout.
 
 Do not delete active, ready, blocked, paused, or proposed tasks.
 
@@ -235,6 +238,8 @@ The Worker applies in every conversation mode.
 - Condensed Mode uses minimal status reports and direct navigation links.
 - Neither mode changes task authority, approval state, progress logging, or recovery.
 - Record detailed progress in task files instead of repeating it in chat.
+- Conversation Mode owns the temporary discussion register. The Worker does not read or write workspace/discussion.md.
+- When an unresolved discussion receives approval, preserve its original user prompts and relevant clarifications in the resulting task record.
 - Do not claim an action, commit, or verification that did not occur.
 
 ## Completion checks

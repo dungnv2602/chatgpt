@@ -1,13 +1,16 @@
 # Workspace
 
-The workspace tracks project tasks across conversations.
+The workspace tracks project tasks and unresolved discussions across conversations.
 
-The Worker skill defines the operating procedure. Read [The Worker](../skills/the-worker/SKILL.md) before you manage tasks.
+The Worker skill defines the task operating procedure. Read [The Worker](../skills/the-worker/SKILL.md) before you manage tasks.
+
+[Conversation Mode](../skills/conversation-mode/SKILL.md) owns the temporary discussion register.
 
 ## Files
 
 | Path | Purpose |
 |---|---|
+| [discussion.md](discussion.md) | Open discussions used only in Condensed Mode |
 | [task_board.md](task_board.md) | Task index, priority, status, and selection order |
 | [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Template for individual task records |
 | [tasks/](tasks/) | Current task records |
@@ -27,6 +30,7 @@ The Worker skill defines the operating procedure. Read [The Worker](../skills/th
 - Create necessary assistant follow-ups automatically.
 - Mark optional assistant improvements as Proposed. Wait for user approval before execution.
 - Apply the same task workflow in every conversation mode.
+- Conversation Mode controls access to `discussion.md`. The Worker does not read or write that file directly.
 
 ## Task ID and filename
 
@@ -48,9 +52,13 @@ Use YYYYMMDD-HHMMSS-short-kebab-title.md for task filenames.
 
 Read this file, then [task_board.md](task_board.md), then the selected task record. Verify the repository before resuming. Follow the task's Next Actions.
 
+In Condensed Mode, Conversation Mode also reads [discussion.md](discussion.md) to recover unresolved discussions. Default Mode does not use that file.
+
 ## Navigation
 
+- [Open discussions](discussion.md)
 - [Task board](task_board.md)
 - [Task template](TASK_TEMPLATE.md)
 - [The Worker skill](../skills/the-worker/SKILL.md)
+- [Conversation Mode skill](../skills/conversation-mode/SKILL.md)
 - [Archive policy](../archive/README.md)
