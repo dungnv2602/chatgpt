@@ -424,8 +424,8 @@ session workflow requires keeping a source asset:
    Files Library only when the user has requested retention and that storage is
    available. Record its exact Library path, stable file ID, source generation
    ID, original artifact name, dimensions, byte count, and checksum where
-   available in the current session brief or attempt record—not in a global
-   visual reference index.
+   available. Put these details in the current session brief or attempt
+   record, not in a global visual reference index.
 4. State clearly whether an asset is stored in GitHub, the persistent Files
    Library, or only the current conversation. A Markdown note does not mean
    that the image binary is in Git.
