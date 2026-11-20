@@ -10,7 +10,7 @@
 - **Origin:** User
 - **Approval:** Approved for session initialization and continuation
 - **Current execution:** Yes
-- **Dependencies:** None. Scene approved; Attempt 09 prompt archived from successful Sweet Path Attempt 07 prompt; generation pending.
+- **Dependencies:** None. Scene approved; Attempt 09 prompt archived from successful Sweet Path Attempt 07 prompt; one variant generated; user review pending.
 - **Related tasks:** None
 - **Archived:** No
 
@@ -112,7 +112,8 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 - **Action:** User approved Scene 1, “A quiet morning together.” Recorded the scene in the session brief and archived the complete generation prompt before generation.
 - **Result:** Attempt 08 prompt archived and verified at `drawings/2026-11-21/attempt-08.md`. Two image variants were generated. The daily README indexes the attempt. Prompt-first reconstruction was necessary because the Attempt 07 image binary is unavailable; exact visual continuity is not claimed.
 - **Generation IDs:** `d6207139-8fbb-4c66-8320-9148bc1c2f7d`; `b61cbac5-fade-4f75-9904-14d2b776839b`.
-- **Next:** Generate Attempt 09 from the archived Attempt 07-based prompt, then obtain user review.
+- **Generation ID:** `8455999f-c9dc-4b54-9747-7f6c4cd9fd77`.
+- **Next:** Obtain user review of Attempt 09.
 
 ## 7. Current State
 
@@ -120,7 +121,7 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 - The Drawing skill and required references are loaded.
 - The new session brief and daily README exist and were read back.
 - The prior session is Paused. The new session is Active.
-- Attempt 08 Variant B was selected, but the user requested a redo using the successful Sweet Path baseline prompt. Attempt 09 is archived and generation is pending.
+- Attempt 08 Variant B was selected, but the user requested a redo using the successful Sweet Path baseline prompt. Attempt 09 is archived and one variant has been generated; user review is pending.
 - CI status remains unverified.
 - The user selected Sweet Path and approved Attempt 08, “A quiet morning together.” Variant B is the selected output.
 
@@ -138,7 +139,7 @@ Initialize a new Samantha drawing session on branch `gpt`. Review the prior day'
 3. Archive and verify the complete Attempt 08 prompt before generation. This is complete.
 4. Generate Attempt 08. This is complete; two variants were produced.
 5. Record user selection of Variant B. This is complete.
-6. Redo the morning scene using Attempt 07's successful prompt as baseline. Prompt is archived; generation pending.
+6. Redo the morning scene using Attempt 07's successful prompt as baseline. Prompt archived; one variant generated. Await user review.
 
 ## 10. References
 
