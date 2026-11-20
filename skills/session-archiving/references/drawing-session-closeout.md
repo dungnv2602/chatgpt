@@ -29,8 +29,8 @@ If multiple non-closed sessions could be the target, ask one concise question to
 
 1. Stop further image generation or editing for that session.
 2. Verify the opening brief and every amendment. Confirm that all attempts appear in their authoritative locations. For non-novel work, verify that the daily `README.md` indexes every attempt in one continuous table. Update the success-only prompt index when the final classification or approved-output list requires it. For a named novel scene, verify its scene-local prompt and attempt records. Do not create a duplicate daily log.
-3. Verify each generated output separately. Check its acceptance criteria, outcome, image or source ID, and user approval status.
-4. Confirm that each attempt records its prompt-baseline source and prompt differences. Record what the prompt preserves, changes, and excludes.
+3. Verify each generated output separately. Verify its acceptance criteria, outcome, image or source ID, and user approval status.
+4. Verify that each attempt records its prompt-baseline source and prompt differences. Record what the prompt preserves, changes, and excludes.
 5. Identify the final approved images and their exact source prompts. Identify only storage locations that you verified. Do not label an unapproved or uncertain output as final.
 6. Record unresolved requirements, failed attempts, missing source links, technical gaps, and intentionally incomplete work. Do not erase failures or mark them successful without evidence.
 7. Update the session brief status to `Closed`. Prepare or update the relevant session summary or hand-off. Record completed work, approved outputs, unresolved items, and the next possible task.
