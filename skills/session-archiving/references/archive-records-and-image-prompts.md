@@ -191,8 +191,10 @@ drawings/
 
 - Use zero-padded sequential filenames (`attempt-01.md`, `attempt-02.md`, ...), with one attempt per file. Never append a second attempt to an existing attempt note.
 - `README.md` is the daily index: list attempts in order, link each note and its session brief, and show its current outcome/status. Update it whenever an attempt is added or its outcome changes.
-- **README table format is mandatory:** Use one continuous Markdown table for the day's entire attempt index. Include one header row and consistent columns. The minimum columns are `Attempt`, `Prompt note`, `Session brief`, `Primary series / membership`, and `Status / outcome`.\n  Include every attempt exactly once in that table. Use a stable series ID or name. Write `standalone/unassigned` when no series is established. Do not add a second table or place attempt rows outside the table. Keep rows in ascending attempt-number order.
-- **Keep table rows physically contiguous:** Do not insert blank lines between the header, separator, or attempt rows. Many renderers treat a blank line as the end of a Markdown table. This can make the newest attempt appear as a separate block.\n  When appending an attempt, place its row directly after the previous row. When revising a status, edit the existing row. Do not move it outside the table or create a second table.
+- **README table format is mandatory:** Use one continuous Markdown table for the day's entire attempt index. Include one header row and consistent columns. The minimum columns are `Attempt`, `Prompt note`, `Session brief`, `Primary series / membership`, and `Status / outcome`.
+  Include every attempt exactly once in that table. Use a stable series ID or name. Write `standalone/unassigned` when no series is established. Do not add a second table or place attempt rows outside the table. Keep rows in ascending attempt-number order.
+- **Keep table rows physically contiguous:** Do not insert blank lines between the header, separator, or attempt rows. Many renderers treat a blank line as the end of a Markdown table. This can make the newest attempt appear as a separate block.
+  When appending an attempt, place its row directly after the previous row. When revising a status, edit the existing row. Do not move it outside the table or create a second table.
 - **Validate before committing:** Read back the complete daily `README.md`. Verify that it contains one attempt-index table, one header row, and one separator row. Check that every numbered attempt appears exactly once in ascending order. Confirm that no blank line interrupts the table. Confirm that the final attempt row belongs to the same table. Do not mark the index update complete until these checks pass.
 - **Status accuracy:** distinguish `not approved / not generated`, `approved / pending generation`, `generated successfully`, `generated with mismatch`, `rejected / no image returned`, and `technical failure`. If an attempt has multiple runs, preserve the sequence in the status cell (for example, an earlier image returned but a later retry was rejected). Do not overwrite history with only the latest or earlier outcome. A user declining approval must never be represented as pending approval.
 - Each attempt note contains all required fields below, the exact authored prompt, and its final outcome when known. Keep the full record self-contained.
@@ -239,7 +241,9 @@ Record:
 - **Primary series ID/name and theme spine.** Record a series only when the current session brief explicitly continues/adopts it. Otherwise record `standalone/unassigned`. Do not guess. Record secondary series only for a deliberate crossover.
 - **Membership role:** series seed, continuation, subseries, branch, crossover, standalone, or provisional. For a branch, record the parent series and branch point.
 - **Continuity anchors and permitted variation** relevant to this attempt, taken from the current session brief. State which user-locked details must remain unchanged. Do not import locks from an older session.
-- **Prompt baseline provenance:** Record the exact path and attempt, or the scene-local record, for the most recent successful prompt in the primary series. If the work is not a series, use the exact artwork thread. Record its outcome and why it qualifies.\n  If the next operation needs a full-scene prompt, check the newest success's scope. If it is only a localized edit or style-only prompt, record the newest successful full-generation prompt from that series. Use it as the compatible text skeleton and explain why.\n  If no baseline exists, state that fact. For a new branch, record the inherited seed and source.
+- **Prompt baseline provenance:** Record the exact path and attempt, or the scene-local record, for the most recent successful prompt in the primary series. If the work is not a series, use the exact artwork thread. Record its outcome and why it qualifies.
+  If the next operation needs a full-scene prompt, check the newest success's scope. If it is only a localized edit or style-only prompt, record the newest successful full-generation prompt from that series. Use it as the compatible text skeleton and explain why.
+  If no baseline exists, state that fact. For a new branch, record the inherited seed and source.
 - **Latest-attempt diagnostic reference:** Link the newest later attempt you inspected when it differs from the selected successful baseline. State what you carried forward and what you did not.
 - **Acceptance criteria:** normally three to five observable requirements derived from the active brief for this image. Mark critical criteria and define the visible evidence for each. Record `Not applicable` only when no meaningful visual criterion can be derived.
 - **Prompt difference:** record (a) baseline prompt or `none / first attempt`, (b) details preserved, (c) details changed, and (d) details deliberately excluded/not carried forward. Identify the user instruction supporting each change.
@@ -289,11 +293,16 @@ Update the same entry with the actual outcome:
 
 Do not mark an image attempt successful merely because an image was returned. Inspect whether it followed the user's key instructions and the active session brief. Record what worked, what failed, and one useful next-step lesson.
 
-When one tool call returns multiple images, record each output separately. Include its image or generation ID, or its stored path. State whether it meets the active session brief and whether the user approved it as a keeper. Preserve mixed outcomes. One successful output does not make every image in the batch successful.\n\nThe prompt/result pair may qualify as a successful prompt baseline when one output is explicitly judged successful for its intended purpose. The prompt-to-output link must be reliable.\n\nUse only individually approved outputs as visual references. Use them in future sessions only when the user selects them.
+When one tool call returns multiple images, record each output separately. Include its image or generation ID, or its stored path. State whether it meets the active session brief and whether the user approved it as a keeper. Preserve mixed outcomes. One successful output does not make every image in the batch successful.
+
+The prompt/result pair may qualify as a successful prompt baseline when one output is explicitly judged successful for its intended purpose. The prompt-to-output link must be reliable.
+
+Use only individually approved outputs as visual references. Use them in future sessions only when the user selects them.
 
 Keep two judgements distinct:
 - **Prompt/result success:** The prompt links to an output that meets the defining requirements. The user may also explicitly accept the attempt's result as successful for its intended purpose. This can qualify the exact prompt as a future series baseline.
-- **User-approved visual keeper:** The user approves the image as a visual asset. This approval does not validate an uncertain or unsuccessful originating prompt.\n  When the prompt link is known and the user accepts the attempt as successful, record the output and its baseline eligibility. Preserve earlier assessment history.
+- **User-approved visual keeper:** The user approves the image as a visual asset. This approval does not validate an uncertain or unsuccessful originating prompt.
+  When the prompt link is known and the user accepts the attempt as successful, record the output and its baseline eligibility. Preserve earlier assessment history.
 
 A failed, rejected, partial, or missed-target prompt is never the default text baseline. If no later successful prompt exists, return to the most recent success in the same series or artwork thread. Apply only user-requested changes from later attempts.
 
@@ -467,15 +476,29 @@ record lack direct links.
 
 ### When an opaque image cannot be visually inspected
 
-If an image is present in `images/` but its binary cannot be displayed, do not invent a subject description. If its name contains a reliable timestamp, you may rename it to a neutral timestamp-based filename. Preserve the original extension (for example, `archive-photo-YYYY-MM-DD-HHMMSSZ.jpg`).\n\nRecord that you did not inspect the pixels. State that the filename is based on time, not image content. If no reliable timestamp or identifying metadata exists, leave the file unchanged until its visual content is available. In either case, preserve the exact Git blob SHA and byte size.
+If an image is present in `images/` but its binary cannot be displayed, do not invent a subject description. If its name contains a reliable timestamp, you may rename it to a neutral timestamp-based filename. Preserve the original extension (for example, `archive-photo-YYYY-MM-DD-HHMMSSZ.jpg`).
+
+Record that you did not inspect the pixels. State that the filename is based on time, not image content. If no reliable timestamp or identifying metadata exists, leave the file unchanged until its visual content is available. In either case, preserve the exact Git blob SHA and byte size.
 
 ### Renaming image files already tracked in GitHub
 
-When an image is already stored in its permanent `images/` or `novels/` location under an opaque filename, rename its Git tree path. Reuse its exact blob SHA.\n\nRemove the old path in the same tree update. Verify the new path and confirm that the old path is absent. Check that the blob SHA and byte size remain identical.
+When an image is already stored in its permanent `images/` or `novels/` location under an opaque filename, rename its Git tree path. Reuse its exact blob SHA.
 
-For new uploads that need repository retention, use the universal flat intake `images/takeout/`. Inspect the image. Prepare `images/takeout/HANDOFF.yml` with the exact incoming filename, descriptive title, optional stable asset ID, and destination directory.\n\nFor a non-novel drawing attempt, include `attempt: NN` in the hand-off item. Set its destination to `drawings/YYYY-MM-DD/images`. Do not rename or move the uploaded file manually.\n\nThe Action derives the master filename from the optional ID and normalized title slug. It preserves the original bytes. It stages each WebP under `images/takeout/webp/[batch-id]/attempt-NNN/`. The staged name appends `.webp` to the exact incoming filename. The Action verifies each derivative and moves it beside the master.\n\nNovel illustration binaries belong in `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Store other retained non-novel assets under `images/`.
+Remove the old path in the same tree update. Verify the new path and confirm that the old path is absent. Check that the blob SHA and byte size remain identical.
 
-Archive every attempt under `images/takeout/history/[batch-id]/attempt-NNN/`. Include the original hand-off, `conversion-report.csv`, and `verification-report.md`. The CSV records staging and final WebP paths.\n\nOn failure, keep the original uploads and ready hand-off in the intake. Keep successfully converted WebPs in that attempt's staging folder. Use a new attempt number for each retry.\n\nOn success, move staged WebPs to their permanent destinations. Remove the empty staging folder. The Action clears the active hand-off only after the full batch passes verification. Read back the reports and final asset paths before you claim success.
+For new uploads that need repository retention, use the universal flat intake `images/takeout/`. Inspect the image. Prepare `images/takeout/HANDOFF.yml` with the exact incoming filename, descriptive title, optional stable asset ID, and destination directory.
+
+For a non-novel drawing attempt, include `attempt: NN` in the hand-off item. Set its destination to `drawings/YYYY-MM-DD/images`. Do not rename or move the uploaded file manually.
+
+The Action derives the master filename from the optional ID and normalized title slug. It preserves the original bytes. It stages each WebP under `images/takeout/webp/[batch-id]/attempt-NNN/`. The staged name appends `.webp` to the exact incoming filename. The Action verifies each derivative and moves it beside the master.
+
+Novel illustration binaries belong in `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Store other retained non-novel assets under `images/`.
+
+Archive every attempt under `images/takeout/history/[batch-id]/attempt-NNN/`. Include the original hand-off, `conversion-report.csv`, and `verification-report.md`. The CSV records staging and final WebP paths.
+
+On failure, keep the original uploads and ready hand-off in the intake. Keep successfully converted WebPs in that attempt's staging folder. Use a new attempt number for each retry.
+
+On success, move staged WebPs to their permanent destinations. Remove the empty staging folder. The Action clears the active hand-off only after the full batch passes verification. Read back the reports and final asset paths before you claim success.
 
 
 
