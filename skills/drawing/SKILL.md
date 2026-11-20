@@ -149,6 +149,40 @@ prepare and commit the exact authored prompt, verify that commit, then generate
 or edit and record the actual outcome.
 
 
+### Pattern consultation checkpoint
+
+Consult the global drawing pattern library as part of the existing workflow; do
+not treat it as a separate initialization or reread the entire library before
+every drawing action.
+
+1. **At the beginning of each distinct drawing session**, after identifying
+   the active brief and before drafting any prompt, read
+   `drawings/patterns/README.md` and consult the relevant entries in
+   `successful-patterns.md` and `failure-patterns.md`. Select entries by
+   relevance to the actual task, not by reading unrelated patterns in full.
+2. **Before each generation or edit attempt**, re-check the relevant pattern
+   entries against the current objective and any failure from the preceding
+   attempt. Read newly relevant entries if the task or failure changes.
+3. Do not reread files or entries already reviewed in the current conversation
+   unless the user requests a refresh, a repository change is known or
+   suspected, or the new attempt introduces a relevant pattern not yet reviewed.
+   This avoids redundant retrieval while preserving the per-attempt check.
+4. Review `PATTERN-TEMPLATES.md` only when creating or revising a pattern.
+5. The active session brief and the user's latest explicit instructions always
+   outrank pattern guidance. Patterns inform execution; they do not authorize
+   creative changes.
+
+**Prompt-fidelity rule:** Draft only from the active brief and authorized
+historical baseline. Do not add, retain, paraphrase, relocate, or disguise
+unrequested restrictions, disclaimers, negative lists, scene elements, styling,
+or other creative directions. Preserve locked features exactly. Make only
+changes the user requested or changes genuinely required by the task and
+consistent with the brief. Before committing, compare the complete prompt
+against the brief and latest instructions; remove every unsupported addition.
+If an instruction is ambiguous, ask one concise question rather than inventing
+a constraint. Record intentional deviations and their authorization in the
+attempt record.
+
 ### A. Read the brief and complete the session-brief preflight
 
 Identify the subject, selected mode, composition, camera/viewpoint, orientation,
