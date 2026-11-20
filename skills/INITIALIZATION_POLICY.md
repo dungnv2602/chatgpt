@@ -113,7 +113,7 @@ Initialization is conditional. Do not load project instructions or skills at the
 - **Change:** Apply Agent Skills format to the repository's skill folders.
 - **Reason:** Make skills discoverable and reduce unnecessary loading.
 - **Behavioral impact:** Every skill folder gained a conforming `SKILL.md`. Detailed procedures moved into focused references. Foundational initialization remained conditional.
-- **Verification:** Manual metadata, naming, description, line-count, link, activation, and read-back checks passed. The official validator was not run.
+- **Verification:** Manual metadata, naming, description, line-count, link, activation, and read-back verification passed. The official validator was not run.
 
 ### Version 4 — ASD-STE100 made foundational
 
