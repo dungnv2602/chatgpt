@@ -8,7 +8,7 @@
 - **Active path:** Sweet Path
 - **Adopted direction:** Sweet Path Attempt 07
 - **Scene approval:** Explicitly approved by the user on 2026-11-21
-- **Attempt status:** Two image variants generated; awaiting user review
+- **Attempt status:** Variant B selected by the user; approved candidate
 - **Source-image availability:** The Attempt 07 image binary is not present in the repository or attached to this conversation. This is a prompt-first continuation, not a direct image edit.
 
 ## Scene brief
@@ -61,5 +61,5 @@ Create a realistic, naturalistic cinematic photograph of an original adult woman
 - **Variant A generation ID:** `d6207139-8fbb-4c66-8320-9148bc1c2f7d`
 - **Variant B generation ID:** `b61cbac5-fade-4f75-9904-14d2b776839b`
 - **Image assets:** Both outputs are visible in the conversation; binary files are not committed to the repository.
-- **User review:** Pending. Await the user's selection or requested changes.
-- **Follow-up edit prompt:** Pending.
+- **User review:** User selected Image B on 2026-11-21. Variant B is the selected output for Attempt 08.
+- **Follow-up edit prompt:** None requested.
