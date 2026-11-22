@@ -1,0 +1,54 @@
+---
+name: [skill-name]
+description: "[What the skill does and when to use it. Maximum 1024 characters.]"
+---
+
+# [Skill Title]
+
+## Purpose
+
+[State the skill's purpose and scope.]
+
+## Activation
+
+[State the exact requests or conditions that require this skill.]
+
+## Authority and scope
+
+- **Repository:** `dungnv2602/chatgpt`
+- **Branch:** `gpt`
+- **Canonical references:** [List the governing files.]
+
+[State which instructions take priority and which tasks this skill does not govern.]
+
+## Procedure
+
+1. [First required action.]
+2. [Next required action.]
+3. [Final required action.]
+
+## Constraints
+
+- [Mandatory rule.]
+- [Boundary or exception.]
+- [Known limitation.]
+
+## Completion checks
+
+- [ ] [Check the required result.]
+- [ ] [Verify relevant files or outputs.]
+- [ ] [Record unresolved limits.]
+
+## References
+
+- [Canonical repository path and its purpose.]
+
+---
+
+**Authoring notes**
+
+- Replace every bracketed placeholder.
+- Set `name` to the lowercase directory name.
+- Keep the description specific and within the Agent Skills limit.
+- Delete sections that do not apply.
+- Add a section only when it provides a real operating requirement.

@@ -183,6 +183,16 @@ Do not record hidden reasoning, routine narration, or trivial tool calls. Do not
 
 After each meaningful action, update the task record when the result affects the current state or next action. Keep the board concise.
 
+## Document authoring gate
+
+Before a repository task creates or materially revises a document, load `skills/document-standards/SKILL.md` and its Document Type Catalog.
+
+- Identify the document type and its owner.
+- Retrieve and use its canonical template, schema, or embedded contract.
+- Follow the owning project's workflow in addition to the general document standard.
+- Record a missing template when a recurring type has no canonical format.
+- Do not invent a new structure or migrate unrelated historical documents.
+
 ## Execution and checkpoints
 
 Before execution:

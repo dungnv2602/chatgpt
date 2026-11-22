@@ -40,6 +40,7 @@ Load these skills only when the request or an explicit role-initiation procedure
 | [philosophy-religion-asceticism](philosophy-religion-asceticism/SKILL.md) | Philosophy, religion, theology, asceticism, or contemplative-tradition research |
 | [prompt-master](prompt-master/SKILL.md) | Prompt analysis, design, adaptation, or optimization |
 | [romantic-storyteller-visual-artist](romantic-storyteller-visual-artist/SKILL.md) | Romantic narrative or visual storytelling. The Drawing skill is a prerequisite for novelist-role initialization and governs visual work. |
+| [document-standards](document-standards/SKILL.md) | Template-first document authoring, canonical formats, structural validation, and migration |
 
 ## Foundational initialization
 
