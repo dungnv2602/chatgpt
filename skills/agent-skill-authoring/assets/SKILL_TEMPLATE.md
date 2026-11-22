@@ -1,6 +1,6 @@
 ---
-name: [skill-name]
-description: "[What the skill does and when to use it. Maximum 1024 characters.]"
+name: "skill-name"
+description: "Describe the skill and when to use it."
 ---
 
 # [Skill Title]
@@ -47,7 +47,7 @@ description: "[What the skill does and when to use it. Maximum 1024 characters.]
 
 **Authoring notes**
 
-- Replace every bracketed placeholder.
+- Replace every placeholder with the correct value.
 - Set `name` to the lowercase directory name.
 - Keep the description specific and within the Agent Skills limit.
 - Delete sections that do not apply.

@@ -88,6 +88,20 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** `novels/README.md`, `novels/WORKFLOW.md`, `novels/templates/`, `skills/drawing/assets/attempt-template.md`, `skills/session-archiving/references/archive-records-and-image-prompts.md`, `workspace/TASK_TEMPLATE.md`, `images/takeout/README.md`, `skills/agent-skill-authoring/SKILL.md`.
 - **Next:** Complete the inventory and distinguish standalone templates from embedded contracts and data schemas.
 
+### 2026-11-22 23:46 UTC
+
+- **Action:** Added the central Document Standards skill, its initial catalog, and a reusable Agent Skill template. Integrated the on-demand gate into The Worker and indexed the new skill.
+- **Result:** Commit `884fbfacd026a17ddcdbc161d20d83206fb7f167` created the policy and catalog. Read-back checks passed for all five changed paths.
+- **References:** `skills/document-standards/SKILL.md`, `skills/document-standards/references/document-type-catalog.md`, `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`, `skills/the-worker/SKILL.md`, `skills/README.md`.
+- **Next:** Add standalone templates for the recurring session and drawing record types.
+
+### 2026-11-22 23:49 UTC
+
+- **Action:** Added session brief, conversation-integrity, session-summary, and daily drawing-index templates. Updated the owning workflow instructions and catalog.
+- **Result:** Commit `c8d26d3417fc9a14a95da888795c29e42e928a50` created four templates and updated four owner or catalog files. All eight paths were fetched again. Their required content and template links were confirmed.
+- **References:** `skills/session-archiving/assets/`, `skills/drawing/assets/daily-index-template.md`, `skills/session-archiving/references/archive-records-and-image-prompts.md`, `skills/drawing/SKILL.md`, `skills/agent-skill-authoring/SKILL.md`, `skills/document-standards/references/document-type-catalog.md`.
+- **Next:** Inspect the takeout processor and manifest format before designing machine-readable schema validation.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
@@ -101,26 +115,26 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - Image takeout hand-off uses a YAML contract documented in `images/takeout/README.md` and an active `HANDOFF.yml`. A separate reusable blank template was not identified in the inspected directory.
 - Agent Skill Authoring defines the Agent Skills format and provides examples, but no copy-ready skill template file was identified in the inspected folder.
 - The `master/` documents are living prompt, pose, and image-reference catalogues. Their suitability for a strict reusable template remains to be assessed.
-- The initial inventory is not complete. The inspected folders included `images/`, `master/`, `novels/`, `drawings/`, `skills/`, and `workspace/`. The task has not yet classified every recurring document type.
+- The initial inventory is documented in `skills/document-standards/references/document-type-catalog.md`. Standalone templates now exist for session briefs, daily drawing indexes, conversation-integrity records, session summaries, and Agent Skills. The inventory is not complete. The inspected folders included `images/`, `master/`, `novels/`, `drawings/`, `skills/`, and `workspace/`. The task has not yet classified every recurring document type.
 - The latest CI failure was repaired. The post-repair CI result has not been checked.
 
 ## 8. Remaining Work
 
-- Inventory recurring document types and existing templates across approved project directories.
-- Define the document taxonomy and exemption rules.
-- Identify missing templates and schema coverage.
-- Define the canonical template catalog and authoring/validation procedure.
-- Add automated checks where appropriate and integrate them with existing CI.
-- Reconcile existing recurring documents in a controlled migration.
+- Complete the file-by-file inventory and confirm that every recurring document type appears in the catalog.
+- Inspect the image takeout processor and manifest handling before defining a formal schema.
+- Add machine validation for the hand-off and other structured records where it is reliable.
+- Review the master catalogues and define a lightweight shared pattern only if useful.
+- Add structural validation and integrate it with existing CI without weakening coverage.
+- Reconcile existing recurring documents in a controlled migration. Preserve historical records.
 - Verify all changed paths and record final results.
 
 ## 9. Next Actions
 
-1. Complete the inventory of recurring document types and canonical formats in the approved project directories.
-2. Identify which existing structures are true templates, embedded format contracts, schemas, or informal examples.
-3. Classify each type by recurrence, consequence of omission, and validation method.
-4. Define the central policy, catalog, and versioning rules.
-5. Add missing templates and validators in priority order.
+1. Inspect `skills/session-archiving/scripts/process_takeout.py` and its tests to identify the actual YAML and CSV contracts.
+2. Decide which hand-off and manifest rules can be validated without changing processor behavior.
+3. Complete the document-type audit for the remaining approved project paths.
+4. Add automated structural validation and CI coverage after the contracts are stable.
+5. Review migration candidates and preserve untouched historical records.
 
 ## 10. References
 
