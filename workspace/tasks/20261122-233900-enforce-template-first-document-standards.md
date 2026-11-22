@@ -117,6 +117,13 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** `novels/templates/`, `novels/README.md`, `novels/WORKFLOW.md`, `master/Images.md`, `master/Poses.md`, `master/Prompts.md`.
 - **Next:** Verify canonical template links and decide the safest structural-validation approach.
 
+### 2026-11-22 23:50 UTC
+
+- **Action:** Added exact regression-test paths to the Document Type Catalog and fetched the committed catalog again.
+- **Result:** Commit `845e11e17f6911759bce956d0c585704a4c871dd` records the processor test file for hand-off, manifest, conversion-report, and publication-report coverage. Read-back confirmed every full path and the limits on claimed test coverage.
+- **References:** `skills/document-standards/references/document-type-catalog.md`, `skills/session-archiving/scripts/test_process_takeout_unittest.py`.
+- **Next:** Finish the catalog link audit and obtain any required workflow authorization.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
