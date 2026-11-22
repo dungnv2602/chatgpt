@@ -244,7 +244,7 @@ The Worker closes a task only after it archives the record and reconciles the ta
 
 When acceptance criteria are met:
 
-1. Verify the final result, acceptance criteria, and supporting evidence.
+1. Check the final result, acceptance criteria, and supporting evidence.
 2. Prepare the final task record with status Done or Cancelled, an archive timestamp in UTC, complete verification, and a final handoff. Set Archived to Yes.
 3. Create the archived record at `archive/tasks/<same-filename>`. Preserve its task ID and filename. Do not inspect archived contents.
 4. Verify that the archive-write operation succeeded. Only then delete the active record from `workspace/tasks/`. If one Git operation can commit both path changes, use it. Otherwise, create the archive copy first and delete the active path in a later commit. Never delete the active record before the archive copy exists.
@@ -260,7 +260,7 @@ When acceptance criteria are met:
 
 Treat the task record, archive path, and task board as one logical transaction even when the GitHub API requires more than one commit. Do not stop after changing task metadata, after creating the archive copy, or after deleting the active record.
 
-If any closeout step fails, keep the task open as In Progress or record the exact recovery blocker. Reconcile the partial repository state before switching tasks or ending work. Do not claim completion while the board and task record disagree. Do not ask the user to approve routine archival or board maintenance. These are required parts of an approved task.
+If any closeout step fails, keep the task open as In Progress or record the exact recovery blocker. Reconcile the partial repository state before switching tasks or ending work. Do not claim completion while the board and task record disagree. Do not ask the user to approve routine archival or board maintenance. The approved task requires this archival and board maintenance.
 
 Follow archive/README.md for the 14-day batch-cleanup policy. GitHub Actions owns scheduled deletion of the entire `archive/tasks/` contents on each due run. The Worker must not scan or delete archived records during activation or task closeout.
 
