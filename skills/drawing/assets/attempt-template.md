@@ -17,7 +17,7 @@
 ```
 
 ## Lineage
-[One to three concise bullets: what was retained, what changed, and why. For a first attempt, write: "First attempt; derived from the active session brief."]
+[One to three concise bullets: what was retained, what changed, and why. For a first attempt, write: "First attempt. Derived from the active session brief."]
 
 ## Acceptance criteria
 | Requirement | Priority |
@@ -32,7 +32,7 @@
 
 | Output ID | Native generation / image ID | Mapping evidence and status | Original / archive asset | SHA-256 |
 |---|---|---|---|---|
-| [Internal output ID] | [Native ID or Unavailable] | [Evidence; Verified / Corroborated / Probable / Unmapped / Conflicting] | [Path or Unavailable] | [Hash or Unavailable] |
+| [Internal output ID] | [Native ID or Unavailable] | [Evidence] — [Verified / Corroborated / Probable / Unmapped / Conflicting] | [Path or Unavailable] | [Hash or Unavailable] |
 
 ## Review
 | Acceptance criterion | Result | Visual evidence |

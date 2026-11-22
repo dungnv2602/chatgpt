@@ -240,7 +240,7 @@ Task closeout is a mandatory workflow transaction. The Worker owns it in every c
 
 Use only the canonical task statuses in this skill: Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Do not use alternate values such as "Completed".
 
-The Worker closes a task only after archiving its record and reconciling and verifying the task board.
+The Worker closes a task only after it archives the record and reconciles the task board.
 
 When acceptance criteria are met:
 
