@@ -81,13 +81,27 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** `workspace/README.md`, `workspace/task_board.md`, `workspace/TASK_TEMPLATE.md`, `workspace/tasks/20261120-183600-continue-samantha-drawing-session.md`.
 - **Next:** Create this task as the sole Current Execution task and inspect the repository's existing template inventory.
 
+### 2026-11-22 23:44 UTC
+
+- **Action:** Inspected top-level project indexes and directory inventories in the approved project directories.
+- **Result:** Identified existing novel templates, the drawing-attempt template, session and archive record structures, task templates, discussion-register rules, and the image hand-off contract. Several recurring formats use instructions embedded in skills rather than standalone template files.
+- **References:** `novels/README.md`, `novels/WORKFLOW.md`, `novels/templates/`, `skills/drawing/assets/attempt-template.md`, `skills/session-archiving/references/archive-records-and-image-prompts.md`, `workspace/TASK_TEMPLATE.md`, `images/takeout/README.md`, `skills/agent-skill-authoring/SKILL.md`.
+- **Next:** Complete the inventory and distinguish standalone templates from embedded contracts and data schemas.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
-- The task is authorized and in progress.
-- The current task board has no Current Execution task.
-- Existing drawing-attempt and workspace-task templates are known examples.
-- No full repository-wide document inventory has been completed.
+- The task is the sole Current Execution task.
+- The novel workspace has a mature Version 1.1 template set for eight document types. Version 1.0 templates remain historical references.
+- Non-novel drawing attempts use `skills/drawing/assets/attempt-template.md`.
+- Drawing-session briefs have a required structure in the Session Archiving reference, but no separate reusable template file was found in the inspected folders.
+- Daily drawing indexes have mandatory table rules in the Drawing workflow, but no separate reusable index template file was found.
+- Conversation-integrity records have a recommended structure in the Session Archiving reference. Session summaries have required content guidance but no standalone template was found in the inspected folders.
+- Workspace task records use `workspace/TASK_TEMPLATE.md`. The task board and Condensed Mode discussion register use fixed structures defined in their governing skills and current files.
+- Image takeout hand-off uses a YAML contract documented in `images/takeout/README.md` and an active `HANDOFF.yml`. A separate reusable blank template was not identified in the inspected directory.
+- Agent Skill Authoring defines the Agent Skills format and provides examples, but no copy-ready skill template file was identified in the inspected folder.
+- The `master/` documents are living prompt, pose, and image-reference catalogues. Their suitability for a strict reusable template remains to be assessed.
+- The initial inventory is not complete. The inspected folders included `images/`, `master/`, `novels/`, `drawings/`, `skills/`, and `workspace/`. The task has not yet classified every recurring document type.
 - The latest CI failure was repaired. The post-repair CI result has not been checked.
 
 ## 8. Remaining Work
@@ -102,10 +116,11 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 
 ## 9. Next Actions
 
-1. Inspect directory indexes and existing templates within `images/`, `master/`, `novels/`, `drawings/`, `skills/`, and `workspace/`.
-2. Build an inventory matrix of document types, canonical template paths, required fields, and validation coverage.
-3. Propose a template taxonomy and migration priority based on recurrence and risk.
-4. Implement the canonical policy and validation after the inventory establishes the scope.
+1. Complete the inventory of recurring document types and canonical formats in the approved project directories.
+2. Identify which existing structures are true templates, embedded format contracts, schemas, or informal examples.
+3. Classify each type by recurrence, consequence of omission, and validation method.
+4. Define the central policy, catalog, and versioning rules.
+5. Add missing templates and validators in priority order.
 
 ## 10. References
 
