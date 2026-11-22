@@ -4,7 +4,7 @@
 
 - **ID:** 20261122-233900
 - **Created:** 2026-11-22 23:39 UTC
-- **Updated:** 2026-11-22 23:39 UTC
+- **Updated:** 2026-11-22 23:49 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -114,35 +114,35 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - The user approved the template-first policy.
 - The task is the sole Current Execution task.
 - The novel workspace has a mature Version 1.1 template set for eight document types. Version 1.0 templates remain historical references.
-- Non-novel drawing attempts use the versioned template at `skills/drawing/assets/attempt-template.md`.
-- Drawing-session briefs, daily drawing indexes, conversation-integrity records, and session summaries now have standalone Version 1.0 templates.
+- Non-novel drawing attempts use the Version 1.0 template at `skills/drawing/assets/attempt-template.md`.
+- Drawing-session briefs, daily drawing indexes, conversation-integrity records, and session summaries have standalone Version 1.0 templates.
 - Agent Skill definitions have a copy-ready template at `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`.
 - Drawing pattern entries have separate successful and failure templates in `skills/drawing/references/patterns/PATTERN-TEMPLATES.md`.
-- Workspace task records use the versioned template at `workspace/TASK_TEMPLATE.md`.
+- Workspace task records use the Version 1.0 template at `workspace/TASK_TEMPLATE.md`.
 - Task boards and the Condensed Mode discussion register remain embedded contracts for single live files.
 - Novel documents use the current Version 1.1 template set. Do not mass-migrate untouched Version 1.0 records.
 - The image takeout hand-off is validated by `skills/session-archiving/scripts/process_takeout.py`. The same script defines conversion-report and manifest columns. `verify_published_manifest.py` checks published data and links.
-- The processor test suite covers important intake and publication paths. It does not yet establish exhaustive field-by-field validation coverage.
-- Master image, pose, and prompt catalogues remain classified as lightweight collections. A single shared template may not improve them.
+- The processor test suite covers important intake and publication paths. It does not establish exhaustive field-by-field validation coverage.
+- The three master catalogues contain heterogeneous prompt, pose, and image-reference material. They are classified as lightweight collections, not uniform record types.
 - The catalog covers the main recurring document types identified across `images/`, `master/`, `novels/`, `drawings/`, `skills/`, and `workspace/`. Full file-by-file reconciliation remains incomplete.
 - The latest CI failure was repaired. The post-repair CI result has not been checked.
 
 ## 8. Remaining Work
 
-- Complete the catalog audit for every recurring document type discovered in the approved project directories.
-- Review the master catalogues and decide whether a lightweight shared pattern improves consistency.
-- Compare existing recurring records with canonical formats. Record legacy exceptions without rewriting historical records.
+- Finish the type-level catalog review and verify all canonical template links.
+- Compare representative current records with their canonical templates. Record justified legacy exceptions without rewriting historical content.
 - Review whether the processor test suite needs additional field-level validation cases.
-- Decide how to integrate structural document checks with CI. Workflow changes require fresh authorization.
+- Design a reliable structural document check that can run against the catalog and templates.
+- Obtain fresh authorization before changing GitHub workflow files to integrate the structural check.
 - Read back and verify all changed paths and record the final result.
 
 ## 9. Next Actions
 
-1. Complete the type-level catalog audit for recurring document types in all approved project directories.
-2. Review the master image, pose, and prompt catalogues and assign their final lightweight or exempt classifications.
-3. Compare existing recurring records with canonical formats. Record legacy exceptions without rewriting historical records.
-4. Decide whether additional processor tests are needed for hand-off and manifest field validation.
-5. Request fresh authorization before editing GitHub workflow files.
+1. Verify every catalog row points to the authoritative template, schema, embedded contract, or generator.
+2. Review representative examples for each recurring template type and record any legacy format exceptions.
+3. Decide whether hand-off and manifest validation need additional field-level regression tests.
+4. Define and assess a structural document validator that uses the catalog without duplicating processor schemas.
+5. Ask for fresh authorization before editing workflow files for CI integration.
 
 ## 10. References
 
