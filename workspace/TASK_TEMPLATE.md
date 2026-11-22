@@ -2,6 +2,7 @@
 
 ## Metadata
 
+- **Template version:** 1.0
 - **ID:** YYYYMMDD-HHMMSS
 - **Created:** YYYY-MM-DD HH:MM UTC
 - **Updated:** YYYY-MM-DD HH:MM UTC

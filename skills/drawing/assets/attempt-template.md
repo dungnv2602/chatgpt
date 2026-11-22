@@ -1,6 +1,7 @@
 # [Project] — Attempt [NN]: [Short scene title]
 
 ## Record
+- **Template version:** 1.0
 - **Session:** [session ID]
 - **Date:** [YYYY-MM-DD]
 - **Series / path:** [series and active path, or N/A]

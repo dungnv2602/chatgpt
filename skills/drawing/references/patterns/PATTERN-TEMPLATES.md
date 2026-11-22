@@ -1,5 +1,7 @@
 # Drawing Pattern Entry Templates
 
+**Template version:** 1.0
+
 Use this note when adding or revising entries in the global drawing pattern indexes:
 
 - `successful-patterns.md` — reusable techniques supported by observed results.

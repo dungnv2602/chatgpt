@@ -31,13 +31,13 @@ Do not create a second template when an owning workflow already defines the requ
 | Scene | Template required when created | `novels/templates/scene-v1.1.md` | Current Version 1.1 template exists. Scene prose remains creative content. |
 | Illustration note | Template required | `novels/templates/illustration-note-v1.1.md` | One record per retained or reviewed novel illustration. |
 | Illustration prompt record | Template required before generation | `novels/templates/illustration-prompt-v1.1.md` | Preserve chronological attempts and exact authored prompts. |
-| Non-novel drawing attempt | Template required | `skills/drawing/assets/attempt-template.md` | Existing canonical template. |
-| Drawing pattern entry | Template required | `skills/drawing/references/patterns/PATTERN-TEMPLATES.md` | Separate copy-ready formats exist for successful and failure patterns, with evidence and confidence rules. |
+| Non-novel drawing attempt | Template required | `skills/drawing/assets/attempt-template.md` | Template version 1.0. Keep the compact six-section record structure. |
+| Drawing pattern entry | Template required | `skills/drawing/references/patterns/PATTERN-TEMPLATES.md` | Template version 1.0. Separate copy-ready formats cover successful and failure patterns, evidence, and confidence rules. |
 | Drawing session brief | Template required | `skills/session-archiving/assets/session-brief-template.md` | Copy-ready template now exists. |
 | Daily drawing index | Template required | `skills/drawing/assets/daily-index-template.md` | Copy-ready index template now exists. The workflow still enforces the single-table contract. |
 | Conversation integrity record | Template required | `skills/session-archiving/assets/conversation-integrity-template.md` | Copy-ready template now exists with gap and editorial-summary fields. |
 | Session summary | Template required | `skills/session-archiving/assets/session-summary-template.md` | Copy-ready handoff template now exists. |
-| Workspace task record | Template required | `workspace/TASK_TEMPLATE.md` | Existing canonical template. |
+| Workspace task record | Template required | `workspace/TASK_TEMPLATE.md` | Template version 1.0. The Worker owns task fields and closeout. |
 | Task board | Embedded contract | `skills/the-worker/SKILL.md` and `workspace/task_board.md` | One live index. No separate copy template is needed now. |
 | Condensed Mode discussion register | Embedded contract | `skills/conversation-mode/SKILL.md` and `workspace/discussion.md` | Fixed headings, ordering, and entry rules. |
 | Image takeout hand-off | Schema required | `skills/session-archiving/scripts/process_takeout.py` and `images/takeout/README.md` | The processor parses and validates version, status, batch ID, items, sources, paths, attempt values, IDs, hashes, approval values, and mapping evidence. The README documents the fields. Do not duplicate its rules in an unused schema file. |
