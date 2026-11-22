@@ -32,6 +32,7 @@ Do not create a second template when an owning workflow already defines the requ
 | Illustration note | Template required | `novels/templates/illustration-note-v1.1.md` | One record per retained or reviewed novel illustration. |
 | Illustration prompt record | Template required before generation | `novels/templates/illustration-prompt-v1.1.md` | Preserve chronological attempts and exact authored prompts. |
 | Non-novel drawing attempt | Template required | `skills/drawing/assets/attempt-template.md` | Existing canonical template. |
+| Drawing pattern entry | Template required | `skills/drawing/references/patterns/PATTERN-TEMPLATES.md` | Separate copy-ready formats exist for successful and failure patterns, with evidence and confidence rules. |
 | Drawing session brief | Template required | `skills/session-archiving/assets/session-brief-template.md` | Copy-ready template now exists. |
 | Daily drawing index | Template required | `skills/drawing/assets/daily-index-template.md` | Copy-ready index template now exists. The workflow still enforces the single-table contract. |
 | Conversation integrity record | Template required | `skills/session-archiving/assets/conversation-integrity-template.md` | Copy-ready template now exists with gap and editorial-summary fields. |
@@ -39,10 +40,10 @@ Do not create a second template when an owning workflow already defines the requ
 | Workspace task record | Template required | `workspace/TASK_TEMPLATE.md` | Existing canonical template. |
 | Task board | Embedded contract | `skills/the-worker/SKILL.md` and `workspace/task_board.md` | One live index. No separate copy template is needed now. |
 | Condensed Mode discussion register | Embedded contract | `skills/conversation-mode/SKILL.md` and `workspace/discussion.md` | Fixed headings, ordering, and entry rules. |
-| Image takeout hand-off | Schema required | `images/takeout/README.md` and `images/takeout/HANDOFF.yml` | YAML fields and states are documented. Add machine validation or a formal schema after checking processor compatibility. |
-| Drawing-session manifest | Generator-owned | `images/takeout/README.md` and `skills/session-archiving/references/archive-and-delivery.md` | Required columns and generated fields are documented. Check processor tests before changing the schema. |
-| Conversion report CSV | Generator-owned | `skills/session-archiving/scripts/process_takeout.py` | Script creates the report. Validate through processor tests, not a hand-edited template. |
-| Publication verification report | Generator-owned | `skills/session-archiving/scripts/verify_published_manifest.py` and related processor code | Inspect the report generator before defining any separate template. |
+| Image takeout hand-off | Schema required | `skills/session-archiving/scripts/process_takeout.py` and `images/takeout/README.md` | The processor parses and validates version, status, batch ID, items, sources, paths, attempt values, IDs, hashes, approval values, and mapping evidence. The README documents the fields. Do not duplicate its rules in an unused schema file. |
+| Drawing-session manifest | Generator-owned | `skills/session-archiving/scripts/process_takeout.py` (`MANIFEST_FIELDS`) and `skills/session-archiving/scripts/verify_published_manifest.py` | The processor defines required columns, preserves existing columns, and adds missing fields. The publisher checks required verification columns and published values. |
+| Conversion report CSV | Generator-owned | `skills/session-archiving/scripts/process_takeout.py` (`FIELDS`) | The processor defines the output columns and writes one report row per input image. |
+| Publication verification report | Generator-owned | `skills/session-archiving/scripts/process_takeout.py` (`write_reports`) and `skills/session-archiving/scripts/verify_published_manifest.py` | The report generator writes fixed sections for checks and errors. The verifier updates manifest statuses and errors. |
 | Agent Skill definition | Template required | `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md` | Copy-ready `SKILL.md` template now exists. |
 | Skill index and activation files | Embedded contract | `skills/README.md`, `skills/SESSION_START.md`, `skills/INITIALIZATION_POLICY.md` | Each has a distinct ownership role. Do not force one generic index template. |
 | Master image, pose, and prompt catalogues | Lightweight pattern | `master/Images.md`, `master/Poses.md`, `master/Prompts.md` | These are living reference collections, not repeated individual records. Review consistency before defining a shared pattern. |
@@ -57,9 +58,10 @@ Do not mass-migrate untouched legacy novel records. Use the current template for
 
 ## Priority gaps
 
-1. Review the hand-off YAML and manifest contracts for machine validation.
+1. Review whether existing processor validation and tests cover all documented hand-off fields and failure modes.
 2. Review the three master catalogues for shared lightweight structure.
 3. Check remaining project-specific record types against this catalog before declaring inventory complete.
+4. Complete the repository inventory before marking the catalog complete.
 
 ## Catalog maintenance
 

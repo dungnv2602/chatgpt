@@ -1,5 +1,7 @@
 # Session Summary — YYYY-MM-DD
 
+**Template version:** 1.0
+
 **Project:** [Project name]
 **Branch:** `gpt`
 **Session brief:** [Exact path or Not applicable]

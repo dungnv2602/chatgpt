@@ -1,5 +1,7 @@
 # Conversation Integrity — YYYY-MM-DD
 
+**Template version:** 1.0
+
 **Project:** [Project name or Not applicable]
 **Branch:** `gpt`
 **Companion files:** [Session summary path] · [Prompt history path or scene-local prompt record]

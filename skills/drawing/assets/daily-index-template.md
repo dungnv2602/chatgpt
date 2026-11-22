@@ -1,5 +1,7 @@
 # [Project] Drawing Prompts — YYYY-MM-DD
 
+**Template version:** 1.0
+
 **Project:** [Project name]
 **Branch:** `gpt`
 **Session brief:** [Relative link to the session brief]

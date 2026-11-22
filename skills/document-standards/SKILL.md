@@ -108,6 +108,16 @@ Do not mass-rewrite historical or approved records only to change their template
 
 Preserve user wording, creative content, approvals, provenance, and chronology during migration.
 
+## Generator-owned formats and schemas
+
+When code already parses or generates a structured format, treat that implementation as its schema authority.
+
+- Record the exact script path and relevant schema constant or validation function in this catalog.
+- Record the test file that covers the format.
+- Do not create a second schema document unless the processor consumes it or another system requires it.
+- Update the generator, its tests, and this catalog together when the format changes.
+- Treat generated reports as read-only outputs. Do not maintain a manually edited template that duplicates their generator.
+
 ## Validation
 
 Check each document for:
