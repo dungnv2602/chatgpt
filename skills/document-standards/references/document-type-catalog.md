@@ -40,15 +40,23 @@ Do not create a second template when an owning workflow already defines the requ
 | Workspace task record | Template required | `workspace/TASK_TEMPLATE.md` | Template version 1.0. The Worker owns task fields and closeout. |
 | Task board | Embedded contract | `skills/the-worker/SKILL.md` and `workspace/task_board.md` | One live index. No separate copy template is needed now. |
 | Condensed Mode discussion register | Embedded contract | `skills/conversation-mode/SKILL.md` and `workspace/discussion.md` | Fixed headings, ordering, and entry rules. |
-| Image takeout hand-off | Schema required | `skills/session-archiving/scripts/process_takeout.py` and `images/takeout/README.md` | The processor parses and validates version, status, batch ID, items, sources, paths, attempt values, IDs, hashes, approval values, and mapping evidence. The README documents the fields. Do not duplicate its rules in an unused schema file. |
-| Drawing-session manifest | Generator-owned | `skills/session-archiving/scripts/process_takeout.py` (`MANIFEST_FIELDS`) and `skills/session-archiving/scripts/verify_published_manifest.py` | The processor defines required columns, preserves existing columns, and adds missing fields. The publisher checks required verification columns and published values. |
-| Conversion report CSV | Generator-owned | `skills/session-archiving/scripts/process_takeout.py` (`FIELDS`) | The processor defines the output columns and writes one report row per input image. |
-| Publication verification report | Generator-owned | `skills/session-archiving/scripts/process_takeout.py` (`write_reports`) and `skills/session-archiving/scripts/verify_published_manifest.py` | The report generator writes fixed sections for checks and errors. The verifier updates manifest statuses and errors. |
+| Image takeout hand-off | Schema required | `skills/session-archiving/scripts/process_takeout.py` and `images/takeout/README.md` | The processor validates the YAML contract. `test_process_takeout_unittest.py` covers readiness, exact intake coverage, missing attempt metadata, malformed top-level data, duplicate output IDs, rollback, and hashes. |
+| Drawing-session manifest | Generator-owned | `skills/session-archiving/scripts/process_takeout.py` (`MANIFEST_FIELDS`) and `skills/session-archiving/scripts/verify_published_manifest.py` | The processor defines columns, preserves existing columns, and adds missing fields. The publisher checks verification columns and published values. Regression tests cover legacy rows, missing columns, duplicate IDs, hashes, and publication links. |
+| Conversion report CSV | Generator-owned | `skills/session-archiving/scripts/process_takeout.py` (`FIELDS`) | The processor defines the output columns and writes one report row per input image. The regression suite checks report creation and source, staging, and final paths. |
+| Publication verification report | Generator-owned | `skills/session-archiving/scripts/process_takeout.py` (`write_reports`) and `skills/session-archiving/scripts/verify_published_manifest.py` | The report generator writes fixed sections for checks and errors. Regression tests cover published asset, URL, README, and attempt-link outcomes. |
 | Agent Skill definition | Template required | `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md` | Copy-ready `SKILL.md` template now exists. |
 | Skill index and activation files | Embedded contract | `skills/README.md`, `skills/SESSION_START.md`, `skills/INITIALIZATION_POLICY.md` | Each has a distinct ownership role. Do not force one generic index template. |
 | Master image, pose, and prompt catalogues | Lightweight pattern | `master/Images.md`, `master/Poses.md`, `master/Prompts.md` | These are living reference collections, not repeated individual records. Review consistency before defining a shared pattern. |
 | Technical skill references | Lightweight pattern | Owning skill and repository writing policy | Use type-specific headings. No universal section layout is appropriate. |
 | Creative prose and approved creative prompts | Exempt | Owning creative workflow | Preserve creative form. Apply only required metadata and provenance rules. |
+
+## Validation coverage limits
+
+The processor validates the hand-off when it processes a ready batch. Its regression suite covers important success and failure paths.
+
+The inventory has not confirmed a dedicated test for every optional field, every invalid value, or every interaction between fields. Do not claim exhaustive schema coverage.
+
+The processor and its tests remain the authority for the current YAML and CSV formats. A separate schema file is not required unless another consumer needs it or the processor adopts it.
 
 ## Existing versioned templates
 

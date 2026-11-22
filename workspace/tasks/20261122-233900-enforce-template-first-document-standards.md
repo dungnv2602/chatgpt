@@ -102,39 +102,47 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** `skills/session-archiving/assets/`, `skills/drawing/assets/daily-index-template.md`, `skills/session-archiving/references/archive-records-and-image-prompts.md`, `skills/drawing/SKILL.md`, `skills/agent-skill-authoring/SKILL.md`, `skills/document-standards/references/document-type-catalog.md`.
 - **Next:** Inspect the takeout processor and manifest format before designing machine-readable schema validation.
 
+### 2026-11-22 23:48 UTC
+
+- **Action:** Inspected the takeout processor, publication verifier, and regression test index. Compared documented formats with parser, field constants, generator functions, and tests.
+- **Result:** The processor validates the hand-off and defines conversion-report and manifest columns. The publisher checks required verification columns and remote assets. Tests cover readiness, exact intake coverage, missing attempt metadata, malformed top-level YAML, duplicate output IDs, rollback, hash behavior, manifest updates, and published links. They do not establish exhaustive field-by-field coverage.
+- **References:** `skills/session-archiving/scripts/process_takeout.py`, `skills/session-archiving/scripts/test_process_takeout_unittest.py`, `skills/session-archiving/scripts/verify_published_manifest.py`, `skills/session-archiving/references/image-processing-scripts.md`.
+- **Next:** Complete the document-type catalog audit and reconcile existing record types without rewriting historical content.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
 - The task is the sole Current Execution task.
 - The novel workspace has a mature Version 1.1 template set for eight document types. Version 1.0 templates remain historical references.
-- Non-novel drawing attempts use `skills/drawing/assets/attempt-template.md`.
-- Drawing-session briefs have a required structure in the Session Archiving reference, but no separate reusable template file was found in the inspected folders.
-- Daily drawing indexes have mandatory table rules in the Drawing workflow, but no separate reusable index template file was found.
-- Conversation-integrity records have a recommended structure in the Session Archiving reference. Session summaries have required content guidance but no standalone template was found in the inspected folders.
-- Workspace task records use `workspace/TASK_TEMPLATE.md`. The task board and Condensed Mode discussion register use fixed structures defined in their governing skills and current files.
-- Image takeout hand-off uses a YAML contract documented in `images/takeout/README.md` and an active `HANDOFF.yml`. A separate reusable blank template was not identified in the inspected directory.
-- Agent Skill Authoring defines the Agent Skills format and provides examples, but no copy-ready skill template file was identified in the inspected folder.
-- The `master/` documents are living prompt, pose, and image-reference catalogues. Their suitability for a strict reusable template remains to be assessed.
-- The initial inventory is documented in `skills/document-standards/references/document-type-catalog.md`. Standalone templates now exist for session briefs, daily drawing indexes, conversation-integrity records, session summaries, and Agent Skills. The inventory is not complete. The inspected folders included `images/`, `master/`, `novels/`, `drawings/`, `skills/`, and `workspace/`. The task has not yet classified every recurring document type.
+- Non-novel drawing attempts use the versioned template at `skills/drawing/assets/attempt-template.md`.
+- Drawing-session briefs, daily drawing indexes, conversation-integrity records, and session summaries now have standalone Version 1.0 templates.
+- Agent Skill definitions have a copy-ready template at `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`.
+- Drawing pattern entries have separate successful and failure templates in `skills/drawing/references/patterns/PATTERN-TEMPLATES.md`.
+- Workspace task records use the versioned template at `workspace/TASK_TEMPLATE.md`.
+- Task boards and the Condensed Mode discussion register remain embedded contracts for single live files.
+- Novel documents use the current Version 1.1 template set. Do not mass-migrate untouched Version 1.0 records.
+- The image takeout hand-off is validated by `skills/session-archiving/scripts/process_takeout.py`. The same script defines conversion-report and manifest columns. `verify_published_manifest.py` checks published data and links.
+- The processor test suite covers important intake and publication paths. It does not yet establish exhaustive field-by-field validation coverage.
+- Master image, pose, and prompt catalogues remain classified as lightweight collections. A single shared template may not improve them.
+- The catalog covers the main recurring document types identified across `images/`, `master/`, `novels/`, `drawings/`, `skills/`, and `workspace/`. Full file-by-file reconciliation remains incomplete.
 - The latest CI failure was repaired. The post-repair CI result has not been checked.
 
 ## 8. Remaining Work
 
-- Complete the file-by-file inventory and confirm that every recurring document type appears in the catalog.
-- Inspect the image takeout processor and manifest handling before defining a formal schema.
-- Add machine validation for the hand-off and other structured records where it is reliable.
-- Review the master catalogues and define a lightweight shared pattern only if useful.
-- Add structural validation and integrate it with existing CI without weakening coverage.
-- Reconcile existing recurring documents in a controlled migration. Preserve historical records.
-- Verify all changed paths and record final results.
+- Complete the catalog audit for every recurring document type discovered in the approved project directories.
+- Review the master catalogues and decide whether a lightweight shared pattern improves consistency.
+- Compare existing recurring records with canonical formats. Record legacy exceptions without rewriting historical records.
+- Review whether the processor test suite needs additional field-level validation cases.
+- Decide how to integrate structural document checks with CI. Workflow changes require fresh authorization.
+- Read back and verify all changed paths and record the final result.
 
 ## 9. Next Actions
 
-1. Inspect `skills/session-archiving/scripts/process_takeout.py` and its tests to identify the actual YAML and CSV contracts.
-2. Decide which hand-off and manifest rules can be validated without changing processor behavior.
-3. Complete the document-type audit for the remaining approved project paths.
-4. Add automated structural validation and CI coverage after the contracts are stable.
-5. Review migration candidates and preserve untouched historical records.
+1. Complete the type-level catalog audit for recurring document types in all approved project directories.
+2. Review the master image, pose, and prompt catalogues and assign their final lightweight or exempt classifications.
+3. Compare existing recurring records with canonical formats. Record legacy exceptions without rewriting historical records.
+4. Decide whether additional processor tests are needed for hand-off and manifest field validation.
+5. Request fresh authorization before editing GitHub workflow files.
 
 ## 10. References
 
