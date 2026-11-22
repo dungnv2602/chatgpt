@@ -20,7 +20,7 @@ Conversation Mode controls communication style and access to the temporary discu
 
 Before handling every new user prompt, follow the one-time pre-prompt CI snapshot in `skills/github-actions/SKILL.md`. This rule applies in every conversation mode.
 
-Repair a failure only when the newest run for an applicable workflow has finished with a failure conclusion. Inspect its jobs and logs. Repair the cause on branch `gpt`.
+Repair a failure only when the newest run for an applicable workflow finishes with a failure conclusion. Inspect its jobs and logs. Repair the cause on branch `gpt`.
 
 Do not wait for or poll CI. Pending, in-progress, cancelled, skipped, or absent runs do not block the prompt. A newer successful run supersedes an older failure.
 
@@ -240,22 +240,22 @@ Task closeout is a mandatory workflow transaction. The Worker owns it in every c
 
 Use only the canonical task statuses in this skill: Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Do not use alternate values such as "Completed".
 
-A task is not closed when its task record alone says Done. Closeout is complete only when the task record is archived and the task board is reconciled and verified.
+The Worker closes a task only after archiving its record and reconciling and verifying the task board.
 
 When acceptance criteria are met:
 
-1. Confirm the final result, acceptance criteria, and verification evidence.
+1. Verify the final result, acceptance criteria, and supporting evidence.
 2. Prepare the final task record with status Done or Cancelled, an archive timestamp in UTC, complete verification, and a final handoff. Set Archived to Yes.
 3. Create the archived record at `archive/tasks/<same-filename>`. Preserve its task ID and filename. Do not inspect archived contents.
-4. Confirm that the archive-write operation succeeded. Only then remove the active record from `workspace/tasks/`. If the available Git operation supports a single commit for both path changes, use it. Otherwise, create the archive copy first and delete the active path in a later commit. Never delete the active record before the archive copy exists.
+4. Verify that the archive-write operation succeeded. Only then delete the active record from `workspace/tasks/`. If one Git operation can commit both path changes, use it. Otherwise, create the archive copy first and delete the active path in a later commit. Never delete the active record before the archive copy exists.
 5. Update `workspace/task_board.md` in the same closeout pass:
-   - Remove the task from Current Execution.
-   - Remove its active row from every status section.
+   - Delete the task from Current Execution.
+   - Delete its active row from every status section.
    - Add one Historical row with status Done or Cancelled, the archive path, and the exact commit that contains the archived record.
-   - Apply the seven-entry history limit. Remove only the oldest index rows when required.
+   - Apply the seven-entry history limit. Delete only the oldest index rows when required.
    - Select or identify the next current execution task according to the selection rules. Do not invent a task when no eligible task exists.
-6. Fetch the committed task board and verify that the closed task is absent from active sections, appears exactly once in Historical, links to the archive path and archival commit, and that Current Execution is correct.
-7. Check that the archived record was included in the archival commit by inspecting the commit's changed-path metadata. Do not fetch or inspect the archived file contents.
+6. Fetch the committed task board. Verify that the closed task is absent from active sections and appears exactly once in Historical. Verify its links to the archive path and archival commit. Verify that Current Execution matches the selection rules.
+7. Verify that the archival commit includes the archived record in its changed-path metadata. Do not fetch or inspect the archived file contents.
 8. Only after these checks, report the task as closed and provide the appropriate handoff.
 
 Treat the task record, archive path, and task board as one logical transaction even when the GitHub API requires more than one commit. Do not stop after changing task metadata, after creating the archive copy, or after deleting the active record.
