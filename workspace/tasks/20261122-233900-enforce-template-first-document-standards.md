@@ -3,6 +3,7 @@
 ## Metadata
 
 - **ID:** 20261122-233900
+- **Template version:** 1.0
 - **Created:** 2026-11-22 23:39 UTC
 - **Updated:** 2026-11-22 23:49 UTC
 - **Priority:** P1
@@ -109,6 +110,13 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** `skills/session-archiving/scripts/process_takeout.py`, `skills/session-archiving/scripts/test_process_takeout_unittest.py`, `skills/session-archiving/scripts/verify_published_manifest.py`, `skills/session-archiving/references/image-processing-scripts.md`.
 - **Next:** Complete the document-type catalog audit and reconcile existing record types without rewriting historical content.
 
+### 2026-11-22 23:49 UTC
+
+- **Action:** Reconciled the novel template directory with the catalog. Reviewed the master image, pose, and prompt collections.
+- **Result:** Confirmed eight current Version 1.1 novel templates. Version 1.0 templates remain available for legacy records. The master collections contain heterogeneous reference and prompt material, so a single rigid entry template is not appropriate. Their catalog classification remains Lightweight pattern.
+- **References:** `novels/templates/`, `novels/README.md`, `novels/WORKFLOW.md`, `master/Images.md`, `master/Poses.md`, `master/Prompts.md`.
+- **Next:** Verify canonical template links and decide the safest structural-validation approach.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
@@ -157,6 +165,13 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - `workspace/task_board.md`
 - `workspace/TASK_TEMPLATE.md`
 - `skills/drawing/assets/attempt-template.md`
+- `skills/document-standards/SKILL.md`
+- `skills/document-standards/references/document-type-catalog.md`
+- `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`
+- `skills/session-archiving/assets/session-brief-template.md`
+- `skills/session-archiving/assets/session-summary-template.md`
+- `skills/session-archiving/assets/conversation-integrity-template.md`
+- `skills/drawing/assets/daily-index-template.md`
 
 ## 11. Verification
 
