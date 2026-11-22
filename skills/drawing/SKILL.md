@@ -132,6 +132,16 @@ ink, and 3D gloss.
 
 ## 4. Workflow for every drawing task
 
+### Canonical record templates
+
+Use the session-brief template at `skills/session-archiving/assets/session-brief-template.md`.
+
+Use the daily index template at `skills/drawing/assets/daily-index-template.md`.
+
+Use the attempt template at `skills/drawing/assets/attempt-template.md`.
+
+For novel illustrations, use the scene-local templates in `novels/templates/`. Do not duplicate novel prompt histories in the daily drawing index.
+
 ### Skill-loading cadence
 
 The Drawing Skill is universal: its rules govern every drawing project,

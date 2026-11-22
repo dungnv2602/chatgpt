@@ -14,31 +14,13 @@ The conversation-integrity file is a chronological record, not a polished retell
 - Keep interpretations and archival notes separate from the dialogue itself.
 - Keep links within `approved project directories`. Do not add links to external repository paths.
 
-Recommended structure:
-
-```markdown
-# Conversation Integrity — YYYY-MM-DD
-
-**Project:** ...
-**Branch:** ...
-**Companion files:** Summary file: `drawings/YYYY-MM-DD-summary.md` · Image-prompt history: non-novel dated prompt record. For novel scenes, link the scene-local prompt record instead.
-
-## Integrity policy
-...
-
-## Chronological record
-...
-
-## Gaps and editorial summaries
-...
-
-## Integrity and completeness notes
-...
-```
+Use the canonical template at `../assets/conversation-integrity-template.md`. Preserve exact wording, tool events, and gaps as specified above.
 
 ## 5. File 2: Session summary
 
 The summary is a practical handoff for a future chat.
+
+Start from the canonical template at `../assets/session-summary-template.md`. Separate confirmed facts from hypotheses. Do not repeat unsupported explanations as facts. Link only to files under `approved project directories`.
 
 Include:
 - The session's purpose.
@@ -83,61 +65,11 @@ This opening brief is the sole creative authority for that session. It applies t
   replacement repository-wide visual authority index. Session-specific image
   provenance belongs in the session brief and relevant attempt record.
 
-### Session brief structure
+### Session brief template
 
-Use this structure for each session brief. Preserve the user's actual opening
-wording in the first section. The structured fields summarize it and must not
-invent detail.
+Start each session brief from the canonical template at `../assets/session-brief-template.md`. Preserve the user's actual opening wording in the first section. The structured fields summarize the brief and must not invent detail.
 
-```markdown
-# Drawing Session Brief
-
-**Session ID:** ...
-**Session type:** Day drawing / Novel illustration
-**Project or novel scene:** ...
-**Created:** YYYY-MM-DD
-**Status:** Active / Paused / Closed (new sessions start Active)
-
-## User's opening brief
-> [Preserve the user's opening direction accurately.]
-
-## Active visual direction
-- Subject and theme:
-- Scene or story moment:
-- Mode / medium:
-- Character identity and appearance:
-- Wardrobe:
-- Pose and spatial relationships:
-- Camera / framing:
-- Environment:
-- Lighting and palette:
-- Mood / emotional intention:
-- **Narrative fidelity (novel illustration only):** Text-faithful / Interpretive / Adaptive / Not applicable
-- **Source scene/version (novel illustration):** exact scene/chapter or supplied passage the user wants followed/adapted
-
-## Locked features
-- ...
-
-## Permitted variation
-- ...
-
-## Explicit exclusions
-- ...
-
-## References assigned to this session
-- Asset:
-- User-assigned role:
-- Actual attachment/source status:
-
-## Amendments
-- [Date/time] — [User's exact correction or concise faithful record]
-```
-
-Write `Not specified / open` for fields the user has not defined. Do not fill
-gaps from a former session, a global image catalogue, a successful prompt, or
-the assistant's aesthetic assumptions. A session brief may be compact when the
-user's request is compact. This is a record of the user's direction, not a
-questionnaire that must be completed before work.
+Write `Not specified / open` for fields the user has not defined. Do not fill gaps from a former session, a global image catalogue, a successful prompt, or the assistant's aesthetic assumptions. A session brief may be compact when the user's request is compact. This is a record of the user's direction, not a questionnaire that must be completed before work.
 
 ### Session status and transitions
 
@@ -187,6 +119,7 @@ drawings/
 
 - Use zero-padded sequential filenames (`attempt-01.md`, `attempt-02.md`, ...), with one attempt per file. Never append a second attempt to an existing attempt note.
 - `README.md` is the daily index: list attempts in order, link each note and its session brief, and show its current outcome/status. Update it whenever an attempt is added or its outcome changes.
+- Start each daily index from `../../drawing/assets/daily-index-template.md`. Preserve its required columns and single-table structure.
 - **README table format is mandatory:** Use one continuous Markdown table for the day's entire attempt index. Include one header row and consistent columns. The minimum columns are `Attempt`, `Prompt note`, `Session brief`, `Primary series / membership`, and `Status / outcome`.
   Include every attempt exactly once in that table. Use a stable series ID or name. Write `standalone/unassigned` when no series is established. Do not add a second table or place attempt rows outside the table. Keep rows in ascending attempt-number order.
 - **Keep table rows physically contiguous:** Do not insert blank lines between the header, separator, or attempt rows. Many renderers treat a blank line as the end of a Markdown table. This can make the newest attempt appear as a separate block.

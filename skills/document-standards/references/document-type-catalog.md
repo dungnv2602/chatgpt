@@ -32,10 +32,10 @@ Do not create a second template when an owning workflow already defines the requ
 | Illustration note | Template required | `novels/templates/illustration-note-v1.1.md` | One record per retained or reviewed novel illustration. |
 | Illustration prompt record | Template required before generation | `novels/templates/illustration-prompt-v1.1.md` | Preserve chronological attempts and exact authored prompts. |
 | Non-novel drawing attempt | Template required | `skills/drawing/assets/attempt-template.md` | Existing canonical template. |
-| Drawing session brief | Template required | Structure in `skills/session-archiving/references/archive-records-and-image-prompts.md` | Structure exists inside instructions. Add a standalone asset template. |
-| Daily drawing index | Embedded contract | Table rules in `skills/session-archiving/references/archive-records-and-image-prompts.md` | Mandatory table structure exists. Add a copy-ready index template. |
-| Conversation integrity record | Template required | Recommended structure in `skills/session-archiving/references/archive-records-and-image-prompts.md` | Add a standalone template with explicit gap and editorial-summary fields. |
-| Session summary | Template required | Content requirements in `skills/session-archiving/references/archive-records-and-image-prompts.md` | Add a standalone handoff template. |
+| Drawing session brief | Template required | `skills/session-archiving/assets/session-brief-template.md` | Copy-ready template now exists. |
+| Daily drawing index | Template required | `skills/drawing/assets/daily-index-template.md` | Copy-ready index template now exists. The workflow still enforces the single-table contract. |
+| Conversation integrity record | Template required | `skills/session-archiving/assets/conversation-integrity-template.md` | Copy-ready template now exists with gap and editorial-summary fields. |
+| Session summary | Template required | `skills/session-archiving/assets/session-summary-template.md` | Copy-ready handoff template now exists. |
 | Workspace task record | Template required | `workspace/TASK_TEMPLATE.md` | Existing canonical template. |
 | Task board | Embedded contract | `skills/the-worker/SKILL.md` and `workspace/task_board.md` | One live index. No separate copy template is needed now. |
 | Condensed Mode discussion register | Embedded contract | `skills/conversation-mode/SKILL.md` and `workspace/discussion.md` | Fixed headings, ordering, and entry rules. |
@@ -43,7 +43,7 @@ Do not create a second template when an owning workflow already defines the requ
 | Drawing-session manifest | Generator-owned | `images/takeout/README.md` and `skills/session-archiving/references/archive-and-delivery.md` | Required columns and generated fields are documented. Check processor tests before changing the schema. |
 | Conversion report CSV | Generator-owned | `skills/session-archiving/scripts/process_takeout.py` | Script creates the report. Validate through processor tests, not a hand-edited template. |
 | Publication verification report | Generator-owned | `skills/session-archiving/scripts/verify_published_manifest.py` and related processor code | Inspect the report generator before defining any separate template. |
-| Agent Skill definition | Template required | Agent Skills specification and `skills/agent-skill-authoring/SKILL.md` | Format rules exist. Add a copy-ready `SKILL.md` template. |
+| Agent Skill definition | Template required | `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md` | Copy-ready `SKILL.md` template now exists. |
 | Skill index and activation files | Embedded contract | `skills/README.md`, `skills/SESSION_START.md`, `skills/INITIALIZATION_POLICY.md` | Each has a distinct ownership role. Do not force one generic index template. |
 | Master image, pose, and prompt catalogues | Lightweight pattern | `master/Images.md`, `master/Poses.md`, `master/Prompts.md` | These are living reference collections, not repeated individual records. Review consistency before defining a shared pattern. |
 | Technical skill references | Lightweight pattern | Owning skill and repository writing policy | Use type-specific headings. No universal section layout is appropriate. |
@@ -57,11 +57,9 @@ Do not mass-migrate untouched legacy novel records. Use the current template for
 
 ## Priority gaps
 
-1. Add standalone templates for drawing session briefs, daily drawing indexes, conversation-integrity records, and session summaries.
-2. Add a copy-ready Agent Skill template.
-3. Review the hand-off YAML and manifest contracts for machine validation.
-4. Review the three master catalogues for shared lightweight structure.
-5. Check remaining project-specific record types against this catalog before declaring inventory complete.
+1. Review the hand-off YAML and manifest contracts for machine validation.
+2. Review the three master catalogues for shared lightweight structure.
+3. Check remaining project-specific record types against this catalog before declaring inventory complete.
 
 ## Catalog maintenance
 
