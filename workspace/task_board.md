@@ -1,6 +1,6 @@
 # Task Board
 
-Last updated: 2026-11-21
+Last updated: 2026-11-22
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
@@ -10,7 +10,7 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-
+| 20261122-233900 | Enforce template-first document standards | P1 | In Progress | User | 2026-11-22 | [Task record](tasks/20261122-233900-enforce-template-first-document-standards.md) |
 
 ## In Progress
 
