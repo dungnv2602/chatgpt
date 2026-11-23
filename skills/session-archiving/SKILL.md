@@ -12,6 +12,8 @@ metadata:
 
 **Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `drawings/`, `skills/`, `workspace/`, and `archive/`. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specifically authorized workflow exception below.
 
+**Authorized archive-retention index exception:** The user authorized exact read/write access to `.github/archive-retention-index.json` only to register a newly archived task record's exact path and UTC archive timestamp. Do not list or scan `archive/tasks/` to backfill this index.
+
 **Authorized WebP workflow exception:** The user authorized creation of `.github/workflows/convert-images-to-webp.yml` on 12 November 2026. The user approved its takeout-pipeline and persistent staging changes on 20 November 2026. The user also approved moving its scripts into this skill and updating the required workflow paths. These changes define the current authorization. Ask for fresh permission before any further workflow changes.
 
 This boundary applies to every future task and every tool call, not only archiving.
@@ -39,7 +41,7 @@ This boundary applies to every future task and every tool call, not only archivi
 - Working branch: `gpt`
 - Workspace root: repository root, restricted to the approved directories above
 - Active task records: `workspace/`
-- Completed and cancelled task records: `archive/`, with 14-day retention. Archived records are readable but immutable after their initial write. Only the scheduled retention workflow may delete them.
+- Completed and cancelled task records: `archive/`, with 90-day per-record retention. Archived records are readable but immutable after their initial write. Only the scheduled retention workflow may delete them.
 - Images and visual references: `images/`
 - Canonical master reference documents: `master/`
 - Novel and scene records: `novels/`
