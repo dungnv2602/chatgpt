@@ -1,54 +1,54 @@
 {
   "schema_version": "1.0.0",
   "source_run": {
-    "id": "45170616922",
-    "number": 59,
+    "id": "45170694728",
+    "number": 113,
     "attempt": 1,
-    "workflow_id": 422582294,
-    "workflow_name": "Process Image Takeout and Create WebP Derivatives",
-    "workflow_path": ".github/workflows/convert-images-to-webp.yml",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45170616922",
+    "workflow_id": 427313089,
+    "workflow_name": "Validate Document Standards",
+    "workflow_path": ".github/workflows/validate-document-standards.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45170694728",
     "event": "push",
     "branch": "gpt",
-    "head_sha": "9536c9d8e0b5107e10b22b1004c5064f222de16d",
-    "status": "in_progress",
-    "conclusion": null,
-    "created_at": "2026-11-23T12:02:55Z",
-    "run_started_at": "2026-11-23T12:02:55Z",
-    "updated_at": "2026-11-23T12:03:42Z",
+    "head_sha": "148e225e7472d80a785e7a27a2708f93ea05bd60",
+    "status": "completed",
+    "conclusion": "cancelled",
+    "created_at": "2026-11-23T12:03:26Z",
+    "run_started_at": "2026-11-23T12:03:26Z",
+    "updated_at": "2026-11-23T12:03:43Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
-    "head_commit_message": "Fix final references to migrated Worker procedures"
+    "head_commit_message": "Remove absorbed skill files"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-23T12:03:56Z",
-    "completeness": "Incomplete",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T12:07:38Z",
+    "completeness": "Complete",
     "reporter_job": {
-      "id": "137679195468",
+      "id": "137679268730",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "cancelled"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "success",
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
     "primary_category": null,
     "categories": [],
     "issues": []
   },
   "jobs": [
     {
-      "id": "137678873857",
-      "name": "process-image-takeout",
+      "id": "137679149579",
+      "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-23T12:02:57Z",
-      "completed_at": "2026-11-23T12:03:32Z",
-      "runner_name": "GitHub Actions 1000001467",
-      "runner_id": 1000001467,
+      "started_at": "2026-11-23T12:03:29Z",
+      "completed_at": "2026-11-23T12:03:40Z",
+      "runner_name": "GitHub Actions 1000001473",
+      "runner_id": 1000001473,
       "runner_group_name": "GitHub Actions",
       "runner_group_id": 0,
       "steps": [
@@ -57,121 +57,103 @@
           "name": "Set up job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:02:58Z",
-          "completed_at": "2026-11-23T12:02:58Z"
+          "started_at": "2026-11-23T12:03:29Z",
+          "completed_at": "2026-11-23T12:03:30Z"
         },
         {
           "number": 2,
           "name": "Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:02:59Z",
-          "completed_at": "2026-11-23T12:03:10Z"
+          "started_at": "2026-11-23T12:03:30Z",
+          "completed_at": "2026-11-23T12:03:37Z"
         },
         {
           "number": 3,
-          "name": "Install WebP encoder and YAML parser",
+          "name": "Set up Python",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:03:10Z",
-          "completed_at": "2026-11-23T12:03:25Z"
+          "started_at": "2026-11-23T12:03:37Z",
+          "completed_at": "2026-11-23T12:03:37Z"
         },
         {
           "number": 4,
-          "name": "Compile takeout processor and publication verifier",
+          "name": "Run catalog validator regression tests",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:03:25Z",
-          "completed_at": "2026-11-23T12:03:25Z"
+          "started_at": "2026-11-23T12:03:37Z",
+          "completed_at": "2026-11-23T12:03:37Z"
         },
         {
           "number": 5,
-          "name": "Test takeout processor",
+          "name": "Validate the document type catalog",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:03:25Z",
-          "completed_at": "2026-11-23T12:03:29Z"
-        },
-        {
-          "number": 6,
-          "name": "Process takeout hand-off",
-          "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-23T12:03:29Z",
-          "completed_at": "2026-11-23T12:03:29Z"
-        },
-        {
-          "number": 7,
-          "name": "Commit and safely publish processed assets and reports",
-          "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-23T12:03:29Z",
-          "completed_at": "2026-11-23T12:03:29Z"
-        },
-        {
-          "number": 8,
-          "name": "Verify published assets and GitHub links",
-          "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-23T12:03:29Z",
-          "completed_at": "2026-11-23T12:03:30Z"
+          "started_at": "2026-11-23T12:03:37Z",
+          "completed_at": "2026-11-23T12:03:37Z"
         },
         {
           "number": 9,
-          "name": "Mark processing failures",
+          "name": "Post Set up Python",
           "status": "completed",
-          "conclusion": "skipped",
-          "started_at": "2026-11-23T12:03:30Z",
-          "completed_at": "2026-11-23T12:03:30Z"
+          "conclusion": "success",
+          "started_at": "2026-11-23T12:03:37Z",
+          "completed_at": "2026-11-23T12:03:37Z"
         },
         {
-          "number": 18,
+          "number": 10,
           "name": "Post Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:03:30Z",
-          "completed_at": "2026-11-23T12:03:31Z"
+          "started_at": "2026-11-23T12:03:37Z",
+          "completed_at": "2026-11-23T12:03:38Z"
         },
         {
-          "number": 19,
+          "number": 11,
           "name": "Complete job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:03:31Z",
-          "completed_at": "2026-11-23T12:03:31Z"
+          "started_at": "2026-11-23T12:03:38Z",
+          "completed_at": "2026-11-23T12:03:38Z"
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
-        "path": "logs/job-137678873857.log",
-        "error": "run 45170616922 is still in progress; logs will be available when it is complete\n",
+        "bytes": 30148,
+        "path": "logs/job-137679149579.log",
+        "error": null,
         "marker_lines": []
       }
     }
   ],
   "check_runs": [
     {
-      "id": "137678873857",
-      "name": "process-image-takeout",
+      "id": "137679149579",
+      "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-23T12:02:57Z",
-      "completed_at": "2026-11-23T12:03:32Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45170616922/job/137678873857",
+      "started_at": "2026-11-23T12:03:29Z",
+      "completed_at": "2026-11-23T12:03:40Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45170694728/job/137679149579",
       "app": "GitHub Actions",
-      "annotations_count": 0
+      "annotations_count": 1
     }
   ],
-  "annotations": [],
-  "artifacts": [],
-  "capture_errors": [
+  "annotations": [
     {
-      "source": "job_log",
-      "job_id": "137678873857",
-      "message": "run 45170616922 is still in progress; logs will be available when it is complete\n"
+      "check_run_id": "137679149579",
+      "job_id": "137679149579",
+      "path": ".github",
+      "start_line": 2,
+      "end_line": 2,
+      "level": "warning",
+      "title": "",
+      "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+      "raw_details": ""
     }
   ],
-  "history_path": "history/422582294/45170616922-attempt-1-pre_finalizer"
+  "artifacts": [],
+  "capture_errors": [],
+  "history_path": "history/427313089/45170694728-attempt-1-post_run"
 }

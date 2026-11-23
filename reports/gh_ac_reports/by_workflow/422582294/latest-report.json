@@ -11,30 +11,30 @@
     "event": "push",
     "branch": "gpt",
     "head_sha": "9536c9d8e0b5107e10b22b1004c5064f222de16d",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "success",
     "created_at": "2026-11-23T12:02:55Z",
     "run_started_at": "2026-11-23T12:02:55Z",
-    "updated_at": "2026-11-23T12:03:42Z",
+    "updated_at": "2026-11-23T12:04:01Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "Fix final references to migrated Worker procedures"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-23T12:03:56Z",
-    "completeness": "Incomplete",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T12:06:42Z",
+    "completeness": "Complete",
     "reporter_job": {
       "id": "137679195468",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "success",
+    "state": "success",
+    "observed_conclusion": "success",
+    "projected_conclusion": null,
     "primary_category": null,
     "categories": [],
     "issues": []
@@ -142,12 +142,20 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 60466,
         "path": "logs/job-137678873857.log",
-        "error": "run 45170616922 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "process-image-takeout\tCommit and safely publish processed assets and reports\t2026-11-23T12:03:29.5619976Z ^[[36;1m  commit_message=\"chore(images): archive failed takeout diagnostics\"^[[0m",
+          "process-image-takeout\tCommit and safely publish processed assets and reports\t2026-11-23T12:03:29.5624158Z ^[[36;1m    echo \"::error::Could not rebase takeout changes cleanly. No remote changes were overwritten.\"^[[0m",
+          "process-image-takeout\tCommit and safely publish processed assets and reports\t2026-11-23T12:03:29.5626945Z ^[[36;1m    echo \"::error::Push failed although origin/gpt did not advance. Check token permissions or branch protection.\"^[[0m",
+          "process-image-takeout\tCommit and safely publish processed assets and reports\t2026-11-23T12:03:29.5628638Z ^[[36;1mecho \"::error::Could not publish after $max_attempts synchronization attempts.\"^[[0m",
+          "process-image-takeout\tVerify published assets and GitHub links\t2026-11-23T12:03:30.1436391Z ^[[36;1m      echo \"::error::Could not rebase manifest verification onto the latest gpt branch.\"^[[0m",
+          "process-image-takeout\tVerify published assets and GitHub links\t2026-11-23T12:03:30.1438613Z ^[[36;1m      echo \"::error::Could not publish verified manifest; origin/gpt did not advance.\"^[[0m",
+          "process-image-takeout\tVerify published assets and GitHub links\t2026-11-23T12:03:30.1439670Z ^[[36;1m      echo \"::error::Could not publish verified manifest after $max_attempts attempts.\"^[[0m"
+        ]
       }
     }
   ],
@@ -166,12 +174,6 @@
   ],
   "annotations": [],
   "artifacts": [],
-  "capture_errors": [
-    {
-      "source": "job_log",
-      "job_id": "137678873857",
-      "message": "run 45170616922 is still in progress; logs will be available when it is complete\n"
-    }
-  ],
-  "history_path": "history/422582294/45170616922-attempt-1-pre_finalizer"
+  "capture_errors": [],
+  "history_path": "history/422582294/45170616922-attempt-1-post_run"
 }

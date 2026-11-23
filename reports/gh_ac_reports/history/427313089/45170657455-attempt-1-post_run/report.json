@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45170657455",
+    "number": 107,
+    "attempt": 1,
+    "workflow_id": 427313089,
+    "workflow_name": "Validate Document Standards",
+    "workflow_path": ".github/workflows/validate-document-standards.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45170657455",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "9f269a63fe2a3166e92cd22f37d5a32a7376c04c",
+    "status": "completed",
+    "conclusion": "cancelled",
+    "created_at": "2026-11-23T12:03:11Z",
+    "run_started_at": "2026-11-23T12:03:11Z",
+    "updated_at": "2026-11-23T12:03:19Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Remove absorbed Session Archiving skill files"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T12:07:11Z",
+    "completeness": "Incomplete",
+    "reporter_job": {
+      "id": "137679034901",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "cancelled"
+    }
+  },
+  "classification": {
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
+    "primary_category": null,
+    "categories": [],
+    "issues": []
+  },
+  "jobs": [
+    {
+      "id": "137679018218",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "started_at": "2026-11-23T12:03:12Z",
+      "completed_at": "2026-11-23T12:03:14Z",
+      "runner_name": "",
+      "runner_id": 0,
+      "runner_group_name": "",
+      "runner_group_id": 0,
+      "steps": [],
+      "log_capture": {
+        "available": false,
+        "truncated": false,
+        "bytes": 29,
+        "path": "logs/job-137679018218.log",
+        "error": "log not found: 137679018218\n",
+        "marker_lines": []
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "137679018218",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "started_at": "2026-11-23T12:03:12Z",
+      "completed_at": "2026-11-23T12:03:14Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45170657455/job/137679018218",
+      "app": "GitHub Actions",
+      "annotations_count": 1
+    }
+  ],
+  "annotations": [
+    {
+      "check_run_id": "137679018218",
+      "job_id": "137679018218",
+      "path": ".github",
+      "start_line": 1,
+      "end_line": 1,
+      "level": "failure",
+      "title": "",
+      "message": "Canceling since a higher priority waiting request for document-standards-refs/heads/gpt exists",
+      "raw_details": ""
+    }
+  ],
+  "artifacts": [],
+  "capture_errors": [
+    {
+      "source": "job_log",
+      "job_id": "137679018218",
+      "message": "log not found: 137679018218\n"
+    }
+  ],
+  "history_path": "history/427313089/45170657455-attempt-1-post_run"
+}

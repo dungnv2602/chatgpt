@@ -1,43 +1,43 @@
-# Process Image Takeout and Create WebP Derivatives — run 45170616922
+# Validate Document Standards — run 45170694728
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | Process Image Takeout and Create WebP Derivatives |
-| Workflow path | .github/workflows/convert-images-to-webp.yml |
-| Run / attempt | 45170616922 / 1 |
-| Run number | 59 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45170616922 |
+| Workflow | Validate Document Standards |
+| Workflow path | .github/workflows/validate-document-standards.yml |
+| Run / attempt | 45170694728 / 1 |
+| Run number | 113 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45170694728 |
 | Branch | gpt |
-| Commit | 9536c9d8e0b5107e10b22b1004c5064f222de16d |
+| Commit | 148e225e7472d80a785e7a27a2708f93ea05bd60 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T12:02:55Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | success |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T12:03:56Z |
+| Created (UTC) | 2026-11-23T12:03:26Z |
+| Status at capture | completed |
+| Observed conclusion | cancelled |
+| Projected conclusion | Not calculated |
+| Reporter job | completed / cancelled |
+| Capture stage | post_run |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-23T12:07:38Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
+| State | cancelled |
 | Primary category | None |
 | Jobs | 1 |
-| Steps | 11 |
+| Steps | 8 |
 | Issues | 0 |
-| Annotations | 0 |
+| Annotations | 1 |
 | Artifacts | 0 |
-| Capture errors | 1 |
+| Capture errors | 0 |
 
 ## Failure classification
 
-No failure category identified. The parent run is still in progress. The projected conclusion is provisional.
+No failure category identified.
 
 The run conclusion records the workflow outcome. A cancelled run remains in history. Cancellation alone does not create an actionable issue. The generator also excludes known downstream status-propagation steps after cancellation.
 
@@ -45,7 +45,7 @@ The run conclusion records the workflow outcome. A cancelled run remains in hist
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 137678873857 | process-image-takeout | completed | success | 11 | logs/job-137678873857.log |
+| 137679149579 | validate-document-standards | completed | success | 8 | logs/job-137679149579.log |
 
 ## Actionable step outcomes
 
@@ -53,7 +53,9 @@ No records were captured.
 
 ## Check annotations
 
-No records were captured.
+| Job | Level | Path | Line | Title | Message |
+| --- | --- | --- | --- | --- | --- |
+| 137679149579 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
 
 ## Artifacts
 
@@ -63,15 +65,11 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137678873857 | process-image-takeout | logs/job-137678873857.log | 82 | False |  |
+| 137679149579 | validate-document-standards | logs/job-137679149579.log | 30148 | False |  |
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | run 45170616922 is still in progress; logs will be available when it is complete  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 

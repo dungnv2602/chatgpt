@@ -1,4 +1,4 @@
-# Validate Document Standards — run 45170376944
+# Validate Document Standards — run 45170694728
 
 ## Run identity
 
@@ -6,21 +6,21 @@
 | --- | --- |
 | Workflow | Validate Document Standards |
 | Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45170376944 / 1 |
-| Run number | 93 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45170376944 |
+| Run / attempt | 45170694728 / 1 |
+| Run number | 113 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45170694728 |
 | Branch | gpt |
-| Commit | 14b1d5c9831389539a0d1426de762ba53d4123a1 |
+| Commit | 148e225e7472d80a785e7a27a2708f93ea05bd60 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T12:01:19Z |
+| Created (UTC) | 2026-11-23T12:03:26Z |
 | Status at capture | completed |
 | Observed conclusion | cancelled |
 | Projected conclusion | Not calculated |
-| Reporter job | Not captured |
+| Reporter job | completed / cancelled |
 | Capture stage | post_run |
 | Completeness | Complete |
-| Captured (UTC) | 2026-11-23T12:03:31Z |
+| Captured (UTC) | 2026-11-23T12:07:38Z |
 
 ## Executive summary
 
@@ -28,10 +28,10 @@
 | --- | --- |
 | State | cancelled |
 | Primary category | None |
-| Jobs | 0 |
-| Steps | 0 |
+| Jobs | 1 |
+| Steps | 8 |
 | Issues | 0 |
-| Annotations | 0 |
+| Annotations | 1 |
 | Artifacts | 0 |
 | Capture errors | 0 |
 
@@ -43,7 +43,9 @@ The run conclusion records the workflow outcome. A cancelled run remains in hist
 
 ## Jobs and steps
 
-No records were captured.
+| Job ID | Job | Status | Conclusion | Steps | Log |
+| --- | --- | --- | --- | --- | --- |
+| 137679149579 | validate-document-standards | completed | success | 8 | logs/job-137679149579.log |
 
 ## Actionable step outcomes
 
@@ -51,7 +53,9 @@ No records were captured.
 
 ## Check annotations
 
-No records were captured.
+| Job | Level | Path | Line | Title | Message |
+| --- | --- | --- | --- | --- | --- |
+| 137679149579 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
 
 ## Artifacts
 
@@ -59,7 +63,9 @@ No records were captured.
 
 ## Captured job logs
 
-No records were captured.
+| Job | Name | File | Bytes | Truncated | Markers |
+| --- | --- | --- | --- | --- | --- |
+| 137679149579 | validate-document-standards | logs/job-137679149579.log | 30148 | False |  |
 
 ## Evidence coverage
 

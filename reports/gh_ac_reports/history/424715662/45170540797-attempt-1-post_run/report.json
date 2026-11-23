@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45170540797",
+    "number": 512,
+    "attempt": 1,
+    "workflow_id": 424715662,
+    "workflow_name": "STE Lint Changed Documentation",
+    "workflow_path": ".github/workflows/ste-lint-changed.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45170540797",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "66874f6a9f8565957a0eefc8eb7b9858403d37e3",
+    "status": "completed",
+    "conclusion": "cancelled",
+    "created_at": "2026-11-23T12:02:23Z",
+    "run_started_at": "2026-11-23T12:02:23Z",
+    "updated_at": "2026-11-23T12:02:59Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Remove empty compatibility-entry section"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T12:06:38Z",
+    "completeness": "Complete",
+    "reporter_job": null
+  },
+  "classification": {
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
+    "primary_category": null,
+    "categories": [],
+    "issues": []
+  },
+  "jobs": [],
+  "check_runs": [],
+  "annotations": [],
+  "artifacts": [],
+  "capture_errors": [],
+  "history_path": "history/424715662/45170540797-attempt-1-post_run"
+}

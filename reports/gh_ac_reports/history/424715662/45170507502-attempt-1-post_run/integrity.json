@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "captured_at_utc": "2026-11-23T12:06:26Z",
+  "file_count": 2,
+  "files": {
+    "report.json": "9aa2b47a5dd40bbf7dcbb7f4db3646914ea0eec54d33a10d869a9e86548c39de",
+    "report.md": "d47894486ece49d5bbac78b16fb417a03d478d003f1cdc6a3ba21e04f26c9a7f"
+  }
+}

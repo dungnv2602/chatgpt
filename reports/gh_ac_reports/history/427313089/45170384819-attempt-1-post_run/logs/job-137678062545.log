@@ -1,0 +1,302 @@
+validate-document-standards	Set up job	﻿2026-11-23T12:01:25.5863890Z Current runner version: '2.338.2'
+validate-document-standards	Set up job	2026-11-23T12:01:25.5942411Z ##[group]Runner Image Provisioner
+validate-document-standards	Set up job	2026-11-23T12:01:25.5944207Z Hosted Compute Agent
+validate-document-standards	Set up job	2026-11-23T12:01:25.5965603Z Version: 20261111.635
+validate-document-standards	Set up job	2026-11-23T12:01:25.5966687Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+validate-document-standards	Set up job	2026-11-23T12:01:25.5967810Z Build Date: 2026-11-11T01:49:01Z
+validate-document-standards	Set up job	2026-11-23T12:01:25.5968717Z Worker ID: {256f3710-fc7b-47fb-8772-5bc90abc80fe}
+validate-document-standards	Set up job	2026-11-23T12:01:25.5969780Z Region: eastus2
+validate-document-standards	Set up job	2026-11-23T12:01:25.5970586Z Cloud: Azure
+validate-document-standards	Set up job	2026-11-23T12:01:25.5971290Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-23T12:01:25.5973496Z ##[group]Operating System
+validate-document-standards	Set up job	2026-11-23T12:01:25.5974350Z Ubuntu
+validate-document-standards	Set up job	2026-11-23T12:01:25.5975318Z 26.04.1
+validate-document-standards	Set up job	2026-11-23T12:01:25.5976125Z LTS
+validate-document-standards	Set up job	2026-11-23T12:01:25.5976831Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-23T12:01:25.5977601Z ##[group]Runner Image
+validate-document-standards	Set up job	2026-11-23T12:01:25.5978432Z Image: ubuntu-26.04
+validate-document-standards	Set up job	2026-11-23T12:01:25.5979261Z Version: 20261116.202.1
+validate-document-standards	Set up job	2026-11-23T12:01:25.5980873Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+validate-document-standards	Set up job	2026-11-23T12:01:25.5983357Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+validate-document-standards	Set up job	2026-11-23T12:01:25.5984702Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-23T12:01:25.6006919Z ##[group]GITHUB_TOKEN Permissions
+validate-document-standards	Set up job	2026-11-23T12:01:25.6010277Z Contents: read
+validate-document-standards	Set up job	2026-11-23T12:01:25.6011099Z Metadata: read
+validate-document-standards	Set up job	2026-11-23T12:01:25.6011802Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-23T12:01:25.6015157Z Secret source: Actions
+validate-document-standards	Set up job	2026-11-23T12:01:25.6016441Z Cache mode: write
+validate-document-standards	Set up job	2026-11-23T12:01:25.6017843Z Prepare workflow directory
+validate-document-standards	Set up job	2026-11-23T12:01:25.6986569Z Prepare all required actions
+validate-document-standards	Set up job	2026-11-23T12:01:25.7062085Z Getting action download info
+validate-document-standards	Set up job	2026-11-23T12:01:25.8982406Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+validate-document-standards	Set up job	2026-11-23T12:01:25.9973434Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+validate-document-standards	Set up job	2026-11-23T12:01:26.1838905Z Complete job name: validate-document-standards
+validate-document-standards	Check out gpt	﻿2026-11-23T12:01:26.2647541Z ##[group]Run actions/checkout@v7.0.1
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2648920Z with:
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2649676Z   ref: gpt
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2650392Z   fetch-depth: 1
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2651162Z   repository: dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2657128Z   token: [REDACTED]
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2658016Z   ssh-strict: true
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2658875Z   ssh-user: git
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2659560Z   persist-credentials: true
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2660273Z   clean: true
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2661004Z   sparse-checkout-cone-mode: true
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2661875Z   fetch-tags: false
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2662697Z   show-progress: true
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2663465Z   lfs: false
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2664207Z   submodules: false
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2665158Z   set-safe-directory: true
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2666062Z   allow-unsafe-pr-checkout: false
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.2667361Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.6636501Z Syncing repository: dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.6641001Z ##[group]Getting Git version info
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.6642937Z Working directory is '/home/runner/work/chatgpt/chatgpt'
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.6657047Z [command]/usr/bin/git version
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.6658761Z git version 2.56.1
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.6662653Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.6671096Z Temporarily overriding HOME='/home/runner/work/_temp/e5b8bed1-61c6-472e-85f0-3b3d539bc573' before making global git config changes
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.6673702Z Adding repository directory to the temporary git global config as a safe directory
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.6676283Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.6679743Z Deleting the contents of '/home/runner/work/chatgpt/chatgpt'
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.6681817Z ##[group]Determining repository object format
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8253024Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8262332Z ##[group]Initializing the repository
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8265765Z [command]/usr/bin/git init /home/runner/work/chatgpt/chatgpt
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8425905Z hint: Using 'master' as the name for the initial branch. This default branch name
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8430353Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8433147Z hint: to use in all of your new repositories, which will suppress this warning,
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8450591Z hint: call:
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8451869Z hint:
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8453334Z hint: 	git config --global init.defaultBranch <name>
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8454411Z hint:
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8455547Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8458391Z hint: 'development'. The just-created branch can be renamed via this command:
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8476589Z hint:
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8477731Z hint: 	git branch -m <name>
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8478651Z hint:
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8479629Z hint: Disable this message with "git config set advice.defaultBranchName false"
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8480958Z Initialized empty Git repository in /home/runner/work/chatgpt/chatgpt/.git/
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8483531Z [command]/usr/bin/git remote add origin https://github.com/dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8533838Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8536238Z ##[group]Disabling automatic garbage collection
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8539459Z [command]/usr/bin/git config --local gc.auto 0
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8609551Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8612133Z ##[group]Setting up auth
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8613774Z Removing SSH command configuration
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8615477Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.8661253Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.9150798Z Removing HTTP extra header
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.9152333Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.9183912Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.9419310Z Removing includeIf entries pointing to credentials config files
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.9423301Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.9457781Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.9695783Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-4f3ad0da-6869-4c89-9322-0416030c2bc5.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.9735251Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path /home/runner/work/_temp/git-credentials-4f3ad0da-6869-4c89-9322-0416030c2bc5.config
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.9769485Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-4f3ad0da-6869-4c89-9322-0416030c2bc5.config
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.9806973Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-4f3ad0da-6869-4c89-9322-0416030c2bc5.config
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.9841370Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-4f3ad0da-6869-4c89-9322-0416030c2bc5.config
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.9873155Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.9875243Z ##[group]Fetching the repository
+validate-document-standards	Check out gpt	2026-11-23T12:01:26.9881005Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/gpt*:refs/remotes/origin/gpt* +refs/tags/gpt*:refs/tags/gpt*
+validate-document-standards	Check out gpt	2026-11-23T12:01:34.1959959Z From https://github.com/dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-23T12:01:34.1961188Z  * [new branch]      gpt        -> origin/gpt
+validate-document-standards	Check out gpt	2026-11-23T12:01:34.1968396Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:01:34.1969745Z ##[group]Determining the checkout info
+validate-document-standards	Check out gpt	2026-11-23T12:01:34.1976194Z [command]/usr/bin/git branch --list --remote origin/gpt
+validate-document-standards	Check out gpt	2026-11-23T12:01:34.2015061Z   origin/gpt
+validate-document-standards	Check out gpt	2026-11-23T12:01:34.2018075Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:01:34.2077145Z [command]/usr/bin/git sparse-checkout disable
+validate-document-standards	Check out gpt	2026-11-23T12:01:34.2083180Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+validate-document-standards	Check out gpt	2026-11-23T12:01:34.2128556Z ##[group]Checking out the ref
+validate-document-standards	Check out gpt	2026-11-23T12:01:34.2130003Z [command]/usr/bin/git checkout --progress --force -B gpt refs/remotes/origin/gpt
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2215286Z Updating files:  16% (602/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2236718Z Updating files:  17% (621/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2250311Z Updating files:  18% (657/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2275833Z Updating files:  19% (694/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2305898Z Updating files:  20% (730/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2325733Z Updating files:  21% (767/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2355251Z Updating files:  22% (803/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2361526Z Updating files:  23% (840/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2380533Z Updating files:  24% (876/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2401664Z Updating files:  25% (912/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2485848Z Updating files:  26% (949/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2487038Z Updating files:  27% (985/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2583680Z Updating files:  28% (1022/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2585049Z Updating files:  29% (1058/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2786392Z Updating files:  30% (1095/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2787385Z Updating files:  31% (1131/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2935085Z Updating files:  32% (1168/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2942790Z Updating files:  33% (1204/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2953736Z Updating files:  34% (1241/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.2955187Z Updating files:  35% (1277/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3033976Z Updating files:  36% (1314/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3034778Z Updating files:  37% (1350/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3039304Z Updating files:  38% (1387/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3040721Z Updating files:  39% (1423/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3082105Z Updating files:  40% (1460/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3106482Z Updating files:  41% (1496/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3107231Z Updating files:  42% (1533/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3107767Z Updating files:  43% (1569/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3108262Z Updating files:  44% (1606/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3108775Z Updating files:  45% (1642/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3109275Z Updating files:  46% (1679/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3109779Z Updating files:  47% (1715/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3110384Z Updating files:  48% (1752/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3110869Z Updating files:  49% (1788/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3111986Z Updating files:  50% (1824/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3112506Z Updating files:  51% (1861/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3113012Z Updating files:  52% (1897/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3113562Z Updating files:  53% (1934/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3114059Z Updating files:  54% (1970/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3114565Z Updating files:  55% (2007/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3125760Z Updating files:  56% (2043/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3126421Z Updating files:  57% (2080/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3127072Z Updating files:  58% (2116/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3127579Z Updating files:  59% (2153/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3128097Z Updating files:  60% (2189/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3128623Z Updating files:  61% (2226/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3129149Z Updating files:  62% (2262/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3129687Z Updating files:  63% (2299/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3180205Z Updating files:  64% (2335/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3187402Z Updating files:  65% (2372/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3200248Z Updating files:  66% (2408/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3201191Z Updating files:  67% (2445/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3259881Z Updating files:  68% (2481/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3275551Z Updating files:  69% (2518/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3388326Z Updating files:  70% (2554/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3390478Z Updating files:  71% (2591/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3392285Z Updating files:  72% (2627/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3392893Z Updating files:  73% (2664/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3393416Z Updating files:  74% (2700/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3393860Z Updating files:  75% (2736/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3394360Z Updating files:  76% (2773/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3394767Z Updating files:  77% (2809/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3395364Z Updating files:  78% (2846/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3396189Z Updating files:  79% (2882/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3400095Z Updating files:  80% (2919/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3415125Z Updating files:  81% (2955/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3425611Z Updating files:  82% (2992/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3434679Z Updating files:  83% (3028/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3448421Z Updating files:  84% (3065/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3470806Z Updating files:  85% (3101/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3484755Z Updating files:  86% (3138/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3502285Z Updating files:  87% (3174/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3518319Z Updating files:  88% (3211/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3631597Z Updating files:  89% (3247/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3632187Z Updating files:  90% (3284/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3632838Z Updating files:  91% (3320/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3633347Z Updating files:  92% (3357/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.3869029Z Updating files:  93% (3393/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.4305989Z Updating files:  94% (3430/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.4353469Z Updating files:  95% (3466/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.4417334Z Updating files:  96% (3503/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.4499779Z Updating files:  97% (3539/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.4534697Z Updating files:  98% (3576/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.4570446Z Updating files:  99% (3612/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.4579264Z Updating files: 100% (3648/3648)
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.4659442Z Updating files: 100% (3648/3648), done.
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.4676134Z Switched to a new branch 'gpt'
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.4705713Z branch 'gpt' set up to track 'origin/gpt'.
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.4799296Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.4826849Z [command]/usr/bin/git log -1 --format=%H
+validate-document-standards	Check out gpt	2026-11-23T12:01:35.4857276Z 01b96f84ca014d4634419b0dc943686820f11b23
+validate-document-standards	Set up Python	﻿2026-11-23T12:01:35.5129609Z ##[group]Run actions/setup-python@v5
+validate-document-standards	Set up Python	2026-11-23T12:01:35.5130069Z with:
+validate-document-standards	Set up Python	2026-11-23T12:01:35.5130382Z   python-version: 3.x
+validate-document-standards	Set up Python	2026-11-23T12:01:35.5130729Z   check-latest: false
+validate-document-standards	Set up Python	2026-11-23T12:01:35.5133244Z   token: [REDACTED]
+validate-document-standards	Set up Python	2026-11-23T12:01:35.5133631Z   update-environment: true
+validate-document-standards	Set up Python	2026-11-23T12:01:35.5133999Z   allow-prereleases: false
+validate-document-standards	Set up Python	2026-11-23T12:01:35.5134329Z   freethreaded: false
+validate-document-standards	Set up Python	2026-11-23T12:01:35.5134662Z ##[endgroup]
+validate-document-standards	Set up Python	2026-11-23T12:01:35.6517050Z ##[group]Installed versions
+validate-document-standards	Set up Python	2026-11-23T12:01:35.6687379Z (node:2165) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+validate-document-standards	Set up Python	2026-11-23T12:01:35.6688828Z (Use `node --trace-deprecation ...` to show where the warning was created)
+validate-document-standards	Set up Python	2026-11-23T12:01:35.6706440Z Successfully set up CPython (3.15.2)
+validate-document-standards	Set up Python	2026-11-23T12:01:35.6716218Z ##[endgroup]
+validate-document-standards	Run catalog validator regression tests	﻿2026-11-23T12:01:35.6922391Z ##[group]Run python -m unittest discover \
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:35.6923081Z ^[[36;1mpython -m unittest discover \^[[0m
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:35.6923824Z ^[[36;1m  -s skills/document-standards/scripts \^[[0m
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:35.6924435Z ^[[36;1m  -p 'test_validate_catalog.py' \^[[0m
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:35.6925220Z ^[[36;1m  -v^[[0m
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:35.6987477Z shell: /usr/bin/bash -e {0}
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:35.6988192Z env:
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:35.6988840Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:35.6989699Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:35.6990504Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:35.6991594Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:35.6992537Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:35.6993252Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:35.6993842Z ##[endgroup]
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1627073Z test_directory_reference_is_rejected (test_validate_catalog.CatalogValidatorTests.test_directory_reference_is_rejected) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1639988Z test_duplicate_document_type_fails (test_validate_catalog.CatalogValidatorTests.test_duplicate_document_type_fails) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1655198Z test_embedded_contract_requires_owner_and_live_record (test_validate_catalog.CatalogValidatorTests.test_embedded_contract_requires_owner_and_live_record) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1669355Z test_generator_owned_requires_python_authority (test_validate_catalog.CatalogValidatorTests.test_generator_owned_requires_python_authority) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1683909Z test_generator_owned_requires_regression_test_reference (test_validate_catalog.CatalogValidatorTests.test_generator_owned_requires_regression_test_reference) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1704142Z test_github_and_consolidated_report_roots_are_allowed (test_validate_catalog.CatalogValidatorTests.test_github_and_consolidated_report_roots_are_allowed) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1717634Z test_malformed_inventory_row_fails (test_validate_catalog.CatalogValidatorTests.test_malformed_inventory_row_fails) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1734344Z test_misplaced_named_template_is_detected_without_catalog_row (test_validate_catalog.CatalogValidatorTests.test_misplaced_named_template_is_detected_without_catalog_row) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1750030Z test_missing_canonical_path_fails (test_validate_catalog.CatalogValidatorTests.test_missing_canonical_path_fails) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1765499Z test_path_traversal_is_rejected (test_validate_catalog.CatalogValidatorTests.test_path_traversal_is_rejected) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1781222Z test_project_and_workspace_template_locations_are_allowed (test_validate_catalog.CatalogValidatorTests.test_project_and_workspace_template_locations_are_allowed) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1797021Z test_schema_class_requires_regression_test_reference (test_validate_catalog.CatalogValidatorTests.test_schema_class_requires_regression_test_reference) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1812165Z test_skill_template_must_live_in_assets (test_validate_catalog.CatalogValidatorTests.test_skill_template_must_live_in_assets) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1826136Z test_template_class_requires_named_template (test_validate_catalog.CatalogValidatorTests.test_template_class_requires_named_template) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1850844Z test_unknown_document_class_fails (test_validate_catalog.CatalogValidatorTests.test_unknown_document_class_fails) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1865124Z test_valid_catalog_accepts_all_document_classes (test_validate_catalog.CatalogValidatorTests.test_valid_catalog_accepts_all_document_classes) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1866694Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1867282Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1868329Z Ran 16 tests in 0.029s
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1868869Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:01:36.1869197Z OK
+validate-document-standards	Validate the document type catalog	﻿2026-11-23T12:01:36.2024285Z ##[group]Run python skills/document-standards/scripts/validate_catalog.py --root .
+validate-document-standards	Validate the document type catalog	2026-11-23T12:01:36.2025425Z ^[[36;1mpython skills/document-standards/scripts/validate_catalog.py --root .^[[0m
+validate-document-standards	Validate the document type catalog	2026-11-23T12:01:36.2050517Z shell: /usr/bin/bash -e {0}
+validate-document-standards	Validate the document type catalog	2026-11-23T12:01:36.2050976Z env:
+validate-document-standards	Validate the document type catalog	2026-11-23T12:01:36.2051343Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Validate the document type catalog	2026-11-23T12:01:36.2051838Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+validate-document-standards	Validate the document type catalog	2026-11-23T12:01:36.2052444Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Validate the document type catalog	2026-11-23T12:01:36.2052940Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Validate the document type catalog	2026-11-23T12:01:36.2053442Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Validate the document type catalog	2026-11-23T12:01:36.2053908Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+validate-document-standards	Validate the document type catalog	2026-11-23T12:01:36.2054296Z ##[endgroup]
+validate-document-standards	Validate the document type catalog	2026-11-23T12:01:36.2457595Z Catalog validation passed: 31 document type(s), 68 exact reference(s).
+validate-document-standards	Post Set up Python	﻿2026-11-23T12:01:36.2617057Z Post job cleanup.
+validate-document-standards	Post Set up Python	2026-11-23T12:01:36.4000714Z (node:2177) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+validate-document-standards	Post Set up Python	2026-11-23T12:01:36.4003615Z (Use `node --trace-deprecation ...` to show where the warning was created)
+validate-document-standards	Post Check out gpt	﻿2026-11-23T12:01:36.4330770Z Post job cleanup.
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.5534480Z [command]/usr/bin/git version
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.5542273Z git version 2.56.1
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.5547263Z Temporarily overriding HOME='/home/runner/work/_temp/19add1c9-4c8a-4381-96f5-0c341c3eb6ba' before making global git config changes
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.5548678Z Adding repository directory to the temporary git global config as a safe directory
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.5549813Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.5602965Z Removing SSH command configuration
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.5604043Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.5757144Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6138376Z Removing HTTP extra header
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6139510Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6186948Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6766108Z Removing includeIf entries pointing to credentials config files
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6776453Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6799154Z includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6805933Z includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6825983Z includeif.gitdir:/github/workspace/.git.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6827317Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6830693Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6831761Z /home/runner/work/_temp/git-credentials-4f3ad0da-6869-4c89-9322-0416030c2bc5.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6833789Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-4f3ad0da\-6869\-4c89\-9322\-0416030c2bc5\.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6836339Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6874557Z /home/runner/work/_temp/git-credentials-4f3ad0da-6869-4c89-9322-0416030c2bc5.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6879907Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-4f3ad0da\-6869\-4c89\-9322\-0416030c2bc5\.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.6940118Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.7056000Z /github/runner_temp/git-credentials-4f3ad0da-6869-4c89-9322-0416030c2bc5.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.7086972Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-4f3ad0da\-6869\-4c89\-9322\-0416030c2bc5\.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.7149085Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.7159488Z /github/runner_temp/git-credentials-4f3ad0da-6869-4c89-9322-0416030c2bc5.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.7178148Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-4f3ad0da\-6869\-4c89\-9322\-0416030c2bc5\.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.7181716Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+validate-document-standards	Post Check out gpt	2026-11-23T12:01:36.7525326Z Removing credentials config '/home/runner/work/_temp/git-credentials-4f3ad0da-6869-4c89-9322-0416030c2bc5.config'
+validate-document-standards	Complete job	﻿2026-11-23T12:01:36.7694538Z Cleaning up orphan processes
+validate-document-standards	Complete job	2026-11-23T12:01:36.8030839Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

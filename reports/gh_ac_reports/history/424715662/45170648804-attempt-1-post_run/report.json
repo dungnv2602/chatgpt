@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45170648804",
+    "number": 516,
+    "attempt": 1,
+    "workflow_id": 424715662,
+    "workflow_name": "STE Lint Changed Documentation",
+    "workflow_path": ".github/workflows/ste-lint-changed.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45170648804",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "9de41e425b101d4f2d471ffc93d7cf9d9f44b65f",
+    "status": "completed",
+    "conclusion": "cancelled",
+    "created_at": "2026-11-23T12:03:07Z",
+    "run_started_at": "2026-11-23T12:03:07Z",
+    "updated_at": "2026-11-23T12:03:10Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Remove absorbed Session Archiving skill files"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T12:06:58Z",
+    "completeness": "Complete",
+    "reporter_job": null
+  },
+  "classification": {
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
+    "primary_category": null,
+    "categories": [],
+    "issues": []
+  },
+  "jobs": [],
+  "check_runs": [],
+  "annotations": [],
+  "artifacts": [],
+  "capture_errors": [],
+  "history_path": "history/424715662/45170648804-attempt-1-post_run"
+}

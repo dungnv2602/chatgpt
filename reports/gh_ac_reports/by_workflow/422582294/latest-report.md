@@ -14,30 +14,30 @@
 | Event | push |
 | Actor | dungnv2602 |
 | Created (UTC) | 2026-11-23T12:02:55Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | success |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T12:03:56Z |
+| Status at capture | completed |
+| Observed conclusion | success |
+| Projected conclusion | Not calculated |
+| Reporter job | completed / success |
+| Capture stage | post_run |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-23T12:06:42Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
+| State | success |
 | Primary category | None |
 | Jobs | 1 |
 | Steps | 11 |
 | Issues | 0 |
 | Annotations | 0 |
 | Artifacts | 0 |
-| Capture errors | 1 |
+| Capture errors | 0 |
 
 ## Failure classification
 
-No failure category identified. The parent run is still in progress. The projected conclusion is provisional.
+No failure category identified.
 
 The run conclusion records the workflow outcome. A cancelled run remains in history. Cancellation alone does not create an actionable issue. The generator also excludes known downstream status-propagation steps after cancellation.
 
@@ -63,15 +63,11 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137678873857 | process-image-takeout | logs/job-137678873857.log | 82 | False |  |
+| 137678873857 | process-image-takeout | logs/job-137678873857.log | 60466 | False | process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T12:03:29.5619976Z ^[[36;1m  commit_message="chore(images): archive failed takeout diagnostics"^[[0m, process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T12:03:29.5624158Z ^[[36;1m    echo "::error::Could not rebase takeout changes cleanly. No remote changes were overwritten."^[[0m, process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T12:03:29.5626945Z ^[[36;1m    echo "::error::Push failed although origin/gpt did not advance. Check token permissions or branch protection."^[[0m, process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T12:03:29.5628638Z ^[[36;1mecho "::error::Could not publish after $max_attempts synchronization attempts."^[[0m, process-image-takeout	Verify published assets and GitHub links	2026-11-23T12:03:30.1436391Z ^[[36;1m      echo "::error::Could not rebase manifest verification onto the latest gpt branch."^[[0m, process-image-takeout	Verify published assets and GitHub links	2026-11-23T12:03:30.1438613Z ^[[36;1m      echo "::error::Could not publish verified manifest; origin/gpt did not advance."^[[0m, process-image-takeout	Verify published assets and GitHub links	2026-11-23T12:03:30.1439670Z ^[[36;1m      echo "::error::Could not publish verified manifest after $max_attempts attempts."^[[0m |
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | run 45170616922 is still in progress; logs will be available when it is complete  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 
