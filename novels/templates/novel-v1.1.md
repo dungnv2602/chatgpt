@@ -37,6 +37,8 @@ status: approved
 - **Structural Approach:** [Novel → Arc → Scene. Optional: add chapter grouping when useful.]
 
 ## 4. Main Characters
+Duplicate the character block for each main character. If no main character has been established yet, replace the placeholder block with `None recorded`.
+
 ### Character [ID] — [Name]
 - **Character Summary:**
 - **Detailed Character Profile:** [Optional: relative link when a separate record is useful]
@@ -83,6 +85,8 @@ status: approved
 - **Canon State of This Structure:** Established / Partly Established / Proposed / Open
 
 ## 9. Story Arc Directory
+Add one row per planned or established arc. If no arc exists yet, replace the blank row with `None recorded`.
+
 | Arc ID | Arc Title | Narrative Purpose | Status | Arc Link |
 |---|---|---|---|---|
 | | | | | |
