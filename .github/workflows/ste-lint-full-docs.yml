@@ -263,13 +263,23 @@ jobs:
           mkdir -p "$history"
           cp lint_reports/latest-lint-report.md "$history/report.md"
           python3 - "$history/report.json" <<'PY'
-          import json, os, sys
+          import hashlib, json, os, re, sys
           from datetime import datetime, timezone
           report_path = "lint_reports/latest-lint-report.md"
           with open(report_path, encoding="utf-8") as stream:
               markdown = stream.read()
           coverage = markdown.split("## Exact Files Evaluated\n", 1)[-1].split("\n## ", 1)[0]
           files_evaluated = [line[3:-1] for line in coverage.splitlines() if line.startswith("- `") and line.endswith("`")]
+          findings = []
+          for line in markdown.splitlines():
+              match = re.match(r"^(.+?):(\\d+):(\\d+) ([a-z0-9-]+): (.*?) \\[(.*)\\]$", line)
+              if match:
+                  file_path, line_number, column, rule, message, matched_text = match.groups()
+                  fingerprint = hashlib.sha256(json.dumps([file_path, rule, matched_text, message], sort_keys=True).encode()).hexdigest()[:20]
+                  findings.append({"file": file_path, "line": int(line_number), "column": int(column), "rule": rule, "message": message, "match": matched_text, "fingerprint": fingerprint})
+          findings_by_rule = {}
+          for finding in findings:
+              findings_by_rule[finding["rule"]] = findings_by_rule.get(finding["rule"], 0) + 1
           data = {
               "schema_version": "1.0.0",
               "scope": "on_repo",
@@ -284,6 +294,9 @@ jobs:
               "execution_mode": "repository-wide",
               "files_evaluated": files_evaluated,
               "files_evaluated_count": len(files_evaluated),
+              "findings": findings,
+              "total_findings": len(findings),
+              "findings_by_rule": findings_by_rule,
               "generated_at_utc": datetime.now(timezone.utc).isoformat(),
               "report_markdown": markdown
           }
