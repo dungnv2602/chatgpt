@@ -48,13 +48,20 @@ generated = datetime.now(timezone.utc).isoformat()
 data = {
     "schema_version": "1.0.0", "scope": a.scope, "run_id": a.run_id,
     "run_number": int(a.run_number), "run_url": a.run_url, "attempt": int(a.attempt),
-    "branch": a.branch, "commit_sha": a.commit, "event": a.event,\n    "workflow": __import__("os").environ.get("GITHUB_WORKFLOW"),\n    "runner_os": __import__("os").environ.get("RUNNER_OS"),
+    "branch": a.branch, "commit_sha": a.commit, "event": a.event,
+    "workflow": __import__("os").environ.get("GITHUB_WORKFLOW"),
+    "runner_os": __import__("os").environ.get("RUNNER_OS"),
     "execution_mode": a.mode, "baseline_sha": a.baseline or None,
-    "generated_at_utc": generated, "status": a.status,\n    "linter_source_sha": a.linter_source_sha or None,\n    "runtime": {"python": sys.version, "platform": platform.platform()},
+    "generated_at_utc": generated, "status": a.status,
+    "linter_source_sha": a.linter_source_sha or None,
+    "runtime": {"python": sys.version, "platform": platform.platform()},
     "files_evaluated": [record["path"] for record in records], "files_evaluated_count": len(records), "files_failed": len(failed),
     "total_findings": len(findings), "hard_findings": hard,
     "findings_by_rule": by_rule, "failed_files": failed,
-    "records": records, "findings": findings,\n    "new_findings": sum(1 for item in findings if item["comparison"] == "new"),\n    "recurring_findings": sum(1 for item in findings if item["comparison"] == "recurring"),\n    "resolved_findings": resolved
+    "records": records, "findings": findings,
+    "new_findings": sum(1 for item in findings if item["comparison"] == "new"),
+    "recurring_findings": sum(1 for item in findings if item["comparison"] == "recurring"),
+    "resolved_findings": resolved
 }
 out = Path(a.output_dir)
 out.mkdir(parents=True, exist_ok=True)
@@ -88,7 +95,11 @@ for record in records:
                      ": " + str(finding.get("message", "")) + " Match: " +
                      str(finding.get("match", "")))
     lines.append("")
-lines += ["## Baseline comparison", "",\n    "- New findings: " + str(data["new_findings"]),\n    "- Recurring findings: " + str(data["recurring_findings"]),\n    "- Resolved findings: " + str(len(resolved)), "",\n    "## Structured evidence", "", "The complete original per-file JSON payloads and normalized findings are in report.json.", ""]
+lines += ["## Baseline comparison", "",
+    "- New findings: " + str(data["new_findings"]),
+    "- Recurring findings: " + str(data["recurring_findings"]),
+    "- Resolved findings: " + str(len(resolved)), "",
+    "## Structured evidence", "", "The complete original per-file JSON payloads and normalized findings are in report.json.", ""]
 (out / "report.md").write_text("\n".join(lines), encoding="utf-8")
 scope_root = out.parent.parent
 index_path = scope_root / "index.json"
