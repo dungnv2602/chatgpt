@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 — Foundational initialization and template-authoring task.** Inspect workspace task conventions, document standards, and the lint-report document types. Then align The Worker and Conversation Mode so task operations and `workspace/discussion.md` maintenance apply in every mode. Create canonical templates for the prior lint-report outputs in the standards-approved location. Record the verified result and remaining validation limits.
+- **2026-11-23 — Classify report document types and define canonical formats.** Inspect the relevant catalog entries, report generator contracts, and both lint-scope outputs. Decide whether each report needs a standalone template, schema, or generator-owned classification. Identify the canonical storage path and required catalog/workflow updates.
 
 ## Open Discussions
 
