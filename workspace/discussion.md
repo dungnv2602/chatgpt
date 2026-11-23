@@ -1,8 +1,10 @@
 ## Current Step
 
-- **2026-11-23 06:08 UTC — Integrate diagnostics and retire the CI gate:** Add a reusable workflow finalizer and a push-driven sweep to the six existing workflows. Then change startup and task instructions so unrelated CI failures are recorded as evidence, not blockers to new user requests. Expected result: workflow-level reports are generated without changing source-workflow conclusions, and the ordinary session flow no longer mandates CI repair.
+- **2026-11-23 06:30 UTC — Refresh prior misclassified captures:** Queue exact-run backfill requests for the latest full-lint, changed-lint, and Document Standards runs captured before reporter-job separation. Preserve old immutable captures and publish new corrected attempts. Expected result: corrected reports appear as later immutable captures without overwriting prior evidence.
 
 ## Open Discussions
+
+- **2026-11-23 — Default-branch observer limitation:** The repository default branch is `main`; this task is constrained to `gpt`. A failure before any job starts cannot be captured immediately by the branch-local finalizer. The push-driven sweep or an exact-run request can backfill it later. Immediate run-completion observation requires an authorized observer on `main` or an external GitHub App webhook.
 
 - **2026-11-23 — Document Standards workflow validation:** Its path-filter changes were read back, but a successful hosted confirmation was not observed. Do not poll; verify on its next eligible run.
 - **2026-11-23 — Document lint findings:** The new reports retain 144 hard findings in the repository-wide run and 145 in the changed-scope fallback run. Thresholds and baselines were not weakened. Remediation is separate from the completed report-pipeline task.
