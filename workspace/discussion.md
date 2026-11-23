@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 08:26 UTC — Final repository handoff check:** Read back the task record, board, ledger, schema, catalog, generator, tests, operator guide, and publisher workflows. Confirm branch gpt head and leave hosted validation pending without polling.
+- **2026-11-23 08:29 UTC — Review the first naturally published ledger observations:** Inspect the two Actions findings and their immutable source report. Confirm that new reports were ingested without historical backfill, and assess whether diagnostic signatures identify actual failures.
 
 ## Open Discussions
 - **2026-11-23 — Hosted retention validation:** The shared cleanup script and tests now cover exact individual files in both `archive/tasks/` and `archive/reports/`. A hosted run of the schedule-only cleanup has not yet been observed. Do not dispatch it manually or modify `main`.
