@@ -14,7 +14,7 @@ The Worker preserves each original byte-for-byte in the destination's `original/
 
 Send every new upload that requires repository retention to the flat `images/takeout/` intake. Do not create upload subfolders or place uploads in the reserved `history/` and `webp/` directories.
 
-The Action accepts static PNG, JPG, and JPEG files. It rejects unsupported formats and does not flatten animated images. Every item must reference a dated conversation-integrity record with an exact source-mapping row. Drawing outputs must also match the attempt's recorded Generation ID or Output ID. Keep the platform source_asset_id separate from the repository asset_id used for filename prefixes. Incomplete provenance stays in intake; it must not trigger relocation.
+The normal Action accepts static PNG, JPG, and JPEG files. It rejects unsupported formats and does not flatten animated images. Every normal hand-off item must reference a dated conversation-integrity record with an exact source-mapping row. Drawing outputs must also match the attempt's recorded Generation ID or Output ID. Keep the platform source_asset_id separate from the repository asset_id used for filename prefixes. Incomplete provenance stays in intake and must not trigger relocation. When the user requests a WebP for an unclassified image, use the separate conversion-only path in [Image Takeout](takeout/README.md). It preserves the source and stages only the verified derivative. It does not change provenance or project indexes.
 
 ## Workflow ownership
 
