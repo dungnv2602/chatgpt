@@ -60,7 +60,7 @@ The catalog must point to the exact canonical asset. The owner skill and its ind
 1. Identify the document type and its owning project workflow.
 2. Read the matching entry in the Document Type Catalog.
 3. Retrieve the exact canonical template, schema, or format contract.
-4. Confirm that the canonical asset is in the correct owner directory.
+4. Check that the canonical asset is in the correct owner directory.
 5. If the format is missing, stop before creating or editing the governed document. Create the template or schema first.
 6. Update the catalog and the owning workflow or index to point to the new format.
 7. Commit and read back the canonical template, schema, catalog entry, and owner instructions.
@@ -177,9 +177,9 @@ Check each document for:
 
 Add automated validation when a structural rule can be checked reliably.
 
-The catalog integrity validator at `scripts/validate_catalog.py` checks inventory row structure, document-type classes, class-specific references, exact path existence, and canonical template placement. Its tests live at `scripts/test_validate_catalog.py`. It also detects named template files in skill reference directories. It does not prove that an agent copied the template when it authored a document, compare every document with its template, validate semantic quality, or duplicate processor schemas. The Worker enforces the authoring sequence. The hosted workflow `.github/workflows/validate-document-standards.yml` runs these checks for changes under `skills/**`, `novels/templates/**`, and the shared workspace template and owner files.
+The catalog integrity validator at `scripts/validate_catalog.py` checks inventory row structure, document-type classes, class-specific references, exact path existence, and canonical template placement. Its tests live at `scripts/test_validate_catalog.py`. It also detects named template files in skill reference directories. It does not prove that an agent copied the template when it authored a document. It does not compare every document with its template. It does not check semantic quality or duplicate processor schemas. The Worker enforces the authoring sequence. The hosted workflow `.github/workflows/validate-document-standards.yml` runs these checks for changes under `skills/**`, `novels/templates/**`, and the shared workspace template and owner files.
 
-Run the validator and its tests only on GitHub-hosted Actions runners. Do not run repository scripts locally. Workflow integration requires explicit authorization; until Actions runs both checks, treat execution as unverified.
+Run the validator and its tests only on GitHub-hosted Actions runners. Do not run repository scripts locally. Workflow integration requires explicit authorization. Until Actions runs both checks, treat execution as unverified.
 
 Use the schema or generator tests for structured and machine-generated data.
 
