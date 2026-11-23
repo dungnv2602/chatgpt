@@ -4,6 +4,23 @@
     {
       "workflow_id": 424715662,
       "workflow_name": "STE Lint Changed Documentation",
+      "run_id": "45153305593",
+      "run_number": 451,
+      "attempt": 1,
+      "capture_stage": "pre_finalizer",
+      "created_at": "2026-11-23T10:08:12Z",
+      "captured_at_utc": "2026-11-23T10:09:40Z",
+      "source_status": "in_progress",
+      "source_conclusion": null,
+      "projected_conclusion": "failure",
+      "report_status": "Incomplete",
+      "primary_category": "validation_or_test",
+      "history_path": "history/424715662/45153305593-attempt-1-pre_finalizer",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45153305593"
+    },
+    {
+      "workflow_id": 424715662,
+      "workflow_name": "STE Lint Changed Documentation",
       "run_id": "45152181405",
       "run_number": 450,
       "attempt": 1,
@@ -1552,18 +1569,18 @@
   "latest_report": {
     "workflow_id": 424715662,
     "workflow_name": "STE Lint Changed Documentation",
-    "run_id": "45152181405",
-    "run_number": 450,
+    "run_id": "45153305593",
+    "run_number": 451,
     "attempt": 1,
-    "capture_stage": "post_run",
-    "created_at": "2026-11-23T10:00:51Z",
-    "captured_at_utc": "2026-11-23T10:02:53Z",
-    "source_status": "completed",
-    "source_conclusion": "failure",
-    "projected_conclusion": null,
-    "report_status": "Complete",
+    "capture_stage": "pre_finalizer",
+    "created_at": "2026-11-23T10:08:12Z",
+    "captured_at_utc": "2026-11-23T10:09:40Z",
+    "source_status": "in_progress",
+    "source_conclusion": null,
+    "projected_conclusion": "failure",
+    "report_status": "Incomplete",
     "primary_category": "validation_or_test",
-    "history_path": "history/424715662/45152181405-attempt-1-post_run",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45152181405"
+    "history_path": "history/424715662/45153305593-attempt-1-pre_finalizer",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45153305593"
   }
 }
