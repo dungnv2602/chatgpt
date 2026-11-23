@@ -5,7 +5,7 @@
 - **ID:** 20261122-233900
 - **Template version:** 1.0
 - **Created:** 2026-11-22 23:39 UTC
-- **Updated:** 2026-11-23 23:49 UTC
+- **Updated:** 2026-11-23 00:40 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -157,43 +157,65 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **Action:** Compared the original Samantha task closeout commits with the later archive transaction and current board state.
 - **Result:** Commit `1860fbee285126f97e45087a32426e4b47eda3db` changed the active task metadata to `Status: Done` and `Archived: Yes` but did not create `archive/tasks/` copy. Commit `f3a76f5f791ac331bd9223dddc64e2879d57657a` moved the board row to Historical while it still linked to `workspace/tasks/`. This was an incomplete closeout, not a missing documented procedure. The repository later completed the missing transaction: `84addce78431c319c00c505b9999d1fec595c1a9` created the archive copy; `38ec9603f1cc0c9d115a8f5e642db47dab32b216` removed the active path; `9f397519f37bac93dc82b17e84aca6ef5a59e954` reconciled the board to the archive path and exact archive commit. Current checks confirm the active path is absent, the archive path exists, and the board contains one Historical entry with the correct links.
 - **Correction:** Strengthened the Worker closeout gate and task template so an active record stays In Progress / Archived: No until the archive copy exists and is verified. This prevents premature Done/Archived labels from being committed to the active path.
-- **Integrity note:** During this investigation, I fetched the archived record's contents once even though the Worker policy says to verify archive paths and commit metadata without reading archived contents. No archived file was changed. Future checks will honor the retention-only boundary.
+- **Integrity note:** During this investigation, I fetched the archived record's contents once even though the Worker policy says to verify archive paths and commit metadata without reading archived contents. No archived file was changed. The user later clarified that exact archived records may be read but must not be modified.
 - **References:** Commits `1860fbee285126f97e45087a32426e4b47eda3db`, `f3a76f5f791ac331bd9223dddc64e2879d57657a`, `84addce78431c319c00c505b9999d1fec595c1a9`, `38ec9603f1cc0c9d115a8f5e642db47dab32b216`, and `9f397519f37bac93dc82b17e84aca6ef5a59e954`.
 - **Next:** Continue the document-type inventory and structural-validator design. Do not inspect archived contents.
+
+### 2026-11-23 00:40 UTC
+
+- **Action:** Tightened the task archive transaction after the Samantha closeout failure and clarified the archive read boundary.
+- **Result:** The Worker now checks for an existing archive path, reuses it only when its full content matches, writes a new archive path only once, reads it back before deleting the active record, and treats it as immutable afterward. The board moves to Historical only after the active path is absent. Exact archived records may be read when needed. The Worker, Session Archiving skill, archive README, and task template now state this policy.
+- **References:** Worker commits `df069c148ef580b37d6ae714ecf7cc5c7b4aa72c` and `960759e14d6fdb7cb1f04fdbf97a348ee6bc0d3d`; Session Archiving commit `f3f0de350066c586d292413ae0af8d6c2567a5a7`; archive README commit `4094bf39d182948cf903a83eeca7bb5d4def0134`; task template commit `3ac1664b8de66717d6f7e407df8d65584667aee6`.
+- **Next:** Continue the template and validator audit. Do not alter archived records.
+
+### 2026-11-23 00:40 UTC
+
+- **Action:** Compared the drawing attempt, daily index, and session brief templates with their owning workflow contracts and representative existing records.
+- **Result:** The attempt template combined record, generation, and user-review states. It also omitted several required lineage and provenance fields. Version 1.1 now separates those states and includes the required evidence. The daily index template now matches the exact six-field contract. The session brief template lists Active, Paused, and Closed as allowed states. The archive reference now points to the canonical attempt template and matches the six-field index.
+- **References:** Attempt template commit `030dd8519396d5bf434e4fb31b11c431a91bcff1`, follow-up clarification commit `89456684f06e326ea475b42bce1a78f7be3f3779`; daily index template commit `3d8108cbd31d0f77d02b324d8e9159abedef8d6d`; session brief template commit `3692f621a36ec4f3386c772e523e50f54db58d95`; archive reference commit `0de7b33349a0344337ab478e9df27bc79b8be708`.
+- **Next:** Review field-level takeout and manifest validation coverage.
+
+### 2026-11-23 00:40 UTC
+
+- **Action:** Defined a consistent required, conditional, and optional field convention. Reviewed optional fields in the current novel templates and recorded legacy examples.
+- **Result:** Unmarked fields are required. Templates must label optional fields and state conditions for conditional fields. Updated the Document Standards skill and clarified optional or conditional fields in the current novel foundation and illustration templates. The catalog now records reviewed Version 1.0 novel, drawing, brief, and task records as legacy examples. Do not migrate untouched historical records.
+- **References:** Document Standards commit `a6f8c5b4635109f4a47253b9b241a5b2ef3996ed`; novel template commits `c83d2f95c1e733f5171ffc45c50ea4427fc98959`, `134b89b1cc71fd9b3673adc6367ab5bff2433eb2`, and `f719a1358eb98b24927d4268c394c98f0384491d`; catalog commit `ca41d9fe0c5323d8c4cd2a69580574bd2276900d`.
+- **Next:** Inspect processor validation and regression coverage. Design a catalog-driven validator without duplicating processor schemas.
 
 ## 7. Current State
 
 - The user approved the template-first policy.
 - The task is the sole Current Execution task.
 - The novel workspace has a mature Version 1.1 template set for eight document types. Version 1.0 templates remain historical references.
-- Non-novel drawing attempts use the Version 1.0 template at `skills/drawing/assets/attempt-template.md`.
-- Drawing-session briefs, daily drawing indexes, conversation-integrity records, and session summaries have standalone Version 1.0 templates.
+- Non-novel drawing attempts use Version 1.1 of `skills/drawing/assets/attempt-template.md`. The template separates record, generation, and user-decision states and records required provenance.
+- Drawing-session briefs, conversation-integrity records, and session summaries have standalone Version 1.0 templates. The session brief defines Active, Paused, and Closed states. The daily drawing index uses Version 1.1 and the exact six-field contract.
 - Agent Skill definitions have a copy-ready template at `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`.
 - Drawing pattern entries have separate successful and failure templates in `skills/drawing/references/patterns/PATTERN-TEMPLATES.md`.
-- Workspace task records use the Version 1.0 template at `workspace/TASK_TEMPLATE.md`.
+- Workspace task records use the Version 1.1 template at `workspace/TASK_TEMPLATE.md`. This task record predates that revision and remains at Template version 1.0.
 - Task boards and the Condensed Mode discussion register remain embedded contracts for single live files.
 - Novel documents use the current Version 1.1 template set. Do not mass-migrate untouched Version 1.0 records.
 - The image takeout hand-off is validated by `skills/session-archiving/scripts/process_takeout.py`. The same script defines conversion-report and manifest columns. `verify_published_manifest.py` checks published data and links.
 - The processor test suite covers important intake and publication paths. It does not establish exhaustive field-by-field validation coverage.
 - The three master catalogues contain heterogeneous prompt, pose, and image-reference material. They are classified as lightweight collections, not uniform record types.
-- The catalog covers the main recurring document types identified across `images/`, `master/`, `novels/`, `drawings/`, `skills/`, and `workspace/`. Full file-by-file reconciliation remains incomplete.
+- The catalog covers the main recurring document types identified across `images/`, `master/`, `novels/`, `drawings/`, `skills/`, and `workspace/`. It now records representative legacy examples and the no-mass-migration rule. Full file-by-file reconciliation remains incomplete.
 - The changed-document lint preflight repository-resolution defect has been fixed on `gpt`. Run #349 confirms that preflight, baseline lookup, and changed-file discovery succeed. The downstream STE lint step still fails on existing findings in the lint report and Agent Skill documentation; the updated remote-only policy files had no findings.
 
 ## 8. Remaining Work
 
 - Finish the type-level catalog review and verify all canonical template links.
-- Compare representative current records with their canonical templates. Record justified legacy exceptions without rewriting historical content.
-- Review whether the processor test suite needs additional field-level validation cases.
-- Design a reliable structural document check that uses the catalog and existing generator-owned schemas without duplicating them.
-- Review the next naturally triggered GitHub Actions result during the next bounded preflight; do not wait or poll.
+- Complete the representative record review and record justified legacy exceptions without rewriting historical content.
+- Decide whether the takeout hand-off and manifest need additional field-level regression tests.
+- Design a catalog-driven structural validator that does not duplicate generator-owned schemas.
+- Obtain fresh approval before any new `.github/workflows/*` integration changes.
 
 ## 9. Next Actions
 
-1. Verify every catalog row points to its authoritative template, schema, embedded contract, or generator.
-2. Review representative examples for each recurring template type and record justified legacy exceptions.
-3. Decide whether hand-off and manifest validation need additional field-level regression tests.
-4. Define and assess a structural document validator that uses the catalog without duplicating processor schemas.
-5. Review the post-fix Actions result when it is available during the next bounded preflight.
+1. Complete the catalog link audit and representative record review.
+2. Inspect all hand-off field checks and compare them with regression tests.
+3. Decide whether manifest field-level regression tests add coverage beyond the existing verifier tests.
+4. Design and implement a catalog-driven structural validator without duplicating generator-owned schemas.
+5. Obtain fresh approval before adding the validator to `.github/workflows/*`.
+6. Review the next naturally triggered Actions result during one bounded preflight. Do not wait or poll.
 
 ## 10. References
 
@@ -237,7 +259,7 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 
 Continue this task on branch `gpt`. Do not switch to another branch.
 
-Start with a systematic inventory of recurring document types and existing templates in the approved project directories. Use directory indexes and exact-path reads. Do not scan or inspect `archive/` contents.
+Continue the systematic inventory and validator design in the approved project directories. Use directory indexes and exact-path reads. You may read exact archived records when needed, but never edit, replace, rename, move, or manually delete them.
 
 Keep the distinction between document types and individual documents. Prefer one canonical template per recurring type, with schemas for structured data. Record exceptions where a rigid template is unsuitable.
 
