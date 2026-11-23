@@ -41,7 +41,8 @@ jobs:
 
       - name: Compile and test the diagnostic reporter
         run: |
-          python3 -m py_compile reports/gh_ac_reports/scripts/report.py
+          python3 -m py_compile reports/gh_ac_reports/scripts/report.py .github/scripts/cleanup-archive.py
+          python3 .github/scripts/test_cleanup_archive.py
           python3 -m unittest discover \
             -s reports/gh_ac_reports/scripts \
             -p 'test_report.py' \
