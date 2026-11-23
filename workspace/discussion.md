@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:00 UTC — Begin STE skill review:** The Document Type Catalog's 75 baseline hard findings are addressed. Review the 15 hard findings in `skills/asd-ste100/SKILL.md` against the complete skill and writing policy before editing.
+- **2026-11-23 11:04 UTC — Resolve non-example STE skill findings:** Preserve deliberate rule examples under the repository writing policy. Split the 28-word sentence without changing the quoted source and replace the non-example synonym rotation in the linter description.
 
 ## Open Discussions
 
