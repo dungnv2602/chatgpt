@@ -74,9 +74,9 @@ This cadence does not delete the requirement to load a task-specific skill when 
 
 ### First-response execution rule
 
-The first response after `start session` must give a startup notice. Do not ask for the user's goal, confirmation, or extra permission.
+The first response after `start session` must record a startup notice in `workspace/discussion.md`. Do not ask for the user's goal, confirmation, or extra permission.
 
-In Condensed Mode, put the notice in `workspace/discussion.md` and provide only its direct link. In Default Mode, give the notice in chat.
+Commit and read back the notice before retrieval. In Default Mode, also give a brief chat notice and link the register. In Condensed Mode, provide only the direct register link.
 
 Then perform the required retrievals. Do not ask the user to repeat the cue. Do not claim a retrieval is underway unless you are performing it.
 
@@ -86,7 +86,7 @@ The startup gate defines prerequisites. It is not a session archive. Do not crea
 
 When the user says **`start session`**, run this sequence before project work. Also run it as a prerequisite when the user says **`start a drawing session`** or **`Be the novelist`** and foundational initialization has not passed in the current conversation:
 
-1. **Notify the user first.** State that foundational retrievals are starting. In Condensed Mode, put this notice in `workspace/discussion.md` and provide only its direct link.
+1. **Notify the user first.** Record the startup notice in `workspace/discussion.md`. Commit and read back the notice before retrieval. In Default Mode, also state in chat that foundational retrievals are starting and link the register. In Condensed Mode, provide only the direct register link.
 2. Retrieve and read this Session Archiving skill from branch `gpt`.
 3. Retrieve and read `skills/conversation-mode/SKILL.md` from the same branch.
 4. Retrieve and read `skills/the-worker/SKILL.md` from the same branch.
