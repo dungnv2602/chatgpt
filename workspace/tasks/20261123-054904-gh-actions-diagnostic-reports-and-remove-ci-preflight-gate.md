@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-054904
 - **Created:** 2026-11-23 05:49 UTC
-- **Updated:** 2026-11-23 05:50 UTC
+- **Updated:** 2026-11-23 07:16 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -124,6 +124,14 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - **References:** Reporter commit `379ecc19dc7a775d59f492d7f808a23da73f4d80`; hosted validation run [45124218890](https://github.com/dungnv2602/chatgpt/actions/runs/45124218890); report index at commit `3b579b57088eba6f58c942e6cc7d795e7bd25100`.
 - **Next:** Request immutable corrected captures for the three earlier source runs whose reports predate reporter-job exclusion. Then verify the final index/readbacks and close out the task with the default-branch observation limitation documented.
 
+## 6.2. 2026-11-23 07:16 UTC — Hosted validation after report-root and retention changes
+
+- **Action:** Inspected the naturally completed diagnostics sweep [45129646663](https://github.com/dungnv2602/chatgpt/actions/runs/45129646663), its hosted job log, workflow jobs, the current report indexes, and the latest branch state.
+- **Result:** The diagnostics workflow completed successfully. All 12 reporter regression tests and all 7 archive-retention regression tests passed on GitHub-hosted runners. The sweep and publication completed successfully, publishing four new immutable captures. The log reports five runs still pending for later post-run capture; no run was polled.
+- **Additional result:** The three earlier exact-run recapture requests are now in `reports/gh_ac_reports/requests/processed/`. Each has an immutable, complete post-run report: changed lint `45123260178`, Document Standards `45123530858`, and full lint `45123530849`.
+- **Limitation:** The latest Document Standards workflow run visible in the bounded snapshot, [45128450035](https://github.com/dungnv2602/chatgpt/actions/runs/45128450035), failed before the report-root/catalog corrections were fully validated. No successful post-correction Document Standards run is present in the snapshot. The latest changed-document lint run [45129646655](https://github.com/dungnv2602/chatgpt/actions/runs/45129646655) also concluded failure, while its tooling, link/anchor checks, and report publication succeeded; preserve the source lint conclusion.
+- **Next:** Wait for a naturally eligible Document Standards run to validate the catalog/path changes. Do not poll, manually dispatch the schedule-only retention workflow, fix unrelated lint findings, or modify `main`.
+
 ## 6.1. 2026-11-23 — Consolidated report root and shared archive retention
 
 - **Action:** Moved the existing lint and GitHub Actions report trees under `reports/`, added the central triage ledger, and moved late legacy lint captures written after the migration into the consolidated tree. Updated workflow, composite action, navigation, skill, and catalog references.
@@ -137,25 +145,25 @@ The report families are consolidated under `reports/`: `reports/lint_reports/`, 
 
 Resolved report files are assigned to `archive/reports/` and use the existing `.github/archive-retention-index.json` and scheduled archive-retention workflow. The cleanup script now accepts exact individual file paths under both `archive/tasks/` and `archive/reports/`, applies the existing 90-day retention period independently per file, rejects unsafe paths and symlinked parents, and preserves unindexed files. The shared index timestamp field was normalized to `archived_at_utc`. The archive guide documents how to move a resolved report file and register its exact path. No separate report-retention workflow or index was created.
 
-The catalog validator and regression fixture now recognize `reports/` as the report root. Hosted regression coverage for archive cleanup was added to the push-driven diagnostics workflow. A previous Document Standards run failed because the catalog still referenced the retired roots; a previous diagnostics finalizer failed because it used the old composite-action path. Both causes were corrected in later commits. The latest bounded snapshot showed a diagnostics run pending; it was not polled, so the latest corrections are not yet confirmed by a completed hosted run.
+The catalog validator and regression fixture recognize `reports/` as the report root. The latest completed diagnostics sweep [45129646663](https://github.com/dungnv2602/chatgpt/actions/runs/45129646663) validates the current diagnostic reporter and shared archive-cleanup test suites on GitHub-hosted runners: all 12 reporter tests and all 7 archive-retention tests passed. The sweep and publication succeeded and added four captures. The separate Document Standards workflow has not yet produced a successful post-correction run, so hosted confirmation of the catalog/path migration remains open.
 
 The completed sweep also exposed concurrent report-index publication conflicts between finalizers and the push collector. All six source-workflow finalizers now share the collector's non-cancelling repository-wide concurrency group. The task-scoped CI policy removes unrelated pre-prompt and post-initialization repair gates. The actual conclusion of each source workflow remains independent from the report-only job.
 
-Three immutable recaptures are requested for earlier reports generated before reporter-job exclusion. The request files are committed. The resulting sweep (run 45124527032) was observed as in progress in the final bounded snapshot; it was not polled. The existing 17 captures remain preserved. The prior report index was read back with zero pending run IDs before these three new requests were committed.
+The three exact-run recapture requests have been processed. Their request files are under `reports/gh_ac_reports/requests/processed/`, and complete immutable post-run captures are present for changed lint `45123260178`, Document Standards `45123530858`, and full lint `45123530849`. The latest sweep still reports five pending runs for later post-run capture; these were not polled.
 
 The repository default branch is `main`, while this authorized task is restricted to `gpt`. A run that fails before any job starts cannot be captured immediately by this branch-local design. The push sweep or an exact-run request can backfill it later. Immediate completion-event observation requires an authorized observer on `main` or an external GitHub App webhook. No changes were made to `main`.
 
 ## 8. Remaining Work
 
-- Confirm the latest report-path, catalog, and shared-retention changes through their naturally triggered GitHub-hosted runs. Do not poll or manually dispatch the pending run.
-- The schedule-only 90-day cleanup is not manually dispatched. Its workflow file remains on `gpt`; do not change `main`.
-- The three earlier immutable recapture requests remain part of the previous implementation handoff; inspect them only if a later eligible sweep has completed naturally.
+- Obtain a successful natural Document Standards run after the catalog/report-root corrections. The diagnostics and archive-retention test suites have passed on a GitHub-hosted runner, but that does not replace the Document Standards workflow check.
+- Allow the five pending source runs to receive post-run captures through a later eligible push/sweep; do not poll or manually dispatch a workflow.
+- Do not manually dispatch the schedule-only 90-day cleanup workflow.
 - Do not fix unrelated lint findings or workflow failures. Preserve all source conclusions and validation thresholds.
 
 ## 9. Next Actions
 
-1. Read back the latest workflow, action, catalog, cleanup-script, test, and index paths after any natural hosted validation completes.
-2. Review immutable corrected captures only when their backfill completes naturally.
+1. Verify the catalog/report-root migration through the next naturally triggered successful Document Standards run.
+2. Review post-run captures only after a later eligible sweep completes naturally.
 3. Keep all repository changes on `gpt`; do not modify `main`.
 
 ## 10. References
@@ -193,10 +201,10 @@ The repository default branch is `main`, while this authorized task is restricte
 - **Result:** All six normal diagnostics jobs use `if: always()`, job-level `continue-on-error: true`, and `./gh_ac_reports/actions/capture`. The composite action validates, captures, and publishes reports. A separate push-triggered workflow performs post-run collection and exact-run backfill.
 - **Limitations:** The source workflows require a later push or exact-run request to collect final post-run evidence. A jobless startup failure does not have an immediate observer on `gpt` because the default branch is `main`.
 
-- **Check:** Hosted reporter validation.
-- **Method:** Inspected the exact GitHub Actions run and its job log.
-- **Result:** Run [45124218890](https://github.com/dungnv2602/chatgpt/actions/runs/45124218890) completed successfully. Its hosted job log confirms 12 tests passed, followed by a successful sweep and publication. The sweep reported zero pending run IDs at that capture.
-- **Limitations:** This hosted run validated commit `379ecc19dc7a775d59f492d7f808a23da73f4d80`. Three subsequent report refresh requests have their own sweep, run 45124527032, which was in progress at the final snapshot and was not polled.
+- **Check:** Hosted reporter and archive-retention validation after report-root migration.
+- **Method:** Inspected the exact GitHub Actions run, completed job summary, and hosted job log for [45129646663](https://github.com/dungnv2602/chatgpt/actions/runs/45129646663).
+- **Result:** The diagnostics workflow completed successfully. All 12 reporter regression tests and all 7 archive-retention tests passed. The sweep found and published four new captures. The three earlier exact-run recapture requests are processed and each has a complete immutable post-run report.
+- **Limitations:** Five source runs remain pending for later post-run capture. The latest Document Standards workflow run in the bounded snapshot is still a failure from before post-correction validation; a successful natural run is required to close the catalog/report-root validation item. No pending run was polled.
 
 - **Check:** CI preflight policy retirement.
 - **Method:** Read back eight authoritative session, task, Actions, initialization, and writing policy files.
@@ -208,4 +216,4 @@ The repository default branch is `main`, while this authorized task is restricte
 
 ## 12. Handoff Instructions
 
-Continue from this record. The implementation, policy changes, and one hosted 12-test validation run are complete. The three exact-run requests remain pending; do not wait or poll. Inspect their reports only when a later eligible event has completed. Keep all repository changes on branch `gpt`. Preserve `lint_reports/` as the lint-specific evidence system. Do not let unrelated CI failures delay this or later user requests.
+Continue from this record. The implementation and policy changes are in place. The latest hosted diagnostics run passed 12 reporter tests and 7 archive-retention tests; the three exact-run recaptures have complete post-run reports. The remaining task-scoped validation is a successful natural Document Standards run after the report-root/catalog corrections. Five source runs remain pending for later post-run capture; do not poll. Keep all repository changes on branch `gpt`. Preserve `lint_reports/` as the lint-specific evidence system. Do not let unrelated CI failures delay this or later user requests.
