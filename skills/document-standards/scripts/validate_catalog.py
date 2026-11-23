@@ -8,7 +8,8 @@ import sys
 from pathlib import Path
 
 ALLOWED_ROOTS = {
-    "images", "master", "novels", "drawings", "skills", "workspace", "archive"
+    ".github", "images", "lint_reports", "master", "novels", "drawings",
+    "skills", "workspace", "archive"
 }
 KNOWN_CLASSES = {
     "Embedded contract",
