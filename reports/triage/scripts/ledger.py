@@ -359,7 +359,8 @@ def upsert_finding(ledger, observation):
     observation_key = evidence.get("observation_id") or evidence["report_path"]
     if evidence["report_path"] not in known_paths:
         evidence_rows.append(evidence)
-    if observation_key not in known_observations and existing.get("status") == "resolved":
+    reopened = observation_key not in known_observations and existing.get("status") == "resolved"
+    if reopened:
         resolution = existing.get("resolution")
         if resolution:
             existing.setdefault("resolution_history", []).append(copy.deepcopy(resolution))
@@ -371,6 +372,8 @@ def upsert_finding(ledger, observation):
         existing["last_seen_utc"] = max(valid_times, key=parse_time)
     occurrence_keys = {row.get("observation_id") or row.get("report_path") for row in evidence_rows if isinstance(row, dict)}
     existing["occurrence_count"] = len(occurrence_keys)
+    if reopened and before != json.dumps(existing, sort_keys=True, ensure_ascii=False):
+        return "reopened"
     return "updated" if before != json.dumps(existing, sort_keys=True, ensure_ascii=False) else "unchanged"
 
 def validate_semantics(ledger):
@@ -660,11 +663,14 @@ def create_or_update_worker_task(root, group_id, findings, timestamp, active_tas
     active_tasks[group_id] = task
     return task_id, True, True
 
-def create_worker_tasks(root, ledger, timestamp):
-    """Create Proposed Worker tasks from new actionable finding groups during ingestion."""
+def create_worker_tasks(root, ledger, timestamp, candidate_ids, reopened_ids):
+    """Create or refresh tasks only for findings observed in this ingestion event."""
     active_tasks = parse_active_ledger_tasks(root)
     grouped = {}
     for finding in ledger["findings"]:
+        finding_id = finding.get("finding_id")
+        if finding_id not in candidate_ids:
+            continue
         if finding.get("severity") not in TASK_ELIGIBLE_SEVERITIES:
             continue
         if finding.get("status") not in TASK_ELIGIBLE_FINDING_STATUSES:
@@ -672,8 +678,11 @@ def create_worker_tasks(root, ledger, timestamp):
         refs = finding.setdefault("task_refs", [])
         group_id = finding["task_group"]
         active_task = active_tasks.get(group_id)
-        reopened = bool(finding.get("resolution_history")) and not active_task
+        reopened = finding_id in reopened_ids
+        is_new = finding_id in candidate_ids["created"]
         if refs and not (active_task or reopened):
+            continue
+        if not refs and not (is_new or active_task or reopened):
             continue
         grouped.setdefault(group_id, []).append(finding)
     counts = {"tasks_created": 0, "tasks_updated": 0, "findings_linked": 0, "changed": False}
@@ -710,6 +719,8 @@ def ingest(root, now=None):
     state, processed = ledger["ingestion_state"], set(ledger["ingestion_state"]["processed_reports"])
     counts = {"reports_processed": 0, "findings_created": 0, "findings_updated": 0, "findings_unchanged": 0}
     changed, warnings = migration_changed, []
+    task_candidates = {"created": set(), "updated": set()}
+    reopened_ids = set()
     for family, report_path, _row in indexed_reports(root):
         if report_path in processed:
             continue
@@ -725,9 +736,13 @@ def ingest(root, now=None):
             result = upsert_finding(ledger, observation)
             if result == "created":
                 counts["findings_created"] += 1
+                task_candidates["created"].add(observation["finding_id"])
                 changed = True
-            elif result == "updated":
+            elif result in ("updated", "reopened"):
                 counts["findings_updated"] += 1
+                task_candidates["updated"].add(observation["finding_id"])
+                if result == "reopened":
+                    reopened_ids.add(observation["finding_id"])
                 changed = True
             else:
                 counts["findings_unchanged"] += 1
@@ -736,7 +751,9 @@ def ingest(root, now=None):
         counts["reports_processed"] += 1
         changed = True
     state["processed_reports"] = sorted(processed)
-    task_result = create_worker_tasks(root, ledger, now or utc_now())
+    task_result = create_worker_tasks(
+        root, ledger, now or utc_now(), task_candidates["created"] | task_candidates["updated"], reopened_ids
+    )
     changed = changed or task_result["changed"]
     if changed:
         ledger["updated_at_utc"] = now or utc_now()
