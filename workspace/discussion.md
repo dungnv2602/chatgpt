@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 13:28 UTC — Begin archive records reference review:** Review the single hard finding in `skills/session-archiving/references/archive-records-and-image-prompts.md` against the archive lifecycle contract. Preserve exact read, retention, and immutability boundaries.
+- **2026-11-23 13:32 UTC — Standardize archive verification terminology:** Use `verify` consistently for evidence checks. Replace the ambiguous `confirmed facts` and `confirmed edit` phrases without changing provenance or status requirements.
 
 ## Open Discussions
 
