@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-100738
 - **Created:** 2026-11-23 10:07 UTC
-- **Updated:** 2026-11-23 10:28 UTC
+- **Updated:** 2026-11-23 10:34 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -56,6 +56,12 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 6. Progress Log
 
+### 2026-11-23 10:34 UTC
+
+- **Action:** Completed the first reviewable batch in `skills/document-standards/references/document-type-catalog.md`.
+- **Result:** Rewrote 15 catalog rows without changing their classifications, canonical paths, conditions, or handling decisions. The batch resolved 14 semicolon findings, one long-sentence finding, and one synonym-rotation finding. The source was read back after commit `62afd3b27a3a64eed75990ff5800de3568f767ec`. The catalog now contains 54 semicolons, down from 68. No linter or local tests were run.
+- **Next:** Review the remaining catalog hard fingerprints and prepare the next coherent batch.
+
 ### 2026-11-23 10:28 UTC
 
 - **Action:** Activated the approved lint-remediation task after hosted validation of the cancellation-safe diagnostic fix.
@@ -71,7 +77,7 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 7. Current State
 
-The approved task is In Progress and is the current execution. The canonical hard-finding set contains 155 unique fingerprints. Both report scopes agree. Source remediation has not started. The 319 advisory findings remain out of scope.
+The approved task is In Progress and is the current execution. The canonical hard-finding set contains 155 unique fingerprints. Both report scopes agree. The first catalog batch is complete. Remaining catalog findings require review. The 319 advisory findings remain out of scope.
 
 ## 8. Remaining Work
 
@@ -82,8 +88,8 @@ The approved task is In Progress and is the current execution. The canonical har
 
 ## 9. Next Actions
 
-1. Review the exact hard-finding fingerprints and complete source context in the highest-density files.
-2. Plan small, coherent edit batches that preserve all source meaning and technical constraints.
+1. Review the remaining hard-finding fingerprints in the Document Type Catalog and plan the next coherent batch.
+2. Read complete source context for each subsequent target document.
 3. Apply fixes on `gpt` and inspect naturally generated hosted reports.
 4. Repeat until the approved hard-finding set is resolved.
 
