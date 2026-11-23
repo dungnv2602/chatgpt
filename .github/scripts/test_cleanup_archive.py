@@ -1,118 +1,56 @@
 #!/usr/bin/env python3
-"""Focused tests for indexed archive retention. Uses temporary files only."""
-
+"""Tests for exact-path, 90-day individual archive retention."""
 from __future__ import annotations
-
-import importlib.util
-import json
-import tempfile
-import unittest
-from datetime import datetime, timedelta, timezone
+import importlib.util, json, tempfile, unittest
+from datetime import datetime, timezone
 from pathlib import Path
-
-SCRIPT = Path(__file__).with_name("cleanup-archive.py")
-SPEC = importlib.util.spec_from_file_location("cleanup_archive", SCRIPT)
-assert SPEC is not None and SPEC.loader is not None
-cleanup_archive = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(cleanup_archive)
-
+SCRIPT=Path(__file__).with_name("cleanup-archive.py")
+SPEC=importlib.util.spec_from_file_location("cleanup_archive",SCRIPT)
+assert SPEC and SPEC.loader
+cleanup=importlib.util.module_from_spec(SPEC); SPEC.loader.exec_module(cleanup)
 
 class ArchiveRetentionTests(unittest.TestCase):
-    def setUp(self) -> None:
-        self.temp = tempfile.TemporaryDirectory()
-        self.root = Path(self.temp.name)
-        self.index = self.root / ".github" / "archive-retention-index.json"
-        self.index.parent.mkdir(parents=True)
-        self.archive = self.root / "archive" / "tasks"
-        self.archive.mkdir(parents=True)
+ def setUp(self):
+  self.temp=tempfile.TemporaryDirectory(); self.root=Path(self.temp.name)
+  self.index=self.root/".github"/"archive-retention-index.json"; self.index.parent.mkdir(parents=True)
+  (self.root/"archive"/"tasks").mkdir(parents=True)
+  (self.root/"archive"/"reports"/"lint_reports"/"run-1").mkdir(parents=True)
+ def tearDown(self): self.temp.cleanup()
+ def write(self,records):
+  self.index.write_text(json.dumps({"schema_version":1,"unindexed_records":"preserve","records":records}),encoding="utf-8")
+ def rec(self,path,stamp): return {"path":path,"archived_at_utc":stamp}
+ def run_clean(self): return cleanup.clean_due_records(self.index,self.root,datetime(2026,4,1,tzinfo=timezone.utc))
+ def test_empty_index_does_not_scan_archive(self):
+  (self.root/"archive"/"tasks").rmdir(); self.write([])
+  deleted,changed=self.run_clean(); self.assertEqual(deleted,[]); self.assertFalse(changed)
+  self.assertFalse((self.root/"archive"/"tasks").exists())
+ def test_unindexed_files_are_preserved(self):
+  p=self.root/"archive"/"reports"/"lint_reports"/"run-1"/"legacy.md"; p.write_text("legacy")
+  self.write([]); deleted,changed=self.run_clean()
+  self.assertEqual(deleted,[]); self.assertFalse(changed); self.assertTrue(p.exists())
+ def test_only_individually_due_task_and_report_files_are_deleted(self):
+  task=self.root/"archive"/"tasks"/"due.md"
+  report=self.root/"archive"/"reports"/"lint_reports"/"run-1"/"report.md"
+  later=self.root/"archive"/"reports"/"lint_reports"/"run-1"/"later.json"
+  legacy=self.root/"archive"/"reports"/"lint_reports"/"run-1"/"legacy.log"
+  for p in (task,report,later,legacy): p.write_text(p.name)
+  self.write([self.rec("archive/tasks/due.md","2026-01-01T00:00:00Z"),self.rec("archive/reports/lint_reports/run-1/report.md","2026-01-01T00:00:00Z"),self.rec("archive/reports/lint_reports/run-1/later.json","2026-12-01T00:00:00Z")])
+  deleted,changed=self.run_clean()
+  self.assertEqual(set(deleted),{"archive/tasks/due.md","archive/reports/lint_reports/run-1/report.md"})
+  self.assertTrue(changed); self.assertFalse(task.exists()); self.assertFalse(report.exists())
+  self.assertTrue(later.exists()); self.assertTrue(legacy.exists())
+  self.assertEqual(len(json.loads(self.index.read_text())["records"]),1)
+ def test_missing_expired_file_prunes_index_entry(self):
+  self.write([self.rec("archive/reports/absent.json","2026-01-01T00:00:00Z")])
+  deleted,changed=self.run_clean(); self.assertEqual(deleted,[]); self.assertTrue(changed)
+  self.assertEqual(json.loads(self.index.read_text())["records"],[])
+ def test_schedule_only(self):
+  with self.assertRaises(RuntimeError): cleanup.require_scheduled_event("workflow_dispatch","true")
+  with self.assertRaises(RuntimeError): cleanup.require_scheduled_event("schedule","false")
+  cleanup.require_scheduled_event("schedule","true")
+ def test_unsafe_paths_rejected(self):
+  for p in ("archive/reports/../../outside.md","archive/tasks/../reports/x.md","reports/x.md","archive/reports/.gitkeep","archive/tasks/"):
+   self.write([self.rec(p,"2026-01-01T00:00:00Z")])
+   with self.assertRaises(ValueError): self.run_clean()
 
-    def tearDown(self) -> None:
-        self.temp.cleanup()
-
-    def write_index(self, records: list[dict[str, str]]) -> None:
-        self.index.write_text(
-            json.dumps({
-                "schema_version": 1,
-                "unindexed_records": "preserve",
-                "records": records,
-            }),
-            encoding="utf-8",
-        )
-
-    def test_empty_index_does_not_access_archive(self) -> None:
-        self.archive.rmdir()
-        self.write_index([])
-        deleted, changed = cleanup_archive.clean_due_records(
-            self.index, self.root, datetime(2027, 1, 1, tzinfo=timezone.utc)
-        )
-        self.assertEqual(deleted, [])
-        self.assertFalse(changed)
-        self.assertFalse(self.archive.exists())
-
-    def test_unindexed_legacy_file_is_preserved(self) -> None:
-        legacy = self.archive / "legacy-record.md"
-        legacy.write_text("legacy", encoding="utf-8")
-        self.write_index([])
-        deleted, changed = cleanup_archive.clean_due_records(
-            self.index, self.root, datetime(2027, 1, 1, tzinfo=timezone.utc)
-        )
-        self.assertEqual(deleted, [])
-        self.assertFalse(changed)
-        self.assertTrue(legacy.exists())
-
-    def test_only_due_indexed_file_is_deleted(self) -> None:
-        due = self.archive / "due-record.md"
-        later = self.archive / "later-record.md"
-        legacy = self.archive / "unindexed-record.md"
-        for item in (due, later, legacy):
-            item.write_text(item.name, encoding="utf-8")
-
-        self.write_index([
-            {"path": "archive/tasks/due-record.md", "archived_at": "2026-01-01T00:00:00Z"},
-            {"path": "archive/tasks/later-record.md", "archived_at": "2026-12-01T00:00:00Z"},
-        ])
-        deleted, changed = cleanup_archive.clean_due_records(
-            self.index, self.root, datetime(2026, 4, 1, tzinfo=timezone.utc)
-        )
-        self.assertEqual(deleted, ["archive/tasks/due-record.md"])
-        self.assertTrue(changed)
-        self.assertFalse(due.exists())
-        self.assertTrue(later.exists())
-        self.assertTrue(legacy.exists())
-        updated = json.loads(self.index.read_text(encoding="utf-8"))
-        self.assertEqual(
-            updated["records"],
-            [{"path": "archive/tasks/later-record.md", "archived_at": "2026-12-01T00:00:00Z"}],
-        )
-
-    def test_missing_due_path_is_pruned_without_directory_scan(self) -> None:
-        self.write_index([
-            {"path": "archive/tasks/already-absent.md", "archived_at": "2026-01-01T00:00:00Z"},
-        ])
-        deleted, changed = cleanup_archive.clean_due_records(
-            self.index, self.root, datetime(2026, 4, 1, tzinfo=timezone.utc)
-        )
-        self.assertEqual(deleted, [])
-        self.assertTrue(changed)
-        updated = json.loads(self.index.read_text(encoding="utf-8"))
-        self.assertEqual(updated["records"], [])
-
-    def test_non_schedule_event_is_rejected(self) -> None:
-        with self.assertRaises(RuntimeError):
-            cleanup_archive.require_scheduled_event("workflow_dispatch", "true")
-        with self.assertRaises(RuntimeError):
-            cleanup_archive.require_scheduled_event("schedule", "false")
-        cleanup_archive.require_scheduled_event("schedule", "true")
-
-    def test_unsafe_path_is_rejected(self) -> None:
-        self.write_index([
-            {"path": "archive/tasks/../../outside.md", "archived_at": "2026-01-01T00:00:00Z"},
-        ])
-        with self.assertRaises(ValueError):
-            cleanup_archive.clean_due_records(
-                self.index, self.root, datetime(2026, 4, 1, tzinfo=timezone.utc)
-            )
-
-
-if __name__ == "__main__":
-    unittest.main(verbosity=2)
+if __name__=="__main__": unittest.main(verbosity=2)
