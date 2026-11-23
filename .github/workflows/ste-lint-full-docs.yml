@@ -296,8 +296,10 @@ jobs:
               "files_evaluated_count": len(files_evaluated),
               "findings": findings,
               "total_findings": len(findings),
-              "hard_findings": sum(int(value) for value in re.findall(r"\((\d+) hard, baseline", markdown)),
+              "hard_findings": sum(item["hard_findings"] or 0 for item in file_results),
               "files_with_findings": len({finding["file"] for finding in findings}),
+              "files_failed": [item["path"] for item in file_results if item["exit_code"] != 0],
+              "file_results": file_results,
               "findings_by_rule": findings_by_rule,
               "generated_at_utc": datetime.now(timezone.utc).isoformat(),
               "report_markdown": markdown
