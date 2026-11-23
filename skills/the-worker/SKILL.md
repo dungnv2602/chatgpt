@@ -20,11 +20,17 @@ Conversation Mode controls chat verbosity and the discussion-register format. It
 
 CI status is not a precondition for accepting or handling a new user request. Do not run a pre-prompt or post-initialization snapshot.
 
-Inspect CI only when the user asks for diagnosis or repair, when the current task changes a workflow or code that needs that validation, or when a known failure directly blocks the requested work. Use `gh_ac_reports/README.md` for workflow, job, step, and runner evidence. Use `lint_reports/README.md` for per-file lint findings.
+Inspect CI only in these cases:
+
+- The user asks for diagnosis or a fix.
+- The current task changes a workflow or code that needs validation.
+- A known failure directly blocks the requested work.
+
+Use `gh_ac_reports/README.md` for workflow, job, step, and runner evidence. Use `lint_reports/README.md` for per-file lint findings.
 
 Keep outcomes distinct. A failed conclusion is a failure. A cancelled or skipped run is not a failure. A pending or unavailable run is unverified, not failed.
 
-Repair only defects within the user's current scope and only when the task requires the repair. Do not repair unrelated workflows before handling a request. Do not weaken tests, path coverage, or lint baselines to make a check pass.
+Fix only defects within the user's current scope and only when the task requires the fix. Do not fix unrelated workflows before handling a request. Do not weaken tests, path coverage, or lint baselines to make a check pass.
 
 Never wait for or poll CI. Never run the linter, repository scripts, or CI tests locally. Let GitHub-hosted Actions perform validation. Record an unavailable result as unverified and continue unless the task directly depends on it.
 
@@ -46,10 +52,10 @@ The repository on GitHub is the only project workspace. Do not assume that a loc
 - Read, search, inspect, create, update, move, and delete repository files through the GitHub connector and GitHub APIs. Use exact paths and branch `gpt`.
 - The only archive-retention index exception is `.github/archive-retention-index.json`. Read or update it only to register the exact path and UTC archive timestamp of a task record during closeout. Never enumerate `archive/tasks/` to backfill the index.
 - Never use local shell, Git, Python, container, filesystem, or similar execution tools to clone, pull, checkout, inspect, edit, test, build, or commit repository work.
-- Create commits and update refs through GitHub's remote APIs. Read back every changed path and verify the resulting branch head.
+- Create commits and update refs through GitHub's remote APIs. Read back every changed path and check the resulting branch head.
 - Run repository scripts, tests, and validation only on GitHub-hosted Actions runners when an approved workflow invokes them. Inspect their results through GitHub Actions logs and artifacts. Do not reproduce them locally.
 
-This rule is mandatory because no local project environment is provided and the GitHub repository is the sole source of truth. A local checkout may be absent, stale, or detached from the authorized branch. A local test result cannot validate the current remote commit and must never be reported as repository verification.
+This rule is mandatory because no local project environment is provided and the GitHub repository is the sole source of truth. A local checkout may be absent, stale, or detached from the authorized branch. A local test result cannot check the current remote commit and must never be reported as repository verification.
 
 ## Workspace structure
 
@@ -62,7 +68,7 @@ This rule is mandatory because no local project environment is provided and the 
 - archive/tasks/ contains completed or cancelled task records during retention.
 - Treat `archive/` as read-only after each record's initial archive write. You may read an exact archived record when a task requires its content. Do not perform broad archive scans or audits unless the user asks.
   - Create the final task record in `archive/tasks/` as the initial archive write.
-  - Read back that exact path and verify its complete content.
+  - Read back that exact path and check its complete content.
   - After verification, never edit, replace, rename, move, or manually delete the archived record.
   - Update the active task board with a link to the archived record and the archival commit.
   - Only the scheduled retention workflow may delete expired archive contents.
@@ -205,9 +211,9 @@ This gate applies before every repository document creation or material revision
 5. Read the owner skill's relevant authoring instructions and indexes.
 6. If the canonical format is missing or incomplete, stop before creating or editing the target document.
 7. Create or revise the canonical template or schema first. Update the catalog, owner skill, and parent index as required.
-8. Commit and read back the canonical format and its references. Verify the complete content and exact paths.
+8. Commit and read back the canonical format and its references. Check the complete content and exact paths.
 9. Only after that read-back succeeds, create or revise the governed document from the canonical format.
-10. Check the target against required, conditional, optional, and repeatable fields. Remove unused placeholders.
+10. Check the target against required, conditional, optional, and repeatable fields. Delete unused placeholders.
 11. Update the parent index. Commit and read back the target and every changed path.
 
 **Stop condition:** Do not write the target document until the canonical format, catalog entry, and owner instructions pass commit and read-back.
@@ -271,7 +277,7 @@ Ask the user only when a genuine decision, missing requirement, or approval bloc
 
 ## Report triage and archive
 
-Use `reports/triage/ledger.json` to track recurring issues across lint and Actions reports. Mark a finding resolved only after recording its fix commit and successful relevant validation. Move resolved report files to `archive/reports/`; the shared scheduled archive-retention workflow deletes each indexed file after 90 days. Task records and report files share the same archive index and cleanup process.
+Use `reports/triage/ledger.json` to track recurring issues across lint and Actions reports. Mark a finding resolved only after recording its fix commit and successful relevant validation. Move resolved report files to `archive/reports/`. The shared scheduled archive-retention workflow deletes each indexed file after 90 days. Task records and report files share the same archive index and cleanup process.
 
 ## Task completion and archive
 
@@ -281,7 +287,7 @@ Use only the canonical task statuses in this skill: Proposed, Ready, In Progress
 
 The Worker closes a task only after it archives the record and reconciles the task board.
 
-**Archive gate — do not mark an active record Done prematurely.** Keep the active task record In Progress and Archived: No until the archive copy exists and its write has been verified. Prepare the final Done/Cancelled and Archived: Yes content for the archive destination; do not commit those final metadata values to the active path. Create the archive copy first. Only after the archive path exists may you remove the active path and reconcile the board. Move the board row to Historical only after the archive commit exists, and link that exact commit. If any step remains incomplete, leave the task open and report the exact blocker. This prevents a status label from claiming an archival operation that never happened.
+**Archive gate — do not mark an active record Done prematurely.** Keep the active task record In Progress and Archived: No until the archive copy exists and its write has been verified. Prepare the final Done/Cancelled and Archived: Yes content for the archive destination. Do not commit those final metadata values to the active path. Create the archive copy first. Only after the archive path exists may you delete the active path and reconcile the board. Move the board row to Historical only after the archive commit exists, and link that exact commit. If any step remains incomplete, leave the task open and report the exact blocker. This prevents a status label from claiming an archival operation that never happened.
 
 When acceptance criteria are met:
 
@@ -289,8 +295,8 @@ When acceptance criteria are met:
 2. Prepare the final archive copy with status Done or Cancelled, an archive timestamp in UTC using `YYYY-MM-DDTHH:MM:SSZ`, complete verification, and a final handoff. Set Archived to Yes in that archive copy only.
 3. Check whether `archive/tasks/<same-filename>` already exists. If it does, read it and compare its complete content with the prepared final record. Reuse it only when the content matches. Stop if the content differs. Never overwrite an existing archive record.
 4. If the archive path does not exist, create it once. Preserve the task ID and filename. This is the only content write for that archive path.
-5. Read the exact archive path after the write. Compare its complete content with the prepared final record. Verify the archive commit and changed-path metadata. If you reuse an existing copy, recover the original commit that introduced or contains that archive path from the task board or GitHub history. Never substitute a later board-update commit. Stop if the path is missing or the content differs.
-6. Add one entry to `.github/archive-retention-index.json` with the exact archive path and UTC archive timestamp from the verified record. Preserve all existing entries. Verify the new entry. Do not enumerate `archive/tasks/` or backfill other records.
+5. Read the exact archive path after the write. Compare its complete content with the prepared final record. Check the archive commit and changed-path metadata. If you reuse an existing copy, recover the original commit that introduced or contains that archive path from the task board or GitHub history. Never substitute a later board-update commit. Stop if the path is missing or the content differs.
+6. Add one entry to `.github/archive-retention-index.json` with the exact archive path and UTC archive timestamp from the verified record. Preserve all existing entries. Check the new entry. Do not enumerate `archive/tasks/` or backfill other records.
 7. Treat the archive record as immutable after this verification. You may read it later when task recovery, board reconciliation, or verification requires it. Never edit, replace, rename, move, or manually delete an archived record. Only the scheduled retention workflow may delete indexed archived records.
 8. Only after archive read-back and retention-index verification succeed, delete the active record from `workspace/tasks/`. Keep the active record In Progress with Archived: No until this deletion succeeds. If deletion fails, leave the task open and reconcile the existing archive copy without rewriting it.
 9. Update `workspace/task_board.md` in the same closeout pass:
@@ -299,8 +305,8 @@ When acceptance criteria are met:
    - Add one Historical row with status Done or Cancelled, the archive path, and the exact commit that contains the archived record.
    - Apply the seven-entry history limit. Delete only the oldest index rows when required.
    - Select or identify the next current execution task according to the selection rules. Do not invent a task when no eligible task exists.
-10. Fetch the committed task board. Verify that the closed task is absent from active sections and appears exactly once in Historical. Verify its links to the archive path and archival commit. Verify that Current Execution matches the selection rules.
-11. Verify that the archival commit includes the archived record in its changed-path metadata. Read the archived record when needed to verify its content or recover board details. Do not modify the archived record.
+10. Retrieve the committed task board. Check that the closed task is absent from active sections and appears exactly once in Historical. Check its links to the archive path and archival commit. Check that Current Execution matches the selection rules.
+11. Check that the archival commit includes the archived record in its changed-path metadata. Read the archived record when needed to check its content or recover board details. Do not change the archived record.
 12. Only after these checks, report the task as closed and provide the appropriate handoff.
 
 Treat the task record, archive path, and task board as one logical transaction even when the GitHub API requires more than one commit. Do not stop after changing task metadata, after creating the archive copy, or after deleting the active record.
