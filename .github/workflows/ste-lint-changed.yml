@@ -307,8 +307,14 @@ jobs:
           ):
               raw = os.environ.get(key, "")
               exit_code = int(raw) if raw.isdigit() else 2
-              name = key.removesuffix("_EXIT").lower() + ".log"
-              log = root / name
+              log_names = {
+                  "WRAPPER_EXIT": "wrapper_syntax.log",
+                  "PYTHON_EXIT": "python_compile.log",
+                  "REPORT_TEST_EXIT": "report_tests.log",
+                  "ANCHOR_TEST_EXIT": "anchor_tests.log",
+                  "SELFTEST_EXIT": "linter_selftest.log",
+              }
+              log = root / log_names[key]
               checks.append({
                   "name": label,
                   "status": "Passed" if exit_code == 0 else "Failed",
