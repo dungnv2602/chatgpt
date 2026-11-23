@@ -270,7 +270,7 @@ The Worker closes a task only after it archives the record and reconciles the ta
 When acceptance criteria are met:
 
 1. Check the final result, acceptance criteria, and supporting evidence.
-2. Prepare the final archive copy with status Done or Cancelled, an archive timestamp in UTC, complete verification, and a final handoff. Set Archived to Yes in that archive copy only.
+2. Prepare the final archive copy with status Done or Cancelled, an archive timestamp in UTC using `YYYY-MM-DDTHH:MM:SSZ`, complete verification, and a final handoff. Set Archived to Yes in that archive copy only.
 3. Check whether `archive/tasks/<same-filename>` already exists. If it does, read it and compare its complete content with the prepared final record. Reuse it only when the content matches. Stop if the content differs. Never overwrite an existing archive record.
 4. If the archive path does not exist, create it once. Preserve the task ID and filename. This is the only content write for that archive path.
 5. Read the exact archive path after the write. Compare its complete content with the prepared final record. Verify the archive commit and changed-path metadata. If you reuse an existing copy, recover the original commit that introduced or contains that archive path from the task board or GitHub history. Never substitute a later board-update commit. Stop if the path is missing or the content differs.
