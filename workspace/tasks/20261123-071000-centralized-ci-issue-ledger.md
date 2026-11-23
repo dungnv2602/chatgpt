@@ -5,12 +5,12 @@
 - **Template version:** 1.1
 - **ID:** 20261123-071000
 - **Created:** 2026-11-23 07:10 UTC
-- **Updated:** 2026-11-23 07:10 UTC
+- **Updated:** 2026-11-23 08:03 UTC
 - **Priority:** P1
-- **Status:** Ready
+- **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** 20261123-054904 — Build GitHub Actions diagnostic reports and remove the CI preflight gate
 - **Related tasks:** 20261123-054904 — Build GitHub Actions diagnostic reports and remove the CI preflight gate
 - **Archived:** No
@@ -61,6 +61,12 @@ Turn the existing triage-ledger foundation under `reports/triage/` into an opera
 
 ## 6. Progress Log
 
+### 2026-11-23 08:03 UTC
+
+- **Action:** Started execution after the user explicitly reprioritized this approved task.
+- **Result:** The diagnostic-report infrastructure task is paused, not closed. Its natural-run validation and pending captures remain follow-up work. The ledger task is now the sole current execution.
+- **Next:** Complete the source-contract and ingestion-design inspection, then implement forward-only ingestion.
+
 ### 2026-11-23 07:10 UTC
 
 - **Action:** Created this approved task record after the user authorized a separate implementation task.
@@ -72,7 +78,7 @@ Turn the existing triage-ledger foundation under `reports/triage/` into an opera
 
 The repository already contains an initial triage README, a JSON schema, and an empty `ledger.json`. The README describes deduplication and lifecycle states, but there is no automated ingestion/upsert process and no populated issue register. The existing ledger is therefore a foundation, not an operational issue tracker.
 
-This task is approved and Ready. It is not the current execution task; the diagnostic-report infrastructure task remains active. No files have been changed for implementation.
+This task is approved and In Progress. It is the current execution task following explicit user reprioritization. The diagnostic-report infrastructure task is paused, not closed. No files have been changed for implementation.
 
 ## 8. Remaining Work
 
@@ -85,9 +91,10 @@ This task is approved and Ready. It is not the current execution task; the diagn
 
 ## 9. Next Actions
 
-1. Wait until the current diagnostic-report task is complete or the user explicitly reprioritizes this task.
-2. Reinspect the then-current `gpt` branch and report contracts before implementation.
-3. Implement and validate forward-only ingestion before considering historical backfill.
+1. Complete source-contract and ingestion-design inspection on the current `gpt` branch.
+2. Implement forward-only ingestion, validation, regression tests, and operator guidance.
+3. Integrate ingestion into report publication without recursive triggers or concurrent ledger writers.
+4. Use GitHub-hosted Actions for validation. Do not poll or wait for runs.
 
 ## 10. References
 

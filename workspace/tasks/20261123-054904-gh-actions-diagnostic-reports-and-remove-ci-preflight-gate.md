@@ -5,12 +5,12 @@
 - **Template version:** 1.1
 - **ID:** 20261123-054904
 - **Created:** 2026-11-23 05:49 UTC
-- **Updated:** 2026-11-23 07:16 UTC
+- **Updated:** 2026-11-23 08:03 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Paused
 - **Origin:** User
 - **Approval:** Approved
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** 20261123-051200 — Repair lint-report evidence workflow and unify report generation
 - **Archived:** No
@@ -146,6 +146,12 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - **Action:** Extended the existing exact-path archive cleanup to accept individual files under both `archive/tasks/` and `archive/reports/`, corrected the index timestamp contract to `archived_at_utc`, added cleanup regression tests, and included those tests in the hosted diagnostics sweep.
 - **Result:** The shared policy remains 90 days per file; unindexed files are preserved and directory scans are not used. Hosted validation of these latest edits remains pending/unverified.
 
+### 2026-11-23 08:03 UTC
+
+- **Action:** Paused active execution after the user explicitly reprioritized the approved centralized CI issue ledger task.
+- **Result:** Preserved the remaining natural-run Document Standards validation and pending post-run captures as open follow-up work. No task closeout or archive operation was performed.
+- **Next:** Resume only when selected again. Do not dispatch or poll workflows.
+
 ## 7. Current State
 
 The report families are consolidated under `reports/`: `reports/lint_reports/`, `reports/gh_ac_reports/`, and `reports/triage/`. The migration preserved the 198 report blobs present at migration start; six late lint-report files written by a stale workflow path were subsequently relocated. The root `reports/README.md` links the report families and shared triage ledger. No `reports/archive/` directory exists.
@@ -219,7 +225,7 @@ The repository default branch is `main`, while this authorized task is restricte
 
 - **Check:** Repository publication and task tracking.
 - **Method:** Read back changed workflow files, report paths, task record, discussion register, and task board.
-- **Result:** All implementation paths are on branch `gpt`. The three corrected-capture request files are committed. The task remains In Progress while those optional recaptures are unverified.
+- **Result:** All implementation paths are on branch `gpt`. The three corrected-capture request files are committed. The task is Paused following explicit user reprioritization while those optional recaptures are unverified.
 
 ## 12. Handoff Instructions
 
