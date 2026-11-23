@@ -62,17 +62,26 @@ Audit the repository's template and schema placement, classify each recurring do
 - **References:** `workspace/discussion.md`, `skills/document-standards/SKILL.md`, `skills/document-standards/references/document-type-catalog.md`, `skills/the-worker/SKILL.md`, `skills/session-archiving/SKILL.md`, `skills/agent-skill-authoring/SKILL.md`, `workspace/TASK_TEMPLATE.md`, `workspace/task_board.md`.
 - **Next:** Enumerate the repository tree, then build a complete template/schema placement inventory before making any governed document changes.
 
+
+
+### 2026-11-23 04:45 UTC
+
+- **Action:** Enumerated the recursive Git tree and reviewed every filename-matched template/schema candidate outside archive contents. Inspected the novel workflow, Prompt Master references, Drawing pattern index, skill asset conventions, Document Type Catalog, validator, tests, and current validation workflow.
+- **Result:** The tree contains 483 entries (417 files) and was not truncated. Two copy-ready template resources are misplaced in `references/`: Prompt Master’s template library and Drawing’s pattern-entry templates. Other named templates are in appropriate locations: project-owned novel templates under `novels/templates/`, skill-owned assets under their owning `assets/` folders, and the shared task template under `workspace/`. The catalog currently misclassifies Prompt Master’s template library as a lightweight technical reference. The validator checks catalog rows, paths, class references, and tests, but it does not enforce template placement or content use. The Actions workflow only watches the catalog, validator, tests, and novel templates. It will not trigger for most skill-template changes.
+- **References:** Recursive tree for `gpt`; `skills/document-standards/scripts/validate_catalog.py`; `skills/document-standards/scripts/test_validate_catalog.py`; `.github/workflows/validate-document-standards.yml`; `skills/prompt-master/references/templates.md`; `skills/drawing/references/patterns/PATTERN-TEMPLATES.md`; `skills/document-standards/references/document-type-catalog.md`.
+- **Next:** Create and verify the two correctly placed canonical assets. Then update all references and catalog classifications. Do not edit governed documents before the target assets exist and pass read-back.
+
 ## 7. Current State
 
-The task record was created from `workspace/TASK_TEMPLATE.md`. Initial standards review is complete. Full repository inventory and enforcement changes are pending.
+The task record was created from `workspace/TASK_TEMPLATE.md`. Initial standards review and repository-tree inventory are complete. Two template assets are misplaced. Existing CI does not enforce template placement or use. Correctly placed asset copies are the next action.
 
 ## 8. Remaining Work
 
-- Enumerate and classify the repository tree.
-- Inspect template/schema asset placement and all references.
-- Identify missing or duplicate canonical formats.
-- Update templates and catalog before editing governed documents.
-- Strengthen Worker and any non-workflow validators that can enforce template-first authoring.
+- Create and verify the two canonical template assets at the correct paths.
+- Update references and catalog classifications, then remove the old paths.
+- Strengthen Document Standards, The Worker, and the catalog validator.
+- Update Session Archiving's explicit full-repository audit exception if required.
+- Determine whether the existing GitHub Actions path filters need a separately authorized change.
 - Verify all changes and reconcile the task board.
 
 ## 9. Next Actions
