@@ -10,7 +10,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "1.1.0"
+      "const": "1.2.0"
     },
     "updated_at_utc": {
       "type": [
@@ -290,6 +290,15 @@
               "accepted_by",
               "accepted_at_utc"
             ]
+          },
+          "task_refs": {
+            "type": "array",
+            "description": "Worker-owned links to task records that address this finding.",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
           }
         },
         "additionalProperties": false

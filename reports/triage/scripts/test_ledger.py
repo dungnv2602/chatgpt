@@ -25,9 +25,9 @@ class LedgerTests(unittest.TestCase):
     def tearDown(self):
         self.temp.cleanup()
 
-    def write_ledger(self, version="1.1.0", findings=None):
+    def write_ledger(self, version="1.2.0", findings=None):
         payload = {"schema_version": version, "updated_at_utc": None, "findings": findings or []}
-        if version == "1.1.0":
+        if version in ("1.1.0", "1.2.0"):
             payload["ingestion_state"] = {"bootstrap_at_utc":"2026-11-23T07:00:00Z","processed_reports":[]}
         path = self.root / "reports" / "triage" / "ledger.json"
         path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
@@ -89,6 +89,7 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(first["findings_created"],1)
         self.assertEqual(finding["finding_id"],"lint-a1b2c3d4e5f6")
         self.assertEqual(finding["occurrence_count"],1)
+        self.assertEqual(finding["task_refs"], [])
         self.assertEqual(len(finding["evidence"]),2)
         second = LEDGER.ingest(self.root, now="2026-11-23T07:13:00Z")
         self.assertFalse(second["changed"])
@@ -139,16 +140,30 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(len(findings),3)
         self.assertTrue(all(item["source_family"] == "github_actions" for item in findings))
 
-    def test_cancelled_source_run_never_creates_findings(self):
-        issue = {
-            "category":"validation_or_test","job_name":"Build","step_name":"Unit tests",
-            "blocking":True,"confidence":"high","message":"A stale report marked a cancelled run as a test failure.",
-        }
-        self.add_actions("203","2026-11-23T07:35:00Z",[issue],conclusion="cancelled")
+    def test_cancelled_run_keeps_independent_failure_and_ignores_cancellation_propagation(self):
+        issues = [
+            {"category":"cancelled","job_name":"Build","step_name":"Cancel remaining work",
+             "blocking":False,"confidence":"high","message":"Run cancelled."},
+            {"category":"validation_or_test","job_name":"Build",
+             "step_name":"Preserve lint failure as workflow conclusion",
+             "blocking":True,"confidence":"medium","message":"Changed-document lint failed."},
+            {"category":"validation_or_test","job_name":"Build","step_name":"Run unit tests",
+             "blocking":True,"confidence":"high","message":"ERROR: assertion mismatch"},
+        ]
+        self.add_actions("203","2026-11-23T07:35:00Z",issues,conclusion="cancelled")
+        result = LEDGER.ingest(self.root)
+        findings = self.read_ledger()["findings"]
+        self.assertEqual(result["total_findings"],1)
+        self.assertEqual(result["reports_processed"],1)
+        self.assertEqual(findings[0]["category"],"validation_or_test")
+        self.assertEqual(findings[0]["occurrence_count"],1)
+
+    def test_cancelled_only_report_creates_no_findings(self):
+        issue = {"category":"cancelled","job_name":"Build","step_name":"Cancel remaining work",
+                 "blocking":False,"confidence":"high","message":"Run cancelled."}
+        self.add_actions("204","2026-11-23T07:36:00Z",[issue],conclusion="cancelled")
         result = LEDGER.ingest(self.root)
         self.assertEqual(result["total_findings"],0)
-        self.assertEqual(result["reports_processed"],1)
-        self.assertEqual(self.read_ledger()["findings"],[])
 
     def test_actions_repeat_observation_increments_once_per_run(self):
         issue = {"category":"validation_or_test","job_name":"Build","step_name":"Unit tests","blocking":True,"confidence":"medium","message":"Assertion mismatch"}
@@ -189,6 +204,7 @@ class LedgerTests(unittest.TestCase):
             "occurrence_count":1,"evidence":[{"report_path":"reports/old/report.json","observed_at_utc":"2026-11-23T07:00:00Z","observation_id":"lint:old:1"}],
             "resolution":None,"resolution_history":[],"duplicate_of":None,
             "accepted_risk":{"rationale":"Known legacy debt","accepted_by":"Team","accepted_at_utc":"2026-11-23T07:00:00Z"},
+            "task_refs":["20261123-100738"],
         }
         self.write_ledger(findings=[finding])
         self.add_lint("on_changed","400","2026-11-23T07:20:00Z")
@@ -200,6 +216,7 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(updated["severity"],"critical")
         self.assertEqual(updated["owner"],"Platform")
         self.assertEqual(updated["accepted_risk"],finding["accepted_risk"])
+        self.assertEqual(updated["task_refs"],["20261123-100738"])
 
     def test_non_defect_actions_and_pre_finalizer_reports_are_ignored(self):
         issues = [
@@ -232,11 +249,26 @@ class LedgerTests(unittest.TestCase):
         self.write_ledger(version="1.0.0")
         result = LEDGER.ingest(self.root)
         migrated = self.read_ledger()
-        self.assertEqual(migrated["schema_version"],"1.1.0")
+        self.assertEqual(migrated["schema_version"],"1.2.0")
+        self.assertEqual(migrated["findings"],[])
         self.assertIn(path,migrated["ingestion_state"]["processed_reports"])
         self.assertEqual(migrated["findings"],[])
         self.assertEqual(result["reports_processed"],0)
         self.assertTrue(migrated["updated_at_utc"])
+
+    def test_migrate_1_1_adds_empty_task_refs(self):
+        finding = {
+            "finding_id":"lint-a1b2c3d4e5f6","source_family":"lint","category":"rule","title":"A finding",
+            "status":"planned","severity":"medium","owner":None,
+            "first_seen_utc":"2026-11-23T07:00:00Z","last_seen_utc":"2026-11-23T07:00:00Z",
+            "occurrence_count":1,"evidence":[],"resolution":None,"resolution_history":[],
+            "duplicate_of":None,"accepted_risk":None,
+        }
+        self.write_ledger(version="1.1.0", findings=[finding])
+        LEDGER.ingest(self.root)
+        migrated = self.read_ledger()
+        self.assertEqual(migrated["schema_version"],"1.2.0")
+        self.assertEqual(migrated["findings"][0]["task_refs"], [])
 
     def test_malformed_index_fails_closed_without_changing_ledger(self):
         index = self.root / "reports" / "lint_reports" / "on_changed" / "index.json"

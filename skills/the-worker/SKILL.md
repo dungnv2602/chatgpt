@@ -28,7 +28,7 @@ Inspect CI only in these cases:
 - The current task changes a workflow or code that needs validation.
 - A known failure directly blocks the requested work.
 
-Use `gh_ac_reports/README.md` for workflow, job, step, and runner evidence. Use `lint_reports/README.md` for per-file lint findings.
+Use `reports/gh_ac_reports/README.md` for workflow, job, step, and runner evidence. Use `reports/lint_reports/README.md` for per-file lint findings.
 
 Keep outcomes distinct. A failed conclusion is a failure. A cancelled or skipped run is not a failure. A pending or unavailable run is unverified, not failed.
 
@@ -317,7 +317,24 @@ Ask the user only when a genuine decision, missing requirement, or approval bloc
 
 ## Report triage and archive
 
-Use `reports/triage/ledger.json` to track recurring issues across lint and Actions reports. Mark a finding resolved only after recording its fix commit and successful relevant validation. Move resolved report files to `archive/reports/`. The shared scheduled archive-retention workflow deletes each indexed file after 90 days. Task records and report files share the same archive index and cleanup process.
+Use `reports/triage/ledger.json` as the authoritative issue backlog for lint and GitHub Actions findings. The ledger owns finding identity, severity, recurrence, evidence, and finding status. The Worker owns task creation, prioritization, execution, and task closeout.
+
+### Finding-to-task handoff
+
+Run triage only when the user requests it, a known failure blocks the current task, or the current task requires CI evidence. Do not run background triage, dispatch workflows, or poll CI.
+
+1. Read open or active findings in the ledger. Follow each immutable report path and run URL. Confirm the specific classified issue. A workflow conclusion alone is not a finding.
+2. Treat ordinary successful runs and cancellation-only outcomes as non-actionable. A successful run can still contain a non-blocking failed step. A cancelled run can still contain an independent failure. Use the report's classified issue rows rather than the overall conclusion alone.
+3. Group findings by shared cause and remediation scope. Check the task board and active task records first. Update an existing task when it already covers the work. Do not create one task per finding or per occurrence.
+4. Create one task for each coherent remediation group. Include every finding ID, immutable report path, and source run URL in the task record. A task can cover multiple findings.
+5. Add the task ID to each linked finding's `task_refs` array. Keep task status and finding status separate. Use finding status `planned` when a Ready task exists, `fixing` while remediation is active, and `verifying` while hosted validation is pending.
+6. Follow the task approval rules. Clearly actionable work within an approved scope may become Ready. Optional or ambiguous work remains Proposed. Approval of this handoff procedure does not authorize unrelated fixes, changes to lint rules or baselines, or automatic remediation.
+7. Set priority from severity, blocking impact, recurrence, and dependencies. Use P1 for critical/high blocking issues, P2 for medium issues or grouped recurring defects, and P3 for low/informational work unless impact justifies a higher priority.
+8. Do not mark a finding resolved until its fix commit and successful relevant hosted validation are recorded. Include the validation run URL and UTC timestamp. New evidence can reopen a resolved finding.
+
+The ledger generator preserves `task_refs` and human-managed status fields. It does not create or update workspace tasks. Do not copy the ledger's occurrence history or diagnostic payload into a task record; link to it instead.
+
+Move resolved report files to `archive/reports/`. The shared scheduled archive-retention workflow deletes each indexed file after 90 days. Task records and report files share the same archive index and cleanup process.
 
 ## Task completion and archive
 

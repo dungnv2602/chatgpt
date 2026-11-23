@@ -1,5 +1,5 @@
 name: Capture GitHub Actions diagnostics
-description: Validate cancellation-safe diagnostics and ledger tools, capture the calling workflow, update the issue ledger, and publish evidence.
+description: Validate diagnostics and ledger tools, capture actionable source-workflow failures, update the issue ledger, and publish evidence.
 runs:
   using: composite
   steps:

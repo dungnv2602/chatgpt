@@ -1,6 +1,6 @@
 # GitHub Actions diagnostic reports
 
-This directory is the review surface for GitHub Actions execution failures and operational warnings. It complements the STE lint evidence in the separate `reports/lint_reports/` directory.
+This directory is the review surface for actionable GitHub Actions execution failures and operational exceptions. It complements the STE lint evidence in the separate `reports/lint_reports/` directory. Ordinary successful runs and cancellation-only runs are not persisted by default.
 
 ## Review order
 
@@ -22,17 +22,17 @@ This directory is the review surface for GitHub Actions execution failures and o
 
 ## Capture stages
 
-- pre_finalizer is captured by the local composite action in a normal diagnostics job after the source jobs finish. The parent workflow is still in progress. The report records the observed status, finished source jobs, and a projected conclusion. It does not invent a final conclusion.
+- pre_finalizer is attempted by the local composite action after the source jobs finish. The parent workflow is still in progress. It writes a report only when the finished jobs contain a classified issue or projected actionable failure. Ordinary success and cancellation-only outcomes are skipped. The report records the observed status, finished source jobs, and a projected conclusion. It does not invent a final conclusion.
 - post_run is captured by the push-driven sweep after GitHub marks the source run completed. It records the actual conclusion. It is a separate immutable capture. It does not overwrite pre_finalizer evidence.
 
-The sweep stores pending run IDs for queued, running, or incomplete captures. It checks pending IDs during a later sweep. It also discovers runs created since the bootstrap watermark, including tag and scheduled runs. A request file can capture an older run.
+The sweep stores pending run IDs for queued, running, or incomplete captures. It checks pending IDs during a later sweep. It also discovers runs created since the bootstrap watermark, including tag and scheduled runs. Completed ordinary successes and cancellation-only outcomes are marked handled without writing report history. A successful run with a classified non-blocking failed step is captured. A cancelled run is captured only when it contains an independent actionable issue. A request file can force a capture for one exact older run, including a successful run.
 
 ## Failure classification
 
 The report preserves the source conclusion reported by GitHub. Report-generation success does not mean that the source workflow succeeded.
 
 - failure: GitHub reports failure.
-- cancelled: GitHub reports cancellation. The report retains the run, jobs, steps, logs, and annotations. Cancellation alone does not create an actionable issue. The generator excludes known downstream status-propagation steps after a cancelled step. Independent failures before cancellation remain actionable.
+- cancelled: GitHub reports cancellation. Cancellation alone does not create a report for new runs. A cancelled run with an independent classified failure is captured; cancellation and known downstream status-propagation steps do not create issues. Existing historical cancellation-only captures remain immutable.
 - timed_out: GitHub reports a timeout.
 - action_required: GitHub reports an action-required state.
 - skipped and neutral remain non-failure outcomes.
@@ -77,7 +77,7 @@ All source-workflow finalizers and the push-driven sweep use the same repository
 
 ## Reporter self-monitoring
 
-The diagnostics workflow is deliberately excluded from its own run sweep to prevent recursive report generation. Its own failures are not included in the reports it creates. Inspect the diagnostics workflow's own run and job logs directly in the GitHub Actions interface. Failure of the report-only job in a source workflow is separately contained by the caller's job-level `continue-on-error: true` setting.
+The diagnostics workflow is deliberately excluded from its own run sweep to prevent recursive report generation. Its own failures are not included in the reports it creates. Inspect the diagnostics workflow's own run and job logs directly in the GitHub Actions interface. Failure of the report-only job in a source workflow is separately contained by the caller's job-level `continue-on-error: true` setting. Explicit backfill requests remain an operator override and may preserve a successful run when its evidence is specifically needed.
 
 ## Resolution and archive
 

@@ -22,7 +22,9 @@ Task operations follow [The Worker skill](../skills/the-worker/SKILL.md).
 
 ## CI diagnostics
 
-For workflow-level diagnostics, start at [the GitHub Actions report guide](../reports/gh_ac_reports/README.md). Track recurring issues in the [central triage ledger](../reports/triage/README.md). Read the global index, then the workflow-specific latest report and immutable run capture. The report separates the source workflow conclusion from report-generation status and links to the exact Actions run. Use a request file to backfill an older run when no later push has triggered the collector.
+For workflow-level diagnostics, start at [the GitHub Actions report guide](../reports/gh_ac_reports/README.md). Track recurring issues in the [central triage ledger](../reports/triage/README.md). The reporter persists actionable failures and operational exceptions, not routine successes or cancellation-only runs. Read the global index, then the workflow-specific latest report and immutable run capture. The report separates the source workflow conclusion from report-generation status and links to the exact Actions run. Use a request file to backfill an older run when no later push has triggered the collector.
+
+The ledger is the issue backlog; The Worker turns related findings into linked workspace tasks. Task records carry finding IDs and evidence links. The ledger's `task_refs` field points back to those tasks. Ledger ingestion never creates tasks, and task status does not replace finding status.
 
 ## CI lint evidence
 

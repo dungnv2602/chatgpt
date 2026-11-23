@@ -5,7 +5,7 @@ import argparse, copy, hashlib, json, re, tempfile
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 
-SCHEMA_VERSION = "1.1.0"
+SCHEMA_VERSION = "1.2.0"
 IGNORED_CATEGORIES = {"cancelled", "skipped", "neutral", "queued", "in_progress", "unavailable", "unknown", "not_available"}
 IGNORED_LINT_STATUSES = {"Incomplete", "Cancelled", "Superseded"}
 IGNORED_PROPAGATION_STEPS = {
@@ -141,11 +141,11 @@ def bootstrap_state(root, timestamp=None):
 
 def migrate_ledger(ledger, root):
     version = ledger.get("schema_version")
-    if version not in ("1.0.0", SCHEMA_VERSION):
+    if version not in ("1.0.0", "1.1.0", SCHEMA_VERSION):
         raise LedgerError("Unsupported ledger schema version: " + str(version))
     if not isinstance(ledger.get("findings"), list):
         raise LedgerError("The ledger findings field must be an array")
-    if version == "1.0.0":
+    if version != SCHEMA_VERSION:
         ledger["schema_version"] = SCHEMA_VERSION
     for finding in ledger["findings"]:
         if not isinstance(finding, dict):
@@ -153,6 +153,12 @@ def migrate_ledger(ledger, root):
         finding.setdefault("resolution_history", [])
         finding.setdefault("duplicate_of", None)
         finding.setdefault("accepted_risk", None)
+        finding.setdefault("task_refs", [])
+        if not isinstance(finding["task_refs"], list) or not all(
+            isinstance(item, str) and item.strip() for item in finding["task_refs"]
+        ):
+            raise LedgerError("finding task_refs must contain non-empty task IDs")
+        finding["task_refs"] = list(dict.fromkeys(finding["task_refs"]))
     if not isinstance(ledger.get("ingestion_state"), dict):
         ledger["ingestion_state"] = bootstrap_state(root)
     state = ledger["ingestion_state"]
@@ -273,8 +279,6 @@ def actions_observations(report, report_path, root):
         return []
     if source.get("status") != "completed":
         return []
-    if source.get("conclusion") == "cancelled":
-        return []
     issues = (report.get("classification") or {}).get("issues")
     if not isinstance(issues, list):
         raise LedgerError("GitHub Actions classification issues must be an array: " + report_path)
@@ -326,6 +330,7 @@ def upsert_finding(ledger, observation):
             "severity": observation["severity"], "owner": None, "first_seen_utc": evidence["observed_at_utc"],
             "last_seen_utc": evidence["observed_at_utc"], "occurrence_count": 1, "evidence": [evidence],
             "resolution": None, "resolution_history": [], "duplicate_of": None, "accepted_risk": None,
+            "task_refs": [],
         })
         return "created"
     before = json.dumps(existing, sort_keys=True, ensure_ascii=False)

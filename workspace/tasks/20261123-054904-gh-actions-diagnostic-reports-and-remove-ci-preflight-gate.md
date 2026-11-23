@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-054904
 - **Created:** 2026-11-23 05:49 UTC
-- **Updated:** 2026-11-23 10:07 UTC
+- **Updated:** 2026-11-23 12:21 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -41,6 +41,7 @@ Then, suggest me another approach to handle these errors from those reports, be 
 - **2026-11-23:** User asked to review the Open Discussions items and identify required user actions: "Then we deal with those bullet points in Open Discussion. Tell me what I need to do."
 
 - **2026-11-23:** User confirmed delayed capture remains on `gpt`; `main` is preservation-only. User approved a separate task for existing hard lint findings. The remediation task is `20261123-100738`.
+- **2026-11-23:** User approved filtering routine successful and cancellation-only Actions outcomes from persisted reports, while retaining non-blocking failed steps and independent failures from cancelled runs. User also approved formalizing The Worker handoff from ledger findings to linked remediation tasks.
 
 ## 3. Objective
 
@@ -64,6 +65,10 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 
 ## 5. Decisions
 
+- Persist only actionable failures and operational exceptions by default. Ordinary successful runs and cancellation-only outcomes are not captured. Retain successful runs with classified non-blocking failures, cancelled runs with independent failures, workflow-level timeouts, and action-required outcomes. Explicit run-backfill requests may override this filter.
+- Preserve all existing immutable captures. Do not delete historical success or cancellation-only reports as part of this policy change.
+- Keep the CI ledger as the authoritative issue backlog and The Worker as the authoritative task-management system. The ledger preserves Worker-owned `task_refs` but never creates task records.
+
 - Keep `lint_reports/` as the detailed source for lint findings.
 - Use `gh_ac_reports/` for workflow-level and non-lint diagnostics. It may link to lint reports rather than duplicate every lint finding.
 - Report only evidence that GitHub or the workflow actually provides. Identify the limits of log retention, permissions, unavailable annotations, and missing artifacts.
@@ -72,6 +77,13 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - Do not start unrelated cleanup or fix the existing lint findings as part of this reporting task.
 
 ## 6. Progress Log
+
+### 2026-11-23 12:21 UTC
+
+- **Action:** Reviewed the persisted Actions index, collector policy, ledger ingestion, and Worker task procedures after the user's approval.
+- **Result:** The index contained 735 capture records: 52 failures, 4 successes, 643 cancellations, and 36 in-progress/pre-finalizer records. The collector captured every completed run. The ledger rejected every cancelled source run, including reports with independent classified failures. These behaviors did not match the intended signal-to-noise policy.
+- **References:** `reports/gh_ac_reports/index.json`, `reports/gh_ac_reports/scripts/report.py`, `reports/triage/scripts/ledger.py`, `skills/the-worker/SKILL.md`.
+- **Next:** Filter future captures, preserve independent cancelled-run failures, add task references to the ledger, and document the Worker handoff. Keep existing immutable reports unchanged.
 
 ### 2026-11-23 05:49 UTC
 
@@ -194,7 +206,7 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 
 ## 7. Current State
 
-The user-approved cancellation repair is implemented in the reporter and ledger. Cancelled run outcomes and evidence remain in immutable reports, but cancellation-only outcomes do not create actionable issues. Known downstream status-propagation steps after cancellation are excluded. Independent failures before cancellation remain actionable. The ledger excludes all findings from a cancelled source run. Existing immutable historical reports are not rewritten. Hosted validation of this change is pending.
+The cancellation repair is implemented in the reporter and ledger. New cancellation-only runs are skipped by the capture policy. Cancelled runs with independent classified failures are captured, and the ledger accepts those issues while ignoring cancellation-only and known downstream status-propagation rows. Existing historical captures remain immutable. Hosted validation of the cancellation and new capture policy is pending.
 
 The report families are consolidated under `reports/`: `reports/lint_reports/`, `reports/gh_ac_reports/`, and `reports/triage/`. The migration preserved the 198 report blobs present at migration start; six late lint-report files written by a stale workflow path were subsequently relocated. The root `reports/README.md` links the report families and shared triage ledger. No `reports/archive/` directory exists.
 
@@ -210,6 +222,8 @@ The repository default branch is `main`, while this authorized task is restricte
 
 ## 8. Remaining Work
 
+The approved report-filtering and task-handoff extension is implemented in the collector, ledger schema, regression tests, report guides, Document Type Catalog, workspace navigation, and The Worker. The collector retains ordinary successful runs only when they contain a classified non-blocking failure; cancelled runs require an independent issue. Workflow-level timeouts and action-required outcomes produce actionable run-level findings. Explicit backfill requests override the default filter. The ledger schema includes Worker-owned `task_refs` links, which ingestion preserves. Existing success and cancellation-only reports were not deleted.
+
 - Verify the cancellation-classification and ledger regression tests on the next naturally triggered GitHub-hosted diagnostics run. Confirm the next cancelled report has state `cancelled` and no cancellation-derived issues.
 - Obtain a successful natural Document Standards run after the catalog/report-root corrections. The diagnostics and archive-retention test suites have passed on a GitHub-hosted runner, but that does not replace the Document Standards workflow check.
 - Allow the five pending source runs to receive post-run captures through a later eligible push/sweep; do not poll or manually dispatch a workflow.
@@ -217,6 +231,9 @@ The repository default branch is `main`, while this authorized task is restricte
 - Do not fix unrelated lint findings or workflow failures. Preserve all source conclusions and validation thresholds.
 
 ## 9. Next Actions
+
+- Review the next naturally triggered diagnostics run for the new capture policy and the reporter/ledger regression suites. Confirm routine successes and cancellation-only runs are skipped, non-blocking failures are retained, and independent cancelled-run failures reach the ledger.
+- Confirm ledger schema migration to 1.2.0 and preservation of `task_refs` during hosted ingestion. Do not poll or dispatch workflows.
 
 1. Review the next naturally completed diagnostics workflow run and its hosted test log. Do not poll or dispatch a workflow.
 2. Confirm that cancelled source runs remain in immutable history but create no ledger findings.
@@ -243,6 +260,11 @@ The repository default branch is `main`, while this authorized task is restricte
 - Related task: `archive/tasks/20261123-051200-repair-lint-report-evidence-workflow.md`
 
 ## 11. Verification
+
+- **Check:** Approved capture policy and Worker–ledger task handoff.
+- **Method:** Inspected the source index, collector, ledger, and owner documentation; implemented report filtering, cancelled-run exception handling, task references, and regression coverage. Read-back is pending the implementation commit.
+- **Result:** Implementation prepared. No repository tests or scripts were run locally. Hosted validation remains pending a natural diagnostics run.
+- **Limitations:** Existing historical success and cancellation-only captures remain unchanged. Explicit backfill requests can intentionally preserve a successful run.
 
 - **Check:** Session initialization and bounded CI preflight.
 - **Method:** Retrieved the required skills and inspected one bounded Actions snapshot.
@@ -274,6 +296,6 @@ The repository default branch is `main`, while this authorized task is restricte
 
 ## 12. Handoff Instructions
 
-The cancelled-run repair is committed but not yet validated on a hosted runner. Review the next natural diagnostics run and confirm the reporter and ledger regression suites pass. Confirm cancelled source runs remain historical evidence and do not create actionable issues. Do not poll or dispatch workflows. Preserve the separate natural-run Document Standards validation and pending post-run capture follow-ups. Keep all changes on `gpt`; do not modify `main`.
+The cancelled-run and capture-filter changes are committed but not yet validated on a hosted runner. Review the next natural diagnostics run and confirm the reporter and ledger regression suites pass. Confirm cancellation-only outcomes are skipped, independent cancelled-run failures remain actionable, and ordinary successes are not persisted. Confirm ledger task references survive ingestion. Do not poll or dispatch workflows. Preserve the separate natural-run Document Standards validation and pending post-run capture follow-ups. Keep all changes on `gpt`; do not modify `main`.
 
 Continue from this record. The implementation and policy changes are in place. The latest hosted diagnostics run passed 12 reporter tests and 7 archive-retention tests; the three exact-run recaptures have complete post-run reports. The remaining task-scoped validation is a successful natural Document Standards run after the report-root/catalog corrections. Five source runs remain pending for later post-run capture; do not poll. Keep all repository changes on branch `gpt`. Preserve `lint_reports/` as the lint-specific evidence system. Do not let unrelated CI failures delay this or later user requests.

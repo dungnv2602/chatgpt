@@ -313,7 +313,15 @@ def classify(run, jobs, logs, jobs_available=True):
         })
         categories.add(category)
     if conclusion in ("timed_out", "action_required"):
-        categories.add({"timed_out": "timeout", "action_required": "action_required"}[conclusion])
+        category = {"timed_out": "timeout", "action_required": "action_required"}[conclusion]
+        categories.add(category)
+        if not issues:
+            issues.append({
+                "category": category, "job_id": None, "job_name": None,
+                "step_number": None, "step_name": None, "blocking": True,
+                "confidence": "high",
+                "message": "GitHub reported a workflow-level " + str(conclusion) + " outcome.",
+            })
 
     if conclusion == "success":
         state = "success_with_non_blocking_step_failures" if issues else "success"
@@ -641,6 +649,16 @@ def write_report(root, report, log_files):
     return target
 
 
+def report_is_actionable(report):
+    """Keep independent failures and exceptional outcomes, not routine run history."""
+    classification = report.get("classification") or {}
+    issues = classification.get("issues")
+    if isinstance(issues, list) and issues:
+        return True
+    outcome = classification.get("observed_conclusion") or classification.get("projected_conclusion")
+    return outcome in ("failure", "timed_out", "action_required")
+
+
 def capture_one(repo, root, run_id, stage, force=False):
     index = load_index(root)
     metadata_errors = []
@@ -661,6 +679,8 @@ def capture_one(repo, root, run_id, stage, force=False):
     ):
         return None
     report, logs = fetch_evidence(repo, run_id, stage)
+    if not force and not report_is_actionable(report):
+        return None
     return write_report(root, report, logs)
 
 
@@ -745,8 +765,11 @@ def run_sweep(repo, root):
             continue
         try:
             target = capture_one(repo, root, run_id, "post_run")
-            if target is not None:
-                new_reports += 1
+            if target is None:
+                # A complete capture already exists, or this outcome has no actionable issue.
+                pending.discard(run_id)
+                continue
+            new_reports += 1
             latest_errors = []
             refreshed = api_get(repo, "/repos/" + repo + "/actions/runs/" + run_id, latest_errors, "run_refresh")
             if refreshed and refreshed.get("status") == "completed":
@@ -821,7 +844,9 @@ def main():
         if not args.run_id:
             parser.error("GITHUB_RUN_ID or --run-id is required.")
         target = capture_one(args.repo, args.root, args.run_id, "pre_finalizer")
-        print("Pre-finalizer capture: " + ("already present" if target is None else str(target)))
+        print("Pre-finalizer capture: " + (
+            "no actionable issue; skipped or complete capture already exists" if target is None else str(target)
+        ))
     else:
         run_sweep(args.repo, args.root)
 

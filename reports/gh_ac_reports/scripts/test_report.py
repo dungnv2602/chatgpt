@@ -137,6 +137,57 @@ class ClassificationTests(unittest.TestCase):
         self.assertTrue(REPORT.markers(cleaned))
 
 
+class CapturePolicyTests(unittest.TestCase):
+    def test_ordinary_success_is_not_reportable(self):
+        result = build(make_run("success"), [make_job("success", "success")])
+        self.assertFalse(REPORT.report_is_actionable({"classification": result}))
+
+    def test_success_with_nonblocking_step_failure_is_reportable(self):
+        result = build(make_run("success"), [make_job("success", "failure")],
+                       {"200": "Process completed with exit code 1"})
+        self.assertEqual(result["state"], "success_with_non_blocking_step_failures")
+        self.assertTrue(REPORT.report_is_actionable({"classification": result}))
+
+    def test_cancelled_only_run_is_not_reportable(self):
+        result = build(make_run("cancelled"), [make_job("cancelled", "cancelled")])
+        self.assertFalse(REPORT.report_is_actionable({"classification": result}))
+
+    def test_cancelled_run_with_independent_failure_is_reportable(self):
+        job = make_job("cancelled", "failure", name="Run unit tests")
+        job["steps"].append({
+            "number": 3, "name": "Cancel remaining work",
+            "status": "completed", "conclusion": "cancelled",
+        })
+        result = build(make_run("cancelled"), [job], {"200": "ERROR: assertion mismatch"})
+        self.assertTrue(REPORT.report_is_actionable({"classification": result}))
+
+    def test_workflow_level_timeout_is_actionable_without_job_evidence(self):
+        result = build(make_run("timed_out"), [])
+        self.assertEqual(result["primary_category"], "timeout")
+        self.assertEqual(len(result["issues"]), 1)
+        self.assertTrue(REPORT.report_is_actionable({"classification": result}))
+
+    def test_capture_skips_ordinary_success(self):
+        with tempfile.TemporaryDirectory() as temp:
+            report = {"classification": {"observed_conclusion": "success", "projected_conclusion": None, "issues": []}}
+            with patch.object(REPORT, "api_get", return_value={"run_attempt": 1}), \
+                 patch.object(REPORT, "fetch_evidence", return_value=(report, {})), \
+                 patch.object(REPORT, "write_report") as writer:
+                result = REPORT.capture_one("owner/repository", Path(temp), "100", "post_run")
+            self.assertIsNone(result)
+            writer.assert_not_called()
+
+    def test_sweep_retires_completed_ordinary_success_without_indexing_it(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            with patch.object(REPORT, "collect_runs_since", return_value=[make_run("success")]), \
+                 patch.object(REPORT, "capture_one", return_value=None):
+                REPORT.run_sweep("owner/repository", root)
+            index = REPORT.load_index(root)
+            self.assertEqual(index["runs"], [])
+            self.assertEqual(index["pending_run_ids"], [])
+
+
 class AnnotationPaginationTests(unittest.TestCase):
     @patch.object(REPORT, "api_get", return_value=[{"path": "docs/example.md", "message": "A check annotation"}])
     def test_annotations_endpoint_accepts_top_level_array(self, mocked_api):

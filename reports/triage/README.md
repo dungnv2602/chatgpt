@@ -11,7 +11,8 @@ The ledger tracks distinct lint and GitHub Actions issues across report runs. It
 - The generator ignores lint workflow steps that only re-emit an earlier failure as the workflow conclusion.
 - A workflow conclusion alone does not create a finding. The report must contain a specific classified issue.
 - Only complete post-run Actions reports contribute findings. Pre-finalizer reports do not create issues.
-- Cancelled source runs never create findings, even if an older or malformed classification contains issue rows. Their immutable reports remain available as evidence. Skipped, neutral, queued, in-progress, and unavailable states do not create findings by themselves.
+- Ordinary successful runs and cancellation-only runs are not captured by the current reporter policy. A successful run with an independently failed non-blocking step can contribute a finding. A cancelled run can contribute independent classified failures; cancellation-only and known status-propagation rows are ignored. Legacy cancellation-only reports remain indexed but do not create findings.
+- Skipped, neutral, queued, in-progress, and unavailable states do not create findings by themselves.
 
 Each evidence entry records its immutable report path, run URL, observation time, and run identity. The occurrence count measures unique source run attempts. A lint finding in both scopes counts once for the same run.
 
@@ -39,7 +40,7 @@ New findings start with status \`open\`. The allowed statuses are:
 
 \`open\`, \`investigating\`, \`planned\`, \`fixing\`, \`verifying\`, \`resolved\`, \`accepted\`, \`false_positive\`, and \`duplicate\`.
 
-Humans control status, owner, severity, accepted risk, duplicate links, and resolution notes. Ingestion does not overwrite these fields.
+Humans control status, owner, severity, accepted risk, duplicate links, resolution notes, and `task_refs`. The Worker adds task IDs to `task_refs` when it creates a remediation task. Ingestion preserves these links and does not create tasks or overwrite human-managed fields.
 
 ### Default severity
 
@@ -64,6 +65,20 @@ A \`duplicate\` finding requires \`duplicate_of\` with the ID of another ledger 
 A \`resolved\` finding requires a fix commit and successful validation evidence. Record the validation run URL and UTC validation time. Add a UTC resolution time and an optional note.
 
 When a new run observes a resolved finding, the generator reopens it. The generator moves the previous resolution into \`resolution_history\`. A second scope from the same run does not count as recurrence.
+
+## Worker task handoff
+
+The ledger is the issue backlog. The Worker owns task creation, prioritization, execution, and task closeout.
+
+1. Review findings when the user requests CI triage, a known failure blocks the current task, or the current task requires CI evidence. Do not run periodic triage or poll workflows.
+2. Follow each finding's immutable report path and run URL. Confirm that the issue row identifies an independent failure; do not create work from a workflow conclusion alone, cancellation-only evidence, or a routine successful run.
+3. Group findings that share a cause or remediation. Check the task board and active task records before creating a task. Do not create one task per occurrence or duplicate an existing task.
+4. Put every linked finding ID and its report paths/run URLs in the task record. Add the task ID to each finding's `task_refs` array. One task may cover several findings.
+5. Set the finding to `planned` when the linked task is Ready, `fixing` while remediation is active, and `verifying` while hosted validation is pending. Task status and finding status are separate state machines.
+6. Follow The Worker's approval rules. Clearly actionable work within an approved scope may become a Ready task. Optional or ambiguous work remains Proposed. Approval of the handoff process does not authorize unrelated code changes, weakened checks, or automatic remediation.
+7. Resolve a finding only after recording the fix commit and successful relevant validation. The Worker updates the ledger with the validation run URL and UTC timestamp. New evidence can reopen a resolved finding.
+
+The ledger does not create or update workspace task records. The Worker does not duplicate the ledger's diagnostic evidence or occurrence history.
 
 ## Historical backfill
 
