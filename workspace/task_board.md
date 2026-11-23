@@ -21,6 +21,7 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
+| 20261123-071000 | Implement the centralized CI issue ledger | P1 | Ready | User | 2026-11-23 | [Task record](tasks/20261123-071000-centralized-ci-issue-ledger.md) |
 
 ## Blocked
 
