@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-071000
 - **Created:** 2026-11-23 07:10 UTC
-- **Updated:** 2026-11-23 08:23 UTC
+- **Updated:** 2026-11-23 08:40 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -64,8 +64,8 @@ Turn the existing triage-ledger foundation under `reports/triage/` into an opera
 ### 2026-11-23 08:37 UTC
 
 - **Action:** Confirmed the natural sweep re-ingested the previously unprocessed report with the refined generator.
-- **Result:** The ledger now contains one open, high-severity `publication_or_push` finding from Actions run `45138510922`. The redundant status-propagation finding is absent. The record links to the immutable report and run URL. Its evidence log confirms a rejected push after the branch ref changed between fetch and push.
-- **State:** The ledger contains one finding and 215 processed report paths. The 151 paths present at bootstrap remain excluded from historical import.
+- **Result:** The ledger now contains one open, high-severity `publication_or_push` finding from Actions run `45138510922`. The redundant status-propagation finding is absent. The record uses stable workflow, job, step, and category identity. It links to the immutable report and run URL. The source log confirms a rejected push after the branch ref changed between fetch and push.
+- **State:** The ledger contains one finding and 219 processed report paths. The 151 paths present at bootstrap remain excluded from historical import.
 - **Validation:** The generator executed in the natural publication flow. The 17-test hosted suite and workflow conclusions have not been inspected. No run was polled or dispatched.
 - **Next:** Keep the task In Progress until task-scoped hosted validation can be reviewed in a later bounded check.
 
