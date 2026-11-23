@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 02:04 UTC — Brief before execution:** The new hosted workflow ran on `gpt`, but 12/13 regression tests passed and one test fixture was internally contradictory: it labelled a Python test path as the catalog's canonical authority while expecting the validator to report no Python authority. Correct only the fixture so the regression-test reference stays in the finding column and the canonical column remains non-Python. Read it back, allow the path-filtered workflow to rerun, and inspect the new run. Do not weaken validator logic.
+- **2026-11-23 02:06 UTC —** Corrected the contradictory regression fixture and read it back. The path-filtered workflow reran automatically on commit `44e4e4bdbf9d9c20f349d5e29b70c8ea94409cd4` (run `45098008709`) and was still in progress at the first status check. Per repository CI policy, do not poll or wait; inspect its completed result during the next bounded CI preflight. The task remains In Progress until that result is known.
 
 ## Open Discussions
 
