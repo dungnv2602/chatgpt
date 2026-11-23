@@ -5,7 +5,7 @@
 - **ID:** 20261122-233900
 - **Template version:** 1.0
 - **Created:** 2026-11-22 23:39 UTC
-- **Updated:** 2026-11-23 00:50 UTC
+- **Updated:** 2026-11-23 00:55 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -196,6 +196,13 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** Test commits `17d152df76fded08e429f4527382e841e5ea59fc` and `9b171c79be9024a0562c4aef147c99c141a46776`; catalog update `c2d7bc48bfa993ce9e0e573853efcee1fdaf89e2`; existing workflow `.github/workflows/convert-images-to-webp.yml`.
 - **Next:** Design the catalog validator. Obtain fresh permission before changing any other workflow.
 
+### 2026-11-23 00:55 UTC
+
+- **Action:** Completed the catalog reference audit and added the first catalog-integrity validator with regression tests.
+- **Result:** Manually checked all 26 document-type rows and 41 exact file references in the catalog. All referenced files exist. The validator checks table structure, duplicate types, allowed document classes, class-specific reference requirements, and exact file paths. Its tests cover valid classes, missing references, duplicate types, unknown classes, missing schema tests, and path traversal. The validator and tests are committed and read back, but they have not run on a hosted runner.
+- **References:** Validator commits `dfdd839c1f4626a7141787f75087644c9c924fc7` and `0ad3aaa1f9a17d256f65d2e606e2544376890c51`; test commit `485cd876efa41a1ded39672b0f3b8e7d99bbdb68`; Document Standards skill commit `4ff061596ee5b646cbe7e711afc230f6635f3154`; catalog commits `d8ca25c314da6b49f46f3feb5bb250ad1101c37e` and `86db14adf7996763bfc384f84ff3bd84a9c39a3a`.
+- **Next:** Obtain approval to inspect and update the appropriate GitHub Actions workflow so the validator and its tests run on hosted runners.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
@@ -209,26 +216,27 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - Task boards and the Condensed Mode discussion register remain embedded contracts for single live files.
 - Novel documents use the current Version 1.1 template set. Do not mass-migrate untouched Version 1.0 records.
 - The image takeout hand-off is validated by `skills/session-archiving/scripts/process_takeout.py`. The same script defines conversion-report and manifest columns. `verify_published_manifest.py` checks published data and links.
-- The processor test suite covers important intake and publication paths. New field-level cases now cover optional hand-off metadata validation and its propagation to the drawing manifest. The suite still does not establish exhaustive field-by-field coverage, and the new cases have not yet run on a hosted runner.
+- The processor test suite covers important intake and publication paths. New field-level cases cover optional hand-off metadata validation and its propagation to the drawing manifest. The new cases have not yet run on a hosted runner.
 - The three master catalogues contain heterogeneous prompt, pose, and image-reference material. They are classified as lightweight collections, not uniform record types.
-- The catalog covers the main recurring document types identified across `images/`, `master/`, `novels/`, `drawings/`, `skills/`, and `workspace/`. It now records representative legacy examples and the no-mass-migration rule. Full file-by-file reconciliation remains incomplete.
+- The catalog covers 26 recurring document types and records representative legacy examples and the no-mass-migration rule. A manual audit confirmed that all 41 exact file references exist. Full file-by-file reconciliation remains incomplete.
+- A catalog-integrity validator and regression tests now exist at `skills/document-standards/scripts/`. They check catalog structure and exact references, not document-body conformance. They have not run on a hosted runner because workflow integration awaits user authorization.
 - The changed-document lint preflight repository-resolution defect has been fixed on `gpt`. Run #349 confirms that preflight, baseline lookup, and changed-file discovery succeed. The downstream STE lint step still fails on existing findings in the lint report and Agent Skill documentation; the updated remote-only policy files had no findings.
 
 ## 8. Remaining Work
 
-- Finish the type-level catalog review and verify all canonical template links.
 - Complete the representative record review and record justified legacy exceptions without rewriting historical content.
-- Decide whether the takeout hand-off and manifest need additional field-level regression tests.
-- Design a catalog-driven structural validator that does not duplicate generator-owned schemas.
-- Obtain fresh approval before any new `.github/workflows/*` integration changes.
+- Review the hosted-runner result for the new takeout field-level regression tests.
+- Obtain approval to integrate the catalog validator and tests into GitHub Actions.
+- Run the validator and its tests on a hosted runner, then repair any failures.
+- Decide whether any additional structural checks add value without duplicating generator-owned schemas.
 
 ## 9. Next Actions
 
-1. Complete the catalog link audit and representative record review.
-2. Design and implement a catalog-integrity validator that checks canonical paths and document-type classes without duplicating generator schemas.
-3. Add unit tests for the validator and read back all changed files.
-4. Obtain fresh approval to inspect and update the appropriate GitHub Actions workflow for validator execution.
-5. Review the takeout regression test result during the next bounded preflight. Do not wait or poll.
+1. Complete the representative record review.
+2. Obtain approval to inspect and update the appropriate GitHub Actions workflow for validator execution.
+3. Run the catalog validator and its tests through GitHub Actions.
+4. Review the takeout regression test result during the next bounded preflight. Do not wait or poll.
+5. Update the catalog and task record with verified execution results.
 
 ## 10. References
 
