@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261123-225745
 - **Created:** 2026-11-23 22:57 UTC
-- **Updated:** 2026-11-23 22:57 UTC
+- **Updated:** 2026-11-23 22:59 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -54,13 +54,19 @@ Restore reliable event-driven creation and publication of grouped Worker tasks f
 - **References:** `reports/triage/scripts/ledger.py`; `reports/triage/scripts/test_ledger.py`; `workspace/TASK_TEMPLATE.md`; `reports/gh_ac_reports/actions/capture/action.yml`; runs [464](https://github.com/dungnv2602/chatgpt/actions/runs/45283962005), [461](https://github.com/dungnv2602/chatgpt/actions/runs/45282667240), and [454](https://github.com/dungnv2602/chatgpt/actions/runs/45282059294).
 - **Next:** Correct the renderer contract, remove step-level error suppression, and validate task publication on hosted runners.
 
+### 2026-11-23 22:59 UTC
+
+- **Action:** Updated the Ledger renderer, regression tests, composite capture action, and Ledger operating guide. Created this task record and selected it as current execution.
+- **Result:** The renderer now uses the v1.2 “user clarifications” placeholder. The task-generation test checks the generated task's template version and populated standing instruction. The composite action no longer suppresses step failures. The three source-workflow diagnostics jobs retain job-level non-blocking behavior. All seven changed paths passed repository read-back checks.
+- **References:** Commit [3a4b350](https://github.com/dungnv2602/chatgpt/commit/3a4b35054f9db286a8ca9e0e23fb38f2cc1e6206). The existing ledger blob `0acf6f9ee37c13242bd366edcd9beb7123674d30` remains unchanged at 5,507,647 bytes.
+- **Next:** Allow diagnostics run [464 follow-up](https://github.com/dungnv2602/chatgpt/actions/runs/45284726644) to complete naturally. Confirm the Ledger tests pass and eligible unprocessed reports produce task records, board rows, and matching `task_refs`. Do not dispatch or poll workflows.
+
 ## 7. Current State
 
-The root cause is identified. The renderer and workflow changes are in progress. No new task generation or hosted validation has yet been confirmed.
+The renderer/template mismatch is fixed and committed. Step-level failure suppression is removed from the composite action, while source-workflow diagnostics jobs remain non-blocking. Read-back checks passed. The natural hosted diagnostics run is in progress. No new task publication or hosted test success has yet been confirmed.
 
 ## 8. Remaining Work
 
-- Apply and read back the renderer, test, composite-action, and documentation changes.
 - Confirm the hosted Ledger test suite passes.
 - Confirm the next eligible unprocessed report is ingested and produces a task record, board row, and matching `task_refs`.
 - Confirm the source workflow remains non-blocking when diagnostics steps fail.
@@ -81,10 +87,10 @@ The root cause is identified. The renderer and workflow changes are in progress.
 
 ## 11. Verification
 
-- **Check:** Recent task-generation failures.
-- **Method:** Read the GitHub Actions job logs for diagnostics runs 464, 461, and 454.
-- **Result:** Each run's Ledger test suite failed with ten errors at the same template placeholder check. The sweep skipped report ingestion after the test step failed.
-- **Limitations:** The repair and hosted validation are pending.
+- **Check:** Root-cause evidence and committed repair.
+- **Method:** Read the GitHub Actions job logs for diagnostics runs 464, 461, and 454. Read back all changed files from branch `gpt` and checked the natural run list.
+- **Result:** The three earlier runs show ten Ledger test errors at the same stale template placeholder. The repair commit changes the renderer contract, adds regression assertions, and exposes composite-step failures. Read-back checks passed. New diagnostics run 45284726644 is in progress.
+- **Limitations:** Hosted regression success, ingestion completion, and task publication remain unverified.
 
 ## 12. Handoff Instructions
 
