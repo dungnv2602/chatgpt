@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:20 UTC — Remediate Worker skill batch:** Split the CI-scope condition, standardize action verbs, and separate archive-gate clauses. Preserve all task-state, approval, retention, and closeout requirements.
+- **2026-11-23 11:24 UTC — Begin archive-and-delivery reference review:** Review the five hard findings in `skills/drawing/references/archive-and-delivery.md` against its complete source and the archive workflow contract. Preserve provenance and retention requirements.
 
 ## Open Discussions
 
