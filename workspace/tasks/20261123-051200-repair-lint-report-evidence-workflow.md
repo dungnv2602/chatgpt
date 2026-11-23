@@ -92,31 +92,41 @@ Repair the changed-document lint evidence pipeline. Unify repository-wide and ch
 - **Next:** Integrate the shared generator into both lint workflows and capture all validation and per-file execution evidence.
 
 
+### 2026-11-23 05:27 UTC
+
+- **Action:** Integrated the shared generator into both lint workflows. The changed workflow now removes the invalid trailing-backslash arguments, records tooling and anchor-check results, captures raw per-file JSON and reports all check outputs. The full workflow no longer builds Markdown and parses it through a separate inline JSON converter. It captures one structured linter record per evaluated file, records validation logs, calls the same generator, compares with the previous full report, and retains the root Markdown compatibility copy. Updated report-scope documentation. Corrected check-log name mapping, made full-run publication failures fail the job, and added previous-report comparison.
+- **Result:** Workflow integration commit `72bbc615fff312918c6ddb133c08d76f66ec901e`; reliability correction `705fadf5a997fd32170464c37b99f27cefa62635`; full-audit comparison `77e272c9c06042155dbe7243c868c91d88278e86`. Read-back verified both workflows, all three report README files, the generator, its tests, anchor checker and tests, template, schema, and catalog. The full-audit run `45117759354` was in progress at the single snapshot. The changed-document report is still absent because no eligible Markdown commit has triggered the repaired workflow yet.
+- **References:** [workflow integration](https://github.com/dungnv2602/chatgpt/commit/72bbc615fff312918c6ddb133c08d76f66ec901e), [log mapping and publication error correction](https://github.com/dungnv2602/chatgpt/commit/705fadf5a997fd32170464c37b99f27cefa62635), [previous full report comparison](https://github.com/dungnv2602/chatgpt/commit/77e272c9c06042155dbe7243c868c91d88278e86), [full-audit run](https://github.com/dungnv2602/chatgpt/actions/runs/45117759354).
+- **Next:** Publish the lint-evidence navigation link in the Workspace README, then inspect the eligible changed-document run and resulting report if it completes before the one bounded snapshot.
+
+
 ## 7. Current State
 
 - Session initialization and required CI preflight are complete.
-- Two newest lint workflow failures have been inspected.
-- The changed-document report is absent.
-- The report pipeline defects are confirmed from runner logs and repository contents.
-- The repository-wide report includes 49 scanned files, 455 total findings, 142 hard findings, and 10 failing files. The recorded findings must remain visible.
-- The shared report generator, schema, Markdown template, and catalog entry have been updated and read back.
-- The anchor-checker placeholder fix has two corrections based on hosted and source read-back evidence. The latest source read-back is syntactically aligned, but hosted confirmation remains outstanding.
-- Both workflow files still need integration with the shared generator.
+- The shared generator, schema, detailed Markdown report, and catalog now support both report scopes.
+- Both lint workflows are integrated with the shared generator. The invalid changed-workflow arguments and duplicated full-workflow JSON converter are removed.
+- Both workflow files and all report format assets, tests, scope documentation, and catalog entries have been read back.
+- A full-document run triggered by the workflow changes was in progress at the last snapshot. No polling was performed.
+- The changed-document workflow has not yet run with the new code. The `on_changed` directory still has only its README and index.
+- The last recorded full audit before integration included 49 Markdown files, 455 findings, 142 hard findings, and 10 files that failed the configured threshold or execution. The report must retain those findings and thresholds.
+
 
 ## 8. Remaining Work
 
-- Update the task board and keep this task as current execution.
-- Integrate the shared generator into both workflows.
-- Correct report publication, root compatibility output, index metadata, and scope documentation.
-- Read back all changed paths and branch head.
-- Review any hosted validation evidence available without polling. CI status after the final implementation may remain unverified.
+- Add the canonical lint-evidence guide to Workspace navigation. This is relevant documentation and an eligible changed-document trigger.
+- Verify the newest hosted full-audit and changed-document runs once, without polling.
+- Confirm that `on_changed` publishes Markdown, JSON, integrity manifest, latest pointers, and run history with the detailed evidence format.
+- If hosted execution exposes further defects, correct them and read back the affected files.
+- Update the task record, report register, and branch head with exact verification limits.
+
 
 ## 9. Next Actions
 
-1. Update and read back `workspace/task_board.md`.
-2. Define the shared report format and its tests. Commit and read back the canonical format changes before workflow integration.
-3. Integrate both workflows with the shared generator and publish complete evidence.
-4. Read back changed paths and report the exact commit and CI verification limits.
+1. Update `workspace/README.md` to link the lint-evidence guide and explain the review order.
+2. Read back the change and take one bounded snapshot of the triggered runs and report paths.
+3. Fix any newly observed issue and read back all final repository changes.
+4. Close the task only when the changed-report publication and verification gates are satisfied.
+
 
 ## 10. References
 

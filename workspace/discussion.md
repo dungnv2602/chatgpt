@@ -1,9 +1,10 @@
 ## Current Step
 
-Integrate the shared generator into both lint workflows. Capture every file result and validation output, publish both report scopes and history, preserve the root compatibility report, and keep lint failures visible.
+Add the lint-evidence repository guide to the Workspace navigation. This is the canonical review entry point and a meaningful documentation change that also exercises the eligible changed-document workflow. Then inspect the one resulting hosted snapshot without polling.
 ## Open Discussions
 
 - **2026-11-23 05:06 UTC — Changed-document lint-report failure:** Newest run [45115031724](https://github.com/dungnv2602/chatgpt/actions/runs/45115031724) fails because the anchor checker treats `{run_url}` in the report template as a local file. Report generation then fails because the workflow passes a literal `\\` argument. User has now authorized investigation and repair of the changed-report workflow and reporting system.
+- **2026-11-23 05:26 UTC — First full-audit run after workflow integration:** Run [45117759354](https://github.com/dungnv2602/chatgpt/actions/runs/45117759354) was in progress at the single post-integration snapshot. No polling was performed. The changed-document workflow had not yet been triggered by an eligible Markdown commit.
 - **2026-11-23 05:18 UTC — Full-document run after report-format change:** Run [45116930355](https://github.com/dungnv2602/chatgpt/actions/runs/45116930355) failed because the anchor checker had an indentation error in the new placeholder-handling branch. The source was corrected in commit [642b5b2](https://github.com/dungnv2602/chatgpt/commit/642b5b21c4b3360e0ae06b0c83ffcf348234582c). Hosted confirmation remains outstanding.
 - **2026-11-23 05:06 UTC — Full-document lint result needs classification:** Newest run [45114176416](https://github.com/dungnv2602/chatgpt/actions/runs/45114176416) completed its full audit and published evidence, then failed its final gate because the audit reported lint findings. Confirm whether those findings are legitimate new violations or report/parser defects.
 - **2026-11-23 — Document Standards workflow:** Path filters now include `skills/**`, `novels/templates/**`, the novel README/workflow, and the shared task template/README. The change has not yet received a verified hosted result. Do not wait or poll.
