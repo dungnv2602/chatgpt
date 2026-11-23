@@ -27,7 +27,7 @@ When the user says `start session`:
 6. Verify that every required path was retrieved and read. Maintain the per-conversation verified-load ledger below.
 7. Do not run a CI snapshot, repair unrelated workflow failures, run local lint, or wait for CI. Review CI only when the user asks or the current task depends on a specific workflow.
 
-Do not load Session Archiving, Agent Skill Authoring, or Document Standards during ordinary foundational initialization. Load them only when their task-specific activation conditions apply.
+Do not load Agent Skill Authoring or Document Standards during ordinary foundational initialization. Load them only when their task-specific activation conditions apply. The Worker's archive and media references remain task-triggered components.
 
 If a required component is missing or cannot be verified, report its exact path and stop foundational initialization. Do not substitute memory, previous-conversation reads, or Library copies.
 
@@ -65,14 +65,14 @@ When the user triggers this procedure:
 The required order is:
 
 1. **Foundational:** The Worker (including its mandatory Conversation Mode reference), ASD-STE100, and GitHub Actions.
-2. **Drawing:** Session Archiving, Drawing, and its required references.
+2. **Drawing:** The Worker's archive/media references, Drawing, and its required references.
 3. **Novelist:** Romantic Storyteller skill and the active novel's canonical records.
 
 Before novelist work:
 
 1. Check whether foundational initialization passed in the current conversation.
 2. If it did not pass, stop novelist initialization and ask the user to say `start session`. Do not retrieve foundational or specialist skills until that explicit cue is given.
-3. Retrieve and read `skills/session-archiving/SKILL.md` when it has not been verified in this conversation. Drawing uses its session-brief, archive, and prompt-provenance procedures.
+3. Retrieve the relevant Worker references when they have not been verified in this conversation: `skills/the-worker/references/archive-records-and-image-prompts.md` and, when needed, `drawing-session-closeout.md` and `image-provenance-and-webp.md`. These define the session-brief, archive, and prompt-provenance procedures.
 4. Check whether the Drawing skill and each required reference were successfully read in this conversation. Retrieve only files that are not already verified.
 5. Check whether `skills/romantic-storyteller-visual-artist/SKILL.md` was successfully read in this conversation. Retrieve it only if it is not already verified.
 6. Do not use remembered instructions, reads from another conversation, summaries, or unverified copies as substitutes.
@@ -211,14 +211,14 @@ Reuse foundational files that you verified in the current conversation. Do not t
 
 ## Drawing session activation
 
-The separate drawing-session cue is **`start a drawing session`**. Treat it as an instruction only. Ignore quoted, discussed, or hypothetical uses. This cue does not make Session Archiving foundational.
+The separate drawing-session cue is **`start a drawing session`**. Treat it as an instruction only. Ignore quoted, discussed, or hypothetical uses. This cue does not change foundational loading. It activates The Worker's drawing-session procedures after foundational initialization.
 
 This cue starts a new drawing session. It does not replace the foundational initialization procedure.
 
 1. Check whether foundational initialization passed in the current conversation.
-2. If it has not passed, stop drawing-session initialization and ask the user to say `start session`. Do not retrieve foundational or Drawing/Session Archiving skills until that explicit cue is given.
+2. If it has not passed, stop drawing-session initialization and ask the user to say `start session`. Do not retrieve foundational or Drawing skills until that explicit cue is given.
 3. If foundational initialization already passed, reuse the verified foundational files. Do not load them again without a reason.
-4. Retrieve and read `skills/session-archiving/SKILL.md` when it is not already verified. It owns the session-brief, archive, and prompt-provenance procedures used by Drawing.
+4. Load The Worker's `references/archive-records-and-image-prompts.md` and any other required archive/media references when they are not already verified. The Worker owns the session-brief, archive, and prompt-provenance procedures used by Drawing.
 5. Retrieve and read `skills/drawing/SKILL.md` and its required references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Reuse each file if it was already verified in this conversation.
 6. Do not run a CI preflight after the Drawing skill loads. Review CI only when the drawing task changes or depends on a specific workflow, or when the user asks for CI diagnostics.
 7. Start the drawing session under the Drawing skill. Establish its new opening brief and required session records before image generation or editing. For a named novel scene, use the scene-local illustration brief and records.
@@ -233,7 +233,7 @@ Use this order whenever a task requires specialist skills:
 | Tier | Skills | Activation |
 |---|---|---|
 | 1. Foundational | The Worker (including its mandatory Conversation Mode reference), ASD-STE100, GitHub Actions | `start session` only. Specialist requests require foundational initialization to have passed already. |
-| 2. Drawing | Session Archiving, Drawing, and its required references | After foundational initialization passes: `start a drawing session`, drawing work that requires the workflow, or novelist initialization |
+| 2. Drawing | The Worker's archive/media references, Drawing, and its required references | After foundational initialization passes: `start a drawing session`, drawing work that requires the workflow, or novelist initialization |
 | 3. Novelist | Romantic Storyteller and active novel records | `Be the novelist` |
 
 ### Per-conversation verified-load ledger
@@ -256,13 +256,13 @@ Entering a higher tier does not restart lower tiers. For example, if you loaded 
 
 `skills/the-worker/SKILL.md` is a required foundational skill. Load it during foundational initialization.
 
-The Worker manages task continuity, task selection, progress, handoffs, recovery, collaboration modes, discussion-register maintenance, and task archival.
+The Worker manages task continuity, task selection, progress, handoffs, recovery, collaboration modes, discussion-register maintenance, task archival, conversation and drawing-session records, image provenance, WebP delivery, and media workflows.
 
 Load `skills/the-worker/references/conversation-mode.md` with The Worker. This reference defines Default Mode, Condensed Mode, the discussion-register contract, and user-visible output rules. Do not load Conversation Mode as a separate skill.
 
-### Session Archiving
+### The Worker's archive and media procedures
 
-`skills/session-archiving/SKILL.md` is an on-demand skill. Load it for conversation archives, drawing-session closeout, image provenance, WebP delivery, and media workflows. Drawing tasks require it for their session-brief and prompt-provenance procedures.
+The Worker owns conversation archives, drawing-session closeout, image provenance, WebP delivery, and media workflows. Load its relevant archive/media references only when the task requires them. Drawing tasks use these references for session briefs, prompt provenance, and closeout.
 
 ### Agent Skill Authoring
 
