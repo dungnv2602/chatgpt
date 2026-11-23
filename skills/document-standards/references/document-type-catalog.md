@@ -72,6 +72,23 @@ The novel workspace has Version 1.1 templates for eight document types. It retai
 
 Do not mass-migrate untouched legacy novel records. Use the current template for new records and material revisions.
 
+### Novel template field-contract audit
+
+The eight Version 1.1 templates below were reviewed for required, conditional, optional, and repeatable content. Unless a field or subsection is explicitly marked Optional or Conditional, treat it as required under the Document Standards skill. Apply the shared `Unknown` and `Not applicable` conventions when evidence is missing or a field does not apply. Use each template's own enumerations for status and other controlled values.
+
+| Template | Required baseline | Conditional content | Optional content | Repeatable structures / rules |
+|---|---|---|---|---|
+| `novel-v1.1.md` | Sections 1–14 and all unmarked fields | None | Chapter grouping within Structural Approach; Detailed Character Profile; Visual Reference; Detailed Development Outline; Detailed World References; Detailed Chronology Link; Approved Decisions summary | Main Characters; Story Arc Directory rows; dated events and revision entries |
+| `open-discussion-v1.1.md` | Sections 1, 2, 4, and 7; retain the Approved Decisions Register even when it contains no decisions | Keep only Open Questions subject headings that contain questions | Active Proposals (only when a proposal needs a separate decision); Deferred Questions (only when deliberately deferred); Resolved or Superseded Items (only when retention is useful) | Decision rows, proposal blocks, and question entries; use `None recorded` when no decision has been approved |
+| `character-profile-v1.1.md` | Sections 1–11 and all unmarked fields | None | None | Relationship rows; use the shared missing/inapplicable-value convention when a detail is unknown or does not apply |
+| `development-outline-v1.1.md` | Sections 1–9 and all unmarked fields | None | None | One or more Progression / Components blocks; component Status is separate from the overall outline Status |
+| `arc-v1.1.md` | Sections 1–10 and all unmarked fields | None | None | Character Development blocks; Scene Directory rows; retain the five narrative-progression subsections |
+| `scene-v1.1.md` | Sections 1–11 and all unmarked fields, including the complete Scene Prose section | None | None | Character entries and illustration rows; illustration assets must link to both the central-library master and WebP files |
+| `illustration-note-v1.1.md` | Sections 1–10 and all unmarked fields | Takeout filename/batch, stored master/WebP paths, hashes, and conversion/verification report links depend on the asset's intake and storage history; use the field-specific `Not applicable` or `Not available` value shown in the template | User Acceptance | Visual observations, continuity assessments, and review findings must reflect the actual returned asset |
+| `illustration-prompt-v1.1.md` | Sections 1–5 and all unmarked fields; record every attempt before submission and update it after the result | Source Image for Edit applies only to a direct edit; Repository Asset Handoff applies only after an accepted output is uploaded to the novel asset library | None | Append one complete chronological Attempt block per attempt; never overwrite earlier attempts |
+
+This is a field-contract index, not a second copy of the templates. Exact field names, status enumerations, and section order remain authoritative in each linked template. Do not duplicate those definitions here or create a second schema.
+
 ## Representative records reviewed
 
 | Document type | Representative record or inspected scope | Finding | Handling |
