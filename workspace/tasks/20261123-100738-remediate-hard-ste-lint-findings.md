@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-100738
 - **Created:** 2026-11-23 10:07 UTC
-- **Updated:** 2026-11-23 11:00 UTC
+- **Updated:** 2026-11-23 11:08 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -55,6 +55,12 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 - **Validation:** Use natural GitHub Actions runs. Do not manually dispatch or poll workflows.
 
 ## 6. Progress Log
+
+### 2026-11-23 11:08 UTC
+
+- **Action:** Completed source-level remediation of the Document Type Catalog and addressed the non-example findings in `skills/asd-ste100/SKILL.md`.
+- **Result:** All 75 catalog hard findings now have source-level edits. The catalog has zero semicolons. In the STE skill, the 28-word sentence was split without changing the quoted ASD text. The non-example synonym rotation changed from "confirms" to "shows". Thirteen findings remain in deliberate examples of prohibited wording. The repository writing policy says to preserve quoted examples that intentionally show violations. Those examples remain unchanged. Readback passed after commit `23207a3fe8bd2c25a3d933b2b2da7bd6126d31be`. Hosted validation remains pending natural workflow execution.
+- **Next:** Review the 14 hard findings in `skills/drawing/SKILL.md` and preserve its operational requirements and examples.
 
 ### 2026-11-23 11:00 UTC
 
@@ -107,7 +113,7 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 7. Current State
 
-The approved task is In Progress and is the current execution. The canonical hard-finding set contains 155 unique fingerprints. Both report scopes agree. The first two catalog batches are complete. Remaining catalog findings require review. The 319 advisory findings remain out of scope.
+The approved task is In Progress and is the current execution. All 75 baseline hard findings in the Document Type Catalog have source-level edits. In `skills/asd-ste100/SKILL.md`, two non-example findings have source-level edits. Thirteen findings remain in deliberate examples that the repository writing policy says to preserve. Hosted validation remains pending. The 319 advisory findings remain out of scope.
 
 ## 8. Remaining Work
 
@@ -118,10 +124,10 @@ The approved task is In Progress and is the current execution. The canonical har
 
 ## 9. Next Actions
 
-1. Review the remaining hard-finding fingerprints in the Document Type Catalog and plan the next coherent batch.
-2. Read complete source context for each subsequent target document.
+1. Review the 14 hard findings in `skills/drawing/SKILL.md` against the complete source and relevant references.
+2. Preserve deliberate examples and all operational requirements.
 3. Apply fixes on `gpt` and inspect naturally generated hosted reports.
-4. Repeat until the approved hard-finding set is resolved.
+4. Repeat until the approved hard-finding set is resolved or a policy conflict requires user direction.
 
 ## 10. References
 
