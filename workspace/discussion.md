@@ -1,6 +1,6 @@
 ## Current Step
 
-_No active step._
+Filter routine GitHub Actions outcomes from persisted diagnostics and formalize the CI-ledger-to-Worker task handoff. Scope: diagnostic collector, regression tests, ledger task references, report guides, The Worker, and the active diagnostics task record. Expected result: persist only actionable failures and exceptional step failures by default; link grouped remediation tasks to stable ledger findings without duplicating issue state.
 
 ## Open Discussions
 
