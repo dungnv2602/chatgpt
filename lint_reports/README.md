@@ -1,6 +1,6 @@
 # Lint Evidence Repository
 
-This directory is the primary review surface for hosted STE lint results. Review these reports before retrieving GitHub Actions artifacts.
+This directory is the primary review surface for hosted STE lint results. Read the generated report before retrieving GitHub Actions artifacts.
 
 ## Scopes
 
@@ -9,30 +9,31 @@ This directory is the primary review surface for hosted STE lint results. Review
 
 ## Evidence layers
 
-Each newly generated completed run has an immutable history directory containing:
-- `report.md`: readable coverage, execution status, per-file outcomes, and findings.
-- `report.json`: structured evidence with execution metadata and original linter JSON payloads.
-- `integrity.json`: SHA-256 checksums for the Markdown and JSON report files.
+Each report run has an immutable history directory containing:
+
+- `report.md`: the detailed review document. It lists exact file coverage, every per-file result and metric, all normalized diagnostics, rule totals, validation-check output, baseline changes, and run provenance.
+- `report.json`: the structured record. It retains original per-file linter JSON payloads, normalized findings, fingerprints, check output, exact paths, runtime metadata, and execution results.
+- `integrity.json`: SHA-256 checksums for the Markdown and JSON reports.
 
 Each scope also maintains:
-- `latest-lint-report.md` and `latest-lint-report.json`: latest completed report, including failures.
-- `index.json`: compact run locator. Read it before opening historical reports.
 
-The root `latest-lint-report.md` remains a compatibility copy for existing links. The scope-specific report is canonical. The first migrated legacy report predates the full evidence schema and records its coverage-path limitation explicitly.
+- `latest-lint-report.md` and `latest-lint-report.json`: latest completed report, including failures.
+- `index.json`: run locator and summary metrics. Read it before opening historical reports.
+
+The root `latest-lint-report.md` remains a compatibility copy of the latest repository-wide report. Scope-specific reports are canonical. Historical run folders are append-only. Older runs cannot move a latest pointer backward.
 
 ## Review order
 
 1. Read the relevant scope index.
-2. Read the latest Markdown report.
-3. Read JSON for exact finding data, fingerprints, and per-file source payloads.
-4. Retrieve Actions logs/artifacts only when the report does not contain the needed runner-level evidence.
+2. Read the latest Markdown report for the complete human-readable analysis.
+3. Read JSON for exact source records, finding fingerprints, and machine processing.
+4. Retrieve Actions logs or artifacts only when the report lacks runner-level evidence.
 
 ## Status and integrity
 
 - `Passed`: all evaluated checks completed successfully.
-- `Failed`: at least one evaluated check failed.
+- `Failed`: at least one lint file, report-tooling test, or validation check failed.
 - `Incomplete`: evidence capture or execution did not complete.
+- `Cancelled` and `Superseded`: the run did not complete a current audit.
 
-A finding fingerprint is derived from the file path and stable diagnostic fields. It is a correlation key, not proof that two findings have identical meaning. Historical run directories are append-only. Latest pointers may advance only when a run completes report generation.
-
-Reports preserve the commit SHA, run ID, attempt, baseline SHA where applicable, execution mode, exact evaluated paths, and original structured linter output. Do not infer repository-wide coverage from an incremental report.
+A finding fingerprint is derived from the file path and stable diagnostic fields. It is a correlation key, not proof that two findings have identical meaning. The report distinguishes lint findings from validation-check failures and preserves both. Do not infer repository-wide coverage from an incremental report.

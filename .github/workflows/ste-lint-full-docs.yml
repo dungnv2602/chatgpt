@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event_name }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -37,13 +37,11 @@ jobs:
             echo "::error::Select the gpt branch when manually dispatching this workflow."
             exit 1
           fi
-
           if [[ "$GITHUB_EVENT_NAME" != "push" ]]; then
             echo "Manual run on gpt. Continue."
             echo "proceed=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-
           if ! latest_run=$(gh run list \
             --workflow ".github/workflows/ste-lint-full-docs.yml" \
             --branch "$GITHUB_REF_NAME" \
@@ -53,21 +51,19 @@ jobs:
             --jq 'max_by(.number).databaseId // empty' 2>/dev/null); then
             latest_run=""
           fi
-
           if [[ -n "$latest_run" && "$latest_run" != "$GITHUB_RUN_ID" ]]; then
             echo "A newer push run ($latest_run) supersedes this run ($GITHUB_RUN_ID)."
             gh api --method POST \
               "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/cancel" >/dev/null
             exit 0
           fi
-
           if [[ -z "$latest_run" ]]; then
             echo "::warning::Could not identify the latest push run. Continue with validation."
           fi
           echo "proceed=true" >> "$GITHUB_OUTPUT"
 
   ste-lint:
-    name: Full audit and update consolidated report
+    name: Full audit and publish detailed evidence
     needs: preflight
     if: needs.preflight.outputs.proceed == 'true'
     runs-on: ubuntu-latest
@@ -86,269 +82,171 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Validate report tooling
-        shell: bash
-        run: |
-          set -euo pipefail
-          bash -n skills/asd-ste100/scripts/ste-lint-repository.sh
-          python3 -m py_compile skills/asd-ste100/scripts/generate_lint_report.py
-          python3 skills/asd-ste100/scripts/test_generate_lint_report.py
-
-      - name: Run full audit and generate report
-        id: audit
+      - name: Validate lint and report tooling
+        id: tooling
         shell: bash
         run: |
           set -uo pipefail
-          report="lint_reports/latest-lint-report.md"
-          mkdir -p lint_reports
-          tmpdir=$(mktemp -d)
-          trap 'rm -rf "$tmpdir"' EXIT
-
-          overall_failed=0
-          total_findings=0
-          files_scanned=0
-          files_with_findings=0
-          lint_failed_files=0
-
-          {
-            echo "# Latest Repository-wide Lint Report"
-            echo
-            echo "- **Run:** [#${GITHUB_RUN_NUMBER}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})"
-            echo "- **Date (UTC):** $(date -u '+%Y-%m-%d %H:%M:%S')"
-            echo "- **Branch:** ${GITHUB_REF_NAME}"
-            echo "- **Commit:** [${GITHUB_SHA}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA})"
-            echo "- **Trigger:** ${GITHUB_EVENT_NAME}"
-            echo
-            echo "This report is replaced by the next complete run. The generated report is excluded from subsequent lint source scans."
-            echo
-            echo "## Summary"
-            echo
-          } > "$report"
-
+          mkdir -p .lint-report-records
+          failed=0
           run_check() {
-            local title="$1"
+            name="$1"
             shift
-            local output="$tmpdir/check-$RANDOM.txt"
-            local status=0
-            "$@" > "$output" 2>&1 || status=$?
-            if [[ "$status" -ne 0 ]]; then overall_failed=1; fi
-            {
-              echo "### $title"
-              echo
-              if [[ "$status" -eq 0 ]]; then
-                echo "**Status:** PASS"
-              else
-                echo "**Status:** FAIL (exit $status)"
-              fi
-              echo
-              echo '~~~text'
-              cat "$output"
-              echo '~~~'
-              echo
-            } >> "$report"
-          }
-
-          run_check "Linter self-test" python3 skills/asd-ste100/scripts/ste-lint.py --selftest
-          run_check "Markdown links and heading anchors" python3 skills/asd-ste100/scripts/check_markdown_anchors.py
-
-          mapfile -t files < <(
-            git ls-files '*.md' |
-              grep -vE '^(archive/|lint_reports/|workspace/tasks/|workspace/discussion\.md$|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' || true
-          )
-
-          findings_file="$tmpdir/findings.md"
-          : > "$findings_file"
-
-          for file in "${files[@]}"; do
-            [[ -z "$file" ]] && continue
-            files_scanned=$((files_scanned + 1))
-            output="$tmpdir/file-lint.txt"
+            output=".lint-report-records/$name.log"
             status=0
-            bash skills/asd-ste100/scripts/ste-lint-repository.sh "$file" > "$output" 2>&1 || status=$?
-
-            summary=$(grep -E '^[0-9]+ violations \(' "$output" | tail -n 1 || true)
-            count=$(printf '%s\n' "$summary" | sed -nE 's/^([0-9]+) violations.*/\1/p')
-            hard=$(printf '%s\n' "$summary" | sed -nE 's/.*\(([0-9]+) hard,.*/\1/p')
-            count=${count:-0}
-            hard=${hard:-0}
-            total_findings=$((total_findings + count))
-
-            if [[ "$count" -gt 0 ]]; then
-              files_with_findings=$((files_with_findings + 1))
-              {
-                printf '#### `%s`\n' "$file"
-                echo
-                echo '~~~text'
-                cat "$output"
-                echo '~~~'
-                echo
-              } >> "$findings_file"
-            fi
-
-            if [[ "$status" -ne 0 ]]; then
-              lint_failed_files=$((lint_failed_files + 1))
-              overall_failed=1
-              if [[ "$count" -eq 0 ]]; then
-                {
-                  printf '#### `%s` (execution error, exit %s)\n' "$file" "$status"
-                  echo
-                  echo '~~~text'
-                  cat "$output"
-                  echo '~~~'
-                  echo
-                } >> "$findings_file"
-              fi
-            fi
-          done
-
-          {
-            echo "- **Technical Markdown files scanned:** $files_scanned"
-            echo "- **Files with findings:** $files_with_findings"
-            echo "- **Total STE findings (hard and advisory):** $total_findings"
-            echo "- **Files failing the configured hard-finding threshold or execution:** $lint_failed_files"
-            if [[ "$overall_failed" -eq 0 ]]; then
-              echo "- **Overall result:** PASS"
-            else
-              echo "- **Overall result:** FAIL"
-            fi
-            echo
-            echo "## Exact Files Evaluated"
-            echo
-            for file in "${files[@]}"; do printf -- "- `%s`\n" "$file"; done
-            echo
-            echo "## STE-100 Findings by File"
-            echo
-            if [[ -s "$findings_file" ]]; then
-              cat "$findings_file"
-            else
-              echo "No STE findings."
-              echo
-            fi
-          } >> "$report"
-
-          echo "overall_failed=$overall_failed" >> "$GITHUB_OUTPUT"
-          echo "files_scanned=$files_scanned" >> "$GITHUB_OUTPUT"
-          echo "files_with_findings=$files_with_findings" >> "$GITHUB_OUTPUT"
-          echo "total_findings=$total_findings" >> "$GITHUB_OUTPUT"
-          echo "lint_failed_files=$lint_failed_files" >> "$GITHUB_OUTPUT"
-
-      - name: Publish immutable repository-wide evidence history
-        if: always() && steps.audit.outcome != 'skipped'
-        shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
-          AUDIT_FAILED: ${{ steps.audit.outputs.overall_failed }}
-          AUDIT_OUTCOME: ${{ steps.audit.outcome }}
-        run: |
-          set -euo pipefail
-          scope="lint_reports/on_repo"
-          history="$scope/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
-          mkdir -p "$history"
-          cp lint_reports/latest-lint-report.md "$history/report.md"
-          python3 - "$history/report.json" <<'PY'
-          import hashlib, json, os, re, sys
-          from datetime import datetime, timezone
-          report_path = "lint_reports/latest-lint-report.md"
-          with open(report_path, encoding="utf-8") as stream:
-              markdown = stream.read()
-          coverage = markdown.split("## Exact Files Evaluated\n", 1)[-1].split("\n## ", 1)[0]
-          files_evaluated = [line[3:-1] for line in coverage.splitlines() if line.startswith("- `") and line.endswith("`")]
-          findings = []
-          for line in markdown.splitlines():
-              match = re.match(r"^(.+?):(\d+):(\d+) ([a-z0-9-]+): (.*?) \[(.*)\]$", line)
-              if match:
-                  file_path, line_number, column, rule, message, matched_text = match.groups()
-                  fingerprint = hashlib.sha256(json.dumps([file_path, rule, matched_text, message], sort_keys=True).encode()).hexdigest()[:20]
-                  level = "advisory" if rule in {"passive-voice", "present-perfect"} else "advisory-free"
-                  findings.append({"file": file_path, "line": int(line_number), "column": int(column), "rule": rule, "level": level, "message": message, "match": matched_text, "fingerprint": fingerprint})
-          findings_by_rule = {}
-          for finding in findings:
-              findings_by_rule[finding["rule"]] = findings_by_rule.get(finding["rule"], 0) + 1
-          file_results = {path: {"path": path, "findings": 0, "hard_findings": 0, "baseline": 0, "exit_code": 0} for path in files_evaluated}
-          file_pattern = re.compile(r"^#### `([^`]+)`(?: \(execution error, exit (\d+)\))?([\s\S]*?)(?=^#### |^## |\Z)", re.M)
-          for result in file_pattern.finditer(markdown):
-              file_path, execution_exit, block = result.groups()
-              summary = re.search(r"(\d+) violations \((\d+) hard, baseline (\d+)\)", block)
-              if summary:
-                  count, hard_count, baseline = map(int, summary.groups())
-                  exit_code = int(execution_exit) if execution_exit else int(hard_count > baseline)
-                  file_results[file_path] = {"path": file_path, "findings": count, "hard_findings": hard_count, "baseline": baseline, "exit_code": exit_code}
-              elif execution_exit:
-                  file_results[file_path] = {"path": file_path, "findings": None, "hard_findings": None, "baseline": None, "exit_code": int(execution_exit)}
-          file_results = list(file_results.values())
-          data = {
-              "schema_version": "1.0.0",
-              "scope": "on_repo",
-              "run_id": os.environ["GITHUB_RUN_ID"],
-              "run_number": int(os.environ["GITHUB_RUN_NUMBER"]),
-              "run_url": os.environ["GITHUB_SERVER_URL"] + "/" + os.environ["GITHUB_REPOSITORY"] + "/actions/runs/" + os.environ["GITHUB_RUN_ID"],
-              "attempt": int(os.environ["GITHUB_RUN_ATTEMPT"]),
-              "branch": os.environ["GITHUB_REF_NAME"],
-              "commit_sha": os.environ["GITHUB_SHA"],
-              "event": os.environ["GITHUB_EVENT_NAME"],
-              "workflow": os.environ.get("GITHUB_WORKFLOW"),
-              "runner_os": os.environ.get("RUNNER_OS"),
-              "linter_source_sha": os.environ["GITHUB_SHA"],
-              "runtime": {"python": sys.version, "platform": sys.platform},
-              "status": "Failed" if os.environ.get("AUDIT_FAILED") == "1" or os.environ.get("AUDIT_OUTCOME") != "success" else "Passed",
-              "execution_mode": "repository-wide",
-              "files_evaluated": files_evaluated,
-              "files_evaluated_count": len(files_evaluated),
-              "findings": findings,
-              "total_findings": len(findings),
-              "hard_findings": sum(item["hard_findings"] or 0 for item in file_results),
-              "files_with_findings": len({finding["file"] for finding in findings}),
-              "files_failed": [item["path"] for item in file_results if item["exit_code"] != 0],
-              "file_results": file_results,
-              "findings_by_rule": findings_by_rule,
-              "generated_at_utc": datetime.now(timezone.utc).isoformat(),
-              "report_markdown": markdown
+            "$@" > "$output" 2>&1 || status=$?
+            key="$name"_exit
+            printf '%s=%s\n' "$key" "$status" >> "$GITHUB_OUTPUT"
+            if [[ "$status" -ne 0 ]]; then failed=1; fi
           }
-          with open(sys.argv[1], "w", encoding="utf-8") as stream:
-              json.dump(data, stream, ensure_ascii=False, indent=2)
-              stream.write("\n")
-          history_dir = os.path.dirname(sys.argv[1])
-          integrity = {"algorithm": "SHA-256", "files": {name: hashlib.sha256(open(os.path.join(history_dir, name), "rb").read()).hexdigest() for name in ("report.md", "report.json")}}
-          with open(os.path.join(history_dir, "integrity.json"), "w", encoding="utf-8") as stream:
-              json.dump(integrity, stream, indent=2)
-              stream.write("\n")
-          PY
-          cp "$history/report.md" "$scope/latest-lint-report.md"
-          cp "$history/report.json" "$scope/latest-lint-report.json"
-          python3 - "$scope/index.json" "$history/report.json" <<'PY'
-          import json, sys
-          try:
-              with open(sys.argv[1], encoding="utf-8") as stream:
-                  index = json.load(stream)
-          except FileNotFoundError:
-              index = {"schema_version": "1.0.0", "runs": []}
-          with open(sys.argv[2], encoding="utf-8") as stream:
-              report = json.load(stream)
-          index["runs"] = [row for row in index["runs"] if (row.get("run_id"), row.get("attempt", 1)) != (report["run_id"], report["attempt"])]
-          index["runs"].append({key: report[key] for key in ("run_id", "run_number", "run_url", "attempt", "commit_sha", "generated_at_utc", "status")})
-          index["runs"].sort(key=lambda row: (row["generated_at_utc"], row["run_id"]))
-          with open(sys.argv[1], "w", encoding="utf-8") as stream:
-              json.dump(index, stream, ensure_ascii=False, indent=2)
-              stream.write("\n")
-          PY
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add lint_reports/latest-lint-report.md "$scope"
-          if ! git diff --cached --quiet; then
-            git commit -m "Publish repository-wide lint evidence"
-            git pull --rebase origin gpt
-            git push origin "HEAD:gpt"
-          fi
+          run_check wrapper_syntax bash -n skills/asd-ste100/scripts/ste-lint-repository.sh
+          run_check python_compile python3 -m py_compile \
+            skills/asd-ste100/scripts/generate_lint_report.py \
+            skills/asd-ste100/scripts/check_markdown_anchors.py
+          run_check report_tests python3 skills/asd-ste100/scripts/test_generate_lint_report.py
+          run_check anchor_tests python3 skills/asd-ste100/scripts/test_check_markdown_anchors.py
+          run_check linter_selftest python3 skills/asd-ste100/scripts/ste-lint.py --selftest
+          echo "failed=$failed" >> "$GITHUB_OUTPUT"
 
-      - name: Set workflow result from audit findings
+      - name: Run full repository-wide audit and generate structured reports
+        id: audit
+        shell: bash
+        env:
+          TOOLING_FAILED: ${{ steps.tooling.outputs.failed }}
+          WRAPPER_EXIT: ${{ steps.tooling.outputs.wrapper_syntax_exit }}
+          PYTHON_EXIT: ${{ steps.tooling.outputs.python_compile_exit }}
+          REPORT_TEST_EXIT: ${{ steps.tooling.outputs.report_tests_exit }}
+          ANCHOR_TEST_EXIT: ${{ steps.tooling.outputs.anchor_tests_exit }}
+          SELFTEST_EXIT: ${{ steps.tooling.outputs.linter_selftest_exit }}
+        run: |
+          set -uo pipefail
+          mkdir -p .lint-report-records lint_reports/on_repo/history
+          anchor_status=0
+          python3 skills/asd-ste100/scripts/check_markdown_anchors.py \
+            > .lint-report-records/anchor-check.log 2>&1 || anchor_status=$?
+
+          git ls-files -- '*.md' |
+            grep -vE '^(archive/|lint_reports/|workspace/tasks/|workspace/discussion[.]md$|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' \
+            > .lint-report-records/evaluated-files.txt || true
+
+          failed=0
+          while IFS= read -r file; do
+            [[ -z "$file" ]] && continue
+            key=$(printf '%s' "$file" | sha256sum | cut -d' ' -f1)
+            output=".lint-report-records/$key.json"
+            raw="$output.raw"
+            status=0
+            bash skills/asd-ste100/scripts/ste-lint-repository.sh --json "$file" > "$raw" 2>&1 || status=$?
+            if jq -e '.violations | type == "array"' "$raw" >/dev/null 2>&1; then
+              jq --arg path "$file" --argjson exit_code "$status" \
+                '. + {path:$path, exit_code:$exit_code}' "$raw" > "$output"
+            else
+              python3 - "$file" "$status" "$raw" "$output" <<'PY'
+          import json, pathlib, sys
+          path, exit_code, raw_path, output_path = sys.argv[1:]
+          raw = pathlib.Path(raw_path).read_text(encoding="utf-8", errors="replace")
+          payload = {
+              "path": path,
+              "exit_code": int(exit_code) if int(exit_code) else 2,
+              "capture_error": raw,
+              "violations": [],
+          }
+          pathlib.Path(output_path).write_text(
+              json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
+              failed=1
+            fi
+            rm -f "$raw"
+            if [[ "$status" -ne 0 ]]; then failed=1; fi
+          done < .lint-report-records/evaluated-files.txt
+
+          TOOLING_FAILED="$TOOLING_FAILED" \
+          WRAPPER_EXIT="$WRAPPER_EXIT" \
+          PYTHON_EXIT="$PYTHON_EXIT" \
+          REPORT_TEST_EXIT="$REPORT_TEST_EXIT" \
+          ANCHOR_TEST_EXIT="$ANCHOR_TEST_EXIT" \
+          SELFTEST_EXIT="$SELFTEST_EXIT" \
+          ANCHOR_STATUS="$anchor_status" python3 - <<'PY'
+          import json, os, pathlib
+          root = pathlib.Path(".lint-report-records")
+          checks = []
+          for key, label in (
+              ("WRAPPER_EXIT", "Wrapper shell syntax"),
+              ("PYTHON_EXIT", "Python report tooling compilation"),
+              ("REPORT_TEST_EXIT", "Lint report regression tests"),
+              ("ANCHOR_TEST_EXIT", "Markdown anchor regression tests"),
+              ("SELFTEST_EXIT", "STE linter self-test"),
+          ):
+              raw = os.environ.get(key, "")
+              code = int(raw) if raw.isdigit() else 2
+              name = key.removesuffix("_EXIT").lower() + ".log"
+              log = root / name
+              checks.append({
+                  "name": label,
+                  "status": "Passed" if code == 0 else "Failed",
+                  "exit_code": code,
+                  "output": log.read_text(encoding="utf-8", errors="replace") if log.exists() else "No output captured.",
+              })
+          anchor_code = int(os.environ.get("ANCHOR_STATUS", "2"))
+          anchor_log = root / "anchor-check.log"
+          checks.append({
+              "name": "Markdown links and heading anchors",
+              "status": "Passed" if anchor_code == 0 else "Failed",
+              "exit_code": anchor_code,
+              "output": anchor_log.read_text(encoding="utf-8", errors="replace") if anchor_log.exists() else "No output captured.",
+          })
+          pathlib.Path(".lint-report-checks.json").write_text(
+              json.dumps(checks, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+          if [[ "$failed" -ne 0 || "$anchor_status" -ne 0 || "$TOOLING_FAILED" == "1" ]]; then
+            report_status="Failed"
+            failed=1
+          else
+            report_status="Passed"
+          fi
+          history="lint_reports/on_repo/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
+          generator_status=0
+          python3 skills/asd-ste100/scripts/generate_lint_report.py \
+            --scope on_repo --records-dir .lint-report-records \
+            --output-dir "$history" \
+            --run-id "$GITHUB_RUN_ID" --run-number "$GITHUB_RUN_NUMBER" \
+            --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            --attempt "$GITHUB_RUN_ATTEMPT" --branch "$GITHUB_REF_NAME" \
+            --commit "$GITHUB_SHA" --event "$GITHUB_EVENT_NAME" \
+            --mode repository-wide --status "$report_status" \
+            --checks-file .lint-report-checks.json \
+            --linter-source-sha "$(git rev-parse HEAD)" || generator_status=$?
+          if [[ "$generator_status" -ne 0 ]]; then
+            echo "::error::The shared lint report generator failed with exit $generator_status."
+            failed=1
+          else
+            cp lint_reports/on_repo/latest-lint-report.md lint_reports/latest-lint-report.md
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add lint_reports/on_repo lint_reports/latest-lint-report.md
+            if ! git diff --cached --quiet; then
+              git commit -m "Publish repository-wide lint evidence"
+              git pull --rebase origin gpt
+              git push origin "HEAD:gpt"
+            fi
+          fi
+          echo "failed=$failed" >> "$GITHUB_OUTPUT"
+
+      - name: Set workflow result from audit and tooling outcomes
         if: always() && steps.audit.outcome != 'skipped'
         shell: bash
         env:
           AUDIT_OUTCOME: ${{ steps.audit.outcome }}
-          AUDIT_FAILED: ${{ steps.audit.outputs.overall_failed }}
+          AUDIT_FAILED: ${{ steps.audit.outputs.failed }}
+          TOOLING_FAILED: ${{ steps.tooling.outputs.failed }}
         run: |
-          if [[ "$AUDIT_OUTCOME" != "success" || "$AUDIT_FAILED" == "1" ]]; then
-            echo "::error::The full audit found lint failures. See lint_reports/latest-lint-report.md."
+          if [[ "$AUDIT_OUTCOME" != "success" || "$AUDIT_FAILED" == "1" || "$TOOLING_FAILED" == "1" ]]; then
+            echo "::error::The full audit found lint or validation failures. See lint_reports/on_repo/latest-lint-report.md."
             exit 1
           fi
           echo "All full-audit checks passed."
