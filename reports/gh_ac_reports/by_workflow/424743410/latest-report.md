@@ -14,30 +14,30 @@
 | Event | push |
 | Actor | dungnv2602 |
 | Created (UTC) | 2026-11-23T15:39:40Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | failure |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T15:41:05Z |
+| Status at capture | completed |
+| Observed conclusion | failure |
+| Projected conclusion | Not calculated |
+| Reporter job | completed / success |
+| Capture stage | post_run |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-23T22:59:40Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
-| Primary category | step_or_job_failure |
+| State | failure |
+| Primary category | publication_or_push |
 | Jobs | 2 |
 | Steps | 12 |
 | Issues | 1 |
 | Annotations | 4 |
 | Artifacts | 0 |
-| Capture errors | 2 |
+| Capture errors | 0 |
 
 ## Failure classification
 
-step_or_job_failure The parent run is still in progress. The projected conclusion is provisional.
+publication_or_push
 
 The report records an actionable workflow failure or operational exception. Ordinary successful runs and cancellation-only runs are not captured by default. A successful run is retained when a step failed but the workflow allowed it to continue. A cancelled run is retained only when it contains an independent actionable failure. Known downstream status-propagation steps after cancellation are excluded. Explicit run-backfill requests can override the default capture filter.
 
@@ -52,7 +52,7 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| step_or_job_failure | 137807879615 | 6 | Set workflow result from audit and tooling outcomes | Blocking | low | Step conclusion: failure |
+| publication_or_push | 137807879615 | 6 | Set workflow result from audit and tooling outcomes | Blocking | high | Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:39:56.9576501Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m |
 
 ## Check annotations
 
@@ -71,17 +71,12 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137807814317 | Validate target branch and reject superseded push runs | logs/job-137807814317.log | 82 | False |  |
-| 137807879615 | Full audit and publish detailed evidence | logs/job-137807879615.log | 82 | False |  |
+| 137807814317 | Validate target branch and reject superseded push runs | logs/job-137807814317.log | 9236 | False | Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T15:39:44.9961515Z ^[[36;1m  echo "::error::Select the gpt branch when manually dispatching this workflow."^[[0m |
+| 137807879615 | Full audit and publish detailed evidence | logs/job-137807879615.log | 46178 | False | Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:39:56.9576501Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m, Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:39:56.9583900Z ^[[36;1mecho "failed=$failed" &gt;&gt; "$GITHUB_OUTPUT"^[[0m, Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:40:03.0859392Z ^[[36;1m    failed=1^[[0m, Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:40:03.0860064Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m, Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:40:03.0870315Z ^[[36;1m        "status": "Passed" if code == 0 else "Failed",^[[0m, Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:40:03.0873590Z ^[[36;1m    "status": "Passed" if anchor_code == 0 else "Failed",^[[0m, Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:40:03.0876936Z ^[[36;1mif [[ "$failed" -ne 0 \|\| "$anchor_status" -ne 0 \|\| "$TOOLING_FAILED" == "1" ]]; then^[[0m, Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:40:03.0877350Z ^[[36;1m  report_status="Failed"^[[0m, Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:40:03.0877593Z ^[[36;1m  failed=1^[[0m, Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:40:03.0885072Z ^[[36;1m  echo "::error::The shared lint report generator failed with exit $generator_status."^[[0m, Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:40:03.0885619Z ^[[36;1m  failed=1^[[0m, Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:40:03.0889997Z ^[[36;1mecho "failed=$failed" &gt;&gt; "$GITHUB_OUTPUT"^[[0m, Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:40:19.2818093Z ^[[36;1m  echo "::error::The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md."^[[0m, Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:40:19.2973949Z ##[error]The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md., Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-23T15:40:19.2986677Z ##[error]Process completed with exit code 1. |
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | run 45207707231 is still in progress; logs will be available when it is complete  |
-| job_log | Not recorded | run 45207707231 is still in progress; logs will be available when it is complete  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 

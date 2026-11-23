@@ -1,0 +1,217 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45222814406",
+    "number": 60,
+    "attempt": 1,
+    "workflow_id": 422582294,
+    "workflow_name": "Process Image Takeout and Create WebP Derivatives",
+    "workflow_path": ".github/workflows/convert-images-to-webp.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45222814406",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "c07921efe1a22db2237caa647d828e66fdd0236d",
+    "status": "completed",
+    "conclusion": "failure",
+    "created_at": "2026-11-23T17:00:21Z",
+    "run_started_at": "2026-11-23T17:00:21Z",
+    "updated_at": "2026-11-23T17:00:59Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "fix(images): require conversation integrity before takeout relocation"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T23:00:25Z",
+    "completeness": "Complete",
+    "reporter_job": {
+      "id": "137861610348",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "cancelled"
+    }
+  },
+  "classification": {
+    "state": "failure",
+    "observed_conclusion": "failure",
+    "projected_conclusion": null,
+    "primary_category": "checkout_or_action_download",
+    "categories": [
+      "checkout_or_action_download"
+    ],
+    "issues": [
+      {
+        "category": "checkout_or_action_download",
+        "job_id": "137861327980",
+        "job_name": "process-image-takeout",
+        "step_number": 5,
+        "step_name": "Test takeout processor",
+        "blocking": true,
+        "confidence": "medium",
+        "message": "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.7862409Z Traceback (most recent call last):"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "137861327980",
+      "name": "process-image-takeout",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-23T17:00:24Z",
+      "completed_at": "2026-11-23T17:00:47Z",
+      "runner_name": "GitHub Actions 1000001787",
+      "runner_id": 1000001787,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T17:00:24Z",
+          "completed_at": "2026-11-23T17:00:25Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T17:00:25Z",
+          "completed_at": "2026-11-23T17:00:33Z"
+        },
+        {
+          "number": 3,
+          "name": "Install WebP encoder and YAML parser",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T17:00:33Z",
+          "completed_at": "2026-11-23T17:00:40Z"
+        },
+        {
+          "number": 4,
+          "name": "Compile takeout processor and publication verifier",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T17:00:40Z",
+          "completed_at": "2026-11-23T17:00:40Z"
+        },
+        {
+          "number": 5,
+          "name": "Test takeout processor",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-11-23T17:00:40Z",
+          "completed_at": "2026-11-23T17:00:45Z"
+        },
+        {
+          "number": 6,
+          "name": "Process takeout hand-off",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T17:00:45Z",
+          "completed_at": "2026-11-23T17:00:45Z"
+        },
+        {
+          "number": 7,
+          "name": "Commit and safely publish processed assets and reports",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T17:00:45Z",
+          "completed_at": "2026-11-23T17:00:45Z"
+        },
+        {
+          "number": 8,
+          "name": "Verify published assets and GitHub links",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T17:00:45Z",
+          "completed_at": "2026-11-23T17:00:45Z"
+        },
+        {
+          "number": 9,
+          "name": "Mark processing failures",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T17:00:45Z",
+          "completed_at": "2026-11-23T17:00:45Z"
+        },
+        {
+          "number": 18,
+          "name": "Post Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T17:00:45Z",
+          "completed_at": "2026-11-23T17:00:46Z"
+        },
+        {
+          "number": 19,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T17:00:46Z",
+          "completed_at": "2026-11-23T17:00:46Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 67639,
+        "path": "logs/job-137861327980.log",
+        "error": null,
+        "marker_lines": [
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.7862409Z Traceback (most recent call last):",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.7891753Z     self.assertEqual(error, \"\")",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8024117Z Traceback (most recent call last):",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8030177Z AssertionError: 1 != 0 : Takeout batch batch-attempt-six-eleven failed: upload-six.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-06.md.",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8035940Z Traceback (most recent call last):",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8040737Z AssertionError: 1 != 0 : Takeout batch batch-session-link failed: portrait.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md.",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8045799Z Traceback (most recent call last):",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8053219Z Traceback (most recent call last):",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8061406Z AssertionError: 'Duplicate output_id' not found in \"# Takeout Processing — batch-duplicate-output-id\\n\\n- Batch: batch-duplicate-output-id\\n- Attempt: attempt-001\\n- Status: FAILED\\n- Items: 2\\n- Generated: 2026-11-23T17:00:42+00:00\\n\\n## Verification checks\\n- Inbox is flat and contains only PNG/JPG/JPEG files, HANDOFF.yml, and the reserved history/ and webp/ directories.\\n- Batch was not marked successful; sources were restored to",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8069827Z Traceback (most recent call last):",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8077868Z AssertionError: 'Duplicate output_id' not found in '# Takeout Processing — batch-existing-output-id\\n\\n- Batch: batch-existing-output-id\\n- Attempt: attempt-001\\n- Status: FAILED\\n- Items: 1\\n- Generated: 2026-11-23T17:00:42+00:00\\n\\n## Verification checks\\n- Inbox is flat and contains only PNG/JPG/JPEG files, HANDOFF.yml, and the reserved history/ and webp/ directories.\\n- Batch was not marked successful; sources were restored to t",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8085865Z Traceback (most recent call last):",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8090733Z AssertionError: 1 != 0 : Takeout batch batch-hash-match failed: unchanged.png: conversation_record has no exact image mapping row for attempt 'Not applicable', asset ID 'Not applicable', and generation ID 'A001-O01'.",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8095473Z Traceback (most recent call last):",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8100612Z AssertionError: 1 != 0 : Takeout batch batch-hash-mismatch failed: mismatch.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md.",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8106148Z Traceback (most recent call last):",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8111561Z AssertionError: 1 != 0 : Takeout batch batch-identical-outputs failed: output-one.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md.",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8116180Z Traceback (most recent call last):",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8124584Z AssertionError: 'missing or unsafe WebP asset' not found in '# Takeout Processing — batch-stale-webp-link\\n\\n- Batch: batch-stale-webp-link\\n- Attempt: attempt-001\\n- Status: FAILED\\n- Items: 1\\n- Generated: 2026-11-23T17:00:44+00:00\\n\\n## Verification checks\\n- Inbox is flat and contains only PNG/JPG/JPEG files, HANDOFF.yml, and the reserved history/ and webp/ directories.\\n- Batch was not marked successful; sources were restored t",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-23T17:00:45.8132622Z Traceback (most recent call last):"
+        ]
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "137861327980",
+      "name": "process-image-takeout",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-23T17:00:24Z",
+      "completed_at": "2026-11-23T17:00:47Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45222814406/job/137861327980",
+      "app": "GitHub Actions",
+      "annotations_count": 1
+    }
+  ],
+  "annotations": [
+    {
+      "check_run_id": "137861327980",
+      "job_id": "137861327980",
+      "path": ".github",
+      "start_line": 201,
+      "end_line": 201,
+      "level": "failure",
+      "title": "",
+      "message": "Process completed with exit code 1.",
+      "raw_details": ""
+    }
+  ],
+  "artifacts": [],
+  "capture_errors": [],
+  "history_path": "history/422582294/45222814406-attempt-1-post_run"
+}

@@ -1,43 +1,43 @@
-# STE Lint Changed Documentation — run 45222817261
+# Process Image Takeout and Create WebP Derivatives — run 45283842077
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | STE Lint Changed Documentation |
-| Workflow path | .github/workflows/ste-lint-changed.yml |
-| Run / attempt | 45222817261 / 1 |
-| Run number | 565 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45222817261 |
+| Workflow | Process Image Takeout and Create WebP Derivatives |
+| Workflow path | .github/workflows/convert-images-to-webp.yml |
+| Run / attempt | 45283842077 / 1 |
+| Run number | 62 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45283842077 |
 | Branch | gpt |
-| Commit | c07921efe1a22db2237caa647d828e66fdd0236d |
+| Commit | a4b29bd7b389f775baef721500fe4d7d515e5e31 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T17:00:22Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | failure |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T17:01:20Z |
+| Created (UTC) | 2026-11-23T22:53:03Z |
+| Status at capture | completed |
+| Observed conclusion | failure |
+| Projected conclusion | Not calculated |
+| Reporter job | completed / cancelled |
+| Capture stage | post_run |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-23T23:01:50Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
+| State | failure |
 | Primary category | validation_or_test |
-| Jobs | 2 |
-| Steps | 18 |
+| Jobs | 1 |
+| Steps | 11 |
 | Issues | 1 |
-| Annotations | 3 |
+| Annotations | 1 |
 | Artifacts | 0 |
-| Capture errors | 2 |
+| Capture errors | 0 |
 
 ## Failure classification
 
-validation_or_test The parent run is still in progress. The projected conclusion is provisional.
+validation_or_test
 
 The report records an actionable workflow failure or operational exception. Ordinary successful runs and cancellation-only runs are not captured by default. A successful run is retained when a step failed but the workflow allowed it to continue. A cancelled run is retained only when it contains an independent actionable failure. Known downstream status-propagation steps after cancellation are excluded. Explicit run-backfill requests can override the default capture filter.
 
@@ -45,22 +45,19 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 137861341867 | Reject superseded runs and find lint baseline | completed | success | 4 | logs/job-137861341867.log |
-| 137861452009 | Lint changed Markdown files and publish detailed evidence | completed | failure | 14 | logs/job-137861452009.log |
+| 138074905334 | process-image-takeout | completed | failure | 11 | logs/job-138074905334.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 137861452009 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | Step conclusion: failure |
+| validation_or_test | 138074905334 | 5 | Test takeout processor | Blocking | medium | 2026-11-23T22:53:36.2089724Z Traceback (most recent call last): |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 137861452009 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 137861452009 | failure | .github | 21 |  | Process completed with exit code 1. |
-| 137861452009 | failure | .github | 20 |  | Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md. |
+| 138074905334 | failure | .github | 201 |  | Process completed with exit code 1. |
 
 ## Artifacts
 
@@ -70,21 +67,15 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137861341867 | Reject superseded runs and find lint baseline | logs/job-137861341867.log | 82 | False |  |
-| 137861452009 | Lint changed Markdown files and publish detailed evidence | logs/job-137861452009.log | 82 | False |  |
+| 138074905334 | process-image-takeout | logs/job-138074905334.log | 71763 | False | process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2089724Z Traceback (most recent call last):, process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2091224Z     self.assertEqual(error, ""), process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2115769Z Traceback (most recent call last):, process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2118956Z AssertionError: 1 != 0 : Takeout batch batch-attempt-six-eleven failed: upload-six.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-06.md., process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2122185Z Traceback (most recent call last):, process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2125124Z AssertionError: 1 != 0 : Takeout batch batch-session-link failed: portrait.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md., process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2133472Z Traceback (most recent call last):, process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2138109Z Traceback (most recent call last):, process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2143026Z AssertionError: 'Duplicate output_id' not found in "# Takeout Processing — batch-duplicate-output-id\n\n- Batch: batch-duplicate-output-id\n- Attempt: attempt-001\n- Status: FAILED\n- Items: 2\n- Generated: 2026-11-23T22:53:33+00:00\n\n## Verification checks\n- Inbox is flat and contains only PNG/JPG/JPEG files, HANDOFF.yml, and the reserved history/ and webp/ directories.\n- Batch was not marked successful; sources were r, process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2148030Z Traceback (most recent call last):, process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2152973Z AssertionError: 'Duplicate output_id' not found in '# Takeout Processing — batch-existing-output-id\n\n- Batch: batch-existing-output-id\n- Attempt: attempt-001\n- Status: FAILED\n- Items: 1\n- Generated: 2026-11-23T22:53:33+00:00\n\n## Verification checks\n- Inbox is flat and contains only PNG/JPG/JPEG files, HANDOFF.yml, and the reserved history/ and webp/ directories.\n- Batch was not marked successful; sources were res, process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2164606Z Traceback (most recent call last):, process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2167750Z AssertionError: 1 != 0 : Takeout batch batch-hash-match failed: unchanged.png: conversation_record has no exact image mapping row for attempt 'Not applicable', asset ID 'Not applicable', and generation ID 'A001-O01'., process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2171102Z Traceback (most recent call last):, process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2174418Z AssertionError: 1 != 0 : Takeout batch batch-hash-mismatch failed: mismatch.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md., process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2178099Z Traceback (most recent call last):, process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2181205Z AssertionError: 1 != 0 : Takeout batch batch-identical-outputs failed: output-one.png: supplied source_asset_id and generation/output identity do not match the same output in drawings/2026-11-19/attempt-01.md., process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2184816Z Traceback (most recent call last):, process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2191553Z AssertionError: 'missing or unsafe WebP asset' not found in '# Takeout Processing — batch-stale-webp-link\n\n- Batch: batch-stale-webp-link\n- Attempt: attempt-001\n- Status: FAILED\n- Items: 1\n- Generated: 2026-11-23T22:53:35+00:00\n\n## Verification checks\n- Inbox is flat and contains only PNG/JPG/JPEG files, HANDOFF.yml, and the reserved history/ and webp/ directories.\n- Batch was not marked successful; sources were , process-image-takeout	Test takeout processor	2026-11-23T22:53:36.2196598Z Traceback (most recent call last): |
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | run 45222817261 is still in progress; logs will be available when it is complete  |
-| job_log | Not recorded | run 45222817261 is still in progress; logs will be available when it is complete  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 
-[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/reports/lint_reports/on_changed/latest-lint-report.md)
+No separate lint report applies to this workflow.
 
 ## Integrity
 

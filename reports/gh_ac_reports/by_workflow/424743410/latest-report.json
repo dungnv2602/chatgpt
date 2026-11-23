@@ -11,44 +11,44 @@
     "event": "push",
     "branch": "gpt",
     "head_sha": "8d48fd97902b40a52a8883c49614d633fc60e424",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "failure",
     "created_at": "2026-11-23T15:39:40Z",
     "run_started_at": "2026-11-23T15:39:40Z",
-    "updated_at": "2026-11-23T15:40:39Z",
+    "updated_at": "2026-11-23T15:41:12Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "Exclude generated task board from changed-document lint triggers"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-23T15:41:05Z",
-    "completeness": "Incomplete",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T22:59:40Z",
+    "completeness": "Complete",
     "reporter_job": {
       "id": "137808256348",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "failure",
-    "primary_category": "step_or_job_failure",
+    "state": "failure",
+    "observed_conclusion": "failure",
+    "projected_conclusion": null,
+    "primary_category": "publication_or_push",
     "categories": [
-      "step_or_job_failure"
+      "publication_or_push"
     ],
     "issues": [
       {
-        "category": "step_or_job_failure",
+        "category": "publication_or_push",
         "job_id": "137807879615",
         "job_name": "Full audit and publish detailed evidence",
         "step_number": 6,
         "step_name": "Set workflow result from audit and tooling outcomes",
         "blocking": true,
-        "confidence": "low",
-        "message": "Step conclusion: failure"
+        "confidence": "high",
+        "message": "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:39:56.9576501Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m"
       }
     ]
   },
@@ -91,12 +91,14 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 9236,
         "path": "logs/job-137807814317.log",
-        "error": "run 45207707231 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "Validate target branch and reject superseded push runs\tUNKNOWN STEP\t2026-11-23T15:39:44.9961515Z ^[[36;1m  echo \"::error::Select the gpt branch when manually dispatching this workflow.\"^[[0m"
+        ]
       }
     },
     {
@@ -185,12 +187,28 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 46178,
         "path": "logs/job-137807879615.log",
-        "error": "run 45207707231 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:39:56.9576501Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m",
+          "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:39:56.9583900Z ^[[36;1mecho \"failed=$failed\" >> \"$GITHUB_OUTPUT\"^[[0m",
+          "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:40:03.0859392Z ^[[36;1m    failed=1^[[0m",
+          "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:40:03.0860064Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m",
+          "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:40:03.0870315Z ^[[36;1m        \"status\": \"Passed\" if code == 0 else \"Failed\",^[[0m",
+          "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:40:03.0873590Z ^[[36;1m    \"status\": \"Passed\" if anchor_code == 0 else \"Failed\",^[[0m",
+          "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:40:03.0876936Z ^[[36;1mif [[ \"$failed\" -ne 0 || \"$anchor_status\" -ne 0 || \"$TOOLING_FAILED\" == \"1\" ]]; then^[[0m",
+          "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:40:03.0877350Z ^[[36;1m  report_status=\"Failed\"^[[0m",
+          "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:40:03.0877593Z ^[[36;1m  failed=1^[[0m",
+          "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:40:03.0885072Z ^[[36;1m  echo \"::error::The shared lint report generator failed with exit $generator_status.\"^[[0m",
+          "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:40:03.0885619Z ^[[36;1m  failed=1^[[0m",
+          "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:40:03.0889997Z ^[[36;1mecho \"failed=$failed\" >> \"$GITHUB_OUTPUT\"^[[0m",
+          "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:40:19.2818093Z ^[[36;1m  echo \"::error::The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md.\"^[[0m",
+          "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:40:19.2973949Z ##[error]The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md.",
+          "Full audit and publish detailed evidence\tUNKNOWN STEP\t2026-11-23T15:40:19.2986677Z ##[error]Process completed with exit code 1."
+        ]
       }
     }
   ],
@@ -265,17 +283,6 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [
-    {
-      "source": "job_log",
-      "job_id": "137807814317",
-      "message": "run 45207707231 is still in progress; logs will be available when it is complete\n"
-    },
-    {
-      "source": "job_log",
-      "job_id": "137807879615",
-      "message": "run 45207707231 is still in progress; logs will be available when it is complete\n"
-    }
-  ],
-  "history_path": "history/424743410/45207707231-attempt-1-pre_finalizer"
+  "capture_errors": [],
+  "history_path": "history/424743410/45207707231-attempt-1-post_run"
 }
