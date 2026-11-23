@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 06:31 UTC — Exact-run backfill requests committed:** Request corrected immutable post-run captures for runs 45123530849 (full lint), 45123530858 (Document Standards), and 45123260178 (changed lint). Request commit: `caec43ef75a84ed2c0b53cc36057f2217d0efd08`. The resulting sweep, run [45124527032](https://github.com/dungnv2602/chatgpt/actions/runs/45124527032), was observed In Progress. Do not poll. The prior reports remain unchanged; the three requests remain in `gh_ac_reports/requests/pending/` until a complete capture is available.
+- **2026-11-23 — Consolidate report systems under /reports:** Move the existing lint and GitHub Actions report trees beneath `reports/`, update all active workflow/script/navigation/catalog references, and establish the centralized triage ledger. Document the resolved-report lifecycle and its exact-path retention boundary without deleting evidence until a retention period is approved. Expected result: a single report root, stable subfolder scopes, and a clear, auditable retirement policy.
 
 ## Open Discussions
 
