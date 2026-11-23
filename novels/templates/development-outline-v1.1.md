@@ -35,6 +35,8 @@ status: approved
 - **Character Change:**
 - **Status:** Approved / Proposed / Open
 
+The Status field inside each component describes that component. It is separate from the overall outline Status in Section 1.
+
 ## 5. Risks and Continuity Tests
 - **Causal Credibility:**
 - **Character Consistency:**
