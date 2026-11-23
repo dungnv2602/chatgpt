@@ -104,6 +104,27 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(finding["first_seen_utc"],"2026-11-23T07:10:00Z")
         self.assertEqual(finding["last_seen_utc"],"2026-11-23T07:20:00Z")
 
+    def test_runner_command_echo_uses_actual_step_log_signature(self):
+        report_path = "reports/gh_ac_reports/history/55/900-attempt-1-post_run/report.json"
+        report_dir = self.root / Path(report_path).parent
+        log_dir = report_dir / "logs"
+        log_dir.mkdir(parents=True)
+        log_path = log_dir / "job-901.log"
+        log_path.write_text(
+            "Build\tPublish\t2026-11-23T07:00:00Z\t^[[36;1m git push origin gpt\n"
+            "Build\tPublish\t2026-11-23T07:00:01Z\t! [remote rejected] HEAD -> gpt (cannot lock ref abcdef1234567)\n"
+            "Build\tPublish\t2026-11-23T07:00:02Z\terror: failed to push some refs\n",
+            encoding="utf-8",
+        )
+        report = {"jobs":[{"id":"901","name":"Build","log_capture":{"path":"logs/job-901.log"}}]}
+        issue = {"job_id":"901","job_name":"Build","step_name":"Publish",
+                 "message":"2026-11-23T07:00:00Z ^[[36;1m git push origin gpt"}
+        signature = LEDGER.diagnostic_signature(report, report_path, self.root, issue)
+        self.assertIn("remote rejected", signature)
+        self.assertIn("failed to push some refs", signature)
+        self.assertNotIn("^[[", signature)
+        self.assertNotIn("abcdef1234567", LEDGER.normalize_signature(signature))
+
     def test_actions_identity_uses_workflow_job_step_and_signature(self):
         issues = [
             {"category":"validation_or_test","job_name":"Build","step_name":"Unit tests","blocking":True,"confidence":"high","message":"ERROR: mismatch abcdef1234567\n"},
@@ -174,6 +195,7 @@ class LedgerTests(unittest.TestCase):
             {"category":"cancelled","job_name":"Build","step_name":"Tests","blocking":True,"confidence":"high","message":"Cancelled"},
             {"category":"skipped","job_name":"Build","step_name":"Tests","blocking":False,"confidence":"high","message":"Skipped"},
             {"category":"validation_or_test","job_name":None,"step_name":None,"blocking":True,"confidence":"low","message":"GitHub reported a failed run, but no failed job or step was available."},
+            {"category":"validation_or_test","job_name":"Build","step_name":"Preserve lint failure as workflow conclusion","blocking":True,"confidence":"medium","message":"Changed-document lint failed."},
         ]
         self.add_actions("500","2026-11-23T07:30:00Z",issues,stage="pre_finalizer")
         self.add_actions("501","2026-11-23T07:31:00Z",issues,stage="post_run")
