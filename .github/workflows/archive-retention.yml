@@ -66,6 +66,9 @@ jobs:
     name: Capture GH Actions diagnostics
     if: ${{ always() }}
     needs: [cleanup]
+    concurrency:
+      group: gh-ac-report-writer-${{ github.repository }}
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 15
     continue-on-error: true
