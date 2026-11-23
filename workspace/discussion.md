@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 08:05 UTC — Inspect source contracts and publication paths:** Read exact lint and Actions report structures, stable finding keys, workflow indexes, collector concurrency, catalog classification, and canonical test/document contracts. Specify forward-only ingestion and safe single-writer publication.
+- **2026-11-23 08:11 UTC — Establish the ledger's canonical implementation contract:** Inspect catalog classification, source report schemas and representative findings, both report indexes, finalizer/collector workflows, and the exact test conventions. Decide generator ownership and single-writer integration before editing.
 
 ## Open Discussions
 
