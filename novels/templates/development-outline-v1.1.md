@@ -28,6 +28,8 @@ status: approved
 - **Character Agency and Consequences:**
 
 ## 4. Proposed Progression / Components
+Duplicate the component block for each stage or component. If no progression is ready to record, state `None recorded` rather than leaving the section blank.
+
 ### [Stage / Component 1]
 - **Purpose:**
 - **Proposed Content:**
