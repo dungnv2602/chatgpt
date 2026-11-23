@@ -48,8 +48,8 @@ GitHub Actions runs the scheduled archive-retention workflow.
 
 CI is not a gate that must be repaired before every user prompt or after skill initialization. Inspect CI when the user requests it, when the current task changes a workflow or validation target, or when a known result directly affects the task.
 
-1. Start with `gh_ac_reports/README.md` for workflow-level failures, jobs, steps, logs, annotations, artifact metadata, and evidence limitations.
-2. For STE lint details, start with `lint_reports/README.md`. Use its scope index and structured JSON for exact file-level findings, metrics, and baselines.
+1. Start with `reports/gh_ac_reports/README.md` for workflow-level failures, jobs, steps, logs, annotations, artifact metadata, and evidence limitations.
+2. For STE lint details, start with `reports/lint_reports/README.md`. Use its scope index and structured JSON for exact file-level findings, metrics, and baselines.
 3. Inspect only the runs and checks relevant to the current task. Use a bounded snapshot when fresh status is material. Do not scan the entire workflow history without a reason.
 4. Preserve GitHub's actual conclusion. Distinguish failure, timed out, action required, cancelled, skipped, neutral, queued, and in-progress states. Cancellation and skipped outcomes are not automatically failures. Do not treat missing evidence as proof of a workflow-definition defect.
 5. Repair only the cause that is inside the user's current scope or is a direct dependency of the task. Do not repair unrelated failures before handling the request. Never weaken tests, workflow coverage, permission requirements, or lint baselines to make a check pass.
