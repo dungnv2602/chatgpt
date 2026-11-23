@@ -81,7 +81,7 @@ No new session summary or conversation-integrity record was required during this
 
 ## Priority gaps
 
-1. Review whether existing processor validation and tests cover all documented hand-off fields and failure modes.
+1. Review the hosted-runner result for the new field-level hand-off tests. Add further cases only when they cover a documented gap.
 2. Review the three master catalogues for shared lightweight structure.
 3. Check remaining project-specific record types against this catalog before declaring inventory complete.
 4. Complete the repository inventory before marking the catalog complete.
@@ -96,3 +96,4 @@ When a recurring document type is added or changed:
 4. Link the template from its owner index.
 5. Define structural validation and migration rules.
 6. Read back all changed paths.
+7. Run `skills/document-standards/scripts/validate_catalog.py` and its tests through an authorized GitHub Actions workflow. This validator checks catalog integrity and exact references; it does not validate document content. Do not run it locally.
