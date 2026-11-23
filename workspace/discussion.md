@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 07:52 UTC — Inspect ledger implementation contracts:** Foundational initialization passed. Inspect the active task dependencies, lint and Actions report schemas, finding fingerprints, report indexes, publication workflows, and triage schema. Define a safe forward-only ingestion design. Keep all reads and writes within approved project directories on `gpt`.
+- **2026-11-23 08:02 UTC — Reconcile explicit task reprioritization:** Checkpoint the diagnostic-report task without closing its pending validation, move the approved ledger task to current execution, and record the task switch on `gpt`.
 
 ## Open Discussions
 
