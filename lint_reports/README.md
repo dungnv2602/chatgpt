@@ -9,7 +9,7 @@ This directory is the primary review surface for hosted STE lint results. Review
 
 ## Evidence layers
 
-Each completed run has an immutable history directory containing:
+Each newly generated completed run has an immutable history directory containing:
 - `report.md`: readable coverage, execution status, per-file outcomes, and findings.
 - `report.json`: structured evidence with execution metadata and original linter JSON payloads.
 - `integrity.json`: SHA-256 checksums for the Markdown and JSON report files.
@@ -18,7 +18,7 @@ Each scope also maintains:
 - `latest-lint-report.md` and `latest-lint-report.json`: latest completed report, including failures.
 - `index.json`: compact run locator. Read it before opening historical reports.
 
-The root `latest-lint-report.md` remains a compatibility copy for existing links. The scope-specific report is canonical.
+The root `latest-lint-report.md` remains a compatibility copy for existing links. The scope-specific report is canonical. The first migrated legacy report predates the full evidence schema and records its coverage-path limitation explicitly.
 
 ## Review order
 
