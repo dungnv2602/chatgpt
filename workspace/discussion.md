@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 16:16 UTC — Session startup:** Foundational initialization requested. Drawing-session activation requested after initialization. Preserve the existing event-driven Ledger handoff and reporting restrictions. No CI polling or dispatch.
+- **2026-11-23 16:18 UTC — Worker recovery:** Read the workspace guide and task board. Identify the current execution task and inspect its complete record before starting the requested drawing session.
 
 ## Open Discussions
 
@@ -12,7 +12,8 @@
 
 - **2026-11-23 13:19 UTC — Pending diagnostic post-run captures:** Two source runs remain pending in the diagnostics index at watermark `2026-11-23T13:19:19Z`. A later eligible natural sweep can capture them. Do not poll or dispatch workflows.
 
-- **2026-11-23 10:16 UTC — Hosted retention validation:** The cleanup script and tests cover exact individual files in both archive folders. A hosted run of the schedule-only cleanup has not yet been observed. It runs on the schedule from main. No manual dispatch or user action is needed. Do not modify main.
+- **2026-11-23 10:16 UTC — Hosted retention validation:** The cleanup script and tests cover exact individual files in both archive folders. A hosted run of the schedule-only cleanup has not yet been observed. It runs on the schedule from main. No manual dispatch or user action is needed.
+
 ## Reports
 
 - **2026-11-23 14:22 UTC — Document Standards validator passed:** [Run #160](https://github.com/dungnv2602/chatgpt/actions/runs/45193353681) on commit `05bbf26c74cd0df093adbf074d3024e00323674b` completed successfully. The `validate-document-standards` job passed both the catalog regression tests and catalog validation. The diagnostic-capture job also succeeded.
