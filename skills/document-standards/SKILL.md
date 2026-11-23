@@ -86,6 +86,12 @@ Every template or schema must define, as applicable:
 
 Keep required, conditional, and optional content visibly distinct.
 
+- Treat every unmarked field as required.
+- Mark an optional field with `Optional:`.
+- Mark a conditional field with `Conditional:` and state its activation condition.
+- Keep conditional sections only when their condition applies.
+- Use the documented value for unknown or inapplicable fields. Do not leave required fields blank.
+
 Do not use a blank field to imply approval, completion, or verification.
 
 Do not place workflow metadata inside a creative prompt or other user-facing content field.
