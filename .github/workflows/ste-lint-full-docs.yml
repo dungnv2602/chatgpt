@@ -120,7 +120,7 @@ jobs:
           SELFTEST_EXIT: ${{ steps.tooling.outputs.linter_selftest_exit }}
         run: |
           set -euo pipefail
-          mkdir -p .lint-report-records reports/reports/lint_reports/on_repo/history
+          mkdir -p .lint-report-records reports/lint_reports/on_repo/history
           anchor_status=0
           python3 skills/asd-ste100/scripts/check_markdown_anchors.py \
             > .lint-report-records/anchor-check.log 2>&1 || anchor_status=$?
@@ -215,7 +215,7 @@ jobs:
           else
             report_status="Passed"
           fi
-          history="reports/reports/lint_reports/on_repo/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
+          history="reports/lint_reports/on_repo/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
           generator_status=0
           python3 skills/asd-ste100/scripts/generate_lint_report.py \
             --scope on_repo --records-dir .lint-report-records \
@@ -226,16 +226,16 @@ jobs:
             --commit "$GITHUB_SHA" --event "$GITHUB_EVENT_NAME" \
             --mode repository-wide --status "$report_status" \
             --checks-file .lint-report-checks.json \
-            --previous-report reports/reports/lint_reports/on_repo/latest-lint-report.json \
+            --previous-report reports/lint_reports/on_repo/latest-lint-report.json \
             --linter-source-sha "$(git rev-parse HEAD)" || generator_status=$?
           if [[ "$generator_status" -ne 0 ]]; then
             echo "::error::The shared lint report generator failed with exit $generator_status."
             failed=1
           else
-            cp reports/reports/lint_reports/on_repo/latest-lint-report.md reports/reports/lint_reports/latest-lint-report.md
+            cp reports/lint_reports/on_repo/latest-lint-report.md reports/lint_reports/latest-lint-report.md
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add lint_reports/on_repo reports/reports/lint_reports/latest-lint-report.md
+            git add reports/lint_reports/on_repo reports/lint_reports/latest-lint-report.md
             if ! git diff --cached --quiet; then
               git commit -m "Publish repository-wide lint evidence"
               git pull --rebase origin gpt
@@ -253,7 +253,7 @@ jobs:
           TOOLING_FAILED: ${{ steps.tooling.outputs.failed }}
         run: |
           if [[ "$AUDIT_OUTCOME" != "success" || "$AUDIT_FAILED" == "1" || "$TOOLING_FAILED" == "1" ]]; then
-            echo "::error::The full audit found lint or validation failures. See reports/reports/lint_reports/on_repo/latest-lint-report.md."
+            echo "::error::The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md."
             exit 1
           fi
           echo "All full-audit checks passed."
@@ -278,4 +278,4 @@ jobs:
           persist-credentials: true
 
       - name: Capture workflow diagnostics
-        uses: ./gh_ac_reports/actions/capture
+        uses: ./reports/gh_ac_reports/actions/capture
