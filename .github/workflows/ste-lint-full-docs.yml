@@ -242,6 +242,7 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
+          AUDIT_FAILED: ${{ steps.audit.outputs.overall_failed }}
         run: |
           set -euo pipefail
           scope="lint_reports/on_repo"
