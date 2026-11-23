@@ -84,6 +84,18 @@ The diagnostics workflow is deliberately excluded from its own run sweep to prev
 The cross-family issue state is tracked in `reports/triage/ledger.json`. A finding is resolved only after its fix commit and successful relevant validation are recorded. The successful run URL and UTC timestamp are sufficient; a full successful-run diagnostic report is not required. Use a request file only when the successful run's detailed evidence is specifically needed. Resolved report files are moved to `archive/reports/`; the shared archive-retention workflow deletes each exact indexed file after 90 days. The archive uses the shared `.github/archive-retention-index.json`. Do not create a report archive under `reports/` or a separate retention workflow.
 
 
+## Bounded retry and request handling
+
+Automatic post-run captures retry an Incomplete report at most three times per source run attempt, with at least one hour between attempts. The collector records exhausted run IDs in `exhausted_run_ids` and removes them from `pending_run_ids`. Review exhausted reports and submit a new explicit request only when another capture attempt is justified.
+
+A request in `requests/pending/` is consumed into `requests/processed/` after one completed-run capture result. The processed request records `Complete`, `Incomplete`, or `Not actionable`, the processing timestamp, and the incomplete report path when available. An incomplete requested capture remains in the normal pending queue only while the automatic retry budget remains. The request file itself does not replay every sweep.
+
+A complete capture is never rewritten or duplicated, even when a manual request uses force mode. Force bypasses the automatic backoff for one explicit request, but does not bypass the completed-capture guard.
+
 ## Reporting periods
 
-The pre-reset reporting period is superseded and preserved at `archive/reports/superseded-2026-11-23/`. Its eligible history, indexes, and prior latest-pointer snapshots are immutable. The active indexes start a new period at 2026-11-23T16:09:08Z and retain only the four pending source run IDs carried forward from the prior period. Their six available incomplete captures remain in active history until the next natural sweep completes them. Separately, 59 capture directories remain at their existing paths as evidence for open Ledger findings; they are excluded from active indexes and are not new-period reports. The Ledger and its evidence references are unchanged. Routine successful and cancellation-only runs remain excluded by the capture policy.
+A clean-start reset requires explicit user authorization. It deletes active generated report payloads, workflow snapshots, latest pointers, request queues, and all previous `archive/reports/**` period snapshots. It resets the repository-wide index and request state to an empty reporting period with a new UTC watermark. It does not delete scripts, schemas, templates, assets, workflow definitions, operator guides, or task archives.
+
+The first report captures source runs created after the reset watermark. Do not carry pending runs or import old reports into the new period. Use the normal report indexes and immutable post-reset capture paths from then onward.
+
+Normal report rollover is different: it preserves open-finding evidence and does not clear the Ledger. See `reports/triage/README.md` for task-linked finding retirement and baseline seeding.

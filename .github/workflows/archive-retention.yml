@@ -17,6 +17,9 @@ jobs:
     name: Delete individually expired task and report files on gpt and fast-forward main
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    concurrency:
+      group: gh-ac-report-writer-${{ github.repository }}
+      cancel-in-progress: false
     steps:
       - name: Check out gpt
         uses: actions/checkout@v4

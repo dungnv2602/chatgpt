@@ -5,7 +5,8 @@ import argparse, copy, hashlib, json, re, tempfile
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 
-SCHEMA_VERSION = "1.3.0"
+SCHEMA_VERSION = "1.4.0"
+MAX_EVIDENCE_ROWS = 5
 IGNORED_CATEGORIES = {"cancelled", "skipped", "neutral", "queued", "in_progress", "unavailable", "unknown", "not_available"}
 IGNORED_LINT_STATUSES = {"Incomplete", "Cancelled", "Superseded"}
 IGNORED_PROPAGATION_STEPS = {
@@ -141,7 +142,7 @@ def bootstrap_state(root, timestamp=None):
 
 def migrate_ledger(ledger, root):
     version = ledger.get("schema_version")
-    if version not in ("1.0.0", "1.1.0", "1.2.0", SCHEMA_VERSION):
+    if version not in ("1.0.0", "1.1.0", "1.2.0", "1.3.0", SCHEMA_VERSION):
         raise LedgerError("Unsupported ledger schema version: " + str(version))
     if not isinstance(ledger.get("findings"), list):
         raise LedgerError("The ledger findings field must be an array")
@@ -154,6 +155,10 @@ def migrate_ledger(ledger, root):
         finding.setdefault("duplicate_of", None)
         finding.setdefault("accepted_risk", None)
         finding.setdefault("task_refs", [])
+        evidence_rows = finding.get("evidence")
+        if not isinstance(evidence_rows, list):
+            raise LedgerError("finding evidence must be an array: " + str(finding.get("finding_id")))
+        finding["evidence"] = compact_evidence(evidence_rows)
         if "task_group" not in finding:
             group_parts = ["legacy", finding.get("finding_id", "unknown")]
             if finding.get("source_family") == "lint":
@@ -176,6 +181,16 @@ def migrate_ledger(ledger, root):
     state = ledger["ingestion_state"]
     state.setdefault("bootstrap_at_utc", utc_now())
     state.setdefault("processed_reports", [])
+    legacy_baseline_default = version != SCHEMA_VERSION
+    baseline_scopes = state.setdefault("lint_baseline_scopes", {
+        "on_changed": legacy_baseline_default, "on_repo": legacy_baseline_default
+    })
+    if not isinstance(baseline_scopes, dict):
+        raise LedgerError("ingestion_state.lint_baseline_scopes must be an object")
+    for scope in ("on_changed", "on_repo"):
+        baseline_scopes.setdefault(scope, False)
+        if not isinstance(baseline_scopes[scope], bool):
+            raise LedgerError("ingestion_state.lint_baseline_scopes values must be booleans")
     if not isinstance(state["processed_reports"], list) or not all(isinstance(item, str) for item in state["processed_reports"]):
         raise LedgerError("ingestion_state.processed_reports must be an array of paths")
     state["processed_reports"] = sorted(set(state["processed_reports"]))
@@ -209,6 +224,16 @@ def actions_severity(issue):
 def evidence_record(report_path, observed_at, run_url, observation_id, note):
     return {"report_path": report_path, "run_url": run_url or None, "observed_at_utc": observed_at,
             "note": note or None, "observation_id": observation_id}
+
+
+def compact_evidence(rows, limit=MAX_EVIDENCE_ROWS):
+    """Keep the first observation and the most recent evidence references."""
+    unique, seen = [], set()
+    for row in rows:
+        if isinstance(row, dict) and row.get("report_path") and row["report_path"] not in seen:
+            unique.append(row)
+            seen.add(row["report_path"])
+    return unique if len(unique) <= limit else [unique[0], *unique[-(limit - 1):]]
 
 def task_group_key(*parts):
     """Return a stable remediation-group ID from structured finding identity."""
@@ -288,6 +313,7 @@ def lint_observations(report, report_path):
             "title": (rule + ": " + message)[:240], "severity": lint_severity(item.get("level")),
             "task_group": task_group_key("lint", rule, PurePosixPath(file_path).as_posix()),
             "evidence": evidence_record(report_path, observed_at, report.get("run_url"), observation_id, note),
+            "comparison": item.get("comparison", "new"),
         }
     return list(result.values())
 
@@ -357,21 +383,23 @@ def upsert_finding(ledger, observation):
     known_paths = {row.get("report_path") for row in evidence_rows if isinstance(row, dict)}
     known_observations = {row.get("observation_id") or row.get("report_path") for row in evidence_rows if isinstance(row, dict)}
     observation_key = evidence.get("observation_id") or evidence["report_path"]
+    is_new_observation = observation_key not in known_observations
     if evidence["report_path"] not in known_paths:
         evidence_rows.append(evidence)
-    reopened = observation_key not in known_observations and existing.get("status") == "resolved"
+    if is_new_observation:
+        existing["occurrence_count"] = int(existing.get("occurrence_count") or 0) + 1
+    existing["evidence"] = compact_evidence(evidence_rows)
+    reopened = is_new_observation and existing.get("status") == "resolved"
     if reopened:
         resolution = existing.get("resolution")
         if resolution:
             existing.setdefault("resolution_history", []).append(copy.deepcopy(resolution))
         existing["resolution"] = None
         existing["status"] = "open"
-    valid_times = [row.get("observed_at_utc") for row in evidence_rows if isinstance(row, dict) and isinstance(row.get("observed_at_utc"), str)]
+    valid_times = [row.get("observed_at_utc") for row in existing["evidence"] if isinstance(row, dict) and isinstance(row.get("observed_at_utc"), str)]
     if valid_times:
-        existing["first_seen_utc"] = min(valid_times, key=parse_time)
-        existing["last_seen_utc"] = max(valid_times, key=parse_time)
-    occurrence_keys = {row.get("observation_id") or row.get("report_path") for row in evidence_rows if isinstance(row, dict)}
-    existing["occurrence_count"] = len(occurrence_keys)
+        existing["first_seen_utc"] = min([existing.get("first_seen_utc"), *valid_times], key=parse_time)
+        existing["last_seen_utc"] = max([existing.get("last_seen_utc"), *valid_times], key=parse_time)
     if reopened and before != json.dumps(existing, sort_keys=True, ensure_ascii=False):
         return "reopened"
     return "updated" if before != json.dumps(existing, sort_keys=True, ensure_ascii=False) else "unchanged"
@@ -401,6 +429,8 @@ def validate_semantics(ledger):
             duplicate_of = finding.get("duplicate_of")
             if not duplicate_of or duplicate_of == finding["finding_id"] or duplicate_of not in finding_ids:
                 raise LedgerError("Duplicate finding requires an existing, different duplicate_of ID: " + finding["finding_id"])
+        if status == "false_positive" and not str(finding.get("closure_note") or "").strip():
+            raise LedgerError("False-positive finding requires a closure_note: " + finding["finding_id"])
 
 def atomic_write_text(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -704,6 +734,84 @@ def create_worker_tasks(root, ledger, timestamp, candidate_ids, created_ids, reo
     return counts
 
 
+def lint_baseline_ready(report, scope):
+    """Accept a full lint baseline only after capture and tooling checks pass."""
+    if report.get("scope") != scope or report.get("status") not in ("Passed", "Failed"):
+        return False
+    expected_mode = "repository-wide" if scope == "on_repo" else "full-audit-fallback"
+    if report.get("execution_mode") != expected_mode or not report.get("commit_sha"):
+        return False
+    checks = report.get("checks")
+    if not isinstance(checks, list):
+        return False
+    states = {item.get("name"): item.get("status") for item in checks if isinstance(item, dict)}
+    if not all(states.get(name) == "Passed" for name in LINT_BASELINE_CHECKS):
+        return False
+    return states.get("Markdown links and heading anchors") == "Passed"
+
+
+def archived_task_index(root):
+    """Read only exact task archive paths registered in the shared retention index."""
+    path = root / ".github" / "archive-retention-index.json"
+    if not path.is_file():
+        return {}
+    index = read_json(path)
+    if not isinstance(index, dict) or not isinstance(index.get("records"), list):
+        raise LedgerError("Invalid archive retention index while retiring Ledger findings")
+    result = {}
+    for record in index["records"]:
+        if not isinstance(record, dict):
+            continue
+        archive_path = record.get("path")
+        if not isinstance(archive_path, str) or not archive_path.startswith("archive/tasks/"):
+            continue
+        candidate = PurePosixPath(archive_path)
+        if candidate.is_absolute() or ".." in candidate.parts:
+            raise LedgerError("Unsafe task archive path in retention index: " + archive_path)
+        task_path = root / Path(*candidate.parts)
+        if not task_path.is_file():
+            continue
+        content = task_path.read_text(encoding="utf-8")
+        task_id = task_metadata(content, "ID")
+        status = task_metadata(content, "Status")
+        archived = task_metadata(content, "Archived")
+        section = content.split("## 13. Ledger Findings", 1)[-1].split("\n## ", 1)[0]
+        tick = chr(96)
+        finding_ids = set()
+        for line in section.splitlines():
+            fields = line.split("|")
+            if len(fields) > 1:
+                value = fields[1].strip()
+                if len(value) >= 2 and value.startswith(tick) and value.endswith(tick):
+                    finding_ids.add(value[1:-1])
+        if task_id and status == "Done" and archived == "Yes" and finding_ids:
+            result[task_id] = finding_ids
+    return result
+
+
+def retire_completed_task_findings(root, ledger):
+    """Retire terminal findings only after every linked task is archived Done."""
+    archive = archived_task_index(root)
+    by_id = {item.get("finding_id"): item for item in ledger["findings"]}
+    terminal = {"resolved", "accepted", "false_positive", "duplicate"}
+    eligible_tasks = {}
+    for task_id, finding_ids in archive.items():
+        linked = [by_id.get(finding_id) for finding_id in finding_ids]
+        if linked and all(item is not None and item.get("status") in terminal for item in linked):
+            eligible_tasks[task_id] = finding_ids
+    retained, retired = [], []
+    for finding in ledger["findings"]:
+        refs = finding.get("task_refs") or []
+        if (finding.get("status") in terminal and refs
+                and set(refs).issubset(eligible_tasks)
+                and all(finding.get("finding_id") in eligible_tasks[task_id] for task_id in refs)):
+            retired.append(finding.get("finding_id"))
+        else:
+            retained.append(finding)
+    ledger["findings"] = retained
+    return retired
+
+
 def ingest(root, now=None):
     root = Path(root).resolve()
     ledger_path, schema_path = root / "reports/triage/ledger.json", root / "reports/triage/ledger-schema.json"
@@ -728,11 +836,29 @@ def ingest(root, now=None):
             report = read_json(root / report_path)
             if not isinstance(report, dict):
                 raise LedgerError("Report root must be an object")
-            observations = lint_observations(report, report_path) if family == "lint" else actions_observations(report, report_path, root)
+            if family == "lint":
+                scope = report.get("scope")
+                if scope not in ("on_changed", "on_repo"):
+                    raise LedgerError("Lint report has an unsupported scope: " + report_path)
+                if not state["lint_baseline_scopes"].get(scope):
+                    if not lint_baseline_ready(report, scope):
+                        raise LedgerError("Lint baseline is not a complete full audit with passing tooling checks: " + report_path)
+                    state["lint_baseline_scopes"][scope] = True
+                    state["processed_reports"].append(report_path)
+                    processed.add(report_path)
+                    counts["reports_processed"] += 1
+                    changed = True
+                    continue
+                observations = lint_observations(report, report_path)
+            else:
+                observations = actions_observations(report, report_path, root)
         except (LedgerError, TypeError, KeyError) as exc:
             warnings.append(str(exc))
             continue
+        known_ids = {item.get("finding_id") for item in ledger["findings"]}
         for observation in observations:
+            if family == "lint" and observation.get("comparison") == "recurring" and observation["finding_id"] not in known_ids:
+                continue
             result = upsert_finding(ledger, observation)
             if result == "created":
                 counts["findings_created"] += 1
@@ -750,18 +876,22 @@ def ingest(root, now=None):
         processed.add(report_path)
         counts["reports_processed"] += 1
         changed = True
+    active_index_paths = {path for _family, path, _row in indexed_reports(root)}
+    processed.intersection_update(active_index_paths)
     state["processed_reports"] = sorted(processed)
     task_result = create_worker_tasks(
         root, ledger, now or utc_now(), task_candidates["created"] | task_candidates["updated"], task_candidates["created"], reopened_ids
     )
-    changed = changed or task_result["changed"]
+    retired_ids = retire_completed_task_findings(root, ledger)
+    changed = changed or task_result["changed"] or bool(retired_ids)
     if changed:
         ledger["updated_at_utc"] = now or utc_now()
         validate_schema(ledger, schema, "$ledger")
         validate_semantics(ledger)
         atomic_write(ledger_path, ledger)
     return {**counts, **{key: value for key, value in task_result.items() if key != "changed"},
-            "total_findings": len(ledger["findings"]), "warnings": warnings, "changed": changed}
+            "findings_retired": len(retired_ids), "total_findings": len(ledger["findings"]),
+            "warnings": warnings, "changed": changed}
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)

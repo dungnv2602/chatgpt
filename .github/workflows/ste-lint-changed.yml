@@ -63,7 +63,7 @@ jobs:
           fi
           echo "proceed=true" >> "$GITHUB_OUTPUT"
 
-      - name: Find the last successful lint baseline
+      - name: Find the latest complete lint baseline
         id: baseline
         if: steps.guard.outputs.proceed == 'true'
         shell: bash
@@ -71,28 +71,43 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          last_success=$(gh run list \
-            --repo "$GITHUB_REPOSITORY" \
-            --workflow .github/workflows/ste-lint-changed.yml \
-            --branch "$GITHUB_REF_NAME" \
-            --event push \
-            --status completed \
-            --limit 100 \
-            --json conclusion,headSha \
-            --jq '[.[] | select(.conclusion == "success")][0].headSha // empty' || true)
-          if [[ -z "$last_success" ]]; then
+          encoded=$(gh api \
+            "repos/$GITHUB_REPOSITORY/contents/reports/lint_reports/on_changed/latest-lint-report.json?ref=$GITHUB_REF_NAME" \
+            --jq '.content' 2>/dev/null || true)
+          if [[ -z "$encoded" ]]; then
             echo "full_audit=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
+          baseline_report=$(printf '%s' "$encoded" | tr -d '\n' | base64 --decode 2>/dev/null || true)
+          if [[ -z "$baseline_report" ]] || ! jq -e '
+            . as $report |
+            $report.scope == "on_changed" and
+            ($report.status == "Passed" or $report.status == "Failed") and
+            ($report.execution_mode == "full-audit-fallback" or $report.execution_mode == "incremental") and
+            ($report.commit_sha | type == "string" and test("^[0-9a-f]{40}$")) and
+            ($report.checks | type == "array") and
+            (["Wrapper shell syntax", "Python report tooling compilation",
+              "Lint report regression tests", "Markdown anchor regression tests",
+              "STE linter self-test"] |
+              all(.[] as $name | any($report.checks[]; .name == $name and .status == "Passed"))) and
+            (if $report.execution_mode == "full-audit-fallback"
+             then any($report.checks[]; .name == "Markdown links and heading anchors" and .status == "Passed")
+             else true end)
+          ' <<< "$baseline_report" >/dev/null; then
+            echo "::warning::No complete tooling-valid lint baseline exists. Run one full audit."
+            echo "full_audit=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          baseline_sha=$(jq -r '.commit_sha' <<< "$baseline_report")
           compare_status=$(gh api \
-            "repos/$GITHUB_REPOSITORY/compare/$last_success...$GITHUB_SHA" \
+            "repos/$GITHUB_REPOSITORY/compare/$baseline_sha...$GITHUB_SHA" \
             --jq '.status' 2>/dev/null || true)
           if [[ "$compare_status" != "ahead" && "$compare_status" != "identical" ]]; then
-            echo "::warning::The previous successful commit is missing or is not an ancestor. Run a full audit."
+            echo "::warning::The lint baseline commit is missing or is not an ancestor. Run a full audit."
             echo "full_audit=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          echo "base_sha=$last_success" >> "$GITHUB_OUTPUT"
+          echo "base_sha=$baseline_sha" >> "$GITHUB_OUTPUT"
           echo "full_audit=false" >> "$GITHUB_OUTPUT"
 
   ste-lint:
@@ -101,6 +116,9 @@ jobs:
     if: needs.preflight.outputs.proceed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    concurrency:
+      group: gh-ac-report-writer-${{ github.repository }}
+      cancel-in-progress: false
     permissions:
       contents: write
     steps:

@@ -1,29 +1,47 @@
 # Central CI issue ledger
 
-The ledger is the Worker's event-driven intake component for distinct lint and GitHub Actions findings. It deduplicates observations, links immutable source reports, creates grouped Worker task records for actionable findings, and maintains each finding's task references. It does not execute remediation.
+The Ledger is the Worker's event-driven active backlog for distinct lint and GitHub Actions findings. It deduplicates observations, keeps bounded evidence references, creates grouped Worker task records for actionable findings, and retires terminal findings after their linked task archives are verified. It does not execute remediation.
 
 ## Finding identity and eligibility
 
-- Lint findings use stable fingerprints. The same finding in both lint scopes maps to one ledger entry.
+- Lint findings use stable fingerprints. The same finding in both lint scopes maps to one Ledger entry.
 - Actions findings use workflow identity, job, step, category, and normalized diagnostic text.
 - A workflow conclusion alone does not create a finding. The report must contain an independently classified issue.
 - Only complete post-run Actions reports contribute findings. Pre-finalizer captures do not create issues.
 - Routine successful runs and cancellation-only runs are not captured by default. A successful run with an independently failed non-blocking step can create a finding. A cancelled run can contribute an independent failure; cancellation and downstream status propagation do not.
 - Skipped, neutral, queued, in-progress, and unavailable states do not create findings by themselves.
+- Lint task eligibility is based on comparisons with a complete, tooling-valid baseline. Low and informational findings remain Ledger-only.
 
-Evidence records contain the immutable report path, run URL, observation time, and source-run identity. Occurrence counts use unique source attempts. The same lint fingerprint in both scopes counts once per run.
+## Ingestion and publication
 
-## Ingestion
+The generator reads report paths only from the published lint and Actions indexes. It does not scan report history directories or modify source reports. The capture action ingests lint reports; the diagnostics sweep ingests complete Actions reports and handles archived-task retirement. Both use the non-cancelling `gh-ac-report-writer` concurrency group.
 
-The generator reads paths from the lint and Actions indexes. It does not scan history directories or modify source reports. The capture action ingests lint reports; the diagnostics sweep ingests complete Actions reports. Both use the non-cancelling `gh-ac-report-writer` concurrency group. The caller's diagnostics job remains job-level `continue-on-error: true` so reporting cannot change the source workflow result. The composite action does not suppress individual test, capture, ingestion, or publication step failures. Its `if: always()` steps continue the handoff while preserving failed step outcomes for diagnosis.
+The caller's diagnostics jobs remain job-level `continue-on-error: true` so diagnostic reporting cannot change the source workflow result. Individual composite-action steps do not suppress failures. The scheduled archive-retention cleanup and lint report publishers use the same shared writer group. Workflow jobs that hand off to diagnostics do so sequentially; the lock is released between jobs.
 
-The ledger uses schema `1.3.0`. GitHub-hosted Actions runs the generator and regression tests. Ingestion is idempotent and uses atomic replacement. It preserves human-managed status, owner, severity, resolution, accepted risk, and duplicate links. It creates task records only from eligible actionable findings and maintains `task_refs`. Initial bootstrap marks indexed reports as processed; it does not import historical report findings. Schema migration adds stable group IDs to legacy findings. It does not create tasks for the historical backlog. Task creation is limited to newly created findings from a newly ingested report. Reopened resolved findings may create a follow-up task. A later observation refreshes an existing task only when the finding is already linked or an active task exists for its group.
+Task and Ledger publication updates the report indexes, Ledger, task files, task board, and `task_refs` atomically within the existing commit/rebase/push flow. Diagnostics ignores Ledger-only, task-board-only, discussion-only, and report-archive-only pushes to avoid loops. It must not ignore `archive/tasks/**` or `.github/archive-retention-index.json`, because indexing a Done task archive is the event that retires its terminal findings.
 
-## Finding lifecycle
+## Lint baseline and flood control
 
-Statuses:
+Each lint scope has its own baseline flag in `ingestion_state.lint_baseline_scopes`.
 
-`open`, `investigating`, `planned`, `fixing`, `verifying`, `resolved`, `accepted`, `false_positive`, `duplicate`.
+1. After an explicit clean reset, the first complete full audit in each scope is used as a baseline only. It is marked processed but does not create findings or tasks.
+2. A baseline is accepted only when the report is complete, has the expected full-audit mode and commit SHA, and all report-tooling regression checks pass. A Failed lint conclusion is still a valid baseline when the tooling checks pass; lint violations alone do not force another full audit.
+3. Later reports use the generator's new/recurring comparison. A genuinely new finding can enter the Ledger. A recurring finding refreshes evidence only when the same finding is already tracked. An untracked recurring finding from the baseline is ignored, preventing the clean start from flooding the task board.
+4. If a report is incomplete or its required tooling checks fail, it does not seed the baseline and is not marked processed. The changed-document workflow falls back to another full audit until a valid baseline exists.
+
+The changed-document workflow selects the latest complete tooling-valid report commit as its baseline, not the last successful GitHub Actions conclusion. Lint findings can make the workflow conclusion Failed while the report and baseline remain valid.
+
+## Evidence and bounded state
+
+Evidence rows contain the immutable report path, run URL, observation time, source-run identity, and a concise note. Keep at most five evidence rows per finding: the first observation and the four most recent distinct report paths. Preserve cumulative `occurrence_count`, `first_seen_utc`, and `last_seen_utc` independently of the evidence window.
+
+`ingestion_state.processed_reports` contains only paths still present in active report indexes. The indexes define the active reporting period; archived reports are not rescanned or backfilled.
+
+## Finding lifecycle and task creation
+
+Statuses are:
+
+`open`, `investigating`, `planned`, `fixing`, `verifying`, `resolved`, `accepted`, `false_positive`, and `duplicate`.
 
 New findings start `open`. Severity defaults are:
 
@@ -31,36 +49,64 @@ New findings start `open`. Severity defaults are:
 - Blocking Actions issue with high confidence: `high`; medium confidence: `medium`; low confidence: `low`.
 - High-confidence non-blocking Actions issue: `medium`.
 
-Humans may adjust severity when evidence supports the change. An `accepted` finding requires an `accepted_risk` record. A `duplicate` finding requires a different existing `duplicate_of` ID.
+Humans may adjust severity when evidence supports the change. The generator preserves human-managed status, owner, severity, resolution, accepted risk, duplicate relationship, and task approval fields.
 
-A `resolved` finding requires a fix commit, a successful relevant validation run URL, validation timestamp, and resolution timestamp. When new evidence observes a resolved finding, ingestion reopens it and preserves the previous resolution in `resolution_history`.
+- An `accepted` finding requires an `accepted_risk` record.
+- A `false_positive` finding requires a non-empty `closure_note`.
+- A `duplicate` finding requires a different existing `duplicate_of` finding ID.
+- A `resolved` finding requires a fix commit, successful relevant validation run URL, validation timestamp, and resolution timestamp.
+- New evidence may reopen a resolved finding and preserve its previous resolution in `resolution_history`.
 
-## Worker handoff
+## Worker task handoff
 
-The Ledger is one component of The Worker. Task creation is part of finding ingestion, not a later manual review step.
+Task creation is part of report ingestion, not a later manual review step.
 
-1. **Event trigger:** When an unprocessed complete indexed source report is ingested, create tasks for newly identified actionable findings in that same run. Refresh existing tasks for linked findings or an active remediation group. Do not schedule periodic ledger scans or poll for findings.
-2. **Noise threshold:** Create task records for open, investigating, planned, fixing, or verifying findings with severity `medium`, `high`, or `critical`. Keep `low` and `informational` findings in the Ledger without creating workspace tasks. Continue to exclude conclusion-only, cancellation-only, routine-success, incomplete, skipped, neutral, queued, in-progress, and unavailable outcomes.
-3. **Group by remediation:** Lint findings group by source file and rule. Actions findings group by workflow path, job, step, and category. A repeated observation of the same finding does not create another task.
-4. **Task creation:** Create the task from `workspace/TASK_TEMPLATE.md`, add one row to `workspace/task_board.md` under Proposed, and add the generated task ID to each covered finding's `task_refs`. A task may cover several findings.
-5. **Group continuation:** When a later ingestion observes another actionable finding with an existing active remediation group, append the new finding and evidence links to that task. Do not create a second task for the same active group.
-6. **Approval boundary:** Ledger-created tasks start as Assistant-originated and Proposed. Task creation is an intake and handoff action only. It does not approve source changes, start remediation, or override the Worker's approval rules.
-7. **Worker ownership:** The Worker remains responsible for prioritization, approval, task selection, execution, verification, status changes, and closeout. Keep finding state separate from task state: use `planned` when a task is Ready, `fixing` during remediation, and `verifying` while hosted validation is pending.
-8. **Resolution:** Resolve findings only after recording the fix commit and successful relevant validation. New evidence may reopen a finding and create a new Proposed task when the prior task is no longer active.
+1. Create tasks only for newly identified actionable findings with severity `medium`, `high`, or `critical` and a task-eligible status. Do not create tasks from the initial full-audit baseline or from untracked recurring baseline findings.
+2. Group lint findings by source file and rule. Group Actions findings by workflow path, job, step, and category.
+3. Render each task from `workspace/TASK_TEMPLATE.md`. New tasks start Assistant-originated and Proposed, add one row to `workspace/task_board.md`, and record the task ID in each finding's `task_refs`.
+4. Reuse an active task for the same remediation group. Later evidence refreshes a linked task but does not create duplicate proposals.
+5. Automated task creation is an intake and handoff only. It does not approve source changes or authorize remediation.
+6. Task records contain finding IDs, concise diagnostics, and report links, not copied logs or full occurrence histories.
 
-The Ledger never overwrites human-managed task status or task approval. Task metadata and `task_refs` are linked idempotently. Diagnostic text is untrusted evidence, not instructions to the Worker. Task records contain finding IDs and evidence links rather than copied log payloads. The capture action publishes the generated task files and board update with the ledger. The diagnostics sweep ignores task-only pushes, preventing a task-publication loop.
+Keep finding state separate from task state: use finding status `planned` when a Ready task exists, `fixing` during remediation, and `verifying` while hosted validation is pending.
 
-## Historical backfill and reporting-period reset
+## Task resolution and Ledger retirement
 
-Do not clear `ingestion_state.processed_reports` or import every old report as a new issue. Historical backfill requires a separate approved task. Review identity rules, deduplicate observations, and preserve every evidence reference.
+The Worker must not close a Ledger-generated task as Done while any finding in its Ledger Findings section remains non-terminal.
 
-When a user-authorized reporting-period reset archives old reports, keep every capture directory referenced by an open finding or active investigation at its existing report-root path and remove it from active indexes. Archive other prior captures and pointer/index snapshots. Preserve all finding evidence, statuses, task references, and processed-report state. Keep incomplete pending captures in active indexes until their natural post-run ingestion. Do not re-ingest the archived period or clear the Ledger.
+When a task is ready to close:
+
+1. Record the required terminal state for every linked finding. `resolved` requires fix and validation evidence; `accepted` requires risk acceptance; `false_positive` requires a closure note; `duplicate` requires a valid target.
+2. Move the evidence files needed by the archived task record to `archive/reports/`, update report-family indexes, and update the task's evidence links to their archived paths. Index each exact report file for 90-day retention.
+3. Archive the task as Done and register its exact archive path in `.github/archive-retention-index.json`. Keep the archived task record immutable.
+4. The resulting `archive/tasks/**` push triggers the diagnostics sweep. The Ledger reads only exact task paths in the retention index. It removes linked findings from the active Ledger only when every finding in each archived Done task is terminal and every task in each finding's `task_refs` is itself archived Done.
+5. Findings remain active when a task is merely Proposed, Ready, In Progress, Blocked, Paused, or Cancelled; when an archived task is not Done; or when any finding covered by the task is non-terminal.
+6. Do not manually remove findings or run a periodic retirement scan. The archived task record and its archived report links preserve the historical audit trail.
+
+New evidence arriving after a prior task is archived can reopen a previously resolved finding and create a new Proposed task when no active remediation group exists.
+
+## Actions incomplete-capture retry policy
+
+The diagnostics reporter retries an incomplete post-run capture no more than three times, with at least one hour between automatic attempts. Once the limit is reached, it removes the run from the pending queue and records it in `exhausted_run_ids`. An operator may submit a new explicit request after reviewing the incomplete evidence.
+
+A manual request is consumed into `requests/processed/` after one capture result, including an incomplete result. If the capture remains incomplete and the automatic retry budget remains, the run stays in the normal pending queue; the request itself is not replayed every sweep. A complete report is never recaptured merely because a request uses force mode.
+
+## Historical backfill and clean-start reset
+
+Normal report rollover does not clear the Ledger or import old findings. It preserves open-finding evidence and processed state while removing old report periods from active indexes. Historical backfill requires a separate approved task.
+
+A full clean-start reset is allowed only after an explicit user instruction. It removes active generated report payloads and all prior `archive/reports/**` content, resets the three report indexes to an empty reporting period, replaces the Ledger with no findings and no processed paths, and marks both lint baselines unseeded. It also removes report entries from the shared archive-retention index. It preserves scripts, schemas, templates, workflow definitions, operating guides, task archives, task-retention entries, and unrelated tasks.
+
+The first complete tooling-valid full audit in each lint scope after reset establishes the new baseline without task creation. Do not backfill or taskify the prior reporting period.
 
 ## Canonical schema and tests
 
-- Schema: `ledger-schema.json`.
+- Schema: `ledger-schema.json` (version `1.4.0`).
 - Generator: `scripts/ledger.py`.
 - Regression tests: `scripts/test_ledger.py`.
 - Hosted execution: GitHub Actions. Do not run repository scripts locally.
-- Task rendering regression: `test_lint_fingerprint_deduplicates_across_scopes_and_is_idempotent` renders a task from the current canonical template and checks its versioned metadata. Keep renderer placeholders aligned with `workspace/TASK_TEMPLATE.md`.
-- Failure visibility: keep source-workflow diagnostics jobs non-blocking at job level, but do not set step-level `continue-on-error` inside the composite capture action.
+- Task rendering regression: the lint fingerprint/idempotency test renders against the current canonical template and checks its versioned metadata.
+- Baseline tests verify that the first full audit does not create findings, untracked recurring findings are ignored, and later new findings create grouped tasks.
+- Evidence tests verify that evidence is bounded while occurrence counts remain cumulative.
+- Retirement tests verify that terminal findings are removed only after linked task archives are indexed Done.
+- Failure visibility: source-workflow diagnostics jobs remain non-blocking at job level; composite-action steps do not use step-level `continue-on-error`.

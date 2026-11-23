@@ -5,6 +5,7 @@ on:
     branches:
       - gpt
     paths-ignore:
+      - 'archive/reports/**'
       - 'reports/gh_ac_reports/history/**'
       - 'reports/gh_ac_reports/by_workflow/**'
       - 'reports/gh_ac_reports/index.json'
@@ -13,6 +14,7 @@ on:
       - 'reports/triage/ledger.json'
       - 'workspace/tasks/**'
       - 'workspace/task_board.md'
+      - 'workspace/discussion.md'
 
 concurrency:
   group: gh-ac-report-writer-${{ github.repository }}

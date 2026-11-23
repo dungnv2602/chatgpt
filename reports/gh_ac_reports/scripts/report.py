@@ -22,8 +22,10 @@ TEMPLATE_PATH = ROOT / "assets" / "report-template.md"
 SCHEMA_VERSION = "1.0.0"
 REPORT_WORKFLOW = ".github/workflows/gh-actions-diagnostics.yml"
 REPORT_JOB = "Capture GH Actions diagnostics"
-BOOTSTRAP_WATERMARK = "2026-11-23T05:49:04Z"
+BOOTSTRAP_WATERMARK = "2026-11-23T23:34:41Z"
 MAX_LOG_BYTES = 1_000_000
+MAX_INCOMPLETE_CAPTURE_ATTEMPTS = 3
+INCOMPLETE_RETRY_INTERVAL_SECONDS = 3600
 SECRET_PATTERNS = [
     (re.compile(r"(?i)(authorization\s*:\s*bearer\s+)[^\s]+"), r"\1[REDACTED]"),
     (re.compile(r"\b(?:gh[pousr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,})\b"), "[REDACTED_TOKEN]"),
@@ -546,6 +548,7 @@ def load_index(root):
     data.setdefault("pending_run_ids", [])
     data.setdefault("runs", [])
     data.setdefault("latest_report", None)
+    data.setdefault("exhausted_run_ids", [])
     return data
 
 
@@ -659,6 +662,35 @@ def report_is_actionable(report):
     return outcome in ("failure", "timed_out", "action_required")
 
 
+def capture_rows(index, run_id, attempt, stage):
+    return [
+        item for item in index.get("runs", [])
+        if str(item.get("run_id")) == str(run_id)
+        and int(item.get("attempt") or 1) == int(attempt)
+        and item.get("capture_stage") == stage
+    ]
+
+
+def capture_retry_state(index, run_id, attempt, stage):
+    rows = capture_rows(index, run_id, attempt, stage)
+    complete = any(item.get("report_status") == "Complete" for item in rows)
+    incomplete = [item for item in rows if item.get("report_status") != "Complete"]
+    latest = max(incomplete, key=lambda item: timestamp(item.get("captured_at_utc")), default=None)
+    return {"complete": complete, "attempts": len(incomplete), "latest": latest}
+
+
+def incomplete_retry_allowed(index, run_id, attempt, stage, now=None):
+    state = capture_retry_state(index, run_id, attempt, stage)
+    if state["complete"]:
+        return False
+    if state["attempts"] >= MAX_INCOMPLETE_CAPTURE_ATTEMPTS:
+        return False
+    if not state["latest"]:
+        return True
+    elapsed = timestamp(now or utc_now()) - timestamp(state["latest"].get("captured_at_utc"))
+    return elapsed >= INCOMPLETE_RETRY_INTERVAL_SECONDS
+
+
 def capture_one(repo, root, run_id, stage, force=False):
     index = load_index(root)
     metadata_errors = []
@@ -670,13 +702,10 @@ def capture_one(repo, root, run_id, stage, force=False):
         )
         raise RuntimeError("Cannot retrieve workflow run " + str(run_id) + (": " + detail if detail else ""))
     attempt = int(metadata.get("run_attempt") or 1)
-    if not force and any(
-        str(item.get("run_id")) == str(run_id)
-        and int(item.get("attempt") or 1) == attempt
-        and item.get("capture_stage") == stage
-        and item.get("report_status") == "Complete"
-        for item in index["runs"]
-    ):
+    retry_state = capture_retry_state(index, run_id, attempt, stage)
+    if retry_state["complete"]:
+        return None
+    if not force and not incomplete_retry_allowed(index, run_id, attempt, stage):
         return None
     report, logs = fetch_evidence(repo, run_id, stage)
     if not force and not report_is_actionable(report):
@@ -759,29 +788,32 @@ def run_sweep(repo, root):
             candidates[run_id] = run
 
     new_reports = 0
+    exhausted = set(str(value) for value in index.get("exhausted_run_ids", []))
     for run_id, run in sorted(candidates.items(), key=lambda pair: timestamp(pair[1].get("created_at"))):
         if run.get("status") != "completed":
             pending.add(run_id)
             continue
         try:
             target = capture_one(repo, root, run_id, "post_run")
-            if target is None:
-                # A complete capture already exists, or this outcome has no actionable issue.
-                pending.discard(run_id)
-                continue
-            new_reports += 1
+            if target is not None:
+                new_reports += 1
             latest_errors = []
             refreshed = api_get(repo, "/repos/" + repo + "/actions/runs/" + run_id, latest_errors, "run_refresh")
             if refreshed and refreshed.get("status") == "completed":
                 fresh_attempt = int(refreshed.get("run_attempt") or 1)
-                refreshed_index = load_index(root)
-                complete = any(str(item.get("run_id")) == run_id and int(item.get("attempt") or 1) == fresh_attempt
-                               and item.get("capture_stage") == "post_run" and item.get("report_status") == "Complete"
-                               for item in refreshed_index["runs"])
-                if complete:
+                state = capture_retry_state(load_index(root), run_id, fresh_attempt, "post_run")
+                if state["complete"]:
                     pending.discard(run_id)
-                else:
+                    exhausted.discard(run_id)
+                elif state["attempts"] >= MAX_INCOMPLETE_CAPTURE_ATTEMPTS:
+                    pending.discard(run_id)
+                    exhausted.add(run_id)
+                elif state["attempts"]:
                     pending.add(run_id)
+                else:
+                    # No indexed report means the completed run was not actionable.
+                    pending.discard(run_id)
+                    exhausted.discard(run_id)
             else:
                 pending.add(run_id)
         except Exception as exc:
@@ -789,7 +821,8 @@ def run_sweep(repo, root):
             print("Capture failed for run " + run_id + ": " + redact(exc), file=sys.stderr)
 
     processed = 0
-    for request_file in sorted((root / "requests" / "pending").glob("*.json")) if (root / "requests" / "pending").is_dir() else []:
+    request_dir = root / "requests" / "pending"
+    for request_file in sorted(request_dir.glob("*.json")) if request_dir.is_dir() else []:
         try:
             request = json.loads(request_file.read_text(encoding="utf-8"))
             run_id = str(request.get("run_id", ""))
@@ -805,30 +838,40 @@ def run_sweep(repo, root):
             capture_one(repo, root, run_id, "post_run", force=True)
             current_index = load_index(root)
             attempt = int(metadata.get("run_attempt") or 1)
-            complete = any(
-                str(item.get("run_id")) == run_id
-                and int(item.get("attempt") or 1) == attempt
-                and item.get("capture_stage") == "post_run"
-                and item.get("report_status") == "Complete"
-                for item in current_index["runs"]
-            )
-            if complete:
-                done = root / "requests" / "processed" / request_file.name
-                done.parent.mkdir(parents=True, exist_ok=True)
-                shutil.move(str(request_file), str(done))
+            state = capture_retry_state(current_index, run_id, attempt, "post_run")
+            if state["complete"]:
+                request["status"] = "Complete"
                 pending.discard(run_id)
-                processed += 1
+                exhausted.discard(run_id)
+            elif state["attempts"]:
+                request["status"] = "Incomplete"
+                if state["attempts"] >= MAX_INCOMPLETE_CAPTURE_ATTEMPTS:
+                    pending.discard(run_id)
+                    exhausted.add(run_id)
+                else:
+                    pending.add(run_id)
+                if state["latest"]:
+                    request["report_path"] = state["latest"].get("history_path")
             else:
-                pending.add(run_id)
+                request["status"] = "Not actionable"
+                pending.discard(run_id)
+                exhausted.discard(run_id)
+            request["processed_at_utc"] = started
+            done = root / "requests" / "processed" / request_file.name
+            done.parent.mkdir(parents=True, exist_ok=True)
+            shutil.move(str(request_file), str(done))
+            done.write_text(json.dumps(request, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            processed += 1
         except Exception as exc:
             print("Backfill request remains pending: " + request_file.name + " " + redact(exc), file=sys.stderr)
 
     index = load_index(root)
     index["sweep_watermark_utc"] = started
     index["pending_run_ids"] = sorted(pending, key=lambda value: int(value), reverse=True)
+    index["exhausted_run_ids"] = sorted(exhausted, key=lambda value: int(value), reverse=True)
     save_json(root / "index.json", index)
     print("Sweep complete. New reports: " + str(new_reports) + "; backfill requests: " + str(processed) +
-          "; pending runs: " + str(len(pending)) + ".")
+          "; pending runs: " + str(len(pending)) + "; exhausted runs: " + str(len(exhausted)) + ".")
 
 
 def main():

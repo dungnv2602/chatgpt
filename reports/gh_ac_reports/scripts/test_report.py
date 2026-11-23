@@ -188,6 +188,71 @@ class CapturePolicyTests(unittest.TestCase):
             self.assertEqual(index["pending_run_ids"], [])
 
 
+class RetryPolicyTests(unittest.TestCase):
+    def test_incomplete_capture_uses_backoff_and_bounded_attempts(self):
+        index = {"runs":[{
+            "run_id":"100","attempt":1,"capture_stage":"post_run",
+            "report_status":"Incomplete","captured_at_utc":"2026-11-23T06:00:00Z",
+        }]}
+        self.assertFalse(REPORT.incomplete_retry_allowed(
+            index, "100", 1, "post_run", now="2026-11-23T06:30:00Z"
+        ))
+        self.assertTrue(REPORT.incomplete_retry_allowed(
+            index, "100", 1, "post_run", now="2026-11-23T07:00:00Z"
+        ))
+        index["runs"] *= 3
+        self.assertFalse(REPORT.incomplete_retry_allowed(
+            index, "100", 1, "post_run", now="2026-11-23T12:00:00Z"
+        ))
+
+    def test_force_request_does_not_duplicate_a_complete_capture(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            index = {
+                "schema_version":"1.0.0","pending_run_ids":[],"exhausted_run_ids":[],
+                "runs":[{
+                    "run_id":"100","attempt":1,"capture_stage":"post_run",
+                    "report_status":"Complete","captured_at_utc":"2026-11-23T06:00:00Z",
+                }],
+            }
+            (root / "index.json").write_text(json.dumps(index), encoding="utf-8")
+            with patch.object(REPORT, "api_get", return_value={"run_attempt":1}), \
+                 patch.object(REPORT, "fetch_evidence") as fetch:
+                result = REPORT.capture_one("owner/repository", root, "100", "post_run", force=True)
+            self.assertIsNone(result)
+            fetch.assert_not_called()
+
+    def test_manual_request_is_consumed_after_incomplete_capture(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            pending = root / "requests" / "pending"
+            pending.mkdir(parents=True)
+            (pending / "request-100.json").write_text(json.dumps({"run_id":"100"}), encoding="utf-8")
+            index = {
+                "schema_version":"1.0.0","sweep_watermark_utc":"2026-11-23T06:00:00Z",
+                "pending_run_ids":[],"exhausted_run_ids":[],
+                "runs":[{
+                    "run_id":"100","attempt":1,"capture_stage":"post_run",
+                    "report_status":"Incomplete","captured_at_utc":"2026-11-23T06:00:00Z",
+                    "history_path":"history/55/100-attempt-1-post_run",
+                }],
+            }
+            (root / "index.json").write_text(json.dumps(index), encoding="utf-8")
+            metadata = {"run_attempt":1,"status":"completed"}
+            with patch.object(REPORT, "collect_runs_since", return_value=[]), \
+                 patch.object(REPORT, "api_get", return_value=metadata), \
+                 patch.object(REPORT, "capture_one", return_value=None):
+                REPORT.run_sweep("owner/repository", root)
+            done = root / "requests" / "processed" / "request-100.json"
+            self.assertTrue(done.is_file())
+            result = json.loads(done.read_text(encoding="utf-8"))
+            self.assertEqual(result["status"], "Incomplete")
+            self.assertEqual(result["report_path"], "history/55/100-attempt-1-post_run")
+            self.assertFalse((pending / "request-100.json").exists())
+            updated = REPORT.load_index(root)
+            self.assertEqual(updated["pending_run_ids"], ["100"])
+
+
 class AnnotationPaginationTests(unittest.TestCase):
     @patch.object(REPORT, "api_get", return_value=[{"path": "docs/example.md", "message": "A check annotation"}])
     def test_annotations_endpoint_accepts_top_level_array(self, mocked_api):

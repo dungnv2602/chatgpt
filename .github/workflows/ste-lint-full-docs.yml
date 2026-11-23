@@ -68,6 +68,9 @@ jobs:
     if: needs.preflight.outputs.proceed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    concurrency:
+      group: gh-ac-report-writer-${{ github.repository }}
+      cancel-in-progress: false
     permissions:
       contents: write
     steps:

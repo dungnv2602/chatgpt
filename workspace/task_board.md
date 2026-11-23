@@ -1,6 +1,6 @@
 # Task Board
 
-Last updated: 2026-11-23
+Last updated: 2026-11-24
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
@@ -30,7 +30,6 @@ _No blocked tasks._
 
 ## Proposed
 
-_No proposed tasks._
 _No proposed tasks._
 
 ## Paused
