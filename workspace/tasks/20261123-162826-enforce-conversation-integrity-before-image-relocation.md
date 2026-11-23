@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261123-162826
 - **Created:** 2026-11-23 16:28 UTC
-- **Updated:** 2026-11-23 17:01 UTC
+- **Updated:** 2026-11-23 17:03 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -84,6 +84,12 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 - **Verification limits:** No local tests or scripts were run. No Actions workflow was manually dispatched or polled. The later branch advance, `a714598366b0b723015ee492c29a2f4f805ddcf2`, is a separate changed-document lint evidence commit; it does not constitute evidence that the takeout tests passed.
 - **Next:** Keep the seven unmapped items in Draft. Inspect their pixels and reconcile them only with retained source evidence. Review the natural takeout workflow validation when its result is reported.
 
+### 2026-11-23 17:03 UTC
+
+- **Action:** Attempted to inspect the seven remaining PNG blobs directly through the repository binary endpoint and the raw GitHub image URL.
+- **Result:** The GitHub content reader rejects non-UTF-8 files, returning a UTF-8 decoding error for PNG bytes. The raw image URL was unavailable through the accessible web reader. No pixels were inspected and no classification was inferred.
+- **Next:** Keep the seven files untouched and the hand-off Draft until they can be supplied through an image-capable inspection path or reconciled with additional retained provenance.
+
 ## 7. Current State
 
 The eighteen PNGs were imported into `images/takeout/` by commit `1192a4a53640b6188f3500abda75b1c9d5fe004d`. The evidence does **not** show final processor relocation: the current `HANDOFF.yml` remains `status: draft`, and all eighteen image files remain in the intake folder.
@@ -103,7 +109,7 @@ The hand-off now contains `source_asset_id` and `conversation_record` for the el
 
 ## 9. Next Actions
 
-1. Identify a reliable way to visually inspect the seven unclassified PNGs and reconcile them only against retained source evidence.
+1. Obtain an image-capable inspection route for the seven unclassified PNGs (for example, receive the seven files as conversation attachments), then reconcile them only against retained source evidence.
 2. Keep all seven files untouched until their source and destination or quarantine disposition are established.
 3. Leave `HANDOFF.yml` in Draft while any item remains unresolved.
 4. Review naturally reported hosted validation when available. Do not dispatch or poll workflows manually.

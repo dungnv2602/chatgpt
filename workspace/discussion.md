@@ -1,10 +1,10 @@
 ## Current Step
 
-**2026-11-23 17:01 UTC — Resolve the seven unclassified takeout images.** The workflow guard and post-publication verifier are committed and read back from `gpt`. Eleven mapped files now have Partial conversation archives. Seven files still lack a defensible source mapping. Identify a reliable image-inspection route and compare visual content with retained source evidence. Do not guess, set the batch Ready, move files, or poll Actions.
+**2026-11-23 17:03 UTC — Obtain image-capable access to the seven unclassified PNGs.** The workflow guard is committed and read back. Eleven mapped files have Partial integrity records. The remaining seven PNG blobs cannot be decoded by the UTF-8-only GitHub reader, and raw-image access is unavailable. Do not infer their contents. Keep the batch Draft and originals untouched until the images can be inspected and matched with source evidence.
 
 ## Open Discussions
 
-- **2026-11-23 17:01 UTC — Image takeout provenance:** The P1 workflow repair is committed in `c07921efe1a22db2237caa647d828e66fdd0236d` and all fourteen changed paths were read back. Eleven mapped outputs have evidence-linked Partial records. Seven remain unclassified and must not be given invented source links. The eighteen PNG blob identities remain unchanged; HANDOFF remains Draft and no final relocation has occurred. A later unrelated changed-document lint-evidence commit advanced the branch; it is not evidence of takeout tests passing. Next action: inspect the seven images through a reliable image-capable path, then reconcile source evidence.
+- **2026-11-23 17:03 UTC — Image takeout provenance:** The workflow repair is committed and read back. Eleven outputs are matched to attempt records and Partial integrity archives. Seven files remain unclassified. Direct repository blob reading fails on PNG binary data, and the raw image URL is not accessible through the current reader; no visual claims are made. Eighteen originals remain in intake unchanged; HANDOFF remains Draft, and no processor relocation has occurred.
 
 - **2026-11-23 16:09 UTC — Reporting-period validation:** The active indexes contain only the four carried-forward pending run IDs. Evidence-only captures remain unindexed for the open Ledger findings. Let the next natural diagnostics sweep complete pending runs and validate the reset. Do not poll, dispatch, or rerun Actions.
 
