@@ -233,6 +233,13 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** Document Standards commit `9dc5970cacb069eaa227c926d9bcdd784e03fd8c`; template commits `ca9e14eaa03c881c3b5fec2e2db7403149af3fd6`, `6f03d0b1f1c61e153e0d4485e897518012856cbc`, `de08904c81abff944586de2c84a736ce400fa560`, `b30b4b022d828a4e27b67adb35f5afa06f66ae83`, and `4d2784cb9232fa656fc375b6978b4b633c648073`; catalog commits `a65e35e2ce4027c20762583b606b0c1c99c52302`, `5dcc13a3461b1405f137dc781d73e6faee98d249`, and `bbd53e4f7069e3b5fcfeecfa1113fd7a29f8a86f`.
 - **Next:** Review the three master catalogues and remaining project-specific document types. Keep validator workflow integration gated on separate user approval.
 
+### 2026-11-23 01:22 UTC
+
+- **Action:** Reviewed the three master catalogues and expanded the representative inventory across remaining project files.
+- **Result:** The master catalogues remain heterogeneous reference collections: Images contains standalone prompt blocks, Poses mixes bullet ideas and prose, and Prompts groups scene-specific prompts. No common entry schema is justified. The image directory README is an embedded storage and WebP-delivery contract; `images/takeout/HANDOFF.yml` is a draft example governed by the processor. The review found six Version 1.0 illustration notes across Novel-01 Scenes 002–005 and three legacy prompt records across Scenes 003–005. The Scene-003 prompt declares Version 1.0; the Scene-004 and Scene-005 prompt records lack version frontmatter. The review also classified one-off drawing direction notes as exempt and Prompt Master reference libraries as lightweight references. The catalog now contains 27 document types and 55 exact references in its Initial Inventory, with no directory references. All newly added sample paths were fetched successfully. No historical or archived record was modified.
+- **References:** Catalog commit `7f13f73f0883c0303409e3d53217aee238d653e3`; `master/Images.md`, `master/Poses.md`, `master/Prompts.md`; `images/README.md`; `images/takeout/HANDOFF.yml`; Novel-01 Scene-003/004/005 illustration notes and prompt records; `drawings/2026-11-19/TODO.md`; `drawings/2026-11-20/samantha-visual-drive.md`; `drawings/2026-11-20/scenario-direction.md`; Prompt Master reference files.
+- **Next:** Continue the remaining project-type inventory and decide whether any additional structural checks are justified. Keep hosted workflow integration gated on separate user approval.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
@@ -244,31 +251,29 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - Drawing pattern entries have separate successful and failure templates in `skills/drawing/references/patterns/PATTERN-TEMPLATES.md`.
 - Workspace task records use the Version 1.1 template at `workspace/TASK_TEMPLATE.md`. This task record predates that revision and remains at Template version 1.0.
 - Task boards and the Condensed Mode discussion register remain embedded contracts for single live files.
-- Novel documents use the current Version 1.1 template set. The active Novel-02 open-discussion register and relationship-progression outline use content-specific layouts; preserve them and use canonical templates for new records or material revisions. Three Novel-01 illustration notes remain Version 1.0 legacy records. No current character-profile or standalone novel illustration-prompt record was found in the inspected projects. Do not mass-migrate untouched Version 1.0 records.
-- The image takeout hand-off is validated by `skills/session-archiving/scripts/process_takeout.py`. The same script defines conversion-report and manifest columns. `verify_published_manifest.py` checks published data and links.
+- Novel documents use the current Version 1.1 template set. The active Novel-02 open-discussion register and relationship-progression outline use content-specific layouts; preserve them and use canonical templates for new records or material revisions. Six Novel-01 illustration notes remain Version 1.0 legacy records across Scenes 002–005. Three legacy illustration-prompt records exist in Scenes 003–005; Scene-003 declares Version 1.0, while Scene-004 and Scene-005 lack version frontmatter. No current character-profile record was found in the inspected projects. Do not mass-migrate untouched historical records.
+- The image asset directory contract is embedded in `images/README.md`. The image takeout hand-off is validated by `skills/session-archiving/scripts/process_takeout.py`; `images/takeout/HANDOFF.yml` is the current draft example (`status: draft`). The same script defines conversion-report and manifest columns. `verify_published_manifest.py` checks published data and links.
 - The processor test suite covers important intake and publication paths. GitHub Actions run #54 passed all 36 tests, including invalid hand-off metadata, metadata propagation into the generated drawing-session manifest, and manifest compatibility cases. Its publication-verification step found no drawing-session manifests in the run workspace, so it did not verify live manifest rows.
-- The three master catalogues contain heterogeneous prompt, pose, and image-reference material. They are classified as lightweight collections, not uniform record types.
-- The catalog covers 26 recurring document types and records representative current examples, legacy exceptions, and the no-mass-migration rule. Its Initial Inventory contains 51 exact file references; the 41 original references were audited earlier and all 10 newly added references were fetched successfully. Full file-by-file reconciliation remains incomplete.
+- The three master catalogues have been reviewed. Images contains standalone prompt blocks, Poses mixes bullet ideas and prose, and Prompts groups scene-specific prompt records. Keep them as lightweight collections; no common entry schema is justified.
+- The catalog covers 27 document types and records representative current examples, legacy exceptions, and justified exemptions. Its Initial Inventory contains 55 exact file references, with no directory references. Full file-by-file reconciliation remains incomplete.
 - A catalog-integrity validator and regression tests now exist at `skills/document-standards/scripts/`. They check catalog structure and exact references, not document-body conformance. They have not run on a hosted runner because workflow integration awaits user authorization.
 - The GitHub Actions skill now permits exact, task-relevant archive reads and prohibits manual archive mutation. The Worker also requires the original archive-introduction commit when it reuses a prior archive copy.
 - The changed-document lint preflight repository-resolution defect has been fixed on `gpt`. Run #349 confirms that preflight, baseline lookup, and changed-file discovery succeed. The downstream STE lint step still fails on existing findings in the lint report and Agent Skill documentation; the updated remote-only policy files had no findings.
 
 ## 8. Remaining Work
 
-- Review the three master catalogues for shared lightweight structure.
-- Check remaining project-specific record types and complete the repository inventory before marking the catalog complete.
+- Check remaining project-specific document types and complete the repository inventory before marking the catalog complete.
 - Decide whether any additional structural checks add value without duplicating generator-owned schemas.
 - Obtain separate user approval to integrate the catalog validator and tests into GitHub Actions.
 - After approval, run the validator and its tests on a hosted runner, then repair any failures.
 
 ## 9. Next Actions
 
-1. Review the three master catalogues for shared lightweight structure.
-2. Check remaining project-specific record types and complete the repository inventory.
-3. Decide whether any additional structural checks add value without duplicating generator-owned schemas.
-4. Obtain separate user approval before changing a GitHub Actions workflow for catalog-validator integration.
-5. After approval, integrate the validator and tests into an appropriate hosted workflow and review the run result.
-6. Update the catalog and task record with verified execution results.
+1. Check remaining project-specific document types and complete the repository inventory.
+2. Decide whether any additional structural checks add value without duplicating generator-owned schemas.
+3. Obtain separate user approval before changing a GitHub Actions workflow for catalog-validator integration.
+4. After approval, integrate the validator and tests into an appropriate hosted workflow and review the run result.
+5. Update the catalog and task record with verified execution results.
 
 ## 10. References
 
@@ -306,6 +311,22 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - `skills/document-standards/scripts/validate_catalog.py`
 - `skills/document-standards/scripts/test_validate_catalog.py`
 - `skills/session-archiving/scripts/test_process_takeout_unittest.py`
+- `images/README.md`
+- `images/takeout/HANDOFF.yml`
+- `master/Images.md`
+- `master/Poses.md`
+- `master/Prompts.md`
+- `skills/prompt-master/references/templates.md`
+- `skills/prompt-master/references/patterns.md`
+- `drawings/2026-11-19/TODO.md`
+- `drawings/2026-11-20/samantha-visual-drive.md`
+- `drawings/2026-11-20/scenario-direction.md`
+- `novels/Novel-01/Arc-01/Scene-003/illustrations/illustration-01.md`
+- `novels/Novel-01/Arc-01/Scene-004/illustrations/illustration-01.md`
+- `novels/Novel-01/Arc-01/Scene-005/illustrations/illustration-01.md`
+- `novels/Novel-01/Arc-01/Scene-003/illustrations/illustration-01-prompt.md`
+- `novels/Novel-01/Arc-01/Scene-004/illustrations/illustration-01-prompt.md`
+- `novels/Novel-01/Arc-01/Scene-005/illustrations/illustration-01-prompt.md`
 
 ## 11. Verification
 
@@ -313,6 +334,10 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **Method:** Read the exact representative records and templates, read back the revised skill, templates, and catalog, and fetched all 10 newly added exact file references.
 - **Result:** The reviewed legacy records remain unchanged. The Initial Inventory contains 51 exact references; no directory references remain in that table. All 10 newly added file references exist.
 - **Limitations:** The catalog validator and its tests have not run on a hosted runner. Workflow integration requires separate user approval.
+- **Check:** Master catalogues, image asset contract, and remaining representative document types.
+- **Method:** Read the three master catalogues, image README and draft hand-off, representative novel illustration notes and prompt records, one-off drawing references, and Prompt Master reference files.
+- **Result:** No common schema is justified for the master catalogues. The image README is an embedded contract; the draft hand-off is governed by the processor. The catalog records 27 types and 55 exact references, including legacy prompt/illustration records and one-off exemptions.
+- **Limitations:** This is a representative review, not full file-by-file reconciliation. The catalog validator remains unexecuted pending workflow authorization.
 - **Check:** Hosted-runner execution of takeout hand-off and manifest regression tests.
 - **Method:** Inspected run [#54](https://github.com/dungnv2602/chatgpt/actions/runs/45091120330), its job steps, and decoded logs.
 - **Result:** The `Test takeout processor` step passed all 36 tests. The log includes invalid hand-off metadata checks and manifest propagation/compatibility tests. The publication-verification step completed but found no drawing-session manifests in its workspace.
