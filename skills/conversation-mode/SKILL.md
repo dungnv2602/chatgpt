@@ -56,8 +56,10 @@ In Default Mode:
 - Explain decisions, trade-offs, blockers, and verification results.
 - For repository work, execute the task. Do not only explain how the user could do it.
 - Follow all standing repository restrictions, including the user's approved project-directory boundary.
-- Do not read, consult, create, or update `workspace/discussion.md`.
-- Do not transfer Default Mode conversation content into the discussion register.
+- Maintain `workspace/discussion.md` under the shared register rules in Section 3.
+- Publish and read back a Current Step brief before each meaningful project-work step.
+- Update Open Discussions and Reports when their state changes.
+- Include the discussion link in Default Mode chat when the register contains an active brief, open discussion, or retained report. Normal explanatory chat may accompany the link.
 
 Default Mode is the normal full-conversation experience.
 
@@ -77,7 +79,9 @@ In Condensed Mode, prioritize execution and navigation.
 
 The Worker applies in every conversation mode. Condensed Mode changes only the amount and format of user-visible communication.
 
-### Discussion register and reports
+### Shared discussion register and reports
+
+These register rules apply in Default Mode and Condensed Mode. Only the amount of chat output changes.
 
 Use `workspace/discussion.md` as a compact, current register with exactly three sections, in this order:
 
@@ -162,7 +166,7 @@ Retain at most the three most recent reports. Order them newest first by the tim
 - Within each section, sort entries newest first. Use the time of the latest meaningful update for an open discussion and the completion time for a report.
 - Use a clear timestamp for every entry. Use UTC and an unambiguous format such as `2026-11-20 16:14 UTC`.
 - Do not move an entry to the top for cosmetic edits. Move it only after a meaningful change to its status, required decision, scope, or verified outcome.
-- Review and reconcile the register when entering Condensed Mode work, after meaningful user clarifications or decisions, after failures, and before sending the final link. Read it once at the start of Condensed Mode work in each conversation.
+- Review and reconcile the register when entering project work in either mode, after meaningful user clarifications or decisions, after failures, and before the final response. Read it once at the start of project work in each conversation.
 - Update the file in the same turn when an item opens, materially changes, or closes. Remove closed discussions immediately. Prune Reports immediately when the three-report limit is exceeded.
 - Keep task progress, technical diagnostics, retries, detailed verification, and handoffs in the task record. The register is a short navigation surface, not a substitute for task records.
 - Never record credentials, access tokens, hidden reasoning, or unrelated sensitive information.
@@ -200,6 +204,7 @@ Do not treat silence as approval. Do not infer a decision from an unrelated user
 - In Condensed Mode, send only one direct link:
   1. Link to `workspace/discussion.md` when it contains an active Current Step brief, any open discussion, or a retained report.
   2. Otherwise, link to the task record for the task in progress.
+- In Default Mode, include the discussion link when the register contains an active brief, open discussion, or retained report. You may also provide normal explanations and other relevant links.
 - Do not send any other link in Condensed Mode.
 - Do not add labels, headings, status text, progress updates, summaries, or other chat text. The brief itself lives in `discussion.md` and must be linked before its step starts.
 - The only exception is the single response that switches into Condensed Mode. That response must contain only a brief mode acknowledgement. Starting with the next response, send only one permitted link.
@@ -229,8 +234,9 @@ If the task needs essential clarification or user approval, record the minimum n
 
 ### Progress communication
 
-- Keep chat output minimal. Use the pre-step briefing protocol above instead of free-form progress narration.
+- Use the pre-step briefing protocol in both modes instead of relying on free-form progress narration.
 - Before each meaningful work step, publish and link the committed Current Step brief. Do not start the step before the user has been given that link.
+- Default Mode may include additional explanation in chat. Condensed Mode uses the single-link output rule.
 - Do not publish a second brief for routine sub-operations inside the same coherent step.
 - Record every meaningful action and verification in the task file.
 - After a step, update the task record. Before proceeding to another meaningful step, replace the Current Step brief and link it.
@@ -259,7 +265,7 @@ When the user switches modes:
 - Do not resume the former `artwork/portrait-attempt-2026-11-10` branch.
 - Do not change `main` unless the user authorizes it.
 - When skill instructions conflict, follow the higher-priority instruction. State any limitation honestly.
-- Conversation Mode alone controls access to `workspace/discussion.md`. The Worker does not read or write the discussion register directly.
+- Conversation Mode owns the register format and maintenance in both modes. The Worker supplies task state and relies on the register as the shared briefing and navigation surface.
 
 ## 6. Skill source of truth
 
