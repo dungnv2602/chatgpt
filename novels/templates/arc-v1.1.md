@@ -30,6 +30,8 @@ status: approved
 - **Facts Carried In from Previous Arcs:**
 
 ## 4. Character Development
+Duplicate the block for each character whose development matters to this arc. If no character development is established yet, replace the placeholder block with `None recorded`.
+
 ### Character [ID] — [Name]
 - **Starting State:**
 - **Pressure / Challenge:**
@@ -67,6 +69,8 @@ status: approved
 - **Consequences Carried into the Next Arc:**
 
 ## 7. Scene Directory
+Add one row per planned or established scene. If no scene is planned yet, replace the blank row with `None planned`.
+
 | Scene ID | Scene Title | Narrative Role | Status | Scene Link |
 |---|---|---|---|---|
 | | | | | |
