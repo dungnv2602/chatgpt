@@ -228,7 +228,7 @@ jobs:
           echo "lint_failed_files=$lint_failed_files" >> "$GITHUB_OUTPUT"
 
       - name: Commit the latest report to gpt
-        if: always() && steps.audit.outcome != 'skipped'
+        if: ${{ !cancelled() && steps.audit.outcome != 'skipped' }}
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
@@ -250,6 +250,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           AUDIT_FAILED: ${{ steps.audit.outputs.overall_failed }}
+          AUDIT_OUTCOME: ${{ steps.audit.outcome }}
         run: |
           set -euo pipefail
           scope="lint_reports/on_repo"
@@ -272,7 +273,7 @@ jobs:
               "branch": os.environ["GITHUB_REF_NAME"],
               "commit_sha": os.environ["GITHUB_SHA"],
               "event": os.environ["GITHUB_EVENT_NAME"],
-              "status": "Failed" if os.environ.get("AUDIT_FAILED") == "1" else "Passed",
+              "status": "Failed" if os.environ.get("AUDIT_FAILED") == "1" or os.environ.get("AUDIT_OUTCOME") != "success" else "Passed",
               "execution_mode": "repository-wide",
               "generated_at_utc": datetime.now(timezone.utc).isoformat(),
               "report_markdown": markdown
@@ -304,6 +305,7 @@ jobs:
           git add "$scope"
           if ! git diff --cached --quiet; then
             git commit -m "Publish repository-wide lint evidence history"
+            git pull --rebase origin gpt
             git push origin "HEAD:gpt"
           fi
 
