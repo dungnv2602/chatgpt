@@ -259,7 +259,8 @@ jobs:
               if match:
                   file_path, line_number, column, rule, message, matched_text = match.groups()
                   fingerprint = hashlib.sha256(json.dumps([file_path, rule, matched_text, message], sort_keys=True).encode()).hexdigest()[:20]
-                  findings.append({"file": file_path, "line": int(line_number), "column": int(column), "rule": rule, "message": message, "match": matched_text, "fingerprint": fingerprint})
+                  level = "advisory" if rule in {"passive-voice", "present-perfect"} else "advisory-free"
+                  findings.append({"file": file_path, "line": int(line_number), "column": int(column), "rule": rule, "level": level, "message": message, "match": matched_text, "fingerprint": fingerprint})
           findings_by_rule = {}
           for finding in findings:
               findings_by_rule[finding["rule"]] = findings_by_rule.get(finding["rule"], 0) + 1
@@ -283,6 +284,8 @@ jobs:
               "files_evaluated_count": len(files_evaluated),
               "findings": findings,
               "total_findings": len(findings),
+              "hard_findings": sum(int(value) for value in re.findall(r"\\((\\d+) hard, baseline", markdown)),
+              "files_with_findings": len({finding["file"] for finding in findings}),
               "findings_by_rule": findings_by_rule,
               "generated_at_utc": datetime.now(timezone.utc).isoformat(),
               "report_markdown": markdown
