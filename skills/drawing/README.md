@@ -1,62 +1,50 @@
 # Drawing Skill
 
-Use this skill for ChatGPT image generation and image editing.
+Use this skill for image generation, image editing, and visual iteration.
 
 ## Visual modes
 
-- **Realistic:** photographic rendering, natural materials, plausible lighting, and natural anatomy.
-- **Vintage:** painterly or print-inspired rendering. This mode includes storybook, oil, watercolor, gouache, editorial illustration, and selected retro-print styles.
+- **Realistic:** photographic rendering, natural materials, plausible lighting, and anatomy.
+- **Vintage:** painterly, illustrative, or print-inspired rendering.
 
-The latest cozy-bedroom artwork uses **Vintage Mode → Painterly Storybook**.
+The active session brief selects the mode. A new drawing session starts with a new brief and does not inherit the previous session's mode. Use Realistic mode or Vintage mode to change it within the active session.
 
-## Mode commands
+## Choose the operation
 
-- `Realistic mode`
-- `Vintage mode`
+- Create a new scene or variation with fresh image generation.
+- Modify a specific existing image with a direct edit. The exact source image must be available to the image tool.
+- When the source is unavailable, disclose the limit. Do not describe a fresh reconstruction as an edit.
 
-The selected mode remains active during the current conversation or continuous artwork task. Change it only when the user requests a change.
+For fresh generation, use the latest successful prompt in the same series or artwork thread as the text baseline. For a direct edit, use the supplied source as the visual baseline and change only the requested details.
 
-For an unrelated task, infer the mode from the request. Ask one concise question when the mode is unclear and materially affects the result.
+## Standard workflow
 
-## Prompt fidelity
+1. Read the active session brief and applicable project records.
+2. Read the prompt-fidelity and image-operation references.
+3. Create an attempt record from the canonical attempt template. Record the operation, source when applicable, prompt, and observable acceptance criteria.
+4. Commit and read back the attempt record before the image operation.
+5. Inspect every returned image against the criteria. Record the actual operation, outcome, user approval, and provenance separately.
+6. Retain repository assets through the shared image intake. The Worker owns generic intake, original preservation, WebP processing, and provenance checks.
 
-The [Prompt Fidelity and Unrequested Restrictions](references/prompt-fidelity.md) file is the complete authority for prompt fidelity.
+## Canonical files
 
-Read it before you draft, reuse, revise, archive, verify, or submit an image prompt.
+- SKILL.md — full Drawing workflow.
+- assets/attempt-template.md — one record per attempt.
+- assets/daily-index-template.md — six-field daily attempt index.
+- assets/pattern-entry-templates.md — templates for reusable pattern entries.
+- references/style-guide.md — Realistic and Vintage modes.
+- references/image-editing-protocol.md — operation selection and source-image rules.
+- references/prompt-fidelity.md — prompt authorship and change control.
+- references/series-continuity-and-iteration.md — series identity and prompt lineage.
+- references/generation-recovery-and-provenance.md — refusal recovery and evidence.
+- references/archive-and-delivery.md — Drawing-specific paths and manifest rules.
+- references/patterns/README.md — index of successful and failed techniques.
+- ../the-worker/references/archive-records-and-image-prompts.md — session records and prompt history.
+- ../the-worker/references/image-provenance-and-webp.md — shared asset intake and delivery authority.
+- ../the-worker/references/drawing-session-closeout.md — explicit session closeout.
 
-Preserve the user's approved prompt and creative direction. Do not add unrequested restrictions or creative details. Audit the complete prompt before every generation or edit.
+Load the pattern index and its two evidence files once per conversation. Consult relevant entries before each attempt. Refresh only when the files change or the user requests it.
 
-## Prompt interpretation and recovery
+## Documentation
 
-Before you revise a refused or unsuccessful prompt, inspect the successful-prompt index and the full chronological history.
-
-Check for assistant-added details. Avoid unnecessary changes to the user's creative direction.
-
-When a relevant successful baseline exists and the request remains allowed, restore that wording or make only the requested change.
-
-A generic refusal does not identify its exact trigger.
-
-After generation, inspect the actual garment construction and physical coverage. Do not rely only on fabric opacity or prompt wording.
-
-For the full process, read these sections in `SKILL.md`:
-
-- E2.1 Prompt-interpretation audit and proven-baseline recovery.
-- E2.2 Documented silk-wrap recovery case.
-- Section F garment-construction checks.
-
-## Files
-
-- `SKILL.md` — core instructions and workflow.
-- `references/style-guide.md` — visual-mode definitions and distinctions.
-- `references/image-editing-protocol.md` — source handling and edit verification.
-- `references/prompt-fidelity.md` — prompt-fidelity rules and pre-generation audit.
-- `references/patterns/README.md` — canonical pattern index.
-- `references/patterns/successful-patterns.md` — successful techniques.
-- `references/patterns/failure-patterns.md` — failures and tested countermeasures.
-- `assets/pattern-entry-templates.md` — templates for new or revised patterns.
-
-On the first drawing task in a conversation, read the pattern index and both pattern files. Consult the loaded patterns at each drawing session and relevant attempt. Record their blob SHAs. Refresh only changed or newly needed files. Load templates only when you create or revise a pattern.
-
-## Technical documentation standard
-
-Apply the repository [ASD-STE100 writing policy](../asd-ste100/references/repository-writing-policy.md) when you revise this README or other Drawing documentation. Preserve all user-approved creative content.
+Apply the repository ASD-STE100 policy to technical revisions. Preserve approved creative content.

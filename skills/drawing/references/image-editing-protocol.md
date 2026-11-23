@@ -1,70 +1,55 @@
-# Image Reference and Editing Protocol
+# Image Source and Editing Protocol
 
-## 1. Mandatory prompt-only adjustment
+This reference governs the choice between fresh generation and direct image editing.
 
-When the user asks to adjust, revise, refine, or change an existing result, use the **successful authored prompt that produced it** as the sole baseline. Revise that prompt and generate a fresh result. Never use the existing image itself as the editing source or as a visual reference.
+## 1. Select the operation
 
-- Locate the exact successful prompt assigned as the baseline.
-- Check that it produced the target result, or that the user approved it for the intended purpose.
-- Copy the complete authored prompt verbatim. Do not paraphrase, summarize, reconstruct, or rewrite it.
-- Apply only the requested change directly to the copied text. Preserve every other word, order, and detail.
-- Keep all meta-references out of the submitted prompt. Never include attempt numbers, file names, paths, repository records, or prompt-record references. Exclude generation IDs, retrieval instructions, and references to a prompt, earlier wording, previous instructions, or another record.
-- Do not write phrases such as "as described in the previous prompt", "same as before", "use the earlier version", or equivalent wording.
-- Keep image references and editing-operation language out of the submitted prompt. Describe the final visual result directly.
-- Generate a fresh result from the revised prompt and assess it against the assigned prompt and the requested changes.
+| User intent | Operation | Required source |
+|---|---|---|
+| Create a new scene, composition, or variation | Fresh generation | Active brief; successful prompt when continuing a series |
+| Change one particular existing image | Direct image edit | The exact source image, available to the image tool |
+| Re-create an unavailable image as a new output | Fresh generation | Active brief and any recoverable successful prompt |
 
-**Never ask the user to upload, attach, or reattach an image for an adjustment.** This applies even when the image is not available in the conversation.
+Do not substitute one operation for another. A fresh generation is not an edit.
 
-**Never use an existing image as the base or reference.** Do not attach, pass, or otherwise supply the prior image to the image-generation tool for an adjustment. The successful authored prompt is the base.
+## 2. Fresh generation
 
-**Never mention the image, image-editing operation, or workflow metadata in the next prompt.** Start with the exact successful authored prompt and retain it verbatim. Change only the text needed for the requested change. Do not refer to an image, source image, uploaded image, previous image, reference image, attachment, or an edit. Do not mention attempt numbers, file names, paths, repository records, prompt records, prompt IDs, generation IDs, or instructions to retrieve another prompt. The submitted prompt must contain only direct visual instructions for the intended final result.
+1. Read the active session brief.
+2. For a continuation, locate the latest successful prompt in the same series or artwork thread.
+3. Use its authored text as the baseline. Preserve unaffected details and wording.
+4. Apply only changes authorized by the latest user instruction.
+5. Record the baseline, prompt difference, acceptance criteria, and authored prompt before generation.
 
-If the successful prompt is missing or incomplete, use the active session brief and the available authoritative attempt records. Disclose what prompt information could not be recovered. Do not ask for an image as a substitute. Ask a question only when an essential creative requirement cannot be resolved from the available written records.
+Do not use a failed or rejected prompt as the default baseline. Do not restore historical details that conflict with the active brief.
 
-## 2. Scope of the prompt-only rule
+## 3. Direct image edit
 
-The prompt-only rule applies whenever the user asks to adjust an existing result. Do not use an image attachment for identity, composition, style, comparison, or direct-edit reference during that adjustment. Resolve the intended visual content from the successful authored prompt and the user's written change request.
+Use a direct edit only when the user wants a particular image changed and the exact source is available.
 
-Use image references for other drawing tasks only when the user explicitly assigns a reference role. Do not use them to adjust an existing result. This does not create an exception to the prompt-only adjustment rule.
+1. Attach the actual source image through the supported image tool.
+2. Describe the requested change. Preserve all other requested or locked properties.
+3. Record the source image, operation type, authored edit instructions, and acceptance criteria before the call.
+4. Inspect the result for the requested change and unintended differences.
+5. Record whether source linkage is confirmed, supported by the tool call, or unavailable.
 
-## 3. Revise the proven prompt, not the image
+A filename, repository path, generation ID, or written prompt does not attach an image. Do not claim a source edit when the source was not supplied to the tool.
 
-Copy the complete assigned successful authored prompt verbatim. Make the smallest possible in-place change to the exact words that must change. Do not retype it from memory, paraphrase it, summarize it, or replace it with a newly composed description.
+## 4. Source unavailable
 
-- **Preserve:** every unrequested word and visual detail in the assigned prompt.
-- **Change:** only the wording necessary to express the user's requested adjustment.
-- **Exclude:** workflow metadata and all references to images or editing operations.
-- Do not add decorative improvements or unrelated changes.
-- Keep the original sentence order and structure unless the requested change makes a local wording adjustment necessary.
+If the user requests a direct edit but the source is not available, explain that the edit cannot be performed from the current materials. Do not silently switch to fresh generation. Ask whether the user wants a new reconstruction only when that choice is not already clear.
 
-For a style-only change, revise only the rendering treatment. Preserve all scene and subject details.
+A successful prompt can guide a new image. It cannot stand in for the source image or prove that the new result is an edit.
 
-## 4. Recovery when prompt reconstruction misses
+## 5. Prompt and record integrity
 
-If prompt reconstruction repeatedly misses the requested detail:
+- Commit the attempt record before the image operation.
+- Keep prompt text limited to the visual instructions needed for that operation.
+- Keep file paths, attempt labels, prompt IDs, and provenance metadata in the attempt record.
+- Do not invent native IDs or claim access to a hidden compiled prompt.
+- Record the actual operation, source availability, output, deviations, and verification afterward.
 
-1. Stop repeating near-identical prompt revisions.
-2. Recheck the exact successful baseline and identify assistant-added changes.
-3. Reduce the revision to the requested change only.
-4. Clarify the relevant spatial, anatomical, material, or compositional instruction in the prompt.
-5. If needed, return to the last successful prompt and rebuild the revision in smaller steps.
-6. If prompt-only reconstruction remains unreliable, explain the limitation and preserve the best successful result. Do not switch to image-based editing or request an image.
+Use the canonical Drawing attempt template for every attempt. The Worker owns session records, prompt history, image retention, WebP delivery, and drawing-session closeout.
 
-## 5. Prompt-before-generation archive
+## Documentation standard
 
-Follow `skills/session-archiving/SKILL.md` for every attempt:
-
-1. Create or retrieve the current session-opening brief. Check its exact path.
-2. For non-novel work, commit the authored prompt in its dated `drawings/YYYY-MM-DD/` attempt note. For a named novel scene, commit it in the authoritative scene-local illustration prompt record under `novels/[Novel-ID]/[Arc-Folder]/[Scene-Folder]/illustrations/`.
-3. Treat the session brief as the visual authority. Use the most recent successful prompt in the explicitly active series only as a compatible text baseline. Do not treat it as authority over the current brief.
-4. Treat later failed, rejected, partial, or missed-target prompts as diagnostic evidence only. Do not use them as the baseline.
-5. Record the session ID or brief path. Record the series ID or theme when it is explicitly active. Record the selected baseline source, operation type, and attached source reference.
-6. Derive three to five observable acceptance criteria from the brief. Mark critical criteria.
-7. Record the prompt difference. State the baseline, preserved details, changed details, and excluded or omitted details.
-8. Check the pre-attempt commit.
-9. After the call, record the actual result, image ID, user assessment, and mismatch.
-10. Do not store image binaries in Git unless the user requests storage and the operation completes.
-
-## Technical documentation standard
-
-This file defines operational instructions for image references and edits. Apply Strict mode from the repository [ASD-STE100 policy](../../asd-ste100/references/repository-writing-policy.md) when you revise it. Preserve source-verification, prompt-baseline, and user-authority requirements.
+Apply Strict mode from the repository ASD-STE100 policy.
