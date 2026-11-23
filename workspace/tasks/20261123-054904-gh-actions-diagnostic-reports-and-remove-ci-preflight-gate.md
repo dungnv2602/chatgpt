@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-054904
 - **Created:** 2026-11-23 05:49 UTC
-- **Updated:** 2026-11-23 15:18 UTC
+- **Updated:** 2026-11-23 15:28 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -84,6 +84,12 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 
 ## 6. Progress Log
 
+### 2026-11-23 15:28 UTC
+
+- **Action:** Completed the active-group refresh path. Existing Ledger tasks now receive later immutable report links without duplication, and new higher-severity findings promote the grouped task's priority. Escaped untrusted diagnostic Markdown and added a direct central-ledger link to the task template. Aligned the Worker triage procedure with automatic Ledger task creation.
+- **Result:** Regression coverage now includes evidence refresh, priority promotion, legacy lint grouping, repeat observations, severity filtering, board publication, and diagnostic escaping. Updated source and instructions were read back from gpt. No local test execution or hosted-result polling was performed.
+- **References:** reports/triage/scripts/ledger.py; reports/triage/scripts/test_ledger.py; workspace/TASK_TEMPLATE.md; skills/the-worker/SKILL.md; reports/triage/README.md.
+- **Next:** Let the existing GitHub-hosted validation run naturally. Do not dispatch or poll workflows.
 ### 2026-11-23 15:18 UTC
 
 - **Action:** Implemented event-driven Ledger-to-Worker task creation under the user's updated direction. Added stable remediation grouping, schema 1.3.0, Proposed task generation from the canonical template, task-board insertion, finding-to-task references, active-group reuse, and migration grouping for legacy lint findings. Added regression coverage for grouping, repeat observations, low-severity filtering, migration, board publication, and untrusted diagnostic escaping.
@@ -239,7 +245,7 @@ The three exact-run recapture requests have been processed. Their request files 
 
 The repository default branch is `main`, while this authorized task is restricted to `gpt`. A run that fails before any job starts cannot be captured immediately by this branch-local design. The push sweep or an exact-run request can backfill it later. Immediate completion-event observation requires an authorized observer on `main` or an external GitHub App webhook. No changes were made to `main`.
 
-The Ledger is now an event-driven component of The Worker. During ingestion, it creates grouped Proposed task records for eligible findings, updates the task board, and links each finding through task_refs. Lint findings group by file and rule; Actions findings group by workflow path, job, step, and category. Active groups reuse an existing task. Low and informational findings remain ledger-only. Task-only commits are ignored by the diagnostics sweep. The Worker retains approval and remediation ownership.
+The Ledger is now an event-driven component of The Worker. During ingestion, it creates grouped Proposed task records for eligible findings, updates the task board, and links each finding through task_refs. Lint findings group by file and rule; Actions findings group by workflow path, job, step, and category. Active groups reuse an existing task and refresh all immutable evidence links. New higher-severity findings can raise the group's priority. Low and informational findings remain ledger-only. Task-only commits are ignored by the diagnostics sweep. The Worker retains approval and remediation ownership.
 
 ## 8. Remaining Work
 
