@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 13:00 UTC — Begin initialization policy review:** Review the single hard finding in `skills/INITIALIZATION_POLICY.md` against `skills/SESSION_START.md` and the existing activation contract. Preserve the user's explicit initialization cue.
+- **2026-11-23 13:04 UTC — Remediate initialization policy punctuation:** Split the Version 5 behavioral-impact sentence at its semicolon. Preserve `start session` as the only session-start cue and keep `skills/SESSION_START.md` authoritative.
 
 ## Open Discussions
 
