@@ -1,7 +1,7 @@
 name: Scheduled Archive Individual Retention
 
 on:
-  # Check the small retention index weekly. The cleanup script never lists archive/tasks.
+  # Check the shared small retention index weekly. The cleanup script never lists archive directories.
   schedule:
     - cron: "0 0 * * 1"
 
@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   cleanup:
-    name: Delete individually expired task records on gpt and fast-forward main
+    name: Delete individually expired task and report files on gpt and fast-forward main
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -40,7 +40,7 @@ jobs:
             exit 1
           fi
 
-      - name: Run self-tests and delete individually expired indexed records
+      - name: Run self-tests and delete individually expired indexed files
         id: cleanup
         run: python3 .github/scripts/cleanup-archive.py
 
@@ -56,7 +56,7 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore(archive): expire task records past 90 days"
+          git commit -m "chore(archive): expire individually retained files past 90 days"
 
           # Update both refs to the same commit atomically. This is a
           # fast-forward of main to gpt; no merge commit or force push.
