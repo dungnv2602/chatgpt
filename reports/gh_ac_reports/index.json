@@ -12,6 +12,23 @@
   ],
   "runs": [
     {
+      "workflow_id": 424715662,
+      "workflow_name": "STE Lint Changed Documentation",
+      "run_id": "45181736978",
+      "run_number": 545,
+      "attempt": 1,
+      "capture_stage": "pre_finalizer",
+      "created_at": "2026-11-23T13:13:11Z",
+      "captured_at_utc": "2026-11-23T13:14:16Z",
+      "source_status": "in_progress",
+      "source_conclusion": null,
+      "projected_conclusion": "failure",
+      "report_status": "Incomplete",
+      "primary_category": "validation_or_test",
+      "history_path": "history/424715662/45181736978-attempt-1-pre_finalizer",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45181736978"
+    },
+    {
       "workflow_id": 427313089,
       "workflow_name": "Validate Document Standards",
       "run_id": "45181640493",
@@ -14004,20 +14021,20 @@
     }
   ],
   "latest_report": {
-    "workflow_id": 427313089,
-    "workflow_name": "Validate Document Standards",
-    "run_id": "45181640493",
-    "run_number": 136,
+    "workflow_id": 424715662,
+    "workflow_name": "STE Lint Changed Documentation",
+    "run_id": "45181736978",
+    "run_number": 545,
     "attempt": 1,
-    "capture_stage": "post_run",
-    "created_at": "2026-11-23T13:12:35Z",
-    "captured_at_utc": "2026-11-23T13:13:49Z",
-    "source_status": "completed",
-    "source_conclusion": "cancelled",
-    "projected_conclusion": null,
-    "report_status": "Complete",
+    "capture_stage": "pre_finalizer",
+    "created_at": "2026-11-23T13:13:11Z",
+    "captured_at_utc": "2026-11-23T13:14:16Z",
+    "source_status": "in_progress",
+    "source_conclusion": null,
+    "projected_conclusion": "failure",
+    "report_status": "Incomplete",
     "primary_category": "validation_or_test",
-    "history_path": "history/427313089/45181640493-attempt-1-post_run",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45181640493"
+    "history_path": "history/424715662/45181736978-attempt-1-pre_finalizer",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45181736978"
   }
 }
