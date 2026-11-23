@@ -1,4 +1,4 @@
-# STE Lint Changed Documentation — run 45167805630
+# STE Lint Changed Documentation — run 45167810907
 
 ## Run identity
 
@@ -6,52 +6,61 @@
 | --- | --- |
 | Workflow | STE Lint Changed Documentation |
 | Workflow path | .github/workflows/ste-lint-changed.yml |
-| Run / attempt | 45167805630 / 1 |
-| Run number | 491 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45167805630 |
+| Run / attempt | 45167810907 / 1 |
+| Run number | 492 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45167810907 |
 | Branch | gpt |
-| Commit | 91c4b11af1941df09bcbb02d44bda06f6faba1f7 |
+| Commit | 9001aa1cdedab1ca1c76b8991e9c174cc9dc89a3 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T11:43:58Z |
-| Status at capture | completed |
-| Observed conclusion | cancelled |
-| Projected conclusion | Not calculated |
-| Reporter job | Not captured |
-| Capture stage | post_run |
-| Completeness | Complete |
-| Captured (UTC) | 2026-11-23T11:45:47Z |
+| Created (UTC) | 2026-11-23T11:44:00Z |
+| Status at capture | in_progress |
+| Observed conclusion | Not yet available |
+| Projected conclusion | failure |
+| Reporter job | in_progress / Pending |
+| Capture stage | pre_finalizer |
+| Completeness | Incomplete |
+| Captured (UTC) | 2026-11-23T11:47:57Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | cancelled |
-| Primary category | None |
-| Jobs | 0 |
-| Steps | 0 |
-| Issues | 0 |
-| Annotations | 0 |
+| State | in_progress |
+| Primary category | validation_or_test |
+| Jobs | 2 |
+| Steps | 18 |
+| Issues | 1 |
+| Annotations | 3 |
 | Artifacts | 0 |
-| Capture errors | 0 |
+| Capture errors | 2 |
 
 ## Failure classification
 
-No failure category identified.
+validation_or_test The parent run is still in progress. The projected conclusion is provisional.
 
 The run conclusion records the workflow outcome. A cancelled run remains in history. Cancellation alone does not create an actionable issue. The generator also excludes known downstream status-propagation steps after cancellation.
 
 ## Jobs and steps
 
-No records were captured.
+| Job ID | Job | Status | Conclusion | Steps | Log |
+| --- | --- | --- | --- | --- | --- |
+| 137670083784 | Reject superseded runs and find lint baseline | completed | success | 4 | logs/job-137670083784.log |
+| 137670179901 | Lint changed Markdown files and publish detailed evidence | completed | failure | 14 | logs/job-137670179901.log |
 
 ## Actionable step outcomes
 
-No records were captured.
+| Category | Job | Step | Name | Effect | Confidence | Evidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| validation_or_test | 137670179901 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | Step conclusion: failure |
 
 ## Check annotations
 
-No records were captured.
+| Job | Level | Path | Line | Title | Message |
+| --- | --- | --- | --- | --- | --- |
+| 137670179901 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 137670179901 | failure | .github | 21 |  | Process completed with exit code 1. |
+| 137670179901 | failure | .github | 20 |  | Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md. |
 
 ## Artifacts
 
@@ -59,11 +68,19 @@ No records were captured.
 
 ## Captured job logs
 
-No records were captured.
+| Job | Name | File | Bytes | Truncated | Markers |
+| --- | --- | --- | --- | --- | --- |
+| 137670083784 | Reject superseded runs and find lint baseline | logs/job-137670083784.log | 82 | False |  |
+| 137670179901 | Lint changed Markdown files and publish detailed evidence | logs/job-137670179901.log | 82 | False |  |
 
 ## Evidence coverage
 
-All requested evidence endpoints and completed-job log captures returned data.
+One or more evidence sources were unavailable. This report is Incomplete.
+
+| Source | HTTP status | Limitation |
+| --- | --- | --- |
+| job_log | Not recorded | run 45167810907 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45167810907 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
