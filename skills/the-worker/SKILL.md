@@ -299,7 +299,7 @@ The Worker applies in every conversation mode.
 - Condensed Mode uses minimal status reports and direct navigation links.
 - Neither mode changes task authority, approval state, progress logging, or recovery.
 - Record detailed progress in task files instead of repeating it in chat.
-- Conversation Mode owns the temporary register. The Worker does not read or write workspace/discussion.md. The register contains unresolved discussions and up to three recent successful reports. Task records remain authoritative for detailed progress and verification.
+- Conversation Mode owns the temporary register. The Worker does not read or write workspace/discussion.md. The register contains one active Current Step brief, unresolved discussions, and up to three recent successful reports. The brief is a navigation aid, not a task log. Task records remain authoritative for detailed progress and verification.
 - When an unresolved discussion receives approval, preserve its original user prompts and relevant clarifications in the resulting task record.
 - Do not claim an action, commit, or verification that did not occur.
 
