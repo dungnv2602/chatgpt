@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:58 UTC — Current step:** Integrate archive/media ownership and procedures into The Worker. Update workflow, Drawing, session-start, image README, and catalog references to the new Worker-owned paths.
+- **2026-11-23 12:00 UTC — Current step:** Verify migrated Worker-owned files and all dependent references. Remove the standalone Session Archiving and Conversation Mode skill files only after path checks pass.
 
 ## Open Discussions
 
