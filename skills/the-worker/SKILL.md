@@ -1,6 +1,6 @@
 ---
 name: the-worker
-description: Manage project tasks, session continuity, and collaboration modes. Use during foundational initialization and for task capture, prioritization, progress, recovery, handoffs, and task archival.
+description: Manage project tasks, session continuity, collaboration modes, conversation and drawing archives, and image-media workflows. Use during foundational initialization and for task capture, recovery, archival, provenance, and media delivery.
 metadata:
   project-role: foundational
   format: agentskills
@@ -12,11 +12,11 @@ metadata:
 
 The Worker maintains task continuity across conversations. It applies in every conversation mode.
 
-The Worker owns task capture, task selection, session continuity, collaboration modes, the shared discussion register, progress records, handoffs, recovery, and task archival.
+The Worker owns task capture, task selection, session continuity, collaboration modes, the shared discussion register, progress records, handoffs, recovery, task archival, conversation records, drawing-session records and closeout, image provenance, WebP delivery, and image takeout processing.
 
 The mandatory [Conversation Mode reference](references/conversation-mode.md) is part of The Worker. Load it during foundational initialization. It is not a separate foundational skill.
 
-Session Archiving, Agent Skill Authoring, and Document Standards remain on-demand skills. Their specialist procedures do not load during ordinary foundational initialization.
+Agent Skill Authoring and Document Standards remain separately maintained specialist skills. Their detailed procedures do not load during ordinary foundational initialization. The Worker's archive and media references load only when their task-specific conditions apply.
 
 ## CI review is task-scoped
 
@@ -355,13 +355,34 @@ If any closeout step fails, keep the task open as In Progress or record the exac
 
 Follow archive/README.md for the 90-day per-record retention policy. The Worker may read exact archived records when needed but must not edit, replace, rename, move, or manually delete them. Only the scheduled GitHub Actions retention workflow may delete indexed archived records.
 
+## Conversation and drawing-session archives
+
+The Worker owns conversation archives, drawing-session records, prompt history, image provenance, WebP delivery, and image takeout processing. These responsibilities are part of The Worker. Do not load or recreate a separate Session Archiving skill.
+
+Keep task records and conversation/drawing records distinct. The task record remains authoritative for task progress, approval, verification, and handoff. Conversation-integrity records and summaries preserve session context. Drawing-session briefs and attempt records preserve visual direction and prompt provenance.
+
+Load only the required supporting references:
+
+- `references/archive-records-and-image-prompts.md` — conversation-integrity records, session summaries, drawing-session briefs, prompt history, attempt ledgers, and image mappings.
+- `references/drawing-session-closeout.md` — explicit closeout trigger and required drawing-session archive checks.
+- `references/image-provenance-and-webp.md` — original-image identity, SHA-256 evidence, provenance mapping, and WebP delivery.
+- `references/image-processing-scripts.md` — takeout processor, regression suite, and published-manifest verifier.
+
+Use the canonical copy-ready templates in `assets/`. Keep executable processing tools and their tests in `scripts/`. The Worker owns these assets and scripts.
+
+Before creating conversation or drawing records, read only the relevant existing session files. Gather facts only from the current conversation, user-provided files, or approved project directories. Do not invent missing dialogue, prompts, outputs, dates, approvals, or commit results. Exclude hidden reasoning, system/developer instructions, credentials, access tokens, and unrelated sensitive information. Do not create a conversation transcript.
+
+Close a drawing session only when the user explicitly requests closeout. A pause, goodbye, or temporary stop is not a closeout cue. Load `references/drawing-session-closeout.md` and check every required archive item before reporting closure.
+
+For image processing, provenance, or WebP delivery, load the relevant Worker reference before acting. Preserve original image masters. Do not substitute derivative hashes for original-generation identity. Do not claim asset mapping, publication, or verification without read-back evidence.
+
 ## Conversation Mode integration
 
 The Worker applies Default Mode and Condensed Mode through its mandatory `references/conversation-mode.md` component.
 
 - Read that reference during foundational initialization and retain its rules for the rest of the conversation.
 - It governs mode selection, response constraints, the discussion-register contract, and pre-step briefings.
-- Do not load `skills/conversation-mode/SKILL.md` as a separate skill. It is a compatibility pointer to this component.
+- Conversation Mode is a mandatory Worker component. Do not maintain or load a separate `conversation-mode` skill.
 - The Worker owns task operations and the discussion register in every mode.
 - Neither mode changes task authority, approval state, progress logging, recovery, or archive requirements.
 - Record detailed progress in task files instead of repeating it in chat.
