@@ -9,9 +9,9 @@ This file records the repository's conditional initialization policy. Operationa
 - Repository: `dungnv2602/chatgpt`
 - Branch: `gpt`
 - Foundational initialization: `skills/SESSION_START.md`
-- Task continuity: `skills/the-worker/SKILL.md`
-- Mandatory execution gate: `skills/session-archiving/SKILL.md`
-- Agent Skills format: `skills/agent-skill-authoring/SKILL.md`
+- Foundational collaboration and task continuity: `skills/the-worker/SKILL.md`
+- Mandatory Conversation Mode component: `skills/the-worker/references/conversation-mode.md`
+- Agent Skills format, loaded on demand: `skills/agent-skill-authoring/SKILL.md`
 - Technical writing standard: `skills/asd-ste100/SKILL.md`
 - Canonical novelist procedure: the Novelist role initialization section in `skills/SESSION_START.md`
 - Drawing prerequisite: `skills/drawing/SKILL.md`, loaded for novelist initialization or a drawing session
@@ -43,12 +43,11 @@ A specialist-role request does not change the `start session` cue. It authorizes
 
 Foundational initialization loads these skills:
 
-1. Session Archiving.
-2. Conversation Mode.
-3. The Worker.
-4. Agent Skill Authoring.
-5. ASD-STE100.
-6. GitHub Actions.
+1. The Worker, including its mandatory Conversation Mode reference.
+2. ASD-STE100.
+3. GitHub Actions.
+
+Session Archiving, Agent Skill Authoring, and Document Standards are on-demand skills. Load each only when its task-specific activation conditions apply.
 
 The Drawing skill is tier 2, not foundational. Load it for a drawing session or as a prerequisite for novelist initialization. Its required references are `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`.
 
@@ -60,7 +59,7 @@ The ASD-STE100 skill governs skill documentation and technical documentation. Us
 
 Preserve facts, conditions, exceptions, scope, and modality. Do not apply the standard to creative writing, dialogue, marketing copy, or approved creative prompts.
 
-The Agent Skill Authoring skill governs skill structure, metadata, validation, and activation. The ASD-STE100 skill governs technical language.
+The Agent Skill Authoring skill governs skill structure, metadata, validation, and activation when skill work requires it. The ASD-STE100 skill governs technical language across skill and technical documentation.
 
 ## Copyable Custom Instructions
 
@@ -84,7 +83,7 @@ Initialization is conditional. Do not load project instructions or skills at the
 3. **Explicit dependency:** Novelist initialization requires foundational initialization first.
 4. **No duplicate procedures:** Keep session-start and novelist initialization procedures in `skills/SESSION_START.md`.
 5. **Current-session verification:** Do not use remembered files as a substitute for fresh reads when you must verify.
-6. **Agent Skills format:** Use `skills/agent-skill-authoring/SKILL.md` to create and maintain skills.
+6. **On-demand skill authoring:** Use `skills/agent-skill-authoring/SKILL.md` when you create or maintain skills.
 7. **Controlled technical writing:** Use `skills/asd-ste100/SKILL.md` for skill and technical documentation.
 
 ## Change history
@@ -133,6 +132,15 @@ Initialization is conditional. Do not load project instructions or skills at the
 - **Files modified:** Session Start, Session Archiving, The Worker, GitHub Actions, Agent Skill Authoring, ASD-STE100, and this policy file.
 - **Verification:** Pending hosted workflow validation and exact read-back.
 
+### Version 6 — Consolidated foundational collaboration
+
+- **Date:** 2026-11-23
+- **Requested change:** Consolidate foundational collaboration and session-start responsibilities into The Worker. Keep ASD-STE100 and GitHub Actions separate.
+- **Reason:** Reduce the foundational loading set without losing baseline session, mode, task, or register behavior.
+- **Behavioral impact:** Foundational initialization loads The Worker and its mandatory Conversation Mode reference, ASD-STE100, and GitHub Actions. Session Archiving, Agent Skill Authoring, and Document Standards load on demand.
+- **Files modified:** The Worker, Conversation Mode compatibility entry point, Session Archiving, Agent Skill Authoring, Session Start, this policy, the skills index, the document-type catalog, and the workspace index.
+- **Verification:** Pending exact read-back.
+
 ## Future revision log
 
 Append a new entry whenever the initialization policy or its dependencies change.
@@ -155,7 +163,8 @@ Use this template:
 - [ ] The activation cues remain distinct.
 - [ ] Novelist initialization completes foundational initialization first.
 - [ ] Foundational initialization runs only once when the user gives both cues.
-- [ ] Agent Skill Authoring loads during foundational initialization.
+- [ ] The Worker and its mandatory Conversation Mode reference load during foundational initialization.
+- [ ] Session Archiving, Agent Skill Authoring, and Document Standards load only on demand.
 - [ ] ASD-STE100 loads during foundational initialization.
 - [ ] Skill and technical documentation use the approved writing mode.
 - [ ] Rewrites preserve meaning, facts, conditions, scope, and modality.
