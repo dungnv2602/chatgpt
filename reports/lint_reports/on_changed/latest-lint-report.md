@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#536](https://github.com/dungnv2602/chatgpt/actions/runs/45176725714)
-- **Run ID / attempt:** 45176725714 / 1
+- **Run:** [#539](https://github.com/dungnv2602/chatgpt/actions/runs/45177076864)
+- **Run ID / attempt:** 45177076864 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 359d1fd7f1af5af0e7e186fa7d99c9bdea97f1f2
+- **Branch / commit:** gpt / c9f1675c43b1cc62eff846d44784bae46d961f6b
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 359d1fd7f1af5af0e7e186fa7d99c9bdea97f1f2
-- **Generated (UTC):** 2026-11-23T12:42:12.624361+00:00
+- **Linter source SHA:** c9f1675c43b1cc62eff846d44784bae46d961f6b
+- **Generated (UTC):** 2026-11-23T12:45:07.407457+00:00
 
 ## 1. Executive summary
 
@@ -19,12 +19,12 @@
 | Files evaluated | 48 |
 | Files that failed | 7 |
 | Files with findings | 37 |
-| Total findings | 389 |
-| Hard findings | 63 |
+| Total findings | 390 |
+| Hard findings | 64 |
 | Advisory findings | 326 |
-| New findings | 5 |
-| Recurring findings | 384 |
-| Resolved findings | 1 |
+| New findings | 0 |
+| Recurring findings | 390 |
+| Resolved findings | 0 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -121,7 +121,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/the-worker/assets/session-brief-template.md | PASS | 0 | 0 | 0 | 288 | 0.0 | 0 |
 | skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md | PASS | 8 | 0 | 7 | 2716 | 0.3 | 0 |
 | skills/drawing/SKILL.md | PASS | 24 | 3 | 24 | 5115 | 0.5 | 0 |
-| skills/document-standards/references/document-type-catalog.md | FAIL | 56 | 27 | 0 | 3998 | 1.4 | 1 |
+| skills/document-standards/references/document-type-catalog.md | FAIL | 57 | 28 | 0 | 4007 | 1.4 | 1 |
 | workspace/task_board.md | PASS | 3 | 0 | 0 | 268 | 1.1 | 0 |
 | skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
 | skills/INITIALIZATION_POLICY.md | PASS | 4 | 2 | 4 | 1444 | 0.3 | 0 |
@@ -151,7 +151,7 @@ Counts include hard and advisory findings.
 |---|---:|
 | passive-voice | 285 |
 | present-perfect | 41 |
-| semicolon | 32 |
+| semicolon | 33 |
 | long-sentence | 10 |
 | synonym-rotation | 9 |
 | marketing-adjective | 5 |
@@ -188,7 +188,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.278s
+Ran 4 tests in 0.315s
 
 OK
 ~~~
@@ -221,7 +221,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 1004 active Markdown files (1074 available as link targets) and 332 local Markdown links.
+Scanned 1010 active Markdown files (1080 available as link targets) and 332 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -231,26 +231,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:4:500 · **new** · fingerprint: 305e0414169478f6e310d27a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was truncated
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:39:264 · **new** · fingerprint: bd13d200f2cd36d327625082
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are preserved
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:181:138 · **new** · fingerprint: d8738c991b456b6b6a7cdd80
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was reconstructed
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:197:189 · **new** · fingerprint: 7e6ec02ac376dc4e638ffc6d
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was warranted
-- **long-sentence** · skills/document-standards/SKILL.md:31:246 · **new** · fingerprint: 84a89f71f6e955e8933248e9
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
+None.
 
 ### Recurring findings
 
@@ -1102,6 +1083,14 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:4:542 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:4:594 · **recurring** · fingerprint: 305e0414169478f6e310d27a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was truncated
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:28:139 · **recurring** · fingerprint: 521a3f31bc54ec727caae5b1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1122,6 +1111,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:39:264 · **recurring** · fingerprint: bd13d200f2cd36d327625082
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are preserved
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:44:276 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1286,6 +1279,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:181:138 · **recurring** · fingerprint: d8738c991b456b6b6a7cdd80
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was reconstructed
 - **semicolon** · skills/document-standards/references/document-type-catalog.md:181:174 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
@@ -1298,6 +1295,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was required
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:197:189 · **recurring** · fingerprint: 7e6ec02ac376dc4e638ffc6d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was warranted
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:205:32 · **recurring** · fingerprint: d5a3d56f7803c8bd7fe2f5bb
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1726,6 +1727,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** 'fetch' and 'retrieve' name the same action. Pick one and use it every time.
   - **Matched text:** fetch
+- **long-sentence** · skills/document-standards/SKILL.md:31:246 · **recurring** · fingerprint: 84a89f71f6e955e8933248e9
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
 - **semicolon** · skills/document-standards/SKILL.md:31:373 · **recurring** · fingerprint: 0a9f2f8f059737eb01876e1d
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
@@ -1793,10 +1798,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### Resolved findings
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:189:123 · **resolved** · fingerprint: ec9e446045dd985aa0b168c4
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are permitted
+None.
 
 ## 8. Complete per-file diagnostics
 
@@ -3212,10 +3214,10 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 56
-- **Hard findings:** 27
+- **Findings:** 57
+- **Hard findings:** 28
 - **Baseline:** 0
-- **Words:** 3998
+- **Words:** 4007
 - **Findings per 100 words:** 1.4
 
 #### Complete diagnostics
@@ -3225,7 +3227,12 @@ No STE findings were recorded for this file.
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:4:500 · **new** · fingerprint: 305e0414169478f6e310d27a
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:4:542 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:4:594 · **recurring** · fingerprint: 305e0414169478f6e310d27a
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was truncated
@@ -3255,7 +3262,7 @@ No STE findings were recorded for this file.
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:39:264 · **new** · fingerprint: bd13d200f2cd36d327625082
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:39:264 · **recurring** · fingerprint: bd13d200f2cd36d327625082
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are preserved
@@ -3465,7 +3472,7 @@ No STE findings were recorded for this file.
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:181:138 · **new** · fingerprint: d8738c991b456b6b6a7cdd80
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:181:138 · **recurring** · fingerprint: d8738c991b456b6b6a7cdd80
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was reconstructed
@@ -3485,7 +3492,7 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was required
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:197:189 · **new** · fingerprint: 7e6ec02ac376dc4e638ffc6d
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:197:189 · **recurring** · fingerprint: 7e6ec02ac376dc4e638ffc6d
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was warranted
@@ -4220,7 +4227,7 @@ No STE findings were recorded for this file.
 
 #### Complete diagnostics
 
-- **long-sentence** · skills/document-standards/SKILL.md:31:246 · **new** · fingerprint: 84a89f71f6e955e8933248e9
+- **long-sentence** · skills/document-standards/SKILL.md:31:246 · **recurring** · fingerprint: 84a89f71f6e955e8933248e9
   - **Level:** advisory-free
   - **Message:** Sentence has 27 words (cap 25). Split it.
   - **Matched text:** 27 words
