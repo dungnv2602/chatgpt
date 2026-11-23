@@ -671,11 +671,13 @@ def create_worker_tasks(root, ledger, timestamp):
         if finding.get("status") not in TASK_ELIGIBLE_FINDING_STATUSES:
             continue
         refs = finding.setdefault("task_refs", [])
-        active_ref = any(task["id"] in refs for task in active_tasks.values())
-        reopened = bool(finding.get("resolution_history")) and not active_ref
-        if refs and not reopened:
+        group_id = finding["task_group"]
+        active_task = active_tasks.get(group_id)
+        active_ref = bool(active_task and active_task["id"] in refs)
+        reopened = bool(finding.get("resolution_history")) and not active_task
+        if refs and not (active_task or reopened):
             continue
-        grouped.setdefault(finding["task_group"], []).append(finding)
+        grouped.setdefault(group_id, []).append(finding)
     counts = {"tasks_created": 0, "tasks_updated": 0, "findings_linked": 0, "changed": False}
     for group_id, findings in grouped.items():
         task_id, created, task_changed = create_or_update_worker_task(
