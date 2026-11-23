@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 08:14 UTC — Implement the forward-only ledger generator:** Add a schema-validated, idempotent Python upsert process and regression tests. Seed per-source publication watermarks from current indexes, preserve curated lifecycle fields, and retain immutable evidence references.
+- **2026-11-23 08:19 UTC — Integrate ledger ingestion and operator procedures:** Verify every diagnostics publisher shares the repository-wide non-cancelling writer group. Add generator tests and ingestion to capture/sweep publication, exclude ledger-only commits from sweep triggers, and document lifecycle operations.
 
 ## Open Discussions
 
