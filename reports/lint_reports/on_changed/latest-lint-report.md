@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#473](https://github.com/dungnv2602/chatgpt/actions/runs/45159619279)
-- **Run ID / attempt:** 45159619279 / 1
+- **Run:** [#474](https://github.com/dungnv2602/chatgpt/actions/runs/45159721991)
+- **Run ID / attempt:** 45159721991 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / d55f905a080ef030ec2425009e2cd09a0d1a6395
+- **Branch / commit:** gpt / 0e1fbb6b1dc7696a51badffe11e2f1b2a6ca4edc
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** d55f905a080ef030ec2425009e2cd09a0d1a6395
-- **Generated (UTC):** 2026-11-23T10:50:19.054428+00:00
+- **Linter source SHA:** 0e1fbb6b1dc7696a51badffe11e2f1b2a6ca4edc
+- **Generated (UTC):** 2026-11-23T10:50:59.886634+00:00
 
 ## 1. Executive summary
 
@@ -19,12 +19,12 @@
 | Files evaluated | 49 |
 | Files that failed | 4 |
 | Files with findings | 39 |
-| Total findings | 347 |
-| Hard findings | 28 |
+| Total findings | 346 |
+| Hard findings | 27 |
 | Advisory findings | 319 |
 | New findings | 0 |
-| Recurring findings | 347 |
-| Resolved findings | 4 |
+| Recurring findings | 346 |
+| Resolved findings | 1 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -123,7 +123,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/document-standards/references/document-type-catalog.md | FAIL | 27 | 3 | 0 | 3060 | 0.9 | 1 |
 | workspace/task_board.md | PASS | 3 | 0 | 0 | 249 | 1.2 | 0 |
 | skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
-| skills/INITIALIZATION_POLICY.md | PASS | 3 | 1 | 4 | 1180 | 0.3 | 0 |
+| skills/INITIALIZATION_POLICY.md | PASS | 2 | 0 | 4 | 1180 | 0.2 | 0 |
 | skills/drawing/assets/daily-index-template.md | FAIL | 1 | 1 | 0 | 210 | 0.5 | 1 |
 | skills/session-archiving/assets/session-summary-template.md | PASS | 0 | 0 | 0 | 106 | 0.0 | 0 |
 | workspace/TASK_TEMPLATE.md | FAIL | 5 | 1 | 0 | 385 | 1.3 | 1 |
@@ -158,7 +158,6 @@ Counts include hard and advisory findings.
 | marketing-adjective | 5 |
 | phrasal-verb | 5 |
 | nominalization | 2 |
-| semicolon | 1 |
 
 ## 6. Workflow and validation checks
 
@@ -190,7 +189,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.453s
+Ran 4 tests in 0.369s
 
 OK
 ~~~
@@ -223,7 +222,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 613 active Markdown files (679 available as link targets) and 338 local Markdown links.
+Scanned 625 active Markdown files (691 available as link targets) and 338 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -1157,10 +1156,6 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been retrieved
-- **semicolon** · skills/INITIALIZATION_POLICY.md:132:288 · **recurring** · fingerprint: b28796101e8a0d8165b3d79b
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **long-sentence** · skills/drawing/assets/daily-index-template.md:5:1 · **recurring** · fingerprint: f7683dcec815fe504f98befb
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
@@ -1628,22 +1623,10 @@ None.
 
 ### Resolved findings
 
-- **synonym-rotation** · skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md:38:8 · **resolved** · fingerprint: e56e71413f309183c3195a0f
+- **semicolon** · skills/INITIALIZATION_POLICY.md:132:288 · **resolved** · fingerprint: b28796101e8a0d8165b3d79b
   - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Verify
-- **synonym-rotation** · skills/drawing/assets/pattern-entry-templates.md:106:43 · **resolved** · fingerprint: 1e2dc3b524f1b7c4c3b51d1f
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-- **synonym-rotation** · skills/session-archiving/references/image-provenance-and-webp.md:94:206 · **resolved** · fingerprint: f6b87316a617b3675e187026
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** Verify
-- **synonym-rotation** · skills/drawing/assets/daily-index-template.md:28:28 · **resolved** · fingerprint: 1975c054eeac9c56d64113d2
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 ## 8. Complete per-file diagnostics
 
@@ -3157,11 +3140,11 @@ No STE findings were recorded for this file.
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 3
-- **Hard findings:** 1
+- **Findings:** 2
+- **Hard findings:** 0
 - **Baseline:** 4
 - **Words:** 1180
-- **Findings per 100 words:** 0.3
+- **Findings per 100 words:** 0.2
 
 #### Complete diagnostics
 
@@ -3174,11 +3157,6 @@ No STE findings were recorded for this file.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been retrieved
-
-- **semicolon** · skills/INITIALIZATION_POLICY.md:132:288 · **recurring** · fingerprint: b28796101e8a0d8165b3d79b
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 
 
 ### skills/drawing/assets/daily-index-template.md

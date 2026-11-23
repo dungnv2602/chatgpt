@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45159619279",
-  "run_number": 473,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45159619279",
+  "run_id": "45159721991",
+  "run_number": 474,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45159721991",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "d55f905a080ef030ec2425009e2cd09a0d1a6395",
+  "commit_sha": "0e1fbb6b1dc7696a51badffe11e2f1b2a6ca4edc",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T10:50:19.054428+00:00",
+  "generated_at_utc": "2026-11-23T10:50:59.886634+00:00",
   "status": "Failed",
-  "linter_source_sha": "d55f905a080ef030ec2425009e2cd09a0d1a6395",
+  "linter_source_sha": "0e1fbb6b1dc7696a51badffe11e2f1b2a6ca4edc",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -79,8 +79,8 @@
     "skills/session-archiving/assets/session-brief-template.md"
   ],
   "files_with_findings": 39,
-  "total_findings": 347,
-  "hard_findings": 28,
+  "total_findings": 346,
+  "hard_findings": 27,
   "advisory_findings": 319,
   "findings_by_rule": {
     "passive-voice": 279,
@@ -89,8 +89,7 @@
     "phrasal-verb": 5,
     "nominalization": 2,
     "marketing-adjective": 5,
-    "long-sentence": 6,
-    "semicolon": 1
+    "long-sentence": 6
   },
   "records": [
     {
@@ -2467,22 +2466,13 @@
           "level": "advisory",
           "match": "been retrieved",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/INITIALIZATION_POLICY.md",
-          "line": 132,
-          "col": 288,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
         }
       ],
-      "count": 3,
-      "hard_count": 1,
+      "count": 2,
+      "hard_count": 0,
       "baseline": 4,
       "words": 1180,
-      "per_100_words": 0.3,
+      "per_100_words": 0.2,
       "path": "skills/INITIALIZATION_POLICY.md",
       "exit_code": 0
     },
@@ -6278,17 +6268,6 @@
       "comparison": "recurring"
     },
     {
-      "file": "skills/INITIALIZATION_POLICY.md",
-      "line": 132,
-      "col": 288,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "b28796101e8a0d8165b3d79b",
-      "comparison": "recurring"
-    },
-    {
       "file": "skills/drawing/assets/daily-index-template.md",
       "line": 5,
       "col": 1,
@@ -7566,50 +7545,17 @@
     }
   ],
   "new_findings": 0,
-  "recurring_findings": 347,
+  "recurring_findings": 346,
   "resolved_findings": [
     {
-      "file": "skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md",
-      "line": 38,
-      "col": 8,
-      "rule": "synonym-rotation",
+      "file": "skills/INITIALIZATION_POLICY.md",
+      "line": 132,
+      "col": 288,
+      "rule": "semicolon",
       "level": "advisory-free",
-      "match": "Verify",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "e56e71413f309183c3195a0f",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/drawing/assets/pattern-entry-templates.md",
-      "line": 106,
-      "col": 43,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'validate' name the same action. Pick one and use it every time.",
-      "fingerprint": "1e2dc3b524f1b7c4c3b51d1f",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/session-archiving/references/image-provenance-and-webp.md",
-      "line": 94,
-      "col": 206,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Verify",
-      "message": "'verify' and 'validate' name the same action. Pick one and use it every time.",
-      "fingerprint": "f6b87316a617b3675e187026",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/drawing/assets/daily-index-template.md",
-      "line": 28,
-      "col": 28,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "1975c054eeac9c56d64113d2",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "b28796101e8a0d8165b3d79b",
       "comparison": "resolved"
     }
   ],
@@ -7630,7 +7576,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.453s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.369s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -7648,7 +7594,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 613 active Markdown files (679 available as link targets) and 338 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 625 active Markdown files (691 available as link targets) and 338 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
