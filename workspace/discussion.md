@@ -1,7 +1,6 @@
 ## Current Step
 
-- **2026-11-23 16:09 UTC — Reporting period superseded:** Archived 3,954 old report-history files and 23 index/latest-pointer snapshots under `archive/reports/superseded-2026-11-23/`. Preserved 59 evidence-only captures linked by 462 open Ledger findings, plus six pending captures. Active indexes carry four pending run IDs forward from the new watermark. The Ledger was not cleared or rewritten. No Actions were dispatched or polled.
-- **2026-11-23 16:18 UTC — Worker recovery:** Read the workspace guide and task board. Identify the current execution task and inspect its complete record before starting the requested drawing session.
+- **2026-11-23 16:28 UTC — Open drawing session:** Create the standalone session brief and daily index from their canonical templates. Keep visual direction open until the user supplies a subject. Do not generate an image yet.
 
 ## Open Discussions
 
