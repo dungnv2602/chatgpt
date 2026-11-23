@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 12:32 UTC — Begin daily index template review:** Review the two hard findings in `skills/drawing/assets/daily-index-template.md` against the Drawing skill and catalog contract. Preserve required columns, attempt links, and manifest behavior.
+- **2026-11-23 12:36 UTC — Remediate daily index template:** Shorten the introductory guidance and standardize `verify` to `check`. Preserve the six-field table and all index invariants.
 
 ## Open Discussions
 
