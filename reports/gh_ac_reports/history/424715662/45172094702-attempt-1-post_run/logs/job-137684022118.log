@@ -1,0 +1,124 @@
+Lint changed Markdown files and publish detailed evidence	Set up job	﻿2026-11-23T12:12:39.8985024Z Current runner version: '2.338.2'
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9046780Z ##[group]Runner Image Provisioner
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9047838Z Hosted Compute Agent
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9048444Z Version: 20261111.635
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9049031Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9049867Z Build Date: 2026-11-11T01:49:01Z
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9050511Z Worker ID: {8200c498-390b-4b75-8413-e742d8a6a1e5}
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9051300Z Region: southcentralus
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9051898Z Cloud: Azure
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9052396Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9053878Z ##[group]Operating System
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9054654Z Ubuntu
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9055218Z 26.04.1
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9055867Z LTS
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9056345Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9056999Z ##[group]Runner Image
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9057583Z Image: ubuntu-26.04
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9058221Z Version: 20261116.202.1
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9059338Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9061225Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9062182Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9063430Z ##[group]GITHUB_TOKEN Permissions
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9086046Z Contents: write
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9086754Z Metadata: read
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9087325Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9089472Z Secret source: Actions
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9090495Z Cache mode: write
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9091606Z Prepare workflow directory
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9582020Z Prepare all required actions
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:39.9701749Z Getting action download info
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:40.2525750Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:40.8299691Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T12:12:41.8426252Z Complete job name: Lint changed Markdown files and publish detailed evidence
+Lint changed Markdown files and publish detailed evidence	Check out current commit	﻿2026-11-23T12:12:41.9182731Z ##[group]Run actions/checkout@v4
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9183607Z with:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9184243Z   fetch-depth: 1
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9184794Z   repository: dungnv2602/chatgpt
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9190254Z   token: [REDACTED]
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9190760Z   ssh-strict: true
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9191281Z   ssh-user: git
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9191816Z   persist-credentials: true
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9192412Z   clean: true
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9192961Z   sparse-checkout-cone-mode: true
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9193612Z   fetch-tags: false
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9194232Z   show-progress: true
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9194782Z   lfs: false
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9195304Z   submodules: false
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9195855Z   set-safe-directory: true
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9196484Z   allow-unsafe-pr-checkout: false
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:41.9197224Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1261177Z Syncing repository: dungnv2602/chatgpt
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1265132Z ##[group]Getting Git version info
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1266823Z Working directory is '/home/runner/work/chatgpt/chatgpt'
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1348163Z [command]/usr/bin/git version
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1349418Z git version 2.56.1
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1425758Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1437970Z Temporarily overriding HOME='/home/runner/work/_temp/994e7d87-3e0b-4deb-8a25-58d43e55fc2b' before making global git config changes
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1442722Z Adding repository directory to the temporary git global config as a safe directory
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1485973Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1532209Z Deleting the contents of '/home/runner/work/chatgpt/chatgpt'
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1534988Z ##[group]Initializing the repository
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1536704Z [command]/usr/bin/git init /home/runner/work/chatgpt/chatgpt
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1641981Z hint: Using 'master' as the name for the initial branch. This default branch name
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1645368Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1648231Z hint: to use in all of your new repositories, which will suppress this warning,
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1669357Z hint: call:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1670484Z hint:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1671648Z hint: 	git config --global init.defaultBranch <name>
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1672949Z hint:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1674317Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1676336Z hint: 'development'. The just-created branch can be renamed via this command:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1677882Z hint:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1678758Z hint: 	git branch -m <name>
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1679787Z hint:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1681327Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1683633Z Initialized empty Git repository in /home/runner/work/chatgpt/chatgpt/.git/
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1687514Z [command]/usr/bin/git remote add origin https://github.com/dungnv2602/chatgpt
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1772145Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1774253Z ##[group]Disabling automatic garbage collection
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1776035Z [command]/usr/bin/git config --local gc.auto 0
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1869418Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1873058Z ##[group]Setting up auth
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1895902Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.1962739Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.2434363Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.2471428Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.2749474Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.2787616Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.3061835Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.3113606Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.3115779Z ##[group]Fetching the repository
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:42.3122614Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +00d1b0a5c0ee10cecb6a25882730fcd8d1749483:refs/remotes/origin/gpt
+Lint changed Markdown files and publish detailed evidence	Check out current commit	2026-11-23T12:12:43.2966388Z ##[error]The operation was canceled.
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	﻿2026-11-23T12:12:43.3249408Z ##[group]Run if [[ "$TOOLING_FAILED" == "1" || "$FULL_FAILED" == "1" || "$CHANGED_FAILED" == "1" || ( "$ANCHOR_OUTCOME" != "skipped" && "$ANCHOR_EXIT" != "0" ) ]]; then
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T12:12:43.3250600Z ^[[36;1mif [[ "$TOOLING_FAILED" == "1" || "$FULL_FAILED" == "1" || "$CHANGED_FAILED" == "1" || ( "$ANCHOR_OUTCOME" != "skipped" && "$ANCHOR_EXIT" != "0" ) ]]; then^[[0m
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T12:12:43.3251530Z ^[[36;1m  echo "::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md."^[[0m
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T12:12:43.3252124Z ^[[36;1m  exit 1^[[0m
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T12:12:43.3252369Z ^[[36;1mfi^[[0m
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T12:12:43.3298427Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T12:12:43.3298916Z env:
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T12:12:43.3299138Z   TOOLING_FAILED: 
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T12:12:43.3299366Z   FULL_FAILED: 
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T12:12:43.3299586Z   CHANGED_FAILED: 
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T12:12:43.3299820Z   ANCHOR_OUTCOME: skipped
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T12:12:43.3300068Z   ANCHOR_EXIT: 
+Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T12:12:43.3300297Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	﻿2026-11-23T12:12:43.3547529Z Post job cleanup.
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-23T12:12:43.4920670Z [command]/usr/bin/git version
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-23T12:12:43.5075595Z git version 2.56.1
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-23T12:12:43.5225272Z Temporarily overriding HOME='/home/runner/work/_temp/08a5fb04-b7a4-489d-b9c5-7475e3b4256f' before making global git config changes
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-23T12:12:43.5252156Z Adding repository directory to the temporary git global config as a safe directory
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-23T12:12:43.5295221Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-23T12:12:43.5384847Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-23T12:12:43.5485920Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-23T12:12:43.6308682Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-23T12:12:43.6359099Z http.https://github.com/.extraheader
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-23T12:12:43.6479238Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-23T12:12:43.6646766Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-23T12:12:43.7417136Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Lint changed Markdown files and publish detailed evidence	Post Check out current commit	2026-11-23T12:12:43.7494235Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Lint changed Markdown files and publish detailed evidence	Complete job	﻿2026-11-23T12:12:43.8166931Z Cleaning up orphan processes
+Lint changed Markdown files and publish detailed evidence	Complete job	2026-11-23T12:12:43.8464961Z Terminate orphan process: pid (2064) (git)
+Lint changed Markdown files and publish detailed evidence	Complete job	2026-11-23T12:12:43.8540017Z Terminate orphan process: pid (2065) (git)
+Lint changed Markdown files and publish detailed evidence	Complete job	2026-11-23T12:12:43.8660683Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

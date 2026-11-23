@@ -1,39 +1,39 @@
 {
   "schema_version": "1.0.0",
   "source_run": {
-    "id": "45170908599",
-    "number": 523,
+    "id": "45172226368",
+    "number": 531,
     "attempt": 1,
     "workflow_id": 424715662,
     "workflow_name": "STE Lint Changed Documentation",
     "workflow_path": ".github/workflows/ste-lint-changed.yml",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45170908599",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45172226368",
     "event": "push",
     "branch": "gpt",
-    "head_sha": "1e9dd3d901f1b4749064f6781340fef690e948aa",
+    "head_sha": "a2377cfc085f6188cd2eadfb9a37525165dfa020",
     "status": "completed",
-    "conclusion": "failure",
-    "created_at": "2026-11-23T12:04:51Z",
-    "run_started_at": "2026-11-23T12:04:51Z",
-    "updated_at": "2026-11-23T12:08:08Z",
+    "conclusion": "cancelled",
+    "created_at": "2026-11-23T12:13:17Z",
+    "run_started_at": "2026-11-23T12:13:17Z",
+    "updated_at": "2026-11-23T12:14:26Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
-    "head_commit_message": "Close skill consolidation and select next task"
+    "head_commit_message": "Align foundational hierarchy and initialization checklist"
   },
   "capture": {
     "stage": "post_run",
-    "captured_at_utc": "2026-11-23T12:14:30Z",
+    "captured_at_utc": "2026-11-23T12:16:58Z",
     "completeness": "Complete",
     "reporter_job": {
-      "id": "137680353693",
+      "id": "137684908131",
       "name": "Capture GH Actions diagnostics",
       "status": "completed",
-      "conclusion": "success"
+      "conclusion": "cancelled"
     }
   },
   "classification": {
-    "state": "failure",
-    "observed_conclusion": "failure",
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
     "projected_conclusion": null,
     "primary_category": "validation_or_test",
     "categories": [
@@ -42,26 +42,26 @@
     "issues": [
       {
         "category": "validation_or_test",
-        "job_id": "137680057707",
+        "job_id": "137684657607",
         "job_name": "Lint changed Markdown files and publish detailed evidence",
         "step_number": 11,
         "step_name": "Preserve lint failure as workflow conclusion",
         "blocking": true,
         "confidence": "medium",
-        "message": "2026-11-23T12:05:41.3404360Z ^[[36;1m  echo \"::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md.\"^[[0m"
+        "message": "2026-11-23T12:14:14.2729737Z ^[[36;1m  echo \"::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md.\"^[[0m"
       }
     ]
   },
   "jobs": [
     {
-      "id": "137679955104",
+      "id": "137684578754",
       "name": "Reject superseded runs and find lint baseline",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-23T12:05:02Z",
-      "completed_at": "2026-11-23T12:05:11Z",
-      "runner_name": "GitHub Actions 1000001479",
-      "runner_id": 1000001479,
+      "started_at": "2026-11-23T12:13:42Z",
+      "completed_at": "2026-11-23T12:13:49Z",
+      "runner_name": "GitHub Actions 1000001490",
+      "runner_id": 1000001490,
       "runner_group_name": "GitHub Actions",
       "runner_group_id": 0,
       "steps": [
@@ -70,52 +70,52 @@
           "name": "Set up job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:05:03Z",
-          "completed_at": "2026-11-23T12:05:03Z"
+          "started_at": "2026-11-23T12:13:43Z",
+          "completed_at": "2026-11-23T12:13:43Z"
         },
         {
           "number": 2,
           "name": "Cancel superseded run before checkout",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:05:03Z",
-          "completed_at": "2026-11-23T12:05:06Z"
+          "started_at": "2026-11-23T12:13:43Z",
+          "completed_at": "2026-11-23T12:13:46Z"
         },
         {
           "number": 3,
           "name": "Find the last successful lint baseline",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:05:06Z",
-          "completed_at": "2026-11-23T12:05:09Z"
+          "started_at": "2026-11-23T12:13:46Z",
+          "completed_at": "2026-11-23T12:13:48Z"
         },
         {
           "number": 4,
           "name": "Complete job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:05:09Z",
-          "completed_at": "2026-11-23T12:05:09Z"
+          "started_at": "2026-11-23T12:13:48Z",
+          "completed_at": "2026-11-23T12:13:48Z"
         }
       ],
       "log_capture": {
         "available": true,
         "truncated": false,
-        "bytes": 12714,
-        "path": "logs/job-137679955104.log",
+        "bytes": 12713,
+        "path": "logs/job-137684578754.log",
         "error": null,
         "marker_lines": []
       }
     },
     {
-      "id": "137680057707",
+      "id": "137684657607",
       "name": "Lint changed Markdown files and publish detailed evidence",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-23T12:05:13Z",
-      "completed_at": "2026-11-23T12:05:44Z",
-      "runner_name": "GitHub Actions 1000001480",
-      "runner_id": 1000001480,
+      "started_at": "2026-11-23T12:13:51Z",
+      "completed_at": "2026-11-23T12:14:17Z",
+      "runner_name": "GitHub Actions 1000001491",
+      "runner_id": 1000001491,
       "runner_group_name": "GitHub Actions",
       "runner_group_id": 0,
       "steps": [
@@ -124,165 +124,165 @@
           "name": "Set up job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:05:14Z",
-          "completed_at": "2026-11-23T12:05:15Z"
+          "started_at": "2026-11-23T12:13:53Z",
+          "completed_at": "2026-11-23T12:13:53Z"
         },
         {
           "number": 2,
           "name": "Check out current commit",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:05:15Z",
-          "completed_at": "2026-11-23T12:05:22Z"
+          "started_at": "2026-11-23T12:13:53Z",
+          "completed_at": "2026-11-23T12:14:00Z"
         },
         {
           "number": 3,
           "name": "Fetch only the successful baseline commit",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-23T12:05:22Z",
-          "completed_at": "2026-11-23T12:05:22Z"
+          "started_at": "2026-11-23T12:14:00Z",
+          "completed_at": "2026-11-23T12:14:00Z"
         },
         {
           "number": 4,
           "name": "Set up Python",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:05:22Z",
-          "completed_at": "2026-11-23T12:05:22Z"
+          "started_at": "2026-11-23T12:14:00Z",
+          "completed_at": "2026-11-23T12:14:01Z"
         },
         {
           "number": 5,
           "name": "Validate lint and report tooling",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:05:22Z",
-          "completed_at": "2026-11-23T12:05:28Z"
+          "started_at": "2026-11-23T12:14:01Z",
+          "completed_at": "2026-11-23T12:14:05Z"
         },
         {
           "number": 6,
           "name": "Check active Markdown file links and heading anchors",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:05:28Z",
-          "completed_at": "2026-11-23T12:05:31Z"
+          "started_at": "2026-11-23T12:14:05Z",
+          "completed_at": "2026-11-23T12:14:07Z"
         },
         {
           "number": 7,
           "name": "Run full technical-document lint",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:05:31Z",
-          "completed_at": "2026-11-23T12:05:38Z"
+          "started_at": "2026-11-23T12:14:07Z",
+          "completed_at": "2026-11-23T12:14:11Z"
         },
         {
           "number": 8,
           "name": "Find Markdown files changed since the last successful run",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-23T12:05:38Z",
-          "completed_at": "2026-11-23T12:05:38Z"
+          "started_at": "2026-11-23T12:14:11Z",
+          "completed_at": "2026-11-23T12:14:11Z"
         },
         {
           "number": 9,
           "name": "Run STE linter on changed Markdown files",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-23T12:05:38Z",
-          "completed_at": "2026-11-23T12:05:38Z"
+          "started_at": "2026-11-23T12:14:11Z",
+          "completed_at": "2026-11-23T12:14:11Z"
         },
         {
           "number": 10,
           "name": "Generate and publish changed-document lint evidence",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:05:38Z",
-          "completed_at": "2026-11-23T12:05:41Z"
+          "started_at": "2026-11-23T12:14:11Z",
+          "completed_at": "2026-11-23T12:14:14Z"
         },
         {
           "number": 11,
           "name": "Preserve lint failure as workflow conclusion",
           "status": "completed",
           "conclusion": "failure",
-          "started_at": "2026-11-23T12:05:41Z",
-          "completed_at": "2026-11-23T12:05:41Z"
+          "started_at": "2026-11-23T12:14:14Z",
+          "completed_at": "2026-11-23T12:14:14Z"
         },
         {
           "number": 21,
           "name": "Post Set up Python",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-23T12:05:41Z",
-          "completed_at": "2026-11-23T12:05:41Z"
+          "started_at": "2026-11-23T12:14:14Z",
+          "completed_at": "2026-11-23T12:14:14Z"
         },
         {
           "number": 22,
           "name": "Post Check out current commit",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:05:41Z",
-          "completed_at": "2026-11-23T12:05:41Z"
+          "started_at": "2026-11-23T12:14:14Z",
+          "completed_at": "2026-11-23T12:14:14Z"
         },
         {
           "number": 23,
           "name": "Complete job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T12:05:41Z",
-          "completed_at": "2026-11-23T12:05:41Z"
+          "started_at": "2026-11-23T12:14:14Z",
+          "completed_at": "2026-11-23T12:14:14Z"
         }
       ],
       "log_capture": {
         "available": true,
         "truncated": false,
-        "bytes": 64087,
-        "path": "logs/job-137680057707.log",
+        "bytes": 63066,
+        "path": "logs/job-137684657607.log",
         "error": null,
         "marker_lines": [
-          "Lint changed Markdown files and publish detailed evidence\tValidate lint and report tooling\t2026-11-23T12:05:22.9497064Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m",
-          "Lint changed Markdown files and publish detailed evidence\tValidate lint and report tooling\t2026-11-23T12:05:22.9504942Z ^[[36;1mecho \"failed=$failed\" >> \"$GITHUB_OUTPUT\"^[[0m",
-          "Lint changed Markdown files and publish detailed evidence\tRun full technical-document lint\t2026-11-23T12:05:31.6817447Z ^[[36;1m    failed=1^[[0m",
-          "Lint changed Markdown files and publish detailed evidence\tRun full technical-document lint\t2026-11-23T12:05:31.6818556Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m",
-          "Lint changed Markdown files and publish detailed evidence\tRun full technical-document lint\t2026-11-23T12:05:31.6819281Z ^[[36;1mecho \"failed=$failed\" >> \"$GITHUB_OUTPUT\"^[[0m",
-          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-23T12:05:38.1271680Z ^[[36;1m        \"status\": \"Passed\" if exit_code == 0 else \"Failed\",^[[0m",
-          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-23T12:05:38.1277389Z ^[[36;1m        \"status\": \"Passed\" if exit_code == 0 else \"Failed\",^[[0m",
-          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-23T12:05:38.1281410Z ^[[36;1mif [[ \"$TOOLING_FAILED\" == \"1\" || \"$FULL_FAILED\" == \"1\" || \"$CHANGED_FAILED\" == \"1\" ]]; then status=\"Failed\"; fi^[[0m",
-          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-23T12:05:38.1282022Z ^[[36;1mif [[ \"$ANCHOR_OUTCOME\" != \"skipped\" && \"$ANCHOR_EXIT\" != \"0\" ]]; then status=\"Failed\"; fi^[[0m",
-          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-23T12:05:41.3404360Z ^[[36;1m  echo \"::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md.\"^[[0m",
-          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-23T12:05:41.3516126Z ##[error]Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md.",
-          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-23T12:05:41.3525099Z ##[error]Process completed with exit code 1."
+          "Lint changed Markdown files and publish detailed evidence\tValidate lint and report tooling\t2026-11-23T12:14:01.1314388Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tValidate lint and report tooling\t2026-11-23T12:14:01.1318587Z ^[[36;1mecho \"failed=$failed\" >> \"$GITHUB_OUTPUT\"^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tRun full technical-document lint\t2026-11-23T12:14:07.5856612Z ^[[36;1m    failed=1^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tRun full technical-document lint\t2026-11-23T12:14:07.5857254Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tRun full technical-document lint\t2026-11-23T12:14:07.5857971Z ^[[36;1mecho \"failed=$failed\" >> \"$GITHUB_OUTPUT\"^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-23T12:14:11.7657506Z ^[[36;1m        \"status\": \"Passed\" if exit_code == 0 else \"Failed\",^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-23T12:14:11.7660912Z ^[[36;1m        \"status\": \"Passed\" if exit_code == 0 else \"Failed\",^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-23T12:14:11.7662969Z ^[[36;1mif [[ \"$TOOLING_FAILED\" == \"1\" || \"$FULL_FAILED\" == \"1\" || \"$CHANGED_FAILED\" == \"1\" ]]; then status=\"Failed\"; fi^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-23T12:14:11.7663324Z ^[[36;1mif [[ \"$ANCHOR_OUTCOME\" != \"skipped\" && \"$ANCHOR_EXIT\" != \"0\" ]]; then status=\"Failed\"; fi^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-23T12:14:14.2729737Z ^[[36;1m  echo \"::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md.\"^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-23T12:14:14.2815487Z ##[error]Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md.",
+          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-23T12:14:14.2821370Z ##[error]Process completed with exit code 1."
         ]
       }
     }
   ],
   "check_runs": [
     {
-      "id": "137679955104",
+      "id": "137684578754",
       "name": "Reject superseded runs and find lint baseline",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-23T12:05:02Z",
-      "completed_at": "2026-11-23T12:05:11Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45170908599/job/137679955104",
+      "started_at": "2026-11-23T12:13:42Z",
+      "completed_at": "2026-11-23T12:13:49Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45172226368/job/137684578754",
       "app": "GitHub Actions",
       "annotations_count": 0
     },
     {
-      "id": "137680057707",
+      "id": "137684657607",
       "name": "Lint changed Markdown files and publish detailed evidence",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-23T12:05:13Z",
-      "completed_at": "2026-11-23T12:05:44Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45170908599/job/137680057707",
+      "started_at": "2026-11-23T12:13:51Z",
+      "completed_at": "2026-11-23T12:14:17Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45172226368/job/137684657607",
       "app": "GitHub Actions",
       "annotations_count": 3
     }
   ],
   "annotations": [
     {
-      "check_run_id": "137680057707",
-      "job_id": "137680057707",
+      "check_run_id": "137684657607",
+      "job_id": "137684657607",
       "path": ".github",
       "start_line": 2,
       "end_line": 2,
@@ -292,8 +292,8 @@
       "raw_details": ""
     },
     {
-      "check_run_id": "137680057707",
-      "job_id": "137680057707",
+      "check_run_id": "137684657607",
+      "job_id": "137684657607",
       "path": ".github",
       "start_line": 21,
       "end_line": 21,
@@ -303,8 +303,8 @@
       "raw_details": ""
     },
     {
-      "check_run_id": "137680057707",
-      "job_id": "137680057707",
+      "check_run_id": "137684657607",
+      "job_id": "137684657607",
       "path": ".github",
       "start_line": 20,
       "end_line": 20,
@@ -316,5 +316,5 @@
   ],
   "artifacts": [],
   "capture_errors": [],
-  "history_path": "history/424715662/45170908599-attempt-1-post_run"
+  "history_path": "history/424715662/45172226368-attempt-1-post_run"
 }
