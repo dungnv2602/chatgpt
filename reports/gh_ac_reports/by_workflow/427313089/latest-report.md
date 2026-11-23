@@ -1,4 +1,4 @@
-# Validate Document Standards — run 45182578683
+# Validate Document Standards — run 45182710700
 
 ## Run identity
 
@@ -6,38 +6,38 @@
 | --- | --- |
 | Workflow | Validate Document Standards |
 | Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45182578683 / 1 |
-| Run number | 142 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45182578683 |
+| Run / attempt | 45182710700 / 1 |
+| Run number | 143 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45182710700 |
 | Branch | gpt |
-| Commit | 91df44b9e599457e2b8b3a635788857b41ae5e6c |
+| Commit | 80f213c600d70b55e60f999edaf942da0f77ab5a |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T13:18:11Z |
-| Status at capture | completed |
-| Observed conclusion | cancelled |
-| Projected conclusion | Not calculated |
-| Reporter job | completed / success |
-| Capture stage | post_run |
-| Completeness | Complete |
-| Captured (UTC) | 2026-11-23T13:19:23Z |
+| Created (UTC) | 2026-11-23T13:19:01Z |
+| Status at capture | in_progress |
+| Observed conclusion | Not yet available |
+| Projected conclusion | failure |
+| Reporter job | in_progress / Pending |
+| Capture stage | pre_finalizer |
+| Completeness | Incomplete |
+| Captured (UTC) | 2026-11-23T13:19:55Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | cancelled |
+| State | in_progress |
 | Primary category | validation_or_test |
 | Jobs | 1 |
 | Steps | 8 |
 | Issues | 1 |
 | Annotations | 2 |
 | Artifacts | 0 |
-| Capture errors | 0 |
+| Capture errors | 1 |
 
 ## Failure classification
 
-validation_or_test
+validation_or_test The parent run is still in progress. The projected conclusion is provisional.
 
 The report records an actionable workflow failure or operational exception. Ordinary successful runs and cancellation-only runs are not captured by default. A successful run is retained when a step failed but the workflow allowed it to continue. A cancelled run is retained only when it contains an independent actionable failure. Known downstream status-propagation steps after cancellation are excluded. Explicit run-backfill requests can override the default capture filter.
 
@@ -45,20 +45,20 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 137719907623 | validate-document-standards | completed | failure | 8 | logs/job-137719907623.log |
+| 137720353607 | validate-document-standards | completed | failure | 8 | logs/job-137720353607.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 137719907623 | 4 | Run catalog validator regression tests | Blocking | medium | 2026-11-23T13:18:27.9096986Z Traceback (most recent call last): |
+| validation_or_test | 137720353607 | 4 | Run catalog validator regression tests | Blocking | medium | Step conclusion: failure |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 137719907623 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 137719907623 | failure | .github | 59 |  | Process completed with exit code 1. |
+| 137720353607 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 137720353607 | failure | .github | 59 |  | Process completed with exit code 1. |
 
 ## Artifacts
 
@@ -68,11 +68,15 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137719907623 | validate-document-standards | logs/job-137719907623.log | 33022 | False | validate-document-standards	Run catalog validator regression tests	2026-11-23T13:18:27.9096986Z Traceback (most recent call last):, validate-document-standards	Run catalog validator regression tests	2026-11-23T13:18:27.9116708Z FAILED (failures=1), validate-document-standards	Run catalog validator regression tests	2026-11-23T13:18:27.9240052Z ##[error]Process completed with exit code 1. |
+| 137720353607 | validate-document-standards | logs/job-137720353607.log | 82 | False |  |
 
 ## Evidence coverage
 
-All requested evidence endpoints and completed-job log captures returned data.
+One or more evidence sources were unavailable. This report is Incomplete.
+
+| Source | HTTP status | Limitation |
+| --- | --- | --- |
+| job_log | Not recorded | run 45182710700 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
