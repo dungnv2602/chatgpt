@@ -9,6 +9,7 @@ on:
       - '!reports/**'
       - '!archive/**'
       - '!workspace/tasks/**'
+      - '!workspace/task_board.md'
       - '!workspace/discussion.md'
       - '!novels/**'
       - '!drawings/**'
