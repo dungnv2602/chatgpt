@@ -59,6 +59,8 @@ status: approved
 - **How the Voice Changes:**
 
 ## 7. Relationships
+Add one row per relevant relationship. If no relationship is established, replace the blank row with `None recorded`.
+
 | Other Character | Relationship at Start | Sources of Connection / Conflict | Intended Development |
 |---|---|---|---|
 | | | | |
