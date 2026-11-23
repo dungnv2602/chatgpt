@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:40 UTC — Remediate Conversation Mode skill:** Split the briefing and pause instructions, standardize check terminology, and preserve the exact register ownership and navigation rules.
+- **2026-11-23 11:44 UTC — Begin Document Standards skill review:** Review the four hard findings in `skills/document-standards/SKILL.md` against the catalog and repository writing policy. Preserve template-first and validation requirements.
 
 ## Open Discussions
 
