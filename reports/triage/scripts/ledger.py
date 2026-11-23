@@ -515,7 +515,7 @@ def update_task_findings(content, findings, timestamp):
 
 def task_title_for_group(findings):
     first = findings[0]
-    category = markdown_cell(first.get("category") or "CI")
+    category = str(first.get("category") or "CI")
     if first.get("source_family") == "lint":
         note = ((first.get("evidence") or [{}])[-1]).get("note") or ""
         location = note.split(" · ", 1)[-1]
@@ -613,7 +613,7 @@ def upsert_task_board_row(root, task):
     origin = task_metadata(content, "Origin")
     updated = task_metadata(content, "Updated").split(" ", 1)[0]
     filename = task["path"].name
-    row = "| " + task_id + " | " + markdown_cell(title) + " | " + priority + " | " + status + " | " + origin + " | " + updated + " | [Task record](tasks/" + filename + ") |"
+    row = "| " + task_id + " | " + title + " | " + priority + " | " + status + " | " + origin + " | " + updated + " | [Task record](tasks/" + filename + ") |"
     lines = board.splitlines()
     old_index = next((i for i, line in enumerate(lines) if line.startswith("| " + task_id + " |")), None)
     if old_index is not None:
