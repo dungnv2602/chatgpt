@@ -240,6 +240,13 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** Catalog commit `7f13f73f0883c0303409e3d53217aee238d653e3`; `master/Images.md`, `master/Poses.md`, `master/Prompts.md`; `images/README.md`; `images/takeout/HANDOFF.yml`; Novel-01 Scene-003/004/005 illustration notes and prompt records; `drawings/2026-11-19/TODO.md`; `drawings/2026-11-20/samantha-visual-drive.md`; `drawings/2026-11-20/scenario-direction.md`; Prompt Master reference files.
 - **Next:** Continue the remaining project-type inventory and decide whether any additional structural checks are justified. Keep hosted workflow integration gated on separate user approval.
 
+### 2026-11-23 01:28 UTC
+
+- **Action:** Classified remaining workflow configuration, archive-retention state, and generated lint output; extended catalog validation to cover their repository roots.
+- **Result:** Added catalog entries for the read-only archive policy README, script-owned archive-retention state, GitHub Actions workflow definitions, and the workflow-generated STE lint report. Expanded the Embedded Contract definition to allow workflow/script owners. Added `.github` and `lint_reports` to the catalog validator's allowed roots and added a regression test covering both roots. The catalog now contains 31 document types and 66 exact file references, with no directory references or malformed table rows. The changed skill, validator, test, and catalog were read back. No workflow file or archive content was modified. The archive-retention workflow supports scheduled, manual, and workflow-call triggers; the latter two can pass `force` and bypass the 14-day interval. This is recorded as an unresolved policy question.
+- **References:** `skills/document-standards/SKILL.md`; `skills/document-standards/scripts/validate_catalog.py`; `skills/document-standards/scripts/test_validate_catalog.py`; `skills/document-standards/references/document-type-catalog.md`; `archive/README.md`; `.github/scripts/cleanup-archive.py`; `.github/archive-retention-state.json`; `.github/workflows/archive-retention.yml`; `.github/workflows/convert-images-to-webp.yml`; `.github/workflows/notification.yml`; `.github/workflows/ste-lint-changed.yml`; `.github/workflows/ste-lint-full-docs.yml`; `lint_reports/latest-lint-report.md`.
+- **Next:** Complete the remaining repository-path reconciliation, decide whether additional structural checks are justified, and obtain approval before any workflow integration.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
@@ -255,23 +262,24 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - The image asset directory contract is embedded in `images/README.md`. The image takeout hand-off is validated by `skills/session-archiving/scripts/process_takeout.py`; `images/takeout/HANDOFF.yml` is the current draft example (`status: draft`). The same script defines conversion-report and manifest columns. `verify_published_manifest.py` checks published data and links.
 - The processor test suite covers important intake and publication paths. GitHub Actions run #54 passed all 36 tests, including invalid hand-off metadata, metadata propagation into the generated drawing-session manifest, and manifest compatibility cases. Its publication-verification step found no drawing-session manifests in the run workspace, so it did not verify live manifest rows.
 - The three master catalogues have been reviewed. Images contains standalone prompt blocks, Poses mixes bullet ideas and prose, and Prompts groups scene-specific prompt records. Keep them as lightweight collections; no common entry schema is justified.
-- The catalog covers 27 document types and records representative current examples, legacy exceptions, and justified exemptions. Its Initial Inventory contains 55 exact file references, with no directory references. Full file-by-file reconciliation remains incomplete.
-- A catalog-integrity validator and regression tests now exist at `skills/document-standards/scripts/`. They check catalog structure and exact references, not document-body conformance. They have not run on a hosted runner because workflow integration awaits user authorization.
+- Archive policy and retention state are cataloged as embedded contracts; GitHub Actions workflow YAML is exempt under its external schema, and the repository-wide STE lint report is workflow-owned. The archive-retention workflow's manual and workflow-call force triggers remain an unresolved user policy question.
+- The catalog covers 31 document types and records representative current examples, legacy exceptions, and justified exemptions. Its Initial Inventory contains 66 exact file references, with no directory references or malformed table rows. Full file-by-file reconciliation remains incomplete.
+- A catalog-integrity validator and regression tests now exist at `skills/document-standards/scripts/`. They check catalog structure and exact references, not document-body conformance. The validator now allows `.github` and `lint_reports`, with a regression test covering both roots. The validator and tests have not run on a hosted runner because workflow integration awaits user authorization.
 - The GitHub Actions skill now permits exact, task-relevant archive reads and prohibits manual archive mutation. The Worker also requires the original archive-introduction commit when it reuses a prior archive copy.
 - The changed-document lint preflight repository-resolution defect has been fixed on `gpt`. Run #349 confirms that preflight, baseline lookup, and changed-file discovery succeed. The downstream STE lint step still fails on existing findings in the lint report and Agent Skill documentation; the updated remote-only policy files had no findings.
 
 ## 8. Remaining Work
 
-- Check remaining project-specific document types and complete the repository inventory before marking the catalog complete.
-- Decide whether any additional structural checks add value without duplicating generator-owned schemas.
+- Complete repository-path reconciliation for remaining project files, excluding broad scans of archived records.
+- Decide whether additional structural checks add value without duplicating generator-owned schemas.
 - Obtain separate user approval to integrate the catalog validator and tests into GitHub Actions.
 - After approval, run the validator and its tests on a hosted runner, then repair any failures.
 
 ## 9. Next Actions
 
-1. Check remaining project-specific document types and complete the repository inventory.
-2. Decide whether any additional structural checks add value without duplicating generator-owned schemas.
-3. Obtain separate user approval before changing a GitHub Actions workflow for catalog-validator integration.
+1. Complete repository-path reconciliation for remaining project files, without broad archive scans.
+2. Decide whether additional structural checks add value without duplicating generator-owned schemas.
+3. Obtain separate user approval before creating or changing a GitHub Actions workflow for catalog-validator integration.
 4. After approval, integrate the validator and tests into an appropriate hosted workflow and review the run result.
 5. Update the catalog and task record with verified execution results.
 
@@ -313,6 +321,15 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - `skills/session-archiving/scripts/test_process_takeout_unittest.py`
 - `images/README.md`
 - `images/takeout/HANDOFF.yml`
+- `archive/README.md`
+- `.github/scripts/cleanup-archive.py`
+- `.github/archive-retention-state.json`
+- `.github/workflows/archive-retention.yml`
+- `.github/workflows/convert-images-to-webp.yml`
+- `.github/workflows/notification.yml`
+- `.github/workflows/ste-lint-changed.yml`
+- `.github/workflows/ste-lint-full-docs.yml`
+- `lint_reports/latest-lint-report.md`
 - `master/Images.md`
 - `master/Poses.md`
 - `master/Prompts.md`
@@ -327,12 +344,13 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - `novels/Novel-01/Arc-01/Scene-003/illustrations/illustration-01-prompt.md`
 - `novels/Novel-01/Arc-01/Scene-004/illustrations/illustration-01-prompt.md`
 - `novels/Novel-01/Arc-01/Scene-005/illustrations/illustration-01-prompt.md`
-- `novels/Novel-01/Arc-01/Scene-003/illustrations/illustration-01-prompt.md`
-- `novels/Novel-01/Arc-01/Scene-004/illustrations/illustration-01-prompt.md`
-- `novels/Novel-01/Arc-01/Scene-005/illustrations/illustration-01-prompt.md`
 
 ## 11. Verification
 
+- **Check:** Workflow and generated-report catalog coverage; validator repository-root support.
+- **Method:** Read back the new catalog rows, `ALLOWED_ROOTS`, and the regression test for `.github` and `lint_reports`; inspect table row boundaries and exact path references.
+- **Result:** The catalog contains 31 document types and 66 exact references, with no directory references or malformed rows. The validator allows both roots, and the regression test covers them.
+- **Limitations:** Source-level inspection only. Tests have not run; hosted validation requires separate workflow approval. Archive retention trigger scope remains unresolved.
 - **Check:** Representative record review and catalog reference update.
 - **Method:** Read the exact representative records and templates, read back the revised skill, templates, and catalog, and fetched all 10 newly added exact file references.
 - **Result:** The reviewed legacy records remain unchanged. The Initial Inventory contains 51 exact references; no directory references remain in that table. All 10 newly added file references exist.
