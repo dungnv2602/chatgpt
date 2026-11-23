@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 10:02 UTC — Implement cancellation-safe report classification:** Update the generator so cancelled outcomes remain visible as run state but do not create actionable issues. Suppress only cancellation steps and recognized downstream status-propagation steps. Add regression tests for cancelled runs, propagation, and independent failures. Align the report guide/template and verify workflow test integration.
+- **2026-11-23 10:12 UTC — Record the verified repair and triage open discussions:** Add the exact implementation commit and read-back results to task 20261123-054904. Then classify each open discussion by whether it needs user action, natural hosted validation, or a separate approval.
 
 ## Open Discussions
 - **2026-11-23 — Hosted retention validation:** The shared cleanup script and tests now cover exact individual files in both `archive/tasks/` and `archive/reports/`. A hosted run of the schedule-only cleanup has not yet been observed. Do not dispatch it manually or modify `main`.
