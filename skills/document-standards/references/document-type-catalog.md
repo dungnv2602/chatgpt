@@ -31,13 +31,13 @@ Do not create a second template when an owning workflow already defines the requ
 | Scene | Template required when created | `novels/templates/scene-v1.1.md` | Current Version 1.1 template exists. Scene prose remains creative content. |
 | Illustration note | Template required | `novels/templates/illustration-note-v1.1.md` | One record per retained or reviewed novel illustration. |
 | Illustration prompt record | Template required before generation | `novels/templates/illustration-prompt-v1.1.md` | Preserve chronological attempts and exact authored prompts. |
-| Non-novel drawing attempt | Template required | `skills/drawing/assets/attempt-template.md` | Template version 1.0. Keep the compact six-section record structure. |
+| Non-novel drawing attempt | Template required | `skills/drawing/assets/attempt-template.md` | Template version 1.1. Separates record, generation, and user-decision states. Includes required lineage, criteria, provenance, and per-output evidence. |
 | Drawing pattern entry | Template required | `skills/drawing/references/patterns/PATTERN-TEMPLATES.md` | Template version 1.0. Separate copy-ready formats cover successful and failure patterns, evidence, and confidence rules. |
-| Drawing session brief | Template required | `skills/session-archiving/assets/session-brief-template.md` | Copy-ready template now exists. |
-| Daily drawing index | Template required | `skills/drawing/assets/daily-index-template.md` | Copy-ready index template now exists. The workflow still enforces the single-table contract. |
+| Drawing session brief | Template required | `skills/session-archiving/assets/session-brief-template.md` | Template version 1.0. Status values are Active, Paused, and Closed. New sessions start Active. |
+| Daily drawing index | Template required | `skills/drawing/assets/daily-index-template.md` | Template version 1.1. Defines the exact six-field table for attempt, session, lineage, execution, approval/evidence, and image. |
 | Conversation integrity record | Template required | `skills/session-archiving/assets/conversation-integrity-template.md` | Copy-ready template now exists with gap and editorial-summary fields. |
 | Session summary | Template required | `skills/session-archiving/assets/session-summary-template.md` | Copy-ready handoff template now exists. |
-| Workspace task record | Template required | `workspace/TASK_TEMPLATE.md` | Template version 1.1. The Worker owns task fields and closeout. The active record remains In Progress / Archived: No until the archive copy is verified. |
+| Workspace task record | Template required | `workspace/TASK_TEMPLATE.md` | Template version 1.1. The Worker owns task fields and closeout. The active record remains In Progress / Archived: No until the archive copy passes full read-back. |
 | Task board | Embedded contract | `skills/the-worker/SKILL.md` and `workspace/task_board.md` | One live index. No separate copy template is needed now. |
 | Condensed Mode discussion register | Embedded contract | `skills/conversation-mode/SKILL.md` and `workspace/discussion.md` | Fixed headings, ordering, and entry rules. |
 | Image takeout hand-off | Schema required | `skills/session-archiving/scripts/process_takeout.py` and `images/takeout/README.md` | The processor validates the YAML contract. `skills/session-archiving/scripts/test_process_takeout_unittest.py` covers readiness, exact intake coverage, missing attempt metadata, malformed top-level data, duplicate output IDs, rollback, and hashes. |
@@ -63,6 +63,21 @@ The processor and its tests remain the authority for the current YAML and CSV fo
 The novel workspace has Version 1.1 templates for eight document types. It retains Version 1.0 templates for historical compatibility.
 
 Do not mass-migrate untouched legacy novel records. Use the current template for new records and material revisions.
+
+## Legacy examples reviewed
+
+The following records predate the current templates. Preserve them as historical records. Do not migrate them only to match a newer template.
+
+| Document type | Representative records | Finding | Handling |
+|---|---|---|---|
+| Novel foundation, arc, and scene | `novels/Novel-01/novel.md`, `novels/Novel-01/Arc-01/arc.md`, `novels/Novel-01/Arc-01/Scene-001/scene.md` | These records declare format Version 1.0. The current templates use Version 1.1. | Keep untouched records at Version 1.0. Use Version 1.1 for new records and material revisions. |
+| Non-novel drawing attempt | `drawings/2026-11-20/attempt-01.md`, `drawings/2026-11-21/attempt-17.md` | The older notes use earlier field layouts. Attempt 17 combines prompt-archive and generation-pending states in one status value. | Preserve existing notes. Use the Version 1.1 template with separate record, generation, and user-decision states for new records and material revisions. |
+| Daily drawing index | `drawings/2026-11-20/README.md`, `drawings/2026-11-21/README.md` | These indexes predate the Version 1.1 six-field template. | Preserve existing indexes. Use the six-field template for new daily indexes and material revisions. |
+| Drawing session brief | `drawings/2026-11-21/session-01-brief.md` | This brief predates the canonical template and records a closed session. | Preserve it. New briefs use the canonical status values Active, Paused, and Closed. |
+| Workspace task record | `workspace/tasks/20261122-233900-enforce-template-first-document-standards.md` | This task record declares Template version 1.0. The current task template is Version 1.1. | Preserve the original task metadata. Use Version 1.1 for new task records. |
+| Agent Skill definitions | Existing skill files under `skills/` | Many skills predate the reusable Agent Skill template. | Do not mass-convert existing skills. Use the canonical template for new skills and material rewrites. |
+
+No new session summary or conversation-integrity record was required during this review. Their templates remain available for future sessions.
 
 ## Priority gaps
 
