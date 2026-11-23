@@ -10,13 +10,13 @@ metadata:
 
 ## 1. Absolute workspace boundary
 
-**Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `drawings/`, `skills/`, `workspace/`, `archive/`, and `gh_ac_reports/`. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific path exceptions below.
+**Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `drawings/`, `skills/`, `workspace/`, `archive/`, and `reports/`. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific path exceptions below.
 
 **Authorized archive-retention index exception:** The user authorized exact read/write access to `.github/archive-retention-index.json` only to register a newly archived task record's exact path and UTC archive timestamp. Do not list or scan `archive/tasks/` to backfill this index.
 
 **Authorized WebP workflow exception:** The user authorized creation of `.github/workflows/convert-images-to-webp.yml` on 12 November 2026. The user approved its takeout-pipeline and persistent staging changes on 20 November 2026. The user also approved moving its scripts into this skill and updating the required workflow paths. These permissions do not authorize unrelated workflow changes.
 
-**Authorized GitHub Actions diagnostics scope:** On 23 November 2026, the user explicitly authorized creation of `gh_ac_reports/` and changes to the six existing workflow files plus `.github/workflows/gh-actions-diagnostics.yml` for reusable diagnostics and task-scoped CI policy. This authorization applies to branch `gpt` only. It does not authorize changes to `main`, other `.github/` paths, or unrelated workflows.
+**Authorized GitHub Actions diagnostics scope:** On 23 November 2026, the user explicitly authorized creation of `reports/gh_ac_reports/` and changes to the six existing workflow files plus `.github/workflows/gh-actions-diagnostics.yml` for reusable diagnostics and task-scoped CI policy. This authorization applies to branch `gpt` only. It does not authorize changes to `main`, other `.github/` paths, or unrelated workflows.
 
 This boundary applies to every future task and every tool call, not only archiving.
 
@@ -27,8 +27,8 @@ This boundary applies to every future task and every tool call, not only archivi
   - `drawings/` — session records and prompt history
   - `skills/` — reusable skills and supporting references
   - `workspace/` — active task board and task records
-  - `archive/` — time-limited archive of completed and cancelled task records
-  - `gh_ac_reports/` — GitHub Actions diagnostic reports, their generator, templates, schemas, and indexes
+  - `archive/` — time-limited archive of task records and resolved report files
+  - `reports/` — lint reports, GitHub Actions diagnostics, and the central triage ledger
   - `.github/workflows/` — only workflow files in the explicitly authorized diagnostics scope or another user-authorized workflow change
   - `.github/archive-retention-index.json` — exact task archive paths and UTC timestamps only
 - Read and write files only by exact paths beginning with one of those approved directory names.
