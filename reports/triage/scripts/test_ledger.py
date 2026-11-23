@@ -196,6 +196,9 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(len(finding["evidence"]),2)
         self.assertEqual(len(finding["task_refs"]), 1)
         self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*.md"))), 1)
+        task_text = next((self.root / "workspace" / "tasks").glob("*.md")).read_text(encoding="utf-8")
+        self.assertIn("201-attempt-1-post_run/report.json", task_text)
+        self.assertIn("202-attempt-1-post_run/report.json", task_text)
 
     def test_related_findings_reuse_one_active_task_across_ingestion_events(self):
         self.add_lint("on_changed", "210", "2026-11-23T07:30:00Z", fingerprint="aaaaaaaa1111")
@@ -212,6 +215,21 @@ class LedgerTests(unittest.TestCase):
         task_text = next((self.root / "workspace" / "tasks").glob("*.md")).read_text(encoding="utf-8")
         self.assertIn("lint-aaaaaaaa1111", task_text)
         self.assertIn("lint-bbbbbbbb2222", task_text)
+
+    def test_later_high_severity_finding_promotes_active_group_priority(self):
+        first_issue = {"category":"validation_or_test","job_name":"Build","step_name":"Unit tests",
+                       "blocking":True,"confidence":"medium","message":"Assertion mismatch A"}
+        self.add_actions("214","2026-11-23T07:57:00Z",[first_issue])
+        LEDGER.ingest(self.root, now="2026-11-23T07:58:00Z")
+        second_issue = {"category":"validation_or_test","job_name":"Build","step_name":"Unit tests",
+                        "blocking":True,"confidence":"high","message":"Assertion mismatch B"}
+        self.add_actions("215","2026-11-23T08:00:00Z",[second_issue])
+        result = LEDGER.ingest(self.root, now="2026-11-23T08:01:00Z")
+        task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
+        self.assertEqual(len(task_files), 1)
+        task_text = task_files[0].read_text(encoding="utf-8")
+        self.assertIn("- **Priority:** P1", task_text)
+        self.assertEqual(result["tasks_updated"], 1)
 
     def test_untrusted_diagnostic_text_is_escaped_in_worker_task(self):
         self.add_lint("on_changed", "213", "2026-11-23T07:55:00Z",
