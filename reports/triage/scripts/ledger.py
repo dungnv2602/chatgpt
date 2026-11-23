@@ -342,13 +342,15 @@ def ingest(root, now=None):
     ledger = read_json(ledger_path)
     if not isinstance(ledger, dict):
         raise LedgerError("The ledger root must be an object")
+    before_migration = json.dumps(ledger, sort_keys=True, ensure_ascii=False)
     ledger = migrate_ledger(ledger, root)
+    migration_changed = before_migration != json.dumps(ledger, sort_keys=True, ensure_ascii=False)
     schema = read_json(schema_path)
     validate_schema(ledger, schema, "$ledger")
     validate_semantics(ledger)
     state, processed = ledger["ingestion_state"], set(ledger["ingestion_state"]["processed_reports"])
     counts = {"reports_processed": 0, "findings_created": 0, "findings_updated": 0, "findings_unchanged": 0}
-    changed, warnings = False, []
+    changed, warnings = migration_changed, []
     for family, report_path, _row in indexed_reports(root):
         if report_path in processed:
             continue
