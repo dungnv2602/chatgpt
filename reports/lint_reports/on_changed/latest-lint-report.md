@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#479](https://github.com/dungnv2602/chatgpt/actions/runs/45160293396)
-- **Run ID / attempt:** 45160293396 / 1
+- **Run:** [#480](https://github.com/dungnv2602/chatgpt/actions/runs/45165041117)
+- **Run ID / attempt:** 45165041117 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / aaef77e998686cb6f67dc31858efb4c6afd4445d
+- **Branch / commit:** gpt / 31343bbd4aa78d237e03c482591893d98fe2ad70
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** aaef77e998686cb6f67dc31858efb4c6afd4445d
-- **Generated (UTC):** 2026-11-23T10:54:52.805209+00:00
+- **Linter source SHA:** 31343bbd4aa78d237e03c482591893d98fe2ad70
+- **Generated (UTC):** 2026-11-23T11:25:44.034620+00:00
 
 ## 1. Executive summary
 
@@ -24,7 +24,7 @@
 | Advisory findings | 319 |
 | New findings | 0 |
 | Recurring findings | 342 |
-| Resolved findings | 1 |
+| Resolved findings | 0 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -121,7 +121,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md | PASS | 8 | 0 | 7 | 2716 | 0.3 | 0 |
 | skills/drawing/SKILL.md | PASS | 24 | 3 | 24 | 5082 | 0.5 | 0 |
 | skills/document-standards/references/document-type-catalog.md | FAIL | 27 | 3 | 0 | 3060 | 0.9 | 1 |
-| workspace/task_board.md | PASS | 3 | 0 | 0 | 249 | 1.2 | 0 |
+| workspace/task_board.md | PASS | 3 | 0 | 0 | 266 | 1.1 | 0 |
 | skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
 | skills/INITIALIZATION_POLICY.md | PASS | 2 | 0 | 4 | 1180 | 0.2 | 0 |
 | skills/drawing/assets/daily-index-template.md | FAIL | 1 | 1 | 0 | 210 | 0.5 | 1 |
@@ -189,7 +189,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.236s
+Ran 4 tests in 0.299s
 
 OK
 ~~~
@@ -222,7 +222,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 650 active Markdown files (716 available as link targets) and 338 local Markdown links.
+Scanned 698 active Markdown files (765 available as link targets) and 339 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -524,10 +524,6 @@ None.
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has completed
-- **synonym-rotation** · skills/asd-ste100/SKILL.md:88:192 · **recurring** · fingerprint: ce5400ef29dc517a20f612fc
-  - **Level:** advisory-free
-  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
-  - **Matched text:** delete
 - **nominalization** · skills/asd-ste100/SKILL.md:89:56 · **recurring** · fingerprint: b0f99a99288209b64ca87fa8
   - **Level:** advisory-free
   - **Message:** Action frozen into a noun. Use the verb (analyze, not perform an analysis of).
@@ -552,6 +548,10 @@ None.
   - **Level:** advisory-free
   - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
   - **Matched text:** blazing-fast
+- **synonym-rotation** · skills/asd-ste100/SKILL.md:90:152 · **recurring** · fingerprint: ce5400ef29dc517a20f612fc
+  - **Level:** advisory-free
+  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
+  - **Matched text:** delete
 - **phrasal-verb** · skills/asd-ste100/SKILL.md:92:29 · **recurring** · fingerprint: 4b3269c887ff5c340b1876ec
   - **Level:** advisory-free
   - **Message:** Soft phrasal verb. Use the single plain verb (start, contact, read, begin).
@@ -1607,10 +1607,7 @@ None.
 
 ### Resolved findings
 
-- **long-sentence** · skills/session-archiving/assets/session-brief-template.md:5:1 · **resolved** · fingerprint: 9edc4fb8b393050df4a8fe30
-  - **Level:** advisory-free
-  - **Message:** Sentence has 32 words (cap 25). Split it.
-  - **Matched text:** 32 words
+None.
 
 ## 8. Complete per-file diagnostics
 
@@ -2157,11 +2154,6 @@ No STE findings were recorded for this file.
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has completed
 
-- **synonym-rotation** · skills/asd-ste100/SKILL.md:88:192 · **recurring** · fingerprint: ce5400ef29dc517a20f612fc
-  - **Level:** advisory-free
-  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
-  - **Matched text:** delete
-
 - **nominalization** · skills/asd-ste100/SKILL.md:89:56 · **recurring** · fingerprint: b0f99a99288209b64ca87fa8
   - **Level:** advisory-free
   - **Message:** Action frozen into a noun. Use the verb (analyze, not perform an analysis of).
@@ -2191,6 +2183,11 @@ No STE findings were recorded for this file.
   - **Level:** advisory-free
   - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
   - **Matched text:** blazing-fast
+
+- **synonym-rotation** · skills/asd-ste100/SKILL.md:90:152 · **recurring** · fingerprint: ce5400ef29dc517a20f612fc
+  - **Level:** advisory-free
+  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
+  - **Matched text:** delete
 
 - **phrasal-verb** · skills/asd-ste100/SKILL.md:92:29 · **recurring** · fingerprint: 4b3269c887ff5c340b1876ec
   - **Level:** advisory-free
@@ -3081,8 +3078,8 @@ No STE findings were recorded for this file.
 - **Findings:** 3
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 249
-- **Findings per 100 words:** 1.2
+- **Words:** 266
+- **Findings per 100 words:** 1.1
 
 #### Complete diagnostics
 
