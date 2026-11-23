@@ -16,6 +16,11 @@ Task operations follow [The Worker skill](../skills/the-worker/SKILL.md).
 | [tasks/](tasks/) | Current task records |
 | [../archive/README.md](../archive/README.md) | Archive and retention policy |
 | [../archive/tasks/](../archive/tasks/) | Archived task records |
+| [../lint_reports/README.md](../lint_reports/README.md) | CI lint evidence, scope indexes, detailed Markdown reports, structured JSON, and immutable run history |
+
+## CI lint evidence
+
+For lint results, start at [the lint evidence guide](../lint_reports/README.md). Read the relevant scope index, then its latest detailed Markdown report. Use the structured JSON for source records, finding fingerprints, exact evaluated paths, and machine processing. Retrieve GitHub Actions logs or artifacts only when the report does not contain the required runner-level evidence.
 
 ## Operating rules
 
