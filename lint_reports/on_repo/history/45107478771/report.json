@@ -25,6 +25,7 @@
       "line": 94,
       "column": 54,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are reserved",
       "fingerprint": null
@@ -34,6 +35,7 @@
       "line": 180,
       "column": 40,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are reserved",
       "fingerprint": null
@@ -43,6 +45,7 @@
       "line": 14,
       "column": 79,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are created",
       "fingerprint": null
@@ -52,6 +55,7 @@
       "line": 136,
       "column": 110,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'start' and 'begin' name the same action. Pick one and use it every time.",
       "match": "Start",
       "fingerprint": null
@@ -61,6 +65,7 @@
       "line": 160,
       "column": 29,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is loaded",
       "fingerprint": null
@@ -70,6 +75,7 @@
       "line": 163,
       "column": 106,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is loaded",
       "fingerprint": null
@@ -79,6 +85,7 @@
       "line": 167,
       "column": 23,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is loaded",
       "fingerprint": null
@@ -88,6 +95,7 @@
       "line": 171,
       "column": 149,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has been loaded",
       "fingerprint": null
@@ -97,6 +105,7 @@
       "line": 171,
       "column": 153,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been loaded",
       "fingerprint": null
@@ -106,6 +115,7 @@
       "line": 184,
       "column": 36,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is known",
       "fingerprint": null
@@ -115,6 +125,7 @@
       "line": 216,
       "column": 38,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been created",
       "fingerprint": null
@@ -124,6 +135,7 @@
       "line": 238,
       "column": 28,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are focused",
       "fingerprint": null
@@ -133,6 +145,7 @@
       "line": 239,
       "column": 65,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "have been introduced",
       "fingerprint": null
@@ -142,6 +155,7 @@
       "line": 239,
       "column": 70,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been introduced",
       "fingerprint": null
@@ -151,6 +165,7 @@
       "line": 247,
       "column": 17,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is connected",
       "fingerprint": null
@@ -160,6 +175,7 @@
       "line": 249,
       "column": 37,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has been made",
       "fingerprint": null
@@ -169,6 +185,7 @@
       "line": 249,
       "column": 41,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been made",
       "fingerprint": null
@@ -178,6 +195,7 @@
       "line": 251,
       "column": 32,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has been read",
       "fingerprint": null
@@ -187,6 +205,7 @@
       "line": 251,
       "column": 36,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been read",
       "fingerprint": null
@@ -196,6 +215,7 @@
       "line": 38,
       "column": 8,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
       "match": "Verify",
       "fingerprint": null
@@ -205,6 +225,7 @@
       "line": 26,
       "column": 35,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is known",
       "fingerprint": null
@@ -214,6 +235,7 @@
       "line": 40,
       "column": 109,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is approved",
       "fingerprint": null
@@ -223,6 +245,7 @@
       "line": 21,
       "column": 69,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was violated",
       "fingerprint": null
@@ -232,6 +255,7 @@
       "line": 39,
       "column": 133,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 28 words (cap 25). Split it.",
       "match": "28 words",
       "fingerprint": null
@@ -241,6 +265,7 @@
       "line": 45,
       "column": 227,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are defined",
       "fingerprint": null
@@ -250,6 +275,7 @@
       "line": 53,
       "column": 60,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is removed",
       "fingerprint": null
@@ -259,6 +285,7 @@
       "line": 54,
       "column": 99,
       "rule": "phrasal-verb",
+      "level": "advisory-free",
       "message": "Soft phrasal verb. Use the single plain verb (start, contact, read, begin).",
       "match": "Spin up",
       "fingerprint": null
@@ -268,6 +295,7 @@
       "line": 69,
       "column": 118,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is approved",
       "fingerprint": null
@@ -277,6 +305,7 @@
       "line": 70,
       "column": 53,
       "rule": "nominalization",
+      "level": "advisory-free",
       "message": "Action frozen into a noun. Use the verb (analyze, not perform an analysis of).",
       "match": "Perform an analysis",
       "fingerprint": null
@@ -286,6 +315,7 @@
       "line": 75,
       "column": 203,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "have received",
       "fingerprint": null
@@ -295,6 +325,7 @@
       "line": 77,
       "column": 140,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has completed",
       "fingerprint": null
@@ -304,6 +335,7 @@
       "line": 84,
       "column": 192,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'delete' and 'remove' name the same action. Pick one and use it every time.",
       "match": "delete",
       "fingerprint": null
@@ -313,6 +345,7 @@
       "line": 85,
       "column": 56,
       "rule": "nominalization",
+      "level": "advisory-free",
       "message": "Action frozen into a noun. Use the verb (analyze, not perform an analysis of).",
       "match": "perform an analysis",
       "fingerprint": null
@@ -322,6 +355,7 @@
       "line": 86,
       "column": 79,
       "rule": "marketing-adjective",
+      "level": "advisory-free",
       "message": "Marketing adjective. Delete, or replace with the measurement that earns the claim.",
       "match": "seamless",
       "fingerprint": null
@@ -331,6 +365,7 @@
       "line": 86,
       "column": 89,
       "rule": "marketing-adjective",
+      "level": "advisory-free",
       "message": "Marketing adjective. Delete, or replace with the measurement that earns the claim.",
       "match": "robust",
       "fingerprint": null
@@ -340,6 +375,7 @@
       "line": 86,
       "column": 107,
       "rule": "marketing-adjective",
+      "level": "advisory-free",
       "message": "Marketing adjective. Delete, or replace with the measurement that earns the claim.",
       "match": "cutting-edge",
       "fingerprint": null
@@ -349,6 +385,7 @@
       "line": 86,
       "column": 121,
       "rule": "marketing-adjective",
+      "level": "advisory-free",
       "message": "Marketing adjective. Delete, or replace with the measurement that earns the claim.",
       "match": "effortless",
       "fingerprint": null
@@ -358,6 +395,7 @@
       "line": 86,
       "column": 133,
       "rule": "marketing-adjective",
+      "level": "advisory-free",
       "message": "Marketing adjective. Delete, or replace with the measurement that earns the claim.",
       "match": "blazing-fast",
       "fingerprint": null
@@ -367,6 +405,7 @@
       "line": 88,
       "column": 29,
       "rule": "phrasal-verb",
+      "level": "advisory-free",
       "message": "Soft phrasal verb. Use the single plain verb (start, contact, read, begin).",
       "match": "spin up",
       "fingerprint": null
@@ -376,6 +415,7 @@
       "line": 88,
       "column": 38,
       "rule": "phrasal-verb",
+      "level": "advisory-free",
       "message": "Soft phrasal verb. Use the single plain verb (start, contact, read, begin).",
       "match": "reach out",
       "fingerprint": null
@@ -385,6 +425,7 @@
       "line": 88,
       "column": 49,
       "rule": "phrasal-verb",
+      "level": "advisory-free",
       "message": "Soft phrasal verb. Use the single plain verb (start, contact, read, begin).",
       "match": "dive into",
       "fingerprint": null
@@ -394,6 +435,7 @@
       "line": 88,
       "column": 60,
       "rule": "phrasal-verb",
+      "level": "advisory-free",
       "message": "Soft phrasal verb. Use the single plain verb (start, contact, read, begin).",
       "match": "kick off",
       "fingerprint": null
@@ -403,6 +445,7 @@
       "line": 109,
       "column": 134,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has stopped",
       "fingerprint": null
@@ -412,6 +455,7 @@
       "line": 142,
       "column": 58,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "were memorized",
       "fingerprint": null
@@ -421,6 +465,7 @@
       "line": 156,
       "column": 440,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
       "match": "confirms",
       "fingerprint": null
@@ -430,6 +475,7 @@
       "line": 18,
       "column": 36,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is known",
       "fingerprint": null
@@ -439,6 +485,7 @@
       "line": 7,
       "column": 511,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has been",
       "fingerprint": null
@@ -448,6 +495,7 @@
       "line": 26,
       "column": 84,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "have received",
       "fingerprint": null
@@ -457,6 +505,7 @@
       "line": 26,
       "column": 129,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is allowed",
       "fingerprint": null
@@ -466,6 +515,7 @@
       "line": 27,
       "column": 16,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are permitted",
       "fingerprint": null
@@ -475,6 +525,7 @@
       "line": 30,
       "column": 16,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is required",
       "fingerprint": null
@@ -484,6 +535,7 @@
       "line": 31,
       "column": 17,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is allowed",
       "fingerprint": null
@@ -493,6 +545,7 @@
       "line": 37,
       "column": 58,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are capped",
       "fingerprint": null
@@ -502,6 +555,7 @@
       "line": 50,
       "column": 5,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was designed",
       "fingerprint": null
@@ -511,6 +565,7 @@
       "line": 90,
       "column": 157,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are ordered",
       "fingerprint": null
@@ -520,6 +575,7 @@
       "line": 96,
       "column": 230,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -529,6 +585,7 @@
       "line": 97,
       "column": 60,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
       "match": "verify",
       "fingerprint": null
@@ -538,6 +595,7 @@
       "line": 98,
       "column": 129,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -547,6 +605,7 @@
       "line": 101,
       "column": 3,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 32 words (cap 25). Split it.",
       "match": "32 words",
       "fingerprint": null
@@ -556,6 +615,7 @@
       "line": 101,
       "column": 95,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is paused",
       "fingerprint": null
@@ -565,6 +625,7 @@
       "line": 101,
       "column": 112,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -574,6 +635,7 @@
       "line": 106,
       "column": 41,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is unresolved",
       "fingerprint": null
@@ -583,6 +645,7 @@
       "line": 133,
       "column": 88,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is paused",
       "fingerprint": null
@@ -592,6 +655,7 @@
       "line": 134,
       "column": 78,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has stopped",
       "fingerprint": null
@@ -601,6 +665,7 @@
       "line": 134,
       "column": 108,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has proposed",
       "fingerprint": null
@@ -610,6 +675,7 @@
       "line": 135,
       "column": 61,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is needed",
       "fingerprint": null
@@ -619,6 +685,7 @@
       "line": 135,
       "column": 272,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is resolved",
       "fingerprint": null
@@ -628,6 +695,7 @@
       "line": 150,
       "column": 63,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is needed",
       "fingerprint": null
@@ -637,6 +705,7 @@
       "line": 155,
       "column": 36,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was encountered",
       "fingerprint": null
@@ -646,6 +715,7 @@
       "line": 157,
       "column": 106,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was verified",
       "fingerprint": null
@@ -655,6 +725,7 @@
       "line": 166,
       "column": 180,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is exceeded",
       "fingerprint": null
@@ -664,6 +735,7 @@
       "line": 192,
       "column": 260,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is needed",
       "fingerprint": null
@@ -673,6 +745,7 @@
       "line": 206,
       "column": 94,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has approved",
       "fingerprint": null
@@ -682,6 +755,7 @@
       "line": 233,
       "column": 126,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has been given",
       "fingerprint": null
@@ -691,6 +765,7 @@
       "line": 233,
       "column": 130,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been given",
       "fingerprint": null
@@ -700,6 +775,7 @@
       "line": 253,
       "column": 75,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are governed",
       "fingerprint": null
@@ -709,6 +785,7 @@
       "line": 142,
       "column": 288,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
       "match": "validate",
       "fingerprint": null
@@ -718,6 +795,7 @@
       "line": 144,
       "column": 163,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -727,6 +805,7 @@
       "line": 159,
       "column": 37,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is defined",
       "fingerprint": null
@@ -736,6 +815,7 @@
       "line": 4,
       "column": 158,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -745,6 +825,7 @@
       "line": 4,
       "column": 177,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "were excluded",
       "fingerprint": null
@@ -754,6 +835,7 @@
       "line": 27,
       "column": 215,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -763,6 +845,7 @@
       "line": 28,
       "column": 139,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was found",
       "fingerprint": null
@@ -772,6 +855,7 @@
       "line": 29,
       "column": 196,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 27 words (cap 25). Split it.",
       "match": "27 words",
       "fingerprint": null
@@ -781,6 +865,7 @@
       "line": 29,
       "column": 299,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -790,6 +875,7 @@
       "line": 32,
       "column": 207,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -799,6 +885,7 @@
       "line": 33,
       "column": 239,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -808,6 +895,7 @@
       "line": 33,
       "column": 459,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "being uploaded",
       "fingerprint": null
@@ -817,6 +905,7 @@
       "line": 36,
       "column": 277,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -826,6 +915,7 @@
       "line": 42,
       "column": 155,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -835,6 +925,7 @@
       "line": 42,
       "column": 276,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is needed",
       "fingerprint": null
@@ -844,6 +935,7 @@
       "line": 43,
       "column": 214,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is read",
       "fingerprint": null
@@ -853,6 +945,7 @@
       "line": 43,
       "column": 330,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -862,6 +955,7 @@
       "line": 44,
       "column": 264,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -871,6 +965,7 @@
       "line": 45,
       "column": 139,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is needed",
       "fingerprint": null
@@ -880,6 +975,7 @@
       "line": 47,
       "column": 169,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -889,6 +985,7 @@
       "line": 47,
       "column": 307,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is needed",
       "fingerprint": null
@@ -898,6 +995,7 @@
       "line": 48,
       "column": 174,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -907,6 +1005,7 @@
       "line": 49,
       "column": 290,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
       "match": "checks",
       "fingerprint": null
@@ -916,6 +1015,7 @@
       "line": 52,
       "column": 254,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is generated",
       "fingerprint": null
@@ -925,6 +1025,7 @@
       "line": 55,
       "column": 382,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -934,6 +1035,7 @@
       "line": 56,
       "column": 302,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -943,6 +1045,7 @@
       "line": 57,
       "column": 457,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -952,6 +1055,7 @@
       "line": 58,
       "column": 165,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is needed",
       "fingerprint": null
@@ -961,6 +1065,7 @@
       "line": 77,
       "column": 39,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "were reviewed",
       "fingerprint": null
@@ -970,6 +1075,7 @@
       "line": 81,
       "column": 111,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -979,6 +1085,7 @@
       "line": 81,
       "column": 139,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -988,6 +1095,7 @@
       "line": 81,
       "column": 157,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -997,6 +1105,7 @@
       "line": 81,
       "column": 187,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1006,6 +1115,7 @@
       "line": 81,
       "column": 214,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1015,6 +1125,7 @@
       "line": 81,
       "column": 240,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1024,6 +1135,7 @@
       "line": 81,
       "column": 326,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1033,6 +1145,7 @@
       "line": 81,
       "column": 394,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1042,6 +1155,7 @@
       "line": 82,
       "column": 54,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1051,6 +1165,7 @@
       "line": 82,
       "column": 264,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1060,6 +1175,7 @@
       "line": 82,
       "column": 318,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1069,6 +1185,7 @@
       "line": 82,
       "column": 435,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1078,6 +1195,7 @@
       "line": 82,
       "column": 474,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has been approved",
       "fingerprint": null
@@ -1087,6 +1205,7 @@
       "line": 82,
       "column": 478,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been approved",
       "fingerprint": null
@@ -1096,6 +1215,7 @@
       "line": 83,
       "column": 136,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are established",
       "fingerprint": null
@@ -1105,6 +1225,7 @@
       "line": 83,
       "column": 152,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1114,6 +1235,7 @@
       "line": 84,
       "column": 144,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1123,6 +1245,7 @@
       "line": 84,
       "column": 192,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1132,6 +1255,7 @@
       "line": 85,
       "column": 131,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is established",
       "fingerprint": null
@@ -1141,6 +1265,7 @@
       "line": 85,
       "column": 146,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1150,6 +1275,7 @@
       "line": 85,
       "column": 206,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is planned",
       "fingerprint": null
@@ -1159,6 +1285,7 @@
       "line": 85,
       "column": 217,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1168,6 +1295,7 @@
       "line": 86,
       "column": 199,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is planned",
       "fingerprint": null
@@ -1177,6 +1305,7 @@
       "line": 86,
       "column": 222,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1186,6 +1315,7 @@
       "line": 87,
       "column": 73,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 27 words (cap 25). Split it.",
       "match": "27 words",
       "fingerprint": null
@@ -1195,6 +1325,7 @@
       "line": 87,
       "column": 220,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1204,6 +1335,7 @@
       "line": 88,
       "column": 71,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1213,6 +1345,7 @@
       "line": 88,
       "column": 145,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 26 words (cap 25). Split it.",
       "match": "26 words",
       "fingerprint": null
@@ -1222,6 +1355,7 @@
       "line": 88,
       "column": 196,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1231,6 +1365,7 @@
       "line": 88,
       "column": 261,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is uploaded",
       "fingerprint": null
@@ -1240,6 +1375,7 @@
       "line": 88,
       "column": 368,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1249,6 +1385,7 @@
       "line": 96,
       "column": 293,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1258,6 +1395,7 @@
       "line": 98,
       "column": 41,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1267,6 +1405,7 @@
       "line": 98,
       "column": 60,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1276,6 +1415,7 @@
       "line": 98,
       "column": 226,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is justified",
       "fingerprint": null
@@ -1285,6 +1425,7 @@
       "line": 100,
       "column": 62,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1294,6 +1435,7 @@
       "line": 100,
       "column": 110,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1303,6 +1445,7 @@
       "line": 101,
       "column": 58,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1312,6 +1455,7 @@
       "line": 101,
       "column": 136,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1321,6 +1465,7 @@
       "line": 101,
       "column": 251,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1330,6 +1475,7 @@
       "line": 103,
       "column": 79,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1339,6 +1485,7 @@
       "line": 103,
       "column": 189,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1348,6 +1495,7 @@
       "line": 105,
       "column": 88,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1357,6 +1505,7 @@
       "line": 106,
       "column": 129,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was found",
       "fingerprint": null
@@ -1366,6 +1515,7 @@
       "line": 107,
       "column": 112,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1375,6 +1525,7 @@
       "line": 107,
       "column": 188,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1384,6 +1535,7 @@
       "line": 107,
       "column": 332,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1393,6 +1545,7 @@
       "line": 119,
       "column": 97,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1402,6 +1555,7 @@
       "line": 119,
       "column": 166,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1411,6 +1565,7 @@
       "line": 119,
       "column": 235,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1420,6 +1575,7 @@
       "line": 119,
       "column": 304,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1429,6 +1585,7 @@
       "line": 119,
       "column": 373,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1438,6 +1595,7 @@
       "line": 120,
       "column": 90,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1447,6 +1605,7 @@
       "line": 121,
       "column": 62,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1456,6 +1615,7 @@
       "line": 121,
       "column": 92,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1465,6 +1625,7 @@
       "line": 121,
       "column": 124,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1474,6 +1635,7 @@
       "line": 121,
       "column": 199,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are superseded",
       "fingerprint": null
@@ -1483,6 +1645,7 @@
       "line": 121,
       "column": 287,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1492,6 +1655,7 @@
       "line": 122,
       "column": 173,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1501,6 +1665,7 @@
       "line": 123,
       "column": 80,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1510,6 +1675,7 @@
       "line": 123,
       "column": 128,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1519,6 +1685,7 @@
       "line": 123,
       "column": 332,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1528,6 +1695,7 @@
       "line": 124,
       "column": 113,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1537,6 +1705,7 @@
       "line": 124,
       "column": 189,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1546,6 +1715,7 @@
       "line": 124,
       "column": 298,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1555,6 +1725,7 @@
       "line": 128,
       "column": 57,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was required",
       "fingerprint": null
@@ -1564,6 +1735,7 @@
       "line": 133,
       "column": 73,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'repair' and 'fix' name the same action. Pick one and use it every time.",
       "match": "repair",
       "fingerprint": null
@@ -1573,6 +1745,7 @@
       "line": 134,
       "column": 67,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'confirm' and 'validate' name the same action. Pick one and use it every time.",
       "match": "confirms",
       "fingerprint": null
@@ -1582,6 +1755,7 @@
       "line": 134,
       "column": 124,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are permitted",
       "fingerprint": null
@@ -1591,6 +1765,7 @@
       "line": 138,
       "column": 32,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is added",
       "fingerprint": null
@@ -1600,6 +1775,7 @@
       "line": 146,
       "column": 185,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1609,6 +1785,7 @@
       "line": 107,
       "column": 69,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is requested",
       "fingerprint": null
@@ -1618,6 +1795,7 @@
       "line": 166,
       "column": 1,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 32 words (cap 25). Split it.",
       "match": "32 words",
       "fingerprint": null
@@ -1627,6 +1805,7 @@
       "line": 166,
       "column": 376,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 29 words (cap 25). Split it.",
       "match": "29 words",
       "fingerprint": null
@@ -1636,6 +1815,7 @@
       "line": 166,
       "column": 449,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1645,6 +1825,7 @@
       "line": 166,
       "column": 827,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 29 words (cap 25). Split it.",
       "match": "29 words",
       "fingerprint": null
@@ -1654,6 +1835,7 @@
       "line": 166,
       "column": 1076,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 27 words (cap 25). Split it.",
       "match": "27 words",
       "fingerprint": null
@@ -1663,6 +1845,7 @@
       "line": 166,
       "column": 1100,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
       "match": "verify",
       "fingerprint": null
@@ -1672,6 +1855,7 @@
       "line": 166,
       "column": 1151,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is listed",
       "fingerprint": null
@@ -1681,6 +1865,7 @@
       "line": 171,
       "column": 31,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is packaged",
       "fingerprint": null
@@ -1690,6 +1875,7 @@
       "line": 189,
       "column": 35,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is known",
       "fingerprint": null
@@ -1699,6 +1885,7 @@
       "line": 190,
       "column": 27,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is known",
       "fingerprint": null
@@ -1708,6 +1895,7 @@
       "line": 191,
       "column": 35,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been loaded",
       "fingerprint": null
@@ -1717,6 +1905,7 @@
       "line": 198,
       "column": 76,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is maintained",
       "fingerprint": null
@@ -1726,6 +1915,7 @@
       "line": 237,
       "column": 21,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are wanted",
       "fingerprint": null
@@ -1735,6 +1925,7 @@
       "line": 241,
       "column": 15,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is stored",
       "fingerprint": null
@@ -1744,6 +1935,7 @@
       "line": 243,
       "column": 4,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 28 words (cap 25). Split it.",
       "match": "28 words",
       "fingerprint": null
@@ -1753,6 +1945,7 @@
       "line": 257,
       "column": 5,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 34 words (cap 25). Split it.",
       "match": "34 words",
       "fingerprint": null
@@ -1762,6 +1955,7 @@
       "line": 274,
       "column": 36,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1771,6 +1965,7 @@
       "line": 305,
       "column": 378,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is stored",
       "fingerprint": null
@@ -1780,6 +1975,7 @@
       "line": 305,
       "column": 553,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is verified",
       "fingerprint": null
@@ -1789,6 +1985,7 @@
       "line": 353,
       "column": 46,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
       "match": "Confirm",
       "fingerprint": null
@@ -1798,6 +1995,7 @@
       "line": 379,
       "column": 1,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 33 words (cap 25). Split it.",
       "match": "33 words",
       "fingerprint": null
@@ -1807,6 +2005,7 @@
       "line": 384,
       "column": 23,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are governed",
       "fingerprint": null
@@ -1816,6 +2015,7 @@
       "line": 390,
       "column": 60,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was used",
       "fingerprint": null
@@ -1825,6 +2025,7 @@
       "line": 397,
       "column": 216,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are satisfied",
       "fingerprint": null
@@ -1834,6 +2035,7 @@
       "line": 414,
       "column": 19,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is refused",
       "fingerprint": null
@@ -1843,6 +2045,7 @@
       "line": 446,
       "column": 42,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is verified",
       "fingerprint": null
@@ -1852,6 +2055,7 @@
       "line": 447,
       "column": 50,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was produced",
       "fingerprint": null
@@ -1861,6 +2065,7 @@
       "line": 448,
       "column": 42,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was returned",
       "fingerprint": null
@@ -1870,6 +2075,7 @@
       "line": 452,
       "column": 11,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is needed",
       "fingerprint": null
@@ -1879,6 +2085,7 @@
       "line": 458,
       "column": 1,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 27 words (cap 25). Split it.",
       "match": "27 words",
       "fingerprint": null
@@ -1888,6 +2095,7 @@
       "line": 464,
       "column": 73,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 27 words (cap 25). Split it.",
       "match": "27 words",
       "fingerprint": null
@@ -1897,6 +2105,7 @@
       "line": 465,
       "column": 131,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -1906,6 +2115,7 @@
       "line": 479,
       "column": 24,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are determined",
       "fingerprint": null
@@ -1915,6 +2125,7 @@
       "line": 505,
       "column": 13,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is Closed",
       "fingerprint": null
@@ -1924,6 +2135,7 @@
       "line": 61,
       "column": 53,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was returned",
       "fingerprint": null
@@ -1933,6 +2145,7 @@
       "line": 5,
       "column": 1,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 26 words (cap 25). Split it.",
       "match": "26 words",
       "fingerprint": null
@@ -1942,6 +2155,7 @@
       "line": 28,
       "column": 28,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
       "match": "verify",
       "fingerprint": null
@@ -1951,6 +2165,7 @@
       "line": 20,
       "column": 59,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are copied",
       "fingerprint": null
@@ -1960,6 +2175,7 @@
       "line": 22,
       "column": 23,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is moved",
       "fingerprint": null
@@ -1969,6 +2185,7 @@
       "line": 33,
       "column": 3,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are grouped",
       "fingerprint": null
@@ -1978,6 +2195,7 @@
       "line": 34,
       "column": 36,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are processed",
       "fingerprint": null
@@ -1987,6 +2205,7 @@
       "line": 45,
       "column": 16,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are paired",
       "fingerprint": null
@@ -1996,6 +2215,7 @@
       "line": 46,
       "column": 35,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is recorded",
       "fingerprint": null
@@ -2005,6 +2225,7 @@
       "line": 47,
       "column": 52,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are verified",
       "fingerprint": null
@@ -2014,6 +2235,7 @@
       "line": 53,
       "column": 17,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is archived",
       "fingerprint": null
@@ -2023,6 +2245,7 @@
       "line": 57,
       "column": 59,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are excluded",
       "fingerprint": null
@@ -2032,6 +2255,7 @@
       "line": 59,
       "column": 23,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is cleared",
       "fingerprint": null
@@ -2041,6 +2265,7 @@
       "line": 59,
       "column": 57,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is converted",
       "fingerprint": null
@@ -2050,6 +2275,7 @@
       "line": 60,
       "column": 51,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are written",
       "fingerprint": null
@@ -2059,6 +2285,7 @@
       "line": 66,
       "column": 70,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
       "match": "checks",
       "fingerprint": null
@@ -2068,6 +2295,7 @@
       "line": 78,
       "column": 4,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 28 words (cap 25). Split it.",
       "match": "28 words",
       "fingerprint": null
@@ -2077,6 +2305,7 @@
       "line": 88,
       "column": 4,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 33 words (cap 25). Split it.",
       "match": "33 words",
       "fingerprint": null
@@ -2086,6 +2315,7 @@
       "line": 96,
       "column": 17,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are allowed",
       "fingerprint": null
@@ -2095,6 +2325,7 @@
       "line": 97,
       "column": 72,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is unresolved",
       "fingerprint": null
@@ -2104,6 +2335,7 @@
       "line": 101,
       "column": 39,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been uploaded",
       "fingerprint": null
@@ -2113,6 +2345,7 @@
       "line": 105,
       "column": 22,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'verify' and 'validate' name the same action. Pick one and use it every time.",
       "match": "verify",
       "fingerprint": null
@@ -2122,6 +2355,7 @@
       "line": 168,
       "column": 47,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'correct' and 'repair' name the same action. Pick one and use it every time.",
       "match": "correct",
       "fingerprint": null
@@ -2131,6 +2365,7 @@
       "line": 180,
       "column": 400,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "were expected",
       "fingerprint": null
@@ -2140,6 +2375,7 @@
       "line": 199,
       "column": 37,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is paired",
       "fingerprint": null
@@ -2149,6 +2385,7 @@
       "line": 200,
       "column": 76,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is verified",
       "fingerprint": null
@@ -2158,6 +2395,7 @@
       "line": 211,
       "column": 26,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is retained",
       "fingerprint": null
@@ -2167,6 +2405,7 @@
       "line": 215,
       "column": 1,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is described",
       "fingerprint": null
@@ -2176,6 +2415,7 @@
       "line": 13,
       "column": 135,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is unresolved",
       "fingerprint": null
@@ -2185,6 +2425,7 @@
       "line": 19,
       "column": 83,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is disallowed",
       "fingerprint": null
@@ -2194,6 +2435,7 @@
       "line": 42,
       "column": 73,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is unchanged",
       "fingerprint": null
@@ -2203,6 +2445,7 @@
       "line": 45,
       "column": 14,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is needed",
       "fingerprint": null
@@ -2212,6 +2455,7 @@
       "line": 47,
       "column": 74,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is needed",
       "fingerprint": null
@@ -2221,6 +2465,7 @@
       "line": 49,
       "column": 12,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was included",
       "fingerprint": null
@@ -2230,6 +2475,7 @@
       "line": 86,
       "column": 20,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was attached",
       "fingerprint": null
@@ -2239,6 +2485,7 @@
       "line": 97,
       "column": 52,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is accepted",
       "fingerprint": null
@@ -2248,6 +2495,7 @@
       "line": 119,
       "column": 29,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is stored",
       "fingerprint": null
@@ -2257,6 +2505,7 @@
       "line": 123,
       "column": 77,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was approved",
       "fingerprint": null
@@ -2266,6 +2515,7 @@
       "line": 155,
       "column": 37,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is archived",
       "fingerprint": null
@@ -2275,6 +2525,7 @@
       "line": 159,
       "column": 37,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are read",
       "fingerprint": null
@@ -2284,6 +2535,7 @@
       "line": 181,
       "column": 62,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was delivered",
       "fingerprint": null
@@ -2293,6 +2545,7 @@
       "line": 182,
       "column": 28,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was returned",
       "fingerprint": null
@@ -2302,6 +2555,7 @@
       "line": 184,
       "column": 296,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was generated",
       "fingerprint": null
@@ -2311,6 +2565,7 @@
       "line": 184,
       "column": 336,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been uploaded",
       "fingerprint": null
@@ -2320,6 +2575,7 @@
       "line": 185,
       "column": 31,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was returned",
       "fingerprint": null
@@ -2329,6 +2585,7 @@
       "line": 186,
       "column": 26,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is unconfirmed",
       "fingerprint": null
@@ -2338,6 +2595,7 @@
       "line": 205,
       "column": 20,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is finalized",
       "fingerprint": null
@@ -2347,6 +2605,7 @@
       "line": 5,
       "column": 1,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 26 words (cap 25). Split it.",
       "match": "26 words",
       "fingerprint": null
@@ -2356,6 +2615,7 @@
       "line": 11,
       "column": 57,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 27 words (cap 25). Split it.",
       "match": "27 words",
       "fingerprint": null
@@ -2365,6 +2625,7 @@
       "line": 28,
       "column": 1,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 29 words (cap 25). Split it.",
       "match": "29 words",
       "fingerprint": null
@@ -2374,6 +2635,7 @@
       "line": 57,
       "column": 58,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
       "match": "Check",
       "fingerprint": null
@@ -2383,6 +2645,7 @@
       "line": 17,
       "column": 40,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is retired",
       "fingerprint": null
@@ -2392,6 +2655,7 @@
       "line": 18,
       "column": 125,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are verified",
       "fingerprint": null
@@ -2401,6 +2665,7 @@
       "line": 22,
       "column": 67,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is needed",
       "fingerprint": null
@@ -2410,6 +2675,7 @@
       "line": 100,
       "column": 246,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has tested",
       "fingerprint": null
@@ -2419,6 +2685,7 @@
       "line": 111,
       "column": 20,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are separated",
       "fingerprint": null
@@ -2428,6 +2695,7 @@
       "line": 113,
       "column": 15,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are described",
       "fingerprint": null
@@ -2437,6 +2705,7 @@
       "line": 115,
       "column": 19,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are recorded",
       "fingerprint": null
@@ -2446,6 +2715,7 @@
       "line": 34,
       "column": 143,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is superseded",
       "fingerprint": null
@@ -2455,6 +2725,7 @@
       "line": 3,
       "column": 126,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are indexed",
       "fingerprint": null
@@ -2464,6 +2735,7 @@
       "line": 5,
       "column": 65,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are kept",
       "fingerprint": null
@@ -2473,6 +2745,7 @@
       "line": 19,
       "column": 163,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is reversed",
       "fingerprint": null
@@ -2482,6 +2755,7 @@
       "line": 22,
       "column": 89,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is observed",
       "fingerprint": null
@@ -2491,6 +2765,7 @@
       "line": 37,
       "column": 14,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is concentrated",
       "fingerprint": null
@@ -2500,6 +2775,7 @@
       "line": 48,
       "column": 20,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "were described",
       "fingerprint": null
@@ -2509,6 +2785,7 @@
       "line": 51,
       "column": 37,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was modified",
       "fingerprint": null
@@ -2518,6 +2795,7 @@
       "line": 61,
       "column": 190,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was attached",
       "fingerprint": null
@@ -2527,6 +2805,7 @@
       "line": 61,
       "column": 219,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was rejected",
       "fingerprint": null
@@ -2536,6 +2815,7 @@
       "line": 85,
       "column": 19,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is established",
       "fingerprint": null
@@ -2545,6 +2825,7 @@
       "line": 91,
       "column": 257,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was returned",
       "fingerprint": null
@@ -2554,6 +2835,7 @@
       "line": 120,
       "column": 226,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was identified",
       "fingerprint": null
@@ -2563,6 +2845,7 @@
       "line": 136,
       "column": 66,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is prepared",
       "fingerprint": null
@@ -2572,6 +2855,7 @@
       "line": 154,
       "column": 172,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was tested",
       "fingerprint": null
@@ -2581,6 +2865,7 @@
       "line": 165,
       "column": 92,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is retained",
       "fingerprint": null
@@ -2590,6 +2875,7 @@
       "line": 168,
       "column": 20,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was returned",
       "fingerprint": null
@@ -2599,6 +2885,7 @@
       "line": 183,
       "column": 164,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is established",
       "fingerprint": null
@@ -2608,6 +2895,7 @@
       "line": 194,
       "column": 52,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has corrected",
       "fingerprint": null
@@ -2617,6 +2905,7 @@
       "line": 209,
       "column": 228,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was removed",
       "fingerprint": null
@@ -2626,6 +2915,7 @@
       "line": 209,
       "column": 266,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was preserved",
       "fingerprint": null
@@ -2635,6 +2925,7 @@
       "line": 210,
       "column": 242,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was adopted",
       "fingerprint": null
@@ -2644,6 +2935,7 @@
       "line": 214,
       "column": 32,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is maintained",
       "fingerprint": null
@@ -2653,6 +2945,7 @@
       "line": 218,
       "column": 179,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has rejected",
       "fingerprint": null
@@ -2662,6 +2955,7 @@
       "line": 224,
       "column": 30,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is included",
       "fingerprint": null
@@ -2671,6 +2965,7 @@
       "line": 250,
       "column": 20,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is maintained",
       "fingerprint": null
@@ -2680,6 +2975,7 @@
       "line": 3,
       "column": 121,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are indexed",
       "fingerprint": null
@@ -2689,6 +2985,7 @@
       "line": 25,
       "column": 23,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has been tested",
       "fingerprint": null
@@ -2698,6 +2995,7 @@
       "line": 25,
       "column": 27,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been tested",
       "fingerprint": null
@@ -2707,6 +3005,7 @@
       "line": 29,
       "column": 218,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "were returned",
       "fingerprint": null
@@ -2716,6 +3015,7 @@
       "line": 30,
       "column": 188,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was reused",
       "fingerprint": null
@@ -2725,6 +3025,7 @@
       "line": 47,
       "column": 158,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "being requested",
       "fingerprint": null
@@ -2734,6 +3035,7 @@
       "line": 13,
       "column": 215,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is measured",
       "fingerprint": null
@@ -2743,6 +3045,7 @@
       "line": 15,
       "column": 69,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are retained",
       "fingerprint": null
@@ -2752,6 +3055,7 @@
       "line": 46,
       "column": 115,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is phrased",
       "fingerprint": null
@@ -2761,6 +3065,7 @@
       "line": 56,
       "column": 24,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been approved",
       "fingerprint": null
@@ -2770,6 +3075,7 @@
       "line": 62,
       "column": 24,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has rejected",
       "fingerprint": null
@@ -2779,6 +3085,7 @@
       "line": 74,
       "column": 32,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are prohibited",
       "fingerprint": null
@@ -2788,6 +3095,7 @@
       "line": 80,
       "column": 35,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "being limited",
       "fingerprint": null
@@ -2797,6 +3105,7 @@
       "line": 89,
       "column": 141,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been established",
       "fingerprint": null
@@ -2806,6 +3115,7 @@
       "line": 91,
       "column": 171,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are covered",
       "fingerprint": null
@@ -2815,6 +3125,7 @@
       "line": 116,
       "column": 33,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has specified",
       "fingerprint": null
@@ -2824,6 +3135,7 @@
       "line": 119,
       "column": 41,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is depicted",
       "fingerprint": null
@@ -2833,6 +3145,7 @@
       "line": 127,
       "column": 120,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is unspecified",
       "fingerprint": null
@@ -2842,6 +3155,7 @@
       "line": 127,
       "column": 168,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has delegated",
       "fingerprint": null
@@ -2851,6 +3165,7 @@
       "line": 151,
       "column": 163,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has delegated",
       "fingerprint": null
@@ -2860,6 +3175,7 @@
       "line": 182,
       "column": 140,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'modify' and 'change' name the same action. Pick one and use it every time.",
       "match": "modify",
       "fingerprint": null
@@ -2869,6 +3185,7 @@
       "line": 198,
       "column": 63,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
       "match": "Confirm",
       "fingerprint": null
@@ -2878,6 +3195,7 @@
       "line": 198,
       "column": 143,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is required",
       "fingerprint": null
@@ -2887,6 +3205,7 @@
       "line": 225,
       "column": 75,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has rejected",
       "fingerprint": null
@@ -2896,6 +3215,7 @@
       "line": 244,
       "column": 41,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been restored",
       "fingerprint": null
@@ -2905,6 +3225,7 @@
       "line": 245,
       "column": 103,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been added",
       "fingerprint": null
@@ -2914,6 +3235,7 @@
       "line": 246,
       "column": 33,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been paraphrased",
       "fingerprint": null
@@ -2923,6 +3245,7 @@
       "line": 247,
       "column": 123,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been introduced",
       "fingerprint": null
@@ -2932,6 +3255,7 @@
       "line": 248,
       "column": 42,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been preserved",
       "fingerprint": null
@@ -2941,6 +3265,7 @@
       "line": 249,
       "column": 26,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been limited",
       "fingerprint": null
@@ -2950,6 +3275,7 @@
       "line": 250,
       "column": 23,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been converted",
       "fingerprint": null
@@ -2959,6 +3285,7 @@
       "line": 264,
       "column": 4,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'fetch' and 'retrieve' name the same action. Pick one and use it every time.",
       "match": "Fetch",
       "fingerprint": null
@@ -2968,6 +3295,7 @@
       "line": 265,
       "column": 66,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "being submitted",
       "fingerprint": null
@@ -2977,6 +3305,7 @@
       "line": 268,
       "column": 30,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has been archived",
       "fingerprint": null
@@ -2986,6 +3315,7 @@
       "line": 268,
       "column": 34,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been archived",
       "fingerprint": null
@@ -2995,6 +3325,7 @@
       "line": 270,
       "column": 46,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is exposed",
       "fingerprint": null
@@ -3004,6 +3335,7 @@
       "line": 272,
       "column": 98,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was submitted",
       "fingerprint": null
@@ -3013,6 +3345,7 @@
       "line": 272,
       "column": 197,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was authorized",
       "fingerprint": null
@@ -3022,6 +3355,7 @@
       "line": 289,
       "column": 87,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has delegated",
       "fingerprint": null
@@ -3031,6 +3365,7 @@
       "line": 300,
       "column": 57,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "have been checked",
       "fingerprint": null
@@ -3040,6 +3375,7 @@
       "line": 300,
       "column": 62,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been checked",
       "fingerprint": null
@@ -3049,6 +3385,7 @@
       "line": 301,
       "column": 99,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are preserved",
       "fingerprint": null
@@ -3058,6 +3395,7 @@
       "line": 302,
       "column": 41,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "have been introduced",
       "fingerprint": null
@@ -3067,6 +3405,7 @@
       "line": 302,
       "column": 46,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been introduced",
       "fingerprint": null
@@ -3076,6 +3415,7 @@
       "line": 303,
       "column": 106,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "have been added",
       "fingerprint": null
@@ -3085,6 +3425,7 @@
       "line": 303,
       "column": 111,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been added",
       "fingerprint": null
@@ -3094,6 +3435,7 @@
       "line": 304,
       "column": 31,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has been restored",
       "fingerprint": null
@@ -3103,6 +3445,7 @@
       "line": 304,
       "column": 35,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been restored",
       "fingerprint": null
@@ -3112,6 +3455,7 @@
       "line": 306,
       "column": 58,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has been audited",
       "fingerprint": null
@@ -3121,6 +3465,7 @@
       "line": 306,
       "column": 62,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been audited",
       "fingerprint": null
@@ -3130,6 +3475,7 @@
       "line": 307,
       "column": 27,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has been removed",
       "fingerprint": null
@@ -3139,6 +3485,7 @@
       "line": 307,
       "column": 31,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been removed",
       "fingerprint": null
@@ -3148,6 +3495,7 @@
       "line": 309,
       "column": 42,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is assigned",
       "fingerprint": null
@@ -3157,6 +3505,7 @@
       "line": 309,
       "column": 73,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was copied",
       "fingerprint": null
@@ -3166,6 +3515,7 @@
       "line": 44,
       "column": 40,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is inferred",
       "fingerprint": null
@@ -3175,6 +3525,7 @@
       "line": 50,
       "column": 245,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has declared",
       "fingerprint": null
@@ -3184,6 +3535,7 @@
       "line": 78,
       "column": 42,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is ordered",
       "fingerprint": null
@@ -3193,6 +3545,7 @@
       "line": 82,
       "column": 259,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has established",
       "fingerprint": null
@@ -3202,6 +3555,7 @@
       "line": 94,
       "column": 27,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are locked",
       "fingerprint": null
@@ -3211,6 +3565,7 @@
       "line": 134,
       "column": 15,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is given",
       "fingerprint": null
@@ -3220,6 +3575,7 @@
       "line": 140,
       "column": 14,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is given",
       "fingerprint": null
@@ -3229,6 +3585,7 @@
       "line": 164,
       "column": 73,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "being edited",
       "fingerprint": null
@@ -3238,6 +3595,7 @@
       "line": 177,
       "column": 31,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
       "match": "Check",
       "fingerprint": null
@@ -3247,6 +3605,7 @@
       "line": 177,
       "column": 77,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was attached",
       "fingerprint": null
@@ -3256,6 +3615,7 @@
       "line": 60,
       "column": 31,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was classified",
       "fingerprint": null
@@ -3265,6 +3625,7 @@
       "line": 21,
       "column": 206,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are permitted",
       "fingerprint": null
@@ -3274,6 +3635,7 @@
       "line": 23,
       "column": 59,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is provided",
       "fingerprint": null
@@ -3283,6 +3645,7 @@
       "line": 33,
       "column": 40,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "have reached",
       "fingerprint": null
@@ -3292,6 +3655,7 @@
       "line": 33,
       "column": 62,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
       "match": "Remove",
       "fingerprint": null
@@ -3301,6 +3665,7 @@
       "line": 17,
       "column": 11,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are enabled",
       "fingerprint": null
@@ -3310,6 +3675,7 @@
       "line": 53,
       "column": 21,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is needed",
       "fingerprint": null
@@ -3319,6 +3685,7 @@
       "line": 94,
       "column": 11,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is disputed",
       "fingerprint": null
@@ -3328,6 +3695,7 @@
       "line": 144,
       "column": 43,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are related",
       "fingerprint": null
@@ -3337,6 +3705,7 @@
       "line": 167,
       "column": 67,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is contested",
       "fingerprint": null
@@ -3346,6 +3715,7 @@
       "line": 178,
       "column": 68,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is supported",
       "fingerprint": null
@@ -3355,6 +3725,7 @@
       "line": 179,
       "column": 43,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "being asked",
       "fingerprint": null
@@ -3364,6 +3735,7 @@
       "line": 291,
       "column": 3,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been excluded",
       "fingerprint": null
@@ -3373,6 +3745,7 @@
       "line": 292,
       "column": 52,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been kept",
       "fingerprint": null
@@ -3382,6 +3755,7 @@
       "line": 29,
       "column": 14,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is contested",
       "fingerprint": null
@@ -3391,6 +3765,7 @@
       "line": 7,
       "column": 89,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is designed",
       "fingerprint": null
@@ -3400,6 +3775,7 @@
       "line": 15,
       "column": 1,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has been completed",
       "fingerprint": null
@@ -3409,6 +3785,7 @@
       "line": 15,
       "column": 5,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been completed",
       "fingerprint": null
@@ -3418,6 +3795,7 @@
       "line": 20,
       "column": 13,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is built",
       "fingerprint": null
@@ -3427,6 +3805,7 @@
       "line": 37,
       "column": 47,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is used",
       "fingerprint": null
@@ -3436,6 +3815,7 @@
       "line": 39,
       "column": 38,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is used",
       "fingerprint": null
@@ -3445,6 +3825,7 @@
       "line": 57,
       "column": 65,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "being used",
       "fingerprint": null
@@ -3454,6 +3835,7 @@
       "line": 268,
       "column": 11,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "being used",
       "fingerprint": null
@@ -3463,6 +3845,7 @@
       "line": 99,
       "column": 19,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "being discussed",
       "fingerprint": null
@@ -3472,6 +3855,7 @@
       "line": 194,
       "column": 41,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "being cited",
       "fingerprint": null
@@ -3481,6 +3865,7 @@
       "line": 71,
       "column": 90,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is known",
       "fingerprint": null
@@ -3490,6 +3875,7 @@
       "line": 125,
       "column": 41,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is mentioned",
       "fingerprint": null
@@ -3499,6 +3885,7 @@
       "line": 133,
       "column": 339,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -3508,6 +3895,7 @@
       "line": 133,
       "column": 408,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is provided",
       "fingerprint": null
@@ -3517,6 +3905,7 @@
       "line": 5,
       "column": 1,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 32 words (cap 25). Split it.",
       "match": "32 words",
       "fingerprint": null
@@ -3526,6 +3915,7 @@
       "line": 13,
       "column": 64,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is curated",
       "fingerprint": null
@@ -3535,6 +3925,7 @@
       "line": 29,
       "column": 8,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was completed",
       "fingerprint": null
@@ -3544,6 +3935,7 @@
       "line": 49,
       "column": 20,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'verify' and 'confirm' name the same action. Pick one and use it every time.",
       "match": "verify",
       "fingerprint": null
@@ -3553,6 +3945,7 @@
       "line": 84,
       "column": 21,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "being discussed",
       "fingerprint": null
@@ -3562,6 +3955,7 @@
       "line": 93,
       "column": 11,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are limited",
       "fingerprint": null
@@ -3571,6 +3965,7 @@
       "line": 121,
       "column": 164,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is added",
       "fingerprint": null
@@ -3580,6 +3975,7 @@
       "line": 124,
       "column": 130,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is established",
       "fingerprint": null
@@ -3589,6 +3985,7 @@
       "line": 128,
       "column": 343,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was rejected",
       "fingerprint": null
@@ -3598,6 +3995,7 @@
       "line": 186,
       "column": 170,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was supplied",
       "fingerprint": null
@@ -3607,6 +4005,7 @@
       "line": 189,
       "column": 23,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "being tested",
       "fingerprint": null
@@ -3616,6 +4015,7 @@
       "line": 227,
       "column": 65,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was returned",
       "fingerprint": null
@@ -3625,6 +4025,7 @@
       "line": 238,
       "column": 24,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is known",
       "fingerprint": null
@@ -3634,6 +4035,7 @@
       "line": 255,
       "column": 28,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was attached",
       "fingerprint": null
@@ -3643,6 +4045,7 @@
       "line": 267,
       "column": 33,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was supplied",
       "fingerprint": null
@@ -3652,6 +4055,7 @@
       "line": 282,
       "column": 44,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was created",
       "fingerprint": null
@@ -3661,6 +4065,7 @@
       "line": 292,
       "column": 68,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was delivered",
       "fingerprint": null
@@ -3670,6 +4075,7 @@
       "line": 293,
       "column": 36,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was returned",
       "fingerprint": null
@@ -3679,6 +4085,7 @@
       "line": 293,
       "column": 58,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is unverified",
       "fingerprint": null
@@ -3688,6 +4095,7 @@
       "line": 296,
       "column": 4,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is uploaded",
       "fingerprint": null
@@ -3697,6 +4105,7 @@
       "line": 297,
       "column": 78,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is recorded",
       "fingerprint": null
@@ -3706,6 +4115,7 @@
       "line": 298,
       "column": 48,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was generated",
       "fingerprint": null
@@ -3715,6 +4125,7 @@
       "line": 299,
       "column": 75,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was returned",
       "fingerprint": null
@@ -3724,6 +4135,7 @@
       "line": 300,
       "column": 68,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is unconfirmed",
       "fingerprint": null
@@ -3733,6 +4145,7 @@
       "line": 310,
       "column": 20,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is finalized",
       "fingerprint": null
@@ -3742,6 +4155,7 @@
       "line": 314,
       "column": 53,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is renamed",
       "fingerprint": null
@@ -3751,6 +4165,7 @@
       "line": 336,
       "column": 242,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is verified",
       "fingerprint": null
@@ -3760,6 +4175,7 @@
       "line": 338,
       "column": 35,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is stored",
       "fingerprint": null
@@ -3769,6 +4185,7 @@
       "line": 385,
       "column": 69,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is based",
       "fingerprint": null
@@ -3778,6 +4195,7 @@
       "line": 17,
       "column": 227,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is Closed",
       "fingerprint": null
@@ -3787,6 +4205,7 @@
       "line": 12,
       "column": 63,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is required",
       "fingerprint": null
@@ -3796,6 +4215,7 @@
       "line": 21,
       "column": 59,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are copied",
       "fingerprint": null
@@ -3805,6 +4225,7 @@
       "line": 23,
       "column": 16,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is moved",
       "fingerprint": null
@@ -3814,6 +4235,7 @@
       "line": 45,
       "column": 38,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is preserved",
       "fingerprint": null
@@ -3823,6 +4245,7 @@
       "line": 50,
       "column": 11,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are reserved",
       "fingerprint": null
@@ -3832,6 +4255,7 @@
       "line": 73,
       "column": 215,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are Verified",
       "fingerprint": null
@@ -3841,6 +4265,7 @@
       "line": 94,
       "column": 206,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'verify' and 'validate' name the same action. Pick one and use it every time.",
       "match": "Verify",
       "fingerprint": null
@@ -3850,6 +4275,7 @@
       "line": 94,
       "column": 241,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
       "match": "checking",
       "fingerprint": null
@@ -3859,6 +4285,7 @@
       "line": 105,
       "column": 12,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is intended",
       "fingerprint": null
@@ -3868,6 +4295,7 @@
       "line": 113,
       "column": 276,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is updated",
       "fingerprint": null
@@ -3877,6 +4305,7 @@
       "line": 122,
       "column": 37,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is paired",
       "fingerprint": null
@@ -3886,6 +4315,7 @@
       "line": 123,
       "column": 76,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is verified",
       "fingerprint": null
@@ -3895,6 +4325,7 @@
       "line": 134,
       "column": 26,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is retained",
       "fingerprint": null
@@ -3904,6 +4335,7 @@
       "line": 138,
       "column": 1,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is described",
       "fingerprint": null
@@ -3913,6 +4345,7 @@
       "line": 54,
       "column": 61,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is provided",
       "fingerprint": null
@@ -3922,6 +4355,7 @@
       "line": 54,
       "column": 234,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'validate' and 'verify' name the same action. Pick one and use it every time.",
       "match": "validate",
       "fingerprint": null
@@ -3931,6 +4365,7 @@
       "line": 71,
       "column": 56,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
       "match": "check",
       "fingerprint": null
@@ -3940,6 +4375,7 @@
       "line": 71,
       "column": 111,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is needed",
       "fingerprint": null
@@ -3949,6 +4385,7 @@
       "line": 268,
       "column": 168,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has been verified",
       "fingerprint": null
@@ -3958,6 +4395,7 @@
       "line": 268,
       "column": 172,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "been verified",
       "fingerprint": null
@@ -3967,6 +4405,7 @@
       "line": 268,
       "column": 273,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -3976,6 +4415,7 @@
       "line": 268,
       "column": 411,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
       "match": "remove",
       "fingerprint": null
@@ -3985,6 +4425,7 @@
       "line": 286,
       "column": 5,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'fetch' and 'retrieve' name the same action. Pick one and use it every time.",
       "match": "Fetch",
       "fingerprint": null
@@ -3994,6 +4435,7 @@
       "line": 287,
       "column": 188,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'modify' and 'change' name the same action. Pick one and use it every time.",
       "match": "modify",
       "fingerprint": null
@@ -4003,6 +4445,7 @@
       "line": 45,
       "column": 22,
       "rule": "present-perfect",
+      "level": "advisory",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "match": "has started",
       "fingerprint": null
@@ -4012,6 +4455,7 @@
       "line": 55,
       "column": 1,
       "rule": "long-sentence",
+      "level": "advisory-free",
       "message": "Sentence has 26 words (cap 25). Split it.",
       "match": "26 words",
       "fingerprint": null
@@ -4021,6 +4465,7 @@
       "line": 55,
       "column": 361,
       "rule": "semicolon",
+      "level": "advisory-free",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "match": ";",
       "fingerprint": null
@@ -4030,6 +4475,7 @@
       "line": 18,
       "column": 108,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is written",
       "fingerprint": null
@@ -4039,6 +4485,7 @@
       "line": 46,
       "column": 21,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was inspected",
       "fingerprint": null
@@ -4048,6 +4495,7 @@
       "line": 57,
       "column": 58,
       "rule": "synonym-rotation",
+      "level": "advisory-free",
       "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
       "match": "checks",
       "fingerprint": null
@@ -4057,6 +4505,7 @@
       "line": 73,
       "column": 20,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was checked",
       "fingerprint": null
@@ -4066,6 +4515,7 @@
       "line": 74,
       "column": 23,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "was checked",
       "fingerprint": null
@@ -4075,6 +4525,7 @@
       "line": 7,
       "column": 110,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "are removed",
       "fingerprint": null
@@ -4084,6 +4535,7 @@
       "line": 7,
       "column": 137,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is exceeded",
       "fingerprint": null
@@ -4093,6 +4545,7 @@
       "line": 7,
       "column": 162,
       "rule": "passive-voice",
+      "level": "advisory",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "match": "is preserved",
       "fingerprint": null
@@ -4108,5 +4561,293 @@
     "marketing-adjective": 5,
     "semicolon": 78
   },
-  "fingerprints_available": false
+  "fingerprints_available": false,
+  "hard_findings": 142,
+  "file_results": [
+    {
+      "path": "images/README.md",
+      "findings": 1,
+      "hard_findings": 0,
+      "baseline": 0,
+      "exit_code": 0
+    },
+    {
+      "path": "images/takeout/README.md",
+      "findings": 1,
+      "hard_findings": 0,
+      "baseline": 0,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/agent-skill-authoring/SKILL.md",
+      "findings": 17,
+      "hard_findings": 1,
+      "baseline": 6,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md",
+      "findings": 1,
+      "hard_findings": 1,
+      "baseline": 0,
+      "exit_code": 1
+    },
+    {
+      "path": "skills/asd-ste100/README.md",
+      "findings": 2,
+      "hard_findings": 0,
+      "baseline": 0,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/asd-ste100/SKILL.md",
+      "findings": 23,
+      "hard_findings": 15,
+      "baseline": 31,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/asd-ste100/references/repository-writing-policy.md",
+      "findings": 1,
+      "hard_findings": 0,
+      "baseline": 0,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/asd-ste100/references/writing-rules.md",
+      "findings": 8,
+      "hard_findings": 0,
+      "baseline": 6,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/conversation-mode/SKILL.md",
+      "findings": 22,
+      "hard_findings": 5,
+      "baseline": 3,
+      "exit_code": 1
+    },
+    {
+      "path": "skills/document-standards/SKILL.md",
+      "findings": 3,
+      "hard_findings": 2,
+      "baseline": 0,
+      "exit_code": 1
+    },
+    {
+      "path": "skills/document-standards/references/document-type-catalog.md",
+      "findings": 97,
+      "hard_findings": 74,
+      "baseline": 0,
+      "exit_code": 1
+    },
+    {
+      "path": "skills/drawing/SKILL.md",
+      "findings": 35,
+      "hard_findings": 14,
+      "baseline": 24,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/drawing/assets/attempt-template.md",
+      "findings": 1,
+      "hard_findings": 0,
+      "baseline": 0,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/drawing/assets/daily-index-template.md",
+      "findings": 2,
+      "hard_findings": 2,
+      "baseline": 0,
+      "exit_code": 1
+    },
+    {
+      "path": "skills/drawing/references/archive-and-delivery.md",
+      "findings": 25,
+      "hard_findings": 5,
+      "baseline": 7,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/drawing/references/generation-recovery-and-provenance.md",
+      "findings": 19,
+      "hard_findings": 0,
+      "baseline": 17,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/drawing/references/image-editing-protocol.md",
+      "findings": 4,
+      "hard_findings": 4,
+      "baseline": 4,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/drawing/references/patterns/PATTERN-TEMPLATES.md",
+      "findings": 7,
+      "hard_findings": 0,
+      "baseline": 0,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/drawing/references/patterns/README.md",
+      "findings": 1,
+      "hard_findings": 0,
+      "baseline": 0,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/drawing/references/patterns/failure-patterns.md",
+      "findings": 25,
+      "hard_findings": 0,
+      "baseline": 0,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/drawing/references/patterns/successful-patterns.md",
+      "findings": 6,
+      "hard_findings": 0,
+      "baseline": 0,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/drawing/references/prompt-fidelity.md",
+      "findings": 48,
+      "hard_findings": 3,
+      "baseline": 15,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/drawing/references/series-continuity-and-iteration.md",
+      "findings": 10,
+      "hard_findings": 1,
+      "baseline": 9,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/drawing/references/style-guide.md",
+      "findings": 1,
+      "hard_findings": 0,
+      "baseline": 0,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/github-actions/SKILL.md",
+      "findings": 4,
+      "hard_findings": 1,
+      "baseline": 0,
+      "exit_code": 1
+    },
+    {
+      "path": "skills/philosophy-religion-asceticism/README.md",
+      "findings": 1,
+      "hard_findings": 0,
+      "baseline": 0,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/philosophy-religion-asceticism/SKILL.md",
+      "findings": 8,
+      "hard_findings": 0,
+      "baseline": 7,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/philosophy-religion-asceticism/references/answer-patterns.md",
+      "findings": 1,
+      "hard_findings": 0,
+      "baseline": 0,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md",
+      "findings": 8,
+      "hard_findings": 0,
+      "baseline": 7,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/philosophy-religion-asceticism/references/source-standards.md",
+      "findings": 2,
+      "hard_findings": 0,
+      "baseline": 1,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/session-archiving/SKILL.md",
+      "findings": 4,
+      "hard_findings": 1,
+      "baseline": 7,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/session-archiving/assets/session-brief-template.md",
+      "findings": 1,
+      "hard_findings": 1,
+      "baseline": 0,
+      "exit_code": 1
+    },
+    {
+      "path": "skills/session-archiving/references/archive-records-and-image-prompts.md",
+      "findings": 28,
+      "hard_findings": 1,
+      "baseline": 20,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/session-archiving/references/drawing-session-closeout.md",
+      "findings": 1,
+      "hard_findings": 0,
+      "baseline": 0,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/session-archiving/references/image-provenance-and-webp.md",
+      "findings": 14,
+      "hard_findings": 2,
+      "baseline": 2,
+      "exit_code": 0
+    },
+    {
+      "path": "skills/the-worker/SKILL.md",
+      "findings": 10,
+      "hard_findings": 6,
+      "baseline": 0,
+      "exit_code": 1
+    },
+    {
+      "path": "workspace/README.md",
+      "findings": 3,
+      "hard_findings": 2,
+      "baseline": 0,
+      "exit_code": 1
+    },
+    {
+      "path": "workspace/TASK_TEMPLATE.md",
+      "findings": 5,
+      "hard_findings": 1,
+      "baseline": 0,
+      "exit_code": 1
+    },
+    {
+      "path": "workspace/task_board.md",
+      "findings": 3,
+      "hard_findings": 0,
+      "baseline": 0,
+      "exit_code": 0
+    }
+  ],
+  "failed_files": [
+    "skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md",
+    "skills/conversation-mode/SKILL.md",
+    "skills/document-standards/SKILL.md",
+    "skills/document-standards/references/document-type-catalog.md",
+    "skills/drawing/assets/daily-index-template.md",
+    "skills/github-actions/SKILL.md",
+    "skills/session-archiving/assets/session-brief-template.md",
+    "skills/the-worker/SKILL.md",
+    "workspace/README.md",
+    "workspace/TASK_TEMPLATE.md"
+  ]
 }
