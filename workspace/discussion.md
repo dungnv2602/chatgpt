@@ -1,10 +1,10 @@
 ## Current Step
 
-- **2026-11-23 15:34 UTC — Event-driven Ledger handoff:** The Ledger now creates Proposed Worker tasks during report ingestion for newly identified actionable findings. It groups related findings, updates task evidence and references, and excludes task-only pushes from diagnostics sweeps. Schema migration does not backfill the existing backlog. Regression coverage is committed; hosted validation is pending a natural run. Do not poll, dispatch, or rerun Actions. Do not access `master/` or `archive/`.
+- **2026-11-23 15:41 UTC — Event-driven Ledger handoff implemented:** The Ledger creates grouped Proposed Worker tasks for newly identified actionable findings during report ingestion. Linked findings refresh active tasks; resolved findings may reopen into a follow-up. Schema migration does not taskify historical findings. Task files and the task board are excluded from the diagnostics, Document Standards, and changed-lint push triggers to prevent feedback loops. Regression tests are committed; hosted validation is pending a natural run. Do not poll, dispatch, or rerun Actions. Do not access `master/` or `archive/`.
 
 ## Open Discussions
 
-- **2026-11-23 15:34 UTC — Event-driven Ledger validation:** The Ledger task-creation change is committed on `gpt`. The next natural diagnostics run should validate schema 1.3.0, event-only task creation, task grouping, evidence refresh, and task-only push exclusion. No polling, manual dispatch, or user action is required.
+- **2026-11-23 15:41 UTC — Event-driven Ledger validation:** The next natural diagnostics run should validate schema 1.3.0, new-finding-only task creation, historical-backlog preservation, grouped task reuse, evidence refresh, priority promotion, and generated-path trigger exclusions. Tests were not run locally or polled. No manual dispatch or user action is required.
 
 - **2026-11-23 14:52 UTC — STE lint validation remains unverified:** STE Lint Changed run [#552](https://github.com/dungnv2602/chatgpt/actions/runs/45193354825) was cancelled. No successful style-lint result is recorded. The task record requires a naturally completed run before style validation can be claimed. Do not poll, dispatch, or rerun workflows. No user action is required unless the user changes this restriction.
 
