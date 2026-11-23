@@ -1,4 +1,4 @@
-# STE Lint Changed Documentation — run 45159823905
+# STE Lint Changed Documentation — run 45159953710
 
 ## Run identity
 
@@ -6,38 +6,38 @@
 | --- | --- |
 | Workflow | STE Lint Changed Documentation |
 | Workflow path | .github/workflows/ste-lint-changed.yml |
-| Run / attempt | 45159823905 / 1 |
-| Run number | 475 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45159823905 |
+| Run / attempt | 45159953710 / 1 |
+| Run number | 476 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45159953710 |
 | Branch | gpt |
-| Commit | 124490738adca9a81095af56a3ebbd9a059bebf8 |
+| Commit | 910b0e7c689080739675bba0b4cbf5ff4efffc16 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T10:51:06Z |
-| Status at capture | completed |
-| Observed conclusion | cancelled |
-| Projected conclusion | Not calculated |
-| Reporter job | completed / cancelled |
-| Capture stage | post_run |
+| Created (UTC) | 2026-11-23T10:51:59Z |
+| Status at capture | in_progress |
+| Observed conclusion | Not yet available |
+| Projected conclusion | cancelled |
+| Reporter job | in_progress / Pending |
+| Capture stage | pre_finalizer |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T10:52:26Z |
+| Captured (UTC) | 2026-11-23T10:52:49Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | cancelled |
+| State | in_progress |
 | Primary category | None |
 | Jobs | 2 |
-| Steps | 4 |
+| Steps | 17 |
 | Issues | 0 |
-| Annotations | 1 |
+| Annotations | 3 |
 | Artifacts | 0 |
-| Capture errors | 1 |
+| Capture errors | 2 |
 
 ## Failure classification
 
-No failure category identified.
+No failure category identified. The parent run is still in progress. The projected conclusion is provisional.
 
 The run conclusion records the workflow outcome. A cancelled run remains in history. Cancellation alone does not create an actionable issue. The generator also excludes known downstream status-propagation steps after cancellation.
 
@@ -45,8 +45,8 @@ The run conclusion records the workflow outcome. A cancelled run remains in hist
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 137642039892 | Reject superseded runs and find lint baseline | completed | cancelled | 4 | logs/job-137642039892.log |
-| 137642113848 | Lint changed Markdown files and publish detailed evidence | completed | cancelled | 0 | logs/job-137642113848.log |
+| 137642486222 | Reject superseded runs and find lint baseline | completed | success | 4 | logs/job-137642486222.log |
+| 137642585953 | Lint changed Markdown files and publish detailed evidence | completed | cancelled | 13 | logs/job-137642585953.log |
 
 ## Actionable step outcomes
 
@@ -56,7 +56,9 @@ No records were captured.
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 137642039892 | failure | .github | 1 |  | The run was canceled by @github-actions[bot]. |
+| 137642585953 | failure | .github | 1 |  | Canceling since a higher priority waiting request for STE Lint Changed Documentation-refs/heads/gpt exists |
+| 137642585953 | warning | .github | 3 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 137642585953 | failure | .github | 69 |  | The operation was canceled. |
 
 ## Artifacts
 
@@ -66,8 +68,8 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137642039892 | Reject superseded runs and find lint baseline | logs/job-137642039892.log | 8036 | False |  |
-| 137642113848 | Lint changed Markdown files and publish detailed evidence | logs/job-137642113848.log | 29 | False |  |
+| 137642486222 | Reject superseded runs and find lint baseline | logs/job-137642486222.log | 82 | False |  |
+| 137642585953 | Lint changed Markdown files and publish detailed evidence | logs/job-137642585953.log | 82 | False |  |
 
 ## Evidence coverage
 
@@ -75,7 +77,8 @@ One or more evidence sources were unavailable. This report is Incomplete.
 
 | Source | HTTP status | Limitation |
 | --- | --- | --- |
-| job_log | Not recorded | log not found: 137642113848  |
+| job_log | Not recorded | run 45159953710 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45159953710 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
