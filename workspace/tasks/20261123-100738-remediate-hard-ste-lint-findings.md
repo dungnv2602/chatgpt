@@ -191,7 +191,7 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 7. Current State
 
-The approved task is In Progress and is the current execution. All 75 baseline hard findings in the Document Type Catalog, all 14 in `skills/drawing/SKILL.md`, all nine in `skills/the-worker/SKILL.md`, all five in `skills/drawing/references/archive-and-delivery.md`, and all five in `skills/github-actions/SKILL.md`, all five in `skills/conversation-mode/SKILL.md`, and all four in `skills/document-standards/SKILL.md` and all three in `skills/session-archiving/SKILL.md` and all four in `skills/drawing/references/image-editing-protocol.md` and all three in `skills/drawing/references/prompt-fidelity.md` and both in `skills/agent-skill-authoring/SKILL.md` and both in `skills/session-archiving/references/image-provenance-and-webp.md` and both in `skills/drawing/assets/daily-index-template.md` have source-level edits. In `skills/asd-ste100/SKILL.md`, two non-example findings have source-level edits. Thirteen findings remain in deliberate examples that the repository writing policy says to preserve. Hosted validation remains pending. The 319 advisory findings remain out of scope.
+The approved task is In Progress and is the current execution. Source-level edits address 136 of the 155 baseline hard findings across 14 files. These include all 75 findings in the Document Type Catalog. In `skills/asd-ste100/SKILL.md`, two non-example findings have source-level edits. Thirteen findings remain in deliberate examples that the repository writing policy says to preserve. Six additional single-finding files remain under review. Hosted validation remains pending. The 319 advisory findings remain out of scope.
 
 ## 8. Remaining Work
 
@@ -202,10 +202,11 @@ The approved task is In Progress and is the current execution. All 75 baseline h
 
 ## 9. Next Actions
 
-1. Review the single hard finding in `skills/drawing/assets/attempt-template.md` against the complete template and owner workflow.
-2. Preserve separate record, generation, and user-decision states.
-3. Apply the fix on `gpt` and inspect naturally generated hosted reports.
-4. Repeat until the approved hard-finding set is resolved or a policy conflict requires user direction.
+1. Review the single hard finding in `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md` against its owner skill and catalog entry.
+2. Preserve the canonical template structure and authoring contract.
+3. Review the remaining single-finding files and preserve all applicable template and workflow contracts.
+4. Resolve the 13 intentional-example findings only after user direction. Do not rewrite examples that the repository policy says to preserve.
+5. Apply fixes on `gpt` and inspect naturally generated hosted reports.
 
 ## 10. References
 
