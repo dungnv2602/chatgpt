@@ -153,12 +153,11 @@ A skill is foundational only when it governs baseline collaboration, repository 
 To make a skill foundational:
 
 1. Ask for explicit user direction when the classification is not already clear from the request.
-2. Add the skill to the canonical foundational initialization sequence in `skills/SESSION_START.md`.
-3. Add it to the mandatory foundational loading sequence in `skills/SESSION_START.md` only when the skill is required before ordinary project work.
-4. Record the foundational dependency in `skills/INITIALIZATION_POLICY.md` when it changes the initialization contract.
-5. Keep its activation conditional on the project's explicit initialization cues. Do not introduce automatic loading at the beginning of every conversation unless the user explicitly requests that policy.
-6. Define whether the skill is loaded once per conversation, refreshed only when changed, or consulted on demand. Avoid redundant retrievals.
-7. Check that the new dependency does not activate a specialist role or load unrelated task-specific materials.
+2. Add the skill to the canonical loading sequence in `skills/SESSION_START.md` only when it must load before ordinary project work.
+3. Record the dependency in `skills/INITIALIZATION_POLICY.md` when it changes the initialization contract.
+4. Keep activation conditional on the project's explicit initialization cues. Do not introduce automatic loading at the beginning of every conversation unless the user explicitly requests that policy.
+5. Define whether the skill is loaded once per conversation, refreshed only when changed, or consulted on demand. Avoid redundant retrievals.
+6. Check that the new dependency does not activate a specialist role or load unrelated task-specific materials.
 
 This skill is task-specific. Load it when you create, revise, check, reorganize, or integrate a skill. Do not load it during ordinary foundational initialization. The Worker owns the baseline session and collaboration rules.
 
