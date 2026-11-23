@@ -1,14 +1,24 @@
 ## Current Step
 
-Implement the canonical shared lint-report format first. Update the generator-owned schema, detailed Markdown output, regression tests, and catalog. Commit and read back these format authorities before workflow integration.
+Integrate the shared generator into both lint workflows. Capture every file result and validation output, publish both report scopes and history, preserve the root compatibility report, and keep lint failures visible.
 ## Open Discussions
 
 - **2026-11-23 05:06 UTC — Changed-document lint-report failure:** Newest run [45115031724](https://github.com/dungnv2602/chatgpt/actions/runs/45115031724) fails because the anchor checker treats `{run_url}` in the report template as a local file. Report generation then fails because the workflow passes a literal `\\` argument. User has now authorized investigation and repair of the changed-report workflow and reporting system.
+- **2026-11-23 05:18 UTC — Full-document run after report-format change:** Run [45116930355](https://github.com/dungnv2602/chatgpt/actions/runs/45116930355) failed because the anchor checker had an indentation error in the new placeholder-handling branch. The source was corrected in commit [642b5b2](https://github.com/dungnv2602/chatgpt/commit/642b5b21c4b3360e0ae06b0c83ffcf348234582c). Hosted confirmation remains outstanding.
 - **2026-11-23 05:06 UTC — Full-document lint result needs classification:** Newest run [45114176416](https://github.com/dungnv2602/chatgpt/actions/runs/45114176416) completed its full audit and published evidence, then failed its final gate because the audit reported lint findings. Confirm whether those findings are legitimate new violations or report/parser defects.
 - **2026-11-23 — Document Standards workflow:** Path filters now include `skills/**`, `novels/templates/**`, the novel README/workflow, and the shared task template/README. The change has not yet received a verified hosted result. Do not wait or poll.
 - **2026-11-23 — Session startup and lint-report investigation:** User invoked `start session` and authorized investigation and repair of the changed-document lint-report workflow, including report generation, report placement, detail level, workflow reliability, and regression coverage.
 
 ## Reports
+### 2026-11-23 — Shared lint-report format consolidated
+
+- Consolidated repository-wide and changed-document reports under the existing generator-owned contract.
+- Schema version 1.1.0 supports both scopes. Markdown now includes exact coverage, per-file outcome and metrics, full diagnostics, checks with captured output, baseline comparisons, provenance, and integrity details. JSON retains the original per-file linter records.
+- Added four report-generator regression tests and three anchor-check tests. Updated the Document Type Catalog.
+- Corrected the placeholder matcher after hosted run [45116930355](https://github.com/dungnv2602/chatgpt/actions/runs/45116930355) exposed an indentation defect. The corrected checker is in commit [642b5b2](https://github.com/dungnv2602/chatgpt/commit/642b5b21c4b3360e0ae06b0c83ffcf348234582c).
+- Format commit: [c7bf066](https://github.com/dungnv2602/chatgpt/commit/c7bf066b7fc27d57764467d0f038c1a3350201f2). Relevant source, assets, tests, and catalog were read back. Hosted test confirmation is still outstanding.
+
+
 
 ### 2026-11-23 — Template placement audit completed
 
