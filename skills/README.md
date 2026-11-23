@@ -6,13 +6,14 @@ Each skill has a `SKILL.md` file with Agent Skills YAML frontmatter. The `name` 
 
 ## Foundational skills
 
-These skills govern baseline collaboration and cross-cutting repository work. Load them only through the explicit foundational initialization procedure. Do not load them automatically at the start of a conversation.
+These skills govern baseline collaboration, cross-cutting repository work, and document governance. Load them only through the explicit foundational initialization procedure. Do not load them automatically at the start of a conversation.
 
 | Skill | Responsibility |
 |---|---|
 | [the-worker](the-worker/SKILL.md) | Session continuity, task operations, collaboration modes, and discussion-register maintenance |
 | [asd-ste100](asd-ste100/SKILL.md) | Controlled-language rules for skill and technical documentation |
 | [github-actions](github-actions/SKILL.md) | GitHub Actions workflow design, optimization, security, and verification |
+| [document-standards](document-standards/SKILL.md) | Template-first document governance, canonical formats, and structural validation |
 
 The Worker's mandatory [Conversation Mode reference](the-worker/references/conversation-mode.md) defines Default Mode, Condensed Mode, and the discussion-register contract.
 
@@ -20,7 +21,7 @@ The Worker's mandatory [Conversation Mode reference](the-worker/references/conve
 
 Load specialist skills in dependency order. Do not load them during ordinary foundational initialization unless the user's task requires the next tier.
 
-1. **Foundational:** The Worker (including its mandatory Conversation Mode reference), ASD-STE100, and GitHub Actions.
+1. **Foundational:** The Worker (including its mandatory Conversation Mode reference), ASD-STE100, GitHub Actions, and Document Standards.
 2. **Drawing:** The Worker's archive/media references, the Drawing skill, and its required references. Activate only after foundational initialization passes. Load only the Worker references required by the drawing or archive procedure.
 3. **Novelist:** Romantic Storyteller and active novel records. Activate only for the novelist role.
 
@@ -40,7 +41,6 @@ Load these skills only when the request or an explicit role-initiation procedure
 | [prompt-master](prompt-master/SKILL.md) | Prompt analysis, design, adaptation, or optimization |
 | [agent-skill-authoring](agent-skill-authoring/SKILL.md) | Creating, revising, checking, or integrating Agent Skills definitions |
 | [romantic-storyteller-visual-artist](romantic-storyteller-visual-artist/SKILL.md) | Romantic narrative or visual storytelling. The Drawing skill is a prerequisite for novelist-role initialization and governs visual work. |
-| [document-standards](document-standards/SKILL.md) | Template-first document authoring, canonical formats, structural validation, and migration |
 
 ## Foundational initialization
 
