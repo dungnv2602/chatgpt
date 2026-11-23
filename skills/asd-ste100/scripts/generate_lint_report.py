@@ -110,3 +110,5 @@ index["runs"].sort(key=lambda row: (row["generated_at_utc"], row["run_id"]))
 index_path.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 (scope_root / "latest-lint-report.md").write_text((out / "report.md").read_text(encoding="utf-8"), encoding="utf-8")
 (scope_root / "latest-lint-report.json").write_text((out / "report.json").read_text(encoding="utf-8"), encoding="utf-8")
+integrity = {"algorithm": "SHA-256", "files": {name: hashlib.sha256((out / name).read_bytes()).hexdigest() for name in ("report.md", "report.json")}}
+(out / "integrity.json").write_text(json.dumps(integrity, indent=2) + "\\n", encoding="utf-8")
