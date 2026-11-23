@@ -190,7 +190,7 @@ workflow, while avoiding redundant retrievals.
    - Its current blob SHA is known to differ from the recorded SHA.
    - The pattern file has not yet been loaded in this conversation.
    Reload only the changed or newly needed file. Retain the other verified content.
-4. Review `PATTERN-TEMPLATES.md` only when creating or revising a pattern.
+4. Review `assets/pattern-entry-templates.md` only when creating or revising a pattern.
 5. The active session brief and the user's latest explicit instructions always
    outrank pattern guidance. Patterns inform execution. They do not authorize
    creative changes.
@@ -519,7 +519,7 @@ After generation or editing, preserve original outputs and record provenance. Ch
 - `references/patterns/README.md` — canonical pattern index. Load the index and both pattern files once per conversation.
 - `references/patterns/successful-patterns.md` — evidence-backed successful techniques.
 - `references/patterns/failure-patterns.md` — documented failures and tested countermeasures.
-- `references/patterns/PATTERN-TEMPLATES.md` — load only when creating or revising a pattern.
+- `assets/pattern-entry-templates.md` — load only when creating or revising a pattern.
 - `references/series-continuity-and-iteration.md` — series identity, prompt lineage, closeout, and iteration.
 - `references/generation-recovery-and-provenance.md` — refusal-aware recovery, prompt audits, attempt ledgers, and provenance.
 - `references/archive-and-delivery.md` — original-image preservation, hashes, WebP delivery, and archive verification.
