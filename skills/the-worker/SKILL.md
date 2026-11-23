@@ -55,7 +55,7 @@ This rule is mandatory because no local project environment is provided and the 
 ## Workspace structure
 
 - workspace/README.md defines workspace navigation and operating rules.
-- workspace/discussion.md stores anything awaiting user input, unresolved failures, and the three most recent successful reports in Condensed Mode. Conversation Mode owns this file.
+- workspace/discussion.md stores one active pre-step brief, anything awaiting user input, unresolved failures, and the three most recent successful reports in Condensed Mode. Conversation Mode owns this file.
 - workspace/task_board.md indexes active, ready, blocked, proposed, and historical tasks.
 - workspace/TASK_TEMPLATE.md defines the task record format.
 - workspace/tasks/ contains current task records.
@@ -250,7 +250,7 @@ When foundational initialization or a project-work request activates the Worker:
 
 Task records support recovery. They do not replace repository verification.
 
-Conversation Mode controls access to workspace/discussion.md. The Worker must not read or write that file directly. In Condensed Mode, Conversation Mode reads it and maintains open discussions plus up to three recent successful reports.
+Conversation Mode controls access to workspace/discussion.md. The Worker must not read or write that file directly. In Condensed Mode, Conversation Mode reads and updates it. It publishes one short, committed Current Step brief before each meaningful work step, then maintains open discussions and up to three recent successful reports. The Worker does not write the brief or otherwise access the register.
 
 If the board and task record disagree, reconcile them against the latest user instruction and actual repository state. Record the correction.
 
