@@ -191,7 +191,7 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 7. Current State
 
-The approved task is In Progress and is the current execution. Source-level edits address 138 of the 155 baseline hard findings across 16 files. These include all 75 findings in the Document Type Catalog. In `skills/asd-ste100/SKILL.md`, two non-example findings have source-level edits. Thirteen findings remain in deliberate examples that the repository writing policy says to preserve. Four additional single-finding files remain under review. Hosted validation remains pending. The 319 advisory findings remain out of scope.
+The approved task is In Progress and is the current execution. Source-level edits address 139 of the 155 baseline hard findings across 17 files. These include all 75 findings in the Document Type Catalog. In `skills/asd-ste100/SKILL.md`, two non-example findings have source-level edits. Thirteen findings remain in deliberate examples that the repository writing policy says to preserve. Three additional single-finding files remain under review. Hosted validation remains pending. The 319 advisory findings remain out of scope.
 
 ## 8. Remaining Work
 
@@ -202,8 +202,8 @@ The approved task is In Progress and is the current execution. Source-level edit
 
 ## 9. Next Actions
 
-1. Review the single hard finding in `workspace/TASK_TEMPLATE.md` against Document Standards and the task lifecycle contract.
-2. Preserve required metadata, status semantics, and closeout gates.
+1. Review the single hard finding in `skills/drawing/references/series-continuity-and-iteration.md` against the Drawing skill and active-brief authority.
+2. Preserve continuity, user control, and permitted variation rules.
 3. Review the remaining single-finding files and preserve all applicable template and workflow contracts.
 4. Resolve the 13 intentional-example findings only after user direction. Do not rewrite examples that the repository policy says to preserve.
 5. Apply fixes on `gpt` and inspect naturally generated hosted reports.
