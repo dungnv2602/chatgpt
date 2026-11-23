@@ -1,7 +1,7 @@
 # Current Step
 
 - **2026-11-23 — Lint-report evidence system implemented on `gpt`.** Reporting architecture, generator, tests, scope indexes, legacy migration, and both lint-workflow integrations are committed and read back. Hosted validation is pending. Do not describe the new reporting workflows or regression tests as passed until their runs are reviewed.
-- **Current branch head before this register update:** `79c8095087ecbac7281e72eb896b0ebefcff6c3d`.
+- **Current branch head before this register update:** `6e90d34593e5c13059d2b0c598b345366de84a56`.
 - **Review policy:** Read `lint_reports/README.md` and the relevant scope index first. Use Actions artifacts only when the repository evidence does not answer the question.
 
 ## Open Discussions
