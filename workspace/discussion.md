@@ -1,5 +1,7 @@
 # Current Step
 
+- **2026-11-23 — Next action:** The task record and board still contain stale “hosted validation pending” statements despite the green run. Before closeout, reconcile those records and finish the bounded hand-off/manifest contract check: compare the processor’s authoritative field definitions and regression coverage with the catalog, then record any remaining limitation. No archive or unrelated workflow changes.
+
 - **2026-11-23 — Hosted validation result:** Follow-up run `45098008709` completed successfully. Job `validate-document-standards` passed; all 13 regression tests passed; catalog validation passed with 34 document types and 76 exact references. The hosted job log was inspected. **Next:** review the active task record and task board for remaining acceptance criteria and closeout steps; do not mark Done until each is verified.
 
 - **2026-11-23 — Next action:** Perform one bounded GitHub Actions status inspection for follow-up run `45098008709`. If complete, inspect its job steps and logs to verify both the 13-test suite and catalog validator. If it remains active, do not poll; leave the task open. No workflow rerun or dispatch is planned.
