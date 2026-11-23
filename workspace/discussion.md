@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:04 UTC — Resolve non-example STE skill findings:** Preserve deliberate rule examples under the repository writing policy. Split the 28-word sentence without changing the quoted source and replace the non-example synonym rotation in the linter description.
+- **2026-11-23 11:08 UTC — Begin drawing skill review:** Review the 14 hard findings in `skills/drawing/SKILL.md` against its complete source and relevant owner references. Preserve deliberate examples and all drawing workflow requirements.
 
 ## Open Discussions
 
