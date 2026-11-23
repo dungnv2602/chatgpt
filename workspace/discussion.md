@@ -1,6 +1,6 @@
 ## Current Step
 
-Create the approved lint-report repair task from the canonical workspace template. Record the verified CI failures, confirmed report gaps, scope, and acceptance criteria.
+Implement the canonical shared lint-report format first. Update the generator-owned schema, detailed Markdown output, regression tests, and catalog. Commit and read back these format authorities before workflow integration.
 ## Open Discussions
 
 - **2026-11-23 05:06 UTC — Changed-document lint-report failure:** Newest run [45115031724](https://github.com/dungnv2602/chatgpt/actions/runs/45115031724) fails because the anchor checker treats `{run_url}` in the report template as a local file. Report generation then fails because the workflow passes a literal `\\` argument. User has now authorized investigation and repair of the changed-report workflow and reporting system.
