@@ -1,43 +1,43 @@
-# STE Lint Changed Documentation — run 45176725714
+# Validate Document Standards — run 45176972220
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | STE Lint Changed Documentation |
-| Workflow path | .github/workflows/ste-lint-changed.yml |
-| Run / attempt | 45176725714 / 1 |
-| Run number | 536 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45176725714 |
+| Workflow | Validate Document Standards |
+| Workflow path | .github/workflows/validate-document-standards.yml |
+| Run / attempt | 45176972220 / 1 |
+| Run number | 127 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45176972220 |
 | Branch | gpt |
-| Commit | 359d1fd7f1af5af0e7e186fa7d99c9bdea97f1f2 |
+| Commit | f4def0f2f32acd24fa14ca2cf894acf3ac68b5be |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T12:41:40Z |
-| Status at capture | completed |
-| Observed conclusion | cancelled |
-| Projected conclusion | Not calculated |
-| Reporter job | completed / success |
-| Capture stage | post_run |
-| Completeness | Complete |
-| Captured (UTC) | 2026-11-23T12:43:20Z |
+| Created (UTC) | 2026-11-23T12:43:15Z |
+| Status at capture | in_progress |
+| Observed conclusion | Not yet available |
+| Projected conclusion | failure |
+| Reporter job | in_progress / Pending |
+| Capture stage | pre_finalizer |
+| Completeness | Incomplete |
+| Captured (UTC) | 2026-11-23T12:44:02Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | cancelled |
+| State | in_progress |
 | Primary category | validation_or_test |
-| Jobs | 2 |
-| Steps | 18 |
+| Jobs | 1 |
+| Steps | 8 |
 | Issues | 1 |
-| Annotations | 3 |
+| Annotations | 2 |
 | Artifacts | 0 |
-| Capture errors | 0 |
+| Capture errors | 1 |
 
 ## Failure classification
 
-validation_or_test
+validation_or_test The parent run is still in progress. The projected conclusion is provisional.
 
 The report records an actionable workflow failure or operational exception. Ordinary successful runs and cancellation-only runs are not captured by default. A successful run is retained when a step failed but the workflow allowed it to continue. A cancelled run is retained only when it contains an independent actionable failure. Known downstream status-propagation steps after cancellation are excluded. Explicit run-backfill requests can override the default capture filter.
 
@@ -45,22 +45,20 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 137699778379 | Reject superseded runs and find lint baseline | completed | success | 4 | logs/job-137699778379.log |
-| 137699868926 | Lint changed Markdown files and publish detailed evidence | completed | failure | 14 | logs/job-137699868926.log |
+| 137700642525 | validate-document-standards | completed | failure | 8 | logs/job-137700642525.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 137699868926 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | 2026-11-23T12:42:14.7839504Z ^[[36;1m  echo "::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md."^[[0m |
+| validation_or_test | 137700642525 | 4 | Run catalog validator regression tests | Blocking | medium | Step conclusion: failure |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 137699868926 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 137699868926 | failure | .github | 21 |  | Process completed with exit code 1. |
-| 137699868926 | failure | .github | 20 |  | Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md. |
+| 137700642525 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 137700642525 | failure | .github | 78 |  | Process completed with exit code 1. |
 
 ## Artifacts
 
@@ -70,16 +68,19 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137699778379 | Reject superseded runs and find lint baseline | logs/job-137699778379.log | 12713 | False |  |
-| 137699868926 | Lint changed Markdown files and publish detailed evidence | logs/job-137699868926.log | 63067 | False | Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-23T12:42:01.8633694Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-23T12:42:01.8646011Z ^[[36;1mecho "failed=$failed" &gt;&gt; "$GITHUB_OUTPUT"^[[0m, Lint changed Markdown files and publish detailed evidence	Run full technical-document lint	2026-11-23T12:42:08.2806753Z ^[[36;1m    failed=1^[[0m, Lint changed Markdown files and publish detailed evidence	Run full technical-document lint	2026-11-23T12:42:08.2807145Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Run full technical-document lint	2026-11-23T12:42:08.2807530Z ^[[36;1mecho "failed=$failed" &gt;&gt; "$GITHUB_OUTPUT"^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-23T12:42:12.5496205Z ^[[36;1m        "status": "Passed" if exit_code == 0 else "Failed",^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-23T12:42:12.5500135Z ^[[36;1m        "status": "Passed" if exit_code == 0 else "Failed",^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-23T12:42:12.5502265Z ^[[36;1mif [[ "$TOOLING_FAILED" == "1" \|\| "$FULL_FAILED" == "1" \|\| "$CHANGED_FAILED" == "1" ]]; then status="Failed"; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-23T12:42:12.5502614Z ^[[36;1mif [[ "$ANCHOR_OUTCOME" != "skipped" && "$ANCHOR_EXIT" != "0" ]]; then status="Failed"; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T12:42:14.7839504Z ^[[36;1m  echo "::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md."^[[0m, Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T12:42:14.7991894Z ##[error]Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md., Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T12:42:14.8000128Z ##[error]Process completed with exit code 1. |
+| 137700642525 | validate-document-standards | logs/job-137700642525.log | 82 | False |  |
 
 ## Evidence coverage
 
-All requested evidence endpoints and completed-job log captures returned data.
+One or more evidence sources were unavailable. This report is Incomplete.
+
+| Source | HTTP status | Limitation |
+| --- | --- | --- |
+| job_log | Not recorded | run 45176972220 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
-[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/reports/lint_reports/on_changed/latest-lint-report.md)
+No separate lint report applies to this workflow.
 
 ## Integrity
 
