@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 10:54 UTC — Begin next source review:** The catalog remediation removed all 68 baseline semicolon findings and all three synonym-rotation findings. Three of four long-sentence findings were addressed. Review the remaining long-sentence fingerprint against its source context, then continue with the next highest-density file.
+- **2026-11-23 10:57 UTC — Resolve final catalog finding:** Shorten the Skill changelog row to resolve the remaining 26-word catalog finding. Preserve its canonical path and lightweight-pattern guidance.
 
 ## Open Discussions
 
