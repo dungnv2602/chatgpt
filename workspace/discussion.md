@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 — Audit template placement and enforce template-first authoring.** First create the task record from `workspace/TASK_TEMPLATE.md`. Then enumerate the full repository outside the immutable archive, classify recurring document types, inspect template locations against Agent Skill and Document Standards, relocate misplaced templates only when evidence supports the move, and strengthen Worker enforcement. Update or create canonical templates before changing any governed documents. Verify every changed path and applicable hosted checks.
+- **2026-11-23 — Build a complete template-placement inventory.** The audit task is recorded and indexed. Fetch the recursive tree for branch `gpt`, classify candidate template/schema/example/generator paths, and compare them with the Document Type Catalog and owning-skill conventions. Do not change governed documents before canonical formats are prepared. Keep archive records immutable.
 
 ## Open Discussions
 
