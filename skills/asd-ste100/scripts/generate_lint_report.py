@@ -93,8 +93,8 @@ lines += ["## Baseline comparison", "",\n    "- New findings: " + str(data["new_
 scope_root = out.parent.parent
 index_path = scope_root / "index.json"
 index = json.loads(index_path.read_text(encoding="utf-8")) if index_path.exists() else {"schema_version": "1.0.0", "runs": []}
-entry = {key: data[key] for key in ("run_id", "run_number", "run_url", "commit_sha", "generated_at_utc", "status", "files_evaluated", "total_findings")}
-index["runs"] = [row for row in index["runs"] if row.get("run_id") != a.run_id] + [entry]
+entry = {key: data[key] for key in ("run_id", "run_number", "run_url", "attempt", "commit_sha", "generated_at_utc", "status", "files_evaluated", "total_findings")}
+index["runs"] = [row for row in index["runs"] if (row.get("run_id"), row.get("attempt", 1)) != (a.run_id, int(a.attempt))] + [entry]
 index["runs"].sort(key=lambda row: (row["generated_at_utc"], row["run_id"]))
 index_path.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 (out.parent / "latest-lint-report.md").write_text((out / "report.md").read_text(encoding="utf-8"), encoding="utf-8")
