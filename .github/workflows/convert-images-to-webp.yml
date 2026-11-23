@@ -189,6 +189,9 @@ jobs:
     name: Capture GH Actions diagnostics
     if: ${{ always() }}
     needs: [process-image-takeout]
+    concurrency:
+      group: gh-ac-report-writer-${{ github.repository }}
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 15
     continue-on-error: true
@@ -205,4 +208,4 @@ jobs:
           persist-credentials: true
 
       - name: Capture workflow diagnostics
-        uses: ./gh_ac_reports/actions/capture
+        uses: ./reports/gh_ac_reports/actions/capture
