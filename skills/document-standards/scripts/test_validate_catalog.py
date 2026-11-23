@@ -45,8 +45,21 @@ class CatalogValidatorTests(unittest.TestCase):
         return target
 
     def set_catalog(self, rows):
+        coverage = (
+            "\\n## Markdown inventory coverage\\n\\n"
+            "| Path pattern | Class | Canonical authority | Coverage rationale |\\n"
+            "|---|---|---|---|\\n"
+            "| `skills/**/*.md` | Lightweight pattern | "
+            "`skills/example/SKILL.md` | Skill fixture. |\\n"
+            "| `workspace/*.md` | Embedded contract | "
+            "`workspace/example.md` and `skills/example/SKILL.md` | Workspace fixture. |\\n"
+            "| `images/**/*.md` | Embedded contract | "
+            "`images/example/README.md` and `skills/example/SKILL.md` | Image fixture. |\\n"
+            "| `novels/*.md` | Embedded contract | "
+            "`novels/WORKFLOW.md` and `skills/example/SKILL.md` | Novel fixture. |\\n"
+        )
         self.catalog.write_text(
-            "## Initial inventory\n\n" + HEADER + "\n".join(rows) + "\n",
+            "## Initial inventory\\n\\n" + HEADER + "\\n".join(rows) + coverage,
             encoding="utf-8",
         )
 
@@ -201,6 +214,60 @@ class CatalogValidatorTests(unittest.TestCase):
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("must point to a named template" in error for error in errors))
+
+
+    def replace_coverage(self, rows):
+        content = self.catalog.read_text(encoding="utf-8")
+        prefix = content.split("## Markdown inventory coverage", 1)[0]
+        coverage = (
+            "## Markdown inventory coverage\\n\\n"
+            "| Path pattern | Class | Canonical authority | Coverage rationale |\\n"
+            "|---|---|---|---|\\n"
+            + "\\n".join(rows)
+            + "\\n"
+        )
+        self.catalog.write_text(prefix + coverage, encoding="utf-8")
+
+    def test_uncovered_markdown_document_fails(self):
+        self.set_catalog(self.valid_rows())
+        self.replace_coverage([
+            "| `workspace/*.md` | Embedded contract | "
+            "`workspace/example.md` and `skills/example/SKILL.md` | Narrow fixture. |",
+        ])
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("not covered by the catalog" in error for error in errors))
+
+    def test_master_and_archive_markdown_are_excluded_from_coverage(self):
+        self.set_catalog(self.valid_rows())
+        self.write("master/new-reference.md")
+        self.write("archive/old-record.md")
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+
+    def test_coverage_pattern_must_match_a_current_document(self):
+        self.set_catalog(self.valid_rows())
+        self.replace_coverage([
+            "| `workspace/not-present-*.md` | Lightweight pattern | "
+            "`workspace/example.md` | Stale pattern. |",
+        ])
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("matches no in-scope document" in error for error in errors))
+
+    def test_coverage_pattern_rejects_path_traversal(self):
+        self.set_catalog(self.valid_rows())
+        self.replace_coverage([
+            "| `workspace/../*.md` | Lightweight pattern | "
+            "`workspace/example.md` | Unsafe pattern. |",
+        ])
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("unsafe or excluded Markdown coverage pattern" in error for error in errors))
+
+    def test_missing_markdown_coverage_section_fails(self):
+        self.set_catalog(self.valid_rows())
+        content = self.catalog.read_text(encoding="utf-8")
+        self.catalog.write_text(content.split("## Markdown inventory coverage", 1)[0], encoding="utf-8")
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("no '## Markdown inventory coverage' section" in error for error in errors))
 
     def test_path_traversal_is_rejected(self):
         rows = self.valid_rows()

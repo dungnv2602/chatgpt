@@ -1,6 +1,6 @@
 ## Current Step
 
-Audit and classify every in-scope Markdown document outside `master/` and `archive/`; add a catalog-backed path-coverage check so new document families cannot bypass template-first governance.
+Commit and read back the 42-rule Markdown coverage register, validator enforcement, regression tests, authoring-gate rules, and hosted workflow path filters.
 
 ## Open Discussions
 

@@ -5,14 +5,14 @@
 - **Template version:** 1.1
 - **ID:** 20261123-123459
 - **Created:** 2026-11-23 12:34 UTC
-- **Updated:** 2026-11-23 12:34 UTC
+- **Updated:** 2026-11-23 12:37 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
 - **Current execution:** Yes
 - **Dependencies:** None
-- **Related tasks:** 20261123-230000? Existing template-first audit; 20261123-120700 Document Standards promotion
+- **Related tasks:** 20261123043747 template-first audit; 20261123-120700 Document Standards promotion
 - **Archived:** No
 
 ## 1. Original Request
@@ -42,8 +42,8 @@ Audit all in-scope repository documents on branch `gpt`, excluding `master/` and
 
 ## 5. Decisions
 
-- The recursive tree audit found 4,287 in-scope files and 1,042 Markdown documents at baseline commit `15111d8be94e6518682001a8766f6c39b30e8bb1`.
-- The 1,042 Markdown files are distributed as follows: drawings 97; images 2; novels 33; reports 853; skills 51; workspace 6.
+- The recursive tree audit found 4,291 in-scope files and 1,044 Markdown documents at baseline commit `63a82060d21ce8266aaaafac2795fcee9d411ae9`.
+- The 1,044 Markdown files are distributed as follows: drawings 97; images 2; novels 33; reports 854; skills 51; workspace 7.
 - Initial review found canonical formats already exist for the recurring types. No additional standalone template is justified at this stage. Several legacy daily indexes and prompt logs predate current templates; preserve them. One-off Samantha visual/scenario direction notes remain exempt.
 - The primary gap is enforcement: the catalog validator checks catalog rows and references but does not ensure that every in-scope Markdown document belongs to a classified family. Add a path-pattern coverage register and validator check.
 
@@ -52,29 +52,32 @@ Audit all in-scope repository documents on branch `gpt`, excluding `master/` and
 ### 2026-11-23 12:34 UTC
 
 - **Action:** Retrieved the branch tree and enumerated all files outside `master/` and `archive/`; grouped Markdown documents by root and family.
-- **Result:** 4,287 files and 1,042 Markdown documents found. No tree truncation. No missing recurring template identified in the first content review. Existing templates cover novel records, drawing attempts/session briefs/daily indexes, conversation/session records, task records, and report formats.
+- **Result:** Initial scan found 4,287 files and 1,042 Markdown documents. No tree truncation. No missing recurring template was identified. Existing templates cover novel records, drawing attempts/session briefs/daily indexes, conversation/session records, task records, and report formats.
 - **References:** `skills/document-standards/references/document-type-catalog.md`; `skills/document-standards/SKILL.md`; drawing, novel, report, and workspace owner files.
-- **Next:** Finish classifying historical and generated document families, add machine-enforced Markdown path coverage, and strengthen the authoring gate.
+- **Next:** Reconcile the inventory against the latest branch tree and enforce coverage.
+
+### 2026-11-23 12:37 UTC
+
+- **Action:** Rechecked the latest branch tree after concurrent hosted report-publication commits and classified all Markdown families. Drafted a 42-rule path-coverage register and added validator enforcement, regression tests, authoring-gate rules, and workflow path filters.
+- **Result:** Latest baseline contains 4,291 in-scope files and 1,044 Markdown documents. All 1,044 paths match at least one coverage rule; every rule matches a current document. No new standalone template is required. Implementation is not yet committed or hosted-validated.
+- **References:** Catalog coverage register; `scripts/validate_catalog.py`; `scripts/test_validate_catalog.py`; `.github/workflows/validate-document-standards.yml`; The Worker Markdown document gate.
+- **Next:** Commit the changes, read back every changed path, and leave hosted execution unverified until a natural Actions run.
 
 ## 7. Current State
 
-The audit is in progress. No project files have been changed by this task yet. The existing canonical templates appear sufficient; the gap is that the validator does not enforce repository-wide document-family coverage.
+The audit is in progress. The task record, board, and discussion register are established. The existing canonical templates appear sufficient; the gap is that the validator does not enforce repository-wide document-family coverage. A 42-rule draft coverage register now classifies all 1,044 in-scope Markdown paths.
 
 ## 8. Remaining Work
 
-- Complete classification of every in-scope Markdown path.
-- Add the coverage register and validator enforcement with regression tests.
-- Tighten Document Standards authoring procedure and catalog maintenance.
-- Expand hosted workflow triggers to relevant document roots.
-- Read back all changes and verify branch head.
-- Hosted validation will remain unverified until a naturally triggered GitHub Actions run reports results.
+- Commit and read back the catalog, validator, tests, owner instructions, and workflow changes.
+- Confirm the latest tree is fully covered by the validator's path rules.
+- Hosted regression execution remains unverified until a naturally triggered GitHub Actions run reports results.
 
 ## 9. Next Actions
 
-1. Add the Markdown inventory coverage register to the Document Type Catalog.
-2. Extend the catalog validator and regression tests to reject uncovered in-scope Markdown files.
-3. Tighten the authoring workflow and hosted validation path filters.
-4. Read back every changed file and reconcile task board/discussion state.
+1. Commit the coverage register, validator, tests, authoring rules, and workflow triggers.
+2. Read back every changed path and confirm the branch head.
+3. Inspect hosted validation only when it occurs naturally; do not poll or dispatch workflows.
 
 ## 10. References
 
@@ -84,7 +87,7 @@ The audit is in progress. No project files have been changed by this task yet. T
 - `skills/document-standards/scripts/test_validate_catalog.py`
 - `.github/workflows/validate-document-standards.yml`
 - `workspace/task_board.md`
-- Baseline commit: `15111d8be94e6518682001a8766f6c39b30e8bb1`
+- Baseline commit: `63a82060d21ce8266aaaafac2795fcee9d411ae9`
 
 ## 11. Verification
 
@@ -95,4 +98,4 @@ The audit is in progress. No project files have been changed by this task yet. T
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. Do not access `master/` or `archive/`. Build an explicit path-pattern register for all current in-scope Markdown families, then make the catalog validator fail on any uncovered Markdown file. Keep generated reports, historical legacy records, technical references, and one-off creative notes classified without forcing redundant templates. Use hosted Actions for tests and validation; do not run repository scripts locally.
+Continue on branch `gpt`. Do not access `master/` or `archive/`. The current coverage register contains 42 rules and classifies all 1,044 Markdown files in the baseline tree. Commit and read back the implementation. Keep generated reports, historical legacy records, technical references, and one-off creative notes classified without forcing redundant templates. Use hosted Actions for tests and validation; do not run repository scripts locally.

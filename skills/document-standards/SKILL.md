@@ -26,6 +26,20 @@ Do not invent a new structure when the catalog identifies an approved format.
 
 Do not create an empty document only because a template exists.
 
+## Repository-wide Markdown inventory gate
+
+The Document Type Catalog contains a Markdown inventory coverage register. The hosted validator scans every repository Markdown file outside the root `master/` and `archive/` directories and requires each path to match a documented family rule.
+
+Before creating, moving, renaming, or materially revising a Markdown document:
+
+1. Identify its exact destination path and match it to the coverage register.
+2. Read the corresponding document-type row and its canonical authority.
+3. If no coverage rule matches, add a narrow rule and classify the family before creating the document. Do not use a broad wildcard as a shortcut.
+4. If the family is recurring or carries status, approval, provenance, or audit data, create or update its canonical template/schema first.
+5. Update the owning index and workflow to reference the canonical format.
+
+After the document change, check its structure against the canonical authority and run the hosted Document Standards workflow. Path coverage proves that a file belongs to a documented family; it does not prove that the file follows its template or is factually correct.
+
 ## Document type classes
 
 Assign each document type one class in the [Document Type Catalog](references/document-type-catalog.md).
@@ -58,22 +72,23 @@ The catalog must point to the exact canonical asset. The owner skill and its ind
 ## Authoring procedure
 
 1. Identify the document type and its owning project workflow.
-2. Read the matching entry in the Document Type Catalog.
-3. Retrieve the exact canonical template, schema, or format contract.
-4. Check that the canonical asset is in the correct owner directory.
-5. If the format is missing, stop before creating or editing the governed document. Create the template or schema first.
-6. Update the catalog and the owning workflow or index to point to the new format.
-7. Commit and read back the canonical template, schema, catalog entry, and owner instructions.
-8. Only after that read-back succeeds, create or revise the governed document.
-9. Copy the template into a new document. Never edit the canonical template as the document itself.
-10. Preserve required section names, order, field names, and allowed values.
-11. Complete all required fields. Use the documented value for missing, unknown, or inapplicable information.
-12. Include conditional sections only when their stated condition applies.
-13. Keep optional sections when they add useful information. Do not invent content to fill them.
-14. Remove unused placeholders before you commit the document.
-15. Check the result against the template and its owning workflow.
-16. Update the parent index when the document is created, renamed, reordered, or completed.
-17. Commit the document and read back every changed path.
+2. Match the destination path to the Markdown inventory coverage register and read the matching Document Type Catalog entry.
+3. If no coverage rule matches, add a narrow family rule and classify the document type before creating the file.
+4. Retrieve the exact canonical template, schema, or format contract.
+5. Check that the canonical asset is in the correct owner directory.
+6. If the format is missing, stop before creating or editing the governed document. Create the template or schema first.
+7. Update the catalog and the owning workflow or index to point to the new format.
+8. Commit and read back the canonical template, schema, coverage rule, catalog entry, and owner instructions.
+9. Only after that read-back succeeds, create or revise the governed document.
+10. Copy the template into a new document. Never edit the canonical template as the document itself.
+11. Preserve required section names, order, field names, and allowed values.
+12. Complete all required fields. Use the documented value for missing, unknown, or inapplicable information.
+13. Include conditional sections only when their stated condition applies.
+14. Keep optional sections when they add useful information. Do not invent content to fill them.
+15. Remove unused placeholders before you commit the document.
+16. Check the result against the template and its owning workflow.
+17. Update the parent index when the document is created, renamed, reordered, or completed.
+18. Commit the document and read back every changed path.
 
 ## When no template exists
 
@@ -177,7 +192,7 @@ Check each document for:
 
 Add automated validation when a structural rule can be checked reliably.
 
-The catalog integrity validator at `scripts/validate_catalog.py` checks inventory row structure, document-type classes, class-specific references, exact path existence, and canonical template placement. Its tests live at `scripts/test_validate_catalog.py`. It also detects named template files in skill reference directories. It does not prove that an agent copied the template when it authored a document. It does not compare every document with its template. It does not check semantic quality or duplicate processor schemas. The Worker enforces the authoring sequence. The hosted workflow `.github/workflows/validate-document-standards.yml` runs these checks for changes under `skills/**`, `novels/templates/**`, and the shared workspace template and owner files.
+The catalog integrity validator at `scripts/validate_catalog.py` checks inventory row structure, document-type classes, class-specific references, exact path existence, canonical template placement, and repository-wide Markdown path coverage. Its tests live at `scripts/test_validate_catalog.py`. It also detects named template files in skill reference directories. It does not prove that an agent copied the template when it authored a document. It does not compare every document with its template. It does not check semantic quality or duplicate processor schemas. The Worker enforces the authoring sequence. The hosted workflow `.github/workflows/validate-document-standards.yml` runs these checks for changes under `skills/**`, `novels/templates/**`, and the shared workspace template and owner files.
 
 Run the validator and its tests only on GitHub-hosted Actions runners. Do not run repository scripts locally. Workflow integration requires explicit authorization. Until Actions runs both checks, treat execution as unverified.
 

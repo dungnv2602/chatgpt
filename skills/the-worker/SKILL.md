@@ -18,6 +18,19 @@ The mandatory [Conversation Mode reference](references/conversation-mode.md) is 
 
 Document Standards is a separately maintained foundational skill. Load its skill definition during foundational initialization; retrieve its catalog and specific canonical assets only when required. Agent Skill Authoring remains on-demand. The Worker's archive and media references load only when their task-specific conditions apply.
 
+## Markdown document creation gate
+
+Before creating, moving, renaming, or materially revising a repository Markdown document, apply the foundational Document Standards gate:
+
+- Match the destination path to the catalog's Markdown inventory coverage register.
+- Retrieve the document type's canonical template, schema, or embedded/generator contract.
+- If no path rule or document type exists, update the coverage register and define the canonical format before authoring the document.
+- Do not add broad catch-all patterns to bypass an uncovered-path failure.
+- Update the owning index and validate the finished document against its canonical format.
+- Let the hosted Document Standards workflow perform validation; do not run repository scripts locally.
+
+The inventory gate excludes root `master/` and `archive/` from its Markdown path scan. This does not change their separate ownership and access rules.
+
 ## CI review is task-scoped
 
 CI status is not a precondition for accepting or handling a new user request. Do not run a pre-prompt or post-initialization snapshot.

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import fnmatch
 import re
 import sys
 from pathlib import Path
@@ -91,6 +92,188 @@ def read_inventory(content: str) -> tuple[list[dict[str, str]], list[str]]:
     return rows, errors
 
 
+def read_coverage(content: str) -> tuple[list[dict[str, str]], list[str]]:
+    """Read the path-pattern coverage table for in-scope Markdown documents."""
+    errors: list[str] = []
+    lines = content.splitlines()
+    section = next(
+        (index for index, line in enumerate(lines)
+         if line.strip() == "## Markdown inventory coverage"),
+        None,
+    )
+    if section is None:
+        return [], ["Catalog has no '## Markdown inventory coverage' section."]
+
+    header_index = next(
+        (index for index in range(section + 1, len(lines))
+         if lines[index].strip().startswith("|")),
+        None,
+    )
+    if header_index is None:
+        return [], ["Markdown inventory coverage has no table."]
+
+    expected = ["Path pattern", "Class", "Canonical authority", "Coverage rationale"]
+    if split_row(lines[header_index]) != expected:
+        return [], ["Markdown inventory coverage table has unexpected columns."]
+
+    rows: list[dict[str, str]] = []
+    for line_number, line in enumerate(lines[header_index + 1:], start=header_index + 2):
+        if not line.strip().startswith("|"):
+            break
+        cells = split_row(line)
+        if is_separator(cells):
+            continue
+        if len(cells) != 4:
+            errors.append(
+                f"Line {line_number}: expected 4 Markdown coverage cells, found {len(cells)}."
+            )
+            continue
+        patterns = re.findall(r"`([^`]+)`", cells[0])
+        if len(patterns) != 1:
+            errors.append(
+                f"Line {line_number}: path pattern must contain exactly one inline-code glob."
+            )
+            continue
+        rows.append({
+            "pattern": patterns[0],
+            "class": cells[1],
+            "canonical": cells[2],
+            "rationale": cells[3],
+            "line": str(line_number),
+        })
+
+    if not rows:
+        errors.append("Markdown inventory coverage contains no path rules.")
+    return rows, errors
+
+
+def find_markdown_documents(root: Path) -> list[str]:
+    """List repository Markdown files, excluding root master/, archive/, and .git/."""
+    documents: list[str] = []
+    for candidate in root.iterdir():
+        if candidate.name in {"master", "archive", ".git"}:
+            continue
+        if candidate.is_dir():
+            documents.extend(
+                path.relative_to(root).as_posix()
+                for path in candidate.rglob("*.md")
+                if path.is_file()
+            )
+        elif candidate.is_file() and candidate.suffix.casefold() == ".md":
+            documents.append(candidate.relative_to(root).as_posix())
+    return sorted(set(documents))
+
+
+def validate_markdown_coverage(root: Path, content: str) -> list[str]:
+    """Require every in-scope Markdown path to match a catalogued family rule."""
+    errors: list[str] = []
+    rows, parse_errors = read_coverage(content)
+    errors.extend(parse_errors)
+    if parse_errors or not rows:
+        return errors
+
+    documents = find_markdown_documents(root)
+    seen_patterns: set[str] = set()
+    compiled: list[tuple[str, str]] = []
+
+    for row in rows:
+        line = row["line"]
+        pattern = row["pattern"]
+        class_name = row["class"]
+        if pattern in seen_patterns:
+            errors.append(f"Line {line}: duplicate Markdown coverage pattern '{pattern}'.")
+        seen_patterns.add(pattern)
+
+        parts = pattern.split("/")
+        if (
+            pattern.startswith("/")
+            or any(part in {"", ".", ".."} for part in parts)
+            or parts[0] not in ALLOWED_ROOTS
+            or parts[0] in {"master", "archive"}
+        ):
+            errors.append(f"Line {line}: unsafe or excluded Markdown coverage pattern '{pattern}'.")
+            continue
+
+        is_template = class_name == "Template required" or class_name.startswith(
+            "Template required "
+        )
+        if not is_template and class_name not in KNOWN_CLASSES:
+            errors.append(f"Line {line}: unknown Markdown coverage class '{class_name}'.")
+
+        canonical_paths = extract_paths(row["canonical"])
+        if not canonical_paths:
+            errors.append(f"Line {line}: Markdown coverage rule has no canonical authority path.")
+
+        for path_text in dict.fromkeys(canonical_paths):
+            path = Path(path_text)
+            raw_parts = path_text.split("/")
+            if (
+                path.is_absolute()
+                or any(part in {"", ".", ".."} for part in raw_parts)
+                or not path.parts
+                or path.parts[0] not in ALLOWED_ROOTS
+                or path.parts[0] in {"master", "archive"}
+                or path_text.strip() != path_text
+            ):
+                errors.append(f"Line {line}: unsafe or excluded authority path '{path_text}'.")
+                continue
+            if not (root / path).is_file():
+                errors.append(f"Line {line}: Markdown coverage authority does not exist: {path_text}.")
+
+        if is_template:
+            template_paths = [
+                path for path in canonical_paths if is_template_asset(path)
+            ]
+            if not template_paths:
+                errors.append(
+                    f"Line {line}: Template required coverage must point to a named template."
+                )
+            for template_path in template_paths:
+                location_error = template_location_error(template_path)
+                if location_error:
+                    errors.append(
+                        f"Line {line}: invalid coverage template location for "
+                        f"'{template_path}': {location_error}."
+                    )
+        elif class_name == "Embedded contract" and len(canonical_paths) < 2:
+            errors.append(
+                f"Line {line}: Embedded contract coverage must name its owner and live record."
+            )
+        elif class_name in {"Schema required", "Generator-owned"}:
+            if not any(path.endswith(".py") for path in canonical_paths):
+                errors.append(
+                    f"Line {line}: {class_name} coverage must reference its Python authority."
+                )
+            if not any(
+                Path(path).name.startswith("test_") and path.endswith(".py")
+                for path in canonical_paths
+            ):
+                errors.append(
+                    f"Line {line}: {class_name} coverage must reference a regression test."
+                )
+
+        matches = [path for path in documents if fnmatch.fnmatchcase(path, pattern)]
+        if not matches:
+            errors.append(
+                f"Line {line}: Markdown coverage pattern matches no in-scope document: '{pattern}'."
+            )
+        compiled.append((pattern, class_name))
+
+    uncovered = [
+        path for path in documents
+        if not any(fnmatch.fnmatchcase(path, pattern) for pattern, _ in compiled)
+    ]
+    if uncovered:
+        preview = ", ".join(uncovered[:20])
+        remainder = len(uncovered) - 20
+        suffix = f" (and {remainder} more)" if remainder > 0 else ""
+        errors.append(
+            f"{len(uncovered)} Markdown file(s) are not covered by the catalog: "
+            f"{preview}{suffix}."
+        )
+    return errors
+
+
 def is_template_asset(path_text: str) -> bool:
     """Return whether a path identifies a reusable template asset."""
     path = Path(path_text)
@@ -154,6 +337,7 @@ def validate_catalog(root: Path, catalog_path: Path) -> tuple[list[str], int, in
     rows, parse_errors = read_inventory(content)
     errors.extend(parse_errors)
     errors.extend(find_misplaced_skill_templates(root))
+    errors.extend(validate_markdown_coverage(root, content))
     seen_types: set[str] = set()
     reference_count = 0
 

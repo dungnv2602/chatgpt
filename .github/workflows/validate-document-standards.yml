@@ -7,6 +7,15 @@ on:
     paths:
       # Check every skill-owned template, schema, and authoring rule.
       - 'skills/**'
+      # Enforce catalog coverage whenever any active document family changes.
+      # master/ and archive/ remain outside this inventory scan.
+      - 'drawings/**/*.md'
+      - 'images/**/*.md'
+      - 'novels/**/*.md'
+      - 'reports/**/*.md'
+      - 'workspace/**/*.md'
+      - '.github/**/*.md'
+      - '*.md'
       # Check project-level and shared workspace templates and their owner contracts.
       - 'novels/templates/**'
       - 'novels/README.md'
