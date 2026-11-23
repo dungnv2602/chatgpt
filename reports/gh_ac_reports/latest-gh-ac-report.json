@@ -1,28 +1,28 @@
 {
   "schema_version": "1.0.0",
   "source_run": {
-    "id": "45167458384",
-    "number": 488,
+    "id": "45167805611",
+    "number": 80,
     "attempt": 1,
-    "workflow_id": 424715662,
-    "workflow_name": "STE Lint Changed Documentation",
-    "workflow_path": ".github/workflows/ste-lint-changed.yml",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45167458384",
+    "workflow_id": 427313089,
+    "workflow_name": "Validate Document Standards",
+    "workflow_path": ".github/workflows/validate-document-standards.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45167805611",
     "event": "push",
     "branch": "gpt",
-    "head_sha": "5d2eb9939aa4902d5e770593a425e61198a80024",
+    "head_sha": "91c4b11af1941df09bcbb02d44bda06f6faba1f7",
     "status": "completed",
     "conclusion": "cancelled",
-    "created_at": "2026-11-23T11:41:34Z",
-    "run_started_at": "2026-11-23T11:41:34Z",
-    "updated_at": "2026-11-23T11:42:21Z",
+    "created_at": "2026-11-23T11:43:58Z",
+    "run_started_at": "2026-11-23T11:43:58Z",
+    "updated_at": "2026-11-23T11:44:01Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
-    "head_commit_message": "Clarify on-demand Drawing dependency"
+    "head_commit_message": "Require explicit session-start cue before specialist loading"
   },
   "capture": {
     "stage": "post_run",
-    "captured_at_utc": "2026-11-23T11:43:39Z",
+    "captured_at_utc": "2026-11-23T11:45:48Z",
     "completeness": "Complete",
     "reporter_job": null
   },
@@ -39,5 +39,5 @@
   "annotations": [],
   "artifacts": [],
   "capture_errors": [],
-  "history_path": "history/424715662/45167458384-attempt-1-post_run"
+  "history_path": "history/427313089/45167805611-attempt-1-post_run"
 }

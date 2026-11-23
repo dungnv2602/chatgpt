@@ -1,26 +1,26 @@
-# STE Lint Changed Documentation — run 45167458384
+# Validate Document Standards — run 45167805611
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | STE Lint Changed Documentation |
-| Workflow path | .github/workflows/ste-lint-changed.yml |
-| Run / attempt | 45167458384 / 1 |
-| Run number | 488 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45167458384 |
+| Workflow | Validate Document Standards |
+| Workflow path | .github/workflows/validate-document-standards.yml |
+| Run / attempt | 45167805611 / 1 |
+| Run number | 80 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45167805611 |
 | Branch | gpt |
-| Commit | 5d2eb9939aa4902d5e770593a425e61198a80024 |
+| Commit | 91c4b11af1941df09bcbb02d44bda06f6faba1f7 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T11:41:34Z |
+| Created (UTC) | 2026-11-23T11:43:58Z |
 | Status at capture | completed |
 | Observed conclusion | cancelled |
 | Projected conclusion | Not calculated |
 | Reporter job | Not captured |
 | Capture stage | post_run |
 | Completeness | Complete |
-| Captured (UTC) | 2026-11-23T11:43:39Z |
+| Captured (UTC) | 2026-11-23T11:45:48Z |
 
 ## Executive summary
 
@@ -67,7 +67,7 @@ All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 
-[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/reports/lint_reports/on_changed/latest-lint-report.md)
+No separate lint report applies to this workflow.
 
 ## Integrity
 

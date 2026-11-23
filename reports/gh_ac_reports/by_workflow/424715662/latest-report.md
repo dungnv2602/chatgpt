@@ -1,4 +1,4 @@
-# STE Lint Changed Documentation — run 45167458384
+# STE Lint Changed Documentation — run 45167805630
 
 ## Run identity
 
@@ -6,21 +6,21 @@
 | --- | --- |
 | Workflow | STE Lint Changed Documentation |
 | Workflow path | .github/workflows/ste-lint-changed.yml |
-| Run / attempt | 45167458384 / 1 |
-| Run number | 488 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45167458384 |
+| Run / attempt | 45167805630 / 1 |
+| Run number | 491 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45167805630 |
 | Branch | gpt |
-| Commit | 5d2eb9939aa4902d5e770593a425e61198a80024 |
+| Commit | 91c4b11af1941df09bcbb02d44bda06f6faba1f7 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T11:41:34Z |
+| Created (UTC) | 2026-11-23T11:43:58Z |
 | Status at capture | completed |
 | Observed conclusion | cancelled |
 | Projected conclusion | Not calculated |
 | Reporter job | Not captured |
 | Capture stage | post_run |
 | Completeness | Complete |
-| Captured (UTC) | 2026-11-23T11:43:39Z |
+| Captured (UTC) | 2026-11-23T11:45:47Z |
 
 ## Executive summary
 
