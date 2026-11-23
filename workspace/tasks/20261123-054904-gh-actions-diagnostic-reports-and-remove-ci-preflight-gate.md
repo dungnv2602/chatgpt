@@ -105,9 +105,16 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - **References:** Repository metadata reports `default_branch=main`. [GitHub event trigger requirements](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows); [reusable workflow permissions and caller context](https://docs.github.com/en/actions/reference/workflows-and-actions/reusing-workflow-configurations).
 - **Next:** Define and register the generator-owned report contract. Implement its schema, template, collector, generator, tests, report guide, and indexes before publishing generated run reports.
 
+### 2026-11-23 06:08 UTC
+
+- **Action:** Added the `gh_ac_reports/` guide, Markdown template, JSON schema, collector/generator, regression tests, and bootstrap index. Added the report type to the Document Type Catalog and linked it from the workspace index. Then wired schema validation into the generator and made incomplete manual backfill requests remain pending.
+- **Result:** Eight changed paths were committed and read back. The generator uses immutable per-run history, pre-finalizer and post-run stages, log redaction and size limits, status-sensitive failure classification, artifact/check-run/annotation metadata, SHA-256 integrity, global and per-workflow indexes, and latest pointers. The tests cover failure classification, cancellation, startup-failure uncertainty, non-blocking step failures, projected conclusions, redaction, schema validation, immutable history, and latest-pointer ordering. Tests have not yet run on a hosted runner.
+- **References:** Report format commit `a997ea4b619aee9fcb9e945b24f406cde0224493`; schema and incomplete-request correction `16565175e52bafd0238eb9f7d2364949fd811eb7`.
+- **Next:** Add the reusable finalizer and push-driven backfill to the six existing workflows. Then remove mandatory unrelated-CI repair gates from the session and task-handling instructions, and validate the changes on GitHub-hosted runners.
+
 ## 7. Current State
 
-The task is active. Foundational initialization and one bounded CI snapshot are complete. The source lint-report workflow generated detailed evidence but retains an expected failing lint conclusion. The workspace task record and board entry were committed and read back successfully. No GH Actions diagnostic reporter has been implemented yet. The scope inventory and architecture are now established. A true completion-event observer is constrained by the default branch. The gpt-only implementation will combine reusable finalizers, a push-driven backfill, and exact-run request files. It will keep capture stages immutable and distinguish projected from observed conclusions.
+The task is active. Foundational initialization and one bounded CI snapshot are complete. The source lint-report workflow generated detailed evidence but retains an expected failing lint conclusion. The workspace task record and board entry were committed and read back successfully. The report format and generator are committed. Workflow integration and CI-gate retirement remain. The scope inventory and architecture are now established. A true completion-event observer is constrained by the default branch. The gpt-only implementation will combine reusable finalizers, a push-driven backfill, and exact-run request files. The report format is now committed and read back. It will keep capture stages immutable and distinguish projected from observed conclusions.
 
 ## 8. Remaining Work
 

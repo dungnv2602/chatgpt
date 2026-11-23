@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 05:57 UTC — Define the diagnostic report contract:** Add the new generator-owned report type to the Document Type Catalog. Define the JSON schema, Markdown layout, immutable run history, indexes, capture stages, evidence limits, and regression tests. Expected result: a committed and read-back report format that can then be wired into the six Actions workflows.
+- **2026-11-23 06:08 UTC — Integrate diagnostics and retire the CI gate:** Add a reusable workflow finalizer and a push-driven sweep to the six existing workflows. Then change startup and task instructions so unrelated CI failures are recorded as evidence, not blockers to new user requests. Expected result: workflow-level reports are generated without changing source-workflow conclusions, and the ordinary session flow no longer mandates CI repair.
 
 ## Open Discussions
 
