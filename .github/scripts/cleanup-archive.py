@@ -36,7 +36,10 @@ def validate_record(record: Any) -> tuple[str, datetime]:
     path = record["path"]
     if not isinstance(path, str) or "\\" in path:
         raise ValueError("Archive path must be a safe POSIX repository path.")
-    parts = PurePosixPath(path).parts
+    pure_path = PurePosixPath(path)
+    parts = pure_path.parts
+    if str(pure_path) != path:
+        raise ValueError(f"Archive path is not canonical: {path!r}")
     if (
         len(parts) != 3
         or parts[:2] != ("archive", "tasks")
