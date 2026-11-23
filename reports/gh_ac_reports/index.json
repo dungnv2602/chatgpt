@@ -6,9 +6,27 @@
   },
   "sweep_watermark_utc": "2026-11-23T14:53:22Z",
   "pending_run_ids": [
+    "45202163346",
     "45198986957"
   ],
   "runs": [
+    {
+      "workflow_id": 424715662,
+      "workflow_name": "STE Lint Changed Documentation",
+      "run_id": "45202163346",
+      "run_number": 556,
+      "attempt": 1,
+      "capture_stage": "pre_finalizer",
+      "created_at": "2026-11-23T15:10:10Z",
+      "captured_at_utc": "2026-11-23T15:11:46Z",
+      "source_status": "in_progress",
+      "source_conclusion": null,
+      "projected_conclusion": "failure",
+      "report_status": "Incomplete",
+      "primary_category": "validation_or_test",
+      "history_path": "history/424715662/45202163346-attempt-1-pre_finalizer",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45202163346"
+    },
     {
       "workflow_id": 424715662,
       "workflow_name": "STE Lint Changed Documentation",
@@ -14412,18 +14430,18 @@
   "latest_report": {
     "workflow_id": 424715662,
     "workflow_name": "STE Lint Changed Documentation",
-    "run_id": "45192047948",
-    "run_number": 550,
+    "run_id": "45202163346",
+    "run_number": 556,
     "attempt": 1,
-    "capture_stage": "post_run",
-    "created_at": "2026-11-23T14:14:24Z",
-    "captured_at_utc": "2026-11-23T14:20:06Z",
-    "source_status": "completed",
-    "source_conclusion": "failure",
-    "projected_conclusion": null,
-    "report_status": "Complete",
+    "capture_stage": "pre_finalizer",
+    "created_at": "2026-11-23T15:10:10Z",
+    "captured_at_utc": "2026-11-23T15:11:46Z",
+    "source_status": "in_progress",
+    "source_conclusion": null,
+    "projected_conclusion": "failure",
+    "report_status": "Incomplete",
     "primary_category": "validation_or_test",
-    "history_path": "history/424715662/45192047948-attempt-1-post_run",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45192047948"
+    "history_path": "history/424715662/45202163346-attempt-1-pre_finalizer",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45202163346"
   }
 }
