@@ -14,7 +14,7 @@ This file records the repository's conditional initialization policy. Operationa
 - Agent Skills format, loaded on demand: `skills/agent-skill-authoring/SKILL.md`
 - Technical writing standard: `skills/asd-ste100/SKILL.md`
 - Canonical novelist procedure: the Novelist role initialization section in `skills/SESSION_START.md`
-- Drawing prerequisite: `skills/drawing/SKILL.md`, loaded for novelist initialization or a drawing session
+- Drawing tier: `skills/session-archiving/SKILL.md` (on demand) and `skills/drawing/SKILL.md`, loaded for a drawing session or novelist initialization
 
 This file does not replace an operational skill or initiation procedure.
 
@@ -49,7 +49,7 @@ Foundational initialization loads these skills:
 
 Session Archiving, Agent Skill Authoring, and Document Standards are on-demand skills. Load each only when its task-specific activation conditions apply.
 
-The Drawing skill is tier 2, not foundational. Load it for a drawing session or as a prerequisite for novelist initialization. Its required references are `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`.
+The Drawing tier is tier 2, not foundational. It includes the Drawing skill and its required references. Load Session Archiving as an on-demand dependency for drawing-session briefs, archives, or image provenance. Load the Drawing skill for a drawing session or as a prerequisite for novelist initialization. Its required references are `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`.
 
 Novelist initialization is tier 3. Load `skills/romantic-storyteller-visual-artist/SKILL.md` only for the explicit novelist role request, after foundational and Drawing tiers are ready.
 
