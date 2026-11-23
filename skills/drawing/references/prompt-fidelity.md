@@ -179,7 +179,7 @@ Do not use "prompt optimization" as a general license to add negative lists, gen
 
 ## 9. Verbatim prompt reuse and metadata isolation
 
-When the user assigns an existing successful prompt as the baseline for an adjustment, use its exact complete text. Copy it verbatim, then modify only the smallest passage needed to implement the user's latest request.
+When the user assigns an existing successful prompt as the baseline for an adjustment, use its exact complete text. Copy it verbatim, then change only the smallest passage needed to implement the user's latest request.
 
 Do not paraphrase, summarize, reconstruct, polish, reorganize, or replace the assigned prompt. Do not turn it into a description of the prompt or explain its provenance inside the generation text. Preserve every unaffected word and its order.
 
@@ -195,7 +195,7 @@ Do not write "as described in the previous prompt", "same as before", "use the e
 
 Keep all provenance, baseline selection, and archival details in the attempt record. The submitted generation prompt must contain only the visual instructions needed to produce the requested final result.
 
-Before submission, compare the prompt with the assigned text. Confirm that every unchanged passage is verbatim and that every changed passage is required by the user's request. If a metadata reference or image reference appears in the prompt, remove it before archiving and generation.
+Before submission, compare the prompt with the assigned text. Check that every unchanged passage is verbatim and that every changed passage is required by the user's request. If a metadata reference or image reference appears in the prompt, remove it before archiving and generation.
 
 ## 10. Reuse, redo, retry, and failure handling
 
@@ -261,7 +261,7 @@ The prompt-fidelity audit is a mandatory pre-generation gate.
 2. Perform the complete-prompt audit described above.
 3. Remove every unsupported addition and every unauthorized restriction, including disguised equivalents.
 4. Only then archive and commit the exact authored prompt under the drawing workflow.
-5. Fetch or otherwise read back the committed prompt and check that it matches the audited text.
+5. Retrieve or otherwise read back the committed prompt and check that it matches the audited text.
 6. Immediately before generation or editing, check that the text being submitted is the same as the verified prompt.
 7. Generate or edit only after these checks pass.
 
