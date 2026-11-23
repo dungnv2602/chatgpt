@@ -14,7 +14,7 @@ The Worker maintains task continuity across conversations. It applies in every c
 
 The Worker owns task capture, task selection, progress records, handoffs, recovery, and task archival.
 
-Conversation Mode controls communication style and access to the temporary discussion register. The Worker controls task operations.
+Conversation Mode controls chat verbosity and the discussion-register format. It maintains the register in every mode. The Worker controls task operations.
 
 ## Mandatory CI gate before every prompt
 
@@ -56,7 +56,7 @@ This rule is mandatory because no local project environment is provided and the 
 ## Workspace structure
 
 - workspace/README.md defines workspace navigation and operating rules.
-- workspace/discussion.md stores one active pre-step brief, anything awaiting user input, unresolved failures, and the three most recent successful reports in Condensed Mode. Conversation Mode owns this file.
+- workspace/discussion.md stores one active pre-step brief, anything awaiting user input, unresolved failures, and the three most recent successful reports in every mode. Conversation Mode owns and maintains this file.
 - workspace/task_board.md indexes active, ready, blocked, proposed, and historical tasks.
 - workspace/TASK_TEMPLATE.md defines the task record format.
 - workspace/tasks/ contains current task records.
@@ -251,7 +251,7 @@ When foundational initialization or a project-work request activates the Worker:
 
 Task records support recovery. They do not replace repository verification.
 
-Conversation Mode controls access to workspace/discussion.md. The Worker must not read or write that file directly. In Condensed Mode, Conversation Mode reads and updates it. It publishes one short, committed Current Step brief before each meaningful work step, then maintains open discussions and up to three recent successful reports. The Worker does not write the brief or otherwise access the register.
+Conversation Mode owns and maintains workspace/discussion.md in every mode. It publishes one short, committed Current Step brief before each meaningful work step. It then maintains open discussions and up to three recent successful reports. The Worker supplies task state and detailed progress through the task record. It relies on the register as the shared briefing and navigation surface. Do not make register maintenance conditional on the active mode.
 
 If the board and task record disagree, reconcile them against the latest user instruction and actual repository state. Record the correction.
 
@@ -298,10 +298,10 @@ Follow archive/README.md for the 90-day per-record retention policy. The Worker 
 The Worker applies in every conversation mode.
 
 - Default Mode may explain decisions and progress in more detail.
-- Condensed Mode uses minimal status reports and direct navigation links.
-- Neither mode changes task authority, approval state, progress logging, or recovery.
+- Condensed Mode uses extremely short chat responses and the single-link navigation rule.
+- Neither mode changes task authority, approval state, progress logging, recovery, or discussion-register maintenance.
 - Record detailed progress in task files instead of repeating it in chat.
-- Conversation Mode owns the temporary register. The Worker does not read or write workspace/discussion.md. The register contains one active Current Step brief, unresolved discussions, and up to three recent successful reports. The brief is a navigation aid, not a task log. Task records remain authoritative for detailed progress and verification.
+- Conversation Mode owns the format and maintenance of workspace/discussion.md in every mode. The Worker must ensure that it contains the current brief, unresolved discussions, and up to three recent successful reports. The brief is a navigation aid, not a task log. Task records remain authoritative for detailed progress and verification.
 - When an unresolved discussion receives approval, preserve its original user prompts and relevant clarifications in the resulting task record.
 - Do not claim an action, commit, or verification that did not occur.
 
