@@ -1,10 +1,10 @@
 # Latest Repository-wide Lint Report
 
-- **Run:** [#102](https://github.com/dungnv2602/chatgpt/actions/runs/44781823351)
-- **Date (UTC):** 2026-11-20 17:17:34
+- **Run:** [#103](https://github.com/dungnv2602/chatgpt/actions/runs/45087654319)
+- **Date (UTC):** 2026-11-23 00:15:18
 - **Branch:** gpt
-- **Commit:** [bc3e2205fb469f22d6dd93017b7945231e1927c2](https://github.com/dungnv2602/chatgpt/commit/bc3e2205fb469f22d6dd93017b7945231e1927c2)
-- **Trigger:** workflow_dispatch
+- **Commit:** [b96f4020e73f05bafbf0203bf2a6496b9181525f](https://github.com/dungnv2602/chatgpt/commit/b96f4020e73f05bafbf0203bf2a6496b9181525f)
+- **Trigger:** push
 
 This report is replaced by the next complete run. The generated report is excluded from subsequent lint source scans.
 
@@ -23,15 +23,15 @@ selftest OK
 **Status:** PASS
 
 ~~~text
-Scanned 122 active Markdown files (180 available as link targets) and 287 local Markdown links.
+Scanned 142 active Markdown files (203 available as link targets) and 315 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
-- **Technical Markdown files scanned:** 40
-- **Files with findings:** 32
-- **Total STE findings (hard and advisory):** 291
-- **Files failing the configured hard-finding threshold or execution:** 0
-- **Overall result:** PASS
+- **Technical Markdown files scanned:** 48
+- **Files with findings:** 38
+- **Total STE findings (hard and advisory):** 336
+- **Files failing the configured hard-finding threshold or execution:** 4
+- **Overall result:** FAIL
 
 ## STE-100 Findings by File
 
@@ -57,6 +57,7 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 
 ~~~text
 skills/agent-skill-authoring/SKILL.md:14:79 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are created]
+skills/agent-skill-authoring/SKILL.md:136:110 synonym-rotation: 'start' and 'begin' name the same action. Pick one and use it every time. [Start]
 skills/agent-skill-authoring/SKILL.md:160:29 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is loaded]
 skills/agent-skill-authoring/SKILL.md:163:106 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is loaded]
 skills/agent-skill-authoring/SKILL.md:167:23 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is loaded]
@@ -73,7 +74,16 @@ skills/agent-skill-authoring/SKILL.md:249:41 passive-voice: Possible passive voi
 skills/agent-skill-authoring/SKILL.md:251:32 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has been read]
 skills/agent-skill-authoring/SKILL.md:251:36 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been read]
 
-16 violations (0 hard, baseline 6), 2250 words, 0.7 per 100 words
+17 violations (1 hard, baseline 6), 2259 words, 0.8 per 100 words
+Hedges/modality (may, might, could) are never flagged: confidence is content.
+~~~
+
+#### `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`
+
+~~~text
+skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md:39:8 synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time. [Verify]
+
+1 violations (1 hard, baseline 0), 166 words, 0.6 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -165,32 +175,76 @@ skills/conversation-mode/SKILL.md:234:75 passive-voice: Possible passive voice. 
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
+#### `skills/document-standards/SKILL.md`
+
+~~~text
+skills/document-standards/SKILL.md:148:37 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is defined]
+
+1 violations (0 hard, baseline 0), 1070 words, 0.1 per 100 words
+Hedges/modality (may, might, could) are never flagged: confidence is content.
+~~~
+
+#### `skills/document-standards/references/document-type-catalog.md`
+
+~~~text
+skills/document-standards/references/document-type-catalog.md:41:139 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
+skills/document-standards/references/document-type-catalog.md:44:290 synonym-rotation: 'check' and 'validate' name the same action. Pick one and use it every time. [checks]
+skills/document-standards/references/document-type-catalog.md:57:23 synonym-rotation: 'confirm' and 'validate' name the same action. Pick one and use it every time. [confirmed]
+skills/document-standards/references/document-type-catalog.md:76:32 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is added]
+
+4 violations (2 hard, baseline 0), 817 words, 0.5 per 100 words
+Hedges/modality (may, might, could) are never flagged: confidence is content.
+~~~
+
 #### `skills/drawing/SKILL.md`
 
 ~~~text
 skills/drawing/SKILL.md:107:69 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is requested]
-skills/drawing/SKILL.md:159:31 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is packaged]
-skills/drawing/SKILL.md:177:35 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is known]
-skills/drawing/SKILL.md:178:27 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is known]
-skills/drawing/SKILL.md:179:35 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been loaded]
-skills/drawing/SKILL.md:186:76 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is maintained]
-skills/drawing/SKILL.md:225:21 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are wanted]
-skills/drawing/SKILL.md:229:15 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is stored]
-skills/drawing/SKILL.md:259:378 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is stored]
-skills/drawing/SKILL.md:259:553 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is verified]
-skills/drawing/SKILL.md:334:15 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is used]
-skills/drawing/SKILL.md:339:22 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was edited]
-skills/drawing/SKILL.md:349:216 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are satisfied]
-skills/drawing/SKILL.md:366:19 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is refused]
-skills/drawing/SKILL.md:398:42 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is verified]
-skills/drawing/SKILL.md:399:50 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was produced]
-skills/drawing/SKILL.md:400:42 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was returned]
-skills/drawing/SKILL.md:404:11 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
-skills/drawing/SKILL.md:415:122 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is preserved]
-skills/drawing/SKILL.md:428:24 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are determined]
-skills/drawing/SKILL.md:454:13 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is Closed]
+skills/drawing/SKILL.md:166:1 long-sentence: Sentence has 32 words (cap 25). Split it. [32 words]
+skills/drawing/SKILL.md:166:376 long-sentence: Sentence has 29 words (cap 25). Split it. [29 words]
+skills/drawing/SKILL.md:166:449 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/drawing/SKILL.md:166:827 long-sentence: Sentence has 29 words (cap 25). Split it. [29 words]
+skills/drawing/SKILL.md:166:1076 long-sentence: Sentence has 27 words (cap 25). Split it. [27 words]
+skills/drawing/SKILL.md:166:1100 synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time. [verify]
+skills/drawing/SKILL.md:166:1151 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is listed]
+skills/drawing/SKILL.md:171:31 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is packaged]
+skills/drawing/SKILL.md:189:35 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is known]
+skills/drawing/SKILL.md:190:27 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is known]
+skills/drawing/SKILL.md:191:35 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been loaded]
+skills/drawing/SKILL.md:198:76 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is maintained]
+skills/drawing/SKILL.md:237:21 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are wanted]
+skills/drawing/SKILL.md:241:15 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is stored]
+skills/drawing/SKILL.md:243:4 long-sentence: Sentence has 28 words (cap 25). Split it. [28 words]
+skills/drawing/SKILL.md:257:5 long-sentence: Sentence has 34 words (cap 25). Split it. [34 words]
+skills/drawing/SKILL.md:274:36 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/drawing/SKILL.md:305:378 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is stored]
+skills/drawing/SKILL.md:305:553 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is verified]
+skills/drawing/SKILL.md:353:46 synonym-rotation: 'confirm' and 'check' name the same action. Pick one and use it every time. [Confirm]
+skills/drawing/SKILL.md:379:1 long-sentence: Sentence has 33 words (cap 25). Split it. [33 words]
+skills/drawing/SKILL.md:384:23 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are governed]
+skills/drawing/SKILL.md:390:60 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was used]
+skills/drawing/SKILL.md:397:216 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are satisfied]
+skills/drawing/SKILL.md:414:19 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is refused]
+skills/drawing/SKILL.md:446:42 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is verified]
+skills/drawing/SKILL.md:447:50 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was produced]
+skills/drawing/SKILL.md:448:42 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was returned]
+skills/drawing/SKILL.md:452:11 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
+skills/drawing/SKILL.md:458:1 long-sentence: Sentence has 27 words (cap 25). Split it. [27 words]
+skills/drawing/SKILL.md:464:73 long-sentence: Sentence has 27 words (cap 25). Split it. [27 words]
+skills/drawing/SKILL.md:465:131 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/drawing/SKILL.md:479:24 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are determined]
+skills/drawing/SKILL.md:505:13 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is Closed]
 
-21 violations (0 hard, baseline 24), 4400 words, 0.5 per 100 words
+35 violations (14 hard, baseline 24), 5064 words, 0.7 per 100 words
+Hedges/modality (may, might, could) are never flagged: confidence is content.
+~~~
+
+#### `skills/drawing/assets/attempt-template.md`
+
+~~~text
+skills/drawing/assets/attempt-template.md:21:37 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was retained]
+
+1 violations (0 hard, baseline 0), 269 words, 0.4 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -210,14 +264,20 @@ skills/drawing/references/archive-and-delivery.md:59:23 passive-voice: Possible 
 skills/drawing/references/archive-and-delivery.md:59:57 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is converted]
 skills/drawing/references/archive-and-delivery.md:60:51 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are written]
 skills/drawing/references/archive-and-delivery.md:66:70 synonym-rotation: 'check' and 'validate' name the same action. Pick one and use it every time. [checks]
-skills/drawing/references/archive-and-delivery.md:76:74 synonym-rotation: 'verify' and 'validate' name the same action. Pick one and use it every time. [verify]
-skills/drawing/references/archive-and-delivery.md:138:400 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [were expected]
-skills/drawing/references/archive-and-delivery.md:157:37 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is paired]
-skills/drawing/references/archive-and-delivery.md:158:76 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is verified]
-skills/drawing/references/archive-and-delivery.md:169:26 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is retained]
-skills/drawing/references/archive-and-delivery.md:173:1 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is described]
+skills/drawing/references/archive-and-delivery.md:78:4 long-sentence: Sentence has 28 words (cap 25). Split it. [28 words]
+skills/drawing/references/archive-and-delivery.md:88:4 long-sentence: Sentence has 33 words (cap 25). Split it. [33 words]
+skills/drawing/references/archive-and-delivery.md:96:17 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are allowed]
+skills/drawing/references/archive-and-delivery.md:97:72 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is unresolved]
+skills/drawing/references/archive-and-delivery.md:101:39 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been uploaded]
+skills/drawing/references/archive-and-delivery.md:105:22 synonym-rotation: 'verify' and 'validate' name the same action. Pick one and use it every time. [verify]
+skills/drawing/references/archive-and-delivery.md:168:47 synonym-rotation: 'correct' and 'repair' name the same action. Pick one and use it every time. [correct]
+skills/drawing/references/archive-and-delivery.md:180:400 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [were expected]
+skills/drawing/references/archive-and-delivery.md:199:37 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is paired]
+skills/drawing/references/archive-and-delivery.md:200:76 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is verified]
+skills/drawing/references/archive-and-delivery.md:211:26 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is retained]
+skills/drawing/references/archive-and-delivery.md:215:1 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is described]
 
-19 violations (2 hard, baseline 7), 2015 words, 0.9 per 100 words
+25 violations (5 hard, baseline 7), 2365 words, 1.1 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -251,26 +311,27 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 #### `skills/drawing/references/image-editing-protocol.md`
 
 ~~~text
-skills/drawing/references/image-editing-protocol.md:26:193 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has approved]
-skills/drawing/references/image-editing-protocol.md:28:82 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
-skills/drawing/references/image-editing-protocol.md:50:57 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is unconfirmed]
+skills/drawing/references/image-editing-protocol.md:5:1 long-sentence: Sentence has 26 words (cap 25). Split it. [26 words]
+skills/drawing/references/image-editing-protocol.md:11:57 long-sentence: Sentence has 27 words (cap 25). Split it. [27 words]
+skills/drawing/references/image-editing-protocol.md:28:1 long-sentence: Sentence has 29 words (cap 25). Split it. [29 words]
+skills/drawing/references/image-editing-protocol.md:57:58 synonym-rotation: 'check' and 'verify' name the same action. Pick one and use it every time. [Check]
 
-3 violations (0 hard, baseline 4), 913 words, 0.3 per 100 words
+4 violations (4 hard, baseline 4), 965 words, 0.4 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
 #### `skills/drawing/references/patterns/PATTERN-TEMPLATES.md`
 
 ~~~text
-skills/drawing/references/patterns/PATTERN-TEMPLATES.md:15:40 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is retired]
-skills/drawing/references/patterns/PATTERN-TEMPLATES.md:16:125 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are verified]
-skills/drawing/references/patterns/PATTERN-TEMPLATES.md:20:67 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
-skills/drawing/references/patterns/PATTERN-TEMPLATES.md:98:246 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has tested]
-skills/drawing/references/patterns/PATTERN-TEMPLATES.md:109:20 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are separated]
-skills/drawing/references/patterns/PATTERN-TEMPLATES.md:111:15 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are described]
-skills/drawing/references/patterns/PATTERN-TEMPLATES.md:113:19 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are recorded]
+skills/drawing/references/patterns/PATTERN-TEMPLATES.md:17:40 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is retired]
+skills/drawing/references/patterns/PATTERN-TEMPLATES.md:18:125 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are verified]
+skills/drawing/references/patterns/PATTERN-TEMPLATES.md:22:67 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
+skills/drawing/references/patterns/PATTERN-TEMPLATES.md:100:246 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has tested]
+skills/drawing/references/patterns/PATTERN-TEMPLATES.md:111:20 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are separated]
+skills/drawing/references/patterns/PATTERN-TEMPLATES.md:113:15 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are described]
+skills/drawing/references/patterns/PATTERN-TEMPLATES.md:115:19 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are recorded]
 
-7 violations (0 hard, baseline 0), 446 words, 1.6 per 100 words
+7 violations (0 hard, baseline 0), 449 words, 1.6 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -309,8 +370,10 @@ skills/drawing/references/patterns/failure-patterns.md:209:266 passive-voice: Po
 skills/drawing/references/patterns/failure-patterns.md:210:242 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was adopted]
 skills/drawing/references/patterns/failure-patterns.md:214:32 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is maintained]
 skills/drawing/references/patterns/failure-patterns.md:218:179 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has rejected]
+skills/drawing/references/patterns/failure-patterns.md:224:30 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is included]
+skills/drawing/references/patterns/failure-patterns.md:250:20 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is maintained]
 
-23 violations (0 hard, baseline 0), 1738 words, 1.3 per 100 words
+25 violations (0 hard, baseline 0), 2146 words, 1.2 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -345,36 +408,42 @@ skills/drawing/references/prompt-fidelity.md:119:41 passive-voice: Possible pass
 skills/drawing/references/prompt-fidelity.md:127:120 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is unspecified]
 skills/drawing/references/prompt-fidelity.md:127:168 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has delegated]
 skills/drawing/references/prompt-fidelity.md:151:163 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has delegated]
-skills/drawing/references/prompt-fidelity.md:205:75 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has rejected]
-skills/drawing/references/prompt-fidelity.md:224:41 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been restored]
-skills/drawing/references/prompt-fidelity.md:225:103 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been added]
-skills/drawing/references/prompt-fidelity.md:226:33 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been paraphrased]
-skills/drawing/references/prompt-fidelity.md:227:123 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been introduced]
-skills/drawing/references/prompt-fidelity.md:228:42 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been preserved]
-skills/drawing/references/prompt-fidelity.md:229:26 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been limited]
-skills/drawing/references/prompt-fidelity.md:230:23 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been converted]
-skills/drawing/references/prompt-fidelity.md:245:66 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [being submitted]
-skills/drawing/references/prompt-fidelity.md:248:30 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has been archived]
-skills/drawing/references/prompt-fidelity.md:248:34 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been archived]
-skills/drawing/references/prompt-fidelity.md:250:46 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is exposed]
-skills/drawing/references/prompt-fidelity.md:252:98 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was submitted]
-skills/drawing/references/prompt-fidelity.md:252:197 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was authorized]
-skills/drawing/references/prompt-fidelity.md:269:87 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has delegated]
-skills/drawing/references/prompt-fidelity.md:280:57 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [have been checked]
-skills/drawing/references/prompt-fidelity.md:280:62 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been checked]
-skills/drawing/references/prompt-fidelity.md:281:99 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are preserved]
-skills/drawing/references/prompt-fidelity.md:282:41 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [have been introduced]
-skills/drawing/references/prompt-fidelity.md:282:46 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been introduced]
-skills/drawing/references/prompt-fidelity.md:283:106 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [have been added]
-skills/drawing/references/prompt-fidelity.md:283:111 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been added]
-skills/drawing/references/prompt-fidelity.md:284:31 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has been restored]
-skills/drawing/references/prompt-fidelity.md:284:35 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been restored]
-skills/drawing/references/prompt-fidelity.md:286:58 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has been audited]
-skills/drawing/references/prompt-fidelity.md:286:62 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been audited]
-skills/drawing/references/prompt-fidelity.md:287:27 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has been removed]
-skills/drawing/references/prompt-fidelity.md:287:31 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been removed]
+skills/drawing/references/prompt-fidelity.md:182:140 synonym-rotation: 'modify' and 'change' name the same action. Pick one and use it every time. [modify]
+skills/drawing/references/prompt-fidelity.md:198:63 synonym-rotation: 'confirm' and 'check' name the same action. Pick one and use it every time. [Confirm]
+skills/drawing/references/prompt-fidelity.md:198:143 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is required]
+skills/drawing/references/prompt-fidelity.md:225:75 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has rejected]
+skills/drawing/references/prompt-fidelity.md:244:41 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been restored]
+skills/drawing/references/prompt-fidelity.md:245:103 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been added]
+skills/drawing/references/prompt-fidelity.md:246:33 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been paraphrased]
+skills/drawing/references/prompt-fidelity.md:247:123 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been introduced]
+skills/drawing/references/prompt-fidelity.md:248:42 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been preserved]
+skills/drawing/references/prompt-fidelity.md:249:26 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been limited]
+skills/drawing/references/prompt-fidelity.md:250:23 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been converted]
+skills/drawing/references/prompt-fidelity.md:264:4 synonym-rotation: 'fetch' and 'retrieve' name the same action. Pick one and use it every time. [Fetch]
+skills/drawing/references/prompt-fidelity.md:265:66 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [being submitted]
+skills/drawing/references/prompt-fidelity.md:268:30 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has been archived]
+skills/drawing/references/prompt-fidelity.md:268:34 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been archived]
+skills/drawing/references/prompt-fidelity.md:270:46 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is exposed]
+skills/drawing/references/prompt-fidelity.md:272:98 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was submitted]
+skills/drawing/references/prompt-fidelity.md:272:197 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was authorized]
+skills/drawing/references/prompt-fidelity.md:289:87 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has delegated]
+skills/drawing/references/prompt-fidelity.md:300:57 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [have been checked]
+skills/drawing/references/prompt-fidelity.md:300:62 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been checked]
+skills/drawing/references/prompt-fidelity.md:301:99 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are preserved]
+skills/drawing/references/prompt-fidelity.md:302:41 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [have been introduced]
+skills/drawing/references/prompt-fidelity.md:302:46 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been introduced]
+skills/drawing/references/prompt-fidelity.md:303:106 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [have been added]
+skills/drawing/references/prompt-fidelity.md:303:111 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been added]
+skills/drawing/references/prompt-fidelity.md:304:31 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has been restored]
+skills/drawing/references/prompt-fidelity.md:304:35 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been restored]
+skills/drawing/references/prompt-fidelity.md:306:58 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has been audited]
+skills/drawing/references/prompt-fidelity.md:306:62 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been audited]
+skills/drawing/references/prompt-fidelity.md:307:27 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has been removed]
+skills/drawing/references/prompt-fidelity.md:307:31 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been removed]
+skills/drawing/references/prompt-fidelity.md:309:42 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is assigned]
+skills/drawing/references/prompt-fidelity.md:309:73 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was copied]
 
-42 violations (0 hard, baseline 15), 3314 words, 1.3 per 100 words
+48 violations (3 hard, baseline 15), 3676 words, 1.3 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -402,6 +471,16 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 skills/drawing/references/style-guide.md:60:31 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was classified]
 
 1 violations (0 hard, baseline 0), 462 words, 0.2 per 100 words
+Hedges/modality (may, might, could) are never flagged: confidence is content.
+~~~
+
+#### `skills/github-actions/SKILL.md`
+
+~~~text
+skills/github-actions/SKILL.md:21:206 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are permitted]
+skills/github-actions/SKILL.md:23:59 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is provided]
+
+2 violations (0 hard, baseline 0), 2421 words, 0.1 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -470,8 +549,19 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~text
 skills/session-archiving/SKILL.md:68:90 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is known]
 skills/session-archiving/SKILL.md:122:41 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is mentioned]
+skills/session-archiving/SKILL.md:130:339 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/session-archiving/SKILL.md:130:408 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is provided]
 
-2 violations (0 hard, baseline 7), 2041 words, 0.1 per 100 words
+4 violations (1 hard, baseline 7), 2127 words, 0.2 per 100 words
+Hedges/modality (may, might, could) are never flagged: confidence is content.
+~~~
+
+#### `skills/session-archiving/assets/session-brief-template.md`
+
+~~~text
+skills/session-archiving/assets/session-brief-template.md:5:1 long-sentence: Sentence has 26 words (cap 25). Split it. [26 words]
+
+1 violations (1 hard, baseline 0), 279 words, 0.4 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -479,35 +569,35 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 
 ~~~text
 skills/session-archiving/references/archive-records-and-image-prompts.md:13:64 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is curated]
-skills/session-archiving/references/archive-records-and-image-prompts.md:47:8 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was completed]
-skills/session-archiving/references/archive-records-and-image-prompts.md:67:20 synonym-rotation: 'verify' and 'confirm' name the same action. Pick one and use it every time. [verify]
-skills/session-archiving/references/archive-records-and-image-prompts.md:152:21 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [being discussed]
-skills/session-archiving/references/archive-records-and-image-prompts.md:161:11 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are limited]
-skills/session-archiving/references/archive-records-and-image-prompts.md:189:164 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is added]
-skills/session-archiving/references/archive-records-and-image-prompts.md:191:130 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is established]
-skills/session-archiving/references/archive-records-and-image-prompts.md:195:343 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was rejected]
-skills/session-archiving/references/archive-records-and-image-prompts.md:253:170 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was supplied]
-skills/session-archiving/references/archive-records-and-image-prompts.md:256:23 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [being tested]
-skills/session-archiving/references/archive-records-and-image-prompts.md:294:65 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was returned]
-skills/session-archiving/references/archive-records-and-image-prompts.md:305:24 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is known]
-skills/session-archiving/references/archive-records-and-image-prompts.md:322:28 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was attached]
-skills/session-archiving/references/archive-records-and-image-prompts.md:334:33 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was supplied]
-skills/session-archiving/references/archive-records-and-image-prompts.md:349:44 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was created]
-skills/session-archiving/references/archive-records-and-image-prompts.md:359:68 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was delivered]
-skills/session-archiving/references/archive-records-and-image-prompts.md:360:36 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was returned]
-skills/session-archiving/references/archive-records-and-image-prompts.md:360:58 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is unverified]
-skills/session-archiving/references/archive-records-and-image-prompts.md:363:4 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is uploaded]
-skills/session-archiving/references/archive-records-and-image-prompts.md:364:78 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is recorded]
-skills/session-archiving/references/archive-records-and-image-prompts.md:365:48 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was generated]
-skills/session-archiving/references/archive-records-and-image-prompts.md:366:75 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was returned]
-skills/session-archiving/references/archive-records-and-image-prompts.md:367:68 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is unconfirmed]
-skills/session-archiving/references/archive-records-and-image-prompts.md:377:20 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is finalized]
-skills/session-archiving/references/archive-records-and-image-prompts.md:381:53 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is renamed]
-skills/session-archiving/references/archive-records-and-image-prompts.md:403:242 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is verified]
-skills/session-archiving/references/archive-records-and-image-prompts.md:405:35 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is stored]
-skills/session-archiving/references/archive-records-and-image-prompts.md:452:69 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is based]
+skills/session-archiving/references/archive-records-and-image-prompts.md:29:8 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was completed]
+skills/session-archiving/references/archive-records-and-image-prompts.md:49:20 synonym-rotation: 'verify' and 'confirm' name the same action. Pick one and use it every time. [verify]
+skills/session-archiving/references/archive-records-and-image-prompts.md:84:21 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [being discussed]
+skills/session-archiving/references/archive-records-and-image-prompts.md:93:11 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are limited]
+skills/session-archiving/references/archive-records-and-image-prompts.md:121:164 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is added]
+skills/session-archiving/references/archive-records-and-image-prompts.md:124:130 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is established]
+skills/session-archiving/references/archive-records-and-image-prompts.md:128:343 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was rejected]
+skills/session-archiving/references/archive-records-and-image-prompts.md:186:170 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was supplied]
+skills/session-archiving/references/archive-records-and-image-prompts.md:189:23 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [being tested]
+skills/session-archiving/references/archive-records-and-image-prompts.md:227:65 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was returned]
+skills/session-archiving/references/archive-records-and-image-prompts.md:238:24 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is known]
+skills/session-archiving/references/archive-records-and-image-prompts.md:255:28 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was attached]
+skills/session-archiving/references/archive-records-and-image-prompts.md:267:33 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was supplied]
+skills/session-archiving/references/archive-records-and-image-prompts.md:282:44 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was created]
+skills/session-archiving/references/archive-records-and-image-prompts.md:292:68 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was delivered]
+skills/session-archiving/references/archive-records-and-image-prompts.md:293:36 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was returned]
+skills/session-archiving/references/archive-records-and-image-prompts.md:293:58 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is unverified]
+skills/session-archiving/references/archive-records-and-image-prompts.md:296:4 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is uploaded]
+skills/session-archiving/references/archive-records-and-image-prompts.md:297:78 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is recorded]
+skills/session-archiving/references/archive-records-and-image-prompts.md:298:48 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was generated]
+skills/session-archiving/references/archive-records-and-image-prompts.md:299:75 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was returned]
+skills/session-archiving/references/archive-records-and-image-prompts.md:300:68 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is unconfirmed]
+skills/session-archiving/references/archive-records-and-image-prompts.md:310:20 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is finalized]
+skills/session-archiving/references/archive-records-and-image-prompts.md:314:53 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is renamed]
+skills/session-archiving/references/archive-records-and-image-prompts.md:336:242 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is verified]
+skills/session-archiving/references/archive-records-and-image-prompts.md:338:35 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is stored]
+skills/session-archiving/references/archive-records-and-image-prompts.md:385:69 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is based]
 
-28 violations (1 hard, baseline 20), 4447 words, 0.6 per 100 words
+28 violations (1 hard, baseline 20), 4504 words, 0.6 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -545,9 +635,12 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 #### `skills/the-worker/SKILL.md`
 
 ~~~text
-skills/the-worker/SKILL.md:23:70 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has finished]
+skills/the-worker/SKILL.md:53:61 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is provided]
+skills/the-worker/SKILL.md:53:234 synonym-rotation: 'validate' and 'verify' name the same action. Pick one and use it every time. [validate]
+skills/the-worker/SKILL.md:69:56 synonym-rotation: 'check' and 'verify' name the same action. Pick one and use it every time. [check]
+skills/the-worker/SKILL.md:278:4 synonym-rotation: 'fetch' and 'retrieve' name the same action. Pick one and use it every time. [Fetch]
 
-1 violations (0 hard, baseline 0), 1798 words, 0.1 per 100 words
+4 violations (3 hard, baseline 0), 2403 words, 0.2 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -563,11 +656,11 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 #### `workspace/TASK_TEMPLATE.md`
 
 ~~~text
-workspace/TASK_TEMPLATE.md:43:21 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was inspected]
-workspace/TASK_TEMPLATE.md:70:20 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was checked]
-workspace/TASK_TEMPLATE.md:71:23 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was checked]
+workspace/TASK_TEMPLATE.md:44:21 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was inspected]
+workspace/TASK_TEMPLATE.md:71:20 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was checked]
+workspace/TASK_TEMPLATE.md:72:23 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was checked]
 
-3 violations (0 hard, baseline 0), 277 words, 1.1 per 100 words
+3 violations (0 hard, baseline 0), 281 words, 1.1 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -578,7 +671,7 @@ workspace/task_board.md:7:110 passive-voice: Possible passive voice. Name the ac
 workspace/task_board.md:7:137 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is exceeded]
 workspace/task_board.md:7:162 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is preserved]
 
-3 violations (0 hard, baseline 0), 272 words, 1.1 per 100 words
+3 violations (0 hard, baseline 0), 269 words, 1.1 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
