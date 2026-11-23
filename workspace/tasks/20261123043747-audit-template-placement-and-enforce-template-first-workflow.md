@@ -51,7 +51,7 @@ Audit the repository's template and schema placement, classify each recurring do
 ## 5. Decisions
 
 - Use `gpt` only.
-- Treat `archive/` as immutable. The audit may inventory top-level structure, but will not read archived record contents unless a specific dependency requires it.
+- Treat `archive/` as immutable. The user's explicit full-repository audit request authorized read-only review of the two archived task records. No archived record was modified.
 - Prefer canonical ownership by skill: templates and supporting assets live under the owning skill's `assets/`; explanatory standards and inventories live under `references/`; executable generators and validators live under `scripts/`.
 - A document type may use a template, schema, embedded contract, generator-owned format, lightweight pattern, or justified exemption. Do not create redundant templates.
 
@@ -93,7 +93,7 @@ Audit the repository's template and schema placement, classify each recurring do
 
 ## 7. Current State
 
-The task record was created from `workspace/TASK_TEMPLATE.md`. Initial standards review and repository-tree inventory are complete. Two template assets are misplaced. Existing CI does not enforce template placement or use. Correctly placed asset copies are the next action.
+The task record was created from `workspace/TASK_TEMPLATE.md`. The full repository tree and template/schema candidate inventory were reviewed. Two misplaced skill-owned template files were relocated into their owning `assets/` directories. All active references and catalog entries were updated. Document Standards and The Worker now require the canonical format and its catalog/owner references to be committed and read back before target-document edits. The catalog validator enforces template placement and detects named templates under skill `references/`. The validation workflow now triggers on all skill changes and known project/workspace template locations.
 
 ## 8. Remaining Work
 
@@ -115,11 +115,11 @@ None. The changed-document lint workflow shell defect and unverified hosted resu
 
 ## 11. Verification
 
-- **Check:** Task-record format.
-- **Method:** Copied the canonical task template and populated its required fields.
-- **Result:** Created using Template version 1.1. Read-back and board registration pending.
-- **Limitations:** This is an initial record. It does not yet establish audit completeness.
+- **Check:** Repository template placement, authoring workflow, catalog, validator, and changed paths.
+- **Method:** Enumerated the recursive Git tree; inspected all filename-matched template/schema candidates and all skill reference files; read the two archived task records under the explicit audit scope; fetched every changed path; checked the branch head.
+- **Result:** Final tree: 420 files and 488 entries, not truncated. No named template or schema remains under a skill `references/` directory. The two relocated asset blobs match their original source blobs exactly. Hosted run [45114001584](https://github.com/dungnv2602/chatgpt/actions/runs/45114001584) passed 16 validator tests and catalog validation (36 document types, 80 exact references). Final branch head at read-back: `9490c00f31eeee7a674e64ba02be8c983b51fc89`.
+- **Limitations:** The updated validation-workflow path filters have not yet received a verified hosted run. Changed-document lint run [45113875454](https://github.com/dungnv2602/chatgpt/actions/runs/45113875454) also exposed a separate literal-backslash shell defect in `.github/workflows/ste-lint-changed.yml`. The stale report-test assertion was corrected, but hosted confirmation is not yet observed. That workflow was not modified.
 
 ## 12. Handoff Instructions
 
-The task is complete. The canonical template assets, references, catalog, validator, Worker gate, and validation path filters are updated. Maintain the template-first sequence in all future modes. Do not modify unrelated workflows without separate authorization. Do not claim hosted CI validation unless a run is verified.
+The task is complete. For every future document creation or material revision, load Document Standards and the catalog, retrieve the canonical template or contract, and verify its owner location. If the format is missing, create and register it first, commit and read it back, and only then edit the target document. Apply this gate in Default Mode and Condensed Mode. Keep `workspace/discussion.md` current in both modes. Do not modify unrelated workflows without separate authorization. Do not claim hosted CI validation unless a run is verified.
