@@ -1,77 +1,38 @@
 # Workspace
 
-The workspace tracks project tasks and the shared pre-step brief, discussion, and success-report register across conversations and modes.
-
-Task operations follow [The Worker skill](../skills/the-worker/SKILL.md).
-
-[The Worker](../skills/the-worker/SKILL.md) owns task continuity, collaboration modes, and the temporary discussion register.
+The workspace is the task-management and conversation-navigation area. The Worker owns task records, selection, progress, handoffs, archive closeout, and the shared discussion register. Document Standards governs workspace document formats.
 
 ## Files
 
 | Path | Purpose |
 |---|---|
-| [discussion.md](discussion.md) | Current work-step brief, open discussions, and the three most recent successful reports in every mode |
-| [task_board.md](task_board.md) | Task index, priority, status, and selection order |
-| [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Template for individual task records |
-| [tasks/](tasks/) | Current task records |
+| [discussion.md](discussion.md) | Current-step brief, open discussions, and the three latest verified success reports |
+| [task_board.md](task_board.md) | Task index, priorities, states, and current execution |
+| [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Canonical task-record format |
+| [tasks/](tasks/) | Active task records |
+| [../reports/README.md](../reports/README.md) | Lint, Actions, and issue-ledger navigation |
 | [../archive/README.md](../archive/README.md) | Archive and retention policy |
-| [../archive/tasks/](../archive/tasks/) | Archived task records |
-| [../reports/README.md](../reports/README.md) | Central navigation for lint, Actions diagnostics, and triage |
-| [../reports/lint_reports/README.md](../reports/lint_reports/README.md) | CI lint evidence, scope indexes, detailed Markdown reports, structured JSON, and immutable run history |
-| [../reports/gh_ac_reports/README.md](../reports/gh_ac_reports/README.md) | GitHub Actions run, job, step, log, annotation, artifact, and failure-classification reports |
 
-## CI diagnostics
+## Task workflow
 
-For workflow-level diagnostics, start at [the GitHub Actions report guide](../reports/gh_ac_reports/README.md). Track recurring issues in the [central triage ledger](../reports/triage/README.md). The reporter persists actionable failures and operational exceptions, not routine successes or cancellation-only runs. Read the global index, then the workflow-specific latest report and immutable run capture. The report separates the source workflow conclusion from report-generation status and links to the exact Actions run. Use a request file to backfill an older run when no later push has triggered the collector.
+1. Check the board and active records before creating work. Update an existing task when the objective continues; otherwise create a distinct task.
+2. Record the user's request, scope, constraints, approval, priority, dependencies, and acceptance criteria.
+3. Select one current execution task. Follow explicit user direction, then dependencies, priority, and age.
+4. Record meaningful actions, decisions, verification, and blockers in the task record. Keep the board as an index.
+5. Close only after acceptance criteria pass, the archive copy is created and read back, the retention index is updated, the active record is removed, and the board links to the archive commit.
 
-The ledger is the issue backlog; The Worker turns related findings into linked workspace tasks. Task records carry finding IDs and evidence links. The ledger's `task_refs` field points back to those tasks. Ledger ingestion never creates tasks, and task status does not replace finding status.
+Task IDs use UTC `YYYYMMDD-HHMMSS`. Use only the statuses Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Optional assistant improvements remain Proposed until approved. Necessary follow-ups may be created automatically within the approved scope.
 
-## CI lint evidence
+## CI issue workflow
 
-For lint results, start at [the lint evidence guide](../reports/lint_reports/README.md). Read the relevant scope index, then its latest detailed Markdown report. Use the structured JSON for source records, finding fingerprints, exact evaluated paths, and machine processing. Retrieve GitHub Actions logs or artifacts only when the report does not contain the required runner-level evidence.
+GitHub Actions runs validation and publishes diagnostic evidence. Lint reports and Actions reports feed the [central CI issue ledger](../reports/triage/README.md). The ledger is the issue backlog; it deduplicates findings and stores evidence. The Worker groups related findings into workspace tasks and links each finding through `task_refs`. Ledger ingestion never creates tasks.
 
-## Operating rules
+Do not run periodic triage or poll workflows. Review CI only when the user asks, a known failure blocks the task, or the task requires validation. Ordinary successful Actions runs are not persisted as diagnostic reports. A successful validation run URL and timestamp are sufficient resolution evidence; request a full success capture only when detailed logs are specifically required.
 
-- Use UTC for task IDs and timestamps.
-- Check the board before creating a task.
-- Keep one current execution task.
-- Preserve original user requests and relevant clarifications in task records.
-- Record every meaningful action and result in the task file.
-- Keep the board as an index. Do not duplicate detailed progress there.
-- Check repository state before resuming a task.
-- Update the task record before switching tasks or ending work.
-- Create necessary assistant follow-ups automatically.
-- Mark optional assistant improvements as Proposed. Wait for user approval before execution.
-- Apply the same task workflow in every conversation mode.
-- The Worker maintains `discussion.md` in every mode. Its mandatory Conversation Mode reference defines the register rules.
+## Discussion register
 
-## Task ID and filename
-
-Use YYYYMMDD-HHMMSS in UTC. Add a two-digit suffix when IDs collide within one second.
-
-Use YYYYMMDD-HHMMSS-short-kebab-title.md for task filenames.
-
-## Task status
-
-- Proposed — optional assistant task awaiting approval.
-- Ready — approved and eligible for selection.
-- In Progress — work has started and remains incomplete.
-- Blocked — a dependency or external condition prevents progress.
-- Paused — work is intentionally inactive.
-- Done — acceptance criteria are met.
-- Cancelled — the task will not continue.
+The Worker maintains [discussion.md](discussion.md) in both conversation modes. Its Conversation Mode reference defines the section order, pre-step brief, open-discussion lifecycle, and three-report limit. Keep technical progress and handoffs in task records, not in the register.
 
 ## Recovery
 
-Read this file, then [task_board.md](task_board.md), then the selected task record. Check the repository before resuming. Follow the task's Next Actions.
-
-In both modes, The Worker reads and maintains [discussion.md](discussion.md) under its mandatory Conversation Mode reference. Before each meaningful work step, it commits and reads back a concise Current Step brief, then links the file before execution. The file has three sections in this order: Current Step, Open Discussions, then Reports. Current Step contains only the next action, its scope, and expected result. Open Discussions contains anything awaiting user input and all unresolved failure outcomes. Reports contains only completed, verified successes and retains at most the three most recent entries. Default Mode may add normal chat detail. Condensed Mode uses extremely short chat responses and the single-link rule.
-
-## Navigation
-
-- [Open discussions](discussion.md)
-- [Task board](task_board.md)
-- [Task template](TASK_TEMPLATE.md)
-- [The Worker skill](../skills/the-worker/SKILL.md)
-- [Conversation Mode reference](../skills/the-worker/references/conversation-mode.md)
-- [Archive policy](../archive/README.md)
+Read this file, the board, and the selected task record. Check the current `gpt` repository state before resuming. Follow the task's Next Actions. Reconcile discrepancies against the latest user instruction and committed repository state.
