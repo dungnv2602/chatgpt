@@ -184,3 +184,15 @@ jobs:
         run: |
           echo "::error::Takeout processing failed. The hand-off remains active; inspect the archived diagnostic report."
           exit 1
+
+  diagnostics:
+    name: Capture GH Actions diagnostics
+    if: ${{ always() }}
+    needs: [process-image-takeout]
+    uses: ./.github/workflows/gh-actions-diagnostics.yml
+    with:
+      capture_mode: finalizer
+    permissions:
+      actions: read
+      checks: read
+      contents: write

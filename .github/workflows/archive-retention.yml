@@ -61,3 +61,15 @@ jobs:
           # Update both refs to the same commit atomically. This is a
           # fast-forward of main to gpt; no merge commit or force push.
           git push --atomic origin HEAD:refs/heads/gpt HEAD:refs/heads/main
+
+  diagnostics:
+    name: Capture GH Actions diagnostics
+    if: ${{ always() }}
+    needs: [cleanup]
+    uses: ./.github/workflows/gh-actions-diagnostics.yml
+    with:
+      capture_mode: finalizer
+    permissions:
+      actions: read
+      checks: read
+      contents: write

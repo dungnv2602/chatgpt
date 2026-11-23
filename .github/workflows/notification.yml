@@ -30,3 +30,15 @@ jobs:
             Pushed by: ${{ github.actor }}
             Commit SHA: ${{ github.sha }}
           convert_markdown: true
+
+  diagnostics:
+    name: Capture GH Actions diagnostics
+    if: ${{ always() }}
+    needs: [send-email]
+    uses: ./.github/workflows/gh-actions-diagnostics.yml
+    with:
+      capture_mode: finalizer
+    permissions:
+      actions: read
+      checks: read
+      contents: write

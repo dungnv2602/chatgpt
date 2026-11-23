@@ -51,3 +51,15 @@ jobs:
       - name: Validate the document type catalog
         run: |
           python skills/document-standards/scripts/validate_catalog.py --root .
+
+  diagnostics:
+    name: Capture GH Actions diagnostics
+    if: ${{ always() }}
+    needs: [validate-document-standards]
+    uses: ./.github/workflows/gh-actions-diagnostics.yml
+    with:
+      capture_mode: finalizer
+    permissions:
+      actions: read
+      checks: read
+      contents: write

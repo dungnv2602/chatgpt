@@ -7,6 +7,7 @@ on:
     paths:
       - '**.md'
       - '!lint_reports/**'
+      - '!gh_ac_reports/**'
       - '!archive/**'
       - '!workspace/tasks/**'
       - '!workspace/discussion.md'
@@ -380,3 +381,15 @@ jobs:
             echo "::error::Changed-document lint failed. See lint_reports/on_changed/latest-lint-report.md."
             exit 1
           fi
+
+  diagnostics:
+    name: Capture GH Actions diagnostics
+    if: ${{ always() }}
+    needs: [preflight, ste-lint]
+    uses: ./.github/workflows/gh-actions-diagnostics.yml
+    with:
+      capture_mode: finalizer
+    permissions:
+      actions: read
+      checks: read
+      contents: write

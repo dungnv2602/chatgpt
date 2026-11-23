@@ -257,3 +257,15 @@ jobs:
             exit 1
           fi
           echo "All full-audit checks passed."
+
+  diagnostics:
+    name: Capture GH Actions diagnostics
+    if: ${{ always() }}
+    needs: [preflight, ste-lint]
+    uses: ./.github/workflows/gh-actions-diagnostics.yml
+    with:
+      capture_mode: finalizer
+    permissions:
+      actions: read
+      checks: read
+      contents: write
