@@ -226,6 +226,7 @@ jobs:
             --commit "$GITHUB_SHA" --event "$GITHUB_EVENT_NAME" \
             --mode repository-wide --status "$report_status" \
             --checks-file .lint-report-checks.json \
+            --previous-report lint_reports/on_repo/latest-lint-report.json \
             --linter-source-sha "$(git rev-parse HEAD)" || generator_status=$?
           if [[ "$generator_status" -ne 0 ]]; then
             echo "::error::The shared lint report generator failed with exit $generator_status."
