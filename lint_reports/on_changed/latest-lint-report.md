@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#430](https://github.com/dungnv2602/chatgpt/actions/runs/45123002601)
-- **Run ID / attempt:** 45123002601 / 1
+- **Run:** [#431](https://github.com/dungnv2602/chatgpt/actions/runs/45123260178)
+- **Run ID / attempt:** 45123260178 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / a496eb8a30dba75ddc52f57d7d0f814da26ba702
+- **Branch / commit:** gpt / a845babb053e5cdd122ed280224d3583459f6f1a
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** a496eb8a30dba75ddc52f57d7d0f814da26ba702
-- **Generated (UTC):** 2026-11-23T06:17:02.949766+00:00
+- **Linter source SHA:** a845babb053e5cdd122ed280224d3583459f6f1a
+- **Generated (UTC):** 2026-11-23T06:19:26.697576+00:00
 
 ## 1. Executive summary
 
@@ -19,12 +19,12 @@
 | Files evaluated | 51 |
 | Files that failed | 10 |
 | Files with findings | 42 |
-| Total findings | 476 |
+| Total findings | 475 |
 | Hard findings | 149 |
-| Advisory findings | 327 |
+| Advisory findings | 326 |
 | New findings | 0 |
-| Recurring findings | 476 |
-| Resolved findings | 0 |
+| Recurring findings | 475 |
+| Resolved findings | 1 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -123,7 +123,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md | PASS | 8 | 0 | 7 | 2716 | 0.3 | 0 |
 | skills/drawing/SKILL.md | PASS | 35 | 14 | 24 | 5064 | 0.7 | 0 |
 | gh_ac_reports/assets/report-template.md | PASS | 0 | 0 | 0 | 71 | 0.0 | 0 |
-| skills/document-standards/references/document-type-catalog.md | FAIL | 99 | 75 | 0 | 2958 | 3.3 | 1 |
+| skills/document-standards/references/document-type-catalog.md | FAIL | 99 | 75 | 0 | 2959 | 3.3 | 1 |
 | workspace/task_board.md | PASS | 3 | 0 | 0 | 238 | 1.3 | 0 |
 | skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
 | skills/INITIALIZATION_POLICY.md | PASS | 2 | 0 | 4 | 1175 | 0.2 | 0 |
@@ -142,7 +142,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/document-standards/SKILL.md | FAIL | 6 | 4 | 0 | 1606 | 0.4 | 1 |
 | skills/session-archiving/SKILL.md | PASS | 5 | 2 | 7 | 2357 | 0.2 | 0 |
 | skills/drawing/references/image-editing-protocol.md | PASS | 4 | 4 | 4 | 965 | 0.4 | 0 |
-| gh_ac_reports/README.md | PASS | 8 | 0 | 0 | 841 | 1.0 | 0 |
+| gh_ac_reports/README.md | PASS | 7 | 0 | 0 | 873 | 0.8 | 0 |
 | skills/session-archiving/assets/session-brief-template.md | FAIL | 1 | 1 | 0 | 288 | 0.3 | 1 |
 | skills/SESSION_START.md | PASS | 2 | 0 | 0 | 2275 | 0.1 | 0 |
 | skills/drawing/references/patterns/README.md | PASS | 1 | 0 | 0 | 442 | 0.2 | 0 |
@@ -155,7 +155,7 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 287 |
+| passive-voice | 286 |
 | semicolon | 78 |
 | present-perfect | 40 |
 | synonym-rotation | 32 |
@@ -194,7 +194,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.371s
+Ran 4 tests in 0.337s
 
 OK
 ~~~
@@ -227,7 +227,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 145 active Markdown files (229 available as link targets) and 319 local Markdown links.
+Scanned 145 active Markdown files (230 available as link targets) and 319 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -2117,10 +2117,6 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are committed
-- **passive-voice** · gh_ac_reports/README.md:56:23 · **recurring** · fingerprint: a9176525601fa5d50e90e3cc
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is called
 - **passive-voice** · gh_ac_reports/README.md:58:234 · **recurring** · fingerprint: 701eb82303623fc17158e399
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -2148,7 +2144,10 @@ None.
 
 ### Resolved findings
 
-None.
+- **passive-voice** · gh_ac_reports/README.md:56:23 · **resolved** · fingerprint: a9176525601fa5d50e90e3cc
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is called
 
 ## 8. Complete per-file diagnostics
 
@@ -3634,7 +3633,7 @@ No STE findings were recorded for this file.
 - **Findings:** 99
 - **Hard findings:** 75
 - **Baseline:** 0
-- **Words:** 2958
+- **Words:** 2959
 - **Findings per 100 words:** 3.3
 
 #### Complete diagnostics
@@ -5063,11 +5062,11 @@ No STE findings were recorded for this file.
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 8
+- **Findings:** 7
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 841
-- **Findings per 100 words:** 1.0
+- **Words:** 873
+- **Findings per 100 words:** 0.8
 
 #### Complete diagnostics
 
@@ -5095,11 +5094,6 @@ No STE findings were recorded for this file.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are committed
-
-- **passive-voice** · gh_ac_reports/README.md:56:23 · **recurring** · fingerprint: a9176525601fa5d50e90e3cc
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is called
 
 - **passive-voice** · gh_ac_reports/README.md:58:234 · **recurring** · fingerprint: 701eb82303623fc17158e399
   - **Level:** advisory

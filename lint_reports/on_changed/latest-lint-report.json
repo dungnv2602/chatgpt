@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45123002601",
-  "run_number": 430,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123002601",
+  "run_id": "45123260178",
+  "run_number": 431,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123260178",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "a496eb8a30dba75ddc52f57d7d0f814da26ba702",
+  "commit_sha": "a845babb053e5cdd122ed280224d3583459f6f1a",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T06:17:02.949766+00:00",
+  "generated_at_utc": "2026-11-23T06:19:26.697576+00:00",
   "status": "Failed",
-  "linter_source_sha": "a496eb8a30dba75ddc52f57d7d0f814da26ba702",
+  "linter_source_sha": "a845babb053e5cdd122ed280224d3583459f6f1a",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -87,12 +87,12 @@
     "skills/session-archiving/assets/session-brief-template.md"
   ],
   "files_with_findings": 42,
-  "total_findings": 476,
+  "total_findings": 475,
   "hard_findings": 149,
-  "advisory_findings": 327,
+  "advisory_findings": 326,
   "findings_by_rule": {
     "synonym-rotation": 32,
-    "passive-voice": 287,
+    "passive-voice": 286,
     "present-perfect": 40,
     "long-sentence": 27,
     "phrasal-verb": 5,
@@ -3322,7 +3322,7 @@
       "count": 99,
       "hard_count": 75,
       "baseline": 0,
-      "words": 2958,
+      "words": 2959,
       "per_100_words": 3.3,
       "path": "skills/document-standards/references/document-type-catalog.md",
       "exit_code": 1
@@ -4814,15 +4814,6 @@
         },
         {
           "file": "gh_ac_reports/README.md",
-          "line": 56,
-          "col": 23,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is called",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "gh_ac_reports/README.md",
           "line": 58,
           "col": 234,
           "rule": "passive-voice",
@@ -4840,11 +4831,11 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 8,
+      "count": 7,
       "hard_count": 0,
       "baseline": 0,
-      "words": 841,
-      "per_100_words": 1.0,
+      "words": 873,
+      "per_100_words": 0.8,
       "path": "gh_ac_reports/README.md",
       "exit_code": 0
     },
@@ -10100,17 +10091,6 @@
     },
     {
       "file": "gh_ac_reports/README.md",
-      "line": 56,
-      "col": 23,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is called",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "a9176525601fa5d50e90e3cc",
-      "comparison": "recurring"
-    },
-    {
-      "file": "gh_ac_reports/README.md",
       "line": 58,
       "col": 234,
       "rule": "passive-voice",
@@ -10177,8 +10157,20 @@
     }
   ],
   "new_findings": 0,
-  "recurring_findings": 476,
-  "resolved_findings": [],
+  "recurring_findings": 475,
+  "resolved_findings": [
+    {
+      "file": "gh_ac_reports/README.md",
+      "line": 56,
+      "col": 23,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is called",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "a9176525601fa5d50e90e3cc",
+      "comparison": "resolved"
+    }
+  ],
   "checks": [
     {
       "name": "Wrapper shell syntax",
@@ -10196,7 +10188,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.371s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.337s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -10214,7 +10206,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 145 active Markdown files (229 available as link targets) and 319 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 145 active Markdown files (230 available as link targets) and 319 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
