@@ -84,7 +84,7 @@ class ReportGeneratorTests(unittest.TestCase):
             report = json.loads((second / "report.json").read_text(encoding="utf-8"))
             self.assertEqual(report["recurring_findings"], 1)
             self.assertEqual(report["new_findings"], 1)
-            self.assertEqual(report["resolved_findings"], 0)
+            self.assertEqual(report["resolved_findings"], [])
             index = json.loads((root / "on_changed" / "index.json").read_text(encoding="utf-8"))
             self.assertEqual(len(index["runs"]), 2)
             self.assertTrue((root / "on_changed" / "latest-lint-report.md").is_file())
