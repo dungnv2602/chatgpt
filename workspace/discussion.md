@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 10:24 UTC — Activate approved lint-remediation task:** Move task 20261123-100738 to Current Execution, retain task 20261123-054904 as In Progress pending its independent follow-ups, and prepare the first source-review batch.
+- **2026-11-23 10:31 UTC — Review first lint-remediation batch:** Inspect the full Document Type Catalog and its 75 hard finding locations. Resolve the high-density semicolon and sentence-length findings in a semantics-preserving batch. Keep advisory findings out of scope.
 
 ## Open Discussions
 
