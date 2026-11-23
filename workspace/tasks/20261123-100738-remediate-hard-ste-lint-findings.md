@@ -202,10 +202,9 @@ The approved task is In Progress and is the current execution. Source-level edit
 
 ## 9. Next Actions
 
-1. Review the single hard finding in `skills/session-archiving/assets/session-brief-template.md` against the archive skill and catalog contract.
-2. Preserve the original user wording and open-field semantics.
-3. Resolve the 13 intentional-example findings only after user direction. Do not rewrite examples that the repository policy says to preserve.
-4. Apply fixes on `gpt` and inspect naturally generated hosted reports.
+1. Obtain explicit user direction on the 13 intentional-example findings in `skills/asd-ste100/SKILL.md`.
+2. Do not rewrite intentional examples or alter the repository writing policy without approval.
+3. After the decision, complete any authorized edits and inspect naturally generated hosted reports.
 
 ## 10. References
 
