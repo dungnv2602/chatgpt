@@ -24,6 +24,10 @@ Use [Document Standards](../document-standards/SKILL.md) as the single authoring
 
 The Worker owns task capture, approval, progress, and closeout. Document Standards owns document format.
 
+## Unclassified image intake
+
+When an image cannot be classified or mapped from retained evidence, preserve it in takeout. Do not invent its subject, source, attempt, prompt, title, destination, or index entry. Use the conversion-only procedure in [Image Provenance and WebP Delivery](references/image-provenance-and-webp.md) when the user requests a WebP derivative. Keep the PNG unchanged and the derivative in staging. Do not invoke the provenance-gated relocation processor for an unclassified image. Do not move either file or edit a manifest, attempt record, daily index, or other project index unless the user explicitly requests that work. The user may relocate the derivative manually. Edit an index only on explicit request and only with supplied or verified mapping details.
+
 ## CI review
 
 Follow the [GitHub Actions skill](../github-actions/SKILL.md). CI is not an initialization gate and must not delay unrelated requests. Inspect it only when the user asks, a known failure blocks the task, or the current task changes or depends on a workflow.
