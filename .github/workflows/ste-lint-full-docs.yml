@@ -272,7 +272,7 @@ jobs:
           files_evaluated = [line[3:-1] for line in coverage.splitlines() if line.startswith("- `") and line.endswith("`")]
           findings = []
           for line in markdown.splitlines():
-              match = re.match(r"^(.+?):(\\d+):(\\d+) ([a-z0-9-]+): (.*?) \\[(.*)\\]$", line)
+              match = re.match(r"^(.+?):(\d+):(\d+) ([a-z0-9-]+): (.*?) \[(.*)\]$", line)
               if match:
                   file_path, line_number, column, rule, message, matched_text = match.groups()
                   fingerprint = hashlib.sha256(json.dumps([file_path, rule, matched_text, message], sort_keys=True).encode()).hexdigest()[:20]
