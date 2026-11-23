@@ -1,10 +1,6 @@
 ## Current Step
 
-No active task. The lint-report repair is archived at [the completed task record](../archive/tasks/20261123-051200-repair-lint-report-evidence-workflow.md). Both report scopes have hosted, detailed evidence. Do not poll completed workflows; review the latest reports from their scope indexes.
-
-## Session Startup
-
-- 2026-11-23 — Foundational retrievals started for the GitHub Actions diagnostics reporting expansion and session-preflight workflow update.
+- **2026-11-23 05:45 UTC — Foundational initialization:** Retrieve and read The Worker, Agent Skill Authoring, ASD-STE100, and GitHub Actions skills from branch `gpt`; then run the one bounded CI snapshot required by the session gate. Do not wait for or poll pending runs. Expected result: verified foundational instructions and a recorded CI snapshot outcome.
 
 ## Open Discussions
 
