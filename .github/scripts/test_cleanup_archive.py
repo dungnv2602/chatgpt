@@ -44,6 +44,15 @@ class ArchiveRetentionTests(unittest.TestCase):
   self.write([self.rec("archive/reports/absent.json","2026-01-01T00:00:00Z")])
   deleted,changed=self.run_clean(); self.assertEqual(deleted,[]); self.assertTrue(changed)
   self.assertEqual(json.loads(self.index.read_text())["records"],[])
+
+ def test_symlinked_parent_directory_is_rejected(self):
+  link=self.root/"archive"/"reports"/"linked"
+  outside=self.root/"outside"; outside.mkdir()
+  link.symlink_to(outside,target_is_directory=True)
+  target=outside/"report.md"; target.write_text("protected")
+  self.write([self.rec("archive/reports/linked/report.md","2026-01-01T00:00:00Z")])
+  with self.assertRaises(ValueError): self.run_clean()
+  self.assertTrue(target.exists())
  def test_schedule_only(self):
   with self.assertRaises(RuntimeError): cleanup.require_scheduled_event("workflow_dispatch","true")
   with self.assertRaises(RuntimeError): cleanup.require_scheduled_event("schedule","false")
