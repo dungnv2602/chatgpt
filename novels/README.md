@@ -67,7 +67,8 @@ novels/
     │   └── illustrations/
     │       └── [ARC-ID]/
     │           └── [SCN-ID]/
-    │               ├── [ILL-ID]-[descriptive-slug].png
+    │               ├── original/
+    │               │   └── [ILL-ID]-[descriptive-slug].png
     │               └── [ILL-ID]-[descriptive-slug].webp
     └── Arc-01/
         ├── arc.md
@@ -80,19 +81,15 @@ novels/
 
 ## Illustration binaries and upload intake
 
-Store novel illustration binaries centrally at:
+Store novel illustration binaries at:
 
 `[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`
 
-Keep the Illustration Note and Illustration Prompt Record in the scene-local `illustrations/` folder. This folder stores documentation, not image binaries. Each retained illustration has an original PNG/JPEG master and a WebP derivative beside it. The original remains the byte-identical master. WebP is a separate delivery copy.
+Keep the Illustration Note and Illustration Prompt Record in the scene-local `illustrations/` folder. These records contain documentation, not image binaries.
 
-All user-uploaded images first enter the single flat intake at `images/takeout/`. This rule applies to novel and non-novel projects. The assistant inspects each image and prepares `images/takeout/HANDOFF.yml`. Each hand-off item records the exact incoming filename, descriptive title, optional stable ID, and destination directory.
+Each retained illustration has an unchanged PNG/JPEG master under `original/` and a separate WebP delivery file in the destination root. Do not place the master beside the WebP or link the master in the attempt index.
 
-The existing GitHub Action converts the supplied title to a slug. It preserves the original bytes. It stages each WebP under `images/takeout/webp/[batch-id]/attempt-NNN/`. Each staged filename uses the exact incoming filename plus `.webp` (for example, `photo.png.webp`). After verification, the master and staged derivative move to their permanent destination.
-
-The Action refuses destination collisions and processes the batch as a unit. On success, it removes the empty staging attempt folder. It clears the active hand-off only after it verifies every master and WebP. It also archives the original hand-off, `conversion-report.csv`, and `verification-report.md` under `images/takeout/history/[batch-id]/attempt-NNN/`.
-
-On failure, source images and the ready hand-off remain in the intake. Successfully converted WebPs remain in the failed attempt's staging folder for inspection. A retry receives a new attempt number and preserves earlier failed staging. See [Image Takeout](../images/takeout/README.md) and [Novel Production Workflow 1.1](WORKFLOW.md).
+All new uploads use the shared flat `images/takeout/` intake. The Worker owns inspection, provenance, processing, original preservation, and publication verification. Use the [Image Takeout procedure](../images/takeout/README.md) for the exact hand-off schema and processing steps. Use the [Drawing archive rules](../skills/drawing/references/archive-and-delivery.md) for attempt links and session-manifest requirements.
 
 ## Document responsibilities
 

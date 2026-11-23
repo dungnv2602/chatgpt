@@ -30,7 +30,6 @@ Include:
 - Verified paths within `approved project directories` and the branch information when useful.
 - The next concrete task, in priority order.
 
-Separate verified facts from hypotheses. Do not repeat unsupported explanations as facts. Link only to files under `approved project directories`.
 
 ## 6. File 3: Image prompts
 
@@ -178,9 +177,8 @@ Record:
   If the next operation needs a full-scene prompt, verify the newest success's scope. If it is only a localized edit or style-only prompt, record the newest successful full-generation prompt from that series. Use it as the compatible text skeleton and explain why.
   If no baseline exists, state that fact. For a new branch, record the inherited seed and source.
 - **Latest-attempt diagnostic reference:** Link the newest later attempt you inspected when it differs from the selected successful baseline. State what you carried forward and what you did not.
-- **Acceptance criteria:** normally three to five observable requirements derived from the active brief for this image. Mark critical criteria and define the visible evidence for each. Record `Not applicable` only when no meaningful visual criterion can be derived.
+- **Pre-generation acceptance criteria:** record three to five observable requirements derived from the active brief. Mark critical criteria, define the expected visible evidence, and record them before generation/editing. Use `Not applicable` only when no meaningful visual criterion exists.
 - **Prompt difference:** record (a) baseline prompt or `none / first attempt`, (b) details preserved, (c) details changed, and (d) details deliberately excluded/not carried forward. Identify the user instruction supporting each change.
-- **Pre-generation acceptance criteria:** normally three to five observable requirements derived from the active brief, with critical/non-critical status and the visible evidence expected. These must be recorded before generation/editing, not reconstructed after seeing the output.
 - **Per-output assessment:** for every image returned, score each criterion Pass / Partial / Fail / Not assessable and cite the visible evidence. Keep outputs separate when one call returns multiple images.
 - Operation type: **fresh generation** or **edit of a reference image**.
 - Source image/reference, when applicable. Distinguish inspiration references from the exact edit source, and record the actual asset/attachment identifier only when it was supplied to the tool.
@@ -238,8 +236,6 @@ Keep two judgements distinct:
   When the prompt link is known and the user accepts the attempt as successful, record the output and its baseline eligibility. Preserve earlier assessment history.
 
 A failed, rejected, partial, or missed-target prompt is never the default text baseline. If no later successful prompt exists, return to the most recent success in the same series or artwork thread. Apply only user-requested changes from later attempts.
-
-### Image handling
 
 ### Image-operation records
 
