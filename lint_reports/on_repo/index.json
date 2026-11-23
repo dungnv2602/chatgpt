@@ -11,6 +11,15 @@
       "total_findings": 453,
       "attempt": 1,
       "files_evaluated_count": 48
+    },
+    {
+      "run_id": "45114176416",
+      "run_number": 155,
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45114176416",
+      "attempt": 1,
+      "commit_sha": "24d368d49e8bd1655d8db87e16083bce56e65240",
+      "generated_at_utc": "2026-11-23T04:50:37.057973+00:00",
+      "status": "Failed"
     }
   ]
 }
