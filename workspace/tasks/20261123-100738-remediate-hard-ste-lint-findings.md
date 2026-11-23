@@ -5,12 +5,12 @@
 - **Template version:** 1.1
 - **ID:** 20261123-100738
 - **Created:** 2026-11-23 10:07 UTC
-- **Updated:** 2026-11-23 10:07 UTC
+- **Updated:** 2026-11-23 10:28 UTC
 - **Priority:** P1
-- **Status:** Ready
+- **Status:** In Progress
 - **Origin:** Assistant
 - **Approval:** Approved
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** 20261123-054904 — Build GitHub Actions diagnostic reports and remove the CI preflight gate
 - **Archived:** No
@@ -56,6 +56,12 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 6. Progress Log
 
+### 2026-11-23 10:28 UTC
+
+- **Action:** Activated the approved lint-remediation task after hosted validation of the cancellation-safe diagnostic fix.
+- **Result:** Task 20261123-100738 is now the current execution. The diagnostic task remains In Progress for its independent pending captures and scheduled retention observation. No lint source edits have started.
+- **Next:** Review the canonical hard-finding fingerprints and the complete highest-density source document before the first remediation batch.
+
 ### 2026-11-23 10:07 UTC
 
 - **Action:** Inspected the current repository-wide and changed-scope lint indexes, latest Markdown report, and structured JSON.
@@ -65,7 +71,7 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 7. Current State
 
-The task is approved and Ready. The canonical hard-finding set contains 155 unique fingerprints. Both report scopes agree. No lint remediation has started. The 319 advisory findings remain out of scope.
+The approved task is In Progress and is the current execution. The canonical hard-finding set contains 155 unique fingerprints. Both report scopes agree. Source remediation has not started. The 319 advisory findings remain out of scope.
 
 ## 8. Remaining Work
 
@@ -76,9 +82,9 @@ The task is approved and Ready. The canonical hard-finding set contains 155 uniq
 
 ## 9. Next Actions
 
-1. Select this task after the current diagnostic-report task reaches its validation and closeout checkpoint.
-2. Review the highest-density files and plan small, coherent edit batches.
-3. Apply fixes on `gpt` and inspect the naturally generated hosted reports.
+1. Review the exact hard-finding fingerprints and complete source context in the highest-density files.
+2. Plan small, coherent edit batches that preserve all source meaning and technical constraints.
+3. Apply fixes on `gpt` and inspect naturally generated hosted reports.
 4. Repeat until the approved hard-finding set is resolved.
 
 ## 10. References
