@@ -107,7 +107,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      contents: read
+      contents: write
     steps:
       - name: Check out current commit
         uses: actions/checkout@v4
@@ -136,28 +136,32 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Initialize lint evidence capture
+        run: mkdir -p .lint-report-records lint_reports/on_changed/history
+
       - name: Check active Markdown file links and heading anchors
+        id: anchors
         if: needs.preflight.outputs.full_audit == 'true' || steps.fetch_baseline.outputs.full_audit == 'true'
         run: python3 skills/asd-ste100/scripts/check_markdown_anchors.py
 
       - name: Run full technical-document lint
+        id: full_audit
         if: needs.preflight.outputs.full_audit == 'true' || steps.fetch_baseline.outputs.full_audit == 'true'
         shell: bash
         run: |
-          set -euo pipefail
-          files=$(git ls-files '*.md' |
-            grep -vE '^(archive/|lint_reports/|workspace/tasks/|workspace/discussion\.md$|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))')
+          set -uo pipefail
+          files=$(git ls-files '*.md' | grep -vE '^(archive/|lint_reports/|workspace/tasks/|workspace/discussion\\.md$|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))')
           failed=0
           while IFS= read -r file; do
             [ -z "$file" ] && continue
-            if bash skills/asd-ste100/scripts/ste-lint-repository.sh "$file"; then
-              :
-            else
-              echo "Lint failure: $file"
-              failed=1
-            fi
+            key=$(printf '%s' "$file" | sha256sum | cut -d' ' -f1)
+            output=".lint-report-records/$key.json"
+            status=0
+            bash skills/asd-ste100/scripts/ste-lint-repository.sh --json "$file" > "$output" 2>&1 || status=$?
+            jq --arg path "$file" --argjson exit_code "$status" '. + {path:$path, exit_code:$exit_code}' "$output" > "$output.tmp" && mv "$output.tmp" "$output"
+            if [[ "$status" -ne 0 ]]; then failed=1; fi
           done <<< "$files"
-          exit "$failed"
+          echo "failed=$failed" >> "$GITHUB_OUTPUT"
 
       - name: Find Markdown files changed since the last successful run
         id: changed
@@ -176,13 +180,70 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - name: Run STE linter on changed Markdown files
+        id: changed_lint
         if: steps.changed.outputs.files != ''
         shell: bash
         env:
           CHANGED_FILES: ${{ steps.changed.outputs.files }}
         run: |
-          set -euo pipefail
+          set -uo pipefail
+          failed=0
           while IFS= read -r file; do
             [ -z "$file" ] && continue
-            bash skills/asd-ste100/scripts/ste-lint-repository.sh "$file"
+            key=$(printf '%s' "$file" | sha256sum | cut -d' ' -f1)
+            output=".lint-report-records/$key.json"
+            status=0
+            bash skills/asd-ste100/scripts/ste-lint-repository.sh --json "$file" > "$output" 2>&1 || status=$?
+            jq --arg path "$file" --argjson exit_code "$status" '. + {path:$path, exit_code:$exit_code}' "$output" > "$output.tmp" && mv "$output.tmp" "$output"
+            if [[ "$status" -ne 0 ]]; then failed=1; fi
           done <<< "$CHANGED_FILES"
+          echo "failed=$failed" >> "$GITHUB_OUTPUT"
+
+      - name: Generate and publish changed-document lint evidence
+        if: always() && needs.preflight.outputs.proceed == 'true'
+        shell: bash
+        env:
+          BASE_SHA: ${{ needs.preflight.outputs.base_sha }}
+          FULL_AUDIT: ${{ needs.preflight.outputs.full_audit }}
+          FETCH_FALLBACK: ${{ steps.fetch_baseline.outputs.full_audit }}
+          FULL_FAILED: ${{ steps.full_audit.outputs.failed }}
+          CHANGED_FAILED: ${{ steps.changed_lint.outputs.failed }}
+        run: |
+          set -euo pipefail
+          mode="incremental"
+          baseline="$BASE_SHA"
+          if [[ "$FULL_AUDIT" == "true" || "$FETCH_FALLBACK" == "true" ]]; then
+            mode="full-audit-fallback"
+            baseline=""
+          fi
+          status="Passed"
+          if [[ "$FULL_FAILED" == "1" || "$CHANGED_FAILED" == "1" ]]; then status="Failed"; fi
+          mkdir -p "lint_reports/on_changed/history/$GITHUB_RUN_ID"
+          python3 skills/asd-ste100/scripts/generate_lint_report.py \
+            --scope on_changed --records-dir .lint-report-records \
+            --output-dir "lint_reports/on_changed/history/$GITHUB_RUN_ID" \
+            --run-id "$GITHUB_RUN_ID" --run-number "$GITHUB_RUN_NUMBER" \
+            --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            --attempt "$GITHUB_RUN_ATTEMPT" --branch "$GITHUB_REF_NAME" \
+            --commit "$GITHUB_SHA" --event "$GITHUB_EVENT_NAME" \
+            --mode "$mode" --baseline "$baseline" --status "$status"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lint_reports/on_changed
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish changed-document lint evidence"
+            git push origin "HEAD:gpt"
+          fi
+
+      - name: Preserve lint failure as workflow conclusion
+        if: always() && needs.preflight.outputs.proceed == 'true'
+        shell: bash
+        env:
+          FULL_FAILED: ${{ steps.full_audit.outputs.failed }}
+          CHANGED_FAILED: ${{ steps.changed_lint.outputs.failed }}
+          ANCHOR_OUTCOME: ${{ steps.anchors.outcome }}
+        run: |
+          if [[ "$FULL_FAILED" == "1" || "$CHANGED_FAILED" == "1" || "$ANCHOR_OUTCOME" == "failure" ]]; then
+            echo "::error::Changed-document lint failed. See lint_reports/on_changed/latest-lint-report.md."
+            exit 1
+          fi
