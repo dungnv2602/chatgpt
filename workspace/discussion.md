@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 09:58 UTC — Resume the approved diagnostic-report task:** Record the user's approval, restore task 20261123-054904 to In Progress/current execution, and reconcile the board. Preserve its unrelated natural-run validation follow-ups while adding the cancelled-run classification repair.
+- **2026-11-23 10:02 UTC — Implement cancellation-safe report classification:** Update the generator so cancelled outcomes remain visible as run state but do not create actionable issues. Suppress only cancellation steps and recognized downstream status-propagation steps. Add regression tests for cancelled runs, propagation, and independent failures. Align the report guide/template and verify workflow test integration.
 
 ## Open Discussions
 - **2026-11-23 — Hosted retention validation:** The shared cleanup script and tests now cover exact individual files in both `archive/tasks/` and `archive/reports/`. A hosted run of the schedule-only cleanup has not yet been observed. Do not dispatch it manually or modify `main`.
