@@ -40,7 +40,8 @@ class LedgerTests(unittest.TestCase):
         return path
 
     def add_lint(self, scope, run_id, timestamp, fingerprint="a1b2c3d4e5f6", status="Failed",
-                 level="advisory-free", file_path="docs/example.md", rule="semicolon"):
+                 level="advisory-free", file_path="docs/example.md", rule="semicolon",
+                 message="Split this sentence."):
         folder = self.root / "reports" / "lint_reports" / scope
         history = folder / "history" / (run_id + "-attempt-1")
         history.mkdir(parents=True, exist_ok=True)
@@ -51,7 +52,7 @@ class LedgerTests(unittest.TestCase):
             "generated_at_utc":timestamp,"status":status,
             "findings":[{
                 "file":file_path,"line":5,"col":2,"rule":rule,"level":level,
-                "message":"Split this sentence.","fingerprint":fingerprint,"comparison":"new",
+                "message":message,"fingerprint":fingerprint,"comparison":"new",
             }],
         }
         report_path.write_text(json.dumps(report), encoding="utf-8")
@@ -211,6 +212,15 @@ class LedgerTests(unittest.TestCase):
         task_text = next((self.root / "workspace" / "tasks").glob("*.md")).read_text(encoding="utf-8")
         self.assertIn("lint-aaaaaaaa1111", task_text)
         self.assertIn("lint-bbbbbbbb2222", task_text)
+
+    def test_untrusted_diagnostic_text_is_escaped_in_worker_task(self):
+        self.add_lint("on_changed", "213", "2026-11-23T07:55:00Z",
+                      message="<script>alert(1)</script> [follow](javascript:run())")
+        LEDGER.ingest(self.root, now="2026-11-23T07:56:00Z")
+        task = next((self.root / "workspace" / "tasks").glob("*.md")).read_text(encoding="utf-8")
+        self.assertIn("\\<script\\>", task)
+        self.assertIn("\\[follow\\]", task)
+        self.assertIn("untrusted evidence", task)
 
     def test_low_severity_findings_remain_ledger_only(self):
         self.add_lint("on_changed", "212", "2026-11-23T07:50:00Z", level="advisory")
