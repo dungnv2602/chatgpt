@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:08 UTC — Begin drawing skill review:** Review the 14 hard findings in `skills/drawing/SKILL.md` against its complete source and relevant owner references. Preserve deliberate examples and all drawing workflow requirements.
+- **2026-11-23 11:12 UTC — Remediate drawing skill batch:** Split the mandatory hand-off and prompt instructions into precise steps. Resolve all 14 baseline hard findings without changing drawing workflow requirements or creative authority.
 
 ## Open Discussions
 
