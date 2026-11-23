@@ -11,10 +11,10 @@ This is the novel's working register of unresolved questions and proposals. It i
 ## 1. How to Use This Note
 - Record proposals as proposals, not facts.
 - Keep the Approved Decisions Register. If no decision has been approved, write `None recorded` and remove the example row.
-- Include Active Proposals only when at least one proposal needs a current decision; otherwise omit that section.
+- **Conditional:** Include Active Proposals only when a proposal needs a separate current decision; otherwise omit the section. If a proposal is adequately captured under its subject heading, do not duplicate it.
 - Group open questions by subject. Keep only subject headings that contain open questions.
-- Include Deferred Questions only when a question is deliberately deferred; otherwise omit that section.
-- Include Resolved or Superseded Items only when the register needs to retain such outcomes; otherwise omit that section.
+- **Conditional:** Include Deferred Questions only when a question is deliberately deferred; otherwise omit the section.
+- **Conditional:** Include Resolved or Superseded Items only when the register needs to retain such outcomes; otherwise omit the section.
 - When a decision is approved, update all affected authoritative records and mark only the resolved question as closed.
 - Do not silently promote a proposal to canon.
 - Retain unresolved subquestions after approving a broad direction.
