@@ -1,8 +1,10 @@
 ## Current Step
 
-**2026-11-23 17:03 UTC — Obtain image-capable access to the seven unclassified PNGs.** The workflow guard is committed and read back. Eleven mapped files have Partial integrity records. The remaining seven PNG blobs cannot be decoded by the UTF-8-only GitHub reader, and raw-image access is unavailable. Do not infer their contents. Keep the batch Draft and originals untouched until the images can be inspected and matched with source evidence.
+**2026-11-23 22:30 UTC — Foundational session initialization.** Startup notice recorded. The previous image-takeout blocker remains open: 18 PNG originals are in intake; 11 have Partial integrity records, while seven remain unclassified because binary image inspection was unavailable. Do not infer image contents, move originals, or finalize HANDOFF until visual inspection and source matching are complete.
 
 ## Open Discussions
+
+- **2026-11-23 22:30 UTC — Session startup:** User issued `start session`. Begin the required foundational loading sequence from branch `gpt`. The unresolved image-takeout workflow remains the likely active task; verify task continuity after loading The Worker.
 
 - **2026-11-23 17:03 UTC — Image takeout provenance:** The workflow repair is committed and read back. Eleven outputs are matched to attempt records and Partial integrity archives. Seven files remain unclassified. Direct repository blob reading fails on PNG binary data, and the raw image URL is not accessible through the current reader; no visual claims are made. Eighteen originals remain in intake unchanged; HANDOFF remains Draft, and no processor relocation has occurred.
 
@@ -24,9 +26,10 @@
 
 ## Reports
 
+- **2026-11-23 22:30 UTC — Foundational session startup:** User issued the explicit session-start cue. Startup notice committed before skill retrieval. Commit and read-back verification pending.
+
 - **2026-11-23 16:33 UTC — Drawing session opened:** Created and read back the Active standalone session brief and six-field daily index for `DRAWING-2026-11-23-01`. No image attempt was made because the user has not supplied visual direction. Commit [df7dcbe1](https://github.com/dungnv2602/chatgpt/commit/df7dcbe1c76d414d91e25ae0fdf82b59c780e847).
 
 - **2026-11-23 14:22 UTC — Document Standards validator passed:** [Run #160](https://github.com/dungnv2602/chatgpt/actions/runs/45193353681) on commit `05bbf26c74cd0df093adbf074d3024e00323674b` completed successfully. The `validate-document-standards` job passed both the catalog regression tests and catalog validation. The diagnostic-capture job also succeeded.
 
 - **2026-11-23 14:22 UTC — GitHub Actions diagnostics passed:** [Run #377](https://github.com/dungnv2602/chatgpt/actions/runs/45193353432) completed successfully. Reporter compilation and tests, completed-run backfill, centralized issue ingestion, and diagnostic publication all passed.
-
