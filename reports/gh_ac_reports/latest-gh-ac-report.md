@@ -1,14 +1,14 @@
-# Validate Document Standards — run 45127609188
+# STE Lint Changed Documentation — run 45127609091
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | Validate Document Standards |
-| Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45127609188 / 1 |
-| Run number | 29 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45127609188 |
+| Workflow | STE Lint Changed Documentation |
+| Workflow path | .github/workflows/ste-lint-changed.yml |
+| Run / attempt | 45127609091 / 1 |
+| Run number | 437 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45127609091 |
 | Branch | gpt |
 | Commit | 02192015750d2704cb34d7cdb21cb1343716e853 |
 | Event | push |
@@ -20,7 +20,7 @@
 | Reporter job | completed / failure |
 | Capture stage | post_run |
 | Completeness | Complete |
-| Captured (UTC) | 2026-11-23T06:58:09Z |
+| Captured (UTC) | 2026-11-23T06:59:20Z |
 
 ## Executive summary
 
@@ -28,10 +28,10 @@
 | --- | --- |
 | State | failure |
 | Primary category | validation_or_test |
-| Jobs | 1 |
-| Steps | 8 |
+| Jobs | 2 |
+| Steps | 18 |
 | Issues | 1 |
-| Annotations | 2 |
+| Annotations | 3 |
 | Artifacts | 0 |
 | Capture errors | 0 |
 
@@ -43,20 +43,22 @@ validation_or_test
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 137535475298 | validate-document-standards | completed | failure | 8 | logs/job-137535475298.log |
+| 137535615119 | Reject superseded runs and find lint baseline | completed | success | 4 | logs/job-137535615119.log |
+| 137535666596 | Lint changed Markdown files and publish detailed evidence | completed | failure | 14 | logs/job-137535666596.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 137535475298 | 5 | Validate the document type catalog | Blocking | medium | 2026-11-23T06:57:15.3415073Z ERROR: Line 46: referenced file does not exist: lint_reports/README.md. |
+| validation_or_test | 137535666596 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | 2026-11-23T06:58:37.5190260Z ^[[36;1m  echo "::error::Changed-document lint failed. See reports/reports/lint_reports/on_changed/latest-lint-report.md."^[[0m |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 137535475298 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 137535475298 | failure | .github | 19 |  | Process completed with exit code 1. |
+| 137535666596 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 137535666596 | failure | .github | 21 |  | Process completed with exit code 1. |
+| 137535666596 | failure | .github | 20 |  | Changed-document lint failed. See reports/reports/lint_reports/on_changed/latest-lint-report.md. |
 
 ## Artifacts
 
@@ -66,7 +68,8 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137535475298 | validate-document-standards | logs/job-137535475298.log | 30854 | False | validate-document-standards	Validate the document type catalog	2026-11-23T06:57:15.3415073Z ERROR: Line 46: referenced file does not exist: lint_reports/README.md., validate-document-standards	Validate the document type catalog	2026-11-23T06:57:15.3415976Z ERROR: Line 46: unsafe or out-of-scope path 'gh_ac_reports/README.md'., validate-document-standards	Validate the document type catalog	2026-11-23T06:57:15.3417050Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/scripts/report.py'., validate-document-standards	Validate the document type catalog	2026-11-23T06:57:15.3417845Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/assets/report-template.md'., validate-document-standards	Validate the document type catalog	2026-11-23T06:57:15.3418661Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/assets/report-schema.json'., validate-document-standards	Validate the document type catalog	2026-11-23T06:57:15.3419477Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/scripts/test_report.py'., validate-document-standards	Validate the document type catalog	2026-11-23T06:57:15.3420264Z Catalog validation failed: 6 error(s), 29 document type(s), 59 reference(s)., validate-document-standards	Validate the document type catalog	2026-11-23T06:57:15.3476401Z ##[error]Process completed with exit code 1. |
+| 137535615119 | Reject superseded runs and find lint baseline | logs/job-137535615119.log | 12714 | False |  |
+| 137535666596 | Lint changed Markdown files and publish detailed evidence | logs/job-137535666596.log | 60763 | False | Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-23T06:57:44.8608860Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-23T06:57:44.8626561Z ^[[36;1mecho "failed=$failed" &gt;&gt; "$GITHUB_OUTPUT"^[[0m, Lint changed Markdown files and publish detailed evidence	Run full technical-document lint	2026-11-23T06:57:50.2054207Z ^[[36;1m    failed=1^[[0m, Lint changed Markdown files and publish detailed evidence	Run full technical-document lint	2026-11-23T06:57:50.2055107Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Run full technical-document lint	2026-11-23T06:57:50.2056076Z ^[[36;1mecho "failed=$failed" &gt;&gt; "$GITHUB_OUTPUT"^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-23T06:58:35.2144437Z ^[[36;1m        "status": "Passed" if exit_code == 0 else "Failed",^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-23T06:58:35.2149400Z ^[[36;1m        "status": "Passed" if exit_code == 0 else "Failed",^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-23T06:58:35.2152666Z ^[[36;1mif [[ "$TOOLING_FAILED" == "1" \|\| "$FULL_FAILED" == "1" \|\| "$CHANGED_FAILED" == "1" ]]; then status="Failed"; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-23T06:58:35.2153171Z ^[[36;1mif [[ "$ANCHOR_OUTCOME" != "skipped" && "$ANCHOR_EXIT" != "0" ]]; then status="Failed"; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T06:58:37.5190260Z ^[[36;1m  echo "::error::Changed-document lint failed. See reports/reports/lint_reports/on_changed/latest-lint-report.md."^[[0m, Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T06:58:37.5295994Z ##[error]Changed-document lint failed. See reports/reports/lint_reports/on_changed/latest-lint-report.md., Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T06:58:37.5306518Z ##[error]Process completed with exit code 1. |
 
 ## Evidence coverage
 
@@ -74,7 +77,7 @@ All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 
-No separate lint report applies to this workflow.
+[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/reports/lint_reports/on_changed/latest-lint-report.md)
 
 ## Integrity
 
