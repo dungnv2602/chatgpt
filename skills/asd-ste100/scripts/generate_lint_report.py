@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Build machine-readable and human-readable lint evidence from per-file JSON."""
-import argparse, hashlib, json
+import argparse, hashlib, json, platform, sys
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -8,6 +8,8 @@ p = argparse.ArgumentParser()
 for name in ("scope", "records_dir", "output_dir", "run_id", "run_number", "run_url", "attempt", "branch", "commit", "event", "mode", "status"):
     p.add_argument("--" + name.replace("_", "-"), required=True)
 p.add_argument("--baseline", default="")
+p.add_argument("--previous-report", default="")
+p.add_argument("--linter-source-sha", default="")
 a = p.parse_args()
 records = []
 for file in sorted(Path(a.records_dir).glob("*.json")):
@@ -30,6 +32,17 @@ for finding in findings:
     rule = str(finding.get("rule", "unknown"))
     by_rule[rule] = by_rule.get(rule, 0) + 1
 hard = sum(int(record.get("hard_count", 0)) for record in records)
+previous_findings = []
+if a.previous_report and Path(a.previous_report).is_file():
+    try:
+        previous_findings = json.loads(Path(a.previous_report).read_text(encoding="utf-8")).get("findings", [])
+    except (OSError, ValueError):
+        previous_findings = []
+previous_ids = {item.get("fingerprint") for item in previous_findings}
+current_ids = {item.get("fingerprint") for item in findings}
+for item in findings:
+    item["comparison"] = "recurring" if item.get("fingerprint") in previous_ids else "new"
+resolved = [item for item in previous_findings if item.get("fingerprint") not in current_ids]
 failed = [record["path"] for record in records if int(record.get("exit_code", 0)) != 0]
 generated = datetime.now(timezone.utc).isoformat()
 data = {
@@ -37,11 +50,11 @@ data = {
     "run_number": int(a.run_number), "run_url": a.run_url, "attempt": int(a.attempt),
     "branch": a.branch, "commit_sha": a.commit, "event": a.event,
     "execution_mode": a.mode, "baseline_sha": a.baseline or None,
-    "generated_at_utc": generated, "status": a.status,
+    "generated_at_utc": generated, "status": a.status,\n    "linter_source_sha": a.linter_source_sha or None,\n    "runtime": {"python": sys.version, "platform": platform.platform()},
     "files_evaluated": len(records), "files_failed": len(failed),
     "total_findings": len(findings), "hard_findings": hard,
     "findings_by_rule": by_rule, "failed_files": failed,
-    "records": records, "findings": findings
+    "records": records, "findings": findings,\n    "new_findings": sum(1 for item in findings if item["comparison"] == "new"),\n    "recurring_findings": sum(1 for item in findings if item["comparison"] == "recurring"),\n    "resolved_findings": resolved
 }
 out = Path(a.output_dir)
 out.mkdir(parents=True, exist_ok=True)
@@ -75,7 +88,7 @@ for record in records:
                      ": " + str(finding.get("message", "")) + " Match: " +
                      str(finding.get("match", "")))
     lines.append("")
-lines += ["## Structured evidence", "", "The complete original per-file JSON payloads and normalized findings are in report.json.", ""]
+lines += ["## Baseline comparison", "",\n    "- New findings: " + str(data["new_findings"]),\n    "- Recurring findings: " + str(data["recurring_findings"]),\n    "- Resolved findings: " + str(len(resolved)), "",\n    "## Structured evidence", "", "The complete original per-file JSON payloads and normalized findings are in report.json.", ""]
 (out / "report.md").write_text("\n".join(lines), encoding="utf-8")
 scope_root = out.parent.parent
 index_path = scope_root / "index.json"
