@@ -38,8 +38,8 @@ def make_job(conclusion="failure", step_conclusion="failure", name="Run unit tes
 def build(run, jobs, logs=None, stage="post_run"):
     logs = logs or {}
     return REPORT.classify(run, [
-        {"id": str(job["id"]), "name": job["name"], "conclusion": job["conclusion"],
-         "steps": job["steps"]} for job in jobs
+        {"id": str(job["id"]), "name": job["name"], "status": job.get("status", "completed"),
+         "conclusion": job["conclusion"], "steps": job["steps"]} for job in jobs
     ], logs)
 
 

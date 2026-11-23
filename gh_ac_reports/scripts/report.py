@@ -282,7 +282,11 @@ def fetch_evidence(repo, run_id, stage):
     errors = []
     run = api_get(repo, "/repos/" + repo + "/actions/runs/" + str(run_id), errors, "run_metadata")
     if not isinstance(run, dict):
-        raise RuntimeError("Cannot retrieve workflow run " + str(run_id))
+        detail = "; ".join(
+            str(item.get("http_status") or "") + " " + str(item.get("message") or "")
+            for item in errors
+        )
+        raise RuntimeError("Cannot retrieve workflow run " + str(run_id) + (": " + detail if detail else ""))
     jobs_path = "/repos/" + repo + "/actions/runs/" + str(run_id) + "/jobs?filter=latest"
     raw_jobs = pages(repo, jobs_path, "jobs", errors, "jobs")
     jobs_ok = not any(item.get("source") == "jobs" for item in errors)
@@ -387,7 +391,7 @@ def render_markdown(report):
         ["Workflow", run["workflow_name"]], ["Workflow path", run["workflow_path"]],
         ["Run / attempt", run["id"] + " / " + str(run["attempt"])], ["Run number", run["number"]],
         ["Run URL", run["run_url"]], ["Branch", run["branch"] or "Not recorded"],
-        ["Commit", run["head_sha"]], ["Event", run["event"]], ["Actor", run["actor"] or "Not recorded"],
+        ["Commit", run.get("head_sha") or "Not recorded"], ["Event", run.get("event") or "Not recorded"], ["Actor", run.get("actor") or "Not recorded"],
         ["Created (UTC)", run["created_at"]], ["Status at capture", run["status"]],
         ["Observed conclusion", run["conclusion"] or "Not yet available"],
         ["Projected conclusion", classification["projected_conclusion"] or "Not calculated"],
@@ -567,7 +571,11 @@ def capture_one(repo, root, run_id, stage, force=False):
     metadata_errors = []
     metadata = api_get(repo, "/repos/" + repo + "/actions/runs/" + str(run_id), metadata_errors, "run_metadata")
     if not isinstance(metadata, dict):
-        raise RuntimeError("Cannot retrieve workflow run " + str(run_id))
+        detail = "; ".join(
+            str(item.get("http_status") or "") + " " + str(item.get("message") or "")
+            for item in metadata_errors
+        )
+        raise RuntimeError("Cannot retrieve workflow run " + str(run_id) + (": " + detail if detail else ""))
     attempt = int(metadata.get("run_attempt") or 1)
     if not force and any(
         str(item.get("run_id")) == str(run_id)

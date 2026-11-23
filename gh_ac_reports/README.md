@@ -53,7 +53,7 @@ The collector redacts common token, authorization, password, and cloud-key patte
 
 ## Coverage on branch gpt
 
-The reusable workflow is called by each source workflow. The push-triggered sweep backfills completed runs and catches failures when the finalizer does not run. It does not rely on a default-branch observer or scheduled trigger.
+Each source workflow calls a local composite action from a normal diagnostics job marked `continue-on-error: true`. This keeps report generation outside the source validation result. The push-triggered sweep backfills completed runs and catches failures when the finalizer does not run. It does not rely on a default-branch observer or scheduled trigger.
 
 The repository default branch is main. GitHub only starts workflow_run and schedule observers when the workflow file exists on the default branch. This implementation does not change main. A workflow that fails before any job starts is discovered on a later gpt push or by a request file. Instant capture of that case needs a default-branch observer or an external GitHub App webhook.
 
@@ -73,4 +73,4 @@ Change the schema, template, collector, generator, regression tests, workflow in
 
 ## Reporter self-monitoring
 
-The diagnostics workflow is deliberately excluded from its own run sweep to prevent recursive report generation. Its own failures are not included in the reports it creates. Inspect the diagnostics workflow's own run and job logs directly in the GitHub Actions interface.
+The diagnostics workflow is deliberately excluded from its own run sweep to prevent recursive report generation. Its own failures are not included in the reports it creates. Inspect the diagnostics workflow's own run and job logs directly in the GitHub Actions interface. Failure of the report-only job in a source workflow is separately contained by the caller's job-level `continue-on-error: true` setting.
