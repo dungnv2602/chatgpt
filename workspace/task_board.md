@@ -18,7 +18,9 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## Ready
 
-_No ready tasks._
+| ID | Task | Priority | Status | Origin | Updated | Record |
+|---|---|---:|---|---|---|---|
+| 20261123-100738 | Remediate hard STE lint findings | P1 | Ready | Assistant | 2026-11-23 | [Task record](tasks/20261123-100738-remediate-hard-ste-lint-findings.md) |
 
 ## Blocked
 
