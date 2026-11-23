@@ -491,6 +491,11 @@ def update_task_findings(content, findings, timestamp):
             changed = True
     if not changed:
         return content, False
+    new_priority = min((TASK_PRIORITY[item["severity"]] for item in findings), key=lambda item: int(item[1:]))
+    current_priority = re.search(r"(?m)^- \\*\\*Priority:\\*\\* (P[0-3])$", content)
+    if current_priority and int(new_priority[1:]) < int(current_priority.group(1)[1:]):
+        content = content[:current_priority.start(1)] + new_priority + content[current_priority.end(1):]
+        changed = True
     updated = parse_time(timestamp).strftime("%Y-%m-%d %H:%M UTC")
     new_section = "\n".join(section_lines)
     new_content = content[:start] + new_section + content[end:]
