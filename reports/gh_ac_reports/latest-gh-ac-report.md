@@ -14,30 +14,30 @@
 | Event | workflow_dispatch |
 | Actor | dungnv2602 |
 | Created (UTC) | 2026-11-23T07:36:12Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | failure |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T07:36:46Z |
+| Status at capture | completed |
+| Observed conclusion | failure |
+| Projected conclusion | Not calculated |
+| Reporter job | completed / success |
+| Capture stage | post_run |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-23T07:40:15Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
+| State | failure |
 | Primary category | validation_or_test |
 | Jobs | 1 |
 | Steps | 8 |
 | Issues | 1 |
 | Annotations | 2 |
 | Artifacts | 0 |
-| Capture errors | 1 |
+| Capture errors | 0 |
 
 ## Failure classification
 
-validation_or_test The parent run is still in progress. The projected conclusion is provisional.
+validation_or_test
 
 ## Jobs and steps
 
@@ -49,7 +49,7 @@ validation_or_test The parent run is still in progress. The projected conclusion
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 137550364494 | 5 | Validate the document type catalog | Blocking | medium | Step conclusion: failure |
+| validation_or_test | 137550364494 | 5 | Validate the document type catalog | Blocking | medium | 2026-11-23T07:36:29.7180895Z ERROR: Line 46: Embedded contract must name its owner and live record. |
 
 ## Check annotations
 
@@ -66,15 +66,11 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137550364494 | validate-document-standards | logs/job-137550364494.log | 82 | False |  |
+| 137550364494 | validate-document-standards | logs/job-137550364494.log | 30479 | False | validate-document-standards	Validate the document type catalog	2026-11-23T07:36:29.7180895Z ERROR: Line 46: Embedded contract must name its owner and live record., validate-document-standards	Validate the document type catalog	2026-11-23T07:36:29.7182031Z ERROR: Line 55: Generator-owned must reference its Python authority., validate-document-standards	Validate the document type catalog	2026-11-23T07:36:29.7182948Z ERROR: Line 55: Generator-owned must reference a regression test., validate-document-standards	Validate the document type catalog	2026-11-23T07:36:29.7183957Z ERROR: Line 56: referenced file does not exist: reports/lint_reports., validate-document-standards	Validate the document type catalog	2026-11-23T07:36:29.7184779Z Catalog validation failed: 4 error(s), 31 document type(s), 63 reference(s)., validate-document-standards	Validate the document type catalog	2026-11-23T07:36:29.7233229Z ##[error]Process completed with exit code 1. |
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | run 45132305616 is still in progress; logs will be available when it is complete  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 
