@@ -23,7 +23,7 @@ class CatalogValidatorTests(unittest.TestCase):
             / "skills/document-standards/references/document-type-catalog.md"
         )
         self.catalog.parent.mkdir(parents=True)
-        self.write("skills/example/template.md")
+        self.write("skills/example/assets/template.md")
         self.write("skills/example/SKILL.md")
         self.write("workspace/example.md")
         self.write("skills/example/processor.py")
@@ -52,7 +52,7 @@ class CatalogValidatorTests(unittest.TestCase):
 
     def valid_rows(self):
         return [
-            "| Example template | Template required | `skills/example/template.md` | Use it. |",
+            "| Example template | Template required | `skills/example/assets/template.md` | Use it. |",
             "| Embedded example | Embedded contract | `skills/example/SKILL.md` and `workspace/example.md` | Live contract. |",
             "| Example schema | Schema required | `skills/example/processor.py` and `images/example/README.md` | Tests: `skills/example/test_processor.py`. |",
             "| Example generator | Generator-owned | `skills/example/generator.py` | Tests: `skills/example/test_generator.py`. |",
@@ -68,6 +68,38 @@ class CatalogValidatorTests(unittest.TestCase):
         self.assertEqual(errors, [])
         self.assertEqual(row_count, 6)
         self.assertGreaterEqual(reference_count, 11)
+
+    def test_skill_template_must_live_in_assets(self):
+        self.write("skills/example/references/template.md")
+        self.set_catalog([
+            "| Example template | Template required | "
+            "`skills/example/references/template.md` | Misplaced. |",
+        ])
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("invalid template location" in error for error in errors))
+        self.assertTrue(any("Misplaced skill template" in error for error in errors))
+
+    def test_misplaced_named_template_is_detected_without_catalog_row(self):
+        self.write("skills/example/references/hidden-template-library.md")
+        self.set_catalog(self.valid_rows())
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any(
+            "Misplaced skill template under references/" in error
+            for error in errors
+        ))
+
+    def test_project_and_workspace_template_locations_are_allowed(self):
+        self.write("novels/templates/scene-template.md")
+        self.write("workspace/TASK_TEMPLATE.md")
+        self.set_catalog([
+            "| Novel scene | Template required | "
+            "`novels/templates/scene-template.md` | Project-owned. |",
+            "| Workspace task | Template required | "
+            "`workspace/TASK_TEMPLATE.md` | Shared workspace template. |",
+        ])
+        errors, row_count, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+        self.assertEqual(row_count, 2)
 
     def test_missing_canonical_path_fails(self):
         rows = self.valid_rows()
