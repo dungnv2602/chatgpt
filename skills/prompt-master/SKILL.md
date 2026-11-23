@@ -348,14 +348,14 @@ First detect: generation from scratch or editing an existing image?
 **Image AI — Reference Editing** (when user has an existing image to modify)
 Detect when: user mentions "change", "edit", "modify", "adjust" anything in an existing image, or uploads a reference.
 Always instruct the user to attach the reference image to the tool first. Build the prompt around the delta ONLY — what changes, what stays the same.
-Read references/templates.md Template J for the full reference editing template.
+Read assets/prompt-templates.md Template J for the full reference editing template.
 
 ---
 
 **ComfyUI**
 Node-based workflow — not a single prompt box. Ask which checkpoint model is loaded before writing.
 Always output two separate blocks: Positive Prompt and Negative Prompt. Never merge them.
-Read references/templates.md Template K for the full ComfyUI template.
+Read assets/prompt-templates.md Template K for the full ComfyUI template.
 
 ---
 
@@ -425,7 +425,7 @@ Applies to all flows that parse user-supplied prompt text (Decompiler, fixing, a
 **Prompt Decompiler Mode**
 Detect when: user pastes an existing prompt and wants to break it down, adapt it for a different tool, simplify it, or split it.
 This is a distinct task from building from scratch.
-Read references/templates.md Template L for the full Prompt Decompiler template.
+Read assets/prompt-templates.md Template L for the full Prompt Decompiler template.
 
 ---
 
@@ -534,7 +534,7 @@ Read only when the task requires it. Do not load both at once.
 
 | File | Read When |
 |------|-----------|
-| [references/templates.md](references/templates.md) | You need the full template structure for any tool category |
+| [assets/prompt-templates.md](assets/prompt-templates.md) | You need the full template structure for any tool category |
 | [references/patterns.md](references/patterns.md) | User pastes a bad prompt to fix, or you need the complete 37-pattern reference |
 
 
