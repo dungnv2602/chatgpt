@@ -226,6 +226,13 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** Run [45091120330](https://github.com/dungnv2602/chatgpt/actions/runs/45091120330), job `137420763102`; `skills/session-archiving/scripts/test_process_takeout_unittest.py`.
 - **Next:** Complete the representative record review. Keep validator workflow integration gated on separate user approval.
 
+### 2026-11-23 01:19 UTC
+
+- **Action:** Completed a bounded representative-record audit and clarified field contracts in the Document Standards skill and novel templates.
+- **Result:** Reviewed the active Novel-02 open-discussion register and relationship-progression outline, three Novel-01 illustration notes, historical conversation-integrity and session-summary records, and successful/failure drawing-pattern examples. The Novel-01 illustration notes are Version 1.0 legacy records; the 12 November session records predate their canonical templates. The Novel-02 records use Version 1.1 but have content-specific structures; preserve them and use the canonical templates for new records or material revisions. No current character-profile or standalone novel illustration-prompt record was found in the inspected novel projects. Added default `Unknown` and `Not applicable` conventions, clarified conditional sections and takeout-only fields, and distinguished component status from outline status. The catalog now records these findings. Its Initial Inventory contains 51 exact file references; the previous 41 references were already audited, and all 10 newly added references were fetched successfully. No directory references remain in that inventory. No historical or archived record was modified.
+- **References:** Document Standards commit `9dc5970cacb069eaa227c926d9bcdd784e03fd8c`; template commits `ca9e14eaa03c881c3b5fec2e2db7403149af3fd6`, `6f03d0b1f1c61e153e0d4485e897518012856cbc`, `de08904c81abff944586de2c84a736ce400fa560`, `b30b4b022d828a4e27b67adb35f5afa06f66ae83), and `4d2784cb9232fa656fc375b6978b4b633c648073`; catalog commits `a65e35e2ce4027c20762583b606b0c1c99c52302`, `5dcc13a3461b1405f137dc781d73e6faee98d249`, and `bbd53e4f7069e3b5fcfeecfa1113fd7a29f8a86f`.
+- **Next:** Review the three master catalogues and remaining project-specific document types. Keep validator workflow integration gated on separate user approval.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
@@ -237,29 +244,31 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - Drawing pattern entries have separate successful and failure templates in `skills/drawing/references/patterns/PATTERN-TEMPLATES.md`.
 - Workspace task records use the Version 1.1 template at `workspace/TASK_TEMPLATE.md`. This task record predates that revision and remains at Template version 1.0.
 - Task boards and the Condensed Mode discussion register remain embedded contracts for single live files.
-- Novel documents use the current Version 1.1 template set. Do not mass-migrate untouched Version 1.0 records.
+- Novel documents use the current Version 1.1 template set. The active Novel-02 open-discussion register and relationship-progression outline use content-specific layouts; preserve them and use canonical templates for new records or material revisions. Three Novel-01 illustration notes remain Version 1.0 legacy records. No current character-profile or standalone novel illustration-prompt record was found in the inspected projects. Do not mass-migrate untouched Version 1.0 records.
 - The image takeout hand-off is validated by `skills/session-archiving/scripts/process_takeout.py`. The same script defines conversion-report and manifest columns. `verify_published_manifest.py` checks published data and links.
 - The processor test suite covers important intake and publication paths. GitHub Actions run #54 passed all 36 tests, including invalid hand-off metadata, metadata propagation into the generated drawing-session manifest, and manifest compatibility cases. Its publication-verification step found no drawing-session manifests in the run workspace, so it did not verify live manifest rows.
 - The three master catalogues contain heterogeneous prompt, pose, and image-reference material. They are classified as lightweight collections, not uniform record types.
-- The catalog covers 26 recurring document types and records representative legacy examples and the no-mass-migration rule. A manual audit confirmed that all 41 exact file references exist. Full file-by-file reconciliation remains incomplete.
+- The catalog covers 26 recurring document types and records representative current examples, legacy exceptions, and the no-mass-migration rule. Its Initial Inventory contains 51 exact file references; the 41 original references were audited earlier and all 10 newly added references were fetched successfully. Full file-by-file reconciliation remains incomplete.
 - A catalog-integrity validator and regression tests now exist at `skills/document-standards/scripts/`. They check catalog structure and exact references, not document-body conformance. They have not run on a hosted runner because workflow integration awaits user authorization.
 - The GitHub Actions skill now permits exact, task-relevant archive reads and prohibits manual archive mutation. The Worker also requires the original archive-introduction commit when it reuses a prior archive copy.
 - The changed-document lint preflight repository-resolution defect has been fixed on `gpt`. Run #349 confirms that preflight, baseline lookup, and changed-file discovery succeed. The downstream STE lint step still fails on existing findings in the lint report and Agent Skill documentation; the updated remote-only policy files had no findings.
 
 ## 8. Remaining Work
 
-- Complete the representative record review and record justified legacy exceptions without rewriting historical content.
-- Obtain approval to integrate the catalog validator and tests into GitHub Actions.
-- Run the validator and its tests on a hosted runner, then repair any failures.
+- Review the three master catalogues for shared lightweight structure.
+- Check remaining project-specific record types and complete the repository inventory before marking the catalog complete.
 - Decide whether any additional structural checks add value without duplicating generator-owned schemas.
+- Obtain separate user approval to integrate the catalog validator and tests into GitHub Actions.
+- After approval, run the validator and its tests on a hosted runner, then repair any failures.
 
 ## 9. Next Actions
 
-1. Complete the representative record review and record justified legacy exceptions without rewriting historical content.
-2. Decide whether any additional structural checks add value without duplicating generator-owned schemas.
-3. Obtain separate user approval before changing a GitHub Actions workflow for catalog-validator integration.
-4. After approval, integrate the validator and tests into an appropriate hosted workflow and review the run result.
-5. Update the catalog and task record with verified execution results.
+1. Review the three master catalogues for shared lightweight structure.
+2. Check remaining project-specific record types and complete the repository inventory.
+3. Decide whether any additional structural checks add value without duplicating generator-owned schemas.
+4. Obtain separate user approval before changing a GitHub Actions workflow for catalog-validator integration.
+5. After approval, integrate the validator and tests into an appropriate hosted workflow and review the run result.
+6. Update the catalog and task record with verified execution results.
 
 ## 10. References
 
@@ -287,6 +296,10 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 
 ## 11. Verification
 
+- **Check:** Representative record review and catalog reference update.
+- **Method:** Read the exact representative records and templates, read back the revised skill, templates, and catalog, and fetched all 10 newly added exact file references.
+- **Result:** The reviewed legacy records remain unchanged. The Initial Inventory contains 51 exact references; no directory references remain in that table. All 10 newly added file references exist.
+- **Limitations:** The catalog validator and its tests have not run on a hosted runner. Workflow integration requires separate user approval.
 - **Check:** Hosted-runner execution of takeout hand-off and manifest regression tests.
 - **Method:** Inspected run [#54](https://github.com/dungnv2602/chatgpt/actions/runs/45091120330), its job steps, and decoded logs.
 - **Result:** The `Test takeout processor` step passed all 36 tests. The log includes invalid hand-off metadata checks and manifest propagation/compatibility tests. The publication-verification step completed but found no drawing-session manifests in its workspace.
