@@ -1,23 +1,23 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_repo",
-  "run_id": "45157359345",
-  "run_number": 175,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45157359345",
+  "run_id": "45163708159",
+  "run_number": 176,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45163708159",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "23207a3fe8bd2c25a3d933b2b2da7bd6126d31be",
+  "commit_sha": "88ddc3928bb14aa8d6d6a46196a873775a6bd121",
   "event": "push",
   "workflow": "STE Lint Full Technical Documentation",
   "runner_os": "Linux",
   "execution_mode": "repository-wide",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T10:35:09.005153+00:00",
+  "generated_at_utc": "2026-11-23T11:17:07.901447+00:00",
   "status": "Failed",
-  "linter_source_sha": "23207a3fe8bd2c25a3d933b2b2da7bd6126d31be",
+  "linter_source_sha": "3b7eb147c488e140845010645d475a2110ec813c",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
-    "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
+    "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43"
   },
   "files_evaluated": [
     "skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md",
@@ -71,53 +71,34 @@
     "skills/philosophy-religion-asceticism/CHANGELOG.md"
   ],
   "files_evaluated_count": 49,
-  "files_failed": 10,
+  "files_failed": 2,
   "failed_files": [
-    "skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md",
-    "skills/drawing/assets/pattern-entry-templates.md",
-    "skills/github-actions/SKILL.md",
-    "skills/conversation-mode/SKILL.md",
     "skills/document-standards/references/document-type-catalog.md",
-    "skills/drawing/assets/daily-index-template.md",
-    "workspace/TASK_TEMPLATE.md",
-    "skills/the-worker/SKILL.md",
-    "skills/document-standards/SKILL.md",
-    "skills/session-archiving/assets/session-brief-template.md"
+    "skills/drawing/assets/daily-index-template.md"
   ],
-  "files_with_findings": 41,
-  "total_findings": 400,
-  "hard_findings": 81,
+  "files_with_findings": 38,
+  "total_findings": 342,
+  "hard_findings": 23,
   "advisory_findings": 319,
   "findings_by_rule": {
-    "synonym-rotation": 30,
     "passive-voice": 279,
     "present-perfect": 40,
-    "long-sentence": 25,
+    "synonym-rotation": 6,
     "phrasal-verb": 5,
     "nominalization": 2,
     "marketing-adjective": 5,
-    "semicolon": 14
+    "long-sentence": 5
   },
   "records": [
     {
-      "violations": [
-        {
-          "file": "skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md",
-          "line": 38,
-          "col": 8,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Verify",
-          "message": "'verify' and 'check' name the same action. Pick one and use it every time."
-        }
-      ],
-      "count": 1,
-      "hard_count": 1,
+      "violations": [],
+      "count": 0,
+      "hard_count": 0,
       "baseline": 0,
       "words": 166,
-      "per_100_words": 0.6,
+      "per_100_words": 0.0,
       "path": "skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md",
-      "exit_code": 1
+      "exit_code": 0
     },
     {
       "violations": [
@@ -461,15 +442,6 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 136,
-          "col": 110,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Start",
-          "message": "'start' and 'begin' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/agent-skill-authoring/SKILL.md",
           "line": 160,
           "col": 29,
           "rule": "passive-voice",
@@ -524,16 +496,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 203,
-          "col": 27,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "28 words",
-          "message": "Sentence has 28 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 216,
+          "line": 222,
           "col": 38,
           "rule": "passive-voice",
           "level": "advisory",
@@ -542,7 +505,16 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 238,
+          "line": 231,
+          "col": 18,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "begins",
+          "message": "'begin' and 'start' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "skills/agent-skill-authoring/SKILL.md",
+          "line": 244,
           "col": 28,
           "rule": "passive-voice",
           "level": "advisory",
@@ -551,7 +523,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 239,
+          "line": 245,
           "col": 65,
           "rule": "present-perfect",
           "level": "advisory",
@@ -560,7 +532,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 239,
+          "line": 245,
           "col": 70,
           "rule": "passive-voice",
           "level": "advisory",
@@ -569,7 +541,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 247,
+          "line": 253,
           "col": 17,
           "rule": "passive-voice",
           "level": "advisory",
@@ -578,7 +550,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 249,
+          "line": 255,
           "col": 37,
           "rule": "present-perfect",
           "level": "advisory",
@@ -587,7 +559,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 249,
+          "line": 255,
           "col": 41,
           "rule": "passive-voice",
           "level": "advisory",
@@ -596,7 +568,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 251,
+          "line": 257,
           "col": 32,
           "rule": "present-perfect",
           "level": "advisory",
@@ -605,7 +577,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 251,
+          "line": 257,
           "col": 36,
           "rule": "passive-voice",
           "level": "advisory",
@@ -613,10 +585,10 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 18,
-      "hard_count": 2,
+      "count": 17,
+      "hard_count": 1,
       "baseline": 6,
-      "words": 2257,
+      "words": 2259,
       "per_100_words": 0.8,
       "path": "skills/agent-skill-authoring/SKILL.md",
       "exit_code": 0
@@ -759,15 +731,6 @@
         },
         {
           "file": "skills/drawing/assets/pattern-entry-templates.md",
-          "line": 106,
-          "col": 43,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "verify",
-          "message": "'verify' and 'validate' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/drawing/assets/pattern-entry-templates.md",
           "line": 111,
           "col": 20,
           "rule": "passive-voice",
@@ -794,13 +757,13 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 8,
-      "hard_count": 1,
+      "count": 7,
+      "hard_count": 0,
       "baseline": 0,
       "words": 449,
-      "per_100_words": 1.8,
+      "per_100_words": 1.6,
       "path": "skills/drawing/assets/pattern-entry-templates.md",
-      "exit_code": 1
+      "exit_code": 0
     },
     {
       "violations": [
@@ -918,15 +881,6 @@
         },
         {
           "file": "skills/asd-ste100/SKILL.md",
-          "line": 88,
-          "col": 192,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "delete",
-          "message": "'delete' and 'remove' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/asd-ste100/SKILL.md",
           "line": 89,
           "col": 56,
           "rule": "nominalization",
@@ -978,6 +932,15 @@
           "level": "advisory-free",
           "match": "blazing-fast",
           "message": "Marketing adjective. Delete, or replace with the measurement that earns the claim."
+        },
+        {
+          "file": "skills/asd-ste100/SKILL.md",
+          "line": 90,
+          "col": 152,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "delete",
+          "message": "'delete' and 'remove' name the same action. Pick one and use it every time."
         },
         {
           "file": "skills/asd-ste100/SKILL.md",
@@ -1174,34 +1137,7 @@
         },
         {
           "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 66,
-          "col": 70,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "checks",
-          "message": "'check' and 'validate' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 78,
-          "col": 4,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "28 words",
-          "message": "Sentence has 28 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 88,
-          "col": 4,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "33 words",
-          "message": "Sentence has 33 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 96,
+          "line": 93,
           "col": 17,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1210,7 +1146,7 @@
         },
         {
           "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 97,
+          "line": 94,
           "col": 72,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1219,7 +1155,7 @@
         },
         {
           "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 101,
+          "line": 98,
           "col": 39,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1228,25 +1164,7 @@
         },
         {
           "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 105,
-          "col": 22,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "verify",
-          "message": "'verify' and 'validate' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 168,
-          "col": 47,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "correct",
-          "message": "'correct' and 'repair' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 180,
+          "line": 177,
           "col": 400,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1255,7 +1173,7 @@
         },
         {
           "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 199,
+          "line": 196,
           "col": 37,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1264,7 +1182,7 @@
         },
         {
           "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 200,
+          "line": 197,
           "col": 76,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1273,7 +1191,7 @@
         },
         {
           "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 211,
+          "line": 208,
           "col": 26,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1282,7 +1200,7 @@
         },
         {
           "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 215,
+          "line": 212,
           "col": 1,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1290,11 +1208,11 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 25,
-      "hard_count": 5,
+      "count": 20,
+      "hard_count": 0,
       "baseline": 7,
-      "words": 2365,
-      "per_100_words": 1.1,
+      "words": 2370,
+      "per_100_words": 0.8,
       "path": "skills/drawing/references/archive-and-delivery.md",
       "exit_code": 0
     },
@@ -1336,60 +1254,15 @@
           "level": "advisory",
           "match": "have reached",
           "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
-        },
-        {
-          "file": "skills/github-actions/SKILL.md",
-          "line": 33,
-          "col": 62,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Remove",
-          "message": "'remove' and 'delete' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/github-actions/SKILL.md",
-          "line": 42,
-          "col": 31,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "skills/github-actions/SKILL.md",
-          "line": 45,
-          "col": 54,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "skills/github-actions/SKILL.md",
-          "line": 49,
-          "col": 96,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "26 words",
-          "message": "Sentence has 26 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/github-actions/SKILL.md",
-          "line": 220,
-          "col": 211,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
         }
       ],
-      "count": 8,
-      "hard_count": 5,
+      "count": 3,
+      "hard_count": 0,
       "baseline": 0,
-      "words": 2530,
-      "per_100_words": 0.3,
+      "words": 2534,
+      "per_100_words": 0.1,
       "path": "skills/github-actions/SKILL.md",
-      "exit_code": 1
+      "exit_code": 0
     },
     {
       "violations": [
@@ -1716,17 +1589,8 @@
         },
         {
           "file": "skills/session-archiving/references/image-provenance-and-webp.md",
-          "line": 94,
-          "col": 206,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Verify",
-          "message": "'verify' and 'validate' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/session-archiving/references/image-provenance-and-webp.md",
-          "line": 94,
-          "col": 241,
+          "line": 103,
+          "col": 200,
           "rule": "synonym-rotation",
           "level": "advisory-free",
           "match": "checking",
@@ -1787,10 +1651,10 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 14,
-      "hard_count": 2,
+      "count": 13,
+      "hard_count": 1,
       "baseline": 2,
-      "words": 1712,
+      "words": 1710,
       "per_100_words": 0.8,
       "path": "skills/session-archiving/references/image-provenance-and-webp.md",
       "exit_code": 0
@@ -1808,57 +1672,12 @@
         },
         {
           "file": "skills/conversation-mode/SKILL.md",
-          "line": 100,
-          "col": 230,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "skills/conversation-mode/SKILL.md",
-          "line": 101,
-          "col": 60,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "verify",
-          "message": "'verify' and 'check' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/conversation-mode/SKILL.md",
-          "line": 102,
-          "col": 129,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "skills/conversation-mode/SKILL.md",
           "line": 105,
-          "col": 3,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "32 words",
-          "message": "Sentence has 32 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/conversation-mode/SKILL.md",
-          "line": 105,
-          "col": 95,
+          "col": 72,
           "rule": "passive-voice",
           "level": "advisory",
           "match": "is paused",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/conversation-mode/SKILL.md",
-          "line": 105,
-          "col": 112,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
         },
         {
           "file": "skills/conversation-mode/SKILL.md",
@@ -1996,13 +1815,13 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 22,
-      "hard_count": 5,
+      "count": 17,
+      "hard_count": 0,
       "baseline": 3,
-      "words": 3081,
-      "per_100_words": 0.7,
+      "words": 3080,
+      "per_100_words": 0.6,
       "path": "skills/conversation-mode/SKILL.md",
-      "exit_code": 1
+      "exit_code": 0
     },
     {
       "violations": [
@@ -2100,62 +1919,8 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 166,
-          "col": 1,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "32 words",
-          "message": "Sentence has 32 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/drawing/SKILL.md",
-          "line": 166,
-          "col": 376,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "29 words",
-          "message": "Sentence has 29 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/drawing/SKILL.md",
-          "line": 166,
-          "col": 449,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "skills/drawing/SKILL.md",
-          "line": 166,
-          "col": 827,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "29 words",
-          "message": "Sentence has 29 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/drawing/SKILL.md",
-          "line": 166,
-          "col": 1076,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "27 words",
-          "message": "Sentence has 27 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/drawing/SKILL.md",
-          "line": 166,
-          "col": 1100,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "verify",
-          "message": "'verify' and 'check' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/drawing/SKILL.md",
-          "line": 166,
-          "col": 1151,
+          "line": 180,
+          "col": 77,
           "rule": "passive-voice",
           "level": "advisory",
           "match": "is listed",
@@ -2163,7 +1928,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 171,
+          "line": 189,
           "col": 31,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2172,7 +1937,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 189,
+          "line": 207,
           "col": 35,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2181,7 +1946,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 190,
+          "line": 208,
           "col": 27,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2190,7 +1955,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 191,
+          "line": 209,
           "col": 35,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2199,7 +1964,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 198,
+          "line": 216,
           "col": 76,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2208,7 +1973,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 237,
+          "line": 255,
           "col": 21,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2217,7 +1982,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 241,
+          "line": 259,
           "col": 15,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2226,7 +1991,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 243,
+          "line": 261,
           "col": 4,
           "rule": "long-sentence",
           "level": "advisory-free",
@@ -2235,25 +2000,16 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 257,
+          "line": 276,
           "col": 5,
           "rule": "long-sentence",
           "level": "advisory-free",
-          "match": "34 words",
-          "message": "Sentence has 34 words (cap 25). Split it."
+          "match": "27 words",
+          "message": "Sentence has 27 words (cap 25). Split it."
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 274,
-          "col": 36,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "skills/drawing/SKILL.md",
-          "line": 305,
+          "line": 319,
           "col": 378,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2262,7 +2018,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 305,
+          "line": 319,
           "col": 553,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2271,25 +2027,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 353,
-          "col": 46,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Confirm",
-          "message": "'confirm' and 'check' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/drawing/SKILL.md",
-          "line": 379,
-          "col": 1,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "33 words",
-          "message": "Sentence has 33 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/drawing/SKILL.md",
-          "line": 384,
+          "line": 394,
           "col": 23,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2298,7 +2036,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 390,
+          "line": 400,
           "col": 60,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2307,7 +2045,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 397,
+          "line": 407,
           "col": 216,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2316,7 +2054,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 414,
+          "line": 424,
           "col": 19,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2325,7 +2063,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 446,
+          "line": 456,
           "col": 42,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2334,7 +2072,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 447,
+          "line": 457,
           "col": 50,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2343,7 +2081,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 448,
+          "line": 458,
           "col": 42,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2352,7 +2090,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 452,
+          "line": 462,
           "col": 11,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2361,34 +2099,16 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 458,
-          "col": 1,
-          "rule": "long-sentence",
+          "line": 470,
+          "col": 15,
+          "rule": "synonym-rotation",
           "level": "advisory-free",
-          "match": "27 words",
-          "message": "Sentence has 27 words (cap 25). Split it."
+          "match": "verify",
+          "message": "'verify' and 'check' name the same action. Pick one and use it every time."
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 464,
-          "col": 73,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "27 words",
-          "message": "Sentence has 27 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/drawing/SKILL.md",
-          "line": 465,
-          "col": 131,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "skills/drawing/SKILL.md",
-          "line": 479,
+          "line": 489,
           "col": 24,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2397,7 +2117,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 505,
+          "line": 515,
           "col": 13,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2405,11 +2125,11 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 35,
-      "hard_count": 14,
+      "count": 24,
+      "hard_count": 3,
       "baseline": 24,
-      "words": 5064,
-      "per_100_words": 0.7,
+      "words": 5082,
+      "per_100_words": 0.5,
       "path": "skills/drawing/SKILL.md",
       "exit_code": 0
     },
@@ -2744,22 +2464,13 @@
           "level": "advisory",
           "match": "been retrieved",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/INITIALIZATION_POLICY.md",
-          "line": 132,
-          "col": 288,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
         }
       ],
-      "count": 3,
-      "hard_count": 1,
+      "count": 2,
+      "hard_count": 0,
       "baseline": 4,
       "words": 1180,
-      "per_100_words": 0.3,
+      "per_100_words": 0.2,
       "path": "skills/INITIALIZATION_POLICY.md",
       "exit_code": 0
     },
@@ -2773,22 +2484,13 @@
           "level": "advisory-free",
           "match": "26 words",
           "message": "Sentence has 26 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/drawing/assets/daily-index-template.md",
-          "line": 28,
-          "col": 28,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "verify",
-          "message": "'verify' and 'check' name the same action. Pick one and use it every time."
         }
       ],
-      "count": 2,
-      "hard_count": 2,
+      "count": 1,
+      "hard_count": 1,
       "baseline": 0,
-      "words": 214,
-      "per_100_words": 0.9,
+      "words": 210,
+      "per_100_words": 0.5,
       "path": "skills/drawing/assets/daily-index-template.md",
       "exit_code": 1
     },
@@ -2824,15 +2526,6 @@
         },
         {
           "file": "workspace/TASK_TEMPLATE.md",
-          "line": 57,
-          "col": 58,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "checks",
-          "message": "'check' and 'verify' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/TASK_TEMPLATE.md",
           "line": 73,
           "col": 20,
           "rule": "passive-voice",
@@ -2850,13 +2543,13 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 5,
-      "hard_count": 1,
+      "count": 4,
+      "hard_count": 0,
       "baseline": 0,
       "words": 385,
-      "per_100_words": 1.3,
+      "per_100_words": 1.0,
       "path": "workspace/TASK_TEMPLATE.md",
-      "exit_code": 1
+      "exit_code": 0
     },
     {
       "violations": [
@@ -2935,24 +2628,15 @@
         {
           "file": "skills/drawing/references/series-continuity-and-iteration.md",
           "line": 177,
-          "col": 31,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Check",
-          "message": "'check' and 'confirm' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/drawing/references/series-continuity-and-iteration.md",
-          "line": 177,
-          "col": 77,
+          "col": 79,
           "rule": "passive-voice",
           "level": "advisory",
           "match": "was attached",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 10,
-      "hard_count": 1,
+      "count": 9,
+      "hard_count": 0,
       "baseline": 9,
       "words": 3262,
       "per_100_words": 0.3,
@@ -3105,16 +2789,7 @@
       "violations": [
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 23,
-          "col": 1,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "34 words",
-          "message": "Sentence has 34 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/the-worker/SKILL.md",
-          "line": 25,
+          "line": 31,
           "col": 133,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3123,16 +2798,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 49,
-          "col": 97,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "verify",
-          "message": "'verify' and 'check' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/the-worker/SKILL.md",
-          "line": 52,
+          "line": 58,
           "col": 61,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3141,16 +2807,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 52,
-          "col": 234,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "validate",
-          "message": "'validate' and 'check' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/the-worker/SKILL.md",
-          "line": 69,
+          "line": 75,
           "col": 111,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3159,34 +2816,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 210,
-          "col": 86,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Remove",
-          "message": "'remove' and 'delete' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/the-worker/SKILL.md",
-          "line": 274,
-          "col": 142,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "fix",
-          "message": "'fix' and 'repair' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/the-worker/SKILL.md",
-          "line": 274,
-          "col": 237,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "skills/the-worker/SKILL.md",
-          "line": 284,
+          "line": 290,
           "col": 168,
           "rule": "present-perfect",
           "level": "advisory",
@@ -3195,48 +2825,21 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 284,
+          "line": 290,
           "col": 172,
           "rule": "passive-voice",
           "level": "advisory",
           "match": "been verified",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/the-worker/SKILL.md",
-          "line": 284,
-          "col": 273,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "skills/the-worker/SKILL.md",
-          "line": 302,
-          "col": 5,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Fetch",
-          "message": "'fetch' and 'retrieve' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/the-worker/SKILL.md",
-          "line": 303,
-          "col": 188,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "modify",
-          "message": "'modify' and 'change' name the same action. Pick one and use it every time."
         }
       ],
-      "count": 14,
-      "hard_count": 9,
+      "count": 5,
+      "hard_count": 0,
       "baseline": 0,
-      "words": 3131,
-      "per_100_words": 0.4,
+      "words": 3133,
+      "per_100_words": 0.2,
       "path": "skills/the-worker/SKILL.md",
-      "exit_code": 1
+      "exit_code": 0
     },
     {
       "violations": [
@@ -3277,15 +2880,6 @@
           "level": "advisory",
           "match": "was completed",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/session-archiving/references/archive-records-and-image-prompts.md",
-          "line": 49,
-          "col": 20,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "verify",
-          "message": "'verify' and 'confirm' name the same action. Pick one and use it every time."
         },
         {
           "file": "skills/session-archiving/references/archive-records-and-image-prompts.md",
@@ -3513,10 +3107,10 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 28,
-      "hard_count": 1,
+      "count": 27,
+      "hard_count": 0,
       "baseline": 20,
-      "words": 4527,
+      "words": 4529,
       "per_100_words": 0.6,
       "path": "skills/session-archiving/references/archive-records-and-image-prompts.md",
       "exit_code": 0
@@ -3651,26 +3245,8 @@
         },
         {
           "file": "skills/drawing/references/prompt-fidelity.md",
-          "line": 182,
-          "col": 140,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "modify",
-          "message": "'modify' and 'change' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/drawing/references/prompt-fidelity.md",
           "line": 198,
-          "col": 63,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Confirm",
-          "message": "'confirm' and 'check' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/drawing/references/prompt-fidelity.md",
-          "line": 198,
-          "col": 143,
+          "col": 141,
           "rule": "passive-voice",
           "level": "advisory",
           "match": "is required",
@@ -3747,15 +3323,6 @@
           "level": "advisory",
           "match": "been converted",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/prompt-fidelity.md",
-          "line": 264,
-          "col": 4,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Fetch",
-          "message": "'fetch' and 'retrieve' name the same action. Pick one and use it every time."
         },
         {
           "file": "skills/drawing/references/prompt-fidelity.md",
@@ -3954,10 +3521,19 @@
           "level": "advisory",
           "match": "was copied",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/drawing/references/prompt-fidelity.md",
+          "line": 315,
+          "col": 156,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "fetch",
+          "message": "'fetch' and 'retrieve' name the same action. Pick one and use it every time."
         }
       ],
-      "count": 48,
-      "hard_count": 3,
+      "count": 46,
+      "hard_count": 1,
       "baseline": 15,
       "words": 3676,
       "per_100_words": 1.3,
@@ -3966,15 +3542,6 @@
     },
     {
       "violations": [
-        {
-          "file": "skills/document-standards/SKILL.md",
-          "line": 63,
-          "col": 4,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Confirm",
-          "message": "'confirm' and 'check' name the same action. Pick one and use it every time."
-        },
         {
           "file": "skills/document-standards/SKILL.md",
           "line": 75,
@@ -3986,33 +3553,6 @@
         },
         {
           "file": "skills/document-standards/SKILL.md",
-          "line": 180,
-          "col": 327,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "28 words",
-          "message": "Sentence has 28 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/document-standards/SKILL.md",
-          "line": 180,
-          "col": 450,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "validate",
-          "message": "'validate' and 'check' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/document-standards/SKILL.md",
-          "line": 182,
-          "col": 163,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "skills/document-standards/SKILL.md",
           "line": 197,
           "col": 37,
           "rule": "passive-voice",
@@ -4021,37 +3561,19 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 6,
-      "hard_count": 4,
+      "count": 2,
+      "hard_count": 0,
       "baseline": 0,
-      "words": 1606,
-      "per_100_words": 0.4,
+      "words": 1612,
+      "per_100_words": 0.1,
       "path": "skills/document-standards/SKILL.md",
-      "exit_code": 1
+      "exit_code": 0
     },
     {
       "violations": [
         {
           "file": "skills/session-archiving/SKILL.md",
-          "line": 15,
-          "col": 1,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "27 words",
-          "message": "Sentence has 27 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/session-archiving/SKILL.md",
-          "line": 19,
-          "col": 1,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "31 words",
-          "message": "Sentence has 31 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/session-archiving/SKILL.md",
-          "line": 76,
+          "line": 80,
           "col": 90,
           "rule": "passive-voice",
           "level": "advisory",
@@ -4060,7 +3582,7 @@
         },
         {
           "file": "skills/session-archiving/SKILL.md",
-          "line": 130,
+          "line": 134,
           "col": 41,
           "rule": "passive-voice",
           "level": "advisory",
@@ -4069,16 +3591,7 @@
         },
         {
           "file": "skills/session-archiving/SKILL.md",
-          "line": 138,
-          "col": 339,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "skills/session-archiving/SKILL.md",
-          "line": 138,
+          "line": 142,
           "col": 408,
           "rule": "passive-voice",
           "level": "advisory",
@@ -4086,80 +3599,33 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 6,
-      "hard_count": 3,
+      "count": 3,
+      "hard_count": 0,
       "baseline": 7,
-      "words": 2384,
-      "per_100_words": 0.3,
+      "words": 2388,
+      "per_100_words": 0.1,
       "path": "skills/session-archiving/SKILL.md",
       "exit_code": 0
     },
     {
-      "violations": [
-        {
-          "file": "skills/drawing/references/image-editing-protocol.md",
-          "line": 5,
-          "col": 1,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "26 words",
-          "message": "Sentence has 26 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/drawing/references/image-editing-protocol.md",
-          "line": 11,
-          "col": 57,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "27 words",
-          "message": "Sentence has 27 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/drawing/references/image-editing-protocol.md",
-          "line": 28,
-          "col": 1,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "29 words",
-          "message": "Sentence has 29 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/drawing/references/image-editing-protocol.md",
-          "line": 57,
-          "col": 58,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Check",
-          "message": "'check' and 'verify' name the same action. Pick one and use it every time."
-        }
-      ],
-      "count": 4,
-      "hard_count": 4,
+      "violations": [],
+      "count": 0,
+      "hard_count": 0,
       "baseline": 4,
-      "words": 965,
-      "per_100_words": 0.4,
+      "words": 962,
+      "per_100_words": 0.0,
       "path": "skills/drawing/references/image-editing-protocol.md",
       "exit_code": 0
     },
     {
-      "violations": [
-        {
-          "file": "skills/session-archiving/assets/session-brief-template.md",
-          "line": 5,
-          "col": 1,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "32 words",
-          "message": "Sentence has 32 words (cap 25). Split it."
-        }
-      ],
-      "count": 1,
-      "hard_count": 1,
+      "violations": [],
+      "count": 0,
+      "hard_count": 0,
       "baseline": 0,
       "words": 288,
-      "per_100_words": 0.3,
+      "per_100_words": 0.0,
       "path": "skills/session-archiving/assets/session-brief-template.md",
-      "exit_code": 1
+      "exit_code": 0
     },
     {
       "violations": [
@@ -4232,17 +3698,6 @@
     }
   ],
   "findings": [
-    {
-      "file": "skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md",
-      "line": 38,
-      "col": 8,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Verify",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "e56e71413f309183c3195a0f",
-      "comparison": "recurring"
-    },
     {
       "file": "skills/philosophy-religion-asceticism/SKILL.md",
       "line": 53,
@@ -4619,17 +4074,6 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 136,
-      "col": 110,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Start",
-      "message": "'start' and 'begin' name the same action. Pick one and use it every time.",
-      "fingerprint": "836c6ab7672c67c5cf0dbf14",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/agent-skill-authoring/SKILL.md",
       "line": 160,
       "col": 29,
       "rule": "passive-voice",
@@ -4696,18 +4140,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 203,
-      "col": 27,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "76c645f8b8d79e0e8da99700",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 216,
+      "line": 222,
       "col": 38,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4718,7 +4151,18 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 238,
+      "line": 231,
+      "col": 18,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "begins",
+      "message": "'begin' and 'start' name the same action. Pick one and use it every time.",
+      "fingerprint": "cdded221cb31c45f9059249a",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/agent-skill-authoring/SKILL.md",
+      "line": 244,
       "col": 28,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4729,7 +4173,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 239,
+      "line": 245,
       "col": 65,
       "rule": "present-perfect",
       "level": "advisory",
@@ -4740,7 +4184,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 239,
+      "line": 245,
       "col": 70,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4751,7 +4195,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 247,
+      "line": 253,
       "col": 17,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4762,7 +4206,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 249,
+      "line": 255,
       "col": 37,
       "rule": "present-perfect",
       "level": "advisory",
@@ -4773,7 +4217,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 249,
+      "line": 255,
       "col": 41,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4784,7 +4228,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 251,
+      "line": 257,
       "col": 32,
       "rule": "present-perfect",
       "level": "advisory",
@@ -4795,7 +4239,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 251,
+      "line": 257,
       "col": 36,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4901,17 +4345,6 @@
       "match": "has tested",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "ad46045395dc40b74a35f499",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/assets/pattern-entry-templates.md",
-      "line": 106,
-      "col": 43,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'validate' name the same action. Pick one and use it every time.",
-      "fingerprint": "1e2dc3b524f1b7c4c3b51d1f",
       "comparison": "recurring"
     },
     {
@@ -5059,17 +4492,6 @@
     },
     {
       "file": "skills/asd-ste100/SKILL.md",
-      "line": 88,
-      "col": 192,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "delete",
-      "message": "'delete' and 'remove' name the same action. Pick one and use it every time.",
-      "fingerprint": "ce5400ef29dc517a20f612fc",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/asd-ste100/SKILL.md",
       "line": 89,
       "col": 56,
       "rule": "nominalization",
@@ -5132,6 +4554,17 @@
       "match": "blazing-fast",
       "message": "Marketing adjective. Delete, or replace with the measurement that earns the claim.",
       "fingerprint": "c3ddafa9275694f20a349624",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/asd-ste100/SKILL.md",
+      "line": 90,
+      "col": 152,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "delete",
+      "message": "'delete' and 'remove' name the same action. Pick one and use it every time.",
+      "fingerprint": "ce5400ef29dc517a20f612fc",
       "comparison": "recurring"
     },
     {
@@ -5345,40 +4778,7 @@
     },
     {
       "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 66,
-      "col": 70,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "checks",
-      "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
-      "fingerprint": "4a60e842034f5d41693a5db2",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 78,
-      "col": 4,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "b2fe77983de2b84d89887c16",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 88,
-      "col": 4,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "33 words",
-      "message": "Sentence has 33 words (cap 25). Split it.",
-      "fingerprint": "1f12c5295c209089d03fd7ec",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 96,
+      "line": 93,
       "col": 17,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5389,7 +4789,7 @@
     },
     {
       "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 97,
+      "line": 94,
       "col": 72,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5400,7 +4800,7 @@
     },
     {
       "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 101,
+      "line": 98,
       "col": 39,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5411,29 +4811,7 @@
     },
     {
       "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 105,
-      "col": 22,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'validate' name the same action. Pick one and use it every time.",
-      "fingerprint": "85ee15f9b5a327b690ba9464",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 168,
-      "col": 47,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "correct",
-      "message": "'correct' and 'repair' name the same action. Pick one and use it every time.",
-      "fingerprint": "530b4aab7e05619eb2854a21",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 180,
+      "line": 177,
       "col": 400,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5444,7 +4822,7 @@
     },
     {
       "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 199,
+      "line": 196,
       "col": 37,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5455,7 +4833,7 @@
     },
     {
       "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 200,
+      "line": 197,
       "col": 76,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5466,7 +4844,7 @@
     },
     {
       "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 211,
+      "line": 208,
       "col": 26,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5477,7 +4855,7 @@
     },
     {
       "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 215,
+      "line": 212,
       "col": 1,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5517,61 +4895,6 @@
       "match": "have reached",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "701a297d4776256937ee58f6",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/github-actions/SKILL.md",
-      "line": 33,
-      "col": 62,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Remove",
-      "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
-      "fingerprint": "8273627d1b81174ce50b3186",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/github-actions/SKILL.md",
-      "line": 42,
-      "col": 31,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "469031badac3ba397e332e3c",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/github-actions/SKILL.md",
-      "line": 45,
-      "col": 54,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "469031badac3ba397e332e3c",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/github-actions/SKILL.md",
-      "line": 49,
-      "col": 96,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "26 words",
-      "message": "Sentence has 26 words (cap 25). Split it.",
-      "fingerprint": "7d97b46795e61a4443970d53",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/github-actions/SKILL.md",
-      "line": 220,
-      "col": 211,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "469031badac3ba397e332e3c",
       "comparison": "recurring"
     },
     {
@@ -5928,19 +5251,8 @@
     },
     {
       "file": "skills/session-archiving/references/image-provenance-and-webp.md",
-      "line": 94,
-      "col": 206,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Verify",
-      "message": "'verify' and 'validate' name the same action. Pick one and use it every time.",
-      "fingerprint": "f6b87316a617b3675e187026",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/session-archiving/references/image-provenance-and-webp.md",
-      "line": 94,
-      "col": 241,
+      "line": 103,
+      "col": 200,
       "rule": "synonym-rotation",
       "level": "advisory-free",
       "match": "checking",
@@ -6027,68 +5339,13 @@
     },
     {
       "file": "skills/conversation-mode/SKILL.md",
-      "line": 100,
-      "col": 230,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "53195e2f9ecf6fe4ff1b3bcc",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 101,
-      "col": 60,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "5cbd20db3996bfbcd6375e8e",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 102,
-      "col": 129,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "53195e2f9ecf6fe4ff1b3bcc",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
       "line": 105,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "32 words",
-      "message": "Sentence has 32 words (cap 25). Split it.",
-      "fingerprint": "896c2c9e44672241e3c6b38f",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 105,
-      "col": 95,
+      "col": 72,
       "rule": "passive-voice",
       "level": "advisory",
       "match": "is paused",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "448cf9dfd90fe327096b71e5",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 105,
-      "col": 112,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "53195e2f9ecf6fe4ff1b3bcc",
       "comparison": "recurring"
     },
     {
@@ -6357,74 +5614,8 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 166,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "32 words",
-      "message": "Sentence has 32 words (cap 25). Split it.",
-      "fingerprint": "6901675964ceed2d35078379",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/SKILL.md",
-      "line": 166,
-      "col": 376,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "29 words",
-      "message": "Sentence has 29 words (cap 25). Split it.",
-      "fingerprint": "7f77b267c64ee5928a429888",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/SKILL.md",
-      "line": 166,
-      "col": 449,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "a66c58d4cbff63015f3f6912",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/SKILL.md",
-      "line": 166,
-      "col": 827,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "29 words",
-      "message": "Sentence has 29 words (cap 25). Split it.",
-      "fingerprint": "7f77b267c64ee5928a429888",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/SKILL.md",
-      "line": 166,
-      "col": 1076,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "1da08cc0bf141330524bda57",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/SKILL.md",
-      "line": 166,
-      "col": 1100,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "aa2b4a16cd7d5222231207e6",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/SKILL.md",
-      "line": 166,
-      "col": 1151,
+      "line": 180,
+      "col": 77,
       "rule": "passive-voice",
       "level": "advisory",
       "match": "is listed",
@@ -6434,7 +5625,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 171,
+      "line": 189,
       "col": 31,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6445,7 +5636,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 189,
+      "line": 207,
       "col": 35,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6456,7 +5647,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 190,
+      "line": 208,
       "col": 27,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6467,7 +5658,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 191,
+      "line": 209,
       "col": 35,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6478,7 +5669,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 198,
+      "line": 216,
       "col": 76,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6489,7 +5680,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 237,
+      "line": 255,
       "col": 21,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6500,7 +5691,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 241,
+      "line": 259,
       "col": 15,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6511,7 +5702,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 243,
+      "line": 261,
       "col": 4,
       "rule": "long-sentence",
       "level": "advisory-free",
@@ -6522,29 +5713,18 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 257,
+      "line": 276,
       "col": 5,
       "rule": "long-sentence",
       "level": "advisory-free",
-      "match": "34 words",
-      "message": "Sentence has 34 words (cap 25). Split it.",
-      "fingerprint": "ab1ec88e506a23cf0af2d38c",
+      "match": "27 words",
+      "message": "Sentence has 27 words (cap 25). Split it.",
+      "fingerprint": "1da08cc0bf141330524bda57",
       "comparison": "recurring"
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 274,
-      "col": 36,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "a66c58d4cbff63015f3f6912",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/SKILL.md",
-      "line": 305,
+      "line": 319,
       "col": 378,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6555,7 +5735,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 305,
+      "line": 319,
       "col": 553,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6566,29 +5746,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 353,
-      "col": 46,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Confirm",
-      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "14047edbba057e6e6f46a522",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/SKILL.md",
-      "line": 379,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "33 words",
-      "message": "Sentence has 33 words (cap 25). Split it.",
-      "fingerprint": "71b5544d9fbd5e093fd73ef3",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/SKILL.md",
-      "line": 384,
+      "line": 394,
       "col": 23,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6599,7 +5757,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 390,
+      "line": 400,
       "col": 60,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6610,7 +5768,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 397,
+      "line": 407,
       "col": 216,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6621,7 +5779,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 414,
+      "line": 424,
       "col": 19,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6632,7 +5790,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 446,
+      "line": 456,
       "col": 42,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6643,7 +5801,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 447,
+      "line": 457,
       "col": 50,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6654,7 +5812,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 448,
+      "line": 458,
       "col": 42,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6665,7 +5823,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 452,
+      "line": 462,
       "col": 11,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6676,40 +5834,18 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 458,
-      "col": 1,
-      "rule": "long-sentence",
+      "line": 470,
+      "col": 15,
+      "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "1da08cc0bf141330524bda57",
+      "match": "verify",
+      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "aa2b4a16cd7d5222231207e6",
       "comparison": "recurring"
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 464,
-      "col": 73,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "1da08cc0bf141330524bda57",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/SKILL.md",
-      "line": 465,
-      "col": 131,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "a66c58d4cbff63015f3f6912",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/SKILL.md",
-      "line": 479,
+      "line": 489,
       "col": 24,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6720,7 +5856,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 505,
+      "line": 515,
       "col": 13,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7093,17 +6229,6 @@
       "comparison": "recurring"
     },
     {
-      "file": "skills/INITIALIZATION_POLICY.md",
-      "line": 132,
-      "col": 288,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "b28796101e8a0d8165b3d79b",
-      "comparison": "recurring"
-    },
-    {
       "file": "skills/drawing/assets/daily-index-template.md",
       "line": 5,
       "col": 1,
@@ -7112,17 +6237,6 @@
       "match": "26 words",
       "message": "Sentence has 26 words (cap 25). Split it.",
       "fingerprint": "f7683dcec815fe504f98befb",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/assets/daily-index-template.md",
-      "line": 28,
-      "col": 28,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "1975c054eeac9c56d64113d2",
       "comparison": "recurring"
     },
     {
@@ -7145,17 +6259,6 @@
       "match": "was inspected",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "fdc561df7864672b424ed481",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/TASK_TEMPLATE.md",
-      "line": 57,
-      "col": 58,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "checks",
-      "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
-      "fingerprint": "e37028ed88b119b98fe16981",
       "comparison": "recurring"
     },
     {
@@ -7271,18 +6374,7 @@
     {
       "file": "skills/drawing/references/series-continuity-and-iteration.md",
       "line": 177,
-      "col": 31,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Check",
-      "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
-      "fingerprint": "284ad5169b785d0b95212ad0",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/series-continuity-and-iteration.md",
-      "line": 177,
-      "col": 77,
+      "col": 79,
       "rule": "passive-voice",
       "level": "advisory",
       "match": "was attached",
@@ -7413,18 +6505,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 23,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "34 words",
-      "message": "Sentence has 34 words (cap 25). Split it.",
-      "fingerprint": "43ee5fc4aa2ab0ab98097505",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 25,
+      "line": 31,
       "col": 133,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7435,18 +6516,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 49,
-      "col": 97,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "fc69cda88704716351e23cde",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 52,
+      "line": 58,
       "col": 61,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7457,18 +6527,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 52,
-      "col": 234,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "validate",
-      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "d58fcdeca2d4638a3202e347",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 69,
+      "line": 75,
       "col": 111,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7479,40 +6538,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 210,
-      "col": 86,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Remove",
-      "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
-      "fingerprint": "6d31ffa74d22866fde26008b",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 274,
-      "col": 142,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "fix",
-      "message": "'fix' and 'repair' name the same action. Pick one and use it every time.",
-      "fingerprint": "029ca4bbb45df78403a58c6a",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 274,
-      "col": 237,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 284,
+      "line": 290,
       "col": 168,
       "rule": "present-perfect",
       "level": "advisory",
@@ -7523,46 +6549,13 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 284,
+      "line": 290,
       "col": 172,
       "rule": "passive-voice",
       "level": "advisory",
       "match": "been verified",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "b6cbb5b662b7ac93ef3ba05e",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 284,
-      "col": 273,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 302,
-      "col": 5,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Fetch",
-      "message": "'fetch' and 'retrieve' name the same action. Pick one and use it every time.",
-      "fingerprint": "a9d20f4653027ed7ab14234f",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 303,
-      "col": 188,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "modify",
-      "message": "'modify' and 'change' name the same action. Pick one and use it every time.",
-      "fingerprint": "37f2d4507c6da52361dc8884",
       "comparison": "recurring"
     },
     {
@@ -7596,17 +6589,6 @@
       "match": "was completed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "b42e4986c1414564f3a43dfe",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/session-archiving/references/archive-records-and-image-prompts.md",
-      "line": 49,
-      "col": 20,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'confirm' name the same action. Pick one and use it every time.",
-      "fingerprint": "5d54d956f78d455711c2a358",
       "comparison": "recurring"
     },
     {
@@ -8040,30 +7022,8 @@
     },
     {
       "file": "skills/drawing/references/prompt-fidelity.md",
-      "line": 182,
-      "col": 140,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "modify",
-      "message": "'modify' and 'change' name the same action. Pick one and use it every time.",
-      "fingerprint": "2476dea842e1d1f6a28cf155",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/prompt-fidelity.md",
       "line": 198,
-      "col": 63,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Confirm",
-      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "282525e2d2f8de1a47888d6a",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/prompt-fidelity.md",
-      "line": 198,
-      "col": 143,
+      "col": 141,
       "rule": "passive-voice",
       "level": "advisory",
       "match": "is required",
@@ -8157,17 +7117,6 @@
       "match": "been converted",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "b49d5e45b1b3b1c0140fab39",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/prompt-fidelity.md",
-      "line": 264,
-      "col": 4,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Fetch",
-      "message": "'fetch' and 'retrieve' name the same action. Pick one and use it every time.",
-      "fingerprint": "938ecf216eb0c10b33dda11d",
       "comparison": "recurring"
     },
     {
@@ -8413,15 +7362,15 @@
       "comparison": "recurring"
     },
     {
-      "file": "skills/document-standards/SKILL.md",
-      "line": 63,
-      "col": 4,
+      "file": "skills/drawing/references/prompt-fidelity.md",
+      "line": 315,
+      "col": 156,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "Confirm",
-      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "07674879980ff2505700c220",
-      "comparison": "recurring"
+      "match": "fetch",
+      "message": "'fetch' and 'retrieve' name the same action. Pick one and use it every time.",
+      "fingerprint": "c784915b81aefed48004e9cb",
+      "comparison": "new"
     },
     {
       "file": "skills/document-standards/SKILL.md",
@@ -8432,39 +7381,6 @@
       "match": "is created",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "f02e1c27fdc79f6921bf2e16",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/document-standards/SKILL.md",
-      "line": 180,
-      "col": 327,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "d729b795313e90f225f82604",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/document-standards/SKILL.md",
-      "line": 180,
-      "col": 450,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "validate",
-      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "10e159b65c4b4d9975acc612",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/document-standards/SKILL.md",
-      "line": 182,
-      "col": 163,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "0a9f2f8f059737eb01876e1d",
       "comparison": "recurring"
     },
     {
@@ -8480,29 +7396,7 @@
     },
     {
       "file": "skills/session-archiving/SKILL.md",
-      "line": 15,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "9e6fa03cf250971e670d6803",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/session-archiving/SKILL.md",
-      "line": 19,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "31 words",
-      "message": "Sentence has 31 words (cap 25). Split it.",
-      "fingerprint": "4a07020ba7d52cf7f45d6a4a",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/session-archiving/SKILL.md",
-      "line": 76,
+      "line": 80,
       "col": 90,
       "rule": "passive-voice",
       "level": "advisory",
@@ -8513,7 +7407,7 @@
     },
     {
       "file": "skills/session-archiving/SKILL.md",
-      "line": 130,
+      "line": 134,
       "col": 41,
       "rule": "passive-voice",
       "level": "advisory",
@@ -8524,79 +7418,13 @@
     },
     {
       "file": "skills/session-archiving/SKILL.md",
-      "line": 138,
-      "col": 339,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "7d65cb408a89c3b8ce342056",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/session-archiving/SKILL.md",
-      "line": 138,
+      "line": 142,
       "col": 408,
       "rule": "passive-voice",
       "level": "advisory",
       "match": "is provided",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "2779f560ab6e00a4b9a36994",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/image-editing-protocol.md",
-      "line": 5,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "26 words",
-      "message": "Sentence has 26 words (cap 25). Split it.",
-      "fingerprint": "fad73ccae148b45b37683760",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/image-editing-protocol.md",
-      "line": 11,
-      "col": 57,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "c15f742ac3e180cc65752268",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/image-editing-protocol.md",
-      "line": 28,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "29 words",
-      "message": "Sentence has 29 words (cap 25). Split it.",
-      "fingerprint": "8d59855cda37840c3b2e2839",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/image-editing-protocol.md",
-      "line": 57,
-      "col": 58,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Check",
-      "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
-      "fingerprint": "716088bbc5e9ae6d23e2ad21",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/session-archiving/assets/session-brief-template.md",
-      "line": 5,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "32 words",
-      "message": "Sentence has 32 words (cap 25). Split it.",
-      "fingerprint": "9edc4fb8b393050df4a8fe30",
       "comparison": "recurring"
     },
     {
@@ -8633,821 +7461,645 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 0,
-  "recurring_findings": 400,
+  "new_findings": 2,
+  "recurring_findings": 340,
   "resolved_findings": [
     {
-      "file": "skills/asd-ste100/SKILL.md",
-      "line": 39,
-      "col": 133,
+      "file": "skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md",
+      "line": 38,
+      "col": 8,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Verify",
+      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "e56e71413f309183c3195a0f",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/agent-skill-authoring/SKILL.md",
+      "line": 136,
+      "col": 110,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Start",
+      "message": "'start' and 'begin' name the same action. Pick one and use it every time.",
+      "fingerprint": "836c6ab7672c67c5cf0dbf14",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/agent-skill-authoring/SKILL.md",
+      "line": 203,
+      "col": 27,
       "rule": "long-sentence",
       "level": "advisory-free",
       "match": "28 words",
       "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "c73db64bc9604fc922f42dd6",
+      "fingerprint": "76c645f8b8d79e0e8da99700",
       "comparison": "resolved"
     },
     {
-      "file": "skills/asd-ste100/SKILL.md",
-      "line": 156,
-      "col": 440,
+      "file": "skills/drawing/assets/pattern-entry-templates.md",
+      "line": 106,
+      "col": 43,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "confirms",
-      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "7e018b97273422b234ce19d9",
+      "match": "verify",
+      "message": "'verify' and 'validate' name the same action. Pick one and use it every time.",
+      "fingerprint": "1e2dc3b524f1b7c4c3b51d1f",
       "comparison": "resolved"
     },
     {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 27,
-      "col": 215,
-      "rule": "semicolon",
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 66,
+      "col": 70,
+      "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "match": "checks",
+      "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
+      "fingerprint": "4a60e842034f5d41693a5db2",
       "comparison": "resolved"
     },
     {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 29,
-      "col": 196,
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 78,
+      "col": 4,
       "rule": "long-sentence",
       "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "33b66dbc6dc280ae7c9be6c8",
+      "match": "28 words",
+      "message": "Sentence has 28 words (cap 25). Split it.",
+      "fingerprint": "b2fe77983de2b84d89887c16",
       "comparison": "resolved"
     },
     {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 29,
-      "col": 299,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 32,
-      "col": 207,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 33,
-      "col": 239,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 36,
-      "col": 277,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 42,
-      "col": 155,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 43,
-      "col": 330,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 44,
-      "col": 264,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 47,
-      "col": 330,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 49,
-      "col": 169,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 50,
-      "col": 174,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 61,
-      "col": 430,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 62,
-      "col": 302,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 63,
-      "col": 406,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 87,
-      "col": 111,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 87,
-      "col": 139,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 87,
-      "col": 157,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 87,
-      "col": 187,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 87,
-      "col": 214,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 87,
-      "col": 240,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 87,
-      "col": 326,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 87,
-      "col": 394,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
+      "file": "skills/drawing/references/archive-and-delivery.md",
       "line": 88,
+      "col": 4,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "33 words",
+      "message": "Sentence has 33 words (cap 25). Split it.",
+      "fingerprint": "1f12c5295c209089d03fd7ec",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 105,
+      "col": 22,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "verify",
+      "message": "'verify' and 'validate' name the same action. Pick one and use it every time.",
+      "fingerprint": "85ee15f9b5a327b690ba9464",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 168,
+      "col": 47,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "correct",
+      "message": "'correct' and 'repair' name the same action. Pick one and use it every time.",
+      "fingerprint": "530b4aab7e05619eb2854a21",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/github-actions/SKILL.md",
+      "line": 33,
+      "col": 62,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Remove",
+      "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
+      "fingerprint": "8273627d1b81174ce50b3186",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/github-actions/SKILL.md",
+      "line": 42,
+      "col": 31,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "469031badac3ba397e332e3c",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/github-actions/SKILL.md",
+      "line": 45,
       "col": 54,
       "rule": "semicolon",
       "level": "advisory-free",
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "fingerprint": "469031badac3ba397e332e3c",
       "comparison": "resolved"
     },
     {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 88,
-      "col": 264,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 88,
-      "col": 318,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 88,
-      "col": 435,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 89,
-      "col": 152,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 90,
-      "col": 144,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 90,
-      "col": 192,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 91,
-      "col": 146,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 91,
-      "col": 217,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 92,
-      "col": 222,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 93,
-      "col": 73,
+      "file": "skills/github-actions/SKILL.md",
+      "line": 49,
+      "col": 96,
       "rule": "long-sentence",
       "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "33b66dbc6dc280ae7c9be6c8",
+      "match": "26 words",
+      "message": "Sentence has 26 words (cap 25). Split it.",
+      "fingerprint": "7d97b46795e61a4443970d53",
       "comparison": "resolved"
     },
     {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 93,
-      "col": 220,
+      "file": "skills/github-actions/SKILL.md",
+      "line": 220,
+      "col": 211,
       "rule": "semicolon",
       "level": "advisory-free",
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "fingerprint": "469031badac3ba397e332e3c",
       "comparison": "resolved"
     },
     {
-      "file": "skills/document-standards/references/document-type-catalog.md",
+      "file": "skills/session-archiving/references/image-provenance-and-webp.md",
       "line": 94,
-      "col": 71,
+      "col": 206,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Verify",
+      "message": "'verify' and 'validate' name the same action. Pick one and use it every time.",
+      "fingerprint": "f6b87316a617b3675e187026",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/conversation-mode/SKILL.md",
+      "line": 100,
+      "col": 230,
       "rule": "semicolon",
       "level": "advisory-free",
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "fingerprint": "53195e2f9ecf6fe4ff1b3bcc",
       "comparison": "resolved"
     },
     {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 94,
-      "col": 196,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 94,
-      "col": 368,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 102,
-      "col": 293,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 104,
-      "col": 41,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 104,
+      "file": "skills/conversation-mode/SKILL.md",
+      "line": 101,
       "col": 60,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "verify",
+      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "5cbd20db3996bfbcd6375e8e",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/conversation-mode/SKILL.md",
+      "line": 102,
+      "col": 129,
       "rule": "semicolon",
       "level": "advisory-free",
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "fingerprint": "53195e2f9ecf6fe4ff1b3bcc",
       "comparison": "resolved"
     },
     {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 106,
-      "col": 62,
-      "rule": "semicolon",
+      "file": "skills/conversation-mode/SKILL.md",
+      "line": 105,
+      "col": 3,
+      "rule": "long-sentence",
       "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "match": "32 words",
+      "message": "Sentence has 32 words (cap 25). Split it.",
+      "fingerprint": "896c2c9e44672241e3c6b38f",
       "comparison": "resolved"
     },
     {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 106,
-      "col": 110,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 107,
-      "col": 58,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 107,
-      "col": 136,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 107,
-      "col": 251,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 109,
-      "col": 79,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 109,
-      "col": 189,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 111,
-      "col": 88,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 113,
+      "file": "skills/conversation-mode/SKILL.md",
+      "line": 105,
       "col": 112,
       "rule": "semicolon",
       "level": "advisory-free",
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "fingerprint": "53195e2f9ecf6fe4ff1b3bcc",
       "comparison": "resolved"
     },
     {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 113,
-      "col": 188,
+      "file": "skills/drawing/SKILL.md",
+      "line": 166,
+      "col": 1,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "32 words",
+      "message": "Sentence has 32 words (cap 25). Split it.",
+      "fingerprint": "6901675964ceed2d35078379",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/SKILL.md",
+      "line": 166,
+      "col": 376,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "29 words",
+      "message": "Sentence has 29 words (cap 25). Split it.",
+      "fingerprint": "7f77b267c64ee5928a429888",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/SKILL.md",
+      "line": 166,
+      "col": 449,
       "rule": "semicolon",
       "level": "advisory-free",
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "fingerprint": "a66c58d4cbff63015f3f6912",
       "comparison": "resolved"
     },
     {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 113,
-      "col": 332,
+      "file": "skills/drawing/SKILL.md",
+      "line": 166,
+      "col": 827,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "29 words",
+      "message": "Sentence has 29 words (cap 25). Split it.",
+      "fingerprint": "7f77b267c64ee5928a429888",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/SKILL.md",
+      "line": 257,
+      "col": 5,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "34 words",
+      "message": "Sentence has 34 words (cap 25). Split it.",
+      "fingerprint": "ab1ec88e506a23cf0af2d38c",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/SKILL.md",
+      "line": 274,
+      "col": 36,
       "rule": "semicolon",
       "level": "advisory-free",
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "fingerprint": "a66c58d4cbff63015f3f6912",
       "comparison": "resolved"
     },
     {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 125,
+      "file": "skills/drawing/SKILL.md",
+      "line": 353,
+      "col": 46,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Confirm",
+      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "14047edbba057e6e6f46a522",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/SKILL.md",
+      "line": 379,
+      "col": 1,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "33 words",
+      "message": "Sentence has 33 words (cap 25). Split it.",
+      "fingerprint": "71b5544d9fbd5e093fd73ef3",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/SKILL.md",
+      "line": 465,
+      "col": 131,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "a66c58d4cbff63015f3f6912",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/INITIALIZATION_POLICY.md",
+      "line": 132,
+      "col": 288,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "b28796101e8a0d8165b3d79b",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/assets/daily-index-template.md",
+      "line": 28,
+      "col": 28,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "verify",
+      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "1975c054eeac9c56d64113d2",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/TASK_TEMPLATE.md",
+      "line": 57,
+      "col": 58,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "checks",
+      "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
+      "fingerprint": "e37028ed88b119b98fe16981",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/series-continuity-and-iteration.md",
+      "line": 177,
+      "col": 31,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Check",
+      "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
+      "fingerprint": "284ad5169b785d0b95212ad0",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 23,
+      "col": 1,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "34 words",
+      "message": "Sentence has 34 words (cap 25). Split it.",
+      "fingerprint": "43ee5fc4aa2ab0ab98097505",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 49,
       "col": 97,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 125,
-      "col": 166,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 125,
-      "col": 235,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 125,
-      "col": 304,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 125,
-      "col": 373,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 126,
-      "col": 90,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 127,
-      "col": 62,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 127,
-      "col": 92,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 127,
-      "col": 124,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 127,
-      "col": 287,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 128,
-      "col": 173,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 129,
-      "col": 80,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 129,
-      "col": 128,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 129,
-      "col": 332,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 130,
-      "col": 113,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 130,
-      "col": 189,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 130,
-      "col": 298,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 139,
-      "col": 73,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "repair",
-      "message": "'repair' and 'fix' name the same action. Pick one and use it every time.",
-      "fingerprint": "0abfb61c7128cae67ea2ee21",
+      "match": "verify",
+      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "fc69cda88704716351e23cde",
       "comparison": "resolved"
     },
     {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 140,
-      "col": 67,
+      "file": "skills/the-worker/SKILL.md",
+      "line": 52,
+      "col": 234,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "confirms",
-      "message": "'confirm' and 'validate' name the same action. Pick one and use it every time.",
-      "fingerprint": "ee3dcb468a833bb24e5822bc",
+      "match": "validate",
+      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "d58fcdeca2d4638a3202e347",
       "comparison": "resolved"
     },
     {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 152,
-      "col": 185,
+      "file": "skills/the-worker/SKILL.md",
+      "line": 210,
+      "col": 86,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Remove",
+      "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
+      "fingerprint": "6d31ffa74d22866fde26008b",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 274,
+      "col": 142,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "fix",
+      "message": "'fix' and 'repair' name the same action. Pick one and use it every time.",
+      "fingerprint": "029ca4bbb45df78403a58c6a",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 274,
+      "col": 237,
       "rule": "semicolon",
       "level": "advisory-free",
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 284,
+      "col": 273,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 302,
+      "col": 5,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Fetch",
+      "message": "'fetch' and 'retrieve' name the same action. Pick one and use it every time.",
+      "fingerprint": "a9d20f4653027ed7ab14234f",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 303,
+      "col": 188,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "modify",
+      "message": "'modify' and 'change' name the same action. Pick one and use it every time.",
+      "fingerprint": "37f2d4507c6da52361dc8884",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/session-archiving/references/archive-records-and-image-prompts.md",
+      "line": 49,
+      "col": 20,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "verify",
+      "message": "'verify' and 'confirm' name the same action. Pick one and use it every time.",
+      "fingerprint": "5d54d956f78d455711c2a358",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/prompt-fidelity.md",
+      "line": 182,
+      "col": 140,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "modify",
+      "message": "'modify' and 'change' name the same action. Pick one and use it every time.",
+      "fingerprint": "2476dea842e1d1f6a28cf155",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/prompt-fidelity.md",
+      "line": 198,
+      "col": 63,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Confirm",
+      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "282525e2d2f8de1a47888d6a",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/prompt-fidelity.md",
+      "line": 264,
+      "col": 4,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Fetch",
+      "message": "'fetch' and 'retrieve' name the same action. Pick one and use it every time.",
+      "fingerprint": "938ecf216eb0c10b33dda11d",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/SKILL.md",
+      "line": 63,
+      "col": 4,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Confirm",
+      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "07674879980ff2505700c220",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/SKILL.md",
+      "line": 180,
+      "col": 327,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "28 words",
+      "message": "Sentence has 28 words (cap 25). Split it.",
+      "fingerprint": "d729b795313e90f225f82604",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/SKILL.md",
+      "line": 180,
+      "col": 450,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "validate",
+      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "10e159b65c4b4d9975acc612",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/SKILL.md",
+      "line": 182,
+      "col": 163,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0a9f2f8f059737eb01876e1d",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/session-archiving/SKILL.md",
+      "line": 15,
+      "col": 1,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "27 words",
+      "message": "Sentence has 27 words (cap 25). Split it.",
+      "fingerprint": "9e6fa03cf250971e670d6803",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/session-archiving/SKILL.md",
+      "line": 19,
+      "col": 1,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "31 words",
+      "message": "Sentence has 31 words (cap 25). Split it.",
+      "fingerprint": "4a07020ba7d52cf7f45d6a4a",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/session-archiving/SKILL.md",
+      "line": 138,
+      "col": 339,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "7d65cb408a89c3b8ce342056",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/image-editing-protocol.md",
+      "line": 5,
+      "col": 1,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "26 words",
+      "message": "Sentence has 26 words (cap 25). Split it.",
+      "fingerprint": "fad73ccae148b45b37683760",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/image-editing-protocol.md",
+      "line": 11,
+      "col": 57,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "27 words",
+      "message": "Sentence has 27 words (cap 25). Split it.",
+      "fingerprint": "c15f742ac3e180cc65752268",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/image-editing-protocol.md",
+      "line": 28,
+      "col": 1,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "29 words",
+      "message": "Sentence has 29 words (cap 25). Split it.",
+      "fingerprint": "8d59855cda37840c3b2e2839",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/image-editing-protocol.md",
+      "line": 57,
+      "col": 58,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Check",
+      "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
+      "fingerprint": "716088bbc5e9ae6d23e2ad21",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/session-archiving/assets/session-brief-template.md",
+      "line": 5,
+      "col": 1,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "32 words",
+      "message": "Sentence has 32 words (cap 25). Split it.",
+      "fingerprint": "9edc4fb8b393050df4a8fe30",
       "comparison": "resolved"
     }
   ],
@@ -9468,7 +8120,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.393s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.228s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -9486,7 +8138,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 524 active Markdown files (590 available as link targets) and 338 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 687 active Markdown files (753 available as link targets) and 338 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
