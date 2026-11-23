@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:44 UTC — Begin Document Standards skill review:** Review the four hard findings in `skills/document-standards/SKILL.md` against the catalog and repository writing policy. Preserve template-first and validation requirements.
+- **2026-11-23 11:48 UTC — Remediate Document Standards skill:** Split the validator limitations and workflow authorization sentences. Standardize check terminology while preserving the catalog validator's stated limits.
 
 ## Open Discussions
 
