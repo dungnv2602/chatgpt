@@ -8,8 +8,9 @@
       "commit_sha": "c69eda17448c6445e35f746f6409df0996f78983",
       "generated_at_utc": "2026-11-23T03:41:57.000Z",
       "status": "Failed",
-      "files_evaluated": 48,
-      "total_findings": 453
+      "total_findings": 453,
+      "attempt": 1,
+      "files_evaluated_count": 48
     }
   ]
 }
