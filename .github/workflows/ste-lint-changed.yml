@@ -150,7 +150,7 @@ jobs:
         shell: bash
         run: |
           set -uo pipefail
-          files=$(git ls-files '*.md' | grep -vE '^(archive/|lint_reports/|workspace/tasks/|workspace/discussion\\.md$|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))')
+          files=$(git ls-files '*.md' | grep -vE '^(archive/|lint_reports/|workspace/tasks/|workspace/discussion\.md$|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))')
           failed=0
           while IFS= read -r file; do
             [ -z "$file" ] && continue
@@ -219,10 +219,11 @@ jobs:
           fi
           status="Passed"
           if [[ "$FULL_FAILED" == "1" || "$CHANGED_FAILED" == "1" || "$ANCHOR_FAILED" == "failure" ]]; then status="Failed"; fi
-          mkdir -p "lint_reports/on_changed/history/$GITHUB_RUN_ID"
+          history_dir="lint_reports/on_changed/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
+          mkdir -p "$history_dir"
           python3 skills/asd-ste100/scripts/generate_lint_report.py \
             --scope on_changed --records-dir .lint-report-records \
-            --output-dir "lint_reports/on_changed/history/$GITHUB_RUN_ID" \
+            --output-dir "$history_dir" \
             --run-id "$GITHUB_RUN_ID" --run-number "$GITHUB_RUN_NUMBER" \
             --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
             --attempt "$GITHUB_RUN_ATTEMPT" --branch "$GITHUB_REF_NAME" \
