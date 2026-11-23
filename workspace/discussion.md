@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 13:48 UTC — Recover the active task:** Foundational initialization passed on branch `gpt`. No CI preflight was run. Next read `workspace/README.md`, `workspace/task_board.md`, and the selected task record to identify the approved checkpoint.
+- **2026-11-23 13:50 UTC — Recover the selected task:** Read the workspace rules and board. The current execution task is `20261123-123459`, the document-template and inventory-coverage audit. Next read its complete task record and verify its checkpoint against the `gpt` branch.
 
 ## Open Discussions
 
