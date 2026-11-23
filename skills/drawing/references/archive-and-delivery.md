@@ -26,7 +26,7 @@ repository retention pass through the single intake at `images/takeout/`.
   `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Retained
   non-novel assets use their declared destination under `images/`.
 - When an item targets `drawings/YYYY-MM-DD/images`, an explicit `attempt: NN`
-  is mandatory. The processor validates the matching `attempt-NN.md` and
+  is mandatory. The processor checks the matching `attempt-NN.md` and
   six-column daily README, then automatically adds the verified WebP link to
   both records for every uploaded generated output. Approval and success
   classification are irrelevant to link creation. Multiple images may identify the same attempt. Their links
@@ -75,9 +75,8 @@ The assistant owns the hand-off. The user should not have to create or repair
 `images/takeout/HANDOFF.yml` after a generation workflow.
 
 For each generation event:
-1. Immediately capture the returned image count, sequence, internal output IDs,
-   exposed native IDs, exact authored prompt, attempt number, and generation-time
-   original SHA-256 when the original bytes are accessible.
+1. Immediately capture the returned image count, sequence, internal output IDs, exposed native IDs, exact authored prompt, and attempt number.
+   Capture the generation-time original SHA-256 when the original bytes are accessible.
 2. Record each output in its attempt record before asking for review. Keep
    approval separate from archival eligibility.
 3. When the user uploads generated originals to `images/takeout/`, inspect
@@ -85,11 +84,9 @@ For each generation event:
    generation-return association, native metadata, or a documented corroborating
    source. Prompt text helps establish the intended title and scene, but does
    not by itself prove which uploaded file is which output.
-4. Write every mapped upload to `HANDOFF.yml` with its exact top-level source
-   filename, descriptive title, explicit attempt, destination, internal output
-   ID, exposed native IDs, approval status, mapping evidence, and
-   `expected_sha256` when the generation-time original hash exists. Do not
-   fabricate unavailable fields. Do not leave placeholder entries.
+4. Write every mapped upload to `HANDOFF.yml` with its exact top-level source filename, descriptive title, explicit attempt, and destination.
+   Include the internal output ID, exposed native IDs, approval status, mapping evidence, and `expected_sha256` when the generation-time original hash exists.
+   Do not fabricate unavailable fields. Do not leave placeholder entries.
 5. Reconcile the hand-off against the actual intake directory. Every supported
    top-level image must appear exactly once. No unlisted images, duplicate
    source names, unresolved placeholders, missing attempt values, or invalid
@@ -102,7 +99,7 @@ For each generation event:
    awaiting upload in the attempt record. Do not invent an intake filename or
    add a speculative hand-off item. Resume the hand-off as soon as the upload
    appears.
-8. After processing, verify the archived report, original master, WebP
+8. After processing, check the archived report, original master, WebP
    derivative, manifest row, attempt link, and daily README link. Read back
    every changed repository record before reporting completion.
 
@@ -115,7 +112,7 @@ closed drawing session's creative brief or approval state.
 
 For every drawing session, archive **every generated image output**. This includes approved, rejected, pending, partial, off-target, failed, and superseded outputs.
 
-Record each output separately. Link it from the session README after you verify its exact repository asset. Preserve generation order and prompt-to-output association. Record approval in a separate field. Approval does not control archival or linking eligibility.
+Record each output separately. Link it from the session README after you check its exact repository asset. Preserve generation order and prompt-to-output association. Record approval in a separate field. Approval does not control archival or linking eligibility.
 
 
 ## Generation provenance and output mapping workflow (approved 2026-11-20)
@@ -140,7 +137,7 @@ Capture provenance at generation time. Do not rely on retrospective image-to-att
 11. Mapping statuses: `Verified`, `Corroborated`, `Probable`, `Unmapped`, or `Conflicting`. Explain uncertain or retrospective evidence. Never silently upgrade status.
 12. Calculate SHA-256 only from original image bytes when they are accessible. A hash proves byte identity only. It does not prove the generation event, prompt association, visual content, or approval. Record original and derivative hashes separately.
 
-### Archive and verify
+### Archive and check
 13. Archive every output regardless of approval. Preserve sequence, prompt association, direct links, and statuses. Use the established asset-intake procedure.
 14. Extend the session `manifest.csv` with one row per output. Include internal attempt and output IDs, native Generation ID, native image or output ID, mapping evidence and status, and original-byte availability. Preserve existing required columns. Leave unavailable native IDs empty or mark them unavailable.
 15. Reconcile generation records, attempt notes, README, manifest, and actual assets. Compare each path, link, and hash with its recorded value. Read back all edited records.
@@ -165,7 +162,7 @@ When the user supplies a downloaded image's SHA-256, compare it with the recorde
 
 Renaming or moving a file does not change its checksum. Re-encoding, editing, resizing, or converting usually changes it. If you archive an original and a WebP derivative, calculate and record their hashes separately. Do not compare them as the same byte stream.
 
-README image links must point directly to the correct image asset. Verify each link against the repository path and blob before marking it Verified. Do not mark a URL or checksum Verified in the manifest before you verify it.
+README image links must point directly to the matching image asset. Check each link against the repository path and blob before marking it Verified. Do not mark a URL or checksum Verified in the manifest before you check it.
 
 After archive changes, read back the README and manifest. Reconcile every generated output against the chronological attempt record. Report any missing asset, link, prompt association, checksum, or verification.
 
@@ -175,14 +172,14 @@ After archive changes, read back the README and manifest. Reconcile every genera
 SHA-256 is mandatory **when the actual original generated image bytes are accessible immediately after generation**. Calculate the hash from those exact original bytes, never from a preview, screenshot, thumbnail, or recompressed copy. Record it against the session, attempt, prompt, and output ID before the user downloads the image. If original bytes are not accessible, state that the generation-time hash is unavailable. Do not invent or calculate a hash from a substitute.
 
 
-When the user later uploads an unchanged original, the GitHub Action calculates SHA-256 before conversion. It compares this hash with the generation-time hash. A match establishes byte-for-byte identity. It may also verify the original-to-output mapping. A mismatch is a review flag, not an automatic rejection. Metadata alteration, recompression, or conversion may change the bytes. Do not claim a verified match based only on filenames or visual guessing. Use metadata and image-content comparison only as separately documented fallback evidence. Keep the mapping status conservative.
+When the user later uploads an unchanged original, the GitHub Action calculates SHA-256 before conversion. It compares this hash with the generation-time hash. A match establishes byte-for-byte identity. It may also check the original-to-output mapping. A mismatch is a review flag, not an automatic rejection. Metadata alteration, recompression, or conversion may change the bytes. Do not claim a verified match based only on filenames or visual guessing. Use metadata and image-content comparison only as separately documented fallback evidence. Keep the mapping status conservative.
 
 The WebP is a derivative with different bytes and therefore is **not expected to match the original SHA-256**. The original hash remains the identity key for the output. Record the derivative's path and link under the same output ID. A WebP SHA-256 is optional and only for independent derivative integrity checks. Never compare original PNG/JPEG hashes against converted WebP hashes as if equality were expected.
 
 The GitHub Action should automate these tasks:
 
 - Calculate and compare original hashes.
-- Verify output mapping.
+- Check output mapping.
 - Convert, rename, and relocate files.
 - Add direct links to the README and attempt records.
 - Reconcile the manifest and write verification reports.
