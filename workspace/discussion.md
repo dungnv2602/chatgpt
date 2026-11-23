@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:16 UTC — Begin Worker skill review:** Review the nine hard findings in `skills/the-worker/SKILL.md` against the complete skill and task lifecycle contracts. Preserve task-state semantics and closeout requirements.
+- **2026-11-23 11:20 UTC — Remediate Worker skill batch:** Split the CI-scope condition, standardize action verbs, and separate archive-gate clauses. Preserve all task-state, approval, retention, and closeout requirements.
 
 ## Open Discussions
 
