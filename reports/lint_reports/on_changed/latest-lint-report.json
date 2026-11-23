@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45202163346",
-  "run_number": 556,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45202163346",
+  "run_id": "45204490379",
+  "run_number": 558,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45204490379",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "ebc54617491cd6b9b07b6000f4ddcb6ad96f2774",
+  "commit_sha": "17711a6e84ca8884ef4e421f2d8a7d81384510f7",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T15:11:20.201147+00:00",
+  "generated_at_utc": "2026-11-23T15:23:03.304164+00:00",
   "status": "Failed",
-  "linter_source_sha": "ebc54617491cd6b9b07b6000f4ddcb6ad96f2774",
+  "linter_source_sha": "17711a6e84ca8884ef4e421f2d8a7d81384510f7",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -82,13 +82,13 @@
     "skills/SESSION_START.md"
   ],
   "files_with_findings": 37,
-  "total_findings": 368,
+  "total_findings": 369,
   "hard_findings": 67,
-  "advisory_findings": 301,
+  "advisory_findings": 302,
   "findings_by_rule": {
     "long-sentence": 10,
     "semicolon": 33,
-    "passive-voice": 259,
+    "passive-voice": 260,
     "present-perfect": 42,
     "synonym-rotation": 12,
     "phrasal-verb": 5,
@@ -2828,13 +2828,22 @@
           "level": "advisory",
           "match": "was checked",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/TASK_TEMPLATE.md",
+          "line": 85,
+          "col": 150,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is untrusted",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 4,
+      "count": 5,
       "hard_count": 0,
       "baseline": 0,
-      "words": 417,
-      "per_100_words": 1.0,
+      "words": 441,
+      "per_100_words": 1.1,
       "path": "workspace/TASK_TEMPLATE.md",
       "exit_code": 0
     },
@@ -3936,7 +3945,7 @@
       "match": "26 words",
       "message": "Sentence has 26 words (cap 25). Split it.",
       "fingerprint": "a572f3dff82333ad7db50991",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3947,7 +3956,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "09a34c4b31b88c0f364bd67e",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -6832,6 +6841,17 @@
       "comparison": "recurring"
     },
     {
+      "file": "workspace/TASK_TEMPLATE.md",
+      "line": 85,
+      "col": 150,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is untrusted",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "f89fcc99c66cd06012ce7d5a",
+      "comparison": "new"
+    },
+    {
       "file": "skills/drawing/references/series-continuity-and-iteration.md",
       "line": 44,
       "col": 40,
@@ -6961,7 +6981,7 @@
       "match": "validates",
       "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
       "fingerprint": "165228fd89d930749cfaa835",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/image-provenance-and-webp.md",
@@ -6972,7 +6992,7 @@
       "match": "is observed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "678db87db1d222633995aa3f",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/image-provenance-and-webp.md",
@@ -6983,7 +7003,7 @@
       "match": "have been read",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "31fa6d94c05533c4e2f9d76a",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/image-provenance-and-webp.md",
@@ -6994,7 +7014,7 @@
       "match": "been read",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "fcc7dc911acbecb8434fffce",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/asd-ste100/references/writing-rules.md",
@@ -7214,7 +7234,7 @@
       "match": "33 words",
       "message": "Sentence has 33 words (cap 25). Split it.",
       "fingerprint": "ead8bfcb0c1049225be6ce1d",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/SKILL.md",
@@ -7976,153 +7996,9 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 7,
-  "recurring_findings": 361,
-  "resolved_findings": [
-    {
-      "file": "images/README.md",
-      "line": 94,
-      "col": 54,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are reserved",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "03c08438c1205e007605fad3",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 12,
-      "col": 63,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is required",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "7ccd1f863de274e8feb2aa5a",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 21,
-      "col": 59,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are copied",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "61be939bdcfb8affcc1c4ac1",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 23,
-      "col": 16,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is moved",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "a2769b4e332bb5b80de9aa18",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 45,
-      "col": 38,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is preserved",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "4f5bf5c77bf38338ab20b610",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 50,
-      "col": 11,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are reserved",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "cae3618d486c83424c0551e9",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 73,
-      "col": 215,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are Verified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "1e0222b56fc30bea41c11a4a",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 103,
-      "col": 200,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "checking",
-      "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
-      "fingerprint": "2846194fd82ae9563f81b5f3",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 105,
-      "col": 12,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is intended",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "8aa469b31a75b1a230bf0fbf",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 113,
-      "col": 276,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is updated",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "897b55f31281128e207d7eeb",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 122,
-      "col": 37,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is paired",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "c4e77e690336527ad9cc1233",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 123,
-      "col": 76,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is verified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "efd04920bdf6f1dab7789579",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 138,
-      "col": 1,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is described",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "2e40f63b8c7d94eb2e1a6f05",
-      "comparison": "resolved"
-    }
-  ],
+  "new_findings": 1,
+  "recurring_findings": 368,
+  "resolved_findings": [],
   "checks": [
     {
       "name": "Wrapper shell syntax",
@@ -8140,7 +8016,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.300s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.356s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -8158,7 +8034,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 1066 active Markdown files (1136 available as link targets) and 322 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 1068 active Markdown files (1138 available as link targets) and 322 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
