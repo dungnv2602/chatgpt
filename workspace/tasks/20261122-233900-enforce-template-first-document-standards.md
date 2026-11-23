@@ -230,7 +230,7 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 
 - **Action:** Completed a bounded representative-record audit and clarified field contracts in the Document Standards skill and novel templates.
 - **Result:** Reviewed the active Novel-02 open-discussion register and relationship-progression outline, three Novel-01 illustration notes, historical conversation-integrity and session-summary records, and successful/failure drawing-pattern examples. The Novel-01 illustration notes are Version 1.0 legacy records; the 12 November session records predate their canonical templates. The Novel-02 records use Version 1.1 but have content-specific structures; preserve them and use the canonical templates for new records or material revisions. No current character-profile or standalone novel illustration-prompt record was found in the inspected novel projects. Added default `Unknown` and `Not applicable` conventions, clarified conditional sections and takeout-only fields, and distinguished component status from outline status. The catalog now records these findings. Its Initial Inventory contains 51 exact file references; the previous 41 references were already audited, and all 10 newly added references were fetched successfully. No directory references remain in that inventory. No historical or archived record was modified.
-- **References:** Document Standards commit `9dc5970cacb069eaa227c926d9bcdd784e03fd8c`; template commits `ca9e14eaa03c881c3b5fec2e2db7403149af3fd6`, `6f03d0b1f1c61e153e0d4485e897518012856cbc`, `de08904c81abff944586de2c84a736ce400fa560`, `b30b4b022d828a4e27b67adb35f5afa06f66ae83), and `4d2784cb9232fa656fc375b6978b4b633c648073`; catalog commits `a65e35e2ce4027c20762583b606b0c1c99c52302`, `5dcc13a3461b1405f137dc781d73e6faee98d249`, and `bbd53e4f7069e3b5fcfeecfa1113fd7a29f8a86f`.
+- **References:** Document Standards commit `9dc5970cacb069eaa227c926d9bcdd784e03fd8c`; template commits `ca9e14eaa03c881c3b5fec2e2db7403149af3fd6`, `6f03d0b1f1c61e153e0d4485e897518012856cbc`, `de08904c81abff944586de2c84a736ce400fa560`, `b30b4b022d828a4e27b67adb35f5afa06f66ae83`, and `4d2784cb9232fa656fc375b6978b4b633c648073`; catalog commits `a65e35e2ce4027c20762583b606b0c1c99c52302`, `5dcc13a3461b1405f137dc781d73e6faee98d249`, and `bbd53e4f7069e3b5fcfeecfa1113fd7a29f8a86f`.
 - **Next:** Review the three master catalogues and remaining project-specific document types. Keep validator workflow integration gated on separate user approval.
 
 ## 7. Current State
@@ -285,6 +285,19 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - `skills/drawing/assets/attempt-template.md`
 - `skills/document-standards/SKILL.md`
 - `skills/document-standards/references/document-type-catalog.md`
+- `novels/templates/open-discussion-v1.1.md`
+- `novels/templates/development-outline-v1.1.md`
+- `novels/templates/illustration-note-v1.1.md`
+- `novels/templates/illustration-prompt-v1.1.md`
+- `novels/Novel-02/open-discussion.md`
+- `novels/Novel-02/planning/relationship-progression.md`
+- `novels/Novel-01/Arc-01/Scene-002/illustrations/illustration-01.md`
+- `novels/Novel-01/Arc-01/Scene-002/illustrations/illustration-02.md`
+- `novels/Novel-01/Arc-01/Scene-002/illustrations/illustration-03.md`
+- `drawings/history/2026-11-12-conversation-integrity.md`
+- `drawings/history/2026-11-12-summary.md`
+- `skills/drawing/references/patterns/successful-patterns.md`
+- `skills/drawing/references/patterns/failure-patterns.md`
 - `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`
 - `skills/session-archiving/assets/session-brief-template.md`
 - `skills/session-archiving/assets/session-summary-template.md`
