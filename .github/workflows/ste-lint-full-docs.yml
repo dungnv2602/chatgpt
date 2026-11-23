@@ -284,7 +284,7 @@ jobs:
               "files_evaluated_count": len(files_evaluated),
               "findings": findings,
               "total_findings": len(findings),
-              "hard_findings": sum(int(value) for value in re.findall(r"\\((\\d+) hard, baseline", markdown)),
+              "hard_findings": sum(int(value) for value in re.findall(r"\((\d+) hard, baseline", markdown)),
               "files_with_findings": len({finding["file"] for finding in findings}),
               "findings_by_rule": findings_by_rule,
               "generated_at_utc": datetime.now(timezone.utc).isoformat(),
