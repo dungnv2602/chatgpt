@@ -71,18 +71,25 @@ Audit the repository's template and schema placement, classify each recurring do
 - **References:** Recursive tree for `gpt`; `skills/document-standards/scripts/validate_catalog.py`; `skills/document-standards/scripts/test_validate_catalog.py`; `.github/workflows/validate-document-standards.yml`; `skills/prompt-master/references/templates.md`; `skills/drawing/references/patterns/PATTERN-TEMPLATES.md`; `skills/document-standards/references/document-type-catalog.md`.
 - **Next:** Create and verify the two correctly placed canonical assets. Then update all references and catalog classifications. Do not edit governed documents before the target assets exist and pass read-back.
 
+
+
+### 2026-11-23 04:55 UTC
+
+- **Action:** Relocated the two misplaced template assets, updated all identified active references and the catalog, strengthened Document Standards and The Worker, added validator placement checks and regression tests, clarified the full-repository audit exception, and expanded the Document Standards Actions path filters.
+- **Result:** The Prompt Master template library now lives at `skills/prompt-master/assets/prompt-templates.md`. Drawing pattern-entry templates now live at `skills/drawing/assets/pattern-entry-templates.md`. New blobs match their original source content exactly. The old paths return 404. All active consumers and the catalog use the new paths. Document Standards requires the format and catalog to be committed and read back before target-document edits. The Worker now has a mandatory stop condition. The validator rejects skill templates outside `assets/` and detects named templates in skill `references/` directories. Hosted run [45114001584](https://github.com/dungnv2602/chatgpt/actions/runs/45114001584) passed 16 tests and catalog validation (36 types, 80 exact references). The validation workflow now triggers on all `skills/**` changes and known project/workspace template paths. Its new path-filter commit has not yet been validated by a subsequent hosted run.
+- **References:** `skills/prompt-master/assets/prompt-templates.md`, `skills/drawing/assets/pattern-entry-templates.md`, `skills/document-standards/SKILL.md`, `skills/document-standards/references/document-type-catalog.md`, `skills/document-standards/scripts/validate_catalog.py`, `skills/document-standards/scripts/test_validate_catalog.py`, `skills/the-worker/SKILL.md`, `skills/session-archiving/SKILL.md`, `.github/workflows/validate-document-standards.yml`, `skills/prompt-master/SKILL.md`, `skills/drawing/SKILL.md`, `skills/drawing/README.md`, `skills/drawing/references/patterns/README.md`.
+- **Next:** Complete final read-back and branch-head verification. Record the separate changed-document lint workflow defect without modifying that workflow. Then archive this task and reconcile the board.
+
 ## 7. Current State
 
 The task record was created from `workspace/TASK_TEMPLATE.md`. Initial standards review and repository-tree inventory are complete. Two template assets are misplaced. Existing CI does not enforce template placement or use. Correctly placed asset copies are the next action.
 
 ## 8. Remaining Work
 
-- Create and verify the two canonical template assets at the correct paths.
-- Update references and catalog classifications, then remove the old paths.
-- Strengthen Document Standards, The Worker, and the catalog validator.
-- Update Session Archiving's explicit full-repository audit exception if required.
-- Determine whether the existing GitHub Actions path filters need a separately authorized change.
-- Verify all changes and reconcile the task board.
+- Complete final read-back and branch-head verification.
+- Record the unresolved changed-document lint workflow shell defect. Do not modify it without separate authorization.
+- Observe the next natural hosted run for the updated Document Standards workflow during a future preflight. Do not wait or poll.
+- Archive this task and reconcile the task board.
 
 ## 9. Next Actions
 
