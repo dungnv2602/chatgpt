@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-123459
 - **Created:** 2026-11-23 12:34 UTC
-- **Updated:** 2026-11-23 13:19 UTC
+- **Updated:** 2026-11-23 13:58 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -59,6 +59,13 @@ Audit all in-scope repository documents on branch `gpt`, excluding `master/` and
 
 ## 6. Progress Log
 
+### 2026-11-23 13:58 UTC
+
+- **Action:** Recovered the approved task on branch `gpt`, read all seven in-scope skill definitions, and compared the current recursive tree with the catalog's Markdown path patterns.
+- **Result:** The non-truncated tree at `ef69eb76fc485e55e2617ef70293be5f78e3852a` contains 6,311 entries and 1,108 in-scope Markdown files. All 1,108 match the 48 catalog rules. Every rule matches at least one file. The scan excluded `master/` and `archive/`. A bootstrap deadlock remains: the validator rejects a zero-match coverage rule, while the authoring gate requires the new family rule to be committed before its first document is created.
+- **References:** `skills/SESSION_START.md`; `skills/the-worker/SKILL.md`; `skills/the-worker/references/conversation-mode.md`; the six other in-scope `SKILL.md` definitions; `skills/document-standards/references/document-type-catalog.md`; `skills/document-standards/scripts/validate_catalog.py`; `workspace/task_board.md`.
+- **Next:** Review in-scope README and lifecycle references. Design a reserved-family state that allows template-first commits while preserving stale active-rule detection. Then complete link/read-back and hosted-validation checks without polling or dispatching Actions.
+
 ### 2026-11-23 13:19 UTC
 
 - **Action:** Completed the workflow and README refactor. Unified Drawing's operation selector and delegated image-operation choice from The Worker to Drawing. Removed the duplicate Worker authoring gate and made Document Standards the sole template/inventory authority. Rewrote the shared image-delivery guide as Drawing-specific rules, refreshed Workspace, CI diagnostics, ledger, and Novel README guidance, and clarified that old initialization change-log entries are historical.
@@ -98,20 +105,22 @@ Audit all in-scope repository documents on branch `gpt`, excluding `master/` and
 
 ## 7. Current State
 
-Template inventory enforcement and workflow refactoring are implemented. The latest recorded tree snapshot contains 1,096 Markdown documents, all covered by 48 narrow rules. The image-operation conflict and duplicated authoring gate are resolved; README guidance is aligned. Two hosted catalog-regression tests exposed stale test fixtures, which were corrected without changing validator behavior. Final read-back and hosted validation after the fixture correction remain outstanding.
+Template inventory enforcement and the recorded workflow refactor are implemented. The current non-truncated tree contains 1,108 in-scope Markdown documents, all covered by 48 narrow rules. Every rule matches at least one current path. The image-operation conflict and duplicated authoring gate are recorded as resolved. Independent README and cross-cycle review remains in progress. The authoring workflow has a bootstrap deadlock for a new path family: a new coverage rule cannot pass validation before its first matching document exists.
 
 ## 8. Remaining Work
 
-- Read back all changed skills, references, README files, task records, and catalog entries. Check links and obsolete paths.
+- Review all in-scope README files and lifecycle references. Check links and obsolete paths.
+- Resolve the new-family coverage bootstrap deadlock without weakening stale-rule detection.
+- Read back all changed skills, references, README files, task records, catalog entries, and validator/tests.
 - Recheck Markdown inventory coverage after the final repository edits.
-- Review the next naturally completed Document Standards run after test-fixture commit `91df44b9e599457e2b8b3a635788857b41ae5e6c`. Do not poll or dispatch workflows.
+- Review a naturally completed Document Standards run after the fixture correction. Do not poll or dispatch workflows.
 
 ## 9. Next Actions
 
-1. Implement the single Drawing operation decision and remove obsolete Session Archiving references.
-2. Consolidate the Document Standards gate and reduce duplicated Worker instructions.
-3. Update Drawing, report-triage, workspace, and other affected README files.
-4. Read back all changed paths and check the `gpt` branch head.
+1. Review the remaining in-scope README files and lifecycle references. Confirm the documented workflow matches its owner skills.
+2. Add a reserved coverage state for a new document family, with validator tests for reserved and activated rules.
+3. Update the Document Standards instructions and catalog guidance for the two-commit template-first flow.
+4. Read back the changed paths and verify the current Markdown inventory.
 5. Do not run local scripts or tests. Do not poll or dispatch Actions; review the next natural hosted validation result.
 
 ## 10. References
