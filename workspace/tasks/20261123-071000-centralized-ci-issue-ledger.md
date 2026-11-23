@@ -61,6 +61,16 @@ Turn the existing triage-ledger foundation under `reports/triage/` into an opera
 
 ## 6. Progress Log
 
+### 2026-11-23 08:33 UTC
+
+- **Action:** Reviewed the first naturally ingested Actions report and its immutable job log. The report contained a real rejected push and a second step that only propagated an earlier lint failure.
+- **Result:** Refined Actions signatures to extract diagnostic lines from the exact job log. The generator now ignores the two known lint workflow status-propagation steps. Added a regression test for command-echo filtering and exact-step log extraction.
+- **Evidence:** Source run `45138510922` recorded a rejected push because the `gpt` ref changed between the workflow's fetch and push. The source workflow was not modified because source-workflow repair is outside this task.
+- **Re-ingestion:** Removed the two noisy records and marked only that immutable report path unprocessed. The next natural sweep will ingest it with the refined logic. The ledger currently has no findings.
+- **Verification:** Read back the updated generator, 17 regression tests, operator guide, and ledger state. Hosted validation and clean re-ingestion remain unverified. No workflow was polled or dispatched.
+- **Commits:** `bf2ac28abe67415a20296ec906e449f22206c443`, `d8f2b4095f5288de563415ff82bcebbcf43c2cb5`, `fc4c511cce34335b75d8747c4f477376b3e26e99`.
+- **Next:** Leave the report path pending for the next natural sweep. Review hosted results only when naturally available.
+
 ### 2026-11-23 08:23 UTC
 
 - **Action:** Integrated ingestion into the six existing diagnostic capture jobs and the central diagnostics sweep. Added hosted regression execution, atomic ledger publication, and a path exclusion for ledger-only commits.
@@ -109,9 +119,11 @@ Turn the existing triage-ledger foundation under `reports/triage/` into an opera
 
 ## 7. Current State
 
-The repository now contains an operational, generator-owned ledger pipeline. The schema is version 1.1.0. The forward-only bootstrap records 151 existing indexed report paths as processed, and the findings array remains empty. Capture and sweep publishers run ingestion under the shared non-cancelling writer group. The operator guide and hosted regression hooks are in place. Hosted validation remains unverified.
+The repository contains a generator-owned ledger pipeline with schema version 1.1.0. The bootstrap excludes the 151 reports indexed before implementation. The generator reads only indexed immutable reports and preserves curated fields.
 
-This task is approved and In Progress. It is the current execution task. The diagnostic-report infrastructure task remains paused, not closed.
+The capture and sweep publishers use the shared non-cancelling writer group. The operator guide and 17 regression tests are committed. The first natural ingestion exposed a real push rejection and a redundant status-propagation finding. The generator now extracts exact-step log diagnostics and ignores the propagation step. That report is pending clean re-ingestion. Hosted validation remains unverified.
+
+This task is approved and In Progress. The diagnostic-report infrastructure task remains paused, not closed.
 ## 8. Remaining Work
 
 - Review task-scoped GitHub-hosted test and workflow results when they are naturally available. Do not poll or wait for runs.
@@ -142,4 +154,4 @@ This task is approved and In Progress. It is the current execution task. The dia
 
 ## 12. Handoff Instructions
 
-This task is In Progress on branch `gpt`. The generator, schema, operator guide, tests, capture action, and diagnostics sweep are committed. Review hosted results only when naturally available. Do not poll or wait for runs. Preserve immutable source reports, curated ledger fields, source workflow conclusions, and the restriction against modifying `main`. Do not run repository code locally.
+This task is In Progress on branch `gpt`. The forward-only ledger generator, schema, operator guide, tests, capture action, and diagnostics sweep are committed. One immutable Actions report is intentionally unprocessed so the next natural sweep can ingest it with the refined log-signature logic. Review hosted results only when naturally available. Do not poll or wait for runs. Preserve immutable source reports, curated ledger fields, source workflow conclusions, and the restriction against modifying `main`. Do not run repository code locally.
