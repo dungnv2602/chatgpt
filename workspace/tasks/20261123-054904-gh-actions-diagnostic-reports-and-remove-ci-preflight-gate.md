@@ -98,9 +98,16 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - **References:** `lint_reports/README.md`; `lint_reports/on_repo/README.md`; `lint_reports/on_changed/README.md`; indexes `lint_reports/on_repo/index.json` and `lint_reports/on_changed/index.json`; generator SHA `233e8185f62d37384ec26abda8f5f477c99c3391`; schema SHA and template SHA read from branch `gpt`; six workflow files under `.github/workflows/`.
 - **Next:** Confirm the repository default branch and the Actions API coverage available to a scheduled or event-driven collector. Inspect full workflow failure and artifact behavior, then choose a design that captures workflow startup failures as well as job and step failures.
 
+### 2026-11-23 05:57 UTC
+
+- **Action:** Compared report-trigger options with the repository's default-branch setting and the current workflow inventory. Checked GitHub's event and reusable-workflow rules.
+- **Result:** The default branch is `main`. The task remains on `gpt`. GitHub's `workflow_run` and `schedule` triggers require the observer file on the default branch, so they cannot provide immediate central observation without a change to `main`. The selected branch-safe design is a reusable `workflow_call` finalizer integrated into the six existing workflows, plus a push-triggered sweep on `gpt` for completed runs and missed finalizers. Finalizer reports record a pre-completion snapshot and a projected conclusion. The later sweep records the actual conclusion in a separate immutable post-run capture. A request-file trigger supports a targeted backfill when there is no later push. No change to `main` is planned.
+- **References:** Repository metadata reports `default_branch=main`. [GitHub event trigger requirements](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows); [reusable workflow permissions and caller context](https://docs.github.com/en/actions/reference/workflows-and-actions/reusing-workflow-configurations).
+- **Next:** Define and register the generator-owned report contract. Implement its schema, template, collector, generator, tests, report guide, and indexes before publishing generated run reports.
+
 ## 7. Current State
 
-The task is active. Foundational initialization and one bounded CI snapshot are complete. The source lint-report workflow generated detailed evidence but retains an expected failing lint conclusion. The workspace task record and board entry were committed and read back successfully. No GH Actions diagnostic reporter has been implemented yet. The scope inventory and initial report contract are now established.
+The task is active. Foundational initialization and one bounded CI snapshot are complete. The source lint-report workflow generated detailed evidence but retains an expected failing lint conclusion. The workspace task record and board entry were committed and read back successfully. No GH Actions diagnostic reporter has been implemented yet. The scope inventory and architecture are now established. A true completion-event observer is constrained by the default branch. The gpt-only implementation will combine reusable finalizers, a push-driven backfill, and exact-run request files. It will keep capture stages immutable and distinguish projected from observed conclusions.
 
 ## 8. Remaining Work
 

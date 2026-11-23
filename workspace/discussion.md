@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 05:52 UTC — Validate reporting trigger architecture:** Check the repository default branch and inspect the Actions API and existing workflow behaviors. Compare completion-event collection, scheduled run inventory, and reusable-workflow finalizers. Expected result: select a design that covers completed workflow failures, run/job/step evidence, startup failures, and uncollected runs without creating a recursive reporter loop.
+- **2026-11-23 05:57 UTC — Define the diagnostic report contract:** Add the new generator-owned report type to the Document Type Catalog. Define the JSON schema, Markdown layout, immutable run history, indexes, capture stages, evidence limits, and regression tests. Expected result: a committed and read-back report format that can then be wired into the six Actions workflows.
 
 ## Open Discussions
 
