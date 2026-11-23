@@ -1,99 +1,61 @@
 # Central CI issue ledger
 
-The ledger tracks distinct lint and GitHub Actions issues across report runs. It stores normalized issue records and links to immutable source reports.
+The ledger is the authoritative backlog of distinct lint and GitHub Actions findings. It deduplicates observations and links each finding to immutable source reports. It does not create workspace tasks.
 
-## Finding identity
+## Finding identity and eligibility
 
-- Lint findings use the report's stable \`fingerprint\`. The same fingerprint in both lint scopes maps to one finding.
-- GitHub Actions findings use workflow ID and path, job name, step name, category, and normalized diagnostic text.
-- The generator normalizes commit hashes, run IDs, timestamps, and whitespace in diagnostic signatures.
-- When a report summary contains a runner command echo, the generator tries to extract error lines from that exact job step log. If no usable signature is available, it uses the stable workflow, job, step, and category identity.
-- The generator ignores lint workflow steps that only re-emit an earlier failure as the workflow conclusion.
-- A workflow conclusion alone does not create a finding. The report must contain a specific classified issue.
-- Only complete post-run Actions reports contribute findings. Pre-finalizer reports do not create issues.
-- Ordinary successful runs and cancellation-only runs are not captured by the current reporter policy. A successful run with an independently failed non-blocking step can contribute a finding. A cancelled run can contribute independent classified failures; cancellation-only and known status-propagation rows are ignored. Legacy cancellation-only reports remain indexed but do not create findings.
+- Lint findings use stable fingerprints. The same finding in both lint scopes maps to one ledger entry.
+- Actions findings use workflow identity, job, step, category, and normalized diagnostic text.
+- A workflow conclusion alone does not create a finding. The report must contain an independently classified issue.
+- Only complete post-run Actions reports contribute findings. Pre-finalizer captures do not create issues.
+- Routine successful runs and cancellation-only runs are not captured by default. A successful run with an independently failed non-blocking step can create a finding. A cancelled run can contribute an independent failure; cancellation and downstream status propagation do not.
 - Skipped, neutral, queued, in-progress, and unavailable states do not create findings by themselves.
 
-Each evidence entry records its immutable report path, run URL, observation time, and run identity. The occurrence count measures unique source run attempts. A lint finding in both scopes counts once for the same run.
+Evidence records contain the immutable report path, run URL, observation time, and source-run identity. Occurrence counts use unique source attempts. The same lint fingerprint in both scopes counts once per run.
 
-## Ingestion and publication
+## Ingestion
 
-The generator reads report paths from the lint and Actions indexes. It does not scan report history directories.
+The generator reads paths from the lint and Actions indexes. It does not scan history directories or modify source reports. The capture action ingests lint reports; the diagnostics sweep ingests complete Actions reports. Both use the non-cancelling `gh-ac-report-writer` concurrency group.
 
-The existing capture action ingests published lint reports. The diagnostics sweep ingests complete post-run Actions reports. Both use the shared non-cancelling \`gh-ac-report-writer\` concurrency group. This group serializes ledger writers.
+The ledger uses schema `1.2.0`. GitHub-hosted Actions runs the generator and regression tests. Ingestion is idempotent, uses atomic replacement, and preserves human-managed status, owner, severity, resolution, accepted risk, duplicate links, and `task_refs`. Initial bootstrap marks indexed reports as processed; it does not backfill historical findings.
 
-The generator writes the ledger with an atomic file replacement. It does not modify source reports.
+## Finding lifecycle
 
-GitHub Actions runs the generator and its regression tests on hosted runners. Do not run repository scripts locally.
+Statuses:
 
-The ledger uses schema version \`1.1.0\`. The generator migrates version \`1.0.0\` and preserves existing findings. The initial bootstrap marks all indexed reports as processed. It does not import historical findings.
+`open`, `investigating`, `planned`, `fixing`, `verifying`, `resolved`, `accepted`, `false_positive`, `duplicate`.
 
-The publisher runs this command:
+New findings start `open`. Severity defaults are:
 
-\`\`\`bash
-python3 reports/triage/scripts/ledger.py --mode ingest
-\`\`\`
+- Lint hard and advisory-free: `medium`; advisory: `low`; unknown: `informational`.
+- Blocking Actions issue with high confidence: `high`; medium confidence: `medium`; low confidence: `low`.
+- High-confidence non-blocking Actions issue: `medium`.
 
-## Triage lifecycle
+Humans may adjust severity when evidence supports the change. An `accepted` finding requires an `accepted_risk` record. A `duplicate` finding requires a different existing `duplicate_of` ID.
 
-New findings start with status \`open\`. The allowed statuses are:
+A `resolved` finding requires a fix commit, a successful relevant validation run URL, validation timestamp, and resolution timestamp. When new evidence observes a resolved finding, ingestion reopens it and preserves the previous resolution in `resolution_history`.
 
-\`open\`, \`investigating\`, \`planned\`, \`fixing\`, \`verifying\`, \`resolved\`, \`accepted\`, \`false_positive\`, and \`duplicate\`.
+## Worker handoff
 
-Humans control status, owner, severity, accepted risk, duplicate links, resolution notes, and `task_refs`. The Worker adds task IDs to `task_refs` when it creates a remediation task. Ingestion preserves these links and does not create tasks or overwrite human-managed fields.
+The Worker owns prioritization, task creation, execution, and task closeout.
 
-### Default severity
+1. Review findings only when the user asks, a known failure blocks current work, or the current task requires CI evidence. Do not run periodic triage or poll workflows.
+2. Inspect the finding's report and exact evidence. Do not create tasks from conclusion-only, cancellation-only, or routine successful outcomes.
+3. Group related findings by remediation. Check the board and active tasks to avoid duplicate work or one-task-per-occurrence.
+4. Record every covered finding ID and evidence link in the task. Add that task ID to each finding's `task_refs`.
+5. Keep finding state separate from task state: use `planned` when the task is Ready, `fixing` during remediation, and `verifying` while hosted validation is pending.
+6. Follow the Worker's approval rules. One task may cover several findings. The approved handoff process does not authorize unrelated changes, weaker tests, or automatic remediation.
+7. Resolve findings only after recording the fix commit and successful validation. The run URL and UTC timestamp are sufficient; a full successful-run report is unnecessary. New evidence may reopen the finding.
 
-- Lint \`advisory-free\` and \`hard\` findings start at \`medium\`.
-- Lint \`advisory\` findings start at \`low\`.
-- Unknown lint levels start at \`informational\`.
-- Blocking Actions issues with high confidence start at \`high\`.
-- Medium-confidence Actions issues start at \`medium\`.
-- Low-confidence Actions issues start at \`low\`.
-- High-confidence non-blocking Actions issues start at \`medium\`.
-
-Humans can change severity when evidence supports an override.
-
-### Accepted risk and duplicates
-
-An \`accepted\` finding requires an \`accepted_risk\` object. Record its rationale, approver, and UTC acceptance time.
-
-A \`duplicate\` finding requires \`duplicate_of\` with the ID of another ledger finding. Do not create duplicate links to the same finding.
-
-### Resolution and recurrence
-
-A \`resolved\` finding requires a fix commit and successful validation evidence. Record the validation run URL and UTC validation time. Add a UTC resolution time and an optional note.
-
-When a new run observes a resolved finding, the generator reopens it. The generator moves the previous resolution into \`resolution_history\`. A second scope from the same run does not count as recurrence.
-
-## Worker task handoff
-
-The ledger is the issue backlog. The Worker owns task creation, prioritization, execution, and task closeout.
-
-1. Review findings when the user requests CI triage, a known failure blocks the current task, or the current task requires CI evidence. Do not run periodic triage or poll workflows.
-2. Follow each finding's immutable report path and run URL. Confirm that the issue row identifies an independent failure; do not create work from a workflow conclusion alone, cancellation-only evidence, or a routine successful run.
-3. Group findings that share a cause or remediation. Check the task board and active task records before creating a task. Do not create one task per occurrence or duplicate an existing task.
-4. Put every linked finding ID and its report paths/run URLs in the task record. Add the task ID to each finding's `task_refs` array. One task may cover several findings.
-5. Set the finding to `planned` when the linked task is Ready, `fixing` while remediation is active, and `verifying` while hosted validation is pending. Task status and finding status are separate state machines.
-6. Follow The Worker's approval rules. Clearly actionable work within an approved scope may become a Ready task. Optional or ambiguous work remains Proposed. Approval of the handoff process does not authorize unrelated code changes, weakened checks, or automatic remediation.
-7. Resolve a finding only after recording the fix commit and successful relevant validation. The Worker updates the ledger with the validation run URL and UTC timestamp. New evidence can reopen a resolved finding.
-
-The ledger does not create or update workspace task records. The Worker does not duplicate the ledger's diagnostic evidence or occurrence history.
+Ledger ingestion never creates tasks or overwrites human-managed fields. The Worker does not copy diagnostic payloads or occurrence history into task records; it links to that evidence.
 
 ## Historical backfill
 
-Do not clear \`ingestion_state.processed_reports\` to force a backfill. Do not import every historical run as a separate issue.
+Do not clear `ingestion_state.processed_reports` or import every old report as a new issue. Historical backfill requires a separate approved task. Review identity rules, deduplicate observations, and preserve every evidence reference.
 
-Historical backfill requires a separate approved task. Review identity rules first. Then deduplicate observations and preserve every immutable evidence reference.
+## Canonical schema and tests
 
-## Operator procedure
-
-1. Review the evidence paths and run URLs before changing a finding.
-2. Assign an owner and set severity based on impact and confidence.
-3. Use \`investigating\`, \`planned\`, \`fixing\`, and \`verifying\` to record work.
-4. Add an \`accepted_risk\` object before setting status to \`accepted\`.
-5. Add a valid \`duplicate_of\` ID before setting status to \`duplicate\`.
-6. Record the fix commit and successful relevant validation before setting status to \`resolved\`.
-7. Preserve resolution notes and prior validation evidence in \`resolution_history\` after recurrence.
-
-The schema at \`ledger-schema.json\` defines the record fields. The regression tests at \`scripts/test_ledger.py\` cover identity, deduplication, lifecycle, malformed input, and atomic publication.
+- Schema: `ledger-schema.json`.
+- Generator: `scripts/ledger.py`.
+- Regression tests: `scripts/test_ledger.py`.
+- Hosted execution: GitHub Actions. Do not run repository scripts locally.
