@@ -34,17 +34,17 @@ status: approved
 - **Tense:**
 - **Narrative Voice:**
 - **Storytelling Style:**
-- **Structural Approach:** [Novel → Arc → Scene. Add chapter grouping when useful.]
+- **Structural Approach:** [Novel → Arc → Scene. Optional: add chapter grouping when useful.]
 
 ## 4. Main Characters
 ### Character [ID] — [Name]
 - **Character Summary:**
-- **Detailed Character Profile:** [Relative link, if a separate record is useful]
+- **Detailed Character Profile:** [Optional: relative link when a separate record is useful]
 - **Role in the Novel:**
 - **Motivations:**
 - **Internal Conflicts:**
 - **Character Development:**
-- **Visual Reference:** [Link to approved reference, if any]
+- **Visual Reference:** [Optional: link to an approved reference]
 - **Canon State:** Established / Partly Established / Proposed / Open / Superseded
 
 ## 5. Relationships and Character Dynamics
@@ -53,7 +53,7 @@ status: approved
 - **Emotional Development:**
 - **Major Relationship Milestones:**
 - **Intended Relationship Direction:**
-- **Detailed Development Outline:** [Relative link, if useful]
+- **Detailed Development Outline:** [Optional: relative link when useful]
 
 ## 6. Story World
 - **Primary Settings:**
@@ -62,7 +62,7 @@ status: approved
 - **Social and Cultural Context:**
 - **World Rules and Constraints:**
 - **Important Objects and Symbols:**
-- **Detailed World References:** [Links, if any]
+- **Detailed World References:** [Optional: links when available]
 
 ## 7. Central Conflict and Stakes
 - **Main Conflict:**
@@ -93,7 +93,7 @@ status: approved
 - **Important Dates or Events:**
 - **Time Gaps:**
 - **Timeline Constraints:**
-- **Detailed Chronology Link:** [Optional]
+- **Detailed Chronology Link:** [Optional: relative link]
 
 ## 11. Character and Narrative Continuity
 - **Confirmed Character Facts:**
@@ -102,7 +102,7 @@ status: approved
 - **Established Narrative Facts:**
 - **Locations and Important Objects:**
 - **Continuity Constraints:**
-- **Approved Decisions:** [Concise summary. Link the full details when needed.]
+- **Approved Decisions:** [Optional: concise summary. Link full details when needed.]
 - **Proposals Not Yet Approved:**
 - **Provisional Ideas and Unresolved Decisions:** [Link to open-discussion.md]
 
