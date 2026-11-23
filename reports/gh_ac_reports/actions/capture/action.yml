@@ -1,5 +1,5 @@
 name: Capture GitHub Actions diagnostics
-description: Validate diagnostics and ledger tools, capture actionable source-workflow failures, update the issue ledger, and publish evidence.
+description: Validate diagnostic tools, capture source-workflow failures, update the issue ledger, create grouped Worker tasks for new actionable findings, and publish evidence.
 runs:
   using: composite
   steps:
@@ -41,7 +41,7 @@ runs:
       shell: bash
       run: python3 reports/triage/scripts/ledger.py --mode ingest
 
-    - name: Publish immutable diagnostic evidence
+    - name: Publish diagnostic evidence and Worker tasks
       if: always()
       continue-on-error: true
       shell: bash
