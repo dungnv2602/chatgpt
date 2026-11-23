@@ -254,29 +254,13 @@ Do not record hidden reasoning, routine narration, or trivial tool calls. Do not
 
 After each meaningful action, update the task record when the result affects the current state or next action. Keep the board concise.
 
-## Mandatory template-first authoring gate
+## Document authoring gate
 
-This gate applies before every repository document creation or material revision. It applies in Default Mode and Condensed Mode.
+[Document Standards](../document-standards/SKILL.md) is the single authority for document classes, Markdown inventory coverage, templates, schemas, and structural checks.
 
-1. Load `skills/document-standards/SKILL.md` and its Document Type Catalog.
-2. Identify the target document type, owner, and governing workflow.
-3. Read the catalog entry. Retrieve the exact canonical template, schema, or embedded format contract.
-4. Check that a skill-owned template is in the owning skill's `assets/` directory. Check that project-level templates use the project's designated template directory.
-5. Read the owner skill's relevant authoring instructions and indexes.
-6. If the canonical format is missing or incomplete, stop before creating or editing the target document.
-7. Create or revise the canonical template or schema first. Update the catalog, owner skill, and parent index as required.
-8. Commit and read back the canonical format and its references. Check the complete content and exact paths.
-9. Only after that read-back succeeds, create or revise the governed document from the canonical format.
-10. Check the target against required, conditional, optional, and repeatable fields. Delete unused placeholders.
-11. Update the parent index. Commit and read back the target and every changed path.
+Before creating, moving, renaming, or materially revising a repository document, follow its complete authoring procedure and the exact catalog entry. Do not create or edit the target until any required canonical format and its owner references have been committed and read back.
 
-**Stop condition:** Do not write the target document until the canonical format, catalog entry, and owner instructions pass commit and read-back.
-
-For an Embedded contract or Generator-owned type, retrieve the exact authority and its regression tests. Do not create a duplicate template.
-
-For a genuinely one-off or exempt document, record the applicable class and reason. Do not force a recurring template onto creative prose.
-
-Do not treat a plan to create a template, a catalog row, or a later migration as permission to edit the target first. Do not invent a new structure or migrate unrelated historical documents.
+The Worker owns task capture, approval, progress, and closeout. Document Standards owns document format. Do not duplicate its template or schema procedure.
 
 ## Execution and checkpoints
 

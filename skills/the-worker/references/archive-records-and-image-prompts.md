@@ -241,33 +241,15 @@ A failed, rejected, partial, or missed-target prompt is never the default text b
 
 ### Image handling
 
-### Prompt-first image-editing records
+### Image-operation records
 
-For a user-requested change to an existing image, default to **prompt-first
-reconstruction**. Locate the successful authored prompt that produced the target.
-Use it as the text baseline. Make only the requested change. Generate a new
-image from the revised prompt. Do not describe this as a direct edit of the
-source image.
+Choose the operation from the user's intent and the available source:
 
-Each such attempt must record:
-- The successful baseline prompt path/attempt and why it qualifies.
-- The requested delta, preserved details, changed details, and exclusions.
-- Whether the source image was attached. Prompt-first reconstruction does not
-  require source-image attachment. An attached image is optional visual
-  comparison/reference, not the editing mechanism.
-- Operation type as **fresh generation/reconstruction**, unless a direct edit
-  was actually performed and source linkage verified.
-- The output's comparison against the successful baseline and requested change.
+- **Fresh generation:** For a new scene or variation, use the active brief. For a continuation, use the latest successful authored prompt from the same series or artwork thread as the text baseline. Apply only the requested changes.
+- **Direct image edit:** When the user asks to change a specific existing image, attach that exact source through the image tool. Record the source, operation, requested delta, and acceptance criteria.
+- **Source unavailable:** State that a direct edit cannot be performed from the available materials. Do not silently replace it with a fresh generation. Use prompt-based reconstruction only when the user requests or accepts a new image.
 
-If the successful baseline prompt cannot be recovered, disclose the missing source. Do not fabricate prompt text. Use direct source-image editing only when explicitly requested. Also use it when reconstruction is materially inadequate and you can attach the exact source image through a supported mechanism. Verify source linkage before classifying the operation as a direct edit.
-
-- Deliver generated images in the conversation.
-- Store new retained non-novels/day drawing outputs in `drawings/YYYY-MM-DD/images/` using `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.). Link exact verified assets from the attempt note and daily README. Existing image assets are not migrated. Non-novel reference/source images remain under `images/`. Novel-scene illustration binaries remain in the novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library. New uploads for permanent reference/novel destinations enter through `images/takeout/` and its hand-off.
-- Never claim a fresh generation was an edit of the original.
-- Never claim a reference image was supplied unless the tool call actually included that reference.
-- Preserve source-image identity and distinguish an edit from a newly generated composition.
-- Use a repository reference image from `images/` or a novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library, or from an image the user supplies directly in the current conversation.
-- If an image edit fails, state that the image was not modified. Do not imply the source image changed.
+For either operation, commit the attempt record before the image call. Afterward, record the actual operation, output count and order, source availability, deviations, and per-output assessment. Never describe a fresh generation as an edit or infer source linkage from a filename.
 
 ### Daily attempt ledger
 
@@ -325,58 +307,11 @@ records within the active series or exact artwork thread. The daily README
 helps locate those records but does not establish success, series membership,
 or visual authority.
  
-### Session-local image asset handling and provenance
+### Image storage authority
 
-When the user asks to retain generated or uploaded images, or when the active
-session workflow requires keeping a source asset:
+Use the Worker's image provenance and WebP procedure for upload intake, storage destinations, original-byte preservation, checksums, conversion, and publication verification. Do not duplicate that procedure here.
 
-1. Give each retained image a clear, descriptive filename based on its visible
-   content. Preserve the original bytes. Do not overwrite a full-resolution
-   original with a thumbnail.
-2. Keep new retained non-novel/day-drawing outputs in the dated prompt folder's `images/` subdirectory. Use `attempt-XX.webp` or numbered suffixes for multiple outputs. Link each output from the attempt note and daily README when provenance is verified. Do not migrate existing image assets. Keep non-novel reference/source images under `images/`. Keep novel-scene illustration binaries under `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/` when a supported repository upload route is available. Route new uploads for permanent reference or novel destinations through `images/takeout/`. Verify the exact final path and blob identity before claiming repository storage.
-3. If you cannot transfer the binary to GitHub, retain it in the Files Library only when the user requested retention and that storage is available. Record its exact Library path, stable file ID, source generation ID, original artifact name, dimensions, byte count, and checksum where available. Put these details in the current session brief or attempt record, not in a global visual reference index.
-4. State clearly whether an asset is stored in GitHub, the persistent Files
-   Library, or only the current conversation. A Markdown note does not mean
-   that the image binary is in Git.
-5. Link the asset directly from the session brief or relevant attempt record
-   using a verified repository path or supported file-navigation reference.
-   Never invent a URL.
-6. Preserve the asset's role within that session: inspiration, identity,
-   composition, style, exact edit source, or approved keeper. A retained image
-   is not automatically a reference for future drawing sessions.
-7. Never create or maintain `images/reference-index.md` or any replacement
-   global index intended to dictate visual identity, wardrobe, style, or
-   composition. The session-opening brief is the only visual-direction
-   authority for its session.
-
-### Session-specific uploaded-image naming and cross-link procedure
-
-For an image the user supplies within a drawing session:
-
-1. Inspect the image itself and identify its role as stated by the user or
-   assigned in the session brief. Do not rely on its incoming filename.
-2. If the user asks to retain it for later use, give it an accurate, descriptive,
-   stable filename. Use consistent numbered suffixes for a set. If it is only
-   for the current session, do not silently promote it to a future-session asset.
-3. **Preserve the original image exactly.** The default is rename-only. Do not convert, recompress, resize, crop, rotate, filter, retouch, strip metadata, or create derivatives. The user has explicitly authorized one repository intake exception. Images placed in `images/takeout/` and listed in a ready `HANDOFF.yml` may move to their declared master path. The existing GitHub Action converts them to a separate WebP. Keep the original bytes, format, resolution, metadata, and visual content unchanged. Do not convert or relocate the file manually.
-4. Record the exact path, stable file or Library ID, and source generation ID when known. Also record the original name, dimensions, byte size, checksum where available, and session-specific role in the session brief or attempt record.
-5. For every generated non-novel drawing output retained in the repository,
-   include its attempt number in the `HANDOFF.yml` item as `attempt: NN` and
-   set the destination to `drawings/YYYY-MM-DD/images`. Do this whether the
-   user approved the result, rejected it, or has not reviewed it. User approval
-   does not control image linking. After conversion and relocation succeed,
-   the takeout processor automatically adds the verified WebP link to the
-   attempt record and matching README Image cell. Do not add a global
-   reference-index link. Items without attempt metadata do not change prompt
-   records or daily ledgers.
-6. In conversation-integrity records, record the user's instruction/approval
-   and exact storage or rename actions as tool events. Preserve historical
-   facts, but do not treat them as current visual direction.
-7. Verify the renamed asset through Files metadata and read back every updated
-   GitHub Markdown file. Never claim a Library URL or GitHub storage unless
-   verified.
-
-Do not finish a session archive while a requested keeper image has an opaque temporary filename. Also add direct links to its session brief and successful prompt record.
+Keep session-specific image roles and prompt/output mapping in the session brief and attempt records. A retained image is not automatically a reference for a later session. Do not create a global visual-reference index.
 
 ### When an opaque image cannot be visually inspected
 
@@ -384,27 +319,11 @@ If an image is present in `images/` but its binary cannot be viewed, do not inve
 
 Record that you did not inspect the pixels. State that the filename is based on time, not image content. If no reliable timestamp or identifying metadata exists, leave the file unchanged until its visual content is available. In either case, preserve the exact Git blob SHA and byte size.
 
-### Renaming image files already tracked in GitHub
+### Existing image assets
 
-When an image is already stored in its permanent `images/` or `novels/` location under an opaque filename, rename its Git tree path. Reuse its exact blob SHA.
+Do not rename or move an existing image unless the task requires it. When a rename is authorized, preserve its exact Git blob and verify that the new path exists and the old path is absent. Use the image-provenance reference for new uploads and the universal takeout workflow.
 
-Delete the old path in the same tree update. Verify the new path and verify that the old path is absent. Verify that the blob SHA and byte size remain identical.
-
-For new uploads that need repository retention, use the universal flat intake `images/takeout/`. Inspect the image. Prepare `images/takeout/HANDOFF.yml` with the exact incoming filename, descriptive title, optional stable asset ID, and destination directory.
-
-For a non-novel drawing attempt, include `attempt: NN` in the hand-off item. Set its destination to `drawings/YYYY-MM-DD/images`. Do not rename or move the uploaded file manually.
-
-The Action derives the master filename from the optional ID and normalized title slug. It preserves the original bytes. It stages each WebP under `images/takeout/webp/[batch-id]/attempt-NNN/`. The staged name appends `.webp` to the exact incoming filename. The Action verifies each derivative and moves it beside the master.
-
-Novel illustration binaries belong in `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Store other retained non-novel assets under `images/`.
-
-Archive every attempt under `images/takeout/history/[batch-id]/attempt-NNN/`. Include the original hand-off, `conversion-report.csv`, and `verification-report.md`. The CSV records staging and final WebP paths.
-
-On failure, keep the original uploads and ready hand-off in the intake. Keep successfully converted WebPs in that attempt's staging folder. Use a new attempt number for each retry.
-
-On success, move staged WebPs to their permanent destinations. Delete the empty staging folder. The Action clears the active hand-off only after the full batch passes verification. Read back the reports and final asset paths before you claim success.
-
-
+Do not use the ChatGPT Files Library for repository retention. If an image cannot be stored in GitHub, state that it remains only in the current conversation. Do not claim persistent storage.
 
 ## Technical documentation standard
 

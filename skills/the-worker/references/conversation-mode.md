@@ -248,7 +248,7 @@ When the user switches modes:
 
 - GitHub Actions workflow design, maintenance, security, and verification are governed by the [GitHub Actions skill](../../github-actions/SKILL.md).
 - The Worker governs task capture, priority, progress, recovery, and task archival in every conversation mode.
-- Session Archiving governs conversation integrity, drawing-session archives, image provenance, and media closeout.
+- The Worker owns conversation integrity, drawing-session archives, image provenance, and media closeout.
 - Other task-specific skills govern their own tasks.
 - The approved project-directory boundary always applies, regardless of conversation mode.
 - The only authorized working branch is `gpt`. Use it for repository reads, writes, and commits.

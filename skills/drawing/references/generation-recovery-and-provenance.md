@@ -116,14 +116,14 @@ the user explicitly says they should be retained for future use.
    retention, use the supplied image only within the current session.
 4. **Preserve the original image exactly.** The default is rename-only. Preserve its bytes, format, extension, resolution, dimensions, metadata, and visual content. Do not recompress, resize, crop, rotate, filter, retouch, or strip metadata. The user authorized one repository workflow exception. An image submitted through `images/takeout/` with a ready `HANDOFF.yml` may move to its declared master path. The existing GitHub Action converts it to a separate WebP derivative. Keep the original bytes and format identical. Do not perform this conversion or relocation manually outside that hand-off pipeline.
 5. Record the exact asset path, file/attachment ID, and source generation ID when known. Also record the original upload name, dimensions, byte size, checksum where available, and its session-specific role in that session's brief or attempt record.
-   State whether the binary is stored in GitHub, the persistent Files Library,
+   State whether the binary is stored in GitHub, the current conversation,
    or only the conversation. Never claim repository storage unless verified.
 6. Link the image directly from the session brief or the relevant attempt note.
    Do not create or maintain a global image reference index. Do not add
    persistent face, outfit, palette, or style rules merely because an image was
    approved in an earlier session.
 7. Keep inspiration references distinct from exact edit sources. A filename,
-   repository path, Library ID, or generation ID is not an attachment. Attach
+   repository path, repository path, or generation ID is not an attachment. Attach
    the actual asset through the image tool's supported mechanism and check
    source linkage before claiming a reference-guided result or source-linked edit.
 8. For a user-approved output, record the approval and its exact originating
