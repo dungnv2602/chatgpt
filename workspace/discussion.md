@@ -1,10 +1,8 @@
 ## Current Step
 
-- **2026-11-23 10:07 UTC — Create the approved hard-lint remediation task:** Use the current full-audit JSON as the canonical finding set, verify hard-finding identity across both scopes, then create a template-compliant task and reconcile the board. Keep advisory findings out of scope and preserve all lint thresholds.
+- **2026-11-23 10:08 UTC — Reconcile resolved discussion decisions:** Remove the answered default-branch and lint-approval prompts. Retain only pending hosted validations and record the new task as Ready.
 
 ## Open Discussions
-
-- **2026-11-23 10:07 UTC — Approved lint remediation:** User approved task `20261123-100738` for the 155 unique hard findings in the current repository-wide report. The changed-scope full-audit fallback contains the identical fingerprints. Advisory findings remain out of scope. The task is Ready and will be selected after the current diagnostic-report task reaches its validation and closeout checkpoint.
 
 - **2026-11-23 10:16 UTC — Default-branch observer decision:** The gpt-only collector can backfill runs after a later push or exact-run request. It cannot immediately capture a run that fails before any job starts. **User decision:** Keep delayed capture on gpt, or authorize immediate observation through a workflow on main or an external GitHub App webhook. Do not modify main without explicit approval.
 
