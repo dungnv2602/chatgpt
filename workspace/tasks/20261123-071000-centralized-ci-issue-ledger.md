@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-071000
 - **Created:** 2026-11-23 07:10 UTC
-- **Updated:** 2026-11-23 08:18 UTC
+- **Updated:** 2026-11-23 08:23 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -83,6 +83,18 @@ Turn the existing triage-ledger foundation under `reports/triage/` into an opera
 - **Commits:** \`199dbf3694d547f2fbcbdde23a44c16250493d0c\`, \`022614b002e0b61016264d71e341a550a7c244a2\`, \`820bc4bde0bf1d9bd5921af59a24d2d1b29022fd\`, \`bce52d2b894fa6eb592b9cb9a84d79d8a4aec2b4\`, \`19a92ad73f4c6bfcff49f19a7f2f8e1b0a9e59ba\`.
 - **Next:** Integrate ingestion with the serialized diagnostics publishers and write the operator guide.
 
+### 2026-11-23 08:23 UTC
+
+- **Action:** Integrated ingestion into the six existing diagnostic capture jobs and the central diagnostics sweep. Added hosted regression execution, atomic ledger publication, and a path exclusion for ledger-only commits.
+- **Concurrency:** Read back all six source-workflow diagnostic jobs. Each uses the shared non-cancelling \`gh-ac-report-writer\` group. The sweep uses the same group.
+- **Safety:** Capture-action ingestion remains non-blocking for source workflow conclusions. The sweep ingests complete post-run Actions reports after collection. The ledger-only path is excluded from sweep triggers.
+- **Operator guide:** Added identity rules, default severity, curated lifecycle fields, resolution evidence, duplicate links, recurrence, migration, and backfill policy.
+- **Tests:** Added 16 regression tests, including publisher-concurrency and recursion configuration checks. GitHub-hosted workflows now compile and run the ledger suite. No tests were run locally.
+- **Read-back:** Verified the generator, tests, schema, ledger, catalog, operator guide, capture action, sweep workflow, and all six source-workflow concurrency groups.
+- **Commits:** \`950b139c13c05f3a8afa045a8d5c5dbdd53479b2\`, \`ce09697d7a989ea5cbc731b95241791882886baa\`, \`9516b6cc8794d60e4fb539c9ab5e7b77385bf0cc\`, \`e55d2123cb151ba9a691ff07469efcad38f06ca7\`, \`ee089d5a4508afab20fcb8bf988b71d4d12dd27a\`.
+- **Validation limit:** Hosted tests and workflow checks have not been inspected. Do not poll or wait for runs.
+- **Next:** Keep the task In Progress until task-scoped hosted validation results are naturally available for a later bounded review.
+
 ## 7. Current State
 
 The repository already contains an initial triage README, a JSON schema, and an empty `ledger.json`. The README describes deduplication and lifecycle states, but there is no automated ingestion/upsert process and no populated issue register. The existing ledger is therefore a foundation, not an operational issue tracker.
@@ -100,9 +112,9 @@ This task is approved and In Progress. It is the current execution task followin
 
 ## 9. Next Actions
 
-1. Integrate ingestion and its tests into the existing diagnostics capture and sweep publishers.
-2. Document operator procedures and migration behavior.
-3. Read back all changed paths and let GitHub-hosted Actions validate. Do not poll or wait for runs.
+1. Review the next naturally available hosted results in a bounded snapshot.
+2. Correct only verified ledger-task defects.
+3. Complete the required task archive and board closeout after validation.
 
 ## 10. References
 
