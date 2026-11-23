@@ -295,7 +295,7 @@ class LedgerTests(unittest.TestCase):
         self.write_ledger(version="1.0.0")
         result = LEDGER.ingest(self.root)
         migrated = self.read_ledger()
-        self.assertEqual(migrated["schema_version"],"1.2.0")
+        self.assertEqual(migrated["schema_version"],"1.3.0")
         self.assertEqual(migrated["findings"],[])
         self.assertIn(path,migrated["ingestion_state"]["processed_reports"])
         self.assertEqual(migrated["findings"],[])
