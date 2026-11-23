@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:57 UTC — Current step:** Transfer Session Archiving's templates, references, and scripts into The Worker. Update exact dependencies and activation paths, then remove the standalone Session Archiving and Conversation Mode skill directories.
+- **2026-11-23 11:58 UTC — Current step:** Integrate archive/media ownership and procedures into The Worker. Update workflow, Drawing, session-start, image README, and catalog references to the new Worker-owned paths.
 
 ## Open Discussions
 
