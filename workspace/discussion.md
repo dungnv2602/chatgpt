@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 — Update canonical references and the Document Type Catalog.** Both template assets now exist in their owning skills' `assets/` directories. Their new blobs match the old files exactly. Update all consumers and catalog entries to the new canonical paths. Read back each consumer before deleting the old paths.
+- **2026-11-23 — Remove the superseded template paths.** Read back all updated consumers and the catalog. Confirm that no active skill or catalog reference points to either old location. Then delete only the two superseded template files. Keep the verified copies under the owning skills' `assets/` directories.
 
 ## Open Discussions
 
