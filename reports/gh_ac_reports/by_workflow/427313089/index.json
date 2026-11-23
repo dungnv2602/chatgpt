@@ -4,6 +4,23 @@
     {
       "workflow_id": 427313089,
       "workflow_name": "Validate Document Standards",
+      "run_id": "45177076843",
+      "run_number": 128,
+      "attempt": 1,
+      "capture_stage": "pre_finalizer",
+      "created_at": "2026-11-23T12:43:57Z",
+      "captured_at_utc": "2026-11-23T12:44:48Z",
+      "source_status": "in_progress",
+      "source_conclusion": null,
+      "projected_conclusion": "failure",
+      "report_status": "Incomplete",
+      "primary_category": "validation_or_test",
+      "history_path": "history/427313089/45177076843-attempt-1-pre_finalizer",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45177076843"
+    },
+    {
+      "workflow_id": 427313089,
+      "workflow_name": "Validate Document Standards",
       "run_id": "45176972220",
       "run_number": 127,
       "attempt": 1,
@@ -2385,18 +2402,18 @@
   "latest_report": {
     "workflow_id": 427313089,
     "workflow_name": "Validate Document Standards",
-    "run_id": "45176972220",
-    "run_number": 127,
+    "run_id": "45177076843",
+    "run_number": 128,
     "attempt": 1,
     "capture_stage": "pre_finalizer",
-    "created_at": "2026-11-23T12:43:15Z",
-    "captured_at_utc": "2026-11-23T12:44:02Z",
+    "created_at": "2026-11-23T12:43:57Z",
+    "captured_at_utc": "2026-11-23T12:44:48Z",
     "source_status": "in_progress",
     "source_conclusion": null,
     "projected_conclusion": "failure",
     "report_status": "Incomplete",
     "primary_category": "validation_or_test",
-    "history_path": "history/427313089/45176972220-attempt-1-pre_finalizer",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45176972220"
+    "history_path": "history/427313089/45177076843-attempt-1-pre_finalizer",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45177076843"
   }
 }
