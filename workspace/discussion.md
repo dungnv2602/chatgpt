@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 — Build a complete template-placement inventory.** The audit task is recorded and indexed. Fetch the recursive tree for branch `gpt`, classify candidate template/schema/example/generator paths, and compare them with the Document Type Catalog and owning-skill conventions. Do not change governed documents before canonical formats are prepared. Keep archive records immutable.
+- **2026-11-23 — Inspect candidate template assets and ownership.** The recursive Git tree returned 483 entries without truncation. Review every template/schema candidate outside immutable archive content, inspect its owning skill or project workflow, and classify whether it belongs in `assets/`, `references/`, `scripts/`, or a project-level templates directory. Also inspect likely template content whose filename does not contain “template”.
 
 ## Open Discussions
 
