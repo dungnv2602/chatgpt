@@ -200,3 +200,11 @@ The following inventory records the exact image blob SHA and byte size from the 
 - **Result:** The workflow accepts any number of exact top-level PNG, JPG, and JPEG filenames. It rejects wildcard/path inputs, unsupported or animated sources, files already assigned to a non-unclassified hand-off destination, and a Ready hand-off. It verifies WebP RIFF length and unchanged source SHA-256, then commits only derivatives under `images/takeout/webp/unclassified/attempt-NNN/`.
 - **Classification rule:** The workflow does not classify images. The assistant must review exact source and generation/output identifiers, conversation and attempt records, and hand-off evidence before supplying the runtime allowlist. If provenance does not establish an exact mapping, the image remains unclassified.
 - **Boundaries:** No original, hand-off, manifest, attempt record, or index is moved or edited by conversion-only processing. The user relocates derivatives. Index edits remain explicit-request-only. No workflow was dispatched or polled.
+
+
+### 2026-11-24 — Runtime allowlist read-back
+
+- **Check:** Generalized conversion workflow and documentation.
+- **Method:** Read back the workflow, Worker skill, provenance reference, both image-intake READMEs, task record, and discussion register from branch `gpt`. Checked the runtime input, absence of hard-coded filenames, PNG/JPEG encoder profiles, APNG rejection, hand-off boundary, source-hash check, and attempt-scoped staging.
+- **Result:** The read-back matches the committed files. Documentation and workflow changes are in commits `a4b29bd7b389f775baef721500fe4d7d515e5e31` and `827108805867e255452e3b45d666be9ed141abee`. Branch `gpt` points to `827108805867e255452e3b45d666be9ed141abee` at this check.
+- **Limits:** No workflow was dispatched or polled. No conversion output or hosted validation result is claimed.

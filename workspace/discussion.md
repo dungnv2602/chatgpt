@@ -32,3 +32,5 @@ _No active step._
 
 
 - **2026-11-24 — Runtime allowlist generalized:** Replaced the hard-coded seven-filename list with a required newline-separated `workflow_dispatch` input. The workflow accepts exact top-level static PNG/JPG/JPEG files, validates the current hand-off boundary, preserves originals, and stages only verified derivatives. The Worker, provenance reference, and both image-intake READMEs now describe evidence-first classification and the runtime allowlist. No Actions run was dispatched or polled.
+
+- **2026-11-24 — Runtime allowlist implementation verified:** Read back all seven changed paths. General runtime input and conversion guards are present. Commits: [a4b29bd](https://github.com/dungnv2602/chatgpt/commit/a4b29bd7b389f775baef721500fe4d7d515e5e31) and [8271088](https://github.com/dungnv2602/chatgpt/commit/827108805867e255452e3b45d666be9ed141abee). No Actions run was dispatched or polled; no conversion result is claimed.
