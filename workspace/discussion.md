@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 10:34 UTC — Complete catalog batch 1:** Resolve 14 semicolon findings, one long-sentence finding, and one synonym-rotation finding in the initial catalog rows. Preserve catalog classifications, references, conditions, and handling rules. Review the remaining catalog findings before the next batch.
+- **2026-11-23 10:38 UTC — Review catalog batch 2:** Revise the novel template field-contract table. Remove its hard semicolon and long-sentence findings while preserving required, conditional, optional, and repeatable field rules.
 
 ## Open Discussions
 
