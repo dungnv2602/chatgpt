@@ -41,20 +41,39 @@ Assign each document type one class in the [Document Type Catalog](references/do
 
 Use a template for optional document types when the user or workflow creates them. Do not create optional records solely to satisfy the catalog.
 
+## Canonical asset placement
+
+Use the owning workflow's canonical directory.
+
+- Put skill-owned copy-ready templates and static schemas in the owning skill's `assets/` directory.
+- Put explanatory references, policies, and research notes in `references/`.
+- Put executable generators, processors, validators, and tests in `scripts/`.
+- Keep project-level templates in the project's designated template directory, such as `novels/templates/`.
+- Keep shared workspace templates in their canonical workspace location, such as `workspace/TASK_TEMPLATE.md`.
+- Do not store copy-ready templates in a skill's `references/` directory.
+- Do not create a second template when a generator, schema, or embedded contract already owns the format.
+
+The catalog must point to the exact canonical asset. The owner skill and its indexes must use the same path.
+
 ## Authoring procedure
 
 1. Identify the document type and its owning project workflow.
 2. Read the matching entry in the Document Type Catalog.
 3. Retrieve the exact canonical template, schema, or format contract.
-4. Copy the template into the new document. Never edit the canonical template as the document itself.
-5. Preserve required section names, order, field names, and allowed values.
-6. Complete all required fields. Use the documented value for missing, unknown, or inapplicable information.
-7. Include conditional sections only when their stated condition applies.
-8. Keep optional sections when they add useful information. Do not invent content to fill them.
-9. Remove unused placeholders before you commit the document.
-10. Check the result against the template and its owning workflow.
-11. Update the parent index and catalog when the document type or canonical format changes.
-12. Commit the result and read back every changed path.
+4. Confirm that the canonical asset is in the correct owner directory.
+5. If the format is missing, stop before creating or editing the governed document. Create the template or schema first.
+6. Update the catalog and the owning workflow or index to point to the new format.
+7. Commit and read back the canonical template, schema, catalog entry, and owner instructions.
+8. Only after that read-back succeeds, create or revise the governed document.
+9. Copy the template into a new document. Never edit the canonical template as the document itself.
+10. Preserve required section names, order, field names, and allowed values.
+11. Complete all required fields. Use the documented value for missing, unknown, or inapplicable information.
+12. Include conditional sections only when their stated condition applies.
+13. Keep optional sections when they add useful information. Do not invent content to fill them.
+14. Remove unused placeholders before you commit the document.
+15. Check the result against the template and its owning workflow.
+16. Update the parent index when the document is created, renamed, reordered, or completed.
+17. Commit the document and read back every changed path.
 
 ## When no template exists
 
@@ -63,11 +82,29 @@ Do not silently create a new recurring format.
 1. Check whether the document type already exists under another name.
 2. Check whether an owning skill defines an embedded contract or generator schema.
 3. If the type is recurring or carries approval, status, provenance, safety, or audit data, define its template or schema first.
-4. Add the new type and its canonical path to the catalog.
-5. If the document is genuinely one-off, use a lightweight pattern and record the reason when the format affects later work.
-6. Do not create a template for creative prose solely to constrain style or narrative form.
+4. Put a skill-owned template in the owning skill's `assets/` directory.
+5. Add the new type and its exact canonical path to the catalog.
+6. Update the owning workflow and index.
+7. Commit and read back those format changes.
+8. Only then create or edit the governed document.
+9. If the document is genuinely one-off, use a lightweight pattern and record the reason when the format affects later work.
+10. Do not create a template for creative prose solely to constrain style or narrative form.
 
-Create the template and first document in the same change set when the new type is already understood. If its requirements remain unclear, define the type before creating repeated examples.
+If the requirements remain unclear, define the document type and its field contract before creating the first record.
+
+## Before editing an existing document
+
+Treat a template change as a prerequisite, not as a later cleanup step.
+
+1. Retrieve the current canonical template and the target document.
+2. Check whether the target still follows the current format.
+3. If the template needs a change, update the canonical template first.
+4. Update the catalog and owner workflow in the same format-change step.
+5. Commit and read back the format changes.
+6. Only then edit the target document.
+7. Preserve its approved content, provenance, and history. Do not mass-migrate unrelated records.
+
+If the target uses an embedded contract or generator-owned format, retrieve that authority and its tests first. Do not create a duplicate template.
 
 ## Template design requirements
 
@@ -130,6 +167,7 @@ When code already parses or generates a structured format, treat that implementa
 Check each document for:
 
 - Correct document type and canonical template.
+- Correct template placement under its owning skill or project.
 - Required sections and their order.
 - Required fields and valid values.
 - Removal of unused placeholders.
@@ -139,7 +177,7 @@ Check each document for:
 
 Add automated validation when a structural rule can be checked reliably.
 
-The catalog integrity validator at `scripts/validate_catalog.py` checks inventory row structure, document-type classes, class-specific references, and exact path existence. Its tests live at `scripts/test_validate_catalog.py`. It does not compare a document's content with its template, validate semantic quality, or duplicate processor schemas.
+The catalog integrity validator at `scripts/validate_catalog.py` checks inventory row structure, document-type classes, class-specific references, exact path existence, and canonical template placement. Its tests live at `scripts/test_validate_catalog.py`. It also detects named template files in skill reference directories. It does not prove that an agent copied the template when it authored a document, compare every document with its template, validate semantic quality, or duplicate processor schemas. The Worker enforces the authoring sequence.
 
 Run the validator and its tests only on GitHub-hosted Actions runners. Do not run repository scripts locally. Workflow integration requires explicit authorization; until Actions runs both checks, treat execution as unverified.
 
