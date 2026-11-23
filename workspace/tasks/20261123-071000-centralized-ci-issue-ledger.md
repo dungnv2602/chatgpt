@@ -61,6 +61,14 @@ Turn the existing triage-ledger foundation under `reports/triage/` into an opera
 
 ## 6. Progress Log
 
+### 2026-11-23 08:37 UTC
+
+- **Action:** Confirmed the natural sweep re-ingested the previously unprocessed report with the refined generator.
+- **Result:** The ledger now contains one open, high-severity `publication_or_push` finding from Actions run `45138510922`. The redundant status-propagation finding is absent. The record links to the immutable report and run URL. Its evidence log confirms a rejected push after the branch ref changed between fetch and push.
+- **State:** The ledger contains one finding and 215 processed report paths. The 151 paths present at bootstrap remain excluded from historical import.
+- **Validation:** The generator executed in the natural publication flow. The 17-test hosted suite and workflow conclusions have not been inspected. No run was polled or dispatched.
+- **Next:** Keep the task In Progress until task-scoped hosted validation can be reviewed in a later bounded check.
+
 ### 2026-11-23 08:33 UTC
 
 - **Action:** Reviewed the first naturally ingested Actions report and its immutable job log. The report contained a real rejected push and a second step that only propagated an earlier lint failure.
@@ -119,9 +127,9 @@ Turn the existing triage-ledger foundation under `reports/triage/` into an opera
 
 ## 7. Current State
 
-The repository contains a generator-owned ledger pipeline with schema version 1.1.0. The bootstrap excludes the 151 reports indexed before implementation. The generator reads only indexed immutable reports and preserves curated fields.
+The repository contains a generator-owned ledger pipeline with schema version 1.1.0. It reads indexed immutable reports, preserves curated fields, and tracks unique run observations. The initial bootstrap excluded 151 existing report paths from historical import.
 
-The capture and sweep publishers use the shared non-cancelling writer group. The operator guide and 17 regression tests are committed. The first natural ingestion exposed a real push rejection and a redundant status-propagation finding. The generator now extracts exact-step log diagnostics and ignores the propagation step. That report is pending clean re-ingestion. Hosted validation remains unverified.
+The capture and sweep publishers use the shared non-cancelling writer group. The operator guide and 17 regression tests are committed. Natural ingestion now records one open high-severity publication issue from Actions run 45138510922. It excludes the redundant status-propagation step. Hosted test results remain unverified.
 
 This task is approved and In Progress. The diagnostic-report infrastructure task remains paused, not closed.
 ## 8. Remaining Work
