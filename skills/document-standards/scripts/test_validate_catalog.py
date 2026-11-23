@@ -156,7 +156,7 @@ class CatalogValidatorTests(unittest.TestCase):
 
     def test_generator_owned_requires_python_authority(self):
         self.set_catalog([
-            "| Generator | Generator-owned | `workspace/example.md` and `skills/example/test_generator.py` | No Python authority. |",
+            "| Generator | Generator-owned | `workspace/example.md` | Regression test: `skills/example/test_generator.py`; no Python authority. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("must reference its Python authority" in error for error in errors))
