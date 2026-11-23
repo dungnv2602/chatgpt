@@ -1,43 +1,43 @@
-# Validate Document Standards — run 45156865333
+# STE Lint Changed Documentation — run 45157016400
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | Validate Document Standards |
-| Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45156865333 / 1 |
-| Run number | 42 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45156865333 |
+| Workflow | STE Lint Changed Documentation |
+| Workflow path | .github/workflows/ste-lint-changed.yml |
+| Run / attempt | 45157016400 / 1 |
+| Run number | 456 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45157016400 |
 | Branch | gpt |
-| Commit | 8694f8e59c320024f153b0e73a2eca53d86dc97f |
+| Commit | bf361fd04c45eb6634b09bce553251ad73758904 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T10:31:24Z |
-| Status at capture | completed |
-| Observed conclusion | cancelled |
-| Projected conclusion | Not calculated |
-| Reporter job | completed / cancelled |
-| Capture stage | post_run |
-| Completeness | Complete |
-| Captured (UTC) | 2026-11-23T10:32:56Z |
+| Created (UTC) | 2026-11-23T10:32:23Z |
+| Status at capture | in_progress |
+| Observed conclusion | Not yet available |
+| Projected conclusion | cancelled |
+| Reporter job | in_progress / Pending |
+| Capture stage | pre_finalizer |
+| Completeness | Incomplete |
+| Captured (UTC) | 2026-11-23T10:33:18Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | cancelled |
+| State | in_progress |
 | Primary category | None |
-| Jobs | 1 |
-| Steps | 8 |
+| Jobs | 2 |
+| Steps | 5 |
 | Issues | 0 |
-| Annotations | 1 |
+| Annotations | 2 |
 | Artifacts | 0 |
-| Capture errors | 0 |
+| Capture errors | 2 |
 
 ## Failure classification
 
-No failure category identified.
+No failure category identified. The parent run is still in progress. The projected conclusion is provisional.
 
 The run conclusion records the workflow outcome. A cancelled run remains in history. Cancellation alone does not create an actionable issue. The generator also excludes known downstream status-propagation steps after cancellation.
 
@@ -45,7 +45,8 @@ The run conclusion records the workflow outcome. A cancelled run remains in hist
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 137631919295 | validate-document-standards | completed | success | 8 | logs/job-137631919295.log |
+| 137632528243 | Reject superseded runs and find lint baseline | completed | success | 4 | logs/job-137632528243.log |
+| 137632604720 | Lint changed Markdown files and publish detailed evidence | completed | cancelled | 1 | logs/job-137632604720.log |
 
 ## Actionable step outcomes
 
@@ -55,7 +56,8 @@ No records were captured.
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 137631919295 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 137632604720 | failure | .github | 1 |  | Canceling since a higher priority waiting request for STE Lint Changed Documentation-refs/heads/gpt exists |
+| 137632604720 | failure | .github | 32 |  | The operation was canceled. |
 
 ## Artifacts
 
@@ -65,15 +67,21 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137631919295 | validate-document-standards | logs/job-137631919295.log | 30141 | False |  |
+| 137632528243 | Reject superseded runs and find lint baseline | logs/job-137632528243.log | 82 | False |  |
+| 137632604720 | Lint changed Markdown files and publish detailed evidence | logs/job-137632604720.log | 82 | False |  |
 
 ## Evidence coverage
 
-All requested evidence endpoints and completed-job log captures returned data.
+One or more evidence sources were unavailable. This report is Incomplete.
+
+| Source | HTTP status | Limitation |
+| --- | --- | --- |
+| job_log | Not recorded | run 45157016400 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45157016400 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
-No separate lint report applies to this workflow.
+[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/reports/lint_reports/on_changed/latest-lint-report.md)
 
 ## Integrity
 
