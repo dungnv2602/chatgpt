@@ -169,6 +169,13 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - **References:** \`reports/gh_ac_reports/scripts/report.py\`, \`reports/gh_ac_reports/scripts/test_report.py\`, \`reports/gh_ac_reports/assets/report-template.md\`, \`reports/gh_ac_reports/assets/report-schema.json\`, \`reports/gh_ac_reports/README.md\`, \`reports/triage/scripts/ledger.py\`, \`reports/triage/scripts/test_ledger.py\`, \`reports/triage/README.md\`, and \`skills/document-standards/references/document-type-catalog.md\`. Affected evidence: [45146852295](https://github.com/dungnv2602/chatgpt/actions/runs/45146852295) and [45132710220](https://github.com/dungnv2602/chatgpt/actions/runs/45132710220).
 - **Next:** Review the next natural hosted diagnostics run. Confirm the reporter and ledger tests pass and that a cancelled source run creates no issue. Do not poll or manually dispatch workflows.
 
+### 2026-11-23 10:12 UTC
+
+- **Action:** Committed the cancellation-safe reporter and ledger changes as one coherent change set. Read back all 11 changed paths and verified the gpt branch head.
+- **Result:** All 11 paths match the committed content. The branch head is a12188b8bff24b04f678eb711463c2aad16d9866. Regression tests were added but were not executed locally. Hosted validation remains pending.
+- **References:** [Implementation commit](https://github.com/dungnv2602/chatgpt/commit/a12188b8bff24b04f678eb711463c2aad16d9866).
+- **Next:** Review hosted test results only when they are naturally available. Do not poll or manually dispatch workflows.
+
 ## 7. Current State
 
 The user-approved cancellation repair is implemented in the reporter and ledger. Cancelled run outcomes and evidence remain in immutable reports, but cancellation-only outcomes do not create actionable issues. Known downstream status-propagation steps after cancellation are excluded. Independent failures before cancellation remain actionable. The ledger excludes all findings from a cancelled source run. Existing immutable historical reports are not rewritten. Hosted validation of this change is pending.
