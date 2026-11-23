@@ -1,9 +1,9 @@
 ## Current Step
 
-Verify the committed image-intake policy updates, their cross-links, and the `gpt` branch head. Confirm that the unclassified-image conversion path remains separate from provenance-gated relocation and that the user retains control of relocation and index edits.
+_No active step._
 ## Open Discussions
 
-- **2026-11-24 — Image takeout provenance and unclassified conversion:** Eleven images have exact attempt, source Asset ID, and Generation ID mappings. Seven remain unclassified because their pixels and source evidence are unavailable. The user directed conversion-only WebP output for these images, with user-managed relocation and index edits only on explicit request. The separate conversion workflow and canonical procedure are committed. The original PNGs remain in intake and `HANDOFF.yml` remains Draft. The seven-file workflow result has not been independently observed here. Next: verify the committed procedure and branch state. Do not claim conversion completion without evidence.
+- **2026-11-24 — Image takeout conversion:** Seven images remain unclassified. The user approved conversion-only WebP output, user-managed relocation, and index edits only on explicit request. The procedure is committed and verified on `gpt`. The original PNGs remain in intake and `HANDOFF.yml` remains Draft. The conversion outputs have not been verified. Next: await normal hosted workflow evidence. The user will relocate the derivatives. Do not edit indexes without an explicit request.
 
 - **2026-11-23 16:09 UTC — Reporting-period validation:** The active indexes contain only the four carried-forward pending run IDs. Evidence-only captures remain unindexed for the open Ledger findings. Let the next natural diagnostics sweep complete pending runs and validate the reset. Do not poll, dispatch, or rerun Actions.
 
@@ -23,8 +23,9 @@ Verify the committed image-intake policy updates, their cross-links, and the `gp
 
 ## Reports
 
+- **2026-11-24 — Unclassified image workflow updated:** Added the conversion-only path to The Worker, the shared image-provenance reference, and both image-intake READMEs. Read back all changed paths. Branch `gpt` points to [b5ee4f70](https://github.com/dungnv2602/chatgpt/commit/b5ee4f7028db629f5aa7cede8cecab05d1f9a42e). The hand-off remains Draft and unchanged. Hosted conversion output is not yet verified.
+
 - **2026-11-23 22:30 UTC — Foundational session startup:** Retrieved and read all required foundational files from branch `gpt`: The Worker, Conversation Mode, ASD-STE100, GitHub Actions, and Document Standards. Startup notice was committed and read back. Commit [6600b0c5](https://github.com/dungnv2602/chatgpt/commit/6600b0c5162297c96490e4125601d3a712a0d30c).
 
 - **2026-11-23 16:33 UTC — Drawing session opened:** Created and read back the Active standalone session brief and six-field daily index for `DRAWING-2026-11-23-01`. No image attempt was made because the user has not supplied visual direction. Commit [df7dcbe1](https://github.com/dungnv2602/chatgpt/commit/df7dcbe1c76d414d91e25ae0fdf82b59c780e847).
 
-- **2026-11-23 14:22 UTC — Document Standards validator passed:** [Run #160](https://github.com/dungnv2602/chatgpt/actions/runs/45193353681) on commit `05bbf26c74cd0df093adbf074d3024e00323674b` completed successfully. The `validate-document-standards` job passed both the catalog regression tests and catalog validation. The diagnostic-capture job also succeeded.
