@@ -61,12 +61,13 @@ This rule is mandatory because no local project environment is provided and the 
 - workspace/tasks/ contains current task records.
 - archive/README.md defines archive retention.
 - archive/tasks/ contains completed or cancelled task records during retention.
-- Treat `archive/` as retention-only and outside content-audit scope. Never read, scan, audit, or lint archived contents. This restriction does not prevent required archival and retention operations.
-  - Create or move completed or cancelled task records into `archive/tasks/`.
+- Treat `archive/` as read-only after each record's initial archive write. You may read an exact archived record when a task requires its content. Do not perform broad archive scans or audits unless the user asks.
+  - Create the final task record in `archive/tasks/` as the initial archive write.
+  - Read back that exact path and verify its complete content.
+  - After verification, never edit, replace, rename, move, or manually delete the archived record.
   - Update the active task board with a link to the archived record and the archival commit.
-  - Allow the scheduled retention workflow to delete expired archive contents.
-  - Do not inspect archived contents during these operations.
-  - For links from active documents to archived paths, check only that the target path exists. Do not inspect archived file content or heading anchors.
+  - Only the scheduled retention workflow may delete expired archive contents.
+  - For links from active documents to archived paths, check path existence. Read the target when its content is needed for the task.
 
 Do not create a conversation transcript. The discussion register is a temporary record of open discussions and a short success-report window, not a transcript or task history.
 
@@ -269,8 +270,10 @@ When acceptance criteria are met:
 
 1. Check the final result, acceptance criteria, and supporting evidence.
 2. Prepare the final archive copy with status Done or Cancelled, an archive timestamp in UTC, complete verification, and a final handoff. Set Archived to Yes in that archive copy only.
-3. Create the archived record at `archive/tasks/<same-filename>`. Preserve its task ID and filename. Do not inspect archived contents.
-4. Verify that the archive-write operation succeeded. Only then delete the active record from `workspace/tasks/`. Until that verification succeeds, keep the active record In Progress with Archived: No. If one Git operation can commit both path changes, use it. Otherwise, create the archive copy first and delete the active path in a later commit. Never delete the active record before the archive copy exists.
+3. Create the final archive record at `archive/tasks/<same-filename>`. Preserve its task ID and filename. This is the only content write for that archive path.
+4. Read the exact archive path after the write. Compare its complete content with the prepared final record. Verify the archive commit and changed-path metadata. Stop if the path is missing or the content differs.
+5. Treat the archive record as immutable after this verification. You may read it later when task recovery, board reconciliation, or verification requires it. Never edit, replace, rename, move, or manually delete an archived record. Only the scheduled retention workflow may delete archived records.
+6. Only after archive read-back succeeds, delete the active record from `workspace/tasks/`. Keep the active record In Progress with Archived: No until this deletion succeeds. If deletion fails, leave the task open and reconcile the existing archive copy without rewriting it.
 5. Update `workspace/task_board.md` in the same closeout pass:
    - Delete the task from Current Execution.
    - Delete its active row from every status section.
@@ -278,14 +281,14 @@ When acceptance criteria are met:
    - Apply the seven-entry history limit. Delete only the oldest index rows when required.
    - Select or identify the next current execution task according to the selection rules. Do not invent a task when no eligible task exists.
 6. Fetch the committed task board. Verify that the closed task is absent from active sections and appears exactly once in Historical. Verify its links to the archive path and archival commit. Verify that Current Execution matches the selection rules.
-7. Verify that the archival commit includes the archived record in its changed-path metadata. Do not fetch or inspect the archived file contents.
-8. Only after these checks, report the task as closed and provide the appropriate handoff.
+8. Verify that the archival commit includes the archived record in its changed-path metadata. Read the archived record when needed to verify its content or recover board details. Do not modify the archived record.
+9. Only after these checks, report the task as closed and provide the appropriate handoff.
 
 Treat the task record, archive path, and task board as one logical transaction even when the GitHub API requires more than one commit. Do not stop after changing task metadata, after creating the archive copy, or after deleting the active record.
 
 If any closeout step fails, keep the task open as In Progress or record the exact recovery blocker. Reconcile the partial repository state before switching tasks or ending work. Do not claim completion while the board and task record disagree. Do not ask the user to approve routine archival or board maintenance. The approved task requires this archival and board maintenance.
 
-Follow archive/README.md for the 14-day batch-cleanup policy. GitHub Actions owns scheduled deletion of the entire `archive/tasks/` contents on each due run. The Worker must not scan or delete archived records during activation or task closeout.
+Follow archive/README.md for the 14-day batch-cleanup policy. The Worker may read exact archived records when needed but must not edit, replace, rename, move, or manually delete them. Only the scheduled GitHub Actions retention workflow may delete archived records.
 
 ## Conversation Mode integration
 
