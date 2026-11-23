@@ -3,9 +3,13 @@
 **Template version:** 1.0
 
 **Session ID:** [Unique session ID]
+
 **Session type:** [Day drawing / Novel illustration]
+
 **Project or novel scene:** [Project name or exact novel and scene]
+
 **Created:** YYYY-MM-DD
+
 **Status:** [Active / Paused / Closed] — new sessions start Active
 
 ## User's opening brief
