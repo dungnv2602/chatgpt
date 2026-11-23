@@ -1,10 +1,11 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-23T23:41:17Z",
+  "updated_at_utc": "2026-11-23T23:46:14Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
-      "reports/gh_ac_reports/history/427313089/45290888511-attempt-1-pre_finalizer/report.json"
+      "reports/gh_ac_reports/history/427313089/45290888511-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/427313089/45291556980-attempt-1-pre_finalizer/report.json"
     ],
     "lint_baseline_scopes": {
       "on_changed": false,
