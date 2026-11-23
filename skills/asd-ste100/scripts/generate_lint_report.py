@@ -48,7 +48,7 @@ generated = datetime.now(timezone.utc).isoformat()
 data = {
     "schema_version": "1.0.0", "scope": a.scope, "run_id": a.run_id,
     "run_number": int(a.run_number), "run_url": a.run_url, "attempt": int(a.attempt),
-    "branch": a.branch, "commit_sha": a.commit, "event": a.event,
+    "branch": a.branch, "commit_sha": a.commit, "event": a.event,\n    "workflow": __import__("os").environ.get("GITHUB_WORKFLOW"),\n    "runner_os": __import__("os").environ.get("RUNNER_OS"),
     "execution_mode": a.mode, "baseline_sha": a.baseline or None,
     "generated_at_utc": generated, "status": a.status,\n    "linter_source_sha": a.linter_source_sha or None,\n    "runtime": {"python": sys.version, "platform": platform.platform()},
     "files_evaluated": len(records), "files_failed": len(failed),
