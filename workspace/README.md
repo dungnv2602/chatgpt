@@ -25,7 +25,7 @@ Task IDs use UTC `YYYYMMDD-HHMMSS`. Use only the statuses Proposed, Ready, In Pr
 
 ## CI issue workflow
 
-GitHub Actions runs validation and publishes diagnostic evidence. Lint reports and Actions reports feed the [central CI issue ledger](../reports/triage/README.md). The ledger is the issue backlog; it deduplicates findings and stores evidence. The Worker groups related findings into workspace tasks and links each finding through `task_refs`. Ledger ingestion never creates tasks.
+GitHub Actions runs validation and publishes diagnostic evidence. Lint reports and Actions reports feed the [central CI issue ledger](../reports/triage/README.md). The Ledger is an event-driven component of The Worker. During report ingestion, it creates grouped Proposed tasks for newly identified actionable findings and links them through `task_refs`. It does not poll or taskify the historical backlog. The Worker retains prioritization, approval, execution, verification, and closeout.
 
 Do not run periodic triage or poll workflows. Review CI only when the user asks, a known failure blocks the task, or the task requires validation. Ordinary successful Actions runs are not persisted as diagnostic reports. A successful validation run URL and timestamp are sufficient resolution evidence; request a full success capture only when detailed logs are specifically required.
 
