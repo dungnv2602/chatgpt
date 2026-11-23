@@ -5,8 +5,44 @@
     "reason": "User-authorized clean start. All pre-cutoff active and archived report data and Ledger findings were cleared. No historical backfill. The first complete tooling-valid full audit in each lint scope seeds its baseline."
   },
   "sweep_watermark_utc": "2026-11-23T23:38:33Z",
-  "pending_run_ids": [],
+  "pending_run_ids": [
+    "45290888511"
+  ],
   "exhausted_run_ids": [],
-  "runs": [],
-  "latest_report": null
+  "runs": [
+    {
+      "workflow_id": 427313089,
+      "workflow_name": "Validate Document Standards",
+      "run_id": "45290888511",
+      "run_number": 228,
+      "attempt": 1,
+      "capture_stage": "pre_finalizer",
+      "created_at": "2026-11-23T23:40:48Z",
+      "captured_at_utc": "2026-11-23T23:41:17Z",
+      "source_status": "in_progress",
+      "source_conclusion": null,
+      "projected_conclusion": "failure",
+      "report_status": "Incomplete",
+      "primary_category": "validation_or_test",
+      "history_path": "history/427313089/45290888511-attempt-1-pre_finalizer",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45290888511"
+    }
+  ],
+  "latest_report": {
+    "workflow_id": 427313089,
+    "workflow_name": "Validate Document Standards",
+    "run_id": "45290888511",
+    "run_number": 228,
+    "attempt": 1,
+    "capture_stage": "pre_finalizer",
+    "created_at": "2026-11-23T23:40:48Z",
+    "captured_at_utc": "2026-11-23T23:41:17Z",
+    "source_status": "in_progress",
+    "source_conclusion": null,
+    "projected_conclusion": "failure",
+    "report_status": "Incomplete",
+    "primary_category": "validation_or_test",
+    "history_path": "history/427313089/45290888511-attempt-1-pre_finalizer",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45290888511"
+  }
 }
