@@ -1,6 +1,6 @@
 # Document Type Catalog
 
-**Catalog version:** 1.5  
+**Catalog version:** 1.6  
 **Inventory status:** Non-truncated recursive tree audit of branch `gpt` at commit `9ef2567e99a52045ac636c8a7749ecb5ccbb1e31` found 4,509 files and 1,096 Markdown documents outside root `master/` and `archive/`. All 1,096 Markdown paths matched the 48-rule coverage register; every rule matched at least one file. This is a complete path inventory and targeted family review, not a line-by-line semantic review of every generated report.
 **Source branch:** `gpt`
 
@@ -70,56 +70,58 @@ Do not create a second template when an owning workflow already defines the requ
 
 This register classifies every Markdown file outside the root `master/` and `archive/` directories. The validator scans the repository tree, excluding those two directories and Git metadata. Every in-scope Markdown path must match at least one rule below. Each rule must match at least one current file. Add a narrow, intentional rule before creating a new document family; do not add a broad catch-all to silence an uncovered-path error. The class describes the covered family, while the canonical authority identifies its template, schema, embedded contract, or generator.
 
-| Path pattern | Class | Canonical authority | Coverage rationale |
-|---|---|---|---|
-| `drawings/history/20??-??-??-conversation-integrity.md` | Template required | `skills/the-worker/assets/conversation-integrity-template.md` | Historical conversation-integrity records. New records use the current template; preserve old content without mass migration. |
-| `drawings/history/20??-??-??-summary.md` | Template required | `skills/the-worker/assets/session-summary-template.md` | Historical session summaries. New records use the current template; preserve old content without mass migration. |
-| `drawings/history/20??-??-??-image-prompts.md` | Lightweight pattern | `skills/the-worker/references/archive-records-and-image-prompts.md` and `skills/drawing/assets/attempt-template.md` | Legacy chronological prompt logs. Do not create new logs; new attempts use one canonical attempt record each. |
-| `drawings/history/conversation-*.md` | Lightweight pattern | `skills/the-worker/references/archive-records-and-image-prompts.md` and `skills/the-worker/assets/conversation-integrity-template.md` | Historical archive indexes, transcript segments, and curated chronicles. They are legacy navigation/source records, not a new recurring document type. New session archives use the conversation-integrity template. |
-| `drawings/history/cozy-bedroom-*.md` | Lightweight pattern | `skills/the-worker/references/archive-records-and-image-prompts.md` and `skills/drawing/assets/attempt-template.md` | Legacy standalone prompt and attempt notes. Preserve as historical records; new drawing work uses the current attempt template. |
-| `drawings/history/failed-prompts.md` | Lightweight pattern | `skills/drawing/SKILL.md` and `skills/drawing/references/patterns/README.md` | Historical navigation index only; not a template for new attempts. |
-| `drawings/history/successful-prompts.md` | Lightweight pattern | `skills/drawing/SKILL.md` and `skills/drawing/references/patterns/README.md` | Historical navigation index only; not a template for new attempts. |
-| `drawings/20??-??-??/README.md` | Template required | `skills/drawing/assets/daily-index-template.md` | Daily drawing indexes. Use the canonical six-field index for new dates and material revisions. |
-| `drawings/20??-??-??/attempt-*.md` | Template required | `skills/drawing/assets/attempt-template.md` | One record per drawing attempt. Preserve legacy attempts without mass migration. |
-| `drawings/20??-??-??/session-*-brief.md` | Template required | `skills/the-worker/assets/session-brief-template.md` | One opening brief per distinct drawing session. |
-| `drawings/2026-11-19/TODO.md` | Exempt | `skills/drawing/SKILL.md` | One-off project TODO; not a recurring record type. |
-| `drawings/2026-11-20/samantha-visual-drive.md` | Exempt | `skills/drawing/SKILL.md` | One-off creative visual reference; preserve its project-specific form. |
-| `drawings/2026-11-20/scenario-direction.md` | Exempt | `skills/drawing/SKILL.md` | One-off film-grounded creative direction; do not constrain it with a reusable template. |
-| `images/README.md` | Embedded contract | `images/README.md` and `skills/the-worker/SKILL.md` | Image storage, original-master retention, WebP derivatives, and repository delivery rules. |
-| `images/takeout/README.md` | Embedded contract | `images/takeout/README.md` and `skills/the-worker/scripts/process_takeout.py` | Takeout intake and processing procedure; the processor owns the YAML/CSV field contract. |
-| `novels/*.md` | Embedded contract | `novels/README.md` and `novels/WORKFLOW.md` | Novel root navigation and project-wide narrative, canon, status, and versioning rules. |
-| `novels/templates/*.md` | Exempt | `novels/templates/scene-v1.1.md` | Canonical template source files, not authored novel records. Individual document types are catalogued separately. |
-| `novels/*/novel.md` | Template required | `novels/templates/novel-v1.1.md` | Novel foundation records. |
-| `novels/*/open-discussion.md` | Template required | `novels/templates/open-discussion-v1.1.md` | Per-novel open-discussion and approved-decision register. |
-| `novels/*/planning/*.md` | Template required | `novels/templates/development-outline-v1.1.md` | Focused novel planning and development outlines. Preserve existing topic-specific legacy structures until material revision. |
-| `novels/*/*/arc.md` | Template required | `novels/templates/arc-v1.1.md` | Story arc records. |
-| `novels/*/*/Scene-*/scene.md` | Template required | `novels/templates/scene-v1.1.md` | Scene records. Creative prose remains unconstrained by prose-style templates. |
-| `novels/*/*/Scene-*/illustrations/illustration-*.md` | Template required | `novels/templates/illustration-note-v1.1.md` and `novels/templates/illustration-prompt-v1.1.md` | Novel illustration notes and scene-local prompt/attempt records. Choose the matching type-specific template. |
-| `reports/README.md` | Embedded contract | `reports/README.md` and `reports/triage/README.md` | Central report navigation and family ownership. |
-| `reports/**/README.md` | Embedded contract | `reports/gh_ac_reports/README.md` and `reports/lint_reports/README.md` | Report-family guides and generated-report review procedures. |
-| `reports/gh_ac_reports/assets/report-template.md` | Generator-owned | `reports/gh_ac_reports/scripts/report.py` and `reports/gh_ac_reports/scripts/test_report.py` | Reporter-owned rendering asset; update with generator and regression tests. |
-| `reports/gh_ac_reports/history/**/*.md` | Generator-owned | `reports/gh_ac_reports/scripts/report.py` and `reports/gh_ac_reports/scripts/test_report.py` | Immutable per-run Markdown diagnostic captures. |
-| `reports/gh_ac_reports/by_workflow/*/latest-report.md` | Generator-owned | `reports/gh_ac_reports/scripts/report.py` and `reports/gh_ac_reports/scripts/test_report.py` | Generated workflow-specific latest pointers. |
-| `reports/gh_ac_reports/latest-gh-ac-report.md` | Generator-owned | `reports/gh_ac_reports/scripts/report.py` and `reports/gh_ac_reports/scripts/test_report.py` | Generated repository-wide latest diagnostic pointer. |
-| `reports/lint_reports/latest-lint-report.md` | Generator-owned | `skills/asd-ste100/scripts/generate_lint_report.py` and `skills/asd-ste100/scripts/test_generate_lint_report.py` | Generated compatibility pointer to the latest repository-wide lint report. |
-| `reports/lint_reports/on_*/README.md` | Embedded contract | `reports/lint_reports/README.md` and `skills/asd-ste100/SKILL.md` | Scope-specific lint evidence navigation. |
-| `reports/lint_reports/on_*/latest-lint-report.md` | Generator-owned | `skills/asd-ste100/scripts/generate_lint_report.py` and `skills/asd-ste100/scripts/test_generate_lint_report.py` | Generated latest report for each lint scope. |
-| `reports/lint_reports/on_*/history/**/*.md` | Generator-owned | `skills/asd-ste100/scripts/generate_lint_report.py` and `skills/asd-ste100/scripts/test_generate_lint_report.py` | Immutable per-run lint reports. |
-| `skills/README.md` | Embedded contract | `skills/README.md` and `skills/SESSION_START.md` | Skill index and activation hierarchy. |
-| `skills/INITIALIZATION_POLICY.md` | Embedded contract | `skills/INITIALIZATION_POLICY.md` and `skills/SESSION_START.md` | Initialization source hierarchy and conditional loading rules. |
-| `skills/SESSION_START.md` | Embedded contract | `skills/SESSION_START.md` and `skills/INITIALIZATION_POLICY.md` | Explicit initialization cues and foundational load sequence. |
-| `skills/*/SKILL.md` | Template required | `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md` | Every Agent Skill definition uses the canonical skill template for new definitions and material rewrites. |
-| `skills/*/README.md` | Lightweight pattern | `skills/README.md` and `skills/asd-ste100/references/repository-writing-policy.md` | Skill-specific navigation and technical documentation. Use type-specific headings; no universal README template. |
-| `skills/*/CHANGELOG.md` | Lightweight pattern | `skills/philosophy-religion-asceticism/CHANGELOG.md` | Concise version headings and change bullets. |
-| `skills/*/assets/*.md` | Exempt | `skills/document-standards/SKILL.md` and `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md` | Canonical template/prompt assets themselves; they are not governed record instances. Their document types are covered by the main inventory. |
-| `skills/*/references/*.md` | Lightweight pattern | `skills/document-standards/SKILL.md` and `skills/asd-ste100/references/repository-writing-policy.md` | Technical references, policies, research notes, and workflow guidance. Use subject-specific structure. |
-| `skills/*/references/**/*.md` | Lightweight pattern | `skills/document-standards/SKILL.md` and `skills/drawing/references/patterns/README.md` | Nested technical references and drawing-pattern documentation. |
-| `skills/*/examples/*.md` | Exempt | `skills/asd-ste100/SKILL.md` | Worked examples and edge-case fixtures; preserve their example-specific form. |
-| `workspace/README.md` | Embedded contract | `workspace/README.md` and `skills/the-worker/SKILL.md` | Workspace navigation and operating rules. |
-| `workspace/task_board.md` | Embedded contract | `workspace/task_board.md` and `skills/the-worker/SKILL.md` | One live task index; The Worker owns its embedded format. |
-| `workspace/discussion.md` | Embedded contract | `workspace/discussion.md` and `skills/the-worker/references/conversation-mode.md` | Shared current-step, open-discussion, and verified-report register. |
-| `workspace/TASK_TEMPLATE.md` | Exempt | `workspace/TASK_TEMPLATE.md` and `skills/the-worker/SKILL.md` | Canonical task template source, not a task instance. |
-| `workspace/tasks/*.md` | Template required | `workspace/TASK_TEMPLATE.md` | Individual task records. |
+Coverage status has two values. `Active` rules must match at least one current in-scope Markdown file. `Reserved` rules must match no current file and reserve a narrow, validated family before its first record exists. When the first record is created, change that rule to `Active` in the same commit. The validator rejects an active rule with no matches and a reserved rule that already matches a document.
+
+| Path pattern | Class | Coverage status | Canonical authority | Coverage rationale |
+|---|---|---|---|---|
+| `drawings/history/20??-??-??-conversation-integrity.md` | Template required | Active | `skills/the-worker/assets/conversation-integrity-template.md` | Historical conversation-integrity records. New records use the current template; preserve old content without mass migration. |
+| `drawings/history/20??-??-??-summary.md` | Template required | Active | `skills/the-worker/assets/session-summary-template.md` | Historical session summaries. New records use the current template; preserve old content without mass migration. |
+| `drawings/history/20??-??-??-image-prompts.md` | Lightweight pattern | Active | `skills/the-worker/references/archive-records-and-image-prompts.md` and `skills/drawing/assets/attempt-template.md` | Legacy chronological prompt logs. Do not create new logs; new attempts use one canonical attempt record each. |
+| `drawings/history/conversation-*.md` | Lightweight pattern | Active | `skills/the-worker/references/archive-records-and-image-prompts.md` and `skills/the-worker/assets/conversation-integrity-template.md` | Historical archive indexes, transcript segments, and curated chronicles. They are legacy navigation/source records, not a new recurring document type. New session archives use the conversation-integrity template. |
+| `drawings/history/cozy-bedroom-*.md` | Lightweight pattern | Active | `skills/the-worker/references/archive-records-and-image-prompts.md` and `skills/drawing/assets/attempt-template.md` | Legacy standalone prompt and attempt notes. Preserve as historical records; new drawing work uses the current attempt template. |
+| `drawings/history/failed-prompts.md` | Lightweight pattern | Active | `skills/drawing/SKILL.md` and `skills/drawing/references/patterns/README.md` | Historical navigation index only; not a template for new attempts. |
+| `drawings/history/successful-prompts.md` | Lightweight pattern | Active | `skills/drawing/SKILL.md` and `skills/drawing/references/patterns/README.md` | Historical navigation index only; not a template for new attempts. |
+| `drawings/20??-??-??/README.md` | Template required | Active | `skills/drawing/assets/daily-index-template.md` | Daily drawing indexes. Use the canonical six-field index for new dates and material revisions. |
+| `drawings/20??-??-??/attempt-*.md` | Template required | Active | `skills/drawing/assets/attempt-template.md` | One record per drawing attempt. Preserve legacy attempts without mass migration. |
+| `drawings/20??-??-??/session-*-brief.md` | Template required | Active | `skills/the-worker/assets/session-brief-template.md` | One opening brief per distinct drawing session. |
+| `drawings/2026-11-19/TODO.md` | Exempt | Active | `skills/drawing/SKILL.md` | One-off project TODO; not a recurring record type. |
+| `drawings/2026-11-20/samantha-visual-drive.md` | Exempt | Active | `skills/drawing/SKILL.md` | One-off creative visual reference; preserve its project-specific form. |
+| `drawings/2026-11-20/scenario-direction.md` | Exempt | Active | `skills/drawing/SKILL.md` | One-off film-grounded creative direction; do not constrain it with a reusable template. |
+| `images/README.md` | Embedded contract | Active | `images/README.md` and `skills/the-worker/SKILL.md` | Image storage, original-master retention, WebP derivatives, and repository delivery rules. |
+| `images/takeout/README.md` | Embedded contract | Active | `images/takeout/README.md` and `skills/the-worker/scripts/process_takeout.py` | Takeout intake and processing procedure; the processor owns the YAML/CSV field contract. |
+| `novels/*.md` | Embedded contract | Active | `novels/README.md` and `novels/WORKFLOW.md` | Novel root navigation and project-wide narrative, canon, status, and versioning rules. |
+| `novels/templates/*.md` | Exempt | Active | `novels/templates/scene-v1.1.md` | Canonical template source files, not authored novel records. Individual document types are catalogued separately. |
+| `novels/*/novel.md` | Template required | Active | `novels/templates/novel-v1.1.md` | Novel foundation records. |
+| `novels/*/open-discussion.md` | Template required | Active | `novels/templates/open-discussion-v1.1.md` | Per-novel open-discussion and approved-decision register. |
+| `novels/*/planning/*.md` | Template required | Active | `novels/templates/development-outline-v1.1.md` | Focused novel planning and development outlines. Preserve existing topic-specific legacy structures until material revision. |
+| `novels/*/*/arc.md` | Template required | Active | `novels/templates/arc-v1.1.md` | Story arc records. |
+| `novels/*/*/Scene-*/scene.md` | Template required | Active | `novels/templates/scene-v1.1.md` | Scene records. Creative prose remains unconstrained by prose-style templates. |
+| `novels/*/*/Scene-*/illustrations/illustration-*.md` | Template required | Active | `novels/templates/illustration-note-v1.1.md` and `novels/templates/illustration-prompt-v1.1.md` | Novel illustration notes and scene-local prompt/attempt records. Choose the matching type-specific template. |
+| `reports/README.md` | Embedded contract | Active | `reports/README.md` and `reports/triage/README.md` | Central report navigation and family ownership. |
+| `reports/**/README.md` | Embedded contract | Active | `reports/gh_ac_reports/README.md` and `reports/lint_reports/README.md` | Report-family guides and generated-report review procedures. |
+| `reports/gh_ac_reports/assets/report-template.md` | Generator-owned | Active | `reports/gh_ac_reports/scripts/report.py` and `reports/gh_ac_reports/scripts/test_report.py` | Reporter-owned rendering asset; update with generator and regression tests. |
+| `reports/gh_ac_reports/history/**/*.md` | Generator-owned | Active | `reports/gh_ac_reports/scripts/report.py` and `reports/gh_ac_reports/scripts/test_report.py` | Immutable per-run Markdown diagnostic captures. |
+| `reports/gh_ac_reports/by_workflow/*/latest-report.md` | Generator-owned | Active | `reports/gh_ac_reports/scripts/report.py` and `reports/gh_ac_reports/scripts/test_report.py` | Generated workflow-specific latest pointers. |
+| `reports/gh_ac_reports/latest-gh-ac-report.md` | Generator-owned | Active | `reports/gh_ac_reports/scripts/report.py` and `reports/gh_ac_reports/scripts/test_report.py` | Generated repository-wide latest diagnostic pointer. |
+| `reports/lint_reports/latest-lint-report.md` | Generator-owned | Active | `skills/asd-ste100/scripts/generate_lint_report.py` and `skills/asd-ste100/scripts/test_generate_lint_report.py` | Generated compatibility pointer to the latest repository-wide lint report. |
+| `reports/lint_reports/on_*/README.md` | Embedded contract | Active | `reports/lint_reports/README.md` and `skills/asd-ste100/SKILL.md` | Scope-specific lint evidence navigation. |
+| `reports/lint_reports/on_*/latest-lint-report.md` | Generator-owned | Active | `skills/asd-ste100/scripts/generate_lint_report.py` and `skills/asd-ste100/scripts/test_generate_lint_report.py` | Generated latest report for each lint scope. |
+| `reports/lint_reports/on_*/history/**/*.md` | Generator-owned | Active | `skills/asd-ste100/scripts/generate_lint_report.py` and `skills/asd-ste100/scripts/test_generate_lint_report.py` | Immutable per-run lint reports. |
+| `skills/README.md` | Embedded contract | Active | `skills/README.md` and `skills/SESSION_START.md` | Skill index and activation hierarchy. |
+| `skills/INITIALIZATION_POLICY.md` | Embedded contract | Active | `skills/INITIALIZATION_POLICY.md` and `skills/SESSION_START.md` | Initialization source hierarchy and conditional loading rules. |
+| `skills/SESSION_START.md` | Embedded contract | Active | `skills/SESSION_START.md` and `skills/INITIALIZATION_POLICY.md` | Explicit initialization cues and foundational load sequence. |
+| `skills/*/SKILL.md` | Template required | Active | `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md` | Every Agent Skill definition uses the canonical skill template for new definitions and material rewrites. |
+| `skills/*/README.md` | Lightweight pattern | Active | `skills/README.md` and `skills/asd-ste100/references/repository-writing-policy.md` | Skill-specific navigation and technical documentation. Use type-specific headings; no universal README template. |
+| `skills/*/CHANGELOG.md` | Lightweight pattern | Active | `skills/philosophy-religion-asceticism/CHANGELOG.md` | Concise version headings and change bullets. |
+| `skills/*/assets/*.md` | Exempt | Active | `skills/document-standards/SKILL.md` and `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md` | Canonical template/prompt assets themselves; they are not governed record instances. Their document types are covered by the main inventory. |
+| `skills/*/references/*.md` | Lightweight pattern | Active | `skills/document-standards/SKILL.md` and `skills/asd-ste100/references/repository-writing-policy.md` | Technical references, policies, research notes, and workflow guidance. Use subject-specific structure. |
+| `skills/*/references/**/*.md` | Lightweight pattern | Active | `skills/document-standards/SKILL.md` and `skills/drawing/references/patterns/README.md` | Nested technical references and drawing-pattern documentation. |
+| `skills/*/examples/*.md` | Exempt | Active | `skills/asd-ste100/SKILL.md` | Worked examples and edge-case fixtures; preserve their example-specific form. |
+| `workspace/README.md` | Embedded contract | Active | `workspace/README.md` and `skills/the-worker/SKILL.md` | Workspace navigation and operating rules. |
+| `workspace/task_board.md` | Embedded contract | Active | `workspace/task_board.md` and `skills/the-worker/SKILL.md` | One live task index; The Worker owns its embedded format. |
+| `workspace/discussion.md` | Embedded contract | Active | `workspace/discussion.md` and `skills/the-worker/references/conversation-mode.md` | Shared current-step, open-discussion, and verified-report register. |
+| `workspace/TASK_TEMPLATE.md` | Exempt | Active | `workspace/TASK_TEMPLATE.md` and `skills/the-worker/SKILL.md` | Canonical task template source, not a task instance. |
+| `workspace/tasks/*.md` | Template required | Active | `workspace/TASK_TEMPLATE.md` | Individual task records. |
 
 ## Validation coverage limits
 

@@ -31,6 +31,12 @@ Do not create a separate template when an embedded contract or generator already
 
 The catalog contains a Markdown path-coverage register. The hosted validator checks every Markdown file outside the root master and archive directories against that register. This check classifies paths. It does not prove that a document follows its template or is factually correct.
 
+Coverage rules use two states:
+- **Active:** must match at least one current in-scope Markdown file.
+- **Reserved:** must match no current file. It records a validated, narrow family before its first record exists.
+
+When the first document in a reserved family is created, change its rule to Active in the same commit. The validator rejects stale Active rules and Reserved rules that already match documents.
+
 For JSON, YAML, CSV, and other structured files, use the exact schema, processor, generator, and tests listed in the catalog.
 
 ## Authoring transaction
@@ -41,7 +47,8 @@ Before creating, moving, renaming, or materially revising a document:
 2. Match Markdown files to a narrow path rule. Match structured files to their catalogued schema or generator.
 3. Read the document-type row and the owner's current instructions.
 4. Retrieve the exact template, schema, or embedded contract and its relevant tests.
-5. If the format or coverage rule is missing, define it first. Place the asset in the owner's canonical directory. Update the catalog, owner workflow, and parent index. Commit and read back these changes before editing the target.
+5. If the format or coverage rule is missing, define it first. Place the asset in the owner's canonical directory. Update the catalog, owner workflow, and parent index. For a new Markdown family with no current records, mark its narrow coverage rule Reserved. Commit and read back these changes before creating the first target.
+   When you create that first record, change the rule to Active in the same commit. Use Active for existing families. Never leave a Reserved rule after a matching document exists.
 6. Create or revise the target from the canonical authority. Keep required fields and sections. Include conditional content only when its condition applies. Remove unused placeholders. Do not invent values or approvals.
 7. Update parent indexes and cross-links. Check the document against its format, workflow, and writing or data standard.
 8. Commit and read back every changed path. Run structural validation only through the authorized GitHub-hosted workflow.

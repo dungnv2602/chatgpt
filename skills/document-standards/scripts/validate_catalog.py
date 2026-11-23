@@ -111,7 +111,7 @@ def read_coverage(content: str) -> tuple[list[dict[str, str]], list[str]]:
     if header_index is None:
         return [], ["Markdown inventory coverage has no table."]
 
-    expected = ["Path pattern", "Class", "Canonical authority", "Coverage rationale"]
+    expected = ["Path pattern", "Class", "Coverage status", "Canonical authority", "Coverage rationale"]
     if split_row(lines[header_index]) != expected:
         return [], ["Markdown inventory coverage table has unexpected columns."]
 
@@ -122,9 +122,9 @@ def read_coverage(content: str) -> tuple[list[dict[str, str]], list[str]]:
         cells = split_row(line)
         if is_separator(cells):
             continue
-        if len(cells) != 4:
+        if len(cells) != 5:
             errors.append(
-                f"Line {line_number}: expected 4 Markdown coverage cells, found {len(cells)}."
+                f"Line {line_number}: expected 5 Markdown coverage cells, found {len(cells)}."
             )
             continue
         patterns = re.findall(r"`([^`]+)`", cells[0])
@@ -136,8 +136,9 @@ def read_coverage(content: str) -> tuple[list[dict[str, str]], list[str]]:
         rows.append({
             "pattern": patterns[0],
             "class": cells[1],
-            "canonical": cells[2],
-            "rationale": cells[3],
+            "status": cells[2],
+            "canonical": cells[3],
+            "rationale": cells[4],
             "line": str(line_number),
         })
 
@@ -199,6 +200,12 @@ def validate_markdown_coverage(root: Path, content: str) -> list[str]:
         line = row["line"]
         pattern = row["pattern"]
         class_name = row["class"]
+        coverage_status = row["status"]
+        if coverage_status not in {"Active", "Reserved"}:
+            errors.append(
+                f"Line {line}: unknown Markdown coverage status '{coverage_status}'. "
+                "Use Active or Reserved."
+            )
         if pattern in seen_patterns:
             errors.append(f"Line {line}: duplicate Markdown coverage pattern '{pattern}'.")
         seen_patterns.add(pattern)
@@ -273,9 +280,14 @@ def validate_markdown_coverage(root: Path, content: str) -> list[str]:
 
         path_regex = compile_path_pattern(pattern)
         matches = [path for path in documents if path_regex.fullmatch(path)]
-        if not matches:
+        if coverage_status == "Active" and not matches:
             errors.append(
                 f"Line {line}: Markdown coverage pattern matches no in-scope document: '{pattern}'."
+            )
+        elif coverage_status == "Reserved" and matches:
+            errors.append(
+                f"Line {line}: Reserved Markdown coverage pattern already matches "
+                f"{len(matches)} in-scope document(s): '{pattern}'. Change it to Active."
             )
         compiled.append((path_regex, class_name))
 

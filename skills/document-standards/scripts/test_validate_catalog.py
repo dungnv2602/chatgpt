@@ -47,15 +47,15 @@ class CatalogValidatorTests(unittest.TestCase):
     def set_catalog(self, rows, extra_coverage=()):
         coverage = (
             "\n## Markdown inventory coverage\n\n"
-            "| Path pattern | Class | Canonical authority | Coverage rationale |\n"
+            "| Path pattern | Class | Coverage status | Canonical authority | Coverage rationale |\n"
             "|---|---|---|---|\n"
-            "| `skills/**/*.md` | Lightweight pattern | "
+            "| `skills/**/*.md` | Lightweight pattern | Active |"
             "`skills/example/SKILL.md` | Skill fixture. |\n"
-            "| `workspace/*.md` | Embedded contract | "
+            "| `workspace/*.md` | Embedded contract | Active |"
             "`workspace/example.md` and `skills/example/SKILL.md` | Workspace fixture. |\n"
-            "| `images/**/*.md` | Embedded contract | "
+            "| `images/**/*.md` | Embedded contract | Active |"
             "`images/example/README.md` and `skills/example/SKILL.md` | Image fixture. |\n"
-            "| `novels/*.md` | Embedded contract | "
+            "| `novels/*.md` | Embedded contract | Active |"
             "`novels/WORKFLOW.md` and `skills/example/SKILL.md` | Novel fixture. |\n"
             + "\n".join(extra_coverage)
             + ("\n" if extra_coverage else "")
@@ -112,7 +112,7 @@ class CatalogValidatorTests(unittest.TestCase):
             "| Workspace task | Template required | "
             "`workspace/TASK_TEMPLATE.md` | Shared workspace template. |",
         ], [
-            "| `novels/templates/*.md` | Exempt | "
+            "| `novels/templates/*.md` | Exempt | Active |"
             "`novels/WORKFLOW.md` | Template-source fixture. |",
         ])
         errors, row_count, _ = validate_catalog(self.root, self.catalog)
@@ -173,11 +173,11 @@ class CatalogValidatorTests(unittest.TestCase):
             "`.github/workflows/ste-lint-full-docs.yml` | External Actions schema. |",
         ]
         self.set_catalog(rows, [
-            "| `reports/lint_reports/*.md` | Lightweight pattern | "
+            "| `reports/lint_reports/*.md` | Lightweight pattern | Active |"
             "`reports/lint_reports/latest-lint-report.md` | Lint fixture. |",
-            "| `reports/gh_ac_reports/*.md` | Lightweight pattern | "
+            "| `reports/gh_ac_reports/*.md` | Lightweight pattern | Active |"
             "`reports/gh_ac_reports/README.md` | Actions fixture. |",
-            "| `reports/triage/*.md` | Lightweight pattern | "
+            "| `reports/triage/*.md` | Lightweight pattern | Active |"
             "`reports/triage/README.md` | Ledger fixture. |",
         ])
         errors, row_count, _ = validate_catalog(self.root, self.catalog)
@@ -233,7 +233,7 @@ class CatalogValidatorTests(unittest.TestCase):
         prefix = content.split("## Markdown inventory coverage", 1)[0]
         coverage = (
             "## Markdown inventory coverage\n\n"
-            "| Path pattern | Class | Canonical authority | Coverage rationale |\n"
+            "| Path pattern | Class | Coverage status | Canonical authority | Coverage rationale |\n"
             "|---|---|---|---|\n"
             + "\n".join(rows)
             + "\n"
@@ -243,7 +243,7 @@ class CatalogValidatorTests(unittest.TestCase):
     def test_uncovered_markdown_document_fails(self):
         self.set_catalog(self.valid_rows())
         self.replace_coverage([
-            "| `workspace/*.md` | Embedded contract | "
+            "| `workspace/*.md` | Embedded contract | Active |"
             "`workspace/example.md` and `skills/example/SKILL.md` | Narrow fixture. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
@@ -259,16 +259,50 @@ class CatalogValidatorTests(unittest.TestCase):
     def test_coverage_pattern_must_match_a_current_document(self):
         self.set_catalog(self.valid_rows())
         self.replace_coverage([
-            "| `workspace/not-present-*.md` | Lightweight pattern | "
+            "| `workspace/not-present-*.md` | Lightweight pattern | Active |"
             "`workspace/example.md` | Stale pattern. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("matches no in-scope document" in error for error in errors))
 
+    def test_reserved_coverage_pattern_allows_new_family_before_first_record(self):
+        self.set_catalog(self.valid_rows(), [
+            "| `drawings/new-family/*.md` | Template required | Reserved | "
+            "`skills/example/assets/template.md` | New family is registered before its first record. |",
+        ])
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+
+    def test_reserved_coverage_pattern_must_activate_with_first_record(self):
+        self.write("drawings/new-family/first-record.md")
+        self.set_catalog(self.valid_rows(), [
+            "| `drawings/new-family/*.md` | Template required | Reserved | "
+            "`skills/example/assets/template.md` | First record now exists. |",
+        ])
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("Reserved Markdown coverage pattern already matches" in error for error in errors))
+
+    def test_reserved_coverage_pattern_passes_after_activation(self):
+        self.write("drawings/new-family/first-record.md")
+        self.set_catalog(self.valid_rows(), [
+            "| `drawings/new-family/*.md` | Template required | Active | "
+            "`skills/example/assets/template.md` | First record now exists. |",
+        ])
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+
+    def test_unknown_coverage_status_fails(self):
+        self.set_catalog(self.valid_rows(), [
+            "| `drawings/new-family/*.md` | Template required | Pending | "
+            "`skills/example/assets/template.md` | Invalid state. |",
+        ])
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("unknown Markdown coverage status" in error for error in errors))
+
     def test_coverage_pattern_rejects_path_traversal(self):
         self.set_catalog(self.valid_rows())
         self.replace_coverage([
-            "| `workspace/../*.md` | Lightweight pattern | "
+            "| `workspace/../*.md` | Lightweight pattern | Active |"
             "`workspace/example.md` | Unsafe pattern. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
