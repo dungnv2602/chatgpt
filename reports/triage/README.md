@@ -7,6 +7,8 @@ The ledger tracks distinct lint and GitHub Actions issues across report runs. It
 - Lint findings use the report's stable \`fingerprint\`. The same fingerprint in both lint scopes maps to one finding.
 - GitHub Actions findings use workflow ID and path, job name, step name, category, and normalized diagnostic text.
 - The generator normalizes commit hashes, run IDs, timestamps, and whitespace in diagnostic signatures.
+- When a report summary contains a runner command echo, the generator uses error lines from that exact job step log.
+- The generator ignores lint workflow steps that only re-emit an earlier failure as the workflow conclusion.
 - A workflow conclusion alone does not create a finding. The report must contain a specific classified issue.
 - Only complete post-run Actions reports contribute findings. Pre-finalizer reports do not create issues.
 - Cancelled, skipped, neutral, queued, in-progress, and unavailable states do not create findings by themselves.

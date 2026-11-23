@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "updated_at_utc": "2026-11-23T08:45:52Z",
+  "updated_at_utc": "2026-11-23T08:31:00Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T08:15:48Z",
     "processed_reports": [
@@ -66,7 +66,6 @@
       "reports/gh_ac_reports/history/424715662/45132710256-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424715662/45134814096-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45134814096-attempt-1-pre_finalizer/report.json",
-      "reports/gh_ac_reports/history/424715662/45138510922-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45138510922-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424743410/45122348866-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424743410/45122653712-attempt-1-post_run/report.json",
@@ -213,56 +212,5 @@
       "reports/lint_reports/on_repo/history/45128445227-attempt-1/report.json"
     ]
   },
-  "findings": [
-    {
-      "finding_id": "gha-86b12a357f3f3d70e6a78aad",
-      "source_family": "github_actions",
-      "category": "publication_or_push",
-      "title": "STE Lint Changed Documentation / Lint changed Markdown files and publish detailed evidence / Generate and publish changed-document lint evidence: publication_or_push — <timestamp> ^[[36;1m \"status\": \"passed\" if exit_code == 0 else \"failed\",",
-      "status": "open",
-      "severity": "high",
-      "owner": null,
-      "first_seen_utc": "2026-11-23T08:27:53Z",
-      "last_seen_utc": "2026-11-23T08:27:53Z",
-      "occurrence_count": 1,
-      "evidence": [
-        {
-          "report_path": "reports/gh_ac_reports/history/424715662/45138510922-attempt-1-post_run/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45138510922",
-          "observed_at_utc": "2026-11-23T08:27:53Z",
-          "note": "Lint changed Markdown files and publish detailed evidence / Generate and publish changed-document lint evidence",
-          "observation_id": "github_actions:424715662:45138510922:1"
-        }
-      ],
-      "resolution": null,
-      "resolution_history": [],
-      "duplicate_of": null,
-      "accepted_risk": null
-    },
-    {
-      "finding_id": "gha-9baaefbc6c2ee372426269a7",
-      "source_family": "github_actions",
-      "category": "validation_or_test",
-      "title": "STE Lint Changed Documentation / Lint changed Markdown files and publish detailed evidence / Preserve lint failure as workflow conclusion: validation_or_test — <timestamp> ^[[36;1m echo \"::error::changed-document lint failed. see reports/li",
-      "status": "open",
-      "severity": "medium",
-      "owner": null,
-      "first_seen_utc": "2026-11-23T08:27:53Z",
-      "last_seen_utc": "2026-11-23T08:27:53Z",
-      "occurrence_count": 1,
-      "evidence": [
-        {
-          "report_path": "reports/gh_ac_reports/history/424715662/45138510922-attempt-1-post_run/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45138510922",
-          "observed_at_utc": "2026-11-23T08:27:53Z",
-          "note": "Lint changed Markdown files and publish detailed evidence / Preserve lint failure as workflow conclusion",
-          "observation_id": "github_actions:424715662:45138510922:1"
-        }
-      ],
-      "resolution": null,
-      "resolution_history": [],
-      "duplicate_of": null,
-      "accepted_risk": null
-    }
-  ]
+  "findings": []
 }
