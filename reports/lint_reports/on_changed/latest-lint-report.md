@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#547](https://github.com/dungnv2602/chatgpt/actions/runs/45181946597)
-- **Run ID / attempt:** 45181946597 / 1
+- **Run:** [#548](https://github.com/dungnv2602/chatgpt/actions/runs/45182710152)
+- **Run ID / attempt:** 45182710152 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 3d6c4fe8794c60a1573dfdbe0856cfbafd94ed9f
+- **Branch / commit:** gpt / 80f213c600d70b55e60f999edaf942da0f77ab5a
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 3d6c4fe8794c60a1573dfdbe0856cfbafd94ed9f
-- **Generated (UTC):** 2026-11-23T13:15:36.672244+00:00
+- **Linter source SHA:** 80f213c600d70b55e60f999edaf942da0f77ab5a
+- **Generated (UTC):** 2026-11-23T13:19:36.676935+00:00
 
 ## 1. Executive summary
 
@@ -22,8 +22,8 @@
 | Total findings | 370 |
 | Hard findings | 63 |
 | Advisory findings | 307 |
-| New findings | 1 |
-| Recurring findings | 369 |
+| New findings | 0 |
+| Recurring findings | 370 |
 | Resolved findings | 0 |
 | Failed workflow checks | 0 |
 
@@ -188,7 +188,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.326s
+Ran 4 tests in 0.320s
 
 OK
 ~~~
@@ -221,7 +221,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 1039 active Markdown files (1109 available as link targets) and 318 local Markdown links.
+Scanned 1049 active Markdown files (1119 available as link targets) and 318 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -231,10 +231,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:246:176 · **new** · fingerprint: bb7ba68bed0f5ce8ed1acfa4
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
+None.
 
 ### Recurring findings
 
@@ -602,6 +599,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is known
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:246:176 · **recurring** · fingerprint: bb7ba68bed0f5ce8ed1acfa4
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
 - **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:260:44 · **recurring** · fingerprint: 080078c5d205e0780e807349
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -2359,7 +2360,7 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is known
 
-- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:246:176 · **new** · fingerprint: bb7ba68bed0f5ce8ed1acfa4
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:246:176 · **recurring** · fingerprint: bb7ba68bed0f5ce8ed1acfa4
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is required
