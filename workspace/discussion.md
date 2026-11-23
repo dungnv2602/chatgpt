@@ -1,5 +1,6 @@
 ## Current Step
 
+- **2026-11-23 14:50 UTC — Session startup:** Foundational initialization started on branch `gpt`. Resume the in-progress workflow/documentation formalization work from the current task ledger and preserve the recorded validation restrictions.
 - **2026-11-23 14:30 UTC — Record hosted validation and final disposition:** Document Standards #160 and Diagnostics #377 passed. STE Lint Changed #552 was cancelled, so style-lint validation remains unverified. The final non-truncated tree contains 1,114 in-scope Markdown documents, all covered by 48 Active rules. Keep this task In Progress; do not poll, dispatch, archive, or modify excluded paths.
 
 ## Open Discussions
