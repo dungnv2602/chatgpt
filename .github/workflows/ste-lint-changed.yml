@@ -41,6 +41,7 @@ jobs:
         run: |
           set -euo pipefail
           if ! latest_run=$(gh run list \
+            --repo "$GITHUB_REPOSITORY" \
             --workflow ".github/workflows/ste-lint-changed.yml" \
             --branch "$GITHUB_REF_NAME" \
             --event push \
@@ -71,6 +72,7 @@ jobs:
         run: |
           set -euo pipefail
           last_success=$(gh run list \
+            --repo "$GITHUB_REPOSITORY" \
             --workflow .github/workflows/ste-lint-changed.yml \
             --branch "$GITHUB_REF_NAME" \
             --event push \
