@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 14:00 UTC — Review workflow documentation:** The inventory is fully covered, and the new-family bootstrap deadlock is recorded in the task. Next read all in-scope README files and the image-editing and archive handoff references. Preserve historical daily indexes and all excluded paths.
+- **2026-11-23 14:06 UTC — Trace the remaining workflow handoffs:** All 17 eligible README files have been reviewed. The three historical daily drawing indexes remain untouched. Next inspect canonical image-operation, archive, and publication references plus the diagnostics, lint, ledger, and Document Standards workflow triggers. Check for duplicated ownership, stale paths, and push-trigger loops.
 
 ## Open Discussions
 
