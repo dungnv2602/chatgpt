@@ -36,15 +36,14 @@ jobs:
 
       - name: Validate the runtime allowlist
         env:
-          FILE_ALLOWLIST: \${{ inputs.files }}
-          CANDIDATES_FILE: \${{ runner.temp }}/unclassified-takeout-files.nul
+          FILE_ALLOWLIST: ${{ inputs.files }}
+          CANDIDATES_FILE: ${{ runner.temp }}/unclassified-takeout-files.nul
         shell: bash
         run: |
           set -euo pipefail
           python3 <<'PY'
           import os
           import pathlib
-          import shlex
           import subprocess
           import yaml
 
@@ -141,12 +140,12 @@ jobs:
 
       - name: Convert and verify WebP derivatives
         env:
-          CANDIDATES_FILE: \${{ runner.temp }}/unclassified-takeout-files.nul
+          CANDIDATES_FILE: ${{ runner.temp }}/unclassified-takeout-files.nul
         shell: bash
         run: |
           set -euo pipefail
           mapfile -d '' -t files < "$CANDIDATES_FILE"
-          test "\${#files[@]}" -gt 0
+          test "${#files[@]}" -gt 0
 
           attempt=1
           while (( attempt <= 999 )); do
@@ -159,15 +158,16 @@ jobs:
           done
           test "$attempt" -le 999
           mkdir -p "$output_dir"
+          echo "OUTPUT_DIR=$output_dir" >> "$GITHUB_ENV"
 
-          for name in "\${files[@]}"; do
+          for name in "${files[@]}"; do
             source="images/takeout/$name"
             target="$output_dir/$name.webp"
             test -s "$source"
             test ! -e "$target"
             source_hash="$(sha256sum "$source" | cut -d ' ' -f 1)"
 
-            case "\${name,,}" in
+            case "${name,,}" in
               *.png)
                 cwebp -quiet -lossless -q 100 -m 6 -exact -metadata icc "$source" -o "$target"
                 ;;
@@ -202,7 +202,8 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- images/takeout/webp/unclassified
+          : "${OUTPUT_DIR:?Output directory was not set by the conversion step}"
+          git add -- "$OUTPUT_DIR"
           git diff --cached --quiet && { echo "No new derivatives to commit."; exit 0; }
           git commit -m "chore(images): convert unclassified takeout images to WebP"
           git push origin HEAD:refs/heads/gpt
