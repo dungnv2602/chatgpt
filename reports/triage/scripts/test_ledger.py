@@ -103,6 +103,9 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(len(task_files), 1)
         self.assertIn("- **Status:** Proposed", task_files[0].read_text(encoding="utf-8"))
         self.assertIn(finding["finding_id"], task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("- **Template version:** 1.2", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("- **Standing instruction:**", task_files[0].read_text(encoding="utf-8"))
+        self.assertNotIn("[Preserve relevant user clarifications", task_files[0].read_text(encoding="utf-8"))
         self.assertIn(f"| {finding['task_refs'][0]} |", (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8"))
         second = LEDGER.ingest(self.root, now="2026-11-23T07:13:00Z")
         self.assertFalse(second["changed"])
@@ -428,6 +431,9 @@ class LedgerTests(unittest.TestCase):
         standards = (root / ".github/workflows/validate-document-standards.yml").read_text(encoding="utf-8")
         lint_changed = (root / ".github/workflows/ste-lint-changed.yml").read_text(encoding="utf-8")
         self.assertIn("Update central CI issue ledger", action)
+        self.assertNotIn("continue-on-error: true", action)
+        for relative in (".github/workflows/ste-lint-changed.yml", ".github/workflows/ste-lint-full-docs.yml", ".github/workflows/validate-document-standards.yml"):
+            self.assertIn("    continue-on-error: true", (root / relative).read_text(encoding="utf-8"), relative)
         publish_paths = "git add -A -- reports/gh_ac_reports/ reports/triage/ workspace/tasks/ workspace/task_board.md"
         self.assertIn(publish_paths, action)
         self.assertIn(publish_paths, sweep)

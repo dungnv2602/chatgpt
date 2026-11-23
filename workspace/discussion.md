@@ -1,7 +1,9 @@
 ## Current Step
 
-_No active step._
+**20261123-225745** — [Repair CI ledger task generation workflow](tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md)
 ## Open Discussions
+
+- **2026-11-24 — CI Ledger task generation:** Regression tests exposed a renderer mismatch with Task Template v1.2. The composite capture action also suppressed step failures. Repair the renderer, preserve job-level non-blocking behavior, expose step failures, and verify hosted ingestion. Preserve the existing ledger and its processed-report state. Do not bulk-import historical reports.
 
 - **2026-11-24 — Image takeout conversion:** Seven images remain unclassified. The user approved conversion-only WebP output, user-managed relocation, and index edits only on explicit request. The workflow now accepts an exact newline-separated runtime allowlist at manual dispatch; it is not hard-coded to the current seven files. The assistant must review provenance before supplying filenames. The original PNGs remain in intake and `HANDOFF.yml` remains Draft. No conversion Actions were dispatched or polled. The user will relocate derivatives. Do not edit indexes without an explicit request.
 
@@ -34,3 +36,5 @@ _No active step._
 - **2026-11-24 — Runtime allowlist generalized:** Replaced the hard-coded seven-filename list with a required newline-separated `workflow_dispatch` input. The workflow accepts exact top-level static PNG/JPG/JPEG files, validates the current hand-off boundary, preserves originals, and stages only verified derivatives. The Worker, provenance reference, and both image-intake READMEs now describe evidence-first classification and the runtime allowlist. No Actions run was dispatched or polled.
 
 - **2026-11-24 — Runtime allowlist implementation verified:** Read back all seven changed paths. General runtime input and conversion guards are present. Commits: [a4b29bd](https://github.com/dungnv2602/chatgpt/commit/a4b29bd7b389f775baef721500fe4d7d515e5e31) and [8271088](https://github.com/dungnv2602/chatgpt/commit/827108805867e255452e3b45d666be9ed141abee). No Actions run was dispatched or polled; no conversion result is claimed.
+
+- **2026-11-24 — CI Ledger task-generation repair:** The failed diagnostics sweep logs show ten ledger-test errors caused by the stale Subsequent Instructions placeholder in `reports/triage/scripts/ledger.py`. The task template now uses the v1.2 “user clarifications” wording. The capture action's step-level error suppression is being removed while caller jobs remain non-blocking. The 5.5 MB ledger is preserved. Hosted validation and confirmation of task publication remain pending.

@@ -15,7 +15,7 @@ Evidence records contain the immutable report path, run URL, observation time, a
 
 ## Ingestion
 
-The generator reads paths from the lint and Actions indexes. It does not scan history directories or modify source reports. The capture action ingests lint reports; the diagnostics sweep ingests complete Actions reports. Both use the non-cancelling `gh-ac-report-writer` concurrency group.
+The generator reads paths from the lint and Actions indexes. It does not scan history directories or modify source reports. The capture action ingests lint reports; the diagnostics sweep ingests complete Actions reports. Both use the non-cancelling `gh-ac-report-writer` concurrency group. The caller's diagnostics job remains job-level `continue-on-error: true` so reporting cannot change the source workflow result. The composite action does not suppress individual test, capture, ingestion, or publication step failures. Its `if: always()` steps continue the handoff while preserving failed step outcomes for diagnosis.
 
 The ledger uses schema `1.3.0`. GitHub-hosted Actions runs the generator and regression tests. Ingestion is idempotent and uses atomic replacement. It preserves human-managed status, owner, severity, resolution, accepted risk, and duplicate links. It creates task records only from eligible actionable findings and maintains `task_refs`. Initial bootstrap marks indexed reports as processed; it does not import historical report findings. Schema migration adds stable group IDs to legacy findings. It does not create tasks for the historical backlog. Task creation is limited to newly created findings from a newly ingested report. Reopened resolved findings may create a follow-up task. A later observation refreshes an existing task only when the finding is already linked or an active task exists for its group.
 
@@ -62,3 +62,5 @@ When a user-authorized reporting-period reset archives old reports, keep every c
 - Generator: `scripts/ledger.py`.
 - Regression tests: `scripts/test_ledger.py`.
 - Hosted execution: GitHub Actions. Do not run repository scripts locally.
+- Task rendering regression: `test_lint_fingerprint_deduplicates_across_scopes_and_is_idempotent` renders a task from the current canonical template and checks its versioned metadata. Keep renderer placeholders aligned with `workspace/TASK_TEMPLATE.md`.
+- Failure visibility: keep source-workflow diagnostics jobs non-blocking at job level, but do not set step-level `continue-on-error` inside the composite capture action.
