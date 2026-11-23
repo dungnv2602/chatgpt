@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#549](https://github.com/dungnv2602/chatgpt/actions/runs/45191236634)
-- **Run ID / attempt:** 45191236634 / 1
+- **Run:** [#550](https://github.com/dungnv2602/chatgpt/actions/runs/45192047948)
+- **Run ID / attempt:** 45192047948 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 852beb643a188c3edfe1e0e9c94d6c6623664fd9
+- **Branch / commit:** gpt / 09a5852353bb5b2326c2efc60c8e1bd1afc65391
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 852beb643a188c3edfe1e0e9c94d6c6623664fd9
-- **Generated (UTC):** 2026-11-23T14:10:26.976972+00:00
+- **Linter source SHA:** 09a5852353bb5b2326c2efc60c8e1bd1afc65391
+- **Generated (UTC):** 2026-11-23T14:15:01.865046+00:00
 
 ## 1. Executive summary
 
@@ -22,8 +22,8 @@
 | Total findings | 372 |
 | Hard findings | 63 |
 | Advisory findings | 309 |
-| New findings | 2 |
-| Recurring findings | 370 |
+| New findings | 0 |
+| Recurring findings | 372 |
 | Resolved findings | 0 |
 | Failed workflow checks | 0 |
 
@@ -121,7 +121,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/the-worker/assets/session-brief-template.md | PASS | 0 | 0 | 0 | 288 | 0.0 | 0 |
 | skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md | PASS | 8 | 0 | 7 | 2716 | 0.3 | 0 |
 | skills/drawing/SKILL.md | PASS | 25 | 3 | 24 | 4738 | 0.5 | 0 |
-| skills/document-standards/references/document-type-catalog.md | FAIL | 56 | 27 | 0 | 4096 | 1.4 | 1 |
+| skills/document-standards/references/document-type-catalog.md | FAIL | 56 | 27 | 0 | 4098 | 1.4 | 1 |
 | workspace/task_board.md | PASS | 3 | 0 | 0 | 268 | 1.1 | 0 |
 | skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
 | skills/INITIALIZATION_POLICY.md | PASS | 4 | 2 | 4 | 1474 | 0.3 | 0 |
@@ -188,7 +188,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.314s
+Ran 4 tests in 0.424s
 
 OK
 ~~~
@@ -221,7 +221,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 1060 active Markdown files (1130 available as link targets) and 318 local Markdown links.
+Scanned 1062 active Markdown files (1132 available as link targets) and 318 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -231,14 +231,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:73:241 · **new** · fingerprint: 1ba4a4dabed935af86f226cb
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is created
-- **passive-voice** · skills/document-standards/SKILL.md:38:46 · **new** · fingerprint: f02e1c27fdc79f6921bf2e16
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is created
+None.
 
 ### Recurring findings
 
@@ -1014,7 +1007,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is Closed
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:4:275 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:4:279 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -1090,6 +1083,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:73:241 · **recurring** · fingerprint: 1ba4a4dabed935af86f226cb
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is created
 - **semicolon** · skills/document-standards/references/document-type-catalog.md:77:233 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
@@ -1666,6 +1663,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
   - **Matched text:** Validate
+- **passive-voice** · skills/document-standards/SKILL.md:38:46 · **recurring** · fingerprint: f02e1c27fdc79f6921bf2e16
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is created
 - **passive-voice** · skills/document-standards/SKILL.md:106:229 · **recurring** · fingerprint: 988e824c418cdeb39523dd3c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -3054,12 +3055,12 @@ No STE findings were recorded for this file.
 - **Findings:** 56
 - **Hard findings:** 27
 - **Baseline:** 0
-- **Words:** 4096
+- **Words:** 4098
 - **Findings per 100 words:** 1.4
 
 #### Complete diagnostics
 
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:4:275 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:4:279 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -3154,7 +3155,7 @@ No STE findings were recorded for this file.
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:73:241 · **new** · fingerprint: 1ba4a4dabed935af86f226cb
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:73:241 · **recurring** · fingerprint: 1ba4a4dabed935af86f226cb
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is created
@@ -4074,7 +4075,7 @@ No STE findings were recorded for this file.
   - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
   - **Matched text:** Validate
 
-- **passive-voice** · skills/document-standards/SKILL.md:38:46 · **new** · fingerprint: f02e1c27fdc79f6921bf2e16
+- **passive-voice** · skills/document-standards/SKILL.md:38:46 · **recurring** · fingerprint: f02e1c27fdc79f6921bf2e16
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is created
