@@ -1,5 +1,7 @@
 # Current Step
 
+- **2026-11-23 — Closeout verification:** Board commit `3f700c87bf36475713f5bdb2f02f54dd5543363c` was written after the active task path disappeared. Read back the board, confirm the task appears once in Historical with the exact archive path/commit, verify seven newest entries and empty active sections, recheck archive identity and branch head, then publish the final condensed report.
+
 - **2026-11-23 — Board reconciliation:** The active task path now returns 404. Deletion commit `16dcc76cb6c74351d2b50b541db9b90827456885` changes only that path. Update the board: remove the task from Current Execution, add its Done entry with the exact archive path and archive-introduction commit, and trim Historical to the seven newest entries. No eligible task is queued, so do not invent a replacement.
 
 - **2026-11-23 — Active-record removal:** The final archive copy was created once and read back byte-for-byte. Commit `36b2321c4860f1244e5e5998ea86fe3c5272bb9e` changes only the archive path. Next, delete the active task record using its current blob SHA, then verify the active path is absent and the deletion commit changed only that path. Do not update the board until deletion is confirmed.
