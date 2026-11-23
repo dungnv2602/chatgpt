@@ -40,10 +40,7 @@ jobs:
             exit 1
           fi
 
-      - name: Test indexed retention logic
-        run: python3 .github/scripts/test_cleanup_archive.py
-
-      - name: Delete individually expired indexed records
+      - name: Run self-tests and delete individually expired indexed records
         id: cleanup
         run: python3 .github/scripts/cleanup-archive.py
 
