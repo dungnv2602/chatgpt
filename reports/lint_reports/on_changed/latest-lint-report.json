@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45167810907",
-  "run_number": 492,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45167810907",
+  "run_id": "45168676241",
+  "run_number": 493,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45168676241",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "9001aa1cdedab1ca1c76b8991e9c174cc9dc89a3",
+  "commit_sha": "9f14e14545839e5a21757b6fdad2d68866837971",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T11:46:19.793103+00:00",
+  "generated_at_utc": "2026-11-23T11:50:26.134906+00:00",
   "status": "Failed",
-  "linter_source_sha": "9001aa1cdedab1ca1c76b8991e9c174cc9dc89a3",
+  "linter_source_sha": "9f14e14545839e5a21757b6fdad2d68866837971",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -2433,8 +2433,8 @@
       "count": 3,
       "hard_count": 0,
       "baseline": 0,
-      "words": 266,
-      "per_100_words": 1.1,
+      "words": 254,
+      "per_100_words": 1.2,
       "path": "workspace/task_board.md",
       "exit_code": 0
     },
@@ -6304,7 +6304,7 @@
       "match": "28 words",
       "message": "Sentence has 28 words (cap 25). Split it.",
       "fingerprint": "f40cb6e7d22052c296f243c7",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/drawing/assets/daily-index-template.md",
@@ -7503,7 +7503,7 @@
       "match": "was retrieved",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "1b7d224401886a9004746406",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/SESSION_START.md",
@@ -7536,7 +7536,7 @@
       "match": "Check",
       "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
       "fingerprint": "1fb1875ac91e733b353da2ae",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/SESSION_START.md",
@@ -7547,7 +7547,7 @@
       "match": "is given",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "bafc7f56ccc1107f8e988e9c",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/SESSION_START.md",
@@ -7558,7 +7558,7 @@
       "match": "been verified",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "6dd94c7c1b750dbf34848556",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/SESSION_START.md",
@@ -7569,7 +7569,7 @@
       "match": "is given",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "bafc7f56ccc1107f8e988e9c",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/SESSION_START.md",
@@ -7580,7 +7580,7 @@
       "match": "have passed",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "ea47a38e16cc241e4c1d2a58",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/drawing/references/patterns/README.md",
@@ -7594,21 +7594,9 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 7,
-  "recurring_findings": 341,
-  "resolved_findings": [
-    {
-      "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 157,
-      "col": 107,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is required",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "8b13326f16f49a0b949c0dd4",
-      "comparison": "resolved"
-    }
-  ],
+  "new_findings": 0,
+  "recurring_findings": 348,
+  "resolved_findings": [],
   "checks": [
     {
       "name": "Wrapper shell syntax",
@@ -7626,7 +7614,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.344s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.411s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -7644,7 +7632,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 758 active Markdown files (825 available as link targets) and 342 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 805 active Markdown files (872 available as link targets) and 341 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
