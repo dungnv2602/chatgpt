@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 13:36 UTC — Begin session brief template review:** Review the single hard finding in `skills/session-archiving/assets/session-brief-template.md` against the archive skill and catalog contract. Preserve the original user wording and open-field semantics.
+- **2026-11-23 13:40 UTC — Separate session brief metadata fields:** The long-sentence finding combines five metadata labels in one paragraph. Separate the fields with blank lines. Preserve every field, value, and open-state instruction.
 
 ## Open Discussions
 
