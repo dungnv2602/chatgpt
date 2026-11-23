@@ -32,6 +32,11 @@ Then, suggest me another approach to handle these errors from those reports, be 
 - **2026-11-23:** The user requested removal of mandatory CI repair steps that delay handling new user orders.
 - **2026-11-23:** Preserve the existing lint-reporting workflow and lint thresholds. Do not merge lint diagnostics into a less specific report or weaken the existing validation gate.
 
+## 2.1. Additional approved report layout and retention
+
+- **2026-11-23:** User approved moving both report families under root `reports/`, with `reports/triage/` as the shared issue ledger.
+- **2026-11-23:** User directed resolved report files to `archive/reports/`, using the existing shared archive-retention workflow and 90-day individual-file retention. Do not create `reports/archive/` or a separate report-retention workflow.
+
 ## 3. Objective
 
 Add a reliable, detailed reporting system for GitHub Actions failures outside the existing lint-specific reports. Cover workflow runs, jobs, steps, logs, annotations, artifacts, and publication failures where GitHub exposes the evidence. Retire mandatory pre-prompt and post-initialization CI repair gates so CI failures do not delay unrelated user requests. Recommend a more effective report-driven remediation process.
@@ -140,6 +145,10 @@ The repository default branch is `main`, while this authorized task is restricte
 3. Triage source failures using the reports. Repair only findings that are part of a user's current task.
 
 ## 10. References
+
+- `reports/README.md`
+- `reports/triage/README.md`
+- `archive/README.md`
 
 - `lint_reports/README.md`
 - `lint_reports/on_repo/`
