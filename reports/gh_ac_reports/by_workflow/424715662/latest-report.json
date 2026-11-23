@@ -11,30 +11,30 @@
     "event": "push",
     "branch": "gpt",
     "head_sha": "74d8bf054c149c1858242a93d90293a3dd9bcd20",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "cancelled",
     "created_at": "2026-11-23T09:25:15Z",
     "run_started_at": "2026-11-23T09:25:15Z",
-    "updated_at": "2026-11-23T09:25:56Z",
+    "updated_at": "2026-11-23T09:26:17Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "Reconcile board after ledger task closeout"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-23T09:26:12Z",
-    "completeness": "Incomplete",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T09:27:04Z",
+    "completeness": "Complete",
     "reporter_job": {
       "id": "137598464034",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "cancelled",
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
     "primary_category": "validation_or_test",
     "categories": [
       "validation_or_test",
@@ -49,7 +49,7 @@
         "step_name": "Run full technical-document lint",
         "blocking": true,
         "confidence": "high",
-        "message": "Step conclusion: cancelled"
+        "message": "Lint changed Markdown files and publish detailed evidence\tValidate lint and report tooling\t2026-11-23T09:25:34.3521024Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m"
       },
       {
         "category": "validation_or_test",
@@ -59,7 +59,7 @@
         "step_name": "Preserve lint failure as workflow conclusion",
         "blocking": true,
         "confidence": "medium",
-        "message": "Step conclusion: failure"
+        "message": "2026-11-23T09:25:49.7110899Z ^[[36;1m  echo \"::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md.\"^[[0m"
       }
     ]
   },
@@ -110,11 +110,11 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 12721,
         "path": "logs/job-137598152285.log",
-        "error": "run 45146852295 is still in progress; logs will be available when it is complete\n",
+        "error": null,
         "marker_lines": []
       }
     },
@@ -244,12 +244,22 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 41778,
         "path": "logs/job-137598231454.log",
-        "error": "run 45146852295 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "Lint changed Markdown files and publish detailed evidence\tValidate lint and report tooling\t2026-11-23T09:25:34.3521024Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tValidate lint and report tooling\t2026-11-23T09:25:34.3531363Z ^[[36;1mecho \"failed=$failed\" >> \"$GITHUB_OUTPUT\"^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tRun full technical-document lint\t2026-11-23T09:25:42.7703380Z ^[[36;1m    failed=1^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tRun full technical-document lint\t2026-11-23T09:25:42.7704528Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tRun full technical-document lint\t2026-11-23T09:25:42.7706081Z ^[[36;1mecho \"failed=$failed\" >> \"$GITHUB_OUTPUT\"^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tRun full technical-document lint\t2026-11-23T09:25:49.7033383Z ##[error]The operation was canceled.",
+          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-23T09:25:49.7110899Z ^[[36;1m  echo \"::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md.\"^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-23T09:25:49.7213449Z ##[error]Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md.",
+          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-23T09:25:49.7216515Z ##[error]Process completed with exit code 1."
+        ]
       }
     }
   ],
@@ -335,17 +345,6 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [
-    {
-      "source": "job_log",
-      "job_id": "137598152285",
-      "message": "run 45146852295 is still in progress; logs will be available when it is complete\n"
-    },
-    {
-      "source": "job_log",
-      "job_id": "137598231454",
-      "message": "run 45146852295 is still in progress; logs will be available when it is complete\n"
-    }
-  ],
-  "history_path": "history/424715662/45146852295-attempt-1-pre_finalizer"
+  "capture_errors": [],
+  "history_path": "history/424715662/45146852295-attempt-1-post_run"
 }
