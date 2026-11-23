@@ -1,18 +1,20 @@
 # [Project] Drawing Prompts — YYYY-MM-DD
 
-**Template version:** 1.0
+**Template version:** 1.1
 
 **Project:** [Project name]
 **Branch:** `gpt`
-**Session brief:** [Relative link to the session brief]
+**Session brief:** [Relative link to the session brief, or Not applicable]
 **Primary series:** [Series name or standalone/unassigned]
 **Session status:** [Active / Paused / Closed]
 
 This file is the daily navigation ledger. Each attempt has a separate record. The session brief governs the visual direction.
 
-| Attempt | Prompt note | Session brief | Primary series / membership | Status / outcome |
-|---|---|---|---|---|
-| [NN — Title] | [Link to attempt record] | [Link to session brief] | [Series / role or standalone/unassigned] | [Current status and actual outcome] |
+Include every attempt exactly once in the single continuous table. Keep rows in ascending attempt-number order. The attempt record is authoritative for prompt text, source and operation metadata, acceptance criteria, visual assessment, user approval, output identity, and provenance.
+
+| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |
+|---|---|---|---|---|---|
+| [NN — Title and attempt link] | [Session ID and brief link] | [Series, role, and baseline or not established] | [Actual result and criteria outcome] | [Explicit user decision and delivery/storage evidence] | [Verified image link, Waiting for image upload, Not verified, or —] |
 
 ## Daily notes
 
@@ -21,6 +23,7 @@ This file is the daily navigation ledger. Each attempt has a separate record. Th
 ## Index checks
 
 - List every attempt exactly once.
-- Keep attempt rows in ascending numerical order.
-- Keep one continuous table with one header and one separator row.
-- Do not insert blank lines inside the table.
+- Keep one header row and one separator row.
+- Keep all attempt rows physically contiguous and in ascending order.
+- Update the row after you verify its attempt record.
+- Do not infer approval, success, lineage, or storage.
