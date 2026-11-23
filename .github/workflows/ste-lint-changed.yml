@@ -136,13 +136,20 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Initialize lint evidence capture
-        run: mkdir -p .lint-report-records lint_reports/on_changed/history
+      - name: Validate report tooling and initialize evidence capture
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash -n skills/asd-ste100/scripts/ste-lint-repository.sh
+          python3 -m py_compile skills/asd-ste100/scripts/generate_lint_report.py
+          mkdir -p .lint-report-records lint_reports/on_changed/history
 
       - name: Check active Markdown file links and heading anchors
         id: anchors
         if: needs.preflight.outputs.full_audit == 'true' || steps.fetch_baseline.outputs.full_audit == 'true'
-        run: python3 skills/asd-ste100/scripts/check_markdown_anchors.py
+        shell: bash
+        run: |
+          python3 skills/asd-ste100/scripts/check_markdown_anchors.py > .lint-report-records/anchor-check.log 2>&1 || { cat .lint-report-records/anchor-check.log; exit 1; }
 
       - name: Run full technical-document lint
         id: full_audit
@@ -233,6 +240,7 @@ jobs:
             --linter-source-sha "$(git rev-parse HEAD)"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -f .lint-report-records/anchor-check.log ]]; then cp .lint-report-records/anchor-check.log "$history_dir/anchor-check.log"; fi
           git add lint_reports/on_changed
           if ! git diff --cached --quiet; then
             git commit -m "Publish changed-document lint evidence"
