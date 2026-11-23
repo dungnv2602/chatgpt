@@ -1,4 +1,4 @@
-# STE Lint Changed Documentation — run 45204490379
+# STE Lint Changed Documentation — run 45222817261
 
 ## Run identity
 
@@ -6,21 +6,21 @@
 | --- | --- |
 | Workflow | STE Lint Changed Documentation |
 | Workflow path | .github/workflows/ste-lint-changed.yml |
-| Run / attempt | 45204490379 / 1 |
-| Run number | 558 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45204490379 |
+| Run / attempt | 45222817261 / 1 |
+| Run number | 565 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45222817261 |
 | Branch | gpt |
-| Commit | 17711a6e84ca8884ef4e421f2d8a7d81384510f7 |
+| Commit | c07921efe1a22db2237caa647d828e66fdd0236d |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T15:22:26Z |
+| Created (UTC) | 2026-11-23T17:00:22Z |
 | Status at capture | in_progress |
 | Observed conclusion | Not yet available |
 | Projected conclusion | failure |
 | Reporter job | in_progress / Pending |
 | Capture stage | pre_finalizer |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T15:23:42Z |
+| Captured (UTC) | 2026-11-23T17:01:20Z |
 
 ## Executive summary
 
@@ -45,22 +45,22 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 137796397643 | Reject superseded runs and find lint baseline | completed | success | 4 | logs/job-137796397643.log |
-| 137796504213 | Lint changed Markdown files and publish detailed evidence | completed | failure | 14 | logs/job-137796504213.log |
+| 137861341867 | Reject superseded runs and find lint baseline | completed | success | 4 | logs/job-137861341867.log |
+| 137861452009 | Lint changed Markdown files and publish detailed evidence | completed | failure | 14 | logs/job-137861452009.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 137796504213 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | Step conclusion: failure |
+| validation_or_test | 137861452009 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | Step conclusion: failure |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 137796504213 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 137796504213 | failure | .github | 21 |  | Process completed with exit code 1. |
-| 137796504213 | failure | .github | 20 |  | Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md. |
+| 137861452009 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 137861452009 | failure | .github | 21 |  | Process completed with exit code 1. |
+| 137861452009 | failure | .github | 20 |  | Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md. |
 
 ## Artifacts
 
@@ -70,8 +70,8 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137796397643 | Reject superseded runs and find lint baseline | logs/job-137796397643.log | 82 | False |  |
-| 137796504213 | Lint changed Markdown files and publish detailed evidence | logs/job-137796504213.log | 82 | False |  |
+| 137861341867 | Reject superseded runs and find lint baseline | logs/job-137861341867.log | 82 | False |  |
+| 137861452009 | Lint changed Markdown files and publish detailed evidence | logs/job-137861452009.log | 82 | False |  |
 
 ## Evidence coverage
 
@@ -79,8 +79,8 @@ One or more evidence sources were unavailable. This report is Incomplete.
 
 | Source | HTTP status | Limitation |
 | --- | --- | --- |
-| job_log | Not recorded | run 45204490379 is still in progress; logs will be available when it is complete  |
-| job_log | Not recorded | run 45204490379 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45222817261 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45222817261 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 

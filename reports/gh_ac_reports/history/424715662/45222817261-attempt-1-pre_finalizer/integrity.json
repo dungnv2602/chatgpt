@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "captured_at_utc": "2026-11-23T17:01:20Z",
+  "file_count": 4,
+  "files": {
+    "logs/job-137861341867.log": "664d4c37ade1424b0cfad73a03230ca09eeda8dbd9f3dad18704a15d937e8e38",
+    "logs/job-137861452009.log": "664d4c37ade1424b0cfad73a03230ca09eeda8dbd9f3dad18704a15d937e8e38",
+    "report.json": "ca5e11d2df10b14fa594e91b16a0599d35b0795cffd4eeafee7ce2c541b948d4",
+    "report.md": "3bae19a2ba451b6a93aa1c8f82c776ee824ff8fc47f8ce643b63e1b812234929"
+  }
+}
