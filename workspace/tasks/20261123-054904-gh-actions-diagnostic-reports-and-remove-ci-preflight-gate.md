@@ -124,9 +124,22 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - **References:** Reporter commit `379ecc19dc7a775d59f492d7f808a23da73f4d80`; hosted validation run [45124218890](https://github.com/dungnv2602/chatgpt/actions/runs/45124218890); report index at commit `3b579b57088eba6f58c942e6cc7d795e7bd25100`.
 - **Next:** Request immutable corrected captures for the three earlier source runs whose reports predate reporter-job exclusion. Then verify the final index/readbacks and close out the task with the default-branch observation limitation documented.
 
+## 6.1. 2026-11-23 — Consolidated report root and shared archive retention
+
+- **Action:** Moved the existing lint and GitHub Actions report trees under `reports/`, added the central triage ledger, and moved late legacy lint captures written after the migration into the consolidated tree. Updated workflow, composite action, navigation, skill, and catalog references.
+- **Result:** The latest tree snapshot shows zero files under the retired root-level `lint_reports/` and `gh_ac_reports/` paths, with no `reports/archive/`. The report archive destination is `archive/reports/`.
+- **Action:** Extended the existing exact-path archive cleanup to accept individual files under both `archive/tasks/` and `archive/reports/`, corrected the index timestamp contract to `archived_at_utc`, added cleanup regression tests, and included those tests in the hosted diagnostics sweep.
+- **Result:** The shared policy remains 90 days per file; unindexed files are preserved and directory scans are not used. Hosted validation of these latest edits remains pending/unverified.
+
 ## 7. Current State
 
-The core implementation is complete on branch `gpt`. The `gh_ac_reports/` system is committed, integrated into six source workflows, registered in the Document Type Catalog, and linked from workspace navigation. A GitHub-hosted diagnostics sweep passed all 12 regression tests, report collection, and publication. The task-scoped CI policy removes unrelated pre-prompt and post-initialization repair gates. The actual conclusion of each source workflow remains independent from the report-only job.
+The report families are consolidated under `reports/`: `reports/lint_reports/`, `reports/gh_ac_reports/`, and `reports/triage/`. The migration preserved the 198 report blobs present at migration start; six late lint-report files written by a stale workflow path were subsequently relocated. The root `reports/README.md` links the report families and shared triage ledger. No `reports/archive/` directory exists.
+
+Resolved report files are assigned to `archive/reports/` and use the existing `.github/archive-retention-index.json` and scheduled archive-retention workflow. The cleanup script now accepts exact individual file paths under both `archive/tasks/` and `archive/reports/`, applies the existing 90-day retention period independently per file, rejects unsafe paths and symlinked parents, and preserves unindexed files. The shared index timestamp field was normalized to `archived_at_utc`. The archive guide documents how to move a resolved report file and register its exact path. No separate report-retention workflow or index was created.
+
+The catalog validator and regression fixture now recognize `reports/` as the report root. Hosted regression coverage for archive cleanup was added to the push-driven diagnostics workflow. A previous Document Standards run failed because the catalog still referenced the retired roots; a previous diagnostics finalizer failed because it used the old composite-action path. Both causes were corrected in later commits. The latest bounded snapshot showed a diagnostics run pending; it was not polled, so the latest corrections are not yet confirmed by a completed hosted run.
+
+The task-scoped CI policy removes unrelated pre-prompt and post-initialization repair gates. The actual conclusion of each source workflow remains independent from the report-only job.
 
 Three immutable recaptures are requested for earlier reports generated before reporter-job exclusion. The request files are committed. The resulting sweep (run 45124527032) was observed as in progress in the final bounded snapshot; it was not polled. The existing 17 captures remain preserved. The prior report index was read back with zero pending run IDs before these three new requests were committed.
 
@@ -134,15 +147,16 @@ The repository default branch is `main`, while this authorized task is restricte
 
 ## 8. Remaining Work
 
-- The three requested immutable recaptures are queued. Their completion is not verified; do not wait for or poll run 45124527032.
-- Any later eligible run will validate the normal diagnostics finalizer in each source workflow. No additional workflow dispatch or rerun was requested.
-- No unrelated lint findings or other workflow failures are in scope for repair. Preserve all source conclusions and validation thresholds.
+- Confirm the latest report-path, catalog, and shared-retention changes through their naturally triggered GitHub-hosted runs. Do not poll or manually dispatch the pending run.
+- The schedule-only 90-day cleanup is not manually dispatched. Its workflow file remains on `gpt`; do not change `main`.
+- The three earlier immutable recapture requests remain part of the previous implementation handoff; inspect them only if a later eligible sweep has completed naturally.
+- Do not fix unrelated lint findings or workflow failures. Preserve all source conclusions and validation thresholds.
 
 ## 9. Next Actions
 
-1. Review the immutable corrected captures when the requested backfill run completes naturally.
-2. Keep the task-scoped CI policy and branch/default-branch limitation documented.
-3. Triage source failures using the reports. Repair only findings that are part of a user's current task.
+1. Read back the latest workflow, action, catalog, cleanup-script, test, and index paths after any natural hosted validation completes.
+2. Review immutable corrected captures only when their backfill completes naturally.
+3. Keep all repository changes on `gpt`; do not modify `main`.
 
 ## 10. References
 
@@ -150,9 +164,10 @@ The repository default branch is `main`, while this authorized task is restricte
 - `reports/triage/README.md`
 - `archive/README.md`
 
-- `lint_reports/README.md`
-- `lint_reports/on_repo/`
-- `lint_reports/on_changed/`
+- `reports/lint_reports/README.md`
+- `reports/lint_reports/on_repo/`
+- `reports/lint_reports/on_changed/`
+- `reports/gh_ac_reports/README.md`
 - `workspace/discussion.md`
 - `workspace/task_board.md`
 - `skills/SESSION_START.md`
