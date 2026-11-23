@@ -465,6 +465,8 @@ def finding_row(finding):
         + markdown_cell(finding.get("severity")) + " | "
         + markdown_cell(finding.get("title")) + " | " + evidence_links + " |"
     )
+
+
 def update_task_findings(content, findings, timestamp):
     heading = "## 13. Ledger Findings"
     if heading not in content:
@@ -522,18 +524,6 @@ def task_title_for_group(findings):
     workflow = str(first.get("title") or "GitHub Actions").split(" / ", 1)[0]
     return ("Review " + category + " failures in " + workflow + " / " + evidence_note)[:120]
 
-def task_reference_lines(findings):
-    values = []
-    for item in findings:
-        for evidence in item.get("evidence", []):
-            path = evidence.get("report_path")
-            run_url = evidence.get("run_url")
-            if path:
-                values.append("- " + chr(96) + markdown_cell(item.get("finding_id")) + chr(96) + " — " + chr(96) + markdown_cell(path) + chr(96))
-            if run_url:
-                values.append("  - " + str(run_url))
-    return "\n".join(dict.fromkeys(values)) or "- See the linked ledger finding records."
-
 def render_worker_task(root, task_id, title, group_id, findings, timestamp):
     template_path = root / "workspace" / "TASK_TEMPLATE.md"
     try:
@@ -583,6 +573,7 @@ def render_worker_task(root, task_id, title, group_id, findings, timestamp):
         content = content.replace(old, new, 1)
     content, _ = update_task_findings(content, findings, timestamp)
     return content
+
 
 def parse_active_ledger_tasks(root):
     result = {}
@@ -648,6 +639,7 @@ def upsert_task_board_row(root, task):
     atomic_write_text(board_path, new_board)
     return True
 
+
 def create_or_update_worker_task(root, group_id, findings, timestamp, active_tasks):
     task = active_tasks.get(group_id)
     if task:
@@ -680,7 +672,6 @@ def create_worker_tasks(root, ledger, timestamp):
         refs = finding.setdefault("task_refs", [])
         group_id = finding["task_group"]
         active_task = active_tasks.get(group_id)
-        active_ref = bool(active_task and active_task["id"] in refs)
         reopened = bool(finding.get("resolution_history")) and not active_task
         if refs and not (active_task or reopened):
             continue
@@ -702,6 +693,7 @@ def create_worker_tasks(root, ledger, timestamp):
                 counts["changed"] = True
         counts["changed"] = counts["changed"] or task_changed or created
     return counts
+
 
 def ingest(root, now=None):
     root = Path(root).resolve()
