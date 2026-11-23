@@ -6,10 +6,9 @@
 
 - **2026-11-23 14:52 UTC — STE lint validation remains unverified:** STE Lint Changed run [#552](https://github.com/dungnv2602/chatgpt/actions/runs/45193354825) was cancelled. No successful style-lint result is recorded. The task record requires a naturally completed run before style validation can be claimed. Do not poll, dispatch, or rerun workflows. No user action is required unless the user changes this restriction.
 
-- **2026-11-23 10:16 UTC — Hosted retention validation:** The cleanup script and tests cover exact individual files in both archive folders. A hosted run of the schedule-only cleanup has not yet been observed. It runs on the schedule from main. No manual dispatch or user action is needed. Do not modify main.
-
 - **2026-11-23 13:19 UTC — Pending diagnostic post-run captures:** Two source runs remain pending in the diagnostics index at watermark `2026-11-23T13:19:19Z`. A later eligible natural sweep can capture them. Do not poll or dispatch workflows.
 
+- **2026-11-23 10:16 UTC — Hosted retention validation:** The cleanup script and tests cover exact individual files in both archive folders. A hosted run of the schedule-only cleanup has not yet been observed. It runs on the schedule from main. No manual dispatch or user action is needed. Do not modify main.
 ## Reports
 
 - **2026-11-23 14:22 UTC — Document Standards validator passed:** [Run #160](https://github.com/dungnv2602/chatgpt/actions/runs/45193353681) on commit `05bbf26c74cd0df093adbf074d3024e00323674b` completed successfully. The `validate-document-standards` job passed both the catalog regression tests and catalog validation. The diagnostic-capture job also succeeded.
