@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-100738
 - **Created:** 2026-11-23 10:07 UTC
-- **Updated:** 2026-11-23 10:46 UTC
+- **Updated:** 2026-11-23 10:50 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -55,6 +55,12 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 - **Validation:** Use natural GitHub Actions runs. Do not manually dispatch or poll workflows.
 
 ## 6. Progress Log
+
+### 2026-11-23 10:50 UTC
+
+- **Action:** Completed the fourth catalog batch in the legacy-example table.
+- **Result:** Revised six rows and removed 17 semicolons. Preserved historical version declarations, migration rules, and retention constraints. Readback passed after commit `bf361fd04c45eb6634b09bce553251ad73758904`. The catalog now contains one semicolon.
+- **Next:** Review the remaining catalog synonym-rotation findings and final semicolon.
 
 ### 2026-11-23 10:46 UTC
 
