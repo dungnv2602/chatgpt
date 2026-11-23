@@ -182,7 +182,7 @@ next operation based on what actually succeeded: the prompt, the image, or both.
    appearance does not prove linkage.
 9. **Archive before the operation:** Record the exact authored prompt, operation
    type, source/reference actually attached, intended change, and pending
-   status. Commit and read-back check before generation or editing. Afterward,
+   status. Commit and read-back confirmation before generation or editing. Afterward,
    record the actual result and deviations. Distinguish authored prompt text
    from tool-compiled/submitted text if the latter is unavailable.
 
