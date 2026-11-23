@@ -1,6 +1,6 @@
 ## Current Step
 
-_No active step._
+Audit and classify every in-scope Markdown document outside `master/` and `archive/`; add a catalog-backed path-coverage check so new document families cannot bypass template-first governance.
 
 ## Open Discussions
 
