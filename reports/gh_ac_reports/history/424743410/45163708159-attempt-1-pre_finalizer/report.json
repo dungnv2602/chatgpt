@@ -1,0 +1,281 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45163708159",
+    "number": 176,
+    "attempt": 1,
+    "workflow_id": 424743410,
+    "workflow_name": "STE Lint Full Technical Documentation",
+    "workflow_path": ".github/workflows/ste-lint-full-docs.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45163708159",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "88ddc3928bb14aa8d6d6a46196a873775a6bd121",
+    "status": "in_progress",
+    "conclusion": null,
+    "created_at": "2026-11-23T11:16:36Z",
+    "run_started_at": "2026-11-23T11:16:36Z",
+    "updated_at": "2026-11-23T11:17:27Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Use consistent wording in STE scan checklist"
+  },
+  "capture": {
+    "stage": "pre_finalizer",
+    "captured_at_utc": "2026-11-23T11:17:42Z",
+    "completeness": "Incomplete",
+    "reporter_job": {
+      "id": "137655518637",
+      "name": "Capture GH Actions diagnostics",
+      "status": "in_progress",
+      "conclusion": null
+    }
+  },
+  "classification": {
+    "state": "in_progress",
+    "observed_conclusion": null,
+    "projected_conclusion": "failure",
+    "primary_category": "step_or_job_failure",
+    "categories": [
+      "step_or_job_failure"
+    ],
+    "issues": [
+      {
+        "category": "step_or_job_failure",
+        "job_id": "137655250782",
+        "job_name": "Full audit and publish detailed evidence",
+        "step_number": 6,
+        "step_name": "Set workflow result from audit and tooling outcomes",
+        "blocking": true,
+        "confidence": "low",
+        "message": "Step conclusion: failure"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "137655198526",
+      "name": "Validate target branch and reject superseded push runs",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-23T11:16:38Z",
+      "completed_at": "2026-11-23T11:16:42Z",
+      "runner_name": "GitHub Actions 1000001416",
+      "runner_id": 1000001416,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T11:16:39Z",
+          "completed_at": "2026-11-23T11:16:39Z"
+        },
+        {
+          "number": 2,
+          "name": "Validate branch and guard push runs",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T11:16:39Z",
+          "completed_at": "2026-11-23T11:16:41Z"
+        },
+        {
+          "number": 3,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T11:16:41Z",
+          "completed_at": "2026-11-23T11:16:41Z"
+        }
+      ],
+      "log_capture": {
+        "available": false,
+        "truncated": false,
+        "bytes": 82,
+        "path": "logs/job-137655198526.log",
+        "error": "run 45163708159 is still in progress; logs will be available when it is complete\n",
+        "marker_lines": []
+      }
+    },
+    {
+      "id": "137655250782",
+      "name": "Full audit and publish detailed evidence",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-23T11:16:45Z",
+      "completed_at": "2026-11-23T11:17:13Z",
+      "runner_name": "GitHub Actions 1000001417",
+      "runner_id": 1000001417,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T11:16:46Z",
+          "completed_at": "2026-11-23T11:16:48Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out commit",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T11:16:48Z",
+          "completed_at": "2026-11-23T11:16:56Z"
+        },
+        {
+          "number": 3,
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T11:16:56Z",
+          "completed_at": "2026-11-23T11:16:56Z"
+        },
+        {
+          "number": 4,
+          "name": "Validate lint and report tooling",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T11:16:56Z",
+          "completed_at": "2026-11-23T11:17:01Z"
+        },
+        {
+          "number": 5,
+          "name": "Run full repository-wide audit and generate structured reports",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T11:17:01Z",
+          "completed_at": "2026-11-23T11:17:10Z"
+        },
+        {
+          "number": 6,
+          "name": "Set workflow result from audit and tooling outcomes",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-11-23T11:17:10Z",
+          "completed_at": "2026-11-23T11:17:10Z"
+        },
+        {
+          "number": 11,
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T11:17:10Z",
+          "completed_at": "2026-11-23T11:17:10Z"
+        },
+        {
+          "number": 12,
+          "name": "Post Check out commit",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T11:17:10Z",
+          "completed_at": "2026-11-23T11:17:10Z"
+        },
+        {
+          "number": 13,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T11:17:10Z",
+          "completed_at": "2026-11-23T11:17:10Z"
+        }
+      ],
+      "log_capture": {
+        "available": false,
+        "truncated": false,
+        "bytes": 82,
+        "path": "logs/job-137655250782.log",
+        "error": "run 45163708159 is still in progress; logs will be available when it is complete\n",
+        "marker_lines": []
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "137655198526",
+      "name": "Validate target branch and reject superseded push runs",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-23T11:16:38Z",
+      "completed_at": "2026-11-23T11:16:42Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45163708159/job/137655198526",
+      "app": "GitHub Actions",
+      "annotations_count": 1
+    },
+    {
+      "id": "137655250782",
+      "name": "Full audit and publish detailed evidence",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-23T11:16:45Z",
+      "completed_at": "2026-11-23T11:17:13Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45163708159/job/137655250782",
+      "app": "GitHub Actions",
+      "annotations_count": 3
+    }
+  ],
+  "annotations": [
+    {
+      "check_run_id": "137655198526",
+      "job_id": "137655198526",
+      "path": ".github",
+      "start_line": 35,
+      "end_line": 35,
+      "level": "warning",
+      "title": "",
+      "message": "Could not identify the latest push run. Continue with validation.",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137655250782",
+      "job_id": "137655250782",
+      "path": ".github",
+      "start_line": 2,
+      "end_line": 2,
+      "level": "warning",
+      "title": "",
+      "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137655250782",
+      "job_id": "137655250782",
+      "path": ".github",
+      "start_line": 20,
+      "end_line": 20,
+      "level": "failure",
+      "title": "",
+      "message": "Process completed with exit code 1.",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137655250782",
+      "job_id": "137655250782",
+      "path": ".github",
+      "start_line": 19,
+      "end_line": 19,
+      "level": "failure",
+      "title": "",
+      "message": "The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md.",
+      "raw_details": ""
+    }
+  ],
+  "artifacts": [],
+  "capture_errors": [
+    {
+      "source": "job_log",
+      "job_id": "137655198526",
+      "message": "run 45163708159 is still in progress; logs will be available when it is complete\n"
+    },
+    {
+      "source": "job_log",
+      "job_id": "137655250782",
+      "message": "run 45163708159 is still in progress; logs will be available when it is complete\n"
+    }
+  ],
+  "history_path": "history/424743410/45163708159-attempt-1-pre_finalizer"
+}
