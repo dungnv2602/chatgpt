@@ -13,7 +13,7 @@ flat intake at `images/takeout/` and the structured `HANDOFF.yml`.
   links the prompt to the output for automatic Markdown cross-linking. Non-drawing
   assets may omit it.
 - The existing workflow on branch `gpt` calls
-  `skills/session-archiving/scripts/process_takeout.py`. It supports static PNG, JPG, and JPEG.
+  `skills/the-worker/scripts/process_takeout.py`. It supports static PNG, JPG, and JPEG.
   APNG and other unsupported formats fail the batch. Animated content is never
   silently flattened.
 - PNG uses exact lossless encoding
