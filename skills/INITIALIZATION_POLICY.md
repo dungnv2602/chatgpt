@@ -13,8 +13,9 @@ This file records the repository's conditional initialization policy. Operationa
 - Mandatory Conversation Mode component: `skills/the-worker/references/conversation-mode.md`
 - Agent Skills format, loaded on demand: `skills/agent-skill-authoring/SKILL.md`
 - Technical writing standard: `skills/asd-ste100/SKILL.md`
+- Foundational document governance: `skills/document-standards/SKILL.md`
 - Canonical novelist procedure: the Novelist role initialization section in `skills/SESSION_START.md`
-- Drawing tier: `skills/session-archiving/SKILL.md` (on demand) and `skills/drawing/SKILL.md`, loaded for a drawing session or novelist initialization
+- Drawing tier: The Worker's archive/media references and `skills/drawing/SKILL.md`, loaded for a drawing session or novelist initialization
 
 This file does not replace an operational skill or initiation procedure.
 
@@ -47,10 +48,11 @@ Foundational initialization loads these skills:
 1. The Worker, including its mandatory Conversation Mode reference.
 2. ASD-STE100.
 3. GitHub Actions.
+4. Document Standards.
 
-Session Archiving, Agent Skill Authoring, and Document Standards are on-demand skills. Load each only when its task-specific activation conditions apply.
+Agent Skill Authoring remains on-demand. Document Standards is foundational because its template-first gate applies across repository document creation and material revision. Load its skill definition during initialization. Retrieve its catalog, templates, schemas, and validator details only when the task requires them.
 
-The Drawing tier is tier 2, not foundational. It includes the Drawing skill and its required references. Load it only after foundational initialization passes. Load Session Archiving as an on-demand dependency for drawing-session briefs, archives, or image provenance. A drawing-session or novelist request does not trigger foundational initialization. Its required references are `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`.
+The Drawing tier is tier 2, not foundational. It includes the Drawing skill and its required references. Load it only after foundational initialization passes. The Worker owns the archive/media procedures used by Drawing. A drawing-session or novelist request does not trigger foundational initialization. Its required references are `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`.
 
 Novelist initialization is tier 3. Load `skills/romantic-storyteller-visual-artist/SKILL.md` only for the explicit novelist role request, after foundational and Drawing tiers are ready.
 
