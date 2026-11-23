@@ -15,9 +15,9 @@ on:
       - 'images/takeout/*.JPG'
       - 'images/takeout/*.JPEG'
       - 'images/takeout/HANDOFF.yml'
-      - 'skills/session-archiving/scripts/process_takeout.py'
-      - 'skills/session-archiving/scripts/test_process_takeout_unittest.py'
-      - 'skills/session-archiving/scripts/verify_published_manifest.py'
+      - 'skills/the-worker/scripts/process_takeout.py'
+      - 'skills/the-worker/scripts/test_process_takeout_unittest.py'
+      - 'skills/the-worker/scripts/verify_published_manifest.py'
       - '.github/workflows/convert-images-to-webp.yml'
   workflow_dispatch: {}
 
@@ -51,8 +51,8 @@ jobs:
       - name: Compile takeout processor and publication verifier
         run: |
           python3 -m py_compile \
-            skills/session-archiving/scripts/process_takeout.py \
-            skills/session-archiving/scripts/verify_published_manifest.py
+            skills/the-worker/scripts/process_takeout.py \
+            skills/the-worker/scripts/verify_published_manifest.py
 
       - name: Test takeout processor
         run: |
@@ -65,7 +65,7 @@ jobs:
         id: process
         continue-on-error: true
         run: |
-          python3 skills/session-archiving/scripts/process_takeout.py \
+          python3 skills/the-worker/scripts/process_takeout.py \
             --repo-root . \
             --run-id "$GITHUB_RUN_ID"
 
@@ -136,7 +136,7 @@ jobs:
 
           # This verifies the first published commit and changes Pending
           # manifest rows only after the exact remote blobs and URLs match.
-          python3 skills/session-archiving/scripts/verify_published_manifest.py \
+          python3 skills/the-worker/scripts/verify_published_manifest.py \
             --repo-root . \
             --git-ref origin/gpt \
             --branch gpt
@@ -173,7 +173,7 @@ jobs:
           fi
 
           git fetch origin gpt
-          python3 skills/session-archiving/scripts/verify_published_manifest.py \
+          python3 skills/the-worker/scripts/verify_published_manifest.py \
             --repo-root . \
             --git-ref origin/gpt \
             --branch gpt \
