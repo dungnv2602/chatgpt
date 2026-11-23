@@ -12,6 +12,14 @@ The Worker skill defines task completion and archival procedures.
 - Record the UTC archive timestamp in the task metadata.
 - Do not store full conversation transcripts.
 
+## Superseded report-period archives
+
+When the user authorizes a fresh reporting baseline, archive the prior period as one immutable snapshot under `archive/reports/superseded-YYYY-MM-DD/`. Preserve each report family's relative paths, including history captures, indexes, and prior latest-pointer snapshots. Add a period manifest with the cutoff, source baseline, path mapping, archived file counts, and pending run IDs carried forward.
+
+Before moving report history, retain any complete capture directory referenced by an open Ledger finding or active investigation at its existing report-root path. These evidence-only directories must be excluded from the new operational indexes but remain readable at their existing paths. Keep incomplete pending run IDs and their capture directories in the active indexes. Archive all other prior history, indexes, and latest-pointer snapshots. Reset active indexes to the pending records and advance the sweep watermark to the new cutoff. Do not clear the Ledger or re-import historical findings.
+
+A superseded period archive may contain old indexes and captures that are no longer active. Keep the period snapshot unindexed in `.github/archive-retention-index.json`; the shared policy preserves unindexed records. The archive is immutable after its initial commit. This period-snapshot procedure is distinct from individual resolved-report filing below.
+
 ## Resolved report filing
 
 When a finding is verified as resolved in `reports/triage/ledger.json`:

@@ -82,3 +82,8 @@ The diagnostics workflow is deliberately excluded from its own run sweep to prev
 ## Resolution and archive
 
 The cross-family issue state is tracked in `reports/triage/ledger.json`. A finding is resolved only after its fix commit and successful relevant validation are recorded. The successful run URL and UTC timestamp are sufficient; a full successful-run diagnostic report is not required. Use a request file only when the successful run's detailed evidence is specifically needed. Resolved report files are moved to `archive/reports/`; the shared archive-retention workflow deletes each exact indexed file after 90 days. The archive uses the shared `.github/archive-retention-index.json`. Do not create a report archive under `reports/` or a separate retention workflow.
+
+
+## Reporting periods
+
+The pre-reset reporting period is superseded and preserved at `archive/reports/superseded-2026-11-23/`. Its eligible history, indexes, and prior latest-pointer snapshots are immutable. The active indexes start a new period at 2026-11-23T16:09:08Z and retain only the four pending source run IDs carried forward from the prior period. Their six available incomplete captures remain in active history until the next natural sweep completes them. Separately, 59 capture directories remain at their existing paths as evidence for open Ledger findings; they are excluded from active indexes and are not new-period reports. The Ledger and its evidence references are unchanged. Routine successful and cancellation-only runs remain excluded by the capture policy.

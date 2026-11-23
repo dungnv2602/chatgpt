@@ -37,3 +37,8 @@ The root `latest-lint-report.md` remains a compatibility copy of the latest repo
 - `Cancelled` and `Superseded`: the run did not complete a current audit.
 
 A finding fingerprint is derived from the file path and stable diagnostic fields. It is a correlation key, not proof that two findings have identical meaning. The report distinguishes lint findings from validation-check failures and preserves both. Do not infer repository-wide coverage from an incremental report.
+
+
+## Reporting periods
+
+The pre-reset lint history, indexes, and prior latest-pointer snapshots are preserved at `archive/reports/superseded-2026-11-23/lint_reports/`, except capture directories retained at their existing paths because open Ledger findings reference them. The active `on_changed` and `on_repo` indexes retain only lint reports belonging to source runs that were still pending at the reset cutoff. Latest pointers are rebuilt from those carried-forward captures. Evidence-only directories are not indexed for new ingestion. The Ledger and its processed-report state are unchanged.
