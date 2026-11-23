@@ -738,6 +738,7 @@ class TakeoutProcessorTests(unittest.TestCase):
                     / "verification-report.md"
                 ).read_text(encoding="utf-8")
                 self.assertIn(expected_error, report)
+                source.unlink()
 
     def test_non_mapping_handoff_is_rejected_not_silently_ignored(self):
         (self.inbox / "waiting.png").write_bytes(b"waiting-original")
