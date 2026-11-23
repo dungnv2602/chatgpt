@@ -11,44 +11,44 @@
     "event": "push",
     "branch": "gpt",
     "head_sha": "88ddc3928bb14aa8d6d6a46196a873775a6bd121",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "failure",
     "created_at": "2026-11-23T11:16:36Z",
     "run_started_at": "2026-11-23T11:16:36Z",
-    "updated_at": "2026-11-23T11:17:27Z",
+    "updated_at": "2026-11-23T11:17:47Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "Use consistent wording in STE scan checklist"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-23T11:17:42Z",
-    "completeness": "Incomplete",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T11:26:32Z",
+    "completeness": "Complete",
     "reporter_job": {
       "id": "137655518637",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "failure",
-    "primary_category": "step_or_job_failure",
+    "state": "failure",
+    "observed_conclusion": "failure",
+    "projected_conclusion": null,
+    "primary_category": "validation_or_test",
     "categories": [
-      "step_or_job_failure"
+      "validation_or_test"
     ],
     "issues": [
       {
-        "category": "step_or_job_failure",
+        "category": "validation_or_test",
         "job_id": "137655250782",
         "job_name": "Full audit and publish detailed evidence",
         "step_number": 6,
         "step_name": "Set workflow result from audit and tooling outcomes",
         "blocking": true,
-        "confidence": "low",
-        "message": "Step conclusion: failure"
+        "confidence": "medium",
+        "message": "2026-11-23T11:17:10.3848685Z ^[[36;1m  echo \"::error::The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md.\"^[[0m"
       }
     ]
   },
@@ -91,12 +91,14 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 9983,
         "path": "logs/job-137655198526.log",
-        "error": "run 45163708159 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "Validate target branch and reject superseded push runs\tValidate branch and guard push runs\t2026-11-23T11:16:39.9255729Z ^[[36;1m  echo \"::error::Select the gpt branch when manually dispatching this workflow.\"^[[0m"
+        ]
       }
     },
     {
@@ -185,12 +187,28 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 54532,
         "path": "logs/job-137655250782.log",
-        "error": "run 45163708159 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "Full audit and publish detailed evidence\tValidate lint and report tooling\t2026-11-23T11:16:56.5696778Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m",
+          "Full audit and publish detailed evidence\tValidate lint and report tooling\t2026-11-23T11:16:56.5702246Z ^[[36;1mecho \"failed=$failed\" >> \"$GITHUB_OUTPUT\"^[[0m",
+          "Full audit and publish detailed evidence\tRun full repository-wide audit and generate structured reports\t2026-11-23T11:17:01.4767479Z ^[[36;1m    failed=1^[[0m",
+          "Full audit and publish detailed evidence\tRun full repository-wide audit and generate structured reports\t2026-11-23T11:17:01.4768236Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m",
+          "Full audit and publish detailed evidence\tRun full repository-wide audit and generate structured reports\t2026-11-23T11:17:01.4778280Z ^[[36;1m        \"status\": \"Passed\" if code == 0 else \"Failed\",^[[0m",
+          "Full audit and publish detailed evidence\tRun full repository-wide audit and generate structured reports\t2026-11-23T11:17:01.4781006Z ^[[36;1m    \"status\": \"Passed\" if anchor_code == 0 else \"Failed\",^[[0m",
+          "Full audit and publish detailed evidence\tRun full repository-wide audit and generate structured reports\t2026-11-23T11:17:01.4784485Z ^[[36;1mif [[ \"$failed\" -ne 0 || \"$anchor_status\" -ne 0 || \"$TOOLING_FAILED\" == \"1\" ]]; then^[[0m",
+          "Full audit and publish detailed evidence\tRun full repository-wide audit and generate structured reports\t2026-11-23T11:17:01.4784867Z ^[[36;1m  report_status=\"Failed\"^[[0m",
+          "Full audit and publish detailed evidence\tRun full repository-wide audit and generate structured reports\t2026-11-23T11:17:01.4785128Z ^[[36;1m  failed=1^[[0m",
+          "Full audit and publish detailed evidence\tRun full repository-wide audit and generate structured reports\t2026-11-23T11:17:01.4791576Z ^[[36;1m  echo \"::error::The shared lint report generator failed with exit $generator_status.\"^[[0m",
+          "Full audit and publish detailed evidence\tRun full repository-wide audit and generate structured reports\t2026-11-23T11:17:01.4792123Z ^[[36;1m  failed=1^[[0m",
+          "Full audit and publish detailed evidence\tRun full repository-wide audit and generate structured reports\t2026-11-23T11:17:01.4796229Z ^[[36;1mecho \"failed=$failed\" >> \"$GITHUB_OUTPUT\"^[[0m",
+          "Full audit and publish detailed evidence\tSet workflow result from audit and tooling outcomes\t2026-11-23T11:17:10.3848685Z ^[[36;1m  echo \"::error::The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md.\"^[[0m",
+          "Full audit and publish detailed evidence\tSet workflow result from audit and tooling outcomes\t2026-11-23T11:17:10.3921681Z ##[error]The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md.",
+          "Full audit and publish detailed evidence\tSet workflow result from audit and tooling outcomes\t2026-11-23T11:17:10.3929357Z ##[error]Process completed with exit code 1."
+        ]
       }
     }
   ],
@@ -265,17 +283,6 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [
-    {
-      "source": "job_log",
-      "job_id": "137655198526",
-      "message": "run 45163708159 is still in progress; logs will be available when it is complete\n"
-    },
-    {
-      "source": "job_log",
-      "job_id": "137655250782",
-      "message": "run 45163708159 is still in progress; logs will be available when it is complete\n"
-    }
-  ],
-  "history_path": "history/424743410/45163708159-attempt-1-pre_finalizer"
+  "capture_errors": [],
+  "history_path": "history/424743410/45163708159-attempt-1-post_run"
 }
