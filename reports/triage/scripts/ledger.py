@@ -511,7 +511,6 @@ def render_worker_task(root, task_id, title, group_id, findings, timestamp):
     priority = min((TASK_PRIORITY[item["severity"]] for item in findings), key=lambda item: int(item[1:]))
     replacements = {
         "# Task: [Title]": "# Task: " + title,
-        "- **Template version:** 1.1": "- **Template version:** 1.2",
         "- **ID:** YYYYMMDD-HHMMSS": "- **ID:** " + task_id,
         "- **Created:** YYYY-MM-DD HH:MM UTC": "- **Created:** " + created,
         "- **Updated:** YYYY-MM-DD HH:MM UTC": "- **Updated:** " + created,
