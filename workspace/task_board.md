@@ -10,6 +10,7 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
+| 20261123043747 | Audit template placement and enforce template-first authoring | P1 | In Progress | User | 2026-11-23 | [Task record](tasks/20261123043747-audit-template-placement-and-enforce-template-first-workflow.md) |
 
 ## In Progress
 
