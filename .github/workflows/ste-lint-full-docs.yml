@@ -86,7 +86,14 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Validate report tooling\n        shell: bash\n        run: |\n          set -euo pipefail\n          bash -n skills/asd-ste100/scripts/ste-lint-repository.sh\n          python3 -m py_compile skills/asd-ste100/scripts/generate_lint_report.py\n\n      - name: Run full audit and generate report
+      - name: Validate report tooling
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash -n skills/asd-ste100/scripts/ste-lint-repository.sh
+          python3 -m py_compile skills/asd-ste100/scripts/generate_lint_report.py
+
+      - name: Run full audit and generate report
         id: audit
         shell: bash
         run: |
