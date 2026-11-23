@@ -97,12 +97,12 @@ The file is not a transcript, general progress log, or task-history archive. `Cu
 
 This section is the user's short, live briefing surface while work proceeds.
 
-- Before each meaningful work step, replace this section with one concise brief that states the next action, its scope, and the expected result. A meaningful step is a coherent unit of inspection, decision, editing, or validation; do not create a brief for every individual API call.
-- Commit the brief to `gpt`, fetch the committed file, and verify its content before starting that step.
-- After the read-back, send the direct `discussion.md` link to the user before executing the step. Do not bury the brief in chat; the file is the briefing surface.
+- Before each meaningful work step, replace this section with one concise brief that states the next action, its scope, and the expected result. A meaningful step is a coherent unit of inspection, decision, editing, or validation. Do not create a brief for every individual API call.
+- Commit the brief to `gpt`, fetch the committed file, and check its content before starting that step.
+- After the read-back, send the direct `discussion.md` link to the user before executing the step. Do not bury the brief in chat. The file is the briefing surface.
 - Keep exactly one current brief. Do not retain completed briefs as history or duplicate them in Reports.
 - After the step, record detailed actions and verification in the task record. Before the next meaningful step, replace the brief and send the updated link.
-- If work stops, fails, or needs a user decision, make the current brief state that execution is paused and why; also record any unresolved failure or required user input under Open Discussions.
+- If work stops, fails, or needs a user decision, state that execution is paused and why in the current brief. Record any unresolved failure or required user input under Open Discussions.
 - When no step is active, use `_No active step._`.
 
 #### Open Discussions
