@@ -53,21 +53,24 @@ Make Document Standards a foundational skill loaded during explicit session init
 - **References:** `skills/SESSION_START.md`, `skills/INITIALIZATION_POLICY.md`, `skills/README.md`, `skills/document-standards/SKILL.md`, `skills/the-worker/SKILL.md`, `workspace/discussion.md`.
 - **Next:** Update activation hierarchy and metadata, correct the stale dependency path, and remove the correction question from the discussion register without modifying the archived record.
 
+### 2026-11-23 12:09 UTC
+
+- **Action:** Promoted Document Standards to foundational loading. Updated the explicit session-start sequence, foundational dependency hierarchy, initialization policy, skills index, Document Standards metadata, and The Worker's dependency statement. Removed the archived-record correction question from the open discussion register.
+- **Result:** All seven affected paths were retrieved after writing. Document Standards is listed as foundational in session-start, initialization policy, and the skills index; its metadata is `project-role: foundational`. The Worker identifies it as an independent foundational dependency. The catalog and specific templates/schemas/validator details remain task-triggered. The stale active Session Archiving path is absent from the initialization policy. The archived Session Archiving task record was not modified.
+- **References:** `skills/SESSION_START.md`, `skills/INITIALIZATION_POLICY.md`, `skills/README.md`, `skills/document-standards/SKILL.md`, `skills/the-worker/SKILL.md`, `workspace/discussion.md`, `workspace/task_board.md`.
+- **Next:** Archive this task record and reconcile the task board.
+
 ## 7. Current State
 
-The task is approved and in progress. No files have been changed yet.
+The approved promotion is implemented and read back. Document Standards is foundational and remains an independent skill. Its catalog and specific canonical assets remain task-triggered.
 
 ## 8. Remaining Work
 
-- Update foundational loading and indexes.
-- Update Document Standards metadata and The Worker dependency statement.
-- Remove the archived-record correction question from the discussion register.
-- Read back all changed paths.
+- None. All approved changes are implemented and read back.
 
 ## 9. Next Actions
 
-1. Update the approved activation documents and skill metadata.
-2. Read back each changed path and reconcile the task board.
+1. Archive this completed task and reconcile the task board.
 
 ## 10. References
 
@@ -82,8 +85,8 @@ The task is approved and in progress. No files have been changed yet.
 
 - **Check:** Foundational loading, classification, dependency hierarchy, stale-path removal, and preservation of archived record.
 - **Method:** Retrieve every changed file from branch `gpt` after update and inspect exact content. Confirm archived record is unchanged.
-- **Result:** Not performed.
-- **Limitations:** No local scripts, tests, or CI runs are authorized or required.
+- **Result:** Passed. All seven changed paths were retrieved after writing. Foundational classification and loading rules are consistent. The archived Session Archiving task record was not modified.
+- **Limitations:** No local scripts, tests, or CI runs were performed. This change updates activation policy; it does not execute the next session's initialization sequence.
 
 ## 12. Handoff Instructions
 
