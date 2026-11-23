@@ -16,7 +16,7 @@ The Worker owns task capture, task selection, session continuity, collaboration 
 
 The mandatory [Conversation Mode reference](references/conversation-mode.md) is part of The Worker. Load it during foundational initialization. It is not a separate foundational skill.
 
-Agent Skill Authoring and Document Standards remain separately maintained specialist skills. Their detailed procedures do not load during ordinary foundational initialization. The Worker's archive and media references load only when their task-specific conditions apply.
+Document Standards is a separately maintained foundational skill. Load its skill definition during foundational initialization; retrieve its catalog and specific canonical assets only when required. Agent Skill Authoring remains on-demand. The Worker's archive and media references load only when their task-specific conditions apply.
 
 ## CI review is task-scoped
 
