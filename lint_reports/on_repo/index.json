@@ -1,33 +1,33 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "runs": [
     {
-      "run_id": "45107478771",
-      "run_number": 106,
-      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45107478771",
-      "commit_sha": "c69eda17448c6445e35f746f6409df0996f78983",
-      "generated_at_utc": "2026-11-23T03:41:57.000Z",
+      "scope": "on_repo",
+      "run_id": "45117564825",
+      "run_number": 160,
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45117564825",
+      "attempt": 1,
+      "commit_sha": "72bbc615fff312918c6ddb133c08d76f66ec901e",
+      "generated_at_utc": "2026-11-23T05:24:47.476977+00:00",
       "status": "Failed",
-      "total_findings": 453,
-      "attempt": 1,
-      "files_evaluated_count": 48
+      "execution_mode": "repository-wide",
+      "files_evaluated_count": 49,
+      "files_failed": 11,
+      "files_with_findings": 39,
+      "total_findings": 456,
+      "hard_findings": 144,
+      "advisory_findings": 312,
+      "new_findings": 456,
+      "recurring_findings": 0,
+      "resolved_findings_count": 0
     },
     {
-      "run_id": "45114176416",
-      "run_number": 155,
-      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45114176416",
+      "run_id": "45117144532",
+      "run_number": 159,
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45117144532",
       "attempt": 1,
-      "commit_sha": "24d368d49e8bd1655d8db87e16083bce56e65240",
-      "generated_at_utc": "2026-11-23T04:50:37.057973+00:00",
-      "status": "Failed"
-    },
-    {
-      "run_id": "45116837978",
-      "run_number": 156,
-      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45116837978",
-      "attempt": 1,
-      "commit_sha": "c7bf066b7fc27d57764467d0f038c1a3350201f2",
-      "generated_at_utc": "2026-11-23T05:17:59.184760+00:00",
+      "commit_sha": "01eba08a26a138760f0c5d98d1bb2303ecede7c8",
+      "generated_at_utc": "2026-11-23T05:20:54.068421+00:00",
       "status": "Failed"
     },
     {
@@ -40,13 +40,33 @@
       "status": "Failed"
     },
     {
-      "run_id": "45117144532",
-      "run_number": 159,
-      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45117144532",
+      "run_id": "45116837978",
+      "run_number": 156,
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45116837978",
       "attempt": 1,
-      "commit_sha": "01eba08a26a138760f0c5d98d1bb2303ecede7c8",
-      "generated_at_utc": "2026-11-23T05:20:54.068421+00:00",
+      "commit_sha": "c7bf066b7fc27d57764467d0f038c1a3350201f2",
+      "generated_at_utc": "2026-11-23T05:17:59.184760+00:00",
       "status": "Failed"
+    },
+    {
+      "run_id": "45114176416",
+      "run_number": 155,
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45114176416",
+      "attempt": 1,
+      "commit_sha": "24d368d49e8bd1655d8db87e16083bce56e65240",
+      "generated_at_utc": "2026-11-23T04:50:37.057973+00:00",
+      "status": "Failed"
+    },
+    {
+      "run_id": "45107478771",
+      "run_number": 106,
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45107478771",
+      "commit_sha": "c69eda17448c6445e35f746f6409df0996f78983",
+      "generated_at_utc": "2026-11-23T03:41:57.000Z",
+      "status": "Failed",
+      "total_findings": 453,
+      "attempt": 1,
+      "files_evaluated_count": 48
     }
   ]
 }
