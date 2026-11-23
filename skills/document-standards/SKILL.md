@@ -2,7 +2,7 @@
 name: document-standards
 description: Apply the repository's template-first policy when creating, revising, reviewing, or migrating recurring documents and structured records. Use when selecting templates, defining document types, checking structure, or preventing document-format drift.
 metadata:
-  project-role: task-specific
+  project-role: foundational
   format: agentskills
 ---
 
