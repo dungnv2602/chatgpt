@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 01:45 UTC —** Novel template contract audit and zero-entry clarifications are complete and read back. Next: obtain explicit approval to create `.github/workflows/validate-document-standards.yml`; then run the 13 catalog-validator tests and validator on a GitHub-hosted runner. No workflow file was changed and no repository tests were run locally.
+- **2026-11-23 01:50 UTC — Brief before execution:** Approval received to add `.github/workflows/validate-document-standards.yml` and run hosted validation. First inspect the GitHub Actions skill, existing workflow conventions, validator CLI, and its 13 tests. Then create the narrow dedicated workflow, read it back, dispatch it on `gpt`, and inspect the run logs/results. Do not alter unrelated workflows or weaken existing lint rules.
 
 ## Open Discussions
 
