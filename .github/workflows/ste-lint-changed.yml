@@ -208,6 +208,7 @@ jobs:
           FETCH_FALLBACK: ${{ steps.fetch_baseline.outputs.full_audit }}
           FULL_FAILED: ${{ steps.full_audit.outputs.failed }}
           CHANGED_FAILED: ${{ steps.changed_lint.outputs.failed }}
+          ANCHOR_FAILED: ${{ steps.anchors.outcome }}
         run: |
           set -euo pipefail
           mode="incremental"
@@ -217,7 +218,7 @@ jobs:
             baseline=""
           fi
           status="Passed"
-          if [[ "$FULL_FAILED" == "1" || "$CHANGED_FAILED" == "1" ]]; then status="Failed"; fi
+          if [[ "$FULL_FAILED" == "1" || "$CHANGED_FAILED" == "1" || "$ANCHOR_FAILED" == "failure" ]]; then status="Failed"; fi
           mkdir -p "lint_reports/on_changed/history/$GITHUB_RUN_ID"
           python3 skills/asd-ste100/scripts/generate_lint_report.py \
             --scope on_changed --records-dir .lint-report-records \
