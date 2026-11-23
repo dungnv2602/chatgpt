@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-100738
 - **Created:** 2026-11-23 10:07 UTC
-- **Updated:** 2026-11-23 10:50 UTC
+- **Updated:** 2026-11-23 10:54 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -55,6 +55,12 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 - **Validation:** Use natural GitHub Actions runs. Do not manually dispatch or poll workflows.
 
 ## 6. Progress Log
+
+### 2026-11-23 10:54 UTC
+
+- **Action:** Completed the fifth catalog batch and reviewed the full set of catalog findings.
+- **Result:** The five batches removed all 68 baseline semicolon findings and all three synonym-rotation findings. They also addressed three of four baseline long-sentence findings. The catalog readback contains no semicolons. One long-sentence fingerprint remains to reconcile against its reported source location before the catalog can be considered complete. The catalog maintenance requirements remain intact. Readback passed after commit `9bc43433477815c90a178ebde7b4fcd260d10842`.
+- **Next:** Reconcile the remaining catalog long-sentence fingerprint. Then review the next highest-density file.
 
 ### 2026-11-23 10:50 UTC
 
