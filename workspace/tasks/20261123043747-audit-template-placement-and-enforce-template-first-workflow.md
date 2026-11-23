@@ -5,16 +5,15 @@
 - **Template version:** 1.1
 - **ID:** 20261123043747
 - **Created:** 2026-11-23 04:37 UTC
-- **Updated:** 2026-11-23 04:57 UTC
+- **Updated:** 2026-11-23 04:58 UTC
 - **Priority:** P1
-- **Status:** Done
+- **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** 20261122-233900
-- **Archived:** Yes
-- **Archive timestamp:** 2026-11-23T04:57:48Z
+- **Archived:** No
 
 ## 1. Original Request
 
@@ -97,7 +96,10 @@ The task record was created from `workspace/TASK_TEMPLATE.md`. The full reposito
 
 ## 8. Remaining Work
 
-None. The changed-document lint workflow shell defect and unverified hosted result are recorded as separate open CI issues. Do not change that workflow without separate authorization.
+- Create and verify the immutable archive copy.
+- Register the exact archive path and UTC timestamp in the retention index.
+- Remove the active record and reconcile the task board.
+- The changed-document lint workflow shell defect and unverified hosted result remain separate open CI issues.
 
 ## 9. Next Actions
 
