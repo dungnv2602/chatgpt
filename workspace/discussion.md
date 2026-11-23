@@ -4,9 +4,9 @@
 
 ## Open Discussions
 
-- **2026-11-23 10:16 UTC — Default-branch observer decision:** The gpt-only collector can backfill runs after a later push or exact-run request. It cannot immediately capture a run that fails before any job starts. **User decision:** Keep delayed capture on gpt, or authorize immediate observation through a workflow on main or an external GitHub App webhook. Do not modify main without explicit approval.
+- **2026-11-23 10:07 UTC — Approved lint remediation:** User approved task `20261123-100738` for the 155 unique hard findings in the current repository-wide report. The changed-scope full-audit fallback contains the identical fingerprints. Advisory findings remain out of scope. The task is Ready and will be selected after the current diagnostic-report task reaches its validation and closeout checkpoint.
 
-- **2026-11-23 10:16 UTC — Existing lint findings:** The repository-wide report records 144 hard findings, and the changed-scope fallback records 145. The lint thresholds and baselines remain unchanged. These findings are separate from the completed report-pipeline work. **User decision:** Approve a separate remediation task, or defer it.
+- **2026-11-23 10:16 UTC — Default-branch observer decision:** The gpt-only collector can backfill runs after a later push or exact-run request. It cannot immediately capture a run that fails before any job starts. **User decision:** Keep delayed capture on gpt, or authorize immediate observation through a workflow on main or an external GitHub App webhook. Do not modify main without explicit approval.
 
 - **2026-11-23 10:16 UTC — Document Standards validation:** The latest prior report [45128450035](https://github.com/dungnv2602/chatgpt/actions/runs/45128450035) predates the final catalog correction. Commit [a12188b](https://github.com/dungnv2602/chatgpt/commit/a12188b8bff24b04f678eb711463c2aad16d9866) changed a file under `skills/**`, which matches the workflow's push filter on gpt. A natural validation run is eligible. No manual dispatch is needed. Review it only when naturally available.
 
