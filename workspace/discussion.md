@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 09:52 UTC — Review open discussions and approved repair scope:** Inspect the task board, paused diagnostic-report task, collector implementation, affected reports, and regression tests. Determine which open items need a user decision and implement only the approved cancelled-run reporting fix.
+- **2026-11-23 09:55 UTC — Confirm the report contract and task-resumption format:** Inspect the exact cancellation-classification logic, affected immutable captures, regression tests, Document Type Catalog entry, and Version 1.1 task template. Establish the smallest safe code/test change and the correct way to resume the paused task.
 
 ## Open Discussions
 - **2026-11-23 — Hosted retention validation:** The shared cleanup script and tests now cover exact individual files in both `archive/tasks/` and `archive/reports/`. A hosted run of the schedule-only cleanup has not yet been observed. Do not dispatch it manually or modify `main`.
