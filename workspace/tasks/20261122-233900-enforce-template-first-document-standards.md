@@ -145,6 +145,13 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** `workspace/task_board.md`; archived task path `archive/tasks/20261120-183600-continue-samantha-drawing-session.md`; Worker task-closeout procedure in `skills/the-worker/SKILL.md`.
 - **Next:** Continue the template-first catalog and validation work.
 
+### 2026-11-23 00:18 UTC
+
+- **Action:** Reviewed the first post-fix changed-document lint run.
+- **Result:** Run [45087857403](https://github.com/dungnv2602/chatgpt/actions/runs/45087857403) completed with failure. Both preflight steps succeeded: the guard identified the run and the baseline query succeeded without checkout; the validation job fetched the baseline and identified changed files. The downstream STE lint step failed on existing findings in `lint_reports/latest-lint-report.md`, `skills/agent-skill-authoring/SKILL.md`, and `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`. The three files updated for the remote-only policy produced no lint findings in this run. The latest successful baseline remains run #302 at commit `bc3e2205fb469f22d6dd93017b7945231e1927c2`; the incremental check therefore covered 111 commits since that baseline.
+- **References:** [Run #349](https://github.com/dungnv2602/chatgpt/actions/runs/45087857403); `.github/workflows/ste-lint-changed.yml`; `skills/the-worker/SKILL.md`; `skills/github-actions/SKILL.md`; `skills/session-archiving/SKILL.md`.
+- **Next:** Keep the workflow fix. Treat the remaining STE findings as separate documentation-lint debt; do not weaken the workflow or claim CI passed.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
@@ -161,7 +168,7 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - The processor test suite covers important intake and publication paths. It does not establish exhaustive field-by-field validation coverage.
 - The three master catalogues contain heterogeneous prompt, pose, and image-reference material. They are classified as lightweight collections, not uniform record types.
 - The catalog covers the main recurring document types identified across `images/`, `master/`, `novels/`, `drawings/`, `skills/`, and `workspace/`. Full file-by-file reconciliation remains incomplete.
-- The changed-document lint preflight repository-resolution defect has been fixed on `gpt`. No post-fix Actions result has been checked.
+- The changed-document lint preflight repository-resolution defect has been fixed on `gpt`. Run #349 confirms that preflight, baseline lookup, and changed-file discovery succeed. The downstream STE lint step still fails on existing findings in the lint report and Agent Skill documentation; the updated remote-only policy files had no findings.
 
 ## 8. Remaining Work
 
@@ -208,9 +215,9 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **Limitations:** This policy is procedural. Future compliance must be maintained by using GitHub APIs and Actions only.
 
 - **Check:** Changed-document lint workflow repository resolution.
-- **Method:** Read back `.github/workflows/ste-lint-changed.yml`.
-- **Result:** Both `gh run list` calls include the explicit `--repo "$GITHUB_REPOSITORY"` argument.
-- **Limitations:** A post-fix Actions result has not yet been inspected.
+- **Method:** Read back `.github/workflows/ste-lint-changed.yml` and inspect the first post-fix Actions run.
+- **Result:** Both `gh run list` calls include the explicit `--repo "$GITHUB_REPOSITORY"` argument. Run #349 confirms that the preflight guard and baseline lookup succeed before checkout, and the changed-file discovery step succeeds.
+- **Limitations:** The downstream STE lint step fails on existing findings in `lint_reports/latest-lint-report.md`, `skills/agent-skill-authoring/SKILL.md`, and `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`. The workflow is functioning; the overall run is not green.
 
 - **Check:** Samantha task archive closeout.
 - **Method:** Read the task board, verify the active task path is absent, and inspect the archival commit's changed-path metadata without reading archived contents.
