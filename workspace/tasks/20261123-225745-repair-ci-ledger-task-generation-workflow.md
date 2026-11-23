@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261123-225745
 - **Created:** 2026-11-23 22:57 UTC
-- **Updated:** 2026-11-23 23:38 UTC
+- **Updated:** 2026-11-23 23:41 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -98,9 +98,16 @@ Restore reliable event-driven task generation and lifecycle management for CI fi
 - **References:** Commit [3a4b350](https://github.com/dungnv2602/chatgpt/commit/3a4b35054f9db286a8ca9e0e23fb38f2cc1e6206).
 - **Next:** Validate hosted task publication and the later lifecycle improvements.
 
+### 2026-11-23 23:41 UTC
+
+- **Action:** Hardened the baseline failure path and extended grouped-retirement regression coverage. Read back the first natural post-reset diagnostics capture.
+- **Result:** A non-full or tooling-invalid lint candidate is now marked processed once with a warning while leaving its scope baseline unseeded. This prevents the same immutable report from being retried and logged on every sweep; a later valid full audit can still seed the scope. Added tests for one-shot invalid-baseline handling and for grouped tasks where one finding remains open. The first natural post-reset run, Document Standards run [45290888511](https://github.com/dungnv2602/chatgpt/actions/runs/45290888511), has only an Incomplete pre-finalizer capture because its source job was still in progress. It created no Ledger finding. The run remains pending for post-run capture.
+- **References:** Supplemental commit [59df9ea](https://github.com/dungnv2602/chatgpt/commit/59df9eab2f568605ab94d84fefec5b787f477448); reports/triage/scripts/ledger.py; reports/triage/scripts/test_ledger.py; reports/triage/README.md.
+- **Next:** Allow the natural post-run capture and hosted regression results to arrive. Do not poll or dispatch workflows.
+
 ## 7. Current State
 
-Workflow hardening is committed in [b6796db](https://github.com/dungnv2602/chatgpt/commit/b6796db503fa0d23af28a92a3105cd6d3321168d). The report/ledger clean start is committed in [e907af9](https://github.com/dungnv2602/chatgpt/commit/e907af94fbc1f8cd13899532bd92be9126c828b0). Read-back confirms zero prior report payloads or pointers, empty report indexes, and an empty schema 1.4.0 Ledger with unseeded per-scope baselines. The 13 unapproved Ledger-generated proposals are preserved as Cancelled archive records. Four unrelated active tasks remain unchanged. Hosted validation, first baseline seeding, and end-to-end task retirement are not yet verified.
+Workflow hardening is committed in [b6796db](https://github.com/dungnv2602/chatgpt/commit/b6796db503fa0d23af28a92a3105cd6d3321168d), with additional baseline retry and grouped-retirement tests in [59df9ea](https://github.com/dungnv2602/chatgpt/commit/59df9eab2f568605ab94d84fefec5b787f477448). The user-authorized clean start is committed in [e907af9](https://github.com/dungnv2602/chatgpt/commit/e907af94fbc1f8cd13899532bd92be9126c828b0). All old report history, snapshots, and pointers were removed from the current tree. The first natural post-reset diagnostics run [45290888511](https://github.com/dungnv2602/chatgpt/actions/runs/45290888511) has one Incomplete pre-finalizer capture and remains pending its post-run capture. The Ledger currently has zero findings; it has processed only that pre-finalizer report path, and both lint baselines remain unseeded. Both lint indexes are empty. The 13 unapproved Ledger-generated proposals are preserved as Cancelled archive records. Four unrelated active tasks remain. Hosted regression success and end-to-end task retirement remain unverified.
 
 ## 8. Remaining Work
 
@@ -137,12 +144,12 @@ Workflow hardening is committed in [b6796db](https://github.com/dungnv2602/chatg
 
 - **Check:** Committed workflow implementation and clean-start state.
 - **Method:** Read back the workflow source, Ledger generator/schema/tests, report generator/tests, docs, task board, archive retention index, all three report indexes, and the Ledger from branch `gpt`. Inspected the recursive repository tree after reset.
-- **Result:** Read-back confirms workflow implementation commit [b6796db](https://github.com/dungnv2602/chatgpt/commit/b6796db503fa0d23af28a92a3105cd6d3321168d) and reset commit [e907af9](https://github.com/dungnv2602/chatgpt/commit/e907af94fbc1f8cd13899532bd92be9126c828b0). Report payloads/pointers are absent other than `archive/reports/.gitkeep`. All three report indexes are empty. The Ledger has zero findings and processed paths, and both baseline flags are false. The retention index preserves 21 task archives and has zero report entries.
-- **Limitations:** No repository scripts or tests were run locally. Hosted regression outcomes and end-to-end post-reset task retirement have not yet been observed.
+- **Result:** Read-back confirms workflow implementation commit [b6796db](https://github.com/dungnv2602/chatgpt/commit/b6796db503fa0d23af28a92a3105cd6d3321168d), supplemental hardening commit [59df9ea](https://github.com/dungnv2602/chatgpt/commit/59df9eab2f568605ab94d84fefec5b787f477448), and reset commit [e907af9](https://github.com/dungnv2602/chatgpt/commit/e907af94fbc1f8cd13899532bd92be9126c828b0). No pre-reset report payload, pointer, or archive remains in the current tree except `archive/reports/.gitkeep`. Both lint indexes are empty. The Actions index contains one post-reset Incomplete pre-finalizer report and lists its source run as pending. The Ledger has zero findings and one processed pre-finalizer report path; both lint baseline flags are false. The retention index preserves 21 task archives and has zero report entries.
+- **Limitations:** No repository scripts or tests were run locally. The observed pre-finalizer capture does not establish the source workflow's final result or hosted regression success. Post-run capture, lint baseline seeding, and end-to-end task retirement remain unverified.
 
 ## 12. Handoff Instructions
 
-Keep this task In Progress. Allow the normal GitHub Actions workflows to validate the committed changes. Do not dispatch or poll workflows. Confirm the first full audit in each lint scope seeds its baseline without creating tasks. Confirm only later new actionable findings create grouped tasks. Confirm a Done task archive triggers terminal Ledger retirement. If any hosted check fails, use its natural diagnostic report to fix the root cause. Do not backfill pre-reset reports or manually alter the empty Ledger.
+Keep this task In Progress. Allow the normal GitHub Actions workflows to validate the committed changes. Do not dispatch or poll workflows. Confirm the first full audit in each lint scope seeds its baseline without creating tasks. Confirm only later new actionable findings create grouped tasks. Confirm a Done task archive triggers terminal Ledger retirement. If any hosted check fails, use its natural diagnostic report to fix the root cause. Do not backfill pre-reset reports or manually alter the Ledger. The one incomplete pre-finalizer report is expected to be followed by its post-run capture.
 
 ## 13. Ledger Findings
 
