@@ -1,0 +1,69 @@
+Validate target branch and reject superseded push runs	Set up job	﻿2026-11-23T07:02:52.8957653Z Current runner version: '2.338.2'
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8987195Z ##[group]Runner Image Provisioner
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8988439Z Hosted Compute Agent
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8989270Z Version: 20261111.635
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8990152Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8991133Z Build Date: 2026-11-11T01:49:01Z
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8991905Z Worker ID: {82242a9b-d80c-4cc1-a2fd-eae3ac897573}
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8992491Z Region: northcentralus
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8993059Z Cloud: Azure
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8993552Z ##[endgroup]
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8994837Z ##[group]Operating System
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8995373Z Ubuntu
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8995811Z 26.04.1
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8996281Z LTS
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8996767Z ##[endgroup]
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8997251Z ##[group]Runner Image
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8998006Z Image: ubuntu-26.04
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8998478Z Version: 20261116.202.1
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.8999399Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.9000894Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.9001689Z ##[endgroup]
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.9002623Z ##[group]GITHUB_TOKEN Permissions
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.9004297Z Actions: write
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.9004826Z Contents: read
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.9005373Z Metadata: read
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.9005833Z ##[endgroup]
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.9008178Z Secret source: Actions
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.9009004Z Cache mode: write
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.9009813Z Prepare workflow directory
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.9381957Z Prepare all required actions
+Validate target branch and reject superseded push runs	Set up job	2026-11-23T07:02:52.9500558Z Complete job name: Validate target branch and reject superseded push runs
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	﻿2026-11-23T07:02:53.0458940Z ##[group]Run set -euo pipefail
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0459727Z ^[[36;1mset -euo pipefail^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0460408Z ^[[36;1mif [[ "$GITHUB_REF_NAME" != "gpt" ]]; then^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0461278Z ^[[36;1m  echo "::error::Select the gpt branch when manually dispatching this workflow."^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0462133Z ^[[36;1m  exit 1^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0462581Z ^[[36;1mfi^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0463138Z ^[[36;1mif [[ "$GITHUB_EVENT_NAME" != "push" ]]; then^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0463767Z ^[[36;1m  echo "Manual run on gpt. Continue."^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0464408Z ^[[36;1m  echo "proceed=true" >> "$GITHUB_OUTPUT"^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0465033Z ^[[36;1m  exit 0^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0465490Z ^[[36;1mfi^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0465992Z ^[[36;1mif ! latest_run=$(gh run list \^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0466667Z ^[[36;1m  --workflow ".github/workflows/ste-lint-full-docs.yml" \^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0467399Z ^[[36;1m  --branch "$GITHUB_REF_NAME" \^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0468283Z ^[[36;1m  --event push \^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0468908Z ^[[36;1m  --limit 100 \^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0469432Z ^[[36;1m  --json databaseId,number \^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0470094Z ^[[36;1m  --jq 'max_by(.number).databaseId // empty' 2>/dev/null); then^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0470888Z ^[[36;1m  latest_run=""^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0471365Z ^[[36;1mfi^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0471914Z ^[[36;1mif [[ -n "$latest_run" && "$latest_run" != "$GITHUB_RUN_ID" ]]; then^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0472795Z ^[[36;1m  echo "A newer push run ($latest_run) supersedes this run ($GITHUB_RUN_ID)."^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0473550Z ^[[36;1m  gh api --method POST \^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0474321Z ^[[36;1m    "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/cancel" >/dev/null^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0475034Z ^[[36;1m  exit 0^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0475469Z ^[[36;1mfi^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0476883Z ^[[36;1mif [[ -z "$latest_run" ]]; then^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0478162Z ^[[36;1m  echo "::warning::Could not identify the latest push run. Continue with validation."^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0479313Z ^[[36;1mfi^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0480058Z ^[[36;1mecho "proceed=true" >> "$GITHUB_OUTPUT"^[[0m
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0796668Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0798199Z env:
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0803915Z   GH_TOKEN: ***
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:53.0804807Z ##[endgroup]
+Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:02:55.0996038Z ##[warning]Could not identify the latest push run. Continue with validation.
+Validate target branch and reject superseded push runs	Complete job	﻿2026-11-23T07:02:55.1139465Z Evaluate and set job outputs
+Validate target branch and reject superseded push runs	Complete job	2026-11-23T07:02:55.1147882Z Set output 'proceed'
+Validate target branch and reject superseded push runs	Complete job	2026-11-23T07:02:55.1149613Z Cleaning up orphan processes

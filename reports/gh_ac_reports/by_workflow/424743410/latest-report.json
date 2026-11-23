@@ -11,30 +11,30 @@
     "event": "push",
     "branch": "gpt",
     "head_sha": "6133f83778ce3d6241ce5e53faf443292a3140d1",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "cancelled",
     "created_at": "2026-11-23T07:04:09Z",
     "run_started_at": "2026-11-23T07:04:09Z",
-    "updated_at": "2026-11-23T07:04:18Z",
+    "updated_at": "2026-11-23T07:04:41Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "Serialize diagnostic report publishers across workflows"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-23T07:04:34Z",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T07:06:37Z",
     "completeness": "Incomplete",
     "reporter_job": {
       "id": "137538139349",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "cancelled",
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
     "primary_category": "cancelled",
     "categories": [
       "cancelled"
@@ -48,7 +48,7 @@
         "step_name": "Validate branch and guard push runs",
         "blocking": true,
         "confidence": "high",
-        "message": "Step conclusion: cancelled"
+        "message": "Validate target branch and reject superseded push runs\tValidate branch and guard push runs\t2026-11-23T07:04:11.9704120Z ^[[36;1m  echo \"::error::Select the gpt branch when manually dispatching this workflow.\"^[[0m"
       },
       {
         "category": "cancelled",
@@ -101,12 +101,15 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 9822,
         "path": "logs/job-137538097907.log",
-        "error": "run 45128438340 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "Validate target branch and reject superseded push runs\tValidate branch and guard push runs\t2026-11-23T07:04:11.9704120Z ^[[36;1m  echo \"::error::Select the gpt branch when manually dispatching this workflow.\"^[[0m",
+          "Validate target branch and reject superseded push runs\tValidate branch and guard push runs\t2026-11-23T07:04:15.3395865Z ##[error]The operation was canceled."
+        ]
       }
     },
     {
@@ -124,9 +127,9 @@
       "log_capture": {
         "available": false,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 29,
         "path": "logs/job-137538141103.log",
-        "error": "run 45128438340 is still in progress; logs will be available when it is complete\n",
+        "error": "log not found: 137538141103\n",
         "marker_lines": []
       }
     }
@@ -183,14 +186,9 @@
   "capture_errors": [
     {
       "source": "job_log",
-      "job_id": "137538097907",
-      "message": "run 45128438340 is still in progress; logs will be available when it is complete\n"
-    },
-    {
-      "source": "job_log",
       "job_id": "137538141103",
-      "message": "run 45128438340 is still in progress; logs will be available when it is complete\n"
+      "message": "log not found: 137538141103\n"
     }
   ],
-  "history_path": "history/424743410/45128438340-attempt-1-pre_finalizer"
+  "history_path": "history/424743410/45128438340-attempt-1-post_run"
 }

@@ -1,0 +1,181 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45128427239",
+    "number": 57,
+    "attempt": 1,
+    "workflow_id": 422582294,
+    "workflow_name": "Process Image Takeout and Create WebP Derivatives",
+    "workflow_path": ".github/workflows/convert-images-to-webp.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45128427239",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "14dfb64ffc4e0c544faf4513eb806c39a4851970",
+    "status": "completed",
+    "conclusion": "cancelled",
+    "created_at": "2026-11-23T07:04:02Z",
+    "run_started_at": "2026-11-23T07:04:02Z",
+    "updated_at": "2026-11-23T07:04:32Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Serialize diagnostic report publishers across workflows"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T07:06:31Z",
+    "completeness": "Complete",
+    "reporter_job": {
+      "id": "137538224145",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "cancelled"
+    }
+  },
+  "classification": {
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
+    "primary_category": "cancelled",
+    "categories": [
+      "cancelled"
+    ],
+    "issues": []
+  },
+  "jobs": [
+    {
+      "id": "137538060412",
+      "name": "process-image-takeout",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-23T07:04:04Z",
+      "completed_at": "2026-11-23T07:04:30Z",
+      "runner_name": "GitHub Actions 1000001212",
+      "runner_id": 1000001212,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T07:04:05Z",
+          "completed_at": "2026-11-23T07:04:06Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T07:04:06Z",
+          "completed_at": "2026-11-23T07:04:13Z"
+        },
+        {
+          "number": 3,
+          "name": "Install WebP encoder and YAML parser",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T07:04:13Z",
+          "completed_at": "2026-11-23T07:04:24Z"
+        },
+        {
+          "number": 4,
+          "name": "Compile takeout processor and publication verifier",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T07:04:24Z",
+          "completed_at": "2026-11-23T07:04:24Z"
+        },
+        {
+          "number": 5,
+          "name": "Test takeout processor",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T07:04:24Z",
+          "completed_at": "2026-11-23T07:04:27Z"
+        },
+        {
+          "number": 6,
+          "name": "Process takeout hand-off",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T07:04:27Z",
+          "completed_at": "2026-11-23T07:04:27Z"
+        },
+        {
+          "number": 7,
+          "name": "Commit and safely publish processed assets and reports",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T07:04:27Z",
+          "completed_at": "2026-11-23T07:04:27Z"
+        },
+        {
+          "number": 8,
+          "name": "Verify published assets and GitHub links",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T07:04:27Z",
+          "completed_at": "2026-11-23T07:04:28Z"
+        },
+        {
+          "number": 9,
+          "name": "Mark processing failures",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T07:04:28Z",
+          "completed_at": "2026-11-23T07:04:28Z"
+        },
+        {
+          "number": 18,
+          "name": "Post Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T07:04:28Z",
+          "completed_at": "2026-11-23T07:04:28Z"
+        },
+        {
+          "number": 19,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T07:04:28Z",
+          "completed_at": "2026-11-23T07:04:28Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 60522,
+        "path": "logs/job-137538060412.log",
+        "error": null,
+        "marker_lines": [
+          "process-image-takeout\tCommit and safely publish processed assets and reports\t2026-11-23T07:04:27.1755266Z ^[[36;1m  commit_message=\"chore(images): archive failed takeout diagnostics\"^[[0m",
+          "process-image-takeout\tCommit and safely publish processed assets and reports\t2026-11-23T07:04:27.1757797Z ^[[36;1m    echo \"::error::Could not rebase takeout changes cleanly. No remote changes were overwritten.\"^[[0m",
+          "process-image-takeout\tCommit and safely publish processed assets and reports\t2026-11-23T07:04:27.1760095Z ^[[36;1m    echo \"::error::Push failed although origin/gpt did not advance. Check token permissions or branch protection.\"^[[0m",
+          "process-image-takeout\tCommit and safely publish processed assets and reports\t2026-11-23T07:04:27.1761244Z ^[[36;1mecho \"::error::Could not publish after $max_attempts synchronization attempts.\"^[[0m",
+          "process-image-takeout\tVerify published assets and GitHub links\t2026-11-23T07:04:27.3600731Z ^[[36;1m      echo \"::error::Could not rebase manifest verification onto the latest gpt branch.\"^[[0m",
+          "process-image-takeout\tVerify published assets and GitHub links\t2026-11-23T07:04:27.3602264Z ^[[36;1m      echo \"::error::Could not publish verified manifest; origin/gpt did not advance.\"^[[0m",
+          "process-image-takeout\tVerify published assets and GitHub links\t2026-11-23T07:04:27.3602983Z ^[[36;1m      echo \"::error::Could not publish verified manifest after $max_attempts attempts.\"^[[0m"
+        ]
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "137538060412",
+      "name": "process-image-takeout",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-23T07:04:04Z",
+      "completed_at": "2026-11-23T07:04:30Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45128427239/job/137538060412",
+      "app": "GitHub Actions",
+      "annotations_count": 0
+    }
+  ],
+  "annotations": [],
+  "artifacts": [],
+  "capture_errors": [],
+  "history_path": "history/422582294/45128427239-attempt-1-post_run"
+}

@@ -14,30 +14,30 @@
 | Event | push |
 | Actor | dungnv2602 |
 | Created (UTC) | 2026-11-23T07:04:09Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | cancelled |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
+| Status at capture | completed |
+| Observed conclusion | cancelled |
+| Projected conclusion | Not calculated |
+| Reporter job | completed / success |
+| Capture stage | post_run |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T07:04:34Z |
+| Captured (UTC) | 2026-11-23T07:06:37Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
+| State | cancelled |
 | Primary category | cancelled |
 | Jobs | 2 |
 | Steps | 3 |
 | Issues | 2 |
 | Annotations | 2 |
 | Artifacts | 0 |
-| Capture errors | 2 |
+| Capture errors | 1 |
 
 ## Failure classification
 
-cancelled The parent run is still in progress. The projected conclusion is provisional.
+cancelled
 
 ## Jobs and steps
 
@@ -50,7 +50,7 @@ cancelled The parent run is still in progress. The projected conclusion is provi
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| cancelled | 137538097907 | 2 | Validate branch and guard push runs | Blocking | high | Step conclusion: cancelled |
+| cancelled | 137538097907 | 2 | Validate branch and guard push runs | Blocking | high | Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:04:11.9704120Z ^[[36;1m  echo "::error::Select the gpt branch when manually dispatching this workflow."^[[0m |
 | cancelled | 137538141103 | — | Full audit and publish detailed evidence | Blocking | high | Job conclusion: cancelled |
 
 ## Check annotations
@@ -68,8 +68,8 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137538097907 | Validate target branch and reject superseded push runs | logs/job-137538097907.log | 82 | False |  |
-| 137538141103 | Full audit and publish detailed evidence | logs/job-137538141103.log | 82 | False |  |
+| 137538097907 | Validate target branch and reject superseded push runs | logs/job-137538097907.log | 9822 | False | Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:04:11.9704120Z ^[[36;1m  echo "::error::Select the gpt branch when manually dispatching this workflow."^[[0m, Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T07:04:15.3395865Z ##[error]The operation was canceled. |
+| 137538141103 | Full audit and publish detailed evidence | logs/job-137538141103.log | 29 | False |  |
 
 ## Evidence coverage
 
@@ -77,8 +77,7 @@ One or more evidence sources were unavailable. This report is Incomplete.
 
 | Source | HTTP status | Limitation |
 | --- | --- | --- |
-| job_log | Not recorded | run 45128438340 is still in progress; logs will be available when it is complete  |
-| job_log | Not recorded | run 45128438340 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | log not found: 137538141103  |
 
 ## Related lint evidence
 
