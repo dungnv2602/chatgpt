@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:24 UTC — Begin archive-and-delivery reference review:** Review the five hard findings in `skills/drawing/references/archive-and-delivery.md` against its complete source and the archive workflow contract. Preserve provenance and retention requirements.
+- **2026-11-23 11:28 UTC — Remediate archive-and-delivery reference:** Split the two long instructions, standardize check terminology, and remove the adjective false positive. Preserve exact provenance, mapping, and retention requirements.
 
 ## Open Discussions
 
