@@ -73,7 +73,7 @@ The `name` value must:
 
 1. Be 1–64 characters long.
 2. Contain only lowercase ASCII letters (`a-z`), numbers (`0-9`), and single hyphens.
-3. Not begin or end with a hyphen.
+3. Not start or end with a hyphen.
 4. Not contain consecutive hyphens.
 5. Match the containing skill directory name exactly.
 
@@ -200,7 +200,11 @@ Do not rewrite creative writing, dialogue, marketing copy, approved creative pro
 
 Do not run the linter or CI workflows locally. Push technical-document changes to branch `gpt`. Let GitHub Actions check them.
 
-CI review is task-scoped. Inspect the relevant workflow only when the user requests it, when the skill-authoring task changes validation or workflow configuration, or when a known result directly blocks the task. Use `reports/gh_ac_reports/` for workflow evidence and `reports/lint_reports/` for lint findings. Track cross-family issues in `reports/triage/ledger.json`. Do not repair unrelated failures before handling a prompt. Never wait or poll. Let GitHub-hosted Actions run validation.
+CI review is task-scoped. Inspect the relevant workflow only in these cases:
+
+- The user requests it.
+- The skill-authoring task changes validation or workflow configuration.
+- A known result directly blocks the task. Use `reports/gh_ac_reports/` for workflow evidence and `reports/lint_reports/` for lint findings. Track cross-family issues in `reports/triage/ledger.json`. Do not repair unrelated failures before handling a prompt. Never wait or poll. Let GitHub-hosted Actions run validation.
 
 The linter checks only supported patterns. It cannot prove meaning or dictionary compliance.
 
