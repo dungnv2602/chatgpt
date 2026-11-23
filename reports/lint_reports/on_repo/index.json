@@ -1,25 +1,4 @@
 {
   "schema_version": "1.1.0",
-  "runs": [
-    {
-      "scope": "on_repo",
-      "run_id": "45207707231",
-      "run_number": 177,
-      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45207707231",
-      "attempt": 1,
-      "commit_sha": "8d48fd97902b40a52a8883c49614d633fc60e424",
-      "generated_at_utc": "2026-11-23T15:40:14.072469+00:00",
-      "status": "Failed",
-      "execution_mode": "repository-wide",
-      "files_evaluated_count": 48,
-      "files_failed": 8,
-      "files_with_findings": 37,
-      "total_findings": 368,
-      "hard_findings": 66,
-      "advisory_findings": 302,
-      "new_findings": 118,
-      "recurring_findings": 250,
-      "resolved_findings_count": 93
-    }
-  ]
+  "runs": []
 }
