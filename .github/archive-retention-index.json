@@ -1,5 +1,10 @@
 {
   "schema_version": 1,
   "unindexed_records": "preserve",
-  "records": []
+  "records": [
+    {
+      "path": "archive/tasks/20261123-041640-worker-mode-independent-and-lint-report-formats.md",
+      "archived_at_utc": "2026-11-23T04:21:54Z"
+    }
+  ]
 }
