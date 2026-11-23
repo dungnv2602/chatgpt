@@ -5,10 +5,14 @@ on:
     branches:
       - gpt
     paths:
-      - 'skills/document-standards/references/document-type-catalog.md'
-      - 'skills/document-standards/scripts/validate_catalog.py'
-      - 'skills/document-standards/scripts/test_validate_catalog.py'
+      # Check every skill-owned template, schema, and authoring rule.
+      - 'skills/**'
+      # Check project-level and shared workspace templates and their owner contracts.
       - 'novels/templates/**'
+      - 'novels/README.md'
+      - 'novels/WORKFLOW.md'
+      - 'workspace/TASK_TEMPLATE.md'
+      - 'workspace/README.md'
       - '.github/workflows/validate-document-standards.yml'
   workflow_dispatch: {}
 
