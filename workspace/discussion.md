@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 — Classify report document types and define canonical formats.** Inspect the relevant catalog entries, report generator contracts, and both lint-scope outputs. Decide whether each report needs a standalone template, schema, or generator-owned classification. Identify the canonical storage path and required catalog/workflow updates.
+- **2026-11-23 — Record and implement the approved workflow correction.** Create the task record from `workspace/TASK_TEMPLATE.md`. Update The Worker, Conversation Mode, Session Archiving, and workspace guidance so the discussion register and task workflow apply in every mode. Correct the lint-report catalog classifications. Do not add standalone templates that duplicate generated formats. Add an external template only when its generator consumes it.
 
 ## Open Discussions
 
