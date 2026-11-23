@@ -39,7 +39,7 @@ A `resolved` finding requires a fix commit, a successful relevant validation run
 
 The Ledger is one component of The Worker. Task creation is part of finding ingestion, not a later manual review step.
 
-1. **Event trigger:** Create or update tasks in the same ingestion run that accepts a finding from a complete indexed source report. Do not schedule periodic ledger scans or poll for findings.
+1. **Event trigger:** When an unprocessed complete indexed source report is ingested, create tasks for newly identified actionable findings in that same run. Refresh existing tasks for linked findings or an active remediation group. Do not schedule periodic ledger scans or poll for findings.
 2. **Noise threshold:** Create task records for open, investigating, planned, fixing, or verifying findings with severity `medium`, `high`, or `critical`. Keep `low` and `informational` findings in the Ledger without creating workspace tasks. Continue to exclude conclusion-only, cancellation-only, routine-success, incomplete, skipped, neutral, queued, in-progress, and unavailable outcomes.
 3. **Group by remediation:** Lint findings group by source file and rule. Actions findings group by workflow path, job, step, and category. A repeated observation of the same finding does not create another task.
 4. **Task creation:** Create the task from `workspace/TASK_TEMPLATE.md`, add one row to `workspace/task_board.md` under Proposed, and add the generated task ID to each covered finding's `task_refs`. A task may cover several findings.
