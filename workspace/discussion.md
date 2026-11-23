@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 13:32 UTC — Standardize archive verification terminology:** Use `verify` consistently for evidence checks. Replace the ambiguous `confirmed facts` and `confirmed edit` phrases without changing provenance or status requirements.
+- **2026-11-23 13:36 UTC — Begin session brief template review:** Review the single hard finding in `skills/session-archiving/assets/session-brief-template.md` against the archive skill and catalog contract. Preserve the original user wording and open-field semantics.
 
 ## Open Discussions
 
