@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 12:28 UTC — Standardize image provenance validation:** Use `validate` consistently for path, mapping, and link validation. Remove the conflicting `verify` and `checking` verbs without changing evidence requirements.
+- **2026-11-23 12:32 UTC — Begin daily index template review:** Review the two hard findings in `skills/drawing/assets/daily-index-template.md` against the Drawing skill and catalog contract. Preserve required columns, attempt links, and manifest behavior.
 
 ## Open Discussions
 
