@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45181736978",
-  "run_number": 545,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45181736978",
+  "run_id": "45181946597",
+  "run_number": 547,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45181946597",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "1fc800febaa3a3d7c678f06c4b4567dd46777814",
+  "commit_sha": "3d6c4fe8794c60a1573dfdbe0856cfbafd94ed9f",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T13:13:48.019629+00:00",
+  "generated_at_utc": "2026-11-23T13:15:36.672244+00:00",
   "status": "Failed",
-  "linter_source_sha": "1fc800febaa3a3d7c678f06c4b4567dd46777814",
+  "linter_source_sha": "3d6c4fe8794c60a1573dfdbe0856cfbafd94ed9f",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -81,11 +81,11 @@
     "skills/SESSION_START.md"
   ],
   "files_with_findings": 38,
-  "total_findings": 369,
+  "total_findings": 370,
   "hard_findings": 63,
-  "advisory_findings": 306,
+  "advisory_findings": 307,
   "findings_by_rule": {
-    "passive-voice": 265,
+    "passive-voice": 266,
     "present-perfect": 41,
     "synonym-rotation": 12,
     "phrasal-verb": 5,
@@ -1058,7 +1058,16 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 264,
+          "line": 246,
+          "col": 176,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is required",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
+          "line": 260,
           "col": 44,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1067,7 +1076,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 274,
+          "line": 270,
           "col": 68,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1076,7 +1085,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 275,
+          "line": 271,
           "col": 36,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1085,7 +1094,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 275,
+          "line": 271,
           "col": 58,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1094,7 +1103,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 278,
+          "line": 274,
           "col": 4,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1103,7 +1112,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 279,
+          "line": 275,
           "col": 78,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1112,7 +1121,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 280,
+          "line": 276,
           "col": 48,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1121,7 +1130,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 281,
+          "line": 277,
           "col": 75,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1130,7 +1139,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 282,
+          "line": 278,
           "col": 68,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1139,7 +1148,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 292,
+          "line": 288,
           "col": 20,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1148,7 +1157,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 296,
+          "line": 292,
           "col": 53,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1157,7 +1166,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 320,
+          "line": 316,
           "col": 69,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1166,7 +1175,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 324,
+          "line": 320,
           "col": 84,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1174,10 +1183,10 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 24,
+      "count": 25,
       "hard_count": 0,
       "baseline": 0,
-      "words": 3543,
+      "words": 3460,
       "per_100_words": 0.7,
       "path": "skills/the-worker/references/archive-records-and-image-prompts.md",
       "exit_code": 0
@@ -1963,7 +1972,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 293,
+          "line": 290,
           "col": 378,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1972,7 +1981,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 293,
+          "line": 290,
           "col": 553,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1981,7 +1990,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 366,
+          "line": 363,
           "col": 200,
           "rule": "synonym-rotation",
           "level": "advisory-free",
@@ -1990,7 +1999,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 366,
+          "line": 363,
           "col": 222,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1999,7 +2008,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 366,
+          "line": 363,
           "col": 300,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2008,7 +2017,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 374,
+          "line": 371,
           "col": 238,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2017,7 +2026,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 391,
+          "line": 388,
           "col": 19,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2026,7 +2035,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 423,
+          "line": 420,
           "col": 42,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2035,7 +2044,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 424,
+          "line": 421,
           "col": 50,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2044,7 +2053,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 425,
+          "line": 422,
           "col": 42,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2053,7 +2062,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 429,
+          "line": 426,
           "col": 11,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2062,7 +2071,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 447,
+          "line": 444,
           "col": 47,
           "rule": "synonym-rotation",
           "level": "advisory-free",
@@ -2071,7 +2080,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 450,
+          "line": 447,
           "col": 77,
           "rule": "present-perfect",
           "level": "advisory",
@@ -2080,7 +2089,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 452,
+          "line": 449,
           "col": 46,
           "rule": "synonym-rotation",
           "level": "advisory-free",
@@ -2089,7 +2098,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 468,
+          "line": 465,
           "col": 24,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2098,7 +2107,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 494,
+          "line": 491,
           "col": 13,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2109,7 +2118,7 @@
       "count": 25,
       "hard_count": 3,
       "baseline": 24,
-      "words": 4814,
+      "words": 4738,
       "per_100_words": 0.5,
       "path": "skills/drawing/SKILL.md",
       "exit_code": 0
@@ -4939,7 +4948,18 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 264,
+      "line": 246,
+      "col": 176,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is required",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "bb7ba68bed0f5ce8ed1acfa4",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
+      "line": 260,
       "col": 44,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4950,7 +4970,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 274,
+      "line": 270,
       "col": 68,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4961,7 +4981,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 275,
+      "line": 271,
       "col": 36,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4972,7 +4992,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 275,
+      "line": 271,
       "col": 58,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4983,7 +5003,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 278,
+      "line": 274,
       "col": 4,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4994,7 +5014,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 279,
+      "line": 275,
       "col": 78,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5005,7 +5025,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 280,
+      "line": 276,
       "col": 48,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5016,7 +5036,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 281,
+      "line": 277,
       "col": 75,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5027,7 +5047,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 282,
+      "line": 278,
       "col": 68,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5038,7 +5058,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 292,
+      "line": 288,
       "col": 20,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5049,7 +5069,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 296,
+      "line": 292,
       "col": 53,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5060,7 +5080,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 320,
+      "line": 316,
       "col": 69,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5071,7 +5091,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 324,
+      "line": 320,
       "col": 84,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5874,7 +5894,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 293,
+      "line": 290,
       "col": 378,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5885,7 +5905,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 293,
+      "line": 290,
       "col": 553,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5896,7 +5916,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 366,
+      "line": 363,
       "col": 200,
       "rule": "synonym-rotation",
       "level": "advisory-free",
@@ -5907,7 +5927,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 366,
+      "line": 363,
       "col": 222,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5918,7 +5938,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 366,
+      "line": 363,
       "col": 300,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5929,7 +5949,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 374,
+      "line": 371,
       "col": 238,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5940,7 +5960,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 391,
+      "line": 388,
       "col": 19,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5951,7 +5971,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 423,
+      "line": 420,
       "col": 42,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5962,7 +5982,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 424,
+      "line": 421,
       "col": 50,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5973,7 +5993,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 425,
+      "line": 422,
       "col": 42,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5984,7 +6004,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 429,
+      "line": 426,
       "col": 11,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5995,7 +6015,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 447,
+      "line": 444,
       "col": 47,
       "rule": "synonym-rotation",
       "level": "advisory-free",
@@ -6006,7 +6026,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 450,
+      "line": 447,
       "col": 77,
       "rule": "present-perfect",
       "level": "advisory",
@@ -6017,7 +6037,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 452,
+      "line": 449,
       "col": 46,
       "rule": "synonym-rotation",
       "level": "advisory-free",
@@ -6028,7 +6048,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 468,
+      "line": 465,
       "col": 24,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6039,7 +6059,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 494,
+      "line": 491,
       "col": 13,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7996,21 +8016,9 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 0,
+  "new_findings": 1,
   "recurring_findings": 369,
-  "resolved_findings": [
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 4,
-      "col": 594,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was truncated",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "305e0414169478f6e310d27a",
-      "comparison": "resolved"
-    }
-  ],
+  "resolved_findings": [],
   "checks": [
     {
       "name": "Wrapper shell syntax",
@@ -8028,7 +8036,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.312s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.326s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -8046,7 +8054,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 1033 active Markdown files (1103 available as link targets) and 317 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 1039 active Markdown files (1109 available as link targets) and 318 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
