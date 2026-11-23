@@ -6,6 +6,7 @@ on:
       - gpt
     paths-ignore:
       - 'archive/reports/**'
+      - '.github/archive-retention-index.json'
       - 'reports/gh_ac_reports/history/**'
       - 'reports/gh_ac_reports/by_workflow/**'
       - 'reports/gh_ac_reports/index.json'

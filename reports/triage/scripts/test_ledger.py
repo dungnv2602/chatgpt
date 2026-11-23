@@ -595,8 +595,10 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("      - '!workspace/tasks/**'", lint_changed)
         self.assertIn("      - '!workspace/task_board.md'", lint_changed)
         self.assertIn("Ingest centralized CI issues", sweep)
-        self.assertIn("archive/reports/**", sweep)
-        self.assertNotIn("archive/tasks/**", sweep.split("paths-ignore:", 1)[1].split("concurrency:", 1)[0])
+        ignored = sweep.split("paths-ignore:", 1)[1].split("concurrency:", 1)[0]
+        self.assertIn("archive/reports/**", ignored)
+        self.assertIn(".github/archive-retention-index.json", ignored)
+        self.assertNotIn("archive/tasks/**", ignored)
         retention = (root / ".github/workflows/archive-retention.yml").read_text(encoding="utf-8")
         self.assertIn("needs: [cleanup]", retention)
         self.assertIn(group, retention)

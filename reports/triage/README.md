@@ -18,7 +18,7 @@ The generator reads report paths only from the published lint and Actions indexe
 
 The caller's diagnostics jobs remain job-level `continue-on-error: true` so diagnostic reporting cannot change the source workflow result. Individual composite-action steps do not suppress failures. The scheduled archive-retention cleanup and lint report publishers use the same shared writer group. Workflow jobs that hand off to diagnostics do so sequentially; the lock is released between jobs.
 
-Task and Ledger publication updates the report indexes, Ledger, task files, task board, and `task_refs` atomically within the existing commit/rebase/push flow. Diagnostics ignores Ledger-only, task-board-only, discussion-only, and report-archive-only pushes to avoid loops. It must not ignore `archive/tasks/**` or `.github/archive-retention-index.json`, because indexing a Done task archive is the event that retires its terminal findings.
+Task and Ledger publication updates the report indexes, Ledger, task files, task board, and `task_refs` atomically within the existing commit/rebase/push flow. Diagnostics ignores Ledger-only, task-board-only, discussion-only, report-archive-only, and retention-index-only pushes to avoid unnecessary sweeps. It must not ignore `archive/tasks/**`: committing a task archive is the event that triggers terminal finding retirement. The retention index is ignored as a standalone path because every task archive operation also changes `archive/tasks/**`.
 
 ## Lint baseline and flood control
 
