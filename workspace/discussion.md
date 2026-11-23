@@ -1,6 +1,6 @@
 ## Current Step
 
-Commit and read back the 42-rule Markdown coverage register, validator enforcement, regression tests, authoring-gate rules, and hosted workflow path filters.
+Commit and read back the segment-aware glob correction and regression-test fixture correction, then verify all 1,044 Markdown paths remain covered.
 
 ## Open Discussions
 

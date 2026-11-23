@@ -46,20 +46,20 @@ class CatalogValidatorTests(unittest.TestCase):
 
     def set_catalog(self, rows):
         coverage = (
-            "\\n## Markdown inventory coverage\\n\\n"
-            "| Path pattern | Class | Canonical authority | Coverage rationale |\\n"
-            "|---|---|---|---|\\n"
+            "\n## Markdown inventory coverage\n\n"
+            "| Path pattern | Class | Canonical authority | Coverage rationale |\n"
+            "|---|---|---|---|\n"
             "| `skills/**/*.md` | Lightweight pattern | "
-            "`skills/example/SKILL.md` | Skill fixture. |\\n"
+            "`skills/example/SKILL.md` | Skill fixture. |\n"
             "| `workspace/*.md` | Embedded contract | "
-            "`workspace/example.md` and `skills/example/SKILL.md` | Workspace fixture. |\\n"
+            "`workspace/example.md` and `skills/example/SKILL.md` | Workspace fixture. |\n"
             "| `images/**/*.md` | Embedded contract | "
-            "`images/example/README.md` and `skills/example/SKILL.md` | Image fixture. |\\n"
+            "`images/example/README.md` and `skills/example/SKILL.md` | Image fixture. |\n"
             "| `novels/*.md` | Embedded contract | "
-            "`novels/WORKFLOW.md` and `skills/example/SKILL.md` | Novel fixture. |\\n"
+            "`novels/WORKFLOW.md` and `skills/example/SKILL.md` | Novel fixture. |\n"
         )
         self.catalog.write_text(
-            "## Initial inventory\\n\\n" + HEADER + "\\n".join(rows) + coverage,
+            "## Initial inventory\n\n" + HEADER + "\n".join(rows) + coverage,
             encoding="utf-8",
         )
 
@@ -220,11 +220,11 @@ class CatalogValidatorTests(unittest.TestCase):
         content = self.catalog.read_text(encoding="utf-8")
         prefix = content.split("## Markdown inventory coverage", 1)[0]
         coverage = (
-            "## Markdown inventory coverage\\n\\n"
-            "| Path pattern | Class | Canonical authority | Coverage rationale |\\n"
-            "|---|---|---|---|\\n"
-            + "\\n".join(rows)
-            + "\\n"
+            "## Markdown inventory coverage\n\n"
+            "| Path pattern | Class | Canonical authority | Coverage rationale |\n"
+            "|---|---|---|---|\n"
+            + "\n".join(rows)
+            + "\n"
         )
         self.catalog.write_text(prefix + coverage, encoding="utf-8")
 

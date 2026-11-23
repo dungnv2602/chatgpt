@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import fnmatch
 import re
 import sys
 from pathlib import Path
@@ -164,6 +163,26 @@ def find_markdown_documents(root: Path) -> list[str]:
     return sorted(set(documents))
 
 
+def compile_path_pattern(pattern: str) -> re.Pattern[str]:
+    """Compile a repository-relative glob where * stays within one path segment."""
+    pieces: list[str] = []
+    index = 0
+    while index < len(pattern):
+        if pattern[index:index + 2] == "**":
+            pieces.append(".*")
+            index += 2
+        elif pattern[index] == "*":
+            pieces.append("[^/]*")
+            index += 1
+        elif pattern[index] == "?":
+            pieces.append("[^/]")
+            index += 1
+        else:
+            pieces.append(re.escape(pattern[index]))
+            index += 1
+    return re.compile("^" + "".join(pieces) + "$")
+
+
 def validate_markdown_coverage(root: Path, content: str) -> list[str]:
     """Require every in-scope Markdown path to match a catalogued family rule."""
     errors: list[str] = []
@@ -174,7 +193,7 @@ def validate_markdown_coverage(root: Path, content: str) -> list[str]:
 
     documents = find_markdown_documents(root)
     seen_patterns: set[str] = set()
-    compiled: list[tuple[str, str]] = []
+    compiled: list[tuple[re.Pattern[str], str]] = []
 
     for row in rows:
         line = row["line"]
@@ -252,16 +271,17 @@ def validate_markdown_coverage(root: Path, content: str) -> list[str]:
                     f"Line {line}: {class_name} coverage must reference a regression test."
                 )
 
-        matches = [path for path in documents if fnmatch.fnmatchcase(path, pattern)]
+        path_regex = compile_path_pattern(pattern)
+        matches = [path for path in documents if path_regex.fullmatch(path)]
         if not matches:
             errors.append(
                 f"Line {line}: Markdown coverage pattern matches no in-scope document: '{pattern}'."
             )
-        compiled.append((pattern, class_name))
+        compiled.append((path_regex, class_name))
 
     uncovered = [
         path for path in documents
-        if not any(fnmatch.fnmatchcase(path, pattern) for pattern, _ in compiled)
+        if not any(path_regex.fullmatch(path) for path_regex, _ in compiled)
     ]
     if uncovered:
         preview = ", ".join(uncovered[:20])
