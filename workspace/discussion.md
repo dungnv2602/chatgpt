@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 01:40 UTC — Brief before execution:** Resume the approved template-first task without changing any GitHub Actions workflow. Inspect the current catalog, validator, regression tests, and task board/record; identify remaining work that can proceed under existing approval. Keep hosted-runner workflow creation gated on separate explicit authorization. Next, complete a focused catalog/contract audit and update this discussion with verified results.
+- **2026-11-23 01:43 UTC — Brief before execution:** The novel-template audit found that several repeatable tables/blocks use blank example rows without saying what to record when no entries exist. Clarify the zero-entry convention in the affected canonical templates, then read back each edit and align the catalog contract matrix. Do not change template versions because this clarifies usage without changing field structure. Keep GitHub Actions workflow creation approval-gated.
 
 ## Open Discussions
 
