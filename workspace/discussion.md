@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 08:41 UTC — Leave validation handoff:** The natural sweep re-ingested the report as one open publication issue. Verify final repository state and leave the task In Progress until hosted regression results can be reviewed without polling.
+- **2026-11-23 09:18 UTC — Resume ledger implementation under Condensed Mode:** Verify current branch and task state, complete the mandatory generator-owned document/template and test-contract review, then implement and read back the ledger generator and integration.
 
 ## Open Discussions
 - **2026-11-23 — Hosted retention validation:** The shared cleanup script and tests now cover exact individual files in both `archive/tasks/` and `archive/reports/`. A hosted run of the schedule-only cleanup has not yet been observed. Do not dispatch it manually or modify `main`.
