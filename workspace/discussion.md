@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:12 UTC — Remediate drawing skill batch:** Split the mandatory hand-off and prompt instructions into precise steps. Resolve all 14 baseline hard findings without changing drawing workflow requirements or creative authority.
+- **2026-11-23 11:16 UTC — Begin Worker skill review:** Review the nine hard findings in `skills/the-worker/SKILL.md` against the complete skill and task lifecycle contracts. Preserve task-state semantics and closeout requirements.
 
 ## Open Discussions
 
