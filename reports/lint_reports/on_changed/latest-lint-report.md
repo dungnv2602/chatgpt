@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#450](https://github.com/dungnv2602/chatgpt/actions/runs/45152181405)
-- **Run ID / attempt:** 45152181405 / 1
+- **Run:** [#451](https://github.com/dungnv2602/chatgpt/actions/runs/45153305593)
+- **Run ID / attempt:** 45153305593 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / a12188b8bff24b04f678eb711463c2aad16d9866
+- **Branch / commit:** gpt / d70451bddf2abeb28d436993e7f918a951b52a12
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** a12188b8bff24b04f678eb711463c2aad16d9866
-- **Generated (UTC):** 2026-11-23T10:01:39.787019+00:00
+- **Linter source SHA:** d70451bddf2abeb28d436993e7f918a951b52a12
+- **Generated (UTC):** 2026-11-23T10:08:48.835054+00:00
 
 ## 1. Executive summary
 
@@ -121,7 +121,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md | PASS | 8 | 0 | 7 | 2716 | 0.3 | 0 |
 | skills/drawing/SKILL.md | PASS | 35 | 14 | 24 | 5064 | 0.7 | 0 |
 | skills/document-standards/references/document-type-catalog.md | FAIL | 99 | 75 | 0 | 3057 | 3.2 | 1 |
-| workspace/task_board.md | PASS | 3 | 0 | 0 | 238 | 1.3 | 0 |
+| workspace/task_board.md | PASS | 3 | 0 | 0 | 254 | 1.2 | 0 |
 | skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
 | skills/INITIALIZATION_POLICY.md | PASS | 3 | 1 | 4 | 1180 | 0.3 | 0 |
 | skills/drawing/assets/daily-index-template.md | FAIL | 2 | 2 | 0 | 214 | 0.9 | 1 |
@@ -190,7 +190,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.335s
+Ran 4 tests in 0.356s
 
 OK
 ~~~
@@ -223,7 +223,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 450 active Markdown files (515 available as link targets) and 337 local Markdown links.
+Scanned 469 active Markdown files (535 available as link targets) and 338 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -4127,8 +4127,8 @@ No STE findings were recorded for this file.
 - **Findings:** 3
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 238
-- **Findings per 100 words:** 1.3
+- **Words:** 254
+- **Findings per 100 words:** 1.2
 
 #### Complete diagnostics
 
