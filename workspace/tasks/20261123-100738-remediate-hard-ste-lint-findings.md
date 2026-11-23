@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-100738
 - **Created:** 2026-11-23 10:07 UTC
-- **Updated:** 2026-11-23 11:08 UTC
+- **Updated:** 2026-11-23 11:16 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -55,6 +55,12 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 - **Validation:** Use natural GitHub Actions runs. Do not manually dispatch or poll workflows.
 
 ## 6. Progress Log
+
+### 2026-11-23 11:16 UTC
+
+- **Action:** Completed source-level remediation of all 14 baseline hard findings in `skills/drawing/SKILL.md`.
+- **Result:** Reworked the mandatory takeout hand-off into discrete instructions. Split long prompt-fidelity and reference rules without changing their conditions. Replaced synonym rotation with the established verb. The skill now contains no semicolons. Readback passed after commit `3d6c079b3c85539e99c5348846bc8a2bf1d2f998`. No local lint or tests were run. Hosted validation remains pending natural workflow execution.
+- **Next:** Review the nine hard findings in `skills/the-worker/SKILL.md`.
 
 ### 2026-11-23 11:08 UTC
 
@@ -113,7 +119,7 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 7. Current State
 
-The approved task is In Progress and is the current execution. All 75 baseline hard findings in the Document Type Catalog have source-level edits. In `skills/asd-ste100/SKILL.md`, two non-example findings have source-level edits. Thirteen findings remain in deliberate examples that the repository writing policy says to preserve. Hosted validation remains pending. The 319 advisory findings remain out of scope.
+The approved task is In Progress and is the current execution. All 75 baseline hard findings in the Document Type Catalog and all 14 baseline hard findings in `skills/drawing/SKILL.md` have source-level edits. In `skills/asd-ste100/SKILL.md`, two non-example findings have source-level edits. Thirteen findings remain in deliberate examples that the repository writing policy says to preserve. Hosted validation remains pending. The 319 advisory findings remain out of scope.
 
 ## 8. Remaining Work
 
@@ -124,8 +130,8 @@ The approved task is In Progress and is the current execution. All 75 baseline h
 
 ## 9. Next Actions
 
-1. Review the 14 hard findings in `skills/drawing/SKILL.md` against the complete source and relevant references.
-2. Preserve deliberate examples and all operational requirements.
+1. Review the nine hard findings in `skills/the-worker/SKILL.md` against the complete source and task lifecycle contracts.
+2. Preserve task-state semantics, approval rules, and closeout requirements.
 3. Apply fixes on `gpt` and inspect naturally generated hosted reports.
 4. Repeat until the approved hard-finding set is resolved or a policy conflict requires user direction.
 
