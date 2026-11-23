@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 13:12 UTC — Standardize task template lifecycle wording:** Change the lifecycle comment's `Verify` action to `Check` to match the template's verification checklist. Preserve archive immutability and the exact closeout transaction.
+- **2026-11-23 13:16 UTC — Begin series continuity reference review:** Review the single hard finding in `skills/drawing/references/series-continuity-and-iteration.md` against the Drawing skill and active-brief authority. Preserve continuity and user-control rules.
 
 ## Open Discussions
 
