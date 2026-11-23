@@ -10,7 +10,7 @@ metadata:
 
 ## 1. Absolute workspace boundary
 
-**Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `drawings/`, `skills/`, `workspace/`, and `archive/`. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specifically authorized workflow exception below.
+**Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `drawings/`, `skills/`, `workspace/`, and `archive/`. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific exceptions below.
 
 **Authorized archive-retention index exception:** The user authorized exact read/write access to `.github/archive-retention-index.json` only to register a newly archived task record's exact path and UTC archive timestamp. Do not list or scan `archive/tasks/` to backfill this index.
 
