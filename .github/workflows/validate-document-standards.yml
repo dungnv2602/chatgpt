@@ -23,6 +23,8 @@ on:
       # Image conversion reports are generated output, not authored documents.
       - '!images/takeout/history/**'
       - 'workspace/**/*.md'
+      - '!workspace/tasks/**'
+      - '!workspace/task_board.md'
       - '.github/**/*.md'
       - '*.md'
       # Check project-level and shared workspace templates and their owner contracts.
