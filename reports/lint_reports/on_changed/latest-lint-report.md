@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#452](https://github.com/dungnv2602/chatgpt/actions/runs/45156458697)
-- **Run ID / attempt:** 45156458697 / 1
+- **Run:** [#458](https://github.com/dungnv2602/chatgpt/actions/runs/45157214212)
+- **Run ID / attempt:** 45157214212 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / f715e590f21a915152f269e67ea7c4c458c95663
+- **Branch / commit:** gpt / f5496655ac37864be20d82d5c9562bd001cece51
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** f715e590f21a915152f269e67ea7c4c458c95663
-- **Generated (UTC):** 2026-11-23T10:29:18.678881+00:00
+- **Linter source SHA:** f5496655ac37864be20d82d5c9562bd001cece51
+- **Generated (UTC):** 2026-11-23T10:34:32.306719+00:00
 
 ## 1. Executive summary
 
@@ -19,12 +19,12 @@
 | Files evaluated | 49 |
 | Files that failed | 10 |
 | Files with findings | 41 |
-| Total findings | 474 |
-| Hard findings | 155 |
+| Total findings | 402 |
+| Hard findings | 83 |
 | Advisory findings | 319 |
 | New findings | 0 |
-| Recurring findings | 474 |
-| Resolved findings | 0 |
+| Recurring findings | 402 |
+| Resolved findings | 72 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -120,7 +120,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/conversation-mode/SKILL.md | FAIL | 22 | 5 | 3 | 3081 | 0.7 | 1 |
 | skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md | PASS | 8 | 0 | 7 | 2716 | 0.3 | 0 |
 | skills/drawing/SKILL.md | PASS | 35 | 14 | 24 | 5064 | 0.7 | 0 |
-| skills/document-standards/references/document-type-catalog.md | FAIL | 99 | 75 | 0 | 3057 | 3.2 | 1 |
+| skills/document-standards/references/document-type-catalog.md | FAIL | 27 | 3 | 0 | 3060 | 0.9 | 1 |
 | workspace/task_board.md | PASS | 3 | 0 | 0 | 249 | 1.2 | 0 |
 | skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
 | skills/INITIALIZATION_POLICY.md | PASS | 3 | 1 | 4 | 1180 | 0.3 | 0 |
@@ -152,10 +152,10 @@ Counts include hard and advisory findings.
 | Rule | Findings |
 |---|---:|
 | passive-voice | 279 |
-| semicolon | 82 |
 | present-perfect | 40 |
-| synonym-rotation | 33 |
-| long-sentence | 28 |
+| synonym-rotation | 31 |
+| long-sentence | 26 |
+| semicolon | 14 |
 | marketing-adjective | 5 |
 | phrasal-verb | 5 |
 | nominalization | 2 |
@@ -190,7 +190,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.367s
+Ran 4 tests in 0.289s
 
 OK
 ~~~
@@ -223,7 +223,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 488 active Markdown files (554 available as link targets) and 338 local Markdown links.
+Scanned 513 active Markdown files (579 available as link targets) and 338 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -1161,42 +1161,14 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** were inspected
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:27:215 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:28:139 · **recurring** · fingerprint: 521a3f31bc54ec727caae5b1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was found
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:29:196 · **recurring** · fingerprint: 33b66dbc6dc280ae7c9be6c8
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:29:299 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:32:207 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:33:239 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:33:459 · **recurring** · fingerprint: bcb83f45ddf38808e5512023
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:33:453 · **recurring** · fingerprint: bcb83f45ddf38808e5512023
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** being uploaded
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:36:277 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:42:155 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:42:276 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1205,59 +1177,27 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is read
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:43:330 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:44:264 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:45:139 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:47:330 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:47:358 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:49:169 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:49:307 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:50:174 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:51:290 · **recurring** · fingerprint: 2822a6b08706709830f1f820
+- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:52:264 · **recurring** · fingerprint: 2822a6b08706709830f1f820
   - **Level:** advisory-free
   - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
   - **Matched text:** checks
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:61:430 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:62:302 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:63:406 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:64:165 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:64:208 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:64:176 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
@@ -1265,59 +1205,15 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** were reviewed
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:111 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:88:200 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:139 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:157 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:187 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:214 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:240 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:326 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:394 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:54 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:264 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:318 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:435 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **present-perfect** · skills/document-standards/references/document-type-catalog.md:88:474 · **recurring** · fingerprint: 5bfc1af36a470f1f001188ee
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **present-perfect** · skills/document-standards/references/document-type-catalog.md:88:479 · **recurring** · fingerprint: 5bfc1af36a470f1f001188ee
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has been approved
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:88:478 · **recurring** · fingerprint: c8520603dffa16dea8ea3dc4
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:88:483 · **recurring** · fingerprint: c8520603dffa16dea8ea3dc4
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been approved
@@ -1325,219 +1221,39 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are established
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:89:152 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:90:144 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:90:192 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:91:131 · **recurring** · fingerprint: f99656c38dfabd9bba499a0e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is established
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:91:146 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:91:206 · **recurring** · fingerprint: 2d052b2c33e7ba911021d0e1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is planned
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:91:217 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:92:199 · **recurring** · fingerprint: 2d052b2c33e7ba911021d0e1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is planned
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:92:222 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:93:73 · **recurring** · fingerprint: 33b66dbc6dc280ae7c9be6c8
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:93:220 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:94:71 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:94:145 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:94:196 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:94:261 · **recurring** · fingerprint: 95aef61741aad14590481dc3
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:94:262 · **recurring** · fingerprint: 95aef61741aad14590481dc3
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is uploaded
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:94:368 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:102:293 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:104:41 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:104:60 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:104:226 · **recurring** · fingerprint: 446871a6fecc2890373b2df1
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:104:230 · **recurring** · fingerprint: 446871a6fecc2890373b2df1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is justified
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:106:62 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:106:110 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:107:58 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:107:136 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:107:251 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:109:79 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:109:189 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:111:88 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:112:129 · **recurring** · fingerprint: 521a3f31bc54ec727caae5b1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was found
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:113:112 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:113:188 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:113:332 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:97 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:166 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:235 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:304 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:373 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:126:90 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:62 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:92 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:124 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:127:199 · **recurring** · fingerprint: 32702bd5a2c5ca60292eca3a
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:127:203 · **recurring** · fingerprint: 32702bd5a2c5ca60292eca3a
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are superseded
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:287 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:128:173 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:129:80 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:129:128 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:129:332 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:130:113 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:130:189 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:130:298 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:134:57 · **recurring** · fingerprint: 9a67866b9f0335cac5eb0d64
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was required
-- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:139:73 · **recurring** · fingerprint: 0abfb61c7128cae67ea2ee21
-  - **Level:** advisory-free
-  - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
-  - **Matched text:** repair
-- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:140:67 · **recurring** · fingerprint: ee3dcb468a833bb24e5822bc
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** confirms
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:140:124 · **recurring** · fingerprint: ec9e446045dd985aa0b168c4
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:140:123 · **recurring** · fingerprint: ec9e446045dd985aa0b168c4
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are permitted
@@ -1545,10 +1261,6 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is added
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:152:185 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 - **passive-voice** · workspace/task_board.md:7:110 · **recurring** · fingerprint: cfe2615d32498b8cb18022ac
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -2136,7 +1848,294 @@ None.
 
 ### Resolved findings
 
-None.
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:27:215 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:29:196 · **resolved** · fingerprint: 33b66dbc6dc280ae7c9be6c8
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:29:299 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:32:207 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:33:239 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:36:277 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:42:155 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:43:330 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:44:264 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:47:330 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:49:169 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:50:174 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:61:430 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:62:302 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:63:406 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:111 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:139 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:157 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:187 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:214 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:240 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:326 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:394 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:54 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:264 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:318 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:435 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:89:152 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:90:144 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:90:192 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:91:146 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:91:217 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:92:222 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:93:73 · **resolved** · fingerprint: 33b66dbc6dc280ae7c9be6c8
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:93:220 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:94:71 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:94:196 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:94:368 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:102:293 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:104:41 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:104:60 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:106:62 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:106:110 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:107:58 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:107:136 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:107:251 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:109:79 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:109:189 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:111:88 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:113:112 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:113:188 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:113:332 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:97 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:166 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:235 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:304 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:373 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:126:90 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:62 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:92 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:124 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:287 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:128:173 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:129:80 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:129:128 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:129:332 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:130:113 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:130:189 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:130:298 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:139:73 · **resolved** · fingerprint: 0abfb61c7128cae67ea2ee21
+  - **Level:** advisory-free
+  - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
+  - **Matched text:** repair
+- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:140:67 · **resolved** · fingerprint: ee3dcb468a833bb24e5822bc
+  - **Level:** advisory-free
+  - **Message:** 'confirm' and 'validate' name the same action. Pick one and use it every time.
+  - **Matched text:** confirms
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:152:185 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 ## 8. Complete per-file diagnostics
 
@@ -3616,11 +3615,11 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 99
-- **Hard findings:** 75
+- **Findings:** 27
+- **Hard findings:** 3
 - **Baseline:** 0
-- **Words:** 3057
-- **Findings per 100 words:** 3.2
+- **Words:** 3060
+- **Findings per 100 words:** 0.9
 
 #### Complete diagnostics
 
@@ -3634,50 +3633,15 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** were inspected
 
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:27:215 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:28:139 · **recurring** · fingerprint: 521a3f31bc54ec727caae5b1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was found
 
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:29:196 · **recurring** · fingerprint: 33b66dbc6dc280ae7c9be6c8
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:29:299 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:32:207 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:33:239 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:33:459 · **recurring** · fingerprint: bcb83f45ddf38808e5512023
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:33:453 · **recurring** · fingerprint: bcb83f45ddf38808e5512023
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** being uploaded
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:36:277 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:42:155 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:42:276 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
@@ -3689,72 +3653,32 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is read
 
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:43:330 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:44:264 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:45:139 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:47:330 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:47:358 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
 
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:49:169 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:49:307 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
 
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:50:174 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:51:290 · **recurring** · fingerprint: 2822a6b08706709830f1f820
+- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:52:264 · **recurring** · fingerprint: 2822a6b08706709830f1f820
   - **Level:** advisory-free
   - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
   - **Matched text:** checks
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:61:430 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:62:302 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:63:406 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:64:165 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
 
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:64:208 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:64:176 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
@@ -3764,72 +3688,17 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** were reviewed
 
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:111 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:88:200 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
 
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:139 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:157 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:187 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:214 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:240 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:326 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:394 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:54 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:264 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:318 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:435 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **present-perfect** · skills/document-standards/references/document-type-catalog.md:88:474 · **recurring** · fingerprint: 5bfc1af36a470f1f001188ee
+- **present-perfect** · skills/document-standards/references/document-type-catalog.md:88:479 · **recurring** · fingerprint: 5bfc1af36a470f1f001188ee
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has been approved
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:88:478 · **recurring** · fingerprint: c8520603dffa16dea8ea3dc4
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:88:483 · **recurring** · fingerprint: c8520603dffa16dea8ea3dc4
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been approved
@@ -3839,272 +3708,47 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are established
 
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:89:152 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:90:144 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:90:192 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:91:131 · **recurring** · fingerprint: f99656c38dfabd9bba499a0e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is established
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:91:146 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:91:206 · **recurring** · fingerprint: 2d052b2c33e7ba911021d0e1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is planned
 
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:91:217 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:92:199 · **recurring** · fingerprint: 2d052b2c33e7ba911021d0e1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is planned
 
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:92:222 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:93:73 · **recurring** · fingerprint: 33b66dbc6dc280ae7c9be6c8
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:93:220 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:94:71 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:94:145 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:94:196 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:94:261 · **recurring** · fingerprint: 95aef61741aad14590481dc3
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:94:262 · **recurring** · fingerprint: 95aef61741aad14590481dc3
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is uploaded
 
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:94:368 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:102:293 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:104:41 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:104:60 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:104:226 · **recurring** · fingerprint: 446871a6fecc2890373b2df1
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:104:230 · **recurring** · fingerprint: 446871a6fecc2890373b2df1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is justified
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:106:62 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:106:110 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:107:58 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:107:136 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:107:251 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:109:79 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:109:189 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:111:88 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:112:129 · **recurring** · fingerprint: 521a3f31bc54ec727caae5b1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was found
 
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:113:112 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:113:188 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:113:332 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:97 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:166 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:235 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:304 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:373 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:126:90 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:62 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:92 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:124 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:127:199 · **recurring** · fingerprint: 32702bd5a2c5ca60292eca3a
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:127:203 · **recurring** · fingerprint: 32702bd5a2c5ca60292eca3a
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are superseded
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:287 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:128:173 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:129:80 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:129:128 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:129:332 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:130:113 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:130:189 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:130:298 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:134:57 · **recurring** · fingerprint: 9a67866b9f0335cac5eb0d64
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was required
 
-- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:139:73 · **recurring** · fingerprint: 0abfb61c7128cae67ea2ee21
-  - **Level:** advisory-free
-  - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
-  - **Matched text:** repair
-
-- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:140:67 · **recurring** · fingerprint: ee3dcb468a833bb24e5822bc
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** confirms
-
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:140:124 · **recurring** · fingerprint: ec9e446045dd985aa0b168c4
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:140:123 · **recurring** · fingerprint: ec9e446045dd985aa0b168c4
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are permitted
@@ -4113,11 +3757,6 @@ No STE findings were recorded for this file.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is added
-
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:152:185 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 
 
 ### workspace/task_board.md
