@@ -90,7 +90,8 @@ Keep required, conditional, and optional content visibly distinct.
 - Mark an optional field with `Optional:`.
 - Mark a conditional field with `Conditional:` and state its activation condition.
 - Keep conditional sections only when their condition applies.
-- Use the documented value for unknown or inapplicable fields. Do not leave required fields blank.
+- Unless a type-specific schema defines another value, use `Unknown` when information is not established or cannot be verified, and `Not applicable` when the field does not apply.
+- Do not use a blank value, `-`, `N/A`, or `TBD` as a substitute unless the template explicitly permits it.
 
 Do not use a blank field to imply approval, completion, or verification.
 
