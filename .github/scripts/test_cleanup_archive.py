@@ -99,8 +99,10 @@ class ArchiveRetentionTests(unittest.TestCase):
 
     def test_non_schedule_event_is_rejected(self) -> None:
         with self.assertRaises(RuntimeError):
-            cleanup_archive.require_scheduled_event("workflow_dispatch")
-        cleanup_archive.require_scheduled_event("schedule")
+            cleanup_archive.require_scheduled_event("workflow_dispatch", "true")
+        with self.assertRaises(RuntimeError):
+            cleanup_archive.require_scheduled_event("schedule", "false")
+        cleanup_archive.require_scheduled_event("schedule", "true")
 
     def test_unsafe_path_is_rejected(self) -> None:
         self.write_index([
