@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:48 UTC — Remediate Document Standards skill:** Split the validator limitations and workflow authorization sentences. Standardize check terminology while preserving the catalog validator's stated limits.
+- **2026-11-23 11:52 UTC — Begin Session Archiving skill review:** Review the four hard findings in `skills/session-archiving/SKILL.md` against the exact workspace and retention boundaries. Preserve immutable archive and provenance rules.
 
 ## Open Discussions
 
