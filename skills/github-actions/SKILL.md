@@ -198,7 +198,7 @@ Use these questions when implementing an optimization:
 
 ## 14. Repository execution discipline
 
-This section consolidates the former repository CI preflight and execution-efficiency rules from Conversation Mode. This skill is the sole authority for CI and GitHub Actions behavior.
+This section consolidates repository execution-efficiency rules. This skill defines GitHub Actions validation scope and workflow behavior.
 
 ### Before editing
 

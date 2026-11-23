@@ -70,3 +70,7 @@ Report captures are append-only. A later post_run capture does not rewrite pre_f
 Index latest pointers advance by source run time, attempt, and capture-stage precedence. Older captures cannot replace newer pointers. Generated reports are machine-owned.
 
 Change the schema, template, collector, generator, regression tests, workflow integration, this guide, and the Document Type Catalog together.
+
+## Reporter self-monitoring
+
+The diagnostics workflow is deliberately excluded from its own run sweep to prevent recursive report generation. Its own failures are not included in the reports it creates. Inspect the diagnostics workflow's own run and job logs directly in the GitHub Actions interface.
