@@ -262,10 +262,20 @@ jobs:
     name: Capture GH Actions diagnostics
     if: ${{ always() }}
     needs: [preflight, ste-lint]
-    uses: ./.github/workflows/gh-actions-diagnostics.yml
-    with:
-      capture_mode: finalizer
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    continue-on-error: true
     permissions:
       actions: read
       checks: read
       contents: write
+    steps:
+      - name: Check out gpt for diagnostic reporting
+        uses: actions/checkout@v4
+        with:
+          ref: gpt
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Capture workflow diagnostics
+        uses: ./gh_ac_reports/actions/capture
