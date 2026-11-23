@@ -8,7 +8,7 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## Current Execution
 
-_No current execution task._ |
+_No current execution task._
 
 ## In Progress
 
@@ -17,7 +17,7 @@ _No current execution task._ |
 
 ## Ready
 
-_No ready tasks._ |
+_No ready tasks._
 
 ## Blocked
 
@@ -31,7 +31,7 @@ _No proposed tasks._
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-| 20261123-054904 | Build GitHub Actions diagnostic reports and remove the CI preflight gate | P1 | Paused | User | 2026-11-23 | [Task record](tasks/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md)
+| 20261123-054904 | Build GitHub Actions diagnostic reports and remove the CI preflight gate | P1 | Paused | User | 2026-11-23 | [Task record](tasks/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md) |
 
 ## Historical
 
