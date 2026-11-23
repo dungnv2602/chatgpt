@@ -46,6 +46,7 @@ After cue-triggered skill loading, repeat the same one-time snapshot. Do not wai
 The repository on GitHub is the only project workspace. Do not assume that a local checkout or local execution environment exists.
 
 - Read, search, inspect, create, update, move, and delete repository files through the GitHub connector and GitHub APIs. Use exact paths and branch `gpt`.
+- The only archive-retention index exception is `.github/archive-retention-index.json`. Read or update it only to register the exact path and UTC archive timestamp of a task record during closeout. Never enumerate `archive/tasks/` to backfill the index.
 - Never use local shell, Git, Python, container, filesystem, or similar execution tools to clone, pull, checkout, inspect, edit, test, build, or commit repository work.
 - Create commits and update refs through GitHub's remote APIs. Read back every changed path and verify the resulting branch head.
 - Run repository scripts, tests, and validation only on GitHub-hosted Actions runners when an approved workflow invokes them. Inspect their results through GitHub Actions logs and artifacts. Do not reproduce them locally.
@@ -273,23 +274,24 @@ When acceptance criteria are met:
 3. Check whether `archive/tasks/<same-filename>` already exists. If it does, read it and compare its complete content with the prepared final record. Reuse it only when the content matches. Stop if the content differs. Never overwrite an existing archive record.
 4. If the archive path does not exist, create it once. Preserve the task ID and filename. This is the only content write for that archive path.
 5. Read the exact archive path after the write. Compare its complete content with the prepared final record. Verify the archive commit and changed-path metadata. If you reuse an existing copy, recover the original commit that introduced or contains that archive path from the task board or GitHub history. Never substitute a later board-update commit. Stop if the path is missing or the content differs.
-6. Treat the archive record as immutable after this verification. You may read it later when task recovery, board reconciliation, or verification requires it. Never edit, replace, rename, move, or manually delete an archived record. Only the scheduled retention workflow may delete archived records.
-7. Only after archive read-back succeeds, delete the active record from `workspace/tasks/`. Keep the active record In Progress with Archived: No until this deletion succeeds. If deletion fails, leave the task open and reconcile the existing archive copy without rewriting it.
-8. Update `workspace/task_board.md` in the same closeout pass:
+6. Add one entry to `.github/archive-retention-index.json` with the exact archive path and UTC archive timestamp from the verified record. Preserve all existing entries. Verify the new entry. Do not enumerate `archive/tasks/` or backfill other records.
+7. Treat the archive record as immutable after this verification. You may read it later when task recovery, board reconciliation, or verification requires it. Never edit, replace, rename, move, or manually delete an archived record. Only the scheduled retention workflow may delete indexed archived records.
+8. Only after archive read-back and retention-index verification succeed, delete the active record from `workspace/tasks/`. Keep the active record In Progress with Archived: No until this deletion succeeds. If deletion fails, leave the task open and reconcile the existing archive copy without rewriting it.
+9. Update `workspace/task_board.md` in the same closeout pass:
    - Delete the task from Current Execution.
    - Delete its active row from every status section.
    - Add one Historical row with status Done or Cancelled, the archive path, and the exact commit that contains the archived record.
    - Apply the seven-entry history limit. Delete only the oldest index rows when required.
    - Select or identify the next current execution task according to the selection rules. Do not invent a task when no eligible task exists.
-9. Fetch the committed task board. Verify that the closed task is absent from active sections and appears exactly once in Historical. Verify its links to the archive path and archival commit. Verify that Current Execution matches the selection rules.
-10. Verify that the archival commit includes the archived record in its changed-path metadata. Read the archived record when needed to verify its content or recover board details. Do not modify the archived record.
-11. Only after these checks, report the task as closed and provide the appropriate handoff.
+10. Fetch the committed task board. Verify that the closed task is absent from active sections and appears exactly once in Historical. Verify its links to the archive path and archival commit. Verify that Current Execution matches the selection rules.
+11. Verify that the archival commit includes the archived record in its changed-path metadata. Read the archived record when needed to verify its content or recover board details. Do not modify the archived record.
+12. Only after these checks, report the task as closed and provide the appropriate handoff.
 
 Treat the task record, archive path, and task board as one logical transaction even when the GitHub API requires more than one commit. Do not stop after changing task metadata, after creating the archive copy, or after deleting the active record.
 
 If any closeout step fails, keep the task open as In Progress or record the exact recovery blocker. Reconcile the partial repository state before switching tasks or ending work. Do not claim completion while the board and task record disagree. Do not ask the user to approve routine archival or board maintenance. The approved task requires this archival and board maintenance.
 
-Follow archive/README.md for the 14-day batch-cleanup policy. The Worker may read exact archived records when needed but must not edit, replace, rename, move, or manually delete them. Only the scheduled GitHub Actions retention workflow may delete archived records.
+Follow archive/README.md for the 90-day per-record retention policy. The Worker may read exact archived records when needed but must not edit, replace, rename, move, or manually delete them. Only the scheduled GitHub Actions retention workflow may delete indexed archived records.
 
 ## Conversation Mode integration
 
