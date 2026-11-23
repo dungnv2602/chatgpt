@@ -11,30 +11,30 @@
     "event": "push",
     "branch": "gpt",
     "head_sha": "d440b0c4cac714e63d2ddf0d52fcb2d2e159ab76",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "failure",
     "created_at": "2026-11-23T13:07:21Z",
     "run_started_at": "2026-11-23T13:07:21Z",
-    "updated_at": "2026-11-23T13:07:56Z",
+    "updated_at": "2026-11-23T13:08:17Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "Consolidate document and archive workflow authorities"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-23T13:08:11Z",
-    "completeness": "Incomplete",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T13:12:07Z",
+    "completeness": "Complete",
     "reporter_job": {
       "id": "137713788473",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "failure",
+    "state": "failure",
+    "observed_conclusion": "failure",
+    "projected_conclusion": null,
     "primary_category": "validation_or_test",
     "categories": [
       "validation_or_test"
@@ -48,7 +48,7 @@
         "step_name": "Run catalog validator regression tests",
         "blocking": true,
         "confidence": "medium",
-        "message": "Step conclusion: failure"
+        "message": "2026-11-23T13:07:32.7026359Z Traceback (most recent call last):"
       }
     ]
   },
@@ -131,12 +131,17 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 35998,
         "path": "logs/job-137713674051.log",
-        "error": "run 45180769627 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T13:07:32.7026359Z Traceback (most recent call last):",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T13:07:32.7050907Z Traceback (most recent call last):",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T13:07:32.7063722Z FAILED (failures=2)",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T13:07:32.7147687Z ##[error]Process completed with exit code 1."
+        ]
       }
     }
   ],
@@ -178,12 +183,6 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [
-    {
-      "source": "job_log",
-      "job_id": "137713674051",
-      "message": "run 45180769627 is still in progress; logs will be available when it is complete\n"
-    }
-  ],
-  "history_path": "history/427313089/45180769627-attempt-1-pre_finalizer"
+  "capture_errors": [],
+  "history_path": "history/427313089/45180769627-attempt-1-post_run"
 }
