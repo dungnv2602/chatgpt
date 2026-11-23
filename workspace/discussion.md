@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:56 UTC — Remediate Session Archiving skill:** Separate the two authorization headings from their scope statements. Split the remote-operation paragraph at its semicolon. Preserve exact permissions and workspace boundaries.
+- **2026-11-23 12:00 UTC — Begin image-editing protocol review:** Review the four hard findings in `skills/drawing/references/image-editing-protocol.md` against the Drawing skill and prompt-fidelity requirements. Preserve source-edit semantics and provenance.
 
 ## Open Discussions
 
