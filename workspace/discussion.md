@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 09:22 UTC — Close the validated ledger task:** Confirm the generator-owned catalog contract, 17 regression tests, immutable evidence, and successful hosted diagnostics run. Archive the completed task, register its retention timestamp, remove the active record, and reconcile the board so no paused task is incorrectly shown as current.
+- **2026-11-23 09:27 UTC — Ledger task closeout verified:** Hosted validation passed; archive, retention index, active-record deletion, and board reconciliation are complete. No task is currently selected; the diagnostic-report task remains Paused.
 
 ## Open Discussions
 - **2026-11-23 — Hosted retention validation:** The shared cleanup script and tests now cover exact individual files in both `archive/tasks/` and `archive/reports/`. A hosted run of the schedule-only cleanup has not yet been observed. Do not dispatch it manually or modify `main`.
@@ -11,7 +11,7 @@
 - **2026-11-23 — Document lint findings:** The new reports retain 144 hard findings in the repository-wide run and 145 in the changed-scope fallback run. Thresholds and baselines were not weakened. Remediation is separate from the completed report-pipeline task.
 
 ## Reports
-- **2026-11-23 08:23 UTC — Central CI issue ledger implementation:** Added forward-only ingestion, schema v1.1.0, 16 hosted regression tests, operator guidance, and serialized publication through the existing diagnostics jobs. Read back all changed paths and writer groups. Hosted validation remains unverified. [Task record](tasks/20261123-071000-centralized-ci-issue-ledger.md).
+- **2026-11-23 09:23 UTC — Central CI issue ledger completed:** Forward-only ingestion, schema v1.1.0, curated lifecycle handling, immutable evidence, and serialized publication are implemented. All 17 ledger regression tests, ingestion, and publication passed in hosted run [45142649454](https://github.com/dungnv2602/chatgpt/actions/runs/45142649454). The ledger contains one open high-severity publication finding. The task was archived and the board reconciled. [Archived task record](../archive/tasks/20261123-071000-centralized-ci-issue-ledger.md) · [Archive commit](https://github.com/dungnv2602/chatgpt/commit/42730933cde1061536a35ab641cda6d2560a17dd).
 
 ### 2026-11-23 — Latest diagnostic and retention validation
 
