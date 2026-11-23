@@ -5,7 +5,7 @@ import argparse, copy, hashlib, json, re, tempfile
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 
-SCHEMA_VERSION = "1.2.0"
+SCHEMA_VERSION = "1.3.0"
 IGNORED_CATEGORIES = {"cancelled", "skipped", "neutral", "queued", "in_progress", "unavailable", "unknown", "not_available"}
 IGNORED_LINT_STATUSES = {"Incomplete", "Cancelled", "Superseded"}
 IGNORED_PROPAGATION_STEPS = {
@@ -141,7 +141,7 @@ def bootstrap_state(root, timestamp=None):
 
 def migrate_ledger(ledger, root):
     version = ledger.get("schema_version")
-    if version not in ("1.0.0", "1.1.0", SCHEMA_VERSION):
+    if version not in ("1.0.0", "1.1.0", "1.2.0", SCHEMA_VERSION):
         raise LedgerError("Unsupported ledger schema version: " + str(version))
     if not isinstance(ledger.get("findings"), list):
         raise LedgerError("The ledger findings field must be an array")
@@ -154,6 +154,9 @@ def migrate_ledger(ledger, root):
         finding.setdefault("duplicate_of", None)
         finding.setdefault("accepted_risk", None)
         finding.setdefault("task_refs", [])
+        finding.setdefault("task_group", task_group_key("legacy", finding.get("finding_id", "unknown")))
+        if not isinstance(finding["task_group"], str) or not re.fullmatch(r"ci-[0-9a-f]{16}", finding["task_group"]):
+            raise LedgerError("finding task_group must be a stable CI group ID")
         if not isinstance(finding["task_refs"], list) or not all(
             isinstance(item, str) and item.strip() for item in finding["task_refs"]
         ):
@@ -197,6 +200,11 @@ def actions_severity(issue):
 def evidence_record(report_path, observed_at, run_url, observation_id, note):
     return {"report_path": report_path, "run_url": run_url or None, "observed_at_utc": observed_at,
             "note": note or None, "observation_id": observation_id}
+
+def task_group_key(*parts):
+    """Return a stable remediation-group ID from structured finding identity."""
+    encoded = json.dumps(parts, ensure_ascii=False, separators=(",", ":"))
+    return "ci-" + hashlib.sha256(encoded.encode("utf-8")).hexdigest()[:16]
 
 def diagnostic_signature(report, report_path, root, issue):
     """Prefer exact-step error lines over runner command echoes in report summaries."""
@@ -269,6 +277,7 @@ def lint_observations(report, report_path):
         result[identity] = {
             "finding_id": identity, "source_family": "lint", "category": rule,
             "title": (rule + ": " + message)[:240], "severity": lint_severity(item.get("level")),
+            "task_group": task_group_key("lint", rule, PurePosixPath(file_path).as_posix()),
             "evidence": evidence_record(report_path, observed_at, report.get("run_url"), observation_id, note),
         }
     return list(result.values())
@@ -316,6 +325,7 @@ def actions_observations(report, report_path, root):
         result[identity] = {
             "finding_id": identity, "source_family": "github_actions", "category": category,
             "title": title[:240], "severity": actions_severity(issue),
+            "task_group": task_group_key("github_actions", workflow_path, job_name, step_name, category),
             "evidence": evidence_record(report_path, observed_at, source.get("run_url"), observation_id, location),
         }
     return list(result.values())
@@ -330,7 +340,7 @@ def upsert_finding(ledger, observation):
             "severity": observation["severity"], "owner": None, "first_seen_utc": evidence["observed_at_utc"],
             "last_seen_utc": evidence["observed_at_utc"], "occurrence_count": 1, "evidence": [evidence],
             "resolution": None, "resolution_history": [], "duplicate_of": None, "accepted_risk": None,
-            "task_refs": [],
+            "task_refs": [], "task_group": observation["task_group"],
         })
         return "created"
     before = json.dumps(existing, sort_keys=True, ensure_ascii=False)
@@ -380,9 +390,8 @@ def validate_semantics(ledger):
             if not duplicate_of or duplicate_of == finding["finding_id"] or duplicate_of not in finding_ids:
                 raise LedgerError("Duplicate finding requires an existing, different duplicate_of ID: " + finding["finding_id"])
 
-def atomic_write(path, payload):
+def atomic_write_text(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
-    data = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
     temp_name = None
     try:
         with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=path.parent, prefix=path.name + ".", suffix=".tmp", delete=False) as handle:
@@ -393,6 +402,272 @@ def atomic_write(path, payload):
     finally:
         if temp_name and Path(temp_name).exists():
             Path(temp_name).unlink()
+
+def atomic_write(path, payload):
+    atomic_write_text(path, json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
+
+
+TASK_ELIGIBLE_SEVERITIES = {"critical", "high", "medium"}
+TASK_ELIGIBLE_FINDING_STATUSES = {"open", "investigating", "planned", "fixing", "verifying"}
+TASK_ACTIVE_STATUSES = {"Proposed", "Ready", "In Progress", "Blocked", "Paused"}
+TASK_PRIORITY = {"critical": "P0", "high": "P1", "medium": "P2"}
+
+def task_metadata(content, name):
+    match = re.search(r"(?m)^- \*\*" + re.escape(name) + r":\*\* (.+)$", content)
+    return match.group(1).strip() if match else ""
+
+def task_id_for(root, timestamp):
+    base = parse_time(timestamp).strftime("%Y%m%d-%H%M%S")
+    folder = root / "workspace" / "tasks"
+    candidate = base
+    suffix = 0
+    while any(folder.glob(candidate + "-*.md")) or (folder / (candidate + ".md")).exists():
+        suffix += 1
+        candidate = base + "-" + str(suffix).zfill(2)
+    return candidate
+
+def task_slug(title):
+    value = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
+    return (value[:64].rstrip("-") or "ci-finding")
+
+def markdown_cell(value):
+    return re.sub(r"\s+", " ", str(value or "")).strip().replace("|", "\\|").replace(chr(96), "'")
+
+def finding_row(finding):
+    evidence = finding.get("evidence") or []
+    latest = evidence[-1] if evidence else {}
+    report_path = str(latest.get("report_path") or "")
+    report_link = "no report path"
+    candidate = PurePosixPath(report_path)
+    if report_path and not candidate.is_absolute() and ".." not in candidate.parts:
+        report_link = "[report](../../" + report_path + ")"
+    run_url = latest.get("run_url")
+    if isinstance(run_url, str) and run_url.startswith(("https://", "http://")):
+        report_link += " · [run](" + run_url + ")"
+    return (
+        "| " + chr(96) + markdown_cell(finding.get("finding_id")) + chr(96) + " | "
+        + markdown_cell(finding.get("severity")) + " | "
+        + markdown_cell(finding.get("title")) + " | " + report_link + " |"
+    )
+
+def update_task_findings(content, findings, timestamp):
+    heading = "## 13. Ledger Findings"
+    if heading not in content:
+        content = content.rstrip() + "\n\n" + heading + (
+            "\n\n_This section is maintained by the CI Ledger. It links distinct findings to immutable evidence._\n\n"
+            "| Finding ID | Severity | Diagnostic | Evidence |\n"
+            "|---|---|---|---|\n"
+        )
+    start = content.index(heading)
+    next_heading = content.find("\n## ", start + len(heading))
+    end = len(content) if next_heading < 0 else next_heading
+    section = content[start:end]
+    existing_ids = set(re.findall(r"\|\s*" + chr(96) + r"([^" + chr(96) + r"]+)" + chr(96) + r"\s*\|", section))
+    additions = [finding_row(item) for item in findings if item.get("finding_id") not in existing_ids]
+    if not additions:
+        return content, False
+    content = content[:end].rstrip() + "\n" + "\n".join(additions) + "\n" + content[end:]
+    content = re.sub(
+        r"(?m)^- \*\*Updated:\*\* .*$",
+        "- **Updated:** " + parse_time(timestamp).strftime("%Y-%m-%d %H:%M UTC"),
+        content,
+        count=1,
+    )
+    return content, True
+
+def task_title_for_group(findings):
+    first = findings[0]
+    category = markdown_cell(first.get("category") or "CI")
+    if first.get("source_family") == "lint":
+        note = ((first.get("evidence") or [{}])[-1]).get("note") or ""
+        location = note.split(" · ", 1)[-1]
+        location = re.sub(r":\d+(?::\d+)?$", "", location)
+        if location and location != note:
+            return ("Review " + category + " findings in " + location)[:120]
+        return ("Review " + category + " lint findings")[:120]
+    evidence_note = ((first.get("evidence") or [{}])[-1]).get("note") or "workflow"
+    workflow = str(first.get("title") or "GitHub Actions").split(" / ", 1)[0]
+    return ("Review " + category + " failures in " + workflow + " / " + evidence_note)[:120]
+
+def task_reference_lines(findings):
+    values = []
+    for item in findings:
+        for evidence in item.get("evidence", []):
+            path = evidence.get("report_path")
+            run_url = evidence.get("run_url")
+            if path:
+                values.append("- " + chr(96) + markdown_cell(item.get("finding_id")) + chr(96) + " — " + chr(96) + markdown_cell(path) + chr(96))
+            if run_url:
+                values.append("  - " + str(run_url))
+    return "\n".join(dict.fromkeys(values)) or "- See the linked ledger finding records."
+
+def render_worker_task(root, task_id, title, group_id, findings, timestamp):
+    template_path = root / "workspace" / "TASK_TEMPLATE.md"
+    try:
+        content = template_path.read_text(encoding="utf-8")
+    except OSError as exc:
+        raise LedgerError("Cannot read canonical task template: " + str(exc)) from exc
+    created = parse_time(timestamp).strftime("%Y-%m-%d %H:%M UTC")
+    priority = min((TASK_PRIORITY[item["severity"]] for item in findings), key=lambda item: int(item[1:]))
+    replacements = {
+        "# Task: [Title]": "# Task: " + title,
+        "- **Template version:** 1.1": "- **Template version:** 1.2",
+        "- **ID:** YYYYMMDD-HHMMSS": "- **ID:** " + task_id,
+        "- **Created:** YYYY-MM-DD HH:MM UTC": "- **Created:** " + created,
+        "- **Updated:** YYYY-MM-DD HH:MM UTC": "- **Updated:** " + created,
+        "- **Priority:** P2": "- **Priority:** " + priority,
+        "- **Status:** Ready": "- **Status:** Proposed",
+        "- **Origin:** User": "- **Origin:** Assistant",
+        "- **Approval:** Approved": "- **Approval:** Pending user approval",
+        "- **Ledger group:** None": "- **Ledger group:** " + chr(96) + group_id + chr(96),
+        "[Preserve the user's original task prompt verbatim.]":
+            "Automated CI Ledger capture: actionable findings were recorded during event-driven report ingestion. Task creation does not authorize remediation.",
+        "[Preserve relevant later instructions, constraints, decisions, and approvals verbatim. Add timestamps.]":
+            "- **Standing instruction:** The user authorized Ledger-created task records and prefers event-driven ingestion, not periodic polling.",
+        "[State the required outcome.]":
+            "Review and remediate the related CI findings listed below after approval. Preserve source validation rules and diagnostic evidence.",
+        "[List agreed requirements and acceptance criteria.]":
+            "1. Inspect every linked report and exact diagnostic before proposing a fix.\n2. Keep related findings grouped in this task.\n3. Do not weaken lint rules, test coverage, workflow conclusions, or evidence requirements.\n4. Obtain user approval before remediation when required by the Worker approval rules.\n5. Resolve ledger findings only after a fix commit and successful relevant validation are recorded.",
+        "[Record approved decisions and concise rationale. Mark unapproved ideas as Proposed.]":
+            "- **Approved:** Event-driven task capture by the Ledger during ingestion.\n- **Approved:** Group findings by the stable remediation key.\n- **Boundary:** This task is Proposed. Automated capture does not approve code changes or authorize automatic remediation.",
+        "Record every meaningful action. Use one entry for each action or closely related set of actions.\n\n### YYYY-MM-DD HH:MM UTC\n\n- **Action:** [What was inspected, researched, changed, or verified.]\n- **Result:** [Observed result. Include failures and uncertainty.]\n- **References:** [Exact paths, commits, URLs, or source IDs.]\n- **Next:** [Next action or resulting change in task state.]":
+            "### " + created + "\n\n- **Action:** Created this Proposed task from the Ledger's event-driven ingestion.\n- **Result:** Grouped " + str(len(findings)) + " distinct finding(s) by remediation key. No remediation was performed or authorized.\n- **References:** reports/triage/ledger.json and the evidence links below.\n- **Next:** Worker review and user approval before implementation.",
+        "[Describe the verified state now. Distinguish completed implementation from unverified behavior.]":
+            "The Ledger recorded the findings and created this task handoff. Root cause, remediation, and validation have not been assessed.",
+        "[List incomplete requirements, blockers, and outstanding checks.]":
+            "- Worker must inspect linked evidence and determine whether the findings share one remediation.\n- Remediation requires approval under the Worker rules.\n- No validation or resolution has been claimed.",
+        "1. [Exact next action.]\n2. [Following action.]":
+            "1. Inspect the linked report evidence and confirm the remediation scope.\n2. Request or record approval, then remediate and verify the findings.",
+        "- [Relevant repository paths.]\n- [Commit links and hashes.]\n- [External references and their relevance.]\n- [Related task IDs.]":
+            "- reports/triage/ledger.json\n- The exact report paths and run URLs are listed under Ledger Findings.",
+        "- **Check:** [What was checked.]\n- **Method:** [How it was checked.]\n- **Result:** [Actual result, or Not performed.]\n- **Limitations:** [What the check does not establish.]":
+            "- **Check:** Ledger schema and finding eligibility.\n- **Method:** Validated by the ingestion process before task publication.\n- **Result:** Task handoff generated from accepted ledger findings.\n- **Limitations:** This does not verify root cause or remediation.",
+        "[Give the next session enough information to resume without asking the user to repeat known context. State the exact next action and any approval boundary.]":
+            "Read the linked source reports, confirm the remediation grouping, and obtain approval before changing source files. Do not poll CI or run periodic ledger scans.",
+    }
+    for old, new in replacements.items():
+        if old not in content:
+            raise LedgerError("Canonical task template is missing expected contract text: " + old[:80])
+        content = content.replace(old, new, 1)
+    content, _ = update_task_findings(content, findings, timestamp)
+    return content
+
+def parse_active_ledger_tasks(root):
+    result = {}
+    folder = root / "workspace" / "tasks"
+    if not folder.is_dir():
+        return result
+    status_rank = {"In Progress": 0, "Blocked": 1, "Ready": 2, "Proposed": 3, "Paused": 4}
+    rows = []
+    for path in sorted(folder.glob("*.md")):
+        try:
+            content = path.read_text(encoding="utf-8")
+        except OSError as exc:
+            raise LedgerError("Cannot read active task record " + str(path)) from exc
+        group_id = task_metadata(content, "Ledger group").strip(chr(96))
+        status = task_metadata(content, "Status")
+        task_id = task_metadata(content, "ID")
+        if group_id and status in TASK_ACTIVE_STATUSES and task_id:
+            rows.append((status_rank.get(status, 9), group_id, {"id": task_id, "path": path, "content": content}))
+    for _rank, group_id, task in sorted(rows):
+        result.setdefault(group_id, task)
+    return result
+
+def upsert_task_board_row(root, task):
+    board_path = root / "workspace" / "task_board.md"
+    try:
+        board = board_path.read_text(encoding="utf-8")
+    except OSError as exc:
+        raise LedgerError("Cannot read Worker task board: " + str(exc)) from exc
+    content = task["content"]
+    task_id = task_metadata(content, "ID")
+    title = content.splitlines()[0].removeprefix("# Task: ").strip()
+    priority = task_metadata(content, "Priority")
+    status = task_metadata(content, "Status")
+    origin = task_metadata(content, "Origin")
+    updated = task_metadata(content, "Updated").split(" ", 1)[0]
+    filename = task["path"].name
+    row = "| " + task_id + " | " + markdown_cell(title) + " | " + priority + " | " + status + " | " + origin + " | " + updated + " | [Task record](tasks/" + filename + ") |"
+    lines = board.splitlines()
+    old_index = next((i for i, line in enumerate(lines) if line.startswith("| " + task_id + " |")), None)
+    if old_index is not None:
+        old_section = next((line[3:] for line in reversed(lines[:old_index]) if line.startswith("## ")), "")
+        if old_section == status:
+            if lines[old_index] != row:
+                lines[old_index] = row
+            else:
+                return False
+        else:
+            lines.pop(old_index)
+            old_index = None
+    if old_index is None:
+        heading = "## " + status
+        try:
+            section_index = lines.index(heading)
+        except ValueError as exc:
+            raise LedgerError("Task board has no section for status " + status) from exc
+        header_index = next((i for i in range(section_index + 1, len(lines)) if lines[i].startswith("| ID | Task |")), None)
+        if header_index is None or header_index + 1 >= len(lines):
+            raise LedgerError("Task board table is missing under " + heading)
+        lines.insert(header_index + 2, row)
+    new_board = re.sub(r"(?m)^Last updated: .*$", "Last updated: " + updated, "\n".join(lines)) + "\n"
+    if new_board == board:
+        return False
+    atomic_write_text(board_path, new_board)
+    return True
+
+def create_or_update_worker_task(root, group_id, findings, timestamp, active_tasks):
+    task = active_tasks.get(group_id)
+    if task:
+        content, modified = update_task_findings(task["content"], findings, timestamp)
+        if modified:
+            atomic_write_text(task["path"], content)
+            task["content"] = content
+        board_changed = upsert_task_board_row(root, task)
+        return task["id"], False, modified or board_changed
+    title = task_title_for_group(findings)
+    task_id = task_id_for(root, timestamp)
+    filename = task_id + "-" + task_slug(title) + ".md"
+    task_path = root / "workspace" / "tasks" / filename
+    content = render_worker_task(root, task_id, title, group_id, findings, timestamp)
+    atomic_write_text(task_path, content)
+    task = {"id": task_id, "path": task_path, "content": content}
+    upsert_task_board_row(root, task)
+    active_tasks[group_id] = task
+    return task_id, True, True
+
+def create_worker_tasks(root, ledger, timestamp):
+    """Create Proposed Worker tasks from new actionable finding groups during ingestion."""
+    active_tasks = parse_active_ledger_tasks(root)
+    grouped = {}
+    for finding in ledger["findings"]:
+        if finding.get("severity") not in TASK_ELIGIBLE_SEVERITIES:
+            continue
+        if finding.get("status") not in TASK_ELIGIBLE_FINDING_STATUSES:
+            continue
+        refs = finding.setdefault("task_refs", [])
+        active_ref = any(task["id"] in refs for task in active_tasks.values())
+        reopened = bool(finding.get("resolution_history")) and not active_ref
+        if refs and not reopened:
+            continue
+        grouped.setdefault(finding["task_group"], []).append(finding)
+    counts = {"tasks_created": 0, "tasks_updated": 0, "findings_linked": 0, "changed": False}
+    for group_id, findings in grouped.items():
+        task_id, created, task_changed = create_or_update_worker_task(
+            root, group_id, findings, timestamp, active_tasks
+        )
+        if created:
+            counts["tasks_created"] += 1
+        elif task_changed:
+            counts["tasks_updated"] += 1
+        for finding in findings:
+            refs = finding.setdefault("task_refs", [])
+            if task_id not in refs:
+                refs.append(task_id)
+                counts["findings_linked"] += 1
+                counts["changed"] = True
+        counts["changed"] = counts["changed"] or task_changed or created
+    return counts
 
 def ingest(root, now=None):
     root = Path(root).resolve()
@@ -435,12 +710,15 @@ def ingest(root, now=None):
         counts["reports_processed"] += 1
         changed = True
     state["processed_reports"] = sorted(processed)
+    task_result = create_worker_tasks(root, ledger, now or utc_now())
+    changed = changed or task_result["changed"]
     if changed:
         ledger["updated_at_utc"] = now or utc_now()
         validate_schema(ledger, schema, "$ledger")
         validate_semantics(ledger)
         atomic_write(ledger_path, ledger)
-    return {**counts, "total_findings": len(ledger["findings"]), "warnings": warnings, "changed": changed}
+    return {**counts, **{key: value for key, value in task_result.items() if key != "changed"},
+            "total_findings": len(ledger["findings"]), "warnings": warnings, "changed": changed}
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
