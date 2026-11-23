@@ -203,6 +203,7 @@ class LedgerTests(unittest.TestCase):
         self.assertIn(path,migrated["ingestion_state"]["processed_reports"])
         self.assertEqual(migrated["findings"],[])
         self.assertEqual(result["reports_processed"],0)
+        self.assertEqual(migrated["updated_at_utc"],"2026-11-23T07:00:00Z")
 
     def test_malformed_index_fails_closed_without_changing_ledger(self):
         index = self.root / "reports" / "lint_reports" / "on_changed" / "index.json"
