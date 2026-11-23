@@ -270,19 +270,20 @@ When acceptance criteria are met:
 
 1. Check the final result, acceptance criteria, and supporting evidence.
 2. Prepare the final archive copy with status Done or Cancelled, an archive timestamp in UTC, complete verification, and a final handoff. Set Archived to Yes in that archive copy only.
-3. Create the final archive record at `archive/tasks/<same-filename>`. Preserve its task ID and filename. This is the only content write for that archive path.
-4. Read the exact archive path after the write. Compare its complete content with the prepared final record. Verify the archive commit and changed-path metadata. Stop if the path is missing or the content differs.
-5. Treat the archive record as immutable after this verification. You may read it later when task recovery, board reconciliation, or verification requires it. Never edit, replace, rename, move, or manually delete an archived record. Only the scheduled retention workflow may delete archived records.
-6. Only after archive read-back succeeds, delete the active record from `workspace/tasks/`. Keep the active record In Progress with Archived: No until this deletion succeeds. If deletion fails, leave the task open and reconcile the existing archive copy without rewriting it.
-5. Update `workspace/task_board.md` in the same closeout pass:
+3. Check whether `archive/tasks/<same-filename>` already exists. If it does, read it and compare its complete content with the prepared final record. Reuse it only when the content matches. Stop if the content differs. Never overwrite an existing archive record.
+4. If the archive path does not exist, create it once. Preserve the task ID and filename. This is the only content write for that archive path.
+5. Read the exact archive path after the write. Compare its complete content with the prepared final record. Verify the archive commit and changed-path metadata. Stop if the path is missing or the content differs.
+6. Treat the archive record as immutable after this verification. You may read it later when task recovery, board reconciliation, or verification requires it. Never edit, replace, rename, move, or manually delete an archived record. Only the scheduled retention workflow may delete archived records.
+7. Only after archive read-back succeeds, delete the active record from `workspace/tasks/`. Keep the active record In Progress with Archived: No until this deletion succeeds. If deletion fails, leave the task open and reconcile the existing archive copy without rewriting it.
+8. Update `workspace/task_board.md` in the same closeout pass:
    - Delete the task from Current Execution.
    - Delete its active row from every status section.
    - Add one Historical row with status Done or Cancelled, the archive path, and the exact commit that contains the archived record.
    - Apply the seven-entry history limit. Delete only the oldest index rows when required.
    - Select or identify the next current execution task according to the selection rules. Do not invent a task when no eligible task exists.
-6. Fetch the committed task board. Verify that the closed task is absent from active sections and appears exactly once in Historical. Verify its links to the archive path and archival commit. Verify that Current Execution matches the selection rules.
-8. Verify that the archival commit includes the archived record in its changed-path metadata. Read the archived record when needed to verify its content or recover board details. Do not modify the archived record.
-9. Only after these checks, report the task as closed and provide the appropriate handoff.
+9. Fetch the committed task board. Verify that the closed task is absent from active sections and appears exactly once in Historical. Verify its links to the archive path and archival commit. Verify that Current Execution matches the selection rules.
+10. Verify that the archival commit includes the archived record in its changed-path metadata. Read the archived record when needed to verify its content or recover board details. Do not modify the archived record.
+11. Only after these checks, report the task as closed and provide the appropriate handoff.
 
 Treat the task record, archive path, and task board as one logical transaction even when the GitHub API requires more than one commit. Do not stop after changing task metadata, after creating the archive copy, or after deleting the active record.
 
