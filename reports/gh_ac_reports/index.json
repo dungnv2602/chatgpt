@@ -4,10 +4,8 @@
     "baseline_at_utc": "2026-11-23T16:09:08Z",
     "reason": "New reporting period after user-authorized supersession of superseded-2026-11-23. Four pending run IDs are carried forward; eligible prior history and indexes are preserved under archive/reports/superseded-2026-11-23."
   },
-  "sweep_watermark_utc": "2026-11-23T22:59:17Z",
-  "pending_run_ids": [
-    "45284726538"
-  ],
+  "sweep_watermark_utc": "2026-11-23T23:21:44Z",
+  "pending_run_ids": [],
   "runs": [
     {
       "workflow_id": 422582294,
