@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_repo",
-  "run_id": "45123530849",
-  "run_number": 166,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123530849",
+  "run_id": "45127673915",
+  "run_number": 172,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45127673915",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "167c964f769ae57360c86c8b7b5781389a96d614",
+  "commit_sha": "c5b01a3464044a1e9e87bb22adde39b9529f688e",
   "event": "push",
   "workflow": "STE Lint Full Technical Documentation",
   "runner_os": "Linux",
   "execution_mode": "repository-wide",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T06:21:47.121485+00:00",
+  "generated_at_utc": "2026-11-23T07:03:22.104786+00:00",
   "status": "Failed",
-  "linter_source_sha": "167c964f769ae57360c86c8b7b5781389a96d614",
+  "linter_source_sha": "13b2a180d525d59d9f1a4330709d4e6b21c60e4b",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -45,7 +45,6 @@
     "skills/conversation-mode/SKILL.md",
     "skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md",
     "skills/drawing/SKILL.md",
-    "gh_ac_reports/assets/report-template.md",
     "skills/document-standards/references/document-type-catalog.md",
     "workspace/task_board.md",
     "skills/drawing/references/style-guide.md",
@@ -65,14 +64,13 @@
     "skills/document-standards/SKILL.md",
     "skills/session-archiving/SKILL.md",
     "skills/drawing/references/image-editing-protocol.md",
-    "gh_ac_reports/README.md",
     "skills/session-archiving/assets/session-brief-template.md",
     "skills/SESSION_START.md",
     "skills/drawing/references/patterns/README.md",
     "skills/philosophy-religion-asceticism/references/research-method.md",
     "skills/philosophy-religion-asceticism/CHANGELOG.md"
   ],
-  "files_evaluated_count": 51,
+  "files_evaluated_count": 49,
   "files_failed": 10,
   "failed_files": [
     "skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md",
@@ -86,19 +84,19 @@
     "skills/document-standards/SKILL.md",
     "skills/session-archiving/assets/session-brief-template.md"
   ],
-  "files_with_findings": 42,
-  "total_findings": 475,
-  "hard_findings": 149,
-  "advisory_findings": 326,
+  "files_with_findings": 41,
+  "total_findings": 474,
+  "hard_findings": 155,
+  "advisory_findings": 319,
   "findings_by_rule": {
-    "synonym-rotation": 32,
-    "passive-voice": 286,
+    "synonym-rotation": 33,
+    "passive-voice": 279,
     "present-perfect": 40,
-    "long-sentence": 27,
+    "long-sentence": 28,
     "phrasal-verb": 5,
     "nominalization": 2,
     "marketing-adjective": 5,
-    "semicolon": 78
+    "semicolon": 82
   },
   "records": [
     {
@@ -618,7 +616,7 @@
       "count": 18,
       "hard_count": 2,
       "baseline": 6,
-      "words": 2252,
+      "words": 2257,
       "per_100_words": 0.8,
       "path": "skills/agent-skill-authoring/SKILL.md",
       "exit_code": 0
@@ -1369,6 +1367,24 @@
         {
           "file": "skills/github-actions/SKILL.md",
           "line": 42,
+          "col": 31,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/github-actions/SKILL.md",
+          "line": 45,
+          "col": 54,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/github-actions/SKILL.md",
+          "line": 49,
           "col": 96,
           "rule": "long-sentence",
           "level": "advisory-free",
@@ -1377,7 +1393,7 @@
         },
         {
           "file": "skills/github-actions/SKILL.md",
-          "line": 213,
+          "line": 220,
           "col": 211,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -1385,11 +1401,11 @@
           "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
         }
       ],
-      "count": 6,
-      "hard_count": 3,
+      "count": 8,
+      "hard_count": 5,
       "baseline": 0,
-      "words": 2465,
-      "per_100_words": 0.2,
+      "words": 2530,
+      "per_100_words": 0.3,
       "path": "skills/github-actions/SKILL.md",
       "exit_code": 1
     },
@@ -2416,16 +2432,6 @@
       "exit_code": 0
     },
     {
-      "violations": [],
-      "count": 0,
-      "hard_count": 0,
-      "baseline": 0,
-      "words": 71,
-      "per_100_words": 0.0,
-      "path": "gh_ac_reports/assets/report-template.md",
-      "exit_code": 0
-    },
-    {
       "violations": [
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
@@ -2573,8 +2579,8 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 46,
-          "col": 334,
+          "line": 47,
+          "col": 330,
           "rule": "semicolon",
           "level": "advisory-free",
           "match": ";",
@@ -2582,26 +2588,8 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 46,
-          "col": 362,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is needed",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 48,
-          "col": 169,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 48,
-          "col": 307,
+          "line": 47,
+          "col": 358,
           "rule": "passive-voice",
           "level": "advisory",
           "match": "is needed",
@@ -2610,6 +2598,24 @@
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
           "line": 49,
+          "col": 169,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 49,
+          "col": 307,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is needed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 50,
           "col": 174,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2618,7 +2624,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 50,
+          "line": 51,
           "col": 290,
           "rule": "synonym-rotation",
           "level": "advisory-free",
@@ -2627,7 +2633,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 59,
+          "line": 61,
           "col": 430,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2636,7 +2642,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 60,
+          "line": 62,
           "col": 302,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2645,7 +2651,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 61,
+          "line": 63,
           "col": 406,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2654,7 +2660,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 62,
+          "line": 64,
           "col": 165,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2663,7 +2669,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 62,
+          "line": 64,
           "col": 208,
           "rule": "long-sentence",
           "level": "advisory-free",
@@ -2672,7 +2678,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 81,
+          "line": 83,
           "col": 39,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2681,7 +2687,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 85,
+          "line": 87,
           "col": 111,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2690,7 +2696,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 85,
+          "line": 87,
           "col": 139,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2699,7 +2705,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 85,
+          "line": 87,
           "col": 157,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2708,7 +2714,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 85,
+          "line": 87,
           "col": 187,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2717,7 +2723,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 85,
+          "line": 87,
           "col": 214,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2726,7 +2732,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 85,
+          "line": 87,
           "col": 240,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2735,7 +2741,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 85,
+          "line": 87,
           "col": 326,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2744,7 +2750,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 85,
+          "line": 87,
           "col": 394,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2753,7 +2759,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 86,
+          "line": 88,
           "col": 54,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2762,7 +2768,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 86,
+          "line": 88,
           "col": 264,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2771,7 +2777,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 86,
+          "line": 88,
           "col": 318,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2780,7 +2786,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 86,
+          "line": 88,
           "col": 435,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2789,7 +2795,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 86,
+          "line": 88,
           "col": 474,
           "rule": "present-perfect",
           "level": "advisory",
@@ -2798,7 +2804,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 86,
+          "line": 88,
           "col": 478,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2807,7 +2813,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 87,
+          "line": 89,
           "col": 136,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2816,7 +2822,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 87,
+          "line": 89,
           "col": 152,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2825,7 +2831,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 88,
+          "line": 90,
           "col": 144,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2834,7 +2840,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 88,
+          "line": 90,
           "col": 192,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2843,7 +2849,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 89,
+          "line": 91,
           "col": 131,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2852,7 +2858,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 89,
+          "line": 91,
           "col": 146,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2861,7 +2867,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 89,
+          "line": 91,
           "col": 206,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2870,7 +2876,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 89,
+          "line": 91,
           "col": 217,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2879,7 +2885,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 90,
+          "line": 92,
           "col": 199,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2888,7 +2894,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 90,
+          "line": 92,
           "col": 222,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2897,7 +2903,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 91,
+          "line": 93,
           "col": 73,
           "rule": "long-sentence",
           "level": "advisory-free",
@@ -2906,7 +2912,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 91,
+          "line": 93,
           "col": 220,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2915,7 +2921,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 92,
+          "line": 94,
           "col": 71,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2924,7 +2930,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 92,
+          "line": 94,
           "col": 145,
           "rule": "long-sentence",
           "level": "advisory-free",
@@ -2933,7 +2939,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 92,
+          "line": 94,
           "col": 196,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2942,7 +2948,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 92,
+          "line": 94,
           "col": 261,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2951,7 +2957,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 92,
+          "line": 94,
           "col": 368,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2960,7 +2966,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 100,
+          "line": 102,
           "col": 293,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2969,7 +2975,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 102,
+          "line": 104,
           "col": 41,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2978,7 +2984,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 102,
+          "line": 104,
           "col": 60,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -2987,7 +2993,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 102,
+          "line": 104,
           "col": 226,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2996,7 +3002,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 104,
+          "line": 106,
           "col": 62,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3005,7 +3011,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 104,
+          "line": 106,
           "col": 110,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3014,7 +3020,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 105,
+          "line": 107,
           "col": 58,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3023,7 +3029,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 105,
+          "line": 107,
           "col": 136,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3032,7 +3038,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 105,
+          "line": 107,
           "col": 251,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3041,7 +3047,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 107,
+          "line": 109,
           "col": 79,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3050,7 +3056,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 107,
+          "line": 109,
           "col": 189,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3059,7 +3065,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 109,
+          "line": 111,
           "col": 88,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3068,7 +3074,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 110,
+          "line": 112,
           "col": 129,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3077,7 +3083,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 111,
+          "line": 113,
           "col": 112,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3086,7 +3092,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 111,
+          "line": 113,
           "col": 188,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3095,7 +3101,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 111,
+          "line": 113,
           "col": 332,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3104,7 +3110,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 123,
+          "line": 125,
           "col": 97,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3113,7 +3119,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 123,
+          "line": 125,
           "col": 166,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3122,7 +3128,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 123,
+          "line": 125,
           "col": 235,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3131,7 +3137,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 123,
+          "line": 125,
           "col": 304,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3140,7 +3146,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 123,
+          "line": 125,
           "col": 373,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3149,7 +3155,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 124,
+          "line": 126,
           "col": 90,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3158,7 +3164,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 125,
+          "line": 127,
           "col": 62,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3167,7 +3173,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 125,
+          "line": 127,
           "col": 92,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3176,7 +3182,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 125,
+          "line": 127,
           "col": 124,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3185,7 +3191,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 125,
+          "line": 127,
           "col": 199,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3194,7 +3200,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 125,
+          "line": 127,
           "col": 287,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3203,7 +3209,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 126,
+          "line": 128,
           "col": 173,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3212,7 +3218,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 127,
+          "line": 129,
           "col": 80,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3221,7 +3227,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 127,
+          "line": 129,
           "col": 128,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3230,7 +3236,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 127,
+          "line": 129,
           "col": 332,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3239,7 +3245,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 128,
+          "line": 130,
           "col": 113,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3248,7 +3254,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 128,
+          "line": 130,
           "col": 189,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3257,7 +3263,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 128,
+          "line": 130,
           "col": 298,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3266,7 +3272,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 132,
+          "line": 134,
           "col": 57,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3275,7 +3281,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 137,
+          "line": 139,
           "col": 73,
           "rule": "synonym-rotation",
           "level": "advisory-free",
@@ -3284,7 +3290,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 138,
+          "line": 140,
           "col": 67,
           "rule": "synonym-rotation",
           "level": "advisory-free",
@@ -3293,7 +3299,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 138,
+          "line": 140,
           "col": 124,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3302,7 +3308,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 142,
+          "line": 144,
           "col": 32,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3311,7 +3317,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 150,
+          "line": 152,
           "col": 185,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3322,7 +3328,7 @@
       "count": 99,
       "hard_count": 75,
       "baseline": 0,
-      "words": 2959,
+      "words": 2997,
       "per_100_words": 3.3,
       "path": "skills/document-standards/references/document-type-catalog.md",
       "exit_code": 1
@@ -3404,13 +3410,22 @@
           "level": "advisory",
           "match": "been retrieved",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/INITIALIZATION_POLICY.md",
+          "line": 132,
+          "col": 288,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
         }
       ],
-      "count": 2,
-      "hard_count": 0,
+      "count": 3,
+      "hard_count": 1,
       "baseline": 4,
-      "words": 1175,
-      "per_100_words": 0.2,
+      "words": 1180,
+      "per_100_words": 0.3,
       "path": "skills/INITIALIZATION_POLICY.md",
       "exit_code": 0
     },
@@ -3717,8 +3732,8 @@
       "violations": [
         {
           "file": "workspace/README.md",
-          "line": 24,
-          "col": 377,
+          "line": 25,
+          "col": 469,
           "rule": "present-perfect",
           "level": "advisory",
           "match": "has triggered",
@@ -3726,7 +3741,7 @@
         },
         {
           "file": "workspace/README.md",
-          "line": 55,
+          "line": 56,
           "col": 22,
           "rule": "present-perfect",
           "level": "advisory",
@@ -3737,7 +3752,7 @@
       "count": 2,
       "hard_count": 0,
       "baseline": 0,
-      "words": 579,
+      "words": 596,
       "per_100_words": 0.3,
       "path": "workspace/README.md",
       "exit_code": 0
@@ -3819,7 +3834,25 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 280,
+          "line": 274,
+          "col": 142,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "fix",
+          "message": "'fix' and 'repair' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "skills/the-worker/SKILL.md",
+          "line": 274,
+          "col": 237,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/the-worker/SKILL.md",
+          "line": 284,
           "col": 168,
           "rule": "present-perfect",
           "level": "advisory",
@@ -3828,7 +3861,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 280,
+          "line": 284,
           "col": 172,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3837,7 +3870,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 280,
+          "line": 284,
           "col": 273,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3846,7 +3879,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 298,
+          "line": 302,
           "col": 5,
           "rule": "synonym-rotation",
           "level": "advisory-free",
@@ -3855,7 +3888,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 299,
+          "line": 303,
           "col": 188,
           "rule": "synonym-rotation",
           "level": "advisory-free",
@@ -3863,10 +3896,10 @@
           "message": "'modify' and 'change' name the same action. Pick one and use it every time."
         }
       ],
-      "count": 12,
-      "hard_count": 7,
+      "count": 14,
+      "hard_count": 9,
       "baseline": 0,
-      "words": 3071,
+      "words": 3131,
       "per_100_words": 0.4,
       "path": "skills/the-worker/SKILL.md",
       "exit_code": 1
@@ -4666,6 +4699,15 @@
       "violations": [
         {
           "file": "skills/session-archiving/SKILL.md",
+          "line": 15,
+          "col": 1,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "27 words",
+          "message": "Sentence has 27 words (cap 25). Split it."
+        },
+        {
+          "file": "skills/session-archiving/SKILL.md",
           "line": 19,
           "col": 1,
           "rule": "long-sentence",
@@ -4675,7 +4717,7 @@
         },
         {
           "file": "skills/session-archiving/SKILL.md",
-          "line": 75,
+          "line": 76,
           "col": 90,
           "rule": "passive-voice",
           "level": "advisory",
@@ -4684,7 +4726,7 @@
         },
         {
           "file": "skills/session-archiving/SKILL.md",
-          "line": 129,
+          "line": 130,
           "col": 41,
           "rule": "passive-voice",
           "level": "advisory",
@@ -4693,7 +4735,7 @@
         },
         {
           "file": "skills/session-archiving/SKILL.md",
-          "line": 137,
+          "line": 138,
           "col": 339,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -4702,7 +4744,7 @@
         },
         {
           "file": "skills/session-archiving/SKILL.md",
-          "line": 137,
+          "line": 138,
           "col": 408,
           "rule": "passive-voice",
           "level": "advisory",
@@ -4710,11 +4752,11 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 5,
-      "hard_count": 2,
+      "count": 6,
+      "hard_count": 3,
       "baseline": 7,
-      "words": 2357,
-      "per_100_words": 0.2,
+      "words": 2384,
+      "per_100_words": 0.3,
       "path": "skills/session-archiving/SKILL.md",
       "exit_code": 0
     },
@@ -4763,80 +4805,6 @@
       "words": 965,
       "per_100_words": 0.4,
       "path": "skills/drawing/references/image-editing-protocol.md",
-      "exit_code": 0
-    },
-    {
-      "violations": [
-        {
-          "file": "gh_ac_reports/README.md",
-          "line": 25,
-          "col": 17,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is captured",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "gh_ac_reports/README.md",
-          "line": 26,
-          "col": 12,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is captured",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "gh_ac_reports/README.md",
-          "line": 41,
-          "col": 33,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is used",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "gh_ac_reports/README.md",
-          "line": 50,
-          "col": 213,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is classified",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "gh_ac_reports/README.md",
-          "line": 52,
-          "col": 207,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are committed",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "gh_ac_reports/README.md",
-          "line": 58,
-          "col": 234,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is discovered",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "gh_ac_reports/README.md",
-          "line": 60,
-          "col": 21,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is added",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        }
-      ],
-      "count": 7,
-      "hard_count": 0,
-      "baseline": 0,
-      "words": 873,
-      "per_100_words": 0.8,
-      "path": "gh_ac_reports/README.md",
       "exit_code": 0
     },
     {
@@ -6253,6 +6221,28 @@
     {
       "file": "skills/github-actions/SKILL.md",
       "line": 42,
+      "col": 31,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "469031badac3ba397e332e3c",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/github-actions/SKILL.md",
+      "line": 45,
+      "col": 54,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "469031badac3ba397e332e3c",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/github-actions/SKILL.md",
+      "line": 49,
       "col": 96,
       "rule": "long-sentence",
       "level": "advisory-free",
@@ -6263,7 +6253,7 @@
     },
     {
       "file": "skills/github-actions/SKILL.md",
-      "line": 213,
+      "line": 220,
       "col": 211,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7605,8 +7595,8 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 46,
-      "col": 334,
+      "line": 47,
+      "col": 330,
       "rule": "semicolon",
       "level": "advisory-free",
       "match": ";",
@@ -7616,30 +7606,8 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 46,
-      "col": 362,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is needed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "8aaaeb4dae872360fad1cb7e",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 48,
-      "col": 169,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 48,
-      "col": 307,
+      "line": 47,
+      "col": 358,
       "rule": "passive-voice",
       "level": "advisory",
       "match": "is needed",
@@ -7650,6 +7618,28 @@
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
       "line": 49,
+      "col": 169,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 49,
+      "col": 307,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is needed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "8aaaeb4dae872360fad1cb7e",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 50,
       "col": 174,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7660,7 +7650,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 50,
+      "line": 51,
       "col": 290,
       "rule": "synonym-rotation",
       "level": "advisory-free",
@@ -7671,7 +7661,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 59,
+      "line": 61,
       "col": 430,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7682,7 +7672,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 60,
+      "line": 62,
       "col": 302,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7693,7 +7683,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 61,
+      "line": 63,
       "col": 406,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7704,7 +7694,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 62,
+      "line": 64,
       "col": 165,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7715,7 +7705,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 62,
+      "line": 64,
       "col": 208,
       "rule": "long-sentence",
       "level": "advisory-free",
@@ -7726,7 +7716,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 81,
+      "line": 83,
       "col": 39,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7737,7 +7727,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 85,
+      "line": 87,
       "col": 111,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7748,7 +7738,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 85,
+      "line": 87,
       "col": 139,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7759,7 +7749,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 85,
+      "line": 87,
       "col": 157,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7770,7 +7760,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 85,
+      "line": 87,
       "col": 187,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7781,7 +7771,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 85,
+      "line": 87,
       "col": 214,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7792,7 +7782,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 85,
+      "line": 87,
       "col": 240,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7803,7 +7793,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 85,
+      "line": 87,
       "col": 326,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7814,7 +7804,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 85,
+      "line": 87,
       "col": 394,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7825,7 +7815,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 86,
+      "line": 88,
       "col": 54,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7836,7 +7826,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 86,
+      "line": 88,
       "col": 264,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7847,7 +7837,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 86,
+      "line": 88,
       "col": 318,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7858,7 +7848,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 86,
+      "line": 88,
       "col": 435,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7869,7 +7859,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 86,
+      "line": 88,
       "col": 474,
       "rule": "present-perfect",
       "level": "advisory",
@@ -7880,7 +7870,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 86,
+      "line": 88,
       "col": 478,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7891,7 +7881,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 87,
+      "line": 89,
       "col": 136,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7902,7 +7892,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 87,
+      "line": 89,
       "col": 152,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7913,7 +7903,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 88,
+      "line": 90,
       "col": 144,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7924,7 +7914,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 88,
+      "line": 90,
       "col": 192,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7935,7 +7925,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 89,
+      "line": 91,
       "col": 131,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7946,7 +7936,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 89,
+      "line": 91,
       "col": 146,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7957,7 +7947,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 89,
+      "line": 91,
       "col": 206,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7968,7 +7958,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 89,
+      "line": 91,
       "col": 217,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7979,7 +7969,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 90,
+      "line": 92,
       "col": 199,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7990,7 +7980,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 90,
+      "line": 92,
       "col": 222,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8001,7 +7991,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 91,
+      "line": 93,
       "col": 73,
       "rule": "long-sentence",
       "level": "advisory-free",
@@ -8012,7 +8002,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 91,
+      "line": 93,
       "col": 220,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8023,7 +8013,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 92,
+      "line": 94,
       "col": 71,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8034,7 +8024,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 92,
+      "line": 94,
       "col": 145,
       "rule": "long-sentence",
       "level": "advisory-free",
@@ -8045,7 +8035,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 92,
+      "line": 94,
       "col": 196,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8056,7 +8046,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 92,
+      "line": 94,
       "col": 261,
       "rule": "passive-voice",
       "level": "advisory",
@@ -8067,7 +8057,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 92,
+      "line": 94,
       "col": 368,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8078,7 +8068,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 100,
+      "line": 102,
       "col": 293,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8089,7 +8079,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 102,
+      "line": 104,
       "col": 41,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8100,7 +8090,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 102,
+      "line": 104,
       "col": 60,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8111,7 +8101,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 102,
+      "line": 104,
       "col": 226,
       "rule": "passive-voice",
       "level": "advisory",
@@ -8122,7 +8112,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 104,
+      "line": 106,
       "col": 62,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8133,7 +8123,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 104,
+      "line": 106,
       "col": 110,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8144,7 +8134,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 105,
+      "line": 107,
       "col": 58,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8155,7 +8145,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 105,
+      "line": 107,
       "col": 136,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8166,7 +8156,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 105,
+      "line": 107,
       "col": 251,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8177,7 +8167,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 107,
+      "line": 109,
       "col": 79,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8188,7 +8178,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 107,
+      "line": 109,
       "col": 189,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8199,7 +8189,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 109,
+      "line": 111,
       "col": 88,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8210,7 +8200,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 110,
+      "line": 112,
       "col": 129,
       "rule": "passive-voice",
       "level": "advisory",
@@ -8221,7 +8211,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 111,
+      "line": 113,
       "col": 112,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8232,7 +8222,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 111,
+      "line": 113,
       "col": 188,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8243,7 +8233,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 111,
+      "line": 113,
       "col": 332,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8254,7 +8244,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 123,
+      "line": 125,
       "col": 97,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8265,7 +8255,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 123,
+      "line": 125,
       "col": 166,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8276,7 +8266,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 123,
+      "line": 125,
       "col": 235,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8287,7 +8277,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 123,
+      "line": 125,
       "col": 304,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8298,7 +8288,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 123,
+      "line": 125,
       "col": 373,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8309,7 +8299,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 124,
+      "line": 126,
       "col": 90,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8320,7 +8310,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 125,
+      "line": 127,
       "col": 62,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8331,7 +8321,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 125,
+      "line": 127,
       "col": 92,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8342,7 +8332,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 125,
+      "line": 127,
       "col": 124,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8353,7 +8343,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 125,
+      "line": 127,
       "col": 199,
       "rule": "passive-voice",
       "level": "advisory",
@@ -8364,7 +8354,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 125,
+      "line": 127,
       "col": 287,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8375,7 +8365,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 126,
+      "line": 128,
       "col": 173,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8386,7 +8376,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 127,
+      "line": 129,
       "col": 80,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8397,7 +8387,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 127,
+      "line": 129,
       "col": 128,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8408,7 +8398,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 127,
+      "line": 129,
       "col": 332,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8419,7 +8409,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 128,
+      "line": 130,
       "col": 113,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8430,7 +8420,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 128,
+      "line": 130,
       "col": 189,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8441,7 +8431,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 128,
+      "line": 130,
       "col": 298,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8452,7 +8442,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 132,
+      "line": 134,
       "col": 57,
       "rule": "passive-voice",
       "level": "advisory",
@@ -8463,7 +8453,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 137,
+      "line": 139,
       "col": 73,
       "rule": "synonym-rotation",
       "level": "advisory-free",
@@ -8474,7 +8464,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 138,
+      "line": 140,
       "col": 67,
       "rule": "synonym-rotation",
       "level": "advisory-free",
@@ -8485,7 +8475,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 138,
+      "line": 140,
       "col": 124,
       "rule": "passive-voice",
       "level": "advisory",
@@ -8496,7 +8486,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 142,
+      "line": 144,
       "col": 32,
       "rule": "passive-voice",
       "level": "advisory",
@@ -8507,7 +8497,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 150,
+      "line": 152,
       "col": 185,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -8581,6 +8571,17 @@
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "25393e4ca29211513c0ea122",
       "comparison": "recurring"
+    },
+    {
+      "file": "skills/INITIALIZATION_POLICY.md",
+      "line": 132,
+      "col": 288,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "b28796101e8a0d8165b3d79b",
+      "comparison": "new"
     },
     {
       "file": "skills/drawing/assets/daily-index-template.md",
@@ -8870,8 +8871,8 @@
     },
     {
       "file": "workspace/README.md",
-      "line": 24,
-      "col": 377,
+      "line": 25,
+      "col": 469,
       "rule": "present-perfect",
       "level": "advisory",
       "match": "has triggered",
@@ -8881,7 +8882,7 @@
     },
     {
       "file": "workspace/README.md",
-      "line": 55,
+      "line": 56,
       "col": 22,
       "rule": "present-perfect",
       "level": "advisory",
@@ -8969,7 +8970,29 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 280,
+      "line": 274,
+      "col": 142,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "fix",
+      "message": "'fix' and 'repair' name the same action. Pick one and use it every time.",
+      "fingerprint": "029ca4bbb45df78403a58c6a",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 274,
+      "col": 237,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 284,
       "col": 168,
       "rule": "present-perfect",
       "level": "advisory",
@@ -8980,7 +9003,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 280,
+      "line": 284,
       "col": 172,
       "rule": "passive-voice",
       "level": "advisory",
@@ -8991,7 +9014,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 280,
+      "line": 284,
       "col": 273,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -9002,7 +9025,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 298,
+      "line": 302,
       "col": 5,
       "rule": "synonym-rotation",
       "level": "advisory-free",
@@ -9013,7 +9036,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 299,
+      "line": 303,
       "col": 188,
       "rule": "synonym-rotation",
       "level": "advisory-free",
@@ -9937,6 +9960,17 @@
     },
     {
       "file": "skills/session-archiving/SKILL.md",
+      "line": 15,
+      "col": 1,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "27 words",
+      "message": "Sentence has 27 words (cap 25). Split it.",
+      "fingerprint": "9e6fa03cf250971e670d6803",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/session-archiving/SKILL.md",
       "line": 19,
       "col": 1,
       "rule": "long-sentence",
@@ -9948,7 +9982,7 @@
     },
     {
       "file": "skills/session-archiving/SKILL.md",
-      "line": 75,
+      "line": 76,
       "col": 90,
       "rule": "passive-voice",
       "level": "advisory",
@@ -9959,7 +9993,7 @@
     },
     {
       "file": "skills/session-archiving/SKILL.md",
-      "line": 129,
+      "line": 130,
       "col": 41,
       "rule": "passive-voice",
       "level": "advisory",
@@ -9970,7 +10004,7 @@
     },
     {
       "file": "skills/session-archiving/SKILL.md",
-      "line": 137,
+      "line": 138,
       "col": 339,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -9981,7 +10015,7 @@
     },
     {
       "file": "skills/session-archiving/SKILL.md",
-      "line": 137,
+      "line": 138,
       "col": 408,
       "rule": "passive-voice",
       "level": "advisory",
@@ -10035,83 +10069,6 @@
       "comparison": "recurring"
     },
     {
-      "file": "gh_ac_reports/README.md",
-      "line": 25,
-      "col": 17,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is captured",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "5c620275a7c7effe61f0afc1",
-      "comparison": "recurring"
-    },
-    {
-      "file": "gh_ac_reports/README.md",
-      "line": 26,
-      "col": 12,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is captured",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "5c620275a7c7effe61f0afc1",
-      "comparison": "recurring"
-    },
-    {
-      "file": "gh_ac_reports/README.md",
-      "line": 41,
-      "col": 33,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is used",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "463716732058c023799484ce",
-      "comparison": "recurring"
-    },
-    {
-      "file": "gh_ac_reports/README.md",
-      "line": 50,
-      "col": 213,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is classified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "95dd42a5111c0ba4483be425",
-      "comparison": "recurring"
-    },
-    {
-      "file": "gh_ac_reports/README.md",
-      "line": 52,
-      "col": 207,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are committed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "b3faf330d48cd8c34a6a594f",
-      "comparison": "recurring"
-    },
-    {
-      "file": "gh_ac_reports/README.md",
-      "line": 58,
-      "col": 234,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is discovered",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "701eb82303623fc17158e399",
-      "comparison": "recurring"
-    },
-    {
-      "file": "gh_ac_reports/README.md",
-      "line": 60,
-      "col": 21,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is added",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "e099211464225619f8b178a5",
-      "comparison": "recurring"
-    },
-    {
       "file": "skills/session-archiving/assets/session-brief-template.md",
       "line": 5,
       "col": 1,
@@ -10156,18 +10113,84 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 0,
-  "recurring_findings": 475,
+  "new_findings": 3,
+  "recurring_findings": 471,
   "resolved_findings": [
     {
       "file": "gh_ac_reports/README.md",
-      "line": 56,
-      "col": 23,
+      "line": 25,
+      "col": 17,
       "rule": "passive-voice",
       "level": "advisory",
-      "match": "is called",
+      "match": "is captured",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "a9176525601fa5d50e90e3cc",
+      "fingerprint": "5c620275a7c7effe61f0afc1",
+      "comparison": "resolved"
+    },
+    {
+      "file": "gh_ac_reports/README.md",
+      "line": 26,
+      "col": 12,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is captured",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "5c620275a7c7effe61f0afc1",
+      "comparison": "resolved"
+    },
+    {
+      "file": "gh_ac_reports/README.md",
+      "line": 41,
+      "col": 33,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is used",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "463716732058c023799484ce",
+      "comparison": "resolved"
+    },
+    {
+      "file": "gh_ac_reports/README.md",
+      "line": 50,
+      "col": 213,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is classified",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "95dd42a5111c0ba4483be425",
+      "comparison": "resolved"
+    },
+    {
+      "file": "gh_ac_reports/README.md",
+      "line": 52,
+      "col": 207,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are committed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "b3faf330d48cd8c34a6a594f",
+      "comparison": "resolved"
+    },
+    {
+      "file": "gh_ac_reports/README.md",
+      "line": 58,
+      "col": 234,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is discovered",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "701eb82303623fc17158e399",
+      "comparison": "resolved"
+    },
+    {
+      "file": "gh_ac_reports/README.md",
+      "line": 60,
+      "col": 21,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is added",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "e099211464225619f8b178a5",
       "comparison": "resolved"
     }
   ],
@@ -10188,7 +10211,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.338s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.321s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -10206,7 +10229,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 145 active Markdown files (231 available as link targets) and 319 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 232 active Markdown files (296 available as link targets) and 336 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
