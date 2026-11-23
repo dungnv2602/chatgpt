@@ -53,7 +53,7 @@ For the full process, read these sections in `SKILL.md`:
 - `references/patterns/README.md` — canonical pattern index.
 - `references/patterns/successful-patterns.md` — successful techniques.
 - `references/patterns/failure-patterns.md` — failures and tested countermeasures.
-- `references/patterns/PATTERN-TEMPLATES.md` — templates for new or revised patterns.
+- `assets/pattern-entry-templates.md` — templates for new or revised patterns.
 
 On the first drawing task in a conversation, read the pattern index and both pattern files. Consult the loaded patterns at each drawing session and relevant attempt. Record their blob SHAs. Refresh only changed or newly needed files. Load templates only when you create or revise a pattern.
 
