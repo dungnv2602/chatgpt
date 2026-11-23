@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Changed-document STE lint report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "scope",
+    "run_id",
+    "run_number",
+    "run_url",
+    "attempt",
+    "branch",
+    "commit_sha",
+    "event",
+    "workflow",
+    "runner_os",
+    "execution_mode",
+    "baseline_sha",
+    "generated_at_utc",
+    "status",
+    "linter_source_sha",
+    "runtime",
+    "files_evaluated",
+    "files_evaluated_count",
+    "files_failed",
+    "total_findings",
+    "hard_findings",
+    "findings_by_rule",
+    "failed_files",
+    "records",
+    "findings",
+    "new_findings",
+    "recurring_findings",
+    "resolved_findings"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "scope": { "const": "on_changed" },
+    "run_id": { "type": "string" },
+    "run_number": { "type": "integer" },
+    "run_url": { "type": "string" },
+    "attempt": { "type": "integer" },
+    "branch": { "type": "string" },
+    "commit_sha": { "type": "string" },
+    "event": { "type": "string" },
+    "workflow": { "type": ["string", "null"] },
+    "runner_os": { "type": ["string", "null"] },
+    "execution_mode": { "type": "string" },
+    "baseline_sha": { "type": ["string", "null"] },
+    "generated_at_utc": { "type": "string" },
+    "status": {
+      "enum": ["Passed", "Failed", "Cancelled", "Superseded", "Incomplete"]
+    },
+    "linter_source_sha": { "type": ["string", "null"] },
+    "runtime": {
+      "type": "object",
+      "required": ["python", "platform"],
+      "properties": {
+        "python": { "type": "string" },
+        "platform": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "files_evaluated": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "files_evaluated_count": { "type": "integer" },
+    "files_failed": { "type": "integer" },
+    "total_findings": { "type": "integer" },
+    "hard_findings": { "type": "integer" },
+    "findings_by_rule": {
+      "type": "object",
+      "additionalProperties": { "type": "integer" }
+    },
+    "failed_files": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "exit_code"],
+        "properties": {
+          "path": { "type": "string" },
+          "exit_code": { "type": "integer" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["file", "fingerprint", "comparison"],
+        "properties": {
+          "file": { "type": "string" },
+          "fingerprint": { "type": "string" },
+          "comparison": { "enum": ["new", "recurring"] }
+        },
+        "additionalProperties": true
+      }
+    },
+    "new_findings": { "type": "integer" },
+    "recurring_findings": { "type": "integer" },
+    "resolved_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}
