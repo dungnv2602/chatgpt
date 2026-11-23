@@ -39,7 +39,7 @@ This boundary applies to every future task and every tool call, not only archivi
 - Working branch: `gpt`
 - Workspace root: repository root, restricted to the approved directories above
 - Active task records: `workspace/`
-- Completed and cancelled task records: `archive/`, with 14-day retention
+- Completed and cancelled task records: `archive/`, with 14-day retention. Archived records are readable but immutable after their initial write. Only the scheduled retention workflow may delete them.
 - Images and visual references: `images/`
 - Canonical master reference documents: `master/`
 - Novel and scene records: `novels/`
@@ -131,6 +131,8 @@ All repository operations in this skill are remote-only. Use the GitHub connecto
 
 - Perform all file operations using exact paths under `approved project directories` on branch `gpt`.
 - Do not list, retrieve, search, inspect, or mutate any file path outside `approved project directories`.
+- You may read exact files under `archive/` when the task requires them. Reading does not grant permission to change them.
+- After the initial archive write, never edit, replace, rename, move, or manually delete an archived record. Only the scheduled retention workflow may delete archived records.
 - For an update, retrieve the current file first and use its current blob SHA.
 - Perform sequential writes to the same file. Do not run updates to the same path in parallel.
 - After each important write, retrieve the same `approved project directories` path again and verify its contents.
