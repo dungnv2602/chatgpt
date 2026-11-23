@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-071000
 - **Created:** 2026-11-23 07:10 UTC
-- **Updated:** 2026-11-23 08:03 UTC
+- **Updated:** 2026-11-23 08:18 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -74,6 +74,15 @@ Turn the existing triage-ledger foundation under `reports/triage/` into an opera
 - **References:** `reports/triage/README.md`, `reports/triage/ledger.json`, `reports/triage/ledger-schema.json`; related task `20261123-054904`.
 - **Next:** Start this task after the current diagnostic-report infrastructure task is complete or explicitly reprioritized.
 
+### 2026-11-23 08:18 UTC
+
+- **Action:** Implemented the ledger generator, versioned schema, regression suite, catalog classification, and forward-only bootstrap state.
+- **Result:** The generator reads only indexed immutable report paths. It reuses lint fingerprints and derives Actions identities from workflow, job, step, category, and normalized diagnostic text. It deduplicates evidence by report path and counts unique workflow observations. It preserves curated fields, reopens recurring resolved findings with resolution history, and rejects resolution without a fix commit and successful validation evidence.
+- **Bootstrap:** Seeded 151 currently indexed report paths as already processed. The ledger remains empty, so no historical findings were imported.
+- **Verification:** Read back the generator, tests, schema, ledger, and catalog from \`gpt\`. Regression tests have not run. The generator has not yet been integrated into report publication.
+- **Commits:** \`199dbf3694d547f2fbcbdde23a44c16250493d0c\`, \`022614b002e0b61016264d71e341a550a7c244a2\`, \`820bc4bde0bf1d9bd5921af59a24d2d1b29022fd\`, \`bce52d2b894fa6eb592b9cb9a84d79d8a4aec2b4\`, \`19a92ad73f4c6bfcff49f19a7f2f8e1b0a9e59ba\`.
+- **Next:** Integrate ingestion with the serialized diagnostics publishers and write the operator guide.
+
 ## 7. Current State
 
 The repository already contains an initial triage README, a JSON schema, and an empty `ledger.json`. The README describes deduplication and lifecycle states, but there is no automated ingestion/upsert process and no populated issue register. The existing ledger is therefore a foundation, not an operational issue tracker.
@@ -91,10 +100,9 @@ This task is approved and In Progress. It is the current execution task followin
 
 ## 9. Next Actions
 
-1. Complete source-contract and ingestion-design inspection on the current `gpt` branch.
-2. Implement forward-only ingestion, validation, regression tests, and operator guidance.
-3. Integrate ingestion into report publication without recursive triggers or concurrent ledger writers.
-4. Use GitHub-hosted Actions for validation. Do not poll or wait for runs.
+1. Integrate ingestion and its tests into the existing diagnostics capture and sweep publishers.
+2. Document operator procedures and migration behavior.
+3. Read back all changed paths and let GitHub-hosted Actions validate. Do not poll or wait for runs.
 
 ## 10. References
 
