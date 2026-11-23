@@ -8,7 +8,7 @@
 **Primary series:** [Series name or standalone/unassigned]
 **Session status:** [Active / Paused / Closed]
 
-This file is the daily navigation ledger. Each attempt has a separate record. The session brief governs the visual direction.
+This is the daily ledger. Each attempt has one record. The session brief governs visual direction.
 
 Include every attempt exactly once in the single continuous table. Keep rows in ascending attempt-number order. The attempt record is authoritative for prompt text, source and operation metadata, acceptance criteria, visual assessment, user approval, output identity, and provenance.
 
@@ -25,5 +25,5 @@ Include every attempt exactly once in the single continuous table. Keep rows in 
 - List every attempt exactly once.
 - Keep one header row and one separator row.
 - Keep all attempt rows physically contiguous and in ascending order.
-- Update the row after you verify its attempt record.
+- Update the row after you check its attempt record.
 - Do not infer approval, success, lineage, or storage.
