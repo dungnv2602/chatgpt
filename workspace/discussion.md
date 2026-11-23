@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 — Validate serialized report publication:** All six source-workflow finalizers now share the backfill collector's non-cancelling concurrency group after a completed sweep exposed concurrent index-write conflicts. Verify the current workflow/action/catalog/retention changes through natural hosted runs. Do not poll pending runs or modify `main`. Expected result: one writer at a time updates shared report indexes and latest pointers; hosted tests confirm the exact-file retention logic.
+- **2026-11-23 — Validate serialized report publication:** All six source-workflow finalizers now share the backfill collector's non-cancelling concurrency group. Hosted diagnostics run [45129646663](https://github.com/dungnv2602/chatgpt/actions/runs/45129646663) completed successfully; all 12 reporter tests and all 7 shared archive-retention tests passed, and the sweep published four captures. The three earlier exact-run recaptures are complete and their request files are processed. Remaining validation: obtain a successful natural Document Standards run after the catalog/report-root corrections. Five source runs remain pending for later post-run capture. Do not poll, manually dispatch the schedule-only cleanup, or modify `main`.
 
 ## Open Discussions
 
@@ -8,10 +8,16 @@
 
 - **2026-11-23 — Default-branch observer limitation:** The repository default branch is `main`; this task is constrained to `gpt`. A failure before any job starts cannot be captured immediately by the branch-local finalizer. The push-driven sweep or an exact-run request can backfill it later. Immediate run-completion observation requires an authorized observer on `main` or an external GitHub App webhook.
 
-- **2026-11-23 — Document Standards workflow validation:** Its path-filter changes were read back, but a successful hosted confirmation was not observed. Do not poll; verify on its next eligible run.
+- **2026-11-23 — Document Standards workflow validation:** The latest visible run [45128450035](https://github.com/dungnv2602/chatgpt/actions/runs/45128450035) failed before the final catalog/report-root corrections. No successful post-correction hosted run is yet visible. Verify on its next naturally eligible run; do not poll or manually dispatch.
 - **2026-11-23 — Document lint findings:** The new reports retain 144 hard findings in the repository-wide run and 145 in the changed-scope fallback run. Thresholds and baselines were not weakened. Remediation is separate from the completed report-pipeline task.
 
 ## Reports
+
+### 2026-11-23 — Latest diagnostic and retention validation
+
+- Hosted diagnostics run [45129646663](https://github.com/dungnv2602/chatgpt/actions/runs/45129646663) passed all 12 reporter regression tests and all 7 archive-retention tests. Sweep and publication succeeded, adding four captures.
+- Exact-run recaptures are complete for changed lint `45123260178`, Document Standards `45123530858`, and full lint `45123530849`; their request files are processed and immutable post-run reports are present.
+- Five source runs remain pending for later post-run capture. The latest Document Standards run remains a pre-correction failure; a successful natural post-correction run is still required.
 
 ### 2026-11-23 — GitHub Actions diagnostic reports implemented
 
