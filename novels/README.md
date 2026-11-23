@@ -116,7 +116,7 @@ Higher-level documents summarize and link to lower-level records. They do not du
 3. **Approval:** promote only the scope the user approved. Update the novel summary, relevant records, decision history, and open questions.
 4. **Arc planning:** create arc.md when an arc has a clear purpose and meaningful progression.
 5. **Scene writing:** read parent continuity records. Write the full scene prose in scene.md. Update arc and novel indexes.
-6. **Illustration:** a specific scene-writing request includes at least one standalone illustration by default. Explicit prose-only instructions, planning/discussion tasks, and genuine safety or technical blockers are exceptions. Every generated image deliverable receives a scene-local prompt record and an Illustration Note.
+6. **Illustration:** a specific scene-writing request includes at least one standalone illustration by default. Explicit prose-only instructions, planning/discussion tasks, and genuine safety or technical blockers are exceptions. Every generated image deliverable receives a scene-local prompt record and an Illustration Note. Follow the [Drawing operation selector](../skills/drawing/references/image-editing-protocol.md): use fresh generation for a new scene or variation; use a direct edit only when the user requests a change to a specific image and its exact source is available. Do not silently substitute one operation for the other.
 7. **Revision and completion:** check causality, agency, chronology, world rules, continuity, visual constraints, statuses, links, and read-back verification.
 
 The complete procedures, delivery matrix, approval rules, status definitions, and quality gates are in [WORKFLOW.md](WORKFLOW.md).
