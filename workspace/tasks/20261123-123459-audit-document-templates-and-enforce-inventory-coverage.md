@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-123459
 - **Created:** 2026-11-23 12:34 UTC
-- **Updated:** 2026-11-23 14:15 UTC
+- **Updated:** 2026-11-23 14:25 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -111,25 +111,30 @@ Audit all in-scope repository documents on branch `gpt`, excluding `master/` and
 - **Workflow review:** Reviewed all 17 eligible README files and all in-scope skill definitions. Worker task creation remains the sole task-creation owner; the ledger only records `task_refs`. Generated report paths are excluded from their own push triggers. Diagnostics self-monitoring remains an explicit GitHub UI limitation. The image-operation selector agrees with the Novel workflow.
 - **Next:** Remove duplicated image-lifecycle instructions without changing ownership or technical requirements. Then read back every changed path and review a naturally completed hosted validation. Do not run local scripts or tests, poll, or dispatch Actions.
 
+### 2026-11-23 14:25 UTC
+
+- **Action:** Consolidated duplicated image-intake, provenance, conversion, and manifest wording. Reduced `images/README.md` from 101 to 34 lines and the Worker image-provenance reference from 145 to 54 lines. Removed repeated acceptance-criteria and session-summary instructions from the Worker archive reference. Corrected the Novel asset-tree example to place original PNG/JPEG masters under `original/` and WebP delivery files in the destination root.
+- **Ownership:** The Worker owns the shared image lifecycle; `images/takeout/README.md` owns the exact hand-off schema, conversion profiles, staging, retry, and report procedure; the Drawing archive reference owns session manifest and attempt-link requirements; Novel documentation describes only the novel destination and its record relationship.
+- **Validation:** Read back all four changed lifecycle/README files. Checked internal Markdown links against the current non-truncated tree; no unresolved links. Latest tree at `1a5c8380036dac0132216635951f95a971ceee25` contains 6,375 entries and 1,114 in-scope Markdown files. All 1,114 are covered by the 48 Active rules; every rule matches at least one current file. No Reserved rules remain in the current catalog.
+- **Commit:** `25fc8f291061476663f460e8428b57c9a9723e38`.
+- **Next:** Verify the final branch head and all changed paths again. Review naturally completed hosted validation only; do not poll or dispatch Actions.
+
 ## 7. Current State
 
-Template inventory enforcement and the workflow refactor are implemented. The validator now supports Reserved coverage rules, which resolve the new-family bootstrap deadlock without weakening stale-rule detection. A non-truncated tree audit at `e40e15438ab263e83082ca5bc8d1fdb9194fb741` found 1,110 in-scope Markdown files. All 1,110 match the 48 Active rules, and every rule matches at least one file. The README and cross-cycle reviews found no task/ledger ownership loop or generated-report trigger loop. Duplicate image-lifecycle guidance remains to be consolidated. Hosted validation after the validator change remains pending.
+Template inventory enforcement, the Reserved/Active bootstrap fix, and the image-lifecycle refactor are implemented. The latest non-truncated tree audit at `1a5c8380036dac0132216635951f95a971ceee25` found 1,114 in-scope Markdown files. All 1,114 match the 48 Active rules, and every rule matches at least one file. All 17 eligible README files and all in-scope skill definitions have been reviewed. The task, ledger, and GitHub Actions ownership cycles have no unresolved circular dependency. Hosted validation after the Reserved/Active validator change remains pending.
 
 ## 8. Remaining Work
 
-- Consolidate duplicate image-intake, provenance, WebP, and manifest instructions under their single owner references.
-- Recheck links and path references in the affected lifecycle documents.
-- Read back all changed skills, references, README files, task records, catalog entries, and validator/tests.
-- Recheck Markdown inventory coverage after the final repository edits.
+- Verify the final branch head and read back all paths changed by this task.
 - Review a naturally completed Document Standards run after the Active/Reserved validator change. Do not poll or dispatch workflows.
+- If hosted validation passes and the final inventory/read-back remains consistent, complete the task closeout and archive it through The Worker's required transaction.
 
 ## 9. Next Actions
 
-1. Consolidate duplicated image-lifecycle instructions while retaining the Worker, Takeout README, and Drawing archive ownership boundaries.
-2. Read back all changed lifecycle and README paths. Check links and confirm that no requirement was lost.
-3. Recheck the complete Markdown inventory and catalog coverage on the latest non-truncated `gpt` tree.
-4. Read back the task, discussion register, and all changed Document Standards files.
-5. Review the next natural hosted validation result. Do not run local scripts or tests, poll, or dispatch workflows.
+1. Read back all changed Document Standards, image, novel, Worker, task, and workspace paths from `gpt`.
+2. Recheck the latest non-truncated Markdown inventory and the 48 Active coverage rules.
+3. Review a naturally completed hosted Document Standards result; do not poll or dispatch.
+4. If every check passes, reconcile the task board, archive the task record, and verify the final closeout transaction.
 
 ## 10. References
 
@@ -145,9 +150,9 @@ Template inventory enforcement and the workflow refactor are implemented. The va
 
 - **Check:** Recursive tree inventory, Markdown path coverage, README alignment, changed-file read-back, and hosted regression evidence.
 - **Method:** GitHub recursive tree API on branch `gpt`; 48 catalog patterns evaluated with segment-aware glob semantics; exact repository files read back.
-- **Result:** Initial inventory audit: 4,509 in-scope files and 1,096 Markdown documents at commit `9ef2567e99a52045ac636c8a7749ecb5ccbb1e31`. Latest audit: 6,350 tree entries and 1,110 in-scope Markdown documents at commit `e40e15438ab263e83082ca5bc8d1fdb9194fb741`. All 1,110 current Markdown paths match the 48 Active rules; every rule matches at least one current file; zero uncovered paths and zero unused rules. The 5-column coverage register, validator, authoring gate, and four reservation lifecycle tests were committed at `852beb643a188c3edfe1e0e9c94d6c6623664fd9`.
+- **Result:** Initial inventory audit: 4,509 in-scope files and 1,096 Markdown documents at commit `9ef2567e99a52045ac636c8a7749ecb5ccbb1e31`. Intermediate audit: 6,350 tree entries and 1,110 in-scope Markdown documents at commit `e40e15438ab263e83082ca5bc8d1fdb9194fb741`. Latest audit: 6,375 tree entries and 1,114 in-scope Markdown documents at commit `1a5c8380036dac0132216635951f95a971ceee25`. All 1,114 current Markdown paths match the 48 Active rules; every rule matches at least one current file; zero uncovered paths and zero unused rules. The Active/Reserved validator, tests, and authoring gate were committed at `852beb643a188c3edfe1e0e9c94d6c6623664fd9`.
 - **Limitations:** The repository validator and test suite were not run locally. The latest stored pre-finalizer run predates the fixture correction and had unavailable logs. Hosted validation after the fix is not yet verified. The content review classified all Markdown families and representative records; structured JSON/YAML/CSV records remain governed by their catalogued schemas and generators.
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. Do not access `master/` or `archive/`. No new template is required unless a genuinely new recurring type appears. The Drawing operation selector and Worker/Document Standards ownership boundary are aligned. The 48-rule catalog now uses Active/Reserved state; a new family is registered Reserved with its canonical format, then activated with its first record. The current 1,110-file Markdown inventory is fully covered. Consolidate duplicate image-lifecycle wording, read back changed files, and review the next naturally completed hosted validation. Do not run local scripts or poll/dispatch Actions.
+Continue on branch `gpt`. Do not access `master/` or `archive/`. No new template is required unless a genuinely new recurring type appears. The 48-rule catalog uses Active/Reserved coverage: register a new family as Reserved with its canonical format, then activate it in the same commit as the first record. The latest 1,114-file Markdown inventory is fully covered. Image lifecycle instructions now have distinct Worker, Takeout README, Drawing archive, and Novel destination owners. Read back the final branch state and review the next naturally completed hosted validation. Do not run local scripts or poll/dispatch Actions.

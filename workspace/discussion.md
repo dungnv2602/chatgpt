@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 14:15 UTC — Consolidate duplicate image-lifecycle guidance:** The coverage validator and tests now support Reserved families, and the current inventory check passes. Cross-cycle review found one task creator, no ledger/task loop, and no generated-report trigger loop. Next trim repeated intake, hash, WebP, and manifest rules by preserving the Worker as lifecycle owner, the Takeout README as field/procedure reference, and Drawing's archive reference as the session-manifest authority. Keep the three historical daily indexes unchanged.
+- **2026-11-23 14:25 UTC — Finalize repository read-back and hosted evidence:** Consolidated duplicate image lifecycle instructions, corrected the Novel master/WebP directory diagram, and checked internal links. The latest non-truncated tree now contains 1,114 in-scope Markdown files; the 48 Active rules cover all of them. Next verify every changed path and the branch head, then review a naturally completed hosted validation without polling or dispatching Actions.
 
 ## Open Discussions
 

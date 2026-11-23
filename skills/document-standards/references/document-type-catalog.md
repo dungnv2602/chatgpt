@@ -1,7 +1,7 @@
 # Document Type Catalog
 
 **Catalog version:** 1.6  
-**Inventory status:** Non-truncated recursive tree audit of branch `gpt` at commit `e40e15438ab263e83082ca5bc8d1fdb9194fb741` found 6,350 tree entries and 1,110 Markdown documents outside root `master/` and `archive/`. All 1,110 Markdown paths match the 48 Active coverage rules; every rule matches at least one file. This is a complete path inventory and targeted family review, not a line-by-line semantic review of every generated report.
+**Inventory status:** Non-truncated recursive tree audit of branch `gpt` at commit `1a5c8380036dac0132216635951f95a971ceee25` found 6,375 tree entries and 1,114 Markdown documents outside root `master/` and `archive/`. All 1,114 Markdown paths match the 48 Active coverage rules; every rule matches at least one file. This is a complete path inventory and targeted family review, not a line-by-line semantic review of every generated report.
 **Source branch:** `gpt`
 
 This catalog maps recurring document types to their canonical formats. It distinguishes standalone templates from embedded contracts and generated formats. Skill-owned copy-ready templates belong in the owning skill's `assets/` directory. Explanatory references belong in `references/`. Project-level templates may use the owning project's designated template directory.
