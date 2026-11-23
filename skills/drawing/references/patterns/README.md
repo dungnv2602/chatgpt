@@ -6,7 +6,7 @@ The global pattern indexes contain reusable lessons extracted from the historica
 
 - [Successful patterns](successful-patterns.md) — techniques supported by actual accepted outputs.
 - [Failure patterns](failure-patterns.md) — recurring failures, observed impacts, hypotheses, tested countermeasures, and prevention rules.
-- [Entry templates](PATTERN-TEMPLATES.md) — copy-ready formats and the review checklist.
+- [Entry templates](../../assets/pattern-entry-templates.md) — copy-ready formats and the review checklist.
 
 ## Historical prompt indexes
 
@@ -38,7 +38,7 @@ entries and no refresh condition applies.
 - Successful patterns use permanent IDs: `S-001`, `S-002`, etc.
 - Failure patterns use permanent IDs: `F-001`, `F-002`, etc.
 - Never reuse an ID, including after retirement.
-- Confidence levels: **Provisional**, **Supported**, **Validated**, and **Retired**. Their definitions are in [PATTERN-TEMPLATES.md](PATTERN-TEMPLATES.md).
+- Confidence levels: **Provisional**, **Supported**, **Validated**, and **Retired**. Their definitions are in [pattern-entry-templates.md](../../assets/pattern-entry-templates.md).
 
 ## Evidence discipline
 
