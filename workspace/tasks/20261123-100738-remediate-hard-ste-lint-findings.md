@@ -191,7 +191,7 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 7. Current State
 
-The approved task is In Progress and is the current execution. Source-level edits address 140 of the 155 baseline hard findings across 18 files. These include all 75 findings in the Document Type Catalog. In `skills/asd-ste100/SKILL.md`, two non-example findings have source-level edits. Thirteen findings remain in deliberate examples that the repository writing policy says to preserve. Two additional single-finding files remain under review. Hosted validation remains pending. The 319 advisory findings remain out of scope.
+The approved task is In Progress and is the current execution. Source-level edits address 141 of the 155 baseline hard findings across 19 files. These include all 75 findings in the Document Type Catalog. In `skills/asd-ste100/SKILL.md`, two non-example findings have source-level edits. Thirteen findings remain in deliberate examples that the repository writing policy says to preserve. One additional single-finding file remains under review. Hosted validation remains pending. The 319 advisory findings remain out of scope.
 
 ## 8. Remaining Work
 
@@ -202,11 +202,10 @@ The approved task is In Progress and is the current execution. Source-level edit
 
 ## 9. Next Actions
 
-1. Review the single hard finding in `skills/session-archiving/references/archive-records-and-image-prompts.md` against the archive lifecycle contract.
-2. Preserve exact read, retention, and immutability boundaries.
-3. Review the final single-finding file and preserve its template and workflow contract.
-4. Resolve the 13 intentional-example findings only after user direction. Do not rewrite examples that the repository policy says to preserve.
-5. Apply fixes on `gpt` and inspect naturally generated hosted reports.
+1. Review the single hard finding in `skills/session-archiving/assets/session-brief-template.md` against the archive skill and catalog contract.
+2. Preserve the original user wording and open-field semantics.
+3. Resolve the 13 intentional-example findings only after user direction. Do not rewrite examples that the repository policy says to preserve.
+4. Apply fixes on `gpt` and inspect naturally generated hosted reports.
 
 ## 10. References
 
