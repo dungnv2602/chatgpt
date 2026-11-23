@@ -160,7 +160,7 @@ def migrate_ledger(ledger, root):
                 evidence = finding.get("evidence") or []
                 note = str(evidence[-1].get("note") or "") if evidence and isinstance(evidence[-1], dict) else ""
                 file_path = note.split(" · ", 1)[-1]
-                file_path = re.sub(r":\\d+(?::\\d+)?$", "", file_path)
+                file_path = re.sub(r":\d+(?::\d+)?$", "", file_path)
                 if file_path and file_path != note:
                     group_parts = ["lint", finding.get("category", "unknown"), file_path]
             finding["task_group"] = task_group_key(*group_parts)
