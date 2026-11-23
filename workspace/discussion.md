@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 12:00 UTC — Current step:** Verify migrated Worker-owned files and all dependent references. Remove the standalone Session Archiving and Conversation Mode skill files only after path checks pass.
+- **2026-11-23 12:02 UTC — Current step:** Read back all changed Worker, workflow, Drawing, session-start, index, and image-documentation paths. Confirm the two absorbed skill entry points are absent and check the final branch head.
 
 ## Open Discussions
 
