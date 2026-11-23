@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 12:40 UTC — Begin drawing pattern template review:** Review the single hard finding in `skills/drawing/assets/pattern-entry-templates.md` against the pattern-library workflow. Preserve evidence, confidence, and failure/success distinctions.
+- **2026-11-23 12:44 UTC — Standardize pattern validation terminology:** Change the checklist instruction to `validate` so it matches the existing `Validated` confidence state. Preserve all enum values and evidence requirements.
 
 ## Open Discussions
 
