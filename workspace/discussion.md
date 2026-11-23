@@ -1,8 +1,6 @@
 ## Current Step
 
-- **2026-11-23 09:50 UTC — Session startup:** User invoked `start session`, approved the cancelled-run reporting fix, and asked to review the open discussions for required user actions. Foundational initialization is in progress; work remains on `gpt`.
-
-- **2026-11-23 09:27 UTC — Ledger task closeout verified:** Hosted validation passed; archive, retention index, active-record deletion, and board reconciliation are complete. No task is currently selected; the diagnostic-report task remains Paused.
+- **2026-11-23 09:52 UTC — Review open discussions and approved repair scope:** Inspect the task board, paused diagnostic-report task, collector implementation, affected reports, and regression tests. Determine which open items need a user decision and implement only the approved cancelled-run reporting fix.
 
 ## Open Discussions
 - **2026-11-23 — Hosted retention validation:** The shared cleanup script and tests now cover exact individual files in both `archive/tasks/` and `archive/reports/`. A hosted run of the schedule-only cleanup has not yet been observed. Do not dispatch it manually or modify `main`.
