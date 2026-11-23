@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 01:43 UTC — Brief before execution:** The novel-template audit found that several repeatable tables/blocks use blank example rows without saying what to record when no entries exist. Clarify the zero-entry convention in the affected canonical templates, then read back each edit and align the catalog contract matrix. Do not change template versions because this clarifies usage without changing field structure. Keep GitHub Actions workflow creation approval-gated.
+- **2026-11-23 01:45 UTC —** Novel template contract audit and zero-entry clarifications are complete and read back. Next: obtain explicit approval to create `.github/workflows/validate-document-standards.yml`; then run the 13 catalog-validator tests and validator on a GitHub-hosted runner. No workflow file was changed and no repository tests were run locally.
 
 ## Open Discussions
 
@@ -9,6 +9,11 @@
 
 ## Reports
 
+### 2026-11-23 01:45 UTC — Novel template field-contract audit
+
+- **Result:** Audited all eight Version 1.1 novel templates and added a catalog matrix for required baselines, conditional/optional content, and repeatable structures. Clarified zero-entry handling in the novel, character-profile, development-outline, arc, and scene templates. The open-discussion and illustration templates already define their conditional/optional behavior. No field structure changed; template versions remain 1.1. All six changed files were read back.
+- **Commits:** Catalog matrix `6195b82412ae0057f0a1c07c6cfd673e09d2e84f` and alignment `81923a8f1b9271ffd04da1a9a375baa9c18e99d5`; template clarifications `d7223bf0bf4b1a0601f5bbfa8a38e592b85272b8`, `a6c802d092e21236bbd96ce047e2b641e4890f62`, `f082101227042bf7cfa8098f56398748f9bc813b`, `d545533a04c0addb1632549adc328191ae3c71c8`, and `72c32a8a79c9578048f4e383886f35ecfd453957`.
+- **Task record:** `workspace/tasks/20261122-233900-enforce-template-first-document-standards.md`.
 ### 2026-11-23 01:34 UTC — Catalog validator regression coverage
 
 - **Result:** Added six focused tests for malformed rows, directory references, Embedded Contract requirements, Generator-owned test/Python references, and template naming. The suite now has 13 test methods. Manual source-level checks found 34 catalog types and 76 exact references, with no missing non-archive paths or class-rule inconsistencies. Tests remain unexecuted pending hosted-workflow authorization.
