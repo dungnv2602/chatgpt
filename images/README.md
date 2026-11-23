@@ -47,7 +47,7 @@ The processor moves the original bytes to the master path. It stores the WebP de
 
 The [WebP/takeout workflow](../.github/workflows/convert-images-to-webp.yml) runs the approved conversion process. It uses `cwebp` and the profiles below.
 
-The processor is [`skills/session-archiving/scripts/process_takeout.py`](../skills/session-archiving/scripts/process_takeout.py).
+The processor is [`skills/the-worker/scripts/process_takeout.py`](../skills/the-worker/scripts/process_takeout.py).
 
 The workflow checks the complete hand-off before it moves any original. It converts the full batch into persistent staging under `images/takeout/webp/[batch-id]/attempt-NNN/`.
 
