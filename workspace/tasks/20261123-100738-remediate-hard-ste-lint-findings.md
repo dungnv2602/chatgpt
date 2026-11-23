@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-100738
 - **Created:** 2026-11-23 10:07 UTC
-- **Updated:** 2026-11-23 10:54 UTC
+- **Updated:** 2026-11-23 11:00 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -55,6 +55,12 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 - **Validation:** Use natural GitHub Actions runs. Do not manually dispatch or poll workflows.
 
 ## 6. Progress Log
+
+### 2026-11-23 11:00 UTC
+
+- **Action:** Resolved the final long-sentence finding in the Document Type Catalog.
+- **Result:** All 75 baseline hard findings in the catalog have source-level edits: 68 semicolon findings, three synonym-rotation findings, and four long-sentence findings. The final Skill changelog row now has fewer than 25 words. Readback confirms zero semicolons in the catalog after commit `f5496655ac37864be20d82d5c9562bd001cece51`. No linter or local tests were run. Hosted validation remains pending natural workflow execution.
+- **Next:** Review the 15 hard findings in `skills/asd-ste100/SKILL.md` before the next edit batch.
 
 ### 2026-11-23 10:54 UTC
 
