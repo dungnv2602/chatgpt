@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261123-162826
 - **Created:** 2026-11-23 16:28 UTC
-- **Updated:** 2026-11-23 17:03 UTC
+- **Updated:** 2026-11-24
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -99,6 +99,13 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 - **References:** `images/takeout/README.md`; `skills/the-worker/references/image-provenance-and-webp.md`; `.github/workflows/convert-unclassified-takeout.yml`.
 - **Next:** Read back all revised workflow documents and the task record. Leave the existing seven-file conversion run to its natural workflow reporting. Do not claim conversion completion without observed evidence.
 
+### 2026-11-24 — Workflow documentation verification
+
+- **Action:** Read back the updated Worker skill, image-provenance reference, image asset README, takeout README, and task record from branch `gpt`. Checked the branch ref and the protected hand-off/workflow files.
+- **Result:** All five changed paths match their committed content. Branch `gpt` points to `61403d265266e905688d986dffe015855f0b8a4d`. The takeout hand-off remains Draft with its original blob SHA. The dedicated conversion workflow remains unchanged with its exact seven-file allowlist. The normal processor remains separate from conversion-only handling.
+- **Verification limits:** No Actions run was polled or manually dispatched. The seven WebP outputs have not been confirmed by this read-back. No claim of conversion completion or hosted test success is made.
+- **Next:** Leave the originals and staging derivatives for the user's manual relocation. Make no index edits unless explicitly requested. Review hosted output evidence only when it arrives through the normal reporting path.
+
 ## 7. Current State
 
 The eighteen PNGs were imported into `images/takeout/` by commit `1192a4a53640b6188f3500abda75b1c9d5fe004d`. The evidence does **not** show final processor relocation: the current `HANDOFF.yml` remains `status: draft`, and all eighteen image files remain in the intake folder.
@@ -108,6 +115,8 @@ Eleven items have exact mappings to Samantha drawing attempts 04–06 (20 Novemb
 Seven items remain unclassified. Their pixels have not been visually inspected, and no reliable source/attempt association is present. No mapping or conversation content has been invented for them.
 
 The hand-off now contains `source_asset_id` and `conversation_record` for the eleven mapped items only. It remains Draft. The processor, publication verifier, regression tests, documentation, and workflow changes are committed on branch `gpt` in commit `c07921efe1a22db2237caa647d828e66fdd0236d`. The seven unmapped items and all eighteen original image bytes remain untouched.
+
+On 24 November, the user approved a conversion-only path for unclassified images. The dedicated workflow `.github/workflows/convert-unclassified-takeout.yml` contains an exact allowlist of the seven PNGs and writes verified WebP derivatives under `images/takeout/webp/2026-11-20-001/attempt-001/`. It does not invoke the provenance-gated processor or update indexes. The Worker skill, image-provenance reference, and takeout README now define this as the standard future path. The user performs relocation. The assistant edits an index only on explicit request. The hand-off remains Draft. No conversion completion claim is made until hosted output evidence is observed.
 
 ## 8. Remaining Work
 
