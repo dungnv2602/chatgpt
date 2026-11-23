@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-23 16:28 UTC — Inspect image takeout provenance enforcement.** Review the processor's hand-off validation, drawing-record checks, staging, relocation, rollback, and reset path. Reconcile all 18 current items against retained session/attempt records without guessing image content or conversation history. Expected result: identify the precise bypass and define a fail-closed pre-relocation gate. Keep the active hand-off Draft and preserve every original.
+**2026-11-23 16:28 UTC — Implement the fail-closed provenance gate.** Add a mandatory conversation-record reference to each hand-off item. Validate the archived record and, for drawing outputs, cross-check the referenced session, attempt, asset ID, and generation ID before conversion or relocation. Recover only evidence-supported partial conversation records for 20 and 21 November. Keep the seven unclassified images in Draft. Expected result: incomplete or mismatched provenance fails before staging and cannot move originals.
 
 ## Open Discussions
 
