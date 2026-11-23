@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 13:50 UTC — Recover the selected task:** Read the workspace rules and board. The current execution task is `20261123-123459`, the document-template and inventory-coverage audit. Next read its complete task record and verify its checkpoint against the `gpt` branch.
+- **2026-11-23 13:52 UTC — Verify the task checkpoint:** Read the selected task record. Next compare its last validation-fix commit with current `gpt` and inventory the current tree outside `master/` and `archive/`. Confirm the 48-rule Markdown coverage and identify paths that still require read-back.
 
 ## Open Discussions
 
