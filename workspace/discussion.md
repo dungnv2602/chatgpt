@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 14:12 UTC — Implement the coverage bootstrap correction:** The README and cross-cycle review found no task/ledger/Actions circular dependency. Worker task creation remains the only hand-off owner. Report publication paths are excluded from their own triggers. The main remaining defect is the Document Standards new-family bootstrap deadlock. Next add explicit Active/Reserved coverage states and regression cases, then update the owner instructions and catalog.
+- **2026-11-23 14:15 UTC — Consolidate duplicate image-lifecycle guidance:** The coverage validator and tests now support Reserved families, and the current inventory check passes. Cross-cycle review found one task creator, no ledger/task loop, and no generated-report trigger loop. Next trim repeated intake, hash, WebP, and manifest rules by preserving the Worker as lifecycle owner, the Takeout README as field/procedure reference, and Drawing's archive reference as the session-manifest authority. Keep the three historical daily indexes unchanged.
 
 ## Open Discussions
 

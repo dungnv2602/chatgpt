@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-123459
 - **Created:** 2026-11-23 12:34 UTC
-- **Updated:** 2026-11-23 13:58 UTC
+- **Updated:** 2026-11-23 14:15 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -103,25 +103,33 @@ Audit all in-scope repository documents on branch `gpt`, excluding `master/` and
 - **References:** `.github/workflows/validate-document-standards.yml`; Document Type Catalog; commit `be736d5dd885c8084133542afc72458d50ccbf63`.
 - **Next:** Leave hosted validation pending; do not poll or dispatch workflows.
 
+### 2026-11-23 14:15 UTC
+
+- **Action:** Implemented a five-column Markdown coverage register with explicit `Active` and `Reserved` states. Updated the validator, four regression cases, catalog version, and Document Standards authoring gate in one atomic commit.
+- **Result:** Active rules must match at least one current Markdown file. Reserved rules must match none. The first document activates its rule in the same commit as that document. The validator still rejects stale Active rules, unknown states, uncovered files, unsafe paths, duplicate patterns, and invalid canonical authorities. Commit: `852beb643a188c3edfe1e0e9c94d6c6623664fd9`.
+- **Inventory:** Non-truncated tree at `e40e15438ab263e83082ca5bc8d1fdb9194fb741` contains 6,350 tree entries and 1,110 in-scope Markdown documents. All 1,110 match the 48 Active rules. Every rule matches at least one current path. `master/` and `archive/` remain excluded.
+- **Workflow review:** Reviewed all 17 eligible README files and all in-scope skill definitions. Worker task creation remains the sole task-creation owner; the ledger only records `task_refs`. Generated report paths are excluded from their own push triggers. Diagnostics self-monitoring remains an explicit GitHub UI limitation. The image-operation selector agrees with the Novel workflow.
+- **Next:** Remove duplicated image-lifecycle instructions without changing ownership or technical requirements. Then read back every changed path and review a naturally completed hosted validation. Do not run local scripts or tests, poll, or dispatch Actions.
+
 ## 7. Current State
 
-Template inventory enforcement and the recorded workflow refactor are implemented. The current non-truncated tree contains 1,108 in-scope Markdown documents, all covered by 48 narrow rules. Every rule matches at least one current path. The image-operation conflict and duplicated authoring gate are recorded as resolved. Independent README and cross-cycle review remains in progress. The authoring workflow has a bootstrap deadlock for a new path family: a new coverage rule cannot pass validation before its first matching document exists.
+Template inventory enforcement and the workflow refactor are implemented. The validator now supports Reserved coverage rules, which resolve the new-family bootstrap deadlock without weakening stale-rule detection. A non-truncated tree audit at `e40e15438ab263e83082ca5bc8d1fdb9194fb741` found 1,110 in-scope Markdown files. All 1,110 match the 48 Active rules, and every rule matches at least one file. The README and cross-cycle reviews found no task/ledger ownership loop or generated-report trigger loop. Duplicate image-lifecycle guidance remains to be consolidated. Hosted validation after the validator change remains pending.
 
 ## 8. Remaining Work
 
-- Review all in-scope README files and lifecycle references. Check links and obsolete paths.
-- Resolve the new-family coverage bootstrap deadlock without weakening stale-rule detection.
+- Consolidate duplicate image-intake, provenance, WebP, and manifest instructions under their single owner references.
+- Recheck links and path references in the affected lifecycle documents.
 - Read back all changed skills, references, README files, task records, catalog entries, and validator/tests.
 - Recheck Markdown inventory coverage after the final repository edits.
-- Review a naturally completed Document Standards run after the fixture correction. Do not poll or dispatch workflows.
+- Review a naturally completed Document Standards run after the Active/Reserved validator change. Do not poll or dispatch workflows.
 
 ## 9. Next Actions
 
-1. Review the remaining in-scope README files and lifecycle references. Confirm the documented workflow matches its owner skills.
-2. Add a reserved coverage state for a new document family, with validator tests for reserved and activated rules.
-3. Update the Document Standards instructions and catalog guidance for the two-commit template-first flow.
-4. Read back the changed paths and verify the current Markdown inventory.
-5. Do not run local scripts or tests. Do not poll or dispatch Actions; review the next natural hosted validation result.
+1. Consolidate duplicated image-lifecycle instructions while retaining the Worker, Takeout README, and Drawing archive ownership boundaries.
+2. Read back all changed lifecycle and README paths. Check links and confirm that no requirement was lost.
+3. Recheck the complete Markdown inventory and catalog coverage on the latest non-truncated `gpt` tree.
+4. Read back the task, discussion register, and all changed Document Standards files.
+5. Review the next natural hosted validation result. Do not run local scripts or tests, poll, or dispatch workflows.
 
 ## 10. References
 
@@ -137,9 +145,9 @@ Template inventory enforcement and the recorded workflow refactor are implemente
 
 - **Check:** Recursive tree inventory, Markdown path coverage, README alignment, changed-file read-back, and hosted regression evidence.
 - **Method:** GitHub recursive tree API on branch `gpt`; 48 catalog patterns evaluated with segment-aware glob semantics; exact repository files read back.
-- **Result:** Non-truncated tree at commit `9ef2567e99a52045ac636c8a7749ecb5ccbb1e31`; 4,509 in-scope files and 1,096 Markdown documents. All 1,096 Markdown paths are covered; all 48 rules match at least one current document; zero uncovered paths and zero unused rules. Hosted failure evidence identified two test-fixture omissions; fixture-only corrections were committed at `91df44b9e599457e2b8b3a635788857b41ae5e6c`.
+- **Result:** Initial inventory audit: 4,509 in-scope files and 1,096 Markdown documents at commit `9ef2567e99a52045ac636c8a7749ecb5ccbb1e31`. Latest audit: 6,350 tree entries and 1,110 in-scope Markdown documents at commit `e40e15438ab263e83082ca5bc8d1fdb9194fb741`. All 1,110 current Markdown paths match the 48 Active rules; every rule matches at least one current file; zero uncovered paths and zero unused rules. The 5-column coverage register, validator, authoring gate, and four reservation lifecycle tests were committed at `852beb643a188c3edfe1e0e9c94d6c6623664fd9`.
 - **Limitations:** The repository validator and test suite were not run locally. The latest stored pre-finalizer run predates the fixture correction and had unavailable logs. Hosted validation after the fix is not yet verified. The content review classified all Markdown families and representative records; structured JSON/YAML/CSV records remain governed by their catalogued schemas and generators.
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. Do not access `master/` or `archive/`. No new template is required unless a genuinely new recurring type appears. The Drawing operation rule, Worker/Document Standards ownership boundary, README guidance, and 48-rule path inventory are updated. The last hosted regression failures were traced to temporary test fixtures and corrected at `91df44b9e599457e2b8b3a635788857b41ae5e6c`. Read back the changed files, then review the next naturally completed hosted validation. Do not run local scripts or poll/dispatch Actions.
+Continue on branch `gpt`. Do not access `master/` or `archive/`. No new template is required unless a genuinely new recurring type appears. The Drawing operation selector and Worker/Document Standards ownership boundary are aligned. The 48-rule catalog now uses Active/Reserved state; a new family is registered Reserved with its canonical format, then activated with its first record. The current 1,110-file Markdown inventory is fully covered. Consolidate duplicate image-lifecycle wording, read back changed files, and review the next naturally completed hosted validation. Do not run local scripts or poll/dispatch Actions.

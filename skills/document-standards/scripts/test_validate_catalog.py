@@ -48,7 +48,7 @@ class CatalogValidatorTests(unittest.TestCase):
         coverage = (
             "\n## Markdown inventory coverage\n\n"
             "| Path pattern | Class | Coverage status | Canonical authority | Coverage rationale |\n"
-            "|---|---|---|---|\n"
+            "|---|---|---|---|---|\n"
             "| `skills/**/*.md` | Lightweight pattern | Active |"
             "`skills/example/SKILL.md` | Skill fixture. |\n"
             "| `workspace/*.md` | Embedded contract | Active |"
@@ -234,7 +234,7 @@ class CatalogValidatorTests(unittest.TestCase):
         coverage = (
             "## Markdown inventory coverage\n\n"
             "| Path pattern | Class | Coverage status | Canonical authority | Coverage rationale |\n"
-            "|---|---|---|---|\n"
+            "|---|---|---|---|---|\n"
             + "\n".join(rows)
             + "\n"
         )
