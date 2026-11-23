@@ -107,6 +107,24 @@ class CatalogValidatorTests(unittest.TestCase):
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("must reference a regression test" in error for error in errors))
 
+    def test_github_and_lint_report_roots_are_allowed(self):
+        self.write(".github/scripts/cleanup-archive.py")
+        self.write(".github/archive-retention-state.json")
+        self.write(".github/workflows/ste-lint-full-docs.yml")
+        self.write("lint_reports/latest-lint-report.md")
+        rows = [
+            "| Archive state | Embedded contract | "
+            "`.github/scripts/cleanup-archive.py` and `.github/archive-retention-state.json` | Script-owned state. |",
+            "| Lint report | Embedded contract | "
+            "`.github/workflows/ste-lint-full-docs.yml` and `lint_reports/latest-lint-report.md` | Workflow-owned report. |",
+            "| Workflow definition | Exempt | "
+            "`.github/workflows/ste-lint-full-docs.yml` | External Actions schema. |",
+        ]
+        self.set_catalog(rows)
+        errors, row_count, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+        self.assertEqual(row_count, 3)
+
     def test_path_traversal_is_rejected(self):
         rows = self.valid_rows()
         rows[0] = (
