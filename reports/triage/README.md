@@ -17,7 +17,7 @@ Evidence records contain the immutable report path, run URL, observation time, a
 
 The generator reads paths from the lint and Actions indexes. It does not scan history directories or modify source reports. The capture action ingests lint reports; the diagnostics sweep ingests complete Actions reports. Both use the non-cancelling `gh-ac-report-writer` concurrency group.
 
-The ledger uses schema `1.3.0`. GitHub-hosted Actions runs the generator and regression tests. Ingestion is idempotent and uses atomic replacement. It preserves human-managed status, owner, severity, resolution, accepted risk, and duplicate links. It creates task records only from accepted finding records and maintains `task_refs`. Initial bootstrap marks indexed reports as processed; it does not import historical report findings.
+The ledger uses schema `1.3.0`. GitHub-hosted Actions runs the generator and regression tests. Ingestion is idempotent and uses atomic replacement. It preserves human-managed status, owner, severity, resolution, accepted risk, and duplicate links. It creates task records only from eligible actionable findings and maintains `task_refs`. Initial bootstrap marks indexed reports as processed; it does not import historical report findings. Schema migration can create grouped tasks for eligible findings already present in the ledger, but it does not import additional historical report files.
 
 ## Finding lifecycle
 
