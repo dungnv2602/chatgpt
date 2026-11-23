@@ -91,6 +91,58 @@ def read_inventory(content: str) -> tuple[list[dict[str, str]], list[str]]:
     return rows, errors
 
 
+def is_template_asset(path_text: str) -> bool:
+    """Return whether a path identifies a reusable template asset."""
+    path = Path(path_text)
+    return (
+        "template" in path.name.casefold()
+        or any(part.casefold() in {"template", "templates"} for part in path.parts)
+    )
+
+
+def template_location_error(path_text: str) -> str | None:
+    """Enforce owner-level template placement."""
+    parts = Path(path_text).parts
+    if len(parts) >= 4 and parts[0] == "skills" and parts[2] == "assets":
+        return None
+    if len(parts) >= 3 and parts[:2] == ("novels", "templates"):
+        return None
+    if len(parts) == 2 and parts[0] == "workspace":
+        return None
+    return (
+        "template must be in its owning skill's assets/ directory, "
+        "novels/templates/, or the shared workspace root"
+    )
+
+
+def find_misplaced_skill_templates(root: Path) -> list[str]:
+    """Find named template assets stored under skill reference directories."""
+    skill_root = root / "skills"
+    if not skill_root.is_dir():
+        return []
+    errors = []
+    for candidate in skill_root.rglob("*"):
+        if not candidate.is_file():
+            continue
+        relative = candidate.relative_to(root)
+        parts = relative.parts
+        if "references" not in parts:
+            continue
+        reference_index = parts.index("references")
+        after_references = parts[reference_index + 1:]
+        name_is_template = "template" in candidate.name.casefold()
+        directory_is_template = any(
+            part.casefold() in {"template", "templates"}
+            for part in after_references[:-1]
+        )
+        if name_is_template or directory_is_template:
+            errors.append(
+                f"Misplaced skill template under references/: {relative.as_posix()}. "
+                "Move copy-ready assets to the owning skill's assets/ directory."
+            )
+    return errors
+
+
 def validate_catalog(root: Path, catalog_path: Path) -> tuple[list[str], int, int]:
     """Validate catalog rows and their exact repository references."""
     errors: list[str] = []
@@ -101,6 +153,7 @@ def validate_catalog(root: Path, catalog_path: Path) -> tuple[list[str], int, in
 
     rows, parse_errors = read_inventory(content)
     errors.extend(parse_errors)
+    errors.extend(find_misplaced_skill_templates(root))
     seen_types: set[str] = set()
     reference_count = 0
 
@@ -144,14 +197,20 @@ def validate_catalog(root: Path, catalog_path: Path) -> tuple[list[str], int, in
                 errors.append(f"Line {line}: referenced file does not exist: {path_text}.")
 
         if is_template:
-            if not any(
-                "/templates/" in f"/{path.lower()}"
-                or "template" in Path(path).name.lower()
-                for path in canonical_paths
-            ):
+            template_paths = [
+                path for path in canonical_paths if is_template_asset(path)
+            ]
+            if not template_paths:
                 errors.append(
                     f"Line {line}: Template required class must point to a named template."
                 )
+            for template_path in template_paths:
+                location_error = template_location_error(template_path)
+                if location_error:
+                    errors.append(
+                        f"Line {line}: invalid template location for "
+                        f"'{template_path}': {location_error}."
+                    )
         elif class_name == "Embedded contract":
             if len(canonical_paths) < 2:
                 errors.append(
