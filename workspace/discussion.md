@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 12:36 UTC — Remediate daily index template:** Shorten the introductory guidance and standardize `verify` to `check`. Preserve the six-field table and all index invariants.
+- **2026-11-23 12:40 UTC — Begin drawing pattern template review:** Review the single hard finding in `skills/drawing/assets/pattern-entry-templates.md` against the pattern-library workflow. Preserve evidence, confidence, and failure/success distinctions.
 
 ## Open Discussions
 
