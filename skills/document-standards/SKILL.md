@@ -177,7 +177,7 @@ Check each document for:
 
 Add automated validation when a structural rule can be checked reliably.
 
-The catalog integrity validator at `scripts/validate_catalog.py` checks inventory row structure, document-type classes, class-specific references, exact path existence, and canonical template placement. Its tests live at `scripts/test_validate_catalog.py`. It also detects named template files in skill reference directories. It does not prove that an agent copied the template when it authored a document, compare every document with its template, validate semantic quality, or duplicate processor schemas. The Worker enforces the authoring sequence.
+The catalog integrity validator at `scripts/validate_catalog.py` checks inventory row structure, document-type classes, class-specific references, exact path existence, and canonical template placement. Its tests live at `scripts/test_validate_catalog.py`. It also detects named template files in skill reference directories. It does not prove that an agent copied the template when it authored a document, compare every document with its template, validate semantic quality, or duplicate processor schemas. The Worker enforces the authoring sequence. The hosted workflow `.github/workflows/validate-document-standards.yml` runs these checks for changes under `skills/**`, `novels/templates/**`, and the shared workspace template and owner files.
 
 Run the validator and its tests only on GitHub-hosted Actions runners. Do not run repository scripts locally. Workflow integration requires explicit authorization; until Actions runs both checks, treat execution as unverified.
 
