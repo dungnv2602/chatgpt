@@ -10,7 +10,7 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-| 20261123-051200 | Repair lint-report evidence workflow and unify report generation | P1 | In Progress | User | 2026-11-23 | [Task record](tasks/20261123-051200-repair-lint-report-evidence-workflow.md) |
+
 
 ## In Progress
 
@@ -38,13 +38,13 @@ _No paused tasks._
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
+| 20261123-051200 | Repair lint-report evidence workflow and unify report generation | P1 | Done | User | 2026-11-23 | [Archived record](../archive/tasks/20261123-051200-repair-lint-report-evidence-workflow.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/9ac22a9fbca4d2406038c17de86faa9e93d45df1) |
 | 20261123043747 | Audit template placement and enforce template-first authoring | P1 | Done | User | 2026-11-23 | [Archived record](../archive/tasks/20261123043747-audit-template-placement-and-enforce-template-first-workflow.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/3ccf93348157870727c7fe9ea3d38f677e350977) |
 | 20261123-041640 | Make The Worker mode-independent and align lint-report formats | P1 | Done | User | 2026-11-23 | [Archived record](../archive/tasks/20261123-041640-worker-mode-independent-and-lint-report-formats.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/71ebbbffc9b36d61c34587ae34c0b350abe5730e) |
 | 20261122-233900 | Enforce template-first document standards | P1 | Done | User | 2026-11-23 | [Archived record](../archive/tasks/20261122-233900-enforce-template-first-document-standards.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/36b2321c4860f1244e5e5998ea86fe3c5272bb9e) |
 | 20261120-183600 | Continue the Samantha drawing session | P2 | Done | User | 2026-11-23 | [Archived record](../archive/tasks/20261120-183600-continue-samantha-drawing-session.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/84addce78431c319c00c505b9999d1fec595c1a9) |
 | 20261120-175436 | Enforce automatic global task closeout and board reconciliation | P1 | Done | User | 2026-11-21 | [Archived record](../archive/tasks/20261120-175436-task-closeout-automation.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/349451ec3a6b47c76990e96df8b158a92d9e0e0b) |
 | 20261120-161600 | Expand Condensed Mode register rules and edge-case handling | P1 | Done | User | 2026-11-20 | [Archived record](../archive/tasks/20261120-161600-condensed-mode-register-edge-cases.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/6485dd3c3246128c5e43438d360950f21f4b5cc1) |
-| 20261120-153700 | Fix Condensed Mode adherence gaps | P1 | Done | User | 2026-11-20 | [Archived record](../archive/tasks/20261120-153700-condensed-mode-adherence-guardrails.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/109a603784738cef2a93a12e87e9eb22643edb25) |
 
 ## Selection rules
 
