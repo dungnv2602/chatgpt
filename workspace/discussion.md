@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 08:24 UTC — Preserve the hosted-validation handoff:** Confirm the task record and all committed paths, verify the branch head, and leave hosted checks to run naturally without polling.
+- **2026-11-23 08:26 UTC — Final repository handoff check:** Read back the task record, board, ledger, schema, catalog, generator, tests, operator guide, and publisher workflows. Confirm branch gpt head and leave hosted validation pending without polling.
 
 ## Open Discussions
 - **2026-11-23 — Hosted retention validation:** The shared cleanup script and tests now cover exact individual files in both `archive/tasks/` and `archive/reports/`. A hosted run of the schedule-only cleanup has not yet been observed. Do not dispatch it manually or modify `main`.
