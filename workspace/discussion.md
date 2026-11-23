@@ -1,6 +1,6 @@
 ## Current Step
 
-Unify the Drawing generation/edit decision and remove stale Session Archiving references; then consolidate authoring rules and update affected READMEs.
+Read back the refactored skills, READMEs, catalog, and test fixtures; verify links and the current 48-rule Markdown inventory.
 
 ## Open Discussions
 
@@ -8,11 +8,11 @@ Unify the Drawing generation/edit decision and remove stale Session Archiving re
 
 
 
-- **2026-11-23 12:42 UTC — Document Standards hosted validation pending:** The 48-rule Markdown coverage register, segment-aware validator, regression tests, and generated-report trigger exclusions are committed on `gpt`. Review the hosted result only when it becomes naturally available. Do not poll or dispatch workflows.
+- **2026-11-23 13:19 UTC — Document Standards hosted validation pending after fixture correction:** Stored run [45180357440](https://github.com/dungnv2602/chatgpt/actions/runs/45180357440) shows two catalog tests failed because their temporary catalogs omitted path-coverage rules for fixture Markdown files. The validator correctly rejected uncovered paths. The test helper now accepts additional fixture-specific coverage rows; no validator rule was weakened (commit [91df44b9](https://github.com/dungnv2602/chatgpt/commit/91df44b9e599457e2b8b3a635788857b41ae5e6c)). Pre-finalizer capture [45181736988](https://github.com/dungnv2602/chatgpt/actions/runs/45181736988) predates that correction and has no logs while the run is in progress. Review the next natural result; do not poll or dispatch.
 
 - **2026-11-23 10:16 UTC — Hosted retention validation:** The cleanup script and tests cover exact individual files in both archive folders. A hosted run of the schedule-only cleanup has not yet been observed. It runs on the schedule from main. No manual dispatch or user action is needed. Do not modify main.
 
-- **2026-11-23 10:08 UTC — Pending diagnostic post-run captures:** Five source runs remain pending in the diagnostics index. A later eligible natural sweep can capture them. Do not poll or dispatch workflows.
+- **2026-11-23 13:19 UTC — Pending diagnostic post-run captures:** Two source runs remain pending in the diagnostics index at watermark `2026-11-23T13:19:19Z`. A later eligible natural sweep can capture them. Do not poll or dispatch workflows.
 
 - **2026-11-23 12:21 UTC — Hosted validation pending:** The approved capture-filter and Worker–ledger handoff changes are committed on `gpt`. Reporter and ledger regression tests must run on a naturally triggered GitHub-hosted diagnostics run. Do not poll or dispatch workflows.
 
