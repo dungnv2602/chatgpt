@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-054904
 - **Created:** 2026-11-23 05:49 UTC
-- **Updated:** 2026-11-23 15:41 UTC
+- **Updated:** 2026-11-23 15:46 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -84,6 +84,12 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 
 ## 6. Progress Log
 
+### 2026-11-23 15:46 UTC
+
+- **Action:** Completed final regression review. Corrected the legacy-backlog test to re-read the migrated finding after the later new-finding event, so it verifies the old finding remains unlinked in persisted state. Removed double escaping from generated task titles and task-board rows.
+- **Result:** The task-creation boundary and generated-path trigger exclusions are covered in the hosted regression suite. All modified paths were read back from gpt. No tests were executed locally, and no workflow was dispatched or polled.
+- **References:** reports/triage/scripts/ledger.py; reports/triage/scripts/test_ledger.py; .github/workflows/gh-actions-diagnostics.yml; .github/workflows/validate-document-standards.yml; .github/workflows/ste-lint-changed.yml.
+- **Next:** Let GitHub-hosted validation occur naturally. Do not poll or dispatch workflows.
 ### 2026-11-23 15:41 UTC
 
 - **Action:** Restricted task creation to finding identities observed during the current ingestion event. New findings create Proposed tasks. Already-linked findings refresh their active task. An updated but historically unlinked finding is not taskified unless an active remediation group exists. Reopened resolved findings can create a follow-up when no active task exists.
