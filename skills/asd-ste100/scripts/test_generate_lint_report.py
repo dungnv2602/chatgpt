@@ -37,7 +37,8 @@ class ReportGeneratorTests(unittest.TestCase):
             record = {"path": "docs/a.md", "exit_code": 0, "violations": [finding], "count": 1, "hard_count": 1, "words": 20}
             first = self.run_report(root, "100", 1, {"a": record})
             report = json.loads((first / "report.json").read_text(encoding="utf-8"))
-            self.assertEqual(report["files_evaluated"], 1)
+            self.assertEqual(report["files_evaluated"], ["docs/a.md"])
+            self.assertEqual(report["files_evaluated_count"], 1)
             self.assertEqual(report["total_findings"], 1)
             self.assertTrue(report["findings"][0]["fingerprint"])
             self.assertEqual(report["findings"][0]["comparison"], "new")
