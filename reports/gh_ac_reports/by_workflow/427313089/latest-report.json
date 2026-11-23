@@ -1,40 +1,40 @@
 {
   "schema_version": "1.0.0",
   "source_run": {
-    "id": "45128450035",
-    "number": 36,
+    "id": "45132305616",
+    "number": 37,
     "attempt": 1,
     "workflow_id": 427313089,
     "workflow_name": "Validate Document Standards",
     "workflow_path": ".github/workflows/validate-document-standards.yml",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45128450035",
-    "event": "push",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45132305616",
+    "event": "workflow_dispatch",
     "branch": "gpt",
-    "head_sha": "d24bd314e5342201325e789fc1b66647ef90a9bf",
-    "status": "completed",
-    "conclusion": "failure",
-    "created_at": "2026-11-23T07:04:15Z",
-    "run_started_at": "2026-11-23T07:04:15Z",
-    "updated_at": "2026-11-23T07:04:42Z",
+    "head_sha": "182c1129ea004b36d53da33efd4b34a315ba1fab",
+    "status": "in_progress",
+    "conclusion": null,
+    "created_at": "2026-11-23T07:36:12Z",
+    "run_started_at": "2026-11-23T07:36:12Z",
+    "updated_at": "2026-11-23T07:36:35Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
-    "head_commit_message": "Serialize diagnostic report publishers across workflows"
+    "head_commit_message": "Backfill GitHub Actions diagnostic reports"
   },
   "capture": {
-    "stage": "post_run",
-    "captured_at_utc": "2026-11-23T07:06:42Z",
-    "completeness": "Complete",
+    "stage": "pre_finalizer",
+    "captured_at_utc": "2026-11-23T07:36:46Z",
+    "completeness": "Incomplete",
     "reporter_job": {
-      "id": "137538228609",
+      "id": "137550486099",
       "name": "Capture GH Actions diagnostics",
-      "status": "completed",
-      "conclusion": "cancelled"
+      "status": "in_progress",
+      "conclusion": null
     }
   },
   "classification": {
-    "state": "failure",
-    "observed_conclusion": "failure",
-    "projected_conclusion": null,
+    "state": "in_progress",
+    "observed_conclusion": null,
+    "projected_conclusion": "failure",
     "primary_category": "validation_or_test",
     "categories": [
       "validation_or_test"
@@ -42,26 +42,26 @@
     "issues": [
       {
         "category": "validation_or_test",
-        "job_id": "137538136537",
+        "job_id": "137550364494",
         "job_name": "validate-document-standards",
         "step_number": 5,
         "step_name": "Validate the document type catalog",
         "blocking": true,
         "confidence": "medium",
-        "message": "2026-11-23T07:04:27.7203281Z ERROR: Line 46: Embedded contract must name its owner and live record."
+        "message": "Step conclusion: failure"
       }
     ]
   },
   "jobs": [
     {
-      "id": "137538136537",
+      "id": "137550364494",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-23T07:04:18Z",
-      "completed_at": "2026-11-23T07:04:31Z",
-      "runner_name": "GitHub Actions 1000001215",
-      "runner_id": 1000001215,
+      "started_at": "2026-11-23T07:36:15Z",
+      "completed_at": "2026-11-23T07:36:32Z",
+      "runner_name": "GitHub Actions 1000001229",
+      "runner_id": 1000001229,
       "runner_group_name": "GitHub Actions",
       "runner_group_id": 0,
       "steps": [
@@ -70,100 +70,93 @@
           "name": "Set up job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T07:04:19Z",
-          "completed_at": "2026-11-23T07:04:19Z"
+          "started_at": "2026-11-23T07:36:16Z",
+          "completed_at": "2026-11-23T07:36:18Z"
         },
         {
           "number": 2,
           "name": "Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T07:04:19Z",
-          "completed_at": "2026-11-23T07:04:26Z"
+          "started_at": "2026-11-23T07:36:18Z",
+          "completed_at": "2026-11-23T07:36:27Z"
         },
         {
           "number": 3,
           "name": "Set up Python",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T07:04:26Z",
-          "completed_at": "2026-11-23T07:04:26Z"
+          "started_at": "2026-11-23T07:36:27Z",
+          "completed_at": "2026-11-23T07:36:28Z"
         },
         {
           "number": 4,
           "name": "Run catalog validator regression tests",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T07:04:26Z",
-          "completed_at": "2026-11-23T07:04:27Z"
+          "started_at": "2026-11-23T07:36:28Z",
+          "completed_at": "2026-11-23T07:36:29Z"
         },
         {
           "number": 5,
           "name": "Validate the document type catalog",
           "status": "completed",
           "conclusion": "failure",
-          "started_at": "2026-11-23T07:04:27Z",
-          "completed_at": "2026-11-23T07:04:27Z"
+          "started_at": "2026-11-23T07:36:29Z",
+          "completed_at": "2026-11-23T07:36:29Z"
         },
         {
           "number": 9,
           "name": "Post Set up Python",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-23T07:04:27Z",
-          "completed_at": "2026-11-23T07:04:27Z"
+          "started_at": "2026-11-23T07:36:29Z",
+          "completed_at": "2026-11-23T07:36:29Z"
         },
         {
           "number": 10,
           "name": "Post Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T07:04:27Z",
-          "completed_at": "2026-11-23T07:04:28Z"
+          "started_at": "2026-11-23T07:36:29Z",
+          "completed_at": "2026-11-23T07:36:29Z"
         },
         {
           "number": 11,
           "name": "Complete job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T07:04:28Z",
-          "completed_at": "2026-11-23T07:04:28Z"
+          "started_at": "2026-11-23T07:36:29Z",
+          "completed_at": "2026-11-23T07:36:29Z"
         }
       ],
       "log_capture": {
-        "available": true,
+        "available": false,
         "truncated": false,
-        "bytes": 30481,
-        "path": "logs/job-137538136537.log",
-        "error": null,
-        "marker_lines": [
-          "validate-document-standards\tValidate the document type catalog\t2026-11-23T07:04:27.7203281Z ERROR: Line 46: Embedded contract must name its owner and live record.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-23T07:04:27.7204108Z ERROR: Line 55: Generator-owned must reference its Python authority.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-23T07:04:27.7204943Z ERROR: Line 55: Generator-owned must reference a regression test.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-23T07:04:27.7205745Z ERROR: Line 56: referenced file does not exist: reports/lint_reports.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-23T07:04:27.7206857Z Catalog validation failed: 4 error(s), 31 document type(s), 63 reference(s).",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-23T07:04:27.7249132Z ##[error]Process completed with exit code 1."
-        ]
+        "bytes": 82,
+        "path": "logs/job-137550364494.log",
+        "error": "run 45132305616 is still in progress; logs will be available when it is complete\n",
+        "marker_lines": []
       }
     }
   ],
   "check_runs": [
     {
-      "id": "137538136537",
+      "id": "137550364494",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-23T07:04:18Z",
-      "completed_at": "2026-11-23T07:04:31Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45128450035/job/137538136537",
+      "started_at": "2026-11-23T07:36:15Z",
+      "completed_at": "2026-11-23T07:36:32Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45132305616/job/137550364494",
       "app": "GitHub Actions",
       "annotations_count": 2
     }
   ],
   "annotations": [
     {
-      "check_run_id": "137538136537",
-      "job_id": "137538136537",
+      "check_run_id": "137550364494",
+      "job_id": "137550364494",
       "path": ".github",
       "start_line": 2,
       "end_line": 2,
@@ -173,8 +166,8 @@
       "raw_details": ""
     },
     {
-      "check_run_id": "137538136537",
-      "job_id": "137538136537",
+      "check_run_id": "137550364494",
+      "job_id": "137550364494",
       "path": ".github",
       "start_line": 17,
       "end_line": 17,
@@ -185,6 +178,12 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [],
-  "history_path": "history/427313089/45128450035-attempt-1-post_run"
+  "capture_errors": [
+    {
+      "source": "job_log",
+      "job_id": "137550364494",
+      "message": "run 45132305616 is still in progress; logs will be available when it is complete\n"
+    }
+  ],
+  "history_path": "history/427313089/45132305616-attempt-1-pre_finalizer"
 }
