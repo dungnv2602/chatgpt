@@ -71,6 +71,10 @@ Index latest pointers advance by source run time, attempt, and capture-stage pre
 
 Change the schema, template, collector, generator, regression tests, workflow integration, this guide, and the Document Type Catalog together.
 
+## Publication concurrency
+
+All source-workflow finalizers and the push-driven sweep use the same repository-wide, non-cancelling concurrency group. This serializes writers to the shared indexes and latest pointers. If a publication still fails, the next sweep can backfill completed runs; do not resolve concurrent index conflicts by discarding immutable captures.
+
 ## Reporter self-monitoring
 
 The diagnostics workflow is deliberately excluded from its own run sweep to prevent recursive report generation. Its own failures are not included in the reports it creates. Inspect the diagnostics workflow's own run and job logs directly in the GitHub Actions interface. Failure of the report-only job in a source workflow is separately contained by the caller's job-level `continue-on-error: true` setting.
