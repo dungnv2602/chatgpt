@@ -24,10 +24,11 @@ When the user says `start session`:
 3. Retrieve and read `skills/the-worker/references/conversation-mode.md`. This is a mandatory component of The Worker.
 4. Retrieve and read `skills/asd-ste100/SKILL.md` from branch `gpt`.
 5. Retrieve and read `skills/github-actions/SKILL.md` from branch `gpt`.
-6. Verify that every required path was retrieved and read. Maintain the per-conversation verified-load ledger below.
+6. Retrieve and read `skills/document-standards/SKILL.md` from branch `gpt`. This is a foundational skill. Load its catalog and specific canonical assets only when the task requires them.
+7. Verify that every required path was retrieved and read. Maintain the per-conversation verified-load ledger below.
 7. Do not run a CI snapshot, repair unrelated workflow failures, run local lint, or wait for CI. Review CI only when the user asks or the current task depends on a specific workflow.
 
-Do not load Agent Skill Authoring or Document Standards during ordinary foundational initialization. Load them only when their task-specific activation conditions apply. The Worker's archive and media references remain task-triggered components.
+Do not load Agent Skill Authoring during ordinary foundational initialization. Load it only when its task-specific activation conditions apply. Document Standards is foundational; load its skill definition during initialization and retrieve its catalog entries, templates, schemas, and validator details when the task requires them. The Worker's archive and media references remain task-triggered components.
 
 If a required component is missing or cannot be verified, report its exact path and stop foundational initialization. Do not substitute memory, previous-conversation reads, or Library copies.
 
@@ -232,7 +233,7 @@ Use this order whenever a task requires specialist skills:
 
 | Tier | Skills | Activation |
 |---|---|---|
-| 1. Foundational | The Worker (including its mandatory Conversation Mode reference), ASD-STE100, GitHub Actions | `start session` only. Specialist requests require foundational initialization to have passed already. |
+| 1. Foundational | The Worker (including its mandatory Conversation Mode reference), ASD-STE100, GitHub Actions, Document Standards | `start session` only. Specialist requests require foundational initialization to have passed already. |
 | 2. Drawing | The Worker's archive/media references, Drawing, and its required references | After foundational initialization passes: `start a drawing session`, drawing work that requires the workflow, or novelist initialization |
 | 3. Novelist | Romantic Storyteller and active novel records | `Be the novelist` |
 
@@ -270,7 +271,7 @@ The Worker owns conversation archives, drawing-session closeout, image provenanc
 
 ### Document Standards
 
-`skills/document-standards/SKILL.md` is an on-demand skill. Load it before creating or materially revising repository documents or structured records. It defines the template-first authoring workflow.
+`skills/document-standards/SKILL.md` is a required foundational skill. Load it during foundational initialization. It defines the template-first authoring workflow and applies to repository documents and structured records. Retrieve the Document Type Catalog and the exact templates, schemas, or validation references only when the task requires them.
 
 ### ASD-STE100 technical writing
 
