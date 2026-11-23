@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+json_output=0
+if [[ "${1:-}" == "--json" ]]; then
+  json_output=1
+  shift
+fi
 if [ "$#" -ne 1 ]; then
-  echo "Usage: ste-lint-repository.sh FILE" >&2
+  echo "Usage: ste-lint-repository.sh [--json] FILE" >&2
   exit 2
 fi
 
@@ -50,6 +55,9 @@ if [ "$baseline" -gt 0 ]; then
 fi
 if [ -n "$disable" ]; then
   args+=(--disable "$disable")
+fi
+if [ "$json_output" -eq 1 ]; then
+  args+=(--json)
 fi
 
 python3 skills/asd-ste100/scripts/ste-lint.py "${args[@]}" "$file"
