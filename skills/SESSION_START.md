@@ -65,7 +65,7 @@ When the user triggers this procedure:
 
 The required order is:
 
-1. **Foundational:** The Worker (including its mandatory Conversation Mode reference), ASD-STE100, and GitHub Actions.
+1. **Foundational:** The Worker (including its mandatory Conversation Mode reference), ASD-STE100, GitHub Actions, and Document Standards.
 2. **Drawing:** The Worker's archive/media references, Drawing, and its required references.
 3. **Novelist:** Romantic Storyteller skill and the active novel's canonical records.
 
