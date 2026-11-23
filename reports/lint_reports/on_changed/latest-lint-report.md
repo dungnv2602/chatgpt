@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#531](https://github.com/dungnv2602/chatgpt/actions/runs/45172226368)
-- **Run ID / attempt:** 45172226368 / 1
+- **Run:** [#532](https://github.com/dungnv2602/chatgpt/actions/runs/45172381062)
+- **Run ID / attempt:** 45172381062 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / a2377cfc085f6188cd2eadfb9a37525165dfa020
+- **Branch / commit:** gpt / d4d3763388df7e1de32f8cc12451b7b57913a83a
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** a2377cfc085f6188cd2eadfb9a37525165dfa020
-- **Generated (UTC):** 2026-11-23T12:14:11.830691+00:00
+- **Linter source SHA:** d4d3763388df7e1de32f8cc12451b7b57913a83a
+- **Generated (UTC):** 2026-11-23T12:15:00.263821+00:00
 
 ## 1. Executive summary
 
@@ -22,8 +22,8 @@
 | Total findings | 350 |
 | Hard findings | 30 |
 | Advisory findings | 320 |
-| New findings | 3 |
-| Recurring findings | 347 |
+| New findings | 0 |
+| Recurring findings | 350 |
 | Resolved findings | 0 |
 | Failed workflow checks | 0 |
 
@@ -122,7 +122,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md | PASS | 8 | 0 | 7 | 2716 | 0.3 | 0 |
 | skills/drawing/SKILL.md | PASS | 24 | 3 | 24 | 5115 | 0.5 | 0 |
 | skills/document-standards/references/document-type-catalog.md | FAIL | 27 | 3 | 0 | 3064 | 0.9 | 1 |
-| workspace/task_board.md | PASS | 3 | 0 | 0 | 264 | 1.1 | 0 |
+| workspace/task_board.md | PASS | 3 | 0 | 0 | 257 | 1.2 | 0 |
 | skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
 | skills/INITIALIZATION_POLICY.md | PASS | 4 | 2 | 4 | 1444 | 0.3 | 0 |
 | skills/the-worker/references/image-processing-scripts.md | PASS | 0 | 0 | 0 | 341 | 0.0 | 0 |
@@ -188,7 +188,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.278s
+Ran 4 tests in 0.391s
 
 OK
 ~~~
@@ -221,7 +221,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 919 active Markdown files (988 available as link targets) and 332 local Markdown links.
+Scanned 920 active Markdown files (989 available as link targets) and 331 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -231,18 +231,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **semicolon** · skills/INITIALIZATION_POLICY.md:171:66 · **new** · fingerprint: b28796101e8a0d8165b3d79b
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/the-worker/SKILL.md:19:127 · **new** · fingerprint: 3e9dae68ac0dc79de8ae5c41
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/SESSION_START.md:31:179 · **new** · fingerprint: 8baa1c9f84886b197fcd6710
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+None.
 
 ### Recurring findings
 
@@ -1226,6 +1215,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** Sentence has 28 words (cap 25). Split it.
   - **Matched text:** 28 words
+- **semicolon** · skills/INITIALIZATION_POLICY.md:171:66 · **recurring** · fingerprint: b28796101e8a0d8165b3d79b
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 - **long-sentence** · skills/drawing/assets/daily-index-template.md:5:1 · **recurring** · fingerprint: f7683dcec815fe504f98befb
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
@@ -1382,6 +1375,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** Sentence has 35 words (cap 25). Split it.
   - **Matched text:** 35 words
+- **semicolon** · skills/the-worker/SKILL.md:19:127 · **recurring** · fingerprint: 3e9dae68ac0dc79de8ae5c41
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 - **passive-voice** · skills/the-worker/SKILL.md:33:133 · **recurring** · fingerprint: 718d67ec20c921c3c043a464
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1598,6 +1595,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was retrieved
+- **semicolon** · skills/SESSION_START.md:31:179 · **recurring** · fingerprint: 8baa1c9f84886b197fcd6710
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 - **present-perfect** · skills/SESSION_START.md:35:114 · **recurring** · fingerprint: 9acf80e5a2b48047e9dd619f
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
@@ -3204,8 +3205,8 @@ No STE findings were recorded for this file.
 - **Findings:** 3
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 264
-- **Findings per 100 words:** 1.1
+- **Words:** 257
+- **Findings per 100 words:** 1.2
 
 #### Complete diagnostics
 
@@ -3270,7 +3271,7 @@ No STE findings were recorded for this file.
   - **Message:** Sentence has 28 words (cap 25). Split it.
   - **Matched text:** 28 words
 
-- **semicolon** · skills/INITIALIZATION_POLICY.md:171:66 · **new** · fingerprint: b28796101e8a0d8165b3d79b
+- **semicolon** · skills/INITIALIZATION_POLICY.md:171:66 · **recurring** · fingerprint: b28796101e8a0d8165b3d79b
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -3600,7 +3601,7 @@ No STE findings were recorded for this file.
   - **Message:** Sentence has 35 words (cap 25). Split it.
   - **Matched text:** 35 words
 
-- **semicolon** · skills/the-worker/SKILL.md:19:127 · **new** · fingerprint: 3e9dae68ac0dc79de8ae5c41
+- **semicolon** · skills/the-worker/SKILL.md:19:127 · **recurring** · fingerprint: 3e9dae68ac0dc79de8ae5c41
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -3927,7 +3928,7 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was retrieved
 
-- **semicolon** · skills/SESSION_START.md:31:179 · **new** · fingerprint: 8baa1c9f84886b197fcd6710
+- **semicolon** · skills/SESSION_START.md:31:179 · **recurring** · fingerprint: 8baa1c9f84886b197fcd6710
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
