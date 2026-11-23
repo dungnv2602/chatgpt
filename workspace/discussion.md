@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 10:42 UTC — Review catalog batch 3:** Revise the representative-record table. Remove its hard semicolon findings while preserving each record's scope, observed facts, and handling decision.
+- **2026-11-23 10:46 UTC — Review catalog batch 4:** Revise the legacy-example table. Remove its hard semicolon findings while preserving the historical version, migration, and retention constraints.
 
 ## Open Discussions
 
