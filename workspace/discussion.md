@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 08:11 UTC — Establish the ledger's canonical implementation contract:** Inspect catalog classification, source report schemas and representative findings, both report indexes, finalizer/collector workflows, and the exact test conventions. Decide generator ownership and single-writer integration before editing.
+- **2026-11-23 08:14 UTC — Implement the forward-only ledger generator:** Add a schema-validated, idempotent Python upsert process and regression tests. Seed per-source publication watermarks from current indexes, preserve curated lifecycle fields, and retain immutable evidence references.
 
 ## Open Discussions
 
