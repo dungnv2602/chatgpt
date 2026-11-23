@@ -37,7 +37,14 @@ GitHub Actions runs the scheduled archive-retention workflow.
 - Check that `main` is an ancestor of `gpt` before pushing. If the branches diverge, fail safely without updating either ref.
 - Use a weekly cron schedule. The retention index avoids a daily or per-file scheduled workflow and prevents routine archive scans.
 
-## 3. Task-scoped CI diagnostics and repair
+## 3. Report triage and archive retention
+
+- Start at `reports/README.md`; maintain cross-family issue state in `reports/triage/ledger.json`.
+- Resolved report files belong in `archive/reports/`, not in a report-root archive folder.
+- The shared archive-retention workflow retains each exact indexed file for 90 days and deletes only that file after expiry. It does not scan archive directories.
+- The index is `.github/archive-retention-index.json`; preserve unindexed legacy files.
+
+## 4. Task-scoped CI diagnostics and repair
 
 CI is not a gate that must be repaired before every user prompt or after skill initialization. Inspect CI when the user requests it, when the current task changes a workflow or validation target, or when a known result directly affects the task.
 
@@ -50,7 +57,7 @@ CI is not a gate that must be repaired before every user prompt or after skill i
 7. Never wait for or poll CI. Do not manually dispatch or rerun a workflow unless the user asks or the current task explicitly requires it.
 8. Never run the STE linter, CI workflows, CI test suites, or repository scripts locally. Use GitHub-hosted Actions only.
 9. If GitHub Actions or report evidence is unavailable, record the exact limitation and mark the result unverified. Continue unless the task directly depends on that evidence. Do not claim that CI passed.
-## 4. Inspect and preserve validation scope
+## 5. Inspect and preserve validation scope
 
 ### Archive boundary for Markdown checks
 
@@ -69,7 +76,7 @@ Before changing a workflow, identify its events, branch/path filters, jobs, depe
 - Keep full audits and incremental checks separate when they have different validation scopes.
 - Avoid duplicate runs caused by overlapping triggers.
 
-## 5. Design precise triggers
+## 6. Design precise triggers
 
 Use branch and path filters to avoid work that cannot check the changed files.
 
@@ -79,7 +86,7 @@ Use branch and path filters to avoid work that cannot check the changed files.
 - Do not use both `paths` and `paths-ignore` for the same event.
 - Check branch-protection requirements before adding workflow-level filters. A skipped workflow can leave a required check pending. Use job-level conditions or a stable required check when every pull request needs a result.
 
-## 6. Control concurrency and superseded runs
+## 7. Control concurrency and superseded runs
 
 Use a concurrency group that isolates a workflow and its branch or pull request:
 
@@ -108,7 +115,7 @@ For expensive push validation, a short preflight job can reject a superseded run
 
 A separate guard job costs an additional runner allocation. Use it when avoiding checkout and setup on superseded runs justifies that cost. Do not add one to trivial workflows.
 
-## 7. Preserve incremental-check correctness
+## 8. Preserve incremental-check correctness
 
 For push-based incremental checks, compare against the latest successful run of the same workflow and branch, not merely the previous push event.
 
