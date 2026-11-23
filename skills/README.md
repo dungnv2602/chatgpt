@@ -6,22 +6,21 @@ Each skill has a `SKILL.md` file with Agent Skills YAML frontmatter. The `name` 
 
 ## Foundational skills
 
-These skills govern cross-project work. Load them only through the explicit foundational initialization procedure. Do not load them automatically at the start of a conversation.
+These skills govern baseline collaboration and cross-cutting repository work. Load them only through the explicit foundational initialization procedure. Do not load them automatically at the start of a conversation.
 
 | Skill | Responsibility |
 |---|---|
-| [agent-skill-authoring](agent-skill-authoring/SKILL.md) | Agent Skills structure, metadata, authoring, validation, and integration |
+| [the-worker](the-worker/SKILL.md) | Session continuity, task operations, collaboration modes, and discussion-register maintenance |
 | [asd-ste100](asd-ste100/SKILL.md) | Controlled-language rules for skill and technical documentation |
-| [conversation-mode](conversation-mode/SKILL.md) | Default Mode and Condensed Mode collaboration behavior |
 | [github-actions](github-actions/SKILL.md) | GitHub Actions workflow design, optimization, security, and verification |
-| [session-archiving](session-archiving/SKILL.md) | Conversation integrity, drawing archives, image provenance, and closeout |
-| [the-worker](the-worker/SKILL.md) | Cross-conversation task capture, prioritization, progress, recovery, and task archival |
+
+The Worker's mandatory [Conversation Mode reference](the-worker/references/conversation-mode.md) defines Default Mode, Condensed Mode, and the discussion-register contract.
 
 ## Specialist dependency hierarchy
 
 Load specialist skills in dependency order. Do not load them during ordinary foundational initialization unless the user's task requires the next tier.
 
-1. **Foundational:** the six skills listed above.
+1. **Foundational:** The Worker (including its mandatory Conversation Mode reference), ASD-STE100, and GitHub Actions.
 2. **Drawing:** the Drawing skill and its required references. Activate for drawing sessions or as a novelist prerequisite.
 3. **Novelist:** Romantic Storyteller and active novel records. Activate only for the novelist role.
 
@@ -39,14 +38,20 @@ Load these skills only when the request or an explicit role-initiation procedure
 |---|---|
 | [philosophy-religion-asceticism](philosophy-religion-asceticism/SKILL.md) | Philosophy, religion, theology, asceticism, or contemplative-tradition research |
 | [prompt-master](prompt-master/SKILL.md) | Prompt analysis, design, adaptation, or optimization |
+| [session-archiving](session-archiving/SKILL.md) | Conversation archives, drawing-session closeout, image provenance, and media workflows |
+| [agent-skill-authoring](agent-skill-authoring/SKILL.md) | Creating, revising, checking, or integrating Agent Skills definitions |
 | [romantic-storyteller-visual-artist](romantic-storyteller-visual-artist/SKILL.md) | Romantic narrative or visual storytelling. The Drawing skill is a prerequisite for novelist-role initialization and governs visual work. |
 | [document-standards](document-standards/SKILL.md) | Template-first document authoring, canonical formats, structural validation, and migration |
 
 ## Foundational initialization
 
-[SESSION_START.md](SESSION_START.md) defines the activation cues and loading sequence. The mandatory execution gate is in [session-archiving/SKILL.md](session-archiving/SKILL.md).
+[SESSION_START.md](SESSION_START.md) is the sole authority for activation cues and foundational loading. The Worker owns the mandatory collaboration and session-continuity rules.
 
 Do not treat this index as permission to load every skill. Follow each skill's activation and dependency rules.
+
+## Compatibility entry points
+
+[conversation-mode/SKILL.md](conversation-mode/SKILL.md) remains as a compatibility pointer. Its operational rules are part of The Worker and must not be loaded separately.
 
 ## Technical documentation standard
 
