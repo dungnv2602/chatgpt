@@ -1,6 +1,6 @@
 ## Current Step
 
-_No active step._
+- **2026-11-23 10:07 UTC — Create the approved hard-lint remediation task:** Use the current full-audit JSON as the canonical finding set, verify hard-finding identity across both scopes, then create a template-compliant task and reconcile the board. Keep advisory findings out of scope and preserve all lint thresholds.
 
 ## Open Discussions
 
