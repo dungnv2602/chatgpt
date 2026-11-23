@@ -232,23 +232,6 @@ jobs:
           echo "total_findings=$total_findings" >> "$GITHUB_OUTPUT"
           echo "lint_failed_files=$lint_failed_files" >> "$GITHUB_OUTPUT"
 
-      - name: Commit the latest report to gpt
-        if: ${{ !cancelled() && steps.audit.outcome != 'skipped' }}
-        shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add lint_reports/latest-lint-report.md
-          if git diff --cached --quiet; then
-            echo "The report has no changes."
-            exit 0
-          fi
-          git commit -m "Update latest repository-wide lint report"
-          git push origin "HEAD:gpt"
-
       - name: Publish immutable repository-wide evidence history
         if: always() && steps.audit.outcome != 'skipped'
         shell: bash
@@ -333,9 +316,9 @@ jobs:
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "$scope"
+          git add lint_reports/latest-lint-report.md "$scope"
           if ! git diff --cached --quiet; then
-            git commit -m "Publish repository-wide lint evidence history"
+            git commit -m "Publish repository-wide lint evidence"
             git pull --rebase origin gpt
             git push origin "HEAD:gpt"
           fi
