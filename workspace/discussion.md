@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 10:12 UTC — Record the verified repair and triage open discussions:** Add the exact implementation commit and read-back results to task 20261123-054904. Then classify each open discussion by whether it needs user action, natural hosted validation, or a separate approval.
+- **2026-11-23 10:14 UTC — Classify remaining open discussions:** Verify whether the current push naturally triggers Document Standards validation. Separate items that need no user action from the two decisions that require the user's direction. Update the register and pause for those decisions.
 
 ## Open Discussions
 - **2026-11-23 — Hosted retention validation:** The shared cleanup script and tests now cover exact individual files in both `archive/tasks/` and `archive/reports/`. A hosted run of the schedule-only cleanup has not yet been observed. Do not dispatch it manually or modify `main`.
