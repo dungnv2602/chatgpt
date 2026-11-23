@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 08:38 UTC — Handoff after natural ingestion:** The ledger now records one distinct publication issue from the first post-bootstrap Actions report. Confirm final read-backs and leave the task open for hosted test review. Do not poll.
+- **2026-11-23 08:41 UTC — Leave validation handoff:** The natural sweep re-ingested the report as one open publication issue. Verify final repository state and leave the task In Progress until hosted regression results can be reviewed without polling.
 
 ## Open Discussions
 - **2026-11-23 — Hosted retention validation:** The shared cleanup script and tests now cover exact individual files in both `archive/tasks/` and `archive/reports/`. A hosted run of the schedule-only cleanup has not yet been observed. Do not dispatch it manually or modify `main`.
