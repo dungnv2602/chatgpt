@@ -1,8 +1,15 @@
 ## Current Step
 
-- **2026-11-23 16:21 UTC — Drawing skill loading:** Retrieve The Worker's drawing archive reference, the Drawing skill, and its required references. Then establish the new session brief and records before image generation.
+- **2026-11-23 16:09 UTC — Reporting period superseded:** Archived 3,954 old report-history files and 23 index/latest-pointer snapshots under `archive/reports/superseded-2026-11-23/`. Preserved 59 evidence-only captures linked by 462 open Ledger findings, plus six pending captures. Active indexes carry four pending run IDs forward from the new watermark. The Ledger was not cleared or rewritten. No Actions were dispatched or polled.
+- **2026-11-23 16:18 UTC — Worker recovery:** Read the workspace guide and task board. Identify the current execution task and inspect its complete record before starting the requested drawing session.
 
 ## Open Discussions
+
+- **2026-11-23 16:09 UTC — Reporting-period validation:** The active indexes contain only the four carried-forward pending run IDs. Evidence-only captures remain unindexed for the open Ledger findings. Let the next natural diagnostics sweep complete pending runs and validate the reset. Do not poll, dispatch, or rerun Actions.
+
+- **2026-11-23 16:09 UTC — Hard-lint preservation approval:** The user's prior approval to preserve the 12 deliberate examples is confirmed. The hard-lint task acceptance criteria now recognize these as approved exceptions; no further policy decision is needed. Do not edit the examples or weaken lint policy.
+
+- **2026-11-23 16:09 UTC — Document Standards audit closed:** User approved closure. Document Standards #160 and diagnostics #377 passed. STE Lint Changed #552 was cancelled; no style-lint pass is claimed. This limitation remains separate from the completed audit.
 
 - **2026-11-23 16:16 UTC — Drawing session:** Start a new drawing session after foundational initialization. Follow The Worker's session-brief and archive procedures before any image generation.
 
@@ -10,7 +17,7 @@
 
 - **2026-11-23 14:52 UTC — STE lint validation remains unverified:** STE Lint Changed run [#552](https://github.com/dungnv2602/chatgpt/actions/runs/45193354825) was cancelled. No successful style-lint result is recorded. The task record requires a naturally completed run before style validation can be claimed. Do not poll, dispatch, or rerun workflows. No user action is required unless the user changes this restriction.
 
-- **2026-11-23 13:19 UTC — Pending diagnostic post-run captures:** Two source runs remain pending in the diagnostics index at watermark `2026-11-23T13:19:19Z`. A later eligible natural sweep can capture them. Do not poll or dispatch workflows.
+- **2026-11-23 13:19 UTC — Pending diagnostic post-run captures:** Four source run IDs remain pending in the new diagnostics index at watermark `2026-11-23T16:09:08Z`: 45207707231, 45204490379, 45202163346, and 45198986957. A later eligible natural sweep can capture them. Do not poll or dispatch workflows.
 
 - **2026-11-23 10:16 UTC — Hosted retention validation:** The cleanup script and tests cover exact individual files in both archive folders. A hosted run of the schedule-only cleanup has not yet been observed. It runs on the schedule from main. No manual dispatch or user action is needed.
 

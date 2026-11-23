@@ -247,6 +247,12 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - **References:** `reports/gh_ac_reports/`, `.github/archive-retention-index.json`, and the current diagnostic workflow records.
 - **Next:** Resume this task after task 20261123-115700 closes. Continue only with natural hosted runs and the scheduled retention observation.
 
+### 2026-11-23 16:09 UTC
+
+- **Action:** Applied the user-approved reporting-period reset.
+- **Result:** Superseded the old period and archived 3,954 historical report files plus 23 index/latest-pointer snapshots under `archive/reports/superseded-2026-11-23/`. Preserved 59 evidence-only capture directories for 462 open Ledger findings and six pending capture directories. Reset active indexes to three Actions captures, two changed-lint reports, and one repository-lint report. Carried forward pending run IDs 45207707231, 45204490379, 45202163346, and 45198986957. The Ledger and its evidence paths remain unchanged. No workflow was dispatched, polled, or rerun.
+- **Next:** Let the next natural diagnostics sweep complete the pending captures and validate the new active indexes. Do not poll or dispatch Actions.
+
 ## 7. Current State
 
 The cancellation repair is implemented in the reporter and ledger. New cancellation-only runs are skipped by the capture policy. Cancelled runs with independent classified failures are captured, and the ledger accepts those issues while ignoring cancellation-only and known downstream status-propagation rows. Existing historical captures remain immutable. Hosted validation of the cancellation and new capture policy is pending.
