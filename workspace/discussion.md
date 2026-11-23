@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 13:44 UTC — Approved example-preservation decision:** Preserve the 12 deliberate STE teaching examples. Resolve the separate `delete` synonym-rotation finding at line 88 of `skills/asd-ste100/SKILL.md` by using the document's established term `remove`. Do not weaken lint rules or change the preservation policy.
+- **2026-11-23 11:21 UTC — Skill architecture and workflow update:** Integrate the mode and session-start contracts into The Worker. Demote the specialist authoring and archive skills to on-demand activation. Update the authoritative startup policy and indexes.
 
 ## Open Discussions
 
