@@ -121,25 +121,23 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 
 ## 7. Current State
 
-The task is active. Foundational initialization and one bounded CI snapshot are complete. The source lint-report workflow generated detailed evidence but retains an expected failing lint conclusion. The workspace task record and board entry were committed and read back successfully. The report format and generator are committed. Workflow integration and CI-gate retirement remain. The scope inventory and architecture are now established. A true completion-event observer is constrained by the default branch. The gpt-only implementation will combine reusable finalizers, a push-driven backfill, and exact-run request files. The report format is now committed and read back. It will keep capture stages immutable and distinguish projected from observed conclusions.
+The core implementation is complete on branch `gpt`. The `gh_ac_reports/` system is committed, integrated into six source workflows, registered in the Document Type Catalog, and linked from workspace navigation. A GitHub-hosted diagnostics sweep passed all 12 regression tests, report collection, and publication. The task-scoped CI policy removes unrelated pre-prompt and post-initialization repair gates. The actual conclusion of each source workflow remains independent from the report-only job.
+
+Three immutable recaptures are requested for earlier reports generated before reporter-job exclusion. The request files are committed. The resulting sweep (run 45124527032) was observed as in progress in the final bounded snapshot; it was not polled. The existing 17 captures remain preserved. The prior report index was read back with zero pending run IDs before these three new requests were committed.
+
+The repository default branch is `main`, while this authorized task is restricted to `gpt`. A run that fails before any job starts cannot be captured immediately by this branch-local design. The push sweep or an exact-run request can backfill it later. Immediate completion-event observation requires an authorized observer on `main` or an external GitHub App webhook. No changes were made to `main`.
 
 ## 8. Remaining Work
 
-- Inspect `lint_reports/` and relevant workflow and script files.
-- Design the diagnostic report schema, event coverage, failure categories, storage layout, and publication model.
-- Implement the report generator and tests.
-- Add the workflow integration and root report navigation.
-- Update initialization and CI policy documents to remove the mandatory pre-prompt and post-load repair gates.
-- Verify all changed files by GitHub read-back and inspect the hosted validation results when available. Do not wait or poll.
-- Recommend a report-driven triage and remediation approach.
+- The three requested immutable recaptures are queued. Their completion is not verified; do not wait for or poll run 45124527032.
+- Any later eligible run will validate the normal diagnostics finalizer in each source workflow. No additional workflow dispatch or rerun was requested.
+- No unrelated lint findings or other workflow failures are in scope for repair. Preserve all source conclusions and validation thresholds.
 
 ## 9. Next Actions
 
-1. Inspect the lint-report guide, scope indexes, latest Markdown and JSON reports, and generator contract.
-2. Inspect the repository's GitHub Actions workflows and referenced scripts.
-3. Define a complete, safe reporting architecture for non-lint Actions failures.
-4. Implement and verify the reporting system and session workflow changes.
-5. Update repository navigation and the discussion register, then archive this task when all acceptance criteria pass.
+1. Review the immutable corrected captures when the requested backfill run completes naturally.
+2. Keep the task-scoped CI policy and branch/default-branch limitation documented.
+3. Triage source failures using the reports. Repair only findings that are part of a user's current task.
 
 ## 10. References
 
@@ -156,21 +154,34 @@ The task is active. Foundational initialization and one bounded CI snapshot are 
 
 ## 11. Verification
 
-- **Check:** Foundational skill retrieval.
-- **Method:** GitHub fetch from branch `gpt`.
-- **Result:** Required foundational files were retrieved and read in this conversation.
-- **Limitations:** This does not validate future changes or hosted workflow behavior.
+- **Check:** Session initialization and bounded CI preflight.
+- **Method:** Retrieved the required skills and inspected one bounded Actions snapshot.
+- **Result:** Passed initialization. No CI repair was required before this task. The existing full lint workflow remained Failed because its hard lint findings remain enforced. The changed-document run was Cancelled, not treated as a failure. Document Standards and image-processing runs were successful at the snapshot.
+- **Limitations:** The snapshot was a point-in-time view and did not wait for or poll any run.
 
-- **Check:** Bounded CI snapshot.
-- **Method:** Read workflow runs for branch `gpt`, inspect the latest run per workflow, inspect the failed job logs, and inspect current head status and check runs.
-- **Result:** Four workflow IDs were observed across 658 runs. The latest runs were classified by status and conclusion. The latest lint failure was confirmed to be caused by the existing lint gate, not by report generation. The latest changed-document run was cancelled. Current-head checks were empty.
-- **Limitations:** The snapshot reflects the state at 2026-11-23 05:49 UTC. It does not prove future runs or runs created after the snapshot.
+- **Check:** Report schema and generator.
+- **Method:** Read back the Markdown guide/template, JSON schema, generator, tests, index, and integrity/history layout from branch `gpt`.
+- **Result:** The generator validates report objects against the schema, captures workflow/job/step metadata, check-run annotations, artifact metadata/URLs, and sanitized job logs where available. It records evidence gaps, classifies failure states without treating cancellation or unavailable evidence as confirmed failures, writes immutable run/attempt/stage history, SHA-256 manifests, scope indexes, and race-safe latest pointers.
+- **Limitations:** Artifact contents are not downloaded. Logs and annotations are only captured when GitHub exposes them. The diagnostics workflow does not report on itself.
 
-- **Check:** Task record structure.
-- **Method:** Compare the record with `workspace/TASK_TEMPLATE.md` and its catalog entry.
-- **Result:** Passed. The record matches the canonical Version 1.1 structure and includes the user's prompt verbatim.
-- **Limitations:** No report-generator or workflow tests have run yet.
+- **Check:** Workflow integration and source conclusion isolation.
+- **Method:** Read back the six existing workflow definitions and the local composite action.
+- **Result:** All six normal diagnostics jobs use `if: always()`, job-level `continue-on-error: true`, and `./gh_ac_reports/actions/capture`. The composite action validates, captures, and publishes reports. A separate push-triggered workflow performs post-run collection and exact-run backfill.
+- **Limitations:** The source workflows require a later push or exact-run request to collect final post-run evidence. A jobless startup failure does not have an immediate observer on `gpt` because the default branch is `main`.
+
+- **Check:** Hosted reporter validation.
+- **Method:** Inspected the exact GitHub Actions run and its job log.
+- **Result:** Run [45124218890](https://github.com/dungnv2602/chatgpt/actions/runs/45124218890) completed successfully. Its hosted job log confirms 12 tests passed, followed by a successful sweep and publication. The sweep reported zero pending run IDs at that capture.
+- **Limitations:** This hosted run validated commit `379ecc19dc7a775d59f492d7f808a23da73f4d80`. Three subsequent report refresh requests have their own sweep, run 45124527032, which was in progress at the final snapshot and was not polled.
+
+- **Check:** CI preflight policy retirement.
+- **Method:** Read back eight authoritative session, task, Actions, initialization, and writing policy files.
+- **Result:** No active pre-prompt or post-initialization CI repair obligation remains. CI review is task-scoped. The only remaining phrase match in `skills/INITIALIZATION_POLICY.md` is a historical changelog description of the requested change.
+
+- **Check:** Repository publication and task tracking.
+- **Method:** Read back changed workflow files, report paths, task record, discussion register, and task board.
+- **Result:** All implementation paths are on branch `gpt`. The three corrected-capture request files are committed. The task remains In Progress while those optional recaptures are unverified.
 
 ## 12. Handoff Instructions
 
-Continue this task from the committed record and task board. Do not repeat foundational skill retrieval or the completed bounded snapshot unless the user requests a refresh or relevant repository changes make a refresh necessary. Inspect only the relevant reporting, workflow, and policy files. Keep all repository changes on branch `gpt`. Preserve `lint_reports/` as the lint-specific evidence system. Do not let unrelated CI failures delay this task or later user requests.
+Continue from this record. The implementation, policy changes, and one hosted 12-test validation run are complete. The three exact-run requests remain pending; do not wait or poll. Inspect their reports only when a later eligible event has completed. Keep all repository changes on branch `gpt`. Preserve `lint_reports/` as the lint-specific evidence system. Do not let unrelated CI failures delay this or later user requests.

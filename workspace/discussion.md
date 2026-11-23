@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 06:30 UTC — Refresh prior misclassified captures:** Queue exact-run backfill requests for the latest full-lint, changed-lint, and Document Standards runs captured before reporter-job separation. Preserve old immutable captures and publish new corrected attempts. Expected result: corrected reports appear as later immutable captures without overwriting prior evidence.
+- **2026-11-23 06:31 UTC — Exact-run backfill requests committed:** Request corrected immutable post-run captures for runs 45123530849 (full lint), 45123530858 (Document Standards), and 45123260178 (changed lint). Request commit: `caec43ef75a84ed2c0b53cc36057f2217d0efd08`. The resulting sweep, run [45124527032](https://github.com/dungnv2602/chatgpt/actions/runs/45124527032), was observed In Progress. Do not poll. The prior reports remain unchanged; the three requests remain in `gh_ac_reports/requests/pending/` until a complete capture is available.
 
 ## Open Discussions
 
@@ -10,6 +10,16 @@
 - **2026-11-23 — Document lint findings:** The new reports retain 144 hard findings in the repository-wide run and 145 in the changed-scope fallback run. Thresholds and baselines were not weakened. Remediation is separate from the completed report-pipeline task.
 
 ## Reports
+
+### 2026-11-23 — GitHub Actions diagnostic reports implemented
+
+- Added `gh_ac_reports/` with a generator-owned schema and Markdown template, global/per-workflow indexes, immutable run/attempt/capture-stage history, SHA-256 manifests, sanitized job logs, workflow/job/step metadata, check-run annotations, artifact metadata and links, classification, and explicit missing-evidence reporting.
+- Integrated a normal, non-blocking composite-action diagnostics job into all six existing workflows. The separate push workflow performs completed-run backfill and exact-run requests. The source workflow's conclusion remains authoritative.
+- The report generator uses recursive time-range splitting to prevent silent loss at the GitHub Actions search-result cap. It excludes its own workflow to prevent recursive capture. Reporter health is separate from source workflow health, and failed-step classification uses the corresponding step log lines.
+- Hosted run [45124218890](https://github.com/dungnv2602/chatgpt/actions/runs/45124218890) passed the 12-test suite, sweep, and publication. Its report index had 17 captures and zero pending run IDs.
+- The default branch is `main`. The task stayed on `gpt`; therefore a failure before any job starts is backfilled on a later push or by exact-run request. An immediate completion observer would require an authorized default-branch workflow or external GitHub App webhook.
+- The source lint findings and thresholds remain unchanged. The task-scoped CI policy removes mandatory pre-prompt and post-initialization CI repair gates.
+
 
 ### 2026-11-23 — Lint-report pipeline repaired and verified
 
