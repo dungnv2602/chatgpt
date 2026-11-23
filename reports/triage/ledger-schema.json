@@ -10,7 +10,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "1.2.0"
+      "const": "1.3.0"
     },
     "updated_at_utc": {
       "type": [
@@ -46,6 +46,7 @@
         "type": "object",
         "required": [
           "finding_id",
+          "task_group",
           "source_family",
           "category",
           "title",
@@ -60,6 +61,11 @@
           "finding_id": {
             "type": "string",
             "minLength": 8
+          },
+          "task_group": {
+            "type": "string",
+            "pattern": "^ci-[0-9a-f]{16}$",
+            "description": "Stable remediation group used by event-driven Worker task creation."
           },
           "source_family": {
             "enum": [
@@ -293,7 +299,7 @@
           },
           "task_refs": {
             "type": "array",
-            "description": "Worker-owned links to task records that address this finding.",
+            "description": "Links to Ledger-generated Worker tasks or manually curated task records that address this finding.",
             "items": {
               "type": "string",
               "minLength": 1
