@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:32 UTC — Begin GitHub Actions skill review:** Review the five hard findings in `skills/github-actions/SKILL.md` against the complete workflow guidance. Preserve trigger, validation, and branch-policy semantics.
+- **2026-11-23 11:36 UTC — Begin Conversation Mode skill review:** Review the five hard findings in `skills/conversation-mode/SKILL.md` against the complete mode and register contract. Preserve mode behavior and ownership boundaries.
 
 ## Open Discussions
 
