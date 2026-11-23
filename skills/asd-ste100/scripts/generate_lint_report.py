@@ -97,5 +97,5 @@ entry = {key: data[key] for key in ("run_id", "run_number", "run_url", "attempt"
 index["runs"] = [row for row in index["runs"] if (row.get("run_id"), row.get("attempt", 1)) != (a.run_id, int(a.attempt))] + [entry]
 index["runs"].sort(key=lambda row: (row["generated_at_utc"], row["run_id"]))
 index_path.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-(out.parent / "latest-lint-report.md").write_text((out / "report.md").read_text(encoding="utf-8"), encoding="utf-8")
-(out.parent / "latest-lint-report.json").write_text((out / "report.json").read_text(encoding="utf-8"), encoding="utf-8")
+(scope_root / "latest-lint-report.md").write_text((out / "report.md").read_text(encoding="utf-8"), encoding="utf-8")
+(scope_root / "latest-lint-report.json").write_text((out / "report.json").read_text(encoding="utf-8"), encoding="utf-8")
