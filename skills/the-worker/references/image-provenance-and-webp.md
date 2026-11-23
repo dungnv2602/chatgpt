@@ -33,12 +33,13 @@ The processor moves each original byte-for-byte into the destination's `original
 Use this path when the image cannot be classified or mapped from retained evidence, but the user requests a WebP derivative. This path converts media only. It does not resolve provenance or authorize relocation.
 
 1. Keep the source image in the top level of `images/takeout/`. Do not rename, move, or overwrite it.
-2. Record the exact source filename in the conversion-only workflow's explicit allowlist. Do not use a wildcard or infer a file from chronology.
-3. Convert only supported static formats. Use the same PNG or JPEG encoder profile defined below.
-4. Write the derivative to `images/takeout/webp/[batch-id]/attempt-NNN/`. Append `.webp` to the complete source filename.
-5. Reject an existing target. Use a new attempt directory for each retry.
-6. Verify the WebP RIFF container and declared length. Hash the source before and after conversion. Require an unchanged source hash. Record the derivative SHA-256.
-7. Commit only the verified derivatives and the conversion workflow changes. Do not stage source PNGs or unrelated project files.
+2. Review retained provenance before conversion. Match the exact source Asset ID, Generation ID or Output ID, conversation record, attempt record, and hand-off mapping. Do not classify by appearance, filename, chronology, or resemblance. If the exact association is not established, keep the image unclassified.
+3. At `workflow_dispatch`, provide the exact source filenames in the `files` input, one top-level filename per line. This is the runtime allowlist. Do not use wildcards, directories, or inferred filenames. The workflow rejects any selected file already assigned to a non-unclassified hand-off destination and rejects a Ready hand-off.
+4. Convert only supported static PNG, JPG, and JPEG files. Use the matching encoder profile defined below. Reject animated PNG and unsupported formats.
+5. Write the derivative to `images/takeout/webp/unclassified/attempt-NNN/`. Append `.webp` to the complete source filename.
+6. Reject an existing target. Use a new attempt directory for each retry.
+7. Verify the WebP RIFF container and declared length. Hash the source before and after conversion. Require an unchanged source hash. Record the derivative SHA-256.
+8. Commit only the verified derivatives. Do not stage source images or unrelated project files.
 
 The conversion-only workflow must not call `process_takeout.py`. It must not move or delete source files. It must not write `HANDOFF.yml`, conversion manifests, drawing manifests, attempt records, daily indexes, or destination files. It must not invent a title, asset ID, prompt ID, attempt, conversation record, approval, or destination. The image remains unclassified after conversion.
 
@@ -46,7 +47,7 @@ The user performs any later relocation. Do not move the source or derivative int
 
 After a later mapping is established, the ordinary provenance-gated processor remains mandatory for any assistant-managed relocation. A staged derivative from the conversion-only path does not bypass the conversation-record, source-identity, destination, or publication checks.
 
-The current dedicated workflow, `.github/workflows/convert-unclassified-takeout.yml`, uses an exact seven-file allowlist for the 2026-11-20-001 intake. For a later batch, update the allowlist to the exact approved filenames and use a new batch/attempt path. Do not broaden it to all intake files.
+The dedicated workflow, `.github/workflows/convert-unclassified-takeout.yml`, accepts a runtime allowlist at manual dispatch. The same workflow supports any number of exact top-level filenames without source-code edits. The assistant must first review provenance and supply only unclassified filenames. The workflow is not an image classifier: it validates the submitted paths, supported formats, hand-off destination, and source integrity. It rejects files assigned to a non-unclassified hand-off destination. It writes derivatives under `images/takeout/webp/unclassified/attempt-NNN/` and never moves originals.
 
 
 Attempt records and daily drawing indexes link only to verified WebP delivery files. Approval does not control whether a generated output is retained or linked.

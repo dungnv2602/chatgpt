@@ -3,7 +3,7 @@
 _No active step._
 ## Open Discussions
 
-- **2026-11-24 — Image takeout conversion:** Seven images remain unclassified. The user approved conversion-only WebP output, user-managed relocation, and index edits only on explicit request. The procedure is committed and verified on `gpt`. The original PNGs remain in intake and `HANDOFF.yml` remains Draft. The conversion outputs have not been verified. Next: await normal hosted workflow evidence. The user will relocate the derivatives. Do not edit indexes without an explicit request.
+- **2026-11-24 — Image takeout conversion:** Seven images remain unclassified. The user approved conversion-only WebP output, user-managed relocation, and index edits only on explicit request. The workflow now accepts an exact newline-separated runtime allowlist at manual dispatch; it is not hard-coded to the current seven files. The assistant must review provenance before supplying filenames. The original PNGs remain in intake and `HANDOFF.yml` remains Draft. No conversion Actions were dispatched or polled. The user will relocate derivatives. Do not edit indexes without an explicit request.
 
 - **2026-11-23 16:09 UTC — Reporting-period validation:** The active indexes contain only the four carried-forward pending run IDs. Evidence-only captures remain unindexed for the open Ledger findings. Let the next natural diagnostics sweep complete pending runs and validate the reset. Do not poll, dispatch, or rerun Actions.
 
@@ -29,3 +29,6 @@ _No active step._
 
 - **2026-11-23 16:33 UTC — Drawing session opened:** Created and read back the Active standalone session brief and six-field daily index for `DRAWING-2026-11-23-01`. No image attempt was made because the user has not supplied visual direction. Commit [df7dcbe1](https://github.com/dungnv2602/chatgpt/commit/df7dcbe1c76d414d91e25ae0fdf82b59c780e847).
 
+
+
+- **2026-11-24 — Runtime allowlist generalized:** Replaced the hard-coded seven-filename list with a required newline-separated `workflow_dispatch` input. The workflow accepts exact top-level static PNG/JPG/JPEG files, validates the current hand-off boundary, preserves originals, and stages only verified derivatives. The Worker, provenance reference, and both image-intake READMEs now describe evidence-first classification and the runtime allowlist. No Actions run was dispatched or polled.

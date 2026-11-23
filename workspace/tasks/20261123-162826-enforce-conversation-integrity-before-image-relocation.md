@@ -97,12 +97,12 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 - **Action:** Applied the user's instruction to the future takeout procedure.
 - **Result:** Unclassified images use a separate conversion-only path. The source remains in intake. The WebP derivative is verified in staging. The normal provenance-gated processor is not used. The assistant does not relocate files or edit hand-off metadata, manifests, attempt records, daily indexes, or other indexes. The user performs relocation and may request a later index edit.
 - **References:** `images/takeout/README.md`; `skills/the-worker/references/image-provenance-and-webp.md`; `.github/workflows/convert-unclassified-takeout.yml`.
-- **Next:** Read back all revised workflow documents and the task record. Leave the existing seven-file conversion run to its natural workflow reporting. Do not claim conversion completion without observed evidence.
+- **Next:** Read back all revised workflow documents and the task record. Do not dispatch or poll conversion Actions unless the user asks. The runtime allowlist is ready for future unclassified batches. Do not claim conversion completion without observed evidence.
 
 ### 2026-11-24 — Workflow documentation verification
 
 - **Action:** Read back the updated Worker skill, image-provenance reference, image asset README, takeout README, and task record from branch `gpt`. Checked the branch ref and the protected hand-off/workflow files.
-- **Result:** All five changed paths match their committed content. Branch `gpt` points to `61403d265266e905688d986dffe015855f0b8a4d`. The takeout hand-off remains Draft with its original blob SHA. The dedicated conversion workflow remains unchanged with its exact seven-file allowlist. The normal processor remains separate from conversion-only handling.
+- **Result:** All five changed paths match their committed content. Branch `gpt` points to `61403d265266e905688d986dffe015855f0b8a4d`. The takeout hand-off remains Draft with its original blob SHA. The conversion workflow now uses a general runtime allowlist supplied at manual dispatch; no filename list is embedded in the workflow. The normal processor remains separate from conversion-only handling.
 - **Verification limits:** No Actions run was polled or manually dispatched. The seven WebP outputs have not been confirmed by this read-back. No claim of conversion completion or hosted test success is made.
 - **Next:** Leave the originals and staging derivatives for the user's manual relocation. Make no index edits unless explicitly requested. Review hosted output evidence only when it arrives through the normal reporting path.
 
@@ -116,7 +116,7 @@ Seven items remain unclassified. Their pixels have not been visually inspected, 
 
 The hand-off now contains `source_asset_id` and `conversation_record` for the eleven mapped items only. It remains Draft. The processor, publication verifier, regression tests, documentation, and workflow changes are committed on branch `gpt` in commit `c07921efe1a22db2237caa647d828e66fdd0236d`. The seven unmapped items and all eighteen original image bytes remain untouched.
 
-On 24 November, the user approved a conversion-only path for unclassified images. The dedicated workflow `.github/workflows/convert-unclassified-takeout.yml` contains an exact allowlist of the seven PNGs and writes verified WebP derivatives under `images/takeout/webp/2026-11-20-001/attempt-001/`. It does not invoke the provenance-gated processor or update indexes. The Worker skill, image-provenance reference, and takeout README now define this as the standard future path. The user performs relocation. The assistant edits an index only on explicit request. The hand-off remains Draft. No conversion completion claim is made until hosted output evidence is observed.
+On 24 November, the user approved a conversion-only path for unclassified images. The dedicated workflow `.github/workflows/convert-unclassified-takeout.yml` now accepts a newline-separated runtime allowlist of exact filenames and writes verified WebP derivatives under `images/takeout/webp/unclassified/attempt-NNN/`. It supports new batches without workflow-source edits. It does not invoke the provenance-gated processor or update indexes. The Worker skill, image-provenance reference, and takeout README now define this as the standard future path. The user performs relocation. The assistant edits an index only on explicit request. The hand-off remains Draft. No conversion completion claim is made until hosted output evidence is observed.
 
 ## 8. Remaining Work
 
@@ -192,3 +192,11 @@ The following inventory records the exact image blob SHA and byte size from the 
 | `file_00000000e5e482118465d6df866ea0d9.png` | `73d7c36832444601fd5691d9056e8541af37ea65` | 2,005,729 | Unclassified |
 | `file_00000000f9108207bbd749f89003c6c2.png` | `073a47c6351915a4615be744dd37bfe486795cc7` | 2,215,056 | Attempt 15 — mapped |
 
+
+
+### 2026-11-24 — General runtime allowlist approved
+
+- **Action:** Replaced the seven-file hard-coded conversion list with a manual-dispatch `files` input. Updated the Worker procedure, provenance reference, and both image-intake READMEs.
+- **Result:** The workflow accepts any number of exact top-level PNG, JPG, and JPEG filenames. It rejects wildcard/path inputs, unsupported or animated sources, files already assigned to a non-unclassified hand-off destination, and a Ready hand-off. It verifies WebP RIFF length and unchanged source SHA-256, then commits only derivatives under `images/takeout/webp/unclassified/attempt-NNN/`.
+- **Classification rule:** The workflow does not classify images. The assistant must review exact source and generation/output identifiers, conversation and attempt records, and hand-off evidence before supplying the runtime allowlist. If provenance does not establish an exact mapping, the image remains unclassified.
+- **Boundaries:** No original, hand-off, manifest, attempt record, or index is moved or edited by conversion-only processing. The user relocates derivatives. Index edits remain explicit-request-only. No workflow was dispatched or polled.

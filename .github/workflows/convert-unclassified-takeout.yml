@@ -1,14 +1,18 @@
 name: Convert Unclassified Takeout Images to WebP
 
 on:
-  push:
-    branches:
-      - gpt
-    paths:
-      - '.github/workflows/convert-unclassified-takeout.yml'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      files:
+        description: "Exact top-level filenames in images/takeout/, one filename per line. No wildcards."
+        required: true
+        type: string
 
 permissions: {}
+
+concurrency:
+  group: unclassified-takeout-conversion
+  cancel-in-progress: false
 
 jobs:
   convert-unclassified:
@@ -25,67 +29,180 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
 
-      - name: Install WebP encoder
+      - name: Install WebP encoder and YAML parser
         run: |
           sudo apt-get update
-          sudo apt-get install --yes webp
+          sudo apt-get install --yes webp python3-yaml file
 
-      - name: Convert only the seven unclassified PNGs
+      - name: Validate the runtime allowlist
+        env:
+          FILE_ALLOWLIST: \${{ inputs.files }}
+          CANDIDATES_FILE: \${{ runner.temp }}/unclassified-takeout-files.nul
         shell: bash
         run: |
           set -euo pipefail
+          python3 <<'PY'
+          import os
+          import pathlib
+          import shlex
+          import subprocess
+          import yaml
 
-          output_dir="images/takeout/webp/2026-11-20-001/attempt-001"
+          intake = pathlib.Path("images/takeout")
+          handoff_path = intake / "HANDOFF.yml"
+          candidates_path = pathlib.Path(os.environ["CANDIDATES_FILE"])
+          raw = os.environ.get("FILE_ALLOWLIST", "")
+          names = [line for line in raw.splitlines() if line]
+
+          if not names:
+              raise SystemExit("The runtime allowlist is empty.")
+          if any(name != name.strip() for name in names):
+              raise SystemExit("Filenames must not have leading or trailing whitespace.")
+          if len(names) != len(set(names)):
+              raise SystemExit("The runtime allowlist contains duplicate filenames.")
+          if not handoff_path.is_file():
+              raise SystemExit("HANDOFF.yml is missing; classification cannot be checked.")
+
+          with handoff_path.open("r", encoding="utf-8") as stream:
+              handoff = yaml.safe_load(stream)
+          if not isinstance(handoff, dict) or not isinstance(handoff.get("items"), list):
+              raise SystemExit("HANDOFF.yml has an invalid structure.")
+          if handoff.get("status") == "ready":
+              raise SystemExit("HANDOFF.yml is Ready; the normal provenance-gated processor owns this batch.")
+
+          handoff_items = {}
+          for item in handoff["items"]:
+              if not isinstance(item, dict):
+                  raise SystemExit("HANDOFF.yml contains a malformed item.")
+              source_name = item.get("source")
+              if not isinstance(source_name, str) or not source_name or pathlib.PurePath(source_name).name != source_name:
+                  raise SystemExit("HANDOFF.yml contains an unsafe source path.")
+              if source_name in handoff_items:
+                  raise SystemExit(f"HANDOFF.yml contains duplicate source entries: {source_name}")
+              handoff_items[source_name] = item
+
+          accepted = []
+          for name in names:
+              if not name or pathlib.PurePath(name).name != name or name in {".", ".."}:
+                  raise SystemExit(f"Not a top-level filename: {name!r}")
+              suffix = pathlib.Path(name).suffix.lower()
+              if suffix not in {".png", ".jpg", ".jpeg"}:
+                  raise SystemExit(f"Unsupported source extension: {name}")
+              source = intake / name
+              if source.is_symlink() or not source.is_file() or source.stat().st_size == 0:
+                  raise SystemExit(f"Source is missing, empty, or a symlink: {name}")
+
+              item = handoff_items.get(name)
+              if item is not None and item.get("destination_dir") != "images/unclassified":
+                  raise SystemExit(
+                      f"{name} is already assigned to a non-unclassified hand-off destination; "
+                      "conversion-only processing is blocked."
+                  )
+
+              mime = subprocess.check_output(
+                  ["file", "--brief", "--mime-type", str(source)], text=True
+              ).strip()
+              if suffix == ".png":
+                  if mime != "image/png":
+                      raise SystemExit(f"PNG extension/content mismatch: {name} ({mime})")
+                  data = source.read_bytes()
+                  if not data.startswith(b"\x89PNG\r\n\x1a\n"):
+                      raise SystemExit(f"Invalid PNG signature: {name}")
+                  offset = 8
+                  saw_end = False
+                  while offset + 12 <= len(data):
+                      length = int.from_bytes(data[offset:offset + 4], "big")
+                      chunk_type = data[offset + 4:offset + 8]
+                      end = offset + 12 + length
+                      if end > len(data):
+                          raise SystemExit(f"Malformed PNG chunk bounds: {name}")
+                      if chunk_type == b"acTL":
+                          raise SystemExit(f"Animated PNG is not supported: {name}")
+                      offset = end
+                      if chunk_type == b"IEND":
+                          saw_end = True
+                          break
+                  if not saw_end:
+                      raise SystemExit(f"PNG is missing a valid IEND chunk: {name}")
+              else:
+                  if mime != "image/jpeg":
+                      raise SystemExit(f"JPEG extension/content mismatch: {name} ({mime})")
+                  with source.open("rb") as stream:
+                      if stream.read(2) != b"\xff\xd8":
+                          raise SystemExit(f"Invalid JPEG signature: {name}")
+
+              accepted.append(name)
+
+          candidates_path.write_bytes(b"".join(name.encode("utf-8") + b"\0" for name in accepted))
+          print(f"Validated {len(accepted)} exact source filenames.")
+          for name in accepted:
+              print(f"Approved conversion candidate: {name}")
+          PY
+
+      - name: Convert and verify WebP derivatives
+        env:
+          CANDIDATES_FILE: \${{ runner.temp }}/unclassified-takeout-files.nul
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -d '' -t files < "$CANDIDATES_FILE"
+          test "\${#files[@]}" -gt 0
+
+          attempt=1
+          while (( attempt <= 999 )); do
+            printf -v attempt_name 'attempt-%03d' "$attempt"
+            output_dir="images/takeout/webp/unclassified/$attempt_name"
+            if [[ ! -e "$output_dir" ]]; then
+              break
+            fi
+            ((attempt+=1))
+          done
+          test "$attempt" -le 999
           mkdir -p "$output_dir"
 
-          files=(
-            "file_000000001e9882079286e1de59e27f1b.png"
-            "file_000000004b9c82119aa3e8e273bb1f2c.png"
-            "file_0000000064d08211910f68838cb1237a.png"
-            "file_0000000069f082079011ee0627b3995c.png"
-            "file_000000008c6882118eba4e134b3a76c2.png"
-            "file_00000000dfa08211a68e0644d6c6f2a1.png"
-            "file_00000000e5e482118465d6df866ea0d9.png"
-          )
-
-          declare -A source_hashes
-          for name in "${files[@]}"; do
+          for name in "\${files[@]}"; do
             source="images/takeout/$name"
             target="$output_dir/$name.webp"
-
             test -s "$source"
             test ! -e "$target"
-            file "$source" | grep -q 'PNG image data'
-            source_hashes["$name"]="$(sha256sum "$source" | cut -d ' ' -f 1)"
+            source_hash="$(sha256sum "$source" | cut -d ' ' -f 1)"
 
-            # Match the repository's PNG conversion profile exactly.
-            cwebp -quiet -lossless -q 100 -m 6 -exact -metadata icc "$source" -o "$target"
+            case "\${name,,}" in
+              *.png)
+                cwebp -quiet -lossless -q 100 -m 6 -exact -metadata icc "$source" -o "$target"
+                ;;
+              *.jpg|*.jpeg)
+                cwebp -quiet -preset picture -q 92 -m 6 -sharp_yuv -metadata icc "$source" -o "$target"
+                ;;
+              *)
+                echo "Unsupported source extension: $name" >&2
+                exit 1
+                ;;
+            esac
 
             python3 - "$target" <<'PY'
           import pathlib, sys
-          p = pathlib.Path(sys.argv[1])
-          data = p.read_bytes()
+          path = pathlib.Path(sys.argv[1])
+          data = path.read_bytes()
           if len(data) < 12 or data[:4] != b"RIFF" or data[8:12] != b"WEBP":
-              raise SystemExit(f"Invalid WebP container: {p}")
+              raise SystemExit(f"Invalid WebP container: {path}")
           if int.from_bytes(data[4:8], "little") + 8 != len(data):
-              raise SystemExit(f"WebP RIFF length mismatch: {p}")
+              raise SystemExit(f"WebP RIFF length mismatch: {path}")
           PY
 
-            test "${source_hashes[$name]}" = "$(sha256sum "$source" | cut -d ' ' -f 1)"
-            echo "Converted and verified: $name"
+            test "$source_hash" = "$(sha256sum "$source" | cut -d ' ' -f 1)"
+            echo "Verified source unchanged: $name ($source_hash)"
+            echo "Verified derivative: $target"
             sha256sum "$target"
           done
 
-          test "${#files[@]}" -eq 7
-          echo "All seven WebP derivatives passed container and source-preservation checks."
-
-      - name: Commit WebP derivatives only
+      - name: Commit verified WebP derivatives only
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- images/takeout/webp/2026-11-20-001/attempt-001
+          git add -- images/takeout/webp/unclassified
           git diff --cached --quiet && { echo "No new derivatives to commit."; exit 0; }
-          git commit -m "chore(images): convert seven unclassified takeout PNGs to WebP"
+          git commit -m "chore(images): convert unclassified takeout images to WebP"
           git push origin HEAD:refs/heads/gpt

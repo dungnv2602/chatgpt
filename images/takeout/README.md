@@ -20,9 +20,11 @@ Images may belong to a novel, a drawing session, a visual-reference collection, 
 
 An image may remain unclassified when its pixels or source mapping cannot be verified. Keep the original PNG in the intake folder. Do not invent its title, source, attempt, prompt, asset ID, destination, or project membership.
 
-If the user requests a WebP derivative, use the separate [conversion-only workflow](../../.github/workflows/convert-unclassified-takeout.yml). Add only the exact source filenames to its allowlist. Convert supported static images into `images/takeout/webp/[batch-id]/attempt-NNN/`. Append `.webp` to the complete source filename. Reject existing targets and use a new attempt directory for retries.
+If the user requests a WebP derivative, review the retained provenance first. Use the exact source Asset ID, Generation ID or Output ID, conversation record, attempt record, and hand-off mapping. Do not infer identity from appearance, filename, chronology, or resemblance. If the exact association is not established, keep the image unclassified.
 
-Verify the WebP RIFF signature and length. Hash each PNG before and after conversion. Require the source hash to remain unchanged. Preserve the original PNG in intake. Commit only the verified WebP derivatives.
+Use the separate [conversion-only workflow](../../.github/workflows/convert-unclassified-takeout.yml). At manual dispatch, enter the exact unclassified source filenames in the `files` input, one top-level filename per line. This runtime allowlist supports any number of files and does not require workflow edits for new batches. Do not use wildcards. The workflow rejects files assigned to a non-unclassified hand-off destination and rejects a Ready hand-off. It converts static PNG, JPG, and JPEG files into `images/takeout/webp/unclassified/attempt-NNN/`. Append `.webp` to the complete source filename. Reject existing targets and use a new attempt directory for retries.
+
+Verify the WebP RIFF signature and length. Hash each source before and after conversion. Require the source hash to remain unchanged. Preserve every original in intake. Commit only the verified WebP derivatives. The workflow does not classify images; the assistant must complete the evidence review before dispatch.
 
 This path does not use the normal hand-off processor. It does not relocate files or edit `HANDOFF.yml`, manifests, attempt records, daily indexes, or other indexes. The files remain unclassified. The user performs any later relocation. Edit an index only when the user explicitly requests it and supplies or confirms the exact mapping details.
 
