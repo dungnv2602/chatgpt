@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45192047948",
-  "run_number": 550,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45192047948",
+  "run_id": "45202163346",
+  "run_number": 556,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45202163346",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "09a5852353bb5b2326c2efc60c8e1bd1afc65391",
+  "commit_sha": "ebc54617491cd6b9b07b6000f4ddcb6ad96f2774",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T14:15:01.865046+00:00",
+  "generated_at_utc": "2026-11-23T15:11:20.201147+00:00",
   "status": "Failed",
-  "linter_source_sha": "09a5852353bb5b2326c2efc60c8e1bd1afc65391",
+  "linter_source_sha": "ebc54617491cd6b9b07b6000f4ddcb6ad96f2774",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -70,8 +70,9 @@
     "skills/philosophy-religion-asceticism/CHANGELOG.md"
   ],
   "files_evaluated_count": 48,
-  "files_failed": 7,
+  "files_failed": 8,
   "failed_files": [
+    "skills/the-worker/references/conversation-mode.md",
     "skills/document-standards/references/document-type-catalog.md",
     "skills/drawing/assets/daily-index-template.md",
     "skills/the-worker/references/image-provenance-and-webp.md",
@@ -80,23 +81,41 @@
     "skills/document-standards/SKILL.md",
     "skills/SESSION_START.md"
   ],
-  "files_with_findings": 38,
-  "total_findings": 372,
-  "hard_findings": 63,
-  "advisory_findings": 309,
+  "files_with_findings": 37,
+  "total_findings": 368,
+  "hard_findings": 67,
+  "advisory_findings": 301,
   "findings_by_rule": {
-    "passive-voice": 268,
-    "present-perfect": 41,
+    "long-sentence": 10,
+    "semicolon": 33,
+    "passive-voice": 259,
+    "present-perfect": 42,
     "synonym-rotation": 12,
     "phrasal-verb": 5,
     "nominalization": 2,
-    "marketing-adjective": 5,
-    "semicolon": 31,
-    "long-sentence": 8
+    "marketing-adjective": 5
   },
   "records": [
     {
       "violations": [
+        {
+          "file": "skills/the-worker/references/conversation-mode.md",
+          "line": 68,
+          "col": 60,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "26 words",
+          "message": "Sentence has 26 words (cap 25). Split it."
+        },
+        {
+          "file": "skills/the-worker/references/conversation-mode.md",
+          "line": 68,
+          "col": 162,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
         {
           "file": "skills/the-worker/references/conversation-mode.md",
           "line": 84,
@@ -251,13 +270,13 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 17,
-      "hard_count": 0,
+      "count": 19,
+      "hard_count": 2,
       "baseline": 0,
-      "words": 3044,
+      "words": 3078,
       "per_100_words": 0.6,
       "path": "skills/the-worker/references/conversation-mode.md",
-      "exit_code": 0
+      "exit_code": 1
     },
     {
       "violations": [],
@@ -977,7 +996,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 84,
+          "line": 83,
           "col": 21,
           "rule": "passive-voice",
           "level": "advisory",
@@ -986,7 +1005,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 93,
+          "line": 92,
           "col": 11,
           "rule": "passive-voice",
           "level": "advisory",
@@ -995,7 +1014,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 121,
+          "line": 120,
           "col": 164,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1004,7 +1023,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 124,
+          "line": 123,
           "col": 130,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1013,7 +1032,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 128,
+          "line": 127,
           "col": 343,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1022,7 +1041,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 186,
+          "line": 184,
           "col": 170,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1031,7 +1050,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 189,
+          "line": 187,
           "col": 23,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1040,7 +1059,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 227,
+          "line": 225,
           "col": 65,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1049,7 +1068,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 238,
+          "line": 236,
           "col": 24,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1058,7 +1077,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 246,
+          "line": 242,
           "col": 176,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1067,7 +1086,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 260,
+          "line": 256,
           "col": 44,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1076,7 +1095,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 270,
+          "line": 266,
           "col": 68,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1085,7 +1104,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 271,
+          "line": 267,
           "col": 36,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1094,7 +1113,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 271,
+          "line": 267,
           "col": 58,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1103,7 +1122,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 274,
+          "line": 270,
           "col": 4,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1112,7 +1131,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 275,
+          "line": 271,
           "col": 78,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1121,7 +1140,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 276,
+          "line": 272,
           "col": 48,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1130,7 +1149,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 277,
+          "line": 273,
           "col": 75,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1139,7 +1158,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 278,
+          "line": 274,
           "col": 68,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1148,7 +1167,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 288,
+          "line": 284,
           "col": 20,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1157,7 +1176,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 292,
+          "line": 288,
           "col": 53,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1166,7 +1185,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 316,
+          "line": 312,
           "col": 69,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1175,7 +1194,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 320,
+          "line": 316,
           "col": 84,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1186,7 +1205,7 @@
       "count": 25,
       "hard_count": 0,
       "baseline": 0,
-      "words": 3460,
+      "words": 3403,
       "per_100_words": 0.7,
       "path": "skills/the-worker/references/archive-records-and-image-prompts.md",
       "exit_code": 0
@@ -1202,22 +1221,12 @@
       "exit_code": 0
     },
     {
-      "violations": [
-        {
-          "file": "images/README.md",
-          "line": 94,
-          "col": 54,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are reserved",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        }
-      ],
-      "count": 1,
+      "violations": [],
+      "count": 0,
       "hard_count": 0,
       "baseline": 0,
-      "words": 584,
-      "per_100_words": 0.2,
+      "words": 213,
+      "per_100_words": 0.0,
       "path": "images/README.md",
       "exit_code": 0
     },
@@ -2244,6 +2253,15 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 57,
+          "col": 628,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
           "line": 58,
           "col": 260,
           "rule": "long-sentence",
@@ -2630,10 +2648,10 @@
           "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
         }
       ],
-      "count": 56,
-      "hard_count": 27,
+      "count": 57,
+      "hard_count": 28,
       "baseline": 0,
-      "words": 4098,
+      "words": 4130,
       "per_100_words": 1.4,
       "path": "skills/document-standards/references/document-type-catalog.md",
       "exit_code": 1
@@ -2777,7 +2795,7 @@
       "violations": [
         {
           "file": "workspace/TASK_TEMPLATE.md",
-          "line": 18,
+          "line": 19,
           "col": 108,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2786,7 +2804,7 @@
         },
         {
           "file": "workspace/TASK_TEMPLATE.md",
-          "line": 46,
+          "line": 47,
           "col": 21,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2795,7 +2813,7 @@
         },
         {
           "file": "workspace/TASK_TEMPLATE.md",
-          "line": 73,
+          "line": 74,
           "col": 20,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2804,7 +2822,7 @@
         },
         {
           "file": "workspace/TASK_TEMPLATE.md",
-          "line": 74,
+          "line": 75,
           "col": 23,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2815,7 +2833,7 @@
       "count": 4,
       "hard_count": 0,
       "baseline": 0,
-      "words": 385,
+      "words": 417,
       "per_100_words": 1.0,
       "path": "workspace/TASK_TEMPLATE.md",
       "exit_code": 0
@@ -2916,107 +2934,8 @@
       "violations": [
         {
           "file": "skills/the-worker/references/image-provenance-and-webp.md",
-          "line": 12,
-          "col": 63,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is required",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/the-worker/references/image-provenance-and-webp.md",
-          "line": 21,
-          "col": 59,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are copied",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/the-worker/references/image-provenance-and-webp.md",
-          "line": 23,
-          "col": 16,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is moved",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/the-worker/references/image-provenance-and-webp.md",
-          "line": 45,
-          "col": 38,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is preserved",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/the-worker/references/image-provenance-and-webp.md",
-          "line": 50,
-          "col": 11,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are reserved",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/the-worker/references/image-provenance-and-webp.md",
-          "line": 73,
-          "col": 215,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are Verified",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/the-worker/references/image-provenance-and-webp.md",
-          "line": 103,
-          "col": 200,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "checking",
-          "message": "'check' and 'validate' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/the-worker/references/image-provenance-and-webp.md",
-          "line": 105,
-          "col": 12,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is intended",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/the-worker/references/image-provenance-and-webp.md",
-          "line": 113,
-          "col": 276,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is updated",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/the-worker/references/image-provenance-and-webp.md",
-          "line": 122,
-          "col": 37,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is paired",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/the-worker/references/image-provenance-and-webp.md",
-          "line": 123,
-          "col": 76,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is verified",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/the-worker/references/image-provenance-and-webp.md",
-          "line": 134,
-          "col": 26,
+          "line": 15,
+          "col": 100,
           "rule": "passive-voice",
           "level": "advisory",
           "match": "is retained",
@@ -3024,18 +2943,54 @@
         },
         {
           "file": "skills/the-worker/references/image-provenance-and-webp.md",
-          "line": 138,
-          "col": 1,
+          "line": 29,
+          "col": 139,
           "rule": "passive-voice",
           "level": "advisory",
-          "match": "is described",
+          "match": "is retained",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/the-worker/references/image-provenance-and-webp.md",
+          "line": 35,
+          "col": 15,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "validates",
+          "message": "'validate' and 'check' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "skills/the-worker/references/image-provenance-and-webp.md",
+          "line": 43,
+          "col": 65,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is observed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/the-worker/references/image-provenance-and-webp.md",
+          "line": 43,
+          "col": 138,
+          "rule": "present-perfect",
+          "level": "advisory",
+          "match": "have been read",
+          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
+        },
+        {
+          "file": "skills/the-worker/references/image-provenance-and-webp.md",
+          "line": 43,
+          "col": 143,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "been read",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 13,
+      "count": 6,
       "hard_count": 1,
       "baseline": 0,
-      "words": 1710,
+      "words": 717,
       "per_100_words": 0.8,
       "path": "skills/the-worker/references/image-provenance-and-webp.md",
       "exit_code": 1
@@ -3258,7 +3213,16 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 55,
+          "line": 33,
+          "col": 38,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "33 words",
+          "message": "Sentence has 33 words (cap 25). Split it."
+        },
+        {
+          "file": "skills/the-worker/SKILL.md",
+          "line": 57,
           "col": 61,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3267,7 +3231,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 109,
+          "line": 111,
           "col": 111,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3276,7 +3240,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 298,
+          "line": 300,
           "col": 95,
           "rule": "synonym-rotation",
           "level": "advisory-free",
@@ -3285,7 +3249,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 305,
+          "line": 307,
           "col": 98,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3294,7 +3258,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 307,
+          "line": 309,
           "col": 207,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3303,7 +3267,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 319,
+          "line": 321,
           "col": 168,
           "rule": "present-perfect",
           "level": "advisory",
@@ -3312,7 +3276,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 319,
+          "line": 321,
           "col": 172,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3320,11 +3284,11 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 10,
-      "hard_count": 4,
+      "count": 11,
+      "hard_count": 5,
       "baseline": 0,
-      "words": 4012,
-      "per_100_words": 0.2,
+      "words": 4092,
+      "per_100_words": 0.3,
       "path": "skills/the-worker/SKILL.md",
       "exit_code": 1
     },
@@ -3963,6 +3927,28 @@
     }
   ],
   "findings": [
+    {
+      "file": "skills/the-worker/references/conversation-mode.md",
+      "line": 68,
+      "col": 60,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "26 words",
+      "message": "Sentence has 26 words (cap 25). Split it.",
+      "fingerprint": "a572f3dff82333ad7db50991",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/the-worker/references/conversation-mode.md",
+      "line": 68,
+      "col": 162,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "09a34c4b31b88c0f364bd67e",
+      "comparison": "new"
+    },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
       "line": 84,
@@ -4867,7 +4853,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 84,
+      "line": 83,
       "col": 21,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4878,7 +4864,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 93,
+      "line": 92,
       "col": 11,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4889,7 +4875,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 121,
+      "line": 120,
       "col": 164,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4900,7 +4886,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 124,
+      "line": 123,
       "col": 130,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4911,7 +4897,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 128,
+      "line": 127,
       "col": 343,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4922,7 +4908,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 186,
+      "line": 184,
       "col": 170,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4933,7 +4919,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 189,
+      "line": 187,
       "col": 23,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4944,7 +4930,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 227,
+      "line": 225,
       "col": 65,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4955,7 +4941,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 238,
+      "line": 236,
       "col": 24,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4966,7 +4952,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 246,
+      "line": 242,
       "col": 176,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4977,7 +4963,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 260,
+      "line": 256,
       "col": 44,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4988,7 +4974,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 270,
+      "line": 266,
       "col": 68,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4999,7 +4985,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 271,
+      "line": 267,
       "col": 36,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5010,7 +4996,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 271,
+      "line": 267,
       "col": 58,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5021,7 +5007,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 274,
+      "line": 270,
       "col": 4,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5032,7 +5018,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 275,
+      "line": 271,
       "col": 78,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5043,7 +5029,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 276,
+      "line": 272,
       "col": 48,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5054,7 +5040,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 277,
+      "line": 273,
       "col": 75,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5065,7 +5051,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 278,
+      "line": 274,
       "col": 68,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5076,7 +5062,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 288,
+      "line": 284,
       "col": 20,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5087,7 +5073,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 292,
+      "line": 288,
       "col": 53,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5098,7 +5084,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 316,
+      "line": 312,
       "col": 69,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5109,24 +5095,13 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 320,
+      "line": 316,
       "col": 84,
       "rule": "passive-voice",
       "level": "advisory",
       "match": "is authorized",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "1c8f9ddb3e42b7986914faf3",
-      "comparison": "recurring"
-    },
-    {
-      "file": "images/README.md",
-      "line": 94,
-      "col": 54,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are reserved",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "03c08438c1205e007605fad3",
       "comparison": "recurring"
     },
     {
@@ -6231,6 +6206,17 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 57,
+      "col": 628,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
       "line": 58,
       "col": 260,
       "rule": "long-sentence",
@@ -6803,7 +6789,7 @@
     },
     {
       "file": "workspace/TASK_TEMPLATE.md",
-      "line": 18,
+      "line": 19,
       "col": 108,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6814,7 +6800,7 @@
     },
     {
       "file": "workspace/TASK_TEMPLATE.md",
-      "line": 46,
+      "line": 47,
       "col": 21,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6825,7 +6811,7 @@
     },
     {
       "file": "workspace/TASK_TEMPLATE.md",
-      "line": 73,
+      "line": 74,
       "col": 20,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6836,7 +6822,7 @@
     },
     {
       "file": "workspace/TASK_TEMPLATE.md",
-      "line": 74,
+      "line": 75,
       "col": 23,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6946,129 +6932,8 @@
     },
     {
       "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 12,
-      "col": 63,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is required",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "7ccd1f863de274e8feb2aa5a",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 21,
-      "col": 59,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are copied",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "61be939bdcfb8affcc1c4ac1",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 23,
-      "col": 16,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is moved",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "a2769b4e332bb5b80de9aa18",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 45,
-      "col": 38,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is preserved",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "4f5bf5c77bf38338ab20b610",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 50,
-      "col": 11,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are reserved",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "cae3618d486c83424c0551e9",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 73,
-      "col": 215,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are Verified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "1e0222b56fc30bea41c11a4a",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 103,
-      "col": 200,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "checking",
-      "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
-      "fingerprint": "2846194fd82ae9563f81b5f3",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 105,
-      "col": 12,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is intended",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "8aa469b31a75b1a230bf0fbf",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 113,
-      "col": 276,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is updated",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "897b55f31281128e207d7eeb",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 122,
-      "col": 37,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is paired",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "c4e77e690336527ad9cc1233",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 123,
-      "col": 76,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is verified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "efd04920bdf6f1dab7789579",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 134,
-      "col": 26,
+      "line": 15,
+      "col": 100,
       "rule": "passive-voice",
       "level": "advisory",
       "match": "is retained",
@@ -7078,14 +6943,58 @@
     },
     {
       "file": "skills/the-worker/references/image-provenance-and-webp.md",
-      "line": 138,
-      "col": 1,
+      "line": 29,
+      "col": 139,
       "rule": "passive-voice",
       "level": "advisory",
-      "match": "is described",
+      "match": "is retained",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "2e40f63b8c7d94eb2e1a6f05",
+      "fingerprint": "8614398268bd51316f465e56",
       "comparison": "recurring"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 35,
+      "col": 15,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "validates",
+      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "165228fd89d930749cfaa835",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 43,
+      "col": 65,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is observed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "678db87db1d222633995aa3f",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 43,
+      "col": 138,
+      "rule": "present-perfect",
+      "level": "advisory",
+      "match": "have been read",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "31fa6d94c05533c4e2f9d76a",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 43,
+      "col": 143,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "been read",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "fcc7dc911acbecb8434fffce",
+      "comparison": "new"
     },
     {
       "file": "skills/asd-ste100/references/writing-rules.md",
@@ -7298,7 +7207,18 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 55,
+      "line": 33,
+      "col": 38,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "33 words",
+      "message": "Sentence has 33 words (cap 25). Split it.",
+      "fingerprint": "ead8bfcb0c1049225be6ce1d",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 57,
       "col": 61,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7309,7 +7229,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 109,
+      "line": 111,
       "col": 111,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7320,7 +7240,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 298,
+      "line": 300,
       "col": 95,
       "rule": "synonym-rotation",
       "level": "advisory-free",
@@ -7331,7 +7251,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 305,
+      "line": 307,
       "col": 98,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7342,7 +7262,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 307,
+      "line": 309,
       "col": 207,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7353,7 +7273,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 319,
+      "line": 321,
       "col": 168,
       "rule": "present-perfect",
       "level": "advisory",
@@ -7364,7 +7284,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 319,
+      "line": 321,
       "col": 172,
       "rule": "passive-voice",
       "level": "advisory",
@@ -8056,9 +7976,153 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 0,
-  "recurring_findings": 372,
-  "resolved_findings": [],
+  "new_findings": 7,
+  "recurring_findings": 361,
+  "resolved_findings": [
+    {
+      "file": "images/README.md",
+      "line": 94,
+      "col": 54,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are reserved",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "03c08438c1205e007605fad3",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 12,
+      "col": 63,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is required",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "7ccd1f863de274e8feb2aa5a",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 21,
+      "col": 59,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are copied",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "61be939bdcfb8affcc1c4ac1",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 23,
+      "col": 16,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is moved",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "a2769b4e332bb5b80de9aa18",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 45,
+      "col": 38,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is preserved",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "4f5bf5c77bf38338ab20b610",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 50,
+      "col": 11,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are reserved",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "cae3618d486c83424c0551e9",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 73,
+      "col": 215,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are Verified",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "1e0222b56fc30bea41c11a4a",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 103,
+      "col": 200,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "checking",
+      "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
+      "fingerprint": "2846194fd82ae9563f81b5f3",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 105,
+      "col": 12,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is intended",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "8aa469b31a75b1a230bf0fbf",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 113,
+      "col": 276,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is updated",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "897b55f31281128e207d7eeb",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 122,
+      "col": 37,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is paired",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "c4e77e690336527ad9cc1233",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 123,
+      "col": 76,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is verified",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "efd04920bdf6f1dab7789579",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/references/image-provenance-and-webp.md",
+      "line": 138,
+      "col": 1,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is described",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "2e40f63b8c7d94eb2e1a6f05",
+      "comparison": "resolved"
+    }
+  ],
   "checks": [
     {
       "name": "Wrapper shell syntax",
@@ -8076,7 +8140,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.424s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.300s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -8094,7 +8158,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 1062 active Markdown files (1132 available as link targets) and 318 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 1066 active Markdown files (1136 available as link targets) and 322 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
