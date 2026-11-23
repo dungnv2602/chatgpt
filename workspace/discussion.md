@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 15:41 UTC — Event-driven Ledger handoff implemented:** The Ledger creates grouped Proposed Worker tasks for newly identified actionable findings during report ingestion. Linked findings refresh active tasks; resolved findings may reopen into a follow-up. Schema migration does not taskify historical findings. Task files and the task board are excluded from the diagnostics, Document Standards, and changed-lint push triggers to prevent feedback loops. Regression tests are committed; hosted validation is pending a natural run. Do not poll, dispatch, or rerun Actions. Do not access `master/` or `archive/`.
+- **2026-11-23 15:46 UTC — Event-driven Ledger handoff implemented:** The Ledger creates grouped Proposed Worker tasks for newly identified actionable findings during report ingestion. Linked findings refresh active tasks; resolved findings may reopen into a follow-up. Schema migration does not taskify historical findings. Task files and the task board are excluded from the diagnostics, Document Standards, and changed-lint push triggers to prevent feedback loops. Regression tests are committed and read back; hosted validation is pending a natural run. Do not poll, dispatch, or rerun Actions. Do not access `master/` or `archive/`.
 
 ## Open Discussions
 
