@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 — Complete the remaining reference-content audit and verify the authoring rules.** The placement validator and 16 regression tests passed on GitHub Actions. Inspect the remaining reference collections that may contain reusable copy blocks, confirm they are patterns or embedded contracts rather than misplaced templates, and review the final catalog and Worker gate for consistency.
+- **2026-11-23 — Finish the reference-file classification.** The remaining candidate files include answer-pattern references, novel workflow guidance, historical prompt examples, and image takeout contracts. Review the remaining skill references for copy-ready structures. Classify actual templates separately from examples, patterns, procedures, and embedded contracts. Do not move non-template references.
 
 ## Open Discussions
 
