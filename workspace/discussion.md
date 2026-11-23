@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 01:28 UTC —** Reconcile remaining Markdown, YAML, and JSON paths outside `archive/` against the catalog. Identify missing types or justified exclusions, then decide whether further structural checks add value. Do not read archive contents broadly or edit workflows.
+- **2026-11-23 01:31 UTC —** Review the catalog validator's remaining untested structural rules. Add focused unit tests for malformed rows, directory references, Embedded Contract path requirements, and Generator-owned regression-test references. Do not run repository scripts locally or edit workflow files.
 
 ## Open Discussions
 
@@ -8,6 +8,11 @@
 - **2026-11-23 01:28 UTC — Document Standards CI integration approval:** The catalog validator and regression tests need a GitHub-hosted run. Authorize creating or changing a workflow to run `test_validate_catalog.py` and `validate_catalog.py` on `gpt`. No workflow file has been changed.
 
 ## Reports
+
+### 2026-11-23 01:31 UTC — Repository path inventory
+
+- **Result:** Enumerated 199 Markdown/YAML/JSON/CSV/TOML files outside `archive/`: drawings 97, skills 51, novels 33, .github 6, workspace 5, images 3, master 3, and lint_reports 1. The catalog now covers 34 document types and 76 exact references. Content review remains representative, not exhaustive; no broad archive scan was performed.
+- **Task record:** `workspace/tasks/20261122-233900-enforce-template-first-document-standards.md`.
 
 ### 2026-11-23 01:28 UTC — Workflow and generated-format catalog update
 
@@ -17,9 +22,4 @@
 ### 2026-11-23 01:22 UTC — Master catalogues and expanded novel inventory
 
 - **Result:** The three master catalogues are heterogeneous and need no shared schema. Added `images/README.md` as an embedded asset-storage contract and recorded `HANDOFF.yml` as a processor-governed draft. The expanded inventory found six Version 1.0 illustration notes across Scenes 002–005 and three legacy prompt records in Scenes 003–005. One-off drawing references remain exempt; Prompt Master reference libraries remain lightweight. The catalog now lists 27 document types and 55 exact file references, with no directory references.
-- **Task record:** `workspace/tasks/20261122-233900-enforce-template-first-document-standards.md`.
-
-### 2026-11-23 01:19 UTC — Template contracts and catalog update
-
-- **Result:** Added default `Unknown` and `Not applicable` values, clarified conditional sections and fields, and distinguished outline-level from component-level status. Updated the catalog with representative and legacy findings. All changed paths passed read-back; all 10 newly added inventory file references exist, and no directory references remain in the inventory table.
 - **Task record:** `workspace/tasks/20261122-233900-enforce-template-first-document-standards.md`.
