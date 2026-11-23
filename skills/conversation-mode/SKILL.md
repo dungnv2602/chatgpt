@@ -15,7 +15,7 @@ metadata:
 Give the user two explicit ways to work:
 
 - **Default Mode** supports normal collaboration, explanations, and useful context.
-- **Condensed Mode** prioritizes repository work and uses minimal chat output.
+- **Condensed Mode** prioritizes repository work and uses extremely short chat output.
 
 This skill controls response style and workflow priorities. It does not override higher-priority safety, privacy, tool-use, or workspace-boundary instructions.
 
