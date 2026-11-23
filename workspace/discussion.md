@@ -1,3 +1,7 @@
+## Session Startup
+
+- **2026-11-23 — New conversation initialized:** The user invoked `start session`. Foundational initialization is in progress. No CI preflight was run.
+
 ## Current Step
 
 Read back the refactored skills, READMEs, catalog, and test fixtures; verify links and the current 48-rule Markdown inventory.
