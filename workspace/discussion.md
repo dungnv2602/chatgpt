@@ -1,10 +1,10 @@
 # Current Step
 
-- **2026-11-23 01:22 UTC —** Inspect remaining workflow configuration, archive-retention state, and generated lint output. Decide whether repository-owned schemas need catalog entries; do not edit workflow files.
+- **2026-11-23 01:22 UTC —** Add catalog entries for archive policy, generated lint output, retention state, and workflow configuration. Extend the catalog validator's allowed repository roots with regression tests. Do not edit workflow files.
 
 ## Open Discussions
 
-_No open discussions._
+- **2026-11-23 01:22 UTC — Archive retention trigger scope:** `.github/workflows/archive-retention.yml` has a scheduled trigger plus `workflow_dispatch` and `workflow_call` inputs that can pass `force`; `cleanup-archive.py --force` bypasses the 14-day interval. The archive boundary says only the scheduled retention workflow may delete archived records. Clarify whether manual and workflow-call triggers should remain enabled. No workflow changes have been made.
 
 ## Reports
 
