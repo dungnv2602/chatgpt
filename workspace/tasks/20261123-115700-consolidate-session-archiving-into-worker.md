@@ -67,9 +67,16 @@ Make The Worker the sole owner of collaboration modes, task/session continuity, 
 - **References:** `skills/the-worker/assets/`, `skills/the-worker/references/`, and `skills/the-worker/scripts/`.
 - **Next:** Integrate archive/media ownership into The Worker and update workflow, Drawing, session-start, image README, and catalog references.
 
+### 2026-11-23 12:00 UTC
+
+- **Action:** Integrated archive/media ownership into The Worker. Updated its purpose and procedures, moved image-processing script ownership, and redirected the workflow, Drawing skill, session-start procedure, image README, Document Type Catalog, and skill index to Worker-owned paths.
+- **Result:** The Worker now owns the complete archive/media domain. The workflow calls the moved scripts under `skills/the-worker/scripts/`. Session-start retains the explicit `start session` cue and loads archive/media references only for relevant specialist work. The Document Type Catalog now points to Worker-owned templates and processors. An obsolete compatibility heading was removed.
+- **References:** `skills/the-worker/SKILL.md`, `skills/the-worker/references/`, `skills/the-worker/assets/`, `skills/the-worker/scripts/`, `.github/workflows/convert-images-to-webp.yml`, `skills/drawing/SKILL.md`, `skills/SESSION_START.md`, `skills/README.md`, `skills/document-standards/references/document-type-catalog.md`, and `images/README.md`.
+- **Next:** Check all migrated destinations and dependent references. Then delete the two absorbed standalone skill directories and read back the final paths.
+
 ## 7. Current State
 
-The task is approved and in progress. All ten supporting files have been copied into The Worker and passed exact blob-ID read-back. Original Session Archiving files remain until all references are updated.
+The task is approved and in progress. All ten supporting files have been copied and read back under The Worker. Owner instructions, activation paths, workflow script paths, Drawing dependencies, image documentation, the Document Type Catalog, and skill indexes have been updated. Original standalone skill files remain until final stale-reference checks and deletion.
 
 ## 8. Remaining Work
 
