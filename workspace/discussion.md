@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 01:50 UTC — Brief before execution:** Approval received to add `.github/workflows/validate-document-standards.yml` and run hosted validation. First inspect the GitHub Actions skill, existing workflow conventions, validator CLI, and its 13 tests. Then create the narrow dedicated workflow, read it back, dispatch it on `gpt`, and inspect the run logs/results. Do not alter unrelated workflows or weaken existing lint rules.
+- **2026-11-23 02:04 UTC — Brief before execution:** The new hosted workflow ran on `gpt`, but 12/13 regression tests passed and one test fixture was internally contradictory: it labelled a Python test path as the catalog's canonical authority while expecting the validator to report no Python authority. Correct only the fixture so the regression-test reference stays in the finding column and the canonical column remains non-Python. Read it back, allow the path-filtered workflow to rerun, and inspect the new run. Do not weaken validator logic.
 
 ## Open Discussions
 
