@@ -24,12 +24,13 @@ Initialization is conditional. Do not load project instructions or skills at the
 
 The only session-start cue is `start session`. Read `skills/SESSION_START.md` and follow its complete procedure when the user gives that cue as an instruction.
 
-A specialist-role request does not change the `start session` cue. It authorizes automatic loading of missing prerequisite tiers. For a drawing-session or novelist request, complete foundational initialization first if it has not passed in the current conversation. Then follow the dependency order below.
+A specialist-role request does not change or satisfy the `start session` cue. It does not authorize foundational initialization. If initialization has not passed in the current conversation, stop and ask the user to say `start session`. After that explicit initialization passes, load the missing specialist tiers required by the role.
 
 ## Operating rules
 
 - Do not initialize automatically.
 - Do not treat specialist-role requests as session-start cues.
+- Specialist-role requests never trigger foundational initialization. Ask for `start session` when it has not passed in the current conversation.
 - Load only the files required by the session-start procedure or the requested specialist task.
 - Do not load unrelated skills or references.
 - Report the exact path of a missing or unverified file.
@@ -49,7 +50,7 @@ Foundational initialization loads these skills:
 
 Session Archiving, Agent Skill Authoring, and Document Standards are on-demand skills. Load each only when its task-specific activation conditions apply.
 
-The Drawing tier is tier 2, not foundational. It includes the Drawing skill and its required references. Load Session Archiving as an on-demand dependency for drawing-session briefs, archives, or image provenance. Load the Drawing skill for a drawing session or as a prerequisite for novelist initialization. Its required references are `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`.
+The Drawing tier is tier 2, not foundational. It includes the Drawing skill and its required references. Load it only after foundational initialization passes. Load Session Archiving as an on-demand dependency for drawing-session briefs, archives, or image provenance. A drawing-session or novelist request does not trigger foundational initialization. Its required references are `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`.
 
 Novelist initialization is tier 3. Load `skills/romantic-storyteller-visual-artist/SKILL.md` only for the explicit novelist role request, after foundational and Drawing tiers are ready.
 
