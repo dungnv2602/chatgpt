@@ -5,7 +5,7 @@
 - **ID:** 20261122-233900
 - **Template version:** 1.0
 - **Created:** 2026-11-22 23:39 UTC
-- **Updated:** 2026-11-23 00:58 UTC
+- **Updated:** 2026-11-23 01:00 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -212,6 +212,13 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** Validator commits `dfdd839c1f4626a7141787f75087644c9c924fc7` and `0ad3aaa1f9a17d256f65d2e606e2544376890c51`; test commit `485cd876efa41a1ded39672b0f3b8e7d99bbdb68`; Document Standards skill commit `4ff061596ee5b646cbe7e711afc230f6635f3154`; catalog commits `d8ca25c314da6b49f46f3feb5bb250ad1101c37e` and `86db14adf7996763bfc384f84ff3bd84a9c39a3a`.
 - **Next:** Obtain approval to inspect and update the appropriate GitHub Actions workflow so the validator and its tests run on hosted runners.
 
+### 2026-11-23 01:00 UTC
+
+- **Action:** Aligned the GitHub Actions archive-lint instructions with the user's read-only archive boundary and strengthened recovery when closeout finds an existing archive copy.
+- **Result:** The Actions skill now permits exact, task-relevant archive reads while keeping archive paths out of routine lint. The Worker now requires the original commit that introduced or contains a reused archive copy; it forbids substituting a later board-update commit. Both files passed exact-path read-back.
+- **References:** GitHub Actions skill commit `a826f004a7419db750de57608b23a515da985c24`; Worker commit `a2345f301d153a78054421daf60cb2e8223009cf`.
+- **Next:** Obtain approval for catalog-validator workflow integration. Keep archive records immutable.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
@@ -229,6 +236,7 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - The three master catalogues contain heterogeneous prompt, pose, and image-reference material. They are classified as lightweight collections, not uniform record types.
 - The catalog covers 26 recurring document types and records representative legacy examples and the no-mass-migration rule. A manual audit confirmed that all 41 exact file references exist. Full file-by-file reconciliation remains incomplete.
 - A catalog-integrity validator and regression tests now exist at `skills/document-standards/scripts/`. They check catalog structure and exact references, not document-body conformance. They have not run on a hosted runner because workflow integration awaits user authorization.
+- The GitHub Actions skill now permits exact, task-relevant archive reads and prohibits manual archive mutation. The Worker also requires the original archive-introduction commit when it reuses a prior archive copy.
 - The changed-document lint preflight repository-resolution defect has been fixed on `gpt`. Run #349 confirms that preflight, baseline lookup, and changed-file discovery succeed. The downstream STE lint step still fails on existing findings in the lint report and Agent Skill documentation; the updated remote-only policy files had no findings.
 
 ## 8. Remaining Work
