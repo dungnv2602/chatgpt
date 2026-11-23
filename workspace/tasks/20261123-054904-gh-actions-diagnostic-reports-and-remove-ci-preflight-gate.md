@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-054904
 - **Created:** 2026-11-23 05:49 UTC
-- **Updated:** 2026-11-23 12:28 UTC
+- **Updated:** 2026-11-23 15:18 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -42,6 +42,7 @@ Then, suggest me another approach to handle these errors from those reports, be 
 
 - **2026-11-23:** User confirmed delayed capture remains on `gpt`; `main` is preservation-only. User approved a separate task for existing hard lint findings. The remediation task is `20261123-100738`.
 - **2026-11-23:** User approved filtering routine successful and cancellation-only Actions outcomes from persisted reports, while retaining non-blocking failed steps and independent failures from cancelled runs. User also approved formalizing The Worker handoff from ledger findings to linked remediation tasks.
+- **2026-11-23:** The user authorized event-driven Ledger task creation and rejected periodic polling: "Let the Ledger create tasks, I prefer event-driven, not periodically polling."
 
 ## 3. Objective
 
@@ -62,12 +63,17 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 11. Remove mandatory CI preflight and repair requirements from session startup and prompt handling. Use CI investigation only when the current task requires it or the user requests it. Do not wait for or poll runs.
 12. Keep GitHub Actions validation and repository scripts on GitHub-hosted runners. Do not run repository code locally.
 13. Recommend a practical, prioritized remediation process that works across lint and non-lint findings.
+14. Create and group eligible Worker task records in the same ingestion event that accepts actionable Ledger findings. Use the canonical workspace task template and update the task board.
+15. Group lint findings by file and rule. Group Actions findings by workflow path, job, step, and category. Reuse an active task for the same group and preserve idempotency.
+16. Keep low and informational findings in the Ledger without creating tasks. New tasks start Proposed and do not authorize automatic remediation.
+17. Publish generated task files and the task board with Ledger/report changes. Ignore task-only pushes in the diagnostics sweep to prevent recursive runs. Do not introduce scheduled polling.
 
 ## 5. Decisions
 
 - Persist only actionable failures and operational exceptions by default. Ordinary successful runs and cancellation-only outcomes are not captured. Retain successful runs with classified non-blocking failures, cancelled runs with independent failures, workflow-level timeouts, and action-required outcomes. Explicit run-backfill requests may override this filter.
 - Preserve all existing immutable captures. Do not delete historical success or cancellation-only reports as part of this policy change.
-- Keep the CI ledger as the authoritative issue backlog and The Worker as the authoritative task-management system. The ledger preserves Worker-owned `task_refs` but never creates task records.
+- Treat the Ledger as an event-driven component of The Worker. During report ingestion, it creates grouped Proposed task records for open actionable findings at medium severity or higher, updates the task board, and maintains each finding's `task_refs`. It does not poll or run on a schedule.
+- Keep task ownership and approval boundaries. The Worker retains prioritization, approval, task selection, execution, verification, and closeout. Ledger-generated Proposed tasks do not authorize remediation.
 
 - Keep `lint_reports/` as the detailed source for lint findings.
 - Use `gh_ac_reports/` for workflow-level and non-lint diagnostics. It may link to lint reports rather than duplicate every lint finding.
@@ -78,6 +84,12 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 
 ## 6. Progress Log
 
+### 2026-11-23 15:18 UTC
+
+- **Action:** Implemented event-driven Ledger-to-Worker task creation under the user's updated direction. Added stable remediation grouping, schema 1.3.0, Proposed task generation from the canonical template, task-board insertion, finding-to-task references, active-group reuse, and migration grouping for legacy lint findings. Added regression coverage for grouping, repeat observations, low-severity filtering, migration, board publication, and untrusted diagnostic escaping.
+- **Result:** Task records are created in the same ingestion event. Lint findings group by file and rule; Actions findings group by workflow path, job, step, and category. Task-only pushes are excluded from the diagnostics sweep. New tasks remain Proposed and no remediation is performed automatically. Changes were committed to branch gpt; tests were not run locally and no hosted validation result has been observed.
+- **References:** reports/triage/scripts/ledger.py, reports/triage/ledger-schema.json, reports/triage/scripts/test_ledger.py, reports/gh_ac_reports/actions/capture/action.yml, .github/workflows/gh-actions-diagnostics.yml, reports/triage/README.md, workspace/TASK_TEMPLATE.md, skills/the-worker/SKILL.md.
+- **Next:** Read back changed paths and allow GitHub-hosted validation to occur naturally. Do not dispatch or poll workflows.
 ### 2026-11-23 12:28 UTC
 
 - **Action:** Committed the approved report-filtering and Worker–ledger handoff implementation as one coherent change set. Read back every changed path from branch `gpt` and checked the branch head.
