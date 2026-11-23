@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 13:08 UTC — Begin task template review:** Review the single hard finding in `workspace/TASK_TEMPLATE.md` against Document Standards and the task lifecycle contract. Preserve all required metadata and closeout gates.
+- **2026-11-23 13:12 UTC — Standardize task template lifecycle wording:** Change the lifecycle comment's `Verify` action to `Check` to match the template's verification checklist. Preserve archive immutability and the exact closeout transaction.
 
 ## Open Discussions
 
