@@ -581,13 +581,65 @@ def capture_one(repo, root, run_id, stage, force=False):
     return write_report(root, report, logs)
 
 
+
+def collect_runs_between(repo, start_utc, end_utc, errors, depth=0):
+    """Collect every matching run without silently crossing GitHub's 1,000-result search cap."""
+    start_value, end_value = timestamp(start_utc), timestamp(end_utc)
+    if end_value < start_value:
+        return []
+    query_range = str(start_utc) + ".." + str(end_utc)
+    endpoint = "/repos/" + repo + "/actions/runs?" + urlencode({
+        "created": query_range, "per_page": 100, "page": 1,
+    })
+    first = api_get(repo, endpoint, errors, "run_sweep")
+    if not isinstance(first, dict) or not isinstance(first.get("workflow_runs"), list):
+        errors.append({"source": "run_sweep", "message": "The run-list endpoint did not return workflow_runs."})
+        return []
+    output = list(first["workflow_runs"])
+    total = int(first.get("total_count") or len(output))
+    if len(output) < 100:
+        return output
+    for page in range(2, 11):
+        separator = "&" if "?" in endpoint else "?"
+        page_url = endpoint + separator + urlencode({"page": page})
+        payload = api_get(repo, page_url, errors, "run_sweep")
+        if not isinstance(payload, dict) or not isinstance(payload.get("workflow_runs"), list):
+            errors.append({"source": "run_sweep", "message": "A workflow-run page could not be retrieved."})
+            return output
+        batch = payload["workflow_runs"]
+        output.extend(batch)
+        if len(batch) < 100:
+            break
+    unique = {str(item.get("id")): item for item in output if item.get("id") is not None}
+    output = list(unique.values())
+    if len(output) >= total:
+        return output
+    if depth >= 24 or end_value - start_value <= 1:
+        errors.append({
+            "source": "run_sweep",
+            "message": "GitHub returned more than 1,000 workflow runs for a narrow time range. The sweep was not advanced to avoid silently missing runs.",
+        })
+        return output
+    midpoint = (start_value + end_value) / 2
+    midpoint_text = datetime.fromtimestamp(midpoint, timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    left = collect_runs_between(repo, start_utc, midpoint_text, errors, depth + 1)
+    right = collect_runs_between(repo, midpoint_text, end_utc, errors, depth + 1)
+    merged = {str(item.get("id")): item for item in left + right if item.get("id") is not None}
+    return list(merged.values())
+
+
+def collect_runs_since(repo, watermark, scan_started, errors):
+    start = datetime.fromtimestamp(timestamp(watermark), timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    end = datetime.fromtimestamp(timestamp(scan_started), timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    return collect_runs_between(repo, start, end, errors)
+
+
 def run_sweep(repo, root):
     index = load_index(root)
     started = utc_now()
     watermark = index.get("sweep_watermark_utc") or BOOTSTRAP_WATERMARK
-    date = watermark[:10]
     errors = []
-    runs = pages(repo, "/repos/" + repo + "/actions/runs?" + urlencode({"created": ">=" + date}), "workflow_runs", errors, "run_sweep")
+    runs = collect_runs_since(repo, watermark, started, errors)
     if errors:
         raise RuntimeError("Cannot enumerate workflow runs: " + "; ".join(x["message"] for x in errors))
     pending = set(str(x) for x in index.get("pending_run_ids", []))
