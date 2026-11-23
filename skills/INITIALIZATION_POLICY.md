@@ -91,6 +91,8 @@ Initialization is conditional. Do not load project instructions or skills at the
 
 ## Change history
 
+The entries below are historical. The current policy above takes precedence. A former skill or dependency listed in an old entry is not active unless the current policy lists it.
+
 ### Version 1 — Conditional initialization
 
 - **Date:** 2026-11-18
