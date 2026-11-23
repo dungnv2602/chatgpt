@@ -29,7 +29,7 @@ status: approved
 ## 3. Reference and Source Provenance
 - **Reference Asset(s) Actually Attached:**
 - **Role of Each Reference:**
-- **Source Image for Edit, if any:**
+- **Source Image for Edit:** [Conditional: exact source image and verified asset ID for a direct edit. Otherwise Not applicable.]
 - **Reference Not Attached / Not Used:**
 - **Active Visual Mode / Session Constraints:**
 
