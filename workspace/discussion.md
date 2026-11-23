@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 — Reconcile repository-audit permissions and inspect archive scope.** The user explicitly requested a whole-repository template-placement audit. Clarify in Session Archiving that this request permits read-only tree and content inspection across the requested scope, while archive immutability remains absolute. Then inspect the two archived task records only for template-placement references; do not modify them.
+- **2026-11-23 — Complete the remaining reference-content audit and verify the authoring rules.** The placement validator and 16 regression tests passed on GitHub Actions. Inspect the remaining reference collections that may contain reusable copy blocks, confirm they are patterns or embedded contracts rather than misplaced templates, and review the final catalog and Worker gate for consistency.
 
 ## Open Discussions
 
@@ -10,14 +10,16 @@
 
 ## Reports
 
-### 2026-11-23 — Template placement findings
+### 2026-11-23 — Template placement findings and hosted validation
 
 - Enumerated 417 repository files (483 tree entries), without truncation. Identified two misplaced copy-ready templates in skill `references/` directories.
 - Created exact copies under the owning skills' `assets/` directories, updated all known references and catalog entries, then deleted the superseded paths. Read-back confirmed exact source/target content equality before deletion.
-- The catalog now classifies Prompt Master templates as reusable template assets and Drawing pattern-entry templates under the Drawing skill.
+- Strengthened the catalog validator to enforce skill-template placement and detect named templates under skill `references/`. Hosted run [45114001584](https://github.com/dungnv2602/chatgpt/actions/runs/45114001584) passed all 16 regression tests and catalog validation: 36 document types and 80 exact references.
+- Updated Document Standards and The Worker to require canonical format creation, catalog registration, commit, and read-back before editing the governed document.
 
 ### 2026-11-23 — Lint-report evidence system implemented
 
 - Added separate `on_repo` and `on_changed` report scopes with Markdown analysis, structured JSON evidence, indexes, latest pointers, and immutable per-run history.
 - Added report-generation tooling and regression tests. Integrated report publication into both lint workflows. Migrated the legacy repository-wide report.
 - Read-back checks confirmed the implementation on `gpt`. Hosted validation of the new reporting changes and execution of the changed-document report path remain unverified.
+- No lint rules or baselines changed. No archive records were accessed or modified.
