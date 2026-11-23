@@ -58,10 +58,18 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ### 2026-11-23 13:44 UTC
 
+- **Action:** Applied the user's approved distinction between deliberate examples and an ordinary terminology inconsistency.
+- **Result:** Changed delete to remove in the scan checklist. This uses the document's established term without changing the instruction's meaning. Preserved the 12 deliberate examples at lines 58, 74, 89, 90, and 92. Readback and hosted validation remain pending. No local lint or tests were run.
+- **Scope:** 143 of 155 baseline hard findings now have source-level edits. Twelve hard findings remain because the repository policy protects their teaching examples. No lint rules, thresholds, baselines, or scan coverage were changed.
+- **Completion constraint:** The original zero-hard-finding criterion cannot be met while these 12 findings remain visible to the unchanged linter. Keep this task In Progress. Do not suppress or weaken the findings. A future policy decision would be required to change how the linter classifies intentional examples.
+
+### 2026-11-23 13:44 UTC
+
 - **Action:** Completed source-level remediation of the single baseline hard finding in `skills/session-archiving/assets/session-brief-template.md`.
 - **Result:** Separated the five metadata fields with blank lines. This preserves each field and its value while preventing the linter from treating the metadata block as one prose sentence. Readback passed after commit `aaef77e998686cb6f67dc31858efb4c6afd4445d`. No local lint or tests were run.
 - **Decision required:** Source-level edits now address 142 of 155 baseline hard findings across all 21 affected files. The remaining 13 findings are in deliberate examples of prohibited wording in `skills/asd-ste100/SKILL.md`. The repository writing policy explicitly says not to rewrite examples that intentionally demonstrate a rule violation. Do not change these examples or the policy without explicit user direction.
-- **Next:** Ask the user whether to amend the policy to permit changes to these 13 examples, or preserve the examples and leave the task open with 13 hard findings.
+- **Approval:** User approved preserving the 12 deliberate examples and correcting the separate terminology inconsistency. The approval does not authorize changes to the examples, preservation policy, lint rules, or finding suppression.
+- **Next:** Correct the ordinary terminology inconsistency. Retain the 12 deliberate examples. Record their lint findings as intentional policy-preserved exceptions; do not claim the zero-hard-finding completion criterion is met.
 
 
 ### 2026-11-23 12:48 UTC
@@ -199,20 +207,20 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 7. Current State
 
-The approved task is In Progress and is the current execution. Source-level edits address 142 of the 155 baseline hard findings across all 21 affected files. These include all 75 findings in the Document Type Catalog. In `skills/asd-ste100/SKILL.md`, two non-example findings have source-level edits. Thirteen findings remain in deliberate examples that the repository writing policy says to preserve. No other non-example hard findings remain in the baseline set. Hosted validation remains pending. The 319 advisory findings remain out of scope.
+The approved task is In Progress and is the current execution. Source-level edits address 143 of the 155 baseline hard findings across all 21 affected files. These include all 75 findings in the Document Type Catalog. In `skills/asd-ste100/SKILL.md`, all three non-example hard findings have source-level edits. Twelve hard findings remain in deliberate examples that the repository writing policy says to preserve. No other non-example hard findings remain in the baseline set. Hosted validation remains pending. The 319 advisory findings remain out of scope. The task cannot meet its original zero-hard-finding completion criterion while these 12 findings remain visible to the unchanged linter.
 
 ## 8. Remaining Work
 
-- Resolve all 155 approved hard findings without changing lint policy.
+- Preserve the 12 deliberate STE examples. Do not rewrite them or weaken lint rules to hide their findings.
 - Review every modified document for semantic accuracy and technical correctness.
-- Verify each natural hosted full-audit result and changed-scope result.
-- Confirm the final repository-wide report has zero hard findings and retains full coverage.
+- Verify naturally generated hosted full-audit and changed-scope reports.
+- Keep the task open unless a future approved policy decision provides a way to classify the 12 preserved examples without suppressing or weakening unrelated lint coverage.
 
 ## 9. Next Actions
 
-1. Obtain explicit user direction on the 13 intentional-example findings in `skills/asd-ste100/SKILL.md`.
-2. Do not rewrite intentional examples or alter the repository writing policy without approval.
-3. After the decision, complete any authorized edits and inspect naturally generated hosted reports.
+1. Preserve the 12 intentional examples in `skills/asd-ste100/SKILL.md`.
+2. Review natural hosted reports to confirm the ordinary terminology finding is resolved and the 12 example findings remain unchanged.
+3. Keep the task open. Do not alter lint policy, add suppressions, or claim zero hard findings.
 
 ## 10. References
 
