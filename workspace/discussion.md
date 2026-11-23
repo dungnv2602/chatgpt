@@ -1,10 +1,9 @@
 ## Current Step
 
-- **2026-11-23 13:44 UTC — Pause for policy decision:** All 142 non-example baseline hard findings have source-level edits. Thirteen findings remain in deliberate examples that repository policy says to preserve. Do not edit those examples without explicit user direction.
+- **2026-11-23 13:44 UTC — Approved example-preservation decision:** Preserve the 12 deliberate STE teaching examples. Resolve the separate `delete` synonym-rotation finding at line 88 of `skills/asd-ste100/SKILL.md` by using the document's established term `remove`. Do not weaken lint rules or change the preservation policy.
 
 ## Open Discussions
 
-- **2026-11-23 13:44 UTC — Intentional STE examples:** The remaining 13 hard findings occur in deliberate examples of prohibited wording. The repository writing policy says to preserve such examples. User direction is required before any change to that policy or those examples.
 
 
 - **2026-11-23 10:16 UTC — Hosted retention validation:** The cleanup script and tests cover exact individual files in both archive folders. A hosted run of the schedule-only cleanup has not yet been observed. It runs on the schedule from main. No manual dispatch or user action is needed. Do not modify main.
