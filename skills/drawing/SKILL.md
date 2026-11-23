@@ -134,7 +134,7 @@ ink, and 3D gloss.
 
 ### Canonical record templates
 
-Use the session-brief template at `skills/session-archiving/assets/session-brief-template.md`.
+Use the session-brief template at `skills/the-worker/assets/session-brief-template.md`.
 
 Use the daily index template at `skills/drawing/assets/daily-index-template.md`.
 
@@ -320,7 +320,7 @@ For non-novel/day drawing sessions, store repository-retained generated image ou
 
 ### C. Prepare and archive the prompt
 Before every generation or edit attempt:
-1. Follow `skills/session-archiving/SKILL.md`.
+1. Follow The Worker's `references/archive-records-and-image-prompts.md` and the applicable prompt-fidelity and provenance references.
 2. Read the active session-opening brief first. For a named novel scene, also
    read the relevant scene-local scene and illustration records. For non-novel
    work, read the session brief under `drawings/YYYY-MM-DD/`. The session brief
@@ -404,7 +404,7 @@ fresh generations accurately.
 
 For multi-image series, recurring characters, prompt lineage, or iterative work, load and apply [Series Continuity and Iteration](references/series-continuity-and-iteration.md) before preparing the next attempt. Preserve established identities, membership, sequence, and user-approved visual decisions.
 
-The detailed rules include the session closeout cue and default iteration procedure. A pause or goodbye is not session closeout. Close only when the user explicitly requests it and archive verification requirements are satisfied.
+The Worker's `references/drawing-session-closeout.md` defines the session closeout cue and archive checks. A pause or goodbye is not session closeout. Close only when the user explicitly requests it and archive verification requirements are satisfied.
 
 ### E. Generate or edit
 Use one dominant mode consistently:
@@ -532,7 +532,10 @@ After generation or editing, preserve original outputs and record provenance. Ch
 - `assets/pattern-entry-templates.md` — load only when creating or revising a pattern.
 - `references/series-continuity-and-iteration.md` — series identity, prompt lineage, closeout, and iteration.
 - `references/generation-recovery-and-provenance.md` — refusal-aware recovery, prompt audits, attempt ledgers, and provenance.
-- `references/archive-and-delivery.md` — original-image preservation, hashes, WebP delivery, and archive verification.
+- `references/archive-and-delivery.md` — drawing-specific original-image preservation, hashes, WebP delivery, and archive verification.
+- `../the-worker/references/archive-records-and-image-prompts.md` — canonical session records, prompt history, and image mappings.
+- `../the-worker/references/drawing-session-closeout.md` — explicit drawing-session closeout and archive checks.
+- `../the-worker/references/image-provenance-and-webp.md` — original-image identity and WebP delivery provenance.
 - `assets/attempt-template.md` — mandatory compact layout for every drawing attempt, with a standalone copyable prompt block.
 - `../asd-ste100/references/repository-writing-policy.md` — required language rules for skill and technical documentation.
 
