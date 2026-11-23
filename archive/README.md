@@ -12,6 +12,18 @@ The Worker skill defines task completion and archival procedures.
 - Record the UTC archive timestamp in the task metadata.
 - Do not store full conversation transcripts.
 
+## Resolved report filing
+
+When a finding is verified as resolved in `reports/triage/ledger.json`:
+
+1. Keep the triage entry and fix/verification references.
+2. Move each no-longer-needed report file individually to `archive/reports/`, preserving its path below the report-family root.
+3. Add one index entry per moved file to `.github/archive-retention-index.json` with its exact archive path and the UTC timestamp of that move (`archived_at_utc`).
+4. Do not archive a file still referenced by an open finding, a current/latest pointer, or an active investigation.
+5. Do not manually delete an archived file. The existing weekly retention workflow deletes each exact indexed file after 90 days from its own archive timestamp.
+
+The report archive uses the same index, schedule, cleanup script, and 90-day individual-file retention as task records. There is no separate report archive policy or workflow.
+
 ## Retention policy
 
 GitHub Actions checks a small retention index once each week. It retains each indexed task record for at least 90 days from its UTC archive timestamp.
