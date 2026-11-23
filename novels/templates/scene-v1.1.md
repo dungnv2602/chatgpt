@@ -61,6 +61,8 @@ status: approved
 - **New Facts Requiring Promotion to Novel / Character / Arc Records:**
 
 ## 9. Illustrations
+Add one row per planned or retained illustration. If no illustration is planned or retained, replace the blank row with `None recorded`.
+
 | Illustration ID | Moment / Title | Status | Master / WebP Asset | Illustration Note | Prompt Record |
 |---|---|---|---|---|---|
 | | | | | | |
