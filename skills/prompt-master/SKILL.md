@@ -64,7 +64,7 @@ Before writing any prompt, silently extract these 9 dimensions. Missing critical
 
 ### Tool Routing
 
-Identify the tool and route accordingly. Read full templates from [assets/prompt-templates.md](references/templates.md) only for the category you need.
+Identify the tool and route accordingly. Read full templates from [assets/prompt-templates.md](assets/prompt-templates.md) only for the category you need.
 
 ### Model Recency Gate
 
