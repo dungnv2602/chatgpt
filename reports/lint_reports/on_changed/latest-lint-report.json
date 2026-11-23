@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45166863723",
-  "run_number": 481,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45166863723",
+  "run_id": "45167810907",
+  "run_number": 492,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45167810907",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "983f930b1ecc1ae28c06859d8daf152e1fcd89ce",
+  "commit_sha": "9001aa1cdedab1ca1c76b8991e9c174cc9dc89a3",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T11:38:03.418104+00:00",
+  "generated_at_utc": "2026-11-23T11:46:19.793103+00:00",
   "status": "Failed",
-  "linter_source_sha": "983f930b1ecc1ae28c06859d8daf152e1fcd89ce",
+  "linter_source_sha": "9001aa1cdedab1ca1c76b8991e9c174cc9dc89a3",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -72,23 +72,24 @@
     "skills/philosophy-religion-asceticism/CHANGELOG.md"
   ],
   "files_evaluated_count": 50,
-  "files_failed": 2,
+  "files_failed": 3,
   "failed_files": [
     "skills/document-standards/references/document-type-catalog.md",
-    "skills/drawing/assets/daily-index-template.md"
+    "skills/drawing/assets/daily-index-template.md",
+    "skills/SESSION_START.md"
   ],
   "files_with_findings": 39,
-  "total_findings": 342,
-  "hard_findings": 23,
-  "advisory_findings": 319,
+  "total_findings": 348,
+  "hard_findings": 25,
+  "advisory_findings": 323,
   "findings_by_rule": {
-    "passive-voice": 279,
-    "present-perfect": 40,
-    "synonym-rotation": 6,
+    "passive-voice": 282,
+    "present-perfect": 41,
+    "synonym-rotation": 7,
     "phrasal-verb": 5,
     "nominalization": 2,
     "marketing-adjective": 5,
-    "long-sentence": 5
+    "long-sentence": 6
   },
   "records": [
     {
@@ -607,16 +608,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 157,
-          "col": 107,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is required",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 160,
+          "line": 159,
           "col": 29,
           "rule": "passive-voice",
           "level": "advisory",
@@ -625,7 +617,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 167,
+          "line": 166,
           "col": 23,
           "rule": "passive-voice",
           "level": "advisory",
@@ -634,7 +626,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 173,
+          "line": 172,
           "col": 149,
           "rule": "present-perfect",
           "level": "advisory",
@@ -643,7 +635,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 173,
+          "line": 172,
           "col": 153,
           "rule": "passive-voice",
           "level": "advisory",
@@ -652,7 +644,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 186,
+          "line": 185,
           "col": 36,
           "rule": "passive-voice",
           "level": "advisory",
@@ -661,7 +653,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 224,
+          "line": 223,
           "col": 38,
           "rule": "passive-voice",
           "level": "advisory",
@@ -670,7 +662,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 233,
+          "line": 232,
           "col": 18,
           "rule": "synonym-rotation",
           "level": "advisory-free",
@@ -679,7 +671,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 246,
+          "line": 245,
           "col": 28,
           "rule": "passive-voice",
           "level": "advisory",
@@ -688,7 +680,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 247,
+          "line": 246,
           "col": 65,
           "rule": "present-perfect",
           "level": "advisory",
@@ -697,7 +689,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 247,
+          "line": 246,
           "col": 70,
           "rule": "passive-voice",
           "level": "advisory",
@@ -706,7 +698,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 254,
+          "line": 253,
           "col": 17,
           "rule": "passive-voice",
           "level": "advisory",
@@ -715,7 +707,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 256,
+          "line": 255,
           "col": 37,
           "rule": "present-perfect",
           "level": "advisory",
@@ -724,7 +716,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 256,
+          "line": 255,
           "col": 41,
           "rule": "passive-voice",
           "level": "advisory",
@@ -733,7 +725,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 258,
+          "line": 257,
           "col": 32,
           "rule": "present-perfect",
           "level": "advisory",
@@ -742,7 +734,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 258,
+          "line": 257,
           "col": 36,
           "rule": "passive-voice",
           "level": "advisory",
@@ -750,10 +742,10 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 17,
+      "count": 16,
       "hard_count": 1,
       "baseline": 6,
-      "words": 2271,
+      "words": 2256,
       "per_100_words": 0.7,
       "path": "skills/agent-skill-authoring/SKILL.md",
       "exit_code": 0
@@ -1386,7 +1378,7 @@
       "count": 0,
       "hard_count": 0,
       "baseline": 0,
-      "words": 371,
+      "words": 442,
       "per_100_words": 0.0,
       "path": "skills/README.md",
       "exit_code": 0
@@ -2403,7 +2395,7 @@
       "count": 27,
       "hard_count": 3,
       "baseline": 0,
-      "words": 3060,
+      "words": 3064,
       "per_100_words": 0.9,
       "path": "skills/document-standards/references/document-type-catalog.md",
       "exit_code": 1
@@ -2470,7 +2462,7 @@
       "violations": [
         {
           "file": "skills/INITIALIZATION_POLICY.md",
-          "line": 36,
+          "line": 37,
           "col": 53,
           "rule": "present-perfect",
           "level": "advisory",
@@ -2479,18 +2471,27 @@
         },
         {
           "file": "skills/INITIALIZATION_POLICY.md",
-          "line": 36,
+          "line": 37,
           "col": 57,
           "rule": "passive-voice",
           "level": "advisory",
           "match": "been retrieved",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/INITIALIZATION_POLICY.md",
+          "line": 142,
+          "col": 3,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "28 words",
+          "message": "Sentence has 28 words (cap 25). Split it."
         }
       ],
-      "count": 2,
-      "hard_count": 0,
+      "count": 3,
+      "hard_count": 1,
       "baseline": 4,
-      "words": 1180,
+      "words": 1395,
       "per_100_words": 0.2,
       "path": "skills/INITIALIZATION_POLICY.md",
       "exit_code": 0
@@ -2791,7 +2792,7 @@
       "count": 2,
       "hard_count": 0,
       "baseline": 0,
-      "words": 596,
+      "words": 605,
       "per_100_words": 0.3,
       "path": "workspace/README.md",
       "exit_code": 0
@@ -3643,7 +3644,16 @@
       "violations": [
         {
           "file": "skills/SESSION_START.md",
-          "line": 18,
+          "line": 27,
+          "col": 36,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was retrieved",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/SESSION_START.md",
+          "line": 34,
           "col": 114,
           "rule": "present-perfect",
           "level": "advisory",
@@ -3652,21 +3662,66 @@
         },
         {
           "file": "skills/SESSION_START.md",
-          "line": 18,
+          "line": 34,
           "col": 119,
           "rule": "passive-voice",
           "level": "advisory",
           "match": "been retrieved",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/SESSION_START.md",
+          "line": 73,
+          "col": 4,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "Check",
+          "message": "'check' and 'verify' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "skills/SESSION_START.md",
+          "line": 74,
+          "col": 168,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is given",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/SESSION_START.md",
+          "line": 75,
+          "col": 74,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "been verified",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/SESSION_START.md",
+          "line": 219,
+          "col": 192,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is given",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/SESSION_START.md",
+          "line": 235,
+          "col": 197,
+          "rule": "present-perfect",
+          "level": "advisory",
+          "match": "have passed",
+          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
         }
       ],
-      "count": 2,
-      "hard_count": 0,
+      "count": 8,
+      "hard_count": 1,
       "baseline": 0,
-      "words": 2275,
-      "per_100_words": 0.1,
+      "words": 2528,
+      "per_100_words": 0.3,
       "path": "skills/SESSION_START.md",
-      "exit_code": 0
+      "exit_code": 1
     },
     {
       "violations": [
@@ -3719,7 +3774,7 @@
       "match": "are ordered",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "bee2a996a437e18d996259cd",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3730,7 +3785,7 @@
       "match": "is paused",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "2241e6bb50e2f15bfa24211b",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3741,7 +3796,7 @@
       "match": "is unresolved",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "d30ba0439a3d723f276eb4c5",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3752,7 +3807,7 @@
       "match": "is paused",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "2241e6bb50e2f15bfa24211b",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3763,7 +3818,7 @@
       "match": "has stopped",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "cedfb1b9e8b08ba988f26ada",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3774,7 +3829,7 @@
       "match": "has proposed",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "17842a0d207d59e3d6dfd995",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3785,7 +3840,7 @@
       "match": "is needed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "bd2f7bbdff13e7e39ad308db",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3796,7 +3851,7 @@
       "match": "is resolved",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "843d844a7e11cf758d6cc899",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3807,7 +3862,7 @@
       "match": "is needed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "bd2f7bbdff13e7e39ad308db",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3818,7 +3873,7 @@
       "match": "was encountered",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "8e2161d80a5148d771a0f3ef",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3829,7 +3884,7 @@
       "match": "was verified",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "ff487ca595e84d2db113914a",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3840,7 +3895,7 @@
       "match": "is exceeded",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "308ed03edab7da5db41594ac",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3851,7 +3906,7 @@
       "match": "is needed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "bd2f7bbdff13e7e39ad308db",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3862,7 +3917,7 @@
       "match": "has approved",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "04cc8860da7a5678f9593957",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3873,7 +3928,7 @@
       "match": "has been given",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "b415c4bf0547befb7d81674b",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3884,7 +3939,7 @@
       "match": "been given",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "b76b30e48b4f4ad0c86a4c75",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/references/conversation-mode.md",
@@ -3895,7 +3950,7 @@
       "match": "are governed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "c9dae4d4501881d9eacee582",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/philosophy-religion-asceticism/SKILL.md",
@@ -4273,18 +4328,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 157,
-      "col": 107,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is required",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "8b13326f16f49a0b949c0dd4",
-      "comparison": "new"
-    },
-    {
-      "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 160,
+      "line": 159,
       "col": 29,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4295,7 +4339,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 167,
+      "line": 166,
       "col": 23,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4306,7 +4350,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 173,
+      "line": 172,
       "col": 149,
       "rule": "present-perfect",
       "level": "advisory",
@@ -4317,7 +4361,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 173,
+      "line": 172,
       "col": 153,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4328,7 +4372,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 186,
+      "line": 185,
       "col": 36,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4339,7 +4383,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 224,
+      "line": 223,
       "col": 38,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4350,7 +4394,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 233,
+      "line": 232,
       "col": 18,
       "rule": "synonym-rotation",
       "level": "advisory-free",
@@ -4361,7 +4405,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 246,
+      "line": 245,
       "col": 28,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4372,7 +4416,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 247,
+      "line": 246,
       "col": 65,
       "rule": "present-perfect",
       "level": "advisory",
@@ -4383,7 +4427,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 247,
+      "line": 246,
       "col": 70,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4394,7 +4438,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 254,
+      "line": 253,
       "col": 17,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4405,7 +4449,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 256,
+      "line": 255,
       "col": 37,
       "rule": "present-perfect",
       "level": "advisory",
@@ -4416,7 +4460,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 256,
+      "line": 255,
       "col": 41,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4427,7 +4471,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 258,
+      "line": 257,
       "col": 32,
       "rule": "present-perfect",
       "level": "advisory",
@@ -4438,7 +4482,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 258,
+      "line": 257,
       "col": 36,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5534,7 +5578,7 @@
       "match": "are maintained",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "83ae01c94b8b3c79ee313b26",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md",
@@ -6231,7 +6275,7 @@
     },
     {
       "file": "skills/INITIALIZATION_POLICY.md",
-      "line": 36,
+      "line": 37,
       "col": 53,
       "rule": "present-perfect",
       "level": "advisory",
@@ -6242,7 +6286,7 @@
     },
     {
       "file": "skills/INITIALIZATION_POLICY.md",
-      "line": 36,
+      "line": 37,
       "col": 57,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6250,6 +6294,17 @@
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "25393e4ca29211513c0ea122",
       "comparison": "recurring"
+    },
+    {
+      "file": "skills/INITIALIZATION_POLICY.md",
+      "line": 142,
+      "col": 3,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "28 words",
+      "message": "Sentence has 28 words (cap 25). Split it.",
+      "fingerprint": "f40cb6e7d22052c296f243c7",
+      "comparison": "new"
     },
     {
       "file": "skills/drawing/assets/daily-index-template.md",
@@ -7441,7 +7496,18 @@
     },
     {
       "file": "skills/SESSION_START.md",
-      "line": 18,
+      "line": 27,
+      "col": 36,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was retrieved",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "1b7d224401886a9004746406",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/SESSION_START.md",
+      "line": 34,
       "col": 114,
       "rule": "present-perfect",
       "level": "advisory",
@@ -7452,7 +7518,7 @@
     },
     {
       "file": "skills/SESSION_START.md",
-      "line": 18,
+      "line": 34,
       "col": 119,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7460,6 +7526,61 @@
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "fec2fb4fa450910b68502f34",
       "comparison": "recurring"
+    },
+    {
+      "file": "skills/SESSION_START.md",
+      "line": 73,
+      "col": 4,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Check",
+      "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
+      "fingerprint": "1fb1875ac91e733b353da2ae",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/SESSION_START.md",
+      "line": 74,
+      "col": 168,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is given",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "bafc7f56ccc1107f8e988e9c",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/SESSION_START.md",
+      "line": 75,
+      "col": 74,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "been verified",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "6dd94c7c1b750dbf34848556",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/SESSION_START.md",
+      "line": 219,
+      "col": 192,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is given",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "bafc7f56ccc1107f8e988e9c",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/SESSION_START.md",
+      "line": 235,
+      "col": 197,
+      "rule": "present-perfect",
+      "level": "advisory",
+      "match": "have passed",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "ea47a38e16cc241e4c1d2a58",
+      "comparison": "new"
     },
     {
       "file": "skills/drawing/references/patterns/README.md",
@@ -7473,205 +7594,18 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 19,
-  "recurring_findings": 323,
+  "new_findings": 7,
+  "recurring_findings": 341,
   "resolved_findings": [
     {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 94,
-      "col": 157,
+      "file": "skills/agent-skill-authoring/SKILL.md",
+      "line": 157,
+      "col": 107,
       "rule": "passive-voice",
       "level": "advisory",
-      "match": "are ordered",
+      "match": "is required",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "6d637f1fa2db2d41a6d50ddc",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 105,
-      "col": 72,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is paused",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "448cf9dfd90fe327096b71e5",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 110,
-      "col": 41,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is unresolved",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "24000f0d039ebc991f65530c",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 137,
-      "col": 88,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is paused",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "448cf9dfd90fe327096b71e5",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 138,
-      "col": 78,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "has stopped",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "11522f9e8c67a502b19046c1",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 138,
-      "col": 108,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "has proposed",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "fb6ab971291fabec8f04e13d",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 139,
-      "col": 61,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is needed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "a5afffbd39db7eee0657c03b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 139,
-      "col": 272,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is resolved",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "7432ab5664bf24b78cc7ff00",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 154,
-      "col": 63,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is needed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "a5afffbd39db7eee0657c03b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 159,
-      "col": 36,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was encountered",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "3a6c1312d7b45107dbc72a9d",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 161,
-      "col": 106,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was verified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "f524e4cf6f61106be53e395c",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 170,
-      "col": 180,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is exceeded",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "30999b2a0d67c2a1670763ff",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 196,
-      "col": 260,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is needed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "a5afffbd39db7eee0657c03b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 211,
-      "col": 94,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "has approved",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "5b8f9ac16a3f5a3fd92e7621",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 238,
-      "col": 126,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "has been given",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "7e130dc07470c4dfc1de436d",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 238,
-      "col": 130,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "been given",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "ef15c6245f889cbfdb09d89a",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/conversation-mode/SKILL.md",
-      "line": 259,
-      "col": 75,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are governed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "04de33177ef6c58de34b6fd5",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/session-archiving/SKILL.md",
-      "line": 80,
-      "col": 90,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is known",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "038292fe0c13c6199af4bf3a",
+      "fingerprint": "8b13326f16f49a0b949c0dd4",
       "comparison": "resolved"
     }
   ],
@@ -7692,7 +7626,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.444s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.344s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -7710,7 +7644,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 712 active Markdown files (779 available as link targets) and 342 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 758 active Markdown files (825 available as link targets) and 342 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
