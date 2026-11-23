@@ -13,17 +13,20 @@ The Worker skill defines task completion and archival procedures.
 
 ## Retention policy
 
-GitHub Actions deletes archived task records in one batch every 14 days.
+GitHub Actions checks a small retention index once each week. It retains each indexed task record for at least 90 days from its UTC archive timestamp.
 
-- The cleanup is periodic, not a rolling per-record retention period.
-- On each due cleanup, delete the entire contents of `archive/tasks/`, regardless of each record's individual archive timestamp.
-- Preserve `.gitkeep` so the directory remains in the repository.
-- The workflow runs on the default branch. It checks out `gpt`. It deletes the contents of `archive/tasks/`. It then fast-forwards `main` to the same commit.
+- The index is `.github/archive-retention-index.json`. Each entry contains one exact `archive/tasks/<filename>` path and its UTC archive timestamp.
+- The scheduled workflow reads the index only. It does not list, scan, or read the contents of `archive/tasks/`.
+- When an indexed record reaches 90 days, the workflow checks and deletes only that exact path. It then removes the entry from the index.
+- Preserve `.gitkeep`. Never delete an unindexed record.
+- Existing records that were archived before the index was introduced remain protected. Do not scan or backfill them automatically. Add a legacy record only when its exact path and archive timestamp are needed and verified.
+- The workflow has only the scheduled trigger. The cleanup script also rejects every GitHub event except `schedule`.
+- The workflow checks out `gpt`, verifies that `main` is an ancestor, and atomically fast-forwards `main` to the resulting `gpt` commit. It does not force-push.
 - The Worker may read an exact archived record when a task requires it. The Worker must not edit, replace, rename, move, or manually delete an archived record.
-- An archived record is immutable after its initial archive write. Only the scheduled retention workflow may delete records from `archive/tasks/`.
+- An archived record is immutable after its initial archive write. Only the scheduled retention workflow may delete indexed records from `archive/tasks/`.
 - Git history retains prior committed versions. This policy controls files in the current archive folder.
 
-GitHub Actions cron does not provide an exact every-14-days expression. The workflow checks weekly and uses a committed UTC timestamp to ensure a batch purge occurs only after at least 14 days have elapsed. The first purge occurs on the first scheduled run after that interval.
+The weekly check does not inspect archive files unless an indexed entry has reached its expiry date. Unindexed legacy records remain in place until they are individually indexed under an explicitly verified archive timestamp.
 
 ## Task board history
 
