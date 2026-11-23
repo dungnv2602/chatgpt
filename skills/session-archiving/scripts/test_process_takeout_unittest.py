@@ -87,8 +87,11 @@ class TakeoutProcessorTests(unittest.TestCase):
             ])
             if "attempt" in item:
                 rows.append(f'    attempt: "{item["attempt"]}"')
-            for key in ("expected_sha256", "output_id", "prompt_id"):
-                if item.get(key):
+            for key in (
+                "expected_sha256", "output_id", "prompt_id", "native_generation_id",
+                "native_output_id", "approval_status", "mapping_evidence",
+            ):
+                if key in item:
                     rows.append(f'    {key}: "{item[key]}"')
         (self.inbox / "HANDOFF.yml").write_text("\n".join(rows) + "\n", encoding="utf-8")
 
@@ -700,6 +703,41 @@ class TakeoutProcessorTests(unittest.TestCase):
             / "history/batch-duplicate-output-id/attempt-001/verification-report.md"
         ).read_text(encoding="utf-8")
         self.assertIn("Duplicate output_id", report)
+
+    def test_invalid_handoff_metadata_fields_fail_before_relocation(self):
+        invalid_fields = [
+            ("asset_id", "ill_001", "Invalid asset_id"),
+            ("expected_sha256", "not-a-sha256", "expected_sha256"),
+            ("output_id", "bad id", "output_id"),
+            ("prompt_id", "bad id", "prompt_id"),
+            ("native_generation_id", "x" * 257, "native_generation_id"),
+            ("native_output_id", "x" * 257, "native_output_id"),
+            ("approval_status", "Unknown", "approval_status"),
+            ("mapping_evidence", "x" * 1001, "mapping_evidence"),
+        ]
+        for index, (field, value, expected_error) in enumerate(invalid_fields, start=1):
+            with self.subTest(field=field):
+                filename = f"invalid-{index}.png"
+                batch = f"invalid-field-{index}"
+                source = self.inbox / filename
+                source.write_bytes(f"source-{index}".encode("utf-8"))
+                item = {"source": filename, field: value}
+                self.manifest(item, batch=batch)
+                handoff_before = (self.inbox / "HANDOFF.yml").read_bytes()
+
+                result = self.run_processor()
+
+                self.assertNotEqual(result.returncode, 0, result.stdout)
+                self.assertTrue(source.is_file(), field)
+                self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), handoff_before)
+                report = (
+                    self.inbox
+                    / "history"
+                    / batch
+                    / "attempt-001"
+                    / "verification-report.md"
+                ).read_text(encoding="utf-8")
+                self.assertIn(expected_error, report)
 
     def test_non_mapping_handoff_is_rejected_not_silently_ignored(self):
         (self.inbox / "waiting.png").write_bytes(b"waiting-original")
