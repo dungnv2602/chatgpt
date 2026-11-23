@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2.0",
-  "updated_at_utc": "2026-11-23T12:45:34Z",
+  "updated_at_utc": "2026-11-23T12:59:35Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T08:15:48Z",
     "processed_reports": [
@@ -374,6 +374,7 @@
       "reports/gh_ac_reports/history/424715662/45176147158-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424715662/45176725714-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45176725714-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/424715662/45177076864-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45177076864-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424743410/45122348866-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424743410/45122653712-attempt-1-post_run/report.json",
@@ -805,7 +806,10 @@
       "reports/gh_ac_reports/history/427313089/45176351877-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/427313089/45176725717-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45176725717-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/427313089/45176879971-attempt-1-post_run/report.json",
+      "reports/gh_ac_reports/history/427313089/45176972220-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45176972220-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/427313089/45177076843-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45177076843-attempt-1-pre_finalizer/report.json",
       "reports/lint_reports/on_changed/history/45127227672-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45128128389-attempt-1/report.json",
@@ -78241,8 +78245,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-23T12:39:48Z",
-      "last_seen_utc": "2026-11-23T12:43:14Z",
-      "occurrence_count": 3,
+      "last_seen_utc": "2026-11-23T12:59:30Z",
+      "occurrence_count": 6,
       "evidence": [
         {
           "report_path": "reports/gh_ac_reports/history/427313089/45176147166-attempt-1-post_run/report.json",
@@ -78264,6 +78268,27 @@
           "observed_at_utc": "2026-11-23T12:43:14Z",
           "note": "validate-document-standards / Run catalog validator regression tests",
           "observation_id": "github_actions:427313089:45176725717:1"
+        },
+        {
+          "report_path": "reports/gh_ac_reports/history/427313089/45176879971-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45176879971",
+          "observed_at_utc": "2026-11-23T12:59:13Z",
+          "note": "validate-document-standards / Run catalog validator regression tests",
+          "observation_id": "github_actions:427313089:45176879971:1"
+        },
+        {
+          "report_path": "reports/gh_ac_reports/history/427313089/45176972220-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45176972220",
+          "observed_at_utc": "2026-11-23T12:59:22Z",
+          "note": "validate-document-standards / Run catalog validator regression tests",
+          "observation_id": "github_actions:427313089:45176972220:1"
+        },
+        {
+          "report_path": "reports/gh_ac_reports/history/427313089/45177076843-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45177076843",
+          "observed_at_utc": "2026-11-23T12:59:30Z",
+          "note": "validate-document-standards / Run catalog validator regression tests",
+          "observation_id": "github_actions:427313089:45177076843:1"
         }
       ],
       "resolution": null,
