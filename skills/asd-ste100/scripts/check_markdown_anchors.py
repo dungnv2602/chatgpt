@@ -135,6 +135,9 @@ def link_targets(text: str) -> list[str]:
     return targets
 
 
+TEMPLATE_PLACEHOLDER_RE = re.compile(r"\{[A-Za-z_][A-Za-z0-9_.-]*\}|\$\{\{.*?\}\}")
+
+
 def resolve_markdown_target(
     source: str, target: str, file_set: set[str], all_paths: set[str]
 ) -> str | None:
