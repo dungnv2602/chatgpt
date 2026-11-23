@@ -439,8 +439,9 @@ def render_markdown(report):
         [a.get("job_id"), a.get("level"), a.get("path"), a.get("start_line"), a.get("title"), a.get("message")]
         for a in report["annotations"]
     ])
-    artifacts = table(["ID", "Name", "Bytes", "Expired", "Created", "Expires"], [
-        [a.get("id"), a.get("name"), a.get("size_in_bytes"), a.get("expired"), a.get("created_at"), a.get("expires_at")]
+    artifacts = table(["ID", "Name", "Bytes", "Expired", "Created", "Expires", "Artifact URL"], [
+        [a.get("id"), a.get("name"), a.get("size_in_bytes"), a.get("expired"), a.get("created_at"),
+         a.get("expires_at"), a.get("archive_download_url")]
         for a in report["artifacts"]
     ])
     log_rows = [
