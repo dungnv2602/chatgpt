@@ -4,9 +4,10 @@
     "baseline_at_utc": "2026-11-23T05:49:04Z",
     "reason": "Start at the bounded CI snapshot recorded for task 20261123-054904. Do not backfill the pre-existing run catalogue."
   },
-  "sweep_watermark_utc": "2026-11-23T14:06:21Z",
+  "sweep_watermark_utc": "2026-11-23T14:10:10Z",
   "pending_run_ids": [
-    "45190573465"
+    "45191236706",
+    "45191236634"
   ],
   "runs": [
     {
