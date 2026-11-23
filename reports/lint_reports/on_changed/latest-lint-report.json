@@ -1,23 +1,23 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45175760018",
-  "run_number": 534,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45175760018",
+  "run_id": "45176147158",
+  "run_number": 535,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45176147158",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "4bde6119f9dd4c9b8a358f80750c4feb8ea49432",
+  "commit_sha": "aa6ad05461b380a667c29c47cb389cdd3ff1c0cb",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T12:36:09.082440+00:00",
+  "generated_at_utc": "2026-11-23T12:38:34.082728+00:00",
   "status": "Failed",
-  "linter_source_sha": "4bde6119f9dd4c9b8a358f80750c4feb8ea49432",
+  "linter_source_sha": "aa6ad05461b380a667c29c47cb389cdd3ff1c0cb",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
-    "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43"
+    "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
   },
   "files_evaluated": [
     "skills/the-worker/references/conversation-mode.md",
@@ -70,28 +70,29 @@
     "skills/philosophy-religion-asceticism/CHANGELOG.md"
   ],
   "files_evaluated_count": 48,
-  "files_failed": 6,
+  "files_failed": 7,
   "failed_files": [
     "skills/document-standards/references/document-type-catalog.md",
     "skills/drawing/assets/daily-index-template.md",
     "skills/the-worker/references/image-provenance-and-webp.md",
     "workspace/README.md",
     "skills/the-worker/SKILL.md",
+    "skills/document-standards/SKILL.md",
     "skills/SESSION_START.md"
   ],
   "files_with_findings": 37,
-  "total_findings": 357,
-  "hard_findings": 35,
+  "total_findings": 376,
+  "hard_findings": 54,
   "advisory_findings": 322,
   "findings_by_rule": {
     "passive-voice": 281,
     "present-perfect": 41,
-    "synonym-rotation": 8,
+    "synonym-rotation": 9,
     "phrasal-verb": 5,
     "nominalization": 2,
     "marketing-adjective": 5,
     "long-sentence": 9,
-    "semicolon": 6
+    "semicolon": 24
   },
   "records": [
     {
@@ -2289,20 +2290,47 @@
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
           "line": 4,
-          "col": 162,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "was truncated",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+          "col": 238,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
           "line": 4,
-          "col": 254,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "were inspected",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+          "col": 248,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 4,
+          "col": 259,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 4,
+          "col": 272,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 4,
+          "col": 283,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
@@ -2423,7 +2451,124 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 69,
+          "col": 373,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 73,
+          "col": 384,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 77,
+          "col": 92,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 78,
+          "col": 122,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 79,
+          "col": 126,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 81,
+          "col": 171,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
           "line": 83,
+          "col": 160,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are catalogued",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 92,
+          "col": 198,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 104,
+          "col": 214,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 106,
+          "col": 179,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 106,
+          "col": 242,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are covered",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 109,
+          "col": 108,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 111,
+          "col": 131,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 132,
           "col": 39,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2432,7 +2577,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 88,
+          "line": 137,
           "col": 200,
           "rule": "long-sentence",
           "level": "advisory-free",
@@ -2441,7 +2586,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 88,
+          "line": 137,
           "col": 479,
           "rule": "present-perfect",
           "level": "advisory",
@@ -2450,7 +2595,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 88,
+          "line": 137,
           "col": 483,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2459,7 +2604,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 89,
+          "line": 138,
           "col": 136,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2468,7 +2613,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 91,
+          "line": 140,
           "col": 131,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2477,7 +2622,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 91,
+          "line": 140,
           "col": 206,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2486,7 +2631,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 92,
+          "line": 141,
           "col": 199,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2495,7 +2640,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 94,
+          "line": 143,
           "col": 262,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2504,7 +2649,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 104,
+          "line": 153,
           "col": 230,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2513,7 +2658,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 112,
+          "line": 161,
           "col": 129,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2522,7 +2667,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 127,
+          "line": 176,
           "col": 203,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2531,7 +2676,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 134,
+          "line": 183,
           "col": 57,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2540,7 +2685,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 140,
+          "line": 189,
           "col": 123,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2549,7 +2694,7 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
-          "line": 144,
+          "line": 193,
           "col": 32,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2557,11 +2702,11 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 30,
-      "hard_count": 5,
+      "count": 46,
+      "hard_count": 21,
       "baseline": 0,
-      "words": 3073,
-      "per_100_words": 1.0,
+      "words": 3639,
+      "per_100_words": 1.3,
       "path": "skills/document-standards/references/document-type-catalog.md",
       "exit_code": 1
     },
@@ -3140,7 +3285,16 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 33,
+          "line": 30,
+          "col": 64,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/the-worker/SKILL.md",
+          "line": 46,
           "col": 133,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3149,7 +3303,16 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 61,
+          "line": 48,
+          "col": 213,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "check",
+          "message": "'check' and 'validate' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "skills/the-worker/SKILL.md",
+          "line": 74,
           "col": 61,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3158,7 +3321,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 115,
+          "line": 128,
           "col": 111,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3167,16 +3330,16 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 326,
+          "line": 339,
           "col": 95,
           "rule": "synonym-rotation",
           "level": "advisory-free",
           "match": "Confirm",
-          "message": "'confirm' and 'check' name the same action. Pick one and use it every time."
+          "message": "'confirm' and 'validate' name the same action. Pick one and use it every time."
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 333,
+          "line": 346,
           "col": 98,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3185,7 +3348,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 335,
+          "line": 348,
           "col": 207,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3194,7 +3357,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 347,
+          "line": 360,
           "col": 168,
           "rule": "present-perfect",
           "level": "advisory",
@@ -3203,7 +3366,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 347,
+          "line": 360,
           "col": 172,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3211,11 +3374,11 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 10,
-      "hard_count": 4,
+      "count": 12,
+      "hard_count": 6,
       "baseline": 0,
-      "words": 4336,
-      "per_100_words": 0.2,
+      "words": 4465,
+      "per_100_words": 0.3,
       "path": "skills/the-worker/SKILL.md",
       "exit_code": 1
     },
@@ -3648,7 +3811,16 @@
       "violations": [
         {
           "file": "skills/document-standards/SKILL.md",
-          "line": 75,
+          "line": 41,
+          "col": 191,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/SKILL.md",
+          "line": 90,
           "col": 47,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3657,7 +3829,7 @@
         },
         {
           "file": "skills/document-standards/SKILL.md",
-          "line": 197,
+          "line": 212,
           "col": 37,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3665,13 +3837,13 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 2,
-      "hard_count": 0,
+      "count": 3,
+      "hard_count": 1,
       "baseline": 0,
-      "words": 1612,
-      "per_100_words": 0.1,
+      "words": 1821,
+      "per_100_words": 0.2,
       "path": "skills/document-standards/SKILL.md",
-      "exit_code": 0
+      "exit_code": 1
     },
     {
       "violations": [],
@@ -6150,23 +6322,56 @@
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
       "line": 4,
-      "col": 162,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was truncated",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "305e0414169478f6e310d27a",
+      "col": 238,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
       "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
       "line": 4,
-      "col": 254,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "were inspected",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "1b362583f0b6f9564bc66dd0",
+      "col": 248,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 4,
+      "col": 259,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 4,
+      "col": 272,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 4,
+      "col": 283,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
       "comparison": "recurring"
     },
     {
@@ -6314,7 +6519,150 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 69,
+      "col": 373,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 73,
+      "col": 384,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 77,
+      "col": 92,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 78,
+      "col": 122,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 79,
+      "col": 126,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 81,
+      "col": 171,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
       "line": 83,
+      "col": 160,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are catalogued",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "bb8de6bc648079b20917fbff",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 92,
+      "col": 198,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 104,
+      "col": 214,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 106,
+      "col": 179,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 106,
+      "col": 242,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are covered",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "195a2fd68103c17c8542eb26",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 109,
+      "col": 108,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 111,
+      "col": 131,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 132,
       "col": 39,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6325,7 +6673,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 88,
+      "line": 137,
       "col": 200,
       "rule": "long-sentence",
       "level": "advisory-free",
@@ -6336,7 +6684,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 88,
+      "line": 137,
       "col": 479,
       "rule": "present-perfect",
       "level": "advisory",
@@ -6347,7 +6695,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 88,
+      "line": 137,
       "col": 483,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6358,7 +6706,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 89,
+      "line": 138,
       "col": 136,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6369,7 +6717,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 91,
+      "line": 140,
       "col": 131,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6380,7 +6728,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 91,
+      "line": 140,
       "col": 206,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6391,7 +6739,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 92,
+      "line": 141,
       "col": 199,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6402,7 +6750,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 94,
+      "line": 143,
       "col": 262,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6413,7 +6761,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 104,
+      "line": 153,
       "col": 230,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6424,7 +6772,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 112,
+      "line": 161,
       "col": 129,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6435,7 +6783,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 127,
+      "line": 176,
       "col": 203,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6446,7 +6794,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 134,
+      "line": 183,
       "col": 57,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6457,7 +6805,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 140,
+      "line": 189,
       "col": 123,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6468,7 +6816,7 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 144,
+      "line": 193,
       "col": 32,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7018,7 +7366,18 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 33,
+      "line": 30,
+      "col": 64,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 46,
       "col": 133,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7029,7 +7388,18 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 61,
+      "line": 48,
+      "col": 213,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "check",
+      "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
+      "fingerprint": "ea1db98cd590e9b5dee0301b",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 74,
       "col": 61,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7040,7 +7410,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 115,
+      "line": 128,
       "col": 111,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7051,18 +7421,18 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 326,
+      "line": 339,
       "col": 95,
       "rule": "synonym-rotation",
       "level": "advisory-free",
       "match": "Confirm",
-      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "4b8a264993c87efe2283f852",
-      "comparison": "recurring"
+      "message": "'confirm' and 'validate' name the same action. Pick one and use it every time.",
+      "fingerprint": "6ce95bfd2d8c1456f93d2362",
+      "comparison": "new"
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 333,
+      "line": 346,
       "col": 98,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7073,7 +7443,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 335,
+      "line": 348,
       "col": 207,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7084,7 +7454,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 347,
+      "line": 360,
       "col": 168,
       "rule": "present-perfect",
       "level": "advisory",
@@ -7095,7 +7465,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 347,
+      "line": 360,
       "col": 172,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7612,7 +7982,18 @@
     },
     {
       "file": "skills/document-standards/SKILL.md",
-      "line": 75,
+      "line": 41,
+      "col": 191,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0a9f2f8f059737eb01876e1d",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/document-standards/SKILL.md",
+      "line": 90,
       "col": 47,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7623,7 +8004,7 @@
     },
     {
       "file": "skills/document-standards/SKILL.md",
-      "line": 197,
+      "line": 212,
       "col": 37,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7754,9 +8135,43 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 0,
-  "recurring_findings": 357,
-  "resolved_findings": [],
+  "new_findings": 5,
+  "recurring_findings": 371,
+  "resolved_findings": [
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 4,
+      "col": 162,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was truncated",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "305e0414169478f6e310d27a",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 4,
+      "col": 254,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "were inspected",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "1b362583f0b6f9564bc66dd0",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 326,
+      "col": 95,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Confirm",
+      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "4b8a264993c87efe2283f852",
+      "comparison": "resolved"
+    }
+  ],
   "checks": [
     {
       "name": "Wrapper shell syntax",
@@ -7774,7 +8189,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.239s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.338s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -7792,7 +8207,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 995 active Markdown files (1065 available as link targets) and 332 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 997 active Markdown files (1067 available as link targets) and 332 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
