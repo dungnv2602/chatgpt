@@ -10,7 +10,6 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-| 20261123-041640 | Make The Worker mode-independent and align lint-report formats | P1 | In Progress | User | 2026-11-23 | [Task record](tasks/20261123-041640-worker-mode-independent-and-lint-report-formats.md) |
 
 ## In Progress
 
