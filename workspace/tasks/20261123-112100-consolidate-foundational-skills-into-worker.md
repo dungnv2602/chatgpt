@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-112100
 - **Created:** 2026-11-23 11:21 UTC
-- **Updated:** 2026-11-23 11:21 UTC
+- **Updated:** 2026-11-23 11:43 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -60,8 +60,12 @@ Classify the seven candidate skills. Consolidate the baseline collaboration and 
 
 - **Foundational:** The Worker, ASD-STE100, and GitHub Actions.
 - **On demand:** Session Archiving, Agent Skill Authoring, and Document Standards.
-- **Consolidated component:** Conversation Mode becomes a mandatory component of The Worker, not a separate foundational skill.
-- **Startup cue:** Keep `start session`; do not enable automatic initialization at the beginning of a conversation.
+- **Consolidated component:** Conversation Mode is a mandatory component of The Worker, not a separate foundational skill or independently loaded entry point.
+- **Session Archiving boundary:** Move its startup gate and approved workspace boundary into the foundational workflow. Keep archive, drawing-session, provenance, and media procedures in the on-demand Session Archiving skill.
+- **Agent Skill Authoring:** Keep it on demand. Skill authoring is a specialist task, not a prerequisite for normal project work.
+- **Document Standards:** Keep it on demand. The Worker invokes it through the mandatory document-authoring gate whenever a repository document must be created or materially revised.
+- **Separate standards:** Keep ASD-STE100 and GitHub Actions as separate foundational skills. Their controlled-language and workflow-operation responsibilities are distinct from task continuity and conversation behavior.
+- **Startup cue:** Initialization occurs only after the explicit `start session` cue. A drawing-session or novelist request does not trigger foundational initialization.
 
 ## 6. Progress Log
 
@@ -72,24 +76,36 @@ Classify the seven candidate skills. Consolidate the baseline collaboration and 
 - **References:** `skills/SESSION_START.md`, `skills/INITIALIZATION_POLICY.md`, `skills/session-archiving/SKILL.md`, `skills/conversation-mode/SKILL.md`, `skills/the-worker/SKILL.md`, `skills/agent-skill-authoring/SKILL.md`, `skills/document-standards/SKILL.md`, `skills/README.md`, `workspace/README.md`, `workspace/task_board.md`.
 - **Next:** Integrate the foundational collaboration and startup behavior into The Worker. Update activation metadata, compatibility pointers, indexes, and initialization policy.
 
+### 2026-11-23 11:43 UTC
+
+- **Action:** Consolidated baseline conversation and session-continuity responsibilities into The Worker. Moved the cross-project workspace boundary from Session Archiving. Centralized the startup gate in `skills/SESSION_START.md`. Updated metadata, compatibility paths, indexes, and specialist dependency rules.
+- **Result:** The foundational set is The Worker (with its mandatory Conversation Mode reference), ASD-STE100, and GitHub Actions. Session Archiving, Agent Skill Authoring, and Document Standards are on demand. Session Archiving remains a required on-demand dependency for Drawing workflows that use session briefs and prompt provenance. Conversation Mode's former skill path remains as a compatibility pointer.
+- **Startup safeguard:** A drawing-session or novelist request does not initiate foundational loading. The user must first give the explicit `start session` cue.
+- **Rationale:** Conversation Mode governs collaboration in every project task and therefore belongs inside The Worker. Session Archiving contains specialist media/archive operations; only its universal startup gate and workspace boundary were moved. Agent Skill Authoring and Document Standards are task-specific and are not foundational prerequisites. ASD-STE100 and GitHub Actions remain independent foundational skills because they govern separate cross-cutting domains.
+- **Changed paths:** `skills/the-worker/SKILL.md`; new `skills/the-worker/references/conversation-mode.md`; `skills/session-archiving/SKILL.md`; `skills/conversation-mode/SKILL.md` compatibility pointer; `skills/agent-skill-authoring/SKILL.md`; `skills/SESSION_START.md`; `skills/INITIALIZATION_POLICY.md`; `skills/README.md`; `skills/document-standards/references/document-type-catalog.md`; `workspace/README.md`; `workspace/discussion.md`.
+- **Implementation commits:** [983f930](https://github.com/dungnv2602/chatgpt/commit/983f930b1ecc1ae28c06859d8daf152e1fcd89ce), [05b062a](https://github.com/dungnv2602/chatgpt/commit/05b062aead329a7ddbdeb07061834a1b04ef3f49), [7d5507b](https://github.com/dungnv2602/chatgpt/commit/7d5507b267be995a90086506f7b255cab6526520), [eccd988](https://github.com/dungnv2602/chatgpt/commit/eccd988dad78c1bd088ae5b73f879a41f2a526ed), [6376a06](https://github.com/dungnv2602/chatgpt/commit/6376a06fb118cf406b2d542c3d349689a70b682b), [e684efc](https://github.com/dungnv2602/chatgpt/commit/e684efc4e633fc0a5f27eee30a91f7f4fd5066e5), [62c1646](https://github.com/dungnv2602/chatgpt/commit/62c1646e0d7472fa4adf319da2df2ed47afc4709), [5d2eb99](https://github.com/dungnv2602/chatgpt/commit/5d2eb9939aa4902d5e770593a425e61198a80024), [62f2904](https://github.com/dungnv2602/chatgpt/commit/62f290481dada043d062b41b1788e2166165a0c0), [b123a10](https://github.com/dungnv2602/chatgpt/commit/b123a10f987ebbee2dc2989de69c50e794b6353f), [91c4b11](https://github.com/dungnv2602/chatgpt/commit/91c4b11af1941df09bcbb02d44bda06f6faba1f7), [9001aa1](https://github.com/dungnv2602/chatgpt/commit/9001aa1cdedab1ca1c76b8991e9c174cc9dc89a3), [62f2904](https://github.com/dungnv2602/chatgpt/commit/62f290481dada043d062b41b1788e2166165a0c0), [59c4751](https://github.com/dungnv2602/chatgpt/commit/59c47519b03509504893b6a299a2d89d1739a13f).
+- **Verification:** Every changed skill, reference, startup, policy, index, and workspace file was retrieved from branch `gpt` after its write. The read-back blob IDs matched the committed blob IDs. No CI or local lint was run; validation was limited to repository read-back and cross-file consistency checks.
+- **Next:** Prepare the final Done archive record, verify the archive copy, update the retention index, delete the active task record, and reconcile the task board.
+
 ## 7. Current State
 
-The classification and consolidation design are established. No project source files have been changed yet. The task is the current execution.
+The approved architecture and workflow changes are committed to branch `gpt`. Conversation Mode is now a mandatory Worker component. The startup and workspace-boundary rules have been consolidated under The Worker and `skills/SESSION_START.md`. Metadata, compatibility links, catalogs, and indexes have been aligned. All changed files have passed exact GitHub read-back checks. The task remains current until the final archive and board transaction succeeds.
 
 ## 8. Remaining Work
 
-- Integrate Conversation Mode and the mandatory startup gate into The Worker.
-- Demote Session Archiving and Agent Skill Authoring to on-demand activation.
-- Retain Document Standards as on-demand.
-- Update all authoritative initialization and index files.
-- Read back each changed path and reconcile any contradictions.
+- Complete the mandatory task archive transaction.
+- Add the verified archive record to the retention index.
+- Remove the active task record and move the task board entry to Historical.
+- Verify the archive, index, and board after their writes.
 
 ## 9. Next Actions
 
-1. Update The Worker and its mandatory collaboration reference.
-2. Update Session Archiving, Conversation Mode compatibility entry point, and Agent Skill Authoring activation metadata.
-3. Update Session Start, Initialization Policy, Skills README, and Workspace README.
-4. Read back all changed paths and report the commit.
+1. Prepare the final Done record with a UTC archive timestamp and complete verification.
+2. Confirm that the destination in `archive/tasks/` does not already exist.
+3. Create the archive copy once and read back the exact content.
+4. Add the exact archive path and timestamp to `.github/archive-retention-index.json`.
+5. Delete the active task path and move the task board entry to Historical, linking the archive path and archival commit.
+6. Read back the archive, retention index, and task board.
 
 ## 10. References
 
@@ -107,11 +123,11 @@ The classification and consolidation design are established. No project source f
 
 ## 11. Verification
 
-- **Check:** Inspect candidate skills and current activation dependencies.
-- **Method:** Retrieve exact files from branch `gpt` and inspect metadata, scope, loading rules, and cross-references.
-- **Result:** Passed for the listed paths.
-- **Limitations:** Changes and post-commit read-back remain pending.
+- **Check:** Classify the candidate skills and verify the new foundational loading and specialist activation rules.
+- **Method:** Retrieve the current files from branch `gpt`; inspect frontmatter, operational scope, dependency links, initialization triggers, compatibility pointers, index entries, and catalog ownership. After each write, retrieve the exact path and compare the returned blob ID with the committed content ID.
+- **Result:** Passed. The foundational set is The Worker plus its mandatory Conversation Mode reference, ASD-STE100, and GitHub Actions. Session Archiving, Agent Skill Authoring, and Document Standards are task-specific. A drawing-session or novelist request cannot trigger foundation loading. All changed paths read back with matching blob IDs.
+- **Limitations:** Task archival, retention-index registration, active-record deletion, and task-board reconciliation remain pending. No CI or local lint was run; neither is required for this documentation-only scope.
 
 ## 12. Handoff Instructions
 
-Continue the approved consolidation on branch `gpt`. Load The Worker as the one baseline collaboration skill, including its mandatory Conversation Mode reference. Keep ASD-STE100 and GitHub Actions as separate foundational skills. Do not load Session Archiving, Agent Skill Authoring, or Document Standards at ordinary session start. Preserve each on-demand skill for its specialist task. Verify every changed path after commit.
+Complete the mandatory task archive transaction. Keep the task In Progress and Archived: No until the archive copy, retention index, and board reconciliation are fully verified. The implemented workflow must load The Worker (including its Conversation Mode reference), ASD-STE100, and GitHub Actions only after the explicit `start session` cue. Preserve Session Archiving, Agent Skill Authoring, and Document Standards as on-demand.
