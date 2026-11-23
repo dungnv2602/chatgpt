@@ -1,0 +1,8 @@
+{
+  "algorithm": "SHA-256",
+  "schema_version": "1.1.0",
+  "files": {
+    "report.md": "053fe94961d2ddd16c1ad444e8eb1fa11933a0db72c0f67034c4439cc18f61a2",
+    "report.json": "efd8a3a44a86a7753249f1e3f0f1f6fd4812048af38bd7f2191a42b190e07225"
+  }
+}
