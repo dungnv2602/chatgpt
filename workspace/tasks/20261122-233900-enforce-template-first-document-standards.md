@@ -5,7 +5,7 @@
 - **ID:** 20261122-233900
 - **Template version:** 1.0
 - **Created:** 2026-11-22 23:39 UTC
-- **Updated:** 2026-11-23 01:45 UTC
+- **Updated:** 2026-11-23 02:06 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -266,7 +266,12 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **Action:** Completed the focused field-contract audit of all eight Version 1.1 novel templates and clarified empty repeatable structures.
 - **Result:** Added a catalog matrix for required baselines, conditional and optional content, and repeatable structures. Clarified zero-entry handling in the novel, character-profile, development-outline, arc, and scene templates. Existing open-discussion and illustration templates already define their conditional/optional behavior. No field structure changed, so template versions remain 1.1. Every changed template and the catalog were fetched again and the inserted text was confirmed.
 - **References:** `skills/document-standards/references/document-type-catalog.md` commit `6195b82412ae0057f0a1c07c6cfd673e09d2e84f` and follow-up commit `81923a8f1b9271ffd04da1a9a375baa9c18e99d5`; novel template clarification commits `d7223bf0bf4b1a0601f5bbfa8a38e592b85272b8`, `a6c802d092e21236bbd96ce047e2b641e4890f62`, `f082101227042bf7cfa8098f56398748f9bc813b`, `d545533a04c0addb1632549adc328191ae3c71c8`, and `72c32a8a79c9578048f4e383886f35ecfd453957`.
-- **Next:** Obtain explicit authorization for the dedicated hosted validation workflow; do not modify workflow files before approval.
+### 2026-11-23 02:06 UTC
+
+- **Action:** Implemented the approved dedicated GitHub Actions validation workflow and executed its first hosted run.
+- **Result:** Created `.github/workflows/validate-document-standards.yml` with a narrow `gpt` push path filter and manual-dispatch support, least-privilege read-only permissions, a 10-minute timeout, 13 regression tests, and the catalog validator. The workflow file was read back exactly. First hosted run `45097927720` reached the test step: 12 tests passed and one failed because its fixture placed the Python regression-test path in the canonical-authority column while expecting no Python authority. Corrected the fixture so the test path is cited in the finding column and the canonical path remains non-Python. The corrected test file was read back. A new run `45098008709` was observed In Progress at the first status check; per GitHub Actions policy, do not poll or wait.
+- **References:** Workflow commit `6d75ab6778993cc15dad2680c207f354a50f7105`; fixture correction commit `44e4e4bdbf9d9c20f349d5e29b70c8ea94409cd4`; discussion update `eb0ad1f93fbe7edb3f252f07fc87885f7de86539`.
+- **Next:** Inspect the completed result of run `45098008709` during the next bounded CI preflight. If it passes, complete task-board/record closeout. If it fails, diagnose the exact failure before changing anything.
 
 ## 7. Current State
 
@@ -282,6 +287,7 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - Novel documents use the current Version 1.1 template set. The active Novel-02 open-discussion register and relationship-progression outline use content-specific layouts; preserve them and use canonical templates for new records or material revisions. Six Novel-01 illustration notes remain Version 1.0 legacy records across Scenes 002–005. Three legacy illustration-prompt records exist in Scenes 003–005; Scene-003 declares Version 1.0, while Scene-004 and Scene-005 lack version frontmatter. No current character-profile record was found in the inspected projects. Do not mass-migrate untouched historical records.
 - The eight Version 1.1 novel templates now have a field-contract matrix in the Document Type Catalog. Required baselines, conditional/optional content, and repeatable structures are recorded. Five templates clarify how to represent empty repeatable blocks/tables; no field structure changed and no version increment was required.
 - The image asset directory contract is embedded in `images/README.md`. The image takeout hand-off is validated by `skills/session-archiving/scripts/process_takeout.py`; `images/takeout/HANDOFF.yml` is the current draft example (`status: draft`). The same script defines conversion-report and manifest columns. `verify_published_manifest.py` checks published data and links.
+- The Document Standards catalog validator now has a dedicated hosted workflow at `.github/workflows/validate-document-standards.yml`. Its first run exposed a contradictory regression-test fixture; the fixture was corrected and a second hosted run is pending completion.
 - The processor test suite covers important intake and publication paths. GitHub Actions run #54 passed all 36 tests, including invalid hand-off metadata, metadata propagation into the generated drawing-session manifest, and manifest compatibility cases. Its publication-verification step found no drawing-session manifests in the run workspace, so it did not verify live manifest rows.
 - The three master catalogues have been reviewed. Images contains standalone prompt blocks, Poses mixes bullet ideas and prose, and Prompts groups scene-specific prompt records. Keep them as lightweight collections; no common entry schema is justified.
 - Archive policy and retention state are cataloged as embedded contracts; GitHub Actions workflow YAML is exempt under its external schema, and the repository-wide STE lint report is workflow-owned. The archive-retention workflow's manual and workflow-call force triggers remain an unresolved user policy question.
@@ -432,6 +438,11 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **Method:** Read all eight Version 1.1 novel templates; compare required, conditional, optional, enumerated, and repeatable content; update the catalog matrix and clarify empty-row/block conventions where needed; fetch every changed path again.
 - **Result:** All eight templates are represented in the matrix. Five template files and the catalog were updated and read back successfully. Open-discussion and illustration templates already expressed their conditional/optional behavior. No format fields changed; Version 1.1 remains current.
 - **Limitations:** This is a template-level structural audit. It does not assert that every historical novel record has been migrated or that creative content is semantically complete.
+
+- **Check:** Dedicated hosted catalog validation workflow and regression suite.
+- **Method:** Read back `.github/workflows/validate-document-standards.yml`; inspect GitHub Actions run `45097927720` and its job log; correct the contradictory fixture; read back the corrected test; inspect the next run status once.
+- **Result:** Workflow structure and corrected test fixture are verified by remote read-back. First run failed at the test step (12 passed, one fixture assertion failed); catalog validation was skipped. Corrected run `45098008709` was In Progress at the first status check.
+- **Limitations:** The corrected run's final conclusion is not yet known. Do not mark the task complete until the completed hosted run passes both tests and catalog validation.
 
 ## 12. Handoff Instructions
 
