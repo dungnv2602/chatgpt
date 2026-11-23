@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 — Close the default-branch test gap:** The scheduled workflow still runs from `main` until a retention commit synchronizes the updated workflow from `gpt`. Put the six-test self-check inside the cleanup script so the currently active scheduled workflow runs tests before any deletion. Remove the duplicate workflow test step. Then read back the script and workflow. Do not change `main` directly or scan `/archive`.
+- **2026-11-23 — Harden scheduled-only execution:** Require both GitHub Actions execution context and `GITHUB_EVENT_NAME=schedule`; test both conditions. Then verify the final script, test suite, workflow, policy docs, and changed-file lint filters. Keep `main` unchanged and do not scan `/archive`.
 
 - **2026-11-23 — No active execution task:** Task 20261122-233900 is Done and archived. No eligible Ready task exists. Await explicit user direction; do not invent a new task or change the separate archive-retention workflow.
 
