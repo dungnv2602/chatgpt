@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#444](https://github.com/dungnv2602/chatgpt/actions/runs/45132710256)
-- **Run ID / attempt:** 45132710256 / 1
+- **Run:** [#445](https://github.com/dungnv2602/chatgpt/actions/runs/45134814096)
+- **Run ID / attempt:** 45134814096 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 90be84e64a8c0d3bc80b65388c33df0fbbef9bc2
+- **Branch / commit:** gpt / fc6d240bc70b7db33f3f9dbcc0a695f7b611d830
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 90be84e64a8c0d3bc80b65388c33df0fbbef9bc2
-- **Generated (UTC):** 2026-11-23T07:40:10.223715+00:00
+- **Linter source SHA:** fc6d240bc70b7db33f3f9dbcc0a695f7b611d830
+- **Generated (UTC):** 2026-11-23T07:57:31.895780+00:00
 
 ## 1. Executive summary
 
@@ -190,7 +190,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.319s
+Ran 4 tests in 0.253s
 
 OK
 ~~~
@@ -223,7 +223,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 279 active Markdown files (344 available as link targets) and 337 local Markdown links.
+Scanned 300 active Markdown files (365 available as link targets) and 337 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
