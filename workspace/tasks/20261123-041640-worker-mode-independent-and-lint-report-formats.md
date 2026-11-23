@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-041640
 - **Created:** 2026-11-23 04:16 UTC
-- **Updated:** 2026-11-23 04:16 UTC
+- **Updated:** 2026-11-23 04:18 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -67,30 +67,38 @@ Make task operations and discussion-register maintenance mode-independent. Apply
 - **References:** GitHub combined status query for `6e90d34593e5c13059d2b0c598b345366de84a56`; `workspace/discussion.md`.
 - **Next:** Continue with the approved repository changes. Recheck CI during a later mandatory preflight when run-list access is available.
 
+
+
+### 2026-11-23 04:18 UTC
+
+- **Action:** Updated the Worker, Conversation Mode, Session Archiving, workspace README, and Document Type Catalog.
+- **Result:** The discussion register now applies in both modes. Default Mode retains normal chat detail. Condensed Mode retains the short single-link response rule. The catalog now identifies the repository-wide report as an embedded contract and the changed-document report as generator-owned.
+- **References:** `skills/the-worker/SKILL.md`, `skills/conversation-mode/SKILL.md`, `skills/session-archiving/SKILL.md`, `workspace/README.md`, `skills/document-standards/references/document-type-catalog.md`.
+- **Next:** Review whether report-format assets are needed. Do not create a duplicate template. Verify the final policy and catalog changes.
+
 ## 7. Current State
 
 - The discussion register was updated and read back on `gpt`.
 - The workspace board has no active task rows. This task record is being added as the current execution.
-- The current Worker and Conversation Mode instructions conflict with the user's new mode policy.
-- The report catalog lacks a changed-document lint-report entry.
+- The Worker, Conversation Mode, Session Archiving, workspace README, and report catalog now reflect the user's mode-independent policy.
+- The catalog now includes both lint-report scopes with the appropriate embedded-contract and generator-owned classes.
 - Hosted CI status is unverified.
 
 ## 8. Remaining Work
 
-- Update The Worker, Conversation Mode, Session Archiving, and workspace README.
-- Correct the lint-report document type entries in the catalog.
-- Decide whether a generator-consumed external template is needed. Do not duplicate the current generator contract.
+- Decide whether an external template is needed. The Document Standards skill prohibits duplicate templates for generated formats.
+- Complete final read-back and branch-head verification.
+- Ask for separate authorization before any `.github/workflows/*` change.
 - Update the task board.
 - Read back every changed path and verify the resulting branch head.
 - Record any CI limitation accurately.
 
 ## 9. Next Actions
 
-1. Update mode-independent task and discussion-register rules.
-2. Update workspace guidance and startup instructions.
-3. Correct lint-report catalog classifications.
-4. Update the task board and verify all changed files.
-5. Reconcile the discussion register and handoff.
+1. Inspect the generator-owned report format and test contract.
+2. Determine whether any external template can be consumed without workflow changes.
+3. Complete read-back and branch-head verification.
+4. Reconcile the discussion register and handoff.
 
 ## 10. References
 
