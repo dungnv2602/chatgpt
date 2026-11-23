@@ -300,6 +300,7 @@ def upsert_finding(ledger, observation):
     return "updated" if before != json.dumps(existing, sort_keys=True, ensure_ascii=False) else "unchanged"
 
 def validate_semantics(ledger):
+    finding_ids = {finding.get("finding_id") for finding in ledger["findings"] if isinstance(finding, dict)}
     for finding in ledger["findings"]:
         status = finding["status"]
         if status == "resolved":
@@ -319,8 +320,8 @@ def validate_semantics(ledger):
                 raise LedgerError("Accepted finding requires documented risk acceptance: " + finding["finding_id"])
         if status == "duplicate":
             duplicate_of = finding.get("duplicate_of")
-            if not duplicate_of or duplicate_of == finding["finding_id"]:
-                raise LedgerError("Duplicate finding requires a different duplicate_of ID: " + finding["finding_id"])
+            if not duplicate_of or duplicate_of == finding["finding_id"] or duplicate_of not in finding_ids:
+                raise LedgerError("Duplicate finding requires an existing, different duplicate_of ID: " + finding["finding_id"])
 
 def atomic_write(path, payload):
     path.parent.mkdir(parents=True, exist_ok=True)

@@ -222,6 +222,14 @@ class LedgerTests(unittest.TestCase):
         with self.assertRaises(LEDGER.LedgerError):
             LEDGER.indexed_reports(self.root)
 
+    def test_duplicate_status_requires_an_existing_target(self):
+        with self.assertRaises(LEDGER.LedgerError):
+            LEDGER.validate_semantics({"findings":[{"finding_id":"finding-1","status":"duplicate","duplicate_of":"missing"}]})
+        LEDGER.validate_semantics({"findings":[
+            {"finding_id":"finding-1","status":"open"},
+            {"finding_id":"finding-2","status":"duplicate","duplicate_of":"finding-1"},
+        ]})
+
     def test_resolved_status_requires_fix_and_successful_validation(self):
         finding = {
             "finding_id":"lint-a1b2c3d4e5f6","source_family":"lint","category":"rule","title":"A finding",
