@@ -2,13 +2,13 @@
 
 ## 1. Mandatory prompt-only adjustment
 
-For every request to adjust, revise, refine, or change an existing result, use the **successful authored prompt that produced the target result** as the sole baseline. Revise that prompt and generate a fresh result. Never use the existing image itself as the editing source or as a visual reference.
+When the user asks to adjust, revise, refine, or change an existing result, use the **successful authored prompt that produced it** as the sole baseline. Revise that prompt and generate a fresh result. Never use the existing image itself as the editing source or as a visual reference.
 
 - Locate the exact successful prompt assigned as the baseline.
-- Verify that it produced the target result, or that the user approved it for the intended purpose.
+- Check that it produced the target result, or that the user approved it for the intended purpose.
 - Copy the complete authored prompt verbatim. Do not paraphrase, summarize, reconstruct, or rewrite it.
 - Apply only the requested change directly to the copied text. Preserve every other word, order, and detail.
-- Keep all meta-references out of the submitted prompt. Never include attempt numbers, file names, paths, repository records, prompt-record references, generation IDs, retrieval instructions, or references to a prompt, earlier wording, previous instructions, or another record.
+- Keep all meta-references out of the submitted prompt. Never include attempt numbers, file names, paths, repository records, or prompt-record references. Exclude generation IDs, retrieval instructions, and references to a prompt, earlier wording, previous instructions, or another record.
 - Do not write phrases such as "as described in the previous prompt", "same as before", "use the earlier version", or equivalent wording.
 - Keep image references and editing-operation language out of the submitted prompt. Describe the final visual result directly.
 - Generate a fresh result from the revised prompt and assess it against the assigned prompt and the requested changes.
@@ -25,7 +25,7 @@ If the successful prompt is missing or incomplete, use the active session brief 
 
 The prompt-only rule applies whenever the user asks to adjust an existing result. Do not use an image attachment for identity, composition, style, comparison, or direct-edit reference during that adjustment. Resolve the intended visual content from the successful authored prompt and the user's written change request.
 
-Image references may be used for other drawing tasks only when the user explicitly assigns a reference role and the task is not an adjustment of an existing result. This does not create an exception to the prompt-only adjustment rule.
+Use image references for other drawing tasks only when the user explicitly assigns a reference role. Do not use them to adjust an existing result. This does not create an exception to the prompt-only adjustment rule.
 
 ## 3. Revise the proven prompt, not the image
 
