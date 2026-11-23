@@ -79,6 +79,13 @@ class ClassificationTests(unittest.TestCase):
         self.assertTrue(REPORT.markers(cleaned))
 
 
+class SchemaTests(unittest.TestCase):
+    def test_schema_rejects_invalid_capture_stage(self):
+        schema = json.loads(REPORT.SCHEMA_PATH.read_text(encoding="utf-8"))
+        with self.assertRaises(ValueError):
+            REPORT.validate_schema({"stage": "after_completion"}, schema["properties"]["capture"])
+
+
 class StorageTests(unittest.TestCase):
     def test_integrity_and_immutable_history(self):
         with tempfile.TemporaryDirectory() as temp:

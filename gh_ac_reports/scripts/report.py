@@ -72,6 +72,40 @@ def markers(value):
     return output
 
 
+
+def validate_schema(value, schema, path="$"):
+    expected = schema.get("type")
+    if expected:
+        allowed = expected if isinstance(expected, list) else [expected]
+        checks = {
+            "object": lambda item: isinstance(item, dict),
+            "array": lambda item: isinstance(item, list),
+            "string": lambda item: isinstance(item, str),
+            "integer": lambda item: isinstance(item, int) and not isinstance(item, bool),
+            "number": lambda item: isinstance(item, (int, float)) and not isinstance(item, bool),
+            "null": lambda item: item is None,
+        }
+        if not any(checks[name](value) for name in allowed):
+            raise ValueError(path + " has an invalid type")
+    if "const" in schema and value != schema["const"]:
+        raise ValueError(path + " must equal " + repr(schema["const"]))
+    if "enum" in schema and value not in schema["enum"]:
+        raise ValueError(path + " has an unsupported value")
+    if isinstance(value, dict):
+        for key in schema.get("required", []):
+            if key not in value:
+                raise ValueError(path + " is missing " + key)
+        properties = schema.get("properties", {})
+        for key, item in value.items():
+            if key in properties:
+                validate_schema(item, properties[key], path + "." + key)
+            elif schema.get("additionalProperties") is False:
+                raise ValueError(path + "." + key + " is not allowed")
+    if isinstance(value, list) and "items" in schema:
+        for position, item in enumerate(value):
+            validate_schema(item, schema["items"], path + "[" + str(position) + "]")
+
+
 def api_get(repo, path, errors, source):
     token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
     if not token:
@@ -507,12 +541,8 @@ def write_report(root, report, log_files):
         target = parent / (folder + "-capture-" + str(suffix))
         suffix += 1
     report["history_path"] = "history/" + str(run["workflow_id"]) + "/" + target.name
-    required = ("schema_version", "source_run", "capture", "classification", "jobs", "check_runs",
-                "annotations", "artifacts", "capture_errors", "history_path")
-    if any(key not in report for key in required):
-        raise ValueError("The report is missing a required schema field.")
-    if report["schema_version"] != SCHEMA_VERSION:
-        raise ValueError("Unexpected report schema version.")
+    schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+    validate_schema(report, schema)
     target.mkdir()
     for relative, value in log_files.items():
         path = target / relative
@@ -563,7 +593,7 @@ def run_sweep(repo, root):
     pending = set(str(x) for x in index.get("pending_run_ids", []))
     candidates = {}
     for run in runs:
-        if run.get("path") == REPORT_WORKFLOW:
+        if str(run.get("path") or "").split("@", 1)[0] == REPORT_WORKFLOW:
             continue
         if timestamp(run.get("created_at")) > 0 and timestamp(run.get("created_at")) >= timestamp(watermark):
             candidates[str(run["id"])] = run
@@ -615,11 +645,23 @@ def run_sweep(repo, root):
                 pending.add(run_id)
                 continue
             capture_one(repo, root, run_id, "post_run", force=True)
-            done = root / "requests" / "processed" / request_file.name
-            done.parent.mkdir(parents=True, exist_ok=True)
-            shutil.move(str(request_file), str(done))
-            pending.discard(run_id)
-            processed += 1
+            current_index = load_index(root)
+            attempt = int(metadata.get("run_attempt") or 1)
+            complete = any(
+                str(item.get("run_id")) == run_id
+                and int(item.get("attempt") or 1) == attempt
+                and item.get("capture_stage") == "post_run"
+                and item.get("report_status") == "Complete"
+                for item in current_index["runs"]
+            )
+            if complete:
+                done = root / "requests" / "processed" / request_file.name
+                done.parent.mkdir(parents=True, exist_ok=True)
+                shutil.move(str(request_file), str(done))
+                pending.discard(run_id)
+                processed += 1
+            else:
+                pending.add(run_id)
         except Exception as exc:
             print("Backfill request remains pending: " + request_file.name + " " + redact(exc), file=sys.stderr)
 
