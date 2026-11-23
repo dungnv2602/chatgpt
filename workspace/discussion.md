@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 00:56 UTC —** Update the template-first task record with the verified hosted-runner result. Correct stale test status and refresh remaining work and next actions without changing workflow files.
+- **2026-11-23 01:13 UTC —** Review representative records for catalog types not yet covered by the sample audit. Record only evidenced legacy exceptions; preserve existing records and do not modify archived content.
 
 ## Open Discussions
 
@@ -11,7 +11,7 @@ _No open discussions._
 ### 2026-11-23 00:56 UTC — Image takeout regression tests
 
 - **Result:** GitHub Actions run [#54](https://github.com/dungnv2602/chatgpt/actions/runs/45091120330) completed successfully. The `Test takeout processor` step passed all 36 tests, including the new invalid hand-off metadata case and manifest regression coverage.
-- **Verification:** The job steps and decoded logs show `Ran 36 tests` and `OK`; publication verification also completed successfully. No workflow was modified or manually dispatched.
+- **Verification:** The job steps and decoded logs show `Ran 36 tests` and `OK`. The publication-verification step found no drawing-session manifests in the run workspace, so it did not verify live manifest rows. No workflow was modified or manually dispatched.
 
 ### 2026-11-23 00:56 UTC — Condensed Mode pre-step briefing
 
