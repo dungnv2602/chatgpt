@@ -129,7 +129,7 @@ Initialization is conditional. Do not load project instructions or skills at the
 - **Date:** 2026-11-23
 - **Requested change:** Remove mandatory CI preflight and repair steps before prompts and after initialization.
 - **Reason:** Unrelated workflow failures must not delay a new user request.
-- **Behavioral impact:** Initialization depends on successful skill retrieval. CI review and repair apply only when the user asks or the current task depends on a relevant workflow. Use `reports/gh_ac_reports/` for workflow evidence and `reports/lint_reports/` for detailed lint findings; track recurring issues in `reports/triage/ledger.json`.
+- **Behavioral impact:** Initialization depends on successful skill retrieval. CI review and repair apply only when the user asks or the current task depends on a relevant workflow. Use `reports/gh_ac_reports/` for workflow evidence and `reports/lint_reports/` for detailed lint findings. Track recurring issues in `reports/triage/ledger.json`.
 - **Files modified:** Session Start, Session Archiving, The Worker, GitHub Actions, Agent Skill Authoring, ASD-STE100, and this policy file.
 - **Verification:** Pending hosted workflow validation and exact read-back.
 
