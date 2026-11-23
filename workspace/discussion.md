@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 02:06 UTC —** Corrected the contradictory regression fixture and read it back. The path-filtered workflow reran automatically on commit `44e4e4bdbf9d9c20f349d5e29b70c8ea94409cd4` (run `45098008709`) and was still in progress at the first status check. Per repository CI policy, do not poll or wait; inspect its completed result during the next bounded CI preflight. The task remains In Progress until that result is known.
+- **2026-11-23 — Next action:** Perform one bounded GitHub Actions status inspection for follow-up run `45098008709`. If complete, inspect its job steps and logs to verify both the 13-test suite and catalog validator. If it remains active, do not poll; leave the task open. No workflow rerun or dispatch is planned.
 
 ## Open Discussions
 
@@ -25,12 +25,10 @@
 
 - **Result:** Added six focused tests for malformed rows, directory references, Embedded Contract requirements, Generator-owned test/Python references, and template naming. The suite now has 13 test methods. Manual source-level checks found 34 catalog types and 76 exact references, with no missing non-archive paths or class-rule inconsistencies. Tests remain unexecuted pending hosted-workflow authorization.
 - **Task record:** `workspace/tasks/20261122-233900-enforce-template-first-document-standards.md`.
-
 ### 2026-11-23 01:31 UTC — Repository path inventory
 
 - **Result:** Enumerated 199 Markdown/YAML/JSON/CSV/TOML files outside `archive/`: drawings 97, skills 51, novels 33, .github 6, workspace 5, images 3, master 3, and lint_reports 1. The catalog now covers 34 document types and 76 exact references. Content review remains representative, not exhaustive; no broad archive scan was performed.
 - **Task record:** `workspace/tasks/20261122-233900-enforce-template-first-document-standards.md`.
-
 ### 2026-11-23 01:28 UTC — Workflow and generated-format catalog update
 
 - **Result:** Added archive policy, retention state, GitHub Actions configuration, and generated lint-report entries. Extended the validator's approved roots to `.github` and `lint_reports`, with a regression test for both. The catalog now contains 31 document types and 66 exact references; no directory references or malformed table rows remain. Changed files passed read-back. No workflow or archive content was modified.
