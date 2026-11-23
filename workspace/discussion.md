@@ -4,10 +4,14 @@
 
 ## Open Discussions
 
-- **2026-11-23 — Archive retention trigger scope:** .github/workflows/archive-retention.yml has a scheduled trigger plus workflow_dispatch and workflow_call inputs that can pass force; cleanup-archive.py --force bypasses the 14-day interval. The archive boundary says only the scheduled retention workflow may delete archived records. User direction is still needed on whether manual and workflow-call triggers should remain enabled. No workflow changes have been made.
+- **2026-11-23 — Archive retention trigger scope:** .github/workflows/archive-retention.yml has a scheduled trigger plus workflow_dispatch and workflow_call inputs that can pass force; cleanup-archive.py --force bypasses the 14-day interval. The archive boundary says only the scheduled retention workflow may delete archived records. User approved Option A (scheduled-only; remove manual/workflow-call triggers and force bypass) but explicitly said not to execute yet. No workflow changes have been made.
 - **2026-11-23 — Changed-document STE lint findings:** The repaired preflight and changed-file discovery succeed, but the downstream STE lint step still fails on existing findings in lint_reports/latest-lint-report.md, skills/agent-skill-authoring/SKILL.md, and skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md. This is separate from the completed template-first task. Do not weaken lint coverage.
 
 ## Reports
+
+### 2026-11-23 — Explain changed-document STE lint findings
+
+- **Intended action:** Read the current lint report and the two flagged authoring documents on branch `gpt`, then explain the concrete findings and distinguish them from the already-passing document-standards checks. No lint rules or project files will be changed.
 
 ### 2026-11-23 02:10 UTC — Template-first standards task closed
 
