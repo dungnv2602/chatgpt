@@ -1,0 +1,250 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45123530858",
+    "number": 24,
+    "attempt": 1,
+    "workflow_id": 427313089,
+    "workflow_name": "Validate Document Standards",
+    "workflow_path": ".github/workflows/validate-document-standards.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123530858",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "167c964f769ae57360c86c8b7b5781389a96d614",
+    "status": "completed",
+    "conclusion": "failure",
+    "created_at": "2026-11-23T06:21:19Z",
+    "run_started_at": "2026-11-23T06:21:19Z",
+    "updated_at": "2026-11-23T06:21:50Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Make full-lint and document-standards reporters non-blocking"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T06:24:09Z",
+    "completeness": "Complete",
+    "reporter_job": null
+  },
+  "classification": {
+    "state": "failure",
+    "observed_conclusion": "failure",
+    "projected_conclusion": null,
+    "primary_category": "checkout_or_action_download",
+    "categories": [
+      "checkout_or_action_download"
+    ],
+    "issues": [
+      {
+        "category": "checkout_or_action_download",
+        "job_id": "137522539787",
+        "job_name": "validate-document-standards",
+        "step_number": 5,
+        "step_name": "Validate the document type catalog",
+        "blocking": true,
+        "confidence": "medium",
+        "message": "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:21:30.3480967Z ERROR: Line 46: unsafe or out-of-scope path 'gh_ac_reports/README.md'."
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "137522539787",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-23T06:21:21Z",
+      "completed_at": "2026-11-23T06:21:32Z",
+      "runner_name": "GitHub Actions 1000001136",
+      "runner_id": 1000001136,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:21:22Z",
+          "completed_at": "2026-11-23T06:21:23Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:21:23Z",
+          "completed_at": "2026-11-23T06:21:28Z"
+        },
+        {
+          "number": 3,
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:21:28Z",
+          "completed_at": "2026-11-23T06:21:28Z"
+        },
+        {
+          "number": 4,
+          "name": "Run catalog validator regression tests",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:21:28Z",
+          "completed_at": "2026-11-23T06:21:30Z"
+        },
+        {
+          "number": 5,
+          "name": "Validate the document type catalog",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-11-23T06:21:30Z",
+          "completed_at": "2026-11-23T06:21:30Z"
+        },
+        {
+          "number": 9,
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T06:21:30Z",
+          "completed_at": "2026-11-23T06:21:30Z"
+        },
+        {
+          "number": 10,
+          "name": "Post Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:21:30Z",
+          "completed_at": "2026-11-23T06:21:30Z"
+        },
+        {
+          "number": 11,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:21:30Z",
+          "completed_at": "2026-11-23T06:21:30Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 30689,
+        "path": "logs/job-137522539787.log",
+        "error": null,
+        "marker_lines": [
+          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:21:30.3480967Z ERROR: Line 46: unsafe or out-of-scope path 'gh_ac_reports/README.md'.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:21:30.3482483Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/scripts/report.py'.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:21:30.3483873Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/assets/report-template.md'.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:21:30.3485259Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/assets/report-schema.json'.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:21:30.3486381Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/scripts/test_report.py'.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:21:30.3487529Z Catalog validation failed: 5 error(s), 29 document type(s), 59 reference(s).",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:21:30.3580576Z ##[error]Process completed with exit code 1."
+        ]
+      }
+    },
+    {
+      "id": "137522615884",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-23T06:21:34Z",
+      "completed_at": "2026-11-23T06:21:50Z",
+      "runner_name": "GitHub Actions 1000001140",
+      "runner_id": 1000001140,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:21:34Z",
+          "completed_at": "2026-11-23T06:21:36Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out gpt for diagnostic reporting",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:21:36Z",
+          "completed_at": "2026-11-23T06:21:45Z"
+        },
+        {
+          "number": 3,
+          "name": "Capture workflow diagnostics",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:21:45Z",
+          "completed_at": "2026-11-23T06:21:48Z"
+        },
+        {
+          "number": 5,
+          "name": "Post Capture workflow diagnostics",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:21:48Z",
+          "completed_at": "2026-11-23T06:21:48Z"
+        },
+        {
+          "number": 6,
+          "name": "Post Check out gpt for diagnostic reporting",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:21:48Z",
+          "completed_at": "2026-11-23T06:21:48Z"
+        },
+        {
+          "number": 7,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:21:48Z",
+          "completed_at": "2026-11-23T06:21:48Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 36544,
+        "path": "logs/job-137522615884.log",
+        "error": null,
+        "marker_lines": [
+          "Capture GH Actions diagnostics\tCapture workflow diagnostics\t2026-11-23T06:21:48.2561208Z Traceback (most recent call last):",
+          "Capture GH Actions diagnostics\tCapture workflow diagnostics\t2026-11-23T06:21:48.2709355Z ##[error]Process completed with exit code 1.",
+          "Capture GH Actions diagnostics\tCapture workflow diagnostics\t2026-11-23T06:21:48.2739202Z ^[[36;1m    echo \"::error::Could not rebase diagnostic evidence onto gpt.\"^[[0m",
+          "Capture GH Actions diagnostics\tCapture workflow diagnostics\t2026-11-23T06:21:48.2742583Z ^[[36;1m    echo \"::error::Push failed while origin/gpt was unchanged.\"^[[0m",
+          "Capture GH Actions diagnostics\tCapture workflow diagnostics\t2026-11-23T06:21:48.2743687Z ^[[36;1mecho \"::error::Could not publish diagnostic evidence after five attempts.\"^[[0m"
+        ]
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "137522539787",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-23T06:21:21Z",
+      "completed_at": "2026-11-23T06:21:32Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123530858/job/137522539787",
+      "app": "GitHub Actions",
+      "annotations_count": 2
+    },
+    {
+      "id": "137522615884",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-23T06:21:34Z",
+      "completed_at": "2026-11-23T06:21:50Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123530858/job/137522615884",
+      "app": "GitHub Actions",
+      "annotations_count": 2
+    }
+  ],
+  "annotations": [],
+  "artifacts": [],
+  "capture_errors": [],
+  "history_path": "history/427313089/45123530858-attempt-1-post_run"
+}

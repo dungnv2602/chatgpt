@@ -1,0 +1,238 @@
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	﻿2026-11-23T06:14:13.0161701Z Current runner version: '2.338.2'
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0239685Z ##[group]Runner Image Provisioner
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0240944Z Hosted Compute Agent
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0241761Z Version: 20261111.635
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0242632Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0243685Z Build Date: 2026-11-11T01:49:01Z
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0244654Z Worker ID: {75870a6f-0b5a-4e34-a14b-424b8005889a}
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0246401Z Region: eastus2
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0247333Z Cloud: Azure
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0248076Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0250359Z ##[group]Operating System
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0251213Z Ubuntu
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0251920Z 26.04.1
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0252724Z LTS
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0253432Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0254184Z ##[group]Runner Image
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0275502Z Image: ubuntu-26.04
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0276632Z Version: 20261116.202.1
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0278581Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0280682Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0282081Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0283839Z ##[group]GITHUB_TOKEN Permissions
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0287721Z Actions: read
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0288570Z Checks: read
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0289426Z Contents: write
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0290201Z Metadata: read
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0290922Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0294028Z Secret source: Actions
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0315941Z Cache mode: write
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.0317697Z Prepare workflow directory
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.1326077Z Prepare all required actions
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.1485255Z Getting action download info
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.3436004Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.5168578Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.8224711Z Uses: dungnv2602/chatgpt/.github/workflows/gh-actions-diagnostics.yml@refs/heads/gpt (535b8052bf1e33cbb04fc19d965ec5e056981959)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.8229881Z ##[group] Inputs
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.8230572Z   capture_mode: finalizer
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.8231149Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.8232013Z Complete job name: Capture GH Actions diagnostics / Backfill completed workflow runs
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9136996Z ##[group]Run actions/checkout@v4
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9138051Z with:
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9138749Z   ref: gpt
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9139487Z   fetch-depth: 0
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9140051Z   persist-credentials: true
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9140890Z   repository: dungnv2602/chatgpt
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9146146Z   token: [REDACTED]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9146788Z   ssh-strict: true
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9147454Z   ssh-user: git
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9148103Z   clean: true
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9148836Z   sparse-checkout-cone-mode: true
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9149593Z   fetch-tags: false
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9150211Z   show-progress: true
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9150969Z   lfs: false
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9151626Z   submodules: false
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9152402Z   set-safe-directory: true
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9153407Z   allow-unsafe-pr-checkout: false
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:13.9154945Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2834545Z Syncing repository: dungnv2602/chatgpt
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2864727Z ##[group]Getting Git version info
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2869863Z Working directory is '/home/runner/work/chatgpt/chatgpt'
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2878255Z [command]/usr/bin/git version
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2884975Z git version 2.56.1
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2891671Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2900500Z Temporarily overriding HOME='/home/runner/work/_temp/040ce258-c884-461b-8d3e-fd91c80c06a8' before making global git config changes
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2907873Z Adding repository directory to the temporary git global config as a safe directory
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2918587Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2931725Z Deleting the contents of '/home/runner/work/chatgpt/chatgpt'
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2933843Z ##[group]Initializing the repository
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2935582Z [command]/usr/bin/git init /home/runner/work/chatgpt/chatgpt
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2938136Z hint: Using 'master' as the name for the initial branch. This default branch name
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2940086Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2941753Z hint: to use in all of your new repositories, which will suppress this warning,
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2943189Z hint: call:
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2944109Z hint:
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2945645Z hint: 	git config --global init.defaultBranch <name>
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2947486Z hint:
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2949432Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2951457Z hint: 'development'. The just-created branch can be renamed via this command:
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2953030Z hint:
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2954123Z hint: 	git branch -m <name>
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2955356Z hint:
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2976497Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.2995416Z Initialized empty Git repository in /home/runner/work/chatgpt/chatgpt/.git/
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.3038568Z [command]/usr/bin/git remote add origin https://github.com/dungnv2602/chatgpt
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.3080193Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.3104658Z ##[group]Disabling automatic garbage collection
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.3107934Z [command]/usr/bin/git config --local gc.auto 0
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.3120964Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.3122508Z ##[group]Setting up auth
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.3124056Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.3129448Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.3694816Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.3731465Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.4007164Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.4043223Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.4283227Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.4334025Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.4336769Z ##[group]Fetching the repository
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:14.4345797Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:21.5280079Z From https://github.com/dungnv2602/chatgpt
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:21.5283299Z  * [new branch]      gpt        -> origin/gpt
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:21.5285979Z  * [new branch]      main       -> origin/main
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:21.5291949Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:21.5294711Z ##[group]Determining the checkout info
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:21.5297388Z [command]/usr/bin/git branch --list --remote origin/gpt
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:21.5327385Z   origin/gpt
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:21.5333166Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:21.5335423Z [command]/usr/bin/git sparse-checkout disable
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:21.5445633Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:21.5490374Z ##[group]Checking out the ref
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:21.5493208Z [command]/usr/bin/git checkout --progress --force -B gpt refs/remotes/origin/gpt
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.5807817Z Updating files:  64% (300/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.5834517Z Updating files:  65% (305/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.5869267Z Updating files:  66% (309/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.5886324Z Updating files:  67% (314/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.5888287Z Updating files:  68% (319/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.5909970Z Updating files:  69% (323/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.5923954Z Updating files:  70% (328/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.5945491Z Updating files:  71% (333/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.5963572Z Updating files:  72% (337/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.5992513Z Updating files:  73% (342/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.5999119Z Updating files:  74% (347/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6011092Z Updating files:  75% (351/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6028109Z Updating files:  76% (356/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6029310Z Updating files:  77% (361/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6033991Z Updating files:  78% (366/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6216573Z Updating files:  79% (370/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6339558Z Updating files:  80% (375/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6349239Z Updating files:  81% (380/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6353750Z Updating files:  82% (384/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6358449Z Updating files:  83% (389/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6362698Z Updating files:  84% (394/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6366965Z Updating files:  85% (398/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6370857Z Updating files:  86% (403/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6375991Z Updating files:  87% (408/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6392781Z Updating files:  88% (412/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6399213Z Updating files:  89% (417/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6406073Z Updating files:  90% (422/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6416386Z Updating files:  91% (426/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6424191Z Updating files:  92% (431/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6429535Z Updating files:  93% (436/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6439031Z Updating files:  94% (440/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6452082Z Updating files:  95% (445/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6454282Z Updating files:  96% (450/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6466213Z Updating files:  97% (454/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6476702Z Updating files:  98% (459/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6482418Z Updating files:  99% (464/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6486073Z Updating files: 100% (468/468)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6487292Z Updating files: 100% (468/468), done.
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6538679Z Switched to a new branch 'gpt'
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6547980Z branch 'gpt' set up to track 'origin/gpt'.
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6596842Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6666855Z [command]/usr/bin/git log -1 --format=%H
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.6720286Z ac347317019f7a3809a0074bc18a55c4f42795f3
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.7017796Z ##[group]Run actions/setup-python@v5
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.7018231Z with:
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.7018553Z   python-version: 3.x
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.7018905Z   check-latest: false
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.7021373Z   token: [REDACTED]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.7021742Z   update-environment: true
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.7022111Z   allow-prereleases: false
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.7022463Z   freethreaded: false
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.7022794Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.8447943Z ##[group]Installed versions
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.8569493Z (node:2161) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.8571075Z Successfully set up CPython (3.15.2)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.8571884Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.8598023Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.8794705Z ##[group]Run python3 -m py_compile gh_ac_reports/scripts/report.py
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.8796168Z ^[[36;1mpython3 -m py_compile gh_ac_reports/scripts/report.py^[[0m
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.8796908Z ^[[36;1mpython3 -m unittest discover \^[[0m
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.8797509Z ^[[36;1m  -s gh_ac_reports/scripts \^[[0m
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.8798151Z ^[[36;1m  -p 'test_report.py' \^[[0m
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.8798656Z ^[[36;1m  -v^[[0m
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.9209790Z shell: /usr/bin/bash -e {0}
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.9210262Z env:
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.9210673Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.9211248Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.9211797Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.9212538Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.9213018Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.9213614Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:22.9214072Z ##[endgroup]
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6020520Z test_cancelled_is_not_failure (test_report.ClassificationTests.test_cancelled_is_not_failure) ... ok
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6022580Z test_continue_on_error_step_is_nonblocking (test_report.ClassificationTests.test_continue_on_error_step_is_nonblocking) ... ok
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6024278Z test_failed_run_without_jobs_is_low_confidence_startup (test_report.ClassificationTests.test_failed_run_without_jobs_is_low_confidence_startup) ... ok
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6039021Z test_failed_test_step (test_report.ClassificationTests.test_failed_test_step) ... ok
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6040280Z test_log_redaction (test_report.ClassificationTests.test_log_redaction) ... ok
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6041949Z test_pre_finalizer_projects_but_does_not_invent_conclusion (test_report.ClassificationTests.test_pre_finalizer_projects_but_does_not_invent_conclusion) ... FAIL
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6043646Z test_schema_rejects_invalid_capture_stage (test_report.SchemaTests.test_schema_rejects_invalid_capture_stage) ... ok
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6241210Z test_integrity_and_immutable_history (test_report.StorageTests.test_integrity_and_immutable_history) ... ok
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6256629Z test_latest_pointer_and_stage_precedence (test_report.StorageTests.test_latest_pointer_and_stage_precedence) ... ERROR
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6257879Z 
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6258413Z ======================================================================
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6260055Z ERROR: test_latest_pointer_and_stage_precedence (test_report.StorageTests.test_latest_pointer_and_stage_precedence)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6261607Z ----------------------------------------------------------------------
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6262628Z Traceback (most recent call last):
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6273911Z   File "/home/runner/work/chatgpt/chatgpt/gh_ac_reports/scripts/test_report.py", line 135, in test_latest_pointer_and_stage_precedence
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6276044Z     REPORT.write_report(root, base, {})
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6276845Z     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6277824Z   File "/home/runner/work/chatgpt/chatgpt/gh_ac_reports/scripts/report.py", line 551, in write_report
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6278855Z     (target / "report.md").write_text(render_markdown(report), encoding="utf-8")
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6279738Z                                       ~~~~~~~~~~~~~~~^^^^^^^^
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6280692Z   File "/home/runner/work/chatgpt/chatgpt/gh_ac_reports/scripts/report.py", line 390, in render_markdown
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6281802Z     ["Commit", run["head_sha"]], ["Event", run["event"]], ["Actor", run["actor"] or "Not recorded"],
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6282624Z                                                                     ~~~^^^^^^^^^
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6283306Z KeyError: 'actor'
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6283736Z 
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6284086Z ======================================================================
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6285839Z FAIL: test_pre_finalizer_projects_but_does_not_invent_conclusion (test_report.ClassificationTests.test_pre_finalizer_projects_but_does_not_invent_conclusion)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6287149Z ----------------------------------------------------------------------
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6287871Z Traceback (most recent call last):
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6289204Z   File "/home/runner/work/chatgpt/chatgpt/gh_ac_reports/scripts/test_report.py", line 72, in test_pre_finalizer_projects_but_does_not_invent_conclusion
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6290472Z     self.assertEqual(result["projected_conclusion"], "failure")
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6291295Z     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6292036Z AssertionError: None != 'failure'
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6292511Z 
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6293164Z ----------------------------------------------------------------------
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6293875Z Ran 9 tests in 0.024s
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6294338Z 
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6294688Z FAILED (failures=1, errors=1)
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6439347Z ##[error]Process completed with exit code 1.
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.6640355Z Post job cleanup.
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.7596880Z [command]/usr/bin/git version
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.7666733Z git version 2.56.1
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.7720515Z Temporarily overriding HOME='/home/runner/work/_temp/fee2fd7b-0270-4767-9c80-efb08447863a' before making global git config changes
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.7721800Z Adding repository directory to the temporary git global config as a safe directory
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.7722977Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.7816221Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.7846002Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.8247015Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.8290271Z http.https://github.com/.extraheader
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.8340846Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.8492158Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.9256597Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.9288139Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:24.9708788Z Cleaning up orphan processes
+Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:14:25.0058767Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,0 +1,258 @@
+Capture GH Actions diagnostics	Set up job	﻿2026-11-23T06:21:34.8919340Z Current runner version: '2.338.2'
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8949380Z ##[group]Runner Image Provisioner
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8950649Z Hosted Compute Agent
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8951297Z Version: 20261111.635
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8952042Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8952824Z Build Date: 2026-11-11T01:49:01Z
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8953502Z Worker ID: {ef8a20d9-17b9-45d0-b693-d927bdc0c56c}
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8954232Z Region: us-east-1
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8954810Z Cloud: AWS
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8955381Z ##[endgroup]
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8957000Z ##[group]Operating System
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8957676Z Ubuntu
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8958203Z 26.04.1
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8958755Z LTS
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8959273Z ##[endgroup]
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8960159Z ##[group]Runner Image
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8960824Z Image: ubuntu-26.04
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8961386Z Version: 20261116.88.1
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8962618Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.88/images/ubuntu/Ubuntu2604-Readme.md
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8964535Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.88
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8965565Z ##[endgroup]
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8966894Z ##[group]GITHUB_TOKEN Permissions
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8969464Z Actions: read
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8970359Z Checks: read
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8970909Z Contents: write
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8971503Z Metadata: read
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8972061Z ##[endgroup]
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8974440Z Secret source: Actions
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8975386Z Cache mode: write
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.8976250Z Prepare workflow directory
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.9329035Z Prepare all required actions
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:34.9381310Z Getting action download info
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:35.0728489Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Capture GH Actions diagnostics	Set up job	2026-11-23T06:21:36.8529113Z Complete job name: Capture GH Actions diagnostics
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	﻿2026-11-23T06:21:36.9319475Z ##[group]Run actions/checkout@v4
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9321131Z with:
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9321971Z   ref: gpt
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9322706Z   fetch-depth: 0
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9323539Z   persist-credentials: true
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9324504Z   repository: dungnv2602/chatgpt
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9331132Z   token: [REDACTED]
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9331926Z   ssh-strict: true
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9332713Z   ssh-user: git
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9333447Z   clean: true
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9334304Z   sparse-checkout-cone-mode: true
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9335273Z   fetch-tags: false
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9336075Z   show-progress: true
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9336864Z   lfs: false
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9337598Z   submodules: false
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9338422Z   set-safe-directory: true
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9339302Z   allow-unsafe-pr-checkout: false
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:36.9340636Z ##[endgroup]
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.8393766Z Syncing repository: dungnv2602/chatgpt
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.8396032Z ##[group]Getting Git version info
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.8396790Z Working directory is '/home/runner/work/chatgpt/chatgpt'
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.8397811Z [command]/usr/bin/git version
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.8398194Z git version 2.56.1
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.8405926Z ##[endgroup]
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.8425031Z Temporarily overriding HOME='/home/runner/work/_temp/1dc91f31-21da-449e-b1c9-7417baedbc1a' before making global git config changes
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.8429248Z Adding repository directory to the temporary git global config as a safe directory
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.8430402Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9016435Z Deleting the contents of '/home/runner/work/chatgpt/chatgpt'
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9018472Z ##[group]Initializing the repository
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9025237Z [command]/usr/bin/git init /home/runner/work/chatgpt/chatgpt
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9895356Z hint: Using 'master' as the name for the initial branch. This default branch name
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9897404Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9898742Z hint: to use in all of your new repositories, which will suppress this warning,
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9899320Z hint: call:
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9899671Z hint:
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9900636Z hint: 	git config --global init.defaultBranch <name>
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9901356Z hint:
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9901803Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9902343Z hint: 'development'. The just-created branch can be renamed via this command:
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9902717Z hint:
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9903030Z hint: 	git branch -m <name>
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9903315Z hint:
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9903669Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9922149Z Initialized empty Git repository in /home/runner/work/chatgpt/chatgpt/.git/
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9939778Z [command]/usr/bin/git remote add origin https://github.com/dungnv2602/chatgpt
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9998166Z ##[endgroup]
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:39.9999102Z ##[group]Disabling automatic garbage collection
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:40.0002468Z [command]/usr/bin/git config --local gc.auto 0
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:40.0028853Z ##[endgroup]
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:40.0029610Z ##[group]Setting up auth
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:40.0035330Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:40.0060815Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:40.4782038Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:40.4829284Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:40.5018182Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:40.5055739Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:40.5263137Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:40.5293837Z ##[endgroup]
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:40.5294655Z ##[group]Fetching the repository
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:40.5300687Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:44.3737516Z From https://github.com/dungnv2602/chatgpt
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:44.3738481Z  * [new branch]      gpt        -> origin/gpt
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:44.3738945Z  * [new branch]      main       -> origin/main
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:44.3751432Z ##[endgroup]
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:44.3757385Z ##[group]Determining the checkout info
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:44.3773631Z [command]/usr/bin/git branch --list --remote origin/gpt
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:44.3776417Z   origin/gpt
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:44.3787352Z ##[endgroup]
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:44.3787672Z [command]/usr/bin/git sparse-checkout disable
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:44.3839249Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:44.3873844Z ##[group]Checking out the ref
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:44.3874274Z [command]/usr/bin/git checkout --progress --force -B gpt refs/remotes/origin/gpt
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:45.1985128Z Switched to a new branch 'gpt'
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:45.2004955Z branch 'gpt' set up to track 'origin/gpt'.
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:45.2023564Z ##[endgroup]
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:45.2082342Z [command]/usr/bin/git log -1 --format=%H
+Capture GH Actions diagnostics	Check out gpt for diagnostic reporting	2026-11-23T06:21:45.2117515Z 167c964f769ae57360c86c8b7b5781389a96d614
+Capture GH Actions diagnostics	Capture workflow diagnostics	﻿2026-11-23T06:21:45.2392029Z Prepare all required actions
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:45.2392679Z Getting action download info
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:45.3244122Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:45.5172744Z ##[group]Run ./gh_ac_reports/actions/capture
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:45.5173220Z ##[endgroup]
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:45.5225549Z ##[start-action display=Set up Python;id=__self.__actions_setup-python]
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:45.5298706Z ##[group]Run actions/setup-python@v5
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:45.5299004Z with:
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:45.5299352Z   python-version: 3.x
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:45.5299582Z   check-latest: false
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:45.5301722Z   token: [REDACTED]
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:45.5301974Z   update-environment: true
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:45.5302228Z   allow-prereleases: false
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:45.5302472Z   freethreaded: false
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:45.5302710Z ##[endgroup]
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:45.6401081Z ##[group]Installed versions
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.0281524Z (node:2289) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.0295676Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.0296182Z Successfully set up CPython (3.15.2)
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.0297281Z ##[endgroup]
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.0403948Z ##[end-action id=__self.__actions_setup-python;outcome=success;conclusion=success;duration_ms=517]
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.0407573Z ##[start-action display=Compile and test the diagnostic reporter;id=__self.__run]
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.0448432Z ##[group]Run python3 -m py_compile gh_ac_reports/scripts/report.py
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.0449170Z ^[[36;1mpython3 -m py_compile gh_ac_reports/scripts/report.py^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.0449747Z ^[[36;1mpython3 -m unittest discover \^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.0450394Z ^[[36;1m  -s gh_ac_reports/scripts \^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.0450812Z ^[[36;1m  -p 'test_report.py' \^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.0451172Z ^[[36;1m  -v^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.1207877Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.1208500Z env:
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.1208797Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.1209164Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.1209592Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.1210153Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.1210521Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.1210867Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:46.1211172Z ##[endgroup]
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1041685Z test_cancelled_is_not_failure (test_report.ClassificationTests.test_cancelled_is_not_failure) ... ok
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1043056Z test_continue_on_error_step_is_nonblocking (test_report.ClassificationTests.test_continue_on_error_step_is_nonblocking) ... ok
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1044655Z test_failed_run_without_jobs_is_low_confidence_startup (test_report.ClassificationTests.test_failed_run_without_jobs_is_low_confidence_startup) ... ok
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1050428Z test_failed_test_step (test_report.ClassificationTests.test_failed_test_step) ... ok
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1051555Z test_log_redaction (test_report.ClassificationTests.test_log_redaction) ... ok
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1052787Z test_pre_finalizer_projects_but_does_not_invent_conclusion (test_report.ClassificationTests.test_pre_finalizer_projects_but_does_not_invent_conclusion) ... ok
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1053937Z test_schema_rejects_invalid_capture_stage (test_report.SchemaTests.test_schema_rejects_invalid_capture_stage) ... ok
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1100495Z test_integrity_and_immutable_history (test_report.StorageTests.test_integrity_and_immutable_history) ... ok
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1126139Z test_latest_pointer_and_stage_precedence (test_report.StorageTests.test_latest_pointer_and_stage_precedence) ... ok
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1127391Z 
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1127921Z ----------------------------------------------------------------------
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1129158Z Ran 9 tests in 0.009s
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1150493Z 
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1154473Z OK
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1306013Z ##[end-action id=__self.__run;outcome=success;conclusion=success;duration_ms=2089]
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1326583Z ##[start-action display=Capture source workflow jobs and steps;id=__self.__run_2]
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1343709Z ##[group]Run python3 gh_ac_reports/scripts/report.py \
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1344125Z ^[[36;1mpython3 gh_ac_reports/scripts/report.py \^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1344471Z ^[[36;1m  --mode current \^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1344741Z ^[[36;1m  --repo "$GITHUB_REPOSITORY" \^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1345056Z ^[[36;1m  --run-id "$GITHUB_RUN_ID"^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1363985Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1364326Z env:
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1364594Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1364996Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1365392Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1365797Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1366133Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1366479Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1368610Z   GH_TOKEN: \***
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1370515Z   GITHUB_TOKEN: \***
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.1370789Z ##[endgroup]
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2561208Z Traceback (most recent call last):
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2573953Z   File "/home/runner/work/chatgpt/chatgpt/gh_ac_reports/scripts/report.py", line 755, in <module>
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2575143Z     main()
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2575768Z     ~~~~^^
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2576421Z   File "/home/runner/work/chatgpt/chatgpt/gh_ac_reports/scripts/report.py", line 748, in main
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2577159Z     target = capture_one(args.repo, args.root, args.run_id, "pre_finalizer")
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2578094Z   File "/home/runner/work/chatgpt/chatgpt/gh_ac_reports/scripts/report.py", line 578, in capture_one
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2579005Z     raise RuntimeError("Cannot retrieve workflow run " + str(run_id) + (": " + detail if detail else ""))
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2579743Z RuntimeError: Cannot retrieve workflow run 45123530858: 401 {
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2580537Z   "message": "Bad credentials",
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2581041Z   "documentation_url": "https://docs.github.com/rest",
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2581560Z   "status": "401"
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2581932Z }
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2709355Z ##[error]Process completed with exit code 1.
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2717308Z ##[end-action id=__self.__run_2;outcome=failure;conclusion=success;duration_ms=139]
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2719368Z ##[start-action display=Publish immutable diagnostic evidence;id=__self.__run_3]
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2734994Z ##[group]Run set -euo pipefail
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2735328Z ^[[36;1mset -euo pipefail^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2735622Z ^[[36;1mgit config user.name "github-actions[bot]"^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2736039Z ^[[36;1mgit config user.email "41898282+github-actions[bot]@users.noreply.github.com"^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2736406Z ^[[36;1mgit add -A -- gh_ac_reports/^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2736684Z ^[[36;1mif git diff --cached --quiet; then^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2737002Z ^[[36;1m  echo "No new diagnostic evidence to publish."^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2737317Z ^[[36;1m  exit 0^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2737541Z ^[[36;1mfi^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2737788Z ^[[36;1mgit commit -m "Publish GitHub Actions diagnostics"^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2738090Z ^[[36;1mfor attempt in 1 2 3 4 5; do^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2738347Z ^[[36;1m  git fetch origin gpt^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2738620Z ^[[36;1m  if ! git rebase origin/gpt; then^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2738899Z ^[[36;1m    git rebase --abort || true^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2739202Z ^[[36;1m    echo "::error::Could not rebase diagnostic evidence onto gpt."^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2739547Z ^[[36;1m    exit 1^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2740411Z ^[[36;1m  fi^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2740797Z ^[[36;1m  if git push origin HEAD:refs/heads/gpt; then^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2741108Z ^[[36;1m    echo "Diagnostic evidence published."^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2741373Z ^[[36;1m    exit 0^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2741600Z ^[[36;1m  fi^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2741894Z ^[[36;1m  git fetch origin gpt^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2742199Z ^[[36;1m  if git merge-base --is-ancestor origin/gpt HEAD; then^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2742583Z ^[[36;1m    echo "::error::Push failed while origin/gpt was unchanged."^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2742869Z ^[[36;1m    exit 1^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2743085Z ^[[36;1m  fi^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2743370Z ^[[36;1mdone^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2743687Z ^[[36;1mecho "::error::Could not publish diagnostic evidence after five attempts."^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2744026Z ^[[36;1mexit 1^[[0m
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2762153Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2762481Z env:
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2762839Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2763327Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2763692Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2764057Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2764396Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2764776Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2765090Z ##[endgroup]
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2856746Z No new diagnostic evidence to publish.
+Capture GH Actions diagnostics	Capture workflow diagnostics	2026-11-23T06:21:48.2863284Z ##[end-action id=__self.__run_3;outcome=success;conclusion=success;duration_ms=14]
+Capture GH Actions diagnostics	Post Capture workflow diagnostics	﻿2026-11-23T06:21:48.2959019Z Post job cleanup.
+Capture GH Actions diagnostics	Post Capture workflow diagnostics	2026-11-23T06:21:48.2963141Z ##[start-action display=Set up Python;id=__d6bf19ca-9504-406e-be56-cbaa2030e559.__actions_setup-python]
+Capture GH Actions diagnostics	Post Capture workflow diagnostics	2026-11-23T06:21:48.3009294Z Post job cleanup.
+Capture GH Actions diagnostics	Post Capture workflow diagnostics	2026-11-23T06:21:48.3956058Z (node:2312) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Capture GH Actions diagnostics	Post Capture workflow diagnostics	2026-11-23T06:21:48.3957208Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Capture GH Actions diagnostics	Post Capture workflow diagnostics	2026-11-23T06:21:48.4054878Z ##[end-action id=__d6bf19ca-9504-406e-be56-cbaa2030e559.__actions_setup-python;outcome=success;conclusion=success;duration_ms=109]
+Capture GH Actions diagnostics	Post Check out gpt for diagnostic reporting	﻿2026-11-23T06:21:48.4158952Z Post job cleanup.
+Capture GH Actions diagnostics	Post Check out gpt for diagnostic reporting	2026-11-23T06:21:48.4931289Z [command]/usr/bin/git version
+Capture GH Actions diagnostics	Post Check out gpt for diagnostic reporting	2026-11-23T06:21:48.4971117Z git version 2.56.1
+Capture GH Actions diagnostics	Post Check out gpt for diagnostic reporting	2026-11-23T06:21:48.5051214Z Temporarily overriding HOME='/home/runner/work/_temp/9f12f02a-b507-497f-a2ff-b47b3267609f' before making global git config changes
+Capture GH Actions diagnostics	Post Check out gpt for diagnostic reporting	2026-11-23T06:21:48.5071092Z Adding repository directory to the temporary git global config as a safe directory
+Capture GH Actions diagnostics	Post Check out gpt for diagnostic reporting	2026-11-23T06:21:48.5072158Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+Capture GH Actions diagnostics	Post Check out gpt for diagnostic reporting	2026-11-23T06:21:48.5082271Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Capture GH Actions diagnostics	Post Check out gpt for diagnostic reporting	2026-11-23T06:21:48.5136288Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Capture GH Actions diagnostics	Post Check out gpt for diagnostic reporting	2026-11-23T06:21:48.5481386Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Capture GH Actions diagnostics	Post Check out gpt for diagnostic reporting	2026-11-23T06:21:48.5552787Z http.https://github.com/.extraheader
+Capture GH Actions diagnostics	Post Check out gpt for diagnostic reporting	2026-11-23T06:21:48.5601160Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Capture GH Actions diagnostics	Post Check out gpt for diagnostic reporting	2026-11-23T06:21:48.5684736Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Capture GH Actions diagnostics	Post Check out gpt for diagnostic reporting	2026-11-23T06:21:48.6210831Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Capture GH Actions diagnostics	Post Check out gpt for diagnostic reporting	2026-11-23T06:21:48.6240753Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Capture GH Actions diagnostics	Complete job	﻿2026-11-23T06:21:48.6728963Z Cleaning up orphan processes
+Capture GH Actions diagnostics	Complete job	2026-11-23T06:21:48.6988661Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

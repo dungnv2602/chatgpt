@@ -1,0 +1,424 @@
+process-image-takeout	Set up job	﻿2026-11-23T06:10:30.5227954Z Current runner version: '2.338.2'
+process-image-takeout	Set up job	2026-11-23T06:10:30.5256430Z ##[group]Runner Image Provisioner
+process-image-takeout	Set up job	2026-11-23T06:10:30.5257348Z Hosted Compute Agent
+process-image-takeout	Set up job	2026-11-23T06:10:30.5257974Z Version: 20261111.635
+process-image-takeout	Set up job	2026-11-23T06:10:30.5258731Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+process-image-takeout	Set up job	2026-11-23T06:10:30.5259523Z Build Date: 2026-11-11T01:49:01Z
+process-image-takeout	Set up job	2026-11-23T06:10:30.5260245Z Worker ID: {c51da8ba-cd86-4926-b3c2-cc7b3ea96a6b}
+process-image-takeout	Set up job	2026-11-23T06:10:30.5261136Z Region: us-west-2
+process-image-takeout	Set up job	2026-11-23T06:10:30.5261698Z Cloud: AWS
+process-image-takeout	Set up job	2026-11-23T06:10:30.5262211Z ##[endgroup]
+process-image-takeout	Set up job	2026-11-23T06:10:30.5263700Z ##[group]Operating System
+process-image-takeout	Set up job	2026-11-23T06:10:30.5264390Z Ubuntu
+process-image-takeout	Set up job	2026-11-23T06:10:30.5264889Z 26.04.1
+process-image-takeout	Set up job	2026-11-23T06:10:30.5265678Z LTS
+process-image-takeout	Set up job	2026-11-23T06:10:30.5266169Z ##[endgroup]
+process-image-takeout	Set up job	2026-11-23T06:10:30.5266721Z ##[group]Runner Image
+process-image-takeout	Set up job	2026-11-23T06:10:30.5267322Z Image: ubuntu-26.04
+process-image-takeout	Set up job	2026-11-23T06:10:30.5267860Z Version: 20261116.88.1
+process-image-takeout	Set up job	2026-11-23T06:10:30.5268889Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.88/images/ubuntu/Ubuntu2604-Readme.md
+process-image-takeout	Set up job	2026-11-23T06:10:30.5270988Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.88
+process-image-takeout	Set up job	2026-11-23T06:10:30.5271915Z ##[endgroup]
+process-image-takeout	Set up job	2026-11-23T06:10:30.5272981Z ##[group]GITHUB_TOKEN Permissions
+process-image-takeout	Set up job	2026-11-23T06:10:30.5275275Z Contents: write
+process-image-takeout	Set up job	2026-11-23T06:10:30.5275887Z Metadata: read
+process-image-takeout	Set up job	2026-11-23T06:10:30.5276391Z ##[endgroup]
+process-image-takeout	Set up job	2026-11-23T06:10:30.5278746Z Secret source: Actions
+process-image-takeout	Set up job	2026-11-23T06:10:30.5279652Z Cache mode: write
+process-image-takeout	Set up job	2026-11-23T06:10:30.5280424Z Prepare workflow directory
+process-image-takeout	Set up job	2026-11-23T06:10:30.5637940Z Prepare all required actions
+process-image-takeout	Set up job	2026-11-23T06:10:30.5689205Z Getting action download info
+process-image-takeout	Set up job	2026-11-23T06:10:30.8944834Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+process-image-takeout	Set up job	2026-11-23T06:10:32.2324467Z Complete job name: process-image-takeout
+process-image-takeout	Check out gpt	﻿2026-11-23T06:10:32.3096914Z ##[group]Run actions/checkout@v7.0.1
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3098429Z with:
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3099247Z   ref: gpt
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3100012Z   fetch-depth: 0
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3101116Z   persist-credentials: true
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3102047Z   repository: dungnv2602/chatgpt
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3109002Z   token: [REDACTED]
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3109787Z   ssh-strict: true
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3110678Z   ssh-user: git
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3111471Z   clean: true
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3112258Z   sparse-checkout-cone-mode: true
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3113231Z   fetch-tags: false
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3114065Z   show-progress: true
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3114869Z   lfs: false
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3115640Z   submodules: false
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3116643Z   set-safe-directory: true
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3117562Z   allow-unsafe-pr-checkout: false
+process-image-takeout	Check out gpt	2026-11-23T06:10:32.3118714Z ##[endgroup]
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.4747578Z Syncing repository: dungnv2602/chatgpt
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.4749041Z ##[group]Getting Git version info
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.4749939Z Working directory is '/home/runner/work/chatgpt/chatgpt'
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.4751088Z [command]/usr/bin/git version
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.4797052Z git version 2.56.1
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.4869763Z ##[endgroup]
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.4877524Z Temporarily overriding HOME='/home/runner/work/_temp/14197139-1d64-4565-81e8-cd0a4b5c5ccd' before making global git config changes
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.4878827Z Adding repository directory to the temporary git global config as a safe directory
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.4880005Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.4907167Z Deleting the contents of '/home/runner/work/chatgpt/chatgpt'
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.4932960Z ##[group]Determining repository object format
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8018094Z ##[endgroup]
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8021095Z ##[group]Initializing the repository
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8022099Z [command]/usr/bin/git init /home/runner/work/chatgpt/chatgpt
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8428918Z hint: Using 'master' as the name for the initial branch. This default branch name
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8435939Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8439545Z hint: to use in all of your new repositories, which will suppress this warning,
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8440055Z hint: call:
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8440406Z hint:
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8441283Z hint: 	git config --global init.defaultBranch <name>
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8441707Z hint:
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8442101Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8442620Z hint: 'development'. The just-created branch can be renamed via this command:
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8442976Z hint:
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8443230Z hint: 	git branch -m <name>
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8443507Z hint:
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8443819Z hint: Disable this message with "git config set advice.defaultBranchName false"
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8450846Z Initialized empty Git repository in /home/runner/work/chatgpt/chatgpt/.git/
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8459956Z [command]/usr/bin/git remote add origin https://github.com/dungnv2602/chatgpt
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8506600Z ##[endgroup]
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8507355Z ##[group]Disabling automatic garbage collection
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8509612Z [command]/usr/bin/git config --local gc.auto 0
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8534467Z ##[endgroup]
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8535124Z ##[group]Setting up auth
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8535509Z Removing SSH command configuration
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8541810Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+process-image-takeout	Check out gpt	2026-11-23T06:10:35.8568179Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+process-image-takeout	Check out gpt	2026-11-23T06:10:36.1548434Z Removing HTTP extra header
+process-image-takeout	Check out gpt	2026-11-23T06:10:36.1552123Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+process-image-takeout	Check out gpt	2026-11-23T06:10:36.1601829Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+process-image-takeout	Check out gpt	2026-11-23T06:10:36.1763336Z Removing includeIf entries pointing to credentials config files
+process-image-takeout	Check out gpt	2026-11-23T06:10:36.1766179Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+process-image-takeout	Check out gpt	2026-11-23T06:10:36.1791037Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+process-image-takeout	Check out gpt	2026-11-23T06:10:36.1967278Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-1176c35a-e4dc-481f-8b45-57579503a131.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+process-image-takeout	Check out gpt	2026-11-23T06:10:36.2013358Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path /home/runner/work/_temp/git-credentials-1176c35a-e4dc-481f-8b45-57579503a131.config
+process-image-takeout	Check out gpt	2026-11-23T06:10:36.2044914Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-1176c35a-e4dc-481f-8b45-57579503a131.config
+process-image-takeout	Check out gpt	2026-11-23T06:10:36.2106994Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-1176c35a-e4dc-481f-8b45-57579503a131.config
+process-image-takeout	Check out gpt	2026-11-23T06:10:36.2117760Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-1176c35a-e4dc-481f-8b45-57579503a131.config
+process-image-takeout	Check out gpt	2026-11-23T06:10:36.2163095Z ##[endgroup]
+process-image-takeout	Check out gpt	2026-11-23T06:10:36.2164714Z ##[group]Fetching the repository
+process-image-takeout	Check out gpt	2026-11-23T06:10:36.2171950Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+process-image-takeout	Check out gpt	2026-11-23T06:10:43.8133985Z From https://github.com/dungnv2602/chatgpt
+process-image-takeout	Check out gpt	2026-11-23T06:10:43.8135125Z  * [new branch]      gpt        -> origin/gpt
+process-image-takeout	Check out gpt	2026-11-23T06:10:43.8135806Z  * [new branch]      main       -> origin/main
+process-image-takeout	Check out gpt	2026-11-23T06:10:43.8138675Z ##[endgroup]
+process-image-takeout	Check out gpt	2026-11-23T06:10:43.8139545Z ##[group]Determining the checkout info
+process-image-takeout	Check out gpt	2026-11-23T06:10:43.8144657Z [command]/usr/bin/git branch --list --remote origin/gpt
+process-image-takeout	Check out gpt	2026-11-23T06:10:43.8173813Z   origin/gpt
+process-image-takeout	Check out gpt	2026-11-23T06:10:43.8182540Z ##[endgroup]
+process-image-takeout	Check out gpt	2026-11-23T06:10:43.8183141Z [command]/usr/bin/git sparse-checkout disable
+process-image-takeout	Check out gpt	2026-11-23T06:10:43.8245339Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+process-image-takeout	Check out gpt	2026-11-23T06:10:43.8273269Z ##[group]Checking out the ref
+process-image-takeout	Check out gpt	2026-11-23T06:10:43.8280484Z [command]/usr/bin/git checkout --progress --force -B gpt refs/remotes/origin/gpt
+process-image-takeout	Check out gpt	2026-11-23T06:10:44.6268693Z Switched to a new branch 'gpt'
+process-image-takeout	Check out gpt	2026-11-23T06:10:44.6283682Z branch 'gpt' set up to track 'origin/gpt'.
+process-image-takeout	Check out gpt	2026-11-23T06:10:44.6305273Z ##[endgroup]
+process-image-takeout	Check out gpt	2026-11-23T06:10:44.6348850Z [command]/usr/bin/git log -1 --format=%H
+process-image-takeout	Check out gpt	2026-11-23T06:10:44.6381713Z 59da3c4be4d6e29c97faebbeb4d8ebe17c8acd55
+process-image-takeout	Install WebP encoder and YAML parser	﻿2026-11-23T06:10:44.6548204Z ##[group]Run sudo apt-get update
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:44.6548569Z ^[[36;1msudo apt-get update^[[0m
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:44.6548934Z ^[[36;1msudo apt-get install --yes webp python3-yaml^[[0m
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:44.6571311Z shell: /usr/bin/bash -e {0}
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:44.6571602Z ##[endgroup]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:44.7362215Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [152 B]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:44.8107082Z Get:6 https://packages.microsoft.com/ubuntu/26.04/prod resolute InRelease [3964 B]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:44.8669253Z Hit:2 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute InRelease
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:44.8789636Z Get:7 https://packages.microsoft.com/ubuntu/26.04/prod resolute/main arm64 Packages [163 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:44.9204526Z Get:3 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute-updates InRelease [137 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:44.9356007Z Get:8 https://packages.microsoft.com/ubuntu/26.04/prod resolute/main amd64 Packages [178 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:45.1104178Z Get:4 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute-backports InRelease [137 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:45.2091586Z Get:5 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute-security InRelease [137 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:45.2625907Z Get:9 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 Packages [902 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:45.4107468Z Get:10 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main Translation-en [200 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:45.4621234Z Get:11 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/universe amd64v3 Packages [393 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:45.5161621Z Get:12 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/universe Translation-en [124 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:45.5705247Z Get:13 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/restricted amd64v3 Packages [629 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:45.6550955Z Get:14 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/restricted Translation-en [130 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:45.7100086Z Get:15 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute-security/main amd64v3 Packages [722 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:45.7869450Z Get:16 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute-security/main Translation-en [158 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:45.8397384Z Get:17 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute-security/universe amd64v3 Packages [222 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:45.8935318Z Get:18 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute-security/universe Translation-en [72.7 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:52.4302778Z Fetched 4308 kB in 1s (3593 kB/s)
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.0454440Z Reading package lists...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.0696475Z Reading package lists...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.2168458Z Building dependency tree...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.2174164Z Reading state information...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.2482875Z python3-yaml is already the newest version (6.0.3-1build1).
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.2483829Z python3-yaml set to manually installed.
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.2934546Z Solving dependencies...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.3783692Z The following additional packages will be installed:
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.3805537Z   libgif7 libglut3.12 libopengl0
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.4648436Z The following NEW packages will be installed:
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.4657026Z   libgif7 libglut3.12 libopengl0 webp
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.4839232Z 0 upgraded, 4 newly installed, 0 to remove and 52 not upgraded.
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.4840119Z Need to get 275 kB of archives.
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.4841447Z After this operation, 1051 kB of additional disk space will be used.
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.4842221Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [152 B]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.6127033Z Get:2 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 libgif7 amd64 5.2.2-1ubuntu3.2 [34.9 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.7311528Z Get:3 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute/universe amd64v3 libglut3.12 amd64 3.4.0-6 [102 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.8502818Z Get:4 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libopengl0 amd64 1.7.0-3 [32.8 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:53.9230989Z Get:5 http://us-east-2.ec2.archive.ubuntu.com/ubuntu resolute/universe amd64v3 webp amd64 1.5.0-0.1build1 [105 kB]
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:54.8219039Z Fetched 275 kB in 0s (611 kB/s)
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:54.9173712Z Selecting previously unselected package libgif7:amd64.
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:55.2045278Z (Reading database ... 
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:55.2046417Z (Reading database ... 5%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:55.2046736Z (Reading database ... 10%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:55.2047087Z (Reading database ... 15%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:55.2047373Z (Reading database ... 20%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:55.2047613Z (Reading database ... 25%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:55.2047870Z (Reading database ... 30%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:55.2048106Z (Reading database ... 35%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:55.2048396Z (Reading database ... 40%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:55.2048639Z (Reading database ... 45%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:55.2048873Z (Reading database ... 50%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:55.4553453Z (Reading database ... 55%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:55.5844098Z (Reading database ... 60%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:55.7439353Z (Reading database ... 65%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:55.8823152Z (Reading database ... 70%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:56.0090059Z (Reading database ... 75%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:56.5128150Z (Reading database ... 80%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:57.3405128Z (Reading database ... 85%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:58.2976949Z (Reading database ... 90%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.3468815Z (Reading database ... 95%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.3470096Z (Reading database ... 100%
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.3471253Z (Reading database ... 213995 files and directories currently installed.)
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.3514225Z Preparing to unpack .../libgif7_5.2.2-1ubuntu3.2_amd64v3.deb ...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.3543778Z Unpacking libgif7:amd64 (5.2.2-1ubuntu3.2) ...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.4112016Z Selecting previously unselected package libglut3.12:amd64.
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.4199119Z Preparing to unpack .../libglut3.12_3.4.0-6_amd64v3.deb ...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.4204337Z Unpacking libglut3.12:amd64 (3.4.0-6) ...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.4672003Z Selecting previously unselected package libopengl0:amd64.
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.4762835Z Preparing to unpack .../libopengl0_1.7.0-3_amd64v3.deb ...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.4768080Z Unpacking libopengl0:amd64 (1.7.0-3) ...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.4897422Z Selecting previously unselected package webp.
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.4998677Z Preparing to unpack .../webp_1.5.0-0.1build1_amd64v3.deb ...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.5050428Z Unpacking webp (1.5.0-0.1build1) ...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.6035453Z Setting up libopengl0:amd64 (1.7.0-3) ...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.6061976Z Setting up libglut3.12:amd64 (3.4.0-6) ...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.6071971Z Setting up libgif7:amd64 (5.2.2-1ubuntu3.2) ...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.6081877Z Setting up webp (1.5.0-0.1build1) ...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.6095378Z Processing triggers for man-db (2.13.1-1build1) ...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.6111467Z Not building database; man-db/auto-update is not 'true'.
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:10:59.6121374Z Processing triggers for libc-bin (2.43-2ubuntu2.7) ...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:11:04.4034063Z 
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:11:04.4035257Z Running kernel seems to be up-to-date.
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:11:04.4035893Z 
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:11:04.4036469Z Restarting services...
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:11:04.4107516Z 
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:11:04.4109450Z Service restarts being deferred:
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:11:04.4111306Z  systemctl restart hosted-compute-agent.service
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:11:04.4111805Z 
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:11:04.4121717Z No containers need to be restarted.
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:11:04.4122179Z 
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:11:04.4122406Z No user sessions are running outdated binaries.
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:11:04.4122760Z 
+process-image-takeout	Install WebP encoder and YAML parser	2026-11-23T06:11:04.4123187Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+process-image-takeout	Compile takeout processor and publication verifier	﻿2026-11-23T06:11:05.1343536Z ##[group]Run python3 -m py_compile \
+process-image-takeout	Compile takeout processor and publication verifier	2026-11-23T06:11:05.1343903Z ^[[36;1mpython3 -m py_compile \^[[0m
+process-image-takeout	Compile takeout processor and publication verifier	2026-11-23T06:11:05.1344279Z ^[[36;1m  skills/session-archiving/scripts/process_takeout.py \^[[0m
+process-image-takeout	Compile takeout processor and publication verifier	2026-11-23T06:11:05.1344675Z ^[[36;1m  skills/session-archiving/scripts/verify_published_manifest.py^[[0m
+process-image-takeout	Compile takeout processor and publication verifier	2026-11-23T06:11:05.1362187Z shell: /usr/bin/bash -e {0}
+process-image-takeout	Compile takeout processor and publication verifier	2026-11-23T06:11:05.1362487Z ##[endgroup]
+process-image-takeout	Test takeout processor	﻿2026-11-23T06:11:05.1879003Z ##[group]Run python3 -m unittest discover \
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.1879352Z ^[[36;1mpython3 -m unittest discover \^[[0m
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.1879652Z ^[[36;1m  -s skills/session-archiving/scripts \^[[0m
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.1879989Z ^[[36;1m  -p 'test_process_takeout_unittest.py' \^[[0m
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.1880256Z ^[[36;1m  -v^[[0m
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.1897303Z shell: /usr/bin/bash -e {0}
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.1897626Z ##[endgroup]
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.2432522Z test_generation_hash_mismatch_does_not_fail_published_storage_verification (test_process_takeout_unittest.PublishedManifestVerificationTests.test_generation_hash_mismatch_does_not_fail_published_storage_verification) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.2434771Z test_github_url_must_match_exact_published_path (test_process_takeout_unittest.PublishedManifestVerificationTests.test_github_url_must_match_exact_published_path) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.2436491Z test_legacy_webp_is_checked_but_original_mapping_remains_not_verifiable (test_process_takeout_unittest.PublishedManifestVerificationTests.test_legacy_webp_is_checked_but_original_mapping_remains_not_verifiable) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.2438489Z test_missing_published_attempt_link_fails_verification (test_process_takeout_unittest.PublishedManifestVerificationTests.test_missing_published_attempt_link_fails_verification) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.2439925Z test_missing_published_inventory_link_fails_verification (test_process_takeout_unittest.PublishedManifestVerificationTests.test_missing_published_inventory_link_fails_verification) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.2441867Z test_missing_published_inventory_section_fails_verification (test_process_takeout_unittest.PublishedManifestVerificationTests.test_missing_published_inventory_section_fails_verification) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.2443479Z test_published_daily_readme_and_attempt_links_are_verified (test_process_takeout_unittest.PublishedManifestVerificationTests.test_published_daily_readme_and_attempt_links_are_verified) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.2444968Z test_published_original_and_webp_are_verified (test_process_takeout_unittest.PublishedManifestVerificationTests.test_published_original_and_webp_are_verified) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.2446385Z test_published_original_hash_mismatch_fails (test_process_takeout_unittest.PublishedManifestVerificationTests.test_published_original_hash_mismatch_fails) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.2447538Z test_published_webp_hash_mismatch_fails (test_process_takeout_unittest.PublishedManifestVerificationTests.test_published_webp_hash_mismatch_fails) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.3273448Z test_animated_png_fails_and_stays_in_takeout (test_process_takeout_unittest.TakeoutProcessorTests.test_animated_png_fails_and_stays_in_takeout) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.4736023Z test_attempt_06_and_11_uploads_retain_pngs_and_link_only_webps (test_process_takeout_unittest.TakeoutProcessorTests.test_attempt_06_and_11_uploads_retain_pngs_and_link_only_webps) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.6008332Z test_attempt_output_upload_updates_attempt_record_and_readme (test_process_takeout_unittest.TakeoutProcessorTests.test_attempt_output_upload_updates_attempt_record_and_readme) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.7206421Z test_bulk_staging_preserves_each_original_filename (test_process_takeout_unittest.TakeoutProcessorTests.test_bulk_staging_preserves_each_original_filename) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.8050538Z test_destination_collision_fails_without_overwrite (test_process_takeout_unittest.TakeoutProcessorTests.test_destination_collision_fails_without_overwrite) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:05.9169443Z test_drawing_session_upload_without_attempt_metadata_is_rejected (test_process_takeout_unittest.TakeoutProcessorTests.test_drawing_session_upload_without_attempt_metadata_is_rejected) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:06.0000336Z test_duplicate_output_id_fails_before_relocation (test_process_takeout_unittest.TakeoutProcessorTests.test_duplicate_output_id_fails_before_relocation) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:06.0605573Z test_empty_handoff_is_noop_and_leaves_uploads_untouched (test_process_takeout_unittest.TakeoutProcessorTests.test_empty_handoff_is_noop_and_leaves_uploads_untouched) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:06.1761026Z test_existing_manifest_duplicate_output_id_blocks_new_upload (test_process_takeout_unittest.TakeoutProcessorTests.test_existing_manifest_duplicate_output_id_blocks_new_upload) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:06.2782782Z test_existing_webp_staging_tree_is_reserved_not_scanned_as_intake (test_process_takeout_unittest.TakeoutProcessorTests.test_existing_webp_staging_tree_is_reserved_not_scanned_as_intake) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:06.4999428Z test_failed_batch_retains_successful_staging_and_retry_uses_next_attempt (test_process_takeout_unittest.TakeoutProcessorTests.test_failed_batch_retains_successful_staging_and_retry_uses_next_attempt) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:06.6011017Z test_generation_hash_matches_uploaded_original_and_is_reported (test_process_takeout_unittest.TakeoutProcessorTests.test_generation_hash_matches_uploaded_original_and_is_reported) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:06.7062601Z test_generation_hash_mismatch_is_a_review_flag_not_a_batch_rejection (test_process_takeout_unittest.TakeoutProcessorTests.test_generation_hash_mismatch_is_a_review_flag_not_a_batch_rejection) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:06.8311246Z test_identical_original_bytes_from_two_outputs_get_distinct_internal_image_ids (test_process_takeout_unittest.TakeoutProcessorTests.test_identical_original_bytes_from_two_outputs_get_distinct_internal_image_ids) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:07.4822710Z test_invalid_handoff_metadata_fields_fail_before_relocation (test_process_takeout_unittest.TakeoutProcessorTests.test_invalid_handoff_metadata_fields_fail_before_relocation) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:07.5425549Z test_invalid_unhashable_handoff_status_is_reported_safely (test_process_takeout_unittest.TakeoutProcessorTests.test_invalid_unhashable_handoff_status_is_reported_safely) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:07.6472187Z test_missing_existing_webp_link_blocks_upload_and_rolls_back (test_process_takeout_unittest.TakeoutProcessorTests.test_missing_existing_webp_link_blocks_upload_and_rolls_back) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:07.7075172Z test_non_mapping_handoff_is_rejected_not_silently_ignored (test_process_takeout_unittest.TakeoutProcessorTests.test_non_mapping_handoff_is_rejected_not_silently_ignored) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:07.7681351Z test_not_ready_handoff_is_noop (test_process_takeout_unittest.TakeoutProcessorTests.test_not_ready_handoff_is_noop) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:07.8724052Z test_orphan_legacy_original_master_blocks_processing_and_rolls_back_new_upload (test_process_takeout_unittest.TakeoutProcessorTests.test_orphan_legacy_original_master_blocks_processing_and_rolls_back_new_upload) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:07.9751929Z test_png_links_in_drawing_records_are_rejected (test_process_takeout_unittest.TakeoutProcessorTests.test_png_links_in_drawing_records_are_rejected) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:08.0813737Z test_session_manifest_backfills_legacy_webps_conservatively (test_process_takeout_unittest.TakeoutProcessorTests.test_session_manifest_backfills_legacy_webps_conservatively) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:08.1842409Z test_session_manifest_preserves_existing_rows_and_adds_new_columns (test_process_takeout_unittest.TakeoutProcessorTests.test_session_manifest_preserves_existing_rows_and_adds_new_columns) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:08.2891725Z test_session_manifest_uses_a_matching_legacy_original_master_when_present (test_process_takeout_unittest.TakeoutProcessorTests.test_session_manifest_uses_a_matching_legacy_original_master_when_present) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:08.3911739Z test_success_moves_byte_identical_master_creates_webp_and_archives_reports (test_process_takeout_unittest.TakeoutProcessorTests.test_success_moves_byte_identical_master_creates_webp_and_archives_reports) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:08.4742444Z test_unlisted_image_fails_without_moving_sources_or_clearing_handoff (test_process_takeout_unittest.TakeoutProcessorTests.test_unlisted_image_fails_without_moving_sources_or_clearing_handoff) ... ok
+process-image-takeout	Test takeout processor	2026-11-23T06:11:08.4743159Z 
+process-image-takeout	Test takeout processor	2026-11-23T06:11:08.4743567Z ----------------------------------------------------------------------
+process-image-takeout	Test takeout processor	2026-11-23T06:11:08.4744196Z Ran 36 tests in 3.229s
+process-image-takeout	Test takeout processor	2026-11-23T06:11:08.4744357Z 
+process-image-takeout	Test takeout processor	2026-11-23T06:11:08.4744483Z OK
+process-image-takeout	Process takeout hand-off	﻿2026-11-23T06:11:08.4899737Z ##[group]Run python3 skills/session-archiving/scripts/process_takeout.py \
+process-image-takeout	Process takeout hand-off	2026-11-23T06:11:08.4900252Z ^[[36;1mpython3 skills/session-archiving/scripts/process_takeout.py \^[[0m
+process-image-takeout	Process takeout hand-off	2026-11-23T06:11:08.4901007Z ^[[36;1m  --repo-root . \^[[0m
+process-image-takeout	Process takeout hand-off	2026-11-23T06:11:08.4901377Z ^[[36;1m  --run-id "$GITHUB_RUN_ID"^[[0m
+process-image-takeout	Process takeout hand-off	2026-11-23T06:11:08.4918173Z shell: /usr/bin/bash -e {0}
+process-image-takeout	Process takeout hand-off	2026-11-23T06:11:08.4918488Z ##[endgroup]
+process-image-takeout	Process takeout hand-off	2026-11-23T06:11:08.5512447Z Hand-off status is 'draft'; no-op. Uploaded files remain untouched.
+process-image-takeout	Commit and safely publish processed assets and reports	﻿2026-11-23T06:11:08.5669253Z ##[group]Run set -euo pipefail
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5669632Z ^[[36;1mset -euo pipefail^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5669873Z ^[[36;1m^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5670144Z ^[[36;1mgit config user.name "github-actions[bot]"^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5671045Z ^[[36;1mgit config user.email "41898282+github-actions[bot]@users.noreply.github.com"^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5671501Z ^[[36;1m^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5671876Z ^[[36;1m# Include only working-tree changes created by the takeout processor.^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5672242Z ^[[36;1mgit add -A -- images/ drawings/^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5672538Z ^[[36;1mif [[ -d novels/ ]]; then^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5672798Z ^[[36;1m  git add -A -- novels/^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5673048Z ^[[36;1mfi^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5673279Z ^[[36;1mif git diff --cached --quiet; then^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5673578Z ^[[36;1m  echo "No takeout processing changes to publish."^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5673904Z ^[[36;1m  exit 0^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5674112Z ^[[36;1mfi^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5674362Z ^[[36;1m^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5674671Z ^[[36;1mif [[ "$PROCESS_OUTCOME" == "failure" ]]; then^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5675357Z ^[[36;1m  commit_message="chore(images): archive failed takeout diagnostics"^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5675690Z ^[[36;1melse^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5675948Z ^[[36;1m  commit_message="chore(images): process takeout batch"^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5676271Z ^[[36;1mfi^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5676496Z ^[[36;1mgit commit -m "$commit_message"^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5676766Z ^[[36;1m^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5677052Z ^[[36;1m# Never force-push. Rebase onto the latest gpt branch and retry^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5677441Z ^[[36;1m# only if another writer advances the remote during publication.^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5677803Z ^[[36;1mmax_attempts=5^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5678066Z ^[[36;1mfor attempt in $(seq 1 "$max_attempts"); do^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5678404Z ^[[36;1m  echo "Publish attempt $attempt/$max_attempts"^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5678709Z ^[[36;1m  git fetch origin gpt^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5678946Z ^[[36;1m^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5679186Z ^[[36;1m  if ! git rebase origin/gpt; then^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5679462Z ^[[36;1m    git rebase --abort || true^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5680020Z ^[[36;1m    echo "::error::Could not rebase takeout changes cleanly. No remote changes were overwritten."^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5680459Z ^[[36;1m    exit 1^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5680875Z ^[[36;1m  fi^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5681115Z ^[[36;1m^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5681363Z ^[[36;1m  if git push origin HEAD:refs/heads/gpt; then^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5681837Z ^[[36;1m    echo "Takeout results and reports published successfully."^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5682220Z ^[[36;1m    exit 0^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5682437Z ^[[36;1m  fi^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5682678Z ^[[36;1m^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5682905Z ^[[36;1m  git fetch origin gpt^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5683189Z ^[[36;1m  if git merge-base --is-ancestor origin/gpt HEAD; then^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5683676Z ^[[36;1m    echo "::error::Push failed although origin/gpt did not advance. Check token permissions or branch protection."^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5684096Z ^[[36;1m    exit 1^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5684312Z ^[[36;1m  fi^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5684539Z ^[[36;1m^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5684844Z ^[[36;1m  echo "Remote branch advanced during push; synchronizing and retrying."^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5685212Z ^[[36;1mdone^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5685416Z ^[[36;1m^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5685716Z ^[[36;1mecho "::error::Could not publish after $max_attempts synchronization attempts."^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5686087Z ^[[36;1mexit 1^[[0m
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5705766Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5706110Z env:
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5706354Z   PROCESS_OUTCOME: success
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.5706633Z ##[endgroup]
+process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T06:11:08.9697115Z No takeout processing changes to publish.
+process-image-takeout	Verify published assets and GitHub links	﻿2026-11-23T06:11:08.9734093Z ##[group]Run set -euo pipefail
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9734463Z ^[[36;1mset -euo pipefail^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9734739Z ^[[36;1mgit fetch origin gpt^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9734997Z ^[[36;1m^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9735373Z ^[[36;1m# This verifies the first published commit and changes Pending^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9735802Z ^[[36;1m# manifest rows only after the exact remote blobs and URLs match.^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9736224Z ^[[36;1mpython3 skills/session-archiving/scripts/verify_published_manifest.py \^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9736627Z ^[[36;1m  --repo-root . \^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9736882Z ^[[36;1m  --git-ref origin/gpt \^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9737156Z ^[[36;1m  --branch gpt^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9737426Z ^[[36;1m^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9737763Z ^[[36;1mif ! git diff --quiet -- drawings/; then^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9738087Z ^[[36;1m  git add -A -- drawings/^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9738471Z ^[[36;1m  git commit -m "chore(drawings): verify published image manifests"^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9738799Z ^[[36;1m^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9739103Z ^[[36;1m  max_attempts=5^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9739380Z ^[[36;1m  for attempt in $(seq 1 "$max_attempts"); do^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9739787Z ^[[36;1m    echo "Manifest verification publish attempt $attempt/$max_attempts"^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9740151Z ^[[36;1m    git fetch origin gpt^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9740401Z ^[[36;1m^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9740980Z ^[[36;1m    if ! git rebase origin/gpt; then^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9741263Z ^[[36;1m      git rebase --abort || true^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9741693Z ^[[36;1m      echo "::error::Could not rebase manifest verification onto the latest gpt branch."^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9742095Z ^[[36;1m      exit 1^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9742336Z ^[[36;1m    fi^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9742544Z ^[[36;1m^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9742777Z ^[[36;1m    if git push origin HEAD:refs/heads/gpt; then^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9743096Z ^[[36;1m      break^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9743317Z ^[[36;1m    fi^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9743518Z ^[[36;1m^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9743738Z ^[[36;1m    git fetch origin gpt^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9744044Z ^[[36;1m    if git merge-base --is-ancestor origin/gpt HEAD; then^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9744497Z ^[[36;1m      echo "::error::Could not publish verified manifest; origin/gpt did not advance."^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9744841Z ^[[36;1m      exit 1^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9745063Z ^[[36;1m    fi^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9745317Z ^[[36;1m    if [[ "$attempt" == "$max_attempts" ]]; then^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9745747Z ^[[36;1m      echo "::error::Could not publish verified manifest after $max_attempts attempts."^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9746115Z ^[[36;1m      exit 1^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9746443Z ^[[36;1m    fi^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9746637Z ^[[36;1m  done^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9746895Z ^[[36;1mfi^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9747116Z ^[[36;1m^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9747338Z ^[[36;1mgit fetch origin gpt^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9747683Z ^[[36;1mpython3 skills/session-archiving/scripts/verify_published_manifest.py \^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9748079Z ^[[36;1m  --repo-root . \^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9748354Z ^[[36;1m  --git-ref origin/gpt \^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9748622Z ^[[36;1m  --branch gpt \^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9748859Z ^[[36;1m  --check-only^[[0m
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9765452Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:08.9765804Z ##[endgroup]
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:09.3651870Z From https://github.com/dungnv2602/chatgpt
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:09.3652865Z  * branch            gpt        -> FETCH_HEAD
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:09.3653362Z    59da3c4..22574fb  gpt        -> origin/gpt
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:09.4030800Z No drawing session manifests found.
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:09.6696410Z From https://github.com/dungnv2602/chatgpt
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:09.6697296Z  * branch            gpt        -> FETCH_HEAD
+process-image-takeout	Verify published assets and GitHub links	2026-11-23T06:11:09.7112288Z No drawing session manifests found.
+process-image-takeout	Post Check out gpt	﻿2026-11-23T06:11:09.7284994Z Post job cleanup.
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.8021544Z [command]/usr/bin/git version
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.8075342Z git version 2.56.1
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.8113644Z Temporarily overriding HOME='/home/runner/work/_temp/20cc3e2b-ea79-4468-8026-cb0e31e3281b' before making global git config changes
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.8118609Z Adding repository directory to the temporary git global config as a safe directory
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.8123940Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.8171099Z Removing SSH command configuration
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.8176118Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.8231683Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.8824519Z Removing HTTP extra header
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.8844236Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.8925141Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9263744Z Removing includeIf entries pointing to credentials config files
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9279737Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9280954Z includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9290550Z includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9291750Z includeif.gitdir:/github/workspace/.git.path
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9292452Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9294058Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9312627Z /home/runner/work/_temp/git-credentials-1176c35a-e4dc-481f-8b45-57579503a131.config
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9361892Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-1176c35a\-e4dc\-481f\-8b45\-57579503a131\.config
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9391482Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9409574Z /home/runner/work/_temp/git-credentials-1176c35a-e4dc-481f-8b45-57579503a131.config
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9420252Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-1176c35a\-e4dc\-481f\-8b45\-57579503a131\.config
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9501223Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9522110Z /github/runner_temp/git-credentials-1176c35a-e4dc-481f-8b45-57579503a131.config
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9538212Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-1176c35a\-e4dc\-481f\-8b45\-57579503a131\.config
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9572853Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9592002Z /github/runner_temp/git-credentials-1176c35a-e4dc-481f-8b45-57579503a131.config
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9607401Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-1176c35a\-e4dc\-481f\-8b45\-57579503a131\.config
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9660422Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+process-image-takeout	Post Check out gpt	2026-11-23T06:11:09.9932120Z Removing credentials config '/home/runner/work/_temp/git-credentials-1176c35a-e4dc-481f-8b45-57579503a131.config'
+process-image-takeout	Complete job	﻿2026-11-23T06:11:10.0080274Z Cleaning up orphan processes

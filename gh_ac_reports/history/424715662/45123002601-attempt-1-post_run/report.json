@@ -1,0 +1,531 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45123002601",
+    "number": 430,
+    "attempt": 1,
+    "workflow_id": 424715662,
+    "workflow_name": "STE Lint Changed Documentation",
+    "workflow_path": ".github/workflows/ste-lint-changed.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123002601",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "a496eb8a30dba75ddc52f57d7d0f814da26ba702",
+    "status": "completed",
+    "conclusion": "failure",
+    "created_at": "2026-11-23T06:16:33Z",
+    "run_started_at": "2026-11-23T06:16:33Z",
+    "updated_at": "2026-11-23T06:17:30Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Clarify reporter coverage and current CI policy"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T06:23:48Z",
+    "completeness": "Complete",
+    "reporter_job": null
+  },
+  "classification": {
+    "state": "failure",
+    "observed_conclusion": "failure",
+    "projected_conclusion": null,
+    "primary_category": "publication_or_push",
+    "categories": [
+      "publication_or_push",
+      "checkout_or_action_download"
+    ],
+    "issues": [
+      {
+        "category": "publication_or_push",
+        "job_id": "137520904023",
+        "job_name": "Lint changed Markdown files and publish detailed evidence",
+        "step_number": 11,
+        "step_name": "Preserve lint failure as workflow conclusion",
+        "blocking": true,
+        "confidence": "high",
+        "message": "Lint changed Markdown files and publish detailed evidence\tValidate lint and report tooling\t2026-11-23T06:16:51.9546457Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m"
+      },
+      {
+        "category": "publication_or_push",
+        "job_id": "137521065808",
+        "job_name": "Capture GH Actions diagnostics / Capture GH Actions diagnostics",
+        "step_number": 4,
+        "step_name": "Compile and test the diagnostic reporter",
+        "blocking": true,
+        "confidence": "high",
+        "message": "Capture GH Actions diagnostics / Capture GH Actions diagnostics\tUNKNOWN STEP\t2026-11-23T06:17:26.4158836Z test_latest_pointer_and_stage_precedence (test_report.StorageTests.test_latest_pointer_and_stage_precedence) ... ERROR"
+      },
+      {
+        "category": "checkout_or_action_download",
+        "job_id": "137521065827",
+        "job_name": "Capture GH Actions diagnostics / Backfill completed workflow runs",
+        "step_number": 4,
+        "step_name": "Compile and test the diagnostic reporter",
+        "blocking": true,
+        "confidence": "medium",
+        "message": "Capture GH Actions diagnostics / Backfill completed workflow runs\tUNKNOWN STEP\t2026-11-23T06:17:21.5616034Z test_latest_pointer_and_stage_precedence (test_report.StorageTests.test_latest_pointer_and_stage_precedence) ... ERROR"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "137520859966",
+      "name": "Reject superseded runs and find lint baseline",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-23T06:16:34Z",
+      "completed_at": "2026-11-23T06:16:40Z",
+      "runner_name": "GitHub Actions 1000001114",
+      "runner_id": 1000001114,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:16:35Z",
+          "completed_at": "2026-11-23T06:16:36Z"
+        },
+        {
+          "number": 2,
+          "name": "Cancel superseded run before checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:16:36Z",
+          "completed_at": "2026-11-23T06:16:37Z"
+        },
+        {
+          "number": 3,
+          "name": "Find the last successful lint baseline",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:16:37Z",
+          "completed_at": "2026-11-23T06:16:39Z"
+        },
+        {
+          "number": 4,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:16:39Z",
+          "completed_at": "2026-11-23T06:16:39Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 12713,
+        "path": "logs/job-137520859966.log",
+        "error": null,
+        "marker_lines": []
+      }
+    },
+    {
+      "id": "137520904023",
+      "name": "Lint changed Markdown files and publish detailed evidence",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-23T06:16:43Z",
+      "completed_at": "2026-11-23T06:17:08Z",
+      "runner_name": "GitHub Actions 1000001117",
+      "runner_id": 1000001117,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:16:44Z",
+          "completed_at": "2026-11-23T06:16:44Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out current commit",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:16:44Z",
+          "completed_at": "2026-11-23T06:16:51Z"
+        },
+        {
+          "number": 3,
+          "name": "Fetch only the successful baseline commit",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T06:16:51Z",
+          "completed_at": "2026-11-23T06:16:51Z"
+        },
+        {
+          "number": 4,
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:16:51Z",
+          "completed_at": "2026-11-23T06:16:51Z"
+        },
+        {
+          "number": 5,
+          "name": "Validate lint and report tooling",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:16:51Z",
+          "completed_at": "2026-11-23T06:16:56Z"
+        },
+        {
+          "number": 6,
+          "name": "Check active Markdown file links and heading anchors",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:16:56Z",
+          "completed_at": "2026-11-23T06:16:57Z"
+        },
+        {
+          "number": 7,
+          "name": "Run full technical-document lint",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:16:57Z",
+          "completed_at": "2026-11-23T06:17:02Z"
+        },
+        {
+          "number": 8,
+          "name": "Find Markdown files changed since the last successful run",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T06:17:02Z",
+          "completed_at": "2026-11-23T06:17:02Z"
+        },
+        {
+          "number": 9,
+          "name": "Run STE linter on changed Markdown files",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T06:17:02Z",
+          "completed_at": "2026-11-23T06:17:02Z"
+        },
+        {
+          "number": 10,
+          "name": "Generate and publish changed-document lint evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:17:02Z",
+          "completed_at": "2026-11-23T06:17:05Z"
+        },
+        {
+          "number": 11,
+          "name": "Preserve lint failure as workflow conclusion",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-11-23T06:17:05Z",
+          "completed_at": "2026-11-23T06:17:05Z"
+        },
+        {
+          "number": 21,
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T06:17:05Z",
+          "completed_at": "2026-11-23T06:17:05Z"
+        },
+        {
+          "number": 22,
+          "name": "Post Check out current commit",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:17:05Z",
+          "completed_at": "2026-11-23T06:17:05Z"
+        },
+        {
+          "number": 23,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:17:05Z",
+          "completed_at": "2026-11-23T06:17:05Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 62652,
+        "path": "logs/job-137520904023.log",
+        "error": null,
+        "marker_lines": [
+          "Lint changed Markdown files and publish detailed evidence\tValidate lint and report tooling\t2026-11-23T06:16:51.9546457Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tValidate lint and report tooling\t2026-11-23T06:16:51.9552157Z ^[[36;1mecho \"failed=$failed\" >> \"$GITHUB_OUTPUT\"^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tRun full technical-document lint\t2026-11-23T06:16:57.1076010Z ^[[36;1m    failed=1^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tRun full technical-document lint\t2026-11-23T06:16:57.1076584Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tRun full technical-document lint\t2026-11-23T06:16:57.1077155Z ^[[36;1mecho \"failed=$failed\" >> \"$GITHUB_OUTPUT\"^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-23T06:17:02.8721677Z ^[[36;1m        \"status\": \"Passed\" if exit_code == 0 else \"Failed\",^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-23T06:17:02.8726122Z ^[[36;1m        \"status\": \"Passed\" if exit_code == 0 else \"Failed\",^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-23T06:17:02.8728860Z ^[[36;1mif [[ \"$TOOLING_FAILED\" == \"1\" || \"$FULL_FAILED\" == \"1\" || \"$CHANGED_FAILED\" == \"1\" ]]; then status=\"Failed\"; fi^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-23T06:17:02.8729509Z ^[[36;1mif [[ \"$ANCHOR_OUTCOME\" != \"skipped\" && \"$ANCHOR_EXIT\" != \"0\" ]]; then status=\"Failed\"; fi^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-23T06:17:05.3456227Z ^[[36;1m  echo \"::error::Changed-document lint failed. See lint_reports/on_changed/latest-lint-report.md.\"^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-23T06:17:05.3557899Z ##[error]Changed-document lint failed. See lint_reports/on_changed/latest-lint-report.md.",
+          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-23T06:17:05.3567953Z ##[error]Process completed with exit code 1."
+        ]
+      }
+    },
+    {
+      "id": "137521065808",
+      "name": "Capture GH Actions diagnostics / Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-23T06:17:10Z",
+      "completed_at": "2026-11-23T06:17:30Z",
+      "runner_name": "GitHub Actions 1000001121",
+      "runner_id": 1000001121,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:17:11Z",
+          "completed_at": "2026-11-23T06:17:13Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out gpt for report publication",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:17:13Z",
+          "completed_at": "2026-11-23T06:17:25Z"
+        },
+        {
+          "number": 3,
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:17:25Z",
+          "completed_at": "2026-11-23T06:17:25Z"
+        },
+        {
+          "number": 4,
+          "name": "Compile and test the diagnostic reporter",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-11-23T06:17:25Z",
+          "completed_at": "2026-11-23T06:17:26Z"
+        },
+        {
+          "number": 5,
+          "name": "Capture source workflow jobs and steps",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:17:26Z",
+          "completed_at": "2026-11-23T06:17:26Z"
+        },
+        {
+          "number": 6,
+          "name": "Publish immutable diagnostic evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:17:26Z",
+          "completed_at": "2026-11-23T06:17:26Z"
+        },
+        {
+          "number": 11,
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T06:17:26Z",
+          "completed_at": "2026-11-23T06:17:26Z"
+        },
+        {
+          "number": 12,
+          "name": "Post Check out gpt for report publication",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:17:26Z",
+          "completed_at": "2026-11-23T06:17:26Z"
+        },
+        {
+          "number": 13,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:17:26Z",
+          "completed_at": "2026-11-23T06:17:26Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 41534,
+        "path": "logs/job-137521065808.log",
+        "error": null,
+        "marker_lines": [
+          "Capture GH Actions diagnostics / Capture GH Actions diagnostics\tUNKNOWN STEP\t2026-11-23T06:17:26.4158836Z test_latest_pointer_and_stage_precedence (test_report.StorageTests.test_latest_pointer_and_stage_precedence) ... ERROR",
+          "Capture GH Actions diagnostics / Capture GH Actions diagnostics\tUNKNOWN STEP\t2026-11-23T06:17:26.4160005Z ERROR: test_latest_pointer_and_stage_precedence (test_report.StorageTests.test_latest_pointer_and_stage_precedence)",
+          "Capture GH Actions diagnostics / Capture GH Actions diagnostics\tUNKNOWN STEP\t2026-11-23T06:17:26.4161138Z Traceback (most recent call last):",
+          "Capture GH Actions diagnostics / Capture GH Actions diagnostics\tUNKNOWN STEP\t2026-11-23T06:17:26.4174389Z Traceback (most recent call last):",
+          "Capture GH Actions diagnostics / Capture GH Actions diagnostics\tUNKNOWN STEP\t2026-11-23T06:17:26.4188219Z FAILED (failures=1, errors=1)",
+          "Capture GH Actions diagnostics / Capture GH Actions diagnostics\tUNKNOWN STEP\t2026-11-23T06:17:26.4309974Z ##[error]Process completed with exit code 1.",
+          "Capture GH Actions diagnostics / Capture GH Actions diagnostics\tUNKNOWN STEP\t2026-11-23T06:17:26.6027946Z Traceback (most recent call last):",
+          "Capture GH Actions diagnostics / Capture GH Actions diagnostics\tUNKNOWN STEP\t2026-11-23T06:17:26.6152328Z ##[error]Process completed with exit code 1.",
+          "Capture GH Actions diagnostics / Capture GH Actions diagnostics\tUNKNOWN STEP\t2026-11-23T06:17:26.6186879Z ^[[36;1m    echo \"::error::Could not rebase the diagnostic evidence onto gpt.\"^[[0m",
+          "Capture GH Actions diagnostics / Capture GH Actions diagnostics\tUNKNOWN STEP\t2026-11-23T06:17:26.6189574Z ^[[36;1m    echo \"::error::Push failed while origin/gpt was unchanged.\"^[[0m",
+          "Capture GH Actions diagnostics / Capture GH Actions diagnostics\tUNKNOWN STEP\t2026-11-23T06:17:26.6190625Z ^[[36;1mecho \"::error::Could not publish diagnostic evidence after five attempts.\"^[[0m"
+        ]
+      }
+    },
+    {
+      "id": "137521065827",
+      "name": "Capture GH Actions diagnostics / Backfill completed workflow runs",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-23T06:17:10Z",
+      "completed_at": "2026-11-23T06:17:23Z",
+      "runner_name": "GitHub Actions 1000001120",
+      "runner_id": 1000001120,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:17:10Z",
+          "completed_at": "2026-11-23T06:17:11Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:17:11Z",
+          "completed_at": "2026-11-23T06:17:18Z"
+        },
+        {
+          "number": 3,
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:17:18Z",
+          "completed_at": "2026-11-23T06:17:19Z"
+        },
+        {
+          "number": 4,
+          "name": "Compile and test the diagnostic reporter",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-11-23T06:17:19Z",
+          "completed_at": "2026-11-23T06:17:21Z"
+        },
+        {
+          "number": 5,
+          "name": "Backfill completed runs and explicit requests",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T06:17:21Z",
+          "completed_at": "2026-11-23T06:17:21Z"
+        },
+        {
+          "number": 6,
+          "name": "Publish diagnostic backfill",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T06:17:21Z",
+          "completed_at": "2026-11-23T06:17:21Z"
+        },
+        {
+          "number": 11,
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T06:17:21Z",
+          "completed_at": "2026-11-23T06:17:21Z"
+        },
+        {
+          "number": 12,
+          "name": "Post Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:17:21Z",
+          "completed_at": "2026-11-23T06:17:21Z"
+        },
+        {
+          "number": 13,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:17:21Z",
+          "completed_at": "2026-11-23T06:17:21Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 32327,
+        "path": "logs/job-137521065827.log",
+        "error": null,
+        "marker_lines": [
+          "Capture GH Actions diagnostics / Backfill completed workflow runs\tUNKNOWN STEP\t2026-11-23T06:17:21.5616034Z test_latest_pointer_and_stage_precedence (test_report.StorageTests.test_latest_pointer_and_stage_precedence) ... ERROR",
+          "Capture GH Actions diagnostics / Backfill completed workflow runs\tUNKNOWN STEP\t2026-11-23T06:17:21.5617835Z ERROR: test_latest_pointer_and_stage_precedence (test_report.StorageTests.test_latest_pointer_and_stage_precedence)",
+          "Capture GH Actions diagnostics / Backfill completed workflow runs\tUNKNOWN STEP\t2026-11-23T06:17:21.5619089Z Traceback (most recent call last):",
+          "Capture GH Actions diagnostics / Backfill completed workflow runs\tUNKNOWN STEP\t2026-11-23T06:17:21.5633773Z Traceback (most recent call last):",
+          "Capture GH Actions diagnostics / Backfill completed workflow runs\tUNKNOWN STEP\t2026-11-23T06:17:21.5637916Z FAILED (failures=1, errors=1)",
+          "Capture GH Actions diagnostics / Backfill completed workflow runs\tUNKNOWN STEP\t2026-11-23T06:17:21.5749865Z ##[error]Process completed with exit code 1."
+        ]
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "137520859966",
+      "name": "Reject superseded runs and find lint baseline",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-23T06:16:34Z",
+      "completed_at": "2026-11-23T06:16:40Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123002601/job/137520859966",
+      "app": "GitHub Actions",
+      "annotations_count": 0
+    },
+    {
+      "id": "137520904023",
+      "name": "Lint changed Markdown files and publish detailed evidence",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-23T06:16:43Z",
+      "completed_at": "2026-11-23T06:17:08Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123002601/job/137520904023",
+      "app": "GitHub Actions",
+      "annotations_count": 3
+    },
+    {
+      "id": "137521065808",
+      "name": "Capture GH Actions diagnostics / Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-23T06:17:10Z",
+      "completed_at": "2026-11-23T06:17:30Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123002601/job/137521065808",
+      "app": "GitHub Actions",
+      "annotations_count": 3
+    },
+    {
+      "id": "137521065827",
+      "name": "Capture GH Actions diagnostics / Backfill completed workflow runs",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-23T06:17:10Z",
+      "completed_at": "2026-11-23T06:17:23Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123002601/job/137521065827",
+      "app": "GitHub Actions",
+      "annotations_count": 2
+    }
+  ],
+  "annotations": [],
+  "artifacts": [],
+  "capture_errors": [],
+  "history_path": "history/424715662/45123002601-attempt-1-post_run"
+}

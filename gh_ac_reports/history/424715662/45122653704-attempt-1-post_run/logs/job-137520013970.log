@@ -1,0 +1,262 @@
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	﻿2026-11-23T06:14:13.2835287Z Current runner version: '2.338.2'
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2857941Z ##[group]Runner Image Provisioner
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2858664Z Hosted Compute Agent
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2859226Z Version: 20261111.635
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2859779Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2860368Z Build Date: 2026-11-11T01:49:01Z
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2860947Z Worker ID: {29c3ed06-cb1e-49cc-851a-01e3e6ecb888}
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2861529Z Region: westus3
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2861967Z Cloud: Azure
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2862627Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2863727Z ##[group]Operating System
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2864272Z Ubuntu
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2864711Z 26.04.1
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2865130Z LTS
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2865645Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2866096Z ##[group]Runner Image
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2866900Z Image: ubuntu-26.04
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2867379Z Version: 20261116.202.1
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2868452Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2869687Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2870460Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2871489Z ##[group]GITHUB_TOKEN Permissions
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2873690Z Actions: read
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2874200Z Checks: read
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2874663Z Contents: write
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2875186Z Metadata: read
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2875630Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2877731Z Secret source: Actions
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2878480Z Cache mode: write
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.2879023Z Prepare workflow directory
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.3181885Z Prepare all required actions
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.3238227Z Getting action download info
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.6038516Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:13.9227720Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.1865167Z Uses: dungnv2602/chatgpt/.github/workflows/gh-actions-diagnostics.yml@refs/heads/gpt (535b8052bf1e33cbb04fc19d965ec5e056981959)
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.1868897Z ##[group] Inputs
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.1869337Z   capture_mode: finalizer
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.1869736Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.1870269Z Complete job name: Capture GH Actions diagnostics / Capture GH Actions diagnostics
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2602246Z ##[group]Run actions/checkout@v4
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2603493Z with:
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2603964Z   ref: gpt
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2604425Z   fetch-depth: 0
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2604929Z   persist-credentials: true
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2605521Z   repository: dungnv2602/chatgpt
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2610699Z   token: [REDACTED]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2611313Z   ssh-strict: true
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2611852Z   ssh-user: git
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2612511Z   clean: true
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2612996Z   sparse-checkout-cone-mode: true
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2613605Z   fetch-tags: false
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2614075Z   show-progress: true
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2614572Z   lfs: false
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2615039Z   submodules: false
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2615624Z   set-safe-directory: true
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2616263Z   allow-unsafe-pr-checkout: false
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:14.2617170Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.1730154Z Syncing repository: dungnv2602/chatgpt
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.1732122Z ##[group]Getting Git version info
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.1733074Z Working directory is '/home/runner/work/chatgpt/chatgpt'
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.1752166Z [command]/usr/bin/git version
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2043075Z git version 2.56.1
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2059205Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2077817Z Temporarily overriding HOME='/home/runner/work/_temp/384ef853-90ec-424a-8b88-463caa9e8b78' before making global git config changes
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2079293Z Adding repository directory to the temporary git global config as a safe directory
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2107388Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2484851Z Deleting the contents of '/home/runner/work/chatgpt/chatgpt'
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2486061Z ##[group]Initializing the repository
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2486768Z [command]/usr/bin/git init /home/runner/work/chatgpt/chatgpt
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2834770Z hint: Using 'master' as the name for the initial branch. This default branch name
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2840836Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2850529Z hint: to use in all of your new repositories, which will suppress this warning,
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2854716Z hint: call:
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2855409Z hint:
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2855841Z hint: 	git config --global init.defaultBranch <name>
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2856343Z hint:
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2856783Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2857486Z hint: 'development'. The just-created branch can be renamed via this command:
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2858031Z hint:
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2858380Z hint: 	git branch -m <name>
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2858741Z hint:
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2859076Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2941792Z Initialized empty Git repository in /home/runner/work/chatgpt/chatgpt/.git/
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.2954250Z [command]/usr/bin/git remote add origin https://github.com/dungnv2602/chatgpt
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.3172131Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.3173156Z ##[group]Disabling automatic garbage collection
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.3173825Z [command]/usr/bin/git config --local gc.auto 0
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.3204988Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.3205928Z ##[group]Setting up auth
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.3207008Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.3237680Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.5714630Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.5781273Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.6139591Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.6189665Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.6481374Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.6533751Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.6534726Z ##[group]Fetching the repository
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:16.6536390Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:23.2607010Z From https://github.com/dungnv2602/chatgpt
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:23.2607974Z  * [new branch]      gpt        -> origin/gpt
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:23.2608271Z  * [new branch]      main       -> origin/main
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:23.2631419Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:23.2632031Z ##[group]Determining the checkout info
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:23.2633061Z [command]/usr/bin/git branch --list --remote origin/gpt
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:23.2662603Z   origin/gpt
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:23.2697719Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:23.2698064Z [command]/usr/bin/git sparse-checkout disable
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:23.2863519Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:23.2926089Z ##[group]Checking out the ref
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:23.2933024Z [command]/usr/bin/git checkout --progress --force -B gpt refs/remotes/origin/gpt
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:23.9842091Z Switched to a new branch 'gpt'
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:23.9899696Z branch 'gpt' set up to track 'origin/gpt'.
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:23.9948293Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.0242945Z [command]/usr/bin/git log -1 --format=%H
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.0275374Z ac347317019f7a3809a0074bc18a55c4f42795f3
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.0793225Z ##[group]Run actions/setup-python@v5
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.0793502Z with:
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.0793687Z   python-version: 3.x
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.0793890Z   check-latest: false
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.0795793Z   token: [REDACTED]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.0796011Z   update-environment: true
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.0796224Z   allow-prereleases: false
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.0796412Z   freethreaded: false
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.0796595Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.2140581Z ##[group]Installed versions
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.2811190Z (node:2217) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.2812550Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.2813066Z Successfully set up CPython (3.15.2)
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.2813860Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.3207740Z ##[group]Run python3 -m py_compile gh_ac_reports/scripts/report.py
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.3208214Z ^[[36;1mpython3 -m py_compile gh_ac_reports/scripts/report.py^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.3208529Z ^[[36;1mpython3 -m unittest discover \^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.3208771Z ^[[36;1m  -s gh_ac_reports/scripts \^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.3208998Z ^[[36;1m  -p 'test_report.py' \^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.3209206Z ^[[36;1m  -v^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.3372936Z shell: /usr/bin/bash -e {0}
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.3373197Z env:
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.3373443Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.3373825Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.3374162Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.3374454Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.3374751Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.3375091Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:24.3375363Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0634137Z test_cancelled_is_not_failure (test_report.ClassificationTests.test_cancelled_is_not_failure) ... ok
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0635593Z test_continue_on_error_step_is_nonblocking (test_report.ClassificationTests.test_continue_on_error_step_is_nonblocking) ... ok
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0637360Z test_failed_run_without_jobs_is_low_confidence_startup (test_report.ClassificationTests.test_failed_run_without_jobs_is_low_confidence_startup) ... ok
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0638423Z test_failed_test_step (test_report.ClassificationTests.test_failed_test_step) ... ok
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0639317Z test_log_redaction (test_report.ClassificationTests.test_log_redaction) ... ok
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0644980Z test_pre_finalizer_projects_but_does_not_invent_conclusion (test_report.ClassificationTests.test_pre_finalizer_projects_but_does_not_invent_conclusion) ... FAIL
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0646637Z test_schema_rejects_invalid_capture_stage (test_report.SchemaTests.test_schema_rejects_invalid_capture_stage) ... ok
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0797544Z test_integrity_and_immutable_history (test_report.StorageTests.test_integrity_and_immutable_history) ... ok
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0810435Z test_latest_pointer_and_stage_precedence (test_report.StorageTests.test_latest_pointer_and_stage_precedence) ... ERROR
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0811338Z 
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0811679Z ======================================================================
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0812742Z ERROR: test_latest_pointer_and_stage_precedence (test_report.StorageTests.test_latest_pointer_and_stage_precedence)
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0813643Z ----------------------------------------------------------------------
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0814206Z Traceback (most recent call last):
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0820717Z   File "/home/runner/work/chatgpt/chatgpt/gh_ac_reports/scripts/test_report.py", line 135, in test_latest_pointer_and_stage_precedence
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0821669Z     REPORT.write_report(root, base, {})
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0822611Z     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0823364Z   File "/home/runner/work/chatgpt/chatgpt/gh_ac_reports/scripts/report.py", line 551, in write_report
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0824230Z     (target / "report.md").write_text(render_markdown(report), encoding="utf-8")
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0824837Z                                       ~~~~~~~~~~~~~~~^^^^^^^^
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0825606Z   File "/home/runner/work/chatgpt/chatgpt/gh_ac_reports/scripts/report.py", line 390, in render_markdown
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0826483Z     ["Commit", run["head_sha"]], ["Event", run["event"]], ["Actor", run["actor"] or "Not recorded"],
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0827142Z                                                                     ~~~^^^^^^^^^
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0827627Z KeyError: 'actor'
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0827923Z 
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0828182Z ======================================================================
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0829369Z FAIL: test_pre_finalizer_projects_but_does_not_invent_conclusion (test_report.ClassificationTests.test_pre_finalizer_projects_but_does_not_invent_conclusion)
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0830376Z ----------------------------------------------------------------------
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0830916Z Traceback (most recent call last):
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0831839Z   File "/home/runner/work/chatgpt/chatgpt/gh_ac_reports/scripts/test_report.py", line 72, in test_pre_finalizer_projects_but_does_not_invent_conclusion
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0833010Z     self.assertEqual(result["projected_conclusion"], "failure")
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0833576Z     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0834075Z AssertionError: None != 'failure'
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0834420Z 
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0834735Z ----------------------------------------------------------------------
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0835245Z Ran 9 tests in 0.018s
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0835670Z 
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0835924Z FAILED (failures=1, errors=1)
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.0953900Z ##[error]Process completed with exit code 1.
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.1016080Z ##[group]Run python3 gh_ac_reports/scripts/report.py --mode current --repo "$GITHUB_REPOSITORY" --run-id "$GITHUB_RUN_ID"
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.1016764Z ^[[36;1mpython3 gh_ac_reports/scripts/report.py --mode current --repo "$GITHUB_REPOSITORY" --run-id "$GITHUB_RUN_ID"^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.1046341Z shell: /usr/bin/bash -e {0}
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.1046545Z env:
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.1046769Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.1047113Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.1047443Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.1047739Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.1048029Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.1048336Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.1050321Z   GH_TOKEN: \***
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.1052188Z   GITHUB_TOKEN: \***
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.1052565Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3683534Z Traceback (most recent call last):
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3693725Z   File "/home/runner/work/chatgpt/chatgpt/gh_ac_reports/scripts/report.py", line 695, in <module>
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3694495Z     main()
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3694922Z     ~~~~^^
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3695695Z   File "/home/runner/work/chatgpt/chatgpt/gh_ac_reports/scripts/report.py", line 688, in main
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3696685Z     target = capture_one(args.repo, args.root, args.run_id, "pre_finalizer")
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3697650Z   File "/home/runner/work/chatgpt/chatgpt/gh_ac_reports/scripts/report.py", line 570, in capture_one
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3698622Z     raise RuntimeError("Cannot retrieve workflow run " + str(run_id))
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3699329Z RuntimeError: Cannot retrieve workflow run 45122653704
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3797885Z ##[error]Process completed with exit code 1.
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3827699Z ##[group]Run set -euo pipefail
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3828150Z ^[[36;1mset -euo pipefail^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3828382Z ^[[36;1mgit config user.name "github-actions[bot]"^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3828745Z ^[[36;1mgit config user.email "41898282+github-actions[bot]@users.noreply.github.com"^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3829085Z ^[[36;1mgit add -A -- gh_ac_reports/^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3829322Z ^[[36;1mif git diff --cached --quiet; then^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3829586Z ^[[36;1m  echo "No new diagnostic evidence to publish."^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3829833Z ^[[36;1m  exit 0^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3829993Z ^[[36;1mfi^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3830206Z ^[[36;1mgit commit -m "Publish GitHub Actions diagnostics"^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3830476Z ^[[36;1mfor attempt in 1 2 3 4 5; do^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3830690Z ^[[36;1m  git fetch origin gpt^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3830903Z ^[[36;1m  if ! git rebase origin/gpt; then^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3831136Z ^[[36;1m    git rebase --abort || true^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3831464Z ^[[36;1m    echo "::error::Could not rebase the diagnostic evidence onto gpt."^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3831760Z ^[[36;1m    exit 1^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3831926Z ^[[36;1m  fi^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3832124Z ^[[36;1m  if git push origin HEAD:refs/heads/gpt; then^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3832671Z ^[[36;1m    echo "Diagnostic evidence published."^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3832904Z ^[[36;1m    exit 0^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3833073Z ^[[36;1m  fi^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3833244Z ^[[36;1m  git fetch origin gpt^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3833505Z ^[[36;1m  if git merge-base --is-ancestor origin/gpt HEAD; then^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3833828Z ^[[36;1m    echo "::error::Push failed while origin/gpt was unchanged."^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3834098Z ^[[36;1m    exit 1^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3834261Z ^[[36;1m  fi^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3834422Z ^[[36;1mdone^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3834834Z ^[[36;1mecho "::error::Could not publish diagnostic evidence after five attempts."^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3835159Z ^[[36;1mexit 1^[[0m
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3866549Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3866834Z env:
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3867057Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3867386Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3867703Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3867990Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3868276Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3868561Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.3868813Z ##[endgroup]
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.9550808Z No new diagnostic evidence to publish.
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:26.9657856Z Post job cleanup.
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:27.0497521Z [command]/usr/bin/git version
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:27.0563209Z git version 2.56.1
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:27.0619955Z Temporarily overriding HOME='/home/runner/work/_temp/137863ee-d029-442a-8499-ffc3c87d97c5' before making global git config changes
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:27.0621153Z Adding repository directory to the temporary git global config as a safe directory
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:27.0622108Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:27.0734633Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:27.0774346Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:27.1533135Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:27.1586276Z http.https://github.com/.extraheader
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:27.1593575Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:27.1645802Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:27.1895228Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:27.1927090Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:27.2310985Z Cleaning up orphan processes
+Capture GH Actions diagnostics / Capture GH Actions diagnostics	UNKNOWN STEP	2026-11-23T06:14:27.2611750Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
