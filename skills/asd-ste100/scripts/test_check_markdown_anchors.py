@@ -29,7 +29,7 @@ class MarkdownAnchorTests(unittest.TestCase):
         self.assertEqual(
             MODULE.resolve_markdown_target(
                 "skills/example.md",
-                "../../docs/guide.md#setup",
+                "../docs/guide.md#setup",
                 {"docs/guide.md"},
                 {"docs/guide.md"},
             ),
@@ -40,7 +40,7 @@ class MarkdownAnchorTests(unittest.TestCase):
         self.assertEqual(
             MODULE.resolve_markdown_target(
                 "skills/example.md",
-                "../../docs/missing.md",
+                "../docs/missing.md",
                 {"docs/guide.md"},
                 {"docs/guide.md"},
             ),
