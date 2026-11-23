@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 16:18 UTC — Worker recovery:** Read the workspace guide and task board. Identify the current execution task and inspect its complete record before starting the requested drawing session.
+- **2026-11-23 16:21 UTC — Drawing skill loading:** Retrieve The Worker's drawing archive reference, the Drawing skill, and its required references. Then establish the new session brief and records before image generation.
 
 ## Open Discussions
 
