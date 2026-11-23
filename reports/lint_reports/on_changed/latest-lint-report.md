@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#460](https://github.com/dungnv2602/chatgpt/actions/runs/45158012392)
-- **Run ID / attempt:** 45158012392 / 1
+- **Run:** [#461](https://github.com/dungnv2602/chatgpt/actions/runs/45158151665)
+- **Run ID / attempt:** 45158151665 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 70a6f61e23c1935e79798be2c48d9ce99100b21c
+- **Branch / commit:** gpt / 8c3aa5723b89d4ba4187799d0bd4f54258119ea5
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 70a6f61e23c1935e79798be2c48d9ce99100b21c
-- **Generated (UTC):** 2026-11-23T10:39:29.292558+00:00
+- **Linter source SHA:** 8c3aa5723b89d4ba4187799d0bd4f54258119ea5
+- **Generated (UTC):** 2026-11-23T10:40:23.128499+00:00
 
 ## 1. Executive summary
 
@@ -19,12 +19,12 @@
 | Files evaluated | 49 |
 | Files that failed | 9 |
 | Files with findings | 41 |
-| Total findings | 380 |
-| Hard findings | 61 |
+| Total findings | 375 |
+| Hard findings | 56 |
 | Advisory findings | 319 |
 | New findings | 0 |
-| Recurring findings | 380 |
-| Resolved findings | 9 |
+| Recurring findings | 375 |
+| Resolved findings | 5 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -110,7 +110,7 @@ The table includes every evaluated file, including files with zero findings and 
 | images/README.md | PASS | 1 | 0 | 0 | 584 | 0.2 | 0 |
 | skills/asd-ste100/SKILL.md | PASS | 21 | 13 | 31 | 2609 | 0.8 | 0 |
 | skills/philosophy-religion-asceticism/README.md | PASS | 1 | 0 | 0 | 471 | 0.2 | 0 |
-| skills/drawing/references/archive-and-delivery.md | PASS | 25 | 5 | 7 | 2365 | 1.1 | 0 |
+| skills/drawing/references/archive-and-delivery.md | PASS | 20 | 0 | 7 | 2370 | 0.8 | 0 |
 | skills/README.md | PASS | 0 | 0 | 0 | 371 | 0.0 | 0 |
 | skills/github-actions/SKILL.md | FAIL | 8 | 5 | 0 | 2530 | 0.3 | 1 |
 | skills/drawing/assets/attempt-template.md | PASS | 1 | 0 | 0 | 593 | 0.2 | 0 |
@@ -153,8 +153,8 @@ Counts include hard and advisory findings.
 |---|---:|
 | passive-voice | 279 |
 | present-perfect | 40 |
-| synonym-rotation | 23 |
-| long-sentence | 17 |
+| synonym-rotation | 20 |
+| long-sentence | 15 |
 | semicolon | 9 |
 | marketing-adjective | 5 |
 | phrasal-verb | 5 |
@@ -190,7 +190,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.349s
+Ran 4 tests in 0.325s
 
 OK
 ~~~
@@ -223,7 +223,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 549 active Markdown files (615 available as link targets) and 338 local Markdown links.
+Scanned 556 active Markdown files (622 available as link targets) and 338 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -641,55 +641,35 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are written
-- **synonym-rotation** · skills/drawing/references/archive-and-delivery.md:66:70 · **recurring** · fingerprint: 4a60e842034f5d41693a5db2
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
-- **long-sentence** · skills/drawing/references/archive-and-delivery.md:78:4 · **recurring** · fingerprint: b2fe77983de2b84d89887c16
-  - **Level:** advisory-free
-  - **Message:** Sentence has 28 words (cap 25). Split it.
-  - **Matched text:** 28 words
-- **long-sentence** · skills/drawing/references/archive-and-delivery.md:88:4 · **recurring** · fingerprint: 1f12c5295c209089d03fd7ec
-  - **Level:** advisory-free
-  - **Message:** Sentence has 33 words (cap 25). Split it.
-  - **Matched text:** 33 words
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:96:17 · **recurring** · fingerprint: fafc7dc70cfb6b41e2ceac4c
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:93:17 · **recurring** · fingerprint: fafc7dc70cfb6b41e2ceac4c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are allowed
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:97:72 · **recurring** · fingerprint: c93d49b6dfa2883ae7732733
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:94:72 · **recurring** · fingerprint: c93d49b6dfa2883ae7732733
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is unresolved
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:101:39 · **recurring** · fingerprint: 9e3799d7fdb927485334ac92
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:98:39 · **recurring** · fingerprint: 9e3799d7fdb927485334ac92
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been uploaded
-- **synonym-rotation** · skills/drawing/references/archive-and-delivery.md:105:22 · **recurring** · fingerprint: 85ee15f9b5a327b690ba9464
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-- **synonym-rotation** · skills/drawing/references/archive-and-delivery.md:168:47 · **recurring** · fingerprint: 530b4aab7e05619eb2854a21
-  - **Level:** advisory-free
-  - **Message:** 'correct' and 'repair' name the same action. Pick one and use it every time.
-  - **Matched text:** correct
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:180:400 · **recurring** · fingerprint: 20086aa45dcb5efbabf52350
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:177:400 · **recurring** · fingerprint: 20086aa45dcb5efbabf52350
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** were expected
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:199:37 · **recurring** · fingerprint: b6e92fd2ee8e3800eabf5dcd
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:196:37 · **recurring** · fingerprint: b6e92fd2ee8e3800eabf5dcd
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is paired
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:200:76 · **recurring** · fingerprint: a753d9aa8cfa9ae159dfcd57
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:197:76 · **recurring** · fingerprint: a753d9aa8cfa9ae159dfcd57
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is verified
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:211:26 · **recurring** · fingerprint: c6565434b3298d6e8f59aec5
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:208:26 · **recurring** · fingerprint: c6565434b3298d6e8f59aec5
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is retained
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:215:1 · **recurring** · fingerprint: 4c20f74831abf9722cfbae81
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:212:1 · **recurring** · fingerprint: 4c20f74831abf9722cfbae81
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is described
@@ -1760,42 +1740,26 @@ None.
 
 ### Resolved findings
 
-- **long-sentence** · skills/the-worker/SKILL.md:23:1 · **resolved** · fingerprint: 43ee5fc4aa2ab0ab98097505
+- **synonym-rotation** · skills/drawing/references/archive-and-delivery.md:66:70 · **resolved** · fingerprint: 4a60e842034f5d41693a5db2
   - **Level:** advisory-free
-  - **Message:** Sentence has 34 words (cap 25). Split it.
-  - **Matched text:** 34 words
-- **synonym-rotation** · skills/the-worker/SKILL.md:49:97 · **resolved** · fingerprint: fc69cda88704716351e23cde
+  - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
+  - **Matched text:** checks
+- **long-sentence** · skills/drawing/references/archive-and-delivery.md:78:4 · **resolved** · fingerprint: b2fe77983de2b84d89887c16
   - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Message:** Sentence has 28 words (cap 25). Split it.
+  - **Matched text:** 28 words
+- **long-sentence** · skills/drawing/references/archive-and-delivery.md:88:4 · **resolved** · fingerprint: 1f12c5295c209089d03fd7ec
+  - **Level:** advisory-free
+  - **Message:** Sentence has 33 words (cap 25). Split it.
+  - **Matched text:** 33 words
+- **synonym-rotation** · skills/drawing/references/archive-and-delivery.md:105:22 · **resolved** · fingerprint: 85ee15f9b5a327b690ba9464
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
   - **Matched text:** verify
-- **synonym-rotation** · skills/the-worker/SKILL.md:52:234 · **resolved** · fingerprint: d58fcdeca2d4638a3202e347
+- **synonym-rotation** · skills/drawing/references/archive-and-delivery.md:168:47 · **resolved** · fingerprint: 530b4aab7e05619eb2854a21
   - **Level:** advisory-free
-  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** validate
-- **synonym-rotation** · skills/the-worker/SKILL.md:210:86 · **resolved** · fingerprint: 6d31ffa74d22866fde26008b
-  - **Level:** advisory-free
-  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
-  - **Matched text:** Remove
-- **synonym-rotation** · skills/the-worker/SKILL.md:274:142 · **resolved** · fingerprint: 029ca4bbb45df78403a58c6a
-  - **Level:** advisory-free
-  - **Message:** 'fix' and 'repair' name the same action. Pick one and use it every time.
-  - **Matched text:** fix
-- **semicolon** · skills/the-worker/SKILL.md:274:237 · **resolved** · fingerprint: 3e9dae68ac0dc79de8ae5c41
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/the-worker/SKILL.md:284:273 · **resolved** · fingerprint: 3e9dae68ac0dc79de8ae5c41
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **synonym-rotation** · skills/the-worker/SKILL.md:302:5 · **resolved** · fingerprint: a9d20f4653027ed7ab14234f
-  - **Level:** advisory-free
-  - **Message:** 'fetch' and 'retrieve' name the same action. Pick one and use it every time.
-  - **Matched text:** Fetch
-- **synonym-rotation** · skills/the-worker/SKILL.md:303:188 · **resolved** · fingerprint: 37f2d4507c6da52361dc8884
-  - **Level:** advisory-free
-  - **Message:** 'modify' and 'change' name the same action. Pick one and use it every time.
-  - **Matched text:** modify
+  - **Message:** 'correct' and 'repair' name the same action. Pick one and use it every time.
+  - **Matched text:** correct
 
 ## 8. Complete per-file diagnostics
 
@@ -2445,11 +2409,11 @@ No STE findings were recorded for this file.
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 25
-- **Hard findings:** 5
+- **Findings:** 20
+- **Hard findings:** 0
 - **Baseline:** 7
-- **Words:** 2365
-- **Findings per 100 words:** 1.1
+- **Words:** 2370
+- **Findings per 100 words:** 0.8
 
 #### Complete diagnostics
 
@@ -2513,67 +2477,42 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are written
 
-- **synonym-rotation** · skills/drawing/references/archive-and-delivery.md:66:70 · **recurring** · fingerprint: 4a60e842034f5d41693a5db2
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
-
-- **long-sentence** · skills/drawing/references/archive-and-delivery.md:78:4 · **recurring** · fingerprint: b2fe77983de2b84d89887c16
-  - **Level:** advisory-free
-  - **Message:** Sentence has 28 words (cap 25). Split it.
-  - **Matched text:** 28 words
-
-- **long-sentence** · skills/drawing/references/archive-and-delivery.md:88:4 · **recurring** · fingerprint: 1f12c5295c209089d03fd7ec
-  - **Level:** advisory-free
-  - **Message:** Sentence has 33 words (cap 25). Split it.
-  - **Matched text:** 33 words
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:96:17 · **recurring** · fingerprint: fafc7dc70cfb6b41e2ceac4c
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:93:17 · **recurring** · fingerprint: fafc7dc70cfb6b41e2ceac4c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are allowed
 
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:97:72 · **recurring** · fingerprint: c93d49b6dfa2883ae7732733
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:94:72 · **recurring** · fingerprint: c93d49b6dfa2883ae7732733
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is unresolved
 
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:101:39 · **recurring** · fingerprint: 9e3799d7fdb927485334ac92
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:98:39 · **recurring** · fingerprint: 9e3799d7fdb927485334ac92
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been uploaded
 
-- **synonym-rotation** · skills/drawing/references/archive-and-delivery.md:105:22 · **recurring** · fingerprint: 85ee15f9b5a327b690ba9464
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-
-- **synonym-rotation** · skills/drawing/references/archive-and-delivery.md:168:47 · **recurring** · fingerprint: 530b4aab7e05619eb2854a21
-  - **Level:** advisory-free
-  - **Message:** 'correct' and 'repair' name the same action. Pick one and use it every time.
-  - **Matched text:** correct
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:180:400 · **recurring** · fingerprint: 20086aa45dcb5efbabf52350
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:177:400 · **recurring** · fingerprint: 20086aa45dcb5efbabf52350
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** were expected
 
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:199:37 · **recurring** · fingerprint: b6e92fd2ee8e3800eabf5dcd
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:196:37 · **recurring** · fingerprint: b6e92fd2ee8e3800eabf5dcd
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is paired
 
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:200:76 · **recurring** · fingerprint: a753d9aa8cfa9ae159dfcd57
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:197:76 · **recurring** · fingerprint: a753d9aa8cfa9ae159dfcd57
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is verified
 
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:211:26 · **recurring** · fingerprint: c6565434b3298d6e8f59aec5
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:208:26 · **recurring** · fingerprint: c6565434b3298d6e8f59aec5
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is retained
 
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:215:1 · **recurring** · fingerprint: 4c20f74831abf9722cfbae81
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:212:1 · **recurring** · fingerprint: 4c20f74831abf9722cfbae81
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is described
