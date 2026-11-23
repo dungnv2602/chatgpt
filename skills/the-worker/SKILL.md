@@ -18,37 +18,17 @@ The mandatory [Conversation Mode reference](references/conversation-mode.md) is 
 
 Document Standards is a separately maintained foundational skill. Load its skill definition during foundational initialization; retrieve its catalog and specific canonical assets only when required. Agent Skill Authoring remains on-demand. The Worker's archive and media references load only when their task-specific conditions apply.
 
-## Markdown document creation gate
+## Document authoring
 
-Before creating, moving, renaming, or materially revising a repository Markdown document or structured record, apply the foundational Document Standards gate:
+Use [Document Standards](../document-standards/SKILL.md) as the single authoring gate. Before creating or materially revising a document or structured record, check its catalog entry, Markdown path coverage or schema, and canonical format. Do not edit the target until any missing format and owner references are committed and read back. Follow the complete procedure and exemptions in Document Standards.
 
-- For Markdown, match the destination path to the catalog's Markdown inventory coverage register.
-- For JSON, YAML, CSV, or another structured record, identify its schema/generator row and regression tests in the catalog.
-- Retrieve the document type's canonical template, schema, or embedded/generator contract.
-- If no Markdown path rule or structured-record authority exists, update the catalog and define the canonical format before authoring the document.
-- Do not add broad catch-all patterns to bypass an uncovered-path failure.
-- Update the owning index and validate the finished document against its canonical format.
-- Let the hosted Document Standards workflow perform validation; do not run repository scripts locally.
+The Worker owns task capture, approval, progress, and closeout. Document Standards owns document format.
 
-The inventory gate excludes root `master/` and `archive/` from its Markdown path scan. This does not change their separate ownership and access rules.
+## CI review
 
-## CI review is task-scoped
+Follow the [GitHub Actions skill](../github-actions/SKILL.md). CI is not an initialization gate and must not delay unrelated requests. Inspect it only when the user asks, a known failure blocks the task, or the current task changes or depends on a workflow.
 
-CI status is not a precondition for accepting or handling a new user request. Do not run a pre-prompt or post-initialization snapshot.
-
-Inspect CI only in these cases:
-
-- The user asks for diagnosis or a fix.
-- The current task changes a workflow or code that needs validation.
-- A known failure directly blocks the requested work.
-
-Use `reports/gh_ac_reports/README.md` for workflow, job, step, and runner evidence. Use `reports/lint_reports/README.md` for per-file lint findings.
-
-Keep outcomes distinct. A failed conclusion is a failure. A cancelled or skipped run is not a failure. A pending or unavailable run is unverified, not failed.
-
-Fix only defects within the user's current scope and only when the task requires the fix. Do not fix unrelated workflows before handling a request. Do not weaken tests, path coverage, or lint baselines to make a check pass.
-
-Never wait for or poll CI. Never run the linter, repository scripts, or CI tests locally. Let GitHub-hosted Actions perform validation. Record an unavailable result as unverified and continue unless the task directly depends on it.
+Use `reports/gh_ac_reports/README.md` for workflow evidence and `reports/lint_reports/README.md` for lint findings. Do not run repository scripts locally or poll CI. Fix only issues within the approved scope.
 
 ## Activation and authority
 
@@ -254,13 +234,7 @@ Do not record hidden reasoning, routine narration, or trivial tool calls. Do not
 
 After each meaningful action, update the task record when the result affects the current state or next action. Keep the board concise.
 
-## Document authoring gate
 
-[Document Standards](../document-standards/SKILL.md) is the single authority for document classes, Markdown inventory coverage, templates, schemas, and structural checks.
-
-Before creating, moving, renaming, or materially revising a repository document, follow its complete authoring procedure and the exact catalog entry. Do not create or edit the target until any required canonical format and its owner references have been committed and read back.
-
-The Worker owns task capture, approval, progress, and closeout. Document Standards owns document format. Do not duplicate its template or schema procedure.
 
 ## Execution and checkpoints
 
