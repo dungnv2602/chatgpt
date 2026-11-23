@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 09:18 UTC — Resume ledger implementation under Condensed Mode:** Verify current branch and task state, complete the mandatory generator-owned document/template and test-contract review, then implement and read back the ledger generator and integration.
+- **2026-11-23 09:22 UTC — Close the validated ledger task:** Confirm the generator-owned catalog contract, 17 regression tests, immutable evidence, and successful hosted diagnostics run. Archive the completed task, register its retention timestamp, remove the active record, and reconcile the board so no paused task is incorrectly shown as current.
 
 ## Open Discussions
 - **2026-11-23 — Hosted retention validation:** The shared cleanup script and tests now cover exact individual files in both `archive/tasks/` and `archive/reports/`. A hosted run of the schedule-only cleanup has not yet been observed. Do not dispatch it manually or modify `main`.
