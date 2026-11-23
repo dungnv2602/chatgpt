@@ -332,7 +332,7 @@ class LedgerTests(unittest.TestCase):
 
     def test_migrate_1_1_does_not_backfill_legacy_task_records(self):
         finding = {
-            "finding_id":"lint-a1b2c3d4e5f6","source_family":"lint","category":"rule","title":"A finding",
+            "finding_id":"lint-a1b2c3d4e5f6","source_family":"lint","category":"semicolon","title":"A finding",
             "status":"planned","severity":"medium","owner":None,
             "first_seen_utc":"2026-11-23T07:00:00Z","last_seen_utc":"2026-11-23T07:00:00Z",
             "occurrence_count":1,"evidence":[{"report_path":"reports/lint_reports/on_repo/history/1-attempt-1/report.json",
