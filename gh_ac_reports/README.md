@@ -45,7 +45,7 @@ A step can fail while its job succeeds when the workflow allows the step to cont
 
 ## Evidence limits and security
 
-The collector records workflow metadata, job and step states, runner identifiers, check runs, annotations, artifact metadata, and sanitized job logs where GitHub exposes them. It records artifact metadata but does not download artifact contents.
+The collector records workflow metadata, job and step states, runner identifiers, check runs, annotations, artifact metadata, and sanitized job logs where GitHub exposes them. Check-run annotations use GitHub's array response format. It records artifact metadata but does not download artifact contents.
 
 GitHub may not expose logs for a job that never started. Logs may expire, and annotations may be absent. These conditions appear in capture_errors and make the report Incomplete. A failed run with no job records is classified as a possible startup or configuration failure, not as a proven YAML error.
 

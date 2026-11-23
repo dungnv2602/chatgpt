@@ -146,6 +146,21 @@ def pages(repo, path, key, errors, source):
     return output
 
 
+def direct_pages(repo, path, errors, source):
+    """Paginate endpoints that return a JSON array instead of a named object property."""
+    output = []
+    for page in range(1, 51):
+        separator = "&" if "?" in path else "?"
+        payload = api_get(repo, path + separator + urlencode({"per_page": 100, "page": page}), errors, source)
+        if not isinstance(payload, list):
+            errors.append({"source": source, "message": "Expected the API to return a JSON array."})
+            break
+        output.extend(payload)
+        if len(payload) < 100:
+            break
+    return output
+
+
 def capture_log(repo, run_id, job_id):
     env = dict(os.environ)
     env["GH_TOKEN"] = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
@@ -193,7 +208,7 @@ def normalize_step(step):
     return {key: step.get(key) for key in ("number", "name", "status", "conclusion", "started_at", "completed_at")}
 
 
-def classify(run, jobs, logs):
+def classify(run, jobs, logs, jobs_available=True):
     issues = []
     categories = set()
     for job in jobs:
@@ -237,7 +252,11 @@ def classify(run, jobs, logs):
 
     conclusion = run.get("conclusion")
     if conclusion == "failure" and not issues:
-        category = "workflow_startup_or_configuration_failure" if not jobs else "workflow_level_failure_unattributed"
+        category = (
+            "workflow_startup_or_configuration_failure"
+            if jobs_available and not jobs
+            else "workflow_level_failure_unattributed"
+        )
         issues.append({
             "category": category, "job_id": None, "job_name": None,
             "step_number": None, "step_name": None, "blocking": True,
@@ -314,7 +333,7 @@ def fetch_evidence(repo, run_id, stage):
                     "annotations_count": (check.get("output") or {}).get("annotations_count", 0),
                 })
                 if int((check.get("output") or {}).get("annotations_count") or 0):
-                    items = pages(repo, "/repos/" + repo + "/check-runs/" + check_id + "/annotations", "annotations", errors, "annotations")
+                    items = direct_pages(repo, "/repos/" + repo + "/check-runs/" + check_id + "/annotations", errors, "annotations")
                     for item in items:
                         annotations.append({
                             "check_run_id": check_id, "job_id": job_id, "path": item.get("path"),
@@ -364,7 +383,7 @@ def fetch_evidence(repo, run_id, stage):
             "stage": stage, "captured_at_utc": utc_now(),
             "completeness": "Incomplete" if errors else "Complete", "reporter_job": reporter_job,
         },
-        "classification": classify(run, normalized_jobs, logs),
+        "classification": classify(run, normalized_jobs, logs, jobs_available=jobs_ok),
         "jobs": normalized_jobs, "check_runs": check_runs, "annotations": annotations,
         "artifacts": artifacts, "capture_errors": errors, "history_path": "",
     }
@@ -439,9 +458,9 @@ def render_markdown(report):
         coverage = "One or more evidence sources were unavailable. This report is Incomplete.\n\n" + coverage
     path = run["workflow_path"].lower()
     if "ste-lint-changed" in path:
-        lint = "[Changed-document lint report](../../../../lint_reports/on_changed/latest-lint-report.md)"
+        lint = "[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/lint_reports/on_changed/latest-lint-report.md)"
     elif "ste-lint-full-docs" in path:
-        lint = "[Repository-wide lint report](../../../../lint_reports/on_repo/latest-lint-report.md)"
+        lint = "[Repository-wide lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/lint_reports/on_repo/latest-lint-report.md)"
     else:
         lint = "No separate lint report applies to this workflow."
     values = {

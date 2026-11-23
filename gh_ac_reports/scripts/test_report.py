@@ -5,6 +5,7 @@ import importlib.util
 import json
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 SCRIPT = Path(__file__).with_name("report.py")
@@ -35,12 +36,12 @@ def make_job(conclusion="failure", step_conclusion="failure", name="Run unit tes
     }
 
 
-def build(run, jobs, logs=None, stage="post_run"):
+def build(run, jobs, logs=None, stage="post_run", jobs_available=True):
     logs = logs or {}
     return REPORT.classify(run, [
         {"id": str(job["id"]), "name": job["name"], "status": job.get("status", "completed"),
          "conclusion": job["conclusion"], "steps": job["steps"]} for job in jobs
-    ], logs)
+    ], logs, jobs_available=jobs_available)
 
 
 class ClassificationTests(unittest.TestCase):
@@ -60,6 +61,11 @@ class ClassificationTests(unittest.TestCase):
         self.assertEqual(result["primary_category"], "workflow_startup_or_configuration_failure")
         self.assertEqual(result["issues"][0]["confidence"], "low")
 
+    def test_unavailable_jobs_endpoint_is_not_called_a_startup_failure(self):
+        result = build(make_run(), [], jobs_available=False)
+        self.assertEqual(result["primary_category"], "workflow_level_failure_unattributed")
+        self.assertEqual(result["issues"][0]["confidence"], "low")
+
     def test_continue_on_error_step_is_nonblocking(self):
         result = build(make_run("success"), [make_job("success", "failure")], {"200": "Process completed with exit code 1"})
         self.assertEqual(result["state"], "success_with_non_blocking_step_failures")
@@ -77,6 +83,17 @@ class ClassificationTests(unittest.TestCase):
         self.assertNotIn("abcdef123456", cleaned)
         self.assertNotIn("hunter2", cleaned)
         self.assertTrue(REPORT.markers(cleaned))
+
+
+class AnnotationPaginationTests(unittest.TestCase):
+    @patch.object(REPORT, "api_get", return_value=[{"path": "docs/example.md", "message": "A check annotation"}])
+    def test_annotations_endpoint_accepts_top_level_array(self, mocked_api):
+        errors = []
+        items = REPORT.direct_pages("owner/repository", "/repos/owner/repository/check-runs/42/annotations", errors, "annotations")
+        self.assertEqual(len(items), 1)
+        self.assertEqual(items[0]["path"], "docs/example.md")
+        self.assertEqual(errors, [])
+        mocked_api.assert_called_once()
 
 
 class SchemaTests(unittest.TestCase):
