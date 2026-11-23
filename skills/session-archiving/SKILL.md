@@ -127,6 +127,8 @@ Load [Archive Records and Drawing-Prompt Procedures](references/archive-records-
 
 ## 7. GitHub write and verification discipline
 
+All repository operations in this skill are remote-only. Use the GitHub connector and GitHub APIs for reads, writes, moves, commits, and read-back verification. Do not use local shell, Git, Python, container, or filesystem tools. Do not run repository scripts or tests locally. GitHub-hosted Actions runners may execute approved workflows; inspect their results through GitHub. No local project environment is provided, and the GitHub repository is the only source of truth. A local copy may be missing or stale and cannot prove the state of branch `gpt`.
+
 - Perform all file operations using exact paths under `approved project directories` on branch `gpt`.
 - Do not list, retrieve, search, inspect, or mutate any file path outside `approved project directories`.
 - For an update, retrieve the current file first and use its current blob SHA.
