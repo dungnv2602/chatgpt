@@ -4,6 +4,8 @@
 
 ## Open Discussions
 
+- **2026-11-23 — Hosted retention validation:** The shared cleanup script and tests now cover exact individual files in both `archive/tasks/` and `archive/reports/`. A hosted run of the schedule-only cleanup has not yet been observed. Do not dispatch it manually or modify `main`.
+
 - **2026-11-23 — Default-branch observer limitation:** The repository default branch is `main`; this task is constrained to `gpt`. A failure before any job starts cannot be captured immediately by the branch-local finalizer. The push-driven sweep or an exact-run request can backfill it later. Immediate run-completion observation requires an authorized observer on `main` or an external GitHub App webhook.
 
 - **2026-11-23 — Document Standards workflow validation:** Its path-filter changes were read back, but a successful hosted confirmation was not observed. Do not poll; verify on its next eligible run.
