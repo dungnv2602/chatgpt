@@ -1,0 +1,418 @@
+validate-document-standards	Set up job	﻿2026-11-23T12:38:02.0353912Z Current runner version: '2.338.2'
+validate-document-standards	Set up job	2026-11-23T12:38:02.0427033Z ##[group]Runner Image Provisioner
+validate-document-standards	Set up job	2026-11-23T12:38:02.0428735Z Hosted Compute Agent
+validate-document-standards	Set up job	2026-11-23T12:38:02.0429887Z Version: 20261111.635
+validate-document-standards	Set up job	2026-11-23T12:38:02.0431034Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+validate-document-standards	Set up job	2026-11-23T12:38:02.0432448Z Build Date: 2026-11-11T01:49:01Z
+validate-document-standards	Set up job	2026-11-23T12:38:02.0433813Z Worker ID: {52eb753f-ac57-4ea7-8faf-9b636dcbd8e3}
+validate-document-standards	Set up job	2026-11-23T12:38:02.0435260Z Region: eastus
+validate-document-standards	Set up job	2026-11-23T12:38:02.0436232Z Cloud: Azure
+validate-document-standards	Set up job	2026-11-23T12:38:02.0437142Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-23T12:38:02.0457722Z ##[group]Operating System
+validate-document-standards	Set up job	2026-11-23T12:38:02.0459175Z Ubuntu
+validate-document-standards	Set up job	2026-11-23T12:38:02.0460220Z 26.04.1
+validate-document-standards	Set up job	2026-11-23T12:38:02.0461287Z LTS
+validate-document-standards	Set up job	2026-11-23T12:38:02.0462193Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-23T12:38:02.0463263Z ##[group]Runner Image
+validate-document-standards	Set up job	2026-11-23T12:38:02.0464349Z Image: ubuntu-26.04
+validate-document-standards	Set up job	2026-11-23T12:38:02.0465405Z Version: 20261116.202.1
+validate-document-standards	Set up job	2026-11-23T12:38:02.0467394Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+validate-document-standards	Set up job	2026-11-23T12:38:02.0470938Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+validate-document-standards	Set up job	2026-11-23T12:38:02.0472700Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-23T12:38:02.0474945Z ##[group]GITHUB_TOKEN Permissions
+validate-document-standards	Set up job	2026-11-23T12:38:02.0498315Z Contents: read
+validate-document-standards	Set up job	2026-11-23T12:38:02.0499429Z Metadata: read
+validate-document-standards	Set up job	2026-11-23T12:38:02.0500564Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-23T12:38:02.0504290Z Secret source: Actions
+validate-document-standards	Set up job	2026-11-23T12:38:02.0506038Z Cache mode: write
+validate-document-standards	Set up job	2026-11-23T12:38:02.0507400Z Prepare workflow directory
+validate-document-standards	Set up job	2026-11-23T12:38:02.1277175Z Prepare all required actions
+validate-document-standards	Set up job	2026-11-23T12:38:02.1352701Z Getting action download info
+validate-document-standards	Set up job	2026-11-23T12:38:02.3039772Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+validate-document-standards	Set up job	2026-11-23T12:38:02.4124529Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+validate-document-standards	Set up job	2026-11-23T12:38:02.6129455Z Complete job name: validate-document-standards
+validate-document-standards	Check out gpt	﻿2026-11-23T12:38:02.7210554Z ##[group]Run actions/checkout@v7.0.1
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7211559Z with:
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7212006Z   ref: gpt
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7212451Z   fetch-depth: 1
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7212936Z   repository: dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7217551Z   token: [REDACTED]
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7218274Z   ssh-strict: true
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7218768Z   ssh-user: git
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7219261Z   persist-credentials: true
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7219793Z   clean: true
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7220284Z   sparse-checkout-cone-mode: true
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7220860Z   fetch-tags: false
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7221342Z   show-progress: true
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7221827Z   lfs: false
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7222274Z   submodules: false
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7222768Z   set-safe-directory: true
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7223329Z   allow-unsafe-pr-checkout: false
+validate-document-standards	Check out gpt	2026-11-23T12:38:02.7224239Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.1274939Z Syncing repository: dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.1279178Z ##[group]Getting Git version info
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.1281118Z Working directory is '/home/runner/work/chatgpt/chatgpt'
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.1283736Z [command]/usr/bin/git version
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.1284968Z git version 2.56.1
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.1324204Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.1359922Z Temporarily overriding HOME='/home/runner/work/_temp/4b061417-3bb9-487b-aa0e-4e74b5ae86aa' before making global git config changes
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.1382973Z Adding repository directory to the temporary git global config as a safe directory
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.1384838Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.1549408Z Deleting the contents of '/home/runner/work/chatgpt/chatgpt'
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.1564650Z ##[group]Determining repository object format
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3363107Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3364812Z ##[group]Initializing the repository
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3366009Z [command]/usr/bin/git init /home/runner/work/chatgpt/chatgpt
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3500555Z hint: Using 'master' as the name for the initial branch. This default branch name
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3518445Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3520443Z hint: to use in all of your new repositories, which will suppress this warning,
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3522390Z hint: call:
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3523857Z hint:
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3525134Z hint: 	git config --global init.defaultBranch <name>
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3526920Z hint:
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3530490Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3532148Z hint: 'development'. The just-created branch can be renamed via this command:
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3533433Z hint:
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3534222Z hint: 	git branch -m <name>
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3535047Z hint:
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3536181Z hint: Disable this message with "git config set advice.defaultBranchName false"
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3537881Z Initialized empty Git repository in /home/runner/work/chatgpt/chatgpt/.git/
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3542638Z [command]/usr/bin/git remote add origin https://github.com/dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3654666Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3656056Z ##[group]Disabling automatic garbage collection
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3657247Z [command]/usr/bin/git config --local gc.auto 0
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3720675Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3724885Z ##[group]Setting up auth
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3725829Z Removing SSH command configuration
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3727010Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.3780991Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.4538372Z Removing HTTP extra header
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.4541815Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.4752124Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.5109324Z Removing includeIf entries pointing to credentials config files
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.5112553Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.5119196Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.5544049Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-842749da-6705-4936-bfff-1a0abc08372f.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.5625510Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path /home/runner/work/_temp/git-credentials-842749da-6705-4936-bfff-1a0abc08372f.config
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.5676461Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-842749da-6705-4936-bfff-1a0abc08372f.config
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.6073830Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-842749da-6705-4936-bfff-1a0abc08372f.config
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.6114031Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-842749da-6705-4936-bfff-1a0abc08372f.config
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.6162567Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.6164927Z ##[group]Fetching the repository
+validate-document-standards	Check out gpt	2026-11-23T12:38:03.6172621Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/gpt*:refs/remotes/origin/gpt* +refs/tags/gpt*:refs/tags/gpt*
+validate-document-standards	Check out gpt	2026-11-23T12:38:07.5135691Z From https://github.com/dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-23T12:38:07.5147833Z  * [new branch]      gpt        -> origin/gpt
+validate-document-standards	Check out gpt	2026-11-23T12:38:07.5177540Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:38:07.5189570Z ##[group]Determining the checkout info
+validate-document-standards	Check out gpt	2026-11-23T12:38:07.5190791Z [command]/usr/bin/git branch --list --remote origin/gpt
+validate-document-standards	Check out gpt	2026-11-23T12:38:07.5196995Z   origin/gpt
+validate-document-standards	Check out gpt	2026-11-23T12:38:07.5211077Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:38:07.5212216Z [command]/usr/bin/git sparse-checkout disable
+validate-document-standards	Check out gpt	2026-11-23T12:38:07.5289604Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+validate-document-standards	Check out gpt	2026-11-23T12:38:07.5337565Z ##[group]Checking out the ref
+validate-document-standards	Check out gpt	2026-11-23T12:38:07.5342092Z [command]/usr/bin/git checkout --progress --force -B gpt refs/remotes/origin/gpt
+validate-document-standards	Check out gpt	2026-11-23T12:38:08.6010381Z Updating files:  94% (4082/4320)
+validate-document-standards	Check out gpt	2026-11-23T12:38:08.6191811Z Updating files:  95% (4104/4320)
+validate-document-standards	Check out gpt	2026-11-23T12:38:08.6270860Z Updating files:  96% (4148/4320)
+validate-document-standards	Check out gpt	2026-11-23T12:38:08.6361681Z Updating files:  97% (4191/4320)
+validate-document-standards	Check out gpt	2026-11-23T12:38:08.6489179Z Updating files:  98% (4234/4320)
+validate-document-standards	Check out gpt	2026-11-23T12:38:08.6559210Z Updating files:  99% (4277/4320)
+validate-document-standards	Check out gpt	2026-11-23T12:38:08.6574531Z Updating files: 100% (4320/4320)
+validate-document-standards	Check out gpt	2026-11-23T12:38:08.6587567Z Updating files: 100% (4320/4320), done.
+validate-document-standards	Check out gpt	2026-11-23T12:38:08.6674338Z Switched to a new branch 'gpt'
+validate-document-standards	Check out gpt	2026-11-23T12:38:08.6688572Z branch 'gpt' set up to track 'origin/gpt'.
+validate-document-standards	Check out gpt	2026-11-23T12:38:08.6788236Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-23T12:38:08.6886346Z [command]/usr/bin/git log -1 --format=%H
+validate-document-standards	Check out gpt	2026-11-23T12:38:08.6918891Z aa6ad05461b380a667c29c47cb389cdd3ff1c0cb
+validate-document-standards	Set up Python	﻿2026-11-23T12:38:08.7261964Z ##[group]Run actions/setup-python@v5
+validate-document-standards	Set up Python	2026-11-23T12:38:08.7262342Z with:
+validate-document-standards	Set up Python	2026-11-23T12:38:08.7262609Z   python-version: 3.x
+validate-document-standards	Set up Python	2026-11-23T12:38:08.7262859Z   check-latest: false
+validate-document-standards	Set up Python	2026-11-23T12:38:08.7265619Z   token: [REDACTED]
+validate-document-standards	Set up Python	2026-11-23T12:38:08.7265850Z   update-environment: true
+validate-document-standards	Set up Python	2026-11-23T12:38:08.7266108Z   allow-prereleases: false
+validate-document-standards	Set up Python	2026-11-23T12:38:08.7266357Z   freethreaded: false
+validate-document-standards	Set up Python	2026-11-23T12:38:08.7266576Z ##[endgroup]
+validate-document-standards	Set up Python	2026-11-23T12:38:08.8868242Z ##[group]Installed versions
+validate-document-standards	Set up Python	2026-11-23T12:38:08.9024067Z (node:2154) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+validate-document-standards	Set up Python	2026-11-23T12:38:08.9051772Z (Use `node --trace-deprecation ...` to show where the warning was created)
+validate-document-standards	Set up Python	2026-11-23T12:38:08.9089169Z Successfully set up CPython (3.15.2)
+validate-document-standards	Set up Python	2026-11-23T12:38:08.9109467Z ##[endgroup]
+validate-document-standards	Run catalog validator regression tests	﻿2026-11-23T12:38:08.9508576Z ##[group]Run python -m unittest discover \
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:08.9509267Z ^[[36;1mpython -m unittest discover \^[[0m
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:08.9509823Z ^[[36;1m  -s skills/document-standards/scripts \^[[0m
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:08.9510384Z ^[[36;1m  -p 'test_validate_catalog.py' \^[[0m
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:08.9510905Z ^[[36;1m  -v^[[0m
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:08.9607677Z shell: /usr/bin/bash -e {0}
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:08.9626543Z env:
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:08.9627096Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:08.9627933Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:08.9628905Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:08.9629675Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:08.9630496Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:08.9631217Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:08.9631851Z ##[endgroup]
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.2607087Z test_coverage_pattern_must_match_a_current_document (test_validate_catalog.CatalogValidatorTests.test_coverage_pattern_must_match_a_current_document) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.2644282Z test_coverage_pattern_rejects_path_traversal (test_validate_catalog.CatalogValidatorTests.test_coverage_pattern_rejects_path_traversal) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.2677469Z test_directory_reference_is_rejected (test_validate_catalog.CatalogValidatorTests.test_directory_reference_is_rejected) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.2708744Z test_duplicate_document_type_fails (test_validate_catalog.CatalogValidatorTests.test_duplicate_document_type_fails) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.2739072Z test_embedded_contract_requires_owner_and_live_record (test_validate_catalog.CatalogValidatorTests.test_embedded_contract_requires_owner_and_live_record) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.2769664Z test_generator_owned_requires_python_authority (test_validate_catalog.CatalogValidatorTests.test_generator_owned_requires_python_authority) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.2800635Z test_generator_owned_requires_regression_test_reference (test_validate_catalog.CatalogValidatorTests.test_generator_owned_requires_regression_test_reference) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.2839042Z test_github_and_consolidated_report_roots_are_allowed (test_validate_catalog.CatalogValidatorTests.test_github_and_consolidated_report_roots_are_allowed) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.2873377Z test_malformed_inventory_row_fails (test_validate_catalog.CatalogValidatorTests.test_malformed_inventory_row_fails) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.2906889Z test_master_and_archive_markdown_are_excluded_from_coverage (test_validate_catalog.CatalogValidatorTests.test_master_and_archive_markdown_are_excluded_from_coverage) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.2944848Z test_misplaced_named_template_is_detected_without_catalog_row (test_validate_catalog.CatalogValidatorTests.test_misplaced_named_template_is_detected_without_catalog_row) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.2967453Z test_missing_canonical_path_fails (test_validate_catalog.CatalogValidatorTests.test_missing_canonical_path_fails) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3006146Z test_missing_markdown_coverage_section_fails (test_validate_catalog.CatalogValidatorTests.test_missing_markdown_coverage_section_fails) ... ok
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3029587Z test_path_traversal_is_rejected (test_validate_catalog.CatalogValidatorTests.test_path_traversal_is_rejected) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3062469Z test_project_and_workspace_template_locations_are_allowed (test_validate_catalog.CatalogValidatorTests.test_project_and_workspace_template_locations_are_allowed) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3093662Z test_schema_class_requires_regression_test_reference (test_validate_catalog.CatalogValidatorTests.test_schema_class_requires_regression_test_reference) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3125409Z test_skill_template_must_live_in_assets (test_validate_catalog.CatalogValidatorTests.test_skill_template_must_live_in_assets) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3200033Z test_template_class_requires_named_template (test_validate_catalog.CatalogValidatorTests.test_template_class_requires_named_template) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3229628Z test_uncovered_markdown_document_fails (test_validate_catalog.CatalogValidatorTests.test_uncovered_markdown_document_fails) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3257035Z test_unknown_document_class_fails (test_validate_catalog.CatalogValidatorTests.test_unknown_document_class_fails) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3289315Z test_valid_catalog_accepts_all_document_classes (test_validate_catalog.CatalogValidatorTests.test_valid_catalog_accepts_all_document_classes) ... FAIL
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3298190Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3298817Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3300765Z FAIL: test_coverage_pattern_must_match_a_current_document (test_validate_catalog.CatalogValidatorTests.test_coverage_pattern_must_match_a_current_document)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3302473Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3303275Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3313503Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 254, in test_coverage_pattern_must_match_a_current_document
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3315341Z     self.assertTrue(any("matches no in-scope document" in error for error in errors))
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3316296Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3317021Z AssertionError: False is not true
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3317463Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3317803Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3319336Z FAIL: test_coverage_pattern_rejects_path_traversal (test_validate_catalog.CatalogValidatorTests.test_coverage_pattern_rejects_path_traversal)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3321030Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3321741Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3323118Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 263, in test_coverage_pattern_rejects_path_traversal
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3324724Z     self.assertTrue(any("unsafe or excluded Markdown coverage pattern" in error for error in errors))
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3325733Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3326484Z AssertionError: False is not true
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3326903Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3327230Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3328579Z FAIL: test_directory_reference_is_rejected (test_validate_catalog.CatalogValidatorTests.test_directory_reference_is_rejected)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3329936Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3330753Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3332169Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 188, in test_directory_reference_is_rejected
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3333814Z     self.assertTrue(any("referenced file does not exist" in error for error in errors))
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3334792Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3335537Z AssertionError: False is not true
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3336110Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3336478Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3337703Z FAIL: test_duplicate_document_type_fails (test_validate_catalog.CatalogValidatorTests.test_duplicate_document_type_fails)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3339532Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3340368Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3341662Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 132, in test_duplicate_document_type_fails
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3343469Z     self.assertTrue(any("duplicate document type" in error for error in errors))
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3344413Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3345171Z AssertionError: False is not true
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3345616Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3345982Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3347504Z FAIL: test_embedded_contract_requires_owner_and_live_record (test_validate_catalog.CatalogValidatorTests.test_embedded_contract_requires_owner_and_live_record)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3349203Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3349994Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3351599Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 195, in test_embedded_contract_requires_owner_and_live_record
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3353387Z     self.assertTrue(any("must name its owner and live record" in error for error in errors))
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3354486Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3355267Z AssertionError: False is not true
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3355732Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3356089Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3357517Z FAIL: test_generator_owned_requires_python_authority (test_validate_catalog.CatalogValidatorTests.test_generator_owned_requires_python_authority)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3358988Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3359760Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3362216Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 209, in test_generator_owned_requires_python_authority
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3364119Z     self.assertTrue(any("must reference its Python authority" in error for error in errors))
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3365221Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3366040Z AssertionError: False is not true
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3366498Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3366828Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3368410Z FAIL: test_generator_owned_requires_regression_test_reference (test_validate_catalog.CatalogValidatorTests.test_generator_owned_requires_regression_test_reference)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3369818Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3370564Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3372061Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 202, in test_generator_owned_requires_regression_test_reference
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3373781Z     self.assertTrue(any("must reference a regression test" in error for error in errors))
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3374772Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3375549Z AssertionError: False is not true
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3376020Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3376364Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3377785Z FAIL: test_github_and_consolidated_report_roots_are_allowed (test_validate_catalog.CatalogValidatorTests.test_github_and_consolidated_report_roots_are_allowed)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3379371Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3380107Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3381544Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 172, in test_github_and_consolidated_report_roots_are_allowed
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3382976Z     self.assertEqual(errors, [])
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3383578Z     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3384445Z AssertionError: Lists differ: ["Catalog has no '## Initial inventory' se[63 chars]on."] != []
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3385528Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3385886Z First list contains 2 additional elements.
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3386506Z First extra element 0:
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3387102Z "Catalog has no '## Initial inventory' section."
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3387624Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3387898Z + []
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3388605Z - ["Catalog has no '## Initial inventory' section.",
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3389398Z -  "Catalog has no '## Markdown inventory coverage' section."]
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3389992Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3390340Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3391497Z FAIL: test_malformed_inventory_row_fails (test_validate_catalog.CatalogValidatorTests.test_malformed_inventory_row_fails)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3392769Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3393518Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3394997Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 180, in test_malformed_inventory_row_fails
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3396551Z     self.assertTrue(any("expected 4 table cells" in error for error in errors))
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3397491Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3398323Z AssertionError: False is not true
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3399088Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3399408Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3400931Z FAIL: test_master_and_archive_markdown_are_excluded_from_coverage (test_validate_catalog.CatalogValidatorTests.test_master_and_archive_markdown_are_excluded_from_coverage)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3402789Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3403540Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3405969Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 245, in test_master_and_archive_markdown_are_excluded_from_coverage
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3407577Z     self.assertEqual(errors, [])
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3408353Z     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3409251Z AssertionError: Lists differ: ["Catalog has no '## Initial inventory' se[63 chars]on."] != []
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3410034Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3410365Z First list contains 2 additional elements.
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3411012Z First extra element 0:
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3411629Z "Catalog has no '## Initial inventory' section."
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3412139Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3412395Z + []
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3412909Z - ["Catalog has no '## Initial inventory' section.",
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3413753Z -  "Catalog has no '## Markdown inventory coverage' section."]
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3414385Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3414718Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3415998Z FAIL: test_missing_canonical_path_fails (test_validate_catalog.CatalogValidatorTests.test_missing_canonical_path_fails)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3417263Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3418217Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3419630Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 125, in test_missing_canonical_path_fails
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3421152Z     self.assertTrue(any("does not exist" in error for error in errors))
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3421993Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3422710Z AssertionError: False is not true
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3423159Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3423500Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3424654Z FAIL: test_path_traversal_is_rejected (test_validate_catalog.CatalogValidatorTests.test_path_traversal_is_rejected)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3425867Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3426911Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3428454Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 280, in test_path_traversal_is_rejected
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3430048Z     self.assertTrue(any("unsafe or out-of-scope path" in error for error in errors))
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3430920Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3431700Z AssertionError: False is not true
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3432120Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3432445Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3433924Z FAIL: test_project_and_workspace_template_locations_are_allowed (test_validate_catalog.CatalogValidatorTests.test_project_and_workspace_template_locations_are_allowed)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3435597Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3436382Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3437905Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 114, in test_project_and_workspace_template_locations_are_allowed
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3439666Z     self.assertEqual(errors, [])
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3440258Z     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3441027Z AssertionError: Lists differ: ["Catalog has no '## Initial inventory' se[63 chars]on."] != []
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3441804Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3442126Z First list contains 2 additional elements.
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3442741Z First extra element 0:
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3443303Z "Catalog has no '## Initial inventory' section."
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3443802Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3444375Z + []
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3444900Z - ["Catalog has no '## Initial inventory' section.",
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3445685Z -  "Catalog has no '## Markdown inventory coverage' section."]
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3446254Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3446575Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3448176Z FAIL: test_schema_class_requires_regression_test_reference (test_validate_catalog.CatalogValidatorTests.test_schema_class_requires_regression_test_reference)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3449727Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3450466Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3451913Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 153, in test_schema_class_requires_regression_test_reference
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3456862Z     self.assertTrue(any("must reference a regression test" in error for error in errors))
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3471650Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3472698Z AssertionError: False is not true
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3473146Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3473380Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3474530Z FAIL: test_skill_template_must_live_in_assets (test_validate_catalog.CatalogValidatorTests.test_skill_template_must_live_in_assets)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3475690Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3476292Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3477549Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 92, in test_skill_template_must_live_in_assets
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3478735Z     self.assertTrue(any("invalid template location" in error for error in errors))
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3479201Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3479547Z AssertionError: False is not true
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3479724Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3479839Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3480493Z FAIL: test_template_class_requires_named_template (test_validate_catalog.CatalogValidatorTests.test_template_class_requires_named_template)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3481468Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3481814Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3482560Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 216, in test_template_class_requires_named_template
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3483403Z     self.assertTrue(any("must point to a named template" in error for error in errors))
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3483871Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3484203Z AssertionError: False is not true
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3484383Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3484496Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3485108Z FAIL: test_uncovered_markdown_document_fails (test_validate_catalog.CatalogValidatorTests.test_uncovered_markdown_document_fails)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3485745Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3486078Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3486877Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 238, in test_uncovered_markdown_document_fails
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3487671Z     self.assertTrue(any("not covered by the catalog" in error for error in errors))
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3488491Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3488846Z AssertionError: False is not true
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3489021Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3489147Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3489892Z FAIL: test_unknown_document_class_fails (test_validate_catalog.CatalogValidatorTests.test_unknown_document_class_fails)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3490497Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3490835Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3491540Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 142, in test_unknown_document_class_fails
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3492338Z     self.assertTrue(any("unknown document class" in error for error in errors))
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3492770Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3493094Z AssertionError: False is not true
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3493267Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3493381Z ======================================================================
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3494049Z FAIL: test_valid_catalog_accepts_all_document_classes (test_validate_catalog.CatalogValidatorTests.test_valid_catalog_accepts_all_document_classes)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3494749Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3495088Z Traceback (most recent call last):
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3495808Z   File "/home/runner/work/chatgpt/chatgpt/skills/document-standards/scripts/test_validate_catalog.py", line 81, in test_valid_catalog_accepts_all_document_classes
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3496512Z     self.assertEqual(errors, [])
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3496762Z     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3497172Z AssertionError: Lists differ: ["Catalog has no '## Initial inventory' se[63 chars]on."] != []
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3497538Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3497651Z First list contains 2 additional elements.
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3497931Z First extra element 0:
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3498453Z "Catalog has no '## Initial inventory' section."
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3498693Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3498772Z + []
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3499006Z - ["Catalog has no '## Initial inventory' section.",
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3499387Z -  "Catalog has no '## Markdown inventory coverage' section."]
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3499639Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3499788Z ----------------------------------------------------------------------
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3500166Z Ran 21 tests in 0.074s
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3500503Z 
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3500597Z FAILED (failures=19)
+validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3512889Z ##[error]Process completed with exit code 1.
+validate-document-standards	Post Check out gpt	﻿2026-11-23T12:38:09.3667298Z Post job cleanup.
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.4788408Z [command]/usr/bin/git version
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.4867610Z git version 2.56.1
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.4922577Z Temporarily overriding HOME='/home/runner/work/_temp/ea040225-b872-4e25-8d92-c0810f1135ca' before making global git config changes
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.4924081Z Adding repository directory to the temporary git global config as a safe directory
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.4929171Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.5003949Z Removing SSH command configuration
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.5004851Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.5080683Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.5576869Z Removing HTTP extra header
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.5578137Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.5652223Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6362116Z Removing includeIf entries pointing to credentials config files
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6371234Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6405573Z includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6406757Z includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6407698Z includeif.gitdir:/github/workspace/.git.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6408724Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6415379Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6450509Z /home/runner/work/_temp/git-credentials-842749da-6705-4936-bfff-1a0abc08372f.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6479703Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-842749da\-6705\-4936\-bfff\-1a0abc08372f\.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6509265Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6546641Z /home/runner/work/_temp/git-credentials-842749da-6705-4936-bfff-1a0abc08372f.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6560246Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-842749da\-6705\-4936\-bfff\-1a0abc08372f\.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6602782Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6633436Z /github/runner_temp/git-credentials-842749da-6705-4936-bfff-1a0abc08372f.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6661360Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-842749da\-6705\-4936\-bfff\-1a0abc08372f\.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6687659Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6719772Z /github/runner_temp/git-credentials-842749da-6705-4936-bfff-1a0abc08372f.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6727632Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-842749da\-6705\-4936\-bfff\-1a0abc08372f\.config
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.6773139Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+validate-document-standards	Post Check out gpt	2026-11-23T12:38:09.7106547Z Removing credentials config '/home/runner/work/_temp/git-credentials-842749da-6705-4936-bfff-1a0abc08372f.config'
+validate-document-standards	Complete job	﻿2026-11-23T12:38:09.7274700Z Cleaning up orphan processes
+validate-document-standards	Complete job	2026-11-23T12:38:09.7725989Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

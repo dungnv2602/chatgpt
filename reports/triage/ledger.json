@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2.0",
-  "updated_at_utc": "2026-11-23T12:39:14Z",
+  "updated_at_utc": "2026-11-23T12:39:49Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T08:15:48Z",
     "processed_reports": [
@@ -370,6 +370,7 @@
       "reports/gh_ac_reports/history/424715662/45174538143-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45175760018-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45175760018-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/424715662/45176147158-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45176147158-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424743410/45122348866-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424743410/45122653712-attempt-1-post_run/report.json",
@@ -795,6 +796,7 @@
       "reports/gh_ac_reports/history/427313089/45172219031-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45172226312-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45172226312-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/427313089/45176147166-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45176147166-attempt-1-pre_finalizer/report.json",
       "reports/lint_reports/on_changed/history/45127227672-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45128128389-attempt-1/report.json",
@@ -73675,6 +73677,32 @@
           "observed_at_utc": "2026-11-23T12:38:34.082728+00:00",
           "note": "on_changed · skills/the-worker/SKILL.md:339:95",
           "observation_id": "lint:45176147158:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": []
+    },
+    {
+      "finding_id": "gha-22c9a0db0aaed6afaf68ff0e",
+      "source_family": "github_actions",
+      "category": "validation_or_test",
+      "title": "Validate Document Standards / validate-document-standards / Run catalog validator regression tests: validation_or_test — <timestamp> traceback (most recent call last):",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-23T12:39:48Z",
+      "last_seen_utc": "2026-11-23T12:39:48Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/gh_ac_reports/history/427313089/45176147166-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45176147166",
+          "observed_at_utc": "2026-11-23T12:39:48Z",
+          "note": "validate-document-standards / Run catalog validator regression tests",
+          "observation_id": "github_actions:427313089:45176147166:1"
         }
       ],
       "resolution": null,

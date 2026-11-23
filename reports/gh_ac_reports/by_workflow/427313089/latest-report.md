@@ -14,30 +14,30 @@
 | Event | push |
 | Actor | dungnv2602 |
 | Created (UTC) | 2026-11-23T12:37:58Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | failure |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T12:38:50Z |
+| Status at capture | completed |
+| Observed conclusion | failure |
+| Projected conclusion | Not calculated |
+| Reporter job | completed / success |
+| Capture stage | post_run |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-23T12:39:48Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
+| State | failure |
 | Primary category | validation_or_test |
 | Jobs | 1 |
 | Steps | 8 |
 | Issues | 1 |
 | Annotations | 2 |
 | Artifacts | 0 |
-| Capture errors | 1 |
+| Capture errors | 0 |
 
 ## Failure classification
 
-validation_or_test The parent run is still in progress. The projected conclusion is provisional.
+validation_or_test
 
 The report records an actionable workflow failure or operational exception. Ordinary successful runs and cancellation-only runs are not captured by default. A successful run is retained when a step failed but the workflow allowed it to continue. A cancelled run is retained only when it contains an independent actionable failure. Known downstream status-propagation steps after cancellation are excluded. Explicit run-backfill requests can override the default capture filter.
 
@@ -51,7 +51,7 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 137697780036 | 4 | Run catalog validator regression tests | Blocking | medium | Step conclusion: failure |
+| validation_or_test | 137697780036 | 4 | Run catalog validator regression tests | Blocking | medium | 2026-11-23T12:38:09.3303275Z Traceback (most recent call last): |
 
 ## Check annotations
 
@@ -68,15 +68,11 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137697780036 | validate-document-standards | logs/job-137697780036.log | 82 | False |  |
+| 137697780036 | validate-document-standards | logs/job-137697780036.log | 63523 | False | validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3303275Z Traceback (most recent call last):, validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3315341Z     self.assertTrue(any("matches no in-scope document" in error for error in errors)), validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3321741Z Traceback (most recent call last):, validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3324724Z     self.assertTrue(any("unsafe or excluded Markdown coverage pattern" in error for error in errors)), validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3330753Z Traceback (most recent call last):, validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3333814Z     self.assertTrue(any("referenced file does not exist" in error for error in errors)), validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3340368Z Traceback (most recent call last):, validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3343469Z     self.assertTrue(any("duplicate document type" in error for error in errors)), validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3349994Z Traceback (most recent call last):, validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3353387Z     self.assertTrue(any("must name its owner and live record" in error for error in errors)), validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3359760Z Traceback (most recent call last):, validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3364119Z     self.assertTrue(any("must reference its Python authority" in error for error in errors)), validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3370564Z Traceback (most recent call last):, validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3373781Z     self.assertTrue(any("must reference a regression test" in error for error in errors)), validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3380107Z Traceback (most recent call last):, validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3393518Z Traceback (most recent call last):, validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3396551Z     self.assertTrue(any("expected 4 table cells" in error for error in errors)), validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3403540Z Traceback (most recent call last):, validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3418217Z Traceback (most recent call last):, validate-document-standards	Run catalog validator regression tests	2026-11-23T12:38:09.3421152Z     self.assertTrue(any("does not exist" in error for error in errors)) |
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | run 45176147166 is still in progress; logs will be available when it is complete  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 

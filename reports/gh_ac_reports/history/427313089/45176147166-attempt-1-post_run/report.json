@@ -1,0 +1,204 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45176147166",
+    "number": 123,
+    "attempt": 1,
+    "workflow_id": 427313089,
+    "workflow_name": "Validate Document Standards",
+    "workflow_path": ".github/workflows/validate-document-standards.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45176147166",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "aa6ad05461b380a667c29c47cb389cdd3ff1c0cb",
+    "status": "completed",
+    "conclusion": "failure",
+    "created_at": "2026-11-23T12:37:58Z",
+    "run_started_at": "2026-11-23T12:37:58Z",
+    "updated_at": "2026-11-23T12:38:57Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Enforce repository-wide Markdown document coverage"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T12:39:48Z",
+    "completeness": "Complete",
+    "reporter_job": {
+      "id": "137697888850",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  },
+  "classification": {
+    "state": "failure",
+    "observed_conclusion": "failure",
+    "projected_conclusion": null,
+    "primary_category": "validation_or_test",
+    "categories": [
+      "validation_or_test"
+    ],
+    "issues": [
+      {
+        "category": "validation_or_test",
+        "job_id": "137697780036",
+        "job_name": "validate-document-standards",
+        "step_number": 4,
+        "step_name": "Run catalog validator regression tests",
+        "blocking": true,
+        "confidence": "medium",
+        "message": "2026-11-23T12:38:09.3303275Z Traceback (most recent call last):"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "137697780036",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-23T12:38:01Z",
+      "completed_at": "2026-11-23T12:38:11Z",
+      "runner_name": "GitHub Actions 1000001509",
+      "runner_id": 1000001509,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T12:38:02Z",
+          "completed_at": "2026-11-23T12:38:02Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T12:38:02Z",
+          "completed_at": "2026-11-23T12:38:08Z"
+        },
+        {
+          "number": 3,
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T12:38:08Z",
+          "completed_at": "2026-11-23T12:38:08Z"
+        },
+        {
+          "number": 4,
+          "name": "Run catalog validator regression tests",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-11-23T12:38:08Z",
+          "completed_at": "2026-11-23T12:38:09Z"
+        },
+        {
+          "number": 5,
+          "name": "Validate the document type catalog",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T12:38:09Z",
+          "completed_at": "2026-11-23T12:38:09Z"
+        },
+        {
+          "number": 9,
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-23T12:38:09Z",
+          "completed_at": "2026-11-23T12:38:09Z"
+        },
+        {
+          "number": 10,
+          "name": "Post Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T12:38:09Z",
+          "completed_at": "2026-11-23T12:38:09Z"
+        },
+        {
+          "number": 11,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T12:38:09Z",
+          "completed_at": "2026-11-23T12:38:09Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 63523,
+        "path": "logs/job-137697780036.log",
+        "error": null,
+        "marker_lines": [
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3303275Z Traceback (most recent call last):",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3315341Z     self.assertTrue(any(\"matches no in-scope document\" in error for error in errors))",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3321741Z Traceback (most recent call last):",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3324724Z     self.assertTrue(any(\"unsafe or excluded Markdown coverage pattern\" in error for error in errors))",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3330753Z Traceback (most recent call last):",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3333814Z     self.assertTrue(any(\"referenced file does not exist\" in error for error in errors))",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3340368Z Traceback (most recent call last):",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3343469Z     self.assertTrue(any(\"duplicate document type\" in error for error in errors))",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3349994Z Traceback (most recent call last):",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3353387Z     self.assertTrue(any(\"must name its owner and live record\" in error for error in errors))",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3359760Z Traceback (most recent call last):",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3364119Z     self.assertTrue(any(\"must reference its Python authority\" in error for error in errors))",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3370564Z Traceback (most recent call last):",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3373781Z     self.assertTrue(any(\"must reference a regression test\" in error for error in errors))",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3380107Z Traceback (most recent call last):",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3393518Z Traceback (most recent call last):",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3396551Z     self.assertTrue(any(\"expected 4 table cells\" in error for error in errors))",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3403540Z Traceback (most recent call last):",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3418217Z Traceback (most recent call last):",
+          "validate-document-standards\tRun catalog validator regression tests\t2026-11-23T12:38:09.3421152Z     self.assertTrue(any(\"does not exist\" in error for error in errors))"
+        ]
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "137697780036",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-23T12:38:01Z",
+      "completed_at": "2026-11-23T12:38:11Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45176147166/job/137697780036",
+      "app": "GitHub Actions",
+      "annotations_count": 2
+    }
+  ],
+  "annotations": [
+    {
+      "check_run_id": "137697780036",
+      "job_id": "137697780036",
+      "path": ".github",
+      "start_line": 2,
+      "end_line": 2,
+      "level": "warning",
+      "title": "",
+      "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137697780036",
+      "job_id": "137697780036",
+      "path": ".github",
+      "start_line": 244,
+      "end_line": 244,
+      "level": "failure",
+      "title": "",
+      "message": "Process completed with exit code 1.",
+      "raw_details": ""
+    }
+  ],
+  "artifacts": [],
+  "capture_errors": [],
+  "history_path": "history/427313089/45176147166-attempt-1-post_run"
+}
