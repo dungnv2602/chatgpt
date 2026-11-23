@@ -154,7 +154,16 @@ def migrate_ledger(ledger, root):
         finding.setdefault("duplicate_of", None)
         finding.setdefault("accepted_risk", None)
         finding.setdefault("task_refs", [])
-        finding.setdefault("task_group", task_group_key("legacy", finding.get("finding_id", "unknown")))
+        if "task_group" not in finding:
+            group_parts = ["legacy", finding.get("finding_id", "unknown")]
+            if finding.get("source_family") == "lint":
+                evidence = finding.get("evidence") or []
+                note = str(evidence[-1].get("note") or "") if evidence and isinstance(evidence[-1], dict) else ""
+                file_path = note.split(" · ", 1)[-1]
+                file_path = re.sub(r":\\d+(?::\\d+)?$", "", file_path)
+                if file_path and file_path != note:
+                    group_parts = ["lint", finding.get("category", "unknown"), file_path]
+            finding["task_group"] = task_group_key(*group_parts)
         if not isinstance(finding["task_group"], str) or not re.fullmatch(r"ci-[0-9a-f]{16}", finding["task_group"]):
             raise LedgerError("finding task_group must be a stable CI group ID")
         if not isinstance(finding["task_refs"], list) or not all(
