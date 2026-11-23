@@ -9,6 +9,9 @@ import unittest
 from pathlib import Path
 
 SCRIPT = Path(__file__).with_name("generate_lint_report.py")
+ASSET_DIR = SCRIPT.parents[1] / "assets"
+REPORT_TEMPLATE = ASSET_DIR / "lint-report-template.md"
+REPORT_SCHEMA = ASSET_DIR / "lint-report-schema.json"
 
 class ReportGeneratorTests(unittest.TestCase):
     def run_report(self, root, run_id, attempt, records, previous=""):
@@ -38,6 +41,22 @@ class ReportGeneratorTests(unittest.TestCase):
             record = {"path": "docs/a.md", "exit_code": 0, "violations": [finding], "count": 1, "hard_count": 1, "words": 20}
             first = self.run_report(root, "100", 1, {"a": record})
             report = json.loads((first / "report.json").read_text(encoding="utf-8"))
+            self.assertTrue(REPORT_TEMPLATE.is_file())
+            self.assertTrue(REPORT_SCHEMA.is_file())
+            schema = json.loads(REPORT_SCHEMA.read_text(encoding="utf-8"))
+            self.assertEqual(schema["properties"]["scope"]["const"], "on_changed")
+            self.assertTrue(set(schema["required"]).issubset(report))
+            self.assertEqual(report["schema_version"], "1.0.0")
+            markdown = (first / "report.md").read_text(encoding="utf-8")
+            for heading in (
+                "## Coverage",
+                "## Findings by rule",
+                "## Per-file results",
+                "## Baseline comparison",
+                "## Structured evidence",
+            ):
+                self.assertIn(heading, markdown)
+            self.assertIn("## Coverage", REPORT_TEMPLATE.read_text(encoding="utf-8"))
             self.assertEqual(report["files_evaluated"], ["docs/a.md"])
             self.assertEqual(report["files_evaluated_count"], 1)
             self.assertEqual(report["total_findings"], 1)
@@ -45,6 +64,7 @@ class ReportGeneratorTests(unittest.TestCase):
             self.assertEqual(report["findings"][0]["comparison"], "new")
             integrity = json.loads((first / "integrity.json").read_text(encoding="utf-8"))
             self.assertEqual(integrity["files"]["report.json"], hashlib.sha256((first / "report.json").read_bytes()).hexdigest())
+            self.assertEqual(integrity["files"]["report.md"], hashlib.sha256((first / "report.md").read_bytes()).hexdigest())
             latest = root / "on_changed" / "latest-lint-report.json"
             self.assertEqual(json.loads(latest.read_text(encoding="utf-8"))["run_id"], "100")
 
