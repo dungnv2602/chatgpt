@@ -57,7 +57,8 @@ class CatalogValidatorTests(unittest.TestCase):
             "`images/example/README.md` and `skills/example/SKILL.md` | Image fixture. |\n"
             "| `novels/*.md` | Embedded contract | "
             "`novels/WORKFLOW.md` and `skills/example/SKILL.md` | Novel fixture. |\n"
-            + "".join(extra_coverage)
+            + "\n".join(extra_coverage)
+            + ("\n" if extra_coverage else "")
         )
         self.catalog.write_text(
             "## Initial inventory\n\n" + HEADER + "\n".join(rows) + coverage,
