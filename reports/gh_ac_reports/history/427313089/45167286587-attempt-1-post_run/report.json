@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45167286587",
+    "number": 74,
+    "attempt": 1,
+    "workflow_id": 427313089,
+    "workflow_name": "Validate Document Standards",
+    "workflow_path": ".github/workflows/validate-document-standards.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45167286587",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "6376a06fb118cf406b2d542c3d349689a70b682b",
+    "status": "completed",
+    "conclusion": "cancelled",
+    "created_at": "2026-11-23T11:40:23Z",
+    "run_started_at": "2026-11-23T11:40:23Z",
+    "updated_at": "2026-11-23T11:41:32Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Align initialization and indexes with Worker consolidation"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T11:43:30Z",
+    "completeness": "Complete",
+    "reporter_job": {
+      "id": "137667449644",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "cancelled"
+    }
+  },
+  "classification": {
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
+    "primary_category": null,
+    "categories": [],
+    "issues": []
+  },
+  "jobs": [
+    {
+      "id": "137667412071",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "started_at": "2026-11-23T11:40:26Z",
+      "completed_at": "2026-11-23T11:40:29Z",
+      "runner_name": "GitHub Actions 1000001431",
+      "runner_id": 1000001431,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "cancelled",
+          "started_at": "2026-11-23T11:40:27Z",
+          "completed_at": "2026-11-23T11:40:27Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 2983,
+        "path": "logs/job-137667412071.log",
+        "error": null,
+        "marker_lines": [
+          "validate-document-standards\tSet up job\t2026-11-23T11:40:27.2493792Z ##[error]A task was canceled."
+        ]
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "137667412071",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "started_at": "2026-11-23T11:40:26Z",
+      "completed_at": "2026-11-23T11:40:29Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45167286587/job/137667412071",
+      "app": "GitHub Actions",
+      "annotations_count": 2
+    }
+  ],
+  "annotations": [
+    {
+      "check_run_id": "137667412071",
+      "job_id": "137667412071",
+      "path": ".github",
+      "start_line": 1,
+      "end_line": 1,
+      "level": "failure",
+      "title": "",
+      "message": "Canceling since a higher priority waiting request for document-standards-refs/heads/gpt exists",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137667412071",
+      "job_id": "137667412071",
+      "path": ".github",
+      "start_line": 31,
+      "end_line": 31,
+      "level": "failure",
+      "title": "",
+      "message": "A task was canceled.",
+      "raw_details": ""
+    }
+  ],
+  "artifacts": [],
+  "capture_errors": [],
+  "history_path": "history/427313089/45167286587-attempt-1-post_run"
+}

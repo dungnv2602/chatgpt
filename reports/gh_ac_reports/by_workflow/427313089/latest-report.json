@@ -11,30 +11,30 @@
     "event": "push",
     "branch": "gpt",
     "head_sha": "62c1646e0d7472fa4adf319da2df2ed47afc4709",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "cancelled",
     "created_at": "2026-11-23T11:41:31Z",
     "run_started_at": "2026-11-23T11:41:31Z",
-    "updated_at": "2026-11-23T11:41:57Z",
+    "updated_at": "2026-11-23T11:42:18Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "Clarify on-demand Drawing dependency"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-23T11:42:12Z",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T11:43:38Z",
     "completeness": "Incomplete",
     "reporter_job": {
       "id": "137667996269",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "cancelled",
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
     "primary_category": null,
     "categories": [],
     "issues": []
@@ -55,9 +55,9 @@
       "log_capture": {
         "available": false,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 29,
         "path": "logs/job-137667981551.log",
-        "error": "run 45167451152 is still in progress; logs will be available when it is complete\n",
+        "error": "log not found: 137667981551\n",
         "marker_lines": []
       }
     }
@@ -93,8 +93,8 @@
     {
       "source": "job_log",
       "job_id": "137667981551",
-      "message": "run 45167451152 is still in progress; logs will be available when it is complete\n"
+      "message": "log not found: 137667981551\n"
     }
   ],
-  "history_path": "history/427313089/45167451152-attempt-1-pre_finalizer"
+  "history_path": "history/427313089/45167451152-attempt-1-post_run"
 }

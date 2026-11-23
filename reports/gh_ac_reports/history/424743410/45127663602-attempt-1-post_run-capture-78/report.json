@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45127663602",
+    "number": 171,
+    "attempt": 1,
+    "workflow_id": 424743410,
+    "workflow_name": "STE Lint Full Technical Documentation",
+    "workflow_path": ".github/workflows/ste-lint-full-docs.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45127663602",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "e075856bc3e0b72286bcef236c82c30a9a5724a3",
+    "status": "completed",
+    "conclusion": "cancelled",
+    "created_at": "2026-11-23T06:57:30Z",
+    "run_started_at": "2026-11-23T06:57:30Z",
+    "updated_at": "2026-11-23T07:02:50Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Correct report paths in lint workflows"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T11:42:52Z",
+    "completeness": "Incomplete",
+    "reporter_job": {
+      "id": "137537539657",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "failure"
+    }
+  },
+  "classification": {
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
+    "primary_category": null,
+    "categories": [],
+    "issues": []
+  },
+  "jobs": [
+    {
+      "id": "137535647848",
+      "name": "Validate target branch and reject superseded push runs",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-23T06:57:32Z",
+      "completed_at": "2026-11-23T06:57:34Z",
+      "runner_name": "GitHub Actions 1000001180",
+      "runner_id": 1000001180,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:57:33Z",
+          "completed_at": "2026-11-23T06:57:33Z"
+        },
+        {
+          "number": 2,
+          "name": "Validate branch and guard push runs",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:57:33Z",
+          "completed_at": "2026-11-23T06:57:33Z"
+        },
+        {
+          "number": 3,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T06:57:33Z",
+          "completed_at": "2026-11-23T06:57:33Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 9234,
+        "path": "logs/job-137535647848.log",
+        "error": null,
+        "marker_lines": [
+          "Validate target branch and reject superseded push runs\tUNKNOWN STEP\t2026-11-23T06:57:33.4189300Z ^[[36;1m  echo \"::error::Select the gpt branch when manually dispatching this workflow.\"^[[0m"
+        ]
+      }
+    },
+    {
+      "id": "137535671579",
+      "name": "Full audit and publish detailed evidence",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "started_at": "2026-11-23T06:57:36Z",
+      "completed_at": "2026-11-23T07:02:36Z",
+      "runner_name": "GitHub Actions 1000001183",
+      "runner_id": 1000001183,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [],
+      "log_capture": {
+        "available": false,
+        "truncated": false,
+        "bytes": 29,
+        "path": "logs/job-137535671579.log",
+        "error": "log not found: 137535671579\n",
+        "marker_lines": []
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "137535647848",
+      "name": "Validate target branch and reject superseded push runs",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-23T06:57:32Z",
+      "completed_at": "2026-11-23T06:57:34Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45127663602/job/137535647848",
+      "app": "GitHub Actions",
+      "annotations_count": 1
+    },
+    {
+      "id": "137535671579",
+      "name": "Full audit and publish detailed evidence",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "started_at": "2026-11-23T06:57:36Z",
+      "completed_at": "2026-11-23T07:02:36Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45127663602/job/137535671579",
+      "app": "GitHub Actions",
+      "annotations_count": 1
+    }
+  ],
+  "annotations": [
+    {
+      "check_run_id": "137535647848",
+      "job_id": "137535647848",
+      "path": ".github",
+      "start_line": 35,
+      "end_line": 35,
+      "level": "warning",
+      "title": "",
+      "message": "Could not identify the latest push run. Continue with validation.",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137535671579",
+      "job_id": "137535671579",
+      "path": ".github",
+      "start_line": 1,
+      "end_line": 1,
+      "level": "failure",
+      "title": "",
+      "message": "Canceling since a higher priority waiting request for STE Lint Full Technical Documentation-refs/heads/gpt exists",
+      "raw_details": ""
+    }
+  ],
+  "artifacts": [],
+  "capture_errors": [
+    {
+      "source": "job_log",
+      "job_id": "137535671579",
+      "message": "log not found: 137535671579\n"
+    }
+  ],
+  "history_path": "history/424743410/45127663602-attempt-1-post_run-capture-78"
+}

@@ -1,51 +1,49 @@
-# Validate Document Standards — run 45167451152
+# STE Lint Changed Documentation — run 45167458384
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | Validate Document Standards |
-| Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45167451152 / 1 |
-| Run number | 76 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45167451152 |
+| Workflow | STE Lint Changed Documentation |
+| Workflow path | .github/workflows/ste-lint-changed.yml |
+| Run / attempt | 45167458384 / 1 |
+| Run number | 488 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45167458384 |
 | Branch | gpt |
-| Commit | 62c1646e0d7472fa4adf319da2df2ed47afc4709 |
+| Commit | 5d2eb9939aa4902d5e770593a425e61198a80024 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T11:41:31Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | cancelled |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T11:42:12Z |
+| Created (UTC) | 2026-11-23T11:41:34Z |
+| Status at capture | completed |
+| Observed conclusion | cancelled |
+| Projected conclusion | Not calculated |
+| Reporter job | Not captured |
+| Capture stage | post_run |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-23T11:43:39Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
+| State | cancelled |
 | Primary category | None |
-| Jobs | 1 |
+| Jobs | 0 |
 | Steps | 0 |
 | Issues | 0 |
-| Annotations | 1 |
+| Annotations | 0 |
 | Artifacts | 0 |
-| Capture errors | 1 |
+| Capture errors | 0 |
 
 ## Failure classification
 
-No failure category identified. The parent run is still in progress. The projected conclusion is provisional.
+No failure category identified.
 
 The run conclusion records the workflow outcome. A cancelled run remains in history. Cancellation alone does not create an actionable issue. The generator also excludes known downstream status-propagation steps after cancellation.
 
 ## Jobs and steps
 
-| Job ID | Job | Status | Conclusion | Steps | Log |
-| --- | --- | --- | --- | --- | --- |
-| 137667981551 | validate-document-standards | completed | cancelled | 0 | logs/job-137667981551.log |
+No records were captured.
 
 ## Actionable step outcomes
 
@@ -53,9 +51,7 @@ No records were captured.
 
 ## Check annotations
 
-| Job | Level | Path | Line | Title | Message |
-| --- | --- | --- | --- | --- | --- |
-| 137667981551 | failure | .github | 1 |  | Canceling since a higher priority waiting request for document-standards-refs/heads/gpt exists |
+No records were captured.
 
 ## Artifacts
 
@@ -63,21 +59,15 @@ No records were captured.
 
 ## Captured job logs
 
-| Job | Name | File | Bytes | Truncated | Markers |
-| --- | --- | --- | --- | --- | --- |
-| 137667981551 | validate-document-standards | logs/job-137667981551.log | 82 | False |  |
+No records were captured.
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | run 45167451152 is still in progress; logs will be available when it is complete  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 
-No separate lint report applies to this workflow.
+[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/reports/lint_reports/on_changed/latest-lint-report.md)
 
 ## Integrity
 
