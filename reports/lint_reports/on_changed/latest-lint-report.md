@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#443](https://github.com/dungnv2602/chatgpt/actions/runs/45129646655)
-- **Run ID / attempt:** 45129646655 / 1
+- **Run:** [#444](https://github.com/dungnv2602/chatgpt/actions/runs/45132710256)
+- **Run ID / attempt:** 45132710256 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / d92f5b317522175e505bb2c3b196b0bf99b85b50
+- **Branch / commit:** gpt / 90be84e64a8c0d3bc80b65388c33df0fbbef9bc2
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** d92f5b317522175e505bb2c3b196b0bf99b85b50
-- **Generated (UTC):** 2026-11-23T07:14:57.735799+00:00
+- **Linter source SHA:** 90be84e64a8c0d3bc80b65388c33df0fbbef9bc2
+- **Generated (UTC):** 2026-11-23T07:40:10.223715+00:00
 
 ## 1. Executive summary
 
@@ -19,11 +19,11 @@
 | Files evaluated | 49 |
 | Files that failed | 10 |
 | Files with findings | 41 |
-| Total findings | 474 |
-| Hard findings | 155 |
+| Total findings | 475 |
+| Hard findings | 156 |
 | Advisory findings | 319 |
 | New findings | 0 |
-| Recurring findings | 474 |
+| Recurring findings | 475 |
 | Resolved findings | 0 |
 | Failed workflow checks | 0 |
 
@@ -120,7 +120,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/conversation-mode/SKILL.md | FAIL | 22 | 5 | 3 | 3081 | 0.7 | 1 |
 | skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md | PASS | 8 | 0 | 7 | 2716 | 0.3 | 0 |
 | skills/drawing/SKILL.md | PASS | 35 | 14 | 24 | 5064 | 0.7 | 0 |
-| skills/document-standards/references/document-type-catalog.md | FAIL | 99 | 75 | 0 | 2997 | 3.3 | 1 |
+| skills/document-standards/references/document-type-catalog.md | FAIL | 100 | 76 | 0 | 3022 | 3.3 | 1 |
 | workspace/task_board.md | PASS | 3 | 0 | 0 | 251 | 1.2 | 0 |
 | skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
 | skills/INITIALIZATION_POLICY.md | PASS | 3 | 1 | 4 | 1180 | 0.3 | 0 |
@@ -152,7 +152,7 @@ Counts include hard and advisory findings.
 | Rule | Findings |
 |---|---:|
 | passive-voice | 279 |
-| semicolon | 82 |
+| semicolon | 83 |
 | present-perfect | 40 |
 | synonym-rotation | 33 |
 | long-sentence | 28 |
@@ -190,7 +190,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.279s
+Ran 4 tests in 0.319s
 
 OK
 ~~~
@@ -223,7 +223,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 254 active Markdown files (319 available as link targets) and 337 local Markdown links.
+Scanned 279 active Markdown files (344 available as link targets) and 337 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -1241,6 +1241,10 @@ None.
   - **Level:** advisory-free
   - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
   - **Matched text:** checks
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:55:198 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 - **semicolon** · skills/document-standards/references/document-type-catalog.md:61:430 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
@@ -3616,10 +3620,10 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 99
-- **Hard findings:** 75
+- **Findings:** 100
+- **Hard findings:** 76
 - **Baseline:** 0
-- **Words:** 2997
+- **Words:** 3022
 - **Findings per 100 words:** 3.3
 
 #### Complete diagnostics
@@ -3733,6 +3737,11 @@ No STE findings were recorded for this file.
   - **Level:** advisory-free
   - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
   - **Matched text:** checks
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:55:198 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 - **semicolon** · skills/document-standards/references/document-type-catalog.md:61:430 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
   - **Level:** advisory-free
