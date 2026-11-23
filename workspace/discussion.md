@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 10:46 UTC — Review catalog batch 4:** Revise the legacy-example table. Remove its hard semicolon findings while preserving the historical version, migration, and retention constraints.
+- **2026-11-23 10:50 UTC — Review catalog batch 5:** Resolve the remaining hard synonym-rotation findings and the final catalog semicolon. Preserve the existing catalog maintenance and validation requirements.
 
 ## Open Discussions
 
