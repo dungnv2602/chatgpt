@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 05:50 UTC — Task capture and authoring prerequisites:** Inspect the workspace board, task template, Document Standards catalog, and technical-writing policy. Expected result: confirm the task-record format and identify the exact files and approvals needed for implementation.
+- **2026-11-23 05:50 UTC — Inspect existing reporting and workflow coverage:** Review the lint-report guide, schemas, generator, tests, and latest report evidence. Inspect every Actions workflow and referenced diagnostic script. Expected result: an evidence-based inventory and a safe design for broader run/job/step reporting.
 
 ## Open Discussions
 
