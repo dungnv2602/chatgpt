@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-054904
 - **Created:** 2026-11-23 05:49 UTC
-- **Updated:** 2026-11-23 10:06 UTC
+- **Updated:** 2026-11-23 10:07 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -39,6 +39,8 @@ Then, suggest me another approach to handle these errors from those reports, be 
 
 - **2026-11-23:** User approved the cancelled-run reporting fix: "I ppprove your fix regarding logging cancelled runs problem."
 - **2026-11-23:** User asked to review the Open Discussions items and identify required user actions: "Then we deal with those bullet points in Open Discussion. Tell me what I need to do."
+
+- **2026-11-23:** User confirmed delayed capture remains on `gpt`; `main` is preservation-only. User approved a separate task for existing hard lint findings. The remediation task is `20261123-100738`.
 
 ## 3. Objective
 
@@ -175,6 +177,13 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - **Result:** All 11 paths match the committed content. The branch head is a12188b8bff24b04f678eb711463c2aad16d9866. Regression tests were added but were not executed locally. Hosted validation remains pending.
 - **References:** [Implementation commit](https://github.com/dungnv2602/chatgpt/commit/a12188b8bff24b04f678eb711463c2aad16d9866).
 - **Next:** Review hosted test results only when they are naturally available. Do not poll or manually dispatch workflows.
+
+### 2026-11-23 10:07 UTC
+
+- **Action:** Recorded the user's decision to keep delayed capture on `gpt` and approval for a separate hard-lint remediation task. Compared the latest full-audit and changed-scope hard-finding fingerprints.
+- **Result:** Both scopes contain the same 155 hard findings. The new remediation task is approved and Ready. No lint edits have started. `main` remains preservation-only.
+- **References:** Task `20261123-100738`; runs [45128445227](https://github.com/dungnv2602/chatgpt/actions/runs/45128445227) and [45152181405](https://github.com/dungnv2602/chatgpt/actions/runs/45152181405).
+- **Next:** Finish natural hosted validation and closeout for this diagnostic task before selecting the approved remediation task.
 
 ## 7. Current State
 
