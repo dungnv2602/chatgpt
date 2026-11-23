@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 12:44 UTC — Standardize pattern validation terminology:** Change the checklist instruction to `validate` so it matches the existing `Validated` confidence state. Preserve all enum values and evidence requirements.
+- **2026-11-23 12:48 UTC — Begin attempt template review:** Review the single hard finding in `skills/drawing/assets/attempt-template.md` against the catalog and Drawing workflow. Preserve record, generation, and user-decision state separation.
 
 ## Open Discussions
 
