@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 10:31 UTC — Review first lint-remediation batch:** Inspect the full Document Type Catalog and its 75 hard finding locations. Resolve the high-density semicolon and sentence-length findings in a semantics-preserving batch. Keep advisory findings out of scope.
+- **2026-11-23 10:34 UTC — Complete catalog batch 1:** Resolve 14 semicolon findings, one long-sentence finding, and one synonym-rotation finding in the initial catalog rows. Preserve catalog classifications, references, conditions, and handling rules. Review the remaining catalog findings before the next batch.
 
 ## Open Discussions
 
