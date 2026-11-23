@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-051200
 - **Created:** 2026-11-23 05:12 UTC
-- **Updated:** 2026-11-23 05:12 UTC
+- **Updated:** 2026-11-23 05:21 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -80,9 +80,17 @@ Repair the changed-document lint evidence pipeline. Unify repository-wide and ch
 ### 2026-11-23 05:12 UTC
 
 - **Action:** Read Document Standards, its Document Type Catalog, the workspace README, task board, and canonical task template. Checked the active task directory.
-- **Result:** The board has no active task, and `workspace/tasks/` contains only `.gitkeep`. The catalog classifies the changed report as Generator-owned and the repository-wide report as an Embedded contract. Their ownership must be unified when both workflows use the existing generator. The task uses the existing Version 1.1 template.
+- **Result:** The board had no active task, and `workspace/tasks/` contained only `.gitkeep`. The catalog classified the changed report as Generator-owned and the repository-wide report as an Embedded contract. The two formats needed one owner.
 - **References:** `skills/document-standards/SKILL.md`, `skills/document-standards/references/document-type-catalog.md`, `workspace/README.md`, `workspace/task_board.md`, `workspace/TASK_TEMPLATE.md`.
-- **Next:** Update the task board, then implement the shared report contract, tests, anchor fix, workflow integrations, and documentation.
+- **Next:** Create the approved task record and define the shared report contract.
+
+### 2026-11-23 05:21 UTC
+
+- **Action:** Unified the report schema and generator for `on_changed` and `on_repo`. Expanded Markdown with exact coverage, per-file metrics and diagnostics, workflow-check output, baseline comparisons, and provenance. Updated index metadata and protected latest pointers from older concurrent runs. Updated the Document Type Catalog. Added four generator tests and three anchor-check tests. Fixed runtime template-placeholder handling.
+- **Result:** Format commit `c7bf066b7fc27d57764467d0f038c1a3350201f2` and anchor-check changes `82d3081671508a136317e1860db7ed943a6f957c`, `642b5b21c4b3360e0ae06b0c83ffcf348234582c` are on `gpt`. Read-back exposed a missing regex declaration and then an indentation defect. Both were corrected and the relevant source was read back. Hosted run `45116930355` confirmed the indentation defect before its correction. The generator tests and new anchor tests have not yet received a hosted result.
+- **References:** `skills/asd-ste100/scripts/generate_lint_report.py`, `skills/asd-ste100/scripts/test_generate_lint_report.py`, `skills/asd-ste100/scripts/check_markdown_anchors.py`, `skills/asd-ste100/scripts/test_check_markdown_anchors.py`, `skills/asd-ste100/assets/lint-report-template.md`, `skills/asd-ste100/assets/lint-report-schema.json`, `skills/document-standards/references/document-type-catalog.md`, [report-format commit](https://github.com/dungnv2602/chatgpt/commit/c7bf066b7fc27d57764467d0f038c1a3350201f2), [placeholder declaration](https://github.com/dungnv2602/chatgpt/commit/82d3081671508a136317e1860db7ed943a6f957c), [syntax correction](https://github.com/dungnv2602/chatgpt/commit/642b5b21c4b3360e0ae06b0c83ffcf348234582c).
+- **Next:** Integrate the shared generator into both lint workflows and capture all validation and per-file execution evidence.
+
 
 ## 7. Current State
 
@@ -91,13 +99,13 @@ Repair the changed-document lint evidence pipeline. Unify repository-wide and ch
 - The changed-document report is absent.
 - The report pipeline defects are confirmed from runner logs and repository contents.
 - The repository-wide report includes 49 scanned files, 455 total findings, 142 hard findings, and 10 failing files. The recorded findings must remain visible.
-- The implementation has not started.
+- The shared report generator, schema, Markdown template, and catalog entry have been updated and read back.
+- The anchor-checker placeholder fix has two corrections based on hosted and source read-back evidence. The latest source read-back is syntactically aligned, but hosted confirmation remains outstanding.
+- Both workflow files still need integration with the shared generator.
 
 ## 8. Remaining Work
 
 - Update the task board and keep this task as current execution.
-- Extend the canonical generator, schema, template, tests, and Document Type Catalog for both report scopes.
-- Add anchor-check regression coverage and support template placeholders.
 - Integrate the shared generator into both workflows.
 - Correct report publication, root compatibility output, index metadata, and scope documentation.
 - Read back all changed paths and branch head.
