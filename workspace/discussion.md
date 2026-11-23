@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 10:57 UTC — Resolve final catalog finding:** Shorten the Skill changelog row to resolve the remaining 26-word catalog finding. Preserve its canonical path and lightweight-pattern guidance.
+- **2026-11-23 11:00 UTC — Begin STE skill review:** The Document Type Catalog's 75 baseline hard findings are addressed. Review the 15 hard findings in `skills/asd-ste100/SKILL.md` against the complete skill and writing policy before editing.
 
 ## Open Discussions
 
