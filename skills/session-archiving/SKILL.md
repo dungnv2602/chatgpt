@@ -10,11 +10,13 @@ metadata:
 
 ## 1. Absolute workspace boundary
 
-**Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `drawings/`, `skills/`, `workspace/`, and `archive/`. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific exceptions below.
+**Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `drawings/`, `skills/`, `workspace/`, `archive/`, and `gh_ac_reports/`. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific path exceptions below.
 
 **Authorized archive-retention index exception:** The user authorized exact read/write access to `.github/archive-retention-index.json` only to register a newly archived task record's exact path and UTC archive timestamp. Do not list or scan `archive/tasks/` to backfill this index.
 
-**Authorized WebP workflow exception:** The user authorized creation of `.github/workflows/convert-images-to-webp.yml` on 12 November 2026. The user approved its takeout-pipeline and persistent staging changes on 20 November 2026. The user also approved moving its scripts into this skill and updating the required workflow paths. These changes define the current authorization. Ask for fresh permission before any further workflow changes.
+**Authorized WebP workflow exception:** The user authorized creation of `.github/workflows/convert-images-to-webp.yml` on 12 November 2026. The user approved its takeout-pipeline and persistent staging changes on 20 November 2026. The user also approved moving its scripts into this skill and updating the required workflow paths. These permissions do not authorize unrelated workflow changes.
+
+**Authorized GitHub Actions diagnostics scope:** On 23 November 2026, the user explicitly authorized creation of `gh_ac_reports/` and changes to the six existing workflow files plus `.github/workflows/gh-actions-diagnostics.yml` for reusable diagnostics and task-scoped CI policy. This authorization applies to branch `gpt` only. It does not authorize changes to `main`, other `.github/` paths, or unrelated workflows.
 
 This boundary applies to every future task and every tool call, not only archiving.
 
@@ -26,6 +28,8 @@ This boundary applies to every future task and every tool call, not only archivi
   - `skills/` — reusable skills and supporting references
   - `workspace/` — active task board and task records
   - `archive/` — time-limited archive of completed and cancelled task records
+  - `gh_ac_reports/` — GitHub Actions diagnostic reports, their generator, templates, schemas, and indexes
+  - `.github/workflows/` — only workflow files in the explicitly authorized diagnostics scope or another user-authorized workflow change
   - `.github/archive-retention-index.json` — exact task archive paths and UTC timestamps only
 - Read and write files only by exact paths beginning with one of those approved directory names.
 - Do not recreate the obsolete `ChatGPT/` wrapper or consult former paths from the previous repository layout.
@@ -94,12 +98,12 @@ When the user says **`start session`**, run this sequence before project work. A
 6. Retrieve and read `skills/asd-ste100/SKILL.md` from the same branch.
 7. Retrieve and read `skills/github-actions/SKILL.md` from the same branch.
 8. Verify that every required retrieval succeeded and that you read each file. Keep the verified instructions for the rest of the conversation.
-9. After all six foundational skills load, run one bounded CI snapshot as defined in `skills/github-actions/SKILL.md`. Repair any newest completed failure that applies. Never wait or poll.
-10. Stop initialization only if a required skill retrieval fails. If a completed CI failure cannot be repaired safely during one focused preflight, record the exact blocker and continue initialization. Pending, cancelled, absent, or inaccessible results do not block initialization. Never claim an unverified result passed.
+9. Do not run a CI snapshot or repair an unrelated workflow failure during initialization. CI review is task-scoped under `skills/github-actions/SKILL.md`.
+10. Stop initialization only if a required skill retrieval fails. A failed, cancelled, pending, absent, or unavailable CI run does not block initialization unless the current task directly depends on that result. Never claim an unverified result passed.
 
 Do not load the Drawing skill or its references during foundational initialization. After the foundational gate passes, load Drawing only when the task requires it. For a drawing session or novelist request, first verify the verified-load ledger. Reuse any Drawing files already read in this conversation and retrieve only missing files. If foundational initialization already passed, do not run this gate again.
 
-**No premature-work exception after activation:** After the user invokes an initialization cue, retrieve every required file before project work. Repair any newest completed CI failure that applies. Do not wait for pending, cancelled, or unavailable CI results. Do not substitute memory, previous-session reads, Library copies, or readiness claims for fresh GitHub retrievals.
+**No premature-work exception after activation:** After the user invokes an initialization cue, retrieve every required file before project work. Do not add an unrelated CI repair step. Do not wait for pending, cancelled, or unavailable CI results. Do not substitute memory, previous-session reads, Library copies, or readiness claims for fresh GitHub retrievals.
 
 **Notification and disconnection limitation:** Deliver the startup notice in the active conversation before retrieval starts. Do not promise to continue the process after a voice call ends or claim an independent callback/notification will occur. Complete the retrieval and read-back in the active conversation, then report the result.
 

@@ -37,22 +37,19 @@ GitHub Actions runs the scheduled archive-retention workflow.
 - Check that `main` is an ancestor of `gpt` before pushing. If the branches diverge, fail safely without updating either ref.
 - Use a weekly cron schedule. The retention index avoids a daily or per-file scheduled workflow and prevents routine archive scans.
 
-## 3. Mandatory CI preflight and repair
+## 3. Task-scoped CI diagnostics and repair
 
-Run one bounded CI snapshot before handling every new user prompt. This rule applies to all request types and conversation modes.
+CI is not a gate that must be repaired before every user prompt or after skill initialization. Inspect CI when the user requests it, when the current task changes a workflow or validation target, or when a known result directly affects the task.
 
-1. Inspect the newest available run for each applicable workflow on branch `gpt`. Also inspect the current branch head's combined status and check runs.
-2. For each workflow, act only on its newest run. A completed success clears that workflow. A completed failure requires investigation and repair.
-3. Treat an older failure as superseded when a newer run for the same workflow succeeds.
-4. Treat queued, in-progress, cancelled, skipped, or absent runs as pending or unavailable. They do not block the user's request. Never wait, poll, dispatch, or rerun to produce a result.
-5. When a newest completed run fails, inspect its jobs, failed steps, and logs. Repair the cause on `gpt` before handling the user's request. Do not weaken tests, path coverage, or baselines.
-6. After you push a repair, continue with the user's request. GitHub Actions owns validation. Review the result during the next mandatory preflight.
-8. Never run the STE linter, CI workflows, CI test suites, or repository scripts locally. Use GitHub-hosted Actions only. Do not manually dispatch or rerun workflows unless the user explicitly asks.
-8. If GitHub Actions cannot be accessed, make one bounded access attempt. Record the status as unverified in `workspace/discussion.md` in Condensed Mode. Do not claim that CI passed. Continue with the user's request.
-9. If a completed failure cannot be repaired safely during one focused preflight, record the exact blocker. Do not repeat the same attempt without new evidence. Continue with the user's request unless it depends on that CI result.
-
-After loading skills for `start session`, `start a drawing session`, or `Be the novelist`, run the same one-time snapshot. Repair any visible newest completed failure before project work. Do not wait for pending or unavailable results. If a repair starts new CI runs, continue initialization without waiting for them.
-
+1. Start with `gh_ac_reports/README.md` for workflow-level failures, jobs, steps, logs, annotations, artifact metadata, and evidence limitations.
+2. For STE lint details, start with `lint_reports/README.md`. Use its scope index and structured JSON for exact file-level findings, metrics, and baselines.
+3. Inspect only the runs and checks relevant to the current task. Use a bounded snapshot when fresh status is material. Do not scan the entire workflow history without a reason.
+4. Preserve GitHub's actual conclusion. Distinguish failure, timed out, action required, cancelled, skipped, neutral, queued, and in-progress states. Cancellation and skipped outcomes are not automatically failures. Do not treat missing evidence as proof of a workflow-definition defect.
+5. Repair only the cause that is inside the user's current scope or is a direct dependency of the task. Do not repair unrelated failures before handling the request. Never weaken tests, workflow coverage, permission requirements, or lint baselines to make a check pass.
+6. Keep reporting and source validation separate. A successful report publication does not convert a failed source workflow into success. A diagnostic reporter failure must not change the source workflow's validation conclusion.
+7. Never wait for or poll CI. Do not manually dispatch or rerun a workflow unless the user asks or the current task explicitly requires it.
+8. Never run the STE linter, CI workflows, CI test suites, or repository scripts locally. Use GitHub-hosted Actions only.
+9. If GitHub Actions or report evidence is unavailable, record the exact limitation and mark the result unverified. Continue unless the task directly depends on that evidence. Do not claim that CI passed.
 ## 4. Inspect and preserve validation scope
 
 ### Archive boundary for Markdown checks
@@ -211,9 +208,9 @@ This section consolidates the former repository CI preflight and execution-effic
 4. Batch related edits into one coherent commit. Avoid intermediate commits that create duplicate push-triggered runs.
 5. Review the complete changed sections. Preserve facts, conditions, exceptions, numbers, scope, and modality.
 
-### CI gate
+### CI and validation scope
 
-Follow Section 3 before every user prompt and after cue-triggered skill loading. Do not defer this gate until the user asks. Do not wait for or poll in-progress runs. Repair applicable completed failures. Never run the STE linter or CI workflows locally.
+Apply Section 3 only when CI is relevant to the user's current request. Do not run a pre-prompt or post-initialization CI gate. Do not wait for or poll in-progress runs. Let GitHub-hosted Actions run validation; never run CI workflows or the STE linter locally.
 
 ### After editing
 

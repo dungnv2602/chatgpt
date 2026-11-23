@@ -16,19 +16,17 @@ The Worker owns task capture, task selection, progress records, handoffs, recove
 
 Conversation Mode controls chat verbosity and the discussion-register format. It maintains the register in every mode. The Worker controls task operations.
 
-## Mandatory CI gate before every prompt
+## CI review is task-scoped
 
-Before handling every new user prompt, follow the one-time pre-prompt CI snapshot in `skills/github-actions/SKILL.md`. This rule applies in every conversation mode.
+CI status is not a precondition for accepting or handling a new user request. Do not run a pre-prompt or post-initialization snapshot.
 
-Repair a failure only when the newest run for an applicable workflow finishes with a failure conclusion. Inspect its jobs and logs. Repair the cause on branch `gpt`.
+Inspect CI only when the user asks for diagnosis or repair, when the current task changes a workflow or code that needs that validation, or when a known failure directly blocks the requested work. Use `gh_ac_reports/README.md` for workflow, job, step, and runner evidence. Use `lint_reports/README.md` for per-file lint findings.
 
-Do not wait for or poll CI. Pending, in-progress, cancelled, skipped, or absent runs do not block the prompt. A newer successful run supersedes an older failure.
+Keep outcomes distinct. A failed conclusion is a failure. A cancelled or skipped run is not a failure. A pending or unavailable run is unverified, not failed.
 
-If GitHub Actions is unavailable after one bounded access attempt, record the status as unverified. Continue with the user's request. Do not claim that CI passed.
+Repair only defects within the user's current scope and only when the task requires the repair. Do not repair unrelated workflows before handling a request. Do not weaken tests, path coverage, or lint baselines to make a check pass.
 
-If a failure cannot be repaired safely during one focused preflight, record the exact blocker. Do not repeat the same attempt without new evidence. Continue with the request unless it depends on that CI result.
-
-After cue-triggered skill loading, repeat the same one-time snapshot. Do not wait for new runs after a repair or other push.
+Never wait for or poll CI. Never run the linter, repository scripts, or CI tests locally. Let GitHub-hosted Actions perform validation. Record an unavailable result as unverified and continue unless the task directly depends on it.
 
 ## Activation and authority
 

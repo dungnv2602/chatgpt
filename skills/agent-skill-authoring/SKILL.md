@@ -200,7 +200,7 @@ Do not rewrite creative writing, dialogue, marketing copy, approved creative pro
 
 Do not run the linter or CI workflows locally. Push technical-document changes to branch `gpt`. Let GitHub Actions check them.
 
-During each mandatory preflight, inspect one bounded snapshot. Repair the newest completed failure for an applicable workflow before handling the prompt. Do not wait or poll. Pending, cancelled, absent, or inaccessible results do not block work. Record any failure that cannot be repaired safely in one focused attempt, then continue unless the task depends on that result. Review new CI results at the next preflight.
+CI review is task-scoped. Inspect the relevant workflow only when the user requests it, when the skill-authoring task changes validation or workflow configuration, or when a known result directly blocks the task. Use `gh_ac_reports/` for workflow evidence and `lint_reports/` for lint findings. Do not repair unrelated failures before handling a prompt. Never wait or poll. Let GitHub-hosted Actions run validation.
 
 The linter checks only supported patterns. It cannot prove meaning or dictionary compliance.
 
@@ -264,7 +264,7 @@ For this project:
 - Make sequential writes to the same path.
 - Do not change `main` or unrelated files.
 - After each important write, fetch the same path and check the expected content.
-- Follow the mandatory CI preflight and repair policy in `../github-actions/SKILL.md` before every prompt and after cue-triggered skill loading.
+- Follow the task-scoped CI policy in `../github-actions/SKILL.md` when skill changes affect CI or the user requests CI diagnosis.
 - Follow the repository execution efficiency workflow in `../conversation-mode/SKILL.md`. Batch related edits, avoid redundant tool calls, and preserve exact commit-to-check attribution.
 - Do not report a commit or verification as successful unless the tool result and read-back support that statement.
 

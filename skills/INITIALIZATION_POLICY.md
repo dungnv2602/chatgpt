@@ -33,10 +33,10 @@ A specialist-role request does not change the `start session` cue. It authorizes
 - Load only the files required by the session-start procedure or the requested specialist task.
 - Do not load unrelated skills or references.
 - Report the exact path of a missing or unverified file.
-- Do not claim initialization is complete until you retrieve every required skill and repair every actionable completed CI failure.
-- Use one bounded CI snapshot. Pending, cancelled, skipped, absent, or inaccessible CI results do not block initialization. Never wait for or poll CI.
-- If a completed failure cannot be repaired safely in one focused attempt, record the blocker and continue unless the task depends on that result.
-- Never run the linter or CI workflows locally. Let GitHub Actions execute them.
+- Complete initialization when every required skill has been retrieved and read. CI status is separate from initialization.
+- Do not run a CI snapshot or repair unrelated workflow failures before handling a prompt.
+- Review CI only when the user asks or the current task changes or depends on a specific validation workflow.
+- Never wait for or poll CI. Never run the linter or CI workflows locally. Let GitHub Actions execute validation.
 - Treat the GitHub repository and branch `gpt` as the sole source of truth.
 
 ## Foundational standards
@@ -124,6 +124,15 @@ Initialization is conditional. Do not load project instructions or skills at the
 - **Files modified:** ASD-STE100, Session Start, Session Archiving, Agent Skill Authoring, Skills README, and this policy file.
 - **Verification:** Initial read-back completed. The current documentation audit remains in progress.
 
+### Version 5 — Task-scoped CI review
+
+- **Date:** 2026-11-23
+- **Requested change:** Remove mandatory CI preflight and repair steps before prompts and after initialization.
+- **Reason:** Unrelated workflow failures must not delay a new user request.
+- **Behavioral impact:** Initialization depends on successful skill retrieval. CI review and repair apply only when the user asks or the current task depends on a relevant workflow. Use `gh_ac_reports/` for workflow evidence and `lint_reports/` for detailed lint findings.
+- **Files modified:** Session Start, Session Archiving, The Worker, GitHub Actions, Agent Skill Authoring, ASD-STE100, and this policy file.
+- **Verification:** Pending hosted workflow validation and exact read-back.
+
 ## Future revision log
 
 Append a new entry whenever the initialization policy or its dependencies change.
@@ -152,7 +161,7 @@ Use this template:
 - [ ] Rewrites preserve meaning, facts, conditions, scope, and modality.
 - [ ] Only required files load.
 - [ ] Report missing skill prerequisites by exact path and stop initialization.
-- [ ] Pending or unavailable CI results never block initialization.
+- [ ] CI status is separate from initialization. No mandatory CI preflight or repair runs before a prompt.
 - [ ] Operational instructions remain consistent across initiation files.
 - [ ] Commit changes to branch `gpt`. Verify each path after writing.
 
