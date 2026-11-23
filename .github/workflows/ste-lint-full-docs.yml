@@ -326,8 +326,11 @@ jobs:
       - name: Set workflow result from audit findings
         if: always() && steps.audit.outcome != 'skipped'
         shell: bash
+        env:
+          AUDIT_OUTCOME: ${{ steps.audit.outcome }}
+          AUDIT_FAILED: ${{ steps.audit.outputs.overall_failed }}
         run: |
-          if [[ "${{ steps.audit.outputs.overall_failed }}" == "1" ]]; then
+          if [[ "$AUDIT_OUTCOME" != "success" || "$AUDIT_FAILED" == "1" ]]; then
             echo "::error::The full audit found lint failures. See lint_reports/latest-lint-report.md."
             exit 1
           fi
