@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.1.0",
-  "updated_at_utc": "2026-11-23T12:24:31Z",
+  "schema_version": "1.2.0",
+  "updated_at_utc": "2026-11-23T12:29:39Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T08:15:48Z",
     "processed_reports": [
@@ -867,7 +867,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-e56e71413f309183c3195a0f",
@@ -976,7 +977,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-fc114dacae449b7519133918",
@@ -1169,7 +1171,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-01b04df4a4d61aa32756adf1",
@@ -1362,7 +1365,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f05c498f9ee2269430ff8ada",
@@ -1555,7 +1559,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c645e65b81e4110faf6f2062",
@@ -1748,7 +1753,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b1d63c43c6349bc6f120ce18",
@@ -1941,7 +1947,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-671a7eda510ef040edd3be61",
@@ -2134,7 +2141,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ac33fd0d35779883eb5af2cb",
@@ -2327,7 +2335,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-cd2a130c88bf1b1de364eda1",
@@ -2520,7 +2529,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ba15e2b13749f7aad6447fc1",
@@ -2713,7 +2723,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-fb05b158f323ac0a88758170",
@@ -2906,7 +2917,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-7cb850c3e4335a13e7519ba0",
@@ -3099,7 +3111,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ce25d5ad6ba4826e11264f32",
@@ -3292,7 +3305,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-32467609b8c42805cbf2c5ad",
@@ -3485,7 +3499,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-e1de4bab2e607823412ffbc4",
@@ -3678,7 +3693,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ac6348f1c31c27d904cb53b4",
@@ -3871,7 +3887,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b49561bafa5675d60cc907c5",
@@ -4064,7 +4081,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-346827f54f442c607e8b24a5",
@@ -4257,7 +4275,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ede5e693c6707a81cfe3079a",
@@ -4450,7 +4469,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-3c48312b0ae19adb3273832c",
@@ -4643,7 +4663,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-e0e662058459fdceb4c02481",
@@ -4836,7 +4857,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-715e2eee6cf5d1784b75c730",
@@ -5029,7 +5051,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c5308af1d2f63badad79bd66",
@@ -5222,7 +5245,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-74cd4ed7e5ca2631c57c069b",
@@ -5415,7 +5439,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-fca6bef2ba2e441b581fcc8d",
@@ -5608,7 +5633,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-75eccc37cbac9985f7061f82",
@@ -5801,7 +5827,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-e56ece3c0f60be33dac72d05",
@@ -5994,7 +6021,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-5b28443dc965cf5ab3378e12",
@@ -6187,7 +6215,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b35900a9da7c000de2e26e70",
@@ -6380,7 +6409,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-feb2d786d14c99b7e9fe9de0",
@@ -6573,7 +6603,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0cae9b0c6170006a0e67edc2",
@@ -6766,7 +6797,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-cf9a19441f150cbc6e394584",
@@ -6959,7 +6991,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-836c6ab7672c67c5cf0dbf14",
@@ -7061,7 +7094,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-6ffc592c0b6322b443496f66",
@@ -7254,7 +7288,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2dddc1891d5710f75a1cc520",
@@ -7447,7 +7482,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f7fae0229a13471823102bb0",
@@ -7640,7 +7676,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0be774910939027b005107b8",
@@ -7833,7 +7870,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-76c645f8b8d79e0e8da99700",
@@ -7935,7 +7973,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-5eabd6169bec15a6fdfd2a80",
@@ -8128,7 +8167,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0f053c89c3267998b6edc9d6",
@@ -8321,7 +8361,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-70dc63b30d658452239a6cbe",
@@ -8514,7 +8555,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2df378472bba68cfc7a25cbe",
@@ -8707,7 +8749,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8416fa6ec8b8068d6f7379c2",
@@ -8900,7 +8943,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c26f9840d6188237d9689546",
@@ -9093,7 +9137,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-599292fe4dd9cfdbc4788ec9",
@@ -9286,7 +9331,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4414015699cf2e3e269abe29",
@@ -9479,7 +9525,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-91d321a9405d06bea4b12487",
@@ -9672,7 +9719,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-3ae757460d9b3aa9399e9808",
@@ -9865,7 +9913,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ce4f5586a0c66bf136f1a181",
@@ -10058,7 +10107,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-16921dc530cca16c2f4562e8",
@@ -10251,7 +10301,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-dc6fc135735cd3aa5f4246ff",
@@ -10444,7 +10495,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-bdbff79e00c0aca5352dcc38",
@@ -10637,7 +10689,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-80ff0d75ee9e57c63a759659",
@@ -10830,7 +10883,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-e71b3a8ba6751987cf0fb966",
@@ -11023,7 +11077,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4cca9a878a87bc55497611c8",
@@ -11216,7 +11271,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ad46045395dc40b74a35f499",
@@ -11409,7 +11465,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-1e2dc3b524f1b7c4c3b51d1f",
@@ -11518,7 +11575,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-92485eeff29784dba3505b2d",
@@ -11711,7 +11769,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-3f5048026fc0041e11f90db1",
@@ -11904,7 +11963,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-9a512eba16db074bc582887d",
@@ -12097,7 +12157,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-bf5f3ed6bfe52608af6f2cbb",
@@ -12290,7 +12351,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-03c08438c1205e007605fad3",
@@ -12483,7 +12545,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-7266e62fe12e7cc92f88c06b",
@@ -12676,7 +12739,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c73db64bc9604fc922f42dd6",
@@ -12736,7 +12800,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4e26f8ad5ee76bbe5f532dd1",
@@ -12929,7 +12994,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0447fbf776081d483d4a8de4",
@@ -13122,7 +13188,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-bc3fa2e84f1094e34446f7f9",
@@ -13315,7 +13382,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-081cea6a0061b9dd44d263e8",
@@ -13508,7 +13576,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f17e13a684f76bb434777eb7",
@@ -13701,7 +13770,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-97b0da1333b1090e07b7b8c2",
@@ -13894,7 +13964,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-87ac5857a6a44a6085f99a33",
@@ -14087,7 +14158,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ce5400ef29dc517a20f612fc",
@@ -14280,7 +14352,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b0f99a99288209b64ca87fa8",
@@ -14473,7 +14546,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-e376f8090861f51701cf8a19",
@@ -14666,7 +14740,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0f33fa33abea44edf29a8632",
@@ -14859,7 +14934,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b483bbe719cbd32778da4137",
@@ -15052,7 +15128,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ea81b9a88d6189c3e9903c71",
@@ -15245,7 +15322,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c3ddafa9275694f20a349624",
@@ -15438,7 +15516,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4b3269c887ff5c340b1876ec",
@@ -15631,7 +15710,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b1d1a41a0e596b342bab207e",
@@ -15824,7 +15904,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-d9e6e08d672f564d722faa69",
@@ -16017,7 +16098,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-a17ca63c1abfe64d5e677484",
@@ -16210,7 +16292,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-95fa90f026478e1c3824ab91",
@@ -16403,7 +16486,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8f0e185b12ebc8ed1b2a84fa",
@@ -16596,7 +16680,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-7e018b97273422b234ce19d9",
@@ -16656,7 +16741,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-10fe19e3d918086368f3fe12",
@@ -16849,7 +16935,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-7da75daf64549a13157f1e48",
@@ -17042,7 +17129,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-e6d836749364fb952eddfc7c",
@@ -17235,7 +17323,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-1ca6476f6144a140274847f2",
@@ -17428,7 +17517,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-6bdb7fc4f6e61f46efdcc945",
@@ -17621,7 +17711,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-7bb3ef8e29cc2d62ee65f3a9",
@@ -17814,7 +17905,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-d15ccec8d9ae7c220e7297be",
@@ -18007,7 +18099,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-5fd7aabe55ed535b8e321fa7",
@@ -18200,7 +18293,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-3f8fc33d65f0a6d46cb838c6",
@@ -18393,7 +18487,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-07f09cee503710d3a9b04228",
@@ -18586,7 +18681,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-af22c155e8e4b4f9c84b3f86",
@@ -18779,7 +18875,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-67f2ed0983a75668f4ce3020",
@@ -18972,7 +19069,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0d3df0958eac71ea42f42c9c",
@@ -19165,7 +19263,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4a60e842034f5d41693a5db2",
@@ -19246,7 +19345,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b2fe77983de2b84d89887c16",
@@ -19327,7 +19427,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-1f12c5295c209089d03fd7ec",
@@ -19408,7 +19509,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-fafc7dc70cfb6b41e2ceac4c",
@@ -19601,7 +19703,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c93d49b6dfa2883ae7732733",
@@ -19794,7 +19897,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-9e3799d7fdb927485334ac92",
@@ -19987,7 +20091,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-85ee15f9b5a327b690ba9464",
@@ -20068,7 +20173,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-530b4aab7e05619eb2854a21",
@@ -20149,7 +20255,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-20086aa45dcb5efbabf52350",
@@ -20342,7 +20449,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b6e92fd2ee8e3800eabf5dcd",
@@ -20535,7 +20643,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-a753d9aa8cfa9ae159dfcd57",
@@ -20728,7 +20837,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c6565434b3298d6e8f59aec5",
@@ -20921,7 +21031,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4c20f74831abf9722cfbae81",
@@ -21114,7 +21225,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0dc1e5055d6ed33dfbc9b5d4",
@@ -21307,7 +21419,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f81ea4b00301347b2d2f1455",
@@ -21500,7 +21613,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-701a297d4776256937ee58f6",
@@ -21693,7 +21807,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8273627d1b81174ce50b3186",
@@ -21781,7 +21896,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-469031badac3ba397e332e3c",
@@ -21869,7 +21985,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-7d97b46795e61a4443970d53",
@@ -21957,7 +22074,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-54bc3060d325ed44b8a62ae3",
@@ -22150,7 +22268,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-5e242a061496f40752e20b1c",
@@ -22343,7 +22462,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0c43c9aefcafc776120c4656",
@@ -22536,7 +22656,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ab5c52aeee06db5e4aedaddd",
@@ -22729,7 +22850,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-34e6d8f4282135e9b79d9cf1",
@@ -22922,7 +23044,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-637ad15324468536b31ecfe4",
@@ -23115,7 +23238,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2936d742ababd61bba5196c3",
@@ -23308,7 +23432,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-79b0a68b86133eedb422b851",
@@ -23501,7 +23626,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-be7d514944589a18a9f9db9c",
@@ -23694,7 +23820,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-9f97b1e41f33db726c88c333",
@@ -23887,7 +24014,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f96d7c6c45b4119df93b13ed",
@@ -24080,7 +24208,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8defbd478033ef0db3a0b656",
@@ -24273,7 +24402,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f92adcede423eda0ec4d1115",
@@ -24466,7 +24596,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b63bcf77584105d5ad091e1c",
@@ -24659,7 +24790,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-9e98e3f9c31cb275ce90f3ae",
@@ -24852,7 +24984,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-160e46128e327497aa2a3a64",
@@ -25045,7 +25178,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-746f4f3fe8422ec0ab0dde68",
@@ -25238,7 +25372,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f47cc4296d9e8a5663c8308c",
@@ -25431,7 +25566,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-9375e59fa41686a4eb0bad2a",
@@ -25624,7 +25760,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4b6f194f46882ca644424605",
@@ -25817,7 +25954,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-01d3ba03570b64cfafb32a81",
@@ -26010,7 +26148,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-88fe09b5c3b3525804ef713a",
@@ -26203,7 +26342,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-5511c926d5a7460dc6f46cb9",
@@ -26396,7 +26536,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8f0edbc69c4e47b3297c86ae",
@@ -26589,7 +26730,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-beabe60324ae752ed917a331",
@@ -26761,7 +26903,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f0ad12d293bae6f6df55998b",
@@ -26933,7 +27076,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-606c590b44260c445b3f05a1",
@@ -27105,7 +27249,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-5e247f9b617820d66c4e5de3",
@@ -27277,7 +27422,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-db9467f618e5d7170b5770de",
@@ -27449,7 +27595,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-6ad1c8a942b901eb141a0cdc",
@@ -27621,7 +27768,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f6b87316a617b3675e187026",
@@ -27730,7 +27878,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-e6e912834a84809148a29b28",
@@ -27902,7 +28051,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-3d2774d90e6346c9f479ca23",
@@ -28074,7 +28224,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ebe274c396fc6f6265e97091",
@@ -28246,7 +28397,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-28344c784d287164c52cc81d",
@@ -28418,7 +28570,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-a8745ab59e15a54323b8eb62",
@@ -28590,7 +28743,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-756755bb5f5f39c5e328e481",
@@ -28762,7 +28916,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-a22a1b959ff468a81a8c41ae",
@@ -28934,7 +29089,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-6d637f1fa2db2d41a6d50ddc",
@@ -29085,7 +29241,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-53195e2f9ecf6fe4ff1b3bcc",
@@ -29173,7 +29330,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-5cbd20db3996bfbcd6375e8e",
@@ -29261,7 +29419,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-896c2c9e44672241e3c6b38f",
@@ -29349,7 +29508,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-448cf9dfd90fe327096b71e5",
@@ -29500,7 +29660,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-24000f0d039ebc991f65530c",
@@ -29651,7 +29812,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-11522f9e8c67a502b19046c1",
@@ -29802,7 +29964,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-fb6ab971291fabec8f04e13d",
@@ -29953,7 +30116,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-a5afffbd39db7eee0657c03b",
@@ -30104,7 +30268,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-7432ab5664bf24b78cc7ff00",
@@ -30255,7 +30420,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-3a6c1312d7b45107dbc72a9d",
@@ -30406,7 +30572,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f524e4cf6f61106be53e395c",
@@ -30557,7 +30724,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-30999b2a0d67c2a1670763ff",
@@ -30708,7 +30876,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-5b8f9ac16a3f5a3fd92e7621",
@@ -30859,7 +31028,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-7e130dc07470c4dfc1de436d",
@@ -31010,7 +31180,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ef15c6245f889cbfdb09d89a",
@@ -31161,7 +31332,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-04de33177ef6c58de34b6fd5",
@@ -31312,7 +31484,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-cd523ffc146c3f6901de60f2",
@@ -31505,7 +31678,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-d30efb69e80e577256521942",
@@ -31698,7 +31872,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-6ff3e39160ad0dff0950e93f",
@@ -31891,7 +32066,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-50a2d483f4875f3fb2b04103",
@@ -32084,7 +32260,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-375845a698662aa8e2119fb5",
@@ -32277,7 +32454,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4b337153e373889fb349022d",
@@ -32470,7 +32648,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-64d3910316c7c02208869eec",
@@ -32663,7 +32842,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-6901675964ceed2d35078379",
@@ -32730,7 +32910,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-7f77b267c64ee5928a429888",
@@ -32797,7 +32978,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-a66c58d4cbff63015f3f6912",
@@ -32864,7 +33046,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-1da08cc0bf141330524bda57",
@@ -33057,7 +33240,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-aa2b4a16cd7d5222231207e6",
@@ -33250,7 +33434,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-9a01e5392bd2f640fccc16f8",
@@ -33443,7 +33628,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ae959494a55d88be42e4abf1",
@@ -33636,7 +33822,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-d87f3bdb2e4a5cd311e567e0",
@@ -33829,7 +34016,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4a1561330f4473854edf7d68",
@@ -34022,7 +34210,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-83aca3a3f45f79d0190f037b",
@@ -34215,7 +34404,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4adc0f726bafb883a943a4c7",
@@ -34408,7 +34598,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-182721976b7c74744cfa668b",
@@ -34601,7 +34792,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-d81568a6e2238902ee0c2105",
@@ -34794,7 +34986,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ab1ec88e506a23cf0af2d38c",
@@ -34861,7 +35054,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-108fef94cd85af0be9bae737",
@@ -35054,7 +35248,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-14047edbba057e6e6f46a522",
@@ -35121,7 +35316,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-71b5544d9fbd5e093fd73ef3",
@@ -35188,7 +35384,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c13b1ec0df584f1d71453752",
@@ -35381,7 +35578,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-828f9104eb1934f156af2c49",
@@ -35574,7 +35772,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-856947d77008b1a8011c64b1",
@@ -35767,7 +35966,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f7c61d976e048fc4d2187457",
@@ -35960,7 +36160,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-d518259c92d98a763deb57db",
@@ -36153,7 +36354,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-a9eeb0708efad4ad4ebac5a3",
@@ -36346,7 +36548,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2ebc7cf088303cbfd5592603",
@@ -36539,7 +36742,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f6cfabada63cd4b942c2fdab",
@@ -36732,7 +36936,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-9ce13cb184b2103476d72b72",
@@ -36925,7 +37130,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-305e0414169478f6e310d27a",
@@ -37118,7 +37324,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-1b362583f0b6f9564bc66dd0",
@@ -37311,7 +37518,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-34b3ecad2f55b58c81da2ca0",
@@ -37364,7 +37572,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-521a3f31bc54ec727caae5b1",
@@ -37557,7 +37766,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-33b66dbc6dc280ae7c9be6c8",
@@ -37610,7 +37820,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-bcb83f45ddf38808e5512023",
@@ -37803,7 +38014,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8aaaeb4dae872360fad1cb7e",
@@ -37996,7 +38208,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-a41ef6bbf64045f943d2af47",
@@ -38189,7 +38402,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2822a6b08706709830f1f820",
@@ -38382,7 +38596,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ea92de1fbbfc0e6cafa24f7b",
@@ -38575,7 +38790,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0c06b4bea825bbb8305e2205",
@@ -38768,7 +38984,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-5bfc1af36a470f1f001188ee",
@@ -38961,7 +39178,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c8520603dffa16dea8ea3dc4",
@@ -39154,7 +39372,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-6046357fc6d15e771a97e487",
@@ -39347,7 +39566,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f99656c38dfabd9bba499a0e",
@@ -39540,7 +39760,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2d052b2c33e7ba911021d0e1",
@@ -39733,7 +39954,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-95aef61741aad14590481dc3",
@@ -39926,7 +40148,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-446871a6fecc2890373b2df1",
@@ -40119,7 +40342,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-32702bd5a2c5ca60292eca3a",
@@ -40312,7 +40536,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-9a67866b9f0335cac5eb0d64",
@@ -40505,7 +40730,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0abfb61c7128cae67ea2ee21",
@@ -40558,7 +40784,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ee3dcb468a833bb24e5822bc",
@@ -40611,7 +40838,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ec9e446045dd985aa0b168c4",
@@ -40804,7 +41032,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-d5a3d56f7803c8bd7fe2f5bb",
@@ -40997,7 +41226,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-cfe2615d32498b8cb18022ac",
@@ -41190,7 +41420,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-e6baee8e949dc0ee0a1c0b34",
@@ -41383,7 +41614,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-86cd35c95eb6d5488c436e85",
@@ -41576,7 +41808,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-581a2555fa37c98ab6bcfea3",
@@ -41769,7 +42002,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4f9e87e44f34528956cbd2f3",
@@ -41962,7 +42196,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-25393e4ca29211513c0ea122",
@@ -42155,7 +42390,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b28796101e8a0d8165b3d79b",
@@ -42285,7 +42521,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f7683dcec815fe504f98befb",
@@ -42478,7 +42715,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-1975c054eeac9c56d64113d2",
@@ -42587,7 +42825,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-5275280719ed16d2a5b7ad67",
@@ -42780,7 +43019,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-fdc561df7864672b424ed481",
@@ -42973,7 +43213,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-e37028ed88b119b98fe16981",
@@ -43096,7 +43337,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-72c3a8ba326ab1f70b39f345",
@@ -43289,7 +43531,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-1438a8fae83f4cef43ff111f",
@@ -43482,7 +43725,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8dcbbc229f60c870064ba1c1",
@@ -43675,7 +43919,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-37314d6abfb814d104e0fd33",
@@ -43868,7 +44113,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-fd585a05866ee7a0cfc00d99",
@@ -44061,7 +44307,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-eeef7c60d434b3d4f60ce329",
@@ -44254,7 +44501,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0854ae12d93b6bb158c85528",
@@ -44447,7 +44695,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-602406a24344ba12b85a3c26",
@@ -44640,7 +44889,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-284ad5169b785d0b95212ad0",
@@ -44763,7 +45013,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-6bead85653574df77128e560",
@@ -44956,7 +45207,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b41b3daad40ce14cd376bd73",
@@ -45149,7 +45401,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4b5ee50f1aff2b6dcc346552",
@@ -45342,7 +45595,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-bb10a66696f9dabc2249dc8b",
@@ -45535,7 +45789,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ac3ecaa3996b4c54c0d3e834",
@@ -45728,7 +45983,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-773da2a0fc01b2b8333a892c",
@@ -45921,7 +46177,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4905d0267d2de525570a8af5",
@@ -46114,7 +46371,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2b19e1e9387f5374b63a7c1f",
@@ -46307,7 +46565,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c179db648027812a0a97ede9",
@@ -46500,7 +46759,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4ad77a0e3e15f5d60871f4fe",
@@ -46693,7 +46953,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2769f0f695083967627c85d2",
@@ -46886,7 +47147,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-43ee5fc4aa2ab0ab98097505",
@@ -46960,7 +47222,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-718d67ec20c921c3c043a464",
@@ -47153,7 +47416,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-fc69cda88704716351e23cde",
@@ -47227,7 +47491,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0eebcb0484fe67c4e2017ecc",
@@ -47420,7 +47685,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-d58fcdeca2d4638a3202e347",
@@ -47494,7 +47760,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-d226740cae172dd2e1c78d14",
@@ -47687,7 +47954,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-6d31ffa74d22866fde26008b",
@@ -47761,7 +48029,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-029ca4bbb45df78403a58c6a",
@@ -47835,7 +48104,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-3e9dae68ac0dc79de8ae5c41",
@@ -47923,7 +48193,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0e07f428da579362c55d461b",
@@ -48116,7 +48387,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b6cbb5b662b7ac93ef3ba05e",
@@ -48309,7 +48581,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-a9d20f4653027ed7ab14234f",
@@ -48383,7 +48656,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-37f2d4507c6da52361dc8884",
@@ -48457,7 +48731,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-5c4029a4459ae6a7419ec7c9",
@@ -48629,7 +48904,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-57efc2fd300bb9b7a8310db5",
@@ -48801,7 +49077,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b42e4986c1414564f3a43dfe",
@@ -48973,7 +49250,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-5d54d956f78d455711c2a358",
@@ -49096,7 +49374,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-1e36a113c65e15f12385ea65",
@@ -49268,7 +49547,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-23d11d13b31395d30d56f69c",
@@ -49440,7 +49720,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f5645cb699f537e6560fec11",
@@ -49612,7 +49893,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-27f21c0fcee319d11c62095b",
@@ -49784,7 +50066,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c5e47aa80ee8e7135454cf5b",
@@ -49956,7 +50239,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ba19e482eb53d060d32f3713",
@@ -50128,7 +50412,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-1d0aa41a6bd9ae288874e8d0",
@@ -50300,7 +50585,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-77657ae524bd6ec941b3e366",
@@ -50472,7 +50758,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8c39463eb3e977779ed45cf7",
@@ -50644,7 +50931,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0fa85e814db12cfbf0b20231",
@@ -50816,7 +51104,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-9f3e8f0bc0fbdd6524b3656a",
@@ -50988,7 +51277,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-493149180e6121959865622c",
@@ -51160,7 +51450,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2b09f88ca19a5527995c7947",
@@ -51332,7 +51623,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b8f9a093dcad37186a759350",
@@ -51504,7 +51796,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0975b3ba84ad7cb994974ee5",
@@ -51676,7 +51969,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-e48495019965c18ff0c22b95",
@@ -51848,7 +52142,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-55f138238adaad7251236fe2",
@@ -52020,7 +52315,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2868b703139e25825d4a9b8a",
@@ -52192,7 +52488,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-009936d66fee55cde90f5887",
@@ -52364,7 +52661,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-80f2107125cb88de9fe1f2d7",
@@ -52536,7 +52834,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-695e4b770f91de2ff1b14f54",
@@ -52708,7 +53007,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-424f162bb288d4ec5598118a",
@@ -52880,7 +53180,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-404693192feb5c0a1bc279e9",
@@ -53073,7 +53374,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ccf5d0ae1e3ac5dfa3d81535",
@@ -53266,7 +53568,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-620b7d7fd1d18757b7cf5e84",
@@ -53459,7 +53762,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-dbd3657662996413f5b3e09d",
@@ -53652,7 +53956,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0b65a30e1dc02ac864748bce",
@@ -53845,7 +54150,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f40577f4f87280d2bafbbb33",
@@ -54038,7 +54344,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-1439db2c98d70c1af24c7cd4",
@@ -54231,7 +54538,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ca6cd5747867ae19c46def89",
@@ -54424,7 +54732,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f1f73777ecdc15c96cdcd383",
@@ -54617,7 +54926,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c31471d539e8aa39ed2d47c3",
@@ -54810,7 +55120,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-3238ce4831a0652078d996e0",
@@ -55003,7 +55314,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-942e61ff7b0fb459a13ad0d1",
@@ -55196,7 +55508,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-af345c449e8933426d2e19fe",
@@ -55389,7 +55702,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2476dea842e1d1f6a28cf155",
@@ -55484,7 +55798,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-282525e2d2f8de1a47888d6a",
@@ -55579,7 +55894,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b7f3317fff8f1ff3b74412df",
@@ -55772,7 +56088,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-292fbd9b5ed50c5247cf2f53",
@@ -55965,7 +56282,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-5ea0ac18f64fc9ba3c3b6b6d",
@@ -56158,7 +56476,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8233e35bff35faaf38a980b8",
@@ -56351,7 +56670,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-753e3e43156f685672332845",
@@ -56544,7 +56864,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-97a20fbdbe0577e454aefdc8",
@@ -56737,7 +57058,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-13f4a5392eedebe0585ee245",
@@ -56930,7 +57252,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b49d5e45b1b3b1c0140fab39",
@@ -57123,7 +57446,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-938ecf216eb0c10b33dda11d",
@@ -57218,7 +57542,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-278f5a301dede82f4c8ac412",
@@ -57411,7 +57736,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-d88beccb64f34579d80979ff",
@@ -57604,7 +57930,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8e48ea2de3c2f37bc3a96546",
@@ -57797,7 +58124,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-40f2dda08cf8d4e026bc1cf8",
@@ -57990,7 +58318,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-7166cf5d9d622916649b0f8d",
@@ -58183,7 +58512,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-403d89805494afd57b827dee",
@@ -58376,7 +58706,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4e3b443eb033832d17dc8545",
@@ -58569,7 +58900,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-bdcbc53fefbff59427750156",
@@ -58762,7 +59094,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8854a5a70b9be9bbffa72e61",
@@ -58955,7 +59288,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-83c2d80059f94672d8a71141",
@@ -59148,7 +59482,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-3115ca2ae7a235e7560a1cbc",
@@ -59341,7 +59676,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c60448dfacfff81b45010545",
@@ -59534,7 +59870,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ebc3fe4b7983f2625cff09c5",
@@ -59727,7 +60064,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-847f9b53906e7b622acde414",
@@ -59920,7 +60258,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-1f52364af2f7476db43a8cf5",
@@ -60113,7 +60452,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4fa531795b4f48c712cb9b8f",
@@ -60306,7 +60646,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-dc5ac767caa168e0bfb3a0be",
@@ -60499,7 +60840,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2684dd7826880335bb93b3ce",
@@ -60692,7 +61034,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-07674879980ff2505700c220",
@@ -60780,7 +61123,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f02e1c27fdc79f6921bf2e16",
@@ -60973,7 +61317,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-d729b795313e90f225f82604",
@@ -61061,7 +61406,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-10e159b65c4b4d9975acc612",
@@ -61149,7 +61495,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-0a9f2f8f059737eb01876e1d",
@@ -61237,7 +61584,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-da830431b494f6dd663885a4",
@@ -61430,7 +61778,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-9e6fa03cf250971e670d6803",
@@ -61518,7 +61867,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4a07020ba7d52cf7f45d6a4a",
@@ -61606,7 +61956,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-038292fe0c13c6199af4bf3a",
@@ -61757,7 +62108,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-99dd9dc8b35e76013c9dd169",
@@ -61929,7 +62281,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-7d65cb408a89c3b8ce342056",
@@ -62017,7 +62370,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2779f560ab6e00a4b9a36994",
@@ -62189,7 +62543,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-fad73ccae148b45b37683760",
@@ -62284,7 +62639,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c15f742ac3e180cc65752268",
@@ -62379,7 +62735,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8d59855cda37840c3b2e2839",
@@ -62474,7 +62831,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-716088bbc5e9ae6d23e2ad21",
@@ -62569,7 +62927,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-9edc4fb8b393050df4a8fe30",
@@ -62699,7 +63058,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-9acf80e5a2b48047e9dd619f",
@@ -62892,7 +63252,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-fec2fb4fa450910b68502f34",
@@ -63085,7 +63446,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f9d42240cfb6f779e60dcd02",
@@ -63278,7 +63640,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c784915b81aefed48004e9cb",
@@ -63394,7 +63757,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-cdded221cb31c45f9059249a",
@@ -63503,7 +63867,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-bee2a996a437e18d996259cd",
@@ -63563,7 +63928,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2241e6bb50e2f15bfa24211b",
@@ -63623,7 +63989,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-d30ba0439a3d723f276eb4c5",
@@ -63683,7 +64050,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-cedfb1b9e8b08ba988f26ada",
@@ -63743,7 +64111,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-17842a0d207d59e3d6dfd995",
@@ -63803,7 +64172,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-bd2f7bbdff13e7e39ad308db",
@@ -63863,7 +64233,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-843d844a7e11cf758d6cc899",
@@ -63923,7 +64294,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8e2161d80a5148d771a0f3ef",
@@ -63983,7 +64355,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ff487ca595e84d2db113914a",
@@ -64043,7 +64416,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-308ed03edab7da5db41594ac",
@@ -64103,7 +64477,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-04cc8860da7a5678f9593957",
@@ -64163,7 +64538,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b415c4bf0547befb7d81674b",
@@ -64223,7 +64599,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b76b30e48b4f4ad0c86a4c75",
@@ -64283,7 +64660,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c9dae4d4501881d9eacee582",
@@ -64343,7 +64721,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8b13326f16f49a0b949c0dd4",
@@ -64368,7 +64747,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-83ae01c94b8b3c79ee313b26",
@@ -64407,7 +64787,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f40cb6e7d22052c296f243c7",
@@ -64460,7 +64841,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-1b7d224401886a9004746406",
@@ -64513,7 +64895,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-1fb1875ac91e733b353da2ae",
@@ -64566,7 +64949,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-bafc7f56ccc1107f8e988e9c",
@@ -64619,7 +65003,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-6dd94c7c1b750dbf34848556",
@@ -64672,7 +65057,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ea47a38e16cc241e4c1d2a58",
@@ -64725,7 +65111,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2d728b322e849133738368be",
@@ -64764,7 +65151,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f699d20c8970b5d1983db259",
@@ -64803,7 +65191,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-cc9ba4be2c27f329401729a2",
@@ -64842,7 +65231,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-f3fec903703ee5f02784e5b9",
@@ -64881,7 +65271,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-a8780077bedc79b1c8c2f758",
@@ -64920,7 +65311,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-26fb46186c78ffa8fc4b9cda",
@@ -64959,7 +65351,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ee1b84223aa1974ec2c266cc",
@@ -64998,7 +65391,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c9f4691a4ae74067995898f8",
@@ -65037,7 +65431,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-7004493f0380541a3c7f3930",
@@ -65076,7 +65471,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-ca92034f0c45e9624487b338",
@@ -65115,7 +65511,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-775b40787e9b3007554a0ec5",
@@ -65154,7 +65551,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2e9865ddbebafa08f9136623",
@@ -65193,7 +65591,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-1160a20020ef77453c685379",
@@ -65232,7 +65631,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-080078c5d205e0780e807349",
@@ -65271,7 +65671,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-d084f532a966087492331395",
@@ -65310,7 +65711,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-3722d82669780cffed6aeec3",
@@ -65349,7 +65751,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-5a90765839e065feaea2c67f",
@@ -65388,7 +65791,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-7b3ba7f2b54fbc6ca66fbc67",
@@ -65427,7 +65831,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b53044cd6e868b63415369d7",
@@ -65466,7 +65871,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-b04fa2904d1f6ad6f275ec4c",
@@ -65505,7 +65911,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-96841d15291a7c9a3b97989e",
@@ -65544,7 +65951,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-3ad612336bdf6ad04df13169",
@@ -65583,7 +65991,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-e3bd8d6c5eb7b0bb07e9d5e0",
@@ -65622,7 +66031,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-32104eec0d1d8a94abbddf83",
@@ -65661,7 +66071,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c791b4a9936caab1939af327",
@@ -65700,7 +66111,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-7ccd1f863de274e8feb2aa5a",
@@ -65739,7 +66151,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-61be939bdcfb8affcc1c4ac1",
@@ -65778,7 +66191,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-a2769b4e332bb5b80de9aa18",
@@ -65817,7 +66231,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-4f5bf5c77bf38338ab20b610",
@@ -65856,7 +66271,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-cae3618d486c83424c0551e9",
@@ -65895,7 +66311,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-1e0222b56fc30bea41c11a4a",
@@ -65934,7 +66351,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2846194fd82ae9563f81b5f3",
@@ -65973,7 +66391,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8aa469b31a75b1a230bf0fbf",
@@ -66012,7 +66431,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-897b55f31281128e207d7eeb",
@@ -66051,7 +66471,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-c4e77e690336527ad9cc1233",
@@ -66090,7 +66511,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-efd04920bdf6f1dab7789579",
@@ -66129,7 +66551,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8614398268bd51316f465e56",
@@ -66168,7 +66591,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2e40f63b8c7d94eb2e1a6f05",
@@ -66207,7 +66631,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8f5fb40f1456d6cdee279897",
@@ -66246,7 +66671,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-2f0f70014ccf6e650b884255",
@@ -66285,7 +66711,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     },
     {
       "finding_id": "lint-8baa1c9f84886b197fcd6710",
@@ -66317,7 +66744,8 @@
       "resolution": null,
       "resolution_history": [],
       "duplicate_of": null,
-      "accepted_risk": null
+      "accepted_risk": null,
+      "task_refs": []
     }
   ]
 }
