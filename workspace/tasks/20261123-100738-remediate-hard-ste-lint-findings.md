@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-100738
 - **Created:** 2026-11-23 10:07 UTC
-- **Updated:** 2026-11-23 10:34 UTC
+- **Updated:** 2026-11-23 10:42 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -56,6 +56,12 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 6. Progress Log
 
+### 2026-11-23 10:42 UTC
+
+- **Action:** Completed the second reviewable batch in the novel template field-contract table of `skills/document-standards/references/document-type-catalog.md`.
+- **Result:** Revised all eight Version 1.1 template rows. The batch removed 22 semicolons and split two long sentences. Required, conditional, optional, and repeatable field rules remain intact. Readback passed after commit `8694f8e59c320024f153b0e73a2eca53d86dc97f`. The catalog now contains 32 semicolons.
+- **Next:** Review the representative-record table and its remaining hard findings.
+
 ### 2026-11-23 10:34 UTC
 
 - **Action:** Completed the first reviewable batch in `skills/document-standards/references/document-type-catalog.md`.
@@ -77,7 +83,7 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 7. Current State
 
-The approved task is In Progress and is the current execution. The canonical hard-finding set contains 155 unique fingerprints. Both report scopes agree. The first catalog batch is complete. Remaining catalog findings require review. The 319 advisory findings remain out of scope.
+The approved task is In Progress and is the current execution. The canonical hard-finding set contains 155 unique fingerprints. Both report scopes agree. The first two catalog batches are complete. Remaining catalog findings require review. The 319 advisory findings remain out of scope.
 
 ## 8. Remaining Work
 
