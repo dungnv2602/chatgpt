@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-23 22:38 UTC — Inspect the active image-relocation task record.** Read task `20261123-162826` in full. Extract its scope, acceptance criteria, completed workflow changes, remaining blockers, and exact next actions. Then inspect only the exact referenced active files needed to explain the defect.
+**2026-11-23 22:42 UTC — Verify the recorded defects against current source files.** Read the Worker image-provenance and archive procedures, then inspect the current hand-off, processor gate, publication verifier, workflow, and relevant session records. Confirm which defects the committed repair already addresses and which blockers remain. Do not inspect or move image binaries.
 
 ## Open Discussions
 
