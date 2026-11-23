@@ -207,7 +207,7 @@ jobs:
           echo "failed=$failed" >> "$GITHUB_OUTPUT"
 
       - name: Generate and publish changed-document lint evidence
-        if: always() && needs.preflight.outputs.proceed == 'true'
+        if: ${{ !cancelled() && needs.preflight.outputs.proceed == 'true' }}
         shell: bash
         env:
           BASE_SHA: ${{ needs.preflight.outputs.base_sha }}
@@ -244,6 +244,7 @@ jobs:
           git add lint_reports/on_changed
           if ! git diff --cached --quiet; then
             git commit -m "Publish changed-document lint evidence"
+            git pull --rebase origin gpt
             git push origin "HEAD:gpt"
           fi
 
