@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 05:50 UTC — Inspect existing reporting and workflow coverage:** Review the lint-report guide, schemas, generator, tests, and latest report evidence. Inspect every Actions workflow and referenced diagnostic script. Expected result: an evidence-based inventory and a safe design for broader run/job/step reporting.
+- **2026-11-23 05:52 UTC — Validate reporting trigger architecture:** Check the repository default branch and inspect the Actions API and existing workflow behaviors. Compare completion-event collection, scheduled run inventory, and reusable-workflow finalizers. Expected result: select a design that covers completed workflow failures, run/job/step evidence, startup failures, and uncollected runs without creating a recursive reporter loop.
 
 ## Open Discussions
 

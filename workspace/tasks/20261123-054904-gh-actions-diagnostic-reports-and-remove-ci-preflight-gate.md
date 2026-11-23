@@ -91,9 +91,16 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - **References:** `workspace/task_board.md`, `workspace/TASK_TEMPLATE.md`, `skills/document-standards/references/document-type-catalog.md`, `skills/INITIALIZATION_POLICY.md`, `skills/asd-ste100/references/repository-writing-policy.md`.
 - **Next:** Inspect existing lint-report assets and the workflow definitions. Then revise the CI gate rules.
 
+### 2026-11-23 05:52 UTC
+
+- **Action:** Inspected the lint report guide, scope README files and indexes, report template, JSON schema, generator, regression tests, and six workflow definitions.
+- **Result:** The lint system establishes a strong pattern: separate scopes, immutable run/attempt history, Markdown and JSON evidence, SHA-256 integrity records, scope indexes, race-safe latest pointers, and regression tests. The current six workflows cover scheduled retention, image intake, tag notifications, two lint scopes, and Document Standards. The non-lint workflows have different evidence sources and failure modes. The changed-lint index now records run 45120241153 with a full-audit fallback, 49 files, 457 findings, 144 hard findings, and 313 advisories. Preserve the lint-specific system separately.
+- **References:** `lint_reports/README.md`; `lint_reports/on_repo/README.md`; `lint_reports/on_changed/README.md`; indexes `lint_reports/on_repo/index.json` and `lint_reports/on_changed/index.json`; generator SHA `233e8185f62d37384ec26abda8f5f477c99c3391`; schema SHA and template SHA read from branch `gpt`; six workflow files under `.github/workflows/`.
+- **Next:** Confirm the repository default branch and the Actions API coverage available to a scheduled or event-driven collector. Inspect full workflow failure and artifact behavior, then choose a design that captures workflow startup failures as well as job and step failures.
+
 ## 7. Current State
 
-The task is active. Foundational initialization and one bounded CI snapshot are complete. The source lint-report workflow generated detailed evidence but retains an expected failing lint conclusion. The workspace task record and board entry were committed and read back successfully. No GH Actions diagnostic reporter has been implemented yet.
+The task is active. Foundational initialization and one bounded CI snapshot are complete. The source lint-report workflow generated detailed evidence but retains an expected failing lint conclusion. The workspace task record and board entry were committed and read back successfully. No GH Actions diagnostic reporter has been implemented yet. The scope inventory and initial report contract are now established.
 
 ## 8. Remaining Work
 
