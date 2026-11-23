@@ -1,11 +1,10 @@
-# Current Step
+## Current Step
 
-_Foundational session initialization and changed-document lint-report investigation in progress._
-
+Inspect the changed-report generator, templates, anchor checker, workflow definitions, current evidence, and related regression tests before designing the repair.
 ## Open Discussions
 
-- **2026-11-23 — Changed-document lint workflow defect:** Run [45113875454](https://github.com/dungnv2602/chatgpt/actions/runs/45113875454) failed in report tooling. The stale `resolved_findings` assertion was corrected. The report-generation command also receives a literal trailing backslash from `.github/workflows/ste-lint-changed.yml`. That workflow was not modified. Obtain separate authorization before changing it.
-- **2026-11-23 — Full-document lint confirmation:** Run [45111202565](https://github.com/dungnv2602/chatgpt/actions/runs/45111202565) failed on the same stale assertion, now corrected. A later hosted result has not been observed.
+- **2026-11-23 05:06 UTC — Changed-document lint-report failure:** Newest run [45115031724](https://github.com/dungnv2602/chatgpt/actions/runs/45115031724) fails because the anchor checker treats `{run_url}` in the report template as a local file. Report generation then fails because the workflow passes a literal `\\` argument. User has now authorized investigation and repair of the changed-report workflow and reporting system.
+- **2026-11-23 05:06 UTC — Full-document lint result needs classification:** Newest run [45114176416](https://github.com/dungnv2602/chatgpt/actions/runs/45114176416) completed its full audit and published evidence, then failed its final gate because the audit reported lint findings. Confirm whether those findings are legitimate new violations or report/parser defects.
 - **2026-11-23 — Document Standards workflow:** Path filters now include `skills/**`, `novels/templates/**`, the novel README/workflow, and the shared task template/README. The change has not yet received a verified hosted result. Do not wait or poll.
 - **2026-11-23 — Session startup and lint-report investigation:** User invoked `start session` and authorized investigation and repair of the changed-document lint-report workflow, including report generation, report placement, detail level, workflow reliability, and regression coverage.
 
