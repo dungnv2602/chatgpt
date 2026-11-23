@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#533](https://github.com/dungnv2602/chatgpt/actions/runs/45174538143)
-- **Run ID / attempt:** 45174538143 / 1
+- **Run:** [#534](https://github.com/dungnv2602/chatgpt/actions/runs/45175760018)
+- **Run ID / attempt:** 45175760018 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 4f31211d9da8ed9c6a2d7e8536e5633f8b364a73
+- **Branch / commit:** gpt / 4bde6119f9dd4c9b8a358f80750c4feb8ea49432
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 4f31211d9da8ed9c6a2d7e8536e5633f8b364a73
-- **Generated (UTC):** 2026-11-23T12:28:26.751526+00:00
+- **Linter source SHA:** 4bde6119f9dd4c9b8a358f80750c4feb8ea49432
+- **Generated (UTC):** 2026-11-23T12:36:09.082440+00:00
 
 ## 1. Executive summary
 
@@ -22,8 +22,8 @@
 | Total findings | 357 |
 | Hard findings | 35 |
 | Advisory findings | 322 |
-| New findings | 6 |
-| Recurring findings | 351 |
+| New findings | 0 |
+| Recurring findings | 357 |
 | Resolved findings | 0 |
 | Failed workflow checks | 0 |
 
@@ -31,7 +31,7 @@
 
 - Runner OS: Linux
 - Python: 3.15.2
-- Platform: Linux-7.0.0-1020-azure-x86_64-with-glibc2.43
+- Platform: Linux-7.0.0-1016-aws-x86_64-with-glibc2.43
 - The JSON report records the full runtime version and every original per-file linter response.
 - The report records the commit that supplied the linter and generator code.
 
@@ -122,7 +122,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md | PASS | 8 | 0 | 7 | 2716 | 0.3 | 0 |
 | skills/drawing/SKILL.md | PASS | 24 | 3 | 24 | 5115 | 0.5 | 0 |
 | skills/document-standards/references/document-type-catalog.md | FAIL | 30 | 5 | 0 | 3073 | 1.0 | 1 |
-| workspace/task_board.md | PASS | 3 | 0 | 0 | 257 | 1.2 | 0 |
+| workspace/task_board.md | PASS | 3 | 0 | 0 | 268 | 1.1 | 0 |
 | skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
 | skills/INITIALIZATION_POLICY.md | PASS | 4 | 2 | 4 | 1444 | 0.3 | 0 |
 | skills/the-worker/references/image-processing-scripts.md | PASS | 0 | 0 | 0 | 341 | 0.0 | 0 |
@@ -188,7 +188,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.418s
+Ran 4 tests in 0.239s
 
 OK
 ~~~
@@ -221,7 +221,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 993 active Markdown files (1062 available as link targets) and 331 local Markdown links.
+Scanned 995 active Markdown files (1065 available as link targets) and 332 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -231,30 +231,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:56:260 · **new** · fingerprint: 33b66dbc6dc280ae7c9be6c8
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:56:546 · **new** · fingerprint: 199f2603ee3fb1c3abd18ce6
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are skipped
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:56:568 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/README.md:27:32 · **new** · fingerprint: 99ddd247f24032b76e53f957
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **synonym-rotation** · skills/the-worker/SKILL.md:326:95 · **new** · fingerprint: 4b8a264993c87efe2283f852
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Confirm
-- **passive-voice** · skills/the-worker/SKILL.md:333:98 · **new** · fingerprint: f0690d035381adacbc37a83e
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are recorded
+None.
 
 ### Recurring findings
 
@@ -1142,6 +1119,18 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
   - **Matched text:** checks
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:56:260 · **recurring** · fingerprint: 33b66dbc6dc280ae7c9be6c8
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:56:546 · **recurring** · fingerprint: 199f2603ee3fb1c3abd18ce6
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are skipped
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:56:568 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:64:165 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1390,6 +1379,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has triggered
+- **semicolon** · workspace/README.md:27:32 · **recurring** · fingerprint: 99ddd247f24032b76e53f957
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 - **present-perfect** · workspace/README.md:58:22 · **recurring** · fingerprint: 2769f0f695083967627c85d2
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
@@ -1414,6 +1407,14 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
+- **synonym-rotation** · skills/the-worker/SKILL.md:326:95 · **recurring** · fingerprint: 4b8a264993c87efe2283f852
+  - **Level:** advisory-free
+  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** Confirm
+- **passive-voice** · skills/the-worker/SKILL.md:333:98 · **recurring** · fingerprint: f0690d035381adacbc37a83e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are recorded
 - **semicolon** · skills/the-worker/SKILL.md:335:207 · **recurring** · fingerprint: 3e9dae68ac0dc79de8ae5c41
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
@@ -3139,17 +3140,17 @@ No STE findings were recorded for this file.
   - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
   - **Matched text:** checks
 
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:56:260 · **new** · fingerprint: 33b66dbc6dc280ae7c9be6c8
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:56:260 · **recurring** · fingerprint: 33b66dbc6dc280ae7c9be6c8
   - **Level:** advisory-free
   - **Message:** Sentence has 27 words (cap 25). Split it.
   - **Matched text:** 27 words
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:56:546 · **new** · fingerprint: 199f2603ee3fb1c3abd18ce6
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:56:546 · **recurring** · fingerprint: 199f2603ee3fb1c3abd18ce6
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are skipped
 
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:56:568 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:56:568 · **recurring** · fingerprint: 34b3ecad2f55b58c81da2ca0
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -3247,8 +3248,8 @@ No STE findings were recorded for this file.
 - **Findings:** 3
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 257
-- **Findings per 100 words:** 1.2
+- **Words:** 268
+- **Findings per 100 words:** 1.1
 
 #### Complete diagnostics
 
@@ -3607,7 +3608,7 @@ No STE findings were recorded for this file.
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has triggered
 
-- **semicolon** · workspace/README.md:27:32 · **new** · fingerprint: 99ddd247f24032b76e53f957
+- **semicolon** · workspace/README.md:27:32 · **recurring** · fingerprint: 99ddd247f24032b76e53f957
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -3668,12 +3669,12 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
 
-- **synonym-rotation** · skills/the-worker/SKILL.md:326:95 · **new** · fingerprint: 4b8a264993c87efe2283f852
+- **synonym-rotation** · skills/the-worker/SKILL.md:326:95 · **recurring** · fingerprint: 4b8a264993c87efe2283f852
   - **Level:** advisory-free
   - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
   - **Matched text:** Confirm
 
-- **passive-voice** · skills/the-worker/SKILL.md:333:98 · **new** · fingerprint: f0690d035381adacbc37a83e
+- **passive-voice** · skills/the-worker/SKILL.md:333:98 · **recurring** · fingerprint: f0690d035381adacbc37a83e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are recorded
