@@ -243,13 +243,9 @@ A failed, rejected, partial, or missed-target prompt is never the default text b
 
 ### Image-operation records
 
-Choose the operation from the user's intent and the available source:
+Use the Drawing skill's [Image Source and Editing Protocol](../../drawing/references/image-editing-protocol.md) to select fresh generation or direct editing. The exact source is required for a direct edit. Do not substitute one operation for the other.
 
-- **Fresh generation:** For a new scene or variation, use the active brief. For a continuation, use the latest successful authored prompt from the same series or artwork thread as the text baseline. Apply only the requested changes.
-- **Direct image edit:** When the user asks to change a specific existing image, attach that exact source through the image tool. Record the source, operation, requested delta, and acceptance criteria.
-- **Source unavailable:** State that a direct edit cannot be performed from the available materials. Do not silently replace it with a fresh generation. Use prompt-based reconstruction only when the user requests or accepts a new image.
-
-For either operation, commit the attempt record before the image call. Afterward, record the actual operation, output count and order, source availability, deviations, and per-output assessment. Never describe a fresh generation as an edit or infer source linkage from a filename.
+The Worker owns the attempt-record commit, output and provenance capture, repository retention, and session closeout. Commit the attempt before the image operation. Record the actual operation and each output afterward. Never claim source editing without the exact source in the tool call.
 
 ### Daily attempt ledger
 
