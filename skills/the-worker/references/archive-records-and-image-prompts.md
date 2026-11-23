@@ -16,6 +16,10 @@ The conversation-integrity file is a chronological record, not a polished retell
 
 Use the canonical template at `../assets/conversation-integrity-template.md`. Preserve exact wording, tool events, and gaps as specified above.
 
+Each retained image output must also appear in the `Image source mapping` table in its conversation-integrity record. Use the exact takeout filename and source/platform Asset ID recorded in its attempt note. This source Asset ID is distinct from the optional repository asset_id. Record a native Generation ID when the tool exposed one; otherwise use the internal Output ID recorded for that output. Do not reconstruct either value from a filename or timestamp. Use `Not applicable` only when a field genuinely does not apply.
+
+For drawing-session assets, save the record as `drawings/history/YYYY-MM-DD-conversation-integrity.md`. The takeout processor checks the record date, coverage declaration, gap notes, exact source mapping, and referenced attempt note's generation/output identity before it stages or relocates an original. A partial record is valid only when unavailable material and editorial summaries are clearly labelled. It does not establish a complete transcript.
+
 ## 5. File 2: Session summary
 
 The summary is a practical handoff for a future chat.

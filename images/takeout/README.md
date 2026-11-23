@@ -31,8 +31,11 @@ status: ready
 items:
   - source: "IMG_20261120_091522.png"
     asset_id: "ILL-001"
+    source_asset_id: "platform-asset-id-if-exposed"
     title: "Shared Discovery"
-    destination_dir: "novels/Novel-02/assets/illustrations/ARC-001/SCN-001"
+    destination_dir: "drawings/2026-11-20/images"
+    attempt: "04"
+    conversation_record: "drawings/history/2026-11-20-conversation-integrity.md"
     # Include only provenance values actually captured:
     expected_sha256: "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
     output_id: "A001-O01"
@@ -70,10 +73,13 @@ A legacy WebP without an original remains Not verifiable. An original without a 
 Each item uses these fields:
 
 - `source` is the exact uploaded filename in this directory's top level.
-- `asset_id` is optional for general image assets. Novel illustrations use a stable `ILL-NNN` ID.
+- `asset_id` is an optional repository identifier used in the stored filename. Novel illustrations use a stable `ILL-NNN` ID. `source_asset_id` records the exact platform Asset ID from the attempt or generation record and does not change the stored filename.
 - `title` is a short description based on the inspected image and its intended role.
 - `destination_dir` is a repository-relative directory under `images/`, `novels/`, or `drawings/YYYY-MM-DD/images`.
 - `attempt` is mandatory for drawing-session destinations.
+- `conversation_record` is mandatory for every ready item. It must point to an existing dated conversation-integrity file with an exact row for the source filename, attempt, source Asset ID, and Generation / Output ID.
+- Drawing-session items require an attempt plus a recorded Generation ID or internal Output ID. The processor checks this identity against the referenced attempt note. If source_asset_id is supplied, it must match the attempt note's Asset ID.
+- A Partial or Curated conversation record is accepted only when it identifies unavailable material and labels editorial summaries. It does not claim a complete transcript.
 
 Do not use `images/takeout/`, `images/takeout/webp/`, `images/webp/`, or the reserved legacy path `images/scripts/` as a destination.
 
@@ -113,7 +119,7 @@ This naming rule preserves the source extension. It also prevents collisions bet
 
 The [WebP workflow](../../.github/workflows/convert-images-to-webp.yml) runs when intake files or the hand-off change. You can also start it manually on branch `gpt`.
 
-The workflow validates the complete batch. It converts every image into the attempt-specific staging folder. It verifies each staged WebP before it relocates any original.
+The workflow validates every conversation-integrity record and its source mapping before conversion. It also checks drawing output identity against the referenced attempt note. A missing, malformed, or mismatched record fails the batch before any WebP is staged or any original is moved. The processor then converts each image into the attempt-specific staging folder.
 
 The CSV records each staging path and final path.
 

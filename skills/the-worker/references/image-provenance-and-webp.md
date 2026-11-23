@@ -19,10 +19,12 @@ Use the [Image Takeout procedure](../../../images/takeout/README.md) for the exa
 ## Intake and original preservation
 
 1. Inspect each uploaded image that requires repository retention.
-2. Create one hand-off item with its exact top-level source filename, descriptive title, optional stable asset ID, and repository destination.
+2. Create one hand-off item with its exact top-level source filename, descriptive title, optional repository asset_id, and repository destination. Record source_asset_id separately when the generation record exposes a platform Asset ID.
 3. Include `attempt: NN` for a destination under `drawings/YYYY-MM-DD/images/`. Other assets may omit it.
 4. List every top-level upload exactly once in the ready hand-off. The Action does not infer image content, title, ID, or project membership.
 5. Keep uploads directly in `images/takeout/`. Do not place them in the reserved `history/` or `webp/` directories.
+
+Add a mandatory `conversation_record` path to every ready hand-off item. The file must be a dated conversation-integrity record and must contain the exact source filename in its `Image source mapping` table. For drawing outputs, use `drawings/history/YYYY-MM-DD-conversation-integrity.md`; include the attempt and a native Generation ID or recorded internal Output ID. The processor cross-checks that identity against the referenced attempt note. If an Asset ID is supplied, it must also match. A Partial or Curated record must identify unavailable material and label editorial summaries; do not invent a transcript to pass validation.
 
 The processor moves each original byte-for-byte into the destination's `original/` folder. It stores the WebP derivative in the destination root. Novel assets use `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Other assets use their declared destination. The original retains its metadata. The WebP does not replace the master.
 

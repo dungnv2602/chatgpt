@@ -1,10 +1,10 @@
 ## Current Step
 
-**2026-11-23 16:28 UTC — Implement the fail-closed provenance gate.** Add a mandatory conversation-record reference to each hand-off item. Validate the archived record and, for drawing outputs, cross-check the referenced session, attempt, asset ID, and generation ID before conversion or relocation. Recover only evidence-supported partial conversation records for 20 and 21 November. Keep the seven unclassified images in Draft. Expected result: incomplete or mismatched provenance fails before staging and cannot move originals.
+**2026-11-23 16:59 UTC — Commit and verify the conversation-provenance workflow repair.** Add the processor fail-closed gate, the post-publication verifier, regression coverage, two Partial conversation-integrity archives, and the hand-off/documentation updates. Then read back each modified path and confirm the `gpt` head. Keep the batch Draft; do not run the processor, relocate originals, or manually dispatch/poll Actions. The seven unclassified images still require evidence-based identification.
 
 ## Open Discussions
 
-- **2026-11-23 16:28 UTC — Image takeout provenance:** Task 20261123-162826 is current execution. All 18 images were committed to the intake folder in one import commit; the active hand-off remains Draft and no final takeout relocation is evident. Eleven items have attempt-level mappings, seven are unclassified, and the 20/21 November session folders lack conversation-integrity records. Preserve the batch in Draft until source-record and mapping checks pass.
+- **2026-11-23 16:59 UTC — Image takeout provenance:** Task 20261123-162826 is current execution. The eighteen PNGs were imported into intake; final processor relocation did not occur because HANDOFF remains Draft. Eleven items now have evidence-linked Partial records and exact source_asset_id / Generation ID mappings for attempts 04–06 and 09–16. Seven files remain unclassified and are excluded from the new records. Keep all originals untouched and do not set the batch Ready until the seven files have defensible source mapping and destination/quarantine decisions.
 
 - **2026-11-23 16:09 UTC — Reporting-period validation:** The active indexes contain only the four carried-forward pending run IDs. Evidence-only captures remain unindexed for the open Ledger findings. Let the next natural diagnostics sweep complete pending runs and validate the reset. Do not poll, dispatch, or rerun Actions.
 

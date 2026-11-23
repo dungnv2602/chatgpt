@@ -68,22 +68,108 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.manifest_many([item], batch)
 
     def manifest_many(self, items, batch="batch-test"):
+        normalized = []
+        record_groups = {}
+        for index, raw_item in enumerate(items, start=1):
+            item = dict(raw_item)
+            destination = item.get(
+                "destination_dir",
+                "novels/Novel-02/assets/illustrations/ARC-001/SCN-001",
+            )
+            parts = destination.split("/")
+            is_drawing = len(parts) == 3 and parts[0] == "drawings" and parts[2] == "images"
+            session_date = parts[1] if is_drawing else "2026-11-19"
+            record_path = item.get(
+                "conversation_record",
+                f"drawings/history/{session_date}-conversation-integrity.md",
+            )
+            item["conversation_record"] = record_path
+            item["asset_id"] = item.get("asset_id", "ILL-%03d" % index)
+            item["source_asset_id"] = item.get("source_asset_id", "")
+            if is_drawing and item.get("attempt") not in (None, ""):
+                item.setdefault("native_generation_id", f"native-test-generation-{index:03d}")
+            attempt = str(item.get("attempt", "")).strip()
+            attempt = attempt.zfill(2) if attempt else "Not applicable"
+            generation_id = item.get("native_generation_id") or "Not applicable"
+            source_asset_id = item.get("source_asset_id") or "Not applicable"
+            record_groups.setdefault((record_path, session_date), []).append(
+                (item["source"], attempt, source_asset_id, generation_id)
+            )
+
+            if is_drawing and item.get("attempt") not in (None, ""):
+                attempt_path = self.root / "drawings" / session_date / f"attempt-{attempt}.md"
+                if attempt_path.is_file():
+                    existing = attempt_path.read_text(encoding="utf-8")
+                    identity_lines = []
+                    if item.get("source_asset_id"):
+                        identity_lines.append(
+                            "- **Asset ID:** " + chr(96) + item["source_asset_id"] + chr(96)
+                        )
+                    identity_lines.append(
+                        "- **Generation ID:** " + chr(96) + item["native_generation_id"] + chr(96)
+                    )
+                    for identity_line in identity_lines:
+                        if identity_line not in existing:
+                            existing = existing.rstrip() + "\n" + identity_line + "\n"
+                    attempt_path.write_text(existing, encoding="utf-8")
+            normalized.append(item)
+
+        for (record_path, session_date), mappings in record_groups.items():
+            record = self.root / record_path
+            record.parent.mkdir(parents=True, exist_ok=True)
+            table = [
+                "| Source filename | Attempt | Asset ID | Generation / Output ID |",
+                "|---|---|---|---|",
+            ]
+            table.extend(
+                f"| {source} | {attempt} | {asset_id} | {generation_id} |"
+                for source, attempt, asset_id, generation_id in mappings
+            )
+            record.write_text(
+                f"# Conversation Integrity — {session_date}\n\n"
+                "**Template version:** 1.1\n\n"
+                "**Project:** Synthetic processor regression fixture\n"
+                "**Branch:** " + chr(96) + "gpt" + chr(96) + "\n"
+                "**Companion files:** Test-generated fixtures\n\n"
+                "## Integrity policy\n\n"
+                "This partial record is generated only for an isolated automated test. "
+                "It is not a real conversation archive.\n\n"
+                "## Chronological record\n\n"
+                f"### {session_date} (time not retained) — Test fixture event\n\n"
+                "The test creates a synthetic upload-to-output association. No real user or assistant dialogue is represented.\n\n"
+                "## Gaps and editorial summaries\n\n"
+                "- **Unavailable material:** No real conversation transcript exists in this test fixture.\n"
+                "- **Editorial summary:** The mapping rows below are synthetic test data, not dialogue or a reconstructed conversation.\n"
+                "- **Basis:** The current test case parameters supplied to manifest_many.\n\n"
+                "## Integrity and completeness notes\n\n"
+                "- **Coverage:** Partial\n"
+                "- **Transcription uncertainty:** Not applicable; no dialogue is transcribed.\n"
+                "- **Omissions:** All real conversation content is absent.\n"
+                "- **Unverified details:** None beyond the synthetic scope.\n"
+                "- **Completeness limitation:** This fixture tests processor validation only.\n\n"
+                "## Image source mapping\n\n"
+                + "\n".join(table)
+                + "\n",
+                encoding="utf-8",
+            )
+
         rows = [
             "version: 1",
             f'batch_id: "{batch}"',
             "status: ready",
             "items:",
         ]
-        for index, item in enumerate(items):
-            asset_id = item.get("asset_id", "ILL-%03d" % (index + 1))
+        for item in normalized:
             rows.extend([
                 f'  - source: "{item["source"]}"',
-                f'    asset_id: "{asset_id}"',
+                f'    asset_id: "{item["asset_id"]}"',
+                f'    source_asset_id: "{item["source_asset_id"]}"',
                 f'    title: "{item.get("title", "Shared Discovery")}"',
                 (
                     "    destination_dir: "
                     f'"{item.get("destination_dir", "novels/Novel-02/assets/illustrations/ARC-001/SCN-001")}"'
                 ),
+                f'    conversation_record: "{item["conversation_record"]}"',
             ])
             if "attempt" in item:
                 rows.append(f'    attempt: "{item["attempt"]}"')
@@ -253,6 +339,113 @@ class TakeoutProcessorTests(unittest.TestCase):
             / "history/batch-unlisted/attempt-001/verification-report.md"
         ).read_text(encoding="utf-8")
         self.assertIn("not listed", report)
+
+    def test_missing_conversation_record_fails_before_staging_or_relocation(self):
+        (self.inbox / "no-conversation.png").write_bytes(b"preserve-this-original")
+        self.manifest({"source": "no-conversation.png"}, batch="batch-no-conversation")
+        record = self.root / "drawings/history/2026-11-19-conversation-integrity.md"
+        record.unlink()
+        handoff_before = (self.inbox / "HANDOFF.yml").read_bytes()
+
+        result = self.run_processor()
+
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual((self.inbox / "no-conversation.png").read_bytes(), b"preserve-this-original")
+        self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), handoff_before)
+        staged = self.inbox / "webp/batch-no-conversation/attempt-001"
+        self.assertFalse(list(staged.glob("*.webp")) if staged.exists() else [])
+        self.assertFalse(
+            (self.root / "novels/Novel-02/assets/illustrations/ARC-001/SCN-001/original/ILL-001-shared-discovery.png").exists()
+        )
+        report = (
+            self.inbox / "history/batch-no-conversation/attempt-001/verification-report.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("conversation-integrity record is missing or unsafe", report)
+
+    def test_malformed_partial_conversation_record_fails_closed(self):
+        (self.inbox / "incomplete-record.png").write_bytes(b"preserve-this-original")
+        self.manifest({"source": "incomplete-record.png"}, batch="batch-incomplete-record")
+        record = self.root / "drawings/history/2026-11-19-conversation-integrity.md"
+        content = record.read_text(encoding="utf-8")
+        content = content.replace(
+            "- **Basis:** The current test case parameters supplied to manifest_many.\n",
+            "",
+        )
+        record.write_text(content, encoding="utf-8")
+        handoff_before = (self.inbox / "HANDOFF.yml").read_bytes()
+
+        result = self.run_processor()
+
+        self.assertNotEqual(result.returncode, 0)
+        self.assertTrue((self.inbox / "incomplete-record.png").is_file())
+        self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), handoff_before)
+        report = (
+            self.inbox / "history/batch-incomplete-record/attempt-001/verification-report.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("must document Basis", report)
+
+    def test_conversation_mapping_mismatch_fails_before_staging(self):
+        (self.inbox / "wrong-mapping.png").write_bytes(b"preserve-this-original")
+        self.manifest({"source": "wrong-mapping.png"}, batch="batch-wrong-mapping")
+        record = self.root / "drawings/history/2026-11-19-conversation-integrity.md"
+        content = record.read_text(encoding="utf-8")
+        content = content.replace(
+            "| wrong-mapping.png | Not applicable | ILL-001 | Not applicable |",
+            "| wrong-mapping.png | Not applicable | ILL-001 | different-generation |",
+        )
+        record.write_text(content, encoding="utf-8")
+        handoff_before = (self.inbox / "HANDOFF.yml").read_bytes()
+
+        result = self.run_processor()
+
+        self.assertNotEqual(result.returncode, 0)
+        self.assertTrue((self.inbox / "wrong-mapping.png").is_file())
+        self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), handoff_before)
+        report = (
+            self.inbox / "history/batch-wrong-mapping/attempt-001/verification-report.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("has no exact image mapping row", report)
+
+    def test_drawing_generation_identity_must_match_attempt_record(self):
+        session = self.root / "drawings/2026-11-19"
+        session.mkdir(parents=True)
+        attempt = session / "attempt-01.md"
+        attempt.write_text(
+            "# Attempt 01\n\n- **Generation ID:** " + chr(96) + "unrelated-generation" + chr(96) + "\n",
+            encoding="utf-8",
+        )
+        (session / "README.md").write_text(
+            "# Drawing session\n\n"
+            "| Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |\n"
+            "|---|---|---|---|---|---|\n",
+            encoding="utf-8",
+        )
+        (self.inbox / "mismatched-output.png").write_bytes(b"preserve-this-original")
+        self.manifest_many(
+            [{
+                "source": "mismatched-output.png",
+                "title": "Mismatched Output",
+                "destination_dir": "drawings/2026-11-19/images",
+                "attempt": "1",
+            }],
+            batch="batch-attempt-identity",
+        )
+        # Replace the helper-injected generation identity with a different one.
+        attempt.write_text(
+            "# Attempt 01\n\n- **Generation ID:** " + chr(96) + "unrelated-generation" + chr(96) + "\n",
+            encoding="utf-8",
+        )
+        handoff_before = (self.inbox / "HANDOFF.yml").read_bytes()
+
+        result = self.run_processor()
+
+        self.assertNotEqual(result.returncode, 0)
+        self.assertTrue((self.inbox / "mismatched-output.png").is_file())
+        self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), handoff_before)
+        report = (
+            self.inbox / "history/batch-attempt-identity/attempt-001/verification-report.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("do not match", report)
 
     def test_bulk_staging_preserves_each_original_filename(self):
         (self.inbox / "camera.png").write_bytes(b"png-original")
@@ -723,6 +916,7 @@ class TakeoutProcessorTests(unittest.TestCase):
     def test_invalid_handoff_metadata_fields_fail_before_relocation(self):
         invalid_fields = [
             ("asset_id", "ill_001", "Invalid asset_id"),
+            ("source_asset_id", "x" * 257, "source_asset_id"),
             ("expected_sha256", "not-a-sha256", "expected_sha256"),
             ("output_id", "bad id", "output_id"),
             ("prompt_id", "bad id", "prompt_id"),
@@ -948,6 +1142,9 @@ class TakeoutProcessorTests(unittest.TestCase):
             rows = list(reader)
             self.assertIn("custom_note", reader.fieldnames)
             self.assertIn("native_generation_id", reader.fieldnames)
+            self.assertIn("source_asset_id", reader.fieldnames)
+            self.assertIn("conversation_record", reader.fieldnames)
+            self.assertIn("conversation_coverage", reader.fieldnames)
         prior = next(row for row in rows if row["image_id"] == "prior-id")
         self.assertEqual(prior["custom_note"], "preserve-me")
         self.assertEqual(len(rows), 2)
@@ -1026,6 +1223,12 @@ class PublishedManifestVerificationTests(unittest.TestCase):
         self.row = {
             "image_id": "A01-O01",
             "attempt": "01",
+            "source_filename": "source.png",
+            "asset_id": "ILL-001",
+            "source_asset_id": "native-asset-01",
+            "native_generation_id": "native-generation-01",
+            "conversation_record": "drawings/history/2026-11-19-conversation-integrity.md",
+            "conversation_coverage": "Partial",
             "github_url": github_blob_url(self.webp_path, self.repository, self.branch),
             "webp_path": self.webp_path,
             "webp_sha256": hashlib.sha256(self.webp_bytes).hexdigest(),
@@ -1046,8 +1249,30 @@ class PublishedManifestVerificationTests(unittest.TestCase):
                 "- [result.webp](images/result.webp)\n"
             ).encode("utf-8"),
             "drawings/2026-11-19/attempt-01.md": (
-                "# Attempt 01\n\n## Repository images\n\n"
+                "# Attempt 01\n\n"
+                "- **Asset ID:** " + chr(96) + "native-asset-01" + chr(96) + "\n"
+                "- **Generation ID:** " + chr(96) + "native-generation-01" + chr(96) + "\n\n"
+                "## Repository images\n\n"
                 "- [result.webp](images/result.webp)\n"
+            ).encode("utf-8"),
+            "drawings/history/2026-11-19-conversation-integrity.md": (
+                "# Conversation Integrity — 2026-11-19\n\n"
+                "## Integrity policy\n\nPartial test fixture.\n\n"
+                "## Chronological record\n\nFixture event.\n\n"
+                "## Gaps and editorial summaries\n\n"
+                "- **Unavailable material:** Full source conversation.\n"
+                "- **Editorial summary:** Synthetic test mapping, not a quote.\n"
+                "- **Basis:** The test fixture fields.\n\n"
+                "## Integrity and completeness notes\n\n"
+                "- **Coverage:** Partial\n"
+                "- **Transcription uncertainty:** None.\n"
+                "- **Omissions:** Full source conversation unavailable.\n"
+                "- **Unverified details:** None.\n"
+                "- **Completeness limitation:** Test fixture only.\n\n"
+                "## Image source mapping\n\n"
+                "| Source filename | Attempt | Asset ID | Generation / Output ID |\n"
+                "|---|---|---|---|\n"
+                "| source.png | 01 | native-asset-01 | native-generation-01 |\n"
             ).encode("utf-8"),
         }
 
@@ -1065,6 +1290,28 @@ class PublishedManifestVerificationTests(unittest.TestCase):
     def test_published_daily_readme_and_attempt_links_are_verified(self):
         error = verify_session_links(self.row, lambda path: self.blobs.get(path))
         self.assertEqual(error, "")
+
+    def test_missing_published_conversation_record_fails_verification(self):
+        self.blobs.pop("drawings/history/2026-11-19-conversation-integrity.md")
+        error = verify_session_links(self.row, lambda path: self.blobs.get(path))
+        self.assertIn("conversation-integrity record is missing", error)
+
+    def test_published_conversation_mapping_mismatch_fails_verification(self):
+        path = "drawings/history/2026-11-19-conversation-integrity.md"
+        self.blobs[path] = self.blobs[path].replace(
+            b"| source.png | 01 | native-asset-01 | native-generation-01 |",
+            b"| source.png | 01 | native-asset-01 | another-generation |",
+        )
+        error = verify_session_links(self.row, lambda path: self.blobs.get(path))
+        self.assertIn("no exact source mapping", error)
+
+    def test_published_partial_conversation_without_gap_details_fails(self):
+        path = "drawings/history/2026-11-19-conversation-integrity.md"
+        self.blobs[path] = self.blobs[path].replace(
+            b"- **Basis:** The test fixture fields.\n", b""
+        )
+        error = verify_session_links(self.row, lambda path: self.blobs.get(path))
+        self.assertIn("does not document its gaps", error)
 
     def test_missing_published_attempt_link_fails_verification(self):
         self.blobs["drawings/2026-11-19/attempt-01.md"] = (

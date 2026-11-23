@@ -13,18 +13,18 @@ KNOWN_IMAGE = SUPPORTED | {".apng", ".gif", ".webp", ".bmp", ".tif", ".tiff", ".
 HANDOFF = "HANDOFF.yml"
 EMPTY_HANDOFF = "version: 1\nstatus: empty\nitems: []\n"
 FIELDS = [
-    "source_filename", "source_path", "title", "asset_id", "attempt", "destination_dir",
-    "image_id", "master_path", "webp_path", "manifest_path", "staging_webp_path",
+    "source_filename", "source_path", "title", "asset_id", "source_asset_id", "attempt", "destination_dir",
+    "conversation_record", "conversation_coverage", "image_id", "master_path", "webp_path", "manifest_path", "staging_webp_path",
     "source_format", "conversion_profile", "original_bytes", "webp_bytes",
     "size_change_percent", "source_sha256", "master_sha256", "webp_sha256",
     "generation_sha256", "output_id", "prompt_id", "native_generation_id",
     "native_output_id", "mapping_status", "hash_match", "cwebp_version", "status", "error",
 ]
 MANIFEST_FIELDS = [
-    "session_date", "image_id", "filename", "prompt_id", "approval_status",
+    "session_date", "image_id", "filename", "source_filename", "asset_id", "source_asset_id", "prompt_id", "approval_status",
     "github_url", "sha256", "verification_status", "attempt", "output_id",
     "native_generation_id", "native_output_id", "mapping_status",
-    "mapping_evidence", "original_path", "webp_path", "original_sha256",
+    "mapping_evidence", "conversation_record", "conversation_coverage", "original_path", "webp_path", "original_sha256",
     "webp_sha256", "generation_sha256", "hash_match", "original_bytes_available",
     "verification_error",
 ]
@@ -171,9 +171,10 @@ def failure_rows(items: list[Any], error: str, version: str) -> list[dict[str, A
         rows.append({
             "source_filename": source, "source_path": f"images/takeout/{source}" if source else "",
             "title": item.get("title", ""), "asset_id": item.get("asset_id", ""),
-            "attempt": item.get("attempt", ""),
-            "destination_dir": item.get("destination_dir", ""), "image_id": "",
-            "master_path": "", "webp_path": "", "manifest_path": "",
+            "source_asset_id": item.get("source_asset_id", ""), "attempt": item.get("attempt", ""),
+            "destination_dir": item.get("destination_dir", ""),
+            "conversation_record": item.get("conversation_record", ""), "conversation_coverage": "",
+            "image_id": "", "master_path": "", "webp_path": "", "manifest_path": "",
             "source_format": Path(str(source)).suffix.lower().lstrip("."),
             "conversion_profile": "", "original_bytes": "", "webp_bytes": "",
             "size_change_percent": "", "source_sha256": "", "master_sha256": "",
@@ -189,6 +190,188 @@ def failure_rows(items: list[Any], error: str, version: str) -> list[dict[str, A
 
 def split_markdown_table_cells(line: str) -> list[str]:
     return [cell.strip() for cell in line.strip().strip("|").split("|")]
+
+
+def validate_conversation_record(value: Any, root: Path, source_name: str,
+                                 attempt: str, source_asset_id: str, generation_id: str,
+                                 destination: Path) -> tuple[str, str]:
+    """Require a readable, dated conversation archive with an exact source mapping."""
+    if not isinstance(value, str) or not value.strip() or "\\" in value:
+        raise ProcessingError(
+            f"{source_name}: conversation_record is required and must use a repository-relative path."
+        )
+    relative = PurePosixPath(value)
+    if (
+        relative.is_absolute()
+        or not relative.parts
+        or any(part in {"", ".", ".."} for part in relative.parts)
+        or relative.suffix.lower() != ".md"
+        or relative.parts[0] not in {"drawings", "novels", "images"}
+    ):
+        raise ProcessingError(f"{source_name}: unsafe conversation_record path: {value!r}.")
+    record_path = root.joinpath(*relative.parts)
+    try:
+        record_path.resolve(strict=False).relative_to(root.resolve())
+    except ValueError as exc:
+        raise ProcessingError(f"{source_name}: conversation_record escapes the repository.") from exc
+    reject_symlink_components(record_path, root)
+    if record_path.is_symlink() or not record_path.is_file():
+        raise ProcessingError(
+            f"{source_name}: conversation-integrity record is missing or unsafe: {value}"
+        )
+    try:
+        content = record_path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError) as exc:
+        raise ProcessingError(f"{source_name}: cannot read conversation-integrity record {value}: {exc}") from exc
+
+    dated_heading = re.search(
+        r"(?m)^# Conversation Integrity — (\d{4}-\d{2}-\d{2})\s*$", content
+    )
+    if not dated_heading:
+        raise ProcessingError(
+            f"{source_name}: conversation_record must use the dated Conversation Integrity heading."
+        )
+    filename_match = re.fullmatch(
+        r"(\d{4}-\d{2}-\d{2})-conversation-integrity\.md", relative.name
+    )
+    if not filename_match:
+        raise ProcessingError(
+            f"{source_name}: conversation_record filename must be YYYY-MM-DD-conversation-integrity.md."
+        )
+    try:
+        datetime.strptime(filename_match.group(1), "%Y-%m-%d")
+    except ValueError as exc:
+        raise ProcessingError(f"{source_name}: conversation_record has an invalid calendar date.") from exc
+    if dated_heading.group(1) != filename_match.group(1):
+        raise ProcessingError(
+            f"{source_name}: conversation_record heading date does not match its filename."
+        )
+    required_headings = (
+        "## Integrity policy",
+        "## Chronological record",
+        "## Gaps and editorial summaries",
+        "## Integrity and completeness notes",
+        "## Image source mapping",
+    )
+    for heading in required_headings:
+        if heading not in content:
+            raise ProcessingError(
+                f"{source_name}: conversation_record is missing required section: {heading}."
+            )
+
+    coverage_match = re.search(
+        r"(?m)^- \*\*Coverage:\*\* (Complete|Partial|Curated)\s*$", content
+    )
+    if not coverage_match:
+        raise ProcessingError(
+            f"{source_name}: conversation_record must declare Coverage as Complete, Partial, or Curated."
+        )
+    coverage = coverage_match.group(1)
+    if coverage in {"Partial", "Curated"}:
+        gaps = re.search(
+            r"(?ms)^## Gaps and editorial summaries\s*\n(.*?)(?=^## |\Z)", content
+        )
+        gap_text = gaps.group(1) if gaps else ""
+        for label in ("Unavailable material:", "Editorial summary:", "Basis:"):
+            if label not in gap_text:
+                raise ProcessingError(
+                    f"{source_name}: {coverage} conversation records must document {label[:-1]}."
+                )
+
+    mapping_section = re.search(
+        r"(?ms)^## Image source mapping\s*\n(.*?)(?=^## |\Z)", content
+    )
+    mapping_text = mapping_section.group(1) if mapping_section else ""
+    table_rows = [
+        split_markdown_table_cells(line)
+        for line in mapping_text.splitlines()
+        if line.strip().startswith("|")
+    ]
+    required_columns = ["source filename", "attempt", "asset id", "generation / output id"]
+    header = [cell.casefold() for cell in table_rows[0]] if table_rows else []
+    if not all(column in header for column in required_columns):
+        raise ProcessingError(
+            f"{source_name}: conversation_record Image source mapping table must contain "
+            "Source filename, Attempt, Asset ID, and Generation / Output ID columns."
+        )
+    column_indices = [header.index(column) for column in required_columns]
+    expected = [
+        source_name,
+        attempt or "Not applicable",
+        source_asset_id or "Not applicable",
+        generation_id or "Not applicable",
+    ]
+    matched = False
+    for row in table_rows[1:]:
+        if len(row) > max(column_indices):
+            if [row[index] for index in column_indices] == expected:
+                matched = True
+                break
+    if not matched:
+        raise ProcessingError(
+            f"{source_name}: conversation_record has no exact image mapping row for "
+            f"attempt {expected[1]!r}, asset ID {expected[2]!r}, and generation ID {expected[3]!r}."
+        )
+
+    drawing_match = re.fullmatch(
+        r"drawings/(\d{4}-\d{2}-\d{2})/images",
+        destination.relative_to(root).as_posix(),
+    )
+    if drawing_match:
+        session_date = drawing_match.group(1)
+        expected_record = f"drawings/history/{session_date}-conversation-integrity.md"
+        if value != expected_record or dated_heading.group(1) != session_date:
+            raise ProcessingError(
+                f"{source_name}: drawing outputs for {session_date} require {expected_record}."
+            )
+        if not attempt or not generation_id:
+            raise ProcessingError(
+                f"{source_name}: drawing outputs require attempt and native_generation_id."
+            )
+        attempt_path = root / "drawings" / session_date / f"attempt-{attempt}.md"
+        reject_symlink_components(attempt_path, root)
+        if attempt_path.is_symlink() or not attempt_path.is_file():
+            raise ProcessingError(
+                f"{source_name}: required attempt record is missing or unsafe: "
+                f"drawings/{session_date}/attempt-{attempt}.md."
+            )
+        try:
+            attempt_text = attempt_path.read_text(encoding="utf-8")
+        except (OSError, UnicodeError) as exc:
+            raise ProcessingError(
+                f"{source_name}: cannot read attempt record {attempt_path.relative_to(root).as_posix()}: {exc}"
+            ) from exc
+        generation_token = re.escape(chr(96) + generation_id + chr(96))
+        generation_pattern = re.compile(r"Generation ID:\s*" + generation_token, re.IGNORECASE)
+        output_pattern = re.compile(r"Output ID:\s*" + generation_token, re.IGNORECASE)
+        asset_pattern = re.compile(
+            r"Asset ID:\s*" + re.escape(chr(96) + source_asset_id + chr(96)),
+            re.IGNORECASE,
+        ) if source_asset_id else None
+        attempt_lines = attempt_text.splitlines()
+        identity_match = False
+        for line_number, line in enumerate(attempt_lines):
+            if not (generation_pattern.search(line) or output_pattern.search(line)):
+                continue
+            if not asset_pattern:
+                identity_match = True
+                break
+            if asset_pattern.search(line):
+                identity_match = True
+                break
+            if line.lstrip().startswith("- **"):
+                adjacent = attempt_lines[max(0, line_number - 1):line_number + 2]
+                if any(candidate.lstrip().startswith("- **") and asset_pattern.search(candidate)
+                       for candidate in adjacent):
+                    identity_match = True
+                    break
+        if not identity_match:
+            raise ProcessingError(
+                f"{source_name}: supplied source_asset_id and generation/output identity do not match "
+                f"the same output in drawings/{session_date}/attempt-{attempt}.md."
+            )
+    return value, coverage
+
 
 def prepare_attempt_readme_updates(prepared: list[dict[str, Any]], root: Path) -> dict[Path, str]:
     """Prepare idempotent attempt-record and daily-README links for session outputs."""
@@ -808,13 +991,16 @@ def prepare_session_manifest_updates(prepared: list[dict[str, Any]], root: Path)
             else:
                 mapping_status = "Corroborated"
                 mapping_evidence = item.get("mapping_evidence") or (
-                    f"HANDOFF explicitly assigns this upload to attempt {item['attempt']}; "
-                    "generation-time SHA-256/native output IDs were unavailable."
+                    f"Conversation record and attempt-{item['attempt']} generation identity were validated; "
+                    "generation-time SHA-256 was unavailable."
                 )
             row = {
                 "session_date": session_date,
                 "image_id": image_id,
                 "filename": relative_master,
+                "source_filename": item["name"],
+                "asset_id": item["asset_id"],
+                "source_asset_id": item["source_asset_id"],
                 "prompt_id": item["prompt_id"],
                 "approval_status": item["approval_status"],
                 "github_url": github_blob_url(relative_webp),
@@ -827,6 +1013,8 @@ def prepare_session_manifest_updates(prepared: list[dict[str, Any]], root: Path)
                 "native_output_id": item["native_output_id"],
                 "mapping_status": mapping_status,
                 "mapping_evidence": mapping_evidence,
+                "conversation_record": item["conversation_record"],
+                "conversation_coverage": item["conversation_coverage"],
                 "original_path": relative_master,
                 "webp_path": relative_webp,
                 "original_sha256": item["master_sha"],
@@ -1001,6 +1189,14 @@ def main() -> int:
                 if asset_id in ids:
                     raise ProcessingError(f"Duplicate asset_id: {asset_id}")
                 ids.add(asset_id)
+            source_asset_id = item.get("source_asset_id", "")
+            if source_asset_id is None:
+                source_asset_id = ""
+            if source_asset_id != "" and (
+                not isinstance(source_asset_id, str) or len(source_asset_id) > 256
+                or any(character in source_asset_id for character in "\r\n")
+            ):
+                raise ProcessingError(f"Item {number}: source_asset_id must be a single-line string of at most 256 characters.")
             directory = destination_dir(item.get("destination_dir"), root)
             attempt_value = item.get("attempt")
             attempt_ref = ""
@@ -1087,13 +1283,18 @@ def main() -> int:
                 or any(character in mapping_evidence for character in "\r\n")
             ):
                 raise ProcessingError(f"Item {number}: mapping_evidence must be a single-line string of at most 1000 characters.")
+            conversation_record, conversation_coverage = validate_conversation_record(
+                item.get("conversation_record"), root, name, attempt_ref, source_asset_id,
+                (native_generation_id or output_id), directory,
+            )
             source_sha = digest(source)
             hash_match = "MATCH" if expected_sha and source_sha.lower() == expected_sha.lower() else ("MISMATCH" if expected_sha else "NOT_PROVIDED")
             prepared.append({
                 "name": name, "source": source, "title": title.strip(), "asset_id": asset_id,
-                "attempt": attempt_ref, "expected_sha": expected_sha, "output_id": output_id, "prompt_id": prompt_id,
+                "source_asset_id": source_asset_id, "attempt": attempt_ref, "expected_sha": expected_sha, "output_id": output_id, "prompt_id": prompt_id,
                 "native_generation_id": native_generation_id, "native_output_id": native_output_id,
                 "approval_status": approval_status, "mapping_evidence": mapping_evidence,
+                "conversation_record": conversation_record, "conversation_coverage": conversation_coverage,
                 "image_id": output_id or (
                     f"A{attempt_ref}-O-{source_sha[:12]}-"
                     f"{hashlib.sha256(name.encode('utf-8')).hexdigest()[:8]}"
@@ -1109,6 +1310,7 @@ def main() -> int:
             details = (["missing: " + ", ".join(missing)] if missing else []) + (["not listed: " + ", ".join(unlisted)] if unlisted else [])
             raise ProcessingError("Every image must appear exactly once in HANDOFF.yml; " + "; ".join(details))
         checks.append("Every uploaded image is listed exactly once; no unlisted image will be processed.")
+        checks.append("Every item has an existing conversation-integrity record with an exact image-source mapping; drawing outputs also match the attempt record asset ID and generation ID.")
         if any(item["hash_match"] == "MATCH" for item in prepared):
             checks.append("Uploaded originals matching supplied generation-time SHA-256 values were identified.")
         if any(item["hash_match"] == "MISMATCH" for item in prepared):
@@ -1186,8 +1388,11 @@ def main() -> int:
         for item in prepared:
             rows.append({
                 "source_filename": item["name"], "source_path": f"images/takeout/{item['name']}",
-                "title": item["title"], "asset_id": item["asset_id"], "attempt": item["attempt"],
+                "title": item["title"], "asset_id": item["asset_id"],
+                "source_asset_id": item["source_asset_id"], "attempt": item["attempt"],
                 "destination_dir": item["directory"].relative_to(root).as_posix(),
+                "conversation_record": item["conversation_record"],
+                "conversation_coverage": item["conversation_coverage"],
                 "image_id": item.get("image_id", ""),
                 "master_path": item["master"].relative_to(root).as_posix(),
                 "webp_path": item["webp"].relative_to(root).as_posix(),
@@ -1260,8 +1465,11 @@ def main() -> int:
         for item in prepared:
             rows.append({
                 "source_filename": item["name"], "source_path": f"images/takeout/{item['name']}",
-                "title": item["title"], "asset_id": item["asset_id"], "attempt": item["attempt"],
+                "title": item["title"], "asset_id": item["asset_id"],
+                "source_asset_id": item.get("source_asset_id", ""), "attempt": item["attempt"],
                 "destination_dir": item["directory"].relative_to(root).as_posix(),
+                "conversation_record": item.get("conversation_record", ""),
+                "conversation_coverage": item.get("conversation_coverage", ""),
                 "image_id": item.get("image_id", ""),
                 "master_path": item["master"].relative_to(root).as_posix(),
                 "webp_path": item["webp"].relative_to(root).as_posix(),

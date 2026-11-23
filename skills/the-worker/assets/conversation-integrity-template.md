@@ -1,6 +1,6 @@
 # Conversation Integrity — YYYY-MM-DD
 
-**Template version:** 1.0
+**Template version:** 1.1
 
 **Project:** [Project name or Not applicable]
 **Branch:** `gpt`
@@ -35,6 +35,14 @@
 - **Basis:** [State the available evidence used for the summary.]
 
 [Write Not applicable when no gap exists.]
+
+## Image source mapping
+
+Record one row for every image output retained through the takeout workflow. Use the exact uploaded filename. Record the session attempt and source/platform Asset ID where applicable. This is distinct from the optional repository asset_id used to prefix a stored filename. Use the native Generation ID when exposed; otherwise use the recorded internal Output ID. Write `Not applicable` when a field does not apply. Do not infer or fabricate an identifier.
+
+| Source filename | Attempt | Asset ID | Generation / Output ID |
+|---|---|---|---|
+| [exact filename] | [NN or Not applicable] | [exact ID or Not applicable] | [recorded ID or Not applicable] |
 
 ## Integrity and completeness notes
 

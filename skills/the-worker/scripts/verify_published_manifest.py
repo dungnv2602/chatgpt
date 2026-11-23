@@ -85,6 +85,113 @@ def verify_manifest_row(row: dict[str, str], blob_reader: BlobReader,
 
 
 
+def verify_conversation_record(row: dict[str, str], session_date: str,
+                               attempt_number: str, attempt_text: str,
+                               blob_reader: BlobReader) -> str:
+    """Verify the remote conversation archive and its exact image-source mapping."""
+    source_filename = (row.get("source_filename") or "").strip()
+    if not source_filename:
+        return ""  # Legacy manifest rows predate conversation-record enforcement.
+
+    expected_path = f"drawings/history/{session_date}-conversation-integrity.md"
+    record_path = (row.get("conversation_record") or "").strip()
+    if record_path != expected_path:
+        return f"Conversation record path must be {expected_path} for {source_filename}."
+    record_bytes = blob_reader(record_path)
+    if record_bytes is None:
+        return f"Published conversation-integrity record is missing: {record_path}"
+    try:
+        content = record_bytes.decode("utf-8")
+    except UnicodeDecodeError:
+        return f"Published conversation-integrity record is not UTF-8: {record_path}"
+
+    if f"# Conversation Integrity — {session_date}" not in content.splitlines():
+        return f"Published conversation-integrity record has the wrong date heading: {record_path}"
+    required_headings = (
+        "## Integrity policy",
+        "## Chronological record",
+        "## Gaps and editorial summaries",
+        "## Integrity and completeness notes",
+        "## Image source mapping",
+    )
+    if any(heading not in content for heading in required_headings):
+        return f"Published conversation-integrity record is incomplete: {record_path}"
+
+    coverage_match = re.search(
+        r"(?m)^- \*\*Coverage:\*\* (Complete|Partial|Curated)\s*$", content
+    )
+    if not coverage_match:
+        return f"Published conversation-integrity record has no valid coverage state: {record_path}"
+    coverage = coverage_match.group(1)
+    if coverage != (row.get("conversation_coverage") or "").strip():
+        return f"Conversation coverage does not match the manifest: {record_path}"
+    if coverage in {"Partial", "Curated"}:
+        gaps = re.search(
+            r"(?ms)^## Gaps and editorial summaries\s*\n(.*?)(?=^## |\Z)", content
+        )
+        gap_text = gaps.group(1) if gaps else ""
+        if any(label not in gap_text for label in (
+            "Unavailable material:", "Editorial summary:", "Basis:"
+        )):
+            return f"Partial conversation record does not document its gaps: {record_path}"
+
+    mapping = re.search(
+        r"(?ms)^## Image source mapping\s*\n(.*?)(?=^## |\Z)", content
+    )
+    table_rows = [
+        [cell.strip() for cell in line.strip().strip("|").split("|")]
+        for line in (mapping.group(1) if mapping else "").splitlines()
+        if line.strip().startswith("|")
+    ]
+    required_columns = ["Source filename", "Attempt", "Asset ID", "Generation / Output ID"]
+    header = table_rows[0] if table_rows else []
+    normalized_header = [cell.casefold() for cell in header]
+    if not all(column.casefold() in normalized_header for column in required_columns):
+        return f"Conversation source mapping table is malformed: {record_path}"
+    indices = [normalized_header.index(column.casefold()) for column in required_columns]
+    expected = [
+        source_filename,
+        attempt_number,
+        (row.get("source_asset_id") or "").strip() or "Not applicable",
+        (row.get("native_generation_id") or row.get("output_id") or "").strip() or "Not applicable",
+    ]
+    if not any(
+        len(cells) > max(indices)
+        and [cells[index] for index in indices] == expected
+        for cells in table_rows[1:]
+    ):
+        return f"Conversation record has no exact source mapping for {source_filename}: {record_path}"
+
+    generation_id = (row.get("native_generation_id") or row.get("output_id") or "").strip()
+    if not generation_id:
+        return f"Manifest is missing a generation or output identity for {source_filename}."
+    generation_token = re.escape(chr(96) + generation_id + chr(96))
+    generation_pattern = re.compile(r"Generation ID:\s*" + generation_token, re.IGNORECASE)
+    output_pattern = re.compile(r"Output ID:\s*" + generation_token, re.IGNORECASE)
+    source_asset_id = (row.get("source_asset_id") or "").strip()
+    asset_pattern = re.compile(
+        r"Asset ID:\s*" + re.escape(chr(96) + source_asset_id + chr(96)),
+        re.IGNORECASE,
+    ) if source_asset_id else None
+    attempt_lines = attempt_text.splitlines()
+    identity_match = False
+    for line_number, line in enumerate(attempt_lines):
+        if not (generation_pattern.search(line) or output_pattern.search(line)):
+            continue
+        if not asset_pattern or asset_pattern.search(line):
+            identity_match = True
+            break
+        if line.lstrip().startswith("- **"):
+            adjacent = attempt_lines[max(0, line_number - 1):line_number + 2]
+            if any(candidate.lstrip().startswith("- **") and asset_pattern.search(candidate)
+                   for candidate in adjacent):
+                identity_match = True
+                break
+    if not identity_match:
+        return f"Published attempt record identity does not match the conversation mapping: {source_filename}"
+    return ""
+
+
 def verify_session_links(row: dict[str, str], blob_reader: BlobReader) -> str:
     """Verify remote daily README inventory/table and attempt-note links."""
     webp_path = (row.get("webp_path") or "").strip()
@@ -141,6 +248,12 @@ def verify_session_links(row: dict[str, str], blob_reader: BlobReader) -> str:
     attempt_links = {unquote(link) for link in link_pattern.findall(repository_section.group(0))}
     if relative_link not in attempt_links:
         return f"Published attempt record does not link {relative_link}: {attempt_path}"
+
+    conversation_error = verify_conversation_record(
+        row, session_date, attempt_number, attempt_text, blob_reader
+    )
+    if conversation_error:
+        return conversation_error
 
     lines = readme.splitlines()
     header_rows = [
