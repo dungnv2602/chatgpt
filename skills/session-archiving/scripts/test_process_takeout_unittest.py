@@ -160,6 +160,12 @@ class TakeoutProcessorTests(unittest.TestCase):
                     "title": "Partial Portrait",
                     "destination_dir": "drawings/2026-11-19/images",
                     "attempt": "1",
+                    "output_id": "A01-O01",
+                    "prompt_id": "P01",
+                    "native_generation_id": "native-gen-01",
+                    "native_output_id": "native-out-01",
+                    "approval_status": "Pending",
+                    "mapping_evidence": "Direct generation-return association for portrait.png",
                 },
                 {
                     "source": "portrait-alt.png",
@@ -167,6 +173,8 @@ class TakeoutProcessorTests(unittest.TestCase):
                     "title": "Partial Portrait Alternative",
                     "destination_dir": "drawings/2026-11-19/images",
                     "attempt": "1",
+                    "output_id": "A01-O02",
+                    "approval_status": "Not recorded",
                 },
             ],
             batch="batch-session-link",
@@ -202,7 +210,15 @@ class TakeoutProcessorTests(unittest.TestCase):
             manifest_rows = list(csv.DictReader(handle))
         self.assertEqual(len(manifest_rows), 2)
         self.assertEqual({row["attempt"] for row in manifest_rows}, {"01"})
-        self.assertEqual({row["approval_status"] for row in manifest_rows}, {"Not recorded"})
+        self.assertEqual({row["approval_status"] for row in manifest_rows}, {"Pending", "Not recorded"})
+        first_output = next(row for row in manifest_rows if row["output_id"] == "A01-O01")
+        self.assertEqual(first_output["prompt_id"], "P01")
+        self.assertEqual(first_output["native_generation_id"], "native-gen-01")
+        self.assertEqual(first_output["native_output_id"], "native-out-01")
+        self.assertEqual(
+            first_output["mapping_evidence"],
+            "Direct generation-return association for portrait.png",
+        )
         self.assertEqual({row["verification_status"] for row in manifest_rows}, {"Pending"})
         self.assertEqual({row["mapping_status"] for row in manifest_rows}, {"Corroborated"})
         self.assertIn(
