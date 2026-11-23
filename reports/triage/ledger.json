@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1.0",
-  "updated_at_utc": null,
+  "updated_at_utc": "2026-11-23T08:34:14Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T08:15:48Z",
     "processed_reports": [
@@ -27,6 +27,11 @@
       "reports/gh_ac_reports/history/424715662/45127427690-attempt-1-post_run-capture-2/report.json",
       "reports/gh_ac_reports/history/424715662/45127427690-attempt-1-post_run-capture-20/report.json",
       "reports/gh_ac_reports/history/424715662/45127427690-attempt-1-post_run-capture-21/report.json",
+      "reports/gh_ac_reports/history/424715662/45127427690-attempt-1-post_run-capture-22/report.json",
+      "reports/gh_ac_reports/history/424715662/45127427690-attempt-1-post_run-capture-23/report.json",
+      "reports/gh_ac_reports/history/424715662/45127427690-attempt-1-post_run-capture-24/report.json",
+      "reports/gh_ac_reports/history/424715662/45127427690-attempt-1-post_run-capture-25/report.json",
+      "reports/gh_ac_reports/history/424715662/45127427690-attempt-1-post_run-capture-26/report.json",
       "reports/gh_ac_reports/history/424715662/45127427690-attempt-1-post_run-capture-3/report.json",
       "reports/gh_ac_reports/history/424715662/45127427690-attempt-1-post_run-capture-4/report.json",
       "reports/gh_ac_reports/history/424715662/45127427690-attempt-1-post_run-capture-5/report.json",
@@ -53,6 +58,8 @@
       "reports/gh_ac_reports/history/424715662/45132710256-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424715662/45134814096-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45134814096-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/424715662/45138510922-attempt-1-post_run/report.json",
+      "reports/gh_ac_reports/history/424715662/45138510922-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424743410/45122348866-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424743410/45122653712-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424743410/45123502400-attempt-1-post_run/report.json",
@@ -74,6 +81,11 @@
       "reports/gh_ac_reports/history/424743410/45127306049-attempt-1-post_run-capture-22/report.json",
       "reports/gh_ac_reports/history/424743410/45127306049-attempt-1-post_run-capture-23/report.json",
       "reports/gh_ac_reports/history/424743410/45127306049-attempt-1-post_run-capture-24/report.json",
+      "reports/gh_ac_reports/history/424743410/45127306049-attempt-1-post_run-capture-25/report.json",
+      "reports/gh_ac_reports/history/424743410/45127306049-attempt-1-post_run-capture-26/report.json",
+      "reports/gh_ac_reports/history/424743410/45127306049-attempt-1-post_run-capture-27/report.json",
+      "reports/gh_ac_reports/history/424743410/45127306049-attempt-1-post_run-capture-28/report.json",
+      "reports/gh_ac_reports/history/424743410/45127306049-attempt-1-post_run-capture-29/report.json",
       "reports/gh_ac_reports/history/424743410/45127306049-attempt-1-post_run-capture-3/report.json",
       "reports/gh_ac_reports/history/424743410/45127306049-attempt-1-post_run-capture-4/report.json",
       "reports/gh_ac_reports/history/424743410/45127306049-attempt-1-post_run-capture-5/report.json",
@@ -88,6 +100,11 @@
       "reports/gh_ac_reports/history/424743410/45127663602-attempt-1-post_run-capture-11/report.json",
       "reports/gh_ac_reports/history/424743410/45127663602-attempt-1-post_run-capture-12/report.json",
       "reports/gh_ac_reports/history/424743410/45127663602-attempt-1-post_run-capture-13/report.json",
+      "reports/gh_ac_reports/history/424743410/45127663602-attempt-1-post_run-capture-14/report.json",
+      "reports/gh_ac_reports/history/424743410/45127663602-attempt-1-post_run-capture-15/report.json",
+      "reports/gh_ac_reports/history/424743410/45127663602-attempt-1-post_run-capture-16/report.json",
+      "reports/gh_ac_reports/history/424743410/45127663602-attempt-1-post_run-capture-17/report.json",
+      "reports/gh_ac_reports/history/424743410/45127663602-attempt-1-post_run-capture-18/report.json",
       "reports/gh_ac_reports/history/424743410/45127663602-attempt-1-post_run-capture-2/report.json",
       "reports/gh_ac_reports/history/424743410/45127663602-attempt-1-post_run-capture-3/report.json",
       "reports/gh_ac_reports/history/424743410/45127663602-attempt-1-post_run-capture-4/report.json",
@@ -103,6 +120,11 @@
       "reports/gh_ac_reports/history/424743410/45128438340-attempt-1-post_run-capture-11/report.json",
       "reports/gh_ac_reports/history/424743410/45128438340-attempt-1-post_run-capture-12/report.json",
       "reports/gh_ac_reports/history/424743410/45128438340-attempt-1-post_run-capture-13/report.json",
+      "reports/gh_ac_reports/history/424743410/45128438340-attempt-1-post_run-capture-14/report.json",
+      "reports/gh_ac_reports/history/424743410/45128438340-attempt-1-post_run-capture-15/report.json",
+      "reports/gh_ac_reports/history/424743410/45128438340-attempt-1-post_run-capture-16/report.json",
+      "reports/gh_ac_reports/history/424743410/45128438340-attempt-1-post_run-capture-17/report.json",
+      "reports/gh_ac_reports/history/424743410/45128438340-attempt-1-post_run-capture-18/report.json",
       "reports/gh_ac_reports/history/424743410/45128438340-attempt-1-post_run-capture-2/report.json",
       "reports/gh_ac_reports/history/424743410/45128438340-attempt-1-post_run-capture-3/report.json",
       "reports/gh_ac_reports/history/424743410/45128438340-attempt-1-post_run-capture-4/report.json",
@@ -137,6 +159,8 @@
       "reports/gh_ac_reports/history/427313089/45132305616-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45132305616-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/427313089/45132710220-attempt-1-post_run/report.json",
+      "reports/gh_ac_reports/history/427313089/45138511007-attempt-1-post_run/report.json",
+      "reports/gh_ac_reports/history/427313089/45138511007-attempt-1-pre_finalizer/report.json",
       "reports/lint_reports/on_changed/history/45127227672-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45128128389-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45129646655-attempt-1/report.json",
@@ -157,5 +181,56 @@
       "reports/lint_reports/on_repo/history/45128445227-attempt-1/report.json"
     ]
   },
-  "findings": []
+  "findings": [
+    {
+      "finding_id": "gha-86b12a357f3f3d70e6a78aad",
+      "source_family": "github_actions",
+      "category": "publication_or_push",
+      "title": "STE Lint Changed Documentation / Lint changed Markdown files and publish detailed evidence / Generate and publish changed-document lint evidence: publication_or_push — <timestamp> ^[[36;1m \"status\": \"passed\" if exit_code == 0 else \"failed\",",
+      "status": "open",
+      "severity": "high",
+      "owner": null,
+      "first_seen_utc": "2026-11-23T08:27:53Z",
+      "last_seen_utc": "2026-11-23T08:27:53Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/gh_ac_reports/history/424715662/45138510922-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45138510922",
+          "observed_at_utc": "2026-11-23T08:27:53Z",
+          "note": "Lint changed Markdown files and publish detailed evidence / Generate and publish changed-document lint evidence",
+          "observation_id": "github_actions:424715662:45138510922:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null
+    },
+    {
+      "finding_id": "gha-9baaefbc6c2ee372426269a7",
+      "source_family": "github_actions",
+      "category": "validation_or_test",
+      "title": "STE Lint Changed Documentation / Lint changed Markdown files and publish detailed evidence / Preserve lint failure as workflow conclusion: validation_or_test — <timestamp> ^[[36;1m echo \"::error::changed-document lint failed. see reports/li",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-23T08:27:53Z",
+      "last_seen_utc": "2026-11-23T08:27:53Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/gh_ac_reports/history/424715662/45138510922-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45138510922",
+          "observed_at_utc": "2026-11-23T08:27:53Z",
+          "note": "Lint changed Markdown files and publish detailed evidence / Preserve lint failure as workflow conclusion",
+          "observation_id": "github_actions:424715662:45138510922:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null
+    }
+  ]
 }
