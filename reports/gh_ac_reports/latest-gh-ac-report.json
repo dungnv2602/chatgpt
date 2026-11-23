@@ -22,7 +22,7 @@
   },
   "capture": {
     "stage": "post_run",
-    "captured_at_utc": "2026-11-23T06:54:46Z",
+    "captured_at_utc": "2026-11-23T06:55:12Z",
     "completeness": "Incomplete",
     "reporter_job": {
       "id": "137534534476",
@@ -189,5 +189,5 @@
       "message": "log not found: 137534535789\n"
     }
   ],
-  "history_path": "history/424743410/45127306049-attempt-1-post_run"
+  "history_path": "history/424743410/45127306049-attempt-1-post_run-capture-2"
 }

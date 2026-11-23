@@ -20,7 +20,7 @@
 | Reporter job | completed / failure |
 | Capture stage | post_run |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T06:54:46Z |
+| Captured (UTC) | 2026-11-23T06:55:12Z |
 
 ## Executive summary
 
