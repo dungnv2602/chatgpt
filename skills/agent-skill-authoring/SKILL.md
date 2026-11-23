@@ -200,7 +200,7 @@ Do not rewrite creative writing, dialogue, marketing copy, approved creative pro
 
 Do not run the linter or CI workflows locally. Push technical-document changes to branch `gpt`. Let GitHub Actions check them.
 
-CI review is task-scoped. Inspect the relevant workflow only when the user requests it, when the skill-authoring task changes validation or workflow configuration, or when a known result directly blocks the task. Use `gh_ac_reports/` for workflow evidence and `lint_reports/` for lint findings. Do not repair unrelated failures before handling a prompt. Never wait or poll. Let GitHub-hosted Actions run validation.
+CI review is task-scoped. Inspect the relevant workflow only when the user requests it, when the skill-authoring task changes validation or workflow configuration, or when a known result directly blocks the task. Use `reports/gh_ac_reports/` for workflow evidence and `reports/lint_reports/` for lint findings. Track cross-family issues in `reports/triage/ledger.json`. Do not repair unrelated failures before handling a prompt. Never wait or poll. Let GitHub-hosted Actions run validation.
 
 The linter checks only supported patterns. It cannot prove meaning or dictionary compliance.
 
