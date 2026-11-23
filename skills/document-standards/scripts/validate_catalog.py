@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 ALLOWED_ROOTS = {
-    ".github", "images", "lint_reports", "master", "novels", "drawings",
+    ".github", "images", "reports", "master", "novels", "drawings",
     "skills", "workspace", "archive"
 }
 KNOWN_CLASSES = {
