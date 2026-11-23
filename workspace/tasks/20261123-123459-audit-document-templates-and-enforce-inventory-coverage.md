@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-123459
 - **Created:** 2026-11-23 12:34 UTC
-- **Updated:** 2026-11-23 12:41 UTC
+- **Updated:** 2026-11-23 12:42 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -65,20 +65,17 @@ Audit all in-scope repository documents on branch `gpt`, excluding `master/` and
 
 ## 7. Current State
 
-The inventory audit found no missing recurring template. Existing canonical templates are sufficient. The Markdown coverage register now uses 48 narrow rules, distinguishes historical drawing records, and excludes generated report output from validation-workflow triggers. The validator uses segment-aware glob semantics. Changes are committed and read-back verification is pending.
+Implementation and repository read-back are complete. The audit found no missing recurring template. Existing canonical templates are sufficient. The 48-rule Markdown coverage register classifies all 1,052 in-scope Markdown documents. The validator uses segment-aware glob semantics, and workflow path filters exclude generated report output to prevent recursive runs. The task remains In Progress only because hosted regression execution has not been inspected.
 
 ## 8. Remaining Work
 
-- Commit and read back the catalog, owner instructions, workflow exclusions, and additional glob tests.
-- Confirm the latest tree is fully covered by the 48 segment-aware rules.
-- Reconcile the task board and discussion register.
-- Hosted regression execution remains unverified until a naturally triggered GitHub Actions run reports results.
+- Hosted regression execution remains unverified until a naturally triggered GitHub Actions run reports results. Do not poll or dispatch workflows.
 
 ## 9. Next Actions
 
-1. Commit and read back the final catalog, instruction, workflow, and test refinements.
-2. Recheck all changed paths and the latest branch head.
-3. Inspect hosted validation only when it occurs naturally; do not poll or dispatch workflows.
+1. Do not poll or dispatch workflows.
+2. When a natural hosted result is available in later work, review the Document Standards regression tests and catalog validator.
+3. If hosted validation fails, create a remediation task from the diagnostic evidence.
 
 ## 10. References
 
@@ -92,11 +89,11 @@ The inventory audit found no missing recurring template. Existing canonical temp
 
 ## 11. Verification
 
-- **Check:** Recursive Git tree enumeration and Markdown extension count.
-- **Method:** GitHub tree API with recursive traversal; filtered out paths beginning `master/` and `archive/`.
-- **Result:** Complete, non-truncated tree; 4,287 in-scope files and 1,042 Markdown documents.
-- **Limitations:** The content classification is a targeted review of document families and representative records, not a semantic line-by-line review of all generated report instances. Machine-enforced path coverage will close the future inventory gap.
+- **Check:** Recursive tree inventory, Markdown path coverage, changed-file read-back, and workflow trigger exclusions.
+- **Method:** GitHub recursive tree API on branch `gpt`; 48 catalog path patterns evaluated with segment-aware glob semantics; all changed files retrieved again from the branch.
+- **Result:** Non-truncated tree at commit `359d1fd7f1af5af0e7e186fa7d99c9bdea97f1f2`; 4,326 in-scope files and 1,052 Markdown documents. All 1,052 Markdown paths are covered; all 48 rules match at least one current document; zero uncovered paths and zero stale rules. All nine relevant repository paths were read back.
+- **Limitations:** Hosted regression tests and the validator were not executed or inspected. The workflow is configured to run on relevant changes; leave this task In Progress until a natural hosted result is available. The content review classified all Markdown families and representative records; machine-readable JSON/YAML/CSV records remain governed by their catalogued schemas and generators.
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. Do not access `master/` or `archive/`. The current coverage register contains 42 rules and classifies all 1,044 Markdown files in the baseline tree. Commit and read back the implementation. Keep generated reports, historical legacy records, technical references, and one-off creative notes classified without forcing redundant templates. Use hosted Actions for tests and validation; do not run repository scripts locally.
+Continue on branch `gpt`. Do not access `master/` or `archive/`. Implementation is committed and read back at `359d1fd7f1af5af0e7e186fa7d99c9bdea97f1f2`. The 48-rule register covers all 1,052 Markdown files in the latest verified tree. No new standalone template was required. Do not poll or dispatch workflows; review the naturally triggered hosted validation when available. If it fails, use the diagnostic evidence to create a remediation task.
