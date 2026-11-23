@@ -1,24 +1,9 @@
-name: Scheduled Archive Batch Cleanup
+name: Scheduled Archive Individual Retention
 
 on:
-  # GitHub cron has no native every-14-days interval. Run weekly and use
-  # the committed timestamp marker to execute a purge only after 14 days.
+  # Check the small retention index weekly. The cleanup script never lists archive/tasks.
   schedule:
     - cron: "0 0 * * 1"
-  workflow_dispatch:
-    inputs:
-      force:
-        description: "Run the batch cleanup now, even if 14 days have not elapsed"
-        required: false
-        type: boolean
-        default: false
-  workflow_call:
-    inputs:
-      force:
-        description: "Run the batch cleanup now, even if 14 days have not elapsed"
-        required: false
-        type: boolean
-        default: false
 
 concurrency:
   group: archive-retention
@@ -29,7 +14,7 @@ permissions:
 
 jobs:
   cleanup:
-    name: Purge archive on gpt and fast-forward main
+    name: Delete individually expired task records on gpt and fast-forward main
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -39,10 +24,8 @@ jobs:
           ref: gpt
           fetch-depth: 0
 
-      - name: Verify branch ancestry and update archive
+      - name: Verify branch ancestry
         shell: bash
-        env:
-          FORCE_CLEANUP: ${{ inputs.force || false }}
         run: |
           set -euo pipefail
 
@@ -57,21 +40,26 @@ jobs:
             exit 1
           fi
 
-          if [[ "$FORCE_CLEANUP" == "true" ]]; then
-            python3 .github/scripts/cleanup-archive.py --force
-          else
-            python3 .github/scripts/cleanup-archive.py
-          fi
+      - name: Test indexed retention logic
+        run: python3 .github/scripts/test_cleanup_archive.py
 
-          if [[ -z "$(git status --porcelain)" ]]; then
-            echo "No cleanup is due. No commit was created."
+      - name: Delete individually expired indexed records
+        id: cleanup
+        run: python3 .github/scripts/cleanup-archive.py
+
+      - name: Commit and synchronize branches
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git diff --cached --quiet; then
+            echo "No indexed records are due. No commit was created."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add archive/tasks .github/archive-retention-state.json
-          git commit -m "chore(archive): purge task archive batch"
+          git commit -m "chore(archive): expire task records past 90 days"
 
           # Update both refs to the same commit atomically. This is a
           # fast-forward of main to gpt; no merge commit or force push.
