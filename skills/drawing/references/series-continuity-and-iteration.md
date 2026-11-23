@@ -174,7 +174,7 @@ next operation based on what actually succeeded: the prompt, the image, or both.
 7. **Image-source verification:** A generation ID, filename, local path, archived
    note, or textual mention is not an image attachment. Use a direct edit only
    when the exact source is accessible and can be supplied through a supported
-   image-reference mechanism. Check the actual source asset and record what was
+   image-reference mechanism. Confirm the actual source asset and record what was
    attached.
 8. **Provenance:** After an edit, inspect returned operation and parent/source
    metadata. If source linkage is not confirmed, classify it as a fresh
