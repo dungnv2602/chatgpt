@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 13:04 UTC — Remediate initialization policy punctuation:** Split the Version 5 behavioral-impact sentence at its semicolon. Preserve `start session` as the only session-start cue and keep `skills/SESSION_START.md` authoritative.
+- **2026-11-23 13:08 UTC — Begin task template review:** Review the single hard finding in `workspace/TASK_TEMPLATE.md` against Document Standards and the task lifecycle contract. Preserve all required metadata and closeout gates.
 
 ## Open Discussions
 
