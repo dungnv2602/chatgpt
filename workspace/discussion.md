@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 — Remove the superseded template paths.** Read back all updated consumers and the catalog. Confirm that no active skill or catalog reference points to either old location. Then delete only the two superseded template files. Keep the verified copies under the owning skills' `assets/` directories.
+- **2026-11-23 — Strengthen the template-first authoring gate and placement policy.** Two template assets now live in their owning skills' `assets/` directories. Their new blobs match the original files exactly. All known consumers and catalog entries point to the new paths. The old paths return 404. Update Document Standards and The Worker so a missing canonical format blocks edits to the governed document until the template, catalog entry, and owner instructions are created, committed, and read back.
 
 ## Open Discussions
 
