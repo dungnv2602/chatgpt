@@ -233,7 +233,7 @@ The user's opening brief for a specific drawing session is the source of truth f
    scene-local session brief under
    `novels/[Novel-ID]/[Arc-Folder]/[Scene-Folder]/illustrations/session-[YYYY-MM-DD]-[NN]-brief.md`.
    The authoritative storage and verification procedure is in
-   `skills/session-archiving/SKILL.md`.
+   `skills/the-worker/references/archive-records-and-image-prompts.md`.
 3. Record the subject/theme, scene or moment, selected mode, character
    appearance, outfit, pose, framing, environment, lighting, and mood in the
    session brief. Also record continuity requirements, locked features,
