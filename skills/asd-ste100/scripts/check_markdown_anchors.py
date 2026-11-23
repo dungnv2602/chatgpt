@@ -145,6 +145,7 @@ def resolve_markdown_target(
     if TEMPLATE_PLACEHOLDER_RE.search(target):
         return None
     parsed = urlsplit(target)
+    if parsed.scheme or parsed.netloc:
         return None
     raw_path = unquote(parsed.path)
     if not raw_path:
