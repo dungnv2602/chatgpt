@@ -1,5 +1,7 @@
 # Current Step
 
+- **2026-11-23 — Board reconciliation:** The active task path now returns 404. Deletion commit `16dcc76cb6c74351d2b50b541db9b90827456885` changes only that path. Update the board: remove the task from Current Execution, add its Done entry with the exact archive path and archive-introduction commit, and trim Historical to the seven newest entries. No eligible task is queued, so do not invent a replacement.
+
 - **2026-11-23 — Active-record removal:** The final archive copy was created once and read back byte-for-byte. Commit `36b2321c4860f1244e5e5998ea86fe3c5272bb9e` changes only the archive path. Next, delete the active task record using its current blob SHA, then verify the active path is absent and the deletion commit changed only that path. Do not update the board until deletion is confirmed.
 
 - **2026-11-23 — Archive write:** Acceptance criteria and hosted checks are satisfied; the active record remains In Progress / Archived: No. The final archive destination was checked and is absent. Create the final Done/Archived copy once, then read it back byte-for-byte and verify the introducing commit's changed-path metadata. Only after that may the active record be deleted and the board moved to Historical.
