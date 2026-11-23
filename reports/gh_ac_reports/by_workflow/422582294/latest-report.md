@@ -1,4 +1,4 @@
-# Process Image Takeout and Create WebP Derivatives — run 45128427239
+# Process Image Takeout and Create WebP Derivatives — run 45170616922
 
 ## Run identity
 
@@ -6,44 +6,46 @@
 | --- | --- |
 | Workflow | Process Image Takeout and Create WebP Derivatives |
 | Workflow path | .github/workflows/convert-images-to-webp.yml |
-| Run / attempt | 45128427239 / 1 |
-| Run number | 57 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45128427239 |
+| Run / attempt | 45170616922 / 1 |
+| Run number | 59 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45170616922 |
 | Branch | gpt |
-| Commit | 14dfb64ffc4e0c544faf4513eb806c39a4851970 |
+| Commit | 9536c9d8e0b5107e10b22b1004c5064f222de16d |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T07:04:02Z |
-| Status at capture | completed |
-| Observed conclusion | cancelled |
-| Projected conclusion | Not calculated |
-| Reporter job | completed / cancelled |
-| Capture stage | post_run |
-| Completeness | Complete |
-| Captured (UTC) | 2026-11-23T07:06:31Z |
+| Created (UTC) | 2026-11-23T12:02:55Z |
+| Status at capture | in_progress |
+| Observed conclusion | Not yet available |
+| Projected conclusion | success |
+| Reporter job | in_progress / Pending |
+| Capture stage | pre_finalizer |
+| Completeness | Incomplete |
+| Captured (UTC) | 2026-11-23T12:03:56Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | cancelled |
-| Primary category | cancelled |
+| State | in_progress |
+| Primary category | None |
 | Jobs | 1 |
 | Steps | 11 |
 | Issues | 0 |
 | Annotations | 0 |
 | Artifacts | 0 |
-| Capture errors | 0 |
+| Capture errors | 1 |
 
 ## Failure classification
 
-cancelled
+No failure category identified. The parent run is still in progress. The projected conclusion is provisional.
+
+The run conclusion records the workflow outcome. A cancelled run remains in history. Cancellation alone does not create an actionable issue. The generator also excludes known downstream status-propagation steps after cancellation.
 
 ## Jobs and steps
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 137538060412 | process-image-takeout | completed | success | 11 | logs/job-137538060412.log |
+| 137678873857 | process-image-takeout | completed | success | 11 | logs/job-137678873857.log |
 
 ## Actionable step outcomes
 
@@ -61,11 +63,15 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137538060412 | process-image-takeout | logs/job-137538060412.log | 60522 | False | process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T07:04:27.1755266Z ^[[36;1m  commit_message="chore(images): archive failed takeout diagnostics"^[[0m, process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T07:04:27.1757797Z ^[[36;1m    echo "::error::Could not rebase takeout changes cleanly. No remote changes were overwritten."^[[0m, process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T07:04:27.1760095Z ^[[36;1m    echo "::error::Push failed although origin/gpt did not advance. Check token permissions or branch protection."^[[0m, process-image-takeout	Commit and safely publish processed assets and reports	2026-11-23T07:04:27.1761244Z ^[[36;1mecho "::error::Could not publish after $max_attempts synchronization attempts."^[[0m, process-image-takeout	Verify published assets and GitHub links	2026-11-23T07:04:27.3600731Z ^[[36;1m      echo "::error::Could not rebase manifest verification onto the latest gpt branch."^[[0m, process-image-takeout	Verify published assets and GitHub links	2026-11-23T07:04:27.3602264Z ^[[36;1m      echo "::error::Could not publish verified manifest; origin/gpt did not advance."^[[0m, process-image-takeout	Verify published assets and GitHub links	2026-11-23T07:04:27.3602983Z ^[[36;1m      echo "::error::Could not publish verified manifest after $max_attempts attempts."^[[0m |
+| 137678873857 | process-image-takeout | logs/job-137678873857.log | 82 | False |  |
 
 ## Evidence coverage
 
-All requested evidence endpoints and completed-job log captures returned data.
+One or more evidence sources were unavailable. This report is Incomplete.
+
+| Source | HTTP status | Limitation |
+| --- | --- | --- |
+| job_log | Not recorded | run 45170616922 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 

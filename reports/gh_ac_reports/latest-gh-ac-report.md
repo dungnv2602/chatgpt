@@ -1,49 +1,51 @@
-# STE Lint Changed Documentation — run 45170384879
+# Process Image Takeout and Create WebP Derivatives — run 45170616922
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | STE Lint Changed Documentation |
-| Workflow path | .github/workflows/ste-lint-changed.yml |
-| Run / attempt | 45170384879 / 1 |
-| Run number | 504 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45170384879 |
+| Workflow | Process Image Takeout and Create WebP Derivatives |
+| Workflow path | .github/workflows/convert-images-to-webp.yml |
+| Run / attempt | 45170616922 / 1 |
+| Run number | 59 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45170616922 |
 | Branch | gpt |
-| Commit | df3668945eb518b8b4917a0436e87b8477607163 |
+| Commit | 9536c9d8e0b5107e10b22b1004c5064f222de16d |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T12:01:21Z |
-| Status at capture | completed |
-| Observed conclusion | cancelled |
-| Projected conclusion | Not calculated |
-| Reporter job | Not captured |
-| Capture stage | post_run |
-| Completeness | Complete |
-| Captured (UTC) | 2026-11-23T12:03:33Z |
+| Created (UTC) | 2026-11-23T12:02:55Z |
+| Status at capture | in_progress |
+| Observed conclusion | Not yet available |
+| Projected conclusion | success |
+| Reporter job | in_progress / Pending |
+| Capture stage | pre_finalizer |
+| Completeness | Incomplete |
+| Captured (UTC) | 2026-11-23T12:03:56Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | cancelled |
+| State | in_progress |
 | Primary category | None |
-| Jobs | 0 |
-| Steps | 0 |
+| Jobs | 1 |
+| Steps | 11 |
 | Issues | 0 |
 | Annotations | 0 |
 | Artifacts | 0 |
-| Capture errors | 0 |
+| Capture errors | 1 |
 
 ## Failure classification
 
-No failure category identified.
+No failure category identified. The parent run is still in progress. The projected conclusion is provisional.
 
 The run conclusion records the workflow outcome. A cancelled run remains in history. Cancellation alone does not create an actionable issue. The generator also excludes known downstream status-propagation steps after cancellation.
 
 ## Jobs and steps
 
-No records were captured.
+| Job ID | Job | Status | Conclusion | Steps | Log |
+| --- | --- | --- | --- | --- | --- |
+| 137678873857 | process-image-takeout | completed | success | 11 | logs/job-137678873857.log |
 
 ## Actionable step outcomes
 
@@ -59,15 +61,21 @@ No records were captured.
 
 ## Captured job logs
 
-No records were captured.
+| Job | Name | File | Bytes | Truncated | Markers |
+| --- | --- | --- | --- | --- | --- |
+| 137678873857 | process-image-takeout | logs/job-137678873857.log | 82 | False |  |
 
 ## Evidence coverage
 
-All requested evidence endpoints and completed-job log captures returned data.
+One or more evidence sources were unavailable. This report is Incomplete.
+
+| Source | HTTP status | Limitation |
+| --- | --- | --- |
+| job_log | Not recorded | run 45170616922 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
-[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/reports/lint_reports/on_changed/latest-lint-report.md)
+No separate lint report applies to this workflow.
 
 ## Integrity
 
