@@ -14,30 +14,30 @@
 | Event | push |
 | Actor | dungnv2602 |
 | Created (UTC) | 2026-11-23T10:32:23Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | cancelled |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T10:33:18Z |
+| Status at capture | completed |
+| Observed conclusion | cancelled |
+| Projected conclusion | Not calculated |
+| Reporter job | completed / success |
+| Capture stage | post_run |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-23T10:34:17Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
+| State | cancelled |
 | Primary category | None |
 | Jobs | 2 |
 | Steps | 5 |
 | Issues | 0 |
 | Annotations | 2 |
 | Artifacts | 0 |
-| Capture errors | 2 |
+| Capture errors | 0 |
 
 ## Failure classification
 
-No failure category identified. The parent run is still in progress. The projected conclusion is provisional.
+No failure category identified.
 
 The run conclusion records the workflow outcome. A cancelled run remains in history. Cancellation alone does not create an actionable issue. The generator also excludes known downstream status-propagation steps after cancellation.
 
@@ -67,17 +67,12 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137632528243 | Reject superseded runs and find lint baseline | logs/job-137632528243.log | 82 | False |  |
-| 137632604720 | Lint changed Markdown files and publish detailed evidence | logs/job-137632604720.log | 82 | False |  |
+| 137632528243 | Reject superseded runs and find lint baseline | logs/job-137632528243.log | 12713 | False |  |
+| 137632604720 | Lint changed Markdown files and publish detailed evidence | logs/job-137632604720.log | 4110 | False | Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T10:32:48.9304997Z ##[error]The operation was canceled. |
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | run 45157016400 is still in progress; logs will be available when it is complete  |
-| job_log | Not recorded | run 45157016400 is still in progress; logs will be available when it is complete  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 

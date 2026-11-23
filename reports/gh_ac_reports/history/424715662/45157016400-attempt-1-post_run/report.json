@@ -1,0 +1,181 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45157016400",
+    "number": 456,
+    "attempt": 1,
+    "workflow_id": 424715662,
+    "workflow_name": "STE Lint Changed Documentation",
+    "workflow_path": ".github/workflows/ste-lint-changed.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45157016400",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "bf361fd04c45eb6634b09bce553251ad73758904",
+    "status": "completed",
+    "conclusion": "cancelled",
+    "created_at": "2026-11-23T10:32:23Z",
+    "run_started_at": "2026-11-23T10:32:23Z",
+    "updated_at": "2026-11-23T10:33:24Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Remediate legacy catalog lint findings"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T10:34:17Z",
+    "completeness": "Complete",
+    "reporter_job": {
+      "id": "137632672820",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  },
+  "classification": {
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
+    "primary_category": null,
+    "categories": [],
+    "issues": []
+  },
+  "jobs": [
+    {
+      "id": "137632528243",
+      "name": "Reject superseded runs and find lint baseline",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-23T10:32:36Z",
+      "completed_at": "2026-11-23T10:32:43Z",
+      "runner_name": "GitHub Actions 1000001319",
+      "runner_id": 1000001319,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T10:32:37Z",
+          "completed_at": "2026-11-23T10:32:37Z"
+        },
+        {
+          "number": 2,
+          "name": "Cancel superseded run before checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T10:32:37Z",
+          "completed_at": "2026-11-23T10:32:39Z"
+        },
+        {
+          "number": 3,
+          "name": "Find the last successful lint baseline",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T10:32:39Z",
+          "completed_at": "2026-11-23T10:32:41Z"
+        },
+        {
+          "number": 4,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T10:32:41Z",
+          "completed_at": "2026-11-23T10:32:41Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 12713,
+        "path": "logs/job-137632528243.log",
+        "error": null,
+        "marker_lines": []
+      }
+    },
+    {
+      "id": "137632604720",
+      "name": "Lint changed Markdown files and publish detailed evidence",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "started_at": "2026-11-23T10:32:46Z",
+      "completed_at": "2026-11-23T10:32:51Z",
+      "runner_name": "GitHub Actions 1000001320",
+      "runner_id": 1000001320,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "cancelled",
+          "started_at": "2026-11-23T10:32:46Z",
+          "completed_at": "2026-11-23T10:32:48Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 4110,
+        "path": "logs/job-137632604720.log",
+        "error": null,
+        "marker_lines": [
+          "Lint changed Markdown files and publish detailed evidence\tSet up job\t2026-11-23T10:32:48.9304997Z ##[error]The operation was canceled."
+        ]
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "137632528243",
+      "name": "Reject superseded runs and find lint baseline",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-23T10:32:36Z",
+      "completed_at": "2026-11-23T10:32:43Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45157016400/job/137632528243",
+      "app": "GitHub Actions",
+      "annotations_count": 0
+    },
+    {
+      "id": "137632604720",
+      "name": "Lint changed Markdown files and publish detailed evidence",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "started_at": "2026-11-23T10:32:46Z",
+      "completed_at": "2026-11-23T10:32:51Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45157016400/job/137632604720",
+      "app": "GitHub Actions",
+      "annotations_count": 2
+    }
+  ],
+  "annotations": [
+    {
+      "check_run_id": "137632604720",
+      "job_id": "137632604720",
+      "path": ".github",
+      "start_line": 1,
+      "end_line": 1,
+      "level": "failure",
+      "title": "",
+      "message": "Canceling since a higher priority waiting request for STE Lint Changed Documentation-refs/heads/gpt exists",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137632604720",
+      "job_id": "137632604720",
+      "path": ".github",
+      "start_line": 32,
+      "end_line": 32,
+      "level": "failure",
+      "title": "",
+      "message": "The operation was canceled.",
+      "raw_details": ""
+    }
+  ],
+  "artifacts": [],
+  "capture_errors": [],
+  "history_path": "history/424715662/45157016400-attempt-1-post_run"
+}
