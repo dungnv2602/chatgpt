@@ -8,9 +8,9 @@
 - **Session brief:** [Exact relative path]
 - **Date:** [YYYY-MM-DD]
 - **Opening direction authority:** [Active session brief link]
-- **Series ID / name / theme:** [Verified series details or standalone/unassigned]
-- **Membership role:** [Series seed / Continuation / Subseries / Branch / Crossover / Standalone / Provisional]
-- **Scene:** [Approved scene or task, or Not applicable]
+- **Series ID / name / theme:** [Conditional: use verified details only when the active brief adopts a series. Otherwise write standalone/unassigned]
+- **Membership role:** [Conditional: Series seed / Continuation / Subseries / Branch / Crossover / Provisional. Use Standalone when no series applies]
+- **Scene:** [Conditional: approved named scene, or Not applicable for day drawing]
 - **Operation:** [Fresh generation / Prompt-first reconstruction / Direct image edit]
 - **Record status:** [Draft / Committed / Superseded]
 - **Generation status:** [Not started / Generated / Refused / Failed / No output / Unconfirmed]
@@ -18,9 +18,9 @@
 - **Prompt ID:** [Stable prompt ID or Not assigned]
 - **Specific detail tested:** [One clear visual change or question]
 - **Continuity anchors and permitted variation:** [Details from the active brief that must remain stable, plus permitted changes]
-- **Baseline provenance:** [Exact successful prompt path and attempt, why it qualifies, or None / first attempt]
-- **Latest-attempt diagnostic reference:** [Exact later attempt inspected and its relevance, or None]
-- **Source image / reference:** [Exact asset path or supplied image ID and its role, or None]
+- **Baseline provenance:** [Conditional: exact successful prompt path and attempt, plus why it qualifies. Otherwise write None / first attempt]
+- **Latest-attempt diagnostic reference:** [Conditional: exact later attempt inspected and its relevance. Otherwise write None]
+- **Source image / reference:** [Conditional: exact asset path or supplied image ID and its role for a direct edit or adopted reference. Otherwise write None]
 
 Use `Unknown` for missing evidence and `Not applicable` when a field does not apply. Do not leave required fields blank. For a new attempt, set Record status to `Committed` and Generation status to `Not started` before the generation call.
 
@@ -58,7 +58,7 @@ Record three to five observable requirements from the active brief. Mark critica
 
 ## Per-output assessment — after generation/editing
 
-Assess every returned image separately. Do not treat one successful output as proof that all outputs succeeded.
+Assess every returned image separately. If no image was returned, write Not applicable. Do not treat one successful output as proof that all outputs succeeded.
 
 | Output ID | Acceptance criterion | Result: Pass / Partial / Fail / Not assessable | Visible evidence |
 |---|---|---|---|
