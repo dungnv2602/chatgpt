@@ -1,6 +1,6 @@
 # Task Board
 
-Last updated: 2026-11-22
+Last updated: 2026-11-23
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
@@ -37,7 +37,7 @@ _No paused tasks._
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-| 20261120-183600 | Continue the Samantha drawing session | P2 | Done | User | 2026-11-21 | [Task record](tasks/20261120-183600-continue-samantha-drawing-session.md) |
+| 20261120-183600 | Continue the Samantha drawing session | P2 | Done | User | 2026-11-23 | [Archived record](../archive/tasks/20261120-183600-continue-samantha-drawing-session.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/84addce78431c319c00c505b9999d1fec595c1a9) |
 | 20261120-175436 | Enforce automatic global task closeout and board reconciliation | P1 | Done | User | 2026-11-21 | [Archived record](../archive/tasks/20261120-175436-task-closeout-automation.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/349451ec3a6b47c76990e96df8b158a92d9e0e0b) |
 | 20261120-123000 | Continue the repository documentation audit | P1 | Done | User | 2026-11-21 | [Archived record](../archive/tasks/20261120-123000-repository-documentation-audit.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/a0e4f8fe526d9c85ea8be8093953fcb2b7d82cd8) |
 | 20261120-161600 | Expand Condensed Mode register rules and edge-case handling | P1 | Done | User | 2026-11-20 | [Archived record](../archive/tasks/20261120-161600-condensed-mode-register-edge-cases.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/6485dd3c3246128c5e43438d360950f21f4b5cc1) |
