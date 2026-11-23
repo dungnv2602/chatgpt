@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-054904
 - **Created:** 2026-11-23 05:49 UTC
-- **Updated:** 2026-11-23 15:28 UTC
+- **Updated:** 2026-11-23 15:34 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -84,6 +84,12 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 
 ## 6. Progress Log
 
+### 2026-11-23 15:34 UTC
+
+- **Action:** Restricted task generation to findings accepted from the current report-ingestion event. New findings create tasks; already-linked findings refresh their existing task; a re-opened resolved finding can create a follow-up when no active group exists.
+- **Result:** Schema migration assigns stable group IDs but does not taskify the existing 462-finding backlog. This avoids a cutover flood of tasks and avoids duplicating work already tracked by the approved hard-lint task. Regression coverage now verifies that legacy unlinked findings stay unlinked after migration and later re-observation, while a newly identified finding in the same group creates a task.
+- **References:** reports/triage/scripts/ledger.py; reports/triage/scripts/test_ledger.py; reports/triage/README.md; skills/the-worker/SKILL.md.
+- **Next:** Read back the final diff paths and allow GitHub-hosted regression validation to run naturally. Do not poll or dispatch workflows.
 ### 2026-11-23 15:28 UTC
 
 - **Action:** Completed the active-group refresh path. Existing Ledger tasks now receive later immutable report links without duplication, and new higher-severity findings promote the grouped task's priority. Escaped untrusted diagnostic Markdown and added a direct central-ledger link to the task template. Aligned the Worker triage procedure with automatic Ledger task creation.
