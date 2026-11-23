@@ -14,7 +14,7 @@ runs:
       run: |
         python3 -m py_compile reports/gh_ac_reports/scripts/report.py
         python3 -m unittest discover \
-          -s gh_ac_reports/scripts \
+          -s reports/gh_ac_reports/scripts \
           -p 'test_report.py' \
           -v
 
