@@ -663,7 +663,7 @@ def create_or_update_worker_task(root, group_id, findings, timestamp, active_tas
     active_tasks[group_id] = task
     return task_id, True, True
 
-def create_worker_tasks(root, ledger, timestamp, candidate_ids, reopened_ids):
+def create_worker_tasks(root, ledger, timestamp, candidate_ids, created_ids, reopened_ids):
     """Create or refresh tasks only for findings observed in this ingestion event."""
     active_tasks = parse_active_ledger_tasks(root)
     grouped = {}
@@ -679,7 +679,7 @@ def create_worker_tasks(root, ledger, timestamp, candidate_ids, reopened_ids):
         group_id = finding["task_group"]
         active_task = active_tasks.get(group_id)
         reopened = finding_id in reopened_ids
-        is_new = finding_id in candidate_ids["created"]
+        is_new = finding_id in created_ids
         if refs and not (active_task or reopened):
             continue
         if not refs and not (is_new or active_task or reopened):
@@ -752,7 +752,7 @@ def ingest(root, now=None):
         changed = True
     state["processed_reports"] = sorted(processed)
     task_result = create_worker_tasks(
-        root, ledger, now or utc_now(), task_candidates["created"] | task_candidates["updated"], reopened_ids
+        root, ledger, now or utc_now(), task_candidates["created"] | task_candidates["updated"], task_candidates["created"], reopened_ids
     )
     changed = changed or task_result["changed"]
     if changed:
