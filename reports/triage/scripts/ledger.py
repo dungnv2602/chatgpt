@@ -569,7 +569,7 @@ def parse_active_ledger_tasks(root):
         task_id = task_metadata(content, "ID")
         if group_id and status in TASK_ACTIVE_STATUSES and task_id:
             rows.append((status_rank.get(status, 9), group_id, {"id": task_id, "path": path, "content": content}))
-    for _rank, group_id, task in sorted(rows):
+    for _rank, group_id, task in sorted(rows, key=lambda row: (row[0], row[1], row[2]["id"])):
         result.setdefault(group_id, task)
     return result
 
