@@ -1,5 +1,7 @@
 # Current Step
 
+- **2026-11-23 — Next action:** The hand-off/manifest contract audit is complete: the processor owns the YAML and CSV formats; its 36-test hosted suite covers key validation, rollback, mapping, manifest preservation/backfill, and publication-link/hash checks, with documented non-exhaustive field coverage. Read the Worker closeout procedure, task-record template, Document Standards authoring gate, and archive policy before preparing a final record. Preserve the archive boundary: create any archive copy once, read it back, then remove the active record and update the board only after verification.
+
 - **2026-11-23 — Next action:** The task record and board still contain stale “hosted validation pending” statements despite the green run. Before closeout, reconcile those records and finish the bounded hand-off/manifest contract check: compare the processor’s authoritative field definitions and regression coverage with the catalog, then record any remaining limitation. No archive or unrelated workflow changes.
 
 - **2026-11-23 — Hosted validation result:** Follow-up run `45098008709` completed successfully. Job `validate-document-standards` passed; all 13 regression tests passed; catalog validation passed with 34 document types and 76 exact references. The hosted job log was inspected. **Next:** review the active task record and task board for remaining acceptance criteria and closeout steps; do not mark Done until each is verified.
