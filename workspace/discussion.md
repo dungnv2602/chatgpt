@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 — Verify mode-independent Worker rules and report assets.** Read back all changed skills, workspace records, catalog entries, generator code, tests, and new assets. Confirm that both modes require the same repository workflow and discussion-register updates. Confirm that the changed-report generator consumes its canonical Markdown template and JSON Schema. Record exact verification limits.
+- **2026-11-23 — Close out the verified task.** Prepare the final task record, check its exact archive destination, create and read back the immutable archive copy, register its retention timestamp, then remove the active record and reconcile the task board. Preserve the CI and branch-head verification limits.
 
 ## Open Discussions
 
