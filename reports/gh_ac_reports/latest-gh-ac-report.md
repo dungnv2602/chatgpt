@@ -14,30 +14,30 @@
 | Event | push |
 | Actor | dungnv2602 |
 | Created (UTC) | 2026-11-23T07:57:03Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | failure |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T07:58:07Z |
+| Status at capture | completed |
+| Observed conclusion | failure |
+| Projected conclusion | Not calculated |
+| Reporter job | completed / success |
+| Capture stage | post_run |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-23T08:10:48Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
+| State | failure |
 | Primary category | validation_or_test |
 | Jobs | 2 |
 | Steps | 18 |
 | Issues | 1 |
 | Annotations | 3 |
 | Artifacts | 0 |
-| Capture errors | 2 |
+| Capture errors | 0 |
 
 ## Failure classification
 
-validation_or_test The parent run is still in progress. The projected conclusion is provisional.
+validation_or_test
 
 ## Jobs and steps
 
@@ -50,7 +50,7 @@ validation_or_test The parent run is still in progress. The projected conclusion
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 137558505975 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | Step conclusion: failure |
+| validation_or_test | 137558505975 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | 2026-11-23T07:57:33.8836082Z ^[[36;1m  echo "::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md."^[[0m |
 
 ## Check annotations
 
@@ -68,17 +68,12 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137558456008 | Reject superseded runs and find lint baseline | logs/job-137558456008.log | 82 | False |  |
-| 137558505975 | Lint changed Markdown files and publish detailed evidence | logs/job-137558505975.log | 82 | False |  |
+| 137558456008 | Reject superseded runs and find lint baseline | logs/job-137558456008.log | 12716 | False |  |
+| 137558505975 | Lint changed Markdown files and publish detailed evidence | logs/job-137558505975.log | 63066 | False | Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-23T07:57:21.9327338Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-23T07:57:21.9334008Z ^[[36;1mecho "failed=$failed" &gt;&gt; "$GITHUB_OUTPUT"^[[0m, Lint changed Markdown files and publish detailed evidence	Run full technical-document lint	2026-11-23T07:57:27.8608177Z ^[[36;1m    failed=1^[[0m, Lint changed Markdown files and publish detailed evidence	Run full technical-document lint	2026-11-23T07:57:27.8608841Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Run full technical-document lint	2026-11-23T07:57:27.8609503Z ^[[36;1mecho "failed=$failed" &gt;&gt; "$GITHUB_OUTPUT"^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-23T07:57:31.8405015Z ^[[36;1m        "status": "Passed" if exit_code == 0 else "Failed",^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-23T07:57:31.8411192Z ^[[36;1m        "status": "Passed" if exit_code == 0 else "Failed",^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-23T07:57:31.8414662Z ^[[36;1mif [[ "$TOOLING_FAILED" == "1" \|\| "$FULL_FAILED" == "1" \|\| "$CHANGED_FAILED" == "1" ]]; then status="Failed"; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-23T07:57:31.8415148Z ^[[36;1mif [[ "$ANCHOR_OUTCOME" != "skipped" && "$ANCHOR_EXIT" != "0" ]]; then status="Failed"; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T07:57:33.8836082Z ^[[36;1m  echo "::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md."^[[0m, Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T07:57:33.8912608Z ##[error]Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md., Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-23T07:57:33.8919878Z ##[error]Process completed with exit code 1. |
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | run 45134814096 is still in progress; logs will be available when it is complete  |
-| job_log | Not recorded | run 45134814096 is still in progress; logs will be available when it is complete  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 
