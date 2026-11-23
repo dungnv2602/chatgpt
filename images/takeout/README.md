@@ -16,6 +16,17 @@ Images may belong to a novel, a drawing session, a visual-reference collection, 
 - The pipeline accepts static PNG, JPG, and JPEG files.
 - The pipeline rejects APNG, GIF, WebP, HEIC, AVIF, TIFF, BMP, and other formats. It does not flatten animated images.
 
+### Unclassified images
+
+An image may remain unclassified when its pixels or source mapping cannot be verified. Keep the original PNG in the intake folder. Do not invent its title, source, attempt, prompt, asset ID, destination, or project membership.
+
+If the user requests a WebP derivative, use the separate [conversion-only workflow](../../.github/workflows/convert-unclassified-takeout.yml). Add only the exact source filenames to its allowlist. Convert supported static images into `images/takeout/webp/[batch-id]/attempt-NNN/`. Append `.webp` to the complete source filename. Reject existing targets and use a new attempt directory for retries.
+
+Verify the WebP RIFF signature and length. Hash each PNG before and after conversion. Require the source hash to remain unchanged. Preserve the original PNG in intake. Commit only the verified WebP derivatives.
+
+This path does not use the normal hand-off processor. It does not relocate files or edit `HANDOFF.yml`, manifests, attempt records, daily indexes, or other indexes. The files remain unclassified. The user performs any later relocation. Edit an index only when the user explicitly requests it and supplies or confirms the exact mapping details.
+
+
 ## Hand-off format
 
 The assistant inspects each image. It then determines the title and destination from the project context.
@@ -119,7 +130,7 @@ This naming rule preserves the source extension. It also prevents collisions bet
 
 The [WebP workflow](../../.github/workflows/convert-images-to-webp.yml) runs when intake files or the hand-off change. You can also start it manually on branch `gpt`.
 
-The workflow validates every conversation-integrity record and its source mapping before conversion. It also checks drawing output identity against the referenced attempt note. A missing, malformed, or mismatched record fails the batch before any WebP is staged or any original is moved. The processor then converts each image into the attempt-specific staging folder.
+The normal workflow validates every conversation-integrity record and its source mapping before conversion. It also checks drawing output identity against the referenced attempt note. A missing, malformed, or mismatched record fails the batch before any WebP is staged or any original is moved. The processor then converts each image into the attempt-specific staging folder. This gate applies to normal hand-off processing. Use the separate conversion-only path above for unclassified images. That path creates WebP derivatives only and never relocates files.
 
 The CSV records each staging path and final path.
 
