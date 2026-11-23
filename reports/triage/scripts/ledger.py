@@ -151,8 +151,8 @@ def migrate_ledger(ledger, root):
     state = ledger["ingestion_state"]
     state.setdefault("bootstrap_at_utc", utc_now())
     state.setdefault("processed_reports", [])
-    if not isinstance(state["processed_reports"], list):
-        raise LedgerError("ingestion_state.processed_reports must be an array")
+    if not isinstance(state["processed_reports"], list) or not all(isinstance(item, str) for item in state["processed_reports"]):
+        raise LedgerError("ingestion_state.processed_reports must be an array of paths")
     state["processed_reports"] = sorted(set(state["processed_reports"]))
     return ledger
 
