@@ -142,7 +142,7 @@ jobs:
           set -euo pipefail
           bash -n skills/asd-ste100/scripts/ste-lint-repository.sh
           python3 -m py_compile skills/asd-ste100/scripts/generate_lint_report.py
-          python3 -m unittest skills/asd-ste100/scripts/test_generate_lint_report.py
+          python3 skills/asd-ste100/scripts/test_generate_lint_report.py
           mkdir -p .lint-report-records lint_reports/on_changed/history
 
       - name: Check active Markdown file links and heading anchors
