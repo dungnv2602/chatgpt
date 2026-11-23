@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2.0",
-  "updated_at_utc": "2026-11-23T13:21:21Z",
+  "updated_at_utc": "2026-11-23T13:21:45Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T08:15:48Z",
     "processed_reports": [
@@ -843,6 +843,7 @@
       "reports/gh_ac_reports/history/427313089/45182578683-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/427313089/45182710700-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45182710700-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/427313089/45182961508-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45182961508-attempt-1-pre_finalizer/report.json",
       "reports/lint_reports/on_changed/history/45127227672-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45128128389-attempt-1/report.json",
@@ -90681,8 +90682,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-23T12:39:48Z",
-      "last_seen_utc": "2026-11-23T13:20:52Z",
-      "occurrence_count": 17,
+      "last_seen_utc": "2026-11-23T13:21:44Z",
+      "occurrence_count": 18,
       "evidence": [
         {
           "report_path": "reports/gh_ac_reports/history/427313089/45176147166-attempt-1-post_run/report.json",
@@ -90802,6 +90803,13 @@
           "observed_at_utc": "2026-11-23T13:20:52Z",
           "note": "validate-document-standards / Run catalog validator regression tests",
           "observation_id": "github_actions:427313089:45182710700:1"
+        },
+        {
+          "report_path": "reports/gh_ac_reports/history/427313089/45182961508-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45182961508",
+          "observed_at_utc": "2026-11-23T13:21:44Z",
+          "note": "validate-document-standards / Run catalog validator regression tests",
+          "observation_id": "github_actions:427313089:45182961508:1"
         }
       ],
       "resolution": null,
