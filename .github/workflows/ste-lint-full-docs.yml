@@ -237,6 +237,68 @@ jobs:
           git commit -m "Update latest repository-wide lint report"
           git push origin "HEAD:gpt"
 
+      - name: Publish immutable repository-wide evidence history
+        if: always() && steps.audit.outcome != 'skipped'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          scope="lint_reports/on_repo"
+          history="$scope/history/$GITHUB_RUN_ID"
+          mkdir -p "$history"
+          cp lint_reports/latest-lint-report.md "$history/report.md"
+          python3 - "$history/report.json" <<'PY'
+          import json, os, sys
+          from datetime import datetime, timezone
+          report_path = "lint_reports/latest-lint-report.md"
+          with open(report_path, encoding="utf-8") as stream:
+              markdown = stream.read()
+          data = {
+              "schema_version": "1.0.0",
+              "scope": "on_repo",
+              "run_id": os.environ["GITHUB_RUN_ID"],
+              "run_number": int(os.environ["GITHUB_RUN_NUMBER"]),
+              "run_url": os.environ["GITHUB_SERVER_URL"] + "/" + os.environ["GITHUB_REPOSITORY"] + "/actions/runs/" + os.environ["GITHUB_RUN_ID"],
+              "attempt": int(os.environ["GITHUB_RUN_ATTEMPT"]),
+              "branch": os.environ["GITHUB_REF_NAME"],
+              "commit_sha": os.environ["GITHUB_SHA"],
+              "event": os.environ["GITHUB_EVENT_NAME"],
+              "status": "Failed" if os.environ.get("AUDIT_FAILED") == "1" else "Passed",
+              "execution_mode": "repository-wide",
+              "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+              "report_markdown": markdown
+          }
+          with open(sys.argv[1], "w", encoding="utf-8") as stream:
+              json.dump(data, stream, ensure_ascii=False, indent=2)
+              stream.write("\\n")
+          PY
+          cp "$history/report.md" "$scope/latest-lint-report.md"
+          cp "$history/report.json" "$scope/latest-lint-report.json"
+          python3 - "$scope/index.json" "$history/report.json" <<'PY'
+          import json, sys
+          try:
+              with open(sys.argv[1], encoding="utf-8") as stream:
+                  index = json.load(stream)
+          except FileNotFoundError:
+              index = {"schema_version": "1.0.0", "runs": []}
+          with open(sys.argv[2], encoding="utf-8") as stream:
+              report = json.load(stream)
+          index["runs"] = [row for row in index["runs"] if row.get("run_id") != report["run_id"]]
+          index["runs"].append({key: report[key] for key in ("run_id", "run_number", "run_url", "commit_sha", "generated_at_utc", "status")})
+          index["runs"].sort(key=lambda row: (row["generated_at_utc"], row["run_id"]))
+          with open(sys.argv[1], "w", encoding="utf-8") as stream:
+              json.dump(index, stream, ensure_ascii=False, indent=2)
+              stream.write("\\n")
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$scope"
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish repository-wide lint evidence history"
+            git push origin "HEAD:gpt"
+          fi
+
       - name: Set workflow result from audit findings
         if: always() && steps.audit.outcome != 'skipped'
         shell: bash
