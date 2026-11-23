@@ -20,7 +20,7 @@ Use the canonical template at `../assets/conversation-integrity-template.md`. Pr
 
 The summary is a practical handoff for a future chat.
 
-Start from the canonical template at `../assets/session-summary-template.md`. Separate confirmed facts from hypotheses. Do not repeat unsupported explanations as facts. Link only to files under `approved project directories`.
+Start from the canonical template at `../assets/session-summary-template.md`. Separate verified facts from hypotheses. Do not repeat unsupported explanations as facts. Link only to files under `approved project directories`.
 
 Include:
 - The session's purpose.
@@ -30,7 +30,7 @@ Include:
 - Verified paths within `approved project directories` and the branch information when useful.
 - The next concrete task, in priority order.
 
-Separate confirmed facts from hypotheses. Do not repeat unsupported explanations as facts. Link only to files under `approved project directories`.
+Separate verified facts from hypotheses. Do not repeat unsupported explanations as facts. Link only to files under `approved project directories`.
 
 ## 6. File 3: Image prompts
 
@@ -259,7 +259,7 @@ Each such attempt must record:
   was actually performed and source linkage verified.
 - The output's comparison against the successful baseline and requested change.
 
-If the successful baseline prompt cannot be recovered, disclose the missing source. Do not fabricate prompt text. Use direct source-image editing only when explicitly requested. Also use it when reconstruction is materially inadequate and you can attach the exact source image through a supported mechanism. Verify source linkage before calling it a confirmed edit.
+If the successful baseline prompt cannot be recovered, disclose the missing source. Do not fabricate prompt text. Use direct source-image editing only when explicitly requested. Also use it when reconstruction is materially inadequate and you can attach the exact source image through a supported mechanism. Verify source linkage before classifying the operation as a direct edit.
 
 - Deliver generated images in the conversation.
 - Store new retained non-novels/day drawing outputs in `drawings/YYYY-MM-DD/images/` using `attempt-XX.webp` (multiple outputs: `attempt-XX-01.webp`, etc.). Link exact verified assets from the attempt note and daily README. Existing image assets are not migrated. Non-novel reference/source images remain under `images/`. Novel-scene illustration binaries remain in the novel's central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library. New uploads for permanent reference/novel destinations enter through `images/takeout/` and its hand-off.
