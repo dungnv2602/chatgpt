@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#172](https://github.com/dungnv2602/chatgpt/actions/runs/45127673915)
-- **Run ID / attempt:** 45127673915 / 1
+- **Run:** [#174](https://github.com/dungnv2602/chatgpt/actions/runs/45128445227)
+- **Run ID / attempt:** 45128445227 / 1
 - **Workflow:** STE Lint Full Technical Documentation
-- **Branch / commit:** gpt / c5b01a3464044a1e9e87bb22adde39b9529f688e
+- **Branch / commit:** gpt / cba473b33ce3dd108aa99526951432190cf1c828
 - **Event:** push
 - **Execution mode:** repository-wide
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 13b2a180d525d59d9f1a4330709d4e6b21c60e4b
-- **Generated (UTC):** 2026-11-23T07:03:22.104786+00:00
+- **Linter source SHA:** 7b017f791a3b2a9ee032bc7be629b64599a04057
+- **Generated (UTC):** 2026-11-23T07:05:13.769524+00:00
 
 ## 1. Executive summary
 
@@ -22,16 +22,16 @@
 | Total findings | 474 |
 | Hard findings | 155 |
 | Advisory findings | 319 |
-| New findings | 3 |
-| Recurring findings | 471 |
-| Resolved findings | 7 |
+| New findings | 0 |
+| Recurring findings | 474 |
+| Resolved findings | 0 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
 
 - Runner OS: Linux
 - Python: 3.15.2
-- Platform: Linux-7.0.0-1020-azure-x86_64-with-glibc2.43
+- Platform: Linux-7.0.0-1016-aws-x86_64-with-glibc2.43
 - The JSON report records the full runtime version and every original per-file linter response.
 - The report records the commit that supplied the linter and generator code.
 
@@ -190,7 +190,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.321s
+Ran 4 tests in 0.237s
 
 OK
 ~~~
@@ -223,7 +223,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 232 active Markdown files (296 available as link targets) and 336 local Markdown links.
+Scanned 235 active Markdown files (299 available as link targets) and 336 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -233,18 +233,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **semicolon** · skills/INITIALIZATION_POLICY.md:132:288 · **new** · fingerprint: b28796101e8a0d8165b3d79b
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **synonym-rotation** · skills/the-worker/SKILL.md:274:142 · **new** · fingerprint: 029ca4bbb45df78403a58c6a
-  - **Level:** advisory-free
-  - **Message:** 'fix' and 'repair' name the same action. Pick one and use it every time.
-  - **Matched text:** fix
-- **long-sentence** · skills/session-archiving/SKILL.md:15:1 · **new** · fingerprint: 9e6fa03cf250971e670d6803
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
+None.
 
 ### Recurring findings
 
@@ -1584,6 +1573,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been retrieved
+- **semicolon** · skills/INITIALIZATION_POLICY.md:132:288 · **recurring** · fingerprint: b28796101e8a0d8165b3d79b
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 - **long-sentence** · skills/drawing/assets/daily-index-template.md:5:1 · **recurring** · fingerprint: f7683dcec815fe504f98befb
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
@@ -1724,6 +1717,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
   - **Matched text:** Remove
+- **synonym-rotation** · skills/the-worker/SKILL.md:274:142 · **recurring** · fingerprint: 029ca4bbb45df78403a58c6a
+  - **Level:** advisory-free
+  - **Message:** 'fix' and 'repair' name the same action. Pick one and use it every time.
+  - **Matched text:** fix
 - **semicolon** · skills/the-worker/SKILL.md:274:237 · **recurring** · fingerprint: 3e9dae68ac0dc79de8ae5c41
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
@@ -2080,6 +2077,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is defined
+- **long-sentence** · skills/session-archiving/SKILL.md:15:1 · **recurring** · fingerprint: 9e6fa03cf250971e670d6803
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
 - **long-sentence** · skills/session-archiving/SKILL.md:19:1 · **recurring** · fingerprint: 4a07020ba7d52cf7f45d6a4a
   - **Level:** advisory-free
   - **Message:** Sentence has 31 words (cap 25). Split it.
@@ -2135,34 +2136,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### Resolved findings
 
-- **passive-voice** · gh_ac_reports/README.md:25:17 · **resolved** · fingerprint: 5c620275a7c7effe61f0afc1
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is captured
-- **passive-voice** · gh_ac_reports/README.md:26:12 · **resolved** · fingerprint: 5c620275a7c7effe61f0afc1
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is captured
-- **passive-voice** · gh_ac_reports/README.md:41:33 · **resolved** · fingerprint: 463716732058c023799484ce
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is used
-- **passive-voice** · gh_ac_reports/README.md:50:213 · **resolved** · fingerprint: 95dd42a5111c0ba4483be425
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is classified
-- **passive-voice** · gh_ac_reports/README.md:52:207 · **resolved** · fingerprint: b3faf330d48cd8c34a6a594f
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are committed
-- **passive-voice** · gh_ac_reports/README.md:58:234 · **resolved** · fingerprint: 701eb82303623fc17158e399
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is discovered
-- **passive-voice** · gh_ac_reports/README.md:60:21 · **resolved** · fingerprint: e099211464225619f8b178a5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is added
+None.
 
 ## 8. Complete per-file diagnostics
 
@@ -4214,7 +4188,7 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been retrieved
 
-- **semicolon** · skills/INITIALIZATION_POLICY.md:132:288 · **new** · fingerprint: b28796101e8a0d8165b3d79b
+- **semicolon** · skills/INITIALIZATION_POLICY.md:132:288 · **recurring** · fingerprint: b28796101e8a0d8165b3d79b
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -4511,7 +4485,7 @@ No STE findings were recorded for this file.
   - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
   - **Matched text:** Remove
 
-- **synonym-rotation** · skills/the-worker/SKILL.md:274:142 · **new** · fingerprint: 029ca4bbb45df78403a58c6a
+- **synonym-rotation** · skills/the-worker/SKILL.md:274:142 · **recurring** · fingerprint: 029ca4bbb45df78403a58c6a
   - **Level:** advisory-free
   - **Message:** 'fix' and 'repair' name the same action. Pick one and use it every time.
   - **Matched text:** fix
@@ -5026,7 +5000,7 @@ No STE findings were recorded for this file.
 
 #### Complete diagnostics
 
-- **long-sentence** · skills/session-archiving/SKILL.md:15:1 · **new** · fingerprint: 9e6fa03cf250971e670d6803
+- **long-sentence** · skills/session-archiving/SKILL.md:15:1 · **recurring** · fingerprint: 9e6fa03cf250971e670d6803
   - **Level:** advisory-free
   - **Message:** Sentence has 27 words (cap 25). Split it.
   - **Matched text:** 27 words
