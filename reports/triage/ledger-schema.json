@@ -196,7 +196,12 @@
                 ]
               }
             },
-            "additionalProperties": false
+            "additionalProperties": false,
+            "required": [
+              "fix_commit",
+              "resolved_at_utc",
+              "validation"
+            ]
           },
           "resolution_history": {
             "type": "array",
@@ -279,7 +284,12 @@
                 ]
               }
             },
-            "additionalProperties": false
+            "additionalProperties": false,
+            "required": [
+              "rationale",
+              "accepted_by",
+              "accepted_at_utc"
+            ]
           }
         },
         "additionalProperties": false
