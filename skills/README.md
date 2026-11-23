@@ -21,7 +21,7 @@ The Worker's mandatory [Conversation Mode reference](the-worker/references/conve
 Load specialist skills in dependency order. Do not load them during ordinary foundational initialization unless the user's task requires the next tier.
 
 1. **Foundational:** The Worker (including its mandatory Conversation Mode reference), ASD-STE100, and GitHub Actions.
-2. **Drawing:** Session Archiving, the Drawing skill, and its required references. Activate only after foundational initialization passes. Load Session Archiving only for the drawing and archive procedures that need it.
+2. **Drawing:** The Worker's archive/media references, the Drawing skill, and its required references. Activate only after foundational initialization passes. Load only the Worker references required by the drawing or archive procedure.
 3. **Novelist:** Romantic Storyteller and active novel records. Activate only for the novelist role.
 
 Use the per-conversation verified-load ledger in [SESSION_START.md](SESSION_START.md). A file that was successfully retrieved and read earlier in the same conversation must be reused, not loaded again.
@@ -38,7 +38,6 @@ Load these skills only when the request or an explicit role-initiation procedure
 |---|---|
 | [philosophy-religion-asceticism](philosophy-religion-asceticism/SKILL.md) | Philosophy, religion, theology, asceticism, or contemplative-tradition research |
 | [prompt-master](prompt-master/SKILL.md) | Prompt analysis, design, adaptation, or optimization |
-| [session-archiving](session-archiving/SKILL.md) | Conversation archives, drawing-session closeout, image provenance, and media workflows |
 | [agent-skill-authoring](agent-skill-authoring/SKILL.md) | Creating, revising, checking, or integrating Agent Skills definitions |
 | [romantic-storyteller-visual-artist](romantic-storyteller-visual-artist/SKILL.md) | Romantic narrative or visual storytelling. The Drawing skill is a prerequisite for novelist-role initialization and governs visual work. |
 | [document-standards](document-standards/SKILL.md) | Template-first document authoring, canonical formats, structural validation, and migration |
