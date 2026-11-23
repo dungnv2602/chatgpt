@@ -1,49 +1,16 @@
 ---
 name: session-archiving
-description: Preserve conversation integrity, manage project archives and image provenance, and verify session records and closeout. Use when archiving conversations, handling project session records, maintaining image-generation provenance, or closing a drawing session.
+description: Manage conversation archives, drawing-session closeout, image provenance, and media records. Use when archiving a conversation, creating session records, closing a drawing session, or handling image provenance and WebP delivery.
 metadata:
-  project-role: foundational
+  project-role: task-specific
   format: agentskills
 ---
 
 # Session Archiving
 
-## 1. Absolute workspace boundary
+## 1. Workspace boundary
 
-**Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `drawings/`, `skills/`, `workspace/`, `archive/`, and `reports/`. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific path exceptions below.
-
-**Authorized archive-retention index exception:**
-
-The user authorized exact read/write access to `.github/archive-retention-index.json` to register each archived task or resolved report file's exact path and individual UTC archive timestamp. Do not list or scan `archive/tasks/` or `archive/reports/` to backfill this index.
-
-**Authorized WebP workflow exception:** The user authorized creation of `.github/workflows/convert-images-to-webp.yml` on 12 November 2026. The user approved its takeout-pipeline and persistent staging changes on 20 November 2026. The user also approved moving its scripts into this skill and updating the required workflow paths. These permissions do not authorize unrelated workflow changes.
-
-**Authorized GitHub Actions diagnostics scope:**
-
-On 23 November 2026, the user explicitly authorized creation of `reports/gh_ac_reports/`. The user also authorized changes to the six existing workflow files and `.github/workflows/gh-actions-diagnostics.yml` for reusable diagnostics and task-scoped CI policy. This authorization applies to branch `gpt` only. It does not authorize changes to `main`, other `.github/` paths, or unrelated workflows.
-
-This boundary applies to every future task and every tool call, not only archiving.
-
-- The only permitted workspace roots are:
-  - `images/` — images and visual references
-  - `master/` — canonical master reference documents
-  - `novels/` — structured narrative records
-  - `drawings/` — session records and prompt history
-  - `skills/` — reusable skills and supporting references
-  - `workspace/` — active task board and task records
-  - `archive/` — time-limited archive of task records and resolved report files
-  - `reports/` — lint reports, GitHub Actions diagnostics, and the central triage ledger
-  - `.github/workflows/` — only workflow files in the explicitly authorized diagnostics and shared archive-retention scope or another user-authorized workflow change
-  - `.github/scripts/cleanup-archive.py` and `.github/scripts/test_cleanup_archive.py` — shared 90-day exact-file archive retention and its regression tests
-  - `.github/archive-retention-index.json` — exact task/report archive file paths and individual UTC timestamps
-- Read and write files only by exact paths beginning with one of those approved directory names.
-- Do not recreate the obsolete `ChatGPT/` wrapper or consult former paths from the previous repository layout.
-- Do not use repository-wide code search or recursive root-tree listings unless the user explicitly requests a full-repository audit. That request authorizes read-only tree inventory and exact-path retrieval within the stated scope, including archive contents only when the request expressly includes them. It does not authorize writes or override archive immutability. Use exact paths for all writes.
-- Do not follow Markdown links outside the approved directories. If an essential reference is outside them and is not supplied in this conversation, explain the limitation. Ask the user to place it in an approved directory or provide it in chat.
-- A request to use an outside reference does not silently change this boundary. Ask for explicit permission before accessing an outside repository path.
-- Repository and branch identifiers may be used to direct GitHub operations, but this does not authorize reading or writing files outside the approved directories.
-
-**If a task cannot be completed without accessing something outside the approved project directories, stop and explain the limitation rather than crossing the boundary.**
+Follow the approved repository paths, branch limits, and access exceptions in [The Worker](../the-worker/SKILL.md). This skill does not grant additional repository access. Its archive and media procedures must remain inside that boundary.
 
 ## 2. Workspace layout and repository conventions
 
@@ -65,56 +32,16 @@ This boundary applies to every future task and every tool call, not only archivi
 - Store new retained non-novel drawing outputs under `drawings/YYYY-MM-DD/images/`. Use `attempt-XX.webp` for one output. Use `attempt-XX-01.webp`, `attempt-XX-02.webp`, and so on for multiple outputs. Link verified assets from the attempt record and daily README. This rule does not authorize migration of existing assets. Store non-novel reference assets under `images/`. Store novel-scene illustration files under `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Route new uploads through `images/takeout/` and the approved hand-off.
 - Keep skills and supporting references under `skills/`.
 
-### Conversation behavior
+### Activation
 
-During foundational initialization, read the [Conversation Mode skill](../conversation-mode/SKILL.md) after this skill. Read it from branch `gpt` before project work starts. Apply its mode selection and response rules throughout the conversation. Session Archiving governs archival work. Conversation Mode governs collaboration.
+Load this skill only when the task requires conversation archival, archive-record creation, drawing-session closeout, image provenance, WebP delivery, or the image-processing scripts.
 
-### Foundational skill loading cadence
+Do not load this skill during ordinary foundational initialization. The session-start cue and foundational loading sequence belong to `skills/SESSION_START.md`. The Worker owns collaboration modes, the shared discussion register, and task continuity.
 
-Load Session Archiving, Conversation Mode, The Worker, Agent Skill Authoring, ASD-STE100, and GitHub Actions for `start session`. Also load this tier before a drawing session or novelist initialization when foundational initialization has not passed in this conversation. See `skills/SESSION_START.md` for the complete dependency order.
-
-Maintain a per-conversation verified-load ledger. Retrieve and read each required path once, then reuse it for later tiers and tasks. Do not reload a skill or reference merely because a specialist workflow depends on it.
-
-Mark a path verified only after retrieval and reading succeed. A new ChatGPT conversation creates a new ledger. Do not use remembered content or a prior conversation's reads as current verification.
-
-Refresh only the affected file. Do this when the user asks, a relevant repository change is known or suspected, or an unresolved instruction requires the current authoritative file. Do not reload unrelated skills or a complete tier.
-
-This cadence does not delete the requirement to load a task-specific skill when needed or to read relevant project records before that task.
-
-### First-response execution rule
-
-The first response after `start session` must record a startup notice in `workspace/discussion.md`. Do not ask for the user's goal, confirmation, or extra permission.
-
-Commit and read back the notice before retrieval. In Default Mode, also give a brief chat notice and link the register. In Condensed Mode, provide only the direct register link.
-
-Then perform the required retrievals. Do not ask the user to repeat the cue. Do not claim a retrieval is underway unless you are performing it.
-
-The startup gate defines prerequisites. It is not a session archive. Do not create dated archive records merely because a new conversation started. Stop project work only when a required file retrieval fails. Report the exact missing path.
-
-### Mandatory session-start execution gate
-
-When the user says **`start session`**, run this sequence before project work. Also run it as a prerequisite when the user says **`start a drawing session`** or **`Be the novelist`** and foundational initialization has not passed in the current conversation:
-
-1. **Notify the user first.** Record the startup notice in `workspace/discussion.md`. Commit and read back the notice before retrieval. In Default Mode, also state in chat that foundational retrievals are starting and link the register. In Condensed Mode, provide only the direct register link.
-2. Retrieve and read this Session Archiving skill from branch `gpt`.
-3. Retrieve and read `skills/conversation-mode/SKILL.md` from the same branch.
-4. Retrieve and read `skills/the-worker/SKILL.md` from the same branch.
-5. Retrieve and read `skills/agent-skill-authoring/SKILL.md` from the same branch.
-6. Retrieve and read `skills/asd-ste100/SKILL.md` from the same branch.
-7. Retrieve and read `skills/github-actions/SKILL.md` from the same branch.
-8. Verify that every required retrieval succeeded and that you read each file. Keep the verified instructions for the rest of the conversation.
-9. Do not run a CI snapshot or repair an unrelated workflow failure during initialization. CI review is task-scoped under `skills/github-actions/SKILL.md`.
-10. Stop initialization only if a required skill retrieval fails. A failed, cancelled, pending, absent, or unavailable CI run does not block initialization unless the current task directly depends on that result. Never claim an unverified result passed.
-
-Do not load the Drawing skill or its references during foundational initialization. After the foundational gate passes, load Drawing only when the task requires it. For a drawing session or novelist request, first verify the verified-load ledger. Reuse any Drawing files already read in this conversation and retrieve only missing files. If foundational initialization already passed, do not run this gate again.
-
-**No premature-work exception after activation:** After the user invokes an initialization cue, retrieve every required file before project work. Do not add an unrelated CI repair step. Do not wait for pending, cancelled, or unavailable CI results. Do not substitute memory, previous-session reads, Library copies, or readiness claims for fresh GitHub retrievals.
-
-**Notification and disconnection limitation:** Deliver the startup notice in the active conversation before retrieval starts. Do not promise to continue the process after a voice call ends or claim an independent callback/notification will occur. Complete the retrieval and read-back in the active conversation, then report the result.
-
-This gate does not guarantee future execution. Verify compliance through retrieval and read-back in each new conversation.
 - Do not create parallel prompt folders. `drawings/` is the single canonical prompt location.
 - Do not overwrite pre-existing files without retrieving the exact path first and preserving their contents.
+
+## Supporting references
 
 ## Supporting references
 

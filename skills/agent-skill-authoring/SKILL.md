@@ -2,7 +2,7 @@
 name: agent-skill-authoring
 description: Create, revise, check, organize, and integrate Agent Skills-compatible skill folders. Use when you add or update a skill, edit its metadata or references, check it, or choose its initialization tier.
 metadata:
-  project-role: foundational
+  project-role: task-specific
   format: agentskills
   specification: https://agentskills.io/specification
 ---
@@ -154,17 +154,19 @@ To make a skill foundational:
 
 1. Ask for explicit user direction when the classification is not already clear from the request.
 2. Add the skill to the canonical foundational initialization sequence in `skills/SESSION_START.md`.
-3. Add it to the mandatory execution gate in `skills/session-archiving/SKILL.md`, if that gate defines the files required for foundational initialization.
+3. Add it to the mandatory foundational loading sequence in `skills/SESSION_START.md` only when the skill is required before ordinary project work.
 4. Record the foundational dependency in `skills/INITIALIZATION_POLICY.md` when it changes the initialization contract.
 5. Keep its activation conditional on the project's explicit initialization cues. Do not introduce automatic loading at the beginning of every conversation unless the user explicitly requests that policy.
 6. Define whether the skill is loaded once per conversation, refreshed only when changed, or consulted on demand. Avoid redundant retrievals.
 7. Check that the new dependency does not activate a specialist role or load unrelated task-specific materials.
 
-This skill is foundational because its rules govern the creation and maintenance of all other skills. It is loaded as part of foundational initialization and is also the relevant on-demand skill for skill-authoring work.
+This skill is task-specific. Load it when you create, revise, check, reorganize, or integrate a skill. Do not load it during ordinary foundational initialization. The Worker owns the baseline session and collaboration rules.
 
 ### Task-specific skill
 
 A task-specific skill is loaded when a request matches its description or when a relevant initiation procedure explicitly requires it. Do not add task-specific skills to universal startup merely to make them discoverable.
+
+Agent Skill Authoring is task-specific. It applies to skill creation and maintenance. The Agent Skills format does not make the authoring skill a prerequisite for unrelated project work.
 
 ### Activation is not initialization
 
@@ -246,7 +248,6 @@ Before considering a skill complete, check all of the following:
 - [ ] Use the applicable ASD-STE100 mode for skill and technical documentation.
 - [ ] Sentence length, paragraph structure, and punctuation follow the repository writing policy.
 - [ ] Every rewrite preserves facts, conditions, scope, and modality.
-- [ ] Complete the one-time CI snapshot before work and after cue-triggered skill loading.
 - [ ] Do not wait for CI, poll for results, or run lint and CI workflows locally.
 
 ### Integration and integrity
@@ -271,7 +272,7 @@ For this project:
 - Do not change `main` or unrelated files.
 - After each important write, fetch the same path and check the expected content.
 - Follow the task-scoped CI policy in `../github-actions/SKILL.md` when skill changes affect CI or the user requests CI diagnosis.
-- Follow the repository execution efficiency workflow in `../conversation-mode/SKILL.md`. Batch related edits, avoid redundant tool calls, and preserve exact commit-to-check attribution.
+- Follow the repository execution efficiency workflow in `../the-worker/references/conversation-mode.md`. Batch related edits, avoid redundant tool calls, and preserve exact commit-to-check attribution.
 - Do not report a commit or verification as successful unless the tool result and read-back support that statement.
 
 ## 11. Completion standard

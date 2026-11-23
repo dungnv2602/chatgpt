@@ -1,6 +1,6 @@
 ---
 name: the-worker
-description: Manage project tasks across conversations and conversation modes. Use when capturing requests, prioritizing work, recording progress, recovering tasks, handing off work, or archiving completed tasks.
+description: Manage project tasks, session continuity, and collaboration modes. Use during foundational initialization and for task capture, prioritization, progress, recovery, handoffs, and task archival.
 metadata:
   project-role: foundational
   format: agentskills
@@ -12,9 +12,11 @@ metadata:
 
 The Worker maintains task continuity across conversations. It applies in every conversation mode.
 
-The Worker owns task capture, task selection, progress records, handoffs, recovery, and task archival.
+The Worker owns task capture, task selection, session continuity, collaboration modes, the shared discussion register, progress records, handoffs, recovery, and task archival.
 
-Conversation Mode controls chat verbosity and the discussion-register format. It maintains the register in every mode. The Worker controls task operations.
+The mandatory [Conversation Mode reference](references/conversation-mode.md) is part of The Worker. Load it during foundational initialization. It is not a separate foundational skill.
+
+Session Archiving, Agent Skill Authoring, and Document Standards remain on-demand skills. Their specialist procedures do not load during ordinary foundational initialization.
 
 ## CI review is task-scoped
 
@@ -37,6 +39,7 @@ Never wait for or poll CI. Never run the linter, repository scripts, or CI tests
 ## Activation and authority
 
 - Load this skill during foundational initialization.
+- Load `references/conversation-mode.md` with this skill before project work.
 - Use it for repository project work in Default Mode and Condensed Mode.
 - Do not load project skills automatically at the start of a new conversation.
 - Follow the explicit initialization cues in skills/SESSION_START.md.
@@ -57,10 +60,47 @@ The repository on GitHub is the only project workspace. Do not assume that a loc
 
 This rule is mandatory because no local project environment is provided and the GitHub repository is the sole source of truth. A local checkout may be absent, stale, or detached from the authorized branch. A local test result cannot check the current remote commit and must never be reported as repository verification.
 
+## Approved repository workspace boundary
+
+**Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `drawings/`, `skills/`, `workspace/`, `archive/`, and `reports/`. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific path exceptions below.
+
+**Authorized archive-retention index exception:**
+
+The user authorized exact read/write access to `.github/archive-retention-index.json` to register each archived task or resolved report file's exact path and individual UTC archive timestamp. Do not list or scan `archive/tasks/` or `archive/reports/` to backfill this index.
+
+**Authorized WebP workflow exception:** The user authorized creation of `.github/workflows/convert-images-to-webp.yml` on 12 November 2026. The user approved its takeout-pipeline and persistent staging changes on 20 November 2026. The user also approved moving its scripts into this skill and updating the required workflow paths. These permissions do not authorize unrelated workflow changes.
+
+**Authorized GitHub Actions diagnostics scope:**
+
+On 23 November 2026, the user explicitly authorized creation of `reports/gh_ac_reports/`. The user also authorized changes to the six existing workflow files and `.github/workflows/gh-actions-diagnostics.yml` for reusable diagnostics and task-scoped CI policy. This authorization applies to branch `gpt` only. It does not authorize changes to `main`, other `.github/` paths, or unrelated workflows.
+
+This boundary applies to every future task and every tool call, not only archiving.
+
+- The only permitted workspace roots are:
+  - `images/` — images and visual references
+  - `master/` — canonical master reference documents
+  - `novels/` — structured narrative records
+  - `drawings/` — session records and prompt history
+  - `skills/` — reusable skills and supporting references
+  - `workspace/` — active task board and task records
+  - `archive/` — time-limited archive of task records and resolved report files
+  - `reports/` — lint reports, GitHub Actions diagnostics, and the central triage ledger
+  - `.github/workflows/` — only workflow files in the explicitly authorized diagnostics and shared archive-retention scope or another user-authorized workflow change
+  - `.github/scripts/cleanup-archive.py` and `.github/scripts/test_cleanup_archive.py` — shared 90-day exact-file archive retention and its regression tests
+  - `.github/archive-retention-index.json` — exact task/report archive file paths and individual UTC timestamps
+- Read and write files only by exact paths beginning with one of those approved directory names.
+- Do not recreate the obsolete `ChatGPT/` wrapper or consult former paths from the previous repository layout.
+- Do not use repository-wide code search or recursive root-tree listings unless the user explicitly requests a full-repository audit. That request authorizes read-only tree inventory and exact-path retrieval within the stated scope, including archive contents only when the request expressly includes them. It does not authorize writes or override archive immutability. Use exact paths for all writes.
+- Do not follow Markdown links outside the approved directories. If an essential reference is outside them and is not supplied in this conversation, explain the limitation. Ask the user to place it in an approved directory or provide it in chat.
+- A request to use an outside reference does not silently change this boundary. Ask for explicit permission before accessing an outside repository path.
+- Repository and branch identifiers may be used to direct GitHub operations, but this does not authorize reading or writing files outside the approved directories.
+
+**If a task cannot be completed without accessing something outside the approved project directories, stop and explain the limitation rather than crossing the boundary.**
+
 ## Workspace structure
 
 - workspace/README.md defines workspace navigation and operating rules.
-- workspace/discussion.md stores one active pre-step brief, anything awaiting user input, unresolved failures, and the three most recent successful reports in every mode. Conversation Mode owns and maintains this file.
+- workspace/discussion.md stores one active pre-step brief, anything awaiting user input, unresolved failures, and the three most recent successful reports in every mode. The Worker owns and maintains this file under `references/conversation-mode.md`.
 - workspace/task_board.md indexes active, ready, blocked, proposed, and historical tasks.
 - workspace/TASK_TEMPLATE.md defines the task record format.
 - workspace/tasks/ contains current task records.
@@ -269,7 +309,7 @@ When foundational initialization or a project-work request activates the Worker:
 
 Task records support recovery. They do not replace repository verification.
 
-Conversation Mode owns and maintains workspace/discussion.md in every mode. It publishes one short, committed Current Step brief before each meaningful work step. It then maintains open discussions and up to three recent successful reports. The Worker supplies task state and detailed progress through the task record. It relies on the register as the shared briefing and navigation surface. Do not make register maintenance conditional on the active mode.
+The Worker owns and maintains workspace/discussion.md in every mode. It publishes one short, committed Current Step brief before each meaningful work step. It maintains open discussions and up to three recent successful reports. The task record remains the authority for detailed progress and verification.
 
 If the board and task record disagree, reconcile them against the latest user instruction and actual repository state. Record the correction.
 
@@ -317,13 +357,14 @@ Follow archive/README.md for the 90-day per-record retention policy. The Worker 
 
 ## Conversation Mode integration
 
-The Worker applies in every conversation mode.
+The Worker applies Default Mode and Condensed Mode through its mandatory `references/conversation-mode.md` component.
 
-- Default Mode may explain decisions and progress in more detail.
-- Condensed Mode uses extremely short chat responses and the single-link navigation rule.
-- Neither mode changes task authority, approval state, progress logging, recovery, or discussion-register maintenance.
+- Read that reference during foundational initialization and retain its rules for the rest of the conversation.
+- It governs mode selection, response constraints, the discussion-register contract, and pre-step briefings.
+- Do not load `skills/conversation-mode/SKILL.md` as a separate skill. It is a compatibility pointer to this component.
+- The Worker owns task operations and the discussion register in every mode.
+- Neither mode changes task authority, approval state, progress logging, recovery, or archive requirements.
 - Record detailed progress in task files instead of repeating it in chat.
-- Conversation Mode owns the format and maintenance of workspace/discussion.md in every mode. The Worker must ensure that it contains the current brief, unresolved discussions, and up to three recent successful reports. The brief is a navigation aid, not a task log. Task records remain authoritative for detailed progress and verification.
 - When an unresolved discussion receives approval, preserve its original user prompts and relevant clarifications in the resulting task record.
 - Do not claim an action, commit, or verification that did not occur.
 
