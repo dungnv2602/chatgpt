@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 — Relocate the two misplaced template assets.** Create exact copies of Prompt Master's reusable prompt-template library and Drawing's copy-ready pattern-entry templates under their owning skills' `assets/` directories. Read back and compare the full content before updating references or removing the old paths. Then correct the catalog classifications.
+- **2026-11-23 — Update canonical references and the Document Type Catalog.** Both template assets now exist in their owning skills' `assets/` directories. Their new blobs match the old files exactly. Update all consumers and catalog entries to the new canonical paths. Read back each consumer before deleting the old paths.
 
 ## Open Discussions
 
