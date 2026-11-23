@@ -246,7 +246,7 @@ jobs:
         run: |
           set -euo pipefail
           scope="lint_reports/on_repo"
-          history="$scope/history/$GITHUB_RUN_ID"
+          history="$scope/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
           mkdir -p "$history"
           cp lint_reports/latest-lint-report.md "$history/report.md"
           python3 - "$history/report.json" <<'PY'
@@ -285,8 +285,8 @@ jobs:
               index = {"schema_version": "1.0.0", "runs": []}
           with open(sys.argv[2], encoding="utf-8") as stream:
               report = json.load(stream)
-          index["runs"] = [row for row in index["runs"] if row.get("run_id") != report["run_id"]]
-          index["runs"].append({key: report[key] for key in ("run_id", "run_number", "run_url", "commit_sha", "generated_at_utc", "status")})
+          index["runs"] = [row for row in index["runs"] if (row.get("run_id"), row.get("attempt", 1)) != (report["run_id"], report["attempt"])]
+          index["runs"].append({key: report[key] for key in ("run_id", "run_number", "run_url", "attempt", "commit_sha", "generated_at_utc", "status")})
           index["runs"].sort(key=lambda row: (row["generated_at_utc"], row["run_id"]))
           with open(sys.argv[1], "w", encoding="utf-8") as stream:
               json.dump(index, stream, ensure_ascii=False, indent=2)
