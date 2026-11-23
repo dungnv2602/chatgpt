@@ -2,29 +2,29 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#478](https://github.com/dungnv2602/chatgpt/actions/runs/45160120558)
-- **Run ID / attempt:** 45160120558 / 1
+- **Run:** [#479](https://github.com/dungnv2602/chatgpt/actions/runs/45160293396)
+- **Run ID / attempt:** 45160293396 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 6dd39dd5e1de50351bcc3f39b1caeaa3d540d4fd
+- **Branch / commit:** gpt / aaef77e998686cb6f67dc31858efb4c6afd4445d
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 6dd39dd5e1de50351bcc3f39b1caeaa3d540d4fd
-- **Generated (UTC):** 2026-11-23T10:54:06.428450+00:00
+- **Linter source SHA:** aaef77e998686cb6f67dc31858efb4c6afd4445d
+- **Generated (UTC):** 2026-11-23T10:54:52.805209+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
 | Files evaluated | 49 |
-| Files that failed | 3 |
-| Files with findings | 39 |
-| Total findings | 343 |
-| Hard findings | 24 |
+| Files that failed | 2 |
+| Files with findings | 38 |
+| Total findings | 342 |
+| Hard findings | 23 |
 | Advisory findings | 319 |
 | New findings | 0 |
-| Recurring findings | 343 |
-| Resolved findings | 3 |
+| Recurring findings | 342 |
+| Resolved findings | 1 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -139,7 +139,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/document-standards/SKILL.md | PASS | 2 | 0 | 0 | 1612 | 0.1 | 0 |
 | skills/session-archiving/SKILL.md | PASS | 3 | 0 | 7 | 2388 | 0.1 | 0 |
 | skills/drawing/references/image-editing-protocol.md | PASS | 0 | 0 | 4 | 962 | 0.0 | 0 |
-| skills/session-archiving/assets/session-brief-template.md | FAIL | 1 | 1 | 0 | 288 | 0.3 | 1 |
+| skills/session-archiving/assets/session-brief-template.md | PASS | 0 | 0 | 0 | 288 | 0.0 | 0 |
 | skills/SESSION_START.md | PASS | 2 | 0 | 0 | 2275 | 0.1 | 0 |
 | skills/drawing/references/patterns/README.md | PASS | 1 | 0 | 0 | 442 | 0.2 | 0 |
 | skills/philosophy-religion-asceticism/references/research-method.md | PASS | 0 | 0 | 0 | 559 | 0.0 | 0 |
@@ -153,8 +153,8 @@ Counts include hard and advisory findings.
 |---|---:|
 | passive-voice | 279 |
 | present-perfect | 40 |
-| long-sentence | 6 |
 | synonym-rotation | 6 |
+| long-sentence | 5 |
 | marketing-adjective | 5 |
 | phrasal-verb | 5 |
 | nominalization | 2 |
@@ -189,7 +189,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.378s
+Ran 4 tests in 0.236s
 
 OK
 ~~~
@@ -222,7 +222,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 649 active Markdown files (715 available as link targets) and 338 local Markdown links.
+Scanned 650 active Markdown files (716 available as link targets) and 338 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -1592,10 +1592,6 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is provided
-- **long-sentence** · skills/session-archiving/assets/session-brief-template.md:5:1 · **recurring** · fingerprint: 9edc4fb8b393050df4a8fe30
-  - **Level:** advisory-free
-  - **Message:** Sentence has 32 words (cap 25). Split it.
-  - **Matched text:** 32 words
 - **present-perfect** · skills/SESSION_START.md:18:114 · **recurring** · fingerprint: 9acf80e5a2b48047e9dd619f
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
@@ -1611,18 +1607,10 @@ None.
 
 ### Resolved findings
 
-- **synonym-rotation** · workspace/TASK_TEMPLATE.md:57:58 · **resolved** · fingerprint: e37028ed88b119b98fe16981
+- **long-sentence** · skills/session-archiving/assets/session-brief-template.md:5:1 · **resolved** · fingerprint: 9edc4fb8b393050df4a8fe30
   - **Level:** advisory-free
-  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
-- **synonym-rotation** · skills/drawing/references/series-continuity-and-iteration.md:177:31 · **resolved** · fingerprint: 284ad5169b785d0b95212ad0
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** Check
-- **synonym-rotation** · skills/session-archiving/references/archive-records-and-image-prompts.md:49:20 · **resolved** · fingerprint: 5d54d956f78d455711c2a358
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
+  - **Message:** Sentence has 32 words (cap 25). Split it.
+  - **Matched text:** 32 words
 
 ## 8. Complete per-file diagnostics
 
@@ -3897,20 +3885,15 @@ No STE findings were recorded for this file.
 
 ### skills/session-archiving/assets/session-brief-template.md
 
-- **Result:** FAIL
-- **Exit code:** 1
-- **Findings:** 1
-- **Hard findings:** 1
+- **Result:** PASS
+- **Exit code:** 0
+- **Findings:** 0
+- **Hard findings:** 0
 - **Baseline:** 0
 - **Words:** 288
-- **Findings per 100 words:** 0.3
+- **Findings per 100 words:** 0.0
 
-#### Complete diagnostics
-
-- **long-sentence** · skills/session-archiving/assets/session-brief-template.md:5:1 · **recurring** · fingerprint: 9edc4fb8b393050df4a8fe30
-  - **Level:** advisory-free
-  - **Message:** Sentence has 32 words (cap 25). Split it.
-  - **Matched text:** 32 words
+No STE findings were recorded for this file.
 
 
 ### skills/SESSION_START.md
