@@ -21,14 +21,14 @@ The Worker's mandatory [Conversation Mode reference](the-worker/references/conve
 Load specialist skills in dependency order. Do not load them during ordinary foundational initialization unless the user's task requires the next tier.
 
 1. **Foundational:** The Worker (including its mandatory Conversation Mode reference), ASD-STE100, and GitHub Actions.
-2. **Drawing:** Session Archiving, the Drawing skill, and its required references. Load Session Archiving only for the drawing and archive procedures that need it.
+2. **Drawing:** Session Archiving, the Drawing skill, and its required references. Activate only after foundational initialization passes. Load Session Archiving only for the drawing and archive procedures that need it.
 3. **Novelist:** Romantic Storyteller and active novel records. Activate only for the novelist role.
 
 Use the per-conversation verified-load ledger in [SESSION_START.md](SESSION_START.md). A file that was successfully retrieved and read earlier in the same conversation must be reused, not loaded again.
 
 | Skill | Activation |
 |---|---|
-| [drawing](drawing/SKILL.md) | The user says “start a drawing session”, requests drawing work, or activates the novelist role. It is a prerequisite for novelist work. |
+| [drawing](drawing/SKILL.md) | After foundational initialization passes, the user says “start a drawing session”, requests drawing work, or activates the novelist role. It is a prerequisite for novelist work. These requests do not trigger foundational initialization. |
 
 ## Task-specific skills
 
