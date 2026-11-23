@@ -219,6 +219,13 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** GitHub Actions skill commit `a826f004a7419db750de57608b23a515da985c24`; Worker commit `a2345f301d153a78054421daf60cb2e8223009cf`.
 - **Next:** Obtain approval for catalog-validator workflow integration. Keep archive records immutable.
 
+### 2026-11-23 01:13 UTC
+
+- **Action:** Reviewed the hosted-runner result for the new takeout field-level regression tests.
+- **Result:** GitHub Actions run [#54](https://github.com/dungnv2602/chatgpt/actions/runs/45091120330), at head `9b171c79be9024a0562c4aef147c99c141a46776`, completed successfully. The `Test takeout processor` step passed all 36 tests (`Ran 36 tests`, `OK`). Coverage includes invalid hand-off metadata, metadata propagation into the generated drawing-session manifest, and preservation/backfill of existing manifest rows. The publication-verification step also completed, but reported that no drawing-session manifests were present in that run's workspace; do not interpret it as a live-manifest check.
+- **References:** Run [45091120330](https://github.com/dungnv2602/chatgpt/actions/runs/45091120330), job `137420763102`; `skills/session-archiving/scripts/test_process_takeout_unittest.py`.
+- **Next:** Complete the representative record review. Keep validator workflow integration gated on separate user approval.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
@@ -232,7 +239,7 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - Task boards and the Condensed Mode discussion register remain embedded contracts for single live files.
 - Novel documents use the current Version 1.1 template set. Do not mass-migrate untouched Version 1.0 records.
 - The image takeout hand-off is validated by `skills/session-archiving/scripts/process_takeout.py`. The same script defines conversion-report and manifest columns. `verify_published_manifest.py` checks published data and links.
-- The processor test suite covers important intake and publication paths. New field-level cases cover optional hand-off metadata validation and its propagation to the drawing manifest. The new cases have not yet run on a hosted runner.
+- The processor test suite covers important intake and publication paths. GitHub Actions run #54 passed all 36 tests, including invalid hand-off metadata, metadata propagation into the generated drawing-session manifest, and manifest compatibility cases. Its publication-verification step found no drawing-session manifests in the run workspace, so it did not verify live manifest rows.
 - The three master catalogues contain heterogeneous prompt, pose, and image-reference material. They are classified as lightweight collections, not uniform record types.
 - The catalog covers 26 recurring document types and records representative legacy examples and the no-mass-migration rule. A manual audit confirmed that all 41 exact file references exist. Full file-by-file reconciliation remains incomplete.
 - A catalog-integrity validator and regression tests now exist at `skills/document-standards/scripts/`. They check catalog structure and exact references, not document-body conformance. They have not run on a hosted runner because workflow integration awaits user authorization.
@@ -242,17 +249,16 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 ## 8. Remaining Work
 
 - Complete the representative record review and record justified legacy exceptions without rewriting historical content.
-- Review the hosted-runner result for the new takeout field-level regression tests.
 - Obtain approval to integrate the catalog validator and tests into GitHub Actions.
 - Run the validator and its tests on a hosted runner, then repair any failures.
 - Decide whether any additional structural checks add value without duplicating generator-owned schemas.
 
 ## 9. Next Actions
 
-1. Complete the representative record review.
-2. Obtain approval to inspect and update the appropriate GitHub Actions workflow for validator execution.
-3. Run the catalog validator and its tests through GitHub Actions.
-4. Review the takeout regression test result during the next bounded preflight. Do not wait or poll.
+1. Complete the representative record review and record justified legacy exceptions without rewriting historical content.
+2. Decide whether any additional structural checks add value without duplicating generator-owned schemas.
+3. Obtain separate user approval before changing a GitHub Actions workflow for catalog-validator integration.
+4. After approval, integrate the validator and tests into an appropriate hosted workflow and review the run result.
 5. Update the catalog and task record with verified execution results.
 
 ## 10. References
@@ -280,6 +286,11 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - `skills/session-archiving/scripts/test_process_takeout_unittest.py`
 
 ## 11. Verification
+
+- **Check:** Hosted-runner execution of takeout hand-off and manifest regression tests.
+- **Method:** Inspected run [#54](https://github.com/dungnv2602/chatgpt/actions/runs/45091120330), its job steps, and decoded logs.
+- **Result:** The `Test takeout processor` step passed all 36 tests. The log includes invalid hand-off metadata checks and manifest propagation/compatibility tests. The publication-verification step completed but found no drawing-session manifests in its workspace.
+- **Limitations:** This confirms the unit/regression suite ran and passed. It does not establish live-manifest verification for that run.
 
 - **Check:** Remote-only repository execution policy.
 - **Method:** Read back the Worker, GitHub Actions, and Session Archiving skills after their updates.
