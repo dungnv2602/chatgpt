@@ -258,14 +258,11 @@ The user's opening brief for a specific drawing session is the source of truth f
    exact edit source. A historical image is not an active reference merely
    because it is stored, linked, approved, or previously used. A generation ID
    or filename is not an attachment.
-8. Select the operation from the user's intent:
-   - Use fresh generation for a new scene, composition, or variation.
-   - Use a direct image edit when the user asks to change a specific existing image and that exact source is available to the image tool.
-   - If the source is unavailable, explain the limit. Do not call a fresh generation an edit. Ask whether the user wants a new reconstruction only when that choice is not already clear.
-9. For fresh generation within an existing series or artwork thread, locate the latest successful prompt from that same thread. Use its authored text as the baseline. Apply only changes authorized by the active brief and latest user instruction.
-10. For a direct edit, attach the exact source image. Describe only the requested changes and preserve all other locked properties. A filename, path, or generation ID is not an attachment.
-11. Keep repository paths, attempt labels, prompt-record IDs, and provenance metadata out of visual instructions. Record them in the attempt record instead.
-12. If a historical prompt is missing, disclose the gap. Do not reconstruct exact wording from memory or a summary.
+8. Apply the operation selector in Section 5. User intent determines fresh generation or direct edit. Do not silently substitute one operation for the other.
+9. For a fresh continuation, use the latest successful authored prompt from the same series or artwork thread. Apply only changes authorized by the active brief and latest instruction.
+10. For a direct edit, attach the exact source image. A filename, path, or generation ID is not an attachment.
+11. Keep attempt IDs, repository paths, prompt-record IDs, and provenance metadata in the attempt record, not in visual instructions.
+12. If the baseline prompt is missing, disclose the gap. Do not reconstruct its exact wording from memory or a summary.
 
 The session brief—not a global image catalogue—is the visual authority.
 
