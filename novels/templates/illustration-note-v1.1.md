@@ -17,8 +17,8 @@ status: approved
 
 ## 2. Asset and Provenance
 - **Actual Image Asset / Conversation Attachment:**
-- **Original Upload Filename:**
-- **Takeout Batch ID:**
+- **Original Upload Filename:** [Conditional: include when the asset entered the repository through takeout. Otherwise Not applicable.]
+- **Takeout Batch ID:** [Conditional: include when the asset entered the repository through takeout. Otherwise Not applicable.]
 - **Master Image Path:** [Conditional: central novel asset path when stored. Otherwise Not applicable.]
 - **WebP Derivative Path:** [Conditional: same-directory WebP path when generated and stored. Otherwise Not applicable.]
 - **Asset Verification:** Pending / Verified / Failed / Not Stored
