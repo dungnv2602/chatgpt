@@ -1,10 +1,11 @@
 # Current Step
 
-- **2026-11-23 — Inspect candidate template assets and ownership.** The recursive Git tree returned 483 entries without truncation. Review every template/schema candidate outside immutable archive content, inspect its owning skill or project workflow, and classify whether it belongs in `assets/`, `references/`, `scripts/`, or a project-level templates directory. Also inspect likely template content whose filename does not contain “template”.
+- **2026-11-23 — Relocate the two misplaced template assets.** Create exact copies of Prompt Master's reusable prompt-template library and Drawing's copy-ready pattern-entry templates under their owning skills' `assets/` directories. Read back and compare the full content before updating references or removing the old paths. Then correct the catalog classifications.
 
 ## Open Discussions
 
 - **2026-11-23 — Session-start CI snapshot unverified:** The available GitHub connection did not expose workflow-run listings. No CI result is claimed. Recheck during the next mandatory preflight when run-list access is available.
+- **2026-11-23 — Document Standards Actions path filters:** The existing validation workflow does not trigger for most skill-owned template or Worker changes. A workflow-path change may be needed after the validator is strengthened. Do not edit `.github/workflows/*` without separate explicit authorization.
 
 ## Reports
 
