@@ -12,6 +12,8 @@ SPEC = importlib.util.spec_from_file_location("ci_issue_ledger", SCRIPT)
 LEDGER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(LEDGER)
 SCHEMA_SOURCE = SCRIPT.parents[1] / "ledger-schema.json"
+TASK_TEMPLATE_SOURCE = SCRIPT.parents[3] / "workspace" / "TASK_TEMPLATE.md"
+TASK_BOARD_SOURCE = SCRIPT.parents[3] / "workspace" / "task_board.md"
 
 class LedgerTests(unittest.TestCase):
     def setUp(self):
@@ -20,20 +22,25 @@ class LedgerTests(unittest.TestCase):
         triage = self.root / "reports" / "triage"
         triage.mkdir(parents=True)
         shutil.copyfile(SCHEMA_SOURCE, triage / "ledger-schema.json")
+        workspace = self.root / "workspace"
+        (workspace / "tasks").mkdir(parents=True)
+        shutil.copyfile(TASK_TEMPLATE_SOURCE, workspace / "TASK_TEMPLATE.md")
+        shutil.copyfile(TASK_BOARD_SOURCE, workspace / "task_board.md")
         self.write_ledger()
 
     def tearDown(self):
         self.temp.cleanup()
 
-    def write_ledger(self, version="1.2.0", findings=None):
+    def write_ledger(self, version="1.3.0", findings=None):
         payload = {"schema_version": version, "updated_at_utc": None, "findings": findings or []}
-        if version in ("1.1.0", "1.2.0"):
+        if version in ("1.1.0", "1.2.0", "1.3.0"):
             payload["ingestion_state"] = {"bootstrap_at_utc":"2026-11-23T07:00:00Z","processed_reports":[]}
         path = self.root / "reports" / "triage" / "ledger.json"
         path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
         return path
 
-    def add_lint(self, scope, run_id, timestamp, fingerprint="a1b2c3d4e5f6", status="Failed"):
+    def add_lint(self, scope, run_id, timestamp, fingerprint="a1b2c3d4e5f6", status="Failed",
+                 level="advisory-free", file_path="docs/example.md", rule="semicolon"):
         folder = self.root / "reports" / "lint_reports" / scope
         history = folder / "history" / (run_id + "-attempt-1")
         history.mkdir(parents=True, exist_ok=True)
@@ -43,7 +50,7 @@ class LedgerTests(unittest.TestCase):
             "run_url":"https://example.invalid/actions/runs/" + run_id,
             "generated_at_utc":timestamp,"status":status,
             "findings":[{
-                "file":"docs/example.md","line":5,"col":2,"rule":"semicolon","level":"advisory-free",
+                "file":file_path,"line":5,"col":2,"rule":rule,"level":level,
                 "message":"Split this sentence.","fingerprint":fingerprint,"comparison":"new",
             }],
         }
@@ -89,8 +96,13 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(first["findings_created"],1)
         self.assertEqual(finding["finding_id"],"lint-a1b2c3d4e5f6")
         self.assertEqual(finding["occurrence_count"],1)
-        self.assertEqual(finding["task_refs"], [])
+        self.assertEqual(len(finding["task_refs"]), 1)
         self.assertEqual(len(finding["evidence"]),2)
+        task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
+        self.assertEqual(len(task_files), 1)
+        self.assertIn("- **Status:** Proposed", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn(finding["finding_id"], task_files[0].read_text(encoding="utf-8"))
+        self.assertIn(f"| {finding['task_refs'][0]} |", (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8"))
         second = LEDGER.ingest(self.root, now="2026-11-23T07:13:00Z")
         self.assertFalse(second["changed"])
         self.assertEqual(self.read_ledger()["findings"][0]["occurrence_count"],1)
@@ -102,6 +114,7 @@ class LedgerTests(unittest.TestCase):
         LEDGER.ingest(self.root)
         finding = self.read_ledger()["findings"][0]
         self.assertEqual(finding["occurrence_count"],2)
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*.md"))), 1)
         self.assertEqual(finding["first_seen_utc"],"2026-11-23T07:10:00Z")
         self.assertEqual(finding["last_seen_utc"],"2026-11-23T07:20:00Z")
 
@@ -139,6 +152,12 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(result["findings_created"],3)
         self.assertEqual(len(findings),3)
         self.assertTrue(all(item["source_family"] == "github_actions" for item in findings))
+        self.assertEqual(result["tasks_created"], 2)
+        refs = [item["task_refs"][0] for item in findings]
+        unit_test_refs = [item["task_refs"][0] for item in findings if "Unit tests" in item["evidence"][0]["note"]]
+        self.assertEqual(len(set(unit_test_refs)), 1)
+        self.assertEqual(len(set(refs)), 2)
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*.md"))), 2)
 
     def test_cancelled_run_keeps_independent_failure_and_ignores_cancellation_propagation(self):
         issues = [
@@ -174,6 +193,33 @@ class LedgerTests(unittest.TestCase):
         finding = self.read_ledger()["findings"][0]
         self.assertEqual(finding["occurrence_count"],2)
         self.assertEqual(len(finding["evidence"]),2)
+        self.assertEqual(len(finding["task_refs"]), 1)
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*.md"))), 1)
+
+    def test_related_findings_reuse_one_active_task_across_ingestion_events(self):
+        self.add_lint("on_changed", "210", "2026-11-23T07:30:00Z", fingerprint="aaaaaaaa1111")
+        first = LEDGER.ingest(self.root, now="2026-11-23T07:31:00Z")
+        self.assertEqual(first["tasks_created"], 1)
+        first_ref = self.read_ledger()["findings"][0]["task_refs"][0]
+        self.add_lint("on_changed", "211", "2026-11-23T07:40:00Z", fingerprint="bbbbbbbb2222")
+        second = LEDGER.ingest(self.root, now="2026-11-23T07:41:00Z")
+        findings = self.read_ledger()["findings"]
+        self.assertEqual(second["tasks_created"], 0)
+        self.assertEqual(second["tasks_updated"], 1)
+        self.assertEqual({item["task_refs"][0] for item in findings}, {first_ref})
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*.md"))), 1)
+        task_text = next((self.root / "workspace" / "tasks").glob("*.md")).read_text(encoding="utf-8")
+        self.assertIn("lint-aaaaaaaa1111", task_text)
+        self.assertIn("lint-bbbbbbbb2222", task_text)
+
+    def test_low_severity_findings_remain_ledger_only(self):
+        self.add_lint("on_changed", "212", "2026-11-23T07:50:00Z", level="advisory")
+        result = LEDGER.ingest(self.root, now="2026-11-23T07:51:00Z")
+        finding = self.read_ledger()["findings"][0]
+        self.assertEqual(finding["severity"], "low")
+        self.assertEqual(finding["task_refs"], [])
+        self.assertEqual(result["tasks_created"], 0)
+        self.assertEqual(list((self.root / "workspace" / "tasks").glob("*.md")), [])
 
     def test_resolved_finding_reopens_and_preserves_resolution_history(self):
         self.add_lint("on_changed","300","2026-11-23T07:10:00Z")
@@ -256,7 +302,7 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(result["reports_processed"],0)
         self.assertTrue(migrated["updated_at_utc"])
 
-    def test_migrate_1_1_adds_empty_task_refs(self):
+    def test_migrate_1_1_creates_proposed_task_for_unlinked_actionable_finding(self):
         finding = {
             "finding_id":"lint-a1b2c3d4e5f6","source_family":"lint","category":"rule","title":"A finding",
             "status":"planned","severity":"medium","owner":None,
@@ -268,7 +314,10 @@ class LedgerTests(unittest.TestCase):
         LEDGER.ingest(self.root)
         migrated = self.read_ledger()
         self.assertEqual(migrated["schema_version"],"1.2.0")
-        self.assertEqual(migrated["findings"][0]["task_refs"], [])
+        self.assertEqual(len(migrated["findings"][0]["task_refs"]), 1)
+        task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
+        self.assertEqual(len(task_files), 1)
+        self.assertIn("- **Status:** Proposed", task_files[0].read_text(encoding="utf-8"))
 
     def test_malformed_index_fails_closed_without_changing_ledger(self):
         index = self.root / "reports" / "lint_reports" / "on_changed" / "index.json"
@@ -322,8 +371,12 @@ class LedgerTests(unittest.TestCase):
         action = (root / "reports/gh_ac_reports/actions/capture/action.yml").read_text(encoding="utf-8")
         sweep = (root / ".github/workflows/gh-actions-diagnostics.yml").read_text(encoding="utf-8")
         self.assertIn("Update central CI issue ledger", action)
-        self.assertIn("git add -A -- reports/gh_ac_reports/ reports/triage/", action)
+        publish_paths = "git add -A -- reports/gh_ac_reports/ reports/triage/ workspace/tasks/ workspace/task_board.md"
+        self.assertIn(publish_paths, action)
+        self.assertIn(publish_paths, sweep)
         self.assertIn("- 'reports/triage/ledger.json'", sweep)
+        self.assertIn("- 'workspace/tasks/**'", sweep)
+        self.assertIn("- 'workspace/task_board.md'", sweep)
         self.assertIn("Ingest centralized CI issues", sweep)
 
     def test_atomic_write_replaces_file_without_temp_remnants(self):
