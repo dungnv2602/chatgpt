@@ -1,6 +1,6 @@
 # Document Type Catalog
 
-**Catalog version:** 1.6  
+**Catalog version:** 1.7  
 **Inventory status:** Non-truncated recursive tree audit of branch `gpt` at commit `1a5c8380036dac0132216635951f95a971ceee25` found 6,375 tree entries and 1,114 Markdown documents outside root `master/` and `archive/`. All 1,114 Markdown paths match the 48 Active coverage rules; every rule matches at least one file. This is a complete path inventory and targeted family review, not a line-by-line semantic review of every generated report.
 **Source branch:** `gpt`
 
