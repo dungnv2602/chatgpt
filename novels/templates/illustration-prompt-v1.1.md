@@ -35,7 +35,7 @@ status: approved
 
 ## 4. Chronological Generation Attempts
 
-Append one complete entry before each attempt. Update that entry after the result. Never overwrite earlier attempts.
+Append one complete entry before each attempt. Update that entry after the result. Never overwrite earlier attempts. The Status field inside an Attempt block records that attempt's status; it is separate from the overall record Status in Section 1.
 
 ### Attempt [001]
 - **Attempt ID:**
@@ -71,6 +71,8 @@ Append one complete entry before each attempt. Update that entry after the resul
 - **Provenance Limitations:**
 
 ### Repository Asset Handoff
+
+[Conditional: include this subsection only when an accepted output is uploaded to the novel's repository asset library. Otherwise omit it.]
 - **Takeout Batch ID:**
 - **Original Upload Filename:**
 - **Master Image Path:** [Central novel asset path]
