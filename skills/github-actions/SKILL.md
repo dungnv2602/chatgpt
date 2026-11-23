@@ -30,7 +30,7 @@ GitHub Actions runs the scheduled archive-retention workflow.
 - Check out `gpt`, which is the working/source branch.
 - Read only `.github/archive-retention-index.json`. Never list or scan `archive/tasks/`.
 - Retain each indexed record for at least 90 days from its UTC archive timestamp.
-- Delete only exact indexed paths that have reached 90 days. Remove their index entries after processing.
+- Delete only exact indexed paths that have reached 90 days. Delete their index entries after processing.
 - Preserve `.gitkeep`. Unindexed legacy records remain protected and must not be discovered by a directory scan.
 - Allow only the native `schedule` event. The cleanup script must reject every other GitHub event.
 - After cleanup, atomically fast-forward `main` to the resulting `gpt` commit. Never force-push or create an independent cleanup commit on `main`.
@@ -39,14 +39,14 @@ GitHub Actions runs the scheduled archive-retention workflow.
 
 ## 3. Report triage and archive retention
 
-- Start at `reports/README.md`; maintain cross-family issue state in `reports/triage/ledger.json`.
+- Start at `reports/README.md`. Maintain cross-family issue state in `reports/triage/ledger.json`.
 - Resolved report files belong in `archive/reports/`, not in a report-root archive folder.
 - The shared archive-retention workflow retains each exact indexed file for 90 days and deletes only that file after expiry. It does not scan archive directories.
-- The index is `.github/archive-retention-index.json`; preserve unindexed legacy files.
+- The index is `.github/archive-retention-index.json`. Preserve unindexed legacy files.
 
 ## 4. Task-scoped CI diagnostics and repair
 
-CI is not a gate that must be repaired before every user prompt or after skill initialization. Inspect CI when the user requests it, when the current task changes a workflow or validation target, or when a known result directly affects the task.
+CI is not a gate that must be repaired before every user prompt or after skill initialization. Inspect CI when the user requests it. Also inspect CI when the current task changes a workflow or validation target. Inspect CI when a known result directly affects the task.
 
 1. Start with `reports/gh_ac_reports/README.md` for workflow-level failures, jobs, steps, logs, annotations, artifact metadata, and evidence limitations.
 2. For STE lint details, start with `reports/lint_reports/README.md`. Use its scope index and structured JSON for exact file-level findings, metrics, and baselines.
@@ -217,7 +217,7 @@ This section consolidates repository execution-efficiency rules. This skill defi
 
 ### CI and validation scope
 
-Apply Section 3 only when CI is relevant to the user's current request. Do not run a pre-prompt or post-initialization CI gate. Do not wait for or poll in-progress runs. Let GitHub-hosted Actions run validation; never run CI workflows or the STE linter locally.
+Apply Section 3 only when CI is relevant to the user's current request. Do not run a pre-prompt or post-initialization CI gate. Do not wait for or poll in-progress runs. Let GitHub-hosted Actions run validation. Never run CI workflows or the STE linter locally.
 
 ### After editing
 
