@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#160](https://github.com/dungnv2602/chatgpt/actions/runs/45117564825)
-- **Run ID / attempt:** 45117564825 / 1
+- **Run:** [#161](https://github.com/dungnv2602/chatgpt/actions/runs/45117675092)
+- **Run ID / attempt:** 45117675092 / 1
 - **Workflow:** STE Lint Full Technical Documentation
-- **Branch / commit:** gpt / 72bbc615fff312918c6ddb133c08d76f66ec901e
+- **Branch / commit:** gpt / 705fadf5a997fd32170464c37b99f27cefa62635
 - **Event:** push
 - **Execution mode:** repository-wide
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 72bbc615fff312918c6ddb133c08d76f66ec901e
-- **Generated (UTC):** 2026-11-23T05:24:47.476977+00:00
+- **Linter source SHA:** 705fadf5a997fd32170464c37b99f27cefa62635
+- **Generated (UTC):** 2026-11-23T05:25:55.699948+00:00
 
 ## 1. Executive summary
 
@@ -188,7 +188,11 @@ No output captured.
 - **Exit code:** 0
 
 ~~~text
-No output captured.
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.383s
+
+OK
 ~~~
 
 ### Markdown anchor regression tests
@@ -197,7 +201,11 @@ No output captured.
 - **Exit code:** 0
 
 ~~~text
-No output captured.
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
 ~~~
 
 ### STE linter self-test
@@ -206,7 +214,7 @@ No output captured.
 - **Exit code:** 0
 
 ~~~text
-No output captured.
+selftest OK
 ~~~
 
 ### Markdown links and heading anchors
@@ -215,7 +223,7 @@ No output captured.
 - **Exit code:** 0
 
 ~~~text
-Scanned 143 active Markdown files (216 available as link targets) and 315 local Markdown links.
+Scanned 143 active Markdown files (217 available as link targets) and 315 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
