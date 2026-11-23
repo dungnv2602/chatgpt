@@ -5,15 +5,16 @@
 - **Template version:** 1.1
 - **ID:** 20261123043747
 - **Created:** 2026-11-23 04:37 UTC
-- **Updated:** 2026-11-23 04:37 UTC
+- **Updated:** 2026-11-23 04:57 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Done
 - **Origin:** User
 - **Approval:** Approved
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** 20261122-233900
-- **Archived:** No
+- **Archived:** Yes
+- **Archive timestamp:** 2026-11-23T04:57:48Z
 
 ## 1. Original Request
 
@@ -26,6 +27,7 @@
 - Keep `workspace/discussion.md` updated in both Default Mode and Condensed Mode. Only chat verbosity differs.
 - Follow Document Standards and Agent Skill Authoring. Create or update canonical templates before editing governed documents.
 - Do not modify `.github/workflows/*` without separate explicit authorization.
+- The user's request to check and update template-standard enforcement authorized path-filter changes only to `.github/workflows/validate-document-standards.yml`. No other workflow was modified.
 - Archived records are immutable after their initial archive write. Do not edit, move, replace, or manually delete them. Do not broadly inspect archive contents unless necessary.
 
 ## 3. Objective
@@ -80,23 +82,26 @@ Audit the repository's template and schema placement, classify each recurring do
 - **References:** `skills/prompt-master/assets/prompt-templates.md`, `skills/drawing/assets/pattern-entry-templates.md`, `skills/document-standards/SKILL.md`, `skills/document-standards/references/document-type-catalog.md`, `skills/document-standards/scripts/validate_catalog.py`, `skills/document-standards/scripts/test_validate_catalog.py`, `skills/the-worker/SKILL.md`, `skills/session-archiving/SKILL.md`, `.github/workflows/validate-document-standards.yml`, `skills/prompt-master/SKILL.md`, `skills/drawing/SKILL.md`, `skills/drawing/README.md`, `skills/drawing/references/patterns/README.md`.
 - **Next:** Complete final read-back and branch-head verification. Record the separate changed-document lint workflow defect without modifying that workflow. Then archive this task and reconcile the board.
 
+
+
+### 2026-11-23 04:57 UTC
+
+- **Action:** Completed the final repository tree scan, content/reference review, and read-back of all changed paths.
+- **Result:** The final recursive tree contains 420 files and 488 entries, with no truncation. No named template or schema remains under a skill `references/` directory. The two relocated assets retain the exact original blob contents. All active references resolve to the new asset paths. Every changed skill, standard, catalog, validator, test, workflow, task-board, and discussion path was fetched again. Branch `gpt` HEAD at final verification was `9490c00f31eeee7a674e64ba02be8c983b51fc89`. Hosted run [45114001584](https://github.com/dungnv2602/chatgpt/actions/runs/45114001584) passed 16 validator tests and catalog validation (36 document types, 80 exact references). The later workflow path-filter change has not yet received a verified hosted result. The latest changed-document lint run [45113875454](https://github.com/dungnv2602/chatgpt/actions/runs/45113875454) still has a separate shell defect: the report command receives a literal trailing backslash from `.github/workflows/ste-lint-changed.yml`. The stale `resolved_findings` test assertion was corrected, but hosted confirmation is not yet observed. That workflow was not modified.
+- **References:** Final branch head `9490c00f31eeee7a674e64ba02be8c983b51fc89`; catalog validation run `45114001584`; changed lint run `45113875454`; full-document lint run `45111202565`.
+- **Next:** Archive this completed task, register the exact path and timestamp in the retention index, remove the active task record, and reconcile the task board. No further template-placement implementation work remains.
+
 ## 7. Current State
 
 The task record was created from `workspace/TASK_TEMPLATE.md`. Initial standards review and repository-tree inventory are complete. Two template assets are misplaced. Existing CI does not enforce template placement or use. Correctly placed asset copies are the next action.
 
 ## 8. Remaining Work
 
-- Complete final read-back and branch-head verification.
-- Record the unresolved changed-document lint workflow shell defect. Do not modify it without separate authorization.
-- Observe the next natural hosted run for the updated Document Standards workflow during a future preflight. Do not wait or poll.
-- Archive this task and reconcile the task board.
+None. The changed-document lint workflow shell defect and unverified hosted result are recorded as separate open CI issues. Do not change that workflow without separate authorization.
 
 ## 9. Next Actions
 
-1. Fetch the recursive Git tree for branch `gpt`.
-2. Inventory candidate templates, schemas, generators, examples, and repeated document types outside immutable archive content.
-3. Compare every candidate with the standards and catalog.
-4. Prepare the canonical template changes before changing governed documents.
+1. Archive this completed task and reconcile the task board.
 
 ## 10. References
 
@@ -117,4 +122,4 @@ The task record was created from `workspace/TASK_TEMPLATE.md`. Initial standards
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. Keep `workspace/discussion.md` current before each meaningful step. Complete the repository inventory before relocating or creating templates. Do not edit governed documents until their canonical templates or contracts are in place. Do not modify `.github/workflows/*` without separate explicit authorization. Do not inspect or modify archived record contents. Record exact paths, read back every write, and do not claim hosted CI validation unless a run is verified.
+The task is complete. The canonical template assets, references, catalog, validator, Worker gate, and validation path filters are updated. Maintain the template-first sequence in all future modes. Do not modify unrelated workflows without separate authorization. Do not claim hosted CI validation unless a run is verified.
