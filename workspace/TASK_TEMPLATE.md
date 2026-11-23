@@ -2,7 +2,7 @@
 
 ## Metadata
 
-- **Template version:** 1.0
+- **Template version:** 1.1
 - **ID:** YYYYMMDD-HHMMSS
 - **Created:** YYYY-MM-DD HH:MM UTC
 - **Updated:** YYYY-MM-DD HH:MM UTC
@@ -14,6 +14,8 @@
 - **Dependencies:** None
 - **Related tasks:** None
 - **Archived:** No
+
+<!-- Lifecycle invariant: keep the active record In Progress and Archived: No until the archive copy is written and verified. Set Done/Cancelled and Archived: Yes in the archive copy, then remove the active path and reconcile the task board. -->
 
 ## 1. Original Request
 

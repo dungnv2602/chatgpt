@@ -152,6 +152,15 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** [Run #349](https://github.com/dungnv2602/chatgpt/actions/runs/45087857403); `.github/workflows/ste-lint-changed.yml`; `skills/the-worker/SKILL.md`; `skills/github-actions/SKILL.md`; `skills/session-archiving/SKILL.md`.
 - **Next:** Keep the workflow fix. Treat the remaining STE findings as separate documentation-lint debt; do not weaken the workflow or claim CI passed.
 
+### 2026-11-23 — Samantha task archival root cause and correction
+
+- **Action:** Compared the original Samantha task closeout commits with the later archive transaction and current board state.
+- **Result:** Commit `1860fbee285126f97e45087a32426e4b47eda3db` changed the active task metadata to `Status: Done` and `Archived: Yes` but did not create `archive/tasks/` copy. Commit `f3a76f5f791ac331bd9223dddc64e2879d57657a` moved the board row to Historical while it still linked to `workspace/tasks/`. This was an incomplete closeout, not a missing documented procedure. The repository later completed the missing transaction: `84addce78431c319c00c505b9999d1fec595c1a9` created the archive copy; `38ec9603f1cc0c9d115a8f5e642db47dab32b216` removed the active path; `9f397519f37bac93dc82b17e84aca6ef5a59e954` reconciled the board to the archive path and exact archive commit. Current checks confirm the active path is absent, the archive path exists, and the board contains one Historical entry with the correct links.
+- **Correction:** Strengthened the Worker closeout gate and task template so an active record stays In Progress / Archived: No until the archive copy exists and is verified. This prevents premature Done/Archived labels from being committed to the active path.
+- **Integrity note:** During this investigation, I fetched the archived record's contents once even though the Worker policy says to verify archive paths and commit metadata without reading archived contents. No archived file was changed. Future checks will honor the retention-only boundary.
+- **References:** Commits `1860fbee285126f97e45087a32426e4b47eda3db`, `f3a76f5f791ac331bd9223dddc64e2879d57657a`, `84addce78431c319c00c505b9999d1fec595c1a9`, `38ec9603f1cc0c9d115a8f5e642db47dab32b216`, and `9f397519f37bac93dc82b17e84aca6ef5a59e954`.
+- **Next:** Continue the document-type inventory and structural-validator design. Do not inspect archived contents.
+
 ## 7. Current State
 
 - The user approved the template-first policy.

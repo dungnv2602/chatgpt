@@ -37,7 +37,7 @@ Do not create a second template when an owning workflow already defines the requ
 | Daily drawing index | Template required | `skills/drawing/assets/daily-index-template.md` | Copy-ready index template now exists. The workflow still enforces the single-table contract. |
 | Conversation integrity record | Template required | `skills/session-archiving/assets/conversation-integrity-template.md` | Copy-ready template now exists with gap and editorial-summary fields. |
 | Session summary | Template required | `skills/session-archiving/assets/session-summary-template.md` | Copy-ready handoff template now exists. |
-| Workspace task record | Template required | `workspace/TASK_TEMPLATE.md` | Template version 1.0. The Worker owns task fields and closeout. |
+| Workspace task record | Template required | `workspace/TASK_TEMPLATE.md` | Template version 1.1. The Worker owns task fields and closeout. The active record remains In Progress / Archived: No until the archive copy is verified. |
 | Task board | Embedded contract | `skills/the-worker/SKILL.md` and `workspace/task_board.md` | One live index. No separate copy template is needed now. |
 | Condensed Mode discussion register | Embedded contract | `skills/conversation-mode/SKILL.md` and `workspace/discussion.md` | Fixed headings, ordering, and entry rules. |
 | Image takeout hand-off | Schema required | `skills/session-archiving/scripts/process_takeout.py` and `images/takeout/README.md` | The processor validates the YAML contract. `skills/session-archiving/scripts/test_process_takeout_unittest.py` covers readiness, exact intake coverage, missing attempt metadata, malformed top-level data, duplicate output IDs, rollback, and hashes. |

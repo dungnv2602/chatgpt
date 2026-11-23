@@ -263,12 +263,14 @@ Use only the canonical task statuses in this skill: Proposed, Ready, In Progress
 
 The Worker closes a task only after it archives the record and reconciles the task board.
 
+**Archive gate — do not mark an active record Done prematurely.** Keep the active task record In Progress and Archived: No until the archive copy exists and its write has been verified. Prepare the final Done/Cancelled and Archived: Yes content for the archive destination; do not commit those final metadata values to the active path. Create the archive copy first. Only after the archive path exists may you remove the active path and reconcile the board. Move the board row to Historical only after the archive commit exists, and link that exact commit. If any step remains incomplete, leave the task open and report the exact blocker. This prevents a status label from claiming an archival operation that never happened.
+
 When acceptance criteria are met:
 
 1. Check the final result, acceptance criteria, and supporting evidence.
-2. Prepare the final task record with status Done or Cancelled, an archive timestamp in UTC, complete verification, and a final handoff. Set Archived to Yes.
+2. Prepare the final archive copy with status Done or Cancelled, an archive timestamp in UTC, complete verification, and a final handoff. Set Archived to Yes in that archive copy only.
 3. Create the archived record at `archive/tasks/<same-filename>`. Preserve its task ID and filename. Do not inspect archived contents.
-4. Verify that the archive-write operation succeeded. Only then delete the active record from `workspace/tasks/`. If one Git operation can commit both path changes, use it. Otherwise, create the archive copy first and delete the active path in a later commit. Never delete the active record before the archive copy exists.
+4. Verify that the archive-write operation succeeded. Only then delete the active record from `workspace/tasks/`. Until that verification succeeds, keep the active record In Progress with Archived: No. If one Git operation can commit both path changes, use it. Otherwise, create the archive copy first and delete the active path in a later commit. Never delete the active record before the archive copy exists.
 5. Update `workspace/task_board.md` in the same closeout pass:
    - Delete the task from Current Execution.
    - Delete its active row from every status section.
