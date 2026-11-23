@@ -28,7 +28,7 @@ Run the regression suite:
 
 ```bash
 python3 -m unittest discover \
-  -s skills/session-archiving/scripts \
+  -s skills/the-worker/scripts \
   -p 'test_process_takeout_unittest.py' \
   -v
 ```
