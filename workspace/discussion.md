@@ -1,25 +1,25 @@
 ## Current Step
 
-Add the lint-evidence repository guide to the Workspace navigation. This is the canonical review entry point and a meaningful documentation change that also exercises the eligible changed-document workflow. Then inspect the one resulting hosted snapshot without polling.
+No active task. The lint-report repair is archived at [the completed task record](../archive/tasks/20261123-051200-repair-lint-report-evidence-workflow.md). Both report scopes have hosted, detailed evidence. Do not poll completed workflows; review the latest reports from their scope indexes.
+
 ## Open Discussions
 
-- **2026-11-23 05:06 UTC — Changed-document lint-report failure:** Newest run [45115031724](https://github.com/dungnv2602/chatgpt/actions/runs/45115031724) fails because the anchor checker treats `{run_url}` in the report template as a local file. Report generation then fails because the workflow passes a literal `\\` argument. User has now authorized investigation and repair of the changed-report workflow and reporting system.
-- **2026-11-23 05:26 UTC — First full-audit run after workflow integration:** Run [45117759354](https://github.com/dungnv2602/chatgpt/actions/runs/45117759354) was in progress at the single post-integration snapshot. No polling was performed. The changed-document workflow had not yet been triggered by an eligible Markdown commit.
-- **2026-11-23 05:18 UTC — Full-document run after report-format change:** Run [45116930355](https://github.com/dungnv2602/chatgpt/actions/runs/45116930355) failed because the anchor checker had an indentation error in the new placeholder-handling branch. The source was corrected in commit [642b5b2](https://github.com/dungnv2602/chatgpt/commit/642b5b21c4b3360e0ae06b0c83ffcf348234582c). Hosted confirmation remains outstanding.
-- **2026-11-23 05:06 UTC — Full-document lint result needs classification:** Newest run [45114176416](https://github.com/dungnv2602/chatgpt/actions/runs/45114176416) completed its full audit and published evidence, then failed its final gate because the audit reported lint findings. Confirm whether those findings are legitimate new violations or report/parser defects.
-- **2026-11-23 — Document Standards workflow:** Path filters now include `skills/**`, `novels/templates/**`, the novel README/workflow, and the shared task template/README. The change has not yet received a verified hosted result. Do not wait or poll.
-- **2026-11-23 — Session startup and lint-report investigation:** User invoked `start session` and authorized investigation and repair of the changed-document lint-report workflow, including report generation, report placement, detail level, workflow reliability, and regression coverage.
+- **2026-11-23 — Document Standards workflow validation:** Its path-filter changes were read back, but a successful hosted confirmation was not observed. Do not poll; verify on its next eligible run.
+- **2026-11-23 — Document lint findings:** The new reports retain 144 hard findings in the repository-wide run and 145 in the changed-scope fallback run. Thresholds and baselines were not weakened. Remediation is separate from the completed report-pipeline task.
 
 ## Reports
-### 2026-11-23 — Shared lint-report format consolidated
 
-- Consolidated repository-wide and changed-document reports under the existing generator-owned contract.
-- Schema version 1.1.0 supports both scopes. Markdown now includes exact coverage, per-file outcome and metrics, full diagnostics, checks with captured output, baseline comparisons, provenance, and integrity details. JSON retains the original per-file linter records.
-- Added four report-generator regression tests and three anchor-check tests. Updated the Document Type Catalog.
-- Corrected the placeholder matcher after hosted run [45116930355](https://github.com/dungnv2602/chatgpt/actions/runs/45116930355) exposed an indentation defect. The corrected checker is in commit [642b5b2](https://github.com/dungnv2602/chatgpt/commit/642b5b21c4b3360e0ae06b0c83ffcf348234582c).
-- Format commit: [c7bf066](https://github.com/dungnv2602/chatgpt/commit/c7bf066b7fc27d57764467d0f038c1a3350201f2). Relevant source, assets, tests, and catalog were read back. Hosted test confirmation is still outstanding.
+### 2026-11-23 — Lint-report pipeline repaired and verified
 
-
+- Consolidated repository-wide and changed-document reports under one generator-owned schema (1.1.0), Markdown template, JSON contract, and test suite. The Markdown report now provides exact evaluated paths, an all-file result matrix, per-file metrics, complete diagnostic messages and matches, rule totals, baseline comparisons, check output, runtime and commit provenance. JSON retains original per-file linter records, normalized findings, check output, and exact coverage. Each run has a SHA-256 integrity manifest, scope index, latest pointers, and immutable history.
+- Fixed the changed-workflow generator invocation, runtime placeholder handling in the anchor checker, shell command-substitution defect in full-audit coverage extraction, and duplicated/lossy inline report converter. Both workflows now use the same generator and preserve tool-check output. The full workflow fails publication on push errors. Older runs cannot replace newer latest pointers.
+- Added four report-generator regression tests and three anchor-check tests. All six hosted tooling and anchor checks passed in both report runs: wrapper syntax, Python compilation, report tests, anchor regression tests, STE linter self-test, and repository Markdown link/anchor validation.
+- Repository-wide run [45117759354](https://github.com/dungnv2602/chatgpt/actions/runs/45117759354): 49 files, 456 findings (144 hard / 312 advisory), 11 nonzero linter results. The detailed Markdown report is 297,778 bytes and JSON is 358,048 bytes. Report history: `lint_reports/on_repo/history/45117759354-attempt-1/`. The root `lint_reports/latest-lint-report.md` is the compatibility copy of the scope latest report.
+- Changed-document run [45117997539](https://github.com/dungnv2602/chatgpt/actions/runs/45117997539): the workflow used a safe full-audit fallback because no valid successful incremental baseline was available. It reported 49 files, 458 findings (145 hard / 313 advisory), and 11 nonzero linter results. Markdown is 293,496 bytes and JSON is 356,800 bytes. Report history: `lint_reports/on_changed/history/45117997539-attempt-1/`. The latest Markdown and JSON match the immutable history copies.
+- Both workflow conclusions remain Failed because the configured lint gate correctly retains the 11 nonzero file results. Report generation, publication, regression tests, and anchor validation passed. No lint findings or thresholds were hidden or weakened.
+- Canonical review entry: [lint report guide](../lint_reports/README.md), [changed-document report](../lint_reports/on_changed/latest-lint-report.md), [repository-wide report](../lint_reports/on_repo/latest-lint-report.md).
+- Key commits: format [c7bf066](https://github.com/dungnv2602/chatgpt/commit/c7bf066b7fc27d57764467d0f038c1a3350201f2), workflow integration [72bbc61](https://github.com/dungnv2602/chatgpt/commit/72bbc615fff312918c6ddb133c08d76f66ec901e), publication/log reliability [705fadf](https://github.com/dungnv2602/chatgpt/commit/705fadf5a997fd32170464c37b99f27cefa62635), full-report comparison [77e272c](https://github.com/dungnv2602/chatgpt/commit/77e272c9c06042155dbe7243c868c91d88278e86), and workspace navigation [602a25c](https://github.com/dungnv2602/chatgpt/commit/602a25c6e2c12118f5e31d78cff232dbffe6048b).
+- Task archived at `archive/tasks/20261123-051200-repair-lint-report-evidence-workflow.md`. Archive commit [9ac22a9](https://github.com/dungnv2602/chatgpt/commit/9ac22a9fbca4d2406038c17de86faa9e93d45df1); retention-index commit [521e0b4](https://github.com/dungnv2602/chatgpt/commit/521e0b4e420fc4fc6396215a7d387dda091c9344); active-copy deletion commit [9d1f807](https://github.com/dungnv2602/chatgpt/commit/9d1f8078ce496d74ad61ccec538bb4435f94682d); task-board reconciliation commit [72af841](https://github.com/dungnv2602/chatgpt/commit/72af841b6cdaa2ad4cb2de3739841e2e2e5fede0).
 
 ### 2026-11-23 — Template placement audit completed
 
@@ -33,10 +33,3 @@ Add the lint-evidence repository guide to the Workspace navigation. This is the 
 - The Document Standards workflow path filters now cover all skill files and known project/workspace template locations. The workflow edit has been read back. Hosted confirmation remains unverified.
 - Session Archiving now allows a user-authorized read-only full-repository audit without weakening archive immutability.
 - Task archived at `archive/tasks/20261123043747-audit-template-placement-and-enforce-template-first-workflow.md`. Archive commit: `3ccf93348157870727c7fe9ea3d38f677e350977`. Retention-index commit: `3bab970ca474676bef3999847c24c60e04396e8f`. Active-record deletion commit: `f7d8ddc833e7e3d2cb56f7358f63d2fc1fd36a38`. Task-board reconciliation commit: `fc3a488137106951b0ffbb50af1342ff1f93222b`. Archive copy was read back exactly. The retention index contains the exact path and UTC timestamp. The active record is absent. The board has no active task and retains seven historical entries.
-
-### 2026-11-23 — Lint-report evidence system implemented
-
-- Added separate `on_repo` and `on_changed` report scopes with Markdown analysis, structured JSON evidence, indexes, latest pointers, and immutable per-run history.
-- Added report-generation tooling and regression tests. Integrated report publication into both lint workflows. Migrated the legacy repository-wide report.
-- Read-back checks confirmed the implementation on `gpt`. Hosted validation of the new reporting changes and execution of the changed-document report path remain unverified.
-- No archived records were modified.
