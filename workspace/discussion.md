@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 10:38 UTC — Review catalog batch 2:** Revise the novel template field-contract table. Remove its hard semicolon and long-sentence findings while preserving required, conditional, optional, and repeatable field rules.
+- **2026-11-23 10:42 UTC — Review catalog batch 3:** Revise the representative-record table. Remove its hard semicolon findings while preserving each record's scope, observed facts, and handling decision.
 
 ## Open Discussions
 
