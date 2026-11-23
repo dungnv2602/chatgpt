@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 13:20 UTC — Standardize series source wording:** Replace the single `Check` instruction with `Confirm` to match the reference's existing user-confirmation terminology. Preserve source-linkage and user-authority requirements.
+- **2026-11-23 13:24 UTC — Standardize series confirmation terminology:** Use `Confirm` consistently for source-asset confirmation and change `read-back check` to `read-back confirmation`. Preserve source-linkage and user-authority requirements.
 
 ## Open Discussions
 
