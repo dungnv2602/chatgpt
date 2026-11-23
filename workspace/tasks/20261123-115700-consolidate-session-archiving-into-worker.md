@@ -60,9 +60,16 @@ Make The Worker the sole owner of collaboration modes, task/session continuity, 
 - **References:** `skills/the-worker/SKILL.md`, `skills/the-worker/references/conversation-mode.md`, `skills/session-archiving/SKILL.md`, `skills/conversation-mode/SKILL.md`, `skills/document-standards/SKILL.md`, `skills/document-standards/references/document-type-catalog.md`, `skills/SESSION_START.md`, `skills/README.md`, `workspace/README.md`, `workspace/task_board.md`, `workspace/discussion.md`, `archive/README.md`, `archive/tasks/20261123-112100-consolidate-foundational-skills-into-worker.md`.
 - **Next:** Transfer supporting assets and procedures into The Worker, then update all dependent references and remove the two standalone skill directories.
 
+### 2026-11-23 11:58 UTC
+
+- **Action:** Copied all three canonical templates, all four operational references, and all three image-processing scripts from Session Archiving into The Worker.
+- **Result:** All ten destination files were retrieved from branch `gpt`. Their blob IDs match the original source blob IDs, confirming exact copies. The original files remain until dependent paths are updated.
+- **References:** `skills/the-worker/assets/`, `skills/the-worker/references/`, and `skills/the-worker/scripts/`.
+- **Next:** Integrate archive/media ownership into The Worker and update workflow, Drawing, session-start, image README, and catalog references.
+
 ## 7. Current State
 
-The task is approved and in progress. No repository content has been changed yet. The full migration scope is identified.
+The task is approved and in progress. All ten supporting files have been copied into The Worker and passed exact blob-ID read-back. Original Session Archiving files remain until all references are updated.
 
 ## 8. Remaining Work
 
