@@ -214,7 +214,7 @@ jobs:
             echo
             echo "## Exact Files Evaluated"
             echo
-            for file in "${files[@]}"; do printf -- "- `%s`\\n" "$file"; done
+            for file in "${files[@]}"; do printf -- "- `%s`\n" "$file"; done
             echo
             echo "## STE-100 Findings by File"
             echo
