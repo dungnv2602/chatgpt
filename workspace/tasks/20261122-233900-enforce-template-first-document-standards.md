@@ -5,7 +5,7 @@
 - **ID:** 20261122-233900
 - **Template version:** 1.0
 - **Created:** 2026-11-22 23:39 UTC
-- **Updated:** 2026-11-23 01:34 UTC
+- **Updated:** 2026-11-23 01:45 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -261,6 +261,13 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** `skills/document-standards/scripts/test_validate_catalog.py` commit `18f9465128a5d79ab0aa879510c0ed32462df8b7`; catalog priority update `ce6594bb8f8ab0ca30b507f879d104e98ee6ae0c`.
 - **Next:** Obtain authorization to create a dedicated hosted workflow, then run the 13 tests and catalog validator on GitHub Actions.
 
+### 2026-11-23 01:45 UTC
+
+- **Action:** Completed the focused field-contract audit of all eight Version 1.1 novel templates and clarified empty repeatable structures.
+- **Result:** Added a catalog matrix for required baselines, conditional and optional content, and repeatable structures. Clarified zero-entry handling in the novel, character-profile, development-outline, arc, and scene templates. Existing open-discussion and illustration templates already define their conditional/optional behavior. No field structure changed, so template versions remain 1.1. Every changed template and the catalog were fetched again and the inserted text was confirmed.
+- **References:** `skills/document-standards/references/document-type-catalog.md` commit `6195b82412ae0057f0a1c07c6cfd673e09d2e84f` and follow-up commit `81923a8f1b9271ffd04da1a9a375baa9c18e99d5`; novel template clarification commits `d7223bf0bf4b1a0601f5bbfa8a38e592b85272b8`, `a6c802d092e21236bbd96ce047e2b641e4890f62`, `f082101227042bf7cfa8098f56398748f9bc813b`, `d545533a04c0addb1632549adc328191ae3c71c8`, and `72c32a8a79c9578048f4e383886f35ecfd453957`.
+- **Next:** Obtain explicit authorization for the dedicated hosted validation workflow; do not modify workflow files before approval.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
@@ -273,6 +280,7 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - Workspace task records use the Version 1.1 template at `workspace/TASK_TEMPLATE.md`. This task record predates that revision and remains at Template version 1.0.
 - Task boards and the Condensed Mode discussion register remain embedded contracts for single live files.
 - Novel documents use the current Version 1.1 template set. The active Novel-02 open-discussion register and relationship-progression outline use content-specific layouts; preserve them and use canonical templates for new records or material revisions. Six Novel-01 illustration notes remain Version 1.0 legacy records across Scenes 002–005. Three legacy illustration-prompt records exist in Scenes 003–005; Scene-003 declares Version 1.0, while Scene-004 and Scene-005 lack version frontmatter. No current character-profile record was found in the inspected projects. Do not mass-migrate untouched historical records.
+- The eight Version 1.1 novel templates now have a field-contract matrix in the Document Type Catalog. Required baselines, conditional/optional content, and repeatable structures are recorded. Five templates clarify how to represent empty repeatable blocks/tables; no field structure changed and no version increment was required.
 - The image asset directory contract is embedded in `images/README.md`. The image takeout hand-off is validated by `skills/session-archiving/scripts/process_takeout.py`; `images/takeout/HANDOFF.yml` is the current draft example (`status: draft`). The same script defines conversion-report and manifest columns. `verify_published_manifest.py` checks published data and links.
 - The processor test suite covers important intake and publication paths. GitHub Actions run #54 passed all 36 tests, including invalid hand-off metadata, metadata propagation into the generated drawing-session manifest, and manifest compatibility cases. Its publication-verification step found no drawing-session manifests in the run workspace, so it did not verify live manifest rows.
 - The three master catalogues have been reviewed. Images contains standalone prompt blocks, Poses mixes bullet ideas and prose, and Prompts groups scene-specific prompt records. Keep them as lightweight collections; no common entry schema is justified.
@@ -419,6 +427,11 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **Method:** Read the task board, verify the active task path is absent, inspect the archival commit's changed-path metadata, and read the archived record once during the investigation.
 - **Result:** The archive commit added the archive path; the active path is absent; the task board links the archived record and archival commit exactly once. The user clarified that reading exact archived records is allowed; the updated policy prohibits content modification.
 - **Limitations:** The archived record was not modified. Future archive reads must remain exact and task-relevant; broad archive scans are not part of routine closeout.
+
+- **Check:** Novel template field-contract completeness and empty repeatable structures.
+- **Method:** Read all eight Version 1.1 novel templates; compare required, conditional, optional, enumerated, and repeatable content; update the catalog matrix and clarify empty-row/block conventions where needed; fetch every changed path again.
+- **Result:** All eight templates are represented in the matrix. Five template files and the catalog were updated and read back successfully. Open-discussion and illustration templates already expressed their conditional/optional behavior. No format fields changed; Version 1.1 remains current.
+- **Limitations:** This is a template-level structural audit. It does not assert that every historical novel record has been migrated or that creative content is semantically complete.
 
 ## 12. Handoff Instructions
 
