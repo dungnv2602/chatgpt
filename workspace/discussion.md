@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 UTC —** Inspect the required GitHub Actions preflight and current task state. Then revise Condensed Mode so this file gives one short brief before each meaningful work step, with task details kept in the task record.
+- **2026-11-23 00:56 UTC —** Revise the Condensed Mode skill, Worker integration, and workspace navigation so `discussion.md` gives a short, user-visible brief before each meaningful work step.
 
 ## Open Discussions
 
