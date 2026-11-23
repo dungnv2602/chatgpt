@@ -247,12 +247,19 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** `skills/document-standards/SKILL.md`; `skills/document-standards/scripts/validate_catalog.py`; `skills/document-standards/scripts/test_validate_catalog.py`; `skills/document-standards/references/document-type-catalog.md`; `archive/README.md`; `.github/scripts/cleanup-archive.py`; `.github/archive-retention-state.json`; `.github/workflows/archive-retention.yml`; `.github/workflows/convert-images-to-webp.yml`; `.github/workflows/notification.yml`; `.github/workflows/ste-lint-changed.yml`; `.github/workflows/ste-lint-full-docs.yml`; `lint_reports/latest-lint-report.md`.
 - **Next:** Complete the remaining repository-path reconciliation, decide whether additional structural checks are justified, and obtain approval before any workflow integration.
 
+### 2026-11-23 01:31 UTC
+
+- **Action:** Reconciled the remaining repository text/configuration paths outside `archive/` and classified the additional document types.
+- **Result:** The recursive tree contains 199 Markdown/YAML/JSON/CSV/TOML files outside `archive/`: drawings 97, skills 51, novels 33, .github 6, workspace 5, images 3, master 3, and lint_reports 1. The catalog now includes the novel workspace index/workflow, historical prompt indexes, skill changelog, one-off curriculum, and legacy template/attempt/log examples. It contains 34 document types and 75 exact canonical/sample references. This is a path-level inventory with representative content review, not a content audit of all 199 files. No broad archive scan or archive mutation occurred.
+- **References:** Catalog commit `e556c606705eba49075793e2ce91c1cf2d53e5c6`; `novels/README.md`; `novels/WORKFLOW.md`; `drawings/2026-11-19/README.md`; `drawings/2026-11-19/attempt-01.md`; `drawings/history/successful-prompts.md`; `drawings/history/failed-prompts.md`; historical prompt logs and legacy Novel Version 1.0 templates; skill changelog and curriculum.
+- **Next:** Decide whether additional structural checks are justified, then obtain user approval for hosted validator integration.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
 - The task is the sole Current Execution task.
 - The novel workspace has a mature Version 1.1 template set for eight document types. Version 1.0 templates remain historical references.
-- Non-novel drawing attempts use Version 1.1 of `skills/drawing/assets/attempt-template.md`. The template separates record, generation, and user-decision states and records required provenance.
+- New non-novel drawing attempts use Version 1.1 of `skills/drawing/assets/attempt-template.md`. The template separates record, generation, and user-decision states and records required provenance. Earlier attempts, including `drawings/2026-11-19/attempt-01.md`, remain legacy records and are not mass-migrated.
 - Drawing-session briefs, conversation-integrity records, and session summaries have standalone Version 1.0 templates. The session brief defines Active, Paused, and Closed states. The daily drawing index uses Version 1.1 and the exact six-field contract.
 - Agent Skill definitions have a copy-ready template at `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`.
 - Drawing pattern entries have separate successful and failure templates in `skills/drawing/references/patterns/PATTERN-TEMPLATES.md`.
@@ -263,21 +270,21 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - The processor test suite covers important intake and publication paths. GitHub Actions run #54 passed all 36 tests, including invalid hand-off metadata, metadata propagation into the generated drawing-session manifest, and manifest compatibility cases. Its publication-verification step found no drawing-session manifests in the run workspace, so it did not verify live manifest rows.
 - The three master catalogues have been reviewed. Images contains standalone prompt blocks, Poses mixes bullet ideas and prose, and Prompts groups scene-specific prompt records. Keep them as lightweight collections; no common entry schema is justified.
 - Archive policy and retention state are cataloged as embedded contracts; GitHub Actions workflow YAML is exempt under its external schema, and the repository-wide STE lint report is workflow-owned. The archive-retention workflow's manual and workflow-call force triggers remain an unresolved user policy question.
-- The catalog covers 31 document types and records representative current examples, legacy exceptions, and justified exemptions. Its Initial Inventory contains 66 exact file references, with no directory references or malformed table rows. Full file-by-file reconciliation remains incomplete.
+- The catalog covers 34 document types and records representative current examples, legacy exceptions, and justified exemptions. Its Initial Inventory contains 75 exact file references, with no directory references or malformed table rows. The path-level tree inventory covers 199 supported text/configuration files outside `archive/`; content review remains representative, not exhaustive.
 - A catalog-integrity validator and regression tests now exist at `skills/document-standards/scripts/`. They check catalog structure and exact references, not document-body conformance. The validator now allows `.github` and `lint_reports`, with a regression test covering both roots. The validator and tests have not run on a hosted runner because workflow integration awaits user authorization.
 - The GitHub Actions skill now permits exact, task-relevant archive reads and prohibits manual archive mutation. The Worker also requires the original archive-introduction commit when it reuses a prior archive copy.
 - The changed-document lint preflight repository-resolution defect has been fixed on `gpt`. Run #349 confirms that preflight, baseline lookup, and changed-file discovery succeed. The downstream STE lint step still fails on existing findings in the lint report and Agent Skill documentation; the updated remote-only policy files had no findings.
 
 ## 8. Remaining Work
 
-- Complete repository-path reconciliation for remaining project files, excluding broad scans of archived records.
+- Complete targeted content review for any remaining project-specific type not represented by a current or legacy sample; do not broaden archive reads.
 - Decide whether additional structural checks add value without duplicating generator-owned schemas.
 - Obtain separate user approval to integrate the catalog validator and tests into GitHub Actions.
 - After approval, run the validator and its tests on a hosted runner, then repair any failures.
 
 ## 9. Next Actions
 
-1. Complete repository-path reconciliation for remaining project files, without broad archive scans.
+1. Complete targeted content review for any remaining project-specific type not represented by a current or legacy sample; do not broaden archive reads.
 2. Decide whether additional structural checks add value without duplicating generator-owned schemas.
 3. Obtain separate user approval before creating or changing a GitHub Actions workflow for catalog-validator integration.
 4. After approval, integrate the validator and tests into an appropriate hosted workflow and review the run result.
@@ -344,6 +351,26 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - `novels/Novel-01/Arc-01/Scene-003/illustrations/illustration-01-prompt.md`
 - `novels/Novel-01/Arc-01/Scene-004/illustrations/illustration-01-prompt.md`
 - `novels/Novel-01/Arc-01/Scene-005/illustrations/illustration-01-prompt.md`
+- `novels/README.md`
+- `novels/WORKFLOW.md`
+- `novels/templates/novel-v1.md`
+- `novels/templates/arc-v1.md`
+- `novels/templates/scene-v1.md`
+- `novels/templates/illustration-note-v1.md`
+- `drawings/2026-11-19/README.md`
+- `drawings/2026-11-19/attempt-01.md`
+- `drawings/history/successful-prompts.md`
+- `drawings/history/failed-prompts.md`
+- `drawings/history/2026-11-12-image-prompts.md`
+- `drawings/history/2026-11-13-image-prompts.md`
+- `drawings/history/2026-11-16-image-prompts.md`
+- `drawings/history/conversation-2026-11-11-sams-origin-and-wonderhome.md`
+- `skills/philosophy-religion-asceticism/CHANGELOG.md`
+- `skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md`
+- `skills/asd-ste100/README.md`
+- `skills/drawing/README.md`
+- `skills/philosophy-religion-asceticism/README.md`
+- `skills/prompt-master/README.md`
 
 ## 11. Verification
 
@@ -351,6 +378,10 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **Method:** Read back the new catalog rows, `ALLOWED_ROOTS`, and the regression test for `.github` and `lint_reports`; inspect table row boundaries and exact path references.
 - **Result:** The catalog contains 31 document types and 66 exact references, with no directory references or malformed rows. The validator allows both roots, and the regression test covers them.
 - **Limitations:** Source-level inspection only. Tests have not run; hosted validation requires separate workflow approval. Archive retention trigger scope remains unresolved.
+- **Check:** Repository path inventory outside the archive boundary.
+- **Method:** Enumerated the current Git tree for Markdown, YAML, JSON, CSV, and TOML files while excluding `archive/`; sampled representative legacy and current records by project area.
+- **Result:** 199 supported text/configuration paths were enumerated: drawings 97, skills 51, novels 33, .github 6, workspace 5, images 3, master 3, and lint_reports 1. The catalog contains 34 document types and 75 exact references.
+- **Limitations:** Path-level inventory is complete for these extensions; content review is representative, not exhaustive. No broad archive scan was performed.
 - **Check:** Representative record review and catalog reference update.
 - **Method:** Read the exact representative records and templates, read back the revised skill, templates, and catalog, and fetched all 10 newly added exact file references.
 - **Result:** The reviewed legacy records remain unchanged. The Initial Inventory contains 51 exact references; no directory references remain in that table. All 10 newly added file references exist.
