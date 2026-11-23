@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 12:24 UTC — Begin image provenance reference review:** Review the two hard findings in `skills/session-archiving/references/image-provenance-and-webp.md` against the takeout pipeline and source-preservation rules.
+- **2026-11-23 12:28 UTC — Standardize image provenance validation:** Use `validate` consistently for path, mapping, and link validation. Remove the conflicting `verify` and `checking` verbs without changing evidence requirements.
 
 ## Open Discussions
 
