@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45159721991",
-  "run_number": 474,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45159721991",
+  "run_id": "45160120558",
+  "run_number": 478,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45160120558",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "0e1fbb6b1dc7696a51badffe11e2f1b2a6ca4edc",
+  "commit_sha": "6dd39dd5e1de50351bcc3f39b1caeaa3d540d4fd",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T10:50:59.886634+00:00",
+  "generated_at_utc": "2026-11-23T10:54:06.428450+00:00",
   "status": "Failed",
-  "linter_source_sha": "0e1fbb6b1dc7696a51badffe11e2f1b2a6ca4edc",
+  "linter_source_sha": "6dd39dd5e1de50351bcc3f39b1caeaa3d540d4fd",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -71,21 +71,20 @@
     "skills/philosophy-religion-asceticism/CHANGELOG.md"
   ],
   "files_evaluated_count": 49,
-  "files_failed": 4,
+  "files_failed": 3,
   "failed_files": [
     "skills/document-standards/references/document-type-catalog.md",
     "skills/drawing/assets/daily-index-template.md",
-    "workspace/TASK_TEMPLATE.md",
     "skills/session-archiving/assets/session-brief-template.md"
   ],
   "files_with_findings": 39,
-  "total_findings": 346,
-  "hard_findings": 27,
+  "total_findings": 343,
+  "hard_findings": 24,
   "advisory_findings": 319,
   "findings_by_rule": {
     "passive-voice": 279,
     "present-perfect": 40,
-    "synonym-rotation": 9,
+    "synonym-rotation": 6,
     "phrasal-verb": 5,
     "nominalization": 2,
     "marketing-adjective": 5,
@@ -2528,15 +2527,6 @@
         },
         {
           "file": "workspace/TASK_TEMPLATE.md",
-          "line": 57,
-          "col": 58,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "checks",
-          "message": "'check' and 'verify' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/TASK_TEMPLATE.md",
           "line": 73,
           "col": 20,
           "rule": "passive-voice",
@@ -2554,13 +2544,13 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 5,
-      "hard_count": 1,
+      "count": 4,
+      "hard_count": 0,
       "baseline": 0,
       "words": 385,
-      "per_100_words": 1.3,
+      "per_100_words": 1.0,
       "path": "workspace/TASK_TEMPLATE.md",
-      "exit_code": 1
+      "exit_code": 0
     },
     {
       "violations": [
@@ -2639,24 +2629,15 @@
         {
           "file": "skills/drawing/references/series-continuity-and-iteration.md",
           "line": 177,
-          "col": 31,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Check",
-          "message": "'check' and 'confirm' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/drawing/references/series-continuity-and-iteration.md",
-          "line": 177,
-          "col": 77,
+          "col": 79,
           "rule": "passive-voice",
           "level": "advisory",
           "match": "was attached",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 10,
-      "hard_count": 1,
+      "count": 9,
+      "hard_count": 0,
       "baseline": 9,
       "words": 3262,
       "per_100_words": 0.3,
@@ -2903,15 +2884,6 @@
         },
         {
           "file": "skills/session-archiving/references/archive-records-and-image-prompts.md",
-          "line": 49,
-          "col": 20,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "verify",
-          "message": "'verify' and 'confirm' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/session-archiving/references/archive-records-and-image-prompts.md",
           "line": 84,
           "col": 21,
           "rule": "passive-voice",
@@ -3136,10 +3108,10 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 28,
-      "hard_count": 1,
+      "count": 27,
+      "hard_count": 0,
       "baseline": 20,
-      "words": 4527,
+      "words": 4529,
       "per_100_words": 0.6,
       "path": "skills/session-archiving/references/archive-records-and-image-prompts.md",
       "exit_code": 0
@@ -6302,17 +6274,6 @@
     },
     {
       "file": "workspace/TASK_TEMPLATE.md",
-      "line": 57,
-      "col": 58,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "checks",
-      "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
-      "fingerprint": "e37028ed88b119b98fe16981",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/TASK_TEMPLATE.md",
       "line": 73,
       "col": 20,
       "rule": "passive-voice",
@@ -6424,18 +6385,7 @@
     {
       "file": "skills/drawing/references/series-continuity-and-iteration.md",
       "line": 177,
-      "col": 31,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Check",
-      "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
-      "fingerprint": "284ad5169b785d0b95212ad0",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/series-continuity-and-iteration.md",
-      "line": 177,
-      "col": 77,
+      "col": 79,
       "rule": "passive-voice",
       "level": "advisory",
       "match": "was attached",
@@ -6650,17 +6600,6 @@
       "match": "was completed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "b42e4986c1414564f3a43dfe",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/session-archiving/references/archive-records-and-image-prompts.md",
-      "line": 49,
-      "col": 20,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'confirm' name the same action. Pick one and use it every time.",
-      "fingerprint": "5d54d956f78d455711c2a358",
       "comparison": "recurring"
     },
     {
@@ -7545,17 +7484,39 @@
     }
   ],
   "new_findings": 0,
-  "recurring_findings": 346,
+  "recurring_findings": 343,
   "resolved_findings": [
     {
-      "file": "skills/INITIALIZATION_POLICY.md",
-      "line": 132,
-      "col": 288,
-      "rule": "semicolon",
+      "file": "workspace/TASK_TEMPLATE.md",
+      "line": 57,
+      "col": 58,
+      "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "b28796101e8a0d8165b3d79b",
+      "match": "checks",
+      "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
+      "fingerprint": "e37028ed88b119b98fe16981",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/series-continuity-and-iteration.md",
+      "line": 177,
+      "col": 31,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Check",
+      "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
+      "fingerprint": "284ad5169b785d0b95212ad0",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/session-archiving/references/archive-records-and-image-prompts.md",
+      "line": 49,
+      "col": 20,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "verify",
+      "message": "'verify' and 'confirm' name the same action. Pick one and use it every time.",
+      "fingerprint": "5d54d956f78d455711c2a358",
       "comparison": "resolved"
     }
   ],
@@ -7576,7 +7537,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.369s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.378s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -7594,7 +7555,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 625 active Markdown files (691 available as link targets) and 338 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 649 active Markdown files (715 available as link targets) and 338 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []

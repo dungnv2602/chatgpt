@@ -2,29 +2,29 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#474](https://github.com/dungnv2602/chatgpt/actions/runs/45159721991)
-- **Run ID / attempt:** 45159721991 / 1
+- **Run:** [#478](https://github.com/dungnv2602/chatgpt/actions/runs/45160120558)
+- **Run ID / attempt:** 45160120558 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 0e1fbb6b1dc7696a51badffe11e2f1b2a6ca4edc
+- **Branch / commit:** gpt / 6dd39dd5e1de50351bcc3f39b1caeaa3d540d4fd
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 0e1fbb6b1dc7696a51badffe11e2f1b2a6ca4edc
-- **Generated (UTC):** 2026-11-23T10:50:59.886634+00:00
+- **Linter source SHA:** 6dd39dd5e1de50351bcc3f39b1caeaa3d540d4fd
+- **Generated (UTC):** 2026-11-23T10:54:06.428450+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
 | Files evaluated | 49 |
-| Files that failed | 4 |
+| Files that failed | 3 |
 | Files with findings | 39 |
-| Total findings | 346 |
-| Hard findings | 27 |
+| Total findings | 343 |
+| Hard findings | 24 |
 | Advisory findings | 319 |
 | New findings | 0 |
-| Recurring findings | 346 |
-| Resolved findings | 1 |
+| Recurring findings | 343 |
+| Resolved findings | 3 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -126,15 +126,15 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/INITIALIZATION_POLICY.md | PASS | 2 | 0 | 4 | 1180 | 0.2 | 0 |
 | skills/drawing/assets/daily-index-template.md | FAIL | 1 | 1 | 0 | 210 | 0.5 | 1 |
 | skills/session-archiving/assets/session-summary-template.md | PASS | 0 | 0 | 0 | 106 | 0.0 | 0 |
-| workspace/TASK_TEMPLATE.md | FAIL | 5 | 1 | 0 | 385 | 1.3 | 1 |
-| skills/drawing/references/series-continuity-and-iteration.md | PASS | 10 | 1 | 9 | 3262 | 0.3 | 0 |
+| workspace/TASK_TEMPLATE.md | PASS | 4 | 0 | 0 | 385 | 1.0 | 0 |
+| skills/drawing/references/series-continuity-and-iteration.md | PASS | 9 | 0 | 9 | 3262 | 0.3 | 0 |
 | skills/asd-ste100/references/writing-rules.md | PASS | 8 | 0 | 6 | 706 | 1.1 | 0 |
 | skills/philosophy-religion-asceticism/references/answer-patterns.md | PASS | 1 | 0 | 0 | 235 | 0.4 | 0 |
 | workspace/README.md | PASS | 2 | 0 | 0 | 596 | 0.3 | 0 |
 | skills/session-archiving/references/image-processing-scripts.md | PASS | 0 | 0 | 0 | 344 | 0.0 | 0 |
 | skills/the-worker/SKILL.md | PASS | 5 | 0 | 0 | 3133 | 0.2 | 0 |
 | skills/session-archiving/references/drawing-session-closeout.md | PASS | 1 | 0 | 0 | 612 | 0.2 | 0 |
-| skills/session-archiving/references/archive-records-and-image-prompts.md | PASS | 28 | 1 | 20 | 4527 | 0.6 | 0 |
+| skills/session-archiving/references/archive-records-and-image-prompts.md | PASS | 27 | 0 | 20 | 4529 | 0.6 | 0 |
 | skills/drawing/references/prompt-fidelity.md | PASS | 46 | 1 | 15 | 3676 | 1.3 | 0 |
 | skills/document-standards/SKILL.md | PASS | 2 | 0 | 0 | 1612 | 0.1 | 0 |
 | skills/session-archiving/SKILL.md | PASS | 3 | 0 | 7 | 2388 | 0.1 | 0 |
@@ -153,8 +153,8 @@ Counts include hard and advisory findings.
 |---|---:|
 | passive-voice | 279 |
 | present-perfect | 40 |
-| synonym-rotation | 9 |
 | long-sentence | 6 |
+| synonym-rotation | 6 |
 | marketing-adjective | 5 |
 | phrasal-verb | 5 |
 | nominalization | 2 |
@@ -189,7 +189,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.369s
+Ran 4 tests in 0.378s
 
 OK
 ~~~
@@ -222,7 +222,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 625 active Markdown files (691 available as link targets) and 338 local Markdown links.
+Scanned 649 active Markdown files (715 available as link targets) and 338 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -1168,10 +1168,6 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was inspected
-- **synonym-rotation** · workspace/TASK_TEMPLATE.md:57:58 · **recurring** · fingerprint: e37028ed88b119b98fe16981
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
 - **passive-voice** · workspace/TASK_TEMPLATE.md:73:20 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1212,11 +1208,7 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** being edited
-- **synonym-rotation** · skills/drawing/references/series-continuity-and-iteration.md:177:31 · **recurring** · fingerprint: 284ad5169b785d0b95212ad0
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** Check
-- **passive-voice** · skills/drawing/references/series-continuity-and-iteration.md:177:77 · **recurring** · fingerprint: 6bead85653574df77128e560
+- **passive-voice** · skills/drawing/references/series-continuity-and-iteration.md:177:79 · **recurring** · fingerprint: 6bead85653574df77128e560
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was attached
@@ -1296,10 +1288,6 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was completed
-- **synonym-rotation** · skills/session-archiving/references/archive-records-and-image-prompts.md:49:20 · **recurring** · fingerprint: 5d54d956f78d455711c2a358
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
 - **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:84:21 · **recurring** · fingerprint: 1e36a113c65e15f12385ea65
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1623,10 +1611,18 @@ None.
 
 ### Resolved findings
 
-- **semicolon** · skills/INITIALIZATION_POLICY.md:132:288 · **resolved** · fingerprint: b28796101e8a0d8165b3d79b
+- **synonym-rotation** · workspace/TASK_TEMPLATE.md:57:58 · **resolved** · fingerprint: e37028ed88b119b98fe16981
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
+  - **Matched text:** checks
+- **synonym-rotation** · skills/drawing/references/series-continuity-and-iteration.md:177:31 · **resolved** · fingerprint: 284ad5169b785d0b95212ad0
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** Check
+- **synonym-rotation** · skills/session-archiving/references/archive-records-and-image-prompts.md:49:20 · **resolved** · fingerprint: 5d54d956f78d455711c2a358
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
 
 ## 8. Complete per-file diagnostics
 
@@ -3192,13 +3188,13 @@ No STE findings were recorded for this file.
 
 ### workspace/TASK_TEMPLATE.md
 
-- **Result:** FAIL
-- **Exit code:** 1
-- **Findings:** 5
-- **Hard findings:** 1
+- **Result:** PASS
+- **Exit code:** 0
+- **Findings:** 4
+- **Hard findings:** 0
 - **Baseline:** 0
 - **Words:** 385
-- **Findings per 100 words:** 1.3
+- **Findings per 100 words:** 1.0
 
 #### Complete diagnostics
 
@@ -3211,11 +3207,6 @@ No STE findings were recorded for this file.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was inspected
-
-- **synonym-rotation** · workspace/TASK_TEMPLATE.md:57:58 · **recurring** · fingerprint: e37028ed88b119b98fe16981
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
 
 - **passive-voice** · workspace/TASK_TEMPLATE.md:73:20 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
   - **Level:** advisory
@@ -3232,8 +3223,8 @@ No STE findings were recorded for this file.
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 10
-- **Hard findings:** 1
+- **Findings:** 9
+- **Hard findings:** 0
 - **Baseline:** 9
 - **Words:** 3262
 - **Findings per 100 words:** 0.3
@@ -3280,12 +3271,7 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** being edited
 
-- **synonym-rotation** · skills/drawing/references/series-continuity-and-iteration.md:177:31 · **recurring** · fingerprint: 284ad5169b785d0b95212ad0
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** Check
-
-- **passive-voice** · skills/drawing/references/series-continuity-and-iteration.md:177:77 · **recurring** · fingerprint: 6bead85653574df77128e560
+- **passive-voice** · skills/drawing/references/series-continuity-and-iteration.md:177:79 · **recurring** · fingerprint: 6bead85653574df77128e560
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was attached
@@ -3458,10 +3444,10 @@ No STE findings were recorded for this file.
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 28
-- **Hard findings:** 1
+- **Findings:** 27
+- **Hard findings:** 0
 - **Baseline:** 20
-- **Words:** 4527
+- **Words:** 4529
 - **Findings per 100 words:** 0.6
 
 #### Complete diagnostics
@@ -3475,11 +3461,6 @@ No STE findings were recorded for this file.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was completed
-
-- **synonym-rotation** · skills/session-archiving/references/archive-records-and-image-prompts.md:49:20 · **recurring** · fingerprint: 5d54d956f78d455711c2a358
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
 
 - **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:84:21 · **recurring** · fingerprint: 1e36a113c65e15f12385ea65
   - **Level:** advisory
