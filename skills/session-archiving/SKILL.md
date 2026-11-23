@@ -29,7 +29,7 @@ This boundary applies to every future task and every tool call, not only archivi
   - `.github/archive-retention-index.json` — exact task archive paths and UTC timestamps only
 - Read and write files only by exact paths beginning with one of those approved directory names.
 - Do not recreate the obsolete `ChatGPT/` wrapper or consult former paths from the previous repository layout.
-- Do not use repository-wide code search or recursive root-tree listings. Use exact paths and narrowly scoped directory listings within approved project directories.
+- Do not use repository-wide code search or recursive root-tree listings unless the user explicitly requests a full-repository audit. That request authorizes read-only tree inventory and exact-path retrieval within the stated scope, including archive contents only when the request expressly includes them. It does not authorize writes or override archive immutability. Use exact paths for all writes.
 - Do not follow Markdown links outside the approved directories. If an essential reference is outside them and is not supplied in this conversation, explain the limitation. Ask the user to place it in an approved directory or provide it in chat.
 - A request to use an outside reference does not silently change this boundary. Ask for explicit permission before accessing an outside repository path.
 - Repository and branch identifiers may be used to direct GitHub operations, but this does not authorize reading or writing files outside the approved directories.
