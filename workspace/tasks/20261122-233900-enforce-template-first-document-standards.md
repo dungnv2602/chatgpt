@@ -5,7 +5,7 @@
 - **ID:** 20261122-233900
 - **Template version:** 1.0
 - **Created:** 2026-11-22 23:39 UTC
-- **Updated:** 2026-11-23 02:06 UTC
+- **Updated:** 2026-11-23 02:08 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -273,42 +273,40 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** Workflow commit `6d75ab6778993cc15dad2680c207f354a50f7105`; fixture correction commit `44e4e4bdbf9d9c20f349d5e29b70c8ea94409cd4`; discussion update `eb0ad1f93fbe7edb3f252f07fc87885f7de86539`.
 - **Next:** Inspect the completed result of run `45098008709` during the next bounded CI preflight. If it passes, complete task-board/record closeout. If it fails, diagnose the exact failure before changing anything.
 
+### 2026-11-23 02:08 UTC
+
+- **Action:** Completed hosted catalog validation and the remaining hand-off/manifest contract audit.
+- **Result:** Hosted run [45098008709](https://github.com/dungnv2602/chatgpt/actions/runs/45098008709) passed. Its job log confirms all 13 catalog-validator regression tests passed and the catalog validator reported 34 document types and 76 exact references. The takeout processor, publisher verifier, hand-off README/example, and 36-test suite were reviewed against the catalog. The existing hosted takeout run [#54](https://github.com/actions/runs/45091120330) passed all 36 tests. Coverage includes hand-off readiness and exact intake, metadata validation, destination safety, rollback, hash/mapping states, manifest preservation/backfill, published assets, URLs, and README/attempt links. Coverage is intentionally not exhaustive; the processor and tests remain the format authority, so no duplicate schema was added.
+- **References:** .github/workflows/validate-document-standards.yml; skills/document-standards/scripts/validate_catalog.py; skills/document-standards/scripts/test_validate_catalog.py; skills/document-standards/references/document-type-catalog.md; skills/session-archiving/scripts/process_takeout.py; skills/session-archiving/scripts/verify_published_manifest.py; skills/session-archiving/scripts/test_process_takeout_unittest.py; images/takeout/README.md; images/takeout/HANDOFF.yml.
+- **Next:** Prepare and verify the immutable final archive copy, then remove the active record and reconcile the task board under the Worker closeout procedure.
+
 ## 7. Current State
 
-- The user approved the template-first policy.
-- The task is the sole Current Execution task.
-- The novel workspace has a mature Version 1.1 template set for eight document types. Version 1.0 templates remain historical references.
-- New non-novel drawing attempts use Version 1.1 of `skills/drawing/assets/attempt-template.md`. The template separates record, generation, and user-decision states and records required provenance. Earlier attempts, including `drawings/2026-11-19/attempt-01.md`, remain legacy records and are not mass-migrated.
-- Drawing-session briefs, conversation-integrity records, and session summaries have standalone Version 1.0 templates. The session brief defines Active, Paused, and Closed states. The daily drawing index uses Version 1.1 and the exact six-field contract.
-- Agent Skill definitions have a copy-ready template at `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`.
-- Drawing pattern entries have separate successful and failure templates in `skills/drawing/references/patterns/PATTERN-TEMPLATES.md`.
-- Workspace task records use the Version 1.1 template at `workspace/TASK_TEMPLATE.md`. This task record predates that revision and remains at Template version 1.0.
-- Task boards and the Condensed Mode discussion register remain embedded contracts for single live files.
-- Novel documents use the current Version 1.1 template set. The active Novel-02 open-discussion register and relationship-progression outline use content-specific layouts; preserve them and use canonical templates for new records or material revisions. Six Novel-01 illustration notes remain Version 1.0 legacy records across Scenes 002–005. Three legacy illustration-prompt records exist in Scenes 003–005; Scene-003 declares Version 1.0, while Scene-004 and Scene-005 lack version frontmatter. No current character-profile record was found in the inspected projects. Do not mass-migrate untouched historical records.
-- The eight Version 1.1 novel templates now have a field-contract matrix in the Document Type Catalog. Required baselines, conditional/optional content, and repeatable structures are recorded. Five templates clarify how to represent empty repeatable blocks/tables; no field structure changed and no version increment was required.
-- The image asset directory contract is embedded in `images/README.md`. The image takeout hand-off is validated by `skills/session-archiving/scripts/process_takeout.py`; `images/takeout/HANDOFF.yml` is the current draft example (`status: draft`). The same script defines conversion-report and manifest columns. `verify_published_manifest.py` checks published data and links.
-- The Document Standards catalog validator now has a dedicated hosted workflow at `.github/workflows/validate-document-standards.yml`. Its first run exposed a contradictory regression-test fixture; the fixture was corrected and a second hosted run is pending completion.
-- The processor test suite covers important intake and publication paths. GitHub Actions run #54 passed all 36 tests, including invalid hand-off metadata, metadata propagation into the generated drawing-session manifest, and manifest compatibility cases. Its publication-verification step found no drawing-session manifests in the run workspace, so it did not verify live manifest rows.
-- The three master catalogues have been reviewed. Images contains standalone prompt blocks, Poses mixes bullet ideas and prose, and Prompts groups scene-specific prompt records. Keep them as lightweight collections; no common entry schema is justified.
-- Archive policy and retention state are cataloged as embedded contracts; GitHub Actions workflow YAML is exempt under its external schema, and the repository-wide STE lint report is workflow-owned. The archive-retention workflow's manual and workflow-call force triggers remain an unresolved user policy question.
-- The catalog covers 34 document types and records representative current examples, legacy exceptions, and justified exemptions. Its Initial Inventory contains 76 exact file references, with no directory references or malformed table rows. The path-level tree inventory covers 199 supported text/configuration files outside `archive/`; content review remains representative, not exhaustive.
-- A catalog-integrity validator and 13 regression tests now exist at `skills/document-standards/scripts/`. They check catalog structure, exact references, class requirements, and approved repository roots, not document-body conformance. The validator allows `.github` and `lint_reports`. The validator and tests have not run on a hosted runner because workflow integration awaits user authorization.
-- The GitHub Actions skill now permits exact, task-relevant archive reads and prohibits manual archive mutation. The Worker also requires the original archive-introduction commit when it reuses a prior archive copy.
-- The changed-document lint preflight repository-resolution defect has been fixed on `gpt`. Run #349 confirms that preflight, baseline lookup, and changed-file discovery succeed. The downstream STE lint step still fails on existing findings in the lint report and Agent Skill documentation; the updated remote-only policy files had no findings.
+- The user approved the template-first policy and the dedicated hosted validation workflow.
+- The task remains the sole Current Execution task until the archive transaction and board reconciliation finish.
+- The Document Standards skill, central catalog, and Worker authoring gate define the repository-wide template-first process. New or materially revised recurring records retrieve and use the canonical template, schema, or embedded contract before drafting.
+- The catalog classifies 34 document types across Template required, Schema required, Embedded contract, Generator-owned, Lightweight pattern, and Exempt. It contains 76 exact file references.
+- The path-level inventory enumerated 199 supported Markdown/YAML/JSON/CSV/TOML paths outside archive/. Content review is representative, not exhaustive. No broad archive scan or mass migration occurred.
+- Current canonical formats include eight Version 1.1 novel templates; drawing attempt Version 1.1 and daily-index Version 1.1 templates; session-archiving templates; the Agent Skill template; and the task template. Existing legacy and approved content remains unchanged.
+- The novel Version 1.1 field-contract matrix records required baselines, conditional and optional content, repeatable structures, and zero-entry conventions. Drawing/session templates and owner references were aligned.
+- The image hand-off and drawing-session manifest remain governed by the processor, publisher verifier, and their regression suite. The 36-test suite passed in hosted run #54. The catalog documents non-exhaustive field coverage and does not duplicate the processor's schema.
+- The catalog-integrity validator and its 13 regression tests are integrated into .github/workflows/validate-document-standards.yml. Hosted run [45098008709](https://github.com/dungnv2602/chatgpt/actions/runs/45098008709) passed both steps: 13/13 tests and catalog validation (34 types, 76 exact references).
+- The validator checks catalog structure, class-specific requirements, approved roots, and exact path existence. It does not compare document bodies with templates or establish semantic quality, factual correctness, provenance, or approval.
+- The changed-document lint workflow's repository-resolution defect is fixed. Its downstream STE lint still reports separate existing findings in lint_reports/latest-lint-report.md, skills/agent-skill-authoring/SKILL.md, and skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md; this task did not weaken linting or claim that workflow is green.
+- The archive-retention manual/workflow-call trigger scope remains a separate open user-policy discussion. No change was made to that workflow.
 
 ## 8. Remaining Work
 
-- Obtain separate user approval to create a dedicated GitHub Actions workflow for the catalog validator and its regression tests.
-- After approval, run all 13 tests and the catalog validator on a hosted runner, then repair any failures.
-- Verify the workflow, read back all changed paths, and update the task board and task record.
-- Keep the separate archive-retention trigger question open; do not change that workflow without explicit direction.
+- No implementation or validation work remains within the approved scope.
+- Mandatory task closeout remains: create the final archive record once, read it back and verify its introducing commit, delete the active task record, and reconcile the task board.
+- The archive-retention trigger question remains separate and unresolved; it does not block this task and must not be changed without explicit user direction.
 
 ## 9. Next Actions
 
-1. Obtain explicit approval to create `.github/workflows/validate-document-standards.yml` for hosted catalog validation.
-2. After approval, run `python -m unittest discover -s skills/document-standards/scripts -p 'test_validate_catalog.py' -v` and `python skills/document-standards/scripts/validate_catalog.py --root .` on GitHub Actions.
-3. Repair any failures and verify the completed workflow run.
-4. Read back all changed paths, update the task board, and record the verified result.
+1. Prepare the final Done/Archived archive copy with the verified implementation, validation results, limitations, and handoff.
+2. Create the archive path only if absent; read it back in full and verify the archive commit and changed-path metadata.
+3. Delete the active task record only after archive verification.
+4. Update and read back the task board, applying the seven-entry Historical limit.
 
 ## 10. References
 
@@ -394,64 +392,37 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 
 ## 11. Verification
 
-- **Check:** Workflow and generated-report catalog coverage; validator repository-root support.
-- **Method:** Read back the new catalog rows, `ALLOWED_ROOTS`, and the regression test for `.github` and `lint_reports`; inspect table row boundaries and exact path references.
-- **Result:** The catalog contains 31 document types and 66 exact references, with no directory references or malformed rows. The validator allows both roots, and the regression test covers them.
-- **Limitations:** Source-level inspection only. Tests have not run; hosted validation requires separate workflow approval. Archive retention trigger scope remains unresolved.
-- **Check:** Repository path inventory outside the archive boundary.
-- **Method:** Enumerated the current Git tree for Markdown, YAML, JSON, CSV, and TOML files while excluding `archive/`; sampled representative legacy and current records by project area.
-- **Result:** 199 supported text/configuration paths were enumerated: drawings 97, skills 51, novels 33, .github 6, workspace 5, images 3, master 3, and lint_reports 1. The catalog contains 34 document types and 76 exact references.
-- **Limitations:** Path-level inventory is complete for these extensions; content review is representative, not exhaustive. No broad archive scan was performed.
-- **Check:** Catalog validator rule coverage.
-- **Method:** Read back the validator and test source; count test methods; compare catalog rows with the validator's Embedded Contract, Schema required, Generator-owned, and Template required rules.
-- **Result:** 13 test methods cover valid classes, missing paths, duplicate types, unknown classes, required regression tests, approved roots, malformed rows, directory references, Embedded Contract paths, Generator-owned requirements, template naming, and path traversal.
-- **Limitations:** Tests were not executed. A GitHub Actions workflow must be authorized before hosted execution.
-- **Check:** Representative record review and catalog reference update.
-- **Method:** Read the exact representative records and templates, read back the revised skill, templates, and catalog, and fetched all 10 newly added exact file references.
-- **Result:** The reviewed legacy records remain unchanged. The Initial Inventory contains 51 exact references; no directory references remain in that table. All 10 newly added file references exist.
-- **Limitations:** The catalog validator and its tests have not run on a hosted runner. Workflow integration requires separate user approval.
-- **Check:** Master catalogues, image asset contract, and remaining representative document types.
-- **Method:** Read the three master catalogues, image README and draft hand-off, representative novel illustration notes and prompt records, one-off drawing references, and Prompt Master reference files.
-- **Result:** No common schema is justified for the master catalogues. The image README is an embedded contract; the draft hand-off is governed by the processor. The catalog records 27 types and 55 exact references, including legacy prompt/illustration records and one-off exemptions.
-- **Limitations:** This is a representative review, not full file-by-file reconciliation. The catalog validator remains unexecuted pending workflow authorization.
-- **Check:** Hosted-runner execution of takeout hand-off and manifest regression tests.
-- **Method:** Inspected run [#54](https://github.com/dungnv2602/chatgpt/actions/runs/45091120330), its job steps, and decoded logs.
-- **Result:** The `Test takeout processor` step passed all 36 tests. The log includes invalid hand-off metadata checks and manifest propagation/compatibility tests. The publication-verification step completed but found no drawing-session manifests in its workspace.
-- **Limitations:** This confirms the unit/regression suite ran and passed. It does not establish live-manifest verification for that run.
+- **Check:** Hosted catalog-integrity validation.
+- **Method:** Inspected workflow run [45098008709](https://github.com/dungnv2602/chatgpt/actions/runs/45098008709), its job step summaries, and decoded job log.
+- **Result:** Job completed successfully. All 13 regression tests passed. The catalog validator passed with 34 document types and 76 exact references.
+- **Limitations:** This validates catalog integrity and path/class rules, not document-body conformance or semantic quality.
 
-- **Check:** Remote-only repository execution policy.
-- **Method:** Read back the Worker, GitHub Actions, and Session Archiving skills after their updates.
-- **Result:** All three files contain the remote-only rule and explain why local execution is not valid for this repository.
-- **Limitations:** This policy is procedural. Future compliance must be maintained by using GitHub APIs and Actions only.
+- **Check:** Takeout hand-off, manifest, and publication contracts.
+- **Method:** Read the processor field constants and validation paths, manifest update logic, publisher verification logic, the hand-off README and draft example, and all 36 test methods. Inspected hosted run [#54](https://github.com/actions/runs/45091120330).
+- **Result:** The hosted suite passed all 36 tests. It covers readiness and exact intake, malformed metadata, safety and rollback, provenance/hash mapping, manifest backfill and custom-column preservation, published hashes/URLs, and daily README/attempt links.
+- **Limitations:** The test suite does not exercise every invalid value or every field interaction. The processor and tests remain the authority; the catalog records this limitation and does not duplicate their schema. The publication-verification step in run #54 found no live drawing-session manifests in that workspace.
 
-- **Check:** Changed-document lint workflow repository resolution.
-- **Method:** Read back `.github/workflows/ste-lint-changed.yml` and inspect the first post-fix Actions run.
-- **Result:** Both `gh run list` calls include the explicit `--repo "$GITHUB_REPOSITORY"` argument. Run #349 confirms that the preflight guard and baseline lookup succeed before checkout, and the changed-file discovery step succeeds.
-- **Limitations:** The downstream STE lint step fails on existing findings in `lint_reports/latest-lint-report.md`, `skills/agent-skill-authoring/SKILL.md`, and `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`. The workflow is functioning; the overall run is not green.
+- **Check:** Template-first inventory and canonical field contracts.
+- **Method:** Enumerated supported text/configuration paths outside archive/; reviewed recurring document types, canonical templates, owner instructions, representative current/legacy records, and the eight Version 1.1 novel templates; read back all changed paths.
+- **Result:** The catalog contains 34 document types and 76 exact references. The path inventory covers 199 supported files. Required, conditional, optional, repeatable, and missing-value conventions are recorded where applicable. Novel field-contract matrix and drawing/session template updates are committed. Legacy and creative content was preserved.
+- **Limitations:** Content review is representative, not exhaustive. No mass migration was performed. The validator does not prove each existing document conforms to its template.
 
-- **Check:** Samantha task archive closeout.
-- **Method:** Read the task board, verify the active task path is absent, inspect the archival commit's changed-path metadata, and read the archived record once during the investigation.
-- **Result:** The archive commit added the archive path; the active path is absent; the task board links the archived record and archival commit exactly once. The user clarified that reading exact archived records is allowed; the updated policy prohibits content modification.
-- **Limitations:** The archived record was not modified. Future archive reads must remain exact and task-relevant; broad archive scans are not part of routine closeout.
+- **Check:** Existing changed-document lint workflow and unrelated lint debt.
+- **Method:** Read back .github/workflows/ste-lint-changed.yml and inspect post-fix run #349.
+- **Result:** Both repository-list commands include explicit --repo "$GITHUB_REPOSITORY"; preflight and changed-file discovery succeed.
+- **Limitations:** Downstream STE lint still fails on existing findings in the lint report and Agent Skill documentation. No lint coverage was weakened; these findings are separate from this task.
 
-- **Check:** Novel template field-contract completeness and empty repeatable structures.
-- **Method:** Read all eight Version 1.1 novel templates; compare required, conditional, optional, enumerated, and repeatable content; update the catalog matrix and clarify empty-row/block conventions where needed; fetch every changed path again.
-- **Result:** All eight templates are represented in the matrix. Five template files and the catalog were updated and read back successfully. Open-discussion and illustration templates already expressed their conditional/optional behavior. No format fields changed; Version 1.1 remains current.
-- **Limitations:** This is a template-level structural audit. It does not assert that every historical novel record has been migrated or that creative content is semantically complete.
-
-- **Check:** Dedicated hosted catalog validation workflow and regression suite.
-- **Method:** Read back `.github/workflows/validate-document-standards.yml`; inspect GitHub Actions run `45097927720` and its job log; correct the contradictory fixture; read back the corrected test; inspect the next run status once.
-- **Result:** Workflow structure and corrected test fixture are verified by remote read-back. First run failed at the test step (12 passed, one fixture assertion failed); catalog validation was skipped. Corrected run `45098008709` was In Progress at the first status check.
-- **Limitations:** The corrected run's final conclusion is not yet known. Do not mark the task complete until the completed hosted run passes both tests and catalog validation.
+- **Check:** Archive boundary and task closeout readiness.
+- **Method:** Read the Worker closeout procedure, task template, and archive README.
+- **Result:** Closeout requires a one-time final archive write, full read-back and commit-path verification, active-record deletion, and board reconciliation. Archived records remain immutable after initial write.
+- **Limitations:** The archive transaction and board reconciliation are the remaining mandatory closeout steps. The separate archive-retention trigger question remains open and unchanged.
 
 ## 12. Handoff Instructions
 
-Continue this task on branch `gpt`. Do not switch to another branch.
+The approved template-first implementation and hosted validation are complete. The catalog and owner skills are the current policy sources. Use the canonical template, schema, or embedded contract before drafting recurring records.
 
-Continue the systematic inventory and validator design in the approved project directories. Use directory indexes and exact-path reads. You may read exact archived records when needed, but never edit, replace, rename, move, or manually delete them.
+No mass migration is authorized or required. Preserve historical, approved, and creative content. The catalog inventory is path-level complete for the listed file extensions, but content review is representative. The catalog validator checks inventory integrity, not document-body conformance.
 
-Keep the distinction between document types and individual documents. Prefer one canonical template per recurring type, with schemas for structured data. Record exceptions where a rigid template is unsuitable.
+The image takeout processor and tests remain the authority for hand-off and manifest formats; do not create a duplicate schema. The separate archive-retention trigger-scope question remains open in workspace/discussion.md; do not change its workflow without explicit user direction.
 
-Do not make broad migrations until the inventory identifies the affected files and the authoritative standard for each type. Preserve user prompts, historical records, and creative content.
-
-After each important write, fetch the exact path and verify it. Commit completed changes to `gpt`. Never change `main`.
+This task is complete after the required archive transaction and task-board reconciliation.
