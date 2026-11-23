@@ -16,16 +16,17 @@ Task operations follow [The Worker skill](../skills/the-worker/SKILL.md).
 | [tasks/](tasks/) | Current task records |
 | [../archive/README.md](../archive/README.md) | Archive and retention policy |
 | [../archive/tasks/](../archive/tasks/) | Archived task records |
-| [../lint_reports/README.md](../lint_reports/README.md) | CI lint evidence, scope indexes, detailed Markdown reports, structured JSON, and immutable run history |
-| [../gh_ac_reports/README.md](../gh_ac_reports/README.md) | GitHub Actions run, job, step, log, annotation, artifact, and failure-classification reports |
+| [../reports/README.md](../reports/README.md) | Central navigation for lint, Actions diagnostics, and triage |
+| [../reports/lint_reports/README.md](../reports/lint_reports/README.md) | CI lint evidence, scope indexes, detailed Markdown reports, structured JSON, and immutable run history |
+| [../reports/gh_ac_reports/README.md](../reports/gh_ac_reports/README.md) | GitHub Actions run, job, step, log, annotation, artifact, and failure-classification reports |
 
 ## CI diagnostics
 
-For workflow-level diagnostics, start at [the GitHub Actions report guide](../gh_ac_reports/README.md). Read the global index, then the workflow-specific latest report and immutable run capture. The report separates the source workflow conclusion from report-generation status and links to the exact Actions run. Use a request file to backfill an older run when no later push has triggered the collector.
+For workflow-level diagnostics, start at [the GitHub Actions report guide](../reports/gh_ac_reports/README.md). Track recurring issues in the [central triage ledger](../reports/triage/README.md). Read the global index, then the workflow-specific latest report and immutable run capture. The report separates the source workflow conclusion from report-generation status and links to the exact Actions run. Use a request file to backfill an older run when no later push has triggered the collector.
 
 ## CI lint evidence
 
-For lint results, start at [the lint evidence guide](../lint_reports/README.md). Read the relevant scope index, then its latest detailed Markdown report. Use the structured JSON for source records, finding fingerprints, exact evaluated paths, and machine processing. Retrieve GitHub Actions logs or artifacts only when the report does not contain the required runner-level evidence.
+For lint results, start at [the lint evidence guide](../reports/lint_reports/README.md). Read the relevant scope index, then its latest detailed Markdown report. Use the structured JSON for source records, finding fingerprints, exact evaluated paths, and machine processing. Retrieve GitHub Actions logs or artifacts only when the report does not contain the required runner-level evidence.
 
 ## Operating rules
 
