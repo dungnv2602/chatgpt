@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Central report triage ledger",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "updated_at_utc",
+    "findings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "updated_at_utc": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "source_family",
+          "category",
+          "title",
+          "status",
+          "severity",
+          "first_seen_utc",
+          "last_seen_utc",
+          "occurrence_count",
+          "evidence"
+        ],
+        "properties": {
+          "finding_id": {
+            "type": "string",
+            "minLength": 8
+          },
+          "source_family": {
+            "enum": [
+              "lint",
+              "github_actions",
+              "other"
+            ]
+          },
+          "category": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "open",
+              "investigating",
+              "planned",
+              "fixing",
+              "verifying",
+              "resolved",
+              "accepted",
+              "false_positive",
+              "duplicate"
+            ]
+          },
+          "severity": {
+            "enum": [
+              "critical",
+              "high",
+              "medium",
+              "low",
+              "informational"
+            ]
+          },
+          "owner": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_seen_utc": {
+            "type": "string"
+          },
+          "last_seen_utc": {
+            "type": "string"
+          },
+          "occurrence_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "report_path",
+                "observed_at_utc"
+              ],
+              "properties": {
+                "report_path": {
+                  "type": "string"
+                },
+                "run_url": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "observed_at_utc": {
+                  "type": "string"
+                },
+                "note": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "resolution": {
+            "type": [
+              "object",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
