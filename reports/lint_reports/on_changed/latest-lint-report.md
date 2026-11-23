@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#458](https://github.com/dungnv2602/chatgpt/actions/runs/45157214212)
-- **Run ID / attempt:** 45157214212 / 1
+- **Run:** [#459](https://github.com/dungnv2602/chatgpt/actions/runs/45157722467)
+- **Run ID / attempt:** 45157722467 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / f5496655ac37864be20d82d5c9562bd001cece51
+- **Branch / commit:** gpt / 3d6c079b3c85539e99c5348846bc8a2bf1d2f998
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** f5496655ac37864be20d82d5c9562bd001cece51
-- **Generated (UTC):** 2026-11-23T10:34:32.306719+00:00
+- **Linter source SHA:** 3d6c079b3c85539e99c5348846bc8a2bf1d2f998
+- **Generated (UTC):** 2026-11-23T10:37:39.026884+00:00
 
 ## 1. Executive summary
 
@@ -19,12 +19,12 @@
 | Files evaluated | 49 |
 | Files that failed | 10 |
 | Files with findings | 41 |
-| Total findings | 402 |
-| Hard findings | 83 |
+| Total findings | 389 |
+| Hard findings | 70 |
 | Advisory findings | 319 |
 | New findings | 0 |
-| Recurring findings | 402 |
-| Resolved findings | 72 |
+| Recurring findings | 389 |
+| Resolved findings | 11 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -108,7 +108,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/drawing/assets/pattern-entry-templates.md | FAIL | 8 | 1 | 0 | 449 | 1.8 | 1 |
 | images/takeout/README.md | PASS | 1 | 0 | 0 | 1397 | 0.1 | 0 |
 | images/README.md | PASS | 1 | 0 | 0 | 584 | 0.2 | 0 |
-| skills/asd-ste100/SKILL.md | PASS | 23 | 15 | 31 | 2606 | 0.9 | 0 |
+| skills/asd-ste100/SKILL.md | PASS | 21 | 13 | 31 | 2609 | 0.8 | 0 |
 | skills/philosophy-religion-asceticism/README.md | PASS | 1 | 0 | 0 | 471 | 0.2 | 0 |
 | skills/drawing/references/archive-and-delivery.md | PASS | 25 | 5 | 7 | 2365 | 1.1 | 0 |
 | skills/README.md | PASS | 0 | 0 | 0 | 371 | 0.0 | 0 |
@@ -119,7 +119,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/session-archiving/references/image-provenance-and-webp.md | PASS | 14 | 2 | 2 | 1712 | 0.8 | 0 |
 | skills/conversation-mode/SKILL.md | FAIL | 22 | 5 | 3 | 3081 | 0.7 | 1 |
 | skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md | PASS | 8 | 0 | 7 | 2716 | 0.3 | 0 |
-| skills/drawing/SKILL.md | PASS | 35 | 14 | 24 | 5064 | 0.7 | 0 |
+| skills/drawing/SKILL.md | PASS | 24 | 3 | 24 | 5082 | 0.5 | 0 |
 | skills/document-standards/references/document-type-catalog.md | FAIL | 27 | 3 | 0 | 3060 | 0.9 | 1 |
 | workspace/task_board.md | PASS | 3 | 0 | 0 | 249 | 1.2 | 0 |
 | skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
@@ -153,9 +153,9 @@ Counts include hard and advisory findings.
 |---|---:|
 | passive-voice | 279 |
 | present-perfect | 40 |
-| synonym-rotation | 31 |
-| long-sentence | 26 |
-| semicolon | 14 |
+| synonym-rotation | 29 |
+| long-sentence | 18 |
+| semicolon | 11 |
 | marketing-adjective | 5 |
 | phrasal-verb | 5 |
 | nominalization | 2 |
@@ -190,7 +190,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.289s
+Ran 4 tests in 0.322s
 
 OK
 ~~~
@@ -223,7 +223,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 513 active Markdown files (579 available as link targets) and 338 local Markdown links.
+Scanned 533 active Markdown files (599 available as link targets) and 338 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -509,94 +509,86 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was violated
-- **long-sentence** · skills/asd-ste100/SKILL.md:39:133 · **recurring** · fingerprint: c73db64bc9604fc922f42dd6
-  - **Level:** advisory-free
-  - **Message:** Sentence has 28 words (cap 25). Split it.
-  - **Matched text:** 28 words
-- **passive-voice** · skills/asd-ste100/SKILL.md:45:227 · **recurring** · fingerprint: 4e26f8ad5ee76bbe5f532dd1
+- **passive-voice** · skills/asd-ste100/SKILL.md:49:227 · **recurring** · fingerprint: 4e26f8ad5ee76bbe5f532dd1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are defined
-- **passive-voice** · skills/asd-ste100/SKILL.md:53:60 · **recurring** · fingerprint: 0447fbf776081d483d4a8de4
+- **passive-voice** · skills/asd-ste100/SKILL.md:57:60 · **recurring** · fingerprint: 0447fbf776081d483d4a8de4
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is removed
-- **phrasal-verb** · skills/asd-ste100/SKILL.md:54:99 · **recurring** · fingerprint: bc3fa2e84f1094e34446f7f9
+- **phrasal-verb** · skills/asd-ste100/SKILL.md:58:99 · **recurring** · fingerprint: bc3fa2e84f1094e34446f7f9
   - **Level:** advisory-free
   - **Message:** Soft phrasal verb. Use the single plain verb (start, contact, read, begin).
   - **Matched text:** Spin up
-- **passive-voice** · skills/asd-ste100/SKILL.md:69:118 · **recurring** · fingerprint: 081cea6a0061b9dd44d263e8
+- **passive-voice** · skills/asd-ste100/SKILL.md:73:118 · **recurring** · fingerprint: 081cea6a0061b9dd44d263e8
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is approved
-- **nominalization** · skills/asd-ste100/SKILL.md:70:53 · **recurring** · fingerprint: f17e13a684f76bb434777eb7
+- **nominalization** · skills/asd-ste100/SKILL.md:74:53 · **recurring** · fingerprint: f17e13a684f76bb434777eb7
   - **Level:** advisory-free
   - **Message:** Action frozen into a noun. Use the verb (analyze, not perform an analysis of).
   - **Matched text:** Perform an analysis
-- **present-perfect** · skills/asd-ste100/SKILL.md:75:203 · **recurring** · fingerprint: 97b0da1333b1090e07b7b8c2
+- **present-perfect** · skills/asd-ste100/SKILL.md:79:203 · **recurring** · fingerprint: 97b0da1333b1090e07b7b8c2
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** have received
-- **present-perfect** · skills/asd-ste100/SKILL.md:77:140 · **recurring** · fingerprint: 87ac5857a6a44a6085f99a33
+- **present-perfect** · skills/asd-ste100/SKILL.md:81:140 · **recurring** · fingerprint: 87ac5857a6a44a6085f99a33
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has completed
-- **synonym-rotation** · skills/asd-ste100/SKILL.md:84:192 · **recurring** · fingerprint: ce5400ef29dc517a20f612fc
+- **synonym-rotation** · skills/asd-ste100/SKILL.md:88:192 · **recurring** · fingerprint: ce5400ef29dc517a20f612fc
   - **Level:** advisory-free
   - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
   - **Matched text:** delete
-- **nominalization** · skills/asd-ste100/SKILL.md:85:56 · **recurring** · fingerprint: b0f99a99288209b64ca87fa8
+- **nominalization** · skills/asd-ste100/SKILL.md:89:56 · **recurring** · fingerprint: b0f99a99288209b64ca87fa8
   - **Level:** advisory-free
   - **Message:** Action frozen into a noun. Use the verb (analyze, not perform an analysis of).
   - **Matched text:** perform an analysis
-- **marketing-adjective** · skills/asd-ste100/SKILL.md:86:79 · **recurring** · fingerprint: e376f8090861f51701cf8a19
+- **marketing-adjective** · skills/asd-ste100/SKILL.md:90:79 · **recurring** · fingerprint: e376f8090861f51701cf8a19
   - **Level:** advisory-free
   - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
   - **Matched text:** seamless
-- **marketing-adjective** · skills/asd-ste100/SKILL.md:86:89 · **recurring** · fingerprint: 0f33fa33abea44edf29a8632
+- **marketing-adjective** · skills/asd-ste100/SKILL.md:90:89 · **recurring** · fingerprint: 0f33fa33abea44edf29a8632
   - **Level:** advisory-free
   - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
   - **Matched text:** robust
-- **marketing-adjective** · skills/asd-ste100/SKILL.md:86:107 · **recurring** · fingerprint: b483bbe719cbd32778da4137
+- **marketing-adjective** · skills/asd-ste100/SKILL.md:90:107 · **recurring** · fingerprint: b483bbe719cbd32778da4137
   - **Level:** advisory-free
   - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
   - **Matched text:** cutting-edge
-- **marketing-adjective** · skills/asd-ste100/SKILL.md:86:121 · **recurring** · fingerprint: ea81b9a88d6189c3e9903c71
+- **marketing-adjective** · skills/asd-ste100/SKILL.md:90:121 · **recurring** · fingerprint: ea81b9a88d6189c3e9903c71
   - **Level:** advisory-free
   - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
   - **Matched text:** effortless
-- **marketing-adjective** · skills/asd-ste100/SKILL.md:86:133 · **recurring** · fingerprint: c3ddafa9275694f20a349624
+- **marketing-adjective** · skills/asd-ste100/SKILL.md:90:133 · **recurring** · fingerprint: c3ddafa9275694f20a349624
   - **Level:** advisory-free
   - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
   - **Matched text:** blazing-fast
-- **phrasal-verb** · skills/asd-ste100/SKILL.md:88:29 · **recurring** · fingerprint: 4b3269c887ff5c340b1876ec
+- **phrasal-verb** · skills/asd-ste100/SKILL.md:92:29 · **recurring** · fingerprint: 4b3269c887ff5c340b1876ec
   - **Level:** advisory-free
   - **Message:** Soft phrasal verb. Use the single plain verb (start, contact, read, begin).
   - **Matched text:** spin up
-- **phrasal-verb** · skills/asd-ste100/SKILL.md:88:38 · **recurring** · fingerprint: b1d1a41a0e596b342bab207e
+- **phrasal-verb** · skills/asd-ste100/SKILL.md:92:38 · **recurring** · fingerprint: b1d1a41a0e596b342bab207e
   - **Level:** advisory-free
   - **Message:** Soft phrasal verb. Use the single plain verb (start, contact, read, begin).
   - **Matched text:** reach out
-- **phrasal-verb** · skills/asd-ste100/SKILL.md:88:49 · **recurring** · fingerprint: d9e6e08d672f564d722faa69
+- **phrasal-verb** · skills/asd-ste100/SKILL.md:92:49 · **recurring** · fingerprint: d9e6e08d672f564d722faa69
   - **Level:** advisory-free
   - **Message:** Soft phrasal verb. Use the single plain verb (start, contact, read, begin).
   - **Matched text:** dive into
-- **phrasal-verb** · skills/asd-ste100/SKILL.md:88:60 · **recurring** · fingerprint: a17ca63c1abfe64d5e677484
+- **phrasal-verb** · skills/asd-ste100/SKILL.md:92:60 · **recurring** · fingerprint: a17ca63c1abfe64d5e677484
   - **Level:** advisory-free
   - **Message:** Soft phrasal verb. Use the single plain verb (start, contact, read, begin).
   - **Matched text:** kick off
-- **present-perfect** · skills/asd-ste100/SKILL.md:109:134 · **recurring** · fingerprint: 95fa90f026478e1c3824ab91
+- **present-perfect** · skills/asd-ste100/SKILL.md:113:134 · **recurring** · fingerprint: 95fa90f026478e1c3824ab91
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has stopped
-- **passive-voice** · skills/asd-ste100/SKILL.md:142:58 · **recurring** · fingerprint: 8f0e185b12ebc8ed1b2a84fa
+- **passive-voice** · skills/asd-ste100/SKILL.md:146:58 · **recurring** · fingerprint: 8f0e185b12ebc8ed1b2a84fa
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** were memorized
-- **synonym-rotation** · skills/asd-ste100/SKILL.md:156:440 · **recurring** · fingerprint: 7e018b97273422b234ce19d9
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** confirms
 - **passive-voice** · skills/philosophy-religion-asceticism/README.md:17:11 · **recurring** · fingerprint: 10fe19e3d918086368f3fe12
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1017,139 +1009,95 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is requested
-- **long-sentence** · skills/drawing/SKILL.md:166:1 · **recurring** · fingerprint: 6901675964ceed2d35078379
-  - **Level:** advisory-free
-  - **Message:** Sentence has 32 words (cap 25). Split it.
-  - **Matched text:** 32 words
-- **long-sentence** · skills/drawing/SKILL.md:166:376 · **recurring** · fingerprint: 7f77b267c64ee5928a429888
-  - **Level:** advisory-free
-  - **Message:** Sentence has 29 words (cap 25). Split it.
-  - **Matched text:** 29 words
-- **semicolon** · skills/drawing/SKILL.md:166:449 · **recurring** · fingerprint: a66c58d4cbff63015f3f6912
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · skills/drawing/SKILL.md:166:827 · **recurring** · fingerprint: 7f77b267c64ee5928a429888
-  - **Level:** advisory-free
-  - **Message:** Sentence has 29 words (cap 25). Split it.
-  - **Matched text:** 29 words
-- **long-sentence** · skills/drawing/SKILL.md:166:1076 · **recurring** · fingerprint: 1da08cc0bf141330524bda57
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-- **synonym-rotation** · skills/drawing/SKILL.md:166:1100 · **recurring** · fingerprint: aa2b4a16cd7d5222231207e6
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-- **passive-voice** · skills/drawing/SKILL.md:166:1151 · **recurring** · fingerprint: 9a01e5392bd2f640fccc16f8
+- **passive-voice** · skills/drawing/SKILL.md:180:77 · **recurring** · fingerprint: 9a01e5392bd2f640fccc16f8
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is listed
-- **passive-voice** · skills/drawing/SKILL.md:171:31 · **recurring** · fingerprint: ae959494a55d88be42e4abf1
+- **passive-voice** · skills/drawing/SKILL.md:189:31 · **recurring** · fingerprint: ae959494a55d88be42e4abf1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is packaged
-- **passive-voice** · skills/drawing/SKILL.md:189:35 · **recurring** · fingerprint: d87f3bdb2e4a5cd311e567e0
+- **passive-voice** · skills/drawing/SKILL.md:207:35 · **recurring** · fingerprint: d87f3bdb2e4a5cd311e567e0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is known
-- **passive-voice** · skills/drawing/SKILL.md:190:27 · **recurring** · fingerprint: d87f3bdb2e4a5cd311e567e0
+- **passive-voice** · skills/drawing/SKILL.md:208:27 · **recurring** · fingerprint: d87f3bdb2e4a5cd311e567e0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is known
-- **passive-voice** · skills/drawing/SKILL.md:191:35 · **recurring** · fingerprint: 4a1561330f4473854edf7d68
+- **passive-voice** · skills/drawing/SKILL.md:209:35 · **recurring** · fingerprint: 4a1561330f4473854edf7d68
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been loaded
-- **passive-voice** · skills/drawing/SKILL.md:198:76 · **recurring** · fingerprint: 83aca3a3f45f79d0190f037b
+- **passive-voice** · skills/drawing/SKILL.md:216:76 · **recurring** · fingerprint: 83aca3a3f45f79d0190f037b
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is maintained
-- **passive-voice** · skills/drawing/SKILL.md:237:21 · **recurring** · fingerprint: 4adc0f726bafb883a943a4c7
+- **passive-voice** · skills/drawing/SKILL.md:255:21 · **recurring** · fingerprint: 4adc0f726bafb883a943a4c7
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are wanted
-- **passive-voice** · skills/drawing/SKILL.md:241:15 · **recurring** · fingerprint: 182721976b7c74744cfa668b
+- **passive-voice** · skills/drawing/SKILL.md:259:15 · **recurring** · fingerprint: 182721976b7c74744cfa668b
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is stored
-- **long-sentence** · skills/drawing/SKILL.md:243:4 · **recurring** · fingerprint: d81568a6e2238902ee0c2105
+- **long-sentence** · skills/drawing/SKILL.md:261:4 · **recurring** · fingerprint: d81568a6e2238902ee0c2105
   - **Level:** advisory-free
   - **Message:** Sentence has 28 words (cap 25). Split it.
   - **Matched text:** 28 words
-- **long-sentence** · skills/drawing/SKILL.md:257:5 · **recurring** · fingerprint: ab1ec88e506a23cf0af2d38c
+- **long-sentence** · skills/drawing/SKILL.md:276:5 · **recurring** · fingerprint: 1da08cc0bf141330524bda57
   - **Level:** advisory-free
-  - **Message:** Sentence has 34 words (cap 25). Split it.
-  - **Matched text:** 34 words
-- **semicolon** · skills/drawing/SKILL.md:274:36 · **recurring** · fingerprint: a66c58d4cbff63015f3f6912
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · skills/drawing/SKILL.md:305:378 · **recurring** · fingerprint: 182721976b7c74744cfa668b
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+- **passive-voice** · skills/drawing/SKILL.md:319:378 · **recurring** · fingerprint: 182721976b7c74744cfa668b
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is stored
-- **passive-voice** · skills/drawing/SKILL.md:305:553 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
+- **passive-voice** · skills/drawing/SKILL.md:319:553 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is verified
-- **synonym-rotation** · skills/drawing/SKILL.md:353:46 · **recurring** · fingerprint: 14047edbba057e6e6f46a522
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Confirm
-- **long-sentence** · skills/drawing/SKILL.md:379:1 · **recurring** · fingerprint: 71b5544d9fbd5e093fd73ef3
-  - **Level:** advisory-free
-  - **Message:** Sentence has 33 words (cap 25). Split it.
-  - **Matched text:** 33 words
-- **passive-voice** · skills/drawing/SKILL.md:384:23 · **recurring** · fingerprint: c13b1ec0df584f1d71453752
+- **passive-voice** · skills/drawing/SKILL.md:394:23 · **recurring** · fingerprint: c13b1ec0df584f1d71453752
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are governed
-- **passive-voice** · skills/drawing/SKILL.md:390:60 · **recurring** · fingerprint: 828f9104eb1934f156af2c49
+- **passive-voice** · skills/drawing/SKILL.md:400:60 · **recurring** · fingerprint: 828f9104eb1934f156af2c49
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was used
-- **passive-voice** · skills/drawing/SKILL.md:397:216 · **recurring** · fingerprint: 856947d77008b1a8011c64b1
+- **passive-voice** · skills/drawing/SKILL.md:407:216 · **recurring** · fingerprint: 856947d77008b1a8011c64b1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are satisfied
-- **passive-voice** · skills/drawing/SKILL.md:414:19 · **recurring** · fingerprint: f7c61d976e048fc4d2187457
+- **passive-voice** · skills/drawing/SKILL.md:424:19 · **recurring** · fingerprint: f7c61d976e048fc4d2187457
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is refused
-- **passive-voice** · skills/drawing/SKILL.md:446:42 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
+- **passive-voice** · skills/drawing/SKILL.md:456:42 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is verified
-- **passive-voice** · skills/drawing/SKILL.md:447:50 · **recurring** · fingerprint: d518259c92d98a763deb57db
+- **passive-voice** · skills/drawing/SKILL.md:457:50 · **recurring** · fingerprint: d518259c92d98a763deb57db
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was produced
-- **passive-voice** · skills/drawing/SKILL.md:448:42 · **recurring** · fingerprint: a9eeb0708efad4ad4ebac5a3
+- **passive-voice** · skills/drawing/SKILL.md:458:42 · **recurring** · fingerprint: a9eeb0708efad4ad4ebac5a3
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was returned
-- **passive-voice** · skills/drawing/SKILL.md:452:11 · **recurring** · fingerprint: 2ebc7cf088303cbfd5592603
+- **passive-voice** · skills/drawing/SKILL.md:462:11 · **recurring** · fingerprint: 2ebc7cf088303cbfd5592603
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
-- **long-sentence** · skills/drawing/SKILL.md:458:1 · **recurring** · fingerprint: 1da08cc0bf141330524bda57
+- **synonym-rotation** · skills/drawing/SKILL.md:470:15 · **recurring** · fingerprint: aa2b4a16cd7d5222231207e6
   - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-- **long-sentence** · skills/drawing/SKILL.md:464:73 · **recurring** · fingerprint: 1da08cc0bf141330524bda57
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-- **semicolon** · skills/drawing/SKILL.md:465:131 · **recurring** · fingerprint: a66c58d4cbff63015f3f6912
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · skills/drawing/SKILL.md:479:24 · **recurring** · fingerprint: f6cfabada63cd4b942c2fdab
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
+- **passive-voice** · skills/drawing/SKILL.md:489:24 · **recurring** · fingerprint: f6cfabada63cd4b942c2fdab
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are determined
-- **passive-voice** · skills/drawing/SKILL.md:505:13 · **recurring** · fingerprint: 9ce13cb184b2103476d72b72
+- **passive-voice** · skills/drawing/SKILL.md:515:13 · **recurring** · fingerprint: 9ce13cb184b2103476d72b72
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is Closed
@@ -1848,291 +1796,47 @@ None.
 
 ### Resolved findings
 
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:27:215 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+- **long-sentence** · skills/asd-ste100/SKILL.md:39:133 · **resolved** · fingerprint: c73db64bc9604fc922f42dd6
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:29:196 · **resolved** · fingerprint: 33b66dbc6dc280ae7c9be6c8
+  - **Message:** Sentence has 28 words (cap 25). Split it.
+  - **Matched text:** 28 words
+- **synonym-rotation** · skills/asd-ste100/SKILL.md:156:440 · **resolved** · fingerprint: 7e018b97273422b234ce19d9
   - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:29:299 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:32:207 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:33:239 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:36:277 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:42:155 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:43:330 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:44:264 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:47:330 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:49:169 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:50:174 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:61:430 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:62:302 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:63:406 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:111 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:139 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:157 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:187 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:214 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:240 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:326 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:394 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:54 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:264 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:318 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:435 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:89:152 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:90:144 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:90:192 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:91:146 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:91:217 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:92:222 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:93:73 · **resolved** · fingerprint: 33b66dbc6dc280ae7c9be6c8
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:93:220 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:94:71 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:94:196 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:94:368 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:102:293 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:104:41 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:104:60 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:106:62 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:106:110 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:107:58 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:107:136 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:107:251 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:109:79 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:109:189 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:111:88 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:113:112 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:113:188 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:113:332 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:97 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:166 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:235 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:304 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:125:373 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:126:90 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:62 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:92 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:124 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:127:287 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:128:173 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:129:80 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:129:128 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:129:332 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:130:113 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:130:189 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:130:298 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:139:73 · **resolved** · fingerprint: 0abfb61c7128cae67ea2ee21
-  - **Level:** advisory-free
-  - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
-  - **Matched text:** repair
-- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:140:67 · **resolved** · fingerprint: ee3dcb468a833bb24e5822bc
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'validate' name the same action. Pick one and use it every time.
+  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
   - **Matched text:** confirms
-- **semicolon** · skills/document-standards/references/document-type-catalog.md:152:185 · **resolved** · fingerprint: 34b3ecad2f55b58c81da2ca0
+- **long-sentence** · skills/drawing/SKILL.md:166:1 · **resolved** · fingerprint: 6901675964ceed2d35078379
+  - **Level:** advisory-free
+  - **Message:** Sentence has 32 words (cap 25). Split it.
+  - **Matched text:** 32 words
+- **long-sentence** · skills/drawing/SKILL.md:166:376 · **resolved** · fingerprint: 7f77b267c64ee5928a429888
+  - **Level:** advisory-free
+  - **Message:** Sentence has 29 words (cap 25). Split it.
+  - **Matched text:** 29 words
+- **semicolon** · skills/drawing/SKILL.md:166:449 · **resolved** · fingerprint: a66c58d4cbff63015f3f6912
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · skills/drawing/SKILL.md:166:827 · **resolved** · fingerprint: 7f77b267c64ee5928a429888
+  - **Level:** advisory-free
+  - **Message:** Sentence has 29 words (cap 25). Split it.
+  - **Matched text:** 29 words
+- **long-sentence** · skills/drawing/SKILL.md:257:5 · **resolved** · fingerprint: ab1ec88e506a23cf0af2d38c
+  - **Level:** advisory-free
+  - **Message:** Sentence has 34 words (cap 25). Split it.
+  - **Matched text:** 34 words
+- **semicolon** · skills/drawing/SKILL.md:274:36 · **resolved** · fingerprint: a66c58d4cbff63015f3f6912
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **synonym-rotation** · skills/drawing/SKILL.md:353:46 · **resolved** · fingerprint: 14047edbba057e6e6f46a522
+  - **Level:** advisory-free
+  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** Confirm
+- **long-sentence** · skills/drawing/SKILL.md:379:1 · **resolved** · fingerprint: 71b5544d9fbd5e093fd73ef3
+  - **Level:** advisory-free
+  - **Message:** Sentence has 33 words (cap 25). Split it.
+  - **Matched text:** 33 words
+- **semicolon** · skills/drawing/SKILL.md:465:131 · **resolved** · fingerprint: a66c58d4cbff63015f3f6912
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -2649,11 +2353,11 @@ No STE findings were recorded for this file.
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 23
-- **Hard findings:** 15
+- **Findings:** 21
+- **Hard findings:** 13
 - **Baseline:** 31
-- **Words:** 2606
-- **Findings per 100 words:** 0.9
+- **Words:** 2609
+- **Findings per 100 words:** 0.8
 
 #### Complete diagnostics
 
@@ -2662,115 +2366,105 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was violated
 
-- **long-sentence** · skills/asd-ste100/SKILL.md:39:133 · **recurring** · fingerprint: c73db64bc9604fc922f42dd6
-  - **Level:** advisory-free
-  - **Message:** Sentence has 28 words (cap 25). Split it.
-  - **Matched text:** 28 words
-
-- **passive-voice** · skills/asd-ste100/SKILL.md:45:227 · **recurring** · fingerprint: 4e26f8ad5ee76bbe5f532dd1
+- **passive-voice** · skills/asd-ste100/SKILL.md:49:227 · **recurring** · fingerprint: 4e26f8ad5ee76bbe5f532dd1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are defined
 
-- **passive-voice** · skills/asd-ste100/SKILL.md:53:60 · **recurring** · fingerprint: 0447fbf776081d483d4a8de4
+- **passive-voice** · skills/asd-ste100/SKILL.md:57:60 · **recurring** · fingerprint: 0447fbf776081d483d4a8de4
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is removed
 
-- **phrasal-verb** · skills/asd-ste100/SKILL.md:54:99 · **recurring** · fingerprint: bc3fa2e84f1094e34446f7f9
+- **phrasal-verb** · skills/asd-ste100/SKILL.md:58:99 · **recurring** · fingerprint: bc3fa2e84f1094e34446f7f9
   - **Level:** advisory-free
   - **Message:** Soft phrasal verb. Use the single plain verb (start, contact, read, begin).
   - **Matched text:** Spin up
 
-- **passive-voice** · skills/asd-ste100/SKILL.md:69:118 · **recurring** · fingerprint: 081cea6a0061b9dd44d263e8
+- **passive-voice** · skills/asd-ste100/SKILL.md:73:118 · **recurring** · fingerprint: 081cea6a0061b9dd44d263e8
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is approved
 
-- **nominalization** · skills/asd-ste100/SKILL.md:70:53 · **recurring** · fingerprint: f17e13a684f76bb434777eb7
+- **nominalization** · skills/asd-ste100/SKILL.md:74:53 · **recurring** · fingerprint: f17e13a684f76bb434777eb7
   - **Level:** advisory-free
   - **Message:** Action frozen into a noun. Use the verb (analyze, not perform an analysis of).
   - **Matched text:** Perform an analysis
 
-- **present-perfect** · skills/asd-ste100/SKILL.md:75:203 · **recurring** · fingerprint: 97b0da1333b1090e07b7b8c2
+- **present-perfect** · skills/asd-ste100/SKILL.md:79:203 · **recurring** · fingerprint: 97b0da1333b1090e07b7b8c2
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** have received
 
-- **present-perfect** · skills/asd-ste100/SKILL.md:77:140 · **recurring** · fingerprint: 87ac5857a6a44a6085f99a33
+- **present-perfect** · skills/asd-ste100/SKILL.md:81:140 · **recurring** · fingerprint: 87ac5857a6a44a6085f99a33
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has completed
 
-- **synonym-rotation** · skills/asd-ste100/SKILL.md:84:192 · **recurring** · fingerprint: ce5400ef29dc517a20f612fc
+- **synonym-rotation** · skills/asd-ste100/SKILL.md:88:192 · **recurring** · fingerprint: ce5400ef29dc517a20f612fc
   - **Level:** advisory-free
   - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
   - **Matched text:** delete
 
-- **nominalization** · skills/asd-ste100/SKILL.md:85:56 · **recurring** · fingerprint: b0f99a99288209b64ca87fa8
+- **nominalization** · skills/asd-ste100/SKILL.md:89:56 · **recurring** · fingerprint: b0f99a99288209b64ca87fa8
   - **Level:** advisory-free
   - **Message:** Action frozen into a noun. Use the verb (analyze, not perform an analysis of).
   - **Matched text:** perform an analysis
 
-- **marketing-adjective** · skills/asd-ste100/SKILL.md:86:79 · **recurring** · fingerprint: e376f8090861f51701cf8a19
+- **marketing-adjective** · skills/asd-ste100/SKILL.md:90:79 · **recurring** · fingerprint: e376f8090861f51701cf8a19
   - **Level:** advisory-free
   - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
   - **Matched text:** seamless
 
-- **marketing-adjective** · skills/asd-ste100/SKILL.md:86:89 · **recurring** · fingerprint: 0f33fa33abea44edf29a8632
+- **marketing-adjective** · skills/asd-ste100/SKILL.md:90:89 · **recurring** · fingerprint: 0f33fa33abea44edf29a8632
   - **Level:** advisory-free
   - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
   - **Matched text:** robust
 
-- **marketing-adjective** · skills/asd-ste100/SKILL.md:86:107 · **recurring** · fingerprint: b483bbe719cbd32778da4137
+- **marketing-adjective** · skills/asd-ste100/SKILL.md:90:107 · **recurring** · fingerprint: b483bbe719cbd32778da4137
   - **Level:** advisory-free
   - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
   - **Matched text:** cutting-edge
 
-- **marketing-adjective** · skills/asd-ste100/SKILL.md:86:121 · **recurring** · fingerprint: ea81b9a88d6189c3e9903c71
+- **marketing-adjective** · skills/asd-ste100/SKILL.md:90:121 · **recurring** · fingerprint: ea81b9a88d6189c3e9903c71
   - **Level:** advisory-free
   - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
   - **Matched text:** effortless
 
-- **marketing-adjective** · skills/asd-ste100/SKILL.md:86:133 · **recurring** · fingerprint: c3ddafa9275694f20a349624
+- **marketing-adjective** · skills/asd-ste100/SKILL.md:90:133 · **recurring** · fingerprint: c3ddafa9275694f20a349624
   - **Level:** advisory-free
   - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
   - **Matched text:** blazing-fast
 
-- **phrasal-verb** · skills/asd-ste100/SKILL.md:88:29 · **recurring** · fingerprint: 4b3269c887ff5c340b1876ec
+- **phrasal-verb** · skills/asd-ste100/SKILL.md:92:29 · **recurring** · fingerprint: 4b3269c887ff5c340b1876ec
   - **Level:** advisory-free
   - **Message:** Soft phrasal verb. Use the single plain verb (start, contact, read, begin).
   - **Matched text:** spin up
 
-- **phrasal-verb** · skills/asd-ste100/SKILL.md:88:38 · **recurring** · fingerprint: b1d1a41a0e596b342bab207e
+- **phrasal-verb** · skills/asd-ste100/SKILL.md:92:38 · **recurring** · fingerprint: b1d1a41a0e596b342bab207e
   - **Level:** advisory-free
   - **Message:** Soft phrasal verb. Use the single plain verb (start, contact, read, begin).
   - **Matched text:** reach out
 
-- **phrasal-verb** · skills/asd-ste100/SKILL.md:88:49 · **recurring** · fingerprint: d9e6e08d672f564d722faa69
+- **phrasal-verb** · skills/asd-ste100/SKILL.md:92:49 · **recurring** · fingerprint: d9e6e08d672f564d722faa69
   - **Level:** advisory-free
   - **Message:** Soft phrasal verb. Use the single plain verb (start, contact, read, begin).
   - **Matched text:** dive into
 
-- **phrasal-verb** · skills/asd-ste100/SKILL.md:88:60 · **recurring** · fingerprint: a17ca63c1abfe64d5e677484
+- **phrasal-verb** · skills/asd-ste100/SKILL.md:92:60 · **recurring** · fingerprint: a17ca63c1abfe64d5e677484
   - **Level:** advisory-free
   - **Message:** Soft phrasal verb. Use the single plain verb (start, contact, read, begin).
   - **Matched text:** kick off
 
-- **present-perfect** · skills/asd-ste100/SKILL.md:109:134 · **recurring** · fingerprint: 95fa90f026478e1c3824ab91
+- **present-perfect** · skills/asd-ste100/SKILL.md:113:134 · **recurring** · fingerprint: 95fa90f026478e1c3824ab91
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has stopped
 
-- **passive-voice** · skills/asd-ste100/SKILL.md:142:58 · **recurring** · fingerprint: 8f0e185b12ebc8ed1b2a84fa
+- **passive-voice** · skills/asd-ste100/SKILL.md:146:58 · **recurring** · fingerprint: 8f0e185b12ebc8ed1b2a84fa
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** were memorized
-
-- **synonym-rotation** · skills/asd-ste100/SKILL.md:156:440 · **recurring** · fingerprint: 7e018b97273422b234ce19d9
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** confirms
 
 
 ### skills/philosophy-religion-asceticism/README.md
@@ -3427,11 +3121,11 @@ No STE findings were recorded for this file.
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 35
-- **Hard findings:** 14
+- **Findings:** 24
+- **Hard findings:** 3
 - **Baseline:** 24
-- **Words:** 5064
-- **Findings per 100 words:** 0.7
+- **Words:** 5082
+- **Findings per 100 words:** 0.5
 
 #### Complete diagnostics
 
@@ -3440,172 +3134,117 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is requested
 
-- **long-sentence** · skills/drawing/SKILL.md:166:1 · **recurring** · fingerprint: 6901675964ceed2d35078379
-  - **Level:** advisory-free
-  - **Message:** Sentence has 32 words (cap 25). Split it.
-  - **Matched text:** 32 words
-
-- **long-sentence** · skills/drawing/SKILL.md:166:376 · **recurring** · fingerprint: 7f77b267c64ee5928a429888
-  - **Level:** advisory-free
-  - **Message:** Sentence has 29 words (cap 25). Split it.
-  - **Matched text:** 29 words
-
-- **semicolon** · skills/drawing/SKILL.md:166:449 · **recurring** · fingerprint: a66c58d4cbff63015f3f6912
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **long-sentence** · skills/drawing/SKILL.md:166:827 · **recurring** · fingerprint: 7f77b267c64ee5928a429888
-  - **Level:** advisory-free
-  - **Message:** Sentence has 29 words (cap 25). Split it.
-  - **Matched text:** 29 words
-
-- **long-sentence** · skills/drawing/SKILL.md:166:1076 · **recurring** · fingerprint: 1da08cc0bf141330524bda57
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-
-- **synonym-rotation** · skills/drawing/SKILL.md:166:1100 · **recurring** · fingerprint: aa2b4a16cd7d5222231207e6
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-
-- **passive-voice** · skills/drawing/SKILL.md:166:1151 · **recurring** · fingerprint: 9a01e5392bd2f640fccc16f8
+- **passive-voice** · skills/drawing/SKILL.md:180:77 · **recurring** · fingerprint: 9a01e5392bd2f640fccc16f8
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is listed
 
-- **passive-voice** · skills/drawing/SKILL.md:171:31 · **recurring** · fingerprint: ae959494a55d88be42e4abf1
+- **passive-voice** · skills/drawing/SKILL.md:189:31 · **recurring** · fingerprint: ae959494a55d88be42e4abf1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is packaged
 
-- **passive-voice** · skills/drawing/SKILL.md:189:35 · **recurring** · fingerprint: d87f3bdb2e4a5cd311e567e0
+- **passive-voice** · skills/drawing/SKILL.md:207:35 · **recurring** · fingerprint: d87f3bdb2e4a5cd311e567e0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is known
 
-- **passive-voice** · skills/drawing/SKILL.md:190:27 · **recurring** · fingerprint: d87f3bdb2e4a5cd311e567e0
+- **passive-voice** · skills/drawing/SKILL.md:208:27 · **recurring** · fingerprint: d87f3bdb2e4a5cd311e567e0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is known
 
-- **passive-voice** · skills/drawing/SKILL.md:191:35 · **recurring** · fingerprint: 4a1561330f4473854edf7d68
+- **passive-voice** · skills/drawing/SKILL.md:209:35 · **recurring** · fingerprint: 4a1561330f4473854edf7d68
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been loaded
 
-- **passive-voice** · skills/drawing/SKILL.md:198:76 · **recurring** · fingerprint: 83aca3a3f45f79d0190f037b
+- **passive-voice** · skills/drawing/SKILL.md:216:76 · **recurring** · fingerprint: 83aca3a3f45f79d0190f037b
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is maintained
 
-- **passive-voice** · skills/drawing/SKILL.md:237:21 · **recurring** · fingerprint: 4adc0f726bafb883a943a4c7
+- **passive-voice** · skills/drawing/SKILL.md:255:21 · **recurring** · fingerprint: 4adc0f726bafb883a943a4c7
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are wanted
 
-- **passive-voice** · skills/drawing/SKILL.md:241:15 · **recurring** · fingerprint: 182721976b7c74744cfa668b
+- **passive-voice** · skills/drawing/SKILL.md:259:15 · **recurring** · fingerprint: 182721976b7c74744cfa668b
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is stored
 
-- **long-sentence** · skills/drawing/SKILL.md:243:4 · **recurring** · fingerprint: d81568a6e2238902ee0c2105
+- **long-sentence** · skills/drawing/SKILL.md:261:4 · **recurring** · fingerprint: d81568a6e2238902ee0c2105
   - **Level:** advisory-free
   - **Message:** Sentence has 28 words (cap 25). Split it.
   - **Matched text:** 28 words
 
-- **long-sentence** · skills/drawing/SKILL.md:257:5 · **recurring** · fingerprint: ab1ec88e506a23cf0af2d38c
+- **long-sentence** · skills/drawing/SKILL.md:276:5 · **recurring** · fingerprint: 1da08cc0bf141330524bda57
   - **Level:** advisory-free
-  - **Message:** Sentence has 34 words (cap 25). Split it.
-  - **Matched text:** 34 words
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
 
-- **semicolon** · skills/drawing/SKILL.md:274:36 · **recurring** · fingerprint: a66c58d4cbff63015f3f6912
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · skills/drawing/SKILL.md:305:378 · **recurring** · fingerprint: 182721976b7c74744cfa668b
+- **passive-voice** · skills/drawing/SKILL.md:319:378 · **recurring** · fingerprint: 182721976b7c74744cfa668b
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is stored
 
-- **passive-voice** · skills/drawing/SKILL.md:305:553 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
+- **passive-voice** · skills/drawing/SKILL.md:319:553 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is verified
 
-- **synonym-rotation** · skills/drawing/SKILL.md:353:46 · **recurring** · fingerprint: 14047edbba057e6e6f46a522
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Confirm
-
-- **long-sentence** · skills/drawing/SKILL.md:379:1 · **recurring** · fingerprint: 71b5544d9fbd5e093fd73ef3
-  - **Level:** advisory-free
-  - **Message:** Sentence has 33 words (cap 25). Split it.
-  - **Matched text:** 33 words
-
-- **passive-voice** · skills/drawing/SKILL.md:384:23 · **recurring** · fingerprint: c13b1ec0df584f1d71453752
+- **passive-voice** · skills/drawing/SKILL.md:394:23 · **recurring** · fingerprint: c13b1ec0df584f1d71453752
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are governed
 
-- **passive-voice** · skills/drawing/SKILL.md:390:60 · **recurring** · fingerprint: 828f9104eb1934f156af2c49
+- **passive-voice** · skills/drawing/SKILL.md:400:60 · **recurring** · fingerprint: 828f9104eb1934f156af2c49
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was used
 
-- **passive-voice** · skills/drawing/SKILL.md:397:216 · **recurring** · fingerprint: 856947d77008b1a8011c64b1
+- **passive-voice** · skills/drawing/SKILL.md:407:216 · **recurring** · fingerprint: 856947d77008b1a8011c64b1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are satisfied
 
-- **passive-voice** · skills/drawing/SKILL.md:414:19 · **recurring** · fingerprint: f7c61d976e048fc4d2187457
+- **passive-voice** · skills/drawing/SKILL.md:424:19 · **recurring** · fingerprint: f7c61d976e048fc4d2187457
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is refused
 
-- **passive-voice** · skills/drawing/SKILL.md:446:42 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
+- **passive-voice** · skills/drawing/SKILL.md:456:42 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is verified
 
-- **passive-voice** · skills/drawing/SKILL.md:447:50 · **recurring** · fingerprint: d518259c92d98a763deb57db
+- **passive-voice** · skills/drawing/SKILL.md:457:50 · **recurring** · fingerprint: d518259c92d98a763deb57db
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was produced
 
-- **passive-voice** · skills/drawing/SKILL.md:448:42 · **recurring** · fingerprint: a9eeb0708efad4ad4ebac5a3
+- **passive-voice** · skills/drawing/SKILL.md:458:42 · **recurring** · fingerprint: a9eeb0708efad4ad4ebac5a3
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was returned
 
-- **passive-voice** · skills/drawing/SKILL.md:452:11 · **recurring** · fingerprint: 2ebc7cf088303cbfd5592603
+- **passive-voice** · skills/drawing/SKILL.md:462:11 · **recurring** · fingerprint: 2ebc7cf088303cbfd5592603
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
 
-- **long-sentence** · skills/drawing/SKILL.md:458:1 · **recurring** · fingerprint: 1da08cc0bf141330524bda57
+- **synonym-rotation** · skills/drawing/SKILL.md:470:15 · **recurring** · fingerprint: aa2b4a16cd7d5222231207e6
   - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
 
-- **long-sentence** · skills/drawing/SKILL.md:464:73 · **recurring** · fingerprint: 1da08cc0bf141330524bda57
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-
-- **semicolon** · skills/drawing/SKILL.md:465:131 · **recurring** · fingerprint: a66c58d4cbff63015f3f6912
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · skills/drawing/SKILL.md:479:24 · **recurring** · fingerprint: f6cfabada63cd4b942c2fdab
+- **passive-voice** · skills/drawing/SKILL.md:489:24 · **recurring** · fingerprint: f6cfabada63cd4b942c2fdab
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are determined
 
-- **passive-voice** · skills/drawing/SKILL.md:505:13 · **recurring** · fingerprint: 9ce13cb184b2103476d72b72
+- **passive-voice** · skills/drawing/SKILL.md:515:13 · **recurring** · fingerprint: 9ce13cb184b2103476d72b72
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is Closed
