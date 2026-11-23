@@ -124,6 +124,13 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - **References:** Reporter commit `379ecc19dc7a775d59f492d7f808a23da73f4d80`; hosted validation run [45124218890](https://github.com/dungnv2602/chatgpt/actions/runs/45124218890); report index at commit `3b579b57088eba6f58c942e6cc7d795e7bd25100`.
 - **Next:** Request immutable corrected captures for the three earlier source runs whose reports predate reporter-job exclusion. Then verify the final index/readbacks and close out the task with the default-branch observation limitation documented.
 
+## 6.3. 2026-11-23 07:22 UTC — Repeat hosted validation
+
+- **Action:** Inspected the completed diagnostics run [45130544355](https://github.com/dungnv2602/chatgpt/actions/runs/45130544355) and its hosted job log after the preceding task-record update.
+- **Result:** All 7 archive-retention tests and all 12 diagnostic-reporter tests passed again on GitHub-hosted runners. The sweep and publication succeeded and added four immutable captures. The run reported four source runs still pending for later post-run capture; none was polled.
+- **Limitation:** No newer `Validate Document Standards` run appears in the bounded branch snapshot. The latest such run remains [45128450035](https://github.com/dungnv2602/chatgpt/actions/runs/45128450035), which predates the final catalog/report-root correction. This validation remains open until a naturally triggered post-correction run is available.
+- **Next:** Preserve the task as In Progress. Do not dispatch a workflow or manufacture a trigger solely to force this check. Keep the ledger task Ready until this dependency is closed or explicitly reprioritized by the user.
+
 ## 6.2. 2026-11-23 07:16 UTC — Hosted validation after report-root and retention changes
 
 - **Action:** Inspected the naturally completed diagnostics sweep [45129646663](https://github.com/dungnv2602/chatgpt/actions/runs/45129646663), its hosted job log, workflow jobs, the current report indexes, and the latest branch state.
