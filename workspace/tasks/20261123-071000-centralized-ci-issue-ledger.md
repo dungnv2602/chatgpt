@@ -61,6 +61,18 @@ Turn the existing triage-ledger foundation under `reports/triage/` into an opera
 
 ## 6. Progress Log
 
+### 2026-11-23 08:23 UTC
+
+- **Action:** Integrated ingestion into the six existing diagnostic capture jobs and the central diagnostics sweep. Added hosted regression execution, atomic ledger publication, and a path exclusion for ledger-only commits.
+- **Concurrency:** Read back all six source-workflow diagnostic jobs. Each uses the shared non-cancelling `gh-ac-report-writer` group. The sweep uses the same group.
+- **Safety:** Capture-action ingestion remains non-blocking for source workflow conclusions. The sweep ingests complete post-run Actions reports after collection. The ledger-only path is excluded from sweep triggers.
+- **Operator guide:** Added identity rules, default severity, curated lifecycle fields, resolution evidence, duplicate links, recurrence, migration, and backfill policy.
+- **Tests:** Added 16 regression tests, including publisher-concurrency and recursion configuration checks. GitHub-hosted workflows now compile and run the ledger suite. No tests were run locally.
+- **Read-back:** Verified the generator, tests, schema, ledger, catalog, operator guide, capture action, sweep workflow, and all six source-workflow concurrency groups.
+- **Commits:** `950b139c13c05f3a8afa045a8d5c5dbdd53479b2`, `ce09697d7a989ea5cbc731b95241791882886baa`, `9516b6cc8794d60e4fb539c9ab5e7b77385bf0cc`, `e55d2123cb151ba9a691ff07469efcad38f06ca7`, `ee089d5a4508afab20fcb8bf988b71d4d12dd27a`.
+- **Validation limit:** Hosted tests and workflow checks have not been inspected. Do not poll or wait for runs.
+- **Next:** Keep the task In Progress until task-scoped hosted validation results are naturally available for a later bounded review.
+
 ### 2026-11-23 08:03 UTC
 
 - **Action:** Started execution after the user explicitly reprioritized this approved task.
@@ -97,19 +109,14 @@ Turn the existing triage-ledger foundation under `reports/triage/` into an opera
 
 ## 7. Current State
 
-The repository already contains an initial triage README, a JSON schema, and an empty `ledger.json`. The README describes deduplication and lifecycle states, but there is no automated ingestion/upsert process and no populated issue register. The existing ledger is therefore a foundation, not an operational issue tracker.
+The repository now contains an operational, generator-owned ledger pipeline. The schema is version 1.1.0. The forward-only bootstrap records 151 existing indexed report paths as processed, and the findings array remains empty. Capture and sweep publishers run ingestion under the shared non-cancelling writer group. The operator guide and hosted regression hooks are in place. Hosted validation remains unverified.
 
-This task is approved and In Progress. It is the current execution task following explicit user reprioritization. The diagnostic-report infrastructure task is paused, not closed. No files have been changed for implementation.
-
+This task is approved and In Progress. It is the current execution task. The diagnostic-report infrastructure task remains paused, not closed.
 ## 8. Remaining Work
 
-- Inspect the current report formats and collector publication lifecycle.
-- Finalize finding identity and normalization rules.
-- Implement idempotent ingestion and ledger persistence.
-- Preserve human-curated fields and resolution history.
-- Add regression coverage and hosted validation.
-- Document operator procedures and decide whether/when historical backfill is safe.
-
+- Review task-scoped GitHub-hosted test and workflow results when they are naturally available. Do not poll or wait for runs.
+- Correct any verified ledger-task defect.
+- Complete the required task archive and board closeout after validation.
 ## 9. Next Actions
 
 1. Review the next naturally available hosted results in a bounded snapshot.
@@ -135,4 +142,4 @@ This task is approved and In Progress. It is the current execution task followin
 
 ## 12. Handoff Instructions
 
-This task is approved and Ready, but not current execution. Do not interrupt the active diagnostic-report infrastructure task unless the user explicitly reprioritizes. When starting, inspect the latest report schemas, indexes, publication concurrency controls, and triage files on branch `gpt`; implement forward-only ingestion first. Preserve immutable source reports, curated ledger fields, source workflow conclusions, and the restriction against modifying `main`. Do not run repository code locally or poll hosted workflows.
+This task is In Progress on branch `gpt`. The generator, schema, operator guide, tests, capture action, and diagnostics sweep are committed. Review hosted results only when naturally available. Do not poll or wait for runs. Preserve immutable source reports, curated ledger fields, source workflow conclusions, and the restriction against modifying `main`. Do not run repository code locally.
