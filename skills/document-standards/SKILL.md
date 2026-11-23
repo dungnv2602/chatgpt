@@ -138,6 +138,10 @@ Check each document for:
 
 Add automated validation when a structural rule can be checked reliably.
 
+The catalog integrity validator at `scripts/validate_catalog.py` checks inventory row structure, document-type classes, class-specific references, and exact path existence. Its tests live at `scripts/test_validate_catalog.py`. It does not compare a document's content with its template, validate semantic quality, or duplicate processor schemas.
+
+Run the validator and its tests only on GitHub-hosted Actions runners. Do not run repository scripts locally. Workflow integration requires explicit authorization; until Actions runs both checks, treat execution as unverified.
+
 Use the schema or generator tests for structured and machine-generated data.
 
 Do not treat structural validation as proof of factual accuracy, user approval, or correct interpretation.
