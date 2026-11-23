@@ -5,7 +5,7 @@
 - **ID:** 20261122-233900
 - **Template version:** 1.0
 - **Created:** 2026-11-22 23:39 UTC
-- **Updated:** 2026-11-23 00:55 UTC
+- **Updated:** 2026-11-23 00:58 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -28,6 +28,15 @@
 How should we proceed from this?”
 
 Approval: The user approved the template-first document policy and authorized implementation.
+
+### 2026-11-23
+
+“Regarding Samantha drawing session closeout, tighten the workflow to prevent this happens again in the future.
+
+Regarding /archive boundary, you're not allowed to modify its contents, but allowed to read. Update your workflow for this.
+
+Then go back to template task and continue the work.”
+
 
 ## 3. Objective
 
@@ -258,6 +267,9 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - `skills/session-archiving/assets/session-summary-template.md`
 - `skills/session-archiving/assets/conversation-integrity-template.md`
 - `skills/drawing/assets/daily-index-template.md`
+- `skills/document-standards/scripts/validate_catalog.py`
+- `skills/document-standards/scripts/test_validate_catalog.py`
+- `skills/session-archiving/scripts/test_process_takeout_unittest.py`
 
 ## 11. Verification
 
@@ -272,9 +284,9 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **Limitations:** The downstream STE lint step fails on existing findings in `lint_reports/latest-lint-report.md`, `skills/agent-skill-authoring/SKILL.md`, and `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`. The workflow is functioning; the overall run is not green.
 
 - **Check:** Samantha task archive closeout.
-- **Method:** Read the task board, verify the active task path is absent, and inspect the archival commit's changed-path metadata without reading archived contents.
-- **Result:** The archive commit added the archive path; the active path is absent; the task board links the archived record and archival commit exactly once.
-- **Limitations:** Archived file contents were not read, in accordance with the archive boundary.
+- **Method:** Read the task board, verify the active task path is absent, inspect the archival commit's changed-path metadata, and read the archived record once during the investigation.
+- **Result:** The archive commit added the archive path; the active path is absent; the task board links the archived record and archival commit exactly once. The user clarified that reading exact archived records is allowed; the updated policy prohibits content modification.
+- **Limitations:** The archived record was not modified. Future archive reads must remain exact and task-relevant; broad archive scans are not part of routine closeout.
 
 ## 12. Handoff Instructions
 
