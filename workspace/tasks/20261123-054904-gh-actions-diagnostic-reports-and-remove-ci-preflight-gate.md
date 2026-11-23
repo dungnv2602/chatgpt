@@ -5,12 +5,12 @@
 - **Template version:** 1.1
 - **ID:** 20261123-054904
 - **Created:** 2026-11-23 05:49 UTC
-- **Updated:** 2026-11-23 08:03 UTC
+- **Updated:** 2026-11-23 09:58 UTC
 - **Priority:** P1
-- **Status:** Paused
+- **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** 20261123-051200 — Repair lint-report evidence workflow and unify report generation
 - **Archived:** No
@@ -36,6 +36,9 @@ Then, suggest me another approach to handle these errors from those reports, be 
 
 - **2026-11-23:** User approved moving both report families under root `reports/`, with `reports/triage/` as the shared issue ledger.
 - **2026-11-23:** User directed resolved report files to `archive/reports/`, using the existing shared archive-retention workflow and 90-day individual-file retention. Do not create `reports/archive/` or a separate report-retention workflow.
+
+- **2026-11-23:** User approved the cancelled-run reporting fix: "I ppprove your fix regarding logging cancelled runs problem."
+- **2026-11-23:** User asked to review the Open Discussions items and identify required user actions: "Then we deal with those bullet points in Open Discussion. Tell me what I need to do."
 
 ## 3. Objective
 
@@ -151,6 +154,13 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - **Action:** Paused active execution after the user explicitly reprioritized the approved centralized CI issue ledger task.
 - **Result:** Preserved the remaining natural-run Document Standards validation and pending post-run captures as open follow-up work. No task closeout or archive operation was performed.
 - **Next:** Resume only when selected again. Do not dispatch or poll workflows.
+
+### 2026-11-23 09:58 UTC
+
+- **Action:** Resumed this approved task after the user authorized the cancelled-run reporting fix. Reconciled task status and current-execution selection.
+- **Result:** Task 20261123-054904 is In Progress and selected as current execution. The earlier natural-run validation and capture follow-ups remain in scope and are not marked complete.
+- **References:** `workspace/task_board.md`; cancellation evidence in runs [45146852295](https://github.com/dungnv2602/chatgpt/actions/runs/45146852295) and [45132710220](https://github.com/dungnv2602/chatgpt/actions/runs/45132710220).
+- **Next:** Correct cancellation classification and add regression coverage. Preserve cancelled runs as evidence without treating cancellation or downstream status propagation as defects.
 
 ## 7. Current State
 
