@@ -81,9 +81,16 @@ Make The Worker the sole owner of collaboration modes, task/session continuity, 
 - **References:** `skills/session-archiving/` (removed), `skills/conversation-mode/` (removed), `skills/the-worker/`, `.github/workflows/convert-images-to-webp.yml`, `skills/SESSION_START.md`, `skills/README.md`, `skills/drawing/SKILL.md`, `skills/document-standards/references/document-type-catalog.md`, and `images/README.md`.
 - **Next:** Verify all changed paths, confirm removed entry points are absent, and check the final branch head.
 
+### 2026-11-23 12:04 UTC
+
+- **Action:** Completed remote read-back of the migrated components and dependent documentation. Checked the final branch head and queried both removed skill directories.
+- **Result:** All ten moved templates, references, and scripts exist under The Worker. Their original blob IDs were preserved. The Worker skill, archive/media references, Drawing skill, session-start procedure, skill index, Document Type Catalog, image README, and WebP workflow were retrieved from branch `gpt`. The checked operational files contain no stale paths to either removed skill or the old script directory. GitHub returned 404 for both `skills/session-archiving/` and `skills/conversation-mode/`. The branch head at the check was `5ae87724b762b7498869a7eef86cc8090f4346ea`.
+- **References:** `skills/the-worker/`, `skills/drawing/SKILL.md`, `skills/SESSION_START.md`, `skills/README.md`, `skills/document-standards/references/document-type-catalog.md`, `images/README.md`, `.github/workflows/convert-images-to-webp.yml`.
+- **Next:** Archive this task record, register its exact retention timestamp, delete the active record, and reconcile the task board.
+
 ## 7. Current State
 
-The task is approved and in progress. All ten supporting files have been copied and read back under The Worker. Owner instructions, activation paths, workflow script paths, Drawing dependencies, image documentation, the Document Type Catalog, and skill indexes have been updated. The standalone Session Archiving and Conversation Mode skill files have been deleted. Final read-back and branch verification remain.
+The task is approved and in progress. All ten supporting files have been copied and read back under The Worker. Owner instructions, activation paths, workflow script paths, Drawing dependencies, image documentation, the Document Type Catalog, and skill indexes have been updated. The standalone Session Archiving and Conversation Mode skill files have been deleted. All ten supporting files are preserved under The Worker with matching source blob IDs. Dependent operational paths and activation rules have been updated and read back. Both removed skill directories return 404.
 
 ## 8. Remaining Work
 
@@ -94,10 +101,7 @@ The task is approved and in progress. All ten supporting files have been copied 
 
 ## 9. Next Actions
 
-1. Transfer Session Archiving supporting files into The Worker.
-2. Update owner instructions and all exact dependent paths.
-3. Delete the absorbed skill files and verify no stale references remain.
-4. Archive this task and reconcile the task board.
+1. Archive this task and reconcile the task board.
 
 ## 10. References
 
@@ -115,9 +119,9 @@ The task is approved and in progress. All ten supporting files have been copied 
 
 - **Check:** Required content transfer, owner and dependency references, workflow paths, deletion of absorbed skill directories, and branch read-back.
 - **Method:** Fetch every source file, create its Worker-owned destination, update exact references, delete source files only after destination verification, and retrieve all changed paths from branch `gpt`.
-- **Result:** Not performed.
-- **Limitations:** No local script execution or CI run is authorized or required by this task.
+- **Result:** Passed. All ten destination files were retrieved with the same blob IDs as their original source files. Updated operational paths were read back. Checked files contain no stale paths to either removed skill or the old script directory. Both removed skill directories return 404. Branch `gpt` was checked at `5ae87724b762b7498869a7eef86cc8090f4346ea`.
+- **Limitations:** No CI workflow, script, or test was run. Read-back confirms repository content and path consistency, not hosted execution of the migrated image workflow.
 
 ## 12. Handoff Instructions
 
-Continue the approved migration on branch `gpt`. Preserve all Session Archiving content under The Worker. Do not alter Document Standards' implementation in this task. Keep the explicit session-start cue. Do not report completion until all migrated paths and cross-references pass remote read-back.
+The migration is complete on branch `gpt`. The Worker owns collaboration modes, task/session continuity, conversation and drawing archives, image provenance, WebP delivery, and image takeout processing. The separate Session Archiving and Conversation Mode skill directories no longer exist. Document Standards remains separate and on-demand pending a user decision about foundational loading. No local tests or CI were run.
