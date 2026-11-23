@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-100738
 - **Created:** 2026-11-23 10:07 UTC
-- **Updated:** 2026-11-23 12:40 UTC
+- **Updated:** 2026-11-23 12:48 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -55,6 +55,12 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 - **Validation:** Use natural GitHub Actions runs. Do not manually dispatch or poll workflows.
 
 ## 6. Progress Log
+
+### 2026-11-23 12:48 UTC
+
+- **Action:** Completed source-level remediation of the single baseline hard finding in `skills/drawing/assets/pattern-entry-templates.md`.
+- **Result:** Changed the checklist verb to `validate` so it matches the existing `Validated` confidence state. Preserved all confidence values and evidence requirements. Readback passed after commit `0a1835a15518a039f8fcfe4f25789ab8a2a78098`. No local lint or tests were run. Hosted validation remains pending natural workflow execution.
+- **Next:** Review the single hard finding in `skills/drawing/assets/attempt-template.md`.
 
 ### 2026-11-23 12:40 UTC
 
@@ -196,8 +202,8 @@ The approved task is In Progress and is the current execution. All 75 baseline h
 
 ## 9. Next Actions
 
-1. Review the single hard finding in `skills/drawing/assets/pattern-entry-templates.md` against the full template and owner workflow.
-2. Preserve evidence, confidence, and success/failure distinctions.
+1. Review the single hard finding in `skills/drawing/assets/attempt-template.md` against the complete template and owner workflow.
+2. Preserve separate record, generation, and user-decision states.
 3. Apply the fix on `gpt` and inspect naturally generated hosted reports.
 4. Repeat until the approved hard-finding set is resolved or a policy conflict requires user direction.
 
