@@ -269,6 +269,10 @@ If the board and task record disagree, reconcile them against the latest user in
 
 Ask the user only when a genuine decision, missing requirement, or approval blocks safe progress.
 
+## Report triage and archive
+
+Use `reports/triage/ledger.json` to track recurring issues across lint and Actions reports. Mark a finding resolved only after recording its fix commit and successful relevant validation. Move resolved report files to `archive/reports/`; the shared scheduled archive-retention workflow deletes each indexed file after 90 days. Task records and report files share the same archive index and cleanup process.
+
 ## Task completion and archive
 
 Task closeout is a mandatory workflow transaction. The Worker owns it in every conversation mode. Condensed Mode does not change or shorten these steps.
