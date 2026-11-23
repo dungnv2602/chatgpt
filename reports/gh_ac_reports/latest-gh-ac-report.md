@@ -1,26 +1,26 @@
-# STE Lint Full Technical Documentation — run 45127306049
+# STE Lint Changed Documentation — run 45127436269
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | STE Lint Full Technical Documentation |
-| Workflow path | .github/workflows/ste-lint-full-docs.yml |
-| Run / attempt | 45127306049 / 1 |
-| Run number | 167 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45127306049 |
+| Workflow | STE Lint Changed Documentation |
+| Workflow path | .github/workflows/ste-lint-changed.yml |
+| Run / attempt | 45127436269 / 1 |
+| Run number | 434 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45127436269 |
 | Branch | gpt |
-| Commit | 7f203e5cbb3ab5615714a454ff16d1984a536e8d |
+| Commit | d79526425e0ace2029b9de9bdb1c3f778c4a4444 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T06:54:22Z |
+| Created (UTC) | 2026-11-23T06:55:29Z |
 | Status at capture | completed |
 | Observed conclusion | cancelled |
 | Projected conclusion | Not calculated |
-| Reporter job | completed / failure |
+| Reporter job | Not captured |
 | Capture stage | post_run |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T06:55:12Z |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-23T06:55:51Z |
 
 ## Executive summary
 
@@ -28,12 +28,12 @@
 | --- | --- |
 | State | cancelled |
 | Primary category | cancelled |
-| Jobs | 2 |
-| Steps | 3 |
-| Issues | 2 |
-| Annotations | 2 |
+| Jobs | 0 |
+| Steps | 0 |
+| Issues | 0 |
+| Annotations | 0 |
 | Artifacts | 0 |
-| Capture errors | 1 |
+| Capture errors | 0 |
 
 ## Failure classification
 
@@ -41,24 +41,15 @@ cancelled
 
 ## Jobs and steps
 
-| Job ID | Job | Status | Conclusion | Steps | Log |
-| --- | --- | --- | --- | --- | --- |
-| 137534503885 | Validate target branch and reject superseded push runs | completed | cancelled | 3 | logs/job-137534503885.log |
-| 137534535789 | Full audit and publish detailed evidence | completed | cancelled | 0 | logs/job-137534535789.log |
+No records were captured.
 
 ## Actionable step outcomes
 
-| Category | Job | Step | Name | Effect | Confidence | Evidence |
-| --- | --- | --- | --- | --- | --- | --- |
-| cancelled | 137534503885 | — | Validate target branch and reject superseded push runs | Blocking | high | Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T06:54:25.7160950Z ^[[36;1m  echo "::error::Select the gpt branch when manually dispatching this workflow."^[[0m |
-| cancelled | 137534535789 | — | Full audit and publish detailed evidence | Blocking | high | Job conclusion: cancelled |
+No records were captured.
 
 ## Check annotations
 
-| Job | Level | Path | Line | Title | Message |
-| --- | --- | --- | --- | --- | --- |
-| 137534503885 | failure | .github | 1 |  | Canceling since a higher priority waiting request for STE Lint Full Technical Documentation-refs/heads/gpt exists |
-| 137534503885 | warning | .github | 35 |  | Could not identify the latest push run. Continue with validation. |
+No records were captured.
 
 ## Artifacts
 
@@ -66,22 +57,15 @@ No records were captured.
 
 ## Captured job logs
 
-| Job | Name | File | Bytes | Truncated | Markers |
-| --- | --- | --- | --- | --- | --- |
-| 137534503885 | Validate target branch and reject superseded push runs | logs/job-137534503885.log | 9985 | False | Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-23T06:54:25.7160950Z ^[[36;1m  echo "::error::Select the gpt branch when manually dispatching this workflow."^[[0m |
-| 137534535789 | Full audit and publish detailed evidence | logs/job-137534535789.log | 29 | False |  |
+No records were captured.
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | log not found: 137534535789  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 
-[Repository-wide lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/reports/lint_reports/on_repo/latest-lint-report.md)
+[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/reports/lint_reports/on_changed/latest-lint-report.md)
 
 ## Integrity
 
