@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-054904
 - **Created:** 2026-11-23 05:49 UTC
-- **Updated:** 2026-11-23 15:34 UTC
+- **Updated:** 2026-11-23 15:41 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -84,6 +84,12 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 
 ## 6. Progress Log
 
+### 2026-11-23 15:41 UTC
+
+- **Action:** Restricted task creation to finding identities observed during the current ingestion event. New findings create Proposed tasks. Already-linked findings refresh their active task. An updated but historically unlinked finding is not taskified unless an active remediation group exists. Reopened resolved findings can create a follow-up when no active task exists.
+- **Result:** Schema migration adds stable group IDs but does not convert the existing 462-finding backlog into tasks. The change avoids a one-time task flood and avoids duplicating the separately approved hard-lint remediation. Generated task files and task-board-only pushes are excluded from the diagnostics sweep, Document Standards trigger, and changed-document lint trigger. Regression tests cover this no-backfill boundary and task-only trigger exclusions.
+- **References:** reports/triage/scripts/ledger.py; reports/triage/scripts/test_ledger.py; reports/triage/README.md; workspace/README.md; skills/the-worker/SKILL.md; .github/workflows/gh-actions-diagnostics.yml; .github/workflows/validate-document-standards.yml; .github/workflows/ste-lint-changed.yml.
+- **Next:** Let GitHub-hosted validation occur naturally. Do not dispatch or poll workflows.
 ### 2026-11-23 15:34 UTC
 
 - **Action:** Restricted task generation to findings accepted from the current report-ingestion event. New findings create tasks; already-linked findings refresh their existing task; a re-opened resolved finding can create a follow-up when no active group exists.
@@ -251,7 +257,7 @@ The three exact-run recapture requests have been processed. Their request files 
 
 The repository default branch is `main`, while this authorized task is restricted to `gpt`. A run that fails before any job starts cannot be captured immediately by this branch-local design. The push sweep or an exact-run request can backfill it later. Immediate completion-event observation requires an authorized observer on `main` or an external GitHub App webhook. No changes were made to `main`.
 
-The Ledger is now an event-driven component of The Worker. During ingestion, it creates grouped Proposed task records for eligible findings, updates the task board, and links each finding through task_refs. Lint findings group by file and rule; Actions findings group by workflow path, job, step, and category. Active groups reuse an existing task and refresh all immutable evidence links. New higher-severity findings can raise the group's priority. Low and informational findings remain ledger-only. Task-only commits are ignored by the diagnostics sweep. The Worker retains approval and remediation ownership.
+The Ledger is now an event-driven component of The Worker. During ingestion, it creates grouped Proposed task records for newly identified actionable findings, updates the task board, and links each finding through task_refs. Lint findings group by file and rule; Actions findings group by workflow path, job, step, and category. Linked findings refresh their active task's immutable evidence links. New higher-severity findings can raise the group's priority. Reopened resolved findings can create a follow-up when no active group exists. Schema migration does not taskify the historical backlog. Task-only commits are excluded from the diagnostics sweep, Document Standards push trigger, and changed-document lint trigger. The Worker retains approval and remediation ownership.
 
 ## 8. Remaining Work
 
