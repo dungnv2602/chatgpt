@@ -151,6 +151,7 @@
       "additionalProperties": true
     },
     "classification": {
+      "description": "Run state records the source outcome. Cancellation alone does not create an actionable issue. Categories and issues contain only independent failures.",
       "type": "object",
       "required": [
         "state",
@@ -177,18 +178,21 @@
           ]
         },
         "primary_category": {
+          "description": "Null when the report contains no actionable issue.",
           "type": [
             "string",
             "null"
           ]
         },
         "categories": {
+          "description": "Categories for actionable issues. Do not include cancellation-only outcomes.",
           "type": "array",
           "items": {
             "type": "string"
           }
         },
         "issues": {
+          "description": "Independent actionable failures only. Exclude cancellation and known downstream status propagation caused by cancellation.",
           "type": "array",
           "items": {
             "type": "object",

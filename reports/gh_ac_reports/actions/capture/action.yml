@@ -1,5 +1,5 @@
 name: Capture GitHub Actions diagnostics
-description: Validate diagnostics and ledger tools, capture the calling workflow, update the issue ledger, and publish evidence.
+description: Validate cancellation-safe diagnostics and ledger tools, capture the calling workflow, update the issue ledger, and publish evidence.
 runs:
   using: composite
   steps:
@@ -8,7 +8,7 @@ runs:
       with:
         python-version: '3.x'
 
-    - name: Compile and test the diagnostic reporter
+    - name: Compile and test cancellation-safe diagnostic reporting
       continue-on-error: true
       shell: bash
       run: |

@@ -220,40 +220,73 @@ def step_log_text(log_text, step_name):
     return "\n".join(matches) if matches else str(log_text or "")
 
 
+def is_status_propagation_step(step):
+    """Identify workflow steps that only convert earlier outcomes into a run result."""
+    name = str(step.get("name") or "").strip().lower()
+    return (
+        ("preserve" in name and any(term in name for term in ("conclusion", "result", "status")))
+        or ("propagat" in name and any(term in name for term in ("conclusion", "result", "status")))
+        or name.startswith("set workflow result")
+    )
+
+
 def classify(run, jobs, logs, jobs_available=True):
     issues = []
     categories = set()
+    actionable_job_failure = False
+    cancellation_observed = False
     for job in jobs:
         text = logs.get(str(job["id"]), "")
-        failures = [step for step in job["steps"] if step.get("conclusion") in FAILURES]
-        for step in failures:
-            conclusion = step.get("conclusion")
-            if conclusion == "cancelled":
-                category, confidence = "cancelled", "high"
-            elif conclusion == "timed_out":
+        cancelled_step_seen = False
+        actionable_failures = []
+        for step in job["steps"]:
+            step_conclusion = step.get("conclusion")
+            if step_conclusion == "cancelled":
+                cancelled_step_seen = True
+                cancellation_observed = True
+                continue
+            if step_conclusion not in FAILURES:
+                continue
+            if cancelled_step_seen and is_status_propagation_step(step):
+                continue
+            actionable_failures.append(step)
+
+        if actionable_failures:
+            actionable_job_failure = True
+        elif job.get("conclusion") in ("timed_out", "action_required"):
+            actionable_job_failure = True
+        elif job.get("conclusion") == "failure" and not cancelled_step_seen:
+            actionable_job_failure = True
+        if job.get("conclusion") == "cancelled":
+            cancellation_observed = True
+
+        for step in actionable_failures:
+            step_conclusion = step.get("conclusion")
+            if step_conclusion == "timed_out":
                 category, confidence = "timeout", "high"
-            elif conclusion == "action_required":
+            elif step_conclusion == "action_required":
                 category, confidence = "action_required", "high"
             else:
                 relevant_log = step_log_text(text, step.get("name"))
                 category, confidence = classify_text(relevant_log, job["name"], str(step.get("name") or ""))
-            if conclusion in ("cancelled", "timed_out", "action_required"):
+            if step_conclusion in ("timed_out", "action_required"):
                 relevant_log = text
             issues.append({
                 "category": category, "job_id": job["id"], "job_name": job["name"],
                 "step_number": step.get("number"), "step_name": step.get("name"),
                 "blocking": job.get("conclusion") not in (None, "success", "neutral", "skipped"),
                 "confidence": confidence,
-                "message": next(iter(markers(relevant_log)), "Step conclusion: " + str(conclusion)),
+                "message": next(iter(markers(relevant_log)), "Step conclusion: " + str(step_conclusion)),
             })
             categories.add(category)
-        if job.get("conclusion") in FAILURES and not failures:
-            conclusion = job.get("conclusion")
-            if conclusion == "cancelled":
-                category, confidence = "cancelled", "high"
-            elif conclusion == "timed_out":
+
+        if job.get("conclusion") in FAILURES and not actionable_failures:
+            if job.get("conclusion") == "cancelled" or cancelled_step_seen:
+                continue
+            job_conclusion = job.get("conclusion")
+            if job_conclusion == "timed_out":
                 category, confidence = "timeout", "high"
-            elif conclusion == "action_required":
+            elif job_conclusion == "action_required":
                 category, confidence = "action_required", "high"
             else:
                 category, confidence = classify_text(text, job["name"], "")
@@ -261,7 +294,7 @@ def classify(run, jobs, logs, jobs_available=True):
                 "category": category, "job_id": job["id"], "job_name": job["name"],
                 "step_number": None, "step_name": None, "blocking": True,
                 "confidence": confidence,
-                "message": next(iter(markers(text)), "Job conclusion: " + str(conclusion)),
+                "message": next(iter(markers(text)), "Job conclusion: " + str(job_conclusion)),
             })
             categories.add(category)
 
@@ -279,8 +312,8 @@ def classify(run, jobs, logs, jobs_available=True):
             "message": "GitHub reported a failed run, but no failed job or step was available.",
         })
         categories.add(category)
-    if conclusion in ("cancelled", "timed_out", "action_required"):
-        categories.add({"cancelled":"cancelled","timed_out":"timeout","action_required":"action_required"}[conclusion])
+    if conclusion in ("timed_out", "action_required"):
+        categories.add({"timed_out": "timeout", "action_required": "action_required"}[conclusion])
 
     if conclusion == "success":
         state = "success_with_non_blocking_step_failures" if issues else "success"
@@ -296,9 +329,9 @@ def classify(run, jobs, logs, jobs_available=True):
     projected = None
     if conclusion is None and jobs and all(job.get("status") == "completed" for job in jobs):
         outcomes = [job.get("conclusion") for job in jobs]
-        if any(item in ("failure", "timed_out", "action_required") for item in outcomes):
+        if actionable_job_failure:
             projected = "failure"
-        elif "cancelled" in outcomes:
+        elif cancellation_observed or "cancelled" in outcomes:
             projected = "cancelled"
         elif all(item == "skipped" for item in outcomes):
             projected = "skipped"
@@ -310,7 +343,6 @@ def classify(run, jobs, logs, jobs_available=True):
         "state": state, "observed_conclusion": conclusion, "projected_conclusion": projected,
         "primary_category": ordered[0] if ordered else None, "categories": ordered, "issues": issues,
     }
-
 
 def fetch_evidence(repo, run_id, stage):
     errors = []

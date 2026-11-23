@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-054904
 - **Created:** 2026-11-23 05:49 UTC
-- **Updated:** 2026-11-23 09:58 UTC
+- **Updated:** 2026-11-23 10:06 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -162,7 +162,16 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - **References:** `workspace/task_board.md`; cancellation evidence in runs [45146852295](https://github.com/dungnv2602/chatgpt/actions/runs/45146852295) and [45132710220](https://github.com/dungnv2602/chatgpt/actions/runs/45132710220).
 - **Next:** Correct cancellation classification and add regression coverage. Preserve cancelled runs as evidence without treating cancellation or downstream status propagation as defects.
 
+### 2026-11-23 10:06 UTC
+
+- **Action:** Corrected cancellation handling in the Actions report generator and added regression coverage. Added a ledger guard for cancelled source runs. Updated the report template, schema descriptions, owner guides, catalog, and existing hosted test integration.
+- **Result:** The generator retains cancelled run metadata and evidence but excludes cancellation-only issues and recognized downstream status-propagation steps. It preserves independent failures that occur before cancellation. The ledger now rejects all findings from a cancelled source run. Existing immutable captures remain unchanged. Hosted validation is pending.
+- **References:** \`reports/gh_ac_reports/scripts/report.py\`, \`reports/gh_ac_reports/scripts/test_report.py\`, \`reports/gh_ac_reports/assets/report-template.md\`, \`reports/gh_ac_reports/assets/report-schema.json\`, \`reports/gh_ac_reports/README.md\`, \`reports/triage/scripts/ledger.py\`, \`reports/triage/scripts/test_ledger.py\`, \`reports/triage/README.md\`, and \`skills/document-standards/references/document-type-catalog.md\`. Affected evidence: [45146852295](https://github.com/dungnv2602/chatgpt/actions/runs/45146852295) and [45132710220](https://github.com/dungnv2602/chatgpt/actions/runs/45132710220).
+- **Next:** Review the next natural hosted diagnostics run. Confirm the reporter and ledger tests pass and that a cancelled source run creates no issue. Do not poll or manually dispatch workflows.
+
 ## 7. Current State
+
+The user-approved cancellation repair is implemented in the reporter and ledger. Cancelled run outcomes and evidence remain in immutable reports, but cancellation-only outcomes do not create actionable issues. Known downstream status-propagation steps after cancellation are excluded. Independent failures before cancellation remain actionable. The ledger excludes all findings from a cancelled source run. Existing immutable historical reports are not rewritten. Hosted validation of this change is pending.
 
 The report families are consolidated under `reports/`: `reports/lint_reports/`, `reports/gh_ac_reports/`, and `reports/triage/`. The migration preserved the 198 report blobs present at migration start; six late lint-report files written by a stale workflow path were subsequently relocated. The root `reports/README.md` links the report families and shared triage ledger. No `reports/archive/` directory exists.
 
@@ -178,6 +187,7 @@ The repository default branch is `main`, while this authorized task is restricte
 
 ## 8. Remaining Work
 
+- Verify the cancellation-classification and ledger regression tests on the next naturally triggered GitHub-hosted diagnostics run. Confirm the next cancelled report has state `cancelled` and no cancellation-derived issues.
 - Obtain a successful natural Document Standards run after the catalog/report-root corrections. The diagnostics and archive-retention test suites have passed on a GitHub-hosted runner, but that does not replace the Document Standards workflow check.
 - Allow the five pending source runs to receive post-run captures through a later eligible push/sweep; do not poll or manually dispatch a workflow.
 - Do not manually dispatch the schedule-only 90-day cleanup workflow.
@@ -185,9 +195,11 @@ The repository default branch is `main`, while this authorized task is restricte
 
 ## 9. Next Actions
 
-1. Verify the catalog/report-root migration through the next naturally triggered successful Document Standards run.
-2. Review post-run captures only after a later eligible sweep completes naturally.
-3. Keep all repository changes on `gpt`; do not modify `main`.
+1. Review the next naturally completed diagnostics workflow run and its hosted test log. Do not poll or dispatch a workflow.
+2. Confirm that cancelled source runs remain in immutable history but create no ledger findings.
+3. Verify the catalog/report-root migration through the next naturally triggered successful Document Standards run.
+4. Review pending post-run captures only after a later eligible sweep completes naturally.
+5. Keep all repository changes on `gpt`; do not modify `main`.
 
 ## 10. References
 
@@ -238,5 +250,7 @@ The repository default branch is `main`, while this authorized task is restricte
 - **Result:** All implementation paths are on branch `gpt`. The three corrected-capture request files are committed. The task is Paused following explicit user reprioritization while those optional recaptures are unverified.
 
 ## 12. Handoff Instructions
+
+The cancelled-run repair is committed but not yet validated on a hosted runner. Review the next natural diagnostics run and confirm the reporter and ledger regression suites pass. Confirm cancelled source runs remain historical evidence and do not create actionable issues. Do not poll or dispatch workflows. Preserve the separate natural-run Document Standards validation and pending post-run capture follow-ups. Keep all changes on `gpt`; do not modify `main`.
 
 Continue from this record. The implementation and policy changes are in place. The latest hosted diagnostics run passed 12 reporter tests and 7 archive-retention tests; the three exact-run recaptures have complete post-run reports. The remaining task-scoped validation is a successful natural Document Standards run after the report-root/catalog corrections. Five source runs remain pending for later post-run capture; do not poll. Keep all repository changes on branch `gpt`. Preserve `lint_reports/` as the lint-specific evidence system. Do not let unrelated CI failures delay this or later user requests.

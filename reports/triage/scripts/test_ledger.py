@@ -54,7 +54,7 @@ class LedgerTests(unittest.TestCase):
         index_path.write_text(json.dumps({"schema_version":"1.1.0","runs":rows}), encoding="utf-8")
         return report_path.relative_to(self.root).as_posix()
 
-    def add_actions(self, run_id, timestamp, issues, stage="post_run", completeness="Complete"):
+    def add_actions(self, run_id, timestamp, issues, stage="post_run", completeness="Complete", conclusion="failure"):
         history = self.root / "reports" / "gh_ac_reports" / "history" / "55" / (run_id + "-attempt-1-" + stage)
         history.mkdir(parents=True, exist_ok=True)
         report_path = history / "report.json"
@@ -63,7 +63,7 @@ class LedgerTests(unittest.TestCase):
             "source_run":{
                 "id":run_id,"number":int(run_id),"attempt":1,"workflow_id":55,
                 "workflow_name":"Example CI","workflow_path":".github/workflows/example.yml",
-                "run_url":"https://example.invalid/actions/runs/" + run_id,"status":"completed","conclusion":"failure",
+                "run_url":"https://example.invalid/actions/runs/" + run_id,"status":"completed","conclusion":conclusion,
             },
             "capture":{"stage":stage,"captured_at_utc":timestamp,"completeness":completeness,"reporter_job":None},
             "classification":{"issues":issues},
@@ -138,6 +138,17 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(result["findings_created"],3)
         self.assertEqual(len(findings),3)
         self.assertTrue(all(item["source_family"] == "github_actions" for item in findings))
+
+    def test_cancelled_source_run_never_creates_findings(self):
+        issue = {
+            "category":"validation_or_test","job_name":"Build","step_name":"Unit tests",
+            "blocking":True,"confidence":"high","message":"A stale report marked a cancelled run as a test failure.",
+        }
+        self.add_actions("203","2026-11-23T07:35:00Z",[issue],conclusion="cancelled")
+        result = LEDGER.ingest(self.root)
+        self.assertEqual(result["total_findings"],0)
+        self.assertEqual(result["reports_processed"],1)
+        self.assertEqual(self.read_ledger()["findings"],[])
 
     def test_actions_repeat_observation_increments_once_per_run(self):
         issue = {"category":"validation_or_test","job_name":"Build","step_name":"Unit tests","blocking":True,"confidence":"medium","message":"Assertion mismatch"}

@@ -11,7 +11,7 @@ The ledger tracks distinct lint and GitHub Actions issues across report runs. It
 - The generator ignores lint workflow steps that only re-emit an earlier failure as the workflow conclusion.
 - A workflow conclusion alone does not create a finding. The report must contain a specific classified issue.
 - Only complete post-run Actions reports contribute findings. Pre-finalizer reports do not create issues.
-- Cancelled, skipped, neutral, queued, in-progress, and unavailable states do not create findings by themselves.
+- Cancelled source runs never create findings, even if an older or malformed classification contains issue rows. Their immutable reports remain available as evidence. Skipped, neutral, queued, in-progress, and unavailable states do not create findings by themselves.
 
 Each evidence entry records its immutable report path, run URL, observation time, and run identity. The occurrence count measures unique source run attempts. A lint finding in both scopes counts once for the same run.
 

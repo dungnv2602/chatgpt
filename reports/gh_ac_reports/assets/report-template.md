@@ -12,6 +12,8 @@
 
 {classification}
 
+The run conclusion records the workflow outcome. A cancelled run remains in history. Cancellation alone does not create an actionable issue. The generator also excludes known downstream status-propagation steps after cancellation.
+
 ## Jobs and steps
 
 {jobs}

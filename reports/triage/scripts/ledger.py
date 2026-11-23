@@ -273,6 +273,8 @@ def actions_observations(report, report_path, root):
         return []
     if source.get("status") != "completed":
         return []
+    if source.get("conclusion") == "cancelled":
+        return []
     issues = (report.get("classification") or {}).get("issues")
     if not isinstance(issues, list):
         raise LedgerError("GitHub Actions classification issues must be an array: " + report_path)

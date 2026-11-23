@@ -32,7 +32,7 @@ The sweep stores pending run IDs for queued, running, or incomplete captures. It
 The report preserves the source conclusion reported by GitHub. Report-generation success does not mean that the source workflow succeeded.
 
 - failure: GitHub reports failure.
-- cancelled: GitHub reports cancellation. Cancellation is not automatically a failure.
+- cancelled: GitHub reports cancellation. The report retains the run, jobs, steps, logs, and annotations. Cancellation alone does not create an actionable issue. The generator excludes known downstream status-propagation steps after a cancelled step. Independent failures before cancellation remain actionable.
 - timed_out: GitHub reports a timeout.
 - action_required: GitHub reports an action-required state.
 - skipped and neutral remain non-failure outcomes.

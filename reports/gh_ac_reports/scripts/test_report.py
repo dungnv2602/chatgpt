@@ -65,7 +65,48 @@ class ClassificationTests(unittest.TestCase):
     def test_cancelled_is_not_failure(self):
         result = build(make_run("cancelled"), [make_job("cancelled", "cancelled")])
         self.assertEqual(result["state"], "cancelled")
-        self.assertNotEqual(result["state"], "failure")
+        self.assertIsNone(result["primary_category"])
+        self.assertEqual(result["categories"], [])
+        self.assertEqual(result["issues"], [])
+
+    def test_cancelled_run_ignores_downstream_status_propagation(self):
+        job = make_job("cancelled", "cancelled", name="Run full technical-document lint")
+        job["steps"].append({
+            "number": 3, "name": "Preserve lint failure as workflow conclusion",
+            "status": "completed", "conclusion": "failure",
+        })
+        log = (
+            "Build and test\tPreserve lint failure as workflow conclusion\t"
+            "2026-11-23T06:00:11Z ##[error]Changed-document lint failed."
+        )
+        result = build(make_run("cancelled"), [job], {"200": log})
+        self.assertEqual(result["state"], "cancelled")
+        self.assertEqual(result["issues"], [])
+        self.assertIsNone(result["primary_category"])
+
+    def test_independent_failure_before_cancellation_remains_actionable(self):
+        job = make_job("cancelled", "failure", name="Run unit tests")
+        job["steps"].append({
+            "number": 3, "name": "Cancel remaining work",
+            "status": "completed", "conclusion": "cancelled",
+        })
+        log = "Build and test\tRun unit tests\t2026-11-23T06:00:02Z FAILED: assertion mismatch"
+        result = build(make_run("cancelled"), [job], {"200": log})
+        self.assertEqual(result["state"], "cancelled")
+        self.assertEqual(len(result["issues"]), 1)
+        self.assertEqual(result["issues"][0]["category"], "validation_or_test")
+
+    def test_pre_finalizer_projects_cancellation_without_actionable_issues(self):
+        run = make_run(None, "in_progress")
+        job = make_job("cancelled", "cancelled", name="Run unit tests")
+        job["steps"].append({
+            "number": 3, "name": "Preserve lint failure as workflow conclusion",
+            "status": "completed", "conclusion": "failure",
+        })
+        result = build(run, [job])
+        self.assertEqual(result["state"], "in_progress")
+        self.assertEqual(result["projected_conclusion"], "cancelled")
+        self.assertEqual(result["issues"], [])
 
     def test_failed_run_without_jobs_is_low_confidence_startup(self):
         result = build(make_run(), [])
