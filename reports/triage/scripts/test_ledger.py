@@ -307,17 +307,29 @@ class LedgerTests(unittest.TestCase):
             "finding_id":"lint-a1b2c3d4e5f6","source_family":"lint","category":"rule","title":"A finding",
             "status":"planned","severity":"medium","owner":None,
             "first_seen_utc":"2026-11-23T07:00:00Z","last_seen_utc":"2026-11-23T07:00:00Z",
-            "occurrence_count":1,"evidence":[],"resolution":None,"resolution_history":[],
+            "occurrence_count":1,"evidence":[{"report_path":"reports/lint_reports/on_repo/history/1-attempt-1/report.json",
+                "observed_at_utc":"2026-11-23T07:00:00Z","observation_id":"lint:1:1",
+                "note":"on_repo · docs/example.md:5:2"}],"resolution":None,"resolution_history":[],
             "duplicate_of":None,"accepted_risk":None,
         }
-        self.write_ledger(version="1.1.0", findings=[finding])
+        second = dict(finding)
+        second.update({"finding_id":"lint-b2c3d4e5f6a7","title":"Second finding"})
+        second["evidence"] = [{"report_path":"reports/lint_reports/on_changed/history/2-attempt-1/report.json",
+            "observed_at_utc":"2026-11-23T07:00:00Z","observation_id":"lint:2:1",
+            "note":"on_changed · docs/example.md:8:1"}]
+        self.write_ledger(version="1.1.0", findings=[finding, second])
         LEDGER.ingest(self.root)
         migrated = self.read_ledger()
-        self.assertEqual(migrated["schema_version"],"1.2.0")
+        self.assertEqual(migrated["schema_version"],"1.3.0")
         self.assertEqual(len(migrated["findings"][0]["task_refs"]), 1)
+        self.assertEqual(migrated["findings"][0]["task_refs"], migrated["findings"][1]["task_refs"])
+        self.assertEqual(migrated["findings"][0]["task_group"], migrated["findings"][1]["task_group"])
         task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
         self.assertEqual(len(task_files), 1)
-        self.assertIn("- **Status:** Proposed", task_files[0].read_text(encoding="utf-8"))
+        task_text = task_files[0].read_text(encoding="utf-8")
+        self.assertIn("- **Status:** Proposed", task_text)
+        self.assertIn("lint-a1b2c3d4e5f6", task_text)
+        self.assertIn("lint-b2c3d4e5f6a7", task_text)
 
     def test_malformed_index_fails_closed_without_changing_ledger(self):
         index = self.root / "reports" / "lint_reports" / "on_changed" / "index.json"
