@@ -24,19 +24,19 @@ Do not create a second template when an owning workflow already defines the requ
 | Document type | Class | Current canonical format | Inventory finding / next action |
 |---|---|---|---|
 | Novel foundation | Template required | `novels/templates/novel-v1.1.md` | Current Version 1.1 template exists. |
-| Novel open-discussion register | Template required | `novels/templates/open-discussion-v1.1.md` | One active register per novel. |
-| Character profile | Template required when created | `novels/templates/character-profile-v1.1.md` | Optional record. Do not create when the novel summary is sufficient. |
-| Development outline | Template required when created | `novels/templates/development-outline-v1.1.md` | Optional focused planning record. |
+| Novel open-discussion register | Template required | `novels/templates/open-discussion-v1.1.md` | One active register per novel. The Novel-02 example uses an approved-decision register and topic-grouped questions; empty proposal, deferred, and resolved sections are conditional. |
+| Character profile | Template required when created | `novels/templates/character-profile-v1.1.md` | Optional record. No current example was found in the inspected Novel-01 or Novel-02 directories. Do not create when the novel summary is sufficient. |
+| Development outline | Template required when created | `novels/templates/development-outline-v1.1.md` | Optional focused planning record. `novels/Novel-02/planning/relationship-progression.md` is a current Version 1.1 example. |
 | Story arc | Template required when created | `novels/templates/arc-v1.1.md` | Current Version 1.1 template exists. |
 | Scene | Template required when created | `novels/templates/scene-v1.1.md` | Current Version 1.1 template exists. Scene prose remains creative content. |
-| Illustration note | Template required | `novels/templates/illustration-note-v1.1.md` | One record per retained or reviewed novel illustration. |
-| Illustration prompt record | Template required before generation | `novels/templates/illustration-prompt-v1.1.md` | Preserve chronological attempts and exact authored prompts. |
+| Illustration note | Template required | `novels/templates/illustration-note-v1.1.md` | One record per retained or reviewed novel illustration. Three Version 1.0 examples exist under Novel-01 Scene-002; preserve them as legacy records. |
+| Illustration prompt record | Template required before generation | `novels/templates/illustration-prompt-v1.1.md` | Preserve chronological attempts and exact authored prompts. No standalone prompt record was found in the inspected Novel-01 Scene-002 illustration folder. Repository handoff is conditional on an accepted output being uploaded. |
 | Non-novel drawing attempt | Template required | `skills/drawing/assets/attempt-template.md` | Template version 1.1. Separates record, generation, and user-decision states. Includes required lineage, criteria, provenance, and per-output evidence. |
-| Drawing pattern entry | Template required | `skills/drawing/references/patterns/PATTERN-TEMPLATES.md` | Template version 1.0. Separate copy-ready formats cover successful and failure patterns, evidence, and confidence rules. |
+| Drawing pattern entry | Template required | `skills/drawing/references/patterns/PATTERN-TEMPLATES.md` | Template version 1.0. Separate copy-ready formats cover successful and failure patterns, evidence, and confidence rules. The current successful and failure indexes use the corresponding structures. |
 | Drawing session brief | Template required | `skills/session-archiving/assets/session-brief-template.md` | Template version 1.0. Status values are Active, Paused, and Closed. New sessions start Active. |
 | Daily drawing index | Template required | `skills/drawing/assets/daily-index-template.md` | Template version 1.1. Defines the exact six-field table for attempt, session, lineage, execution, approval/evidence, and image. |
-| Conversation integrity record | Template required | `skills/session-archiving/assets/conversation-integrity-template.md` | Copy-ready template now exists with gap and editorial-summary fields. |
-| Session summary | Template required | `skills/session-archiving/assets/session-summary-template.md` | Copy-ready handoff template now exists. |
+| Conversation integrity record | Template required | `skills/session-archiving/assets/conversation-integrity-template.md` | Copy-ready template now exists with gap and editorial-summary fields. The 2026-11-12 record under `drawings/history/` predates the template and remains unchanged. |
+| Session summary | Template required | `skills/session-archiving/assets/session-summary-template.md` | Copy-ready handoff template now exists. The 2026-11-12 record under `drawings/history/` predates the template and remains unchanged. |
 | Workspace task record | Template required | `workspace/TASK_TEMPLATE.md` | Template version 1.1. The Worker owns task fields and closeout. The active record remains In Progress / Archived: No until the archive copy passes full read-back. |
 | Task board | Embedded contract | `skills/the-worker/SKILL.md` and `workspace/task_board.md` | One live index. No separate copy template is needed now. |
 | Condensed Mode discussion register | Embedded contract | `skills/conversation-mode/SKILL.md` and `workspace/discussion.md` | Fixed headings, ordering, and entry rules. |
@@ -64,6 +64,16 @@ The novel workspace has Version 1.1 templates for eight document types. It retai
 
 Do not mass-migrate untouched legacy novel records. Use the current template for new records and material revisions.
 
+## Representative records reviewed
+
+| Document type | Representative record or inspected scope | Finding | Handling |
+|---|---|---|---|
+| Novel open-discussion register | `novels/Novel-02/open-discussion.md` | The Version 1.1 register has an approved-decision table, topic-grouped open questions, and a current-status summary. It omits empty proposal, deferred, and resolved sections. | Preserve the active record. The canonical template now states when those sections may be omitted. |
+| Development outline | `novels/Novel-02/planning/relationship-progression.md` | Current Version 1.1 example. It separates the approved broad direction from proposed dramatic beats and open questions. | Keep the record. Use the canonical template for new outlines and material revisions. |
+| Drawing pattern entries | `skills/drawing/references/patterns/successful-patterns.md`; `failure-patterns.md` | Current examples use separate success and failure structures. They distinguish observed results, hypotheses, evidence, confidence, and limitations. | Keep the indexes. Use the matching copy-ready pattern in `PATTERN-TEMPLATES.md`. |
+| Character profile | Inspected `novels/Novel-01/` and `novels/Novel-02/` | No current character-profile record was found. | Keep this type optional. Do not create a profile only to populate the catalog. |
+| Novel illustration prompt record | `novels/Novel-01/Arc-01/Scene-002/illustrations/` | The inspected folder contains three illustration notes and no standalone prompt record. | Use the canonical prompt-record template before future novel illustration generation. |
+
 ## Legacy examples reviewed
 
 The following records predate the current templates. Preserve them as historical records. Do not migrate them only to match a newer template.
@@ -74,6 +84,8 @@ The following records predate the current templates. Preserve them as historical
 | Non-novel drawing attempt | `drawings/2026-11-20/attempt-01.md`, `drawings/2026-11-21/attempt-17.md` | The older notes use earlier field layouts. Attempt 17 combines prompt-archive and generation-pending states in one status value. | Preserve existing notes. Use the Version 1.1 template with separate record, generation, and user-decision states for new records and material revisions. |
 | Daily drawing index | `drawings/2026-11-20/README.md`, `drawings/2026-11-21/README.md` | These indexes predate the Version 1.1 six-field template. | Preserve existing indexes. Use the six-field template for new daily indexes and material revisions. |
 | Drawing session brief | `drawings/2026-11-21/session-01-brief.md` | This brief predates the canonical template and records a closed session. | Preserve it. New briefs use the canonical status values Active, Paused, and Closed. |
+| Novel illustration notes | `novels/Novel-01/Arc-01/Scene-002/illustrations/illustration-01.md`, `illustration-02.md`, and `illustration-03.md` | All three records declare format Version 1.0 and predate the current Version 1.1 template. | Preserve the records. Use Version 1.1 for new notes and material revisions. |
+| Session integrity and summary | `drawings/history/2026-11-12-conversation-integrity.md`; `drawings/history/2026-11-12-summary.md` | These historical records predate the standalone templates and use project-specific chronological and handoff structures. | Preserve them. Use the canonical templates for new records. |
 | Workspace task record | `workspace/tasks/20261122-233900-enforce-template-first-document-standards.md` | This task record declares Template version 1.0. The current task template is Version 1.1. | Preserve the original task metadata. Use Version 1.1 for new task records. |
 | Agent Skill definitions | Existing skill files under `skills/` | Many skills predate the reusable Agent Skill template. | Do not mass-convert existing skills. Use the canonical template for new skills and material rewrites. |
 
@@ -81,10 +93,9 @@ No new session summary or conversation-integrity record was required during this
 
 ## Priority gaps
 
-1. Review the hosted-runner result for the new field-level hand-off tests. Add further cases only when they cover a documented gap.
+1. Obtain separate user approval before integrating the catalog validator and its tests into GitHub Actions; run both checks on a hosted runner after approval.
 2. Review the three master catalogues for shared lightweight structure.
-3. Check remaining project-specific record types against this catalog before declaring inventory complete.
-4. Complete the repository inventory before marking the catalog complete.
+3. Check remaining project-specific record types and complete the repository inventory before marking the catalog complete.
 
 ## Catalog maintenance
 
