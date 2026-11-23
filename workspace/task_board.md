@@ -10,6 +10,7 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
+| 20261123-051200 | Repair lint-report evidence workflow and unify report generation | P1 | In Progress | User | 2026-11-23 | [Task record](tasks/20261123-051200-repair-lint-report-evidence-workflow.md) |
 
 ## In Progress
 
