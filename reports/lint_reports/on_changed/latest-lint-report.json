@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45180357336",
-  "run_number": 540,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45180357336",
+  "run_id": "45180769634",
+  "run_number": 541,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45180769634",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "948f21c514687504f8ba69866bd8a14d111fd711",
+  "commit_sha": "d440b0c4cac714e63d2ddf0d52fcb2d2e159ab76",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T13:05:25.878857+00:00",
+  "generated_at_utc": "2026-11-23T13:08:00.568920+00:00",
   "status": "Failed",
-  "linter_source_sha": "948f21c514687504f8ba69866bd8a14d111fd711",
+  "linter_source_sha": "d440b0c4cac714e63d2ddf0d52fcb2d2e159ab76",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -81,18 +81,18 @@
     "skills/SESSION_START.md"
   ],
   "files_with_findings": 38,
-  "total_findings": 393,
-  "hard_findings": 65,
-  "advisory_findings": 328,
+  "total_findings": 371,
+  "hard_findings": 63,
+  "advisory_findings": 308,
   "findings_by_rule": {
-    "passive-voice": 286,
-    "present-perfect": 42,
-    "synonym-rotation": 11,
+    "passive-voice": 264,
+    "present-perfect": 44,
+    "synonym-rotation": 13,
     "phrasal-verb": 5,
     "nominalization": 2,
     "marketing-adjective": 5,
-    "semicolon": 34,
-    "long-sentence": 8
+    "semicolon": 31,
+    "long-sentence": 7
   },
   "records": [
     {
@@ -1058,25 +1058,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 255,
-          "col": 28,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "was attached",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 267,
-          "col": 33,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "was supplied",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 282,
+          "line": 264,
           "col": 44,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1085,7 +1067,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 292,
+          "line": 274,
           "col": 68,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1094,7 +1076,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 293,
+          "line": 275,
           "col": 36,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1103,7 +1085,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 293,
+          "line": 275,
           "col": 58,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1112,7 +1094,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 296,
+          "line": 278,
           "col": 4,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1121,7 +1103,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 297,
+          "line": 279,
           "col": 78,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1130,7 +1112,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 298,
+          "line": 280,
           "col": 48,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1139,7 +1121,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 299,
+          "line": 281,
           "col": 75,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1148,7 +1130,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 300,
+          "line": 282,
           "col": 68,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1157,7 +1139,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 310,
+          "line": 292,
           "col": 20,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1166,7 +1148,7 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 314,
+          "line": 296,
           "col": 53,
           "rule": "passive-voice",
           "level": "advisory",
@@ -1175,37 +1157,28 @@
         },
         {
           "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 336,
-          "col": 242,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is verified",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 338,
-          "col": 35,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is stored",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-          "line": 385,
+          "line": 320,
           "col": 69,
           "rule": "passive-voice",
           "level": "advisory",
           "match": "is based",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
+          "line": 324,
+          "col": 84,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is authorized",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 27,
+      "count": 24,
       "hard_count": 0,
       "baseline": 0,
-      "words": 4529,
-      "per_100_words": 0.6,
+      "words": 3543,
+      "per_100_words": 0.7,
       "path": "skills/the-worker/references/archive-records-and-image-prompts.md",
       "exit_code": 0
     },
@@ -1463,190 +1436,37 @@
       "violations": [
         {
           "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 20,
-          "col": 59,
-          "rule": "passive-voice",
+          "line": 11,
+          "col": 167,
+          "rule": "present-perfect",
           "level": "advisory",
-          "match": "are copied",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+          "match": "have been verified",
+          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
         },
         {
           "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 22,
-          "col": 23,
+          "line": 11,
+          "col": 172,
           "rule": "passive-voice",
           "level": "advisory",
-          "match": "is moved",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 33,
-          "col": 3,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are grouped",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 34,
-          "col": 36,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are processed",
+          "match": "been verified",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         },
         {
           "file": "skills/drawing/references/archive-and-delivery.md",
           "line": 45,
-          "col": 16,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are paired",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 46,
-          "col": 35,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is recorded",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 47,
-          "col": 52,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are verified",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 53,
-          "col": 17,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is archived",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 57,
-          "col": 59,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are excluded",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 59,
-          "col": 23,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is cleared",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 59,
-          "col": 57,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is converted",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 60,
-          "col": 51,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are written",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 93,
-          "col": 17,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are allowed",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 94,
-          "col": 72,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is unresolved",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 98,
-          "col": 39,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "been uploaded",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 177,
-          "col": 400,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "were expected",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 196,
-          "col": 37,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is paired",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 197,
-          "col": 76,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is verified",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 208,
-          "col": 26,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is retained",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/drawing/references/archive-and-delivery.md",
-          "line": 212,
-          "col": 1,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is described",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+          "col": 13,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "verify",
+          "message": "'verify' and 'check' name the same action. Pick one and use it every time."
         }
       ],
-      "count": 20,
-      "hard_count": 0,
+      "count": 3,
+      "hard_count": 1,
       "baseline": 7,
-      "words": 2370,
-      "per_100_words": 0.8,
+      "words": 460,
+      "per_100_words": 0.7,
       "path": "skills/drawing/references/archive-and-delivery.md",
       "exit_code": 0
     },
@@ -1960,7 +1780,7 @@
       "count": 19,
       "hard_count": 0,
       "baseline": 17,
-      "words": 2757,
+      "words": 2756,
       "per_100_words": 0.7,
       "path": "skills/drawing/references/generation-recovery-and-provenance.md",
       "exit_code": 0
@@ -2416,7 +2236,7 @@
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
           "line": 51,
-          "col": 300,
+          "col": 336,
           "rule": "passive-voice",
           "level": "advisory",
           "match": "is needed",
@@ -2813,7 +2633,7 @@
       "count": 57,
       "hard_count": 28,
       "baseline": 0,
-      "words": 4007,
+      "words": 4012,
       "per_100_words": 1.4,
       "path": "skills/document-standards/references/document-type-catalog.md",
       "exit_code": 1
@@ -3438,7 +3258,25 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 340,
+          "line": 261,
+          "col": 245,
+          "rule": "present-perfect",
+          "level": "advisory",
+          "match": "have been committed",
+          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
+        },
+        {
+          "file": "skills/the-worker/SKILL.md",
+          "line": 261,
+          "col": 250,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "been committed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/the-worker/SKILL.md",
+          "line": 324,
           "col": 95,
           "rule": "synonym-rotation",
           "level": "advisory-free",
@@ -3447,7 +3285,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 347,
+          "line": 331,
           "col": 98,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3456,7 +3294,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 349,
+          "line": 333,
           "col": 207,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3465,7 +3303,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 361,
+          "line": 345,
           "col": 168,
           "rule": "present-perfect",
           "level": "advisory",
@@ -3474,7 +3312,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 361,
+          "line": 345,
           "col": 172,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3482,10 +3320,10 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 12,
+      "count": 14,
       "hard_count": 6,
       "baseline": 0,
-      "words": 4489,
+      "words": 4288,
       "per_100_words": 0.3,
       "path": "skills/the-worker/SKILL.md",
       "exit_code": 1
@@ -3919,64 +3757,28 @@
       "violations": [
         {
           "file": "skills/document-standards/SKILL.md",
-          "line": 31,
-          "col": 246,
-          "rule": "long-sentence",
+          "line": 22,
+          "col": 21,
+          "rule": "synonym-rotation",
           "level": "advisory-free",
-          "match": "27 words",
-          "message": "Sentence has 27 words (cap 25). Split it."
+          "match": "Validate",
+          "message": "'validate' and 'check' name the same action. Pick one and use it every time."
         },
         {
           "file": "skills/document-standards/SKILL.md",
-          "line": 31,
-          "col": 373,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "skills/document-standards/SKILL.md",
-          "line": 35,
-          "col": 88,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "skills/document-standards/SKILL.md",
-          "line": 41,
-          "col": 191,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "skills/document-standards/SKILL.md",
-          "line": 90,
-          "col": 47,
+          "line": 99,
+          "col": 229,
           "rule": "passive-voice",
           "level": "advisory",
-          "match": "is created",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "skills/document-standards/SKILL.md",
-          "line": 212,
-          "col": 37,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is defined",
+          "match": "is observed",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 6,
-      "hard_count": 4,
+      "count": 2,
+      "hard_count": 1,
       "baseline": 0,
-      "words": 1864,
-      "per_100_words": 0.3,
+      "words": 886,
+      "per_100_words": 0.2,
       "path": "skills/document-standards/SKILL.md",
       "exit_code": 1
     },
@@ -5155,29 +4957,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 255,
-      "col": 28,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was attached",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "1160a20020ef77453c685379",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 267,
-      "col": 33,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was supplied",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "7004493f0380541a3c7f3930",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 282,
+      "line": 264,
       "col": 44,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5188,7 +4968,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 292,
+      "line": 274,
       "col": 68,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5199,7 +4979,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 293,
+      "line": 275,
       "col": 36,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5210,7 +4990,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 293,
+      "line": 275,
       "col": 58,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5221,7 +5001,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 296,
+      "line": 278,
       "col": 4,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5232,7 +5012,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 297,
+      "line": 279,
       "col": 78,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5243,7 +5023,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 298,
+      "line": 280,
       "col": 48,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5254,7 +5034,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 299,
+      "line": 281,
       "col": 75,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5265,7 +5045,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 300,
+      "line": 282,
       "col": 68,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5276,7 +5056,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 310,
+      "line": 292,
       "col": 20,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5287,7 +5067,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 314,
+      "line": 296,
       "col": 53,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5298,29 +5078,7 @@
     },
     {
       "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 336,
-      "col": 242,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is verified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "e3bd8d6c5eb7b0bb07e9d5e0",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 338,
-      "col": 35,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is stored",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "32104eec0d1d8a94abbddf83",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
-      "line": 385,
+      "line": 320,
       "col": 69,
       "rule": "passive-voice",
       "level": "advisory",
@@ -5328,6 +5086,17 @@
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "c791b4a9936caab1939af327",
       "comparison": "recurring"
+    },
+    {
+      "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
+      "line": 324,
+      "col": 84,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is authorized",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "1c8f9ddb3e42b7986914faf3",
+      "comparison": "new"
     },
     {
       "file": "images/README.md",
@@ -5584,223 +5353,36 @@
     },
     {
       "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 20,
-      "col": 59,
-      "rule": "passive-voice",
+      "line": 11,
+      "col": 167,
+      "rule": "present-perfect",
       "level": "advisory",
-      "match": "are copied",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "7da75daf64549a13157f1e48",
-      "comparison": "recurring"
+      "match": "have been verified",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "964cabe631fed5dc94a42014",
+      "comparison": "new"
     },
     {
       "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 22,
-      "col": 23,
+      "line": 11,
+      "col": 172,
       "rule": "passive-voice",
       "level": "advisory",
-      "match": "is moved",
+      "match": "been verified",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "e6d836749364fb952eddfc7c",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 33,
-      "col": 3,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are grouped",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "1ca6476f6144a140274847f2",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 34,
-      "col": 36,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are processed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "6bdb7fc4f6e61f46efdcc945",
-      "comparison": "recurring"
+      "fingerprint": "9b691551f730fb0278640420",
+      "comparison": "new"
     },
     {
       "file": "skills/drawing/references/archive-and-delivery.md",
       "line": 45,
-      "col": 16,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are paired",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "7bb3ef8e29cc2d62ee65f3a9",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 46,
-      "col": 35,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is recorded",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "d15ccec8d9ae7c220e7297be",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 47,
-      "col": 52,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are verified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "5fd7aabe55ed535b8e321fa7",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 53,
-      "col": 17,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is archived",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "3f8fc33d65f0a6d46cb838c6",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 57,
-      "col": 59,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are excluded",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "07f09cee503710d3a9b04228",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 59,
-      "col": 23,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is cleared",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "af22c155e8e4b4f9c84b3f86",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 59,
-      "col": 57,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is converted",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "67f2ed0983a75668f4ce3020",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 60,
-      "col": 51,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are written",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "0d3df0958eac71ea42f42c9c",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 93,
-      "col": 17,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are allowed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "fafc7dc70cfb6b41e2ceac4c",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 94,
-      "col": 72,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is unresolved",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "c93d49b6dfa2883ae7732733",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 98,
-      "col": 39,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "been uploaded",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "9e3799d7fdb927485334ac92",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 177,
-      "col": 400,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "were expected",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "20086aa45dcb5efbabf52350",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 196,
-      "col": 37,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is paired",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "b6e92fd2ee8e3800eabf5dcd",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 197,
-      "col": 76,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is verified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "a753d9aa8cfa9ae159dfcd57",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 208,
-      "col": 26,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is retained",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "c6565434b3298d6e8f59aec5",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/references/archive-and-delivery.md",
-      "line": 212,
-      "col": 1,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is described",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "4c20f74831abf9722cfbae81",
-      "comparison": "recurring"
+      "col": 13,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "verify",
+      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "9f0ae35295d64485e1c937b0",
+      "comparison": "new"
     },
     {
       "file": "skills/github-actions/SKILL.md",
@@ -6350,7 +5932,7 @@
       "match": "was included",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "f718531ecab4f80464bcfc7a",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/drawing/SKILL.md",
@@ -6438,7 +6020,7 @@
       "match": "modify",
       "message": "'modify' and 'change' name the same action. Pick one and use it every time.",
       "fingerprint": "c41dfa89d8e1360fd85eac2a",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/drawing/SKILL.md",
@@ -6449,7 +6031,7 @@
       "match": "has specified",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "1fde6e149badf6f261b22219",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/drawing/SKILL.md",
@@ -6460,7 +6042,7 @@
       "match": "confirmed",
       "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
       "fingerprint": "e9ab9c52b006f1c31b593715",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/drawing/SKILL.md",
@@ -6630,7 +6212,7 @@
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
       "line": 51,
-      "col": 300,
+      "col": 336,
       "rule": "passive-voice",
       "level": "advisory",
       "match": "is needed",
@@ -7707,7 +7289,29 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 340,
+      "line": 261,
+      "col": 245,
+      "rule": "present-perfect",
+      "level": "advisory",
+      "match": "have been committed",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "0c3a2299d0e3b98f348e01e7",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 261,
+      "col": 250,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "been committed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "92c7a67097ac79d7fc531201",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 324,
       "col": 95,
       "rule": "synonym-rotation",
       "level": "advisory-free",
@@ -7718,7 +7322,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 347,
+      "line": 331,
       "col": 98,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7729,7 +7333,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 349,
+      "line": 333,
       "col": 207,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -7740,7 +7344,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 361,
+      "line": 345,
       "col": 168,
       "rule": "present-perfect",
       "level": "advisory",
@@ -7751,7 +7355,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 361,
+      "line": 345,
       "col": 172,
       "rule": "passive-voice",
       "level": "advisory",
@@ -8268,69 +7872,25 @@
     },
     {
       "file": "skills/document-standards/SKILL.md",
-      "line": 31,
-      "col": 246,
-      "rule": "long-sentence",
+      "line": 22,
+      "col": 21,
+      "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "84a89f71f6e955e8933248e9",
-      "comparison": "recurring"
+      "match": "Validate",
+      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "b1e46093b290a3c3f0ad7363",
+      "comparison": "new"
     },
     {
       "file": "skills/document-standards/SKILL.md",
-      "line": 31,
-      "col": 373,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "0a9f2f8f059737eb01876e1d",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/document-standards/SKILL.md",
-      "line": 35,
-      "col": 88,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "0a9f2f8f059737eb01876e1d",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/document-standards/SKILL.md",
-      "line": 41,
-      "col": 191,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "0a9f2f8f059737eb01876e1d",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/document-standards/SKILL.md",
-      "line": 90,
-      "col": 47,
+      "line": 99,
+      "col": 229,
       "rule": "passive-voice",
       "level": "advisory",
-      "match": "is created",
+      "match": "is observed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "f02e1c27fdc79f6921bf2e16",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/document-standards/SKILL.md",
-      "line": 212,
-      "col": 37,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is defined",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "da830431b494f6dd663885a4",
-      "comparison": "recurring"
+      "fingerprint": "988e824c418cdeb39523dd3c",
+      "comparison": "new"
     },
     {
       "file": "skills/drawing/references/image-editing-protocol.md",
@@ -8341,7 +7901,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "d22425f617c43f7ddbcea655",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/drawing/references/image-editing-protocol.md",
@@ -8352,7 +7912,7 @@
       "match": "is confirmed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "3e67ae90c3ab8a6c71da58c3",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/SESSION_START.md",
@@ -8476,51 +8036,326 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 6,
-  "recurring_findings": 387,
+  "new_findings": 8,
+  "recurring_findings": 363,
   "resolved_findings": [
     {
-      "file": "skills/drawing/SKILL.md",
-      "line": 261,
-      "col": 4,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "d81568a6e2238902ee0c2105",
+      "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
+      "line": 255,
+      "col": 28,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was attached",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "1160a20020ef77453c685379",
       "comparison": "resolved"
     },
     {
-      "file": "skills/drawing/SKILL.md",
-      "line": 276,
-      "col": 5,
+      "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
+      "line": 336,
+      "col": 242,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is verified",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "e3bd8d6c5eb7b0bb07e9d5e0",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/the-worker/references/archive-records-and-image-prompts.md",
+      "line": 338,
+      "col": 35,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is stored",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "32104eec0d1d8a94abbddf83",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 20,
+      "col": 59,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are copied",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "7da75daf64549a13157f1e48",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 22,
+      "col": 23,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is moved",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "e6d836749364fb952eddfc7c",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 33,
+      "col": 3,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are grouped",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "1ca6476f6144a140274847f2",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 34,
+      "col": 36,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are processed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "6bdb7fc4f6e61f46efdcc945",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 45,
+      "col": 16,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are paired",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "7bb3ef8e29cc2d62ee65f3a9",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 46,
+      "col": 35,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is recorded",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "d15ccec8d9ae7c220e7297be",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 47,
+      "col": 52,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are verified",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "5fd7aabe55ed535b8e321fa7",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 53,
+      "col": 17,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is archived",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "3f8fc33d65f0a6d46cb838c6",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 57,
+      "col": 59,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are excluded",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "07f09cee503710d3a9b04228",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 59,
+      "col": 23,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is cleared",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "af22c155e8e4b4f9c84b3f86",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 59,
+      "col": 57,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is converted",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "67f2ed0983a75668f4ce3020",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 60,
+      "col": 51,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are written",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "0d3df0958eac71ea42f42c9c",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 93,
+      "col": 17,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are allowed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "fafc7dc70cfb6b41e2ceac4c",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 94,
+      "col": 72,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is unresolved",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "c93d49b6dfa2883ae7732733",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 98,
+      "col": 39,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "been uploaded",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "9e3799d7fdb927485334ac92",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 177,
+      "col": 400,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "were expected",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "20086aa45dcb5efbabf52350",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 196,
+      "col": 37,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is paired",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "b6e92fd2ee8e3800eabf5dcd",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 197,
+      "col": 76,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is verified",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "a753d9aa8cfa9ae159dfcd57",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 208,
+      "col": 26,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is retained",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "c6565434b3298d6e8f59aec5",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/references/archive-and-delivery.md",
+      "line": 212,
+      "col": 1,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is described",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "4c20f74831abf9722cfbae81",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/SKILL.md",
+      "line": 31,
+      "col": 246,
       "rule": "long-sentence",
       "level": "advisory-free",
       "match": "27 words",
       "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "1da08cc0bf141330524bda57",
+      "fingerprint": "84a89f71f6e955e8933248e9",
       "comparison": "resolved"
     },
     {
-      "file": "skills/drawing/SKILL.md",
-      "line": 394,
-      "col": 23,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are governed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "c13b1ec0df584f1d71453752",
+      "file": "skills/document-standards/SKILL.md",
+      "line": 31,
+      "col": 373,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0a9f2f8f059737eb01876e1d",
       "comparison": "resolved"
     },
     {
-      "file": "skills/drawing/SKILL.md",
-      "line": 400,
-      "col": 60,
+      "file": "skills/document-standards/SKILL.md",
+      "line": 35,
+      "col": 88,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0a9f2f8f059737eb01876e1d",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/SKILL.md",
+      "line": 41,
+      "col": 191,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0a9f2f8f059737eb01876e1d",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/SKILL.md",
+      "line": 90,
+      "col": 47,
       "rule": "passive-voice",
       "level": "advisory",
-      "match": "was used",
+      "match": "is created",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "828f9104eb1934f156af2c49",
+      "fingerprint": "f02e1c27fdc79f6921bf2e16",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/document-standards/SKILL.md",
+      "line": 212,
+      "col": 37,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is defined",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "da830431b494f6dd663885a4",
       "comparison": "resolved"
     }
   ],
@@ -8541,7 +8376,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.299s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.539s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -8559,7 +8394,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 1019 active Markdown files (1089 available as link targets) and 329 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 1023 active Markdown files (1093 available as link targets) and 328 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
