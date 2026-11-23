@@ -238,7 +238,7 @@ Entering a higher tier does not restart lower tiers. For example, if you loaded 
 
 `skills/the-worker/SKILL.md` is a required foundational skill. Load it during foundational initialization.
 
-The Worker manages project tasks across conversations and conversation modes. It owns task capture, prioritization, progress records, handoffs, recovery, and task archival. Conversation Mode controls only communication style.
+The Worker manages project tasks across conversations and conversation modes. It owns task capture, prioritization, progress records, handoffs, recovery, and task archival. Conversation Mode controls chat verbosity and the discussion-register format and maintenance in every mode.
 
 ### Agent Skills format
 
