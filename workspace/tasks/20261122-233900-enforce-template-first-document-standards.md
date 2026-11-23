@@ -5,7 +5,7 @@
 - **ID:** 20261122-233900
 - **Template version:** 1.0
 - **Created:** 2026-11-22 23:39 UTC
-- **Updated:** 2026-11-22 23:49 UTC
+- **Updated:** 2026-11-23 23:49 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -124,6 +124,27 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** `skills/document-standards/references/document-type-catalog.md`, `skills/session-archiving/scripts/test_process_takeout_unittest.py`.
 - **Next:** Finish the catalog link audit and obtain any required workflow authorization.
 
+### 2026-11-23 00:16 UTC
+
+- **Action:** Investigated the repeated changed-document lint failures and corrected the GitHub CLI repository-resolution defect.
+- **Result:** The pre-checkout guard and baseline queries called `gh run list` without `--repo`. GitHub Actions logs showed repository discovery failing because no checkout existed in the preflight job. Added `--repo "$GITHUB_REPOSITORY"` to both queries in `.github/workflows/ste-lint-changed.yml`. Read-back confirmed both flags. The workflow has not yet produced a post-fix result.
+- **References:** `.github/workflows/ste-lint-changed.yml`; fix commit `b96f4020e73f05bafbf0203bf2a6496b9181525f`; failed run [45085429491](https://github.com/dungnv2602/chatgpt/actions/runs/45085429491).
+- **Next:** Review the next naturally triggered GitHub Actions result during a bounded preflight. Do not wait or poll.
+
+### 2026-11-23 00:16 UTC
+
+- **Action:** Added the remote-only repository execution rule to the Worker, GitHub Actions, and Session Archiving skills.
+- **Result:** The instructions now prohibit local shell, Git, Python, container, filesystem, script, and test execution for repository work. They direct all reads and writes through GitHub APIs and allow script/test execution only on GitHub-hosted Actions runners. Each changed file was fetched again and matched the submitted content.
+- **References:** `skills/the-worker/SKILL.md` commit `722fda710b2996824e93fd2b454feb433bb2d6b8`; `skills/github-actions/SKILL.md` commit `0c73c223555369bf2515e8d4efcc61f6ada41dcc`; `skills/session-archiving/SKILL.md` commit `d46582f11695c046e6e19c327aa3a419e8b8e766`.
+- **Next:** Apply this remote-only rule to all future repository work.
+
+### 2026-11-23 00:16 UTC
+
+- **Action:** Investigated and repaired the Samantha task's incomplete archival closeout.
+- **Result:** Commit `1860fbee285126f97e45087a32426e4b47eda3db` changed only the active task record to Done and Archived: Yes. Commit `f3a76f5f791ac331bd9223dddc64e2879d57657a` moved its board row to Historical but left the link pointing to the active task path. No archive copy or archival-commit link existed. Created the archive record in commit `84addce78431c319c00c505b9999d1fec595c1a9`, deleted the active record in commit `38ec9603f1cc0c9d115a8f5e642db47dab32b216`, and reconciled the board in commit `9f397519f37bac93dc82b17e84aca6ef5a59e954`. The board read-back passed, the active path returned 404, and archive commit metadata confirms the archive path was added. Archived contents were not read.
+- **References:** `workspace/task_board.md`; archived task path `archive/tasks/20261120-183600-continue-samantha-drawing-session.md`; Worker task-closeout procedure in `skills/the-worker/SKILL.md`.
+- **Next:** Continue the template-first catalog and validation work.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
@@ -140,24 +161,23 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - The processor test suite covers important intake and publication paths. It does not establish exhaustive field-by-field validation coverage.
 - The three master catalogues contain heterogeneous prompt, pose, and image-reference material. They are classified as lightweight collections, not uniform record types.
 - The catalog covers the main recurring document types identified across `images/`, `master/`, `novels/`, `drawings/`, `skills/`, and `workspace/`. Full file-by-file reconciliation remains incomplete.
-- The latest CI failure was repaired. The post-repair CI result has not been checked.
+- The changed-document lint preflight repository-resolution defect has been fixed on `gpt`. No post-fix Actions result has been checked.
 
 ## 8. Remaining Work
 
 - Finish the type-level catalog review and verify all canonical template links.
 - Compare representative current records with their canonical templates. Record justified legacy exceptions without rewriting historical content.
 - Review whether the processor test suite needs additional field-level validation cases.
-- Design a reliable structural document check that can run against the catalog and templates.
-- Obtain fresh authorization before changing GitHub workflow files to integrate the structural check.
-- Read back and verify all changed paths and record the final result.
+- Design a reliable structural document check that uses the catalog and existing generator-owned schemas without duplicating them.
+- Review the next naturally triggered GitHub Actions result during the next bounded preflight; do not wait or poll.
 
 ## 9. Next Actions
 
-1. Verify every catalog row points to the authoritative template, schema, embedded contract, or generator.
-2. Review representative examples for each recurring template type and record any legacy format exceptions.
+1. Verify every catalog row points to its authoritative template, schema, embedded contract, or generator.
+2. Review representative examples for each recurring template type and record justified legacy exceptions.
 3. Decide whether hand-off and manifest validation need additional field-level regression tests.
 4. Define and assess a structural document validator that uses the catalog without duplicating processor schemas.
-5. Ask for fresh authorization before editing workflow files for CI integration.
+5. Review the post-fix Actions result when it is available during the next bounded preflight.
 
 ## 10. References
 
@@ -182,15 +202,20 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 
 ## 11. Verification
 
-- **Check:** User approval and scope.
-- **Method:** Current conversation.
-- **Result:** Approved. The implementation scope covers recurring repository document types and their templates or schemas.
-- **Limitations:** No repository-wide inventory or automated validation has been completed.
+- **Check:** Remote-only repository execution policy.
+- **Method:** Read back the Worker, GitHub Actions, and Session Archiving skills after their updates.
+- **Result:** All three files contain the remote-only rule and explain why local execution is not valid for this repository.
+- **Limitations:** This policy is procedural. Future compliance must be maintained by using GitHub APIs and Actions only.
 
-- **Check:** CI preflight repair.
-- **Method:** Retrieved the newest applicable run, inspected its job log, updated the exact affected file, and fetched it again.
-- **Result:** The two reported Worker skill findings were corrected and the file read-back matched the update.
-- **Limitations:** A new CI result has not been checked.
+- **Check:** Changed-document lint workflow repository resolution.
+- **Method:** Read back `.github/workflows/ste-lint-changed.yml`.
+- **Result:** Both `gh run list` calls include the explicit `--repo "$GITHUB_REPOSITORY"` argument.
+- **Limitations:** A post-fix Actions result has not yet been inspected.
+
+- **Check:** Samantha task archive closeout.
+- **Method:** Read the task board, verify the active task path is absent, and inspect the archival commit's changed-path metadata without reading archived contents.
+- **Result:** The archive commit added the archive path; the active path is absent; the task board links the archived record and archival commit exactly once.
+- **Limitations:** Archived file contents were not read, in accordance with the archive boundary.
 
 ## 12. Handoff Instructions
 
