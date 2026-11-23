@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 12:56 UTC — Standardize Agent Skill template checks:** Replace both `Verify` checklist labels with `Check` to match the completion-checks heading and owner skill. Preserve all template sections and placeholders.
+- **2026-11-23 13:00 UTC — Begin initialization policy review:** Review the single hard finding in `skills/INITIALIZATION_POLICY.md` against `skills/SESSION_START.md` and the existing activation contract. Preserve the user's explicit initialization cue.
 
 ## Open Discussions
 
