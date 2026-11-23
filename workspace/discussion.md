@@ -1,6 +1,6 @@
 ## Current Step
 
-Review the naturally triggered hosted Document Standards validation result when available; do not poll or dispatch workflows.
+Unify the Drawing generation/edit decision and remove stale Session Archiving references; then consolidate authoring rules and update affected READMEs.
 
 ## Open Discussions
 
