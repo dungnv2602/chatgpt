@@ -1,4 +1,4 @@
-# Validate Document Standards — run 45170118738
+# Validate Document Standards — run 45170376944
 
 ## Run identity
 
@@ -6,46 +6,44 @@
 | --- | --- |
 | Workflow | Validate Document Standards |
 | Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45170118738 / 1 |
-| Run number | 90 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45170118738 |
+| Run / attempt | 45170376944 / 1 |
+| Run number | 93 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45170376944 |
 | Branch | gpt |
-| Commit | edd0afb1d64ccd3b6aec198cc33e9f90670caf07 |
+| Commit | 14b1d5c9831389539a0d1426de762ba53d4123a1 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T11:59:42Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | cancelled |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T12:01:09Z |
+| Created (UTC) | 2026-11-23T12:01:19Z |
+| Status at capture | completed |
+| Observed conclusion | cancelled |
+| Projected conclusion | Not calculated |
+| Reporter job | Not captured |
+| Capture stage | post_run |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-23T12:03:31Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
+| State | cancelled |
 | Primary category | None |
-| Jobs | 1 |
-| Steps | 1 |
+| Jobs | 0 |
+| Steps | 0 |
 | Issues | 0 |
-| Annotations | 2 |
+| Annotations | 0 |
 | Artifacts | 0 |
-| Capture errors | 1 |
+| Capture errors | 0 |
 
 ## Failure classification
 
-No failure category identified. The parent run is still in progress. The projected conclusion is provisional.
+No failure category identified.
 
 The run conclusion records the workflow outcome. A cancelled run remains in history. Cancellation alone does not create an actionable issue. The generator also excludes known downstream status-propagation steps after cancellation.
 
 ## Jobs and steps
 
-| Job ID | Job | Status | Conclusion | Steps | Log |
-| --- | --- | --- | --- | --- | --- |
-| 137677184109 | validate-document-standards | completed | cancelled | 1 | logs/job-137677184109.log |
+No records were captured.
 
 ## Actionable step outcomes
 
@@ -53,10 +51,7 @@ No records were captured.
 
 ## Check annotations
 
-| Job | Level | Path | Line | Title | Message |
-| --- | --- | --- | --- | --- | --- |
-| 137677184109 | failure | .github | 1 |  | Canceling since a higher priority waiting request for document-standards-refs/heads/gpt exists |
-| 137677184109 | failure | .github | 31 |  | The operation was canceled. |
+No records were captured.
 
 ## Artifacts
 
@@ -64,17 +59,11 @@ No records were captured.
 
 ## Captured job logs
 
-| Job | Name | File | Bytes | Truncated | Markers |
-| --- | --- | --- | --- | --- | --- |
-| 137677184109 | validate-document-standards | logs/job-137677184109.log | 82 | False |  |
+No records were captured.
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | run 45170118738 is still in progress; logs will be available when it is complete  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 

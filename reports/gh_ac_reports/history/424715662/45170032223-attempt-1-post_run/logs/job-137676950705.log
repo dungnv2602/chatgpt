@@ -1,0 +1,32 @@
+Lint changed Markdown files and publish detailed evidence	Set up job	﻿2026-11-23T11:59:19.2545359Z Current runner version: '2.338.2'
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2574460Z ##[group]Runner Image Provisioner
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2575484Z Hosted Compute Agent
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2576557Z Version: 20261111.635
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2577326Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2578280Z Build Date: 2026-11-11T01:49:01Z
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2579159Z Worker ID: {dd5ba4b3-095f-4ff3-898a-8a40d6c62742}
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2580073Z Region: eastus2
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2580846Z Cloud: Azure
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2581536Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2583642Z ##[group]Operating System
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2584540Z Ubuntu
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2585216Z 26.04.1
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2586209Z LTS
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2586866Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2587524Z ##[group]Runner Image
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2588357Z Image: ubuntu-26.04
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2589092Z Version: 20261116.202.1
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2590516Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2592734Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2594091Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2595580Z ##[group]GITHUB_TOKEN Permissions
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2598145Z Contents: write
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2598863Z Metadata: read
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2599642Z ##[endgroup]
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2601870Z Secret source: Actions
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2603092Z Cache mode: write
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.2604270Z Prepare workflow directory
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.3330180Z Prepare all required actions
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.3447070Z Getting action download info
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.5218586Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Lint changed Markdown files and publish detailed evidence	Set up job	2026-11-23T11:59:19.5950225Z ##[error]The operation was canceled.

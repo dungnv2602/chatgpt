@@ -1,0 +1,31 @@
+validate-document-standards	Set up job	﻿2026-11-23T11:59:46.5635300Z Current runner version: '2.338.2'
+validate-document-standards	Set up job	2026-11-23T11:59:46.5675318Z ##[group]Runner Image Provisioner
+validate-document-standards	Set up job	2026-11-23T11:59:46.5676174Z Hosted Compute Agent
+validate-document-standards	Set up job	2026-11-23T11:59:46.5676988Z Version: 20261111.635
+validate-document-standards	Set up job	2026-11-23T11:59:46.5677597Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+validate-document-standards	Set up job	2026-11-23T11:59:46.5678266Z Build Date: 2026-11-11T01:49:01Z
+validate-document-standards	Set up job	2026-11-23T11:59:46.5678944Z Worker ID: {0cf4b57b-dade-4123-97d4-1a772e937384}
+validate-document-standards	Set up job	2026-11-23T11:59:46.5679678Z Region: centralus
+validate-document-standards	Set up job	2026-11-23T11:59:46.5680239Z Cloud: Azure
+validate-document-standards	Set up job	2026-11-23T11:59:46.5680749Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-23T11:59:46.5682652Z ##[group]Operating System
+validate-document-standards	Set up job	2026-11-23T11:59:46.5683392Z Ubuntu
+validate-document-standards	Set up job	2026-11-23T11:59:46.5683864Z 26.04.1
+validate-document-standards	Set up job	2026-11-23T11:59:46.5684316Z LTS
+validate-document-standards	Set up job	2026-11-23T11:59:46.5684861Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-23T11:59:46.5685366Z ##[group]Runner Image
+validate-document-standards	Set up job	2026-11-23T11:59:46.5685969Z Image: ubuntu-26.04
+validate-document-standards	Set up job	2026-11-23T11:59:46.5686578Z Version: 20261116.202.1
+validate-document-standards	Set up job	2026-11-23T11:59:46.5687563Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+validate-document-standards	Set up job	2026-11-23T11:59:46.5689370Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+validate-document-standards	Set up job	2026-11-23T11:59:46.5690410Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-23T11:59:46.5691416Z ##[group]GITHUB_TOKEN Permissions
+validate-document-standards	Set up job	2026-11-23T11:59:46.5693987Z Contents: read
+validate-document-standards	Set up job	2026-11-23T11:59:46.5694526Z Metadata: read
+validate-document-standards	Set up job	2026-11-23T11:59:46.5695468Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-23T11:59:46.5697629Z Secret source: Actions
+validate-document-standards	Set up job	2026-11-23T11:59:46.5698584Z Cache mode: write
+validate-document-standards	Set up job	2026-11-23T11:59:46.5699235Z Prepare workflow directory
+validate-document-standards	Set up job	2026-11-23T11:59:46.6096253Z Prepare all required actions
+validate-document-standards	Set up job	2026-11-23T11:59:46.6144789Z Getting action download info
+validate-document-standards	Set up job	2026-11-23T11:59:46.8531299Z ##[error]The operation was canceled.
