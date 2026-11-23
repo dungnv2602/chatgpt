@@ -11,30 +11,30 @@
     "event": "push",
     "branch": "gpt",
     "head_sha": "910b0e7c689080739675bba0b4cbf5ff4efffc16",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "cancelled",
     "created_at": "2026-11-23T10:51:59Z",
     "run_started_at": "2026-11-23T10:51:59Z",
-    "updated_at": "2026-11-23T10:52:34Z",
+    "updated_at": "2026-11-23T10:52:53Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "Standardize series source confirmation terminology"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-23T10:52:49Z",
-    "completeness": "Incomplete",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T10:54:27Z",
+    "completeness": "Complete",
     "reporter_job": {
       "id": "137642676154",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "cancelled",
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
     "primary_category": null,
     "categories": [],
     "issues": []
@@ -86,11 +86,11 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 12711,
         "path": "logs/job-137642486222.log",
-        "error": "run 45159953710 is still in progress; logs will be available when it is complete\n",
+        "error": null,
         "marker_lines": []
       }
     },
@@ -212,12 +212,15 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 21535,
         "path": "logs/job-137642585953.log",
-        "error": "run 45159953710 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "Lint changed Markdown files and publish detailed evidence\tCheck out current commit\t2026-11-23T10:52:20.0794833Z ##[error]The operation was canceled.",
+          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-23T10:52:20.1129489Z ^[[36;1m  echo \"::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md.\"^[[0m"
+        ]
       }
     }
   ],
@@ -281,17 +284,6 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [
-    {
-      "source": "job_log",
-      "job_id": "137642486222",
-      "message": "run 45159953710 is still in progress; logs will be available when it is complete\n"
-    },
-    {
-      "source": "job_log",
-      "job_id": "137642585953",
-      "message": "run 45159953710 is still in progress; logs will be available when it is complete\n"
-    }
-  ],
-  "history_path": "history/424715662/45159953710-attempt-1-pre_finalizer"
+  "capture_errors": [],
+  "history_path": "history/424715662/45159953710-attempt-1-post_run"
 }
