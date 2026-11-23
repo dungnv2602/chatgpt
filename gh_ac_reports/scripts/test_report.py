@@ -51,6 +51,17 @@ class ClassificationTests(unittest.TestCase):
         self.assertEqual(result["primary_category"], "validation_or_test")
         self.assertTrue(result["issues"][0]["blocking"])
 
+    def test_failed_step_uses_only_its_own_log_lines(self):
+        log = (
+            "Build and test\tPublish report\t2026-11-23T06:00:00Z git push origin gpt\n"
+            "Build and test\tRun unit tests\t2026-11-23T06:00:01Z FAILED: assertion mismatch"
+        )
+        step_text = REPORT.step_log_text(log, "Run unit tests")
+        category, confidence = REPORT.classify_text(step_text, "Build and test", "Run unit tests")
+        self.assertEqual(category, "validation_or_test")
+        self.assertEqual(confidence, "medium")
+        self.assertNotIn("git push", step_text)
+
     def test_cancelled_is_not_failure(self):
         result = build(make_run("cancelled"), [make_job("cancelled", "cancelled")])
         self.assertEqual(result["state"], "cancelled")

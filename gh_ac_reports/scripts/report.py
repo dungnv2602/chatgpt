@@ -208,6 +208,18 @@ def normalize_step(step):
     return {key: step.get(key) for key in ("number", "name", "status", "conclusion", "started_at", "completed_at")}
 
 
+def step_log_text(log_text, step_name):
+    """Limit classification evidence to the named step in the GitHub CLI job log."""
+    if not step_name:
+        return str(log_text or "")
+    matches = []
+    for line in str(log_text or "").splitlines():
+        fields = line.split("\t", 2)
+        if len(fields) >= 2 and fields[1].strip() == str(step_name).strip():
+            matches.append(fields[2] if len(fields) == 3 else line)
+    return "\n".join(matches) if matches else str(log_text or "")
+
+
 def classify(run, jobs, logs, jobs_available=True):
     issues = []
     categories = set()
@@ -223,13 +235,16 @@ def classify(run, jobs, logs, jobs_available=True):
             elif conclusion == "action_required":
                 category, confidence = "action_required", "high"
             else:
-                category, confidence = classify_text(text, job["name"], str(step.get("name") or ""))
+                relevant_log = step_log_text(text, step.get("name"))
+                category, confidence = classify_text(relevant_log, job["name"], str(step.get("name") or ""))
+            if conclusion in ("cancelled", "timed_out", "action_required"):
+                relevant_log = text
             issues.append({
                 "category": category, "job_id": job["id"], "job_name": job["name"],
                 "step_number": step.get("number"), "step_name": step.get("name"),
                 "blocking": job.get("conclusion") not in (None, "success", "neutral", "skipped"),
                 "confidence": confidence,
-                "message": next(iter(markers(text)), "Step conclusion: " + str(conclusion)),
+                "message": next(iter(markers(relevant_log)), "Step conclusion: " + str(conclusion)),
             })
             categories.add(category)
         if job.get("conclusion") in FAILURES and not failures:
@@ -315,8 +330,11 @@ def fetch_evidence(repo, run_id, stage):
     reporter_job = None
     normalized_jobs = []
     for raw in raw_jobs:
-        if stage == "pre_finalizer" and raw.get("name") == REPORT_JOB:
-            reporter_job = {"id": str(raw.get("id")), "name": raw.get("name"), "status": raw.get("status"), "conclusion": raw.get("conclusion")}
+        if raw.get("name") == REPORT_JOB:
+            reporter_job = {
+                "id": str(raw.get("id")), "name": raw.get("name"),
+                "status": raw.get("status"), "conclusion": raw.get("conclusion"),
+            }
             continue
         job_id = str(raw.get("id"))
         check_url = raw.get("check_run_url")
@@ -414,6 +432,11 @@ def render_markdown(report):
         ["Created (UTC)", run["created_at"]], ["Status at capture", run["status"]],
         ["Observed conclusion", run["conclusion"] or "Not yet available"],
         ["Projected conclusion", classification["projected_conclusion"] or "Not calculated"],
+        ["Reporter job", (
+            str(capture["reporter_job"].get("status")) + " / " +
+            str(capture["reporter_job"].get("conclusion") or "Pending")
+            if capture.get("reporter_job") else "Not captured"
+        )],
         ["Capture stage", capture["stage"]], ["Completeness", capture["completeness"]],
         ["Captured (UTC)", capture["captured_at_utc"]],
     ])
