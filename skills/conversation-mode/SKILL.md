@@ -79,13 +79,27 @@ The Worker applies in every conversation mode. Condensed Mode changes only the a
 
 ### Discussion register and reports
 
-Use `workspace/discussion.md` as a compact, current register with exactly two sections, in this order:
+Use `workspace/discussion.md` as a compact, current register with exactly three sections, in this order:
+
+`## Current Step`
 
 `## Open Discussions`
 
 `## Reports`
 
-The file is not a transcript, general progress log, or task-history archive. Each section is ordered newest first. Use UTC timestamps. Determine the section from the item's current state, not from its original source or the kind of task.
+The file is not a transcript, general progress log, or task-history archive. `Current Step` contains only the one active pre-step brief. The other sections are ordered newest first. Use UTC timestamps. Determine the section from the item's current state, not from its original source or the kind of task.
+
+#### Current Step
+
+This section is the user's short, live briefing surface while work proceeds.
+
+- Before each meaningful work step, replace this section with one concise brief that states the next action, its scope, and the expected result. A meaningful step is a coherent unit of inspection, decision, editing, or validation; do not create a brief for every individual API call.
+- Commit the brief to `gpt`, fetch the committed file, and verify its content before starting that step.
+- After the read-back, send the direct `discussion.md` link to the user before executing the step. Do not bury the brief in chat; the file is the briefing surface.
+- Keep exactly one current brief. Do not retain completed briefs as history or duplicate them in Reports.
+- After the step, record detailed actions and verification in the task record. Before the next meaningful step, replace the brief and send the updated link.
+- If work stops, fails, or needs a user decision, make the current brief state that execution is paused and why; also record any unresolved failure or required user input under Open Discussions.
+- When no step is active, use `_No active step._`.
 
 #### Open Discussions
 
@@ -155,7 +169,11 @@ Retain at most the three most recent reports. Order them newest first by the tim
 
 #### Empty state
 
-Keep both headings even when one or both sections have no entries. Use these exact placeholders:
+Keep all three headings even when one or more sections have no entries. Use these exact placeholders:
+
+`## Current Step`
+
+`_No active step._`
 
 `## Open Discussions`
 
@@ -165,7 +183,7 @@ Keep both headings even when one or both sections have no entries. Use these exa
 
 `_No reports._`
 
-If only one section is empty, keep its placeholder and retain the entries in the other section. Never remove either heading.
+If a section is empty, keep its placeholder and retain the entries in the other sections. Never remove a heading.
 
 ### Approval and clearing
 
@@ -180,10 +198,10 @@ Do not treat silence as approval. Do not infer a decision from an unrelated user
 ### User-visible output
 
 - In Condensed Mode, send only one direct link:
-  1. Link to `workspace/discussion.md` when it contains any open discussion or retained report.
+  1. Link to `workspace/discussion.md` when it contains an active Current Step brief, any open discussion, or a retained report.
   2. Otherwise, link to the task record for the task in progress.
 - Do not send any other link in Condensed Mode.
-- Do not add labels, headings, status text, progress updates, summaries, or other chat text.
+- Do not add labels, headings, status text, progress updates, summaries, or other chat text. The brief itself lives in `discussion.md` and must be linked before its step starts.
 - The only exception is the single response that switches into Condensed Mode. That response must contain only a brief mode acknowledgement. Starting with the next response, send only one permitted link.
 - After task creation, provide the task-record link. Continue work immediately when the user has approved the task or the task does not require approval.
 - Do not ask for approval again when the user has already approved the task.
@@ -211,10 +229,11 @@ If the task needs essential clarification or user approval, record the minimum n
 
 ### Progress communication
 
-- Keep progress messages to a minimum.
-- Avoid interim commentary unless it materially helps the user.
-- Record every meaningful action in the task file.
-- Report only outcomes, decisions, blockers, and next actions.
+- Keep chat output minimal. Use the pre-step briefing protocol above instead of free-form progress narration.
+- Before each meaningful work step, publish and link the committed Current Step brief. Do not start the step before the user has been given that link.
+- Do not publish a second brief for routine sub-operations inside the same coherent step.
+- Record every meaningful action and verification in the task file.
+- After a step, update the task record. Before proceeding to another meaningful step, replace the Current Step brief and link it.
 - Do not claim success before the relevant tool reports success.
 
 ### Work outside the repository
