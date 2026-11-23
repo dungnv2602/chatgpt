@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Hosted regression tests for the lint evidence report generator."""
+import hashlib
 import json
 import subprocess
 import sys
@@ -42,6 +43,8 @@ class ReportGeneratorTests(unittest.TestCase):
             self.assertEqual(report["total_findings"], 1)
             self.assertTrue(report["findings"][0]["fingerprint"])
             self.assertEqual(report["findings"][0]["comparison"], "new")
+            integrity = json.loads((first / "integrity.json").read_text(encoding="utf-8"))
+            self.assertEqual(integrity["files"]["report.json"], hashlib.sha256((first / "report.json").read_bytes()).hexdigest())
             latest = root / "on_changed" / "latest-lint-report.json"
             self.assertEqual(json.loads(latest.read_text(encoding="utf-8"))["run_id"], "100")
 
