@@ -19,13 +19,13 @@ status: approved
 - **Actual Image Asset / Conversation Attachment:**
 - **Original Upload Filename:**
 - **Takeout Batch ID:**
-- **Master Image Path:** [Central novel asset path. Leave blank if not stored.]
-- **WebP Derivative Path:** [Same directory as the master. Leave blank if not generated or stored.]
+- **Master Image Path:** [Conditional: central novel asset path when stored. Otherwise Not applicable.]
+- **WebP Derivative Path:** [Conditional: same-directory WebP path when generated and stored. Otherwise Not applicable.]
 - **Asset Verification:** Pending / Verified / Failed / Not Stored
-- **Master SHA-256:** [When available from the conversion report]
-- **WebP SHA-256:** [When available from the conversion report]
-- **Conversion Report:** [Relative link under images/takeout/history/ when available]
-- **Verification Report:** [Relative link under images/takeout/history/ when available]
+- **Master SHA-256:** [Conditional: value from the conversion report when available. Otherwise Not available.]
+- **WebP SHA-256:** [Conditional: value from the conversion report when available. Otherwise Not available.]
+- **Conversion Report:** [Conditional: relative link under images/takeout/history/ when available. Otherwise Not applicable.]
+- **Verification Report:** [Conditional: relative link under images/takeout/history/ when available. Otherwise Not applicable.]
 - **Prompt Record:** [Relative link]
 - **Relevant Attempt ID:**
 - **Generation or Edit:** Fresh Generation / Source-Guided Edit / Other
@@ -76,7 +76,7 @@ Describe interpretation rather than pretending it is directly visible.
 ## 9. Review and Approval
 - **Review Status:**
 - **Critical Criteria Passed / Failed:**
-- **User Acceptance, if known:**
+- **User Acceptance:** [Optional: record the user's acceptance when known.]
 - **Outstanding Corrections:**
 
 ## 10. Author's Notes
