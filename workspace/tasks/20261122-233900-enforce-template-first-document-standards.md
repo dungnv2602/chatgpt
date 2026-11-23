@@ -5,7 +5,7 @@
 - **ID:** 20261122-233900
 - **Template version:** 1.0
 - **Created:** 2026-11-22 23:39 UTC
-- **Updated:** 2026-11-23 00:40 UTC
+- **Updated:** 2026-11-23 00:50 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -182,6 +182,20 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** Document Standards commit `a6f8c5b4635109f4a47253b9b241a5b2ef3996ed`; novel template commits `c83d2f95c1e733f5171ffc45c50ea4427fc98959`, `134b89b1cc71fd9b3673adc6367ab5bff2433eb2`, and `f719a1358eb98b24927d4268c394c98f0384491d`; catalog commit `ca41d9fe0c5323d8c4cd2a69580574bd2276900d`.
 - **Next:** Inspect processor validation and regression coverage. Design a catalog-driven validator without duplicating processor schemas.
 
+### 2026-11-23 00:50 UTC
+
+- **Action:** Ran the bounded CI preflight and reviewed the newest changed-document lint run.
+- **Result:** Run [45090739062](https://github.com/dungnv2602/chatgpt/actions/runs/45090739062) completed with failure. The preflight guard, baseline lookup, and changed-file discovery succeeded. The STE linter reported the existing findings in `lint_reports/latest-lint-report.md`, `skills/agent-skill-authoring/SKILL.md`, and `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`. The run does not show findings in the new or revised template and archive-policy files. Do not claim CI passed. The current task head is newer than this run.
+- **References:** Run [45090739062](https://github.com/dungnv2602/chatgpt/actions/runs/45090739062), failed lint job `137419540436`.
+- **Next:** Keep unrelated lint debt separate. Review the next naturally triggered run during a later bounded preflight.
+
+### 2026-11-23 00:50 UTC
+
+- **Action:** Compared the takeout hand-off field validators with the existing regression suite. Added tests for invalid optional metadata and for metadata propagation into the drawing-session manifest.
+- **Result:** The tests now cover invalid asset IDs, generation hashes, output and prompt IDs, native generation and output IDs, approval values, and mapping evidence. The existing manifest tests already cover legacy backfill, custom-column preservation, publication hashes, URLs, and attempt links. The test file is part of the existing WebP workflow path filter, and that workflow already runs the regression suite. No workflow edit was needed for these takeout tests. The new tests have not yet run on a hosted runner.
+- **References:** Test commits `17d152df76fded08e429f4527382e841e5ea59fc` and `9b171c79be9024a0562c4aef147c99c141a46776`; catalog update `c2d7bc48bfa993ce9e0e573853efcee1fdaf89e2`; existing workflow `.github/workflows/convert-images-to-webp.yml`.
+- **Next:** Design the catalog validator. Obtain fresh permission before changing any other workflow.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
@@ -195,7 +209,7 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - Task boards and the Condensed Mode discussion register remain embedded contracts for single live files.
 - Novel documents use the current Version 1.1 template set. Do not mass-migrate untouched Version 1.0 records.
 - The image takeout hand-off is validated by `skills/session-archiving/scripts/process_takeout.py`. The same script defines conversion-report and manifest columns. `verify_published_manifest.py` checks published data and links.
-- The processor test suite covers important intake and publication paths. It does not establish exhaustive field-by-field validation coverage.
+- The processor test suite covers important intake and publication paths. New field-level cases now cover optional hand-off metadata validation and its propagation to the drawing manifest. The suite still does not establish exhaustive field-by-field coverage, and the new cases have not yet run on a hosted runner.
 - The three master catalogues contain heterogeneous prompt, pose, and image-reference material. They are classified as lightweight collections, not uniform record types.
 - The catalog covers the main recurring document types identified across `images/`, `master/`, `novels/`, `drawings/`, `skills/`, and `workspace/`. It now records representative legacy examples and the no-mass-migration rule. Full file-by-file reconciliation remains incomplete.
 - The changed-document lint preflight repository-resolution defect has been fixed on `gpt`. Run #349 confirms that preflight, baseline lookup, and changed-file discovery succeed. The downstream STE lint step still fails on existing findings in the lint report and Agent Skill documentation; the updated remote-only policy files had no findings.
@@ -211,11 +225,10 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 ## 9. Next Actions
 
 1. Complete the catalog link audit and representative record review.
-2. Inspect all hand-off field checks and compare them with regression tests.
-3. Decide whether manifest field-level regression tests add coverage beyond the existing verifier tests.
-4. Design and implement a catalog-driven structural validator without duplicating generator-owned schemas.
-5. Obtain fresh approval before adding the validator to `.github/workflows/*`.
-6. Review the next naturally triggered Actions result during one bounded preflight. Do not wait or poll.
+2. Design and implement a catalog-integrity validator that checks canonical paths and document-type classes without duplicating generator schemas.
+3. Add unit tests for the validator and read back all changed files.
+4. Obtain fresh approval to inspect and update the appropriate GitHub Actions workflow for validator execution.
+5. Review the takeout regression test result during the next bounded preflight. Do not wait or poll.
 
 ## 10. References
 
