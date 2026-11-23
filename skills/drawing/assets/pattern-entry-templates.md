@@ -103,7 +103,7 @@ Record a failure pattern when a failure is recurring or when a single incident r
 
 ## Review checklist
 
-Before committing a new or revised entry, verify:
+Before committing a new or revised entry, validate:
 
 - [ ] The ID is unique and follows the correct prefix.
 - [ ] The title describes one recognizable pattern.
