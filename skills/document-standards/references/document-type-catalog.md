@@ -47,8 +47,8 @@ Do not create a second template when an owning workflow already defines the requ
 | Agent Skill definition | Template required | `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md` | Copy-ready `SKILL.md` template now exists. |
 | Skill index and activation files | Embedded contract | `skills/README.md`, `skills/SESSION_START.md`, `skills/INITIALIZATION_POLICY.md` | Each has a distinct ownership role. Do not force one generic index template. |
 | Master image, pose, and prompt catalogues | Lightweight pattern | `master/Images.md`, `master/Poses.md`, `master/Prompts.md` | These are living reference collections, not repeated individual records. Review consistency before defining a shared pattern. |
-| Technical skill references | Lightweight pattern | Owning skill and repository writing policy | Use type-specific headings. No universal section layout is appropriate. |
-| Creative prose and approved creative prompts | Exempt | Owning creative workflow | Preserve creative form. Apply only required metadata and provenance rules. |
+| Technical skill references | Lightweight pattern | `skills/asd-ste100/SKILL.md` and `skills/asd-ste100/references/repository-writing-policy.md`, plus the owning skill | Use type-specific headings. No universal section layout is appropriate. |
+| Creative prose and approved creative prompts | Exempt | `novels/WORKFLOW.md` and `skills/drawing/SKILL.md` | Preserve creative form. Apply only required metadata and provenance rules. |
 
 ## Validation coverage limits
 
