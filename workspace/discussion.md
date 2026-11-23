@@ -1,5 +1,7 @@
 ## Current Step
 
+- **2026-11-23 09:50 UTC — Session startup:** User invoked `start session`, approved the cancelled-run reporting fix, and asked to review the open discussions for required user actions. Foundational initialization is in progress; work remains on `gpt`.
+
 - **2026-11-23 09:27 UTC — Ledger task closeout verified:** Hosted validation passed; archive, retention index, active-record deletion, and board reconciliation are complete. No task is currently selected; the diagnostic-report task remains Paused.
 
 ## Open Discussions
