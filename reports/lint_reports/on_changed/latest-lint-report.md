@@ -2,29 +2,29 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#469](https://github.com/dungnv2602/chatgpt/actions/runs/45159068771)
-- **Run ID / attempt:** 45159068771 / 1
+- **Run:** [#473](https://github.com/dungnv2602/chatgpt/actions/runs/45159619279)
+- **Run ID / attempt:** 45159619279 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / b7d68cbf66578a478ce74824bc01c9034fbca50b
+- **Branch / commit:** gpt / d55f905a080ef030ec2425009e2cd09a0d1a6395
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** b7d68cbf66578a478ce74824bc01c9034fbca50b
-- **Generated (UTC):** 2026-11-23T10:46:43.708142+00:00
+- **Linter source SHA:** d55f905a080ef030ec2425009e2cd09a0d1a6395
+- **Generated (UTC):** 2026-11-23T10:50:19.054428+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
 | Files evaluated | 49 |
-| Files that failed | 6 |
-| Files with findings | 40 |
-| Total findings | 351 |
-| Hard findings | 32 |
+| Files that failed | 4 |
+| Files with findings | 39 |
+| Total findings | 347 |
+| Hard findings | 28 |
 | Advisory findings | 319 |
-| New findings | 1 |
-| Recurring findings | 350 |
-| Resolved findings | 2 |
+| New findings | 0 |
+| Recurring findings | 347 |
+| Resolved findings | 4 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -95,7 +95,7 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md | FAIL | 1 | 1 | 0 | 166 | 0.6 | 1 |
+| skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md | PASS | 0 | 0 | 0 | 166 | 0.0 | 0 |
 | skills/philosophy-religion-asceticism/SKILL.md | PASS | 8 | 0 | 7 | 2387 | 0.3 | 0 |
 | skills/session-archiving/assets/conversation-integrity-template.md | PASS | 0 | 0 | 0 | 192 | 0.0 | 0 |
 | skills/drawing/references/patterns/failure-patterns.md | PASS | 25 | 0 | 0 | 2146 | 1.2 | 0 |
@@ -105,7 +105,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/asd-ste100/README.md | PASS | 2 | 0 | 0 | 1534 | 0.1 | 0 |
 | skills/asd-ste100/assets/lint-report-template.md | PASS | 0 | 0 | 0 | 385 | 0.0 | 0 |
 | skills/drawing/README.md | PASS | 0 | 0 | 0 | 396 | 0.0 | 0 |
-| skills/drawing/assets/pattern-entry-templates.md | FAIL | 8 | 1 | 0 | 449 | 1.8 | 1 |
+| skills/drawing/assets/pattern-entry-templates.md | PASS | 7 | 0 | 0 | 449 | 1.6 | 0 |
 | images/takeout/README.md | PASS | 1 | 0 | 0 | 1397 | 0.1 | 0 |
 | images/README.md | PASS | 1 | 0 | 0 | 584 | 0.2 | 0 |
 | skills/asd-ste100/SKILL.md | PASS | 21 | 13 | 31 | 2609 | 0.8 | 0 |
@@ -116,7 +116,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/drawing/assets/attempt-template.md | PASS | 1 | 0 | 0 | 593 | 0.2 | 0 |
 | skills/drawing/references/patterns/successful-patterns.md | PASS | 6 | 0 | 0 | 816 | 0.7 | 0 |
 | skills/drawing/references/generation-recovery-and-provenance.md | PASS | 19 | 0 | 17 | 2757 | 0.7 | 0 |
-| skills/session-archiving/references/image-provenance-and-webp.md | PASS | 14 | 2 | 2 | 1712 | 0.8 | 0 |
+| skills/session-archiving/references/image-provenance-and-webp.md | PASS | 13 | 1 | 2 | 1710 | 0.8 | 0 |
 | skills/conversation-mode/SKILL.md | PASS | 17 | 0 | 3 | 3080 | 0.6 | 0 |
 | skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md | PASS | 8 | 0 | 7 | 2716 | 0.3 | 0 |
 | skills/drawing/SKILL.md | PASS | 24 | 3 | 24 | 5082 | 0.5 | 0 |
@@ -124,7 +124,7 @@ The table includes every evaluated file, including files with zero findings and 
 | workspace/task_board.md | PASS | 3 | 0 | 0 | 249 | 1.2 | 0 |
 | skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
 | skills/INITIALIZATION_POLICY.md | PASS | 3 | 1 | 4 | 1180 | 0.3 | 0 |
-| skills/drawing/assets/daily-index-template.md | FAIL | 2 | 2 | 0 | 214 | 0.9 | 1 |
+| skills/drawing/assets/daily-index-template.md | FAIL | 1 | 1 | 0 | 210 | 0.5 | 1 |
 | skills/session-archiving/assets/session-summary-template.md | PASS | 0 | 0 | 0 | 106 | 0.0 | 0 |
 | workspace/TASK_TEMPLATE.md | FAIL | 5 | 1 | 0 | 385 | 1.3 | 1 |
 | skills/drawing/references/series-continuity-and-iteration.md | PASS | 10 | 1 | 9 | 3262 | 0.3 | 0 |
@@ -153,7 +153,7 @@ Counts include hard and advisory findings.
 |---|---:|
 | passive-voice | 279 |
 | present-perfect | 40 |
-| synonym-rotation | 13 |
+| synonym-rotation | 9 |
 | long-sentence | 6 |
 | marketing-adjective | 5 |
 | phrasal-verb | 5 |
@@ -190,7 +190,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.282s
+Ran 4 tests in 0.453s
 
 OK
 ~~~
@@ -223,7 +223,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 598 active Markdown files (664 available as link targets) and 338 local Markdown links.
+Scanned 613 active Markdown files (679 available as link targets) and 338 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -233,17 +233,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:231:18 · **new** · fingerprint: cdded221cb31c45f9059249a
-  - **Level:** advisory-free
-  - **Message:** 'begin' and 'start' name the same action. Pick one and use it every time.
-  - **Matched text:** begins
+None.
 
 ### Recurring findings
 
-- **synonym-rotation** · skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md:38:8 · **recurring** · fingerprint: e56e71413f309183c3195a0f
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Verify
 - **passive-voice** · skills/philosophy-religion-asceticism/SKILL.md:53:21 · **recurring** · fingerprint: fc114dacae449b7519133918
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -408,6 +401,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been created
+- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:231:18 · **recurring** · fingerprint: cdded221cb31c45f9059249a
+  - **Level:** advisory-free
+  - **Message:** 'begin' and 'start' name the same action. Pick one and use it every time.
+  - **Matched text:** begins
 - **passive-voice** · skills/agent-skill-authoring/SKILL.md:244:28 · **recurring** · fingerprint: 0f053c89c3267998b6edc9d6
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -476,10 +473,6 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has tested
-- **synonym-rotation** · skills/drawing/assets/pattern-entry-templates.md:106:43 · **recurring** · fingerprint: 1e2dc3b524f1b7c4c3b51d1f
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
 - **passive-voice** · skills/drawing/assets/pattern-entry-templates.md:111:20 · **recurring** · fingerprint: 92485eeff29784dba3505b2d
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -808,11 +801,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are Verified
-- **synonym-rotation** · skills/session-archiving/references/image-provenance-and-webp.md:94:206 · **recurring** · fingerprint: f6b87316a617b3675e187026
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** Verify
-- **synonym-rotation** · skills/session-archiving/references/image-provenance-and-webp.md:94:241 · **recurring** · fingerprint: e6e912834a84809148a29b28
+- **synonym-rotation** · skills/session-archiving/references/image-provenance-and-webp.md:103:200 · **recurring** · fingerprint: e6e912834a84809148a29b28
   - **Level:** advisory-free
   - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
   - **Matched text:** checking
@@ -1176,10 +1165,6 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
-- **synonym-rotation** · skills/drawing/assets/daily-index-template.md:28:28 · **recurring** · fingerprint: 1975c054eeac9c56d64113d2
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
 - **passive-voice** · workspace/TASK_TEMPLATE.md:18:108 · **recurring** · fingerprint: 5275280719ed16d2a5b7ad67
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1643,14 +1628,22 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### Resolved findings
 
-- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:136:110 · **resolved** · fingerprint: 836c6ab7672c67c5cf0dbf14
+- **synonym-rotation** · skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md:38:8 · **resolved** · fingerprint: e56e71413f309183c3195a0f
   - **Level:** advisory-free
-  - **Message:** 'start' and 'begin' name the same action. Pick one and use it every time.
-  - **Matched text:** Start
-- **long-sentence** · skills/agent-skill-authoring/SKILL.md:203:27 · **resolved** · fingerprint: 76c645f8b8d79e0e8da99700
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** Verify
+- **synonym-rotation** · skills/drawing/assets/pattern-entry-templates.md:106:43 · **resolved** · fingerprint: 1e2dc3b524f1b7c4c3b51d1f
   - **Level:** advisory-free
-  - **Message:** Sentence has 28 words (cap 25). Split it.
-  - **Matched text:** 28 words
+  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
+- **synonym-rotation** · skills/session-archiving/references/image-provenance-and-webp.md:94:206 · **resolved** · fingerprint: f6b87316a617b3675e187026
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
+  - **Matched text:** Verify
+- **synonym-rotation** · skills/drawing/assets/daily-index-template.md:28:28 · **resolved** · fingerprint: 1975c054eeac9c56d64113d2
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
 
 ## 8. Complete per-file diagnostics
 
@@ -1658,20 +1651,15 @@ This section includes every normalized finding with its rule, level, source loca
 
 ### skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md
 
-- **Result:** FAIL
-- **Exit code:** 1
-- **Findings:** 1
-- **Hard findings:** 1
+- **Result:** PASS
+- **Exit code:** 0
+- **Findings:** 0
+- **Hard findings:** 0
 - **Baseline:** 0
 - **Words:** 166
-- **Findings per 100 words:** 0.6
+- **Findings per 100 words:** 0.0
 
-#### Complete diagnostics
-
-- **synonym-rotation** · skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md:38:8 · **recurring** · fingerprint: e56e71413f309183c3195a0f
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Verify
+No STE findings were recorded for this file.
 
 
 ### skills/philosophy-religion-asceticism/SKILL.md
@@ -1930,7 +1918,7 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been created
 
-- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:231:18 · **new** · fingerprint: cdded221cb31c45f9059249a
+- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:231:18 · **recurring** · fingerprint: cdded221cb31c45f9059249a
   - **Level:** advisory-free
   - **Message:** 'begin' and 'start' name the same action. Pick one and use it every time.
   - **Matched text:** begins
@@ -2068,13 +2056,13 @@ No STE findings were recorded for this file.
 
 ### skills/drawing/assets/pattern-entry-templates.md
 
-- **Result:** FAIL
-- **Exit code:** 1
-- **Findings:** 8
-- **Hard findings:** 1
+- **Result:** PASS
+- **Exit code:** 0
+- **Findings:** 7
+- **Hard findings:** 0
 - **Baseline:** 0
 - **Words:** 449
-- **Findings per 100 words:** 1.8
+- **Findings per 100 words:** 1.6
 
 #### Complete diagnostics
 
@@ -2097,11 +2085,6 @@ No STE findings were recorded for this file.
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has tested
-
-- **synonym-rotation** · skills/drawing/assets/pattern-entry-templates.md:106:43 · **recurring** · fingerprint: 1e2dc3b524f1b7c4c3b51d1f
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
 
 - **passive-voice** · skills/drawing/assets/pattern-entry-templates.md:111:20 · **recurring** · fingerprint: 92485eeff29784dba3505b2d
   - **Level:** advisory
@@ -2618,10 +2601,10 @@ No STE findings were recorded for this file.
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 14
-- **Hard findings:** 2
+- **Findings:** 13
+- **Hard findings:** 1
 - **Baseline:** 2
-- **Words:** 1712
+- **Words:** 1710
 - **Findings per 100 words:** 0.8
 
 #### Complete diagnostics
@@ -2656,12 +2639,7 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are Verified
 
-- **synonym-rotation** · skills/session-archiving/references/image-provenance-and-webp.md:94:206 · **recurring** · fingerprint: f6b87316a617b3675e187026
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** Verify
-
-- **synonym-rotation** · skills/session-archiving/references/image-provenance-and-webp.md:94:241 · **recurring** · fingerprint: e6e912834a84809148a29b28
+- **synonym-rotation** · skills/session-archiving/references/image-provenance-and-webp.md:103:200 · **recurring** · fingerprint: e6e912834a84809148a29b28
   - **Level:** advisory-free
   - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
   - **Matched text:** checking
@@ -3207,11 +3185,11 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 2
-- **Hard findings:** 2
+- **Findings:** 1
+- **Hard findings:** 1
 - **Baseline:** 0
-- **Words:** 214
-- **Findings per 100 words:** 0.9
+- **Words:** 210
+- **Findings per 100 words:** 0.5
 
 #### Complete diagnostics
 
@@ -3219,11 +3197,6 @@ No STE findings were recorded for this file.
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
-
-- **synonym-rotation** · skills/drawing/assets/daily-index-template.md:28:28 · **recurring** · fingerprint: 1975c054eeac9c56d64113d2
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
 
 
 ### skills/session-archiving/assets/session-summary-template.md
