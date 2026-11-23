@@ -35,8 +35,8 @@ description: "Describe the skill and when to use it."
 
 ## Completion checks
 
-- [ ] [Verify the required result.]
-- [ ] [Verify relevant files or outputs.]
+- [ ] [Check the required result.]
+- [ ] [Check relevant files or outputs.]
 - [ ] [Record unresolved limits.]
 
 ## References
