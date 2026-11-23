@@ -1,10 +1,10 @@
 ## Current Step
 
-**2026-11-23 22:42 UTC — Verify the recorded defects against current source files.** Read the Worker image-provenance and archive procedures, then inspect the current hand-off, processor gate, publication verifier, workflow, and relevant session records. Confirm which defects the committed repair already addresses and which blockers remain. Do not inspect or move image binaries.
+_No active step._
 
 ## Open Discussions
 
-- **2026-11-23 17:03 UTC — Image takeout provenance:** The workflow repair is committed and read back. Eleven outputs are matched to attempt records and Partial integrity archives. Seven files remain unclassified. Direct repository blob reading fails on PNG binary data, and the raw image URL is not accessible through the current reader; no visual claims are made. Eighteen originals remain in intake unchanged; HANDOFF remains Draft, and no processor relocation has occurred.
+- **2026-11-23 22:45 UTC — Image takeout provenance:** Current source read-back confirms the original conversation transcripts were not retained. Two Partial integrity records now exist at `drawings/history/2026-11-20-conversation-integrity.md` and `drawings/history/2026-11-21-conversation-integrity.md`; they are evidence-based summaries, not complete transcripts. Eleven images have exact attempt, source Asset ID, and Generation ID mappings. Seven remain unclassified because their pixels and source evidence are unavailable. All 18 PNGs remain in `images/takeout/`; `HANDOFF.yml` is still Draft. The earlier commit imported files into intake, but no final processor relocation is present. The provenance gate repair is committed in [c07921e](https://github.com/dungnv2602/chatgpt/commit/c07921efe1a22db2237caa647d828e66fdd0236d). Hosted validation has not been observed. Next: obtain image-capable inspection for the seven unresolved PNGs and reconcile them only with retained evidence.
 
 - **2026-11-23 16:09 UTC — Reporting-period validation:** The active indexes contain only the four carried-forward pending run IDs. Evidence-only captures remain unindexed for the open Ledger findings. Let the next natural diagnostics sweep complete pending runs and validate the reset. Do not poll, dispatch, or rerun Actions.
 
