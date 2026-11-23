@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-100738
 - **Created:** 2026-11-23 10:07 UTC
-- **Updated:** 2026-11-23 12:16 UTC
+- **Updated:** 2026-11-23 12:24 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -55,6 +55,12 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 - **Validation:** Use natural GitHub Actions runs. Do not manually dispatch or poll workflows.
 
 ## 6. Progress Log
+
+### 2026-11-23 12:24 UTC
+
+- **Action:** Completed source-level remediation of both baseline hard findings in `skills/agent-skill-authoring/SKILL.md`.
+- **Result:** Standardized `begin` to `start` and split the CI review condition into three explicit triggers. Preserved skill structure, template use, and approval requirements. Readback passed after commit `b7d68cbf66578a478ce74824bc01c9034fbca50b`. No local lint or tests were run. Hosted validation remains pending natural workflow execution.
+- **Next:** Review the two hard findings in `skills/session-archiving/references/image-provenance-and-webp.md`.
 
 ### 2026-11-23 12:16 UTC
 
@@ -167,7 +173,7 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 7. Current State
 
-The approved task is In Progress and is the current execution. All 75 baseline hard findings in the Document Type Catalog, all 14 in `skills/drawing/SKILL.md`, all nine in `skills/the-worker/SKILL.md`, all five in `skills/drawing/references/archive-and-delivery.md`, and all five in `skills/github-actions/SKILL.md`, all five in `skills/conversation-mode/SKILL.md`, and all four in `skills/document-standards/SKILL.md` and all three in `skills/session-archiving/SKILL.md` and all four in `skills/drawing/references/image-editing-protocol.md` and all three in `skills/drawing/references/prompt-fidelity.md` have source-level edits. In `skills/asd-ste100/SKILL.md`, two non-example findings have source-level edits. Thirteen findings remain in deliberate examples that the repository writing policy says to preserve. Hosted validation remains pending. The 319 advisory findings remain out of scope.
+The approved task is In Progress and is the current execution. All 75 baseline hard findings in the Document Type Catalog, all 14 in `skills/drawing/SKILL.md`, all nine in `skills/the-worker/SKILL.md`, all five in `skills/drawing/references/archive-and-delivery.md`, and all five in `skills/github-actions/SKILL.md`, all five in `skills/conversation-mode/SKILL.md`, and all four in `skills/document-standards/SKILL.md` and all three in `skills/session-archiving/SKILL.md` and all four in `skills/drawing/references/image-editing-protocol.md` and all three in `skills/drawing/references/prompt-fidelity.md` and both in `skills/agent-skill-authoring/SKILL.md` have source-level edits. In `skills/asd-ste100/SKILL.md`, two non-example findings have source-level edits. Thirteen findings remain in deliberate examples that the repository writing policy says to preserve. Hosted validation remains pending. The 319 advisory findings remain out of scope.
 
 ## 8. Remaining Work
 
@@ -178,8 +184,8 @@ The approved task is In Progress and is the current execution. All 75 baseline h
 
 ## 9. Next Actions
 
-1. Review the two hard findings in `skills/agent-skill-authoring/SKILL.md` against the canonical authoring workflow and templates.
-2. Preserve skill metadata, template contracts, and approval gates.
+1. Review the two hard findings in `skills/session-archiving/references/image-provenance-and-webp.md` against the complete takeout pipeline.
+2. Preserve original-byte identity, mapping, and WebP derivative rules.
 3. Apply fixes on `gpt` and inspect naturally generated hosted reports.
 4. Repeat until the approved hard-finding set is resolved or a policy conflict requires user direction.
 
