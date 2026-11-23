@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:52 UTC — Begin Session Archiving skill review:** Review the four hard findings in `skills/session-archiving/SKILL.md` against the exact workspace and retention boundaries. Preserve immutable archive and provenance rules.
+- **2026-11-23 11:56 UTC — Remediate Session Archiving skill:** Separate the two authorization headings from their scope statements. Split the remote-operation paragraph at its semicolon. Preserve exact permissions and workspace boundaries.
 
 ## Open Discussions
 
