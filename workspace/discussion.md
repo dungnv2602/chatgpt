@@ -1,12 +1,12 @@
 ## Current Step
 
-- **2026-11-23 10:08 UTC — Reconcile resolved discussion decisions:** Remove the answered default-branch and lint-approval prompts. Retain only pending hosted validations and record the new task as Ready.
+- **2026-11-23 10:08 UTC — Await natural hosted validation:** Review the cancellation-safe reporter and ledger tests, then confirm the post-correction Document Standards report. Do not poll or dispatch workflows.
 
 ## Open Discussions
 
-- **2026-11-23 10:16 UTC — Default-branch observer decision:** The gpt-only collector can backfill runs after a later push or exact-run request. It cannot immediately capture a run that fails before any job starts. **User decision:** Keep delayed capture on gpt, or authorize immediate observation through a workflow on main or an external GitHub App webhook. Do not modify main without explicit approval.
-
 - **2026-11-23 10:16 UTC — Document Standards validation:** The latest prior report [45128450035](https://github.com/dungnv2602/chatgpt/actions/runs/45128450035) predates the final catalog correction. Commit [a12188b](https://github.com/dungnv2602/chatgpt/commit/a12188b8bff24b04f678eb711463c2aad16d9866) changed a file under `skills/**`, which matches the workflow's push filter on gpt. A natural validation run is eligible. No manual dispatch is needed. Review it only when naturally available.
+
+- **2026-11-23 10:08 UTC — Cancellation repair validation:** The reporter and ledger cancellation fixes are committed on `gpt` in [a12188b](https://github.com/dungnv2602/chatgpt/commit/a12188b8bff24b04f678eb711463c2aad16d9866). Regression tests are added but hosted results have not been reviewed. Review a natural diagnostics run only. Do not poll or dispatch.
 
 - **2026-11-23 — Hosted retention validation:** The cleanup script and tests cover exact individual files in both archive folders. A hosted run of the schedule-only cleanup has not yet been observed. It runs on the schedule from main. No manual dispatch or user action is needed. Do not modify main.
 
