@@ -1,7 +1,7 @@
 # Document Type Catalog
 
 **Catalog version:** 1.2  
-**Inventory status:** Recursive tree review enumerated 417 files (483 total tree entries) on branch `gpt`, with no truncation. Candidate template/schema files and their owners were inspected. Archived record contents were not inspected. This is a complete path inventory and a targeted content audit, not a line-by-line review of every repository file.  
+**Inventory status:** The initial recursive tree review enumerated 417 files (483 entries). The final read-back enumerated 420 files (488 entries). Neither tree was truncated. Candidate template/schema files, all skill reference files, and their owners were inspected. The user-authorized audit included read-only review of the two archived task records. This is a complete path inventory and a targeted content audit, not a line-by-line review of every repository file.  
 **Source branch:** `gpt`
 
 This catalog maps recurring document types to their canonical formats. It distinguishes standalone templates from embedded contracts and generated formats. Skill-owned copy-ready templates belong in the owning skill's `assets/` directory. Explanatory references belong in `references/`. Project-level templates may use the owning project's designated template directory.
