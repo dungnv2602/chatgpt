@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:36 UTC — Begin Conversation Mode skill review:** Review the five hard findings in `skills/conversation-mode/SKILL.md` against the complete mode and register contract. Preserve mode behavior and ownership boundaries.
+- **2026-11-23 11:40 UTC — Remediate Conversation Mode skill:** Split the briefing and pause instructions, standardize check terminology, and preserve the exact register ownership and navigation rules.
 
 ## Open Discussions
 
