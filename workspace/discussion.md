@@ -1,10 +1,10 @@
 ## Current Step
 
-**2026-11-23 16:59 UTC — Commit and verify the conversation-provenance workflow repair.** Add the processor fail-closed gate, the post-publication verifier, regression coverage, two Partial conversation-integrity archives, and the hand-off/documentation updates. Then read back each modified path and confirm the `gpt` head. Keep the batch Draft; do not run the processor, relocate originals, or manually dispatch/poll Actions. The seven unclassified images still require evidence-based identification.
+**2026-11-23 17:01 UTC — Resolve the seven unclassified takeout images.** The workflow guard and post-publication verifier are committed and read back from `gpt`. Eleven mapped files now have Partial conversation archives. Seven files still lack a defensible source mapping. Identify a reliable image-inspection route and compare visual content with retained source evidence. Do not guess, set the batch Ready, move files, or poll Actions.
 
 ## Open Discussions
 
-- **2026-11-23 16:59 UTC — Image takeout provenance:** Task 20261123-162826 is current execution. The eighteen PNGs were imported into intake; final processor relocation did not occur because HANDOFF remains Draft. Eleven items now have evidence-linked Partial records and exact source_asset_id / Generation ID mappings for attempts 04–06 and 09–16. Seven files remain unclassified and are excluded from the new records. Keep all originals untouched and do not set the batch Ready until the seven files have defensible source mapping and destination/quarantine decisions.
+- **2026-11-23 17:01 UTC — Image takeout provenance:** The P1 workflow repair is committed in `c07921efe1a22db2237caa647d828e66fdd0236d` and all fourteen changed paths were read back. Eleven mapped outputs have evidence-linked Partial records. Seven remain unclassified and must not be given invented source links. The eighteen PNG blob identities remain unchanged; HANDOFF remains Draft and no final relocation has occurred. A later unrelated changed-document lint-evidence commit advanced the branch; it is not evidence of takeout tests passing. Next action: inspect the seven images through a reliable image-capable path, then reconcile source evidence.
 
 - **2026-11-23 16:09 UTC — Reporting-period validation:** The active indexes contain only the four carried-forward pending run IDs. Evidence-only captures remain unindexed for the open Ledger findings. Let the next natural diagnostics sweep complete pending runs and validate the reset. Do not poll, dispatch, or rerun Actions.
 

@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261123-162826
 - **Created:** 2026-11-23 16:28 UTC
-- **Updated:** 2026-11-23 16:59 UTC
+- **Updated:** 2026-11-23 17:01 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -77,6 +77,13 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 - **Limitations:** The two new archives are Partial summaries, not complete transcripts. Exact original conversation turns and tool payloads are unavailable in retained repository evidence. The seven unclassified image binaries have not been visually inspected. No local scripts or tests were run, and no GitHub Actions workflow was dispatched or polled.
 - **Next:** Commit the implementation and read back every changed file. Keep the hand-off Draft until the seven unmapped files have defensible source records and an approved destination.
 
+### 2026-11-23 17:01 UTC
+
+- **Action:** Committed the workflow repair and read back every changed path from branch `gpt`.
+- **Result:** Commit [c07921e](https://github.com/dungnv2602/chatgpt/commit/c07921efe1a22db2237caa647d828e66fdd0236d) updates fourteen paths. The read-back confirms the processor and post-publication verifier enforce conversation-record coverage and exact source mappings; seven regression cases were added. The two Partial archives and eleven hand-off references are present. The takeout tree still contains exactly eighteen PNGs with the same original Git blob SHAs and sizes recorded in the inventory. The hand-off still contains eighteen entries and remains Draft.
+- **Verification limits:** No local tests or scripts were run. No Actions workflow was manually dispatched or polled. The later branch advance, `a714598366b0b723015ee492c29a2f4f805ddcf2`, is a separate changed-document lint evidence commit; it does not constitute evidence that the takeout tests passed.
+- **Next:** Keep the seven unmapped items in Draft. Inspect their pixels and reconcile them only with retained source evidence. Review the natural takeout workflow validation when its result is reported.
+
 ## 7. Current State
 
 The eighteen PNGs were imported into `images/takeout/` by commit `1192a4a53640b6188f3500abda75b1c9d5fe004d`. The evidence does **not** show final processor relocation: the current `HANDOFF.yml` remains `status: draft`, and all eighteen image files remain in the intake folder.
@@ -85,23 +92,21 @@ Eleven items have exact mappings to Samantha drawing attempts 04–06 (20 Novemb
 
 Seven items remain unclassified. Their pixels have not been visually inspected, and no reliable source/attempt association is present. No mapping or conversation content has been invented for them.
 
-The hand-off now contains `source_asset_id` and `conversation_record` for the eleven mapped items only. It remains Draft. The processor and publication verifier changes are prepared but are not yet committed to the branch. The seven unmapped items and all eighteen original image bytes remain untouched.
+The hand-off now contains `source_asset_id` and `conversation_record` for the eleven mapped items only. It remains Draft. The processor, publication verifier, regression tests, documentation, and workflow changes are committed on branch `gpt` in commit `c07921efe1a22db2237caa647d828e66fdd0236d`. The seven unmapped items and all eighteen original image bytes remain untouched.
 
 ## 8. Remaining Work
 
-- Commit the processor, publication verifier, regression tests, partial conversation records, template, hand-off schema, documentation, and workflow triggers as one coherent change set on `gpt`.
-- Read back every modified path and verify the resulting branch head.
 - Resolve the seven unclassified images by inspecting their actual pixels and comparing them with retained generation/session evidence. Do not guess based on filenames or chronology.
 - Keep the hand-off Draft until every item has valid source mapping and an approved destination/quarantine disposition.
-- Allow the existing hosted workflow to run naturally after the commit; do not manually dispatch or poll Actions.
-- Review the naturally returned hosted test result when it becomes available through normal workflow reporting. Do not claim tests pass before that evidence exists.
+- Allow the existing hosted workflow to run naturally; do not manually dispatch or poll Actions.
+- Review the hosted test result only when it appears through the normal reporting path. Do not claim tests pass before that evidence exists.
 
 ## 9. Next Actions
 
-1. Commit the code, tests, publication verifier, two Partial archives, eleven mapped hand-off entries, workflow triggers, and documentation updates.
-2. Read back every changed file and confirm the branch head on `gpt`.
-3. Inspect the seven remaining image binaries using a reliable image-capable path and reconcile them against retained source evidence. Keep unresolved files in Draft.
-4. Review natural hosted validation only when it is recorded by the normal workflow. Do not run or poll Actions manually.
+1. Identify a reliable way to visually inspect the seven unclassified PNGs and reconcile them only against retained source evidence.
+2. Keep all seven files untouched until their source and destination or quarantine disposition are established.
+3. Leave `HANDOFF.yml` in Draft while any item remains unresolved.
+4. Review naturally reported hosted validation when available. Do not dispatch or poll workflows manually.
 
 ## 10. References
 
@@ -115,6 +120,11 @@ The hand-off now contains `source_asset_id` and `conversation_record` for the el
 - Hand-off reconciliation commit: https://github.com/dungnv2602/chatgpt/commit/516d6311412e759829f492717053e3abf1ae9821
 
 ## 11. Verification
+
+- **Check:** Workflow repair commit and repository read-back.
+- **Method:** Read the branch head and all fourteen modified paths through GitHub. Checked processor guard fields, test definitions, publication verifier, conversation archives, hand-off counts/status, and the recursive takeout tree.
+- **Result:** Commit `c07921efe1a22db2237caa647d828e66fdd0236d` is present in branch history. All fourteen changed paths were read back. The tree still contains eighteen PNGs. The hand-off still contains eighteen entries, eleven source-asset/conversation-record references, seven unclassified entries, and `status: draft`. No original PNG blob was modified, renamed, or relocated.
+- **Limitations:** Read-back confirms committed content, not hosted test success. No local execution, manual workflow dispatch, or polling was performed. Seven image binaries remain visually uninspected.
 
 - **Check:** Takeout inventory and provenance state.
 - **Method:** Inspected the branch tree, hand-off YAML, session indexes and attempt records, source commit history, archive procedures, processor, and workflow.
