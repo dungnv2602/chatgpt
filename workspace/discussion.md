@@ -1,14 +1,16 @@
 ## Current Step
 
-- **2026-11-23 10:14 UTC — Classify remaining open discussions:** Verify whether the current push naturally triggers Document Standards validation. Separate items that need no user action from the two decisions that require the user's direction. Update the register and pause for those decisions.
+_No active step._
 
 ## Open Discussions
-- **2026-11-23 — Hosted retention validation:** The shared cleanup script and tests now cover exact individual files in both `archive/tasks/` and `archive/reports/`. A hosted run of the schedule-only cleanup has not yet been observed. Do not dispatch it manually or modify `main`.
 
-- **2026-11-23 — Default-branch observer limitation:** The repository default branch is `main`; this task is constrained to `gpt`. A failure before any job starts cannot be captured immediately by the branch-local finalizer. The push-driven sweep or an exact-run request can backfill it later. Immediate run-completion observation requires an authorized observer on `main` or an external GitHub App webhook.
+- **2026-11-23 10:16 UTC — Default-branch observer decision:** The gpt-only collector can backfill runs after a later push or exact-run request. It cannot immediately capture a run that fails before any job starts. **User decision:** Keep delayed capture on gpt, or authorize immediate observation through a workflow on main or an external GitHub App webhook. Do not modify main without explicit approval.
 
-- **2026-11-23 — Document Standards workflow validation:** The latest visible run [45128450035](https://github.com/dungnv2602/chatgpt/actions/runs/45128450035) failed before the final catalog/report-root corrections. No successful post-correction hosted run is yet visible. Verify on its next naturally eligible run; do not poll or manually dispatch.
-- **2026-11-23 — Document lint findings:** The new reports retain 144 hard findings in the repository-wide run and 145 in the changed-scope fallback run. Thresholds and baselines were not weakened. Remediation is separate from the completed report-pipeline task.
+- **2026-11-23 10:16 UTC — Existing lint findings:** The repository-wide report records 144 hard findings, and the changed-scope fallback records 145. The lint thresholds and baselines remain unchanged. These findings are separate from the completed report-pipeline work. **User decision:** Approve a separate remediation task, or defer it.
+
+- **2026-11-23 10:16 UTC — Document Standards validation:** The latest prior report [45128450035](https://github.com/dungnv2602/chatgpt/actions/runs/45128450035) predates the final catalog correction. Commit [a12188b](https://github.com/dungnv2602/chatgpt/commit/a12188b8bff24b04f678eb711463c2aad16d9866) changed a file under `skills/**`, which matches the workflow's push filter on gpt. A natural validation run is eligible. No manual dispatch is needed. Review it only when naturally available.
+
+- **2026-11-23 — Hosted retention validation:** The cleanup script and tests cover exact individual files in both archive folders. A hosted run of the schedule-only cleanup has not yet been observed. It runs on the schedule from main. No manual dispatch or user action is needed. Do not modify main.
 
 ## Reports
 - **2026-11-23 09:23 UTC — Central CI issue ledger completed:** Forward-only ingestion, schema v1.1.0, curated lifecycle handling, immutable evidence, and serialized publication are implemented. All 17 ledger regression tests, ingestion, and publication passed in hosted run [45142649454](https://github.com/dungnv2602/chatgpt/actions/runs/45142649454). The ledger contains one open high-severity publication finding. The task was archived and the board reconciled. [Archived task record](../archive/tasks/20261123-071000-centralized-ci-issue-ledger.md) · [Archive commit](https://github.com/dungnv2602/chatgpt/commit/42730933cde1061536a35ab641cda6d2560a17dd).
