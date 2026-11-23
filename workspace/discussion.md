@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 12:48 UTC — Begin attempt template review:** Review the single hard finding in `skills/drawing/assets/attempt-template.md` against the catalog and Drawing workflow. Preserve record, generation, and user-decision state separation.
+- **2026-11-23 12:52 UTC — Review Agent Skill template:** The attempt template has zero hard findings in the canonical report, so no edit is needed. Review the single finding in `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md` against its owner skill and catalog entry.
 
 ## Open Discussions
 
