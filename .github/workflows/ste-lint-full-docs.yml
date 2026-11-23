@@ -268,7 +268,7 @@ jobs:
           report_path = "lint_reports/latest-lint-report.md"
           with open(report_path, encoding="utf-8") as stream:
               markdown = stream.read()
-          coverage = markdown.split("## Exact Files Evaluated\\n", 1)[-1].split("\\n## ", 1)[0]
+          coverage = markdown.split("## Exact Files Evaluated\n", 1)[-1].split("\n## ", 1)[0]
           files_evaluated = [line[3:-1] for line in coverage.splitlines() if line.startswith("- `") and line.endswith("`")]
           data = {
               "schema_version": "1.0.0",
@@ -289,7 +289,7 @@ jobs:
           }
           with open(sys.argv[1], "w", encoding="utf-8") as stream:
               json.dump(data, stream, ensure_ascii=False, indent=2)
-              stream.write("\\n")
+              stream.write("\n")
           PY
           cp "$history/report.md" "$scope/latest-lint-report.md"
           cp "$history/report.json" "$scope/latest-lint-report.json"
@@ -307,7 +307,7 @@ jobs:
           index["runs"].sort(key=lambda row: (row["generated_at_utc"], row["run_id"]))
           with open(sys.argv[1], "w", encoding="utf-8") as stream:
               json.dump(index, stream, ensure_ascii=False, indent=2)
-              stream.write("\\n")
+              stream.write("\n")
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
