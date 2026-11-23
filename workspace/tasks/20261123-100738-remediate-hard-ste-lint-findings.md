@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-100738
 - **Created:** 2026-11-23 10:07 UTC
-- **Updated:** 2026-11-23 12:48 UTC
+- **Updated:** 2026-11-23 13:44 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -55,6 +55,14 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 - **Validation:** Use natural GitHub Actions runs. Do not manually dispatch or poll workflows.
 
 ## 6. Progress Log
+
+### 2026-11-23 13:44 UTC
+
+- **Action:** Completed source-level remediation of the single baseline hard finding in `skills/session-archiving/assets/session-brief-template.md`.
+- **Result:** Separated the five metadata fields with blank lines. This preserves each field and its value while preventing the linter from treating the metadata block as one prose sentence. Readback passed after commit `aaef77e998686cb6f67dc31858efb4c6afd4445d`. No local lint or tests were run.
+- **Decision required:** Source-level edits now address 142 of 155 baseline hard findings across all 21 affected files. The remaining 13 findings are in deliberate examples of prohibited wording in `skills/asd-ste100/SKILL.md`. The repository writing policy explicitly says not to rewrite examples that intentionally demonstrate a rule violation. Do not change these examples or the policy without explicit user direction.
+- **Next:** Ask the user whether to amend the policy to permit changes to these 13 examples, or preserve the examples and leave the task open with 13 hard findings.
+
 
 ### 2026-11-23 12:48 UTC
 
@@ -191,7 +199,7 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 7. Current State
 
-The approved task is In Progress and is the current execution. Source-level edits address 141 of the 155 baseline hard findings across 19 files. These include all 75 findings in the Document Type Catalog. In `skills/asd-ste100/SKILL.md`, two non-example findings have source-level edits. Thirteen findings remain in deliberate examples that the repository writing policy says to preserve. One additional single-finding file remains under review. Hosted validation remains pending. The 319 advisory findings remain out of scope.
+The approved task is In Progress and is the current execution. Source-level edits address 142 of the 155 baseline hard findings across all 21 affected files. These include all 75 findings in the Document Type Catalog. In `skills/asd-ste100/SKILL.md`, two non-example findings have source-level edits. Thirteen findings remain in deliberate examples that the repository writing policy says to preserve. No other non-example hard findings remain in the baseline set. Hosted validation remains pending. The 319 advisory findings remain out of scope.
 
 ## 8. Remaining Work
 
