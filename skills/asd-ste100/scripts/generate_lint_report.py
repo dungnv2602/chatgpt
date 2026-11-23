@@ -77,7 +77,8 @@ for record in records:
     lines.append("")
 lines += ["## Structured evidence", "", "The complete original per-file JSON payloads and normalized findings are in report.json.", ""]
 (out / "report.md").write_text("\n".join(lines), encoding="utf-8")
-index_path = out.parent / "index.json"
+scope_root = out.parent.parent
+index_path = scope_root / "index.json"
 index = json.loads(index_path.read_text(encoding="utf-8")) if index_path.exists() else {"schema_version": "1.0.0", "runs": []}
 entry = {key: data[key] for key in ("run_id", "run_number", "run_url", "commit_sha", "generated_at_utc", "status", "files_evaluated", "total_findings")}
 index["runs"] = [row for row in index["runs"] if row.get("run_id") != a.run_id] + [entry]
