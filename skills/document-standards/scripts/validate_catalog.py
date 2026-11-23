@@ -128,9 +128,10 @@ def validate_catalog(root: Path, catalog_path: Path) -> tuple[list[str], int, in
         for path_text in dict.fromkeys(row_paths):
             reference_count += 1
             path = Path(path_text)
+            raw_parts = path_text.split("/")
             if (
                 path.is_absolute()
-                or ".." in path.parts
+                or any(part in {"", ".", ".."} for part in raw_parts)
                 or not path.parts
                 or path.parts[0] not in ALLOWED_ROOTS
                 or path_text.strip() != path_text
@@ -138,8 +139,8 @@ def validate_catalog(root: Path, catalog_path: Path) -> tuple[list[str], int, in
                 errors.append(f"Line {line}: unsafe or out-of-scope path '{path_text}'.")
                 continue
             target = root / path
-            if not target.is_file() and not target.is_dir():
-                errors.append(f"Line {line}: referenced path does not exist: {path_text}.")
+            if not target.is_file():
+                errors.append(f"Line {line}: referenced file does not exist: {path_text}.")
 
         if is_template:
             if not any(
