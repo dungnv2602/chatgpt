@@ -445,6 +445,8 @@ def markdown_cell(value):
     for marker in ("|", chr(96), "*", "_", "[", "]", "(", ")", "<", ">", "!"):
         text = text.replace(marker, "\\" + marker)
     return text
+
+
 def finding_row(finding):
     evidence = finding.get("evidence") or []
     latest = evidence[-1] if evidence else {}
