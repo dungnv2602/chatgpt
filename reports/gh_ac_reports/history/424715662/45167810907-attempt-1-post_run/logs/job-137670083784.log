@@ -1,0 +1,90 @@
+Reject superseded runs and find lint baseline	Set up job	﻿2026-11-23T11:45:45.7800441Z Current runner version: '2.338.2'
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7840529Z ##[group]Runner Image Provisioner
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7842156Z Hosted Compute Agent
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7843198Z Version: 20261111.635
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7844300Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7845947Z Build Date: 2026-11-11T01:49:01Z
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7847424Z Worker ID: {502cc593-c67e-40b7-ab78-47c147c0efeb}
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7848884Z Region: westus
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7849945Z Cloud: Azure
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7850848Z ##[endgroup]
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7854515Z ##[group]Operating System
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7856358Z Ubuntu
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7857481Z 26.04.1
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7858420Z LTS
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7859351Z ##[endgroup]
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7860423Z ##[group]Runner Image
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7861623Z Image: ubuntu-26.04
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7862741Z Version: 20261116.202.1
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7864754Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7868234Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7870054Z ##[endgroup]
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7872136Z ##[group]GITHUB_TOKEN Permissions
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7875117Z Actions: write
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7876604Z Contents: read
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7877692Z Metadata: read
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7878699Z ##[endgroup]
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7882905Z Secret source: Actions
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7884546Z Cache mode: write
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.7886031Z Prepare workflow directory
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.8451382Z Prepare all required actions
+Reject superseded runs and find lint baseline	Set up job	2026-11-23T11:45:45.8558535Z Complete job name: Reject superseded runs and find lint baseline
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	﻿2026-11-23T11:45:46.0127350Z ##[group]Run set -euo pipefail
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0128239Z ^[[36;1mset -euo pipefail^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0128932Z ^[[36;1mif ! latest_run=$(gh run list \^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0129740Z ^[[36;1m  --repo "$GITHUB_REPOSITORY" \^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0130706Z ^[[36;1m  --workflow ".github/workflows/ste-lint-changed.yml" \^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0131595Z ^[[36;1m  --branch "$GITHUB_REF_NAME" \^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0132310Z ^[[36;1m  --event push \^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0132934Z ^[[36;1m  --limit 100 \^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0133642Z ^[[36;1m  --json databaseId,number \^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0134476Z ^[[36;1m  --jq 'max_by(.number).databaseId // empty' 2>/dev/null); then^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0135288Z ^[[36;1m  latest_run=""^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0136497Z ^[[36;1mfi^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0137242Z ^[[36;1mif [[ -n "$latest_run" && "$latest_run" != "$GITHUB_RUN_ID" ]]; then^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0138436Z ^[[36;1m  echo "A newer run ($latest_run) supersedes this run ($GITHUB_RUN_ID)."^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0139446Z ^[[36;1m  gh api --method POST \^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0140471Z ^[[36;1m    "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/cancel" >/dev/null^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0141377Z ^[[36;1m  exit 0^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0141902Z ^[[36;1mfi^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0142579Z ^[[36;1mif [[ -z "$latest_run" ]]; then^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0143492Z ^[[36;1m  echo "::warning::Could not identify the latest run. Continue with validation."^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0144423Z ^[[36;1mfi^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0145033Z ^[[36;1mecho "proceed=true" >> "$GITHUB_OUTPUT"^[[0m
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0518585Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0520153Z env:
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0526039Z   GH_TOKEN: ***
+Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T11:45:46.0526735Z ##[endgroup]
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	﻿2026-11-23T11:45:50.0557319Z ##[group]Run set -euo pipefail
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0557812Z ^[[36;1mset -euo pipefail^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0558138Z ^[[36;1mlast_success=$(gh run list \^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0558508Z ^[[36;1m  --repo "$GITHUB_REPOSITORY" \^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0558954Z ^[[36;1m  --workflow .github/workflows/ste-lint-changed.yml \^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0559390Z ^[[36;1m  --branch "$GITHUB_REF_NAME" \^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0559737Z ^[[36;1m  --event push \^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0560291Z ^[[36;1m  --status completed \^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0560613Z ^[[36;1m  --limit 100 \^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0560925Z ^[[36;1m  --json conclusion,headSha \^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0561410Z ^[[36;1m  --jq '[.[] | select(.conclusion == "success")][0].headSha // empty' || true)^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0561907Z ^[[36;1mif [[ -z "$last_success" ]]; then^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0562301Z ^[[36;1m  echo "full_audit=true" >> "$GITHUB_OUTPUT"^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0562684Z ^[[36;1m  exit 0^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0562947Z ^[[36;1mfi^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0563290Z ^[[36;1mcompare_status=$(gh api \^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0563755Z ^[[36;1m  "repos/$GITHUB_REPOSITORY/compare/$last_success...$GITHUB_SHA" \^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0564245Z ^[[36;1m  --jq '.status' 2>/dev/null || true)^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0564742Z ^[[36;1mif [[ "$compare_status" != "ahead" && "$compare_status" != "identical" ]]; then^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0565478Z ^[[36;1m  echo "::warning::The previous successful commit is missing or is not an ancestor. Run a full audit."^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0566435Z ^[[36;1m  echo "full_audit=true" >> "$GITHUB_OUTPUT"^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0566822Z ^[[36;1m  exit 0^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0567092Z ^[[36;1mfi^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0567418Z ^[[36;1mecho "base_sha=$last_success" >> "$GITHUB_OUTPUT"^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0567852Z ^[[36;1mecho "full_audit=false" >> "$GITHUB_OUTPUT"^[[0m
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0602503Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0602954Z env:
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0606683Z   GH_TOKEN: ***
+Reject superseded runs and find lint baseline	Find the last successful lint baseline	2026-11-23T11:45:50.0607015Z ##[endgroup]
+Reject superseded runs and find lint baseline	Complete job	﻿2026-11-23T11:45:51.8971060Z Evaluate and set job outputs
+Reject superseded runs and find lint baseline	Complete job	2026-11-23T11:45:51.8983952Z Set output 'proceed'
+Reject superseded runs and find lint baseline	Complete job	2026-11-23T11:45:51.8986110Z Set output 'full_audit'
+Reject superseded runs and find lint baseline	Complete job	2026-11-23T11:45:51.8987055Z Cleaning up orphan processes
