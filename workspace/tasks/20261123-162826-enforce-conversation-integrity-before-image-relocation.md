@@ -23,6 +23,7 @@ Create a task for this and proceed to work on it: Identify the problems in image
 ## 2. Subsequent Instructions
 
 - **2026-11-23:** The user directed that the task be created and execution begin immediately. The repository is dungnv2602/chatgpt, branch gpt, and is the sole source of truth.
+- **2026-11-24:** For images that cannot be classified, the user directed conversion to WebP using the conversion workflow. The user will perform relocation. The assistant may edit the index only when the user explicitly requests it.
 
 ## 3. Objective
 
@@ -49,6 +50,7 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 - Do not delete, rename, or move existing image bytes during the initial audit.
 - A conversation-integrity record may be Partial when source material is unavailable, but it must identify missing material and label editorial summaries honestly.
 - When evidence is unavailable, preserve the images in intake and report the blocker instead of weakening the gate.
+- Unclassified images may use a conversion-only workflow when requested. Preserve source PNGs, verify staged WebP derivatives, and do not relocate or update indexes. The user handles relocation. Edit an index only on explicit request.
 
 ## 6. Progress Log
 
@@ -90,6 +92,13 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 - **Result:** The GitHub content reader rejects non-UTF-8 files, returning a UTF-8 decoding error for PNG bytes. The raw image URL was unavailable through the accessible web reader. No pixels were inspected and no classification was inferred.
 - **Next:** Keep the seven files untouched and the hand-off Draft until they can be supplied through an image-capable inspection path or reconciled with additional retained provenance.
 
+### 2026-11-24 — Unclassified-image handling decision
+
+- **Action:** Applied the user's instruction to the future takeout procedure.
+- **Result:** Unclassified images use a separate conversion-only path. The source remains in intake. The WebP derivative is verified in staging. The normal provenance-gated processor is not used. The assistant does not relocate files or edit hand-off metadata, manifests, attempt records, daily indexes, or other indexes. The user performs relocation and may request a later index edit.
+- **References:** `images/takeout/README.md`; `skills/the-worker/references/image-provenance-and-webp.md`; `.github/workflows/convert-unclassified-takeout.yml`.
+- **Next:** Read back all revised workflow documents and the task record. Leave the existing seven-file conversion run to its natural workflow reporting. Do not claim conversion completion without observed evidence.
+
 ## 7. Current State
 
 The eighteen PNGs were imported into `images/takeout/` by commit `1192a4a53640b6188f3500abda75b1c9d5fe004d`. The evidence does **not** show final processor relocation: the current `HANDOFF.yml` remains `status: draft`, and all eighteen image files remain in the intake folder.
@@ -102,7 +111,8 @@ The hand-off now contains `source_asset_id` and `conversation_record` for the el
 
 ## 8. Remaining Work
 
-- Resolve the seven unclassified images by inspecting their actual pixels and comparing them with retained generation/session evidence. Do not guess based on filenames or chronology.
+- Keep the seven images unclassified unless reliable image and source evidence becomes available. Do not guess based on filenames or chronology.
+- Complete the conversion-only handling under the separate workflow. Preserve the source PNGs and leave all relocation and index edits to the user unless explicitly requested.
 - Keep the hand-off Draft until every item has valid source mapping and an approved destination/quarantine disposition.
 - Allow the existing hosted workflow to run naturally; do not manually dispatch or poll Actions.
 - Review the hosted test result only when it appears through the normal reporting path. Do not claim tests pass before that evidence exists.
