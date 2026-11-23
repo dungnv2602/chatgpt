@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 12:04 UTC — Remediate image-editing protocol:** Split the three long instructions and standardize check terminology. Preserve the prompt-only rule and all reference-role conditions.
+- **2026-11-23 12:08 UTC — Begin prompt-fidelity reference review:** Review the three hard findings in `skills/drawing/references/prompt-fidelity.md` against the full drawing workflow. Preserve user-authority and no-unrequested-restriction rules.
 
 ## Open Discussions
 
