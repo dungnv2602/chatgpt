@@ -28,12 +28,14 @@ GitHub Actions runs the scheduled archive-retention workflow.
 
 - Run the schedule from the repository default branch because GitHub scheduled events only run there.
 - Check out `gpt`, which is the working/source branch.
-- Delete the complete contents of `archive/tasks/` as one batch only after 14 days pass. Do not calculate per-record expiry.
-- Preserve `.gitkeep` and the task-board historical entries.
+- Read only `.github/archive-retention-index.json`. Never list or scan `archive/tasks/`.
+- Retain each indexed record for at least 90 days from its UTC archive timestamp.
+- Delete only exact indexed paths that have reached 90 days. Remove their index entries after processing.
+- Preserve `.gitkeep`. Unindexed legacy records remain protected and must not be discovered by a directory scan.
+- Allow only the native `schedule` event. The cleanup script must reject every other GitHub event.
 - After cleanup, atomically fast-forward `main` to the resulting `gpt` commit. Never force-push or create an independent cleanup commit on `main`.
 - Check that `main` is an ancestor of `gpt` before pushing. If the branches diverge, fail safely without updating either ref.
-- Keep the cleanup implementation reusable through `workflow_call` and operator-accessible through `workflow_dispatch`. A forced manual run must be an explicit input.
-- GitHub cron has no exact every-14-days syntax. Use a weekly schedule plus a committed UTC last-cleanup marker to enforce a minimum 14-day interval.
+- Use a weekly cron schedule. The retention index avoids a daily or per-file scheduled workflow and prevents routine archive scans.
 
 ## 3. Mandatory CI preflight and repair
 
