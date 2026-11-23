@@ -1,9 +1,9 @@
 # Latest Repository-wide Lint Report
 
-- **Run:** [#103](https://github.com/dungnv2602/chatgpt/actions/runs/45087654319)
-- **Date (UTC):** 2026-11-23 00:15:18
+- **Run:** [#104](https://github.com/dungnv2602/chatgpt/actions/runs/45102016340)
+- **Date (UTC):** 2026-11-23 02:45:45
 - **Branch:** gpt
-- **Commit:** [b96f4020e73f05bafbf0203bf2a6496b9181525f](https://github.com/dungnv2602/chatgpt/commit/b96f4020e73f05bafbf0203bf2a6496b9181525f)
+- **Commit:** [ee5a09d9b91a9439b90f524410d8fbcbedc0bc2f](https://github.com/dungnv2602/chatgpt/commit/ee5a09d9b91a9439b90f524410d8fbcbedc0bc2f)
 - **Trigger:** push
 
 This report is replaced by the next complete run. The generated report is excluded from subsequent lint source scans.
@@ -23,14 +23,14 @@ selftest OK
 **Status:** PASS
 
 ~~~text
-Scanned 142 active Markdown files (203 available as link targets) and 315 local Markdown links.
+Scanned 142 active Markdown files (203 available as link targets) and 314 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
 - **Technical Markdown files scanned:** 48
-- **Files with findings:** 38
-- **Total STE findings (hard and advisory):** 336
-- **Files failing the configured hard-finding threshold or execution:** 4
+- **Files with findings:** 39
+- **Total STE findings (hard and advisory):** 451
+- **Files failing the configured hard-finding threshold or execution:** 9
 - **Overall result:** FAIL
 
 ## STE-100 Findings by File
@@ -156,43 +156,146 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 #### `skills/conversation-mode/SKILL.md`
 
 ~~~text
-skills/conversation-mode/SKILL.md:88:91 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is ordered]
-skills/conversation-mode/SKILL.md:92:41 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is unresolved]
-skills/conversation-mode/SKILL.md:119:88 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is paused]
-skills/conversation-mode/SKILL.md:120:78 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has stopped]
-skills/conversation-mode/SKILL.md:120:108 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has proposed]
-skills/conversation-mode/SKILL.md:121:61 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
-skills/conversation-mode/SKILL.md:121:272 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is resolved]
-skills/conversation-mode/SKILL.md:136:63 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
-skills/conversation-mode/SKILL.md:141:36 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was encountered]
-skills/conversation-mode/SKILL.md:143:106 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was verified]
-skills/conversation-mode/SKILL.md:152:180 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is exceeded]
-skills/conversation-mode/SKILL.md:174:260 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
-skills/conversation-mode/SKILL.md:188:94 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has approved]
-skills/conversation-mode/SKILL.md:234:75 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are governed]
+skills/conversation-mode/SKILL.md:90:157 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are ordered]
+skills/conversation-mode/SKILL.md:96:230 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/conversation-mode/SKILL.md:97:60 synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time. [verify]
+skills/conversation-mode/SKILL.md:98:129 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/conversation-mode/SKILL.md:101:3 long-sentence: Sentence has 32 words (cap 25). Split it. [32 words]
+skills/conversation-mode/SKILL.md:101:95 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is paused]
+skills/conversation-mode/SKILL.md:101:112 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/conversation-mode/SKILL.md:106:41 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is unresolved]
+skills/conversation-mode/SKILL.md:133:88 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is paused]
+skills/conversation-mode/SKILL.md:134:78 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has stopped]
+skills/conversation-mode/SKILL.md:134:108 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has proposed]
+skills/conversation-mode/SKILL.md:135:61 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
+skills/conversation-mode/SKILL.md:135:272 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is resolved]
+skills/conversation-mode/SKILL.md:150:63 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
+skills/conversation-mode/SKILL.md:155:36 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was encountered]
+skills/conversation-mode/SKILL.md:157:106 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was verified]
+skills/conversation-mode/SKILL.md:166:180 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is exceeded]
+skills/conversation-mode/SKILL.md:192:260 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
+skills/conversation-mode/SKILL.md:206:94 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has approved]
+skills/conversation-mode/SKILL.md:233:126 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has been given]
+skills/conversation-mode/SKILL.md:233:130 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been given]
+skills/conversation-mode/SKILL.md:253:75 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are governed]
 
-14 violations (0 hard, baseline 3), 2689 words, 0.5 per 100 words
+22 violations (5 hard, baseline 3), 2965 words, 0.7 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
 #### `skills/document-standards/SKILL.md`
 
 ~~~text
-skills/document-standards/SKILL.md:148:37 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is defined]
+skills/document-standards/SKILL.md:142:288 synonym-rotation: 'validate' and 'check' name the same action. Pick one and use it every time. [validate]
+skills/document-standards/SKILL.md:144:163 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/SKILL.md:159:37 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is defined]
 
-1 violations (0 hard, baseline 0), 1070 words, 0.1 per 100 words
+3 violations (2 hard, baseline 0), 1220 words, 0.2 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
 #### `skills/document-standards/references/document-type-catalog.md`
 
 ~~~text
-skills/document-standards/references/document-type-catalog.md:41:139 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
-skills/document-standards/references/document-type-catalog.md:44:290 synonym-rotation: 'check' and 'validate' name the same action. Pick one and use it every time. [checks]
-skills/document-standards/references/document-type-catalog.md:57:23 synonym-rotation: 'confirm' and 'validate' name the same action. Pick one and use it every time. [confirmed]
-skills/document-standards/references/document-type-catalog.md:76:32 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is added]
+skills/document-standards/references/document-type-catalog.md:4:158 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:4:177 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [were excluded]
+skills/document-standards/references/document-type-catalog.md:27:215 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:28:139 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was found]
+skills/document-standards/references/document-type-catalog.md:29:196 long-sentence: Sentence has 27 words (cap 25). Split it. [27 words]
+skills/document-standards/references/document-type-catalog.md:29:299 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:32:207 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:33:239 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:33:459 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [being uploaded]
+skills/document-standards/references/document-type-catalog.md:36:277 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:42:155 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:42:276 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
+skills/document-standards/references/document-type-catalog.md:43:214 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is read]
+skills/document-standards/references/document-type-catalog.md:43:330 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:44:264 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:45:139 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
+skills/document-standards/references/document-type-catalog.md:47:169 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:47:307 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
+skills/document-standards/references/document-type-catalog.md:48:174 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:49:290 synonym-rotation: 'check' and 'validate' name the same action. Pick one and use it every time. [checks]
+skills/document-standards/references/document-type-catalog.md:52:254 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is generated]
+skills/document-standards/references/document-type-catalog.md:55:382 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:56:302 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:57:457 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:58:165 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
+skills/document-standards/references/document-type-catalog.md:77:39 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [were reviewed]
+skills/document-standards/references/document-type-catalog.md:81:111 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:81:139 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:81:157 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:81:187 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:81:214 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:81:240 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:81:326 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:81:394 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:82:54 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:82:264 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:82:318 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:82:435 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:82:474 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has been approved]
+skills/document-standards/references/document-type-catalog.md:82:478 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been approved]
+skills/document-standards/references/document-type-catalog.md:83:136 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are established]
+skills/document-standards/references/document-type-catalog.md:83:152 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:84:144 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:84:192 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:85:131 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is established]
+skills/document-standards/references/document-type-catalog.md:85:146 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:85:206 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is planned]
+skills/document-standards/references/document-type-catalog.md:85:217 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:86:199 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is planned]
+skills/document-standards/references/document-type-catalog.md:86:222 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:87:73 long-sentence: Sentence has 27 words (cap 25). Split it. [27 words]
+skills/document-standards/references/document-type-catalog.md:87:220 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:88:71 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:88:145 long-sentence: Sentence has 26 words (cap 25). Split it. [26 words]
+skills/document-standards/references/document-type-catalog.md:88:196 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:88:261 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is uploaded]
+skills/document-standards/references/document-type-catalog.md:88:368 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:96:293 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:98:41 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:98:60 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:98:226 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is justified]
+skills/document-standards/references/document-type-catalog.md:100:62 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:100:110 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:101:58 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:101:136 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:101:251 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:103:79 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:103:189 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:105:88 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:106:129 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was found]
+skills/document-standards/references/document-type-catalog.md:107:112 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:107:188 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:107:332 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:119:97 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:119:166 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:119:235 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:119:304 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:119:373 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:120:90 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:121:62 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:121:92 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:121:124 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:121:199 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are superseded]
+skills/document-standards/references/document-type-catalog.md:121:287 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:122:173 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:123:80 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:123:128 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:123:332 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:124:113 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:124:189 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:124:298 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/document-standards/references/document-type-catalog.md:128:57 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was required]
+skills/document-standards/references/document-type-catalog.md:133:73 synonym-rotation: 'repair' and 'fix' name the same action. Pick one and use it every time. [repair]
+skills/document-standards/references/document-type-catalog.md:134:67 synonym-rotation: 'confirm' and 'validate' name the same action. Pick one and use it every time. [confirms]
+skills/document-standards/references/document-type-catalog.md:134:124 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are permitted]
+skills/document-standards/references/document-type-catalog.md:138:32 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is added]
+skills/document-standards/references/document-type-catalog.md:146:185 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
 
-4 violations (2 hard, baseline 0), 817 words, 0.5 per 100 words
+97 violations (74 hard, baseline 0), 2695 words, 3.6 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -242,9 +345,19 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 #### `skills/drawing/assets/attempt-template.md`
 
 ~~~text
-skills/drawing/assets/attempt-template.md:21:37 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was retained]
+skills/drawing/assets/attempt-template.md:61:53 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was returned]
 
-1 violations (0 hard, baseline 0), 269 words, 0.4 per 100 words
+1 violations (0 hard, baseline 0), 593 words, 0.2 per 100 words
+Hedges/modality (may, might, could) are never flagged: confidence is content.
+~~~
+
+#### `skills/drawing/assets/daily-index-template.md`
+
+~~~text
+skills/drawing/assets/daily-index-template.md:5:1 long-sentence: Sentence has 26 words (cap 25). Split it. [26 words]
+skills/drawing/assets/daily-index-template.md:28:28 synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time. [verify]
+
+2 violations (2 hard, baseline 0), 214 words, 0.9 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -480,7 +593,7 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 skills/github-actions/SKILL.md:21:206 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are permitted]
 skills/github-actions/SKILL.md:23:59 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is provided]
 
-2 violations (0 hard, baseline 0), 2421 words, 0.1 per 100 words
+2 violations (0 hard, baseline 0), 2457 words, 0.1 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -552,16 +665,16 @@ skills/session-archiving/SKILL.md:122:41 passive-voice: Possible passive voice. 
 skills/session-archiving/SKILL.md:130:339 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
 skills/session-archiving/SKILL.md:130:408 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is provided]
 
-4 violations (1 hard, baseline 7), 2127 words, 0.2 per 100 words
+4 violations (1 hard, baseline 7), 2191 words, 0.2 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
 #### `skills/session-archiving/assets/session-brief-template.md`
 
 ~~~text
-skills/session-archiving/assets/session-brief-template.md:5:1 long-sentence: Sentence has 26 words (cap 25). Split it. [26 words]
+skills/session-archiving/assets/session-brief-template.md:5:1 long-sentence: Sentence has 32 words (cap 25). Split it. [32 words]
 
-1 violations (1 hard, baseline 0), 279 words, 0.4 per 100 words
+1 violations (1 hard, baseline 0), 288 words, 0.3 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -597,7 +710,7 @@ skills/session-archiving/references/archive-records-and-image-prompts.md:336:242
 skills/session-archiving/references/archive-records-and-image-prompts.md:338:35 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is stored]
 skills/session-archiving/references/archive-records-and-image-prompts.md:385:69 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is based]
 
-28 violations (1 hard, baseline 20), 4504 words, 0.6 per 100 words
+28 violations (1 hard, baseline 20), 4527 words, 0.6 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -637,10 +750,16 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~text
 skills/the-worker/SKILL.md:53:61 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is provided]
 skills/the-worker/SKILL.md:53:234 synonym-rotation: 'validate' and 'verify' name the same action. Pick one and use it every time. [validate]
-skills/the-worker/SKILL.md:69:56 synonym-rotation: 'check' and 'verify' name the same action. Pick one and use it every time. [check]
-skills/the-worker/SKILL.md:278:4 synonym-rotation: 'fetch' and 'retrieve' name the same action. Pick one and use it every time. [Fetch]
+skills/the-worker/SKILL.md:70:56 synonym-rotation: 'check' and 'verify' name the same action. Pick one and use it every time. [check]
+skills/the-worker/SKILL.md:70:111 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
+skills/the-worker/SKILL.md:267:168 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has been verified]
+skills/the-worker/SKILL.md:267:172 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been verified]
+skills/the-worker/SKILL.md:267:273 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/the-worker/SKILL.md:267:411 synonym-rotation: 'remove' and 'delete' name the same action. Pick one and use it every time. [remove]
+skills/the-worker/SKILL.md:284:4 synonym-rotation: 'fetch' and 'retrieve' name the same action. Pick one and use it every time. [Fetch]
+skills/the-worker/SKILL.md:285:188 synonym-rotation: 'modify' and 'change' name the same action. Pick one and use it every time. [modify]
 
-4 violations (3 hard, baseline 0), 2403 words, 0.2 per 100 words
+10 violations (6 hard, baseline 0), 2759 words, 0.4 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -648,19 +767,23 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 
 ~~~text
 workspace/README.md:45:22 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has started]
+workspace/README.md:55:1 long-sentence: Sentence has 26 words (cap 25). Split it. [26 words]
+workspace/README.md:55:361 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
 
-1 violations (0 hard, baseline 0), 394 words, 0.3 per 100 words
+3 violations (2 hard, baseline 0), 432 words, 0.7 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
 #### `workspace/TASK_TEMPLATE.md`
 
 ~~~text
-workspace/TASK_TEMPLATE.md:44:21 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was inspected]
-workspace/TASK_TEMPLATE.md:71:20 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was checked]
-workspace/TASK_TEMPLATE.md:72:23 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was checked]
+workspace/TASK_TEMPLATE.md:18:108 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is written]
+workspace/TASK_TEMPLATE.md:46:21 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was inspected]
+workspace/TASK_TEMPLATE.md:57:58 synonym-rotation: 'check' and 'verify' name the same action. Pick one and use it every time. [checks]
+workspace/TASK_TEMPLATE.md:73:20 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was checked]
+workspace/TASK_TEMPLATE.md:74:23 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [was checked]
 
-3 violations (0 hard, baseline 0), 281 words, 1.1 per 100 words
+5 violations (1 hard, baseline 0), 385 words, 1.3 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -671,7 +794,7 @@ workspace/task_board.md:7:110 passive-voice: Possible passive voice. Name the ac
 workspace/task_board.md:7:137 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is exceeded]
 workspace/task_board.md:7:162 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is preserved]
 
-3 violations (0 hard, baseline 0), 269 words, 1.1 per 100 words
+3 violations (0 hard, baseline 0), 257 words, 1.2 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
