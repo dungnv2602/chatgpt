@@ -254,6 +254,13 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **References:** Catalog commit `e556c606705eba49075793e2ce91c1cf2d53e5c6`; `novels/README.md`; `novels/WORKFLOW.md`; `drawings/2026-11-19/README.md`; `drawings/2026-11-19/attempt-01.md`; `drawings/history/successful-prompts.md`; `drawings/history/failed-prompts.md`; historical prompt logs and legacy Novel Version 1.0 templates; skill changelog and curriculum.
 - **Next:** Decide whether additional structural checks are justified, then obtain user approval for hosted validator integration.
 
+### 2026-11-23 01:34 UTC
+
+- **Action:** Completed source-level review of the catalog validator's rule coverage and added focused unit tests for its structural constraints.
+- **Result:** Added tests for malformed inventory rows, directory references, Embedded Contract owner/live-record requirements, Generator-owned regression-test references, Generator-owned Python authority, and named-template paths. The test file now contains 13 test methods. A manual source-level check found 34 catalog types, 76 exact references, no missing non-archive paths, no directory references, no malformed rows, and no class-rule inconsistencies. The archive README was fetched directly; no other archive content was read. These are read-back and source-level checks only; no repository script or test was run locally.
+- **References:** `skills/document-standards/scripts/test_validate_catalog.py` commit `18f9465128a5d79ab0aa879510c0ed32462df8b7`; catalog priority update `ce6594bb8f8ab0ca30b507f879d104e98ee6ae0c`.
+- **Next:** Obtain authorization to create a dedicated hosted workflow, then run the 13 tests and catalog validator on GitHub Actions.
+
 ## 7. Current State
 
 - The user approved the template-first policy.
@@ -271,24 +278,23 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - The three master catalogues have been reviewed. Images contains standalone prompt blocks, Poses mixes bullet ideas and prose, and Prompts groups scene-specific prompt records. Keep them as lightweight collections; no common entry schema is justified.
 - Archive policy and retention state are cataloged as embedded contracts; GitHub Actions workflow YAML is exempt under its external schema, and the repository-wide STE lint report is workflow-owned. The archive-retention workflow's manual and workflow-call force triggers remain an unresolved user policy question.
 - The catalog covers 34 document types and records representative current examples, legacy exceptions, and justified exemptions. Its Initial Inventory contains 76 exact file references, with no directory references or malformed table rows. The path-level tree inventory covers 199 supported text/configuration files outside `archive/`; content review remains representative, not exhaustive.
-- A catalog-integrity validator and regression tests now exist at `skills/document-standards/scripts/`. They check catalog structure and exact references, not document-body conformance. The validator now allows `.github` and `lint_reports`, with a regression test covering both roots. The validator and tests have not run on a hosted runner because workflow integration awaits user authorization.
+- A catalog-integrity validator and 13 regression tests now exist at `skills/document-standards/scripts/`. They check catalog structure, exact references, class requirements, and approved repository roots, not document-body conformance. The validator allows `.github` and `lint_reports`. The validator and tests have not run on a hosted runner because workflow integration awaits user authorization.
 - The GitHub Actions skill now permits exact, task-relevant archive reads and prohibits manual archive mutation. The Worker also requires the original archive-introduction commit when it reuses a prior archive copy.
 - The changed-document lint preflight repository-resolution defect has been fixed on `gpt`. Run #349 confirms that preflight, baseline lookup, and changed-file discovery succeed. The downstream STE lint step still fails on existing findings in the lint report and Agent Skill documentation; the updated remote-only policy files had no findings.
 
 ## 8. Remaining Work
 
-- Complete targeted content review for any remaining project-specific type not represented by a current or legacy sample; do not broaden archive reads.
-- Decide whether additional structural checks add value without duplicating generator-owned schemas.
-- Obtain separate user approval to integrate the catalog validator and tests into GitHub Actions.
-- After approval, run the validator and its tests on a hosted runner, then repair any failures.
+- Obtain separate user approval to create a dedicated GitHub Actions workflow for the catalog validator and its regression tests.
+- After approval, run all 13 tests and the catalog validator on a hosted runner, then repair any failures.
+- Verify the workflow, read back all changed paths, and update the task board and task record.
+- Keep the separate archive-retention trigger question open; do not change that workflow without explicit direction.
 
 ## 9. Next Actions
 
-1. Complete targeted content review for any remaining project-specific type not represented by a current or legacy sample; do not broaden archive reads.
-2. Decide whether additional structural checks add value without duplicating generator-owned schemas.
-3. Obtain separate user approval before creating or changing a GitHub Actions workflow for catalog-validator integration.
-4. After approval, integrate the validator and tests into an appropriate hosted workflow and review the run result.
-5. Update the catalog and task record with verified execution results.
+1. Obtain explicit approval to create `.github/workflows/validate-document-standards.yml` for hosted catalog validation.
+2. After approval, run `python -m unittest discover -s skills/document-standards/scripts -p 'test_validate_catalog.py' -v` and `python skills/document-standards/scripts/validate_catalog.py --root .` on GitHub Actions.
+3. Repair any failures and verify the completed workflow run.
+4. Read back all changed paths, update the task board, and record the verified result.
 
 ## 10. References
 
@@ -382,6 +388,10 @@ Establish and enforce a repository-wide template-first policy for recurring docu
 - **Method:** Enumerated the current Git tree for Markdown, YAML, JSON, CSV, and TOML files while excluding `archive/`; sampled representative legacy and current records by project area.
 - **Result:** 199 supported text/configuration paths were enumerated: drawings 97, skills 51, novels 33, .github 6, workspace 5, images 3, master 3, and lint_reports 1. The catalog contains 34 document types and 76 exact references.
 - **Limitations:** Path-level inventory is complete for these extensions; content review is representative, not exhaustive. No broad archive scan was performed.
+- **Check:** Catalog validator rule coverage.
+- **Method:** Read back the validator and test source; count test methods; compare catalog rows with the validator's Embedded Contract, Schema required, Generator-owned, and Template required rules.
+- **Result:** 13 test methods cover valid classes, missing paths, duplicate types, unknown classes, required regression tests, approved roots, malformed rows, directory references, Embedded Contract paths, Generator-owned requirements, template naming, and path traversal.
+- **Limitations:** Tests were not executed. A GitHub Actions workflow must be authorized before hosted execution.
 - **Check:** Representative record review and catalog reference update.
 - **Method:** Read the exact representative records and templates, read back the revised skill, templates, and catalog, and fetched all 10 newly added exact file references.
 - **Result:** The reviewed legacy records remain unchanged. The Initial Inventory contains 51 exact references; no directory references remain in that table. All 10 newly added file references exist.
