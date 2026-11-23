@@ -424,6 +424,8 @@ class LedgerTests(unittest.TestCase):
             self.assertIn(group, content, relative)
         action = (root / "reports/gh_ac_reports/actions/capture/action.yml").read_text(encoding="utf-8")
         sweep = (root / ".github/workflows/gh-actions-diagnostics.yml").read_text(encoding="utf-8")
+        standards = (root / ".github/workflows/validate-document-standards.yml").read_text(encoding="utf-8")
+        lint_changed = (root / ".github/workflows/ste-lint-changed.yml").read_text(encoding="utf-8")
         self.assertIn("Update central CI issue ledger", action)
         publish_paths = "git add -A -- reports/gh_ac_reports/ reports/triage/ workspace/tasks/ workspace/task_board.md"
         self.assertIn(publish_paths, action)
@@ -431,6 +433,10 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("- 'reports/triage/ledger.json'", sweep)
         self.assertIn("- 'workspace/tasks/**'", sweep)
         self.assertIn("- 'workspace/task_board.md'", sweep)
+        self.assertIn("      - '!workspace/tasks/**'", standards)
+        self.assertIn("      - '!workspace/task_board.md'", standards)
+        self.assertIn("      - '!workspace/tasks/**'", lint_changed)
+        self.assertIn("      - '!workspace/task_board.md'", lint_changed)
         self.assertIn("Ingest centralized CI issues", sweep)
 
     def test_atomic_write_replaces_file_without_temp_remnants(self):
