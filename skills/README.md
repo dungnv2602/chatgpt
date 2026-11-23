@@ -50,8 +50,6 @@ Do not treat this index as permission to load every skill. Follow each skill's a
 
 ## Compatibility entry points
 
-[conversation-mode/SKILL.md](conversation-mode/SKILL.md) remains as a compatibility pointer. Its operational rules are part of The Worker and must not be loaded separately.
-
 ## Technical documentation standard
 
 All skill documentation and technical documentation must follow the [repository ASD-STE100 policy](asd-ste100/references/repository-writing-policy.md). Use the correct mode for the document type. Preserve meaning and technical precision.
