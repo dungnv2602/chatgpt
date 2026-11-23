@@ -1,12 +1,17 @@
 # Current Step
 
-- **2026-11-23 01:13 UTC —** Review representative records for catalog types not yet covered by the sample audit. Record only evidenced legacy exceptions; preserve existing records and do not modify archived content.
+- **2026-11-23 01:13 UTC —** Apply targeted field-contract clarifications to the Document Standards skill and novel templates. Update the catalog with the representative records reviewed and remove the completed test-review gap.
 
 ## Open Discussions
 
 _No open discussions._
 
 ## Reports
+
+### 2026-11-23 01:13 UTC — Representative document review
+
+- **Result:** Reviewed the active Novel-02 open-discussion register and development outline, three legacy Novel-01 illustration notes, historical conversation-integrity and session-summary records, and successful/failure drawing-pattern examples. The Novel-01 illustration notes are Version 1.0; the Novel-02 records use Version 1.1. Existing historical records remain unchanged. No current character-profile or standalone novel illustration-prompt example was found in the inspected novel directories.
+- **References:** `novels/Novel-02/open-discussion.md`; `novels/Novel-02/planning/relationship-progression.md`; `novels/Novel-01/Arc-01/Scene-002/illustrations/`; `drawings/history/2026-11-12-conversation-integrity.md`; `drawings/history/2026-11-12-summary.md`; `skills/drawing/references/patterns/`.
 
 ### 2026-11-23 00:56 UTC — Image takeout regression tests
 
