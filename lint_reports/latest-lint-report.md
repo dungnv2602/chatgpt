@@ -1,9 +1,9 @@
 # Latest Repository-wide Lint Report
 
-- **Run:** [#104](https://github.com/dungnv2602/chatgpt/actions/runs/45102016340)
-- **Date (UTC):** 2026-11-23 02:45:45
+- **Run:** [#106](https://github.com/dungnv2602/chatgpt/actions/runs/45107478771)
+- **Date (UTC):** 2026-11-23 03:41:57
 - **Branch:** gpt
-- **Commit:** [ee5a09d9b91a9439b90f524410d8fbcbedc0bc2f](https://github.com/dungnv2602/chatgpt/commit/ee5a09d9b91a9439b90f524410d8fbcbedc0bc2f)
+- **Commit:** [c69eda17448c6445e35f746f6409df0996f78983](https://github.com/dungnv2602/chatgpt/commit/c69eda17448c6445e35f746f6409df0996f78983)
 - **Trigger:** push
 
 This report is replaced by the next complete run. The generated report is excluded from subsequent lint source scans.
@@ -29,8 +29,8 @@ Found 0 unresolved local Markdown targets or anchors.
 
 - **Technical Markdown files scanned:** 48
 - **Files with findings:** 39
-- **Total STE findings (hard and advisory):** 451
-- **Files failing the configured hard-finding threshold or execution:** 9
+- **Total STE findings (hard and advisory):** 453
+- **Files failing the configured hard-finding threshold or execution:** 10
 - **Overall result:** FAIL
 
 ## STE-100 Findings by File
@@ -81,7 +81,7 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 #### `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md`
 
 ~~~text
-skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md:39:8 synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time. [Verify]
+skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md:38:8 synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time. [Verify]
 
 1 violations (1 hard, baseline 0), 166 words, 0.6 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
@@ -592,8 +592,10 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~text
 skills/github-actions/SKILL.md:21:206 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [are permitted]
 skills/github-actions/SKILL.md:23:59 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is provided]
+skills/github-actions/SKILL.md:33:40 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [have reached]
+skills/github-actions/SKILL.md:33:62 synonym-rotation: 'remove' and 'delete' name the same action. Pick one and use it every time. [Remove]
 
-2 violations (0 hard, baseline 0), 2457 words, 0.1 per 100 words
+4 violations (1 hard, baseline 0), 2481 words, 0.2 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -660,12 +662,12 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 #### `skills/session-archiving/SKILL.md`
 
 ~~~text
-skills/session-archiving/SKILL.md:68:90 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is known]
-skills/session-archiving/SKILL.md:122:41 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is mentioned]
-skills/session-archiving/SKILL.md:130:339 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
-skills/session-archiving/SKILL.md:130:408 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is provided]
+skills/session-archiving/SKILL.md:71:90 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is known]
+skills/session-archiving/SKILL.md:125:41 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is mentioned]
+skills/session-archiving/SKILL.md:133:339 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/session-archiving/SKILL.md:133:408 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is provided]
 
-4 violations (1 hard, baseline 7), 2191 words, 0.2 per 100 words
+4 violations (1 hard, baseline 7), 2234 words, 0.2 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
@@ -748,18 +750,18 @@ Hedges/modality (may, might, could) are never flagged: confidence is content.
 #### `skills/the-worker/SKILL.md`
 
 ~~~text
-skills/the-worker/SKILL.md:53:61 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is provided]
-skills/the-worker/SKILL.md:53:234 synonym-rotation: 'validate' and 'verify' name the same action. Pick one and use it every time. [validate]
-skills/the-worker/SKILL.md:70:56 synonym-rotation: 'check' and 'verify' name the same action. Pick one and use it every time. [check]
-skills/the-worker/SKILL.md:70:111 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
-skills/the-worker/SKILL.md:267:168 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has been verified]
-skills/the-worker/SKILL.md:267:172 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been verified]
-skills/the-worker/SKILL.md:267:273 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
-skills/the-worker/SKILL.md:267:411 synonym-rotation: 'remove' and 'delete' name the same action. Pick one and use it every time. [remove]
-skills/the-worker/SKILL.md:284:4 synonym-rotation: 'fetch' and 'retrieve' name the same action. Pick one and use it every time. [Fetch]
-skills/the-worker/SKILL.md:285:188 synonym-rotation: 'modify' and 'change' name the same action. Pick one and use it every time. [modify]
+skills/the-worker/SKILL.md:54:61 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is provided]
+skills/the-worker/SKILL.md:54:234 synonym-rotation: 'validate' and 'verify' name the same action. Pick one and use it every time. [validate]
+skills/the-worker/SKILL.md:71:56 synonym-rotation: 'check' and 'verify' name the same action. Pick one and use it every time. [check]
+skills/the-worker/SKILL.md:71:111 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [is needed]
+skills/the-worker/SKILL.md:268:168 present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag). [has been verified]
+skills/the-worker/SKILL.md:268:172 passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. [been verified]
+skills/the-worker/SKILL.md:268:273 semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences. [;]
+skills/the-worker/SKILL.md:268:411 synonym-rotation: 'remove' and 'delete' name the same action. Pick one and use it every time. [remove]
+skills/the-worker/SKILL.md:286:5 synonym-rotation: 'fetch' and 'retrieve' name the same action. Pick one and use it every time. [Fetch]
+skills/the-worker/SKILL.md:287:188 synonym-rotation: 'modify' and 'change' name the same action. Pick one and use it every time. [modify]
 
-10 violations (6 hard, baseline 0), 2759 words, 0.4 per 100 words
+10 violations (6 hard, baseline 0), 2834 words, 0.4 per 100 words
 Hedges/modality (may, might, could) are never flagged: confidence is content.
 ~~~
 
