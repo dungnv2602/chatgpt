@@ -26,6 +26,7 @@ This boundary applies to every future task and every tool call, not only archivi
   - `skills/` — reusable skills and supporting references
   - `workspace/` — active task board and task records
   - `archive/` — time-limited archive of completed and cancelled task records
+  - `.github/archive-retention-index.json` — exact task archive paths and UTC timestamps only
 - Read and write files only by exact paths beginning with one of those approved directory names.
 - Do not recreate the obsolete `ChatGPT/` wrapper or consult former paths from the previous repository layout.
 - Do not use repository-wide code search or recursive root-tree listings. Use exact paths and narrowly scoped directory listings within approved project directories.
