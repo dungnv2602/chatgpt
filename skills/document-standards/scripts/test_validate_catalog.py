@@ -57,8 +57,6 @@ class CatalogValidatorTests(unittest.TestCase):
             "`images/example/README.md` and `skills/example/SKILL.md` | Image fixture. |\n"
             "| `novels/*.md` | Embedded contract | "
             "`novels/WORKFLOW.md` and `skills/example/SKILL.md` | Novel fixture. |\n"
-            "| `novels/templates/*.md` | Exempt | "
-            "`novels/WORKFLOW.md` | Template-source fixture. |\n"
             + "".join(extra_coverage)
         )
         self.catalog.write_text(
@@ -112,6 +110,9 @@ class CatalogValidatorTests(unittest.TestCase):
             "`novels/templates/scene-template.md` | Project-owned. |",
             "| Workspace task | Template required | "
             "`workspace/TASK_TEMPLATE.md` | Shared workspace template. |",
+        ], [
+            "| `novels/templates/*.md` | Exempt | "
+            "`novels/WORKFLOW.md` | Template-source fixture. |",
         ])
         errors, row_count, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
