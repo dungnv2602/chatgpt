@@ -163,7 +163,25 @@ Refresh the skill and its supporting references when the user asks for an instru
 
 This session-level loading cadence does not reduce any per-attempt requirement below. Before each generation or edit, review the relevant prompt history. Prepare and commit the exact authored prompt, then check that commit. Generate or edit only after that check. Record the actual outcome.
 
-**Mandatory takeout hand-off closeout:** After every successful image-generation call, capture the returned outputs and their order, update the attempt record, and prepare or update `images/takeout/HANDOFF.yml` for every returned image intended for repository retention. Do this in the same generation closeout, not as a later optional task and not only after user approval. Use the exact uploaded intake filename once the user uploads the original; map it to the attempt/output only from direct generation-time association, native metadata, or a documented corroborating source. Read the attempt prompt and output record before writing title, attempt, destination, output ID, native IDs, approval status, mapping evidence, and generation-time SHA-256 when available. Never guess an association from chronology or a filename. If the upload has not arrived, preserve a pending hand-off task and tell the user that the image must be uploaded before its exact source filename can be entered. If any mapping is uncertain, record it conservatively and leave the batch in `draft`. Before setting `ready`, verify that every top-level supported intake image is listed exactly once, every item has a valid destination and required attempt metadata, and no placeholders remain. Do not run conversion while the batch is incomplete. After the Action succeeds, read back the reports, manifest, attempt records, README, and published original/WebP blobs.
+**Mandatory takeout hand-off closeout:**
+
+- After every successful image-generation call, capture the returned outputs and their order.
+- Update the attempt record.
+- Prepare or update `images/takeout/HANDOFF.yml` for every returned image intended for repository retention.
+- Complete this work in the same generation closeout. Do not defer it or wait for user approval.
+- Use the exact uploaded intake filename after the user uploads the original.
+- Map it to the attempt/output only from direct generation-time association, native metadata, or a documented corroborating source.
+- Read the attempt prompt and output record first.
+- Then write the title, attempt, destination, output ID, native IDs, approval status, mapping evidence, and generation-time SHA-256 when available.
+- Never guess an association from chronology or a filename.
+- If the upload has not arrived, preserve a pending hand-off task.
+- Tell the user to upload the image before you enter its exact source filename.
+- If any mapping is uncertain, record it conservatively and leave the batch in `draft`.
+- Before you set `ready`, check that every top-level supported intake image is listed exactly once.
+- Check that every item has a valid destination and required attempt metadata.
+- Check that no placeholders remain.
+- Do not run conversion while the batch is incomplete.
+- After the Action succeeds, read back the reports, manifest, attempt records, README, and published original/WebP blobs.
 
 
 ### Pattern consultation checkpoint
@@ -240,7 +258,8 @@ The user's opening brief for a specific drawing session is the source of truth f
    exact edit source. A historical image is not an active reference merely
    because it is stored, linked, approved, or previously used. A generation ID
    or filename is not an attachment.
-8. **Prompt-only continuation and adjustment rule:** When the user continues
+8. **Prompt-only continuation and adjustment rule:**
+   When the user continues
    a series or asks to adjust an existing result, locate the authoritative
    successful authored prompt that produced the target. Use that prompt as the
    sole visual baseline, then revise only the requested details. Never ask the
@@ -254,13 +273,12 @@ The user's opening brief for a specific drawing session is the source of truth f
    the smallest relevant passage. Do not paraphrase, summarize, rewrite, or
    reconstruct the prompt from notes. Do not replace its wording with a
    description of what the prompt says.
-10. **Keep all meta-references out of the generation prompt:** Never mention
-    attempt numbers, file names, folder paths, repository records, prompt
-    records, prompt IDs, generation IDs, source labels, or instructions to
-    retrieve or reuse external text. Do not refer to a prompt, earlier wording,
-    previous instructions, or another record. Do not write "as described in the
-    previous prompt", "same as before", or equivalent wording. The tool needs
-    the actual visual instructions, not references to inaccessible context.
+10. **Keep all meta-references out of the generation prompt:**
+    Never mention attempt numbers, file names, folder paths, repository records, prompt records, prompt IDs, generation IDs, or source labels.
+    Do not include instructions to retrieve or reuse external text.
+    Do not refer to a prompt, earlier wording, previous instructions, or another record.
+    Do not write "as described in the previous prompt", "same as before", or equivalent wording.
+    The tool needs the actual visual instructions, not references to inaccessible context.
     Keep all provenance and workflow details in the archive only.
 11. **Keep image references out of the next prompt:** Write the revised prompt
     as a self-contained generation prompt. Do not refer to an image, source
@@ -269,11 +287,7 @@ The user's opening brief for a specific drawing session is the source of truth f
     the image", "use the attached image", or "preserve the image". The prompt
     must describe the intended final visual result directly and must not depend
     on an attachment or external record.
-12. If the successful prompt cannot be recovered, use the active session brief
-    and the available authoritative attempt records. Disclose that the prompt
-    record is missing or incomplete; do not ask the user for an image as a
-    substitute. Ask a question only if an essential creative requirement cannot
-    be resolved from the brief or prompt history.
+12. If the successful prompt cannot be recovered, use the active session brief and the available authoritative attempt records. Disclose that the prompt record is missing or incomplete. Do not ask the user for an image as a substitute. Ask a question only if an essential creative requirement cannot be resolved from the brief or prompt history.
 13. If the current-session brief conflicts with a successful historical prompt,
     preserve the user's current brief. Use the old prompt only as a technical
     wording aid for compatible details. Do not import its outdated appearance,
@@ -350,8 +364,7 @@ Before every generation or edit attempt:
    Preserve native IDs, mapping evidence, asset paths, hashes, and unavailable
    values accurately.
 10. Commit the completed attempt record to branch `gpt` before generation.
-11. Retrieve and check the committed record. Confirm that the copyable prompt
-    matches the exact authored text to be submitted before calling the image tool.
+11. Retrieve and check the committed record. Check that the copyable prompt matches the exact authored text to be submitted before calling the image tool.
 
 For every illustration belonging to a named novel scene, keep a convenient
 scene-local prompt record beside its illustration note:
@@ -376,10 +389,7 @@ direction rather than claiming it is verbatim internal wording.
 
 ### D. Use image references honestly
 
-For a new drawing task that is not an adjustment of an existing result, a
-reference image may be used only when the user explicitly assigns it a role in
-the active session. Determine whether that role is identity, composition, or
-style. Use the supported reference mechanism when the task requires it.
+This rule applies to new drawing tasks, not adjustments of existing results. Use a reference image only when the user explicitly assigns it a role in the active session. Determine whether the role is identity, composition, or style. Use the supported reference mechanism when the task requires it.
 
 **Adjustment requests are governed by Section 5 and the mandatory prompt-only
 protocol.** Never attach or use the existing result as a source or reference
@@ -455,14 +465,14 @@ only what is needed, and explicitly exclude rejected additions or drift.
 
 **Mandatory workflow: successful authored prompt → minimal prompt revision → fresh generation.**
 
-Whenever the user asks to adjust, revise, refine, or change an existing result, use the exact successful authored prompt that produced that result as the sole baseline. Revise the prompt and generate a new result. This is the required method, not an optional preference.
+When the user asks to adjust, revise, refine, or change an existing result, use the successful authored prompt that produced it as the sole baseline. Revise the prompt and generate a new result. This is the required method, not an optional preference.
 
 1. Locate and verify the exact successful authored prompt assigned as the baseline.
 2. Copy the complete prompt verbatim. Do not paraphrase, summarize, reconstruct, or rewrite it.
 3. Apply only the user's requested changes directly to the copied text. Preserve every other word, order, and detail.
 4. Remove or amend only text that the user's latest instruction changes. Do not add unrelated improvements.
-5. Keep all archival and workflow metadata out of the submitted prompt. Never include attempt numbers, file names, paths, repository or prompt-record references, generation IDs, retrieval instructions, or references to a prompt, earlier wording, previous instructions, or another record. Do not write "as described in the previous prompt", "same as before", or equivalent wording.
-6. Keep all image references and editing-operation language out of the submitted prompt. Describe the final visual result directly; do not refer to an image, source image, previous image, attachment, or edit operation.
+5. Keep all archival and workflow metadata out of the submitted prompt. Never include attempt numbers, file names, paths, repository references, or prompt-record references. Also exclude generation IDs and retrieval instructions. Do not refer to a prompt, earlier wording, previous instructions, or another record. Do not write "as described in the previous prompt", "same as before", or equivalent wording.
+6. Keep all image references and editing-operation language out of the submitted prompt. Describe the final visual result directly. Do not refer to an image, source image, previous image, attachment, or edit operation.
 7. Never request, attach, pass, or use an existing image as the base or reference for an adjustment, even if it is present in the conversation.
 8. Generate a fresh result from the revised prompt. Record it as a prompt-based fresh generation. Do not claim direct-edit or source-linked provenance.
 9. Inspect the result against the assigned prompt and requested changes. Record deviations and the actual outcome.
