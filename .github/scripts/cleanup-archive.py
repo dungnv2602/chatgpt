@@ -74,8 +74,11 @@ def clean_due_records(index_path: Path, repository_root: Path, now: datetime) ->
     targets = []
     for path in due:
         target = repository_root / PurePosixPath(path)
-        if target.is_symlink():
-            raise ValueError(f"Refusing to delete a symlink: {path}")
+        cursor = repository_root
+        for component in PurePosixPath(path).parts:
+            cursor = cursor / component
+            if cursor.is_symlink():
+                raise ValueError(f"Refusing to follow a symlink in indexed path: {path}")
         if target.exists() and not target.is_file():
             raise ValueError(f"Indexed archive path is not a regular file: {path}")
         targets.append((path, target))
