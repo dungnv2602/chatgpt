@@ -1,8 +1,6 @@
 ## Current Step
 
-- **2026-11-23 07:52 UTC — Session initialization and task reprioritization:** User invoked `start session`, selected Condensed Mode, and explicitly directed work to continue with the centralized CI issue ledger. The startup notice precedes foundational retrieval. The existing diagnostic-report task remains open with its natural-run validation/capture follow-up; this explicit reprioritization authorizes switching without claiming that task is Done. Work remains restricted to `gpt`.
-
-- **2026-11-23 — Validate serialized report publication:** All six source-workflow finalizers now share the backfill collector's non-cancelling concurrency group. Hosted diagnostics run [45129646663](https://github.com/dungnv2602/chatgpt/actions/runs/45129646663) completed successfully; all 12 reporter tests and all 7 shared archive-retention tests passed, and the sweep published four captures. The three earlier exact-run recaptures are complete and their request files are processed. Remaining validation: obtain a successful natural Document Standards run after the catalog/report-root corrections. Five source runs remain pending for later post-run capture. Do not poll, manually dispatch the schedule-only cleanup, or modify `main`.
+- **2026-11-23 07:52 UTC — Inspect ledger implementation contracts:** Foundational initialization passed. Inspect the active task dependencies, lint and Actions report schemas, finding fingerprints, report indexes, publication workflows, and triage schema. Define a safe forward-only ingestion design. Keep all reads and writes within approved project directories on `gpt`.
 
 ## Open Discussions
 
