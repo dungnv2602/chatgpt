@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 13:24 UTC — Standardize series confirmation terminology:** Use `Confirm` consistently for source-asset confirmation and change `read-back check` to `read-back confirmation`. Preserve source-linkage and user-authority requirements.
+- **2026-11-23 13:28 UTC — Begin archive records reference review:** Review the single hard finding in `skills/session-archiving/references/archive-records-and-image-prompts.md` against the archive lifecycle contract. Preserve exact read, retention, and immutability boundaries.
 
 ## Open Discussions
 
