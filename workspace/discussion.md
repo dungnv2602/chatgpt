@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 10:18 UTC — Switch to approved hard STE lint remediation:** Record the hosted cancellation-fix validation, preserve non-blocking follow-ups, and select task 20261123-100738 for execution.
+- **2026-11-23 10:24 UTC — Activate approved lint-remediation task:** Move task 20261123-100738 to Current Execution, retain task 20261123-054904 as In Progress pending its independent follow-ups, and prepare the first source-review batch.
 
 ## Open Discussions
 
