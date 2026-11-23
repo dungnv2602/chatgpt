@@ -52,9 +52,9 @@ Do not create a second template when an owning workflow already defines the requ
 
 ## Validation coverage limits
 
-The processor validates the hand-off when it processes a ready batch. Its regression suite covers important success and failure paths.
+The processor validates the hand-off when it processes a ready batch. Its regression suite covers important success and failure paths. Field-level cases now check invalid asset IDs, generation hashes, internal IDs, native IDs, approval values, and mapping evidence. A drawing-session upload test also checks that provenance metadata reaches the generated manifest. Existing tests cover manifest backfill, custom-column preservation, published hashes, URLs, and attempt links.
 
-The inventory has not confirmed a dedicated test for every optional field, every invalid value, or every interaction between fields. Do not claim exhaustive schema coverage.
+The suite does not test every invalid value or every interaction between fields. Do not claim exhaustive schema coverage. The processor and its tests remain the schema authority. Do not create a second hand-off or manifest schema.
 
 The processor and its tests remain the authority for the current YAML and CSV formats. A separate schema file is not required unless another consumer needs it or the processor adopts it.
 
