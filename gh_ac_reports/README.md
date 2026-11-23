@@ -22,7 +22,7 @@ This directory is the review surface for GitHub Actions execution failures and o
 
 ## Capture stages
 
-- pre_finalizer is captured by a reusable workflow after the source jobs finish. The parent workflow is still in progress. The report records the observed status, finished source jobs, and a projected conclusion. It does not invent a final conclusion.
+- pre_finalizer is captured by the local composite action in a normal diagnostics job after the source jobs finish. The parent workflow is still in progress. The report records the observed status, finished source jobs, and a projected conclusion. It does not invent a final conclusion.
 - post_run is captured by the push-driven sweep after GitHub marks the source run completed. It records the actual conclusion. It is a separate immutable capture. It does not overwrite pre_finalizer evidence.
 
 The sweep stores pending run IDs for queued, running, or incomplete captures. It checks pending IDs during a later sweep. It also discovers runs created since the bootstrap watermark, including tag and scheduled runs. A request file can capture an older run.
@@ -53,11 +53,11 @@ The collector redacts common token, authorization, password, and cloud-key patte
 
 ## Coverage on branch gpt
 
-Each source workflow calls a local composite action from a normal diagnostics job marked `continue-on-error: true`. This keeps report generation outside the source validation result. The push-triggered sweep backfills completed runs and catches failures when the finalizer does not run. It does not rely on a default-branch observer or scheduled trigger.
+Each source workflow runs a normal diagnostics job with job-level `continue-on-error: true`. That job checks out branch `gpt` and calls `gh_ac_reports/actions/capture`, a local composite action. This keeps report generation outside the source validation result. The separate push-triggered sweep backfills completed runs and catches failures when the finalizer does not run. It does not rely on a default-branch observer or scheduled trigger.
 
 The repository default branch is main. GitHub only starts workflow_run and schedule observers when the workflow file exists on the default branch. This implementation does not change main. A workflow that fails before any job starts is discovered on a later gpt push or by a request file. Instant capture of that case needs a default-branch observer or an external GitHub App webhook.
 
-When a new workflow is added, call ./.github/workflows/gh-actions-diagnostics.yml from an always-running final job. The push sweep still backfills runs when the finalizer does not run.
+When a new workflow is added, append a normal job that needs the source jobs, uses `if: always()` and job-level `continue-on-error: true`, checks out `gpt`, and calls `./gh_ac_reports/actions/capture`. The push sweep still backfills runs when the finalizer does not run.
 
 ## Relationship to lint reports
 
