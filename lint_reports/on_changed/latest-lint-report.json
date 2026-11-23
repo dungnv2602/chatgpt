@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45122653704",
-  "run_number": 429,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45122653704",
+  "run_id": "45123002601",
+  "run_number": 430,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123002601",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "535b8052bf1e33cbb04fc19d965ec5e056981959",
+  "commit_sha": "a496eb8a30dba75ddc52f57d7d0f814da26ba702",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T06:14:00.584552+00:00",
+  "generated_at_utc": "2026-11-23T06:17:02.949766+00:00",
   "status": "Failed",
-  "linter_source_sha": "535b8052bf1e33cbb04fc19d965ec5e056981959",
+  "linter_source_sha": "a496eb8a30dba75ddc52f57d7d0f814da26ba702",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -1388,7 +1388,7 @@
       "count": 6,
       "hard_count": 3,
       "baseline": 0,
-      "words": 2475,
+      "words": 2465,
       "per_100_words": 0.2,
       "path": "skills/github-actions/SKILL.md",
       "exit_code": 1
@@ -4843,7 +4843,7 @@
       "count": 8,
       "hard_count": 0,
       "baseline": 0,
-      "words": 796,
+      "words": 841,
       "per_100_words": 1.0,
       "path": "gh_ac_reports/README.md",
       "exit_code": 0
@@ -5410,7 +5410,7 @@
       "match": "28 words",
       "message": "Sentence has 28 words (cap 25). Split it.",
       "fingerprint": "76c645f8b8d79e0e8da99700",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
@@ -6268,7 +6268,7 @@
       "match": "26 words",
       "message": "Sentence has 26 words (cap 25). Split it.",
       "fingerprint": "7d97b46795e61a4443970d53",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/github-actions/SKILL.md",
@@ -6279,7 +6279,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "469031badac3ba397e332e3c",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/drawing/assets/attempt-template.md",
@@ -8578,7 +8578,7 @@
       "match": "has been retrieved",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "4f9e87e44f34528956cbd2f3",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/INITIALIZATION_POLICY.md",
@@ -8589,7 +8589,7 @@
       "match": "been retrieved",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "25393e4ca29211513c0ea122",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/drawing/assets/daily-index-template.md",
@@ -8908,7 +8908,7 @@
       "match": "34 words",
       "message": "Sentence has 34 words (cap 25). Split it.",
       "fingerprint": "43ee5fc4aa2ab0ab98097505",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/SKILL.md",
@@ -8919,7 +8919,7 @@
       "match": "is unverified",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "718d67ec20c921c3c043a464",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/SKILL.md",
@@ -8930,7 +8930,7 @@
       "match": "verify",
       "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
       "fingerprint": "fc69cda88704716351e23cde",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/SKILL.md",
@@ -8952,7 +8952,7 @@
       "match": "validate",
       "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
       "fingerprint": "d58fcdeca2d4638a3202e347",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/the-worker/SKILL.md",
@@ -9953,7 +9953,7 @@
       "match": "31 words",
       "message": "Sentence has 31 words (cap 25). Split it.",
       "fingerprint": "4a07020ba7d52cf7f45d6a4a",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/session-archiving/SKILL.md",
@@ -10151,7 +10151,7 @@
       "match": "have been retrieved",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "9acf80e5a2b48047e9dd619f",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/SESSION_START.md",
@@ -10162,7 +10162,7 @@
       "match": "been retrieved",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "fec2fb4fa450910b68502f34",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/drawing/references/patterns/README.md",
@@ -10176,32 +10176,9 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 12,
-  "recurring_findings": 464,
-  "resolved_findings": [
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 54,
-      "col": 234,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "validate",
-      "message": "'validate' and 'verify' name the same action. Pick one and use it every time.",
-      "fingerprint": "6cc0fafbe0e935ba9c7d5106",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 71,
-      "col": 56,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "check",
-      "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
-      "fingerprint": "a8f214c02468fa2f81c8d55d",
-      "comparison": "resolved"
-    }
-  ],
+  "new_findings": 0,
+  "recurring_findings": 476,
+  "resolved_findings": [],
   "checks": [
     {
       "name": "Wrapper shell syntax",
@@ -10219,7 +10196,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.564s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.371s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -10237,7 +10214,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 145 active Markdown files (227 available as link targets) and 319 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 145 active Markdown files (229 available as link targets) and 319 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
