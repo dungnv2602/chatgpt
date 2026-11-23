@@ -1,11 +1,10 @@
 # Current Step
 
-- **2026-11-23 — Finish the reference-file classification.** The remaining candidate files include answer-pattern references, novel workflow guidance, historical prompt examples, and image takeout contracts. Review the remaining skill references for copy-ready structures. Classify actual templates separately from examples, patterns, procedures, and embedded contracts. Do not move non-template references.
+- **2026-11-23 — Expand Document Standards CI path coverage.** The user requested template-standard enforcement against future drift. The validator now checks skill-owned template placement and catalog references, but its workflow does not run for most skill-template changes. Update only `.github/workflows/validate-document-standards.yml` to trigger on all skill files and the known project/workspace template locations. Preserve its test and validation steps. Do not change any other workflow.
 
 ## Open Discussions
 
-- **2026-11-23 — CI repair boundary:** The latest changed-document lint run fails in the report-tooling test and in a report-generation shell command with a literal trailing backslash. The stale test assertion was corrected. The shell defect is in `.github/workflows/ste-lint-changed.yml`, which remains protected by the separate workflow-edit authorization rule.
-- **2026-11-23 — Document Standards Actions path filters:** The existing validation workflow does not trigger for most skill-owned template or Worker changes. A path-filter change is needed to enforce placement checks for future skill template changes. Do not edit `.github/workflows/*` without separate explicit authorization.
+- **2026-11-23 — CI repair boundary:** The latest changed-document lint run fails in the report-tooling test and in a report-generation shell command with a literal trailing backslash. The stale test assertion was corrected. The shell defect is in `.github/workflows/ste-lint-changed.yml` and is outside this workflow change.
 - **2026-11-23 — Full-document STE lint:** The latest full-document run fails in the same stale report-generator test assertion. The assertion was corrected. Hosted confirmation remains pending.
 
 ## Reports
