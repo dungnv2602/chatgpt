@@ -1,6 +1,6 @@
 # GitHub Actions diagnostic reports
 
-This directory is the review surface for GitHub Actions execution failures and operational warnings. It complements the STE lint evidence in the separate lint_reports directory.
+This directory is the review surface for GitHub Actions execution failures and operational warnings. It complements the STE lint evidence in the separate `reports/lint_reports/` directory.
 
 ## Review order
 
@@ -61,7 +61,7 @@ When a new workflow is added, append a normal job that needs the source jobs, us
 
 ## Relationship to lint reports
 
-Detailed lint findings, per-file metrics, fingerprints, and baselines remain in lint_reports. This report captures workflow, job, step, log, annotation, artifact, and publication context around a lint run. It links to the matching lint scope rather than duplicating its findings.
+Detailed lint findings, per-file metrics, fingerprints, and baselines remain in reports/lint_reports. This report captures workflow, job, step, log, annotation, artifact, and publication context around a lint run. It links to the matching lint scope rather than duplicating its findings.
 
 ## Integrity and history
 
@@ -74,3 +74,7 @@ Change the schema, template, collector, generator, regression tests, workflow in
 ## Reporter self-monitoring
 
 The diagnostics workflow is deliberately excluded from its own run sweep to prevent recursive report generation. Its own failures are not included in the reports it creates. Inspect the diagnostics workflow's own run and job logs directly in the GitHub Actions interface. Failure of the report-only job in a source workflow is separately contained by the caller's job-level `continue-on-error: true` setting.
+
+## Resolution and archive
+
+The cross-family issue state is tracked in `reports/triage/ledger.json`. A report finding is resolved only after its fix commit and successful relevant validation are recorded. Resolved report files are moved to `archive/reports/`; the shared archive-retention workflow deletes each exact indexed file after 90 days. The archive uses the shared `.github/archive-retention-index.json`. Do not create a report archive under `reports/` or a separate retention workflow.
