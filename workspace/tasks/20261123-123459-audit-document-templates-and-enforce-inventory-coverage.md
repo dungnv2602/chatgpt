@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-123459
 - **Created:** 2026-11-23 12:34 UTC
-- **Updated:** 2026-11-23 12:42 UTC
+- **Updated:** 2026-11-23 12:43 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -63,9 +63,16 @@ Audit all in-scope repository documents on branch `gpt`, excluding `master/` and
 - **References:** Catalog coverage register; `scripts/validate_catalog.py`; `scripts/test_validate_catalog.py`; `.github/workflows/validate-document-standards.yml`; The Worker Markdown document gate.
 - **Next:** Correct the test fixture newlines and enforce segment-aware glob matching before final verification.
 
+### 2026-11-23 12:43 UTC
+
+- **Action:** Rechecked the branch after further generated diagnostic-report publication and widened the hosted validation trigger to cover all workflow-definition changes.
+- **Result:** Latest read-back at `be736d5dd885c8084133542afc72458d50ccbf63` contains 4,351 in-scope files and 1,058 Markdown documents. All 1,058 paths match the 48-rule register; every rule matches at least one current document. No uncovered or stale rules. The workflow now excludes generated reports from its path triggers and runs when any workflow definition changes. Hosted validation remains uninspected.
+- **References:** `.github/workflows/validate-document-standards.yml`; Document Type Catalog; commit `be736d5dd885c8084133542afc72458d50ccbf63`.
+- **Next:** Leave hosted validation pending; do not poll or dispatch workflows.
+
 ## 7. Current State
 
-Implementation and repository read-back are complete. The audit found no missing recurring template. Existing canonical templates are sufficient. The 48-rule Markdown coverage register classifies all 1,052 in-scope Markdown documents. The validator uses segment-aware glob semantics, and workflow path filters exclude generated report output to prevent recursive runs. The task remains In Progress only because hosted regression execution has not been inspected.
+Implementation and repository read-back are complete. The audit found no missing recurring template. Existing canonical templates are sufficient. The 48-rule Markdown coverage register classifies all 1,058 in-scope Markdown documents. The validator uses segment-aware glob semantics, and workflow path filters exclude generated report output to prevent recursive runs. The task remains In Progress only because hosted regression execution has not been inspected.
 
 ## 8. Remaining Work
 
@@ -91,9 +98,9 @@ Implementation and repository read-back are complete. The audit found no missing
 
 - **Check:** Recursive tree inventory, Markdown path coverage, changed-file read-back, and workflow trigger exclusions.
 - **Method:** GitHub recursive tree API on branch `gpt`; 48 catalog path patterns evaluated with segment-aware glob semantics; all changed files retrieved again from the branch.
-- **Result:** Non-truncated tree at commit `36c091fd601c08bde911a5ffa225b22c2f6cce9d`; 4,337 in-scope files and 1,055 Markdown documents. All 1,055 Markdown paths are covered; all 48 rules match at least one current document; zero uncovered paths and zero stale rules. All nine relevant repository paths were read back.
+- **Result:** Non-truncated tree at commit `be736d5dd885c8084133542afc72458d50ccbf63`; 4,351 in-scope files and 1,058 Markdown documents. All 1,058 Markdown paths are covered; all 48 rules match at least one current document; zero uncovered paths and zero stale rules. All nine relevant repository paths were read back.
 - **Limitations:** Hosted regression tests and the validator were not executed or inspected. The workflow is configured to run on relevant changes; leave this task In Progress until a natural hosted result is available. The content review classified all Markdown families and representative records; machine-readable JSON/YAML/CSV records remain governed by their catalogued schemas and generators.
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. Do not access `master/` or `archive/`. Implementation is committed and read back at `36c091fd601c08bde911a5ffa225b22c2f6cce9d`. The 48-rule register covers all 1,055 Markdown files in the latest verified tree. No new standalone template was required. Do not poll or dispatch workflows; review the naturally triggered hosted validation when available. If it fails, use the diagnostic evidence to create a remediation task.
+Continue on branch `gpt`. Do not access `master/` or `archive/`. Implementation is committed and read back at `be736d5dd885c8084133542afc72458d50ccbf63`. The 48-rule register covers all 1,058 Markdown files in the latest verified tree. No new standalone template was required. Do not poll or dispatch workflows; review the naturally triggered hosted validation when available. If it fails, use the diagnostic evidence to create a remediation task.

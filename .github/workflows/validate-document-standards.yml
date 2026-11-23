@@ -31,7 +31,7 @@ on:
       - 'novels/WORKFLOW.md'
       - 'workspace/TASK_TEMPLATE.md'
       - 'workspace/README.md'
-      - '.github/workflows/validate-document-standards.yml'
+      - '.github/workflows/**'
   workflow_dispatch: {}
 
 concurrency:
