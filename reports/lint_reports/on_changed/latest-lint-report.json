@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45158901398",
-  "run_number": 467,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45158901398",
+  "run_id": "45159068771",
+  "run_number": 469,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45159068771",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "cbb4e662c04b2880a35072c8349218e4755e7b64",
+  "commit_sha": "b7d68cbf66578a478ce74824bc01c9034fbca50b",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T10:45:47.249602+00:00",
+  "generated_at_utc": "2026-11-23T10:46:43.708142+00:00",
   "status": "Failed",
-  "linter_source_sha": "cbb4e662c04b2880a35072c8349218e4755e7b64",
+  "linter_source_sha": "b7d68cbf66578a478ce74824bc01c9034fbca50b",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -81,17 +81,17 @@
     "skills/session-archiving/assets/session-brief-template.md"
   ],
   "files_with_findings": 40,
-  "total_findings": 352,
-  "hard_findings": 33,
+  "total_findings": 351,
+  "hard_findings": 32,
   "advisory_findings": 319,
   "findings_by_rule": {
     "synonym-rotation": 13,
     "passive-voice": 279,
     "present-perfect": 40,
-    "long-sentence": 7,
     "phrasal-verb": 5,
     "nominalization": 2,
     "marketing-adjective": 5,
+    "long-sentence": 6,
     "semicolon": 1
   },
   "records": [
@@ -457,15 +457,6 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 136,
-          "col": 110,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Start",
-          "message": "'start' and 'begin' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/agent-skill-authoring/SKILL.md",
           "line": 160,
           "col": 29,
           "rule": "passive-voice",
@@ -520,16 +511,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 203,
-          "col": 27,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "28 words",
-          "message": "Sentence has 28 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 216,
+          "line": 222,
           "col": 38,
           "rule": "passive-voice",
           "level": "advisory",
@@ -538,7 +520,16 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 238,
+          "line": 231,
+          "col": 18,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "begins",
+          "message": "'begin' and 'start' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "skills/agent-skill-authoring/SKILL.md",
+          "line": 244,
           "col": 28,
           "rule": "passive-voice",
           "level": "advisory",
@@ -547,7 +538,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 239,
+          "line": 245,
           "col": 65,
           "rule": "present-perfect",
           "level": "advisory",
@@ -556,7 +547,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 239,
+          "line": 245,
           "col": 70,
           "rule": "passive-voice",
           "level": "advisory",
@@ -565,7 +556,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 247,
+          "line": 253,
           "col": 17,
           "rule": "passive-voice",
           "level": "advisory",
@@ -574,7 +565,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 249,
+          "line": 255,
           "col": 37,
           "rule": "present-perfect",
           "level": "advisory",
@@ -583,7 +574,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 249,
+          "line": 255,
           "col": 41,
           "rule": "passive-voice",
           "level": "advisory",
@@ -592,7 +583,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 251,
+          "line": 257,
           "col": 32,
           "rule": "present-perfect",
           "level": "advisory",
@@ -601,7 +592,7 @@
         },
         {
           "file": "skills/agent-skill-authoring/SKILL.md",
-          "line": 251,
+          "line": 257,
           "col": 36,
           "rule": "passive-voice",
           "level": "advisory",
@@ -609,10 +600,10 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 18,
-      "hard_count": 2,
+      "count": 17,
+      "hard_count": 1,
       "baseline": 6,
-      "words": 2257,
+      "words": 2259,
       "per_100_words": 0.8,
       "path": "skills/agent-skill-authoring/SKILL.md",
       "exit_code": 0
@@ -4182,17 +4173,6 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 136,
-      "col": 110,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Start",
-      "message": "'start' and 'begin' name the same action. Pick one and use it every time.",
-      "fingerprint": "836c6ab7672c67c5cf0dbf14",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/agent-skill-authoring/SKILL.md",
       "line": 160,
       "col": 29,
       "rule": "passive-voice",
@@ -4259,18 +4239,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 203,
-      "col": 27,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "76c645f8b8d79e0e8da99700",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 216,
+      "line": 222,
       "col": 38,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4281,7 +4250,18 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 238,
+      "line": 231,
+      "col": 18,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "begins",
+      "message": "'begin' and 'start' name the same action. Pick one and use it every time.",
+      "fingerprint": "cdded221cb31c45f9059249a",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/agent-skill-authoring/SKILL.md",
+      "line": 244,
       "col": 28,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4292,7 +4272,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 239,
+      "line": 245,
       "col": 65,
       "rule": "present-perfect",
       "level": "advisory",
@@ -4303,7 +4283,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 239,
+      "line": 245,
       "col": 70,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4314,7 +4294,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 247,
+      "line": 253,
       "col": 17,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4325,7 +4305,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 249,
+      "line": 255,
       "col": 37,
       "rule": "present-perfect",
       "level": "advisory",
@@ -4336,7 +4316,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 249,
+      "line": 255,
       "col": 41,
       "rule": "passive-voice",
       "level": "advisory",
@@ -4347,7 +4327,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 251,
+      "line": 257,
       "col": 32,
       "rule": "present-perfect",
       "level": "advisory",
@@ -4358,7 +4338,7 @@
     },
     {
       "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 251,
+      "line": 257,
       "col": 36,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7566,7 +7546,7 @@
       "match": "fetch",
       "message": "'fetch' and 'retrieve' name the same action. Pick one and use it every time.",
       "fingerprint": "c784915b81aefed48004e9cb",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/SKILL.md",
@@ -7669,83 +7649,28 @@
     }
   ],
   "new_findings": 1,
-  "recurring_findings": 351,
+  "recurring_findings": 350,
   "resolved_findings": [
     {
-      "file": "skills/drawing/references/prompt-fidelity.md",
-      "line": 182,
-      "col": 140,
+      "file": "skills/agent-skill-authoring/SKILL.md",
+      "line": 136,
+      "col": 110,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "modify",
-      "message": "'modify' and 'change' name the same action. Pick one and use it every time.",
-      "fingerprint": "2476dea842e1d1f6a28cf155",
+      "match": "Start",
+      "message": "'start' and 'begin' name the same action. Pick one and use it every time.",
+      "fingerprint": "836c6ab7672c67c5cf0dbf14",
       "comparison": "resolved"
     },
     {
-      "file": "skills/drawing/references/prompt-fidelity.md",
-      "line": 198,
-      "col": 63,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Confirm",
-      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "282525e2d2f8de1a47888d6a",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/drawing/references/prompt-fidelity.md",
-      "line": 264,
-      "col": 4,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Fetch",
-      "message": "'fetch' and 'retrieve' name the same action. Pick one and use it every time.",
-      "fingerprint": "938ecf216eb0c10b33dda11d",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/drawing/references/image-editing-protocol.md",
-      "line": 5,
-      "col": 1,
+      "file": "skills/agent-skill-authoring/SKILL.md",
+      "line": 203,
+      "col": 27,
       "rule": "long-sentence",
       "level": "advisory-free",
-      "match": "26 words",
-      "message": "Sentence has 26 words (cap 25). Split it.",
-      "fingerprint": "fad73ccae148b45b37683760",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/drawing/references/image-editing-protocol.md",
-      "line": 11,
-      "col": 57,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "c15f742ac3e180cc65752268",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/drawing/references/image-editing-protocol.md",
-      "line": 28,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "29 words",
-      "message": "Sentence has 29 words (cap 25). Split it.",
-      "fingerprint": "8d59855cda37840c3b2e2839",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/drawing/references/image-editing-protocol.md",
-      "line": 57,
-      "col": 58,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Check",
-      "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
-      "fingerprint": "716088bbc5e9ae6d23e2ad21",
+      "match": "28 words",
+      "message": "Sentence has 28 words (cap 25). Split it.",
+      "fingerprint": "76c645f8b8d79e0e8da99700",
       "comparison": "resolved"
     }
   ],
@@ -7766,7 +7691,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.368s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.282s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -7784,7 +7709,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 588 active Markdown files (654 available as link targets) and 338 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 598 active Markdown files (664 available as link targets) and 338 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []

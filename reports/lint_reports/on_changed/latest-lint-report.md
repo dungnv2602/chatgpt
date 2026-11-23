@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#467](https://github.com/dungnv2602/chatgpt/actions/runs/45158901398)
-- **Run ID / attempt:** 45158901398 / 1
+- **Run:** [#469](https://github.com/dungnv2602/chatgpt/actions/runs/45159068771)
+- **Run ID / attempt:** 45159068771 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / cbb4e662c04b2880a35072c8349218e4755e7b64
+- **Branch / commit:** gpt / b7d68cbf66578a478ce74824bc01c9034fbca50b
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** cbb4e662c04b2880a35072c8349218e4755e7b64
-- **Generated (UTC):** 2026-11-23T10:45:47.249602+00:00
+- **Linter source SHA:** b7d68cbf66578a478ce74824bc01c9034fbca50b
+- **Generated (UTC):** 2026-11-23T10:46:43.708142+00:00
 
 ## 1. Executive summary
 
@@ -19,12 +19,12 @@
 | Files evaluated | 49 |
 | Files that failed | 6 |
 | Files with findings | 40 |
-| Total findings | 352 |
-| Hard findings | 33 |
+| Total findings | 351 |
+| Hard findings | 32 |
 | Advisory findings | 319 |
 | New findings | 1 |
-| Recurring findings | 351 |
-| Resolved findings | 7 |
+| Recurring findings | 350 |
+| Resolved findings | 2 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -99,7 +99,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/philosophy-religion-asceticism/SKILL.md | PASS | 8 | 0 | 7 | 2387 | 0.3 | 0 |
 | skills/session-archiving/assets/conversation-integrity-template.md | PASS | 0 | 0 | 0 | 192 | 0.0 | 0 |
 | skills/drawing/references/patterns/failure-patterns.md | PASS | 25 | 0 | 0 | 2146 | 1.2 | 0 |
-| skills/agent-skill-authoring/SKILL.md | PASS | 18 | 2 | 6 | 2257 | 0.8 | 0 |
+| skills/agent-skill-authoring/SKILL.md | PASS | 17 | 1 | 6 | 2259 | 0.8 | 0 |
 | skills/asd-ste100/references/repository-writing-policy.md | PASS | 1 | 0 | 0 | 570 | 0.2 | 0 |
 | skills/philosophy-religion-asceticism/references/source-standards.md | PASS | 2 | 0 | 1 | 1467 | 0.1 | 0 |
 | skills/asd-ste100/README.md | PASS | 2 | 0 | 0 | 1534 | 0.1 | 0 |
@@ -154,7 +154,7 @@ Counts include hard and advisory findings.
 | passive-voice | 279 |
 | present-perfect | 40 |
 | synonym-rotation | 13 |
-| long-sentence | 7 |
+| long-sentence | 6 |
 | marketing-adjective | 5 |
 | phrasal-verb | 5 |
 | nominalization | 2 |
@@ -190,7 +190,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.368s
+Ran 4 tests in 0.282s
 
 OK
 ~~~
@@ -223,7 +223,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 588 active Markdown files (654 available as link targets) and 338 local Markdown links.
+Scanned 598 active Markdown files (664 available as link targets) and 338 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -233,10 +233,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **synonym-rotation** · skills/drawing/references/prompt-fidelity.md:315:156 · **new** · fingerprint: c784915b81aefed48004e9cb
+- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:231:18 · **new** · fingerprint: cdded221cb31c45f9059249a
   - **Level:** advisory-free
-  - **Message:** 'fetch' and 'retrieve' name the same action. Pick one and use it every time.
-  - **Matched text:** fetch
+  - **Message:** 'begin' and 'start' name the same action. Pick one and use it every time.
+  - **Matched text:** begins
 
 ### Recurring findings
 
@@ -380,10 +380,6 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are created
-- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:136:110 · **recurring** · fingerprint: 836c6ab7672c67c5cf0dbf14
-  - **Level:** advisory-free
-  - **Message:** 'start' and 'begin' name the same action. Pick one and use it every time.
-  - **Matched text:** Start
 - **passive-voice** · skills/agent-skill-authoring/SKILL.md:160:29 · **recurring** · fingerprint: 6ffc592c0b6322b443496f66
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -408,43 +404,39 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is known
-- **long-sentence** · skills/agent-skill-authoring/SKILL.md:203:27 · **recurring** · fingerprint: 76c645f8b8d79e0e8da99700
-  - **Level:** advisory-free
-  - **Message:** Sentence has 28 words (cap 25). Split it.
-  - **Matched text:** 28 words
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:216:38 · **recurring** · fingerprint: 5eabd6169bec15a6fdfd2a80
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:222:38 · **recurring** · fingerprint: 5eabd6169bec15a6fdfd2a80
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been created
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:238:28 · **recurring** · fingerprint: 0f053c89c3267998b6edc9d6
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:244:28 · **recurring** · fingerprint: 0f053c89c3267998b6edc9d6
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are focused
-- **present-perfect** · skills/agent-skill-authoring/SKILL.md:239:65 · **recurring** · fingerprint: 70dc63b30d658452239a6cbe
+- **present-perfect** · skills/agent-skill-authoring/SKILL.md:245:65 · **recurring** · fingerprint: 70dc63b30d658452239a6cbe
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** have been introduced
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:239:70 · **recurring** · fingerprint: 2df378472bba68cfc7a25cbe
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:245:70 · **recurring** · fingerprint: 2df378472bba68cfc7a25cbe
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been introduced
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:247:17 · **recurring** · fingerprint: 8416fa6ec8b8068d6f7379c2
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:253:17 · **recurring** · fingerprint: 8416fa6ec8b8068d6f7379c2
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is connected
-- **present-perfect** · skills/agent-skill-authoring/SKILL.md:249:37 · **recurring** · fingerprint: c26f9840d6188237d9689546
+- **present-perfect** · skills/agent-skill-authoring/SKILL.md:255:37 · **recurring** · fingerprint: c26f9840d6188237d9689546
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has been made
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:249:41 · **recurring** · fingerprint: 599292fe4dd9cfdbc4788ec9
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:255:41 · **recurring** · fingerprint: 599292fe4dd9cfdbc4788ec9
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been made
-- **present-perfect** · skills/agent-skill-authoring/SKILL.md:251:32 · **recurring** · fingerprint: 4414015699cf2e3e269abe29
+- **present-perfect** · skills/agent-skill-authoring/SKILL.md:257:32 · **recurring** · fingerprint: 4414015699cf2e3e269abe29
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has been read
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:251:36 · **recurring** · fingerprint: 91d321a9405d06bea4b12487
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:257:36 · **recurring** · fingerprint: 91d321a9405d06bea4b12487
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been read
@@ -1608,6 +1600,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was copied
+- **synonym-rotation** · skills/drawing/references/prompt-fidelity.md:315:156 · **recurring** · fingerprint: c784915b81aefed48004e9cb
+  - **Level:** advisory-free
+  - **Message:** 'fetch' and 'retrieve' name the same action. Pick one and use it every time.
+  - **Matched text:** fetch
 - **passive-voice** · skills/document-standards/SKILL.md:75:47 · **recurring** · fingerprint: f02e1c27fdc79f6921bf2e16
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1647,34 +1643,14 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### Resolved findings
 
-- **synonym-rotation** · skills/drawing/references/prompt-fidelity.md:182:140 · **resolved** · fingerprint: 2476dea842e1d1f6a28cf155
+- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:136:110 · **resolved** · fingerprint: 836c6ab7672c67c5cf0dbf14
   - **Level:** advisory-free
-  - **Message:** 'modify' and 'change' name the same action. Pick one and use it every time.
-  - **Matched text:** modify
-- **synonym-rotation** · skills/drawing/references/prompt-fidelity.md:198:63 · **resolved** · fingerprint: 282525e2d2f8de1a47888d6a
+  - **Message:** 'start' and 'begin' name the same action. Pick one and use it every time.
+  - **Matched text:** Start
+- **long-sentence** · skills/agent-skill-authoring/SKILL.md:203:27 · **resolved** · fingerprint: 76c645f8b8d79e0e8da99700
   - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Confirm
-- **synonym-rotation** · skills/drawing/references/prompt-fidelity.md:264:4 · **resolved** · fingerprint: 938ecf216eb0c10b33dda11d
-  - **Level:** advisory-free
-  - **Message:** 'fetch' and 'retrieve' name the same action. Pick one and use it every time.
-  - **Matched text:** Fetch
-- **long-sentence** · skills/drawing/references/image-editing-protocol.md:5:1 · **resolved** · fingerprint: fad73ccae148b45b37683760
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-- **long-sentence** · skills/drawing/references/image-editing-protocol.md:11:57 · **resolved** · fingerprint: c15f742ac3e180cc65752268
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-- **long-sentence** · skills/drawing/references/image-editing-protocol.md:28:1 · **resolved** · fingerprint: 8d59855cda37840c3b2e2839
-  - **Level:** advisory-free
-  - **Message:** Sentence has 29 words (cap 25). Split it.
-  - **Matched text:** 29 words
-- **synonym-rotation** · skills/drawing/references/image-editing-protocol.md:57:58 · **resolved** · fingerprint: 716088bbc5e9ae6d23e2ad21
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
-  - **Matched text:** Check
+  - **Message:** Sentence has 28 words (cap 25). Split it.
+  - **Matched text:** 28 words
 
 ## 8. Complete per-file diagnostics
 
@@ -1906,10 +1882,10 @@ No STE findings were recorded for this file.
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 18
-- **Hard findings:** 2
+- **Findings:** 17
+- **Hard findings:** 1
 - **Baseline:** 6
-- **Words:** 2257
+- **Words:** 2259
 - **Findings per 100 words:** 0.8
 
 #### Complete diagnostics
@@ -1918,11 +1894,6 @@ No STE findings were recorded for this file.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are created
-
-- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:136:110 · **recurring** · fingerprint: 836c6ab7672c67c5cf0dbf14
-  - **Level:** advisory-free
-  - **Message:** 'start' and 'begin' name the same action. Pick one and use it every time.
-  - **Matched text:** Start
 
 - **passive-voice** · skills/agent-skill-authoring/SKILL.md:160:29 · **recurring** · fingerprint: 6ffc592c0b6322b443496f66
   - **Level:** advisory
@@ -1954,52 +1925,52 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is known
 
-- **long-sentence** · skills/agent-skill-authoring/SKILL.md:203:27 · **recurring** · fingerprint: 76c645f8b8d79e0e8da99700
-  - **Level:** advisory-free
-  - **Message:** Sentence has 28 words (cap 25). Split it.
-  - **Matched text:** 28 words
-
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:216:38 · **recurring** · fingerprint: 5eabd6169bec15a6fdfd2a80
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:222:38 · **recurring** · fingerprint: 5eabd6169bec15a6fdfd2a80
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been created
 
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:238:28 · **recurring** · fingerprint: 0f053c89c3267998b6edc9d6
+- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:231:18 · **new** · fingerprint: cdded221cb31c45f9059249a
+  - **Level:** advisory-free
+  - **Message:** 'begin' and 'start' name the same action. Pick one and use it every time.
+  - **Matched text:** begins
+
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:244:28 · **recurring** · fingerprint: 0f053c89c3267998b6edc9d6
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are focused
 
-- **present-perfect** · skills/agent-skill-authoring/SKILL.md:239:65 · **recurring** · fingerprint: 70dc63b30d658452239a6cbe
+- **present-perfect** · skills/agent-skill-authoring/SKILL.md:245:65 · **recurring** · fingerprint: 70dc63b30d658452239a6cbe
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** have been introduced
 
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:239:70 · **recurring** · fingerprint: 2df378472bba68cfc7a25cbe
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:245:70 · **recurring** · fingerprint: 2df378472bba68cfc7a25cbe
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been introduced
 
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:247:17 · **recurring** · fingerprint: 8416fa6ec8b8068d6f7379c2
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:253:17 · **recurring** · fingerprint: 8416fa6ec8b8068d6f7379c2
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is connected
 
-- **present-perfect** · skills/agent-skill-authoring/SKILL.md:249:37 · **recurring** · fingerprint: c26f9840d6188237d9689546
+- **present-perfect** · skills/agent-skill-authoring/SKILL.md:255:37 · **recurring** · fingerprint: c26f9840d6188237d9689546
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has been made
 
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:249:41 · **recurring** · fingerprint: 599292fe4dd9cfdbc4788ec9
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:255:41 · **recurring** · fingerprint: 599292fe4dd9cfdbc4788ec9
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been made
 
-- **present-perfect** · skills/agent-skill-authoring/SKILL.md:251:32 · **recurring** · fingerprint: 4414015699cf2e3e269abe29
+- **present-perfect** · skills/agent-skill-authoring/SKILL.md:257:32 · **recurring** · fingerprint: 4414015699cf2e3e269abe29
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has been read
 
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:251:36 · **recurring** · fingerprint: 91d321a9405d06bea4b12487
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:257:36 · **recurring** · fingerprint: 91d321a9405d06bea4b12487
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been read
@@ -3922,7 +3893,7 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was copied
 
-- **synonym-rotation** · skills/drawing/references/prompt-fidelity.md:315:156 · **new** · fingerprint: c784915b81aefed48004e9cb
+- **synonym-rotation** · skills/drawing/references/prompt-fidelity.md:315:156 · **recurring** · fingerprint: c784915b81aefed48004e9cb
   - **Level:** advisory-free
   - **Message:** 'fetch' and 'retrieve' name the same action. Pick one and use it every time.
   - **Matched text:** fetch
