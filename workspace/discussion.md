@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 — Final consistency review and task verification.** The Document Standards workflow now triggers for all skill files and the known project/workspace template locations. Review The Worker for duplicate wording, verify every relocated asset link and catalog row, inspect the exact remaining CI workflow defect without changing it, then read back all changed paths and the branch head.
+- **2026-11-23 — Reconcile the final inventory and verify every changed path.** The final recursive tree contains 420 files and 488 entries, with no truncation. No template or schema file remains under a skill `references/` directory. Update the catalog's inventory note with the final count, then read back every changed asset, owner reference, standard, validator, workflow, and workspace record. Verify branch `gpt` at the end.
 
 ## Open Discussions
 
@@ -12,7 +12,7 @@
 
 ### 2026-11-23 — Template placement findings and hosted validation
 
-- Enumerated 417 repository files (483 tree entries), without truncation. Reviewed all named template/schema candidates, all skill reference files, and the two archived task records within the requested read-only audit scope.
+- Enumerated the full repository tree. The first scan contained 417 files and the final read-back contained 420 files (488 entries). Neither tree was truncated. Reviewed all named template/schema candidates, all skill reference files, and the two archived task records within the requested read-only audit scope.
 - Identified two misplaced copy-ready templates in skill `references/` directories. Created exact copies under the owning skills' `assets/` directories, updated active references and catalog entries, then deleted the superseded paths. Read-back confirmed exact source/target content equality before deletion.
 - Other template candidates are correctly placed. Novel templates belong in `novels/templates/`. Shared task and skill templates belong in the relevant workspace or skill `assets/` directory. Reference patterns, examples, procedures, and embedded contracts remain in `references/`.
 - Strengthened the catalog validator to enforce skill-template placement and detect named templates under skill `references/`. Hosted run [45114001584](https://github.com/dungnv2602/chatgpt/actions/runs/45114001584) passed all 16 regression tests and catalog validation: 36 document types and 80 exact references.
