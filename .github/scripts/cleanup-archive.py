@@ -126,16 +126,19 @@ def clean_due_records(
     return deleted, True
 
 
-def require_scheduled_event(event_name: str | None) -> None:
-    if event_name != "schedule":
+def require_scheduled_event(event_name: str | None, actions_context: str | None) -> None:
+    if event_name != "schedule" or actions_context != "true":
         raise RuntimeError(
-            "Archive retention can run only from the scheduled GitHub Actions event."
+            "Archive retention can run only from a scheduled GitHub Actions run."
         )
 
 
 def main() -> int:
     try:
-        require_scheduled_event(os.environ.get("GITHUB_EVENT_NAME"))
+        require_scheduled_event(
+            os.environ.get("GITHUB_EVENT_NAME"),
+            os.environ.get("GITHUB_ACTIONS"),
+        )
         test_script = ROOT / ".github" / "scripts" / "test_cleanup_archive.py"
         subprocess.run([sys.executable, str(test_script)], cwd=ROOT, check=True)
         deleted, index_changed = clean_due_records(INDEX_FILE, ROOT, utc_now())
