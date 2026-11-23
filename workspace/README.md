@@ -1,6 +1,6 @@
 # Workspace
 
-The workspace tracks project tasks and the Condensed Mode pre-step brief, discussion, and success-report register across conversations.
+The workspace tracks project tasks and the shared pre-step brief, discussion, and success-report register across conversations and modes.
 
 Task operations follow [The Worker skill](../skills/the-worker/SKILL.md).
 
@@ -10,7 +10,7 @@ Task operations follow [The Worker skill](../skills/the-worker/SKILL.md).
 
 | Path | Purpose |
 |---|---|
-| [discussion.md](discussion.md) | Current work-step brief, open discussions, and the three most recent successful reports. Condensed Mode only |
+| [discussion.md](discussion.md) | Current work-step brief, open discussions, and the three most recent successful reports in every mode |
 | [task_board.md](task_board.md) | Task index, priority, status, and selection order |
 | [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Template for individual task records |
 | [tasks/](tasks/) | Current task records |
@@ -30,7 +30,7 @@ Task operations follow [The Worker skill](../skills/the-worker/SKILL.md).
 - Create necessary assistant follow-ups automatically.
 - Mark optional assistant improvements as Proposed. Wait for user approval before execution.
 - Apply the same task workflow in every conversation mode.
-- Conversation Mode controls access to `discussion.md`. The Worker does not read or write that file directly.
+- Conversation Mode maintains `discussion.md` in every mode. The Worker supplies task state and ensures the register remains current.
 
 ## Task ID and filename
 
@@ -52,7 +52,7 @@ Use YYYYMMDD-HHMMSS-short-kebab-title.md for task filenames.
 
 Read this file, then [task_board.md](task_board.md), then the selected task record. Check the repository before resuming. Follow the task's Next Actions.
 
-In Condensed Mode, Conversation Mode reads [discussion.md](discussion.md) to publish one short brief before each meaningful work step and to recover open discussions and recent successful reports. The file has three sections in this order: Current Step, Open Discussions, then Reports. Current Step contains only the next action, its scope, and expected result; Conversation Mode commits and reads it back, then links the file before execution. Open Discussions contains anything awaiting user input and all unresolved failure outcomes. Reports contains only completed, verified successes and retains at most the three most recent entries. Default Mode does not use that file.
+In both modes, Conversation Mode reads and maintains [discussion.md](discussion.md). Before each meaningful work step, it commits and reads back a concise Current Step brief, then links the file before execution. The file has three sections in this order: Current Step, Open Discussions, then Reports. Current Step contains only the next action, its scope, and expected result. Open Discussions contains anything awaiting user input and all unresolved failure outcomes. Reports contains only completed, verified successes and retains at most the three most recent entries. Default Mode may add normal chat detail. Condensed Mode uses extremely short chat responses and the single-link rule.
 
 ## Navigation
 
