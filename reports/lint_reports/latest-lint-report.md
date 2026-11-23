@@ -2,36 +2,36 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#176](https://github.com/dungnv2602/chatgpt/actions/runs/45163708159)
-- **Run ID / attempt:** 45163708159 / 1
+- **Run:** [#177](https://github.com/dungnv2602/chatgpt/actions/runs/45207707231)
+- **Run ID / attempt:** 45207707231 / 1
 - **Workflow:** STE Lint Full Technical Documentation
-- **Branch / commit:** gpt / 88ddc3928bb14aa8d6d6a46196a873775a6bd121
+- **Branch / commit:** gpt / 8d48fd97902b40a52a8883c49614d633fc60e424
 - **Event:** push
 - **Execution mode:** repository-wide
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 3b7eb147c488e140845010645d475a2110ec813c
-- **Generated (UTC):** 2026-11-23T11:17:07.901447+00:00
+- **Linter source SHA:** 5bfb0dccaa2f3ec07ba57353c040aac550d2655a
+- **Generated (UTC):** 2026-11-23T15:40:14.072469+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 49 |
-| Files that failed | 2 |
-| Files with findings | 38 |
-| Total findings | 342 |
-| Hard findings | 23 |
-| Advisory findings | 319 |
-| New findings | 2 |
-| Recurring findings | 340 |
-| Resolved findings | 58 |
+| Files evaluated | 48 |
+| Files that failed | 8 |
+| Files with findings | 37 |
+| Total findings | 368 |
+| Hard findings | 66 |
+| Advisory findings | 302 |
+| New findings | 118 |
+| Recurring findings | 250 |
+| Resolved findings | 93 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
 
 - Runner OS: Linux
 - Python: 3.15.2
-- Platform: Linux-7.0.0-1016-aws-x86_64-with-glibc2.43
+- Platform: Linux-7.0.0-1020-azure-x86_64-with-glibc2.43
 - The JSON report records the full runtime version and every original per-file linter response.
 - The report records the commit that supplied the linter and generator code.
 
@@ -39,10 +39,11 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
+- skills/the-worker/references/conversation-mode.md
 - skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md
 - skills/philosophy-religion-asceticism/SKILL.md
-- skills/session-archiving/assets/conversation-integrity-template.md
 - skills/drawing/references/patterns/failure-patterns.md
+- skills/the-worker/references/drawing-session-closeout.md
 - skills/agent-skill-authoring/SKILL.md
 - skills/asd-ste100/references/repository-writing-policy.md
 - skills/philosophy-religion-asceticism/references/source-standards.md
@@ -51,6 +52,8 @@ This list is the exact set of Markdown files passed to the linter. It does not i
 - skills/drawing/README.md
 - skills/drawing/assets/pattern-entry-templates.md
 - images/takeout/README.md
+- skills/the-worker/references/archive-records-and-image-prompts.md
+- skills/the-worker/assets/conversation-integrity-template.md
 - images/README.md
 - skills/asd-ste100/SKILL.md
 - skills/philosophy-religion-asceticism/README.md
@@ -60,30 +63,26 @@ This list is the exact set of Markdown files passed to the linter. It does not i
 - skills/drawing/assets/attempt-template.md
 - skills/drawing/references/patterns/successful-patterns.md
 - skills/drawing/references/generation-recovery-and-provenance.md
-- skills/session-archiving/references/image-provenance-and-webp.md
-- skills/conversation-mode/SKILL.md
+- skills/the-worker/assets/session-brief-template.md
 - skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md
 - skills/drawing/SKILL.md
 - skills/document-standards/references/document-type-catalog.md
 - workspace/task_board.md
 - skills/drawing/references/style-guide.md
 - skills/INITIALIZATION_POLICY.md
+- skills/the-worker/references/image-processing-scripts.md
 - skills/drawing/assets/daily-index-template.md
-- skills/session-archiving/assets/session-summary-template.md
 - workspace/TASK_TEMPLATE.md
 - skills/drawing/references/series-continuity-and-iteration.md
+- skills/the-worker/references/image-provenance-and-webp.md
 - skills/asd-ste100/references/writing-rules.md
 - skills/philosophy-religion-asceticism/references/answer-patterns.md
 - workspace/README.md
-- skills/session-archiving/references/image-processing-scripts.md
+- skills/the-worker/assets/session-summary-template.md
 - skills/the-worker/SKILL.md
-- skills/session-archiving/references/drawing-session-closeout.md
-- skills/session-archiving/references/archive-records-and-image-prompts.md
 - skills/drawing/references/prompt-fidelity.md
 - skills/document-standards/SKILL.md
-- skills/session-archiving/SKILL.md
 - skills/drawing/references/image-editing-protocol.md
-- skills/session-archiving/assets/session-brief-template.md
 - skills/SESSION_START.md
 - skills/drawing/references/patterns/README.md
 - skills/philosophy-religion-asceticism/references/research-method.md
@@ -95,52 +94,51 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
+| skills/the-worker/references/conversation-mode.md | FAIL | 19 | 2 | 0 | 3078 | 0.6 | 1 |
 | skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md | PASS | 0 | 0 | 0 | 166 | 0.0 | 0 |
 | skills/philosophy-religion-asceticism/SKILL.md | PASS | 8 | 0 | 7 | 2387 | 0.3 | 0 |
-| skills/session-archiving/assets/conversation-integrity-template.md | PASS | 0 | 0 | 0 | 192 | 0.0 | 0 |
 | skills/drawing/references/patterns/failure-patterns.md | PASS | 25 | 0 | 0 | 2146 | 1.2 | 0 |
-| skills/agent-skill-authoring/SKILL.md | PASS | 17 | 1 | 6 | 2259 | 0.8 | 0 |
+| skills/the-worker/references/drawing-session-closeout.md | PASS | 1 | 0 | 0 | 612 | 0.2 | 0 |
+| skills/agent-skill-authoring/SKILL.md | PASS | 16 | 1 | 6 | 2256 | 0.7 | 0 |
 | skills/asd-ste100/references/repository-writing-policy.md | PASS | 1 | 0 | 0 | 570 | 0.2 | 0 |
 | skills/philosophy-religion-asceticism/references/source-standards.md | PASS | 2 | 0 | 1 | 1467 | 0.1 | 0 |
 | skills/asd-ste100/README.md | PASS | 2 | 0 | 0 | 1534 | 0.1 | 0 |
 | skills/asd-ste100/assets/lint-report-template.md | PASS | 0 | 0 | 0 | 385 | 0.0 | 0 |
-| skills/drawing/README.md | PASS | 0 | 0 | 0 | 396 | 0.0 | 0 |
+| skills/drawing/README.md | PASS | 0 | 0 | 0 | 406 | 0.0 | 0 |
 | skills/drawing/assets/pattern-entry-templates.md | PASS | 7 | 0 | 0 | 449 | 1.6 | 0 |
 | images/takeout/README.md | PASS | 1 | 0 | 0 | 1397 | 0.1 | 0 |
-| images/README.md | PASS | 1 | 0 | 0 | 584 | 0.2 | 0 |
+| skills/the-worker/references/archive-records-and-image-prompts.md | PASS | 25 | 0 | 0 | 3403 | 0.7 | 0 |
+| skills/the-worker/assets/conversation-integrity-template.md | PASS | 0 | 0 | 0 | 192 | 0.0 | 0 |
+| images/README.md | PASS | 0 | 0 | 0 | 213 | 0.0 | 0 |
 | skills/asd-ste100/SKILL.md | PASS | 21 | 13 | 31 | 2609 | 0.8 | 0 |
 | skills/philosophy-religion-asceticism/README.md | PASS | 1 | 0 | 0 | 471 | 0.2 | 0 |
-| skills/drawing/references/archive-and-delivery.md | PASS | 20 | 0 | 7 | 2370 | 0.8 | 0 |
-| skills/README.md | PASS | 0 | 0 | 0 | 371 | 0.0 | 0 |
+| skills/drawing/references/archive-and-delivery.md | PASS | 3 | 1 | 7 | 460 | 0.7 | 0 |
+| skills/README.md | PASS | 0 | 0 | 0 | 412 | 0.0 | 0 |
 | skills/github-actions/SKILL.md | PASS | 3 | 0 | 0 | 2534 | 0.1 | 0 |
 | skills/drawing/assets/attempt-template.md | PASS | 1 | 0 | 0 | 593 | 0.2 | 0 |
 | skills/drawing/references/patterns/successful-patterns.md | PASS | 6 | 0 | 0 | 816 | 0.7 | 0 |
-| skills/drawing/references/generation-recovery-and-provenance.md | PASS | 19 | 0 | 17 | 2757 | 0.7 | 0 |
-| skills/session-archiving/references/image-provenance-and-webp.md | PASS | 13 | 1 | 2 | 1710 | 0.8 | 0 |
-| skills/conversation-mode/SKILL.md | PASS | 17 | 0 | 3 | 3080 | 0.6 | 0 |
+| skills/drawing/references/generation-recovery-and-provenance.md | PASS | 19 | 0 | 17 | 2756 | 0.7 | 0 |
+| skills/the-worker/assets/session-brief-template.md | PASS | 0 | 0 | 0 | 288 | 0.0 | 0 |
 | skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md | PASS | 8 | 0 | 7 | 2716 | 0.3 | 0 |
-| skills/drawing/SKILL.md | PASS | 24 | 3 | 24 | 5082 | 0.5 | 0 |
-| skills/document-standards/references/document-type-catalog.md | FAIL | 27 | 3 | 0 | 3060 | 0.9 | 1 |
-| workspace/task_board.md | PASS | 3 | 0 | 0 | 249 | 1.2 | 0 |
+| skills/drawing/SKILL.md | PASS | 25 | 3 | 24 | 4738 | 0.5 | 0 |
+| skills/document-standards/references/document-type-catalog.md | FAIL | 57 | 28 | 0 | 4152 | 1.4 | 1 |
+| workspace/task_board.md | PASS | 3 | 0 | 0 | 268 | 1.1 | 0 |
 | skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
-| skills/INITIALIZATION_POLICY.md | PASS | 2 | 0 | 4 | 1180 | 0.2 | 0 |
+| skills/INITIALIZATION_POLICY.md | PASS | 4 | 2 | 4 | 1474 | 0.3 | 0 |
+| skills/the-worker/references/image-processing-scripts.md | PASS | 0 | 0 | 0 | 341 | 0.0 | 0 |
 | skills/drawing/assets/daily-index-template.md | FAIL | 1 | 1 | 0 | 210 | 0.5 | 1 |
-| skills/session-archiving/assets/session-summary-template.md | PASS | 0 | 0 | 0 | 106 | 0.0 | 0 |
-| workspace/TASK_TEMPLATE.md | PASS | 4 | 0 | 0 | 385 | 1.0 | 0 |
+| workspace/TASK_TEMPLATE.md | PASS | 5 | 0 | 0 | 441 | 1.1 | 0 |
 | skills/drawing/references/series-continuity-and-iteration.md | PASS | 9 | 0 | 9 | 3262 | 0.3 | 0 |
+| skills/the-worker/references/image-provenance-and-webp.md | FAIL | 6 | 1 | 0 | 717 | 0.8 | 1 |
 | skills/asd-ste100/references/writing-rules.md | PASS | 8 | 0 | 6 | 706 | 1.1 | 0 |
 | skills/philosophy-religion-asceticism/references/answer-patterns.md | PASS | 1 | 0 | 0 | 235 | 0.4 | 0 |
-| workspace/README.md | PASS | 2 | 0 | 0 | 596 | 0.3 | 0 |
-| skills/session-archiving/references/image-processing-scripts.md | PASS | 0 | 0 | 0 | 344 | 0.0 | 0 |
-| skills/the-worker/SKILL.md | PASS | 5 | 0 | 0 | 3133 | 0.2 | 0 |
-| skills/session-archiving/references/drawing-session-closeout.md | PASS | 1 | 0 | 0 | 612 | 0.2 | 0 |
-| skills/session-archiving/references/archive-records-and-image-prompts.md | PASS | 27 | 0 | 20 | 4529 | 0.6 | 0 |
+| workspace/README.md | FAIL | 6 | 3 | 0 | 414 | 1.4 | 1 |
+| skills/the-worker/assets/session-summary-template.md | PASS | 0 | 0 | 0 | 106 | 0.0 | 0 |
+| skills/the-worker/SKILL.md | FAIL | 11 | 5 | 0 | 4286 | 0.3 | 1 |
 | skills/drawing/references/prompt-fidelity.md | PASS | 46 | 1 | 15 | 3676 | 1.3 | 0 |
-| skills/document-standards/SKILL.md | PASS | 2 | 0 | 0 | 1612 | 0.1 | 0 |
-| skills/session-archiving/SKILL.md | PASS | 3 | 0 | 7 | 2388 | 0.1 | 0 |
-| skills/drawing/references/image-editing-protocol.md | PASS | 0 | 0 | 4 | 962 | 0.0 | 0 |
-| skills/session-archiving/assets/session-brief-template.md | PASS | 0 | 0 | 0 | 288 | 0.0 | 0 |
-| skills/SESSION_START.md | PASS | 2 | 0 | 0 | 2275 | 0.1 | 0 |
+| skills/document-standards/SKILL.md | FAIL | 3 | 1 | 0 | 998 | 0.3 | 1 |
+| skills/drawing/references/image-editing-protocol.md | PASS | 2 | 1 | 4 | 474 | 0.4 | 0 |
+| skills/SESSION_START.md | FAIL | 10 | 3 | 0 | 2655 | 0.4 | 1 |
 | skills/drawing/references/patterns/README.md | PASS | 1 | 0 | 0 | 442 | 0.2 | 0 |
 | skills/philosophy-religion-asceticism/references/research-method.md | PASS | 0 | 0 | 0 | 559 | 0.0 | 0 |
 | skills/philosophy-religion-asceticism/CHANGELOG.md | PASS | 0 | 0 | 0 | 56 | 0.0 | 0 |
@@ -151,10 +149,11 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 279 |
-| present-perfect | 40 |
-| synonym-rotation | 6 |
-| long-sentence | 5 |
+| passive-voice | 260 |
+| present-perfect | 42 |
+| semicolon | 32 |
+| synonym-rotation | 12 |
+| long-sentence | 10 |
 | marketing-adjective | 5 |
 | phrasal-verb | 5 |
 | nominalization | 2 |
@@ -189,7 +188,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.228s
+Ran 4 tests in 0.375s
 
 OK
 ~~~
@@ -222,7 +221,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 687 active Markdown files (753 available as link targets) and 338 local Markdown links.
+Scanned 1071 active Markdown files (1141 available as link targets) and 322 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -232,14 +231,478 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:231:18 · **new** · fingerprint: cdded221cb31c45f9059249a
+- **long-sentence** · skills/the-worker/references/conversation-mode.md:68:60 · **new** · fingerprint: a572f3dff82333ad7db50991
   - **Level:** advisory-free
-  - **Message:** 'begin' and 'start' name the same action. Pick one and use it every time.
-  - **Matched text:** begins
-- **synonym-rotation** · skills/drawing/references/prompt-fidelity.md:315:156 · **new** · fingerprint: c784915b81aefed48004e9cb
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **semicolon** · skills/the-worker/references/conversation-mode.md:68:162 · **new** · fingerprint: 09a34c4b31b88c0f364bd67e
   - **Level:** advisory-free
-  - **Message:** 'fetch' and 'retrieve' name the same action. Pick one and use it every time.
-  - **Matched text:** fetch
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:84:157 · **new** · fingerprint: bee2a996a437e18d996259cd
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are ordered
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:95:72 · **new** · fingerprint: 2241e6bb50e2f15bfa24211b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is paused
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:100:41 · **new** · fingerprint: d30ba0439a3d723f276eb4c5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is unresolved
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:127:88 · **new** · fingerprint: 2241e6bb50e2f15bfa24211b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is paused
+- **present-perfect** · skills/the-worker/references/conversation-mode.md:128:78 · **new** · fingerprint: cedfb1b9e8b08ba988f26ada
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has stopped
+- **present-perfect** · skills/the-worker/references/conversation-mode.md:128:108 · **new** · fingerprint: 17842a0d207d59e3d6dfd995
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has proposed
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:129:61 · **new** · fingerprint: bd2f7bbdff13e7e39ad308db
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:129:272 · **new** · fingerprint: 843d844a7e11cf758d6cc899
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is resolved
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:144:63 · **new** · fingerprint: bd2f7bbdff13e7e39ad308db
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:149:36 · **new** · fingerprint: 8e2161d80a5148d771a0f3ef
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was encountered
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:151:106 · **new** · fingerprint: ff487ca595e84d2db113914a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was verified
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:160:180 · **new** · fingerprint: 308ed03edab7da5db41594ac
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is exceeded
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:186:260 · **new** · fingerprint: bd2f7bbdff13e7e39ad308db
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+- **present-perfect** · skills/the-worker/references/conversation-mode.md:201:94 · **new** · fingerprint: 04cc8860da7a5678f9593957
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has approved
+- **present-perfect** · skills/the-worker/references/conversation-mode.md:228:126 · **new** · fingerprint: b415c4bf0547befb7d81674b
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has been given
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:228:130 · **new** · fingerprint: b76b30e48b4f4ad0c86a4c75
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been given
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:249:75 · **new** · fingerprint: c9dae4d4501881d9eacee582
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are governed
+- **passive-voice** · skills/the-worker/references/drawing-session-closeout.md:17:227 · **new** · fingerprint: 2d728b322e849133738368be
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Closed
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:13:64 · **new** · fingerprint: f699d20c8970b5d1983db259
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is curated
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:29:8 · **new** · fingerprint: cc9ba4be2c27f329401729a2
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was completed
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:83:21 · **new** · fingerprint: f3fec903703ee5f02784e5b9
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** being discussed
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:92:11 · **new** · fingerprint: a8780077bedc79b1c8c2f758
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are limited
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:120:164 · **new** · fingerprint: 26fb46186c78ffa8fc4b9cda
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is added
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:123:130 · **new** · fingerprint: ee1b84223aa1974ec2c266cc
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is established
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:127:343 · **new** · fingerprint: c9f4691a4ae74067995898f8
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was rejected
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:184:170 · **new** · fingerprint: 7004493f0380541a3c7f3930
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was supplied
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:187:23 · **new** · fingerprint: ca92034f0c45e9624487b338
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** being tested
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:225:65 · **new** · fingerprint: 775b40787e9b3007554a0ec5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was returned
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:236:24 · **new** · fingerprint: 2e9865ddbebafa08f9136623
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is known
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:242:176 · **new** · fingerprint: bb7ba68bed0f5ce8ed1acfa4
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:256:44 · **new** · fingerprint: 080078c5d205e0780e807349
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was created
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:266:68 · **new** · fingerprint: d084f532a966087492331395
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was delivered
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:267:36 · **new** · fingerprint: 775b40787e9b3007554a0ec5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was returned
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:267:58 · **new** · fingerprint: 3722d82669780cffed6aeec3
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is unverified
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:270:4 · **new** · fingerprint: 5a90765839e065feaea2c67f
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is uploaded
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:271:78 · **new** · fingerprint: 7b3ba7f2b54fbc6ca66fbc67
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is recorded
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:272:48 · **new** · fingerprint: b53044cd6e868b63415369d7
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was generated
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:273:75 · **new** · fingerprint: 775b40787e9b3007554a0ec5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was returned
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:274:68 · **new** · fingerprint: b04fa2904d1f6ad6f275ec4c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is unconfirmed
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:284:20 · **new** · fingerprint: 96841d15291a7c9a3b97989e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is finalized
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:288:53 · **new** · fingerprint: 3ad612336bdf6ad04df13169
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is renamed
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:312:69 · **new** · fingerprint: c791b4a9936caab1939af327
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is based
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:316:84 · **new** · fingerprint: 1c8f9ddb3e42b7986914faf3
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is authorized
+- **present-perfect** · skills/drawing/references/archive-and-delivery.md:11:167 · **new** · fingerprint: 964cabe631fed5dc94a42014
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have been verified
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:11:172 · **new** · fingerprint: 9b691551f730fb0278640420
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been verified
+- **synonym-rotation** · skills/drawing/references/archive-and-delivery.md:45:13 · **new** · fingerprint: 9f0ae35295d64485e1c937b0
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
+- **passive-voice** · skills/drawing/SKILL.md:363:222 · **new** · fingerprint: f718531ecab4f80464bcfc7a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was included
+- **synonym-rotation** · skills/drawing/SKILL.md:444:47 · **new** · fingerprint: c41dfa89d8e1360fd85eac2a
+  - **Level:** advisory-free
+  - **Message:** 'modify' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** modify
+- **present-perfect** · skills/drawing/SKILL.md:447:77 · **new** · fingerprint: 1fde6e149badf6f261b22219
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has specified
+- **synonym-rotation** · skills/drawing/SKILL.md:449:46 · **new** · fingerprint: e9ab9c52b006f1c31b593715
+  - **Level:** advisory-free
+  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** confirmed
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:4:279 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:37:313 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:38:284 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:39:264 · **new** · fingerprint: bd13d200f2cd36d327625082
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are preserved
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:57:707 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:58:260 · **new** · fingerprint: 33b66dbc6dc280ae7c9be6c8
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:58:546 · **new** · fingerprint: 199f2603ee3fb1c3abd18ce6
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are skipped
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:58:568 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:71:373 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:73:241 · **new** · fingerprint: 1ba4a4dabed935af86f226cb
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is created
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:77:233 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:78:198 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:79:257 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:81:265 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:82:184 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:83:188 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:101 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:131 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:89:135 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:91:180 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:93:169 · **new** · fingerprint: bb8de6bc648079b20917fbff
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are catalogued
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:102:207 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:114:223 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:116:188 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:116:251 · **new** · fingerprint: 195a2fd68103c17c8542eb26
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are covered
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:119:117 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:121:140 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:182:185 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:183:138 · **new** · fingerprint: d8738c991b456b6b6a7cdd80
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was reconstructed
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:183:174 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:199:189 · **new** · fingerprint: 7e6ec02ac376dc4e638ffc6d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was warranted
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:215:203 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · skills/INITIALIZATION_POLICY.md:146:3 · **new** · fingerprint: f40cb6e7d22052c296f243c7
+  - **Level:** advisory-free
+  - **Message:** Sentence has 28 words (cap 25). Split it.
+  - **Matched text:** 28 words
+- **semicolon** · skills/INITIALIZATION_POLICY.md:173:66 · **new** · fingerprint: b28796101e8a0d8165b3d79b
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/TASK_TEMPLATE.md:85:150 · **new** · fingerprint: f89fcc99c66cd06012ce7d5a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is untrusted
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:15:100 · **new** · fingerprint: 8614398268bd51316f465e56
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is retained
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:29:139 · **new** · fingerprint: 8614398268bd51316f465e56
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is retained
+- **synonym-rotation** · skills/the-worker/references/image-provenance-and-webp.md:35:15 · **new** · fingerprint: 165228fd89d930749cfaa835
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** validates
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:43:65 · **new** · fingerprint: 678db87db1d222633995aa3f
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is observed
+- **present-perfect** · skills/the-worker/references/image-provenance-and-webp.md:43:138 · **new** · fingerprint: 31fa6d94c05533c4e2f9d76a
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have been read
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:43:143 · **new** · fingerprint: fcc7dc911acbecb8434fffce
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been read
+- **semicolon** · workspace/README.md:18:113 · **new** · fingerprint: 99ddd247f24032b76e53f957
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · workspace/README.md:22:4 · **new** · fingerprint: 850ad36627f5885d916de296
+  - **Level:** advisory-free
+  - **Message:** Sentence has 32 words (cap 25). Split it.
+  - **Matched text:** 32 words
+- **passive-voice** · workspace/README.md:22:64 · **new** · fingerprint: f9374751a535ad58835e814f
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is created
+- **passive-voice** · workspace/README.md:22:110 · **new** · fingerprint: 28231427e3d00c582576f2b4
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is updated
+- **passive-voice** · workspace/README.md:22:140 · **new** · fingerprint: 6e067aa5c3c536cd323a5c6d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is removed
+- **semicolon** · workspace/README.md:30:302 · **new** · fingerprint: 99ddd247f24032b76e53f957
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · skills/the-worker/SKILL.md:15:1 · **new** · fingerprint: 8f5fb40f1456d6cdee279897
+  - **Level:** advisory-free
+  - **Message:** Sentence has 35 words (cap 25). Split it.
+  - **Matched text:** 35 words
+- **semicolon** · skills/the-worker/SKILL.md:19:127 · **new** · fingerprint: 3e9dae68ac0dc79de8ae5c41
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · skills/the-worker/SKILL.md:23:310 · **new** · fingerprint: 8df02bfe022ca25e5787bc55
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are committed
+- **long-sentence** · skills/the-worker/SKILL.md:33:38 · **new** · fingerprint: 43ee5fc4aa2ab0ab98097505
+  - **Level:** advisory-free
+  - **Message:** Sentence has 34 words (cap 25). Split it.
+  - **Matched text:** 34 words
+- **synonym-rotation** · skills/the-worker/SKILL.md:300:122 · **new** · fingerprint: 4b8a264993c87efe2283f852
+  - **Level:** advisory-free
+  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** Confirm
+- **passive-voice** · skills/the-worker/SKILL.md:307:98 · **new** · fingerprint: f0690d035381adacbc37a83e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are recorded
+- **semicolon** · skills/the-worker/SKILL.md:309:545 · **new** · fingerprint: 3e9dae68ac0dc79de8ae5c41
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **synonym-rotation** · skills/document-standards/SKILL.md:22:21 · **new** · fingerprint: b1e46093b290a3c3f0ad7363
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** Validate
+- **passive-voice** · skills/document-standards/SKILL.md:106:229 · **new** · fingerprint: 988e824c418cdeb39523dd3c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is observed
+- **semicolon** · skills/drawing/references/image-editing-protocol.md:9:82 · **new** · fingerprint: d22425f617c43f7ddbcea655
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · skills/drawing/references/image-editing-protocol.md:33:34 · **new** · fingerprint: 3e67ae90c3ab8a6c71da58c3
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is confirmed
+- **passive-voice** · skills/SESSION_START.md:28:36 · **new** · fingerprint: 1b7d224401886a9004746406
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was retrieved
+- **semicolon** · skills/SESSION_START.md:31:179 · **new** · fingerprint: 8baa1c9f84886b197fcd6710
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **synonym-rotation** · skills/SESSION_START.md:74:4 · **new** · fingerprint: 1fb1875ac91e733b353da2ae
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
+  - **Matched text:** Check
+- **passive-voice** · skills/SESSION_START.md:75:168 · **new** · fingerprint: bafc7f56ccc1107f8e988e9c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is given
+- **passive-voice** · skills/SESSION_START.md:76:63 · **new** · fingerprint: 6dd94c7c1b750dbf34848556
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been verified
+- **passive-voice** · skills/SESSION_START.md:220:174 · **new** · fingerprint: bafc7f56ccc1107f8e988e9c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is given
+- **present-perfect** · skills/SESSION_START.md:236:217 · **new** · fingerprint: ea47a38e16cc241e4c1d2a58
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have passed
+- **long-sentence** · skills/SESSION_START.md:260:1 · **new** · fingerprint: 2f0f70014ccf6e650b884255
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
 
 ### Recurring findings
 
@@ -379,43 +842,43 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are created
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:160:29 · **recurring** · fingerprint: 6ffc592c0b6322b443496f66
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:159:29 · **recurring** · fingerprint: 6ffc592c0b6322b443496f66
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is loaded
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:163:106 · **recurring** · fingerprint: 6ffc592c0b6322b443496f66
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:166:23 · **recurring** · fingerprint: 6ffc592c0b6322b443496f66
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is loaded
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:167:23 · **recurring** · fingerprint: 6ffc592c0b6322b443496f66
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is loaded
-- **present-perfect** · skills/agent-skill-authoring/SKILL.md:171:149 · **recurring** · fingerprint: 2dddc1891d5710f75a1cc520
+- **present-perfect** · skills/agent-skill-authoring/SKILL.md:172:149 · **recurring** · fingerprint: 2dddc1891d5710f75a1cc520
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has been loaded
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:171:153 · **recurring** · fingerprint: f7fae0229a13471823102bb0
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:172:153 · **recurring** · fingerprint: f7fae0229a13471823102bb0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been loaded
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:184:36 · **recurring** · fingerprint: 0be774910939027b005107b8
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:185:36 · **recurring** · fingerprint: 0be774910939027b005107b8
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is known
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:222:38 · **recurring** · fingerprint: 5eabd6169bec15a6fdfd2a80
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:223:38 · **recurring** · fingerprint: 5eabd6169bec15a6fdfd2a80
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been created
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:244:28 · **recurring** · fingerprint: 0f053c89c3267998b6edc9d6
+- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:232:18 · **recurring** · fingerprint: cdded221cb31c45f9059249a
+  - **Level:** advisory-free
+  - **Message:** 'begin' and 'start' name the same action. Pick one and use it every time.
+  - **Matched text:** begins
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:245:28 · **recurring** · fingerprint: 0f053c89c3267998b6edc9d6
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are focused
-- **present-perfect** · skills/agent-skill-authoring/SKILL.md:245:65 · **recurring** · fingerprint: 70dc63b30d658452239a6cbe
+- **present-perfect** · skills/agent-skill-authoring/SKILL.md:246:65 · **recurring** · fingerprint: 70dc63b30d658452239a6cbe
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** have been introduced
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:245:70 · **recurring** · fingerprint: 2df378472bba68cfc7a25cbe
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:246:70 · **recurring** · fingerprint: 2df378472bba68cfc7a25cbe
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been introduced
@@ -488,10 +951,6 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are recorded
 - **passive-voice** · images/takeout/README.md:180:40 · **recurring** · fingerprint: bf5f3ed6bfe52608af6f2cbb
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are reserved
-- **passive-voice** · images/README.md:94:54 · **recurring** · fingerprint: 03c08438c1205e007605fad3
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are reserved
@@ -583,86 +1042,6 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are enabled
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:20:59 · **recurring** · fingerprint: 7da75daf64549a13157f1e48
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are copied
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:22:23 · **recurring** · fingerprint: e6d836749364fb952eddfc7c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is moved
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:33:3 · **recurring** · fingerprint: 1ca6476f6144a140274847f2
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are grouped
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:34:36 · **recurring** · fingerprint: 6bdb7fc4f6e61f46efdcc945
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are processed
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:45:16 · **recurring** · fingerprint: 7bb3ef8e29cc2d62ee65f3a9
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are paired
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:46:35 · **recurring** · fingerprint: d15ccec8d9ae7c220e7297be
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is recorded
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:47:52 · **recurring** · fingerprint: 5fd7aabe55ed535b8e321fa7
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are verified
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:53:17 · **recurring** · fingerprint: 3f8fc33d65f0a6d46cb838c6
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is archived
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:57:59 · **recurring** · fingerprint: 07f09cee503710d3a9b04228
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are excluded
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:59:23 · **recurring** · fingerprint: af22c155e8e4b4f9c84b3f86
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is cleared
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:59:57 · **recurring** · fingerprint: 67f2ed0983a75668f4ce3020
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is converted
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:60:51 · **recurring** · fingerprint: 0d3df0958eac71ea42f42c9c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are written
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:93:17 · **recurring** · fingerprint: fafc7dc70cfb6b41e2ceac4c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are allowed
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:94:72 · **recurring** · fingerprint: c93d49b6dfa2883ae7732733
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is unresolved
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:98:39 · **recurring** · fingerprint: 9e3799d7fdb927485334ac92
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** been uploaded
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:177:400 · **recurring** · fingerprint: 20086aa45dcb5efbabf52350
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** were expected
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:196:37 · **recurring** · fingerprint: b6e92fd2ee8e3800eabf5dcd
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is paired
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:197:76 · **recurring** · fingerprint: a753d9aa8cfa9ae159dfcd57
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is verified
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:208:26 · **recurring** · fingerprint: c6565434b3298d6e8f59aec5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is retained
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:212:1 · **recurring** · fingerprint: 4c20f74831abf9722cfbae81
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is described
 - **passive-voice** · skills/github-actions/SKILL.md:21:206 · **recurring** · fingerprint: 0dc1e5055d6ed33dfbc9b5d4
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -779,126 +1158,6 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is finalized
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:12:63 · **recurring** · fingerprint: beabe60324ae752ed917a331
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:21:59 · **recurring** · fingerprint: f0ad12d293bae6f6df55998b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are copied
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:23:16 · **recurring** · fingerprint: 606c590b44260c445b3f05a1
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is moved
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:45:38 · **recurring** · fingerprint: 5e247f9b617820d66c4e5de3
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is preserved
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:50:11 · **recurring** · fingerprint: db9467f618e5d7170b5770de
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are reserved
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:73:215 · **recurring** · fingerprint: 6ad1c8a942b901eb141a0cdc
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are Verified
-- **synonym-rotation** · skills/session-archiving/references/image-provenance-and-webp.md:103:200 · **recurring** · fingerprint: e6e912834a84809148a29b28
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** checking
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:105:12 · **recurring** · fingerprint: 3d2774d90e6346c9f479ca23
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is intended
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:113:276 · **recurring** · fingerprint: ebe274c396fc6f6265e97091
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is updated
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:122:37 · **recurring** · fingerprint: 28344c784d287164c52cc81d
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is paired
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:123:76 · **recurring** · fingerprint: a8745ab59e15a54323b8eb62
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is verified
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:134:26 · **recurring** · fingerprint: 756755bb5f5f39c5e328e481
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is retained
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:138:1 · **recurring** · fingerprint: a22a1b959ff468a81a8c41ae
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is described
-- **passive-voice** · skills/conversation-mode/SKILL.md:94:157 · **recurring** · fingerprint: 6d637f1fa2db2d41a6d50ddc
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are ordered
-- **passive-voice** · skills/conversation-mode/SKILL.md:105:72 · **recurring** · fingerprint: 448cf9dfd90fe327096b71e5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is paused
-- **passive-voice** · skills/conversation-mode/SKILL.md:110:41 · **recurring** · fingerprint: 24000f0d039ebc991f65530c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is unresolved
-- **passive-voice** · skills/conversation-mode/SKILL.md:137:88 · **recurring** · fingerprint: 448cf9dfd90fe327096b71e5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is paused
-- **present-perfect** · skills/conversation-mode/SKILL.md:138:78 · **recurring** · fingerprint: 11522f9e8c67a502b19046c1
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has stopped
-- **present-perfect** · skills/conversation-mode/SKILL.md:138:108 · **recurring** · fingerprint: fb6ab971291fabec8f04e13d
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has proposed
-- **passive-voice** · skills/conversation-mode/SKILL.md:139:61 · **recurring** · fingerprint: a5afffbd39db7eee0657c03b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
-- **passive-voice** · skills/conversation-mode/SKILL.md:139:272 · **recurring** · fingerprint: 7432ab5664bf24b78cc7ff00
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is resolved
-- **passive-voice** · skills/conversation-mode/SKILL.md:154:63 · **recurring** · fingerprint: a5afffbd39db7eee0657c03b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
-- **passive-voice** · skills/conversation-mode/SKILL.md:159:36 · **recurring** · fingerprint: 3a6c1312d7b45107dbc72a9d
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was encountered
-- **passive-voice** · skills/conversation-mode/SKILL.md:161:106 · **recurring** · fingerprint: f524e4cf6f61106be53e395c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was verified
-- **passive-voice** · skills/conversation-mode/SKILL.md:170:180 · **recurring** · fingerprint: 30999b2a0d67c2a1670763ff
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is exceeded
-- **passive-voice** · skills/conversation-mode/SKILL.md:196:260 · **recurring** · fingerprint: a5afffbd39db7eee0657c03b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
-- **present-perfect** · skills/conversation-mode/SKILL.md:211:94 · **recurring** · fingerprint: 5b8f9ac16a3f5a3fd92e7621
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has approved
-- **present-perfect** · skills/conversation-mode/SKILL.md:238:126 · **recurring** · fingerprint: 7e130dc07470c4dfc1de436d
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has been given
-- **passive-voice** · skills/conversation-mode/SKILL.md:238:130 · **recurring** · fingerprint: ef15c6245f889cbfdb09d89a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** been given
-- **passive-voice** · skills/conversation-mode/SKILL.md:259:75 · **recurring** · fingerprint: 04de33177ef6c58de34b6fd5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are governed
 - **passive-voice** · skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md:7:89 · **recurring** · fingerprint: cd523ffc146c3f6901de60f2
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -967,74 +1226,54 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is stored
-- **long-sentence** · skills/drawing/SKILL.md:261:4 · **recurring** · fingerprint: d81568a6e2238902ee0c2105
-  - **Level:** advisory-free
-  - **Message:** Sentence has 28 words (cap 25). Split it.
-  - **Matched text:** 28 words
-- **long-sentence** · skills/drawing/SKILL.md:276:5 · **recurring** · fingerprint: 1da08cc0bf141330524bda57
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-- **passive-voice** · skills/drawing/SKILL.md:319:378 · **recurring** · fingerprint: 182721976b7c74744cfa668b
+- **passive-voice** · skills/drawing/SKILL.md:290:378 · **recurring** · fingerprint: 182721976b7c74744cfa668b
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is stored
-- **passive-voice** · skills/drawing/SKILL.md:319:553 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
+- **passive-voice** · skills/drawing/SKILL.md:290:553 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is verified
-- **passive-voice** · skills/drawing/SKILL.md:394:23 · **recurring** · fingerprint: c13b1ec0df584f1d71453752
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are governed
-- **passive-voice** · skills/drawing/SKILL.md:400:60 · **recurring** · fingerprint: 828f9104eb1934f156af2c49
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was used
-- **passive-voice** · skills/drawing/SKILL.md:407:216 · **recurring** · fingerprint: 856947d77008b1a8011c64b1
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are satisfied
-- **passive-voice** · skills/drawing/SKILL.md:424:19 · **recurring** · fingerprint: f7c61d976e048fc4d2187457
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is refused
-- **passive-voice** · skills/drawing/SKILL.md:456:42 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is verified
-- **passive-voice** · skills/drawing/SKILL.md:457:50 · **recurring** · fingerprint: d518259c92d98a763deb57db
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was produced
-- **passive-voice** · skills/drawing/SKILL.md:458:42 · **recurring** · fingerprint: a9eeb0708efad4ad4ebac5a3
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was returned
-- **passive-voice** · skills/drawing/SKILL.md:462:11 · **recurring** · fingerprint: 2ebc7cf088303cbfd5592603
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
-- **synonym-rotation** · skills/drawing/SKILL.md:470:15 · **recurring** · fingerprint: aa2b4a16cd7d5222231207e6
+- **synonym-rotation** · skills/drawing/SKILL.md:363:200 · **recurring** · fingerprint: aa2b4a16cd7d5222231207e6
   - **Level:** advisory-free
   - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
   - **Matched text:** verify
-- **passive-voice** · skills/drawing/SKILL.md:489:24 · **recurring** · fingerprint: f6cfabada63cd4b942c2fdab
+- **passive-voice** · skills/drawing/SKILL.md:363:300 · **recurring** · fingerprint: 182721976b7c74744cfa668b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is stored
+- **passive-voice** · skills/drawing/SKILL.md:371:238 · **recurring** · fingerprint: 856947d77008b1a8011c64b1
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are satisfied
+- **passive-voice** · skills/drawing/SKILL.md:388:19 · **recurring** · fingerprint: f7c61d976e048fc4d2187457
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is refused
+- **passive-voice** · skills/drawing/SKILL.md:420:42 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is verified
+- **passive-voice** · skills/drawing/SKILL.md:421:50 · **recurring** · fingerprint: d518259c92d98a763deb57db
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was produced
+- **passive-voice** · skills/drawing/SKILL.md:422:42 · **recurring** · fingerprint: a9eeb0708efad4ad4ebac5a3
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was returned
+- **passive-voice** · skills/drawing/SKILL.md:426:11 · **recurring** · fingerprint: 2ebc7cf088303cbfd5592603
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+- **passive-voice** · skills/drawing/SKILL.md:465:24 · **recurring** · fingerprint: f6cfabada63cd4b942c2fdab
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are determined
-- **passive-voice** · skills/drawing/SKILL.md:515:13 · **recurring** · fingerprint: 9ce13cb184b2103476d72b72
+- **passive-voice** · skills/drawing/SKILL.md:491:13 · **recurring** · fingerprint: 9ce13cb184b2103476d72b72
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is Closed
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:4:162 · **recurring** · fingerprint: 305e0414169478f6e310d27a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was truncated
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:4:254 · **recurring** · fingerprint: 1b362583f0b6f9564bc66dd0
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** were inspected
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:28:139 · **recurring** · fingerprint: 521a3f31bc54ec727caae5b1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1043,95 +1282,95 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** being uploaded
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:42:276 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:37:304 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:43:214 · **recurring** · fingerprint: a41ef6bbf64045f943d2af47
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:44:276 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:45:207 · **recurring** · fingerprint: a41ef6bbf64045f943d2af47
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is read
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:45:139 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:47:139 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:47:358 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:49:358 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:49:307 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:51:336 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
-- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:52:264 · **recurring** · fingerprint: 2822a6b08706709830f1f820
+- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:54:250 · **recurring** · fingerprint: 2822a6b08706709830f1f820
   - **Level:** advisory-free
   - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
   - **Matched text:** checks
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:64:165 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:66:165 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:64:176 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:66:176 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:83:39 · **recurring** · fingerprint: 0c06b4bea825bbb8305e2205
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:142:39 · **recurring** · fingerprint: 0c06b4bea825bbb8305e2205
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** were reviewed
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:88:200 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:147:200 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
-- **present-perfect** · skills/document-standards/references/document-type-catalog.md:88:479 · **recurring** · fingerprint: 5bfc1af36a470f1f001188ee
+- **present-perfect** · skills/document-standards/references/document-type-catalog.md:147:479 · **recurring** · fingerprint: 5bfc1af36a470f1f001188ee
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has been approved
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:88:483 · **recurring** · fingerprint: c8520603dffa16dea8ea3dc4
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:147:483 · **recurring** · fingerprint: c8520603dffa16dea8ea3dc4
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been approved
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:89:136 · **recurring** · fingerprint: 6046357fc6d15e771a97e487
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:148:136 · **recurring** · fingerprint: 6046357fc6d15e771a97e487
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are established
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:91:131 · **recurring** · fingerprint: f99656c38dfabd9bba499a0e
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:150:131 · **recurring** · fingerprint: f99656c38dfabd9bba499a0e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is established
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:91:206 · **recurring** · fingerprint: 2d052b2c33e7ba911021d0e1
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:150:206 · **recurring** · fingerprint: 2d052b2c33e7ba911021d0e1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is planned
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:92:199 · **recurring** · fingerprint: 2d052b2c33e7ba911021d0e1
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:151:199 · **recurring** · fingerprint: 2d052b2c33e7ba911021d0e1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is planned
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:94:262 · **recurring** · fingerprint: 95aef61741aad14590481dc3
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:153:262 · **recurring** · fingerprint: 95aef61741aad14590481dc3
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is uploaded
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:104:230 · **recurring** · fingerprint: 446871a6fecc2890373b2df1
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:163:230 · **recurring** · fingerprint: 446871a6fecc2890373b2df1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is justified
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:112:129 · **recurring** · fingerprint: 521a3f31bc54ec727caae5b1
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:171:129 · **recurring** · fingerprint: 521a3f31bc54ec727caae5b1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was found
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:127:203 · **recurring** · fingerprint: 32702bd5a2c5ca60292eca3a
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:186:203 · **recurring** · fingerprint: 32702bd5a2c5ca60292eca3a
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are superseded
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:134:57 · **recurring** · fingerprint: 9a67866b9f0335cac5eb0d64
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:195:57 · **recurring** · fingerprint: 9a67866b9f0335cac5eb0d64
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was required
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:140:123 · **recurring** · fingerprint: ec9e446045dd985aa0b168c4
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are permitted
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:144:32 · **recurring** · fingerprint: d5a3d56f7803c8bd7fe2f5bb
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:207:32 · **recurring** · fingerprint: d5a3d56f7803c8bd7fe2f5bb
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is added
@@ -1151,11 +1390,11 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was classified
-- **present-perfect** · skills/INITIALIZATION_POLICY.md:36:53 · **recurring** · fingerprint: 4f9e87e44f34528956cbd2f3
+- **present-perfect** · skills/INITIALIZATION_POLICY.md:38:53 · **recurring** · fingerprint: 4f9e87e44f34528956cbd2f3
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has been retrieved
-- **passive-voice** · skills/INITIALIZATION_POLICY.md:36:57 · **recurring** · fingerprint: 25393e4ca29211513c0ea122
+- **passive-voice** · skills/INITIALIZATION_POLICY.md:38:57 · **recurring** · fingerprint: 25393e4ca29211513c0ea122
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been retrieved
@@ -1163,19 +1402,19 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
-- **passive-voice** · workspace/TASK_TEMPLATE.md:18:108 · **recurring** · fingerprint: 5275280719ed16d2a5b7ad67
+- **passive-voice** · workspace/TASK_TEMPLATE.md:19:108 · **recurring** · fingerprint: 5275280719ed16d2a5b7ad67
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is written
-- **passive-voice** · workspace/TASK_TEMPLATE.md:46:21 · **recurring** · fingerprint: fdc561df7864672b424ed481
+- **passive-voice** · workspace/TASK_TEMPLATE.md:47:21 · **recurring** · fingerprint: fdc561df7864672b424ed481
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was inspected
-- **passive-voice** · workspace/TASK_TEMPLATE.md:73:20 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
+- **passive-voice** · workspace/TASK_TEMPLATE.md:74:20 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was checked
-- **passive-voice** · workspace/TASK_TEMPLATE.md:74:23 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
+- **passive-voice** · workspace/TASK_TEMPLATE.md:75:23 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was checked
@@ -1251,146 +1490,22 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is contested
-- **present-perfect** · workspace/README.md:25:469 · **recurring** · fingerprint: 4ad77a0e3e15f5d60871f4fe
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has triggered
-- **present-perfect** · workspace/README.md:56:22 · **recurring** · fingerprint: 2769f0f695083967627c85d2
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has started
-- **passive-voice** · skills/the-worker/SKILL.md:31:133 · **recurring** · fingerprint: 718d67ec20c921c3c043a464
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is unverified
-- **passive-voice** · skills/the-worker/SKILL.md:58:61 · **recurring** · fingerprint: 0eebcb0484fe67c4e2017ecc
+- **passive-voice** · skills/the-worker/SKILL.md:57:61 · **recurring** · fingerprint: 0eebcb0484fe67c4e2017ecc
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is provided
-- **passive-voice** · skills/the-worker/SKILL.md:75:111 · **recurring** · fingerprint: d226740cae172dd2e1c78d14
+- **passive-voice** · skills/the-worker/SKILL.md:111:111 · **recurring** · fingerprint: d226740cae172dd2e1c78d14
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
-- **present-perfect** · skills/the-worker/SKILL.md:290:168 · **recurring** · fingerprint: 0e07f428da579362c55d461b
+- **present-perfect** · skills/the-worker/SKILL.md:321:168 · **recurring** · fingerprint: 0e07f428da579362c55d461b
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has been verified
-- **passive-voice** · skills/the-worker/SKILL.md:290:172 · **recurring** · fingerprint: b6cbb5b662b7ac93ef3ba05e
+- **passive-voice** · skills/the-worker/SKILL.md:321:172 · **recurring** · fingerprint: b6cbb5b662b7ac93ef3ba05e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been verified
-- **passive-voice** · skills/session-archiving/references/drawing-session-closeout.md:17:227 · **recurring** · fingerprint: 5c4029a4459ae6a7419ec7c9
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is Closed
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:13:64 · **recurring** · fingerprint: 57efc2fd300bb9b7a8310db5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is curated
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:29:8 · **recurring** · fingerprint: b42e4986c1414564f3a43dfe
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was completed
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:84:21 · **recurring** · fingerprint: 1e36a113c65e15f12385ea65
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** being discussed
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:93:11 · **recurring** · fingerprint: 23d11d13b31395d30d56f69c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are limited
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:121:164 · **recurring** · fingerprint: f5645cb699f537e6560fec11
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is added
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:124:130 · **recurring** · fingerprint: 27f21c0fcee319d11c62095b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is established
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:128:343 · **recurring** · fingerprint: c5e47aa80ee8e7135454cf5b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was rejected
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:186:170 · **recurring** · fingerprint: ba19e482eb53d060d32f3713
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was supplied
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:189:23 · **recurring** · fingerprint: 1d0aa41a6bd9ae288874e8d0
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** being tested
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:227:65 · **recurring** · fingerprint: 77657ae524bd6ec941b3e366
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was returned
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:238:24 · **recurring** · fingerprint: 8c39463eb3e977779ed45cf7
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is known
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:255:28 · **recurring** · fingerprint: 0fa85e814db12cfbf0b20231
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was attached
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:267:33 · **recurring** · fingerprint: ba19e482eb53d060d32f3713
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was supplied
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:282:44 · **recurring** · fingerprint: 9f3e8f0bc0fbdd6524b3656a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was created
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:292:68 · **recurring** · fingerprint: 493149180e6121959865622c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was delivered
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:293:36 · **recurring** · fingerprint: 77657ae524bd6ec941b3e366
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was returned
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:293:58 · **recurring** · fingerprint: 2b09f88ca19a5527995c7947
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is unverified
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:296:4 · **recurring** · fingerprint: b8f9a093dcad37186a759350
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is uploaded
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:297:78 · **recurring** · fingerprint: 0975b3ba84ad7cb994974ee5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is recorded
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:298:48 · **recurring** · fingerprint: e48495019965c18ff0c22b95
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was generated
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:299:75 · **recurring** · fingerprint: 77657ae524bd6ec941b3e366
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was returned
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:300:68 · **recurring** · fingerprint: 55f138238adaad7251236fe2
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is unconfirmed
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:310:20 · **recurring** · fingerprint: 2868b703139e25825d4a9b8a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is finalized
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:314:53 · **recurring** · fingerprint: 009936d66fee55cde90f5887
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is renamed
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:336:242 · **recurring** · fingerprint: 80f2107125cb88de9fe1f2d7
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is verified
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:338:35 · **recurring** · fingerprint: 695e4b770f91de2ff1b14f54
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is stored
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:385:69 · **recurring** · fingerprint: 424f162bb288d4ec5598118a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is based
 - **passive-voice** · skills/drawing/references/prompt-fidelity.md:13:215 · **recurring** · fingerprint: 404693192feb5c0a1bc279e9
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1571,31 +1686,19 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was copied
-- **passive-voice** · skills/document-standards/SKILL.md:75:47 · **recurring** · fingerprint: f02e1c27fdc79f6921bf2e16
+- **synonym-rotation** · skills/drawing/references/prompt-fidelity.md:315:156 · **recurring** · fingerprint: c784915b81aefed48004e9cb
+  - **Level:** advisory-free
+  - **Message:** 'fetch' and 'retrieve' name the same action. Pick one and use it every time.
+  - **Matched text:** fetch
+- **passive-voice** · skills/document-standards/SKILL.md:38:46 · **recurring** · fingerprint: f02e1c27fdc79f6921bf2e16
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is created
-- **passive-voice** · skills/document-standards/SKILL.md:197:37 · **recurring** · fingerprint: da830431b494f6dd663885a4
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is defined
-- **passive-voice** · skills/session-archiving/SKILL.md:80:90 · **recurring** · fingerprint: 038292fe0c13c6199af4bf3a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is known
-- **passive-voice** · skills/session-archiving/SKILL.md:134:41 · **recurring** · fingerprint: 99dd9dc8b35e76013c9dd169
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is mentioned
-- **passive-voice** · skills/session-archiving/SKILL.md:142:408 · **recurring** · fingerprint: 2779f560ab6e00a4b9a36994
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is provided
-- **present-perfect** · skills/SESSION_START.md:18:114 · **recurring** · fingerprint: 9acf80e5a2b48047e9dd619f
+- **present-perfect** · skills/SESSION_START.md:35:114 · **recurring** · fingerprint: 9acf80e5a2b48047e9dd619f
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** have been retrieved
-- **passive-voice** · skills/SESSION_START.md:18:119 · **recurring** · fingerprint: fec2fb4fa450910b68502f34
+- **passive-voice** · skills/SESSION_START.md:35:119 · **recurring** · fingerprint: fec2fb4fa450910b68502f34
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been retrieved
@@ -1606,242 +1709,490 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### Resolved findings
 
-- **synonym-rotation** · skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md:38:8 · **resolved** · fingerprint: e56e71413f309183c3195a0f
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Verify
-- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:136:110 · **resolved** · fingerprint: 836c6ab7672c67c5cf0dbf14
-  - **Level:** advisory-free
-  - **Message:** 'start' and 'begin' name the same action. Pick one and use it every time.
-  - **Matched text:** Start
-- **long-sentence** · skills/agent-skill-authoring/SKILL.md:203:27 · **resolved** · fingerprint: 76c645f8b8d79e0e8da99700
-  - **Level:** advisory-free
-  - **Message:** Sentence has 28 words (cap 25). Split it.
-  - **Matched text:** 28 words
-- **synonym-rotation** · skills/drawing/assets/pattern-entry-templates.md:106:43 · **resolved** · fingerprint: 1e2dc3b524f1b7c4c3b51d1f
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-- **synonym-rotation** · skills/drawing/references/archive-and-delivery.md:66:70 · **resolved** · fingerprint: 4a60e842034f5d41693a5db2
+- **passive-voice** · images/README.md:94:54 · **resolved** · fingerprint: 03c08438c1205e007605fad3
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are reserved
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:20:59 · **resolved** · fingerprint: 7da75daf64549a13157f1e48
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are copied
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:22:23 · **resolved** · fingerprint: e6d836749364fb952eddfc7c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is moved
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:33:3 · **resolved** · fingerprint: 1ca6476f6144a140274847f2
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are grouped
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:34:36 · **resolved** · fingerprint: 6bdb7fc4f6e61f46efdcc945
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are processed
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:45:16 · **resolved** · fingerprint: 7bb3ef8e29cc2d62ee65f3a9
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are paired
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:46:35 · **resolved** · fingerprint: d15ccec8d9ae7c220e7297be
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is recorded
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:47:52 · **resolved** · fingerprint: 5fd7aabe55ed535b8e321fa7
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are verified
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:53:17 · **resolved** · fingerprint: 3f8fc33d65f0a6d46cb838c6
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is archived
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:57:59 · **resolved** · fingerprint: 07f09cee503710d3a9b04228
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are excluded
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:59:23 · **resolved** · fingerprint: af22c155e8e4b4f9c84b3f86
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is cleared
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:59:57 · **resolved** · fingerprint: 67f2ed0983a75668f4ce3020
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is converted
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:60:51 · **resolved** · fingerprint: 0d3df0958eac71ea42f42c9c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are written
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:93:17 · **resolved** · fingerprint: fafc7dc70cfb6b41e2ceac4c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are allowed
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:94:72 · **resolved** · fingerprint: c93d49b6dfa2883ae7732733
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is unresolved
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:98:39 · **resolved** · fingerprint: 9e3799d7fdb927485334ac92
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been uploaded
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:177:400 · **resolved** · fingerprint: 20086aa45dcb5efbabf52350
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** were expected
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:196:37 · **resolved** · fingerprint: b6e92fd2ee8e3800eabf5dcd
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is paired
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:197:76 · **resolved** · fingerprint: a753d9aa8cfa9ae159dfcd57
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is verified
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:208:26 · **resolved** · fingerprint: c6565434b3298d6e8f59aec5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is retained
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:212:1 · **resolved** · fingerprint: 4c20f74831abf9722cfbae81
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is described
+- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:12:63 · **resolved** · fingerprint: beabe60324ae752ed917a331
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:21:59 · **resolved** · fingerprint: f0ad12d293bae6f6df55998b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are copied
+- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:23:16 · **resolved** · fingerprint: 606c590b44260c445b3f05a1
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is moved
+- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:45:38 · **resolved** · fingerprint: 5e247f9b617820d66c4e5de3
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is preserved
+- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:50:11 · **resolved** · fingerprint: db9467f618e5d7170b5770de
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are reserved
+- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:73:215 · **resolved** · fingerprint: 6ad1c8a942b901eb141a0cdc
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are Verified
+- **synonym-rotation** · skills/session-archiving/references/image-provenance-and-webp.md:103:200 · **resolved** · fingerprint: e6e912834a84809148a29b28
   - **Level:** advisory-free
   - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
-- **long-sentence** · skills/drawing/references/archive-and-delivery.md:78:4 · **resolved** · fingerprint: b2fe77983de2b84d89887c16
+  - **Matched text:** checking
+- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:105:12 · **resolved** · fingerprint: 3d2774d90e6346c9f479ca23
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is intended
+- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:113:276 · **resolved** · fingerprint: ebe274c396fc6f6265e97091
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is updated
+- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:122:37 · **resolved** · fingerprint: 28344c784d287164c52cc81d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is paired
+- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:123:76 · **resolved** · fingerprint: a8745ab59e15a54323b8eb62
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is verified
+- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:134:26 · **resolved** · fingerprint: 756755bb5f5f39c5e328e481
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is retained
+- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:138:1 · **resolved** · fingerprint: a22a1b959ff468a81a8c41ae
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is described
+- **passive-voice** · skills/conversation-mode/SKILL.md:94:157 · **resolved** · fingerprint: 6d637f1fa2db2d41a6d50ddc
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are ordered
+- **passive-voice** · skills/conversation-mode/SKILL.md:105:72 · **resolved** · fingerprint: 448cf9dfd90fe327096b71e5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is paused
+- **passive-voice** · skills/conversation-mode/SKILL.md:110:41 · **resolved** · fingerprint: 24000f0d039ebc991f65530c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is unresolved
+- **passive-voice** · skills/conversation-mode/SKILL.md:137:88 · **resolved** · fingerprint: 448cf9dfd90fe327096b71e5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is paused
+- **present-perfect** · skills/conversation-mode/SKILL.md:138:78 · **resolved** · fingerprint: 11522f9e8c67a502b19046c1
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has stopped
+- **present-perfect** · skills/conversation-mode/SKILL.md:138:108 · **resolved** · fingerprint: fb6ab971291fabec8f04e13d
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has proposed
+- **passive-voice** · skills/conversation-mode/SKILL.md:139:61 · **resolved** · fingerprint: a5afffbd39db7eee0657c03b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+- **passive-voice** · skills/conversation-mode/SKILL.md:139:272 · **resolved** · fingerprint: 7432ab5664bf24b78cc7ff00
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is resolved
+- **passive-voice** · skills/conversation-mode/SKILL.md:154:63 · **resolved** · fingerprint: a5afffbd39db7eee0657c03b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+- **passive-voice** · skills/conversation-mode/SKILL.md:159:36 · **resolved** · fingerprint: 3a6c1312d7b45107dbc72a9d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was encountered
+- **passive-voice** · skills/conversation-mode/SKILL.md:161:106 · **resolved** · fingerprint: f524e4cf6f61106be53e395c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was verified
+- **passive-voice** · skills/conversation-mode/SKILL.md:170:180 · **resolved** · fingerprint: 30999b2a0d67c2a1670763ff
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is exceeded
+- **passive-voice** · skills/conversation-mode/SKILL.md:196:260 · **resolved** · fingerprint: a5afffbd39db7eee0657c03b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+- **present-perfect** · skills/conversation-mode/SKILL.md:211:94 · **resolved** · fingerprint: 5b8f9ac16a3f5a3fd92e7621
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has approved
+- **present-perfect** · skills/conversation-mode/SKILL.md:238:126 · **resolved** · fingerprint: 7e130dc07470c4dfc1de436d
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has been given
+- **passive-voice** · skills/conversation-mode/SKILL.md:238:130 · **resolved** · fingerprint: ef15c6245f889cbfdb09d89a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been given
+- **passive-voice** · skills/conversation-mode/SKILL.md:259:75 · **resolved** · fingerprint: 04de33177ef6c58de34b6fd5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are governed
+- **long-sentence** · skills/drawing/SKILL.md:261:4 · **resolved** · fingerprint: d81568a6e2238902ee0c2105
   - **Level:** advisory-free
   - **Message:** Sentence has 28 words (cap 25). Split it.
   - **Matched text:** 28 words
-- **long-sentence** · skills/drawing/references/archive-and-delivery.md:88:4 · **resolved** · fingerprint: 1f12c5295c209089d03fd7ec
-  - **Level:** advisory-free
-  - **Message:** Sentence has 33 words (cap 25). Split it.
-  - **Matched text:** 33 words
-- **synonym-rotation** · skills/drawing/references/archive-and-delivery.md:105:22 · **resolved** · fingerprint: 85ee15f9b5a327b690ba9464
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-- **synonym-rotation** · skills/drawing/references/archive-and-delivery.md:168:47 · **resolved** · fingerprint: 530b4aab7e05619eb2854a21
-  - **Level:** advisory-free
-  - **Message:** 'correct' and 'repair' name the same action. Pick one and use it every time.
-  - **Matched text:** correct
-- **synonym-rotation** · skills/github-actions/SKILL.md:33:62 · **resolved** · fingerprint: 8273627d1b81174ce50b3186
-  - **Level:** advisory-free
-  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
-  - **Matched text:** Remove
-- **semicolon** · skills/github-actions/SKILL.md:42:31 · **resolved** · fingerprint: 469031badac3ba397e332e3c
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/github-actions/SKILL.md:45:54 · **resolved** · fingerprint: 469031badac3ba397e332e3c
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · skills/github-actions/SKILL.md:49:96 · **resolved** · fingerprint: 7d97b46795e61a4443970d53
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-- **semicolon** · skills/github-actions/SKILL.md:220:211 · **resolved** · fingerprint: 469031badac3ba397e332e3c
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **synonym-rotation** · skills/session-archiving/references/image-provenance-and-webp.md:94:206 · **resolved** · fingerprint: f6b87316a617b3675e187026
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** Verify
-- **semicolon** · skills/conversation-mode/SKILL.md:100:230 · **resolved** · fingerprint: 53195e2f9ecf6fe4ff1b3bcc
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **synonym-rotation** · skills/conversation-mode/SKILL.md:101:60 · **resolved** · fingerprint: 5cbd20db3996bfbcd6375e8e
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-- **semicolon** · skills/conversation-mode/SKILL.md:102:129 · **resolved** · fingerprint: 53195e2f9ecf6fe4ff1b3bcc
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · skills/conversation-mode/SKILL.md:105:3 · **resolved** · fingerprint: 896c2c9e44672241e3c6b38f
-  - **Level:** advisory-free
-  - **Message:** Sentence has 32 words (cap 25). Split it.
-  - **Matched text:** 32 words
-- **semicolon** · skills/conversation-mode/SKILL.md:105:112 · **resolved** · fingerprint: 53195e2f9ecf6fe4ff1b3bcc
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · skills/drawing/SKILL.md:166:1 · **resolved** · fingerprint: 6901675964ceed2d35078379
-  - **Level:** advisory-free
-  - **Message:** Sentence has 32 words (cap 25). Split it.
-  - **Matched text:** 32 words
-- **long-sentence** · skills/drawing/SKILL.md:166:376 · **resolved** · fingerprint: 7f77b267c64ee5928a429888
-  - **Level:** advisory-free
-  - **Message:** Sentence has 29 words (cap 25). Split it.
-  - **Matched text:** 29 words
-- **semicolon** · skills/drawing/SKILL.md:166:449 · **resolved** · fingerprint: a66c58d4cbff63015f3f6912
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · skills/drawing/SKILL.md:166:827 · **resolved** · fingerprint: 7f77b267c64ee5928a429888
-  - **Level:** advisory-free
-  - **Message:** Sentence has 29 words (cap 25). Split it.
-  - **Matched text:** 29 words
-- **long-sentence** · skills/drawing/SKILL.md:257:5 · **resolved** · fingerprint: ab1ec88e506a23cf0af2d38c
-  - **Level:** advisory-free
-  - **Message:** Sentence has 34 words (cap 25). Split it.
-  - **Matched text:** 34 words
-- **semicolon** · skills/drawing/SKILL.md:274:36 · **resolved** · fingerprint: a66c58d4cbff63015f3f6912
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **synonym-rotation** · skills/drawing/SKILL.md:353:46 · **resolved** · fingerprint: 14047edbba057e6e6f46a522
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Confirm
-- **long-sentence** · skills/drawing/SKILL.md:379:1 · **resolved** · fingerprint: 71b5544d9fbd5e093fd73ef3
-  - **Level:** advisory-free
-  - **Message:** Sentence has 33 words (cap 25). Split it.
-  - **Matched text:** 33 words
-- **semicolon** · skills/drawing/SKILL.md:465:131 · **resolved** · fingerprint: a66c58d4cbff63015f3f6912
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/INITIALIZATION_POLICY.md:132:288 · **resolved** · fingerprint: b28796101e8a0d8165b3d79b
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **synonym-rotation** · skills/drawing/assets/daily-index-template.md:28:28 · **resolved** · fingerprint: 1975c054eeac9c56d64113d2
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-- **synonym-rotation** · workspace/TASK_TEMPLATE.md:57:58 · **resolved** · fingerprint: e37028ed88b119b98fe16981
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
-- **synonym-rotation** · skills/drawing/references/series-continuity-and-iteration.md:177:31 · **resolved** · fingerprint: 284ad5169b785d0b95212ad0
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** Check
-- **long-sentence** · skills/the-worker/SKILL.md:23:1 · **resolved** · fingerprint: 43ee5fc4aa2ab0ab98097505
-  - **Level:** advisory-free
-  - **Message:** Sentence has 34 words (cap 25). Split it.
-  - **Matched text:** 34 words
-- **synonym-rotation** · skills/the-worker/SKILL.md:49:97 · **resolved** · fingerprint: fc69cda88704716351e23cde
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-- **synonym-rotation** · skills/the-worker/SKILL.md:52:234 · **resolved** · fingerprint: d58fcdeca2d4638a3202e347
-  - **Level:** advisory-free
-  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** validate
-- **synonym-rotation** · skills/the-worker/SKILL.md:210:86 · **resolved** · fingerprint: 6d31ffa74d22866fde26008b
-  - **Level:** advisory-free
-  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
-  - **Matched text:** Remove
-- **synonym-rotation** · skills/the-worker/SKILL.md:274:142 · **resolved** · fingerprint: 029ca4bbb45df78403a58c6a
-  - **Level:** advisory-free
-  - **Message:** 'fix' and 'repair' name the same action. Pick one and use it every time.
-  - **Matched text:** fix
-- **semicolon** · skills/the-worker/SKILL.md:274:237 · **resolved** · fingerprint: 3e9dae68ac0dc79de8ae5c41
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · skills/the-worker/SKILL.md:284:273 · **resolved** · fingerprint: 3e9dae68ac0dc79de8ae5c41
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **synonym-rotation** · skills/the-worker/SKILL.md:302:5 · **resolved** · fingerprint: a9d20f4653027ed7ab14234f
-  - **Level:** advisory-free
-  - **Message:** 'fetch' and 'retrieve' name the same action. Pick one and use it every time.
-  - **Matched text:** Fetch
-- **synonym-rotation** · skills/the-worker/SKILL.md:303:188 · **resolved** · fingerprint: 37f2d4507c6da52361dc8884
-  - **Level:** advisory-free
-  - **Message:** 'modify' and 'change' name the same action. Pick one and use it every time.
-  - **Matched text:** modify
-- **synonym-rotation** · skills/session-archiving/references/archive-records-and-image-prompts.md:49:20 · **resolved** · fingerprint: 5d54d956f78d455711c2a358
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-- **synonym-rotation** · skills/drawing/references/prompt-fidelity.md:182:140 · **resolved** · fingerprint: 2476dea842e1d1f6a28cf155
-  - **Level:** advisory-free
-  - **Message:** 'modify' and 'change' name the same action. Pick one and use it every time.
-  - **Matched text:** modify
-- **synonym-rotation** · skills/drawing/references/prompt-fidelity.md:198:63 · **resolved** · fingerprint: 282525e2d2f8de1a47888d6a
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Confirm
-- **synonym-rotation** · skills/drawing/references/prompt-fidelity.md:264:4 · **resolved** · fingerprint: 938ecf216eb0c10b33dda11d
-  - **Level:** advisory-free
-  - **Message:** 'fetch' and 'retrieve' name the same action. Pick one and use it every time.
-  - **Matched text:** Fetch
-- **synonym-rotation** · skills/document-standards/SKILL.md:63:4 · **resolved** · fingerprint: 07674879980ff2505700c220
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Confirm
-- **long-sentence** · skills/document-standards/SKILL.md:180:327 · **resolved** · fingerprint: d729b795313e90f225f82604
-  - **Level:** advisory-free
-  - **Message:** Sentence has 28 words (cap 25). Split it.
-  - **Matched text:** 28 words
-- **synonym-rotation** · skills/document-standards/SKILL.md:180:450 · **resolved** · fingerprint: 10e159b65c4b4d9975acc612
-  - **Level:** advisory-free
-  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** validate
-- **semicolon** · skills/document-standards/SKILL.md:182:163 · **resolved** · fingerprint: 0a9f2f8f059737eb01876e1d
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · skills/session-archiving/SKILL.md:15:1 · **resolved** · fingerprint: 9e6fa03cf250971e670d6803
+- **long-sentence** · skills/drawing/SKILL.md:276:5 · **resolved** · fingerprint: 1da08cc0bf141330524bda57
   - **Level:** advisory-free
   - **Message:** Sentence has 27 words (cap 25). Split it.
   - **Matched text:** 27 words
-- **long-sentence** · skills/session-archiving/SKILL.md:19:1 · **resolved** · fingerprint: 4a07020ba7d52cf7f45d6a4a
-  - **Level:** advisory-free
-  - **Message:** Sentence has 31 words (cap 25). Split it.
-  - **Matched text:** 31 words
-- **semicolon** · skills/session-archiving/SKILL.md:138:339 · **resolved** · fingerprint: 7d65cb408a89c3b8ce342056
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · skills/drawing/references/image-editing-protocol.md:5:1 · **resolved** · fingerprint: fad73ccae148b45b37683760
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-- **long-sentence** · skills/drawing/references/image-editing-protocol.md:11:57 · **resolved** · fingerprint: c15f742ac3e180cc65752268
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-- **long-sentence** · skills/drawing/references/image-editing-protocol.md:28:1 · **resolved** · fingerprint: 8d59855cda37840c3b2e2839
-  - **Level:** advisory-free
-  - **Message:** Sentence has 29 words (cap 25). Split it.
-  - **Matched text:** 29 words
-- **synonym-rotation** · skills/drawing/references/image-editing-protocol.md:57:58 · **resolved** · fingerprint: 716088bbc5e9ae6d23e2ad21
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
-  - **Matched text:** Check
-- **long-sentence** · skills/session-archiving/assets/session-brief-template.md:5:1 · **resolved** · fingerprint: 9edc4fb8b393050df4a8fe30
-  - **Level:** advisory-free
-  - **Message:** Sentence has 32 words (cap 25). Split it.
-  - **Matched text:** 32 words
+- **passive-voice** · skills/drawing/SKILL.md:394:23 · **resolved** · fingerprint: c13b1ec0df584f1d71453752
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are governed
+- **passive-voice** · skills/drawing/SKILL.md:400:60 · **resolved** · fingerprint: 828f9104eb1934f156af2c49
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was used
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:4:162 · **resolved** · fingerprint: 305e0414169478f6e310d27a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was truncated
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:4:254 · **resolved** · fingerprint: 1b362583f0b6f9564bc66dd0
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** were inspected
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:140:123 · **resolved** · fingerprint: ec9e446045dd985aa0b168c4
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are permitted
+- **present-perfect** · workspace/README.md:25:469 · **resolved** · fingerprint: 4ad77a0e3e15f5d60871f4fe
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has triggered
+- **present-perfect** · workspace/README.md:56:22 · **resolved** · fingerprint: 2769f0f695083967627c85d2
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has started
+- **passive-voice** · skills/the-worker/SKILL.md:31:133 · **resolved** · fingerprint: 718d67ec20c921c3c043a464
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is unverified
+- **passive-voice** · skills/session-archiving/references/drawing-session-closeout.md:17:227 · **resolved** · fingerprint: 5c4029a4459ae6a7419ec7c9
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Closed
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:13:64 · **resolved** · fingerprint: 57efc2fd300bb9b7a8310db5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is curated
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:29:8 · **resolved** · fingerprint: b42e4986c1414564f3a43dfe
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was completed
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:84:21 · **resolved** · fingerprint: 1e36a113c65e15f12385ea65
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** being discussed
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:93:11 · **resolved** · fingerprint: 23d11d13b31395d30d56f69c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are limited
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:121:164 · **resolved** · fingerprint: f5645cb699f537e6560fec11
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is added
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:124:130 · **resolved** · fingerprint: 27f21c0fcee319d11c62095b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is established
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:128:343 · **resolved** · fingerprint: c5e47aa80ee8e7135454cf5b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was rejected
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:186:170 · **resolved** · fingerprint: ba19e482eb53d060d32f3713
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was supplied
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:189:23 · **resolved** · fingerprint: 1d0aa41a6bd9ae288874e8d0
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** being tested
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:227:65 · **resolved** · fingerprint: 77657ae524bd6ec941b3e366
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was returned
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:238:24 · **resolved** · fingerprint: 8c39463eb3e977779ed45cf7
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is known
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:255:28 · **resolved** · fingerprint: 0fa85e814db12cfbf0b20231
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was attached
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:267:33 · **resolved** · fingerprint: ba19e482eb53d060d32f3713
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was supplied
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:282:44 · **resolved** · fingerprint: 9f3e8f0bc0fbdd6524b3656a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was created
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:292:68 · **resolved** · fingerprint: 493149180e6121959865622c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was delivered
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:293:36 · **resolved** · fingerprint: 77657ae524bd6ec941b3e366
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was returned
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:293:58 · **resolved** · fingerprint: 2b09f88ca19a5527995c7947
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is unverified
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:296:4 · **resolved** · fingerprint: b8f9a093dcad37186a759350
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is uploaded
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:297:78 · **resolved** · fingerprint: 0975b3ba84ad7cb994974ee5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is recorded
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:298:48 · **resolved** · fingerprint: e48495019965c18ff0c22b95
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was generated
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:299:75 · **resolved** · fingerprint: 77657ae524bd6ec941b3e366
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was returned
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:300:68 · **resolved** · fingerprint: 55f138238adaad7251236fe2
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is unconfirmed
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:310:20 · **resolved** · fingerprint: 2868b703139e25825d4a9b8a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is finalized
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:314:53 · **resolved** · fingerprint: 009936d66fee55cde90f5887
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is renamed
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:336:242 · **resolved** · fingerprint: 80f2107125cb88de9fe1f2d7
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is verified
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:338:35 · **resolved** · fingerprint: 695e4b770f91de2ff1b14f54
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is stored
+- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:385:69 · **resolved** · fingerprint: 424f162bb288d4ec5598118a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is based
+- **passive-voice** · skills/document-standards/SKILL.md:197:37 · **resolved** · fingerprint: da830431b494f6dd663885a4
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is defined
+- **passive-voice** · skills/session-archiving/SKILL.md:80:90 · **resolved** · fingerprint: 038292fe0c13c6199af4bf3a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is known
+- **passive-voice** · skills/session-archiving/SKILL.md:134:41 · **resolved** · fingerprint: 99dd9dc8b35e76013c9dd169
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is mentioned
+- **passive-voice** · skills/session-archiving/SKILL.md:142:408 · **resolved** · fingerprint: 2779f560ab6e00a4b9a36994
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is provided
 
 ## 8. Complete per-file diagnostics
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
+
+### skills/the-worker/references/conversation-mode.md
+
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 19
+- **Hard findings:** 2
+- **Baseline:** 0
+- **Words:** 3078
+- **Findings per 100 words:** 0.6
+
+#### Complete diagnostics
+
+- **long-sentence** · skills/the-worker/references/conversation-mode.md:68:60 · **new** · fingerprint: a572f3dff82333ad7db50991
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+
+- **semicolon** · skills/the-worker/references/conversation-mode.md:68:162 · **new** · fingerprint: 09a34c4b31b88c0f364bd67e
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:84:157 · **new** · fingerprint: bee2a996a437e18d996259cd
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are ordered
+
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:95:72 · **new** · fingerprint: 2241e6bb50e2f15bfa24211b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is paused
+
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:100:41 · **new** · fingerprint: d30ba0439a3d723f276eb4c5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is unresolved
+
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:127:88 · **new** · fingerprint: 2241e6bb50e2f15bfa24211b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is paused
+
+- **present-perfect** · skills/the-worker/references/conversation-mode.md:128:78 · **new** · fingerprint: cedfb1b9e8b08ba988f26ada
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has stopped
+
+- **present-perfect** · skills/the-worker/references/conversation-mode.md:128:108 · **new** · fingerprint: 17842a0d207d59e3d6dfd995
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has proposed
+
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:129:61 · **new** · fingerprint: bd2f7bbdff13e7e39ad308db
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:129:272 · **new** · fingerprint: 843d844a7e11cf758d6cc899
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is resolved
+
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:144:63 · **new** · fingerprint: bd2f7bbdff13e7e39ad308db
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:149:36 · **new** · fingerprint: 8e2161d80a5148d771a0f3ef
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was encountered
+
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:151:106 · **new** · fingerprint: ff487ca595e84d2db113914a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was verified
+
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:160:180 · **new** · fingerprint: 308ed03edab7da5db41594ac
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is exceeded
+
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:186:260 · **new** · fingerprint: bd2f7bbdff13e7e39ad308db
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+
+- **present-perfect** · skills/the-worker/references/conversation-mode.md:201:94 · **new** · fingerprint: 04cc8860da7a5678f9593957
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has approved
+
+- **present-perfect** · skills/the-worker/references/conversation-mode.md:228:126 · **new** · fingerprint: b415c4bf0547befb7d81674b
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has been given
+
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:228:130 · **new** · fingerprint: b76b30e48b4f4ad0c86a4c75
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been given
+
+- **passive-voice** · skills/the-worker/references/conversation-mode.md:249:75 · **new** · fingerprint: c9dae4d4501881d9eacee582
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are governed
+
 
 ### skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md
 
@@ -1907,19 +2258,6 @@ No STE findings were recorded for this file.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been kept
-
-
-### skills/session-archiving/assets/conversation-integrity-template.md
-
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 0
-- **Hard findings:** 0
-- **Baseline:** 0
-- **Words:** 192
-- **Findings per 100 words:** 0.0
-
-No STE findings were recorded for this file.
 
 
 ### skills/drawing/references/patterns/failure-patterns.md
@@ -2060,15 +2398,33 @@ No STE findings were recorded for this file.
   - **Matched text:** is maintained
 
 
+### skills/the-worker/references/drawing-session-closeout.md
+
+- **Result:** PASS
+- **Exit code:** 0
+- **Findings:** 1
+- **Hard findings:** 0
+- **Baseline:** 0
+- **Words:** 612
+- **Findings per 100 words:** 0.2
+
+#### Complete diagnostics
+
+- **passive-voice** · skills/the-worker/references/drawing-session-closeout.md:17:227 · **new** · fingerprint: 2d728b322e849133738368be
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Closed
+
+
 ### skills/agent-skill-authoring/SKILL.md
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 17
+- **Findings:** 16
 - **Hard findings:** 1
 - **Baseline:** 6
-- **Words:** 2259
-- **Findings per 100 words:** 0.8
+- **Words:** 2256
+- **Findings per 100 words:** 0.7
 
 #### Complete diagnostics
 
@@ -2077,57 +2433,52 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are created
 
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:160:29 · **recurring** · fingerprint: 6ffc592c0b6322b443496f66
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:159:29 · **recurring** · fingerprint: 6ffc592c0b6322b443496f66
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is loaded
 
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:163:106 · **recurring** · fingerprint: 6ffc592c0b6322b443496f66
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:166:23 · **recurring** · fingerprint: 6ffc592c0b6322b443496f66
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is loaded
 
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:167:23 · **recurring** · fingerprint: 6ffc592c0b6322b443496f66
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is loaded
-
-- **present-perfect** · skills/agent-skill-authoring/SKILL.md:171:149 · **recurring** · fingerprint: 2dddc1891d5710f75a1cc520
+- **present-perfect** · skills/agent-skill-authoring/SKILL.md:172:149 · **recurring** · fingerprint: 2dddc1891d5710f75a1cc520
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has been loaded
 
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:171:153 · **recurring** · fingerprint: f7fae0229a13471823102bb0
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:172:153 · **recurring** · fingerprint: f7fae0229a13471823102bb0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been loaded
 
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:184:36 · **recurring** · fingerprint: 0be774910939027b005107b8
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:185:36 · **recurring** · fingerprint: 0be774910939027b005107b8
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is known
 
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:222:38 · **recurring** · fingerprint: 5eabd6169bec15a6fdfd2a80
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:223:38 · **recurring** · fingerprint: 5eabd6169bec15a6fdfd2a80
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been created
 
-- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:231:18 · **new** · fingerprint: cdded221cb31c45f9059249a
+- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:232:18 · **recurring** · fingerprint: cdded221cb31c45f9059249a
   - **Level:** advisory-free
   - **Message:** 'begin' and 'start' name the same action. Pick one and use it every time.
   - **Matched text:** begins
 
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:244:28 · **recurring** · fingerprint: 0f053c89c3267998b6edc9d6
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:245:28 · **recurring** · fingerprint: 0f053c89c3267998b6edc9d6
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are focused
 
-- **present-perfect** · skills/agent-skill-authoring/SKILL.md:245:65 · **recurring** · fingerprint: 70dc63b30d658452239a6cbe
+- **present-perfect** · skills/agent-skill-authoring/SKILL.md:246:65 · **recurring** · fingerprint: 70dc63b30d658452239a6cbe
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** have been introduced
 
-- **passive-voice** · skills/agent-skill-authoring/SKILL.md:245:70 · **recurring** · fingerprint: 2df378472bba68cfc7a25cbe
+- **passive-voice** · skills/agent-skill-authoring/SKILL.md:246:70 · **recurring** · fingerprint: 2df378472bba68cfc7a25cbe
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been introduced
@@ -2242,7 +2593,7 @@ No STE findings were recorded for this file.
 - **Findings:** 0
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 396
+- **Words:** 406
 - **Findings per 100 words:** 0.0
 
 No STE findings were recorded for this file.
@@ -2314,22 +2665,168 @@ No STE findings were recorded for this file.
   - **Matched text:** are reserved
 
 
+### skills/the-worker/references/archive-records-and-image-prompts.md
+
+- **Result:** PASS
+- **Exit code:** 0
+- **Findings:** 25
+- **Hard findings:** 0
+- **Baseline:** 0
+- **Words:** 3403
+- **Findings per 100 words:** 0.7
+
+#### Complete diagnostics
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:13:64 · **new** · fingerprint: f699d20c8970b5d1983db259
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is curated
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:29:8 · **new** · fingerprint: cc9ba4be2c27f329401729a2
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was completed
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:83:21 · **new** · fingerprint: f3fec903703ee5f02784e5b9
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** being discussed
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:92:11 · **new** · fingerprint: a8780077bedc79b1c8c2f758
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are limited
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:120:164 · **new** · fingerprint: 26fb46186c78ffa8fc4b9cda
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is added
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:123:130 · **new** · fingerprint: ee1b84223aa1974ec2c266cc
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is established
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:127:343 · **new** · fingerprint: c9f4691a4ae74067995898f8
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was rejected
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:184:170 · **new** · fingerprint: 7004493f0380541a3c7f3930
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was supplied
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:187:23 · **new** · fingerprint: ca92034f0c45e9624487b338
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** being tested
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:225:65 · **new** · fingerprint: 775b40787e9b3007554a0ec5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was returned
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:236:24 · **new** · fingerprint: 2e9865ddbebafa08f9136623
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is known
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:242:176 · **new** · fingerprint: bb7ba68bed0f5ce8ed1acfa4
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:256:44 · **new** · fingerprint: 080078c5d205e0780e807349
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was created
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:266:68 · **new** · fingerprint: d084f532a966087492331395
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was delivered
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:267:36 · **new** · fingerprint: 775b40787e9b3007554a0ec5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was returned
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:267:58 · **new** · fingerprint: 3722d82669780cffed6aeec3
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is unverified
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:270:4 · **new** · fingerprint: 5a90765839e065feaea2c67f
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is uploaded
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:271:78 · **new** · fingerprint: 7b3ba7f2b54fbc6ca66fbc67
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is recorded
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:272:48 · **new** · fingerprint: b53044cd6e868b63415369d7
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was generated
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:273:75 · **new** · fingerprint: 775b40787e9b3007554a0ec5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was returned
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:274:68 · **new** · fingerprint: b04fa2904d1f6ad6f275ec4c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is unconfirmed
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:284:20 · **new** · fingerprint: 96841d15291a7c9a3b97989e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is finalized
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:288:53 · **new** · fingerprint: 3ad612336bdf6ad04df13169
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is renamed
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:312:69 · **new** · fingerprint: c791b4a9936caab1939af327
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is based
+
+- **passive-voice** · skills/the-worker/references/archive-records-and-image-prompts.md:316:84 · **new** · fingerprint: 1c8f9ddb3e42b7986914faf3
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is authorized
+
+
+### skills/the-worker/assets/conversation-integrity-template.md
+
+- **Result:** PASS
+- **Exit code:** 0
+- **Findings:** 0
+- **Hard findings:** 0
+- **Baseline:** 0
+- **Words:** 192
+- **Findings per 100 words:** 0.0
+
+No STE findings were recorded for this file.
+
+
 ### images/README.md
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 1
+- **Findings:** 0
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 584
-- **Findings per 100 words:** 0.2
+- **Words:** 213
+- **Findings per 100 words:** 0.0
 
-#### Complete diagnostics
-
-- **passive-voice** · images/README.md:94:54 · **recurring** · fingerprint: 03c08438c1205e007605fad3
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are reserved
+No STE findings were recorded for this file.
 
 
 ### skills/asd-ste100/SKILL.md
@@ -2472,113 +2969,28 @@ No STE findings were recorded for this file.
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 20
-- **Hard findings:** 0
+- **Findings:** 3
+- **Hard findings:** 1
 - **Baseline:** 7
-- **Words:** 2370
-- **Findings per 100 words:** 0.8
+- **Words:** 460
+- **Findings per 100 words:** 0.7
 
 #### Complete diagnostics
 
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:20:59 · **recurring** · fingerprint: 7da75daf64549a13157f1e48
+- **present-perfect** · skills/drawing/references/archive-and-delivery.md:11:167 · **new** · fingerprint: 964cabe631fed5dc94a42014
   - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are copied
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have been verified
 
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:22:23 · **recurring** · fingerprint: e6d836749364fb952eddfc7c
+- **passive-voice** · skills/drawing/references/archive-and-delivery.md:11:172 · **new** · fingerprint: 9b691551f730fb0278640420
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is moved
+  - **Matched text:** been verified
 
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:33:3 · **recurring** · fingerprint: 1ca6476f6144a140274847f2
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are grouped
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:34:36 · **recurring** · fingerprint: 6bdb7fc4f6e61f46efdcc945
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are processed
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:45:16 · **recurring** · fingerprint: 7bb3ef8e29cc2d62ee65f3a9
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are paired
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:46:35 · **recurring** · fingerprint: d15ccec8d9ae7c220e7297be
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is recorded
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:47:52 · **recurring** · fingerprint: 5fd7aabe55ed535b8e321fa7
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are verified
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:53:17 · **recurring** · fingerprint: 3f8fc33d65f0a6d46cb838c6
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is archived
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:57:59 · **recurring** · fingerprint: 07f09cee503710d3a9b04228
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are excluded
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:59:23 · **recurring** · fingerprint: af22c155e8e4b4f9c84b3f86
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is cleared
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:59:57 · **recurring** · fingerprint: 67f2ed0983a75668f4ce3020
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is converted
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:60:51 · **recurring** · fingerprint: 0d3df0958eac71ea42f42c9c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are written
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:93:17 · **recurring** · fingerprint: fafc7dc70cfb6b41e2ceac4c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are allowed
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:94:72 · **recurring** · fingerprint: c93d49b6dfa2883ae7732733
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is unresolved
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:98:39 · **recurring** · fingerprint: 9e3799d7fdb927485334ac92
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** been uploaded
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:177:400 · **recurring** · fingerprint: 20086aa45dcb5efbabf52350
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** were expected
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:196:37 · **recurring** · fingerprint: b6e92fd2ee8e3800eabf5dcd
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is paired
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:197:76 · **recurring** · fingerprint: a753d9aa8cfa9ae159dfcd57
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is verified
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:208:26 · **recurring** · fingerprint: c6565434b3298d6e8f59aec5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is retained
-
-- **passive-voice** · skills/drawing/references/archive-and-delivery.md:212:1 · **recurring** · fingerprint: 4c20f74831abf9722cfbae81
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is described
+- **synonym-rotation** · skills/drawing/references/archive-and-delivery.md:45:13 · **new** · fingerprint: 9f0ae35295d64485e1c937b0
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
 
 
 ### skills/README.md
@@ -2588,7 +3000,7 @@ No STE findings were recorded for this file.
 - **Findings:** 0
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 371
+- **Words:** 412
 - **Findings per 100 words:** 0.0
 
 No STE findings were recorded for this file.
@@ -2690,7 +3102,7 @@ No STE findings were recorded for this file.
 - **Findings:** 19
 - **Hard findings:** 0
 - **Baseline:** 17
-- **Words:** 2757
+- **Words:** 2756
 - **Findings per 100 words:** 0.7
 
 #### Complete diagnostics
@@ -2791,180 +3203,17 @@ No STE findings were recorded for this file.
   - **Matched text:** is finalized
 
 
-### skills/session-archiving/references/image-provenance-and-webp.md
+### skills/the-worker/assets/session-brief-template.md
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 13
-- **Hard findings:** 1
-- **Baseline:** 2
-- **Words:** 1710
-- **Findings per 100 words:** 0.8
-
-#### Complete diagnostics
-
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:12:63 · **recurring** · fingerprint: beabe60324ae752ed917a331
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:21:59 · **recurring** · fingerprint: f0ad12d293bae6f6df55998b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are copied
-
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:23:16 · **recurring** · fingerprint: 606c590b44260c445b3f05a1
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is moved
-
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:45:38 · **recurring** · fingerprint: 5e247f9b617820d66c4e5de3
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is preserved
-
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:50:11 · **recurring** · fingerprint: db9467f618e5d7170b5770de
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are reserved
-
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:73:215 · **recurring** · fingerprint: 6ad1c8a942b901eb141a0cdc
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are Verified
-
-- **synonym-rotation** · skills/session-archiving/references/image-provenance-and-webp.md:103:200 · **recurring** · fingerprint: e6e912834a84809148a29b28
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** checking
-
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:105:12 · **recurring** · fingerprint: 3d2774d90e6346c9f479ca23
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is intended
-
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:113:276 · **recurring** · fingerprint: ebe274c396fc6f6265e97091
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is updated
-
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:122:37 · **recurring** · fingerprint: 28344c784d287164c52cc81d
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is paired
-
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:123:76 · **recurring** · fingerprint: a8745ab59e15a54323b8eb62
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is verified
-
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:134:26 · **recurring** · fingerprint: 756755bb5f5f39c5e328e481
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is retained
-
-- **passive-voice** · skills/session-archiving/references/image-provenance-and-webp.md:138:1 · **recurring** · fingerprint: a22a1b959ff468a81a8c41ae
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is described
-
-
-### skills/conversation-mode/SKILL.md
-
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 17
+- **Findings:** 0
 - **Hard findings:** 0
-- **Baseline:** 3
-- **Words:** 3080
-- **Findings per 100 words:** 0.6
+- **Baseline:** 0
+- **Words:** 288
+- **Findings per 100 words:** 0.0
 
-#### Complete diagnostics
-
-- **passive-voice** · skills/conversation-mode/SKILL.md:94:157 · **recurring** · fingerprint: 6d637f1fa2db2d41a6d50ddc
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are ordered
-
-- **passive-voice** · skills/conversation-mode/SKILL.md:105:72 · **recurring** · fingerprint: 448cf9dfd90fe327096b71e5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is paused
-
-- **passive-voice** · skills/conversation-mode/SKILL.md:110:41 · **recurring** · fingerprint: 24000f0d039ebc991f65530c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is unresolved
-
-- **passive-voice** · skills/conversation-mode/SKILL.md:137:88 · **recurring** · fingerprint: 448cf9dfd90fe327096b71e5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is paused
-
-- **present-perfect** · skills/conversation-mode/SKILL.md:138:78 · **recurring** · fingerprint: 11522f9e8c67a502b19046c1
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has stopped
-
-- **present-perfect** · skills/conversation-mode/SKILL.md:138:108 · **recurring** · fingerprint: fb6ab971291fabec8f04e13d
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has proposed
-
-- **passive-voice** · skills/conversation-mode/SKILL.md:139:61 · **recurring** · fingerprint: a5afffbd39db7eee0657c03b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
-
-- **passive-voice** · skills/conversation-mode/SKILL.md:139:272 · **recurring** · fingerprint: 7432ab5664bf24b78cc7ff00
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is resolved
-
-- **passive-voice** · skills/conversation-mode/SKILL.md:154:63 · **recurring** · fingerprint: a5afffbd39db7eee0657c03b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
-
-- **passive-voice** · skills/conversation-mode/SKILL.md:159:36 · **recurring** · fingerprint: 3a6c1312d7b45107dbc72a9d
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was encountered
-
-- **passive-voice** · skills/conversation-mode/SKILL.md:161:106 · **recurring** · fingerprint: f524e4cf6f61106be53e395c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was verified
-
-- **passive-voice** · skills/conversation-mode/SKILL.md:170:180 · **recurring** · fingerprint: 30999b2a0d67c2a1670763ff
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is exceeded
-
-- **passive-voice** · skills/conversation-mode/SKILL.md:196:260 · **recurring** · fingerprint: a5afffbd39db7eee0657c03b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
-
-- **present-perfect** · skills/conversation-mode/SKILL.md:211:94 · **recurring** · fingerprint: 5b8f9ac16a3f5a3fd92e7621
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has approved
-
-- **present-perfect** · skills/conversation-mode/SKILL.md:238:126 · **recurring** · fingerprint: 7e130dc07470c4dfc1de436d
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has been given
-
-- **passive-voice** · skills/conversation-mode/SKILL.md:238:130 · **recurring** · fingerprint: ef15c6245f889cbfdb09d89a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** been given
-
-- **passive-voice** · skills/conversation-mode/SKILL.md:259:75 · **recurring** · fingerprint: 04de33177ef6c58de34b6fd5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are governed
+No STE findings were recorded for this file.
 
 
 ### skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md
@@ -3024,10 +3273,10 @@ No STE findings were recorded for this file.
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 24
+- **Findings:** 25
 - **Hard findings:** 3
 - **Baseline:** 24
-- **Words:** 5082
+- **Words:** 4738
 - **Findings per 100 words:** 0.5
 
 #### Complete diagnostics
@@ -3077,77 +3326,82 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is stored
 
-- **long-sentence** · skills/drawing/SKILL.md:261:4 · **recurring** · fingerprint: d81568a6e2238902ee0c2105
-  - **Level:** advisory-free
-  - **Message:** Sentence has 28 words (cap 25). Split it.
-  - **Matched text:** 28 words
-
-- **long-sentence** · skills/drawing/SKILL.md:276:5 · **recurring** · fingerprint: 1da08cc0bf141330524bda57
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-
-- **passive-voice** · skills/drawing/SKILL.md:319:378 · **recurring** · fingerprint: 182721976b7c74744cfa668b
+- **passive-voice** · skills/drawing/SKILL.md:290:378 · **recurring** · fingerprint: 182721976b7c74744cfa668b
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is stored
 
-- **passive-voice** · skills/drawing/SKILL.md:319:553 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
+- **passive-voice** · skills/drawing/SKILL.md:290:553 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is verified
 
-- **passive-voice** · skills/drawing/SKILL.md:394:23 · **recurring** · fingerprint: c13b1ec0df584f1d71453752
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are governed
-
-- **passive-voice** · skills/drawing/SKILL.md:400:60 · **recurring** · fingerprint: 828f9104eb1934f156af2c49
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was used
-
-- **passive-voice** · skills/drawing/SKILL.md:407:216 · **recurring** · fingerprint: 856947d77008b1a8011c64b1
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are satisfied
-
-- **passive-voice** · skills/drawing/SKILL.md:424:19 · **recurring** · fingerprint: f7c61d976e048fc4d2187457
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is refused
-
-- **passive-voice** · skills/drawing/SKILL.md:456:42 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is verified
-
-- **passive-voice** · skills/drawing/SKILL.md:457:50 · **recurring** · fingerprint: d518259c92d98a763deb57db
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was produced
-
-- **passive-voice** · skills/drawing/SKILL.md:458:42 · **recurring** · fingerprint: a9eeb0708efad4ad4ebac5a3
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was returned
-
-- **passive-voice** · skills/drawing/SKILL.md:462:11 · **recurring** · fingerprint: 2ebc7cf088303cbfd5592603
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
-
-- **synonym-rotation** · skills/drawing/SKILL.md:470:15 · **recurring** · fingerprint: aa2b4a16cd7d5222231207e6
+- **synonym-rotation** · skills/drawing/SKILL.md:363:200 · **recurring** · fingerprint: aa2b4a16cd7d5222231207e6
   - **Level:** advisory-free
   - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
   - **Matched text:** verify
 
-- **passive-voice** · skills/drawing/SKILL.md:489:24 · **recurring** · fingerprint: f6cfabada63cd4b942c2fdab
+- **passive-voice** · skills/drawing/SKILL.md:363:222 · **new** · fingerprint: f718531ecab4f80464bcfc7a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was included
+
+- **passive-voice** · skills/drawing/SKILL.md:363:300 · **recurring** · fingerprint: 182721976b7c74744cfa668b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is stored
+
+- **passive-voice** · skills/drawing/SKILL.md:371:238 · **recurring** · fingerprint: 856947d77008b1a8011c64b1
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are satisfied
+
+- **passive-voice** · skills/drawing/SKILL.md:388:19 · **recurring** · fingerprint: f7c61d976e048fc4d2187457
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is refused
+
+- **passive-voice** · skills/drawing/SKILL.md:420:42 · **recurring** · fingerprint: 108fef94cd85af0be9bae737
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is verified
+
+- **passive-voice** · skills/drawing/SKILL.md:421:50 · **recurring** · fingerprint: d518259c92d98a763deb57db
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was produced
+
+- **passive-voice** · skills/drawing/SKILL.md:422:42 · **recurring** · fingerprint: a9eeb0708efad4ad4ebac5a3
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was returned
+
+- **passive-voice** · skills/drawing/SKILL.md:426:11 · **recurring** · fingerprint: 2ebc7cf088303cbfd5592603
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+
+- **synonym-rotation** · skills/drawing/SKILL.md:444:47 · **new** · fingerprint: c41dfa89d8e1360fd85eac2a
+  - **Level:** advisory-free
+  - **Message:** 'modify' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** modify
+
+- **present-perfect** · skills/drawing/SKILL.md:447:77 · **new** · fingerprint: 1fde6e149badf6f261b22219
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has specified
+
+- **synonym-rotation** · skills/drawing/SKILL.md:449:46 · **new** · fingerprint: e9ab9c52b006f1c31b593715
+  - **Level:** advisory-free
+  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** confirmed
+
+- **passive-voice** · skills/drawing/SKILL.md:465:24 · **recurring** · fingerprint: f6cfabada63cd4b942c2fdab
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are determined
 
-- **passive-voice** · skills/drawing/SKILL.md:515:13 · **recurring** · fingerprint: 9ce13cb184b2103476d72b72
+- **passive-voice** · skills/drawing/SKILL.md:491:13 · **recurring** · fingerprint: 9ce13cb184b2103476d72b72
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is Closed
@@ -3157,23 +3411,18 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 27
-- **Hard findings:** 3
+- **Findings:** 57
+- **Hard findings:** 28
 - **Baseline:** 0
-- **Words:** 3060
-- **Findings per 100 words:** 0.9
+- **Words:** 4152
+- **Findings per 100 words:** 1.4
 
 #### Complete diagnostics
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:4:162 · **recurring** · fingerprint: 305e0414169478f6e310d27a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was truncated
-
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:4:254 · **recurring** · fingerprint: 1b362583f0b6f9564bc66dd0
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** were inspected
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:4:279 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:28:139 · **recurring** · fingerprint: 521a3f31bc54ec727caae5b1
   - **Level:** advisory
@@ -3185,120 +3434,275 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** being uploaded
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:42:276 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:37:304 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:43:214 · **recurring** · fingerprint: a41ef6bbf64045f943d2af47
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:37:313 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:38:284 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:39:264 · **new** · fingerprint: bd13d200f2cd36d327625082
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are preserved
+
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:44:276 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:45:207 · **recurring** · fingerprint: a41ef6bbf64045f943d2af47
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is read
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:45:139 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:47:139 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:47:358 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:49:358 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:49:307 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:51:336 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
 
-- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:52:264 · **recurring** · fingerprint: 2822a6b08706709830f1f820
+- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:54:250 · **recurring** · fingerprint: 2822a6b08706709830f1f820
   - **Level:** advisory-free
   - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
   - **Matched text:** checks
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:64:165 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:57:707 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:58:260 · **new** · fingerprint: 33b66dbc6dc280ae7c9be6c8
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:58:546 · **new** · fingerprint: 199f2603ee3fb1c3abd18ce6
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are skipped
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:58:568 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:66:165 · **recurring** · fingerprint: 8aaaeb4dae872360fad1cb7e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
 
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:64:176 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:66:176 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:83:39 · **recurring** · fingerprint: 0c06b4bea825bbb8305e2205
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:71:373 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:73:241 · **new** · fingerprint: 1ba4a4dabed935af86f226cb
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is created
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:77:233 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:78:198 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:79:257 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:81:265 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:82:184 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:83:188 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:87:101 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:88:131 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:89:135 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:91:180 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:93:169 · **new** · fingerprint: bb8de6bc648079b20917fbff
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are catalogued
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:102:207 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:114:223 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:116:188 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:116:251 · **new** · fingerprint: 195a2fd68103c17c8542eb26
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are covered
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:119:117 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:121:140 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:142:39 · **recurring** · fingerprint: 0c06b4bea825bbb8305e2205
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** were reviewed
 
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:88:200 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:147:200 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
 
-- **present-perfect** · skills/document-standards/references/document-type-catalog.md:88:479 · **recurring** · fingerprint: 5bfc1af36a470f1f001188ee
+- **present-perfect** · skills/document-standards/references/document-type-catalog.md:147:479 · **recurring** · fingerprint: 5bfc1af36a470f1f001188ee
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has been approved
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:88:483 · **recurring** · fingerprint: c8520603dffa16dea8ea3dc4
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:147:483 · **recurring** · fingerprint: c8520603dffa16dea8ea3dc4
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been approved
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:89:136 · **recurring** · fingerprint: 6046357fc6d15e771a97e487
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:148:136 · **recurring** · fingerprint: 6046357fc6d15e771a97e487
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are established
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:91:131 · **recurring** · fingerprint: f99656c38dfabd9bba499a0e
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:150:131 · **recurring** · fingerprint: f99656c38dfabd9bba499a0e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is established
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:91:206 · **recurring** · fingerprint: 2d052b2c33e7ba911021d0e1
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:150:206 · **recurring** · fingerprint: 2d052b2c33e7ba911021d0e1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is planned
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:92:199 · **recurring** · fingerprint: 2d052b2c33e7ba911021d0e1
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:151:199 · **recurring** · fingerprint: 2d052b2c33e7ba911021d0e1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is planned
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:94:262 · **recurring** · fingerprint: 95aef61741aad14590481dc3
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:153:262 · **recurring** · fingerprint: 95aef61741aad14590481dc3
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is uploaded
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:104:230 · **recurring** · fingerprint: 446871a6fecc2890373b2df1
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:163:230 · **recurring** · fingerprint: 446871a6fecc2890373b2df1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is justified
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:112:129 · **recurring** · fingerprint: 521a3f31bc54ec727caae5b1
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:171:129 · **recurring** · fingerprint: 521a3f31bc54ec727caae5b1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was found
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:127:203 · **recurring** · fingerprint: 32702bd5a2c5ca60292eca3a
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:182:185 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:183:138 · **new** · fingerprint: d8738c991b456b6b6a7cdd80
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was reconstructed
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:183:174 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:186:203 · **recurring** · fingerprint: 32702bd5a2c5ca60292eca3a
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are superseded
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:134:57 · **recurring** · fingerprint: 9a67866b9f0335cac5eb0d64
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:195:57 · **recurring** · fingerprint: 9a67866b9f0335cac5eb0d64
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was required
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:140:123 · **recurring** · fingerprint: ec9e446045dd985aa0b168c4
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:199:189 · **new** · fingerprint: 7e6ec02ac376dc4e638ffc6d
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are permitted
+  - **Matched text:** was warranted
 
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:144:32 · **recurring** · fingerprint: d5a3d56f7803c8bd7fe2f5bb
+- **passive-voice** · skills/document-standards/references/document-type-catalog.md:207:32 · **recurring** · fingerprint: d5a3d56f7803c8bd7fe2f5bb
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is added
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:215:203 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 
 ### workspace/task_board.md
@@ -3308,8 +3712,8 @@ No STE findings were recorded for this file.
 - **Findings:** 3
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 249
-- **Findings per 100 words:** 1.2
+- **Words:** 268
+- **Findings per 100 words:** 1.1
 
 #### Complete diagnostics
 
@@ -3351,23 +3755,46 @@ No STE findings were recorded for this file.
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 2
-- **Hard findings:** 0
+- **Findings:** 4
+- **Hard findings:** 2
 - **Baseline:** 4
-- **Words:** 1180
-- **Findings per 100 words:** 0.2
+- **Words:** 1474
+- **Findings per 100 words:** 0.3
 
 #### Complete diagnostics
 
-- **present-perfect** · skills/INITIALIZATION_POLICY.md:36:53 · **recurring** · fingerprint: 4f9e87e44f34528956cbd2f3
+- **present-perfect** · skills/INITIALIZATION_POLICY.md:38:53 · **recurring** · fingerprint: 4f9e87e44f34528956cbd2f3
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has been retrieved
 
-- **passive-voice** · skills/INITIALIZATION_POLICY.md:36:57 · **recurring** · fingerprint: 25393e4ca29211513c0ea122
+- **passive-voice** · skills/INITIALIZATION_POLICY.md:38:57 · **recurring** · fingerprint: 25393e4ca29211513c0ea122
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been retrieved
+
+- **long-sentence** · skills/INITIALIZATION_POLICY.md:146:3 · **new** · fingerprint: f40cb6e7d22052c296f243c7
+  - **Level:** advisory-free
+  - **Message:** Sentence has 28 words (cap 25). Split it.
+  - **Matched text:** 28 words
+
+- **semicolon** · skills/INITIALIZATION_POLICY.md:173:66 · **new** · fingerprint: b28796101e8a0d8165b3d79b
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+
+### skills/the-worker/references/image-processing-scripts.md
+
+- **Result:** PASS
+- **Exit code:** 0
+- **Findings:** 0
+- **Hard findings:** 0
+- **Baseline:** 0
+- **Words:** 341
+- **Findings per 100 words:** 0.0
+
+No STE findings were recorded for this file.
 
 
 ### skills/drawing/assets/daily-index-template.md
@@ -3388,50 +3815,42 @@ No STE findings were recorded for this file.
   - **Matched text:** 26 words
 
 
-### skills/session-archiving/assets/session-summary-template.md
-
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 0
-- **Hard findings:** 0
-- **Baseline:** 0
-- **Words:** 106
-- **Findings per 100 words:** 0.0
-
-No STE findings were recorded for this file.
-
-
 ### workspace/TASK_TEMPLATE.md
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 4
+- **Findings:** 5
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 385
-- **Findings per 100 words:** 1.0
+- **Words:** 441
+- **Findings per 100 words:** 1.1
 
 #### Complete diagnostics
 
-- **passive-voice** · workspace/TASK_TEMPLATE.md:18:108 · **recurring** · fingerprint: 5275280719ed16d2a5b7ad67
+- **passive-voice** · workspace/TASK_TEMPLATE.md:19:108 · **recurring** · fingerprint: 5275280719ed16d2a5b7ad67
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is written
 
-- **passive-voice** · workspace/TASK_TEMPLATE.md:46:21 · **recurring** · fingerprint: fdc561df7864672b424ed481
+- **passive-voice** · workspace/TASK_TEMPLATE.md:47:21 · **recurring** · fingerprint: fdc561df7864672b424ed481
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was inspected
 
-- **passive-voice** · workspace/TASK_TEMPLATE.md:73:20 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
+- **passive-voice** · workspace/TASK_TEMPLATE.md:74:20 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was checked
 
-- **passive-voice** · workspace/TASK_TEMPLATE.md:74:23 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
+- **passive-voice** · workspace/TASK_TEMPLATE.md:75:23 · **recurring** · fingerprint: 72c3a8ba326ab1f70b39f345
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was checked
+
+- **passive-voice** · workspace/TASK_TEMPLATE.md:85:150 · **new** · fingerprint: f89fcc99c66cd06012ce7d5a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is untrusted
 
 
 ### skills/drawing/references/series-continuity-and-iteration.md
@@ -3490,6 +3909,49 @@ No STE findings were recorded for this file.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was attached
+
+
+### skills/the-worker/references/image-provenance-and-webp.md
+
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 6
+- **Hard findings:** 1
+- **Baseline:** 0
+- **Words:** 717
+- **Findings per 100 words:** 0.8
+
+#### Complete diagnostics
+
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:15:100 · **new** · fingerprint: 8614398268bd51316f465e56
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is retained
+
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:29:139 · **new** · fingerprint: 8614398268bd51316f465e56
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is retained
+
+- **synonym-rotation** · skills/the-worker/references/image-provenance-and-webp.md:35:15 · **new** · fingerprint: 165228fd89d930749cfaa835
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** validates
+
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:43:65 · **new** · fingerprint: 678db87db1d222633995aa3f
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is observed
+
+- **present-perfect** · skills/the-worker/references/image-provenance-and-webp.md:43:138 · **new** · fingerprint: 31fa6d94c05533c4e2f9d76a
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have been read
+
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:43:143 · **new** · fingerprint: fcc7dc911acbecb8434fffce
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been read
 
 
 ### skills/asd-ste100/references/writing-rules.md
@@ -3565,35 +4027,55 @@ No STE findings were recorded for this file.
 
 ### workspace/README.md
 
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 2
-- **Hard findings:** 0
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 6
+- **Hard findings:** 3
 - **Baseline:** 0
-- **Words:** 596
-- **Findings per 100 words:** 0.3
+- **Words:** 414
+- **Findings per 100 words:** 1.4
 
 #### Complete diagnostics
 
-- **present-perfect** · workspace/README.md:25:469 · **recurring** · fingerprint: 4ad77a0e3e15f5d60871f4fe
+- **semicolon** · workspace/README.md:18:113 · **new** · fingerprint: 99ddd247f24032b76e53f957
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **long-sentence** · workspace/README.md:22:4 · **new** · fingerprint: 850ad36627f5885d916de296
+  - **Level:** advisory-free
+  - **Message:** Sentence has 32 words (cap 25). Split it.
+  - **Matched text:** 32 words
+
+- **passive-voice** · workspace/README.md:22:64 · **new** · fingerprint: f9374751a535ad58835e814f
   - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has triggered
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is created
 
-- **present-perfect** · workspace/README.md:56:22 · **recurring** · fingerprint: 2769f0f695083967627c85d2
+- **passive-voice** · workspace/README.md:22:110 · **new** · fingerprint: 28231427e3d00c582576f2b4
   - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has started
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is updated
+
+- **passive-voice** · workspace/README.md:22:140 · **new** · fingerprint: 6e067aa5c3c536cd323a5c6d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is removed
+
+- **semicolon** · workspace/README.md:30:302 · **new** · fingerprint: 99ddd247f24032b76e53f957
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 
-### skills/session-archiving/references/image-processing-scripts.md
+### skills/the-worker/assets/session-summary-template.md
 
 - **Result:** PASS
 - **Exit code:** 0
 - **Findings:** 0
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 344
+- **Words:** 106
 - **Findings per 100 words:** 0.0
 
 No STE findings were recorded for this file.
@@ -3601,206 +4083,70 @@ No STE findings were recorded for this file.
 
 ### skills/the-worker/SKILL.md
 
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 5
-- **Hard findings:** 0
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 11
+- **Hard findings:** 5
 - **Baseline:** 0
-- **Words:** 3133
-- **Findings per 100 words:** 0.2
+- **Words:** 4286
+- **Findings per 100 words:** 0.3
 
 #### Complete diagnostics
 
-- **passive-voice** · skills/the-worker/SKILL.md:31:133 · **recurring** · fingerprint: 718d67ec20c921c3c043a464
+- **long-sentence** · skills/the-worker/SKILL.md:15:1 · **new** · fingerprint: 8f5fb40f1456d6cdee279897
+  - **Level:** advisory-free
+  - **Message:** Sentence has 35 words (cap 25). Split it.
+  - **Matched text:** 35 words
+
+- **semicolon** · skills/the-worker/SKILL.md:19:127 · **new** · fingerprint: 3e9dae68ac0dc79de8ae5c41
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · skills/the-worker/SKILL.md:23:310 · **new** · fingerprint: 8df02bfe022ca25e5787bc55
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is unverified
+  - **Matched text:** are committed
 
-- **passive-voice** · skills/the-worker/SKILL.md:58:61 · **recurring** · fingerprint: 0eebcb0484fe67c4e2017ecc
+- **long-sentence** · skills/the-worker/SKILL.md:33:38 · **new** · fingerprint: 43ee5fc4aa2ab0ab98097505
+  - **Level:** advisory-free
+  - **Message:** Sentence has 34 words (cap 25). Split it.
+  - **Matched text:** 34 words
+
+- **passive-voice** · skills/the-worker/SKILL.md:57:61 · **recurring** · fingerprint: 0eebcb0484fe67c4e2017ecc
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is provided
 
-- **passive-voice** · skills/the-worker/SKILL.md:75:111 · **recurring** · fingerprint: d226740cae172dd2e1c78d14
+- **passive-voice** · skills/the-worker/SKILL.md:111:111 · **recurring** · fingerprint: d226740cae172dd2e1c78d14
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
 
-- **present-perfect** · skills/the-worker/SKILL.md:290:168 · **recurring** · fingerprint: 0e07f428da579362c55d461b
+- **synonym-rotation** · skills/the-worker/SKILL.md:300:122 · **new** · fingerprint: 4b8a264993c87efe2283f852
+  - **Level:** advisory-free
+  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** Confirm
+
+- **passive-voice** · skills/the-worker/SKILL.md:307:98 · **new** · fingerprint: f0690d035381adacbc37a83e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are recorded
+
+- **semicolon** · skills/the-worker/SKILL.md:309:545 · **new** · fingerprint: 3e9dae68ac0dc79de8ae5c41
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **present-perfect** · skills/the-worker/SKILL.md:321:168 · **recurring** · fingerprint: 0e07f428da579362c55d461b
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has been verified
 
-- **passive-voice** · skills/the-worker/SKILL.md:290:172 · **recurring** · fingerprint: b6cbb5b662b7ac93ef3ba05e
+- **passive-voice** · skills/the-worker/SKILL.md:321:172 · **recurring** · fingerprint: b6cbb5b662b7ac93ef3ba05e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been verified
-
-
-### skills/session-archiving/references/drawing-session-closeout.md
-
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 1
-- **Hard findings:** 0
-- **Baseline:** 0
-- **Words:** 612
-- **Findings per 100 words:** 0.2
-
-#### Complete diagnostics
-
-- **passive-voice** · skills/session-archiving/references/drawing-session-closeout.md:17:227 · **recurring** · fingerprint: 5c4029a4459ae6a7419ec7c9
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is Closed
-
-
-### skills/session-archiving/references/archive-records-and-image-prompts.md
-
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 27
-- **Hard findings:** 0
-- **Baseline:** 20
-- **Words:** 4529
-- **Findings per 100 words:** 0.6
-
-#### Complete diagnostics
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:13:64 · **recurring** · fingerprint: 57efc2fd300bb9b7a8310db5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is curated
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:29:8 · **recurring** · fingerprint: b42e4986c1414564f3a43dfe
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was completed
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:84:21 · **recurring** · fingerprint: 1e36a113c65e15f12385ea65
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** being discussed
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:93:11 · **recurring** · fingerprint: 23d11d13b31395d30d56f69c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are limited
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:121:164 · **recurring** · fingerprint: f5645cb699f537e6560fec11
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is added
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:124:130 · **recurring** · fingerprint: 27f21c0fcee319d11c62095b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is established
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:128:343 · **recurring** · fingerprint: c5e47aa80ee8e7135454cf5b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was rejected
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:186:170 · **recurring** · fingerprint: ba19e482eb53d060d32f3713
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was supplied
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:189:23 · **recurring** · fingerprint: 1d0aa41a6bd9ae288874e8d0
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** being tested
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:227:65 · **recurring** · fingerprint: 77657ae524bd6ec941b3e366
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was returned
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:238:24 · **recurring** · fingerprint: 8c39463eb3e977779ed45cf7
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is known
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:255:28 · **recurring** · fingerprint: 0fa85e814db12cfbf0b20231
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was attached
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:267:33 · **recurring** · fingerprint: ba19e482eb53d060d32f3713
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was supplied
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:282:44 · **recurring** · fingerprint: 9f3e8f0bc0fbdd6524b3656a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was created
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:292:68 · **recurring** · fingerprint: 493149180e6121959865622c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was delivered
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:293:36 · **recurring** · fingerprint: 77657ae524bd6ec941b3e366
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was returned
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:293:58 · **recurring** · fingerprint: 2b09f88ca19a5527995c7947
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is unverified
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:296:4 · **recurring** · fingerprint: b8f9a093dcad37186a759350
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is uploaded
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:297:78 · **recurring** · fingerprint: 0975b3ba84ad7cb994974ee5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is recorded
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:298:48 · **recurring** · fingerprint: e48495019965c18ff0c22b95
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was generated
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:299:75 · **recurring** · fingerprint: 77657ae524bd6ec941b3e366
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was returned
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:300:68 · **recurring** · fingerprint: 55f138238adaad7251236fe2
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is unconfirmed
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:310:20 · **recurring** · fingerprint: 2868b703139e25825d4a9b8a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is finalized
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:314:53 · **recurring** · fingerprint: 009936d66fee55cde90f5887
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is renamed
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:336:242 · **recurring** · fingerprint: 80f2107125cb88de9fe1f2d7
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is verified
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:338:35 · **recurring** · fingerprint: 695e4b770f91de2ff1b14f54
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is stored
-
-- **passive-voice** · skills/session-archiving/references/archive-records-and-image-prompts.md:385:69 · **recurring** · fingerprint: 424f162bb288d4ec5598118a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is based
 
 
 ### skills/drawing/references/prompt-fidelity.md
@@ -4040,7 +4386,7 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was copied
 
-- **synonym-rotation** · skills/drawing/references/prompt-fidelity.md:315:156 · **new** · fingerprint: c784915b81aefed48004e9cb
+- **synonym-rotation** · skills/drawing/references/prompt-fidelity.md:315:156 · **recurring** · fingerprint: c784915b81aefed48004e9cb
   - **Level:** advisory-free
   - **Message:** 'fetch' and 'retrieve' name the same action. Pick one and use it every time.
   - **Matched text:** fetch
@@ -4048,102 +4394,116 @@ No STE findings were recorded for this file.
 
 ### skills/document-standards/SKILL.md
 
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 2
-- **Hard findings:** 0
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 3
+- **Hard findings:** 1
 - **Baseline:** 0
-- **Words:** 1612
-- **Findings per 100 words:** 0.1
+- **Words:** 998
+- **Findings per 100 words:** 0.3
 
 #### Complete diagnostics
 
-- **passive-voice** · skills/document-standards/SKILL.md:75:47 · **recurring** · fingerprint: f02e1c27fdc79f6921bf2e16
+- **synonym-rotation** · skills/document-standards/SKILL.md:22:21 · **new** · fingerprint: b1e46093b290a3c3f0ad7363
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** Validate
+
+- **passive-voice** · skills/document-standards/SKILL.md:38:46 · **recurring** · fingerprint: f02e1c27fdc79f6921bf2e16
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is created
 
-- **passive-voice** · skills/document-standards/SKILL.md:197:37 · **recurring** · fingerprint: da830431b494f6dd663885a4
+- **passive-voice** · skills/document-standards/SKILL.md:106:229 · **new** · fingerprint: 988e824c418cdeb39523dd3c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is defined
-
-
-### skills/session-archiving/SKILL.md
-
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 3
-- **Hard findings:** 0
-- **Baseline:** 7
-- **Words:** 2388
-- **Findings per 100 words:** 0.1
-
-#### Complete diagnostics
-
-- **passive-voice** · skills/session-archiving/SKILL.md:80:90 · **recurring** · fingerprint: 038292fe0c13c6199af4bf3a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is known
-
-- **passive-voice** · skills/session-archiving/SKILL.md:134:41 · **recurring** · fingerprint: 99dd9dc8b35e76013c9dd169
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is mentioned
-
-- **passive-voice** · skills/session-archiving/SKILL.md:142:408 · **recurring** · fingerprint: 2779f560ab6e00a4b9a36994
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is provided
+  - **Matched text:** is observed
 
 
 ### skills/drawing/references/image-editing-protocol.md
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 0
-- **Hard findings:** 0
+- **Findings:** 2
+- **Hard findings:** 1
 - **Baseline:** 4
-- **Words:** 962
-- **Findings per 100 words:** 0.0
+- **Words:** 474
+- **Findings per 100 words:** 0.4
 
-No STE findings were recorded for this file.
+#### Complete diagnostics
 
+- **semicolon** · skills/drawing/references/image-editing-protocol.md:9:82 · **new** · fingerprint: d22425f617c43f7ddbcea655
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
-### skills/session-archiving/assets/session-brief-template.md
-
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 0
-- **Hard findings:** 0
-- **Baseline:** 0
-- **Words:** 288
-- **Findings per 100 words:** 0.0
-
-No STE findings were recorded for this file.
+- **passive-voice** · skills/drawing/references/image-editing-protocol.md:33:34 · **new** · fingerprint: 3e67ae90c3ab8a6c71da58c3
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is confirmed
 
 
 ### skills/SESSION_START.md
 
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 2
-- **Hard findings:** 0
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 10
+- **Hard findings:** 3
 - **Baseline:** 0
-- **Words:** 2275
-- **Findings per 100 words:** 0.1
+- **Words:** 2655
+- **Findings per 100 words:** 0.4
 
 #### Complete diagnostics
 
-- **present-perfect** · skills/SESSION_START.md:18:114 · **recurring** · fingerprint: 9acf80e5a2b48047e9dd619f
+- **passive-voice** · skills/SESSION_START.md:28:36 · **new** · fingerprint: 1b7d224401886a9004746406
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was retrieved
+
+- **semicolon** · skills/SESSION_START.md:31:179 · **new** · fingerprint: 8baa1c9f84886b197fcd6710
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **present-perfect** · skills/SESSION_START.md:35:114 · **recurring** · fingerprint: 9acf80e5a2b48047e9dd619f
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** have been retrieved
 
-- **passive-voice** · skills/SESSION_START.md:18:119 · **recurring** · fingerprint: fec2fb4fa450910b68502f34
+- **passive-voice** · skills/SESSION_START.md:35:119 · **recurring** · fingerprint: fec2fb4fa450910b68502f34
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been retrieved
+
+- **synonym-rotation** · skills/SESSION_START.md:74:4 · **new** · fingerprint: 1fb1875ac91e733b353da2ae
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'verify' name the same action. Pick one and use it every time.
+  - **Matched text:** Check
+
+- **passive-voice** · skills/SESSION_START.md:75:168 · **new** · fingerprint: bafc7f56ccc1107f8e988e9c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is given
+
+- **passive-voice** · skills/SESSION_START.md:76:63 · **new** · fingerprint: 6dd94c7c1b750dbf34848556
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been verified
+
+- **passive-voice** · skills/SESSION_START.md:220:174 · **new** · fingerprint: bafc7f56ccc1107f8e988e9c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is given
+
+- **present-perfect** · skills/SESSION_START.md:236:217 · **new** · fingerprint: ea47a38e16cc241e4c1d2a58
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have passed
+
+- **long-sentence** · skills/SESSION_START.md:260:1 · **new** · fingerprint: 2f0f70014ccf6e650b884255
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
 
 
 ### skills/drawing/references/patterns/README.md
