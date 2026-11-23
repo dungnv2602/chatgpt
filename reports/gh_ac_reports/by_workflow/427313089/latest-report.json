@@ -11,30 +11,30 @@
     "event": "push",
     "branch": "gpt",
     "head_sha": "b27aae9eb181d0f7ac7c14270a3d2dbc84098fe5",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "success",
     "created_at": "2026-11-23T10:47:40Z",
     "run_started_at": "2026-11-23T10:47:40Z",
-    "updated_at": "2026-11-23T10:47:56Z",
+    "updated_at": "2026-11-23T10:48:25Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "Remediate daily index template lint findings"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-23T10:48:18Z",
-    "completeness": "Incomplete",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T10:49:45Z",
+    "completeness": "Complete",
     "reporter_job": {
       "id": "137640398396",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "success",
+    "state": "success",
+    "observed_conclusion": "success",
+    "projected_conclusion": null,
     "primary_category": null,
     "categories": [],
     "issues": []
@@ -118,11 +118,11 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 30140,
         "path": "logs/job-137640291814.log",
-        "error": "run 45159319487 is still in progress; logs will be available when it is complete\n",
+        "error": null,
         "marker_lines": []
       }
     }
@@ -154,12 +154,6 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [
-    {
-      "source": "job_log",
-      "job_id": "137640291814",
-      "message": "run 45159319487 is still in progress; logs will be available when it is complete\n"
-    }
-  ],
-  "history_path": "history/427313089/45159319487-attempt-1-pre_finalizer"
+  "capture_errors": [],
+  "history_path": "history/427313089/45159319487-attempt-1-post_run"
 }
