@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 12:52 UTC — Review Agent Skill template:** The attempt template has zero hard findings in the canonical report, so no edit is needed. Review the single finding in `skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md` against its owner skill and catalog entry.
+- **2026-11-23 12:56 UTC — Standardize Agent Skill template checks:** Replace both `Verify` checklist labels with `Check` to match the completion-checks heading and owner skill. Preserve all template sections and placeholders.
 
 ## Open Discussions
 
