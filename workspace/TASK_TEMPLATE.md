@@ -15,7 +15,7 @@
 - **Related tasks:** None
 - **Archived:** No
 
-<!-- Lifecycle invariant: keep the active record In Progress and Archived: No until the archive copy is written and verified. Set Done/Cancelled and Archived: Yes in the archive copy, then remove the active path and reconcile the task board. -->
+<!-- Lifecycle invariant: keep the active record In Progress and Archived: No until the final archive copy is written and read back. Set Done/Cancelled and Archived: Yes only in the initial archive copy. Verify its complete content and commit metadata before deleting the active path. After creation, treat the archive copy as immutable. Delete the active record only after archive verification. Move the board row to Historical only after the active path is absent and the board can link the exact archive path and archive commit. If any step fails, keep the task open and reconcile the partial state without rewriting the archive. -->
 
 ## 1. Original Request
 
