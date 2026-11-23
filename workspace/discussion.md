@@ -1,12 +1,17 @@
 # Current Step
 
-- **2026-11-23 00:56 UTC —** Inspect the successful image-takeout Actions run #54. Confirm that it executed the newly added field-level regression tests, then reconcile the task record with the observed result.
+- **2026-11-23 00:56 UTC —** Update the template-first task record with the verified hosted-runner result. Correct stale test status and refresh remaining work and next actions without changing workflow files.
 
 ## Open Discussions
 
 _No open discussions._
 
 ## Reports
+
+### 2026-11-23 00:56 UTC — Image takeout regression tests
+
+- **Result:** GitHub Actions run [#54](https://github.com/dungnv2602/chatgpt/actions/runs/45091120330) completed successfully. The `Test takeout processor` step passed all 36 tests, including the new invalid hand-off metadata case and manifest regression coverage.
+- **Verification:** The job steps and decoded logs show `Ran 36 tests` and `OK`; publication verification also completed successfully. No workflow was modified or manually dispatched.
 
 ### 2026-11-23 00:56 UTC — Condensed Mode pre-step briefing
 
