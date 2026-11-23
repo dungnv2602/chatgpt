@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:28 UTC — Remediate archive-and-delivery reference:** Split the two long instructions, standardize check terminology, and remove the adjective false positive. Preserve exact provenance, mapping, and retention requirements.
+- **2026-11-23 11:32 UTC — Begin GitHub Actions skill review:** Review the five hard findings in `skills/github-actions/SKILL.md` against the complete workflow guidance. Preserve trigger, validation, and branch-policy semantics.
 
 ## Open Discussions
 
