@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 12:08 UTC — Begin prompt-fidelity reference review:** Review the three hard findings in `skills/drawing/references/prompt-fidelity.md` against the full drawing workflow. Preserve user-authority and no-unrequested-restriction rules.
+- **2026-11-23 12:12 UTC — Remediate prompt-fidelity terminology:** Standardize modify/change, confirm/check, and fetch/retrieve terminology. Preserve every user-authority, creative-lock, and restriction rule.
 
 ## Open Discussions
 
