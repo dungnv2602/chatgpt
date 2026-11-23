@@ -8,6 +8,13 @@ from pathlib import Path, PurePosixPath
 SCHEMA_VERSION = "1.1.0"
 IGNORED_CATEGORIES = {"cancelled", "skipped", "neutral", "queued", "in_progress", "unavailable", "unknown", "not_available"}
 IGNORED_LINT_STATUSES = {"Incomplete", "Cancelled", "Superseded"}
+IGNORED_PROPAGATION_STEPS = {
+    "preserve lint failure as workflow conclusion",
+    "set workflow result from audit and tooling outcomes",
+}
+DIAGNOSTIC_MARKERS = re.compile(
+    r"(?i)(remote rejected|cannot lock ref|error:|fatal:|failed to|exception|traceback|assertion)"
+)
 
 class LedgerError(ValueError):
     """Raised when a ledger or source index cannot be processed safely."""
@@ -185,6 +192,45 @@ def evidence_record(report_path, observed_at, run_url, observation_id, note):
     return {"report_path": report_path, "run_url": run_url or None, "observed_at_utc": observed_at,
             "note": note or None, "observation_id": observation_id}
 
+def diagnostic_signature(report, report_path, root, issue):
+    """Prefer exact-step error lines over runner command echoes in report summaries."""
+    job_id = str(issue.get("job_id") or "")
+    job_name = str(issue.get("job_name") or "").strip()
+    step_name = str(issue.get("step_name") or "").strip()
+    jobs = report.get("jobs") if isinstance(report.get("jobs"), list) else []
+    job = next((item for item in jobs if str(item.get("id")) == job_id), None)
+    capture = (job or {}).get("log_capture") or {}
+    log_path = capture.get("path")
+    if log_path:
+        relative = PurePosixPath(log_path)
+        if not relative.is_absolute() and ".." not in relative.parts and log_path.startswith("logs/"):
+            absolute = root / Path(*PurePosixPath(report_path).parent.parts) / Path(*relative.parts)
+            try:
+                lines = absolute.read_text(encoding="utf-8", errors="replace").splitlines()
+            except OSError:
+                lines = []
+            matches = []
+            for line in lines:
+                fields = line.split("\t", 3)
+                if len(fields) < 4 or fields[0].strip() != job_name:
+                    continue
+                if step_name and fields[1].strip() != step_name:
+                    continue
+                candidate = fields[3].strip()
+                if not candidate or re.search(r"\^\[\[[0-9;]*m", candidate):
+                    continue
+                if "process completed with exit code" in candidate.lower():
+                    continue
+                if DIAGNOSTIC_MARKERS.search(candidate) and candidate not in matches:
+                    matches.append(candidate[:400])
+            if matches:
+                return " | ".join(matches[:2])
+    message = str(issue.get("message") or "")
+    if re.search(r"\^\[\[[0-9;]*m", message):
+        return ""
+    return message
+
+
 def lint_observations(report, report_path):
     if report.get("status") in IGNORED_LINT_STATUSES:
         return []
@@ -221,7 +267,7 @@ def lint_observations(report, report_path):
         }
     return list(result.values())
 
-def actions_observations(report, report_path):
+def actions_observations(report, report_path, root):
     capture, source = report.get("capture") or {}, report.get("source_run") or {}
     if capture.get("stage") != "post_run" or capture.get("completeness") != "Complete":
         return []
@@ -247,7 +293,9 @@ def actions_observations(report, report_path):
         if category in IGNORED_CATEGORIES:
             continue
         job_name, step_name = str(issue.get("job_name") or "").strip(), str(issue.get("step_name") or "").strip()
-        signature = normalize_signature(issue.get("message"))
+        if step_name.casefold() in IGNORED_PROPAGATION_STEPS:
+            continue
+        signature = normalize_signature(diagnostic_signature(report, report_path, root, issue))
         if category.startswith("workflow_") and not job_name and not step_name:
             continue
         if not job_name and not step_name and (not signature or issue.get("confidence") == "low"):
@@ -361,7 +409,7 @@ def ingest(root, now=None):
             report = read_json(root / report_path)
             if not isinstance(report, dict):
                 raise LedgerError("Report root must be an object")
-            observations = lint_observations(report, report_path) if family == "lint" else actions_observations(report, report_path)
+            observations = lint_observations(report, report_path) if family == "lint" else actions_observations(report, report_path, root)
         except (LedgerError, TypeError, KeyError) as exc:
             warnings.append(str(exc))
             continue
