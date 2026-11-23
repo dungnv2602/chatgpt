@@ -1,10 +1,10 @@
 ## Current Step
 
-_No active step._
+- **2026-11-23 12:07 UTC — Current step:** Promote Document Standards to foundational loading while keeping it independent from The Worker. Correct the initialization policy and skill indexes. Leave the archived Session Archiving task record unchanged.
 
 ## Open Discussions
 
-- **2026-11-23 12:05 UTC — Archived task record needs a correction note:** The archived record `archive/tasks/20261123-115700-consolidate-session-archiving-into-worker.md` is marked Done, but its Remaining Work section still lists migration steps that are complete. Archived records are immutable, so I did not edit or replace it. User decision required: authorize a separate correction note, or leave the historical record unchanged.
+
 
 
 
