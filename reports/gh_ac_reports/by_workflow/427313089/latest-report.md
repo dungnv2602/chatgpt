@@ -1,4 +1,4 @@
-# Validate Document Standards — run 45158812919
+# Validate Document Standards — run 45159035092
 
 ## Run identity
 
@@ -6,38 +6,38 @@
 | --- | --- |
 | Workflow | Validate Document Standards |
 | Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45158812919 / 1 |
-| Run number | 55 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45158812919 |
+| Run / attempt | 45159035092 / 1 |
+| Run number | 57 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45159035092 |
 | Branch | gpt |
-| Commit | ff5b77d750bcc912b4af90c2b2e45dc8303d422a |
+| Commit | 6ff47d2c8176835a6403f5eba2653ef3832401c9 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T10:44:20Z |
-| Status at capture | completed |
-| Observed conclusion | cancelled |
-| Projected conclusion | Not calculated |
-| Reporter job | completed / cancelled |
-| Capture stage | post_run |
-| Completeness | Complete |
-| Captured (UTC) | 2026-11-23T10:45:48Z |
+| Created (UTC) | 2026-11-23T10:45:46Z |
+| Status at capture | in_progress |
+| Observed conclusion | Not yet available |
+| Projected conclusion | cancelled |
+| Reporter job | in_progress / Pending |
+| Capture stage | pre_finalizer |
+| Completeness | Incomplete |
+| Captured (UTC) | 2026-11-23T10:46:35Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | cancelled |
+| State | in_progress |
 | Primary category | None |
 | Jobs | 1 |
 | Steps | 8 |
 | Issues | 0 |
-| Annotations | 1 |
+| Annotations | 2 |
 | Artifacts | 0 |
-| Capture errors | 0 |
+| Capture errors | 1 |
 
 ## Failure classification
 
-No failure category identified.
+No failure category identified. The parent run is still in progress. The projected conclusion is provisional.
 
 The run conclusion records the workflow outcome. A cancelled run remains in history. Cancellation alone does not create an actionable issue. The generator also excludes known downstream status-propagation steps after cancellation.
 
@@ -45,7 +45,7 @@ The run conclusion records the workflow outcome. A cancelled run remains in hist
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 137638583486 | validate-document-standards | completed | success | 8 | logs/job-137638583486.log |
+| 137639324475 | validate-document-standards | completed | cancelled | 8 | logs/job-137639324475.log |
 
 ## Actionable step outcomes
 
@@ -55,7 +55,8 @@ No records were captured.
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 137638583486 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 137639324475 | failure | .github | 1 |  | Canceling since a higher priority waiting request for document-standards-refs/heads/gpt exists |
+| 137639324475 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
 
 ## Artifacts
 
@@ -65,11 +66,15 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137638583486 | validate-document-standards | logs/job-137638583486.log | 30148 | False |  |
+| 137639324475 | validate-document-standards | logs/job-137639324475.log | 82 | False |  |
 
 ## Evidence coverage
 
-All requested evidence endpoints and completed-job log captures returned data.
+One or more evidence sources were unavailable. This report is Incomplete.
+
+| Source | HTTP status | Limitation |
+| --- | --- | --- |
+| job_log | Not recorded | run 45159035092 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
