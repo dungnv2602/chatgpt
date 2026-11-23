@@ -73,8 +73,8 @@ The renderer/template mismatch is fixed and committed. Step-level failure suppre
 
 ## 9. Next Actions
 
-1. Commit the renderer compatibility fix, regression assertions, and visible-failure behavior.
-2. Allow the naturally triggered diagnostics sweep to validate ingestion and task publication. Do not dispatch or poll workflows.
+1. Allow diagnostics run 45284726644 to complete through its normal reporting path.
+2. Verify the hosted tests, ledger ingestion, generated task records, task-board rows, and finding `task_refs`. Do not dispatch or poll workflows.
 
 ## 10. References
 
