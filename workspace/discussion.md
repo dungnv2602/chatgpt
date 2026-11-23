@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 08:02 UTC — Reconcile explicit task reprioritization:** Checkpoint the diagnostic-report task without closing its pending validation, move the approved ledger task to current execution, and record the task switch on `gpt`.
+- **2026-11-23 08:05 UTC — Inspect source contracts and publication paths:** Read exact lint and Actions report structures, stable finding keys, workflow indexes, collector concurrency, catalog classification, and canonical test/document contracts. Specify forward-only ingestion and safe single-writer publication.
 
 ## Open Discussions
 
