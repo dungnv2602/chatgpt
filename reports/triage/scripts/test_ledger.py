@@ -239,6 +239,28 @@ class LedgerTests(unittest.TestCase):
         with self.assertRaises(LEDGER.LedgerError):
             LEDGER.validate_semantics({"findings":[finding]})
 
+    def test_all_ledger_publishers_share_serialized_writer_group(self):
+        root = SCRIPT.parents[3]
+        workflows = (
+            ".github/workflows/archive-retention.yml",
+            ".github/workflows/convert-images-to-webp.yml",
+            ".github/workflows/notification.yml",
+            ".github/workflows/ste-lint-changed.yml",
+            ".github/workflows/ste-lint-full-docs.yml",
+            ".github/workflows/validate-document-standards.yml",
+            ".github/workflows/gh-actions-diagnostics.yml",
+        )
+        group = "group: gh-ac-report-writer-${{ github.repository }}"
+        for relative in workflows:
+            content = (root / relative).read_text(encoding="utf-8")
+            self.assertIn(group, content, relative)
+        action = (root / "reports/gh_ac_reports/actions/capture/action.yml").read_text(encoding="utf-8")
+        sweep = (root / ".github/workflows/gh-actions-diagnostics.yml").read_text(encoding="utf-8")
+        self.assertIn("Update central CI issue ledger", action)
+        self.assertIn("git add -A -- reports/gh_ac_reports/ reports/triage/", action)
+        self.assertIn("- 'reports/triage/ledger.json'", sweep)
+        self.assertIn("Ingest centralized CI issues", sweep)
+
     def test_atomic_write_replaces_file_without_temp_remnants(self):
         path = self.root / "reports" / "triage" / "ledger.json"
         LEDGER.atomic_write(path,{"schema_version":"test"})
