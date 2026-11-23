@@ -239,9 +239,11 @@ The three exact-run recapture requests have been processed. Their request files 
 
 The repository default branch is `main`, while this authorized task is restricted to `gpt`. A run that fails before any job starts cannot be captured immediately by this branch-local design. The push sweep or an exact-run request can backfill it later. Immediate completion-event observation requires an authorized observer on `main` or an external GitHub App webhook. No changes were made to `main`.
 
+The Ledger is now an event-driven component of The Worker. During ingestion, it creates grouped Proposed task records for eligible findings, updates the task board, and links each finding through task_refs. Lint findings group by file and rule; Actions findings group by workflow path, job, step, and category. Active groups reuse an existing task. Low and informational findings remain ledger-only. Task-only commits are ignored by the diagnostics sweep. The Worker retains approval and remediation ownership.
+
 ## 8. Remaining Work
 
-The approved report-filtering and task-handoff extension is implemented in the collector, ledger schema, regression tests, report guides, Document Type Catalog, workspace navigation, and The Worker. The collector retains ordinary successful runs only when they contain a classified non-blocking failure; cancelled runs require an independent issue. Workflow-level timeouts and action-required outcomes produce actionable run-level findings. Explicit backfill requests override the default filter. The ledger schema includes Worker-owned `task_refs` links, which ingestion preserves. Existing success and cancellation-only reports were not deleted. The implementation is committed as `4f31211d9da8ed9c6a2d7e8536e5633f8b364a73`, and all 14 changed paths passed read-back verification.
+Event-driven task creation is implemented but still requires hosted regression validation. The updated task-generation code, schema, template, capture publisher, diagnostics sweep, report guide, catalog, and Worker instructions have been committed to gpt. No local repository tests were run.
 
 - Verify the cancellation-classification and ledger regression tests on the next naturally triggered GitHub-hosted diagnostics run. Confirm the next cancelled report has state `cancelled` and no cancellation-derived issues.
 - Obtain a successful natural Document Standards run after the catalog/report-root corrections. The diagnostics and archive-retention test suites have passed on a GitHub-hosted runner, but that does not replace the Document Standards workflow check.
@@ -251,8 +253,8 @@ The approved report-filtering and task-handoff extension is implemented in the c
 
 ## 9. Next Actions
 
-- Review the next naturally triggered diagnostics run for the new capture policy and the reporter/ledger regression suites. Confirm routine successes and cancellation-only runs are skipped, non-blocking failures are retained, and independent cancelled-run failures reach the ledger.
-- Confirm ledger schema migration to 1.2.0 and preservation of `task_refs` during hosted ingestion. Do not poll or dispatch workflows.
+- Review the next naturally triggered diagnostics run for the report policy and expanded Ledger regression suite. Confirm grouped Proposed tasks and finding links publish with the ledger, repeat observations do not duplicate tasks, and task-only pushes do not trigger another diagnostics sweep.
+- Confirm ledger schema migration to 1.3.0, grouped Proposed task creation, task_refs preservation, and task-only push exclusion during hosted ingestion. Do not poll or dispatch workflows.
 
 1. Review the next naturally completed diagnostics workflow run and its hosted test log. Do not poll or dispatch a workflow.
 2. Confirm that cancelled source runs remain in immutable history but create no ledger findings.
@@ -279,6 +281,11 @@ The approved report-filtering and task-handoff extension is implemented in the c
 - Related task: `archive/tasks/20261123-051200-repair-lint-report-evidence-workflow.md`
 
 ## 11. Verification
+
+- **Check:** Event-driven Ledger task generation and report publication.
+- **Method:** Read back the modified generator, schema, tests, canonical task template, capture action, diagnostics sweep, Worker skill, task catalog, and handoff guide from branch gpt.
+- **Result:** Implementation and regression coverage are committed. Local execution was not performed. Hosted validation has not been observed and must occur naturally.
+- **Limitations:** No claim is made that the new tests pass until a hosted diagnostics run reports their result. Historical captures remain unchanged.
 
 - **Check:** Approved capture policy and Worker–ledger task handoff.
 - **Method:** Inspected the source index, collector, ledger, and owner documentation; implemented report filtering, cancelled-run exception handling, task references, and regression coverage. Retrieved all 14 changed paths after commit and compared their blob IDs with the committed tree.
