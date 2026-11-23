@@ -345,7 +345,7 @@ jobs:
           status="Passed"
           if [[ "$TOOLING_FAILED" == "1" || "$FULL_FAILED" == "1" || "$CHANGED_FAILED" == "1" ]]; then status="Failed"; fi
           if [[ "$ANCHOR_OUTCOME" != "skipped" && "$ANCHOR_EXIT" != "0" ]]; then status="Failed"; fi
-          history_dir="reports/reports/lint_reports/on_changed/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
+          history_dir="reports/lint_reports/on_changed/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
           python3 skills/asd-ste100/scripts/generate_lint_report.py \
             --scope on_changed --records-dir .lint-report-records \
             --output-dir "$history_dir" \
@@ -355,7 +355,7 @@ jobs:
             --commit "$GITHUB_SHA" --event "$GITHUB_EVENT_NAME" \
             --mode "$mode" --baseline "$baseline" --status "$status" \
             --checks-file .lint-report-checks.json \
-            --previous-report reports/reports/lint_reports/on_changed/latest-lint-report.json \
+            --previous-report reports/lint_reports/on_changed/latest-lint-report.json \
             --linter-source-sha "$(git rev-parse HEAD)"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -377,7 +377,7 @@ jobs:
           ANCHOR_EXIT: ${{ steps.anchors.outputs.exit_code }}
         run: |
           if [[ "$TOOLING_FAILED" == "1" || "$FULL_FAILED" == "1" || "$CHANGED_FAILED" == "1" || ( "$ANCHOR_OUTCOME" != "skipped" && "$ANCHOR_EXIT" != "0" ) ]]; then
-            echo "::error::Changed-document lint failed. See reports/reports/lint_reports/on_changed/latest-lint-report.md."
+            echo "::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md."
             exit 1
           fi
 
@@ -401,4 +401,4 @@ jobs:
           persist-credentials: true
 
       - name: Capture workflow diagnostics
-        uses: ./gh_ac_reports/actions/capture
+        uses: ./reports/gh_ac_reports/actions/capture
