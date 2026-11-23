@@ -5,10 +5,17 @@
 ## Open Discussions
 
 - **2026-11-23 01:22 UTC — Archive retention trigger scope:** `.github/workflows/archive-retention.yml` has a scheduled trigger plus `workflow_dispatch` and `workflow_call` inputs that can pass `force`; `cleanup-archive.py --force` bypasses the 14-day interval. The archive boundary says only the scheduled retention workflow may delete archived records. Clarify whether manual and workflow-call triggers should remain enabled. No workflow changes have been made.
-- **2026-11-23 01:28 UTC — Document Standards CI integration approval:** The catalog validator and regression tests need a GitHub-hosted run. Authorize creating `.github/workflows/validate-document-standards.yml` to run `test_validate_catalog.py` and `validate_catalog.py` on `gpt`. No workflow file has been changed.
+- **Resolved 2026-11-23 02:02 UTC — Document Standards CI integration:** User approved the dedicated hosted validation workflow. `.github/workflows/validate-document-standards.yml` is committed; hosted run `45097927720` exposed one contradictory regression fixture, which was corrected. Follow-up run `45098008709` was still in progress at the first status check. Final validation remains pending.
 
 ## Reports
 
+### 2026-11-23 02:06 UTC — Hosted validator workflow
+
+- **Implemented:** `.github/workflows/validate-document-standards.yml` on `gpt`, commit `6d75ab6778993cc15dad2680c207f354a50f7105`. It runs the 13 catalog regression tests and the catalog validator with read-only permissions.
+- **First run:** [45097927720](https://github.com/dungnv2602/chatgpt/actions/runs/45097927720) failed at one contradictory test fixture (12 passed, one failed). The catalog validator step was skipped.
+- **Correction:** Moved the Python test path out of the canonical-authority column in `test_validate_catalog.py`, commit `44e4e4bdbf9d9c20f349d5e29b70c8ea94409cd4`; read-back verified.
+- **Follow-up:** [45098008709](https://github.com/dungnv2602/chatgpt/actions/runs/45098008709) was In Progress at first status inspection. Per CI policy, no polling or waiting. Inspect its completed result during the next bounded preflight.
+- **Task:** Remains In Progress pending successful hosted tests and catalog validation.
 ### 2026-11-23 01:45 UTC — Novel template field-contract audit
 
 - **Result:** Audited all eight Version 1.1 novel templates and added a catalog matrix for required baselines, conditional/optional content, and repeatable structures. Clarified zero-entry handling in the novel, character-profile, development-outline, arc, and scene templates. The open-discussion and illustration templates already define their conditional/optional behavior. No field structure changed; template versions remain 1.1. All six changed files were read back.
