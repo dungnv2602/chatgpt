@@ -51,7 +51,7 @@ data = {
     "branch": a.branch, "commit_sha": a.commit, "event": a.event,\n    "workflow": __import__("os").environ.get("GITHUB_WORKFLOW"),\n    "runner_os": __import__("os").environ.get("RUNNER_OS"),
     "execution_mode": a.mode, "baseline_sha": a.baseline or None,
     "generated_at_utc": generated, "status": a.status,\n    "linter_source_sha": a.linter_source_sha or None,\n    "runtime": {"python": sys.version, "platform": platform.platform()},
-    "files_evaluated": len(records), "files_failed": len(failed),
+    "files_evaluated": [record["path"] for record in records], "files_evaluated_count": len(records), "files_failed": len(failed),
     "total_findings": len(findings), "hard_findings": hard,
     "findings_by_rule": by_rule, "failed_files": failed,
     "records": records, "findings": findings,\n    "new_findings": sum(1 for item in findings if item["comparison"] == "new"),\n    "recurring_findings": sum(1 for item in findings if item["comparison"] == "recurring"),\n    "resolved_findings": resolved
@@ -93,7 +93,7 @@ lines += ["## Baseline comparison", "",\n    "- New findings: " + str(data["new_
 scope_root = out.parent.parent
 index_path = scope_root / "index.json"
 index = json.loads(index_path.read_text(encoding="utf-8")) if index_path.exists() else {"schema_version": "1.0.0", "runs": []}
-entry = {key: data[key] for key in ("run_id", "run_number", "run_url", "attempt", "commit_sha", "generated_at_utc", "status", "files_evaluated", "total_findings")}
+entry = {key: data[key] for key in ("run_id", "run_number", "run_url", "attempt", "commit_sha", "generated_at_utc", "status", "files_evaluated_count", "total_findings")}
 index["runs"] = [row for row in index["runs"] if (row.get("run_id"), row.get("attempt", 1)) != (a.run_id, int(a.attempt))] + [entry]
 index["runs"].sort(key=lambda row: (row["generated_at_utc"], row["run_id"]))
 index_path.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
