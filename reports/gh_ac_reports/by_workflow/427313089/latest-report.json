@@ -1,31 +1,31 @@
 {
   "schema_version": "1.0.0",
   "source_run": {
-    "id": "45127450021",
-    "number": 28,
+    "id": "45127609188",
+    "number": 29,
     "attempt": 1,
     "workflow_id": 427313089,
     "workflow_name": "Validate Document Standards",
     "workflow_path": ".github/workflows/validate-document-standards.yml",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45127450021",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45127609188",
     "event": "push",
     "branch": "gpt",
-    "head_sha": "c88346e0663152db270680e43e751011bd356fe6",
+    "head_sha": "02192015750d2704cb34d7cdb21cb1343716e853",
     "status": "completed",
     "conclusion": "failure",
-    "created_at": "2026-11-23T06:55:36Z",
-    "run_started_at": "2026-11-23T06:55:36Z",
-    "updated_at": "2026-11-23T06:56:17Z",
+    "created_at": "2026-11-23T06:57:01Z",
+    "run_started_at": "2026-11-23T06:57:01Z",
+    "updated_at": "2026-11-23T06:57:31Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
-    "head_commit_message": "Update report navigation and shared archive policy"
+    "head_commit_message": "Align report guides with shared archive lifecycle"
   },
   "capture": {
     "stage": "post_run",
-    "captured_at_utc": "2026-11-23T06:57:01Z",
+    "captured_at_utc": "2026-11-23T06:58:09Z",
     "completeness": "Complete",
     "reporter_job": {
-      "id": "137535131039",
+      "id": "137535564392",
       "name": "Capture GH Actions diagnostics",
       "status": "completed",
       "conclusion": "failure"
@@ -42,26 +42,26 @@
     "issues": [
       {
         "category": "validation_or_test",
-        "job_id": "137535041953",
+        "job_id": "137535475298",
         "job_name": "validate-document-standards",
         "step_number": 5,
         "step_name": "Validate the document type catalog",
         "blocking": true,
         "confidence": "medium",
-        "message": "2026-11-23T06:56:02.2443663Z ERROR: Line 46: referenced file does not exist: lint_reports/README.md."
+        "message": "2026-11-23T06:57:15.3415073Z ERROR: Line 46: referenced file does not exist: lint_reports/README.md."
       }
     ]
   },
   "jobs": [
     {
-      "id": "137535041953",
+      "id": "137535475298",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-23T06:55:51Z",
-      "completed_at": "2026-11-23T06:56:03Z",
-      "runner_name": "GitHub Actions 1000001168",
-      "runner_id": 1000001168,
+      "started_at": "2026-11-23T06:57:03Z",
+      "completed_at": "2026-11-23T06:57:16Z",
+      "runner_name": "GitHub Actions 1000001175",
+      "runner_id": 1000001175,
       "runner_group_name": "GitHub Actions",
       "runner_group_id": 0,
       "steps": [
@@ -70,102 +70,102 @@
           "name": "Set up job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T06:55:51Z",
-          "completed_at": "2026-11-23T06:55:52Z"
+          "started_at": "2026-11-23T06:57:04Z",
+          "completed_at": "2026-11-23T06:57:04Z"
         },
         {
           "number": 2,
           "name": "Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T06:55:52Z",
-          "completed_at": "2026-11-23T06:55:59Z"
+          "started_at": "2026-11-23T06:57:04Z",
+          "completed_at": "2026-11-23T06:57:11Z"
         },
         {
           "number": 3,
           "name": "Set up Python",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T06:55:59Z",
-          "completed_at": "2026-11-23T06:55:59Z"
+          "started_at": "2026-11-23T06:57:11Z",
+          "completed_at": "2026-11-23T06:57:12Z"
         },
         {
           "number": 4,
           "name": "Run catalog validator regression tests",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T06:55:59Z",
-          "completed_at": "2026-11-23T06:56:02Z"
+          "started_at": "2026-11-23T06:57:12Z",
+          "completed_at": "2026-11-23T06:57:15Z"
         },
         {
           "number": 5,
           "name": "Validate the document type catalog",
           "status": "completed",
           "conclusion": "failure",
-          "started_at": "2026-11-23T06:56:02Z",
-          "completed_at": "2026-11-23T06:56:02Z"
+          "started_at": "2026-11-23T06:57:15Z",
+          "completed_at": "2026-11-23T06:57:15Z"
         },
         {
           "number": 9,
           "name": "Post Set up Python",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-23T06:56:02Z",
-          "completed_at": "2026-11-23T06:56:02Z"
+          "started_at": "2026-11-23T06:57:15Z",
+          "completed_at": "2026-11-23T06:57:15Z"
         },
         {
           "number": 10,
           "name": "Post Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T06:56:02Z",
-          "completed_at": "2026-11-23T06:56:02Z"
+          "started_at": "2026-11-23T06:57:15Z",
+          "completed_at": "2026-11-23T06:57:15Z"
         },
         {
           "number": 11,
           "name": "Complete job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T06:56:02Z",
-          "completed_at": "2026-11-23T06:56:02Z"
+          "started_at": "2026-11-23T06:57:15Z",
+          "completed_at": "2026-11-23T06:57:15Z"
         }
       ],
       "log_capture": {
         "available": true,
         "truncated": false,
         "bytes": 30854,
-        "path": "logs/job-137535041953.log",
+        "path": "logs/job-137535475298.log",
         "error": null,
         "marker_lines": [
-          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:56:02.2443663Z ERROR: Line 46: referenced file does not exist: lint_reports/README.md.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:56:02.2444616Z ERROR: Line 46: unsafe or out-of-scope path 'gh_ac_reports/README.md'.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:56:02.2445685Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/scripts/report.py'.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:56:02.2446628Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/assets/report-template.md'.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:56:02.2447579Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/assets/report-schema.json'.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:56:02.2448592Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/scripts/test_report.py'.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:56:02.2449476Z Catalog validation failed: 6 error(s), 29 document type(s), 59 reference(s).",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:56:02.2495447Z ##[error]Process completed with exit code 1."
+          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:57:15.3415073Z ERROR: Line 46: referenced file does not exist: lint_reports/README.md.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:57:15.3415976Z ERROR: Line 46: unsafe or out-of-scope path 'gh_ac_reports/README.md'.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:57:15.3417050Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/scripts/report.py'.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:57:15.3417845Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/assets/report-template.md'.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:57:15.3418661Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/assets/report-schema.json'.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:57:15.3419477Z ERROR: Line 54: unsafe or out-of-scope path 'gh_ac_reports/scripts/test_report.py'.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:57:15.3420264Z Catalog validation failed: 6 error(s), 29 document type(s), 59 reference(s).",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:57:15.3476401Z ##[error]Process completed with exit code 1."
         ]
       }
     }
   ],
   "check_runs": [
     {
-      "id": "137535041953",
+      "id": "137535475298",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-23T06:55:51Z",
-      "completed_at": "2026-11-23T06:56:03Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45127450021/job/137535041953",
+      "started_at": "2026-11-23T06:57:03Z",
+      "completed_at": "2026-11-23T06:57:16Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45127609188/job/137535475298",
       "app": "GitHub Actions",
       "annotations_count": 2
     }
   ],
   "annotations": [
     {
-      "check_run_id": "137535041953",
-      "job_id": "137535041953",
+      "check_run_id": "137535475298",
+      "job_id": "137535475298",
       "path": ".github",
       "start_line": 2,
       "end_line": 2,
@@ -175,8 +175,8 @@
       "raw_details": ""
     },
     {
-      "check_run_id": "137535041953",
-      "job_id": "137535041953",
+      "check_run_id": "137535475298",
+      "job_id": "137535475298",
       "path": ".github",
       "start_line": 19,
       "end_line": 19,
@@ -188,5 +188,5 @@
   ],
   "artifacts": [],
   "capture_errors": [],
-  "history_path": "history/427313089/45127450021-attempt-1-post_run"
+  "history_path": "history/427313089/45127609188-attempt-1-post_run"
 }
