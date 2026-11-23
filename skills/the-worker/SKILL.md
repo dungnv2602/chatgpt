@@ -212,19 +212,13 @@ This gate applies before every repository document creation or material revision
 10. Check the target against required, conditional, optional, and repeatable fields. Remove unused placeholders.
 11. Update the parent index. Commit and read back the target and every changed path.
 
+**Stop condition:** Do not write the target document until the canonical format, catalog entry, and owner instructions pass commit and read-back.
+
 For an Embedded contract or Generator-owned type, retrieve the exact authority and its regression tests. Do not create a duplicate template.
 
 For a genuinely one-off or exempt document, record the applicable class and reason. Do not force a recurring template onto creative prose.
 
 Do not treat a plan to create a template, a catalog row, or a later migration as permission to edit the target first. Do not invent a new structure or migrate unrelated historical documents.
-
-## Template-first stop condition
-
-A governed document must not be created or materially edited until its canonical format exists and has passed read-back.
-
-If the required format is absent, the next authorized action is to create the template or schema and update its catalog and owner references. Commit and verify those changes first. Then return to the target document.
-
-This sequence is mandatory in every conversation mode. Shorter chat output does not reduce the repository workflow.
 
 ## Execution and checkpoints
 
