@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 12:16 UTC — Begin Agent Skill Authoring review:** Review the two hard findings in `skills/agent-skill-authoring/SKILL.md` against the canonical skill-authoring workflow. Preserve skill metadata, templates, and approval gates.
+- **2026-11-23 12:20 UTC — Remediate Agent Skill Authoring:** Standardize start terminology and split the CI review condition into its three task-scoped triggers. Preserve the template and approval gates.
 
 ## Open Discussions
 
