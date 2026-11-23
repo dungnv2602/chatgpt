@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 14:51 UTC — Check for repository changes after the task checkpoint:** Compare the current `gpt` branch with the task's final audited commit. Identify only intervening changes that could affect the approved workflow/documentation scope. Do not inspect `master/` or `archive/`, and do not poll or dispatch Actions.
+- **2026-11-23 14:51 UTC — Record the recovered task state:** Check the canonical discussion-register format, then record that implementation is complete and execution is paused pending a naturally completed STE lint result. Preserve all existing open matters and do not poll, dispatch, rerun Actions, or access excluded paths.
 - **2026-11-23 14:30 UTC — Record hosted validation and final disposition:** Document Standards #160 and Diagnostics #377 passed. STE Lint Changed #552 was cancelled, so style-lint validation remains unverified. The final non-truncated tree contains 1,114 in-scope Markdown documents, all covered by 48 Active rules. Keep this task In Progress; do not poll, dispatch, archive, or modify excluded paths.
 
 ## Open Discussions
