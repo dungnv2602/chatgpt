@@ -41,6 +41,17 @@ After cue-triggered skill loading, repeat the same one-time snapshot. Do not wai
 - Follow the user's repository, branch, workspace, and approval restrictions.
 - Do not let a task record override a newer user instruction.
 
+## Remote-only repository operations
+
+The repository on GitHub is the only project workspace. Do not assume that a local checkout or local execution environment exists.
+
+- Read, search, inspect, create, update, move, and delete repository files through the GitHub connector and GitHub APIs. Use exact paths and branch `gpt`.
+- Never use local shell, Git, Python, container, filesystem, or similar execution tools to clone, pull, checkout, inspect, edit, test, build, or commit repository work.
+- Create commits and update refs through GitHub's remote APIs. Read back every changed path and verify the resulting branch head.
+- Run repository scripts, tests, and validation only on GitHub-hosted Actions runners when an approved workflow invokes them. Inspect their results through GitHub Actions logs and artifacts. Do not reproduce them locally.
+
+This rule is mandatory because no local project environment is provided and the GitHub repository is the sole source of truth. A local checkout may be absent, stale, or detached from the authorized branch. A local test result cannot validate the current remote commit and must never be reported as repository verification.
+
 ## Workspace structure
 
 - workspace/README.md defines workspace navigation and operating rules.
