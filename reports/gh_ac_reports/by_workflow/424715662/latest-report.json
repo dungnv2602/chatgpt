@@ -1,31 +1,31 @@
 {
   "schema_version": "1.0.0",
   "source_run": {
-    "id": "45159319423",
-    "number": 471,
+    "id": "45159429441",
+    "number": 472,
     "attempt": 1,
     "workflow_id": 424715662,
     "workflow_name": "STE Lint Changed Documentation",
     "workflow_path": ".github/workflows/ste-lint-changed.yml",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45159319423",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45159429441",
     "event": "push",
     "branch": "gpt",
-    "head_sha": "b27aae9eb181d0f7ac7c14270a3d2dbc84098fe5",
+    "head_sha": "0a1835a15518a039f8fcfe4f25789ab8a2a78098",
     "status": "completed",
     "conclusion": "cancelled",
-    "created_at": "2026-11-23T10:47:40Z",
-    "run_started_at": "2026-11-23T10:47:40Z",
-    "updated_at": "2026-11-23T10:47:55Z",
+    "created_at": "2026-11-23T10:48:25Z",
+    "run_started_at": "2026-11-23T10:48:25Z",
+    "updated_at": "2026-11-23T10:48:44Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
-    "head_commit_message": "Remediate daily index template lint findings"
+    "head_commit_message": "Align pattern checklist with Validated confidence state"
   },
   "capture": {
     "stage": "post_run",
-    "captured_at_utc": "2026-11-23T10:49:40Z",
+    "captured_at_utc": "2026-11-23T10:50:56Z",
     "completeness": "Incomplete",
     "reporter_job": {
-      "id": "137640372851",
+      "id": "137640732455",
       "name": "Capture GH Actions diagnostics",
       "status": "completed",
       "conclusion": "cancelled"
@@ -41,14 +41,14 @@
   },
   "jobs": [
     {
-      "id": "137640291472",
+      "id": "137640669725",
       "name": "Reject superseded runs and find lint baseline",
       "status": "completed",
       "conclusion": "cancelled",
-      "started_at": "2026-11-23T10:47:42Z",
-      "completed_at": "2026-11-23T10:47:50Z",
-      "runner_name": "GitHub Actions 1000001382",
-      "runner_id": 1000001382,
+      "started_at": "2026-11-23T10:48:27Z",
+      "completed_at": "2026-11-23T10:48:32Z",
+      "runner_name": "GitHub Actions 1000001387",
+      "runner_id": 1000001387,
       "runner_group_name": "GitHub Actions",
       "runner_group_id": 0,
       "steps": [
@@ -57,52 +57,50 @@
           "name": "Set up job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T10:47:43Z",
-          "completed_at": "2026-11-23T10:47:44Z"
+          "started_at": "2026-11-23T10:48:28Z",
+          "completed_at": "2026-11-23T10:48:28Z"
         },
         {
           "number": 2,
           "name": "Cancel superseded run before checkout",
           "status": "completed",
-          "conclusion": "cancelled",
-          "started_at": "2026-11-23T10:47:44Z",
-          "completed_at": "2026-11-23T10:47:48Z"
+          "conclusion": "success",
+          "started_at": "2026-11-23T10:48:28Z",
+          "completed_at": "2026-11-23T10:48:31Z"
         },
         {
           "number": 3,
           "name": "Find the last successful lint baseline",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-23T10:47:48Z",
-          "completed_at": "2026-11-23T10:47:48Z"
+          "started_at": "2026-11-23T10:48:31Z",
+          "completed_at": "2026-11-23T10:48:31Z"
         },
         {
           "number": 4,
           "name": "Complete job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-23T10:47:48Z",
-          "completed_at": "2026-11-23T10:47:48Z"
+          "started_at": "2026-11-23T10:48:31Z",
+          "completed_at": "2026-11-23T10:48:31Z"
         }
       ],
       "log_capture": {
         "available": true,
         "truncated": false,
-        "bytes": 8193,
-        "path": "logs/job-137640291472.log",
+        "bytes": 8036,
+        "path": "logs/job-137640669725.log",
         "error": null,
-        "marker_lines": [
-          "Reject superseded runs and find lint baseline\tCancel superseded run before checkout\t2026-11-23T10:47:48.7071004Z ##[error]The operation was canceled."
-        ]
+        "marker_lines": []
       }
     },
     {
-      "id": "137640373246",
+      "id": "137640733149",
       "name": "Lint changed Markdown files and publish detailed evidence",
       "status": "completed",
       "conclusion": "cancelled",
-      "started_at": "2026-11-23T10:47:50Z",
-      "completed_at": "2026-11-23T10:47:50Z",
+      "started_at": "2026-11-23T10:48:33Z",
+      "completed_at": "2026-11-23T10:48:33Z",
       "runner_name": null,
       "runner_id": null,
       "runner_group_name": null,
@@ -112,40 +110,40 @@
         "available": false,
         "truncated": false,
         "bytes": 29,
-        "path": "logs/job-137640373246.log",
-        "error": "log not found: 137640373246\n",
+        "path": "logs/job-137640733149.log",
+        "error": "log not found: 137640733149\n",
         "marker_lines": []
       }
     }
   ],
   "check_runs": [
     {
-      "id": "137640291472",
+      "id": "137640669725",
       "name": "Reject superseded runs and find lint baseline",
       "status": "completed",
       "conclusion": "cancelled",
-      "started_at": "2026-11-23T10:47:42Z",
-      "completed_at": "2026-11-23T10:47:50Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45159319423/job/137640291472",
+      "started_at": "2026-11-23T10:48:27Z",
+      "completed_at": "2026-11-23T10:48:32Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45159429441/job/137640669725",
       "app": "GitHub Actions",
-      "annotations_count": 2
+      "annotations_count": 1
     },
     {
-      "id": "137640373246",
+      "id": "137640733149",
       "name": "Lint changed Markdown files and publish detailed evidence",
       "status": "completed",
       "conclusion": "cancelled",
-      "started_at": "2026-11-23T10:47:50Z",
-      "completed_at": "2026-11-23T10:47:50Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45159319423/job/137640373246",
+      "started_at": "2026-11-23T10:48:33Z",
+      "completed_at": "2026-11-23T10:48:33Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45159429441/job/137640733149",
       "app": "GitHub Actions",
       "annotations_count": 0
     }
   ],
   "annotations": [
     {
-      "check_run_id": "137640291472",
-      "job_id": "137640291472",
+      "check_run_id": "137640669725",
+      "job_id": "137640669725",
       "path": ".github",
       "start_line": 1,
       "end_line": 1,
@@ -153,26 +151,15 @@
       "title": "",
       "message": "The run was canceled by @github-actions[bot].",
       "raw_details": ""
-    },
-    {
-      "check_run_id": "137640291472",
-      "job_id": "137640291472",
-      "path": ".github",
-      "start_line": 28,
-      "end_line": 28,
-      "level": "failure",
-      "title": "",
-      "message": "The operation was canceled.",
-      "raw_details": ""
     }
   ],
   "artifacts": [],
   "capture_errors": [
     {
       "source": "job_log",
-      "job_id": "137640373246",
-      "message": "log not found: 137640373246\n"
+      "job_id": "137640733149",
+      "message": "log not found: 137640733149\n"
     }
   ],
-  "history_path": "history/424715662/45159319423-attempt-1-post_run"
+  "history_path": "history/424715662/45159429441-attempt-1-post_run"
 }

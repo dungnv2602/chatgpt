@@ -1,4 +1,4 @@
-# STE Lint Changed Documentation — run 45159319423
+# STE Lint Changed Documentation — run 45159429441
 
 ## Run identity
 
@@ -6,21 +6,21 @@
 | --- | --- |
 | Workflow | STE Lint Changed Documentation |
 | Workflow path | .github/workflows/ste-lint-changed.yml |
-| Run / attempt | 45159319423 / 1 |
-| Run number | 471 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45159319423 |
+| Run / attempt | 45159429441 / 1 |
+| Run number | 472 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45159429441 |
 | Branch | gpt |
-| Commit | b27aae9eb181d0f7ac7c14270a3d2dbc84098fe5 |
+| Commit | 0a1835a15518a039f8fcfe4f25789ab8a2a78098 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T10:47:40Z |
+| Created (UTC) | 2026-11-23T10:48:25Z |
 | Status at capture | completed |
 | Observed conclusion | cancelled |
 | Projected conclusion | Not calculated |
 | Reporter job | completed / cancelled |
 | Capture stage | post_run |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-23T10:49:40Z |
+| Captured (UTC) | 2026-11-23T10:50:56Z |
 
 ## Executive summary
 
@@ -31,7 +31,7 @@
 | Jobs | 2 |
 | Steps | 4 |
 | Issues | 0 |
-| Annotations | 2 |
+| Annotations | 1 |
 | Artifacts | 0 |
 | Capture errors | 1 |
 
@@ -45,8 +45,8 @@ The run conclusion records the workflow outcome. A cancelled run remains in hist
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 137640291472 | Reject superseded runs and find lint baseline | completed | cancelled | 4 | logs/job-137640291472.log |
-| 137640373246 | Lint changed Markdown files and publish detailed evidence | completed | cancelled | 0 | logs/job-137640373246.log |
+| 137640669725 | Reject superseded runs and find lint baseline | completed | cancelled | 4 | logs/job-137640669725.log |
+| 137640733149 | Lint changed Markdown files and publish detailed evidence | completed | cancelled | 0 | logs/job-137640733149.log |
 
 ## Actionable step outcomes
 
@@ -56,8 +56,7 @@ No records were captured.
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 137640291472 | failure | .github | 1 |  | The run was canceled by @github-actions[bot]. |
-| 137640291472 | failure | .github | 28 |  | The operation was canceled. |
+| 137640669725 | failure | .github | 1 |  | The run was canceled by @github-actions[bot]. |
 
 ## Artifacts
 
@@ -67,8 +66,8 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137640291472 | Reject superseded runs and find lint baseline | logs/job-137640291472.log | 8193 | False | Reject superseded runs and find lint baseline	Cancel superseded run before checkout	2026-11-23T10:47:48.7071004Z ##[error]The operation was canceled. |
-| 137640373246 | Lint changed Markdown files and publish detailed evidence | logs/job-137640373246.log | 29 | False |  |
+| 137640669725 | Reject superseded runs and find lint baseline | logs/job-137640669725.log | 8036 | False |  |
+| 137640733149 | Lint changed Markdown files and publish detailed evidence | logs/job-137640733149.log | 29 | False |  |
 
 ## Evidence coverage
 
@@ -76,7 +75,7 @@ One or more evidence sources were unavailable. This report is Incomplete.
 
 | Source | HTTP status | Limitation |
 | --- | --- | --- |
-| job_log | Not recorded | log not found: 137640373246  |
+| job_log | Not recorded | log not found: 137640733149  |
 
 ## Related lint evidence
 
