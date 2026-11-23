@@ -11,7 +11,7 @@
 
 - **2026-11-23 16:09 UTC — Document Standards audit closed:** User approved closure. Document Standards #160 and diagnostics #377 passed. STE Lint Changed #552 was cancelled; no style-lint pass is claimed. This limitation remains separate from the completed audit.
 
-- **2026-11-23 16:16 UTC — Drawing session:** Start a new drawing session after foundational initialization. Follow The Worker's session-brief and archive procedures before any image generation.
+- **2026-11-23 16:27 UTC — Drawing direction needed:** The new session can be opened, but the user has not supplied a subject or visual direction. Ask what they want to draw before drafting or generating an image.
 
 - **2026-11-23 15:41 UTC — Event-driven Ledger validation:** The next natural diagnostics run should validate schema 1.3.0, new-finding-only task creation, historical-backlog preservation, grouped task reuse, evidence refresh, priority promotion, and generated-path trigger exclusions. Tests were not run locally or polled. No manual dispatch or user action is required.
 
