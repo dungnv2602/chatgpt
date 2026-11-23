@@ -265,10 +265,10 @@ jobs:
           for finding in findings:
               findings_by_rule[finding["rule"]] = findings_by_rule.get(finding["rule"], 0) + 1
           file_results = {path: {"path": path, "findings": 0, "hard_findings": 0, "baseline": 0, "exit_code": 0} for path in files_evaluated}
-          file_pattern = re.compile(r"^#### `([^`]+)`(?: \(execution error, exit (\\d+)\))?([\\s\\S]*?)(?=^#### |^## |\\Z)", re.M)
+          file_pattern = re.compile(r"^#### `([^`]+)`(?: \(execution error, exit (\d+)\))?([\s\S]*?)(?=^#### |^## |\Z)", re.M)
           for result in file_pattern.finditer(markdown):
               file_path, execution_exit, block = result.groups()
-              summary = re.search(r"(\\d+) violations \\((\\d+) hard, baseline (\\d+)\\)", block)
+              summary = re.search(r"(\d+) violations \((\d+) hard, baseline (\d+)\)", block)
               if summary:
                   count, hard_count, baseline = map(int, summary.groups())
                   exit_code = int(execution_exit) if execution_exit else int(hard_count > baseline)
