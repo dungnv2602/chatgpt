@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45177076864",
-  "run_number": 539,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45177076864",
+  "run_id": "45180357336",
+  "run_number": 540,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45180357336",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "c9f1675c43b1cc62eff846d44784bae46d961f6b",
+  "commit_sha": "948f21c514687504f8ba69866bd8a14d111fd711",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T12:45:07.407457+00:00",
+  "generated_at_utc": "2026-11-23T13:05:25.878857+00:00",
   "status": "Failed",
-  "linter_source_sha": "c9f1675c43b1cc62eff846d44784bae46d961f6b",
+  "linter_source_sha": "948f21c514687504f8ba69866bd8a14d111fd711",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -80,19 +80,19 @@
     "skills/document-standards/SKILL.md",
     "skills/SESSION_START.md"
   ],
-  "files_with_findings": 37,
-  "total_findings": 390,
-  "hard_findings": 64,
-  "advisory_findings": 326,
+  "files_with_findings": 38,
+  "total_findings": 393,
+  "hard_findings": 65,
+  "advisory_findings": 328,
   "findings_by_rule": {
-    "passive-voice": 285,
-    "present-perfect": 41,
-    "synonym-rotation": 9,
+    "passive-voice": 286,
+    "present-perfect": 42,
+    "synonym-rotation": 11,
     "phrasal-verb": 5,
     "nominalization": 2,
     "marketing-adjective": 5,
-    "long-sentence": 10,
-    "semicolon": 33
+    "semicolon": 34,
+    "long-sentence": 8
   },
   "records": [
     {
@@ -856,7 +856,7 @@
       "count": 0,
       "hard_count": 0,
       "baseline": 0,
-      "words": 396,
+      "words": 406,
       "per_100_words": 0.0,
       "path": "skills/drawing/README.md",
       "exit_code": 0
@@ -2143,25 +2143,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 261,
-          "col": 4,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "28 words",
-          "message": "Sentence has 28 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/drawing/SKILL.md",
-          "line": 276,
-          "col": 5,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "27 words",
-          "message": "Sentence has 27 words (cap 25). Split it."
-        },
-        {
-          "file": "skills/drawing/SKILL.md",
-          "line": 319,
+          "line": 293,
           "col": 378,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2170,7 +2152,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 319,
+          "line": 293,
           "col": 553,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2179,25 +2161,34 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 394,
-          "col": 23,
+          "line": 366,
+          "col": 200,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "verify",
+          "message": "'verify' and 'check' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "skills/drawing/SKILL.md",
+          "line": 366,
+          "col": 222,
           "rule": "passive-voice",
           "level": "advisory",
-          "match": "are governed",
+          "match": "was included",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 400,
-          "col": 60,
+          "line": 366,
+          "col": 300,
           "rule": "passive-voice",
           "level": "advisory",
-          "match": "was used",
+          "match": "is stored",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 407,
+          "line": 374,
           "col": 238,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2206,7 +2197,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 424,
+          "line": 391,
           "col": 19,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2215,7 +2206,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 456,
+          "line": 423,
           "col": 42,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2224,7 +2215,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 457,
+          "line": 424,
           "col": 50,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2233,7 +2224,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 458,
+          "line": 425,
           "col": 42,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2242,7 +2233,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 462,
+          "line": 429,
           "col": 11,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2251,16 +2242,34 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 470,
-          "col": 15,
+          "line": 447,
+          "col": 47,
           "rule": "synonym-rotation",
           "level": "advisory-free",
-          "match": "verify",
-          "message": "'verify' and 'check' name the same action. Pick one and use it every time."
+          "match": "modify",
+          "message": "'modify' and 'change' name the same action. Pick one and use it every time."
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 489,
+          "line": 450,
+          "col": 77,
+          "rule": "present-perfect",
+          "level": "advisory",
+          "match": "has specified",
+          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
+        },
+        {
+          "file": "skills/drawing/SKILL.md",
+          "line": 452,
+          "col": 46,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "confirmed",
+          "message": "'confirm' and 'check' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "skills/drawing/SKILL.md",
+          "line": 468,
           "col": 24,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2269,7 +2278,7 @@
         },
         {
           "file": "skills/drawing/SKILL.md",
-          "line": 515,
+          "line": 494,
           "col": 13,
           "rule": "passive-voice",
           "level": "advisory",
@@ -2277,10 +2286,10 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 24,
+      "count": 25,
       "hard_count": 3,
       "baseline": 24,
-      "words": 5115,
+      "words": 4814,
       "per_100_words": 0.5,
       "path": "skills/drawing/SKILL.md",
       "exit_code": 0
@@ -3972,12 +3981,31 @@
       "exit_code": 1
     },
     {
-      "violations": [],
-      "count": 0,
-      "hard_count": 0,
+      "violations": [
+        {
+          "file": "skills/drawing/references/image-editing-protocol.md",
+          "line": 9,
+          "col": 82,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/drawing/references/image-editing-protocol.md",
+          "line": 33,
+          "col": 34,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is confirmed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        }
+      ],
+      "count": 2,
+      "hard_count": 1,
       "baseline": 4,
-      "words": 962,
-      "per_100_words": 0.0,
+      "words": 474,
+      "per_100_words": 0.4,
       "path": "skills/drawing/references/image-editing-protocol.md",
       "exit_code": 0
     },
@@ -6282,29 +6310,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 261,
-      "col": 4,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "28 words",
-      "message": "Sentence has 28 words (cap 25). Split it.",
-      "fingerprint": "d81568a6e2238902ee0c2105",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/SKILL.md",
-      "line": 276,
-      "col": 5,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "1da08cc0bf141330524bda57",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/drawing/SKILL.md",
-      "line": 319,
+      "line": 293,
       "col": 378,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6315,7 +6321,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 319,
+      "line": 293,
       "col": 553,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6326,29 +6332,40 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 394,
-      "col": 23,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are governed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "c13b1ec0df584f1d71453752",
+      "line": 366,
+      "col": 200,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "verify",
+      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "aa2b4a16cd7d5222231207e6",
       "comparison": "recurring"
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 400,
-      "col": 60,
+      "line": 366,
+      "col": 222,
       "rule": "passive-voice",
       "level": "advisory",
-      "match": "was used",
+      "match": "was included",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "828f9104eb1934f156af2c49",
+      "fingerprint": "f718531ecab4f80464bcfc7a",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/drawing/SKILL.md",
+      "line": 366,
+      "col": 300,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is stored",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "182721976b7c74744cfa668b",
       "comparison": "recurring"
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 407,
+      "line": 374,
       "col": 238,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6359,7 +6376,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 424,
+      "line": 391,
       "col": 19,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6370,7 +6387,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 456,
+      "line": 423,
       "col": 42,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6381,7 +6398,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 457,
+      "line": 424,
       "col": 50,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6392,7 +6409,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 458,
+      "line": 425,
       "col": 42,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6403,7 +6420,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 462,
+      "line": 429,
       "col": 11,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6414,18 +6431,40 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 470,
-      "col": 15,
+      "line": 447,
+      "col": 47,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "aa2b4a16cd7d5222231207e6",
-      "comparison": "recurring"
+      "match": "modify",
+      "message": "'modify' and 'change' name the same action. Pick one and use it every time.",
+      "fingerprint": "c41dfa89d8e1360fd85eac2a",
+      "comparison": "new"
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 489,
+      "line": 450,
+      "col": 77,
+      "rule": "present-perfect",
+      "level": "advisory",
+      "match": "has specified",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "1fde6e149badf6f261b22219",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/drawing/SKILL.md",
+      "line": 452,
+      "col": 46,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "confirmed",
+      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "e9ab9c52b006f1c31b593715",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/drawing/SKILL.md",
+      "line": 468,
       "col": 24,
       "rule": "passive-voice",
       "level": "advisory",
@@ -6436,7 +6475,7 @@
     },
     {
       "file": "skills/drawing/SKILL.md",
-      "line": 515,
+      "line": 494,
       "col": 13,
       "rule": "passive-voice",
       "level": "advisory",
@@ -8294,6 +8333,28 @@
       "comparison": "recurring"
     },
     {
+      "file": "skills/drawing/references/image-editing-protocol.md",
+      "line": 9,
+      "col": 82,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "d22425f617c43f7ddbcea655",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/drawing/references/image-editing-protocol.md",
+      "line": 33,
+      "col": 34,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is confirmed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "3e67ae90c3ab8a6c71da58c3",
+      "comparison": "new"
+    },
+    {
       "file": "skills/SESSION_START.md",
       "line": 28,
       "col": 36,
@@ -8415,9 +8476,54 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 0,
-  "recurring_findings": 390,
-  "resolved_findings": [],
+  "new_findings": 6,
+  "recurring_findings": 387,
+  "resolved_findings": [
+    {
+      "file": "skills/drawing/SKILL.md",
+      "line": 261,
+      "col": 4,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "28 words",
+      "message": "Sentence has 28 words (cap 25). Split it.",
+      "fingerprint": "d81568a6e2238902ee0c2105",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/SKILL.md",
+      "line": 276,
+      "col": 5,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "27 words",
+      "message": "Sentence has 27 words (cap 25). Split it.",
+      "fingerprint": "1da08cc0bf141330524bda57",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/SKILL.md",
+      "line": 394,
+      "col": 23,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are governed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "c13b1ec0df584f1d71453752",
+      "comparison": "resolved"
+    },
+    {
+      "file": "skills/drawing/SKILL.md",
+      "line": 400,
+      "col": 60,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was used",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "828f9104eb1934f156af2c49",
+      "comparison": "resolved"
+    }
+  ],
   "checks": [
     {
       "name": "Wrapper shell syntax",
@@ -8435,7 +8541,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.315s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.299s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -8453,7 +8559,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 1010 active Markdown files (1080 available as link targets) and 332 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 1019 active Markdown files (1089 available as link targets) and 329 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
