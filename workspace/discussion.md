@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-23 22:35 UTC — Recover the active image-takeout task.** Read the workspace guide and task board, identify the matching task, then read its complete record and linked evidence. Compare its recorded state with the current repository. Do not inspect image binaries, move files, or alter the workflow during this recovery step.
+**2026-11-23 22:38 UTC — Inspect the active image-relocation task record.** Read task `20261123-162826` in full. Extract its scope, acceptance criteria, completed workflow changes, remaining blockers, and exact next actions. Then inspect only the exact referenced active files needed to explain the defect.
 
 ## Open Discussions
 
