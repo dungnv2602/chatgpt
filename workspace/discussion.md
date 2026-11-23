@@ -1,7 +1,6 @@
 ## Current Step
 
-_No active step._
-
+Update the canonical image-takeout procedure and Worker image reference to define a permanent conversion-only path for unclassified images. Preserve source PNGs, verify staged WebP derivatives, prohibit automatic relocation or metadata/index changes, and defer classification, relocation, and index edits to explicit user direction.
 ## Open Discussions
 
 - **2026-11-23 22:45 UTC — Image takeout provenance:** Current source read-back confirms the original conversation transcripts were not retained. Two Partial integrity records now exist at `drawings/history/2026-11-20-conversation-integrity.md` and `drawings/history/2026-11-21-conversation-integrity.md`; they are evidence-based summaries, not complete transcripts. Eleven images have exact attempt, source Asset ID, and Generation ID mappings. Seven remain unclassified because their pixels and source evidence are unavailable. All 18 PNGs remain in `images/takeout/`; `HANDOFF.yml` is still Draft. The earlier commit imported files into intake, but no final processor relocation is present. The provenance gate repair is committed in [c07921e](https://github.com/dungnv2602/chatgpt/commit/c07921efe1a22db2237caa647d828e66fdd0236d). Hosted validation has not been observed. Next: obtain image-capable inspection for the seven unresolved PNGs and reconcile them only with retained evidence.
