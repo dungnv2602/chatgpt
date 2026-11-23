@@ -138,8 +138,10 @@ def link_targets(text: str) -> list[str]:
 def resolve_markdown_target(
     source: str, target: str, file_set: set[str], all_paths: set[str]
 ) -> str | None:
+    # Runtime template placeholders are not literal local file paths.
+    if TEMPLATE_PLACEHOLDER_RE.search(target):
+        return None
     parsed = urlsplit(target)
-    if parsed.scheme or parsed.netloc:
         return None
     raw_path = unquote(parsed.path)
     if not raw_path:
