@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 — Validate consolidated reports and shared archive retention:** Read back the final report-root paths, workflow/action references, catalog allowlist, and exact-file cleanup. The hosted validator/finalizer failures observed on earlier commits were traced to stale old-root references and corrected. A later hosted run is pending; do not poll it. Expected result: a completed hosted run confirms the final path migration and cleanup regression tests.
+- **2026-11-23 — Validate serialized report publication:** All six source-workflow finalizers now share the backfill collector's non-cancelling concurrency group after a completed sweep exposed concurrent index-write conflicts. Verify the current workflow/action/catalog/retention changes through natural hosted runs. Do not poll pending runs or modify `main`. Expected result: one writer at a time updates shared report indexes and latest pointers; hosted tests confirm the exact-file retention logic.
 
 ## Open Discussions
 
