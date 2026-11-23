@@ -303,6 +303,11 @@ jobs:
           with open(sys.argv[1], "w", encoding="utf-8") as stream:
               json.dump(data, stream, ensure_ascii=False, indent=2)
               stream.write("\n")
+          history_dir = os.path.dirname(sys.argv[1])
+          integrity = {"algorithm": "SHA-256", "files": {name: hashlib.sha256(open(os.path.join(history_dir, name), "rb").read()).hexdigest() for name in ("report.md", "report.json")}}
+          with open(os.path.join(history_dir, "integrity.json"), "w", encoding="utf-8") as stream:
+              json.dump(integrity, stream, indent=2)
+              stream.write("\n")
           PY
           cp "$history/report.md" "$scope/latest-lint-report.md"
           cp "$history/report.json" "$scope/latest-lint-report.json"
