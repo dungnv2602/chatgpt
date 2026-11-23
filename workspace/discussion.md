@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 — Strengthen the template-first authoring gate and placement policy.** Two template assets now live in their owning skills' `assets/` directories. Their new blobs match the original files exactly. All known consumers and catalog entries point to the new paths. The old paths return 404. Update Document Standards and The Worker so a missing canonical format blocks edits to the governed document until the template, catalog entry, and owner instructions are created, committed, and read back.
+- **2026-11-23 — Add automated placement checks to the catalog validator.** Document Standards and The Worker now require the canonical format to be created and read back before the governed document is edited. Add regression tests that reject skill-owned templates outside `assets/` and detect named template files under skill `references/`. Keep project-level template locations valid.
 
 ## Open Discussions
 
