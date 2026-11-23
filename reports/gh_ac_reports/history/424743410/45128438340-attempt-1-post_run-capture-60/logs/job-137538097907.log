@@ -1,0 +1,68 @@
+Validate target branch and reject superseded push runs	UNKNOWN STEP	﻿2026-11-23T07:04:11.7976080Z Current runner version: '2.338.2'
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8022568Z ##[group]Runner Image Provisioner
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8023502Z Hosted Compute Agent
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8024090Z Version: 20261111.635
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8024700Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8025524Z Build Date: 2026-11-11T01:49:01Z
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8026187Z Worker ID: {3a443de8-2160-4b21-b563-72f0cada7acc}
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8027148Z Region: us-east-1
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8027698Z Cloud: AWS
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8028303Z ##[endgroup]
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8029889Z ##[group]Operating System
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8030541Z Ubuntu
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8031067Z 26.04.1
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8031556Z LTS
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8032056Z ##[endgroup]
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8047361Z ##[group]Runner Image
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8048214Z Image: ubuntu-26.04
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8048772Z Version: 20261116.88.1
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8050092Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.88/images/ubuntu/Ubuntu2604-Readme.md
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8051670Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.88
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8052614Z ##[endgroup]
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8053938Z ##[group]GITHUB_TOKEN Permissions
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8056655Z Actions: write
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8057369Z Contents: read
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8057850Z Metadata: read
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8058391Z ##[endgroup]
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8060736Z Secret source: Actions
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8061709Z Cache mode: write
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8062464Z Prepare workflow directory
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8413002Z Prepare all required actions
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.8517886Z Complete job name: Validate target branch and reject superseded push runs
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9701401Z ##[group]Run set -euo pipefail
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9702289Z ^[[36;1mset -euo pipefail^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9703180Z ^[[36;1mif [[ "$GITHUB_REF_NAME" != "gpt" ]]; then^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9704126Z ^[[36;1m  echo "::error::Select the gpt branch when manually dispatching this workflow."^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9705050Z ^[[36;1m  exit 1^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9705569Z ^[[36;1mfi^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9706165Z ^[[36;1mif [[ "$GITHUB_EVENT_NAME" != "push" ]]; then^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9707191Z ^[[36;1m  echo "Manual run on gpt. Continue."^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9707927Z ^[[36;1m  echo "proceed=true" >> "$GITHUB_OUTPUT"^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9708568Z ^[[36;1m  exit 0^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9709131Z ^[[36;1mfi^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9709694Z ^[[36;1mif ! latest_run=$(gh run list \^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9710530Z ^[[36;1m  --workflow ".github/workflows/ste-lint-full-docs.yml" \^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9711316Z ^[[36;1m  --branch "$GITHUB_REF_NAME" \^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9712094Z ^[[36;1m  --event push \^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9712655Z ^[[36;1m  --limit 100 \^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9713235Z ^[[36;1m  --json databaseId,number \^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9714061Z ^[[36;1m  --jq 'max_by(.number).databaseId // empty' 2>/dev/null); then^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9714866Z ^[[36;1m  latest_run=""^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9715431Z ^[[36;1mfi^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9716129Z ^[[36;1mif [[ -n "$latest_run" && "$latest_run" != "$GITHUB_RUN_ID" ]]; then^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9717558Z ^[[36;1m  echo "A newer push run ($latest_run) supersedes this run ($GITHUB_RUN_ID)."^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9718513Z ^[[36;1m  gh api --method POST \^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9719353Z ^[[36;1m    "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/cancel" >/dev/null^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9720259Z ^[[36;1m  exit 0^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9720772Z ^[[36;1mfi^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9721288Z ^[[36;1mif [[ -z "$latest_run" ]]; then^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9722207Z ^[[36;1m  echo "::warning::Could not identify the latest push run. Continue with validation."^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9723082Z ^[[36;1mfi^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:11.9723681Z ^[[36;1mecho "proceed=true" >> "$GITHUB_OUTPUT"^[[0m
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:13.0167145Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:13.0168659Z env:
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:13.0177740Z   GH_TOKEN: ***
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:13.0178460Z ##[endgroup]
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:15.3395931Z ##[error]The operation was canceled.
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:15.3484534Z Evaluate and set job outputs
+Validate target branch and reject superseded push runs	UNKNOWN STEP	2026-11-23T07:04:15.3492907Z Cleaning up orphan processes

@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45157722454",
+    "number": 48,
+    "attempt": 1,
+    "workflow_id": 427313089,
+    "workflow_name": "Validate Document Standards",
+    "workflow_path": ".github/workflows/validate-document-standards.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45157722454",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "3d6c079b3c85539e99c5348846bc8a2bf1d2f998",
+    "status": "completed",
+    "conclusion": "cancelled",
+    "created_at": "2026-11-23T10:36:57Z",
+    "run_started_at": "2026-11-23T10:36:57Z",
+    "updated_at": "2026-11-23T10:37:19Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Remediate Drawing Skill STE lint findings"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-23T10:38:08Z",
+    "completeness": "Complete",
+    "reporter_job": {
+      "id": "137634941673",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "cancelled"
+    }
+  },
+  "classification": {
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
+    "primary_category": null,
+    "categories": [],
+    "issues": []
+  },
+  "jobs": [
+    {
+      "id": "137634824199",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-23T10:36:59Z",
+      "completed_at": "2026-11-23T10:37:11Z",
+      "runner_name": "GitHub Actions 1000001335",
+      "runner_id": 1000001335,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T10:37:00Z",
+          "completed_at": "2026-11-23T10:37:00Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T10:37:00Z",
+          "completed_at": "2026-11-23T10:37:07Z"
+        },
+        {
+          "number": 3,
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T10:37:07Z",
+          "completed_at": "2026-11-23T10:37:07Z"
+        },
+        {
+          "number": 4,
+          "name": "Run catalog validator regression tests",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T10:37:07Z",
+          "completed_at": "2026-11-23T10:37:08Z"
+        },
+        {
+          "number": 5,
+          "name": "Validate the document type catalog",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T10:37:08Z",
+          "completed_at": "2026-11-23T10:37:08Z"
+        },
+        {
+          "number": 9,
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T10:37:08Z",
+          "completed_at": "2026-11-23T10:37:08Z"
+        },
+        {
+          "number": 10,
+          "name": "Post Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T10:37:08Z",
+          "completed_at": "2026-11-23T10:37:08Z"
+        },
+        {
+          "number": 11,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-23T10:37:08Z",
+          "completed_at": "2026-11-23T10:37:09Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 30148,
+        "path": "logs/job-137634824199.log",
+        "error": null,
+        "marker_lines": []
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "137634824199",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-11-23T10:36:59Z",
+      "completed_at": "2026-11-23T10:37:11Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45157722454/job/137634824199",
+      "app": "GitHub Actions",
+      "annotations_count": 1
+    }
+  ],
+  "annotations": [
+    {
+      "check_run_id": "137634824199",
+      "job_id": "137634824199",
+      "path": ".github",
+      "start_line": 2,
+      "end_line": 2,
+      "level": "warning",
+      "title": "",
+      "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+      "raw_details": ""
+    }
+  ],
+  "artifacts": [],
+  "capture_errors": [],
+  "history_path": "history/427313089/45157722454-attempt-1-post_run"
+}
