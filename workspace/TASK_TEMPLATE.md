@@ -2,7 +2,7 @@
 
 ## Metadata
 
-- **Template version:** 1.1
+- **Template version:** 1.2
 - **ID:** YYYYMMDD-HHMMSS
 - **Created:** YYYY-MM-DD HH:MM UTC
 - **Updated:** YYYY-MM-DD HH:MM UTC
@@ -13,6 +13,7 @@
 - **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** None
+- **Ledger group:** None
 - **Archived:** No
 
 <!-- Lifecycle invariant: keep the active record In Progress and Archived: No until the final archive copy is written and read back. Set Done/Cancelled and Archived: Yes only in the initial archive copy. Check its complete content and commit metadata before deleting the active path. After creation, treat the archive copy as immutable. Delete the active record only after archive verification. Move the board row to Historical only after the active path is absent and the board can link the exact archive path and archive commit. If any step fails, keep the task open and reconcile the partial state without rewriting the archive. -->
@@ -78,3 +79,10 @@ Record every meaningful action. Use one entry for each action or closely related
 ## 12. Handoff Instructions
 
 [Give the next session enough information to resume without asking the user to repeat known context. State the exact next action and any approval boundary.]
+
+## 13. Ledger Findings
+
+_The CI Ledger maintains this section for event-driven finding links. Keep each finding ID and immutable evidence reference intact._
+
+| Finding ID | Severity | Diagnostic | Evidence |
+|---|---|---|---|
