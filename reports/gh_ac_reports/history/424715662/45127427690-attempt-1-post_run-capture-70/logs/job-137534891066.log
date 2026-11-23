@@ -1,0 +1,60 @@
+Reject superseded runs and find lint baseline	UNKNOWN STEP	﻿2026-11-23T06:55:28.1226719Z Current runner version: '2.338.2'
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1276860Z ##[group]Runner Image Provisioner
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1277774Z Hosted Compute Agent
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1278419Z Version: 20261111.635
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1279020Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1300423Z Build Date: 2026-11-11T01:49:01Z
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1301234Z Worker ID: {384569b7-ff42-47dd-a09d-7aa0a3d7ea79}
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1301933Z Region: us-east-1
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1302523Z Cloud: AWS
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1303072Z ##[endgroup]
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1304895Z ##[group]Operating System
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1305532Z Ubuntu
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1306043Z 26.04.1
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1306569Z LTS
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1307087Z ##[endgroup]
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1307619Z ##[group]Runner Image
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1308279Z Image: ubuntu-26.04
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1308834Z Version: 20261116.88.1
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1310439Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.88/images/ubuntu/Ubuntu2604-Readme.md
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1311844Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.88
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1312836Z ##[endgroup]
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1313988Z ##[group]GITHUB_TOKEN Permissions
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1316296Z Actions: write
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1316875Z Contents: read
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1317493Z Metadata: read
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1318030Z ##[endgroup]
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1341012Z Secret source: Actions
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1342165Z Cache mode: write
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.1342882Z Prepare workflow directory
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2023312Z Prepare all required actions
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2134043Z Complete job name: Reject superseded runs and find lint baseline
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2965461Z ##[group]Run set -euo pipefail
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2966094Z ^[[36;1mset -euo pipefail^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2966580Z ^[[36;1mif ! latest_run=$(gh run list \^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2967108Z ^[[36;1m  --repo "$GITHUB_REPOSITORY" \^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2967740Z ^[[36;1m  --workflow ".github/workflows/ste-lint-changed.yml" \^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2968340Z ^[[36;1m  --branch "$GITHUB_REF_NAME" \^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2968813Z ^[[36;1m  --event push \^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2969533Z ^[[36;1m  --limit 100 \^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2970013Z ^[[36;1m  --json databaseId,number \^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2970609Z ^[[36;1m  --jq 'max_by(.number).databaseId // empty' 2>/dev/null); then^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2971225Z ^[[36;1m  latest_run=""^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2971626Z ^[[36;1mfi^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2972112Z ^[[36;1mif [[ -n "$latest_run" && "$latest_run" != "$GITHUB_RUN_ID" ]]; then^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2973042Z ^[[36;1m  echo "A newer run ($latest_run) supersedes this run ($GITHUB_RUN_ID)."^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2973653Z ^[[36;1m  gh api --method POST \^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2974291Z ^[[36;1m    "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/cancel" >/dev/null^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2974918Z ^[[36;1m  exit 0^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2975292Z ^[[36;1mfi^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2975706Z ^[[36;1mif [[ -z "$latest_run" ]]; then^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2976508Z ^[[36;1m  echo "::warning::Could not identify the latest run. Continue with validation."^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2977200Z ^[[36;1mfi^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:28.2977612Z ^[[36;1mecho "proceed=true" >> "$GITHUB_OUTPUT"^[[0m
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:29.3175535Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:29.3177182Z env:
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:29.3186620Z   GH_TOKEN: ***
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:29.3187341Z ##[endgroup]
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:33.2921154Z ##[error]The operation was canceled.
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:33.3029934Z Evaluate and set job outputs
+Reject superseded runs and find lint baseline	UNKNOWN STEP	2026-11-23T06:55:33.3038677Z Cleaning up orphan processes
