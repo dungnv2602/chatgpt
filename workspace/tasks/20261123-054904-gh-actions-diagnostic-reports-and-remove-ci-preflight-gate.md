@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-054904
 - **Created:** 2026-11-23 05:49 UTC
-- **Updated:** 2026-11-23 12:21 UTC
+- **Updated:** 2026-11-23 12:28 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -77,6 +77,13 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - Do not start unrelated cleanup or fix the existing lint findings as part of this reporting task.
 
 ## 6. Progress Log
+
+### 2026-11-23 12:28 UTC
+
+- **Action:** Committed the approved report-filtering and Worker–ledger handoff implementation as one coherent change set. Read back every changed path from branch `gpt` and checked the branch head.
+- **Result:** All 14 changed paths match their committed blob IDs. Commit `4f31211d9da8ed9c6a2d7e8536e5633f8b364a73` is the current branch head. No local scripts or tests were run. Hosted validation remains pending.
+- **References:** [Implementation commit](https://github.com/dungnv2602/chatgpt/commit/4f31211d9da8ed9c6a2d7e8536e5633f8b364a73); exact paths listed in the commit.
+- **Next:** Review the next naturally triggered diagnostics run. Do not poll or dispatch workflows.
 
 ### 2026-11-23 12:21 UTC
 
@@ -222,7 +229,7 @@ The repository default branch is `main`, while this authorized task is restricte
 
 ## 8. Remaining Work
 
-The approved report-filtering and task-handoff extension is implemented in the collector, ledger schema, regression tests, report guides, Document Type Catalog, workspace navigation, and The Worker. The collector retains ordinary successful runs only when they contain a classified non-blocking failure; cancelled runs require an independent issue. Workflow-level timeouts and action-required outcomes produce actionable run-level findings. Explicit backfill requests override the default filter. The ledger schema includes Worker-owned `task_refs` links, which ingestion preserves. Existing success and cancellation-only reports were not deleted.
+The approved report-filtering and task-handoff extension is implemented in the collector, ledger schema, regression tests, report guides, Document Type Catalog, workspace navigation, and The Worker. The collector retains ordinary successful runs only when they contain a classified non-blocking failure; cancelled runs require an independent issue. Workflow-level timeouts and action-required outcomes produce actionable run-level findings. Explicit backfill requests override the default filter. The ledger schema includes Worker-owned `task_refs` links, which ingestion preserves. Existing success and cancellation-only reports were not deleted. The implementation is committed as `4f31211d9da8ed9c6a2d7e8536e5633f8b364a73`, and all 14 changed paths passed read-back verification.
 
 - Verify the cancellation-classification and ledger regression tests on the next naturally triggered GitHub-hosted diagnostics run. Confirm the next cancelled report has state `cancelled` and no cancellation-derived issues.
 - Obtain a successful natural Document Standards run after the catalog/report-root corrections. The diagnostics and archive-retention test suites have passed on a GitHub-hosted runner, but that does not replace the Document Standards workflow check.
@@ -262,8 +269,8 @@ The approved report-filtering and task-handoff extension is implemented in the c
 ## 11. Verification
 
 - **Check:** Approved capture policy and Worker–ledger task handoff.
-- **Method:** Inspected the source index, collector, ledger, and owner documentation; implemented report filtering, cancelled-run exception handling, task references, and regression coverage. Read-back is pending the implementation commit.
-- **Result:** Implementation prepared. No repository tests or scripts were run locally. Hosted validation remains pending a natural diagnostics run.
+- **Method:** Inspected the source index, collector, ledger, and owner documentation; implemented report filtering, cancelled-run exception handling, task references, and regression coverage. Retrieved all 14 changed paths after commit and compared their blob IDs with the committed tree.
+- **Result:** All 14 paths match. Commit `4f31211d9da8ed9c6a2d7e8536e5633f8b364a73` is the `gpt` branch head. No repository tests or scripts were run locally. Hosted validation remains pending a natural diagnostics run.
 - **Limitations:** Existing historical success and cancellation-only captures remain unchanged. Explicit backfill requests can intentionally preserve a successful run.
 
 - **Check:** Session initialization and bounded CI preflight.
