@@ -91,9 +91,9 @@ Implementation and repository read-back are complete. The audit found no missing
 
 - **Check:** Recursive tree inventory, Markdown path coverage, changed-file read-back, and workflow trigger exclusions.
 - **Method:** GitHub recursive tree API on branch `gpt`; 48 catalog path patterns evaluated with segment-aware glob semantics; all changed files retrieved again from the branch.
-- **Result:** Non-truncated tree at commit `359d1fd7f1af5af0e7e186fa7d99c9bdea97f1f2`; 4,326 in-scope files and 1,052 Markdown documents. All 1,052 Markdown paths are covered; all 48 rules match at least one current document; zero uncovered paths and zero stale rules. All nine relevant repository paths were read back.
+- **Result:** Non-truncated tree at commit `36c091fd601c08bde911a5ffa225b22c2f6cce9d`; 4,337 in-scope files and 1,055 Markdown documents. All 1,055 Markdown paths are covered; all 48 rules match at least one current document; zero uncovered paths and zero stale rules. All nine relevant repository paths were read back.
 - **Limitations:** Hosted regression tests and the validator were not executed or inspected. The workflow is configured to run on relevant changes; leave this task In Progress until a natural hosted result is available. The content review classified all Markdown families and representative records; machine-readable JSON/YAML/CSV records remain governed by their catalogued schemas and generators.
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. Do not access `master/` or `archive/`. Implementation is committed and read back at `359d1fd7f1af5af0e7e186fa7d99c9bdea97f1f2`. The 48-rule register covers all 1,052 Markdown files in the latest verified tree. No new standalone template was required. Do not poll or dispatch workflows; review the naturally triggered hosted validation when available. If it fails, use the diagnostic evidence to create a remediation task.
+Continue on branch `gpt`. Do not access `master/` or `archive/`. Implementation is committed and read back at `36c091fd601c08bde911a5ffa225b22c2f6cce9d`. The 48-rule register covers all 1,055 Markdown files in the latest verified tree. No new standalone template was required. Do not poll or dispatch workflows; review the naturally triggered hosted validation when available. If it fails, use the diagnostic evidence to create a remediation task.
