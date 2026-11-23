@@ -1,7 +1,7 @@
 # Document Type Catalog
 
 **Catalog version:** 1.0  
-**Inventory status:** Initial inventory. Full file-by-file coverage is not complete.  
+**Inventory status:** Path-level review enumerated 199 Markdown/YAML/JSON/CSV/TOML files outside `archive/`. Content review is representative, not exhaustive; archived records were excluded from broad scans.  
 **Source branch:** `gpt`
 
 This catalog maps recurring document types to their canonical formats. It distinguishes standalone templates from embedded contracts and generated formats.
@@ -112,7 +112,7 @@ No new session summary or conversation-integrity record was required during this
 
 ## Priority gaps
 
-1. Check remaining project-specific document types and complete the repository inventory before marking the catalog complete.
+1. Complete targeted content review for any remaining project-specific type not represented by a current or legacy sample; do not broaden archive reads.
 2. Decide whether any additional structural checks add value without duplicating generator-owned schemas.
 3. Obtain separate user approval before integrating the catalog validator and its tests into GitHub Actions; run both checks on a hosted runner after approval.
 
