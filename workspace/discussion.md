@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 12:20 UTC — Remediate Agent Skill Authoring:** Standardize start terminology and split the CI review condition into its three task-scoped triggers. Preserve the template and approval gates.
+- **2026-11-23 12:24 UTC — Begin image provenance reference review:** Review the two hard findings in `skills/session-archiving/references/image-provenance-and-webp.md` against the takeout pipeline and source-preservation rules.
 
 ## Open Discussions
 
