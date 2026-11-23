@@ -4,12 +4,46 @@
     "baseline_at_utc": "2026-11-23T05:49:04Z",
     "reason": "Start at the bounded CI snapshot recorded for task 20261123-054904. Do not backfill the pre-existing run catalogue."
   },
-  "sweep_watermark_utc": "2026-11-23T13:05:14Z",
+  "sweep_watermark_utc": "2026-11-23T13:07:38Z",
   "pending_run_ids": [
-    "45180357440",
-    "45180357336"
+    "45180769634",
+    "45180769627"
   ],
   "runs": [
+    {
+      "workflow_id": 424715662,
+      "workflow_name": "STE Lint Changed Documentation",
+      "run_id": "45180357336",
+      "run_number": 540,
+      "attempt": 1,
+      "capture_stage": "post_run",
+      "created_at": "2026-11-23T13:04:51Z",
+      "captured_at_utc": "2026-11-23T13:07:49Z",
+      "source_status": "completed",
+      "source_conclusion": "failure",
+      "projected_conclusion": null,
+      "report_status": "Complete",
+      "primary_category": "validation_or_test",
+      "history_path": "history/424715662/45180357336-attempt-1-post_run",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45180357336"
+    },
+    {
+      "workflow_id": 427313089,
+      "workflow_name": "Validate Document Standards",
+      "run_id": "45180357440",
+      "run_number": 130,
+      "attempt": 1,
+      "capture_stage": "post_run",
+      "created_at": "2026-11-23T13:04:51Z",
+      "captured_at_utc": "2026-11-23T13:07:43Z",
+      "source_status": "completed",
+      "source_conclusion": "failure",
+      "projected_conclusion": null,
+      "report_status": "Complete",
+      "primary_category": "validation_or_test",
+      "history_path": "history/427313089/45180357440-attempt-1-post_run",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45180357440"
+    },
     {
       "workflow_id": 424715662,
       "workflow_name": "STE Lint Changed Documentation",
@@ -13804,15 +13838,15 @@
     "run_id": "45180357336",
     "run_number": 540,
     "attempt": 1,
-    "capture_stage": "pre_finalizer",
+    "capture_stage": "post_run",
     "created_at": "2026-11-23T13:04:51Z",
-    "captured_at_utc": "2026-11-23T13:06:09Z",
-    "source_status": "in_progress",
-    "source_conclusion": null,
-    "projected_conclusion": "failure",
-    "report_status": "Incomplete",
+    "captured_at_utc": "2026-11-23T13:07:49Z",
+    "source_status": "completed",
+    "source_conclusion": "failure",
+    "projected_conclusion": null,
+    "report_status": "Complete",
     "primary_category": "validation_or_test",
-    "history_path": "history/424715662/45180357336-attempt-1-pre_finalizer",
+    "history_path": "history/424715662/45180357336-attempt-1-post_run",
     "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45180357336"
   }
 }

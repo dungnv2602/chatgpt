@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2.0",
-  "updated_at_utc": "2026-11-23T13:06:10Z",
+  "updated_at_utc": "2026-11-23T13:07:49Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T08:15:48Z",
     "processed_reports": [
@@ -376,6 +376,7 @@
       "reports/gh_ac_reports/history/424715662/45176725714-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424715662/45177076864-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45177076864-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/424715662/45180357336-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45180357336-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424743410/45122348866-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424743410/45122653712-attempt-1-post_run/report.json",
@@ -814,6 +815,7 @@
       "reports/gh_ac_reports/history/427313089/45177076843-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/427313089/45179386096-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45179386096-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/427313089/45180357440-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45180357440-attempt-1-pre_finalizer/report.json",
       "reports/lint_reports/on_changed/history/45127227672-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45128128389-attempt-1/report.json",
@@ -80490,8 +80492,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-23T12:39:48Z",
-      "last_seen_utc": "2026-11-23T13:05:19Z",
-      "occurrence_count": 7,
+      "last_seen_utc": "2026-11-23T13:07:43Z",
+      "occurrence_count": 8,
       "evidence": [
         {
           "report_path": "reports/gh_ac_reports/history/427313089/45176147166-attempt-1-post_run/report.json",
@@ -80541,6 +80543,13 @@
           "observed_at_utc": "2026-11-23T13:05:19Z",
           "note": "validate-document-standards / Run catalog validator regression tests",
           "observation_id": "github_actions:427313089:45179386096:1"
+        },
+        {
+          "report_path": "reports/gh_ac_reports/history/427313089/45180357440-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45180357440",
+          "observed_at_utc": "2026-11-23T13:07:43Z",
+          "note": "validate-document-standards / Run catalog validator regression tests",
+          "observation_id": "github_actions:427313089:45180357440:1"
         }
       ],
       "resolution": null,
