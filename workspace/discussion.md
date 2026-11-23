@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 13:16 UTC — Begin series continuity reference review:** Review the single hard finding in `skills/drawing/references/series-continuity-and-iteration.md` against the Drawing skill and active-brief authority. Preserve continuity and user-control rules.
+- **2026-11-23 13:20 UTC — Standardize series source wording:** Replace the single `Check` instruction with `Confirm` to match the reference's existing user-confirmation terminology. Preserve source-linkage and user-authority requirements.
 
 ## Open Discussions
 
