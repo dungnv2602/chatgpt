@@ -312,6 +312,8 @@ def validate_semantics(ledger):
                 raise LedgerError("Resolved finding requires a valid fix commit: " + finding["finding_id"])
             if not isinstance(validation, dict) or validation.get("conclusion") != "success":
                 raise LedgerError("Resolved finding requires successful validation evidence: " + finding["finding_id"])
+            if not resolution.get("resolved_at_utc"):
+                raise LedgerError("Resolved finding requires a resolution timestamp: " + finding["finding_id"])
             if not validation.get("run_url") or not validation.get("validated_at_utc"):
                 raise LedgerError("Resolved finding requires a validation URL and timestamp: " + finding["finding_id"])
         if status == "accepted":
