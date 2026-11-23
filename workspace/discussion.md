@@ -1,6 +1,6 @@
 # Current Step
 
-- **2026-11-23 — Implement approved changes:** The archive cleanup reads only `.github/archive-retention-index.json`; it never lists or scans `archive/tasks/`. New task closeouts add exact path and UTC archive timestamp entries. Existing unindexed records remain protected, with no backfill scan. A weekly scheduled run deletes only indexed files after 90 days. The script rejects non-`schedule` GitHub events until the default branch receives the updated workflow. The STE fix is limited to consistent template wording and excluding generated `lint_reports/` from changed-document lint. Preserve lint rules and baselines.
+- **2026-11-23 — Verify approved remediation:** Read back every changed path on `gpt`; inspect only the exact archive policy file already required. Check that the retention workflow is schedule-only, the script reads only the index and deletes exact due paths, the legacy archive remains protected, and both STE lint exclusions are applied. Do not scan `/archive`. CI execution status may remain unverified because the archive workflow has no manual trigger.
 
 - **2026-11-23 — No active execution task:** Task 20261122-233900 is Done and archived. No eligible Ready task exists. Await explicit user direction; do not invent a new task or change the separate archive-retention workflow.
 
