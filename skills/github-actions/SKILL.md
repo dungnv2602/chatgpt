@@ -17,6 +17,10 @@ Use this skill for GitHub Actions workflow design and maintenance. It governs wo
 3. Follow the repository's approved project boundaries. Do not change `main` unless the user authorizes it.
 4. Inspect the target workflows and the scripts/configuration they use before editing.
 5. Do not treat historical notes, examples, or old cost figures as current GitHub policy.
+6. Perform all repository inspection and modification through GitHub's remote APIs. Do not use a local checkout or local shell, Git, Python, container, or filesystem tools for repository work.
+7. GitHub-hosted Actions runners are the only permitted execution environment for repository scripts, tests, builds, and CI validation. Git commands inside an approved workflow run on those hosted runners are permitted. Inspect results through GitHub Actions logs and artifacts.
+
+This boundary exists because no local project environment is provided and the remote repository is the sole source of truth. Local copies may be absent or stale, and local execution cannot establish the state or validity of the authorized remote branch.
 
 ## 2. Scheduled archive cleanup
 
@@ -41,7 +45,7 @@ Run one bounded CI snapshot before handling every new user prompt. This rule app
 4. Treat queued, in-progress, cancelled, skipped, or absent runs as pending or unavailable. They do not block the user's request. Never wait, poll, dispatch, or rerun to produce a result.
 5. When a newest completed run fails, inspect its jobs, failed steps, and logs. Repair the cause on `gpt` before handling the user's request. Do not weaken tests, path coverage, or baselines.
 6. After you push a repair, continue with the user's request. GitHub Actions owns validation. Review the result during the next mandatory preflight.
-7. Never run the STE linter, CI workflows, or CI test suites locally. Do not manually dispatch or rerun workflows unless the user explicitly asks.
+8. Never run the STE linter, CI workflows, CI test suites, or repository scripts locally. Use GitHub-hosted Actions only. Do not manually dispatch or rerun workflows unless the user explicitly asks.
 8. If GitHub Actions cannot be accessed, make one bounded access attempt. Record the status as unverified in `workspace/discussion.md` in Condensed Mode. Do not claim that CI passed. Continue with the user's request.
 9. If a completed failure cannot be repaired safely during one focused preflight, record the exact blocker. Do not repeat the same attempt without new evidence. Continue with the user's request unless it depends on that CI result.
 
