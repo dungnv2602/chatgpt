@@ -1,8 +1,10 @@
 ## Current Step
 
-_No active step._
+**2026-11-23 16:28 UTC — Inspect image takeout provenance enforcement.** Review the processor's hand-off validation, drawing-record checks, staging, relocation, rollback, and reset path. Reconcile all 18 current items against retained session/attempt records without guessing image content or conversation history. Expected result: identify the precise bypass and define a fail-closed pre-relocation gate. Keep the active hand-off Draft and preserve every original.
 
 ## Open Discussions
+
+- **2026-11-23 16:28 UTC — Image takeout provenance:** Task 20261123-162826 is current execution. All 18 images were committed to the intake folder in one import commit; the active hand-off remains Draft and no final takeout relocation is evident. Eleven items have attempt-level mappings, seven are unclassified, and the 20/21 November session folders lack conversation-integrity records. Preserve the batch in Draft until source-record and mapping checks pass.
 
 - **2026-11-23 16:09 UTC — Reporting-period validation:** The active indexes contain only the four carried-forward pending run IDs. Evidence-only captures remain unindexed for the open Ledger findings. Let the next natural diagnostics sweep complete pending runs and validate the reset. Do not poll, dispatch, or rerun Actions.
 
