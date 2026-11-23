@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 12:00 UTC — Begin image-editing protocol review:** Review the four hard findings in `skills/drawing/references/image-editing-protocol.md` against the Drawing skill and prompt-fidelity requirements. Preserve source-edit semantics and provenance.
+- **2026-11-23 12:04 UTC — Remediate image-editing protocol:** Split the three long instructions and standardize check terminology. Preserve the prompt-only rule and all reference-role conditions.
 
 ## Open Discussions
 
