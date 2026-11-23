@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 13:52 UTC — Verify the task checkpoint:** Read the selected task record. Next compare its last validation-fix commit with current `gpt` and inventory the current tree outside `master/` and `archive/`. Confirm the 48-rule Markdown coverage and identify paths that still require read-back.
+- **2026-11-23 13:55 UTC — Verify inventory and skill coverage:** The current non-truncated tree has 6,311 in-scope entries and 1,108 Markdown files. Next validate the 48 catalog rules, review all included skill definitions, and inspect workflow README guidance. Do not access `master/`, `archive/`, `prompt-master`, or `philosophy-religion-asceticism`.
 
 ## Open Discussions
 
