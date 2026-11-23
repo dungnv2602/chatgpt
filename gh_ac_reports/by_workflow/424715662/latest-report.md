@@ -17,26 +17,27 @@
 | Status at capture | completed |
 | Observed conclusion | failure |
 | Projected conclusion | Not calculated |
+| Reporter job | Not captured |
 | Capture stage | post_run |
 | Completeness | Complete |
-| Captured (UTC) | 2026-11-23T06:24:00Z |
+| Captured (UTC) | 2026-11-23T06:30:36Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
 | State | failure |
-| Primary category | publication_or_push |
+| Primary category | checkout_or_action_download |
 | Jobs | 4 |
 | Steps | 36 |
 | Issues | 2 |
-| Annotations | 0 |
+| Annotations | 7 |
 | Artifacts | 0 |
 | Capture errors | 0 |
 
 ## Failure classification
 
-publication_or_push, checkout_or_action_download
+checkout_or_action_download, validation_or_test
 
 ## Jobs and steps
 
@@ -51,12 +52,20 @@ publication_or_push, checkout_or_action_download
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| publication_or_push | 137521751475 | 11 | Preserve lint failure as workflow conclusion | Blocking | high | Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-23T06:19:15.7001671Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m |
+| validation_or_test | 137521751475 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | 2026-11-23T06:19:28.7279888Z ^[[36;1m  echo "::error::Changed-document lint failed. See lint_reports/on_changed/latest-lint-report.md."^[[0m |
 | checkout_or_action_download | 137521909288 | 5 | Backfill completed runs and explicit requests | Blocking | medium | Capture GH Actions diagnostics / Backfill completed workflow runs	UNKNOWN STEP	2026-11-23T06:19:45.1954747Z Traceback (most recent call last): |
 
 ## Check annotations
 
-No records were captured.
+| Job | Level | Path | Line | Title | Message |
+| --- | --- | --- | --- | --- | --- |
+| 137521751475 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 137521751475 | failure | .github | 21 |  | Process completed with exit code 1. |
+| 137521751475 | failure | .github | 20 |  | Changed-document lint failed. See lint_reports/on_changed/latest-lint-report.md. |
+| 137521909269 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 137521909269 | failure | .github | 27 |  | Process completed with exit code 1. |
+| 137521909288 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 137521909288 | failure | .github | 28 |  | Process completed with exit code 1. |
 
 ## Artifacts
 
@@ -77,7 +86,7 @@ All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 
-[Changed-document lint report](../../../../lint_reports/on_changed/latest-lint-report.md)
+[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/lint_reports/on_changed/latest-lint-report.md)
 
 ## Integrity
 

@@ -22,28 +22,33 @@
   },
   "capture": {
     "stage": "post_run",
-    "captured_at_utc": "2026-11-23T06:24:09Z",
+    "captured_at_utc": "2026-11-23T06:30:39Z",
     "completeness": "Complete",
-    "reporter_job": null
+    "reporter_job": {
+      "id": "137522615884",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "success"
+    }
   },
   "classification": {
     "state": "failure",
     "observed_conclusion": "failure",
     "projected_conclusion": null,
-    "primary_category": "checkout_or_action_download",
+    "primary_category": "validation_or_test",
     "categories": [
-      "checkout_or_action_download"
+      "validation_or_test"
     ],
     "issues": [
       {
-        "category": "checkout_or_action_download",
+        "category": "validation_or_test",
         "job_id": "137522539787",
         "job_name": "validate-document-standards",
         "step_number": 5,
         "step_name": "Validate the document type catalog",
         "blocking": true,
         "confidence": "medium",
-        "message": "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:21:30.3480967Z ERROR: Line 46: unsafe or out-of-scope path 'gh_ac_reports/README.md'."
+        "message": "2026-11-23T06:21:30.3480967Z ERROR: Line 46: unsafe or out-of-scope path 'gh_ac_reports/README.md'."
       }
     ]
   },
@@ -141,82 +146,6 @@
           "validate-document-standards\tValidate the document type catalog\t2026-11-23T06:21:30.3580576Z ##[error]Process completed with exit code 1."
         ]
       }
-    },
-    {
-      "id": "137522615884",
-      "name": "Capture GH Actions diagnostics",
-      "status": "completed",
-      "conclusion": "success",
-      "started_at": "2026-11-23T06:21:34Z",
-      "completed_at": "2026-11-23T06:21:50Z",
-      "runner_name": "GitHub Actions 1000001140",
-      "runner_id": 1000001140,
-      "runner_group_name": "GitHub Actions",
-      "runner_group_id": 0,
-      "steps": [
-        {
-          "number": 1,
-          "name": "Set up job",
-          "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-23T06:21:34Z",
-          "completed_at": "2026-11-23T06:21:36Z"
-        },
-        {
-          "number": 2,
-          "name": "Check out gpt for diagnostic reporting",
-          "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-23T06:21:36Z",
-          "completed_at": "2026-11-23T06:21:45Z"
-        },
-        {
-          "number": 3,
-          "name": "Capture workflow diagnostics",
-          "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-23T06:21:45Z",
-          "completed_at": "2026-11-23T06:21:48Z"
-        },
-        {
-          "number": 5,
-          "name": "Post Capture workflow diagnostics",
-          "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-23T06:21:48Z",
-          "completed_at": "2026-11-23T06:21:48Z"
-        },
-        {
-          "number": 6,
-          "name": "Post Check out gpt for diagnostic reporting",
-          "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-23T06:21:48Z",
-          "completed_at": "2026-11-23T06:21:48Z"
-        },
-        {
-          "number": 7,
-          "name": "Complete job",
-          "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-23T06:21:48Z",
-          "completed_at": "2026-11-23T06:21:48Z"
-        }
-      ],
-      "log_capture": {
-        "available": true,
-        "truncated": false,
-        "bytes": 36544,
-        "path": "logs/job-137522615884.log",
-        "error": null,
-        "marker_lines": [
-          "Capture GH Actions diagnostics\tCapture workflow diagnostics\t2026-11-23T06:21:48.2561208Z Traceback (most recent call last):",
-          "Capture GH Actions diagnostics\tCapture workflow diagnostics\t2026-11-23T06:21:48.2709355Z ##[error]Process completed with exit code 1.",
-          "Capture GH Actions diagnostics\tCapture workflow diagnostics\t2026-11-23T06:21:48.2739202Z ^[[36;1m    echo \"::error::Could not rebase diagnostic evidence onto gpt.\"^[[0m",
-          "Capture GH Actions diagnostics\tCapture workflow diagnostics\t2026-11-23T06:21:48.2742583Z ^[[36;1m    echo \"::error::Push failed while origin/gpt was unchanged.\"^[[0m",
-          "Capture GH Actions diagnostics\tCapture workflow diagnostics\t2026-11-23T06:21:48.2743687Z ^[[36;1mecho \"::error::Could not publish diagnostic evidence after five attempts.\"^[[0m"
-        ]
-      }
     }
   ],
   "check_runs": [
@@ -230,21 +159,33 @@
       "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123530858/job/137522539787",
       "app": "GitHub Actions",
       "annotations_count": 2
-    },
-    {
-      "id": "137522615884",
-      "name": "Capture GH Actions diagnostics",
-      "status": "completed",
-      "conclusion": "success",
-      "started_at": "2026-11-23T06:21:34Z",
-      "completed_at": "2026-11-23T06:21:50Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123530858/job/137522615884",
-      "app": "GitHub Actions",
-      "annotations_count": 2
     }
   ],
-  "annotations": [],
+  "annotations": [
+    {
+      "check_run_id": "137522539787",
+      "job_id": "137522539787",
+      "path": ".github",
+      "start_line": 2,
+      "end_line": 2,
+      "level": "warning",
+      "title": "",
+      "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137522539787",
+      "job_id": "137522539787",
+      "path": ".github",
+      "start_line": 18,
+      "end_line": 18,
+      "level": "failure",
+      "title": "",
+      "message": "Process completed with exit code 1.",
+      "raw_details": ""
+    }
+  ],
   "artifacts": [],
   "capture_errors": [],
-  "history_path": "history/427313089/45123530858-attempt-1-post_run"
+  "history_path": "history/427313089/45123530858-attempt-1-post_run-capture-2"
 }

@@ -22,28 +22,33 @@
   },
   "capture": {
     "stage": "post_run",
-    "captured_at_utc": "2026-11-23T06:24:14Z",
+    "captured_at_utc": "2026-11-23T06:30:44Z",
     "completeness": "Complete",
-    "reporter_job": null
+    "reporter_job": {
+      "id": "137522738312",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "success"
+    }
   },
   "classification": {
     "state": "failure",
     "observed_conclusion": "failure",
     "projected_conclusion": null,
-    "primary_category": "publication_or_push",
+    "primary_category": "validation_or_test",
     "categories": [
-      "publication_or_push"
+      "validation_or_test"
     ],
     "issues": [
       {
-        "category": "publication_or_push",
+        "category": "validation_or_test",
         "job_id": "137522576770",
         "job_name": "Full audit and publish detailed evidence",
         "step_number": 6,
         "step_name": "Set workflow result from audit and tooling outcomes",
         "blocking": true,
-        "confidence": "high",
-        "message": "Full audit and publish detailed evidence\tValidate lint and report tooling\t2026-11-23T06:21:36.9121359Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m"
+        "confidence": "medium",
+        "message": "2026-11-23T06:21:49.5192683Z ^[[36;1m  echo \"::error::The full audit found lint or validation failures. See lint_reports/on_repo/latest-lint-report.md.\"^[[0m"
       }
     ]
   },
@@ -205,82 +210,6 @@
           "Full audit and publish detailed evidence\tSet workflow result from audit and tooling outcomes\t2026-11-23T06:21:49.5295926Z ##[error]Process completed with exit code 1."
         ]
       }
-    },
-    {
-      "id": "137522738312",
-      "name": "Capture GH Actions diagnostics",
-      "status": "completed",
-      "conclusion": "success",
-      "started_at": "2026-11-23T06:21:54Z",
-      "completed_at": "2026-11-23T06:22:08Z",
-      "runner_name": "GitHub Actions 1000001141",
-      "runner_id": 1000001141,
-      "runner_group_name": "GitHub Actions",
-      "runner_group_id": 0,
-      "steps": [
-        {
-          "number": 1,
-          "name": "Set up job",
-          "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-23T06:21:55Z",
-          "completed_at": "2026-11-23T06:21:56Z"
-        },
-        {
-          "number": 2,
-          "name": "Check out gpt for diagnostic reporting",
-          "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-23T06:21:56Z",
-          "completed_at": "2026-11-23T06:22:04Z"
-        },
-        {
-          "number": 3,
-          "name": "Capture workflow diagnostics",
-          "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-23T06:22:04Z",
-          "completed_at": "2026-11-23T06:22:07Z"
-        },
-        {
-          "number": 5,
-          "name": "Post Capture workflow diagnostics",
-          "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-23T06:22:07Z",
-          "completed_at": "2026-11-23T06:22:07Z"
-        },
-        {
-          "number": 6,
-          "name": "Post Check out gpt for diagnostic reporting",
-          "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-23T06:22:07Z",
-          "completed_at": "2026-11-23T06:22:07Z"
-        },
-        {
-          "number": 7,
-          "name": "Complete job",
-          "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-23T06:22:07Z",
-          "completed_at": "2026-11-23T06:22:07Z"
-        }
-      ],
-      "log_capture": {
-        "available": true,
-        "truncated": false,
-        "bytes": 36545,
-        "path": "logs/job-137522738312.log",
-        "error": null,
-        "marker_lines": [
-          "Capture GH Actions diagnostics\tCapture workflow diagnostics\t2026-11-23T06:22:06.7245525Z Traceback (most recent call last):",
-          "Capture GH Actions diagnostics\tCapture workflow diagnostics\t2026-11-23T06:22:06.7374538Z ##[error]Process completed with exit code 1.",
-          "Capture GH Actions diagnostics\tCapture workflow diagnostics\t2026-11-23T06:22:06.7403898Z ^[[36;1m    echo \"::error::Could not rebase diagnostic evidence onto gpt.\"^[[0m",
-          "Capture GH Actions diagnostics\tCapture workflow diagnostics\t2026-11-23T06:22:06.7407140Z ^[[36;1m    echo \"::error::Push failed while origin/gpt was unchanged.\"^[[0m",
-          "Capture GH Actions diagnostics\tCapture workflow diagnostics\t2026-11-23T06:22:06.7408164Z ^[[36;1mecho \"::error::Could not publish diagnostic evidence after five attempts.\"^[[0m"
-        ]
-      }
     }
   ],
   "check_runs": [
@@ -305,21 +234,55 @@
       "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123530849/job/137522576770",
       "app": "GitHub Actions",
       "annotations_count": 3
-    },
-    {
-      "id": "137522738312",
-      "name": "Capture GH Actions diagnostics",
-      "status": "completed",
-      "conclusion": "success",
-      "started_at": "2026-11-23T06:21:54Z",
-      "completed_at": "2026-11-23T06:22:08Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45123530849/job/137522738312",
-      "app": "GitHub Actions",
-      "annotations_count": 2
     }
   ],
-  "annotations": [],
+  "annotations": [
+    {
+      "check_run_id": "137522539668",
+      "job_id": "137522539668",
+      "path": ".github",
+      "start_line": 35,
+      "end_line": 35,
+      "level": "warning",
+      "title": "",
+      "message": "Could not identify the latest push run. Continue with validation.",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137522576770",
+      "job_id": "137522576770",
+      "path": ".github",
+      "start_line": 2,
+      "end_line": 2,
+      "level": "warning",
+      "title": "",
+      "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137522576770",
+      "job_id": "137522576770",
+      "path": ".github",
+      "start_line": 20,
+      "end_line": 20,
+      "level": "failure",
+      "title": "",
+      "message": "Process completed with exit code 1.",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137522576770",
+      "job_id": "137522576770",
+      "path": ".github",
+      "start_line": 19,
+      "end_line": 19,
+      "level": "failure",
+      "title": "",
+      "message": "The full audit found lint or validation failures. See lint_reports/on_repo/latest-lint-report.md.",
+      "raw_details": ""
+    }
+  ],
   "artifacts": [],
   "capture_errors": [],
-  "history_path": "history/424743410/45123530849-attempt-1-post_run"
+  "history_path": "history/424743410/45123530849-attempt-1-post_run-capture-2"
 }

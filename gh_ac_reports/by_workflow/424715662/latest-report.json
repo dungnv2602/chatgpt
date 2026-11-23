@@ -22,7 +22,7 @@
   },
   "capture": {
     "stage": "post_run",
-    "captured_at_utc": "2026-11-23T06:24:00Z",
+    "captured_at_utc": "2026-11-23T06:30:36Z",
     "completeness": "Complete",
     "reporter_job": null
   },
@@ -30,21 +30,21 @@
     "state": "failure",
     "observed_conclusion": "failure",
     "projected_conclusion": null,
-    "primary_category": "publication_or_push",
+    "primary_category": "checkout_or_action_download",
     "categories": [
-      "publication_or_push",
-      "checkout_or_action_download"
+      "checkout_or_action_download",
+      "validation_or_test"
     ],
     "issues": [
       {
-        "category": "publication_or_push",
+        "category": "validation_or_test",
         "job_id": "137521751475",
         "job_name": "Lint changed Markdown files and publish detailed evidence",
         "step_number": 11,
         "step_name": "Preserve lint failure as workflow conclusion",
         "blocking": true,
-        "confidence": "high",
-        "message": "Lint changed Markdown files and publish detailed evidence\tValidate lint and report tooling\t2026-11-23T06:19:15.7001671Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m"
+        "confidence": "medium",
+        "message": "2026-11-23T06:19:28.7279888Z ^[[36;1m  echo \"::error::Changed-document lint failed. See lint_reports/on_changed/latest-lint-report.md.\"^[[0m"
       },
       {
         "category": "checkout_or_action_download",
@@ -504,8 +504,86 @@
       "annotations_count": 2
     }
   ],
-  "annotations": [],
+  "annotations": [
+    {
+      "check_run_id": "137521751475",
+      "job_id": "137521751475",
+      "path": ".github",
+      "start_line": 2,
+      "end_line": 2,
+      "level": "warning",
+      "title": "",
+      "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137521751475",
+      "job_id": "137521751475",
+      "path": ".github",
+      "start_line": 21,
+      "end_line": 21,
+      "level": "failure",
+      "title": "",
+      "message": "Process completed with exit code 1.",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137521751475",
+      "job_id": "137521751475",
+      "path": ".github",
+      "start_line": 20,
+      "end_line": 20,
+      "level": "failure",
+      "title": "",
+      "message": "Changed-document lint failed. See lint_reports/on_changed/latest-lint-report.md.",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137521909269",
+      "job_id": "137521909269",
+      "path": ".github",
+      "start_line": 2,
+      "end_line": 2,
+      "level": "warning",
+      "title": "",
+      "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137521909269",
+      "job_id": "137521909269",
+      "path": ".github",
+      "start_line": 27,
+      "end_line": 27,
+      "level": "failure",
+      "title": "",
+      "message": "Process completed with exit code 1.",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137521909288",
+      "job_id": "137521909288",
+      "path": ".github",
+      "start_line": 2,
+      "end_line": 2,
+      "level": "warning",
+      "title": "",
+      "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "137521909288",
+      "job_id": "137521909288",
+      "path": ".github",
+      "start_line": 28,
+      "end_line": 28,
+      "level": "failure",
+      "title": "",
+      "message": "Process completed with exit code 1.",
+      "raw_details": ""
+    }
+  ],
   "artifacts": [],
   "capture_errors": [],
-  "history_path": "history/424715662/45123260178-attempt-1-post_run"
+  "history_path": "history/424715662/45123260178-attempt-1-post_run-capture-2"
 }
