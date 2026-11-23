@@ -1,10 +1,6 @@
-## Session Startup
-
-- **2026-11-23 — New conversation initialized:** The user invoked `start session`. Foundational initialization is in progress. No CI preflight was run.
-
 ## Current Step
 
-Read back the refactored skills, READMEs, catalog, and test fixtures; verify links and the current 48-rule Markdown inventory.
+- **2026-11-23 13:48 UTC — Recover the active task:** Foundational initialization passed on branch `gpt`. No CI preflight was run. Next read `workspace/README.md`, `workspace/task_board.md`, and the selected task record to identify the approved checkpoint.
 
 ## Open Discussions
 
