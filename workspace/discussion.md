@@ -2,6 +2,10 @@
 
 No active task. The lint-report repair is archived at [the completed task record](../archive/tasks/20261123-051200-repair-lint-report-evidence-workflow.md). Both report scopes have hosted, detailed evidence. Do not poll completed workflows; review the latest reports from their scope indexes.
 
+## Session Startup
+
+- 2026-11-23 — Foundational retrievals started for the GitHub Actions diagnostics reporting expansion and session-preflight workflow update.
+
 ## Open Discussions
 
 - **2026-11-23 — Document Standards workflow validation:** Its path-filter changes were read back, but a successful hosted confirmation was not observed. Do not poll; verify on its next eligible run.
