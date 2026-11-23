@@ -27,3 +27,8 @@
 ### 2026-11-23 01:31 UTC — Repository path inventory
 
 - **Result:** Enumerated 199 Markdown/YAML/JSON/CSV/TOML files outside archive/: drawings 97, skills 51, novels 33, .github 6, workspace 5, images 3, master 3, and lint_reports 1. The catalog covers 34 document types and 76 exact references. Content review remains representative, not exhaustive; no broad archive scan was performed.
+
+### 2026-11-23 — STE lint report inspection
+
+- **Verified result:** The repository-wide report dated 2026-11-23 00:15 UTC records 336 STE findings across 38 files. The authoring skill has 17 findings (1 hard; baseline 6), and its template has 1 hard finding (baseline 0). Markdown links and linter self-test pass. The report's overall repository-wide result is FAIL, with four files failing the configured hard threshold or execution. The report's listed skill findings include passive-voice, present-perfect, and synonym-rotation flags; the template's single finding is synonym rotation (`verify`/`check`).
+- **Next action:** Inspect the exact changed-file lint workflow output, baseline logic, and the report-file finding to explain why the changed-document job fails. No lint configuration or documents will be changed.
