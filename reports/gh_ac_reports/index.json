@@ -4,7 +4,7 @@
     "baseline_at_utc": "2026-11-23T05:49:04Z",
     "reason": "Start at the bounded CI snapshot recorded for task 20261123-054904. Do not backfill the pre-existing run catalogue."
   },
-  "sweep_watermark_utc": "2026-11-23T06:57:48Z",
+  "sweep_watermark_utc": "2026-11-23T06:58:29Z",
   "pending_run_ids": [
     "45127673915",
     "45127663602",
@@ -140,6 +140,23 @@
       "attempt": 1,
       "capture_stage": "post_run",
       "created_at": "2026-11-23T06:55:25Z",
+      "captured_at_utc": "2026-11-23T06:58:44Z",
+      "source_status": "completed",
+      "source_conclusion": "cancelled",
+      "projected_conclusion": null,
+      "report_status": "Incomplete",
+      "primary_category": "cancelled",
+      "history_path": "history/424715662/45127427690-attempt-1-post_run-capture-5",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45127427690"
+    },
+    {
+      "workflow_id": 424715662,
+      "workflow_name": "STE Lint Changed Documentation",
+      "run_id": "45127427690",
+      "run_number": 433,
+      "attempt": 1,
+      "capture_stage": "post_run",
+      "created_at": "2026-11-23T06:55:25Z",
       "captured_at_utc": "2026-11-23T06:58:00Z",
       "source_status": "completed",
       "source_conclusion": "cancelled",
@@ -250,6 +267,23 @@
       "primary_category": "cancelled",
       "history_path": "history/424743410/45127311600-attempt-1-post_run",
       "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45127311600"
+    },
+    {
+      "workflow_id": 424743410,
+      "workflow_name": "STE Lint Full Technical Documentation",
+      "run_id": "45127306049",
+      "run_number": 167,
+      "attempt": 1,
+      "capture_stage": "post_run",
+      "created_at": "2026-11-23T06:54:22Z",
+      "captured_at_utc": "2026-11-23T06:58:37Z",
+      "source_status": "completed",
+      "source_conclusion": "cancelled",
+      "projected_conclusion": null,
+      "report_status": "Incomplete",
+      "primary_category": "cancelled",
+      "history_path": "history/424743410/45127306049-attempt-1-post_run-capture-8",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45127306049"
     },
     {
       "workflow_id": 424743410,
