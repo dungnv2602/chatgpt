@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-123459
 - **Created:** 2026-11-23 12:34 UTC
-- **Updated:** 2026-11-23 12:58 UTC
+- **Updated:** 2026-11-23 13:19 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -59,6 +59,15 @@ Audit all in-scope repository documents on branch `gpt`, excluding `master/` and
 
 ## 6. Progress Log
 
+### 2026-11-23 13:19 UTC
+
+- **Action:** Completed the workflow and README refactor. Unified Drawing's operation selector and delegated image-operation choice from The Worker to Drawing. Removed the duplicate Worker authoring gate and made Document Standards the sole template/inventory authority. Rewrote the shared image-delivery guide as Drawing-specific rules, refreshed Workspace, CI diagnostics, ledger, and Novel README guidance, and clarified that old initialization change-log entries are historical.
+- **Result:** Commits `948f21c514687504f8ba69866bd8a14d111fd711`, `d440b0c4cac714e63d2ddf0d52fcb2d2e159ab76`, `0af276a4573c27aca943326f0fd2f4577ab2c375`, `40f202aec209bb5f69956d1aaeb14244f5e065fe`, `77215ed647279aa8467eb8ccc97af46abd553350`, `cacdab7fc1a130a0cc646b0f53e54c67c038c936`, `a0e8e30e64e866fba384395598b6be8e2065c502`, `23bd49ae4f01f9d95ac7281280e232079b99d450`, `1fc800febaa3a3d7c678f06c4b4567dd46777814`, `3d6c4fe8794c60a1573dfdbe0856cfbafd94ed9f`, and `80f213c600d70b55e60f999edaf942da0f77ab5a` contain the refactor, owner delegation, README, and inventory changes. The latest checked recursive tree before the catalog refresh was non-truncated: 4,509 in-scope files and 1,096 Markdown documents; all 1,096 matched the 48 path rules, with no unused rule.
+- **Additional finding:** Hosted validation run [45180357440](https://github.com/dungnv2602/chatgpt/actions/runs/45180357440) failed two catalog-validator regression tests because their temporary catalogs did not cover Markdown files created by those tests. The validator behaved correctly. The test fixture now accepts test-specific coverage rows; the project-template and report-root tests declare their own narrow patterns. This correction is in commit `91df44b9e599457e2b8b3a635788857b41ae5e6c`. No validator rule was weakened. A later pre-finalizer report [45181736988](https://github.com/dungnv2602/chatgpt/actions/runs/45181736988) also captured the regression failure before that fixture correction; its job logs were unavailable while the run was still in progress. Do not poll it.
+- **References:** `skills/drawing/`; `skills/the-worker/`; `skills/document-standards/`; `workspace/README.md`; `reports/gh_ac_reports/README.md`; `reports/triage/README.md`; `novels/README.md`; `skills/INITIALIZATION_POLICY.md`.
+- **Next:** Read back every changed path and verify the current recursive inventory and link targets. Keep the task In Progress until a natural hosted run validates the corrected fixtures and current catalog.
+
+
 ### 2026-11-23 12:58 UTC
 
 - **Action:** Expanded the approved task to cover the end-to-end workflow audit, conflict resolution, documentation compression, and README alignment. Re-read the in-scope skill definitions and the relevant Worker, Drawing, Document Standards, CI-report, and novel workflow references. Reviewed the recursive tree and the in-scope README inventory without opening `master/` or `archive/`.
@@ -89,16 +98,13 @@ Audit all in-scope repository documents on branch `gpt`, excluding `master/` and
 
 ## 7. Current State
 
-Template inventory enforcement is implemented. The latest prior verified inventory found 1,058 Markdown documents covered by 48 rules. The expanded workflow refactor is in progress. No additional recurring template has been identified. The task remains In Progress until conflicting instructions are reconciled, affected READMEs are updated, all changed paths pass read-back, and hosted validation is naturally available.
+Template inventory enforcement and workflow refactoring are implemented. The latest recorded tree snapshot contains 1,096 Markdown documents, all covered by 48 narrow rules. The image-operation conflict and duplicated authoring gate are resolved; README guidance is aligned. Two hosted catalog-regression tests exposed stale test fixtures, which were corrected without changing validator behavior. Final read-back and hosted validation after the fixture correction remain outstanding.
 
 ## 8. Remaining Work
 
-- Reconcile the image-edit versus fresh-generation decision across Drawing, Worker, and Novelist guidance.
-- Remove stale `session-archiving` paths and script references.
-- Make Document Standards the single authority for the full template/inventory authoring gate; remove duplicated Worker steps.
-- Reduce redundant operational text in the affected skills and references without removing any required constraints.
-- Update affected README files and verify every link/path.
-- Hosted regression execution remains unverified until a naturally triggered GitHub Actions run reports results. Do not poll or dispatch workflows.
+- Read back all changed skills, references, README files, task records, and catalog entries. Check links and obsolete paths.
+- Recheck Markdown inventory coverage after the final repository edits.
+- Review the next naturally completed Document Standards run after test-fixture commit `91df44b9e599457e2b8b3a635788857b41ae5e6c`. Do not poll or dispatch workflows.
 
 ## 9. Next Actions
 
@@ -120,11 +126,11 @@ Template inventory enforcement is implemented. The latest prior verified invento
 
 ## 11. Verification
 
-- **Check:** Recursive tree inventory, Markdown path coverage, changed-file read-back, and workflow trigger exclusions.
-- **Method:** GitHub recursive tree API on branch `gpt`; 48 catalog path patterns evaluated with segment-aware glob semantics; all changed files retrieved again from the branch.
-- **Result:** Non-truncated tree at commit `be736d5dd885c8084133542afc72458d50ccbf63`; 4,351 in-scope files and 1,058 Markdown documents. All 1,058 Markdown paths are covered; all 48 rules match at least one current document; zero uncovered paths and zero stale rules. All nine relevant repository paths were read back.
-- **Limitations:** Hosted regression tests and the validator were not executed or inspected. The workflow is configured to run on relevant changes; leave this task In Progress until a natural hosted result is available. The content review classified all Markdown families and representative records; machine-readable JSON/YAML/CSV records remain governed by their catalogued schemas and generators.
+- **Check:** Recursive tree inventory, Markdown path coverage, README alignment, changed-file read-back, and hosted regression evidence.
+- **Method:** GitHub recursive tree API on branch `gpt`; 48 catalog patterns evaluated with segment-aware glob semantics; exact repository files read back.
+- **Result:** Non-truncated tree at commit `9ef2567e99a52045ac636c8a7749ecb5ccbb1e31`; 4,509 in-scope files and 1,096 Markdown documents. All 1,096 Markdown paths are covered; all 48 rules match at least one current document; zero uncovered paths and zero unused rules. Hosted failure evidence identified two test-fixture omissions; fixture-only corrections were committed at `91df44b9e599457e2b8b3a635788857b41ae5e6c`.
+- **Limitations:** The repository validator and test suite were not run locally. The latest stored pre-finalizer run predates the fixture correction and had unavailable logs. Hosted validation after the fix is not yet verified. The content review classified all Markdown families and representative records; structured JSON/YAML/CSV records remain governed by their catalogued schemas and generators.
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. Do not access `master/` or `archive/`. Template inventory coverage is committed at `be736d5dd885c8084133542afc72458d50ccbf63`, with a later branch head at the start of this expanded review. Continue on `gpt`. Do not access `master/` or `archive/`. No extra template is required unless the audit identifies a genuinely new recurring type. Do not run local validation or poll/dispatch Actions.
+Continue on branch `gpt`. Do not access `master/` or `archive/`. No new template is required unless a genuinely new recurring type appears. The Drawing operation rule, Worker/Document Standards ownership boundary, README guidance, and 48-rule path inventory are updated. The last hosted regression failures were traced to temporary test fixtures and corrected at `91df44b9e599457e2b8b3a635788857b41ae5e6c`. Read back the changed files, then review the next naturally completed hosted validation. Do not run local scripts or poll/dispatch Actions.
