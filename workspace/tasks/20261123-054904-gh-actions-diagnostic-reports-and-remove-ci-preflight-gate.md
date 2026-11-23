@@ -139,7 +139,7 @@ Resolved report files are assigned to `archive/reports/` and use the existing `.
 
 The catalog validator and regression fixture now recognize `reports/` as the report root. Hosted regression coverage for archive cleanup was added to the push-driven diagnostics workflow. A previous Document Standards run failed because the catalog still referenced the retired roots; a previous diagnostics finalizer failed because it used the old composite-action path. Both causes were corrected in later commits. The latest bounded snapshot showed a diagnostics run pending; it was not polled, so the latest corrections are not yet confirmed by a completed hosted run.
 
-The task-scoped CI policy removes unrelated pre-prompt and post-initialization repair gates. The actual conclusion of each source workflow remains independent from the report-only job.
+The completed sweep also exposed concurrent report-index publication conflicts between finalizers and the push collector. All six source-workflow finalizers now share the collector's non-cancelling repository-wide concurrency group. The task-scoped CI policy removes unrelated pre-prompt and post-initialization repair gates. The actual conclusion of each source workflow remains independent from the report-only job.
 
 Three immutable recaptures are requested for earlier reports generated before reporter-job exclusion. The request files are committed. The resulting sweep (run 45124527032) was observed as in progress in the final bounded snapshot; it was not polled. The existing 17 captures remain preserved. The prior report index was read back with zero pending run IDs before these three new requests were committed.
 
