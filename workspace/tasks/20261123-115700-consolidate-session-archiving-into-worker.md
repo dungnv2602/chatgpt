@@ -74,9 +74,16 @@ Make The Worker the sole owner of collaboration modes, task/session continuity, 
 - **References:** `skills/the-worker/SKILL.md`, `skills/the-worker/references/`, `skills/the-worker/assets/`, `skills/the-worker/scripts/`, `.github/workflows/convert-images-to-webp.yml`, `skills/drawing/SKILL.md`, `skills/SESSION_START.md`, `skills/README.md`, `skills/document-standards/references/document-type-catalog.md`, and `images/README.md`.
 - **Next:** Check all migrated destinations and dependent references. Then delete the two absorbed standalone skill directories and read back the final paths.
 
+### 2026-11-23 12:02 UTC
+
+- **Action:** Removed the standalone Session Archiving entry point and all ten original supporting files after their Worker-owned copies were created. Removed the standalone Conversation Mode compatibility entry point.
+- **Result:** The source skill files are deleted. The Worker now contains the templates, references, and scripts. Workflow and operational documentation paths were redirected to the new locations. Final repository read-back remains.
+- **References:** `skills/session-archiving/` (removed), `skills/conversation-mode/` (removed), `skills/the-worker/`, `.github/workflows/convert-images-to-webp.yml`, `skills/SESSION_START.md`, `skills/README.md`, `skills/drawing/SKILL.md`, `skills/document-standards/references/document-type-catalog.md`, and `images/README.md`.
+- **Next:** Verify all changed paths, confirm removed entry points are absent, and check the final branch head.
+
 ## 7. Current State
 
-The task is approved and in progress. All ten supporting files have been copied and read back under The Worker. Owner instructions, activation paths, workflow script paths, Drawing dependencies, image documentation, the Document Type Catalog, and skill indexes have been updated. Original standalone skill files remain until final stale-reference checks and deletion.
+The task is approved and in progress. All ten supporting files have been copied and read back under The Worker. Owner instructions, activation paths, workflow script paths, Drawing dependencies, image documentation, the Document Type Catalog, and skill indexes have been updated. The standalone Session Archiving and Conversation Mode skill files have been deleted. Final read-back and branch verification remain.
 
 ## 8. Remaining Work
 
