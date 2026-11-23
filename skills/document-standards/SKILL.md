@@ -28,13 +28,13 @@ Do not create an empty document only because a template exists.
 
 ## Repository-wide Markdown inventory gate
 
-The Document Type Catalog contains a Markdown inventory coverage register. The hosted validator scans every repository Markdown file outside the root `master/` and `archive/` directories and requires each path to match a documented family rule.
+The Document Type Catalog contains a Markdown inventory coverage register. The hosted validator scans every repository Markdown file outside the root `master/` and `archive/` directories and requires each path to match a documented family rule. This Markdown path gate does not replace schema or generator validation for JSON, YAML, CSV, and other machine-readable records; use their exact catalog entries and regression tests.
 
 Before creating, moving, renaming, or materially revising a Markdown document:
 
-1. Identify its exact destination path and match it to the coverage register.
+1. Identify its exact destination path. For Markdown, match it to the coverage register; for a structured record, locate its schema/generator row in the catalog.
 2. Read the corresponding document-type row and its canonical authority.
-3. If no coverage rule matches, add a narrow rule and classify the family before creating the document. Do not use a broad wildcard as a shortcut.
+3. If no Markdown coverage rule or structured-record authority exists, add a narrow rule and classify the family before creating the document. Do not use a broad wildcard as a shortcut.
 4. If the family is recurring or carries status, approval, provenance, or audit data, create or update its canonical template/schema first.
 5. Update the owning index and workflow to reference the canonical format.
 

@@ -20,11 +20,12 @@ Document Standards is a separately maintained foundational skill. Load its skill
 
 ## Markdown document creation gate
 
-Before creating, moving, renaming, or materially revising a repository Markdown document, apply the foundational Document Standards gate:
+Before creating, moving, renaming, or materially revising a repository Markdown document or structured record, apply the foundational Document Standards gate:
 
-- Match the destination path to the catalog's Markdown inventory coverage register.
+- For Markdown, match the destination path to the catalog's Markdown inventory coverage register.
+- For JSON, YAML, CSV, or another structured record, identify its schema/generator row and regression tests in the catalog.
 - Retrieve the document type's canonical template, schema, or embedded/generator contract.
-- If no path rule or document type exists, update the coverage register and define the canonical format before authoring the document.
+- If no Markdown path rule or structured-record authority exists, update the catalog and define the canonical format before authoring the document.
 - Do not add broad catch-all patterns to bypass an uncovered-path failure.
 - Update the owning index and validate the finished document against its canonical format.
 - Let the hosted Document Standards workflow perform validation; do not run repository scripts locally.

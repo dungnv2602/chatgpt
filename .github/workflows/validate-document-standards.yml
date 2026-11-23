@@ -13,6 +13,15 @@ on:
       - 'images/**/*.md'
       - 'novels/**/*.md'
       - 'reports/**/*.md'
+      # Exclude generator-owned output so report publication cannot retrigger this workflow.
+      - '!reports/gh_ac_reports/history/**'
+      - '!reports/gh_ac_reports/by_workflow/**'
+      - '!reports/gh_ac_reports/latest-gh-ac-report.md'
+      - '!reports/lint_reports/latest-lint-report.md'
+      - '!reports/lint_reports/on_*/history/**'
+      - '!reports/lint_reports/on_*/latest-lint-report.md'
+      # Image conversion reports are generated output, not authored documents.
+      - '!images/takeout/history/**'
       - 'workspace/**/*.md'
       - '.github/**/*.md'
       - '*.md'

@@ -269,6 +269,19 @@ class CatalogValidatorTests(unittest.TestCase):
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("no '## Markdown inventory coverage' section" in error for error in errors))
 
+
+    def test_single_star_does_not_cross_directory(self):
+        self.set_catalog(self.valid_rows())
+        self.write("workspace/tasks/nested.md")
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("not covered by the catalog" in error for error in errors))
+
+    def test_double_star_covers_nested_markdown(self):
+        self.set_catalog(self.valid_rows())
+        self.write("skills/example/nested/guide.md")
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+
     def test_path_traversal_is_rejected(self):
         rows = self.valid_rows()
         rows[0] = (

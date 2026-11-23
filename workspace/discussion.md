@@ -1,6 +1,6 @@
 ## Current Step
 
-Commit and read back the segment-aware glob correction and regression-test fixture correction, then verify all 1,044 Markdown paths remain covered.
+Commit and read back the 48-rule historical-family refinement, generated-report trigger exclusions, structured-record authoring gate, and glob regression tests.
 
 ## Open Discussions
 

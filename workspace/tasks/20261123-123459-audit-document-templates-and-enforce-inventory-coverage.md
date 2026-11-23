@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-123459
 - **Created:** 2026-11-23 12:34 UTC
-- **Updated:** 2026-11-23 12:39 UTC
+- **Updated:** 2026-11-23 12:41 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -59,24 +59,24 @@ Audit all in-scope repository documents on branch `gpt`, excluding `master/` and
 ### 2026-11-23 12:37 UTC
 
 - **Action:** Rechecked the latest branch tree after concurrent hosted report-publication commits and classified all Markdown families. Drafted a 42-rule path-coverage register and added validator enforcement, regression tests, authoring-gate rules, and workflow path filters.
-- **Result:** Baseline contains 4,291 in-scope files and 1,044 Markdown documents. All 1,044 paths match at least one coverage rule; every rule matches a current document. No new standalone template is required. Implementation commit `aa6ad05461b380a667c29c47cb389cdd3ff1c0cb` was created and all eight changed paths were read back. Static read-back exposed two issues in the first test/validator draft: escaped newline literals in test fixtures and glob `*` semantics that could cross path separators.
+- **Result:** The latest read-back before this refinement found 4,326 in-scope files and 1,052 Markdown documents. All 1,052 matched the 42-rule register. No new standalone template is required. Static read-back corrected the test fixture newlines and changed path matching so `*` cannot cross `/` while `**` can span directories. The report path filter was also found to include generated Markdown output, which could retrigger validation; negative exclusions are being added.
 - **References:** Catalog coverage register; `scripts/validate_catalog.py`; `scripts/test_validate_catalog.py`; `.github/workflows/validate-document-standards.yml`; The Worker Markdown document gate.
 - **Next:** Correct the test fixture newlines and enforce segment-aware glob matching before final verification.
 
 ## 7. Current State
 
-The audit implementation is committed, with a corrective pass in progress. The existing canonical templates are sufficient; no new standalone template is justified. The 42-rule coverage register classifies all 1,044 in-scope Markdown paths. Static read-back identified and is correcting two issues before final verification.
+The inventory audit found no missing recurring template. Existing canonical templates are sufficient. The Markdown coverage register now uses 48 narrow rules, distinguishes historical drawing records, and excludes generated report output from validation-workflow triggers. The validator uses segment-aware glob semantics. Changes are committed and read-back verification is pending.
 
 ## 8. Remaining Work
 
-- Commit and read back the validator/test corrections.
-- Confirm the latest tree is fully covered by the segment-aware path rules.
+- Commit and read back the catalog, owner instructions, workflow exclusions, and additional glob tests.
+- Confirm the latest tree is fully covered by the 48 segment-aware rules.
 - Reconcile the task board and discussion register.
 - Hosted regression execution remains unverified until a naturally triggered GitHub Actions run reports results.
 
 ## 9. Next Actions
 
-1. Commit and read back the corrective validator/test changes.
+1. Commit and read back the final catalog, instruction, workflow, and test refinements.
 2. Recheck all changed paths and the latest branch head.
 3. Inspect hosted validation only when it occurs naturally; do not poll or dispatch workflows.
 
