@@ -34,7 +34,7 @@ Assign each document type one class in the [Document Type Catalog](references/do
 |---|---|
 | Template required | A person creates the document repeatedly from a canonical template. |
 | Schema required | A machine-readable record requires a defined field schema and allowed values. |
-| Embedded contract | A single live file follows a structure defined by its owning skill or README. |
+| Embedded contract | A single live file follows a structure defined by its owning skill, README, workflow, or script. |
 | Generator-owned | A script creates the output. The generator and its tests define the format. |
 | Lightweight pattern | A one-off or low-risk note needs consistent basic fields, not a full template. |
 | Exempt | A rigid template would conflict with creative freedom or an external format. |
