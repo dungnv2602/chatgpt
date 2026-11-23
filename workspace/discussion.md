@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 11:50 UTC — Handoff:** Task `20261123-112100` is archived and closed. Resume current execution from `workspace/tasks/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md`.
+- **2026-11-23 11:57 UTC — Current step:** Transfer Session Archiving's templates, references, and scripts into The Worker. Update exact dependencies and activation paths, then remove the standalone Session Archiving and Conversation Mode skill directories.
 
 ## Open Discussions
 
