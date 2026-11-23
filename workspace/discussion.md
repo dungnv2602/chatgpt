@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 09:55 UTC — Confirm the report contract and task-resumption format:** Inspect the exact cancellation-classification logic, affected immutable captures, regression tests, Document Type Catalog entry, and Version 1.1 task template. Establish the smallest safe code/test change and the correct way to resume the paused task.
+- **2026-11-23 09:58 UTC — Resume the approved diagnostic-report task:** Record the user's approval, restore task 20261123-054904 to In Progress/current execution, and reconcile the board. Preserve its unrelated natural-run validation follow-ups while adding the cancelled-run classification repair.
 
 ## Open Discussions
 - **2026-11-23 — Hosted retention validation:** The shared cleanup script and tests now cover exact individual files in both `archive/tasks/` and `archive/reports/`. A hosted run of the schedule-only cleanup has not yet been observed. Do not dispatch it manually or modify `main`.
