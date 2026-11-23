@@ -12,11 +12,15 @@ metadata:
 
 **Standing default:** All repository file work must stay inside these approved project directories at the repository root: `images/`, `master/`, `novels/`, `drawings/`, `skills/`, `workspace/`, `archive/`, and `reports/`. Do not read, list, search, retrieve, create, update, move, rename, or delete files outside those directories, except for the specific path exceptions below.
 
-**Authorized archive-retention index exception:** The user authorized exact read/write access to `.github/archive-retention-index.json` to register each archived task or resolved report file's exact path and individual UTC archive timestamp. Do not list or scan `archive/tasks/` or `archive/reports/` to backfill this index.
+**Authorized archive-retention index exception:**
+
+The user authorized exact read/write access to `.github/archive-retention-index.json` to register each archived task or resolved report file's exact path and individual UTC archive timestamp. Do not list or scan `archive/tasks/` or `archive/reports/` to backfill this index.
 
 **Authorized WebP workflow exception:** The user authorized creation of `.github/workflows/convert-images-to-webp.yml` on 12 November 2026. The user approved its takeout-pipeline and persistent staging changes on 20 November 2026. The user also approved moving its scripts into this skill and updating the required workflow paths. These permissions do not authorize unrelated workflow changes.
 
-**Authorized GitHub Actions diagnostics scope:** On 23 November 2026, the user explicitly authorized creation of `reports/gh_ac_reports/` and changes to the six existing workflow files plus `.github/workflows/gh-actions-diagnostics.yml` for reusable diagnostics and task-scoped CI policy. This authorization applies to branch `gpt` only. It does not authorize changes to `main`, other `.github/` paths, or unrelated workflows.
+**Authorized GitHub Actions diagnostics scope:**
+
+On 23 November 2026, the user explicitly authorized creation of `reports/gh_ac_reports/`. The user also authorized changes to the six existing workflow files and `.github/workflows/gh-actions-diagnostics.yml` for reusable diagnostics and task-scoped CI policy. This authorization applies to branch `gpt` only. It does not authorize changes to `main`, other `.github/` paths, or unrelated workflows.
 
 This boundary applies to every future task and every tool call, not only archiving.
 
@@ -135,7 +139,7 @@ Load [Archive Records and Drawing-Prompt Procedures](references/archive-records-
 
 ## 7. GitHub write and verification discipline
 
-All repository operations in this skill are remote-only. Use the GitHub connector and GitHub APIs for reads, writes, moves, commits, and read-back verification. Do not use local shell, Git, Python, container, or filesystem tools. Do not run repository scripts or tests locally. GitHub-hosted Actions runners may execute approved workflows; inspect their results through GitHub. No local project environment is provided, and the GitHub repository is the only source of truth. A local copy may be missing or stale and cannot prove the state of branch `gpt`.
+All repository operations in this skill are remote-only. Use the GitHub connector and GitHub APIs for reads, writes, moves, commits, and read-back verification. Do not use local shell, Git, Python, container, or filesystem tools. Do not run repository scripts or tests locally. GitHub-hosted Actions runners may execute approved workflows. Inspect their results through GitHub. No local project environment is provided, and the GitHub repository is the only source of truth. A local copy may be missing or stale and cannot prove the state of branch `gpt`.
 
 - Perform all file operations using exact paths under `approved project directories` on branch `gpt`.
 - Do not list, retrieve, search, inspect, or mutate any file path outside `approved project directories`.
