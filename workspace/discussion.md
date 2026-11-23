@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 08:29 UTC — Review the first naturally published ledger observations:** Inspect the two Actions findings and their immutable source report. Confirm that new reports were ingested without historical backfill, and assess whether diagnostic signatures identify actual failures.
+- **2026-11-23 08:36 UTC — Finalize the ledger handoff:** Verify the task record, board, refined generator, 17 tests, schema, operator guide, and pending report re-ingestion state. Confirm branch gpt and leave hosted validation to run naturally.
 
 ## Open Discussions
 - **2026-11-23 — Hosted retention validation:** The shared cleanup script and tests now cover exact individual files in both `archive/tasks/` and `archive/reports/`. A hosted run of the schedule-only cleanup has not yet been observed. Do not dispatch it manually or modify `main`.
