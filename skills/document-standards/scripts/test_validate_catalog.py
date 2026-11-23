@@ -44,7 +44,7 @@ class CatalogValidatorTests(unittest.TestCase):
         target.write_text("# fixture\n", encoding="utf-8")
         return target
 
-    def set_catalog(self, rows):
+    def set_catalog(self, rows, extra_coverage=()):
         coverage = (
             "\n## Markdown inventory coverage\n\n"
             "| Path pattern | Class | Canonical authority | Coverage rationale |\n"
@@ -57,6 +57,9 @@ class CatalogValidatorTests(unittest.TestCase):
             "`images/example/README.md` and `skills/example/SKILL.md` | Image fixture. |\n"
             "| `novels/*.md` | Embedded contract | "
             "`novels/WORKFLOW.md` and `skills/example/SKILL.md` | Novel fixture. |\n"
+            "| `novels/templates/*.md` | Exempt | "
+            "`novels/WORKFLOW.md` | Template-source fixture. |\n"
+            + "".join(extra_coverage)
         )
         self.catalog.write_text(
             "## Initial inventory\n\n" + HEADER + "\n".join(rows) + coverage,
@@ -167,7 +170,14 @@ class CatalogValidatorTests(unittest.TestCase):
             "| Workflow definition | Exempt | "
             "`.github/workflows/ste-lint-full-docs.yml` | External Actions schema. |",
         ]
-        self.set_catalog(rows)
+        self.set_catalog(rows, [
+            "| `reports/lint_reports/*.md` | Lightweight pattern | "
+            "`reports/lint_reports/latest-lint-report.md` | Lint fixture. |",
+            "| `reports/gh_ac_reports/*.md` | Lightweight pattern | "
+            "`reports/gh_ac_reports/README.md` | Actions fixture. |",
+            "| `reports/triage/*.md` | Lightweight pattern | "
+            "`reports/triage/README.md` | Ledger fixture. |",
+        ])
         errors, row_count, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
         self.assertEqual(row_count, 3)
