@@ -64,7 +64,7 @@ jobs:
       - name: Ingest centralized CI issues
         run: python3 reports/triage/scripts/ledger.py --mode ingest
 
-      - name: Publish diagnostic backfill
+      - name: Publish diagnostic backfill and Worker tasks
         shell: bash
         run: |
           set -euo pipefail
