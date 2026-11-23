@@ -120,13 +120,13 @@ drawings/
 - Use zero-padded sequential filenames (`attempt-01.md`, `attempt-02.md`, ...), with one attempt per file. Never append a second attempt to an existing attempt note.
 - `README.md` is the daily index: list attempts in order, link each note and its session brief, and show its current outcome/status. Update it whenever an attempt is added or its outcome changes.
 - Start each daily index from `../../drawing/assets/daily-index-template.md`. Preserve its required columns and single-table structure.
-- **README table format is mandatory:** Use one continuous Markdown table for the day's entire attempt index. Include one header row and consistent columns. The minimum columns are `Attempt`, `Prompt note`, `Session brief`, `Primary series / membership`, and `Status / outcome`.
+- **README table format is mandatory:** Use one continuous Markdown table with exactly six fields. Use the six fields in the canonical daily-index template: attempt/prompt, session/brief, series/baseline lineage, execution outcome, user approval/output evidence, and image.
   Include every attempt exactly once in that table. Use a stable series ID or name. Write `standalone/unassigned` when no series is established. Do not add a second table or place attempt rows outside the table. Keep rows in ascending attempt-number order.
 - **Keep table rows physically contiguous:** Do not insert blank lines between the header, separator, or attempt rows. Many renderers treat a blank line as the end of a Markdown table. This can make the newest attempt appear as a separate block.
   When appending an attempt, place its row directly after the previous row. When revising a status, edit the existing row. Do not move it outside the table or create a second table.
 - **Verify before committing:** Read back the complete daily `README.md`. Verify that it contains one attempt-index table, one header row, and one separator row. Verify that every numbered attempt appears exactly once in ascending order. Verify that no blank line interrupts the table. Verify that the final attempt row belongs to the same table. Do not mark the index update complete until the table meets all listed conditions.
 - **Status accuracy:** distinguish `not approved / not generated`, `approved / pending generation`, `generated successfully`, `generated with mismatch`, `rejected / no image returned`, and `technical failure`. If an attempt has multiple runs, preserve the sequence in the status cell (for example, an earlier image returned but a later retry was rejected). Do not overwrite history with only the latest or earlier outcome. A user declining approval must never be represented as pending approval.
-- Each attempt note contains all required fields below, the exact authored prompt, and its final outcome when known. Keep the full record self-contained.
+- Use the canonical attempt template at `../../drawing/assets/attempt-template.md`. It separates record status, generation status, and user decision. The fields below define the required evidence and interpretation for those template fields. Keep each attempt record self-contained.
 - Session-level conversation-integrity and summary records remain at `drawings/YYYY-MM-DD-conversation-integrity.md` and `drawings/YYYY-MM-DD-summary.md` unless the user changes that convention.
 - Existing legacy `YYYY-MM-DD-image-prompts.md` files remain historical records. Do not delete or rewrite them during adoption unless the user explicitly requests migration. For a day already in progress, create the daily folder and separate notes for its attempts. Preserve the legacy file as-is.
 
@@ -168,7 +168,7 @@ Before drafting the next prompt:
 
 Record:
 - Sequential attempt number and a short descriptive title.
-- Status before the call: pending.
+- Before the call, set Record status to `Committed` and Generation status to `Not started` in the canonical attempt template.
 - **Drawing session ID and session-brief path.** Mandatory for every attempt.
 - **Opening direction authority:** link the active session brief and verify it controls visual direction. Do not treat any prior index, prompt, or image as a replacement.
 - **Primary series ID/name and theme spine.** Record a series only when the current session brief explicitly continues/adopts it. Otherwise record `standalone/unassigned`. Do not guess. Record secondary series only for a deliberate crossover.
