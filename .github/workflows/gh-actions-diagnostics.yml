@@ -1,12 +1,6 @@
 name: GitHub Actions Diagnostics
 
 on:
-  workflow_call:
-    inputs:
-      capture_mode:
-        description: "finalizer captures the calling workflow; sweep is reserved for the push trigger"
-        required: true
-        type: string
   push:
     branches:
       - gpt
@@ -24,82 +18,8 @@ concurrency:
 permissions: {}
 
 jobs:
-  capture:
-    name: Capture GH Actions diagnostics
-    if: \${{ inputs.capture_mode == 'finalizer' }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    continue-on-error: true
-    permissions:
-      actions: read
-      checks: read
-      contents: write
-    steps:
-      - name: Check out gpt for report publication
-        uses: actions/checkout@v4
-        with:
-          ref: gpt
-          fetch-depth: 0
-          persist-credentials: true
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Compile and test the diagnostic reporter
-        run: |
-          python3 -m py_compile gh_ac_reports/scripts/report.py
-          python3 -m unittest discover \
-            -s gh_ac_reports/scripts \
-            -p 'test_report.py' \
-            -v
-
-      - name: Capture source workflow jobs and steps
-        if: always()
-        continue-on-error: true
-        env:
-          GH_TOKEN: \${{ github.token }}
-          GITHUB_TOKEN: \${{ github.token }}
-        run: python3 gh_ac_reports/scripts/report.py --mode current --repo "$GITHUB_REPOSITORY" --run-id "$GITHUB_RUN_ID"
-
-      - name: Publish immutable diagnostic evidence
-        if: always()
-        continue-on-error: true
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A -- gh_ac_reports/
-          if git diff --cached --quiet; then
-            echo "No new diagnostic evidence to publish."
-            exit 0
-          fi
-          git commit -m "Publish GitHub Actions diagnostics"
-          for attempt in 1 2 3 4 5; do
-            git fetch origin gpt
-            if ! git rebase origin/gpt; then
-              git rebase --abort || true
-              echo "::error::Could not rebase the diagnostic evidence onto gpt."
-              exit 1
-            fi
-            if git push origin HEAD:refs/heads/gpt; then
-              echo "Diagnostic evidence published."
-              exit 0
-            fi
-            git fetch origin gpt
-            if git merge-base --is-ancestor origin/gpt HEAD; then
-              echo "::error::Push failed while origin/gpt was unchanged."
-              exit 1
-            fi
-          done
-          echo "::error::Could not publish diagnostic evidence after five attempts."
-          exit 1
-
   sweep:
     name: Backfill completed workflow runs
-    if: \${{ inputs.capture_mode != 'finalizer' }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -149,7 +69,7 @@ jobs:
             git fetch origin gpt
             if ! git rebase origin/gpt; then
               git rebase --abort || true
-              echo "::error::Could not rebase the diagnostic backfill onto gpt."
+              echo "::error::Could not rebase diagnostic backfill onto gpt."
               exit 1
             fi
             if git push origin HEAD:refs/heads/gpt; then
