@@ -71,7 +71,7 @@ The required order is:
 Before novelist work:
 
 1. Check whether foundational initialization passed in the current conversation.
-2. If it did not pass, run the foundational loading sequence in this file. Do not ask the user to repeat the `start session` cue. A novelist request authorizes loading its prerequisites. It does not change the session-start cue.
+2. If it did not pass, stop novelist initialization and ask the user to say `start session`. Do not retrieve foundational or specialist skills until that explicit cue is given.
 3. Retrieve and read `skills/session-archiving/SKILL.md` when it has not been verified in this conversation. Drawing uses its session-brief, archive, and prompt-provenance procedures.
 4. Check whether the Drawing skill and each required reference were successfully read in this conversation. Retrieve only files that are not already verified.
 5. Check whether `skills/romantic-storyteller-visual-artist/SKILL.md` was successfully read in this conversation. Retrieve it only if it is not already verified.
@@ -216,7 +216,7 @@ The separate drawing-session cue is **`start a drawing session`**. Treat it as a
 This cue starts a new drawing session. It does not replace the foundational initialization procedure.
 
 1. Check whether foundational initialization passed in the current conversation.
-2. If it has not passed, complete the foundational loading sequence in this file first. Do this as part of the drawing-session request. Do not ask the user to repeat the `start session` cue.
+2. If it has not passed, stop drawing-session initialization and ask the user to say `start session`. Do not retrieve foundational or Drawing/Session Archiving skills until that explicit cue is given.
 3. If foundational initialization already passed, reuse the verified foundational files. Do not load them again without a reason.
 4. Retrieve and read `skills/session-archiving/SKILL.md` when it is not already verified. It owns the session-brief, archive, and prompt-provenance procedures used by Drawing.
 5. Retrieve and read `skills/drawing/SKILL.md` and its required references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Reuse each file if it was already verified in this conversation.
@@ -232,8 +232,8 @@ Use this order whenever a task requires specialist skills:
 
 | Tier | Skills | Activation |
 |---|---|---|
-| 1. Foundational | The Worker (including its mandatory Conversation Mode reference), ASD-STE100, GitHub Actions | `start session`, or automatically as prerequisites for a drawing-session or novelist request when not yet initialized |
-| 2. Drawing | Session Archiving, Drawing, and its required references | `start a drawing session`, drawing work that requires the workflow, or novelist initialization |
+| 1. Foundational | The Worker (including its mandatory Conversation Mode reference), ASD-STE100, GitHub Actions | `start session` only. Specialist requests require foundational initialization to have passed already. |
+| 2. Drawing | Session Archiving, Drawing, and its required references | After foundational initialization passes: `start a drawing session`, drawing work that requires the workflow, or novelist initialization |
 | 3. Novelist | Romantic Storyteller and active novel records | `Be the novelist` |
 
 ### Per-conversation verified-load ledger
