@@ -1,26 +1,26 @@
-# Validate Document Standards — run 45159619305
+# STE Lint Changed Documentation — run 45159823905
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | Validate Document Standards |
-| Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45159619305 / 1 |
-| Run number | 62 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45159619305 |
+| Workflow | STE Lint Changed Documentation |
+| Workflow path | .github/workflows/ste-lint-changed.yml |
+| Run / attempt | 45159823905 / 1 |
+| Run number | 475 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45159823905 |
 | Branch | gpt |
-| Commit | d55f905a080ef030ec2425009e2cd09a0d1a6395 |
+| Commit | 124490738adca9a81095af56a3ebbd9a059bebf8 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-23T10:49:43Z |
+| Created (UTC) | 2026-11-23T10:51:06Z |
 | Status at capture | completed |
 | Observed conclusion | cancelled |
 | Projected conclusion | Not calculated |
 | Reporter job | completed / cancelled |
 | Capture stage | post_run |
-| Completeness | Complete |
-| Captured (UTC) | 2026-11-23T10:51:02Z |
+| Completeness | Incomplete |
+| Captured (UTC) | 2026-11-23T10:52:26Z |
 
 ## Executive summary
 
@@ -28,12 +28,12 @@
 | --- | --- |
 | State | cancelled |
 | Primary category | None |
-| Jobs | 1 |
-| Steps | 8 |
+| Jobs | 2 |
+| Steps | 4 |
 | Issues | 0 |
 | Annotations | 1 |
 | Artifacts | 0 |
-| Capture errors | 0 |
+| Capture errors | 1 |
 
 ## Failure classification
 
@@ -45,7 +45,8 @@ The run conclusion records the workflow outcome. A cancelled run remains in hist
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 137641331311 | validate-document-standards | completed | success | 8 | logs/job-137641331311.log |
+| 137642039892 | Reject superseded runs and find lint baseline | completed | cancelled | 4 | logs/job-137642039892.log |
+| 137642113848 | Lint changed Markdown files and publish detailed evidence | completed | cancelled | 0 | logs/job-137642113848.log |
 
 ## Actionable step outcomes
 
@@ -55,7 +56,7 @@ No records were captured.
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 137641331311 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 137642039892 | failure | .github | 1 |  | The run was canceled by @github-actions[bot]. |
 
 ## Artifacts
 
@@ -65,15 +66,20 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 137641331311 | validate-document-standards | logs/job-137641331311.log | 31091 | False |  |
+| 137642039892 | Reject superseded runs and find lint baseline | logs/job-137642039892.log | 8036 | False |  |
+| 137642113848 | Lint changed Markdown files and publish detailed evidence | logs/job-137642113848.log | 29 | False |  |
 
 ## Evidence coverage
 
-All requested evidence endpoints and completed-job log captures returned data.
+One or more evidence sources were unavailable. This report is Incomplete.
+
+| Source | HTTP status | Limitation |
+| --- | --- | --- |
+| job_log | Not recorded | log not found: 137642113848  |
 
 ## Related lint evidence
 
-No separate lint report applies to this workflow.
+[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/reports/lint_reports/on_changed/latest-lint-report.md)
 
 ## Integrity
 
