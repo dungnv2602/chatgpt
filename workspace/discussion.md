@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 14:06 UTC — Trace the remaining workflow handoffs:** All 17 eligible README files have been reviewed. The three historical daily drawing indexes remain untouched. Next inspect canonical image-operation, archive, and publication references plus the diagnostics, lint, ledger, and Document Standards workflow triggers. Check for duplicated ownership, stale paths, and push-trigger loops.
+- **2026-11-23 14:12 UTC — Implement the coverage bootstrap correction:** The README and cross-cycle review found no task/ledger/Actions circular dependency. Worker task creation remains the only hand-off owner. Report publication paths are excluded from their own triggers. The main remaining defect is the Document Standards new-family bootstrap deadlock. Next add explicit Active/Reserved coverage states and regression cases, then update the owner instructions and catalog.
 
 ## Open Discussions
 
