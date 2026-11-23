@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45172381062",
-  "run_number": 532,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45172381062",
+  "run_id": "45174538143",
+  "run_number": 533,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45174538143",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "d4d3763388df7e1de32f8cc12451b7b57913a83a",
+  "commit_sha": "4f31211d9da8ed9c6a2d7e8536e5633f8b364a73",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-23T12:15:00.263821+00:00",
+  "generated_at_utc": "2026-11-23T12:28:26.751526+00:00",
   "status": "Failed",
-  "linter_source_sha": "d4d3763388df7e1de32f8cc12451b7b57913a83a",
+  "linter_source_sha": "4f31211d9da8ed9c6a2d7e8536e5633f8b364a73",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -70,27 +70,28 @@
     "skills/philosophy-religion-asceticism/CHANGELOG.md"
   ],
   "files_evaluated_count": 48,
-  "files_failed": 5,
+  "files_failed": 6,
   "failed_files": [
     "skills/document-standards/references/document-type-catalog.md",
     "skills/drawing/assets/daily-index-template.md",
     "skills/the-worker/references/image-provenance-and-webp.md",
+    "workspace/README.md",
     "skills/the-worker/SKILL.md",
     "skills/SESSION_START.md"
   ],
   "files_with_findings": 37,
-  "total_findings": 350,
-  "hard_findings": 30,
-  "advisory_findings": 320,
+  "total_findings": 357,
+  "hard_findings": 35,
+  "advisory_findings": 322,
   "findings_by_rule": {
-    "passive-voice": 279,
+    "passive-voice": 281,
     "present-perfect": 41,
-    "synonym-rotation": 7,
+    "synonym-rotation": 8,
     "phrasal-verb": 5,
     "nominalization": 2,
     "marketing-adjective": 5,
-    "long-sentence": 8,
-    "semicolon": 3
+    "long-sentence": 9,
+    "semicolon": 6
   },
   "records": [
     {
@@ -2377,6 +2378,33 @@
         },
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 56,
+          "col": 260,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "27 words",
+          "message": "Sentence has 27 words (cap 25). Split it."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 56,
+          "col": 546,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are skipped",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
+          "line": 56,
+          "col": 568,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/document-standards/references/document-type-catalog.md",
           "line": 64,
           "col": 165,
           "rule": "passive-voice",
@@ -2529,11 +2557,11 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 27,
-      "hard_count": 3,
+      "count": 30,
+      "hard_count": 5,
       "baseline": 0,
-      "words": 3064,
-      "per_100_words": 0.9,
+      "words": 3073,
+      "per_100_words": 1.0,
       "path": "skills/document-standards/references/document-type-catalog.md",
       "exit_code": 1
     },
@@ -3047,7 +3075,7 @@
         {
           "file": "workspace/README.md",
           "line": 25,
-          "col": 469,
+          "col": 588,
           "rule": "present-perfect",
           "level": "advisory",
           "match": "has triggered",
@@ -3055,7 +3083,16 @@
         },
         {
           "file": "workspace/README.md",
-          "line": 56,
+          "line": 27,
+          "col": 32,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/README.md",
+          "line": 58,
           "col": 22,
           "rule": "present-perfect",
           "level": "advisory",
@@ -3063,13 +3100,13 @@
           "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
         }
       ],
-      "count": 2,
-      "hard_count": 0,
+      "count": 3,
+      "hard_count": 1,
       "baseline": 0,
-      "words": 605,
-      "per_100_words": 0.3,
+      "words": 663,
+      "per_100_words": 0.5,
       "path": "workspace/README.md",
-      "exit_code": 0
+      "exit_code": 1
     },
     {
       "violations": [],
@@ -3130,7 +3167,34 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 330,
+          "line": 326,
+          "col": 95,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "Confirm",
+          "message": "'confirm' and 'check' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "skills/the-worker/SKILL.md",
+          "line": 333,
+          "col": 98,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are recorded",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "skills/the-worker/SKILL.md",
+          "line": 335,
+          "col": 207,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "skills/the-worker/SKILL.md",
+          "line": 347,
           "col": 168,
           "rule": "present-perfect",
           "level": "advisory",
@@ -3139,7 +3203,7 @@
         },
         {
           "file": "skills/the-worker/SKILL.md",
-          "line": 330,
+          "line": 347,
           "col": 172,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3147,10 +3211,10 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 7,
-      "hard_count": 2,
+      "count": 10,
+      "hard_count": 4,
       "baseline": 0,
-      "words": 3975,
+      "words": 4336,
       "per_100_words": 0.2,
       "path": "skills/the-worker/SKILL.md",
       "exit_code": 1
@@ -6195,6 +6259,39 @@
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 56,
+      "col": 260,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "27 words",
+      "message": "Sentence has 27 words (cap 25). Split it.",
+      "fingerprint": "33b66dbc6dc280ae7c9be6c8",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 56,
+      "col": 546,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are skipped",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "199f2603ee3fb1c3abd18ce6",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
+      "line": 56,
+      "col": 568,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "34b3ecad2f55b58c81da2ca0",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/document-standards/references/document-type-catalog.md",
       "line": 64,
       "col": 165,
       "rule": "passive-voice",
@@ -6867,7 +6964,7 @@
     {
       "file": "workspace/README.md",
       "line": 25,
-      "col": 469,
+      "col": 588,
       "rule": "present-perfect",
       "level": "advisory",
       "match": "has triggered",
@@ -6877,7 +6974,18 @@
     },
     {
       "file": "workspace/README.md",
-      "line": 56,
+      "line": 27,
+      "col": 32,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "99ddd247f24032b76e53f957",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/README.md",
+      "line": 58,
       "col": 22,
       "rule": "present-perfect",
       "level": "advisory",
@@ -6943,7 +7051,40 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 330,
+      "line": 326,
+      "col": 95,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Confirm",
+      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "4b8a264993c87efe2283f852",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 333,
+      "col": 98,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are recorded",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "f0690d035381adacbc37a83e",
+      "comparison": "new"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 335,
+      "col": 207,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
+      "comparison": "recurring"
+    },
+    {
+      "file": "skills/the-worker/SKILL.md",
+      "line": 347,
       "col": 168,
       "rule": "present-perfect",
       "level": "advisory",
@@ -6954,7 +7095,7 @@
     },
     {
       "file": "skills/the-worker/SKILL.md",
-      "line": 330,
+      "line": 347,
       "col": 172,
       "rule": "passive-voice",
       "level": "advisory",
@@ -7613,8 +7754,8 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 0,
-  "recurring_findings": 350,
+  "new_findings": 6,
+  "recurring_findings": 351,
   "resolved_findings": [],
   "checks": [
     {
@@ -7633,7 +7774,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.391s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.418s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -7651,7 +7792,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 920 active Markdown files (989 available as link targets) and 331 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 993 active Markdown files (1062 available as link targets) and 331 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
