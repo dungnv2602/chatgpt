@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-041640
 - **Created:** 2026-11-23 04:16 UTC
-- **Updated:** 2026-11-23 04:18 UTC
+- **Updated:** 2026-11-23 04:20 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -76,29 +76,35 @@ Make task operations and discussion-register maintenance mode-independent. Apply
 - **References:** `skills/the-worker/SKILL.md`, `skills/conversation-mode/SKILL.md`, `skills/session-archiving/SKILL.md`, `workspace/README.md`, `skills/document-standards/references/document-type-catalog.md`.
 - **Next:** Review whether report-format assets are needed. Do not create a duplicate template. Verify the final policy and catalog changes.
 
+
+
+### 2026-11-23 04:20 UTC
+
+- **Action:** Added a Markdown report template and JSON Schema under `skills/asd-ste100/assets/`. Updated the generator to consume and validate both assets. Added regression assertions and updated the catalog and changed-report README.
+- **Result:** The generator now reads `lint-report-template.md` and `lint-report-schema.json`. The test file checks required schema fields, report headings, template/schema presence, and both integrity hashes. The schema parses as valid JSON. Hosted test execution remains unverified.
+- **References:** `skills/asd-ste100/assets/lint-report-template.md`, `skills/asd-ste100/assets/lint-report-schema.json`, `skills/asd-ste100/scripts/generate_lint_report.py`, `skills/asd-ste100/scripts/test_generate_lint_report.py`, `skills/document-standards/references/document-type-catalog.md`, `lint_reports/on_changed/README.md`.
+- **Next:** Complete the final consistency review. Confirm the task board and discussion register. Record any unavailable branch-head or CI check.
+
 ## 7. Current State
 
 - The discussion register was updated and read back on `gpt`.
-- The workspace board has no active task rows. This task record is being added as the current execution.
+- The task board lists this record once under Current Execution.
 - The Worker, Conversation Mode, Session Archiving, workspace README, and report catalog now reflect the user's mode-independent policy.
 - The catalog now includes both lint-report scopes with the appropriate embedded-contract and generator-owned classes.
 - Hosted CI status is unverified.
 
 ## 8. Remaining Work
 
-- Decide whether an external template is needed. The Document Standards skill prohibits duplicate templates for generated formats.
-- Complete final read-back and branch-head verification.
-- Ask for separate authorization before any `.github/workflows/*` change.
-- Update the task board.
-- Read back every changed path and verify the resulting branch head.
-- Record any CI limitation accurately.
+- Complete the final consistency review and task closeout.
+- The available connector has no branch-head retrieval operation. Do not claim direct branch-head verification.
+- Hosted CI remains unverified because workflow-run listings are unavailable.
+- Do not change `.github/workflows/*` without separate authorization.
 
 ## 9. Next Actions
 
-1. Inspect the generator-owned report format and test contract.
-2. Determine whether any external template can be consumed without workflow changes.
-3. Complete read-back and branch-head verification.
-4. Reconcile the discussion register and handoff.
+1. Complete the final consistency review.
+2. Verify the task board and discussion register.
+3. Record the final handoff and close the task only after all closeout checks pass.
 
 ## 10. References
 
@@ -119,7 +125,10 @@ Make task operations and discussion-register maintenance mode-independent. Apply
 - **Check:** Foundational skill retrieval.
 - **Method:** Fetched each required file from GitHub branch `gpt` and read its contents.
 - **Result:** Session Archiving, Conversation Mode, The Worker, Agent Skill Authoring, ASD-STE100, GitHub Actions, and the required repository writing policy were retrieved.
-- **Limitations:** The GitHub connector did not expose workflow-run listing. Hosted CI results remain unverified.
+- **Limitations:** The GitHub connector did not expose workflow-run listings or a branch-head retrieval operation. Hosted CI results and direct branch-head verification remain unverified.
+- **Check:** Final content read-back.
+- **Method:** Fetched all changed skills, workspace records, catalog entries, report assets, generator code, tests, and report-scope README from branch `gpt`.
+- **Result:** All fetched paths returned the expected content. The new JSON Schema parsed successfully. The generator reads both assets and invokes schema validation. No hosted test run was observed.
 
 ## 12. Handoff Instructions
 
