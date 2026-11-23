@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-23 13:56 UTC — Check catalog enforcement:** All seven in-scope skill definitions have now been read from `gpt`. Next inspect the complete 48-rule catalog and validator logic, then test coverage against the current 1,108-file Markdown inventory. Do not access excluded paths.
+- **2026-11-23 14:00 UTC — Review workflow documentation:** The inventory is fully covered, and the new-family bootstrap deadlock is recorded in the task. Next read all in-scope README files and the image-editing and archive handoff references. Preserve historical daily indexes and all excluded paths.
 
 ## Open Discussions
 
