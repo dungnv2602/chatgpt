@@ -1,5 +1,7 @@
 # Current Step
 
+- **2026-11-23 — Execute approved STE lint and archive-retention remediation:** First inspect only the exact retention workflow, cleanup script, state marker, and archive-creation integration files needed. Implement scheduled-only individual-file retention at 90 days with a bounded retention index and weekly index-only check; do not scan `/archive`. Separately fix the approved STE wording and exclude generated `lint_reports/` from changed-document lint. Preserve lint rules/baselines and do not alter any other workflow.
+
 - **2026-11-23 — No active execution task:** Task 20261122-233900 is Done and archived. No eligible Ready task exists. Await explicit user direction; do not invent a new task or change the separate archive-retention workflow.
 
 ## Open Discussions
