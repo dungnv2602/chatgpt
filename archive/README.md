@@ -48,7 +48,7 @@ The reset must:
 - Preserve unrelated task records. Any unapproved Ledger-generated proposals whose evidence is being deleted must be cancelled and archived before their active board rows are removed.
 - Do not bulk-import the old report history after the reset. The first complete tooling-valid full audit in each lint scope establishes its baseline without task creation. New and later actionable findings enter through normal event-driven ingestion.
 
-This explicit reset is the only exception to the normal immutable report-period archive rule. Record the reset commit and cutoff in the active Ledger task.
+This explicit reset is the only exception to the normal immutable report-period archive rule. Record the reset commit and cutoff in the active Ledger task. The reset changes the current branch tree only; it does not rewrite Git history or delete GitHub Actions run records. Earlier versions remain available in prior commits unless a separate history-rewrite operation is explicitly authorized.
 
 ## Retention policy
 

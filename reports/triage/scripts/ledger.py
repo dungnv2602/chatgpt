@@ -842,7 +842,14 @@ def ingest(root, now=None):
                     raise LedgerError("Lint report has an unsupported scope: " + report_path)
                 if not state["lint_baseline_scopes"].get(scope):
                     if not lint_baseline_ready(report, scope):
-                        raise LedgerError("Lint baseline is not a complete full audit with passing tooling checks: " + report_path)
+                        # Reports are immutable. Consume this unusable baseline candidate
+                        # once; a later complete full audit can still seed the scope.
+                        state["processed_reports"].append(report_path)
+                        processed.add(report_path)
+                        counts["reports_processed"] += 1
+                        warnings.append("Skipped non-baseline lint report: " + report_path)
+                        changed = True
+                        continue
                     state["lint_baseline_scopes"][scope] = True
                     state["processed_reports"].append(report_path)
                     processed.add(report_path)

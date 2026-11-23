@@ -401,6 +401,26 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(result["findings_created"], 0)
         self.assertIn(path, updated["ingestion_state"]["processed_reports"])
 
+    def test_invalid_lint_report_is_consumed_without_seeding_the_baseline(self):
+        path = self.add_lint("on_changed", "949", "2026-11-23T07:05:00Z",
+                             execution_mode="incremental")
+        ledger = self.read_ledger()
+        ledger["ingestion_state"]["lint_baseline_scopes"]["on_changed"] = False
+        (self.root / "reports" / "triage" / "ledger.json").write_text(json.dumps(ledger), encoding="utf-8")
+        result = LEDGER.ingest(self.root, now="2026-11-23T07:06:00Z")
+        updated = self.read_ledger()
+        self.assertFalse(updated["ingestion_state"]["lint_baseline_scopes"]["on_changed"])
+        self.assertEqual(updated["findings"], [])
+        self.assertIn(path, updated["ingestion_state"]["processed_reports"])
+        self.assertEqual(result["findings_created"], 0)
+        self.assertEqual(len(result["warnings"]), 1)
+        self.add_lint("on_changed", "950", "2026-11-23T07:10:00Z",
+                      execution_mode="full-audit-fallback")
+        LEDGER.ingest(self.root, now="2026-11-23T07:11:00Z")
+        updated = self.read_ledger()
+        self.assertTrue(updated["ingestion_state"]["lint_baseline_scopes"]["on_changed"])
+        self.assertEqual(updated["findings"], [])
+
     def test_recurring_untracked_lint_baseline_findings_do_not_create_tasks(self):
         self.add_lint("on_changed", "951", "2026-11-23T07:10:00Z", comparison="recurring")
         LEDGER.ingest(self.root)
@@ -448,6 +468,34 @@ class LedgerTests(unittest.TestCase):
         retired = LEDGER.retire_completed_task_findings(self.root, ledger)
         self.assertEqual(retired, [finding_id])
         self.assertEqual(ledger["findings"], [])
+
+    def test_grouped_task_waits_until_every_finding_is_terminal(self):
+        task_id = "20261123-090002"
+        archive_path = "archive/tasks/20261123-090002-example.md"
+        first = "lint-1234567890abcdef"
+        second = "lint-fedcba0987654321"
+        task_file = self.root / archive_path
+        task_file.parent.mkdir(parents=True)
+        task_file.write_text(
+            "# Task: Example\n\n## Metadata\n\n"
+            "- **ID:** " + task_id + "\n- **Status:** Done\n- **Archived:** Yes\n\n"
+            "## 13. Ledger Findings\n\n"
+            "| Finding ID | Severity | Diagnostic | Evidence |\n|---|---|---|---|\n"
+            "| " + chr(96) + first + chr(96) + " | medium | fixed | report |\n"
+            "| " + chr(96) + second + chr(96) + " | medium | still open | report |\n",
+            encoding="utf-8",
+        )
+        index = self.root / ".github" / "archive-retention-index.json"
+        index.parent.mkdir(parents=True)
+        index.write_text(json.dumps({"schema_version":1,"unindexed_records":"preserve","records":[
+            {"path":archive_path,"archived_at_utc":"2026-11-23T09:00:00Z"}
+        ]}), encoding="utf-8")
+        ledger = {"findings":[
+            {"finding_id":first,"status":"resolved","task_refs":[task_id]},
+            {"finding_id":second,"status":"open","task_refs":[task_id]},
+        ]}
+        self.assertEqual(LEDGER.retire_completed_task_findings(self.root, ledger), [])
+        self.assertEqual(len(ledger["findings"]), 2)
 
     def test_open_or_cancelled_task_never_retires_a_finding(self):
         finding_id = "lint-1234567890abcdef"
