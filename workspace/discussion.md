@@ -1,12 +1,12 @@
 # Current Step
 
-- **2026-11-23 — Reconcile the final inventory and verify every changed path.** The final recursive tree contains 420 files and 488 entries, with no truncation. No template or schema file remains under a skill `references/` directory. Update the catalog's inventory note with the final count, then read back every changed asset, owner reference, standard, validator, workflow, and workspace record. Verify branch `gpt` at the end.
+- **2026-11-23 — Final read-back and task closeout.** All template placement changes, standards, Worker rules, validator tests, and workflow path filters are in place. Fetch every changed path and branch head once more. Record the existing unrelated lint-workflow defect accurately. Then archive the task, update its retention index, remove the active record, and reconcile the task board.
 
 ## Open Discussions
 
 - **2026-11-23 — Changed-document lint workflow defect:** Run [45113875454](https://github.com/dungnv2602/chatgpt/actions/runs/45113875454) failed in report tooling. Its test failure was a stale assertion for `resolved_findings`, now corrected. The report-generation command also receives a literal backslash from `.github/workflows/ste-lint-changed.yml`. That workflow was not modified.
 - **2026-11-23 — Hosted lint confirmation:** The full-document lint run [45111202565](https://github.com/dungnv2602/chatgpt/actions/runs/45111202565) failed on the same stale assertion. The test was corrected. Do not claim hosted confirmation until a later result is observed.
-- **2026-11-23 — Document Standards workflow:** Path filters now include `skills/**`, `novels/templates/**`, the novel README/workflow, and the shared task template/README. The workflow-file change itself will trigger validation. Do not wait or poll.
+- **2026-11-23 — Document Standards workflow:** Path filters now include `skills/**`, `novels/templates/**`, the novel README/workflow, and the shared task template/README. The workflow-file change itself will trigger validation. Hosted result is not yet verified.
 
 ## Reports
 
