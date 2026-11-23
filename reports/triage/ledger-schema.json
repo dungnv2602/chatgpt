@@ -5,17 +5,40 @@
   "required": [
     "schema_version",
     "updated_at_utc",
-    "findings"
+    "findings",
+    "ingestion_state"
   ],
   "properties": {
     "schema_version": {
-      "const": "1.0.0"
+      "const": "1.1.0"
     },
     "updated_at_utc": {
       "type": [
         "string",
         "null"
       ]
+    },
+    "ingestion_state": {
+      "type": "object",
+      "required": [
+        "bootstrap_at_utc",
+        "processed_reports"
+      ],
+      "properties": {
+        "bootstrap_at_utc": {
+          "type": "string",
+          "minLength": 10
+        },
+        "processed_reports": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
     },
     "findings": {
       "type": "array",
@@ -46,10 +69,12 @@
             ]
           },
           "category": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "title": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "status": {
             "enum": [
@@ -80,10 +105,12 @@
             ]
           },
           "first_seen_utc": {
-            "type": "string"
+            "type": "string",
+            "minLength": 10
           },
           "last_seen_utc": {
-            "type": "string"
+            "type": "string",
+            "minLength": 10
           },
           "occurrence_count": {
             "type": "integer",
@@ -99,7 +126,8 @@
               ],
               "properties": {
                 "report_path": {
-                  "type": "string"
+                  "type": "string",
+                  "minLength": 1
                 },
                 "run_url": {
                   "type": [
@@ -108,7 +136,107 @@
                   ]
                 },
                 "observed_at_utc": {
-                  "type": "string"
+                  "type": "string",
+                  "minLength": 10
+                },
+                "note": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "observation_id": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "resolution": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "fix_commit": {
+                "type": "string",
+                "pattern": "^[0-9a-fA-F]{7,40}$"
+              },
+              "resolved_at_utc": {
+                "type": "string",
+                "minLength": 10
+              },
+              "validation": {
+                "type": "object",
+                "required": [
+                  "run_url",
+                  "conclusion",
+                  "validated_at_utc"
+                ],
+                "properties": {
+                  "run_url": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "conclusion": {
+                    "const": "success"
+                  },
+                  "validated_at_utc": {
+                    "type": "string",
+                    "minLength": 10
+                  }
+                },
+                "additionalProperties": false
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "resolution_history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "fix_commit",
+                "resolved_at_utc",
+                "validation"
+              ],
+              "properties": {
+                "fix_commit": {
+                  "type": "string",
+                  "pattern": "^[0-9a-fA-F]{7,40}$"
+                },
+                "resolved_at_utc": {
+                  "type": "string",
+                  "minLength": 10
+                },
+                "validation": {
+                  "type": "object",
+                  "required": [
+                    "run_url",
+                    "conclusion",
+                    "validated_at_utc"
+                  ],
+                  "properties": {
+                    "run_url": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "conclusion": {
+                      "const": "success"
+                    },
+                    "validated_at_utc": {
+                      "type": "string",
+                      "minLength": 10
+                    }
+                  },
+                  "additionalProperties": false
                 },
                 "note": {
                   "type": [
@@ -120,11 +248,38 @@
               "additionalProperties": false
             }
           },
-          "resolution": {
+          "duplicate_of": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "accepted_risk": {
             "type": [
               "object",
               "null"
-            ]
+            ],
+            "properties": {
+              "rationale": {
+                "type": "string",
+                "minLength": 1
+              },
+              "accepted_by": {
+                "type": "string",
+                "minLength": 1
+              },
+              "accepted_at_utc": {
+                "type": "string",
+                "minLength": 10
+              },
+              "expires_at_utc": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
           }
         },
         "additionalProperties": false
