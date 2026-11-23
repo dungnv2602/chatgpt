@@ -1,0 +1,91 @@
+name: Convert Unclassified Takeout Images to WebP
+
+on:
+  push:
+    branches:
+      - gpt
+    paths:
+      - '.github/workflows/convert-unclassified-takeout.yml'
+  workflow_dispatch: {}
+
+permissions: {}
+
+jobs:
+  convert-unclassified:
+    if: github.ref == 'refs/heads/gpt'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - name: Check out gpt
+        uses: actions/checkout@v7.0.1
+        with:
+          ref: gpt
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Install WebP encoder
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes webp
+
+      - name: Convert only the seven unclassified PNGs
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          output_dir="images/takeout/webp/2026-11-20-001/attempt-001"
+          mkdir -p "$output_dir"
+
+          files=(
+            "file_000000001e9882079286e1de59e27f1b.png"
+            "file_000000004b9c82119aa3e8e273bb1f2c.png"
+            "file_0000000064d08211910f68838cb1237a.png"
+            "file_0000000069f082079011ee0627b3995c.png"
+            "file_000000008c6882118eba4e134b3a76c2.png"
+            "file_00000000dfa08211a68e0644d6c6f2a1.png"
+            "file_00000000e5e482118465d6df866ea0d9.png"
+          )
+
+          declare -A source_hashes
+          for name in "${files[@]}"; do
+            source="images/takeout/$name"
+            target="$output_dir/$name.webp"
+
+            test -s "$source"
+            test ! -e "$target"
+            file "$source" | grep -q 'PNG image data'
+            source_hashes["$name"]="$(sha256sum "$source" | cut -d ' ' -f 1)"
+
+            # Match the repository's PNG conversion profile exactly.
+            cwebp -quiet -lossless -q 100 -m 6 -exact -metadata icc "$source" -o "$target"
+
+            python3 - "$target" <<'PY'
+          import pathlib, sys
+          p = pathlib.Path(sys.argv[1])
+          data = p.read_bytes()
+          if len(data) < 12 or data[:4] != b"RIFF" or data[8:12] != b"WEBP":
+              raise SystemExit(f"Invalid WebP container: {p}")
+          if int.from_bytes(data[4:8], "little") + 8 != len(data):
+              raise SystemExit(f"WebP RIFF length mismatch: {p}")
+          PY
+
+            test "${source_hashes[$name]}" = "$(sha256sum "$source" | cut -d ' ' -f 1)"
+            echo "Converted and verified: $name"
+            sha256sum "$target"
+          done
+
+          test "${#files[@]}" -eq 7
+          echo "All seven WebP derivatives passed container and source-preservation checks."
+
+      - name: Commit WebP derivatives only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- images/takeout/webp/2026-11-20-001/attempt-001
+          git diff --cached --quiet && { echo "No new derivatives to commit."; exit 0; }
+          git commit -m "chore(images): convert seven unclassified takeout PNGs to WebP"
+          git push origin HEAD:refs/heads/gpt
