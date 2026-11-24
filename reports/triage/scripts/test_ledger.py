@@ -297,14 +297,18 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("\\[follow\\]", task)
         self.assertIn("untrusted evidence", task)
 
-    def test_low_severity_findings_remain_ledger_only(self):
+    def test_low_severity_advisory_findings_create_p3_tasks(self):
         self.add_lint("on_changed", "212", "2026-11-23T07:50:00Z", level="advisory")
         result = LEDGER.ingest(self.root, now="2026-11-23T07:51:00Z")
         finding = self.read_ledger()["findings"][0]
         self.assertEqual(finding["severity"], "low")
-        self.assertEqual(finding["task_refs"], [])
-        self.assertEqual(result["tasks_created"], 0)
-        self.assertEqual(list((self.root / "workspace" / "tasks").glob("*.md")), [])
+        self.assertEqual(len(finding["task_refs"]), 1)
+        self.assertEqual(result["tasks_created"], 1)
+        task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
+        self.assertEqual(len(task_files), 1)
+        task_text = task_files[0].read_text(encoding="utf-8")
+        self.assertIn("- **Priority:** P3", task_text)
+        self.assertIn("lint-", task_text)
 
     def test_resolved_finding_reopens_and_preserves_resolution_history(self):
         self.add_lint("on_changed","300","2026-11-23T07:10:00Z")
