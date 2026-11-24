@@ -5,9 +5,9 @@
 - **Template version:** 1.2
 - **ID:** 20261124-103354
 - **Created:** 2026-11-24 10:33 UTC
-- **Updated:** 2026-11-24 15:09 UTC
+- **Updated:** 2026-11-24 15:18 UTC
 - **Priority:** P1
-- **Status:** Blocked
+- **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved for implementation. The user approved DRAFT-0001 revision 1 on 2026-11-24 12:25 UTC and directed execution.
 - **Current execution:** Yes
@@ -200,82 +200,86 @@ Study MADR and design a comprehensive, low-ambiguity decision-management workflo
 - **Corrections:** Closed the Ledger header-guard string, aligned the task-board separators, corrected the Ledger task-template placeholder, updated its regression assertions, and removed a duplicate DRAFT-0002 index row.
 - **Next:** Keep this task Blocked until the next naturally published hosted validation confirms the catalog and Ledger checks. Do not poll CI or run scripts locally.
 
+### 2026-11-24 15:18 UTC — Complete hosted verification and begin final archive closeout
+
+- **Result:** Changed-document lint [#636](https://github.com/dungnv2602/chatgpt/actions/runs/45421670881) passed on commit [4dfbde6](https://github.com/dungnv2602/chatgpt/commit/4dfbde63708f0ab0862d142952710b1b42ef5d7a). The published report evaluated one file, recorded zero hard findings, 29 recurring advisory findings, zero new findings, and one resolved finding. The report publisher and diagnostics capture passed.
+- **Result:** Document Standards [#320](https://github.com/dungnv2602/chatgpt/actions/runs/45421670850) passed all 37 Ledger regression tests, all 32 catalog regression tests, catalog validation, and its diagnostics capture.
+- **Result:** Diagnostics [#587](https://github.com/dungnv2602/chatgpt/actions/runs/45421671015) passed reporter compilation/tests, completed-run backfill, centralized Ledger ingestion, and publication.
+- **Evidence:** All three runs used commit 4dfbde63708f0ab0862d142952710b1b42ef5d7a. The lint report was generated at 2026-11-24T15:07:51Z. The hosted run jobs and the current lint index/latest report were inspected.
+- **Scope:** No local repository scripts or tests ran. No workflow was polled or rerun. The remaining advisory lint findings are recurring and do not block this task.
+- **Next:** Complete the task archive transaction, then complete ADR-0001's confirmation and permanent archive transaction.
+
 ## 7. Current State
 
-The approved governance implementation is committed on branch `gpt`. Commit 74005cc moved the Draft, ADR, and analysis templates to the workspace root and corrected catalog ownership. Commit ad8bf8b added Ledger regression coverage to the hosted Document Standards workflow. Commit 454672a fixed the shell command used to run the Ledger suite.
+The approved governance implementation is complete on branch gpt. Commit [4dfbde6](https://github.com/dungnv2602/chatgpt/commit/4dfbde63708f0ab0862d142952710b1b42ef5d7a) contains the final catalog wording correction.
 
-The latest completed validation on source commit 725896a produced mixed results:
+All required hosted checks passed on that same commit:
 
-- Document Standards [#319](https://github.com/dungnv2602/chatgpt/actions/runs/45416735133) passed all 37 Ledger tests, all 32 catalog tests, and catalog validation. Its diagnostics publisher also passed.
-- Diagnostics [#586](https://github.com/dungnv2602/chatgpt/actions/runs/45416735144) passed reporter validation, backfill, Ledger ingestion, and publication.
-- Changed-document lint [#635](https://github.com/dungnv2602/chatgpt/actions/runs/45416735141) failed. The catalog description still contained the one hard 27-word sentence identified by Lint #634. Its evidence-publication step also failed to rebase the report commit onto a branch that already contained Lint #634's report publication. The resulting report commit was not published.
+- Changed-document lint [#636](https://github.com/dungnv2602/chatgpt/actions/runs/45421670881) passed and published its report. The report evaluated one file, found zero hard findings, recorded 29 recurring advisory findings, zero new findings, and one resolved finding.
+- Document Standards [#320](https://github.com/dungnv2602/chatgpt/actions/runs/45421670850) passed all 37 Ledger tests, all 32 catalog tests, catalog validation, and its diagnostics capture.
+- Diagnostics [#587](https://github.com/dungnv2602/chatgpt/actions/runs/45421671015) passed reporter tests, backfill, Ledger ingestion, and publication.
 
-Commit [4dfbde6](https://github.com/dungnv2602/chatgpt/commit/4dfbde63708f0ab0862d142952710b1b42ef5d7a) now splits the hard sentence in the catalog diagnostics row. Read-back confirms the complete corrected row. The push triggers fresh hosted validation from a branch state that already includes the earlier lint report commit. Those new results have not yet been reviewed.
-
-The task remains Blocked. Do not infer a pass from the earlier successful Document Standards or Diagnostics runs. Keep the three Ledger-generated lint tasks Proposed until the user approves their remediation. Keep DRAFT-0002 separate and unmodified.
+The report publisher completed successfully. The prior Lint #635 report-publication conflict did not recur. The approved governance implementation and its validation evidence are complete. DRAFT-0002 remains separate and unchanged. No Ledger-generated remediation task was approved or changed by this task.
 
 ## 8. Remaining Work
 
-- Confirm that a fresh changed-document lint run on commit 4dfbde6 passes with no hard findings and publishes its complete report.
-- Confirm that a fresh Document Standards run on commit 4dfbde6 passes its Ledger tests, catalog tests, and catalog validator.
-- Confirm that the corresponding Diagnostics publication/backfill completes successfully.
-- Record the fresh run URLs and UTC timestamps. Inspect complete logs and reports for any failed result. Do not poll Actions or rerun workflows.
-- Update ADR-0001 lifecycle evidence with the final hosted validation results.
-- Complete the task acceptance criteria and archive this task.
-- Move ADR-0001 to `archive/adr/` only after every linked task is Done and every Confirmation criterion passes.
-- Keep the three Ledger-generated lint tasks Proposed until the user approves their remediation.
-- Keep DRAFT-0002 separate and unmodified.
+- Complete the task archive transaction and verify the immutable archive copy.
+- Register the task archive in the 90-day task-retention index, remove the active task record, and move its board row to Historical with the exact archive path and commit.
+- After the task is Done and archived, update ADR-0001 confirmation evidence and move ADR-0001 to the permanent archive/adr directory. Never add the ADR to the retention index.
 
 ## 9. Next Actions
 
-1. Review the naturally published changed-document lint result for the catalog correction in commit 4dfbde6.
-2. Review the corresponding Document Standards run. Confirm the Ledger tests, catalog tests, and catalog validator passed.
-3. Review the Diagnostics publication result for the new runs.
-4. If any run fails, inspect its complete report and job log. Correct only issues within this task's approved scope. Keep the task Blocked.
-5. If all required runs pass, record their URLs and UTC timestamps. Update ADR-0001's lifecycle history, complete task closeout, and archive the task.
-6. Archive ADR-0001 only after all linked tasks are Done and every Confirmation criterion passes.
+1. Write and read back the final Done task archive copy.
+2. Add its exact path and UTC archive timestamp to .github/archive-retention-index.json.
+3. Delete the active task record only after archive verification.
+4. Update the task board and discussion register after the active path is absent.
+5. Mark ADR-0001 implementation complete, verify every Confirmation criterion, and move ADR-0001 to archive/adr.
+6. Read back all archive and navigation changes. Keep DRAFT-0002 and unrelated Proposed tasks unchanged.
 
 ## 10. References
 
-- External source: `https://github.com/adr/madr`
-- `skills/SESSION_START.md`
-- `skills/the-worker/SKILL.md`
-- `skills/the-worker/references/conversation-mode.md`
-- `skills/document-standards/SKILL.md`
-- `skills/document-standards/references/document-type-catalog.md`
-- `workspace/README.md`
-- `workspace/TASK_TEMPLATE.md`
-- `workspace/ADR_TEMPLATE.md`
-- `workspace/DRAFT_TEMPLATE.md`
-- `workspace/ANALYSIS_TEMPLATE.md`
-- `.github/workflows/validate-document-standards.yml`
-- `reports/triage/ledger.json` and `reports/triage/scripts/test_ledger.py`
-- Document Standards runs [#302](https://github.com/dungnv2602/chatgpt/actions/runs/45407620289), [#304](https://github.com/dungnv2602/chatgpt/actions/runs/45408954986), [#305](https://github.com/dungnv2602/chatgpt/actions/runs/45409620929), [#307](https://github.com/dungnv2602/chatgpt/actions/runs/45410835359), [#308](https://github.com/dungnv2602/chatgpt/actions/runs/45411400908), [#309](https://github.com/dungnv2602/chatgpt/actions/runs/45411867050), [#310](https://github.com/dungnv2602/chatgpt/actions/runs/45412245960), [#311](https://github.com/dungnv2602/chatgpt/actions/runs/45412770209), [#313](https://github.com/dungnv2602/chatgpt/actions/runs/45413378979), [#314](https://github.com/dungnv2602/chatgpt/actions/runs/45414156487), [#315](https://github.com/dungnv2602/chatgpt/actions/runs/45414832231), and [#316](https://github.com/dungnv2602/chatgpt/actions/runs/45415350984)
-- Diagnostics runs [#569](https://github.com/dungnv2602/chatgpt/actions/runs/45407620173), [#571](https://github.com/dungnv2602/chatgpt/actions/runs/45408955121), [#573](https://github.com/dungnv2602/chatgpt/actions/runs/45410287179), [#577](https://github.com/dungnv2602/chatgpt/actions/runs/45412246098), [#578](https://github.com/dungnv2602/chatgpt/actions/runs/45412770199), [#580](https://github.com/dungnv2602/chatgpt/actions/runs/45413378988), [#581](https://github.com/dungnv2602/chatgpt/actions/runs/45414156266), [#582](https://github.com/dungnv2602/chatgpt/actions/runs/45414832198), and [#583](https://github.com/dungnv2602/chatgpt/actions/runs/45415351025)
-- Document Standards run [#319](https://github.com/dungnv2602/chatgpt/actions/runs/45416735133)
-- Diagnostics run [#586](https://github.com/dungnv2602/chatgpt/actions/runs/45416735144)
-- Changed-document lint runs [#634](https://github.com/dungnv2602/chatgpt/actions/runs/45416574844) and [#635](https://github.com/dungnv2602/chatgpt/actions/runs/45416735141), plus correction commit [4dfbde6](https://github.com/dungnv2602/chatgpt/commit/4dfbde63708f0ab0862d142952710b1b42ef5d7a)
-- Changed-document lint runs [#616](https://github.com/dungnv2602/chatgpt/actions/runs/45403469914), [#618](https://github.com/dungnv2602/chatgpt/actions/runs/45407620144), [#619](https://github.com/dungnv2602/chatgpt/actions/runs/45408533122), [#620](https://github.com/dungnv2602/chatgpt/actions/runs/45408955146), [#621](https://github.com/dungnv2602/chatgpt/actions/runs/45409620876), [#623](https://github.com/dungnv2602/chatgpt/actions/runs/45410835376), [#624](https://github.com/dungnv2602/chatgpt/actions/runs/45411401151), [#626](https://github.com/dungnv2602/chatgpt/actions/runs/45412245944), [#627](https://github.com/dungnv2602/chatgpt/actions/runs/45412770212), [#629](https://github.com/dungnv2602/chatgpt/actions/runs/45413378995), [#630](https://github.com/dungnv2602/chatgpt/actions/runs/45414156337), [#631](https://github.com/dungnv2602/chatgpt/actions/runs/45414832243), [#632](https://github.com/dungnv2602/chatgpt/actions/runs/45415351074), and [#635](https://github.com/dungnv2602/chatgpt/actions/runs/45416735141)
-- Commits [74005cc](https://github.com/dungnv2602/chatgpt/commit/74005ccb1afc79d21966112501baa39772905864), [454672a](https://github.com/dungnv2602/chatgpt/commit/454672ae649a607db689876ddfb77cb5b4450e65), [849c027](https://github.com/dungnv2602/chatgpt/commit/849c027ee97b1a6c7d52f4d3020c6a152c4bae60), [aa69d96](https://github.com/dungnv2602/chatgpt/commit/aa69d966969a8d5a3cc5106a74f1204a0f324e3e), [b1aec86](https://github.com/dungnv2602/chatgpt/commit/b1aec86f3f13eb7ac5c2dd92e8a7ba1f0f150a00), [7fa7483](https://github.com/dungnv2602/chatgpt/commit/7fa7483122c074c48e8d0b82ea65d59f4aca37f4), [f44b5a7](https://github.com/dungnv2602/chatgpt/commit/f44b5a744a0b4748153f68e512d94255ebf59fe3), [594ab39](https://github.com/dungnv2602/chatgpt/commit/594ab39e461e8bc9473ef73fd40048b8f0f6eb72), [6e1cf47](https://github.com/dungnv2602/chatgpt/commit/6e1cf47bc8b0b40dcc309e457059ba0b63d8c960), [b1e6ca6](https://github.com/dungnv2602/chatgpt/commit/b1e6ca640cfebc29f917d60c15f9ae42496e5600), [58d15b6](https://github.com/dungnv2602/chatgpt/commit/58d15b642db046eeb8bbd32ec622033e2dec1dec), [dbd7ad2](https://github.com/dungnv2602/chatgpt/commit/dbd7ad280198ee39849f926b6d32c50d7856da58), [9606a5f](https://github.com/dungnv2602/chatgpt/commit/9606a5f825b57cab8e30e36ebd372429e9e7ada3), [2b878e2](https://github.com/dungnv2602/chatgpt/commit/2b878e201fb39d951049855ec1bae9cb538f00da), [3295bcb](https://github.com/dungnv2602/chatgpt/commit/3295bcbe74b9a0a11b544146e987a6ce3ccff7a2), [8bcfdf16](https://github.com/dungnv2602/chatgpt/commit/8bcfdf16b30ae18bedbec3c412eb54614711f5a0), and [725896a](https://github.com/dungnv2602/chatgpt/commit/725896a79c8a9c3decef0f8d507cc9cacdaed4fc)
-- Related task: `20261123-225745`
+- External source: https://github.com/adr/madr
+- skills/SESSION_START.md
+- skills/the-worker/SKILL.md
+- skills/the-worker/references/conversation-mode.md
+- skills/decision-governance/SKILL.md
+- skills/document-standards/SKILL.md
+- skills/document-standards/references/document-type-catalog.md
+- workspace/README.md
+- workspace/TASK_TEMPLATE.md
+- workspace/ADR_TEMPLATE.md
+- workspace/DRAFT_TEMPLATE.md
+- workspace/ANALYSIS_TEMPLATE.md
+- .github/workflows/validate-document-standards.yml
+- reports/triage/ledger.json and reports/triage/scripts/test_ledger.py
+- [Changed-document lint #636](https://github.com/dungnv2602/chatgpt/actions/runs/45421670881)
+- [Document Standards #320](https://github.com/dungnv2602/chatgpt/actions/runs/45421670850)
+- [Diagnostics #587](https://github.com/dungnv2602/chatgpt/actions/runs/45421671015)
+- Correction commit [4dfbde6](https://github.com/dungnv2602/chatgpt/commit/4dfbde63708f0ab0862d142952710b1b42ef5d7a)
 
 ## 11. Verification
 
-- **Check:** Catalog/template placement and governance owner references.
-- **Method:** Read back all nine paths changed by commit 74005cc. Compare relocated template blob SHAs with their original values. Confirm that former nested paths return 404.
-- **Result:** All nine paths passed read-back. The three relocated templates retained their original blob SHAs. The old paths no longer exist.
-- **Check:** Hosted Document Standards and Ledger validation.
-- **Method:** Inspect the job steps for the completed Document Standards runs, including #319. Inspect the corresponding Diagnostics runs.
-- **Result:** Document Standards runs #302, #304, #305, #307, #308, #309, #310, #311, #313, #314, #315, #316, and #319 passed their relevant Ledger tests, catalog tests, and catalog validator. Run #319 passed all 37 Ledger tests and all 32 catalog tests. Diagnostics #586 passed reporter validation, backfill, Ledger ingestion, and publication.
-- **Check:** Changed-document lint and report publication.
-- **Method:** Inspect Lint #634's immutable report, Lint #635's complete Actions job log, its pre-finalizer diagnostic capture, and the exact catalog source text.
-- **Result:** Lint #634 reported one hard 27-word sentence and 29 advisory findings. Lint #635 set CHANGED_FAILED=1 and its report publisher failed to rebase because Lint #634's report commit had updated the same index and latest-report files after source SHA 725896a. The #635 report did not reach the lint history.
-- **Correction:** Commit 4dfbde6 split the 27-word catalog description into two sentences. Exact read-back confirms the correction. Fresh hosted validation on this commit remains outstanding.
-- **Limitations:** Do not claim that Lint #635 passed or that the post-correction hosted checks succeeded. The #635 pre-finalizer diagnostic capture is Incomplete because it was created while the source run was still in progress. No local repository scripts or tests ran. No CI polling or reruns occurred.
+- **Check:** Final changed-document lint and report publication.
+- **Method:** Inspect Lint #636's complete job steps, report index, and latest report on commit 4dfbde6.
+- **Result:** Passed. One file evaluated; zero hard findings; 29 recurring advisory findings; zero new findings; one resolved finding. Report publication and diagnostics capture succeeded.
+
+- **Check:** Document Standards and Ledger/catalog validation.
+- **Method:** Inspect every job step in Document Standards #320.
+- **Result:** Passed all 37 Ledger regression tests, all 32 catalog regression tests, catalog validation, and diagnostics capture.
+
+- **Check:** Diagnostics publication.
+- **Method:** Inspect every job step in Diagnostics #587.
+- **Result:** Passed reporter compilation/tests, backfill, centralized Ledger ingestion, and publication.
+
+- **Check:** Governance implementation and repository navigation.
+- **Method:** Read back the approved Draft and ADR, decision-governance skill, analysis files, Worker rules, task template, board, archive policies, Ledger renderer/tests, triage guide, Document Type Catalog, workspace README, and discussion register.
+- **Result:** Required governance paths, links, lifecycle rules, catalog coverage, and ADR handoffs exist. The approved scope is implemented. The task has no linked Ledger findings.
+
+- **Limitations:** The 29 lint findings are recurring advisory findings, not hard failures. No local scripts or tests ran. No CI workflows were polled or rerun. DRAFT-0002 remains outside this task.
 
 ## 12. Handoff Instructions
 
-Read `workspace/README.md`, `workspace/task_board.md`, this task record, and `workspace/discussion.md`. Keep the task Blocked until a fresh changed-document lint run and Document Standards run on the corrected catalog commit pass, and the corresponding Diagnostics publication succeeds. Do not poll or rerun Actions. If a run fails, inspect its complete report and job log. Keep the three Ledger-generated lint tasks Proposed until the user approves remediation. DRAFT-0002 remains separate and unmodified. Do not archive ADR-0001 until every linked task is Done and every Confirmation criterion passes.
+Complete the task archive transaction under the lifecycle invariant at the top of this record. Keep this active record In Progress and Archived: No until the immutable Done archive copy is written and read back. Then register the exact archive path and UTC timestamp, delete the active path, and move the board row to Historical with the archive commit. Only after the task is Done and archived may ADR-0001 move to archive/adr. Never add ADRs to the retention index. Leave DRAFT-0002 and unrelated Proposed tasks unchanged.
 
 ## 13. Ledger Findings
 
