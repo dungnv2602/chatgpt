@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 11:10 UTC — Recover CI task state:** Session start was recorded at 11:07 UTC and foundational retrieval passed. Read the workspace index and the active records for CI logging, resolved-report retirement, task-renderer regression, and hosted runner allocation. Identify their dependencies, approval states, and the next authorized action.
+**2026-11-24 11:14 UTC — Inspect task and CI evidence contracts:** Read the canonical task template and its Document Type Catalog entry. Inspect the CI report guides, triage policy, active Ledger, and exact linked task records. Establish which of the three discussions remain unresolved before creating or updating task records.
 ## Open Discussions
 
 - **2026-11-24 10:46 UTC — Review the repository decision-governance proposal:** [DRAFT-0001 — Establish Draft-to-ADR Governance and Repository Analysis](draft/DRAFT-0001-repository-decision-governance-and-analysis.md). Review the proposed use of MADR, Draft and ADR lifecycles, task-to-ADR enforcement, permanent ADR archiving, the `workspace/analysis/` location and cadence, and the proposed `decision-governance` skill. The exact revision 1 is awaiting the user's decision. Do not create ADR-0001 until explicit approval.
