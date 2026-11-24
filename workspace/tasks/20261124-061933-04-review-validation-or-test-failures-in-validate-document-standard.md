@@ -5,11 +5,11 @@
 - **Template version:** 1.2
 - **ID:** 20261124-061933-04
 - **Created:** 2026-11-24 06:19 UTC
-- **Updated:** 2026-11-24 06:19 UTC
+- **Updated:** 2026-11-24 06:25 UTC
 - **Priority:** P2
-- **Status:** Proposed
+- **Status:** In Progress
 - **Origin:** Assistant
-- **Approval:** Pending user approval
+- **Approval:** Approved
 - **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** None
@@ -25,6 +25,10 @@ Automated CI Ledger capture: actionable findings were recorded during event-driv
 ## 2. Subsequent Instructions
 
 - **Standing instruction:** The user authorized Ledger-created task records and prefers event-driven ingestion, not periodic polling.
+
+## 2.1. User approval
+
+- **2026-11-24 06:25 UTC:** User approved all Proposed remediation handoffs and directed completion of the parent diagnostics task.
 
 ## 3. Objective
 
@@ -52,6 +56,15 @@ Review and remediate the related CI findings listed below after approval. Preser
 - **Result:** Grouped 1 distinct finding(s) by remediation key. No remediation was performed or authorized.
 - **References:** reports/triage/ledger.json and the evidence links below.
 - **Next:** Worker review and user approval before implementation.
+
+
+
+### 2026-11-24 06:25 UTC
+
+- **Action:** Reviewed the exact Ledger finding and linked immutable report evidence. Recorded user approval and began the grouped remediation.
+- **Result:** The regression-test failure is fixed by the test-fixture additions in commit 667b1be4; all 32 catalog-validator regression tests passed in Document Standards run #266. The full workflow remains red because the following catalog-validation step rejects the placeholder path, so closeout is deferred until the shared hosted validation passes.
+- **References:** skills/document-standards/references/document-type-catalog.md, reports/triage/ledger.json, and the linked run evidence retained in this task.
+- **Next:** Confirm the full Document Standards workflow passes on GitHub-hosted CI before resolving the finding and archiving this handoff.
 
 ## 7. Current State
 

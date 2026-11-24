@@ -16,6 +16,8 @@ The Historical section retains at most the 7 most recently completed or cancelle
 |---|---|---:|---|---|---|---|
 | 20261123-225745 | Repair CI ledger task generation workflow | P1 | In Progress | User | 2026-11-23 | [Task record](tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md) |
 | 20261123-054904 | Build GitHub Actions diagnostic reports and remove the CI preflight gate | P1 | In Progress | User | 2026-11-24 | [Task record](tasks/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md) |
+| 20261124-061933-03 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Validate the document | P2 | In Progress | Assistant | 2026-11-24 | [Task record](tasks/20261124-061933-03-review-validation-or-test-failures-in-validate-document-standard.md) |
+| 20261124-061933-04 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run catalog validator | P2 | In Progress | Assistant | 2026-11-24 | [Task record](tasks/20261124-061933-04-review-validation-or-test-failures-in-validate-document-standard.md) |
 
 ## Ready
 
@@ -30,8 +32,8 @@ _No blocked tasks._
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-| 20261124-061933-04 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run catalog validator | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-061933-04-review-validation-or-test-failures-in-validate-document-standard.md) |
-| 20261124-061933-03 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Validate the document | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-061933-03-review-validation-or-test-failures-in-validate-document-standard.md) |
+
+
 | 20261124-061933-02 | Review publication\_or\_push failures in Process Image Takeout and Create WebP Derivatives / process-image-takeout / Mark | P1 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-061933-02-review-publication-or-push-failures-in-process-image-takeout-and.md) |
 | 20261124-061933-01 | Review checkout\_or\_action\_download failures in Process Image Takeout and Create WebP Derivatives / process-image-takeout | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-061933-01-review-checkout-or-action-download-failures-in-process-image-tak.md) |
 | 20261124-061933 | Review checkout\_or\_action\_download failures in Validate Document Standards / validate-document-standards / Validate the | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-061933-review-checkout-or-action-download-failures-in-validate-document.md) |

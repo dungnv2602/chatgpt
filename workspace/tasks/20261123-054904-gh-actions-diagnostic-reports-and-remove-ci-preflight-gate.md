@@ -303,6 +303,15 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - **Result:** Superseded the old period and archived 3,954 historical report files plus 23 index/latest-pointer snapshots under `archive/reports/superseded-2026-11-23/`. Preserved 59 evidence-only capture directories for 462 open Ledger findings and six pending capture directories. Reset active indexes to three Actions captures, two changed-lint reports, and one repository-lint report. Carried forward pending run IDs 45207707231, 45204490379, 45202163346, and 45198986957. The Ledger and its evidence paths remain unchanged. No workflow was dispatched, polled, or rerun.
 - **Next:** Let the next natural diagnostics sweep complete the pending captures and validate the new active indexes. Do not poll or dispatch Actions.
 
+
+
+### 2026-11-24 06:25 UTC — Approve remediation handoffs and correct catalog placeholder reference
+
+- **Action:** User approved all Proposed remediation handoffs and instructed completion. Reviewed Document Standards run #266 (https://github.com/dungnv2602/chatgpt/actions/runs/45339067459) and Diagnostics run #510 (https://github.com/dungnv2602/chatgpt/actions/runs/45339067661). Confirmed that all 32 catalog-validator regression tests passed, while the full catalog validator rejected the inline-code placeholder path in the publication verification report row. Updated the catalog to describe the generated per-attempt report without presenting a variable path as an existing file. Promoted handoffs 20261124-061933-03 and 20261124-061933-04 to In Progress with approval recorded.
+- **Result:** The immediate catalog defect is corrected without weakening validation or changing the Takeout generator. Diagnostics #510 passed reporter, Ledger, and archive-retention regression checks; both lint baselines are seeded. Its publication backfilled 36 reports and retained run 45339067459 as pending because the source workflow was still running when that sweep occurred. The next natural diagnostics sweep must reconcile it after the Document Standards rerun.
+- **References:** skills/document-standards/references/document-type-catalog.md; tasks 20261124-061933-03 and 20261124-061933-04; commit 667b1be4; runs #266 and #510.
+- **Next:** Allow push-triggered Document Standards, changed-document lint, and diagnostics workflows to run naturally. Verify the full catalog validator, pending-run final capture, Ledger handoff/idempotency/retirement checks, and the remaining hosted acceptance criteria before archiving this parent task.
+
 ## 7. Current State
 
 The report capture policy remains unchanged: persist actionable failures and operational exceptions, not ordinary successful or cancellation-only runs. Preliminary `pre_finalizer` captures remain immutable. The sweep revisits pending run IDs and creates a separate `post_run` capture when the source run is complete. The latest-pointer logic gives `post_run` precedence over `pre_finalizer`.
