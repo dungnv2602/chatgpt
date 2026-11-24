@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-103354
 - **Created:** 2026-11-24 10:33 UTC
-- **Updated:** 2026-11-24 12:32 UTC
+- **Updated:** 2026-11-24 12:42 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -124,11 +124,17 @@ Study MADR and design a comprehensive, low-ambiguity decision-management workflo
 - **References:** `workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md`; user instruction in this conversation.
 - **Next:** Create ADR-0001 and implement its approved governance scope.
 
+### 2026-11-24 12:42 UTC — Implement the core governance contracts
+
+- **Action:** Added the decision-governance skill, analysis templates, task ADR field, aligned task board, Worker integration, permanent ADR archive rules, and catalog coverage.
+- **Result:** The core governance contracts now exist. The Ledger renderer and its tests still require coordinated updates. Final read-back and hosted validation remain outstanding.
+- **Next:** Update the Ledger handoff and generated board row, then read back all changed paths.
+
 ## 7. Current State
 
 The user approved DRAFT-0001 revision 1. ADR-0001 records the accepted decision and governs this bootstrap implementation task.
 
-The task is In Progress. The approved scope includes Draft and ADR lifecycle governance, task-to-ADR linkage, permanent ADR archival, repository analysis under `workspace/analysis/`, and the task-specific `decision-governance` skill.
+The task is In Progress. ADR-0001 governs this bootstrap implementation. The core skill, analysis template, Worker rules, task template, board, catalog, and archive contracts now exist. The Ledger renderer, regression tests, final read-back, and hosted validation remain outstanding.
 
 DRAFT-0002 remains a separate proposal and is not part of this implementation. No task records are being mass-migrated. Final confirmation and hosted validation remain outstanding.
 
