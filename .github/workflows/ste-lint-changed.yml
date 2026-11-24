@@ -28,49 +28,20 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     permissions:
-      actions: write
       contents: read
     outputs:
       proceed: ${{ steps.guard.outputs.proceed }}
       base_sha: ${{ steps.baseline.outputs.base_sha }}
       full_audit: ${{ steps.baseline.outputs.full_audit }}
     steps:
-      - name: Cancel superseded run before checkout
-        id: guard
-        shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          if ! latest_run=$(gh run list \
-            --repo "$GITHUB_REPOSITORY" \
-            --workflow ".github/workflows/ste-lint-changed.yml" \
-            --branch "$GITHUB_REF_NAME" \
-            --event push \
-            --limit 100 \
-            --json databaseId,number \
-            --jq 'max_by(.number).databaseId // empty' 2>/dev/null); then
-            latest_run=""
-          fi
-          if [[ -n "$latest_run" && "$latest_run" != "$GITHUB_RUN_ID" ]]; then
-            echo "A newer run ($latest_run) supersedes this run ($GITHUB_RUN_ID)."
-            gh api --method POST \
-              "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/cancel" >/dev/null
-            exit 0
-          fi
-          if [[ -z "$latest_run" ]]; then
-            echo "::warning::Could not identify the latest run. Continue with validation."
-          fi
-          echo "proceed=true" >> "$GITHUB_OUTPUT"
-
       - name: Find the latest complete lint baseline
         id: baseline
-        if: steps.guard.outputs.proceed == 'true'
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
+          echo "proceed=true" >> "$GITHUB_OUTPUT"
           encoded=$(gh api \
             "repos/$GITHUB_REPOSITORY/contents/reports/lint_reports/on_changed/latest-lint-report.json?ref=$GITHUB_REF_NAME" \
             --jq '.content' 2>/dev/null || true)

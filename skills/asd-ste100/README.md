@@ -62,6 +62,8 @@ The skill includes `scripts/ste-lint.py`. It performs deterministic checks for s
 
 Do not run the linter locally. Push technical-document changes to branch `gpt` and let the existing GitHub Actions workflows run the linter and its self-test. The workflows apply the repository wrapper and configured per-file baselines.
 
+The changed-document workflow uses GitHub Actions concurrency to cancel superseded runs. Do not add a separate run-list preflight that cancels the current run. GitHub may not list a newly started run before its first job checks the run list.
+
 Use `--json` to interpret structured output when reviewing a workflow result. Use `--baseline N` only when you adopt an existing document with known findings. Use `--disable rule1,rule2` only when the repository wrapper or an authorized workflow requires it.
 
 The linter does not prove that a rewrite preserves meaning. It does not verify modality or approved dictionary terms. It does not check every rule.
