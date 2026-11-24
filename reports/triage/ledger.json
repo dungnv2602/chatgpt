@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-24T18:10:56Z",
+  "updated_at_utc": "2026-11-24T18:13:35Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
@@ -11247,7 +11247,7 @@
       "source_family": "lint",
       "category": "present-perfect",
       "title": "present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -11283,7 +11283,16 @@
           "observation_id": "lint:45447915270:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -11297,7 +11306,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -11333,7 +11342,16 @@
           "observation_id": "lint:45447915270:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -11347,7 +11365,7 @@
       "source_family": "lint",
       "category": "semicolon",
       "title": "semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -11383,7 +11401,16 @@
           "observation_id": "lint:45447915270:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -11397,7 +11424,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 26 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -11440,7 +11467,16 @@
           "observation_id": "lint:45455166016:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -11454,7 +11490,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 39 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -11490,7 +11526,16 @@
           "observation_id": "lint:45447915270:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -11504,7 +11549,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -11540,7 +11585,16 @@
           "observation_id": "lint:45447915270:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -11554,7 +11608,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -11597,7 +11651,16 @@
           "observation_id": "lint:45455166016:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -11611,7 +11674,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'remove' and 'delete' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -11647,7 +11710,16 @@
           "observation_id": "lint:45447915270:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -11661,7 +11733,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'confirm' and 'check' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -11697,7 +11769,16 @@
           "observation_id": "lint:45447915270:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -11711,7 +11792,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'correct' and 'fix' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -11754,7 +11835,16 @@
           "observation_id": "lint:45455166016:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -11768,7 +11858,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'validate' and 'check' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -11804,7 +11894,16 @@
           "observation_id": "lint:45447915270:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -11818,7 +11917,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -11861,7 +11960,16 @@
           "observation_id": "lint:45455166016:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -11875,7 +11983,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -11918,7 +12026,16 @@
           "observation_id": "lint:45455166016:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -11932,7 +12049,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -11968,7 +12085,16 @@
           "observation_id": "lint:45447915270:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -11982,7 +12108,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -12018,7 +12144,16 @@
           "observation_id": "lint:45447915270:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -12032,7 +12167,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -12068,7 +12203,16 @@
           "observation_id": "lint:45447915270:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -12082,7 +12226,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -12118,7 +12262,16 @@
           "observation_id": "lint:45447915270:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -12132,7 +12285,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -12168,7 +12321,16 @@
           "observation_id": "lint:45447915270:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -12182,7 +12344,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -12218,7 +12380,16 @@
           "observation_id": "lint:45447915270:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -12232,7 +12403,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -12254,7 +12425,16 @@
           "observation_id": "lint:45436626400:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -12268,7 +12448,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:13:13.144253+00:00",
@@ -12290,7 +12470,16 @@
           "observation_id": "lint:45436626400:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -12623,7 +12812,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:27:49.640750+00:00",
@@ -12638,7 +12827,16 @@
           "observation_id": "lint:45436626400:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -12652,7 +12850,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:27:49.640750+00:00",
@@ -12667,7 +12865,16 @@
           "observation_id": "lint:45436626400:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -12681,7 +12888,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:27:49.640750+00:00",
@@ -12696,7 +12903,16 @@
           "observation_id": "lint:45436626400:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -12898,7 +13114,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'confirm' and 'check' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T18:03:08.482272+00:00",
@@ -12913,7 +13129,16 @@
           "observation_id": "lint:45455166016:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+        "resolved_at_utc": "2026-11-24T18:13:35Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T18:10:35.347093Z"
+        },
+        "note": "The hosted STE lint report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md directly and recorded zero findings. The report recorded zero hard findings, zero advisory findings, and zero failed checks."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
