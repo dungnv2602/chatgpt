@@ -213,6 +213,10 @@
     {
       "path": "archive/tasks/20261124-181746-reconcile-final-adr-0002-ledger-finding.md",
       "archived_at_utc": "2026-11-24T18:18:43Z"
+    },
+    {
+      "path": "archive/tasks/20261124-183017-repair-adr-catalog-rule-and-ci-follow-through.md",
+      "archived_at_utc": "2026-11-24T18:56:28Z"
     }
   ]
 }
