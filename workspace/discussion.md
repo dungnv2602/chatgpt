@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 18:34 UTC — Follow up on STE Lint #679:** The natural report for commit `fa59f9861823ce4d3ab11a69a8d4461339e9e47c` is available. [STE Lint #679](https://github.com/actions/runs/45460721790) evaluated the catalog, task board, and Worker skill. The catalog and task board passed with zero findings. The Worker skill had 34 findings (19 hard and 15 advisory). All report tooling checks passed. The task now includes rewriting the affected Worker skill text without weakening rules. Do not poll CI. DRAFT-0002 remains unchanged.
+**2026-11-24 18:38 UTC — Final Worker lint corrections:** STE Lint #680 naturally reported four remaining findings in The Worker (three new and one recurring). The report resolved 33 findings from #679. All report-tooling checks passed. The current task addresses the four remaining wording issues without changing lint rules. Do not poll. DRAFT-0002 remains unchanged.
 
 
 ## Open Discussions
