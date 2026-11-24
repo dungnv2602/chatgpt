@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 17:52 UTC — Recover ADR-0002 work:** Read workspace navigation, the task board, and the active task record. Load decision-governance procedures and inspect the lint-report index for ADR-0002 findings. Identify the approved remediation scope and retirement criteria before editing.
+**2026-11-24 17:53 UTC — Inspect ADR governance and lint evidence:** Read the decision-governance skill, ADR-0002, its owner index and template, the document catalog, and the lint report index. Review the five Proposed findings already linked to ADR-0002. Determine the exact edits and the evidence required before retirement.
 
 ## Open Discussions
 
