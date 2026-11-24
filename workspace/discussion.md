@@ -1,6 +1,7 @@
 ## Current Step
 
-**2026-11-24 10:33 UTC — Inspect workspace task governance and create a tracked task for the ADR framework. Then study MADR and design the complete draft, decision, implementation, analysis, and archive lifecycle.**
+**10:33 UTC — Study MADR and inspect the repository's decision, task, document, and archive contracts.** [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+
 ## Open Discussions
 
 - **2026-11-24 08:12 UTC — Hosted runner allocation:** Older runnerless jobs included a GitHub annotation stating that the job was not started because recent account payments had failed or the spending limit needed to be increased. The annotation does not identify which account condition applied. Later jobs received runners and executed; do not alter runner labels.

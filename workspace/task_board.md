@@ -8,13 +8,14 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## Current Execution
 
-**20261123-225745** — [Repair CI ledger task generation workflow](tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md)
+**20261124-103354** — [Establish draft-to-ADR governance and repository analysis workflow](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 
 ## In Progress
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
 | 20261123-225745 | Repair CI ledger task generation workflow | P1 | In Progress | User | 2026-11-24 | [Task record](tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md) |
+| 20261124-103354 | Establish draft-to-ADR governance and repository analysis workflow | P1 | In Progress | User | 2026-11-24 | [Task record](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md) |
 
 
 ## Ready
