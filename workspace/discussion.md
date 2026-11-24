@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-24 04:48 UTC — Inspect current diagnostics implementation and task state:** Read the active task record, current report index, reporter/Ledger source and tests, and diagnostics workflow on `gpt`. Compare the current code with the previously reported fixes. Do not query Actions runs, dispatch workflows, execute repository code, or change unrelated files.
+- **2026-11-24 04:50 UTC — Checkpoint implementation and hosted-validation boundary:** Record the verified repository state in the approved task and discussion register. Confirm that the two regression fixes are committed and read back, while hosted validation and pending captures remain unverified. Make no code changes and do not query, dispatch, or poll Actions runs.
 
 ## Open Discussions
 
