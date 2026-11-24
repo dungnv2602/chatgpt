@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_repo",
-  "run_id": "45330655561",
-  "run_number": 181,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330655561",
+  "run_id": "45331418857",
+  "run_number": 182,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45331418857",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "5fa4f4159d0df5972e2dd6fe130c7073ce8981e2",
-  "event": "push",
+  "commit_sha": "207d5044791051a4ce14ac07ba900036419bd648",
+  "event": "workflow_dispatch",
   "workflow": "STE Lint Full Technical Documentation",
   "runner_os": "Linux",
   "execution_mode": "repository-wide",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-24T05:06:05.512327+00:00",
+  "generated_at_utc": "2026-11-24T05:11:00.332903+00:00",
   "status": "Failed",
-  "linter_source_sha": "4b417e07453be485467b04273938babdb9669fc9",
+  "linter_source_sha": "207d5044791051a4ce14ac07ba900036419bd648",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -3002,15 +3002,15 @@
           "col": 1,
           "rule": "long-sentence",
           "level": "advisory-free",
-          "match": "190 words",
-          "message": "Sentence has 190 words (cap 25). Split it."
+          "match": "226 words",
+          "message": "Sentence has 226 words (cap 25). Split it."
         }
       ],
       "count": 4,
       "hard_count": 1,
       "baseline": 0,
-      "words": 452,
-      "per_100_words": 0.9,
+      "words": 506,
+      "per_100_words": 0.8,
       "path": "workspace/task_board.md",
       "exit_code": 1
     },
@@ -6278,7 +6278,7 @@
       "match": "delete",
       "message": "'delete' and 'remove' name the same action. Pick one and use it every time.",
       "fingerprint": "ce5400ef29dc517a20f612fc",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/asd-ste100/SKILL.md",
@@ -7081,7 +7081,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7125,7 +7125,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7136,7 +7136,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7246,7 +7246,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7257,7 +7257,7 @@
       "match": "27 words",
       "message": "Sentence has 27 words (cap 25). Split it.",
       "fingerprint": "33b66dbc6dc280ae7c9be6c8",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7279,7 +7279,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7312,7 +7312,7 @@
       "match": "30 words",
       "message": "Sentence has 30 words (cap 25). Split it.",
       "fingerprint": "6192a6cd4c83102388153572",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7323,7 +7323,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7334,7 +7334,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7345,7 +7345,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7356,7 +7356,7 @@
       "match": "30 words",
       "message": "Sentence has 30 words (cap 25). Split it.",
       "fingerprint": "6192a6cd4c83102388153572",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7367,7 +7367,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7389,7 +7389,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7400,7 +7400,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7411,7 +7411,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7422,7 +7422,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7433,7 +7433,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7444,7 +7444,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7455,7 +7455,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7466,7 +7466,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7477,7 +7477,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7488,7 +7488,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7510,7 +7510,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7521,7 +7521,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7532,7 +7532,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7554,7 +7554,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7565,7 +7565,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7576,7 +7576,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7587,7 +7587,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7598,7 +7598,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7609,7 +7609,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7620,7 +7620,7 @@
       "match": "are covered",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "195a2fd68103c17c8542eb26",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7631,7 +7631,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7642,7 +7642,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7774,7 +7774,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7796,7 +7796,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7851,7 +7851,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "34b3ecad2f55b58c81da2ca0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "images/takeout/history/2026-11-20-001/attempt-001/verification-report.md",
@@ -7925,10 +7925,10 @@
       "col": 1,
       "rule": "long-sentence",
       "level": "advisory-free",
-      "match": "190 words",
-      "message": "Sentence has 190 words (cap 25). Split it.",
-      "fingerprint": "a4e2802c208fff0be2a1abfe",
-      "comparison": "recurring"
+      "match": "226 words",
+      "message": "Sentence has 226 words (cap 25). Split it.",
+      "fingerprint": "e0b74e89eb1797d73e80da52",
+      "comparison": "new"
     },
     {
       "file": "skills/drawing/references/style-guide.md",
@@ -9801,9 +9801,21 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 38,
-  "recurring_findings": 419,
-  "resolved_findings": [],
+  "new_findings": 1,
+  "recurring_findings": 456,
+  "resolved_findings": [
+    {
+      "file": "workspace/task_board.md",
+      "line": 40,
+      "col": 1,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "190 words",
+      "message": "Sentence has 190 words (cap 25). Split it.",
+      "fingerprint": "a4e2802c208fff0be2a1abfe",
+      "comparison": "resolved"
+    }
+  ],
   "checks": [
     {
       "name": "Wrapper shell syntax",
@@ -9821,7 +9833,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.461s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.276s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -9839,7 +9851,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 195 active Markdown files (287 available as link targets) and 319 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 200 active Markdown files (295 available as link targets) and 322 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
