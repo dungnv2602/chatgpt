@@ -1,6 +1,6 @@
 # Task Board
 
-Last updated: 2026-11-25
+Last updated: 2026-11-24
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
@@ -18,10 +18,10 @@ The Historical section retains at most the 7 most recently completed or cancelle
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
 | 20261124-161334-03 | Remediate semicolon findings in ADR-0002 | P2 | In Progress | Assistant | 2026-11-25 | ADR-0002 | [Task record](tasks/20261124-161334-03-review-semicolon-findings-in-workspace-adr-0002-retire-source-dr.md) |
-| 20261124-161334-04 | Remediate long-sentence findings in ADR-0002 | P2 | In Progress | Assistant | 2026-11-25 | ADR-0002 | [Task record](tasks/20261124-161334-04-review-long-sentence-findings-in-workspace-adr-0002-retire-sourc.md) |
-| 20261124-161334-05 | Remediate synonym-rotation findings in ADR-0002 | P2 | In Progress | Assistant | 2026-11-25 | ADR-0002 | [Task record](tasks/20261124-161334-05-review-synonym-rotation-findings-in-workspace-adr-0002-retire-so.md) |
+| 20261124-161334-04 | Remediate long-sentence findings in ADR-0002 | P2 | In Progress | Assistant | 2026-11-24 | ADR-0002 | [Task record](tasks/20261124-161334-04-review-long-sentence-findings-in-workspace-adr-0002-retire-sourc.md) |
+| 20261124-161334-05 | Remediate synonym-rotation findings in ADR-0002 | P2 | In Progress | Assistant | 2026-11-24 | ADR-0002 | [Task record](tasks/20261124-161334-05-review-synonym-rotation-findings-in-workspace-adr-0002-retire-so.md) |
 | 20261124-161334-01 | Remediate present-perfect findings in ADR-0002 | P3 | In Progress | Assistant | 2026-11-25 | ADR-0002 | [Task record](tasks/20261124-161334-01-review-present-perfect-findings-in-workspace-adr-0002-retire-sou.md) |
-| 20261124-161334-02 | Remediate passive-voice findings in ADR-0002 | P3 | In Progress | Assistant | 2026-11-25 | ADR-0002 | [Task record](tasks/20261124-161334-02-review-passive-voice-findings-in-workspace-adr-0002-retire-sourc.md) |
+| 20261124-161334-02 | Remediate passive-voice findings in ADR-0002 | P3 | In Progress | Assistant | 2026-11-24 | ADR-0002 | [Task record](tasks/20261124-161334-02-review-passive-voice-findings-in-workspace-adr-0002-retire-sourc.md) |
 
 ## Ready
 

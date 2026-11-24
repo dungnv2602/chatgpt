@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-161334-04
 - **Created:** 2026-11-24 16:13 UTC
-- **Updated:** 2026-11-24 17:55 UTC
+- **Updated:** 2026-11-24 18:03 UTC
 - **Priority:** P2
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -98,7 +98,7 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-c7a688d7f3b5d323000e2504` | medium | long-sentence: Sentence has 26 words \(cap 25\). Split it. | [report](../../reports/lint_reports/on_changed/history/45433851979-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45433851979) · [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) · [report](../../reports/lint_reports/on_changed/history/45440436265-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45440436265) · [report](../../reports/lint_reports/on_changed/history/45447915270-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45447915270) |
+| `lint-c7a688d7f3b5d323000e2504` | medium | long-sentence: Sentence has 26 words \(cap 25\). Split it. | [report](../../reports/lint_reports/on_changed/history/45433851979-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45433851979) · [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) · [report](../../reports/lint_reports/on_changed/history/45440436265-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45440436265) · [report](../../reports/lint_reports/on_changed/history/45447915270-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45447915270) · [report](../../reports/lint_reports/on_changed/history/45455166016-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45455166016) |
 | `lint-5234929a399cf01e0d7f595c` | medium | long-sentence: Sentence has 39 words \(cap 25\). Split it. | [report](../../reports/lint_reports/on_changed/history/45433851979-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45433851979) · [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) · [report](../../reports/lint_reports/on_changed/history/45440436265-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45440436265) · [report](../../reports/lint_reports/on_changed/history/45447915270-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45447915270) |
 
 ### 2026-11-24 17:55 UTC
