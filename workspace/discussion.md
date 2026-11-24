@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 18:04 UTC — Await event-driven hosted lint:** ADR-0002 and all five task records now reference the final editorial commit and read-back. Keep the tasks In Progress and the ADR active until the event-driven STE Lint report evaluates the final ADR-0002 commit. Do not poll CI. If the report passes, record the result, retire the five Ledger findings through the approved task workflow, then complete ADR Confirmation and archive ADR-0002 only after every archive gate passes.
+**2026-11-25 18:13 UTC — Close out ADR-0002 lint remediation:** Hosted STE Lint run 45456236271 passed on commit 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc. The report evaluated ADR-0002 directly and recorded zero findings. Document Standards run 45456236127 and diagnostics run 45456236357 passed. Resolve the linked Ledger findings with the report evidence, archive the five remediation tasks through the Worker lifecycle, then complete ADR-0002 Confirmation and permanent archive gates.
 
 ## Open Discussions
 
