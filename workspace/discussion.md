@@ -1,6 +1,6 @@
 ## Current Step
 
-_No active step._
+- **2026-11-24 04:48 UTC — Inspect current diagnostics implementation and task state:** Read the active task record, current report index, reporter/Ledger source and tests, and diagnostics workflow on `gpt`. Compare the current code with the previously reported fixes. Do not query Actions runs, dispatch workflows, execute repository code, or change unrelated files.
 
 ## Open Discussions
 
