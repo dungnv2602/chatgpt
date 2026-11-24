@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-111700
 - **Created:** 2026-11-24 11:24 UTC
-- **Updated:** 2026-11-24 11:24 UTC
+- **Updated:** 2026-11-24 11:26 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -66,6 +66,13 @@ Resolve the three CI discussions with current repository and hosted-run evidence
 - **Result:** Tasks `20261124-061933-03` and `20261124-061933-04` are Done and archived, contrary to the older discussion text. The three linked Actions finding IDs are absent from the active Ledger. All four archived post-run report JSON files have exact retention-index entries dated `2026-11-24T07:16:36Z`. Both task archives have retention-index entries dated `2026-11-24T07:19:17Z`. Diagnostics runs #538 and #539 completed successfully. The triage guide records the corrected all-severity lint policy, but `skills/the-worker/SKILL.md` still contains the superseded medium-or-higher lint task filter.
 - **References:** `workspace/task_board.md`, `workspace/TASK_TEMPLATE.md`, `skills/document-standards/references/document-type-catalog.md`, `reports/triage/README.md`, `reports/triage/ledger.json`, `.github/archive-retention-index.json`, `archive/tasks/20261124-061933-03-review-validation-or-test-failures-in-validate-document-standard.md`, `archive/tasks/20261124-061933-04-review-validation-or-test-failures-in-validate-document-standard.md`, [Diagnostics #538](https://github.com/dungnv2602/chatgpt/actions/runs/45378959212), [Diagnostics #539](https://github.com/dungnv2602/chatgpt/actions/runs/45378992539).
 - **Next:** Verify the renderer implementation and its hosted regression evidence. Inspect the runner-allocation evidence. Then update the stale Worker policy and reconcile the discussion register.
+
+### 2026-11-24 11:26 UTC
+
+- **Action:** Created the task record from `workspace/TASK_TEMPLATE.md` and selected it as current execution in the task board. Read back both committed paths.
+- **Result:** Task `20261124-111700` is In Progress, User-originated, Approved, and current execution. The prior Draft task remains Blocked and stays in the Blocked section. The board now links to this task.
+- **References:** `workspace/tasks/20261124-111700-resolve-ci-discussion-items.md`, `workspace/task_board.md`, task commit `aa74be3`, board commit `ac2b350`.
+- **Next:** Verify renderer source/tests and hosted runner evidence.
 
 ## 7. Current State
 
