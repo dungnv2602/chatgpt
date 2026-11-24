@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-25 18:13 UTC — Close out ADR-0002 lint remediation:** Hosted STE Lint run 45456236271 passed on commit 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc. The report evaluated ADR-0002 directly and recorded zero findings. Document Standards run 45456236127 and diagnostics run 45456236357 passed. Resolve the linked Ledger findings with the report evidence, archive the five remediation tasks through the Worker lifecycle, then complete ADR-0002 Confirmation and permanent archive gates.
+**2026-11-25 01:18 UTC — ADR-0002 archived:** ADR-0002 now resides in `archive/adr/` with implementation status complete and all ten Confirmation items checked. Its active copy is absent. The five lint tasks and the necessary Ledger handoff task are archived Done. All 25 linked findings have resolved status. The event-driven sweep retired 24 findings. One terminal finding awaits the diagnostics sweep triggered by the final task archive and retention-index commits. STE Lint #678 and Document Standards #362 remain pending after archival changes. Do not poll CI. Review their event-driven results when naturally available.
 
 ## Open Discussions
 
