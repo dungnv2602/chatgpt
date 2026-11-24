@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 — Audit CI logging scope and resolved-report retirement:** Reviewed the Diagnostics workflow, Actions classifier, Ledger ingestion/task eligibility, task-retirement gate, archive guidance, live Ledger, task board, report indexes, and archive-retention index. No implementation changes made pending the user's policy decision.
+**2026-11-24 07:52 UTC — Inspect the active CI Ledger repair task and its latest relevant GitHub Actions runs. Compare the live repository state and run evidence with the task's acceptance criteria; then implement only the approved in-scope fixes and verify repository read-back.**
 
 ## Open Discussions
 
@@ -22,11 +22,3 @@
 - **2026-11-24 07:05 UTC — GitHub Actions diagnostics and CI preflight task completed:** Task `20261123-054904` is archived as Done. Diagnostics #515 passed 26 reporter, 33 Ledger, and 7 archive-retention tests. Document Standards #271 passed. Both lint baselines are seeded, and all medium/high Ledger findings have task references. The task archive and retention index are committed in [22b1927](https://github.com/dungnv2602/chatgpt/commit/22b1927163ce96e56150a4a8ae2bb3010763fb0b). The active task was removed and the board now selects task `20261123-225745`. Pending-run reconciliation and live finding retirement remain with that follow-on task.
 
 - **2026-11-24 — Image Takeout run #69 verified:** Manual run [45313390427](https://github.com/dungnv2602/chatgpt/actions/runs/45313390427) on branch `gpt` completed with workflow conclusion `success`. All 48 processor tests passed. The processor relocated 11 mapped original PNGs and published 11 mapped WebP derivatives. The post-publication verifier passed all 11 manifest rows. It converted 7 unclassified PNGs to WebP without relocation, preserved their originals in intake, and left a residual Draft hand-off with exactly seven entries. Repository read-back confirmed all 18 original PNG blob identities match the initial inventory. Processing commit [d4f0611](https://github.com/dungnv2602/chatgpt/commit/d4f06112d21ccbb8f5e1ad2d493eb03d7956d756) and verification commit [0c21bd7](https://github.com/dungnv2602/chatgpt/commit/0c21bd7a50c9d395edbb754776937c68a49b5b8b) are present on `gpt`. The separate diagnostics job failed on existing Ledger syntax and NameError defects; it did not affect the Image Takeout source workflow conclusion. The user retains later relocation authority for the seven unclassified derivatives. No index edits were made.
-
-
-## Current Approved Implementation
-
-- **2026-11-24 — Lint task eligibility correction (approved and executing):** The user clarified that all lint findings, including low/advisory and informational findings, must generate tasks. Severity controls priority only (`critical` P0, `high` P1, `medium` P2, `low`/`informational` P3). This does not alter GitHub Actions task eligibility: Actions findings still require the existing medium/high/critical severity threshold derived from confidence and blocking status. Baseline reports still seed without findings/tasks, and untracked recurring-baseline findings remain suppressed. Operational capture state is not converted into a finding or task. The current Ledger read-back contained 40 lint findings; 28 open low-severity findings had no task references. The generator now includes these already-ingested active findings on the next natural ingestion sweep without rescanning historical reports.
-
-
-- **2026-11-24 — Session startup (Condensed Mode):** Initialized from `skills/SESSION_START.md` on branch `gpt`. Foundational skill retrieval and the requested CI Ledger task review are in progress.
