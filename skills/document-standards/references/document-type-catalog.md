@@ -56,6 +56,7 @@ Do not create a second template when an owning workflow already defines the requ
 | Image takeout hand-off | Schema required | `skills/the-worker/scripts/process_takeout.py` and `images/takeout/README.md` | The processor validates the YAML contract. `images/takeout/HANDOFF.yml` is the current draft example. `skills/the-worker/scripts/test_process_takeout_unittest.py` covers readiness, exact intake coverage, missing attempt metadata, malformed top-level data, duplicate output IDs, rollback, and hashes. |
 | Drawing-session manifest | Generator-owned | `skills/the-worker/scripts/process_takeout.py` (`MANIFEST_FIELDS`) and `skills/the-worker/scripts/verify_published_manifest.py` | The processor defines columns, preserves existing columns, and adds missing fields. The publisher validates verification columns and published values. `skills/the-worker/scripts/test_process_takeout_unittest.py` covers legacy rows, missing columns, duplicate IDs, hashes, and publication links. |
 | Conversion report | Generator-owned | `skills/the-worker/scripts/process_takeout.py` | Defines conversion CSV fields. |
+
 | Document type | Class | Current canonical format | Inventory finding / next action |
 |---|---|---|---|
 | Publication verification | Generator-owned | `skills/the-worker/scripts/process_takeout.py` | Writes immutable reports. |
@@ -65,6 +66,7 @@ Do not create a second template when an owning workflow already defines the requ
 | Prompt framework templates | Template required when needed | `skills/prompt-master/assets/prompt-templates.md` | Copy-ready prompt architectures for specific AI tools. Load only the relevant template. |
 | Skill index and activation files | Embedded contract | `skills/README.md`, `skills/SESSION_START.md`, `skills/INITIALIZATION_POLICY.md` | Each has a distinct ownership role. Do not force one generic index template. |
 | GitHub Actions workflows | Exempt | `.github/workflows/validate-document-standards.yml` | Follow GitHub's workflow schema. |
+
 | Document type | Class | Current canonical format | Inventory finding / next action |
 |---|---|---|---|
 | Master catalogues | Lightweight pattern | `master/Images.md` | Keep their project forms. |
