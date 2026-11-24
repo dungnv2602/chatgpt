@@ -8,14 +8,13 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## Current Execution
 
-**20261123-162826** — [Enforce conversation integrity before image relocation](tasks/20261123-162826-enforce-conversation-integrity-before-image-relocation.md)
+**20261123-054904** — [Build GitHub Actions diagnostic reports and remove the CI preflight gate](tasks/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md)
 
 ## In Progress
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
 | 20261123-225745 | Repair CI ledger task generation workflow | P1 | In Progress | User | 2026-11-23 | [Task record](tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md) |
-| 20261123-162826 | Enforce conversation integrity before image relocation | P1 | In Progress | User | 2026-11-24 | [Task record](tasks/20261123-162826-enforce-conversation-integrity-before-image-relocation.md) |
 | 20261123-100738 | Remediate hard STE lint findings | P1 | In Progress | Assistant | 2026-11-23 | [Task record](tasks/20261123-100738-remediate-hard-ste-lint-findings.md) |
 | 20261123-054904 | Build GitHub Actions diagnostic reports and remove the CI preflight gate | P1 | In Progress | User | 2026-11-23 | [Task record](tasks/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md) |
 
@@ -45,4 +44,3 @@ _No paused tasks._
 | 20261123-230158-09 | Review semicolon findings in skills/the-worker/references/image-provenance-and-webp.md | P2 | Cancelled | Assistant | 2026-11-23 | [Archived record](../archive/tasks/20261123-230158-09-review-semicolon-findings-in-skills-the-worker-references-image.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/d9ee1e465913b72d296748414b4cf338794b9eab) |
 | 20261123-230158-08 | Review semicolon findings in images/README.md | P2 | Cancelled | Assistant | 2026-11-23 | [Archived record](../archive/tasks/20261123-230158-08-review-semicolon-findings-in-images-readme-md.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/d9ee1e465913b72d296748414b4cf338794b9eab) |
 | 20261123-230158-07 | Review semicolon findings in skills/the-worker/assets/conversation-integrity-template.md | P2 | Cancelled | Assistant | 2026-11-23 | [Archived record](../archive/tasks/20261123-230158-07-review-semicolon-findings-in-skills-the-worker-assets-conversati.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/d9ee1e465913b72d296748414b4cf338794b9eab) |
-| 20261123-230158-06 | Review synonym-rotation findings in skills/the-worker/references/archive-records-and-image-prompts.md | P2 | Cancelled | Assistant | 2026-11-23 | [Archived record](../archive/tasks/20261123-230158-06-review-synonym-rotation-findings-in-skills-the-worker-references.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/d9ee1e465913b72d296748414b4cf338794b9eab) |
