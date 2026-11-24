@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-24 — Record verified run #69 and close the completed Image Takeout task.** Update the authoritative task record with the hosted test, processing, publication, and source-preservation evidence. Then follow the required archive, retention-index, and task-board closeout transaction.
+- **2026-11-24 — Finalize the discussion register.** Close resolved Image Takeout failure discussions, retain unrelated matters that still need attention, and add the verified run #69 success report.
 
 ## Open Discussions
 
