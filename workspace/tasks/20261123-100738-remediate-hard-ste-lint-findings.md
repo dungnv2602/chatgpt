@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-100738
 - **Created:** 2026-11-23 10:07 UTC
-- **Updated:** 2026-11-24 05:05 UTC
+- **Updated:** 2026-11-24 05:32 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -56,6 +56,17 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 - **Validation:** Use natural GitHub Actions runs. Do not manually dispatch or poll workflows.
 
 ## 6. Progress Log
+
+### 2026-11-24 05:32 UTC
+
+- **Action:** Reviewed the latest hosted repository-wide report after the approved terminology correction. Reconciled it with the latest changed-scope report.
+- **Repository-wide evidence:** Run [45333711914](https://github.com/dungnv2602/chatgpt/actions/runs/45333711914) (#183) completed on push commit `aafb02d8e6361ca4c0bd938b6a40f647a96d3906`. It evaluated 51 files and reported 119 hard findings, 337 advisory findings, zero new findings, and one resolved finding. All report-tooling and validation checks passed. The workflow conclusion is Failed because lint findings remain.
+- **Target-file result:** The report marks `skills/asd-ste100/SKILL.md` PASS with 12 hard findings and baseline 31. All 12 findings are the approved deliberate examples. The ordinary `delete`/ `remove` synonym finding is gone. This validates the correction and preservation of the examples.
+- **Changed-scope evidence:** Latest run [45330721385](https://github.com/dungnv2602/chatgpt/actions/runs/45330721385) (#587) completed before the correction, on commit `25dbb4cb21a331be115644ee1c65407c710b7e83`. It is a full-audit fallback with 51 files, 120 hard findings, 337 advisory findings, and zero failed report-tooling checks. It still shows the old terminology finding. The changed-document workflow excludes `skills/asd-ste100/`, so this edit does not trigger a new changed-scope run. Do not dispatch one.
+- **Commit and readback:** Commit [aafb02d](https://github.com/dungnv2602/chatgpt/commit/aafb02d8e6361ca4c0bd938b6a40f647a96d3906) changes only `skills/asd-ste100/SKILL.md`. Readback and branch-head checks passed.
+- **Scope note:** The current raw hard-finding total is not the original 155-fingerprint baseline. The latest report has no new findings against its own comparison state. Do not reopen later-scope findings through fingerprint overlap alone.
+- **Next:** Recover the original baseline reports from workflow artifacts for runs `45128445227` and `45152181405`, if available. Use them to check only the original 155 fingerprints against the completed source remediation. Do not poll or dispatch workflows.
+
 
 ### 2026-11-24 05:05 UTC
 
@@ -229,20 +240,25 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 7. Current State
 
-The approved task is In Progress and is the current execution. Source-level edits address 143 of the 155 baseline hard findings across all 21 affected files. These include all 75 findings in the Document Type Catalog. In `skills/asd-ste100/SKILL.md`, all three non-example hard findings have source-level edits. Twelve hard findings remain in deliberate examples that the repository writing policy says to preserve. No other non-example hard findings remain in the baseline set. Hosted validation remains pending. The 319 advisory findings remain out of scope. The 12 deliberate-example findings are approved policy-preserved exceptions. The acceptance condition no longer requires a zero-hard-finding total; only ordinary findings must be resolved, with the examples and lint policy unchanged. The latest report file available during the 2026-11-24 resume was generated from commit `4afaa2c2211858b0455eaf29c523b32eb16e012c`. It is not the canonical baseline and includes findings in newer text. Do not use fingerprint overlap alone to reopen baseline findings. No net source changes were retained during the resumed inspection. Hosted validation of the committed remediation remains pending.
+The approved task remains In Progress. The source-level remediation addresses 143 of the 155 original baseline hard findings. The 12 remaining original findings are deliberate examples in `skills/asd-ste100/SKILL.md` that the writing policy protects. The ordinary terminology inconsistency is corrected in commit `aafb02d8e6361ca4c0bd938b6a40f647a96d3906`.
+
+The natural repository-wide run [45333711914](https://github.com/dungnv2602/chatgpt/actions/runs/45333711914) evaluated 51 files. It reported 119 hard findings and 337 advisory findings. It reported zero new findings and one resolved finding. All report-tooling and validation checks passed. The overall workflow failed because lint findings remain. The target file passed with exactly 12 hard findings, all in the approved examples. The ordinary terminology finding no longer appears.
+
+The latest changed-scope report [45330721385](https://github.com/dungnv2602/chatgpt/actions/runs/45330721385) predates the correction. The changed-document workflow excludes `skills/asd-ste100/`, so it does not run for this file change. Do not dispatch it. Current raw report totals include later-scope content and do not replace the original 155-fingerprint baseline. The original report artifacts are absent from the current history directories. Recover them from the original workflow runs if their artifacts remain available. Do not reopen later-scope findings through fingerprint overlap alone.
 
 ## 8. Remaining Work
 
-- Preserve the 12 deliberate STE examples. Do not rewrite them or weaken lint rules to hide their findings.
-- Review every modified document for semantic accuracy and technical correctness.
-- Verify naturally generated hosted full-audit and changed-scope reports.
-- No further policy decision is required. Preserve the 12 deliberate examples and verify that natural hosted reports leave them unchanged without introducing new ordinary hard findings.
+- Recover the original baseline report artifacts from workflow runs `45128445227` and `45152181405`, if available.
+- Compare only the original 155 hard-finding fingerprints against the completed source remediation.
+- Preserve the 12 deliberate examples and the unchanged lint rules, thresholds, baselines, and coverage.
+- Keep later-scope findings and advisory findings outside this task.
+- Close only when the original baseline evidence supports the acceptance criteria.
 
 ## 9. Next Actions
 
-1. Preserve the 12 intentional examples in `skills/asd-ste100/SKILL.md`.
-2. Review natural hosted reports to confirm the ordinary terminology finding is resolved and the 12 example findings remain unchanged.
-3. Keep the task open pending hosted verification. Do not alter lint policy, add suppressions, or claim zero hard findings.
+1. Retrieve the original baseline workflow artifacts for runs `45128445227` and `45152181405`.
+2. Compare the 155 original fingerprints with the verified source changes and current evidence.
+3. If the artifacts are unavailable, record the exact limitation and keep the task In Progress. Do not dispatch or poll workflows.
 
 ## 10. References
 
@@ -258,10 +274,23 @@ The approved task is In Progress and is the current execution. Source-level edit
 
 ## 11. Verification
 
-- **Check:** Compare the hard-finding fingerprint sets in the latest repository-wide and changed-scope reports.
-- **Method:** Read both structured JSON reports from branch `gpt` and compare the 155 hard-finding fingerprints.
-- **Result:** Passed. Both sets contain 155 fingerprints and are identical.
-- **Limitations:** This confirms the starting finding set. It does not validate any remediation because no edits have started.
+- **Check:** Compare the original repository-wide and changed-scope hard-finding fingerprint sets.
+- **Method:** The original reports recorded 155 fingerprints in each scope.
+- **Result:** Passed. The task's initial inspection confirmed that both sets were identical.
+- **Limitation:** The original report files are no longer present in the current report-history directories. Their workflow-run artifacts have not yet been checked.
+
+- **Check:** Review the latest natural repository-wide lint report.
+- **Method:** Read the scope index, Markdown report, structured JSON report, integrity manifest, and GitHub Actions run metadata.
+- **Result:** Run `45333711914` evaluated 51 files and reported 119 hard findings, 337 advisory findings, zero new findings, and one resolved finding. All report-tooling checks passed. The overall workflow conclusion is Failed because lint findings remain. The target ASD-STE100 skill passed with exactly 12 hard findings, all approved examples.
+- **Limitation:** The report's raw hard-finding total includes later-scope content. It does not replace the original 155-fingerprint baseline.
+
+- **Check:** Review the latest changed-scope report.
+- **Method:** Read the scope index, Markdown report, structured JSON report, and workflow run metadata.
+- **Result:** Run `45330721385` is a complete 51-file full-audit fallback with zero failed report-tooling checks. It predates the correction and still contains the ordinary terminology finding. The changed-document workflow excludes `skills/asd-ste100/`, so this correction does not trigger a new changed-scope run.
+
+- **Check:** Verify the approved terminology correction.
+- **Method:** Read the complete source, replace only the exact `delete` wording with the established `remove` wording, read back the committed file, inspect commit metadata, and check the `gpt` branch head.
+- **Result:** Passed. Commit `aafb02d8e6361ca4c0bd938b6a40f647a96d3906` changes only `skills/asd-ste100/SKILL.md`. Readback confirms the exact replacement. The branch head matched the commit before report publication.
 
 ## 12. Handoff Instructions
 
