@@ -181,6 +181,10 @@
     {
       "path": "archive/tasks/20261124-111700-resolve-ci-discussion-items.md",
       "archived_at_utc": "2026-11-24T11:44:00Z"
+    },
+    {
+      "path": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "archived_at_utc": "2026-11-24T15:18:14Z"
     }
   ]
 }
