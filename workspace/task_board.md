@@ -14,7 +14,6 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-| 20261123-225745 | Repair CI ledger task generation workflow | P1 | In Progress | User | 2026-11-24 | [Task record](tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md) |
 
 
 
@@ -86,10 +85,10 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
+| 20261123-225745 | Repair CI ledger task generation workflow | P1 | Done | User | 2026-11-24 | [Archived record](../archive/tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/c9fac2b487569d921af6d788b1ee4778cda35767) |
 | 20261124-093000 | Add approval-gated drawing pattern learning | P2 | Done | User | 2026-11-24 | [Archived record](../archive/tasks/20261124-093000-add-approval-gated-drawing-pattern-learning.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/51f2ab781aa1b5965e4adadb70509e35cb6ec9b2) |
 | 20261124-061933-03 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Validate the document | P2 | Done | Assistant | 2026-11-24 | [Archived record](../archive/tasks/20261124-061933-03-review-validation-or-test-failures-in-validate-document-standard.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/807a5d5fe901a4a608895f72dd81d9085b2d45a8) |
 | 20261124-061933-04 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run catalog validator | P2 | Done | Assistant | 2026-11-24 | [Archived record](../archive/tasks/20261124-061933-04-review-validation-or-test-failures-in-validate-document-standard.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/807a5d5fe901a4a608895f72dd81d9085b2d45a8) |
 | 20261123-054904 | Build GitHub Actions diagnostic reports and remove the CI preflight gate | P1 | Done | User | 2026-11-24 | [Archived record](../archive/tasks/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/22b1927163ce96e56150a4a8ae2bb3010763fb0b) |
 | 20261123-100738 | Remediate hard STE lint findings | P1 | Done | Assistant | 2026-11-24 | [Archived record](../archive/tasks/20261123-100738-remediate-hard-ste-lint-findings.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/e936692b083eba2c7e1b4ca51aff1e2873c0fb3d) |
 | 20261123-162826 | Enforce conversation integrity before image relocation | P1 | Done | User | 2026-11-24 | [Archived record](../archive/tasks/20261123-162826-enforce-conversation-integrity-before-image-relocation.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/38dd6c10db0c28980055d53278916ef4f2955536) |
-| 20261123-230158-12 | Review validation\_or\_test failures in Process Image Takeout and Create WebP Derivatives / process-image-takeout / Test t | P2 | Cancelled | Assistant | 2026-11-23 | [Archived record](../archive/tasks/20261123-230158-12-review-validation-or-test-failures-in-process-image-takeout-and.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/d9ee1e465913b72d296748414b4cf338794b9eab) |
