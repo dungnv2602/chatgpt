@@ -5,9 +5,9 @@
 - **Template version:** 1.2
 - **ID:** 20261124-103354
 - **Created:** 2026-11-24 10:33 UTC
-- **Updated:** 2026-11-24 12:42 UTC
+- **Updated:** 2026-11-24 13:05 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Blocked
 - **Origin:** User
 - **Approval:** Approved for implementation. The user approved DRAFT-0001 revision 1 on 2026-11-24 12:25 UTC and directed execution.
 - **Current execution:** Yes
@@ -130,28 +130,40 @@ Study MADR and design a comprehensive, low-ambiguity decision-management workflo
 - **Result:** The core governance contracts now exist. The Ledger renderer and its tests still require coordinated updates. Final read-back and hosted validation remain outstanding.
 - **Next:** Update the Ledger handoff and generated board row, then read back all changed paths.
 
+### 2026-11-24 13:05 UTC — Complete implementation read-back and reconcile validation evidence
+
+- **Action:** Read back the accepted ADR, promoted Draft, decision-governance skill, analysis files, Worker rules, task template, task board, archive policies, Ledger renderer, Ledger tests, triage guide, and Document Type Catalog.
+- **Result:** The approved governance files are present and linked. The task board now uses eight columns, including ADR(s). Legacy pre-policy rows use `—`. The transition-era Ledger-generated Proposed task 20261124-123847 now has a Pending ADR review field and matching board cell.
+- **Validation evidence:** The committed changed-document lint report passed for two evaluated documents. A committed Actions diagnostic for run #296 reported a failure at the Document Standards catalog validation step. The capture was incomplete and contained no job log. Static review found that `workspace/adr/ADR-*.md` did not match ADR-0001's numeric filename. The catalog rule is now `workspace/adr/????-*.md`. A post-correction hosted result has not been observed.
+- **Corrections:** Closed the Ledger header-guard string, aligned the task-board separators, corrected the Ledger task-template placeholder, updated its regression assertions, and removed a duplicate DRAFT-0002 index row.
+- **Next:** Keep this task Blocked until the next naturally published hosted validation confirms the catalog and Ledger checks. Do not poll CI or run scripts locally.
+
 ## 7. Current State
 
-The user approved DRAFT-0001 revision 1. ADR-0001 records the accepted decision and governs this bootstrap implementation task.
+The user approved DRAFT-0001 revision 1. ADR-0001 records that accepted decision and governs this bootstrap implementation task.
 
-The task is In Progress. ADR-0001 governs this bootstrap implementation. The core skill, analysis template, Worker rules, task template, board, catalog, and archive contracts now exist. The Ledger renderer, regression tests, final read-back, and hosted validation remain outstanding.
+The governance implementation is committed. The Draft and ADR lifecycle, task-specific skill, repository analysis area, task-to-ADR metadata, task-board ADR column, Worker integration, permanent ADR archive guidance, and catalog path rules now exist.
 
-DRAFT-0002 remains a separate proposal and is not part of this implementation. No task records are being mass-migrated. Final confirmation and hosted validation remain outstanding.
+The Ledger renderer and regression tests have been updated. A transition-era Proposed task was reconciled to Pending ADR review. The board rows and separators now use eight columns.
+
+The task is Blocked pending hosted validation. The available changed-document lint report passed for two evaluated documents. The latest committed Actions diagnostic showed a catalog validation failure, but its capture was incomplete. The known numeric ADR path mismatch has been corrected. No post-correction hosted result has been observed. No local tests were run. ADR-0001 remains accepted with implementation status in-progress.
 
 ## 8. Remaining Work
 
-- Complete the approved governance implementation.
-- Verify every changed path, link, catalog rule, and generated task format.
-- Record relevant hosted validation evidence when available. Do not wait for or poll CI.
-- Complete every ADR-0001 Confirmation criterion before closing the task or archiving the ADR.
-- Preserve DRAFT-0002 as a separate open proposal.
+- Confirm a naturally published post-correction Document Standards validation result.
+- Confirm the hosted Ledger regression tests pass with the updated task template and ADR board column.
+- Record the validation evidence and update ADR-0001 Confirmation.
+- Archive the implementation task only after all its acceptance criteria pass.
+- Move ADR-0001 to `archive/adr/` only after all linked tasks are Done and every Confirmation criterion passes.
+- Keep DRAFT-0002 separate and unmodified.
 
 ## 9. Next Actions
 
-1. Complete the decision-governance skill and workspace analysis structure.
-2. Update the Worker, task template, board, Ledger renderer, tests, and archive contracts.
-3. Read back every changed path and inspect relevant hosted validation evidence when available.
-4. Complete ADR-0001 Confirmation before archival.
+1. On the next relevant task session, inspect the next naturally published validation evidence. Do not poll Actions.
+2. If Document Standards and Ledger validation pass, record their run references and complete the corresponding ADR Confirmation criteria.
+3. If validation fails, use the committed report evidence to diagnose and correct the cause within ADR-0001.
+4. Close and archive this task only after its acceptance criteria pass.
+5. Archive ADR-0001 only after task closure and full confirmation.
 
 ## 10. References
 
@@ -167,14 +179,14 @@ DRAFT-0002 remains a separate proposal and is not part of this implementation. N
 
 ## 11. Verification
 
-- **Check:** Draft/ADR folder setup, templates, catalog coverage, workspace navigation, and discussion link rules.
-- **Method:** Retrieved all changed paths from branch `gpt` and checked their content. Verified the Draft coverage rule changed from Reserved to Active when DRAFT-0001 was created.
-- **Result:** The user approved DRAFT-0001 revision 1. ADR-0001 has been created from the approved scope. Workflow implementation and path verification are in progress.
-- **Limitations:** Hosted validation and final ADR Confirmation have not yet been observed. No local scripts or tests were run.
+- **Check:** ADR promotion, governance implementation paths, task and board linkage, analysis structure, archive protection, catalog coverage, and Ledger handoff source.
+- **Method:** Retrieved each committed path from branch `gpt`. Checked ADR metadata, Draft promotion, skill activation tier, catalog patterns, eight-column board structure, Pending handoff metadata, and the corrected Ledger renderer/template placeholders.
+- **Result:** The source and documentation contracts read back. The changed-document lint report passed for two evaluated files. The committed Actions diagnostic for run #296 reported a failure at catalog validation. Its capture was incomplete and gave no job log. The mismatch found by static review was corrected to the numeric ADR filename pattern.
+- **Limitations:** A post-correction hosted validation result has not been observed. Ledger and Document Standards tests were not run locally. Do not claim that they passed.
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. The user approved DRAFT-0001 revision 1. This task implements ADR-0001. Do not expand into DRAFT-0002. Keep DRAFT-0002 open for separate review. Do not archive ADR-0001 until every Confirmation criterion passes and hosted validation evidence is available.
+Continue on branch `gpt`. ADR-0001 is accepted and remains in `workspace/adr/` with implementation status `in-progress`. This task is Blocked pending a naturally published post-correction hosted validation result. Do not poll CI or run repository scripts locally. Check the exact reports and artifacts when validation evidence is naturally available. DRAFT-0002 remains a separate, unapproved proposal. Do not implement it as part of this task.
 
 ## 13. Ledger Findings
 
