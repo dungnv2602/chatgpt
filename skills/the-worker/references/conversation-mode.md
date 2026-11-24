@@ -91,6 +91,7 @@ This section is the user's short, live briefing surface while work proceeds.
 - Commit the brief to `gpt`, fetch the committed file, and check its content before starting that step.
 - After the read-back, send the direct `discussion.md` link to the user before executing the step. Do not bury the brief in chat. The file is the briefing surface.
 - Keep exactly one current brief. Do not retain completed briefs as history or duplicate them in Reports.
+- Link every active task record that the assistant is working on from the Current Step brief. Include multiple task links when work spans multiple tasks. Remove links when work stops or closes.
 - After the step, record detailed actions and verification in the task record. Before the next meaningful step, replace the brief and send the updated link.
 - If work stops, fails, or needs a user decision, state that execution is paused and why in the current brief. Record any unresolved failure or required user input under Open Discussions.
 - When no step is active, use `_No active step._`.
@@ -121,6 +122,7 @@ Keep a failure in Open Discussions while it remains unresolved or unsuccessful, 
 For each open item:
 
 - State the unresolved point, why it needs attention, and the exact user decision or information required. Include the minimum context needed to understand it.
+- Link every Draft that is under user review. Keep each Draft link in the discussion item that asks for its decision. Do not link a Draft that does not exist. A blocker with no Draft may link its task record when one exists.
 - Preserve the user's relevant wording verbatim when it prevents ambiguity. Do not copy the full conversation.
 - Keep separate decisions separate. Combine messages only when they concern the same decision or dependency.
 - Put the item with the latest creation or meaningful update first. When the user adds a clarification to an existing thread, update that thread and move it to the top. Do not create a duplicate.

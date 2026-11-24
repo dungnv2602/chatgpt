@@ -1,6 +1,6 @@
 # Document Type Catalog
 
-**Catalog version:** 1.10  
+**Catalog version:** 1.11  
 **Inventory status:** Non-truncated recursive tree audit of branch `gpt` at commit `1a5c8380036dac0132216635951f95a971ceee25` found 6,375 tree entries and 1,114 Markdown documents outside root `master/` and `archive/`. All 1,114 Markdown paths match the 48 Active coverage rules; every rule matches at least one file. This is a complete path inventory and targeted family review, not a line-by-line semantic review of every generated report.
 **Source branch:** `gpt`
 
@@ -41,6 +41,9 @@ Do not create a second template when an owning workflow already defines the requ
 | Conversation integrity record | Template required | `skills/the-worker/assets/conversation-integrity-template.md` | Copy-ready template now exists with gap and editorial-summary fields. The historical record `drawings/history/2026-11-12-conversation-integrity.md` predates the template and remains unchanged. |
 | Session summary | Template required | `skills/the-worker/assets/session-summary-template.md` | Copy-ready handoff template now exists. The historical record `drawings/history/2026-11-12-summary.md` predates the template and remains unchanged. |
 | Workspace task record | Template required | `workspace/TASK_TEMPLATE.md` | Template version 1.2. The Worker owns task fields and closeout. The CI Ledger creates Proposed task records for newly identified actionable findings during report ingestion and maintains their finding links. It does not taskify the historical backlog. The active record remains In Progress / Archived: No until the archive copy passes full read-back. |
+
+| Decision Draft | Template required | `workspace/draft/DRAFT_TEMPLATE.md` | One proposal per decision. Require explicit user review and approval before promotion to an ADR. Preserve the promoted Draft as provenance. |
+| Accepted Decision Record | Template required | `workspace/adr/ADR_TEMPLATE.md` | MADR-inspired decision record. Create only after the user approves the exact Draft. Track decision status separately from implementation status. |
 | Novel workspace index and workflow | Embedded contract | `novels/README.md` and `novels/WORKFLOW.md` | The README indexes projects and current templates. The workflow defines narrative hierarchy, status/canon, versioning, and template-first authoring. No separate template is needed. |
 | Archive boundary policy | Embedded contract | `archive/README.md` and `skills/the-worker/SKILL.md` | Defines archive record structure, immutability, permitted exact reads, and batch retention. The README is read-only under the archive boundary. The retention workflow also exposes manual and workflow-call force triggers. See Open Discussions for policy confirmation. |
 | Archive retention state | Embedded contract | `.github/scripts/cleanup-archive.py` and `.github/archive-retention-state.json` | The cleanup script writes the single `last_cleanup_at` timestamp. This is machine-owned operational state, not a user-authored record. Do not create a template. |
@@ -123,6 +126,12 @@ Coverage status has three values. `Active` rules must match at least one current
 | `workspace/discussion.md` | Embedded contract | Active | `workspace/discussion.md` and `skills/the-worker/references/conversation-mode.md` | Shared current-step, open-discussion, and verified-report register. |
 | `workspace/TASK_TEMPLATE.md` | Exempt | Active | `workspace/TASK_TEMPLATE.md` and `skills/the-worker/SKILL.md` | Canonical task template source, not a task instance. |
 | `workspace/tasks/*.md` | Template required | Active | `workspace/TASK_TEMPLATE.md` | Individual task records. |
+| `workspace/draft/README.md` | Embedded contract | Active | `workspace/draft/README.md` | Draft folder navigation, status transitions, and promotion rules. |
+| `workspace/draft/DRAFT_TEMPLATE.md` | Exempt | Active | `workspace/draft/DRAFT_TEMPLATE.md` | Canonical Draft template source, not a proposal record. |
+| `workspace/draft/DRAFT-*.md` | Template required | Reserved | `workspace/draft/DRAFT_TEMPLATE.md` | One proposal record per decision. Activate this rule when the first Draft is created. |
+| `workspace/adr/README.md` | Embedded contract | Active | `workspace/adr/README.md` | Accepted ADR navigation, status, implementation, and archive rules. |
+| `workspace/adr/ADR_TEMPLATE.md` | Exempt | Active | `workspace/adr/ADR_TEMPLATE.md` | Canonical ADR template source, not an accepted decision record. |
+| `workspace/adr/ADR-*.md` | Template required | Reserved | `workspace/adr/ADR_TEMPLATE.md` | Accepted ADR records. Activate this rule when the first ADR is created. |
 
 ## Validation coverage limits
 
