@@ -61,7 +61,7 @@ Humans may adjust severity when evidence supports the change. The generator pres
 
 Task creation is part of report ingestion, not a later manual review step.
 
-1. Create tasks for every newly identified lint finding, including `low` and `informational`, and for GitHub Actions findings with severity `medium`, `high`, or `critical`. Findings must have a task-eligible status. Severity controls priority, not lint task eligibility. Do not create tasks from the initial full-audit baseline or from untracked recurring baseline findings.
+1. Create tasks for every newly identified lint finding, including `low` and `informational`, and for GitHub Actions findings with severity `medium`, `high`, or `critical`. Findings must have a task-eligible status. Severity controls priority, not lint task eligibility. Existing active lint findings without task references are also handed off on the next ingestion sweep; this does not rescan or backfill report history. Do not create tasks from the initial full-audit baseline or from untracked recurring baseline findings.
 2. Group lint findings by source file and rule. Group Actions findings by workflow path, job, step, and category.
 3. Render each task from `workspace/TASK_TEMPLATE.md`. New tasks start Assistant-originated and Proposed, add one row to `workspace/task_board.md`, and record the task ID in each finding's `task_refs`.
 4. Reuse an active task for the same remediation group. Later evidence refreshes a linked task but does not create duplicate proposals.
