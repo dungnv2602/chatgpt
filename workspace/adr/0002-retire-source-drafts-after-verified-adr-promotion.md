@@ -16,7 +16,7 @@ related_adrs:
   - "ADR-0001"
 supersedes: []
 superseded_by: null
-implementation_status: "in-progress"
+implementation_status: "complete"
 implementation_tasks:
   - "20261124-160500"
 review_triggers:
@@ -230,7 +230,8 @@ Do not migrate or delete other Drafts unless the Worker checks that the reposito
 - **Historical source:** DRAFT-0001, revision 1, approved 2026-11-24. ADR-0001 does not fully restate its material rationale. This ADR preserves that rationale in the Historical context section. The Worker may delete the source file only after the authorized link correction and completeness check.
 - **Evidence:** DRAFT-0003 revision 2, DRAFT-0001 revision 1, ADR-0001, the workspace Draft and ADR indexes, the decision-governance skill, and the Document Type Catalog.
 - **Review trigger:** A failed completeness check, failed source deletion, material migration gap, or user change to the lifecycle.
-- **Lint remediation tasks:** [20261124-161334-01](../tasks/20261124-161334-01-review-present-perfect-findings-in-workspace-adr-0002-retire-sou.md), [20261124-161334-02](../tasks/20261124-161334-02-review-passive-voice-findings-in-workspace-adr-0002-retire-sourc.md), [20261124-161334-03](../tasks/20261124-161334-03-review-semicolon-findings-in-workspace-adr-0002-retire-source-dr.md), [20261124-161334-04](../tasks/20261124-161334-04-review-long-sentence-findings-in-workspace-adr-0002-retire-sourc.md), and [20261124-161334-05](../tasks/20261124-161334-05-review-synonym-rotation-findings-in-workspace-adr-0002-retire-so.md).
+- **Lint validation:** Hosted STE Lint run [#675](https://github.com/dungnv2602/chatgpt/actions/runs/45456236271) evaluated this ADR directly and recorded zero findings. The report records zero hard findings, zero advisory findings, and zero failed checks.
+- **Lint remediation tasks:** [20261124-161334-01](https://github.com/dungnv2602/chatgpt/blob/gpt/archive/tasks/20261124-161334-01-review-present-perfect-findings-in-workspace-adr-0002-retire-sou.md), [20261124-161334-02](https://github.com/dungnv2602/chatgpt/blob/gpt/archive/tasks/20261124-161334-02-review-passive-voice-findings-in-workspace-adr-0002-retire-sourc.md), [20261124-161334-03](https://github.com/dungnv2602/chatgpt/blob/gpt/archive/tasks/20261124-161334-03-review-semicolon-findings-in-workspace-adr-0002-retire-source-dr.md), [20261124-161334-04](https://github.com/dungnv2602/chatgpt/blob/gpt/archive/tasks/20261124-161334-04-review-long-sentence-findings-in-workspace-adr-0002-retire-sourc.md), and [20261124-161334-05](https://github.com/dungnv2602/chatgpt/blob/gpt/archive/tasks/20261124-161334-05-review-synonym-rotation-findings-in-workspace-adr-0002-retire-so.md).
 
 ## Confirmation
 
@@ -243,7 +244,7 @@ Do not migrate or delete other Drafts unless the Worker checks that the reposito
 - [x] The authorized ADR-0001 reference correction is complete and read back.
 - [x] The repository deletes DRAFT-0001 only after the completeness and cross-reference checks pass.
 - [x] The Worker read back every changed path. The hosted Document Standards workflow passed.
-- [ ] ADR-0002 passes hosted STE lint with zero findings.
+- [x] ADR-0002 passes hosted STE lint with zero findings.
 
 ## Decision Lifecycle History
 
@@ -255,3 +256,4 @@ Do not migrate or delete other Drafts unless the Worker checks that the reposito
 | 2026-11-25 | Lint-only editorial remediation authorized | The user authorized wording corrections to ADR-0002 so it can be retired. The authorization covers lint-only edits. It does not change the accepted decision, rationale, options, scope, or safeguards. The five linked remediation tasks record the approved work. |
 | 2026-11-24 | ADR-0002 editorial lint corrections committed | The Worker updated wording for the five lint rule groups. The full ADR read-back passed. Manual review found zero semicolons and no sentences over 25 words. Hosted STE lint remains pending. Commit: `3d2f2cec2b901aaae72976bfd9093859299b468f`. |
 | 2026-11-24 | Implementation checks passed | Document Standards run 45445313265 passed. It ran 37 CI Ledger tests and 32 catalog-validator tests. Catalog checks passed for 18 document types and 28 exact references. STE Lint run 45445313404 passed with zero findings in the one changed file. Diagnostics run 45445313378 passed. The STE Lint run used incremental scope. It did not evaluate ADR-0002. Earlier findings in ADR-0002's accepted decision content remained unchanged under the approved immutability boundary. |
+| 2026-11-24 | Implementation and lint remediation complete | Task 20261124-160500 is Done and archived. The five lint remediation tasks are Done and archived. Hosted STE Lint run 45456236271 evaluated ADR-0002 and found zero findings. Document Standards run 45456236127 and Diagnostics run 45456236357 passed. |
