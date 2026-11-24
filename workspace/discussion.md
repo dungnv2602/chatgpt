@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 09:24 UTC — Check the active task and task-record format so this approval-gated drawing workflow request can be tracked without losing the existing task handoff.**
+**2026-11-24 09:24 UTC — Checkpoint the current CI task and create a separate approval-gated Drawing workflow task. Preserve the CI task's pending retry handoff and set the Drawing task as current execution.**
 
 ## Open Discussions
 
