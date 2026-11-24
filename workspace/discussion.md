@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 16:32 UTC — Finalize DRAFT-0001 retirement and validate the implementation:** Remove the temporary cleanup-pending entry after confirming the remaining known references. Delete DRAFT-0001 only after the accepted ADR and completeness gates pass. Read back the source path, indexes, and all changed files. Then inspect the hosted Document Standards result and update ADR-0002 Confirmation.
+**2026-11-24 16:45 UTC — Await hosted Document Standards evidence:** The DRAFT-0001 migration and governance changes are complete. The current validation run is not yet identifiable in the published workflow index. Do not poll CI. Keep task 20261124-160500 In Progress and ADR-0002's final Confirmation item unchecked until a completed result is available and passes.
 
 ## Open Discussions
 
