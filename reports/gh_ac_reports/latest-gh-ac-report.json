@@ -11,30 +11,30 @@
     "event": "push",
     "branch": "gpt",
     "head_sha": "bb292544348747251c59b1ba17a38595f25b8ada",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "cancelled",
     "created_at": "2026-11-24T15:54:06Z",
     "run_started_at": "2026-11-24T15:54:06Z",
-    "updated_at": "2026-11-24T15:55:37Z",
+    "updated_at": "2026-11-24T15:55:58Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "Index DRAFT-0003 for user review"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-24T15:55:52Z",
-    "completeness": "Incomplete",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-24T15:56:23Z",
+    "completeness": "Complete",
     "reporter_job": {
       "id": "138575948958",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "failure",
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
     "primary_category": "validation_or_test",
     "categories": [
       "validation_or_test"
@@ -48,7 +48,7 @@
         "step_name": "Validate the document type catalog",
         "blocking": true,
         "confidence": "medium",
-        "message": "Step conclusion: failure"
+        "message": "2026-11-24T15:54:58.6985635Z ERROR: Line 140: Markdown coverage pattern matches no in-scope document: 'workspace/adr/????-*.md'."
       }
     ]
   },
@@ -139,12 +139,16 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 45095,
         "path": "logs/job-138575791682.log",
-        "error": "run 45430818995 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "validate-document-standards\tValidate the document type catalog\t2026-11-24T15:54:58.6985635Z ERROR: Line 140: Markdown coverage pattern matches no in-scope document: 'workspace/adr/????-*.md'.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-24T15:54:58.6986742Z Catalog validation failed: 1 error(s), 18 document type(s), 28 reference(s).",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-24T15:54:58.7055792Z ##[error]Process completed with exit code 1."
+        ]
       }
     }
   ],
@@ -186,12 +190,6 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [
-    {
-      "source": "job_log",
-      "job_id": "138575791682",
-      "message": "run 45430818995 is still in progress; logs will be available when it is complete\n"
-    }
-  ],
-  "history_path": "history/427313089/45430818995-attempt-1-pre_finalizer"
+  "capture_errors": [],
+  "history_path": "history/427313089/45430818995-attempt-1-post_run"
 }
