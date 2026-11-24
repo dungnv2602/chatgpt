@@ -10,6 +10,7 @@ This folder stores proposals that require a user decision.
 ## Current Drafts
 
 - [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](DRAFT-0002-phase-aware-planning-and-evidence-capture.md) — In review. User approval is pending.
+- [DRAFT-0003 — Retire Source Drafts After Verified ADR Promotion](DRAFT-0003-retire-source-drafts-after-verified-adr-promotion.md) — In review. The user approved the lifecycle direction and rationale safeguard; exact revision 1 approval is pending.
 - [DRAFT-0001 — Establish Draft-to-ADR Governance and Repository Analysis](DRAFT-0001-repository-decision-governance-and-analysis.md) — Promoted to [ADR-0001](../adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md).
 
 ## Workflow
