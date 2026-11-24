@@ -10,7 +10,7 @@ The Ledger is the Worker's event-driven active backlog for distinct lint and Git
 - Only complete post-run Actions reports contribute findings. Pre-finalizer captures do not create issues.
 - Routine successful runs and cancellation-only runs are not captured by default. A successful run with an independently failed non-blocking step can create a finding. A cancelled run can contribute an independent failure; cancellation and downstream status propagation do not.
 - Skipped, neutral, queued, in-progress, and unavailable states do not create findings by themselves.
-- Lint task eligibility is based on comparisons with a complete, tooling-valid baseline. Low and informational findings remain Ledger-only.
+- Lint findings are task-eligible at every severity after comparison with a complete, tooling-valid baseline. Severity controls task priority, not eligibility. GitHub Actions findings retain their separate confidence/severity eligibility thresholds.
 
 ## Ingestion and publication
 
@@ -61,7 +61,7 @@ Humans may adjust severity when evidence supports the change. The generator pres
 
 Task creation is part of report ingestion, not a later manual review step.
 
-1. Create tasks only for newly identified actionable findings with severity `medium`, `high`, or `critical` and a task-eligible status. Do not create tasks from the initial full-audit baseline or from untracked recurring baseline findings.
+1. Create tasks for every newly identified lint finding, including `low` and `informational`, and for GitHub Actions findings with severity `medium`, `high`, or `critical`. Findings must have a task-eligible status. Severity controls priority, not lint task eligibility. Do not create tasks from the initial full-audit baseline or from untracked recurring baseline findings.
 2. Group lint findings by source file and rule. Group Actions findings by workflow path, job, step, and category.
 3. Render each task from `workspace/TASK_TEMPLATE.md`. New tasks start Assistant-originated and Proposed, add one row to `workspace/task_board.md`, and record the task ID in each finding's `task_refs`.
 4. Reuse an active task for the same remediation group. Later evidence refreshes a linked task but does not create duplicate proposals.
