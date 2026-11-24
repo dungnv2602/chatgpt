@@ -1,8 +1,6 @@
 ## Current Step
 
-**2026-11-24 11:29 UTC — Planning workflow review:** Recover the active workspace state, inspect current task and document workflows, study `othmanadi/planning-with-files`, and prepare an integrated repository-specific proposal with templates, skill changes, and adoption boundaries.
-
-**2026-11-24 11:48 UTC — CI discussion resolution completed:** Task `20261124-111700` is archived Done. The three CI discussion items are closed with their verified outcomes in Reports. No task is in current execution. The next repository decision is user review of DRAFT-0001. Do not create ADR-0001 without explicit approval.
+**2026-11-24 11:31 UTC — External planning workflow study and proposal:** Review the external templates, lifecycle, recovery and security controls, then compare them with this repository's task model. Prepare a repository-specific Draft. [Task 20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)
 
 ## Open Discussions
 
