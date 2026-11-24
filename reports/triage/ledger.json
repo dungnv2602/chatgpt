@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-24T14:43:02Z",
+  "updated_at_utc": "2026-11-24T15:07:17Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
@@ -82,6 +82,7 @@
       "reports/gh_ac_reports/history/424715662/45415351074-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424715662/45416245734-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45416245734-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/424715662/45416735141-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45416735141-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424743410/45301729199-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424743410/45301729199-attempt-1-pre_finalizer/report.json",
@@ -9884,6 +9885,35 @@
         "20261124-123847"
       ],
       "task_group": "ci-909306f5195ae7b2"
+    },
+    {
+      "finding_id": "gha-f04b588b537a96b00c56b6ae",
+      "source_family": "github_actions",
+      "category": "publication_or_push",
+      "title": "STE Lint Changed Documentation / Lint changed Markdown files and publish detailed evidence / Generate and publish changed-document lint evidence: publication_or_push",
+      "status": "open",
+      "severity": "high",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T15:07:17Z",
+      "last_seen_utc": "2026-11-24T15:07:17Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/gh_ac_reports/history/424715662/45416735141-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45416735141",
+          "observed_at_utc": "2026-11-24T15:07:17Z",
+          "note": "Lint changed Markdown files and publish detailed evidence / Generate and publish changed-document lint evidence",
+          "observation_id": "github_actions:424715662:45416735141:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-150717"
+      ],
+      "task_group": "ci-f0a95a498ae3bd8a"
     }
   ]
 }
