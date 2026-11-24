@@ -29,6 +29,8 @@ GitHub Actions publishes diagnostic evidence into the lint and Actions report fa
 
 The first complete tooling-valid full audit in each lint scope establishes a baseline without creating tasks. Later runs create tasks only for genuinely new actionable findings. Recurring untracked baseline findings do not flood the backlog. The Ledger retains at most five evidence paths per finding while preserving cumulative occurrence counts.
 
+A lint report can seed a baseline when every required tooling check passes, even when its lint status is Failed. The baseline prevents recurring findings from appearing as new work.
+
 A Ledger-generated task cannot close as Done while any linked finding remains non-terminal. After the task is archived Done and indexed, the `archive/tasks/**` push triggers the normal diagnostics sweep. The Ledger then retires the terminal findings from the active backlog. The archived task and its archived report references preserve the audit history. Do not delete Ledger entries manually or run periodic retirement scans.
 
 A clean-start reset is destructive and requires explicit user authorization. It clears generated active report data, prior `archive/reports/**` snapshots, report indexes, and the active Ledger, then establishes new unseeded lint baselines. It preserves scripts, schemas, templates, workflows, operating guides, task archives, and unrelated tasks. See `reports/triage/README.md` and `archive/README.md` for exact reset and closeout rules.

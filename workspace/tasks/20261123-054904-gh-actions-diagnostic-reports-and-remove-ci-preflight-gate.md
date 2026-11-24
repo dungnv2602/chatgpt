@@ -448,3 +448,11 @@ Continue from this record. The implementation and policy changes are in place. T
 - **Reason:** Run #592 was self-cancelled by its run-list guard. The replacement workflow removes that guard and relies on its existing concurrency group. A fresh eligible Markdown change is required to exercise the changed-document workflow after the fix.
 - **Validation:** Diagnostics #512 passed. Document Standards #268 passed. Full technical-document lint #184 remained queued at the last inspection. No local repository code was run.
 - **Next:** Verify the changed-document lint run, reconcile pending Actions captures, then resolve and archive only the findings that have complete evidence.
+
+
+### 2026-11-24 — Correct the changed-lint baseline handoff
+
+- **Action:** Reviewed changed-document lint run [#593](https://github.com/dungnv2602/chatgpt/actions/runs/45343275010). The supersession guard no longer cancelled the run, but the lint job was skipped because the preflight job output still referenced the removed guard step. Its baseline check also rejected the valid report schema because the jq expression iterated over each check-name string as an array.
+- **Change:** Pointed the `proceed` job output at the baseline step, corrected the jq `all` expression to iterate over the required check names, and documented that a tooling-valid Failed lint report can still seed a baseline. This preserves lint failure status and thresholds.
+- **Validation:** Run #593 exposed the defects before executing the linter. Diagnostics #512 and Document Standards #268 passed. The full technical-document audit #184 failed on existing repository lint debt and is separate from this task's approved scope.
+- **Next:** Verify the next eligible changed-document lint run executes its changed-file step and publishes a complete report. Then reconcile the resulting run through Diagnostics.
