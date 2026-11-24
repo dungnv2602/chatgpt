@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-183017
 - **Created:** 2026-11-24 18:30 UTC
-- **Updated:** 2026-11-24 18:31 UTC
+- **Updated:** 2026-11-24 18:32 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -62,22 +62,28 @@ Repair the Document Standards catalog failure caused by the now-empty active ADR
 - **References:** Task creation commit `b6521aed324134f2cb3043d4f61e356ef3e36351`; discussion commit `ce40e0c73c1ebe23cd48b025e2c0f035afe8efaf`; task-board commit `d821aaf6b0f88bb89100be5fc80a9d82a785f4e7`.
 - **Next:** Commit the catalog state correction and Worker procedure together with this progress update.
 
+### 2026-11-24 18:32 UTC
+
+- **Action:** Changed the ADR Markdown coverage rule to Reserved and added the user-directed CI failure follow-through procedure to The Worker. Committed both changes with this task update.
+- **Result:** Commit `fa59f9861823ce4d3ab11a69a8d4461339e9e47c` succeeded. Read-back verified catalog version 1.15 and the Reserved rule, the new Worker procedure, and the task record. Commit metadata lists exactly the three intended paths; branch `gpt` points to this commit. Hosted validation has not yet been observed.
+- **References:** [Repair commit](https://github.com/dungnv2602/chatgpt/commit/fa59f9861823ce4d3ab11a69a8d4461339e9e47c); `skills/document-standards/references/document-type-catalog.md`; `skills/the-worker/SKILL.md`.
+- **Next:** Review hosted validation when naturally available; do not poll.
+
 ## 7. Current State
 
-The root cause is confirmed. The catalog still needs the Active-to-Reserved correction, and The Worker needs an explicit user-directed CI failure follow-through procedure. This task is recorded as Current Execution. The discussion register and task board have been updated and read back.
+The catalog rule is now Reserved, and The Worker contains an explicit user-directed CI failure follow-through procedure. Commit `fa59f9861823ce4d3ab11a69a8d4461339e9e47c` contains both changes and the task progress update. All three changed paths were read back, and the commit metadata lists exactly those three paths. The branch head matches the repair commit. Hosted validation is pending and has not been polled.
 
 ## 8. Remaining Work
 
-- Change the ADR Markdown coverage rule to Reserved.
-- Add the task-scoped CI-failure follow-through procedure to The Worker.
-- Read back all changed files and verify the commit metadata.
-- Observe the naturally triggered hosted validation results without polling. Do not claim a pass before it is reported.
+- Observe the naturally triggered Document Standards and STE Lint validation results without polling.
+- If validation passes, complete the task archive and board closeout. If it fails, inspect the exact new failure and repair it within scope.
+- Keep the task In Progress until hosted validation is observed.
 
 ## 9. Next Actions
 
-1. Update the catalog, The Worker, and this task record in one coherent commit.
-2. Read back all changed paths and inspect commit metadata.
-3. Record hosted CI status when naturally available; keep the task open if validation is pending or fails.
+1. Review the naturally available hosted validation result for commit `fa59f9861823ce4d3ab11a69a8d4461339e9e47c` without polling.
+2. Repair any new task-scoped failure if required.
+3. After validation passes, archive this task and reconcile the task board.
 
 ## 10. References
 

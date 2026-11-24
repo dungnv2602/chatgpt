@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 18:30 UTC — Repair ADR catalog and CI follow-through:** User directed repair of the Document Standards catalog failure and improvement to the Worker's CI repair procedure. Task `20261124-183017` is In Progress. Root cause confirmed: `workspace/adr/????-*.md` is still Active although the active ADR family is empty; Document Standards requires Reserved for an empty family. The prior response stopped after diagnosis and did not execute or track the repair. Next: set the coverage rule to Reserved, add an explicit user-directed CI-failure follow-through procedure to The Worker, update indexes, read back all changes, and review naturally triggered validation without polling. DRAFT-0002 remains unchanged.
+**2026-11-24 18:32 UTC — Catalog and Worker repair committed:** Commit [`fa59f986`](https://github.com/dungnv2602/chatgpt/commit/fa59f9861823ce4d3ab11a69a8d4461339e9e47c) changes the ADR path-coverage rule to Reserved, increments the catalog to 1.15, and adds a user-directed CI failure follow-through procedure to The Worker. Read-back passed for the catalog, Worker skill, and active task record; commit metadata lists exactly those three paths, and branch `gpt` points to the commit. Hosted validation is pending. Do not poll. Keep task `20261124-183017` In Progress until the relevant hosted checks are observed. DRAFT-0002 remains unchanged.
 
 
 ## Open Discussions
