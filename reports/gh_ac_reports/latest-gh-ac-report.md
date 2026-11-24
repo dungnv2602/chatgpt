@@ -1,4 +1,4 @@
-# Validate Document Standards — run 45427379042
+# Validate Document Standards — run 45430749618
 
 ## Run identity
 
@@ -6,38 +6,38 @@
 | --- | --- |
 | Workflow | Validate Document Standards |
 | Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45427379042 / 1 |
-| Run number | 325 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45427379042 |
+| Run / attempt | 45430749618 / 1 |
+| Run number | 326 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45430749618 |
 | Branch | gpt |
-| Commit | f3d11e25cdcc4335102725e51a5e4a20d1921753 |
+| Commit | 1288d7522d9ec2861361c82fdfe4f9e2823843bf |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-24T15:35:59Z |
-| Status at capture | completed |
-| Observed conclusion | failure |
-| Projected conclusion | Not calculated |
-| Reporter job | completed / success |
-| Capture stage | post_run |
-| Completeness | Complete |
-| Captured (UTC) | 2026-11-24T15:54:20Z |
+| Created (UTC) | 2026-11-24T15:53:44Z |
+| Status at capture | in_progress |
+| Observed conclusion | Not yet available |
+| Projected conclusion | failure |
+| Reporter job | in_progress / Pending |
+| Capture stage | pre_finalizer |
+| Completeness | Incomplete |
+| Captured (UTC) | 2026-11-24T15:54:42Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | failure |
+| State | in_progress |
 | Primary category | validation_or_test |
 | Jobs | 1 |
 | Steps | 9 |
 | Issues | 1 |
 | Annotations | 2 |
 | Artifacts | 0 |
-| Capture errors | 0 |
+| Capture errors | 1 |
 
 ## Failure classification
 
-validation_or_test
+validation_or_test The parent run is still in progress. The projected conclusion is provisional.
 
 The report records an actionable workflow failure or operational exception. Ordinary successful runs and cancellation-only runs are not captured by default. A successful run is retained when a step failed but the workflow allowed it to continue. A cancelled run is retained only when it contains an independent actionable failure. Known downstream status-propagation steps after cancellation are excluded. Explicit run-backfill requests can override the default capture filter.
 
@@ -45,20 +45,20 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 138563239872 | validate-document-standards | completed | failure | 9 | logs/job-138563239872.log |
+| 138575066741 | validate-document-standards | completed | failure | 9 | logs/job-138575066741.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 138563239872 | 6 | Validate the document type catalog | Blocking | medium | 2026-11-24T15:36:34.1523688Z ERROR: Line 140: Markdown coverage pattern matches no in-scope document: 'workspace/adr/????-*.md'. |
+| validation_or_test | 138575066741 | 6 | Validate the document type catalog | Blocking | medium | Step conclusion: failure |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 138563239872 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 138563239872 | failure | .github | 14 |  | Process completed with exit code 1. |
+| 138575066741 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 138575066741 | failure | .github | 14 |  | Process completed with exit code 1. |
 
 ## Artifacts
 
@@ -68,11 +68,15 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 138563239872 | validate-document-standards | logs/job-138563239872.log | 45090 | False | validate-document-standards	Validate the document type catalog	2026-11-24T15:36:34.1523688Z ERROR: Line 140: Markdown coverage pattern matches no in-scope document: 'workspace/adr/????-*.md'., validate-document-standards	Validate the document type catalog	2026-11-24T15:36:34.1524927Z Catalog validation failed: 1 error(s), 18 document type(s), 28 reference(s)., validate-document-standards	Validate the document type catalog	2026-11-24T15:36:34.1581731Z ##[error]Process completed with exit code 1. |
+| 138575066741 | validate-document-standards | logs/job-138575066741.log | 82 | False |  |
 
 ## Evidence coverage
 
-All requested evidence endpoints and completed-job log captures returned data.
+One or more evidence sources were unavailable. This report is Incomplete.
+
+| Source | HTTP status | Limitation |
+| --- | --- | --- |
+| job_log | Not recorded | run 45430749618 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
