@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_repo",
-  "run_id": "45343010144",
-  "run_number": 184,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45343010144",
+  "run_id": "45343527317",
+  "run_number": 185,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45343527317",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "3f27a3985619466e0df3c64b895163acb2ee33b7",
+  "commit_sha": "f063afecb480325a871204c1e2ff50342c1df432",
   "event": "push",
   "workflow": "STE Lint Full Technical Documentation",
   "runner_os": "Linux",
   "execution_mode": "repository-wide",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-24T06:47:45.583101+00:00",
+  "generated_at_utc": "2026-11-24T06:52:16.385102+00:00",
   "status": "Failed",
-  "linter_source_sha": "57fbf914c9a28dd0e38645a7952046de5a525b97",
+  "linter_source_sha": "90b92850e19647e6349d8355d921d46b5cfedf21",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -91,13 +91,13 @@
     "skills/SESSION_START.md"
   ],
   "files_with_findings": 41,
-  "total_findings": 456,
+  "total_findings": 457,
   "hard_findings": 118,
-  "advisory_findings": 338,
+  "advisory_findings": 339,
   "findings_by_rule": {
     "long-sentence": 20,
     "semicolon": 71,
-    "passive-voice": 295,
+    "passive-voice": 296,
     "present-perfect": 43,
     "synonym-rotation": 15,
     "phrasal-verb": 5,
@@ -3803,6 +3803,15 @@
         {
           "file": "workspace/README.md",
           "line": 32,
+          "col": 103,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is Failed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/README.md",
+          "line": 34,
           "col": 108,
           "rule": "passive-voice",
           "level": "advisory",
@@ -3811,7 +3820,7 @@
         },
         {
           "file": "workspace/README.md",
-          "line": 32,
+          "line": 34,
           "col": 364,
           "rule": "synonym-rotation",
           "level": "advisory-free",
@@ -3820,7 +3829,7 @@
         },
         {
           "file": "workspace/README.md",
-          "line": 36,
+          "line": 38,
           "col": 139,
           "rule": "long-sentence",
           "level": "advisory-free",
@@ -3829,7 +3838,7 @@
         },
         {
           "file": "workspace/README.md",
-          "line": 36,
+          "line": 38,
           "col": 223,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -3837,11 +3846,11 @@
           "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
         }
       ],
-      "count": 9,
+      "count": 10,
       "hard_count": 5,
       "baseline": 0,
-      "words": 542,
-      "per_100_words": 1.7,
+      "words": 618,
+      "per_100_words": 1.6,
       "path": "workspace/README.md",
       "exit_code": 1
     },
@@ -7477,7 +7486,7 @@
       "match": "has run",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "028b84870f82ee2f98dcbf3b",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
@@ -7917,7 +7926,7 @@
       "match": "152 words",
       "message": "Sentence has 152 words (cap 25). Split it.",
       "fingerprint": "00f8a90274c82ba38a60c467",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/task_board.md",
@@ -7928,7 +7937,7 @@
       "match": "130 words",
       "message": "Sentence has 130 words (cap 25). Split it.",
       "fingerprint": "3e5e0d9186e70d323aa5cb28",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/drawing/references/style-guide.md",
@@ -8736,6 +8745,17 @@
     {
       "file": "workspace/README.md",
       "line": 32,
+      "col": 103,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is Failed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "5659468f603873dc9863f69b",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/README.md",
+      "line": 34,
       "col": 108,
       "rule": "passive-voice",
       "level": "advisory",
@@ -8746,7 +8766,7 @@
     },
     {
       "file": "workspace/README.md",
-      "line": 32,
+      "line": 34,
       "col": 364,
       "rule": "synonym-rotation",
       "level": "advisory-free",
@@ -8757,7 +8777,7 @@
     },
     {
       "file": "workspace/README.md",
-      "line": 36,
+      "line": 38,
       "col": 139,
       "rule": "long-sentence",
       "level": "advisory-free",
@@ -8768,7 +8788,7 @@
     },
     {
       "file": "workspace/README.md",
-      "line": 36,
+      "line": 38,
       "col": 223,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -9779,54 +9799,9 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 3,
-  "recurring_findings": 453,
-  "resolved_findings": [
-    {
-      "file": "skills/agent-skill-authoring/SKILL.md",
-      "line": 232,
-      "col": 18,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "begins",
-      "message": "'begin' and 'start' name the same action. Pick one and use it every time.",
-      "fingerprint": "cdded221cb31c45f9059249a",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/task_board.md",
-      "line": 40,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "226 words",
-      "message": "Sentence has 226 words (cap 25). Split it.",
-      "fingerprint": "e0b74e89eb1797d73e80da52",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/drawing/assets/daily-index-template.md",
-      "line": 5,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "26 words",
-      "message": "Sentence has 26 words (cap 25). Split it.",
-      "fingerprint": "f7683dcec815fe504f98befb",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/drawing/references/prompt-fidelity.md",
-      "line": 315,
-      "col": 156,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "fetch",
-      "message": "'fetch' and 'retrieve' name the same action. Pick one and use it every time.",
-      "fingerprint": "c784915b81aefed48004e9cb",
-      "comparison": "resolved"
-    }
-  ],
+  "new_findings": 1,
+  "recurring_findings": 456,
+  "resolved_findings": [],
   "checks": [
     {
       "name": "Wrapper shell syntax",
@@ -9844,7 +9819,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.300s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.237s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -9862,7 +9837,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 249 active Markdown files (349 available as link targets) and 326 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 253 active Markdown files (353 available as link targets) and 326 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []

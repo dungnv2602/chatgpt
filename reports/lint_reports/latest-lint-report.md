@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#184](https://github.com/dungnv2602/chatgpt/actions/runs/45343010144)
-- **Run ID / attempt:** 45343010144 / 1
+- **Run:** [#185](https://github.com/dungnv2602/chatgpt/actions/runs/45343527317)
+- **Run ID / attempt:** 45343527317 / 1
 - **Workflow:** STE Lint Full Technical Documentation
-- **Branch / commit:** gpt / 3f27a3985619466e0df3c64b895163acb2ee33b7
+- **Branch / commit:** gpt / f063afecb480325a871204c1e2ff50342c1df432
 - **Event:** push
 - **Execution mode:** repository-wide
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 57fbf914c9a28dd0e38645a7952046de5a525b97
-- **Generated (UTC):** 2026-11-24T06:47:45.583101+00:00
+- **Linter source SHA:** 90b92850e19647e6349d8355d921d46b5cfedf21
+- **Generated (UTC):** 2026-11-24T06:52:16.385102+00:00
 
 ## 1. Executive summary
 
@@ -19,12 +19,12 @@
 | Files evaluated | 51 |
 | Files that failed | 14 |
 | Files with findings | 41 |
-| Total findings | 456 |
+| Total findings | 457 |
 | Hard findings | 118 |
-| Advisory findings | 338 |
-| New findings | 3 |
-| Recurring findings | 453 |
-| Resolved findings | 4 |
+| Advisory findings | 339 |
+| New findings | 1 |
+| Recurring findings | 456 |
+| Resolved findings | 0 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -138,7 +138,7 @@ The table includes every evaluated file, including files with zero findings and 
 | images/takeout/history/2026-11-20-001/attempt-002/verification-report.md | FAIL | 11 | 5 | 0 | 189 | 5.8 | 1 |
 | skills/asd-ste100/references/writing-rules.md | PASS | 8 | 0 | 6 | 706 | 1.1 | 0 |
 | skills/philosophy-religion-asceticism/references/answer-patterns.md | PASS | 1 | 0 | 0 | 235 | 0.4 | 0 |
-| workspace/README.md | FAIL | 9 | 5 | 0 | 542 | 1.7 | 1 |
+| workspace/README.md | FAIL | 10 | 5 | 0 | 618 | 1.6 | 1 |
 | skills/the-worker/assets/session-summary-template.md | PASS | 0 | 0 | 0 | 106 | 0.0 | 0 |
 | skills/the-worker/SKILL.md | FAIL | 29 | 18 | 0 | 4729 | 0.6 | 1 |
 | skills/drawing/references/prompt-fidelity.md | PASS | 45 | 0 | 15 | 3676 | 1.2 | 0 |
@@ -155,7 +155,7 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 295 |
+| passive-voice | 296 |
 | semicolon | 71 |
 | present-perfect | 43 |
 | long-sentence | 20 |
@@ -194,7 +194,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.300s
+Ran 4 tests in 0.237s
 
 OK
 ~~~
@@ -227,7 +227,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 249 active Markdown files (349 available as link targets) and 326 local Markdown links.
+Scanned 253 active Markdown files (353 available as link targets) and 326 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -237,18 +237,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **present-perfect** · skills/document-standards/references/document-type-catalog.md:92:268 · **new** · fingerprint: 028b84870f82ee2f98dcbf3b
+- **passive-voice** · workspace/README.md:32:103 · **new** · fingerprint: 5659468f603873dc9863f69b
   - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has run
-- **long-sentence** · workspace/task_board.md:37:1 · **new** · fingerprint: 00f8a90274c82ba38a60c467
-  - **Level:** advisory-free
-  - **Message:** Sentence has 152 words (cap 25). Split it.
-  - **Matched text:** 152 words
-- **long-sentence** · workspace/task_board.md:55:1 · **new** · fingerprint: 3e5e0d9186e70d323aa5cb28
-  - **Level:** advisory-free
-  - **Message:** Sentence has 130 words (cap 25). Split it.
-  - **Matched text:** 130 words
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Failed
 
 ### Recurring findings
 
@@ -1236,6 +1228,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
+- **present-perfect** · skills/document-standards/references/document-type-catalog.md:92:268 · **recurring** · fingerprint: 028b84870f82ee2f98dcbf3b
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has run
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:94:169 · **recurring** · fingerprint: bb8de6bc648079b20917fbff
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1392,6 +1388,14 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is preserved
+- **long-sentence** · workspace/task_board.md:37:1 · **recurring** · fingerprint: 00f8a90274c82ba38a60c467
+  - **Level:** advisory-free
+  - **Message:** Sentence has 152 words (cap 25). Split it.
+  - **Matched text:** 152 words
+- **long-sentence** · workspace/task_board.md:55:1 · **recurring** · fingerprint: 3e5e0d9186e70d323aa5cb28
+  - **Level:** advisory-free
+  - **Message:** Sentence has 130 words (cap 25). Split it.
+  - **Matched text:** 130 words
 - **passive-voice** · skills/drawing/references/style-guide.md:60:31 · **recurring** · fingerprint: 581a2555fa37c98ab6bcfea3
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1684,19 +1688,19 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is removed
-- **passive-voice** · workspace/README.md:32:108 · **recurring** · fingerprint: 4a500644b11ea45e7a256ac0
+- **passive-voice** · workspace/README.md:34:108 · **recurring** · fingerprint: 4a500644b11ea45e7a256ac0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is archived
-- **synonym-rotation** · workspace/README.md:32:364 · **recurring** · fingerprint: 01eb48b1e6acd03619987cff
+- **synonym-rotation** · workspace/README.md:34:364 · **recurring** · fingerprint: 01eb48b1e6acd03619987cff
   - **Level:** advisory-free
   - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
   - **Matched text:** delete
-- **long-sentence** · workspace/README.md:36:139 · **recurring** · fingerprint: a222143dea70fba6ab12863a
+- **long-sentence** · workspace/README.md:38:139 · **recurring** · fingerprint: a222143dea70fba6ab12863a
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
-- **semicolon** · workspace/README.md:36:223 · **recurring** · fingerprint: 99ddd247f24032b76e53f957
+- **semicolon** · workspace/README.md:38:223 · **recurring** · fingerprint: 99ddd247f24032b76e53f957
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -2067,22 +2071,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### Resolved findings
 
-- **synonym-rotation** · skills/agent-skill-authoring/SKILL.md:232:18 · **resolved** · fingerprint: cdded221cb31c45f9059249a
-  - **Level:** advisory-free
-  - **Message:** 'begin' and 'start' name the same action. Pick one and use it every time.
-  - **Matched text:** begins
-- **long-sentence** · workspace/task_board.md:40:1 · **resolved** · fingerprint: e0b74e89eb1797d73e80da52
-  - **Level:** advisory-free
-  - **Message:** Sentence has 226 words (cap 25). Split it.
-  - **Matched text:** 226 words
-- **long-sentence** · skills/drawing/assets/daily-index-template.md:5:1 · **resolved** · fingerprint: f7683dcec815fe504f98befb
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-- **synonym-rotation** · skills/drawing/references/prompt-fidelity.md:315:156 · **resolved** · fingerprint: c784915b81aefed48004e9cb
-  - **Level:** advisory-free
-  - **Message:** 'fetch' and 'retrieve' name the same action. Pick one and use it every time.
-  - **Matched text:** fetch
+None.
 
 ## 8. Complete per-file diagnostics
 
@@ -3681,7 +3670,7 @@ No STE findings were recorded for this file.
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **present-perfect** · skills/document-standards/references/document-type-catalog.md:92:268 · **new** · fingerprint: 028b84870f82ee2f98dcbf3b
+- **present-perfect** · skills/document-standards/references/document-type-catalog.md:92:268 · **recurring** · fingerprint: 028b84870f82ee2f98dcbf3b
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has run
@@ -3907,12 +3896,12 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is preserved
 
-- **long-sentence** · workspace/task_board.md:37:1 · **new** · fingerprint: 00f8a90274c82ba38a60c467
+- **long-sentence** · workspace/task_board.md:37:1 · **recurring** · fingerprint: 00f8a90274c82ba38a60c467
   - **Level:** advisory-free
   - **Message:** Sentence has 152 words (cap 25). Split it.
   - **Matched text:** 152 words
 
-- **long-sentence** · workspace/task_board.md:55:1 · **new** · fingerprint: 3e5e0d9186e70d323aa5cb28
+- **long-sentence** · workspace/task_board.md:55:1 · **recurring** · fingerprint: 3e5e0d9186e70d323aa5cb28
   - **Level:** advisory-free
   - **Message:** Sentence has 130 words (cap 25). Split it.
   - **Matched text:** 130 words
@@ -4405,11 +4394,11 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 9
+- **Findings:** 10
 - **Hard findings:** 5
 - **Baseline:** 0
-- **Words:** 542
-- **Findings per 100 words:** 1.7
+- **Words:** 618
+- **Findings per 100 words:** 1.6
 
 #### Complete diagnostics
 
@@ -4438,22 +4427,27 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is removed
 
-- **passive-voice** · workspace/README.md:32:108 · **recurring** · fingerprint: 4a500644b11ea45e7a256ac0
+- **passive-voice** · workspace/README.md:32:103 · **new** · fingerprint: 5659468f603873dc9863f69b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Failed
+
+- **passive-voice** · workspace/README.md:34:108 · **recurring** · fingerprint: 4a500644b11ea45e7a256ac0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is archived
 
-- **synonym-rotation** · workspace/README.md:32:364 · **recurring** · fingerprint: 01eb48b1e6acd03619987cff
+- **synonym-rotation** · workspace/README.md:34:364 · **recurring** · fingerprint: 01eb48b1e6acd03619987cff
   - **Level:** advisory-free
   - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
   - **Matched text:** delete
 
-- **long-sentence** · workspace/README.md:36:139 · **recurring** · fingerprint: a222143dea70fba6ab12863a
+- **long-sentence** · workspace/README.md:38:139 · **recurring** · fingerprint: a222143dea70fba6ab12863a
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
 
-- **semicolon** · workspace/README.md:36:223 · **recurring** · fingerprint: 99ddd247f24032b76e53f957
+- **semicolon** · workspace/README.md:38:223 · **recurring** · fingerprint: 99ddd247f24032b76e53f957
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
