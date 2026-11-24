@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-24T09:37:35Z",
+  "updated_at_utc": "2026-11-24T09:40:47Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
@@ -36,6 +36,7 @@
       "reports/gh_ac_reports/history/424715662/45343527285-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424715662/45344012691-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45344012691-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/424715662/45367046002-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424743410/45301729199-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424743410/45301729199-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424743410/45330179454-attempt-1-post_run/report.json",
@@ -110,6 +111,7 @@
       "reports/lint_reports/on_changed/history/45338489436-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45343527285-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45344012691-attempt-1/report.json",
+      "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
       "reports/lint_reports/on_repo/history/45301729199-attempt-1/report.json",
       "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
       "reports/lint_reports/on_repo/history/45330655561-attempt-1/report.json",
@@ -1904,8 +1906,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T05:06:05.512327+00:00",
-      "last_seen_utc": "2026-11-24T09:20:32.068473+00:00",
-      "occurrence_count": 12,
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 13,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_repo/history/45330655561-attempt-1/report.json",
@@ -1913,13 +1915,6 @@
           "observed_at_utc": "2026-11-24T05:06:05.512327+00:00",
           "note": "on_repo · skills/document-standards/references/document-type-catalog.md:215:203",
           "observation_id": "lint:45330655561:1"
-        },
-        {
-          "report_path": "reports/lint_reports/on_repo/history/45343527317-attempt-1/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45343527317",
-          "observed_at_utc": "2026-11-24T06:52:16.385102+00:00",
-          "note": "on_repo · skills/document-standards/references/document-type-catalog.md:216:203",
-          "observation_id": "lint:45343527317:1"
         },
         {
           "report_path": "reports/lint_reports/on_repo/history/45352584220-attempt-1/report.json",
@@ -1941,6 +1936,13 @@
           "observed_at_utc": "2026-11-24T09:20:32.068473+00:00",
           "note": "on_repo · skills/document-standards/references/document-type-catalog.md:216:203",
           "observation_id": "lint:45364189404:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:216:203",
+          "observation_id": "lint:45367046002:1"
         }
       ],
       "resolution": null,
@@ -1961,8 +1963,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T05:06:05.512327+00:00",
-      "last_seen_utc": "2026-11-24T09:20:32.068473+00:00",
-      "occurrence_count": 12,
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 13,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_repo/history/45330655561-attempt-1/report.json",
@@ -1970,13 +1972,6 @@
           "observed_at_utc": "2026-11-24T05:06:05.512327+00:00",
           "note": "on_repo · skills/document-standards/references/document-type-catalog.md:58:260",
           "observation_id": "lint:45330655561:1"
-        },
-        {
-          "report_path": "reports/lint_reports/on_repo/history/45343527317-attempt-1/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45343527317",
-          "observed_at_utc": "2026-11-24T06:52:16.385102+00:00",
-          "note": "on_repo · skills/document-standards/references/document-type-catalog.md:58:260",
-          "observation_id": "lint:45343527317:1"
         },
         {
           "report_path": "reports/lint_reports/on_repo/history/45352584220-attempt-1/report.json",
@@ -1998,6 +1993,13 @@
           "observed_at_utc": "2026-11-24T09:20:32.068473+00:00",
           "note": "on_repo · skills/document-standards/references/document-type-catalog.md:58:260",
           "observation_id": "lint:45364189404:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:58:260",
+          "observation_id": "lint:45367046002:1"
         }
       ],
       "resolution": null,
@@ -2018,8 +2020,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T05:06:05.512327+00:00",
-      "last_seen_utc": "2026-11-24T09:20:32.068473+00:00",
-      "occurrence_count": 12,
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 13,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_repo/history/45330655561-attempt-1/report.json",
@@ -2027,13 +2029,6 @@
           "observed_at_utc": "2026-11-24T05:06:05.512327+00:00",
           "note": "on_repo · skills/document-standards/references/document-type-catalog.md:73:117",
           "observation_id": "lint:45330655561:1"
-        },
-        {
-          "report_path": "reports/lint_reports/on_repo/history/45343527317-attempt-1/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45343527317",
-          "observed_at_utc": "2026-11-24T06:52:16.385102+00:00",
-          "note": "on_repo · skills/document-standards/references/document-type-catalog.md:73:117",
-          "observation_id": "lint:45343527317:1"
         },
         {
           "report_path": "reports/lint_reports/on_repo/history/45352584220-attempt-1/report.json",
@@ -2055,6 +2050,13 @@
           "observed_at_utc": "2026-11-24T09:20:32.068473+00:00",
           "note": "on_repo · skills/document-standards/references/document-type-catalog.md:73:117",
           "observation_id": "lint:45364189404:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:73:117",
+          "observation_id": "lint:45367046002:1"
         }
       ],
       "resolution": null,
@@ -2075,8 +2077,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T05:06:05.512327+00:00",
-      "last_seen_utc": "2026-11-24T09:20:32.068473+00:00",
-      "occurrence_count": 12,
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 13,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_repo/history/45330655561-attempt-1/report.json",
@@ -2084,13 +2086,6 @@
           "observed_at_utc": "2026-11-24T05:06:05.512327+00:00",
           "note": "on_repo · skills/document-standards/references/document-type-catalog.md:116:251",
           "observation_id": "lint:45330655561:1"
-        },
-        {
-          "report_path": "reports/lint_reports/on_repo/history/45343527317-attempt-1/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45343527317",
-          "observed_at_utc": "2026-11-24T06:52:16.385102+00:00",
-          "note": "on_repo · skills/document-standards/references/document-type-catalog.md:117:251",
-          "observation_id": "lint:45343527317:1"
         },
         {
           "report_path": "reports/lint_reports/on_repo/history/45352584220-attempt-1/report.json",
@@ -2112,6 +2107,13 @@
           "observed_at_utc": "2026-11-24T09:20:32.068473+00:00",
           "note": "on_repo · skills/document-standards/references/document-type-catalog.md:117:251",
           "observation_id": "lint:45364189404:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:117:251",
+          "observation_id": "lint:45367046002:1"
         }
       ],
       "resolution": null,
@@ -2175,8 +2177,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T06:11:23.278182+00:00",
-      "last_seen_utc": "2026-11-24T09:20:32.068473+00:00",
-      "occurrence_count": 7,
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 8,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45338489436-attempt-1/report.json",
@@ -2184,13 +2186,6 @@
           "observed_at_utc": "2026-11-24T06:11:23.278182+00:00",
           "note": "on_changed · skills/document-standards/references/document-type-catalog.md:92:268",
           "observation_id": "lint:45338489436:1"
-        },
-        {
-          "report_path": "reports/lint_reports/on_repo/history/45343527317-attempt-1/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45343527317",
-          "observed_at_utc": "2026-11-24T06:52:16.385102+00:00",
-          "note": "on_repo · skills/document-standards/references/document-type-catalog.md:92:268",
-          "observation_id": "lint:45343527317:1"
         },
         {
           "report_path": "reports/lint_reports/on_repo/history/45352584220-attempt-1/report.json",
@@ -2212,6 +2207,13 @@
           "observed_at_utc": "2026-11-24T09:20:32.068473+00:00",
           "note": "on_repo · skills/document-standards/references/document-type-catalog.md:92:268",
           "observation_id": "lint:45364189404:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:92:268",
+          "observation_id": "lint:45367046002:1"
         }
       ],
       "resolution": null,
@@ -2617,6 +2619,1746 @@
         "20261124-080232-08"
       ],
       "task_group": "ci-c8106d6c6053ab98"
+    },
+    {
+      "finding_id": "lint-80ff0d75ee9e57c63a759659",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/assets/pattern-entry-templates.md:20:40",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047"
+      ],
+      "task_group": "ci-277f23743125ca3d"
+    },
+    {
+      "finding_id": "lint-e71b3a8ba6751987cf0fb966",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/assets/pattern-entry-templates.md:21:125",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047"
+      ],
+      "task_group": "ci-277f23743125ca3d"
+    },
+    {
+      "finding_id": "lint-4cca9a878a87bc55497611c8",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/assets/pattern-entry-templates.md:25:67",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047"
+      ],
+      "task_group": "ci-277f23743125ca3d"
+    },
+    {
+      "finding_id": "lint-ad46045395dc40b74a35f499",
+      "source_family": "lint",
+      "category": "present-perfect",
+      "title": "present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/assets/pattern-entry-templates.md:107:246",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-01"
+      ],
+      "task_group": "ci-a5917918c9496190"
+    },
+    {
+      "finding_id": "lint-9a512eba16db074bc582887d",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/assets/pattern-entry-templates.md:125:19",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047"
+      ],
+      "task_group": "ci-277f23743125ca3d"
+    },
+    {
+      "finding_id": "lint-70c3cc1be9c4e1c4ae2e0bd6",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/assets/pattern-entry-templates.md:117:16",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047"
+      ],
+      "task_group": "ci-277f23743125ca3d"
+    },
+    {
+      "finding_id": "lint-92485eeff29784dba3505b2d",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/assets/pattern-entry-templates.md:121:20",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047"
+      ],
+      "task_group": "ci-277f23743125ca3d"
+    },
+    {
+      "finding_id": "lint-3f5048026fc0041e11f90db1",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/assets/pattern-entry-templates.md:123:15",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047"
+      ],
+      "task_group": "ci-277f23743125ca3d"
+    },
+    {
+      "finding_id": "lint-64d3910316c7c02208869eec",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:107:69",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-9a01e5392bd2f640fccc16f8",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:180:77",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-ae959494a55d88be42e4abf1",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:189:31",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-d87f3bdb2e4a5cd311e567e0",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:208:27",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-4a1561330f4473854edf7d68",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:209:35",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-83aca3a3f45f79d0190f037b",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:216:76",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-4adc0f726bafb883a943a4c7",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:255:21",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-182721976b7c74744cfa668b",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:363:300",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-108fef94cd85af0be9bae737",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:420:42",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-aa2b4a16cd7d5222231207e6",
+      "source_family": "lint",
+      "category": "synonym-rotation",
+      "title": "synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:363:200",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-03"
+      ],
+      "task_group": "ci-fb6fca08038ba3cb"
+    },
+    {
+      "finding_id": "lint-f718531ecab4f80464bcfc7a",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:363:222",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-856947d77008b1a8011c64b1",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:371:238",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-f7c61d976e048fc4d2187457",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:388:19",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-d518259c92d98a763deb57db",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:421:50",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-a9eeb0708efad4ad4ebac5a3",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:422:42",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-2ebc7cf088303cbfd5592603",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:426:11",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-9f274e841902dbf2529fd77d",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:438:58",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-c41dfa89d8e1360fd85eac2a",
+      "source_family": "lint",
+      "category": "synonym-rotation",
+      "title": "synonym-rotation: 'modify' and 'change' name the same action. Pick one and use it every time.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:459:47",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-03"
+      ],
+      "task_group": "ci-fb6fca08038ba3cb"
+    },
+    {
+      "finding_id": "lint-1fde6e149badf6f261b22219",
+      "source_family": "lint",
+      "category": "present-perfect",
+      "title": "present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:462:77",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-04"
+      ],
+      "task_group": "ci-e11eae2f7e2812df"
+    },
+    {
+      "finding_id": "lint-e9ab9c52b006f1c31b593715",
+      "source_family": "lint",
+      "category": "synonym-rotation",
+      "title": "synonym-rotation: 'confirm' and 'check' name the same action. Pick one and use it every time.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:464:46",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-03"
+      ],
+      "task_group": "ci-fb6fca08038ba3cb"
+    },
+    {
+      "finding_id": "lint-f6cfabada63cd4b942c2fdab",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:480:24",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-9ce13cb184b2103476d72b72",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/SKILL.md:506:13",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-02"
+      ],
+      "task_group": "ci-5690b9c972aa7f35"
+    },
+    {
+      "finding_id": "lint-521a3f31bc54ec727caae5b1",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:172:129",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-bcb83f45ddf38808e5512023",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:33:453",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-8aaaeb4dae872360fad1cb7e",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:66:165",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-bd13d200f2cd36d327625082",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:39:264",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-a41ef6bbf64045f943d2af47",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:45:207",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-2822a6b08706709830f1f820",
+      "source_family": "lint",
+      "category": "synonym-rotation",
+      "title": "synonym-rotation: 'check' and 'validate' name the same action. Pick one and use it every time.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:54:250",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-05"
+      ],
+      "task_group": "ci-3b12273368c4cba0"
+    },
+    {
+      "finding_id": "lint-b6bdd9a4073c471e94b40acf",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 37 words (cap 25). Split it.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:57:171",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-050735-02"
+      ],
+      "task_group": "ci-e4995eba5a25e6fc"
+    },
+    {
+      "finding_id": "lint-4213736a472e3b847e27d1ae",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:57:435",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-199f2603ee3fb1c3abd18ce6",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:58:546",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-ea92de1fbbfc0e6cafa24f7b",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 26 words (cap 25). Split it.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:148:200",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-050735-02"
+      ],
+      "task_group": "ci-e4995eba5a25e6fc"
+    },
+    {
+      "finding_id": "lint-4b99bc607f23d422ec3ca66d",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:73:316",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-bb8de6bc648079b20917fbff",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:94:169",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-305641bf283ed85e29efe674",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:105:263",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-0c06b4bea825bbb8305e2205",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:143:39",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-5bfc1af36a470f1f001188ee",
+      "source_family": "lint",
+      "category": "present-perfect",
+      "title": "present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:148:479",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-07"
+      ],
+      "task_group": "ci-0f73596d49e0fbc8"
+    },
+    {
+      "finding_id": "lint-c8520603dffa16dea8ea3dc4",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:148:483",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-6046357fc6d15e771a97e487",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:149:136",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-f99656c38dfabd9bba499a0e",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:151:131",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-2d052b2c33e7ba911021d0e1",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:152:199",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-95aef61741aad14590481dc3",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:154:262",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-446871a6fecc2890373b2df1",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:164:230",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-d8738c991b456b6b6a7cdd80",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:184:138",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-32702bd5a2c5ca60292eca3a",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:187:203",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-9a67866b9f0335cac5eb0d64",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:196:57",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-7e6ec02ac376dc4e638ffc6d",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:200:189",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-d5a3d56f7803c8bd7fe2f5bb",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/document-standards/references/document-type-catalog.md:208:32",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-080232-06"
+      ],
+      "task_group": "ci-6d4f7c7db605d01b"
+    },
+    {
+      "finding_id": "lint-cfe2615d32498b8cb18022ac",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · workspace/task_board.md:7:110",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-06"
+      ],
+      "task_group": "ci-ec825d4d86907bf8"
+    },
+    {
+      "finding_id": "lint-e6baee8e949dc0ee0a1c0b34",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · workspace/task_board.md:7:137",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-06"
+      ],
+      "task_group": "ci-ec825d4d86907bf8"
+    },
+    {
+      "finding_id": "lint-86cd35c95eb6d5488c436e85",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · workspace/task_board.md:7:162",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-06"
+      ],
+      "task_group": "ci-ec825d4d86907bf8"
+    },
+    {
+      "finding_id": "lint-f9d42240cfb6f779e60dcd02",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "last_seen_utc": "2026-11-24T09:40:21.817393+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45367046002",
+          "observed_at_utc": "2026-11-24T09:40:21.817393+00:00",
+          "note": "on_changed · skills/drawing/references/patterns/README.md:34:143",
+          "observation_id": "lint:45367046002:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-094047-07"
+      ],
+      "task_group": "ci-634a859dbae50e17"
     }
   ]
 }
