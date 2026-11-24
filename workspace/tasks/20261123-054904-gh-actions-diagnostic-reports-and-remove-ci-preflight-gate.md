@@ -356,6 +356,12 @@ The Ledger remains event-driven. It creates grouped Proposed tasks for newly ide
 
 ## 11. Verification
 
+- **Check:** Pending-run reconciliation and diagnostics regression fixes in the current repository state.
+- **Method:** Retrieved the reporter, reporter tests, Ledger, Ledger tests, diagnostics workflow, README, report index, and Ledger JSON from branch `gpt`. Verified the three implementation/documentation commits and read back the updated task record.
+- **Result:** The pending-run reconciliation implementation and its regression test are present. The Ledger baseline constant and its regression coverage are present, and the test helper signature is valid. The repository index records 21 pending run IDs and zero exhausted IDs. The Ledger has schema 1.4.0, zero active findings, seven processed reports, and both lint baselines false.
+- **Limitations:** This was a repository read-back only. No Actions runs were queried. No repository code or tests were executed locally. Hosted validation of the current fixes remains unverified.
+
+
 - **Check:** Event-driven Ledger task generation and report publication.
 - **Method:** Read back the modified generator, schema, tests, canonical task template, capture action, diagnostics sweep, Worker skill, task catalog, and handoff guide from branch gpt.
 - **Result:** Implementation and regression coverage are committed. Local execution was not performed. Hosted validation has not been observed and must occur naturally.
