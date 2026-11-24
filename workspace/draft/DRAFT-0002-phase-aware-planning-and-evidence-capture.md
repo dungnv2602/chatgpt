@@ -2,7 +2,7 @@
 record_type: decision-draft
 template_version: "1.0"
 id: "DRAFT-0002"
-revision: 1
+revision: 2
 status: "in-review"
 created: "2026-11-24"
 updated: "2026-11-24"
@@ -11,9 +11,9 @@ decision_makers:
   - "User"
 consulted: []
 informed: []
-related_drafts:
-  - "DRAFT-0001"
-related_adrs: []
+related_drafts: []
+related_adrs:
+  - "ADR-0001"
 ---
 
 # Introduce Phase-Aware Planning and Evidence Capture for Complex Worker Tasks
@@ -30,7 +30,7 @@ Add an optional findings record for research-heavy tasks. Use it to preserve sou
 
 Update The Worker and add one focused Worker reference. Do not create a new skill at this stage. Keep foundational initialization and the existing user approval rules unchanged.
 
-This Draft complements DRAFT-0001. It does not amend or replace that proposal. DRAFT-0001 remains under its separate review. Reconcile the two Drafts before either implementation proceeds where their scopes overlap.
+ADR-0001 establishes the repository's Draft, ADR, implementation-task, and confirmation process. This Draft proposes a separate task-execution change under that governance. ADR-0001 does not decide or authorize this proposal. Review and promote DRAFT-0002 through ADR-0001 before implementation.
 
 ## Context and Problem Statement
 
@@ -97,7 +97,7 @@ The repository does not need another task-status system. It needs a clearer exec
 - Change the task board into a progress dashboard.
 - Replace the CI Ledger with a general findings database.
 - Change the approval rules or make a phase checklist an authorization mechanism.
-- Change the separate repository-analysis proposal in DRAFT-0001.
+- Amend or expand the accepted governance and repository-analysis decision in ADR-0001.
 
 ## Decision Drivers
 
@@ -116,7 +116,7 @@ The repository does not need another task-status system. It needs a clearer exec
 ### Option 1 — Keep the current Worker workflow unchanged
 
 - **Description:** Continue using the existing task template, Progress Log, task board, discussion register, and handoff rules.
-- **Good:** No template, skill, renderer, or archive changes are required.
+- **Good:** The existing workflow needs no template, skill, renderer, or archive changes.
 - **Good:** The current workflow already supports cross-conversation recovery and remote-only repository work.
 - **Neutral:** Research can continue to use the task References section and progress entries.
 - **Bad:** Complex tasks still lack a canonical phase model and a single next action.
@@ -200,19 +200,19 @@ Do not create planning overhead for a simple task. A lightweight task still has 
 
 ### 2. Add an Execution Plan to the task record
 
-Update `workspace/TASK_TEMPLATE.md` to version 1.3. Add an Execution Plan section after Decisions.
+Update `workspace/TASK_TEMPLATE.md` from version 1.3 to version 1.4. Add an Execution Plan section immediately after Decisions.
 
-The section should define:
+The section must record:
 
 - Planning level.
 - Intended completion condition.
-- Current phase.
-- One exact Next Step.
-- Named phases in execution order.
+- Current phase, or `Not applicable` for a lightweight task.
+- Exactly one immediate Next Step.
+- Named phases in execution order when the task needs a phase plan.
 - One objective for each phase.
 - Concrete actions or deliverables for each phase.
 - Observable exit criteria for each phase.
-- The phase status.
+- The status of each phase.
 
 Use these phase status values:
 
@@ -220,15 +220,17 @@ Use these phase status values:
 - `in_progress`
 - `complete`
 
-Use two to seven phases. Three to seven phases are preferred when the task has enough distinct work.
+Use two to seven phases. Prefer three to seven when the task contains enough distinct work.
 
-Allow a task to state that a phase plan is not required. Do not force artificial phases onto a lightweight task.
+Every task must record its planning level and one Next Step. A lightweight task may state that a phase plan is not required. Do not force artificial phases onto a lightweight task.
 
-Keep no more than one phase `in_progress` unless the user authorizes parallel execution. Keep the task itself Blocked or Paused when an external condition prevents work. Do not mark its active phase complete merely because the task is blocked.
+Keep no more than one phase `in_progress` unless the user authorizes parallel execution. Set the task status to `Blocked` or `Paused` when an external condition prevents work. Do not mark the active phase complete solely because an external condition prevents progress.
 
 A phase may become `complete` only after its exit criteria pass. Record the evidence in the Progress Log or the linked findings note.
 
-Keep exactly one immediate Next Step. It must name the next action, not a vague goal such as "continue research". Update it whenever the active phase or immediate action changes.
+Keep exactly one authoritative Next Step in the Execution Plan. It must name the immediate action, not a vague goal such as "continue research". Update it whenever the active phase or immediate action changes.
+
+Rename the current `Next Actions` section to `Following Actions`. Keep it optional and use it only for ordered actions that follow the immediate Next Step. Do not repeat the Next Step or present a Following Actions item as the current action. The `Remaining Work` section records unresolved requirements and blockers, not another action pointer. The Progress Log's `Next` field records what followed a historical entry. It does not override the current Next Step.
 
 Do not use a phase status as a task status. The task metadata continues to use the existing Worker values.
 
@@ -245,7 +247,7 @@ The existing Progress Log already records:
 - Verification results.
 - The next action.
 
-Keep it as the only chronological work history.
+Keep it as the only chronological work history. A Progress Log entry's `Next` field records the action that followed that historical entry. The Execution Plan's Next Step remains the only current action pointer.
 
 Add progress entries at meaningful state changes. These include phase transitions, important discoveries, decisions, errors, validation, commits, task switches, blockers, and handoffs.
 
@@ -293,7 +295,7 @@ Use these evidence classifications:
 | Inference | A conclusion drawn from one or more observations. |
 | Hypothesis | A proposed explanation that still needs verification. |
 
-Do not promote an external claim or hypothesis to a repository fact. Record uncertainty explicitly. Use confidence only when the note also states why that confidence is justified.
+Do not promote an external claim or hypothesis to a repository fact. Record uncertainty explicitly. State the evidence that supports each confidence rating.
 
 Keep original URLs and exact repository paths. Use commit-pinned links when the source supports them. Do not copy large source passages when a concise evidence summary is sufficient.
 
@@ -303,17 +305,17 @@ For a lightweight task, keep the findings in the task record's Progress Log and 
 
 ### 5. Apply a research capture checkpoint
 
-For research-led work, preserve important discoveries before they are displaced by later operations.
+For research-led work, capture important discoveries before later operations obscure them.
 
 Use this procedure:
 
-1. Record a source and its important result after each major discovery.
-2. Update the findings note no later than after two substantial search, browser, document, or visual-inspection operations.
-3. Record visual or PDF findings while the source remains available.
-4. Preserve the source URL, file path, commit, or other retrieval pointer.
+1. Record a source and its important result when a major discovery changes or sharpens the analysis.
+2. Capture visual or PDF findings while the source remains available.
+3. Preserve the source URL, file path, commit, or other retrieval pointer.
+4. Update the findings note before switching tasks, ending a session, or moving to a context where the evidence may be difficult to recover.
 5. Keep the task's Current State and Next Step aligned with the latest findings.
 
-Treat the two-operation limit as a checkpoint, not a requirement to create a new file after every tool call. One coherent note may contain several related findings.
+Use event-based checkpoints rather than a fixed number of tool operations. Capture evidence after material discoveries, before context switches, and at session end. One coherent note may contain several related findings.
 
 ### 6. Use explicit checkpoints
 
@@ -341,7 +343,7 @@ Do not update every workspace index after every trivial operation. Keep each ind
 
 ### 7. Recover from the repository state
 
-Use the existing Worker recovery sequence. Add the phase and findings checks.
+Extend the Worker's existing recovery sequence with phase and findings verification.
 
 1. Read `workspace/discussion.md`.
 2. Read `workspace/README.md` and `workspace/task_board.md`.
@@ -361,9 +363,9 @@ Use this reboot checklist during a complex recovery:
 |---|---|
 | Where is the work now? | Current phase and task status |
 | What is the next action? | Next Step |
-| What outcome is required? | Objective and acceptance criteria |
-| What has been learned? | Findings note or task evidence |
-| What work has occurred? | Progress Log and committed repository state |
+| What outcome must the task meet? | Objective and acceptance criteria |
+| What did the Worker learn? | Findings note or task evidence |
+| What work took place? | Progress Log and committed repository state |
 
 Do not use conversation memory as a substitute for repository verification. Do not create automatic access to local session stores or transcripts.
 
@@ -431,8 +433,8 @@ When the task closes:
 
 1. Include the relevant findings summary and source links in the final task record.
 2. Move the exact findings note to `archive/tasks/YYYYMMDD-HHMMSS-findings.md` with the task archive.
-3. Register its exact archive path and UTC timestamp in the existing retention index.
-4. Read back both archived files before deleting active copies.
+3. Register the task record and findings note as separate entries with their exact archive paths. Use the same UTC archive timestamp for both files in the existing retention index.
+4. Read back both archived files before deleting either active copy. If either archive write or read-back fails, keep both active records and reconcile the partial archive state.
 5. Keep both archive records under the existing task retention policy.
 
 Do not add findings notes to the report archive or create a separate findings retention process.
@@ -443,7 +445,7 @@ If a finding has continuing project value, propose a durable skill reference, AD
 
 The task board remains an index. Do not add phase counts or duplicate progress details.
 
-The discussion register keeps its existing sections and report limit. Current Step links the task being worked on. Open Discussions links any Draft awaiting review. Reports contains only completed and verified outcomes.
+The discussion register keeps its existing sections and report limit. Current Step links the active task. Open Discussions links any Draft awaiting review. Reports contains only completed and verified outcomes.
 
 The CI Ledger remains the source of truth for CI finding lifecycle and evidence references. A findings note may cite Ledger records. It must not create duplicate CI finding identities or become another active issue backlog.
 
@@ -458,7 +460,7 @@ The CI Ledger remains the source of truth for CI finding lifecycle and evidence 
 - **Neutral:** The task template becomes longer. Its phased sections remain optional for lightweight tasks.
 - **Negative:** The Ledger renderer and its tests need coordinated updates when the task template changes.
 - **Negative:** Optional findings notes add a second active file and an archive-retention entry for some tasks.
-- **Negative:** Phase status checks remain a human semantic review. No automatic hook validates completion in this environment.
+- **Negative:** A human must assess phase status and completion. This environment has no automatic hook for that purpose.
 
 ## Risks and Safeguards
 
@@ -466,7 +468,7 @@ The CI Ledger remains the source of truth for CI finding lifecycle and evidence 
 |---|---|---|---|
 | Task template duplicates the Progress Log | Medium / Medium | Keep chronology only in the task Progress Log. | A worker may still repeat details in multiple sections. |
 | Phases become artificial overhead | Medium / Medium | Use planning levels and skip phases for lightweight tasks. | Complexity classification requires judgment. |
-| A phase is marked complete without evidence | Medium / High | Define observable exit criteria and record verification. | Semantic review can still miss a gap. |
+| A worker marks a phase complete without evidence | Medium / High | Define observable exit criteria and record verification. | Semantic review can still miss a gap. |
 | External content becomes an instruction source | Medium / High | Treat findings and source material as untrusted data. | Model-level prompt injection cannot be eliminated by Markdown framing. |
 | A findings note conflicts with the task record | Low / High | Task record owns status and approval. Findings notes are evidence only. | A stale note can still mislead until reconciled. |
 | Concurrent workers overwrite shared state | Medium / High | One owner controls the task record, board, and discussion register. | Remote write conflicts still require reconciliation. |
@@ -480,7 +482,7 @@ The CI Ledger remains the source of truth for CI finding lifecycle and evidence 
 |---|---|---|---|
 | Worker instructions | Add complexity triggers, phase planning, checkpoints, evidence rules, and recovery steps. | `skills/the-worker/SKILL.md` | This Draft |
 | Worker reference | Add the detailed task-planning and recovery procedure. | New `skills/the-worker/references/task-planning-and-recovery.md` | This Draft |
-| Task template | Move to Version 1.3. Add an optional Execution Plan and single Next Step. | `workspace/TASK_TEMPLATE.md` | This Draft |
+| Task template | Move to Version 1.4. Add an Execution Plan, one authoritative Next Step, and optional Following Actions. | `workspace/TASK_TEMPLATE.md` | This Draft |
 | Findings template | Add a copy-ready research evidence format. | New `workspace/FINDINGS_TEMPLATE.md` | This Draft |
 | Task notes index | Define when and how to create task findings notes. | New `workspace/task-notes/README.md` | This Draft |
 | Workspace navigation | Link the optional findings format and note directory. | `workspace/README.md` | This Draft |
@@ -496,7 +498,7 @@ The CI Ledger remains the source of truth for CI finding lifecycle and evidence 
 
 ### Document catalog and path coverage
 
-The current catalog already registers the task record family. It must also register:
+The current catalog already registers the task record family. The implementation must also register:
 
 - `workspace/FINDINGS_TEMPLATE.md` as an exempt template source.
 - `workspace/task-notes/README.md` as the embedded directory contract.
@@ -504,32 +506,56 @@ The current catalog already registers the task record family. It must also regis
 
 Activate the findings-family path rule in the same commit that creates its first findings record. Do not create a dummy note only to activate the rule.
 
-The new Worker reference uses the existing `skills/*/references/*.md` rule. No separate Agent Skill definition is required.
+The new Worker reference follows the existing `skills/*/references/*.md` rule. The proposal does not need a separate Agent Skill definition.
 
 ### Compatibility and migration
 
 Do not mass-migrate existing task records.
 
-Use Task Template 1.3 for new tasks after implementation. Update an existing task to the new plan structure only when it resumes and the change materially improves its recovery. Preserve its original prompt and task ID.
+Use Task Template 1.4 for new tasks after implementation. The current canonical template is Version 1.3. The Worker must continue to read existing Version 1.2 and 1.3 task records. Do not mass-migrate them.
 
-The Worker must continue to read Version 1.2 records. The task board must keep their existing links. The Ledger renderer must continue to generate valid task records from the new canonical template.
+When an existing task resumes, add the Execution Plan only when it materially improves recovery. Preserve the original prompt and task ID. For a migrated record, replace the legacy `Next Actions` section with the v1.4 Execution Plan and optional `Following Actions`. The Worker must reconcile the latest Progress Log and repository state before setting the single Next Step.
+
+The task board must keep existing links. The Ledger renderer must continue to generate valid v1.4 task records and preserve compatibility with current v1.2 and v1.3 records.
 
 ## Proposed Implementation Outline
 
 After explicit user approval of this Draft revision:
 
-1. Create the implementation ADR under the accepted Draft-to-ADR governance process. Resolve dependencies with DRAFT-0001 first.
+1. Create the implementation ADR under the process established by ADR-0001. The accepted ADR must record this proposal's own decision and scope. ADR-0001 governs the process but does not approve this proposal's substance or implementation.
 2. Create a separate implementation task that references the accepted ADR.
 3. Update the task template, Worker skill, Worker reference, workspace navigation, archive contract, and Document Type Catalog.
 4. Create the findings template and its directory README. Activate the path rule when the first real findings note is created.
 5. Update the CI Ledger renderer, regression tests, and operator guide in the same task.
 6. Read back every changed path and check all links and path-coverage rules.
 7. Use the appropriate GitHub-hosted validation workflow. Do not run scripts locally or poll CI.
-8. Pilot the workflow on three eligible tasks. Keep lightweight tasks on the existing low-overhead path.
-9. Review the pilot for recovery quality, evidence completeness, and maintenance overhead.
+8. Run the three-task pilot defined below after implementation and hosted validation pass.
+9. Review every pilot acceptance criterion before general adoption.
 10. Create a follow-up Draft before adding automation, hooks, or a separate skill.
 
 Do not create implementation tasks as authorization to implement this Draft before approval.
+
+## Three-Task Pilot and Acceptance Criteria
+
+Run the pilot only after the accepted ADR, implementation task, coordinated repository changes, and hosted validation are complete. Use one naturally occurring eligible task from each category. Do not create dummy work to fill a pilot category. If a category does not arise, keep the pilot open until a suitable task exists.
+
+| Pilot case | Required task characteristics | Expected planning treatment |
+|---|---|---|
+| Lightweight | One narrow lookup, small edit, or single verification activity | Lightweight level, no phase list, no findings note, and one Next Step |
+| Phased | Several dependent stages or coordinated changes across multiple files | Phased level, named phases, exit criteria, phase status, and one Next Step |
+| Research-led | Evidence from several sources or substantial comparative analysis | Research-led level, named phases, one findings note, and one Next Step |
+
+The pilot passes only when all these criteria pass:
+
+1. **Planning selection:** All three tasks use the correct planning level. The lightweight task has no artificial phases or findings note.
+2. **Single action pointer:** Each task has exactly one clear, executable Next Step. Following Actions, Remaining Work, and historical Progress Log entries do not contradict it.
+3. **Phase evidence:** Every phase in the phased and research-led tasks has a stated objective and measurable exit criteria. Each phase marked `complete` links to evidence in the Progress Log or findings note.
+4. **Repository-only recovery:** A fresh Worker session can recover each task from the repository alone and identify its planning level, current phase or its not-applicable state, Next Step, blockers, and relevant evidence. Pass target: 3 of 3 tasks without relying on conversation history.
+5. **Research traceability:** The research-led task's findings note records exact source locators, evidence classifications, confidence rationale, limitations, and unresolved questions. Every material external claim links to its source.
+6. **Authority and ownership:** No task contains conflicting status authority, duplicate progress histories, or more than one `in_progress` phase unless the user approved parallel work.
+7. **Findings-note lifecycle:** The pilot creates a findings note only for the research-led case unless another task meets the documented trigger. The research note archives with its task, both archive entries use the exact paths and UTC timestamp, and both remain under the existing retention policy.
+
+If any criterion fails, pause general adoption. Revise the template, Worker procedure, or Ledger renderer as needed, then repeat the affected pilot case before rollout. Record the pilot results in the implementation task and link the evidence from the resulting ADR confirmation.
 
 ### Rollback and adjustment
 
@@ -541,13 +567,13 @@ If the team later needs host-specific lifecycle automation, evaluate that capabi
 
 ## Questions for the User
 
-1. Do you approve DRAFT-0002 revision 1 and Option 3, including the phase-aware task template, optional findings notes, Worker reference, and coordinated Ledger updates?
-2. Do you agree that the external skill should be adapted conceptually rather than installed or copied in full?
-3. Should the three-task pilot be the initial adoption review point, or would you prefer a different pilot size?
+1. Do you approve DRAFT-0002 revision 2 and Option 3, including the v1.4 task template, optional findings notes, Worker reference, and coordinated Ledger updates?
+2. Do you approve adapting the external project's concepts rather than installing or copying its complete system?
+3. Do you approve the three-task pilot composition and pass criteria in this revision?
 
 ## Review and Approval
 
-- **Revision presented:** 1
+- **Revision presented:** 2
 - **User decision:** Pending
 - **Approved scope:** Not approved
 - **Decision date:** Pending
@@ -557,7 +583,8 @@ If the team later needs host-specific lifecycle automation, evaluate that capabi
 
 | Date | Revision | Change | User feedback / decision |
 |---|---|---|---|
-| 2026-11-24 | 1 | Initial proposal based on Planning with Files and current Worker integration review. | Pending user review |
+| 2026-11-24 | 1 | Initial proposal based on Planning with Files and current Worker integration review. | Superseded by revision 2. |
+| 2026-11-24 | 2 | Linked the proposal to accepted ADR-0001, targeted Task Template 1.4, established one authoritative Next Step, reconciled Following Actions, revised research checkpoints and findings-note closeout, defined a measurable three-task pilot, and addressed the Draft's recorded lint findings. | User approved preparation of revision 2 only. Decision approval remains pending. |
 
 ## References
 
@@ -572,8 +599,8 @@ If the team later needs host-specific lifecycle automation, evaluate that capabi
 - External resolver and validation: `scripts/resolve-plan-dir.sh`, `scripts/check-complete.sh`, `scripts/gate-stop.sh`, and `tests/test_check_complete_resolver.py`
 - Current Worker: `skills/the-worker/SKILL.md`
 - Worker Conversation Mode: `skills/the-worker/references/conversation-mode.md`
-- Task template: `workspace/TASK_TEMPLATE.md`
+- Current task template: `workspace/TASK_TEMPLATE.md` (Version 1.3 at Draft revision time; proposed target Version 1.4).
 - Workspace navigation: `workspace/README.md`
 - Task renderer and tests: `reports/triage/scripts/ledger.py` and `reports/triage/scripts/test_ledger.py`
 - Document Type Catalog: `skills/document-standards/references/document-type-catalog.md`
-- Related open proposal: [DRAFT-0001 — Establish Draft-to-ADR Governance and Repository Analysis](DRAFT-0001-repository-decision-governance-and-analysis.md)
+- Related accepted decision: [ADR-0001 — Establish Draft-to-ADR Governance and Repository Analysis](../../archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md). ADR-0001 governs the decision process and does not approve this proposal's substance or implementation.
