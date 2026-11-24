@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-103354
 - **Created:** 2026-11-24 10:33 UTC
-- **Updated:** 2026-11-24 15:06 UTC
+- **Updated:** 2026-11-24 15:09 UTC
 - **Priority:** P1
 - **Status:** Blocked
 - **Origin:** User
@@ -213,6 +213,7 @@ The latest completed validation on source commit 725896a produced mixed results:
 Commit [4dfbde6](https://github.com/dungnv2602/chatgpt/commit/4dfbde63708f0ab0862d142952710b1b42ef5d7a) now splits the hard sentence in the catalog diagnostics row. Read-back confirms the complete corrected row. The push triggers fresh hosted validation from a branch state that already includes the earlier lint report commit. Those new results have not yet been reviewed.
 
 The task remains Blocked. Do not infer a pass from the earlier successful Document Standards or Diagnostics runs. Keep the three Ledger-generated lint tasks Proposed until the user approves their remediation. Keep DRAFT-0002 separate and unmodified.
+
 ## 8. Remaining Work
 
 - Confirm that a fresh changed-document lint run on commit 4dfbde6 passes with no hard findings and publishes its complete report.
@@ -224,6 +225,7 @@ The task remains Blocked. Do not infer a pass from the earlier successful Docume
 - Move ADR-0001 to `archive/adr/` only after every linked task is Done and every Confirmation criterion passes.
 - Keep the three Ledger-generated lint tasks Proposed until the user approves their remediation.
 - Keep DRAFT-0002 separate and unmodified.
+
 ## 9. Next Actions
 
 1. Review the naturally published changed-document lint result for the catalog correction in commit 4dfbde6.
@@ -232,6 +234,7 @@ The task remains Blocked. Do not infer a pass from the earlier successful Docume
 4. If any run fails, inspect its complete report and job log. Correct only issues within this task's approved scope. Keep the task Blocked.
 5. If all required runs pass, record their URLs and UTC timestamps. Update ADR-0001's lifecycle history, complete task closeout, and archive the task.
 6. Archive ADR-0001 only after all linked tasks are Done and every Confirmation criterion passes.
+
 ## 10. References
 
 - External source: `https://github.com/adr/madr`
@@ -249,9 +252,13 @@ The task remains Blocked. Do not infer a pass from the earlier successful Docume
 - `reports/triage/ledger.json` and `reports/triage/scripts/test_ledger.py`
 - Document Standards runs [#302](https://github.com/dungnv2602/chatgpt/actions/runs/45407620289), [#304](https://github.com/dungnv2602/chatgpt/actions/runs/45408954986), [#305](https://github.com/dungnv2602/chatgpt/actions/runs/45409620929), [#307](https://github.com/dungnv2602/chatgpt/actions/runs/45410835359), [#308](https://github.com/dungnv2602/chatgpt/actions/runs/45411400908), [#309](https://github.com/dungnv2602/chatgpt/actions/runs/45411867050), [#310](https://github.com/dungnv2602/chatgpt/actions/runs/45412245960), [#311](https://github.com/dungnv2602/chatgpt/actions/runs/45412770209), [#313](https://github.com/dungnv2602/chatgpt/actions/runs/45413378979), [#314](https://github.com/dungnv2602/chatgpt/actions/runs/45414156487), [#315](https://github.com/dungnv2602/chatgpt/actions/runs/45414832231), and [#316](https://github.com/dungnv2602/chatgpt/actions/runs/45415350984)
 - Diagnostics runs [#569](https://github.com/dungnv2602/chatgpt/actions/runs/45407620173), [#571](https://github.com/dungnv2602/chatgpt/actions/runs/45408955121), [#573](https://github.com/dungnv2602/chatgpt/actions/runs/45410287179), [#577](https://github.com/dungnv2602/chatgpt/actions/runs/45412246098), [#578](https://github.com/dungnv2602/chatgpt/actions/runs/45412770199), [#580](https://github.com/dungnv2602/chatgpt/actions/runs/45413378988), [#581](https://github.com/dungnv2602/chatgpt/actions/runs/45414156266), [#582](https://github.com/dungnv2602/chatgpt/actions/runs/45414832198), and [#583](https://github.com/dungnv2602/chatgpt/actions/runs/45415351025)
+- Document Standards run [#319](https://github.com/dungnv2602/chatgpt/actions/runs/45416735133)
+- Diagnostics run [#586](https://github.com/dungnv2602/chatgpt/actions/runs/45416735144)
+- Changed-document lint runs [#634](https://github.com/dungnv2602/chatgpt/actions/runs/45416574844) and [#635](https://github.com/dungnv2602/chatgpt/actions/runs/45416735141), plus correction commit [4dfbde6](https://github.com/dungnv2602/chatgpt/commit/4dfbde63708f0ab0862d142952710b1b42ef5d7a)
 - Changed-document lint runs [#616](https://github.com/dungnv2602/chatgpt/actions/runs/45403469914), [#618](https://github.com/dungnv2602/chatgpt/actions/runs/45407620144), [#619](https://github.com/dungnv2602/chatgpt/actions/runs/45408533122), [#620](https://github.com/dungnv2602/chatgpt/actions/runs/45408955146), [#621](https://github.com/dungnv2602/chatgpt/actions/runs/45409620876), [#623](https://github.com/dungnv2602/chatgpt/actions/runs/45410835376), [#624](https://github.com/dungnv2602/chatgpt/actions/runs/45411401151), [#626](https://github.com/dungnv2602/chatgpt/actions/runs/45412245944), [#627](https://github.com/dungnv2602/chatgpt/actions/runs/45412770212), [#629](https://github.com/dungnv2602/chatgpt/actions/runs/45413378995), [#630](https://github.com/dungnv2602/chatgpt/actions/runs/45414156337), [#631](https://github.com/dungnv2602/chatgpt/actions/runs/45414832243), [#632](https://github.com/dungnv2602/chatgpt/actions/runs/45415351074), and [#635](https://github.com/dungnv2602/chatgpt/actions/runs/45416735141)
 - Commits [74005cc](https://github.com/dungnv2602/chatgpt/commit/74005ccb1afc79d21966112501baa39772905864), [454672a](https://github.com/dungnv2602/chatgpt/commit/454672ae649a607db689876ddfb77cb5b4450e65), [849c027](https://github.com/dungnv2602/chatgpt/commit/849c027ee97b1a6c7d52f4d3020c6a152c4bae60), [aa69d96](https://github.com/dungnv2602/chatgpt/commit/aa69d966969a8d5a3cc5106a74f1204a0f324e3e), [b1aec86](https://github.com/dungnv2602/chatgpt/commit/b1aec86f3f13eb7ac5c2dd92e8a7ba1f0f150a00), [7fa7483](https://github.com/dungnv2602/chatgpt/commit/7fa7483122c074c48e8d0b82ea65d59f4aca37f4), [f44b5a7](https://github.com/dungnv2602/chatgpt/commit/f44b5a744a0b4748153f68e512d94255ebf59fe3), [594ab39](https://github.com/dungnv2602/chatgpt/commit/594ab39e461e8bc9473ef73fd40048b8f0f6eb72), [6e1cf47](https://github.com/dungnv2602/chatgpt/commit/6e1cf47bc8b0b40dcc309e457059ba0b63d8c960), [b1e6ca6](https://github.com/dungnv2602/chatgpt/commit/b1e6ca640cfebc29f917d60c15f9ae42496e5600), [58d15b6](https://github.com/dungnv2602/chatgpt/commit/58d15b642db046eeb8bbd32ec622033e2dec1dec), [dbd7ad2](https://github.com/dungnv2602/chatgpt/commit/dbd7ad280198ee39849f926b6d32c50d7856da58), [9606a5f](https://github.com/dungnv2602/chatgpt/commit/9606a5f825b57cab8e30e36ebd372429e9e7ada3), [2b878e2](https://github.com/dungnv2602/chatgpt/commit/2b878e201fb39d951049855ec1bae9cb538f00da), [3295bcb](https://github.com/dungnv2602/chatgpt/commit/3295bcbe74b9a0a11b544146e987a6ce3ccff7a2), [8bcfdf16](https://github.com/dungnv2602/chatgpt/commit/8bcfdf16b30ae18bedbec3c412eb54614711f5a0), and [725896a](https://github.com/dungnv2602/chatgpt/commit/725896a79c8a9c3decef0f8d507cc9cacdaed4fc)
 - Related task: `20261123-225745`
+
 ## 11. Verification
 
 - **Check:** Catalog/template placement and governance owner references.
@@ -265,9 +272,11 @@ The task remains Blocked. Do not infer a pass from the earlier successful Docume
 - **Result:** Lint #634 reported one hard 27-word sentence and 29 advisory findings. Lint #635 set CHANGED_FAILED=1 and its report publisher failed to rebase because Lint #634's report commit had updated the same index and latest-report files after source SHA 725896a. The #635 report did not reach the lint history.
 - **Correction:** Commit 4dfbde6 split the 27-word catalog description into two sentences. Exact read-back confirms the correction. Fresh hosted validation on this commit remains outstanding.
 - **Limitations:** Do not claim that Lint #635 passed or that the post-correction hosted checks succeeded. The #635 pre-finalizer diagnostic capture is Incomplete because it was created while the source run was still in progress. No local repository scripts or tests ran. No CI polling or reruns occurred.
+
 ## 12. Handoff Instructions
 
 Read `workspace/README.md`, `workspace/task_board.md`, this task record, and `workspace/discussion.md`. Keep the task Blocked until a fresh changed-document lint run and Document Standards run on the corrected catalog commit pass, and the corresponding Diagnostics publication succeeds. Do not poll or rerun Actions. If a run fails, inspect its complete report and job log. Keep the three Ledger-generated lint tasks Proposed until the user approves remediation. DRAFT-0002 remains separate and unmodified. Do not archive ADR-0001 until every linked task is Done and every Confirmation criterion passes.
+
 ## 13. Ledger Findings
 
 _No Ledger findings are linked to this task._
