@@ -17,7 +17,7 @@ Move an accepted ADR to archive/adr/ only after all linked implementation tasks 
 
 - Preserve the ADR ID and filename.
 - Read back the archive copy after its initial write.
-- Never edit, replace, rename, move, or delete an archived ADR.
+- Do not edit, replace, rename, move, or delete an archived ADR unless the user explicitly authorizes a narrow reference-only correction. Never change its accepted decision content.
 - Never add ADR paths to .github/archive-retention-index.json.
 - The 90-day retention workflow applies only to indexed task and report files. It must not delete ADRs.
 
