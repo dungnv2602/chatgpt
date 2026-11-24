@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 09:27 UTC — Load the drawing workflow's canonical skills and references, then inspect its current rules and records. Present proposed success/failure pattern extraction and approval gates without changing those canonical files.**
+**2026-11-24 09:34 UTC — Check the active task and task-record format so this approval-gated drawing workflow request can be tracked without losing the existing task handoff.**
 
 ## Open Discussions
 
