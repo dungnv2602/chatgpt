@@ -39,6 +39,9 @@ _No paused tasks._
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 | 20261123-162826 | Enforce conversation integrity before image relocation | P1 | Done | User | 2026-11-24 | [Archived record](../archive/tasks/20261123-162826-enforce-conversation-integrity-before-image-relocation.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/38dd6c10db0c28980055d53278916ef4f2955536) |
+| 20261124-050735-02 | Review long-sentence findings in skills/document-standards/references/document-type-catalog.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-050735-02-review-long-sentence-findings-in-skills-document-standards-refer.md) |
+| 20261124-050735-01 | Review semicolon findings in skills/document-standards/references/document-type-catalog.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-050735-01-review-semicolon-findings-in-skills-document-standards-reference.md) |
+| 20261124-050735 | Review synonym-rotation findings in skills/asd-ste100/SKILL.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-050735-review-synonym-rotation-findings-in-skills-asd-ste100-skill-md.md) |
 | 20261124-045935-02 | Review long-sentence findings in workspace/task\_board.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-045935-02-review-long-sentence-findings-in-workspace-task-board-md.md) |
 | 20261124-045935-04 | Review semicolon findings in images/takeout/history/2026-11-20-001/attempt-002/verification-report.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-045935-04-review-semicolon-findings-in-images-takeout-history-2026-11-20-0.md) |
 | 20261124-045935-03 | Review semicolon findings in images/takeout/history/2026-11-20-001/attempt-003/verification-report.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-045935-03-review-semicolon-findings-in-images-takeout-history-2026-11-20-0.md) |
