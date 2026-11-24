@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261123-162826
 - **Created:** 2026-11-23 16:28 UTC
-- **Updated:** 2026-11-24 02:21 UTC
+- **Updated:** 2026-11-24 02:27 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -150,28 +150,28 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 
 ## 7. Current State
 
-The processor and expanded regression suite were corrected for the conversation-mapping mismatch in [b473f56](https://github.com/dungnv2602/chatgpt/commit/b473f562a7a0bbc4da9cb037c87c83ade1167224). The latest hosted run [#67](https://github.com/dungnv2602/chatgpt/actions/runs/45311323087) passed compilation and all 47 processor tests, then stopped during intake validation because the processor rejected the repository-owned `images/takeout/README.md` as an unexpected non-image file. No image conversion, staging, or relocation ran. The failed attempt's hand-off and report were archived; the active Ready hand-off and all 18 source PNGs remain available.
+The processor and regression suite now pass hosted verification: run [#68](https://github.com/dungnv2602/chatgpt/actions/runs/45312157558) compiled both scripts and passed all 48 tests. Intake metadata validation also passed. The run then stopped in preflight while preparing drawing-session README updates because `drawings/2026-11-21/README.md` used a legacy five-column attempt table instead of the required six-column schema ending in `Image`. This happened before staging directories were created or any image conversion began. No originals or derivatives were relocated or created. All eighteen original PNGs remain at the intake root, and the active hand-off remains Ready.
 
-The fix explicitly recognizes only the exact regular metadata files `README.md` and `HANDOFF.yml`, after rejecting symlinks and non-files. It continues to reject every other non-image file and retains exact image coverage checks. A new regression test covers the intake README baseline and confirms that an unrelated `notes.md` still fails closed. The processor suite now contains 48 tests; hosted verification is pending.
+The daily README was updated in [bff5bf9](https://github.com/dungnv2602/chatgpt/commit/bff5bf984e4bbd878b6569b93ea409aef7446baf) to the six-column schema already enforced by the processor and used by the 2026-11-20 README. The attempt links are now in the first `Attempt / prompt` column; the image column is last. Existing outcome text was preserved, approval evidence was kept distinct, and image cells show pending upload or no output as appropriate. This is a documentation repair, not a processor-code change. Hosted verification remains pending.
 
-The intake inventory remains eighteen original PNGs: eleven mapped and seven unclassified. The Ready hand-off remains the active batch. The approved behavior is unchanged: mapped originals are relocated only after all conversions succeed; unclassified WebP derivatives remain in their quarantine staging directory, their originals remain unchanged in intake, and their entries remain in the residual Draft hand-off. No index edits are authorized.
+The intake inventory remains eighteen original PNGs: eleven mapped and seven unclassified. The approved behavior remains unchanged: mapped originals are relocated only after all conversions succeed; unclassified WebP derivatives remain under the intake quarantine staging directory, their originals remain unchanged in intake, and their entries remain in the residual Draft hand-off. No index edits beyond the required README schema repair are authorized.
 
 ## 8. Remaining Work
 
-- Obtain hosted verification of the expanded 48-test processor suite, including the README metadata allowlist and rejection of arbitrary non-image files.
+- Obtain hosted verification that the repaired 2026-11-21 daily README passes the processor's six-column attempt-table preflight.
 - Verify publication of the eleven mapped original/WebP pairs.
 - Verify seven unclassified WebP derivatives under `images/takeout/webp/unclassified/`.
 - Confirm all seven unclassified original PNGs remain byte-for-byte unchanged in intake and the residual Draft hand-off contains exactly those seven entries.
-- Confirm the mapped originals are byte-identical after relocation and that no index was edited.
-- Keep the task In Progress until hosted tests, mapped publication, unclassified derivatives, source preservation, and the residual Draft hand-off are verified.
+- Confirm the mapped originals are byte-identical after relocation and no unrelated indexes were edited.
+- Keep the task In Progress until hosted tests, mapped publication, unclassified derivatives, source preservation, and residual Draft hand-off are verified.
 
 ## 9. Next Actions
 
-1. Read back the processor, regression tests, intake README, and provenance reference on branch `gpt`.
-2. Manually dispatch **Process Image Takeout and Create WebP Derivatives** on branch `gpt` after the metadata fix is committed.
-3. Require all 48 processor tests to pass before processing.
+1. Read back the repaired `drawings/2026-11-21/README.md` and confirm exactly one six-column attempt table with `Attempt / prompt` first and `Image` last.
+2. Manually dispatch **Process Image Takeout and Create WebP Derivatives** on branch `gpt`.
+3. Require all 48 processor tests to pass and preflight to pass before conversion.
 4. Verify the eleven mapped original/WebP pairs and seven unclassified WebP derivatives.
-5. Confirm all seven unclassified PNGs remain unchanged in intake and the residual Draft hand-off contains exactly those seven items. Do not edit indexes or relocate unclassified files.
+5. Confirm all seven unclassified PNGs remain unchanged in intake and the residual Draft hand-off contains exactly those seven items. Do not edit other indexes or relocate unclassified files.
 
 ## 10. References
 
@@ -198,7 +198,7 @@ The intake inventory remains eighteen original PNGs: eleven mapped and seven unc
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. The normal Image Takeout workflow is the sole workflow for mapped and unclassified images. The latest hosted run [#67](https://github.com/dungnv2602/chatgpt/actions/runs/45311323087) passed all 47 existing processor tests but stopped before processing because the root-level repository-owned `images/takeout/README.md` was not included in the intake metadata allowlist. The remediation now adds an exact regular-file allowlist for `README.md` and `HANDOFF.yml`, while continuing to reject all other non-image files. The suite now has 48 tests. Require all 48 to pass in the next user-triggered run. Verify eleven mapped original/WebP pairs, seven unclassified derivatives, unchanged unclassified source PNGs, and a seven-entry residual Draft hand-off. The user performs any later relocation. Do not infer source mappings or edit indexes without explicit user direction.
+Continue on branch `gpt`. The latest manual Image Takeout run [#68](https://github.com/dungnv2602/chatgpt/actions/runs/45312157558) passed compilation and all 48 processor tests, accepted intake metadata, then stopped in preflight because `drawings/2026-11-21/README.md` did not have the required six-column attempt table with an `Image` column last. The failure occurred before staging/conversion; no source images were moved or derivatives generated. All eighteen originals remain in intake and the active hand-off remains Ready. The daily README has been repaired in [bff5bf9](https://github.com/dungnv2602/chatgpt/commit/bff5bf984e4bbd878b6569b93ea409aef7446baf). Require another user-triggered hosted run. Verify eleven mapped original/WebP pairs, seven unclassified derivatives, unchanged unclassified source PNGs, and a seven-entry residual Draft hand-off. The user performs any later relocation. Do not infer source mappings or edit unrelated indexes without explicit user direction.
 
 ## 13. Ledger Findings
 
@@ -275,3 +275,14 @@ The following inventory records the exact image blob SHA and byte size from the 
 - **Documentation:** `images/takeout/README.md` and `skills/the-worker/references/image-provenance-and-webp.md` now define the metadata exception and distinguish metadata from upload coverage.
 - **Independent diagnostics sidecar:** The same run's separate diagnostics job still failed on the existing syntax error in `reports/triage/scripts/test_ledger.py` and undefined `LINT_BASELINE_CHECKS` in `reports/triage/scripts/ledger.py`. These are outside this Image Takeout fix and were not changed.
 - **Next:** Require hosted verification of all 48 tests, then inspect processing and publication. Do not claim image conversion or relocation until those outputs are verified.
+
+
+## 16. Hosted Run #68 and Daily README Schema Repair
+
+- **Run:** [45312157558](https://github.com/dungnv2602/chatgpt/actions/runs/45312157558), manual `workflow_dispatch` on branch `gpt`, commit `c46717821fb63084ec0b1b573f080ba1e91650f1`.
+- **Tests:** Compilation passed and all 48 Image Takeout processor tests passed. Intake validation accepted the exact regular metadata files.
+- **Failure:** Preflight rejected `drawings/2026-11-21/README.md` with `Daily README must contain exactly one attempt table with an Image column`. Its legacy table had five columns headed `Attempt | Prompt note | Session brief | Primary series / membership | Status / outcome`. The current processor contract requires exactly six columns: `Attempt / prompt`, session/brief, series/baseline lineage, execution outcome, user approval/output evidence, and `Image` last.
+- **Safety result:** The failure occurred in `prepare_attempt_readme_updates` before `stage_root.mkdir` and before the mapped or unclassified conversion loops. No WebP staging directories were created and no image bytes were converted, moved, or relocated. GitHub read-back confirms all eighteen original PNG files remain at `images/takeout/`; the active `HANDOFF.yml` remains `status: ready`. The failed attempt's hand-off and reports were archived under `images/takeout/history/2026-11-20-001/attempt-002/`.
+- **Correction:** Commit [bff5bf9](https://github.com/dungnv2602/chatgpt/commit/bff5bf984e4bbd878b6569b93ea409aef7446baf) updates the 2026-11-21 daily README to the six-column contract. Attempt links now occupy the first column, Image is last, existing outcome wording is preserved, approval evidence is separately represented, and image cells distinguish pending upload from no generated output. No processor code or unrelated indexes were changed.
+- **Independent diagnostics sidecar:** It again failed on the pre-existing syntax error in `reports/triage/scripts/test_ledger.py` and undefined `LINT_BASELINE_CHECKS` in `reports/triage/scripts/ledger.py`. These remain outside this Image Takeout repair and were not modified.
+- **Next:** Obtain another user-triggered hosted run. Require all 48 tests and README preflight to pass before claiming any image conversion or relocation.
