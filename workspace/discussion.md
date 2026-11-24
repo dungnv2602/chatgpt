@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 07:00 UTC — Verify current acceptance evidence:** Inspect the latest `gpt` branch head, naturally completed GitHub Actions runs relevant to the approved task, and the report/Ledger indexes. Confirm each remaining acceptance criterion from hosted evidence. Do not dispatch, rerun, or poll workflows.
+**2026-11-24 07:04 UTC — Prepare task closeout:** Apply the canonical task/archive formats and retention-index procedure. Update the task with the observed hosted results, remaining capture limitation, and final acceptance decision. Then archive the task and update the board and retention index.
 
 ## Open Discussions
 
