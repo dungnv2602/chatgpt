@@ -1,6 +1,6 @@
 ---
 record_type: decision-record
-template_version: "1.0"
+template_version: "1.1"
 id: "ADR-0001"
 status: "accepted"
 decision_date: "YYYY-MM-DD"
@@ -10,6 +10,8 @@ proposed_by: "Assistant"
 consulted: []
 informed: []
 source_draft: "DRAFT-0001"
+source_draft_revision: 1
+approved_scope: "Exact scope approved by the user"
 related_adrs: []
 supersedes: []
 superseded_by: null
@@ -18,11 +20,13 @@ implementation_tasks: []
 review_triggers: []
 ---
 
+<!-- Promotion transaction: create a provisional ADR with status promotion-pending. Do not list it as accepted or use it to govern a task. Change it to accepted only after the completeness checklist and provisional read-back pass. Read back the accepted record before deleting the source Draft. -->
+
 # {Short title that describes the accepted decision}
 
 ## Context and Problem Statement
 
-{Describe the problem, current state, scope, and why the decision is required. Link the source Draft and evidence.}
+{Describe the problem, current state, scope, and why the decision is required. Preserve material rationale from the approved source Draft.}
 
 ## Decision Drivers
 
@@ -75,7 +79,8 @@ Define how the repository will prove that this decision is implemented and remai
 
 ## More Information
 
-- **Source Draft:** {Link to the approved Draft}
+- **Source Draft:** {Draft ID, exact revision, and provenance. Do not link to a source file that successful promotion deletes.}
+- **Approved scope:** {Exact scope approved by the user.}
 - **Related ADRs:** {Links and relationship}
 - **Evidence:** {Repository paths, commits, tests, research, or external sources}
 - **Review trigger:** {Condition that requires this decision to be reviewed}
@@ -84,4 +89,4 @@ Define how the repository will prove that this decision is implemented and remai
 
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
-| YYYY-MM-DD | Accepted | User approved {Draft ID and exact revision}. |
+| YYYY-MM-DD | Accepted | User approved {Draft ID, exact revision, and scope}. |
