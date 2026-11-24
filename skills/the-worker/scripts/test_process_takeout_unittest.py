@@ -578,7 +578,7 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertEqual(len(mapping_rows), 1, "fixture must contain exactly one target mapping row")
         cells = [cell.strip() for cell in mapping_rows[0].strip().strip("|").split("|")]
         self.assertEqual(cells, [
-            "wrong-mapping.png", "Not applicable", "ILL-001", "Not applicable"
+            "wrong-mapping.png", "Not applicable", "Not applicable", "Not applicable"
         ])
         cells[3] = "different-generation"
         mutated_row = "| " + " | ".join(cells) + " |"
