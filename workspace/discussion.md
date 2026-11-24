@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 05:33 UTC — Recover canonical baseline evidence:** Check the retained GitHub Actions artifacts for original lint runs 45128445227 and 45152181405. Use the reports only to reconcile the approved 155-fingerprint baseline. Do not poll or dispatch workflows.
+**2026-11-24 05:34 UTC — Close residual original-baseline findings:** Use the archived baseline reports and source-context comparison to correct the remaining original hard findings in `skills/agent-skill-authoring/SKILL.md`, `skills/drawing/assets/daily-index-template.md`, and `skills/drawing/references/prompt-fidelity.md`. Preserve meaning and document structure. Do not touch later-scope findings.
 
 ## Open Discussions
 
