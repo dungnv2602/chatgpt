@@ -253,3 +253,13 @@ The following inventory records the exact image blob SHA and byte size from the 
 - **Method:** Read back the six implementation paths and their Git blob SHAs on branch `gpt`; rechecked the exact 18-file inventory, 18-entry hand-off, eleven conversation/attempt mappings, and seven quarantine dispositions. The Ready activation and workspace records were committed separately.
 - **Result:** Commit [048eaf0](https://github.com/dungnv2602/chatgpt/commit/048eaf0ba9c4eeb43ae6198972f2aa807d3d679b) was read back. The processor and tests define the mapped/deferred split. The hand-off is Ready for a manual run. No original has been modified or relocated by these commits.
 - **Limitations:** Regression tests have not been executed locally or in Actions yet. No WebP output or relocation is claimed until the user triggers the workflow and the published files are verified.
+
+### 2026-11-24 — Hosted Image Takeout run #66 inspected; regression fixture corrected
+
+- **Run:** [45309899583](https://github.com/dungnv2602/chatgpt/actions/runs/45309899583), manual `workflow_dispatch` on commit `f99a9ac832c48a9117cd001960039f45b3b0d0be`.
+- **Result:** Compilation passed. The 47-test suite ran and reported 46 passing, one failing: `test_conversation_mapping_mismatch_fails_before_staging`. Processing, publication, and post-publication verification were skipped. No takeout images were converted, relocated, or otherwise changed by this run.
+- **Cause:** The test fixture expected the conversation mapping row's Asset ID cell to contain the repository-local `asset_id` (`ILL-001`). The fixture generator correctly writes the separate `source_asset_id` field there, which is `Not applicable` when no source/platform Asset ID is supplied. The test failed at its fixture precondition, before applying the deliberate generation-ID mismatch. It therefore did not exercise the intended rejection path.
+- **Correction:** Commit [b473f56](https://github.com/dungnv2602/chatgpt/commit/b473f562a7a0bbc4da9cb037c87c83ade1167224) changes the test's expected cell to `Not applicable`. The mutation still changes the Generation / Output ID cell and the test still requires rejection before staging.
+- **Independent diagnostics-sidecar failures:** Its test suite has a syntax error in `reports/triage/scripts/test_ledger.py` (missing colon on the `add_lint` definition), and ledger ingestion raises `NameError` for undefined `LINT_BASELINE_CHECKS`. This is outside the Image Takeout processor fix and was not modified here.
+- **Next:** Obtain hosted verification of the corrected 47-test suite before any processing. Keep the task In Progress until all tests pass and the mapped/unclassified output invariants are verified.
+
