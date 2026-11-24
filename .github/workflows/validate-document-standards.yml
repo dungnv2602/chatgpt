@@ -66,11 +66,7 @@ jobs:
           python-version: '3.x'
 
       - name: Run CI Ledger regression tests
-        run: |
-          python -m unittest discover \\
-            -s reports/triage/scripts \\
-            -p 'test_ledger.py' \\
-            -v
+        run: python -m unittest discover -s reports/triage/scripts -p 'test_ledger.py' -v
 
       - name: Run catalog validator regression tests
         run: |
