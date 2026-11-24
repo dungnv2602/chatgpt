@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 12:27 UTC — Promote the approved proposal:** Verify the exact approved DRAFT-0001 revision and the governance-specific implementation boundary. Create ADR-0001 from that revision and update its lifecycle records. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 12:32 UTC — Promote and register the approved decision:** Create ADR-0001 from DRAFT-0001 revision 1, record the user's approval, and reconcile the governance task and Draft/ADR indexes. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 
 ## Open Discussions
 
