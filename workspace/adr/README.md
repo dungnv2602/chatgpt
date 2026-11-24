@@ -4,13 +4,13 @@ This folder stores user-approved decisions that still require implementation or 
 
 ## Files
 
-- [`ADR_TEMPLATE.md`](../ADR_TEMPLATE.md) — canonical template for accepted decisions.
-- `NNNN-title-with-dashes.md` — active accepted decision records. File names use a four-digit numeric sequence and a lowercase dashed title.
+- [ADR_TEMPLATE.md](../ADR_TEMPLATE.md) — canonical template for decision records.
+- NNNN-title-with-dashes.md — decision records use a four-digit numeric sequence and a lowercase dashed title.
 
 ## Numbering and organization
 
-- Assign a global, permanent `ADR-NNNN` ID only after the user approves the source Draft.
-- Use the filename `NNNN-title-with-dashes.md`. Keep the Markdown title unnumbered.
+- Assign a global, permanent ADR-NNNN ID only after the user approves the source Draft.
+- Use the filename NNNN-title-with-dashes.md. Keep the Markdown title unnumbered.
 - Keep one flat folder. Use optional metadata tags to group decisions. Do not create category folders or local numbering.
 - Never reuse an ADR ID.
 
@@ -18,22 +18,27 @@ This folder stores user-approved decisions that still require implementation or 
 
 The decision status and implementation status are separate.
 
-Decision status values:
+Decision statuses:
 
-- `accepted` — the approved decision is active.
-- `superseded` — a later ADR replaces the decision. Link the replacement.
-- `deprecated` — the decision is no longer recommended, with no direct replacement.
-- `reversed` — the user explicitly reversed the decision.
+- promotion-pending — temporary provisional state during ADR promotion. It reserves the ADR ID but is not an accepted decision.
+- accepted — the approved decision is active.
+- superseded — a later ADR replaces the decision. Link the replacement.
+- deprecated — the decision is no longer recommended, with no direct replacement.
+- reversed — the user explicitly reversed the decision.
 
-Implementation status values:
+Implementation statuses:
 
-- `not-started`
-- `in-progress`
-- `complete`
-- `not-required`
-- `superseded`
+- not-started
+- in-progress
+- complete
+- not-required
+- superseded
 
-Only create an ADR with status `accepted`. A rejected proposal remains a Draft.
+Create the provisional ADR with promotion-pending. Do not list it under Current Accepted ADRs. Do not use it to govern an implementation task.
+
+Change the status to accepted only after the source-Draft completeness checklist and provisional ADR read-back pass. Read back the accepted record before deleting the source Draft. If deletion fails, keep the source Draft temporarily under Promotion Cleanup Pending and retry only the deletion step.
+
+Only accepted ADRs may govern implementation tasks. A rejected proposal remains a Draft. Do not create an ADR for a rejected or withdrawn proposal.
 
 ## Implementation rules
 
@@ -51,11 +56,11 @@ The accepted decision is immutable. Do not rewrite its rationale or chosen outco
 
 Only update lifecycle metadata, task links, review history, and implementation confirmation. Record why and when each lifecycle change occurred.
 
-When all linked implementation tasks are Done and the Confirmation criteria pass, move the ADR to `archive/adr/`. Also archive a decision whose implementation status is `not-required` after its confirmation check.
+When all linked implementation tasks are Done and the Confirmation criteria pass, move the ADR to archive/adr/. Also archive a decision whose implementation status is not-required after its confirmation check.
 
-Never add ADRs to `.github/archive-retention-index.json`. The archive retention workflow must not delete ADRs. Keep the original ID and filename when you archive an ADR. Do not edit or delete an archived ADR.
+Never add ADRs to .github/archive-retention-index.json. The archive retention workflow must not delete ADRs. Keep the original ID and filename when you archive an ADR. Do not edit or delete an archived ADR.
 
 ## Current Accepted ADRs
 
-- [ADR-0002 — Retire Source Drafts After Verified ADR Promotion](0002-retire-source-drafts-after-verified-adr-promotion.md) — Accepted; implementation has not started.
+- [ADR-0002 — Retire Source Drafts After Verified ADR Promotion](0002-retire-source-drafts-after-verified-adr-promotion.md) — Accepted; implementation is in progress under task [20261124-160500](../tasks/20261124-160500-implement-verified-source-draft-retirement.md).
 - [ADR-0001 — Establish Draft-to-ADR Governance and Repository Analysis](../../archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md) — Fully implemented and permanently archived; its source-Draft preservation rule is superseded by ADR-0002.
