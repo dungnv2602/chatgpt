@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 12:35 UTC — Implement the accepted governance system:** Create the task-specific decision-governance skill, workspace analysis templates, Worker integration, permanent ADR archive policy, task ADR field, and Ledger handoff changes. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 12:46 UTC — Verify the accepted governance implementation:** Read back the new skill, analysis formats, Worker and workspace rules, task/board ADR metadata, Ledger renderer, catalog, and archive protections. Record actual verification and outstanding hosted validation. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 
 ## Open Discussions
 
