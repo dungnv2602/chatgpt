@@ -35,6 +35,8 @@ A clean-start reset is destructive and requires explicit user authorization. It 
 
 Do not run periodic triage or poll workflows. Review CI when the user asks, a known failure blocks work, or the task requires validation. A successful validation run URL and UTC timestamp are sufficient resolution evidence; capture a full successful-run diagnostic report only when its detailed evidence is specifically required.
 
+The changed-document lint workflow uses GitHub Actions concurrency to cancel superseded push runs. Do not add a separate run-list preflight guard. GitHub may not list the current run when its first job queries the run list, which can cause the guard to cancel the current run.
+
 ## Discussion register
 
 The Worker maintains [discussion.md](discussion.md) in both conversation modes. Its Conversation Mode reference defines the section order, pre-step brief, open-discussion lifecycle, and three-report limit. Keep technical progress and handoffs in task records, not in the register.

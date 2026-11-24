@@ -440,3 +440,11 @@ Continue from this record. The implementation and policy changes are in place. T
 - **Change:** Removed the run-list cancellation guard. Kept the baseline check and set the preflight output to proceed. Documented the concurrency rule in the STE linter README. This does not change lint thresholds, findings, or source-workflow conclusions.
 - **Validation:** Awaiting naturally triggered hosted lint, Document Standards, and diagnostics runs on the next `gpt` push. No repository code was run locally.
 - **Next:** Verify the changed-document lint conclusion and allow Diagnostics to reconcile the resulting pending run records before closing this task or its remediation handoffs.
+
+
+### 2026-11-24 — Trigger a clean changed-document lint validation
+
+- **Action:** Added the concurrency rule to the workspace CI operating guide. This documentation change is in the changed-document lint workflow's eligible path set, unlike the STE skill README path that triggered full technical-document lint.
+- **Reason:** Run #592 was self-cancelled by its run-list guard. The replacement workflow removes that guard and relies on its existing concurrency group. A fresh eligible Markdown change is required to exercise the changed-document workflow after the fix.
+- **Validation:** Diagnostics #512 passed. Document Standards #268 passed. Full technical-document lint #184 remained queued at the last inspection. No local repository code was run.
+- **Next:** Verify the changed-document lint run, reconcile pending Actions captures, then resolve and archive only the findings that have complete evidence.
