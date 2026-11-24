@@ -9,6 +9,8 @@ approved_revision: 1
 approved_by: "User"
 approved_at_utc: "2026-11-24T12:25:00Z"
 resulting_adr: "ADR-0001"
+promotion_cleanup_pending: true
+cleanup_reason: "Awaiting execution approval for final migration closeout and source deletion under ADR-0002."
 proposed_by: "Assistant"
 decision_makers:
   - "User"
