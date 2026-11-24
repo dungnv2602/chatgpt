@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 09:24 UTC — Review the drawing workflow and propose approval-gated learning from successful and failed image-generation attempts. Do not change project files until the user approves the proposed patterns and implementation.**
+**2026-11-24 09:27 UTC — Load the drawing workflow's canonical skills and references, then inspect its current rules and records. Present proposed success/failure pattern extraction and approval gates without changing those canonical files.**
 
 ## Open Discussions
 
