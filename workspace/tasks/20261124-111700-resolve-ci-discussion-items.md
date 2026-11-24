@@ -88,6 +88,13 @@ Resolve the three CI discussions with current repository and hosted-run evidence
 - **References:** `workspace/tasks/20261124-111700-resolve-ci-discussion-items.md`, `workspace/task_board.md`, task commit `aa74be3`, board commit `ac2b350`.
 - **Next:** Verify renderer source/tests and hosted runner evidence.
 
+### 2026-11-24 11:44 UTC
+
+- **Action:** Completed the requested CI evidence review and Worker policy correction. Prepared the final resolution record.
+- **Result:** The reporter scope and task eligibility rules agree. Report retirement is complete. The renderer fix and hosted test evidence are verified. Source workflow runner allocation resumed. The remaining billing-cause ambiguity is documented and does not require a runner-label change.
+- **References:** Worker skill commit `8adc48d1be4d4d659fba028d7cea8e76ddd9c9d9`, Diagnostics #530, #538, #539, source workflow runs #276, #277, and #280, and the archive-retention index.
+- **Next:** Write the immutable Done archive, register it, remove the active record, and reconcile the board.
+
 ## 7. Current State
 
 All three CI discussions have verified outcomes.
