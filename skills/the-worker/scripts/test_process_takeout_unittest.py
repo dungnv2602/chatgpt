@@ -50,6 +50,10 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.inbox = self.root / "images" / "takeout"
         self.inbox.mkdir(parents=True)
+        (self.inbox / "README.md").write_text(
+            "# Image Takeout test fixture\n",
+            encoding="utf-8",
+        )
         self.bin_dir = self.root / "bin"
         self.bin_dir.mkdir()
         encoder = self.bin_dir / "cwebp"
@@ -384,6 +388,10 @@ class TakeoutProcessorTests(unittest.TestCase):
             (self.inbox / "HANDOFF.yml").read_text(encoding="utf-8"),
             "version: 1\nstatus: empty\nitems: []\n",
         )
+        self.assertEqual(
+            (self.inbox / "README.md").read_text(encoding="utf-8"),
+            "# Image Takeout test fixture\n",
+        )
 
         history = self.inbox / "history/batch-test/attempt-001"
         for name in ("HANDOFF.yml", "conversion-report.csv", "verification-report.md"):
@@ -521,6 +529,27 @@ class TakeoutProcessorTests(unittest.TestCase):
             / "history/batch-unlisted/attempt-001/verification-report.md"
         ).read_text(encoding="utf-8")
         self.assertIn("not listed", report)
+
+    def test_unexpected_non_image_file_fails_without_moving_sources(self):
+        source = self.inbox / "listed.png"
+        source.write_bytes(b"preserve-this-source")
+        unexpected = self.inbox / "notes.md"
+        unexpected.write_text("not intake metadata", encoding="utf-8")
+        self.manifest({"source": source.name}, batch="batch-unexpected-file")
+        handoff_before = (self.inbox / "HANDOFF.yml").read_bytes()
+        readme_before = (self.inbox / "README.md").read_bytes()
+
+        result = self.run_processor()
+
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual(source.read_bytes(), b"preserve-this-source")
+        self.assertEqual((self.inbox / "README.md").read_bytes(), readme_before)
+        self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), handoff_before)
+        report = (
+            self.inbox
+            / "history/batch-unexpected-file/attempt-001/verification-report.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Unexpected non-image file in takeout: notes.md", report)
 
     def test_missing_conversation_record_fails_before_staging_or_relocation(self):
         (self.inbox / "no-conversation.png").write_bytes(b"preserve-this-original")
