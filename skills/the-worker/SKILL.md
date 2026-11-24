@@ -40,6 +40,7 @@ The CI Ledger is part of The Worker. During event-driven report ingestion, it cr
 
 - Load this skill during foundational initialization.
 - Load `references/conversation-mode.md` with this skill before project work.
+- Load `../decision-governance/SKILL.md` on demand when work involves Drafts, ADRs, or repository analysis. Keep it task-specific.
 - Use it for repository project work in Default Mode and Condensed Mode.
 - Do not load project skills automatically at the start of a new conversation.
 - Follow the explicit initialization cues in skills/SESSION_START.md.
@@ -104,6 +105,10 @@ This boundary applies to every future task and every tool call, not only archivi
 - workspace/task_board.md indexes active, ready, blocked, proposed, and historical tasks.
 - workspace/TASK_TEMPLATE.md defines the task record format.
 - workspace/tasks/ contains current task records.
+- workspace/draft/ contains proposals that need user review.
+- workspace/adr/ contains accepted ADRs awaiting implementation or confirmation.
+- workspace/analysis/ contains evidence-based repository analysis snapshots.
+- archive/adr/ contains permanent, immutable ADRs after confirmation.
 - archive/README.md defines archive retention.
 - archive/tasks/ contains completed or cancelled task records during retention.
 - Treat `archive/` as read-only after each record's initial archive write. You may read an exact archived record when a task requires its content. Do not perform broad archive scans or audits unless the user asks.
@@ -271,6 +276,21 @@ At a checkpoint:
 - Keep verification claims tied to actual results.
 
 Before switching tasks or ending a conversation, write a complete handoff. Do not leave stale next actions.
+
+## Decision governance
+
+The task-specific `skills/decision-governance/SKILL.md` owns Draft, ADR, and repository-analysis procedures. Load it when a task requires those procedures. Do not load it during foundational initialization.
+
+- Every new implementation task must link one or more accepted ADRs in `Governing ADR(s)`.
+- Map applicable ADR Confirmation criteria to task acceptance criteria.
+- Keep ADR approval separate from task execution approval.
+- Do not move an implementation task to Ready or In Progress without accepted ADR linkage.
+- Create a Draft when no accepted ADR covers the proposed work.
+- Keep grandfathered tasks unchanged. Do not mass-migrate existing task records.
+- Ledger-created Proposed tasks use `Pending — Worker review required before approval` until the Worker assigns an accepted ADR or starts a Draft.
+- Keep the task board ADR column aligned with each task record.
+- Archive an ADR only after all linked tasks are Done and every Confirmation criterion passes.
+- Never add ADRs to the 90-day archive-retention index.
 
 ## Cross-conversation recovery
 
