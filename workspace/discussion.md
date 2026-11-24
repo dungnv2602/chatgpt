@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 08:00 UTC — Audit the Ledger generator, regression suite, task renderer contract, and Diagnostics workflow against the task's remaining acceptance criteria. Identify any concrete in-scope defect that explains the missing task handoff; avoid changes based only on runnerless CI failures.**
+**2026-11-24 08:05 UTC — Add a hosted regression for the exact remaining handoff case: already-ingested open low/informational lint findings with no task references. Keep workflow definitions unchanged because the latest failures have no runner assignment or executed steps.**
 
 ## Open Discussions
 
