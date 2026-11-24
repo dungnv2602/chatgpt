@@ -108,11 +108,11 @@ The implementation task must collect evidence for every criterion.
 
 - [x] The user approved DRAFT-0001 revision 1 and its complete scope.
 - [x] ADR-0001 records the accepted decision and links to its source Draft.
-- [ ] Draft and ADR lifecycle instructions are implemented and read back.
-- [ ] The task template and task board require and display governing ADR references.
+- [x] Draft and ADR lifecycle instructions are implemented and read back.
+- [x] The task template and task board require and display governing ADR references.
 - [ ] The Ledger creates Proposed task handoffs with ADR linkage marked pending.
-- [ ] The decision-governance skill, workspace analysis area, and permanent ADR archive guidance exist.
-- [ ] The Document Type Catalog contains all required active and reserved path rules.
+- [x] The decision-governance skill, workspace analysis area, and permanent ADR archive guidance exist.
+- [x] The Document Type Catalog contains all required active and reserved path rules.
 - [ ] Relevant hosted Document Standards and Ledger validation pass.
 - [ ] The implementation task is complete and archived. Then move this ADR to `archive/adr/`.
 
@@ -157,4 +157,4 @@ The implementation task must collect evidence for every criterion.
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
 | 2026-11-24 | Accepted | The user approved DRAFT-0001 revision 1 in this conversation. |
-| 2026-11-24 | Implementation in progress | Bootstrap task 20261124-103354 is implementing the accepted decision. |
+| 2026-11-24 | Implementation in progress | Core governance files are committed and read back. Hosted Document Standards and Ledger validation remain pending after a catalog filename-pattern correction. |
