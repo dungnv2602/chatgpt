@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261123-162826
 - **Created:** 2026-11-23 16:28 UTC
-- **Updated:** 2026-11-24 02:00:14 UTC
+- **Updated:** 2026-11-24 02:21 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -150,28 +150,28 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 
 ## 7. Current State
 
-The current processor is in [2b43d2e](https://github.com/dungnv2602/chatgpt/commit/2b43d2e547982c624380d27dccb72ae1d241147d), and the workflow/documentation consolidation is in [0365a05](https://github.com/dungnv2602/chatgpt/commit/0365a054d2d0dda9eb9258a9747495bf5013c0bd). The processor handles mapped and unclassified items in one Ready batch. It validates conversation and attempt evidence before mapped conversion and relocation. It converts unclassified static images into `images/takeout/webp/unclassified/attempt-NNN/`, checks the WebP container and unchanged source hash, and does not relocate either file. It keeps the seven unclassified entries in the residual Draft hand-off. The separate unclassified workflow has been removed.
+The processor and expanded regression suite were corrected for the conversation-mapping mismatch in [b473f56](https://github.com/dungnv2602/chatgpt/commit/b473f562a7a0bbc4da9cb037c87c83ade1167224). The latest hosted run [#67](https://github.com/dungnv2602/chatgpt/actions/runs/45311323087) passed compilation and all 47 processor tests, then stopped during intake validation because the processor rejected the repository-owned `images/takeout/README.md` as an unexpected non-image file. No image conversion, staging, or relocation ran. The failed attempt's hand-off and report were archived; the active Ready hand-off and all 18 source PNGs remain available.
 
-The latest hosted processor suite (run [45306543050](https://github.com/dungnv2602/chatgpt/actions/runs/45306543050)) failed 1 of 45 tests on the conversation-mapping mismatch fixture. Commit [a885899](https://github.com/dungnv2602/chatgpt/commit/a885899e9c6d0f16bb4b737374ebdb1c7a200226) made that fixture deterministic. The new 47-test suite has not yet run in Actions.
+The fix explicitly recognizes only the exact regular metadata files `README.md` and `HANDOFF.yml`, after rejecting symlinks and non-files. It continues to reject every other non-image file and retains exact image coverage checks. A new regression test covers the intake README baseline and confirms that an unrelated `notes.md` still fails closed. The processor suite now contains 48 tests; hosted verification is pending.
 
-The intake still contains eighteen original PNGs: eleven mapped and seven unclassified. No image has been converted or relocated by the consolidation code change. The hand-off remains Ready with all eighteen exact source files covered. The user must manually dispatch the normal workflow after the changes are committed. The processor must pass all 47 tests before it processes images.
+The intake inventory remains eighteen original PNGs: eleven mapped and seven unclassified. The Ready hand-off remains the active batch. The approved behavior is unchanged: mapped originals are relocated only after all conversions succeed; unclassified WebP derivatives remain in their quarantine staging directory, their originals remain unchanged in intake, and their entries remain in the residual Draft hand-off. No index edits are authorized.
 
 ## 8. Remaining Work
 
-- Obtain hosted verification of all 47 processor tests, including the conversation-mapping mismatch test.
+- Obtain hosted verification of the expanded 48-test processor suite, including the README metadata allowlist and rejection of arbitrary non-image files.
 - Verify publication of the eleven mapped original/WebP pairs.
-- Verify publication of seven unclassified WebP derivatives under `images/takeout/webp/unclassified/`.
+- Verify seven unclassified WebP derivatives under `images/takeout/webp/unclassified/`.
 - Confirm all seven unclassified original PNGs remain byte-for-byte unchanged in intake and the residual Draft hand-off contains exactly those seven entries.
-- The user performs any later relocation. Edit an index only after an explicit user request and only with verified mapping details.
+- Confirm the mapped originals are byte-identical after relocation and that no index was edited.
 - Keep the task In Progress until hosted tests, mapped publication, unclassified derivatives, source preservation, and the residual Draft hand-off are verified.
 
 ## 9. Next Actions
 
-1. Manually dispatch `Process Image Takeout and Create WebP Derivatives` on branch `gpt` after the consolidation commit is read back.
-2. Require all 47 processor tests to pass before processing. If the mapping-mismatch test fails, inspect the production validation path rather than weakening the test.
-3. Verify the eleven mapped original/WebP pairs and seven unclassified WebP derivatives.
-4. Confirm all seven unclassified PNGs remain unchanged in intake and the residual Draft hand-off contains exactly those seven items.
-5. Keep any later relocation and index changes under the user's explicit direction.
+1. Read back the processor, regression tests, intake README, and provenance reference on branch `gpt`.
+2. Manually dispatch **Process Image Takeout and Create WebP Derivatives** on branch `gpt` after the metadata fix is committed.
+3. Require all 48 processor tests to pass before processing.
+4. Verify the eleven mapped original/WebP pairs and seven unclassified WebP derivatives.
+5. Confirm all seven unclassified PNGs remain unchanged in intake and the residual Draft hand-off contains exactly those seven items. Do not edit indexes or relocate unclassified files.
 
 ## 10. References
 
@@ -198,7 +198,7 @@ The intake still contains eighteen original PNGs: eleven mapped and seven unclas
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. The current processor and expanded regression suite are in commit [2b43d2e](https://github.com/dungnv2602/chatgpt/commit/2b43d2e547982c624380d27dccb72ae1d241147d). The documentation and workflow deletion are in [0365a05](https://github.com/dungnv2602/chatgpt/commit/0365a054d2d0dda9eb9258a9747495bf5013c0bd). The normal workflow now converts unclassified images to WebP without relocating either the original or derivative. The separate unclassified workflow is removed. The hand-off remains Ready for a user-triggered normal run. Require all 47 processor tests to pass before processing. Verify eleven mapped original/WebP pairs, seven unclassified derivatives, unchanged unclassified source PNGs, and a seven-entry residual Draft hand-off. The user performs any later relocation. Do not infer source mappings or edit indexes without explicit user direction.
+Continue on branch `gpt`. The normal Image Takeout workflow is the sole workflow for mapped and unclassified images. The latest hosted run [#67](https://github.com/dungnv2602/chatgpt/actions/runs/45311323087) passed all 47 existing processor tests but stopped before processing because the root-level repository-owned `images/takeout/README.md` was not included in the intake metadata allowlist. The remediation now adds an exact regular-file allowlist for `README.md` and `HANDOFF.yml`, while continuing to reject all other non-image files. The suite now has 48 tests. Require all 48 to pass in the next user-triggered run. Verify eleven mapped original/WebP pairs, seven unclassified derivatives, unchanged unclassified source PNGs, and a seven-entry residual Draft hand-off. The user performs any later relocation. Do not infer source mappings or edit indexes without explicit user direction.
 
 ## 13. Ledger Findings
 
@@ -263,3 +263,15 @@ The following inventory records the exact image blob SHA and byte size from the 
 - **Independent diagnostics-sidecar failures:** Its test suite has a syntax error in `reports/triage/scripts/test_ledger.py` (missing colon on the `add_lint` definition), and ledger ingestion raises `NameError` for undefined `LINT_BASELINE_CHECKS`. This is outside the Image Takeout processor fix and was not modified here.
 - **Next:** Obtain hosted verification of the corrected 47-test suite before any processing. Keep the task In Progress until all tests pass and the mapped/unclassified output invariants are verified.
 
+
+
+## 15. Hosted Run #67 and Intake Metadata Remediation
+
+- **Run:** [45311323087](https://github.com/dungnv2602/chatgpt/actions/runs/45311323087), manual `workflow_dispatch` on branch `gpt`, commit `0095d72fbedfb189f9975146b5a78b46690f0431`.
+- **Processor tests:** Compilation passed and all 47 tests passed, including the corrected conversation-mapping mismatch regression.
+- **Processing failure:** The processor stopped during the flat-inbox scan with `Unexpected non-image file in takeout: README.md`. `images/takeout/README.md` is repository-owned intake documentation, not an uploaded image. The validator recognized `HANDOFF.yml`, `history/`, and `webp/`, but had no corresponding exception for the README.
+- **Safety result:** The failure occurred before image conversion, staging, or relocation. The workflow archived the failed attempt's hand-off and reports. The active Ready hand-off and original image files were not processed. No mapped originals or unclassified originals/derivatives were moved.
+- **Correction:** The processor now recognizes only the exact regular files `README.md` and `HANDOFF.yml` as intake metadata, after the symlink/directory/non-file checks. Any other non-image file remains a hard failure. The test fixture now includes a README in every intake scenario, verifies it remains untouched after success, and adds a negative test proving `notes.md` is still rejected. The suite now contains 48 tests.
+- **Documentation:** `images/takeout/README.md` and `skills/the-worker/references/image-provenance-and-webp.md` now define the metadata exception and distinguish metadata from upload coverage.
+- **Independent diagnostics sidecar:** The same run's separate diagnostics job still failed on the existing syntax error in `reports/triage/scripts/test_ledger.py` and undefined `LINT_BASELINE_CHECKS` in `reports/triage/scripts/ledger.py`. These are outside this Image Takeout fix and were not changed.
+- **Next:** Require hosted verification of all 48 tests, then inspect processing and publication. Do not claim image conversion or relocation until those outputs are verified.
