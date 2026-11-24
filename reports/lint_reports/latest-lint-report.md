@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#189](https://github.com/dungnv2602/chatgpt/actions/runs/45357997227)
-- **Run ID / attempt:** 45357997227 / 1
+- **Run:** [#190](https://github.com/dungnv2602/chatgpt/actions/runs/45364189404)
+- **Run ID / attempt:** 45364189404 / 1
 - **Workflow:** STE Lint Full Technical Documentation
-- **Branch / commit:** gpt / 0993432077a90d28933e0ebdf334414a368e84b8
+- **Branch / commit:** gpt / c8c7092b1acc22a0d0dc6e53da6b910b0b05355e
 - **Event:** workflow_dispatch
 - **Execution mode:** repository-wide
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 0993432077a90d28933e0ebdf334414a368e84b8
-- **Generated (UTC):** 2026-11-24T08:39:45.344227+00:00
+- **Linter source SHA:** c8c7092b1acc22a0d0dc6e53da6b910b0b05355e
+- **Generated (UTC):** 2026-11-24T09:20:32.068473+00:00
 
 ## 1. Executive summary
 
@@ -24,14 +24,14 @@
 | Advisory findings | 338 |
 | New findings | 0 |
 | Recurring findings | 454 |
-| Resolved findings | 1 |
+| Resolved findings | 0 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
 
 - Runner OS: Linux
 - Python: 3.15.2
-- Platform: Linux-7.0.0-1016-aws-x86_64-with-glibc2.43
+- Platform: Linux-7.0.0-1020-azure-x86_64-with-glibc2.43
 - The JSON report records the full runtime version and every original per-file linter response.
 - The report records the commit that supplied the linter and generator code.
 
@@ -194,7 +194,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.236s
+Ran 4 tests in 0.216s
 
 OK
 ~~~
@@ -227,7 +227,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 266 active Markdown files (379 available as link targets) and 332 local Markdown links.
+Scanned 268 active Markdown files (381 available as link targets) and 332 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -2060,10 +2060,7 @@ None.
 
 ### Resolved findings
 
-- **long-sentence** · workspace/task_board.md:35:1 · **resolved** · fingerprint: 00f8a90274c82ba38a60c467
-  - **Level:** advisory-free
-  - **Message:** Sentence has 152 words (cap 25). Split it.
-  - **Matched text:** 152 words
+None.
 
 ## 8. Complete per-file diagnostics
 
