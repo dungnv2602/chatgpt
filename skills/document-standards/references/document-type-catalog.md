@@ -1,7 +1,7 @@
 # Document Type Catalog
 
-**Catalog version:** 1.13  
-**Inventory status:** Non-truncated recursive tree audit of branch `gpt` at commit `1a5c8380036dac0132216635951f95a971ceee25` found 6,375 tree entries and 1,114 Markdown documents outside root `master/` and `archive/`. All 1,114 Markdown paths match the 48 Active coverage rules. Every rule matches at least one file. This is a complete path inventory and targeted family review, not a line-by-line semantic review of every generated report.
+**Catalog version:** 1.14  
+**Last full inventory audit:** A non-truncated recursive tree audit of branch `gpt` at commit `1a5c8380036dac0132216635951f95a971ceee25` found 6,375 tree entries and 1,114 Markdown documents outside root `master/` and `archive/`. All 1,114 Markdown paths matched the 48 Active coverage rules. Every rule matched at least one file. This is the last complete path inventory and targeted family review, not a line-by-line semantic review of every generated report.
 **Source branch:** `gpt`
 
 This catalog maps recurring document types to their canonical formats. It distinguishes standalone templates from embedded contracts and generated formats. Skill-owned copy-ready templates belong in the owning skill's `assets/` directory. Explanatory references belong in `references/`. Project-level templates may use the owning project's designated template directory.
@@ -42,8 +42,8 @@ Do not create a second template when an owning workflow already defines the requ
 | Session summary | Template required | `skills/the-worker/assets/session-summary-template.md` | Copy-ready handoff template now exists. The historical record `drawings/history/2026-11-12-summary.md` predates the template and remains unchanged. |
 | Workspace task record | Template required | `workspace/TASK_TEMPLATE.md` | Template version 1.3. New implementation tasks require Governing ADR(s). The Worker owns task fields and closeout. The CI Ledger creates Proposed task records for newly identified actionable findings during report ingestion and maintains their finding links. It does not taskify the historical backlog. The active record remains In Progress / Archived: No until the archive copy passes full read-back. |
 
-| Decision Draft | Template required | `workspace/DRAFT_TEMPLATE.md` | One proposal per decision. Require explicit user review and approval before promotion to an ADR. Preserve the promoted Draft as provenance. |
-| Accepted Decision Record | Template required | `workspace/ADR_TEMPLATE.md` | MADR-inspired decision record. Create only after the user approves the exact Draft. Track decision status separately from implementation status. |
+| Decision Draft | Template required | `workspace/DRAFT_TEMPLATE.md` | One proposal per decision. Require explicit user review and approval. After an accepted ADR passes completeness and read-back checks, delete the source Draft. Keep its ID and revision as ADR provenance. Retain the source temporarily only when deletion fails, under Promotion Cleanup Pending. |
+| Accepted Decision Record | Template required | `workspace/ADR_TEMPLATE.md` | MADR-inspired decision record. Use promotion-pending only for the provisional promotion transaction. It is not accepted, must not appear in the accepted-decision index, and cannot govern a task. Change it to accepted only after the complete rationale check and read-back pass. Track decision status separately from implementation status. |
 | Repository analysis | Template required | `workspace/ANALYSIS_TEMPLATE.md` | Evidence-based repository health snapshots at a fixed branch commit. Analysis does not authorize implementation and does not duplicate the CI Ledger. |
 | Novel workspace index and workflow | Embedded contract | `novels/README.md` and `novels/WORKFLOW.md` | The README indexes projects and current templates. The workflow defines narrative hierarchy, status/canon, versioning, and template-first authoring. No separate template is needed. |
 | Archive boundary policy | Embedded contract | `archive/README.md` and `skills/the-worker/SKILL.md` | Defines archive record structure, immutability, permitted exact reads, and batch retention. The README is read-only under the archive boundary. The retention workflow also exposes manual and workflow-call force triggers. See Open Discussions for policy confirmation. |
@@ -135,9 +135,9 @@ Coverage status has three values. `Active` rules must match at least one in-scop
 | `workspace/analysis/README.md` | Embedded contract | Active | `skills/decision-governance/SKILL.md` and `workspace/analysis/README.md` | Repository-analysis navigation, review cadence, evidence requirements, and boundaries. |
 | `workspace/analysis/ANALYSIS-20??Q?*.md` | Template required | Reserved | `workspace/ANALYSIS_TEMPLATE.md` | Quarterly and event-triggered repository analysis snapshots. Activate this rule with the first real analysis record. |
 | `workspace/draft/README.md` | Embedded contract | Active | `skills/decision-governance/SKILL.md` and `workspace/draft/README.md` | Draft folder navigation, status transitions, and promotion rules. |
-| `workspace/draft/DRAFT-*.md` | Template required | Active | `workspace/DRAFT_TEMPLATE.md` | One proposal record per decision. The first Draft is DRAFT-0001. |
+| `workspace/draft/DRAFT-*.md` | Template required | Active | `workspace/DRAFT_TEMPLATE.md` | One proposal record per decision. Delete the source after verified ADR promotion. Use Promotion Cleanup Pending only when deletion fails after acceptance. The first Draft is DRAFT-0001. |
 | `workspace/adr/README.md` | Embedded contract | Active | `skills/decision-governance/SKILL.md` and `workspace/adr/README.md` | Accepted ADR navigation, status, implementation, and archive rules. |
-| `workspace/adr/????-*.md` | Template required | Active | `workspace/ADR_TEMPLATE.md` | Accepted ADR records use a four-digit global ID in the filename. ADR-0001 is the first active decision record. |
+| `workspace/adr/????-*.md` | Template required | Active | `workspace/ADR_TEMPLATE.md` | ADR records use a four-digit global ID in the filename. The provisional promotion-pending state is temporary and non-authoritative. Only accepted records govern implementation tasks. ADR-0001 is the first decision record. |
 
 ## Validation coverage limits
 
