@@ -332,6 +332,69 @@ class StorageTests(unittest.TestCase):
             latest = json.loads((root / "latest-gh-ac-report.json").read_text(encoding="utf-8"))
             self.assertEqual(latest["capture"]["stage"], "post_run")
 
+    def test_completed_pending_run_gets_post_run_capture_and_clears_pending(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            pre = {
+                "schema_version":"1.0.0",
+                "source_run":{"id":"100","number":100,"attempt":1,"workflow_id":55,"workflow_name":"Example",
+                              "workflow_path":".github/workflows/example.yml","run_url":"https://example.invalid",
+                              "event":"push","branch":"gpt","head_sha":"abc123","status":"in_progress",
+                              "conclusion":None,"created_at":"2026-11-23T06:00:00Z","actor":None,
+                              "triggering_actor":None,"run_started_at":None,"updated_at":None,"head_commit_message":None},
+                "capture":{"stage":"pre_finalizer","captured_at_utc":"2026-11-23T06:01:00Z","completeness":"Incomplete","reporter_job":None},
+                "classification":{"state":"in_progress","observed_conclusion":None,"projected_conclusion":"failure",
+                                  "primary_category":"validation_or_test","categories":["validation_or_test"],
+                                  "issues":[{"category":"validation_or_test","job_id":"200","job_name":"Build",
+                                             "step_number":2,"step_name":"Tests","blocking":True,"confidence":"medium",
+                                             "message":"Tests failed."}]},
+                "jobs":[{"id":"200","name":"Build","status":"completed","conclusion":"failure",
+                         "steps":[],"log_capture":{"available":False,"truncated":False,"bytes":0,
+                         "path":None,"marker_lines":[]}}],
+                "check_runs":[],"annotations":[],"artifacts":[],
+                "capture_errors":[{"source":"job_log","message":"Run is still in progress."}],"history_path":"",
+            }
+            pre_path = REPORT.write_report(root, pre, {})
+            pre_bytes = (pre_path / "report.json").read_bytes()
+
+            post = json.loads(json.dumps(pre))
+            post["source_run"]["status"] = "completed"
+            post["source_run"]["conclusion"] = "failure"
+            post["capture"] = {
+                "stage":"post_run","captured_at_utc":"2026-11-23T06:05:00Z",
+                "completeness":"Complete","reporter_job":None,
+            }
+            post["classification"] = {
+                "state":"failure","observed_conclusion":"failure","projected_conclusion":None,
+                "primary_category":"validation_or_test","categories":["validation_or_test"],
+                "issues":pre["classification"]["issues"],
+            }
+            post["jobs"][0]["log_capture"] = {
+                "available":True,"truncated":False,"bytes":6,
+                "path":"logs/job-200.log","marker_lines":["FAILED: tests"],
+            }
+            post["capture_errors"] = []
+
+            with patch.object(REPORT, "collect_runs_since", return_value=[]), \
+                 patch.object(REPORT, "api_get", side_effect=[
+                     make_run("failure"),
+                     {"run_attempt":1},
+                     make_run("failure"),
+                 ]), \
+                 patch.object(REPORT, "fetch_evidence", return_value=(post, {"logs/job-200.log":"FAILED"})):
+                REPORT.run_sweep("owner/repository", root)
+
+            index = REPORT.load_index(root)
+            self.assertEqual(index["pending_run_ids"], [])
+            self.assertEqual(len(index["runs"]), 2)
+            self.assertEqual(
+                {item["capture_stage"] for item in index["runs"]},
+                {"pre_finalizer", "post_run"},
+            )
+            latest = json.loads((root / "latest-gh-ac-report.json").read_text(encoding="utf-8"))
+            self.assertEqual(latest["capture"]["stage"], "post_run")
+            self.assertEqual((pre_path / "report.json").read_bytes(), pre_bytes)
+
 
 if __name__ == "__main__":
     unittest.main()
