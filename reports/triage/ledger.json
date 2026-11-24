@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-24T15:22:59Z",
+  "updated_at_utc": "2026-11-24T15:35:24Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
@@ -176,6 +176,7 @@
       "reports/gh_ac_reports/history/427313089/45399711310-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/427313089/45404822403-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45404822403-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/427313089/45424211881-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45424211881-attempt-1-pre_finalizer/report.json",
       "reports/lint_reports/on_changed/history/45301729061-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45304735363-attempt-1/report.json",
@@ -9953,6 +9954,35 @@
         "20261124-094047-06"
       ],
       "task_group": "ci-ec825d4d86907bf8"
+    },
+    {
+      "finding_id": "gha-ab832c04fc21ad44f6cf0ffe",
+      "source_family": "github_actions",
+      "category": "validation_or_test",
+      "title": "Validate Document Standards / validate-document-standards / Validate the document type catalog: validation_or_test — <timestamp> error: line 140: markdown coverage pattern matches no in-scope document: 'workspace/adr/????-*.md'.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T15:35:24Z",
+      "last_seen_utc": "2026-11-24T15:35:24Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/gh_ac_reports/history/427313089/45424211881-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45424211881",
+          "observed_at_utc": "2026-11-24T15:35:24Z",
+          "note": "validate-document-standards / Validate the document type catalog",
+          "observation_id": "github_actions:427313089:45424211881:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-104329"
+      ],
+      "task_group": "ci-601033e3967e71af"
     }
   ]
 }
