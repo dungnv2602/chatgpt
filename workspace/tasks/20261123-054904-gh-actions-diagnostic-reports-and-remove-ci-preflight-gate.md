@@ -456,3 +456,10 @@ Continue from this record. The implementation and policy changes are in place. T
 - **Change:** Pointed the `proceed` job output at the baseline step, corrected the jq `all` expression to iterate over the required check names, and documented that a tooling-valid Failed lint report can still seed a baseline. This preserves lint failure status and thresholds.
 - **Validation:** Run #593 exposed the defects before executing the linter. Diagnostics #512 and Document Standards #268 passed. The full technical-document audit #184 failed on existing repository lint debt and is separate from this task's approved scope.
 - **Next:** Verify the next eligible changed-document lint run executes its changed-file step and publishes a complete report. Then reconcile the resulting run through Diagnostics.
+
+
+### 2026-11-24 — Review changed-document lint findings
+
+- **Evidence:** Changed-document lint [#594](https://github.com/dungnv2602/chatgpt/actions/runs/45343527285) published a complete incremental report. Baseline selection and all tooling checks passed. The changed-file lint evaluated three files and retained 88 findings: 86 recurring and two new. The workflow correctly failed because the evaluated files still contain hard findings.
+- **Scope decision:** The catalog and task-board findings are tracked lint debt and remain outside this task's remediation scope. The workspace guide introduced one new passive-voice advisory in the baseline explanation. Reworded that sentence to remove the new finding without changing the lint policy. The separate task-board long-sentence finding remains with its existing Worker handoff.
+- **Next:** Allow the next changed-document run to record the wording correction. Keep the lint threshold unchanged. Complete the parent task only after Document Standards and Diagnostics pending-run reconciliation finish.
