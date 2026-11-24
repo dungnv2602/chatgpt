@@ -1,44 +1,253 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45386030748",
-  "run_number": 603,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45386030748",
+  "run_id": "45395353908",
+  "run_number": 604,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45395353908",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "31bb58dfe0d7acd5914b7b34ee8b41464f0658ee",
+  "commit_sha": "241ba8ad5e4aa7cff683ecf49df31c0ad11945ef",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "incremental",
-  "baseline_sha": "8adc48d1be4d4d659fba028d7cea8e76ddd9c9d9",
-  "generated_at_utc": "2026-11-24T11:40:26.558806+00:00",
+  "baseline_sha": "31bb58dfe0d7acd5914b7b34ee8b41464f0658ee",
+  "generated_at_utc": "2026-11-24T12:38:26.660336+00:00",
   "status": "Failed",
-  "linter_source_sha": "31bb58dfe0d7acd5914b7b34ee8b41464f0658ee",
+  "linter_source_sha": "241ba8ad5e4aa7cff683ecf49df31c0ad11945ef",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43"
   },
   "files_evaluated": [
+    "workspace/adr/README.md",
+    "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
     "workspace/task_board.md",
     "workspace/draft/README.md",
-    "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md"
+    "workspace/README.md",
+    "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md"
   ],
-  "files_evaluated_count": 3,
-  "files_failed": 1,
+  "files_evaluated_count": 6,
+  "files_failed": 3,
   "failed_files": [
-    "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md"
+    "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+    "workspace/task_board.md",
+    "workspace/README.md"
   ],
-  "files_with_findings": 2,
-  "total_findings": 18,
-  "hard_findings": 2,
-  "advisory_findings": 16,
+  "files_with_findings": 5,
+  "total_findings": 37,
+  "hard_findings": 14,
+  "advisory_findings": 23,
   "findings_by_rule": {
-    "passive-voice": 14,
-    "synonym-rotation": 2,
-    "present-perfect": 2
+    "passive-voice": 21,
+    "present-perfect": 2,
+    "synonym-rotation": 7,
+    "long-sentence": 5,
+    "semicolon": 2
   },
   "records": [
+    {
+      "violations": [
+        {
+          "file": "workspace/adr/README.md",
+          "line": 54,
+          "col": 38,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are Done",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        }
+      ],
+      "count": 1,
+      "hard_count": 0,
+      "baseline": 0,
+      "words": 387,
+      "per_100_words": 0.3,
+      "path": "workspace/adr/README.md",
+      "exit_code": 0
+    },
+    {
+      "violations": [
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 40,
+          "col": 64,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is required",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 81,
+          "col": 41,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was made",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 177,
+          "col": 31,
+          "rule": "present-perfect",
+          "level": "advisory",
+          "match": "has presented",
+          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 178,
+          "col": 34,
+          "rule": "present-perfect",
+          "level": "advisory",
+          "match": "has requested",
+          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 180,
+          "col": 23,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was created",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 201,
+          "col": 14,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "verify",
+          "message": "'verify' and 'confirm' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 217,
+          "col": 237,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "begins",
+          "message": "'begin' and 'start' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 269,
+          "col": 158,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is grandfathered",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 275,
+          "col": 55,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was implemented",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 277,
+          "col": 21,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "check",
+          "message": "'check' and 'confirm' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 279,
+          "col": 38,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are Done",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 281,
+          "col": 132,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is superseded",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 285,
+          "col": 85,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is implemented",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 295,
+          "col": 42,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "Remove",
+          "message": "'remove' and 'delete' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 303,
+          "col": 59,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "fixed",
+          "message": "'fix' and 'repair' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 333,
+          "col": 3,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "27 words",
+          "message": "Sentence has 27 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 355,
+          "col": 45,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "Validate",
+          "message": "'validate' and 'confirm' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 372,
+          "col": 95,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is approved",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+          "line": 402,
+          "col": 17,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are deleted",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        }
+      ],
+      "count": 19,
+      "hard_count": 7,
+      "baseline": 0,
+      "words": 3360,
+      "per_100_words": 0.6,
+      "path": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "exit_code": 1
+    },
     {
       "violations": [
         {
@@ -67,22 +276,40 @@
           "level": "advisory",
           "match": "is preserved",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/task_board.md",
+          "line": 33,
+          "col": 1,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "646 words",
+          "message": "Sentence has 646 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/task_board.md",
+          "line": 94,
+          "col": 1,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "128 words",
+          "message": "Sentence has 128 words (cap 25). Split it."
         }
       ],
-      "count": 3,
-      "hard_count": 0,
+      "count": 5,
+      "hard_count": 2,
       "baseline": 0,
-      "words": 890,
+      "words": 1570,
       "per_100_words": 0.3,
       "path": "workspace/task_board.md",
-      "exit_code": 0
+      "exit_code": 1
     },
     {
       "violations": [],
       "count": 0,
       "hard_count": 0,
       "baseline": 0,
-      "words": 321,
+      "words": 333,
       "per_100_words": 0.0,
       "path": "workspace/draft/README.md",
       "exit_code": 0
@@ -90,151 +317,355 @@
     {
       "violations": [
         {
-          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
-          "line": 119,
-          "col": 62,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are required",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
-          "line": 223,
-          "col": 48,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are preferred",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
-          "line": 227,
-          "col": 233,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is blocked",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
-          "line": 296,
-          "col": 167,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is justified",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
-          "line": 306,
-          "col": 67,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are displaced",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
-          "line": 344,
-          "col": 71,
-          "rule": "synonym-rotation",
+          "file": "workspace/README.md",
+          "line": 33,
+          "col": 113,
+          "rule": "semicolon",
           "level": "advisory-free",
-          "match": "checks",
-          "message": "'check' and 'verify' name the same action. Pick one and use it every time."
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
         },
         {
-          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
-          "line": 364,
-          "col": 16,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is required",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
-          "line": 365,
-          "col": 8,
-          "rule": "present-perfect",
-          "level": "advisory",
-          "match": "has been learned",
-          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
-          "line": 365,
-          "col": 12,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "been learned",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
-          "line": 366,
-          "col": 13,
-          "rule": "present-perfect",
-          "level": "advisory",
-          "match": "has occurred",
-          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
-          "line": 446,
-          "col": 99,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "being worked",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
-          "line": 461,
-          "col": 87,
-          "rule": "synonym-rotation",
+          "file": "workspace/README.md",
+          "line": 37,
+          "col": 4,
+          "rule": "long-sentence",
           "level": "advisory-free",
-          "match": "validates",
-          "message": "'validate' and 'verify' name the same action. Pick one and use it every time."
+          "match": "32 words",
+          "message": "Sentence has 32 words (cap 25). Split it."
         },
         {
-          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
-          "line": 469,
-          "col": 11,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is marked",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
-          "line": 507,
-          "col": 112,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is required",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
-          "line": 524,
-          "col": 116,
+          "file": "workspace/README.md",
+          "line": 37,
+          "col": 64,
           "rule": "passive-voice",
           "level": "advisory",
           "match": "is created",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/README.md",
+          "line": 37,
+          "col": 110,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is updated",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/README.md",
+          "line": 37,
+          "col": 140,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is removed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/README.md",
+          "line": 49,
+          "col": 108,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is archived",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/README.md",
+          "line": 49,
+          "col": 364,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "delete",
+          "message": "'delete' and 'remove' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "workspace/README.md",
+          "line": 53,
+          "col": 139,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "26 words",
+          "message": "Sentence has 26 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/README.md",
+          "line": 53,
+          "col": 223,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
         }
       ],
-      "count": 15,
-      "hard_count": 2,
+      "count": 9,
+      "hard_count": 5,
       "baseline": 0,
-      "words": 4727,
-      "per_100_words": 0.3,
-      "path": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "words": 750,
+      "per_100_words": 1.2,
+      "path": "workspace/README.md",
       "exit_code": 1
+    },
+    {
+      "violations": [
+        {
+          "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+          "line": 34,
+          "col": 64,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is required",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+          "line": 47,
+          "col": 41,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was made",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+          "line": 111,
+          "col": 44,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are implemented",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        }
+      ],
+      "count": 3,
+      "hard_count": 0,
+      "baseline": 0,
+      "words": 1129,
+      "per_100_words": 0.3,
+      "path": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "exit_code": 0
     }
   ],
   "findings": [
+    {
+      "file": "workspace/adr/README.md",
+      "line": 54,
+      "col": 38,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are Done",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "c5d87e6a30d090336e26669a",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 40,
+      "col": 64,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is required",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "04ec4f5fbb130c1324f44f00",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 81,
+      "col": 41,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was made",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "5d7ba294a41810bbc4f7a8fe",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 177,
+      "col": 31,
+      "rule": "present-perfect",
+      "level": "advisory",
+      "match": "has presented",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "015ecb389e532dd8875c1837",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 178,
+      "col": 34,
+      "rule": "present-perfect",
+      "level": "advisory",
+      "match": "has requested",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "0f4521e8c2b440c5ef392f4b",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 180,
+      "col": 23,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was created",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "852ed94029abbea4e6fab0f6",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 201,
+      "col": 14,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "verify",
+      "message": "'verify' and 'confirm' name the same action. Pick one and use it every time.",
+      "fingerprint": "8d81ddd804dfe2c99c883b3e",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 217,
+      "col": 237,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "begins",
+      "message": "'begin' and 'start' name the same action. Pick one and use it every time.",
+      "fingerprint": "4c95c42ba0a8e33df95da64d",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 269,
+      "col": 158,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is grandfathered",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "a317f5b19e2ab5d770d78d2a",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 275,
+      "col": 55,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was implemented",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "54ced16a4522c38f24c053a6",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 277,
+      "col": 21,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "check",
+      "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
+      "fingerprint": "469e1521575230ced366ea79",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 279,
+      "col": 38,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are Done",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "21fa99cd9adb2127f01fc204",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 281,
+      "col": 132,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is superseded",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "101211397f76806715447ab0",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 285,
+      "col": 85,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is implemented",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "befabfa16e1d11b4cc317bc3",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 295,
+      "col": 42,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Remove",
+      "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
+      "fingerprint": "063bc6652b2f8cba7e22ed0d",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 303,
+      "col": 59,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "fixed",
+      "message": "'fix' and 'repair' name the same action. Pick one and use it every time.",
+      "fingerprint": "8ab2123627f631a8c49701db",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 333,
+      "col": 3,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "27 words",
+      "message": "Sentence has 27 words (cap 25). Split it.",
+      "fingerprint": "8bf6c58f1f0bd3c79519cfd1",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 355,
+      "col": 45,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Validate",
+      "message": "'validate' and 'confirm' name the same action. Pick one and use it every time.",
+      "fingerprint": "7a97a9361b4bcc774d6f0ab9",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 372,
+      "col": 95,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is approved",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "e1b81119b147b4cb2485bf75",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md",
+      "line": 402,
+      "col": 17,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are deleted",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "396aabeca89bdc013b3dc544",
+      "comparison": "new"
+    },
     {
       "file": "workspace/task_board.md",
       "line": 7,
@@ -269,6 +700,164 @@
       "comparison": "recurring"
     },
     {
+      "file": "workspace/task_board.md",
+      "line": 33,
+      "col": 1,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "646 words",
+      "message": "Sentence has 646 words (cap 25). Split it.",
+      "fingerprint": "92ec83b350b615bdf683ddd6",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/task_board.md",
+      "line": 94,
+      "col": 1,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "128 words",
+      "message": "Sentence has 128 words (cap 25). Split it.",
+      "fingerprint": "57773ee1e8cfcfbc4aa600df",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/README.md",
+      "line": 33,
+      "col": 113,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "99ddd247f24032b76e53f957",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/README.md",
+      "line": 37,
+      "col": 4,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "32 words",
+      "message": "Sentence has 32 words (cap 25). Split it.",
+      "fingerprint": "850ad36627f5885d916de296",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/README.md",
+      "line": 37,
+      "col": 64,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is created",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "f9374751a535ad58835e814f",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/README.md",
+      "line": 37,
+      "col": 110,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is updated",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "28231427e3d00c582576f2b4",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/README.md",
+      "line": 37,
+      "col": 140,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is removed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "6e067aa5c3c536cd323a5c6d",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/README.md",
+      "line": 49,
+      "col": 108,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is archived",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "4a500644b11ea45e7a256ac0",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/README.md",
+      "line": 49,
+      "col": 364,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "delete",
+      "message": "'delete' and 'remove' name the same action. Pick one and use it every time.",
+      "fingerprint": "01eb48b1e6acd03619987cff",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/README.md",
+      "line": 53,
+      "col": 139,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "26 words",
+      "message": "Sentence has 26 words (cap 25). Split it.",
+      "fingerprint": "a222143dea70fba6ab12863a",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/README.md",
+      "line": 53,
+      "col": 223,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "99ddd247f24032b76e53f957",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "line": 34,
+      "col": 64,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is required",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "fbe6150d9b5e8dab3b1e43a3",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "line": 47,
+      "col": 41,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was made",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "8d3ad3a1e3838d879ee9b85a",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
+      "line": 111,
+      "col": 44,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are implemented",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "e871aaaf906a610ac0db5605",
+      "comparison": "new"
+    }
+  ],
+  "new_findings": 34,
+  "recurring_findings": 3,
+  "resolved_findings": [
+    {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
       "line": 119,
       "col": 62,
@@ -277,7 +866,7 @@
       "match": "are required",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "5acc357959587a68b0f951b8",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
@@ -288,7 +877,7 @@
       "match": "are preferred",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "3c71bd1ac16f45619f5466ce",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
@@ -299,7 +888,7 @@
       "match": "is blocked",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "89ce3d95585eee314fa93cfc",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
@@ -310,7 +899,7 @@
       "match": "is justified",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "3a3155bef6ccfb4a15af4609",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
@@ -321,7 +910,7 @@
       "match": "are displaced",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "f9a394a8cb93eb454dfa7f53",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
@@ -332,7 +921,7 @@
       "match": "checks",
       "message": "'check' and 'verify' name the same action. Pick one and use it every time.",
       "fingerprint": "e73135d93a51902c9fd106d5",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
@@ -343,7 +932,7 @@
       "match": "is required",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "bb1c50eaa631694d123a7701",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
@@ -354,7 +943,7 @@
       "match": "has been learned",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "7d8c8c30ca8b7156c5fd20d6",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
@@ -365,7 +954,7 @@
       "match": "been learned",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "5edc8896dd1191aed01bae09",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
@@ -376,7 +965,7 @@
       "match": "has occurred",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
       "fingerprint": "e0f4e715b1c053931ad979c7",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
@@ -387,7 +976,7 @@
       "match": "being worked",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "bbc02b6745dfaa6a298be3af",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
@@ -398,7 +987,7 @@
       "match": "validates",
       "message": "'validate' and 'verify' name the same action. Pick one and use it every time.",
       "fingerprint": "2de665cea398a7c3f0984efd",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
@@ -409,7 +998,7 @@
       "match": "is marked",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "f0baecd36560346eb7c99c71",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
@@ -420,7 +1009,7 @@
       "match": "is required",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "bb1c50eaa631694d123a7701",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
@@ -431,318 +1020,6 @@
       "match": "is created",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "f361f0da8e025b2ad8e4e144",
-      "comparison": "new"
-    }
-  ],
-  "new_findings": 15,
-  "recurring_findings": 3,
-  "resolved_findings": [
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 15,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "35 words",
-      "message": "Sentence has 35 words (cap 25). Split it.",
-      "fingerprint": "8f5fb40f1456d6cdee279897",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 19,
-      "col": 127,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 23,
-      "col": 310,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are committed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "8df02bfe022ca25e5787bc55",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 61,
-      "col": 61,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is provided",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "0eebcb0484fe67c4e2017ecc",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 115,
-      "col": 111,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is needed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "d226740cae172dd2e1c78d14",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 304,
-      "col": 178,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is marked",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "48c926404290adf5d27a8438",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 304,
-      "col": 237,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "30 words",
-      "message": "Sentence has 30 words (cap 25). Split it.",
-      "fingerprint": "2a032b53781931d6c779e34b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 304,
-      "col": 362,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 307,
-      "col": 251,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 309,
-      "col": 108,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 310,
-      "col": 277,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 311,
-      "col": 140,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are recorded",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "f0690d035381adacbc37a83e",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 311,
-      "col": 200,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 311,
-      "col": 242,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 312,
-      "col": 54,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is archived",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "0888728fc5c2a25c2caac0be",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 313,
-      "col": 66,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is committed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "3003cdc6d38c0022f8be463c",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 313,
-      "col": 204,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "33 words",
-      "message": "Sentence has 33 words (cap 25). Split it.",
-      "fingerprint": "ead8bfcb0c1049225be6ce1d",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 313,
-      "col": 330,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are archived",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "59e52367ff4fbe890c502667",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 315,
-      "col": 188,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "27 words",
-      "message": "Sentence has 27 words (cap 25). Split it.",
-      "fingerprint": "1ca5b3d7c683e38db0ecafeb",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 323,
-      "col": 3,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Remove",
-      "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
-      "fingerprint": "6d31ffa74d22866fde26008b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 325,
-      "col": 90,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "being removed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "c2eadbfa652dd24c2decf4de",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 325,
-      "col": 103,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 328,
-      "col": 120,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "3e9dae68ac0dc79de8ae5c41",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 339,
-      "col": 168,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "has been verified",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "0e07f428da579362c55d461b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 339,
-      "col": 172,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "been verified",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "b6cbb5b662b7ac93ef3ba05e",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 343,
-      "col": 102,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "confirm",
-      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "b0d48c1fdb52aa58dc1b1908",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 344,
-      "col": 4,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "30 words",
-      "message": "Sentence has 30 words (cap 25). Split it.",
-      "fingerprint": "2a032b53781931d6c779e34b",
-      "comparison": "resolved"
-    },
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 360,
-      "col": 182,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Verify",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "0564bcc241576c15bb1f3427",
       "comparison": "resolved"
     }
   ],
@@ -763,7 +1040,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.234s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.225s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
