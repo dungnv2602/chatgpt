@@ -123,6 +123,13 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - **References:** DRAFT-0001 deletion commit 4082efd9a5dadb8b8bd0b41ccd3cf69b5e9405ce; Draft index update commit 1654a2151c88350f2f7c923edf44fe6b9837b344; source absence read-back returned 404; archived ADR-0001 blob 18c846f3463df25219b43f71fb49c9040e4a6c6f; ADR-0002 blob ca66c1a3d0a4fee305ee1e222daa4ee8cfd0232d.
 - **Next:** Complete hosted Document Standards validation and update ADR-0002 Confirmation with the observed result.
 
+### 2026-11-24 16:45 UTC
+
+- **Action:** Inspected the Document Standards workflow trigger, latest published diagnostics report, global Actions index, and workflow-specific index. Checked the available status evidence once.
+- **Result:** The workflow is configured to run on relevant pushes to gpt. The latest captured Document Standards report is run 45431116519, created at 15:55:33 UTC, before this implementation. The global index lists pending run IDs, but the workflow-specific index has no captured result for the current implementation. One pending ID returned no job records. The current validation result cannot be identified or assessed. No pass or failure is claimed. Per the GitHub Actions skill, no polling or manual dispatch was attempted.
+- **References:** workflow .github/workflows/validate-document-standards.yml; latest report run 45431116519; global index blob 04cd7bada91dbafdd282c3990daaa145eeeda8db; workflow index blob af7aa4341648e1c27da763e5391ff28c0a6bd316; latest report blob d3512b721ba36c26cd8b7aace3ac7556fbe766fc; implementation commit de6f18a6cb4d91784b71fce334de73505c7328fe.
+- **Next:** Resume when the event-driven Actions diagnostics publish the current Document Standards result. Keep ADR-0002's final Confirmation item unchecked until that result passes.
+
 ## 7. Current State
 
 - ADR-0002 is accepted and indexed.
@@ -131,12 +138,12 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - DRAFT-0003 was deleted after ADR-0002 acceptance and promotion closeout.
 - The rationale completeness assessment for DRAFT-0001 passed. No material gap requires another ADR.
 - Task execution is approved. This task is In Progress and is the current execution task.
-- The canonical formats and owner guidance have been updated and read back. DRAFT-0001 remains only for final cleanup.
+- The canonical formats and owner guidance have been updated and read back. DRAFT-0001 is deleted after the completeness and cross-reference checks passed.
 
 ## 8. Remaining Work
 
 - Read back every changed path, including the updated ADR-0002 lifecycle metadata.
-- Run and inspect hosted Document Standards validation.
+- Inspect the current hosted Document Standards validation result when it becomes available. Do not poll CI.
 - Update ADR-0002 Confirmation and record the final migration and validation evidence.
 
 ## 9. Next Actions
