@@ -1,23 +1,23 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45415351074",
-  "run_number": 632,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45415351074",
+  "run_id": "45416245734",
+  "run_number": 633,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45416245734",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "2b878e201fb39d951049855ec1bae9cb538f00da",
+  "commit_sha": "3295bcbe74b9a0a11b544146e987a6ce3ccff7a2",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "incremental",
-  "baseline_sha": "9606a5f825b57cab8e30e36ebd372429e9e7ada3",
-  "generated_at_utc": "2026-11-24T14:34:02.249802+00:00",
+  "baseline_sha": "2b878e201fb39d951049855ec1bae9cb538f00da",
+  "generated_at_utc": "2026-11-24T14:38:39.962328+00:00",
   "status": "Failed",
-  "linter_source_sha": "2b878e201fb39d951049855ec1bae9cb538f00da",
+  "linter_source_sha": "3295bcbe74b9a0a11b544146e987a6ce3ccff7a2",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
-    "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43"
+    "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
   },
   "files_evaluated": [
     "skills/document-standards/references/document-type-catalog.md"
@@ -123,7 +123,7 @@
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
           "line": 59,
-          "col": 146,
+          "col": 123,
           "rule": "long-sentence",
           "level": "advisory-free",
           "match": "35 words",
@@ -141,7 +141,7 @@
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
           "line": 66,
-          "col": 100,
+          "col": 92,
           "rule": "long-sentence",
           "level": "advisory-free",
           "match": "26 words",
@@ -322,7 +322,7 @@
       "count": 31,
       "hard_count": 2,
       "baseline": 0,
-      "words": 4307,
+      "words": 4257,
       "per_100_words": 0.7,
       "path": "skills/document-standards/references/document-type-catalog.md",
       "exit_code": 1
@@ -431,7 +431,7 @@
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
       "line": 59,
-      "col": 146,
+      "col": 123,
       "rule": "long-sentence",
       "level": "advisory-free",
       "match": "35 words",
@@ -453,7 +453,7 @@
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
       "line": 66,
-      "col": 100,
+      "col": 92,
       "rule": "long-sentence",
       "level": "advisory-free",
       "match": "26 words",
@@ -691,7 +691,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.234s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.358s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
