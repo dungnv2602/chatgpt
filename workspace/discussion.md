@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 17:51 UTC — Start session:** Initialize the required foundational skills before addressing the ADR-0002 linting task. The prior Document Standards evidence and pending ADR-0002 confirmation remain recorded in Reports and the open task context.
+**2026-11-24 17:52 UTC — Recover ADR-0002 work:** Read workspace navigation, the task board, and the active task record. Load decision-governance procedures and inspect the lint-report index for ADR-0002 findings. Identify the approved remediation scope and retirement criteria before editing.
 
 ## Open Discussions
 
