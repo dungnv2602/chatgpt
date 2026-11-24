@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 11:31 UTC — External planning workflow study and proposal:** Review the external templates, lifecycle, recovery and security controls, then compare them with this repository's task model. Prepare a repository-specific Draft. [Task 20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)
+**2026-11-24 11:35 UTC — Synthesize and draft the planning workflow proposal:** Compare the external model with the Worker's task authority, Progress Log, task renderer, and remote-only tool limits. Prepare DRAFT-0002 and preserve the separate DRAFT-0001 review. [Task 20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)
 
 ## Open Discussions
 
