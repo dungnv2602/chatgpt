@@ -130,6 +130,13 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - **References:** workflow .github/workflows/validate-document-standards.yml; latest report run 45431116519; global index blob 04cd7bada91dbafdd282c3990daaa145eeeda8db; workflow index blob af7aa4341648e1c27da763e5391ff28c0a6bd316; latest report blob d3512b721ba36c26cd8b7aace3ac7556fbe766fc; implementation commit de6f18a6cb4d91784b71fce334de73505c7328fe.
 - **Next:** Resume when the event-driven Actions diagnostics publish the current Document Standards result. Keep ADR-0002's final Confirmation item unchecked until that result passes.
 
+### 2026-11-24 16:50 UTC
+
+- **Action:** Reviewed the structured STE lint report for run 45436626400. Remediated findings in nine task-related documents and committed the changes. Read back every changed path.
+- **Result:** Updated the decision-governance skill, Draft and ADR templates and indexes, workspace navigation, task board wording, and Document Type Catalog. In accepted ADR-0002, changed only Confirmation and lifecycle evidence. Preserved its accepted decision-bearing sections under the ADR immutability rule. The report classified 41 hard findings as 22 semicolon, 13 synonym-rotation, and 6 long-sentence findings. It classified 74 advisory findings as 69 passive-voice and 5 present-perfect findings.
+- **References:** lint report [run 45436626400](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400); remediation commit [80e67808c0b97fbd4f1e69896c806b2145316d7c](https://github.com/dungnv2602/chatgpt/commit/80e67808c0b97fbd4f1e69896c806b2145316d7c); read-back of all nine changed paths.
+- **Next:** Review the event-driven STE Lint run 45440436265 and Document Standards run 45440436438 when results become available. Do not poll CI. Record any residual lint findings in ADR-0002's immutable decision sections as a governance limitation.
+
 ## 7. Current State
 
 - ADR-0002 is accepted and indexed.
@@ -139,18 +146,21 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - The rationale completeness assessment for DRAFT-0001 passed. No material gap requires another ADR.
 - Task execution is approved. This task is In Progress and is the current execution task.
 - The canonical formats and owner guidance have been updated and read back. DRAFT-0001 is deleted after the completeness and cross-reference checks passed.
+- Commit 80e67808c0b97fbd4f1e69896c806b2145316d7c remediates STE lint findings in nine task-related documents. ADR-0002's accepted decision-bearing sections remain unchanged. The hosted STE Lint and Document Standards runs for this commit have started, but no conclusions are available yet.
 
 ## 8. Remaining Work
 
 - Read back every changed path, including the updated ADR-0002 lifecycle metadata.
 - Inspect the current hosted Document Standards validation result when it becomes available. Do not poll CI.
+- Review the hosted STE Lint result. Any remaining findings in ADR-0002's accepted decision-bearing sections cannot be changed under the current ADR lifecycle rules.
 - Update ADR-0002 Confirmation and record the final migration and validation evidence.
 
 ## 9. Next Actions
 
-1. Run and inspect hosted Document Standards validation.
-2. Update ADR-0002 Confirmation and record the final migration evidence.
-3. Close and archive this task after all checks pass.
+1. Review hosted Document Standards run 45440436438 and STE Lint run 45440436265 when event-driven results become available. Do not poll CI.
+2. Update ADR-0002 Confirmation and record the final migration evidence after Document Standards passes.
+3. Record the disposition of any residual STE findings in immutable ADR-0002 sections.
+4. Close and archive this task after all task acceptance criteria pass.
 
 ## 10. References
 
