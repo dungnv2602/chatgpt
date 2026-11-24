@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-111733-03
 - **Created:** 2026-11-24 11:17 UTC
-- **Updated:** 2026-11-24 12:59 UTC
+- **Updated:** 2026-11-24 18:34 UTC
 - **Priority:** P2
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -90,6 +90,9 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-6d31ffa74d22866fde26008b` | medium | synonym-rotation: 'remove' and 'delete' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45382651579-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45382651579) · [report](../../reports/lint_reports/on_changed/history/45397540387-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45397540387) |
+| `lint-6d31ffa74d22866fde26008b` | medium | synonym-rotation: 'remove' and 'delete' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45382651579-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45382651579) · [report](../../reports/lint_reports/on_changed/history/45397540387-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45397540387) · [report](../../reports/lint_reports/on_changed/history/45460721790-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45460721790) |
 | `lint-b0d48c1fdb52aa58dc1b1908` | medium | synonym-rotation: 'confirm' and 'check' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45382651579-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45382651579) · [report](../../reports/lint_reports/on_changed/history/45397540387-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45397540387) |
-| `lint-0564bcc241576c15bb1f3427` | medium | synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45382651579-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45382651579) · [report](../../reports/lint_reports/on_changed/history/45397540387-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45397540387) |
+| `lint-0564bcc241576c15bb1f3427` | medium | synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45382651579-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45382651579) · [report](../../reports/lint_reports/on_changed/history/45397540387-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45397540387) · [report](../../reports/lint_reports/on_changed/history/45460721790-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45460721790) |
+| `lint-648105621f69f0a2eab8c4ca` | medium | synonym-rotation: 'repair' and 'fix' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45460721790-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45460721790) |
+| `lint-ebf7ebd75ee02f5ebcf4f9b1` | medium | synonym-rotation: 'confirm' and 'check' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45460721790-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45460721790) |
+| `lint-2c5bb767053a4621c95e8b51` | medium | synonym-rotation: 'obtain' and 'retrieve' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45460721790-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45460721790) |

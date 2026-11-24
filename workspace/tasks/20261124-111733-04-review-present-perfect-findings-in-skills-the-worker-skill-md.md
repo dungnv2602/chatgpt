@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-111733-04
 - **Created:** 2026-11-24 11:17 UTC
-- **Updated:** 2026-11-24 12:59 UTC
+- **Updated:** 2026-11-24 18:34 UTC
 - **Priority:** P3
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -90,4 +90,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-0e07f428da579362c55d461b` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../reports/lint_reports/on_changed/history/45382651579-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45382651579) · [report](../../reports/lint_reports/on_changed/history/45397540387-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45397540387) |
+| `lint-0e07f428da579362c55d461b` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../reports/lint_reports/on_changed/history/45382651579-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45382651579) · [report](../../reports/lint_reports/on_changed/history/45397540387-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45397540387) · [report](../../reports/lint_reports/on_changed/history/45460721790-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45460721790) |
