@@ -14,7 +14,7 @@ Include every attempt exactly once in the single continuous table. Keep rows in 
 
 | Attempt / prompt | Session / brief | Series / baseline lineage | Execution outcome | User approval / output evidence | Image |
 |---|---|---|---|---|---|
-| [NN — Title and attempt link] | [Session ID and brief link] | [Series, role, and baseline or not established] | [Actual result and criteria outcome] | [Explicit user decision and delivery/storage evidence] | [Verified image link, Waiting for image upload, Not verified, or —] |
+| [NN — Title and attempt link] | [Session ID and brief link] | [Series, role, baseline, or not established] | [Actual result and criteria outcome] | [Explicit user decision and delivery/storage evidence] | [Verified image link, Waiting for image upload, Not verified, or —] |
 
 ## Daily notes
 
