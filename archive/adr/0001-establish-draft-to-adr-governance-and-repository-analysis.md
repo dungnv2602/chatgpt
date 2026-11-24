@@ -147,9 +147,9 @@ The implementation task must collect evidence for every criterion.
 
 ## More Information
 
-- **Source Draft:** [DRAFT-0001 — Establish Draft-to-ADR Governance and Repository Analysis](../../workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md), revision 1, approved 2026-11-24.
+- **Source Draft:** DRAFT-0001, revision 1, approved 2026-11-24. The source document was retired after the completeness review under ADR-0002. Its original approved content remains in Git history at [promotion commit 241ba8a](https://github.com/dungnv2602/chatgpt/commit/241ba8ad5e4aa7cff683ecf49df31c0ad11945ef).
 - **Related ADRs:** None.
-- **Evidence:** `workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md`, `workspace/TASK_TEMPLATE.md`, `workspace/task_board.md`, `reports/triage/scripts/ledger.py`, `reports/triage/scripts/test_ledger.py`, and `skills/document-standards/references/document-type-catalog.md`.
+- **Evidence:** DRAFT-0001 revision 1 (source retired; original approved content preserved in Git history at commit [241ba8a](https://github.com/dungnv2602/chatgpt/commit/241ba8ad5e4aa7cff683ecf49df31c0ad11945ef)), `workspace/TASK_TEMPLATE.md`, `workspace/task_board.md`, `reports/triage/scripts/ledger.py`, `reports/triage/scripts/test_ledger.py`, and `skills/document-standards/references/document-type-catalog.md`.
 - **Review trigger:** Review this decision when confirmation fails, when the user changes the governance model, or when task or archive ownership changes.
 
 ## Decision Lifecycle History
