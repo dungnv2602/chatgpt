@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 05:26 UTC — Resume approved STE lint remediation:** Inspect workspace navigation, the task board, the complete task record, and the latest user-triggered CI evidence. Reconcile the report findings with the task's approved exception policy. Do not dispatch or poll workflows.
+**2026-11-24 05:27 UTC — Reconcile hosted lint evidence:** Compare the latest full-audit and changed-scope JSON against the canonical 155-finding baseline and the 12 approved examples. Identify whether remaining hard findings are baseline regressions or later-scope findings. Do not edit source files until this classification is clear.
 
 ## Open Discussions
 
