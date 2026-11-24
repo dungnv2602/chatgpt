@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 15:18 UTC — Governance workflow completed:** Task [20261124-103354](../archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md) is Done and archived. Its governing decision [ADR-0001](../archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md) is confirmed and permanently archived. No active implementation task is selected. DRAFT-0002 remains open for user review below.
+**2026-11-24 — DRAFT-0002 revision 2 prepared:** Task [20261124-103354](../archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md) is Done and archived. Its governing decision [ADR-0001](../archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md) is confirmed and permanently archived. No active implementation task is selected. DRAFT-0002 revision 2 is open for user review below. Preparation approval does not approve the Draft decision or authorize implementation.
 
 ## Open Discussions
 
