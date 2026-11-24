@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-125956
 - **Created:** 2026-11-24 12:59 UTC
-- **Updated:** 2026-11-24 13:27 UTC
+- **Updated:** 2026-11-24 13:51 UTC
 - **Priority:** P2
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -93,3 +93,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 |---|---|---|---|
 | `lint-2624698c9e0a949a01e1c0be` | medium | synonym-rotation: 'check' and 'confirm' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45397540387-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45397540387) · [report](../../reports/lint_reports/on_changed/history/45403469914-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45403469914) |
 | `lint-3d615dd307290c234941ee58` | medium | synonym-rotation: 'obtain' and 'fetch' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45397540387-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45397540387) · [report](../../reports/lint_reports/on_changed/history/45403469914-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45403469914) |
+| `lint-a894730c426b5a08cb0d4e4c` | medium | synonym-rotation: 'check' and 'confirm' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45407620144-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45407620144) |
