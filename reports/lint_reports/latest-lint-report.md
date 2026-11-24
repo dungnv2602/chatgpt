@@ -2,36 +2,36 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#188](https://github.com/dungnv2602/chatgpt/actions/runs/45352584220)
-- **Run ID / attempt:** 45352584220 / 1
+- **Run:** [#189](https://github.com/dungnv2602/chatgpt/actions/runs/45357997227)
+- **Run ID / attempt:** 45357997227 / 1
 - **Workflow:** STE Lint Full Technical Documentation
-- **Branch / commit:** gpt / 2efeafaa264ed9df16314b0f05da3d8890367091
+- **Branch / commit:** gpt / 0993432077a90d28933e0ebdf334414a368e84b8
 - **Event:** workflow_dispatch
 - **Execution mode:** repository-wide
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 2efeafaa264ed9df16314b0f05da3d8890367091
-- **Generated (UTC):** 2026-11-24T08:02:13.013840+00:00
+- **Linter source SHA:** 0993432077a90d28933e0ebdf334414a368e84b8
+- **Generated (UTC):** 2026-11-24T08:39:45.344227+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
 | Files evaluated | 51 |
-| Files that failed | 14 |
+| Files that failed | 13 |
 | Files with findings | 41 |
-| Total findings | 455 |
-| Hard findings | 117 |
+| Total findings | 454 |
+| Hard findings | 116 |
 | Advisory findings | 338 |
 | New findings | 0 |
-| Recurring findings | 455 |
-| Resolved findings | 2 |
+| Recurring findings | 454 |
+| Resolved findings | 1 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
 
 - Runner OS: Linux
 - Python: 3.15.2
-- Platform: Linux-7.0.0-1020-azure-x86_64-with-glibc2.43
+- Platform: Linux-7.0.0-1016-aws-x86_64-with-glibc2.43
 - The JSON report records the full runtime version and every original per-file linter response.
 - The report records the commit that supplied the linter and generator code.
 
@@ -126,7 +126,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/drawing/SKILL.md | PASS | 25 | 3 | 24 | 4738 | 0.5 | 0 |
 | skills/document-standards/references/document-type-catalog.md | FAIL | 73 | 41 | 0 | 4280 | 1.7 | 1 |
 | images/takeout/history/2026-11-20-001/attempt-001/verification-report.md | FAIL | 3 | 1 | 0 | 56 | 5.4 | 1 |
-| workspace/task_board.md | FAIL | 4 | 1 | 0 | 501 | 0.8 | 1 |
+| workspace/task_board.md | PASS | 3 | 0 | 0 | 542 | 0.6 | 0 |
 | skills/drawing/references/style-guide.md | PASS | 1 | 0 | 0 | 462 | 0.2 | 0 |
 | skills/INITIALIZATION_POLICY.md | PASS | 4 | 2 | 4 | 1474 | 0.3 | 0 |
 | skills/the-worker/references/image-processing-scripts.md | PASS | 0 | 0 | 0 | 341 | 0.0 | 0 |
@@ -158,7 +158,7 @@ Counts include hard and advisory findings.
 | passive-voice | 295 |
 | semicolon | 71 |
 | present-perfect | 43 |
-| long-sentence | 19 |
+| long-sentence | 18 |
 | synonym-rotation | 15 |
 | marketing-adjective | 5 |
 | phrasal-verb | 5 |
@@ -194,7 +194,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.315s
+Ran 4 tests in 0.236s
 
 OK
 ~~~
@@ -227,7 +227,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 256 active Markdown files (360 available as link targets) and 323 local Markdown links.
+Scanned 266 active Markdown files (379 available as link targets) and 332 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -1385,10 +1385,6 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is preserved
-- **long-sentence** · workspace/task_board.md:35:1 · **recurring** · fingerprint: 00f8a90274c82ba38a60c467
-  - **Level:** advisory-free
-  - **Message:** Sentence has 152 words (cap 25). Split it.
-  - **Matched text:** 152 words
 - **passive-voice** · skills/drawing/references/style-guide.md:60:31 · **recurring** · fingerprint: 581a2555fa37c98ab6bcfea3
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -2064,14 +2060,10 @@ None.
 
 ### Resolved findings
 
-- **long-sentence** · workspace/task_board.md:55:1 · **resolved** · fingerprint: 3e5e0d9186e70d323aa5cb28
+- **long-sentence** · workspace/task_board.md:35:1 · **resolved** · fingerprint: 00f8a90274c82ba38a60c467
   - **Level:** advisory-free
-  - **Message:** Sentence has 130 words (cap 25). Split it.
-  - **Matched text:** 130 words
-- **passive-voice** · workspace/README.md:32:103 · **resolved** · fingerprint: 5659468f603873dc9863f69b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is Failed
+  - **Message:** Sentence has 152 words (cap 25). Split it.
+  - **Matched text:** 152 words
 
 ## 8. Complete per-file diagnostics
 
@@ -3871,13 +3863,13 @@ No STE findings were recorded for this file.
 
 ### workspace/task_board.md
 
-- **Result:** FAIL
-- **Exit code:** 1
-- **Findings:** 4
-- **Hard findings:** 1
+- **Result:** PASS
+- **Exit code:** 0
+- **Findings:** 3
+- **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 501
-- **Findings per 100 words:** 0.8
+- **Words:** 542
+- **Findings per 100 words:** 0.6
 
 #### Complete diagnostics
 
@@ -3895,11 +3887,6 @@ No STE findings were recorded for this file.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is preserved
-
-- **long-sentence** · workspace/task_board.md:35:1 · **recurring** · fingerprint: 00f8a90274c82ba38a60c467
-  - **Level:** advisory-free
-  - **Message:** Sentence has 152 words (cap 25). Split it.
-  - **Matched text:** 152 words
 
 
 ### skills/drawing/references/style-guide.md
