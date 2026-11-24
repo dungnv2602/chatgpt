@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 17:53 UTC — Inspect ADR governance and lint evidence:** Read the decision-governance skill, ADR-0002, its owner index and template, the document catalog, and the lint report index. Review the five Proposed findings already linked to ADR-0002. Determine the exact edits and the evidence required before retirement.
+**2026-11-24 17:54 UTC — Confirm approved scope and activate remediation:** Retrieve the exact approved DRAFT-0003 revision and verify the ADR template migration requirements. Record the user's explicit authorization for lint-only editorial corrections. Activate the five existing ADR-0002 lint tasks and update the board before editing the ADR.
 
 ## Open Discussions
 
