@@ -67,14 +67,22 @@ Remediate all synonym-rotation findings in ADR-0002 so the ADR can pass hosted S
 
 ### 2026-11-24 18:00 UTC
 
-- **Action:** Updated ADR-0002 and read back the complete file after commit 2d99f8228644c2c25c957f4dbd195325d620d6d2.
-- **Result:** Applied wording changes for this task's synonym-rotation category. The complete file has zero semicolons. The hosted STE lint workflow has not yet evaluated this commit. The linked Ledger finding remains open.
-- **References:** [ADR-0002 edit commit](https://github.com/dungnv2602/chatgpt/commit/2d99f8228644c2c25c957f4dbd195325d620d6d2); read-back blob SHA 0677f765cf535102e28724cb70a9402c1a7d8740; [baseline lint report](https://github.com/dungnv2602/chatgpt/actions/runs/45447915270); [task board update](https://github.com/dungnv2602/chatgpt/commit/5b12d4e73fbaeb9024f1586b1d6c4092d977527d).
+- **Action:** Updated ADR-0002 and read back the complete file after commit 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc.
+- **Result:** Applied wording changes for this task's synonym-rotation category. The file has zero semicolons and no sentences over 25 words. Manual review found no occurrences of the flagged synonym pairs. The hosted STE lint workflow has not yet evaluated this commit. The linked Ledger finding remains open.
+- **References:** [ADR-0002 edit commit](https://github.com/dungnv2602/chatgpt/commit/985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc); read-back blob SHA dccaf32ffb722903521031ae5cf3104d714f7f21; [baseline lint report](https://github.com/dungnv2602/chatgpt/actions/runs/45447915270); [task board update](https://github.com/dungnv2602/chatgpt/commit/5b12d4e73fbaeb9024f1586b1d6c4092d977527d).
+- **Next:** Record the event-driven hosted STE lint result when it becomes available. Do not poll CI.
+
+
+### 2026-11-24 18:03 UTC
+
+- **Action:** Added the final ADR-0002 lint-remediation history entry and checked the complete final text.
+- **Result:** Final ADR commit 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc passed read-back. Manual review found zero semicolons, no sentences over 25 words, and no occurrences of the five flagged synonym pairs. Hosted STE lint remains pending. The linked Ledger finding remains open.
+- **References:** [Final ADR-0002 commit](https://github.com/dungnv2602/chatgpt/commit/985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc); read-back blob SHA dccaf32ffb722903521031ae5cf3104d714f7f21.
 - **Next:** Record the event-driven hosted STE lint result when it becomes available. Do not poll CI.
 
 ## 7. Current State
 
-ADR-0002 was edited in commit 2d99f8228644c2c25c957f4dbd195325d620d6d2 and read back from branch gpt. This task's synonym-rotation wording was revised. The hosted STE lint workflow has not yet evaluated the final commit. The linked Ledger finding remains open.
+ADR-0002 was edited in commit 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc and read back from branch gpt. This task's synonym-rotation wording was revised. Manual review found zero semicolons, no sentences over 25 words, and no occurrences of the flagged synonym pairs. Hosted STE lint has not yet evaluated the final commit. The linked Ledger finding remains open.
 
 ## 8. Remaining Work
 
@@ -97,9 +105,9 @@ ADR-0002 was edited in commit 2d99f8228644c2c25c957f4dbd195325d620d6d2 and read 
 ## 11. Verification
 
 - **Check:** ADR-0002 read-back after the editorial changes.
-- **Method:** Fetch the exact path from branch gpt after commit 2d99f8228644c2c25c957f4dbd195325d620d6d2.
-- **Result:** Read-back succeeded. Blob SHA: 0677f765cf535102e28724cb70a9402c1a7d8740. The file contains zero semicolon characters.
-- **Limitations:** No hosted STE lint result for this commit has been observed. The source read-back does not prove that the linter reports zero findings.
+- **Method:** Fetch the exact path from branch gpt after commit 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc.
+- **Result:** Read-back succeeded. Blob SHA: dccaf32ffb722903521031ae5cf3104d714f7f21. Manual review found zero semicolon characters, no sentences over 25 words, and no occurrences of the flagged synonym pairs.
+- **Limitations:** No hosted STE lint result for this commit has been observed. The manual review does not prove that the linter reports zero findings.
 
 ## 12. Handoff Instructions
 
