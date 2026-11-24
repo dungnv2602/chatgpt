@@ -109,6 +109,13 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - **References:** workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md; archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md; workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md; workspace/DRAFT_TEMPLATE.md; workspace/ADR_TEMPLATE.md; archive/README.md; archive/adr/README.md; workspace/README.md; workspace/draft/README.md; workspace/adr/README.md; skills/decision-governance/SKILL.md; skills/document-standards/references/document-type-catalog.md.
 - **Next:** Apply ADR-0002's promotion, recovery, cleanup, and status rules consistently across the canonical skill, templates, indexes, workspace navigation, archive guidance, and catalog.
 
+### 2026-11-24 16:30 UTC
+
+- **Action:** Updated the decision-governance skill, Draft and ADR templates, Draft and ADR indexes, workspace navigation, archive guidance, and Document Type Catalog. Set ADR-0002 implementation status to in-progress and recorded the task link.
+- **Result:** The canonical workflow now uses temporary promotion-pending ADRs, deletes source Drafts after accepted ADR read-back, and uses Promotion Cleanup Pending only for failed deletion. The Draft status list no longer includes promoted. The archive policy now permits only user-authorized narrow reference corrections to archived ADRs without changing decision content. All changed paths were read back.
+- **References:** skill commit ebc8a97cae4757dff7644c6b970ce2773d877725; Draft template commit c9d83de1aa567d199899f687643ccf3db131f466; ADR template commit d777f25d9daade2c44e3c52576b51e328ddb337c; Draft index commit 7ef3df278215f698909bca4958cda040e2e7c477; ADR index commit ef30b1ad1b8703be240f31beb8a4b699006163ed; workspace navigation commit 072079f88c30d9bbc6de6c383a245783e64c93f7; archive guidance commits d15d0d0af49847b0f5182a499f24ee6ea560780e and 7ba0a7293722eec7cd1ffcd70bff1d20bb006cc6; archive ADR guidance commit d9d8bea4548081c8cae8e46e68477b99c098a08d; catalog commit 82edd5d4e1c873edc6f93485c078f04e36189198; ADR-0002 lifecycle commit 7a24570e4364e3120f47e423c3c9daa107f3517d.
+- **Next:** Remove DRAFT-0001 from the cleanup-pending index, verify remaining references, and delete the source only after the final reference check.
+
 ## 7. Current State
 
 - ADR-0002 is accepted and indexed.
@@ -117,26 +124,23 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - DRAFT-0003 was deleted after ADR-0002 acceptance and promotion closeout.
 - The rationale completeness assessment for DRAFT-0001 passed. No material gap requires another ADR.
 - Task execution is approved. This task is In Progress and is the current execution task.
-- The canonical formats and owner guidance have been inspected. They still contain the old preserve-after-promotion rule.
+- The canonical formats and owner guidance have been updated and read back. DRAFT-0001 remains only for final cleanup.
 
 ## 8. Remaining Work
 
-- Update the decision-governance skill, Draft and ADR templates, Draft and ADR indexes, workspace navigation, archive guidance, and Document Type Catalog.
-- Set ADR-0002 implementation status to in-progress and update its Confirmation evidence after the implementation checks pass.
-- Remove the DRAFT-0001 entry from the Draft index and resolve all active Markdown links to its working path.
+- Remove the DRAFT-0001 entry from the Draft index and verify all active Markdown links to its working path are resolved.
 - Delete DRAFT-0001 only after the index and cross-reference checks pass.
-- Read back every changed path.
+- Read back every changed path, including the updated ADR-0002 lifecycle metadata.
 - Run and inspect the relevant hosted Document Standards validation.
-- Record the final migration and validation evidence.
+- Update ADR-0002 Confirmation and record the final migration and validation evidence.
 
 ## 9. Next Actions
 
-1. Update the decision-governance skill with the exact ADR-0002 promotion sequence, completeness checklist, partial-write recovery, and DRAFT-0001 migration rule.
-2. Update the Draft and ADR templates and indexes to remove promoted and define temporary promotion-pending handling.
-3. Update workspace navigation, archive guidance, and Document Type Catalog.
-4. Set ADR-0002 implementation status to in-progress and link this implementation task.
-5. Remove the DRAFT-0001 cleanup-pending entry, verify no active Markdown links target the working file, and delete the source file.
-6. Read back all changed paths and inspect hosted Document Standards validation.
+1. Remove the DRAFT-0001 cleanup-pending entry from the Draft index.
+2. Inspect the remaining known references and confirm no active Markdown link targets the DRAFT-0001 working path.
+3. Delete the source Draft and read back the path and both indexes.
+4. Run and inspect hosted Document Standards validation.
+5. Update ADR-0002 Confirmation and record the final migration evidence.
 
 ## 10. References
 
