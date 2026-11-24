@@ -12,6 +12,23 @@
   "exhausted_run_ids": [],
   "runs": [
     {
+      "workflow_id": 424743410,
+      "workflow_name": "STE Lint Full Technical Documentation",
+      "run_id": "45343010144",
+      "run_number": 184,
+      "attempt": 1,
+      "capture_stage": "pre_finalizer",
+      "created_at": "2026-11-24T06:46:56Z",
+      "captured_at_utc": "2026-11-24T06:48:36Z",
+      "source_status": "in_progress",
+      "source_conclusion": null,
+      "projected_conclusion": "failure",
+      "report_status": "Incomplete",
+      "primary_category": "step_or_job_failure",
+      "history_path": "history/424743410/45343010144-attempt-1-pre_finalizer",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45343010144"
+    },
+    {
       "workflow_id": 427313089,
       "workflow_name": "Validate Document Standards",
       "run_id": "45339067459",
@@ -1271,20 +1288,20 @@
     }
   ],
   "latest_report": {
-    "workflow_id": 427313089,
-    "workflow_name": "Validate Document Standards",
-    "run_id": "45339067459",
-    "run_number": 266,
+    "workflow_id": 424743410,
+    "workflow_name": "STE Lint Full Technical Documentation",
+    "run_id": "45343010144",
+    "run_number": 184,
     "attempt": 1,
-    "capture_stage": "post_run",
-    "created_at": "2026-11-24T06:15:11Z",
-    "captured_at_utc": "2026-11-24T06:30:19Z",
-    "source_status": "completed",
-    "source_conclusion": "failure",
-    "projected_conclusion": null,
-    "report_status": "Complete",
-    "primary_category": "validation_or_test",
-    "history_path": "history/427313089/45339067459-attempt-1-post_run",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45339067459"
+    "capture_stage": "pre_finalizer",
+    "created_at": "2026-11-24T06:46:56Z",
+    "captured_at_utc": "2026-11-24T06:48:36Z",
+    "source_status": "in_progress",
+    "source_conclusion": null,
+    "projected_conclusion": "failure",
+    "report_status": "Incomplete",
+    "primary_category": "step_or_job_failure",
+    "history_path": "history/424743410/45343010144-attempt-1-pre_finalizer",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45343010144"
   }
 }
