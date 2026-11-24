@@ -5,11 +5,12 @@
 - **Template version:** 1.2
 - **ID:** 20261124-123847
 - **Created:** 2026-11-24 12:38 UTC
-- **Updated:** 2026-11-24 12:38 UTC
+- **Updated:** 2026-11-24 12:52 UTC
 - **Priority:** P3
 - **Status:** Proposed
 - **Origin:** Assistant
 - **Approval:** Pending user approval
+- **Governing ADR(s):** Pending — Worker review required before approval
 - **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** None
@@ -52,6 +53,13 @@ Review and remediate the related CI findings listed below after approval. Preser
 - **Result:** Grouped 3 distinct finding(s) by remediation key. No remediation was performed or authorized.
 - **References:** reports/triage/ledger.json and the evidence links below.
 - **Next:** Worker review and user approval before implementation.
+
+### 2026-11-24 12:52 UTC — Reconcile the Ledger-generated governance task
+
+- **Action:** Added the ADR-review handoff field to this Proposed task and the matching Pending cell to the task board.
+- **Result:** The task was generated during the transition before the Ledger renderer change took effect. It remains Proposed and is not authorized for remediation.
+- **References:** ADR-0001; `reports/triage/scripts/ledger.py`; `workspace/task_board.md`.
+- **Next:** Worker review must determine whether an accepted ADR covers the proposed text review before this task can become Ready.
 
 ## 7. Current State
 
