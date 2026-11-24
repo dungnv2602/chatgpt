@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 10:42 UTC — Define and commit the approved Draft/ADR folder contracts, templates, workspace navigation, and Reserved Markdown path rules. Read back these formats before creating DRAFT-0001.** [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 10:45 UTC — Create DRAFT-0001 from the approved template. Activate the Draft path rule, update its index, and link the draft in Open Discussions. Do not create an ADR yet.** [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 ## Open Discussions
 
 - **2026-11-24 08:12 UTC — Hosted runner allocation:** Older runnerless jobs included a GitHub annotation stating that the job was not started because recent account payments had failed or the spending limit needed to be increased. The annotation does not identify which account condition applied. Later jobs received runners and executed; do not alter runner labels.
