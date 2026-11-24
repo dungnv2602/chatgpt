@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-160500
 - **Created:** 2026-11-24 16:05 UTC
-- **Updated:** 2026-11-24 16:20 UTC
+- **Updated:** 2026-11-24 17:00 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -211,12 +211,12 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - **Check:** ADR-0002 provisional record and accepted record.
 - **Method:** Read back after each write and verify status, source Draft ID, decision outcome, completeness checklist, recovery procedure, and migration safeguards.
 - **Result:** Passed; ADR-0002 is accepted.
-- **Limitations:** Repository-wide implementation and hosted validation remain pending.
+- **Limitations:** Final hosted validation for the latest wording remediation remains pending.
 
 - **Check:** ADR-0001 legacy source link.
 - **Method:** Read back archived ADR-0001 and verify that the working-tree Draft path is absent while provenance commit remains.
 - **Result:** Passed.
-- **Limitations:** DRAFT-0001 itself remains until its migration gate and cross-reference checks pass.
+- **Limitations:** None. DRAFT-0001 was deleted in commit 4082efd9a5dadb8b8bd0b41ccd3cf69b5e9405ce after the rationale and cross-reference gates passed.
 
 - **Check:** Task execution approval.
 - **Method:** Direct user instruction on 2026-11-24 16:12 UTC.
@@ -225,7 +225,7 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 
 ## 12. Handoff Instructions
 
-Continue under ADR-0002 and the approved task scope. Preserve DRAFT-0001 until the complete rationale comparison and cross-reference checks pass. Do not edit ADR-0001 beyond the already authorized reference-only correction. Do not modify foundational initialization. Do not add hooks, scripts, automatic approval, or unrelated work.
+Continue under ADR-0002 and the approved task scope. DRAFT-0001 was deleted after the complete rationale comparison and cross-reference checks passed. Its approved revision remains available at commit 241ba8ad5e4aa7cff683ecf49df31c0ad11945ef. Do not edit ADR-0001 beyond the already authorized reference-only correction. Do not modify foundational initialization. Do not add hooks, scripts, automatic approval, or unrelated work.
 
 ## 13. Ledger Findings
 
