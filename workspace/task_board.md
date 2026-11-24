@@ -32,6 +32,9 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
+| 20261124-114048-02 | Review present-perfect findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-114048-02-review-present-perfect-findings-in-workspace-draft-draft-0002-ph.md) |
+| 20261124-114048-01 | Review synonym-rotation findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-114048-01-review-synonym-rotation-findings-in-workspace-draft-draft-0002-p.md) |
+| 20261124-114048 | Review passive-voice findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-114048-review-passive-voice-findings-in-workspace-draft-draft-0002-phas.md) |
 | 20261124-111733-04 | Review present-perfect findings in skills/the-worker/SKILL.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-111733-04-review-present-perfect-findings-in-skills-the-worker-skill-md.md) |
 | 20261124-111733-03 | Review synonym-rotation findings in skills/the-worker/SKILL.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-111733-03-review-synonym-rotation-findings-in-skills-the-worker-skill-md.md) |
 | 20261124-111733-02 | Review passive-voice findings in skills/the-worker/SKILL.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-111733-02-review-passive-voice-findings-in-skills-the-worker-skill-md.md) |
