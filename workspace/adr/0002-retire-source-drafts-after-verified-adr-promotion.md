@@ -14,7 +14,7 @@ related_adrs:
   - "ADR-0001"
 supersedes: []
 superseded_by: null
-implementation_status: "not-started"
+implementation_status: "in-progress"
 implementation_tasks:
   - "20261124-160500"
 review_triggers:
@@ -246,3 +246,4 @@ Do not migrate or delete other Drafts unless they are confirmed as promoted and 
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
 | 2026-11-24 | Accepted | User approved DRAFT-0003 revision 2. The provisional ADR was read back and checked against the complete approved Draft. The record preserves the approved lifecycle, promotion, completeness, recovery, and migration rules. |
+| 2026-11-24 | Implementation in progress | User approved task 20261124-160500 on 2026-11-24. The task is In Progress and is linked in implementation_tasks. DRAFT-0001 passed its rationale completeness review. |
