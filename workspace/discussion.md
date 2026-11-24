@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 — Session started; task 20261124-160500 approved for execution:** The user explicitly approved execution of [20261124-160500](tasks/20261124-160500-implement-verified-source-draft-retirement.md). Proceed within the approved task scope under ADR-0002. DRAFT-0001 remains pending its required completeness and stale-link checks before deletion. DRAFT-0002 revision 2 remains open for review.
+**2026-11-24 16:12 UTC — Inspect approved task and migration dependencies:** Read [task 20261124-160500](tasks/20261124-160500-implement-verified-source-draft-retirement.md), workspace navigation and task board, accepted ADR-0002, and the task-specific governance and Document Standards assets. Confirm exact scope, approval metadata, and current repository state before editing.
 
 ## Open Discussions
 
