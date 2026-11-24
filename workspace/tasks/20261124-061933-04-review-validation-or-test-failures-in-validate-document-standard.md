@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-061933-04
 - **Created:** 2026-11-24 06:19 UTC
-- **Updated:** 2026-11-24 06:25 UTC
+- **Updated:** 2026-11-24 07:16 UTC
 - **Priority:** P2
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -68,18 +68,21 @@ Review and remediate the related CI findings listed below after approval. Preser
 
 ## 7. Current State
 
-The Ledger recorded the findings and created this task handoff. Root cause, remediation, and validation have not been assessed.
+The catalog validator test-fixture defect is fixed in commit 667b1be. Document Standards run #271 passed the regression suite and full catalog validation. The linked Ledger finding now has resolved status with fix-commit and successful-validation evidence. The source report is preserved under archive/reports.
 
 ## 8. Remaining Work
 
-- Worker must inspect linked evidence and determine whether the findings share one remediation.
-- Remediation requires approval under the Worker rules.
-- No validation or resolution has been claimed.
+- Write and verify the immutable Done archive copy.
+- Register the archived task and its report files in the shared retention index.
+- Remove the active record and move the board row to Historical with the archive commit.
+- Verify that the natural Diagnostics sweep retires the linked findings.
 
 ## 9. Next Actions
 
-1. Inspect the linked report evidence and confirm the remediation scope.
-2. Request or record approval, then remediate and verify the findings.
+1. Verify the prepared archive copy and its commit metadata.
+2. Add exact task and report paths to the shared retention index.
+3. Delete the active task record and reconcile the task board.
+4. Verify the event-driven Ledger retirement result.
 
 ## 10. References
 
@@ -88,14 +91,14 @@ The Ledger recorded the findings and created this task handoff. Root cause, reme
 
 ## 11. Verification
 
-- **Check:** Ledger schema and finding eligibility.
-- **Method:** Validated by the ingestion process before task publication.
-- **Result:** Task handoff generated from accepted ledger findings.
-- **Limitations:** This does not verify root cause or remediation.
+- **Check:** Document Standards catalog regression tests and full catalog validation.
+- **Method:** GitHub Actions run [#271](https://github.com/dungnv2602/chatgpt/actions/runs/45344012650) on commit `c960e73300550fb1909da5f704e1dbfbdf35826b`.
+- **Result:** The validation job and every validation step passed. The catalog regression suite and full document-type catalog validator both passed. The linked Ledger findings have fix-commit and validation evidence.
+- **Limitations:** This does not resolve unrelated STE lint findings. The changed-document lint report retains recurring lint debt outside this handoff.
 
 ## 12. Handoff Instructions
 
-Read the linked source reports, confirm the remediation grouping, and obtain approval before changing source files. Do not poll CI or run periodic ledger scans.
+The source remediation is complete. Do not change lint thresholds or fix unrelated lint debt under this task. Finish the archive transaction using the archived report links above. After the task archive and retention-index entries are committed, allow the natural Diagnostics sweep to retire the terminal findings. Do not edit the Ledger to delete findings.
 
 ## 13. Ledger Findings
 
@@ -103,4 +106,11 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `gha-22c9a0db0aaed6afaf68ff0e` | medium | Validate Document Standards / validate-document-standards / Run catalog validator regression tests: validation\_or\_test — \<timestamp\> traceback \(most recent call last\): | [report](../../reports/gh_ac_reports/history/427313089/45338489454-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45338489454) |
+| `gha-22c9a0db0aaed6afaf68ff0e` | medium | Validate Document Standards / validate-document-standards / Run catalog validator regression tests: validation\_or\_test — \<timestamp\> traceback \(most recent call last\): | [report](../../archive/reports/gh_ac_reports/history/427313089/45338489454-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45338489454) |
+
+### 2026-11-24 07:16 UTC — Complete source remediation and validation
+
+- **Action:** Verified Document Standards run [#271](https://github.com/dungnv2602/chatgpt/actions/runs/45344012650). Moved the four linked post-run report captures under `archive/reports/gh_ac_reports/history/427313089/` and updated the active report indexes and Ledger evidence paths.
+- **Result:** The catalog regression tests and full catalog validator passed. Marked the linked findings resolved with their fix commits and successful validation evidence. This task remains In Progress until the immutable task archive, retention index, board reconciliation, and Ledger retirement are verified.
+- **References:** Validation run [#271](https://github.com/dungnv2602/chatgpt/actions/runs/45344012650) and the archived report links in Ledger Findings.
+- **Next:** Complete the task archive transaction and verify natural Ledger retirement.

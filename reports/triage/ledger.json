@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-24T06:56:59Z",
+  "updated_at_utc": "2026-11-24T07:16:24Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
@@ -77,13 +77,9 @@
       "reports/gh_ac_reports/history/427313089/45330412845-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/427313089/45330721463-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45330721463-attempt-1-pre_finalizer/report.json",
-      "reports/gh_ac_reports/history/427313089/45333711980-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45333711980-attempt-1-pre_finalizer/report.json",
-      "reports/gh_ac_reports/history/427313089/45335146922-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45335146922-attempt-1-pre_finalizer/report.json",
-      "reports/gh_ac_reports/history/427313089/45338489454-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45338489454-attempt-1-pre_finalizer/report.json",
-      "reports/gh_ac_reports/history/427313089/45339067459-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45339067459-attempt-1-pre_finalizer/report.json",
       "reports/lint_reports/on_changed/history/45301729061-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45304735363-attempt-1/report.json",
@@ -2458,7 +2454,7 @@
       "source_family": "github_actions",
       "category": "validation_or_test",
       "title": "Validate Document Standards / validate-document-standards / Validate the document type catalog: validation_or_test — <timestamp> error: 3 markdown file(s) are not covered by the catalog: images/takeout/history/2026-11-20-001/attempt-001/ver",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T06:19:03Z",
@@ -2466,21 +2462,30 @@
       "occurrence_count": 2,
       "evidence": [
         {
-          "report_path": "reports/gh_ac_reports/history/427313089/45333711980-attempt-1-post_run/report.json",
+          "report_path": "archive/reports/gh_ac_reports/history/427313089/45333711980-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45333711980",
           "observed_at_utc": "2026-11-24T06:19:03Z",
           "note": "validate-document-standards / Validate the document type catalog",
           "observation_id": "github_actions:427313089:45333711980:1"
         },
         {
-          "report_path": "reports/gh_ac_reports/history/427313089/45335146922-attempt-1-post_run/report.json",
+          "report_path": "archive/reports/gh_ac_reports/history/427313089/45335146922-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45335146922",
           "observed_at_utc": "2026-11-24T06:19:19Z",
           "note": "validate-document-standards / Validate the document type catalog",
           "observation_id": "github_actions:427313089:45335146922:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "2baea1b8f59084d55874730d6ec5df10983e76ed",
+        "resolved_at_utc": "2026-11-24T07:16:24Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45344012650",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T06:56:39Z"
+        },
+        "note": "Added generated Takeout history coverage and corrected the catalog's generated verification-report description. The full catalog validator passed."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -2494,7 +2499,7 @@
       "source_family": "github_actions",
       "category": "validation_or_test",
       "title": "Validate Document Standards / validate-document-standards / Run catalog validator regression tests: validation_or_test — <timestamp> traceback (most recent call last):",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T06:19:28Z",
@@ -2502,14 +2507,23 @@
       "occurrence_count": 1,
       "evidence": [
         {
-          "report_path": "reports/gh_ac_reports/history/427313089/45338489454-attempt-1-post_run/report.json",
+          "report_path": "archive/reports/gh_ac_reports/history/427313089/45338489454-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45338489454",
           "observed_at_utc": "2026-11-24T06:19:28Z",
           "note": "validate-document-standards / Run catalog validator regression tests",
           "observation_id": "github_actions:427313089:45338489454:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "667b1be4b3b1f369cc4898956327674f0a923003",
+        "resolved_at_utc": "2026-11-24T07:16:24Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45344012650",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T06:56:39Z"
+        },
+        "note": "Added the Takeout generator authority files to the validator regression-test fixture. The regression suite and full catalog validator passed."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -2523,7 +2537,7 @@
       "source_family": "github_actions",
       "category": "validation_or_test",
       "title": "Validate Document Standards / validate-document-standards / Validate the document type catalog: validation_or_test — <timestamp> error: line 55: referenced file does not exist: images/takeout/history/<batch>/<attempt>/verification-report.md",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T06:30:19Z",
@@ -2531,14 +2545,23 @@
       "occurrence_count": 1,
       "evidence": [
         {
-          "report_path": "reports/gh_ac_reports/history/427313089/45339067459-attempt-1-post_run/report.json",
+          "report_path": "archive/reports/gh_ac_reports/history/427313089/45339067459-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45339067459",
           "observed_at_utc": "2026-11-24T06:30:19Z",
           "note": "validate-document-standards / Validate the document type catalog",
           "observation_id": "github_actions:427313089:45339067459:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "2baea1b8f59084d55874730d6ec5df10983e76ed",
+        "resolved_at_utc": "2026-11-24T07:16:24Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45344012650",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-24T06:56:39Z"
+        },
+        "note": "Replaced the placeholder path with wording that describes the generated report without treating placeholders as literal paths. The full catalog validator passed."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
