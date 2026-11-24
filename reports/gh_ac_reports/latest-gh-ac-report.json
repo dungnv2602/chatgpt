@@ -11,30 +11,30 @@
     "event": "push",
     "branch": "gpt",
     "head_sha": "849c027ee97b1a6c7d52f4d3020c6a152c4bae60",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "failure",
     "created_at": "2026-11-24T13:50:35Z",
     "run_started_at": "2026-11-24T13:50:35Z",
-    "updated_at": "2026-11-24T13:52:00Z",
+    "updated_at": "2026-11-24T13:52:24Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "docs(governance): resolve blocking STE lint findings"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-24T13:52:18Z",
-    "completeness": "Incomplete",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-24T13:56:15Z",
+    "completeness": "Complete",
     "reporter_job": {
       "id": "138493045813",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "failure",
+    "state": "failure",
+    "observed_conclusion": "failure",
+    "projected_conclusion": null,
     "primary_category": "validation_or_test",
     "categories": [
       "validation_or_test"
@@ -48,7 +48,7 @@
         "step_name": "Preserve lint failure as workflow conclusion",
         "blocking": true,
         "confidence": "medium",
-        "message": "Step conclusion: failure"
+        "message": "2026-11-24T13:51:30.2168568Z ^[[36;1m  echo \"::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md.\"^[[0m"
       }
     ]
   },
@@ -91,12 +91,14 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 11636,
         "path": "logs/job-138492468388.log",
-        "error": "run 45407620144 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "Find lint baseline and select execution mode\tFind the latest complete lint baseline\t2026-11-24T13:50:38.6316866Z ^[[36;1m  ($report.status == \"Passed\" or $report.status == \"Failed\") and^[[0m"
+        ]
       }
     },
     {
@@ -225,12 +227,25 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 67433,
         "path": "logs/job-138492519989.log",
-        "error": "run 45407620144 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "Lint changed Markdown files and publish detailed evidence\tValidate lint and report tooling\t2026-11-24T13:51:20.6196466Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tValidate lint and report tooling\t2026-11-24T13:51:20.6204843Z ^[[36;1mecho \"failed=$failed\" >> \"$GITHUB_OUTPUT\"^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tRun STE linter on changed Markdown files\t2026-11-24T13:51:26.2782142Z ^[[36;1m    failed=1^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tRun STE linter on changed Markdown files\t2026-11-24T13:51:26.2782836Z ^[[36;1m  if [[ \"$status\" -ne 0 ]]; then failed=1; fi^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tRun STE linter on changed Markdown files\t2026-11-24T13:51:26.2783588Z ^[[36;1mecho \"failed=$failed\" >> \"$GITHUB_OUTPUT\"^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-24T13:51:26.9925208Z ^[[36;1m        \"status\": \"Passed\" if exit_code == 0 else \"Failed\",^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-24T13:51:27.0013238Z ^[[36;1m        \"status\": \"Passed\" if exit_code == 0 else \"Failed\",^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-24T13:51:27.0018648Z ^[[36;1mif [[ \"$TOOLING_FAILED\" == \"1\" || \"$FULL_FAILED\" == \"1\" || \"$CHANGED_FAILED\" == \"1\" ]]; then status=\"Failed\"; fi^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tGenerate and publish changed-document lint evidence\t2026-11-24T13:51:27.0019578Z ^[[36;1mif [[ \"$ANCHOR_OUTCOME\" != \"skipped\" && \"$ANCHOR_EXIT\" != \"0\" ]]; then status=\"Failed\"; fi^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-24T13:51:30.2168568Z ^[[36;1m  echo \"::error::Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md.\"^[[0m",
+          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-24T13:51:30.2251497Z ##[error]Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md.",
+          "Lint changed Markdown files and publish detailed evidence\tPreserve lint failure as workflow conclusion\t2026-11-24T13:51:30.2261221Z ##[error]Process completed with exit code 1."
+        ]
       }
     }
   ],
@@ -294,17 +309,6 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [
-    {
-      "source": "job_log",
-      "job_id": "138492468388",
-      "message": "run 45407620144 is still in progress; logs will be available when it is complete\n"
-    },
-    {
-      "source": "job_log",
-      "job_id": "138492519989",
-      "message": "run 45407620144 is still in progress; logs will be available when it is complete\n"
-    }
-  ],
-  "history_path": "history/424715662/45407620144-attempt-1-pre_finalizer"
+  "capture_errors": [],
+  "history_path": "history/424715662/45407620144-attempt-1-post_run"
 }
