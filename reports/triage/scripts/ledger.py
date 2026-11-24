@@ -685,7 +685,7 @@ def upsert_task_board_row(root, task):
             header_index is None
             or header_index + 1 >= section_end
             or not lines[header_index + 1].startswith("|---")
-            or lines[header_index] != "| ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
+            or lines[header_index] != "| ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |"
         ):
             raise LedgerError("Task board table is missing or malformed under " + heading)
         lines.insert(header_index + 2, row)
