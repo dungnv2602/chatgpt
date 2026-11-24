@@ -1,49 +1,84 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45456236271",
-  "run_number": 675,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
+  "run_id": "45457882540",
+  "run_number": 678,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45457882540",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+  "commit_sha": "ae1ae3420409c2031ad8aa34f75121dead98b4a6",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "incremental",
-  "baseline_sha": "2d99f8228644c2c25c957f4dbd195325d620d6d2",
-  "generated_at_utc": "2026-11-24T18:10:35.347093+00:00",
+  "baseline_sha": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+  "generated_at_utc": "2026-11-24T18:21:52.217600+00:00",
   "status": "Passed",
-  "linter_source_sha": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
+  "linter_source_sha": "ae1ae3420409c2031ad8aa34f75121dead98b4a6",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
   },
   "files_evaluated": [
-    "workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md"
+    "workspace/adr/README.md",
+    "workspace/task_board.md"
   ],
-  "files_evaluated_count": 1,
+  "files_evaluated_count": 2,
   "files_failed": 0,
   "failed_files": [],
-  "files_with_findings": 0,
-  "total_findings": 0,
+  "files_with_findings": 1,
+  "total_findings": 1,
   "hard_findings": 0,
-  "advisory_findings": 0,
-  "findings_by_rule": {},
+  "advisory_findings": 1,
+  "findings_by_rule": {
+    "present-perfect": 1
+  },
   "records": [
+    {
+      "violations": [
+        {
+          "file": "workspace/adr/README.md",
+          "line": 65,
+          "col": 25,
+          "rule": "present-perfect",
+          "level": "advisory",
+          "match": "have completed",
+          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
+        }
+      ],
+      "count": 1,
+      "hard_count": 0,
+      "baseline": 0,
+      "words": 527,
+      "per_100_words": 0.2,
+      "path": "workspace/adr/README.md",
+      "exit_code": 0
+    },
     {
       "violations": [],
       "count": 0,
       "hard_count": 0,
       "baseline": 0,
-      "words": 2850,
+      "words": 1330,
       "per_100_words": 0.0,
-      "path": "workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md",
+      "path": "workspace/task_board.md",
       "exit_code": 0
     }
   ],
-  "findings": [],
-  "new_findings": 0,
+  "findings": [
+    {
+      "file": "workspace/adr/README.md",
+      "line": 65,
+      "col": 25,
+      "rule": "present-perfect",
+      "level": "advisory",
+      "match": "have completed",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "4cf7287eb4ee4aa665924a57",
+      "comparison": "new"
+    }
+  ],
+  "new_findings": 1,
   "recurring_findings": 0,
   "resolved_findings": [],
   "checks": [
@@ -63,7 +98,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.359s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.356s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",

@@ -2,27 +2,27 @@
 
 - **Result:** Passed
 - **Schema version:** 1.1.0
-- **Run:** [#675](https://github.com/dungnv2602/chatgpt/actions/runs/45456236271)
-- **Run ID / attempt:** 45456236271 / 1
+- **Run:** [#678](https://github.com/dungnv2602/chatgpt/actions/runs/45457882540)
+- **Run ID / attempt:** 45457882540 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc
+- **Branch / commit:** gpt / ae1ae3420409c2031ad8aa34f75121dead98b4a6
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** 2d99f8228644c2c25c957f4dbd195325d620d6d2
-- **Linter source SHA:** 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc
-- **Generated (UTC):** 2026-11-24T18:10:35.347093+00:00
+- **Baseline SHA:** 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc
+- **Linter source SHA:** ae1ae3420409c2031ad8aa34f75121dead98b4a6
+- **Generated (UTC):** 2026-11-24T18:21:52.217600+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 1 |
+| Files evaluated | 2 |
 | Files that failed | 0 |
-| Files with findings | 0 |
-| Total findings | 0 |
+| Files with findings | 1 |
+| Total findings | 1 |
 | Hard findings | 0 |
-| Advisory findings | 0 |
-| New findings | 0 |
+| Advisory findings | 1 |
+| New findings | 1 |
 | Recurring findings | 0 |
 | Resolved findings | 0 |
 | Failed workflow checks | 0 |
@@ -39,7 +39,8 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
-- workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md
+- workspace/adr/README.md
+- workspace/task_board.md
 
 ## 4. Per-file result matrix
 
@@ -47,13 +48,16 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md | PASS | 0 | 0 | 0 | 2850 | 0.0 | 0 |
+| workspace/adr/README.md | PASS | 1 | 0 | 0 | 527 | 0.2 | 0 |
+| workspace/task_board.md | PASS | 0 | 0 | 0 | 1330 | 0.0 | 0 |
 
 ## 5. Findings by rule
 
 Counts include hard and advisory findings.
 
-No findings.
+| Rule | Findings |
+|---|---:|
+| present-perfect | 1 |
 
 ## 6. Workflow and validation checks
 
@@ -85,7 +89,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.359s
+Ran 4 tests in 0.356s
 
 OK
 ~~~
@@ -127,7 +131,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-None.
+- **present-perfect** · workspace/adr/README.md:65:25 · **new** · fingerprint: 4cf7287eb4ee4aa665924a57
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have completed
 
 ### Recurring findings
 
@@ -141,14 +148,32 @@ None.
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
 
-### workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md
+### workspace/adr/README.md
+
+- **Result:** PASS
+- **Exit code:** 0
+- **Findings:** 1
+- **Hard findings:** 0
+- **Baseline:** 0
+- **Words:** 527
+- **Findings per 100 words:** 0.2
+
+#### Complete diagnostics
+
+- **present-perfect** · workspace/adr/README.md:65:25 · **new** · fingerprint: 4cf7287eb4ee4aa665924a57
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have completed
+
+
+### workspace/task_board.md
 
 - **Result:** PASS
 - **Exit code:** 0
 - **Findings:** 0
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 2850
+- **Words:** 1330
 - **Findings per 100 words:** 0.0
 
 No STE findings were recorded for this file.
