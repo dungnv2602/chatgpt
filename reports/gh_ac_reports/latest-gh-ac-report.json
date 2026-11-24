@@ -11,30 +11,30 @@
     "event": "push",
     "branch": "gpt",
     "head_sha": "667b1be4b3b1f369cc4898956327674f0a923003",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "failure",
     "created_at": "2026-11-24T06:15:11Z",
     "run_started_at": "2026-11-24T06:15:11Z",
-    "updated_at": "2026-11-24T06:19:39Z",
+    "updated_at": "2026-11-24T06:19:58Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "fix: correct CI regression test fixtures"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-24T06:19:54Z",
-    "completeness": "Incomplete",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-24T06:30:19Z",
+    "completeness": "Complete",
     "reporter_job": {
       "id": "138258169557",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "failure",
+    "state": "failure",
+    "observed_conclusion": "failure",
+    "projected_conclusion": null,
     "primary_category": "validation_or_test",
     "categories": [
       "validation_or_test"
@@ -48,7 +48,7 @@
         "step_name": "Validate the document type catalog",
         "blocking": true,
         "confidence": "medium",
-        "message": "Step conclusion: failure"
+        "message": "2026-11-24T06:15:27.8163354Z ERROR: Line 55: referenced file does not exist: images/takeout/history/<batch>/<attempt>/verification-report.md."
       }
     ]
   },
@@ -131,12 +131,16 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 34150,
         "path": "logs/job-138258048097.log",
-        "error": "run 45339067459 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "validate-document-standards\tValidate the document type catalog\t2026-11-24T06:15:27.8163354Z ERROR: Line 55: referenced file does not exist: images/takeout/history/<batch>/<attempt>/verification-report.md.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-24T06:15:27.8164650Z Catalog validation failed: 1 error(s), 33 document type(s), 74 reference(s).",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-24T06:15:27.8226576Z ##[error]Process completed with exit code 1."
+        ]
       }
     }
   ],
@@ -178,12 +182,6 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [
-    {
-      "source": "job_log",
-      "job_id": "138258048097",
-      "message": "run 45339067459 is still in progress; logs will be available when it is complete\n"
-    }
-  ],
-  "history_path": "history/427313089/45339067459-attempt-1-pre_finalizer"
+  "capture_errors": [],
+  "history_path": "history/427313089/45339067459-attempt-1-post_run"
 }

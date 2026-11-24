@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-061933-03
 - **Created:** 2026-11-24 06:19 UTC
-- **Updated:** 2026-11-24 06:25 UTC
+- **Updated:** 2026-11-24 06:30 UTC
 - **Priority:** P2
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -104,3 +104,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
 | `gha-17dc92570d80a66a9efebec2` | medium | Validate Document Standards / validate-document-standards / Validate the document type catalog: validation\_or\_test — \<timestamp\> error: 3 markdown file\(s\) are not covered by the catalog: images/takeout/history/2026-11-20-001/attempt-001/ver | [report](../../reports/gh_ac_reports/history/427313089/45333711980-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45333711980) · [report](../../reports/gh_ac_reports/history/427313089/45335146922-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45335146922) |
+| `gha-31f951cdae2b696ebe51bd5d` | medium | Validate Document Standards / validate-document-standards / Validate the document type catalog: validation\_or\_test — \<timestamp\> error: line 55: referenced file does not exist: images/takeout/history/\<batch\>/\<attempt\>/verification-report.md | [report](../../reports/gh_ac_reports/history/427313089/45339067459-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45339067459) |

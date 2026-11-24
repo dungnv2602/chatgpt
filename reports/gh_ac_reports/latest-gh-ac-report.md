@@ -14,30 +14,30 @@
 | Event | push |
 | Actor | dungnv2602 |
 | Created (UTC) | 2026-11-24T06:15:11Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | failure |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-24T06:19:54Z |
+| Status at capture | completed |
+| Observed conclusion | failure |
+| Projected conclusion | Not calculated |
+| Reporter job | completed / success |
+| Capture stage | post_run |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-24T06:30:19Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
+| State | failure |
 | Primary category | validation_or_test |
 | Jobs | 1 |
 | Steps | 8 |
 | Issues | 1 |
 | Annotations | 2 |
 | Artifacts | 0 |
-| Capture errors | 1 |
+| Capture errors | 0 |
 
 ## Failure classification
 
-validation_or_test The parent run is still in progress. The projected conclusion is provisional.
+validation_or_test
 
 The report records an actionable workflow failure or operational exception. Ordinary successful runs and cancellation-only runs are not captured by default. A successful run is retained when a step failed but the workflow allowed it to continue. A cancelled run is retained only when it contains an independent actionable failure. Known downstream status-propagation steps after cancellation are excluded. Explicit run-backfill requests can override the default capture filter.
 
@@ -51,7 +51,7 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 138258048097 | 5 | Validate the document type catalog | Blocking | medium | Step conclusion: failure |
+| validation_or_test | 138258048097 | 5 | Validate the document type catalog | Blocking | medium | 2026-11-24T06:15:27.8163354Z ERROR: Line 55: referenced file does not exist: images/takeout/history/&lt;batch&gt;/&lt;attempt&gt;/verification-report.md. |
 
 ## Check annotations
 
@@ -68,15 +68,11 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 138258048097 | validate-document-standards | logs/job-138258048097.log | 82 | False |  |
+| 138258048097 | validate-document-standards | logs/job-138258048097.log | 34150 | False | validate-document-standards	Validate the document type catalog	2026-11-24T06:15:27.8163354Z ERROR: Line 55: referenced file does not exist: images/takeout/history/&lt;batch&gt;/&lt;attempt&gt;/verification-report.md., validate-document-standards	Validate the document type catalog	2026-11-24T06:15:27.8164650Z Catalog validation failed: 1 error(s), 33 document type(s), 74 reference(s)., validate-document-standards	Validate the document type catalog	2026-11-24T06:15:27.8226576Z ##[error]Process completed with exit code 1. |
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | run 45339067459 is still in progress; logs will be available when it is complete  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 
