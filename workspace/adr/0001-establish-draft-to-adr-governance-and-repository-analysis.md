@@ -113,7 +113,7 @@ The implementation task must collect evidence for every criterion.
 - [x] The Ledger creates Proposed task handoffs with ADR linkage marked pending.
 - [x] The decision-governance skill, workspace analysis area, and permanent ADR archive guidance exist.
 - [x] The Document Type Catalog contains all required active and reserved path rules.
-- [ ] Relevant hosted Document Standards and Ledger validation pass.
+- [x] Relevant hosted Document Standards and Ledger validation pass.
 - [ ] The implementation task is complete and archived. Then move this ADR to `archive/adr/`.
 
 ## Pros and Cons of the Options
@@ -159,3 +159,4 @@ The implementation task must collect evidence for every criterion.
 | 2026-11-24 | Accepted | The user approved DRAFT-0001 revision 1 in this conversation. |
 | 2026-11-24 | Implementation in progress | Core governance files are committed and read back. Hosted Document Standards and Ledger regression validation remain pending after the catalog and shared-template corrections. |
 | 2026-11-24 | Ledger handoff confirmed | The Ledger processed changed-document lint run 45403469914 and created three Proposed tasks. Each task and its board row marks Governing ADR(s) as Pending. See `reports/triage/ledger.json`, `workspace/task_board.md`, and task IDs 20261124-132754, 20261124-132754-01, and 20261124-132754-02. |
+| 2026-11-24 | Hosted Document Standards and Ledger validation confirmed | Runs 45407620289, 45408954986, and 45409620929 passed the Ledger regression suite, the catalog regression suite, and catalog validation. Their diagnostics jobs passed. Changed-document lint run 45409620876 remains in progress after the latest wording corrections. |
