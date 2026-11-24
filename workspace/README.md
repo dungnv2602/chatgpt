@@ -37,7 +37,7 @@ The decision-governance skill owns Draft, ADR, and repository-analysis lifecycle
 2. Record the user's request, scope, constraints, approval, priority, dependencies, and acceptance criteria.
 3. Select one current execution task. Follow explicit user direction, then dependencies, priority, and age.
 4. Record meaningful actions, decisions, verification, and blockers in the task record. Keep the board as an index.
-5. Close only after all acceptance criteria pass. Create the archive copy and read it back. Update the retention index and remove the active record. Confirm that the board links to the archive commit.
+5. Close only after all acceptance criteria pass. Create the archive copy and read it back. Update the retention index and remove the active record. Check that the board links to the archive commit.
 
 Task IDs use UTC `YYYYMMDD-HHMMSS`. Use only the statuses Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Optional assistant improvements remain Proposed until approved. Necessary follow-ups may be created automatically within the approved scope.
 

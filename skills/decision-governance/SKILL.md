@@ -65,7 +65,7 @@ Link each Draft under review from its own Open Discussions item in `workspace/di
 
 ### Present and revise a Draft
 
-1. Check for a related Draft or accepted ADR.
+1. Find a related Draft or accepted ADR.
 2. Inspect exact repository evidence and owner files.
 3. Compare viable options, including no change.
 4. Separate facts, external claims, inferences, and hypotheses.
