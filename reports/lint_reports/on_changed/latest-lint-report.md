@@ -2,21 +2,21 @@
 
 - **Result:** Passed
 - **Schema version:** 1.1.0
-- **Run:** [#673](https://github.com/dungnv2602/chatgpt/actions/runs/45455441513)
-- **Run ID / attempt:** 45455441513 / 1
+- **Run:** [#675](https://github.com/dungnv2602/chatgpt/actions/runs/45456236271)
+- **Run ID / attempt:** 45456236271 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 2d99f8228644c2c25c957f4dbd195325d620d6d2
+- **Branch / commit:** gpt / 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** 1c63b0e97e4e94fd298d4f4e753f1c848877e479
-- **Linter source SHA:** 2d99f8228644c2c25c957f4dbd195325d620d6d2
-- **Generated (UTC):** 2026-11-24T18:05:38.328408+00:00
+- **Baseline SHA:** 2d99f8228644c2c25c957f4dbd195325d620d6d2
+- **Linter source SHA:** 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc
+- **Generated (UTC):** 2026-11-24T18:10:35.347093+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 2 |
+| Files evaluated | 1 |
 | Files that failed | 0 |
 | Files with findings | 0 |
 | Total findings | 0 |
@@ -24,7 +24,7 @@
 | Advisory findings | 0 |
 | New findings | 0 |
 | Recurring findings | 0 |
-| Resolved findings | 6 |
+| Resolved findings | 0 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -39,7 +39,6 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
-- workspace/task_board.md
 - workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md
 
 ## 4. Per-file result matrix
@@ -48,8 +47,7 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| workspace/task_board.md | PASS | 0 | 0 | 0 | 1440 | 0.0 | 0 |
-| workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md | PASS | 0 | 0 | 0 | 2803 | 0.0 | 0 |
+| workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md | PASS | 0 | 0 | 0 | 2850 | 0.0 | 0 |
 
 ## 5. Findings by rule
 
@@ -87,7 +85,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.272s
+Ran 4 tests in 0.359s
 
 OK
 ~~~
@@ -137,47 +135,11 @@ None.
 
 ### Resolved findings
 
-- **synonym-rotation** · workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md:94:29 · **resolved** · fingerprint: 2b26cf53803b151c21212120
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Verify
-- **synonym-rotation** · workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md:122:162 · **resolved** · fingerprint: 44fcd3dad59ced40bc859413
-  - **Level:** advisory-free
-  - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
-  - **Matched text:** Correct
-- **synonym-rotation** · workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md:133:33 · **resolved** · fingerprint: 7614765438b1a170a448306a
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** confirm
-- **passive-voice** · workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md:153:44 · **resolved** · fingerprint: 1f54f40b8113eca478ce4dde
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is accepted
-- **passive-voice** · workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md:161:127 · **resolved** · fingerprint: beb9ea53ee058f3d9e59ec0c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** been reserved
-- **long-sentence** · workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md:193:1 · **resolved** · fingerprint: c7a688d7f3b5d323000e2504
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
+None.
 
 ## 8. Complete per-file diagnostics
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
-
-### workspace/task_board.md
-
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 0
-- **Hard findings:** 0
-- **Baseline:** 0
-- **Words:** 1440
-- **Findings per 100 words:** 0.0
-
-No STE findings were recorded for this file.
-
 
 ### workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md
 
@@ -186,7 +148,7 @@ No STE findings were recorded for this file.
 - **Findings:** 0
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 2803
+- **Words:** 2850
 - **Findings per 100 words:** 0.0
 
 No STE findings were recorded for this file.

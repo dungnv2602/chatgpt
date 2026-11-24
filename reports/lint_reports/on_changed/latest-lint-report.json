@@ -1,29 +1,28 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45455441513",
-  "run_number": 673,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45455441513",
+  "run_id": "45456236271",
+  "run_number": 675,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45456236271",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "2d99f8228644c2c25c957f4dbd195325d620d6d2",
+  "commit_sha": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "incremental",
-  "baseline_sha": "1c63b0e97e4e94fd298d4f4e753f1c848877e479",
-  "generated_at_utc": "2026-11-24T18:05:38.328408+00:00",
+  "baseline_sha": "2d99f8228644c2c25c957f4dbd195325d620d6d2",
+  "generated_at_utc": "2026-11-24T18:10:35.347093+00:00",
   "status": "Passed",
-  "linter_source_sha": "2d99f8228644c2c25c957f4dbd195325d620d6d2",
+  "linter_source_sha": "985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
   },
   "files_evaluated": [
-    "workspace/task_board.md",
     "workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md"
   ],
-  "files_evaluated_count": 2,
+  "files_evaluated_count": 1,
   "files_failed": 0,
   "failed_files": [],
   "files_with_findings": 0,
@@ -37,17 +36,7 @@
       "count": 0,
       "hard_count": 0,
       "baseline": 0,
-      "words": 1440,
-      "per_100_words": 0.0,
-      "path": "workspace/task_board.md",
-      "exit_code": 0
-    },
-    {
-      "violations": [],
-      "count": 0,
-      "hard_count": 0,
-      "baseline": 0,
-      "words": 2803,
+      "words": 2850,
       "per_100_words": 0.0,
       "path": "workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md",
       "exit_code": 0
@@ -56,74 +45,7 @@
   "findings": [],
   "new_findings": 0,
   "recurring_findings": 0,
-  "resolved_findings": [
-    {
-      "file": "workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md",
-      "line": 94,
-      "col": 29,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Verify",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "2b26cf53803b151c21212120",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md",
-      "line": 122,
-      "col": 162,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Correct",
-      "message": "'correct' and 'fix' name the same action. Pick one and use it every time.",
-      "fingerprint": "44fcd3dad59ced40bc859413",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md",
-      "line": 133,
-      "col": 33,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "confirm",
-      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "7614765438b1a170a448306a",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md",
-      "line": 153,
-      "col": 44,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is accepted",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "1f54f40b8113eca478ce4dde",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md",
-      "line": 161,
-      "col": 127,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "been reserved",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "beb9ea53ee058f3d9e59ec0c",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md",
-      "line": 193,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "26 words",
-      "message": "Sentence has 26 words (cap 25). Split it.",
-      "fingerprint": "c7a688d7f3b5d323000e2504",
-      "comparison": "resolved"
-    }
-  ],
+  "resolved_findings": [],
   "checks": [
     {
       "name": "Wrapper shell syntax",
@@ -141,7 +63,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.272s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.359s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
