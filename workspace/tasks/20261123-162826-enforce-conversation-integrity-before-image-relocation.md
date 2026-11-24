@@ -125,41 +125,23 @@ The normal workflow remains push-triggered for new intake/provenance changes and
 
 After a successful normal run, eleven originals and their WebP derivatives will be published to the mapped drawing destinations. The seven unclassified originals will remain in intake, with only those seven items in the residual Draft hand-off. The separate unclassified conversion workflow can then create WebP derivatives from an exact runtime filename allowlist. It does not move originals or edit indexes.
 
- The evidence does **not** show final processor relocation: the current `HANDOFF.yml` remains `status: draft`, and all eighteen image files remain in the intake folder.
-
-Eleven items have exact mappings to Samantha drawing attempts 04–06 (20 November) and 09–16 (21 November). Their attempt notes contain matching source Asset IDs and Generation IDs. Two new Partial conversation-integrity records summarise only what is supported by the retained session briefs and attempt notes. They explicitly record unavailable transcript material and include exact source mapping tables for those eleven items.
-
-Seven items remain unclassified. Their pixels have not been visually inspected, and no reliable source/attempt association is present. No mapping or conversation content has been invented for them.
-
-The hand-off now contains `source_asset_id` and `conversation_record` for the eleven mapped items only. It remains Draft. The processor, publication verifier, regression tests, documentation, and workflow changes are committed on branch `gpt` in commit `c07921efe1a22db2237caa647d828e66fdd0236d`. The seven unmapped items and all eighteen original image bytes remain untouched.
-
-On 24 November, the user approved a conversion-only path for unclassified images. The dedicated workflow `.github/workflows/convert-unclassified-takeout.yml` now accepts a newline-separated runtime allowlist of exact filenames and writes verified WebP derivatives under `images/takeout/webp/unclassified/attempt-NNN/`. It supports new batches without workflow-source edits. It does not invoke the provenance-gated processor or update indexes. The Worker skill, image-provenance reference, and takeout README now define this as the standard future path. The user performs relocation. The assistant edits an index only on explicit request. The hand-off remains Draft. No conversion completion claim is made until hosted output evidence is observed.
-
 ## 8. Remaining Work
 
-- Run the normal takeout workflow manually on branch `gpt`. Its hosted test suite must pass before the processor step can run.
-- Confirm the eleven mapped originals and WebP derivatives are published and verified from the branch. Confirm the seven quarantined originals remain in intake and the active hand-off contains only those seven entries with `status: draft`.
-- Run the unclassified conversion workflow manually with the exact seven source filenames. Confirm the derivatives are verified and committed while all seven source PNGs remain unchanged in intake.
+- The user manually dispatches the normal takeout workflow on branch `gpt`. Its hosted regression suite must pass before processing starts.
+- Verify that the workflow publishes the eleven mapped original/WebP pairs and keeps all seven unclassified originals unchanged in intake.
+- Verify that the active hand-off contains only the seven unclassified entries with `status: draft`.
+- After the normal run succeeds, the user manually dispatches the unclassified conversion workflow with the exact seven filenames.
+- Verify that the seven WebP derivatives are published and the seven source PNGs remain unchanged.
 - The user performs any later relocation. Edit an index only after an explicit user request and only with verified mapping details.
-- Keep the task In Progress until hosted test, publication, and residual-hand-off checks are confirmed. No hosted workflow result is claimed yet.
-
- Do not guess based on filenames or chronology.
-- Complete the conversion-only handling under the separate workflow. Preserve the source PNGs and leave all relocation and index edits to the user unless explicitly requested.
-- Keep the hand-off Draft until every item has valid source mapping and an approved destination/quarantine disposition.
-- Allow the existing hosted workflow to run naturally; do not manually dispatch or poll Actions.
-- Review the hosted test result only when it appears through the normal reporting path. Do not claim tests pass before that evidence exists.
-
+- Keep the task In Progress until hosted tests, mapped publication, the residual hand-off, and unclassified conversion are verified.
 ## 9. Next Actions
 
-1. The user manually dispatches `Process Image Takeout and Create WebP Derivatives` on branch `gpt` after this activation commit is present.
-2. Review the hosted test and processing result from that run. Confirm the eleven mapped output pairs and the residual seven-item Draft hand-off.
-3. The user manually dispatches `Convert Unclassified Takeout Images to WebP` on `gpt` with the exact seven filenames. Confirm the WebP results and unchanged sources.
-4. Keep relocation and index changes under the user's explicit direction.
-
- (for example, receive the seven files as conversation attachments), then reconcile them only against retained source evidence.
-2. Keep all seven files untouched until their source and destination or quarantine disposition are established.
-3. Leave `HANDOFF.yml` in Draft while any item remains unresolved.
-4. Review naturally reported hosted validation when available. Do not dispatch or poll workflows manually.
+1. Manually dispatch `Process Image Takeout and Create WebP Derivatives` on branch `gpt`.
+2. Let the run finish. Check that its regression tests pass and that the eleven mapped assets and WebP derivatives are published and verified.
+3. Confirm that the seven unclassified originals remain in intake and that `HANDOFF.yml` is Draft with only those seven entries.
+4. Manually dispatch `Convert Unclassified Takeout Images to WebP` on branch `gpt`. Supply the exact seven filenames listed in the intake inventory.
+5. Confirm that all seven derivatives are published and all seven source PNGs remain unchanged.
+6. Keep relocation and index changes under the user's explicit direction.
 
 ## 10. References
 
