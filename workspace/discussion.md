@@ -4,6 +4,8 @@
 
 ## Open Discussions
 
+- **2026-11-24 — Image Takeout manual run #66 and fixture correction:** Run [45309899583](https://github.com/dungnv2602/chatgpt/actions/runs/45309899583) on `f99a9ac` compiled but failed 1/47 tests; 46 passed. The failing mismatch test expected `ILL-001` in the source/platform Asset ID cell even though its fixture had no `source_asset_id`; it failed before applying the intended generation-ID mutation. Commit [b473f56](https://github.com/dungnv2602/chatgpt/commit/b473f562a7a0bbc4da9cb037c87c83ade1167224) corrects the fixture expectation. Processing/publication were skipped and no takeout files changed. The diagnostics sidecar separately failed on a missing colon in `test_ledger.py` and an undefined `LINT_BASELINE_CHECKS`; these unrelated Ledger issues were left untouched. Hosted verification of the correction is still required.
+
 - **2026-11-24 — Unified Image Takeout workflow awaiting hosted verification:** User approved consolidating unclassified WebP conversion into **Process Image Takeout and Create WebP Derivatives**. Commit [2b43d2e](https://github.com/dungnv2602/chatgpt/commit/2b43d2e547982c624380d27dccb72ae1d241147d) adds the processor behavior and expands the suite to 47 tests. Commit [0365a05](https://github.com/dungnv2602/chatgpt/commit/0365a054d2d0dda9eb9258a9747495bf5013c0bd) updates owner documentation and removes the separate workflow. Unclassified derivatives remain under `images/takeout/webp/unclassified/`; originals remain in intake; neither is relocated. No images have been processed by this code change. A manual normal-workflow run is required after read-back.
 
 - **2026-11-24 — Conversation-mapping regression fixture awaiting hosted verification:** Commit [a885899](https://github.com/dungnv2602/chatgpt/commit/a885899e9c6d0f16bb4b737374ebdb1c7a200226) makes the mismatch test's target-row mutation explicit and self-checking. The upcoming 47-test run must confirm that the production validator rejects the altered mapping before staging.
@@ -19,6 +21,8 @@
 - **2026-11-23 — Drawing direction needed:** Session `DRAWING-2026-11-23-01` is Active, but the user has not supplied a subject or visual direction. The user must provide the subject before prompt drafting or image generation.
 
 ## Reports
+
+- **2026-11-24 — Image Takeout run #66:** Manual run [45309899583](https://github.com/dungnv2602/chatgpt/actions/runs/45309899583) ran the 47-test suite: 46 passed, one failed due to a test fixture expecting repository-local `asset_id` instead of the unset source/platform `source_asset_id`. No conversion or relocation ran. Commit [b473f56](https://github.com/dungnv2602/chatgpt/commit/b473f562a7a0bbc4da9cb037c87c83ade1167224) corrects the test precondition. Await hosted rerun; do not claim processing success.
 
 - **2026-11-24 — Image Takeout workflow consolidation:** Processor and tests are updated in [2b43d2e](https://github.com/dungnv2602/chatgpt/commit/2b43d2e547982c624380d27dccb72ae1d241147d). The normal Ready run now converts unclassified images to WebP without relocation. Documentation and separate-workflow removal are in [0365a05](https://github.com/dungnv2602/chatgpt/commit/0365a054d2d0dda9eb9258a9747495bf5013c0bd). The suite contains 47 tests; hosted verification is pending.
 
