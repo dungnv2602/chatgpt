@@ -1,26 +1,26 @@
-# STE Lint Changed Documentation — run 45304735363
+# Process Image Takeout and Create WebP Derivatives — run 45305320198
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | STE Lint Changed Documentation |
-| Workflow path | .github/workflows/ste-lint-changed.yml |
-| Run / attempt | 45304735363 / 1 |
-| Run number | 573 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45304735363 |
+| Workflow | Process Image Takeout and Create WebP Derivatives |
+| Workflow path | .github/workflows/convert-images-to-webp.yml |
+| Run / attempt | 45305320198 / 1 |
+| Run number | 64 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45305320198 |
 | Branch | gpt |
-| Commit | 048eaf0ba9c4eeb43ae6198972f2aa807d3d679b |
-| Event | push |
+| Commit | 42be44a4e0999c5cf55181cafe3c32600659a6c4 |
+| Event | workflow_dispatch |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-24T01:23:53Z |
+| Created (UTC) | 2026-11-24T01:28:41Z |
 | Status at capture | in_progress |
 | Observed conclusion | Not yet available |
 | Projected conclusion | failure |
 | Reporter job | in_progress / Pending |
 | Capture stage | pre_finalizer |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-24T01:25:21Z |
+| Captured (UTC) | 2026-11-24T01:29:26Z |
 
 ## Executive summary
 
@@ -28,12 +28,12 @@
 | --- | --- |
 | State | in_progress |
 | Primary category | validation_or_test |
-| Jobs | 2 |
-| Steps | 18 |
+| Jobs | 1 |
+| Steps | 11 |
 | Issues | 1 |
-| Annotations | 4 |
+| Annotations | 1 |
 | Artifacts | 0 |
-| Capture errors | 2 |
+| Capture errors | 1 |
 
 ## Failure classification
 
@@ -45,23 +45,19 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 138145673155 | Reject superseded runs and find lint baseline | completed | success | 4 | logs/job-138145673155.log |
-| 138145717473 | Lint changed Markdown files and publish detailed evidence | completed | failure | 14 | logs/job-138145717473.log |
+| 138147636006 | process-image-takeout | completed | failure | 11 | logs/job-138147636006.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 138145717473 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | Step conclusion: failure |
+| validation_or_test | 138147636006 | 5 | Test takeout processor | Blocking | medium | Step conclusion: failure |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 138145673155 | warning | .github | 46 |  | No complete tooling-valid lint baseline exists. Run one full audit. |
-| 138145717473 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 138145717473 | failure | .github | 21 |  | Process completed with exit code 1. |
-| 138145717473 | failure | .github | 20 |  | Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md. |
+| 138147636006 | failure | .github | 203 |  | Process completed with exit code 1. |
 
 ## Artifacts
 
@@ -71,8 +67,7 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 138145673155 | Reject superseded runs and find lint baseline | logs/job-138145673155.log | 82 | False |  |
-| 138145717473 | Lint changed Markdown files and publish detailed evidence | logs/job-138145717473.log | 82 | False |  |
+| 138147636006 | process-image-takeout | logs/job-138147636006.log | 82 | False |  |
 
 ## Evidence coverage
 
@@ -80,12 +75,11 @@ One or more evidence sources were unavailable. This report is Incomplete.
 
 | Source | HTTP status | Limitation |
 | --- | --- | --- |
-| job_log | Not recorded | run 45304735363 is still in progress; logs will be available when it is complete  |
-| job_log | Not recorded | run 45304735363 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45305320198 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
-[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/reports/lint_reports/on_changed/latest-lint-report.md)
+No separate lint report applies to this workflow.
 
 ## Integrity
 

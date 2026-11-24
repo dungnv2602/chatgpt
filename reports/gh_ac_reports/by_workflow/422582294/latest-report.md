@@ -1,4 +1,4 @@
-# Process Image Takeout and Create WebP Derivatives — run 45301729064
+# Process Image Takeout and Create WebP Derivatives — run 45305320198
 
 ## Run identity
 
@@ -6,21 +6,21 @@
 | --- | --- |
 | Workflow | Process Image Takeout and Create WebP Derivatives |
 | Workflow path | .github/workflows/convert-images-to-webp.yml |
-| Run / attempt | 45301729064 / 1 |
-| Run number | 63 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45301729064 |
+| Run / attempt | 45305320198 / 1 |
+| Run number | 64 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45305320198 |
 | Branch | gpt |
-| Commit | 4afaa2c2211858b0455eaf29c523b32eb16e012c |
-| Event | push |
+| Commit | 42be44a4e0999c5cf55181cafe3c32600659a6c4 |
+| Event | workflow_dispatch |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-24T01:00:45Z |
+| Created (UTC) | 2026-11-24T01:28:41Z |
 | Status at capture | in_progress |
 | Observed conclusion | Not yet available |
 | Projected conclusion | failure |
 | Reporter job | in_progress / Pending |
 | Capture stage | pre_finalizer |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-24T01:02:45Z |
+| Captured (UTC) | 2026-11-24T01:29:26Z |
 
 ## Executive summary
 
@@ -45,19 +45,19 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 138135640561 | process-image-takeout | completed | failure | 11 | logs/job-138135640561.log |
+| 138147636006 | process-image-takeout | completed | failure | 11 | logs/job-138147636006.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 138135640561 | 5 | Test takeout processor | Blocking | medium | Step conclusion: failure |
+| validation_or_test | 138147636006 | 5 | Test takeout processor | Blocking | medium | Step conclusion: failure |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 138135640561 | failure | .github | 201 |  | Process completed with exit code 1. |
+| 138147636006 | failure | .github | 203 |  | Process completed with exit code 1. |
 
 ## Artifacts
 
@@ -67,7 +67,7 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 138135640561 | process-image-takeout | logs/job-138135640561.log | 82 | False |  |
+| 138147636006 | process-image-takeout | logs/job-138147636006.log | 82 | False |  |
 
 ## Evidence coverage
 
@@ -75,7 +75,7 @@ One or more evidence sources were unavailable. This report is Incomplete.
 
 | Source | HTTP status | Limitation |
 | --- | --- | --- |
-| job_log | Not recorded | run 45301729064 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45305320198 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
