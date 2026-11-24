@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-045935-04
 - **Created:** 2026-11-24 04:59 UTC
-- **Updated:** 2026-11-24 05:08 UTC
+- **Updated:** 2026-11-24 05:11 UTC
 - **Priority:** P2
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -90,4 +90,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-cf34c78f3b75adc29ca74391` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45330035604) · [report](../../reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45330179454) · [report](../../reports/lint_reports/on_repo/history/45330655561-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45330655561) · [report](../../reports/lint_reports/on_changed/history/45330721385-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45330721385) |
+| `lint-cf34c78f3b75adc29ca74391` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45330035604) · [report](../../reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45330179454) · [report](../../reports/lint_reports/on_repo/history/45330655561-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45330655561) · [report](../../reports/lint_reports/on_changed/history/45330721385-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45330721385) · [report](../../reports/lint_reports/on_repo/history/45331418857-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45331418857) |
