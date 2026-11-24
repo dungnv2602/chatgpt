@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-103354
 - **Created:** 2026-11-24 10:33 UTC
-- **Updated:** 2026-11-24 14:42 UTC
+- **Updated:** 2026-11-24 15:06 UTC
 - **Priority:** P1
 - **Status:** Blocked
 - **Origin:** User
@@ -85,6 +85,16 @@ Study MADR and design a comprehensive, low-ambiguity decision-management workflo
 - **Proposed:** Use one initial governance ADR as the bootstrap decision. The current task is authorized directly by the user's instruction. After the bootstrap decision, new implementation tasks require accepted ADR references.
 
 ## 6. Progress Log
+
+### 2026-11-24 15:06 UTC — Reconcile the latest hosted checks and correct the catalog finding
+
+- **Action:** Reviewed the exact Lint #635, Document Standards #319, and Diagnostics #586 runs on source commit 725896a. Inspected all relevant job steps and the complete Lint #635 job log.
+- **Result:** Document Standards [#319](https://github.com/dungnv2602/chatgpt/actions/runs/45416735133) passed all 37 Ledger regression tests, all 32 catalog regression tests, catalog validation, and its diagnostics publisher. Diagnostics [#586](https://github.com/dungnv2602/chatgpt/actions/runs/45416735144) passed reporter tests, backfill, Ledger ingestion, and publication.
+- **Lint finding:** Lint [#634](https://github.com/dungnv2602/chatgpt/actions/runs/45416574844) recorded one hard 27-word sentence and 29 advisory findings in the GitHub Actions run and job diagnostics catalog row. Commit 725896a changed table separators, not that sentence. Lint [#635](https://github.com/dungnv2602/chatgpt/actions/runs/45416735141) therefore still set CHANGED_FAILED=1 for the catalog file.
+- **Publication failure:** Lint #635 also failed to publish its report. Its generated report commit could not rebase because the source checkout at 725896a did not contain Lint #634's later report commit [5f61509](https://github.com/dungnv2602/chatgpt/commit/5f61509f28c99bb8bb98e48c7c122790228f5daa). Git reported conflicts in `reports/lint_reports/on_changed/index.json`, `latest-lint-report.json`, and `latest-lint-report.md`. The #635 report was not added to the lint history. The diagnostics pre-finalizer capture is Incomplete because it ran before the source workflow finished; the complete Actions job log was inspected directly.
+- **Correction:** Commit [4dfbde6](https://github.com/dungnv2602/chatgpt/commit/4dfbde63708f0ab0862d142952710b1b42ef5d7a) splits the 27-word description into two sentences and retains all evidence types and exceptions. Exact read-back confirmed the updated catalog row at line 63.
+- **Scope:** No report workflow or generated report was edited. The corrected commit starts from the current branch, which already contains Lint #634's report state. No local tests ran and no Actions runs were polled or rerun.
+- **Next:** Review the fresh hosted validation results naturally triggered by commit 4dfbde6. Keep this task Blocked until the lint, Document Standards, and diagnostics results all pass.
 
 ### 2026-11-24 14:42 UTC — Correct the inventory table structure and publish final reruns
 
@@ -194,29 +204,33 @@ Study MADR and design a comprehensive, low-ambiguity decision-management workflo
 
 The approved governance implementation is committed on branch `gpt`. Commit 74005cc moved the Draft, ADR, and analysis templates to the workspace root and corrected catalog ownership. Commit ad8bf8b added Ledger regression coverage to the hosted Document Standards workflow. Commit 454672a fixed the shell command used to run the Ledger suite.
 
-Hosted Document Standards validation is green through run #316. Runs #302, #304, #305, #306, #307, #308, #309, #310, #311, #313, #314, #315, and #316 passed the catalog and Ledger validation sequence where run steps were available. Run #316 passed 37 Ledger regression tests, 32 catalog regression tests, and catalog validation. Its diagnostics publisher passed. Diagnostics runs #569, #571, #573, #577, #578, #580, #581, #582, and #583 succeeded.
+The latest completed validation on source commit 725896a produced mixed results:
 
-Changed-document lint #616 reported 52 hard findings. Commit 849c027 addressed them. Lint #618 reported seven hard findings. Commit aa69d96 addressed them. Later runs exposed additional long inventory rows. Commits b1aec86, 7fa7483, f44b5a7, 594ab39, 6e1cf47, b1e6ca6, 58d15b6, dbd7ad2, 9606a5f, 2b878e2, and 3295bcb corrected successive findings. The Initial inventory was split into separate valid tables in commits 8bcfdf and 725896. The latter adds the required blank separators.
+- Document Standards [#319](https://github.com/dungnv2602/chatgpt/actions/runs/45416735133) passed all 37 Ledger tests, all 32 catalog tests, and catalog validation. Its diagnostics publisher also passed.
+- Diagnostics [#586](https://github.com/dungnv2602/chatgpt/actions/runs/45416735144) passed reporter validation, backfill, Ledger ingestion, and publication.
+- Changed-document lint [#635](https://github.com/dungnv2602/chatgpt/actions/runs/45416735141) failed. The catalog description still contained the one hard 27-word sentence identified by Lint #634. Its evidence-publication step also failed to rebase the report commit onto a branch that already contained Lint #634's report publication. The resulting report commit was not published.
 
-The task remains Blocked. Lint #635, Document Standards #319, and Diagnostics #586 are pending on commit 725896a. The three Ledger-generated lint tasks remain Proposed and require separate user approval before remediation.
+Commit [4dfbde6](https://github.com/dungnv2602/chatgpt/commit/4dfbde63708f0ab0862d142952710b1b42ef5d7a) now splits the hard sentence in the catalog diagnostics row. Read-back confirms the complete corrected row. The push triggers fresh hosted validation from a branch state that already includes the earlier lint report commit. Those new results have not yet been reviewed.
+
+The task remains Blocked. Do not infer a pass from the earlier successful Document Standards or Diagnostics runs. Keep the three Ledger-generated lint tasks Proposed until the user approves their remediation. Keep DRAFT-0002 separate and unmodified.
 ## 8. Remaining Work
 
-- Confirm that changed-document lint run #635 passes on commit 725896a with no hard findings.
-- Confirm that Document Standards run #319 passes its Ledger tests, catalog tests, and catalog validator.
-- Confirm that Diagnostics run #586 publishes the complete report and Ledger state successfully.
-- Record the final run URLs and UTC timestamps.
+- Confirm that a fresh changed-document lint run on commit 4dfbde6 passes with no hard findings and publishes its complete report.
+- Confirm that a fresh Document Standards run on commit 4dfbde6 passes its Ledger tests, catalog tests, and catalog validator.
+- Confirm that the corresponding Diagnostics publication/backfill completes successfully.
+- Record the fresh run URLs and UTC timestamps. Inspect complete logs and reports for any failed result. Do not poll Actions or rerun workflows.
 - Update ADR-0001 lifecycle evidence with the final hosted validation results.
-- Complete task acceptance criteria and archive this task.
+- Complete the task acceptance criteria and archive this task.
 - Move ADR-0001 to `archive/adr/` only after every linked task is Done and every Confirmation criterion passes.
 - Keep the three Ledger-generated lint tasks Proposed until the user approves their remediation.
 - Keep DRAFT-0002 separate and unmodified.
 ## 9. Next Actions
 
-1. Review the naturally published complete result for Lint #635. Do not poll Actions.
-2. Review the naturally published complete result for Document Standards #319. Confirm the Ledger tests, catalog tests, and catalog validator passed.
-3. Review Diagnostics #586 and confirm its publisher, backfill, and Ledger ingestion succeeded.
+1. Review the naturally published changed-document lint result for the catalog correction in commit 4dfbde6.
+2. Review the corresponding Document Standards run. Confirm the Ledger tests, catalog tests, and catalog validator passed.
+3. Review the Diagnostics publication result for the new runs.
 4. If any run fails, inspect its complete report and job log. Correct only issues within this task's approved scope. Keep the task Blocked.
-5. If all three runs pass, record their run URLs and UTC timestamps. Update ADR-0001's lifecycle history, complete task closeout, and archive the task.
+5. If all required runs pass, record their URLs and UTC timestamps. Update ADR-0001's lifecycle history, complete task closeout, and archive the task.
 6. Archive ADR-0001 only after all linked tasks are Done and every Confirmation criterion passes.
 ## 10. References
 
@@ -244,16 +258,16 @@ The task remains Blocked. Lint #635, Document Standards #319, and Diagnostics #5
 - **Method:** Read back all nine paths changed by commit 74005cc. Compare relocated template blob SHAs with their original values. Confirm that former nested paths return 404.
 - **Result:** All nine paths passed read-back. The three relocated templates retained their original blob SHAs. The old paths no longer exist.
 - **Check:** Hosted Document Standards and Ledger validation.
-- **Method:** Inspect job steps for Document Standards runs #302, #304, #305, #307, #308, #309, #310, #311, #313, #314, #315, and #316. Inspect Diagnostics runs #569, #571, #573, #577, #578, #580, #581, #582, and #583.
-- **Result:** Document Standards runs #302, #304, #305, #307, #308, #309, #310, #311, #313, #314, #315, and #316 passed the relevant Ledger tests, catalog tests, and catalog validator. Run #316 passed all 37 Ledger tests, all 32 catalog tests, and catalog validation. Diagnostics #583 passed reporter validation, backfill, Ledger ingestion, and publication.
-- **Check:** Blocking changed-document lint findings.
-- **Method:** Inspect JSON reports for runs #616, #618, #619, #620, #621, #623, #624, #626, #627, #629, #630, #631, and #632. Read back fixes in commits 849c027, aa69d96, b1aec86, 7fa7483, f44b5a7, 594ab39, 6e1cf47, b1e6ca6, 58d15b6, dbd7ad2, 9606a5f, 2b878e2, 3295bcb, 8bcfdf16, and 725896a.
-- **Result:** Hard findings declined from 52 in #616 to seven in #618, four in #619 and #620, four in #621, three in #623 and #624, and two in #626, #627, #629, #630, and #631. Commit 725896a splits the inventory into valid table sections.
-- **Limitations:** Lint #635 and Document Standards #319 are pending. Diagnostics #586 is pending. Do not claim the latest hosted results passed. No repository scripts or tests ran locally.
+- **Method:** Inspect the job steps for the completed Document Standards runs, including #319. Inspect the corresponding Diagnostics runs.
+- **Result:** Document Standards runs #302, #304, #305, #307, #308, #309, #310, #311, #313, #314, #315, #316, and #319 passed their relevant Ledger tests, catalog tests, and catalog validator. Run #319 passed all 37 Ledger tests and all 32 catalog tests. Diagnostics #586 passed reporter validation, backfill, Ledger ingestion, and publication.
+- **Check:** Changed-document lint and report publication.
+- **Method:** Inspect Lint #634's immutable report, Lint #635's complete Actions job log, its pre-finalizer diagnostic capture, and the exact catalog source text.
+- **Result:** Lint #634 reported one hard 27-word sentence and 29 advisory findings. Lint #635 set CHANGED_FAILED=1 and its report publisher failed to rebase because Lint #634's report commit had updated the same index and latest-report files after source SHA 725896a. The #635 report did not reach the lint history.
+- **Correction:** Commit 4dfbde6 split the 27-word catalog description into two sentences. Exact read-back confirms the correction. Fresh hosted validation on this commit remains outstanding.
+- **Limitations:** Do not claim that Lint #635 passed or that the post-correction hosted checks succeeded. The #635 pre-finalizer diagnostic capture is Incomplete because it was created while the source run was still in progress. No local repository scripts or tests ran. No CI polling or reruns occurred.
 ## 12. Handoff Instructions
 
-Read `workspace/README.md`, `workspace/task_board.md`, this task record, and `workspace/discussion.md`. Keep the task Blocked until Lint #635 and Document Standards #319 publish complete successful results. Also confirm Diagnostics #586 publishes successfully. Do not poll Actions. If a run fails, inspect its complete report and job log. Keep the three Ledger-generated lint tasks Proposed until the user approves remediation. ADR-0001 records the confirmed Document Standards and Ledger validation. Do not archive ADR-0001 until every linked task is Done and every Confirmation criterion passes.
-
+Read `workspace/README.md`, `workspace/task_board.md`, this task record, and `workspace/discussion.md`. Keep the task Blocked until a fresh changed-document lint run and Document Standards run on the corrected catalog commit pass, and the corresponding Diagnostics publication succeeds. Do not poll or rerun Actions. If a run fails, inspect its complete report and job log. Keep the three Ledger-generated lint tasks Proposed until the user approves remediation. DRAFT-0002 remains separate and unmodified. Do not archive ADR-0001 until every linked task is Done and every Confirmation criterion passes.
 ## 13. Ledger Findings
 
 _No Ledger findings are linked to this task._
