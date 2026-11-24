@@ -1,4 +1,4 @@
-# STE Lint Changed Documentation — run 45395353908
+# STE Lint Changed Documentation — run 45397540387
 
 ## Run identity
 
@@ -6,21 +6,21 @@
 | --- | --- |
 | Workflow | STE Lint Changed Documentation |
 | Workflow path | .github/workflows/ste-lint-changed.yml |
-| Run / attempt | 45395353908 / 1 |
-| Run number | 604 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45395353908 |
+| Run / attempt | 45397540387 / 1 |
+| Run number | 612 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45397540387 |
 | Branch | gpt |
-| Commit | 241ba8ad5e4aa7cff683ecf49df31c0ad11945ef |
+| Commit | 7580d3922ff62075342a91d2f310ea825da157e5 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-24T12:37:46Z |
+| Created (UTC) | 2026-11-24T12:51:15Z |
 | Status at capture | in_progress |
 | Observed conclusion | Not yet available |
 | Projected conclusion | failure |
 | Reporter job | in_progress / Pending |
 | Capture stage | pre_finalizer |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-24T12:39:11Z |
+| Captured (UTC) | 2026-11-24T12:54:55Z |
 
 ## Executive summary
 
@@ -45,22 +45,22 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 138449537473 | Find lint baseline and select execution mode | completed | success | 3 | logs/job-138449537473.log |
-| 138449591666 | Lint changed Markdown files and publish detailed evidence | completed | failure | 14 | logs/job-138449591666.log |
+| 138457228018 | Find lint baseline and select execution mode | completed | success | 3 | logs/job-138457228018.log |
+| 138457273738 | Lint changed Markdown files and publish detailed evidence | completed | failure | 14 | logs/job-138457273738.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 138449591666 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | Step conclusion: failure |
+| validation_or_test | 138457273738 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | Step conclusion: failure |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 138449591666 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 138449591666 | failure | .github | 21 |  | Process completed with exit code 1. |
-| 138449591666 | failure | .github | 20 |  | Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md. |
+| 138457273738 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 138457273738 | failure | .github | 21 |  | Process completed with exit code 1. |
+| 138457273738 | failure | .github | 20 |  | Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md. |
 
 ## Artifacts
 
@@ -70,8 +70,8 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 138449537473 | Find lint baseline and select execution mode | logs/job-138449537473.log | 82 | False |  |
-| 138449591666 | Lint changed Markdown files and publish detailed evidence | logs/job-138449591666.log | 82 | False |  |
+| 138457228018 | Find lint baseline and select execution mode | logs/job-138457228018.log | 82 | False |  |
+| 138457273738 | Lint changed Markdown files and publish detailed evidence | logs/job-138457273738.log | 82 | False |  |
 
 ## Evidence coverage
 
@@ -79,8 +79,8 @@ One or more evidence sources were unavailable. This report is Incomplete.
 
 | Source | HTTP status | Limitation |
 | --- | --- | --- |
-| job_log | Not recorded | run 45395353908 is still in progress; logs will be available when it is complete  |
-| job_log | Not recorded | run 45395353908 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45397540387 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45397540387 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
