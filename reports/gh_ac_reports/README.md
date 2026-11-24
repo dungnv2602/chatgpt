@@ -79,6 +79,8 @@ All source-workflow finalizers and the push-driven sweep use the same repository
 
 The diagnostics workflow is deliberately excluded from its own run sweep to prevent recursive report generation. Its own failures are not included in the reports it creates. Inspect the diagnostics workflow's own run and job logs directly in the GitHub Actions interface. Failure of the report-only job in a source workflow is separately contained by the caller's job-level `continue-on-error: true` setting. Explicit backfill requests remain an operator override and may preserve a successful run when its evidence is specifically needed.
 
+If a diagnostics run fails before GitHub exposes job steps or a log URL, record an evidence gap and leave pending IDs unchanged. Do not infer a source-workflow defect from an empty job record. Allow a later eligible `gpt` push to trigger another sweep; do not dispatch or poll the failed diagnostics run.
+
 ## Resolution and archive
 
 The cross-family issue state is tracked in `reports/triage/ledger.json`. A finding is resolved only after its fix commit and successful relevant validation are recorded. The successful run URL and UTC timestamp are sufficient; a full successful-run diagnostic report is not required. Use a request file only when the successful run's detailed evidence is specifically needed. Resolved report files are moved to `archive/reports/`; the shared archive-retention workflow deletes each exact indexed file after 90 days. The archive uses the shared `.github/archive-retention-index.json`. Do not create a report archive under `reports/` or a separate retention workflow.

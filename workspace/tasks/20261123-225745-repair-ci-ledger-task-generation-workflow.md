@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261123-225745
 - **Created:** 2026-11-23 22:57 UTC
-- **Updated:** 2026-11-24 07:05 UTC
+- **Updated:** 2026-11-24 07:27 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -193,3 +193,12 @@ _The CI Ledger Findings table is empty after the user-authorized clean start. Ke
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
+
+
+### 2026-11-24 07:27 UTC — Archive validated remediation handoffs and retry diagnostics naturally
+
+- **Action:** Closed approved handoffs `20261124-061933-03` and `20261124-061933-04`. Their immutable Done archive copies are in commit [807a5d5](https://github.com/dungnv2602/chatgpt/commit/807a5d5fe901a4a608895f72dd81d9085b2d45a8). Four linked post-run reports were moved to `archive/reports/` in [edcde324](https://github.com/dungnv2602/chatgpt/commit/edcde3246672bf04d465a651a1dfd2c50dfc082f), and the 16 report files plus two task archives were registered in the retention index in [a413678](https://github.com/dungnv2602/chatgpt/commit/a413678025db36eca486efef36e3f4f83917f406).
+- **Result:** The three linked Ledger findings have `resolved` status with fix-commit and successful #271 validation evidence. The active handoff records are now removed and their board rows moved to Historical. The seven-entry Historical limit is preserved by dropping the two oldest board rows; their archive records remain intact.
+- **Diagnostics evidence:** Runs [#517](https://github.com/dungnv2602/chatgpt/actions/runs/45347109478) and [#518](https://github.com/dungnv2602/chatgpt/actions/runs/45347272490) both failed within four seconds before GitHub exposed any job steps or log URL (`steps: null`, `logs_url: null`). Their cause is unknown. The committed Actions index still has pending runs `45344012691` and `45344012650`, with zero exhausted IDs and no observed finding retirement.
+- **Change:** Added an operator note to the GitHub Actions diagnostic guide explaining how to handle pre-step diagnostics failures without inferring a cause or altering pending IDs. This eligible `gpt` push will trigger a natural retry.
+- **Next:** Review the next naturally completed Diagnostics sweep. Confirm both pending IDs reconcile and that it retires the three terminal findings. Do not dispatch, poll, or manually remove findings.
