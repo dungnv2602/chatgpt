@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_repo",
-  "run_id": "45331418857",
-  "run_number": 182,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45331418857",
+  "run_id": "45333711914",
+  "run_number": 183,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45333711914",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "207d5044791051a4ce14ac07ba900036419bd648",
-  "event": "workflow_dispatch",
+  "commit_sha": "aafb02d8e6361ca4c0bd938b6a40f647a96d3906",
+  "event": "push",
   "workflow": "STE Lint Full Technical Documentation",
   "runner_os": "Linux",
   "execution_mode": "repository-wide",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-24T05:11:00.332903+00:00",
+  "generated_at_utc": "2026-11-24T05:30:35.211660+00:00",
   "status": "Failed",
-  "linter_source_sha": "207d5044791051a4ce14ac07ba900036419bd648",
+  "linter_source_sha": "ec322839a399a7e8bc41d9c0c22774a29791c1b3",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -92,15 +92,15 @@
     "skills/SESSION_START.md"
   ],
   "files_with_findings": 42,
-  "total_findings": 457,
-  "hard_findings": 120,
+  "total_findings": 456,
+  "hard_findings": 119,
   "advisory_findings": 337,
   "findings_by_rule": {
     "long-sentence": 20,
     "semicolon": 70,
     "passive-voice": 295,
     "present-perfect": 42,
-    "synonym-rotation": 18,
+    "synonym-rotation": 17,
     "phrasal-verb": 5,
     "nominalization": 2,
     "marketing-adjective": 5
@@ -1507,15 +1507,6 @@
         },
         {
           "file": "skills/asd-ste100/SKILL.md",
-          "line": 90,
-          "col": 152,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "delete",
-          "message": "'delete' and 'remove' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "skills/asd-ste100/SKILL.md",
           "line": 92,
           "col": 29,
           "rule": "phrasal-verb",
@@ -1569,8 +1560,8 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 21,
-      "hard_count": 13,
+      "count": 20,
+      "hard_count": 12,
       "baseline": 31,
       "words": 2609,
       "per_100_words": 0.8,
@@ -6271,17 +6262,6 @@
     },
     {
       "file": "skills/asd-ste100/SKILL.md",
-      "line": 90,
-      "col": 152,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "delete",
-      "message": "'delete' and 'remove' name the same action. Pick one and use it every time.",
-      "fingerprint": "ce5400ef29dc517a20f612fc",
-      "comparison": "recurring"
-    },
-    {
-      "file": "skills/asd-ste100/SKILL.md",
       "line": 92,
       "col": 29,
       "rule": "phrasal-verb",
@@ -7928,7 +7908,7 @@
       "match": "226 words",
       "message": "Sentence has 226 words (cap 25). Split it.",
       "fingerprint": "e0b74e89eb1797d73e80da52",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "skills/drawing/references/style-guide.md",
@@ -9801,18 +9781,18 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 1,
+  "new_findings": 0,
   "recurring_findings": 456,
   "resolved_findings": [
     {
-      "file": "workspace/task_board.md",
-      "line": 40,
-      "col": 1,
-      "rule": "long-sentence",
+      "file": "skills/asd-ste100/SKILL.md",
+      "line": 90,
+      "col": 152,
+      "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "190 words",
-      "message": "Sentence has 190 words (cap 25). Split it.",
-      "fingerprint": "a4e2802c208fff0be2a1abfe",
+      "match": "delete",
+      "message": "'delete' and 'remove' name the same action. Pick one and use it every time.",
+      "fingerprint": "ce5400ef29dc517a20f612fc",
       "comparison": "resolved"
     }
   ],
@@ -9833,13 +9813,13 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.276s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.409s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+      "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nOK\n"
     },
     {
       "name": "STE linter self-test",
@@ -9851,7 +9831,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 200 active Markdown files (295 available as link targets) and 322 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 202 active Markdown files (297 available as link targets) and 322 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []

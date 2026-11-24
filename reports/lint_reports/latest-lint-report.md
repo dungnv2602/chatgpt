@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#182](https://github.com/dungnv2602/chatgpt/actions/runs/45331418857)
-- **Run ID / attempt:** 45331418857 / 1
+- **Run:** [#183](https://github.com/dungnv2602/chatgpt/actions/runs/45333711914)
+- **Run ID / attempt:** 45333711914 / 1
 - **Workflow:** STE Lint Full Technical Documentation
-- **Branch / commit:** gpt / 207d5044791051a4ce14ac07ba900036419bd648
-- **Event:** workflow_dispatch
+- **Branch / commit:** gpt / aafb02d8e6361ca4c0bd938b6a40f647a96d3906
+- **Event:** push
 - **Execution mode:** repository-wide
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 207d5044791051a4ce14ac07ba900036419bd648
-- **Generated (UTC):** 2026-11-24T05:11:00.332903+00:00
+- **Linter source SHA:** ec322839a399a7e8bc41d9c0c22774a29791c1b3
+- **Generated (UTC):** 2026-11-24T05:30:35.211660+00:00
 
 ## 1. Executive summary
 
@@ -19,10 +19,10 @@
 | Files evaluated | 51 |
 | Files that failed | 15 |
 | Files with findings | 42 |
-| Total findings | 457 |
-| Hard findings | 120 |
+| Total findings | 456 |
+| Hard findings | 119 |
 | Advisory findings | 337 |
-| New findings | 1 |
+| New findings | 0 |
 | Recurring findings | 456 |
 | Resolved findings | 1 |
 | Failed workflow checks | 0 |
@@ -113,7 +113,7 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/the-worker/references/archive-records-and-image-prompts.md | FAIL | 28 | 3 | 0 | 3538 | 0.8 | 1 |
 | skills/the-worker/assets/conversation-integrity-template.md | FAIL | 1 | 1 | 0 | 290 | 0.3 | 1 |
 | images/README.md | PASS | 1 | 0 | 0 | 301 | 0.3 | 0 |
-| skills/asd-ste100/SKILL.md | PASS | 21 | 13 | 31 | 2609 | 0.8 | 0 |
+| skills/asd-ste100/SKILL.md | PASS | 20 | 12 | 31 | 2609 | 0.8 | 0 |
 | skills/philosophy-religion-asceticism/README.md | PASS | 1 | 0 | 0 | 471 | 0.2 | 0 |
 | skills/drawing/references/archive-and-delivery.md | PASS | 3 | 1 | 7 | 460 | 0.7 | 0 |
 | skills/README.md | PASS | 0 | 0 | 0 | 412 | 0.0 | 0 |
@@ -159,7 +159,7 @@ Counts include hard and advisory findings.
 | semicolon | 70 |
 | present-perfect | 42 |
 | long-sentence | 20 |
-| synonym-rotation | 18 |
+| synonym-rotation | 17 |
 | marketing-adjective | 5 |
 | phrasal-verb | 5 |
 | nominalization | 2 |
@@ -194,7 +194,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.276s
+Ran 4 tests in 0.409s
 
 OK
 ~~~
@@ -207,7 +207,7 @@ OK
 ~~~text
 ...
 ----------------------------------------------------------------------
-Ran 3 tests in 0.000s
+Ran 3 tests in 0.001s
 
 OK
 ~~~
@@ -227,7 +227,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 200 active Markdown files (295 available as link targets) and 322 local Markdown links.
+Scanned 202 active Markdown files (297 available as link targets) and 322 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -237,10 +237,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **long-sentence** · workspace/task_board.md:40:1 · **new** · fingerprint: e0b74e89eb1797d73e80da52
-  - **Level:** advisory-free
-  - **Message:** Sentence has 226 words (cap 25). Split it.
-  - **Matched text:** 226 words
+None.
 
 ### Recurring findings
 
@@ -788,10 +785,6 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
   - **Matched text:** blazing-fast
-- **synonym-rotation** · skills/asd-ste100/SKILL.md:90:152 · **recurring** · fingerprint: ce5400ef29dc517a20f612fc
-  - **Level:** advisory-free
-  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
-  - **Matched text:** delete
 - **phrasal-verb** · skills/asd-ste100/SKILL.md:92:29 · **recurring** · fingerprint: 4b3269c887ff5c340b1876ec
   - **Level:** advisory-free
   - **Message:** Soft phrasal verb. Use the single plain verb (start, contact, read, begin).
@@ -1388,6 +1381,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is preserved
+- **long-sentence** · workspace/task_board.md:40:1 · **recurring** · fingerprint: e0b74e89eb1797d73e80da52
+  - **Level:** advisory-free
+  - **Message:** Sentence has 226 words (cap 25). Split it.
+  - **Matched text:** 226 words
 - **passive-voice** · skills/drawing/references/style-guide.md:60:31 · **recurring** · fingerprint: 581a2555fa37c98ab6bcfea3
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -2071,10 +2068,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### Resolved findings
 
-- **long-sentence** · workspace/task_board.md:40:1 · **resolved** · fingerprint: a4e2802c208fff0be2a1abfe
+- **synonym-rotation** · skills/asd-ste100/SKILL.md:90:152 · **resolved** · fingerprint: ce5400ef29dc517a20f612fc
   - **Level:** advisory-free
-  - **Message:** Sentence has 190 words (cap 25). Split it.
-  - **Matched text:** 190 words
+  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
+  - **Matched text:** delete
 
 ## 8. Complete per-file diagnostics
 
@@ -2902,8 +2899,8 @@ No STE findings were recorded for this file.
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 21
-- **Hard findings:** 13
+- **Findings:** 20
+- **Hard findings:** 12
 - **Baseline:** 31
 - **Words:** 2609
 - **Findings per 100 words:** 0.8
@@ -2979,11 +2976,6 @@ No STE findings were recorded for this file.
   - **Level:** advisory-free
   - **Message:** Marketing adjective. Delete, or replace with the measurement that earns the claim.
   - **Matched text:** blazing-fast
-
-- **synonym-rotation** · skills/asd-ste100/SKILL.md:90:152 · **recurring** · fingerprint: ce5400ef29dc517a20f612fc
-  - **Level:** advisory-free
-  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
-  - **Matched text:** delete
 
 - **phrasal-verb** · skills/asd-ste100/SKILL.md:92:29 · **recurring** · fingerprint: 4b3269c887ff5c340b1876ec
   - **Level:** advisory-free
@@ -3899,7 +3891,7 @@ No STE findings were recorded for this file.
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is preserved
 
-- **long-sentence** · workspace/task_board.md:40:1 · **new** · fingerprint: e0b74e89eb1797d73e80da52
+- **long-sentence** · workspace/task_board.md:40:1 · **recurring** · fingerprint: e0b74e89eb1797d73e80da52
   - **Level:** advisory-free
   - **Message:** Sentence has 226 words (cap 25). Split it.
   - **Matched text:** 226 words
