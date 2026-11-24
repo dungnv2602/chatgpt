@@ -70,6 +70,7 @@ jobs:
     timeout-minutes: 30
     concurrency:
       group: gh-ac-report-writer-${{ github.repository }}
+      queue: max
       cancel-in-progress: false
     permissions:
       contents: write
@@ -267,6 +268,7 @@ jobs:
     needs: [preflight, ste-lint]
     concurrency:
       group: gh-ac-report-writer-${{ github.repository }}
+      queue: max
       cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 15

@@ -291,6 +291,33 @@ class CatalogValidatorTests(unittest.TestCase):
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
 
+    def test_optional_generator_output_pattern_allows_empty_family_after_reset(self):
+        self.set_catalog(self.valid_rows(), [
+            "| `reports/lint_reports/on_*/history/**/*.md` | Generator-owned | Optional | "
+            "`skills/example/generator.py` and `skills/example/test_generator.py` | "
+            "Generated lint history may be empty immediately after a clean reset. |",
+        ])
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+
+    def test_optional_generator_output_pattern_covers_files_when_present(self):
+        self.write("reports/lint_reports/on_changed/history/run-1/report.md")
+        self.set_catalog(self.valid_rows(), [
+            "| `reports/lint_reports/on_*/history/**/*.md` | Generator-owned | Optional | "
+            "`skills/example/generator.py` and `skills/example/test_generator.py` | "
+            "Generated lint history may be empty immediately after a clean reset. |",
+        ])
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+
+    def test_optional_coverage_is_limited_to_generator_owned_outputs(self):
+        self.set_catalog(self.valid_rows(), [
+            "| `drawings/new-family/*.md` | Lightweight pattern | Optional | "
+            "`skills/example/SKILL.md` | Optional is only for generated outputs. |",
+        ])
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertTrue(any("Optional Markdown coverage is limited" in error for error in errors))
+
     def test_unknown_coverage_status_fails(self):
         self.set_catalog(self.valid_rows(), [
             "| `drawings/new-family/*.md` | Template required | Pending | "

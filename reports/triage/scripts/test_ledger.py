@@ -576,6 +576,18 @@ class LedgerTests(unittest.TestCase):
         for relative in workflows:
             content = (root / relative).read_text(encoding="utf-8")
             self.assertIn(group, content, relative)
+            lines = content.splitlines()
+            declarations = [
+                index for index, line in enumerate(lines) if line.strip() == group
+            ]
+            self.assertTrue(declarations, relative)
+            for index in declarations:
+                indent = lines[index][:len(lines[index]) - len(lines[index].lstrip())]
+                self.assertEqual(
+                    lines[index + 1:index + 3],
+                    [f"{indent}queue: max", f"{indent}cancel-in-progress: false"],
+                    relative,
+                )
         action = (root / "reports/gh_ac_reports/actions/capture/action.yml").read_text(encoding="utf-8")
         sweep = (root / ".github/workflows/gh-actions-diagnostics.yml").read_text(encoding="utf-8")
         standards = (root / ".github/workflows/validate-document-standards.yml").read_text(encoding="utf-8")
@@ -597,8 +609,13 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("Ingest centralized CI issues", sweep)
         ignored = sweep.split("paths-ignore:", 1)[1].split("concurrency:", 1)[0]
         self.assertIn("archive/reports/**", ignored)
-        self.assertIn(".github/archive-retention-index.json", ignored)
+        self.assertNotIn(".github/archive-retention-index.json", ignored)
         self.assertNotIn("archive/tasks/**", ignored)
+        self.assertIn("      - '!workspace/discussion.md'", standards)
+        self.assertLess(
+            standards.index("      - 'workspace/**/*.md'"),
+            standards.index("      - '!workspace/discussion.md'"),
+        )
         retention = (root / ".github/workflows/archive-retention.yml").read_text(encoding="utf-8")
         self.assertIn("needs: [cleanup]", retention)
         self.assertIn(group, retention)

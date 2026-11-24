@@ -23,6 +23,7 @@ on:
       # Image conversion reports are generated output, not authored documents.
       - '!images/takeout/history/**'
       - 'workspace/**/*.md'
+      - '!workspace/discussion.md'
       - '!workspace/tasks/**'
       - '!workspace/task_board.md'
       - '.github/**/*.md'
@@ -78,6 +79,7 @@ jobs:
     needs: [validate-document-standards]
     concurrency:
       group: gh-ac-report-writer-${{ github.repository }}
+      queue: max
       cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 15

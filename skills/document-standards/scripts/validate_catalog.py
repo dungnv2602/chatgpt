@@ -201,10 +201,10 @@ def validate_markdown_coverage(root: Path, content: str) -> list[str]:
         pattern = row["pattern"]
         class_name = row["class"]
         coverage_status = row["status"]
-        if coverage_status not in {"Active", "Reserved"}:
+        if coverage_status not in {"Active", "Reserved", "Optional"}:
             errors.append(
                 f"Line {line}: unknown Markdown coverage status '{coverage_status}'. "
-                "Use Active or Reserved."
+                "Use Active, Reserved, or Optional."
             )
         if pattern in seen_patterns:
             errors.append(f"Line {line}: duplicate Markdown coverage pattern '{pattern}'.")
@@ -225,6 +225,10 @@ def validate_markdown_coverage(root: Path, content: str) -> list[str]:
         )
         if not is_template and class_name not in KNOWN_CLASSES:
             errors.append(f"Line {line}: unknown Markdown coverage class '{class_name}'.")
+        if coverage_status == "Optional" and class_name != "Generator-owned":
+            errors.append(
+                f"Line {line}: Optional Markdown coverage is limited to Generator-owned outputs."
+            )
 
         canonical_paths = extract_paths(row["canonical"])
         if not canonical_paths:
@@ -289,6 +293,7 @@ def validate_markdown_coverage(root: Path, content: str) -> list[str]:
                 f"Line {line}: Reserved Markdown coverage pattern already matches "
                 f"{len(matches)} in-scope document(s): '{pattern}'. Change it to Active."
             )
+        # Optional generator-owned outputs may be empty; any present files remain covered.
         compiled.append((path_regex, class_name))
 
     uncovered = [

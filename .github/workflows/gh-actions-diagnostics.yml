@@ -6,7 +6,6 @@ on:
       - gpt
     paths-ignore:
       - 'archive/reports/**'
-      - '.github/archive-retention-index.json'
       - 'reports/gh_ac_reports/history/**'
       - 'reports/gh_ac_reports/by_workflow/**'
       - 'reports/gh_ac_reports/index.json'
@@ -19,6 +18,7 @@ on:
 
 concurrency:
   group: gh-ac-report-writer-${{ github.repository }}
+  queue: max
   cancel-in-progress: false
 
 permissions: {}

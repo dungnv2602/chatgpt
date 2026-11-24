@@ -14,11 +14,11 @@ The Ledger is the Worker's event-driven active backlog for distinct lint and Git
 
 ## Ingestion and publication
 
-The generator reads report paths only from the published lint and Actions indexes. It does not scan report history directories or modify source reports. The capture action ingests lint reports; the diagnostics sweep ingests complete Actions reports and handles archived-task retirement. Both use the non-cancelling `gh-ac-report-writer` concurrency group.
+The generator reads report paths only from the published lint and Actions indexes. It does not scan report history directories or modify source reports. The capture action ingests lint reports; the diagnostics sweep ingests complete Actions reports and handles archived-task retirement. Both use the non-cancelling `gh-ac-report-writer` concurrency group with `queue: max`, retaining up to 100 pending writers while one writer runs.
 
-The caller's diagnostics jobs remain job-level `continue-on-error: true` so diagnostic reporting cannot change the source workflow result. Individual composite-action steps do not suppress failures. The scheduled archive-retention cleanup and lint report publishers use the same shared writer group. Workflow jobs that hand off to diagnostics do so sequentially; the lock is released between jobs.
+The caller's diagnostics jobs remain job-level `continue-on-error: true` so diagnostic reporting cannot change the source workflow result. Individual composite-action steps do not suppress failures. Every shared-writer block uses `cancel-in-progress: false` and `queue: max`. Jobs that hand off to diagnostics do so sequentially and release the group before the dependent job starts; no publisher holds the group while waiting for another writer.
 
-Task and Ledger publication updates the report indexes, Ledger, task files, task board, and `task_refs` atomically within the existing commit/rebase/push flow. Diagnostics ignores Ledger-only, task-board-only, discussion-only, report-archive-only, and retention-index-only pushes to avoid unnecessary sweeps. It must not ignore `archive/tasks/**`: committing a task archive is the event that triggers terminal finding retirement. The retention index is ignored as a standalone path because every task archive operation also changes `archive/tasks/**`.
+Task and Ledger publication updates the report indexes, Ledger, task files, task board, and `task_refs` atomically within the existing commit/rebase/push flow. Diagnostics ignores Ledger-only, task-board-only, discussion-only, and report-archive-only pushes. It watches both `archive/tasks/**` and `.github/archive-retention-index.json`: the task archive can be committed before its exact retention-index entry, so the follow-up index commit must trigger another sweep after the archive becomes eligible. Both sweeps are idempotent; no periodic retirement scan is needed.
 
 ## Lint baseline and flood control
 
@@ -79,7 +79,7 @@ When a task is ready to close:
 1. Record the required terminal state for every linked finding. `resolved` requires fix and validation evidence; `accepted` requires risk acceptance; `false_positive` requires a closure note; `duplicate` requires a valid target.
 2. Move the evidence files needed by the archived task record to `archive/reports/`, update report-family indexes, and update the task's evidence links to their archived paths. Index each exact report file for 90-day retention.
 3. Archive the task as Done and register its exact archive path in `.github/archive-retention-index.json`. Keep the archived task record immutable.
-4. The resulting `archive/tasks/**` push triggers the diagnostics sweep. The Ledger reads only exact task paths in the retention index. It removes linked findings from the active Ledger only when every finding in each archived Done task is terminal and every task in each finding's `task_refs` is itself archived Done.
+4. The `archive/tasks/**` push triggers a diagnostics sweep, but the archived task is not eligible until its exact path is registered in `.github/archive-retention-index.json`. That index update also triggers a sweep, ensuring retirement is retried after registration. The Ledger reads only indexed task paths and removes linked findings only when every finding in each archived Done task is terminal and every task in each finding's `task_refs` is itself archived Done.
 5. Findings remain active when a task is merely Proposed, Ready, In Progress, Blocked, Paused, or Cancelled; when an archived task is not Done; or when any finding covered by the task is non-terminal.
 6. Do not manually remove findings or run a periodic retirement scan. The archived task record and its archived report links preserve the historical audit trail.
 

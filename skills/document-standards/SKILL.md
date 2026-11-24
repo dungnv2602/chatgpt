@@ -31,11 +31,12 @@ Do not create a separate template when an embedded contract or generator already
 
 The catalog contains a Markdown path-coverage register. The hosted validator checks every Markdown file outside the root master and archive directories against that register. This check classifies paths. It does not prove that a document follows its template or is factually correct.
 
-Coverage rules use two states:
+Coverage rules use three states:
 - **Active:** must match at least one current in-scope Markdown file.
 - **Reserved:** must match no current file. It records a validated, narrow family before its first record exists.
+- **Optional:** may match zero or more files. Use only for Generator-owned outputs that can be absent after a clean reset or between report runs.
 
-When the first document in a reserved family is created, change its rule to Active in the same commit. The validator rejects stale Active rules and Reserved rules that already match documents.
+When the first document in a reserved family is created, change its rule to Active in the same commit. Optional rules need no activation; every generated file that exists must still match a catalogued path. The validator rejects stale Active rules, Reserved rules that already match documents, and Optional rules on non-generator-owned families.
 
 For JSON, YAML, CSV, and other structured files, use the exact schema, processor, generator, and tests listed in the catalog.
 

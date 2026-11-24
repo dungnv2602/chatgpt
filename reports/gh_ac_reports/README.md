@@ -73,7 +73,7 @@ Change the schema, template, collector, generator, regression tests, workflow in
 
 ## Publication concurrency
 
-All source-workflow finalizers and the push-driven sweep use the same repository-wide, non-cancelling concurrency group. This serializes writers to the shared indexes and latest pointers. If a publication still fails, the next sweep can backfill completed runs; do not resolve concurrent index conflicts by discarding immutable captures.
+All source-workflow finalizers and the push-driven sweep use the same repository-wide concurrency group with `cancel-in-progress: false` and `queue: max`. GitHub runs one writer at a time and retains up to 100 pending writers instead of replacing the previous pending writer. Requests beyond that platform limit can still be cancelled. Dependent workflow jobs acquire the group sequentially, so no job holds the writer group while waiting for another writer. If a publication still fails, the next sweep can backfill completed runs; do not resolve concurrent index conflicts by discarding immutable captures.
 
 ## Reporter self-monitoring
 

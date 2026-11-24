@@ -37,6 +37,7 @@ jobs:
     needs: [send-email]
     concurrency:
       group: gh-ac-report-writer-${{ github.repository }}
+      queue: max
       cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 15

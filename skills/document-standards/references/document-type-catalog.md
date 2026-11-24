@@ -1,6 +1,6 @@
 # Document Type Catalog
 
-**Catalog version:** 1.8  
+**Catalog version:** 1.9  
 **Inventory status:** Non-truncated recursive tree audit of branch `gpt` at commit `1a5c8380036dac0132216635951f95a971ceee25` found 6,375 tree entries and 1,114 Markdown documents outside root `master/` and `archive/`. All 1,114 Markdown paths match the 48 Active coverage rules; every rule matches at least one file. This is a complete path inventory and targeted family review, not a line-by-line semantic review of every generated report.
 **Source branch:** `gpt`
 
@@ -68,9 +68,9 @@ Do not create a second template when an owning workflow already defines the requ
 
 ## Markdown inventory coverage
 
-This register classifies every Markdown file outside the root `master/` and `archive/` directories. The validator scans the repository tree, excluding those two directories and Git metadata. Every in-scope Markdown path must match at least one rule below. Each rule must match at least one current file. Add a narrow, intentional rule before creating a new document family; do not add a broad catch-all to silence an uncovered-path error. The class describes the covered family, while the canonical authority identifies its template, schema, embedded contract, or generator.
+This register classifies every Markdown file outside the root `master/` and `archive/` directories. The validator scans the repository tree, excluding those two directories and Git metadata. Every in-scope Markdown path must match at least one rule below. Active rules must match at least one current file; Optional rules may match zero or more generated outputs; Reserved rules must match no current file before their first record exists. Add a narrow, intentional rule before creating a new document family; do not add a broad catch-all to silence an uncovered-path error. The class describes the covered family, while the canonical authority identifies its template, schema, embedded contract, or generator.
 
-Coverage status has two values. `Active` rules must match at least one current in-scope Markdown file. `Reserved` rules must match no current file and reserve a narrow, validated family before its first record exists. When the first record is created, change that rule to `Active` in the same commit. The validator rejects an active rule with no matches and a reserved rule that already matches a document.
+Coverage status has three values. `Active` rules must match at least one current in-scope Markdown file. `Reserved` rules must match no current file and reserve a narrow, validated family before its first record exists; change the rule to `Active` in the same commit that creates its first record. `Optional` rules are limited to `Generator-owned` outputs and may match zero or more files, allowing clean resets and normal report periods with no generated Markdown output. The validator rejects an active rule with no matches, a reserved rule that already matches a document, and an Optional rule on any other class.
 
 | Path pattern | Class | Coverage status | Canonical authority | Coverage rationale |
 |---|---|---|---|---|
@@ -100,13 +100,13 @@ Coverage status has two values. `Active` rules must match at least one current i
 | `reports/README.md` | Embedded contract | Active | `reports/README.md` and `reports/triage/README.md` | Central report navigation and family ownership. |
 | `reports/**/README.md` | Embedded contract | Active | `reports/gh_ac_reports/README.md` and `reports/lint_reports/README.md` | Report-family guides and generated-report review procedures. |
 | `reports/gh_ac_reports/assets/report-template.md` | Generator-owned | Active | `reports/gh_ac_reports/scripts/report.py` and `reports/gh_ac_reports/scripts/test_report.py` | Reporter-owned rendering asset; update with generator and regression tests. |
-| `reports/gh_ac_reports/history/**/*.md` | Generator-owned | Active | `reports/gh_ac_reports/scripts/report.py` and `reports/gh_ac_reports/scripts/test_report.py` | Immutable per-run Markdown diagnostic captures. |
-| `reports/gh_ac_reports/by_workflow/*/latest-report.md` | Generator-owned | Active | `reports/gh_ac_reports/scripts/report.py` and `reports/gh_ac_reports/scripts/test_report.py` | Generated workflow-specific latest pointers. |
-| `reports/gh_ac_reports/latest-gh-ac-report.md` | Generator-owned | Active | `reports/gh_ac_reports/scripts/report.py` and `reports/gh_ac_reports/scripts/test_report.py` | Generated repository-wide latest diagnostic pointer. |
-| `reports/lint_reports/latest-lint-report.md` | Generator-owned | Active | `skills/asd-ste100/scripts/generate_lint_report.py` and `skills/asd-ste100/scripts/test_generate_lint_report.py` | Generated compatibility pointer to the latest repository-wide lint report. |
+| `reports/gh_ac_reports/history/**/*.md` | Generator-owned | Optional | `reports/gh_ac_reports/scripts/report.py` and `reports/gh_ac_reports/scripts/test_report.py` | Immutable per-run Markdown diagnostic captures; the family may be empty after a clean reset. |
+| `reports/gh_ac_reports/by_workflow/*/latest-report.md` | Generator-owned | Optional | `reports/gh_ac_reports/scripts/report.py` and `reports/gh_ac_reports/scripts/test_report.py` | Generated workflow-specific latest pointers; they may be absent until a report is published. |
+| `reports/gh_ac_reports/latest-gh-ac-report.md` | Generator-owned | Optional | `reports/gh_ac_reports/scripts/report.py` and `reports/gh_ac_reports/scripts/test_report.py` | Generated repository-wide latest diagnostic pointer; it may be absent until the first capture. |
+| `reports/lint_reports/latest-lint-report.md` | Generator-owned | Optional | `skills/asd-ste100/scripts/generate_lint_report.py` and `skills/asd-ste100/scripts/test_generate_lint_report.py` | Generated compatibility pointer to the latest repository-wide lint report; it may be absent until the first lint report. |
 | `reports/lint_reports/on_*/README.md` | Embedded contract | Active | `reports/lint_reports/README.md` and `skills/asd-ste100/SKILL.md` | Scope-specific lint evidence navigation. |
-| `reports/lint_reports/on_*/latest-lint-report.md` | Generator-owned | Active | `skills/asd-ste100/scripts/generate_lint_report.py` and `skills/asd-ste100/scripts/test_generate_lint_report.py` | Generated latest report for each lint scope. |
-| `reports/lint_reports/on_*/history/**/*.md` | Generator-owned | Active | `skills/asd-ste100/scripts/generate_lint_report.py` and `skills/asd-ste100/scripts/test_generate_lint_report.py` | Immutable per-run lint reports. |
+| `reports/lint_reports/on_*/latest-lint-report.md` | Generator-owned | Optional | `skills/asd-ste100/scripts/generate_lint_report.py` and `skills/asd-ste100/scripts/test_generate_lint_report.py` | Generated latest report for each lint scope; a scope may be empty after reset. |
+| `reports/lint_reports/on_*/history/**/*.md` | Generator-owned | Optional | `skills/asd-ste100/scripts/generate_lint_report.py` and `skills/asd-ste100/scripts/test_generate_lint_report.py` | Immutable per-run lint reports; the family may be empty until a post-reset lint run. |
 | `skills/README.md` | Embedded contract | Active | `skills/README.md` and `skills/SESSION_START.md` | Skill index and activation hierarchy. |
 | `skills/INITIALIZATION_POLICY.md` | Embedded contract | Active | `skills/INITIALIZATION_POLICY.md` and `skills/SESSION_START.md` | Initialization source hierarchy and conditional loading rules. |
 | `skills/SESSION_START.md` | Embedded contract | Active | `skills/SESSION_START.md` and `skills/INITIALIZATION_POLICY.md` | Explicit initialization cues and foundational load sequence. |

@@ -19,6 +19,7 @@ jobs:
     timeout-minutes: 5
     concurrency:
       group: gh-ac-report-writer-${{ github.repository }}
+      queue: max
       cancel-in-progress: false
     steps:
       - name: Check out gpt
@@ -71,6 +72,7 @@ jobs:
     needs: [cleanup]
     concurrency:
       group: gh-ac-report-writer-${{ github.repository }}
+      queue: max
       cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 15
