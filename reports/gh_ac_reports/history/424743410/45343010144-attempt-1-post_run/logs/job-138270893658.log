@@ -1,0 +1,338 @@
+Full audit and publish detailed evidence	Set up job	﻿2026-11-24T06:47:26.1511878Z Current runner version: '2.338.2'
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1542000Z ##[group]Runner Image Provisioner
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1542950Z Hosted Compute Agent
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1543535Z Version: 20261111.635
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1544097Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1544786Z Build Date: 2026-11-11T01:49:01Z
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1545484Z Worker ID: {e27c07e1-3c71-4d49-a8b6-b1ec7f45e880}
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1546113Z Region: centralus
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1547743Z Cloud: Azure
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1548333Z ##[endgroup]
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1550004Z ##[group]Operating System
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1550650Z Ubuntu
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1551104Z 26.04.1
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1553822Z LTS
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1554497Z ##[endgroup]
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1556655Z ##[group]Runner Image
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1557394Z Image: ubuntu-26.04
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1558180Z Version: 20261116.202.1
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1559519Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1561276Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1562248Z ##[endgroup]
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1563225Z ##[group]GITHUB_TOKEN Permissions
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1567645Z Contents: write
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1568197Z Metadata: read
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1568668Z ##[endgroup]
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1570832Z Secret source: Actions
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1571646Z Cache mode: write
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.1572407Z Prepare workflow directory
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.2086175Z Prepare all required actions
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.2141933Z Getting action download info
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.4402804Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.5489079Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Full audit and publish detailed evidence	Set up job	2026-11-24T06:47:26.7900578Z Complete job name: Full audit and publish detailed evidence
+Full audit and publish detailed evidence	Check out commit	﻿2026-11-24T06:47:26.8497938Z ##[group]Run actions/checkout@v4
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8498399Z with:
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8498637Z   fetch-depth: 1
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8498899Z   ref: refs/heads/gpt
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8499173Z   repository: dungnv2602/chatgpt
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8501196Z   token: [REDACTED]
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8501438Z   ssh-strict: true
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8501684Z   ssh-user: git
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8501934Z   persist-credentials: true
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8502211Z   clean: true
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8502469Z   sparse-checkout-cone-mode: true
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8502771Z   fetch-tags: false
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8503025Z   show-progress: true
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8503281Z   lfs: false
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8503515Z   submodules: false
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8503775Z   set-safe-directory: true
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8504062Z   allow-unsafe-pr-checkout: false
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:26.8504423Z ##[endgroup]
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.1187171Z Syncing repository: dungnv2602/chatgpt
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.1188681Z ##[group]Getting Git version info
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.1189257Z Working directory is '/home/runner/work/chatgpt/chatgpt'
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.1299458Z [command]/usr/bin/git version
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.1303771Z git version 2.56.1
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.1307342Z ##[endgroup]
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.1339826Z Temporarily overriding HOME='/home/runner/work/_temp/cae861d4-8a44-457a-badb-eff8573c1a41' before making global git config changes
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.1341456Z Adding repository directory to the temporary git global config as a safe directory
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.1358175Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.1498598Z Deleting the contents of '/home/runner/work/chatgpt/chatgpt'
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.1500953Z ##[group]Initializing the repository
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.1502423Z [command]/usr/bin/git init /home/runner/work/chatgpt/chatgpt
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2422474Z hint: Using 'master' as the name for the initial branch. This default branch name
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2424516Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2427581Z hint: to use in all of your new repositories, which will suppress this warning,
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2428538Z hint: call:
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2429061Z hint:
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2429673Z hint: 	git config --global init.defaultBranch <name>
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2430383Z hint:
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2431179Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2432190Z hint: 'development'. The just-created branch can be renamed via this command:
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2432919Z hint:
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2433303Z hint: 	git branch -m <name>
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2435238Z hint:
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2436229Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2438279Z Initialized empty Git repository in /home/runner/work/chatgpt/chatgpt/.git/
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2455452Z [command]/usr/bin/git remote add origin https://github.com/dungnv2602/chatgpt
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2459181Z ##[endgroup]
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2465211Z ##[group]Disabling automatic garbage collection
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2465675Z [command]/usr/bin/git config --local gc.auto 0
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2467508Z ##[endgroup]
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2468075Z ##[group]Setting up auth
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2468904Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2470363Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2817770Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.2860602Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.3125969Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.3157970Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.3430772Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.3490488Z ##[endgroup]
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.3491994Z ##[group]Fetching the repository
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:27.3499488Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/gpt:refs/remotes/origin/gpt
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:35.0701050Z From https://github.com/dungnv2602/chatgpt
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:35.0702906Z  * [new branch]      gpt        -> origin/gpt
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:35.0718339Z ##[endgroup]
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:35.0725983Z ##[group]Determining the checkout info
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:35.0727391Z ##[endgroup]
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:35.0728126Z [command]/usr/bin/git sparse-checkout disable
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:35.0782471Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:35.0867427Z ##[group]Checking out the ref
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:35.0887892Z [command]/usr/bin/git checkout --progress --force -B gpt refs/remotes/origin/gpt
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:35.7762030Z Switched to a new branch 'gpt'
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:35.7787501Z branch 'gpt' set up to track 'origin/gpt'.
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:35.7868000Z ##[endgroup]
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:35.7888854Z [command]/usr/bin/git log -1 --format=%H
+Full audit and publish detailed evidence	Check out commit	2026-11-24T06:47:35.7917245Z 57fbf914c9a28dd0e38645a7952046de5a525b97
+Full audit and publish detailed evidence	Set up Python	﻿2026-11-24T06:47:35.8132120Z ##[group]Run actions/setup-python@v5
+Full audit and publish detailed evidence	Set up Python	2026-11-24T06:47:35.8132320Z with:
+Full audit and publish detailed evidence	Set up Python	2026-11-24T06:47:35.8132450Z   python-version: 3.x
+Full audit and publish detailed evidence	Set up Python	2026-11-24T06:47:35.8132587Z   check-latest: false
+Full audit and publish detailed evidence	Set up Python	2026-11-24T06:47:35.8133882Z   token: [REDACTED]
+Full audit and publish detailed evidence	Set up Python	2026-11-24T06:47:35.8134019Z   update-environment: true
+Full audit and publish detailed evidence	Set up Python	2026-11-24T06:47:35.8134171Z   allow-prereleases: false
+Full audit and publish detailed evidence	Set up Python	2026-11-24T06:47:35.8134310Z   freethreaded: false
+Full audit and publish detailed evidence	Set up Python	2026-11-24T06:47:35.8134439Z ##[endgroup]
+Full audit and publish detailed evidence	Set up Python	2026-11-24T06:47:35.9240163Z ##[group]Installed versions
+Full audit and publish detailed evidence	Set up Python	2026-11-24T06:47:36.0107438Z (node:2080) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Full audit and publish detailed evidence	Set up Python	2026-11-24T06:47:36.0113674Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Full audit and publish detailed evidence	Set up Python	2026-11-24T06:47:36.0136994Z Successfully set up CPython (3.15.2)
+Full audit and publish detailed evidence	Set up Python	2026-11-24T06:47:36.0154360Z ##[endgroup]
+Full audit and publish detailed evidence	Validate lint and report tooling	﻿2026-11-24T06:47:36.0321764Z ##[group]Run set -uo pipefail
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0322205Z ^[[36;1mset -uo pipefail^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0322498Z ^[[36;1mmkdir -p .lint-report-records^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0423638Z ^[[36;1mfailed=0^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0424215Z ^[[36;1mrun_check() {^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0424447Z ^[[36;1m  name="$1"^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0424643Z ^[[36;1m  shift^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0424903Z ^[[36;1m  output=".lint-report-records/$name.log"^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0425190Z ^[[36;1m  status=0^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0425405Z ^[[36;1m  "$@" > "$output" 2>&1 || status=$?^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0425700Z ^[[36;1m  key="$name"_exit^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0425970Z ^[[36;1m  printf '%s=%s\n' "$key" "$status" >> "$GITHUB_OUTPUT"^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0426305Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0442037Z ^[[36;1m}^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0442465Z ^[[36;1mrun_check wrapper_syntax bash -n skills/asd-ste100/scripts/ste-lint-repository.sh^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0442933Z ^[[36;1mrun_check python_compile python3 -m py_compile \^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0443390Z ^[[36;1m  skills/asd-ste100/scripts/generate_lint_report.py \^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0443766Z ^[[36;1m  skills/asd-ste100/scripts/check_markdown_anchors.py^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0444231Z ^[[36;1mrun_check report_tests python3 skills/asd-ste100/scripts/test_generate_lint_report.py^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0444800Z ^[[36;1mrun_check anchor_tests python3 skills/asd-ste100/scripts/test_check_markdown_anchors.py^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0445350Z ^[[36;1mrun_check linter_selftest python3 skills/asd-ste100/scripts/ste-lint.py --selftest^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0445796Z ^[[36;1mecho "failed=$failed" >> "$GITHUB_OUTPUT"^[[0m
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0632765Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0633033Z env:
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0633216Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0633468Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0633731Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0633948Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0634169Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0634388Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T06:47:36.0634582Z ##[endgroup]
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	﻿2026-11-24T06:47:40.3309263Z ##[group]Run set -euo pipefail
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3309540Z ^[[36;1mset -euo pipefail^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3309750Z ^[[36;1mmkdir -p .lint-report-records reports/lint_reports/on_repo/history^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3309982Z ^[[36;1manchor_status=0^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3310169Z ^[[36;1mpython3 skills/asd-ste100/scripts/check_markdown_anchors.py \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3310433Z ^[[36;1m  > .lint-report-records/anchor-check.log 2>&1 || anchor_status=$?^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3310636Z ^[[36;1m^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3310756Z ^[[36;1mgit ls-files -- '*.md' |^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3311179Z ^[[36;1m  grep -vE '^(archive/|reports/|workspace/tasks/|workspace/discussion[.]md$|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3311628Z ^[[36;1m  > .lint-report-records/evaluated-files.txt || true^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3311807Z ^[[36;1m^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3311916Z ^[[36;1mfailed=0^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3312045Z ^[[36;1mwhile IFS= read -r file; do^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3312233Z ^[[36;1m  [[ -z "$file" ]] && continue^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3312421Z ^[[36;1m  key=$(printf '%s' "$file" | sha256sum | cut -d' ' -f1)^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3312746Z ^[[36;1m  output=".lint-report-records/$key.json"^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3312920Z ^[[36;1m  raw="$output.raw"^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3313057Z ^[[36;1m  status=0^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3313294Z ^[[36;1m  bash skills/asd-ste100/scripts/ste-lint-repository.sh --json "$file" > "$raw" 2>&1 || status=$?^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3313619Z ^[[36;1m  if jq -e '.violations | type == "array"' "$raw" >/dev/null 2>&1; then^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3313866Z ^[[36;1m    jq --arg path "$file" --argjson exit_code "$status" \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3314101Z ^[[36;1m      '. + {path:$path, exit_code:$exit_code}' "$raw" > "$output"^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3314288Z ^[[36;1m  else^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3314444Z ^[[36;1m    python3 - "$file" "$status" "$raw" "$output" <<'PY'^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3314632Z ^[[36;1mimport json, pathlib, sys^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3314831Z ^[[36;1mpath, exit_code, raw_path, output_path = sys.argv[1:]^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3315088Z ^[[36;1mraw = pathlib.Path(raw_path).read_text(encoding="utf-8", errors="replace")^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3315317Z ^[[36;1mpayload = {^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3315448Z ^[[36;1m    "path": path,^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3315633Z ^[[36;1m    "exit_code": int(exit_code) if int(exit_code) else 2,^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3315823Z ^[[36;1m    "capture_error": raw,^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3315971Z ^[[36;1m    "violations": [],^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3316106Z ^[[36;1m}^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3316238Z ^[[36;1mpathlib.Path(output_path).write_text(^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3316661Z ^[[36;1m    json.dumps(payload, ensure_ascii=False, indent=2) + "\n",^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3316871Z ^[[36;1m    encoding="utf-8",^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3317013Z ^[[36;1m)^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3317149Z ^[[36;1mPY^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3317265Z ^[[36;1m    failed=1^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3317389Z ^[[36;1m  fi^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3317509Z ^[[36;1m  rm -f "$raw"^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3317663Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3317866Z ^[[36;1mdone < .lint-report-records/evaluated-files.txt^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3318039Z ^[[36;1m^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3318167Z ^[[36;1mTOOLING_FAILED="$TOOLING_FAILED" \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3318337Z ^[[36;1mWRAPPER_EXIT="$WRAPPER_EXIT" \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3318499Z ^[[36;1mPYTHON_EXIT="$PYTHON_EXIT" \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3318676Z ^[[36;1mREPORT_TEST_EXIT="$REPORT_TEST_EXIT" \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3318860Z ^[[36;1mANCHOR_TEST_EXIT="$ANCHOR_TEST_EXIT" \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3319033Z ^[[36;1mSELFTEST_EXIT="$SELFTEST_EXIT" \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3319217Z ^[[36;1mANCHOR_STATUS="$anchor_status" python3 - <<'PY'^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3319403Z ^[[36;1mimport json, os, pathlib^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3319575Z ^[[36;1mroot = pathlib.Path(".lint-report-records")^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3319743Z ^[[36;1mchecks = []^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3320002Z ^[[36;1mfor key, label in (^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3320162Z ^[[36;1m    ("WRAPPER_EXIT", "Wrapper shell syntax"),^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3320372Z ^[[36;1m    ("PYTHON_EXIT", "Python report tooling compilation"),^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3320597Z ^[[36;1m    ("REPORT_TEST_EXIT", "Lint report regression tests"),^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3320820Z ^[[36;1m    ("ANCHOR_TEST_EXIT", "Markdown anchor regression tests"),^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3321037Z ^[[36;1m    ("SELFTEST_EXIT", "STE linter self-test"),^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3321204Z ^[[36;1m):^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3321332Z ^[[36;1m    raw = os.environ.get(key, "")^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3321504Z ^[[36;1m    code = int(raw) if raw.isdigit() else 2^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3321672Z ^[[36;1m    log_names = {^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3321835Z ^[[36;1m        "WRAPPER_EXIT": "wrapper_syntax.log",^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3322047Z ^[[36;1m        "PYTHON_EXIT": "python_compile.log",^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3322257Z ^[[36;1m        "REPORT_TEST_EXIT": "report_tests.log",^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3322451Z ^[[36;1m        "ANCHOR_TEST_EXIT": "anchor_tests.log",^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3322635Z ^[[36;1m        "SELFTEST_EXIT": "linter_selftest.log",^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3322889Z ^[[36;1m    }^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3323024Z ^[[36;1m    log = root / log_names[key]^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3323181Z ^[[36;1m    checks.append({^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3323322Z ^[[36;1m        "name": label,^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3323492Z ^[[36;1m        "status": "Passed" if code == 0 else "Failed",^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3323679Z ^[[36;1m        "exit_code": code,^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3323946Z ^[[36;1m        "output": log.read_text(encoding="utf-8", errors="replace") if log.exists() else "No output captured.",^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3324210Z ^[[36;1m    })^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3324369Z ^[[36;1manchor_code = int(os.environ.get("ANCHOR_STATUS", "2"))^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3324575Z ^[[36;1manchor_log = root / "anchor-check.log"^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3324749Z ^[[36;1mchecks.append({^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3324926Z ^[[36;1m    "name": "Markdown links and heading anchors",^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3325135Z ^[[36;1m    "status": "Passed" if anchor_code == 0 else "Failed",^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3325335Z ^[[36;1m    "exit_code": anchor_code,^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3325615Z ^[[36;1m    "output": anchor_log.read_text(encoding="utf-8", errors="replace") if anchor_log.exists() else "No output captured.",^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3325898Z ^[[36;1m})^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3326058Z ^[[36;1mpathlib.Path(".lint-report-checks.json").write_text(^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3326288Z ^[[36;1m    json.dumps(checks, ensure_ascii=False, indent=2) + "\n",^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3326645Z ^[[36;1m    encoding="utf-8",^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3326784Z ^[[36;1m)^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3326895Z ^[[36;1mPY^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3327005Z ^[[36;1m^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3327187Z ^[[36;1mif [[ "$failed" -ne 0 || "$anchor_status" -ne 0 || "$TOOLING_FAILED" == "1" ]]; then^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3327414Z ^[[36;1m  report_status="Failed"^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3327561Z ^[[36;1m  failed=1^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3327684Z ^[[36;1melse^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3327809Z ^[[36;1m  report_status="Passed"^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3327951Z ^[[36;1mfi^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3328171Z ^[[36;1mhistory="reports/lint_reports/on_repo/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3328427Z ^[[36;1mgenerator_status=0^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3328621Z ^[[36;1mpython3 skills/asd-ste100/scripts/generate_lint_report.py \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3328863Z ^[[36;1m  --scope on_repo --records-dir .lint-report-records \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3329064Z ^[[36;1m  --output-dir "$history" \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3329260Z ^[[36;1m  --run-id "$GITHUB_RUN_ID" --run-number "$GITHUB_RUN_NUMBER" \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3329536Z ^[[36;1m  --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3329818Z ^[[36;1m  --attempt "$GITHUB_RUN_ATTEMPT" --branch "$GITHUB_REF_NAME" \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3330161Z ^[[36;1m  --commit "$GITHUB_SHA" --event "$GITHUB_EVENT_NAME" \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3330381Z ^[[36;1m  --mode repository-wide --status "$report_status" \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3330592Z ^[[36;1m  --checks-file .lint-report-checks.json \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3330840Z ^[[36;1m  --previous-report reports/lint_reports/on_repo/latest-lint-report.json \^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3331127Z ^[[36;1m  --linter-source-sha "$(git rev-parse HEAD)" || generator_status=$?^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3331355Z ^[[36;1mif [[ "$generator_status" -ne 0 ]]; then^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3331626Z ^[[36;1m  echo "::error::The shared lint report generator failed with exit $generator_status."^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3331867Z ^[[36;1m  failed=1^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3331985Z ^[[36;1melse^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3332219Z ^[[36;1m  cp reports/lint_reports/on_repo/latest-lint-report.md reports/lint_reports/latest-lint-report.md^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3332510Z ^[[36;1m  git config user.name "github-actions[bot]"^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3332761Z ^[[36;1m  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3333062Z ^[[36;1m  git add reports/lint_reports/on_repo reports/lint_reports/latest-lint-report.md^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3333390Z ^[[36;1m  if ! git diff --cached --quiet; then^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3333601Z ^[[36;1m    git commit -m "Publish repository-wide lint evidence"^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3333802Z ^[[36;1m    git pull --rebase origin gpt^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3333966Z ^[[36;1m    git push origin "HEAD:gpt"^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3334111Z ^[[36;1m  fi^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3334224Z ^[[36;1mfi^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3334361Z ^[[36;1mecho "failed=$failed" >> "$GITHUB_OUTPUT"^[[0m
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3363656Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3363846Z env:
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3364006Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3364242Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3364477Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3364681Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3364897Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3365105Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3365290Z   TOOLING_FAILED: 0
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3365421Z   WRAPPER_EXIT: 0
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3365541Z   PYTHON_EXIT: 0
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3365660Z   REPORT_TEST_EXIT: 0
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3365782Z   ANCHOR_TEST_EXIT: 0
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3365908Z   SELFTEST_EXIT: 0
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:40.3366029Z ##[endgroup]
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:46.0866906Z [gpt 2ea90dd] Publish repository-wide lint evidence
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:46.0867458Z  7 files changed, 15463 insertions(+), 472 deletions(-)
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:46.0867891Z  create mode 100644 reports/lint_reports/on_repo/history/45343010144-attempt-1/integrity.json
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:46.0868392Z  create mode 100644 reports/lint_reports/on_repo/history/45343010144-attempt-1/report.json
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:46.0868912Z  create mode 100644 reports/lint_reports/on_repo/history/45343010144-attempt-1/report.md
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:46.3672610Z From https://github.com/dungnv2602/chatgpt
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:46.3681927Z  * branch            gpt        -> FETCH_HEAD
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:46.4091615Z Current branch gpt is up to date.
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:47.4853085Z To https://github.com/dungnv2602/chatgpt
+Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T06:47:47.4853781Z    57fbf91..2ea90dd  HEAD -> gpt
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	﻿2026-11-24T06:47:47.4978785Z ##[group]Run if [[ "$AUDIT_OUTCOME" != "success" || "$AUDIT_FAILED" == "1" || "$TOOLING_FAILED" == "1" ]]; then
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.4979179Z ^[[36;1mif [[ "$AUDIT_OUTCOME" != "success" || "$AUDIT_FAILED" == "1" || "$TOOLING_FAILED" == "1" ]]; then^[[0m
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.4979692Z ^[[36;1m  echo "::error::The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md."^[[0m
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.4979988Z ^[[36;1m  exit 1^[[0m
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.4980104Z ^[[36;1mfi^[[0m
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.4980238Z ^[[36;1mecho "All full-audit checks passed."^[[0m
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.5015473Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.5015691Z env:
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.5015846Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.5016084Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.5016704Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.5016937Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.5017174Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.5017382Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.5018445Z   AUDIT_OUTCOME: success
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.5018641Z   AUDIT_FAILED: 1
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.5018764Z   TOOLING_FAILED: 0
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.5018883Z ##[endgroup]
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.5080726Z ##[error]The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md.
+Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T06:47:47.5087471Z ##[error]Process completed with exit code 1.
+Full audit and publish detailed evidence	Post Check out commit	﻿2026-11-24T06:47:47.5179973Z Post job cleanup.
+Full audit and publish detailed evidence	Post Check out commit	2026-11-24T06:47:47.5917370Z [command]/usr/bin/git version
+Full audit and publish detailed evidence	Post Check out commit	2026-11-24T06:47:47.5987505Z git version 2.56.1
+Full audit and publish detailed evidence	Post Check out commit	2026-11-24T06:47:47.6069542Z Temporarily overriding HOME='/home/runner/work/_temp/aa1a44f0-927b-48d2-b826-5c14affe7be9' before making global git config changes
+Full audit and publish detailed evidence	Post Check out commit	2026-11-24T06:47:47.6081280Z Adding repository directory to the temporary git global config as a safe directory
+Full audit and publish detailed evidence	Post Check out commit	2026-11-24T06:47:47.6097417Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+Full audit and publish detailed evidence	Post Check out commit	2026-11-24T06:47:47.6191003Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Full audit and publish detailed evidence	Post Check out commit	2026-11-24T06:47:47.6277943Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Full audit and publish detailed evidence	Post Check out commit	2026-11-24T06:47:47.6707610Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Full audit and publish detailed evidence	Post Check out commit	2026-11-24T06:47:47.6731398Z http.https://github.com/.extraheader
+Full audit and publish detailed evidence	Post Check out commit	2026-11-24T06:47:47.6738439Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Full audit and publish detailed evidence	Post Check out commit	2026-11-24T06:47:47.6812112Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Full audit and publish detailed evidence	Post Check out commit	2026-11-24T06:47:47.7093266Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Full audit and publish detailed evidence	Post Check out commit	2026-11-24T06:47:47.7125611Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Full audit and publish detailed evidence	Complete job	﻿2026-11-24T06:47:47.7524873Z Cleaning up orphan processes
+Full audit and publish detailed evidence	Complete job	2026-11-24T06:47:47.7803986Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
