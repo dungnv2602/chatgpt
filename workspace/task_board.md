@@ -10,18 +10,13 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Record |
 |---|---|---:|---|---|
-| 20261124-161334-03 | Remediate semicolon findings in ADR-0002 | P2 | In Progress | [Task record](tasks/20261124-161334-03-review-semicolon-findings-in-workspace-adr-0002-retire-source-dr.md) |
 
 
 ## In Progress
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
-| 20261124-161334-03 | Remediate semicolon findings in ADR-0002 | P2 | In Progress | Assistant | 2026-11-25 | ADR-0002 | [Task record](tasks/20261124-161334-03-review-semicolon-findings-in-workspace-adr-0002-retire-source-dr.md) |
-| 20261124-161334-04 | Remediate long-sentence findings in ADR-0002 | P2 | In Progress | Assistant | 2026-11-24 | ADR-0002 | [Task record](tasks/20261124-161334-04-review-long-sentence-findings-in-workspace-adr-0002-retire-sourc.md) |
-| 20261124-161334-05 | Remediate synonym-rotation findings in ADR-0002 | P2 | In Progress | Assistant | 2026-11-24 | ADR-0002 | [Task record](tasks/20261124-161334-05-review-synonym-rotation-findings-in-workspace-adr-0002-retire-so.md) |
-| 20261124-161334-01 | Remediate present-perfect findings in ADR-0002 | P3 | In Progress | Assistant | 2026-11-25 | ADR-0002 | [Task record](tasks/20261124-161334-01-review-present-perfect-findings-in-workspace-adr-0002-retire-sou.md) |
-| 20261124-161334-02 | Remediate passive-voice findings in ADR-0002 | P3 | In Progress | Assistant | 2026-11-24 | ADR-0002 | [Task record](tasks/20261124-161334-02-review-passive-voice-findings-in-workspace-adr-0002-retire-sourc.md) |
+
 
 ## Ready
 
@@ -126,13 +121,12 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## Historical
 
-| 20261124-160500 | Implement verified source-Draft retirement and migrate DRAFT-0001 | P1 | Done | User | 2026-11-24 | ADR-0002 | [Archived record](../archive/tasks/20261124-160500-implement-verified-source-draft-retirement.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/10dd38d85a43fd29f567d70ea1314ac91212d0a1) |
-
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
+| 20261124-161334-01 | Remediate present-perfect findings in ADR-0002 | P3 | Done | Assistant | 2026-11-24 | ADR-0002 | [Archived record](../archive/tasks/20261124-161334-01-review-present-perfect-findings-in-workspace-adr-0002-retire-sou.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/a33ca97c624dcfa84c112deaae1ab582b93efc00) |
+| 20261124-161334-02 | Remediate passive-voice findings in ADR-0002 | P3 | Done | Assistant | 2026-11-24 | ADR-0002 | [Archived record](../archive/tasks/20261124-161334-02-review-passive-voice-findings-in-workspace-adr-0002-retire-sourc.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/c1b3571aaeadeb7f4b44a3684a036cc0299a5fc0) |
+| 20261124-161334-03 | Remediate semicolon findings in ADR-0002 | P2 | Done | Assistant | 2026-11-24 | ADR-0002 | [Archived record](../archive/tasks/20261124-161334-03-review-semicolon-findings-in-workspace-adr-0002-retire-source-dr.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/d375b9d650fd68b7902b2d73340cfbf4dee55f59) |
+| 20261124-161334-04 | Remediate long-sentence findings in ADR-0002 | P2 | Done | Assistant | 2026-11-24 | ADR-0002 | [Archived record](../archive/tasks/20261124-161334-04-review-long-sentence-findings-in-workspace-adr-0002-retire-sourc.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/d4fa8fd206b4b8f612d860ba7162e0af30bd6cd2) |
+| 20261124-161334-05 | Remediate synonym-rotation findings in ADR-0002 | P2 | Done | Assistant | 2026-11-24 | ADR-0002 | [Archived record](../archive/tasks/20261124-161334-05-review-synonym-rotation-findings-in-workspace-adr-0002-retire-so.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/f5e3367730f5cd3882720ac86a3ed2a9cfee83d1) |
+| 20261124-160500 | Implement verified source-Draft retirement and migrate DRAFT-0001 | P1 | Done | User | 2026-11-24 | ADR-0002 | [Archived record](../archive/tasks/20261124-160500-implement-verified-source-draft-retirement.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/10dd38d85a43fd29f567d70ea1314ac91212d0a1) |
 | 20261124-103354 | Establish draft-to-ADR governance and repository analysis workflow | P1 | Done | User | 2026-11-24 | ADR-0001 | [Archived record](../archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/2dec8d42e89568056c96a1d678c06a1430c20711) |
-| 20261124-111700 | Resolve CI logging, report-retirement, renderer and runner discussions | P1 | Done | User | 2026-11-24 | — | [Archived record](../archive/tasks/20261124-111700-resolve-ci-discussion-items.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/47a6a6ab9483619cd37e8fe587c3f3b1c30d0c14) |
-| 20261123-225745 | Repair CI ledger task generation workflow | P1 | Done | User | 2026-11-24 | — | [Archived record](../archive/tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/c9fac2b487569d921af6d788b1ee4778cda35767) |
-| 20261124-093000 | Add approval-gated drawing pattern learning | P2 | Done | User | 2026-11-24 | — | [Archived record](../archive/tasks/20261124-093000-add-approval-gated-drawing-pattern-learning.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/51f2ab781aa1b5965e4adadb70509e35cb6ec9b2) |
-| 20261124-061933-03 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Validate the document | P2 | Done | Assistant | 2026-11-24 | — | [Archived record](../archive/tasks/20261124-061933-03-review-validation-or-test-failures-in-validate-document-standard.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/807a5d5fe901a4a608895f72dd81d9085b2d45a8) |
-| 20261124-061933-04 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run catalog validator | P2 | Done | Assistant | 2026-11-24 | — | [Archived record](../archive/tasks/20261124-061933-04-review-validation-or-test-failures-in-validate-document-standard.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/807a5d5fe901a4a608895f72dd81d9085b2d45a8) |
