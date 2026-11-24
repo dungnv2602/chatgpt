@@ -360,7 +360,7 @@ direction rather than claiming it is verbatim internal wording.
 
 ### D. Use image references honestly
 
-Use an image only for a role that the user assigns in the active session. Roles include identity, composition, style, or the exact source for a direct edit. Use the supported reference mechanism and verify that the image was included. A historical image is not an active reference merely because it is stored or approved.
+Use an image only for a role that the user assigns in the active session. Roles include identity, composition, style, or the exact source for a direct edit. Use the supported reference mechanism and check that the image was included. A historical image is not an active reference merely because it is stored or approved.
 
 The Image Source and Editing Protocol defines the operation choice. Do not claim reference-guided generation or a source edit when the tool call did not include the relevant image.
 
