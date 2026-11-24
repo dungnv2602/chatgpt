@@ -123,6 +123,48 @@ class LedgerTests(unittest.TestCase):
         self.assertFalse(second["changed"])
         self.assertEqual(self.read_ledger()["findings"][0]["occurrence_count"],1)
 
+    def test_all_lint_severities_create_and_reuse_grouped_tasks(self):
+        self.add_lint("on_changed", "110", "2026-11-23T07:10:00Z",
+                      fingerprint="a1b2c3d4e5f6", level="advisory",
+                      file_path="docs/advisory.md", rule="passive-voice")
+        first = LEDGER.ingest(self.root, now="2026-11-23T07:11:00Z")
+        self.assertEqual(first["tasks_created"], 1)
+        first_finding = self.read_ledger()["findings"][0]
+        self.assertEqual(first_finding["severity"], "low")
+        task_id = first_finding["task_refs"][0]
+
+        self.add_lint("on_changed", "111", "2026-11-23T07:12:00Z",
+                      fingerprint="b2c3d4e5f6a7", level="unknown",
+                      file_path="docs/advisory.md", rule="passive-voice")
+        second = LEDGER.ingest(self.root, now="2026-11-23T07:13:00Z")
+        findings = self.read_ledger()["findings"]
+        self.assertEqual(second["tasks_created"], 0)
+        self.assertEqual(second["tasks_updated"], 1)
+        self.assertEqual(len(findings), 2)
+        self.assertTrue(all(item["task_refs"] == [task_id] for item in findings))
+        self.assertEqual({item["severity"] for item in findings}, {"low", "informational"})
+        task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
+        self.assertEqual(len(task_files), 1)
+        task_text = task_files[0].read_text(encoding="utf-8")
+        self.assertIn("- **Priority:** P3", task_text)
+        self.assertIn("lint-a1b2c3d4e5f6", task_text)
+        self.assertIn("lint-b2c3d4e5f6a7", task_text)
+
+    def test_low_confidence_actions_findings_remain_ledger_only(self):
+        issue = {
+            "category": "step_failure", "job_name": "build", "step_name": "optional check",
+            "confidence": "low", "blocking": False,
+            "diagnostic": "Optional check failed with a classified diagnostic.",
+        }
+        self.add_actions("112", "2026-11-23T07:20:00Z", [issue])
+        result = LEDGER.ingest(self.root, now="2026-11-23T07:21:00Z")
+        findings = self.read_ledger()["findings"]
+        self.assertEqual(len(findings), 1)
+        self.assertEqual(findings[0]["source_family"], "github_actions")
+        self.assertEqual(findings[0]["severity"], "low")
+        self.assertEqual(findings[0]["task_refs"], [])
+        self.assertEqual(result["tasks_created"], 0)
+
     def test_lint_new_run_increments_occurrence_and_tracks_dates(self):
         self.add_lint("on_changed","100","2026-11-23T07:10:00Z")
         LEDGER.ingest(self.root)
