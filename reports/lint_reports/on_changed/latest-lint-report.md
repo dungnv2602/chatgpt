@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#631](https://github.com/dungnv2602/chatgpt/actions/runs/45414832243)
-- **Run ID / attempt:** 45414832243 / 1
+- **Run:** [#632](https://github.com/dungnv2602/chatgpt/actions/runs/45415351074)
+- **Run ID / attempt:** 45415351074 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 9606a5f825b57cab8e30e36ebd372429e9e7ada3
+- **Branch / commit:** gpt / 2b878e201fb39d951049855ec1bae9cb538f00da
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** dbd7ad280198ee39849f926b6d32c50d7856da58
-- **Linter source SHA:** 9606a5f825b57cab8e30e36ebd372429e9e7ada3
-- **Generated (UTC):** 2026-11-24T14:31:09.317847+00:00
+- **Baseline SHA:** 9606a5f825b57cab8e30e36ebd372429e9e7ada3
+- **Linter source SHA:** 2b878e201fb39d951049855ec1bae9cb538f00da
+- **Generated (UTC):** 2026-11-24T14:34:02.249802+00:00
 
 ## 1. Executive summary
 
@@ -31,7 +31,7 @@
 
 - Runner OS: Linux
 - Python: 3.15.2
-- Platform: Linux-7.0.0-1020-azure-x86_64-with-glibc2.43
+- Platform: Linux-7.0.0-1016-aws-x86_64-with-glibc2.43
 - The JSON report records the full runtime version and every original per-file linter response.
 - The report records the commit that supplied the linter and generator code.
 
@@ -47,7 +47,7 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| skills/document-standards/references/document-type-catalog.md | FAIL | 31 | 2 | 0 | 4315 | 0.7 | 1 |
+| skills/document-standards/references/document-type-catalog.md | FAIL | 31 | 2 | 0 | 4307 | 0.7 | 1 |
 
 ## 5. Findings by rule
 
@@ -89,7 +89,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.326s
+Ran 4 tests in 0.234s
 
 OK
 ~~~
@@ -171,7 +171,7 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:59:227 · **recurring** · fingerprint: 8e6ebb9019d53b6c90f1902c
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:59:146 · **recurring** · fingerprint: 8e6ebb9019d53b6c90f1902c
   - **Level:** advisory-free
   - **Message:** Sentence has 35 words (cap 25). Split it.
   - **Matched text:** 35 words
@@ -179,7 +179,7 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are skipped
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:66:150 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:66:100 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
@@ -275,7 +275,7 @@ This section includes every normalized finding with its rule, level, source loca
 - **Findings:** 31
 - **Hard findings:** 2
 - **Baseline:** 0
-- **Words:** 4315
+- **Words:** 4307
 - **Findings per 100 words:** 0.7
 
 #### Complete diagnostics
@@ -325,7 +325,7 @@ This section includes every normalized finding with its rule, level, source loca
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
 
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:59:227 · **recurring** · fingerprint: 8e6ebb9019d53b6c90f1902c
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:59:146 · **recurring** · fingerprint: 8e6ebb9019d53b6c90f1902c
   - **Level:** advisory-free
   - **Message:** Sentence has 35 words (cap 25). Split it.
   - **Matched text:** 35 words
@@ -335,7 +335,7 @@ This section includes every normalized finding with its rule, level, source loca
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are skipped
 
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:66:150 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:66:100 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
