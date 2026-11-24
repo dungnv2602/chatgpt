@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-094047-05
 - **Created:** 2026-11-24 09:40 UTC
-- **Updated:** 2026-11-24 13:51 UTC
+- **Updated:** 2026-11-24 13:57 UTC
 - **Priority:** P2
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -90,5 +90,5 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-2822a6b08706709830f1f820` | medium | synonym-rotation: 'check' and 'validate' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45367046002) · [report](../../reports/lint_reports/on_changed/history/45397540387-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45397540387) · [report](../../reports/lint_reports/on_changed/history/45399356907-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45399356907) · [report](../../reports/lint_reports/on_changed/history/45403469914-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45403469914) · [report](../../reports/lint_reports/on_changed/history/45407620144-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45407620144) |
+| `lint-2822a6b08706709830f1f820` | medium | synonym-rotation: 'check' and 'validate' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45367046002) · [report](../../reports/lint_reports/on_changed/history/45399356907-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45399356907) · [report](../../reports/lint_reports/on_changed/history/45403469914-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45403469914) · [report](../../reports/lint_reports/on_changed/history/45407620144-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45407620144) · [report](../../reports/lint_reports/on_changed/history/45408533122-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45408533122) |
 | `lint-a94e1efc7de2a6d5a4355f3d` | medium | synonym-rotation: 'begin' and 'start' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45407620144-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45407620144) |
