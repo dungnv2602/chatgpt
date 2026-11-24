@@ -1,14 +1,14 @@
-# Process Image Takeout and Create WebP Derivatives — run 45301729064
+# STE Lint Full Technical Documentation — run 45301729199
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | Process Image Takeout and Create WebP Derivatives |
-| Workflow path | .github/workflows/convert-images-to-webp.yml |
-| Run / attempt | 45301729064 / 1 |
-| Run number | 63 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45301729064 |
+| Workflow | STE Lint Full Technical Documentation |
+| Workflow path | .github/workflows/ste-lint-full-docs.yml |
+| Run / attempt | 45301729199 / 1 |
+| Run number | 179 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45301729199 |
 | Branch | gpt |
 | Commit | 4afaa2c2211858b0455eaf29c523b32eb16e012c |
 | Event | push |
@@ -20,24 +20,24 @@
 | Reporter job | in_progress / Pending |
 | Capture stage | pre_finalizer |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-24T01:02:45Z |
+| Captured (UTC) | 2026-11-24T01:03:09Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
 | State | in_progress |
-| Primary category | validation_or_test |
-| Jobs | 1 |
-| Steps | 11 |
+| Primary category | step_or_job_failure |
+| Jobs | 2 |
+| Steps | 12 |
 | Issues | 1 |
-| Annotations | 1 |
+| Annotations | 4 |
 | Artifacts | 0 |
-| Capture errors | 1 |
+| Capture errors | 2 |
 
 ## Failure classification
 
-validation_or_test The parent run is still in progress. The projected conclusion is provisional.
+step_or_job_failure The parent run is still in progress. The projected conclusion is provisional.
 
 The report records an actionable workflow failure or operational exception. Ordinary successful runs and cancellation-only runs are not captured by default. A successful run is retained when a step failed but the workflow allowed it to continue. A cancelled run is retained only when it contains an independent actionable failure. Known downstream status-propagation steps after cancellation are excluded. Explicit run-backfill requests can override the default capture filter.
 
@@ -45,19 +45,23 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 138135640561 | process-image-takeout | completed | failure | 11 | logs/job-138135640561.log |
+| 138135641231 | Validate target branch and reject superseded push runs | completed | success | 3 | logs/job-138135641231.log |
+| 138135678685 | Full audit and publish detailed evidence | completed | failure | 9 | logs/job-138135678685.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 138135640561 | 5 | Test takeout processor | Blocking | medium | Step conclusion: failure |
+| step_or_job_failure | 138135678685 | 6 | Set workflow result from audit and tooling outcomes | Blocking | low | Step conclusion: failure |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 138135640561 | failure | .github | 201 |  | Process completed with exit code 1. |
+| 138135641231 | warning | .github | 35 |  | Could not identify the latest push run. Continue with validation. |
+| 138135678685 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 138135678685 | failure | .github | 20 |  | Process completed with exit code 1. |
+| 138135678685 | failure | .github | 19 |  | The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md. |
 
 ## Artifacts
 
@@ -67,7 +71,8 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 138135640561 | process-image-takeout | logs/job-138135640561.log | 82 | False |  |
+| 138135641231 | Validate target branch and reject superseded push runs | logs/job-138135641231.log | 82 | False |  |
+| 138135678685 | Full audit and publish detailed evidence | logs/job-138135678685.log | 82 | False |  |
 
 ## Evidence coverage
 
@@ -75,11 +80,12 @@ One or more evidence sources were unavailable. This report is Incomplete.
 
 | Source | HTTP status | Limitation |
 | --- | --- | --- |
-| job_log | Not recorded | run 45301729064 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45301729199 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45301729199 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
-No separate lint report applies to this workflow.
+[Repository-wide lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/reports/lint_reports/on_repo/latest-lint-report.md)
 
 ## Integrity
 
