@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 11:34 UTC — Reconcile the Worker lint-ingestion policy:** Load Agent Skill Authoring and the ASD repository writing policy. Compare every CI Ledger task-eligibility statement in `skills/the-worker/SKILL.md` with the approved policy in `reports/triage/README.md`. Make only the required documentation changes and read back the committed skill.
+**2026-11-24 11:41 UTC — Reconcile CI discussions and close the task:** Remove the three CI items from Open Discussions after recording their verified outcomes in Reports. Preserve the unrelated Draft governance approval. Update the active task, archive its Done copy, read it back, register its exact retention path, remove the active record, and reconcile the board. Do not wait for CI.
 ## Open Discussions
 
 - **2026-11-24 10:46 UTC — Review the repository decision-governance proposal:** [DRAFT-0001 — Establish Draft-to-ADR Governance and Repository Analysis](draft/DRAFT-0001-repository-decision-governance-and-analysis.md). Review the proposed use of MADR, Draft and ADR lifecycles, task-to-ADR enforcement, permanent ADR archiving, the `workspace/analysis/` location and cadence, and the proposed `decision-governance` skill. The exact revision 1 is awaiting the user's decision. Do not create ADR-0001 until explicit approval.
