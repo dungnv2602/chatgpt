@@ -9,6 +9,7 @@ This folder stores proposals that require a user decision.
 
 ## Current Drafts
 
+- [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](DRAFT-0002-phase-aware-planning-and-evidence-capture.md) — In review. User approval is pending.
 - [DRAFT-0001 — Establish Draft-to-ADR Governance and Repository Analysis](DRAFT-0001-repository-decision-governance-and-analysis.md) — In review. User approval is pending.
 
 ## Workflow
