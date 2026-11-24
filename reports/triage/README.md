@@ -63,9 +63,9 @@ Task creation is part of report ingestion, not a later manual review step.
 
 1. Create tasks for every newly identified lint finding, including `low` and `informational`, and for GitHub Actions findings with severity `medium`, `high`, or `critical`. Findings must have a task-eligible status. Severity controls priority, not lint task eligibility. Existing active lint findings without task references are also handed off on the next ingestion sweep; this does not rescan or backfill report history. Do not create tasks from the initial full-audit baseline or from untracked recurring baseline findings.
 2. Group lint findings by source file and rule. Group Actions findings by workflow path, job, step, and category.
-3. Render each task from `workspace/TASK_TEMPLATE.md`. New tasks start Assistant-originated and Proposed, add one row to `workspace/task_board.md`, and record the task ID in each finding's `task_refs`.
+3. Render each task from `workspace/TASK_TEMPLATE.md`. New tasks start Assistant-originated and Proposed. Set `Governing ADR(s)` to `Pending — Worker review required before approval`. Add one task-board row with ADR value `Pending`. Record the task ID in each finding's `task_refs`.
 4. Reuse an active task for the same remediation group. Later evidence refreshes a linked task but does not create duplicate proposals.
-5. Automated task creation is an intake and handoff only. It does not approve source changes or authorize remediation.
+5. Automated task creation is an intake and handoff only. It does not approve source changes or authorize remediation. The Worker must assign an accepted ADR before an implementation task becomes Ready. When no accepted ADR covers the work, the Worker must create a Draft and keep the task Proposed.
 6. Task records contain finding IDs, concise diagnostics, and report links, not copied logs or full occurrence histories.
 
 Keep finding state separate from task state: use finding status `planned` when a Ready task exists, `fixing` during remediation, and `verifying` while hosted validation is pending.
