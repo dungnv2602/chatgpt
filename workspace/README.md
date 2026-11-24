@@ -33,11 +33,11 @@ The decision-governance skill owns Draft, ADR, and repository-analysis lifecycle
 
 ## Task workflow
 
-1. Check the board and active records before creating work. Update an existing task when the objective continues; otherwise create a distinct task.
+1. Check the board and active records before creating work. Update an existing task when the objective continues. Otherwise, create a distinct task.
 2. Record the user's request, scope, constraints, approval, priority, dependencies, and acceptance criteria.
 3. Select one current execution task. Follow explicit user direction, then dependencies, priority, and age.
 4. Record meaningful actions, decisions, verification, and blockers in the task record. Keep the board as an index.
-5. Close only after acceptance criteria pass, the archive copy is created and read back, the retention index is updated, the active record is removed, and the board links to the archive commit.
+5. Close only after all acceptance criteria pass. Create the archive copy and read it back. Update the retention index and remove the active record. Confirm that the board links to the archive commit.
 
 Task IDs use UTC `YYYYMMDD-HHMMSS`. Use only the statuses Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Optional assistant improvements remain Proposed until approved. Necessary follow-ups may be created automatically within the approved scope.
 
@@ -49,11 +49,11 @@ The first complete tooling-valid full audit in each lint scope establishes a bas
 
 A lint report can seed a baseline when every required tooling check passes, even when the report records lint failures. The baseline prevents recurring findings from appearing as new work.
 
-A Ledger-generated task cannot close as Done while any linked finding remains non-terminal. After the task is archived Done and indexed, the `archive/tasks/**` push triggers the normal diagnostics sweep. The Ledger then retires the terminal findings from the active backlog. The archived task and its archived report references preserve the audit history. Do not delete Ledger entries manually or run periodic retirement scans.
+A Ledger-generated task cannot close as Done while any linked finding remains non-terminal. After the task is archived Done and indexed, the `archive/tasks/**` push triggers the normal diagnostics sweep. The Ledger then retires the terminal findings from the active backlog. The archived task and its archived report references preserve the audit history. Do not remove Ledger entries manually or run periodic retirement scans.
 
 A clean-start reset is destructive and requires explicit user authorization. It clears generated active report data, prior `archive/reports/**` snapshots, report indexes, and the active Ledger, then establishes new unseeded lint baselines. It preserves scripts, schemas, templates, workflows, operating guides, task archives, and unrelated tasks. See `reports/triage/README.md` and `archive/README.md` for exact reset and closeout rules.
 
-Do not run periodic triage or poll workflows. Review CI when the user asks, a known failure blocks work, or the task requires validation. A successful validation run URL and UTC timestamp are sufficient resolution evidence; capture a full successful-run diagnostic report only when its detailed evidence is specifically required.
+Do not run periodic triage or poll workflows. Review CI when the user asks, a known failure blocks work, or the task requires validation. A successful validation run URL and UTC timestamp provide sufficient resolution evidence. Capture a full successful-run diagnostic report only when detailed evidence is required.
 
 The changed-document lint workflow uses GitHub Actions concurrency to cancel superseded push runs. Do not add a separate run-list preflight guard. GitHub may not list the current run when its first job queries the run list, which can cause the guard to cancel the current run.
 

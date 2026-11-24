@@ -26,7 +26,7 @@ Cite Ledger findings and diagnostic reports. Do not copy their issue records int
 
 Perform one manual repository-wide review each quarter.
 
-Perform an event-triggered review after a major architecture or workflow change, significant incident, repeated systemic failure, major dependency or platform change, failed ADR Confirmation criterion, or direct user request.
+Perform an event-triggered review after a major architecture or workflow change, significant incident, repeated systemic failure, or major dependency or platform change. Also review after a failed ADR Confirmation criterion or a direct user request.
 
 Begin with manual reviews. Do not create a scheduled workflow. Review the cadence after two quarterly cycles.
 

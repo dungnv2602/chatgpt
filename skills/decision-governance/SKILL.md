@@ -12,7 +12,7 @@ metadata:
 
 This skill governs repository decision Drafts, accepted ADRs, and repository analysis.
 
-Load it when a task creates, revises, reviews, approves, rejects, or promotes a Draft. Load it when a task creates, updates, supersedes, confirms, or archives an ADR. Load it for repository analysis or decision-basis checks.
+Load it when a task creates, revises, reviews, approves, rejects, or promotes a Draft. Load it when a task creates, updates, supersedes, confirms, or archives an ADR. Load it for repository analysis or decision-basis reviews.
 
 Do not load it during foundational initialization. Do not add it to `skills/SESSION_START.md` or `skills/INITIALIZATION_POLICY.md`.
 
@@ -99,7 +99,7 @@ Never assign an ADR ID before approval. Never reuse an ID.
 
 Keep ADRs in one flat `workspace/adr/` folder with a global sequence.
 
-Use the MADR-inspired structure: Context and Problem Statement, Decision Drivers, Considered Options, Decision Outcome, Consequences, Confirmation, Pros and Cons of the Options, Implementation Scope, More Information, and Decision Lifecycle History.
+Use the MADR-inspired structure. Include Context and Problem Statement, Decision Drivers, Considered Options, Decision Outcome, Consequences, and Confirmation. Also include Pros and Cons, Implementation Scope, More Information, and Decision Lifecycle History.
 
 Require observable Confirmation criteria.
 
@@ -122,7 +122,7 @@ For each governing ADR:
 
 Do not move an implementation task to Ready or In Progress without accepted ADR linkage.
 
-When no accepted ADR covers the proposed work, create a Draft first. Obtain user approval and promote it before implementation.
+When no accepted ADR covers the proposed work, create a Draft first. Secure user approval and promote it before implementation.
 
 Grandfather existing tasks. Do not mass-migrate them.
 
@@ -158,7 +158,7 @@ Never add ADRs to `.github/archive-retention-index.json`. The 90-day task and re
 
 Create each analysis record at a fixed branch commit. Use `workspace/analysis/ANALYSIS_TEMPLATE.md`.
 
-Review these dimensions: architecture and boundaries, workflow integrity, quality and reliability, data and provenance, security and trust, documentation, operational cost and complexity, user workflow, and decision debt.
+Review these dimensions: architecture and boundaries, workflow integrity, quality and reliability, data and provenance, security and trust, and documentation. Also review operational cost and complexity, user workflow, and decision debt.
 
 Classify findings as Strength, Gap, Risk, Contradiction, Drift, or Opportunity. Record evidence, impact, confidence, and limitations. Separate facts from external claims, inferences, and hypotheses. State the branch, commit SHA, scope, exclusions, and review method.
 
