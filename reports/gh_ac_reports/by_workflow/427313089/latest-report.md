@@ -1,4 +1,4 @@
-# Validate Document Standards — run 45350732862
+# Validate Document Standards — run 45377004184
 
 ## Run identity
 
@@ -6,38 +6,38 @@
 | --- | --- |
 | Workflow | Validate Document Standards |
 | Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45350732862 / 1 |
-| Run number | 275 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45350732862 |
+| Run / attempt | 45377004184 / 1 |
+| Run number | 281 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45377004184 |
 | Branch | gpt |
-| Commit | 274b2c443a8c7baaa2bea254d9a2bd11e3d73a3c |
-| Event | workflow_dispatch |
+| Commit | a53401d489d9a1acbaff71211f9eee7e716c1659 |
+| Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-24T07:47:34Z |
-| Status at capture | completed |
-| Observed conclusion | failure |
-| Projected conclusion | Not calculated |
-| Reporter job | completed / failure |
-| Capture stage | post_run |
+| Created (UTC) | 2026-11-24T10:40:25Z |
+| Status at capture | in_progress |
+| Observed conclusion | Not yet available |
+| Projected conclusion | failure |
+| Reporter job | in_progress / Pending |
+| Capture stage | pre_finalizer |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-24T10:41:14Z |
+| Captured (UTC) | 2026-11-24T10:42:04Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | failure |
+| State | in_progress |
 | Primary category | validation_or_test |
 | Jobs | 1 |
-| Steps | 0 |
+| Steps | 8 |
 | Issues | 1 |
-| Annotations | 1 |
+| Annotations | 2 |
 | Artifacts | 0 |
 | Capture errors | 1 |
 
 ## Failure classification
 
-validation_or_test
+validation_or_test The parent run is still in progress. The projected conclusion is provisional.
 
 The report records an actionable workflow failure or operational exception. Ordinary successful runs and cancellation-only runs are not captured by default. A successful run is retained when a step failed but the workflow allowed it to continue. A cancelled run is retained only when it contains an independent actionable failure. Known downstream status-propagation steps after cancellation are excluded. Explicit run-backfill requests can override the default capture filter.
 
@@ -45,19 +45,20 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 138296216910 | validate-document-standards | completed | failure | 0 | logs/job-138296216910.log |
+| 138385843413 | validate-document-standards | completed | failure | 8 | logs/job-138385843413.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 138296216910 | — | validate-document-standards | Blocking | medium | Job conclusion: failure |
+| validation_or_test | 138385843413 | 5 | Validate the document type catalog | Blocking | medium | Step conclusion: failure |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 138296216910 | failure | .github | 1 |  | The job was not started because recent account payments have failed or your spending limit needs to be increased. Please check the 'Billing & plans' section in your settings |
+| 138385843413 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 138385843413 | failure | .github | 17 |  | Process completed with exit code 1. |
 
 ## Artifacts
 
@@ -67,7 +68,7 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 138296216910 | validate-document-standards | logs/job-138296216910.log | 29 | False |  |
+| 138385843413 | validate-document-standards | logs/job-138385843413.log | 82 | False |  |
 
 ## Evidence coverage
 
@@ -75,7 +76,7 @@ One or more evidence sources were unavailable. This report is Incomplete.
 
 | Source | HTTP status | Limitation |
 | --- | --- | --- |
-| job_log | Not recorded | log not found: 138296216910  |
+| job_log | Not recorded | run 45377004184 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 

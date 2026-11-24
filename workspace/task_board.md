@@ -32,6 +32,16 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
+| 20261124-104204-09 | Review synonym-rotation findings in workspace/README.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-104204-09-review-synonym-rotation-findings-in-workspace-readme-md.md) |
+| 20261124-104204-08 | Review long-sentence findings in workspace/README.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-104204-08-review-long-sentence-findings-in-workspace-readme-md.md) |
+| 20261124-104204-07 | Review semicolon findings in workspace/README.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-104204-07-review-semicolon-findings-in-workspace-readme-md.md) |
+| 20261124-104204-06 | Review passive-voice findings in workspace/adr/ADR\_TEMPLATE.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-104204-06-review-passive-voice-findings-in-workspace-adr-adr-template-md.md) |
+| 20261124-104204-05 | Review passive-voice findings in workspace/adr/README.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-104204-05-review-passive-voice-findings-in-workspace-adr-readme-md.md) |
+| 20261124-104204-04 | Review present-perfect findings in workspace/draft/DRAFT\_TEMPLATE.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-104204-04-review-present-perfect-findings-in-workspace-draft-draft-templat.md) |
+| 20261124-104204-03 | Review present-perfect findings in skills/the-worker/references/conversation-mode.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-104204-03-review-present-perfect-findings-in-skills-the-worker-references.md) |
+| 20261124-104204-02 | Review passive-voice findings in skills/the-worker/references/conversation-mode.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-104204-02-review-passive-voice-findings-in-skills-the-worker-references-co.md) |
+| 20261124-104204-01 | Review semicolon findings in skills/the-worker/references/conversation-mode.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-104204-01-review-semicolon-findings-in-skills-the-worker-references-conver.md) |
+| 20261124-104204 | Review long-sentence findings in skills/the-worker/references/conversation-mode.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-104204-review-long-sentence-findings-in-skills-the-worker-references-co.md) |
 | 20261124-094047-07 | Review passive-voice findings in skills/drawing/references/patterns/README.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-094047-07-review-passive-voice-findings-in-skills-drawing-references-patte.md) |
 | 20261124-094047-06 | Review passive-voice findings in workspace/task\_board.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-094047-06-review-passive-voice-findings-in-workspace-task-board-md.md) |
 | 20261124-094047-05 | Review synonym-rotation findings in skills/document-standards/references/document-type-catalog.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-094047-05-review-synonym-rotation-findings-in-skills-document-standards-re.md) |
