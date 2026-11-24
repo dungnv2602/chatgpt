@@ -33,6 +33,42 @@ entries and no refresh condition applies.
 6. Link each pattern to the exact source evidence. Separate observed facts from suspected causes.
 7. Increase confidence only when additional evidence supports the same lesson. Retire rather than delete a pattern that becomes unreliable or is superseded.
 
+## Post-attempt review and approval
+
+The Drawing Skill requires a pattern review after every generation or edit attempt. Assess each returned image against its recorded acceptance criteria. Inspect refusals, failed calls, no-output results, partial matches, and off-target outputs.
+
+### Success candidates
+
+- Propose a success pattern only when the output meets its critical criteria or the user explicitly accepts it.
+- The technique must contribute to a meaningful improvement or protect an important requirement.
+- A successful tool call alone is not evidence of a successful image.
+- A partial result may support a success candidate only for a specific requirement it visibly satisfies.
+
+### Failure candidates
+
+- Review failures, refusals, partial matches, missed targets, wrong operations, source-linkage failures, and workflow deviations.
+- Propose a failure pattern only for a recurring problem or an important reusable risk.
+- Do not promote every isolated failure.
+- Separate observed facts from suspected causes. List a countermeasure as tested only when an attempt tested it.
+
+### Existing-pattern review
+
+- Compare each candidate with existing entries. Avoid duplicates.
+- Propose an evidence, confidence, scope, limitation, or retirement change when new evidence supports it.
+- Assess each output separately. One attempt may support both success and failure candidates.
+- If no reusable lesson exists, do not create a candidate.
+
+### User approval gate
+
+1. Present each proposed change to the user before editing either index.
+2. Include its change type, target entry or new entry, scope, principle or observed failure, impact, evidence, hypotheses, tested countermeasures, confidence, and limitations.
+3. Discuss and revise the proposal until the user approves its exact content and scope.
+4. Require explicit approval for each new entry or existing-entry change. One approval may cover several proposals only when it identifies each one.
+5. Silence, image approval, prompt approval, and approval of this workflow do not approve a pattern change.
+6. Assign a new permanent ID only after approval. Preserve the existing ID for an approved update.
+7. Write only the approved change. Record its approval date and exact attempt evidence.
+8. Read back the updated entry. Do not write a rejected or deferred proposal.
+
 ## IDs and confidence
 
 - Successful patterns use permanent IDs: `S-001`, `S-002`, etc.

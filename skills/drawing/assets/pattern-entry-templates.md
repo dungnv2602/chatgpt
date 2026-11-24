@@ -1,6 +1,6 @@
 # Drawing Pattern Entry Templates
 
-**Template version:** 1.0
+**Template version:** 1.1
 
 Use this note when adding or revising entries in the global drawing pattern indexes:
 
@@ -11,7 +11,10 @@ These are copy-ready templates, not pattern records. Do not place illustrative o
 
 ## Shared conventions
 
-- Assign each entry a permanent, unique ID.
+- Assign each approved entry a permanent, unique ID.
+- Do not assign a new ID or change an index until the user approves the exact proposal.
+- Record the date and scope of the user's approval in each new or revised entry.
+- For an existing entry, preserve its ID and update only the fields the user approved.
 - Use `S-001`, `S-002`, and similar IDs for successful patterns.
 - Use `F-001`, `F-002`, and similar IDs for failure patterns.
 - Do not reuse an ID, even if an entry is retired.
@@ -58,7 +61,7 @@ Copy this block into `successful-patterns.md` and replace every bracketed instru
 
 ### Entry standard
 
-Add a successful pattern only when the evidence shows that the technique contributed to a meaningful improvement or reliably protected an important requirement. Do not infer effectiveness from prompt wording alone.
+Add a successful pattern only when the evidence shows that the technique contributed to a meaningful improvement or reliably protected an important requirement. Do not infer effectiveness from prompt wording alone. The user must approve the exact entry before you write it.
 
 ---
 
@@ -97,7 +100,7 @@ Copy this block into `failure-patterns.md` and replace every bracketed instructi
 
 ### Entry standard
 
-Record a failure pattern when a failure is recurring or when a single incident reveals a sufficiently important, reusable risk. A suspected cause must not be presented as fact. A countermeasure is not an effective remedy until an actual attempt has tested it.
+Record a failure pattern when a failure is recurring or when a single incident reveals a sufficiently important, reusable risk. A suspected cause must not be presented as fact. A countermeasure is not an effective remedy until an actual attempt has tested it. The user must approve the exact entry or revision before you write it.
 
 ---
 
@@ -105,6 +108,9 @@ Record a failure pattern when a failure is recurring or when a single incident r
 
 Before committing a new or revised entry, validate:
 
+- [ ] The user approved the exact entry or revision before the index update.
+- [ ] The approval date and approved change scope are recorded.
+- [ ] A new ID was assigned only after approval.
 - [ ] The ID is unique and follows the correct prefix.
 - [ ] The title describes one recognizable pattern.
 - [ ] The scope is explicit.
