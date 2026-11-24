@@ -40,6 +40,8 @@ Copy this block into `successful-patterns.md` and replace every bracketed instru
 
 - Confidence: Provisional
 - Last reviewed: YYYY-MM-DD
+- Last user approval: YYYY-MM-DD
+- Approved change: New entry / Evidence update / Confidence update / Scope update / Limitation update / Retirement
 - Scope: [Scenes, subjects, prompt types, or conditions where this applies]
 
 ### Principle
@@ -74,6 +76,8 @@ Copy this block into `failure-patterns.md` and replace every bracketed instructi
 
 - Confidence: Provisional
 - Last reviewed: YYYY-MM-DD
+- Last user approval: YYYY-MM-DD
+- Approved change: New entry / Evidence update / Confidence update / Scope update / Limitation update / Retirement
 - Scope: [Scenes, subjects, prompt types, or conditions where this occurs]
 
 ### Observed failure
