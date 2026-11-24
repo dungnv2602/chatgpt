@@ -287,42 +287,54 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 
 ## 7. Current State
 
-The cancellation repair is implemented in the reporter and ledger. New cancellation-only runs are skipped by the capture policy. Cancelled runs with independent classified failures are captured, and the ledger accepts those issues while ignoring cancellation-only and known downstream status-propagation rows. Existing historical captures remain immutable. Hosted validation of the cancellation and new capture policy is pending.
+The report capture policy remains unchanged: persist actionable failures and operational exceptions, not ordinary successful or cancellation-only runs. Preliminary `pre_finalizer` captures remain immutable. The sweep revisits pending run IDs and creates a separate `post_run` capture when the source run is complete. The latest-pointer logic gives `post_run` precedence over `pre_finalizer`.
 
-The report families are consolidated under `reports/`: `reports/lint_reports/`, `reports/gh_ac_reports/`, and `reports/triage/`. The migration preserved the 198 report blobs present at migration start; six late lint-report files written by a stale workflow path were subsequently relocated. The root `reports/README.md` links the report families and shared triage ledger. No `reports/archive/` directory exists.
+The pending-run reconciliation path now has regression coverage in [ce2e9c4](https://github.com/dungnv2602/chatgpt/commit/ce2e9c46fffd0430649af483e0cf46c7be029e0a). The test verifies the separate history entries, latest-pointer advancement, pending-ID removal, and preservation of the original preliminary report.
 
-Resolved report files are assigned to `archive/reports/` and use the existing `.github/archive-retention-index.json` and scheduled archive-retention workflow. The cleanup script now accepts exact individual file paths under both `archive/tasks/` and `archive/reports/`, applies the existing 90-day retention period independently per file, rejects unsafe paths and symlinked parents, and preserves unindexed files. The shared index timestamp field was normalized to `archived_at_utc`. The archive guide documents how to move a resolved report file and register its exact path. No separate report-retention workflow or index was created.
+The diagnostics regression gate defects found in Image Takeout run [#69](https://github.com/dungnv2602/chatgpt/actions/runs/45313390427) are corrected in [e25f8e7](https://github.com/dungnv2602/chatgpt/commit/e25f8e779103fb4ed91bc00b6c54e2c0952a49e7). The Ledger now defines `LINT_BASELINE_CHECKS`, and its tests verify that every required tooling check must pass before a lint report can seed a baseline. The malformed test helper signature is corrected. The current branch source has been read back. No local tests were run.
 
-The catalog validator and regression fixture recognize `reports/` as the report root. The latest completed diagnostics sweep [45129646663](https://github.com/dungnv2602/chatgpt/actions/runs/45129646663) validates the current diagnostic reporter and shared archive-cleanup test suites on GitHub-hosted runners: all 12 reporter tests and all 7 archive-retention tests passed. The sweep and publication succeeded and added four captures. The separate Document Standards workflow has not yet produced a successful post-correction run, so hosted confirmation of the catalog/path migration remains open.
+The current repository state is:
+- Actions report index watermark: `2026-11-23T23:38:33Z`.
+- Pending run IDs: 21.
+- Exhausted run IDs: 0.
+- Newest indexed capture: preliminary report for run [45312561050](https://github.com/dungnv2602/chatgpt/actions/runs/45312561050), with projected failure and no final source conclusion in that capture.
+- Ledger schema: `1.4.0`.
+- Active Ledger findings: 0.
+- Processed Actions reports: 7.
+- Lint baseline scopes: `on_changed=false`, `on_repo=false`.
 
-The completed sweep also exposed concurrent report-index publication conflicts between finalizers and the push collector. All six source-workflow finalizers now share the collector's non-cancelling repository-wide concurrency group. The task-scoped CI policy removes unrelated pre-prompt and post-initialization repair gates. The actual conclusion of each source workflow remains independent from the report-only job.
+These values come from repository indexes, not a live Actions query. The 21 pending IDs have not been checked against current GitHub run state during this session.
 
-The three exact-run recapture requests have been processed. Their request files are under `reports/gh_ac_reports/requests/processed/`, and complete immutable post-run captures are present for changed lint `45123260178`, Document Standards `45123530858`, and full lint `45123530849`. The latest sweep still reports five pending runs for later post-run capture; these were not polled.
+The report families remain consolidated under `reports/`: `reports/lint_reports/`, `reports/gh_ac_reports/`, and `reports/triage/`. Resolved report files use `archive/reports/` and the existing shared 90-day retention workflow. No `reports/archive/` directory or separate report-retention workflow exists.
 
-The repository default branch is `main`, while this authorized task is restricted to `gpt`. A run that fails before any job starts cannot be captured immediately by this branch-local design. The push sweep or an exact-run request can backfill it later. Immediate completion-event observation requires an authorized observer on `main` or an external GitHub App webhook. No changes were made to `main`.
+The latest previously observed hosted diagnostics sweep [45129646663](https://github.com/dungnv2602/chatgpt/actions/runs/45129646663) passed 12 reporter tests and 7 archive-retention tests. That result predates the pending-run reconciliation and latest Ledger regression fixes. Hosted validation of the current regression changes remains unverified. The separate Document Standards workflow also still needs a successful natural run after the catalog/report-root corrections.
 
-The Ledger is now an event-driven component of The Worker. During ingestion, it creates grouped Proposed task records for newly identified actionable findings, updates the task board, and links each finding through task_refs. Lint findings group by file and rule; Actions findings group by workflow path, job, step, and category. Linked findings refresh their active task's immutable evidence links. New higher-severity findings can raise the group's priority. Reopened resolved findings can create a follow-up when no active group exists. Schema migration does not taskify the historical backlog. Task-only commits are excluded from the diagnostics sweep, Document Standards push trigger, and changed-document lint trigger. The Worker retains approval and remediation ownership.
+The six source-workflow finalizers and the push collector share the non-cancelling repository-wide writer group. The task-scoped CI policy removes unrelated pre-prompt and post-initialization repair gates. Source workflow conclusions remain independent from report-only job outcomes.
+
+The three exact-run recapture requests previously processed remain under `reports/gh_ac_reports/requests/processed/`, with immutable post-run captures for changed lint `45123260178`, Document Standards `45123530858`, and full lint `45123530849`.
+
+The repository default branch is `main`. This task remains restricted to `gpt`. A run that fails before any job starts cannot be captured immediately by this branch-local design. A later push sweep or exact-run request can backfill it. Do not change `main`.
+
+The Ledger remains event-driven. It creates grouped Proposed tasks for newly identified actionable findings, updates the task board, and links each covered finding through `task_refs`. It does not poll or run on a schedule. The Worker retains approval, prioritization, execution, verification, and closeout ownership.
 
 ## 8. Remaining Work
 
-Event-driven task creation is implemented but still requires hosted regression validation. The updated task-generation code, schema, template, capture publisher, diagnostics sweep, report guide, catalog, and Worker instructions have been committed to gpt. No local repository tests were run.
-
-- Verify the cancellation-classification and ledger regression tests on the next naturally triggered GitHub-hosted diagnostics run. Confirm the next cancelled report has state `cancelled` and no cancellation-derived issues.
-- Obtain a successful natural Document Standards run after the catalog/report-root corrections. The diagnostics and archive-retention test suites have passed on a GitHub-hosted runner, but that does not replace the Document Standards workflow check.
-- Allow the five pending source runs to receive post-run captures through a later eligible push/sweep; do not poll or manually dispatch a workflow.
-- Do not manually dispatch the schedule-only 90-day cleanup workflow.
-- Do not fix unrelated lint findings or workflow failures. Preserve all source conclusions and validation thresholds.
+- Obtain a natural GitHub-hosted diagnostics run that passes the reporter, Ledger, and archive-retention regression suites. Confirm that the pending-run reconciliation test and baseline-validation tests pass. Do not dispatch or poll a workflow.
+- Obtain a successful natural Document Standards run after the catalog/report-root corrections.
+- Allow the 21 indexed pending run IDs to be reconciled by a later eligible sweep. Confirm final captures and pending-state changes only from a naturally completed report publication. Do not query or poll individual source runs.
+- Verify hosted baseline seeding for both lint scopes, retry exhaustion, grouped task handoff, `task_refs` preservation, idempotent repeat ingestion, task-only push exclusion, and end-to-end finding retirement.
+- Preserve source workflow conclusions and all existing validation thresholds.
+- Do not manually dispatch the schedule-only archive-retention workflow.
+- Do not repair unrelated lint findings or workflow failures.
+- Keep all changes on `gpt`. Do not modify `main`.
 
 ## 9. Next Actions
 
-- Review the next naturally triggered diagnostics run for the report policy and expanded Ledger regression suite. Confirm grouped Proposed tasks and finding links publish with the ledger, repeat observations do not duplicate tasks, and task-only pushes do not trigger another diagnostics sweep.
-- Confirm ledger schema migration to 1.3.0, grouped Proposed task creation, task_refs preservation, and task-only push exclusion during hosted ingestion. Do not poll or dispatch workflows.
-
-1. Review the next naturally completed diagnostics workflow run and its hosted test log. Do not poll or dispatch a workflow.
-2. Confirm that cancelled source runs remain in immutable history but create no ledger findings.
-3. Verify the catalog/report-root migration through the next naturally triggered successful Document Standards run.
-4. Review pending post-run captures only after a later eligible sweep completes naturally.
-5. Keep all repository changes on `gpt`; do not modify `main`.
+1. Wait for the normal push-triggered diagnostics workflow to validate the current reporter and Ledger regression changes. Review its result only when naturally available. Do not poll or dispatch.
+2. Confirm that completed actionable pending runs receive separate `post_run` captures, that ordinary success and cancellation-only runs are not persisted, and that pending IDs clear or enter the exhausted set according to the retry policy.
+3. Confirm hosted Ledger behavior: baseline seeding, grouped Proposed task creation, `task_refs` preservation, repeat-ingestion idempotency, task-only push exclusion, and terminal-finding retirement.
+4. Confirm a successful natural Document Standards run after the catalog/report-root corrections.
+5. Keep the task In Progress until all required hosted validation and report reconciliation criteria are met.
 
 ## 10. References
 
