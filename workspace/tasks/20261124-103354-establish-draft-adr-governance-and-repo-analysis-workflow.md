@@ -84,6 +84,16 @@ Study MADR and design a comprehensive, low-ambiguity decision-management workflo
 
 ## 6. Progress Log
 
+### 2026-11-24 10:38 UTC — Complete MADR and repository integration study
+
+- **Action:** Read MADR's current `develop` documentation, README, full and minimal templates, examples, changelog, and its own ADRs covering identifiers, status, metadata, categories, neutral arguments, consequences, confirmation, links, and template evolution. Inspected the local Document Type Catalog, workspace and task formats, Ledger task renderer/tests, archive policy, and exact archive-retention validator.
+- **MADR findings:** MADR defines one decision per record. Its full template uses Context and Problem Statement, Decision Drivers, Considered Options, Decision Outcome, Consequences, Confirmation, Pros and Cons, and More Information. It supports short and extended records by making detail sections optional. It puts the outcome before detailed pros/cons. Its metadata can carry status, date, decision-makers, consulted, and informed. It uses consecutive numeric filenames with lowercase dashed titles and keeps the title itself unnumbered. It places related ADR links in More Information. It supports neutral arguments and requires a confirmation method for checking the implemented decision. MADR also maintains full, minimal, bare, and bare-minimal templates. The current branch studied was `develop`, tree `ba75bb1b20d42af5746b246ad348c202419ae681`.
+- **Local integration findings:** The Document Type Catalog requires narrow Markdown path rules. New record families start Reserved and become Active in the same commit as their first record. The Ledger renderer replaces exact Task Template v1.2 text and its regression suite checks the generated format. Any new mandatory ADR field must update the task template, renderer, and hosted tests together. The archive cleanup script validates only indexed paths under `archive/tasks/` and `archive/reports/`. It preserves unindexed files and never scans archive directories. Therefore `archive/adr/` can remain permanent when ADRs are never added to the 90-day retention index.
+- **Design direction:** Use Drafts for proposals and Accepted ADRs for approved decisions. Keep decision status separate from implementation status. Require explicit approval of the exact draft before ADR creation. Preserve the promoted draft as provenance. Keep accepted decisions immutable except for lifecycle metadata. Use a global ADR sequence and a flat folder to avoid category and local-ID ambiguity. Link implementation tasks to accepted ADRs. Keep CI findings in the existing Ledger rather than duplicating them in repository analysis.
+- **Analysis recommendation:** Create `workspace/analysis/`, not a root-level `analysis/`. Analysis is repository stewardship work, alongside tasks, drafts, and decisions. Keep automated CI evidence under `reports/`. Analysis records should cite a fixed branch commit, distinguish observations from hypotheses, and produce Drafts or ADR-linked tasks rather than directly authorize changes. Recommend quarterly portfolio reviews plus event-triggered reviews. Do not add scheduled automation initially.
+- **References:** [MADR repository](https://github.com/adr/madr); [MADR guidance](https://github.com/adr/madr/blob/develop/docs/index.md); [MADR full template](https://github.com/adr/madr/blob/develop/template/adr-template.md); [MADR examples](https://github.com/adr/madr/blob/develop/docs/examples.md); [MADR confirmation decision](https://github.com/adr/madr/blob/develop/docs/decisions/0018-use-confirmation-as-heading.md); `skills/document-standards/references/document-type-catalog.md`; `workspace/TASK_TEMPLATE.md`; `reports/triage/scripts/ledger.py`; `reports/triage/scripts/test_ledger.py`; `.github/scripts/cleanup-archive.py`; `archive/README.md`.
+- **Next:** Create the requested workspace folders, draft and ADR templates, and a first comprehensive governance draft. Keep the optional analysis folder and detailed workflow extensions proposed until the user reviews the draft.
+
 ### 2026-11-24 10:33 UTC — Create the tracked governance task
 
 - **Action:** Read the session-start procedure, foundational skills, workspace README, task board, task template, and current conversation-mode rules. Created this task record and selected it for current execution.
@@ -93,24 +103,23 @@ Study MADR and design a comprehensive, low-ambiguity decision-management workflo
 
 ## 7. Current State
 
-The request is tracked as a separate P1 task. The user approved a MADR study and the requested workspace folders. Detailed workflow rules and the optional analysis area remain open for review.
+The MADR study and local integration review are complete. The user approved the two requested workspace folders, the Draft-to-ADR approval gate, ADR references for implementation tasks, permanent ADR archival, and task/draft links in the discussion register. The proposed repository-analysis area belongs under `workspace/analysis/`. Detailed status models, templates, analysis cadence, skill ownership, and implementation order remain in the initial draft for user review. No ADR has been accepted and no workflow implementation beyond task setup has been performed.
 
 ## 8. Remaining Work
 
-- Study MADR and collect its core conventions.
-- Prepare the architecture proposal and templates.
-- Define the document-family coverage and owner updates.
-- Create requested folders and first draft only after catalog and template setup.
+- Create the two requested folder structures, canonical draft and ADR templates, and the initial draft.
+- Add catalog coverage and owner documentation in the order required by Document Standards.
+- Link the active task in Current Step and the draft in Open Discussions.
 - Present the draft for user review. Do not create an accepted ADR until approval.
+- After approval, implement the accepted ADR in linked tasks. Keep proposed analysis-folder rules inactive until the user approves them.
 
 ## 9. Next Actions
 
-1. Inspect the MADR repository and official guidance.
-2. Compare MADR practices with the existing task, report, archive, and discussion workflows.
-3. Draft the complete proposal, including whether `workspace/analysis/` is justified.
-4. Define canonical templates and catalog coverage before creating first records.
-5. Create the requested folder structures and the initial draft.
-6. Stop for explicit user review and approval before ADR conversion and implementation of optional policy changes.
+1. Define the Draft and ADR templates, folder contracts, and narrow Reserved catalog rules.
+2. Commit and read back the templates and owner documentation before creating the first Draft record.
+3. Create DRAFT-0001 and activate its path rule in the same commit.
+4. Add the live Draft link to Open Discussions and preserve the task link in Current Step.
+5. Stop for the user's review. Convert the finalized Draft into an ADR only after explicit approval.
 
 ## 10. References
 
@@ -126,10 +135,10 @@ The request is tracked as a separate P1 task. The user approved a MADR study and
 
 ## 11. Verification
 
-- **Check:** Foundational initialization, workspace operating rules, active task state, and task template.
-- **Method:** Retrieved the exact canonical files from branch `gpt`.
-- **Result:** Required foundational skills were available. The CI Ledger task remains active. No duplicate task for the ADR workflow was present in the current board.
-- **Limitations:** MADR study and the initial proposal remain incomplete.
+- **Check:** Foundational initialization, MADR source files, task-generation contract, document catalog rules, and ADR archive-retention behavior.
+- **Method:** Retrieved the exact repository files from branch `gpt` and MADR files from the `develop` branch. Read the archive cleanup validator and its tests.
+- **Result:** Confirmed the MADR structure and practices listed in the Progress Log. Confirmed the Ledger renderer requires coordinated template and regression-test changes. Confirmed `archive/adr/` would remain protected when it stays outside the exact-path retention index.
+- **Limitations:** No new draft/ADR files or workflow changes have been committed yet. No local scripts or tests were run.
 
 ## 12. Handoff Instructions
 
