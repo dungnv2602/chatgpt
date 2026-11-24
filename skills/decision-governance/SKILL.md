@@ -132,7 +132,7 @@ The Ledger may create Proposed tasks before Worker review.
 
 - Set `Governing ADR(s)` to `Pending — Worker review required before approval`.
 - Set the task board ADR cell to `Pending`.
-- The Worker checks whether an accepted ADR covers the finding.
+- The Worker determines whether an accepted ADR covers the finding.
 - Link that ADR before moving the task to Ready.
 - If no ADR covers the work, prepare a Draft. Keep the task Proposed until the decision is accepted.
 - Task creation does not authorize remediation.
