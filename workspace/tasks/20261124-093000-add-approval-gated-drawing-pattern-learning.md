@@ -135,10 +135,3 @@ _No Ledger findings are linked to this task._
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-
-## 13. Ledger Findings
-
-_No Ledger findings are linked to this task._
-
-| Finding ID | Severity | Diagnostic | Evidence |
-|---|---|---|---|
