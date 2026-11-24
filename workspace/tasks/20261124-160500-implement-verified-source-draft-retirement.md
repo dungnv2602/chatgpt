@@ -81,12 +81,19 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - **References:** `archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md`; commit `3008876a4e25152bed0293ac92100d9123742dfe`; original DRAFT-0001 promotion commit `241ba8ad5e4aa7cff683ecf49df31c0ad11945ef`.
 - **Next:** Complete the migration coverage assessment and remove the source file only after task execution approval.
 
+### 2026-11-24 16:05 UTC
+
+- **Action:** Completed ADR-0002 promotion closeout. Removed DRAFT-0003 from the Draft index and Open Discussions, then deleted its source file after ADR-0002 was accepted and read back.
+- **Result:** DRAFT-0003 is no longer present in the active Draft collection. Its approved revision remains identifiable through ADR-0002 provenance and the promotion commit.
+- **References:** ADR-0002 acceptance commit `b4da3f285c103bf7960dc07faabafb9a39f4fbbf`; DRAFT-0003 deletion commit `cf293d2d7bc3396eefb91360f0b36561d777ceb4`; Draft index and discussion register.
+- **Next:** Complete DRAFT-0001 migration only after task execution approval.
+
 ## 7. Current State
 
 - ADR-0002 is accepted and indexed.
 - ADR-0001 has a reference-only correction. Its accepted decision content remains unchanged.
 - DRAFT-0001 remains in the repository pending final migration and deletion authorization through this task.
-- DRAFT-0003 is the approved source Draft for ADR-0002 and awaits promotion closeout.
+- DRAFT-0003 was deleted after ADR-0002 acceptance and promotion closeout.
 - The repository-wide governance files still contain the old preserve-after-promotion rule.
 - This task is Proposed. No remaining implementation work is authorized until the user approves this task's execution scope.
 
