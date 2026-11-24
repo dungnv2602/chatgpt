@@ -1,6 +1,6 @@
 ---
 record_type: decision-draft
-template_version: "1.0"
+template_version: "1.1"
 id: "DRAFT-0001"
 status: "in-review"
 created: "YYYY-MM-DD"
@@ -12,6 +12,9 @@ consulted: []
 informed: []
 related_drafts: []
 related_adrs: []
+resulting_adr: null
+promotion_cleanup_pending: false
+cleanup_reason: null
 ---
 
 # {Short title that describes the proposed decision}
@@ -103,3 +106,12 @@ Include the current approach or no-change option when it is viable. Use neutral 
 ## References
 
 - {Source, repository path, commit, or external reference}
+
+<!--
+Draft lifecycle:
+- Allowed statuses: draft, in-review, changes-requested, approved-for-adr, rejected, withdrawn, superseded.
+- Do not use promoted as a Draft status.
+- On successful promotion, delete this source file after the accepted ADR passes the completeness and read-back checks.
+- If deletion fails after acceptance, keep this file temporarily. Set resulting_adr, promotion_cleanup_pending, and cleanup_reason. Add it to Promotion Cleanup Pending, not Current Drafts.
+- Do not create an archive/draft/ folder or a Promoted Drafts index.
+-->
