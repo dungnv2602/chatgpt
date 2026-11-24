@@ -14,4 +14,5 @@ The archive-retention workflow applies only to indexed task and report files. It
 
 ## Archived ADRs
 
+- [ADR-0002 — Retire Source Drafts After Verified ADR Promotion](0002-retire-source-drafts-after-verified-adr-promotion.md) — Accepted; implementation complete and all Confirmation criteria passed. [Archival commit](https://github.com/dungnv2602/chatgpt/commit/89d4d0765e8065080c4e350f3e4e2a8b1cfd59c6).
 - [ADR-0001 — Establish Draft-to-ADR Governance and Repository Analysis](0001-establish-draft-to-adr-governance-and-repository-analysis.md) — Accepted; implementation complete and all Confirmation criteria passed. [Archival commit](https://github.com/dungnv2602/chatgpt/commit/e7048886eb12c41d07fa02f8c7253bbb1efebbbe).
