@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 18:00 UTC — Record the ADR edit and verification handoff:** Update the five approved lint tasks with the ADR-0002 edit commit and exact read-back result. Keep each task In Progress until its linked Ledger finding reaches a terminal state after successful hosted STE lint. Do not poll CI or archive ADR-0002 before all Confirmation criteria pass.
+**2026-11-24 18:04 UTC — Await event-driven hosted lint:** ADR-0002 and all five task records now reference the final editorial commit and read-back. Keep the tasks In Progress and the ADR active until the event-driven STE Lint report evaluates the final ADR-0002 commit. Do not poll CI. If the report passes, record the result, retire the five Ledger findings through the approved task workflow, then complete ADR Confirmation and archive ADR-0002 only after every archive gate passes.
 
 ## Open Discussions
 
