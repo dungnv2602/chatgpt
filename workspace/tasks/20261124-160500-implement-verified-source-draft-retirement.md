@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-160500
 - **Created:** 2026-11-24 16:05 UTC
-- **Updated:** 2026-11-24 16:15 UTC
+- **Updated:** 2026-11-24 16:16 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -95,6 +95,13 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - **References:** User instruction at 2026-11-24 16:12 UTC; `workspace/discussion.md`; repository paths listed above.
 - **Next:** Complete the DRAFT-0001 rationale coverage assessment and inspect canonical document formats before editing governance files.
 
+### 2026-11-24 16:16 UTC
+
+- **Action:** Updated the task board after the task activation commit. The first board write encountered a stale-blob conflict because an automated lint report had added seven Proposed tasks. Re-fetched the board, preserved those entries, and applied the task-state change using the current blob.
+- **Result:** The task record and board both show task 20261124-160500 as In Progress and current execution. Read-back confirmed the approval metadata and board placement. No unrelated Proposed task was removed.
+- **References:** Task activation commit `e25c025c3f3482a77cc7203625bda16262edbdec`; board update commit `f9555f83b79fe31ee2f4b08597f29dbac5260308`; `workspace/task_board.md`.
+- **Next:** Complete the DRAFT-0001 rationale coverage assessment and inspect canonical document formats before editing governance files.
+
 ## 7. Current State
 
 - ADR-0002 is accepted and indexed.
@@ -104,6 +111,7 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - The repository-wide governance files still contain the old preserve-after-promotion rule.
 - Task execution is approved. This task is In Progress and is the current execution task.
 - The complete DRAFT-0001 and archived ADR-0001 records have been retrieved. The direct rationale coverage assessment is not yet complete.
+- The task record and task board were read back after activation and are consistent.
 
 ## 8. Remaining Work
 
