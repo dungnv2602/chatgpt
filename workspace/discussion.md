@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 14:28 UTC — Await final lint and catalog validation:** Document Standards #313 passed 37 Ledger tests, 32 catalog tests, catalog validation, and diagnostics. Lint #629 reported two long rows in the catalog's Initial inventory. Commit dbd7ad2 removed those duplicate summaries while retaining the detailed lint-report and skill-reference coverage rules. Lint #630 is in progress and Document Standards #314 is in progress on this commit. Keep task 20261124-103354 Blocked until both pass. Do not poll Actions. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 14:42 UTC — Await final validation of the split inventory tables:** Document Standards #316 passed 37 Ledger tests, 32 catalog tests, and catalog validation. Lint #631 exposed two long inventory rows. The initial table split was corrected in commit 725896a with blank separators and repeated headers. Lint #635 and Document Standards #319 are pending on this commit. Diagnostics #586 is pending. Keep task 20261124-103354 Blocked until all three checks succeed. Do not poll Actions. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 
 ## Open Discussions
 
@@ -13,6 +13,6 @@
 
 ## Reports
 
-- **2026-11-24 14:24 UTC — Hosted Document Standards validation passed:** Run [#313](https://github.com/dungnv2602/chatgpt/actions/runs/45413378979) passed all 37 Ledger tests, all 32 catalog tests, and catalog validation. Its diagnostics companion passed. Diagnostics [#580](https://github.com/dungnv2602/chatgpt/actions/runs/45413378988) also passed.
-- **2026-11-24 14:20 UTC — Hosted Document Standards validation passed:** Run [#311](https://github.com/dungnv2602/chatgpt/actions/runs/45412770209) passed all 37 Ledger tests, all 32 catalog tests, catalog validation, and its diagnostics job. Diagnostics [#578](https://github.com/dungnv2602/chatgpt/actions/runs/45412770199) also passed.
-- **2026-11-24 14:17 UTC — Hosted governance validation passed:** Document Standards run [#310](https://github.com/dungnv2602/chatgpt/actions/runs/45412245960) passed 37 Ledger tests, 32 catalog tests, and catalog validation. Diagnostics #577 passed.
+- **2026-11-24 14:41 UTC — Hosted Document Standards validation passed:** Run [#316](https://github.com/dungnv2602/chatgpt/actions/runs/45415350984) passed 37 Ledger tests, 32 catalog tests, catalog validation, and its diagnostics publisher.
+- **2026-11-24 14:38 UTC — Hosted Document Standards validation passed:** Run [#315](https://github.com/dungnv2602/chatgpt/actions/runs/45414832231) passed 37 Ledger tests, 32 catalog tests, catalog validation, and its diagnostics publisher.
+- **2026-11-24 14:31 UTC — Hosted Document Standards validation passed:** Run [#314](https://github.com/dungnv2602/chatgpt/actions/runs/45414156487) passed the Ledger and catalog regression suites, catalog validation, and its diagnostics publisher.
