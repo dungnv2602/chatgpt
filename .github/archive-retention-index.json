@@ -189,6 +189,26 @@
     {
       "path": "archive/tasks/20261124-160500-implement-verified-source-draft-retirement.md",
       "archived_at_utc": "2026-11-24T17:21:00Z"
+    },
+    {
+      "path": "archive/tasks/20261124-161334-01-review-present-perfect-findings-in-workspace-adr-0002-retire-sou.md",
+      "archived_at_utc": "2026-11-24T18:13:35Z"
+    },
+    {
+      "path": "archive/tasks/20261124-161334-02-review-passive-voice-findings-in-workspace-adr-0002-retire-sourc.md",
+      "archived_at_utc": "2026-11-24T18:13:35Z"
+    },
+    {
+      "path": "archive/tasks/20261124-161334-03-review-semicolon-findings-in-workspace-adr-0002-retire-source-dr.md",
+      "archived_at_utc": "2026-11-24T18:13:35Z"
+    },
+    {
+      "path": "archive/tasks/20261124-161334-04-review-long-sentence-findings-in-workspace-adr-0002-retire-sourc.md",
+      "archived_at_utc": "2026-11-24T18:13:35Z"
+    },
+    {
+      "path": "archive/tasks/20261124-161334-05-review-synonym-rotation-findings-in-workspace-adr-0002-retire-so.md",
+      "archived_at_utc": "2026-11-24T18:13:35Z"
     }
   ]
 }
