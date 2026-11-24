@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 17:56 UTC — Edit ADR-0002 and preserve its decision:** Apply the authorized lint-only wording corrections across the accepted ADR. Add the missing Version 1.1 provenance metadata from approved DRAFT-0003 revision 2. Preserve all decision facts, options, scope, conditions, safeguards, and chronology. Read back the complete ADR before recording the result.
+**2026-11-24 18:00 UTC — Record the ADR edit and verification handoff:** Update the five approved lint tasks with the ADR-0002 edit commit and exact read-back result. Keep each task In Progress until its linked Ledger finding reaches a terminal state after successful hosted STE lint. Do not poll CI or archive ADR-0002 before all Confirmation criteria pass.
 
 ## Open Discussions
 
