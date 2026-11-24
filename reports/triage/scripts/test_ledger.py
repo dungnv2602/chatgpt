@@ -123,6 +123,43 @@ class LedgerTests(unittest.TestCase):
         self.assertFalse(second["changed"])
         self.assertEqual(self.read_ledger()["findings"][0]["occurrence_count"],1)
 
+    def test_task_board_rows_stay_inside_their_status_section(self):
+        self.add_lint("on_changed", "109", "2026-11-23T07:09:00Z", level="advisory")
+        LEDGER.ingest(self.root, now="2026-11-23T07:10:00Z")
+        board = (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8")
+        proposed_start = board.index("## Proposed")
+        paused_start = board.index("## Paused", proposed_start)
+        historical_start = board.index("## Historical", paused_start)
+        proposed_section = board[proposed_start:paused_start]
+        historical_section = board[historical_start:]
+        self.assertIn("| 20261123-071000 |", proposed_section)
+        self.assertNotIn("| 20261123-071000 |", historical_section)
+
+    def test_task_board_renderer_fails_closed_when_status_table_is_missing(self):
+        board_path = self.root / "workspace" / "task_board.md"
+        board = board_path.read_text(encoding="utf-8")
+        board = board.replace(
+            "## Proposed\\n\\n| ID | Task | Priority | Status | Origin | Updated | Record |\\n|---|---|---:|---|---|---|---|",
+            "## Proposed",
+            1,
+        )
+        board_path.write_text(board, encoding="utf-8")
+        task_path = self.root / "workspace" / "tasks" / "test-proposed-task.md"
+        task_content = (
+            "# Task: Proposed renderer test\\n\\n"
+            "- **ID:** test-proposed-task\\n"
+            "- **Priority:** P3\\n"
+            "- **Status:** Proposed\\n"
+            "- **Origin:** Assistant\\n"
+            "- **Updated:** 2026-11-24 08:10 UTC\\n"
+        )
+        task_path.write_text(task_content, encoding="utf-8")
+        with self.assertRaises(LEDGER.LedgerError):
+            LEDGER.upsert_task_board_row(
+                self.root, {"id": "test-proposed-task", "path": task_path, "content": task_content}
+            )
+        self.assertNotIn("| test-proposed-task |", board_path.read_text(encoding="utf-8"))
+
     def test_all_lint_severities_create_and_reuse_grouped_tasks(self):
         self.add_lint("on_changed", "110", "2026-11-23T07:10:00Z",
                       fingerprint="a1b2c3d4e5f6", level="advisory",
