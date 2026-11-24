@@ -10,7 +10,6 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Record |
 |---|---|---:|---|---|
-| 20261124-183017 | Repair the ADR coverage rule and strengthen CI-failure follow-through | P1 | In Progress | [Task record](tasks/20261124-183017-repair-adr-catalog-rule-and-ci-follow-through.md) |
 
 ## In Progress
 
@@ -124,6 +123,7 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
+| 20261124-183017 | Repair the ADR coverage rule and strengthen CI-failure follow-through | P1 | Done | User | 2026-11-24 | — | [Archived record](../archive/tasks/20261124-183017-repair-adr-catalog-rule-and-ci-follow-through.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/5cdb81d16becbb86f6e5270d493f1b1ff6210bcb) |
 | 20261124-181746 | Reconcile the final ADR-0002 Ledger finding archive handoff | P3 | Done | Assistant | 2026-11-24 | ADR-0002 | [Archived record](../archive/tasks/20261124-181746-reconcile-final-adr-0002-ledger-finding.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/ef51eebb5da424dd73b98b559ba63e733aa70b0d) |
 | 20261124-161334-01 | Remediate present-perfect findings in ADR-0002 | P3 | Done | Assistant | 2026-11-24 | ADR-0002 | [Archived record](../archive/tasks/20261124-161334-01-review-present-perfect-findings-in-workspace-adr-0002-retire-sou.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/a33ca97c624dcfa84c112deaae1ab582b93efc00) |
 | 20261124-161334-02 | Remediate passive-voice findings in ADR-0002 | P3 | Done | Assistant | 2026-11-24 | ADR-0002 | [Archived record](../archive/tasks/20261124-161334-02-review-passive-voice-findings-in-workspace-adr-0002-retire-sourc.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/c1b3571aaeadeb7f4b44a3684a036cc0299a5fc0) |
