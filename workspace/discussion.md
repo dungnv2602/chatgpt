@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 10:46 UTC — Reconcile the task board with DRAFT-0001's blocked review state. Preserve the current task link and the open Draft link.** [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 10:47 UTC — Record the verified task-board reconciliation and pause for the user's review of DRAFT-0001. Keep all unrelated CI discussions open.** [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 ## Open Discussions
 
 - **2026-11-24 10:46 UTC — Review the repository decision-governance proposal:** [DRAFT-0001 — Establish Draft-to-ADR Governance and Repository Analysis](draft/DRAFT-0001-repository-decision-governance-and-analysis.md). Review the proposed use of MADR, Draft and ADR lifecycles, task-to-ADR enforcement, permanent ADR archiving, the `workspace/analysis/` location and cadence, and the proposed `decision-governance` skill. The exact revision 1 is awaiting the user's decision. Do not create ADR-0001 until explicit approval.
