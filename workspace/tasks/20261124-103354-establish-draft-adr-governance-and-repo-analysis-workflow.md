@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-103354
 - **Created:** 2026-11-24 10:33 UTC
-- **Updated:** 2026-11-24 14:04 UTC
+- **Updated:** 2026-11-24 14:12 UTC
 - **Priority:** P1
 - **Status:** Blocked
 - **Origin:** User
@@ -86,6 +86,14 @@ Study MADR and design a comprehensive, low-ambiguity decision-management workflo
 
 ## 6. Progress Log
 
+### 2026-11-24 14:12 UTC — Resolve the three remaining catalog lint findings
+
+- **Action:** Reviewed the complete changed-document lint report for run #623. It reported three hard findings in the Document Type Catalog. The governance skill passed with no hard findings.
+- **Findings:** The catalog still had two long inventory entries and one `check` / `validate` terminology conflict. The findings were on the CI Ledger row, the skill changelog row, and the Markdown path coverage explanation.
+- **Action:** Updated the catalog in commit [594ab39](https://github.com/dungnv2602/chatgpt/commit/594ab39e461e8bc9473ef73fd40048b8f0f6eb72). The CI Ledger row retains the generator and regression-test references but uses a shorter summary. The redundant one-off changelog inventory row was removed. The general `skills/*/CHANGELOG.md` coverage rule remains Active. The path explanation now uses `audit` rather than `check`.
+- **Result:** The complete catalog file passed exact read-back. Document Standards run [#307](https://github.com/dungnv2602/chatgpt/actions/runs/45410835359) passed both test suites and catalog validation on the earlier commit f44b5a7. Run [#308](https://github.com/dungnv2602/chatgpt/actions/runs/45411400908) was queued for commit 594ab39. No changed-document lint run for commit 594ab39 was visible at the last inspection.
+- **Next:** Keep this task Blocked. Review the complete hosted results for Document Standards #308 and the changed-document lint rerun for commit 594ab39. Do not poll Actions.
+
 ### 2026-11-24 14:04 UTC — Confirm the hosted governance validation criterion and isolate the final lint rerun
 
 - **Action:** Reviewed the hosted run #305 and its completed job steps. Also reconciled the full Document Standards, Diagnostics, and changed-document lint results since DRAFT-0001 approval.
@@ -152,25 +160,26 @@ Study MADR and design a comprehensive, low-ambiguity decision-management workflo
 
 The approved governance implementation is committed on branch `gpt`. Commit 74005cc moved the Draft, ADR, and analysis templates to the workspace root and corrected catalog ownership. Commit ad8bf8b added Ledger regression coverage to the hosted Document Standards workflow. Commit 454672a fixed the shell command used to run the Ledger suite.
 
-Hosted governance validation is green. Document Standards runs #302, #304, and #305 passed. Run #305 on commit 7fa7483 passed 37 Ledger regression tests, 32 catalog regression tests, and the catalog validator. Its diagnostics companion passed. Diagnostics runs #569 and #571 also passed reporter validation, backfill, Ledger ingestion, and publication.
+Hosted Document Standards validation is green through run #307. Runs #302, #304, #305, #306, and #307 passed. Run #307 passed 37 Ledger regression tests, 32 catalog regression tests, and catalog validation. Its diagnostics companion passed. Diagnostics runs #569, #571, #573, and #574 also passed reporter tests, backfill, Ledger ingestion, and publication.
 
-Changed-document lint #616 reported 52 hard findings. Commit 849c027 addressed them. Lint #618 reported seven hard findings. Commit aa69d96 addressed them. Lint #619 reported four remaining hard findings. Commit b1aec86 addressed those. Lint #620 still reported four blockers. Commit 7fa7483 corrected the final catalog descriptions and skill terminology.
+Changed-document lint #616 reported 52 hard findings. Commit 849c027 addressed them. Lint #618 reported seven hard findings. Commit aa69d96 addressed them. Lint #619 and #620 reported four hard findings each. Commits b1aec86 and 7fa7483 corrected them. Lint #621 reported four findings. Commit f44b5a7 reduced them to three catalog findings. Commit 594ab39 addressed those three findings while retaining the general changelog coverage rule.
 
-The task remains Blocked only for final changed-document lint confirmation. Lint #621 is still in progress on commit 7fa7483. The three Ledger-generated lint tasks remain Proposed and require separate user approval before remediation.
+The task remains Blocked. Document Standards #308 is queued on commit 594ab39. No changed-document lint rerun for commit 594ab39 was visible at the last inspection. The three Ledger-generated lint tasks remain Proposed and require separate user approval before remediation.
 ## 8. Remaining Work
 
-- Confirm that changed-document lint run #621 passes on commit 7fa7483 with no hard findings.
-- Record the final lint run URL and UTC timestamp.
-- Complete the task acceptance criteria and archive this task.
+- Confirm that changed-document lint passes on commit 594ab39 with no hard findings.
+- Confirm that Document Standards run #308 passes its Ledger tests, catalog tests, and catalog validator.
+- Record the final run URLs and UTC timestamps.
+- Complete task acceptance criteria and archive this task.
 - Move ADR-0001 to `archive/adr/` only after every linked task is Done and every Confirmation criterion passes.
 - Keep the three Ledger-generated lint tasks Proposed until the user approves their remediation.
 - Keep DRAFT-0002 separate and unmodified.
 ## 9. Next Actions
 
-1. Review the naturally published complete result for Lint #621. Do not poll Actions.
-2. If Lint #621 passes, record its run URL and UTC timestamp. Confirm that the changed governance documents have no remaining hard lint findings.
-3. If Lint #621 fails, inspect its complete report and job log. Correct only findings within this task's approved scope. Keep the task Blocked.
-4. After successful lint validation, complete task closeout and archive the task.
+1. Review the naturally published complete result for the changed-document lint rerun after commit 594ab39. Do not poll Actions.
+2. Review the naturally published complete result for Document Standards #308. Confirm the Ledger tests, catalog tests, and catalog validator passed.
+3. If either run fails, inspect its complete report and job log. Correct only issues within this task's approved scope. Keep the task Blocked.
+4. If both runs pass, record their run URLs and UTC timestamps. Complete task closeout and archive the task.
 5. Archive ADR-0001 only after all linked tasks are Done and every Confirmation criterion passes.
 ## 10. References
 
@@ -187,10 +196,10 @@ The task remains Blocked only for final changed-document lint confirmation. Lint
 - `workspace/ANALYSIS_TEMPLATE.md`
 - `.github/workflows/validate-document-standards.yml`
 - `reports/triage/ledger.json` and `reports/triage/scripts/test_ledger.py`
-- Document Standards runs [#302](https://github.com/dungnv2602/chatgpt/actions/runs/45407620289), [#304](https://github.com/dungnv2602/chatgpt/actions/runs/45408954986), and [#305](https://github.com/dungnv2602/chatgpt/actions/runs/45409620929)
-- Diagnostics runs [#569](https://github.com/dungnv2602/chatgpt/actions/runs/45407620173) and [#571](https://github.com/dungnv2602/chatgpt/actions/runs/45408955121)
-- Changed-document lint runs [#616](https://github.com/dungnv2602/chatgpt/actions/runs/45403469914), [#618](https://github.com/dungnv2602/chatgpt/actions/runs/45407620144), [#619](https://github.com/dungnv2602/chatgpt/actions/runs/45408533122), [#620](https://github.com/dungnv2602/chatgpt/actions/runs/45408955146), and [#621](https://github.com/dungnv2602/chatgpt/actions/runs/45409620876)
-- Commits [74005cc](https://github.com/dungnv2602/chatgpt/commit/74005ccb1afc79d21966112501baa39772905864), [454672a](https://github.com/dungnv2602/chatgpt/commit/454672ae649a607db689876ddfb77cb5b4450e65), [849c027](https://github.com/dungnv2602/chatgpt/commit/849c027ee97b1a6c7d52f4d3020c6a152c4bae60), [aa69d96](https://github.com/dungnv2602/chatgpt/commit/aa69d966969a8d5a3cc5106a74f1204a0f324e3e), [b1aec86](https://github.com/dungnv2602/chatgpt/commit/b1aec86f3f13eb7ac5c2dd92e8a7ba1f0f150a00), and [7fa7483](https://github.com/dungnv2602/chatgpt/commit/7fa7483122c074c48e8d0b82ea65d59f4aca37f4)
+- Document Standards runs [#302](https://github.com/dungnv2602/chatgpt/actions/runs/45407620289), [#304](https://github.com/dungnv2602/chatgpt/actions/runs/45408954986), [#305](https://github.com/dungnv2602/chatgpt/actions/runs/45409620929), [#306](https://github.com/dungnv2602/chatgpt/actions/runs/45410287093), [#307](https://github.com/dungnv2602/chatgpt/actions/runs/45410835359), and [#308](https://github.com/dungnv2602/chatgpt/actions/runs/45411400908)
+- Diagnostics runs [#569](https://github.com/dungnv2602/chatgpt/actions/runs/45407620173), [#571](https://github.com/dungnv2602/chatgpt/actions/runs/45408955121), [#573](https://github.com/dungnv2602/chatgpt/actions/runs/45410287179), and [#574](https://github.com/dungnv2602/chatgpt/actions/runs/45410835358)
+- Changed-document lint runs [#616](https://github.com/dungnv2602/chatgpt/actions/runs/45403469914), [#618](https://github.com/dungnv2602/chatgpt/actions/runs/45407620144), [#619](https://github.com/dungnv2602/chatgpt/actions/runs/45408533122), [#620](https://github.com/dungnv2602/chatgpt/actions/runs/45408955146), [#621](https://github.com/dungnv2602/chatgpt/actions/runs/45409620876), and [#623](https://github.com/dungnv2602/chatgpt/actions/runs/45410835376)
+- Commits [74005cc](https://github.com/dungnv2602/chatgpt/commit/74005ccb1afc79d21966112501baa39772905864), [454672a](https://github.com/dungnv2602/chatgpt/commit/454672ae649a607db689876ddfb77cb5b4450e65), [849c027](https://github.com/dungnv2602/chatgpt/commit/849c027ee97b1a6c7d52f4d3020c6a152c4bae60), [aa69d96](https://github.com/dungnv2602/chatgpt/commit/aa69d966969a8d5a3cc5106a74f1204a0f324e3e), [b1aec86](https://github.com/dungnv2602/chatgpt/commit/b1aec86f3f13eb7ac5c2dd92e8a7ba1f0f150a00), [7fa7483](https://github.com/dungnv2602/chatgpt/commit/7fa7483122c074c48e8d0b82ea65d59f4aca37f4), and [594ab39](https://github.com/dungnv2602/chatgpt/commit/594ab39e461e8bc9473ef73fd40048b8f0f6eb72)
 - Related task: `20261123-225745`
 ## 11. Verification
 
@@ -198,15 +207,15 @@ The task remains Blocked only for final changed-document lint confirmation. Lint
 - **Method:** Read back all nine paths changed by commit 74005cc. Compare the relocated template blob SHAs with their original values. Confirm that the former nested paths return 404.
 - **Result:** All nine paths passed read-back. The three relocated templates retained their original blob SHAs. The old paths no longer exist.
 - **Check:** Hosted Document Standards and Ledger validation.
-- **Method:** Inspect the job steps for Document Standards runs #302, #304, and #305. Inspect the Diagnostics companion jobs and standalone Diagnostics runs #569 and #571.
-- **Result:** Document Standards #302, #304, and #305 passed 37 Ledger tests, 32 catalog tests, and catalog validation. The Diagnostics companion jobs passed. Standalone Diagnostics #569 and #571 passed reporter tests, backfill, Ledger ingestion, and publication.
+- **Method:** Inspect the job steps for Document Standards runs #302, #304, #305, #306, and #307. Inspect their diagnostics companion jobs and standalone Diagnostics runs #569, #571, #573, and #574.
+- **Result:** Document Standards #302, #304, #305, #306, and #307 passed. Run #307 passed 37 Ledger tests, 32 catalog tests, and catalog validation. The Diagnostics companion passed. Standalone Diagnostics #569, #571, #573, and #574 passed reporter tests, backfill, Ledger ingestion, and publication.
 - **Check:** Blocking changed-document lint findings.
-- **Method:** Inspect the full JSON reports for runs #616, #618, #619, and #620. Read back the fixes in commits 849c027, aa69d96, b1aec86, and 7fa7483.
-- **Result:** Hard findings declined from 52 in #616 to seven in #618 and four in #619 and #620. Commit 7fa7483 contains the latest wording corrections.
-- **Limitations:** Lint #621 is still in progress. Do not claim the final lint result passed. No repository scripts or tests ran locally.
+- **Method:** Inspect the complete JSON reports for runs #616, #618, #619, #620, #621, and #623. Read back the corrections in commits 849c027, aa69d96, b1aec86, 7fa7483, and 594ab39.
+- **Result:** Hard findings declined from 52 in #616 to seven in #618, four in #619 and #620, four in #621, and three in #623. Commit 594ab39 corrects the remaining catalog findings.
+- **Limitations:** A changed-document lint rerun for commit 594ab39 was not visible at the last inspection. Document Standards #308 was queued. Do not claim final validation passed. No repository scripts or tests ran locally.
 ## 12. Handoff Instructions
 
-Read `workspace/README.md`, `workspace/task_board.md`, this task record, and `workspace/discussion.md`. Keep the task Blocked until Lint #621 publishes a complete successful result. Do not poll Actions. If it fails, inspect its complete report and job log. Keep the three Ledger-generated lint tasks Proposed until the user approves remediation. ADR-0001 already records the completed Document Standards and Ledger validation. Do not archive ADR-0001 until every linked task is Done and every Confirmation criterion passes.
+Read `workspace/README.md`, `workspace/task_board.md`, this task record, and `workspace/discussion.md`. Keep the task Blocked until the catalog and changed-document lint checks pass on commit 594ab39. Do not poll Actions. If either check fails, inspect its complete report and job log. Keep the three Ledger-generated lint tasks Proposed until the user approves remediation. ADR-0001 records the confirmed Document Standards and Ledger validation. Do not archive ADR-0001 until every linked task is Done and every Confirmation criterion passes.
 
 ## 13. Ledger Findings
 

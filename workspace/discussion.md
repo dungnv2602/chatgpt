@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 14:04 UTC — Await the final changed-document lint result:** Document Standards #305 passed all 37 Ledger tests, all 32 catalog tests, and catalog validation on commit 7fa7483. Its diagnostics job passed. Keep task 20261124-103354 Blocked until Lint #621 publishes a complete successful result. Do not poll Actions. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 14:12 UTC — Await final validation of the catalog correction:** Lint #623 exposed three remaining catalog blockers. Commit 594ab39 corrected the Ledger row, removed the redundant changelog inventory row while preserving its general coverage rule, and replaced the final `check` wording. Document Standards #308 is queued. No changed-document lint rerun for commit 594ab39 was visible at the last inspection. Keep task 20261124-103354 Blocked. Do not poll Actions. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 
 ## Open Discussions
 
@@ -13,6 +13,6 @@
 
 ## Reports
 
-- **2026-11-24 14:03 UTC — Current governance validation passed:** Document Standards run [#305](https://github.com/dungnv2602/chatgpt/actions/runs/45409620929) passed all 37 Ledger tests, all 32 catalog regression tests, and catalog validation. Its diagnostics job passed. The only outstanding check is changed-document lint #621.
-- **2026-11-24 13:59 UTC — Hosted governance validation passed:** Document Standards run [#304](https://github.com/dungnv2602/chatgpt/actions/runs/45408954986) passed the Ledger suite, catalog suite, and catalog validator. Diagnostics run [#571](https://github.com/dungnv2602/chatgpt/actions/runs/45408955121) passed reporter tests, backfill, Ledger ingestion, and publication.
-- **2026-11-24 13:51 UTC — Hosted governance validation passed:** Document Standards run [#302](https://github.com/dungnv2602/chatgpt/actions/runs/45407620289) passed the Ledger suite, catalog suite, and catalog validator. Its diagnostics companion passed.
+- **2026-11-24 14:09 UTC — Document Standards validation passed:** Run [#307](https://github.com/dungnv2602/chatgpt/actions/runs/45410835359) passed 37 Ledger tests, 32 catalog tests, catalog validation, and its diagnostics companion.
+- **2026-11-24 14:03 UTC — Governance validation passed:** Document Standards run [#305](https://github.com/dungnv2602/chatgpt/actions/runs/45409620929) passed the Ledger suite, catalog suite, and catalog validator. Its diagnostics job passed.
+- **2026-11-24 13:59 UTC — Governance validation passed:** Document Standards run [#304](https://github.com/dungnv2602/chatgpt/actions/runs/45408954986) and Diagnostics run [#571](https://github.com/dungnv2602/chatgpt/actions/runs/45408955121) passed.
