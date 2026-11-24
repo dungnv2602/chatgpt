@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-24 07:46 +07:00 — Session startup:** Resuming the CI Ledger lifecycle and workflow optimization task. The previous clean reset is preserved; next inspect the pending task record, verify the latest hosted-run state from existing evidence only, and complete the requested workflow review without dispatching or polling Actions.
+- **2026-11-24 00:47 UTC — Recover the active CI Ledger task:** Read the workspace guide, task board, and current task record. Compare recorded progress with the exact repository state. Expected result: identify the remaining authorized work and any blockers.
 **20261123-225745** — [Repair CI ledger task generation workflow](tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md)
 
 ## Open Discussions
