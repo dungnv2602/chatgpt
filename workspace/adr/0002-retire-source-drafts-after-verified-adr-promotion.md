@@ -2,7 +2,7 @@
 record_type: decision-record
 template_version: "1.0"
 id: "ADR-0002"
-status: "promotion-pending"
+status: "accepted"
 decision_date: "2026-11-24"
 decision_makers:
   - "User"
@@ -244,4 +244,4 @@ Do not migrate or delete other Drafts unless they are confirmed as promoted and 
 
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
-| 2026-11-24 | Promotion pending | User approved DRAFT-0003 revision 2. The provisional record is undergoing read-back and completeness verification before acceptance. |
+| 2026-11-24 | Accepted | User approved DRAFT-0003 revision 2. The provisional ADR was read back and checked against the complete approved Draft. The record preserves the approved lifecycle, promotion, completeness, recovery, and migration rules. |
