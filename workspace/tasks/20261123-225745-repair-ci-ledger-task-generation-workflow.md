@@ -26,6 +26,7 @@ Fix the task generation workflow of the ledger. There's a lot of error runs alre
 
 - **2026-11-24 (superseded):** Earlier instruction to preserve existing Ledger findings and ingestion history. This was superseded by the user's later explicit clean-start authorization.
 - **2026-11-24:** The user explicitly authorized a clean start: "Clear the reports, clear the ledger, we start fresh." Clear active and archived generated report data, reset report indexes and the active Ledger, preserve workflow infrastructure and task archives, preserve unrelated active tasks, and do not backfill the old reporting period.
+- **2026-11-24:** The user clarified that every lint finding at every severity, including low/advisory and informational, must remain in the central Ledger and generate a task. Severity controls priority only. Preserve the existing GitHub Actions confidence/severity thresholds; do not broaden Actions task eligibility.
 
 ## 3. Objective
 
@@ -42,7 +43,7 @@ Restore reliable event-driven task generation and lifecycle management for CI fi
 7. Ignore untracked recurring baseline findings, group genuinely new actionable findings, and cap evidence at five report references while preserving cumulative occurrence counts and first/last-seen timestamps.
 8. Retry incomplete Actions captures at most three times with at least one hour between automatic attempts. Consume each manual request after one capture result and never duplicate a completed capture.
 9. Retire terminal Ledger findings only after every finding in the task is terminal and every linked task is archived Done and indexed.
-10. Do not backfill old reports, weaken finding eligibility, or authorize automatic remediation.
+10. Do not backfill old reports, weaken GitHub Actions finding eligibility, or authorize automatic remediation. All lint findings at every severity are task-eligible; severity controls priority only.
 11. Validate through naturally triggered GitHub-hosted workflows. Do not run repository scripts locally or manually dispatch or poll Actions.
 
 ## 5. Decisions
@@ -52,6 +53,7 @@ Restore reliable event-driven task generation and lifecycle management for CI fi
 - **Superseded:** Preserve the existing Ledger findings and processed-report state. The later explicit clean-start instruction authorizes clearing them.
 - **Approved:** Preserve task archive records and unrelated active tasks while clearing report data and the active Ledger.
 - **Approved:** Use per-scope baseline seeding, bounded finding evidence, finite incomplete-capture retries, shared writer serialization, and terminal finding retirement after archived task closeout.
+- **Approved:** Generate tasks for every new lint finding regardless of severity; use severity only to calculate task priority. Keep GitHub Actions task eligibility thresholds unchanged.
 - **Boundary:** Task generation and finding retirement are intake/housekeeping operations. They do not approve remediation or change the Worker's approval rules.
 
 ## 6. Progress Log
@@ -202,3 +204,11 @@ _The CI Ledger Findings table is empty after the user-authorized clean start. Ke
 - **Diagnostics evidence:** Runs [#517](https://github.com/dungnv2602/chatgpt/actions/runs/45347109478) and [#518](https://github.com/dungnv2602/chatgpt/actions/runs/45347272490) both failed within four seconds before GitHub exposed any job steps or log URL (`steps: null`, `logs_url: null`). Their cause is unknown. The committed Actions index still has pending runs `45344012691` and `45344012650`, with zero exhausted IDs and no observed finding retirement.
 - **Change:** Added an operator note to the GitHub Actions diagnostic guide explaining how to handle pre-step diagnostics failures without inferring a cause or altering pending IDs. This eligible `gpt` push will trigger a natural retry.
 - **Next:** Review the next naturally completed Diagnostics sweep. Confirm both pending IDs reconcile and that it retires the three terminal findings. Do not dispatch, poll, or manually remove findings.
+
+
+### 2026-11-24 — Approved lint eligibility clarification
+
+- **Action:** Updated the implementation plan after the user's correction that all lint findings must generate tasks.
+- **Decision:** Lint task eligibility is independent of severity. `critical`/`high`/`medium`/`low`/`informational` map to P0/P1/P2/P3/P3. GitHub Actions eligibility remains restricted to medium/high/critical under the existing confidence and blocking classification.
+- **Preserved controls:** Initial full-audit baselines do not create findings or tasks; untracked recurring baseline findings remain suppressed; incomplete capture state remains operational evidence and is not taskified.
+- **Next:** Implement the lint-only eligibility change, regression tests for low/advisory and informational findings plus grouped task reuse, and documentation. Validate through naturally triggered hosted workflows; do not dispatch or poll Actions.
