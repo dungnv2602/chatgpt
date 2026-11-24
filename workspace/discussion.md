@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 05:36 UTC — Record residual baseline remediation:** Update the task with the recovered original reports, the three remaining baseline findings, their source-only corrections, and the verified commit chain. Keep the task In Progress pending natural hosted validation. Do not poll or dispatch workflows.
+**2026-11-24 05:37 UTC — Await natural hosted validation:** The original 155-finding baseline is recovered. Three residual baseline findings are corrected in commits `ae32e62`, `afc2313`, and `78e2fdc`. Next, inspect the naturally published changed-scope report after `78e2fdc` and confirm the three fixes plus the 12 protected ASD-STE100 examples. Do not poll or dispatch workflows.
 
 ## Open Discussions
 
