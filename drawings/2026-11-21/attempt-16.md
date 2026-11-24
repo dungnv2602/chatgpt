@@ -58,3 +58,7 @@ Do not add any text, lettering, words, typography, captions, subtitles, labels, 
 - **Outcome:** Generated; thigh-size change is subtle and only partially achieved.
 - **User decision:** Pending.
 - **Next action:** Await user review.
+
+## Repository images
+
+- [samantha-right-thigh-refinement.webp](images/samantha-right-thigh-refinement.webp)

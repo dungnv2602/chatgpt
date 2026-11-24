@@ -57,3 +57,7 @@ The authored prompt was committed and read back before the image-edit call. Afte
 ## User approval — 2026-11-20
 - **Attempt 05:** Approved as the **casual path**. This is a user approval of the image/branch for casual-path continuity; it does not retroactively confirm source linkage or promote the prompt to a successful edit baseline.
 - **Attempt 06:** Approved as the **sweet path**. This is a user approval of the image/branch for sweet-path continuity; it does not retroactively confirm source linkage or erase recorded mismatches.
+
+## Repository images
+
+- [samantha-casual-path-portrait.webp](images/samantha-casual-path-portrait.webp)

@@ -56,3 +56,7 @@ Edit the currently supplied image (Samantha Attempt 06) to remove only the large
 - **Outcome:** Fresh text-only generation; not a cleanup edit or reconstruction of the original covered areas.
 - **User decision:** Pending.
 - **Next action:** Await user review.
+
+## Repository images
+
+- [samantha-bright-indoor-portrait-reconstruction.webp](images/samantha-bright-indoor-portrait-reconstruction.webp)

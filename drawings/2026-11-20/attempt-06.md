@@ -67,3 +67,7 @@ The prompt is committed before the image call. Record returned source/parent met
 ## User approval — 2026-11-20
 - **Attempt 05:** Approved as the **casual path**. This is a user approval of the image/branch for casual-path continuity; it does not retroactively confirm source linkage or promote the prompt to a successful edit baseline.
 - **Attempt 06:** Approved as the **sweet path**. This is a user approval of the image/branch for sweet-path continuity; it does not retroactively confirm source linkage or erase recorded mismatches.
+
+## Repository images
+
+- [samantha-sweet-path-portrait-with-text-panels.webp](images/samantha-sweet-path-portrait-with-text-panels.webp)

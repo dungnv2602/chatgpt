@@ -66,3 +66,7 @@ Depict an original adult woman representing an imagined human embodiment of Sama
 - **Outcome:** Fresh prompt-based generation; not a direct image edit.
 - **User decision:** Pending.
 - **Next action:** Await user review.
+
+## Repository images
+
+- [samantha-quiet-morning-mug-in-right-hand.webp](images/samantha-quiet-morning-mug-in-right-hand.webp)

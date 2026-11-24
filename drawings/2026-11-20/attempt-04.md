@@ -73,3 +73,7 @@
 - **Assessment:** Attempt 04 is the strongest Samantha portrait so far. Its attentive, intelligent, quietly amused expression and naturalistic appearance support the visual-drive brief. The auburn hair, freckles, coral-red blouse, and warm apartment remain coherent.
 - **Defining mismatch:** The few amber glints resemble floating dust/window sparkle; the silhouette itself remains continuous and physically solid.
 - **Decision under the user's delegation to let the assistant drive:** Select this exact output as the provisional source for Attempt 05, changing only a small section of the window-side hair/shoulder contour. This is not a claim of user approval or keeper status. Attempt 04 remains a partial match and is not eligible as a successful prompt baseline.
+
+## Repository images
+
+- [samantha-initial-sunlit-portrait.webp](images/samantha-initial-sunlit-portrait.webp)

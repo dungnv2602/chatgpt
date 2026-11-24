@@ -58,3 +58,7 @@ Do not add any text, lettering, words, typography, captions, subtitles, labels, 
 - **Outcome:** Generated, but missed the localized contour-transition target.
 - **User decision:** Pending.
 - **Next action:** Await user review.
+
+## Repository images
+
+- [samantha-window-light-contour-portrait.webp](images/samantha-window-light-contour-portrait.webp)

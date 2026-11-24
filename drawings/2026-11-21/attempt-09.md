@@ -66,3 +66,7 @@ Depict an original adult woman representing an imagined human embodiment of Sama
 - **Outcome:** Fresh generation, not an edit.
 - **User decision:** Pending.
 - **Next action:** Await user review.
+
+## Repository images
+
+- [samantha-quiet-morning-by-the-apartment-window.webp](images/samantha-quiet-morning-by-the-apartment-window.webp)

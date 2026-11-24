@@ -58,3 +58,7 @@ Do not add any text, lettering, words, typography, captions, subtitles, labels, 
 - **Outcome:** Generated; visible thigh anatomy appears improved, but full leg alignment cannot be verified from this crop.
 - **User decision:** Approved.
 - **Next action:** Continue from this approved result for the next requested scene or adjustment.
+
+## Repository images
+
+- [samantha-approved-sweet-path-portrait.webp](images/samantha-approved-sweet-path-portrait.webp)

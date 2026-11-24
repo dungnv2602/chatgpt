@@ -1,145 +1,46 @@
 version: 1
-batch_id: "2026-11-20-001"
-status: ready
+batch_id: 2026-11-20-001
+status: draft
 items:
-  - source: "file_0000000047908207866f8f6e1b84ddb1.png"
-    source_asset_id: "file_0000000047908207866f8f6e1b84ddb1"
-    title: "Samantha — initial sunlit portrait"
-    attempt: "04"
-    destination_dir: "drawings/2026-11-20/images"
-    conversation_record: "drawings/history/2026-11-20-conversation-integrity.md"
-    native_generation_id: "061c1943-f7cc-4818-a897-3f07e16b38d4"
-    approval_status: "Not recorded"
-    mapping_evidence: "Exact asset ID and generation ID match drawings/2026-11-20/attempt-04.md; original generation-time SHA-256 unavailable."
-  - source: "file_000000009638820799fc4d49f7b1d885.png"
-    source_asset_id: "file_000000009638820799fc4d49f7b1d885"
-    title: "Samantha — casual path portrait"
-    attempt: "05"
-    destination_dir: "drawings/2026-11-20/images"
-    conversation_record: "drawings/history/2026-11-20-conversation-integrity.md"
-    native_generation_id: "86f0848c-6d9d-41f7-96c0-cf6c4f9b28bd"
-    approval_status: "Approved"
-    mapping_evidence: "Exact asset ID and generation ID match drawings/2026-11-20/attempt-05.md; user approved the Casual Path; original generation-time SHA-256 unavailable."
-  - source: "file_0000000093588207aecb418f8b7cf5c8.png"
-    source_asset_id: "file_0000000093588207aecb418f8b7cf5c8"
-    title: "Samantha — sweet path portrait with text panels"
-    attempt: "06"
-    destination_dir: "drawings/2026-11-20/images"
-    conversation_record: "drawings/history/2026-11-20-conversation-integrity.md"
-    native_generation_id: "23aeb056-9115-4734-a146-2e4802b5b84d"
-    approval_status: "Approved"
-    mapping_evidence: "Exact asset ID and generation ID match drawings/2026-11-20/attempt-06.md; user approved the Sweet Path branch; later superseded as baseline by Attempt 07; original generation-time SHA-256 unavailable."
-  - source: "file_0000000089c8821182f53369d6fd3d0e.png"
-    source_asset_id: "file_0000000089c8821182f53369d6fd3d0e"
-    title: "Samantha — quiet morning by the apartment window"
-    attempt: "09"
-    destination_dir: "drawings/2026-11-21/images"
-    conversation_record: "drawings/history/2026-11-21-conversation-integrity.md"
-    native_generation_id: "8455999f-c9dc-4b54-9747-7f6c4cd9fd77"
-    approval_status: "Pending"
-    mapping_evidence: "Exact asset ID and generation ID match drawings/2026-11-21/attempt-09.md; generation-time SHA-256 unavailable."
-  - source: "file_0000000066108207ac853d7dc9be1511.png"
-    source_asset_id: "file_0000000066108207ac853d7dc9be1511"
-    title: "Samantha — quiet morning, mug in right hand"
-    attempt: "10"
-    destination_dir: "drawings/2026-11-21/images"
-    conversation_record: "drawings/history/2026-11-21-conversation-integrity.md"
-    expected_sha256: "593570e0c84a58769ac36c5a15bcde2a33235dce442074c45865899a6e82c47f"
-    native_generation_id: "0fb1bb90-44af-4045-b1a0-f808eef75c9b"
-    approval_status: "Pending"
-    mapping_evidence: "Exact asset ID, generation ID, and generation-time SHA-256 match drawings/2026-11-21/attempt-10.md."
-  - source: "file_000000001b508211a06139988c2a68df.png"
-    source_asset_id: "file_000000001b508211a06139988c2a68df"
-    title: "Samantha — quiet morning, both hands empty"
-    attempt: "11"
-    destination_dir: "drawings/2026-11-21/images"
-    conversation_record: "drawings/history/2026-11-21-conversation-integrity.md"
-    expected_sha256: "f927eb5bb6e1bbb8f9d1bcaf6ae8ddf7314de693a9d4dc61b9d55dde8ca9d1b6"
-    native_generation_id: "ca840c24-fd58-4b43-99dd-e9b78a079c75"
-    approval_status: "Pending"
-    mapping_evidence: "Exact asset ID, generation ID, and generation-time SHA-256 match drawings/2026-11-21/attempt-11.md."
-  - source: "file_000000003a088207af254e352a9cb34a.png"
-    source_asset_id: "file_000000003a088207af254e352a9cb34a"
-    title: "Samantha — bright indoor portrait reconstruction"
-    attempt: "12"
-    destination_dir: "drawings/2026-11-21/images"
-    conversation_record: "drawings/history/2026-11-21-conversation-integrity.md"
-    expected_sha256: "85a08c75ecdfa7701cb87fb1aa023493ad88a0f93f6b0e525b734571d329bc60"
-    native_generation_id: "545b5f8d-2609-4f62-a684-b7f994a2fef9"
-    approval_status: "Pending"
-    mapping_evidence: "Exact asset ID, generation ID, and generation-time SHA-256 match drawings/2026-11-21/attempt-12.md."
-  - source: "file_00000000081c82078133f71b2fa24c59.png"
-    source_asset_id: "file_00000000081c82078133f71b2fa24c59"
-    title: "Samantha — window-light contour portrait"
-    attempt: "13"
-    destination_dir: "drawings/2026-11-21/images"
-    conversation_record: "drawings/history/2026-11-21-conversation-integrity.md"
-    expected_sha256: "52ea62f008f012d350b4ea667f9605688ed9c775501ae3125aa13d33c00ba3be"
-    native_generation_id: "c721165e-1b95-4f2d-8bf8-7e9f3d39fdcf"
-    approval_status: "Pending"
-    mapping_evidence: "Exact asset ID, generation ID, and generation-time SHA-256 match drawings/2026-11-21/attempt-13.md."
-  - source: "file_00000000a69c82079d17a0619f87d572.png"
-    source_asset_id: "file_00000000a69c82079d17a0619f87d572"
-    title: "Samantha — approved Sweet Path portrait"
-    attempt: "14"
-    destination_dir: "drawings/2026-11-21/images"
-    conversation_record: "drawings/history/2026-11-21-conversation-integrity.md"
-    expected_sha256: "791f21a5888e04bb795e08da6db742ce297347a4b6290e9616b1827fa41ffdad"
-    native_generation_id: "cd337d99-ebb1-433b-b5b0-b916047da155"
-    approval_status: "Approved"
-    mapping_evidence: "Exact asset ID, generation ID, and generation-time SHA-256 match drawings/2026-11-21/attempt-14.md; user approved this output."
-  - source: "file_00000000f9108207bbd749f89003c6c2.png"
-    source_asset_id: "file_00000000f9108207bbd749f89003c6c2"
-    title: "Samantha — Attempt 04 facial direction portrait"
-    attempt: "15"
-    destination_dir: "drawings/2026-11-21/images"
-    conversation_record: "drawings/history/2026-11-21-conversation-integrity.md"
-    expected_sha256: "a79c934f14cab0026d384fa9cde1bd948b3f5694e04b4a39905d969dc3187bec"
-    native_generation_id: "0c06b408-4508-4c68-b6ec-bf3268b56f32"
-    approval_status: "Pending"
-    mapping_evidence: "Exact asset ID, generation ID, and generation-time SHA-256 match drawings/2026-11-21/attempt-15.md; user approval not recorded."
-  - source: "file_00000000065c8207a6cd810d3ed13633.png"
-    source_asset_id: "file_00000000065c8207a6cd810d3ed13633"
-    title: "Samantha — right thigh refinement"
-    attempt: "16"
-    destination_dir: "drawings/2026-11-21/images"
-    conversation_record: "drawings/history/2026-11-21-conversation-integrity.md"
-    expected_sha256: "bd22d3f0fe5607a77ba8832bdab7c92211af5c974c2bf3882dc01c433f973c4c"
-    native_generation_id: "4de931e5-b84a-4d24-8de7-f1aa898138a6"
-    approval_status: "Pending"
-    mapping_evidence: "Exact asset ID, generation ID, and generation-time SHA-256 match drawings/2026-11-21/attempt-16.md; user did not approve this output."
-  - source: "file_000000001e9882079286e1de59e27f1b.png"
-    title: "Unclassified upload — visual review required"
-    destination_dir: "images/unclassified"
-    approval_status: "Not recorded"
-    mapping_evidence: "No matching output asset ID found in the reviewed Samantha attempt records; image pixels were not available for inspection. Quarantined pending identification."
-  - source: "file_000000004b9c82119aa3e8e273bb1f2c.png"
-    title: "Unclassified upload — visual review required"
-    destination_dir: "images/unclassified"
-    approval_status: "Not recorded"
-    mapping_evidence: "No matching output asset ID found in the reviewed Samantha attempt records; image pixels were not available for inspection. Quarantined pending identification."
-  - source: "file_0000000064d08211910f68838cb1237a.png"
-    title: "Unclassified upload — visual review required"
-    destination_dir: "images/unclassified"
-    approval_status: "Not recorded"
-    mapping_evidence: "No matching output asset ID found in the reviewed Samantha attempt records; image pixels were not available for inspection. Quarantined pending identification."
-  - source: "file_0000000069f082079011ee0627b3995c.png"
-    title: "Unclassified upload — visual review required"
-    destination_dir: "images/unclassified"
-    approval_status: "Not recorded"
-    mapping_evidence: "No matching output asset ID found in the reviewed Samantha attempt records; image pixels were not available for inspection. Quarantined pending identification."
-  - source: "file_000000008c6882118eba4e134b3a76c2.png"
-    title: "Unclassified upload — visual review required"
-    destination_dir: "images/unclassified"
-    approval_status: "Not recorded"
-    mapping_evidence: "No matching output asset ID found in the reviewed Samantha attempt records; image pixels were not available for inspection. Quarantined pending identification."
-  - source: "file_00000000dfa08211a68e0644d6c6f2a1.png"
-    title: "Unclassified upload — visual review required"
-    destination_dir: "images/unclassified"
-    approval_status: "Not recorded"
-    mapping_evidence: "No matching output asset ID found in the reviewed Samantha attempt records; image pixels were not available for inspection. Quarantined pending identification."
-  - source: "file_00000000e5e482118465d6df866ea0d9.png"
-    title: "Unclassified upload — visual review required"
-    destination_dir: "images/unclassified"
-    approval_status: "Not recorded"
-    mapping_evidence: "No matching output asset ID found in the reviewed Samantha attempt records; image pixels were not available for inspection. Quarantined pending identification."
+- source: file_000000001e9882079286e1de59e27f1b.png
+  title: Unclassified upload — visual review required
+  destination_dir: images/unclassified
+  approval_status: Not recorded
+  mapping_evidence: No matching output asset ID found in the reviewed Samantha attempt
+    records; image pixels were not available for inspection. Quarantined pending identification.
+- source: file_000000004b9c82119aa3e8e273bb1f2c.png
+  title: Unclassified upload — visual review required
+  destination_dir: images/unclassified
+  approval_status: Not recorded
+  mapping_evidence: No matching output asset ID found in the reviewed Samantha attempt
+    records; image pixels were not available for inspection. Quarantined pending identification.
+- source: file_0000000064d08211910f68838cb1237a.png
+  title: Unclassified upload — visual review required
+  destination_dir: images/unclassified
+  approval_status: Not recorded
+  mapping_evidence: No matching output asset ID found in the reviewed Samantha attempt
+    records; image pixels were not available for inspection. Quarantined pending identification.
+- source: file_0000000069f082079011ee0627b3995c.png
+  title: Unclassified upload — visual review required
+  destination_dir: images/unclassified
+  approval_status: Not recorded
+  mapping_evidence: No matching output asset ID found in the reviewed Samantha attempt
+    records; image pixels were not available for inspection. Quarantined pending identification.
+- source: file_000000008c6882118eba4e134b3a76c2.png
+  title: Unclassified upload — visual review required
+  destination_dir: images/unclassified
+  approval_status: Not recorded
+  mapping_evidence: No matching output asset ID found in the reviewed Samantha attempt
+    records; image pixels were not available for inspection. Quarantined pending identification.
+- source: file_00000000dfa08211a68e0644d6c6f2a1.png
+  title: Unclassified upload — visual review required
+  destination_dir: images/unclassified
+  approval_status: Not recorded
+  mapping_evidence: No matching output asset ID found in the reviewed Samantha attempt
+    records; image pixels were not available for inspection. Quarantined pending identification.
+- source: file_00000000e5e482118465d6df866ea0d9.png
+  title: Unclassified upload — visual review required
+  destination_dir: images/unclassified
+  approval_status: Not recorded
+  mapping_evidence: No matching output asset ID found in the reviewed Samantha attempt
+    records; image pixels were not available for inspection. Quarantined pending identification.

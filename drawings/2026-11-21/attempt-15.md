@@ -58,3 +58,7 @@ Do not add any text, lettering, words, typography, captions, subtitles, labels, 
 - **Outcome:** Fresh prompt-based generation, not an exact face transfer or source-linked composite.
 - **User decision:** Pending.
 - **Next action:** Await user review.
+
+## Repository images
+
+- [samantha-attempt-04-facial-direction-portrait.webp](images/samantha-attempt-04-facial-direction-portrait.webp)
