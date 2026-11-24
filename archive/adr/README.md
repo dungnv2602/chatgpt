@@ -8,7 +8,7 @@ This folder stores accepted Decision Records after implementation and confirmati
 4. Read back the archive copy after its initial write.
 5. Keep the archived ADR immutable.
 6. Never add ADR paths to `.github/archive-retention-index.json`.
-7. Do not edit, replace, rename, move, or delete an archived ADR.
+7. Do not edit, replace, rename, move, or delete an archived ADR unless the user explicitly authorizes a narrow reference-only correction. Never change its accepted decision content.
 
 The archive-retention workflow applies only to indexed task and report files. It must not delete this folder's contents.
 
