@@ -459,7 +459,7 @@ def atomic_write(path, payload):
 TASK_ELIGIBLE_SEVERITIES = {"critical", "high", "medium"}
 TASK_ELIGIBLE_FINDING_STATUSES = {"open", "investigating", "planned", "fixing", "verifying"}
 TASK_ACTIVE_STATUSES = {"Proposed", "Ready", "In Progress", "Blocked", "Paused"}
-TASK_PRIORITY = {"critical": "P0", "high": "P1", "medium": "P2"}
+TASK_PRIORITY = {"critical": "P0", "high": "P1", "medium": "P2", "low": "P3", "informational": "P3"}
 
 def task_metadata(content, name):
     match = re.search(r"(?m)^- \*\*" + re.escape(name) + r":\*\* (.+)$", content)
@@ -708,7 +708,9 @@ def create_worker_tasks(root, ledger, timestamp, candidate_ids, created_ids, reo
         finding_id = finding.get("finding_id")
         if finding_id not in candidate_ids:
             continue
-        if finding.get("severity") not in TASK_ELIGIBLE_SEVERITIES:
+        # Every observed lint finding is actionable work, regardless of severity.
+        # Actions findings retain the explicit confidence/severity eligibility gate.
+        if finding.get("source_family") != "lint" and finding.get("severity") not in TASK_ELIGIBLE_SEVERITIES:
             continue
         if finding.get("status") not in TASK_ELIGIBLE_FINDING_STATUSES:
             continue
