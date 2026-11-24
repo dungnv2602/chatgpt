@@ -1,8 +1,10 @@
 ## Current Step
 
-- **2026-11-24 — Investigate the remaining conversation-mapping regression.** Latest normal workflow run [45306543050](https://github.com/dungnv2602/chatgpt/actions/runs/45306543050) on `709ae66` compiled successfully but failed 1 of 45 tests: `test_conversation_mapping_mismatch_fails_before_staging`. Processing, publication, and post-publication verification were skipped. No takeout assets were changed by this run. The failed test indicates a deliberately incorrect Generation / Output ID mapping is accepted. Fix the fixture or validator only after identifying why the mismatch assertion is ineffective; rerun the regression suite before another normal dispatch.
+- **2026-11-24 — Conversation-mapping regression fixture hardened.** Commit [a885899](https://github.com/dungnv2602/chatgpt/commit/a885899e9c6d0f16bb4b737374ebdb1c7a200226) replaces the silent string substitution with explicit target-row discovery, exact expected-cell assertions, a single-cell mutation to `different-generation`, and a post-mutation assertion. This ensures the test actually alters exactly one intended mapping row. The full hosted suite has not yet rerun; production validator behavior remains unverified until that run.
 
 ## Open Discussions
+
+- **2026-11-24 — Image Takeout mapping regression fix awaiting hosted verification:** The mismatch test fixture is now deterministic in [a885899](https://github.com/dungnv2602/chatgpt/commit/a885899e9c6d0f16bb4b737374ebdb1c7a200226). It asserts the exact original row, mutates only the Generation / Output ID cell, and asserts the mutated row is present. No production validator code changed in this commit. A new manual normal-workflow run is required to establish whether the validator rejects the altered row; no image processing should proceed unless all 45 tests pass.
 
 - **2026-11-24 — Image Takeout rerun #65 still blocked:** Manual run [45306543050](https://github.com/dungnv2602/chatgpt/actions/runs/45306543050) on commit `709ae66` compiled successfully but failed 1 of 45 processor tests. `test_conversation_mapping_mismatch_fails_before_staging` expected the processor to reject a mapping row changed to `different-generation`, but the processor returned success. Processing and publication were skipped. No intake assets were changed. Investigate the fixture replacement and whether exact mapping validation is enforced for this destination type.
 
@@ -19,6 +21,8 @@
 - **2026-11-23 — Drawing direction needed:** Session `DRAWING-2026-11-23-01` is Active, but the user has not supplied a subject or visual direction. The user must provide the subject before prompt drafting or image generation.
 
 ## Reports
+
+- **2026-11-24 — Mapping mismatch regression fixture hardening:** Commit [a885899](https://github.com/dungnv2602/chatgpt/commit/a885899e9c6d0f16bb4b737374ebdb1c7a200226) makes the failing test's row mutation explicit and self-checking. Repository read-back passed. Hosted verification is pending; no takeout processing has been performed.
 
 - **2026-11-24 — Image Takeout hosted rerun #65:** Run [45306543050](https://github.com/dungnv2602/chatgpt/actions/runs/45306543050) on branch `gpt`, commit `709ae66e59d4161b69f99f9d4b299d1f36021406`, compiled both scripts and ran 45 tests. One test failed: `test_conversation_mapping_mismatch_fails_before_staging`; 44 passed. The failed assertion expected the processor to reject a mapping changed to `different-generation`, but the processor returned exit code 0. Processing, publication, and post-publication verification were skipped. No intake source was changed by this run. The diagnostics sidecar also failed independently.
 

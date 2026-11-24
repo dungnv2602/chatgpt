@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261123-162826
 - **Created:** 2026-11-23 16:28 UTC
-- **Updated:** 2026-11-24 01:40:00 UTC
+- **Updated:** 2026-11-24 02:00:00 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -131,7 +131,13 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 
 - **Action:** Inspected the latest manual normal-workflow run [45306543050](https://github.com/dungnv2602/chatgpt/actions/runs/45306543050), its job steps, and the processor test output.
 - **Result:** Compilation passed. The processor suite ran 45 tests; 44 passed and one failed: `test_conversation_mapping_mismatch_fails_before_staging`. The test changes the conversation mapping's Generation / Output ID to `different-generation`, but the processor returned exit code 0 rather than rejecting it. Processing, publication, and post-publication verification were skipped. No takeout assets were processed or relocated. The diagnostics sidecar failed independently.
-- **Next:** Determine why the mismatch test does not trigger rejection. Inspect whether the fixture replacement changed the intended row and whether mapping validation is applied to the test's destination type. Fix the underlying validator or fixture, then run the full regression suite before dispatching the workflow again.
+- **Next:** Harden the fixture so it asserts that exactly one intended row is mutated, then rerun all 45 tests before dispatching the workflow again.
+
+### 2026-11-24 02:00 UTC
+
+- **Action:** Committed [a885899](https://github.com/dungnv2602/chatgpt/commit/a885899e9c6d0f16bb4b737374ebdb1c7a200226) to make `test_conversation_mapping_mismatch_fails_before_staging` deterministic. The test now finds exactly one target row, asserts all four original cells, changes only the Generation / Output ID cell to `different-generation`, and asserts the mutated row is present before writing the fixture.
+- **Result:** The changed test file was read back from branch `gpt`. No production validator code changed in this commit. The original PNGs remain untouched. Hosted validation is still required to confirm the validator rejects the altered mapping.
+- **Next:** Manually dispatch `Process Image Takeout and Create WebP Derivatives` on branch `gpt`. Require all 45 tests to pass before processing; if the mapping test still fails, inspect the validator path before making further changes.
 
 ## 7. Current State
 
@@ -145,7 +151,7 @@ After a successful normal run, eleven originals and their WebP derivatives will 
 
 ## 8. Remaining Work
 
-- Investigate and fix the remaining `test_conversation_mapping_mismatch_fails_before_staging` failure from run [45306543050](https://github.com/dungnv2602/chatgpt/actions/runs/45306543050). No processing started.
+- Rerun the full 45-test processor suite against the deterministic mismatch fixture. Confirm that the production validator rejects the altered Generation / Output ID mapping before staging.
 - Verify that the workflow publishes the eleven mapped original/WebP pairs and keeps all seven unclassified originals unchanged in intake.
 - Verify that the active hand-off contains only the seven unclassified entries with `status: draft`.
 - After the normal run succeeds, the user manually dispatches the unclassified conversion workflow with the exact seven filenames.
@@ -154,13 +160,11 @@ After a successful normal run, eleven originals and their WebP derivatives will 
 - Keep the task In Progress until hosted tests, mapped publication, the residual hand-off, and unclassified conversion are verified.
 ## 9. Next Actions
 
-1. Inspect the failing fixture replacement and mapping validation path; determine why the deliberately incorrect Generation / Output ID row is accepted.
-2. Correct the underlying validator or regression fixture and read back the changed files.
-3. Run the full processor regression suite; require all 45 tests to pass.
-4. Manually dispatch `Process Image Takeout and Create WebP Derivatives` on branch `gpt` and verify processing, publication, and post-publication checks.
-5. Confirm the eleven mapped original/WebP pairs and seven unchanged unclassified sources with a seven-entry residual Draft hand-off.
-6. Only after normal processing succeeds, manually dispatch the unclassified conversion workflow with the seven exact filenames.
-7. Verify all seven derivatives and unchanged PNG originals. Keep relocation and index changes under the user's explicit direction.
+1. Manually dispatch `Process Image Takeout and Create WebP Derivatives` on branch `gpt` and inspect the deterministic mapping-mismatch regression.
+2. Require all 45 tests to pass before processing. If the mismatch test still fails, inspect the production validation path rather than weakening the test.
+3. Verify publication of the eleven mapped original/WebP pairs and confirm the seven unclassified originals remain unchanged in intake with a seven-entry residual Draft hand-off.
+4. Only after normal processing succeeds, manually dispatch the unclassified conversion workflow with the seven exact filenames.
+5. Verify all seven derivatives and unchanged PNG originals. Keep relocation and index changes under the user's explicit direction.
 
 ## 10. References
 
