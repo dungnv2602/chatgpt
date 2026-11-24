@@ -33,6 +33,9 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
+| 20261124-132754-02 | Review present-perfect findings in workspace/DRAFT\_TEMPLATE.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-132754-02-review-present-perfect-findings-in-workspace-draft-template-md.md) |
+| 20261124-132754-01 | Review passive-voice findings in workspace/ANALYSIS\_TEMPLATE.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-132754-01-review-passive-voice-findings-in-workspace-analysis-template-md.md) |
+| 20261124-132754 | Review passive-voice findings in workspace/ADR\_TEMPLATE.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-132754-review-passive-voice-findings-in-workspace-adr-template-md.md) |
 | 20261124-125956-06 | Review passive-voice findings in workspace/analysis/ANALYSIS\_TEMPLATE.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-125956-06-review-passive-voice-findings-in-workspace-analysis-analysis-tem.md) |
 | 20261124-125956-05 | Review passive-voice findings in workspace/TASK\_TEMPLATE.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-125956-05-review-passive-voice-findings-in-workspace-task-template-md.md) |
 | 20261124-125956-04 | Review long-sentence findings in workspace/analysis/README.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-125956-04-review-long-sentence-findings-in-workspace-analysis-readme-md.md) |
