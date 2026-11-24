@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 10:36 UTC — Complete the MADR review. Inspect the task generator and archive-retention implementation to identify required integration changes.** [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 10:38 UTC — Synthesize the MADR findings and repository constraints into the initial draft. Define the proposed directory layout, templates, statuses, approval gates, task-to-ADR contract, analysis framework, archive lifecycle, and affected skills.** [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 ## Open Discussions
 
 - **2026-11-24 08:12 UTC — Hosted runner allocation:** Older runnerless jobs included a GitHub annotation stating that the job was not started because recent account payments had failed or the spending limit needed to be increased. The annotation does not identify which account condition applied. Later jobs received runners and executed; do not alter runner labels.
