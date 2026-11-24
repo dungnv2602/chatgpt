@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-181746
 - **Created:** 2026-11-24 18:17 UTC
-- **Updated:** 2026-11-24 18:17 UTC
+- **Updated:** 2026-11-24 18:18 UTC
 - **Priority:** P3
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -58,24 +58,31 @@ Ensure the final resolved ADR-0002 finding appears in a Done task archive. Allow
 - **References:** Finding `lint-7614765438b1a170a448306a`; [final STE lint report](../../reports/lint_reports/on_changed/history/45456236271-attempt-1/report.md); [task 05 archive](../../archive/tasks/20261124-161334-05-review-synonym-rotation-findings-in-workspace-adr-0002-retire-so.md).
 - **Next:** Link this task to the finding, then archive this task after read-back.
 
+
+### 2026-11-24 18:18 UTC
+
+- **Action:** Added this task ID to the resolved Ledger finding's task references.
+- **Result:** The finding now links to this task and the earlier immutable task 05 archive. Its resolved status and validation evidence remain unchanged.
+- **References:** [Ledger update commit](https://github.com/dungnv2602/chatgpt/commit/0ffd852a3311da403f23393fda96d503304bdf1a); finding `lint-7614765438b1a170a448306a`.
+- **Next:** Archive this task as Done and register its exact path.
+
 ## 7. Current State
 
-The finding has resolved status. Its resolution records fix commit `985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc` and successful run 45456236271. The task archive must preserve this link.
+The resolved finding now links to this task. Its fix commit and successful hosted validation remain recorded. The task is ready for archival.
 
 ## 8. Remaining Work
 
-- Add this task ID to the finding's `task_refs`.
 - Create and read back the immutable Done archive copy.
 - Register the exact archive path in the retention index.
-- Delete the active task record and update the task board.
+- Delete the active record and update the task board.
 - Allow the diagnostics sweep to retire the finding.
 
 ## 9. Next Actions
 
-1. Update the Ledger task reference.
-2. Prepare and verify the Done archive copy.
+1. Create the Done archive copy.
+2. Read back the archive and verify its exact content.
 3. Register the archive path and delete the active record.
-4. Reconcile the task board.
+4. Update the task board.
 
 ## 10. References
 
