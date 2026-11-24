@@ -1,5 +1,7 @@
 ## Current Step
 
+- **2026-11-24 — Session started: manually process Image Takeout and create WebP derivatives.** Startup notice recorded before foundational skill retrieval. The task will verify the current hand-off, run the intended manual workflows, and inspect hosted results.
+
 - **2026-11-24 01:25 UTC — Image takeout mixed-batch repair committed and activated:** Implementation [048eaf0](https://github.com/dungnv2602/chatgpt/commit/048eaf0ba9c4eeb43ae6198972f2aa807d3d679b) changes six paths. The processor now handles the eleven provenance-mapped images while deferring seven unclassified files without modifying their originals. It archives the full hand-off and retains a seven-item residual Draft hand-off. Both image workflows share a queued, non-cancelling writer group; the unclassified publisher has safe rebase/retry logic. The normal workflow keeps manual dispatch for Ready-state changes and maintenance edits. The hand-off is Ready. Hosted tests and image publication remain pending the user's manual run.
 **20261123-162826** — [Enforce conversation integrity before image relocation](tasks/20261123-162826-enforce-conversation-integrity-before-image-relocation.md)
 
