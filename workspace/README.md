@@ -23,7 +23,7 @@ The workspace is the task-management and conversation-navigation area. The Worke
 
 Use a Draft to present a proposal. Do not implement a proposed decision.
 
-After the user approves the exact Draft, create a provisional ADR with status promotion-pending. Compare the complete ADR with the approved Draft. Check every material rationale, scope, trade-off, safeguard, dependency, migration, rollback, Confirmation criterion, source, and approval detail.
+After the user approves the exact Draft, create a provisional ADR with status promotion-pending. Compare the complete ADR with the approved Draft. Review every material rationale, scope, trade-off, safeguard, dependency, migration, rollback, Confirmation criterion, source, and approval detail.
 
 Read back the provisional ADR. Change its status to accepted only after the completeness check passes. Read back the accepted ADR before deleting the source Draft.
 
