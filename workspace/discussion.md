@@ -1,10 +1,6 @@
-## Session Start
-
-- **2026-11-24 — Session initialized.** User requested `start session`; foundational loading is in progress. Current task: inspect the latest CI results and verify whether the Image Takeout workflow actually completed its intended processing.
-
 ## Current Step
 
-- **2026-11-24 — Repair drawing daily README schema for Image Takeout.** Run [#68](https://github.com/dungnv2602/chatgpt/actions/runs/45312157558) passed compilation and all 48 processor tests, then stopped in preflight because `drawings/2026-11-21/README.md` lacked the required six-column attempt table ending in `Image`. The README has been aligned with the processor's established schema in [bff5bf9](https://github.com/dungnv2602/chatgpt/commit/bff5bf984e4bbd878b6569b93ea409aef7446baf). The failure occurred before conversion/staging; all eighteen source PNGs remain in intake and the Ready hand-off is unchanged. Await another user-triggered hosted run.
+- **2026-11-24 — Recover the active Image Takeout task and inspect the latest hosted CI evidence.** Read the workspace guide, task board, and authoritative task record. Then inspect the latest relevant workflow run, job logs, artifacts, and repository outputs to confirm whether conversion and publication actually occurred.
 
 ## Open Discussions
 
@@ -32,16 +28,8 @@
 
 - **2026-11-24 — Image Takeout run #68:** Manual run [45312157558](https://github.com/dungnv2602/chatgpt/actions/runs/45312157558) passed compilation and all 48 processor tests. The processor accepted `README.md` intake metadata, then failed preflight because the 2026-11-21 drawing README used a legacy five-column attempt table rather than the required six-column schema ending in `Image`. Failure occurred before staging/conversion; no image bytes were converted or relocated. All eighteen original PNGs remain in intake and the active hand-off remains Ready. Commit [bff5bf9](https://github.com/dungnv2602/chatgpt/commit/bff5bf984e4bbd878b6569b93ea409aef7446baf) repairs the README schema. Await hosted rerun. The diagnostics sidecar separately repeated the pre-existing `test_ledger.py` syntax error and undefined `LINT_BASELINE_CHECKS`; those files remain untouched.
 
+
 - **2026-11-24 — Image Takeout run #67:** Manual run [45311323087](https://github.com/dungnv2602/chatgpt/actions/runs/45311323087) passed compilation and all 47 existing processor tests, then failed before processing because the processor rejected the repository-owned `images/takeout/README.md`. No images were converted, staged, or relocated. The failed attempt's hand-off and reports were archived; the active Ready hand-off remains. The processor now has an exact regular-file allowlist for `README.md` and `HANDOFF.yml`; arbitrary non-image files remain rejected. Regression coverage raises the suite to 48 tests. Await hosted verification. The independent diagnostics sidecar again failed on the missing colon in `reports/triage/scripts/test_ledger.py` and undefined `LINT_BASELINE_CHECKS` in `ledger.py`; those files were left untouched.
 
+
 - **2026-11-24 — Image Takeout run #66:** Manual run [45309899583](https://github.com/dungnv2602/chatgpt/actions/runs/45309899583) ran the 47-test suite: 46 passed, one failed due to a test fixture expecting repository-local `asset_id` instead of the unset source/platform `source_asset_id`. No conversion or relocation ran. Commit [b473f56](https://github.com/dungnv2602/chatgpt/commit/b473f562a7a0bbc4da9cb037c87c83ade1167224) corrects the test precondition. Await hosted rerun; do not claim processing success.
-
-- **2026-11-24 — Image Takeout workflow consolidation:** Processor and tests are updated in [2b43d2e](https://github.com/dungnv2602/chatgpt/commit/2b43d2e547982c624380d27dccb72ae1d241147d). The normal Ready run now converts unclassified images to WebP without relocation. Documentation and separate-workflow removal are in [0365a05](https://github.com/dungnv2602/chatgpt/commit/0365a054d2d0dda9eb9258a9747495bf5013c0bd). The suite contains 47 tests; hosted verification is pending.
-
-- **2026-11-24 — Mapping mismatch regression fixture hardening:** Commit [a885899](https://github.com/dungnv2602/chatgpt/commit/a885899e9c6d0f16bb4b737374ebdb1c7a200226) makes the failing test's row mutation explicit and self-checking. Repository read-back passed. Hosted verification is pending.
-
-- **2026-11-24 — Image Takeout hosted rerun #65:** Run [45306543050](https://github.com/dungnv2602/chatgpt/actions/runs/45306543050) on branch `gpt`, commit `709ae66e59d4161b69f99f9d4b299d1f36021406`, compiled both scripts and ran 45 tests. One test failed: `test_conversation_mapping_mismatch_fails_before_staging`; 44 passed. Processing, publication, and post-publication verification were skipped. No intake source was changed by this run. The diagnostics sidecar also failed independently.
-
-- **2026-11-24 01:35 UTC — Takeout provenance validator repair:** Commit [7c8930a](https://github.com/dungnv2602/chatgpt/commit/7c8930ab5cdba9e7229910616a8551cb23d09f97) updates both validators and the regression fixture to parse bold Markdown identity labels and map Output IDs consistently. The next hosted run exposed the remaining mapping-mismatch failure described above.
-
-- **2026-11-24 01:25 UTC — Image takeout workflow repair:** Commit [048eaf0](https://github.com/dungnv2602/chatgpt/commit/048eaf0ba9c4eeb43ae6198972f2aa807d3d679b) adds mixed mapped/quarantine processing, residual Draft hand-off behavior, manual Ready activation, shared queued writer concurrency, and safe unclassified publication retries. Hosted processing remains unverified.
