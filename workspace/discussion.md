@@ -1,15 +1,10 @@
 ## Current Step
 
-**2026-11-24 16:45 UTC — Await hosted Document Standards evidence:** The DRAFT-0001 migration and governance changes are complete. The current validation run is not yet identifiable in the published workflow index. Do not poll CI. Keep task 20261124-160500 In Progress and ADR-0002's final Confirmation item unchecked until a completed result is available and passes.
+**2026-11-24 17:51 UTC — Start session:** Initialize the required foundational skills before addressing the ADR-0002 linting task. The prior Document Standards evidence and pending ADR-0002 confirmation remain recorded in Reports and the open task context.
 
 ## Open Discussions
 
-
-
 - **2026-11-24 — Review DRAFT-0002 revision 2:** [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md). Revision 2 retains Option 3 and updates the proposal to target Task Template 1.4, define one authoritative Next Step with optional Following Actions, use event-based research checkpoints, clarify findings-note archival, and set measurable criteria for a three-task pilot. ADR-0001 governs the decision process only. It does not approve this proposal's substance or implementation. Please decide whether to approve the exact revision 2 and scope, adapt the external concepts rather than install the full system, and accept the proposed pilot. Do not implement before the user approves this exact Draft and the repository accepts its implementation ADR.
-
-
-
 
 - **2026-11-23 — Drawing direction needed:** Session DRAWING-2026-11-23-01 is Active, but the user has not supplied a subject or visual direction. The user must provide the subject before prompt drafting or image generation.
 
