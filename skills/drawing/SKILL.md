@@ -427,14 +427,14 @@ only what is needed, and explicitly exclude rejected additions or drift.
 
 ### G. Review reusable patterns after every attempt
 
-After every generation or edit attempt, including refusals and no-output failures:
+After every generation or edit attempt, including refusals and no-output failures, complete this review before preparing the next attempt.
 
 1. Finish the visual assessment and record each output's actual result.
 2. Compare the evidence with the current pattern library.
 3. Extract reusable success or failure candidates.
 4. Present each candidate to the user and discuss its exact proposed change.
 5. Wait for explicit approval before assigning an ID or changing either pattern index.
-6. After approval, update only the approved entry. Record the approval date and exact attempt evidence. Read back the change.
+6. After approval, update only the approved entry or entries. Record the approval date and exact attempt evidence. Read back the change.
 7. If no reusable lesson exists, state that no candidate is warranted. Do not ask for approval.
 8. Do not write rejected or deferred proposals. Workflow approval does not approve future candidates.
 
