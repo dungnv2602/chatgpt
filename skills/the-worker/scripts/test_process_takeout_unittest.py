@@ -478,10 +478,19 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.manifest({"source": "wrong-mapping.png"}, batch="batch-wrong-mapping")
         record = self.root / "drawings/history/2026-11-19-conversation-integrity.md"
         content = record.read_text(encoding="utf-8")
-        content = content.replace(
-            "| wrong-mapping.png | Not applicable | ILL-001 | Not applicable |",
-            "| wrong-mapping.png | Not applicable | ILL-001 | different-generation |",
-        )
+        mapping_rows = [
+            line for line in content.splitlines()
+            if line.strip().startswith("| wrong-mapping.png |")
+        ]
+        self.assertEqual(len(mapping_rows), 1, "fixture must contain exactly one target mapping row")
+        cells = [cell.strip() for cell in mapping_rows[0].strip().strip("|").split("|")]
+        self.assertEqual(cells, [
+            "wrong-mapping.png", "Not applicable", "ILL-001", "Not applicable"
+        ])
+        cells[3] = "different-generation"
+        mutated_row = "| " + " | ".join(cells) + " |"
+        content = content.replace(mapping_rows[0], mutated_row, 1)
+        self.assertIn(mutated_row, content, "fixture mapping mutation must take effect")
         record.write_text(content, encoding="utf-8")
         handoff_before = (self.inbox / "HANDOFF.yml").read_bytes()
 
