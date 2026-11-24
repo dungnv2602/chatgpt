@@ -13,6 +13,9 @@ on:
       - 'images/**/*.md'
       - 'novels/**/*.md'
       - 'reports/**/*.md'
+      # Run Ledger regression tests when its implementation or schema changes.
+      - 'reports/triage/scripts/**'
+      - 'reports/triage/ledger-schema.json'
       # Exclude generator-owned output so report publication cannot retrigger this workflow.
       - '!reports/gh_ac_reports/history/**'
       - '!reports/gh_ac_reports/by_workflow/**'
@@ -61,6 +64,13 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+
+      - name: Run CI Ledger regression tests
+        run: |
+          python -m unittest discover \\
+            -s reports/triage/scripts \\
+            -p 'test_ledger.py' \\
+            -v
 
       - name: Run catalog validator regression tests
         run: |

@@ -110,7 +110,7 @@ The implementation task must collect evidence for every criterion.
 - [x] ADR-0001 records the accepted decision and links to its source Draft.
 - [x] Draft and ADR lifecycle instructions are implemented and read back.
 - [x] The task template and task board require and display governing ADR references.
-- [ ] The Ledger creates Proposed task handoffs with ADR linkage marked pending.
+- [x] The Ledger creates Proposed task handoffs with ADR linkage marked pending.
 - [x] The decision-governance skill, workspace analysis area, and permanent ADR archive guidance exist.
 - [x] The Document Type Catalog contains all required active and reserved path rules.
 - [ ] Relevant hosted Document Standards and Ledger validation pass.
@@ -157,4 +157,5 @@ The implementation task must collect evidence for every criterion.
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
 | 2026-11-24 | Accepted | The user approved DRAFT-0001 revision 1 in this conversation. |
-| 2026-11-24 | Implementation in progress | Core governance files are committed and read back. Hosted Document Standards and Ledger validation remain pending after a catalog filename-pattern correction. |
+| 2026-11-24 | Implementation in progress | Core governance files are committed and read back. Hosted Document Standards and Ledger regression validation remain pending after the catalog and shared-template corrections. |
+| 2026-11-24 | Ledger handoff confirmed | The Ledger processed changed-document lint run 45403469914 and created three Proposed tasks. Each task and its board row marks Governing ADR(s) as Pending. See `reports/triage/ledger.json`, `workspace/task_board.md`, and task IDs 20261124-132754, 20261124-132754-01, and 20261124-132754-02. |
