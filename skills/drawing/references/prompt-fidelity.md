@@ -312,4 +312,4 @@ Use this checklist before every image generation or edit:
 - [ ] The generation prompt contains no reference to a prompt, earlier wording, previous instructions, or another external record.
 - [ ] The generation prompt contains no reference to an image, attachment, source image, or editing operation.
 
-**Generation gate:** Do not generate or edit until every applicable item passes. If an item does not pass, fix the prompt first. Do not weaken the rule to fetch an attempt through.
+**Generation gate:** Do not generate or edit until every applicable item passes. If an item does not pass, fix the prompt first. Do not weaken the rule to let an attempt proceed.
