@@ -525,7 +525,7 @@ After explicit user approval of this Draft revision:
 1. Create the implementation ADR under the process established by ADR-0001. The accepted ADR must record this proposal's own decision and scope. ADR-0001 governs the process but does not approve this proposal's substance or implementation.
 2. Create a separate implementation task that references the accepted ADR.
 3. Update the task template, Worker skill, Worker reference, workspace navigation, archive contract, and Document Type Catalog.
-4. Create the findings template and its directory README. Activate the path rule when the first real findings note is created.
+4. Create the findings template and its directory README. Activate the path rule in the same commit that adds the first real findings note.
 5. Update the CI Ledger renderer, regression tests, and operator guide in the same task.
 6. Read back every changed path and check all links and path-coverage rules.
 7. Use the appropriate GitHub-hosted validation workflow. Do not run scripts locally or poll CI.
