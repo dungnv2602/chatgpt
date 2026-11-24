@@ -93,6 +93,10 @@
     {
       "path": "archive/tasks/20261123-100738-remediate-hard-ste-lint-findings.md",
       "archived_at_utc": "2026-11-24T06:00:32Z"
+    },
+    {
+      "path": "archive/tasks/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md",
+      "archived_at_utc": "2026-11-24T07:05:00Z"
     }
   ]
 }
