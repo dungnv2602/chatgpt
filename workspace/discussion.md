@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 11:20 UTC — Verify hosted CI and renderer behavior:** Inspect the relevant Diagnostics runs and current source/test implementation for task-table rendering. Confirm whether hosted runner allocation recovered without label changes. Use exact run evidence and source state to decide which CI discussions can close and whether code or policy updates remain necessary.
+**2026-11-24 11:24 UTC — Create the CI discussion-resolution task:** Create one user-originated task from the canonical template for the three requested CI discussions. Record the verified report-retirement outcome, the remaining renderer/runner checks, and the required Worker-policy reconciliation. Set it as current execution while preserving the unrelated blocked Draft task.
 ## Open Discussions
 
 - **2026-11-24 10:46 UTC — Review the repository decision-governance proposal:** [DRAFT-0001 — Establish Draft-to-ADR Governance and Repository Analysis](draft/DRAFT-0001-repository-decision-governance-and-analysis.md). Review the proposed use of MADR, Draft and ADR lifecycles, task-to-ADR enforcement, permanent ADR archiving, the `workspace/analysis/` location and cadence, and the proposed `decision-governance` skill. The exact revision 1 is awaiting the user's decision. Do not create ADR-0001 until explicit approval.
