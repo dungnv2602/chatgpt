@@ -85,14 +85,27 @@ Study Planning with Files and determine how its durable planning, research captu
 - **References:** `skills/SESSION_START.md`; `skills/the-worker/SKILL.md`; `skills/the-worker/references/conversation-mode.md`; `skills/asd-ste100/SKILL.md`; `skills/github-actions/SKILL.md`; `skills/document-standards/SKILL.md`; external `OthmanAdi/planning-with-files` at `master`: `README.md`, `skills/planning-with-files/SKILL.md`, `skills/planning-with-files/reference.md`, `skills/planning-with-files/examples.md`.
 - **Next:** Inspect the remaining canonical templates, workflow guides, helper contracts, security notes, and tests. Then compare them with the repository's existing task and recovery model.
 
+### 2026-11-24 11:34 UTC — Complete the external Planning with Files review
+
+- **Action:** Reviewed the external canonical skill, the three planning templates, workflow and long-running task guides, security policy, plan inventory contract, resolver, completion checker, Stop-gate dispatcher, examples, context-engineering reference, and relevant resolver/template regression tests.
+- **Source version:** External branch `master`, release metadata `3.29.1`, branch head `aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228` (committed 2026-11-23 11:57:02 UTC). The skill blob at that revision is `e95f7dc8c5864a89ca51e2d40de45b2de82c0622`.
+- **Core mechanisms:** The project separates a phase plan (`task_plan.md`), a research/evidence store (`findings.md`), and a chronological run log (`progress.md`). It requires one explicit plan owner, records one exact next action, keeps phase markers machine-readable, and reads the selected plan before resume or major decisions.
+- **Task selection and isolation:** Named plan directories use an explicit `PLAN_ID` and optional project-root pin. An invalid pin or ambiguous plan selection fails closed. The shared active pointer is for sequential switching, not parallel-session binding. Workers report in their own ledgers or files while one orchestrator owns shared planning state.
+- **Reliability controls:** The skill requires phase updates, error logging, non-identical recovery attempts, and a three-attempt escalation guideline. Completion scripts validate the phase structure and statuses. Their validation does not prove that acceptance criteria or implementation are complete.
+- **Security controls:** External material belongs in the findings file and remains untrusted. The skill documents the limitations of delimiters, nonce framing, and SHA-256 attestation. Its v3 modes require attestation for plan injection and replace free-text progress injection with a structured ledger summary. The gate is host-dependent and includes block-count and stall limits.
+- **Lifecycle trade-offs:** The three files are working memory, not durable records by default. The external workflow documents that plans are commonly gitignored and are neither extracted nor archived automatically. It requires explicit user approval before archiving plans. It also distinguishes a valid phase-format check from proof of completion.
+- **Repository fit:** The external project assumes a local project filesystem, shell/PowerShell/Python helpers, and compatible agent lifecycle hooks. This repository uses GitHub-hosted files as its sole project workspace. It has no equivalent per-turn local hook runtime. Its Worker task record already owns task metadata, approvals, progress history, current state, recovery, verification, and handoff. A literal three-file transplant would duplicate these records and add unsupported runtime dependencies.
+- **Tests inspected, not executed:** `tests/test_check_complete_resolver.py` pins resolver compatibility, template phase counts, Next Step placement, and gate phase extraction. The external project also has many path, catchup, attestation, and adapter regression tests. No external tests or repository scripts were run.
+- **Path lookup correction:** An initial lookup for `docs/plan-inventory.md` returned 404. The canonical inventory was found at `skills/planning-with-files/plan-inventory.md`. The unavailable `docs/evals.md` path was not used.
+- **Next:** Compare these mechanisms against The Worker and the task renderer. Recommend only the parts that fit the current authority and runtime model.
+
 ## 7. Current State
 
-The task is In Progress. Foundational initialization passed. Workspace recovery confirmed that no task was in current execution before this task was created. DRAFT-0001 remains pending separate user review. The initial external review identified file-backed plans, findings, progress, recovery, task isolation, and lifecycle injection as core themes. No implementation changes are authorized.
+The task is In Progress. Foundational initialization passed. Workspace recovery confirmed that no task was in current execution before this task was created. DRAFT-0001 remains pending separate user review. The external review is complete at the inspected revision. Its useful mechanisms include phase status, one next step, evidence capture, explicit plan ownership, fail-closed task selection, structured recovery, and bounded completion checks. Its local hook and script architecture does not fit this repository's remote-only runtime. No implementation changes are authorized.
 
 ## 8. Remaining Work
 
-- Complete the external source review and note its version, mechanisms, evidence, and limitations.
-- Compare the external model with current Worker, task, discussion, and document contracts.
+- Compare the external model with current Worker, task, discussion, document, and CI Ledger renderer contracts.
 - Design the proposed file-backed planning workflow, including document ownership and the minimum required templates.
 - Determine whether a new task-specific skill is warranted and identify the exact integration changes.
 - Create a comprehensive Draft and link it in Open Discussions.
@@ -100,11 +113,10 @@ The task is In Progress. Foundational initialization passed. Workspace recovery 
 
 ## 9. Next Actions
 
-1. Inspect the external plan/findings/progress templates and workflow, security, recovery, and test documentation.
-2. Inspect the external helper scripts and lifecycle adapters as reference material only. Do not copy or run them.
-3. Compare the mechanisms with the current repository contracts and identify integration risks.
-4. Prepare a comprehensive proposal and record its review question in `workspace/discussion.md`.
-5. Read back all changed paths and leave the task in the correct state.
+1. Map external plan, findings, progress, isolation, recovery, and completion mechanisms to existing Worker records.
+2. Specify the minimum viable and full repository-specific adoption choices.
+3. Draft the proposal and cross-link DRAFT-0001 without changing it.
+4. Update the discussion register and task board, then read back every changed path.
 
 ## 10. References
 
