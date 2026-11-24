@@ -84,6 +84,15 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 
 ## 6. Progress Log
 
+### 2026-11-24 04:50 UTC — Verify pending-run reconciliation and regression fixes
+
+- **Action:** Inspected the current reporter, reporter tests, Ledger, Ledger tests, diagnostic sweep workflow, report README, current report index, and this task record on branch `gpt`. Verified commits `e25f8e779103fb4ed91bc00b6c54e2c0952a49e7`, `ce2e9c46fffd0430649af483e0cf46c7be029e0a`, and `800656f756313248484b29a9b58070511d65e95f`.
+- **Result:** The prior diagnostics test defects are corrected in the current branch: `LINT_BASELINE_CHECKS` is defined and used by `lint_baseline_ready()`; the Ledger test helper signature is syntactically valid; regression coverage checks every required baseline tooling check. The reporter's `run_sweep()` revisits pending run IDs, captures completed runs at `post_run`, and clears pending IDs only after complete capture, retry exhaustion, or confirmation that the completed run is not actionable. The new regression test verifies separate immutable pre-finalizer/post-run history, latest-pointer precedence, pending-ID removal, and preservation of the original preliminary report.
+- **Current evidence:** The repository-wide Actions report index still contains 21 pending run IDs and has watermark `2026-11-23T23:38:33Z`. The newest indexed report is still a preliminary capture for run `45312561050`. The report README describes later-sweep reconciliation. No GitHub Actions run was queried during this inspection, so hosted validation and the current live state of those pending runs remain unverified.
+- **References:** [Ledger regression fix](https://github.com/dungnv2602/chatgpt/commit/e25f8e779103fb4ed91bc00b6c54e2c0952a49e7); [pending-run regression test](https://github.com/dungnv2602/chatgpt/commit/ce2e9c46fffd0430649af483e0cf46c7be029e0a); [task checkpoint](https://github.com/dungnv2602/chatgpt/commit/800656f756313248484b29a9b58070511d65e95f); `reports/gh_ac_reports/index.json`; `reports/gh_ac_reports/scripts/report.py`; `reports/gh_ac_reports/scripts/test_report.py`; `reports/triage/scripts/ledger.py`; `reports/triage/scripts/test_ledger.py`.
+- **Next:** Keep the task In Progress. Allow the normal push-triggered diagnostics workflow to validate the changes and reconcile eligible pending runs. Do not execute repository code locally, manually dispatch workflows, or poll Actions.
+ 
+
 ### 2026-11-24 04:36 UTC — Cover pending-run finalization
 
 - **Action:** Added regression test `test_completed_pending_run_gets_post_run_capture_and_clears_pending` in `reports/gh_ac_reports/scripts/test_report.py`.
