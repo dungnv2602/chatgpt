@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 16:22 UTC — Implement ADR-0002 lifecycle changes:** Update the decision-governance skill, Draft and ADR templates and indexes, workspace navigation, archive guidance, and Document Type Catalog. Define promotion-pending as a temporary non-authoritative ADR state, remove promoted as a Draft status, and document verified source deletion and cleanup recovery. Preserve unrelated task records and all accepted ADR decision content.
+**2026-11-24 16:32 UTC — Finalize DRAFT-0001 retirement and validate the implementation:** Remove the temporary cleanup-pending entry after confirming the remaining known references. Delete DRAFT-0001 only after the accepted ADR and completeness gates pass. Read back the source path, indexes, and all changed files. Then inspect the hosted Document Standards result and update ADR-0002 Confirmation.
 
 ## Open Discussions
 
