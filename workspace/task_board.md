@@ -8,14 +8,13 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## Current Execution
 
-**20261124-103354** — [Establish draft-to-ADR governance and repository analysis workflow](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**20261124-111700** — [Resolve CI logging, report-retirement, renderer and runner discussions](tasks/20261124-111700-resolve-ci-discussion-items.md)
 
 ## In Progress
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-
-
+| 20261124-111700 | Resolve CI logging, report-retirement, renderer and runner discussions | P1 | In Progress | User | 2026-11-24 | [Task record](tasks/20261124-111700-resolve-ci-discussion-items.md) |
 
 ## Ready
 
