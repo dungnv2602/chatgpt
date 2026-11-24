@@ -387,10 +387,10 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(result["reports_processed"],0)
         self.assertTrue(migrated["updated_at_utc"])
 
-    def test_migrate_1_1_hands_off_unlinked_lint_findings(self):
+    def test_migrate_1_1_hands_off_unlinked_lint_findings_at_all_severities(self):
         finding = {
             "finding_id":"lint-a1b2c3d4e5f6","source_family":"lint","category":"semicolon","title":"A finding",
-            "status":"planned","severity":"medium","owner":None,
+            "status":"open","severity":"low","owner":None,
             "first_seen_utc":"2026-11-23T07:00:00Z","last_seen_utc":"2026-11-23T07:00:00Z",
             "occurrence_count":1,"evidence":[{"report_path":"reports/lint_reports/on_repo/history/1-attempt-1/report.json",
                 "observed_at_utc":"2026-11-23T07:00:00Z","observation_id":"lint:1:1",
@@ -398,7 +398,7 @@ class LedgerTests(unittest.TestCase):
             "duplicate_of":None,"accepted_risk":None,
         }
         second = dict(finding)
-        second.update({"finding_id":"lint-b2c3d4e5f6a7","title":"Second finding"})
+        second.update({"finding_id":"lint-b2c3d4e5f6a7","title":"Second finding","severity":"informational"})
         second["evidence"] = [{"report_path":"reports/lint_reports/on_changed/history/2-attempt-1/report.json",
             "observed_at_utc":"2026-11-23T07:00:00Z","observation_id":"lint:2:1",
             "note":"on_changed · docs/example.md:8:1"}]
@@ -414,6 +414,7 @@ class LedgerTests(unittest.TestCase):
         task_text = task_files[0].read_text(encoding="utf-8")
         self.assertIn("lint-a1b2c3d4e5f6", task_text)
         self.assertIn("lint-b2c3d4e5f6a7", task_text)
+        self.assertIn("- **Priority:** P3", task_text)
 
         self.add_lint("on_repo", "901", "2026-11-23T07:10:00Z", fingerprint="a1b2c3d4e5f6")
         LEDGER.ingest(self.root, now="2026-11-23T07:11:00Z")
