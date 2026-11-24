@@ -391,7 +391,7 @@ class LedgerTests(unittest.TestCase):
 
     def test_lint_baseline_requires_every_tooling_check_but_allows_lint_findings(self):
         path = self.add_lint("on_changed", "948", "2026-11-23T07:00:00Z", status="Failed")
-        report = json.loads(Path(path).read_text(encoding="utf-8"))
+        report = json.loads((self.root / path).read_text(encoding="utf-8"))
         self.assertTrue(LEDGER.lint_baseline_ready(report, "on_changed"))
 
         for name in LEDGER.LINT_BASELINE_CHECKS:

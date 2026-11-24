@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-054904
 - **Created:** 2026-11-23 05:49 UTC
-- **Updated:** 2026-11-24 06:10 UTC
+- **Updated:** 2026-11-24 06:25 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -83,6 +83,15 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - Do not start unrelated cleanup or fix the existing lint findings as part of this reporting task.
 
 ## 6. Progress Log
+
+### 2026-11-24 06:25 UTC — Correct the follow-up CI test-fixture failures
+
+- **Action:** Corrected the Ledger test to resolve the relative report path against its temporary repository root. Added both Takeout generator authority files to the Document Standards test fixture so the validator can verify the optional coverage row inside the temporary repository.
+- **CI evidence reviewed:** Diagnostics run [#509](https://github.com/dungnv2602/chatgpt/actions/runs/45338489440) failed at the Ledger test; Document Standards run [#265](https://github.com/dungnv2602/chatgpt/actions/runs/45338489454) failed in both new Takeout coverage tests because their authority files were absent from the fixture. The incidental full-audit lint run [#591](https://github.com/dungnv2602/chatgpt/actions/runs/45338489436) found 117 hard findings across 14 files; its tooling checks all passed. Its two new findings are advisory only.
+- **Scope:** This correction does not alter lint thresholds or repair unrelated lint debt. The full-audit lint failure remains separate from this task.
+- **Validation:** Changes are prepared for one commit on `gpt`. No local repository tests were executed. No workflow was manually dispatched or polled.
+- **Next:** Review the naturally triggered diagnostics and Document Standards runs. Keep the task In Progress until required hosted validation and pending-run reconciliation criteria are met.
+
 
 ### 2026-11-24 06:10 UTC — Fix hosted Ledger and Document Standards blockers
 

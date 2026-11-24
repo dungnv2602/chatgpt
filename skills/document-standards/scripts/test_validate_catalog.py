@@ -31,6 +31,8 @@ class CatalogValidatorTests(unittest.TestCase):
         self.write("skills/example/test_processor.py")
         self.write("skills/example/generator.py")
         self.write("skills/example/test_generator.py")
+        self.write("skills/the-worker/scripts/process_takeout.py")
+        self.write("skills/the-worker/scripts/test_process_takeout_unittest.py")
         self.write("master/Example.md")
         self.write("novels/WORKFLOW.md")
         self.write("skills/drawing/SKILL.md")
