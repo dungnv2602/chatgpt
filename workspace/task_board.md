@@ -8,14 +8,14 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## Current Execution
 
-**20261123-054904** — [Build GitHub Actions diagnostic reports and remove the CI preflight gate](tasks/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md)
+**20261123-100738** — [Remediate hard STE lint findings](tasks/20261123-100738-remediate-hard-ste-lint-findings.md)
 
 ## In Progress
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
 | 20261123-225745 | Repair CI ledger task generation workflow | P1 | In Progress | User | 2026-11-23 | [Task record](tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md) |
-| 20261123-100738 | Remediate hard STE lint findings | P1 | In Progress | Assistant | 2026-11-23 | [Task record](tasks/20261123-100738-remediate-hard-ste-lint-findings.md) |
+| 20261123-100738 | Remediate hard STE lint findings | P1 | In Progress | Assistant | 2026-11-24 | [Task record](tasks/20261123-100738-remediate-hard-ste-lint-findings.md) |
 | 20261123-054904 | Build GitHub Actions diagnostic reports and remove the CI preflight gate | P1 | In Progress | User | 2026-11-24 | [Task record](tasks/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md) |
 
 ## Ready
