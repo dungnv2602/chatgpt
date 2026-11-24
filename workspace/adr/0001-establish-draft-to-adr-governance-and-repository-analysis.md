@@ -13,7 +13,7 @@ source_draft: "DRAFT-0001"
 related_adrs: []
 supersedes: []
 superseded_by: null
-implementation_status: "in-progress"
+implementation_status: "complete"
 implementation_tasks:
   - "20261124-103354"
 review_triggers:
@@ -114,7 +114,7 @@ The implementation task must collect evidence for every criterion.
 - [x] The decision-governance skill, workspace analysis area, and permanent ADR archive guidance exist.
 - [x] The Document Type Catalog contains all required active and reserved path rules.
 - [x] Relevant hosted Document Standards and Ledger validation pass.
-- [ ] The implementation task is complete and archived. Then move this ADR to `archive/adr/`.
+- [x] The implementation task is complete and archived. This ADR is now moved to `archive/adr/`.
 
 ## Pros and Cons of the Options
 
@@ -160,3 +160,4 @@ The implementation task must collect evidence for every criterion.
 | 2026-11-24 | Implementation in progress | Core governance files are committed and read back. Hosted Document Standards and Ledger regression validation remain pending after the catalog and shared-template corrections. |
 | 2026-11-24 | Ledger handoff confirmed | The Ledger processed changed-document lint run 45403469914 and created three Proposed tasks. Each task and its board row marks Governing ADR(s) as Pending. See `reports/triage/ledger.json`, `workspace/task_board.md`, and task IDs 20261124-132754, 20261124-132754-01, and 20261124-132754-02. |
 | 2026-11-24 | Latest hosted governance validation confirmed | Document Standards run 45412245960 passed 37 Ledger tests, 32 catalog tests, and catalog validation on commit 6e1cf47. Diagnostics run 45412246098 passed reporter validation, backfill, Ledger ingestion, and publication. Commit b1e6ca6 shortened two catalog sentences identified by lint #626. Lint #627 and Document Standards #311 are pending. |
+| 2026-11-24 | Implementation complete and confirmed; ADR archived | Task [20261124-103354](../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md) was archived Done in commit [2dec8d4](https://github.com/dungnv2602/chatgpt/commit/2dec8d42e89568056c96a1d678c06a1430c20711). Changed-document lint [#636](https://github.com/dungnv2602/chatgpt/actions/runs/45421670881) passed with zero hard findings and published its report. Document Standards [#320](https://github.com/dungnv2602/chatgpt/actions/runs/45421670850) passed 37 Ledger tests, 32 catalog tests, and catalog validation. Diagnostics [#587](https://github.com/dungnv2602/chatgpt/actions/runs/45421671015) passed reporter tests, backfill, Ledger ingestion, and publication on commit 4dfbde6. |
