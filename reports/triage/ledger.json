@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-24T13:35:29Z",
+  "updated_at_utc": "2026-11-24T13:42:25Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
@@ -144,6 +144,7 @@
       "reports/gh_ac_reports/history/427313089/45399356660-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/427313089/45399711310-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45399711310-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/427313089/45404822403-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45404822403-attempt-1-pre_finalizer/report.json",
       "reports/lint_reports/on_changed/history/45301729061-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45304735363-attempt-1/report.json",
@@ -9346,6 +9347,35 @@
         "20261124-132754-02"
       ],
       "task_group": "ci-ea100fd8d5708f21"
+    },
+    {
+      "finding_id": "gha-7993fcb8b815dfeed2652722",
+      "source_family": "github_actions",
+      "category": "validation_or_test",
+      "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: validation_or_test — <timestamp> traceback (most recent call last):",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T13:42:18Z",
+      "last_seen_utc": "2026-11-24T13:42:18Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/gh_ac_reports/history/427313089/45404822403-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45404822403",
+          "observed_at_utc": "2026-11-24T13:42:18Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45404822403:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-134225"
+      ],
+      "task_group": "ci-020528f498f632ac"
     }
   ]
 }
