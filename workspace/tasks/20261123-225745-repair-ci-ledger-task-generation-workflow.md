@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261123-225745
 - **Created:** 2026-11-23 22:57 UTC
-- **Updated:** 2026-11-23 23:41 UTC
+- **Updated:** 2026-11-24 01:00 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -104,6 +104,17 @@ Restore reliable event-driven task generation and lifecycle management for CI fi
 - **Result:** A non-full or tooling-invalid lint candidate is now marked processed once with a warning while leaving its scope baseline unseeded. This prevents the same immutable report from being retried and logged on every sweep; a later valid full audit can still seed the scope. Added tests for one-shot invalid-baseline handling and for grouped tasks where one finding remains open. The first natural post-reset run, Document Standards run [45290888511](https://github.com/dungnv2602/chatgpt/actions/runs/45290888511), has only an Incomplete pre-finalizer capture because its source job was still in progress. It created no Ledger finding. The run remains pending for post-run capture.
 - **References:** Supplemental commit [59df9ea](https://github.com/dungnv2602/chatgpt/commit/59df9eab2f568605ab94d84fefec5b787f477448); reports/triage/scripts/ledger.py; reports/triage/scripts/test_ledger.py; reports/triage/README.md.
 - **Next:** Allow the natural post-run capture and hosted regression results to arrive. Do not poll or dispatch workflows.
+
+### 2026-11-24 01:00 UTC
+
+- **Action:** Repaired CI Ledger lifecycle triggers, writer queue retention, Document Standards reset compatibility, and the catalog-validation trigger filter.
+- **Result:** Commit [4afaa2c](https://github.com/dungnv2602/chatgpt/commit/4afaa2c2211858b0455eaf29c523b32eb16e012c) adds an `Optional` coverage state limited to Generator-owned output families. Optional outputs may be absent after a clean reset, but every present Markdown file must still match a registered pattern. All six generated Actions/lint coverage rules now use Optional. Three regression tests cover an empty family, a populated family, and rejection on non-Generator-owned classes. Catalog version is 1.9.
+- **Result:** All ten shared report-writer declarations across seven workflows now specify `queue: max` and `cancel-in-progress: false`. The Ledger regression suite now verifies every declaration and its exact order. Publisher handoffs remain sequential; the writer group is not held while waiting for another writer.
+- **Result:** The diagnostics workflow now reacts to both `archive/tasks/**` and retention-index updates. The existing `retire_completed_task_findings()` implementation already enforced the safe terminal/Done/indexed gate; the missing index-update trigger left a race between the archive-copy commit and the retention-index commit. A second sweep now runs after registration. The operator guide and regression test reflect this.
+- **Result:** The Document Standards workflow excludes `workspace/discussion.md` from its Markdown path filter, preventing routine register edits from repeatedly launching full catalog validation.
+- **Verification:** Read back all 14 modified paths at commit [4afaa2c](https://github.com/dungnv2602/chatgpt/commit/4afaa2c2211858b0455eaf29c523b32eb16e012c). Readback confirmed ten queued writer declarations, six Optional generated-output rules, retention-index trigger coverage, and the discussion-file exclusion. Regression tests were added but were not run locally; hosted results are intentionally not polled.
+- **Current evidence:** The Ledger has zero findings and seven processed Actions reports; both lint baseline flags remain false. The Actions index has seven pending incomplete pre-finalizer run IDs and no exhausted IDs. The newest capture is [45300893308](https://github.com/dungnv2602/chatgpt/actions/runs/45300893308), an incomplete pre-finalizer capture against the pre-repair commit, with a projected catalog-validation failure. It does not establish a final workflow conclusion.
+- **Next:** Allow the normal hosted workflows to validate the repair. Verify natural test results, clean-reset catalog validation, both lint baseline seeds, bounded retries, grouped task handoff, and archive/index-triggered Ledger retirement. Keep this task In Progress; do not dispatch, poll, backfill, or manually clear findings.
 
 ## 7. Current State
 
