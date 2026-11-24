@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 07:55 UTC — Inspect the latest Diagnostics, Full Lint, and Document Standards run payloads plus committed report indexes and task-generator state. Determine whether failures occurred before runner steps or inside task ingestion, then isolate the in-scope defect before editing.**
+**2026-11-24 08:00 UTC — Audit the Ledger generator, regression suite, task renderer contract, and Diagnostics workflow against the task's remaining acceptance criteria. Identify any concrete in-scope defect that explains the missing task handoff; avoid changes based only on runnerless CI failures.**
 
 ## Open Discussions
 
