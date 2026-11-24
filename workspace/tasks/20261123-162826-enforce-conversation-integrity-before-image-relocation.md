@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261123-162826
 - **Created:** 2026-11-23 16:28 UTC
-- **Updated:** 2026-11-24 01:26:44 UTC
+- **Updated:** 2026-11-24 01:35:00 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -115,9 +115,15 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 - **Verification limits:** The six implementation paths were read back from branch `gpt` and their blob SHAs matched the implementation commit. Regression tests were added but not executed locally; hosted results are pending the user's manual workflow run. No image has yet been converted or relocated by this change.
 - **Next:** Manually dispatch `Process Image Takeout and Create WebP Derivatives` on branch `gpt`. After that run succeeds and the residual hand-off is Draft with seven entries, dispatch `Convert Unclassified Takeout Images to WebP` with the seven exact filenames. That workflow creates derivatives only; the user retains relocation and index-edit authority.
 
+### 2026-11-24 01:35 UTC
+
+- **Action:** Inspected manual workflow run [45305320198](https://github.com/dungnv2602/chatgpt/actions/runs/45305320198), its jobs, and the failed regression output.
+- **Result:** The run completed with failure. Compilation passed. The processor suite ran 45 tests and failed 15. The processing step was skipped, so no source image was staged, converted, or relocated. The test failures share a validator defect: both production validators search for plain `Generation ID:`, `Output ID:`, and `Asset ID:` labels, but the retained attempt records use bold Markdown labels such as `**Generation ID:**`. The test fixture also omitted `output_id` when it generated its expected conversation mapping and attempt identity. The diagnostic sidecar failed separately in its Ledger test import and baseline-name resolution; this does not change the source workflow result and is outside this task's scope.
+- **Next:** Update both validators to accept the existing bold labels. Correct the fixture to map and record `output_id` when no native Generation ID is supplied. Commit and read back the exact files, then rerun the normal workflow after the repair is on `gpt`.
+
 ## 7. Current State
 
-The branch `gpt` contains implementation commit [048eaf0](https://github.com/dungnv2602/chatgpt/commit/048eaf0ba9c4eeb43ae6198972f2aa807d3d679b). The processor now separates exact `images/unclassified` quarantine entries from provenance-mapped items. It still requires exact coverage of every top-level intake image. It validates conversation and attempt evidence for every item it processes, processes only mapped entries, reports quarantined entries as `DEFERRED_UNCLASSIFIED`, and leaves them in a residual Draft hand-off after successful mapped processing. A Ready hand-off that contains no mapped items fails closed.
+The branch `gpt` contains implementation commit [048eaf0](https://github.com/dungnv2602/chatgpt/commit/048eaf0ba9c4eeb43ae6198972f2aa807d3d679b). The first manual run, [45305320198](https://github.com/dungnv2602/chatgpt/actions/runs/45305320198), compiled the scripts but failed 15 of 45 regression tests before processing. No takeout files were changed by that run. The validator and fixture repair is now prepared for commit. The processor now separates exact `images/unclassified` quarantine entries from provenance-mapped items. It still requires exact coverage of every top-level intake image. It validates conversation and attempt evidence for every item it processes, processes only mapped entries, reports quarantined entries as `DEFERRED_UNCLASSIFIED`, and leaves them in a residual Draft hand-off after successful mapped processing. A Ready hand-off that contains no mapped items fails closed.
 
 The intake contains eighteen original PNGs. Eleven items map to attempts 04–06 and 09–16 through the retained partial conversation-integrity records and attempt notes. Seven items remain unclassified. Their original bytes remain in `images/takeout/`; no image has yet been converted or relocated by the latest change. The hand-off is now `status: ready`, with all eighteen exact source files accounted for.
 
@@ -127,7 +133,7 @@ After a successful normal run, eleven originals and their WebP derivatives will 
 
 ## 8. Remaining Work
 
-- The user manually dispatches the normal takeout workflow on branch `gpt`. Its hosted regression suite must pass before processing starts.
+- Repair the Markdown identity-label parsing in both production validators and correct the regression fixture's Output ID mapping. The failed run did not start processing.
 - Verify that the workflow publishes the eleven mapped original/WebP pairs and keeps all seven unclassified originals unchanged in intake.
 - Verify that the active hand-off contains only the seven unclassified entries with `status: draft`.
 - After the normal run succeeds, the user manually dispatches the unclassified conversion workflow with the exact seven filenames.
@@ -136,12 +142,13 @@ After a successful normal run, eleven originals and their WebP derivatives will 
 - Keep the task In Progress until hosted tests, mapped publication, the residual hand-off, and unclassified conversion are verified.
 ## 9. Next Actions
 
-1. Manually dispatch `Process Image Takeout and Create WebP Derivatives` on branch `gpt`.
-2. Let the run finish. Check that its regression tests pass and that the eleven mapped assets and WebP derivatives are published and verified.
-3. Confirm that the seven unclassified originals remain in intake and that `HANDOFF.yml` is Draft with only those seven entries.
-4. Manually dispatch `Convert Unclassified Takeout Images to WebP` on branch `gpt`. Supply the exact seven filenames listed in the intake inventory.
-5. Confirm that all seven derivatives are published and all seven source PNGs remain unchanged.
-6. Keep relocation and index changes under the user's explicit direction.
+1. Commit and read back the validator and regression-fixture repair on branch `gpt`.
+2. Manually dispatch `Process Image Takeout and Create WebP Derivatives` on branch `gpt`.
+3. Check that compilation and all regression tests pass before processing starts.
+4. Verify publication of the eleven mapped original/WebP pairs and confirm the seven unclassified originals remain unchanged in intake with a seven-entry residual Draft hand-off.
+5. Manually dispatch `Convert Unclassified Takeout Images to WebP` on branch `gpt` with the seven exact unclassified filenames.
+6. Verify publication of all seven derivatives and confirm all seven source PNGs remain unchanged.
+7. Keep relocation and index changes under the user's explicit direction.
 
 ## 10. References
 

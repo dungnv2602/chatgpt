@@ -166,11 +166,11 @@ def verify_conversation_record(row: dict[str, str], session_date: str,
     if not generation_id:
         return f"Manifest is missing a generation or output identity for {source_filename}."
     generation_token = re.escape(chr(96) + generation_id + chr(96))
-    generation_pattern = re.compile(r"Generation ID:\s*" + generation_token, re.IGNORECASE)
-    output_pattern = re.compile(r"Output ID:\s*" + generation_token, re.IGNORECASE)
+    generation_pattern = re.compile(r"Generation ID:\*{0,2}\s*" + generation_token, re.IGNORECASE)
+    output_pattern = re.compile(r"Output ID:\*{0,2}\s*" + generation_token, re.IGNORECASE)
     source_asset_id = (row.get("source_asset_id") or "").strip()
     asset_pattern = re.compile(
-        r"Asset ID:\s*" + re.escape(chr(96) + source_asset_id + chr(96)),
+        r"Asset ID:\*{0,2}\s*" + re.escape(chr(96) + source_asset_id + chr(96)),
         re.IGNORECASE,
     ) if source_asset_id else None
     attempt_lines = attempt_text.splitlines()

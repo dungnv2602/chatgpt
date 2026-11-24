@@ -93,7 +93,7 @@ class TakeoutProcessorTests(unittest.TestCase):
                 item.setdefault("native_generation_id", f"native-test-generation-{index:03d}")
             attempt = str(item.get("attempt", "")).strip()
             attempt = attempt.zfill(2) if attempt else "Not applicable"
-            generation_id = item.get("native_generation_id") or "Not applicable"
+            generation_id = item.get("native_generation_id") or item.get("output_id") or "Not applicable"
             source_asset_id = item.get("source_asset_id") or "Not applicable"
             record_groups.setdefault((record_path, session_date), []).append(
                 (item["source"], attempt, source_asset_id, generation_id)
@@ -108,9 +108,14 @@ class TakeoutProcessorTests(unittest.TestCase):
                         identity_lines.append(
                             "- **Asset ID:** " + chr(96) + item["source_asset_id"] + chr(96)
                         )
-                    identity_lines.append(
-                        "- **Generation ID:** " + chr(96) + item["native_generation_id"] + chr(96)
-                    )
+                    if item.get("native_generation_id"):
+                        identity_lines.append(
+                            "- **Generation ID:** " + chr(96) + item["native_generation_id"] + chr(96)
+                        )
+                    elif item.get("output_id"):
+                        identity_lines.append(
+                            "- **Output ID:** " + chr(96) + item["output_id"] + chr(96)
+                        )
                     for identity_line in identity_lines:
                         if identity_line not in existing:
                             existing = existing.rstrip() + "\n" + identity_line + "\n"

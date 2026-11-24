@@ -374,10 +374,10 @@ def validate_conversation_record(value: Any, root: Path, source_name: str,
                 f"{source_name}: cannot read attempt record {attempt_path.relative_to(root).as_posix()}: {exc}"
             ) from exc
         generation_token = re.escape(chr(96) + generation_id + chr(96))
-        generation_pattern = re.compile(r"Generation ID:\s*" + generation_token, re.IGNORECASE)
-        output_pattern = re.compile(r"Output ID:\s*" + generation_token, re.IGNORECASE)
+        generation_pattern = re.compile(r"Generation ID:\*{0,2}\s*" + generation_token, re.IGNORECASE)
+        output_pattern = re.compile(r"Output ID:\*{0,2}\s*" + generation_token, re.IGNORECASE)
         asset_pattern = re.compile(
-            r"Asset ID:\s*" + re.escape(chr(96) + source_asset_id + chr(96)),
+            r"Asset ID:\*{0,2}\s*" + re.escape(chr(96) + source_asset_id + chr(96)),
             re.IGNORECASE,
         ) if source_asset_id else None
         attempt_lines = attempt_text.splitlines()
