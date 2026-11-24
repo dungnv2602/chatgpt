@@ -11,10 +11,6 @@ This folder stores proposals that require a user decision.
 
 - [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](DRAFT-0002-phase-aware-planning-and-evidence-capture.md) — In review. User approval is pending.
 
-## Promotion Cleanup Pending
-
-- [DRAFT-0001 — Establish Draft-to-ADR Governance and Repository Analysis](DRAFT-0001-repository-decision-governance-and-analysis.md) — ADR-0001 passed the rationale coverage review. The source remains only until the approved migration completes under [ADR-0002](../adr/0002-retire-source-drafts-after-verified-adr-promotion.md).
-
 ## Workflow
 
 1. Create one Draft for each decision that may change repository structure, policy, architecture, workflow, or long-lived practice.
