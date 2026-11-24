@@ -15,7 +15,8 @@ related_adrs:
 supersedes: []
 superseded_by: null
 implementation_status: "not-started"
-implementation_tasks: []
+implementation_tasks:
+  - "20261124-160500"
 review_triggers:
   - "A promotion completeness check fails."
   - "A source Draft cannot be deleted after ADR acceptance."
