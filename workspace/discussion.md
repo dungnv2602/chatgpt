@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-24 — Recover the active Image Takeout task and inspect the latest hosted CI evidence.** Read the workspace guide, task board, and authoritative task record. Then inspect the latest relevant workflow run, job logs, artifacts, and repository outputs to confirm whether conversion and publication actually occurred.
+- **2026-11-24 — Inspect the latest Image Takeout CI run and verify published outputs.** Read the Actions evidence index, identify the latest run for the current `gpt` branch and workflow, inspect its jobs and logs, then compare its claims with committed files, hand-off state, and source/derivative inventories.
 
 ## Open Discussions
 
