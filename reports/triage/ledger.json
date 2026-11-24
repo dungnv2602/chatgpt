@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-24T15:38:25Z",
+  "updated_at_utc": "2026-11-24T15:54:21Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
@@ -84,7 +84,9 @@
       "reports/gh_ac_reports/history/424715662/45416245734-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424715662/45416735141-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45416735141-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/424715662/45427179335-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45427179335-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/424715662/45427379012-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45427379012-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424743410/45301729199-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424743410/45301729199-attempt-1-pre_finalizer/report.json",
@@ -182,6 +184,7 @@
       "reports/gh_ac_reports/history/427313089/45424211881-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/427313089/45427179303-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45427179303-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/427313089/45427379042-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45427379042-attempt-1-pre_finalizer/report.json",
       "reports/lint_reports/on_changed/history/45301729061-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45304735363-attempt-1/report.json",
@@ -9912,8 +9915,8 @@
       "severity": "high",
       "owner": null,
       "first_seen_utc": "2026-11-24T15:07:17Z",
-      "last_seen_utc": "2026-11-24T15:07:17Z",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T15:54:08Z",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/gh_ac_reports/history/424715662/45416735141-attempt-1-post_run/report.json",
@@ -9921,6 +9924,13 @@
           "observed_at_utc": "2026-11-24T15:07:17Z",
           "note": "Lint changed Markdown files and publish detailed evidence / Generate and publish changed-document lint evidence",
           "observation_id": "github_actions:424715662:45416735141:1"
+        },
+        {
+          "report_path": "reports/gh_ac_reports/history/424715662/45427179335-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45427179335",
+          "observed_at_utc": "2026-11-24T15:54:08Z",
+          "note": "Lint changed Markdown files and publish detailed evidence / Generate and publish changed-document lint evidence",
+          "observation_id": "github_actions:424715662:45427179335:1"
         }
       ],
       "resolution": null,
@@ -9970,8 +9980,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T15:35:24Z",
-      "last_seen_utc": "2026-11-24T15:36:40Z",
-      "occurrence_count": 2,
+      "last_seen_utc": "2026-11-24T15:54:20Z",
+      "occurrence_count": 3,
       "evidence": [
         {
           "report_path": "reports/gh_ac_reports/history/427313089/45424211881-attempt-1-post_run/report.json",
@@ -9986,6 +9996,13 @@
           "observed_at_utc": "2026-11-24T15:36:40Z",
           "note": "validate-document-standards / Validate the document type catalog",
           "observation_id": "github_actions:427313089:45427179303:1"
+        },
+        {
+          "report_path": "reports/gh_ac_reports/history/427313089/45427379042-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45427379042",
+          "observed_at_utc": "2026-11-24T15:54:20Z",
+          "note": "validate-document-standards / Validate the document type catalog",
+          "observation_id": "github_actions:427313089:45427379042:1"
         }
       ],
       "resolution": null,

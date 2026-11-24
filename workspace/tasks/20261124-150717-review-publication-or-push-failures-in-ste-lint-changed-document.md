@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-150717
 - **Created:** 2026-11-24 15:07 UTC
-- **Updated:** 2026-11-24 15:07 UTC
+- **Updated:** 2026-11-24 15:54 UTC
 - **Priority:** P1
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -91,4 +91,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `gha-f04b588b537a96b00c56b6ae` | high | STE Lint Changed Documentation / Lint changed Markdown files and publish detailed evidence / Generate and publish changed-document lint evidence: publication\_or\_push | [report](../../reports/gh_ac_reports/history/424715662/45416735141-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45416735141) |
+| `gha-f04b588b537a96b00c56b6ae` | high | STE Lint Changed Documentation / Lint changed Markdown files and publish detailed evidence / Generate and publish changed-document lint evidence: publication\_or\_push | [report](../../reports/gh_ac_reports/history/424715662/45416735141-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45416735141) · [report](../../reports/gh_ac_reports/history/424715662/45427179335-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45427179335) |

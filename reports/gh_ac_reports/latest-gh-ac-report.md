@@ -1,43 +1,43 @@
-# STE Lint Changed Documentation — run 45427379012
+# Validate Document Standards — run 45427379042
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | STE Lint Changed Documentation |
-| Workflow path | .github/workflows/ste-lint-changed.yml |
-| Run / attempt | 45427379012 / 1 |
-| Run number | 641 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45427379012 |
+| Workflow | Validate Document Standards |
+| Workflow path | .github/workflows/validate-document-standards.yml |
+| Run / attempt | 45427379042 / 1 |
+| Run number | 325 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45427379042 |
 | Branch | gpt |
 | Commit | f3d11e25cdcc4335102725e51a5e4a20d1921753 |
 | Event | push |
 | Actor | dungnv2602 |
 | Created (UTC) | 2026-11-24T15:35:59Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | failure |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-24T15:38:25Z |
+| Status at capture | completed |
+| Observed conclusion | failure |
+| Projected conclusion | Not calculated |
+| Reporter job | completed / success |
+| Capture stage | post_run |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-24T15:54:20Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
+| State | failure |
 | Primary category | validation_or_test |
-| Jobs | 2 |
-| Steps | 17 |
+| Jobs | 1 |
+| Steps | 9 |
 | Issues | 1 |
-| Annotations | 3 |
+| Annotations | 2 |
 | Artifacts | 0 |
-| Capture errors | 2 |
+| Capture errors | 0 |
 
 ## Failure classification
 
-validation_or_test The parent run is still in progress. The projected conclusion is provisional.
+validation_or_test
 
 The report records an actionable workflow failure or operational exception. Ordinary successful runs and cancellation-only runs are not captured by default. A successful run is retained when a step failed but the workflow allowed it to continue. A cancelled run is retained only when it contains an independent actionable failure. Known downstream status-propagation steps after cancellation are excluded. Explicit run-backfill requests can override the default capture filter.
 
@@ -45,22 +45,20 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 138563725972 | Find lint baseline and select execution mode | completed | success | 3 | logs/job-138563725972.log |
-| 138563866669 | Lint changed Markdown files and publish detailed evidence | completed | failure | 14 | logs/job-138563866669.log |
+| 138563239872 | validate-document-standards | completed | failure | 9 | logs/job-138563239872.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 138563866669 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | Step conclusion: failure |
+| validation_or_test | 138563239872 | 6 | Validate the document type catalog | Blocking | medium | 2026-11-24T15:36:34.1523688Z ERROR: Line 140: Markdown coverage pattern matches no in-scope document: 'workspace/adr/????-*.md'. |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 138563866669 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 138563866669 | failure | .github | 21 |  | Process completed with exit code 1. |
-| 138563866669 | failure | .github | 20 |  | Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md. |
+| 138563239872 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 138563239872 | failure | .github | 14 |  | Process completed with exit code 1. |
 
 ## Artifacts
 
@@ -70,21 +68,15 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 138563725972 | Find lint baseline and select execution mode | logs/job-138563725972.log | 82 | False |  |
-| 138563866669 | Lint changed Markdown files and publish detailed evidence | logs/job-138563866669.log | 82 | False |  |
+| 138563239872 | validate-document-standards | logs/job-138563239872.log | 45090 | False | validate-document-standards	Validate the document type catalog	2026-11-24T15:36:34.1523688Z ERROR: Line 140: Markdown coverage pattern matches no in-scope document: 'workspace/adr/????-*.md'., validate-document-standards	Validate the document type catalog	2026-11-24T15:36:34.1524927Z Catalog validation failed: 1 error(s), 18 document type(s), 28 reference(s)., validate-document-standards	Validate the document type catalog	2026-11-24T15:36:34.1581731Z ##[error]Process completed with exit code 1. |
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | run 45427379012 is still in progress; logs will be available when it is complete  |
-| job_log | Not recorded | run 45427379012 is still in progress; logs will be available when it is complete  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 
-[Changed-document lint report](https://github.com/dungnv2602/chatgpt/blob/gpt/reports/lint_reports/on_changed/latest-lint-report.md)
+No separate lint report applies to this workflow.
 
 ## Integrity
 
