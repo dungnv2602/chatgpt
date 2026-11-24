@@ -60,7 +60,7 @@ Draft statuses:
 
 Do not use promoted as a Draft status. A successful ADR promotion deletes the source Draft after every promotion requirement passes.
 
-A Draft may include promotion_cleanup_pending: true only when an accepted ADR passed its checks but source deletion failed. Record the resulting ADR ID and cleanup reason. This state is temporary. It is not a proposal awaiting a decision or a historical archive.
+A Draft may include promotion_cleanup_pending: true only when an accepted ADR passed every promotion requirement but source deletion failed. Record the resulting ADR ID and cleanup reason. This state is temporary. It is not a proposal awaiting a decision or a historical archive.
 
 Record context, scope, goals, non-goals, decision drivers, options, recommendation, consequences, risks, affected paths, implementation outline, questions, and revision history.
 
@@ -139,7 +139,7 @@ GitHub file operations may commit the ADR, index update, and Draft deletion sepa
 - If the Worker confirms the accepted ADR but cannot delete the Draft, keep the Draft. Set promotion_cleanup_pending to true. Record the resulting ADR ID and cleanup reason. Add the Draft to the Promotion Cleanup Pending index section.
 - Do not list a cleanup-pending Draft as a current proposal.
 - Retry only the cleanup step. Do not create another ADR or repeat the decision approval.
-- After deletion succeeds, remove the cleanup-pending entry. Read back both indexes and confirm the final state.
+- After deletion succeeds, delete the cleanup-pending entry. Read back both indexes and confirm the final state.
 
 A cleanup-pending entry is a temporary recovery aid. It is not a historical Draft archive.
 
