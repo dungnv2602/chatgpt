@@ -124,7 +124,7 @@ Promote a Draft only after the user approves its exact revision and scope.
 7. **Delete the source Draft.** Delete the exact source file only after the accepted ADR passes the completeness gate. Do not move it to another folder or retain a full copy.
 8. **Update indexes.** Delete the source Draft entry from `workspace/draft/README.md`. Ensure the ADR index points to the accepted ADR. Do not leave a Promoted Drafts entry.
 9. **Check closeout.** Read back both indexes. Check that the ADR exists, the source Draft does not exist, and no active index points to the deleted file. Search repository references for stale Markdown links.
-10. **Record the result.** Record the source Draft ID, resulting ADR ID, completeness result, deletion result, and commit references in the promotion task or other active decision record.
+10. **Record the result.** Record the source Draft ID and resulting ADR ID. Include the completeness result, deletion result, and commit references in the promotion task or another active decision record.
 
 Never reuse a Draft ID or ADR ID after deletion or promotion. Keep the source Draft ID in the ADR's `source_draft` field as provenance. Do not link that field to a source file that the workflow deletes.
 
@@ -217,7 +217,7 @@ Do not migrate or delete other Drafts unless the Worker checks that the reposito
 
 ## Implementation Scope
 
-- **In scope:** Update the decision-governance skill, Draft and ADR indexes, workspace navigation, Draft and ADR templates, archive guidance, Document Type Catalog, and discussion register. Add the provisional `promotion-pending` state. Migrate DRAFT-0001 only after its rationale and legacy link checks pass.
+- **In scope:** Update the decision-governance skill, Draft and ADR indexes, and workspace navigation. Update the Draft and ADR templates, archive guidance, Document Type Catalog, and discussion register. Add the provisional `promotion-pending` state. Migrate DRAFT-0001 only after its rationale and legacy link checks pass.
 - **Out of scope:** This decision does not authorize deletion of rejected, withdrawn, or superseded Drafts. It does not authorize an `archive/draft/` folder. It does not authorize hooks or automatic approval. It does not change foundational initialization or ADR-0001's accepted decision. It does not authorize unrelated proposals.
 - **Tasks:** A separate implementation task must link ADR-0002. Task execution approval remains separate from this decision approval.
 - **Dependencies:** ADR-0001 remains authoritative except for its source-Draft preservation rule, which this ADR supersedes.
@@ -253,4 +253,4 @@ Do not migrate or delete other Drafts unless the Worker checks that the reposito
 | 2026-11-24 | Implementation in progress | User approved task 20261124-160500 on 2026-11-24. The task remains In Progress. ADR-0002 lists it in implementation_tasks. DRAFT-0001 passed its rationale completeness review. |
 | 2026-11-24 | DRAFT-0001 source retired | The complete rationale comparison passed. The Worker deleted the cleanup-pending index entry and corrected ADR-0001's working-path link under explicit user permission. The Worker then deleted DRAFT-0001 in commit 4082efd9a5dadb8b8bd0b41ccd3cf69b5e9405ce. |
 | 2026-11-25 | Lint-only editorial remediation authorized | The user authorized wording corrections to ADR-0002 so it can be retired. The authorization covers lint-only edits. It does not change the accepted decision, rationale, options, scope, or safeguards. The five linked remediation tasks record the approved work. |
-| 2026-11-24 | Implementation checks passed | Document Standards run 45445313265 passed 37 CI Ledger tests and 32 catalog-validator tests. Catalog checks passed for 18 document types and 28 exact references. STE Lint run 45445313404 passed with zero findings in the one changed file. Diagnostics run 45445313378 passed. The STE Lint run used incremental scope. It did not evaluate ADR-0002. Earlier findings in ADR-0002's accepted decision content remained unchanged under the approved immutability boundary. |
+| 2026-11-24 | Implementation checks passed | Document Standards run 45445313265 passed. It ran 37 CI Ledger tests and 32 catalog-validator tests. Catalog checks passed for 18 document types and 28 exact references. STE Lint run 45445313404 passed with zero findings in the one changed file. Diagnostics run 45445313378 passed. The STE Lint run used incremental scope. It did not evaluate ADR-0002. Earlier findings in ADR-0002's accepted decision content remained unchanged under the approved immutability boundary. |
