@@ -148,7 +148,7 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 - **Regression coverage:** The mixed-batch test now requires an unclassified derivative and unchanged original. The all-unclassified test expects conversion without relocation. New tests cover unclassified conversion failure blocking mapped relocation and retrying into the next attempt directory. The suite defines 47 tests; no tests have been run locally or in Actions.
 - **Next:** Read back every changed path and the branch head. Then obtain a hosted normal-workflow run. No source image has been processed by this code change.
 
-## 7\. Current State
+## 7. Current State
 
 The approved Image Takeout workflow has now completed a successful hosted run. Run [#69](https://github.com/dungnv2602/chatgpt/actions/runs/45313390427) processed all 18 intake images after the six-column daily README repair.
 
@@ -160,7 +160,7 @@ The approved Image Takeout workflow has now completed a successful hosted run. R
 
 No task-scoped processing or verification work remains. The user retains responsibility for any later relocation of the seven unclassified derivatives. No index edits or unclassified relocation were performed.
 
-## 8\. Remaining Work
+## 8. Remaining Work
 
 No remaining Image Takeout implementation or hosted-verification work.
 
@@ -168,7 +168,7 @@ The user may later relocate the seven unclassified derivatives. That action is o
 
 The separate CI diagnostics-sidecar defects are not part of this task. Do not modify the Ledger files as part of this closeout.
 
-## 9\. Next Actions
+## 9. Next Actions
 
 1. Archive this completed task record and verify the exact archive copy.
 2. Add the exact archive path and UTC timestamp to `.github/archive-retention-index.json`.
@@ -186,7 +186,7 @@ The separate CI diagnostics-sidecar defects are not part of this task. Do not mo
 - Import commit: https://github.com/dungnv2602/chatgpt/commit/1192a4a53640b6188f3500abda75b1c9d5fe004d
 - Hand-off reconciliation commit: https://github.com/dungnv2602/chatgpt/commit/516d6311412e759829f492717053e3abf1ae9821
 
-## 11\. Verification
+## 11. Verification
 
 - **Check:** Hosted Image Takeout workflow run #69.
 - **Method:** Inspected GitHub run metadata, job summaries, the complete processing-job log, the separate diagnostics-job log, published GitHub directory listings, the residual hand-off, attempt-003 conversion report, verification report, and both drawing-session manifests.
@@ -198,7 +198,7 @@ The separate CI diagnostics-sidecar defects are not part of this task. Do not mo
 - **Independent diagnostics job:** The diagnostics job failed because `reports/triage/scripts/test_ledger.py` has a SyntaxError at line 47 and `reports/triage/scripts/ledger.py` references undefined `LINT_BASELINE_CHECKS` at line 748. This separate job did not change the Image Takeout job's success.
 - **Limitations:** GitHub directory listings and blob identities verify published file presence and source-byte preservation. The unclassified images remain unclassified. No image pixels were newly inspected and no source mapping was inferred. No unclassified file was relocated. No index was edited.
 
-## 12\. Handoff Instructions
+## 12. Handoff Instructions
 
 The Image Takeout task is complete. Run [#69](https://github.com/dungnv2602/chatgpt/actions/runs/45313390427) succeeded after the six-column daily README repair. It passed all 48 processor tests, processed all 18 images, published 11 mapped original/WebP pairs, converted 7 unclassified images without relocation, and passed published-manifest verification for all 11 mapped rows. All 18 original PNG blob identities are preserved. The active hand-off is Draft with exactly seven unclassified items.
 
