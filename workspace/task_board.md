@@ -12,26 +12,24 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## In Progress
 
-_No in-progress tasks._
-
+| ID | Task | Priority | Status | Origin | Updated | Record |
+|---|---|---:|---|---|---|---|
+| 20261123-225745 | Repair CI ledger task generation workflow | P1 | In Progress | User | 2026-11-24 | [Task record](tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md) |
 
 ## Ready
 
-
+| ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
 
 ## Blocked
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-| 20261123-225745 | Repair CI ledger task generation workflow | P1 | Blocked | User | 2026-11-24 | [Task record](tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md) |
 
 ## Proposed
 
-
+| ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
-
-
 | 20261124-061933-02 | Review publication\_or\_push failures in Process Image Takeout and Create WebP Derivatives / process-image-takeout / Mark | P1 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-061933-02-review-publication-or-push-failures-in-process-image-takeout-and.md) |
 | 20261124-061933-01 | Review checkout\_or\_action\_download failures in Process Image Takeout and Create WebP Derivatives / process-image-takeout | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-061933-01-review-checkout-or-action-download-failures-in-process-image-tak.md) |
 | 20261124-061933 | Review checkout\_or\_action\_download failures in Validate Document Standards / validate-document-standards / Validate the | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-061933-review-checkout-or-action-download-failures-in-validate-document.md) |
@@ -43,15 +41,6 @@ _No in-progress tasks._
 | 20261124-045935-01 | Review semicolon findings in images/takeout/history/2026-11-20-001/attempt-001/verification-report.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-045935-01-review-semicolon-findings-in-images-takeout-history-2026-11-20-0.md) |
 | 20261124-045935 | Review synonym-rotation findings in skills/the-worker/references/image-provenance-and-webp.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-045935-review-synonym-rotation-findings-in-skills-the-worker-references.md) |
 | 20261124-050735 | Review synonym-rotation findings in skills/asd-ste100/SKILL.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-050735-review-synonym-rotation-findings-in-skills-asd-ste100-skill-md.md) |
-
-## Paused
-
-_No paused tasks._
-
-## Historical
-
-| ID | Task | Priority | Status | Origin | Updated | Record |
-|---|---|---:|---|---|---|---|
 | 20261124-080232-08 | Review passive-voice findings in workspace/README.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-080232-08-review-passive-voice-findings-in-workspace-readme-md.md) |
 | 20261124-080232-07 | Review present-perfect findings in skills/document-standards/references/document-type-catalog.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-080232-07-review-present-perfect-findings-in-skills-document-standards-ref.md) |
 | 20261124-080232-06 | Review passive-voice findings in skills/document-standards/references/document-type-catalog.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-080232-06-review-passive-voice-findings-in-skills-document-standards-refer.md) |
@@ -61,10 +50,13 @@ _No paused tasks._
 | 20261124-080232-02 | Review passive-voice findings in skills/the-worker/references/image-provenance-and-webp.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-080232-02-review-passive-voice-findings-in-skills-the-worker-references-im.md) |
 | 20261124-080232-01 | Review passive-voice findings in images/README.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-080232-01-review-passive-voice-findings-in-images-readme-md.md) |
 | 20261124-080232 | Review passive-voice findings in images/takeout/README.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-080232-review-passive-voice-findings-in-images-takeout-readme-md.md) |
-| 20261124-061933-03 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Validate the document | P2 | Done | Assistant | 2026-11-24 | [Archived record](../archive/tasks/20261124-061933-03-review-validation-or-test-failures-in-validate-document-standard.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/807a5d5fe901a4a608895f72dd81d9085b2d45a8) |
-| 20261124-061933-04 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run catalog validator | P2 | Done | Assistant | 2026-11-24 | [Archived record](../archive/tasks/20261124-061933-04-review-validation-or-test-failures-in-validate-document-standard.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/807a5d5fe901a4a608895f72dd81d9085b2d45a8) |
-| 20261123-054904 | Build GitHub Actions diagnostic reports and remove the CI preflight gate | P1 | Done | User | 2026-11-24 | [Archived record](../archive/tasks/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/22b1927163ce96e56150a4a8ae2bb3010763fb0b) |
-| 20261123-100738 | Remediate hard STE lint findings | P1 | Done | Assistant | 2026-11-24 | [Archived record](../archive/tasks/20261123-100738-remediate-hard-ste-lint-findings.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/e936692b083eba2c7e1b4ca51aff1e2873c0fb3d) |
-| 20261123-162826 | Enforce conversation integrity before image relocation | P1 | Done | User | 2026-11-24 | [Archived record](../archive/tasks/20261123-162826-enforce-conversation-integrity-before-image-relocation.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/38dd6c10db0c28980055d53278916ef4f2955536) |
-| 20261123-230158-12 | Review validation\_or\_test failures in Process Image Takeout and Create WebP Derivatives / process-image-takeout / Test t | P2 | Cancelled | Assistant | 2026-11-23 | [Archived record](../archive/tasks/20261123-230158-12-review-validation-or-test-failures-in-process-image-takeout-and.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/d9ee1e465913b72d296748414b4cf338794b9eab) |
-| 20261123-230158-11 | Review publication\_or\_push failures in Convert Unclassified Takeout Images to WebP / convert-unclassified / Commit WebP | P1 | Cancelled | Assistant | 2026-11-23 | [Archived record](../archive/tasks/20261123-230158-11-review-publication-or-push-failures-in-convert-unclassified-take.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/d9ee1e465913b72d296748414b4cf338794b9eab) |
+
+## Paused
+
+| ID | Task | Priority | Status | Origin | Updated | Record |
+|---|---|---:|---|---|---|---|
+
+## Historical
+
+| ID | Task | Priority | Status | Origin | Updated | Record |
+|---|---|---:|---|---|---|---|
