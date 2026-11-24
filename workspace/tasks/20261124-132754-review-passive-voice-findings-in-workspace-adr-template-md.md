@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-132754
 - **Created:** 2026-11-24 13:27 UTC
-- **Updated:** 2026-11-24 13:27 UTC
+- **Updated:** 2026-11-24 16:28 UTC
 - **Priority:** P3
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -91,5 +91,5 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-245ae5ff11bd1a7e1426ac61` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_changed/history/45403469914-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45403469914) |
-| `lint-7161ac8330313d0a21373d48` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_changed/history/45403469914-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45403469914) |
+| `lint-245ae5ff11bd1a7e1426ac61` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_changed/history/45403469914-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45403469914) · [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) |
+| `lint-7161ac8330313d0a21373d48` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_changed/history/45403469914-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45403469914) · [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) |

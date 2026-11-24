@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-161334-01
 - **Created:** 2026-11-24 16:13 UTC
-- **Updated:** 2026-11-24 16:13 UTC
+- **Updated:** 2026-11-24 16:28 UTC
 - **Priority:** P3
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -91,4 +91,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-dc863a59620ce525978fa30c` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../reports/lint_reports/on_changed/history/45433851979-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45433851979) |
+| `lint-dc863a59620ce525978fa30c` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../reports/lint_reports/on_changed/history/45433851979-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45433851979) · [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) |

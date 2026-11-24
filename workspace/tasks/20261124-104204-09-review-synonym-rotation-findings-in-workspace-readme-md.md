@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-104204-09
 - **Created:** 2026-11-24 10:42 UTC
-- **Updated:** 2026-11-24 13:51 UTC
+- **Updated:** 2026-11-24 16:28 UTC
 - **Priority:** P2
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -92,3 +92,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 |---|---|---|---|
 | `lint-01eb48b1e6acd03619987cff` | medium | synonym-rotation: 'delete' and 'remove' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45377004257-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45377004257) · [report](../../reports/lint_reports/on_changed/history/45395353908-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45395353908) · [report](../../reports/lint_reports/on_changed/history/45403469914-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45403469914) |
 | `lint-bde9acd01822220c22b6c41f` | medium | synonym-rotation: 'confirm' and 'check' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45407620144-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45407620144) |
+| `lint-3659e4816d32f3f6e196b772` | medium | synonym-rotation: 'remove' and 'delete' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) |
