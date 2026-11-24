@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-24T13:05:17Z",
+  "updated_at_utc": "2026-11-24T13:05:39Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
@@ -140,6 +140,7 @@
       "reports/gh_ac_reports/history/427313089/45399075293-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/427313089/45399356660-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45399356660-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/427313089/45399711310-attempt-1-pre_finalizer/report.json",
       "reports/lint_reports/on_changed/history/45301729061-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45304735363-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45308804827-attempt-1/report.json",
