@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-24T16:54:25Z",
+  "updated_at_utc": "2026-11-24T16:57:29Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
@@ -96,6 +96,7 @@
       "reports/gh_ac_reports/history/424715662/45436626400-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424715662/45440436265-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45440436265-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/424715662/45442492124-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424743410/45301729199-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424743410/45301729199-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424743410/45330179454-attempt-1-post_run/report.json",
@@ -246,6 +247,7 @@
       "reports/lint_reports/on_changed/history/45433851979-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45440436265-attempt-1/report.json",
+      "reports/lint_reports/on_changed/history/45442492124-attempt-1/report.json",
       "reports/lint_reports/on_repo/history/45301729199-attempt-1/report.json",
       "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
       "reports/lint_reports/on_repo/history/45330655561-attempt-1/report.json",
@@ -9877,8 +9879,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T13:51:27.076053+00:00",
-      "last_seen_utc": "2026-11-24T13:59:25.975345+00:00",
-      "occurrence_count": 2,
+      "last_seen_utc": "2026-11-24T16:57:00.938432+00:00",
+      "occurrence_count": 3,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45407620144-attempt-1/report.json",
@@ -9893,6 +9895,13 @@
           "observed_at_utc": "2026-11-24T13:59:25.975345+00:00",
           "note": "on_changed · skills/decision-governance/SKILL.md:146:4",
           "observation_id": "lint:45408955146:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45442492124-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45442492124",
+          "observed_at_utc": "2026-11-24T16:57:00.938432+00:00",
+          "note": "on_changed · skills/decision-governance/SKILL.md:95:35",
+          "observation_id": "lint:45442492124:1"
         }
       ],
       "resolution": null,
@@ -12553,8 +12562,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T16:27:49.640750+00:00",
-      "last_seen_utc": "2026-11-24T16:44:29.611964+00:00",
-      "occurrence_count": 2,
+      "last_seen_utc": "2026-11-24T16:57:00.938432+00:00",
+      "occurrence_count": 3,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json",
@@ -12569,6 +12578,13 @@
           "observed_at_utc": "2026-11-24T16:44:29.611964+00:00",
           "note": "on_changed · workspace/README.md:58:376",
           "observation_id": "lint:45440436265:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45442492124-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45442492124",
+          "observed_at_utc": "2026-11-24T16:57:00.938432+00:00",
+          "note": "on_changed · workspace/README.md:58:376",
+          "observation_id": "lint:45442492124:1"
         }
       ],
       "resolution": null,
