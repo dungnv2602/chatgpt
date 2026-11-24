@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-161334-01
 - **Created:** 2026-11-24 16:13 UTC
-- **Updated:** 2026-11-24 17:55 UTC
+- **Updated:** 2026-11-24 18:00 UTC
 - **Priority:** P3
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -57,24 +57,37 @@ Remediate all present-perfect findings in ADR-0002 so the ADR can pass hosted ST
 - **References:** reports/triage/ledger.json and the evidence links below.
 - **Next:** Worker review and user approval before implementation.
 
+
+### 2026-11-24 17:55 UTC
+
+- **Action:** Reviewed hosted STE Lint run 45447915270 and the user's explicit authorization.
+- **Result:** Activated this remediation task for its present-perfect findings. The current scope is editorial correction only. No lint finding is resolved yet.
+- **References:** [STE Lint run 45447915270](https://github.com/dungnv2602/chatgpt/actions/runs/45447915270); ADR-0002; the user's instruction dated 2026-11-25.
+- **Next:** Apply the coordinated ADR-0002 wording corrections, read back the changed file, and use hosted validation evidence before resolving the findings.
+
+### 2026-11-24 18:00 UTC
+
+- **Action:** Updated ADR-0002 and read back the complete file after commit 2d99f8228644c2c25c957f4dbd195325d620d6d2.
+- **Result:** Applied wording changes for this task's present-perfect category. The complete file has zero semicolons. The hosted STE lint workflow has not yet evaluated this commit. The linked Ledger finding remains open.
+- **References:** [ADR-0002 edit commit](https://github.com/dungnv2602/chatgpt/commit/2d99f8228644c2c25c957f4dbd195325d620d6d2); read-back blob SHA 0677f765cf535102e28724cb70a9402c1a7d8740; [baseline lint report](https://github.com/dungnv2602/chatgpt/actions/runs/45447915270); [task board update](https://github.com/dungnv2602/chatgpt/commit/5b12d4e73fbaeb9024f1586b1d6c4092d977527d).
+- **Next:** Record the event-driven hosted STE lint result when it becomes available. Do not poll CI.
+
 ## 7. Current State
 
-The user approved lint-only editorial corrections to ADR-0002. This task covers 1 present-perfect finding occurrence(s) from hosted run 45447915270. The accepted decision content remains unchanged in meaning. No source edit or finding resolution is complete yet.
+ADR-0002 was edited in commit 2d99f8228644c2c25c957f4dbd195325d620d6d2 and read back from branch gpt. This task's present-perfect wording was revised. The hosted STE lint workflow has not yet evaluated the final commit. The linked Ledger finding remains open.
 
 ## 8. Remaining Work
 
-- Apply the authorized editorial corrections to ADR-0002.
-- Read back the complete ADR and confirm that its decision meaning and scope remain unchanged.
-- Obtain a successful hosted STE lint result for the changed ADR.
-- Resolve the linked Ledger finding only after the fix commit and successful hosted validation are recorded.
+- Review the event-driven hosted STE lint result for the final ADR-0002 commit when it becomes available. Do not poll CI.
+- If this rule still has findings, correct them within the approved editorial scope and repeat the read-back.
+- Resolve the linked Ledger finding only after a fix commit and successful relevant hosted validation are recorded.
 - Close this task through the Worker archive process after its finding becomes terminal.
 
 ## 9. Next Actions
 
-1. Apply the coordinated wording changes to ADR-0002.
-2. Read back the complete file and review semantic preservation.
-3. Record the successful hosted STE lint result when it becomes available. Do not poll CI.
-4. Close this task only after the linked Ledger finding is terminal.
+1. Review the hosted STE lint result for the final ADR-0002 commit when it becomes available. Do not poll CI.
+2. If the report shows no findings for this rule, record the successful result and resolve the linked Ledger finding through the approved report process.
+3. Close this task only after its linked finding is terminal.
 
 ## 10. References
 
@@ -83,14 +96,14 @@ The user approved lint-only editorial corrections to ADR-0002. This task covers 
 
 ## 11. Verification
 
-- **Check:** Baseline finding identity and task eligibility.
-- **Method:** Inspected the structured Ledger entry and hosted report 45447915270.
-- **Result:** The finding is open and linked to this task. The report evaluated ADR-0002 and recorded 1 present-perfect occurrence(s).
-- **Limitations:** This is baseline evidence only. It does not verify remediation or a successful lint result.
+- **Check:** ADR-0002 read-back after the editorial changes.
+- **Method:** Fetch the exact path from branch gpt after commit 2d99f8228644c2c25c957f4dbd195325d620d6d2.
+- **Result:** Read-back succeeded. Blob SHA: 0677f765cf535102e28724cb70a9402c1a7d8740. The file contains zero semicolon characters.
+- **Limitations:** No hosted STE lint result for this commit has been observed. The source read-back does not prove that the linter reports zero findings.
 
 ## 12. Handoff Instructions
 
-Preserve the accepted decision's meaning and scope. Do not weaken lint rules or baselines. Do not run repository scripts locally. Do not poll CI. Resolve the Ledger finding only after a fix commit and successful relevant hosted validation. Keep the task open until its finding is terminal.
+Do not run repository scripts or the STE linter locally. Do not poll CI. Preserve the accepted decision's meaning and scope. Do not weaken lint rules or baselines. Resolve the Ledger finding only after a fix commit and successful relevant hosted validation. Keep this task In Progress until its finding is terminal.
 
 ## 13. Ledger Findings
 
@@ -99,10 +112,3 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
 | `lint-dc863a59620ce525978fa30c` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../reports/lint_reports/on_changed/history/45433851979-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45433851979) · [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) · [report](../../reports/lint_reports/on_changed/history/45440436265-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45440436265) · [report](../../reports/lint_reports/on_changed/history/45447915270-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45447915270) |
-
-### 2026-11-24 17:55 UTC
-
-- **Action:** Reviewed hosted STE Lint run 45447915270 and the user's explicit authorization.
-- **Result:** Activated this remediation task for 1 present-perfect finding occurrence(s). The current scope is editorial correction only. No lint finding is resolved yet.
-- **References:** [STE Lint run 45447915270](https://github.com/dungnv2602/chatgpt/actions/runs/45447915270); ADR-0002; the user's instruction dated 2026-11-25.
-- **Next:** Apply the coordinated ADR-0002 wording corrections, read back the changed file, and use hosted validation evidence before resolving findings.
