@@ -22,7 +22,7 @@ implementation_tasks:
 review_triggers:
   - "A promotion completeness check fails."
   - "A source Draft cannot be deleted after ADR acceptance."
-  - "A material decision-rationale gap is found during migration."
+  - "The migration reveals a material decision-rationale gap."
   - "The user changes the Draft or ADR lifecycle."
 ---
 
@@ -43,8 +43,8 @@ DRAFT-0003 revision 2 proposed a transaction-like promotion process. The user ap
 The source Draft included decision rationale that ADR-0001 summarized rather than fully restated:
 
 - Keep `workspace/analysis/` inside `workspace/` because workspace is the repository's planning and coordination area. A root-level `analysis/` directory would create another peer domain without a clear owner. Keep automated CI diagnostics under `reports/`. The analysis area synthesizes repository state. It does not duplicate the CI Ledger.
-- Use one flat folder and a global ADR sequence. Decisions can affect multiple repository areas. Their categories may be unclear when a proposal begins. A global sequence is easier to reference across skills, tasks, workflows, and reports.
-- Preserve the boundary between analysis, Drafts, ADRs, tasks, and CI diagnostics. Analysis records evidence at a fixed commit. Drafts propose changes. ADRs record accepted decisions. Tasks implement those decisions. The CI Ledger remains the source of truth for operational findings.
+- Use one flat folder and a global ADR sequence. Decisions can affect multiple repository areas. Their categories may be unclear when a proposal begins. This sequence is easier to reference across skills, tasks, workflows, and reports.
+- Preserve the boundary between analysis, Drafts, ADRs, tasks, and CI diagnostics. Analysis records evidence at a specific commit. Drafts propose changes. ADRs record accepted decisions. Tasks implement those decisions. The CI Ledger remains the source of truth for operational findings.
 
 These points preserve material rationale from the approved DRAFT-0001 without changing ADR-0001's accepted outcome.
 
@@ -91,7 +91,7 @@ Create a provisional ADR. Compare it with the approved Draft. Accept the ADR onl
 
 ## Decision Outcome
 
-Chosen option: **Option 3 — Verify the ADR, then delete the source Draft.**
+Chosen option: **Option 3 — Check the ADR, then delete the source Draft.**
 
 A Draft is a temporary proposal. An accepted ADR is the permanent decision record. A successful promotion deletes the source Draft after the ADR passes the required completeness and read-back checks. Do not create an `archive/draft/` folder or a Promoted Drafts index.
 
@@ -130,7 +130,7 @@ Never reuse a Draft ID or ADR ID after deletion or promotion. Keep the source Dr
 
 ### ADR completeness checklist
 
-Before deleting a source Draft, confirm that the ADR preserves every material item a future reader needs to understand the accepted decision:
+Before deleting a source Draft, check that the ADR preserves every material item a future reader needs to understand the accepted decision:
 
 - The problem, relevant repository state, and decision scope.
 - The user's goals, non-goals, constraints, and decision drivers.
@@ -150,7 +150,7 @@ The reviewer must make a direct comparison. The existence of an ADR, a matching 
 If the ADR omits important rationale:
 
 - Do not delete the source Draft or mark promotion complete.
-- Add the missing rationale before the ADR is accepted.
+- Add the missing rationale before the Worker accepts the ADR.
 - Re-run the complete comparison and read back the corrected ADR.
 - If the information cannot be preserved without changing an accepted or archived decision, keep the Draft. Present a separate proposal for the required migration. Do not edit an archived ADR unless the user explicitly authorizes a narrow correction.
 
@@ -158,7 +158,7 @@ If the ADR omits important rationale:
 
 GitHub file operations may commit the ADR, index update, and Draft deletion separately. The workflow must support partial states.
 
-- If the provisional ADR does not exist, continue from the approved Draft. Do not assign a second ID if an ADR ID has already been reserved in a recorded promotion attempt.
+- If the provisional ADR does not exist, continue from the approved Draft. Do not assign a second ID if a recorded promotion attempt already reserved an ADR ID.
 - If an ADR exists with status `promotion-pending`, resume its completeness checks. Correct material omissions before the Worker accepts it. Do not create another ADR.
 - A `promotion-pending` ADR is provisional. Do not list it as accepted or use it to govern an implementation task.
 - If the Worker accepts and checks the ADR but source Draft deletion fails, keep the Draft. Add the Draft to a **Promotion Cleanup Pending** section in the Draft index. Record the resulting ADR ID in its metadata. Retry only the cleanup step.
@@ -171,7 +171,7 @@ A cleanup-pending entry is a temporary recovery aid, not a historical Draft arch
 
 - **Current Drafts** contains only proposals that still require preparation, review, or approval.
 - Do not add a **Promoted Drafts** section.
-- Use **Promotion Cleanup Pending** only when a verified accepted ADR exists but source Draft deletion has not completed.
+- Use **Promotion Cleanup Pending** only after the Worker checks and accepts an ADR but cannot delete its source Draft.
 - The ADR index contains accepted ADRs awaiting implementation or confirmation. Do not list `promotion-pending` records as accepted.
 - The ADR's `source_draft` field keeps the Draft ID as provenance. It does not link to a deleted source file.
 - Before deletion, search repository references to the source Draft path. Do not create new links to a source Draft that promotion will delete.
@@ -190,7 +190,7 @@ For DRAFT-0001:
 5. Do not rewrite ADR-0001's decision outcome or rationale. ADR-0001 remains in the permanent archive. The user must explicitly authorize a narrow reference-only correction. Preserve any missing material rationale in a valid permanent decision record.
 6. Delete DRAFT-0001 only after a permanent decision record preserves all material rationale and the approved resolution addresses the legacy reference issue.
 
-Do not migrate or delete other Drafts unless the Worker checks that the repository promoted them and that their corresponding ADRs pass the same completeness gate.
+Do not migrate or delete other Drafts unless the Worker checks that the repository promoted them. Their corresponding ADRs must also pass the same completeness gate.
 
 ## Consequences
 
