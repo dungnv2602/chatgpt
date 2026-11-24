@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261123-162826
 - **Created:** 2026-11-23 16:28 UTC
-- **Updated:** 2026-11-24 02:00:00 UTC
+- **Updated:** 2026-11-24 02:25:00 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -23,7 +23,8 @@ Create a task for this and proceed to work on it: Identify the problems in image
 ## 2. Subsequent Instructions
 
 - **2026-11-23:** The user directed that the task be created and execution begin immediately. The repository is dungnv2602/chatgpt, branch gpt, and is the sole source of truth.
-- **2026-11-24:** For images that cannot be classified, the user directed conversion to WebP using the conversion workflow. The user will perform relocation. The assistant may edit the index only when the user explicitly requests it.
+- **2026-11-24:** For images that cannot be classified, the user directed conversion to WebP. The user will perform relocation. The assistant may edit the index only when the user explicitly requests it.
+- **2026-11-24:** The user instructed: "Consolidate Convert Unclassified Takeout Images to WebP to Process Image Takeout and Create WebP Derivatives. The only difference is unclassified images got converted but not relocated."
 
 ## 3. Objective
 
@@ -45,13 +46,13 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 ## 5. Decisions
 
 - A batch may be Ready when every top-level source has an explicit disposition: provenance-mapped items must pass the conversation and attempt checks; unresolved items must use the exact `images/unclassified` quarantine destination.
-- A normal Ready run processes only provenance-mapped items. It preserves quarantined originals in intake and leaves them in a residual Draft hand-off. Ready does not authorize classification or relocation of quarantined images.
+- A normal Ready run processes every listed image. It validates and relocates only provenance-mapped items. It converts unclassified items to WebP, preserves their originals in intake, and leaves both originals and derivatives out of any provenance-based relocation. Unclassified entries remain in a residual Draft hand-off.
 - Keep the seven entries already marked unclassified unresolved until their image content and source can be reliably inspected.
 - Attempt records alone do not establish that a session conversation has been archived. Check the session-level integrity record.
 - Do not delete, rename, or move existing image bytes during the initial audit.
 - A conversation-integrity record may be Partial when source material is unavailable, but it must identify missing material and label editorial summaries honestly.
 - When evidence is unavailable, preserve the images in intake and report the blocker instead of weakening the gate.
-- Unclassified images may use a conversion-only workflow when requested. Preserve source PNGs, verify staged WebP derivatives, and do not relocate or update indexes. The user handles relocation. Edit an index only on explicit request.
+- Mapped and unclassified images use one normal workflow. Unclassified static PNG/JPG/JPEG files are converted to WebP under `images/takeout/webp/unclassified/attempt-NNN/`; verify the WebP and unchanged source hash. Do not relocate either file or update indexes. The user handles any later relocation. Edit an index only on explicit request.
 
 ## 6. Progress Log
 
@@ -139,32 +140,38 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 - **Result:** The changed test file was read back from branch `gpt`. No production validator code changed in this commit. The original PNGs remain untouched. Hosted validation is still required to confirm the validator rejects the altered mapping.
 - **Next:** Manually dispatch `Process Image Takeout and Create WebP Derivatives` on branch `gpt`. Require all 45 tests to pass before processing; if the mapping test still fails, inspect the validator path before making further changes.
 
+### 2026-11-24 — Consolidate unclassified conversion into the normal workflow
+
+- **User instruction:** "Consolidate Convert Unclassified Takeout Images to WebP to Process Image Takeout and Create WebP Derivatives. The only difference is unclassified images got converted but not relocated."
+- **Implementation:** Commit [2b43d2e](https://github.com/dungnv2602/chatgpt/commit/2b43d2e547982c624380d27dccb72ae1d241147d) updates the processor and regression tests. The normal processor now converts static unclassified PNG/JPG/JPEG files to `images/takeout/webp/unclassified/attempt-NNN/`, verifies the WebP container and unchanged source SHA-256, and leaves the source in intake. It retains the residual Draft hand-off. A Ready batch containing only unclassified images is now supported. Any conversion failure prevents mapped relocation.
+- **Workflow and documentation:** Commit [0365a05](https://github.com/dungnv2602/chatgpt/commit/0365a054d2d0dda9eb9258a9747495bf5013c0bd) updates the takeout README, image README, Worker skill, and provenance reference, and removes `.github/workflows/convert-unclassified-takeout.yml`. The normal workflow is now the only takeout workflow.
+- **Regression coverage:** The mixed-batch test now requires an unclassified derivative and unchanged original. The all-unclassified test expects conversion without relocation. New tests cover unclassified conversion failure blocking mapped relocation and retrying into the next attempt directory. The suite defines 47 tests; no tests have been run locally or in Actions.
+- **Next:** Read back every changed path and the branch head. Then obtain a hosted normal-workflow run. No source image has been processed by this code change.
+
 ## 7. Current State
 
-The branch `gpt` contains implementation commit [048eaf0](https://github.com/dungnv2602/chatgpt/commit/048eaf0ba9c4eeb43ae6198972f2aa807d3d679b). The first manual run, [45305320198](https://github.com/dungnv2602/chatgpt/actions/runs/45305320198), compiled the scripts but failed 15 of 45 regression tests before processing. No takeout files were changed by that run. The validator and fixture repair is committed in [7c8930a](https://github.com/dungnv2602/chatgpt/commit/7c8930ab5cdba9e7229910616a8551cb23d09f97) and all four changed paths were read back. Hosted regression verification is pending a new manual run. The processor now separates exact `images/unclassified` quarantine entries from provenance-mapped items. It still requires exact coverage of every top-level intake image. It validates conversation and attempt evidence for every item it processes, processes only mapped entries, reports quarantined entries as `DEFERRED_UNCLASSIFIED`, and leaves them in a residual Draft hand-off after successful mapped processing. A Ready hand-off that contains no mapped items fails closed.
+The current processor is in [2b43d2e](https://github.com/dungnv2602/chatgpt/commit/2b43d2e547982c624380d27dccb72ae1d241147d), and the workflow/documentation consolidation is in [0365a05](https://github.com/dungnv2602/chatgpt/commit/0365a054d2d0dda9eb9258a9747495bf5013c0bd). The processor handles mapped and unclassified items in one Ready batch. It validates conversation and attempt evidence before mapped conversion and relocation. It converts unclassified static images into `images/takeout/webp/unclassified/attempt-NNN/`, checks the WebP container and unchanged source hash, and does not relocate either file. It keeps the seven unclassified entries in the residual Draft hand-off. The separate unclassified workflow has been removed.
 
-The intake contains eighteen original PNGs. Eleven items map to attempts 04–06 and 09–16 through the retained partial conversation-integrity records and attempt notes. Seven items remain unclassified. Their original bytes remain in `images/takeout/`; no image has yet been converted or relocated by the latest change. The hand-off is now `status: ready`, with all eighteen exact source files accounted for.
+The latest hosted processor suite (run [45306543050](https://github.com/dungnv2602/chatgpt/actions/runs/45306543050)) failed 1 of 45 tests on the conversation-mapping mismatch fixture. Commit [a885899](https://github.com/dungnv2602/chatgpt/commit/a885899e9c6d0f16bb4b737374ebdb1c7a200226) made that fixture deterministic. The new 47-test suite has not yet run in Actions.
 
-The normal workflow remains push-triggered for new intake/provenance changes and supports `workflow_dispatch`. A hand-off-only Ready change and processor/workflow maintenance commits do not start processing. This avoids a premature or duplicate batch run. The normal and unclassified workflows share one non-cancelling queued writer group. The unclassified publisher now rebases and retries safely when other branch writers advance `gpt`.
-
-After a successful normal run, eleven originals and their WebP derivatives will be published to the mapped drawing destinations. The seven unclassified originals will remain in intake, with only those seven items in the residual Draft hand-off. The separate unclassified conversion workflow can then create WebP derivatives from an exact runtime filename allowlist. It does not move originals or edit indexes.
+The intake still contains eighteen original PNGs: eleven mapped and seven unclassified. No image has been converted or relocated by the consolidation code change. The hand-off remains Ready with all eighteen exact source files covered. The user must manually dispatch the normal workflow after the changes are committed. The processor must pass all 47 tests before it processes images.
 
 ## 8. Remaining Work
 
-- Rerun the full 45-test processor suite against the deterministic mismatch fixture. Confirm that the production validator rejects the altered Generation / Output ID mapping before staging.
-- Verify that the workflow publishes the eleven mapped original/WebP pairs and keeps all seven unclassified originals unchanged in intake.
-- Verify that the active hand-off contains only the seven unclassified entries with `status: draft`.
-- After the normal run succeeds, the user manually dispatches the unclassified conversion workflow with the exact seven filenames.
-- Verify that the seven WebP derivatives are published and the seven source PNGs remain unchanged.
+- Obtain hosted verification of all 47 processor tests, including the conversation-mapping mismatch test.
+- Verify publication of the eleven mapped original/WebP pairs.
+- Verify publication of seven unclassified WebP derivatives under `images/takeout/webp/unclassified/`.
+- Confirm all seven unclassified original PNGs remain byte-for-byte unchanged in intake and the residual Draft hand-off contains exactly those seven entries.
 - The user performs any later relocation. Edit an index only after an explicit user request and only with verified mapping details.
-- Keep the task In Progress until hosted tests, mapped publication, the residual hand-off, and unclassified conversion are verified.
+- Keep the task In Progress until hosted tests, mapped publication, unclassified derivatives, source preservation, and the residual Draft hand-off are verified.
+
 ## 9. Next Actions
 
-1. Manually dispatch `Process Image Takeout and Create WebP Derivatives` on branch `gpt` and inspect the deterministic mapping-mismatch regression.
-2. Require all 45 tests to pass before processing. If the mismatch test still fails, inspect the production validation path rather than weakening the test.
-3. Verify publication of the eleven mapped original/WebP pairs and confirm the seven unclassified originals remain unchanged in intake with a seven-entry residual Draft hand-off.
-4. Only after normal processing succeeds, manually dispatch the unclassified conversion workflow with the seven exact filenames.
-5. Verify all seven derivatives and unchanged PNG originals. Keep relocation and index changes under the user's explicit direction.
+1. Manually dispatch `Process Image Takeout and Create WebP Derivatives` on branch `gpt` after the consolidation commit is read back.
+2. Require all 47 processor tests to pass before processing. If the mapping-mismatch test fails, inspect the production validation path rather than weakening the test.
+3. Verify the eleven mapped original/WebP pairs and seven unclassified WebP derivatives.
+4. Confirm all seven unclassified PNGs remain unchanged in intake and the residual Draft hand-off contains exactly those seven items.
+5. Keep any later relocation and index changes under the user's explicit direction.
 
 ## 10. References
 
@@ -191,7 +198,7 @@ After a successful normal run, eleven originals and their WebP derivatives will 
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. The validator repair is in commit [7c8930a](https://github.com/dungnv2602/chatgpt/commit/7c8930ab5cdba9e7229910616a8551cb23d09f97). The mixed-batch implementation is in commit [048eaf0](https://github.com/dungnv2602/chatgpt/commit/048eaf0ba9c4eeb43ae6198972f2aa807d3d679b), and the hand-off is Ready for a user-triggered normal run. Dispatch `Process Image Takeout and Create WebP Derivatives` on `gpt`; it must run the hosted regression suite before processing and then relocate only the eleven provenance-mapped items. It must retain the seven `images/unclassified` source files byte-for-byte in intake and leave a residual Draft hand-off. After successful normal processing, use the separate unclassified conversion workflow with the seven exact filenames. That workflow creates WebP derivatives only. The user performs relocation. Do not infer source mappings or edit indexes without explicit user direction.
+Continue on branch `gpt`. The current processor and expanded regression suite are in commit [2b43d2e](https://github.com/dungnv2602/chatgpt/commit/2b43d2e547982c624380d27dccb72ae1d241147d). The documentation and workflow deletion are in [0365a05](https://github.com/dungnv2602/chatgpt/commit/0365a054d2d0dda9eb9258a9747495bf5013c0bd). The normal workflow now converts unclassified images to WebP without relocating either the original or derivative. The separate unclassified workflow is removed. The hand-off remains Ready for a user-triggered normal run. Require all 47 processor tests to pass before processing. Verify eleven mapped original/WebP pairs, seven unclassified derivatives, unchanged unclassified source PNGs, and a seven-entry residual Draft hand-off. The user performs any later relocation. Do not infer source mappings or edit indexes without explicit user direction.
 
 ## 13. Ledger Findings
 
