@@ -15,7 +15,6 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
-| 20261124-183017 | Repair the ADR coverage rule and strengthen CI-failure follow-through | P1 | In Progress | User | 2026-11-24 | — | [Task record](tasks/20261124-183017-repair-adr-catalog-rule-and-ci-follow-through.md) |
 
 ## Ready
 
