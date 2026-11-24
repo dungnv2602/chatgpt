@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-24 — Inspect the latest Image Takeout CI run and verify published outputs.** Read the Actions evidence index, identify the latest run for the current `gpt` branch and workflow, inspect its jobs and logs, then compare its claims with committed files, hand-off state, and source/derivative inventories.
+- **2026-11-24 — Record verified run #69 and close the completed Image Takeout task.** Update the authoritative task record with the hosted test, processing, publication, and source-preservation evidence. Then follow the required archive, retention-index, and task-board closeout transaction.
 
 ## Open Discussions
 
