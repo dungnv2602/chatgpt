@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-104329
 - **Created:** 2026-11-24 10:43 UTC
-- **Updated:** 2026-11-24 10:53 UTC
+- **Updated:** 2026-11-24 11:19 UTC
 - **Priority:** P2
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -90,4 +90,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `gha-5cec41ca55c6b4de6bc3e153` | medium | Validate Document Standards / validate-document-standards / Validate the document type catalog: validation\_or\_test — \<timestamp\> error: line 129: embedded contract coverage must name its owner and live record. | [report](../../reports/gh_ac_reports/history/427313089/45377004184-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45377004184) · [report](../../reports/gh_ac_reports/history/427313089/45377420539-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45377420539) |
+| `gha-5cec41ca55c6b4de6bc3e153` | medium | Validate Document Standards / validate-document-standards / Validate the document type catalog: validation\_or\_test — \<timestamp\> error: line 129: embedded contract coverage must name its owner and live record. | [report](../../reports/gh_ac_reports/history/427313089/45377004184-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45377004184) · [report](../../reports/gh_ac_reports/history/427313089/45377420539-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45377420539) · [report](../../reports/gh_ac_reports/history/427313089/45382651641-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45382651641) |
