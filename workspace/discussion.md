@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 12:25 UTC — Execute approved DRAFT-0001:** The user approved revision 1 and authorized the governance implementation task. Complete foundational initialization, reconcile the approved scope with repository state, create ADR-0001, and implement the accepted governance workflow. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 12:27 UTC — Promote the approved proposal:** Verify the exact approved DRAFT-0001 revision and the governance-specific implementation boundary. Create ADR-0001 from that revision and update its lifecycle records. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 
 ## Open Discussions
 
