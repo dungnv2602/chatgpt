@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-094047-05
 - **Created:** 2026-11-24 09:40 UTC
-- **Updated:** 2026-11-24 10:42 UTC
+- **Updated:** 2026-11-24 10:44 UTC
 - **Priority:** P2
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -90,4 +90,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-2822a6b08706709830f1f820` | medium | synonym-rotation: 'check' and 'validate' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45367046002) · [report](../../reports/lint_reports/on_changed/history/45377004257-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45377004257) |
+| `lint-2822a6b08706709830f1f820` | medium | synonym-rotation: 'check' and 'validate' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45367046002-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45367046002) · [report](../../reports/lint_reports/on_changed/history/45377004257-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45377004257) · [report](../../reports/lint_reports/on_changed/history/45377420525-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45377420525) |
