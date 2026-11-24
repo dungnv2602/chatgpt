@@ -112,6 +112,57 @@ def valid_webp(path: Path) -> bool:
         header = f.read(12)
     return header[:4] == b"RIFF" and header[8:12] == b"WEBP" and int.from_bytes(header[4:8], "little") + 8 == path.stat().st_size
 
+def validate_static_source(path: Path) -> None:
+    """Reject malformed, animated, or extension-mismatched unclassified sources."""
+    if path.suffix.lower() == ".png":
+        if path.stat().st_size < 8:
+            raise ProcessingError(f"Invalid PNG signature: {path.name}")
+        with path.open("rb") as stream:
+            if stream.read(8) != b"\x89PNG\r\n\x1a\n":
+                raise ProcessingError(f"Invalid PNG signature: {path.name}")
+            size = path.stat().st_size
+            saw_end = False
+            while True:
+                header = stream.read(8)
+                if len(header) != 8:
+                    break
+                length = int.from_bytes(header[:4], "big")
+                chunk_type = header[4:]
+                if stream.tell() + length + 4 > size:
+                    raise ProcessingError(f"Malformed PNG chunk bounds: {path.name}")
+                if chunk_type == b"acTL":
+                    raise ProcessingError(f"Animated PNG is not supported: {path.name}")
+                if chunk_type == b"IEND" and length != 0:
+                    raise ProcessingError(f"Invalid PNG IEND chunk: {path.name}")
+                stream.seek(length + 4, os.SEEK_CUR)
+                if chunk_type == b"IEND":
+                    saw_end = True
+                    break
+            if not saw_end:
+                raise ProcessingError(f"PNG is missing a valid IEND chunk: {path.name}")
+    elif path.suffix.lower() in {".jpg", ".jpeg"}:
+        with path.open("rb") as stream:
+            if stream.read(2) != b"\xff\xd8":
+                raise ProcessingError(f"Invalid JPEG signature: {path.name}")
+    else:
+        raise ProcessingError(f"Unsupported unclassified source format: {path.name}")
+
+def next_unclassified_staging_folder(inbox: Path, root: Path) -> Path:
+    base = inbox / "webp" / "unclassified"
+    reject_symlink_components(base, root)
+    if base.is_symlink() or (base.exists() and not base.is_dir()):
+        raise ProcessingError("images/takeout/webp/unclassified must be a normal directory.")
+    base.mkdir(parents=True, exist_ok=True)
+    for number in range(1, 1000):
+        candidate = base / f"attempt-{number:03d}"
+        if candidate.is_symlink():
+            raise ProcessingError(
+                f"Unclassified WebP attempt path is a symlink: {candidate.relative_to(root).as_posix()}"
+            )
+        if not candidate.exists():
+            return candidate
+    raise ProcessingError("No unclassified WebP attempt directory is available below attempt-999.")
+
 def attempt_folder(history: Path, batch: str, staging_root: Path | None = None) -> Path:
     if history.is_symlink() or (history.exists() and not history.is_dir()):
         raise ProcessingError("images/takeout/history must be a normal directory.")
@@ -162,27 +213,41 @@ def write_reports(folder: Path, handoff: bytes, rows: list[dict[str, Any]], batc
     lines.extend(f"- {x}" for x in (errors or ["None."]))
     (folder / "verification-report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
-def deferred_report_rows(items: list[dict[str, Any]], version: str) -> list[dict[str, Any]]:
+def deferred_report_rows(
+    items: list[dict[str, Any]], version: str,
+    conversions: dict[str, dict[str, Any]] | None = None,
+) -> list[dict[str, Any]]:
     rows = []
+    conversions = conversions or {}
     for item in items:
         source = item["source"]
+        converted = conversions.get(source, {})
         rows.append({
             "source_filename": source, "source_path": f"images/takeout/{source}",
             "title": item.get("title", ""), "asset_id": item.get("asset_id", ""),
             "source_asset_id": item.get("source_asset_id", ""), "attempt": item.get("attempt", ""),
             "destination_dir": "images/unclassified",
             "conversation_record": item.get("conversation_record", ""), "conversation_coverage": "",
-            "image_id": "", "master_path": "", "webp_path": "", "manifest_path": "",
+            "image_id": "", "master_path": "", "webp_path": converted.get("webp_path", ""),
+            "manifest_path": "", "staging_webp_path": converted.get("staging_webp_path", ""),
             "source_format": Path(str(source)).suffix.lower().lstrip("."),
-            "conversion_profile": "", "original_bytes": "", "webp_bytes": "",
-            "size_change_percent": "", "source_sha256": "", "master_sha256": "",
-            "webp_sha256": "", "generation_sha256": item.get("expected_sha256", ""),
+            "conversion_profile": converted.get("conversion_profile", ""),
+            "original_bytes": converted.get("original_bytes", ""),
+            "webp_bytes": converted.get("webp_bytes", ""),
+            "size_change_percent": converted.get("size_change_percent", ""),
+            "source_sha256": converted.get("source_sha256", ""), "master_sha256": "",
+            "webp_sha256": converted.get("webp_sha256", ""),
+            "generation_sha256": item.get("expected_sha256", ""),
             "output_id": item.get("output_id", ""), "prompt_id": item.get("prompt_id", ""),
             "native_generation_id": item.get("native_generation_id", ""),
             "native_output_id": item.get("native_output_id", ""),
             "mapping_status": "Unmapped", "hash_match": "NOT_ASSESSED",
-            "cwebp_version": version, "status": "DEFERRED_UNCLASSIFIED",
-            "error": "Preserved in images/takeout; no provenance-based relocation attempted.",
+            "cwebp_version": version,
+            "status": converted.get("status", "DEFERRED_UNCLASSIFIED"),
+            "error": converted.get(
+                "error",
+                "Original remains in images/takeout; no provenance-based relocation was attempted.",
+            ),
         })
     return rows
 
@@ -1156,6 +1221,8 @@ def main() -> int:
     checks: list[str] = []
     prepared: list[dict[str, Any]] = []
     deferred_items: list[dict[str, Any]] = []
+    deferred_conversions: dict[str, dict[str, Any]] = {}
+    unclassified_stage_root: Path | None = None
     moved: list[tuple[Path, Path]] = []
     staged_moves: list[tuple[Path, Path]] = []
     written_text_updates: list[tuple[Path, bytes | None]] = []
@@ -1359,19 +1426,18 @@ def main() -> int:
             missing, unlisted = sorted(sources - inbox_images), sorted(inbox_images - sources)
             details = (["missing: " + ", ".join(missing)] if missing else []) + (["not listed: " + ", ".join(unlisted)] if unlisted else [])
             raise ProcessingError("Every image must appear exactly once in HANDOFF.yml; " + "; ".join(details))
-        if not prepared:
-            raise ProcessingError(
-                "No provenance-mapped items are eligible for normal processing. "
-                "Use the conversion-only workflow for unclassified images; originals remain in intake."
-            )
+        if not prepared and not deferred_items:
+            raise ProcessingError("The Ready hand-off contains no processable items.")
         checks.append("Every uploaded image is listed exactly once; no unlisted or untracked image will be processed.")
-        checks.append(
-            "Every processed item has an existing conversation-integrity record with an exact image-source mapping; "
-            "drawing outputs also match the attempt record asset ID and generation ID."
-        )
+        if prepared:
+            checks.append(
+                "Every mapped item has an existing conversation-integrity record with an exact image-source mapping; "
+                "drawing outputs also match the attempt record asset ID and generation ID."
+            )
         if deferred_items:
             checks.append(
-                f"{len(deferred_items)} unclassified image(s) were excluded from relocation and remain unchanged in images/takeout/: "
+                f"{len(deferred_items)} unclassified image(s) will be converted to WebP without relocation; "
+                "their original files will remain unchanged in images/takeout/: "
                 + ", ".join(item["source"] for item in deferred_items)
             )
         if any(item["hash_match"] == "MATCH" for item in prepared):
@@ -1380,15 +1446,17 @@ def main() -> int:
             checks.append("WARNING: one or more uploaded originals differ from supplied generation-time SHA-256 values; retained and flagged for mapping review, not automatically rejected.")
         if any(item["hash_match"] == "NOT_PROVIDED" for item in prepared):
             checks.append("Generation-time SHA-256 matching was unavailable for items without expected_sha256.")
-        checks.append("Destinations are restricted to approved images/, novels/, or dated drawings/ asset folders; duplicate and existing paths are rejected.")
+        if prepared:
+            checks.append("Mapped destinations are restricted to approved images/, novels/, or dated drawings/ asset folders; duplicate and existing paths are rejected.")
         text_updates = prepare_attempt_readme_updates(prepared, root)
         if text_updates:
             checks.append("Attempt and daily README targets were prevalidated for automatic output linking.")
 
-        if stage_root.exists() or stage_root.is_symlink():
-            raise ProcessingError(f"WebP staging attempt already exists: {stage_root.relative_to(root).as_posix()}")
-        stage_root.mkdir(parents=True, exist_ok=False)
         conversion_errors = []
+        if prepared:
+            if stage_root.exists() or stage_root.is_symlink():
+                raise ProcessingError(f"WebP staging attempt already exists: {stage_root.relative_to(root).as_posix()}")
+            stage_root.mkdir(parents=True, exist_ok=False)
         for item in prepared:
             source = item["source"]
             if source.suffix.lower() == ".png" and is_apng(source):
@@ -1414,9 +1482,95 @@ def main() -> int:
             item["webp_sha"] = digest(staged)
             item["size_change"] = f"{(item['original_bytes'] - item['webp_bytes']) / item['original_bytes'] * 100:.2f}"
             item["status"], item["error"] = "CONVERTED_STAGED", ""
+
+        if deferred_items:
+            unclassified_stage_root = next_unclassified_staging_folder(inbox, root)
+            unclassified_stage_root.mkdir(parents=True, exist_ok=False)
+            for item in deferred_items:
+                source = inbox / item["source"]
+                profile = (
+                    "lossless-exact-q100-m6"
+                    if source.suffix.lower() == ".png"
+                    else "picture-q92-m6-sharp-yuv"
+                )
+                source_sha = digest(source)
+                try:
+                    validate_static_source(source)
+                except ProcessingError as exc:
+                    deferred_conversions[item["source"]] = {
+                        "status": "FAILED_CONVERSION", "error": str(exc),
+                        "conversion_profile": profile, "original_bytes": source.stat().st_size,
+                        "source_sha256": source_sha,
+                    }
+                    conversion_errors.append(f"{source.name}: {exc}")
+                    continue
+                target = unclassified_stage_root / f"{source.name}.webp"
+                if target.exists() or target.is_symlink():
+                    detail = f"Refusing to overwrite unclassified WebP derivative: {target.name}"
+                    deferred_conversions[item["source"]] = {
+                        "status": "FAILED_CONVERSION", "error": detail,
+                        "conversion_profile": profile, "original_bytes": source.stat().st_size,
+                        "source_sha256": source_sha,
+                    }
+                    conversion_errors.append(f"{source.name}: {detail}")
+                    continue
+                if profile == "lossless-exact-q100-m6":
+                    cmd = ["cwebp", "-quiet", "-lossless", "-q", "100", "-m", "6", "-exact", "-metadata", "icc", str(source), "-o", str(target)]
+                else:
+                    cmd = ["cwebp", "-quiet", "-preset", "picture", "-q", "92", "-m", "6", "-sharp_yuv", "-metadata", "icc", str(source), "-o", str(target)]
+                result = subprocess.run(cmd, capture_output=True, text=True)
+                if result.returncode or not valid_webp(target):
+                    detail = (result.stderr or result.stdout).strip() or f"cwebp exit code {result.returncode}; invalid WebP output."
+                    target.unlink(missing_ok=True)
+                    deferred_conversions[item["source"]] = {
+                        "status": "FAILED_CONVERSION", "error": detail,
+                        "conversion_profile": profile, "original_bytes": source.stat().st_size,
+                        "source_sha256": source_sha,
+                    }
+                    conversion_errors.append(f"{source.name}: {detail}")
+                    continue
+                if digest(source) != source_sha:
+                    target.unlink(missing_ok=True)
+                    detail = f"Source hash changed during unclassified conversion: {source.name}"
+                    deferred_conversions[item["source"]] = {
+                        "status": "FAILED_CONVERSION", "error": detail,
+                        "conversion_profile": profile, "original_bytes": source.stat().st_size,
+                        "source_sha256": source_sha,
+                    }
+                    conversion_errors.append(detail)
+                    continue
+                webp_bytes = target.stat().st_size
+                relative_target = target.relative_to(root).as_posix()
+                deferred_conversions[item["source"]] = {
+                    "status": "CONVERTED_UNCLASSIFIED_NOT_RELOCATED",
+                    "error": (
+                        "Original remains unchanged in images/takeout; derivative remains in "
+                        "images/takeout/webp/unclassified/."
+                    ),
+                    "conversion_profile": profile,
+                    "original_bytes": source.stat().st_size,
+                    "webp_bytes": webp_bytes,
+                    "size_change_percent": f"{(source.stat().st_size - webp_bytes) / source.stat().st_size * 100:.2f}",
+                    "source_sha256": source_sha,
+                    "webp_sha256": digest(target),
+                    "webp_path": relative_target,
+                    "staging_webp_path": relative_target,
+                }
         if conversion_errors:
-            raise ProcessingError("Batch conversion failed; no files were relocated. " + " | ".join(conversion_errors))
-        checks.append(f"Every WebP passed RIFF/WEBP signature and container-length validation in persistent staging: {stage_root.relative_to(root).as_posix()}/.")
+            raise ProcessingError(
+                "Batch conversion failed; no mapped files were relocated. "
+                + " | ".join(conversion_errors)
+            )
+        if prepared:
+            checks.append(
+                f"Every mapped WebP passed RIFF/WEBP signature and container-length validation in persistent staging: "
+                f"{stage_root.relative_to(root).as_posix()}/."
+            )
+        if deferred_items:
+            checks.append(
+                f"Every unclassified WebP passed RIFF/WEBP and source-hash verification under "
+                f"{unclassified_stage_root.relative_to(root).as_posix()}/; originals remain in intake."
+            )
 
         for item in prepared:
             item["master"].parent.mkdir(parents=True, exist_ok=True)
@@ -1430,8 +1584,9 @@ def main() -> int:
                 raise ProcessingError(f"Final WebP failed verification: {item['webp']}")
             item["master_sha"] = digest(item["master"])
             item["status"] = "RELOCATED_AND_VERIFIED"
-        checks.append("Each original master was relocated byte-for-byte; SHA-256 matches its uploaded source.")
-        checks.append("Each WebP was moved from persistent staging to its final destination and passed hash and container verification.")
+        if prepared:
+            checks.append("Each original master was relocated byte-for-byte; SHA-256 matches its uploaded source.")
+            checks.append("Each mapped WebP was moved from persistent staging to its final destination and passed hash and container verification.")
 
         manifest_updates = prepare_session_manifest_updates(prepared, root)
         text_updates.update(manifest_updates)
@@ -1481,11 +1636,15 @@ def main() -> int:
                 "cwebp_version": encoder_version,
                 "status": item["status"], "error": "",
             })
-        rows.extend(deferred_report_rows(deferred_items, encoder_version))
-        write_reports(folder, raw, rows, batch, "SUCCESS", checks, [], len(prepared))
-        # All staged derivatives have moved to their final destinations. Remove
-        # the now-empty attempt directory before retaining only quarantined items.
-        stage_root.rmdir()
+        rows.extend(deferred_report_rows(deferred_items, encoder_version, deferred_conversions))
+        write_reports(
+            folder, raw, rows, batch, "SUCCESS", checks, [],
+            len(prepared) + len(deferred_items),
+        )
+        # Mapped derivatives have moved to their final destinations. Unclassified
+        # derivatives remain in their dedicated intake staging directory.
+        if prepared:
+            stage_root.rmdir()
         try:
             stage_root.parent.rmdir()
         except OSError:
@@ -1507,8 +1666,8 @@ def main() -> int:
         tmp_manifest.write_text(residual_handoff, encoding="utf-8")
         os.replace(tmp_manifest, manifest)
         print(
-            f"Successfully processed {batch}: {len(prepared)} image(s); "
-            f"retained {len(deferred_items)} unclassified image(s) in intake."
+            f"Successfully processed {batch}: relocated {len(prepared)} mapped image(s); "
+            f"converted {len(deferred_items)} unclassified image(s) without relocation."
         )
         print(f"Reports: {folder.relative_to(root).as_posix()}/")
         return 0
@@ -1571,10 +1730,18 @@ def main() -> int:
                 "cwebp_version": encoder_version,
                 "status": item.get("status", "FAILED"), "error": message,
             })
-        if not rows:
-            rows = failure_rows(items_report, message, encoder_version)
+        if prepared:
+            rows.extend(deferred_report_rows(deferred_items, encoder_version, deferred_conversions))
         else:
-            rows.extend(deferred_report_rows(deferred_items, encoder_version))
+            rows = failure_rows(items_report, message, encoder_version)
+            deferred_by_source = {
+                row["source_filename"]: row
+                for row in deferred_report_rows(deferred_items, encoder_version, deferred_conversions)
+            }
+            for row in rows:
+                converted_row = deferred_by_source.get(row["source_filename"])
+                if converted_row:
+                    row.update(converted_row)
         try:
             write_reports(folder, raw, rows, batch, "FAILED", checks, errors, len(items_report))
         except Exception as report_exc:

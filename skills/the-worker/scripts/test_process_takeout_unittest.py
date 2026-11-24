@@ -7,11 +7,24 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import zlib
 from pathlib import Path
 
 from verify_published_manifest import github_blob_url, verify_manifest_row, verify_session_links
 
 PROCESSOR = Path(__file__).with_name("process_takeout.py")
+
+def sample_png_bytes():
+    def chunk(kind, payload):
+        crc = zlib.crc32(kind + payload) & 0xFFFFFFFF
+        return len(payload).to_bytes(4, "big") + kind + payload + crc.to_bytes(4, "big")
+    ihdr = b"\x00\x00\x00\x01\x00\x00\x00\x01\x08\x06\x00\x00\x00"
+    return (
+        b"\x89PNG\r\n\x1a\n"
+        + chunk(b"IHDR", ihdr)
+        + chunk(b"IDAT", zlib.compress(b"\x00\x00\x00\x00\x00"))
+        + chunk(b"IEND", b"")
+    )
 
 FAKE_CWEBP = r'''#!/usr/bin/env python3
 import pathlib
@@ -200,7 +213,7 @@ class TakeoutProcessorTests(unittest.TestCase):
 
     def test_mixed_batch_relocates_mapped_items_and_retains_unclassified_items(self):
         mapped_bytes = b"mapped-original"
-        unknown_bytes = b"unclassified-original"
+        unknown_bytes = sample_png_bytes()
         (self.inbox / "mapped.png").write_bytes(mapped_bytes)
         (self.inbox / "unknown.png").write_bytes(unknown_bytes)
         self.manifest_many(
@@ -225,6 +238,9 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertTrue((destination / "ILL-001-mapped-output.webp").read_bytes().startswith(b"RIFF"))
         self.assertFalse((self.inbox / "mapped.png").exists())
         self.assertEqual((self.inbox / "unknown.png").read_bytes(), unknown_bytes)
+        unclassified_webp = self.inbox / "webp/unclassified/attempt-001/unknown.png.webp"
+        self.assertTrue(unclassified_webp.is_file())
+        self.assertTrue(unclassified_webp.read_bytes().startswith(b"RIFF"))
 
         residual = (self.inbox / "HANDOFF.yml").read_text(encoding="utf-8")
         self.assertIn("status: draft", residual)
@@ -236,16 +252,23 @@ class TakeoutProcessorTests(unittest.TestCase):
             rows = list(csv.DictReader(handle))
         self.assertEqual({row["source_filename"]: row["status"] for row in rows}, {
             "mapped.png": "RELOCATED_AND_VERIFIED",
-            "unknown.png": "DEFERRED_UNCLASSIFIED",
+            "unknown.png": "CONVERTED_UNCLASSIFIED_NOT_RELOCATED",
         })
+        unknown_row = next(row for row in rows if row["source_filename"] == "unknown.png")
+        self.assertEqual(
+            unknown_row["webp_path"],
+            "images/takeout/webp/unclassified/attempt-001/unknown.png.webp",
+        )
+        self.assertEqual(unknown_row["source_sha256"], hashlib.sha256(unknown_bytes).hexdigest())
         verification = (report / "verification-report.md").read_text(encoding="utf-8")
         self.assertIn("unknown.png", verification)
         archived_handoff = (report / "HANDOFF.yml").read_text(encoding="utf-8")
         self.assertIn("mapped.png", archived_handoff)
         self.assertIn("unknown.png", archived_handoff)
 
-    def test_ready_batch_with_only_unclassified_items_fails_closed(self):
-        (self.inbox / "unknown.png").write_bytes(b"unclassified-original")
+    def test_ready_batch_with_only_unclassified_items_converts_without_relocation(self):
+        unknown_bytes = sample_png_bytes()
+        (self.inbox / "unknown.png").write_bytes(unknown_bytes)
         self.manifest_many(
             [
                 {
@@ -261,14 +284,84 @@ class TakeoutProcessorTests(unittest.TestCase):
         handoff_before = (self.inbox / "HANDOFF.yml").read_bytes()
 
         result = self.run_processor()
-        self.assertNotEqual(result.returncode, 0)
-        self.assertEqual((self.inbox / "unknown.png").read_bytes(), b"unclassified-original")
-        self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), handoff_before)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual((self.inbox / "unknown.png").read_bytes(), unknown_bytes)
+        self.assertNotEqual((self.inbox / "HANDOFF.yml").read_bytes(), handoff_before)
+        self.assertIn("status: draft", (self.inbox / "HANDOFF.yml").read_text(encoding="utf-8"))
+        derivative = self.inbox / "webp/unclassified/attempt-001/unknown.png.webp"
+        self.assertTrue(derivative.is_file())
         report = self.inbox / "history/batch-only-unclassified/attempt-001"
         with (report / "conversion-report.csv").open(encoding="utf-8") as handle:
             row = next(csv.DictReader(handle))
-        self.assertEqual(row["status"], "DEFERRED_UNCLASSIFIED")
-        self.assertIn("No provenance-mapped items", (report / "verification-report.md").read_text(encoding="utf-8"))
+        self.assertEqual(row["status"], "CONVERTED_UNCLASSIFIED_NOT_RELOCATED")
+        self.assertEqual(row["webp_path"], "images/takeout/webp/unclassified/attempt-001/unknown.png.webp")
+
+    def test_unclassified_conversion_failure_blocks_mapped_relocation(self):
+        encoder = self.bin_dir / "cwebp"
+        encoder.write_text(
+            FAKE_CWEBP.replace(
+                'if "-o" not in args:',
+                'if any(arg.endswith("broken.png") for arg in args):\n'
+                '    print("simulated unclassified encoder failure", file=sys.stderr)\n'
+                '    raise SystemExit(9)\n'
+                'if "-o" not in args:',
+            ),
+            encoding="utf-8",
+        )
+        encoder.chmod(0o755)
+        mapped_bytes = b"mapped-original"
+        unknown_bytes = sample_png_bytes()
+        (self.inbox / "mapped.png").write_bytes(mapped_bytes)
+        (self.inbox / "broken.png").write_bytes(unknown_bytes)
+        self.manifest_many(
+            [
+                {"source": "mapped.png", "title": "Mapped output"},
+                {
+                    "source": "broken.png",
+                    "title": "Unclassified upload",
+                    "destination_dir": "images/unclassified",
+                    "mapping_evidence": "No exact provenance association is retained.",
+                },
+            ],
+            batch="batch-unclassified-failure",
+        )
+        handoff_before = (self.inbox / "HANDOFF.yml").read_bytes()
+
+        result = self.run_processor()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual((self.inbox / "mapped.png").read_bytes(), mapped_bytes)
+        self.assertEqual((self.inbox / "broken.png").read_bytes(), unknown_bytes)
+        self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), handoff_before)
+        self.assertTrue((self.inbox / "webp/batch-unclassified-failure/attempt-001/mapped.png.webp").is_file())
+        self.assertFalse((self.root / "novels/Novel-02/assets/illustrations/ARC-001/SCN-001/original/ILL-001-mapped-output.png").exists())
+        report = self.inbox / "history/batch-unclassified-failure/attempt-001"
+        with (report / "conversion-report.csv").open(encoding="utf-8") as handle:
+            rows = {row["source_filename"]: row for row in csv.DictReader(handle)}
+        self.assertEqual(rows["broken.png"]["status"], "FAILED_CONVERSION")
+        self.assertEqual(rows["mapped.png"]["status"], "CONVERTED_STAGED")
+
+    def test_unclassified_retry_uses_next_attempt_directory(self):
+        unknown_bytes = sample_png_bytes()
+        (self.inbox / "unknown.png").write_bytes(unknown_bytes)
+        item = {
+            "source": "unknown.png",
+            "title": "Unclassified upload",
+            "destination_dir": "images/unclassified",
+            "mapping_evidence": "No exact provenance association is retained.",
+        }
+        self.manifest(item, batch="batch-unclassified-retry")
+        first = self.run_processor()
+        self.assertEqual(first.returncode, 0, first.stderr)
+        first_derivative = self.inbox / "webp/unclassified/attempt-001/unknown.png.webp"
+        self.assertTrue(first_derivative.is_file())
+
+        self.manifest(item, batch="batch-unclassified-retry")
+        second = self.run_processor()
+        self.assertEqual(second.returncode, 0, second.stderr)
+        second_derivative = self.inbox / "webp/unclassified/attempt-002/unknown.png.webp"
+        self.assertTrue(first_derivative.is_file())
+        self.assertTrue(second_derivative.is_file())
+        self.assertEqual((self.inbox / "unknown.png").read_bytes(), unknown_bytes)
 
     def test_success_moves_byte_identical_master_creates_webp_and_archives_reports(self):
         original = b"uploaded-original-bytes"
