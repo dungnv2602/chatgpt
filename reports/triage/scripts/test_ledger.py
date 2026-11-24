@@ -139,19 +139,19 @@ class LedgerTests(unittest.TestCase):
         board_path = self.root / "workspace" / "task_board.md"
         board = board_path.read_text(encoding="utf-8")
         board = board.replace(
-            "## Proposed\\n\\n| ID | Task | Priority | Status | Origin | Updated | Record |\\n|---|---|---:|---|---|---|---|",
+            "## Proposed\n\n| ID | Task | Priority | Status | Origin | Updated | Record |\n|---|---|---:|---|---|---|---|",
             "## Proposed",
             1,
         )
         board_path.write_text(board, encoding="utf-8")
         task_path = self.root / "workspace" / "tasks" / "test-proposed-task.md"
         task_content = (
-            "# Task: Proposed renderer test\\n\\n"
-            "- **ID:** test-proposed-task\\n"
-            "- **Priority:** P3\\n"
-            "- **Status:** Proposed\\n"
-            "- **Origin:** Assistant\\n"
-            "- **Updated:** 2026-11-24 08:10 UTC\\n"
+            "# Task: Proposed renderer test\n\n"
+            "- **ID:** test-proposed-task\n"
+            "- **Priority:** P3\n"
+            "- **Status:** Proposed\n"
+            "- **Origin:** Assistant\n"
+            "- **Updated:** 2026-11-24 08:10 UTC\n"
         )
         task_path.write_text(task_content, encoding="utf-8")
         with self.assertRaises(LEDGER.LedgerError):
