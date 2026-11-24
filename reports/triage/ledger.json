@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-24T10:42:26Z",
+  "updated_at_utc": "2026-11-24T10:43:29Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
@@ -38,6 +38,7 @@
       "reports/gh_ac_reports/history/424715662/45344012691-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424715662/45367046002-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45367046002-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/424715662/45377004257-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45377004257-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424743410/45301729199-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424743410/45301729199-attempt-1-pre_finalizer/report.json",
@@ -109,6 +110,7 @@
       "reports/gh_ac_reports/history/427313089/45350732862-attempt-1-post_run-capture-2/report.json",
       "reports/gh_ac_reports/history/427313089/45350732862-attempt-1-post_run-capture-3/report.json",
       "reports/gh_ac_reports/history/427313089/45350732862-attempt-1-post_run/report.json",
+      "reports/gh_ac_reports/history/427313089/45377004184-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45377004184-attempt-1-pre_finalizer/report.json",
       "reports/lint_reports/on_changed/history/45301729061-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45304735363-attempt-1/report.json",
@@ -5493,6 +5495,35 @@
         "20261124-104204-08"
       ],
       "task_group": "ci-99aa7b0896c0cdf4"
+    },
+    {
+      "finding_id": "gha-5cec41ca55c6b4de6bc3e153",
+      "source_family": "github_actions",
+      "category": "validation_or_test",
+      "title": "Validate Document Standards / validate-document-standards / Validate the document type catalog: validation_or_test — <timestamp> error: line 129: embedded contract coverage must name its owner and live record.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T10:43:28Z",
+      "last_seen_utc": "2026-11-24T10:43:28Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/gh_ac_reports/history/427313089/45377004184-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45377004184",
+          "observed_at_utc": "2026-11-24T10:43:28Z",
+          "note": "validate-document-standards / Validate the document type catalog",
+          "observation_id": "github_actions:427313089:45377004184:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-104329"
+      ],
+      "task_group": "ci-601033e3967e71af"
     }
   ]
 }

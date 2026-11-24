@@ -11,30 +11,30 @@
     "event": "push",
     "branch": "gpt",
     "head_sha": "a53401d489d9a1acbaff71211f9eee7e716c1659",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "failure",
     "created_at": "2026-11-24T10:40:25Z",
     "run_started_at": "2026-11-24T10:40:25Z",
-    "updated_at": "2026-11-24T10:41:49Z",
+    "updated_at": "2026-11-24T10:42:09Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "Create draft and ADR workspace structures"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-24T10:42:04Z",
-    "completeness": "Incomplete",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-24T10:43:28Z",
+    "completeness": "Complete",
     "reporter_job": {
       "id": "138386016311",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "failure",
+    "state": "failure",
+    "observed_conclusion": "failure",
+    "projected_conclusion": null,
     "primary_category": "validation_or_test",
     "categories": [
       "validation_or_test"
@@ -48,7 +48,7 @@
         "step_name": "Validate the document type catalog",
         "blocking": true,
         "confidence": "medium",
-        "message": "Step conclusion: failure"
+        "message": "2026-11-24T10:40:42.3115233Z ERROR: Line 129: Embedded contract coverage must name its owner and live record."
       }
     ]
   },
@@ -131,12 +131,19 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 41580,
         "path": "logs/job-138385843413.log",
-        "error": "run 45377004184 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "validate-document-standards\tValidate the document type catalog\t2026-11-24T10:40:42.3115233Z ERROR: Line 129: Embedded contract coverage must name its owner and live record.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-24T10:40:42.3116442Z ERROR: Line 131: invalid coverage template location for 'workspace/draft/DRAFT_TEMPLATE.md': template must be in its owning skill's assets/ directory, novels/templates/, or the shared workspace root.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-24T10:40:42.3117437Z ERROR: Line 132: Embedded contract coverage must name its owner and live record.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-24T10:40:42.3118354Z ERROR: Line 134: invalid coverage template location for 'workspace/adr/ADR_TEMPLATE.md': template must be in its owning skill's assets/ directory, novels/templates/, or the shared workspace root.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-24T10:40:42.3119201Z Catalog validation failed: 4 error(s), 18 document type(s), 28 reference(s).",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-24T10:40:42.3173893Z ##[error]Process completed with exit code 1."
+        ]
       }
     }
   ],
@@ -178,12 +185,6 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [
-    {
-      "source": "job_log",
-      "job_id": "138385843413",
-      "message": "run 45377004184 is still in progress; logs will be available when it is complete\n"
-    }
-  ],
-  "history_path": "history/427313089/45377004184-attempt-1-pre_finalizer"
+  "capture_errors": [],
+  "history_path": "history/427313089/45377004184-attempt-1-post_run"
 }

@@ -32,6 +32,7 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
+| 20261124-104329 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Validate the document | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-104329-review-validation-or-test-failures-in-validate-document-standard.md) |
 | 20261124-104204-09 | Review synonym-rotation findings in workspace/README.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-104204-09-review-synonym-rotation-findings-in-workspace-readme-md.md) |
 | 20261124-104204-08 | Review long-sentence findings in workspace/README.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-104204-08-review-long-sentence-findings-in-workspace-readme-md.md) |
 | 20261124-104204-07 | Review semicolon findings in workspace/README.md | P2 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-104204-07-review-semicolon-findings-in-workspace-readme-md.md) |
