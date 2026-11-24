@@ -1,8 +1,10 @@
 ## Current Step
 
-**2026-11-24 08:12 UTC — Record the green Diagnostics #530 result, all-severity handoff, renderer correction, and remaining natural capture retries. Keep the task In Progress; verify the pending retry lifecycle without dispatching or polling.**
+**2026-11-24 09:24 UTC — Review the drawing workflow and propose approval-gated learning from successful and failed image-generation attempts. Do not change project files until the user approves the proposed patterns and implementation.**
 
 ## Open Discussions
+
+- **2026-11-24 09:24 UTC — Session startup:** User started a session in Condensed Mode. Current request: revise the drawing workflow so successful image-generation attempts produce proposed success patterns and failed attempts produce proposed failure patterns. Present extracted patterns for discussion and obtain explicit user approval before updating any canonical pattern records or workflow documentation. No drawing-workflow changes are authorized yet.
 
 - **2026-11-24 08:12 UTC — Hosted runner allocation:** Older runnerless jobs included a GitHub annotation stating that the job was not started because recent account payments had failed or the spending limit needed to be increased. The annotation does not identify which account condition applied. Later jobs received runners and executed; do not alter runner labels.
 - **2026-11-24 08:12 UTC — Task renderer and hosted regression:** The Proposed board table lacked its header, and the renderer searched into later sections, placing Proposed rows under Historical. The renderer now bounds lookup to the target section and fails closed; all status tables and the seven Historical rows are restored. Diagnostics #530 passed 37 Ledger tests, 26 report tests, and 7 archive-retention tests. The live Ledger links all 40 lint findings, including 28 low-severity findings. Six incomplete capture IDs remain pending their bounded natural retries.
@@ -19,6 +21,7 @@
 - **2026-11-24 — CI Ledger lifecycle verification:** Diagnostics run #515 passed 26 reporter tests, 33 Ledger tests, and 7 archive-retention tests. Document Standards run #271 passed. Both lint baselines are seeded. Task 20261123-054904 is archived Done. Task 20261123-225745 is current execution and owns pending-run reconciliation, retry-exhaustion review, and live terminal-finding retirement. Do not backfill, dispatch, poll, or manually clear findings.
 
 - **2026-11-23 — Drawing direction needed:** Session DRAWING-2026-11-23-01 is Active, but the user has not supplied a subject or visual direction. The user must provide the subject before prompt drafting or image generation.
+
 
 ## Reports
 
