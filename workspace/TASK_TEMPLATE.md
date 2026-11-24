@@ -2,7 +2,7 @@
 
 ## Metadata
 
-- **Template version:** 1.2
+- **Template version:** 1.3
 - **ID:** YYYYMMDD-HHMMSS
 - **Created:** YYYY-MM-DD HH:MM UTC
 - **Updated:** YYYY-MM-DD HH:MM UTC
@@ -10,6 +10,7 @@
 - **Status:** Ready
 - **Origin:** User
 - **Approval:** Approved
+- **Governing ADR(s):** None — non-implementation task
 - **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** None
@@ -32,7 +33,7 @@
 
 ## 4. Requirements
 
-[List agreed requirements and acceptance criteria.]
+[List agreed requirements and acceptance criteria. For implementation tasks, map applicable ADR Confirmation criteria to the task acceptance criteria.]
 
 ## 5. Decisions
 
