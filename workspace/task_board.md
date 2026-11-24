@@ -33,6 +33,8 @@ No active implementation task is selected.
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
+| 20261124-153825-01 | Review semicolon findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-153825-01-review-semicolon-findings-in-workspace-draft-draft-0002-phase-aw.md) |
+| 20261124-153825 | Review long-sentence findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-153825-review-long-sentence-findings-in-workspace-draft-draft-0002-phas.md) |
 | 20261124-150717 | Review publication\_or\_push failures in STE Lint Changed Documentation / Lint changed Markdown files and publish detailed | P1 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-150717-review-publication-or-push-failures-in-ste-lint-changed-document.md) |
 | 20261124-141534 | Review synonym-rotation findings in workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-141534-review-synonym-rotation-findings-in-workspace-adr-0001-establish.md) |
 | 20261124-134225 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regressi | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-134225-review-validation-or-test-failures-in-validate-document-standard.md) |

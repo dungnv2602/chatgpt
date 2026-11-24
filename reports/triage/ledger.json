@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-24T15:37:32Z",
+  "updated_at_utc": "2026-11-24T15:38:25Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
@@ -85,6 +85,7 @@
       "reports/gh_ac_reports/history/424715662/45416735141-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424715662/45416735141-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424715662/45427179335-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/424715662/45427379012-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424743410/45301729199-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/424743410/45301729199-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/424743410/45330179454-attempt-1-post_run/report.json",
@@ -223,6 +224,7 @@
       "reports/lint_reports/on_changed/history/45416574844-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45421670881-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45424211950-attempt-1/report.json",
+      "reports/lint_reports/on_changed/history/45427379012-attempt-1/report.json",
       "reports/lint_reports/on_repo/history/45301729199-attempt-1/report.json",
       "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
       "reports/lint_reports/on_repo/history/45330655561-attempt-1/report.json",
@@ -9994,6 +9996,151 @@
         "20261124-104329"
       ],
       "task_group": "ci-601033e3967e71af"
+    },
+    {
+      "finding_id": "lint-b12cf7b98114051a3ef4ed4e",
+      "source_family": "lint",
+      "category": "synonym-rotation",
+      "title": "synonym-rotation: 'check' and 'verify' name the same action. Pick one and use it every time.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T15:37:57.931607+00:00",
+      "last_seen_utc": "2026-11-24T15:37:57.931607+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45427379012-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45427379012",
+          "observed_at_utc": "2026-11-24T15:37:57.931607+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:353:4",
+          "observation_id": "lint:45427379012:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-114048-01"
+      ],
+      "task_group": "ci-a9beca21d82a9708"
+    },
+    {
+      "finding_id": "lint-331ead622bd8b63c3dc8ec78",
+      "source_family": "lint",
+      "category": "synonym-rotation",
+      "title": "synonym-rotation: 'correct' and 'fix' name the same action. Pick one and use it every time.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T15:37:57.931607+00:00",
+      "last_seen_utc": "2026-11-24T15:37:57.931607+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45427379012-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45427379012",
+          "observed_at_utc": "2026-11-24T15:37:57.931607+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:550:52",
+          "observation_id": "lint:45427379012:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-114048-01"
+      ],
+      "task_group": "ci-a9beca21d82a9708"
+    },
+    {
+      "finding_id": "lint-26959e3895827a98ea573e44",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 31 words (cap 25). Split it.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T15:37:57.931607+00:00",
+      "last_seen_utc": "2026-11-24T15:37:57.931607+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45427379012-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45427379012",
+          "observed_at_utc": "2026-11-24T15:37:57.931607+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:553:4",
+          "observation_id": "lint:45427379012:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-153825"
+      ],
+      "task_group": "ci-3d9410d07be9bf24"
+    },
+    {
+      "finding_id": "lint-33dd6d895441c53e43bd10a2",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 36 words (cap 25). Split it.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T15:37:57.931607+00:00",
+      "last_seen_utc": "2026-11-24T15:37:57.931607+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45427379012-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45427379012",
+          "observed_at_utc": "2026-11-24T15:37:57.931607+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:587:20",
+          "observation_id": "lint:45427379012:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-153825"
+      ],
+      "task_group": "ci-3d9410d07be9bf24"
+    },
+    {
+      "finding_id": "lint-0733dc3a8c16671792bda850",
+      "source_family": "lint",
+      "category": "semicolon",
+      "title": "semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T15:37:57.931607+00:00",
+      "last_seen_utc": "2026-11-24T15:37:57.931607+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45427379012-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45427379012",
+          "observed_at_utc": "2026-11-24T15:37:57.931607+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:602:90",
+          "observation_id": "lint:45427379012:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-153825-01"
+      ],
+      "task_group": "ci-97ac5148d90d96aa"
     }
   ]
 }
