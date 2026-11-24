@@ -1,4 +1,4 @@
-# STE Lint Changed Documentation — run 45330721385
+# STE Lint Changed Documentation — run 45335146902
 
 ## Run identity
 
@@ -6,21 +6,21 @@
 | --- | --- |
 | Workflow | STE Lint Changed Documentation |
 | Workflow path | .github/workflows/ste-lint-changed.yml |
-| Run / attempt | 45330721385 / 1 |
-| Run number | 587 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45330721385 |
+| Run / attempt | 45335146902 / 1 |
+| Run number | 590 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45335146902 |
 | Branch | gpt |
-| Commit | 25dbb4cb21a331be115644ee1c65407c710b7e83 |
+| Commit | 78e2fdc4bc29a59833de2625b13c27c731b40c81 |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-24T05:04:28Z |
+| Created (UTC) | 2026-11-24T05:42:06Z |
 | Status at capture | in_progress |
 | Observed conclusion | Not yet available |
 | Projected conclusion | failure |
 | Reporter job | in_progress / Pending |
 | Capture stage | pre_finalizer |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-24T05:08:53Z |
+| Captured (UTC) | 2026-11-24T05:44:59Z |
 
 ## Executive summary
 
@@ -45,23 +45,23 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 138231338855 | Reject superseded runs and find lint baseline | completed | success | 4 | logs/job-138231338855.log |
-| 138231386673 | Lint changed Markdown files and publish detailed evidence | completed | failure | 14 | logs/job-138231386673.log |
+| 138245939053 | Reject superseded runs and find lint baseline | completed | success | 4 | logs/job-138245939053.log |
+| 138245985357 | Lint changed Markdown files and publish detailed evidence | completed | failure | 14 | logs/job-138245985357.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 138231386673 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | Step conclusion: failure |
+| validation_or_test | 138245985357 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | Step conclusion: failure |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 138231338855 | warning | .github | 46 |  | No complete tooling-valid lint baseline exists. Run one full audit. |
-| 138231386673 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 138231386673 | failure | .github | 21 |  | Process completed with exit code 1. |
-| 138231386673 | failure | .github | 20 |  | Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md. |
+| 138245939053 | warning | .github | 46 |  | No complete tooling-valid lint baseline exists. Run one full audit. |
+| 138245985357 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 138245985357 | failure | .github | 21 |  | Process completed with exit code 1. |
+| 138245985357 | failure | .github | 20 |  | Changed-document lint failed. See reports/lint_reports/on_changed/latest-lint-report.md. |
 
 ## Artifacts
 
@@ -71,8 +71,8 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 138231338855 | Reject superseded runs and find lint baseline | logs/job-138231338855.log | 82 | False |  |
-| 138231386673 | Lint changed Markdown files and publish detailed evidence | logs/job-138231386673.log | 82 | False |  |
+| 138245939053 | Reject superseded runs and find lint baseline | logs/job-138245939053.log | 82 | False |  |
+| 138245985357 | Lint changed Markdown files and publish detailed evidence | logs/job-138245985357.log | 82 | False |  |
 
 ## Evidence coverage
 
@@ -80,8 +80,8 @@ One or more evidence sources were unavailable. This report is Incomplete.
 
 | Source | HTTP status | Limitation |
 | --- | --- | --- |
-| job_log | Not recorded | run 45330721385 is still in progress; logs will be available when it is complete  |
-| job_log | Not recorded | run 45330721385 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45335146902 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45335146902 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
