@@ -58,6 +58,16 @@ Restore reliable event-driven task generation and lifecycle management for CI fi
 
 ## 6. Progress Log
 
+### 2026-11-24 09:44 UTC — Reconcile natural Diagnostics sweeps and capture retries
+
+- **Action:** Checked the latest gpt workflow runs, branch head, Actions index, Ledger, task board, and relevant post-run reports. No workflow was dispatched or rerun.
+- **Hosted Diagnostics:** Runs [#531](https://github.com/dungnv2602/chatgpt/actions/runs/45366827227), [#532](https://github.com/dungnv2602/chatgpt/actions/runs/45366899714), [#533](https://github.com/dungnv2602/chatgpt/actions/runs/45367045952), [#534](https://github.com/dungnv2602/chatgpt/actions/runs/45367716656), and [#535](https://github.com/dungnv2602/chatgpt/actions/runs/45367745822) all passed. The latest sweep #535 completed at 09:43:37 UTC. Branch head is 683112af6ea59acbb5b735940453cb5a77a6e73a; its 09:44 commit followed the latest Diagnostics run.
+- **Source workflows:** Full Lint #189 ([run](https://github.com/dungnv2602/chatgpt/actions/runs/45357997227)) and #190 ([run](https://github.com/dungnv2602/chatgpt/actions/runs/45364189404)) now have complete post-run captures. In both, branch validation, tooling validation, and full audit/report generation passed; the final result step correctly failed because lint/validation findings were present. Changed Lint #598 ([run](https://github.com/dungnv2602/chatgpt/actions/runs/45367046002)) also completed linting and report publication successfully, then intentionally returned failure because changed-document findings were present. Its diagnostic capture is Complete. Document Standards #277 ([run](https://github.com/dungnv2602/chatgpt/actions/runs/45358009357)) passed; successful/non-actionable runs are not retained in the failure index by the reporter's report_is_actionable rule.
+- **Ledger:** Updated at 09:43:05 UTC; 108 open findings (100 lint, 8 GitHub Actions). Lint severities: 82 low, 24 medium, 2 high. All 100 open lint findings have task references; zero are unlinked. This confirms all-severity task handoff continued through the later natural ingestions.
+- **Capture retry queue:** Index watermark is 09:43:24 UTC. The six older IDs remain pending: 45350732862, 45350681678, 45349533662, 45348910294, 45348575554, and 45348198369. Each now has two incomplete post-run captures (initial capture plus capture-2), and zero are exhausted. The second captures, recorded 09:36:55–09:37:20 UTC, still lack source job logs (GitHub API returned “log not found” for each job). A third incomplete capture is allowed only after the one-hour interval from the latest incomplete capture, approximately 10:36:55–10:37:20 UTC. Diagnostics #535 ran before that window, so it correctly did not add another capture. #189 and #190 are no longer pending because their post-run captures are Complete.
+- **Result:** Regression coverage remains green from Diagnostics #530 (7 archive-retention, 26 report, and 37 Ledger tests). The live Ledger handoff is healthy. The remaining acceptance blocker is the six pending captures and their final retry/exhaustion reconciliation.
+- **Next:** Wait for a naturally triggered Diagnostics sweep after the retry windows. Verify whether the six captures complete or become exhausted on the third incomplete result. Do not dispatch, rerun, manually backfill, or clear findings.
+
 ### 2026-11-24 09:42 UTC — Resume current execution after Drawing workflow closeout
 
 - **Action:** Completed the separate Drawing workflow task and restored this CI Ledger task as current execution.
@@ -188,27 +198,28 @@ Restore reliable event-driven task generation and lifecycle management for CI fi
 
 ## 7. Current State
 
-The Ledger generator renders against Task Template v1.2. Every active lint finding is task-eligible; severity controls priority only (critical P0, high P1, medium P2, low/informational P3). GitHub Actions eligibility thresholds remain unchanged. Existing unlinked active lint findings are included on the next natural ingestion without rescanning historical lint reports.
+The Ledger generator renders against Task Template v1.2. Every active lint finding is task-eligible; severity controls priority only (critical P0, high P1, medium P2, low/informational P3). GitHub Actions eligibility thresholds remain unchanged. Existing unlinked active lint findings are included on natural ingestion without rescanning historical lint reports.
 
-The task renderer now confines task-row insertion to the target status section and fails closed if that section lacks a valid table. The canonical task board has valid tables for all statuses. Active Proposed rows are in Proposed, not Historical; the seven archived Done/Cancelled rows are restored under Historical.
+The task renderer confines task-row insertion to the target status section and fails closed if that section lacks a valid table. The canonical task board has valid tables for all statuses. Active Proposed rows are in Proposed, not Historical; the seven archived Done/Cancelled rows are restored under Historical.
 
-The latest verified Ledger has 48 open findings (40 lint and 8 GitHub Actions). All 40 lint findings have task references, including all 28 low-severity findings. The Full Lint #188 ingestion created 9 tasks, updated 7, linked 28 findings, and retired 3 terminal findings after their linked task archives were indexed Done. Both lint-scope baselines are seeded.
+The latest verified Ledger (2026-11-24 09:43:05 UTC) has 108 open findings: 100 lint and 8 GitHub Actions. The 100 lint findings comprise 82 low, 24 medium, and 2 high; every open lint finding has a task reference. Both lint-scope baselines remain seeded.
 
-Hosted Diagnostics #530 passed the reporter, Ledger, and archive-retention regression suites: 26 report tests, 37 Ledger tests, and 7 archive-retention tests. The new all-severity legacy handoff and task-board section-boundary regressions passed. Full Lint #188 produced a complete 455-finding report; all six tooling/anchor checks passed, while the workflow's final gate correctly failed on lint findings.
+Hosted Diagnostics #530 passed 7 archive-retention tests, 26 report tests, and 37 Ledger tests. Subsequent natural Diagnostics runs #531–#535 also passed. Full Lint #189 and #190 have complete post-run diagnostic captures; both passed branch validation, tooling validation, and full audit/report generation, then failed the final gate because lint findings were present. Changed Lint #598 similarly completed linting and report publication before its intentional findings gate. Document Standards #277 passed and is not retained in the failure-only report index.
 
-The Actions index watermark is `2026-11-24T08:10:28Z`. Six incomplete captures remain pending: `45350732862`, `45350681678`, `45349533662`, `45348910294`, `45348575554`, and `45348198369`. None is exhausted. Hosted tests verify three-attempt limits, one-hour automatic backoff, one-shot manual requests, and completed-capture deduplication. Their live pending retries still require natural future sweeps.
+The Actions index watermark is 2026-11-24T09:43:24Z. Six incomplete source captures remain pending: 45350732862, 45350681678, 45349533662, 45348910294, 45348575554, and 45348198369. Each has two incomplete post-run capture records; the second capture for each still lacks source job logs. None is exhausted. The third capture is eligible after the one-hour backoff from the second capture (approximately 10:36:55–10:37:20 UTC). The latest Diagnostics run #535 completed before that retry window.
 
 ## 8. Remaining Work
 
-- Verify that the six pending incomplete captures are retried only after the one-hour backoff, then either complete or enter the exhausted list after the third attempt.
-- Verify the Actions index and pending IDs reconcile through natural Diagnostics sweeps; do not manually backfill old reports.
-- Preserve the live finding-retirement rule. The latest ingestion retired three terminal findings after indexed Done archives; retain the hosted regression for grouped findings and archive-index timing.
+- Reconcile the six pending incomplete captures through natural Diagnostics sweeps. Each currently has two incomplete capture records and may receive one final capture after the one-hour backoff.
+- Verify that each pending ID either obtains a complete post-run capture or enters the exhausted list after the third incomplete capture.
+- Confirm the Actions index watermark, pending IDs, and exhausted IDs reconcile after those sweeps; do not manually backfill old reports.
+- Preserve the live finding-retirement rule: terminal Ledger findings may be retired only after every finding in the task is terminal and every linked task is archived Done and indexed.
 - Confirm no new unlinked active lint findings appear after subsequent natural ingestions.
 - Keep the clean-start boundary, both seeded lint baselines, bounded evidence, shared non-cancelling writer group, existing Actions eligibility, and no-automatic-remediation approval boundary unchanged.
 
 ## 9. Next Actions
 
-1. Allow the six pending captures to reach their next eligible automatic retry window.
+1. Allow the six pending captures to reach their third-capture eligibility window (after approximately 10:36:55–10:37:20 UTC).
 2. Review the next naturally triggered Diagnostics result and verify pending/exhausted index updates.
 3. Confirm no active lint finding is left without a task reference and task-board rows remain in their correct status sections.
 4. Close this task only after pending retry reconciliation and the remaining acceptance criteria are verified.
@@ -232,15 +243,15 @@ The Actions index watermark is `2026-11-24T08:10:28Z`. Six incomplete captures r
 ## 11. Verification
 
 - **Check:** Latest hosted CI results, all-severity task generation, task-board rendering, baseline state, and lifecycle ingestion.
-- **Method:** Inspected GitHub Actions run/job payloads and logs; read back the Ledger, Actions index, both lint indexes, task board, task records, generator, and tests.
-- **Result:** Diagnostics #530 passed 7 archive-retention tests, 26 report tests, and 37 Ledger tests. The advisory P3 task test, existing unlinked low/informational handoff test, status-section placement test, and fail-closed missing-table test passed. Both lint baselines are true. All 40 lint findings are linked, including 28 low findings. Full Lint #188 ingestion reported 28 findings linked and 3 terminal findings retired.
-- **Limitations:** Six incomplete capture IDs remain pending, with none exhausted. Their next automatic retry windows and final reconciliation have not yet been observed. Full Lint #188's final gate failed because the complete report contains 455 lint findings; all tooling and anchor checks passed.
+- **Method:** Inspected GitHub Actions run/job payloads, post-run capture reports, the Actions index, Ledger, task board, and task record on branch gpt. No workflow was dispatched or rerun.
+- **Result:** Diagnostics #530 passed 7 archive-retention tests, 26 report tests, and 37 Ledger tests. Natural Diagnostics #531–#535 passed. Full Lint #189/#190 and Changed Lint #598 have complete post-run captures and show successful tooling/report generation followed by the expected findings gate. Document Standards #277 passed. The Ledger has 108 open findings (100 lint, 8 Actions); all 100 open lint findings are linked to tasks. Both lint baselines remain seeded.
+- **Limitations:** Six source captures remain pending after two incomplete capture records each. The second capture for each could not retrieve source job logs. None is exhausted; a third capture is subject to the one-hour backoff and requires a later natural Diagnostics sweep.
 
 ## 12. Handoff Instructions
 
-The earlier hosted runner-allocation blocker is no longer active. GitHub's annotations on the old runnerless jobs identified an account billing/spending-limit issue; later jobs received hosted runners and executed. The stale low-severity test and task-board section-boundary defect are fixed. Diagnostics #530 is green.
+The earlier hosted runner-allocation blocker is no longer active. GitHub's annotations on the old runnerless jobs identified an account billing/spending-limit issue; later jobs received hosted runners and executed. The stale low-severity test and task-board section-boundary defect are fixed. Diagnostics #530 and subsequent natural runs #531–#535 are green.
 
-Continue by allowing the six pending incomplete capture IDs to reach their one-hour retry windows. Verify bounded retries and exhaustion through natural Diagnostics runs only. Do not dispatch or poll workflows, manually backfill historical reports, alter Actions eligibility, clear findings, or authorize remediation. Keep changes on `gpt`; never modify `main`.
+Continue by allowing the six pending incomplete capture IDs to reach their third-capture eligibility windows. The second captures still lack source job logs; do not infer a source-workflow defect from those missing logs. Verify bounded retries and exhaustion through natural Diagnostics runs only. Do not dispatch or rerun workflows, manually backfill historical reports, alter Actions eligibility, clear findings, or authorize remediation. Keep changes on gpt; never modify main.
 
 ## 13. Ledger Findings
 
