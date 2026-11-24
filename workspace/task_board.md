@@ -1,6 +1,6 @@
 # Task Board
 
-Last updated: 2026-11-24
+Last updated: 2026-11-25
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
@@ -16,8 +16,6 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
-
-
 
 ## Ready
 
@@ -40,11 +38,6 @@ The Historical section retains at most the 7 most recently completed or cancelle
 | 20261124-162814 | Review synonym-rotation findings in workspace/draft/README.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-162814-review-synonym-rotation-findings-in-workspace-draft-readme-md.md) |
 | 20261124-161334-07 | Review passive-voice findings in workspace/draft/README.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-161334-07-review-passive-voice-findings-in-workspace-draft-readme-md.md) |
 | 20261124-161334-06 | Review present-perfect findings in workspace/draft/README.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-161334-06-review-present-perfect-findings-in-workspace-draft-readme-md.md) |
-| 20261124-161334-05 | Review synonym-rotation findings in workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-161334-05-review-synonym-rotation-findings-in-workspace-adr-0002-retire-so.md) |
-| 20261124-161334-04 | Review long-sentence findings in workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-161334-04-review-long-sentence-findings-in-workspace-adr-0002-retire-sourc.md) |
-| 20261124-161334-03 | Review semicolon findings in workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-161334-03-review-semicolon-findings-in-workspace-adr-0002-retire-source-dr.md) |
-| 20261124-161334-02 | Review passive-voice findings in workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-161334-02-review-passive-voice-findings-in-workspace-adr-0002-retire-sourc.md) |
-| 20261124-161334-01 | Review present-perfect findings in workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-161334-01-review-present-perfect-findings-in-workspace-adr-0002-retire-sou.md) |
 | 20261124-161334 | Review semicolon findings in workspace/adr/README.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-161334-review-semicolon-findings-in-workspace-adr-readme-md.md) |
 | 20261124-155748-05 | Review semicolon findings in workspace/draft/DRAFT-0003-retire-source-drafts-after-verified-adr-promotion.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-155748-05-review-semicolon-findings-in-workspace-draft-draft-0003-retire-s.md) |
 | 20261124-155748-04 | Review passive-voice findings in workspace/draft/DRAFT-0003-retire-source-drafts-after-verified-adr-promotion.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-155748-04-review-passive-voice-findings-in-workspace-draft-draft-0003-reti.md) |
