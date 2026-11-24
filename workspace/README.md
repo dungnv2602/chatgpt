@@ -55,7 +55,7 @@ The first complete tooling-valid full audit in each lint scope establishes a bas
 
 A lint report can seed a baseline when every required tooling check passes, even when the report records lint failures. The baseline prevents recurring findings from appearing as new work.
 
-A Ledger-generated task cannot close as Done while any linked finding remains non-terminal. After the Worker archives the task as Done and indexes it, the archive/tasks/** push triggers the normal diagnostics sweep. The Ledger then retires the terminal findings from the active backlog. The archived task and its archived report references preserve the audit history. Do not remove Ledger entries manually or run periodic retirement scans.
+A Ledger-generated task cannot close as Done while any linked finding remains non-terminal. After the Worker archives the task as Done and indexes it, the archive/tasks/** push triggers the normal diagnostics sweep. The Ledger then retires the terminal findings from the active backlog. The archived task and its archived report references preserve the audit history. Do not delete Ledger entries manually or run periodic retirement scans.
 
 A clean-start reset is destructive and requires explicit user authorization. It clears generated active report data, prior archive/reports/** snapshots, report indexes, and the active Ledger, then establishes new unseeded lint baselines. It preserves scripts, schemas, templates, workflows, operating guides, task archives, and unrelated tasks. See reports/triage/README.md and archive/README.md for exact reset and closeout rules.
 

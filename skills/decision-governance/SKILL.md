@@ -92,7 +92,7 @@ Promote a Draft only after the user approves its exact revision and scope. Treat
 5. Compare the prepared ADR with the source Draft using the completeness checklist below.
 6. Resolve every material omission before accepting the ADR.
 7. Create the provisional ADR with status promotion-pending. Record the source Draft ID, source revision, approver, approval date, approved scope, related ADRs, and implementation state.
-8. Read back the provisional ADR. Check its complete content, metadata, links, and rationale mapping.
+8. Read back the provisional ADR. Inspect its complete content, metadata, links, and rationale mapping.
 9. Change status to accepted only after every required check passes.
 10. Read back the accepted ADR. Confirm that its decision content matches the provisional record that the Worker confirmed.
 11. Delete the exact source Draft only after the accepted ADR passes the completeness gate.

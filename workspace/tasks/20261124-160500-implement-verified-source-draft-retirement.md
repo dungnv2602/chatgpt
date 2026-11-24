@@ -60,6 +60,13 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 
 ## 6. Progress Log
 
+### 2026-11-24 16:58 UTC
+
+- **Action:** Reviewed hosted validation for the latest scoped remediation. Document Standards run 45442491643 passed. Diagnostics run 45442491819 passed. STE Lint run 45442492124 failed with two hard synonym-rotation findings outside ADR-0002. Updated the decision-governance skill and workspace README to address those exact findings. The Document Type Catalog and task board passed lint in the same run.
+- **Result:** STE lint findings fell from six to two outside ADR-0002. Linter tooling, regression tests, and self-test passed. The incremental run skipped full Markdown link and anchor checks. New validation is required for these final edits.
+- **References:** [Document Standards run 45442491643](https://github.com/dungnv2602/chatgpt/actions/runs/45442491643); [Diagnostics run 45442491819](https://github.com/dungnv2602/chatgpt/actions/runs/45442491819); [STE Lint run 45442492124](https://github.com/dungnv2602/chatgpt/actions/runs/45442492124); report reports/lint_reports/on_changed/history/45442492124-attempt-1/report.json.
+- **Next:** Review the event-driven validation result for the final two wording fixes. Do not poll or manually dispatch CI.
+
 ### 2026-11-24 16:05 UTC
 
 - **Action:** Re-fetched DRAFT-0003 revision 2 and verified its approved revision and scope.
@@ -153,20 +160,20 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - The rationale completeness assessment for DRAFT-0001 passed. No material gap requires another ADR.
 - Task execution is approved. This task is In Progress and is the current execution task.
 - The canonical formats and owner guidance have been updated and read back. DRAFT-0001 is deleted after the completeness and cross-reference checks passed.
-- For commit 80e67808c0b97fbd4f1e69896c806b2145316d7c, Document Standards run 45440436438 and Diagnostics run 45440436214 passed. STE Lint run 45440436265 failed with 50 findings. Six hard synonym-rotation findings outside ADR-0002 were then addressed in four documents. ADR-0002's accepted decision-bearing sections remain unchanged. Hosted validation for the later remediation commits is pending.
+- For commit b4f01ecb336fdc3174039a9c014229e44f7aad6d, Document Standards run 45442491643 and Diagnostics run 45442491819 passed. STE Lint run 45442492124 reported two hard synonym-rotation findings outside ADR-0002. Four other scoped files passed in that run. Two final wording edits now address the remaining findings. ADR-0002's accepted decision-bearing sections remain unchanged. Hosted validation for the final edits is pending.
 
 ## 8. Remaining Work
 
-- Inspect the event-driven Document Standards result for the latest remediation commits when it becomes available. Do not poll CI.
-- Review the event-driven STE Lint result for the latest remediation commits. Findings in ADR-0002's accepted decision-bearing sections remain outside the current remediation authority.
-- Update ADR-0002 Confirmation and record final migration and validation evidence after the latest Document Standards run passes.
+- Review the event-driven Document Standards and STE Lint results for the final two wording edits. Do not poll or manually dispatch CI.
+- If Document Standards passes, update ADR-0002 Confirmation with the hosted validation evidence. Keep the accepted decision-bearing content unchanged.
+- Record the final disposition of any lint findings in ADR-0002's accepted decision-bearing sections. Do not edit those sections under the current authorization.
 
 ## 9. Next Actions
 
-1. Review the event-driven Document Standards and STE Lint results for the latest remediation commits. Do not poll CI.
-2. Update ADR-0002 Confirmation and record the final migration evidence after Document Standards passes.
-3. Record the disposition of any residual STE findings in immutable ADR-0002 sections.
-4. Close and archive this task after all task acceptance criteria pass.
+1. Review the event-driven Document Standards and STE Lint results for the final wording edits. Do not poll CI.
+2. Update ADR-0002 Confirmation and record the migration and hosted validation evidence after Document Standards passes.
+3. Record any remaining ADR-0002 lint limitation without changing its accepted decision content.
+4. Close and archive this task after all acceptance criteria pass.
 
 ## 10. References
 
