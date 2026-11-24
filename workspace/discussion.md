@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 05:29 UTC — Correct the approved STE terminology finding:** Inspect the repository writing policy and Document Type Catalog entry, then correct only the ordinary `delete`/`remove` inconsistency in `skills/asd-ste100/SKILL.md`. Preserve all 12 deliberate lint examples and all lint rules.
+**2026-11-24 05:31 UTC — Record remediation checkpoint:** Update the approved task with the observed hosted report results, the one-file terminology correction, commit evidence, and the pending natural lint validation. Keep the task In Progress. Do not wait for or poll CI.
 
 ## Open Discussions
 
