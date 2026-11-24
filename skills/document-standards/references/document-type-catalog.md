@@ -135,7 +135,7 @@ Coverage status has three values. `Active` rules must match at least one current
 | `workspace/draft/DRAFT-*.md` | Template required | Active | `workspace/draft/DRAFT_TEMPLATE.md` | One proposal record per decision. The first Draft is DRAFT-0001. |
 | `workspace/adr/README.md` | Embedded contract | Active | `workspace/adr/README.md` | Accepted ADR navigation, status, implementation, and archive rules. |
 | `workspace/adr/ADR_TEMPLATE.md` | Exempt | Active | `workspace/adr/ADR_TEMPLATE.md` | Canonical ADR template source, not an accepted decision record. |
-| `workspace/adr/ADR-*.md` | Template required | Active | `workspace/adr/ADR_TEMPLATE.md` | Accepted ADR records. ADR-0001 is the first active decision record. |
+| `workspace/adr/????-*.md` | Template required | Active | `workspace/adr/ADR_TEMPLATE.md` | Accepted ADR records use a four-digit global ID in the filename. ADR-0001 is the first active decision record. |
 
 ## Validation coverage limits
 
