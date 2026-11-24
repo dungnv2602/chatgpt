@@ -1,6 +1,7 @@
 ## Current Step
 
-**2026-11-25 01:18 UTC — ADR-0002 archived:** ADR-0002 now resides in `archive/adr/` with implementation status complete and all ten Confirmation items checked. Its active copy is absent. The five lint tasks and the necessary Ledger handoff task are archived Done. All 25 linked findings have resolved status. The event-driven sweep retired 24 findings. One terminal finding awaits the diagnostics sweep triggered by the final task archive and retention-index commits. STE Lint #678 and Document Standards #362 remain pending after archival changes. Do not poll CI. Review their event-driven results when naturally available.
+**2026-11-24 18:30 UTC — Repair ADR catalog and CI follow-through:** User directed repair of the Document Standards catalog failure and improvement to the Worker's CI repair procedure. Task `20261124-183017` is In Progress. Root cause confirmed: `workspace/adr/????-*.md` is still Active although the active ADR family is empty; Document Standards requires Reserved for an empty family. The prior response stopped after diagnosis and did not execute or track the repair. Next: set the coverage rule to Reserved, add an explicit user-directed CI-failure follow-through procedure to The Worker, update indexes, read back all changes, and review naturally triggered validation without polling. DRAFT-0002 remains unchanged.
+
 
 ## Open Discussions
 
@@ -10,6 +11,7 @@
 
 ## Reports
 
+- **2026-11-24 18:30 UTC — Post-archive CI review:** [STE Lint #678](https://github.com/dungnv2602/chatgpt/actions/runs/45457882540) passed. [Document Standards #362](https://github.com/dungnv2602/chatgpt/actions/runs/45457882610) failed at catalog validation because the empty active ADR family remained marked Active. [Diagnostics #649](https://github.com/dungnv2602/chatgpt/actions/runs/45458212210) and [#648](https://github.com/dungnv2602/chatgpt/actions/runs/45458192477) passed.
 - **2026-11-24 15:07 UTC — Changed-document lint passed:** Run [#636](https://github.com/dungnv2602/chatgpt/actions/runs/45421670881) passed on commit 4dfbde6. The report records zero hard findings, 29 recurring advisory findings, zero new findings, and one resolved finding. Report publication succeeded.
 - **2026-11-24 15:06 UTC — Document Standards validation passed:** Run [#320](https://github.com/dungnv2602/chatgpt/actions/runs/45421670850) passed 37 Ledger tests, 32 catalog tests, catalog validation, and its diagnostics capture.
 - **2026-11-24 15:06 UTC — GitHub Actions diagnostics passed:** Run [#587](https://github.com/dungnv2602/chatgpt/actions/runs/45421671015) passed reporter tests, backfill, Ledger ingestion, and publication.
