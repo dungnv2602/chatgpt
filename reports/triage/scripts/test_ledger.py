@@ -117,6 +117,8 @@ class LedgerTests(unittest.TestCase):
         self.assertIn(finding["finding_id"], task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Template version:** 1.3", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Governing ADR(s):** Pending — Worker review required before approval", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("1. Inspect every linked report and exact diagnostic before proposing a fix.", task_files[0].read_text(encoding="utf-8"))
+        self.assertNotIn("[List agreed requirements and acceptance criteria.", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Standing instruction:**", task_files[0].read_text(encoding="utf-8"))
         self.assertNotIn("[Preserve relevant user clarifications", task_files[0].read_text(encoding="utf-8"))
         self.assertIn(f"| {finding['task_refs'][0]} |", (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8"))
