@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-24 — Recover the active Image Takeout task.** Read the workspace guide, task board, and exact active task record. Confirm approval, scope, and next actions before inspecting or dispatching workflows.
+- **2026-11-24 — Verify Image Takeout inputs and manual workflow contracts.** Read the provenance/WebP procedures, exact hand-off and intake inventory, processor scripts, and both workflow definitions. Confirm current branch state and dispatch inputs before starting either run.
 
 ## Open Discussions
 
