@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-24 — Verify Image Takeout inputs and manual workflow contracts.** Read the provenance/WebP procedures, exact hand-off and intake inventory, processor scripts, and both workflow definitions. Confirm current branch state and dispatch inputs before starting either run.
+- **2026-11-24 — Repair the failing takeout regression suite.** The hosted run stopped before processing because 15 of 45 tests failed. The common defect is Markdown identity parsing: production attempt notes use bold labels (`**Generation ID:**`, `**Asset ID:**`), but both validators expect plain labels. Correct both validators and the synthetic fixture's Output ID mapping, then commit and read back the exact changes. Do not rerun Actions until the repair is committed.
 
 ## Open Discussions
 
