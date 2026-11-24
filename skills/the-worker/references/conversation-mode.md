@@ -183,6 +183,8 @@ If a section is empty, keep its placeholder and retain the entries in the other 
 
 ### Approval and clearing
 
+Decision-governance work keeps its active implementation task in Current Step. Keep each Draft in Open Discussions until the user decides. After promotion, link the accepted ADR from the implementation task.
+
 Approval authorizes only the scope the user approved. It does not authorize unrelated work or clear unrelated open discussions.
 
 Keep an approved matter open while the approved work is incomplete or still requires user input. Once the approved work is complete and verified, remove only the resolved discussion. A rejected or withdrawn proposal is also removed when no further discussion is needed. Do not wait for separate approval to clear a resolved discussion.
