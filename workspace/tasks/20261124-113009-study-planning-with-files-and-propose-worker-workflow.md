@@ -5,9 +5,9 @@
 - **Template version:** 1.2
 - **ID:** 20261124-113009
 - **Created:** 2026-11-24 11:30 UTC
-- **Updated:** 2026-11-24 11:30 UTC
+- **Updated:** 2026-11-24 11:40 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Blocked
 - **Origin:** User
 - **Approval:** Approved to study the supplied project, inspect this repository's current workflow, and prepare a comprehensive proposal for user review. Do not implement proposed workflow changes before approval.
 - **Current execution:** Yes
@@ -99,24 +99,33 @@ Study Planning with Files and determine how its durable planning, research captu
 - **Path lookup correction:** An initial lookup for `docs/plan-inventory.md` returned 404. The canonical inventory was found at `skills/planning-with-files/plan-inventory.md`. The unavailable `docs/evals.md` path was not used.
 - **Next:** Compare these mechanisms against The Worker and the task renderer. Recommend only the parts that fit the current authority and runtime model.
 
+### 2026-11-24 11:40 UTC — Compare the systems and prepare DRAFT-0002
+
+- **Action:** Compared the external workflow with the Worker task authority, Progress Log, discussion register, workspace navigation, task archive, and CI Ledger renderer.
+- **Result:** Recommended a selective hybrid. Keep one task record as the plan and activity log. Add phase tracking with exit criteria and one Next Step. Add an optional evidence note for research-heavy work. Do not install the external skill or add local hooks.
+- **Decision proposal:** Update The Worker and add a focused Worker reference. Do not create a new skill. Preserve the existing task board and discussion register structures. Keep the separate DRAFT-0001 decision open.
+- **Artifact:** Created [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](../draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md), revision 1, status in-review.
+- **Index:** Added DRAFT-0002 to `workspace/draft/README.md`. The existing Draft path rule already covers the new file.
+- **Next:** Add DRAFT-0002 to Open Discussions, reconcile the task board to Blocked, and read back all changed paths.
+
 ## 7. Current State
 
-The task is In Progress. Foundational initialization passed. Workspace recovery confirmed that no task was in current execution before this task was created. DRAFT-0001 remains pending separate user review. The external review is complete at the inspected revision. Its useful mechanisms include phase status, one next step, evidence capture, explicit plan ownership, fail-closed task selection, structured recovery, and bounded completion checks. Its local hook and script architecture does not fit this repository's remote-only runtime. No implementation changes are authorized.
+The external source study and repository comparison are complete. DRAFT-0002 revision 1 is created and indexed. It recommends a selective, repository-native adaptation.
+
+The task is Blocked while the user reviews DRAFT-0002. DRAFT-0001 remains unchanged and awaits a separate decision. No ADR has been created. No workflow implementation, new findings template, task-note directory, Worker reference, or automation has been added.
 
 ## 8. Remaining Work
 
-- Compare the external model with current Worker, task, discussion, document, and CI Ledger renderer contracts.
-- Design the proposed file-backed planning workflow, including document ownership and the minimum required templates.
-- Determine whether a new task-specific skill is warranted and identify the exact integration changes.
-- Create a comprehensive Draft and link it in Open Discussions.
-- Keep implementation paused until the user approves the exact Draft and its scope.
+- Await the user's review of DRAFT-0002 revision 1.
+- Reconcile any feedback and record the approved scope or requested changes.
+- Keep DRAFT-0001 as a separate open decision. Reconcile the proposals before promoting either where their scopes overlap.
+- Do not implement the proposed workflow before approval.
 
 ## 9. Next Actions
 
-1. Map external plan, findings, progress, isolation, recovery, and completion mechanisms to existing Worker records.
-2. Specify the minimum viable and full repository-specific adoption choices.
-3. Draft the proposal and cross-link DRAFT-0001 without changing it.
-4. Update the discussion register and task board, then read back every changed path.
+1. Await the user's decision on DRAFT-0002 revision 1.
+2. If changes are requested, revise the same Draft and record the revision history.
+3. If approved, create an ADR only after reconciling dependencies with DRAFT-0001 and obtaining explicit approval for the exact scope.
 
 ## 10. References
 
@@ -134,10 +143,10 @@ The task is In Progress. Foundational initialization passed. Workspace recovery 
 
 ## 11. Verification
 
-- **Check:** Task template and path-coverage requirements.
-- **Method:** Retrieved the canonical task template and the relevant catalog row and path rule from branch `gpt`.
-- **Result:** The destination path matches the active `workspace/tasks/*.md` rule and the task template version 1.2.
-- **Limitations:** The new task, board row, and discussion link still require creation and read-back.
+- **Check:** External source and repository comparison.
+- **Method:** Read the external branch head and canonical skill. Read the three planning templates, workflow guide, long-running task guide, security policy, plan inventory, resolver, completion checker, Stop dispatcher, examples, reference, and a relevant regression test. Read the repository's Worker, Conversation Mode, task template, board, workspace README, Draft/ADR contracts, archive README, Document Type Catalog, and Ledger renderer.
+- **Result:** Created DRAFT-0002 revision 1. The existing Draft coverage rule includes the new file. The Draft proposes an optional findings family, so no new catalog path rule is active yet.
+- **Limitations:** No external or repository tests were executed. The Draft has not been approved. Proposed workflow changes remain unimplemented.
 
 ## 12. Handoff Instructions
 
