@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 09:38 UTC — Verify all committed Drawing workflow changes, confirm both pattern indexes remain unchanged, and update the task handoff with exact commits and read-back results.**
+**2026-11-24 09:38 UTC — Finalize the Drawing workflow task record and complete the required archive, retention-index, and task-board closeout. Preserve the unapproved-pattern boundary.**
 
 ## Open Discussions
 
