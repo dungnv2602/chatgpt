@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 18:40 UTC — STE Lint passed:** [STE Lint #681](https://github.com/actions/runs/45461706916) passed on commit `cedc0b751f02f494feabb822b2669c29fa9d7180`. It evaluated The Worker and reported zero findings. The catalog and task board also passed with zero findings in #679. The catalog's separate Document Standards validation remains unverified. Do not poll. Keep task `20261124-183017` In Progress until that check passes. DRAFT-0002 remains unchanged.
+**2026-11-24 18:57 UTC — Catalog repair validated and task archived:** [Document Standards #365](https://github.com/actions/runs/45461707151) passed on commit `cedc0b751f02f494feabb822b2669c29fa9d7180`, and [STE Lint #681](https://github.com/actions/runs/45461706916) passed with zero findings. Task `20261124-183017` is archived at [the immutable task record](../archive/tasks/20261124-183017-repair-adr-catalog-rule-and-ci-follow-through.md) via [archive commit](https://github.com/dungnv2602/chatgpt/commit/5cdb81d16becbb86f6e5270d493f1b1ff6210bcb). The retention index uses the archive commit timestamp, `2026-11-24T18:56:28Z`. Note: the immutable archive front matter contains an erroneous archive timestamp (`2026-11-25T18:55:00Z)); the archive was not altered, and the index records the actual commit time. DRAFT-0002 remains unchanged.
 
 
 ## Open Discussions
@@ -10,6 +10,8 @@
 - **2026-11-23 — Drawing direction needed:** Session DRAWING-2026-11-23-01 is Active, but the user has not supplied a subject or visual direction. The user must provide the subject before prompt drafting or image generation.
 
 ## Reports
+
+- **2026-11-24 18:57 UTC — Catalog repair validated:** Document Standards #365 passed and STE Lint #681 passed with zero findings on commit `cedc0b751f02f494feabb822b2669c29fa9d7180`. The catalog and Worker changes are validated. Task `20261124-183017` was archived; its archive timestamp discrepancy is documented in Current Step, and the retention index uses the archive commit's actual timestamp.
 
 - **2026-11-24 18:30 UTC — Post-archive CI review:** [STE Lint #678](https://github.com/dungnv2602/chatgpt/actions/runs/45457882540) passed. [Document Standards #362](https://github.com/dungnv2602/chatgpt/actions/runs/45457882610) failed at catalog validation because the empty active ADR family remained marked Active. [Diagnostics #649](https://github.com/dungnv2602/chatgpt/actions/runs/45458212210) and [#648](https://github.com/dungnv2602/chatgpt/actions/runs/45458192477) passed.
 - **2026-11-24 15:07 UTC — Changed-document lint passed:** Run [#636](https://github.com/dungnv2602/chatgpt/actions/runs/45421670881) passed on commit 4dfbde6. The report records zero hard findings, 29 recurring advisory findings, zero new findings, and one resolved finding. Report publication succeeded.
