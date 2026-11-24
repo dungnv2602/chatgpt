@@ -2,7 +2,7 @@
 record_type: decision-draft
 template_version: "1.0"
 id: "DRAFT-0003"
-revision: 1
+revision: 2
 status: "in-review"
 created: "2026-11-24"
 updated: "2026-11-24"
@@ -132,9 +132,9 @@ Promote a Draft only after the user approves its exact revision and scope.
 1. **Verify approval.** Re-fetch the complete Draft from branch `gpt`. Confirm its ID, revision, approval, and scope. Stop if the approved revision does not match the current file.
 2. **Prepare the ADR.** Map the Draft's decision-bearing content into the ADR. Do not copy text mechanically. Preserve the meaning and the reasoning.
 3. **Complete the rationale cross-check.** Compare the prepared ADR against the source Draft by using the completeness checklist below. Resolve every material omission before the ADR becomes accepted.
-4. **Create the ADR.** Assign the next unused global ADR ID. Record the source Draft ID as provenance, the approver, approval date, related ADRs, implementation state, and approved scope.
-5. **Read back and verify.** Fetch the written ADR from branch `gpt`. Check its complete content, required sections, metadata, internal links, and the rationale cross-check. Do not delete the Draft if any required check fails.
-6. **Accept the ADR.** Set the ADR status to `accepted` only after the content check passes. Read back the accepted record and confirm that its decision content matches the validated version.
+4. **Create a provisional ADR.** Assign the next unused global ADR ID and create the record with status `promotion-pending`. Record the source Draft ID as provenance, the approver, approval date, related ADRs, implementation state, and approved scope. A `promotion-pending` ADR reserves the ID but is not an accepted decision and cannot govern an implementation task.
+5. **Read back and verify.** Fetch the provisional ADR from branch `gpt`. Check its complete content, required sections, metadata, internal links, and the rationale cross-check. If a material omission exists, correct the provisional ADR and repeat the complete check. Do not accept the ADR or delete the Draft while any required check fails.
+6. **Accept the ADR.** Change the status from `promotion-pending` to `accepted` only after the completeness check passes. Read back the accepted record and confirm that its decision content matches the validated version. Do not change its decision content after acceptance.
 7. **Delete the source Draft.** Delete the exact source file only after the accepted ADR has passed the completeness gate. Do not move it to another folder and do not retain a full copy.
 8. **Update indexes.** Remove the source Draft from `workspace/draft/README.md`. Ensure the ADR index points to the accepted ADR. Do not leave a Promoted Drafts entry.
 9. **Verify closeout.** Read back both indexes. Confirm that the ADR exists, the source Draft does not exist, and no active index points to the deleted file. Check repository references for stale Markdown links.
@@ -173,8 +173,9 @@ If the ADR omits important rationale:
 
 GitHub file operations may commit the ADR, index update, and Draft deletion separately. The process must therefore support a partial state.
 
-- If the ADR does not exist, continue from the approved Draft. Do not assign a second ID if an ADR ID has already been reserved in a recorded promotion attempt.
-- If an ADR exists but is not yet accepted, resume its completeness checks. Do not create another ADR.
+- If the provisional ADR does not exist, continue from the approved Draft. Do not assign a second ID if an ADR ID has already been reserved in a recorded promotion attempt.
+- If an ADR exists with status `promotion-pending`, resume its completeness checks. Correct any material omissions before acceptance. Do not create another ADR.
+- A `promotion-pending` ADR is not accepted, must not appear in the accepted-decision list, and must not be referenced by an implementation task.
 - If the ADR is accepted and verified but the Draft deletion fails, keep the Draft. Add it to a clearly named **Promotion Cleanup Pending** section in the Draft index, record the resulting ADR ID in the Draft metadata, and retry only the cleanup step.
 - Do not list a cleanup-pending Draft as a proposal awaiting a decision.
 - After deletion succeeds, remove the cleanup-pending entry and verify the final state.
@@ -216,8 +217,8 @@ Update the following records and instructions:
 | `workspace/draft/README.md` | Remove `promoted` from steady-state statuses; remove promoted records from Current Drafts; define Promotion Cleanup Pending. |
 | `workspace/README.md` | Describe Draft deletion after verified ADR promotion. |
 | `workspace/DRAFT_TEMPLATE.md` | Remove the steady-state `promoted` status and clarify source-file retirement. |
-| `workspace/ADR_TEMPLATE.md` | Record the source Draft ID as provenance without a link to a file that will be deleted. |
-| `workspace/adr/README.md` | Clarify that accepted ADRs replace source Drafts and that the source ID remains as provenance. |
+| `workspace/ADR_TEMPLATE.md` | Start new promotion records as `promotion-pending`; record the source Draft ID as provenance without a link to a file that will be deleted. |
+| `workspace/adr/README.md` | Define `promotion-pending` as a temporary, non-authoritative state and clarify that only accepted ADRs replace source Drafts. |
 | `archive/README.md` | State that ADR archives remain permanent while source Draft files are retired after promotion. |
 | `archive/adr/README.md` | Keep ADR immutability and permanent retention rules; do not add source Draft archives. |
 | `workspace/discussion.md` | Keep only Drafts that still need a decision in Open Discussions. |
@@ -230,7 +231,8 @@ Do not change the session-start sequence or make decision governance a foundatio
 The implementation of this decision passes only when:
 
 1. The decision-governance skill describes every promotion step and the completeness gate.
-2. The Draft README does not list any successfully promoted Draft.
+2. New ADR promotion records use `promotion-pending` until the read-back and completeness checks pass; pending records cannot govern tasks.
+3. The Draft README does not list any successfully promoted Draft.
 3. The Draft and ADR templates use the revised source-Draft rules.
 4. No new ADR contains a Markdown link to a source Draft that is scheduled for deletion.
 5. A promotion cannot delete its source Draft before the ADR read-back and completeness check pass.
@@ -286,9 +288,9 @@ Do not delete DRAFT-0001 as part of preparing this proposal. This proposal does 
 
 ## Review and Approval
 
-- **Revision presented:** 1
+- **Revision presented:** 2
 - **User decision:** Pending exact revision review
-- **Approved scope:** The user approved the lifecycle direction and rationale safeguard in conversation on 2026-11-24. The complete revision 1 text and its migration details are presented for exact approval.
+- **Approved scope:** The user approved the lifecycle direction and rationale safeguard in conversation on 2026-11-24. Revision 2 clarifies that a provisional ADR remains `promotion-pending` and non-authoritative until the read-back and completeness checks pass.
 - **Decision date:** Pending
 - **Resulting ADR:** Not created
 
@@ -297,6 +299,7 @@ Do not delete DRAFT-0001 as part of preparing this proposal. This proposal does 
 | Date | Revision | Change | User feedback / decision |
 |---|---|---|---|
 | 2026-11-24 | 1 | Initial proposal. Defines Draft retirement after verified ADR promotion, a rationale completeness gate, partial-promotion recovery, and migration controls for DRAFT-0001. | User approved the lifecycle direction and rationale safeguard before this complete revision was prepared. Exact revision approval is pending. |
+| 2026-11-24 | 2 | Added the explicit `promotion-pending` ADR transaction state. An ADR becomes accepted only after its read-back and completeness checks pass; pending records cannot govern implementation tasks. | Prepared to make the conversion gate and failure recovery unambiguous. Exact revision approval is pending. |
 
 ## References
 
