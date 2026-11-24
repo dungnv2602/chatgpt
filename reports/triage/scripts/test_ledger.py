@@ -44,7 +44,7 @@ class LedgerTests(unittest.TestCase):
 
     def add_lint(self, scope, run_id, timestamp, fingerprint="a1b2c3d4e5f6", status="Failed",
                  level="advisory-free", file_path="docs/example.md", rule="semicolon",
-                 message="Split this sentence.", comparison="new", execution_mode="full-audit-fallback")
+                 message="Split this sentence.", comparison="new", execution_mode="full-audit-fallback"):
         folder = self.root / "reports" / "lint_reports" / scope
         history = folder / "history" / (run_id + "-attempt-1")
         history.mkdir(parents=True, exist_ok=True)
@@ -388,6 +388,28 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("lint-cccccccc3333", task_text)
         self.assertNotIn("lint-a1b2c3d4e5f6", task_text)
         self.assertNotIn("lint-b2c3d4e5f6a7", task_text)
+
+    def test_lint_baseline_requires_every_tooling_check_but_allows_lint_findings(self):
+        path = self.add_lint("on_changed", "948", "2026-11-23T07:00:00Z", status="Failed")
+        report = json.loads(path.read_text(encoding="utf-8"))
+        self.assertTrue(LEDGER.lint_baseline_ready(report, "on_changed"))
+
+        for name in LEDGER.LINT_BASELINE_CHECKS:
+            candidate = json.loads(json.dumps(report))
+            next(item for item in candidate["checks"] if item["name"] == name)["status"] = "Failed"
+            self.assertFalse(LEDGER.lint_baseline_ready(candidate, "on_changed"), name)
+
+        missing = json.loads(json.dumps(report))
+        missing["checks"] = [
+            item for item in missing["checks"]
+            if item["name"] != LEDGER.LINT_BASELINE_CHECKS[0]
+        ]
+        self.assertFalse(LEDGER.lint_baseline_ready(missing, "on_changed"))
+
+        anchor_failed = json.loads(json.dumps(report))
+        next(item for item in anchor_failed["checks"]
+             if item["name"] == "Markdown links and heading anchors")["status"] = "Failed"
+        self.assertFalse(LEDGER.lint_baseline_ready(anchor_failed, "on_changed"))
 
     def test_first_full_lint_report_seeds_baseline_without_creating_findings(self):
         path = self.add_lint("on_changed", "950", "2026-11-23T07:10:00Z")

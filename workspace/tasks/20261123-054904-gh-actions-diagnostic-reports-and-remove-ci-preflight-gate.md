@@ -84,6 +84,13 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 
 ## 6. Progress Log
 
+### 2026-11-24 — Repair diagnostics reporter regression gate
+
+- **Action:** Fixed the missing colon in the Ledger regression-test helper signature and defined the five required lint baseline tooling checks used by `lint_baseline_ready()`. Added regression coverage proving that a lint report with findings can seed a baseline only when every required tooling check and the Markdown link/anchor check pass.
+- **Result:** Source and regression changes are committed to `gpt`. Repository code was not executed locally, in accordance with the task's hosted-runner-only validation rule. The normal push-triggered diagnostics workflow is the validation path; no workflow was manually dispatched or polled.
+- **Next:** Review the diagnostics workflow result only when it becomes naturally available. Keep the task In Progress until hosted validation passes.
+
+
 ### 2026-11-23 16:28 UTC
 
 - **Action:** Recorded a checkpoint and yielded the current execution slot to the user-directed image takeout task.

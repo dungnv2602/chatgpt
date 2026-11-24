@@ -13,6 +13,13 @@ IGNORED_PROPAGATION_STEPS = {
     "preserve lint failure as workflow conclusion",
     "set workflow result from audit and tooling outcomes",
 }
+LINT_BASELINE_CHECKS = (
+    "Wrapper shell syntax",
+    "Python report tooling compilation",
+    "Lint report regression tests",
+    "Markdown anchor regression tests",
+    "STE linter self-test",
+)
 DIAGNOSTIC_MARKERS = re.compile(
     r"(?i)(remote rejected|cannot lock ref|error:|fatal:|failed to|exception|traceback|assertion)"
 )
