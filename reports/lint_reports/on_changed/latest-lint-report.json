@@ -1,23 +1,23 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45408955146",
-  "run_number": 620,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45408955146",
+  "run_id": "45409620876",
+  "run_number": 621,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45409620876",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "b1aec86f3f13eb7ac5c2dd92e8a7ba1f0f150a00",
+  "commit_sha": "7fa7483122c074c48e8d0b82ea65d59f4aca37f4",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "incremental",
-  "baseline_sha": "aa69d966969a8d5a3cc5106a74f1204a0f324e3e",
-  "generated_at_utc": "2026-11-24T13:59:25.975345+00:00",
+  "baseline_sha": "b1aec86f3f13eb7ac5c2dd92e8a7ba1f0f150a00",
+  "generated_at_utc": "2026-11-24T14:03:17.424414+00:00",
   "status": "Failed",
-  "linter_source_sha": "b1aec86f3f13eb7ac5c2dd92e8a7ba1f0f150a00",
+  "linter_source_sha": "7fa7483122c074c48e8d0b82ea65d59f4aca37f4",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
-    "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43"
+    "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
   },
   "files_evaluated": [
     "skills/decision-governance/SKILL.md",
@@ -80,11 +80,11 @@
         },
         {
           "file": "skills/decision-governance/SKILL.md",
-          "line": 146,
-          "col": 4,
+          "line": 147,
+          "col": 92,
           "rule": "synonym-rotation",
           "level": "advisory-free",
-          "match": "Check",
+          "match": "checks",
           "message": "'check' and 'confirm' name the same action. Pick one and use it every time."
         },
         {
@@ -218,7 +218,7 @@
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
           "line": 61,
-          "col": 720,
+          "col": 314,
           "rule": "long-sentence",
           "level": "advisory-free",
           "match": "35 words",
@@ -236,7 +236,7 @@
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
           "line": 70,
-          "col": 141,
+          "col": 117,
           "rule": "long-sentence",
           "level": "advisory-free",
           "match": "26 words",
@@ -281,10 +281,10 @@
         {
           "file": "skills/document-standards/references/document-type-catalog.md",
           "line": 142,
-          "col": 158,
+          "col": 298,
           "rule": "synonym-rotation",
           "level": "advisory-free",
-          "match": "check",
+          "match": "checks",
           "message": "'check' and 'validate' name the same action. Pick one and use it every time."
         },
         {
@@ -426,7 +426,7 @@
       "count": 32,
       "hard_count": 3,
       "baseline": 0,
-      "words": 4566,
+      "words": 4509,
       "per_100_words": 0.7,
       "path": "skills/document-standards/references/document-type-catalog.md",
       "exit_code": 1
@@ -479,13 +479,13 @@
     },
     {
       "file": "skills/decision-governance/SKILL.md",
-      "line": 146,
-      "col": 4,
+      "line": 147,
+      "col": 92,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "Check",
+      "match": "checks",
       "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
-      "fingerprint": "a894730c426b5a08cb0d4e4c",
+      "fingerprint": "2624698c9e0a949a01e1c0be",
       "comparison": "new"
     },
     {
@@ -634,7 +634,7 @@
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
       "line": 61,
-      "col": 720,
+      "col": 314,
       "rule": "long-sentence",
       "level": "advisory-free",
       "match": "35 words",
@@ -656,7 +656,7 @@
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
       "line": 70,
-      "col": 141,
+      "col": 117,
       "rule": "long-sentence",
       "level": "advisory-free",
       "match": "26 words",
@@ -711,12 +711,12 @@
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
       "line": 142,
-      "col": 158,
+      "col": 298,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "check",
+      "match": "checks",
       "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
-      "fingerprint": "7de3890b6aa2dea92c057735",
+      "fingerprint": "2822a6b08706709830f1f820",
       "comparison": "new"
     },
     {
@@ -890,46 +890,24 @@
   "resolved_findings": [
     {
       "file": "skills/decision-governance/SKILL.md",
-      "line": 135,
-      "col": 14,
+      "line": 146,
+      "col": 4,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "checks",
+      "match": "Check",
       "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
-      "fingerprint": "2624698c9e0a949a01e1c0be",
+      "fingerprint": "a894730c426b5a08cb0d4e4c",
       "comparison": "resolved"
     },
     {
       "file": "skills/document-standards/references/document-type-catalog.md",
-      "line": 59,
-      "col": 230,
+      "line": 142,
+      "col": 158,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "checks",
+      "match": "check",
       "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
-      "fingerprint": "2822a6b08706709830f1f820",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/README.md",
-      "line": 52,
-      "col": 108,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is archived",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "4a500644b11ea45e7a256ac0",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/README.md",
-      "line": 56,
-      "col": 305,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is required",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "44bac24ecf823fa7716cc698",
+      "fingerprint": "7de3890b6aa2dea92c057735",
       "comparison": "resolved"
     }
   ],
@@ -950,7 +928,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.236s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.309s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
