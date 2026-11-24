@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-161334-03
 - **Created:** 2026-11-24 16:13 UTC
-- **Updated:** 2026-11-24 16:28 UTC
+- **Updated:** 2026-11-24 16:44 UTC
 - **Priority:** P2
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -91,4 +91,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-6b1a09dc16c81cc09cefa126` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../reports/lint_reports/on_changed/history/45433851979-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45433851979) · [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) |
+| `lint-6b1a09dc16c81cc09cefa126` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../reports/lint_reports/on_changed/history/45433851979-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45433851979) · [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) · [report](../../reports/lint_reports/on_changed/history/45440436265-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45440436265) |
