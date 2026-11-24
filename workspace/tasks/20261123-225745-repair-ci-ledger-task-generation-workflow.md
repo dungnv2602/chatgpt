@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261123-225745
 - **Created:** 2026-11-23 22:57 UTC
-- **Updated:** 2026-11-24 08:10 UTC
+- **Updated:** 2026-11-24 08:40 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -57,6 +57,14 @@ Restore reliable event-driven task generation and lifecycle management for CI fi
 - **Boundary:** Task generation and finding retirement are intake/housekeeping operations. They do not approve remediation or change the Worker's approval rules.
 
 ## 6. Progress Log
+
+### 2026-11-24 08:40 UTC — Reconcile latest hosted CI and capture queue
+
+- **Action:** Reviewed the latest GitHub Actions runs on `gpt`, the branch head, the Actions capture index, the central Ledger, and the task board. No workflow was dispatched or rerun.
+- **CI:** Document Standards #277 completed successfully ([run](https://github.com/dungnv2602/chatgpt/actions/runs/45358009357)). Full Technical Documentation Lint #189 completed with failure ([run](https://github.com/dungnv2602/chatgpt/actions/runs/45357997227)); its capture index currently contains only the pre-finalizer incomplete report, so its completed post-run report has not yet been reconciled. Diagnostics #530 remains the latest Diagnostics run and passed ([run](https://github.com/dungnv2602/chatgpt/actions/runs/45353790556)); its latest publisher commit advanced `gpt` to `3f93bcc2d0d6a796f16e6c33959afc70f3f8164d`.
+- **Ledger:** 48 open findings remain (40 lint, 8 GitHub Actions). All 40 lint findings have task references, including all 28 low-severity findings. Both lint baselines remain seeded. No new unlinked active lint finding was found.
+- **Capture queue:** The index now has seven pending IDs: new `45357997227` plus the prior six (`45350732862`, `45350681678`, `45349533662`, `45348910294`, `45348575554`, `45348198369`). No ID is exhausted and no retry attempt beyond attempt 1 is recorded. The six older captures were recorded around 08:07 UTC; the Diagnostics publication completed around 08:40 UTC, before their one-hour backoff elapsed. The new #189 pre-finalizer capture was recorded at 08:40:39 UTC. Document Standards #277 is not yet represented in the capture index and must be reconciled by a later natural sweep.
+- **Next:** Wait for natural Diagnostics ingestion after the retry windows (earliest prior-capture window: approximately 09:07 UTC; #189: approximately 09:40 UTC). Verify completed post-run reports, retry counts/exhaustion, and #277 reconciliation. Do not dispatch, rerun, poll, backfill, or manually alter findings.
 
 ### 2026-11-24 — Implement all-severity lint task generation
 
