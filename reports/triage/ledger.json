@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-24T18:36:41Z",
+  "updated_at_utc": "2026-11-24T18:37:28Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
@@ -267,6 +267,7 @@
       "reports/lint_reports/on_changed/history/45456236271-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45457882540-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45460721790-attempt-1/report.json",
+      "reports/lint_reports/on_changed/history/45461327872-attempt-1/report.json",
       "reports/lint_reports/on_repo/history/45301729199-attempt-1/report.json",
       "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
       "reports/lint_reports/on_repo/history/45330655561-attempt-1/report.json",
@@ -8198,8 +8199,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T11:17:01.188237+00:00",
-      "last_seen_utc": "2026-11-24T12:53:31.554959+00:00",
-      "occurrence_count": 2,
+      "last_seen_utc": "2026-11-24T18:37:06.748047+00:00",
+      "occurrence_count": 3,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45382651579-attempt-1/report.json",
@@ -8214,6 +8215,13 @@
           "observed_at_utc": "2026-11-24T12:53:31.554959+00:00",
           "note": "on_changed · skills/the-worker/SKILL.md:363:102",
           "observation_id": "lint:45397540387:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45461327872-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45461327872",
+          "observed_at_utc": "2026-11-24T18:37:06.748047+00:00",
+          "note": "on_changed · skills/the-worker/SKILL.md:377:102",
+          "observation_id": "lint:45461327872:1"
         }
       ],
       "resolution": null,
@@ -11965,8 +11973,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T18:33:55.462636+00:00",
-      "last_seen_utc": "2026-11-24T18:33:55.462636+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T18:37:06.748047+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45460721790-attempt-1/report.json",
@@ -11974,6 +11982,13 @@
           "observed_at_utc": "2026-11-24T18:33:55.462636+00:00",
           "note": "on_changed · skills/the-worker/SKILL.md:43:62",
           "observation_id": "lint:45460721790:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45461327872-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45461327872",
+          "observed_at_utc": "2026-11-24T18:37:06.748047+00:00",
+          "note": "on_changed · skills/the-worker/SKILL.md:44:11",
+          "observation_id": "lint:45461327872:1"
         }
       ],
       "resolution": null,
@@ -12100,6 +12115,64 @@
         "20261124-111733-02"
       ],
       "task_group": "ci-95866fd94ab30bfc"
+    },
+    {
+      "finding_id": "lint-9e06fd9464df0cb08ae12387",
+      "source_family": "lint",
+      "category": "present-perfect",
+      "title": "present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T18:37:06.748047+00:00",
+      "last_seen_utc": "2026-11-24T18:37:06.748047+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45461327872-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45461327872",
+          "observed_at_utc": "2026-11-24T18:37:06.748047+00:00",
+          "note": "on_changed · skills/the-worker/SKILL.md:347:307",
+          "observation_id": "lint:45461327872:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-111733-04"
+      ],
+      "task_group": "ci-4dde0d8629c7fc5f"
+    },
+    {
+      "finding_id": "lint-fc69cda88704716351e23cde",
+      "source_family": "lint",
+      "category": "synonym-rotation",
+      "title": "synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T18:37:06.748047+00:00",
+      "last_seen_utc": "2026-11-24T18:37:06.748047+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45461327872-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45461327872",
+          "observed_at_utc": "2026-11-24T18:37:06.748047+00:00",
+          "note": "on_changed · skills/the-worker/SKILL.md:373:162",
+          "observation_id": "lint:45461327872:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-111733-03"
+      ],
+      "task_group": "ci-e89176497c2c7020"
     }
   ]
 }
