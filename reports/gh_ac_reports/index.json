@@ -5,7 +5,9 @@
     "reason": "User-authorized clean start. All pre-cutoff active and archived report data and Ledger findings were cleared. No historical backfill. The first complete tooling-valid full audit in each lint scope seeds its baseline."
   },
   "sweep_watermark_utc": "2026-11-24T15:21:42Z",
-  "pending_run_ids": [],
+  "pending_run_ids": [
+    "45424211881"
+  ],
   "exhausted_run_ids": [
     "45350732862",
     "45350681678",
@@ -15,6 +17,23 @@
     "45348198369"
   ],
   "runs": [
+    {
+      "workflow_id": 427313089,
+      "workflow_name": "Validate Document Standards",
+      "run_id": "45424211881",
+      "run_number": 323,
+      "attempt": 1,
+      "capture_stage": "pre_finalizer",
+      "created_at": "2026-11-24T15:19:42Z",
+      "captured_at_utc": "2026-11-24T15:22:12Z",
+      "source_status": "in_progress",
+      "source_conclusion": null,
+      "projected_conclusion": "failure",
+      "report_status": "Incomplete",
+      "primary_category": "validation_or_test",
+      "history_path": "history/427313089/45424211881-attempt-1-pre_finalizer",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45424211881"
+    },
     {
       "workflow_id": 424715662,
       "workflow_name": "STE Lint Changed Documentation",
@@ -2941,20 +2960,20 @@
     }
   ],
   "latest_report": {
-    "workflow_id": 424715662,
-    "workflow_name": "STE Lint Changed Documentation",
-    "run_id": "45416735141",
-    "run_number": 635,
+    "workflow_id": 427313089,
+    "workflow_name": "Validate Document Standards",
+    "run_id": "45424211881",
+    "run_number": 323,
     "attempt": 1,
-    "capture_stage": "post_run",
-    "created_at": "2026-11-24T14:40:30Z",
-    "captured_at_utc": "2026-11-24T15:07:17Z",
-    "source_status": "completed",
-    "source_conclusion": "failure",
-    "projected_conclusion": null,
-    "report_status": "Complete",
-    "primary_category": "publication_or_push",
-    "history_path": "history/424715662/45416735141-attempt-1-post_run",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45416735141"
+    "capture_stage": "pre_finalizer",
+    "created_at": "2026-11-24T15:19:42Z",
+    "captured_at_utc": "2026-11-24T15:22:12Z",
+    "source_status": "in_progress",
+    "source_conclusion": null,
+    "projected_conclusion": "failure",
+    "report_status": "Incomplete",
+    "primary_category": "validation_or_test",
+    "history_path": "history/427313089/45424211881-attempt-1-pre_finalizer",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45424211881"
   }
 }
