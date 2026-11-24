@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-160500
 - **Created:** 2026-11-24 16:05 UTC
-- **Updated:** 2026-11-24 17:00 UTC
+- **Updated:** 2026-11-24 17:21 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -59,6 +59,14 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - **Approved execution:** The user approved task execution on 2026-11-24 16:12 UTC.
 
 ## 6. Progress Log
+
+### 2026-11-24 17:21 UTC
+
+- **Action:** Reviewed the event-driven validation for commit 4b8af56f38824e6b712447a54255d087ae37811e. Read the Document Standards job log, STE lint report, diagnostics jobs, and the changed skill path. Updated ADR-0002's final Confirmation item and lifecycle history with the hosted evidence. Checked the central Ledger and archive-retention index before closeout.
+- **Result:** Document Standards run 45445313265 passed: 37 CI Ledger regression tests, 32 catalog-validator tests, and catalog validation for 18 document types and 28 exact references. STE Lint run 45445313404 passed with zero findings in the one changed file evaluated; its incremental mode skipped full Markdown link and anchor validation. Diagnostics run 45445313378 passed. The Ledger has no finding linked to this task. ADR-0002's final hosted-validation Confirmation item is now checked. Earlier lint findings in ADR-0002 remain a documented limitation: run 45440436265 recorded 44 findings (30 hard, 14 advisory) in ADR-0002, and the latest incremental run did not re-evaluate that file. Its accepted decision-bearing content remains unchanged; any stylistic remediation requires separate authorization.
+- **References:** [Document Standards run 45445313265](https://github.com/dungnv2602/chatgpt/actions/runs/45445313265); [STE Lint run 45445313404](https://github.com/dungnv2602/chatgpt/actions/runs/45445313404); [Diagnostics run 45445313378](https://github.com/dungnv2602/chatgpt/actions/runs/45445313378); lint report reports/lint_reports/on_changed/history/45445313404-attempt-1/report.json; ADR-0002 validation-evidence commit f150a5b5bc7f5eeaee922e85106564e78e10ffe3.
+- **Next:** Prepare and verify the immutable archive copy, delete the active task record only after archive read-back, then update the board and retention index.
+
 
 ### 2026-11-24 16:58 UTC
 
@@ -153,27 +161,29 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 
 ## 7. Current State
 
-- ADR-0002 is accepted and indexed.
-- ADR-0001 has a reference-only correction. Its accepted decision content remains unchanged.
-- DRAFT-0001 was deleted after the completeness and cross-reference gates passed. Its approved content remains available at the original promotion commit.
-- DRAFT-0003 was deleted after ADR-0002 acceptance and promotion closeout.
-- The rationale completeness assessment for DRAFT-0001 passed. No material gap requires another ADR.
-- Task execution is approved. This task is In Progress and is the current execution task.
-- The canonical formats and owner guidance have been updated and read back. DRAFT-0001 is deleted after the completeness and cross-reference checks passed.
-- For commit b4f01ecb336fdc3174039a9c014229e44f7aad6d, Document Standards run 45442491643 and Diagnostics run 45442491819 passed. STE Lint run 45442492124 reported two hard synonym-rotation findings outside ADR-0002. Four other scoped files passed in that run. Two final wording edits now address the remaining findings. ADR-0002's accepted decision-bearing sections remain unchanged. Hosted validation for the final edits is pending.
+- ADR-0002 is accepted and lists this implementation task.
+- The verified promotion workflow is implemented across the decision-governance skill, Draft and ADR templates and indexes, workspace navigation, archive guidance, and Document Type Catalog.
+- DRAFT-0003 was promoted to ADR-0002 and deleted after accepted ADR read-back.
+- DRAFT-0001 passed the complete rationale comparison and cross-reference gates. The source file was deleted in commit 4082efd9a5dadb8b8bd0b41ccd3cf69b5e9405ce. ADR-0001 retains immutable provenance to its original approved revision.
+- All changed paths were read back. ADR-0002's final hosted Document Standards Confirmation item is checked.
+- Latest hosted validation for commit 4b8af56f38824e6b712447a54255d087ae37811e passed: Document Standards, STE Lint Changed Documentation, and GitHub Actions Diagnostics.
+- The latest lint run evaluated only skills/decision-governance/SKILL.md and found zero findings. It was incremental and did not re-evaluate ADR-0002 or run the full Markdown link/anchor scan.
+- The central Ledger contains no finding linked to this task. No unresolved acceptance criterion remains within the approved task scope.
+- Task status remains In Progress until the archive copy is written, read back, and the active path is removed.
 
 ## 8. Remaining Work
 
-- Review the event-driven Document Standards and STE Lint results for the final two wording edits. Do not poll or manually dispatch CI.
-- If Document Standards passes, update ADR-0002 Confirmation with the hosted validation evidence. Keep the accepted decision-bearing content unchanged.
-- Record the final disposition of any lint findings in ADR-0002's accepted decision-bearing sections. Do not edit those sections under the current authorization.
+- Write the final task record to archive/tasks/ with status Done, Archived Yes, and an exact UTC archive timestamp.
+- Read back and verify the complete archive copy and its commit metadata.
+- Delete the active task path only after archive verification.
+- Update the task board to Historical with the archive path and commit.
+- Register the exact archived task path and UTC timestamp in .github/archive-retention-index.json.
 
 ## 9. Next Actions
 
-1. Review the event-driven Document Standards and STE Lint results for the final wording edits. Do not poll CI.
-2. Update ADR-0002 Confirmation and record the migration and hosted validation evidence after Document Standards passes.
-3. Record any remaining ADR-0002 lint limitation without changing its accepted decision content.
-4. Close and archive this task after all acceptance criteria pass.
+1. Create and verify the immutable archive copy.
+2. Delete the active task file after archive verification.
+3. Update the task board and archive-retention index, then verify all final paths and branch state.
 
 ## 10. References
 
@@ -192,40 +202,40 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 | User goals, non-goals, constraints, and decision drivers | ADR-0001, Decision Drivers and Implementation Scope; ADR-0002, Decision Drivers and Decision Outcome | Pass |
 | Viable options and material reasons for rejecting alternatives | ADR-0001, Considered Options and Pros and Cons of the Options | Pass |
 | Chosen outcome and decision rationale | ADR-0001, Decision Outcome | Pass |
-| Consequences, trade-offs, risks, and safeguards | ADR-0001, Consequences and Implementation Scope; ADR-0002, Risks and Safeguards for the retirement decision | Pass |
+| Consequences, trade-offs, risks, and safeguards | ADR-0001, Consequences and Implementation Scope; ADR-0002, Risks and Safeguards | Pass |
 | Implementation boundary, dependencies, migration, and rollback | ADR-0001, Implementation Scope; ADR-0002, Implementation Scope and Partial promotion and recovery | Pass |
 | Observable Confirmation criteria | ADR-0001, Confirmation; ADR-0002, Confirmation | Pass |
-| Material assumptions, evidence, and source references | ADR-0001, More Information; ADR-0002, Historical context and More Information; complete source Draft at commit 241ba8ad5e4aa7cff683ecf49df31c0ad11945ef | Pass |
-| User approval details, exact Draft ID and revision | ADR-0001, Context and Problem Statement and More Information; source Draft metadata and Review and Approval; original approved commit | Pass |
+| Material assumptions, evidence, and source references | ADR-0001, More Information; ADR-0002, Historical context and More Information; approved source commit 241ba8ad5e4aa7cff683ecf49df31c0ad11945ef | Pass |
+| User approval details, exact Draft ID and revision | ADR-0001, Context and Problem Statement and More Information; original approved commit | Pass |
 | Historical rationale for analysis location, ADR folder/numbering, and record boundaries | ADR-0002, Historical context retained from DRAFT-0001 | Pass |
 
-**Assessment:** All material decision rationale is preserved in permanent ADR records. ADR-0001's accepted decision content remains unchanged. The original approved Draft remains available in Git history as provenance and retains its complete reference list. No material gap blocks source deletion.
+**Assessment:** All material decision rationale is preserved in permanent ADR records. No material gap blocks source deletion.
 
-### Other verification
+### Hosted validation
 
-- **Check:** DRAFT-0003 exact revision and approval state.
-- **Method:** Re-fetch from branch gpt and inspect metadata and approved revision.
+- **Check:** Document Standards.
+- **Method:** Inspect completed run 45445313265 and its job log.
+- **Result:** Passed. 37 CI Ledger regression tests; 32 catalog-validator tests; catalog validation passed for 18 document types and 28 exact references.
+- **Limitations:** The workflow validates the document catalog and regression suites; it does not constitute a full Markdown link scan.
+
+- **Check:** STE Lint Changed Documentation.
+- **Method:** Inspect completed run 45445313404 and its structured report.
+- **Result:** Passed. One file evaluated (skills/decision-governance/SKILL.md), zero findings, zero hard findings, zero advisory findings. The prior finding was resolved.
+- **Limitations:** Incremental run. Full Markdown link and heading-anchor validation was skipped. ADR-0002 was not part of this run. Earlier run 45440436265 reported 44 findings in ADR-0002 (30 hard and 14 advisory). Those findings remain unmodified because they occur in accepted decision-bearing content and this task does not authorize stylistic changes to that content. Any remediation requires separate user authorization.
+
+- **Check:** GitHub Actions Diagnostics.
+- **Method:** Inspect completed run 45445313378 and its job result.
 - **Result:** Passed.
-- **Limitations:** Approval of the decision does not authorize the remaining implementation task.
+- **Limitations:** Confirms the diagnostics workflow completed; it does not replace the individual validation results above.
 
-- **Check:** ADR-0002 provisional record and accepted record.
-- **Method:** Read back after each write and verify status, source Draft ID, decision outcome, completeness checklist, recovery procedure, and migration safeguards.
-- **Result:** Passed; ADR-0002 is accepted.
-- **Limitations:** Final hosted validation for the latest wording remediation remains pending.
+- **Check:** Task Ledger state.
+- **Method:** Read reports/triage/ledger.json and search for this task ID in finding refere## 12. Handoff Instructions
 
-- **Check:** ADR-0001 legacy source link.
-- **Method:** Read back archived ADR-0001 and verify that the working-tree Draft path is absent while provenance commit remains.
-- **Result:** Passed.
-- **Limitations:** None. DRAFT-0001 was deleted in commit 4082efd9a5dadb8b8bd0b41ccd3cf69b5e9405ce after the rationale and cross-reference gates passed.
+The implementation is complete. ADR-0002 is accepted and its final hosted-validation Confirmation item is checked. DRAFT-0001 and DRAFT-0003 are retired after their respective promotion safeguards passed. The latest hosted validation passed on commit 4b8af56f38824e6b712447a54255d087ae37811e.
 
-- **Check:** Task execution approval.
-- **Method:** Direct user instruction on 2026-11-24 16:12 UTC.
-- **Result:** Approved. Task activated as In Progress.
-- **Limitations:** This approval does not waive ADR-0002's completeness or cross-reference gates.
+The latest STE lint result is incremental and covers only skills/decision-governance/SKILL.md. Earlier findings in ADR-0002's accepted decision-bearing content remain documented and unchanged; do not rewrite those sections under this task. Any stylistic remediation requires separate user authorization and must respect ADR immutability.
 
-## 12. Handoff Instructions
-
-Continue under ADR-0002 and the approved task scope. DRAFT-0001 was deleted after the complete rationale comparison and cross-reference checks passed. Its approved revision remains available at commit 241ba8ad5e4aa7cff683ecf49df31c0ad11945ef. Do not edit ADR-0001 beyond the already authorized reference-only correction. Do not modify foundational initialization. Do not add hooks, scripts, automatic approval, or unrelated work.
+Complete only the task archive closeout: create the final immutable archive copy, verify it, delete the active task file, and update the task board and retention index. Do not modify foundational initialization, introduce hooks or scripts, or expand the approved scope.
 
 ## 13. Ledger Findings
 
