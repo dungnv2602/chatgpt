@@ -11,44 +11,44 @@
     "event": "workflow_dispatch",
     "branch": "gpt",
     "head_sha": "c46717821fb63084ec0b1b573f080ba1e91650f1",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "failure",
     "created_at": "2026-11-24T02:24:38Z",
     "run_started_at": "2026-11-24T02:24:38Z",
-    "updated_at": "2026-11-24T02:25:13Z",
+    "updated_at": "2026-11-24T02:25:37Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "Publish GitHub Actions diagnostics and CI issue ledger"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-24T02:25:31Z",
-    "completeness": "Incomplete",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-24T06:17:32Z",
+    "completeness": "Complete",
     "reporter_job": {
       "id": "138170480624",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "failure"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "failure",
-    "primary_category": "build_or_processing",
+    "state": "failure",
+    "observed_conclusion": "failure",
+    "projected_conclusion": null,
+    "primary_category": "publication_or_push",
     "categories": [
-      "build_or_processing"
+      "publication_or_push"
     ],
     "issues": [
       {
-        "category": "build_or_processing",
+        "category": "publication_or_push",
         "job_id": "138170272171",
         "job_name": "process-image-takeout",
         "step_number": 9,
         "step_name": "Mark processing failures",
         "blocking": true,
-        "confidence": "medium",
-        "message": "Step conclusion: failure"
+        "confidence": "high",
+        "message": "process-image-takeout\tUNKNOWN STEP\t2026-11-24T02:25:05.0610371Z Takeout batch 2026-11-20-001 failed: Daily README must contain exactly one attempt table with an Image column: drawings/2026-11-21/README.md"
       }
     ]
   },
@@ -155,12 +155,24 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 52831,
         "path": "logs/job-138170272171.log",
-        "error": "run 45312157558 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-24T02:25:05.0610371Z Takeout batch 2026-11-20-001 failed: Daily README must contain exactly one attempt table with an Image column: drawings/2026-11-21/README.md",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-24T02:25:05.0727799Z ##[error]Process completed with exit code 1.",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-24T02:25:05.0801258Z ^[[36;1m  commit_message=\"chore(images): archive failed takeout diagnostics\"^[[0m",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-24T02:25:05.0805158Z ^[[36;1m    echo \"::error::Could not rebase takeout changes cleanly. No remote changes were overwritten.\"^[[0m",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-24T02:25:05.0807779Z ^[[36;1m    echo \"::error::Push failed although origin/gpt did not advance. Check token permissions or branch protection.\"^[[0m",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-24T02:25:05.0809427Z ^[[36;1mecho \"::error::Could not publish after $max_attempts synchronization attempts.\"^[[0m",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-24T02:25:05.6905531Z [gpt 30701408] chore(images): archive failed takeout diagnostics",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-24T02:25:07.3810781Z ##[group]Run echo \"::error::Takeout processing failed. The hand-off remains active; inspect the archived diagnostic report.\"",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-24T02:25:07.3811411Z ^[[36;1mecho \"::error::Takeout processing failed. The hand-off remains active; inspect the archived diagnostic report.\"^[[0m",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-24T02:25:07.3894057Z ##[error]Takeout processing failed. The hand-off remains active; inspect the archived diagnostic report.",
+          "process-image-takeout\tUNKNOWN STEP\t2026-11-24T02:25:07.3896460Z ##[error]Process completed with exit code 1."
+        ]
       }
     }
   ],
@@ -213,12 +225,6 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [
-    {
-      "source": "job_log",
-      "job_id": "138170272171",
-      "message": "run 45312157558 is still in progress; logs will be available when it is complete\n"
-    }
-  ],
-  "history_path": "history/422582294/45312157558-attempt-1-pre_finalizer"
+  "capture_errors": [],
+  "history_path": "history/422582294/45312157558-attempt-1-post_run"
 }

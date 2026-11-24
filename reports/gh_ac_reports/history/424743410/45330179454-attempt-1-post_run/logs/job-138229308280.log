@@ -1,0 +1,340 @@
+Full audit and publish detailed evidence	UNKNOWN STEP	﻿2026-11-24T05:01:00.7846438Z Current runner version: '2.338.2'
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7882098Z ##[group]Runner Image Provisioner
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7883565Z Hosted Compute Agent
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7884778Z Version: 20261111.635
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7886294Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7887708Z Build Date: 2026-11-11T01:49:01Z
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7888919Z Worker ID: {946c43d7-782e-401f-b40b-a23015a6e78e}
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7890247Z Region: westus3
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7891937Z Cloud: Azure
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7892960Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7895410Z ##[group]Operating System
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7896786Z Ubuntu
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7897742Z 26.04.1
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7898882Z LTS
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7899894Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7900888Z ##[group]Runner Image
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7902139Z Image: ubuntu-26.04
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7903092Z Version: 20261116.202.1
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7905687Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7908607Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7910558Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7912508Z ##[group]GITHUB_TOKEN Permissions
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7915838Z Contents: write
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7916820Z Metadata: read
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7917831Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7920925Z Secret source: Actions
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7922688Z Cache mode: write
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.7924294Z Prepare workflow directory
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.8488580Z Prepare all required actions
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:00.8586552Z Getting action download info
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.1625276Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.2682364Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.4460943Z Complete job name: Full audit and publish detailed evidence
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5512208Z ##[group]Run actions/checkout@v4
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5513111Z with:
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5513545Z   fetch-depth: 1
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5514009Z   ref: refs/heads/gpt
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5514489Z   repository: dungnv2602/chatgpt
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5518677Z   token: [REDACTED]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5519125Z   ssh-strict: true
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5519566Z   ssh-user: git
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5520010Z   persist-credentials: true
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5520512Z   clean: true
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5520966Z   sparse-checkout-cone-mode: true
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5521495Z   fetch-tags: false
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5521942Z   show-progress: true
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5522391Z   lfs: false
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5522808Z   submodules: false
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5523263Z   set-safe-directory: true
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5523786Z   allow-unsafe-pr-checkout: false
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.5524620Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.8531519Z Syncing repository: dungnv2602/chatgpt
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.8534811Z ##[group]Getting Git version info
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.8536644Z Working directory is '/home/runner/work/chatgpt/chatgpt'
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.8538990Z [command]/usr/bin/git version
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.8540141Z git version 2.56.1
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.8580547Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.8597175Z Temporarily overriding HOME='/home/runner/work/_temp/e2c5163a-31c7-4658-9af5-8836c7f89118' before making global git config changes
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.8622902Z Adding repository directory to the temporary git global config as a safe directory
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.8625655Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.8712656Z Deleting the contents of '/home/runner/work/chatgpt/chatgpt'
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.8733835Z ##[group]Initializing the repository
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:01.8737799Z [command]/usr/bin/git init /home/runner/work/chatgpt/chatgpt
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0021393Z hint: Using 'master' as the name for the initial branch. This default branch name
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0023738Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0027922Z hint: to use in all of your new repositories, which will suppress this warning,
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0041834Z hint: call:
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0042951Z hint:
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0045531Z hint: 	git config --global init.defaultBranch <name>
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0047449Z hint:
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0049005Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0051662Z hint: 'development'. The just-created branch can be renamed via this command:
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0060121Z hint:
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0061148Z hint: 	git branch -m <name>
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0062274Z hint:
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0063610Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0066032Z Initialized empty Git repository in /home/runner/work/chatgpt/chatgpt/.git/
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0069645Z [command]/usr/bin/git remote add origin https://github.com/dungnv2602/chatgpt
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0073036Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0074524Z ##[group]Disabling automatic garbage collection
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0076371Z [command]/usr/bin/git config --local gc.auto 0
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0080508Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0082052Z ##[group]Setting up auth
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0083490Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0089255Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0207196Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0246886Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0556388Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0716159Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.0944508Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.1000439Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.1003247Z ##[group]Fetching the repository
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:02.1008850Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/gpt:refs/remotes/origin/gpt
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:09.3948810Z From https://github.com/dungnv2602/chatgpt
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:09.3949861Z  * [new branch]      gpt        -> origin/gpt
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:09.3956017Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:09.3957315Z ##[group]Determining the checkout info
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:09.3958792Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:09.3966019Z [command]/usr/bin/git sparse-checkout disable
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:09.4022539Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:09.4057988Z ##[group]Checking out the ref
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:09.4061908Z [command]/usr/bin/git checkout --progress --force -B gpt refs/remotes/origin/gpt
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.2583988Z Switched to a new branch 'gpt'
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.2594910Z branch 'gpt' set up to track 'origin/gpt'.
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.2701408Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.2722898Z [command]/usr/bin/git log -1 --format=%H
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.2754097Z 24619b9723746194b2df1c627101ab3835a1e0cf
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.3038152Z ##[group]Run actions/setup-python@v5
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.3038487Z with:
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.3038703Z   python-version: 3.x
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.3038936Z   check-latest: false
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.3041524Z   token: [REDACTED]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.3041763Z   update-environment: true
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.3042024Z   allow-prereleases: false
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.3042267Z   freethreaded: false
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.3042498Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4504955Z ##[group]Installed versions
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4644729Z (node:2171) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4646535Z Successfully set up CPython (3.15.2)
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4647671Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4648974Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4988794Z ##[group]Run set -uo pipefail
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4989413Z ^[[36;1mset -uo pipefail^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4989894Z ^[[36;1mmkdir -p .lint-report-records^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4990368Z ^[[36;1mfailed=0^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4990705Z ^[[36;1mrun_check() {^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4991071Z ^[[36;1m  name="$1"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4991407Z ^[[36;1m  shift^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4991817Z ^[[36;1m  output=".lint-report-records/$name.log"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4992337Z ^[[36;1m  status=0^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4992718Z ^[[36;1m  "$@" > "$output" 2>&1 || status=$?^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4993219Z ^[[36;1m  key="$name"_exit^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4993722Z ^[[36;1m  printf '%s=%s\n' "$key" "$status" >> "$GITHUB_OUTPUT"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4994347Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4994836Z ^[[36;1m}^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4995664Z ^[[36;1mrun_check wrapper_syntax bash -n skills/asd-ste100/scripts/ste-lint-repository.sh^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4996570Z ^[[36;1mrun_check python_compile python3 -m py_compile \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4997244Z ^[[36;1m  skills/asd-ste100/scripts/generate_lint_report.py \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4997938Z ^[[36;1m  skills/asd-ste100/scripts/check_markdown_anchors.py^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4998814Z ^[[36;1mrun_check report_tests python3 skills/asd-ste100/scripts/test_generate_lint_report.py^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.4999934Z ^[[36;1mrun_check anchor_tests python3 skills/asd-ste100/scripts/test_check_markdown_anchors.py^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.5001081Z ^[[36;1mrun_check linter_selftest python3 skills/asd-ste100/scripts/ste-lint.py --selftest^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.5002026Z ^[[36;1mecho "failed=$failed" >> "$GITHUB_OUTPUT"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.5936363Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.5936781Z env:
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.5937082Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.5937556Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.5937998Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.5938389Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.5938795Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.5939191Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:10.5939519Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2801532Z ##[group]Run set -euo pipefail
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2801965Z ^[[36;1mset -euo pipefail^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2802344Z ^[[36;1mmkdir -p .lint-report-records reports/lint_reports/on_repo/history^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2802762Z ^[[36;1manchor_status=0^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2803099Z ^[[36;1mpython3 skills/asd-ste100/scripts/check_markdown_anchors.py \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2803574Z ^[[36;1m  > .lint-report-records/anchor-check.log 2>&1 || anchor_status=$?^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2803942Z ^[[36;1m^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2804147Z ^[[36;1mgit ls-files -- '*.md' |^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2804949Z ^[[36;1m  grep -vE '^(archive/|reports/|workspace/tasks/|workspace/discussion[.]md$|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2806120Z ^[[36;1m  > .lint-report-records/evaluated-files.txt || true^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2806447Z ^[[36;1m^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2806628Z ^[[36;1mfailed=0^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2806875Z ^[[36;1mwhile IFS= read -r file; do^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2807154Z ^[[36;1m  [[ -z "$file" ]] && continue^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2807493Z ^[[36;1m  key=$(printf '%s' "$file" | sha256sum | cut -d' ' -f1)^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2808047Z ^[[36;1m  output=".lint-report-records/$key.json"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2808348Z ^[[36;1m  raw="$output.raw"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2808576Z ^[[36;1m  status=0^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2809020Z ^[[36;1m  bash skills/asd-ste100/scripts/ste-lint-repository.sh --json "$file" > "$raw" 2>&1 || status=$?^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2809630Z ^[[36;1m  if jq -e '.violations | type == "array"' "$raw" >/dev/null 2>&1; then^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2810078Z ^[[36;1m    jq --arg path "$file" --argjson exit_code "$status" \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2810504Z ^[[36;1m      '. + {path:$path, exit_code:$exit_code}' "$raw" > "$output"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2810845Z ^[[36;1m  else^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2811110Z ^[[36;1m    python3 - "$file" "$status" "$raw" "$output" <<'PY'^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2811446Z ^[[36;1mimport json, pathlib, sys^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2811771Z ^[[36;1mpath, exit_code, raw_path, output_path = sys.argv[1:]^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2812232Z ^[[36;1mraw = pathlib.Path(raw_path).read_text(encoding="utf-8", errors="replace")^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2812638Z ^[[36;1mpayload = {^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2812850Z ^[[36;1m    "path": path,^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2813149Z ^[[36;1m    "exit_code": int(exit_code) if int(exit_code) else 2,^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2813478Z ^[[36;1m    "capture_error": raw,^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2813725Z ^[[36;1m    "violations": [],^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2813944Z ^[[36;1m}^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2814160Z ^[[36;1mpathlib.Path(output_path).write_text(^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2814527Z ^[[36;1m    json.dumps(payload, ensure_ascii=False, indent=2) + "\n",^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2814874Z ^[[36;1m    encoding="utf-8",^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2815382Z ^[[36;1m)^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2815579Z ^[[36;1mPY^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2815770Z ^[[36;1m    failed=1^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2815985Z ^[[36;1m  fi^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2816179Z ^[[36;1m  rm -f "$raw"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2816440Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2816802Z ^[[36;1mdone < .lint-report-records/evaluated-files.txt^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2817111Z ^[[36;1m^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2817314Z ^[[36;1mTOOLING_FAILED="$TOOLING_FAILED" \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2817607Z ^[[36;1mWRAPPER_EXIT="$WRAPPER_EXIT" \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2817887Z ^[[36;1mPYTHON_EXIT="$PYTHON_EXIT" \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2818186Z ^[[36;1mREPORT_TEST_EXIT="$REPORT_TEST_EXIT" \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2818498Z ^[[36;1mANCHOR_TEST_EXIT="$ANCHOR_TEST_EXIT" \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2818795Z ^[[36;1mSELFTEST_EXIT="$SELFTEST_EXIT" \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2819123Z ^[[36;1mANCHOR_STATUS="$anchor_status" python3 - <<'PY'^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2819480Z ^[[36;1mimport json, os, pathlib^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2819775Z ^[[36;1mroot = pathlib.Path(".lint-report-records")^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2820260Z ^[[36;1mchecks = []^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2820485Z ^[[36;1mfor key, label in (^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2820759Z ^[[36;1m    ("WRAPPER_EXIT", "Wrapper shell syntax"),^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2821130Z ^[[36;1m    ("PYTHON_EXIT", "Python report tooling compilation"),^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2821531Z ^[[36;1m    ("REPORT_TEST_EXIT", "Lint report regression tests"),^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2821933Z ^[[36;1m    ("ANCHOR_TEST_EXIT", "Markdown anchor regression tests"),^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2822364Z ^[[36;1m    ("SELFTEST_EXIT", "STE linter self-test"),^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2822861Z ^[[36;1m):^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2823206Z ^[[36;1m    raw = os.environ.get(key, "")^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2823731Z ^[[36;1m    code = int(raw) if raw.isdigit() else 2^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2824251Z ^[[36;1m    log_names = {^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2824711Z ^[[36;1m        "WRAPPER_EXIT": "wrapper_syntax.log",^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2825502Z ^[[36;1m        "PYTHON_EXIT": "python_compile.log",^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2826079Z ^[[36;1m        "REPORT_TEST_EXIT": "report_tests.log",^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2826600Z ^[[36;1m        "ANCHOR_TEST_EXIT": "anchor_tests.log",^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2827175Z ^[[36;1m        "SELFTEST_EXIT": "linter_selftest.log",^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2827891Z ^[[36;1m    }^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2828234Z ^[[36;1m    log = root / log_names[key]^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2828683Z ^[[36;1m    checks.append({^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2829082Z ^[[36;1m        "name": label,^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2829544Z ^[[36;1m        "status": "Passed" if code == 0 else "Failed",^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2830033Z ^[[36;1m        "exit_code": code,^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2830824Z ^[[36;1m        "output": log.read_text(encoding="utf-8", errors="replace") if log.exists() else "No output captured.",^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2831672Z ^[[36;1m    })^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2832140Z ^[[36;1manchor_code = int(os.environ.get("ANCHOR_STATUS", "2"))^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2832784Z ^[[36;1manchor_log = root / "anchor-check.log"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2833299Z ^[[36;1mchecks.append({^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2833787Z ^[[36;1m    "name": "Markdown links and heading anchors",^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2834431Z ^[[36;1m    "status": "Passed" if anchor_code == 0 else "Failed",^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2834973Z ^[[36;1m    "exit_code": anchor_code,^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2835828Z ^[[36;1m    "output": anchor_log.read_text(encoding="utf-8", errors="replace") if anchor_log.exists() else "No output captured.",^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2836356Z ^[[36;1m})^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2836629Z ^[[36;1mpathlib.Path(".lint-report-checks.json").write_text(^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2837052Z ^[[36;1m    json.dumps(checks, ensure_ascii=False, indent=2) + "\n",^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2837404Z ^[[36;1m    encoding="utf-8",^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2837633Z ^[[36;1m)^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2837812Z ^[[36;1mPY^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2837992Z ^[[36;1m^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2838315Z ^[[36;1mif [[ "$failed" -ne 0 || "$anchor_status" -ne 0 || "$TOOLING_FAILED" == "1" ]]; then^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2838733Z ^[[36;1m  report_status="Failed"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2838982Z ^[[36;1m  failed=1^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2839183Z ^[[36;1melse^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2839385Z ^[[36;1m  report_status="Passed"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2839636Z ^[[36;1mfi^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2840021Z ^[[36;1mhistory="reports/lint_reports/on_repo/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2840496Z ^[[36;1mgenerator_status=0^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2840831Z ^[[36;1mpython3 skills/asd-ste100/scripts/generate_lint_report.py \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2841269Z ^[[36;1m  --scope on_repo --records-dir .lint-report-records \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2841621Z ^[[36;1m  --output-dir "$history" \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2841969Z ^[[36;1m  --run-id "$GITHUB_RUN_ID" --run-number "$GITHUB_RUN_NUMBER" \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2842472Z ^[[36;1m  --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2843174Z ^[[36;1m  --attempt "$GITHUB_RUN_ATTEMPT" --branch "$GITHUB_REF_NAME" \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2843611Z ^[[36;1m  --commit "$GITHUB_SHA" --event "$GITHUB_EVENT_NAME" \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2844001Z ^[[36;1m  --mode repository-wide --status "$report_status" \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2844371Z ^[[36;1m  --checks-file .lint-report-checks.json \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2844812Z ^[[36;1m  --previous-report reports/lint_reports/on_repo/latest-lint-report.json \^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2845586Z ^[[36;1m  --linter-source-sha "$(git rev-parse HEAD)" || generator_status=$?^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2845997Z ^[[36;1mif [[ "$generator_status" -ne 0 ]]; then^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2846448Z ^[[36;1m  echo "::error::The shared lint report generator failed with exit $generator_status."^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2846872Z ^[[36;1m  failed=1^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2847071Z ^[[36;1melse^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2847498Z ^[[36;1m  cp reports/lint_reports/on_repo/latest-lint-report.md reports/lint_reports/latest-lint-report.md^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2848042Z ^[[36;1m  git config user.name "github-actions[bot]"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2848488Z ^[[36;1m  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2849052Z ^[[36;1m  git add reports/lint_reports/on_repo reports/lint_reports/latest-lint-report.md^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2849636Z ^[[36;1m  if ! git diff --cached --quiet; then^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2850005Z ^[[36;1m    git commit -m "Publish repository-wide lint evidence"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2850361Z ^[[36;1m    git pull --rebase origin gpt^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2850659Z ^[[36;1m    git push origin "HEAD:gpt"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2850917Z ^[[36;1m  fi^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2851103Z ^[[36;1mfi^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2851329Z ^[[36;1mecho "failed=$failed" >> "$GITHUB_OUTPUT"^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2885630Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2885981Z env:
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2886245Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2886692Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2887132Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2887514Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2887900Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2888277Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2888599Z   TOOLING_FAILED: 0
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2888814Z   WRAPPER_EXIT: 0
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2889011Z   PYTHON_EXIT: 0
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2889212Z   REPORT_TEST_EXIT: 0
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2889425Z   ANCHOR_TEST_EXIT: 0
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2889628Z   SELFTEST_EXIT: 0
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:18.2889826Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:26.0255498Z [gpt 6206c82] Publish repository-wide lint evidence
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:26.0255993Z  7 files changed, 19242 insertions(+), 3951 deletions(-)
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:26.0256503Z  create mode 100644 reports/lint_reports/on_repo/history/45330179454-attempt-1/integrity.json
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:26.0257434Z  create mode 100644 reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:26.0258502Z  create mode 100644 reports/lint_reports/on_repo/history/45330179454-attempt-1/report.md
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:26.5012358Z From https://github.com/dungnv2602/chatgpt
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:26.5012988Z  * branch            gpt        -> FETCH_HEAD
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:26.5013513Z    24619b9..2c44717  gpt        -> origin/gpt
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:26.5269374Z Rebasing (1/1)
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:26.5270406Z Successfully rebased and updated refs/heads/gpt.
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1286687Z To https://github.com/dungnv2602/chatgpt
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1287702Z    2c44717..8c99c8a  HEAD -> gpt
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1378251Z ##[group]Run if [[ "$AUDIT_OUTCOME" != "success" || "$AUDIT_FAILED" == "1" || "$TOOLING_FAILED" == "1" ]]; then
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1378943Z ^[[36;1mif [[ "$AUDIT_OUTCOME" != "success" || "$AUDIT_FAILED" == "1" || "$TOOLING_FAILED" == "1" ]]; then^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1379674Z ^[[36;1m  echo "::error::The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md."^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1380231Z ^[[36;1m  exit 1^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1380422Z ^[[36;1mfi^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1380658Z ^[[36;1mecho "All full-audit checks passed."^[[0m
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1413504Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1413847Z env:
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1414113Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1414548Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1415217Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1415695Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1416080Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1416450Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1416780Z   AUDIT_OUTCOME: success
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1416997Z   AUDIT_FAILED: 1
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1417193Z   TOOLING_FAILED: 0
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1417389Z ##[endgroup]
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1492665Z ##[error]The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md.
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1501834Z ##[error]Process completed with exit code 1.
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.1637399Z Post job cleanup.
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.2625800Z [command]/usr/bin/git version
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.2686991Z git version 2.56.1
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.2754304Z Temporarily overriding HOME='/home/runner/work/_temp/6a556fa7-f14a-4567-b0d2-d83bf6154d8e' before making global git config changes
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.2767497Z Adding repository directory to the temporary git global config as a safe directory
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.2769248Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.2826485Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.2888920Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.3352505Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.3439365Z http.https://github.com/.extraheader
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.3457038Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.3540339Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.4396099Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.4488129Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.5093990Z Cleaning up orphan processes
+Full audit and publish detailed evidence	UNKNOWN STEP	2026-11-24T05:01:28.5525785Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

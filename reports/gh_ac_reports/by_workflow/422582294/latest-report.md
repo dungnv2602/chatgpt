@@ -14,30 +14,30 @@
 | Event | workflow_dispatch |
 | Actor | dungnv2602 |
 | Created (UTC) | 2026-11-24T02:24:38Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | failure |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-24T02:25:31Z |
+| Status at capture | completed |
+| Observed conclusion | failure |
+| Projected conclusion | Not calculated |
+| Reporter job | completed / failure |
+| Capture stage | post_run |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-24T06:17:32Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
-| Primary category | build_or_processing |
+| State | failure |
+| Primary category | publication_or_push |
 | Jobs | 1 |
 | Steps | 11 |
 | Issues | 1 |
 | Annotations | 3 |
 | Artifacts | 0 |
-| Capture errors | 1 |
+| Capture errors | 0 |
 
 ## Failure classification
 
-build_or_processing The parent run is still in progress. The projected conclusion is provisional.
+publication_or_push
 
 The report records an actionable workflow failure or operational exception. Ordinary successful runs and cancellation-only runs are not captured by default. A successful run is retained when a step failed but the workflow allowed it to continue. A cancelled run is retained only when it contains an independent actionable failure. Known downstream status-propagation steps after cancellation are excluded. Explicit run-backfill requests can override the default capture filter.
 
@@ -51,7 +51,7 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| build_or_processing | 138170272171 | 9 | Mark processing failures | Blocking | medium | Step conclusion: failure |
+| publication_or_push | 138170272171 | 9 | Mark processing failures | Blocking | high | process-image-takeout	UNKNOWN STEP	2026-11-24T02:25:05.0610371Z Takeout batch 2026-11-20-001 failed: Daily README must contain exactly one attempt table with an Image column: drawings/2026-11-21/README.md |
 
 ## Check annotations
 
@@ -69,15 +69,11 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 138170272171 | process-image-takeout | logs/job-138170272171.log | 82 | False |  |
+| 138170272171 | process-image-takeout | logs/job-138170272171.log | 52831 | False | process-image-takeout	UNKNOWN STEP	2026-11-24T02:25:05.0610371Z Takeout batch 2026-11-20-001 failed: Daily README must contain exactly one attempt table with an Image column: drawings/2026-11-21/README.md, process-image-takeout	UNKNOWN STEP	2026-11-24T02:25:05.0727799Z ##[error]Process completed with exit code 1., process-image-takeout	UNKNOWN STEP	2026-11-24T02:25:05.0801258Z ^[[36;1m  commit_message="chore(images): archive failed takeout diagnostics"^[[0m, process-image-takeout	UNKNOWN STEP	2026-11-24T02:25:05.0805158Z ^[[36;1m    echo "::error::Could not rebase takeout changes cleanly. No remote changes were overwritten."^[[0m, process-image-takeout	UNKNOWN STEP	2026-11-24T02:25:05.0807779Z ^[[36;1m    echo "::error::Push failed although origin/gpt did not advance. Check token permissions or branch protection."^[[0m, process-image-takeout	UNKNOWN STEP	2026-11-24T02:25:05.0809427Z ^[[36;1mecho "::error::Could not publish after $max_attempts synchronization attempts."^[[0m, process-image-takeout	UNKNOWN STEP	2026-11-24T02:25:05.6905531Z [gpt 30701408] chore(images): archive failed takeout diagnostics, process-image-takeout	UNKNOWN STEP	2026-11-24T02:25:07.3810781Z ##[group]Run echo "::error::Takeout processing failed. The hand-off remains active; inspect the archived diagnostic report.", process-image-takeout	UNKNOWN STEP	2026-11-24T02:25:07.3811411Z ^[[36;1mecho "::error::Takeout processing failed. The hand-off remains active; inspect the archived diagnostic report."^[[0m, process-image-takeout	UNKNOWN STEP	2026-11-24T02:25:07.3894057Z ##[error]Takeout processing failed. The hand-off remains active; inspect the archived diagnostic report., process-image-takeout	UNKNOWN STEP	2026-11-24T02:25:07.3896460Z ##[error]Process completed with exit code 1. |
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | run 45312157558 is still in progress; logs will be available when it is complete  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 
