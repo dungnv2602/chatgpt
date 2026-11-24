@@ -4,7 +4,7 @@
     "baseline_at_utc": "2026-11-23T23:38:33Z",
     "reason": "User-authorized clean start. All pre-cutoff active and archived report data and Ledger findings were cleared. No historical backfill. The first complete tooling-valid full audit in each lint scope seeds its baseline."
   },
-  "sweep_watermark_utc": "2026-11-24T18:17:47Z",
+  "sweep_watermark_utc": "2026-11-24T18:18:16Z",
   "pending_run_ids": [
     "45457882610",
     "45457798003",
