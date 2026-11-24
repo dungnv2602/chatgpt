@@ -1,8 +1,6 @@
 ## Current Step
 
-**2026-11-24 13:16 UTC — Foundational initialization:** Verify complete reads of every required foundational skill, then reconcile the active task and repository state before resuming work.
-
-**2026-11-24 13:05 UTC — Paused for post-correction hosted validation:** Core ADR-0001 implementation and repository read-back are complete. The last committed Actions diagnostic showed a catalog validation failure with no job log. The numeric ADR filename rule was corrected. Do not poll CI. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 13:18 UTC — Recover active project work:** Read the workspace guide and task board, select the task that matches the user's continuation request, and inspect its authoritative task record and linked dependencies.
 
 ## Open Discussions
 
