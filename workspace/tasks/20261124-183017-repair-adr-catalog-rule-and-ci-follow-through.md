@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-183017
 - **Created:** 2026-11-24 18:30 UTC
-- **Updated:** 2026-11-24 18:30 UTC
+- **Updated:** 2026-11-24 18:31 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -55,23 +55,29 @@ Repair the Document Standards catalog failure caused by the now-empty active ADR
 - **References:** [Document Standards #362](https://github.com/dungnv2602/chatgpt/actions/runs/45457882610); [STE Lint #678](https://github.com/dungnv2602/chatgpt/actions/runs/45457882540); `skills/document-standards/references/document-type-catalog.md`; `skills/document-standards/scripts/validate_catalog.py`; `skills/the-worker/SKILL.md`; `workspace/discussion.md`; `workspace/task_board.md`.
 - **Next:** Update the discussion register and task board, then repair the catalog rule and add the explicit CI follow-through procedure to The Worker.
 
+### 2026-11-24 18:31 UTC
+
+- **Action:** Created and indexed this user-authorized repair task; updated the Current Step brief and task board.
+- **Result:** Task `20261124-183017` is recorded as the current P1 In Progress task. Both indexes and the active task record were read back. No project source or skill change has been committed yet.
+- **References:** Task creation commit `b6521aed324134f2cb3043d4f61e356ef3e36351`; discussion commit `ce40e0c73c1ebe23cd48b025e2c0f035afe8efaf`; task-board commit `d821aaf6b0f88bb89100be5fc80a9d82a785f4e7`.
+- **Next:** Commit the catalog state correction and Worker procedure together with this progress update.
+
 ## 7. Current State
 
-The root cause is confirmed. The catalog currently marks `workspace/adr/????-*.md` as Active even though the active ADR directory contains no ADR records. No source change has been made yet.
+The root cause is confirmed. The catalog still needs the Active-to-Reserved correction, and The Worker needs an explicit user-directed CI failure follow-through procedure. This task is recorded as Current Execution. The discussion register and task board have been updated and read back.
 
 ## 8. Remaining Work
 
-- Record this task in the task board and discussion register.
 - Change the ADR Markdown coverage rule to Reserved.
 - Add the task-scoped CI-failure follow-through procedure to The Worker.
-- Read back both changed files and verify the commit.
+- Read back all changed files and verify the commit metadata.
 - Observe the naturally triggered hosted validation results without polling. Do not claim a pass before it is reported.
 
 ## 9. Next Actions
 
-1. Publish and read back the Current Step brief and task-board row.
-2. Update the catalog and The Worker in one coherent commit.
-3. Read back both files, inspect changed-path metadata, and record hosted CI status when naturally available.
+1. Update the catalog, The Worker, and this task record in one coherent commit.
+2. Read back all changed paths and inspect commit metadata.
+3. Record hosted CI status when naturally available; keep the task open if validation is pending or fails.
 
 ## 10. References
 

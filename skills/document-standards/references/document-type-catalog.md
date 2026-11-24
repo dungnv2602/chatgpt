@@ -1,6 +1,6 @@
 # Document Type Catalog
 
-**Catalog version:** 1.14  
+**Catalog version:** 1.15  
 **Last full inventory audit:** A complete recursive tree audit of branch `gpt` at commit `1a5c8380036dac0132216635951f95a971ceee25` found 6,375 tree entries. It found 1,114 Markdown documents outside root `master/` and `archive/`. All 1,114 Markdown paths matched the 48 Active coverage rules. Every rule matched at least one file. This remains the last complete path inventory and targeted family review. It did not include a line-by-line semantic review of every generated report.
 **Source branch:** `gpt`
 
@@ -137,7 +137,7 @@ Coverage status has three values. `Active` rules must match at least one in-scop
 | `workspace/draft/README.md` | Embedded contract | Active | `skills/decision-governance/SKILL.md` and `workspace/draft/README.md` | Draft folder navigation, status transitions, and promotion rules. |
 | `workspace/draft/DRAFT-*.md` | Template required | Active | `workspace/DRAFT_TEMPLATE.md` | One proposal record per decision. Delete the source after verified ADR promotion. Use Promotion Cleanup Pending only when deletion fails after acceptance. The first Draft is DRAFT-0001. |
 | `workspace/adr/README.md` | Embedded contract | Active | `skills/decision-governance/SKILL.md` and `workspace/adr/README.md` | Accepted ADR navigation, status, implementation, and archive rules. |
-| `workspace/adr/????-*.md` | Template required | Active | `workspace/ADR_TEMPLATE.md` | ADR records use a four-digit global ID in the filename. The provisional promotion-pending state is temporary and non-authoritative. Only accepted records govern implementation tasks. ADR-0001 is the first decision record. |
+| `workspace/adr/????-*.md` | Template required | Reserved | `workspace/ADR_TEMPLATE.md` | Reserve this narrow family while no active ADR exists. Change it to Active in the same commit that creates the next ADR record. ADR records use a four-digit global ID in the filename. The provisional promotion-pending state is temporary and non-authoritative. Only accepted records govern implementation tasks. ADR-0001 is the first decision record. |
 
 ## Validation coverage limits
 
