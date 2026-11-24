@@ -4,7 +4,7 @@ Last updated: 2026-11-24
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
-The Historical section retains at most the 7 most recently completed or cancelled tasks. The Worker deletes older index entries when the section exceeds this limit. Git preserves the history.
+The Historical section retains at most the 7 most recently completed or cancelled tasks. The Worker prunes older index entries when the section exceeds this limit. Git preserves the history.
 
 ## Current Execution
 
