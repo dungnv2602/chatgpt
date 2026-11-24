@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-125956-03
 - **Created:** 2026-11-24 12:59 UTC
-- **Updated:** 2026-11-24 14:03 UTC
+- **Updated:** 2026-11-24 14:10 UTC
 - **Priority:** P3
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -91,4 +91,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-7481ea9586cd9998cf136bf1` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../reports/lint_reports/on_changed/history/45397540387-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45397540387) · [report](../../reports/lint_reports/on_changed/history/45407620144-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45407620144) · [report](../../reports/lint_reports/on_changed/history/45408533122-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45408533122) · [report](../../reports/lint_reports/on_changed/history/45408955146-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45408955146) · [report](../../reports/lint_reports/on_changed/history/45409620876-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45409620876) |
+| `lint-7481ea9586cd9998cf136bf1` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../reports/lint_reports/on_changed/history/45397540387-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45397540387) · [report](../../reports/lint_reports/on_changed/history/45408533122-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45408533122) · [report](../../reports/lint_reports/on_changed/history/45408955146-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45408955146) · [report](../../reports/lint_reports/on_changed/history/45409620876-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45409620876) · [report](../../reports/lint_reports/on_changed/history/45410835376-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45410835376) |
