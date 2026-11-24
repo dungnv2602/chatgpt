@@ -4,9 +4,10 @@
     "baseline_at_utc": "2026-11-23T23:38:33Z",
     "reason": "User-authorized clean start. All pre-cutoff active and archived report data and Ledger findings were cleared. No historical backfill. The first complete tooling-valid full audit in each lint scope seeds its baseline."
   },
-  "sweep_watermark_utc": "2026-11-24T11:38:08Z",
+  "sweep_watermark_utc": "2026-11-24T11:39:07Z",
   "pending_run_ids": [
-    "45385940949",
+    "45386030860",
+    "45386030748",
     "45385940931"
   ],
   "exhausted_run_ids": [
@@ -18,6 +19,23 @@
     "45348198369"
   ],
   "runs": [
+    {
+      "workflow_id": 427313089,
+      "workflow_name": "Validate Document Standards",
+      "run_id": "45385940949",
+      "run_number": 284,
+      "attempt": 1,
+      "capture_stage": "post_run",
+      "created_at": "2026-11-24T11:37:52Z",
+      "captured_at_utc": "2026-11-24T11:39:12Z",
+      "source_status": "completed",
+      "source_conclusion": "cancelled",
+      "projected_conclusion": null,
+      "report_status": "Complete",
+      "primary_category": "validation_or_test",
+      "history_path": "history/427313089/45385940949-attempt-1-post_run",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45385940949"
+    },
     {
       "workflow_id": 427313089,
       "workflow_name": "Validate Document Standards",
@@ -2014,15 +2032,15 @@
     "run_id": "45385940949",
     "run_number": 284,
     "attempt": 1,
-    "capture_stage": "pre_finalizer",
+    "capture_stage": "post_run",
     "created_at": "2026-11-24T11:37:52Z",
-    "captured_at_utc": "2026-11-24T11:38:49Z",
-    "source_status": "in_progress",
-    "source_conclusion": null,
-    "projected_conclusion": "failure",
-    "report_status": "Incomplete",
+    "captured_at_utc": "2026-11-24T11:39:12Z",
+    "source_status": "completed",
+    "source_conclusion": "cancelled",
+    "projected_conclusion": null,
+    "report_status": "Complete",
     "primary_category": "validation_or_test",
-    "history_path": "history/427313089/45385940949-attempt-1-pre_finalizer",
+    "history_path": "history/427313089/45385940949-attempt-1-post_run",
     "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45385940949"
   }
 }
