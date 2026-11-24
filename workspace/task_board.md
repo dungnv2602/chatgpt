@@ -33,6 +33,7 @@ No active implementation task is selected.
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
+| 20261124-160500 | Implement verified source-Draft retirement and migrate DRAFT-0001 | P1 | Proposed | User | 2026-11-24 | ADR-0002 | [Task record](tasks/20261124-160500-implement-verified-source-draft-retirement.md) |
 | 20261124-155748-05 | Review semicolon findings in workspace/draft/DRAFT-0003-retire-source-drafts-after-verified-adr-promotion.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-155748-05-review-semicolon-findings-in-workspace-draft-draft-0003-retire-s.md) |
 | 20261124-155748-04 | Review passive-voice findings in workspace/draft/DRAFT-0003-retire-source-drafts-after-verified-adr-promotion.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-155748-04-review-passive-voice-findings-in-workspace-draft-draft-0003-reti.md) |
 | 20261124-155748-03 | Review present-perfect findings in workspace/draft/DRAFT-0003-retire-source-drafts-after-verified-adr-promotion.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-155748-03-review-present-perfect-findings-in-workspace-draft-draft-0003-re.md) |
