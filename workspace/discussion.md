@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 11:41 UTC — Proposal submitted for review:** Research and repository comparison are complete. Await the user's decision on [DRAFT-0002](draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md), revision 1. Keep the separate [DRAFT-0001](draft/DRAFT-0001-repository-decision-governance-and-analysis.md) review open. [Task 20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)
+**2026-11-24 12:25 UTC — Execute approved DRAFT-0001:** The user approved revision 1 and authorized the governance implementation task. Complete foundational initialization, reconcile the approved scope with repository state, create ADR-0001, and implement the accepted governance workflow. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 
 ## Open Discussions
 
