@@ -581,6 +581,7 @@ def render_worker_task(root, task_id, title, group_id, findings, timestamp):
         "- **Status:** Ready": "- **Status:** Proposed",
         "- **Origin:** User": "- **Origin:** Assistant",
         "- **Approval:** Approved": "- **Approval:** Pending user approval",
+        "- **Governing ADR(s):** None — non-implementation task": "- **Governing ADR(s):** Pending — Worker review required before approval",
         "- **Ledger group:** None": "- **Ledger group:** " + chr(96) + group_id + chr(96),
         "[Preserve the user's original task prompt verbatim.]":
             "Automated CI Ledger capture: actionable findings were recorded during event-driven report ingestion. Task creation does not authorize remediation.",
@@ -650,7 +651,10 @@ def upsert_task_board_row(root, task):
     origin = task_metadata(content, "Origin")
     updated = task_metadata(content, "Updated").split(" ", 1)[0]
     filename = task["path"].name
-    row = "| " + task_id + " | " + title + " | " + priority + " | " + status + " | " + origin + " | " + updated + " | [Task record](tasks/" + filename + ") |"
+    governing_adrs = task_metadata(content, "Governing ADR(s)")
+    adr_ids = re.findall(r"\bADR-\d{4}\b", governing_adrs)
+    adr_cell = ", ".join(adr_ids) if adr_ids else ("Pending" if governing_adrs.lower().startswith("pending") else "—")
+    row = "| " + task_id + " | " + title + " | " + priority + " | " + status + " | " + origin + " | " + updated + " | " + markdown_cell(adr_cell) + " | [Task record](tasks/" + filename + ") |"
     lines = board.splitlines()
     old_index = next((i for i, line in enumerate(lines) if line.startswith("| " + task_id + " |")), None)
     if old_index is not None:
@@ -681,6 +685,7 @@ def upsert_task_board_row(root, task):
             header_index is None
             or header_index + 1 >= section_end
             or not lines[header_index + 1].startswith("|---")
+            or lines[header_index] != "| ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
         ):
             raise LedgerError("Task board table is missing or malformed under " + heading)
         lines.insert(header_index + 2, row)
