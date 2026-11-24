@@ -1,3 +1,7 @@
+## Session Notices
+
+- **2026-11-24 11:07 UTC — Session initialization:** The user invoked `start session`. Foundational skill retrieval is starting. This session will resolve the three CI discussion entries dated 2026-11-24, subject to the review gates recorded in this register.
+
 ## Current Step
 
 _Paused pending the user's review of [DRAFT-0001](draft/DRAFT-0001-repository-decision-governance-and-analysis.md)._ [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
