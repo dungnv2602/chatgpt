@@ -706,22 +706,23 @@ def create_worker_tasks(root, ledger, timestamp, candidate_ids, created_ids, reo
     grouped = {}
     for finding in ledger["findings"]:
         finding_id = finding.get("finding_id")
-        if finding_id not in candidate_ids:
+        refs = finding.setdefault("task_refs", [])
+        unlinked_lint = finding.get("source_family") == "lint" and not refs
+        if finding_id not in candidate_ids and not unlinked_lint:
             continue
-        # Every observed lint finding is actionable work, regardless of severity.
+        # Every active lint finding is task-eligible, regardless of severity.
         # Actions findings retain the explicit confidence/severity eligibility gate.
         if finding.get("source_family") != "lint" and finding.get("severity") not in TASK_ELIGIBLE_SEVERITIES:
             continue
         if finding.get("status") not in TASK_ELIGIBLE_FINDING_STATUSES:
             continue
-        refs = finding.setdefault("task_refs", [])
         group_id = finding["task_group"]
         active_task = active_tasks.get(group_id)
         reopened = finding_id in reopened_ids
         is_new = finding_id in created_ids
         if refs and not (active_task or reopened):
             continue
-        if not refs and not (is_new or active_task or reopened):
+        if not refs and not (is_new or active_task or reopened or unlinked_lint):
             continue
         grouped.setdefault(group_id, []).append(finding)
     counts = {"tasks_created": 0, "tasks_updated": 0, "findings_linked": 0, "changed": False}
