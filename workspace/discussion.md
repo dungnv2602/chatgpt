@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 — DRAFT-0003 revision 2 prepared:** DRAFT-0001 and ADR-0001 remain unchanged while the proposed retirement policy is under review. DRAFT-0003 proposes verified source-Draft deletion after a complete ADR rationale check. Revision 2 adds a non-authoritative `promotion-pending` ADR state before acceptance. It includes a migration safeguard for DRAFT-0001 and does not authorize deletion or implementation. DRAFT-0002 revision 2 also remains open for user review. No active implementation task is selected.
+**2026-11-24 — ADR-0002 accepted; implementation task proposed:** The user approved DRAFT-0003 revision 2. ADR-0002 is accepted and indexed. Archived ADR-0001 has a narrow provenance-reference correction under the user's explicit permission. DRAFT-0003 promotion is being closed out. DRAFT-0001 remains under Promotion Cleanup Pending until the migration task is approved and its final deletion gate passes. Task [20261124-160500](tasks/20261124-160500-implement-verified-source-draft-retirement.md) is Proposed; repository-wide workflow changes are not authorized yet. DRAFT-0002 revision 2 remains open for review.
 
 ## Open Discussions
 
@@ -8,7 +8,7 @@
 
 - **2026-11-24 — Review DRAFT-0002 revision 2:** [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md). Revision 2 retains Option 3 and updates the proposal to target Task Template 1.4, define one authoritative Next Step with optional Following Actions, use event-based research checkpoints, clarify findings-note archival, and set measurable criteria for a three-task pilot. ADR-0001 governs the decision process only. It does not approve this proposal's substance or implementation. Please decide whether to approve the exact revision 2 and scope, adapt the external concepts rather than install the full system, and accept the proposed pilot. Do not implement before the user approves this exact Draft and the repository accepts its implementation ADR.
 
-- **2026-11-24 — Review DRAFT-0003 revision 2:** [DRAFT-0003 — Retire Source Drafts After Verified ADR Promotion](draft/DRAFT-0003-retire-source-drafts-after-verified-adr-promotion.md). The user approved the lifecycle direction and rationale safeguard. Revision 2 defines the exact promotion protocol, completeness checklist, non-authoritative `promotion-pending` ADR state, partial-write recovery, index changes, and DRAFT-0001 migration conditions. Please approve or revise the exact revision 2 and its migration scope. Do not change the current preservation rule, edit archived ADR-0001, or delete DRAFT-0001 before a superseding ADR is accepted and the migration check passes.
+
 
 
 - **2026-11-23 — Drawing direction needed:** Session DRAWING-2026-11-23-01 is Active, but the user has not supplied a subject or visual direction. The user must provide the subject before prompt drafting or image generation.
