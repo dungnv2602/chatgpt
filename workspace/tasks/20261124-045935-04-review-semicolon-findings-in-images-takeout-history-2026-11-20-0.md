@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-045935-04
 - **Created:** 2026-11-24 04:59 UTC
-- **Updated:** 2026-11-24 08:40 UTC
+- **Updated:** 2026-11-24 09:20 UTC
 - **Priority:** P2
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -90,4 +90,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-cf34c78f3b75adc29ca74391` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45330035604) · [report](../../reports/lint_reports/on_repo/history/45343010144-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45343010144) · [report](../../reports/lint_reports/on_repo/history/45343527317-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45343527317) · [report](../../reports/lint_reports/on_repo/history/45352584220-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45352584220) · [report](../../reports/lint_reports/on_repo/history/45357997227-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45357997227) |
+| `lint-cf34c78f3b75adc29ca74391` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45330035604) · [report](../../reports/lint_reports/on_repo/history/45343527317-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45343527317) · [report](../../reports/lint_reports/on_repo/history/45352584220-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45352584220) · [report](../../reports/lint_reports/on_repo/history/45357997227-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45357997227) · [report](../../reports/lint_reports/on_repo/history/45364189404-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45364189404) |

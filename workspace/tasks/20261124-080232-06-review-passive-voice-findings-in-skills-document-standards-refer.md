@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-080232-06
 - **Created:** 2026-11-24 08:02 UTC
-- **Updated:** 2026-11-24 08:40 UTC
+- **Updated:** 2026-11-24 09:20 UTC
 - **Priority:** P3
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -90,4 +90,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-195a2fd68103c17c8542eb26` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_repo/history/45330655561-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45330655561) · [report](../../reports/lint_reports/on_changed/history/45343527285-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45343527285) · [report](../../reports/lint_reports/on_repo/history/45343527317-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45343527317) · [report](../../reports/lint_reports/on_repo/history/45352584220-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45352584220) · [report](../../reports/lint_reports/on_repo/history/45357997227-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45357997227) |
+| `lint-195a2fd68103c17c8542eb26` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_repo/history/45330655561-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45330655561) · [report](../../reports/lint_reports/on_repo/history/45343527317-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45343527317) · [report](../../reports/lint_reports/on_repo/history/45352584220-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45352584220) · [report](../../reports/lint_reports/on_repo/history/45357997227-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45357997227) · [report](../../reports/lint_reports/on_repo/history/45364189404-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45364189404) |

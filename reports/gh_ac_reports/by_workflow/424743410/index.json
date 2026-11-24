@@ -4,6 +4,23 @@
     {
       "workflow_id": 424743410,
       "workflow_name": "STE Lint Full Technical Documentation",
+      "run_id": "45364189404",
+      "run_number": 190,
+      "attempt": 1,
+      "capture_stage": "pre_finalizer",
+      "created_at": "2026-11-24T09:20:04Z",
+      "captured_at_utc": "2026-11-24T09:20:57Z",
+      "source_status": "in_progress",
+      "source_conclusion": null,
+      "projected_conclusion": "failure",
+      "report_status": "Incomplete",
+      "primary_category": "step_or_job_failure",
+      "history_path": "history/424743410/45364189404-attempt-1-pre_finalizer",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45364189404"
+    },
+    {
+      "workflow_id": 424743410,
+      "workflow_name": "STE Lint Full Technical Documentation",
       "run_id": "45357997227",
       "run_number": 189,
       "attempt": 1,
@@ -328,18 +345,18 @@
   "latest_report": {
     "workflow_id": 424743410,
     "workflow_name": "STE Lint Full Technical Documentation",
-    "run_id": "45357997227",
-    "run_number": 189,
+    "run_id": "45364189404",
+    "run_number": 190,
     "attempt": 1,
     "capture_stage": "pre_finalizer",
-    "created_at": "2026-11-24T08:39:12Z",
-    "captured_at_utc": "2026-11-24T08:40:39Z",
+    "created_at": "2026-11-24T09:20:04Z",
+    "captured_at_utc": "2026-11-24T09:20:57Z",
     "source_status": "in_progress",
     "source_conclusion": null,
     "projected_conclusion": "failure",
     "report_status": "Incomplete",
     "primary_category": "step_or_job_failure",
-    "history_path": "history/424743410/45357997227-attempt-1-pre_finalizer",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45357997227"
+    "history_path": "history/424743410/45364189404-attempt-1-pre_finalizer",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45364189404"
   }
 }
