@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 13:18 UTC — Recover active project work:** Read the workspace guide and task board, select the task that matches the user's continuation request, and inspect its authoritative task record and linked dependencies.
+**2026-11-24 13:22 UTC — Inspect the remaining governance validation gate:** Read the decision-governance contract and report indexes, then identify any naturally published post-correction Document Standards and Ledger validation evidence. Do not poll Actions. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 
 ## Open Discussions
 
