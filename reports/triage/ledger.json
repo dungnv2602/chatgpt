@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-24T04:59:56Z",
+  "updated_at_utc": "2026-11-24T05:01:57Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
@@ -27,12 +27,14 @@
       "reports/gh_ac_reports/history/427313089/45311750665-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/427313089/45312561050-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/427313089/45330035483-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/427313089/45330179390-attempt-1-pre_finalizer/report.json",
       "reports/lint_reports/on_changed/history/45301729061-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45304735363-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45308804827-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45311750664-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
-      "reports/lint_reports/on_repo/history/45301729199-attempt-1/report.json"
+      "reports/lint_reports/on_repo/history/45301729199-attempt-1/report.json",
+      "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json"
     ],
     "lint_baseline_scopes": {
       "on_changed": true,
@@ -76,8 +78,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T01:24:39.676341+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 4,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 5,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45304735363-attempt-1/report.json",
@@ -106,6 +108,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/README.md:139:203",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/README.md:139:203",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -124,8 +133,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T01:57:59.266330+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 3,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 4,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45308804827-attempt-1/report.json",
@@ -147,6 +156,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/README.md:26:246",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/README.md:26:246",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -165,8 +181,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T01:57:59.266330+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 3,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 4,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45308804827-attempt-1/report.json",
@@ -188,6 +204,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/README.md:30:214",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/README.md:30:214",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -206,8 +229,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T01:57:59.266330+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 3,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 4,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45308804827-attempt-1/report.json",
@@ -229,6 +252,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/README.md:17:534",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/README.md:17:534",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -247,8 +277,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T01:57:59.266330+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 3,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 4,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45308804827-attempt-1/report.json",
@@ -270,6 +300,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · skills/the-worker/references/image-provenance-and-webp.md:29:418",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · skills/the-worker/references/image-provenance-and-webp.md:29:418",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -288,8 +325,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T01:57:59.266330+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 3,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 4,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45308804827-attempt-1/report.json",
@@ -311,6 +348,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · skills/the-worker/references/image-provenance-and-webp.md:43:106",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · skills/the-worker/references/image-provenance-and-webp.md:43:106",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -329,8 +373,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T01:57:59.266330+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 3,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 4,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45308804827-attempt-1/report.json",
@@ -352,6 +396,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · skills/the-worker/references/image-provenance-and-webp.md:43:357",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · skills/the-worker/references/image-provenance-and-webp.md:43:357",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -372,8 +423,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T02:24:04.824157+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 2,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 3,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45311750664-attempt-1/report.json",
@@ -388,6 +439,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/README.md:137:179",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/README.md:137:179",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -406,8 +464,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T02:24:04.824157+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 2,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 3,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45311750664-attempt-1/report.json",
@@ -422,6 +480,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/README.md:137:266",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/README.md:137:266",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -440,8 +505,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T02:24:04.824157+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 2,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 3,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45311750664-attempt-1/report.json",
@@ -456,6 +521,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-001/verification-report.md:10:34",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-001/verification-report.md:10:34",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -476,8 +548,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T02:24:04.824157+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 2,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 3,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45311750664-attempt-1/report.json",
@@ -492,6 +564,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-001/verification-report.md:10:44",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-001/verification-report.md:10:44",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -510,8 +589,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T02:24:04.824157+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 2,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 3,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45311750664-attempt-1/report.json",
@@ -526,6 +605,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-001/verification-report.md:10:89",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-001/verification-report.md:10:89",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -573,8 +659,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -582,6 +668,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:11:24",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:11:24",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -600,8 +693,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -609,6 +702,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:20:51",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:20:51",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -629,8 +729,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -638,6 +738,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:14:71",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:14:71",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -656,8 +763,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -665,6 +772,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:16:23",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:16:23",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -683,8 +797,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -692,6 +806,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:16:131",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:16:131",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -710,8 +831,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -719,6 +840,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:17:36",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:17:36",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -737,8 +865,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -746,6 +874,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:20:24",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:20:24",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -764,8 +899,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -773,6 +908,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:21:20",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:21:20",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -791,8 +933,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -800,6 +942,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:22:57",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-003/verification-report.md:22:57",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -818,8 +967,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -827,6 +976,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-002/verification-report.md:11:24",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-002/verification-report.md:11:24",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -845,8 +1001,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -854,6 +1010,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-002/verification-report.md:17:34",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-002/verification-report.md:17:34",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -874,8 +1037,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -883,6 +1046,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-002/verification-report.md:14:71",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-002/verification-report.md:14:71",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -901,8 +1071,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -910,6 +1080,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-002/verification-report.md:16:23",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-002/verification-report.md:16:23",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -928,8 +1105,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -937,6 +1114,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-002/verification-report.md:16:131",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-002/verification-report.md:16:131",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -955,8 +1139,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -964,6 +1148,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-002/verification-report.md:17:44",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-002/verification-report.md:17:44",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -982,8 +1173,8 @@
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "last_seen_utc": "2026-11-24T04:59:14.206559+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/lint_reports/on_changed/history/45330035604-attempt-1/report.json",
@@ -991,6 +1182,13 @@
           "observed_at_utc": "2026-11-24T04:59:14.206559+00:00",
           "note": "on_changed · images/takeout/history/2026-11-20-001/attempt-002/verification-report.md:17:89",
           "observation_id": "lint:45330035604:1"
+        },
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · images/takeout/history/2026-11-20-001/attempt-002/verification-report.md:17:89",
+          "observation_id": "lint:45330179454:1"
         }
       ],
       "resolution": null,
@@ -999,6 +1197,35 @@
       "accepted_risk": null,
       "task_refs": [],
       "task_group": "ci-93e9f214ac3cd8b2"
+    },
+    {
+      "finding_id": "lint-a4e2802c208fff0be2a1abfe",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 190 words (cap 25). Split it.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "last_seen_utc": "2026-11-24T05:01:25.685462+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45330179454",
+          "observed_at_utc": "2026-11-24T05:01:25.685462+00:00",
+          "note": "on_repo · workspace/task_board.md:40:1",
+          "observation_id": "lint:45330179454:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-045935-02"
+      ],
+      "task_group": "ci-5659fdc8fa91a17c"
     }
   ]
 }
