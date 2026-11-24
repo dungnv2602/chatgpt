@@ -387,7 +387,7 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(result["reports_processed"],0)
         self.assertTrue(migrated["updated_at_utc"])
 
-    def test_migrate_1_1_does_not_backfill_legacy_task_records(self):
+    def test_migrate_1_1_hands_off_unlinked_lint_findings(self):
         finding = {
             "finding_id":"lint-a1b2c3d4e5f6","source_family":"lint","category":"semicolon","title":"A finding",
             "status":"planned","severity":"medium","owner":None,
@@ -407,29 +407,33 @@ class LedgerTests(unittest.TestCase):
         migrated = self.read_ledger()
         self.assertEqual(migrated["schema_version"],"1.4.0")
         self.assertEqual(migrated["findings"][0]["task_group"], migrated["findings"][1]["task_group"])
-        self.assertEqual(migrated["findings"][0]["task_refs"], [])
-        self.assertEqual(migrated["findings"][1]["task_refs"], [])
-        self.assertEqual(list((self.root / "workspace" / "tasks").glob("*.md")), [])
+        task_id = migrated["findings"][0]["task_refs"][0]
+        self.assertEqual(migrated["findings"][1]["task_refs"], [task_id])
+        task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
+        self.assertEqual(len(task_files), 1)
+        task_text = task_files[0].read_text(encoding="utf-8")
+        self.assertIn("lint-a1b2c3d4e5f6", task_text)
+        self.assertIn("lint-b2c3d4e5f6a7", task_text)
 
         self.add_lint("on_repo", "901", "2026-11-23T07:10:00Z", fingerprint="a1b2c3d4e5f6")
         LEDGER.ingest(self.root, now="2026-11-23T07:11:00Z")
         legacy = self.read_ledger()["findings"][0]
-        self.assertEqual(legacy["task_refs"], [])
-        self.assertEqual(list((self.root / "workspace" / "tasks").glob("*.md")), [])
+        self.assertEqual(legacy["task_refs"], [task_id])
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*.md"))), 1)
 
         self.add_lint("on_repo", "902", "2026-11-23T07:12:00Z", fingerprint="cccccccc3333")
         LEDGER.ingest(self.root, now="2026-11-23T07:13:00Z")
         migrated = self.read_ledger()
         new_finding = next(item for item in migrated["findings"] if item["finding_id"] == "lint-cccccccc3333")
         legacy_after = next(item for item in migrated["findings"] if item["finding_id"] == "lint-a1b2c3d4e5f6")
-        self.assertEqual(len(new_finding["task_refs"]), 1)
-        self.assertEqual(legacy_after["task_refs"], [])
+        self.assertEqual(new_finding["task_refs"], [task_id])
+        self.assertEqual(legacy_after["task_refs"], [task_id])
         task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
         self.assertEqual(len(task_files), 1)
         task_text = task_files[0].read_text(encoding="utf-8")
         self.assertIn("lint-cccccccc3333", task_text)
-        self.assertNotIn("lint-a1b2c3d4e5f6", task_text)
-        self.assertNotIn("lint-b2c3d4e5f6a7", task_text)
+        self.assertIn("lint-a1b2c3d4e5f6", task_text)
+        self.assertIn("lint-b2c3d4e5f6a7", task_text)
 
     def test_lint_baseline_requires_every_tooling_check_but_allows_lint_findings(self):
         path = self.add_lint("on_changed", "948", "2026-11-23T07:00:00Z", status="Failed")
