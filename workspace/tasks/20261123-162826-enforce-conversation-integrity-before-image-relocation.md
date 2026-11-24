@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261123-162826
 - **Created:** 2026-11-23 16:28 UTC
-- **Updated:** 2026-11-24 01:37:00 UTC
+- **Updated:** 2026-11-24 01:40:00 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -127,6 +127,12 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 - **Result:** Commit [7c8930a](https://github.com/dungnv2602/chatgpt/commit/7c8930ab5cdba9e7229910616a8551cb23d09f97) updates `process_takeout.py`, `verify_published_manifest.py`, `test_process_takeout_unittest.py`, and this task record. Both validators now accept bold Markdown labels for Generation ID, Output ID, and Asset ID. The fixture now uses Output ID when no native Generation ID exists and writes the matching attempt-note identity. The branch head is the repair commit. No local tests were run. No hosted run has tested this repair yet.
 - **Next:** The user must manually dispatch the normal takeout workflow on branch `gpt`. This session has no GitHub Actions dispatch operation. Verify the new run before any further conversion workflow.
 
+### 2026-11-24 01:40 UTC
+
+- **Action:** Inspected the latest manual normal-workflow run [45306543050](https://github.com/dungnv2602/chatgpt/actions/runs/45306543050), its job steps, and the processor test output.
+- **Result:** Compilation passed. The processor suite ran 45 tests; 44 passed and one failed: `test_conversation_mapping_mismatch_fails_before_staging`. The test changes the conversation mapping's Generation / Output ID to `different-generation`, but the processor returned exit code 0 rather than rejecting it. Processing, publication, and post-publication verification were skipped. No takeout assets were processed or relocated. The diagnostics sidecar failed independently.
+- **Next:** Determine why the mismatch test does not trigger rejection. Inspect whether the fixture replacement changed the intended row and whether mapping validation is applied to the test's destination type. Fix the underlying validator or fixture, then run the full regression suite before dispatching the workflow again.
+
 ## 7. Current State
 
 The branch `gpt` contains implementation commit [048eaf0](https://github.com/dungnv2602/chatgpt/commit/048eaf0ba9c4eeb43ae6198972f2aa807d3d679b). The first manual run, [45305320198](https://github.com/dungnv2602/chatgpt/actions/runs/45305320198), compiled the scripts but failed 15 of 45 regression tests before processing. No takeout files were changed by that run. The validator and fixture repair is committed in [7c8930a](https://github.com/dungnv2602/chatgpt/commit/7c8930ab5cdba9e7229910616a8551cb23d09f97) and all four changed paths were read back. Hosted regression verification is pending a new manual run. The processor now separates exact `images/unclassified` quarantine entries from provenance-mapped items. It still requires exact coverage of every top-level intake image. It validates conversation and attempt evidence for every item it processes, processes only mapped entries, reports quarantined entries as `DEFERRED_UNCLASSIFIED`, and leaves them in a residual Draft hand-off after successful mapped processing. A Ready hand-off that contains no mapped items fails closed.
@@ -139,7 +145,7 @@ After a successful normal run, eleven originals and their WebP derivatives will 
 
 ## 8. Remaining Work
 
-- The user must manually dispatch the repaired normal takeout workflow on branch `gpt`. The previous run did not start processing.
+- Investigate and fix the remaining `test_conversation_mapping_mismatch_fails_before_staging` failure from run [45306543050](https://github.com/dungnv2602/chatgpt/actions/runs/45306543050). No processing started.
 - Verify that the workflow publishes the eleven mapped original/WebP pairs and keeps all seven unclassified originals unchanged in intake.
 - Verify that the active hand-off contains only the seven unclassified entries with `status: draft`.
 - After the normal run succeeds, the user manually dispatches the unclassified conversion workflow with the exact seven filenames.
@@ -148,12 +154,13 @@ After a successful normal run, eleven originals and their WebP derivatives will 
 - Keep the task In Progress until hosted tests, mapped publication, the residual hand-off, and unclassified conversion are verified.
 ## 9. Next Actions
 
-1. The user manually dispatches `Process Image Takeout and Create WebP Derivatives` on branch `gpt`. This session has no GitHub Actions dispatch operation.
-2. Inspect the new run and confirm compilation and all regression tests pass before processing starts.
-3. Verify publication of the eleven mapped original/WebP pairs and confirm the seven unclassified originals remain unchanged in intake with a seven-entry residual Draft hand-off.
-4. After the normal run succeeds, manually dispatch `Convert Unclassified Takeout Images to WebP` on branch `gpt` with the seven exact unclassified filenames.
-5. Verify publication of all seven derivatives and confirm all seven source PNGs remain unchanged.
-6. Keep relocation and index changes under the user's explicit direction.
+1. Inspect the failing fixture replacement and mapping validation path; determine why the deliberately incorrect Generation / Output ID row is accepted.
+2. Correct the underlying validator or regression fixture and read back the changed files.
+3. Run the full processor regression suite; require all 45 tests to pass.
+4. Manually dispatch `Process Image Takeout and Create WebP Derivatives` on branch `gpt` and verify processing, publication, and post-publication checks.
+5. Confirm the eleven mapped original/WebP pairs and seven unchanged unclassified sources with a seven-entry residual Draft hand-off.
+6. Only after normal processing succeeds, manually dispatch the unclassified conversion workflow with the seven exact filenames.
+7. Verify all seven derivatives and unchanged PNG originals. Keep relocation and index changes under the user's explicit direction.
 
 ## 10. References
 
