@@ -5,12 +5,12 @@
 - **Template version:** 1.2
 - **ID:** 20261123-225745
 - **Created:** 2026-11-23 22:57 UTC
-- **Updated:** 2026-11-24 01:25 UTC
+- **Updated:** 2026-11-24 07:05 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** 20261123-071000 — Implement the centralized CI issue ledger; 20261123-054904 — Build GitHub Actions diagnostic reports
 - **Ledger group:** None
@@ -55,6 +55,15 @@ Restore reliable event-driven task generation and lifecycle management for CI fi
 - **Boundary:** Task generation and finding retirement are intake/housekeeping operations. They do not approve remediation or change the Worker's approval rules.
 
 ## 6. Progress Log
+
+### 2026-11-24 07:05 UTC — Resume Ledger lifecycle acceptance
+
+- **Action:** Took current execution after completion of related task `20261123-054904`. Reviewed hosted Diagnostics run [#515](https://github.com/dungnv2602/chatgpt/actions/runs/45344012752), Document Standards run [#271](https://github.com/dungnv2602/chatgpt/actions/runs/45344012650), the Actions report index, both lint-scope indexes, and the Ledger.
+- **Result:** Hosted Diagnostics passed 26 reporter tests, 33 Ledger tests, and 7 archive-retention tests. Document Standards passed. Both lint baselines are seeded. The Ledger contains 51 open findings (28 low, 21 medium, 2 high); all 23 medium/high findings have Worker task references. The current sweep index still lists completed source runs `45344012691` and `45344012650` as pending because it observed them in progress.
+- **Limitations:** The hosted regression suite covers bounded retry behavior and terminal finding retirement. No run is currently recorded as exhausted, and no live finding retirement has occurred because linked remediation tasks remain open. The next diagnostics sweep must reconcile the two pending run IDs.
+- **References:** Task archive commit [22b1927](https://github.com/dungnv2602/chatgpt/commit/22b1927163ce96e56150a4a8ae2bb3010763fb0b); Diagnostics #515; Document Standards #271; `reports/gh_ac_reports/index.json`; `reports/triage/ledger.json`.
+- **Next:** Verify the next naturally completed diagnostics sweep. Then verify live retirement after linked tasks are archived Done and indexed. Do not dispatch or poll Actions.
+
 
 ### 2026-11-23 23:38 UTC
 
@@ -125,22 +134,27 @@ Restore reliable event-driven task generation and lifecycle management for CI fi
 
 ## 7. Current State
 
-Workflow hardening is committed in [b6796db](https://github.com/dungnv2602/chatgpt/commit/b6796db503fa0d23af28a92a3105cd6d3321168d), with additional baseline retry and grouped-retirement tests in [59df9ea](https://github.com/dungnv2602/chatgpt/commit/59df9eab2f568605ab94d84fefec5b787f477448). The user-authorized clean start is committed in [e907af9](https://github.com/dungnv2602/chatgpt/commit/e907af94fbc1f8cd13899532bd92be9126c828b0). All old report history, snapshots, and pointers were removed from the current tree. The first natural post-reset diagnostics run [45290888511](https://github.com/dungnv2602/chatgpt/actions/runs/45290888511) has one Incomplete pre-finalizer capture and remains pending its post-run capture. The Ledger currently has zero findings; it has processed only that pre-finalizer report path, and both lint baselines remain unseeded. Both lint indexes are empty. The 13 unapproved Ledger-generated proposals are preserved as Cancelled archive records. Four unrelated active tasks remain. Hosted regression success and end-to-end task retirement remain unverified.
+The user-authorized clean-start reset and the Ledger/report implementation are committed. The latest hosted Diagnostics run [#515](https://github.com/dungnv2602/chatgpt/actions/runs/45344012752) completed successfully. Its hosted runner passed 26 reporter tests, 33 Ledger tests, and 7 archive-retention tests. Document Standards run [#271](https://github.com/dungnv2602/chatgpt/actions/runs/45344012650) also passed.
+
+Both lint baseline scopes are seeded (`on_changed=true`, `on_repo=true`). The Ledger contains 51 open findings: 28 low, 21 medium, and 2 high. All 23 medium/high findings have Worker task references. Low-severity findings remain ledger-only. The Ledger has created and linked grouped tasks during report ingestion.
+
+The Actions report index watermark is `2026-11-24T06:55:27Z`. It lists run IDs `45344012691` and `45344012650` as pending. Both source runs have since completed: changed-document lint #595 failed with 9 recurring findings and zero new findings; Document Standards #271 succeeded. The archive-task push for task `20261123-054904` triggers the normal diagnostics sweep. The index has not yet confirmed the final post-run capture or pending-state transition.
+
+The reporter regression suite passed tests for bounded retries, one-shot request consumption, immutable post-run capture, and retry limits. The current Actions index has no exhausted run IDs. The Ledger regression suite passed tests for grouped task reuse, baseline seeding, task-reference preservation, and terminal finding retirement. Live retirement remains unobserved because the linked remediation tasks are not yet terminal.
 
 ## 8. Remaining Work
 
-- Confirm the hosted Ledger and Actions reporter regression suites pass through natural workflow execution.
-- Confirm the first complete tooling-valid full audit in each lint scope seeds its baseline without creating findings or tasks.
-- Confirm a later genuinely new actionable finding creates one grouped Proposed task and matching `task_refs`.
-- Confirm an indexed Done task archive triggers safe terminal finding retirement.
-- Confirm incomplete capture retries stop at the configured limit and manual request files are consumed once.
-- Confirm source workflows remain non-blocking and writer jobs do not overlap or deadlock.
+- Review the next naturally completed diagnostics sweep. Confirm that run `45344012691` receives its final post-run capture and that successful run `45344012650` leaves the pending queue.
+- Confirm the automatic retry budget reaches the configured limit only when real incomplete captures qualify. The hosted regression suite passes the bounded-retry tests, but the current index has no exhausted run IDs.
+- Verify live terminal-finding retirement after every finding in a linked task becomes terminal and the task archive is registered in the retention index.
+- Preserve the existing finding thresholds, baseline policy, and manual approval boundary. Do not backfill the prior reporting period or modify `main`.
 
 ## 9. Next Actions
 
-1. Read the next naturally published diagnostics result; do not poll or dispatch Actions.
-2. Verify test outcomes, both lint baseline flags, task publication, retry state, and task-archive retirement from committed report/index evidence.
-3. Keep the task In Progress until the hosted end-to-end behavior is demonstrated.
+1. Review the next naturally completed diagnostics run and its committed Actions index. Do not poll or dispatch workflows.
+2. Confirm post-run capture and pending-state reconciliation for run IDs `45344012691` and `45344012650`.
+3. Continue the approved grouped remediation tasks. Once their findings are terminal and task archives are indexed, confirm the diagnostics sweep retires those findings from the active Ledger.
+4. Confirm the retry-exhaustion state only from a naturally published report index. Do not manually clear pending or exhausted IDs.
 
 ## 10. References
 
@@ -167,7 +181,11 @@ Workflow hardening is committed in [b6796db](https://github.com/dungnv2602/chatg
 
 ## 12. Handoff Instructions
 
-Keep this task In Progress. Allow the normal GitHub Actions workflows to validate the committed changes. Do not dispatch or poll workflows. Confirm the first full audit in each lint scope seeds its baseline without creating tasks. Confirm only later new actionable findings create grouped tasks. Confirm a Done task archive triggers terminal Ledger retirement. If any hosted check fails, use its natural diagnostic report to fix the root cause. Do not backfill pre-reset reports or manually alter the Ledger. The one incomplete pre-finalizer report is expected to be followed by its post-run capture.
+Current execution is assigned to this task. The related diagnostics-reporting task `20261123-054904` is archived Done. Hosted reporter, Ledger, archive-retention, and Document Standards checks passed. Both lint baselines are seeded, and all medium/high Ledger findings have task references.
+
+Resume with the next naturally completed diagnostics sweep. Verify the two pending source runs from the committed index. Continue approved remediation tasks. After linked tasks reach terminal states and their archives are indexed, verify live finding retirement. The regression tests already pass for the retry and retirement logic, but do not claim live lifecycle completion until the report index and Ledger show it.
+
+Do not dispatch or poll Actions. Do not backfill old reports, manually clear Ledger entries, weaken lint thresholds, or modify `main`. Keep all changes on branch `gpt`.
 
 ## 13. Ledger Findings
 
