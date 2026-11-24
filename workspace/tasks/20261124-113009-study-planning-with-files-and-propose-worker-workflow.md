@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-113009
 - **Created:** 2026-11-24 11:30 UTC
-- **Updated:** 2026-11-24 11:40 UTC
+- **Updated:** 2026-11-24 11:43 UTC
 - **Priority:** P1
 - **Status:** Blocked
 - **Origin:** User
@@ -108,6 +108,14 @@ Study Planning with Files and determine how its durable planning, research captu
 - **Index:** Added DRAFT-0002 to `workspace/draft/README.md`. The existing Draft path rule already covers the new file.
 - **Next:** Add DRAFT-0002 to Open Discussions, reconcile the task board to Blocked, and read back all changed paths.
 
+### 2026-11-24 11:43 UTC — Register and verify the proposal
+
+- **Action:** Added DRAFT-0002 to the Draft index and Open Discussions. Changed this task to Blocked and kept it as the current review item.
+- **Result:** The task record is Blocked. The board has one matching Blocked row and keeps the task in Current Execution. Open Discussions contains both DRAFT-0002 and the separate DRAFT-0001 review. Reports retains exactly three success entries.
+- **Readback:** Retrieved the task, board, discussion register, Draft index, DRAFT-0002, and DRAFT-0001 from branch `gpt`. DRAFT-0002 is revision 1 and in-review. Its recommendation and all required proposal sections are present. DRAFT-0001 remains in-review and was not edited.
+- **Commits:** DRAFT-0002 `51eadc2849a6e63fc1d9a8c1380429d3df784b81`; Draft index `31bb58dfe0d7acd5914b7b34ee8b41464f0658ee`; task state `4b5aaea8a552a0b93c017636689b0c95ce503e1d`; task board `db16a7267cb64e6e4e4c780e3303cae54e7ac7ac`; discussion register `da614212a8d87a3d042b1316b2ce39db4134850b`.
+- **Next:** Await the user's decision on DRAFT-0002 revision 1. Do not create an ADR or implement the proposal before approval.
+
 ## 7. Current State
 
 The external source study and repository comparison are complete. DRAFT-0002 revision 1 is created and indexed. It recommends a selective, repository-native adaptation.
@@ -143,10 +151,10 @@ The task is Blocked while the user reviews DRAFT-0002. DRAFT-0001 remains unchan
 
 ## 11. Verification
 
-- **Check:** External source and repository comparison.
-- **Method:** Read the external branch head and canonical skill. Read the three planning templates, workflow guide, long-running task guide, security policy, plan inventory, resolver, completion checker, Stop dispatcher, examples, reference, and a relevant regression test. Read the repository's Worker, Conversation Mode, task template, board, workspace README, Draft/ADR contracts, archive README, Document Type Catalog, and Ledger renderer.
-- **Result:** Created DRAFT-0002 revision 1. The existing Draft coverage rule includes the new file. The Draft proposes an optional findings family, so no new catalog path rule is active yet.
-- **Limitations:** No external or repository tests were executed. The Draft has not been approved. Proposed workflow changes remain unimplemented.
+- **Check:** External research, repository fit, proposal creation, and workspace consistency.
+- **Method:** Read the external source at its pinned branch commit and inspected the skill, templates, guides, security policy, plan inventory, resolver, completion checker, gate dispatcher, and relevant tests. Read the repository Worker, Conversation Mode reference, workspace templates and indexes, archive policy, Document Type Catalog, and Ledger renderer.
+- **Result:** DRAFT-0002 revision 1 is created and read back. Its index entry, review item, task status, and task-board row agree. Both DRAFT-0002 and DRAFT-0001 remain open for separate user decisions. The Reports section retains exactly three entries. No ADR was created.
+- **Limitations:** No external or repository tests were executed. No proposed workflow change has been implemented.
 
 ## 12. Handoff Instructions
 
