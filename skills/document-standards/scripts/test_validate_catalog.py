@@ -310,6 +310,36 @@ class CatalogValidatorTests(unittest.TestCase):
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
 
+    def set_takeout_history_coverage(self):
+        self.set_catalog(self.valid_rows())
+        self.replace_coverage([
+            "| `skills/**/*.md` | Lightweight pattern | Active |"
+            "`skills/example/SKILL.md` | Skill fixture. |",
+            "| `workspace/*.md` | Embedded contract | Active |"
+            "`workspace/example.md` and `skills/example/SKILL.md` | Workspace fixture. |",
+            "| `images/example/README.md` | Embedded contract | Active |"
+            "`images/example/README.md` and `skills/example/SKILL.md` | Image fixture. |",
+            "| `images/takeout/history/**/*.md` | Generator-owned | Optional |"
+            "`skills/the-worker/scripts/process_takeout.py` and "
+            "`skills/the-worker/scripts/test_process_takeout_unittest.py` | "
+            "Generated verification reports may be absent after a clean reset. |",
+            "| `novels/*.md` | Embedded contract | Active |"
+            "`novels/WORKFLOW.md` and `skills/example/SKILL.md` | Novel fixture. |",
+        ])
+
+    def test_optional_takeout_history_coverage_allows_empty_family(self):
+        self.set_takeout_history_coverage()
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+
+    def test_optional_takeout_history_coverage_covers_nested_reports(self):
+        self.write(
+            "images/takeout/history/2026-11-20-001/attempt-001/verification-report.md"
+        )
+        self.set_takeout_history_coverage()
+        errors, _, _ = validate_catalog(self.root, self.catalog)
+        self.assertEqual(errors, [])
+
     def test_optional_coverage_is_limited_to_generator_owned_outputs(self):
         self.set_catalog(self.valid_rows(), [
             "| `drawings/new-family/*.md` | Lightweight pattern | Optional | "
