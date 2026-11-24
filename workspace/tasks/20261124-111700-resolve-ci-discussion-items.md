@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-111700
 - **Created:** 2026-11-24 11:24 UTC
-- **Updated:** 2026-11-24 11:26 UTC
+- **Updated:** 2026-11-24 11:44 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -90,28 +90,25 @@ Resolve the three CI discussions with current repository and hosted-run evidence
 
 ## 7. Current State
 
-Report retirement is complete and supported by the current Ledger and shared retention index. The exact three finding IDs from the discussion are no longer active. Four archived report JSON files and both task archives are indexed for the shared 90-day retention process.
+All three CI discussions have verified outcomes.
 
-The triage guide and Worker skill now agree. Every new eligible lint finding at all severities is task-eligible. Actions findings keep the medium/high/critical threshold.
+- **CI logging and report retirement:** The reporter capture policy and Ledger task rules are documented. The Worker skill now matches the approved rule that every new lint finding with an eligible status is task-eligible at every severity. Actions findings retain their medium/high/critical task threshold. All three resolved finding IDs from the original discussion are absent from the active Ledger. Their two task archives and all four archived report-capture directories are registered in the shared retention index. Diagnostics #538 and #539 succeeded.
+- **Task renderer:** The renderer searches only within the exact status section and fails closed when its table is absent or malformed. Diagnostics #530 passed all 37 Ledger tests, 26 reporter tests, and 7 archive-retention tests.
+- **Hosted runner allocation:** Six earlier runs reported a generic account-payment/spending-limit annotation and had no job logs. Later source workflow runs #276, #277, and #280 succeeded. Hosted execution resumed. The exact account condition remains unknown. No runner labels changed.
 
-The task renderer and its hosted regression are verified. Diagnostics #530 passed 37 Ledger tests, 26 reporter tests, and 7 archive-retention tests. Later source workflow runs #276, #277, and #280 succeeded after six earlier account-allocation failures. No runner labels were changed. The exact account billing condition remains unidentifiable from the annotation.
+No source-workflow, runner-label, renderer, or Ledger-code changes were needed in this task. The only policy change was the Worker skill documentation update.
 
 ## 8. Remaining Work
 
-- Verify the task-renderer implementation and the results for Diagnostics #530.
-- Inspect the hosted runner allocation evidence. Preserve uncertainty about the exact account condition.
-- Reconcile the three CI discussions using the verified outcomes. Keep the unrelated Draft governance approval request open.
-- Complete the task archive transaction and task-board reconciliation.
-- Archive this task only after all acceptance criteria pass.
+Only the task closeout transaction remains. Write and verify the immutable Done archive, register its exact path, remove the active record, and update the board.
 
 ## 9. Next Actions
 
-1. Inspect the current branch head, the task-renderer code and tests, and the job logs from Diagnostics #530.
-2. Inspect relevant runner-allocation report evidence and later successful hosted jobs.
-3. Load Agent Skill Authoring and the ASD repository writing policy before revising the Worker skill.
-4. Update the Worker policy, then read back all changed paths.
-5. Resolve the three discussion entries that the evidence supports. Preserve any unresolved limitation.
-6. Complete the task archive transaction and task-board reconciliation.
+1. Write the final task as Done in `archive/tasks/` and read back the complete record.
+2. Add its exact archive path and UTC timestamp to `.github/archive-retention-index.json`.
+3. Delete the active task record after archive and index verification.
+4. Remove the In Progress row and reconcile Current Execution and Historical in the task board.
+5. Read back the board, archive record, and retention index.
 
 ## 10. References
 
@@ -132,24 +129,34 @@ The task renderer and its hosted regression are verified. Diagnostics #530 passe
 
 ## 11. Verification
 
-- **Check:** Task board and exact task archives.
-- **Method:** Retrieved the board and both archived task records from branch `gpt`.
-- **Result:** The board lists both tasks as Done in Historical. Both archived records state Status Done and Archived Yes.
-- **Limitations:** The reporter's exact account billing cause cannot be distinguished from the available annotation. The later successful source workflow runs show that runner allocation resumed. This task did not inspect account billing settings.
+- **Check:** Resolved report retirement.
+- **Method:** Read the Ledger, task archives, report archive paths, and shared retention index.
+- **Result:** The three exact finding IDs from the discussion are absent. Both linked tasks are archived Done. All 16 files across the four archived report-capture directories and both task archives have exact retention-index entries. Diagnostics #538 and #539 succeeded.
+- **Limitations:** The scheduled retention workflow was not run. No manual deletion was performed.
 
-- **Check:** Active Ledger retirement.
-- **Method:** Parsed `reports/triage/ledger.json` and checked the three finding IDs recorded in the discussion.
-- **Result:** All three finding IDs are absent. The Ledger is schema version 1.4.0 and both lint baselines remain seeded.
-- **Limitations:** This read-back establishes the current Ledger state. The task archive records and hosted Diagnostics runs provide the retirement history.
+- **Check:** Reporter scope and test coverage.
+- **Method:** Read the Actions and triage operating guides. Inspected Diagnostics #530 job logs.
+- **Result:** The capture rules distinguish actual workflow conclusions, independent failures, and incomplete operational evidence. All 26 reporter tests, 37 Ledger tests, and 7 archive-retention tests passed.
+- **Limitations:** Test evidence applies to Diagnostics #530 at commit `0953b4fb55606c9099ea84142201d4ead015cd6e`.
 
-- **Check:** Report and task retention.
-- **Method:** Parsed `.github/archive-retention-index.json` and checked the exact report and task archive paths.
-- **Result:** Four archived post-run report JSON files and both task archive records have exact retention entries with their recorded UTC archive timestamps.
-- **Limitations:** The scheduled retention workflow has not been run as part of this task.
+- **Check:** Task renderer behavior.
+- **Method:** Inspected `reports/triage/scripts/ledger.py` and `reports/triage/scripts/test_ledger.py`.
+- **Result:** The renderer limits row insertion to the exact status section. Tests verify correct Proposed placement and fail-closed behavior for a missing table.
+
+- **Check:** Hosted runner recovery.
+- **Method:** Inspected six incomplete post-run reports and the job summaries for source runs #276, #277, and #280.
+- **Result:** The six earlier jobs contain the generic account-payment/spending-limit annotation and have no runner logs. Later source runs completed successfully. The generic annotation does not identify the exact billing condition. Runner labels remain unchanged.
+- **Limitations:** Account billing settings were not inspected.
+
+- **Check:** Worker policy consistency.
+- **Method:** Read the Agent Skill Authoring instructions and repository technical-writing policy. Updated and read back `skills/the-worker/SKILL.md`. Searched the complete file for superseded task-eligibility wording.
+- **Result:** The Worker skill now agrees with `reports/triage/README.md`. Every new lint finding with an eligible status is task-eligible at all severities. Actions findings retain the medium/high/critical threshold. No obsolete low/advisory exclusion remains.
+- **References:** Worker skill commit `8adc48d1be4d4d659fba028d7cea8e76ddd9c9d9`.
+- **Limitations:** The task did not wait for or poll the new Markdown lint workflow.
 
 ## 12. Handoff Instructions
 
-Resume with Next Actions. Do not repeat the verified report-retirement checks unless a new repository change or later evidence affects them. Do not modify runner labels, manually delete Ledger findings, manually delete archive files, dispatch CI, or weaken tests. If hosted evidence cannot prove an account condition, preserve that uncertainty. Close the task only after the renderer, runner, and Worker-policy work is complete and the required repository read-backs pass.
+This task is complete. Preserve the unrelated open matters in `workspace/discussion.md`. Do not reopen or manually alter the resolved Ledger findings. Do not change runner labels based on the generic annotation. If the account-allocation annotation recurs, inspect the repository owner's Billing & plans settings because the available report cannot distinguish a failed payment from a spending-limit condition. Do not modify this archived task.
 
 ## 13. Ledger Findings
 
