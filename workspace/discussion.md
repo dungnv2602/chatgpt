@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 13:22 UTC — Inspect the remaining governance validation gate:** Read the decision-governance contract and report indexes, then identify any naturally published post-correction Document Standards and Ledger validation evidence. Do not poll Actions. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 13:25 UTC — Repair the catalog validation defects:** Correct the embedded-contract owner references and move the shared governance templates to the workspace root. Update their owner indexes, catalog coverage, and the active task link. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 
 ## Open Discussions
 
