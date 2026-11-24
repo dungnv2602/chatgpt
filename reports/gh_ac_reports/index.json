@@ -6,6 +6,7 @@
   },
   "sweep_watermark_utc": "2026-11-23T23:38:33Z",
   "pending_run_ids": [
+    "45312561050",
     "45312157558",
     "45311750665",
     "45311750664",
@@ -29,6 +30,23 @@
   ],
   "exhausted_run_ids": [],
   "runs": [
+    {
+      "workflow_id": 427313089,
+      "workflow_name": "Validate Document Standards",
+      "run_id": "45312561050",
+      "run_number": 247,
+      "attempt": 1,
+      "capture_stage": "pre_finalizer",
+      "created_at": "2026-11-24T02:27:56Z",
+      "captured_at_utc": "2026-11-24T02:28:28Z",
+      "source_status": "in_progress",
+      "source_conclusion": null,
+      "projected_conclusion": "failure",
+      "report_status": "Incomplete",
+      "primary_category": "validation_or_test",
+      "history_path": "history/427313089/45312561050-attempt-1-pre_finalizer",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45312561050"
+    },
     {
       "workflow_id": 422582294,
       "workflow_name": "Process Image Takeout and Create WebP Derivatives",
@@ -371,20 +389,20 @@
     }
   ],
   "latest_report": {
-    "workflow_id": 422582294,
-    "workflow_name": "Process Image Takeout and Create WebP Derivatives",
-    "run_id": "45312157558",
-    "run_number": 68,
+    "workflow_id": 427313089,
+    "workflow_name": "Validate Document Standards",
+    "run_id": "45312561050",
+    "run_number": 247,
     "attempt": 1,
     "capture_stage": "pre_finalizer",
-    "created_at": "2026-11-24T02:24:38Z",
-    "captured_at_utc": "2026-11-24T02:25:31Z",
+    "created_at": "2026-11-24T02:27:56Z",
+    "captured_at_utc": "2026-11-24T02:28:28Z",
     "source_status": "in_progress",
     "source_conclusion": null,
     "projected_conclusion": "failure",
     "report_status": "Incomplete",
-    "primary_category": "build_or_processing",
-    "history_path": "history/422582294/45312157558-attempt-1-pre_finalizer",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45312157558"
+    "primary_category": "validation_or_test",
+    "history_path": "history/427313089/45312561050-attempt-1-pre_finalizer",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45312561050"
   }
 }
