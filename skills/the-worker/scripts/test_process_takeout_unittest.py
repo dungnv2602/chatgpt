@@ -76,6 +76,9 @@ class TakeoutProcessorTests(unittest.TestCase):
                 "destination_dir",
                 "novels/Novel-02/assets/illustrations/ARC-001/SCN-001",
             )
+            if destination == "images/unclassified":
+                normalized.append(item)
+                continue
             parts = destination.split("/")
             is_drawing = len(parts) == 3 and parts[0] == "drawings" and parts[2] == "images"
             session_date = parts[1] if is_drawing else "2026-11-19"
@@ -160,8 +163,17 @@ class TakeoutProcessorTests(unittest.TestCase):
             "items:",
         ]
         for item in normalized:
+            rows.append(f'  - source: "{item["source"]}"')
+            if item.get("destination_dir") == "images/unclassified":
+                rows.extend([
+                    f'    title: "{item.get("title", "Unclassified upload")}"',
+                    '    destination_dir: "images/unclassified"',
+                ])
+                for key in ("approval_status", "mapping_evidence"):
+                    if key in item:
+                        rows.append(f'    {key}: "{item[key]}"')
+                continue
             rows.extend([
-                f'  - source: "{item["source"]}"',
                 f'    asset_id: "{item["asset_id"]}"',
                 f'    source_asset_id: "{item["source_asset_id"]}"',
                 f'    title: "{item.get("title", "Shared Discovery")}"',
@@ -180,6 +192,78 @@ class TakeoutProcessorTests(unittest.TestCase):
                 if key in item:
                     rows.append(f'    {key}: "{item[key]}"')
         (self.inbox / "HANDOFF.yml").write_text("\n".join(rows) + "\n", encoding="utf-8")
+
+    def test_mixed_batch_relocates_mapped_items_and_retains_unclassified_items(self):
+        mapped_bytes = b"mapped-original"
+        unknown_bytes = b"unclassified-original"
+        (self.inbox / "mapped.png").write_bytes(mapped_bytes)
+        (self.inbox / "unknown.png").write_bytes(unknown_bytes)
+        self.manifest_many(
+            [
+                {"source": "mapped.png", "title": "Mapped output"},
+                {
+                    "source": "unknown.png",
+                    "title": "Unclassified upload",
+                    "destination_dir": "images/unclassified",
+                    "approval_status": "Not recorded",
+                    "mapping_evidence": "No exact provenance association is retained.",
+                },
+            ],
+            batch="batch-mixed",
+        )
+
+        result = self.run_processor()
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+        destination = self.root / "novels/Novel-02/assets/illustrations/ARC-001/SCN-001"
+        self.assertEqual((destination / "original/ILL-001-mapped-output.png").read_bytes(), mapped_bytes)
+        self.assertTrue((destination / "ILL-001-mapped-output.webp").read_bytes().startswith(b"RIFF"))
+        self.assertFalse((self.inbox / "mapped.png").exists())
+        self.assertEqual((self.inbox / "unknown.png").read_bytes(), unknown_bytes)
+
+        residual = (self.inbox / "HANDOFF.yml").read_text(encoding="utf-8")
+        self.assertIn("status: draft", residual)
+        self.assertIn("unknown.png", residual)
+        self.assertNotIn("mapped.png", residual)
+
+        report = self.inbox / "history/batch-mixed/attempt-001"
+        with (report / "conversion-report.csv").open(encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle))
+        self.assertEqual({row["source_filename"]: row["status"] for row in rows}, {
+            "mapped.png": "RELOCATED_AND_VERIFIED",
+            "unknown.png": "DEFERRED_UNCLASSIFIED",
+        })
+        verification = (report / "verification-report.md").read_text(encoding="utf-8")
+        self.assertIn("unknown.png", verification)
+        archived_handoff = (report / "HANDOFF.yml").read_text(encoding="utf-8")
+        self.assertIn("mapped.png", archived_handoff)
+        self.assertIn("unknown.png", archived_handoff)
+
+    def test_ready_batch_with_only_unclassified_items_fails_closed(self):
+        (self.inbox / "unknown.png").write_bytes(b"unclassified-original")
+        self.manifest_many(
+            [
+                {
+                    "source": "unknown.png",
+                    "title": "Unclassified upload",
+                    "destination_dir": "images/unclassified",
+                    "approval_status": "Not recorded",
+                    "mapping_evidence": "No exact provenance association is retained.",
+                }
+            ],
+            batch="batch-only-unclassified",
+        )
+        handoff_before = (self.inbox / "HANDOFF.yml").read_bytes()
+
+        result = self.run_processor()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual((self.inbox / "unknown.png").read_bytes(), b"unclassified-original")
+        self.assertEqual((self.inbox / "HANDOFF.yml").read_bytes(), handoff_before)
+        report = self.inbox / "history/batch-only-unclassified/attempt-001"
+        with (report / "conversion-report.csv").open(encoding="utf-8") as handle:
+            row = next(csv.DictReader(handle))
+        self.assertEqual(row["status"], "DEFERRED_UNCLASSIFIED")
+        self.assertIn("No provenance-mapped items", (report / "verification-report.md").read_text(encoding="utf-8"))
 
     def test_success_moves_byte_identical_master_creates_webp_and_archives_reports(self):
         original = b"uploaded-original-bytes"

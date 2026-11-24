@@ -11,8 +11,10 @@ Images may belong to a novel, a drawing session, a visual-reference collection, 
 - Incoming filenames may use any name. The user does not need to rename them.
 - Do not place uploads in `history/` or `webp/`. The Action manages these reserved directories.
 - Keep one active batch in `HANDOFF.yml`.
-- The Action processes a batch only when `HANDOFF.yml` has `status: ready`.
-- List every top-level image in the ready hand-off exactly once.
+- The normal Action processes a batch only when `HANDOFF.yml` has `status: ready`.
+- List every top-level image in the hand-off exactly once.
+- Mark an unresolved item with `destination_dir: "images/unclassified"`. The normal processor skips that item, preserves its original, and retains it in a residual Draft hand-off after it relocates mapped items.
+- Do not create conversation records or provenance IDs to make an unclassified item pass validation.
 - The pipeline accepts static PNG, JPG, and JPEG files.
 - The pipeline rejects APNG, GIF, WebP, HEIC, AVIF, TIFF, BMP, and other formats. It does not flatten animated images.
 
@@ -132,7 +134,9 @@ This naming rule preserves the source extension. It also prevents collisions bet
 
 The [WebP workflow](../../.github/workflows/convert-images-to-webp.yml) runs when intake files or the hand-off change. You can also start it manually on branch `gpt`.
 
-The normal workflow validates every conversation-integrity record and its source mapping before conversion. It also checks drawing output identity against the referenced attempt note. A missing, malformed, or mismatched record fails the batch before any WebP is staged or any original is moved. The processor then converts each image into the attempt-specific staging folder. This gate applies to normal hand-off processing. Use the separate conversion-only path above for unclassified images. That path creates WebP derivatives only and never relocates files.
+The normal workflow processes a Ready hand-off as one transaction. It requires exact coverage of every top-level intake image. It validates every mapped item against its conversation-integrity record and, for drawing outputs, the referenced attempt note. It converts and relocates only items with a provenance-backed destination. An item whose destination is exactly `images/unclassified` is deferred: the processor does not hash, stage, convert, move, or rename that source. On success, it archives the complete original hand-off and reports, then leaves the deferred entries in a residual Draft hand-off. A validation or conversion failure preserves every source and the Ready hand-off. Use the separate conversion-only workflow above to create derivatives for exact unclassified filenames. That workflow never relocates originals.
+
+A Ready-state change in `HANDOFF.yml` does not trigger a push run. Manually dispatch **Process Image Takeout and Create WebP Derivatives** on branch `gpt` after the Ready hand-off and processor changes are committed. This prevents a status-only push from starting an unreviewed batch.
 
 The CSV records each staging path and final path.
 
@@ -173,7 +177,7 @@ The workflow records failed publication checks as `Failed` before the final chec
 
 Legacy assets without retained originals remain `Not verifiable`. The workflow still checks their WebP URL and derivative hash.
 
-A batch succeeds only after local verification of every master and WebP. The processor must also archive the original hand-off and reports. It clears the active hand-off last.
+A batch succeeds only after local verification of every mapped master and WebP. The processor also archives the complete original hand-off and reports. It removes processed entries only after verification. It leaves unclassified entries in a residual Draft hand-off; it clears the active hand-off only when no deferred items remain.
 
 A failed attempt does not clear the hand-off. Correct the hand-off and retry the same batch ID. The retry creates another numbered attempt.
 

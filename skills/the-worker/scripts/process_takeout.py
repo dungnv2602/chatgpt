@@ -154,7 +154,7 @@ def write_reports(folder: Path, handoff: bytes, rows: list[dict[str, Any]], batc
     lines = [
         f"# Takeout Processing — {batch}", "",
         f"- Batch: {batch}", f"- Attempt: {folder.name}", f"- Status: {state}",
-        f"- Items: {count}", f"- Generated: {datetime.now(timezone.utc).isoformat(timespec='seconds')}",
+        f"- Items processed: {count}", f"- Generated: {datetime.now(timezone.utc).isoformat(timespec='seconds')}",
         "", "## Verification checks",
     ]
     lines.extend(f"- {x}" for x in (checks or ["No verification checks completed."]))
@@ -162,12 +162,38 @@ def write_reports(folder: Path, handoff: bytes, rows: list[dict[str, Any]], batc
     lines.extend(f"- {x}" for x in (errors or ["None."]))
     (folder / "verification-report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
+def deferred_report_rows(items: list[dict[str, Any]], version: str) -> list[dict[str, Any]]:
+    rows = []
+    for item in items:
+        source = item["source"]
+        rows.append({
+            "source_filename": source, "source_path": f"images/takeout/{source}",
+            "title": item.get("title", ""), "asset_id": item.get("asset_id", ""),
+            "source_asset_id": item.get("source_asset_id", ""), "attempt": item.get("attempt", ""),
+            "destination_dir": "images/unclassified",
+            "conversation_record": item.get("conversation_record", ""), "conversation_coverage": "",
+            "image_id": "", "master_path": "", "webp_path": "", "manifest_path": "",
+            "source_format": Path(str(source)).suffix.lower().lstrip("."),
+            "conversion_profile": "", "original_bytes": "", "webp_bytes": "",
+            "size_change_percent": "", "source_sha256": "", "master_sha256": "",
+            "webp_sha256": "", "generation_sha256": item.get("expected_sha256", ""),
+            "output_id": item.get("output_id", ""), "prompt_id": item.get("prompt_id", ""),
+            "native_generation_id": item.get("native_generation_id", ""),
+            "native_output_id": item.get("native_output_id", ""),
+            "mapping_status": "Unmapped", "hash_match": "NOT_ASSESSED",
+            "cwebp_version": version, "status": "DEFERRED_UNCLASSIFIED",
+            "error": "Preserved in images/takeout; no provenance-based relocation attempted.",
+        })
+    return rows
+
+
 def failure_rows(items: list[Any], error: str, version: str) -> list[dict[str, Any]]:
     rows = []
     for item in items:
         if not isinstance(item, dict):
             continue
         source = item.get("source", "")
+        deferred = item.get("destination_dir") == "images/unclassified"
         rows.append({
             "source_filename": source, "source_path": f"images/takeout/{source}" if source else "",
             "title": item.get("title", ""), "asset_id": item.get("asset_id", ""),
@@ -182,8 +208,14 @@ def failure_rows(items: list[Any], error: str, version: str) -> list[dict[str, A
             "output_id": item.get("output_id", ""), "prompt_id": item.get("prompt_id", ""),
             "native_generation_id": item.get("native_generation_id", ""),
             "native_output_id": item.get("native_output_id", ""),
-            "mapping_status": "NOT_ASSESSED", "hash_match": "NOT_CHECKED",
-            "cwebp_version": version, "status": "FAILED", "error": error,
+            "mapping_status": "Unmapped" if deferred else "NOT_ASSESSED",
+            "hash_match": "NOT_ASSESSED" if deferred else "NOT_CHECKED",
+            "cwebp_version": version,
+            "status": "DEFERRED_UNCLASSIFIED" if deferred else "FAILED",
+            "error": (
+                "Preserved in images/takeout; no provenance-based relocation attempted."
+                if deferred else error
+            ),
         })
     return rows
 
@@ -1123,6 +1155,7 @@ def main() -> int:
     errors: list[str] = []
     checks: list[str] = []
     prepared: list[dict[str, Any]] = []
+    deferred_items: list[dict[str, Any]] = []
     moved: list[tuple[Path, Path]] = []
     staged_moves: list[tuple[Path, Path]] = []
     written_text_updates: list[tuple[Path, bytes | None]] = []
@@ -1176,6 +1209,23 @@ def main() -> int:
             suffix = source.suffix.lower()
             if suffix not in SUPPORTED:
                 raise ProcessingError(f"Unsupported source format: {name}")
+            # Keep explicitly unclassified items in intake. They still count
+            # toward exact batch coverage, but bypass provenance relocation.
+            if item.get("destination_dir") == "images/unclassified":
+                title = item.get("title")
+                if not isinstance(title, str) or not title.strip():
+                    raise ProcessingError(f"Item {number} requires a descriptive quarantine title.")
+                mapping_evidence = item.get("mapping_evidence", "")
+                if mapping_evidence is not None and (
+                    not isinstance(mapping_evidence, str)
+                    or len(mapping_evidence) > 1000
+                    or any(character in mapping_evidence for character in "\r\n")
+                ):
+                    raise ProcessingError(
+                        f"Item {number}: quarantine mapping_evidence must be a single-line string of at most 1000 characters."
+                    )
+                deferred_items.append(item)
+                continue
             title = item.get("title")
             if not isinstance(title, str) or not title.strip():
                 raise ProcessingError(f"Item {number} requires a descriptive title.")
@@ -1309,8 +1359,21 @@ def main() -> int:
             missing, unlisted = sorted(sources - inbox_images), sorted(inbox_images - sources)
             details = (["missing: " + ", ".join(missing)] if missing else []) + (["not listed: " + ", ".join(unlisted)] if unlisted else [])
             raise ProcessingError("Every image must appear exactly once in HANDOFF.yml; " + "; ".join(details))
-        checks.append("Every uploaded image is listed exactly once; no unlisted image will be processed.")
-        checks.append("Every item has an existing conversation-integrity record with an exact image-source mapping; drawing outputs also match the attempt record asset ID and generation ID.")
+        if not prepared:
+            raise ProcessingError(
+                "No provenance-mapped items are eligible for normal processing. "
+                "Use the conversion-only workflow for unclassified images; originals remain in intake."
+            )
+        checks.append("Every uploaded image is listed exactly once; no unlisted or untracked image will be processed.")
+        checks.append(
+            "Every processed item has an existing conversation-integrity record with an exact image-source mapping; "
+            "drawing outputs also match the attempt record asset ID and generation ID."
+        )
+        if deferred_items:
+            checks.append(
+                f"{len(deferred_items)} unclassified image(s) were excluded from relocation and remain unchanged in images/takeout/: "
+                + ", ".join(item["source"] for item in deferred_items)
+            )
         if any(item["hash_match"] == "MATCH" for item in prepared):
             checks.append("Uploaded originals matching supplied generation-time SHA-256 values were identified.")
         if any(item["hash_match"] == "MISMATCH" for item in prepared):
@@ -1418,18 +1481,35 @@ def main() -> int:
                 "cwebp_version": encoder_version,
                 "status": item["status"], "error": "",
             })
+        rows.extend(deferred_report_rows(deferred_items, encoder_version))
         write_reports(folder, raw, rows, batch, "SUCCESS", checks, [], len(prepared))
         # All staged derivatives have moved to their final destinations. Remove
-        # the now-empty attempt directory before clearing the active hand-off.
+        # the now-empty attempt directory before retaining only quarantined items.
         stage_root.rmdir()
         try:
             stage_root.parent.rmdir()
         except OSError:
             pass  # Older failed attempts for the same batch may still be present.
         tmp_manifest = inbox / ".HANDOFF.yml.tmp"
-        tmp_manifest.write_text(EMPTY_HANDOFF, encoding="utf-8")
+        if deferred_items:
+            residual_handoff = yaml.safe_dump(
+                {
+                    "version": 1,
+                    "batch_id": batch,
+                    "status": "draft",
+                    "items": deferred_items,
+                },
+                allow_unicode=True,
+                sort_keys=False,
+            )
+        else:
+            residual_handoff = EMPTY_HANDOFF
+        tmp_manifest.write_text(residual_handoff, encoding="utf-8")
         os.replace(tmp_manifest, manifest)
-        print(f"Successfully processed {batch}: {len(prepared)} image(s).")
+        print(
+            f"Successfully processed {batch}: {len(prepared)} image(s); "
+            f"retained {len(deferred_items)} unclassified image(s) in intake."
+        )
         print(f"Reports: {folder.relative_to(root).as_posix()}/")
         return 0
 
@@ -1493,6 +1573,8 @@ def main() -> int:
             })
         if not rows:
             rows = failure_rows(items_report, message, encoder_version)
+        else:
+            rows.extend(deferred_report_rows(deferred_items, encoder_version))
         try:
             write_reports(folder, raw, rows, batch, "FAILED", checks, errors, len(items_report))
         except Exception as report_exc:

@@ -26,7 +26,7 @@ Use the [Image Takeout procedure](../../../images/takeout/README.md) for the exa
 
 Add a mandatory `conversation_record` path to every ready hand-off item. The file must be a dated conversation-integrity record and must contain the exact source filename in its `Image source mapping` table. For drawing outputs, use `drawings/history/YYYY-MM-DD-conversation-integrity.md`; include the attempt and a native Generation ID or recorded internal Output ID. The processor cross-checks that identity against the referenced attempt note. If an Asset ID is supplied, it must also match. A Partial or Curated record must identify unavailable material and label editorial summaries; do not invent a transcript to pass validation.
 
-The processor moves each original byte-for-byte into the destination's `original/` folder. It stores the WebP derivative in the destination root. Novel assets use `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Other assets use their declared destination. The original retains its metadata. The WebP does not replace the master.
+The processor moves each provenance-mapped original byte-for-byte into the destination's `original/` folder. It stores the WebP derivative in the destination root. Novel assets use `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Other assets use their declared destination. The original retains its metadata. The WebP does not replace the master. An item whose exact destination is `images/unclassified` remains in intake and does not enter conversion or relocation. The processor preserves that item in a residual Draft hand-off after a successful mapped batch.
 
 ## Unclassified image conversion-only path
 
@@ -60,7 +60,7 @@ The processor validates the complete batch before relocating originals. It rejec
 
 On failure, the original uploads and ready hand-off remain available. Successful staged WebPs remain in the failed attempt folder. Each retry uses a new attempt directory and preserves earlier evidence.
 
-On success, the processor moves verified WebPs to their destination roots, archives the hand-off and reports, and clears the active hand-off last.
+On success, the processor moves verified WebPs to their destination roots. It archives the complete hand-off and reports. It then removes only processed entries from the active hand-off. Unclassified entries remain in a residual Draft hand-off; the processor clears the active hand-off only when no deferred items remain.
 
 After the first push, the publication verifier reads the exact original and WebP blobs from `origin/gpt`. It checks their hashes, the canonical WebP URL, the manifest, and the required Markdown links. Eligible manifest rows remain `Pending` until these checks pass. The final check-only pass verifies the published manifest against the branch.
 

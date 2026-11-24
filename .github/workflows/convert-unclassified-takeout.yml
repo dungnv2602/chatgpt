@@ -11,7 +11,8 @@ on:
 permissions: {}
 
 concurrency:
-  group: unclassified-takeout-conversion
+  group: image-takeout-${{ github.ref }}
+  queue: max
   cancel-in-progress: false
 
 jobs:
@@ -206,4 +207,32 @@ jobs:
           git add -- "$OUTPUT_DIR"
           git diff --cached --quiet && { echo "No new derivatives to commit."; exit 0; }
           git commit -m "chore(images): convert unclassified takeout images to WebP"
-          git push origin HEAD:refs/heads/gpt
+
+          # Serialize with normal processing and preserve non-forcing updates.
+          max_attempts=5
+          for attempt in $(seq 1 "$max_attempts"); do
+            echo "Publish attempt $attempt/$max_attempts"
+            git fetch origin gpt
+
+            if ! git rebase origin/gpt; then
+              git rebase --abort || true
+              echo "::error::Could not rebase unclassified WebP results. No remote changes were overwritten."
+              exit 1
+            fi
+
+            if git push origin HEAD:refs/heads/gpt; then
+              echo "Unclassified WebP derivatives published successfully."
+              exit 0
+            fi
+
+            git fetch origin gpt
+            if git merge-base --is-ancestor origin/gpt HEAD; then
+              echo "::error::Push failed although origin/gpt did not advance. Check token permissions or branch protection."
+              exit 1
+            fi
+
+            echo "Remote branch advanced during push; synchronizing and retrying."
+          done
+
+          echo "::error::Could not publish after $max_attempts synchronization attempts."
+          exit 1
