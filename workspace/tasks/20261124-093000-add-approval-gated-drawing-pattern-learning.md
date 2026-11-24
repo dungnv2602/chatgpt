@@ -43,7 +43,7 @@ Add a required post-generation pattern-learning step to the Drawing workflow. Ex
 8. Require explicit user approval for each pattern creation or change. Workflow approval does not pre-approve future pattern entries. Silence, image delivery, prompt approval, or approval of a different candidate does not count.
 9. Do not write an unapproved candidate to either canonical pattern index. If the user requests changes, revise the proposal and discuss it again. If the user rejects or defers it, record that decision in the attempt record and do not update the index.
 10. Assign the next unused permanent pattern ID only after approval. Never reuse an ID.
-11. On approval, update only the relevant pattern index and the attempt record's pattern-review outcome. Link exact attempt evidence. Preserve the user's approval date and the approved scope.
+11. On approval, update only the relevant pattern index. Link exact attempt evidence. Record the user's approval date and approved scope in the pattern entry.
 12. If no reusable lesson exists, record that no pattern candidate was identified. Do not create a weak entry or ask for approval without a concrete candidate.
 13. Handle mixed outcomes and multiple outputs independently. A single attempt may support a success candidate for one output and a failure candidate for another.
 14. Keep the active session brief and latest user instructions above all pattern guidance. A pattern must never authorize a creative change or restriction.
@@ -57,6 +57,13 @@ Add a required post-generation pattern-learning step to the Drawing workflow. Ex
 - **Not authorized:** Writing any new or revised successful/failure pattern entry without separate approval for that specific proposal.
 
 ## 6. Progress Log
+
+### 2026-11-24 09:30 UTC — Confirm scope for attempt-record formats
+
+- **Action:** Checked the novel illustration prompt template, Novel README and workflow, Document Type Catalog, and Drawing attempt template.
+- **Result:** A new durable review field in attempt records would require a broader versioned change to novel templates and their owner workflow. The existing attempt records already preserve the evidence needed for pattern proposals. The post-attempt conversation will carry each proposal. Approved pattern entries will record the approval date and exact attempt evidence. No attempt-template or novel-template migration is needed.
+- **References:** `novels/templates/illustration-prompt-v1.1.md`; `novels/README.md`; `novels/WORKFLOW.md`; `skills/drawing/assets/attempt-template.md`; `skills/document-standards/references/document-type-catalog.md`.
+- **Next:** Revise the Drawing skill, pattern README, pattern-entry template, and catalog. Leave both pattern indexes unchanged.
 
 ### 2026-11-24 09:30 UTC — Inspect current pattern governance and task continuity
 
@@ -73,7 +80,6 @@ The task is approved for the Drawing workflow change. The approval gate for futu
 
 - Load the skill-authoring instructions and the repository writing policy.
 - Add a post-attempt extraction and discussion step to the Drawing skill.
-- Add a durable pattern-review decision section to the attempt template.
 - Update pattern governance and entry templates to require explicit approval evidence.
 - Read back every changed file and verify the complete commit.
 - Use the relevant hosted validation workflow. Do not run repository scripts locally or poll CI.

@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 09:30 UTC — Revise the Drawing skill, attempt template, pattern index guidance, and pattern-entry templates to enforce post-attempt extraction and per-candidate approval. Leave both pattern indexes unchanged.**
+**2026-11-24 09:30 UTC — Revise the Drawing skill, pattern index README, pattern-entry template, and Document Type Catalog. Leave attempt templates and both pattern indexes unchanged.**
 
 ## Open Discussions
 
