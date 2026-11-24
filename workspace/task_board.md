@@ -35,6 +35,7 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
+| 20261124-182215 | Review present-perfect findings in workspace/adr/README.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-182215-review-present-perfect-findings-in-workspace-adr-readme-md.md) |
 | 20261124-164450 | Review synonym-rotation findings in workspace/task\_board.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-164450-review-synonym-rotation-findings-in-workspace-task-board-md.md) |
 | 20261124-162814 | Review synonym-rotation findings in workspace/draft/README.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-162814-review-synonym-rotation-findings-in-workspace-draft-readme-md.md) |
 | 20261124-161334-07 | Review passive-voice findings in workspace/draft/README.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-161334-07-review-passive-voice-findings-in-workspace-draft-readme-md.md) |
