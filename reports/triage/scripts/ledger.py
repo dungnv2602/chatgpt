@@ -669,9 +669,20 @@ def upsert_task_board_row(root, task):
             section_index = lines.index(heading)
         except ValueError as exc:
             raise LedgerError("Task board has no section for status " + status) from exc
-        header_index = next((i for i in range(section_index + 1, len(lines)) if lines[i].startswith("| ID | Task |")), None)
-        if header_index is None or header_index + 1 >= len(lines):
-            raise LedgerError("Task board table is missing under " + heading)
+        section_end = next(
+            (i for i in range(section_index + 1, len(lines)) if lines[i].startswith("## ")),
+            len(lines),
+        )
+        header_index = next(
+            (i for i in range(section_index + 1, section_end) if lines[i].startswith("| ID | Task |")),
+            None,
+        )
+        if (
+            header_index is None
+            or header_index + 1 >= section_end
+            or not lines[header_index + 1].startswith("|---")
+        ):
+            raise LedgerError("Task board table is missing or malformed under " + heading)
         lines.insert(header_index + 2, row)
     new_board = re.sub(r"(?m)^Last updated: .*$", "Last updated: " + updated, "\n".join(lines)) + "\n"
     if new_board == board:
