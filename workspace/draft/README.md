@@ -22,7 +22,7 @@ This folder stores proposals that require a user decision.
 7. Create an ADR only after the user approves the exact Draft revision and its scope.
 8. Create the ADR as promotion-pending. Complete the rationale comparison and read-back before changing its status to accepted.
 9. Read back the accepted ADR. Delete the source Draft only after this check passes.
-10. Remove the source Draft from this index. Keep its ID as ADR provenance. Do not link the ADR to the deleted source file.
+10. Delete the source Draft from this index. Keep its ID as ADR provenance. Do not link the ADR to the deleted source file.
 
 If deletion fails after acceptance, keep the source Draft temporarily. Record the resulting ADR ID and cleanup reason in its metadata. List it only under Promotion Cleanup Pending. Retry deletion without creating another ADR or repeating approval.
 

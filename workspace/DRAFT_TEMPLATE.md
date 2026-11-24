@@ -43,7 +43,7 @@ cleanup_reason: null
 
 ## Considered Options
 
-Include the current approach or no-change option when it is viable. Use neutral arguments when an option has mixed effects.
+Include the current approach or no-change option when it is viable. Use neutral arguments when an option produces both positive and negative effects.
 
 ### Option 1 — {Name}
 

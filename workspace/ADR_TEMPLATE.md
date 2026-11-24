@@ -26,7 +26,7 @@ review_triggers: []
 
 ## Context and Problem Statement
 
-{Describe the problem, current state, scope, and why the decision is required. Preserve material rationale from the approved source Draft.}
+{Describe the problem, current state, scope, and why the repository needs the decision. Preserve material rationale from the approved source Draft.}
 
 ## Decision Drivers
 
@@ -50,7 +50,7 @@ Chosen option: "{Option}", because {explain how it best meets the decision drive
 
 ### Confirmation
 
-Define how the repository will prove that this decision is implemented and remains effective.
+Define how the repository will show that implementers applied this decision and that it remains effective.
 
 - [ ] {Observable acceptance or fitness criterion}
 - [ ] {Relevant test, review, workflow result, or operational evidence}

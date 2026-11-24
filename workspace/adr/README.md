@@ -56,11 +56,11 @@ The accepted decision is immutable. Do not rewrite its rationale or chosen outco
 
 Only update lifecycle metadata, task links, review history, and implementation confirmation. Record why and when each lifecycle change occurred.
 
-When all linked implementation tasks are Done and the Confirmation criteria pass, move the ADR to archive/adr/. Also archive a decision whose implementation status is not-required after its confirmation check.
+When all linked implementation tasks reach Done and the Confirmation criteria pass, move the ADR to archive/adr/. Also archive a decision with implementation status not-required after its confirmation criterion passes.
 
 Never add ADRs to .github/archive-retention-index.json. The archive retention workflow must not delete ADRs. Keep the original ID and filename when you archive an ADR. Do not edit or delete an archived ADR.
 
 ## Current Accepted ADRs
 
-- [ADR-0002 — Retire Source Drafts After Verified ADR Promotion](0002-retire-source-drafts-after-verified-adr-promotion.md) — Accepted; implementation is in progress under task [20261124-160500](../tasks/20261124-160500-implement-verified-source-draft-retirement.md).
-- [ADR-0001 — Establish Draft-to-ADR Governance and Repository Analysis](../../archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md) — Fully implemented and permanently archived; its source-Draft preservation rule is superseded by ADR-0002.
+- [ADR-0002 — Retire Source Drafts After Verified ADR Promotion](0002-retire-source-drafts-after-verified-adr-promotion.md) — Accepted. Implementation is in progress under task [20261124-160500](../tasks/20261124-160500-implement-verified-source-draft-retirement.md).
+- [ADR-0001 — Establish Draft-to-ADR Governance and Repository Analysis](../../archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md) — Fully implemented and permanently archived. ADR-0002 supersedes its source-Draft preservation rule.
