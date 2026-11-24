@@ -51,6 +51,8 @@ _No paused tasks._
 
 ## Historical
 
+| ID | Task | Priority | Status | Origin | Updated | Record |
+|---|---|---:|---|---|---|---|
 | 20261123-054904 | Build GitHub Actions diagnostic reports and remove the CI preflight gate | P1 | Done | User | 2026-11-24 | [Archived record](../archive/tasks/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/22b1927163ce96e56150a4a8ae2bb3010763fb0b) |
 | ID | Task | Priority | Status | Origin | Updated | Record |
 | 20261123-100738 | Remediate hard STE lint findings | P1 | Done | Assistant | 2026-11-24 | [Archived record](../archive/tasks/20261123-100738-remediate-hard-ste-lint-findings.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/e936692b083eba2c7e1b4ca51aff1e2873c0fb3d) |
