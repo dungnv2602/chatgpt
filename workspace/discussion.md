@@ -1,8 +1,6 @@
 ## Current Step
 
-**2026-11-24 06:59 UTC — Start session:** Foundational initialization started in Condensed Mode for task `workspace/tasks/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md`. The startup register is committed before foundational skill retrieval. Current execution is limited to this task; no CI preflight is authorized by session initialization.
-
-**2026-11-24 06:00 UTC — Close STE lint remediation task:** Task `20261123-100738` is archived as Done under the user's approval to close on verified source remediation without waiting for another CI run. Archive record: `archive/tasks/20261123-100738-remediate-hard-ste-lint-findings.md` (archive commit `e936692b083eba2c7e1b4ca51aff1e2873c0fb3d`). The original 155-finding baseline was recovered; source corrections are committed and read back; the 12 deliberate ASD-STE100 examples remain protected. Explicit limitation: the latest natural report predates the final three source corrections, so no post-final-change CI pass is claimed. No workflow was dispatched. Current execution moves to user task `20261123-054904`.
+**2026-11-24 07:00 UTC — Verify current acceptance evidence:** Inspect the latest `gpt` branch head, naturally completed GitHub Actions runs relevant to the approved task, and the report/Ledger indexes. Confirm each remaining acceptance criterion from hosted evidence. Do not dispatch, rerun, or poll workflows.
 
 ## Open Discussions
 
