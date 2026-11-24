@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 16:12 UTC — Inspect approved task and migration dependencies:** Read [task 20261124-160500](tasks/20261124-160500-implement-verified-source-draft-retirement.md), workspace navigation and task board, accepted ADR-0002, and the task-specific governance and Document Standards assets. Confirm exact scope, approval metadata, and current repository state before editing.
+**2026-11-24 16:14 UTC — Activate the approved implementation task:** Update task 20261124-160500 to In Progress with the user's explicit execution approval, set it as current execution, and reconcile the task board. Preserve the task's approved scope and existing history.
 
 ## Open Discussions
 
