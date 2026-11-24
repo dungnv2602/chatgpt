@@ -36,7 +36,7 @@ Coverage rules use three states:
 - **Reserved:** must match no current file. It records a validated, narrow family before its first record exists.
 - **Optional:** may match zero or more files. Use only for Generator-owned outputs that can be absent after a clean reset or between report runs.
 
-When the first document in a reserved family is created, change its rule to Active in the same commit. Optional rules need no activation; every generated file that exists must still match a catalogued path. The validator rejects stale Active rules, Reserved rules that already match documents, and Optional rules on non-generator-owned families.
+When the first document in a reserved family is created, change its rule to Active in the same commit. Optional rules need no activation. Every generated file that exists must still match a catalogued path. The validator rejects stale Active rules, Reserved rules that already match documents, and Optional rules on non-generator-owned families.
 
 For JSON, YAML, CSV, and other structured files, use the exact schema, processor, generator, and tests listed in the catalog.
 
