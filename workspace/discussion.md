@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 16:18 UTC — Assess DRAFT-0001 rationale coverage and canonical formats:** Compare the complete approved DRAFT-0001 revision 1 with archived ADR-0001 and accepted ADR-0002. Map each ADR-0002 completeness criterion to permanent evidence. Inspect the exact Draft/ADR templates, archive guidance, and Document Type Catalog entries before changing governance files.
+**2026-11-24 16:22 UTC — Implement ADR-0002 lifecycle changes:** Update the decision-governance skill, Draft and ADR templates and indexes, workspace navigation, archive guidance, and Document Type Catalog. Define promotion-pending as a temporary non-authoritative ADR state, remove promoted as a Draft status, and document verified source deletion and cleanup recovery. Preserve unrelated task records and all accepted ADR decision content.
 
 ## Open Discussions
 
