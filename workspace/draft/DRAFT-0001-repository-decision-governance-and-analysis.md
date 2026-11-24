@@ -2,9 +2,13 @@
 record_type: decision-draft
 template_version: "1.0"
 id: "DRAFT-0001"
-status: "in-review"
+status: "promoted"
 created: "2026-11-24"
 updated: "2026-11-24"
+approved_revision: 1
+approved_by: "User"
+approved_at_utc: "2026-11-24T12:25:00Z"
+resulting_adr: "ADR-0001"
 proposed_by: "Assistant"
 decision_makers:
   - "User"
@@ -420,16 +424,16 @@ Do not run repository scripts locally. Do not wait for or poll GitHub Actions.
 ## Review and Approval
 
 - **Revision presented:** Revision 1
-- **User decision:** Pending
-- **Approved scope:** Not approved
-- **Decision date:** Pending
-- **Resulting ADR:** Not created
+- **User decision:** Approved
+- **Approved scope:** Complete revision 1, including the repository-analysis area and the task-specific decision-governance skill.
+- **Decision date:** 2026-11-24
+- **Resulting ADR:** [ADR-0001 — Establish Draft-to-ADR Governance and Repository Analysis](../adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md)
 
 ## Discussion and Revision History
 
 | Date | Revision | Change | User feedback / decision |
 |---|---|---|---|
-| 2026-11-24 | 1 | Initial comprehensive proposal based on MADR and repository integration review | Pending |
+| 2026-11-24 | 1 | Initial comprehensive proposal based on MADR and repository integration review | Approved by the user. Promoted to ADR-0001 without changing the approved scope. |
 
 ## References
 

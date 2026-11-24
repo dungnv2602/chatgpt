@@ -12,6 +12,7 @@ The workspace is the task-management and conversation-navigation area. The Worke
 | [tasks/](tasks/) | Active task records |
 | [draft/](draft/README.md) | Proposals awaiting user review and decision |
 | [adr/](adr/README.md) | Accepted decisions awaiting implementation and confirmation |
+| [analysis/](analysis/README.md) | Evidence-based repository analysis snapshots |
 | [../reports/README.md](../reports/README.md) | Lint, Actions, and issue-ledger navigation |
 | [../archive/README.md](../archive/README.md) | Archive and retention policy |
 
@@ -25,7 +26,7 @@ Every new implementation task must reference one or more accepted ADRs. Keep the
 
 When all implementation tasks and the ADR's confirmation checks pass, move the ADR to `archive/adr/`. Keep archived ADRs permanently. Never add them to the 90-day task/report retention index.
 
-The Draft and ADR folders own their indexes and record instructions. The full lifecycle, review rules, and repository-analysis proposal remain subject to the initial governance Draft.
+The decision-governance skill owns Draft, ADR, and repository-analysis lifecycles. Load it only when a task requires decision governance. Do not add it to foundational initialization.
 
 ## Task workflow
 

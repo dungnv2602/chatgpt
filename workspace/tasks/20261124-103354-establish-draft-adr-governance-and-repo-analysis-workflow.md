@@ -5,12 +5,13 @@
 - **Template version:** 1.2
 - **ID:** 20261124-103354
 - **Created:** 2026-11-24 10:33 UTC
-- **Updated:** 2026-11-24 10:47 UTC
+- **Updated:** 2026-11-24 12:32 UTC
 - **Priority:** P1
-- **Status:** Blocked
+- **Status:** In Progress
 - **Origin:** User
-- **Approval:** Approved to study MADR, create the requested `workspace/draft/` and `workspace/adr/` structures, and prepare a comprehensive proposal. Detailed governance rules and optional analysis structure remain subject to draft review and approval.
+- **Approval:** Approved for implementation. The user approved DRAFT-0001 revision 1 on 2026-11-24 12:25 UTC and directed execution.
 - **Current execution:** Yes
+- **Governing ADR(s):** ADR-0001 — [Establish Draft-to-ADR Governance and Repository Analysis](../adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md)
 - **Dependencies:** None
 - **Related tasks:** 20261123-225745 — Repair CI ledger task generation workflow
 - **Ledger group:** None
@@ -44,7 +45,8 @@ Here is my base ideas, expand on this. Better yet, try to utilize the best out o
 - **2026-11-24:** From now on, proposals move through Draft → user review → approved ADR. Implementation tasks must reference one or more ADRs.
 - **2026-11-24:** The Current Step section of `workspace/discussion.md` must link the active task records. Open Discussions must link the drafts under review.
 - **2026-11-24:** Implemented ADRs move to `archive/adr/` and must not be deleted.
-- **2026-11-24:** The location and need for a repository-analysis folder remain open for recommendation.
+- **2026-11-24:** The repository-analysis location and detailed governance rules remained open until the user approved DRAFT-0001 revision 1.
+- **2026-11-24 12:25 UTC:** The user approved DRAFT-0001 revision 1 and directed execution of this task.
 
 ## 3. Objective
 
@@ -115,24 +117,35 @@ Study MADR and design a comprehensive, low-ambiguity decision-management workflo
 - **References:** `skills/SESSION_START.md`; `skills/the-worker/SKILL.md`; `skills/the-worker/references/conversation-mode.md`; `skills/asd-ste100/SKILL.md`; `skills/github-actions/SKILL.md`; `skills/document-standards/SKILL.md`; `workspace/README.md`; `workspace/task_board.md`; `workspace/TASK_TEMPLATE.md`.
 - **Next:** Study MADR and inspect its canonical templates and lifecycle before writing the initial proposal.
 
+### 2026-11-24 12:25 UTC — User approves DRAFT-0001 revision 1
+
+- **Action:** The user approved the exact DRAFT-0001 revision 1 and directed execution of this task.
+- **Result:** Approval covers the complete Draft, including `workspace/analysis/`, the task-specific `decision-governance` skill, task-to-ADR linkage, Ledger changes, and permanent ADR archival. DRAFT-0002 remains a separate, unapproved proposal.
+- **References:** `workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md`; user instruction in this conversation.
+- **Next:** Create ADR-0001 and implement its approved governance scope.
+
 ## 7. Current State
 
-MADR research and repository integration review are complete. The requested `workspace/draft/` and `workspace/adr/` folders now contain README files and templates. Workspace navigation and discussion-register link rules are updated. Document Type Catalog 1.11 registers both record families. DRAFT-0001 is committed with status `in-review` and linked in `workspace/discussion.md`. The task is Blocked pending user review. No ADR has been created. The optional `workspace/analysis/` folder and `decision-governance` skill are still proposed.
+The user approved DRAFT-0001 revision 1. ADR-0001 records the accepted decision and governs this bootstrap implementation task.
+
+The task is In Progress. The approved scope includes Draft and ADR lifecycle governance, task-to-ADR linkage, permanent ADR archival, repository analysis under `workspace/analysis/`, and the task-specific `decision-governance` skill.
+
+DRAFT-0002 remains a separate proposal and is not part of this implementation. No task records are being mass-migrated. Final confirmation and hosted validation remain outstanding.
 
 ## 8. Remaining Work
 
-- Obtain the user's review and decision on DRAFT-0001 revision 1.
-- Apply any requested revisions and present the revised Draft.
-- After explicit approval, create ADR-0001 and mark DRAFT-0001 promoted.
-- Create linked implementation tasks and complete the accepted workflow changes.
-- Keep the analysis folder and new skill uncreated until the user approves them.
+- Complete the approved governance implementation.
+- Verify every changed path, link, catalog rule, and generated task format.
+- Record relevant hosted validation evidence when available. Do not wait for or poll CI.
+- Complete every ADR-0001 Confirmation criterion before closing the task or archiving the ADR.
+- Preserve DRAFT-0002 as a separate open proposal.
 
 ## 9. Next Actions
 
-1. Wait for the user to review [DRAFT-0001](../draft/DRAFT-0001-repository-decision-governance-and-analysis.md).
-2. Record the user's decision and any requested changes.
-3. Convert the approved revision into ADR-0001 only after explicit approval.
-4. Continue with the implementation tasks that ADR-0001 authorizes.
+1. Complete the decision-governance skill and workspace analysis structure.
+2. Update the Worker, task template, board, Ledger renderer, tests, and archive contracts.
+3. Read back every changed path and inspect relevant hosted validation evidence when available.
+4. Complete ADR-0001 Confirmation before archival.
 
 ## 10. References
 
@@ -150,12 +163,12 @@ MADR research and repository integration review are complete. The requested `wor
 
 - **Check:** Draft/ADR folder setup, templates, catalog coverage, workspace navigation, and discussion link rules.
 - **Method:** Retrieved all changed paths from branch `gpt` and checked their content. Verified the Draft coverage rule changed from Reserved to Active when DRAFT-0001 was created.
-- **Result:** All required files exist and read back. DRAFT-0001 is `in-review`. The ADR record path remains Reserved because no ADR has been approved yet.
-- **Limitations:** The detailed governance process remains a proposal. No ADR has been accepted. No local scripts or tests were run.
+- **Result:** The user approved DRAFT-0001 revision 1. ADR-0001 has been created from the approved scope. Workflow implementation and path verification are in progress.
+- **Limitations:** Hosted validation and final ADR Confirmation have not yet been observed. No local scripts or tests were run.
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. The user must review DRAFT-0001 revision 1. Do not create ADR-0001 until the user explicitly approves the exact Draft revision and scope. Record requested changes in the Draft. Keep `workspace/analysis/` and the new decision-governance skill uncreated until approved. After approval, link implementation tasks to ADR-0001 and preserve the decision under `archive/adr/` after confirmation.
+Continue on branch `gpt`. The user approved DRAFT-0001 revision 1. This task implements ADR-0001. Do not expand into DRAFT-0002. Keep DRAFT-0002 open for separate review. Do not archive ADR-0001 until every Confirmation criterion passes and hosted validation evidence is available.
 
 ## 13. Ledger Findings
 
