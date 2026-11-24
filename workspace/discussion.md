@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 07:52 UTC — Inspect the active CI Ledger repair task and its latest relevant GitHub Actions runs. Compare the live repository state and run evidence with the task's acceptance criteria; then implement only the approved in-scope fixes and verify repository read-back.**
+**2026-11-24 07:55 UTC — Inspect the latest Diagnostics, Full Lint, and Document Standards run payloads plus committed report indexes and task-generator state. Determine whether failures occurred before runner steps or inside task ingestion, then isolate the in-scope defect before editing.**
 
 ## Open Discussions
 
