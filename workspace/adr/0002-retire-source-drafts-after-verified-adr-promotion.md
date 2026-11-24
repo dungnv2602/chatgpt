@@ -231,14 +231,14 @@ Do not migrate or delete other Drafts unless they are confirmed as promoted and 
 
 ## Confirmation
 
-- [ ] The decision-governance skill defines the complete promotion sequence, completeness checklist, and partial-promotion recovery.
-- [ ] Draft statuses no longer include `promoted` as a steady-state state.
-- [ ] The ADR template and index define `promotion-pending` as temporary and non-authoritative.
-- [ ] The Draft index has no Promoted Drafts section and lists only active proposals plus any cleanup-pending transaction.
-- [ ] No accepted ADR links to a source Draft file scheduled for deletion.
-- [ ] DRAFT-0001's material rationale is preserved in permanent ADR records.
-- [ ] The authorized ADR-0001 reference correction is complete and read back.
-- [ ] DRAFT-0001 is deleted only after its completeness and cross-reference checks pass.
+- [x] The decision-governance skill defines the complete promotion sequence, completeness checklist, and partial-promotion recovery.
+- [x] Draft statuses no longer include `promoted` as a steady-state state.
+- [x] The ADR template and index define `promotion-pending` as temporary and non-authoritative.
+- [x] The Draft index has no Promoted Drafts section and lists only active proposals plus any cleanup-pending transaction.
+- [x] No accepted ADR links to a source Draft file scheduled for deletion.
+- [x] DRAFT-0001's material rationale is preserved in permanent ADR records.
+- [x] The authorized ADR-0001 reference correction is complete and read back.
+- [x] DRAFT-0001 is deleted only after its completeness and cross-reference checks pass.
 - [ ] Every changed path is read back and relevant hosted Document Standards validation passes.
 
 ## Decision Lifecycle History
@@ -247,3 +247,4 @@ Do not migrate or delete other Drafts unless they are confirmed as promoted and 
 |---|---|---|
 | 2026-11-24 | Accepted | User approved DRAFT-0003 revision 2. The provisional ADR was read back and checked against the complete approved Draft. The record preserves the approved lifecycle, promotion, completeness, recovery, and migration rules. |
 | 2026-11-24 | Implementation in progress | User approved task 20261124-160500 on 2026-11-24. The task is In Progress and is linked in implementation_tasks. DRAFT-0001 passed its rationale completeness review. |
+| 2026-11-24 | DRAFT-0001 source retired | The complete rationale comparison passed. The cleanup-pending index entry was removed, archived ADR-0001's working-path link was already corrected under explicit user permission, and DRAFT-0001 was deleted in commit 4082efd9a5dadb8b8bd0b41ccd3cf69b5e9405ce. |
