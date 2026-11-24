@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 13:38 UTC — Close the Ledger handoff criterion and expose its tests to hosted validation:** Verify the three generated task handoffs remain Proposed with ADR status Pending. Add the Ledger regression suite and its source paths to the Document Standards workflow. Keep post-fix catalog validation pending until a complete result appears. Do not poll Actions. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 13:44 UTC — Await hosted catalog and Ledger regression evidence:** The validation workflow now runs the catalog tests, catalog validator, and Ledger regression suite. Keep task 20261124-103354 Blocked. Review the next naturally published complete result for commit ad8bf8b or a descendant. Do not poll Actions. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 
 ## Open Discussions
 

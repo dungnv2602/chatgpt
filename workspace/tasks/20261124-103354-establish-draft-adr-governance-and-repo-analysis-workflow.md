@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-103354
 - **Created:** 2026-11-24 10:33 UTC
-- **Updated:** 2026-11-24 13:05 UTC
+- **Updated:** 2026-11-24 13:42 UTC
 - **Priority:** P1
 - **Status:** Blocked
 - **Origin:** User
@@ -140,31 +140,31 @@ Study MADR and design a comprehensive, low-ambiguity decision-management workflo
 
 ## 7. Current State
 
-The user approved DRAFT-0001 revision 1. ADR-0001 records that accepted decision and governs this bootstrap implementation task.
+The approved governance files and three shared templates are present in branch `gpt`. Commit 74005cc moved the templates to the shared workspace root, corrected the catalog owner references, and updated the owner links and workspace navigation. All nine changed paths passed read-back.
 
-The governance implementation is committed. The Draft and ADR lifecycle, task-specific skill, repository analysis area, task-to-ADR metadata, task-board ADR column, Worker integration, permanent ADR archive guidance, and catalog path rules now exist.
+Commit ad8bf8b adds the Ledger regression suite to the hosted Document Standards workflow. The workflow also runs when Ledger scripts or the Ledger schema change. The workflow and ADR changes passed read-back.
 
-The Ledger renderer and regression tests have been updated. A transition-era Proposed task was reconciled to Pending ADR review. The board rows and separators now use eight columns.
+The Ledger handoff criterion is now confirmed. The Ledger processed the changed-document lint report for run 45403469914 and created three Proposed task records. Each record and board row marks the governing ADR as Pending. ADR-0001 records this evidence.
 
-The task is Blocked pending hosted validation. The available changed-document lint report passed for two evaluated documents. The latest committed Actions diagnostic showed a catalog validation failure, but its capture was incomplete. The known numeric ADR path mismatch has been corrected. No post-correction hosted result has been observed. No local tests were run. ADR-0001 remains accepted with implementation status in-progress.
-
+The task remains Blocked. Document Standards run #298 completed with a catalog failure on earlier commit `d66901394de689223394f990047705d42108cef0`. It predates the catalog correction. The changed-document lint run #616 for commit 74005cc failed with 52 hard and 52 advisory findings across 10 files. Its tooling regression checks passed. Its report does not establish that all findings came from this task. No hosted result for the updated validation workflow has been confirmed.
 ## 8. Remaining Work
 
-- Confirm a naturally published post-correction Document Standards validation result.
-- Confirm the hosted Ledger regression tests pass with the updated task template and ADR board column.
-- Record the validation evidence and update ADR-0001 Confirmation.
-- Archive the implementation task only after all its acceptance criteria pass.
-- Move ADR-0001 to `archive/adr/` only after all linked tasks are Done and every Confirmation criterion passes.
+- Confirm that hosted catalog validator regression tests pass after the template and catalog corrections.
+- Confirm that the hosted `test_ledger.py` suite passes through the updated validation workflow.
+- Confirm that the catalog validator passes on the corrected catalog.
+- Record the successful validation run URLs and UTC timestamps.
+- Complete the remaining ADR-0001 Confirmation criteria with evidence.
+- Archive this task only after all acceptance criteria pass.
+- Move ADR-0001 to `archive/adr/` only after every linked task is Done and every Confirmation criterion passes.
+- Keep the three Ledger-generated lint tasks Proposed until the user approves their remediation.
 - Keep DRAFT-0002 separate and unmodified.
-
 ## 9. Next Actions
 
-1. On the next relevant task session, inspect the next naturally published validation evidence. Do not poll Actions.
-2. If Document Standards and Ledger validation pass, record their run references and complete the corresponding ADR Confirmation criteria.
-3. If validation fails, use the committed report evidence to diagnose and correct the cause within ADR-0001.
-4. Close and archive this task only after its acceptance criteria pass.
-5. Archive ADR-0001 only after task closure and full confirmation.
-
+1. Do not poll Actions. In a later task session, inspect the next naturally published complete validation evidence for commit ad8bf8b or its descendants.
+2. Confirm that catalog validator tests, catalog validation, and Ledger regression tests all pass. Record the exact run URL and UTC time.
+3. If a validation fails, inspect its complete post-run report and job log. Correct only causes within this task's approved scope. Keep the task Blocked.
+4. Update ADR-0001 Confirmation only after each criterion has supporting evidence.
+5. Close and archive this task only after its acceptance criteria pass. Archive ADR-0001 only after all linked tasks are Done and all Confirmation criteria pass.
 ## 10. References
 
 - External source: `https://github.com/adr/madr`
@@ -175,18 +175,28 @@ The task is Blocked pending hosted validation. The available changed-document li
 - `skills/document-standards/references/document-type-catalog.md`
 - `workspace/README.md`
 - `workspace/TASK_TEMPLATE.md`
+- `workspace/ADR_TEMPLATE.md`
+- `workspace/DRAFT_TEMPLATE.md`
+- `workspace/ANALYSIS_TEMPLATE.md`
+- `.github/workflows/validate-document-standards.yml`
+- `reports/triage/ledger.json` and `reports/triage/scripts/test_ledger.py`
+- Document Standards run [#298](https://github.com/github.com/actions/runs/45399711310) (pre-correction failure)
+- Changed-document lint run [#616](https://github.com/actions/runs/45403469914) (commit 74005cc)
+- Commit [74005cc](https://github.com/dungnv2602/chatgpt/commit/74005ccb1afc79d21966112501baa39772905864)
+- Commit [ad8bf8b](https://github.com/dungnv2602/chatgpt/commit/ad8bf8b0b6730ecbc4b04460b2749fab2a8ff6f6)
 - Related task: `20261123-225745`
-
 ## 11. Verification
 
-- **Check:** ADR promotion, governance implementation paths, task and board linkage, analysis structure, archive protection, catalog coverage, and Ledger handoff source.
-- **Method:** Retrieved each committed path from branch `gpt`. Checked ADR metadata, Draft promotion, skill activation tier, catalog patterns, eight-column board structure, Pending handoff metadata, and the corrected Ledger renderer/template placeholders.
-- **Result:** The source and documentation contracts read back. The changed-document lint report passed for two evaluated files. The committed Actions diagnostic for run #296 reported a failure at catalog validation. Its capture was incomplete and gave no job log. The mismatch found by static review was corrected to the numeric ADR filename pattern.
-- **Limitations:** A post-correction hosted validation result has not been observed. Ledger and Document Standards tests were not run locally. Do not claim that they passed.
-
+- **Check:** Ledger task handoff and ADR linkage.
+- **Method:** Read the published Ledger JSON, the task board, and all three task records. Match Ledger `task_refs` to task IDs and inspect each task's Status, Approval, and Governing ADR(s) fields.
+- **Result:** The Ledger links findings to three Proposed tasks. Each task is Pending approval and has Governing ADR(s) set to Pending. The board marks each row Proposed with ADR value Pending. ADR-0001 now records this confirmed criterion.
+- **Check:** Hosted validation workflow wiring.
+- **Method:** Read the committed workflow and ADR after commit ad8bf8b.
+- **Result:** The workflow runs `python -m unittest discover -s reports/triage/scripts -p 'test_ledger.py' -v` and has paths for `reports/triage/scripts/**` and `reports/triage/ledger-schema.json`. ADR-0001 marks the observed Ledger handoff criterion complete.
+- **Limitations:** Document Standards run #298 failed on the earlier commit d669013. No confirmed hosted execution of the updated workflow exists yet. Changed-document lint run #616 failed with findings, although its tooling regression checks passed. No repository scripts or tests ran locally.
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. ADR-0001 is accepted and remains in `workspace/adr/` with implementation status `in-progress`. This task is Blocked pending a naturally published post-correction hosted validation result. Do not poll CI or run repository scripts locally. Check the exact reports and artifacts when validation evidence is naturally available. DRAFT-0002 remains a separate, unapproved proposal. Do not implement it as part of this task.
+Read `workspace/README.md`, `workspace/task_board.md`, this task record, and `workspace/discussion.md`. Keep the task Blocked until the hosted workflow validates the catalog and Ledger regression tests. Do not poll Actions. Review only a naturally published complete report. Use exact run URLs and UTC timestamps for ADR-0001 Confirmation. Do not modify the three Proposed lint tasks without user approval.
 
 ## 13. Ledger Findings
 
