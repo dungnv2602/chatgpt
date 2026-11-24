@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 — ADR-0002 accepted; implementation task proposed:** The user approved DRAFT-0003 revision 2. ADR-0002 is accepted and indexed. Archived ADR-0001 has a narrow provenance-reference correction under the user's explicit permission. DRAFT-0003 promotion is being closed out. DRAFT-0001 remains under Promotion Cleanup Pending until the migration task is approved and its final deletion gate passes. Task [20261124-160500](tasks/20261124-160500-implement-verified-source-draft-retirement.md) is Proposed; repository-wide workflow changes are not authorized yet. DRAFT-0002 revision 2 remains open for review.
+**2026-11-24 — ADR-0002 accepted; implementation task proposed:** The user approved DRAFT-0003 revision 2. ADR-0002 is accepted and indexed. Archived ADR-0001 has a narrow provenance-reference correction under the user's explicit permission. DRAFT-0003 was deleted after ADR-0002 acceptance and read-back. DRAFT-0001 remains under Promotion Cleanup Pending until the migration task is approved and its final deletion gate passes. Task [20261124-160500](tasks/20261124-160500-implement-verified-source-draft-retirement.md) is Proposed; repository-wide workflow changes are not authorized yet. DRAFT-0002 revision 2 remains open for review.
 
 ## Open Discussions
 
