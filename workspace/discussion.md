@@ -1,8 +1,10 @@
 ## Current Step
 
-**2026-11-24 08:05 UTC — Add a hosted regression for the exact remaining handoff case: already-ingested open low/informational lint findings with no task references. Keep workflow definitions unchanged because the latest failures have no runner assignment or executed steps.**
+**2026-11-24 07:51 UTC — Record the new legacy-finding regression, current Ledger state, and latest runnerless CI failures in the task and board. Mark the task Blocked until GitHub-hosted jobs can execute; do not alter workflow runner labels or claim test success without evidence.**
 
 ## Open Discussions
+
+- **2026-11-24 07:51 UTC — Runner allocation blocker:** The latest Diagnostics (#525), Full Lint (#187), and Document Standards (#275) jobs failed before executing any steps. GitHub reports `runner_id: 0`, no runner name, empty step arrays, and no log URL. The underlying cause is unknown. Do not change workflow code or runner labels based on this evidence. Resume hosted validation when a job can execute.
 
 - **2026-11-24 — CI logging scope and resolved-report retirement (user review required):**
   - **Current logging:** The Actions reporter stores complete post-run captures when it finds failed steps/jobs, workflow failure, timeout, action-required, or an independently classified issue. It skips ordinary success and cancellation-only runs. It also captures a successful workflow when a step failed but was non-blocking, and a cancelled run when an independent failure exists. Incomplete captures are operational evidence/pending retries, not Ledger findings.
