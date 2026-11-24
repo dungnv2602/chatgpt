@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 16:14 UTC — Activate the approved implementation task:** Update task 20261124-160500 to In Progress with the user's explicit execution approval, set it as current execution, and reconcile the task board. Preserve the task's approved scope and existing history.
+**2026-11-24 16:18 UTC — Assess DRAFT-0001 rationale coverage and canonical formats:** Compare the complete approved DRAFT-0001 revision 1 with archived ADR-0001 and accepted ADR-0002. Map each ADR-0002 completeness criterion to permanent evidence. Inspect the exact Draft/ADR templates, archive guidance, and Document Type Catalog entries before changing governance files.
 
 ## Open Discussions
 
