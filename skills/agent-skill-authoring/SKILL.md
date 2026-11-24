@@ -229,7 +229,7 @@ Before considering a skill complete, check all of the following:
 
 ### Format
 - [ ] The skill is a directory containing `SKILL.md`.
-- [ ] `SKILL.md` begins with valid YAML frontmatter.
+- [ ] The first content in `SKILL.md` must be valid YAML frontmatter.
 - [ ] `name` and `description` are present and non-empty.
 - [ ] The name is 1–64 characters, lowercase, validly hyphenated, and matches the directory.
 - [ ] The description is no longer than 1024 characters and explains both purpose and activation.
