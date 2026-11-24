@@ -11,6 +11,7 @@ import yaml
 SUPPORTED = {".png", ".jpg", ".jpeg"}
 KNOWN_IMAGE = SUPPORTED | {".apng", ".gif", ".webp", ".bmp", ".tif", ".tiff", ".heic", ".heif", ".avif"}
 HANDOFF = "HANDOFF.yml"
+INTAKE_METADATA_FILES = {HANDOFF, "README.md"}
 EMPTY_HANDOFF = "version: 1\nstatus: empty\nitems: []\n"
 FIELDS = [
     "source_filename", "source_path", "title", "asset_id", "source_asset_id", "attempt", "destination_dir",
@@ -1245,17 +1246,17 @@ def main() -> int:
                 if child.is_symlink() or not child.is_dir():
                     raise ProcessingError(f"images/takeout/{child.name} must be a normal directory.")
                 continue
-            if child.name == HANDOFF:
-                continue
             if child.is_symlink() or child.is_dir() or not child.is_file():
                 raise ProcessingError(f"Unexpected directory, symlink or non-file in takeout: {child.name}")
+            if child.name in INTAKE_METADATA_FILES:
+                continue
             suffix = child.suffix.lower()
             if suffix not in SUPPORTED:
                 if suffix in KNOWN_IMAGE:
                     raise ProcessingError(f"Unsupported image format {suffix} for {child.name}; only PNG, JPG and JPEG are accepted. Animated images are never flattened.")
                 raise ProcessingError(f"Unexpected non-image file in takeout: {child.name}")
             inbox_images.add(child.name)
-        checks.append("Inbox is flat and contains only PNG/JPG/JPEG files, HANDOFF.yml, and the reserved history/ and webp/ directories.")
+        checks.append("Inbox is flat and contains only PNG/JPG/JPEG uploads, README.md, HANDOFF.yml, and the reserved history/ and webp/ directories.")
 
         sources: set[str] = set()
         ids: set[str] = set()
