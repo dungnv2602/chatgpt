@@ -10,13 +10,13 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Record |
 |---|---|---:|---|---|
-| 20261124-160500 | Implement verified source-Draft retirement and migrate DRAFT-0001 | P1 | In Progress | [Task record](tasks/20261124-160500-implement-verified-source-draft-retirement.md) |
+
 
 ## In Progress
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
-| 20261124-160500 | Implement verified source-Draft retirement and migrate DRAFT-0001 | P1 | In Progress | User | 2026-11-24 | ADR-0002 | [Task record](tasks/20261124-160500-implement-verified-source-draft-retirement.md) |
+
 
 
 ## Ready
@@ -127,6 +127,8 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## Historical
 
+| 20261124-160500 | Implement verified source-Draft retirement and migrate DRAFT-0001 | P1 | Done | User | 2026-11-24 | ADR-0002 | [Archived record](../archive/tasks/20261124-160500-implement-verified-source-draft-retirement.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/10dd38d85a43fd29f567d70ea1314ac91212d0a1) |
+
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
 | 20261124-103354 | Establish draft-to-ADR governance and repository analysis workflow | P1 | Done | User | 2026-11-24 | ADR-0001 | [Archived record](../archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/2dec8d42e89568056c96a1d678c06a1430c20711) |
@@ -135,4 +137,3 @@ The Historical section retains at most the 7 most recently completed or cancelle
 | 20261124-093000 | Add approval-gated drawing pattern learning | P2 | Done | User | 2026-11-24 | — | [Archived record](../archive/tasks/20261124-093000-add-approval-gated-drawing-pattern-learning.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/51f2ab781aa1b5965e4adadb70509e35cb6ec9b2) |
 | 20261124-061933-03 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Validate the document | P2 | Done | Assistant | 2026-11-24 | — | [Archived record](../archive/tasks/20261124-061933-03-review-validation-or-test-failures-in-validate-document-standard.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/807a5d5fe901a4a608895f72dd81d9085b2d45a8) |
 | 20261124-061933-04 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run catalog validator | P2 | Done | Assistant | 2026-11-24 | — | [Archived record](../archive/tasks/20261124-061933-04-review-validation-or-test-failures-in-validate-document-standard.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/807a5d5fe901a4a608895f72dd81d9085b2d45a8) |
-| 20261123-054904 | Build GitHub Actions diagnostic reports and remove the CI preflight gate | P1 | Done | User | 2026-11-24 | — | [Archived record](../archive/tasks/20261123-054904-gh-actions-diagnostic-reports-and-remove-ci-preflight-gate.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/22b1927163ce96e56150a4a8ae2bb3010763fb0b) |
