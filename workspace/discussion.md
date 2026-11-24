@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 05:31 UTC — Record remediation checkpoint:** Update the approved task with the observed hosted report results, the one-file terminology correction, commit evidence, and the pending natural lint validation. Keep the task In Progress. Do not wait for or poll CI.
+**2026-11-24 05:33 UTC — Recover canonical baseline evidence:** Check the retained GitHub Actions artifacts for original lint runs 45128445227 and 45152181405. Use the reports only to reconcile the approved 155-fingerprint baseline. Do not poll or dispatch workflows.
 
 ## Open Discussions
 
