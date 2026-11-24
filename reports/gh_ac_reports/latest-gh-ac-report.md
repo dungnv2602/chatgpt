@@ -1,26 +1,26 @@
-# Validate Document Standards — run 45300893308
+# Process Image Takeout and Create WebP Derivatives — run 45301729064
 
 ## Run identity
 
 | Field | Value |
 | --- | --- |
-| Workflow | Validate Document Standards |
-| Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45300893308 / 1 |
-| Run number | 235 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45300893308 |
+| Workflow | Process Image Takeout and Create WebP Derivatives |
+| Workflow path | .github/workflows/convert-images-to-webp.yml |
+| Run / attempt | 45301729064 / 1 |
+| Run number | 63 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45301729064 |
 | Branch | gpt |
-| Commit | a2a2fe57984f8fb8340adf2ccd56307c90c2598f |
+| Commit | 4afaa2c2211858b0455eaf29c523b32eb16e012c |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-24T00:54:13Z |
+| Created (UTC) | 2026-11-24T01:00:45Z |
 | Status at capture | in_progress |
 | Observed conclusion | Not yet available |
 | Projected conclusion | failure |
 | Reporter job | in_progress / Pending |
 | Capture stage | pre_finalizer |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-24T00:54:44Z |
+| Captured (UTC) | 2026-11-24T01:02:45Z |
 
 ## Executive summary
 
@@ -29,9 +29,9 @@
 | State | in_progress |
 | Primary category | validation_or_test |
 | Jobs | 1 |
-| Steps | 8 |
+| Steps | 11 |
 | Issues | 1 |
-| Annotations | 2 |
+| Annotations | 1 |
 | Artifacts | 0 |
 | Capture errors | 1 |
 
@@ -45,20 +45,19 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 138132833094 | validate-document-standards | completed | failure | 8 | logs/job-138132833094.log |
+| 138135640561 | process-image-takeout | completed | failure | 11 | logs/job-138135640561.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 138132833094 | 5 | Validate the document type catalog | Blocking | medium | Step conclusion: failure |
+| validation_or_test | 138135640561 | 5 | Test takeout processor | Blocking | medium | Step conclusion: failure |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 138132833094 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 138132833094 | failure | .github | 16 |  | Process completed with exit code 1. |
+| 138135640561 | failure | .github | 201 |  | Process completed with exit code 1. |
 
 ## Artifacts
 
@@ -68,7 +67,7 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 138132833094 | validate-document-standards | logs/job-138132833094.log | 82 | False |  |
+| 138135640561 | process-image-takeout | logs/job-138135640561.log | 82 | False |  |
 
 ## Evidence coverage
 
@@ -76,7 +75,7 @@ One or more evidence sources were unavailable. This report is Incomplete.
 
 | Source | HTTP status | Limitation |
 | --- | --- | --- |
-| job_log | Not recorded | run 45300893308 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45301729064 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
