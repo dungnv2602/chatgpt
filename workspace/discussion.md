@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 07:51 UTC — Record the new legacy-finding regression, current Ledger state, and latest runnerless CI failures in the task and board. Mark the task Blocked until GitHub-hosted jobs can execute; do not alter workflow runner labels or claim test success without evidence.**
+**2026-11-24 07:51 UTC — Read back the updated task, board, regression test, and branch head. Confirm the Blocked state and ensure the handoff records only verified CI evidence and outstanding hosted checks.**
 
 ## Open Discussions
 
