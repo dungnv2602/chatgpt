@@ -6,9 +6,20 @@ This directory stores completed and cancelled task records and individually arch
 
 - `archive/tasks/` stores immutable archived task records.
 - `archive/reports/` stores individually archived CI report files, preserving their path below the report-family root.
+- `archive/adr/` stores permanent, immutable accepted Decision Records. ADRs are excluded from 90-day retention.
 - Keep task IDs and filenames unchanged.
 - Record each archive timestamp in UTC.
 - Do not store full conversation transcripts.
+
+## Permanent ADR archive
+
+Move an accepted ADR to `archive/adr/` only after all linked implementation tasks are Done and every Confirmation criterion passes.
+
+- Preserve the ADR ID and filename.
+- Read back the archive copy after its initial write.
+- Never edit, replace, rename, move, or delete an archived ADR.
+- Never add ADR paths to `.github/archive-retention-index.json`.
+- The 90-day retention workflow applies only to indexed task and report files. It must not delete ADRs.
 
 ## Task resolution and Ledger retirement
 
