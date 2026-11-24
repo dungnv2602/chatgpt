@@ -12,9 +12,8 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## In Progress
 
-| ID | Task | Priority | Status | Origin | Updated | Record |
-|---|---|---:|---|---|---|---|
-| 20261123-225745 | Repair CI ledger task generation workflow | P1 | In Progress | User | 2026-11-23 | [Task record](tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md) |
+_No in-progress tasks._
+
 
 ## Ready
 
@@ -23,7 +22,9 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## Blocked
 
-_No blocked tasks._
+| ID | Task | Priority | Status | Origin | Updated | Record |
+|---|---|---:|---|---|---|---|
+| 20261123-225745 | Repair CI ledger task generation workflow | P1 | Blocked | User | 2026-11-24 | [Task record](tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md) |
 
 ## Proposed
 
