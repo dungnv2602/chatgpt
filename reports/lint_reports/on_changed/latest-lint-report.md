@@ -2,36 +2,36 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#619](https://github.com/dungnv2602/chatgpt/actions/runs/45408533122)
-- **Run ID / attempt:** 45408533122 / 1
+- **Run:** [#620](https://github.com/dungnv2602/chatgpt/actions/runs/45408955146)
+- **Run ID / attempt:** 45408955146 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / aa69d966969a8d5a3cc5106a74f1204a0f324e3e
+- **Branch / commit:** gpt / b1aec86f3f13eb7ac5c2dd92e8a7ba1f0f150a00
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** 849c027ee97b1a6c7d52f4d3020c6a152c4bae60
-- **Linter source SHA:** aa69d966969a8d5a3cc5106a74f1204a0f324e3e
-- **Generated (UTC):** 2026-11-24T13:56:44.726650+00:00
+- **Baseline SHA:** aa69d966969a8d5a3cc5106a74f1204a0f324e3e
+- **Linter source SHA:** b1aec86f3f13eb7ac5c2dd92e8a7ba1f0f150a00
+- **Generated (UTC):** 2026-11-24T13:59:25.975345+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 3 |
+| Files evaluated | 2 |
 | Files that failed | 2 |
-| Files with findings | 3 |
-| Total findings | 43 |
+| Files with findings | 2 |
+| Total findings | 41 |
 | Hard findings | 4 |
-| Advisory findings | 39 |
-| New findings | 1 |
-| Recurring findings | 42 |
-| Resolved findings | 8 |
+| Advisory findings | 37 |
+| New findings | 2 |
+| Recurring findings | 39 |
+| Resolved findings | 4 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
 
 - Runner OS: Linux
 - Python: 3.15.2
-- Platform: Linux-7.0.0-1020-azure-x86_64-with-glibc2.43
+- Platform: Linux-7.0.0-1016-aws-x86_64-with-glibc2.43
 - The JSON report records the full runtime version and every original per-file linter response.
 - The report records the commit that supplied the linter and generator code.
 
@@ -41,7 +41,6 @@ This list is the exact set of Markdown files passed to the linter. It does not i
 
 - skills/decision-governance/SKILL.md
 - skills/document-standards/references/document-type-catalog.md
-- workspace/README.md
 
 ## 4. Per-file result matrix
 
@@ -51,7 +50,6 @@ The table includes every evaluated file, including files with zero findings and 
 |---|---:|---:|---:|---:|---:|---:|---:|
 | skills/decision-governance/SKILL.md | FAIL | 9 | 1 | 0 | 1397 | 0.6 | 1 |
 | skills/document-standards/references/document-type-catalog.md | FAIL | 32 | 3 | 0 | 4566 | 0.7 | 1 |
-| workspace/README.md | PASS | 2 | 0 | 0 | 761 | 0.3 | 0 |
 
 ## 5. Findings by rule
 
@@ -59,7 +57,7 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 36 |
+| passive-voice | 34 |
 | present-perfect | 3 |
 | long-sentence | 2 |
 | synonym-rotation | 2 |
@@ -94,7 +92,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.390s
+Ran 4 tests in 0.236s
 
 OK
 ~~~
@@ -136,10 +134,14 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **synonym-rotation** · skills/decision-governance/SKILL.md:135:14 · **new** · fingerprint: 2624698c9e0a949a01e1c0be
+- **synonym-rotation** · skills/decision-governance/SKILL.md:146:4 · **new** · fingerprint: a894730c426b5a08cb0d4e4c
   - **Level:** advisory-free
   - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
+  - **Matched text:** Check
+- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:142:158 · **new** · fingerprint: 7de3890b6aa2dea92c057735
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
+  - **Matched text:** check
 
 ### Recurring findings
 
@@ -211,11 +213,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
-- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:59:230 · **recurring** · fingerprint: 2822a6b08706709830f1f820
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:61:731 · **recurring** · fingerprint: 8e6ebb9019d53b6c90f1902c
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:61:720 · **recurring** · fingerprint: 8e6ebb9019d53b6c90f1902c
   - **Level:** advisory-free
   - **Message:** Sentence has 35 words (cap 25). Split it.
   - **Matched text:** 35 words
@@ -223,7 +221,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are skipped
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:70:140 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:70:141 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
@@ -303,49 +301,25 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is added
-- **passive-voice** · workspace/README.md:52:108 · **recurring** · fingerprint: 4a500644b11ea45e7a256ac0
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is archived
-- **passive-voice** · workspace/README.md:56:305 · **recurring** · fingerprint: 44bac24ecf823fa7716cc698
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
 
 ### Resolved findings
 
-- **synonym-rotation** · skills/decision-governance/SKILL.md:68:4 · **resolved** · fingerprint: a894730c426b5a08cb0d4e4c
+- **synonym-rotation** · skills/decision-governance/SKILL.md:135:14 · **resolved** · fingerprint: 2624698c9e0a949a01e1c0be
   - **Level:** advisory-free
   - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** Check
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:58:267 · **resolved** · fingerprint: 611e1aa7abfb794630cb37cf
+  - **Matched text:** checks
+- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:59:230 · **resolved** · fingerprint: 2822a6b08706709830f1f820
   - **Level:** advisory-free
-  - **Message:** Sentence has 29 words (cap 25). Split it.
-  - **Matched text:** 29 words
-- **passive-voice** · skills/document-standards/references/document-type-catalog.md:61:444 · **resolved** · fingerprint: 4213736a472e3b847e27d1ae
+  - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
+  - **Matched text:** checks
+- **passive-voice** · workspace/README.md:52:108 · **resolved** · fingerprint: 4a500644b11ea45e7a256ac0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are archived
-- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:75:385 · **resolved** · fingerprint: a94e1efc7de2a6d5a4355f3d
-  - **Level:** advisory-free
-  - **Message:** 'begin' and 'start' name the same action. Pick one and use it every time.
-  - **Matched text:** begins
-- **passive-voice** · workspace/task_board.md:7:110 · **resolved** · fingerprint: cfe2615d32498b8cb18022ac
+  - **Matched text:** is archived
+- **passive-voice** · workspace/README.md:56:305 · **resolved** · fingerprint: 44bac24ecf823fa7716cc698
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are removed
-- **passive-voice** · workspace/task_board.md:7:137 · **resolved** · fingerprint: e6baee8e949dc0ee0a1c0b34
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is exceeded
-- **passive-voice** · workspace/task_board.md:7:162 · **resolved** · fingerprint: 86cd35c95eb6d5488c436e85
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is preserved
-- **synonym-rotation** · workspace/README.md:40:150 · **resolved** · fingerprint: bde9acd01822220c22b6c41f
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Confirm
+  - **Matched text:** is required
 
 ## 8. Complete per-file diagnostics
 
@@ -373,11 +347,6 @@ This section includes every normalized finding with its rule, level, source loca
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is accepted
 
-- **synonym-rotation** · skills/decision-governance/SKILL.md:135:14 · **new** · fingerprint: 2624698c9e0a949a01e1c0be
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
-
 - **passive-voice** · skills/decision-governance/SKILL.md:137:89 · **recurring** · fingerprint: a461c9d33f692bb30c8d9e32
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -387,6 +356,11 @@ This section includes every normalized finding with its rule, level, source loca
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is implemented
+
+- **synonym-rotation** · skills/decision-governance/SKILL.md:146:4 · **new** · fingerprint: a894730c426b5a08cb0d4e4c
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** Check
 
 - **passive-voice** · skills/decision-governance/SKILL.md:173:72 · **recurring** · fingerprint: 3b0fa6154ecfe49591695005
   - **Level:** advisory
@@ -466,12 +440,7 @@ This section includes every normalized finding with its rule, level, source loca
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is needed
 
-- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:59:230 · **recurring** · fingerprint: 2822a6b08706709830f1f820
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
-
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:61:731 · **recurring** · fingerprint: 8e6ebb9019d53b6c90f1902c
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:61:720 · **recurring** · fingerprint: 8e6ebb9019d53b6c90f1902c
   - **Level:** advisory-free
   - **Message:** Sentence has 35 words (cap 25). Split it.
   - **Matched text:** 35 words
@@ -481,7 +450,7 @@ This section includes every normalized finding with its rule, level, source loca
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are skipped
 
-- **long-sentence** · skills/document-standards/references/document-type-catalog.md:70:140 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:70:141 · **recurring** · fingerprint: ea92de1fbbfc0e6cafa24f7b
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
@@ -505,6 +474,11 @@ This section includes every normalized finding with its rule, level, source loca
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are covered
+
+- **synonym-rotation** · skills/document-standards/references/document-type-catalog.md:142:158 · **new** · fingerprint: 7de3890b6aa2dea92c057735
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
+  - **Matched text:** check
 
 - **passive-voice** · skills/document-standards/references/document-type-catalog.md:156:39 · **recurring** · fingerprint: 0c06b4bea825bbb8305e2205
   - **Level:** advisory
@@ -580,29 +554,6 @@ This section includes every normalized finding with its rule, level, source loca
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is added
-
-
-### workspace/README.md
-
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 2
-- **Hard findings:** 0
-- **Baseline:** 0
-- **Words:** 761
-- **Findings per 100 words:** 0.3
-
-#### Complete diagnostics
-
-- **passive-voice** · workspace/README.md:52:108 · **recurring** · fingerprint: 4a500644b11ea45e7a256ac0
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is archived
-
-- **passive-voice** · workspace/README.md:56:305 · **recurring** · fingerprint: 44bac24ecf823fa7716cc698
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
 
 ## 9. Structured evidence and integrity
 
