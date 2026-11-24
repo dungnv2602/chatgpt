@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 15:09 UTC — Review post-correction hosted validation:** Commit [4dfbde6](https://github.com/dungnv2602/chatgpt/commit/4dfbde63708f0ab0862d142952710b1b42ef5d7a) corrects the one hard catalog finding from Lint #635. The task record now includes the exact outcomes for Lint #635, Document Standards #319, and Diagnostics #586. Review fresh hosted results for the corrected catalog and confirm evidence publication. Keep task 20261124-103354 Blocked until all required checks pass. Do not poll or rerun Actions. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 15:18 UTC — Governance workflow completed:** Task [20261124-103354](../archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md) is Done and archived. Its governing decision [ADR-0001](../archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md) is confirmed and permanently archived. No active implementation task is selected. DRAFT-0002 remains open for user review below.
 
 ## Open Discussions
 
@@ -13,7 +13,7 @@
 
 ## Reports
 
-- **2026-11-24 14:57 UTC — Session started:** Startup notice recorded. Foundational initialization and task-continuity review started.
-- **2026-11-24 14:42 UTC — Hosted Document Standards validation passed:** Run [#319](https://github.com/dungnv2602/chatgpt/actions/runs/45416735133) passed 37 Ledger tests, 32 catalog tests, catalog validation, and its diagnostics publisher.
-- **2026-11-24 14:41 UTC — Hosted GitHub Actions diagnostics passed:** Run [#586](https://github.com/dungnv2602/chatgpt/actions/runs/45416735144) passed reporter validation, backfill, Ledger ingestion, and publication.
-- **2026-11-24 14:41 UTC — Hosted Document Standards validation passed:** Run [#316](https://github.com/dungnv2602/chatgpt/actions/runs/45415350984) passed 37 Ledger tests, 32 catalog tests, catalog validation, and its diagnostics publisher.
+- **2026-11-24 15:07 UTC — Changed-document lint passed:** Run [#636](https://github.com/dungnv2602/chatgpt/actions/runs/45421670881) passed on commit 4dfbde6. The report records zero hard findings, 29 recurring advisory findings, zero new findings, and one resolved finding. Report publication succeeded.
+- **2026-11-24 15:06 UTC — Document Standards validation passed:** Run [#320](https://github.com/dungnv2602/chatgpt/actions/runs/45421670850) passed 37 Ledger tests, 32 catalog tests, catalog validation, and its diagnostics capture.
+- **2026-11-24 15:06 UTC — GitHub Actions diagnostics passed:** Run [#587](https://github.com/dungnv2602/chatgpt/actions/runs/45421671015) passed reporter tests, backfill, Ledger ingestion, and publication.
+
