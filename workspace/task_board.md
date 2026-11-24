@@ -14,7 +14,7 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
-| 20261124-103354 | Establish draft-to-ADR governance and repository analysis workflow | P1 | In Progress | User | 2026-11-24 | ADR-0001 | [Task record](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md) |
+
 
 ## Ready
 
@@ -24,6 +24,8 @@ The Historical section retains at most the 7 most recently completed or cancelle
 ## Blocked
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
+|---|---|---:|---|---|---|---|---|
+| 20261124-103354 | Establish draft-to-ADR governance and repository analysis workflow | P1 | Blocked | User | 2026-11-24 | ADR-0001 | [Task record](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md) |
 |---|---|---:|---|---|---|---|---|
 | 20261124-113009 | Study Planning with Files and propose a file-backed Worker workflow | P1 | Blocked | User | 2026-11-24 | — | [Task record](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md) |
 
