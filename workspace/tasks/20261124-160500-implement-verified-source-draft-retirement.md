@@ -135,9 +135,8 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 
 ## 8. Remaining Work
 
-- Run and inspect hosted Document Standards validation.
 - Read back every changed path, including the updated ADR-0002 lifecycle metadata.
-- Run and inspect the relevant hosted Document Standards validation.
+- Run and inspect hosted Document Standards validation.
 - Update ADR-0002 Confirmation and record the final migration and validation evidence.
 
 ## 9. Next Actions
