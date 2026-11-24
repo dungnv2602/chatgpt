@@ -143,7 +143,7 @@ The Ledger remains the source of truth for CI finding identity and evidence.
 
 A Done task does not by itself prove that an ADR is implemented correctly.
 
-1. Check every Confirmation criterion.
+1. Review every Confirmation criterion.
 2. Gather evidence from task records, repository files, hosted validation, and operational checks.
 3. Set implementation status to `complete` only after every criterion passes.
 4. For `not-required`, confirm that the decision itself is in effect.
