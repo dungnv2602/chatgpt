@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 14:58 UTC — Recover task state and approval:** Read workspace navigation, task board, and task 20261124-103354. Reconcile the recorded scope, user approval, branch state, and task-specific CI evidence before choosing the next action. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 15:00 UTC — Inspect task-scoped CI evidence:** Check the current `gpt` head and the exact Lint #635, Document Standards #319, and Diagnostics #586 results. Read the report indexes and inspect complete failure evidence only where a run failed. Do not poll or rerun Actions. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 
 ## Open Discussions
 
