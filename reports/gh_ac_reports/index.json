@@ -7,6 +7,7 @@
   "sweep_watermark_utc": "2026-11-23T23:38:33Z",
   "pending_run_ids": [
     "45311750665",
+    "45311750664",
     "45311695735",
     "45311323087",
     "45309899583",
@@ -27,6 +28,23 @@
   ],
   "exhausted_run_ids": [],
   "runs": [
+    {
+      "workflow_id": 424715662,
+      "workflow_name": "STE Lint Changed Documentation",
+      "run_id": "45311750664",
+      "run_number": 576,
+      "attempt": 1,
+      "capture_stage": "pre_finalizer",
+      "created_at": "2026-11-24T02:21:20Z",
+      "captured_at_utc": "2026-11-24T02:24:30Z",
+      "source_status": "in_progress",
+      "source_conclusion": null,
+      "projected_conclusion": "failure",
+      "report_status": "Incomplete",
+      "primary_category": "validation_or_test",
+      "history_path": "history/424715662/45311750664-attempt-1-pre_finalizer",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45311750664"
+    },
     {
       "workflow_id": 427313089,
       "workflow_name": "Validate Document Standards",
@@ -335,20 +353,20 @@
     }
   ],
   "latest_report": {
-    "workflow_id": 427313089,
-    "workflow_name": "Validate Document Standards",
-    "run_id": "45311750665",
-    "run_number": 246,
+    "workflow_id": 424715662,
+    "workflow_name": "STE Lint Changed Documentation",
+    "run_id": "45311750664",
+    "run_number": 576,
     "attempt": 1,
     "capture_stage": "pre_finalizer",
     "created_at": "2026-11-24T02:21:20Z",
-    "captured_at_utc": "2026-11-24T02:23:37Z",
+    "captured_at_utc": "2026-11-24T02:24:30Z",
     "source_status": "in_progress",
     "source_conclusion": null,
     "projected_conclusion": "failure",
     "report_status": "Incomplete",
     "primary_category": "validation_or_test",
-    "history_path": "history/427313089/45311750665-attempt-1-pre_finalizer",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45311750665"
+    "history_path": "history/424715662/45311750664-attempt-1-pre_finalizer",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45311750664"
   }
 }
