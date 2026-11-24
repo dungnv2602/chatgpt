@@ -14,30 +14,30 @@
 | Event | workflow_dispatch |
 | Actor | dungnv2602 |
 | Created (UTC) | 2026-11-24T09:20:04Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | failure |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-24T09:20:57Z |
+| Status at capture | completed |
+| Observed conclusion | failure |
+| Projected conclusion | Not calculated |
+| Reporter job | completed / success |
+| Capture stage | post_run |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-24T09:37:35Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
-| Primary category | step_or_job_failure |
+| State | failure |
+| Primary category | validation_or_test |
 | Jobs | 2 |
 | Steps | 12 |
 | Issues | 1 |
 | Annotations | 3 |
 | Artifacts | 0 |
-| Capture errors | 2 |
+| Capture errors | 0 |
 
 ## Failure classification
 
-step_or_job_failure The parent run is still in progress. The projected conclusion is provisional.
+validation_or_test
 
 The report records an actionable workflow failure or operational exception. Ordinary successful runs and cancellation-only runs are not captured by default. A successful run is retained when a step failed but the workflow allowed it to continue. A cancelled run is retained only when it contains an independent actionable failure. Known downstream status-propagation steps after cancellation are excluded. Explicit run-backfill requests can override the default capture filter.
 
@@ -52,7 +52,7 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| step_or_job_failure | 138341615043 | 6 | Set workflow result from audit and tooling outcomes | Blocking | low | Step conclusion: failure |
+| validation_or_test | 138341615043 | 6 | Set workflow result from audit and tooling outcomes | Blocking | medium | 2026-11-24T09:20:34.1247501Z ^[[36;1m  echo "::error::The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md."^[[0m |
 
 ## Check annotations
 
@@ -70,17 +70,12 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 138341568257 | Validate target branch and reject superseded push runs | logs/job-138341568257.log | 82 | False |  |
-| 138341615043 | Full audit and publish detailed evidence | logs/job-138341615043.log | 82 | False |  |
+| 138341568257 | Validate target branch and reject superseded push runs | logs/job-138341568257.log | 9937 | False | Validate target branch and reject superseded push runs	Validate branch and guard push runs	2026-11-24T09:20:09.1672427Z ^[[36;1m  echo "::error::Select the gpt branch when manually dispatching this workflow."^[[0m |
+| 138341615043 | Full audit and publish detailed evidence | logs/job-138341615043.log | 54533 | False | Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T09:20:24.6234377Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m, Full audit and publish detailed evidence	Validate lint and report tooling	2026-11-24T09:20:24.6237138Z ^[[36;1mecho "failed=$failed" &gt;&gt; "$GITHUB_OUTPUT"^[[0m, Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T09:20:27.5625419Z ^[[36;1m    failed=1^[[0m, Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T09:20:27.5625813Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m, Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T09:20:27.5631931Z ^[[36;1m        "status": "Passed" if code == 0 else "Failed",^[[0m, Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T09:20:27.5633596Z ^[[36;1m    "status": "Passed" if anchor_code == 0 else "Failed",^[[0m, Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T09:20:27.5635513Z ^[[36;1mif [[ "$failed" -ne 0 \|\| "$anchor_status" -ne 0 \|\| "$TOOLING_FAILED" == "1" ]]; then^[[0m, Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T09:20:27.5635742Z ^[[36;1m  report_status="Failed"^[[0m, Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T09:20:27.5635893Z ^[[36;1m  failed=1^[[0m, Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T09:20:27.5640108Z ^[[36;1m  echo "::error::The shared lint report generator failed with exit $generator_status."^[[0m, Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T09:20:27.5640342Z ^[[36;1m  failed=1^[[0m, Full audit and publish detailed evidence	Run full repository-wide audit and generate structured reports	2026-11-24T09:20:27.5642884Z ^[[36;1mecho "failed=$failed" &gt;&gt; "$GITHUB_OUTPUT"^[[0m, Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T09:20:34.1247501Z ^[[36;1m  echo "::error::The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md."^[[0m, Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T09:20:34.1328590Z ##[error]The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md., Full audit and publish detailed evidence	Set workflow result from audit and tooling outcomes	2026-11-24T09:20:34.1333390Z ##[error]Process completed with exit code 1. |
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | run 45364189404 is still in progress; logs will be available when it is complete  |
-| job_log | Not recorded | run 45364189404 is still in progress; logs will be available when it is complete  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 
