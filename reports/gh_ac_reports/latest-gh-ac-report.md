@@ -1,4 +1,4 @@
-# Validate Document Standards — run 45300070738
+# Validate Document Standards — run 45300893308
 
 ## Run identity
 
@@ -6,21 +6,21 @@
 | --- | --- |
 | Workflow | Validate Document Standards |
 | Workflow path | .github/workflows/validate-document-standards.yml |
-| Run / attempt | 45300070738 / 1 |
-| Run number | 234 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45300070738 |
+| Run / attempt | 45300893308 / 1 |
+| Run number | 235 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45300893308 |
 | Branch | gpt |
-| Commit | be605365a45849fdcc7a09c4e1cf04222f29117c |
+| Commit | a2a2fe57984f8fb8340adf2ccd56307c90c2598f |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-24T00:47:57Z |
+| Created (UTC) | 2026-11-24T00:54:13Z |
 | Status at capture | in_progress |
 | Observed conclusion | Not yet available |
 | Projected conclusion | failure |
 | Reporter job | in_progress / Pending |
 | Capture stage | pre_finalizer |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-24T00:48:54Z |
+| Captured (UTC) | 2026-11-24T00:54:44Z |
 
 ## Executive summary
 
@@ -45,20 +45,20 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 138130292133 | validate-document-standards | completed | failure | 8 | logs/job-138130292133.log |
+| 138132833094 | validate-document-standards | completed | failure | 8 | logs/job-138132833094.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 138130292133 | 5 | Validate the document type catalog | Blocking | medium | Step conclusion: failure |
+| validation_or_test | 138132833094 | 5 | Validate the document type catalog | Blocking | medium | Step conclusion: failure |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 138130292133 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 138130292133 | failure | .github | 16 |  | Process completed with exit code 1. |
+| 138132833094 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 138132833094 | failure | .github | 16 |  | Process completed with exit code 1. |
 
 ## Artifacts
 
@@ -68,7 +68,7 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 138130292133 | validate-document-standards | logs/job-138130292133.log | 82 | False |  |
+| 138132833094 | validate-document-standards | logs/job-138132833094.log | 82 | False |  |
 
 ## Evidence coverage
 
@@ -76,7 +76,7 @@ One or more evidence sources were unavailable. This report is Incomplete.
 
 | Source | HTTP status | Limitation |
 | --- | --- | --- |
-| job_log | Not recorded | run 45300070738 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45300893308 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
