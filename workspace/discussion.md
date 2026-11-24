@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 11:24 UTC — Create the CI discussion-resolution task:** Create one user-originated task from the canonical template for the three requested CI discussions. Record the verified report-retirement outcome, the remaining renderer/runner checks, and the required Worker-policy reconciliation. Set it as current execution while preserving the unrelated blocked Draft task.
+**2026-11-24 11:28 UTC — Verify renderer and runner evidence:** Inspect the Ledger task renderer and its regression tests. Check Diagnostics #530 job logs for the recorded test totals. Inspect the incomplete runner reports and later successful hosted jobs. Update [task 20261124-111700](tasks/20261124-111700-resolve-ci-discussion-items.md) with verified results.
 ## Open Discussions
 
 - **2026-11-24 10:46 UTC — Review the repository decision-governance proposal:** [DRAFT-0001 — Establish Draft-to-ADR Governance and Repository Analysis](draft/DRAFT-0001-repository-decision-governance-and-analysis.md). Review the proposed use of MADR, Draft and ADR lifecycles, task-to-ADR enforcement, permanent ADR archiving, the `workspace/analysis/` location and cadence, and the proposed `decision-governance` skill. The exact revision 1 is awaiting the user's decision. Do not create ADR-0001 until explicit approval.
