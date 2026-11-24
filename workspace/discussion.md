@@ -1,10 +1,10 @@
 ## Current Step
 
-**2026-11-24 09:24 UTC — Checkpoint the current CI task and create a separate approval-gated Drawing workflow task. Preserve the CI task's pending retry handoff and set the Drawing task as current execution.**
+**2026-11-24 09:30 UTC — Load Agent Skill Authoring and the repository writing policy. Then implement the approved post-attempt pattern-review gate without changing the pattern indexes.**
 
 ## Open Discussions
 
-- **2026-11-24 09:24 UTC — Session startup:** User started a session in Condensed Mode. Current request: revise the drawing workflow so successful image-generation attempts produce proposed success patterns and failed attempts produce proposed failure patterns. Present extracted patterns for discussion and obtain explicit user approval before updating any canonical pattern records or workflow documentation. No drawing-workflow changes are authorized yet.
+- **2026-11-24 09:30 UTC — Drawing pattern approval gate:** User authorized the Drawing workflow update. After each image attempt, extract reusable success/failure pattern candidates and present them for discussion. Each pattern creation, revision, confidence change, or retirement requires separate explicit user approval before the canonical index changes. No image was generated in this workflow-maintenance turn, so there is no new pattern candidate to approve. Task: [20261124-093000](tasks/20261124-093000-add-approval-gated-drawing-pattern-learning.md).
 
 - **2026-11-24 08:12 UTC — Hosted runner allocation:** Older runnerless jobs included a GitHub annotation stating that the job was not started because recent account payments had failed or the spending limit needed to be increased. The annotation does not identify which account condition applied. Later jobs received runners and executed; do not alter runner labels.
 - **2026-11-24 08:12 UTC — Task renderer and hosted regression:** The Proposed board table lacked its header, and the renderer searched into later sections, placing Proposed rows under Historical. The renderer now bounds lookup to the target section and fails closed; all status tables and the seven Historical rows are restored. Diagnostics #530 passed 37 Ledger tests, 26 report tests, and 7 archive-retention tests. The live Ledger links all 40 lint findings, including 28 low-severity findings. Six incomplete capture IDs remain pending their bounded natural retries.
