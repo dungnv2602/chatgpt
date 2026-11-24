@@ -1,40 +1,40 @@
 {
   "schema_version": "1.0.0",
   "source_run": {
-    "id": "45399711310",
-    "number": 298,
+    "id": "45404822403",
+    "number": 300,
     "attempt": 1,
     "workflow_id": 427313089,
     "workflow_name": "Validate Document Standards",
     "workflow_path": ".github/workflows/validate-document-standards.yml",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45399711310",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45404822403",
     "event": "push",
     "branch": "gpt",
-    "head_sha": "d66901394de689223394f990047705d42108cef0",
-    "status": "completed",
-    "conclusion": "failure",
-    "created_at": "2026-11-24T13:04:39Z",
-    "run_started_at": "2026-11-24T13:04:39Z",
-    "updated_at": "2026-11-24T13:05:45Z",
+    "head_sha": "ad8bf8b0b6730ecbc4b04460b2749fab2a8ff6f6",
+    "status": "in_progress",
+    "conclusion": null,
+    "created_at": "2026-11-24T13:34:26Z",
+    "run_started_at": "2026-11-24T13:34:26Z",
+    "updated_at": "2026-11-24T13:35:17Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
-    "head_commit_message": "docs(adr): record implemented governance confirmations"
+    "head_commit_message": "ci(governance): run Ledger regression tests in hosted validation"
   },
   "capture": {
-    "stage": "post_run",
-    "captured_at_utc": "2026-11-24T13:27:01Z",
-    "completeness": "Complete",
+    "stage": "pre_finalizer",
+    "captured_at_utc": "2026-11-24T13:35:29Z",
+    "completeness": "Incomplete",
     "reporter_job": {
-      "id": "138464919703",
+      "id": "138482727875",
       "name": "Capture GH Actions diagnostics",
-      "status": "completed",
-      "conclusion": "success"
+      "status": "in_progress",
+      "conclusion": null
     }
   },
   "classification": {
-    "state": "failure",
-    "observed_conclusion": "failure",
-    "projected_conclusion": null,
+    "state": "in_progress",
+    "observed_conclusion": null,
+    "projected_conclusion": "failure",
     "primary_category": "validation_or_test",
     "categories": [
       "validation_or_test"
@@ -42,26 +42,26 @@
     "issues": [
       {
         "category": "validation_or_test",
-        "job_id": "138464780986",
+        "job_id": "138482550063",
         "job_name": "validate-document-standards",
-        "step_number": 5,
-        "step_name": "Validate the document type catalog",
+        "step_number": 4,
+        "step_name": "Run CI Ledger regression tests",
         "blocking": true,
         "confidence": "medium",
-        "message": "2026-11-24T13:04:52.2485016Z ERROR: Line 130: Embedded contract coverage must name its owner and live record."
+        "message": "Step conclusion: failure"
       }
     ]
   },
   "jobs": [
     {
-      "id": "138464780986",
+      "id": "138482550063",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-24T13:04:41Z",
-      "completed_at": "2026-11-24T13:04:53Z",
-      "runner_name": "GitHub Actions 1000002171",
-      "runner_id": 1000002171,
+      "started_at": "2026-11-24T13:34:29Z",
+      "completed_at": "2026-11-24T13:34:44Z",
+      "runner_name": "GitHub Actions 1000002185",
+      "runner_id": 1000002185,
       "runner_group_name": "GitHub Actions",
       "runner_group_id": 0,
       "steps": [
@@ -70,102 +70,101 @@
           "name": "Set up job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-24T13:04:41Z",
-          "completed_at": "2026-11-24T13:04:42Z"
+          "started_at": "2026-11-24T13:34:29Z",
+          "completed_at": "2026-11-24T13:34:31Z"
         },
         {
           "number": 2,
           "name": "Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-24T13:04:42Z",
-          "completed_at": "2026-11-24T13:04:51Z"
+          "started_at": "2026-11-24T13:34:31Z",
+          "completed_at": "2026-11-24T13:34:41Z"
         },
         {
           "number": 3,
           "name": "Set up Python",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-24T13:04:51Z",
-          "completed_at": "2026-11-24T13:04:51Z"
+          "started_at": "2026-11-24T13:34:41Z",
+          "completed_at": "2026-11-24T13:34:41Z"
         },
         {
           "number": 4,
-          "name": "Run catalog validator regression tests",
+          "name": "Run CI Ledger regression tests",
           "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-24T13:04:51Z",
-          "completed_at": "2026-11-24T13:04:52Z"
+          "conclusion": "failure",
+          "started_at": "2026-11-24T13:34:41Z",
+          "completed_at": "2026-11-24T13:34:43Z"
         },
         {
           "number": 5,
-          "name": "Validate the document type catalog",
-          "status": "completed",
-          "conclusion": "failure",
-          "started_at": "2026-11-24T13:04:52Z",
-          "completed_at": "2026-11-24T13:04:52Z"
-        },
-        {
-          "number": 9,
-          "name": "Post Set up Python",
+          "name": "Run catalog validator regression tests",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-24T13:04:52Z",
-          "completed_at": "2026-11-24T13:04:52Z"
+          "started_at": "2026-11-24T13:34:43Z",
+          "completed_at": "2026-11-24T13:34:43Z"
         },
         {
-          "number": 10,
-          "name": "Post Check out gpt",
+          "number": 6,
+          "name": "Validate the document type catalog",
           "status": "completed",
-          "conclusion": "success",
-          "started_at": "2026-11-24T13:04:52Z",
-          "completed_at": "2026-11-24T13:04:52Z"
+          "conclusion": "skipped",
+          "started_at": "2026-11-24T13:34:43Z",
+          "completed_at": "2026-11-24T13:34:43Z"
         },
         {
           "number": 11,
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-24T13:34:43Z",
+          "completed_at": "2026-11-24T13:34:43Z"
+        },
+        {
+          "number": 12,
+          "name": "Post Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T13:34:43Z",
+          "completed_at": "2026-11-24T13:34:43Z"
+        },
+        {
+          "number": 13,
           "name": "Complete job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-24T13:04:52Z",
-          "completed_at": "2026-11-24T13:04:52Z"
+          "started_at": "2026-11-24T13:34:43Z",
+          "completed_at": "2026-11-24T13:34:43Z"
         }
       ],
       "log_capture": {
-        "available": true,
+        "available": false,
         "truncated": false,
-        "bytes": 35342,
-        "path": "logs/job-138464780986.log",
-        "error": null,
-        "marker_lines": [
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:04:52.2485016Z ERROR: Line 130: Embedded contract coverage must name its owner and live record.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:04:52.2486608Z ERROR: Line 132: invalid coverage template location for 'workspace/analysis/ANALYSIS_TEMPLATE.md': template must be in its owning skill's assets/ directory, novels/templates/, or the shared workspace root.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:04:52.2487904Z ERROR: Line 133: Embedded contract coverage must name its owner and live record.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:04:52.2489129Z ERROR: Line 135: invalid coverage template location for 'workspace/draft/DRAFT_TEMPLATE.md': template must be in its owning skill's assets/ directory, novels/templates/, or the shared workspace root.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:04:52.2490542Z ERROR: Line 136: Embedded contract coverage must name its owner and live record.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:04:52.2491714Z ERROR: Line 138: invalid coverage template location for 'workspace/adr/ADR_TEMPLATE.md': template must be in its owning skill's assets/ directory, novels/templates/, or the shared workspace root.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:04:52.2492751Z Catalog validation failed: 6 error(s), 18 document type(s), 28 reference(s).",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:04:52.2551674Z ##[error]Process completed with exit code 1."
-        ]
+        "bytes": 82,
+        "path": "logs/job-138482550063.log",
+        "error": "run 45404822403 is still in progress; logs will be available when it is complete\n",
+        "marker_lines": []
       }
     }
   ],
   "check_runs": [
     {
-      "id": "138464780986",
+      "id": "138482550063",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-24T13:04:41Z",
-      "completed_at": "2026-11-24T13:04:53Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45399711310/job/138464780986",
+      "started_at": "2026-11-24T13:34:29Z",
+      "completed_at": "2026-11-24T13:34:44Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45404822403/job/138482550063",
       "app": "GitHub Actions",
       "annotations_count": 2
     }
   ],
   "annotations": [
     {
-      "check_run_id": "138464780986",
-      "job_id": "138464780986",
+      "check_run_id": "138482550063",
+      "job_id": "138482550063",
       "path": ".github",
       "start_line": 2,
       "end_line": 2,
@@ -175,11 +174,11 @@
       "raw_details": ""
     },
     {
-      "check_run_id": "138464780986",
-      "job_id": "138464780986",
+      "check_run_id": "138482550063",
+      "job_id": "138482550063",
       "path": ".github",
-      "start_line": 19,
-      "end_line": 19,
+      "start_line": 36,
+      "end_line": 36,
       "level": "failure",
       "title": "",
       "message": "Process completed with exit code 1.",
@@ -187,6 +186,12 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [],
-  "history_path": "history/427313089/45399711310-attempt-1-post_run"
+  "capture_errors": [
+    {
+      "source": "job_log",
+      "job_id": "138482550063",
+      "message": "run 45404822403 is still in progress; logs will be available when it is complete\n"
+    }
+  ],
+  "history_path": "history/427313089/45404822403-attempt-1-pre_finalizer"
 }
