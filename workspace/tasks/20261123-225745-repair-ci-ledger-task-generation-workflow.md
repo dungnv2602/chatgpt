@@ -58,6 +58,15 @@ Restore reliable event-driven task generation and lifecycle management for CI fi
 
 ## 6. Progress Log
 
+### 2026-11-24 — Implement all-severity lint task generation
+
+- **Action:** Updated the Ledger generator, hosted regression tests, operating guide, discussion record, and this task's policy/acceptance notes.
+- **Result:** Every active lint finding is now eligible for task handoff regardless of severity. Severity maps to priority (critical P0, high P1, medium P2, low/informational P3). Existing unlinked active lint findings are included on the next ingestion sweep without report-history rescanning. GitHub Actions task eligibility remains medium/high/critical under the existing confidence and blocking rules. Added regression coverage for low/advisory and informational lint findings, grouped task reuse, existing unlinked lint handoff, and low-confidence Actions findings remaining taskless. Tests were added to the hosted suite but were not run locally.
+- **Current Ledger impact:** The last read-back showed 40 lint findings, of which 28 open low-severity findings had no task references. They are expected to be handed off by the next natural Diagnostics ingestion; no task records were manually fabricated.
+- **References:** Generator commit [210207a](https://github.com/dungnv2602/chatgpt/commit/210207aea85c375499a1f46dedcf794e10aaf178); regression tests [3486376](https://github.com/dungnv2602/chatgpt/commit/348637681e51da0e412eedb3a971d12645e009a1); operating guide [639633b](https://github.com/dungnv2602/chatgpt/commit/639633b7128152273af0c3ed36fee947710476c2); policy record [2b197b0](https://github.com/dungnv2602/chatgpt/commit/2b197b0b715d1dff7bbe149f585baf9a83026ab8).
+- **Next:** Verify naturally triggered hosted validation and confirm the next ingestion creates/reuses tasks for all active lint findings. Do not dispatch or poll Actions.
+
+
 ### 2026-11-24 07:05 UTC — Resume Ledger lifecycle acceptance
 
 - **Action:** Took current execution after completion of related task `20261123-054904`. Reviewed hosted Diagnostics run [#515](https://github.com/dungnv2602/chatgpt/actions/runs/45344012752), Document Standards run [#271](https://github.com/dungnv2602/chatgpt/actions/runs/45344012650), the Actions report index, both lint-scope indexes, and the Ledger.
@@ -211,4 +220,5 @@ _The CI Ledger Findings table is empty after the user-authorized clean start. Ke
 - **Action:** Updated the implementation plan after the user's correction that all lint findings must generate tasks.
 - **Decision:** Lint task eligibility is independent of severity. `critical`/`high`/`medium`/`low`/`informational` map to P0/P1/P2/P3/P3. GitHub Actions eligibility remains restricted to medium/high/critical under the existing confidence and blocking classification.
 - **Preserved controls:** Initial full-audit baselines do not create findings or tasks; untracked recurring baseline findings remain suppressed; incomplete capture state remains operational evidence and is not taskified.
-- **Next:** Implement the lint-only eligibility change, regression tests for low/advisory and informational findings plus grouped task reuse, and documentation. Validate through naturally triggered hosted workflows; do not dispatch or poll Actions.
+- **Result:** Implemented the lint-only eligibility change, regression tests for low/advisory and informational findings plus grouped task reuse, and documentation. The generator also hands off already-ingested active lint findings that lack task references on the next ingestion sweep; it does not rescan report history.
+- **Next:** Verify the naturally triggered hosted regression run and read back the Ledger/task references after the next ingestion sweep. Do not dispatch or poll Actions.
