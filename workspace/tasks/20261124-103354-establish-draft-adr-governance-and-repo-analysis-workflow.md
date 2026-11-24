@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-103354
 - **Created:** 2026-11-24 10:33 UTC
-- **Updated:** 2026-11-24 10:45 UTC
+- **Updated:** 2026-11-24 10:47 UTC
 - **Priority:** P1
 - **Status:** Blocked
 - **Origin:** User
@@ -83,6 +83,13 @@ Study MADR and design a comprehensive, low-ambiguity decision-management workflo
 - **Proposed:** Use one initial governance ADR as the bootstrap decision. The current task is authorized directly by the user's instruction. After the bootstrap decision, new implementation tasks require accepted ADR references.
 
 ## 6. Progress Log
+
+### 2026-11-24 10:47 UTC — Reconcile blocked task status and handoff
+
+- **Action:** Moved this task's board row from In Progress to Blocked. Kept it in Current Execution because DRAFT-0001 requires the user's decision before work can continue.
+- **Result:** Task metadata and board status now both show Blocked. The task board has no stale In Progress row for this task. The discussion register links the active task in Current Step and DRAFT-0001 in Open Discussions. All older CI discussions remain intact.
+- **Commit:** Board reconciliation [b442ec9](https://github.com/dungnv2602/chatgpt/commit/b442ec98b51af4fa6faf8074bf9eee6167ecc8c7). Current brief [47268ad](https://github.com/dungnv2602/chatgpt/commit/47268ad8554247fc9f5b2622e6e189bd22884fda).
+- **Next:** Wait for explicit user review of DRAFT-0001 revision 1. Do not create ADR-0001 or implement optional changes before approval.
 
 ### 2026-11-24 10:45 UTC — Create the first governance Draft
 
