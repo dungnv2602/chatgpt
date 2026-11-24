@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 14:42 UTC — Await final validation of the split inventory tables:** Document Standards #316 passed 37 Ledger tests, 32 catalog tests, and catalog validation. Lint #631 exposed two long inventory rows. The initial table split was corrected in commit 725896a with blank separators and repeated headers. Lint #635 and Document Standards #319 are pending on this commit. Diagnostics #586 is pending. Keep task 20261124-103354 Blocked until all three checks succeed. Do not poll Actions. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 14:58 UTC — Recover task state and approval:** Read workspace navigation, task board, and task 20261124-103354. Reconcile the recorded scope, user approval, branch state, and task-specific CI evidence before choosing the next action. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 
 ## Open Discussions
 
