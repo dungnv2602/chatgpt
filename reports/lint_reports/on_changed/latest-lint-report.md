@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#573](https://github.com/dungnv2602/chatgpt/actions/runs/45304735363)
-- **Run ID / attempt:** 45304735363 / 1
+- **Run:** [#574](https://github.com/dungnv2602/chatgpt/actions/runs/45308804827)
+- **Run ID / attempt:** 45308804827 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 048eaf0ba9c4eeb43ae6198972f2aa807d3d679b
+- **Branch / commit:** gpt / 0365a054d2d0dda9eb9258a9747495bf5013c0bd
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 048eaf0ba9c4eeb43ae6198972f2aa807d3d679b
-- **Generated (UTC):** 2026-11-24T01:24:39.676341+00:00
+- **Linter source SHA:** 0365a054d2d0dda9eb9258a9747495bf5013c0bd
+- **Generated (UTC):** 2026-11-24T01:57:59.266330+00:00
 
 ## 1. Executive summary
 
@@ -18,20 +18,20 @@
 |---|---:|
 | Files evaluated | 48 |
 | Files that failed | 12 |
-| Files with findings | 38 |
-| Total findings | 422 |
+| Files with findings | 39 |
+| Total findings | 425 |
 | Hard findings | 106 |
-| Advisory findings | 316 |
-| New findings | 2 |
-| Recurring findings | 420 |
-| Resolved findings | 2 |
+| Advisory findings | 319 |
+| New findings | 6 |
+| Recurring findings | 419 |
+| Resolved findings | 3 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
 
 - Runner OS: Linux
 - Python: 3.15.2
-- Platform: Linux-7.0.0-1020-azure-x86_64-with-glibc2.43
+- Platform: Linux-7.0.0-1016-aws-x86_64-with-glibc2.43
 - The JSON report records the full runtime version and every original per-file linter response.
 - The report records the commit that supplied the linter and generator code.
 
@@ -106,10 +106,10 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/asd-ste100/assets/lint-report-template.md | PASS | 0 | 0 | 0 | 385 | 0.0 | 0 |
 | skills/drawing/README.md | PASS | 0 | 0 | 0 | 406 | 0.0 | 0 |
 | skills/drawing/assets/pattern-entry-templates.md | PASS | 7 | 0 | 0 | 449 | 1.6 | 0 |
-| images/takeout/README.md | FAIL | 7 | 2 | 0 | 1989 | 0.4 | 1 |
+| images/takeout/README.md | FAIL | 7 | 1 | 0 | 1950 | 0.4 | 1 |
 | skills/the-worker/references/archive-records-and-image-prompts.md | FAIL | 28 | 3 | 0 | 3538 | 0.8 | 1 |
 | skills/the-worker/assets/conversation-integrity-template.md | FAIL | 1 | 1 | 0 | 290 | 0.3 | 1 |
-| images/README.md | PASS | 0 | 0 | 0 | 320 | 0.0 | 0 |
+| images/README.md | PASS | 1 | 0 | 0 | 301 | 0.3 | 0 |
 | skills/asd-ste100/SKILL.md | PASS | 21 | 13 | 31 | 2609 | 0.8 | 0 |
 | skills/philosophy-religion-asceticism/README.md | PASS | 1 | 0 | 0 | 471 | 0.2 | 0 |
 | skills/drawing/references/archive-and-delivery.md | PASS | 3 | 1 | 7 | 460 | 0.7 | 0 |
@@ -129,12 +129,12 @@ The table includes every evaluated file, including files with zero findings and 
 | skills/drawing/assets/daily-index-template.md | FAIL | 1 | 1 | 0 | 210 | 0.5 | 1 |
 | workspace/TASK_TEMPLATE.md | PASS | 5 | 0 | 0 | 441 | 1.1 | 0 |
 | skills/drawing/references/series-continuity-and-iteration.md | PASS | 9 | 0 | 9 | 3262 | 0.3 | 0 |
-| skills/the-worker/references/image-provenance-and-webp.md | FAIL | 13 | 6 | 0 | 1318 | 1.0 | 1 |
+| skills/the-worker/references/image-provenance-and-webp.md | FAIL | 15 | 7 | 0 | 1203 | 1.2 | 1 |
 | skills/asd-ste100/references/writing-rules.md | PASS | 8 | 0 | 6 | 706 | 1.1 | 0 |
 | skills/philosophy-religion-asceticism/references/answer-patterns.md | PASS | 1 | 0 | 0 | 235 | 0.4 | 0 |
 | workspace/README.md | FAIL | 9 | 5 | 0 | 542 | 1.7 | 1 |
 | skills/the-worker/assets/session-summary-template.md | PASS | 0 | 0 | 0 | 106 | 0.0 | 0 |
-| skills/the-worker/SKILL.md | FAIL | 29 | 18 | 0 | 4740 | 0.6 | 1 |
+| skills/the-worker/SKILL.md | FAIL | 29 | 18 | 0 | 4729 | 0.6 | 1 |
 | skills/drawing/references/prompt-fidelity.md | PASS | 46 | 1 | 15 | 3676 | 1.3 | 0 |
 | skills/document-standards/SKILL.md | FAIL | 4 | 2 | 0 | 1044 | 0.4 | 1 |
 | skills/drawing/references/image-editing-protocol.md | PASS | 2 | 1 | 4 | 474 | 0.4 | 0 |
@@ -149,7 +149,7 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 274 |
+| passive-voice | 277 |
 | semicolon | 56 |
 | present-perfect | 42 |
 | long-sentence | 20 |
@@ -188,7 +188,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.404s
+Ran 4 tests in 0.237s
 
 OK
 ~~~
@@ -221,7 +221,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 171 active Markdown files (258 available as link targets) and 317 local Markdown links.
+Scanned 175 active Markdown files (262 available as link targets) and 315 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -231,14 +231,30 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **passive-voice** · images/takeout/README.md:137:390 · **new** · fingerprint: 6bf094964030237cbdf1eee2
+- **passive-voice** · images/takeout/README.md:25:246 · **new** · fingerprint: df40b652ab5b159c04f41e56
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is deferred
-- **passive-voice** · images/takeout/README.md:139:203 · **new** · fingerprint: 90c0f6ed37a3e9357ebf7580
+  - **Matched text:** is unchanged
+- **passive-voice** · images/takeout/README.md:29:214 · **new** · fingerprint: 1dd4e3f93bbd63b8ba0b2f3b
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are committed
+  - **Matched text:** is relocated
+- **passive-voice** · images/README.md:17:534 · **new** · fingerprint: 73b4936551a1476f572649ed
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is converted
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:29:418 · **new** · fingerprint: 8030ef41b062f29bdeeda991
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is converted
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:43:106 · **new** · fingerprint: 82c969b497f70d9e180c2327
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is relocated
+- **synonym-rotation** · skills/the-worker/references/image-provenance-and-webp.md:43:357 · **new** · fingerprint: bfcd67821988f21f547ec19c
+  - **Level:** advisory-free
+  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** confirms
 
 ### Recurring findings
 
@@ -566,23 +582,23 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are recorded
-- **semicolon** · images/takeout/README.md:29:250 · **recurring** · fingerprint: 2a42254f52ec0603ee85a3a9
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · images/takeout/README.md:96:188 · **recurring** · fingerprint: 2d2406b2dcc9afee713a40e0
+- **passive-voice** · images/takeout/README.md:95:188 · **recurring** · fingerprint: 2d2406b2dcc9afee713a40e0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is supplied
-- **passive-voice** · images/takeout/README.md:97:44 · **recurring** · fingerprint: 52e38bd958f4a920f261f704
+- **passive-voice** · images/takeout/README.md:96:44 · **recurring** · fingerprint: 52e38bd958f4a920f261f704
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is accepted
-- **semicolon** · images/takeout/README.md:180:266 · **recurring** · fingerprint: 2a42254f52ec0603ee85a3a9
+- **passive-voice** · images/takeout/README.md:138:203 · **recurring** · fingerprint: 90c0f6ed37a3e9357ebf7580
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are committed
+- **semicolon** · images/takeout/README.md:179:266 · **recurring** · fingerprint: 2a42254f52ec0603ee85a3a9
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **passive-voice** · images/takeout/README.md:203:40 · **recurring** · fingerprint: bf5f3ed6bfe52608af6f2cbb
+- **passive-voice** · images/takeout/README.md:202:40 · **recurring** · fingerprint: bf5f3ed6bfe52608af6f2cbb
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are reserved
@@ -1446,39 +1462,35 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **synonym-rotation** · skills/the-worker/references/image-provenance-and-webp.md:41:4 · **recurring** · fingerprint: 6621b8a44449ab3404408732
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Verify
-- **synonym-rotation** · skills/the-worker/references/image-provenance-and-webp.md:44:86 · **recurring** · fingerprint: 06db325be12e27e00df2bc51
-  - **Level:** advisory-free
-  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
-  - **Matched text:** delete
-- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:48:23 · **recurring** · fingerprint: 0b0979f459e71a791b7e2aee
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is established
-- **synonym-rotation** · skills/the-worker/references/image-provenance-and-webp.md:50:348 · **recurring** · fingerprint: 165228fd89d930749cfaa835
-  - **Level:** advisory-free
-  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** validates
-- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:53:139 · **recurring** · fingerprint: 8614398268bd51316f465e56
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is retained
-- **semicolon** · skills/the-worker/references/image-provenance-and-webp.md:63:244 · **recurring** · fingerprint: 93317464da1c1dbf0ae723f5
+- **semicolon** · skills/the-worker/references/image-provenance-and-webp.md:29:460 · **recurring** · fingerprint: 93317464da1c1dbf0ae723f5
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:67:65 · **recurring** · fingerprint: 678db87db1d222633995aa3f
+- **synonym-rotation** · skills/the-worker/references/image-provenance-and-webp.md:40:4 · **recurring** · fingerprint: 6621b8a44449ab3404408732
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** Verify
+- **synonym-rotation** · skills/the-worker/references/image-provenance-and-webp.md:45:50 · **recurring** · fingerprint: 165228fd89d930749cfaa835
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** validates
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:47:139 · **recurring** · fingerprint: 8614398268bd51316f465e56
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is retained
+- **semicolon** · skills/the-worker/references/image-provenance-and-webp.md:57:366 · **recurring** · fingerprint: 93317464da1c1dbf0ae723f5
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:61:65 · **recurring** · fingerprint: 678db87db1d222633995aa3f
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is observed
-- **present-perfect** · skills/the-worker/references/image-provenance-and-webp.md:67:138 · **recurring** · fingerprint: 31fa6d94c05533c4e2f9d76a
+- **present-perfect** · skills/the-worker/references/image-provenance-and-webp.md:61:138 · **recurring** · fingerprint: 31fa6d94c05533c4e2f9d76a
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** have been read
-- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:67:143 · **recurring** · fingerprint: fcc7dc911acbecb8434fffce
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:61:143 · **recurring** · fingerprint: fcc7dc911acbecb8434fffce
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been read
@@ -1925,14 +1937,18 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### Resolved findings
 
-- **passive-voice** · images/takeout/README.md:135:260 · **resolved** · fingerprint: 1c0b97c5d0580bf2b118c139
+- **passive-voice** · images/takeout/README.md:137:390 · **resolved** · fingerprint: 6bf094964030237cbdf1eee2
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is staged
-- **passive-voice** · images/takeout/README.md:135:286 · **resolved** · fingerprint: 070df02ab1bb11dfeb28ec10
+  - **Matched text:** is deferred
+- **synonym-rotation** · skills/the-worker/references/image-provenance-and-webp.md:44:86 · **resolved** · fingerprint: 06db325be12e27e00df2bc51
+  - **Level:** advisory-free
+  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
+  - **Matched text:** delete
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:48:23 · **resolved** · fingerprint: 0b0979f459e71a791b7e2aee
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is moved
+  - **Matched text:** is established
 
 ## 8. Complete per-file diagnostics
 
@@ -2504,44 +2520,44 @@ No STE findings were recorded for this file.
 - **Result:** FAIL
 - **Exit code:** 1
 - **Findings:** 7
-- **Hard findings:** 2
+- **Hard findings:** 1
 - **Baseline:** 0
-- **Words:** 1989
+- **Words:** 1950
 - **Findings per 100 words:** 0.4
 
 #### Complete diagnostics
 
-- **semicolon** · images/takeout/README.md:29:250 · **recurring** · fingerprint: 2a42254f52ec0603ee85a3a9
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+- **passive-voice** · images/takeout/README.md:25:246 · **new** · fingerprint: df40b652ab5b159c04f41e56
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is unchanged
 
-- **passive-voice** · images/takeout/README.md:96:188 · **recurring** · fingerprint: 2d2406b2dcc9afee713a40e0
+- **passive-voice** · images/takeout/README.md:29:214 · **new** · fingerprint: 1dd4e3f93bbd63b8ba0b2f3b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is relocated
+
+- **passive-voice** · images/takeout/README.md:95:188 · **recurring** · fingerprint: 2d2406b2dcc9afee713a40e0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is supplied
 
-- **passive-voice** · images/takeout/README.md:97:44 · **recurring** · fingerprint: 52e38bd958f4a920f261f704
+- **passive-voice** · images/takeout/README.md:96:44 · **recurring** · fingerprint: 52e38bd958f4a920f261f704
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is accepted
 
-- **passive-voice** · images/takeout/README.md:137:390 · **new** · fingerprint: 6bf094964030237cbdf1eee2
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is deferred
-
-- **passive-voice** · images/takeout/README.md:139:203 · **new** · fingerprint: 90c0f6ed37a3e9357ebf7580
+- **passive-voice** · images/takeout/README.md:138:203 · **recurring** · fingerprint: 90c0f6ed37a3e9357ebf7580
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are committed
 
-- **semicolon** · images/takeout/README.md:180:266 · **recurring** · fingerprint: 2a42254f52ec0603ee85a3a9
+- **semicolon** · images/takeout/README.md:179:266 · **recurring** · fingerprint: 2a42254f52ec0603ee85a3a9
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · images/takeout/README.md:203:40 · **recurring** · fingerprint: bf5f3ed6bfe52608af6f2cbb
+- **passive-voice** · images/takeout/README.md:202:40 · **recurring** · fingerprint: bf5f3ed6bfe52608af6f2cbb
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are reserved
@@ -2722,13 +2738,18 @@ No STE findings were recorded for this file.
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 0
+- **Findings:** 1
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 320
-- **Findings per 100 words:** 0.0
+- **Words:** 301
+- **Findings per 100 words:** 0.3
 
-No STE findings were recorded for this file.
+#### Complete diagnostics
+
+- **passive-voice** · images/README.md:17:534 · **new** · fingerprint: 73b4936551a1476f572649ed
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is converted
 
 
 ### skills/asd-ste100/SKILL.md
@@ -3892,11 +3913,11 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 13
-- **Hard findings:** 6
+- **Findings:** 15
+- **Hard findings:** 7
 - **Baseline:** 0
-- **Words:** 1318
-- **Findings per 100 words:** 1.0
+- **Words:** 1203
+- **Findings per 100 words:** 1.2
 
 #### Complete diagnostics
 
@@ -3920,47 +3941,57 @@ No STE findings were recorded for this file.
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **synonym-rotation** · skills/the-worker/references/image-provenance-and-webp.md:41:4 · **recurring** · fingerprint: 6621b8a44449ab3404408732
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Verify
-
-- **synonym-rotation** · skills/the-worker/references/image-provenance-and-webp.md:44:86 · **recurring** · fingerprint: 06db325be12e27e00df2bc51
-  - **Level:** advisory-free
-  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
-  - **Matched text:** delete
-
-- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:48:23 · **recurring** · fingerprint: 0b0979f459e71a791b7e2aee
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:29:418 · **new** · fingerprint: 8030ef41b062f29bdeeda991
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is established
+  - **Matched text:** is converted
 
-- **synonym-rotation** · skills/the-worker/references/image-provenance-and-webp.md:50:348 · **recurring** · fingerprint: 165228fd89d930749cfaa835
-  - **Level:** advisory-free
-  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** validates
-
-- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:53:139 · **recurring** · fingerprint: 8614398268bd51316f465e56
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is retained
-
-- **semicolon** · skills/the-worker/references/image-provenance-and-webp.md:63:244 · **recurring** · fingerprint: 93317464da1c1dbf0ae723f5
+- **semicolon** · skills/the-worker/references/image-provenance-and-webp.md:29:460 · **recurring** · fingerprint: 93317464da1c1dbf0ae723f5
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:67:65 · **recurring** · fingerprint: 678db87db1d222633995aa3f
+- **synonym-rotation** · skills/the-worker/references/image-provenance-and-webp.md:40:4 · **recurring** · fingerprint: 6621b8a44449ab3404408732
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** Verify
+
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:43:106 · **new** · fingerprint: 82c969b497f70d9e180c2327
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is relocated
+
+- **synonym-rotation** · skills/the-worker/references/image-provenance-and-webp.md:43:357 · **new** · fingerprint: bfcd67821988f21f547ec19c
+  - **Level:** advisory-free
+  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** confirms
+
+- **synonym-rotation** · skills/the-worker/references/image-provenance-and-webp.md:45:50 · **recurring** · fingerprint: 165228fd89d930749cfaa835
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** validates
+
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:47:139 · **recurring** · fingerprint: 8614398268bd51316f465e56
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is retained
+
+- **semicolon** · skills/the-worker/references/image-provenance-and-webp.md:57:366 · **recurring** · fingerprint: 93317464da1c1dbf0ae723f5
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:61:65 · **recurring** · fingerprint: 678db87db1d222633995aa3f
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is observed
 
-- **present-perfect** · skills/the-worker/references/image-provenance-and-webp.md:67:138 · **recurring** · fingerprint: 31fa6d94c05533c4e2f9d76a
+- **present-perfect** · skills/the-worker/references/image-provenance-and-webp.md:61:138 · **recurring** · fingerprint: 31fa6d94c05533c4e2f9d76a
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** have been read
 
-- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:67:143 · **recurring** · fingerprint: fcc7dc911acbecb8434fffce
+- **passive-voice** · skills/the-worker/references/image-provenance-and-webp.md:61:143 · **recurring** · fingerprint: fcc7dc911acbecb8434fffce
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been read
@@ -4115,7 +4146,7 @@ No STE findings were recorded for this file.
 - **Findings:** 29
 - **Hard findings:** 18
 - **Baseline:** 0
-- **Words:** 4740
+- **Words:** 4729
 - **Findings per 100 words:** 0.6
 
 #### Complete diagnostics
