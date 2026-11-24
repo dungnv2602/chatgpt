@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-093000
 - **Created:** 2026-11-24 09:30 UTC
-- **Updated:** 2026-11-24 09:30 UTC
+- **Updated:** 2026-11-24 09:39 UTC
 - **Priority:** P2
 - **Status:** In Progress
 - **Origin:** User
@@ -58,6 +58,15 @@ Add a required post-generation pattern-learning step to the Drawing workflow. Ex
 
 ## 6. Progress Log
 
+### 2026-11-24 09:39 UTC — Implement and verify approval-gated pattern learning
+
+- **Action:** Updated the Drawing Skill, pattern governance, pattern-entry template, and Document Type Catalog. Added a mandatory review after every image generation or edit attempt, including refusals and no-output failures.
+- **Result:** The workflow now assesses each output, extracts reusable success/failure candidates, checks existing entries, presents proposed changes, and waits for explicit approval before assigning IDs or changing indexes. Success candidates require meaningful evidence. Failure candidates require a recurring problem or important reusable risk. New and existing entries require per-change approval. The pattern-entry template is Version 1.1 and records the last approval date and approved change. The Document Type Catalog is Version 1.10.
+- **Commits:** Workflow and governance [81ec641](https://github.com/dungnv2602/chatgpt/commit/81ec641145c2d9b74d38256f07bef02f05deb70b); approval metadata [849808d](https://github.com/dungnv2602/chatgpt/commit/849808d5b9a8bf53307c420b911c7086bd2c2df3); review timing [e2509c8](https://github.com/dungnv2602/chatgpt/commit/e2509c8bfa03aa8f3200eda0822563deeac5ed68).
+- **Read-back:** All four changed files passed targeted content checks. The successful-pattern index SHA remains `d06dff83c57e03dddff5bfeb18b303f58b765997`. The failure-pattern index SHA remains `250768f6f3172a493a681df8951ce8d6fcf46ad1`. No pattern entry was added or changed.
+- **Limitations:** No image was generated in this workflow-maintenance turn, so no new pattern candidate was available for user review. No local lint or test was run. No hosted validation result was checked or claimed.
+- **Next:** Prepare the Done archive copy, register its exact path and timestamp, then delete the active record and reconcile the task board.
+
 ### 2026-11-24 09:30 UTC — Confirm scope for attempt-record formats
 
 - **Action:** Checked the novel illustration prompt template, Novel README and workflow, Document Type Catalog, and Drawing attempt template.
@@ -74,24 +83,25 @@ Add a required post-generation pattern-learning step to the Drawing workflow. Ex
 
 ## 7. Current State
 
-The task is approved for the Drawing workflow change. The approval gate for future pattern-index changes is also explicit. No Drawing workflow files or pattern entries have been changed yet. The current successful-pattern index has S-001 through S-003. The failure-pattern index has F-001 through F-008.
+The Drawing workflow now requires post-attempt pattern review after every image generation or edit attempt. This includes refusals, tool failures, and no-output results.
+
+The assistant assesses every returned output separately. It extracts success candidates only when evidence shows meaningful improvement or protection of an important requirement. It extracts failure candidates only for recurring problems or important reusable risks. It checks existing entries before proposing new patterns or updates.
+
+The assistant presents each candidate to the user and discusses its exact scope and content. It does not assign an ID or change either global pattern index before explicit approval. Approval applies only to the candidate or candidates the user identifies. The pattern-entry template records the last approval date and approved change.
+
+The Drawing Skill, pattern README, pattern-entry template, and Document Type Catalog are committed and read back. The successful-pattern and failure-pattern indexes remain unchanged. No image was generated during this maintenance task, so no pattern candidate was created.
 
 ## 8. Remaining Work
 
-- Load the skill-authoring instructions and the repository writing policy.
-- Add a post-attempt extraction and discussion step to the Drawing skill.
-- Update pattern governance and entry templates to require explicit approval evidence.
-- Read back every changed file and verify the complete commit.
-- Use the relevant hosted validation workflow. Do not run repository scripts locally or poll CI.
-- Keep both canonical pattern indexes unchanged until the user approves a specific future candidate.
+No implementation work remains. Future pattern proposals must follow the new per-candidate discussion and approval gate.
 
 ## 9. Next Actions
 
-1. Read `skills/agent-skill-authoring/SKILL.md` and its required canonical assets for skill revision.
-2. Read `skills/asd-ste100/references/repository-writing-policy.md`.
-3. Update the Drawing skill, pattern index README, pattern-entry templates, and attempt template as one coherent change.
-4. Read back all changed paths and verify the commit.
-5. Present future pattern candidates after each image attempt and wait for the user's explicit approval before changing the indexes.
+1. Create the immutable Done archive copy with its UTC archive timestamp.
+2. Read back the complete archive copy and verify its commit.
+3. Register the exact archive path and timestamp in `.github/archive-retention-index.json`.
+4. Delete the active task record and update the task board.
+5. Restore the CI Ledger task as current execution.
 
 ## 10. References
 
@@ -100,22 +110,31 @@ The task is approved for the Drawing workflow change. The approval gate for futu
 - `skills/drawing/references/patterns/successful-patterns.md`
 - `skills/drawing/references/patterns/failure-patterns.md`
 - `skills/drawing/assets/pattern-entry-templates.md`
-- `skills/drawing/assets/attempt-template.md`
-- `skills/drawing/references/generation-recovery-and-provenance.md`
-- `skills/drawing/references/prompt-fidelity.md`
-- `skills/agent-skill-authoring/SKILL.md`
-- `skills/asd-ste100/references/repository-writing-policy.md`
+- `skills/document-standards/references/document-type-catalog.md`
+- `workspace/task_board.md`
+- Commits: [81ec641](https://github.com/dungnv2602/chatgpt/commit/81ec641145c2d9b74d38256f07bef02f05deb70b), [849808d](https://github.com/dungnv2602/chatgpt/commit/849808d5b9a8bf53307c420b911c7086bd2c2df3), [e2509c8](https://github.com/dungnv2602/chatgpt/commit/e2509c8bfa03aa8f3200eda0822563deeac5ed68).
 
 ## 11. Verification
 
-- **Check:** Current Drawing pattern governance, templates, task board, and active task state.
-- **Method:** Retrieved the exact canonical files from branch `gpt`.
-- **Result:** Confirmed the current indexes contain S-001–S-003 and F-001–F-008. Confirmed pre-generation consultation exists but post-attempt approval-gated extraction does not.
-- **Limitations:** No implementation or hosted validation has occurred.
+- **Check:** Drawing workflow rules, pattern approval governance, entry-template fields, catalog version, unchanged pattern indexes, task state, and board selection.
+- **Method:** Retrieved the exact files from branch `gpt` and checked the expected content and blob SHAs.
+- **Result:** All four changed files passed targeted read-back checks. Both pattern indexes retain their original blob SHAs. The new Drawing task is current execution. The previous CI task remains In Progress and is checkpointed.
+- **Limitations:** No image generation occurred, so no pattern proposal was available. No local linter or test was run. No hosted validation result was checked. This task makes documentation and workflow-instruction changes only.
 
 ## 12. Handoff Instructions
 
-Continue this task on branch `gpt`. Preserve the explicit user approval boundary. Do not add, revise, promote, or retire any pattern-index entry without the user's approval of that specific proposal. Use the attempt record to retain pending, approved, rejected, or deferred review status. Keep the CI Ledger task open and resume it only when selected again or directed by the user.
+The Drawing workflow now extracts reusable success and failure candidates after every generation or edit attempt. Present each candidate to the user and discuss its exact proposed change. Do not create, revise, promote, change confidence, or retire a pattern without explicit approval of that specific proposal. Do not treat image approval, prompt approval, workflow approval, or silence as pattern approval. If no reusable lesson exists, do not create a candidate.
+
+Keep the current session brief as the creative authority. Do not let pattern guidance override it. Both global pattern indexes remain unchanged after this task.
+
+After closeout, resume the previous current-execution task `20261123-225745` from its existing Next Actions. Do not dispatch or poll CI.
+
+## 13. Ledger Findings
+
+_No Ledger findings are linked to this task._
+
+| Finding ID | Severity | Diagnostic | Evidence |
+|---|---|---|---|
 
 ## 13. Ledger Findings
 
