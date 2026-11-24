@@ -5,12 +5,12 @@
 - **Template version:** 1.1
 - **ID:** 20261123-100738
 - **Created:** 2026-11-23 10:07 UTC
-- **Updated:** 2026-11-23 11:21 UTC
+- **Updated:** 2026-11-24 05:05 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** Assistant
 - **Approval:** Approved
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** 20261123-054904 — Build GitHub Actions diagnostic reports and remove the CI preflight gate
 - **Archived:** No
@@ -56,6 +56,15 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 - **Validation:** Use natural GitHub Actions runs. Do not manually dispatch or poll workflows.
 
 ## 6. Progress Log
+
+### 2026-11-24 05:05 UTC
+
+- **Action:** Resumed the approved remediation task. Compared the canonical baseline source commit and report with the recorded remediation history and current branch files.
+- **Result:** The task's last verified source-level state remains 143 of 155 baseline hard findings addressed. The 12 remaining findings are the approved deliberate examples in `skills/asd-ste100/SKILL.md`. The ordinary terminology finding was already corrected from `delete` to `remove`. Several findings in the later repository-wide report share fingerprints with baseline rules but occur in newer text. Do not treat them as unresolved baseline findings. I restored all temporary edits to those out-of-scope occurrences. The current source tree has no net source changes from this resumed inspection.
+- **Validation:** The latest report file available during this inspection was generated from commit `4afaa2c2211858b0455eaf29c523b32eb16e012c`. It is not the canonical baseline and predates the current branch commits. It cannot validate this task's latest state. No workflow was queried, polled, or dispatched. No local linter, tests, or repository scripts were run.
+- **Restoration commits:** [`e9ccb0b`](https://github.com/dungnv2602/chatgpt/commit/e9ccb0beda26cdfc0700f4352cde02102ca156e4), [`5fa4f41`](https://github.com/dungnv2602/chatgpt/commit/5fa4f4159d0df5972e2dd6fe130c7073ce8981e2), [`b1edc53`](https://github.com/dungnv2602/chatgpt/commit/b1edc5384ee07dbf8f15dd0b8269744a43313a09), [`2463a88`](https://github.com/dungnv2602/chatgpt/commit/2463a8885953d037933f8d55f7e5863c85ea14ab), [`09f7bb3`](https://github.com/dungnv2602/chatgpt/commit/09f7bb3c260498c3e8c4f968a69802fec4202232), and [`25dbb4c`](https://github.com/dungnv2602/chatgpt/commit/25dbb4cb21a331be115644ee1c65407c710b7e83).
+- **Next:** Review naturally published full-audit and changed-scope reports when available. Preserve the 12 examples and keep this task In Progress until hosted validation confirms the baseline remediation.
+
 
 ### 2026-11-23 13:44 UTC
 
@@ -220,7 +229,7 @@ Resolve the existing hard STE lint findings without weakening lint rules, thresh
 
 ## 7. Current State
 
-The approved task is In Progress and is the current execution. Source-level edits address 143 of the 155 baseline hard findings across all 21 affected files. These include all 75 findings in the Document Type Catalog. In `skills/asd-ste100/SKILL.md`, all three non-example hard findings have source-level edits. Twelve hard findings remain in deliberate examples that the repository writing policy says to preserve. No other non-example hard findings remain in the baseline set. Hosted validation remains pending. The 319 advisory findings remain out of scope. The 12 deliberate-example findings are approved policy-preserved exceptions. The acceptance condition no longer requires a zero-hard-finding total; only ordinary findings must be resolved, with the examples and lint policy unchanged.
+The approved task is In Progress and is the current execution. Source-level edits address 143 of the 155 baseline hard findings across all 21 affected files. These include all 75 findings in the Document Type Catalog. In `skills/asd-ste100/SKILL.md`, all three non-example hard findings have source-level edits. Twelve hard findings remain in deliberate examples that the repository writing policy says to preserve. No other non-example hard findings remain in the baseline set. Hosted validation remains pending. The 319 advisory findings remain out of scope. The 12 deliberate-example findings are approved policy-preserved exceptions. The acceptance condition no longer requires a zero-hard-finding total; only ordinary findings must be resolved, with the examples and lint policy unchanged. The latest report file available during the 2026-11-24 resume was generated from commit `4afaa2c2211858b0455eaf29c523b32eb16e012c`. It is not the canonical baseline and includes findings in newer text. Do not use fingerprint overlap alone to reopen baseline findings. No net source changes were retained during the resumed inspection. Hosted validation of the committed remediation remains pending.
 
 ## 8. Remaining Work
 
