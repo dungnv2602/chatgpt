@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 15:00 UTC — Inspect task-scoped CI evidence:** Check the current `gpt` head and the exact Lint #635, Document Standards #319, and Diagnostics #586 results. Read the report indexes and inspect complete failure evidence only where a run failed. Do not poll or rerun Actions. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 15:06 UTC — Correct the remaining catalog lint finding:** Document Standards #319 and Diagnostics #586 passed. Lint #635 found one hard 27-word sentence in the GitHub Actions catalog entry. Its report publisher also hit a rebase conflict because a newer lint report commit had landed after the source commit. Shorten the sentence without changing meaning; retain the task as Blocked until fresh hosted validation succeeds. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 
 ## Open Discussions
 
