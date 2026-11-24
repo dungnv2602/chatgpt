@@ -8,13 +8,14 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## Current Execution
 
-**20261123-225745** — [Repair CI ledger task generation workflow](tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md)
+**20261124-093000** — [Add approval-gated drawing pattern learning](tasks/20261124-093000-add-approval-gated-drawing-pattern-learning.md)
 
 ## In Progress
 
 | ID | Task | Priority | Status | Origin | Updated | Record |
 |---|---|---:|---|---|---|---|
 | 20261123-225745 | Repair CI ledger task generation workflow | P1 | In Progress | User | 2026-11-24 | [Task record](tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md) |
+| 20261124-093000 | Add approval-gated drawing pattern learning | P2 | In Progress | User | 2026-11-24 | [Task record](tasks/20261124-093000-add-approval-gated-drawing-pattern-learning.md) |
 
 ## Ready
 
