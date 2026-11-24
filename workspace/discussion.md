@@ -1,6 +1,6 @@
 ## Current Step
 
-- **2026-11-24 00:47 UTC — Recover the active CI Ledger task:** Read the workspace guide, task board, and current task record. Compare recorded progress with the exact repository state. Expected result: identify the remaining authorized work and any blockers.
+- **2026-11-24 00:49 UTC — Audit the active Ledger lifecycle:** Read the current Ledger and report indexes, then inspect the capture and diagnostics workflows, task-archive trigger, generator, and regression tests. Expected result: verify whether resolved findings retire automatically and identify remaining flood, retry, serialization, or deadlock risks.
 **20261123-225745** — [Repair CI ledger task generation workflow](tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md)
 
 ## Open Discussions
