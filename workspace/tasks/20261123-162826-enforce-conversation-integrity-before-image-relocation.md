@@ -44,7 +44,8 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 
 ## 5. Decisions
 
-- Keep the current batch in Draft until every item passes the updated provenance requirements.
+- A batch may be Ready when every top-level source has an explicit disposition: provenance-mapped items must pass the conversation and attempt checks; unresolved items must use the exact `images/unclassified` quarantine destination.
+- A normal Ready run processes only provenance-mapped items. It preserves quarantined originals in intake and leaves them in a residual Draft hand-off. Ready does not authorize classification or relocation of quarantined images.
 - Keep the seven entries already marked unclassified unresolved until their image content and source can be reliably inspected.
 - Attempt records alone do not establish that a session conversation has been archived. Check the session-level integrity record.
 - Do not delete, rename, or move existing image bytes during the initial audit.
@@ -106,9 +107,25 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 - **Verification limits:** No Actions run was polled or manually dispatched. The seven WebP outputs have not been confirmed by this read-back. No claim of conversion completion or hosted test success is made.
 - **Next:** Leave the originals and staging derivatives for the user's manual relocation. Make no index edits unless explicitly requested. Review hosted output evidence only when it arrives through the normal reporting path.
 
+### 2026-11-24 01:25 UTC
+
+- **Action:** Rechecked the complete intake, hand-off, conversation-integrity records, all eleven attempt records, output destinations, processor, tests, and both workflows. Corrected the mixed-batch processing contract and trigger design.
+- **Result:** Confirmed eighteen top-level images are exactly covered: eleven have exact source Asset ID and Generation ID matches in partial conversation-integrity records and attempt notes; seven remain unclassified. The previous no-progress behavior came from the processor's successful early exit for `status: draft`; changing it to Ready alone would also have made the seven unmapped items block the batch. Commit [048eaf0](https://github.com/dungnv2602/chatgpt/commit/048eaf0ba9c4eeb43ae6198972f2aa807d3d679b) adds exact quarantine deferral, deferred report rows, residual Draft hand-off creation, mixed-batch and quarantine-only regression tests, shared non-cancelling writer concurrency, and safe publish retries for the unclassified workflow.
+- **Activation:** Set the hand-off to Ready in this commit. The Ready-state path is excluded from push triggers, so processing requires the user's manual dispatch. The normal workflow tests before processing; it relocates only the eleven mapped items and leaves the seven source images unchanged in intake.
+- **Verification limits:** The six implementation paths were read back from branch `gpt` and their blob SHAs matched the implementation commit. Regression tests were added but not executed locally; hosted results are pending the user's manual workflow run. No image has yet been converted or relocated by this change.
+- **Next:** Manually dispatch `Process Image Takeout and Create WebP Derivatives` on branch `gpt`. After that run succeeds and the residual hand-off is Draft with seven entries, dispatch `Convert Unclassified Takeout Images to WebP` with the seven exact filenames. That workflow creates derivatives only; the user retains relocation and index-edit authority.
+
 ## 7. Current State
 
-The eighteen PNGs were imported into `images/takeout/` by commit `1192a4a53640b6188f3500abda75b1c9d5fe004d`. The evidence does **not** show final processor relocation: the current `HANDOFF.yml` remains `status: draft`, and all eighteen image files remain in the intake folder.
+The branch `gpt` contains implementation commit [048eaf0](https://github.com/dungnv2602/chatgpt/commit/048eaf0ba9c4eeb43ae6198972f2aa807d3d679b). The processor now separates exact `images/unclassified` quarantine entries from provenance-mapped items. It still requires exact coverage of every top-level intake image. It validates conversation and attempt evidence for every item it processes, processes only mapped entries, reports quarantined entries as `DEFERRED_UNCLASSIFIED`, and leaves them in a residual Draft hand-off after successful mapped processing. A Ready hand-off that contains no mapped items fails closed.
+
+The intake contains eighteen original PNGs. Eleven items map to attempts 04–06 and 09–16 through the retained partial conversation-integrity records and attempt notes. Seven items remain unclassified. Their original bytes remain in `images/takeout/`; no image has yet been converted or relocated by the latest change. The hand-off is now `status: ready`, with all eighteen exact source files accounted for.
+
+The normal workflow remains push-triggered for new intake/provenance changes and supports `workflow_dispatch`. A hand-off-only Ready change and processor/workflow maintenance commits do not start processing. This avoids a premature or duplicate batch run. The normal and unclassified workflows share one non-cancelling queued writer group. The unclassified publisher now rebases and retries safely when other branch writers advance `gpt`.
+
+After a successful normal run, eleven originals and their WebP derivatives will be published to the mapped drawing destinations. The seven unclassified originals will remain in intake, with only those seven items in the residual Draft hand-off. The separate unclassified conversion workflow can then create WebP derivatives from an exact runtime filename allowlist. It does not move originals or edit indexes.
+
+ The evidence does **not** show final processor relocation: the current `HANDOFF.yml` remains `status: draft`, and all eighteen image files remain in the intake folder.
 
 Eleven items have exact mappings to Samantha drawing attempts 04–06 (20 November) and 09–16 (21 November). Their attempt notes contain matching source Asset IDs and Generation IDs. Two new Partial conversation-integrity records summarise only what is supported by the retained session briefs and attempt notes. They explicitly record unavailable transcript material and include exact source mapping tables for those eleven items.
 
@@ -120,7 +137,13 @@ On 24 November, the user approved a conversion-only path for unclassified images
 
 ## 8. Remaining Work
 
-- Keep the seven images unclassified unless reliable image and source evidence becomes available. Do not guess based on filenames or chronology.
+- Run the normal takeout workflow manually on branch `gpt`. Its hosted test suite must pass before the processor step can run.
+- Confirm the eleven mapped originals and WebP derivatives are published and verified from the branch. Confirm the seven quarantined originals remain in intake and the active hand-off contains only those seven entries with `status: draft`.
+- Run the unclassified conversion workflow manually with the exact seven source filenames. Confirm the derivatives are verified and committed while all seven source PNGs remain unchanged in intake.
+- The user performs any later relocation. Edit an index only after an explicit user request and only with verified mapping details.
+- Keep the task In Progress until hosted test, publication, and residual-hand-off checks are confirmed. No hosted workflow result is claimed yet.
+
+ Do not guess based on filenames or chronology.
 - Complete the conversion-only handling under the separate workflow. Preserve the source PNGs and leave all relocation and index edits to the user unless explicitly requested.
 - Keep the hand-off Draft until every item has valid source mapping and an approved destination/quarantine disposition.
 - Allow the existing hosted workflow to run naturally; do not manually dispatch or poll Actions.
@@ -128,7 +151,12 @@ On 24 November, the user approved a conversion-only path for unclassified images
 
 ## 9. Next Actions
 
-1. Obtain an image-capable inspection route for the seven unclassified PNGs (for example, receive the seven files as conversation attachments), then reconcile them only against retained source evidence.
+1. The user manually dispatches `Process Image Takeout and Create WebP Derivatives` on branch `gpt` after this activation commit is present.
+2. Review the hosted test and processing result from that run. Confirm the eleven mapped output pairs and the residual seven-item Draft hand-off.
+3. The user manually dispatches `Convert Unclassified Takeout Images to WebP` on `gpt` with the exact seven filenames. Confirm the WebP results and unchanged sources.
+4. Keep relocation and index changes under the user's explicit direction.
+
+ (for example, receive the seven files as conversation attachments), then reconcile them only against retained source evidence.
 2. Keep all seven files untouched until their source and destination or quarantine disposition are established.
 3. Leave `HANDOFF.yml` in Draft while any item remains unresolved.
 4. Review naturally reported hosted validation when available. Do not dispatch or poll workflows manually.
@@ -158,7 +186,7 @@ On 24 November, the user approved a conversion-only path for unclassified images
 
 ## 12. Handoff Instructions
 
-Continue on branch gpt. Do not set the hand-off to Ready or process the batch before confirming the complete validation and rollback sequence and implementing a hard pre-relocation provenance gate. Create only evidence-supported partial conversation-integrity records and label all gaps. Keep the seven unclassified images in Draft until source and destination are established. Preserve all 18 source bytes. Do not poll or manually dispatch GitHub Actions.
+Continue on branch `gpt`. The implementation is in commit [048eaf0](https://github.com/dungnv2602/chatgpt/commit/048eaf0ba9c4eeb43ae6198972f2aa807d3d679b), and the hand-off is Ready for a user-triggered normal run. Dispatch `Process Image Takeout and Create WebP Derivatives` on `gpt`; it must run the hosted regression suite before processing and then relocate only the eleven provenance-mapped items. It must retain the seven `images/unclassified` source files byte-for-byte in intake and leave a residual Draft hand-off. After successful normal processing, use the separate unclassified conversion workflow with the seven exact filenames. That workflow creates WebP derivatives only. The user performs relocation. Do not infer source mappings or edit indexes without explicit user direction.
 
 ## 13. Ledger Findings
 
@@ -208,3 +236,8 @@ The following inventory records the exact image blob SHA and byte size from the 
 - **Method:** Read back the workflow, Worker skill, provenance reference, both image-intake READMEs, task record, and discussion register from branch `gpt`. Checked the runtime input, absence of hard-coded filenames, PNG/JPEG encoder profiles, APNG rejection, hand-off boundary, source-hash check, and attempt-scoped staging.
 - **Result:** The read-back matches the committed files. Documentation and workflow changes are in commits `a4b29bd7b389f775baef721500fe4d7d515e5e31` and `827108805867e255452e3b45d666be9ed141abee`. Branch `gpt` points to `827108805867e255452e3b45d666be9ed141abee` at this check.
 - **Limits:** No workflow was dispatched or polled. No conversion output or hosted validation result is claimed.
+
+- **Check:** Mixed-batch implementation commit and Ready activation.
+- **Method:** Read back the six implementation paths and their Git blob SHAs on branch `gpt`; rechecked the exact 18-file inventory, 18-entry hand-off, eleven conversation/attempt mappings, and seven quarantine dispositions. The Ready activation and workspace records were committed separately.
+- **Result:** Commit [048eaf0](https://github.com/dungnv2602/chatgpt/commit/048eaf0ba9c4eeb43ae6198972f2aa807d3d679b) was read back. The processor and tests define the mapped/deferred split. The hand-off is Ready for a manual run. No original has been modified or relocated by these commits.
+- **Limitations:** Regression tests have not been executed locally or in Actions yet. No WebP output or relocation is claimed until the user triggers the workflow and the published files are verified.

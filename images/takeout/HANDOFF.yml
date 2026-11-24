@@ -1,6 +1,6 @@
 version: 1
 batch_id: "2026-11-20-001"
-status: draft
+status: ready
 items:
   - source: "file_0000000047908207866f8f6e1b84ddb1.png"
     source_asset_id: "file_0000000047908207866f8f6e1b84ddb1"
