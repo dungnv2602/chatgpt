@@ -116,11 +116,18 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - **References:** skill commit ebc8a97cae4757dff7644c6b970ce2773d877725; Draft template commit c9d83de1aa567d199899f687643ccf3db131f466; ADR template commit d777f25d9daade2c44e3c52576b51e328ddb337c; Draft index commit 7ef3df278215f698909bca4958cda040e2e7c477; ADR index commit ef30b1ad1b8703be240f31beb8a4b699006163ed; workspace navigation commit 072079f88c30d9bbc6de6c383a245783e64c93f7; archive guidance commits d15d0d0af49847b0f5182a499f24ee6ea560780e and 7ba0a7293722eec7cd1ffcd70bff1d20bb006cc6; archive ADR guidance commit d9d8bea4548081c8cae8e46e68477b99c098a08d; catalog commit 82edd5d4e1c873edc6f93485c078f04e36189198; ADR-0002 lifecycle commit 7a24570e4364e3120f47e423c3c9daa107f3517d.
 - **Next:** Remove DRAFT-0001 from the cleanup-pending index, verify remaining references, and delete the source only after the final reference check.
 
+### 2026-11-24 16:35 UTC
+
+- **Action:** Removed the DRAFT-0001 cleanup-pending entry from workspace/draft/README.md, re-fetched the exact approved source file, verified its promoted status, resulting ADR, cleanup flag, and approval metadata, then deleted it.
+- **Result:** DRAFT-0001 is absent from branch gpt. The Draft index contains no DRAFT-0001 source link or cleanup-pending section. Archived ADR-0001 retains its immutable source commit reference and no working-tree link. ADR-0002 remains accepted and records this task as in-progress.
+- **References:** DRAFT-0001 deletion commit 4082efd9a5dadb8b8bd0b41ccd3cf69b5e9405ce; Draft index update commit 1654a2151c88350f2f7c923edf44fe6b9837b344; source absence read-back returned 404; archived ADR-0001 blob 18c846f3463df25219b43f71fb49c9040e4a6c6f; ADR-0002 blob ca66c1a3d0a4fee305ee1e222daa4ee8cfd0232d.
+- **Next:** Complete hosted Document Standards validation and update ADR-0002 Confirmation with the observed result.
+
 ## 7. Current State
 
 - ADR-0002 is accepted and indexed.
 - ADR-0001 has a reference-only correction. Its accepted decision content remains unchanged.
-- DRAFT-0001 remains in the repository pending final index, reference, and deletion closeout.
+- DRAFT-0001 was deleted after the completeness and cross-reference gates passed. Its approved content remains available at the original promotion commit.
 - DRAFT-0003 was deleted after ADR-0002 acceptance and promotion closeout.
 - The rationale completeness assessment for DRAFT-0001 passed. No material gap requires another ADR.
 - Task execution is approved. This task is In Progress and is the current execution task.
@@ -128,19 +135,16 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 
 ## 8. Remaining Work
 
-- Remove the DRAFT-0001 entry from the Draft index and verify all active Markdown links to its working path are resolved.
-- Delete DRAFT-0001 only after the index and cross-reference checks pass.
+- Run and inspect hosted Document Standards validation.
 - Read back every changed path, including the updated ADR-0002 lifecycle metadata.
 - Run and inspect the relevant hosted Document Standards validation.
 - Update ADR-0002 Confirmation and record the final migration and validation evidence.
 
 ## 9. Next Actions
 
-1. Remove the DRAFT-0001 cleanup-pending entry from the Draft index.
-2. Inspect the remaining known references and confirm no active Markdown link targets the DRAFT-0001 working path.
-3. Delete the source Draft and read back the path and both indexes.
-4. Run and inspect hosted Document Standards validation.
-5. Update ADR-0002 Confirmation and record the final migration evidence.
+1. Run and inspect hosted Document Standards validation.
+2. Update ADR-0002 Confirmation and record the final migration evidence.
+3. Close and archive this task after all checks pass.
 
 ## 10. References
 
