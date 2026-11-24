@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-161334-04
 - **Created:** 2026-11-24 16:13 UTC
-- **Updated:** 2026-11-24 18:03 UTC
+- **Updated:** 2026-11-24 18:13 UTC
 - **Priority:** P2
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -80,22 +80,31 @@ Remediate all long-sentence findings in ADR-0002 so the ADR can pass hosted STE 
 - **References:** [Final ADR-0002 commit](https://github.com/dungnv2602/chatgpt/commit/985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc); read-back blob SHA dccaf32ffb722903521031ae5cf3104d714f7f21.
 - **Next:** Record the event-driven hosted STE lint result when it becomes available. Do not poll CI.
 
+
+### 2026-11-24 18:13 UTC
+
+- **Action:** Reviewed hosted STE Lint run 45456236271 and its immutable report for the final ADR-0002 commit.
+- **Result:** The report evaluated ADR-0002 directly and recorded zero findings. It recorded zero hard findings, zero advisory findings, and zero failed checks. All 25 Ledger findings linked to the five ADR-0002 remediation tasks now have resolved status with the fix commit and hosted validation evidence. This task's long-sentence findings are terminal.
+- **References:** [STE Lint run 45456236271](https://github.com/dungnv2602/chatgpt/actions/runs/45456236271); [report](../../reports/lint_reports/on_changed/history/45456236271-attempt-1/report.md); [fix commit](https://github.com/dungnv2602/chatgpt/commit/985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc); [Ledger resolution commit](https://github.com/dungnv2602/chatgpt/commit/6a01f3f9f25de181897b84849cced460e5ae50cd).
+- **Next:** Complete the immutable task archive transaction. The final lint report remains in the active report index as the latest canonical on_changed report.
+
 ## 7. Current State
 
-ADR-0002 was edited in commit 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc and read back from branch gpt. This task's long-sentence wording was revised. Manual review found zero semicolons, no sentences over 25 words, and no occurrences of the flagged synonym pairs. Hosted STE lint has not yet evaluated the final commit. The linked Ledger finding remains open.
+The final hosted STE lint report evaluated ADR-0002 directly on commit 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc. It recorded zero findings and zero failed checks. This task's long-sentence findings are resolved. The Ledger records all linked findings as resolved with validation evidence. The task is ready for archival.
 
 ## 8. Remaining Work
 
-- Review the event-driven hosted STE lint result for the final ADR-0002 commit when it becomes available. Do not poll CI.
-- If this rule still has findings, correct them within the approved editorial scope and repeat the read-back.
-- Resolve the linked Ledger finding only after a fix commit and successful relevant hosted validation are recorded.
-- Close this task through the Worker archive process after its finding becomes terminal.
+- Create and read back the immutable Done archive copy.
+- Register the exact archive path and timestamp in .github/archive-retention-index.json.
+- Delete the active task record only after archive and index verification.
+- Move the board entry to Historical and verify the exact archive path and commit.
 
 ## 9. Next Actions
 
-1. Review the hosted STE lint result for the final ADR-0002 commit when it becomes available. Do not poll CI.
-2. If the report shows no findings for this rule, record the successful result and resolve the linked Ledger finding through the approved report process.
-3. Close this task only after its linked finding is terminal.
+1. Create the Done archive copy at the matching archive/tasks path.
+2. Read back the full archive copy and verify its commit.
+3. Register the archive path in the retention index.
+4. Delete this active record and update the task board.
 
 ## 10. References
 
@@ -104,14 +113,17 @@ ADR-0002 was edited in commit 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc and read 
 
 ## 11. Verification
 
-- **Check:** ADR-0002 read-back after the editorial changes.
-- **Method:** Fetch the exact path from branch gpt after commit 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc.
-- **Result:** Read-back succeeded. Blob SHA: dccaf32ffb722903521031ae5cf3104d714f7f21. Manual review found zero semicolon characters, no sentences over 25 words, and no occurrences of the flagged synonym pairs.
-- **Limitations:** No hosted STE lint result for this commit has been observed. The manual review does not prove that the linter reports zero findings.
+- **Check:** Hosted STE lint of the final ADR-0002 content.
+- **Method:** Inspect the complete report for run 45456236271 and its exact evaluated file list.
+- **Result:** Passed. The report evaluated workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md. It recorded zero findings, zero hard findings, zero advisory findings, zero failed files, and zero failed workflow checks.
+- **Fix commit:** 985e3d82782821b5c7aa2d3c159e7e2c4c88a7bc.
+- **Validation:** [Run 45456236271](https://github.com/dungnv2602/chatgpt/actions/runs/45456236271), completed successfully at 2026-11-24T18:10:35.347093Z.
+- **Ledger:** The 25 linked findings now have resolved status and valid resolution evidence in commit 6a01f3f9f25de181897b84849cced460e5ae50cd.
+- **Scope limitation:** This report used incremental execution and skipped Markdown link and heading-anchor validation. It did lint ADR-0002 directly.
 
 ## 12. Handoff Instructions
 
-Do not run repository scripts or the STE linter locally. Do not poll CI. Preserve the accepted decision's meaning and scope. Do not weaken lint rules or baselines. Resolve the Ledger finding only after a fix commit and successful relevant hosted validation. Keep this task In Progress until its finding is terminal.
+The lint remediation is complete. Preserve the accepted ADR decision and scope. Do not weaken lint rules or baselines. The report remains the latest canonical on_changed report. Complete task archival and allow the event-driven diagnostics sweep to retire the terminal findings. Do not poll CI or manually delete Ledger entries.
 
 ## 13. Ledger Findings
 
@@ -121,3 +133,7 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 |---|---|---|---|
 | `lint-c7a688d7f3b5d323000e2504` | medium | long-sentence: Sentence has 26 words \(cap 25\). Split it. | [report](../../reports/lint_reports/on_changed/history/45433851979-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45433851979) · [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) · [report](../../reports/lint_reports/on_changed/history/45440436265-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45440436265) · [report](../../reports/lint_reports/on_changed/history/45447915270-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45447915270) · [report](../../reports/lint_reports/on_changed/history/45455166016-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45455166016) |
 | `lint-5234929a399cf01e0d7f595c` | medium | long-sentence: Sentence has 39 words \(cap 25\). Split it. | [report](../../reports/lint_reports/on_changed/history/45433851979-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45433851979) · [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) · [report](../../reports/lint_reports/on_changed/history/45440436265-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45440436265) · [report](../../reports/lint_reports/on_changed/history/45447915270-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45447915270) |
+
+### Resolution Evidence
+
+All findings listed in this task are resolved. The final hosted report evaluated ADR-0002 directly and recorded zero findings. The report remains available at [run 45456236271](https://github.com/dungnv2602/chatgpt/actions/runs/45456236271). The Ledger records the fix commit and successful validation in commit 6a01f3f9f25de181897b84849cced460e5ae50cd.
