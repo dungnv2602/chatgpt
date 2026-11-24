@@ -589,7 +589,7 @@ def render_worker_task(root, task_id, title, group_id, findings, timestamp):
             "- **Standing instruction:** The user authorized Ledger-created task records and prefers event-driven ingestion, not periodic polling.",
         "[State the required outcome.]":
             "Review and remediate the related CI findings listed below after approval. Preserve source validation rules and diagnostic evidence.",
-        "[List agreed requirements and acceptance criteria.]":
+        "[List agreed requirements and acceptance criteria. For implementation tasks, map applicable ADR Confirmation criteria to the task acceptance criteria.]":
             "1. Inspect every linked report and exact diagnostic before proposing a fix.\n2. Keep related findings grouped in this task.\n3. Do not weaken lint rules, test coverage, workflow conclusions, or evidence requirements.\n4. Obtain user approval before remediation when required by the Worker approval rules.\n5. Resolve ledger findings only after a fix commit and successful relevant validation are recorded.",
         "[Record approved decisions and concise rationale. Mark unapproved ideas as Proposed.]":
             "- **Approved:** Event-driven task capture by the Ledger during ingestion.\n- **Approved:** Group findings by the stable remediation key.\n- **Boundary:** This task is Proposed. Automated capture does not approve code changes or authorize automatic remediation.",
