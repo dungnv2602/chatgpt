@@ -11783,7 +11783,8 @@
       "duplicate_of": null,
       "accepted_risk": null,
       "task_refs": [
-        "20261124-161334-05"
+        "20261124-161334-05",
+        "20261124-181746"
       ],
       "task_group": "ci-dc080af018187980"
     }
