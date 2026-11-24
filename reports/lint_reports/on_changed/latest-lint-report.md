@@ -1,30 +1,30 @@
 # On Changed STE Lint Evidence Report
 
-- **Result:** Failed
+- **Result:** Passed
 - **Schema version:** 1.1.0
-- **Run:** [#668](https://github.com/dungnv2602/chatgpt/actions/runs/45443670075)
-- **Run ID / attempt:** 45443670075 / 1
+- **Run:** [#669](https://github.com/dungnv2602/chatgpt/actions/runs/45445313404)
+- **Run ID / attempt:** 45445313404 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / b45f1f0c676292687b9f925c099ba9b841d26831
+- **Branch / commit:** gpt / 4b8af56f38824e6b712447a54255d087ae37811e
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** b4f01ecb336fdc3174039a9c014229e44f7aad6d
-- **Linter source SHA:** b45f1f0c676292687b9f925c099ba9b841d26831
-- **Generated (UTC):** 2026-11-24T17:01:09.349407+00:00
+- **Baseline SHA:** b45f1f0c676292687b9f925c099ba9b841d26831
+- **Linter source SHA:** 4b8af56f38824e6b712447a54255d087ae37811e
+- **Generated (UTC):** 2026-11-24T17:10:05.123992+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 2 |
-| Files that failed | 1 |
-| Files with findings | 1 |
-| Total findings | 1 |
-| Hard findings | 1 |
+| Files evaluated | 1 |
+| Files that failed | 0 |
+| Files with findings | 0 |
+| Total findings | 0 |
+| Hard findings | 0 |
 | Advisory findings | 0 |
-| New findings | 1 |
+| New findings | 0 |
 | Recurring findings | 0 |
-| Resolved findings | 2 |
+| Resolved findings | 1 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -40,7 +40,6 @@
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
 - skills/decision-governance/SKILL.md
-- workspace/README.md
 
 ## 4. Per-file result matrix
 
@@ -48,16 +47,13 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| skills/decision-governance/SKILL.md | FAIL | 1 | 1 | 0 | 2203 | 0.0 | 1 |
-| workspace/README.md | PASS | 0 | 0 | 0 | 886 | 0.0 | 0 |
+| skills/decision-governance/SKILL.md | PASS | 0 | 0 | 0 | 2203 | 0.0 | 0 |
 
 ## 5. Findings by rule
 
 Counts include hard and advisory findings.
 
-| Rule | Findings |
-|---|---:|
-| synonym-rotation | 1 |
+No findings.
 
 ## 6. Workflow and validation checks
 
@@ -89,7 +85,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.339s
+Ran 4 tests in 0.371s
 
 OK
 ~~~
@@ -131,10 +127,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **synonym-rotation** · skills/decision-governance/SKILL.md:96:56 · **new** · fingerprint: 745fe2084d6ac713461ff51a
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** check
+None.
 
 ### Recurring findings
 
@@ -142,14 +135,10 @@ None.
 
 ### Resolved findings
 
-- **synonym-rotation** · skills/decision-governance/SKILL.md:95:35 · **resolved** · fingerprint: a894730c426b5a08cb0d4e4c
+- **synonym-rotation** · skills/decision-governance/SKILL.md:96:56 · **resolved** · fingerprint: 745fe2084d6ac713461ff51a
   - **Level:** advisory-free
   - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** Check
-- **synonym-rotation** · workspace/README.md:58:376 · **resolved** · fingerprint: 3659e4816d32f3f6e196b772
-  - **Level:** advisory-free
-  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
-  - **Matched text:** remove
+  - **Matched text:** check
 
 ## 8. Complete per-file diagnostics
 
@@ -157,30 +146,12 @@ This section includes every normalized finding with its rule, level, source loca
 
 ### skills/decision-governance/SKILL.md
 
-- **Result:** FAIL
-- **Exit code:** 1
-- **Findings:** 1
-- **Hard findings:** 1
-- **Baseline:** 0
-- **Words:** 2203
-- **Findings per 100 words:** 0.0
-
-#### Complete diagnostics
-
-- **synonym-rotation** · skills/decision-governance/SKILL.md:96:56 · **new** · fingerprint: 745fe2084d6ac713461ff51a
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** check
-
-
-### workspace/README.md
-
 - **Result:** PASS
 - **Exit code:** 0
 - **Findings:** 0
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 886
+- **Words:** 2203
 - **Findings per 100 words:** 0.0
 
 No STE findings were recorded for this file.

@@ -1,73 +1,51 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45443670075",
-  "run_number": 668,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45443670075",
+  "run_id": "45445313404",
+  "run_number": 669,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45445313404",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "b45f1f0c676292687b9f925c099ba9b841d26831",
+  "commit_sha": "4b8af56f38824e6b712447a54255d087ae37811e",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "incremental",
-  "baseline_sha": "b4f01ecb336fdc3174039a9c014229e44f7aad6d",
-  "generated_at_utc": "2026-11-24T17:01:09.349407+00:00",
-  "status": "Failed",
-  "linter_source_sha": "b45f1f0c676292687b9f925c099ba9b841d26831",
+  "baseline_sha": "b45f1f0c676292687b9f925c099ba9b841d26831",
+  "generated_at_utc": "2026-11-24T17:10:05.123992+00:00",
+  "status": "Passed",
+  "linter_source_sha": "4b8af56f38824e6b712447a54255d087ae37811e",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
   },
   "files_evaluated": [
-    "skills/decision-governance/SKILL.md",
-    "workspace/README.md"
-  ],
-  "files_evaluated_count": 2,
-  "files_failed": 1,
-  "failed_files": [
     "skills/decision-governance/SKILL.md"
   ],
-  "files_with_findings": 1,
-  "total_findings": 1,
-  "hard_findings": 1,
+  "files_evaluated_count": 1,
+  "files_failed": 0,
+  "failed_files": [],
+  "files_with_findings": 0,
+  "total_findings": 0,
+  "hard_findings": 0,
   "advisory_findings": 0,
-  "findings_by_rule": {
-    "synonym-rotation": 1
-  },
+  "findings_by_rule": {},
   "records": [
-    {
-      "violations": [
-        {
-          "file": "skills/decision-governance/SKILL.md",
-          "line": 96,
-          "col": 56,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "check",
-          "message": "'check' and 'confirm' name the same action. Pick one and use it every time."
-        }
-      ],
-      "count": 1,
-      "hard_count": 1,
-      "baseline": 0,
-      "words": 2203,
-      "per_100_words": 0.0,
-      "path": "skills/decision-governance/SKILL.md",
-      "exit_code": 1
-    },
     {
       "violations": [],
       "count": 0,
       "hard_count": 0,
       "baseline": 0,
-      "words": 886,
+      "words": 2203,
       "per_100_words": 0.0,
-      "path": "workspace/README.md",
+      "path": "skills/decision-governance/SKILL.md",
       "exit_code": 0
     }
   ],
-  "findings": [
+  "findings": [],
+  "new_findings": 0,
+  "recurring_findings": 0,
+  "resolved_findings": [
     {
       "file": "skills/decision-governance/SKILL.md",
       "line": 96,
@@ -77,32 +55,6 @@
       "match": "check",
       "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
       "fingerprint": "745fe2084d6ac713461ff51a",
-      "comparison": "new"
-    }
-  ],
-  "new_findings": 1,
-  "recurring_findings": 0,
-  "resolved_findings": [
-    {
-      "file": "skills/decision-governance/SKILL.md",
-      "line": 95,
-      "col": 35,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Check",
-      "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
-      "fingerprint": "a894730c426b5a08cb0d4e4c",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/README.md",
-      "line": 58,
-      "col": 376,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "remove",
-      "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
-      "fingerprint": "3659e4816d32f3f6e196b772",
       "comparison": "resolved"
     }
   ],
@@ -123,7 +75,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.339s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.371s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
