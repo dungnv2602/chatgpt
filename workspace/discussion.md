@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 09:30 UTC — Load Agent Skill Authoring and the repository writing policy. Then implement the approved post-attempt pattern-review gate without changing the pattern indexes.**
+**2026-11-24 09:30 UTC — Revise the Drawing skill, attempt template, pattern index guidance, and pattern-entry templates to enforce post-attempt extraction and per-candidate approval. Leave both pattern indexes unchanged.**
 
 ## Open Discussions
 
