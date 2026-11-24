@@ -19,20 +19,19 @@ The Historical section retains at most the 7 most recently completed or cancelle
 ## Ready
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
-|---|---|---:|---|---|---|---|
+|---|---|---:|---|---|---|---|---|
 
 ## Blocked
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
-|---|---|---:|---|---|---|---|
-
+|---|---|---:|---|---|---|---|---|
 | 20261124-113009 | Study Planning with Files and propose a file-backed Worker workflow | P1 | Blocked | User | 2026-11-24 | — | [Task record](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md) |
 
 ## Proposed
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
-|---|---|---:|---|---|---|---|
-| 20261124-123847 | Review passive-voice findings in workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md | P3 | Proposed | Assistant | 2026-11-24 | [Task record](tasks/20261124-123847-review-passive-voice-findings-in-workspace-adr-0001-establish-dr.md) |
+|---|---|---:|---|---|---|---|---|
+| 20261124-123847 | Review passive-voice findings in workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-123847-review-passive-voice-findings-in-workspace-adr-0001-establish-dr.md) |
 | 20261124-114048-02 | Review present-perfect findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P3 | Proposed | Assistant | 2026-11-24 | — | [Task record](tasks/20261124-114048-02-review-present-perfect-findings-in-workspace-draft-draft-0002-ph.md) |
 | 20261124-114048-01 | Review synonym-rotation findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P2 | Proposed | Assistant | 2026-11-24 | — | [Task record](tasks/20261124-114048-01-review-synonym-rotation-findings-in-workspace-draft-draft-0002-p.md) |
 | 20261124-114048 | Review passive-voice findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P3 | Proposed | Assistant | 2026-11-24 | — | [Task record](tasks/20261124-114048-review-passive-voice-findings-in-workspace-draft-draft-0002-phas.md) |
@@ -88,12 +87,12 @@ The Historical section retains at most the 7 most recently completed or cancelle
 ## Paused
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
-|---|---|---:|---|---|---|---|
+|---|---|---:|---|---|---|---|---|
 
 ## Historical
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
-|---|---|---:|---|---|---|---|
+|---|---|---:|---|---|---|---|---|
 | 20261124-111700 | Resolve CI logging, report-retirement, renderer and runner discussions | P1 | Done | User | 2026-11-24 | — | [Archived record](../archive/tasks/20261124-111700-resolve-ci-discussion-items.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/47a6a6ab9483619cd37e8fe587c3f3b1c30d0c14) |
 | 20261123-225745 | Repair CI ledger task generation workflow | P1 | Done | User | 2026-11-24 | — | [Archived record](../archive/tasks/20261123-225745-repair-ci-ledger-task-generation-workflow.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/c9fac2b487569d921af6d788b1ee4778cda35767) |
 | 20261124-093000 | Add approval-gated drawing pattern learning | P2 | Done | User | 2026-11-24 | — | [Archived record](../archive/tasks/20261124-093000-add-approval-gated-drawing-pattern-learning.md) · [Archival commit](https://github.com/dungnv2602/chatgpt/commit/51f2ab781aa1b5965e4adadb70509e35cb6ec9b2) |
