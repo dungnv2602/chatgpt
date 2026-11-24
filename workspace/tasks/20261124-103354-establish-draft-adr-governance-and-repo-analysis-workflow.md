@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-103354
 - **Created:** 2026-11-24 10:33 UTC
-- **Updated:** 2026-11-24 13:42 UTC
+- **Updated:** 2026-11-24 13:45 UTC
 - **Priority:** P1
 - **Status:** Blocked
 - **Origin:** User
@@ -180,7 +180,7 @@ The task remains Blocked. Document Standards run #298 completed with a catalog f
 - `workspace/ANALYSIS_TEMPLATE.md`
 - `.github/workflows/validate-document-standards.yml`
 - `reports/triage/ledger.json` and `reports/triage/scripts/test_ledger.py`
-- Document Standards run [#298](https://github.com/github.com/actions/runs/45399711310) (pre-correction failure)
+- Document Standards run [#298](https://github.com/dungnv2602/chatgpt/actions/runs/45399711310) (pre-correction failure)
 - Changed-document lint run [#616](https://github.com/actions/runs/45403469914) (commit 74005cc)
 - Commit [74005cc](https://github.com/dungnv2602/chatgpt/commit/74005ccb1afc79d21966112501baa39772905864)
 - Commit [ad8bf8b](https://github.com/dungnv2602/chatgpt/commit/ad8bf8b0b6730ecbc4b04460b2749fab2a8ff6f6)
