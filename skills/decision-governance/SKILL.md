@@ -31,7 +31,7 @@ The Worker owns task selection, execution approval, progress, and closeout. Docu
 9. Do not rewrite an accepted decision to hide a later change.
 10. Never add ADR paths to the archive-retention index.
 
-Use Document Standards before creating or revising governance records. Use canonical templates in `workspace/draft/`, `workspace/adr/`, and `workspace/analysis/`.
+Use Document Standards before creating or revising governance records. Use canonical templates in `workspace/`: `DRAFT_TEMPLATE.md`, `ADR_TEMPLATE.md`, and `ANALYSIS_TEMPLATE.md`.
 
 ## Record ownership
 

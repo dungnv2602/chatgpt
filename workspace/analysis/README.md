@@ -4,7 +4,7 @@ This folder stores evidence-based reviews of repository health and decision cove
 
 ## Files
 
-- `ANALYSIS_TEMPLATE.md` — canonical analysis template.
+- [`ANALYSIS_TEMPLATE.md`](../ANALYSIS_TEMPLATE.md) — canonical analysis template.
 - `ANALYSIS-YYYYQn.md` — quarterly review.
 - `ANALYSIS-YYYYQn-short-event-name.md` — event-triggered review.
 

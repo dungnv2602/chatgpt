@@ -4,7 +4,7 @@ This folder stores proposals that require a user decision.
 
 ## Files
 
-- `DRAFT_TEMPLATE.md` — canonical template for new proposals.
+- [`DRAFT_TEMPLATE.md`](../DRAFT_TEMPLATE.md) — canonical template for new proposals.
 - `DRAFT-*.md` — one record for each distinct proposal.
 
 ## Current Drafts

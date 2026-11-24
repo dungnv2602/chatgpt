@@ -9,6 +9,9 @@ The workspace is the task-management and conversation-navigation area. The Worke
 | [discussion.md](discussion.md) | Current-step brief, open discussions, and the three latest verified success reports |
 | [task_board.md](task_board.md) | Task index, priorities, states, and current execution |
 | [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Canonical task-record format |
+| [DRAFT_TEMPLATE.md](DRAFT_TEMPLATE.md) | Canonical decision-draft format |
+| [ADR_TEMPLATE.md](ADR_TEMPLATE.md) | Canonical accepted-decision format |
+| [ANALYSIS_TEMPLATE.md](ANALYSIS_TEMPLATE.md) | Canonical repository-analysis format |
 | [tasks/](tasks/) | Active task records |
 | [draft/](draft/README.md) | Proposals awaiting user review and decision |
 | [adr/](adr/README.md) | Accepted decisions awaiting implementation and confirmation |

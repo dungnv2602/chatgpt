@@ -4,8 +4,8 @@ This folder stores user-approved decisions that still require implementation or 
 
 ## Files
 
-- `ADR_TEMPLATE.md` — canonical template for accepted decisions.
-- `ADR-*.md` — active accepted decision records. File names use a numeric sequence and a lowercase dashed title.
+- [`ADR_TEMPLATE.md`](../ADR_TEMPLATE.md) — canonical template for accepted decisions.
+- `NNNN-title-with-dashes.md` — active accepted decision records. File names use a four-digit numeric sequence and a lowercase dashed title.
 
 ## Numbering and organization
 
