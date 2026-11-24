@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-104408-03
 - **Created:** 2026-11-24 10:44 UTC
-- **Updated:** 2026-11-24 10:44 UTC
+- **Updated:** 2026-11-24 12:38 UTC
 - **Priority:** P2
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -90,4 +90,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-8bf6c58f1f0bd3c79519cfd1` | medium | long-sentence: Sentence has 27 words \(cap 25\). Split it. | [report](../../reports/lint_reports/on_changed/history/45377420525-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45377420525) |
+| `lint-8bf6c58f1f0bd3c79519cfd1` | medium | long-sentence: Sentence has 27 words \(cap 25\). Split it. | [report](../../reports/lint_reports/on_changed/history/45377420525-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45377420525) · [report](../../reports/lint_reports/on_changed/history/45395353908-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45395353908) |

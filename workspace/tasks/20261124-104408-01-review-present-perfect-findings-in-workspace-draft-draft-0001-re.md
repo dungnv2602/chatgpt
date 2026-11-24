@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-104408-01
 - **Created:** 2026-11-24 10:44 UTC
-- **Updated:** 2026-11-24 10:44 UTC
+- **Updated:** 2026-11-24 12:38 UTC
 - **Priority:** P3
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -90,5 +90,5 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-015ecb389e532dd8875c1837` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../reports/lint_reports/on_changed/history/45377420525-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45377420525) |
-| `lint-0f4521e8c2b440c5ef392f4b` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../reports/lint_reports/on_changed/history/45377420525-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45377420525) |
+| `lint-015ecb389e532dd8875c1837` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../reports/lint_reports/on_changed/history/45377420525-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45377420525) · [report](../../reports/lint_reports/on_changed/history/45395353908-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45395353908) |
+| `lint-0f4521e8c2b440c5ef392f4b` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../reports/lint_reports/on_changed/history/45377420525-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45377420525) · [report](../../reports/lint_reports/on_changed/history/45395353908-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45395353908) |
