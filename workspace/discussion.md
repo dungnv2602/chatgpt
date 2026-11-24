@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 05:27 UTC — Reconcile hosted lint evidence:** Compare the latest full-audit and changed-scope JSON against the canonical 155-finding baseline and the 12 approved examples. Identify whether remaining hard findings are baseline regressions or later-scope findings. Do not edit source files until this classification is clear.
+**2026-11-24 05:29 UTC — Correct the approved STE terminology finding:** Inspect the repository writing policy and Document Type Catalog entry, then correct only the ordinary `delete`/`remove` inconsistency in `skills/asd-ste100/SKILL.md`. Preserve all 12 deliberate lint examples and all lint rules.
 
 ## Open Discussions
 
