@@ -90,22 +90,28 @@ Repair the Document Standards catalog failure caused by the now-empty active ADR
 - **References:** [STE Lint #681 report](../../reports/lint_reports/on_changed/history/45461706916-attempt-1/report.md); [STE Lint #681 run](https://github.com/actions/runs/45461706916); [repair commit](https://github.com/dungnv2602/chatgpt/commit/cedc0b751f02f494feabb822b2669c29fa9d7180).
 - **Next:** Review the Document Standards result when it becomes naturally available. Do not poll.
 
+### 2026-11-24 18:41 UTC
+
+- **Action:** Recorded the successful STE Lint #681 result and reconciled the task's Current State and Remaining Work.
+- **Result:** The task now records that the catalog correction is committed, The Worker has zero findings in #681, and only post-fix Document Standards validation remains unverified. The task remains In Progress.
+- **References:** [STE Lint #681 report](../../reports/lint_reports/on_changed/history/45461706916-attempt-1/report.md); [Worker wording commit](https://github.com/dungnv2602/chatgpt/commit/cedc0b751f02f494feabb822b2669c29fa9d7180).
+- **Next:** Review Document Standards validation when naturally available. Do not poll.
+
 ## 7. Current State
 
-The catalog rule is Reserved. The Worker now contains the user-directed CI follow-through procedure. Commit `fa59f9861823ce4d3ab11a69a8d4461339e9e47c` contains those changes. STE Lint #679 then evaluated the catalog, task board, and Worker skill. The catalog and task board passed with zero findings. The Worker skill failed with 34 findings (19 hard and 15 advisory). The report's tooling checks all passed. The current task is fixing those findings without weakening lint rules.
+The catalog rule is Reserved. The Worker contains the user-directed CI follow-through procedure. STE Lint #679 found 34 issues in the Worker skill. Commit `111eedc1d609bbf9445253bc79cddef1d28cdce4` resolved 33. STE Lint #680 found four remaining issues. Commit `cedc0b751f02f494feabb822b2669c29fa9d7180` resolved all four. STE Lint #681 passed with zero findings for the Worker skill. Its report records zero hard findings, zero advisory findings, zero new findings, and zero failed workflow checks. Read-back passed for the Worker skill. Hosted Document Standards validation for the catalog change remains unverified.
 
 ## 8. Remaining Work
 
-- Rewrite the 34 findings in `skills/the-worker/SKILL.md` while preserving the existing workflow requirements and new CI follow-through procedure.
-- Read back the revised skill and task record and inspect commit metadata.
-- Observe the naturally triggered STE Lint and Document Standards results without polling.
-- Keep the task In Progress until hosted validation passes.
+- Observe the naturally triggered Document Standards result for the catalog change without polling.
+- If catalog validation fails, inspect the exact report and correct the root cause.
+- Keep the task In Progress until catalog validation passes.
 
 ## 9. Next Actions
 
-1. Commit the STE-compliant Worker skill rewrite and update this progress record.
-2. Read back all changed paths and inspect commit metadata.
-3. Review the next hosted validation results when naturally available. Archive this task only after all relevant checks pass.
+1. Review the naturally available Document Standards result for the catalog change without polling.
+2. Correct any new catalog-specific failure if required.
+3. After validation passes, archive this task and reconcile the task board.
 
 ## 10. References
 
