@@ -1,40 +1,40 @@
 {
   "schema_version": "1.0.0",
   "source_run": {
-    "id": "45399075293",
-    "number": 296,
+    "id": "45399356660",
+    "number": 297,
     "attempt": 1,
     "workflow_id": 427313089,
     "workflow_name": "Validate Document Standards",
     "workflow_path": ".github/workflows/validate-document-standards.yml",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45399075293",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45399356660",
     "event": "push",
     "branch": "gpt",
-    "head_sha": "14be48eaea70a995b3218ab3282e4e9fe6294ba0",
-    "status": "completed",
-    "conclusion": "failure",
-    "created_at": "2026-11-24T13:00:49Z",
-    "run_started_at": "2026-11-24T13:00:49Z",
-    "updated_at": "2026-11-24T13:01:55Z",
+    "head_sha": "9ca088dd545a92fb5946ef06c9017bde6bc8d8eb",
+    "status": "in_progress",
+    "conclusion": null,
+    "created_at": "2026-11-24T13:02:31Z",
+    "run_started_at": "2026-11-24T13:02:31Z",
+    "updated_at": "2026-11-24T13:03:37Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
-    "head_commit_message": "docs(workspace): remove duplicate DRAFT index entry"
+    "head_commit_message": "fix(standards): match numeric ADR filenames in catalog"
   },
   "capture": {
-    "stage": "post_run",
-    "captured_at_utc": "2026-11-24T13:03:00Z",
-    "completeness": "Complete",
+    "stage": "pre_finalizer",
+    "captured_at_utc": "2026-11-24T13:04:18Z",
+    "completeness": "Incomplete",
     "reporter_job": {
-      "id": "138462760031",
+      "id": "138463698719",
       "name": "Capture GH Actions diagnostics",
-      "status": "completed",
-      "conclusion": "success"
+      "status": "in_progress",
+      "conclusion": null
     }
   },
   "classification": {
-    "state": "failure",
-    "observed_conclusion": "failure",
-    "projected_conclusion": null,
+    "state": "in_progress",
+    "observed_conclusion": null,
+    "projected_conclusion": "failure",
     "primary_category": "validation_or_test",
     "categories": [
       "validation_or_test"
@@ -42,26 +42,26 @@
     "issues": [
       {
         "category": "validation_or_test",
-        "job_id": "138462590770",
+        "job_id": "138463567028",
         "job_name": "validate-document-standards",
         "step_number": 5,
         "step_name": "Validate the document type catalog",
         "blocking": true,
         "confidence": "medium",
-        "message": "2026-11-24T13:01:04.8725647Z ERROR: Line 130: Embedded contract coverage must name its owner and live record."
+        "message": "Step conclusion: failure"
       }
     ]
   },
   "jobs": [
     {
-      "id": "138462590770",
+      "id": "138463567028",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-24T13:00:51Z",
-      "completed_at": "2026-11-24T13:01:06Z",
-      "runner_name": "GitHub Actions 1000002159",
-      "runner_id": 1000002159,
+      "started_at": "2026-11-24T13:02:33Z",
+      "completed_at": "2026-11-24T13:02:45Z",
+      "runner_name": "GitHub Actions 1000002166",
+      "runner_id": 1000002166,
       "runner_group_name": "GitHub Actions",
       "runner_group_id": 0,
       "steps": [
@@ -70,104 +70,93 @@
           "name": "Set up job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-24T13:00:52Z",
-          "completed_at": "2026-11-24T13:00:53Z"
+          "started_at": "2026-11-24T13:02:34Z",
+          "completed_at": "2026-11-24T13:02:34Z"
         },
         {
           "number": 2,
           "name": "Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-24T13:00:53Z",
-          "completed_at": "2026-11-24T13:01:03Z"
+          "started_at": "2026-11-24T13:02:34Z",
+          "completed_at": "2026-11-24T13:02:42Z"
         },
         {
           "number": 3,
           "name": "Set up Python",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-24T13:01:03Z",
-          "completed_at": "2026-11-24T13:01:03Z"
+          "started_at": "2026-11-24T13:02:42Z",
+          "completed_at": "2026-11-24T13:02:42Z"
         },
         {
           "number": 4,
           "name": "Run catalog validator regression tests",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-24T13:01:03Z",
-          "completed_at": "2026-11-24T13:01:04Z"
+          "started_at": "2026-11-24T13:02:42Z",
+          "completed_at": "2026-11-24T13:02:43Z"
         },
         {
           "number": 5,
           "name": "Validate the document type catalog",
           "status": "completed",
           "conclusion": "failure",
-          "started_at": "2026-11-24T13:01:04Z",
-          "completed_at": "2026-11-24T13:01:04Z"
+          "started_at": "2026-11-24T13:02:43Z",
+          "completed_at": "2026-11-24T13:02:43Z"
         },
         {
           "number": 9,
           "name": "Post Set up Python",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-24T13:01:04Z",
-          "completed_at": "2026-11-24T13:01:04Z"
+          "started_at": "2026-11-24T13:02:43Z",
+          "completed_at": "2026-11-24T13:02:43Z"
         },
         {
           "number": 10,
           "name": "Post Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-24T13:01:04Z",
-          "completed_at": "2026-11-24T13:01:05Z"
+          "started_at": "2026-11-24T13:02:43Z",
+          "completed_at": "2026-11-24T13:02:43Z"
         },
         {
           "number": 11,
           "name": "Complete job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-24T13:01:05Z",
-          "completed_at": "2026-11-24T13:01:05Z"
+          "started_at": "2026-11-24T13:02:43Z",
+          "completed_at": "2026-11-24T13:02:43Z"
         }
       ],
       "log_capture": {
-        "available": true,
+        "available": false,
         "truncated": false,
-        "bytes": 35765,
-        "path": "logs/job-138462590770.log",
-        "error": null,
-        "marker_lines": [
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:01:04.8725647Z ERROR: Line 130: Embedded contract coverage must name its owner and live record.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:01:04.8726627Z ERROR: Line 132: invalid coverage template location for 'workspace/analysis/ANALYSIS_TEMPLATE.md': template must be in its owning skill's assets/ directory, novels/templates/, or the shared workspace root.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:01:04.8727451Z ERROR: Line 133: Embedded contract coverage must name its owner and live record.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:01:04.8728155Z ERROR: Line 135: invalid coverage template location for 'workspace/draft/DRAFT_TEMPLATE.md': template must be in its owning skill's assets/ directory, novels/templates/, or the shared workspace root.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:01:04.8728834Z ERROR: Line 136: Embedded contract coverage must name its owner and live record.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:01:04.8729488Z ERROR: Line 138: invalid coverage template location for 'workspace/adr/ADR_TEMPLATE.md': template must be in its owning skill's assets/ directory, novels/templates/, or the shared workspace root.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:01:04.8730207Z ERROR: Line 138: Markdown coverage pattern matches no in-scope document: 'workspace/adr/ADR-*.md'.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:01:04.8730846Z ERROR: 1 Markdown file(s) are not covered by the catalog: workspace/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:01:04.8731681Z Catalog validation failed: 8 error(s), 18 document type(s), 28 reference(s).",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-24T13:01:04.8786685Z ##[error]Process completed with exit code 1."
-        ]
+        "bytes": 82,
+        "path": "logs/job-138463567028.log",
+        "error": "run 45399356660 is still in progress; logs will be available when it is complete\n",
+        "marker_lines": []
       }
     }
   ],
   "check_runs": [
     {
-      "id": "138462590770",
+      "id": "138463567028",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-24T13:00:51Z",
-      "completed_at": "2026-11-24T13:01:06Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45399075293/job/138462590770",
+      "started_at": "2026-11-24T13:02:33Z",
+      "completed_at": "2026-11-24T13:02:45Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45399356660/job/138463567028",
       "app": "GitHub Actions",
       "annotations_count": 2
     }
   ],
   "annotations": [
     {
-      "check_run_id": "138462590770",
-      "job_id": "138462590770",
+      "check_run_id": "138463567028",
+      "job_id": "138463567028",
       "path": ".github",
       "start_line": 2,
       "end_line": 2,
@@ -177,11 +166,11 @@
       "raw_details": ""
     },
     {
-      "check_run_id": "138462590770",
-      "job_id": "138462590770",
+      "check_run_id": "138463567028",
+      "job_id": "138463567028",
       "path": ".github",
-      "start_line": 21,
-      "end_line": 21,
+      "start_line": 19,
+      "end_line": 19,
       "level": "failure",
       "title": "",
       "message": "Process completed with exit code 1.",
@@ -189,6 +178,12 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [],
-  "history_path": "history/427313089/45399075293-attempt-1-post_run"
+  "capture_errors": [
+    {
+      "source": "job_log",
+      "job_id": "138463567028",
+      "message": "run 45399356660 is still in progress; logs will be available when it is complete\n"
+    }
+  ],
+  "history_path": "history/427313089/45399356660-attempt-1-pre_finalizer"
 }
