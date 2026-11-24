@@ -1,10 +1,11 @@
 ## Current Step
 
-**2026-11-24 07:51 UTC — Read back the updated task, board, regression test, and branch head. Confirm the Blocked state and ensure the handoff records only verified CI evidence and outstanding hosted checks.**
+**2026-11-24 08:12 UTC — Record the green Diagnostics #530 result, all-severity handoff, renderer correction, and remaining natural capture retries. Keep the task In Progress; verify the pending retry lifecycle without dispatching or polling.**
 
 ## Open Discussions
 
-- **2026-11-24 07:51 UTC — Runner allocation blocker:** The latest Diagnostics (#525), Full Lint (#187), and Document Standards (#275) jobs failed before executing any steps. GitHub reports `runner_id: 0`, no runner name, empty step arrays, and no log URL. The underlying cause is unknown. Do not change workflow code or runner labels based on this evidence. Resume hosted validation when a job can execute.
+- **2026-11-24 08:12 UTC — Hosted runner allocation:** Older runnerless jobs included a GitHub annotation stating that the job was not started because recent account payments had failed or the spending limit needed to be increased. The annotation does not identify which account condition applied. Later jobs received runners and executed; do not alter runner labels.
+- **2026-11-24 08:12 UTC — Task renderer and hosted regression:** The Proposed board table lacked its header, and the renderer searched into later sections, placing Proposed rows under Historical. The renderer now bounds lookup to the target section and fails closed; all status tables and the seven Historical rows are restored. Diagnostics #530 passed 37 Ledger tests, 26 report tests, and 7 archive-retention tests. The live Ledger links all 40 lint findings, including 28 low-severity findings. Six incomplete capture IDs remain pending their bounded natural retries.
 
 - **2026-11-24 — CI logging scope and resolved-report retirement (user review required):**
   - **Current logging:** The Actions reporter stores complete post-run captures when it finds failed steps/jobs, workflow failure, timeout, action-required, or an independently classified issue. It skips ordinary success and cancellation-only runs. It also captures a successful workflow when a step failed but was non-blocking, and a cancelled run when an independent failure exists. Incomplete captures are operational evidence/pending retries, not Ledger findings.
