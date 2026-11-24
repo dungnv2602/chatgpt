@@ -84,6 +84,14 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 
 ## 6. Progress Log
 
+### 2026-11-24 04:36 UTC — Cover pending-run finalization
+
+- **Action:** Added regression test `test_completed_pending_run_gets_post_run_capture_and_clears_pending` in `reports/gh_ac_reports/scripts/test_report.py`.
+- **Result:** The test covers the pending-run reconciliation path: a completed run receives a separate immutable `post_run` capture, the latest pointer advances to that capture, the pending ID is cleared, and the original `pre_finalizer` evidence remains unchanged. Commit: `ce2e9c46fffd0430649af483e0cf46c7be029e0a`.
+- **Validation:** Repository code was not executed locally. No workflow was manually dispatched or polled. Hosted validation remains pending.
+- **Next:** Allow the normal push-triggered GitHub-hosted diagnostics workflow to validate the regression. Keep this task In Progress until that validation passes.
+
+
 ### 2026-11-24 — Repair diagnostics reporter regression gate
 
 - **Action:** Fixed the missing colon in the Ledger regression-test helper signature and defined the five required lint baseline tooling checks used by `lint_baseline_ready()`. Added regression coverage proving that a lint report with findings can seed a baseline only when every required tooling check and the Markdown link/anchor check pass.
