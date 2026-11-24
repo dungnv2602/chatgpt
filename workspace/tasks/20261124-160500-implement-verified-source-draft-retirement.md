@@ -5,13 +5,13 @@
 - **Template version:** 1.3
 - **ID:** 20261124-160500
 - **Created:** 2026-11-24 16:05 UTC
-- **Updated:** 2026-11-24 16:05 UTC
+- **Updated:** 2026-11-24 16:15 UTC
 - **Priority:** P1
-- **Status:** Proposed
+- **Status:** In Progress
 - **Origin:** User
-- **Approval:** Pending — decision approval is recorded in ADR-0002; task execution approval is separate.
+- **Approval:** Approved by user for execution on 2026-11-24 16:12 UTC.
 - **Governing ADR(s):** [ADR-0002 — Retire Source Drafts After Verified ADR Promotion](../adr/0002-retire-source-drafts-after-verified-adr-promotion.md)
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** None
 - **Ledger group:** None
@@ -28,7 +28,7 @@
 - **2026-11-24:** The user approved DRAFT-0003 revision 2, including the rationale completeness safeguard and the complete promotion protocol.
 - **2026-11-24:** The user explicitly authorized a narrow modification to archived ADR-0001 to resolve its link to DRAFT-0001. This permission does not authorize rewriting ADR-0001's accepted decision.
 - **2026-11-24:** ADR-0002 was created from the exact approved Draft, read back, checked, and accepted.
-- **2026-11-24:** Task execution approval remains pending for the remaining implementation work. Do not infer it from approval of ADR-0002.
+- **2026-11-24 16:12 UTC:** The user explicitly approved execution of task 20261124-160500. This approval authorizes the remaining implementation scope in this task under ADR-0002.
 
 ## 3. Objective
 
@@ -56,7 +56,7 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - **Accepted:** A provisional ADR uses `promotion-pending` and cannot authorize implementation.
 - **Accepted:** Rejected, withdrawn, and superseded Draft retention is outside this decision.
 - **Approved narrow change:** The user authorized the reference-only correction to ADR-0001.
-- **Pending:** Task execution approval for the remaining repository-wide implementation and DRAFT-0001 deletion.
+- **Approved execution:** The user approved task execution on 2026-11-24 16:12 UTC.
 
 ## 6. Progress Log
 
@@ -88,31 +88,42 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - **References:** ADR-0002 acceptance commit `b4da3f285c103bf7960dc07faabafb9a39f4fbbf`; DRAFT-0003 deletion commit `cf293d2d7bc3396eefb91360f0b36561d777ceb4`; Draft index and discussion register.
 - **Next:** Complete DRAFT-0001 migration only after task execution approval.
 
+### 2026-11-24 16:15 UTC
+
+- **Action:** Recorded the user's explicit execution approval and reconciled the task state.
+- **Result:** Task status is In Progress. Approval is Approved. The task is the current execution task. The repository baseline was read from branch `gpt`, including the task record, task board, ADR-0002, complete DRAFT-0001, archived ADR-0001, and the task-specific decision-governance skill.
+- **References:** User instruction at 2026-11-24 16:12 UTC; `workspace/discussion.md`; repository paths listed above.
+- **Next:** Complete the DRAFT-0001 rationale coverage assessment and inspect canonical document formats before editing governance files.
+
 ## 7. Current State
 
 - ADR-0002 is accepted and indexed.
 - ADR-0001 has a reference-only correction. Its accepted decision content remains unchanged.
-- DRAFT-0001 remains in the repository pending final migration and deletion authorization through this task.
+- DRAFT-0001 remains in the repository pending final migration and deletion.
 - DRAFT-0003 was deleted after ADR-0002 acceptance and promotion closeout.
 - The repository-wide governance files still contain the old preserve-after-promotion rule.
-- This task is Proposed. No remaining implementation work is authorized until the user approves this task's execution scope.
+- Task execution is approved. This task is In Progress and is the current execution task.
+- The complete DRAFT-0001 and archived ADR-0001 records have been retrieved. The direct rationale coverage assessment is not yet complete.
 
 ## 8. Remaining Work
 
 - Complete the DRAFT-0001 completeness coverage table and read back all linked permanent records.
 - Resolve any remaining reference to the DRAFT-0001 working path.
-- After task execution approval, delete DRAFT-0001 and verify its absence.
-- Delete DRAFT-0003 as part of the completed promotion transaction and verify its absence.
+- Delete DRAFT-0001 only after all material rationale is preserved in permanent ADR records and the reference checks pass.
 - Update all governance files and indexes required by ADR-0002.
 - Update ADR-0002 implementation task metadata and Confirmation evidence.
+- Read back every changed path.
 - Run and inspect the relevant hosted Document Standards validation.
 - Record the final migration and validation evidence.
 
 ## 9. Next Actions
 
-1. Present this task for explicit execution approval.
-2. After approval, finish the DRAFT-0001 completeness assessment, close out source deletion, and implement the remaining ADR-0002 requirements.
-3. Read back all changed paths and inspect hosted validation results.
+1. Compare DRAFT-0001 revision 1 against archived ADR-0001 and accepted ADR-0002. Record coverage for every ADR-0002 completeness criterion.
+2. Inspect the exact canonical templates, archive guidance, and Document Type Catalog entries required by the task.
+3. Implement the coordinated governance and index changes under ADR-0002.
+4. Search the permitted repository scope for active links to the DRAFT-0001 working path.
+5. Delete DRAFT-0001 only after the coverage and cross-reference gates pass.
+6. Read back all changed paths and inspect the hosted Document Standards validation result.
 
 ## 10. References
 
@@ -136,11 +147,16 @@ Implement ADR-0002's verified source-Draft retirement workflow across the reposi
 - **Check:** ADR-0001 legacy source link.
 - **Method:** Read back archived ADR-0001 and verify that the working-tree Draft path is absent while provenance commit remains.
 - **Result:** Passed.
-- **Limitations:** DRAFT-0001 itself remains until its migration gate and task approval pass.
+- **Limitations:** DRAFT-0001 itself remains until its migration gate and cross-reference checks pass.
+
+- **Check:** Task execution approval.
+- **Method:** Direct user instruction on 2026-11-24 16:12 UTC.
+- **Result:** Approved. Task activated as In Progress.
+- **Limitations:** This approval does not waive ADR-0002's completeness or cross-reference gates.
 
 ## 12. Handoff Instructions
 
-The next Worker must load the task-specific decision-governance skill and Document Standards. The task is Proposed and requires explicit user approval before the remaining implementation work starts. Do not treat ADR-0002 acceptance as task execution approval. Preserve DRAFT-0001 until the full completeness check and cross-reference checks pass. Do not edit ADR-0001 beyond the already authorized reference-only correction. Do not modify foundational initialization.
+Continue under ADR-0002 and the approved task scope. Preserve DRAFT-0001 until the complete rationale comparison and cross-reference checks pass. Do not edit ADR-0001 beyond the already authorized reference-only correction. Do not modify foundational initialization. Do not add hooks, scripts, automatic approval, or unrelated work.
 
 ## 13. Ledger Findings
 
