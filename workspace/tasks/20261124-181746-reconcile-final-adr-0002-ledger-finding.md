@@ -66,9 +66,17 @@ Ensure the final resolved ADR-0002 finding appears in a Done task archive. Allow
 - **References:** [Ledger update commit](https://github.com/dungnv2602/chatgpt/commit/0ffd852a3311da403f23393fda96d503304bdf1a); finding `lint-7614765438b1a170a448306a`.
 - **Next:** Archive this task as Done and register its exact path.
 
+
+### 2026-11-24 18:18 UTC
+
+- **Action:** Rechecked the exact finding and the immutable task archive. Added this task ID to the finding.
+- **Result:** The finding now links to this task and task 20261124-161334-05. Its resolved status and validation evidence remain intact.
+- **References:** [Ledger link commit](https://github.com/dungnv2602/chatgpt/commit/0ffd852a3311da403f23393fda96d503304bdf1a); [task update commit](https://github.com/dungnv2602/chatgpt/commit/8341934be3b3fd673fd187b9c8167718ccefafc5).
+- **Next:** Archive this task and register its exact path. The diagnostics sweep can then retire the finding.
+
 ## 7. Current State
 
-The resolved finding now links to this task. Its fix commit and successful hosted validation remain recorded. The task is ready for archival.
+The finding is resolved and links to this task. The fix commit and successful hosted validation remain recorded. The archive copy can now preserve the missing finding link.
 
 ## 8. Remaining Work
 
