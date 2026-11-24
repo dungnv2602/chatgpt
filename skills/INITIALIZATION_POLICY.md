@@ -170,8 +170,7 @@ Use this template:
 - [ ] Foundational initialization runs only once when the user gives both cues.
 - [ ] The Worker and its mandatory Conversation Mode reference load during foundational initialization.
 - [ ] Agent Skill Authoring loads only on demand.
-- [ ] Document Standards loads during foundational initialization.
-- [ ] Its catalog and specific assets load only when required.
+- [ ] Document Standards loads during foundational initialization; its catalog and specific assets load only when required.
 - [ ] The Worker's archive/media references load only when required.
 - [ ] ASD-STE100 loads during foundational initialization.
 - [ ] Skill and technical documentation use the approved writing mode.
