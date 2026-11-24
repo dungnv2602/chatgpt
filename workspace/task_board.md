@@ -8,12 +8,15 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 ## Current Execution
 
-No active implementation task is selected.
+| ID | Task | Priority | Status | Record |
+|---|---|---:|---|---|
+| 20261124-160500 | Implement verified source-Draft retirement and migrate DRAFT-0001 | P1 | In Progress | [Task record](tasks/20261124-160500-implement-verified-source-draft-retirement.md) |
 
 ## In Progress
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
+| 20261124-160500 | Implement verified source-Draft retirement and migrate DRAFT-0001 | P1 | In Progress | User | 2026-11-24 | ADR-0002 | [Task record](tasks/20261124-160500-implement-verified-source-draft-retirement.md) |
 
 
 ## Ready
@@ -41,7 +44,6 @@ No active implementation task is selected.
 | 20261124-161334-02 | Review passive-voice findings in workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-161334-02-review-passive-voice-findings-in-workspace-adr-0002-retire-sourc.md) |
 | 20261124-161334-01 | Review present-perfect findings in workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-161334-01-review-present-perfect-findings-in-workspace-adr-0002-retire-sou.md) |
 | 20261124-161334 | Review semicolon findings in workspace/adr/README.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-161334-review-semicolon-findings-in-workspace-adr-readme-md.md) |
-| 20261124-160500 | Implement verified source-Draft retirement and migrate DRAFT-0001 | P1 | Proposed | User | 2026-11-24 | ADR-0002 | [Task record](tasks/20261124-160500-implement-verified-source-draft-retirement.md) |
 | 20261124-155748-05 | Review semicolon findings in workspace/draft/DRAFT-0003-retire-source-drafts-after-verified-adr-promotion.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-155748-05-review-semicolon-findings-in-workspace-draft-draft-0003-retire-s.md) |
 | 20261124-155748-04 | Review passive-voice findings in workspace/draft/DRAFT-0003-retire-source-drafts-after-verified-adr-promotion.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-155748-04-review-passive-voice-findings-in-workspace-draft-draft-0003-reti.md) |
 | 20261124-155748-03 | Review present-perfect findings in workspace/draft/DRAFT-0003-retire-source-drafts-after-verified-adr-promotion.md | P3 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-155748-03-review-present-perfect-findings-in-workspace-draft-draft-0003-re.md) |
@@ -70,11 +72,11 @@ No active implementation task is selected.
 | 20261124-111733-04 | Review present-perfect findings in skills/the-worker/SKILL.md | P3 | Proposed | Assistant | 2026-11-24 | — | [Task record](tasks/20261124-111733-04-review-present-perfect-findings-in-skills-the-worker-skill-md.md) |
 | 20261124-111733-03 | Review synonym-rotation findings in skills/the-worker/SKILL.md | P2 | Proposed | Assistant | 2026-11-24 | — | [Task record](tasks/20261124-111733-03-review-synonym-rotation-findings-in-skills-the-worker-skill-md.md) |
 | 20261124-111733-02 | Review passive-voice findings in skills/the-worker/SKILL.md | P3 | Proposed | Assistant | 2026-11-24 | — | [Task record](tasks/20261124-111733-02-review-passive-voice-findings-in-skills-the-worker-skill-md.md) |
-| 20261124-111733-01 | Review semicolon findings in skills/the-worker/SKILL.md | P2 | Proposed | Assistant | 2026-11-24 | — | [Task record](tasks/20261124-111733-01-review-semicolon-findings-in-skills-the-worker-skill-md.md) |
+| 20261124-111733-01 | Review semicolon findings in skills/the-worker/SKILL.md | P2 | Proposed | Assistant | 2026-11-24 | Pending | [Task record](tasks/20261124-111733-01-review-semicolon-findings-in-skills-the-worker-skill-md.md) |
 | 20261124-111733 | Review long-sentence findings in skills/the-worker/SKILL.md | P2 | Proposed | Assistant | 2026-11-24 | — | [Task record](tasks/20261124-111733-review-long-sentence-findings-in-skills-the-worker-skill-md.md) |
 | 20261124-104408-03 | Review long-sentence findings in workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md | P2 | Proposed | Assistant | 2026-11-24 | — | [Task record](tasks/20261124-104408-03-review-long-sentence-findings-in-workspace-draft-draft-0001-repo.md) |
 | 20261124-104408-02 | Review synonym-rotation findings in workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md | P2 | Proposed | Assistant | 2026-11-24 | — | [Task record](tasks/20261124-104408-02-review-synonym-rotation-findings-in-workspace-draft-draft-0001-r.md) |
-| 20261124-104408-01 | Review present-perfect findings in workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md | P3 | Proposed | Assistant | 2026-11-24 | — | [Task record](tasks/20261124-104408-01-review-present-perfect-findings-in-workspace-draft-draft-0001-re.md) |
+| 20261124-104408-01 | Review present-perfect findings in workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md | P3 | Proposed | Assistant | 2026-11-24 | — | [Task record](tasks/20261124-104408-01-review-present-perfect-findings-in-workspace-draft-draft-0001-repo.md) |
 | 20261124-104408 | Review passive-voice findings in workspace/draft/DRAFT-0001-repository-decision-governance-and-analysis.md | P3 | Proposed | Assistant | 2026-11-24 | — | [Task record](tasks/20261124-104408-review-passive-voice-findings-in-workspace-draft-draft-0001-repo.md) |
 | 20261124-104329 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Validate the document | P2 | Proposed | Assistant | 2026-11-24 | — | [Task record](tasks/20261124-104329-review-validation-or-test-failures-in-validate-document-standard.md) |
 | 20261124-104204-09 | Review synonym-rotation findings in workspace/README.md | P2 | Proposed | Assistant | 2026-11-24 | — | [Task record](tasks/20261124-104204-09-review-synonym-rotation-findings-in-workspace-readme-md.md) |
