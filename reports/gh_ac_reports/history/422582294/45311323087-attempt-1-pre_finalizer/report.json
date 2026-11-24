@@ -1,0 +1,224 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45311323087",
+    "number": 67,
+    "attempt": 1,
+    "workflow_id": 422582294,
+    "workflow_name": "Process Image Takeout and Create WebP Derivatives",
+    "workflow_path": ".github/workflows/convert-images-to-webp.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45311323087",
+    "event": "workflow_dispatch",
+    "branch": "gpt",
+    "head_sha": "0095d72fbedfb189f9975146b5a78b46690f0431",
+    "status": "in_progress",
+    "conclusion": null,
+    "created_at": "2026-11-24T02:17:51Z",
+    "run_started_at": "2026-11-24T02:17:51Z",
+    "updated_at": "2026-11-24T02:18:25Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Track Image Takeout run 66 regression repair"
+  },
+  "capture": {
+    "stage": "pre_finalizer",
+    "captured_at_utc": "2026-11-24T02:18:45Z",
+    "completeness": "Incomplete",
+    "reporter_job": {
+      "id": "138167695754",
+      "name": "Capture GH Actions diagnostics",
+      "status": "in_progress",
+      "conclusion": null
+    }
+  },
+  "classification": {
+    "state": "in_progress",
+    "observed_conclusion": null,
+    "projected_conclusion": "failure",
+    "primary_category": "build_or_processing",
+    "categories": [
+      "build_or_processing"
+    ],
+    "issues": [
+      {
+        "category": "build_or_processing",
+        "job_id": "138167487833",
+        "job_name": "process-image-takeout",
+        "step_number": 9,
+        "step_name": "Mark processing failures",
+        "blocking": true,
+        "confidence": "medium",
+        "message": "Step conclusion: failure"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "138167487833",
+      "name": "process-image-takeout",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-24T02:17:54Z",
+      "completed_at": "2026-11-24T02:18:22Z",
+      "runner_name": "GitHub Actions 1000001909",
+      "runner_id": 1000001909,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T02:17:55Z",
+          "completed_at": "2026-11-24T02:17:56Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T02:17:56Z",
+          "completed_at": "2026-11-24T02:18:05Z"
+        },
+        {
+          "number": 3,
+          "name": "Install WebP encoder and YAML parser",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T02:18:05Z",
+          "completed_at": "2026-11-24T02:18:12Z"
+        },
+        {
+          "number": 4,
+          "name": "Compile takeout processor and publication verifier",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T02:18:12Z",
+          "completed_at": "2026-11-24T02:18:12Z"
+        },
+        {
+          "number": 5,
+          "name": "Test takeout processor",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T02:18:12Z",
+          "completed_at": "2026-11-24T02:18:18Z"
+        },
+        {
+          "number": 6,
+          "name": "Process takeout hand-off",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T02:18:18Z",
+          "completed_at": "2026-11-24T02:18:18Z"
+        },
+        {
+          "number": 7,
+          "name": "Commit and safely publish processed assets and reports",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T02:18:18Z",
+          "completed_at": "2026-11-24T02:18:20Z"
+        },
+        {
+          "number": 8,
+          "name": "Verify published assets and GitHub links",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-24T02:18:20Z",
+          "completed_at": "2026-11-24T02:18:20Z"
+        },
+        {
+          "number": 9,
+          "name": "Mark processing failures",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-11-24T02:18:20Z",
+          "completed_at": "2026-11-24T02:18:20Z"
+        },
+        {
+          "number": 18,
+          "name": "Post Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T02:18:20Z",
+          "completed_at": "2026-11-24T02:18:20Z"
+        },
+        {
+          "number": 19,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-24T02:18:20Z",
+          "completed_at": "2026-11-24T02:18:20Z"
+        }
+      ],
+      "log_capture": {
+        "available": false,
+        "truncated": false,
+        "bytes": 82,
+        "path": "logs/job-138167487833.log",
+        "error": "run 45311323087 is still in progress; logs will be available when it is complete\n",
+        "marker_lines": []
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "138167487833",
+      "name": "process-image-takeout",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-24T02:17:54Z",
+      "completed_at": "2026-11-24T02:18:22Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45311323087/job/138167487833",
+      "app": "GitHub Actions",
+      "annotations_count": 3
+    }
+  ],
+  "annotations": [
+    {
+      "check_run_id": "138167487833",
+      "job_id": "138167487833",
+      "path": ".github",
+      "start_line": 7,
+      "end_line": 7,
+      "level": "failure",
+      "title": "",
+      "message": "Process completed with exit code 1.",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "138167487833",
+      "job_id": "138167487833",
+      "path": ".github",
+      "start_line": 6,
+      "end_line": 6,
+      "level": "failure",
+      "title": "",
+      "message": "Takeout processing failed. The hand-off remains active; inspect the archived diagnostic report.",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "138167487833",
+      "job_id": "138167487833",
+      "path": ".github",
+      "start_line": 8,
+      "end_line": 8,
+      "level": "failure",
+      "title": "",
+      "message": "Process completed with exit code 1.",
+      "raw_details": ""
+    }
+  ],
+  "artifacts": [],
+  "capture_errors": [
+    {
+      "source": "job_log",
+      "job_id": "138167487833",
+      "message": "run 45311323087 is still in progress; logs will be available when it is complete\n"
+    }
+  ],
+  "history_path": "history/422582294/45311323087-attempt-1-pre_finalizer"
+}

@@ -4,6 +4,23 @@
     {
       "workflow_id": 422582294,
       "workflow_name": "Process Image Takeout and Create WebP Derivatives",
+      "run_id": "45311323087",
+      "run_number": 67,
+      "attempt": 1,
+      "capture_stage": "pre_finalizer",
+      "created_at": "2026-11-24T02:17:51Z",
+      "captured_at_utc": "2026-11-24T02:18:45Z",
+      "source_status": "in_progress",
+      "source_conclusion": null,
+      "projected_conclusion": "failure",
+      "report_status": "Incomplete",
+      "primary_category": "build_or_processing",
+      "history_path": "history/422582294/45311323087-attempt-1-pre_finalizer",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45311323087"
+    },
+    {
+      "workflow_id": 422582294,
+      "workflow_name": "Process Image Takeout and Create WebP Derivatives",
       "run_id": "45309899583",
       "run_number": 66,
       "attempt": 1,
@@ -73,18 +90,18 @@
   "latest_report": {
     "workflow_id": 422582294,
     "workflow_name": "Process Image Takeout and Create WebP Derivatives",
-    "run_id": "45309899583",
-    "run_number": 66,
+    "run_id": "45311323087",
+    "run_number": 67,
     "attempt": 1,
     "capture_stage": "pre_finalizer",
-    "created_at": "2026-11-24T02:06:14Z",
-    "captured_at_utc": "2026-11-24T02:07:03Z",
+    "created_at": "2026-11-24T02:17:51Z",
+    "captured_at_utc": "2026-11-24T02:18:45Z",
     "source_status": "in_progress",
     "source_conclusion": null,
     "projected_conclusion": "failure",
     "report_status": "Incomplete",
-    "primary_category": "validation_or_test",
-    "history_path": "history/422582294/45309899583-attempt-1-pre_finalizer",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45309899583"
+    "primary_category": "build_or_processing",
+    "history_path": "history/422582294/45311323087-attempt-1-pre_finalizer",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45311323087"
   }
 }
