@@ -3,9 +3,13 @@
 **Template version:** 1.1
 
 **Project:** [Project name]
+
 **Branch:** `gpt`
+
 **Session brief:** [Relative link to the session brief, or Not applicable]
+
 **Primary series:** [Series name or standalone/unassigned]
+
 **Session status:** [Active / Paused / Closed]
 
 This is the daily ledger. Each attempt has one record. The session brief governs visual direction.
