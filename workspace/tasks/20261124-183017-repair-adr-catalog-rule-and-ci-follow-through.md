@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261124-183017
 - **Created:** 2026-11-24 18:30 UTC
-- **Updated:** 2026-11-24 18:32 UTC
+- **Updated:** 2026-11-24 18:34 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -69,21 +69,29 @@ Repair the Document Standards catalog failure caused by the now-empty active ADR
 - **References:** [Repair commit](https://github.com/dungnv2602/chatgpt/commit/fa59f9861823ce4d3ab11a69a8d4461339e9e47c); `skills/document-standards/references/document-type-catalog.md`; `skills/the-worker/SKILL.md`.
 - **Next:** Review hosted validation when naturally available; do not poll.
 
+### 2026-11-24 18:34 UTC
+
+- **Action:** Reviewed the naturally published STE Lint report for run #679 after commit `fa59f9861823ce4d3ab11a69a8d4461339e9e47c`.
+- **Result:** The report evaluated three files. The catalog and task board passed with zero findings. The Worker skill had 34 findings: 19 hard and 15 advisory. All report tooling checks passed. The findings include existing text in the file that became in-scope when the skill changed, as well as issues in the new procedure. No lint rule or baseline was changed.
+- **References:** [STE Lint #679 report](../../reports/lint_reports/on_changed/history/45460721790-attempt-1/report.md); [STE Lint #679 run](https://github.com/dungnv2602/chatgpt/actions/runs/45460721790).
+- **Next:** Rewrite the affected Worker skill sentences and preserve the procedure's requirements.
+
 ## 7. Current State
 
-The catalog rule is now Reserved, and The Worker contains an explicit user-directed CI failure follow-through procedure. Commit `fa59f9861823ce4d3ab11a69a8d4461339e9e47c` contains both changes and the task progress update. All three changed paths were read back, and the commit metadata lists exactly those three paths. The branch head matches the repair commit. Hosted validation is pending and has not been polled.
+The catalog rule is Reserved. The Worker now contains the user-directed CI follow-through procedure. Commit `fa59f9861823ce4d3ab11a69a8d4461339e9e47c` contains those changes. STE Lint #679 then evaluated the catalog, task board, and Worker skill. The catalog and task board passed with zero findings. The Worker skill failed with 34 findings (19 hard and 15 advisory). The report's tooling checks all passed. The current task is fixing those findings without weakening lint rules.
 
 ## 8. Remaining Work
 
-- Observe the naturally triggered Document Standards and STE Lint validation results without polling.
-- If validation passes, complete the task archive and board closeout. If it fails, inspect the exact new failure and repair it within scope.
-- Keep the task In Progress until hosted validation is observed.
+- Rewrite the 34 findings in `skills/the-worker/SKILL.md` while preserving the existing workflow requirements and new CI follow-through procedure.
+- Read back the revised skill and task record and inspect commit metadata.
+- Observe the naturally triggered STE Lint and Document Standards results without polling.
+- Keep the task In Progress until hosted validation passes.
 
 ## 9. Next Actions
 
-1. Review the naturally available hosted validation result for commit `fa59f9861823ce4d3ab11a69a8d4461339e9e47c` without polling.
-2. Repair any new task-scoped failure if required.
-3. After validation passes, archive this task and reconcile the task board.
+1. Commit the STE-compliant Worker skill rewrite and update this progress record.
+2. Read back all changed paths and inspect commit metadata.
+3. Review the next hosted validation results when naturally available. Archive this task only after all relevant checks pass.
 
 ## 10. References
 
