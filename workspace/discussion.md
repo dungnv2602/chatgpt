@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 11:28 UTC — Verify renderer and runner evidence:** Inspect the Ledger task renderer and its regression tests. Check Diagnostics #530 job logs for the recorded test totals. Inspect the incomplete runner reports and later successful hosted jobs. Update [task 20261124-111700](tasks/20261124-111700-resolve-ci-discussion-items.md) with verified results.
+**2026-11-24 11:34 UTC — Reconcile the Worker lint-ingestion policy:** Load Agent Skill Authoring and the ASD repository writing policy. Compare every CI Ledger task-eligibility statement in `skills/the-worker/SKILL.md` with the approved policy in `reports/triage/README.md`. Make only the required documentation changes and read back the committed skill.
 ## Open Discussions
 
 - **2026-11-24 10:46 UTC — Review the repository decision-governance proposal:** [DRAFT-0001 — Establish Draft-to-ADR Governance and Repository Analysis](draft/DRAFT-0001-repository-decision-governance-and-analysis.md). Review the proposed use of MADR, Draft and ADR lifecycles, task-to-ADR enforcement, permanent ADR archiving, the `workspace/analysis/` location and cadence, and the proposed `decision-governance` skill. The exact revision 1 is awaiting the user's decision. Do not create ADR-0001 until explicit approval.
