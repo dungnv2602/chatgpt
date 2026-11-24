@@ -1,19 +1,19 @@
-# Task: Review passive-voice findings in workspace/adr/0002-retire-source-drafts-after-verified-adr-promotion.md
+# Task: Remediate passive-voice findings in ADR-0002
 
 ## Metadata
 
 - **Template version:** 1.3
 - **ID:** 20261124-161334-02
 - **Created:** 2026-11-24 16:13 UTC
-- **Updated:** 2026-11-24 17:23 UTC
+- **Updated:** 2026-11-24 17:55 UTC
 - **Priority:** P3
-- **Status:** Proposed
+- **Status:** In Progress
 - **Origin:** Assistant
-- **Approval:** Pending user approval
-- **Governing ADR(s):** Pending — Worker review required before approval
+- **Approval:** Approved by user on 2026-11-25 for lint-only editorial corrections to ADR-0002, with the accepted decision meaning and scope preserved
+- **Governing ADR(s):** ADR-0002
 - **Current execution:** No
 - **Dependencies:** None
-- **Related tasks:** None
+- **Related tasks:** 20261124-161334-01, 20261124-161334-03, 20261124-161334-04, 20261124-161334-05
 - **Ledger group:** `ci-9fc7b33cc97e4012`
 - **Archived:** No
 
@@ -26,24 +26,27 @@ Automated CI Ledger capture: actionable findings were recorded during event-driv
 ## 2. Subsequent Instructions
 
 - **Standing instruction:** The user authorized Ledger-created task records and prefers event-driven ingestion, not periodic polling.
+- **2026-11-25 — User instruction:** “Fix rhe linting of ADR-0002 so it can be retired”
 
 ## 3. Objective
 
-Review and remediate the related CI findings listed below after approval. Preserve source validation rules and diagnostic evidence.
+Remediate all passive-voice findings in ADR-0002 so the ADR can pass hosted STE lint and proceed to permanent archival. Preserve the accepted decision's meaning, rationale, options, scope, and safeguards.
 
 ## 4. Requirements
 
-1. Inspect every linked report and exact diagnostic before proposing a fix.
-2. Keep related findings grouped in this task.
-3. Do not weaken lint rules, test coverage, workflow conclusions, or evidence requirements.
-4. Obtain user approval before remediation when required by the Worker approval rules.
-5. Resolve ledger findings only after a fix commit and successful relevant validation are recorded.
+1. Inspect the exact diagnostics in hosted run [#670](https://github.com/dungnv2602/chatgpt/actions/runs/45447915270).
+2. Correct every passive-voice occurrence in ADR-0002 without changing the accepted decision or its approved scope.
+3. Preserve all facts, conditions, constraints, modality, safeguards, and chronology.
+4. Do not weaken lint rules, tests, workflow coverage, or the baseline.
+5. Record a finding as resolved only after the fix commit and successful relevant hosted validation exist.
+6. Do not archive ADR-0002 until all Confirmation criteria pass and all linked implementation tasks are Done.
 
 ## 5. Decisions
 
 - **Approved:** Event-driven task capture by the Ledger during ingestion.
 - **Approved:** Group findings by the stable remediation key.
-- **Boundary:** This task is Proposed. Automated capture does not approve code changes or authorize automatic remediation.
+- **Approval:** The user explicitly approved lint-only editorial corrections on 2026-11-25.
+- **Boundary:** Preserve the accepted decision's meaning and scope. Do not change policy, rationale, options, safeguards, or implementation scope.
 
 ## 6. Progress Log
 
@@ -56,18 +59,22 @@ Review and remediate the related CI findings listed below after approval. Preser
 
 ## 7. Current State
 
-The Ledger recorded the findings and created this task handoff. Root cause, remediation, and validation have not been assessed.
+The user approved lint-only editorial corrections to ADR-0002. This task covers 13 passive-voice finding occurrence(s) from hosted run 45447915270. The accepted decision content remains unchanged in meaning. No source edit or finding resolution is complete yet.
 
 ## 8. Remaining Work
 
-- Worker must inspect linked evidence and determine whether the findings share one remediation.
-- Remediation requires approval under the Worker rules.
-- No validation or resolution has been claimed.
+- Apply the authorized editorial corrections to ADR-0002.
+- Read back the complete ADR and confirm that its decision meaning and scope remain unchanged.
+- Obtain a successful hosted STE lint result for the changed ADR.
+- Resolve the linked Ledger finding only after the fix commit and successful hosted validation are recorded.
+- Close this task through the Worker archive process after its finding becomes terminal.
 
 ## 9. Next Actions
 
-1. Inspect the linked report evidence and confirm the remediation scope.
-2. Request or record approval, then remediate and verify the findings.
+1. Apply the coordinated wording changes to ADR-0002.
+2. Read back the complete file and review semantic preservation.
+3. Record the successful hosted STE lint result when it becomes available. Do not poll CI.
+4. Close this task only after the linked Ledger finding is terminal.
 
 ## 10. References
 
@@ -76,14 +83,14 @@ The Ledger recorded the findings and created this task handoff. Root cause, reme
 
 ## 11. Verification
 
-- **Check:** Ledger schema and finding eligibility.
-- **Method:** Validated by the ingestion process before task publication.
-- **Result:** Task handoff generated from accepted ledger findings.
-- **Limitations:** This does not verify root cause or remediation.
+- **Check:** Baseline finding identity and task eligibility.
+- **Method:** Inspected the structured Ledger entry and hosted report 45447915270.
+- **Result:** The finding is open and linked to this task. The report evaluated ADR-0002 and recorded 13 passive-voice occurrence(s).
+- **Limitations:** This is baseline evidence only. It does not verify remediation or a successful lint result.
 
 ## 12. Handoff Instructions
 
-Read the linked source reports, confirm the remediation grouping, and obtain approval before changing source files. Do not poll CI or run periodic ledger scans.
+Preserve the accepted decision's meaning and scope. Do not weaken lint rules or baselines. Do not run repository scripts locally. Do not poll CI. Resolve the Ledger finding only after a fix commit and successful relevant hosted validation. Keep the task open until its finding is terminal.
 
 ## 13. Ledger Findings
 
@@ -106,3 +113,10 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 | `lint-55c2f7882df07adcfce356d5` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) |
 | `lint-cb69fc175cc5d06b9d0e4942` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) |
 | `lint-1f05f232e3f4079a09edc109` | low | passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant. | [report](../../reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45436626400) |
+
+### 2026-11-24 17:55 UTC
+
+- **Action:** Reviewed hosted STE Lint run 45447915270 and the user's explicit authorization.
+- **Result:** Activated this remediation task for 13 passive-voice finding occurrence(s). The current scope is editorial correction only. No lint finding is resolved yet.
+- **References:** [STE Lint run 45447915270](https://github.com/dungnv2602/chatgpt/actions/runs/45447915270); ADR-0002; the user's instruction dated 2026-11-25.
+- **Next:** Apply the coordinated ADR-0002 wording corrections, read back the changed file, and use hosted validation evidence before resolving findings.
