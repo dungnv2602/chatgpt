@@ -6,6 +6,7 @@
   },
   "sweep_watermark_utc": "2026-11-23T23:38:33Z",
   "pending_run_ids": [
+    "45306543050",
     "45305320198",
     "45304735363",
     "45301729199",
@@ -21,6 +22,23 @@
   ],
   "exhausted_run_ids": [],
   "runs": [
+    {
+      "workflow_id": 422582294,
+      "workflow_name": "Process Image Takeout and Create WebP Derivatives",
+      "run_id": "45306543050",
+      "run_number": 65,
+      "attempt": 1,
+      "capture_stage": "pre_finalizer",
+      "created_at": "2026-11-24T01:38:35Z",
+      "captured_at_utc": "2026-11-24T01:39:21Z",
+      "source_status": "in_progress",
+      "source_conclusion": null,
+      "projected_conclusion": "failure",
+      "report_status": "Incomplete",
+      "primary_category": "validation_or_test",
+      "history_path": "history/422582294/45306543050-attempt-1-pre_finalizer",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45306543050"
+    },
     {
       "workflow_id": 422582294,
       "workflow_name": "Process Image Takeout and Create WebP Derivatives",
@@ -229,18 +247,18 @@
   "latest_report": {
     "workflow_id": 422582294,
     "workflow_name": "Process Image Takeout and Create WebP Derivatives",
-    "run_id": "45305320198",
-    "run_number": 64,
+    "run_id": "45306543050",
+    "run_number": 65,
     "attempt": 1,
     "capture_stage": "pre_finalizer",
-    "created_at": "2026-11-24T01:28:41Z",
-    "captured_at_utc": "2026-11-24T01:29:26Z",
+    "created_at": "2026-11-24T01:38:35Z",
+    "captured_at_utc": "2026-11-24T01:39:21Z",
     "source_status": "in_progress",
     "source_conclusion": null,
     "projected_conclusion": "failure",
     "report_status": "Incomplete",
     "primary_category": "validation_or_test",
-    "history_path": "history/422582294/45305320198-attempt-1-pre_finalizer",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45305320198"
+    "history_path": "history/422582294/45306543050-attempt-1-pre_finalizer",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45306543050"
   }
 }
