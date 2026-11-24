@@ -5,7 +5,7 @@
 - **Template version:** 1.1
 - **ID:** 20261123-054904
 - **Created:** 2026-11-23 05:49 UTC
-- **Updated:** 2026-11-24 03:42 UTC
+- **Updated:** 2026-11-24 06:10 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -83,6 +83,15 @@ Add a reliable, detailed reporting system for GitHub Actions failures outside th
 - Do not start unrelated cleanup or fix the existing lint findings as part of this reporting task.
 
 ## 6. Progress Log
+
+### 2026-11-24 06:10 UTC — Fix hosted Ledger and Document Standards blockers
+
+- **Action:** Corrected the Ledger baseline regression test to wrap the string path returned by `add_lint()` in `Path()` before calling `read_text()`. Registered `images/takeout/history/**/*.md` as Optional Generator-owned coverage, documented the generated verification-report path in the inventory, and added validator regression tests for both an empty history family and nested generated reports.
+- **Result:** Published atomically to branch `gpt` in commit [27065a9](https://github.com/dungnv2602/chatgpt/commit/27065a96361353b5ce381da8e992000ad3e180d9). Read back all three changed files. No repository code or tests were run locally.
+- **Hosted runs triggered by the same push:** [GitHub Actions Diagnostics](https://github.com/dungnv2602/chatgpt/actions/runs/45338489440) was `in_progress`; [Validate Document Standards](https://github.com/dungnv2602/chatgpt/actions/runs/45338489454) was `in_progress`. [STE Lint Changed Documentation](https://github.com/dungnv2602/chatgpt/actions/runs/45338489436) was also triggered by the `skills/**` changes; it is incidental to this task.
+- **Validation status:** No hosted conclusion is claimed yet. The required workflows were triggered by the single push; no workflow was manually dispatched and no run was polled.
+- **Next:** Review the natural completed results when available. Do not dispatch or poll. Keep the task In Progress until the required hosted validation and report-reconciliation criteria are satisfied.
+
 
 ### 2026-11-24 04:50 UTC — Verify pending-run reconciliation and regression fixes
 
