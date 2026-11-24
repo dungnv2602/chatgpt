@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 17:54 UTC — Confirm approved scope and activate remediation:** Retrieve the exact approved DRAFT-0003 revision and verify the ADR template migration requirements. Record the user's explicit authorization for lint-only editorial corrections. Activate the five existing ADR-0002 lint tasks and update the board before editing the ADR.
+**2026-11-24 17:56 UTC — Edit ADR-0002 and preserve its decision:** Apply the authorized lint-only wording corrections across the accepted ADR. Add the missing Version 1.1 provenance metadata from approved DRAFT-0003 revision 2. Preserve all decision facts, options, scope, conditions, safeguards, and chronology. Read back the complete ADR before recording the result.
 
 ## Open Discussions
 
