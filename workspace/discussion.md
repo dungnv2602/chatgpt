@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 13:33 UTC — Inspect newly published validation evidence:** Review the available Document Standards and changed-document lint reports. Match each report to its exact source commit. Determine whether the catalog correction and Ledger handoff checks have verified results. Do not poll Actions. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 13:38 UTC — Close the Ledger handoff criterion and expose its tests to hosted validation:** Verify the three generated task handoffs remain Proposed with ADR status Pending. Add the Ledger regression suite and its source paths to the Document Standards workflow. Keep post-fix catalog validation pending until a complete result appears. Do not poll Actions. [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 
 ## Open Discussions
 
