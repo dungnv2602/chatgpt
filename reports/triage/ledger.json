@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-24T17:00:50Z",
+  "updated_at_utc": "2026-11-24T17:01:28Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
@@ -249,6 +249,7 @@
       "reports/lint_reports/on_changed/history/45436626400-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45440436265-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45442492124-attempt-1/report.json",
+      "reports/lint_reports/on_changed/history/45443670075-attempt-1/report.json",
       "reports/lint_reports/on_repo/history/45301729199-attempt-1/report.json",
       "reports/lint_reports/on_repo/history/45330179454-attempt-1/report.json",
       "reports/lint_reports/on_repo/history/45330655561-attempt-1/report.json",
@@ -12683,6 +12684,35 @@
         "20261124-164450"
       ],
       "task_group": "ci-7dfbd5dc4403acee"
+    },
+    {
+      "finding_id": "lint-745fe2084d6ac713461ff51a",
+      "source_family": "lint",
+      "category": "synonym-rotation",
+      "title": "synonym-rotation: 'check' and 'confirm' name the same action. Pick one and use it every time.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-24T17:01:09.349407+00:00",
+      "last_seen_utc": "2026-11-24T17:01:09.349407+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": "reports/lint_reports/on_changed/history/45443670075-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45443670075",
+          "observed_at_utc": "2026-11-24T17:01:09.349407+00:00",
+          "note": "on_changed · skills/decision-governance/SKILL.md:96:56",
+          "observation_id": "lint:45443670075:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261124-125956"
+      ],
+      "task_group": "ci-d301c2ee69d70122"
     }
   ]
 }
