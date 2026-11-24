@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261123-162826
 - **Created:** 2026-11-23 16:28 UTC
-- **Updated:** 2026-11-24 02:27 UTC
+- **Updated:** 2026-11-24 03:38 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -148,30 +148,32 @@ Investigate the 18 images committed under images/takeout/, determine which have 
 - **Regression coverage:** The mixed-batch test now requires an unclassified derivative and unchanged original. The all-unclassified test expects conversion without relocation. New tests cover unclassified conversion failure blocking mapped relocation and retrying into the next attempt directory. The suite defines 47 tests; no tests have been run locally or in Actions.
 - **Next:** Read back every changed path and the branch head. Then obtain a hosted normal-workflow run. No source image has been processed by this code change.
 
-## 7. Current State
+## 7\. Current State
 
-The processor and regression suite now pass hosted verification: run [#68](https://github.com/dungnv2602/chatgpt/actions/runs/45312157558) compiled both scripts and passed all 48 tests. Intake metadata validation also passed. The run then stopped in preflight while preparing drawing-session README updates because `drawings/2026-11-21/README.md` used a legacy five-column attempt table instead of the required six-column schema ending in `Image`. This happened before staging directories were created or any image conversion began. No originals or derivatives were relocated or created. All eighteen original PNGs remain at the intake root, and the active hand-off remains Ready.
+The approved Image Takeout workflow has now completed a successful hosted run. Run [#69](https://github.com/dungnv2602/chatgpt/actions/runs/45313390427) processed all 18 intake images after the six-column daily README repair.
 
-The daily README was updated in [bff5bf9](https://github.com/dungnv2602/chatgpt/commit/bff5bf984e4bbd878b6569b93ea409aef7446baf) to the six-column schema already enforced by the processor and used by the 2026-11-20 README. The attempt links are now in the first `Attempt / prompt` column; the image column is last. Existing outcome text was preserved, approval evidence was kept distinct, and image cells show pending upload or no output as appropriate. This is a documentation repair, not a processor-code change. Hosted verification remains pending.
+- 11 provenance-mapped PNGs were relocated to the two dated drawing-session original folders. Their Git blob SHAs match the original 18-image inventory. Eleven corresponding WebP derivatives were published to the drawing-session image folders.
+- 7 unclassified PNGs were converted to WebP under `images/takeout/webp/unclassified/attempt-001/`. Their original PNGs remain at the intake root with the original blob SHAs. The residual hand-off is Draft and contains exactly those seven items.
+- The processor reported 18 items processed with no errors. All 48 processor tests passed. The post-publication verifier checked all 11 mapped manifest rows and reported success. Both session manifests contain 11 rows with `verification_status: Verified`.
+- The run's processing commit is [d4f0611](https://github.com/dungnv2602/chatgpt/commit/d4f06112d21ccbb8f5e1ad2d493eb03d7956d756). The manifest verification commit is [0c21bd7](https://github.com/dungnv2602/chatgpt/commit/0c21bd7a50c9d395edbb754776937c68a49b5b8b). Both are ancestors of the current `gpt` head, `be5c1d6a7eeae2a8183a7e86e908d3837bcaf0e2`.
+- The separate diagnostics job failed on existing Ledger issues. Its failure did not affect the successful Image Takeout processing job or the workflow's successful conclusion.
 
-The intake inventory remains eighteen original PNGs: eleven mapped and seven unclassified. The approved behavior remains unchanged: mapped originals are relocated only after all conversions succeed; unclassified WebP derivatives remain under the intake quarantine staging directory, their originals remain unchanged in intake, and their entries remain in the residual Draft hand-off. No index edits beyond the required README schema repair are authorized.
+No task-scoped processing or verification work remains. The user retains responsibility for any later relocation of the seven unclassified derivatives. No index edits or unclassified relocation were performed.
 
-## 8. Remaining Work
+## 8\. Remaining Work
 
-- Obtain hosted verification that the repaired 2026-11-21 daily README passes the processor's six-column attempt-table preflight.
-- Verify publication of the eleven mapped original/WebP pairs.
-- Verify seven unclassified WebP derivatives under `images/takeout/webp/unclassified/`.
-- Confirm all seven unclassified original PNGs remain byte-for-byte unchanged in intake and the residual Draft hand-off contains exactly those seven entries.
-- Confirm the mapped originals are byte-identical after relocation and no unrelated indexes were edited.
-- Keep the task In Progress until hosted tests, mapped publication, unclassified derivatives, source preservation, and residual Draft hand-off are verified.
+No remaining Image Takeout implementation or hosted-verification work.
 
-## 9. Next Actions
+The user may later relocate the seven unclassified derivatives. That action is outside this task and remains under the user's control. Do not relocate them or edit indexes without an explicit request.
 
-1. Read back the repaired `drawings/2026-11-21/README.md` and confirm exactly one six-column attempt table with `Attempt / prompt` first and `Image` last.
-2. Manually dispatch **Process Image Takeout and Create WebP Derivatives** on branch `gpt`.
-3. Require all 48 processor tests to pass and preflight to pass before conversion.
-4. Verify the eleven mapped original/WebP pairs and seven unclassified WebP derivatives.
-5. Confirm all seven unclassified PNGs remain unchanged in intake and the residual Draft hand-off contains exactly those seven items. Do not edit other indexes or relocate unclassified files.
+The separate CI diagnostics-sidecar defects are not part of this task. Do not modify the Ledger files as part of this closeout.
+
+## 9\. Next Actions
+
+1. Archive this completed task record and verify the exact archive copy.
+2. Add the exact archive path and UTC timestamp to `.github/archive-retention-index.json`.
+3. Delete the active task record only after archive and retention-index verification.
+4. Update the task board and verify its Historical row and Current Execution state.
 
 ## 10. References
 
@@ -184,21 +186,27 @@ The intake inventory remains eighteen original PNGs: eleven mapped and seven unc
 - Import commit: https://github.com/dungnv2602/chatgpt/commit/1192a4a53640b6188f3500abda75b1c9d5fe004d
 - Hand-off reconciliation commit: https://github.com/dungnv2602/chatgpt/commit/516d6311412e759829f492717053e3abf1ae9821
 
-## 11. Verification
+## 11\. Verification
 
-- **Check:** Workflow repair commit and repository read-back.
-- **Method:** Read the branch head and all fourteen modified paths through GitHub. Checked processor guard fields, test definitions, publication verifier, conversation archives, hand-off counts/status, and the recursive takeout tree.
-- **Result:** Commit `c07921efe1a22db2237caa647d828e66fdd0236d` is present in branch history. All fourteen changed paths were read back. The tree still contains eighteen PNGs. The hand-off still contains eighteen entries, eleven source-asset/conversation-record references, seven unclassified entries, and `status: draft`. No original PNG blob was modified, renamed, or relocated.
-- **Limitations:** Read-back confirms committed content, not hosted test success. No local execution, manual workflow dispatch, or polling was performed. Seven image binaries remain visually uninspected.
+- **Check:** Hosted Image Takeout workflow run #69.
+- **Method:** Inspected GitHub run metadata, job summaries, the complete processing-job log, the separate diagnostics-job log, published GitHub directory listings, the residual hand-off, attempt-003 conversion report, verification report, and both drawing-session manifests.
+- **Result:** Run [45313390427](https://github.com/dungnv2602/chatgpt/actions/runs/45313390427) completed with workflow conclusion `success`. The `process-image-takeout` job succeeded. All 48 processor tests passed. The processor reported 18 items processed: 11 mapped images relocated and 7 unclassified images converted without relocation. The publication step succeeded. The post-publication verifier reported `Published verification passed for 11 manifest row(s)`.
+- **Source preservation:** All 11 mapped original PNGs now exist in their destination `original/` folders with Git blob SHAs identical to the initial intake inventory. All 7 unclassified PNGs remain at the intake root with Git blob SHAs identical to the initial inventory. The residual hand-off is `status: draft` with exactly seven unclassified entries.
+- **Derivative publication:** GitHub listings confirm 11 mapped WebP files in the two drawing-session image folders and 7 unclassified WebP files under `images/takeout/webp/unclassified/attempt-001/`. The conversion report records the source SHA-256, WebP SHA-256, output paths, and successful status for all 18 entries. The verification report records no errors.
+- **Manifest state:** The two session manifests contain 11 rows in total. All rows have `verification_status: Verified`. The published verifier updated the manifests in commit [0c21bd7](https://github.com/dungnv2602/chatgpt/commit/0c21bd7a50c9d395edbb754776937c68a49b5b8b).
+- **Branch state:** Current branch `gpt` head is `be5c1d6a7eeae2a8183a7e86e908d3837bcaf0e2`. GitHub compare confirms that processing commit `d4f06112d21ccbb8f5e1ad2d493eb03d7956d756` and manifest-verification commit `0c21bd7a50c9d395edbb754776937c68a49b5b8b` are ancestors of that head.
+- **Independent diagnostics job:** The diagnostics job failed because `reports/triage/scripts/test_ledger.py` has a SyntaxError at line 47 and `reports/triage/scripts/ledger.py` references undefined `LINT_BASELINE_CHECKS` at line 748. This separate job did not change the Image Takeout job's success.
+- **Limitations:** GitHub directory listings and blob identities verify published file presence and source-byte preservation. The unclassified images remain unclassified. No image pixels were newly inspected and no source mapping was inferred. No unclassified file was relocated. No index was edited.
 
-- **Check:** Takeout inventory and provenance state.
-- **Method:** Inspected the branch tree, hand-off YAML, session indexes and attempt records, source commit history, archive procedures, processor, and workflow.
-- **Result:** Exactly 18 intake PNGs are present. The hand-off has 18 items and is Draft. Eleven are associated with attempts; seven are unclassified. The two relevant daily drawing folders have no conversation-integrity file. The processor does not enforce a conversation-integrity record. The 18 images remain in intake.
-- **Limitations:** Image pixels were not available through the UTF-8-only GitHub content reader. No visual classification or source conversation has been inferred. No scripts/tests were run and no Actions workflows were dispatched or polled.
+## 12\. Handoff Instructions
 
-## 12. Handoff Instructions
+The Image Takeout task is complete. Run [#69](https://github.com/dungnv2602/chatgpt/actions/runs/45313390427) succeeded after the six-column daily README repair. It passed all 48 processor tests, processed all 18 images, published 11 mapped original/WebP pairs, converted 7 unclassified images without relocation, and passed published-manifest verification for all 11 mapped rows. All 18 original PNG blob identities are preserved. The active hand-off is Draft with exactly seven unclassified items.
 
-Continue on branch `gpt`. The latest manual Image Takeout run [#68](https://github.com/dungnv2602/chatgpt/actions/runs/45312157558) passed compilation and all 48 processor tests, accepted intake metadata, then stopped in preflight because `drawings/2026-11-21/README.md` did not have the required six-column attempt table with an `Image` column last. The failure occurred before staging/conversion; no source images were moved or derivatives generated. All eighteen originals remain in intake and the active hand-off remains Ready. The daily README has been repaired in [bff5bf9](https://github.com/dungnv2602/chatgpt/commit/bff5bf984e4bbd878b6569b93ea409aef7446baf). Require another user-triggered hosted run. Verify eleven mapped original/WebP pairs, seven unclassified derivatives, unchanged unclassified source PNGs, and a seven-entry residual Draft hand-off. The user performs any later relocation. Do not infer source mappings or edit unrelated indexes without explicit user direction.
+The seven unclassified derivatives remain under `images/takeout/webp/unclassified/attempt-001/`. Their originals remain in intake. The user performs any later relocation. Do not edit indexes or move these files without an explicit request.
+
+The separate diagnostics job failed on the existing Ledger test syntax error and undefined `LINT_BASELINE_CHECKS`. This is unrelated to Image Takeout and was not changed.
+
+Complete the repository archive transaction. Do not leave the task active after its verified acceptance criteria are met.
 
 ## 13. Ledger Findings
 
@@ -286,3 +294,17 @@ The following inventory records the exact image blob SHA and byte size from the 
 - **Correction:** Commit [bff5bf9](https://github.com/dungnv2602/chatgpt/commit/bff5bf984e4bbd878b6569b93ea409aef7446baf) updates the 2026-11-21 daily README to the six-column contract. Attempt links now occupy the first column, Image is last, existing outcome wording is preserved, approval evidence is separately represented, and image cells distinguish pending upload from no generated output. No processor code or unrelated indexes were changed.
 - **Independent diagnostics sidecar:** It again failed on the pre-existing syntax error in `reports/triage/scripts/test_ledger.py` and undefined `LINT_BASELINE_CHECKS` in `reports/triage/scripts/ledger.py`. These remain outside this Image Takeout repair and were not modified.
 - **Next:** Obtain another user-triggered hosted run. Require all 48 tests and README preflight to pass before claiming any image conversion or relocation.
+
+
+## 17. Hosted Run #69 — Successful Processing and Publication
+
+- **Run:** [45313390427](https://github.com/dungnv2602/chatgpt/actions/runs/45313390427), manual `workflow_dispatch` on branch `gpt`, input commit `47b926d31caf7b7393779e0596dc07800c0594be`.
+- **Workflow conclusion:** Success. The `process-image-takeout` job succeeded. The independent `Capture GH Actions diagnostics` job failed and did not change the source workflow conclusion.
+- **Tests:** Both processor scripts compiled. All 48 processor tests passed.
+- **Processing:** The processor reported: `Successfully processed 2026-11-20-001: relocated 11 mapped image(s); converted 7 unclassified image(s) without relocation.`
+- **Publication:** Processing commit [d4f0611](https://github.com/dungnv2602/chatgpt/commit/d4f06112d21ccbb8f5e1ad2d493eb03d7956d756) published 48 changed paths, including 11 mapped original PNGs, 11 mapped WebP derivatives, 7 unclassified WebP derivatives, both manifests and their attempt/README links, the residual hand-off, and the attempt-003 reports.
+- **Post-publication verification:** The verifier checked all 11 manifest rows, published its status updates in [0c21bd7](https://github.com/dungnv2602/chatgpt/commit/0c21bd7a50c9d395edbb754776937c68a49b5b8b), and reported: `Published verification passed for 11 manifest row(s).`
+- **Repository read-back:** Current `gpt` contains 11 mapped originals and 11 mapped WebPs in the drawing-session folders; 7 unclassified originals remain at the intake root; 7 unclassified WebPs exist under `images/takeout/webp/unclassified/attempt-001/`; the active hand-off is Draft with exactly seven entries. All 18 original blob SHAs match the initial inventory.
+- **Reports:** `images/takeout/history/2026-11-20-001/attempt-003/verification-report.md` records Status SUCCESS, 18 items processed, and no errors. The CSV records all 18 conversion results and source/WebP SHA-256 values.
+- **Independent diagnostics failure:** The diagnostics sidecar test import failed with `SyntaxError: expected ':'` at line 47 of `reports/triage/scripts/test_ledger.py`. Ledger ingestion then failed with `NameError: name 'LINT_BASELINE_CHECKS' is not defined` at line 748 of `reports/triage/scripts/ledger.py`. These unrelated files were not changed.
+- **Outcome:** The approved Image Takeout workflow behavior is verified. No remaining task-scoped work is required. The user retains later relocation authority for the seven unclassified derivatives.
