@@ -128,7 +128,7 @@ Coverage status has three values. `Active` rules must match at least one current
 | `workspace/tasks/*.md` | Template required | Active | `workspace/TASK_TEMPLATE.md` | Individual task records. |
 | `workspace/draft/README.md` | Embedded contract | Active | `workspace/draft/README.md` | Draft folder navigation, status transitions, and promotion rules. |
 | `workspace/draft/DRAFT_TEMPLATE.md` | Exempt | Active | `workspace/draft/DRAFT_TEMPLATE.md` | Canonical Draft template source, not a proposal record. |
-| `workspace/draft/DRAFT-*.md` | Template required | Reserved | `workspace/draft/DRAFT_TEMPLATE.md` | One proposal record per decision. Activate this rule when the first Draft is created. |
+| `workspace/draft/DRAFT-*.md` | Template required | Active | `workspace/draft/DRAFT_TEMPLATE.md` | One proposal record per decision. The first Draft is DRAFT-0001. |
 | `workspace/adr/README.md` | Embedded contract | Active | `workspace/adr/README.md` | Accepted ADR navigation, status, implementation, and archive rules. |
 | `workspace/adr/ADR_TEMPLATE.md` | Exempt | Active | `workspace/adr/ADR_TEMPLATE.md` | Canonical ADR template source, not an accepted decision record. |
 | `workspace/adr/ADR-*.md` | Template required | Reserved | `workspace/adr/ADR_TEMPLATE.md` | Accepted ADR records. Activate this rule when the first ADR is created. |

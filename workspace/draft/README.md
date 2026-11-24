@@ -7,6 +7,10 @@ This folder stores proposals that require a user decision.
 - `DRAFT_TEMPLATE.md` — canonical template for new proposals.
 - `DRAFT-*.md` — one record for each distinct proposal.
 
+## Current Drafts
+
+- [DRAFT-0001 — Establish Draft-to-ADR Governance and Repository Analysis](DRAFT-0001-repository-decision-governance-and-analysis.md) — In review. User approval is pending.
+
 ## Workflow
 
 1. Create one Draft for each decision that may change repository structure, policy, architecture, workflow, or long-lived practice.

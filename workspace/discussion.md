@@ -1,7 +1,9 @@
 ## Current Step
 
-**2026-11-24 10:45 UTC — Create DRAFT-0001 from the approved template. Activate the Draft path rule, update its index, and link the draft in Open Discussions. Do not create an ADR yet.** [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
+**2026-11-24 10:46 UTC — Paused pending the user's review of [DRAFT-0001](draft/DRAFT-0001-repository-decision-governance-and-analysis.md).** [Task 20261124-103354](tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md)
 ## Open Discussions
+
+- **2026-11-24 10:46 UTC — Review the repository decision-governance proposal:** [DRAFT-0001 — Establish Draft-to-ADR Governance and Repository Analysis](draft/DRAFT-0001-repository-decision-governance-and-analysis.md). Review the proposed use of MADR, Draft and ADR lifecycles, task-to-ADR enforcement, permanent ADR archiving, the `workspace/analysis/` location and cadence, and the proposed `decision-governance` skill. The exact revision 1 is awaiting the user's decision. Do not create ADR-0001 until explicit approval.
 
 - **2026-11-24 08:12 UTC — Hosted runner allocation:** Older runnerless jobs included a GitHub annotation stating that the job was not started because recent account payments had failed or the spending limit needed to be increased. The annotation does not identify which account condition applied. Later jobs received runners and executed; do not alter runner labels.
 - **2026-11-24 08:12 UTC — Task renderer and hosted regression:** The Proposed board table lacked its header, and the renderer searched into later sections, placing Proposed rows under Historical. The renderer now bounds lookup to the target section and fails closed; all status tables and the seven Historical rows are restored. Diagnostics #530 passed 37 Ledger tests, 26 report tests, and 7 archive-retention tests. The live Ledger links all 40 lint findings, including 28 low-severity findings. Six incomplete capture IDs remain pending their bounded natural retries.
