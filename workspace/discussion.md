@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 09:30 UTC — Revise the Drawing skill, pattern index README, pattern-entry template, and Document Type Catalog. Leave attempt templates and both pattern indexes unchanged.**
+**2026-11-24 09:38 UTC — Verify all committed Drawing workflow changes, confirm both pattern indexes remain unchanged, and update the task handoff with exact commits and read-back results.**
 
 ## Open Discussions
 
