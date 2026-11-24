@@ -1,8 +1,11 @@
 ## Current Step
 
-**2026-11-24 11:35 UTC — Synthesize and draft the planning workflow proposal:** Compare the external model with the Worker's task authority, Progress Log, task renderer, and remote-only tool limits. Prepare DRAFT-0002 and preserve the separate DRAFT-0001 review. [Task 20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)
+**2026-11-24 11:41 UTC — Proposal submitted for review:** Research and repository comparison are complete. Await the user's decision on [DRAFT-0002](draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md), revision 1. Keep the separate [DRAFT-0001](draft/DRAFT-0001-repository-decision-governance-and-analysis.md) review open. [Task 20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)
 
 ## Open Discussions
+
+
+- **2026-11-24 11:41 UTC — Review the phase-aware planning proposal:** [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md). Review the selective adaptation of Planning with Files, the phase-based task template, optional research findings notes, Worker updates, archive handling, and Ledger renderer changes. The proposal recommends no new skill and no local hooks. Please decide whether to approve revision 1 and Option 3, whether to adopt the concepts rather than install the external project, and whether a three-task pilot is appropriate. Approval applies only to this exact Draft revision and scope. Do not implement or create an ADR before explicit approval.
 
 - **2026-11-24 10:46 UTC — Review the repository decision-governance proposal:** [DRAFT-0001 — Establish Draft-to-ADR Governance and Repository Analysis](draft/DRAFT-0001-repository-decision-governance-and-analysis.md). Review the proposed use of MADR, Draft and ADR lifecycles, task-to-ADR enforcement, permanent ADR archiving, the `workspace/analysis/` location and cadence, and the proposed `decision-governance` skill. The exact revision 1 is awaiting the user's decision. Do not create ADR-0001 until explicit approval.
 
