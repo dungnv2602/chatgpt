@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-24 05:34 UTC — Close residual original-baseline findings:** Use the archived baseline reports and source-context comparison to correct the remaining original hard findings in `skills/agent-skill-authoring/SKILL.md`, `skills/drawing/assets/daily-index-template.md`, and `skills/drawing/references/prompt-fidelity.md`. Preserve meaning and document structure. Do not touch later-scope findings.
+**2026-11-24 05:36 UTC — Record residual baseline remediation:** Update the task with the recovered original reports, the three remaining baseline findings, their source-only corrections, and the verified commit chain. Keep the task In Progress pending natural hosted validation. Do not poll or dispatch workflows.
 
 ## Open Discussions
 
