@@ -57,4 +57,5 @@ Never add ADRs to `.github/archive-retention-index.json`. The archive retention 
 
 ## Current Accepted ADRs
 
-No active accepted ADRs. [ADR-0001 — Establish Draft-to-ADR Governance and Repository Analysis](../../archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md) is fully implemented and permanently archived.
+- [ADR-0002 — Retire Source Drafts After Verified ADR Promotion](0002-retire-source-drafts-after-verified-adr-promotion.md) — Accepted; implementation has not started.
+- [ADR-0001 — Establish Draft-to-ADR Governance and Repository Analysis](../../archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md) — Fully implemented and permanently archived; its source-Draft preservation rule is superseded by ADR-0002.
