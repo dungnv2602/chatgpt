@@ -1,5 +1,7 @@
 ## Current Step
 
+**2026-11-25 02:15 UTC — Verify and execute the branch merge:** Check repository merge settings and open pull requests. Since `gpt` is 665 commits ahead and zero behind, use a protected fast-forward/PR path if repository policy permits. Then inspect DRAFT-0002, its template/catalog entry, existing task context, and decision-governance requirements before revising it.
+
 **2026-11-25 02:15 UTC — Inspect task state and branch history:** Read the workspace navigation and task board, identify the active DRAFT-0002 task, and compare `gpt` with `main`. Determine a safe merge path without force-pushing or bypassing review protections.
 
 **2026-11-25 02:15 UTC — Session started:** Foundational initialization is in progress. Task: merge `gpt` into `main`, then assess all options in [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md#considered-options) and publish an updated draft with detailed option assessments. No implementation decision is implied by this review.
