@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261125-023508
 - **Created:** 2026-11-25 02:35 UTC
-- **Updated:** 2026-11-25 02:38 UTC
+- **Updated:** 2026-11-25 02:40 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -68,14 +68,13 @@ The Draft authoring standard is implemented on branch `gpt`. The canonical templ
 
 ## 8. Remaining Work
 
-- Complete repository read-back checks.
-- Close and archive this task.
+- None. Repository read-back checks passed. Archive closeout is the only remaining operation.
 
 ## 9. Next Actions
 
-1. Verify the template, workflow, governance instructions, catalog, task board, and discussion register.
-2. Archive this task after successful read-back.
-3. Report completion. Do not merge to main unless separately requested.
+1. Write and read back the immutable archive copy.
+2. Register its exact path and UTC timestamp.
+3. Delete the active record and move its board entry to Historical.
 
 ## 10. References
 
@@ -87,10 +86,10 @@ The Draft authoring standard is implemented on branch `gpt`. The canonical templ
 
 ## 11. Verification
 
-- **Check:** Pending final read-back.
-- **Method:** Fetch each changed file from branch `gpt` and confirm the template version, assessment dimensions, comparative matrix conditions, evidence requirements, workflow quality gate, and catalog consistency.
-- **Result:** The initial writes succeeded. Final verification is pending.
-- **Limitations:** No hosted Document Standards or lint workflow has been run. Structural read-back does not prove semantic template conformance.
+- **Check:** Canonical Draft template, Draft workflow/index, decision-governance skill, and Document Type Catalog.
+- **Method:** Read back all four changed paths from branch `gpt`. Checked template Version 1.2; all ten shared option-assessment dimensions; comparative matrix and one-option exception; evidence register and source provenance; prohibition on unsupported scores; Draft workflow requirements; governance review quality gate; and matching catalog description.
+- **Result:** All structural consistency checks passed. The four canonical files contain aligned requirements. DRAFT-0002 revision 3 remains in-review and unchanged. The task board points to this task as Current Execution. No other task or proposal was approved.
+- **Limitations:** No hosted Document Standards or lint workflow was run. Read-back and structural checks do not prove every future Draft will be substantively adequate; the governance quality gate is the required review control. No merge to `main` was requested or performed.
 
 ## 12. Handoff Instructions
 
