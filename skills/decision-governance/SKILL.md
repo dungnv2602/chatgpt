@@ -64,18 +64,77 @@ A Draft may include promotion_cleanup_pending: true only when an accepted ADR pa
 
 Record context, scope, goals, non-goals, decision drivers, options, recommendation, consequences, risks, affected paths, implementation outline, questions, and revision history.
 
+### Required option-assessment standard
+
+Every Draft must assess **all materially viable options**, not merely list them. Include the current approach or no-change option when it is viable. Include materially different variants separately when their operating model or trade-offs differ. Do not omit a viable alternative because it is inconvenient or not preferred.
+
+Use the same assessment dimensions for each option:
+
+1. Description and operating model.
+2. Fit with the repository's actual architecture, tools, workflows, policies, and operating environment.
+3. Concrete strengths and the mechanism that produces each benefit.
+4. Neutral trade-offs, conditional benefits, and compromises.
+5. Weaknesses, limitations, and failure modes.
+6. Implementation and migration complexity, affected areas, rollback needs, and cost drivers.
+7. Dependencies, permissions, integrations, ownership, and ongoing operational/maintenance burden.
+8. Material risks, safeguards, and residual exposure.
+9. Supporting evidence and confidence rationale.
+10. Evidence limitations, untested conditions, assumptions, and unknowns.
+
+Do not use generic claims such as "easy", "flexible", "scalable", "secure", or "better" without explaining the mechanism, scope, and consequence. Use Unknown or Not established when evidence is unavailable; do not fill gaps with plausible-sounding estimates. Keep the level of detail proportional to the decision, but do not omit a material assessment dimension without explaining why it is not applicable.
+
+### Comparative assessment
+
+When two or more materially viable options exist:
+
+- Define explicit decision drivers before comparing options.
+- Compare every option against the same criteria in a matrix. Use qualitative ratings with concise rationale or evidence pointers.
+- Explain the decisive differences, strongest alternative, and conditions under which a non-recommended option could be preferable.
+- Tie the recommendation directly to the criteria and evidence.
+- Do not invent weighted scores, percentages, cost figures, or rankings. Use quantitative scoring only when the measurement method and comparable data are defensible.
+- If only one option is genuinely viable, explain why alternatives are infeasible and why a comparative matrix is not applicable.
+
+### Evidence and confidence requirements
+
+For each material claim, identify its evidence class: repository fact, user instruction, external claim, test/benchmark observation, inference, or hypothesis. Keep these classes distinct.
+
+Preserve exact source URLs, repository paths, commits, sections, and retrieval/version dates. For external evaluations, report the evaluated version, host/runtime, task or sample size, protocol, measured outcome, and untested scenarios when available. Explain whether the evidence applies to the current repository and whether results can legitimately transfer across versions, hosts, or workloads.
+
+State what evidence establishes and what it does not establish. Distinguish a source's own claim from independently verified behavior. Record contradictions, stale sources, missing data, and uncertainty. Assign confidence only with a brief rationale. Do not imply that a structural check proves semantic correctness or that a benchmark proves performance in an untested environment.
+
+### Draft review quality gate
+
+Before setting a Draft to in-review, verify:
+
+- Every materially viable option is included, including no-change when viable.
+- Every option has a substantive assessment across the common dimensions, or an explicit reason a dimension is not applicable.
+- Decision drivers are explicit and used consistently.
+- A comparative matrix is present when multiple viable options exist, and does not replace the detailed assessments.
+- The recommendation explains why it is preferable to the strongest alternative and identifies assumptions that could change the choice.
+- Evidence claims have exact locators and relevant version/date/commit context.
+- Benchmark and external evidence limitations are stated; no unsupported transfer to this repository is implied.
+- Facts, external claims, tests, inferences, and hypotheses are distinguishable.
+- Costs, dependencies, migration, maintenance, risks, safeguards, and residual risks are addressed.
+- Unknowns remain visible rather than being silently converted into facts.
+- The user's decision request identifies the exact revision and scope.
+
+If the gate fails, keep the Draft in draft status and complete the missing assessment. Do not present a thin comparison as a finished Draft merely because every template heading has text.
+
 Link each Draft under review from its own Open Discussions item in workspace/discussion.md.
 
 ### Present and revise a Draft
 
 1. Find a related Draft or accepted ADR.
 2. Inspect exact repository evidence and owner files.
-3. Compare viable options, including no change.
-4. Separate facts, external claims, inferences, and hypotheses.
-5. State the recommendation and material trade-offs.
-6. Identify affected paths and validation needs.
-7. Set status to in-review and link it in Open Discussions.
-8. Ask the user to approve the exact revision and scope.
+3. Identify every materially viable option and relevant variant, including no change when viable.
+4. Define decision drivers and apply the required option-assessment dimensions consistently.
+5. Build a comparative matrix when multiple viable options exist; explain why a matrix is inapplicable when only one option is viable.
+6. Capture exact evidence locators, source versions/dates/commits, confidence rationale, and evidence limitations.
+7. Tie the recommendation to the decision drivers and compare it with the strongest alternative.
+8. Identify affected paths, dependencies, migration, maintenance, risks, safeguards, and validation needs.
+9. Complete the Draft review quality gate. Keep the status draft if material assessment or evidence is missing.
+10. Set status to in-review and link it in Open Discussions.
+11. Ask the user to approve the exact revision and scope.
 
 A Draft does not authorize implementation. A task that only prepares a Draft may proceed under its direct approval.
 
