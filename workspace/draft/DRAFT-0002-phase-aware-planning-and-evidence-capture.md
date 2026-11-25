@@ -257,6 +257,8 @@ Adopt **Option 3 — Integrate planning into the task record and add optional re
 
 This is a repository-fit decision, not a claim that Option 3 would outperform Planning with Files in a compatible local coding-agent host. Option 2 contains stronger built-in runtime mechanisms when its hooks and local filesystem are available. Those mechanisms are not available in the current ChatGPT/GitHub workflow, and direct adoption would split authority already held by the task record. Option 1 is cheaper, but it leaves the specific phase, single-action, and research-traceability gaps unresolved. Option 4 is premature until there is a supported runtime and evidence that static procedural controls are failing.
 
+Do not add runtime hooks, automatic context injection, plan attestation, a Stop gate, or a new standalone skill. Reassess those capabilities only through a separate Draft if a supported runtime becomes available and measured failures justify the additional system.
+
 ### Record ownership model
 
 | Record | Authority | Purpose |
