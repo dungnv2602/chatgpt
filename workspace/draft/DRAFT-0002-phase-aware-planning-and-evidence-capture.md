@@ -172,14 +172,16 @@ Security claims also require precise interpretation. The external SHA-256 attest
 - **Neutral:**
   - This option is not inherently better or worse for every agent. Its advantages depend on a host that exposes the required file, shell, environment, and lifecycle capabilities. The external README documents multiple integrations, but the hook capability and enforcement level differ by host.
   - The benchmark is evidence that structured plans can improve measured re-orientation in some tested host scenarios. It is not proof that this exact repository would gain the same number of turns or improve task correctness.
-  - The external pattern can be appropriate for projects whose local filesystem is already the canonical task workspace and where the task record does not separately govern status and approval.
+  - A templates-only variant is possible. It could store the three files in GitHub and update them manually, without installing hooks or scripts. That reduces runtime dependencies but does not remove the duplicated task state or provide automatic re-injection.
+  - The full external pattern can be appropriate for projects whose local filesystem is already the canonical task workspace and where the task record does not separately govern status and approval.
 - **Bad:**
   - A second plan file would duplicate the objective, scope, requirements, decisions, current state, and next actions already owned by the repository task record. A separate progress.md would duplicate the existing Progress Log. A separate findings.md would introduce a second evidence location unless its authority and link rules were carefully constrained.
   - A separate plan selector or active-plan pointer would compete with the Worker's current execution pointer and task board. The repository would need new rules for reconciling the task board, task record, active plan, and archive state.
   - The current project workspace is GitHub, accessed through repository tools. This session does not expose the local filesystem, Bash/PowerShell execution, or the prompt/tool/Stop lifecycle hooks required by the external implementation. GitHub Actions can validate committed files, but it cannot inject a plan into each ChatGPT turn or control the end of the live conversation.
   - The external README says planning files are gitignored by default. That is reasonable for local working memory, but it conflicts with this repository's requirement that project state and durable evidence live in GitHub unless an explicit synchronization and archive policy is added.
   - A hook that re-injects externally sourced plan content creates a prompt-injection boundary. Delimiters reduce ambiguity but do not make the content trusted. The external attestation is not a user approval mechanism and does not protect against a writer that can replace both the plan and the digest.
-  - The added plan directories, scripts, host adapters, tests, state files, and lifecycle integrations would substantially increase the maintenance and recovery surface. Host-specific differences would require their own support and verification.
+  - The templates-only variant still creates a parallel source for scope, decisions, and chronological progress. It also loses the automatic recovery and enforcement mechanisms that motivate the full system.
+  - The full implementation adds plan directories, scripts, host adapters, tests, state files, and lifecycle integrations. These would substantially increase the maintenance and recovery surface. Host-specific differences would require their own support and verification.
 - **Evaluation evidence and limits:** The external Test 5 reports 77/77 passing task test suites across all seven tested methods. In the forced recovery subset it reports 5.0 mean stage-two turns for Planning with Files, but it explicitly says the current file-only recovery behavior was not re-run under that protocol. The test used Claude Code and v3.4.0, not the current v3.29.1 release or ChatGPT. It did not evaluate multi-day work, other IDEs, long-horizon drift, or an external task corpus. These findings support investigation of durable plans; they do not justify copying the architecture here or promising the same recovery gain.
 - **Fit and when it is preferable:** This would be the strongest option if the repository moved to a compatible local coding-agent host and intentionally made per-task plan files, rather than the current task record, the primary execution authority. It is a poor direct fit for the present GitHub-only ChatGPT workflow.
 - **Cost and residual risk:** Very high adoption and maintenance cost. Without a deliberate authority migration and supported host runtime, duplicate state and partially functioning hooks would create more risk than value.
@@ -312,7 +314,7 @@ Each phase records:
 
 Use two to seven phases. Prefer three to seven when the work has enough distinct stages. Do not force artificial phases onto a Lightweight task.
 
-Keep no more than one phase in_progress unless the user explicitly authorizes parallel execution. If an external condition prevents progress, set the task to the existing Blocked or Paused status. Do not mark the active phase complete merely because work is blocked.
+Keep no more than one phase in_progress unless the user explicitly authorizes parallel execution. If an external condition prevents progress, set the task to the existing Blocked status. Do not mark the active phase complete merely because work is blocked.
 
 A phase becomes complete only after its exit criteria pass. Link the evidence in the Progress Log or the findings note. Phase status is not task status.
 
@@ -650,11 +652,11 @@ If the team later needs host-specific lifecycle automation, evaluate that capabi
 - External latest release at review time: https://github.com/OthmanAdi/planning-with-files/releases/tag/v3.29.1
 - External canonical skill at the pinned commit: https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7cf1bfbcb60f0405f7cf0ee228/skills/planning-with-files/SKILL.md
 - External templates at the pinned commit: [task_plan.md](https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7cf1bfbcb60f0405f7cf0ee228/templates/task_plan.md), [findings.md](https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7cf1bfbcb60f0405f7cf0ee228/templates/findings.md), [progress.md](https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7cf1bfbcb60f0405f7cf0ee228/templates/progress.md)
-- External evaluation and evidence limitations: https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f7cf1bfbcb60f0405f7cf0ee228/docs/evals.md
-- External long-running-task guide: https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f7cf1bfbcb60f0405f7cf0ee228/docs/long-running-agent-tasks.md
-- External attestation guide: https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f7cf1bfbcb60f0405f7cf0ee228/docs/attestation-locking.md
-- External security policy: https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f7cf1bfbcb60f0405f7cf0ee228/SECURITY.md
-- External resolver and validation: [resolve-plan-dir.sh](https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f7cf1bfbcb60f0405f7cf0ee228/scripts/resolve-plan-dir.sh), [check-complete.sh](https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f7cf1bfbcb60f0405f7cf0ee228/scripts/check-complete.sh)
+- External evaluation and evidence limitations: https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228/docs/evals.md
+- External long-running-task guide: https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228/docs/long-running-agent-tasks.md
+- External attestation guide: https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228/docs/attestation-locking.md
+- External security policy: https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228/SECURITY.md
+- External resolver and validation: [resolve-plan-dir.sh](https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228/scripts/resolve-plan-dir.sh), [check-complete.sh](https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228/scripts/check-complete.sh)
 - Current Worker: `skills/the-worker/SKILL.md`
 - Worker Conversation Mode: `skills/the-worker/references/conversation-mode.md`
 - Current task template: `workspace/TASK_TEMPLATE.md` (Version 1.3 at Draft revision time; proposed target Version 1.4).
