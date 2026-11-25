@@ -1,6 +1,6 @@
 ## Current Step
 
-_Prepare a companion decision Draft for the area/project/task architecture in `master/Handoff.md`. Compare viable hierarchy and record-ownership models, define how the proposal relates to DRAFT-0002, and keep all implementation out of scope. Related task: [20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)._
+_Update the active planning task with the verified DRAFT-0003 result, reconcile its handoff and remaining decisions, then finalize the Draft review register. Preserve the task's Blocked state while user decisions remain pending. Task: [20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)._
 
 ## Open Discussions
 
