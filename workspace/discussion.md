@@ -1,6 +1,6 @@
 ## Current Step
 
-_Finalize the review register: link DRAFT-0003 under Open Discussions, surface the DRAFT-0002 approval-state discrepancy, and retain only the three latest verified success reports. Task: [20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)._
+_No active step._
 
 ## Open Discussions
 
