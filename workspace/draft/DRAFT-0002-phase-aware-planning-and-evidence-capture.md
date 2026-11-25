@@ -1,11 +1,11 @@
 ---
 record_type: decision-draft
-template_version: "1.0"
+template_version: "1.1"
 id: "DRAFT-0002"
-revision: 2
+revision: 3
 status: "in-review"
 created: "2026-11-24"
-updated: "2026-11-24"
+updated: "2026-11-25"
 proposed_by: "Assistant"
 decision_makers:
   - "User"
@@ -20,17 +20,15 @@ related_adrs:
 
 ## Proposal Summary
 
-Adopt the strongest planning ideas from Planning with Files, but do not install or copy its complete system.
+Adopt the useful planning and evidence-capture mechanisms from Planning with Files selectively. Do not install or copy its complete system.
 
-The repository already has a durable task record. The Worker uses it for scope, approval, progress, recovery, verification, and handoff. Keep that record as the single source of truth.
+Option 3 is recommended because it adds explicit phases, verifiable phase exits, and one current Next Step inside the existing task record. The current Progress Log remains the only chronological activity log. A separate findings note is created only when research evidence is too extensive or complex to remain clear in the task record.
 
-Add a structured execution plan to the task template. Require named phases with exit criteria for complex work. Require one precise next action. Keep the existing Progress Log as the only chronological activity log.
+Keep the task record as the sole authority for task scope, approval, status, phase state, current action, progress, verification, and handoff. Treat a findings note as supporting evidence only. Separate planning depth (Lightweight, Phased, Research-led) from execution mode (Serial by default; Parallel only when explicitly authorized).
 
-Add an optional findings record for research-heavy tasks. Use it to preserve source evidence, discoveries, uncertainty, and technical implications. Do not create a separate `task_plan.md` or `progress.md` for every task.
+Update The Worker, add one focused Worker reference, and revise the task template to Version 1.4. Coordinate the CI Ledger renderer and regression tests with the template change. Do not create a new skill, add runtime hooks, or change foundational initialization. Preserve existing approval and task-selection rules.
 
-Update The Worker and add one focused Worker reference. Do not create a new skill at this stage. Keep foundational initialization and the existing user approval rules unchanged.
-
-ADR-0001 establishes the repository's Draft, ADR, implementation-task, and confirmation process. This Draft proposes a separate task-execution change under that governance. ADR-0001 does not decide or authorize this proposal. Review and promote DRAFT-0002 through ADR-0001 before implementation.
+ADR-0001 governs the Draft-to-ADR process only. It does not decide or authorize this proposal. Review and promote this exact DRAFT-0002 revision through that process before implementation.
 
 ## Context and Problem Statement
 
@@ -42,7 +40,9 @@ Planning with Files presents a persistent three-file model:
 
 Its current skill also defines plan selection, session recovery, phase validation, task isolation, worker ownership, error handling, context-injection hooks, and optional completion gates.
 
-The inspected external source was `OthmanAdi/planning-with-files`, branch `master`, release metadata `3.29.1`, at commit `aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228`. The commit date was 2026-11-23 11:57:02 UTC. The canonical skill at that revision has blob SHA `e95f7dc8c5864a89ca51e2d40de45b2de82c0622`.
+The external source was re-checked against GitHub on 2026-11-25. Its current `master` head remains `aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228`, committed 2026-11-23 11:57:02 UTC. The latest release is v3.29.1, published 2026-11-23 09:26:21 UTC. The head commit changes README sponsor material; the planning mechanisms reviewed for this Draft are unchanged from the prior source snapshot. The canonical skill at that revision has blob SHA `e95f7dc8c5864a89ca51e2d40de45b2de82c0622`.
+
+The current system is more than three Markdown files. It includes task-specific `.planning/<id>` directories, explicit `PLAN_ID` and `PWF_PLAN_ROOT` selectors, an active-plan pointer for sequential switching, a plan resolver, phase-format checking, plan attestation, and host-specific lifecycle integrations. The canonical skill uses prompt/tool hooks for plan context and offers opt-in autonomous and gated modes. Integration behavior differs by host; it is not one portable hook contract.
 
 ### Existing repository capabilities
 
