@@ -1,0 +1,80 @@
+Find lint baseline and select execution mode	UNKNOWN STEP	﻿2026-11-25T02:37:31.0940731Z Current runner version: '2.338.2'
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0956516Z ##[group]Runner Image Provisioner
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0957074Z Hosted Compute Agent
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0957484Z Version: 20261111.635
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0957882Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0958359Z Build Date: 2026-11-11T01:49:01Z
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0958804Z Worker ID: {d912151e-3d43-4138-b102-266ec20ab3e6}
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0959226Z Region: centralus
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0959703Z Cloud: Azure
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0960085Z ##[endgroup]
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0961082Z ##[group]Operating System
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0961523Z Ubuntu
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0961842Z 26.04.1
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0962149Z LTS
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0962507Z ##[endgroup]
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0962879Z ##[group]Runner Image
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0963269Z Image: ubuntu-26.04
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0963708Z Version: 20261116.202.1
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0964502Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0965418Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0966009Z ##[endgroup]
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0966720Z ##[group]GITHUB_TOKEN Permissions
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0968074Z Contents: read
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0968473Z Metadata: read
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0968815Z ##[endgroup]
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0970636Z Secret source: Actions
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0971214Z Cache mode: write
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.0971722Z Prepare workflow directory
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.1205992Z Prepare all required actions
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.1270533Z Complete job name: Find lint baseline and select execution mode
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2098769Z ##[group]Run set -euo pipefail
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2099269Z ^[[36;1mset -euo pipefail^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2099926Z ^[[36;1mecho "proceed=true" >> "$GITHUB_OUTPUT"^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2100471Z ^[[36;1mencoded=$(gh api \^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2101205Z ^[[36;1m  "repos/$GITHUB_REPOSITORY/contents/reports/lint_reports/on_changed/latest-lint-report.json?ref=$GITHUB_REF_NAME" \^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2101911Z ^[[36;1m  --jq '.content' 2>/dev/null || true)^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2102325Z ^[[36;1mif [[ -z "$encoded" ]]; then^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2102801Z ^[[36;1m  echo "full_audit=true" >> "$GITHUB_OUTPUT"^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2103218Z ^[[36;1m  exit 0^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2103602Z ^[[36;1mfi^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2104131Z ^[[36;1mbaseline_report=$(printf '%s' "$encoded" | tr -d '\n' | base64 --decode 2>/dev/null || true)^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2104719Z ^[[36;1mif [[ -z "$baseline_report" ]] || ! jq -e '^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2105189Z ^[[36;1m  . as $report |^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2105666Z ^[[36;1m  $report.scope == "on_changed" and^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2106208Z ^[[36;1m  ($report.status == "Passed" or $report.status == "Failed") and^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2106890Z ^[[36;1m  ($report.execution_mode == "full-audit-fallback" or $report.execution_mode == "incremental") and^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2107626Z ^[[36;1m  ($report.commit_sha | type == "string" and test("^[0-9a-f]{40}$")) and^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2108166Z ^[[36;1m  ($report.checks | type == "array") and^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2108720Z ^[[36;1m  (["Wrapper shell syntax", "Python report tooling compilation",^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2109345Z ^[[36;1m    "Lint report regression tests", "Markdown anchor regression tests",^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2110003Z ^[[36;1m    "STE linter self-test"][] as $name |^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2110537Z ^[[36;1m    any($report.checks[]; .name == $name and .status == "Passed")) and^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2111096Z ^[[36;1m  (if $report.execution_mode == "full-audit-fallback"^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2111765Z ^[[36;1m   then any($report.checks[]; .name == "Markdown links and heading anchors" and .status == "Passed")^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2112383Z ^[[36;1m   else true end)^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2112800Z ^[[36;1m' <<< "$baseline_report" >/dev/null; then^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2113394Z ^[[36;1m  echo "::warning::No complete tooling-valid lint baseline exists. Run one full audit."^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2114176Z ^[[36;1m  echo "full_audit=true" >> "$GITHUB_OUTPUT"^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2114619Z ^[[36;1m  exit 0^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2114975Z ^[[36;1mfi^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2115371Z ^[[36;1mbaseline_sha=$(jq -r '.commit_sha' <<< "$baseline_report")^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2115848Z ^[[36;1mcompare_status=$(gh api \^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2116430Z ^[[36;1m  "repos/$GITHUB_REPOSITORY/compare/$baseline_sha...$GITHUB_SHA" \^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2116948Z ^[[36;1m  --jq '.status' 2>/dev/null || true)^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2117499Z ^[[36;1mif [[ "$compare_status" != "ahead" && "$compare_status" != "identical" ]]; then^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2118185Z ^[[36;1m  echo "::warning::The lint baseline commit is missing or is not an ancestor. Run a full audit."^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2118776Z ^[[36;1m  echo "full_audit=true" >> "$GITHUB_OUTPUT"^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2119229Z ^[[36;1m  exit 0^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2119740Z ^[[36;1mfi^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2120171Z ^[[36;1mecho "base_sha=$baseline_sha" >> "$GITHUB_OUTPUT"^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2120677Z ^[[36;1mecho "full_audit=false" >> "$GITHUB_OUTPUT"^[[0m
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2534770Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2535427Z env:
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2537599Z   GH_TOKEN: ***
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:31.2537956Z ##[endgroup]
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:32.2399844Z Evaluate and set job outputs
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:32.2408601Z Set output 'proceed'
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:32.2410880Z Set output 'base_sha'
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:32.2412026Z Set output 'full_audit'
+Find lint baseline and select execution mode	UNKNOWN STEP	2026-11-25T02:37:32.2413360Z Cleaning up orphan processes
