@@ -10,6 +10,8 @@ _Review the approved DRAFT-0002, task/workspace contracts, ADR governance, and d
 
 ## Reports
 
+- **2026-11-25 06:59 UTC — Session started:** Foundational initialization requested before review of `master/Handoff.md` on branch `gpt`. Startup notice recorded before foundational skill retrieval.
+
 - **2026-11-25 02:40 UTC — Future Draft assessment standard updated:** Updated the canonical Draft template to Version 1.2, Draft workflow, decision-governance quality gate, and Document Type Catalog. Read-back checks confirmed consistent requirements for detailed assessment of every viable option, comparative criteria/matrix, evidence provenance and limitations, and recommendation traceability. Archived task [20261125-023508](../archive/tasks/20261125-023508-standardize-detailed-option-assessments-in-future-drafts.md). DRAFT-0002 revision 3 remains in-review and unchanged. No merge to main.
 
 - **2026-11-25 02:26 UTC — DRAFT-0002 revision 3 prepared:** Completed detailed assessments of all four options, added a qualitative repository-fit matrix, refreshed the external evidence and security caveats, and retained the proposal's implementation and pilot details. The Draft and index were read back; revision 3 is in-review and awaits the user's decision. No implementation or ADR was created.
