@@ -4,9 +4,12 @@
     "baseline_at_utc": "2026-11-23T23:38:33Z",
     "reason": "User-authorized clean start. All pre-cutoff active and archived report data and Ledger findings were cleared. No historical backfill. The first complete tooling-valid full audit in each lint scope seeds its baseline."
   },
-  "sweep_watermark_utc": "2026-11-25T02:32:20Z",
+  "sweep_watermark_utc": "2026-11-25T02:36:06Z",
   "pending_run_ids": [
-    "45533487346"
+    "45534102919",
+    "45534102916",
+    "45534088973",
+    "45534088904"
   ],
   "exhausted_run_ids": [
     "45350732862",
@@ -17,6 +20,23 @@
     "45348198369"
   ],
   "runs": [
+    {
+      "workflow_id": 424715662,
+      "workflow_name": "STE Lint Changed Documentation",
+      "run_id": "45533487346",
+      "run_number": 691,
+      "attempt": 1,
+      "capture_stage": "post_run",
+      "created_at": "2026-11-25T02:30:51Z",
+      "captured_at_utc": "2026-11-25T02:36:14Z",
+      "source_status": "completed",
+      "source_conclusion": "failure",
+      "projected_conclusion": null,
+      "report_status": "Complete",
+      "primary_category": "validation_or_test",
+      "history_path": "history/424715662/45533487346-attempt-1-post_run",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45533487346"
+    },
     {
       "workflow_id": 424715662,
       "workflow_name": "STE Lint Changed Documentation",
@@ -3611,15 +3631,15 @@
     "run_id": "45533487346",
     "run_number": 691,
     "attempt": 1,
-    "capture_stage": "pre_finalizer",
+    "capture_stage": "post_run",
     "created_at": "2026-11-25T02:30:51Z",
-    "captured_at_utc": "2026-11-25T02:33:24Z",
-    "source_status": "in_progress",
-    "source_conclusion": null,
-    "projected_conclusion": "failure",
-    "report_status": "Incomplete",
+    "captured_at_utc": "2026-11-25T02:36:14Z",
+    "source_status": "completed",
+    "source_conclusion": "failure",
+    "projected_conclusion": null,
+    "report_status": "Complete",
     "primary_category": "validation_or_test",
-    "history_path": "history/424715662/45533487346-attempt-1-pre_finalizer",
+    "history_path": "history/424715662/45533487346-attempt-1-post_run",
     "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45533487346"
   }
 }
