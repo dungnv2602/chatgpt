@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-113009
 - **Created:** 2026-11-24 11:30 UTC
-- **Updated:** 2026-11-25 02:26 UTC
+- **Updated:** 2026-11-25 07:11 UTC
 - **Priority:** P1
 - **Status:** Blocked
 - **Origin:** User
@@ -35,11 +35,12 @@ Here is my base ideas, expand on this. Better yet, try to utilize the best out o
 ## 2. Subsequent Instructions
 
 - **2026-11-24:** The user selected Condensed Mode for this task.
-- **2026-11-24:** The user supplied `https://github.com/othmanadi/planning-with-files` as the external reference and requested a thorough study.
+- **2026-11-24:** The user supplied the Planning with Files external reference and requested a thorough study.
 - **2026-11-24:** The user asked for a comprehensive, repository-specific workflow proposal, including templates and affected skills or a new skill where useful.
 - **2026-11-24:** The user started the session explicitly.
 
-- **2026-11-25:** The user instructed: "Start session / Merge gpt to main / Then https://github.com/dungnv2602/chatgpt/blob/gpt/workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md#considered-options / Give me an updated draft in which you give me detailed assessments about all available options."
+- **2026-11-25:** The user requested an updated DRAFT-0002 with detailed assessments of all available options.
+- **2026-11-25:** The user supplied master/Handoff.md and requested a session start and review. The hand-off asks for a separate Draft that refines and complements the user's approval of DRAFT-0002 by defining the area/project/task model, identifying gaps and deadlocks, reducing duplication, and improving the workflow.
 
 ## 3. Objective
 
@@ -47,7 +48,7 @@ Study Planning with Files and determine how its durable planning, research captu
 
 ## 4. Requirements
 
-1. Study the external repository's current canonical skill, templates, documentation, release/lifecycle design, recovery model, modes, security boundaries, and relevant tests.
+1. Study Planning with Files and determine how its durable planning, research capture, progress logging, recovery, task isolation, error handling, and verification controls can improve this repository's Worker and workspace workflow.
 2. Record the external branch, commit or version, exact files inspected, and material evidence. Treat vendor claims and benchmarks as claims with disclosed methodology, not as independent proof.
 3. Inspect the current Worker skill, Conversation Mode reference, workspace README, task board, task template, Draft and ADR contracts, Document Type Catalog, and skill-authoring rules.
 4. Compare the external three-file pattern with the records this repository already maintains. Identify overlap and avoid duplicate sources of truth.
@@ -61,12 +62,14 @@ Study Planning with Files and determine how its durable planning, research captu
 12. Follow Document Standards and the repository writing policy for any Draft or other authored record.
 13. Read back all changed repository paths and report only checks that actually occurred.
 14. Do not run repository scripts or CI locally. Do not repair unrelated findings or poll Actions.
+15. Review master/Handoff.md and prepare a separate, complementary architecture Draft for user review. Keep implementation out of scope.
 
 ## 5. Decisions
 
 - **Approved:** Study the supplied external project.
 - **Approved:** Inspect and compare the current Worker and workspace workflow.
 - **Approved:** Prepare a comprehensive proposal for user review.
+- **Approved:** Review master/Handoff.md and prepare a separate, complementary architecture Draft for user review.
 - **Proposed:** Adapt the useful file-backed planning ideas to the existing task record and workspace system.
 - **Not approved:** Installing or copying the external skill, adding local hooks or scripts, changing foundational initialization, adding automation, or implementing any proposed workflow change.
 - **Constraint:** Do not change DRAFT-0001 or create ADR-0001 without the user's separate approval.
@@ -142,27 +145,40 @@ Study Planning with Files and determine how its durable planning, research captu
 - **References:** `workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md`; `workspace/draft/README.md`; external commit `aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228`; release v3.29.1.
 - **Next:** Present revision 3 for the user's decision. Keep DRAFT-0001 separate. Do not implement before approval of the exact revision and acceptance of its implementation ADR.
 
+### 2026-11-25 07:11 UTC — Review the project hand-off and prepare the companion architecture Draft
+
+- **Action:** Read master/Handoff.md and compared its area, project, task, resource, conversation, and archive proposals with the current Worker, Conversation Mode, task template, workspace, Draft/ADR governance, archive contract, Document Type Catalog, and the existing novel-area structure. Prepared the separate companion proposal DRAFT-0003.
+- **Result:** DRAFT-0003 revision 1 is in-review. It recommends project folders with nested task folders, one global task board, task-level authority retained in TASK.md, optional task-local FINDINGS.md, project-level milestone/dependency planning, canonical resource promotion, global Draft/ADR governance, and exact-file task retention. It rejects word-for-word transcripts, project-local boards/ADRs, duplicate task PLAN/PROGRESS files in the first release, and whole-project 90-day deletion.
+- **Approval-state discrepancy:** The discussion register records Option 3 of DRAFT-0002 as approved with added requirements. However, DRAFT-0002 revision 3 and its index still show in-review, and this task still records a blocked review state. DRAFT-0003 documents this discrepancy. Do not promote or implement either proposal until the exact approved DRAFT-0002 revision and scope are reconciled.
+- **References:** master/Handoff.md; workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md; workspace/draft/README.md; skills/decision-governance/SKILL.md; workspace/DRAFT_TEMPLATE.md; workspace/adr/README.md; archive/README.md; novels/README.md; novels/WORKFLOW.md.
+- **Commits:** DRAFT-0003 creation 65a5ee5021c9659535d1c9c8eff733b41432ec50; DRAFT-0003 reconciliation update ea028555265345d8d945133aaac014687360b391; Draft index c259604f5c331c12fa98215f244df66a5dc3fc6c.
+- **Verification:** Read back the complete DRAFT-0003 and Draft index from gpt. Checked revision/status metadata, four full option assessments, common assessment dimensions, comparative matrix, user questions, evidence register, unique headings, and index links. No lint, CI workflow, or repository scripts were run.
+- **Next:** Await the user's review of DRAFT-0003 revision 1 and reconcile the exact approved DRAFT-0002 revision and additions. Do not create an ADR or implement proposed changes without the required approval.
+
 ## 7. Current State
 
-The external source study and repository comparison are complete. DRAFT-0002 revision 3 is complete, read back, indexed, and in-review. It contains detailed assessments of all four considered options, a qualitative comparison matrix, refreshed source/evaluation limits, and a staged Option 3 operating design.
+The external Planning with Files study and DRAFT-0002 revision 3 are complete. The user later approved Option 3 with additional requirements recorded in the discussion register: task-folder isolation, recovery from task records and associated ADRs, dedicated research evidence, and named plan directories/selectors for independently managed subtasks.
 
-The user-authorized fast-forward merged the gpt commit into main. The branches matched at `3bce922cb6348e38e04ea7c2d43597af9d908fc3` immediately after the merge. Subsequent task and Draft review changes are committed to gpt only. The user did not request a second merge.
+The user supplied master/Handoff.md and asked for a review and a separate, complementary proposal. DRAFT-0003 revision 1 now exists, is indexed, and is in-review. It defines the Area, Project, Task, Resource, Discussion, Decision Draft, ADR, and Archive boundaries and compares four viable hierarchy models. Its recommendation is project folders with nested task folders, one global task board, task-record authority, optional task-local findings, project-level coordination, global Draft/ADR governance, and exact-file task retention.
 
-The task is Blocked while the user reviews revision 3. DRAFT-0001 remains a separate open decision. No implementation ADR has been created for DRAFT-0002. No proposed workflow, template, skill, Ledger, or archive changes are approved.
+**Approval-state discrepancy:** workspace/discussion.md records DRAFT-0002 Option 3 as approved with added requirements, but DRAFT-0002 revision 3 metadata and the Draft index still show in-review. This task also remains Blocked pending user review. The exact approved revision and added scope must be reconciled before ADR promotion. DRAFT-0003 is a separate proposal and remains pending user review.
+
+No implementation ADR has been created for these workflow changes. No Worker, template, task path, project folder, Ledger, archive, or foundational initialization changes have been implemented.
 
 ## 8. Remaining Work
 
-- Await the user's decision on DRAFT-0002 revision 3 and its exact scope.
-- If the user requests changes, revise the same Draft ID and increment its revision. Keep it in-review.
-- If the user approves it, reconcile any overlap with DRAFT-0001 before creating the implementation ADR under the accepted governance process.
-- Do not implement the proposed workflow before the exact Draft approval and an accepted implementation ADR.
-- Preserve DRAFT-0001 as a separate open decision until its own review is resolved.
+- Await the user's review of DRAFT-0003 revision 1 and its exact scope.
+- Resolve the DRAFT-0002 approval-state discrepancy. Confirm the exact approved revision and the additional requirements before changing its metadata or promoting it.
+- Reconcile the DRAFT-0002 task execution, findings, and folder paths with DRAFT-0003. Do not create duplicate task-notes and task-local findings systems.
+- Revise either Draft only when the user requests changes. Preserve its ID and increment its revision.
+- Do not create an ADR or implement the proposed workflow until the relevant exact Draft revisions are approved and the implementation ADR is accepted.
+- Preserve the separate open decision for DRAFT-0001.
 
 ## 9. Next Actions
 
-1. Await the user's decision on DRAFT-0002 revision 3.
-2. Record the decision against the exact revision and scope.
-3. Proceed only through the Draft-to-ADR process. Do not implement without an accepted implementation ADR.
+1. Await the user's review of DRAFT-0003 revision 1.
+2. Confirm the exact approved revision and scope of DRAFT-0002, including its added requirements.
+3. Reconcile the two Drafts and proceed only through the global Draft-to-ADR process. Do not implement without an accepted ADR.
 
 ## 10. References
 
@@ -176,18 +192,26 @@ The task is Blocked while the user reviews revision 3. DRAFT-0001 remains a sepa
 - `workspace/README.md`
 - `workspace/TASK_TEMPLATE.md`
 - `workspace/task_board.md`
+- `master/Handoff.md`
+- `workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md`
 - Related task: `20261124-103354`
 
 ## 11. Verification
 
-- **Check:** DRAFT-0002 revision 3 content, option coverage, review metadata, source references, and Draft index.
-- **Method:** Read back the complete Draft, Draft index, task record, task board, and discussion register from branch gpt. Checked revision 3 and in-review status; all four option sections; assessment criteria and external evidence caveats; comparative matrix; twelve operating-design sections; explicit scope exclusions; unique headings; pinned external source SHA; revision history; pending approval; consistent Blocked task/board state; open user-decision link; and no active Current Step. Compared main and gpt after the merge.
-- **Result:** The checks passed. Revision 3 remains in-review; user decision is pending; approved scope is not approved; no resulting ADR exists. The Draft index points to revision 3. The task record and board both show Blocked, with the task retained as Current Execution. The discussion register points to the exact Draft revision and retains only verified reports. main remains at the verified merge commit; subsequent Draft revisions are on gpt. No implementation files were changed.
-- **Limitations:** No repository lint workflow, GitHub Actions validation, or external/repository tests were run. Read-back and structural checks do not establish that the user accepts the recommendation.
+- **Check:** DRAFT-0002 and DRAFT-0003 status, option coverage, architectural boundaries, cross-Draft consistency, index links, and task state.
+- **Method:** Read the complete DRAFT-0003 and Draft index from branch gpt. Checked the four considered options, common assessment dimensions, comparative matrix, exact evidence register, user questions, unique headings, and metadata. Read the current task and task board. Compared the discussion register's DRAFT-0002 approval statement with the Draft metadata and task state.
+- **Result:** DRAFT-0003 revision 1 and its index entry are present and read back. The proposal is in-review. The discussion register and DRAFT-0002 metadata/task state do not agree on whether the Option 3 decision has been formally applied to an exact revision. The discrepancy is recorded; no approval metadata was changed by inference. The task and board remain Blocked. No ADR or implementation was created.
+- **Limitations:** No repository lint, CI workflow, or scripts were run. Read-back and structural checks do not establish user approval or validate future runtime behavior.
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. The approved scope now includes revising DRAFT-0002 after the user's explicit request for detailed assessments of all available options. Keep the existing task ID and DRAFT-0002 ID. Preserve DRAFT-0001 and its separate pending review. Do not create an implementation ADR or implement proposed changes before the user approves the exact Draft revision and the repository accepts its implementation ADR. The post-merge `main` ref was verified equal to `gpt` at `3bce922cb6348e38e04ea7c2d43597af9d908fc3`; do not assume later gpt-only edits are already on main.
+Continue on branch gpt. The active review work is DRAFT-0002 revision 3 and its companion DRAFT-0003 revision 1. Read the exact Draft and global Draft index before changing either.
+
+DRAFT-0003 is in-review and asks the user to decide the Area/Project/Task boundaries, nested project task paths, task-local findings location, task-ID selectors, resource promotion, and project/archive lifecycle. DRAFT-0002's task-plan and progress semantics remain the basis for the task record. The DRAFT-0003 proposal places optional FINDINGS.md beside TASK.md and does not create separate task PLAN.md or PROGRESS.md files.
+
+The discussion register records DRAFT-0002 Option 3 as approved with added requirements, but its metadata and task state still show in-review/Blocked. Reconcile the exact approved revision and scope with the user before promotion. Do not silently change approval status.
+
+Do not create an ADR, update Worker behavior, migrate task paths, create Project folders, change archive retention, update the Ledger renderer, or implement any proposed workflow until the relevant exact Draft approvals and accepted implementation ADR are in place. Keep DRAFT-0001 as a separate decision. Do not assume later gpt commits are on main.
 
 ## 13. Ledger Findings
 
