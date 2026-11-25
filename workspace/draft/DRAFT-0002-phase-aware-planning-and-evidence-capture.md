@@ -624,13 +624,13 @@ If the team later needs host-specific lifecycle automation, evaluate that capabi
 
 ## Questions for the User
 
-1. Do you approve DRAFT-0002 revision 2 and Option 3, including the v1.4 task template, optional findings notes, Worker reference, and coordinated Ledger updates?
-2. Do you approve adapting the external project's concepts rather than installing or copying its complete system?
-3. Do you approve the three-task pilot composition and pass criteria in this revision?
+1. Do you approve **Option 3** and the full scope in revision 3: Task Template 1.4, Worker and focused reference updates, optional findings-note format and lifecycle, Document Type Catalog changes, coordinated CI Ledger renderer/tests, and the three-task pilot?
+2. Do you accept the revised distinction between three planning levels (Lightweight, Phased, Research-led) and execution mode (Serial by default; Parallel only with explicit authorization)?
+3. Do you agree to exclude live hooks, automatic context injection, plan attestation, and Stop gates from this proposal, leaving those for a separate Draft only if a compatible runtime and measured need emerge?
 
 ## Review and Approval
 
-- **Revision presented:** 2
+- **Revision presented:** 3
 - **User decision:** Pending
 - **Approved scope:** Not approved
 - **Decision date:** Pending
@@ -642,18 +642,19 @@ If the team later needs host-specific lifecycle automation, evaluate that capabi
 |---|---|---|---|
 | 2026-11-24 | 1 | Initial proposal based on Planning with Files and current Worker integration review. | Superseded by revision 2. |
 | 2026-11-24 | 2 | Linked the proposal to accepted ADR-0001, targeted Task Template 1.4, established one authoritative Next Step, reconciled Following Actions, revised research checkpoints and findings-note closeout, defined a measurable three-task pilot, and addressed the Draft's recorded lint findings. | User approved preparation of revision 2 only. Decision approval remains pending. |
+| 2026-11-25 | 3 | Expanded all four option assessments; added repository-fit criteria and a comparative matrix; refreshed the external source snapshot; disclosed benchmark, version, and host limitations; separated planning level from execution mode; and restored a detailed, staged Option 3 operating design. | User requested detailed assessments of every available option. Approval of revision 3 and its scope is pending. |
 
 ## References
 
-- External repository: https://github.com/OthmanAdi/planning-with-files
-- External branch head: https://github.com/OthmanAdi/planning-with-files/commit/aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228
-- External canonical skill: `skills/planning-with-files/SKILL.md`
-- External templates: `templates/task_plan.md`, `templates/findings.md`, `templates/progress.md`
-- External workflow: `docs/workflow.md`
-- External long-running task guide: `docs/long-running-agent-tasks.md`
-- External plan inventory: `skills/planning-with-files/plan-inventory.md`
-- External security policy: `SECURITY.md`
-- External resolver and validation: `scripts/resolve-plan-dir.sh`, `scripts/check-complete.sh`, `scripts/gate-stop.sh`, and `tests/test_check_complete_resolver.py`
+- External repository and current source snapshot (verified 2026-11-25): https://github.com/OthmanAdi/planning-with-files/commit/aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228
+- External latest release at review time: https://github.com/OthmanAdi/planning-with-files/releases/tag/v3.29.1
+- External canonical skill at the pinned commit: https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7cf1bfbcb60f0405f7cf0ee228/skills/planning-with-files/SKILL.md
+- External templates at the pinned commit: [task_plan.md](https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7cf1bfbcb60f0405f7cf0ee228/templates/task_plan.md), [findings.md](https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7cf1bfbcb60f0405f7cf0ee228/templates/findings.md), [progress.md](https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f5f7cf1bfbcb60f0405f7cf0ee228/templates/progress.md)
+- External evaluation and evidence limitations: https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f7cf1bfbcb60f0405f7cf0ee228/docs/evals.md
+- External long-running-task guide: https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f7cf1bfbcb60f0405f7cf0ee228/docs/long-running-agent-tasks.md
+- External attestation guide: https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f7cf1bfbcb60f0405f7cf0ee228/docs/attestation-locking.md
+- External security policy: https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f7cf1bfbcb60f0405f7cf0ee228/SECURITY.md
+- External resolver and validation: [resolve-plan-dir.sh](https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f7cf1bfbcb60f0405f7cf0ee228/scripts/resolve-plan-dir.sh), [check-complete.sh](https://github.com/OthmanAdi/planning-with-files/blob/aaa38bc62053f7cf1bfbcb60f0405f7cf0ee228/scripts/check-complete.sh)
 - Current Worker: `skills/the-worker/SKILL.md`
 - Worker Conversation Mode: `skills/the-worker/references/conversation-mode.md`
 - Current task template: `workspace/TASK_TEMPLATE.md` (Version 1.3 at Draft revision time; proposed target Version 1.4).
