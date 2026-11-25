@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-25 02:20 UTC — Review and revise DRAFT-0002:** Load the decision-governance procedure, document-type contract, templates, source draft, and related task evidence. Assess every listed option against explicit criteria and evidence. Publish a revised Draft for user decision only. Do not implement the proposal.
+**2026-11-25 02:20 UTC — Review and revise DRAFT-0002:** Resume [task 20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md). Verify the external source's current branch head and assess all four options against repository constraints. Publish revision 3 for user decision only. Do not implement the proposal.
 
 ## Open Discussions
 
