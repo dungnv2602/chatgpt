@@ -1,40 +1,40 @@
 {
   "schema_version": "1.0.0",
   "source_run": {
-    "id": "45566012929",
-    "number": 381,
+    "id": "45566151843",
+    "number": 383,
     "attempt": 1,
     "workflow_id": 427313089,
     "workflow_name": "Validate Document Standards",
     "workflow_path": ".github/workflows/validate-document-standards.yml",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45566012929",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45566151843",
     "event": "push",
     "branch": "gpt",
-    "head_sha": "65a5ee5021c9659535d1c9c8eff733b41432ec50",
-    "status": "completed",
-    "conclusion": "cancelled",
-    "created_at": "2026-11-25T07:10:03Z",
-    "run_started_at": "2026-11-25T07:10:03Z",
-    "updated_at": "2026-11-25T07:11:06Z",
+    "head_sha": "c259604f5c331c12fa98215f244df66a5dc3fc6c",
+    "status": "in_progress",
+    "conclusion": null,
+    "created_at": "2026-11-25T07:11:06Z",
+    "run_started_at": "2026-11-25T07:11:06Z",
+    "updated_at": "2026-11-25T07:13:13Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
-    "head_commit_message": "Add companion area project task architecture draft"
+    "head_commit_message": "Index companion area project task draft"
   },
   "capture": {
-    "stage": "post_run",
-    "captured_at_utc": "2026-11-25T07:11:23Z",
-    "completeness": "Complete",
+    "stage": "pre_finalizer",
+    "captured_at_utc": "2026-11-25T07:13:28Z",
+    "completeness": "Incomplete",
     "reporter_job": {
-      "id": "139040974379",
+      "id": "139042184886",
       "name": "Capture GH Actions diagnostics",
-      "status": "completed",
-      "conclusion": "success"
+      "status": "in_progress",
+      "conclusion": null
     }
   },
   "classification": {
-    "state": "cancelled",
-    "observed_conclusion": "cancelled",
-    "projected_conclusion": null,
+    "state": "in_progress",
+    "observed_conclusion": null,
+    "projected_conclusion": "failure",
     "primary_category": "validation_or_test",
     "categories": [
       "validation_or_test"
@@ -42,26 +42,26 @@
     "issues": [
       {
         "category": "validation_or_test",
-        "job_id": "139040870241",
+        "job_id": "139042073284",
         "job_name": "validate-document-standards",
         "step_number": 6,
         "step_name": "Validate the document type catalog",
         "blocking": true,
         "confidence": "medium",
-        "message": "2026-11-25T07:10:14.9582639Z ERROR: Misplaced skill template under references/: skills/migrate-to-rust/references/infographic_template.html. Move copy-ready assets to the owning skill's assets/ directory."
+        "message": "Step conclusion: failure"
       }
     ]
   },
   "jobs": [
     {
-      "id": "139040870241",
+      "id": "139042073284",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-25T07:10:05Z",
-      "completed_at": "2026-11-25T07:10:17Z",
-      "runner_name": "GitHub Actions 1000002560",
-      "runner_id": 1000002560,
+      "started_at": "2026-11-25T07:12:55Z",
+      "completed_at": "2026-11-25T07:13:09Z",
+      "runner_name": "GitHub Actions 1000002570",
+      "runner_id": 1000002570,
       "runner_group_name": "GitHub Actions",
       "runner_group_id": 0,
       "steps": [
@@ -70,106 +70,101 @@
           "name": "Set up job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-25T07:10:06Z",
-          "completed_at": "2026-11-25T07:10:07Z"
+          "started_at": "2026-11-25T07:12:56Z",
+          "completed_at": "2026-11-25T07:12:56Z"
         },
         {
           "number": 2,
           "name": "Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-25T07:10:07Z",
-          "completed_at": "2026-11-25T07:10:13Z"
+          "started_at": "2026-11-25T07:12:56Z",
+          "completed_at": "2026-11-25T07:13:02Z"
         },
         {
           "number": 3,
           "name": "Set up Python",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-25T07:10:13Z",
-          "completed_at": "2026-11-25T07:10:13Z"
+          "started_at": "2026-11-25T07:13:02Z",
+          "completed_at": "2026-11-25T07:13:03Z"
         },
         {
           "number": 4,
           "name": "Run CI Ledger regression tests",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-25T07:10:13Z",
-          "completed_at": "2026-11-25T07:10:14Z"
+          "started_at": "2026-11-25T07:13:03Z",
+          "completed_at": "2026-11-25T07:13:05Z"
         },
         {
           "number": 5,
           "name": "Run catalog validator regression tests",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-25T07:10:14Z",
-          "completed_at": "2026-11-25T07:10:14Z"
+          "started_at": "2026-11-25T07:13:05Z",
+          "completed_at": "2026-11-25T07:13:06Z"
         },
         {
           "number": 6,
           "name": "Validate the document type catalog",
           "status": "completed",
           "conclusion": "failure",
-          "started_at": "2026-11-25T07:10:14Z",
-          "completed_at": "2026-11-25T07:10:14Z"
+          "started_at": "2026-11-25T07:13:06Z",
+          "completed_at": "2026-11-25T07:13:06Z"
         },
         {
           "number": 11,
           "name": "Post Set up Python",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-25T07:10:14Z",
-          "completed_at": "2026-11-25T07:10:14Z"
+          "started_at": "2026-11-25T07:13:06Z",
+          "completed_at": "2026-11-25T07:13:06Z"
         },
         {
           "number": 12,
           "name": "Post Check out gpt",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-25T07:10:14Z",
-          "completed_at": "2026-11-25T07:10:15Z"
+          "started_at": "2026-11-25T07:13:06Z",
+          "completed_at": "2026-11-25T07:13:06Z"
         },
         {
           "number": 13,
           "name": "Complete job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-25T07:10:15Z",
-          "completed_at": "2026-11-25T07:10:15Z"
+          "started_at": "2026-11-25T07:13:06Z",
+          "completed_at": "2026-11-25T07:13:06Z"
         }
       ],
       "log_capture": {
-        "available": true,
+        "available": false,
         "truncated": false,
-        "bytes": 45952,
-        "path": "logs/job-139040870241.log",
-        "error": null,
-        "marker_lines": [
-          "validate-document-standards\tValidate the document type catalog\t2026-11-25T07:10:14.9582639Z ERROR: Misplaced skill template under references/: skills/migrate-to-rust/references/infographic_template.html. Move copy-ready assets to the owning skill's assets/ directory.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-25T07:10:14.9588608Z ERROR: 15 Markdown file(s) are not covered by the catalog: skills/pdf/FORMS.md, skills/pdf/REFERENCE.md, skills/skill-creator/agents/analyzer.md, skills/skill-creator/agents/comparator.md, skills/skill-creator/agents/grader.md, skills/theme-factory/themes/arctic-frost.md, skills/theme-factory/themes/botanical-garden.md, skills/theme-factory/themes/desert-rose.md, skills/theme-factory/themes/forest-canopy.",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-25T07:10:14.9594633Z Catalog validation failed: 2 error(s), 18 document type(s), 28 reference(s).",
-          "validate-document-standards\tValidate the document type catalog\t2026-11-25T07:10:14.9656343Z ##[error]Process completed with exit code 1."
-        ]
+        "bytes": 82,
+        "path": "logs/job-139042073284.log",
+        "error": "run 45566151843 is still in progress; logs will be available when it is complete\n",
+        "marker_lines": []
       }
     }
   ],
   "check_runs": [
     {
-      "id": "139040870241",
+      "id": "139042073284",
       "name": "validate-document-standards",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-25T07:10:05Z",
-      "completed_at": "2026-11-25T07:10:17Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45566012929/job/139040870241",
+      "started_at": "2026-11-25T07:12:55Z",
+      "completed_at": "2026-11-25T07:13:09Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45566151843/job/139042073284",
       "app": "GitHub Actions",
       "annotations_count": 2
     }
   ],
   "annotations": [
     {
-      "check_run_id": "139040870241",
-      "job_id": "139040870241",
+      "check_run_id": "139042073284",
+      "job_id": "139042073284",
       "path": ".github",
       "start_line": 2,
       "end_line": 2,
@@ -179,8 +174,8 @@
       "raw_details": ""
     },
     {
-      "check_run_id": "139040870241",
-      "job_id": "139040870241",
+      "check_run_id": "139042073284",
+      "job_id": "139042073284",
       "path": ".github",
       "start_line": 15,
       "end_line": 15,
@@ -191,6 +186,12 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [],
-  "history_path": "history/427313089/45566012929-attempt-1-post_run"
+  "capture_errors": [
+    {
+      "source": "job_log",
+      "job_id": "139042073284",
+      "message": "run 45566151843 is still in progress; logs will be available when it is complete\n"
+    }
+  ],
+  "history_path": "history/427313089/45566151843-attempt-1-pre_finalizer"
 }
