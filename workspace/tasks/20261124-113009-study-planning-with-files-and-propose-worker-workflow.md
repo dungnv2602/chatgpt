@@ -125,9 +125,19 @@ Study Planning with Files and determine how its durable planning, research captu
 - **References:** `workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md`; `skills/decision-governance/SKILL.md`; `workspace/DRAFT_TEMPLATE.md`; `workspace/draft/README.md`; `skills/document-standards/references/document-type-catalog.md`; merge commit `3bce922cb6348e38e04ea7c2d43597af9d908fc3`.
 - **Next:** Verify the external source at its current branch head, assess each option against the repository's operating constraints, then revise DRAFT-0002 as revision 3. Keep implementation blocked pending exact Draft and accepted ADR approval.
 
+### 2026-11-25 02:23 UTC — Verify the current external source and complete the option assessment
+
+- **Action:** Queried the external repository API for the current `master` head and latest release. Read the pinned canonical skill, three templates, long-running-task guide, evaluation report, attestation guide, security policy, and plan resolver from that source commit.
+- **Source snapshot:** The current `master` head is still `aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228`, committed 2026-11-23 11:57:02 UTC. The latest release is v3.29.1, published 2026-11-23 09:26:21 UTC. The latest commit changes README sponsor material; it does not change the planning mechanisms reviewed here.
+- **Mechanisms confirmed:** The external system uses task-scoped three-file state, named `.planning/<id>` directories, `PLAN_ID` and `PWF_PLAN_ROOT` selectors, a shared active pointer for sequential switching, one plan owner, separate worker ledgers, host-dependent context-injection hooks, optional autonomous/gated modes, and SHA-256 plan attestation. Its attestation is not a human approval or a keyed signature. Plan content remains untrusted data.
+- **Evaluation evidence and limits:** The repository's Test 5 is an internal 2026-07-06 benchmark of v3.4.0 on Claude Code, not the current v3.29.1 release or this ChatGPT/GitHub environment. It reports 77 graded cells with correctness parity across all arms; a forced recovery subset reports 5.0 stage-two turns for Planning with Files versus 8.3–13.3 for six alternatives. The same report says the current file-only recovery path was not re-tested under that protocol; the unforced tasks cover only two small tasks; and long-horizon drift, cross-IDE behavior, multi-day work, and independent task corpora were not tested. The historical v2.21.0 tests and 3/3 blind A/B comparison are also author-run and limited. These results support a hypothesis about structured planning and recovery, not a quantified performance promise for this repository.
+- **Assessment:** Option 1 remains the lowest-cost baseline and is adequate for short, single-stage work, but does not resolve explicit phase/next-action gaps. Option 2 has the strongest integrated mechanics when a compatible local agent host can run them, but is a poor direct fit here because it introduces overlapping authority and depends on local filesystem/runtime hooks. Option 3 best preserves the repository's task authority and remote-only workflow while addressing the gaps with bounded overhead. Option 4 may support structural checks through GitHub Actions, but cannot provide per-turn injection or runtime stop behavior in this environment; a full hook framework is premature.
+- **References:** External `master` commit `aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228`: `skills/planning-with-files/SKILL.md`, `templates/task_plan.md`, `templates/findings.md`, `templates/progress.md`, `docs/long-running-agent-tasks.md`, `docs/evals.md`, `docs/attestation-locking.md`, `SECURITY.md`, `scripts/resolve-plan-dir.sh`; GitHub latest release v3.29.1.
+- **Next:** Draft revision 3 with a neutral assessment of all four options, an explicit fit matrix, evidence limitations, and a staged Option 3 recommendation. Keep implementation approval separate.
+
 ## 7. Current State
 
-The user-approved research and initial proposal are complete. DRAFT-0002 revision 2 remains in-review. The user has requested a more detailed assessment of all four options, so this task resumed on 2026-11-25.
+The user-approved research and initial proposal are complete. DRAFT-0002 revision 2 remains in-review. The user has requested a more detailed assessment of all four options, so this task resumed on 2026-11-25. The external Planning with Files source was re-checked on 2026-11-25; its current master head remains commit aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228 (release v3.29.1). Its benchmark limitations and current file-only recovery boundary are now included in the assessment basis.
 
 The user-authorized fast-forward merged the gpt commit into main. The branches matched at `3bce922cb6348e38e04ea7c2d43597af9d908fc3` immediately after the merge. Subsequent task and Draft review changes are being committed to gpt only. The user did not request a second merge.
 
@@ -145,9 +155,9 @@ The current task is In Progress and remains non-implementation work. No implemen
 
 ## 9. Next Actions
 
-1. Verify the current external Planning with Files branch head and inspect the relevant source files for the option assessment.
-2. Prepare and read back DRAFT-0002 revision 3 with detailed assessments of all four options.
-3. Reconcile the Draft index and discussion register, then present revision 3 for the user's decision. Do not implement it before approval.
+1. Synthesize the comparative assessment and revise DRAFT-0002 to revision 3.
+2. Read back the complete revised Draft and verify every required section and source link.
+3. Update the Draft index and discussion register, then present revision 3 for the user's decision. Do not implement it before approval.
 
 ## 10. References
 
