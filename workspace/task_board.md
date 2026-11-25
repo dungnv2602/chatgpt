@@ -10,12 +10,13 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Record |
 |---|---|---:|---|---|
-| 20261124-113009 | Study Planning with Files and propose a file-backed Worker workflow | P1 | Blocked | [Task record](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md) |
+| 20261125-023508 | Standardize detailed option assessments in future Drafts | P1 | In Progress | [Task record](tasks/20261125-023508-standardize-detailed-option-assessments-in-future-drafts.md) |
 
 ## In Progress
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
+| 20261125-023508 | Standardize detailed option assessments in future Drafts | P1 | In Progress | User | 2026-11-25 | — | [Task record](tasks/20261125-023508-standardize-detailed-option-assessments-in-future-drafts.md) |
 
 
 ## Ready
