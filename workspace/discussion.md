@@ -1,6 +1,6 @@
 ## Current Step
 
-_Review the approved DRAFT-0002, task/workspace contracts, ADR governance, and document coverage. Define the implementation boundary and task-folder model before editing. Approved proposal: [DRAFT-0002](draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md)._
+_Recover the active task context from the workspace guide and task board. Identify the applicable task record and its scope before reviewing `master/Handoff.md`._
 
 ## Open Discussions
 
