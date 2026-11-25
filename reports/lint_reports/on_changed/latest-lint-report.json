@@ -1,96 +1,1583 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45461706916",
-  "run_number": 681,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45461706916",
+  "run_id": "45533487346",
+  "run_number": 691,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45533487346",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "cedc0b751f02f494feabb822b2669c29fa9d7180",
+  "commit_sha": "fb626d3b33eeb3b37ddbf7630ae3183c84a4bf24",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "incremental",
-  "baseline_sha": "111eedc1d609bbf9445253bc79cddef1d28cdce4",
-  "generated_at_utc": "2026-11-24T18:39:20.408029+00:00",
-  "status": "Passed",
-  "linter_source_sha": "cedc0b751f02f494feabb822b2669c29fa9d7180",
+  "baseline_sha": "cedc0b751f02f494feabb822b2669c29fa9d7180",
+  "generated_at_utc": "2026-11-25T02:32:41.515121+00:00",
+  "status": "Failed",
+  "linter_source_sha": "fb626d3b33eeb3b37ddbf7630ae3183c84a4bf24",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
   },
   "files_evaluated": [
-    "skills/the-worker/SKILL.md"
+    "workspace/task_board.md",
+    "workspace/draft/README.md",
+    "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md"
   ],
-  "files_evaluated_count": 1,
-  "files_failed": 0,
-  "failed_files": [],
-  "files_with_findings": 0,
-  "total_findings": 0,
-  "hard_findings": 0,
-  "advisory_findings": 0,
-  "findings_by_rule": {},
+  "files_evaluated_count": 3,
+  "files_failed": 1,
+  "failed_files": [
+    "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md"
+  ],
+  "files_with_findings": 1,
+  "total_findings": 75,
+  "hard_findings": 53,
+  "advisory_findings": 22,
+  "findings_by_rule": {
+    "passive-voice": 21,
+    "semicolon": 32,
+    "long-sentence": 18,
+    "present-perfect": 1,
+    "synonym-rotation": 3
+  },
   "records": [
     {
       "violations": [],
       "count": 0,
       "hard_count": 0,
       "baseline": 0,
-      "words": 5282,
+      "words": 1354,
       "per_100_words": 0.0,
-      "path": "skills/the-worker/SKILL.md",
+      "path": "workspace/task_board.md",
       "exit_code": 0
-    }
-  ],
-  "findings": [],
-  "new_findings": 0,
-  "recurring_findings": 0,
-  "resolved_findings": [
-    {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 44,
-      "col": 11,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "repair",
-      "message": "'repair' and 'fix' name the same action. Pick one and use it every time.",
-      "fingerprint": "648105621f69f0a2eab8c4ca",
-      "comparison": "resolved"
     },
     {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 347,
-      "col": 307,
+      "violations": [],
+      "count": 0,
+      "hard_count": 0,
+      "baseline": 0,
+      "words": 423,
+      "per_100_words": 0.0,
+      "path": "workspace/draft/README.md",
+      "exit_code": 0
+    },
+    {
+      "violations": [
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 25,
+          "col": 10,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is recommended",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 25,
+          "col": 236,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is created",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 27,
+          "col": 293,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 43,
+          "col": 292,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 43,
+          "col": 342,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are unchanged",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 45,
+          "col": 452,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 118,
+          "col": 13,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are assessed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 127,
+          "col": 277,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is supported",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 131,
+          "col": 1,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "27 words",
+          "message": "Sentence has 27 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 135,
+          "col": 123,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 141,
+          "col": 432,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 149,
+          "col": 130,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are required",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 151,
+          "col": 133,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is needed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 154,
+          "col": 130,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 166,
+          "col": 3,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "40 words",
+          "message": "Sentence has 40 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 166,
+          "col": 153,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 166,
+          "col": 195,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 166,
+          "col": 216,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 172,
+          "col": 17,
+          "rule": "present-perfect",
+          "level": "advisory",
+          "match": "has evolved",
+          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 177,
+          "col": 5,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "30 words",
+          "message": "Sentence has 30 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 181,
+          "col": 259,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "validate",
+          "message": "'validate' and 'check' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 182,
+          "col": 45,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are gitignored",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 182,
+          "col": 72,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "32 words",
+          "message": "Sentence has 32 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 182,
+          "col": 278,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is added",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 186,
+          "col": 131,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "30 words",
+          "message": "Sentence has 30 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 186,
+          "col": 552,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 187,
+          "col": 3,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "38 words",
+          "message": "Sentence has 38 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 195,
+          "col": 90,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "26 words",
+          "message": "Sentence has 26 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 206,
+          "col": 112,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is missed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 207,
+          "col": 165,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are reconciled",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 209,
+          "col": 5,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "27 words",
+          "message": "Sentence has 27 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 211,
+          "col": 311,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 211,
+          "col": 342,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are intended",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 223,
+          "col": 85,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "26 words",
+          "message": "Sentence has 26 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 231,
+          "col": 5,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "32 words",
+          "message": "Sentence has 32 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 232,
+          "col": 3,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "28 words",
+          "message": "Sentence has 28 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 241,
+          "col": 81,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is redesigned",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 244,
+          "col": 107,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 267,
+          "col": 114,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 268,
+          "col": 69,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 281,
+          "col": 139,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 283,
+          "col": 84,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is needed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 320,
+          "col": 246,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is blocked",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 326,
+          "col": 391,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 338,
+          "col": 117,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "26 words",
+          "message": "Sentence has 26 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 338,
+          "col": 187,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 383,
+          "col": 179,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 463,
+          "col": 1,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "26 words",
+          "message": "Sentence has 26 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 469,
+          "col": 245,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 515,
+          "col": 142,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is required",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 516,
+          "col": 107,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 517,
+          "col": 145,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is provided",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 528,
+          "col": 134,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 528,
+          "col": 168,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 530,
+          "col": 11,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is marked",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 533,
+          "col": 18,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are created",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 533,
+          "col": 104,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 533,
+          "col": 126,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 533,
+          "col": 157,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 537,
+          "col": 20,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is treated",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 539,
+          "col": 30,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are treated",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 554,
+          "col": 32,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "Verify",
+          "message": "'verify' and 'check' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 612,
+          "col": 52,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "correct",
+          "message": "'correct' and 'fix' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 615,
+          "col": 4,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "31 words",
+          "message": "Sentence has 31 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 632,
+          "col": 4,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "37 words",
+          "message": "Sentence has 37 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 633,
+          "col": 145,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 634,
+          "col": 4,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "33 words",
+          "message": "Sentence has 33 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 649,
+          "col": 20,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "36 words",
+          "message": "Sentence has 36 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 650,
+          "col": 20,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "38 words",
+          "message": "Sentence has 38 words (cap 25). Split it."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 650,
+          "col": 56,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 650,
+          "col": 112,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 650,
+          "col": 152,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 650,
+          "col": 204,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 650,
+          "col": 250,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+          "line": 665,
+          "col": 90,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        }
+      ],
+      "count": 75,
+      "hard_count": 53,
+      "baseline": 0,
+      "words": 8961,
+      "per_100_words": 0.8,
+      "path": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "exit_code": 1
+    }
+  ],
+  "findings": [
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 25,
+      "col": 10,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is recommended",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "a2ab275c6b77dd5fee04cc69",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 25,
+      "col": 236,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is created",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "f361f0da8e025b2ad8e4e144",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 27,
+      "col": 293,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 43,
+      "col": 292,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 43,
+      "col": 342,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are unchanged",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "a909a403a059d36f26caf607",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 45,
+      "col": 452,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 118,
+      "col": 13,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are assessed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "2622327c5814c036cce375d2",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 127,
+      "col": 277,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is supported",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "5fbc17194b22ffad4280c0ef",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 131,
+      "col": 1,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "27 words",
+      "message": "Sentence has 27 words (cap 25). Split it.",
+      "fingerprint": "fef6e60a628c50ea5557879f",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 135,
+      "col": 123,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 141,
+      "col": 432,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 149,
+      "col": 130,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are required",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "5acc357959587a68b0f951b8",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 151,
+      "col": 133,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is needed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "ff6c3acd0c014dc4e61c466a",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 154,
+      "col": 130,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 166,
+      "col": 3,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "40 words",
+      "message": "Sentence has 40 words (cap 25). Split it.",
+      "fingerprint": "f7dc64f1259416e941602253",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 166,
+      "col": 153,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 166,
+      "col": 195,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 166,
+      "col": 216,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 172,
+      "col": 17,
       "rule": "present-perfect",
       "level": "advisory",
-      "match": "has Done",
+      "match": "has evolved",
       "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "9e06fd9464df0cb08ae12387",
-      "comparison": "resolved"
+      "fingerprint": "6e0df3ac815fc5850205b430",
+      "comparison": "new"
     },
     {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 373,
-      "col": 162,
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 177,
+      "col": 5,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "30 words",
+      "message": "Sentence has 30 words (cap 25). Split it.",
+      "fingerprint": "88aeab811894156e381b6f38",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 181,
+      "col": 259,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "verify",
+      "match": "validate",
+      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "5c822b17641bfca685187467",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 182,
+      "col": 45,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are gitignored",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "e8137e2bbd27eeeebe09cefe",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 182,
+      "col": 72,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "32 words",
+      "message": "Sentence has 32 words (cap 25). Split it.",
+      "fingerprint": "f82bfd9e6673b647a6d8fc2d",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 182,
+      "col": 278,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is added",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "2879617005bdf3d23fcdebce",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 186,
+      "col": 131,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "30 words",
+      "message": "Sentence has 30 words (cap 25). Split it.",
+      "fingerprint": "88aeab811894156e381b6f38",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 186,
+      "col": 552,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 187,
+      "col": 3,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "38 words",
+      "message": "Sentence has 38 words (cap 25). Split it.",
+      "fingerprint": "0f7475f061de95d077b1bfe9",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 195,
+      "col": 90,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "26 words",
+      "message": "Sentence has 26 words (cap 25). Split it.",
+      "fingerprint": "2b8b751eaf86badac01b9e00",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 206,
+      "col": 112,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is missed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "d322aeaf54a910f1b652245b",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 207,
+      "col": 165,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are reconciled",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "f0d61be6ac280ec407b4f93b",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 209,
+      "col": 5,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "27 words",
+      "message": "Sentence has 27 words (cap 25). Split it.",
+      "fingerprint": "fef6e60a628c50ea5557879f",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 211,
+      "col": 311,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 211,
+      "col": 342,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are intended",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "77adbdbc0fe812d1b67b5e05",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 223,
+      "col": 85,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "26 words",
+      "message": "Sentence has 26 words (cap 25). Split it.",
+      "fingerprint": "2b8b751eaf86badac01b9e00",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 231,
+      "col": 5,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "32 words",
+      "message": "Sentence has 32 words (cap 25). Split it.",
+      "fingerprint": "f82bfd9e6673b647a6d8fc2d",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 232,
+      "col": 3,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "28 words",
+      "message": "Sentence has 28 words (cap 25). Split it.",
+      "fingerprint": "3dd65725c765cdc8c75ee04a",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 241,
+      "col": 81,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is redesigned",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "a7bf89e39efdb719560ebf21",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 244,
+      "col": 107,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 267,
+      "col": 114,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 268,
+      "col": 69,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 281,
+      "col": 139,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 283,
+      "col": 84,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is needed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "ff6c3acd0c014dc4e61c466a",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 320,
+      "col": 246,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is blocked",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "89ce3d95585eee314fa93cfc",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 326,
+      "col": 391,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 338,
+      "col": 117,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "26 words",
+      "message": "Sentence has 26 words (cap 25). Split it.",
+      "fingerprint": "2b8b751eaf86badac01b9e00",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 338,
+      "col": 187,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 383,
+      "col": 179,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 463,
+      "col": 1,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "26 words",
+      "message": "Sentence has 26 words (cap 25). Split it.",
+      "fingerprint": "2b8b751eaf86badac01b9e00",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 469,
+      "col": 245,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 515,
+      "col": 142,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is required",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "bb1c50eaa631694d123a7701",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 516,
+      "col": 107,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 517,
+      "col": 145,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is provided",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "e4c84bbce7e4e015e5f82803",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 528,
+      "col": 134,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 528,
+      "col": 168,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 530,
+      "col": 11,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is marked",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "f0baecd36560346eb7c99c71",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 533,
+      "col": 18,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are created",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "e7603e373d761a7c9ff25aff",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 533,
+      "col": 104,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 533,
+      "col": 126,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 533,
+      "col": 157,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 537,
+      "col": 20,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is treated",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "e796b5d39f657c7dbfca408d",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 539,
+      "col": 30,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are treated",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "45700ec28d246ad5f6098f6a",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 554,
+      "col": 32,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Verify",
       "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "fc69cda88704716351e23cde",
-      "comparison": "resolved"
+      "fingerprint": "70781a8fa973c1554931c214",
+      "comparison": "new"
     },
     {
-      "file": "skills/the-worker/SKILL.md",
-      "line": 377,
-      "col": 102,
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 612,
+      "col": 52,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "confirm",
-      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "b0d48c1fdb52aa58dc1b1908",
-      "comparison": "resolved"
+      "match": "correct",
+      "message": "'correct' and 'fix' name the same action. Pick one and use it every time.",
+      "fingerprint": "331ead622bd8b63c3dc8ec78",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 615,
+      "col": 4,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "31 words",
+      "message": "Sentence has 31 words (cap 25). Split it.",
+      "fingerprint": "26959e3895827a98ea573e44",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 632,
+      "col": 4,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "37 words",
+      "message": "Sentence has 37 words (cap 25). Split it.",
+      "fingerprint": "cb5ac6fb2c2c270ac73b57e0",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 633,
+      "col": 145,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 634,
+      "col": 4,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "33 words",
+      "message": "Sentence has 33 words (cap 25). Split it.",
+      "fingerprint": "c3aa5dc7d8225bd81a86e1b5",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 649,
+      "col": 20,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "36 words",
+      "message": "Sentence has 36 words (cap 25). Split it.",
+      "fingerprint": "33dd6d895441c53e43bd10a2",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 650,
+      "col": 20,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "38 words",
+      "message": "Sentence has 38 words (cap 25). Split it.",
+      "fingerprint": "0f7475f061de95d077b1bfe9",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 650,
+      "col": 56,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 650,
+      "col": 112,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 650,
+      "col": 152,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 650,
+      "col": 204,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 650,
+      "col": 250,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 665,
+      "col": 90,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "0733dc3a8c16671792bda850",
+      "comparison": "new"
     }
   ],
+  "new_findings": 75,
+  "recurring_findings": 0,
+  "resolved_findings": [],
   "checks": [
     {
       "name": "Wrapper shell syntax",
