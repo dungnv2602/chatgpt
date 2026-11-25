@@ -2,29 +2,29 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#691](https://github.com/dungnv2602/chatgpt/actions/runs/45533487346)
-- **Run ID / attempt:** 45533487346 / 1
+- **Run:** [#695](https://github.com/dungnv2602/chatgpt/actions/runs/45534135323)
+- **Run ID / attempt:** 45534135323 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / fb626d3b33eeb3b37ddbf7630ae3183c84a4bf24
+- **Branch / commit:** gpt / 1b0d7bb58e734e64a7c3b1c778749f44cb097ac5
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** cedc0b751f02f494feabb822b2669c29fa9d7180
-- **Linter source SHA:** fb626d3b33eeb3b37ddbf7630ae3183c84a4bf24
-- **Generated (UTC):** 2026-11-25T02:32:41.515121+00:00
+- **Baseline SHA:** fb626d3b33eeb3b37ddbf7630ae3183c84a4bf24
+- **Linter source SHA:** 1b0d7bb58e734e64a7c3b1c778749f44cb097ac5
+- **Generated (UTC):** 2026-11-25T02:39:24.862992+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 3 |
-| Files that failed | 1 |
-| Files with findings | 1 |
-| Total findings | 75 |
-| Hard findings | 53 |
-| Advisory findings | 22 |
-| New findings | 75 |
+| Files evaluated | 5 |
+| Files that failed | 4 |
+| Files with findings | 4 |
+| Total findings | 25 |
+| Hard findings | 15 |
+| Advisory findings | 10 |
+| New findings | 25 |
 | Recurring findings | 0 |
-| Resolved findings | 0 |
+| Resolved findings | 75 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -39,9 +39,11 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
+- skills/decision-governance/SKILL.md
+- skills/document-standards/references/document-type-catalog.md
 - workspace/task_board.md
 - workspace/draft/README.md
-- workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md
+- workspace/DRAFT_TEMPLATE.md
 
 ## 4. Per-file result matrix
 
@@ -49,9 +51,11 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| workspace/task_board.md | PASS | 0 | 0 | 0 | 1354 | 0.0 | 0 |
-| workspace/draft/README.md | PASS | 0 | 0 | 0 | 423 | 0.0 | 0 |
-| workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | FAIL | 75 | 53 | 0 | 8961 | 0.8 | 1 |
+| skills/decision-governance/SKILL.md | FAIL | 9 | 5 | 0 | 2916 | 0.3 | 1 |
+| skills/document-standards/references/document-type-catalog.md | FAIL | 3 | 3 | 0 | 4453 | 0.1 | 1 |
+| workspace/task_board.md | PASS | 0 | 0 | 0 | 1366 | 0.0 | 0 |
+| workspace/draft/README.md | FAIL | 4 | 3 | 0 | 614 | 0.7 | 1 |
+| workspace/DRAFT_TEMPLATE.md | FAIL | 9 | 4 | 0 | 1243 | 0.7 | 1 |
 
 ## 5. Findings by rule
 
@@ -59,11 +63,10 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| semicolon | 32 |
-| passive-voice | 21 |
-| long-sentence | 18 |
+| passive-voice | 10 |
+| semicolon | 9 |
+| long-sentence | 3 |
 | synonym-rotation | 3 |
-| present-perfect | 1 |
 
 ## 6. Workflow and validation checks
 
@@ -137,306 +140,106 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:25:10 · **new** · fingerprint: a2ab275c6b77dd5fee04cc69
+- **semicolon** · skills/decision-governance/SKILL.md:84:206 · **new** · fingerprint: 0c1945d1be17968236b3ecd9
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **synonym-rotation** · skills/decision-governance/SKILL.md:103:283 · **new** · fingerprint: 745fe2084d6ac713461ff51a
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** check
+- **synonym-rotation** · skills/decision-governance/SKILL.md:107:38 · **new** · fingerprint: d06e7bd96064cab3016a0461
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
+- **passive-voice** · skills/decision-governance/SKILL.md:109:34 · **new** · fingerprint: c36782537305a07bdb58d06c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is recommended
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:25:236 · **new** · fingerprint: f361f0da8e025b2ad8e4e144
+  - **Matched text:** is included
+- **passive-voice** · skills/decision-governance/SKILL.md:115:47 · **new** · fingerprint: 1cb7ea75d4eb018776bb77e4
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is created
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:27:293 · **new** · fingerprint: 0733dc3a8c16671792bda850
+  - **Matched text:** are stated
+- **semicolon** · skills/decision-governance/SKILL.md:115:57 · **new** · fingerprint: 0c1945d1be17968236b3ecd9
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:43:292 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:43:342 · **new** · fingerprint: a909a403a059d36f26caf607
+- **passive-voice** · skills/decision-governance/SKILL.md:115:102 · **new** · fingerprint: ca3d08a0a95c039f5e31b693
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are unchanged
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:45:452 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:118:13 · **new** · fingerprint: 2622327c5814c036cce375d2
+  - **Matched text:** is implied
+- **passive-voice** · skills/decision-governance/SKILL.md:117:86 · **new** · fingerprint: dda122e1893dc39b76ae7e74
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are assessed
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:127:277 · **new** · fingerprint: 5fbc17194b22ffad4280c0ef
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is supported
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:131:1 · **new** · fingerprint: fef6e60a628c50ea5557879f
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:135:123 · **new** · fingerprint: 0733dc3a8c16671792bda850
+  - **Matched text:** are addressed
+- **semicolon** · skills/decision-governance/SKILL.md:131:65 · **new** · fingerprint: 0c1945d1be17968236b3ecd9
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:141:432 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:149:130 · **new** · fingerprint: 5acc357959587a68b0f951b8
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are required
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:151:133 · **new** · fingerprint: ff6c3acd0c014dc4e61c466a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:154:130 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:166:3 · **new** · fingerprint: f7dc64f1259416e941602253
-  - **Level:** advisory-free
-  - **Message:** Sentence has 40 words (cap 25). Split it.
-  - **Matched text:** 40 words
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:166:153 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:166:195 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:166:216 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **present-perfect** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:172:17 · **new** · fingerprint: 6e0df3ac815fc5850205b430
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has evolved
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:177:5 · **new** · fingerprint: 88aeab811894156e381b6f38
-  - **Level:** advisory-free
-  - **Message:** Sentence has 30 words (cap 25). Split it.
-  - **Matched text:** 30 words
-- **synonym-rotation** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:181:259 · **new** · fingerprint: 5c822b17641bfca685187467
-  - **Level:** advisory-free
-  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** validate
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:182:45 · **new** · fingerprint: e8137e2bbd27eeeebe09cefe
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are gitignored
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:182:72 · **new** · fingerprint: f82bfd9e6673b647a6d8fc2d
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:45:121 · **new** · fingerprint: 18a6b0b7a0486b637074b006
   - **Level:** advisory-free
   - **Message:** Sentence has 32 words (cap 25). Split it.
   - **Matched text:** 32 words
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:182:278 · **new** · fingerprint: 2879617005bdf3d23fcdebce
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is added
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:186:131 · **new** · fingerprint: 88aeab811894156e381b6f38
-  - **Level:** advisory-free
-  - **Message:** Sentence has 30 words (cap 25). Split it.
-  - **Matched text:** 30 words
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:186:552 · **new** · fingerprint: 0733dc3a8c16671792bda850
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:45:212 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:187:3 · **new** · fingerprint: 0f7475f061de95d077b1bfe9
-  - **Level:** advisory-free
-  - **Message:** Sentence has 38 words (cap 25). Split it.
-  - **Matched text:** 38 words
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:195:90 · **new** · fingerprint: 2b8b751eaf86badac01b9e00
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:206:112 · **new** · fingerprint: d322aeaf54a910f1b652245b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is missed
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:207:165 · **new** · fingerprint: f0d61be6ac280ec407b4f93b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are reconciled
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:209:5 · **new** · fingerprint: fef6e60a628c50ea5557879f
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:211:311 · **new** · fingerprint: 0733dc3a8c16671792bda850
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:45:458 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:211:342 · **new** · fingerprint: 77adbdbc0fe812d1b67b5e05
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are intended
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:223:85 · **new** · fingerprint: 2b8b751eaf86badac01b9e00
+- **semicolon** · workspace/draft/README.md:7:96 · **new** · fingerprint: 388932780643d2141e1a4492
   - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:231:5 · **new** · fingerprint: f82bfd9e6673b647a6d8fc2d
-  - **Level:** advisory-free
-  - **Message:** Sentence has 32 words (cap 25). Split it.
-  - **Matched text:** 32 words
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:232:3 · **new** · fingerprint: 3dd65725c765cdc8c75ee04a
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · workspace/draft/README.md:18:4 · **new** · fingerprint: fa0ad26c0f4696b24c6e471f
   - **Level:** advisory-free
   - **Message:** Sentence has 28 words (cap 25). Split it.
   - **Matched text:** 28 words
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:241:81 · **new** · fingerprint: a7bf89e39efdb719560ebf21
+- **semicolon** · workspace/draft/README.md:20:305 · **new** · fingerprint: 388932780643d2141e1a4492
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/draft/README.md:22:136 · **new** · fingerprint: 23958065d6cbd83c298c65e2
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is redesigned
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:244:107 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:267:114 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:268:69 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:281:139 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:283:84 · **new** · fingerprint: ff6c3acd0c014dc4e61c466a
+  - **Matched text:** been assessed
+- **passive-voice** · workspace/DRAFT_TEMPLATE.md:25:119 · **new** · fingerprint: f64bf1ef9acc14ca64a7b985
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:320:246 · **new** · fingerprint: 89ce3d95585eee314fa93cfc
+  - **Matched text:** being asked
+- **passive-voice** · workspace/DRAFT_TEMPLATE.md:51:26 · **new** · fingerprint: 211b66e79e230bc550635a4f
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is blocked
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:326:391 · **new** · fingerprint: 0733dc3a8c16671792bda850
+  - **Matched text:** were identified
+- **semicolon** · workspace/DRAFT_TEMPLATE.md:53:58 · **new** · fingerprint: 3b682280b9ab9bb9d337e5a7
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:338:117 · **new** · fingerprint: 2b8b751eaf86badac01b9e00
+- **semicolon** · workspace/DRAFT_TEMPLATE.md:63:103 · **new** · fingerprint: 3b682280b9ab9bb9d337e5a7
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/DRAFT_TEMPLATE.md:78:47 · **new** · fingerprint: 3027ddebf5aa8173af033457
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been tested
+- **passive-voice** · workspace/DRAFT_TEMPLATE.md:91:47 · **new** · fingerprint: 3027ddebf5aa8173af033457
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been tested
+- **long-sentence** · workspace/DRAFT_TEMPLATE.md:111:75 · **new** · fingerprint: 1068d0f64079905a096f3f87
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:338:187 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:383:179 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:463:1 · **new** · fingerprint: 2b8b751eaf86badac01b9e00
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:469:245 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:515:142 · **new** · fingerprint: bb1c50eaa631694d123a7701
+- **passive-voice** · workspace/DRAFT_TEMPLATE.md:124:55 · **new** · fingerprint: fe3d0313172da8b3bd40c574
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:516:107 · **new** · fingerprint: 0733dc3a8c16671792bda850
+  - **Matched text:** is justified
+- **synonym-rotation** · workspace/DRAFT_TEMPLATE.md:166:28 · **new** · fingerprint: fcd884bb6124b09c0acad1a2
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:517:145 · **new** · fingerprint: e4c84bbce7e4e015e5f82803
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is provided
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:528:134 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:528:168 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:530:11 · **new** · fingerprint: f0baecd36560346eb7c99c71
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is marked
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:533:18 · **new** · fingerprint: e7603e373d761a7c9ff25aff
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are created
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:533:104 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:533:126 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:533:157 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:537:20 · **new** · fingerprint: e796b5d39f657c7dbfca408d
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is treated
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:539:30 · **new** · fingerprint: 45700ec28d246ad5f6098f6a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are treated
-- **synonym-rotation** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:554:32 · **new** · fingerprint: 70781a8fa973c1554931c214
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Verify
-- **synonym-rotation** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:612:52 · **new** · fingerprint: 331ead622bd8b63c3dc8ec78
-  - **Level:** advisory-free
-  - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
-  - **Matched text:** correct
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:615:4 · **new** · fingerprint: 26959e3895827a98ea573e44
-  - **Level:** advisory-free
-  - **Message:** Sentence has 31 words (cap 25). Split it.
-  - **Matched text:** 31 words
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:632:4 · **new** · fingerprint: cb5ac6fb2c2c270ac73b57e0
-  - **Level:** advisory-free
-  - **Message:** Sentence has 37 words (cap 25). Split it.
-  - **Matched text:** 37 words
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:633:145 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:634:4 · **new** · fingerprint: c3aa5dc7d8225bd81a86e1b5
-  - **Level:** advisory-free
-  - **Message:** Sentence has 33 words (cap 25). Split it.
-  - **Matched text:** 33 words
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:649:20 · **new** · fingerprint: 33dd6d895441c53e43bd10a2
-  - **Level:** advisory-free
-  - **Message:** Sentence has 36 words (cap 25). Split it.
-  - **Matched text:** 36 words
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:20 · **new** · fingerprint: 0f7475f061de95d077b1bfe9
-  - **Level:** advisory-free
-  - **Message:** Sentence has 38 words (cap 25). Split it.
-  - **Matched text:** 38 words
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:56 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:112 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:152 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:204 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:250 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:665:90 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
+  - **Matched text:** delete
 
 ### Recurring findings
 
@@ -444,11 +247,396 @@ None.
 
 ### Resolved findings
 
-None.
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:25:10 · **resolved** · fingerprint: a2ab275c6b77dd5fee04cc69
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is recommended
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:25:236 · **resolved** · fingerprint: f361f0da8e025b2ad8e4e144
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is created
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:27:293 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:43:292 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:43:342 · **resolved** · fingerprint: a909a403a059d36f26caf607
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are unchanged
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:45:452 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:118:13 · **resolved** · fingerprint: 2622327c5814c036cce375d2
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are assessed
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:127:277 · **resolved** · fingerprint: 5fbc17194b22ffad4280c0ef
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is supported
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:131:1 · **resolved** · fingerprint: fef6e60a628c50ea5557879f
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:135:123 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:141:432 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:149:130 · **resolved** · fingerprint: 5acc357959587a68b0f951b8
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are required
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:151:133 · **resolved** · fingerprint: ff6c3acd0c014dc4e61c466a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:154:130 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:166:3 · **resolved** · fingerprint: f7dc64f1259416e941602253
+  - **Level:** advisory-free
+  - **Message:** Sentence has 40 words (cap 25). Split it.
+  - **Matched text:** 40 words
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:166:153 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:166:195 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:166:216 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **present-perfect** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:172:17 · **resolved** · fingerprint: 6e0df3ac815fc5850205b430
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has evolved
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:177:5 · **resolved** · fingerprint: 88aeab811894156e381b6f38
+  - **Level:** advisory-free
+  - **Message:** Sentence has 30 words (cap 25). Split it.
+  - **Matched text:** 30 words
+- **synonym-rotation** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:181:259 · **resolved** · fingerprint: 5c822b17641bfca685187467
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** validate
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:182:45 · **resolved** · fingerprint: e8137e2bbd27eeeebe09cefe
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are gitignored
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:182:72 · **resolved** · fingerprint: f82bfd9e6673b647a6d8fc2d
+  - **Level:** advisory-free
+  - **Message:** Sentence has 32 words (cap 25). Split it.
+  - **Matched text:** 32 words
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:182:278 · **resolved** · fingerprint: 2879617005bdf3d23fcdebce
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is added
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:186:131 · **resolved** · fingerprint: 88aeab811894156e381b6f38
+  - **Level:** advisory-free
+  - **Message:** Sentence has 30 words (cap 25). Split it.
+  - **Matched text:** 30 words
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:186:552 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:187:3 · **resolved** · fingerprint: 0f7475f061de95d077b1bfe9
+  - **Level:** advisory-free
+  - **Message:** Sentence has 38 words (cap 25). Split it.
+  - **Matched text:** 38 words
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:195:90 · **resolved** · fingerprint: 2b8b751eaf86badac01b9e00
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:206:112 · **resolved** · fingerprint: d322aeaf54a910f1b652245b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is missed
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:207:165 · **resolved** · fingerprint: f0d61be6ac280ec407b4f93b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are reconciled
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:209:5 · **resolved** · fingerprint: fef6e60a628c50ea5557879f
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:211:311 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:211:342 · **resolved** · fingerprint: 77adbdbc0fe812d1b67b5e05
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are intended
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:223:85 · **resolved** · fingerprint: 2b8b751eaf86badac01b9e00
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:231:5 · **resolved** · fingerprint: f82bfd9e6673b647a6d8fc2d
+  - **Level:** advisory-free
+  - **Message:** Sentence has 32 words (cap 25). Split it.
+  - **Matched text:** 32 words
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:232:3 · **resolved** · fingerprint: 3dd65725c765cdc8c75ee04a
+  - **Level:** advisory-free
+  - **Message:** Sentence has 28 words (cap 25). Split it.
+  - **Matched text:** 28 words
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:241:81 · **resolved** · fingerprint: a7bf89e39efdb719560ebf21
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is redesigned
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:244:107 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:267:114 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:268:69 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:281:139 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:283:84 · **resolved** · fingerprint: ff6c3acd0c014dc4e61c466a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:320:246 · **resolved** · fingerprint: 89ce3d95585eee314fa93cfc
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is blocked
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:326:391 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:338:117 · **resolved** · fingerprint: 2b8b751eaf86badac01b9e00
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:338:187 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:383:179 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:463:1 · **resolved** · fingerprint: 2b8b751eaf86badac01b9e00
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:469:245 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:515:142 · **resolved** · fingerprint: bb1c50eaa631694d123a7701
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:516:107 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:517:145 · **resolved** · fingerprint: e4c84bbce7e4e015e5f82803
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is provided
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:528:134 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:528:168 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:530:11 · **resolved** · fingerprint: f0baecd36560346eb7c99c71
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is marked
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:533:18 · **resolved** · fingerprint: e7603e373d761a7c9ff25aff
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are created
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:533:104 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:533:126 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:533:157 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:537:20 · **resolved** · fingerprint: e796b5d39f657c7dbfca408d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is treated
+- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:539:30 · **resolved** · fingerprint: 45700ec28d246ad5f6098f6a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are treated
+- **synonym-rotation** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:554:32 · **resolved** · fingerprint: 70781a8fa973c1554931c214
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** Verify
+- **synonym-rotation** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:612:52 · **resolved** · fingerprint: 331ead622bd8b63c3dc8ec78
+  - **Level:** advisory-free
+  - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
+  - **Matched text:** correct
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:615:4 · **resolved** · fingerprint: 26959e3895827a98ea573e44
+  - **Level:** advisory-free
+  - **Message:** Sentence has 31 words (cap 25). Split it.
+  - **Matched text:** 31 words
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:632:4 · **resolved** · fingerprint: cb5ac6fb2c2c270ac73b57e0
+  - **Level:** advisory-free
+  - **Message:** Sentence has 37 words (cap 25). Split it.
+  - **Matched text:** 37 words
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:633:145 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:634:4 · **resolved** · fingerprint: c3aa5dc7d8225bd81a86e1b5
+  - **Level:** advisory-free
+  - **Message:** Sentence has 33 words (cap 25). Split it.
+  - **Matched text:** 33 words
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:649:20 · **resolved** · fingerprint: 33dd6d895441c53e43bd10a2
+  - **Level:** advisory-free
+  - **Message:** Sentence has 36 words (cap 25). Split it.
+  - **Matched text:** 36 words
+- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:20 · **resolved** · fingerprint: 0f7475f061de95d077b1bfe9
+  - **Level:** advisory-free
+  - **Message:** Sentence has 38 words (cap 25). Split it.
+  - **Matched text:** 38 words
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:56 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:112 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:152 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:204 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:250 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:665:90 · **resolved** · fingerprint: 0733dc3a8c16671792bda850
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 ## 8. Complete per-file diagnostics
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
+
+### skills/decision-governance/SKILL.md
+
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 9
+- **Hard findings:** 5
+- **Baseline:** 0
+- **Words:** 2916
+- **Findings per 100 words:** 0.3
+
+#### Complete diagnostics
+
+- **semicolon** · skills/decision-governance/SKILL.md:84:206 · **new** · fingerprint: 0c1945d1be17968236b3ecd9
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **synonym-rotation** · skills/decision-governance/SKILL.md:103:283 · **new** · fingerprint: 745fe2084d6ac713461ff51a
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** check
+
+- **synonym-rotation** · skills/decision-governance/SKILL.md:107:38 · **new** · fingerprint: d06e7bd96064cab3016a0461
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
+
+- **passive-voice** · skills/decision-governance/SKILL.md:109:34 · **new** · fingerprint: c36782537305a07bdb58d06c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is included
+
+- **passive-voice** · skills/decision-governance/SKILL.md:115:47 · **new** · fingerprint: 1cb7ea75d4eb018776bb77e4
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are stated
+
+- **semicolon** · skills/decision-governance/SKILL.md:115:57 · **new** · fingerprint: 0c1945d1be17968236b3ecd9
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · skills/decision-governance/SKILL.md:115:102 · **new** · fingerprint: ca3d08a0a95c039f5e31b693
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is implied
+
+- **passive-voice** · skills/decision-governance/SKILL.md:117:86 · **new** · fingerprint: dda122e1893dc39b76ae7e74
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are addressed
+
+- **semicolon** · skills/decision-governance/SKILL.md:131:65 · **new** · fingerprint: 0c1945d1be17968236b3ecd9
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+
+### skills/document-standards/references/document-type-catalog.md
+
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 3
+- **Hard findings:** 3
+- **Baseline:** 0
+- **Words:** 4453
+- **Findings per 100 words:** 0.1
+
+#### Complete diagnostics
+
+- **long-sentence** · skills/document-standards/references/document-type-catalog.md:45:121 · **new** · fingerprint: 18a6b0b7a0486b637074b006
+  - **Level:** advisory-free
+  - **Message:** Sentence has 32 words (cap 25). Split it.
+  - **Matched text:** 32 words
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:45:212 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · skills/document-standards/references/document-type-catalog.md:45:458 · **new** · fingerprint: 34b3ecad2f55b58c81da2ca0
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
 
 ### workspace/task_board.md
 
@@ -457,7 +645,7 @@ This section includes every normalized finding with its rule, level, source loca
 - **Findings:** 0
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 1354
+- **Words:** 1366
 - **Findings per 100 words:** 0.0
 
 No STE findings were recorded for this file.
@@ -465,403 +653,93 @@ No STE findings were recorded for this file.
 
 ### workspace/draft/README.md
 
-- **Result:** PASS
-- **Exit code:** 0
-- **Findings:** 0
-- **Hard findings:** 0
-- **Baseline:** 0
-- **Words:** 423
-- **Findings per 100 words:** 0.0
-
-No STE findings were recorded for this file.
-
-
-### workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md
-
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 75
-- **Hard findings:** 53
+- **Findings:** 4
+- **Hard findings:** 3
 - **Baseline:** 0
-- **Words:** 8961
-- **Findings per 100 words:** 0.8
+- **Words:** 614
+- **Findings per 100 words:** 0.7
 
 #### Complete diagnostics
 
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:25:10 · **new** · fingerprint: a2ab275c6b77dd5fee04cc69
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is recommended
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:25:236 · **new** · fingerprint: f361f0da8e025b2ad8e4e144
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is created
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:27:293 · **new** · fingerprint: 0733dc3a8c16671792bda850
+- **semicolon** · workspace/draft/README.md:7:96 · **new** · fingerprint: 388932780643d2141e1a4492
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:43:292 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:43:342 · **new** · fingerprint: a909a403a059d36f26caf607
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are unchanged
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:45:452 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:118:13 · **new** · fingerprint: 2622327c5814c036cce375d2
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are assessed
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:127:277 · **new** · fingerprint: 5fbc17194b22ffad4280c0ef
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is supported
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:131:1 · **new** · fingerprint: fef6e60a628c50ea5557879f
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:135:123 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:141:432 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:149:130 · **new** · fingerprint: 5acc357959587a68b0f951b8
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are required
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:151:133 · **new** · fingerprint: ff6c3acd0c014dc4e61c466a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:154:130 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:166:3 · **new** · fingerprint: f7dc64f1259416e941602253
-  - **Level:** advisory-free
-  - **Message:** Sentence has 40 words (cap 25). Split it.
-  - **Matched text:** 40 words
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:166:153 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:166:195 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:166:216 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **present-perfect** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:172:17 · **new** · fingerprint: 6e0df3ac815fc5850205b430
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has evolved
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:177:5 · **new** · fingerprint: 88aeab811894156e381b6f38
-  - **Level:** advisory-free
-  - **Message:** Sentence has 30 words (cap 25). Split it.
-  - **Matched text:** 30 words
-
-- **synonym-rotation** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:181:259 · **new** · fingerprint: 5c822b17641bfca685187467
-  - **Level:** advisory-free
-  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** validate
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:182:45 · **new** · fingerprint: e8137e2bbd27eeeebe09cefe
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are gitignored
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:182:72 · **new** · fingerprint: f82bfd9e6673b647a6d8fc2d
-  - **Level:** advisory-free
-  - **Message:** Sentence has 32 words (cap 25). Split it.
-  - **Matched text:** 32 words
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:182:278 · **new** · fingerprint: 2879617005bdf3d23fcdebce
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is added
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:186:131 · **new** · fingerprint: 88aeab811894156e381b6f38
-  - **Level:** advisory-free
-  - **Message:** Sentence has 30 words (cap 25). Split it.
-  - **Matched text:** 30 words
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:186:552 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:187:3 · **new** · fingerprint: 0f7475f061de95d077b1bfe9
-  - **Level:** advisory-free
-  - **Message:** Sentence has 38 words (cap 25). Split it.
-  - **Matched text:** 38 words
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:195:90 · **new** · fingerprint: 2b8b751eaf86badac01b9e00
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:206:112 · **new** · fingerprint: d322aeaf54a910f1b652245b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is missed
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:207:165 · **new** · fingerprint: f0d61be6ac280ec407b4f93b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are reconciled
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:209:5 · **new** · fingerprint: fef6e60a628c50ea5557879f
-  - **Level:** advisory-free
-  - **Message:** Sentence has 27 words (cap 25). Split it.
-  - **Matched text:** 27 words
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:211:311 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:211:342 · **new** · fingerprint: 77adbdbc0fe812d1b67b5e05
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are intended
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:223:85 · **new** · fingerprint: 2b8b751eaf86badac01b9e00
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:231:5 · **new** · fingerprint: f82bfd9e6673b647a6d8fc2d
-  - **Level:** advisory-free
-  - **Message:** Sentence has 32 words (cap 25). Split it.
-  - **Matched text:** 32 words
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:232:3 · **new** · fingerprint: 3dd65725c765cdc8c75ee04a
+- **long-sentence** · workspace/draft/README.md:18:4 · **new** · fingerprint: fa0ad26c0f4696b24c6e471f
   - **Level:** advisory-free
   - **Message:** Sentence has 28 words (cap 25). Split it.
   - **Matched text:** 28 words
 
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:241:81 · **new** · fingerprint: a7bf89e39efdb719560ebf21
+- **semicolon** · workspace/draft/README.md:20:305 · **new** · fingerprint: 388932780643d2141e1a4492
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · workspace/draft/README.md:22:136 · **new** · fingerprint: 23958065d6cbd83c298c65e2
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is redesigned
+  - **Matched text:** been assessed
 
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:244:107 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
 
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:267:114 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+### workspace/DRAFT_TEMPLATE.md
 
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:268:69 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 9
+- **Hard findings:** 4
+- **Baseline:** 0
+- **Words:** 1243
+- **Findings per 100 words:** 0.7
 
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:281:139 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+#### Complete diagnostics
 
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:283:84 · **new** · fingerprint: ff6c3acd0c014dc4e61c466a
+- **passive-voice** · workspace/DRAFT_TEMPLATE.md:25:119 · **new** · fingerprint: f64bf1ef9acc14ca64a7b985
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
+  - **Matched text:** being asked
 
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:320:246 · **new** · fingerprint: 89ce3d95585eee314fa93cfc
+- **passive-voice** · workspace/DRAFT_TEMPLATE.md:51:26 · **new** · fingerprint: 211b66e79e230bc550635a4f
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is blocked
+  - **Matched text:** were identified
 
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:326:391 · **new** · fingerprint: 0733dc3a8c16671792bda850
+- **semicolon** · workspace/DRAFT_TEMPLATE.md:53:58 · **new** · fingerprint: 3b682280b9ab9bb9d337e5a7
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:338:117 · **new** · fingerprint: 2b8b751eaf86badac01b9e00
+- **semicolon** · workspace/DRAFT_TEMPLATE.md:63:103 · **new** · fingerprint: 3b682280b9ab9bb9d337e5a7
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · workspace/DRAFT_TEMPLATE.md:78:47 · **new** · fingerprint: 3027ddebf5aa8173af033457
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been tested
+
+- **passive-voice** · workspace/DRAFT_TEMPLATE.md:91:47 · **new** · fingerprint: 3027ddebf5aa8173af033457
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been tested
+
+- **long-sentence** · workspace/DRAFT_TEMPLATE.md:111:75 · **new** · fingerprint: 1068d0f64079905a096f3f87
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
 
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:338:187 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:383:179 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:463:1 · **new** · fingerprint: 2b8b751eaf86badac01b9e00
-  - **Level:** advisory-free
-  - **Message:** Sentence has 26 words (cap 25). Split it.
-  - **Matched text:** 26 words
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:469:245 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:515:142 · **new** · fingerprint: bb1c50eaa631694d123a7701
+- **passive-voice** · workspace/DRAFT_TEMPLATE.md:124:55 · **new** · fingerprint: fe3d0313172da8b3bd40c574
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
+  - **Matched text:** is justified
 
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:516:107 · **new** · fingerprint: 0733dc3a8c16671792bda850
+- **synonym-rotation** · workspace/DRAFT_TEMPLATE.md:166:28 · **new** · fingerprint: fcd884bb6124b09c0acad1a2
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:517:145 · **new** · fingerprint: e4c84bbce7e4e015e5f82803
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is provided
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:528:134 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:528:168 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:530:11 · **new** · fingerprint: f0baecd36560346eb7c99c71
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is marked
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:533:18 · **new** · fingerprint: e7603e373d761a7c9ff25aff
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are created
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:533:104 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:533:126 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:533:157 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:537:20 · **new** · fingerprint: e796b5d39f657c7dbfca408d
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is treated
-
-- **passive-voice** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:539:30 · **new** · fingerprint: 45700ec28d246ad5f6098f6a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are treated
-
-- **synonym-rotation** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:554:32 · **new** · fingerprint: 70781a8fa973c1554931c214
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** Verify
-
-- **synonym-rotation** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:612:52 · **new** · fingerprint: 331ead622bd8b63c3dc8ec78
-  - **Level:** advisory-free
-  - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
-  - **Matched text:** correct
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:615:4 · **new** · fingerprint: 26959e3895827a98ea573e44
-  - **Level:** advisory-free
-  - **Message:** Sentence has 31 words (cap 25). Split it.
-  - **Matched text:** 31 words
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:632:4 · **new** · fingerprint: cb5ac6fb2c2c270ac73b57e0
-  - **Level:** advisory-free
-  - **Message:** Sentence has 37 words (cap 25). Split it.
-  - **Matched text:** 37 words
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:633:145 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:634:4 · **new** · fingerprint: c3aa5dc7d8225bd81a86e1b5
-  - **Level:** advisory-free
-  - **Message:** Sentence has 33 words (cap 25). Split it.
-  - **Matched text:** 33 words
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:649:20 · **new** · fingerprint: 33dd6d895441c53e43bd10a2
-  - **Level:** advisory-free
-  - **Message:** Sentence has 36 words (cap 25). Split it.
-  - **Matched text:** 36 words
-
-- **long-sentence** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:20 · **new** · fingerprint: 0f7475f061de95d077b1bfe9
-  - **Level:** advisory-free
-  - **Message:** Sentence has 38 words (cap 25). Split it.
-  - **Matched text:** 38 words
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:56 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:112 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:152 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:204 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:250 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:665:90 · **new** · fingerprint: 0733dc3a8c16671792bda850
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
+  - **Matched text:** delete
 
 ## 9. Structured evidence and integrity
 
