@@ -4,7 +4,7 @@ This folder stores proposals that require a user decision.
 
 ## Files
 
-- [DRAFT_TEMPLATE.md](../DRAFT_TEMPLATE.md) — canonical template for new proposals.
+- [DRAFT_TEMPLATE.md](../DRAFT_TEMPLATE.md) — canonical template for new proposals (Version 1.2; requires detailed, evidence-qualified assessments of every viable option).
 - DRAFT-*.md — one record for each distinct proposal.
 
 ## Current Drafts
@@ -15,14 +15,18 @@ This folder stores proposals that require a user decision.
 
 1. Create one Draft for each decision that may change repository structure, policy, architecture, workflow, or long-lived practice.
 2. Use a unique DRAFT-NNNN ID. Do not reuse an ID.
-3. Record the problem, scope, decision drivers, options, recommendation, consequences, risks, affected files, and user questions.
-4. Link the Draft in the matching workspace/discussion.md Open Discussion item.
-5. Set its status to in-review when you present it to the user.
-6. Revise the same Draft when the user requests changes. Record each meaningful revision.
-7. Create an ADR only after the user approves the exact Draft revision and its scope.
-8. Create the ADR as promotion-pending. Complete the rationale comparison and read-back before changing its status to accepted.
-9. Read back the accepted ADR. Delete the source Draft only after this check passes.
-10. Delete the source Draft from this index. Keep its ID as ADR provenance. Do not link the ADR to the deleted source file.
+3. Record the problem, scope, goals/non-goals, explicit decision drivers, assessment basis, every materially viable option, comparative assessment, recommendation, consequences, risks, affected files, implementation outline, user questions, and source/evidence register.
+4. Assess every viable option in comparable depth. Include the current approach/no-change option when viable and materially distinct variants when their trade-offs differ. For each option, cover its operating model, repository/environment fit, concrete strengths, neutral trade-offs, weaknesses, implementation/migration cost, dependencies, operational burden, risks/safeguards, evidence/confidence, and limitations/unknowns.
+5. Compare options against the same decision drivers in a qualitative matrix when multiple viable options exist. Explain the decisive differences and why the recommendation is preferable to the strongest alternative. Do not invent numeric scores or force a matrix when only one option is genuinely viable; explain why alternatives are infeasible.
+6. Preserve evidence provenance. Identify source versions, dates, commits, hosts, samples, test protocols, and untested scenarios where applicable. Separate repository facts, external claims, tests/benchmarks, inferences, and hypotheses. State what the evidence does not establish.
+7. Complete the Draft quality gate in the canonical template and decision-governance skill. Do not present an option list that has not been assessed or a recommendation that is not traceable to the criteria and evidence.
+8. Link the Draft in the matching workspace/discussion.md Open Discussion item.
+9. Set its status to in-review when you present it to the user.
+10. Revise the same Draft when the user requests changes. Record each meaningful revision.
+11. Create an ADR only after the user approves the exact Draft revision and its scope.
+12. Create the ADR as promotion-pending. Complete the rationale comparison and read-back before changing its status to accepted.
+13. Read back the accepted ADR. Delete the source Draft only after this check passes.
+14. Delete the source Draft from this index. Keep its ID as ADR provenance. Do not link the ADR to the deleted source file.
 
 If deletion fails after acceptance, keep the source Draft temporarily. Record the resulting ADR ID and cleanup reason in its metadata. List it only under Promotion Cleanup Pending. Retry deletion without creating another ADR or repeating approval.
 
