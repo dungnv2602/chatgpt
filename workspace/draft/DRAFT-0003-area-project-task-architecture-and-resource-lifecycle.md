@@ -144,6 +144,19 @@ Use phases within one task when the stages contribute to one outcome and do not 
 
 Do not use several plan files as a substitute for task decomposition. If work can be assigned, reviewed, blocked, and completed independently, create a child task with its own stable Task ID.
 
+### Relationship with DRAFT-0002 and the newer task requirements
+
+Keep the planning and evidence rules in DRAFT-0002 as the task-level design basis:
+
+- The task record remains the authority for task scope, approval, status, phase state, the immediate Next Step, progress, verification, and handoff.
+- The task Execution Plan and chronological Progress Log remain in `TASK.md`. This Draft does not add a separate task `PLAN.md` or `PROGRESS.md`.
+- A research evidence file remains optional. This Draft proposes placing it beside `TASK.md` as `FINDINGS.md`, inside the task's own folder, instead of using the shared `workspace/task-notes/` location proposed in DRAFT-0002 revision 3.
+- A task folder is the isolation boundary. Its Task ID is the selector. Independently managed subtasks receive separate Task IDs and folders. This Draft does not add a separate `PLAN_ID` or a shared active-plan pointer.
+
+This is a material path refinement to DRAFT-0002, not an additional findings system. Do not implement both the shared `workspace/task-notes/` family and task-local `FINDINGS.md` files. Before ADR promotion, reconcile the exact approved DRAFT-0002 revision and update its implementation paths, template, and catalog requirements to match the selected architecture.
+
+The current repository records a state discrepancy: `workspace/discussion.md` says the user approved Option 3 with additional requirements, while DRAFT-0002 revision 3 and its index still show `in-review`, and the linked task record still says Blocked pending review. Do not resolve this by guessing or silently changing approval metadata. Confirm the exact approved revision and added scope, then update the Draft, index, task, and board consistently before promotion.
+
 ## Decision Drivers
 
 | Criterion | Why it matters | Relative importance |
@@ -662,7 +675,7 @@ If any criterion fails, pause general migration. Revise the Worker instructions,
 
 1. Do you approve Option 4 and the proposed Area, Project, Task, Resource, and Archive boundaries?
 2. Do you agree that project tasks should live under their Project folder while standalone tasks remain under `workspace/tasks/`, with the global task board indexing both?
-3. Do you accept the first-release rule that TASK.md retains the task execution plan and Progress Log, while FINDINGS.md remains optional? This intentionally does not create a separate task PLAN.md or PROGRESS.md.
+3. Do you accept the first-release file boundary: TASK.md retains the task execution plan and Progress Log; an optional FINDINGS.md sits beside it in the task folder; and no separate task PLAN.md or PROGRESS.md is created?
 4. Do you agree that independent subtasks should be separate tasks with Task IDs, rather than named plan directories with a separate PLAN_ID selector?
 5. Do you approve the rule that a completed project remains as a closed Project record and that its task records use existing per-file retention, rather than archiving the whole project folder for 90 days?
 
