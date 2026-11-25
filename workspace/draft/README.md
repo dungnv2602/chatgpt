@@ -9,7 +9,7 @@ This folder stores proposals that require a user decision.
 
 ## Current Drafts
 
-- [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](DRAFT-0002-phase-aware-planning-and-evidence-capture.md) — In review. User approval is pending.
+- [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](DRAFT-0002-phase-aware-planning-and-evidence-capture.md) — Revision 3 in review. Includes detailed assessments of all four options and a comparative repository-fit matrix. User approval is pending.
 
 ## Workflow
 
