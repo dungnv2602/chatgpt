@@ -5,9 +5,9 @@
 - **Template version:** 1.2
 - **ID:** 20261124-113009
 - **Created:** 2026-11-24 11:30 UTC
-- **Updated:** 2026-11-25 02:20 UTC
+- **Updated:** 2026-11-25 02:26 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Blocked
 - **Origin:** User
 - **Approval:** Approved to study the supplied project, inspect this repository's current workflow, and prepare a comprehensive proposal for user review. Do not implement proposed workflow changes before approval.
 - **Current execution:** Yes
@@ -135,29 +135,34 @@ Study Planning with Files and determine how its durable planning, research captu
 - **References:** External `master` commit `aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228`: `skills/planning-with-files/SKILL.md`, `templates/task_plan.md`, `templates/findings.md`, `templates/progress.md`, `docs/long-running-agent-tasks.md`, `docs/evals.md`, `docs/attestation-locking.md`, `SECURITY.md`, `scripts/resolve-plan-dir.sh`; GitHub latest release v3.29.1.
 - **Next:** Draft revision 3 with a neutral assessment of all four options, an explicit fit matrix, evidence limitations, and a staged Option 3 recommendation. Keep implementation approval separate.
 
+### 2026-11-25 02:26 UTC — Complete DRAFT-0002 revision 3 and validate its review state
+
+- **Action:** Rewrote all four considered-option assessments with strengths, weaknesses, neutral factors, repository fit, evidence limits, and adoption cost. Added assessment criteria and a qualitative comparison matrix. Refreshed the external source snapshot and its benchmark/security caveats. Expanded the recommended Option 3 operating design, separated planning level from execution mode, made exclusions explicit, and updated review questions and revision history. Updated the Draft index.
+- **Result:** DRAFT-0002 revision 3 is in-review and has been read back from GitHub. Checks confirmed all four option headings, assessment basis, comparative matrix, twelve operating-design sections, explicit automation exclusions, correct pinned source SHA, no duplicate headings, and pending approval metadata. The Draft index now identifies revision 3. No ADR or implementation was created.
+- **References:** `workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md`; `workspace/draft/README.md`; external commit `aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228`; release v3.29.1.
+- **Next:** Present revision 3 for the user's decision. Keep DRAFT-0001 separate. Do not implement before approval of the exact revision and acceptance of its implementation ADR.
+
 ## 7. Current State
 
-The user-approved research and initial proposal are complete. DRAFT-0002 revision 2 remains in-review. The user has requested a more detailed assessment of all four options, so this task resumed on 2026-11-25. The external Planning with Files source was re-checked on 2026-11-25; its current master head remains commit aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228 (release v3.29.1). Its benchmark limitations and current file-only recovery boundary are now included in the assessment basis.
+The external source study and repository comparison are complete. DRAFT-0002 revision 3 is complete, read back, indexed, and in-review. It contains detailed assessments of all four considered options, a qualitative comparison matrix, refreshed source/evaluation limits, and a staged Option 3 operating design.
 
-The user-authorized fast-forward merged the gpt commit into main. The branches matched at `3bce922cb6348e38e04ea7c2d43597af9d908fc3` immediately after the merge. Subsequent task and Draft review changes are being committed to gpt only. The user did not request a second merge.
+The user-authorized fast-forward merged the gpt commit into main. The branches matched at `3bce922cb6348e38e04ea7c2d43597af9d908fc3` immediately after the merge. Subsequent task and Draft review changes are committed to gpt only. The user did not request a second merge.
 
-The current task is In Progress and remains non-implementation work. No implementation ADR has been created for DRAFT-0002. No proposed workflow, template, skill, Ledger, or archive changes are approved.
+The task is Blocked while the user reviews revision 3. DRAFT-0001 remains a separate open decision. No implementation ADR has been created for DRAFT-0002. No proposed workflow, template, skill, Ledger, or archive changes are approved.
 
 ## 8. Remaining Work
 
-- Verify the current external source revision and the relevant mechanisms that affect the four options.
-- Assess each option against runtime fit, authority and source-of-truth integrity, recoverability, evidence quality, collaboration and security, implementation cost, and ongoing maintenance.
-- Revise DRAFT-0002 to revision 3. Preserve its ID and prior history. Set it to in-review and update its recommendation, option assessments, trade-offs, risks, decision questions, and review history.
-- Update the Draft index and discussion register, then read back every changed path.
-- Await the user's decision on the exact revision 3 and scope.
-- Keep DRAFT-0001 as a separate open decision. Reconcile overlapping scope before any promotion.
-- Do not create an implementation ADR or implement workflow changes before the user approves the exact Draft and the required implementation ADR reaches accepted status.
+- Await the user's decision on DRAFT-0002 revision 3 and its exact scope.
+- If the user requests changes, revise the same Draft ID and increment its revision. Keep it in-review.
+- If the user approves it, reconcile any overlap with DRAFT-0001 before creating the implementation ADR under the accepted governance process.
+- Do not implement the proposed workflow before the exact Draft approval and an accepted implementation ADR.
+- Preserve DRAFT-0001 as a separate open decision until its own review is resolved.
 
 ## 9. Next Actions
 
-1. Synthesize the comparative assessment and revise DRAFT-0002 to revision 3.
-2. Read back the complete revised Draft and verify every required section and source link.
-3. Update the Draft index and discussion register, then present revision 3 for the user's decision. Do not implement it before approval.
+1. Await the user's decision on DRAFT-0002 revision 3.
+2. Record the decision against the exact revision and scope.
+3. Proceed only through the Draft-to-ADR process. Do not implement without an accepted implementation ADR.
 
 ## 10. References
 
@@ -175,10 +180,10 @@ The current task is In Progress and remains non-implementation work. No implemen
 
 ## 11. Verification
 
-- **Check:** External research, repository fit, proposal creation, and workspace consistency.
-- **Method:** Read the external source at its pinned branch commit and inspected the skill, templates, guides, security policy, plan inventory, resolver, completion checker, gate dispatcher, and relevant tests. Read the repository Worker, Conversation Mode reference, workspace templates and indexes, archive policy, Document Type Catalog, and Ledger renderer.
-- **Result:** DRAFT-0002 revision 1 is created and read back. Its index entry, review item, task status, and task-board row agree. Both DRAFT-0002 and DRAFT-0001 remain open for separate user decisions. The Reports section retains exactly three entries. No ADR was created.
-- **Limitations:** No external or repository tests were executed. No proposed workflow change has been implemented.
+- **Check:** DRAFT-0002 revision 3 content, option coverage, review metadata, source references, and Draft index.
+- **Method:** Read the complete Draft and index back from the GitHub repository. Checked for revision 3 and in-review status; all four option sections; the assessment criteria and external evidence caveats; the comparative matrix; all twelve operating-design sections; explicit scope exclusions; unique headings; correctly pinned external source SHA; revision history; and pending user approval. Read back the Draft index entry.
+- **Result:** The checks passed. Revision 3 remains in-review; user decision is pending; approved scope is not approved; no resulting ADR exists. The Draft index points to the revision 3 document. No implementation files were changed.
+- **Limitations:** No repository lint workflow, GitHub Actions validation, or external/repository tests were run. Read-back and structural checks do not establish that the user accepts the recommendation.
 
 ## 12. Handoff Instructions
 
