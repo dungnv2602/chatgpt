@@ -1,18 +1,14 @@
 ## Current Step
 
-_Foundational initialization and approved DRAFT-0002 implementation in progress._
+_Review the approved DRAFT-0002, task/workspace contracts, ADR governance, and document coverage. Define the implementation boundary and task-folder model before editing. Approved proposal: [DRAFT-0002](draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md)._
 
 ## Open Discussions
 
-- **2026-11-25 — DRAFT-0002 approved with implementation additions:** The user approved Option 3 as recommended, and asked to strengthen it with task-folder isolation, recovery from context loss using task records and associated ADRs as the context package, dedicated research-evidence files, and named plan directories/selectors for independently managed subtasks. Expand these requirements into a comprehensive, repository-fitted workflow. Preserve the approval boundary and document any implementation limits or decisions that require future user input.
-
-- **2026-11-25 02:26 UTC — DRAFT-0002 revision 3 awaiting user decision:** The requested option-by-option assessment is complete. Review [DRAFT-0002 revision 3 — Phase-Aware Planning and Evidence Capture](draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md#considered-options). The user decision is requested on three points: (1) approve Option 3 and the full implementation scope; (2) accept the separation of planning level from execution mode; and (3) exclude live hooks, automatic context injection, attestation, and Stop gates from this proposal. Revision 3 remains in-review. ADR-0001 governs the decision process only; no implementation is authorized.
+- **2026-11-25 — Approved DRAFT-0002 implementation in progress:** The user approved Option 3 as recommended, with additions to strengthen it: task-folder isolation, recovery after context loss from the task record and associated ADRs, dedicated research-evidence files, and named plan directories with selectors for independently managed subtasks. The approved matter remains open until the workflow and records are implemented and verified.
 
 - **2026-11-23 — Drawing direction needed:** Session DRAWING-2026-11-23-01 is Active, but the user has not supplied a subject or visual direction. The user must provide the subject before prompt drafting or image generation.
 
 ## Reports
-
-- **2026-11-25 — Session startup:** Recorded startup notice for the approved DRAFT-0002 implementation session. Foundational initialization is in progress on branch `gpt`.
 
 - **2026-11-25 02:40 UTC — Future Draft assessment standard updated:** Updated the canonical Draft template to Version 1.2, Draft workflow, decision-governance quality gate, and Document Type Catalog. Read-back checks confirmed consistent requirements for detailed assessment of every viable option, comparative criteria/matrix, evidence provenance and limitations, and recommendation traceability. Archived task [20261125-023508](../archive/tasks/20261125-023508-standardize-detailed-option-assessments-in-future-drafts.md). DRAFT-0002 revision 3 remains in-review and unchanged. No merge to main.
 
