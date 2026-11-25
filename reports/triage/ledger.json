@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4.0",
-  "updated_at_utc": "2026-11-25T07:11:01Z",
+  "updated_at_utc": "2026-11-25T07:11:25Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
@@ -222,6 +222,7 @@
       "reports/gh_ac_reports/history/427313089/45457882610-attempt-1-pre_finalizer/report.json",
       "reports/gh_ac_reports/history/427313089/45560873038-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45560873038-attempt-1-pre_finalizer/report.json",
+      "reports/gh_ac_reports/history/427313089/45566012929-attempt-1-post_run/report.json",
       "reports/gh_ac_reports/history/427313089/45566012929-attempt-1-pre_finalizer/report.json",
       "reports/lint_reports/on_changed/history/45301729061-attempt-1/report.json",
       "reports/lint_reports/on_changed/history/45304735363-attempt-1/report.json",
@@ -18887,8 +18888,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-25T07:10:27Z",
-      "last_seen_utc": "2026-11-25T07:10:27Z",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-25T07:11:23Z",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": "reports/gh_ac_reports/history/427313089/45560873038-attempt-1-post_run/report.json",
@@ -18896,6 +18897,13 @@
           "observed_at_utc": "2026-11-25T07:10:27Z",
           "note": "validate-document-standards / Validate the document type catalog",
           "observation_id": "github_actions:427313089:45560873038:1"
+        },
+        {
+          "report_path": "reports/gh_ac_reports/history/427313089/45566012929-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45566012929",
+          "observed_at_utc": "2026-11-25T07:11:23Z",
+          "note": "validate-document-standards / Validate the document type catalog",
+          "observation_id": "github_actions:427313089:45566012929:1"
         }
       ],
       "resolution": null,

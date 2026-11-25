@@ -11,30 +11,30 @@
     "event": "push",
     "branch": "gpt",
     "head_sha": "65a5ee5021c9659535d1c9c8eff733b41432ec50",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "cancelled",
     "created_at": "2026-11-25T07:10:03Z",
     "run_started_at": "2026-11-25T07:10:03Z",
-    "updated_at": "2026-11-25T07:10:48Z",
+    "updated_at": "2026-11-25T07:11:06Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "Add companion area project task architecture draft"
   },
   "capture": {
-    "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-25T07:11:01Z",
-    "completeness": "Incomplete",
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-25T07:11:23Z",
+    "completeness": "Complete",
     "reporter_job": {
       "id": "139040974379",
       "name": "Capture GH Actions diagnostics",
-      "status": "in_progress",
-      "conclusion": null
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "classification": {
-    "state": "in_progress",
-    "observed_conclusion": null,
-    "projected_conclusion": "failure",
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
     "primary_category": "validation_or_test",
     "categories": [
       "validation_or_test"
@@ -48,7 +48,7 @@
         "step_name": "Validate the document type catalog",
         "blocking": true,
         "confidence": "medium",
-        "message": "Step conclusion: failure"
+        "message": "2026-11-25T07:10:14.9582639Z ERROR: Misplaced skill template under references/: skills/migrate-to-rust/references/infographic_template.html. Move copy-ready assets to the owning skill's assets/ directory."
       }
     ]
   },
@@ -139,12 +139,17 @@
         }
       ],
       "log_capture": {
-        "available": false,
+        "available": true,
         "truncated": false,
-        "bytes": 82,
+        "bytes": 45952,
         "path": "logs/job-139040870241.log",
-        "error": "run 45566012929 is still in progress; logs will be available when it is complete\n",
-        "marker_lines": []
+        "error": null,
+        "marker_lines": [
+          "validate-document-standards\tValidate the document type catalog\t2026-11-25T07:10:14.9582639Z ERROR: Misplaced skill template under references/: skills/migrate-to-rust/references/infographic_template.html. Move copy-ready assets to the owning skill's assets/ directory.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-25T07:10:14.9588608Z ERROR: 15 Markdown file(s) are not covered by the catalog: skills/pdf/FORMS.md, skills/pdf/REFERENCE.md, skills/skill-creator/agents/analyzer.md, skills/skill-creator/agents/comparator.md, skills/skill-creator/agents/grader.md, skills/theme-factory/themes/arctic-frost.md, skills/theme-factory/themes/botanical-garden.md, skills/theme-factory/themes/desert-rose.md, skills/theme-factory/themes/forest-canopy.",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-25T07:10:14.9594633Z Catalog validation failed: 2 error(s), 18 document type(s), 28 reference(s).",
+          "validate-document-standards\tValidate the document type catalog\t2026-11-25T07:10:14.9656343Z ##[error]Process completed with exit code 1."
+        ]
       }
     }
   ],
@@ -186,12 +191,6 @@
     }
   ],
   "artifacts": [],
-  "capture_errors": [
-    {
-      "source": "job_log",
-      "job_id": "139040870241",
-      "message": "run 45566012929 is still in progress; logs will be available when it is complete\n"
-    }
-  ],
-  "history_path": "history/427313089/45566012929-attempt-1-pre_finalizer"
+  "capture_errors": [],
+  "history_path": "history/427313089/45566012929-attempt-1-post_run"
 }
