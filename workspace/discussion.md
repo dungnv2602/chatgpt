@@ -1,6 +1,6 @@
 ## Current Step
 
-**2026-11-25 02:23 UTC — Prepare DRAFT-0002 revision 3:** [Task 20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md). Replace the four option assessments with evidence-qualified evaluations, add a comparative fit matrix, refine the Option 3 rollout, and update the revision history. Keep status in-review and do not implement the proposal.
+**2026-11-25 02:26 UTC — Validate and register DRAFT-0002 revision 3:** [Task 20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md). Read back the complete revision, verify option coverage and approval metadata, update the Draft index and open-decision entry, and reconcile the task board. Do not implement the proposal.
 
 ## Open Discussions
 
