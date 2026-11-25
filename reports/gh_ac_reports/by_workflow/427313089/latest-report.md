@@ -14,30 +14,30 @@
 | Event | push |
 | Actor | dungnv2602 |
 | Created (UTC) | 2026-11-25T06:28:36Z |
-| Status at capture | in_progress |
-| Observed conclusion | Not yet available |
-| Projected conclusion | failure |
-| Reporter job | in_progress / Pending |
-| Capture stage | pre_finalizer |
-| Completeness | Incomplete |
-| Captured (UTC) | 2026-11-25T06:29:40Z |
+| Status at capture | completed |
+| Observed conclusion | failure |
+| Projected conclusion | Not calculated |
+| Reporter job | completed / success |
+| Capture stage | post_run |
+| Completeness | Complete |
+| Captured (UTC) | 2026-11-25T07:10:27Z |
 
 ## Executive summary
 
 | Measure | Result |
 | --- | --- |
-| State | in_progress |
+| State | failure |
 | Primary category | validation_or_test |
 | Jobs | 1 |
 | Steps | 9 |
 | Issues | 1 |
 | Annotations | 2 |
 | Artifacts | 0 |
-| Capture errors | 1 |
+| Capture errors | 0 |
 
 ## Failure classification
 
-validation_or_test The parent run is still in progress. The projected conclusion is provisional.
+validation_or_test
 
 The report records an actionable workflow failure or operational exception. Ordinary successful runs and cancellation-only runs are not captured by default. A successful run is retained when a step failed but the workflow allowed it to continue. A cancelled run is retained only when it contains an independent actionable failure. Known downstream status-propagation steps after cancellation are excluded. Explicit run-backfill requests can override the default capture filter.
 
@@ -51,7 +51,7 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 139024006573 | 6 | Validate the document type catalog | Blocking | medium | Step conclusion: failure |
+| validation_or_test | 139024006573 | 6 | Validate the document type catalog | Blocking | medium | 2026-11-25T06:28:48.0467495Z ERROR: Misplaced skill template under references/: skills/migrate-to-rust/references/infographic_template.html. Move copy-ready assets to the owning skill's assets/ directory. |
 
 ## Check annotations
 
@@ -68,15 +68,11 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 139024006573 | validate-document-standards | logs/job-139024006573.log | 82 | False |  |
+| 139024006573 | validate-document-standards | logs/job-139024006573.log | 45952 | False | validate-document-standards	Validate the document type catalog	2026-11-25T06:28:48.0467495Z ERROR: Misplaced skill template under references/: skills/migrate-to-rust/references/infographic_template.html. Move copy-ready assets to the owning skill's assets/ directory., validate-document-standards	Validate the document type catalog	2026-11-25T06:28:48.0470851Z ERROR: 15 Markdown file(s) are not covered by the catalog: skills/pdf/FORMS.md, skills/pdf/REFERENCE.md, skills/skill-creator/agents/analyzer.md, skills/skill-creator/agents/comparator.md, skills/skill-creator/agents/grader.md, skills/theme-factory/themes/arctic-frost.md, skills/theme-factory/themes/botanical-garden.md, skills/theme-factory/themes/desert-rose.md, skills/theme-factory/themes/forest-canopy., validate-document-standards	Validate the document type catalog	2026-11-25T06:28:48.0473866Z Catalog validation failed: 2 error(s), 18 document type(s), 28 reference(s)., validate-document-standards	Validate the document type catalog	2026-11-25T06:28:48.0543707Z ##[error]Process completed with exit code 1. |
 
 ## Evidence coverage
 
-One or more evidence sources were unavailable. This report is Incomplete.
-
-| Source | HTTP status | Limitation |
-| --- | --- | --- |
-| job_log | Not recorded | run 45560873038 is still in progress; logs will be available when it is complete  |
+All requested evidence endpoints and completed-job log captures returned data.
 
 ## Related lint evidence
 
