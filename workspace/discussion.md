@@ -1,6 +1,6 @@
 ## Current Step
 
-_Update the active planning task with the verified DRAFT-0003 result, reconcile its handoff and remaining decisions, then finalize the Draft review register. Preserve the task's Blocked state while user decisions remain pending. Task: [20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)._
+_Finalize the review register: link DRAFT-0003 under Open Discussions, surface the DRAFT-0002 approval-state discrepancy, and retain only the three latest verified success reports. Task: [20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)._
 
 ## Open Discussions
 
