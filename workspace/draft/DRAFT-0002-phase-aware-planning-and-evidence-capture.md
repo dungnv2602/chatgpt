@@ -110,6 +110,7 @@ The repository does not need another task-status system. It needs a clearer exec
 - **Approval integrity:** A plan must never expand the user's approved scope.
 - **Compatibility:** The Ledger must still generate valid Proposed task records from the canonical template.
 - **Auditability:** Task closeout must preserve the useful evidence and verification record.
+- **Measured benefit:** A three-task repository pilot must show that the additional structure improves recovery or evidence traceability enough to justify its maintenance cost.
 
 
 ## Assessment Basis and Evidence Limits
