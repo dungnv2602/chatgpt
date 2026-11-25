@@ -1,6 +1,6 @@
 ## Current Step
 
-_Compare `master/Handoff.md` with the latest DRAFT-0002, current task model, and Draft/ADR contracts. Define a complementary proposal boundary without implementing workflow changes. Related task: [20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)._
+_Prepare a companion decision Draft for the area/project/task architecture in `master/Handoff.md`. Compare viable hierarchy and record-ownership models, define how the proposal relates to DRAFT-0002, and keep all implementation out of scope. Related task: [20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)._
 
 ## Open Discussions
 
