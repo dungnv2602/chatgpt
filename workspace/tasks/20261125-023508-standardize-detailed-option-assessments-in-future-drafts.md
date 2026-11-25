@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261125-023508
 - **Created:** 2026-11-25 02:35 UTC
-- **Updated:** 2026-11-25 02:35 UTC
+- **Updated:** 2026-11-25 02:38 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -55,23 +55,27 @@ Update the canonical Draft template, Draft workflow, decision-governance instruc
 - **References:** `workspace/DRAFT_TEMPLATE.md`; `workspace/draft/README.md`; `skills/decision-governance/SKILL.md`; `skills/document-standards/references/document-type-catalog.md`.
 - **Next:** Update the canonical template, workflow, governance instructions, and catalog, then read back and structurally verify every changed path.
 
+### 2026-11-25 02:38 UTC
+
+- **Action:** Updated the canonical Draft template to Version 1.2; strengthened the Draft workflow, decision-governance skill, and Document Type Catalog.
+- **Result:** Future Drafts now require comparable, detailed assessment of every materially viable option, consistent decision drivers, a comparative matrix when multiple options exist, explicit recommendation traceability, evidence provenance/confidence/limitations, and disclosure of assumptions and unknowns. The standard prohibits unsupported scores and estimates and allows a reasoned no-matrix exception when only one option is viable. DRAFT-0002 revision 3 remains untouched and in-review.
+- **References:** `workspace/DRAFT_TEMPLATE.md`; `workspace/draft/README.md`; `skills/decision-governance/SKILL.md`; `skills/document-standards/references/document-type-catalog.md`.
+- **Next:** Read back and verify all changed paths, then archive this task under the normal closeout procedure.
+
 ## 7. Current State
 
-The scope is authorized. Canonical source files have been inspected. No files have yet been changed.
+The Draft authoring standard is implemented on branch `gpt`. The canonical template is Version 1.2. The Draft index/workflow, decision-governance skill, and Document Type Catalog now state the same detailed assessment requirements. DRAFT-0002 revision 3 remains in-review and was not modified or approved by this work.
 
 ## 8. Remaining Work
 
-- Update the Draft template and increment its template version.
-- Update the Draft workflow and decision-governance review procedure.
-- Update the Document Type Catalog.
-- Read back all changed paths and verify consistency.
-- Update the task board and discussion register.
+- Complete repository read-back checks.
+- Close and archive this task.
 
 ## 9. Next Actions
 
-1. Update canonical Draft authoring and review requirements.
-2. Read back and verify the changes.
-3. Report completion without merging to main unless separately requested.
+1. Verify the template, workflow, governance instructions, catalog, task board, and discussion register.
+2. Archive this task after successful read-back.
+3. Report completion. Do not merge to main unless separately requested.
 
 ## 10. References
 
@@ -83,10 +87,10 @@ The scope is authorized. Canonical source files have been inspected. No files ha
 
 ## 11. Verification
 
-- **Check:** Pending.
-- **Method:** Read back all changed paths and inspect the detailed-assessment requirements.
-- **Result:** Not performed.
-- **Limitations:** No hosted validation has been run.
+- **Check:** Pending final read-back.
+- **Method:** Fetch each changed file from branch `gpt` and confirm the template version, assessment dimensions, comparative matrix conditions, evidence requirements, workflow quality gate, and catalog consistency.
+- **Result:** The initial writes succeeded. Final verification is pending.
+- **Limitations:** No hosted Document Standards or lint workflow has been run. Structural read-back does not prove semantic template conformance.
 
 ## 12. Handoff Instructions
 
