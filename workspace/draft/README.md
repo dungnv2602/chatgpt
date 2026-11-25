@@ -9,7 +9,8 @@ This folder stores proposals that require a user decision.
 
 ## Current Drafts
 
-- [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](DRAFT-0002-phase-aware-planning-and-evidence-capture.md) — Revision 3 in review. Includes detailed assessments of all four options and a comparative repository-fit matrix. User approval is pending.
+- [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](DRAFT-0002-phase-aware-planning-and-evidence-capture.md) — Revision 3. The discussion register records approval of Option 3 with added requirements, but the Draft metadata and task record still show review-pending state. Reconcile the exact approved revision and scope before ADR promotion.
+- [DRAFT-0003 — Area, Project, and Task Architecture](DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md) — Revision 1 in review. Companion to DRAFT-0002. Recommends project folders with nested task folders, one global task board, scoped resources, and the existing global Draft/ADR and archive contracts.
 
 ## Workflow
 
