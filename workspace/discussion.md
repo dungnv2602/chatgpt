@@ -1,6 +1,6 @@
 ## Current Step
 
-_Review `master/Handoff.md` against the recovered task and workspace model. Identify its purpose, ownership, handoff contract, and any conflicts with current task records. Related task: [20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)._
+_Compare `master/Handoff.md` with the latest DRAFT-0002, current task model, and Draft/ADR contracts. Define a complementary proposal boundary without implementing workflow changes. Related task: [20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)._
 
 ## Open Discussions
 
