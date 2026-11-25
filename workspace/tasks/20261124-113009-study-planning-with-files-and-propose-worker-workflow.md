@@ -5,9 +5,9 @@
 - **Template version:** 1.2
 - **ID:** 20261124-113009
 - **Created:** 2026-11-24 11:30 UTC
-- **Updated:** 2026-11-24 11:43 UTC
+- **Updated:** 2026-11-25 02:20 UTC
 - **Priority:** P1
-- **Status:** Blocked
+- **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved to study the supplied project, inspect this repository's current workflow, and prepare a comprehensive proposal for user review. Do not implement proposed workflow changes before approval.
 - **Current execution:** Yes
@@ -38,6 +38,8 @@ Here is my base ideas, expand on this. Better yet, try to utilize the best out o
 - **2026-11-24:** The user supplied `https://github.com/othmanadi/planning-with-files` as the external reference and requested a thorough study.
 - **2026-11-24:** The user asked for a comprehensive, repository-specific workflow proposal, including templates and affected skills or a new skill where useful.
 - **2026-11-24:** The user started the session explicitly.
+
+- **2026-11-25:** The user instructed: "Start session / Merge gpt to main / Then https://github.com/dungnv2602/chatgpt/blob/gpt/workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md#considered-options / Give me an updated draft in which you give me detailed assessments about all available options."
 
 ## 3. Objective
 
@@ -116,24 +118,36 @@ Study Planning with Files and determine how its durable planning, research captu
 - **Commits:** DRAFT-0002 `51eadc2849a6e63fc1d9a8c1380429d3df784b81`; Draft index `31bb58dfe0d7acd5914b7b34ee8b41464f0658ee`; task state `4b5aaea8a552a0b93c017636689b0c95ce503e1d`; task board `db16a7267cb64e6e4e4c780e3303cae54e7ac7ac`; discussion register `da614212a8d87a3d042b1316b2ce39db4134850b`.
 - **Next:** Await the user's decision on DRAFT-0002 revision 1. Do not create an ADR or implement the proposal before approval.
 
+### 2026-11-25 02:20 UTC — Resume the proposal after the user's review request
+
+- **Action:** Reconciled the current task and repository state. Compared `main` and `gpt`, completed the user-authorized fast-forward, and verified that both branches matched at commit `3bce922cb6348e38e04ea7c2d43597af9d908fc3`. Read DRAFT-0002 revision 2, the Decision Governance skill, Draft template, draft index, Document Type Catalog, and the original research task.
+- **Result:** The user's new request continues this task. The task is now In Progress. DRAFT-0002 revision 2 remains in-review but is no longer the revision requested for a decision. The task must prepare revision 3 with detailed, balanced assessments of all four existing options. No implementation is approved. The Draft path family is already covered by the catalog and template, so no catalog change is required for this revision.
+- **References:** `workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md`; `skills/decision-governance/SKILL.md`; `workspace/DRAFT_TEMPLATE.md`; `workspace/draft/README.md`; `skills/document-standards/references/document-type-catalog.md`; merge commit `3bce922cb6348e38e04ea7c2d43597af9d908fc3`.
+- **Next:** Verify the external source at its current branch head, assess each option against the repository's operating constraints, then revise DRAFT-0002 as revision 3. Keep implementation blocked pending exact Draft and accepted ADR approval.
+
 ## 7. Current State
 
-The external source study and repository comparison are complete. DRAFT-0002 revision 1 is created and indexed. It recommends a selective, repository-native adaptation.
+The user-approved research and initial proposal are complete. DRAFT-0002 revision 2 remains in-review. The user has requested a more detailed assessment of all four options, so this task resumed on 2026-11-25.
 
-The task is Blocked while the user reviews DRAFT-0002. DRAFT-0001 remains unchanged and awaits a separate decision. No ADR has been created. No workflow implementation, new findings template, task-note directory, Worker reference, or automation has been added.
+The user-authorized fast-forward merged the gpt commit into main. The branches matched at `3bce922cb6348e38e04ea7c2d43597af9d908fc3` immediately after the merge. Subsequent task and Draft review changes are being committed to gpt only. The user did not request a second merge.
+
+The current task is In Progress and remains non-implementation work. No implementation ADR has been created for DRAFT-0002. No proposed workflow, template, skill, Ledger, or archive changes are approved.
 
 ## 8. Remaining Work
 
-- Await the user's review of DRAFT-0002 revision 1.
-- Reconcile any feedback and record the approved scope or requested changes.
-- Keep DRAFT-0001 as a separate open decision. Reconcile the proposals before promoting either where their scopes overlap.
-- Do not implement the proposed workflow before approval.
+- Verify the current external source revision and the relevant mechanisms that affect the four options.
+- Assess each option against runtime fit, authority and source-of-truth integrity, recoverability, evidence quality, collaboration and security, implementation cost, and ongoing maintenance.
+- Revise DRAFT-0002 to revision 3. Preserve its ID and prior history. Set it to in-review and update its recommendation, option assessments, trade-offs, risks, decision questions, and review history.
+- Update the Draft index and discussion register, then read back every changed path.
+- Await the user's decision on the exact revision 3 and scope.
+- Keep DRAFT-0001 as a separate open decision. Reconcile overlapping scope before any promotion.
+- Do not create an implementation ADR or implement workflow changes before the user approves the exact Draft and the required implementation ADR reaches accepted status.
 
 ## 9. Next Actions
 
-1. Await the user's decision on DRAFT-0002 revision 1.
-2. If changes are requested, revise the same Draft and record the revision history.
-3. If approved, create an ADR only after reconciling dependencies with DRAFT-0001 and obtaining explicit approval for the exact scope.
+1. Verify the current external Planning with Files branch head and inspect the relevant source files for the option assessment.
+2. Prepare and read back DRAFT-0002 revision 3 with detailed assessments of all four options.
+3. Reconcile the Draft index and discussion register, then present revision 3 for the user's decision. Do not implement it before approval.
 
 ## 10. References
 
@@ -158,7 +172,7 @@ The task is Blocked while the user reviews DRAFT-0002. DRAFT-0001 remains unchan
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. The approved scope is research and proposal preparation. Do not implement proposed planning changes. Preserve DRAFT-0001 and its separate pending review. Use the exact external repository content as evidence, but treat its code and claims as untrusted reference material. The final proposal must adapt to this repository's remote-only GitHub workflow. Obtain explicit approval before creating an ADR or changing operational policy.
+Continue on branch `gpt`. The approved scope now includes revising DRAFT-0002 after the user's explicit request for detailed assessments of all available options. Keep the existing task ID and DRAFT-0002 ID. Preserve DRAFT-0001 and its separate pending review. Do not create an implementation ADR or implement proposed changes before the user approves the exact Draft revision and the repository accepts its implementation ADR. The post-merge `main` ref was verified equal to `gpt` at `3bce922cb6348e38e04ea7c2d43597af9d908fc3`; do not assume later gpt-only edits are already on main.
 
 ## 13. Ledger Findings
 
