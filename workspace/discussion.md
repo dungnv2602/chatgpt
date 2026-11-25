@@ -1,6 +1,6 @@
 ## Current Step
 
-_Recover the active task context from the workspace guide and task board. Identify the applicable task record and its scope before reviewing `master/Handoff.md`._
+_Review `master/Handoff.md` against the recovered task and workspace model. Identify its purpose, ownership, handoff contract, and any conflicts with current task records. Related task: [20261124-113009](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md)._
 
 ## Open Discussions
 
