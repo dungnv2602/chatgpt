@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-114048-01
 - **Created:** 2026-11-24 11:40 UTC
-- **Updated:** 2026-11-24 15:38 UTC
+- **Updated:** 2026-11-25 02:33 UTC
 - **Priority:** P2
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -93,4 +93,6 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 | `lint-e73135d93a51902c9fd106d5` | medium | synonym-rotation: 'check' and 'verify' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45386030748-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45386030748) |
 | `lint-2de665cea398a7c3f0984efd` | medium | synonym-rotation: 'validate' and 'verify' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45386030748-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45386030748) |
 | `lint-b12cf7b98114051a3ef4ed4e` | medium | synonym-rotation: 'check' and 'verify' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45427379012-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45427379012) |
-| `lint-331ead622bd8b63c3dc8ec78` | medium | synonym-rotation: 'correct' and 'fix' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45427379012-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45427379012) |
+| `lint-331ead622bd8b63c3dc8ec78` | medium | synonym-rotation: 'correct' and 'fix' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45427379012-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45427379012) · [report](../../reports/lint_reports/on_changed/history/45533487346-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45533487346) |
+| `lint-5c822b17641bfca685187467` | medium | synonym-rotation: 'validate' and 'check' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45533487346-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45533487346) |
+| `lint-70781a8fa973c1554931c214` | medium | synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45533487346-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45533487346) |
