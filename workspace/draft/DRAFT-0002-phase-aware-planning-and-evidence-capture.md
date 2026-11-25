@@ -501,32 +501,37 @@ The discussion register keeps its existing sections and report limit. Current St
 
 The CI Ledger remains the source of truth for CI finding lifecycle and evidence references. A findings note may cite Ledger records. It must not create duplicate CI finding identities or become another active issue backlog.
 
+
 ## Consequences and Trade-Offs
 
-- **Positive:** Complex tasks gain explicit phases, exit criteria, and one immediate next action.
-- **Positive:** A new session can recover the current phase without reconstructing it from a long activity log.
-- **Positive:** Research-heavy tasks retain evidence with source context, confidence, and limitations.
-- **Positive:** The existing task record remains authoritative for status, approval, and progress.
-- **Positive:** Simple tasks avoid extra planning files.
-- **Neutral:** The Worker must update task phases and evidence at defined checkpoints.
-- **Neutral:** The task template becomes longer. Its phased sections remain optional for lightweight tasks.
-- **Negative:** The Ledger renderer and its tests need coordinated updates when the task template changes.
-- **Negative:** Optional findings notes add a second active file and an archive-retention entry for some tasks.
-- **Negative:** A human must assess phase status and completion. This environment has no automatic hook for that purpose.
+- **Positive:** Complex tasks gain explicit phases, measurable exit conditions, and one immediate action inside the existing authoritative task record.
+- **Positive:** A new session can recover phase, current action, blockers, and linked evidence through the same GitHub task record the Worker already reads.
+- **Positive:** Research-heavy tasks preserve source versions, classifications, confidence, and limitations without requiring every task to create extra files.
+- **Positive:** The task board, discussion register, and CI Ledger keep their existing responsibilities. No local filesystem or runtime hook is required.
+- **Neutral:** The task template and Worker instructions become longer. Detailed phases remain conditional; lightweight tasks retain a small structure.
+- **Neutral:** Phase management remains procedural. The Worker must update the plan at defined checkpoints, and no automatic per-turn injection is provided.
+- **Neutral:** A findings note creates an additional file for selected tasks. It must be linked, archived, and retained with its task.
+- **Negative:** The implementation spans the Worker, focused reference, task template, optional findings template and index, archive guide, catalog, and CI Ledger renderer/tests. These changes require coordinated review and hosted validation.
+- **Negative:** Phased tasks require checkpoint updates. If the Worker does not reconcile the plan with repository state, the Execution Plan can become stale.
+- **Negative:** Findings notes can become a duplicate knowledge base if the creation threshold is too low or their subordinate status is unclear.
+- **Negative:** A human must evaluate semantic exit criteria. A structural check cannot prove that the objective was met or that the evidence is sufficient.
 
 ## Risks and Safeguards
 
 | Risk | Likelihood / Impact | Safeguard | Residual risk |
 |---|---|---|---|
-| Task template duplicates the Progress Log | Medium / Medium | Keep chronology only in the task Progress Log. | A worker may still repeat details in multiple sections. |
-| Phases become artificial overhead | Medium / Medium | Use planning levels and skip phases for lightweight tasks. | Complexity classification requires judgment. |
-| A worker marks a phase complete without evidence | Medium / High | Define observable exit criteria and record verification. | Semantic review can still miss a gap. |
-| External content becomes an instruction source | Medium / High | Treat findings and source material as untrusted data. | Model-level prompt injection cannot be eliminated by Markdown framing. |
-| A findings note conflicts with the task record | Low / High | Task record owns status and approval. Findings notes are evidence only. | A stale note can still mislead until reconciled. |
-| Concurrent workers overwrite shared state | Medium / High | One owner controls the task record, board, and discussion register. | Remote write conflicts still require reconciliation. |
-| Ledger task generation breaks after template edits | Medium / High | Update renderer and tests in the same implementation task. | Hosted validation may reveal untested formatting assumptions. |
-| Task evidence is lost at closeout | Medium / Medium | Archive any findings note with the task and index its exact path. | Retention removes both after the existing 90-day period. |
-| The design expands into an unsupported hook system | Medium / Medium | Do not add hooks, scripts, or completion gates in the initial scope. | Future runtime changes may justify a separate Draft. |
+| The Execution Plan duplicates the Progress Log or other task sections | Medium / Medium | The plan owns current phase and Next Step; the Progress Log owns chronology; Remaining Work owns unresolved requirements and blockers. | Authors may still repeat information unless reviewed at checkpoints. |
+| Phases become artificial overhead | Medium / Medium | Use explicit complexity triggers and keep Lightweight tasks phase-free. Tool-call count is a prompt to assess complexity, not a hard threshold. | Classification still requires judgment. |
+| A phase is marked complete without adequate evidence | Medium / High | Give every phase observable exit criteria and link verification in the Progress Log or findings note. Keep semantic review separate from structural validation. | A reviewer can still misinterpret weak evidence. |
+| The current Next Step becomes stale or conflicts with Following Actions | Medium / High | Maintain exactly one current Next Step. Make Following Actions optional and subordinate. Reconcile the pointer with Current State and repository state at each checkpoint. | A skipped checkpoint can leave a stale pointer until recovery detects it. |
+| A findings note becomes a second source of task authority | Medium / High | The task record owns status, scope, and approval. The findings note records evidence only. | A stale note can still mislead until reconciled. |
+| Findings notes are created too often or abandoned | Medium / Medium | Define narrow creation triggers; prohibit empty notes; archive notes with their task; register exact paths under the existing retention policy. | Research value may expire under the existing retention period unless moved to an approved durable reference. |
+| Concurrent workers overwrite shared task state | Medium / High | Serial execution is default. Parallel work needs user authorization, separate task IDs or isolated output files, and one orchestrator for shared indexes. | Concurrent writes can still conflict and require serialized reconciliation. |
+| Ledger-generated tasks diverge from manually created tasks | Medium / High | Update the Ledger renderer, regression tests, and operator guide in the same implementation task as the task-template revision. | Hosted validation may expose untested formatting assumptions. |
+| Archive or retention handling omits a findings note | Medium / Medium | Update the archive contract. Read back both the task archive and findings archive before deleting active copies. Register exact paths and the UTC timestamp. | A failed multi-file closeout still requires manual recovery. |
+| External content is treated as trusted instruction | Medium / High | Treat source material and findings as untrusted data. Keep user instructions and repository policy authoritative. Do not add automatic content injection. | Prompt injection cannot be eliminated by Markdown formatting alone. |
+| A future validator creates false confidence | Medium / Medium | Describe validation as structural only. Require evidence for semantic phase exits and retain normal task acceptance and user approval. | Structural checks cannot evaluate every meaning-dependent condition. |
+| External benchmark figures are treated as repository guarantees | Medium / Medium | Record source versions, host, sample limits, and untested scenarios. Evaluate this design with the repository's three-task pilot. | The pilot is small and cannot prove every long-term benefit. |
 
 ## Repository Impact
 
