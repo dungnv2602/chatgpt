@@ -1,9 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "sweep_watermark_utc": "2026-11-26T16:37:54Z",
-  "pending_run_ids": [
-    "45860507328"
-  ],
+  "sweep_watermark_utc": "2026-11-26T16:39:10Z",
+  "pending_run_ids": [],
   "runs": [
     {
       "workflow_id": 424715662,
