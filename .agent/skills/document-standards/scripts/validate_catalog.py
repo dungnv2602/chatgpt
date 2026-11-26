@@ -7,10 +7,7 @@ import re
 import sys
 from pathlib import Path
 
-ALLOWED_ROOTS = {
-    ".github", "images", "reports", "master", "novels", "drawings",
-    "skills", "workspace", "archive"
-}
+ALLOWED_ROOTS = {".agent", ".github", ".takeout", "area", "images", "workspace", "master", ".archive"}
 KNOWN_CLASSES = {
     "Embedded contract",
     "Generator-owned",
@@ -148,10 +145,10 @@ def read_coverage(content: str) -> tuple[list[dict[str, str]], list[str]]:
 
 
 def find_markdown_documents(root: Path) -> list[str]:
-    """List repository Markdown files, excluding root master/, archive/, and .git/."""
+    """List repository Markdown files, excluding root master/, .archive/, and .git/."""
     documents: list[str] = []
     for candidate in root.iterdir():
-        if candidate.name in {"master", "archive", ".git"}:
+        if candidate.name in {"master", ".archive", ".git"}:
             continue
         if candidate.is_dir():
             documents.extend(
@@ -215,7 +212,7 @@ def validate_markdown_coverage(root: Path, content: str) -> list[str]:
             pattern.startswith("/")
             or any(part in {"", ".", ".."} for part in parts)
             or parts[0] not in ALLOWED_ROOTS
-            or parts[0] in {"master", "archive"}
+            or parts[0] in {"master", ".archive"}
         ):
             errors.append(f"Line {line}: unsafe or excluded Markdown coverage pattern '{pattern}'.")
             continue
@@ -242,7 +239,7 @@ def validate_markdown_coverage(root: Path, content: str) -> list[str]:
                 or any(part in {"", ".", ".."} for part in raw_parts)
                 or not path.parts
                 or path.parts[0] not in ALLOWED_ROOTS
-                or path.parts[0] in {"master", "archive"}
+                or path.parts[0] in {"master", ".archive"}
                 or path_text.strip() != path_text
             ):
                 errors.append(f"Line {line}: unsafe or excluded authority path '{path_text}'.")
@@ -323,21 +320,21 @@ def is_template_asset(path_text: str) -> bool:
 def template_location_error(path_text: str) -> str | None:
     """Enforce owner-level template placement."""
     parts = Path(path_text).parts
-    if len(parts) >= 4 and parts[0] == "skills" and parts[2] == "assets":
+    if len(parts) >= 4 and parts[:2] == (".agent", "skills") and parts[3] == "assets":
         return None
-    if len(parts) >= 3 and parts[:2] == ("novels", "templates"):
+    if len(parts) >= 3 and parts[:3] == ("area", "novel", "templates"):
         return None
     if len(parts) == 2 and parts[0] == "workspace":
         return None
     return (
         "template must be in its owning skill's assets/ directory, "
-        "novels/templates/, or the shared workspace root"
+        "area/novel/templates/, or the shared workspace root"
     )
 
 
 def find_misplaced_skill_templates(root: Path) -> list[str]:
     """Find named template assets stored under skill reference directories."""
-    skill_root = root / "skills"
+    skill_root = root / ".agent" / "skills"
     if not skill_root.is_dir():
         return []
     errors = []
@@ -455,7 +452,7 @@ def main() -> int:
     parser.add_argument("--root", default=".", help="Repository root directory.")
     parser.add_argument(
         "--catalog",
-        default="skills/document-standards/references/document-type-catalog.md",
+        default=".agent/skills/document-standards/references/document-type-catalog.md",
         help="Catalog path relative to the repository root.",
     )
     args = parser.parse_args()
