@@ -4,7 +4,7 @@ This file is the single index for active and retained task records. The Worker o
 
 ## Current Execution
 
-_No current execution._
+[20261126-070000 — Complete the non-image repository adaptation](tasks/20261126-070000-complete-non-image-repository-adaptation.md)
 
 ## Proposed
 
