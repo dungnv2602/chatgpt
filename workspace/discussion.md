@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26:** Static audit of task publication consistency: review task-record/board write ordering and Ledger persistence, and check whether failures can leave orphan task records or board rows. Repair only confirmed transactional defects; no tests, scripts, dispatch, or polling.
+- **2026-11-26:** Final static review of diagnostics triggers, source workflow finalizers, publication scope and path filters for task [20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md). No tests, scripts, dispatch, or polling.
 
 ## Open Discussions
 
