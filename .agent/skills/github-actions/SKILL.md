@@ -28,7 +28,7 @@ GitHub Actions runs the scheduled archive-retention workflow.
 
 - Run the schedule from the repository default branch because GitHub scheduled events only run there.
 - Check out `gpt`, which is the working/source branch.
-- Read only `.github/archive-retention-index.json`. Never list or scan `archive/tasks/`.
+- Read only `.github/archive-retention-index.json`. Never list or scan `.archive/tasks/`.
 - Retain each indexed record for at least 90 days from its UTC archive timestamp.
 - Delete only exact indexed paths that have reached 90 days. Delete their index entries after processing.
 - Preserve `.gitkeep`. Unindexed legacy records remain protected and must not be discovered by a directory scan.
@@ -39,8 +39,8 @@ GitHub Actions runs the scheduled archive-retention workflow.
 
 ## 3. Report triage and archive retention
 
-- Start at `reports/README.md`. Maintain cross-family issue state in `reports/triage/ledger.json`.
-- Resolved report files belong in `archive/reports/`, not in a report-root archive folder.
+- Start at `.takeout/reports/README.md`. Maintain cross-family issue state in `.takeout/reports/triage/ledger.json`.
+- Resolved report files belong in `.archive/reports/`, not in a report-root archive folder.
 - The shared archive-retention workflow retains each exact indexed file for 90 days and deletes only that file after expiry. It does not scan archive directories.
 - The index is `.github/archive-retention-index.json`. Preserve unindexed legacy files.
 
@@ -48,8 +48,8 @@ GitHub Actions runs the scheduled archive-retention workflow.
 
 CI is not a gate that must be repaired before every user prompt or after skill initialization. Inspect CI when the user requests it. Also inspect CI when the current task changes a workflow or validation target. Inspect CI when a known result directly affects the task.
 
-1. Start with `reports/gh_ac_reports/README.md` for workflow-level failures, jobs, steps, logs, annotations, artifact metadata, and evidence limitations.
-2. For STE lint details, start with `reports/lint_reports/README.md`. Use its scope index and structured JSON for exact file-level findings, metrics, and baselines.
+1. Start with `reports/gh_ac_.takeout/reports/README.md` for workflow-level failures, jobs, steps, logs, annotations, artifact metadata, and evidence limitations.
+2. For STE lint details, start with `reports/lint_.takeout/reports/README.md`. Use its scope index and structured JSON for exact file-level findings, metrics, and baselines.
 3. Inspect only the runs and checks relevant to the current task. Use a bounded snapshot when fresh status is material. Do not scan the entire workflow history without a reason.
 4. Preserve GitHub's actual conclusion. Distinguish failure, timed out, action required, cancelled, skipped, neutral, queued, and in-progress states. Cancellation and skipped outcomes are not automatically failures. Do not treat missing evidence as proof of a workflow-definition defect.
 5. Repair only the cause that is inside the user's current scope or is a direct dependency of the task. Do not repair unrelated failures before handling the request. Never weaken tests, workflow coverage, permission requirements, or lint baselines to make a check pass.
@@ -61,12 +61,12 @@ CI is not a gate that must be repaired before every user prompt or after skill i
 
 ### Archive boundary for Markdown checks
 
-- Exclude all paths under `archive/` from full-document and changed-document lint.
+- Exclude all paths under `.archive/` from full-document and changed-document lint.
 - Exclude archived Markdown files from link-source and heading-anchor checks.
-- For links from active documents to `archive/`, check whether the target path exists during routine lint. Ignore fragments for these targets.
+- For links from active documents to `.archive/`, check whether the target path exists during routine lint. Ignore fragments for these targets.
 - Do not read archived files solely for routine link or heading-anchor checks. You may read an exact archived record when a task requires its content.
 - Never edit, replace, rename, move, or manually delete an archived record. Only the scheduled retention workflow may delete archived records.
-- Do not add an `archive/README.md` lint exception. The entire `archive/` tree is outside lint scope.
+- Do not add an `.archive/README.md` lint exception. The entire `.archive/` tree is outside lint scope.
 
 Before changing a workflow, identify its events, branch/path filters, jobs, dependencies, permissions, concurrency, runner, timeout, cache, artifact behavior, and scripts. Identify which checks cover which files.
 
