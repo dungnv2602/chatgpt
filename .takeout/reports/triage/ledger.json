@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T14:51:33Z",
+  "updated_at_utc": "2026-11-26T14:52:16Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -1512,6 +1512,35 @@
         "20261126-145133"
       ],
       "task_group": "ci-f0a95a498ae3bd8a"
+    },
+    {
+      "finding_id": "lint-1ba75e66fd8777920c74a662",
+      "source_family": "lint",
+      "category": "synonym-rotation",
+      "title": "synonym-rotation: 'validate' and 'check' name the same action. Pick one and use it every time.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:51:58.858989+00:00",
+      "last_seen_utc": "2026-11-26T14:51:58.858989+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45843115356-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45843115356",
+          "observed_at_utc": "2026-11-26T14:51:58.858989+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:241:148",
+          "observation_id": "lint:45843115356:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-04"
+      ],
+      "task_group": "ci-a9beca21d82a9708"
     }
   ],
   "ingestion_state": {
@@ -1563,6 +1592,7 @@
       ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45841101397-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45843115356-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45837905160-attempt-1/report.json"
