@@ -34,6 +34,16 @@ Follow the [GitHub Actions skill](../github-actions/SKILL.md). CI is not an init
 
 Use `.takeout/reports/gh_ac_reports/README.md` for workflow evidence and `.takeout/reports/lint_reports/README.md` for lint findings. Do not run repository scripts locally or poll CI.
 
+### Batch execution for CI-generated P0 tasks
+
+Treat CI-generated P0 tasks as an autonomous batch-remediation directive once they are identified and authorized under the user's standing instructions:
+
+1. Execute remediation for all outstanding eligible P0 tasks generated from CI as a batch. Do not stop after one task or wait for its hosted validation result before moving to the next task.
+2. Do not request routine input or approval for in-scope, reversible remediation covered by the user's standing authorization. Continue independent work if an exceptional blocker affects one task.
+3. Commit each fix and maintain task records and board state as required. Keep validation requirements and safety, permissions, workflow guarantees, and scope boundaries intact.
+4. Once the remediation fixes for all outstanding P0 tasks are committed, stop the remediation phase and report the batch completion. Do not initiate a results-review phase, CI polling, reruns, or result checking unless the user subsequently triggers that phase.
+5. Do not claim that fixes are validated or tasks closed merely because the remediation commits are complete. Hosted results review and task closeout remain separate phases; tasks stay open pending the required validation and closeout.
+
 ### User-directed CI failure follow-through
 
 When the user asks to fix a CI failure, treat the request as an execution instruction, not a request for diagnosis alone.
