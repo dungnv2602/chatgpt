@@ -287,6 +287,28 @@ class RenderedPathTests(unittest.TestCase):
             self.assertNotIn("blob/gpt/reports/lint_reports/", rendered)
 
 
+class RunSweepPaginationTests(unittest.TestCase):
+    def test_run_sweep_page_urls_replace_page_parameter(self):
+        first_runs = [{"id": i} for i in range(100)]
+        second_runs = [{"id": 100}]
+        responses = [
+            {"workflow_runs": first_runs, "total_count": 101},
+            {"workflow_runs": second_runs, "total_count": 101},
+        ]
+        with patch.object(REPORT, "api_get", side_effect=responses) as mocked_api:
+            errors = []
+            result = REPORT.collect_runs_between(
+                "owner/repository", "2026-11-23T06:00:00Z", "2026-11-23T07:00:00Z", errors
+            )
+        self.assertEqual(len(result), 101)
+        self.assertEqual(errors, [])
+        urls = [call.args[1] for call in mocked_api.call_args_list]
+        self.assertIn("page=1", urls[0])
+        self.assertIn("page=2", urls[1])
+        self.assertEqual(urls[0].count("page="), 1)
+        self.assertEqual(urls[1].count("page="), 1)
+
+
 class AnnotationPaginationTests(unittest.TestCase):
     @patch.object(REPORT, "api_get", return_value=[{"path": "docs/example.md", "message": "A check annotation"}])
     def test_annotations_endpoint_accepts_top_level_array(self, mocked_api):
