@@ -5,12 +5,12 @@ on:
     branches:
       - gpt
     paths-ignore:
-      - '.archive/.takeout/reports/**'
-      - '.takeout/.takeout/reports/gh_ac_.takeout/reports/history/**'
-      - '.takeout/.takeout/reports/gh_ac_.takeout/reports/by_workflow/**'
-      - '.takeout/.takeout/reports/gh_ac_.takeout/reports/index.json'
-      - '.takeout/.takeout/reports/gh_ac_.takeout/reports/latest-gh-ac-report.*'
-      - '.takeout/.takeout/reports/gh_ac_.takeout/reports/requests/processed/**'
+      - '.archive/reports/**'
+      - '.takeout/reports/gh_ac_reports/history/**'
+      - '.takeout/reports/gh_ac_reports/by_workflow/**'
+      - '.takeout/reports/gh_ac_reports/index.json'
+      - '.takeout/reports/gh_ac_reports/latest-gh-ac-report.*'
+      - '.takeout/reports/gh_ac_reports/requests/processed/**'
       - '.takeout/.takeout/reports/triage/ledger.json'
       - 'workspace/tasks/**'
       - 'workspace/task_board.md'
@@ -47,10 +47,10 @@ jobs:
 
       - name: Compile and test the diagnostic reporter
         run: |
-          python3 -m py_compile .takeout/.takeout/reports/gh_ac_.takeout/reports/scripts/report.py .takeout/.takeout/reports/triage/scripts/ledger.py .github/scripts/cleanup-archive.py
+          python3 -m py_compile .takeout/reports/gh_ac_reports/scripts/report.py .takeout/.takeout/reports/triage/scripts/ledger.py .github/scripts/cleanup-archive.py
           python3 .github/scripts/test_cleanup_archive.py
           python3 -m unittest discover \
-            -s .takeout/.takeout/reports/gh_ac_.takeout/reports/scripts \
+            -s .takeout/reports/gh_ac_reports/scripts \
             -p 'test_report.py' \
             -v
           python3 -m unittest discover \
@@ -62,7 +62,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
-        run: python3 .takeout/.takeout/reports/gh_ac_.takeout/reports/scripts/report.py --mode sweep --repo "$GITHUB_REPOSITORY"
+        run: python3 .takeout/reports/gh_ac_reports/scripts/report.py --mode sweep --repo "$GITHUB_REPOSITORY"
 
       - name: Ingest centralized CI issues
         run: python3 .takeout/.takeout/reports/triage/scripts/ledger.py --mode ingest
@@ -73,7 +73,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A -- .takeout/.takeout/reports/gh_ac_.takeout/reports/ .takeout/.takeout/reports/triage/ workspace/tasks/ workspace/task_board.md
+          git add -A -- .takeout/reports/gh_ac_reports/ .takeout/.takeout/reports/triage/ workspace/tasks/ workspace/task_board.md
           if git diff --cached --quiet; then
             echo "No new diagnostic evidence to publish."
             exit 0
