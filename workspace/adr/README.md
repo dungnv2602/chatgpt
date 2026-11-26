@@ -60,11 +60,9 @@ When all linked implementation tasks reach Done and the Confirmation criteria pa
 
 Never add ADRs to .github/archive-retention-index.json. The archive retention workflow must not delete ADRs. Keep the original ID and filename when you archive an ADR. Do not edit or delete an archived ADR.
 
-## Promotion Pending
-
-- [ADR-0004 — Task Folders, Subtasks, and Reliable CI Ledger Lifecycle](0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md) — Provisional promotion record from user-approved DRAFT-0005 revision 1. Not accepted and not authority for implementation.
-
 ## Current Accepted ADRs
+
+- [ADR-0004 — Task Folders, Subtasks, and Reliable CI Ledger Lifecycle](0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md) — Accepted Option 3. Implementation not started; create the linked implementation task before modifying task/Ledger implementation files.
 
 - [ADR-0003 — Canonical GitHub Actions Diagnostic Report Artifact Layout](0003-canonical-github-actions-diagnostic-report-artifact-layout.md) — Accepted Option 3. Implementation remains outstanding under P0 task 20261126-090154.
 
