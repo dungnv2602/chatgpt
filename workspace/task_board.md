@@ -1,6 +1,6 @@
 # Task Board
 
-Last updated: 2026-11-25
+Last updated: 2026-11-26
 
 This file is an index. The individual task record is authoritative for detailed progress.
 
@@ -10,13 +10,14 @@ The Historical section retains at most the 7 most recently completed or cancelle
 
 | ID | Task | Priority | Status | Record |
 |---|---|---:|---|---|
-| 20261124-113009 | Study Planning with Files and propose a file-backed Worker workflow | P1 | Blocked | [Task record](tasks/20261124-113009-study-planning-with-files-and-propose-worker-workflow.md) |
+| 20261126-021200 | Complete reconstructed-repository consistency audit | P1 | In Progress | [Task record](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md) |
 
 
 ## In Progress
 
 | ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |
 |---|---|---:|---|---|---|---|---|
+| 20261126-021200 | Complete reconstructed-repository consistency audit | P1 | In Progress | User | 2026-11-26 | — | [Task record](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md) |
 
 
 
