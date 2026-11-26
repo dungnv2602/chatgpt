@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#789](https://github.com/dungnv2602/chatgpt/actions/runs/45772449707)
-- **Run ID / attempt:** 45772449707 / 1
+- **Run:** [#792](https://github.com/dungnv2602/chatgpt/actions/runs/45773890809)
+- **Run ID / attempt:** 45773890809 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 11a4821a8cdc7896f2ac1c0cc54ea45acdd4af29
+- **Branch / commit:** gpt / 2e2f3e1cae27d826722221327d1af6c6fd70e594
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 11a4821a8cdc7896f2ac1c0cc54ea45acdd4af29
-- **Generated (UTC):** 2026-11-26T07:04:37.048314+00:00
+- **Linter source SHA:** 2e2f3e1cae27d826722221327d1af6c6fd70e594
+- **Generated (UTC):** 2026-11-26T07:16:48.921963+00:00
 
 ## 1. Executive summary
 
@@ -31,7 +31,7 @@
 
 - Runner OS: Linux
 - Python: 3.15.2
-- Platform: Linux-7.0.0-1018-aws-x86_64-with-glibc2.43
+- Platform: Linux-7.0.0-1020-azure-x86_64-with-glibc2.43
 - The JSON report records the full runtime version and every original per-file linter response.
 - The report records the commit that supplied the linter and generator code.
 
@@ -268,7 +268,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.239s
+Ran 4 tests in 0.292s
 
 OK
 ~~~
@@ -281,7 +281,7 @@ OK
 ~~~text
 .....
 ----------------------------------------------------------------------
-Ran 5 tests in 0.001s
+Ran 5 tests in 0.007s
 
 OK
 ~~~
@@ -301,7 +301,7 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 211 active Markdown files (278 available as link targets) and 334 local Markdown links.
+Scanned 214 active Markdown files (283 available as link targets) and 334 local Markdown links.
 Found 1 unresolved local Markdown targets or anchors.
 workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md: missing Markdown file: ../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md
 ~~~
