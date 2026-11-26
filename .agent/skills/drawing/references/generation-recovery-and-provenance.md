@@ -24,7 +24,7 @@ Before rewriting a prompt after a refusal, repeated failure, or user correction:
    inspect its authoritative chronological prompt history first. Locate the
    most recent successful prompt in that same series/thread and inspect the
    actual approved image assets where relevant. Use the relevant
-   `drawings/YYYY-MM-DD/README.md` as a navigation aid, then review chronology,
+   `area/drawing/YYYY-MM-DD/README.md` as a navigation aid, then review chronology,
    series membership, finalized outcome, and prompt/output linkage in the
    authoritative attempt records. For a novel scene, use its scene-local
    illustration history. Do not rely on memory, a summary, or the most recent
@@ -66,10 +66,10 @@ successful work.
 The November 12–13, 2026 silk-wrap portrait sequence is a historical example
 of prompt lineage only. The current session brief controls creative direction. The latest **successful** prompt controls only historical prompt lineage:
 
-- **Attempt 33** in `drawings/history/2026-11-12-image-prompts.md` established the
+- **Attempt 33** in `area/drawing/history/2026-11-12-image-prompts.md` established the
   successful Realistic portrait direction and produced two user-approved
   images. It is the original successful prompt in this portrait series.
-- **Attempt 04** in `drawings/history/2026-11-13-image-prompts.md` reused Attempt 33's
+- **Attempt 04** in `area/drawing/history/2026-11-13-image-prompts.md` reused Attempt 33's
   authored wording verbatim in a fresh generation. The assistant initially
   judged a garment-construction detail as missed. The user later explicitly
   assessed the Attempt 04 result as successful. That assessment supersedes the
@@ -114,7 +114,7 @@ the user explicitly says they should be retained for future use.
    descriptive, stable filename based on its visible content. For a set, use
    consistent names and numbered suffixes. If the user does not request
    retention, use the supplied image only within the current session.
-4. **Preserve the original image exactly.** The default is rename-only. Preserve its bytes, format, extension, resolution, dimensions, metadata, and visual content. Do not recompress, resize, crop, rotate, filter, retouch, or strip metadata. The user authorized one repository workflow exception. An image submitted through `images/takeout/` with a ready `HANDOFF.yml` may move to its declared master path. The existing GitHub Action converts it to a separate WebP derivative. Keep the original bytes and format identical. Do not perform this conversion or relocation manually outside that hand-off pipeline.
+4. **Preserve the original image exactly.** The default is rename-only. Preserve its bytes, format, extension, resolution, dimensions, metadata, and visual content. Do not recompress, resize, crop, rotate, filter, retouch, or strip metadata. The user authorized one repository workflow exception. An image submitted through `.takeout/images/` with a ready `HANDOFF.yml` may move to its declared master path. The existing GitHub Action converts it to a separate WebP derivative. Keep the original bytes and format identical. Do not perform this conversion or relocation manually outside that hand-off pipeline.
 5. Record the exact asset path, file/attachment ID, and source generation ID when known. Also record the original upload name, dimensions, byte size, checksum where available, and its session-specific role in that session's brief or attempt record.
    State whether the binary is stored in GitHub, the current conversation,
    or only the conversation. Never claim repository storage unless verified.
@@ -137,14 +137,14 @@ the user explicitly says they should be retained for future use.
   the old name is absent, the descriptive name exists, and the blob SHA and byte
   size are identical.
 - For newly uploaded retained images, use the universal flat intake
-  `images/takeout/`. Inspect the actual image, determine its descriptive title
-  and destination, and prepare `images/takeout/HANDOFF.yml`. Do not manually
+  `.takeout/images/`. Inspect the actual image, determine its descriptive title
+  and destination, and prepare `.takeout/images/HANDOFF.yml`. Do not manually
   rename or move it. The hand-off uses the exact uploaded filename, optional
   stable asset ID, descriptive title, and destination directory.
 - The existing Action derives the permanent filename as
   `[asset-id-][slugified-title].[original-extension]` and keeps the original
   bytes unchanged. It stages each WebP under
-  `images/takeout/webp/[batch-id]/attempt-NNN/`, appending `.webp` to the
+  `.takeout/images/webp/[batch-id]/attempt-NNN/`, appending `.webp` to the
   exact incoming filename (for example, `upload.png.webp`). After verification,
   it moves the master and WebP to the declared destination. It refuses
   collisions and verifies master SHA-256 and WebP integrity before clearing
@@ -154,14 +154,14 @@ the user explicitly says they should be retained for future use.
   its WebPs to final destinations and removes its now-empty staging folder.
 - Each successful or failed attempt is archived with the original hand-off,
   `conversion-report.csv`, and `verification-report.md` under
-  `images/takeout/history/[batch-id]/attempt-NNN/`. The CSV records staging
+  `.takeout/images/history/[batch-id]/attempt-NNN/`. The CSV records staging
   and final paths. Do not claim repository storage or a successful hand-off
   until the final paths and reports are read back and verified.
 
 ### E4. Use daily attempt ledgers and authoritative records
 
 Do not create a separate cross-session success catalogue. For non-novel
-drawing sessions, use `drawings/YYYY-MM-DD/README.md` as the daily navigation
+drawing sessions, use `area/drawing/YYYY-MM-DD/README.md` as the daily navigation
 ledger. It must contain one contiguous Markdown table with exactly six fields:
 
 1. **Attempt / prompt:** the attempt number or stable ID, a concise descriptive
