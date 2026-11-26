@@ -28,7 +28,7 @@ GitHub Actions runs the scheduled archive-retention workflow.
 
 - Run the schedule from the repository default branch because GitHub scheduled events only run there.
 - Check out `gpt`, which is the working/source branch.
-- Read only `.github/archive-retention-index.json`. Never list or scan `.archive/tasks/`.
+- Read only `.github/archive-retention-index.json`. Never list or scan `.archive/task/`.
 - Retain each indexed record for at least 90 days from its UTC archive timestamp.
 - Delete only exact indexed paths that have reached 90 days. Delete their index entries after processing.
 - Preserve `.gitkeep`. Unindexed legacy records remain protected and must not be discovered by a directory scan.
