@@ -2,36 +2,36 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#823](https://github.com/dungnv2602/chatgpt/actions/runs/45902440489)
-- **Run ID / attempt:** 45902440489 / 1
+- **Run:** [#828](https://github.com/dungnv2602/chatgpt/actions/runs/45902843717)
+- **Run ID / attempt:** 45902843717 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 18544ec38967abe06c7276816ef67d04e75add09
+- **Branch / commit:** gpt / d61d47cbcab8d691a076cb7302fa7f3c50804d2f
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** c22f51846d9bf5dca2dc22ce8cb36934bf56bdc9
-- **Linter source SHA:** 18544ec38967abe06c7276816ef67d04e75add09
-- **Generated (UTC):** 2026-11-26T22:05:40.937907+00:00
+- **Baseline SHA:** 18544ec38967abe06c7276816ef67d04e75add09
+- **Linter source SHA:** d61d47cbcab8d691a076cb7302fa7f3c50804d2f
+- **Generated (UTC):** 2026-11-26T22:10:22.156660+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 1 |
-| Files that failed | 1 |
-| Files with findings | 1 |
-| Total findings | 2 |
-| Hard findings | 1 |
+| Files evaluated | 3 |
+| Files that failed | 3 |
+| Files with findings | 3 |
+| Total findings | 8 |
+| Hard findings | 7 |
 | Advisory findings | 1 |
-| New findings | 2 |
-| Recurring findings | 0 |
-| Resolved findings | 22 |
+| New findings | 6 |
+| Recurring findings | 2 |
+| Resolved findings | 0 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
 
 - Runner OS: Linux
 - Python: 3.15.2
-- Platform: Linux-7.0.0-1020-azure-x86_64-with-glibc2.43
+- Platform: Linux-7.0.0-1018-aws-x86_64-with-glibc2.43
 - The JSON report records the full runtime version and every original per-file linter response.
 - The report records the commit that supplied the linter and generator code.
 
@@ -39,7 +39,9 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
+- workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md
 - .agent/skills/the-worker/SKILL.md
+- workspace/task_board.md
 
 ## 4. Per-file result matrix
 
@@ -47,7 +49,9 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| .agent/skills/the-worker/SKILL.md | FAIL | 2 | 1 | 0 | 5619 | 0.0 | 1 |
+| workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | FAIL | 4 | 4 | 0 | 3455 | 0.1 | 1 |
+| .agent/skills/the-worker/SKILL.md | FAIL | 3 | 2 | 0 | 5737 | 0.1 | 1 |
+| workspace/task_board.md | FAIL | 1 | 1 | 0 | 439 | 0.2 | 1 |
 
 ## 5. Findings by rule
 
@@ -55,7 +59,8 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| long-sentence | 1 |
+| synonym-rotation | 4 |
+| long-sentence | 3 |
 | passive-voice | 1 |
 
 ## 6. Workflow and validation checks
@@ -88,7 +93,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.215s
+Ran 4 tests in 0.239s
 
 OK
 ~~~
@@ -101,7 +106,7 @@ OK
 ~~~text
 .......
 ----------------------------------------------------------------------
-Ran 7 tests in 0.006s
+Ran 7 tests in 0.001s
 
 OK
 ~~~
@@ -121,7 +126,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 1 changed Markdown sources (330 available as link targets) and 3 local Markdown links.
+Scanned 3 changed Markdown sources (331 available as link targets) and 19 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -131,135 +136,127 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:270:144 · **new** · fingerprint: 857e0d2fef3568ba9dff44ac
+- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:100:85 · **new** · fingerprint: 869c8495109dea6f34af871c
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** checks
+- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:158:108 · **new** · fingerprint: 3f34a81299a3d18ae26e4279
+  - **Level:** advisory-free
+  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** alter
+- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:159:149 · **new** · fingerprint: 563af8dd74cf1ba4bd074708
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** Validate
+- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:193:259 · **new** · fingerprint: f331458e480ad4445c592130
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:272:124 · **new** · fingerprint: d12eb5aac33ab414d203a6d5
+  - **Level:** advisory-free
+  - **Message:** Sentence has 35 words (cap 25). Split it.
+  - **Matched text:** 35 words
+- **long-sentence** · workspace/task_board.md:21:1 · **new** · fingerprint: 8647e8d8e7c0939979ecdb3d
+  - **Level:** advisory-free
+  - **Message:** Sentence has 98 words (cap 25). Split it.
+  - **Matched text:** 98 words
+
+### Recurring findings
+
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:270:144 · **recurring** · fingerprint: 857e0d2fef3568ba9dff44ac
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are authorized
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:273:3 · **new** · fingerprint: bca5f43ed3545a47de04d134
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:275:3 · **recurring** · fingerprint: bca5f43ed3545a47de04d134
   - **Level:** advisory-free
   - **Message:** Sentence has 44 words (cap 25). Split it.
   - **Matched text:** 44 words
 
-### Recurring findings
-
-None.
-
 ### Resolved findings
 
-- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:66:50 · **resolved** · fingerprint: 3f34a81299a3d18ae26e4279
-  - **Level:** advisory-free
-  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
-  - **Matched text:** alter
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:74:38 · **resolved** · fingerprint: 0642057a58aa1965274b9762
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:92:102 · **resolved** · fingerprint: c71ff84334a10d7dd38255c9
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** check
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:106:202 · **resolved** · fingerprint: 0ee5ca333d00a4f63756c25b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is generated
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:107:185 · **resolved** · fingerprint: 96c00d0b1528652722c7e2e3
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was measured
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:119:123 · **resolved** · fingerprint: 3a2d463bad961d4a2f26d082
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was evaluated
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:129:103 · **resolved** · fingerprint: 6a75e8e708a43c0d36cdde23
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are removed
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:129:191 · **resolved** · fingerprint: 6a75e8e708a43c0d36cdde23
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are removed
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:131:46 · **resolved** · fingerprint: 421ce0d953be11182d9e810a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are stored
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:131:115 · **resolved** · fingerprint: 6937ea80a6afca82e7f414d5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is rendered
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:133:54 · **resolved** · fingerprint: 2e0dfecf96eeb4735f44ac24
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:149:70 · **resolved** · fingerprint: 6a75e8e708a43c0d36cdde23
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are removed
-- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:154:260 · **resolved** · fingerprint: d2ff8094ef84d15b57e688d1
-  - **Level:** advisory-free
-  - **Message:** 'validate' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** validated
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:157:125 · **resolved** · fingerprint: 87a065e710f1792ecf1034fc
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is migrated
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:159:295 · **resolved** · fingerprint: 6f3d1a1473ce547dba606827
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was used
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:178:70 · **resolved** · fingerprint: 494f747b32f0b27099114e91
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are filtered
-- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:193:259 · **resolved** · fingerprint: f331458e480ad4445c592130
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:204:15 · **resolved** · fingerprint: a5b303c3291ad245c6135b6c
-  - **Level:** advisory-free
-  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
-  - **Matched text:** deletes
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:214:263 · **resolved** · fingerprint: ca82b6e19a6f4ef4347ae654
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** were inspected
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:216:260 · **resolved** · fingerprint: 6d4df52d9a6f40d7fd4657d2
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was tested
-- **semicolon** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:233:49 · **resolved** · fingerprint: 0d416a176834b9a3c1481769
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **long-sentence** · workspace/task_board.md:21:1 · **resolved** · fingerprint: 8647e8d8e7c0939979ecdb3d
-  - **Level:** advisory-free
-  - **Message:** Sentence has 98 words (cap 25). Split it.
-  - **Matched text:** 98 words
+None.
 
 ## 8. Complete per-file diagnostics
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
 
+### workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md
+
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 4
+- **Hard findings:** 4
+- **Baseline:** 0
+- **Words:** 3455
+- **Findings per 100 words:** 0.1
+
+#### Complete diagnostics
+
+- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:100:85 · **new** · fingerprint: 869c8495109dea6f34af871c
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** checks
+
+- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:158:108 · **new** · fingerprint: 3f34a81299a3d18ae26e4279
+  - **Level:** advisory-free
+  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** alter
+
+- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:159:149 · **new** · fingerprint: 563af8dd74cf1ba4bd074708
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** Validate
+
+- **synonym-rotation** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:193:259 · **new** · fingerprint: f331458e480ad4445c592130
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
+
+
 ### .agent/skills/the-worker/SKILL.md
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 2
-- **Hard findings:** 1
+- **Findings:** 3
+- **Hard findings:** 2
 - **Baseline:** 0
-- **Words:** 5619
-- **Findings per 100 words:** 0.0
+- **Words:** 5737
+- **Findings per 100 words:** 0.1
 
 #### Complete diagnostics
 
-- **passive-voice** · .agent/skills/the-worker/SKILL.md:270:144 · **new** · fingerprint: 857e0d2fef3568ba9dff44ac
+- **passive-voice** · .agent/skills/the-worker/SKILL.md:270:144 · **recurring** · fingerprint: 857e0d2fef3568ba9dff44ac
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are authorized
 
-- **long-sentence** · .agent/skills/the-worker/SKILL.md:273:3 · **new** · fingerprint: bca5f43ed3545a47de04d134
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:272:124 · **new** · fingerprint: d12eb5aac33ab414d203a6d5
+  - **Level:** advisory-free
+  - **Message:** Sentence has 35 words (cap 25). Split it.
+  - **Matched text:** 35 words
+
+- **long-sentence** · .agent/skills/the-worker/SKILL.md:275:3 · **recurring** · fingerprint: bca5f43ed3545a47de04d134
   - **Level:** advisory-free
   - **Message:** Sentence has 44 words (cap 25). Split it.
   - **Matched text:** 44 words
+
+
+### workspace/task_board.md
+
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 1
+- **Hard findings:** 1
+- **Baseline:** 0
+- **Words:** 439
+- **Findings per 100 words:** 0.2
+
+#### Complete diagnostics
+
+- **long-sentence** · workspace/task_board.md:21:1 · **new** · fingerprint: 8647e8d8e7c0939979ecdb3d
+  - **Level:** advisory-free
+  - **Message:** Sentence has 98 words (cap 25). Split it.
+  - **Matched text:** 98 words
 
 ## 9. Structured evidence and integrity
 
