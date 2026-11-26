@@ -64,7 +64,7 @@ python3 .agent/skills/the-worker/scripts/verify_published_manifest.py \
 
 1. Treat `images/takeout/HANDOFF.yml` as the explicit batch contract. The scripts do not infer image content, project membership, prompt association, or native generation IDs.
 2. Keep original PNG and JPEG masters byte-identical. Store WebP derivatives separately.
-3. Use `area/novel/` (plural) for novel-scene assets. Do not use the obsolete `novels/` root.
+3. Use `area/novel/` for novel-scene assets. The processor accepts reconstructed project roots.
 4. Store drawing-session outputs under `area/drawing/YYYY-MM-DD/images/`. Include an explicit attempt number. The processor uses it to reconcile the attempt record, README, and manifest.
 5. Do not report a batch or publication as verified because a script ran. Require successful process output, published Git read-back, and the final `--check-only` result.
 6. Update the GitHub workflow's script paths and test-discovery directory when these files move. The workflow calls the scripts. This reference documents their responsibilities and supported commands.
