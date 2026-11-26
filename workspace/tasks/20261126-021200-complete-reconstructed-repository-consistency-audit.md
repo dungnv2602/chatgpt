@@ -136,3 +136,10 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Finding:** The Document Type Catalog, session-start instructions, and skills index retained legacy novel, drawing, report, archive, and initialization paths.
 - **Repair:** Remapped catalog entries from `novels/` and `drawings/` to `area/novel/` and `area/drawing/`, report family paths to `.takeout/reports/`, archive paths to `.archive/`, and corrected the `.agent/SESSION_START.md` link. Updated session-start instructions and the skills index accordingly.
 - **Verification:** Remote readback confirmed mapped catalog entries and corrected report-family references. A further cleanup corrected nested path substitutions. Catalog validation and exhaustive cross-reference validation remain unverified.
+
+
+### 2026-11-26 — Catalog validator and image workflow repairs
+
+- **Finding:** Catalog validation logic and fixtures still used reconstructed-out root assumptions (legacy `skills/`, `novels/`, `reports/`, `archive/` scope, template placement, and validator default). The image-processing workflow triggers and staging used `drawings/` and `novels/` instead of `area/drawing/` and `area/novel/`. Document Standards CI invoked the validator through a duplicated `.agent/.agent/` path.
+- **Repair:** Updated validator root scope, exclusions, template location rules, misplaced-template scan root, and default catalog path. Adapted validator regression-test fixtures to reconstructed paths. Corrected image-workflow triggers and staging directories and repaired the validator invocation.
+- **Verification:** Read back all four modified files and inspected targeted path assumptions. The test suite and hosted Actions remain unexecuted; fixture consistency still requires further scrutiny.
