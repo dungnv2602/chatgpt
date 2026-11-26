@@ -1,6 +1,6 @@
 ## Current Step
 
-_No active step._
+**Repository consistency audit:** Scan `.agent/skills/`, all repository README files, scripts, and GitHub Actions workflows for path, structural, and behavioral mismatches caused by the recent repository reconstruction. Apply direct workflow adaptations where evidence supports them. Preserve historical records and avoid unrelated migrations. Inspect and read back every changed path and commit.
 
 ## Open Discussions
 
@@ -15,6 +15,8 @@ _No active step._
 
 
 ## Reports
+
+- **2026-11-26 — Skills, README, scripts, and Actions audit:** Current Step set for repository-wide consistency audit of relocated skills, README files, scripts, and workflows.
 
 - **2026-11-26 — Relocation workflow alignment:** Updated `.agent/SESSION_START.md` and `.agent/INITIALIZATION_POLICY.md` to use relocated `.agent/skills/` paths and the `/start` cue. Corrected numbering and a relocated technical-policy link. Read-back verified. Commit `e86603fe68dde28d54ad6da2ef64d944169b7d0a`, `af7f28b97ea3ff830539f65429d97d453a72b9a1`, `e3574d2d2e5b93e2217f8dc2c041c0a5d269f420`, and `1ac87cbc30b8946376d612eff80e5e87235a0aef`.
 
