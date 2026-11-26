@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-021200
 - **Created:** 2026-11-26 02:12 UTC
-- **Updated:** 2026-11-26 04:00 UTC
+- **Updated:** 2026-11-26 04:20 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -63,9 +63,9 @@ Task created and selected as current execution; the board was updated. The proce
 ## 8. Remaining Work
 
 - Determine the exact scope and disposition of missing task-board record links without restoring files or reading archive contents.
-- Check the Document Type Catalog path-coverage rules against the reconstructed tree.
 - Audit remaining workflow path assumptions, triggers, permissions, exclusions, and script callers.
 - Review remaining active scripts and their dependency contracts.
+- Trace task-board record links only within approved active paths; retain the unresolved record-location question.
 - Validate using available remote evidence; local execution and hosted CI remain unavailable.
 
 ## 9. Next Actions
@@ -209,3 +209,13 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Verification:** Fetched all five changed files after their commits. Rechecked each local Markdown link. Internal skill targets resolved, and external targets resolved to previously confirmed current files. A template placeholder `{run_url}` was excluded as an intentional unresolved token. No repository tests or hosted Actions were run.
 - **Commits:** `e43bd45797193ee01cd200d56752cc068bf953bd`, `718e05790c46e815d828427bbc5acc4a13b041f8`, `c3341e96e578d25941489ca2e1fe53b8dec8b881`, `f88f39776b5499a53cf58e82505d633deeb29d9f`, `e9a158a10a15f5c865da4feff79e68564b91bab7`.
 - **Next:** Audit the Document Type Catalog's active/reserved/optional path rules against the reconstructed tree. The 150 missing task-board record targets remain unresolved.
+
+
+### 2026-11-26 04:20 UTC — Document Type Catalog coverage repaired
+
+- **Finding:** The catalog pointed to the old `.agent/skills/INITIALIZATION_POLICY.md` location, claimed an untracked image hand-off file was the current draft example, and omitted 15 active Markdown paths from its coverage rules: two PDF guides, three Skill Creator agent instructions, and ten Theme Factory theme files. The old path rule was the only Active rule with zero matches.
+- **Repair:** Bumped the catalog to version 1.16; corrected the initialization policy path; added explicit coverage rules for the PDF guides, Skill Creator agents, and Theme Factory themes; added corresponding inventory entries; and clarified that no active image hand-off file is tracked in the reconstructed tree. Updated the inventory note to record the current 246-file observation and static simulation result.
+- **Static verification:** Enumerated 246 Markdown files in the active roots `.agent/`, `.takeout/`, `area/`, `workspace/`, and `.github/` (zero Markdown files under `.github/`; no root-level Markdown files). Simulated the validator's path-pattern matcher against 62 rules: zero uncovered files, zero Active rules without matches, zero Reserved rules with matches, and all Optional rules remained Generator-owned. Active-root canonical references resolved. Exact `.archive/README.md` and `master/Images.md` authorities were not inspected; they remain subject to the validator's exact-file check.
+- **Limitations:** The actual validator and its regression suite were not executed. No hosted workflow run was polled. The catalog's novel field-contract and representative-record content was read back; this was a path-coverage audit, not a semantic audit of all 246 Markdown files.
+- **Commits:** `da45e65b6ebc2362e5182b4fc05973c38885bfe6`, `2a691f9d8f5143fcf5dc5ba79326b4e766b414c8`.
+- **Next:** Audit remaining workflow triggers, permissions, exclusions, and script callers. Keep the 150 missing task-board record links open.
