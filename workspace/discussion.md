@@ -2,7 +2,7 @@
 
 ## Current Step
 
-**2026-11-27:** Consolidate the CI Ledger operational policy into a new task-activated skill, keep the triage README as a concise data contract, and add Worker-owned batch orchestration for CI-generated P0 tasks. Update catalog/index references and read back each commit.
+**2026-11-27:** The CI Ledger skill, Worker batch procedure, and concise Ledger README are committed. Update skill discovery and catalog entries, correct task-board indexing, then read back and verify all changed paths.
 
 ## Open Discussions
 
