@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-021200
 - **Created:** 2026-11-26 02:12 UTC
-- **Updated:** 2026-11-26 04:40 UTC
+- **Updated:** 2026-11-26 05:05 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -229,3 +229,12 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Validator review:** Read the complete validator and all 403 lines of its regression suite. The fixtures consistently use reconstructed roots (`.agent/skills/`, `.takeout/reports/`, `area/novel/`, `images/`, `workspace/`). Workflow invocation and test-discovery paths resolve to current files. The actual Python validator and tests remain unexecuted; static tree simulation is not a substitute.
 - **Task-board follow-up:** Current branch tree metadata confirms 150 of 152 unique task-board target paths are absent from `workspace/tasks/`. The `.archive/task/` tree contains one file and none of the 150 missing basenames. No archive contents were read. The historical records cannot be mapped to another active location using available path metadata; board rows remain unchanged.
 - **Next:** Complete workflow trigger, permissions, exclusion, and script-caller review. Audit remaining scripts and dependency contracts.
+
+
+### 2026-11-26 05:05 UTC — Reconstructed paths repaired in STE lint tooling
+
+- **Finding:** The anchor checker still excluded legacy roots (`archive/`, `lint_reports/`, `drawings/history/`, `novels/templates/`, and `skills/...`) and its archive-anchor bypass still used `archive/`. The repository lint wrapper invoked `skills/asd-ste100/scripts/ste-lint.py`, which does not exist in the reconstructed tree. Its baseline and synonym-rotation exemption cases also used legacy `skills/` and `images/` paths.
+- **Repair:** Updated anchor-checker exclusions and archive checks to `.archive/`, `.takeout/reports/lint_reports/`, `area/drawing/history/`, `area/novel/templates/`, and `.agent/skills/...`. Updated the wrapper invocation and surviving baseline/exemption paths to the active locations. Removed obsolete conversation-mode/session-archiving baseline entries rather than transferring their thresholds to the different Worker skill.
+- **Verification:** Read back both changed scripts. Checked every retained baseline path against the branch tree; all exist. Static scan found no remaining legacy root references in the anchor checker or wrapper. No shell/Python execution was performed.
+- **Commits:** `fc3527af0d90e61e5ef1f0395490c8a7d9ef754e`, `0d150a5dfdad5e5b5deaca4d2ebffa7a288fde9b`, `bcc20408fc645d79e3e201f05d4f98502761cde2`, `a2221d32c3e0e07abb2fa4c8ce078b7b8ec632d4`.
+- **Next:** Continue workflow caller/dependency audit and check other active scripts for path assumptions.
