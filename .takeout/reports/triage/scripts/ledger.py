@@ -604,6 +604,7 @@ def render_worker_task(root, task_id, title, group_id, findings, timestamp):
         "- **Updated:** YYYY-MM-DD HH:MM UTC": "- **Updated:** " + created,
         "- **Priority:** P2": "- **Priority:** " + priority,
         "- **Status:** Ready": "- **Status:** In Progress",
+        "- **Current execution:** No": "- **Current execution:** Yes",
         "- **Origin:** User": "- **Origin:** Assistant",
         "- **Approval:** Approved": "- **Approval:** Approved",
         "- **Governing ADR(s):** None — non-implementation task": "- **Governing ADR(s):** Pending — Worker review required before approval",
@@ -619,7 +620,7 @@ def render_worker_task(root, task_id, title, group_id, findings, timestamp):
         "[Record approved decisions and concise rationale. Mark unapproved ideas as Proposed.]":
             "- **Standing approval:** CI Ledger-generated remediation is approved under the user\u0027s permanent P0 instruction.\n- **Priority:** P0. Resolve before non-P0 work.\n- **Approved:** Group findings by the stable remediation key.",
         "Record every meaningful action. Use one entry for each action or closely related set of actions.\n\n### YYYY-MM-DD HH:MM UTC\n\n- **Action:** [What was inspected, researched, changed, or verified.]\n- **Result:** [Observed result. Include failures and uncertainty.]\n- **References:** [Exact paths, commits, URLs, or source IDs.]\n- **Next:** [Next action or resulting change in task state.]":
-            "### " + created + "\n\n- **Action:** Created this Proposed task from the Ledger's event-driven ingestion.\n- **Result:** Grouped " + str(len(findings)) + " distinct finding(s) by remediation key. No remediation was performed or authorized.\n- **References:** .takeout/reports/triage/ledger.json and the evidence links below.\n- **Next:** Worker review and user approval before implementation.",
+            "### " + created + "\n\n- **Action:** Created this P0 In Progress task under the standing user approval from the Ledger's event-driven ingestion.\n- **Result:** Grouped " + str(len(findings)) + " distinct finding(s) by remediation key. Remediation is authorized and must precede non-P0 work.\n- **References:** .takeout/reports/triage/ledger.json and the evidence links below.\n- **Next:** Inspect evidence, remediate, and verify before starting non-P0 work.",
         "[Describe the verified state now. Distinguish completed implementation from unverified behavior.]":
             "The Ledger recorded findings. Root cause, remediation, and validation remain to be assessed.",
         "[List incomplete requirements, blockers, and outstanding checks.]":
