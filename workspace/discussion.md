@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 15:44 UTC:** Verify the already completed hosted runs 45823761313 (Document Standards) and 45823761330 (Diagnostics), including the exact regression-test and Ledger-retirement results. Then reconcile the four linked findings and three historical occurrences against the indexed task archives. Do not dispatch or poll workflows.
+- **2026-11-26 15:46 UTC:** Reconcile the three historical Actions occurrences against the exact archived P0 task and retention-index entry. Verify the four active findings' fix commits and successful hosted validation, then update only their terminal Ledger state and the owning task record. Preserve immutable reports and archived task records.
 
 ## Open Discussions
 
