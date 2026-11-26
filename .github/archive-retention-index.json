@@ -577,6 +577,10 @@
     {
       "path": ".archive/reports/lint_reports/on_changed/history/45857763911-attempt-1/integrity.json",
       "archived_at_utc": "2026-11-26T16:37:05Z"
+    },
+    {
+      "path": ".archive/task/20261126-162137-review-semicolon-findings-in-agent-skills-document-standards-ref.md",
+      "archived_at_utc": "2026-11-26T16:42:50Z"
     }
   ]
 }
