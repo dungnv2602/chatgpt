@@ -21,18 +21,6 @@ runs:
           -p 'test_ledger.py' \
           -v
 
-    - name: Capture source workflow jobs and steps
-      if: always()
-      shell: bash
-      env:
-        GH_TOKEN: ${{ github.token }}
-        GITHUB_TOKEN: ${{ github.token }}
-      run: |
-        python3 .takeout/reports/gh_ac_reports/scripts/report.py \
-          --mode current \
-          --repo "$GITHUB_REPOSITORY" \
-          --run-id "$GITHUB_RUN_ID"
-
     - name: Update central CI issue ledger
       if: always()
       shell: bash
