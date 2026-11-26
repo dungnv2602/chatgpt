@@ -18,10 +18,10 @@ _No tasks._
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
 | 20261126-124305 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Validate the document | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 13:42 UTC | [Task record](tasks/20261126-124305-review-validation-or-test-failures-in-validate-document-standard.md) |
-| 20261126-124129 | Fix lint tooling check: Markdown links and heading anchors | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 12:50 UTC | [Task record](tasks/20261126-124129-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
+| 20261126-124129 | Resolve lint tooling issue: Markdown links and heading anchors | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 12:50 UTC | [Task record](tasks/20261126-124129-fix-lint-tooling-check-markdown-links-and-heading-anchors.md) |
 | 20261126-090154 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regressi | P0 | In Progress | User | Approved | ADR-0003 | 2026-11-26 12:43 UTC | [Task record](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) |
-| 20261126-101512-01 | Correct misclassified test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regression tests | P0 | In Progress | Assistant | Approved | — | 2026-11-26 10:53 UTC | [Task record](tasks/20261126-101512-01-review-publication-or-push-failures-in-validate-document-standar.md) |
-| 20261126-101512 | Correct misclassified task-board test fixture errors in Validate Document Standards / validate-document-standards / Run CI Ledger regression tests | P0 | In Progress | Assistant | Approved | — | 2026-11-26 10:44 UTC | [Task record](tasks/20261126-101512-review-checkout-or-action-download-failures-in-validate-document.md) |
+| 20261126-101512-01 | Resolve misclassified test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regression tests | P0 | In Progress | Assistant | Approved | — | 2026-11-26 10:53 UTC | [Task record](tasks/20261126-101512-01-review-publication-or-push-failures-in-validate-document-standar.md) |
+| 20261126-101512 | Resolve misclassified task-board test fixture errors in Validate Document Standards / validate-document-standards / Run CI Ledger regression tests | P0 | In Progress | Assistant | Approved | — | 2026-11-26 10:44 UTC | [Task record](tasks/20261126-101512-review-checkout-or-action-download-failures-in-validate-document.md) |
 
 ## Blocked
 
@@ -31,7 +31,7 @@ _No tasks._
 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261126-142500 | Repair CI task generation and clear active reports | P1 | Paused | User | Approved | — | 2026-11-26 10:44 UTC | [Task record](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md) |
+| 20261126-142500 | Resolve CI task generation and clear active reports | P1 | Paused | User | Approved | — | 2026-11-26 10:44 UTC | [Task record](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md) |
 
 ## Historical
 
