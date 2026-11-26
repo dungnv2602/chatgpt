@@ -138,6 +138,35 @@ class ClassificationTests(unittest.TestCase):
 
 
 class CapturePolicyTests(unittest.TestCase):
+    def test_failed_conclusion_without_independent_issue_is_not_reportable(self):
+        report = {"classification": {
+            "observed_conclusion": "failure", "projected_conclusion": None, "issues": []
+        }}
+        self.assertFalse(REPORT.report_is_actionable(report))
+
+    def test_capture_never_writes_an_in_progress_run(self):
+        with tempfile.TemporaryDirectory() as temp:
+            with patch.object(REPORT, "api_get", return_value={"run_attempt": 1, "status": "in_progress"}), \
+                 patch.object(REPORT, "fetch_evidence") as fetch, \
+                 patch.object(REPORT, "write_report") as writer:
+                result = REPORT.capture_one("owner/repository", Path(temp), "100", "post_run", force=True)
+            self.assertIsNone(result)
+            fetch.assert_not_called()
+            writer.assert_not_called()
+
+    def test_manual_force_does_not_retain_success_without_errors(self):
+        with tempfile.TemporaryDirectory() as temp:
+            report = {"classification": {
+                "observed_conclusion": "success", "projected_conclusion": None, "issues": []
+            }}
+            with patch.object(REPORT, "api_get", return_value={"run_attempt": 1, "status": "completed"}), \
+                 patch.object(REPORT, "fetch_evidence", return_value=(report, {})), \
+                 patch.object(REPORT, "write_report") as writer:
+                result = REPORT.capture_one("owner/repository", Path(temp), "100", "post_run", force=True)
+            self.assertIsNone(result)
+            writer.assert_not_called()
+
+
     def test_ordinary_success_is_not_reportable(self):
         result = build(make_run("success"), [make_job("success", "success")])
         self.assertFalse(REPORT.report_is_actionable({"classification": result}))
