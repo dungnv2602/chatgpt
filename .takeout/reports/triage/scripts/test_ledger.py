@@ -28,7 +28,7 @@ class LedgerTests(unittest.TestCase):
         board_copy = workspace / "task_board.md"
         shutil.copyfile(TASK_BOARD_SOURCE, board_copy)
         board_text = board_copy.read_text(encoding="utf-8")
-        if "\\n" in board_text and "\n" not in board_text:
+        if "\\n" in board_text:
             board_copy.write_text(board_text.replace("\\n", "\n"), encoding="utf-8")
         self.write_ledger()
 
