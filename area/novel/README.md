@@ -44,7 +44,7 @@ Chapters are optional editorial groupings of scenes. They are not a mandatory fo
 Create folders only when they contain real records or assets. Existing legacy projects may keep their established paths. Use this convention for new records and migrate older material only when useful and safe.
 
 ```text
-novels/
+area/novel/
 ├── README.md
 ├── WORKFLOW.md
 ├── templates/
@@ -89,7 +89,7 @@ Keep the Illustration Note and Illustration Prompt Record in the scene-local `il
 
 Each retained illustration has an unchanged PNG/JPEG master under `original/` and a separate WebP delivery file in the destination root. Do not place the master beside the WebP or link the master in the attempt index.
 
-All new uploads use the shared flat `images/takeout/` intake. The Worker owns inspection, provenance, processing, original preservation, and publication verification. Use the [Image Takeout procedure](../../.takeout/images/README-2.md) for the exact hand-off schema and processing steps. Use the [Drawing archive rules](../../.agent/skills/drawing/references/archive-and-delivery.md) for attempt links and session-manifest requirements.
+All new uploads use the shared flat `.takeout/images/` intake. The Worker owns inspection, provenance, processing, original preservation, and publication verification. Use the [Image Takeout procedure](../../.takeout/images/README-2.md) for the exact hand-off schema and processing steps. Use the [Drawing archive rules](../../.agent/skills/drawing/references/archive-and-delivery.md) for attempt links and session-manifest requirements.
 
 ## Document responsibilities
 
