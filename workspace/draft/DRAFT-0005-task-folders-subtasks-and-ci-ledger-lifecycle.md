@@ -3,7 +3,7 @@ record_type: decision-draft
 template_version: "1.2"
 id: "DRAFT-0005"
 revision: 1
-status: "in-review"
+status: "approved-for-adr"
 created: "2026-11-27"
 updated: "2026-11-27"
 proposed_by: "Assistant"
@@ -15,7 +15,7 @@ related_drafts:
   - "DRAFT-0003"
 related_adrs:
   - "ADR-0003"
-resulting_adr: null
+resulting_adr: "ADR-0004"
 promotion_cleanup_pending: false
 cleanup_reason: null
 ---
@@ -262,16 +262,16 @@ The implementation ADR should require observable confirmation that:
 ## Review and Approval
 
 - **Revision presented:** 1
-- **User decision:** Pending exact Draft approval
-- **Approved scope:** High-level direction approved in conversation; this exact revision and its additional Ledger-integrity repairs await approval
-- **Decision date:** Pending
-- **Resulting ADR:** Not created
+- **User decision:** Approved — user explicitly approved DRAFT-0005 revision 1 on 2026-11-27.
+- **Approved scope:** Option 3 and the complete scope in revision 1, including task folders, nested subtasks, commit-based CI remediation completion, separate hosted validation metadata, recurrence retention, ingestion-integrity repairs, Worker selection preservation, decision-governance gating, active-task migration, and legacy archive compatibility.
+- **Decision date:** 2026-11-27
+- **Resulting ADR:** ADR-0004 (promotion-pending)
 
 ## Discussion and Revision History
 
 | Date | Revision | Change | User feedback / decision |
 |---|---|---|---|
-| 2026-11-27 | 1 | Initial proposal. Captured the approved task-folder and commit-based CI-subtask direction, identified Ledger recurrence and ingestion-integrity defects, and defined migration and compatibility boundaries. | User approved the high-level direction; exact Draft revision awaits review. |
+| 2026-11-27 | 1 | Initial proposal. Captured the task-folder and commit-based CI-subtask direction, identified Ledger recurrence and ingestion-integrity defects, and defined migration and compatibility boundaries. | User approved exact revision 1 and its full scope; promotion to ADR-0004 started. |
 
 ## References and Evidence Register
 
@@ -291,7 +291,7 @@ The implementation ADR should require observable confirmation that:
 
 ## Technical and Approval Boundary
 
-This Draft does not authorize implementation. The user has approved the high-level direction, but this exact Draft revision and resulting ADR remain subject to the repository's decision process. Do not change task generation, Ledger schema, active task paths, archive behavior, or Worker lifecycle until the user approves this revision and the resulting ADR reaches accepted status.
+This Draft does not itself authorize implementation. The user approved exact revision 1 on 2026-11-27. Implementation remains blocked until ADR-0004 is accepted and an implementation task is created with the accepted ADR linked.
 
 <!--
 Draft lifecycle:

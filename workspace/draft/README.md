@@ -9,7 +9,7 @@ This folder stores proposals that require a user decision.
 
 ## Current Drafts
 
-- [DRAFT-0005 — Task Folders, Subtasks, and Reliable CI Ledger Lifecycle](DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md) — Revision 1 in review. Proposes the task-folder/subtask model, commit-based CI remediation completion, recurrence retention, and Ledger ingestion-integrity repairs. Requires exact user approval before ADR promotion.
+- [DRAFT-0005 — Task Folders, Subtasks, and Reliable CI Ledger Lifecycle](DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md) — Revision 1 approved by the user on 2026-11-27; promotion to ADR-0004 is pending completeness review.
 
 - [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](DRAFT-0002-phase-aware-planning-and-evidence-capture.md) — Revision 4. Style-only wording update. The discussion register records approval of Option 3 with added requirements. The Draft metadata and task record still show review-pending state. Reconcile the exact approved revision and scope before ADR promotion.
 - [DRAFT-0003 — Area, Project, and Task Architecture](DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md) — Revision 1 in review. Companion to DRAFT-0002. Recommends project folders with nested task folders, one global task board, scoped resources, and the existing global Draft/ADR and archive contracts.
