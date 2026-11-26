@@ -230,4 +230,4 @@ The decision depends on the assumption that no required external consumer relies
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
 | 2026-11-26 | Accepted | User approved DRAFT-0004 revision 1, Option 3. The complete rationale comparison and provisional ADR read-back passed. |
-| 2026-11-26 | Option 3 implementation complete; five of six confirmation criteria verified | Reporter migration, central index, on-demand renderer, evidence preservation, and naturally triggered hosted validation passed. The repository-wide reference search remains pending. |
+| 2026-11-26 | Option 3 implementation complete. Five of six confirmation criteria verified | Reporter migration, central index, on-demand renderer, evidence preservation, and naturally triggered hosted validation passed. The repository-wide reference search remains pending. |
