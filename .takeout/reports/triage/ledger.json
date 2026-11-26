@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T14:53:47Z",
+  "updated_at_utc": "2026-11-26T14:56:05Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -1522,8 +1522,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:51:58.858989+00:00",
-      "last_seen_utc": "2026-11-26T14:51:58.858989+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-26T14:55:45.378956+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/45843115356-attempt-1/report.json",
@@ -1531,6 +1531,13 @@
           "observed_at_utc": "2026-11-26T14:51:58.858989+00:00",
           "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:241:148",
           "observation_id": "lint:45843115356:1"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45843767623-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45843767623",
+          "observed_at_utc": "2026-11-26T14:55:45.378956+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:241:148",
+          "observation_id": "lint:45843767623:1"
         }
       ],
       "resolution": null,
@@ -1594,6 +1601,7 @@
       ".takeout/reports/lint_reports/on_changed/history/45841101397-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45843115356-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45843397893-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45843767623-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45837905160-attempt-1/report.json"
