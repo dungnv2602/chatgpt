@@ -23,3 +23,6 @@ Audit reconstructed GitHub Actions skill report/archive path references and comp
 
 - **2026-11-26 — Workflow path alignment audit:** Repairs to workflow paths and report/archive locations were read back. Hosted validation was not run.
 - **2026-11-26 — Reconstruction-path repairs:** Corrected links in `.takeout/images/README-1.md`, `.agent/skills/the-worker/references/image-provenance-and-webp.md`, and `.agent/skills/drawing/references/archive-and-delivery.md` to the relocated intake guide. Updated Document Type Catalog references to `.agent/skills/` and `.takeout/images/` locations. Read-back is pending. The processor's runtime intake remains `images/takeout/`; no runtime path change was made.
+
+
+- **2026-11-26 — Catalog validator and image workflow repairs:** Corrected reconstructed roots in catalog validator logic and fixtures; aligned image workflow triggers/staging to `area/drawing/` and `area/novel/`; repaired the duplicated `.agent/` CI command path. Remote readback completed. Tests and hosted CI remain unrun.
