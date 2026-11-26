@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-021200
 - **Created:** 2026-11-26 02:12 UTC
-- **Updated:** 2026-11-26 09:20 UTC
+- **Updated:** 2026-11-26 09:45 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -173,3 +173,10 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Finding:** The catalog's last-inventory summary claimed 1,114 in-scope Markdown files from an earlier commit. A fresh recursive tree read at `6dcc28feb94ba0fe91ad4385bff12474ba37b233` showed 676 tree entries and 242 Markdown files outside root `master/` and `.archive/`.
 - **Repair:** Updated the catalog's audit-summary paragraph to record the new tree-size observation and explicitly distinguish it from coverage validation. The earlier count is no longer presented as current.
 - **Verification:** Remote readback of the validator, test fixture, catalog, and current tree; no script execution, CI, or full rule-to-file coverage validation. The audit remains In Progress.
+
+
+### 2026-11-26 — Image processor and publication verifier contract correction
+
+- **Finding:** The processor, verifier, and test fixtures still used legacy `drawings/` and `novels/` paths. The reconstructed workflow and intake documentation use `area/drawing/` and `area/novel/`. The processor's component checks also incorrectly treated `area/drawing` as one path component, so a superficial string remapping alone would have introduced validation defects.
+- **Repair:** Remapped legacy paths in the processor, publication verifier, and regression fixtures; corrected component-wise root validation, drawing date/session destination shape, conversation-record root checks, and the drawing record expectation. Updated image processing guidance.
+- **Verification:** Remote readback and targeted static path checks confirmed that the three scripts/test files no longer contain the legacy roots and that the processor's path checks reflect the actual path components. Tests and hosted Actions were not executed. Further contract checks remain.
