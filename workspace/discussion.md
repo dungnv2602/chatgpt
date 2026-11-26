@@ -1,6 +1,6 @@
 ## Current Step
 
-Audit relocated image-takeout contract and active README/skill/script references; identify verified path mismatches, then make scoped repairs and read back.
+Create and execute task 20261126-021200 for the remaining repository consistency audit; track progress, scope, checks, and repairs in its task record.
 
 ## Open Discussions
 
