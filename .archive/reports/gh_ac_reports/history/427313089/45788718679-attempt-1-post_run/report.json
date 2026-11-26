@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0.0",
+  "source_run": {
+    "id": "45788718679",
+    "number": 573,
+    "attempt": 1,
+    "workflow_id": 427313089,
+    "workflow_name": "Validate Document Standards",
+    "workflow_path": ".github/workflows/validate-document-standards.yml",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45788718679",
+    "event": "push",
+    "branch": "gpt",
+    "head_sha": "899e6a13dcd918c25ec9a74484e4f15899030b12",
+    "status": "completed",
+    "conclusion": "cancelled",
+    "created_at": "2026-11-26T09:05:15Z",
+    "run_started_at": "2026-11-26T09:05:15Z",
+    "updated_at": "2026-11-26T09:06:18Z",
+    "actor": "dungnv2602",
+    "triggering_actor": "dungnv2602",
+    "head_commit_message": "Isolate task-board failure tests from live fixture rows"
+  },
+  "capture": {
+    "stage": "post_run",
+    "captured_at_utc": "2026-11-26T10:12:57Z",
+    "completeness": "Complete",
+    "reporter_job": {
+      "id": "139802112937",
+      "name": "Capture GH Actions diagnostics",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  },
+  "classification": {
+    "state": "cancelled",
+    "observed_conclusion": "cancelled",
+    "projected_conclusion": null,
+    "primary_category": "checkout_or_action_download",
+    "categories": [
+      "checkout_or_action_download"
+    ],
+    "issues": [
+      {
+        "category": "checkout_or_action_download",
+        "job_id": "139802010290",
+        "job_name": "validate-document-standards",
+        "step_number": 4,
+        "step_name": "Run CI Ledger regression tests",
+        "blocking": true,
+        "confidence": "medium",
+        "message": "validate-document-standards\tUNKNOWN STEP\t2026-11-26T09:05:25.7917845Z test_new_task_record_is_rolled_back_when_board_publication_fails (test_ledger.LedgerTests.test_new_task_record_is_rolled_back_when_board_publication_fails) ... ERROR"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "id": "139802010290",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-26T09:05:18Z",
+      "completed_at": "2026-11-26T09:05:27Z",
+      "runner_name": "GitHub Actions 1000003103",
+      "runner_id": 1000003103,
+      "runner_group_name": "GitHub Actions",
+      "runner_group_id": 0,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-26T09:05:18Z",
+          "completed_at": "2026-11-26T09:05:19Z"
+        },
+        {
+          "number": 2,
+          "name": "Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-26T09:05:19Z",
+          "completed_at": "2026-11-26T09:05:23Z"
+        },
+        {
+          "number": 3,
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-26T09:05:23Z",
+          "completed_at": "2026-11-26T09:05:23Z"
+        },
+        {
+          "number": 4,
+          "name": "Run CI Ledger regression tests",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-11-26T09:05:23Z",
+          "completed_at": "2026-11-26T09:05:25Z"
+        },
+        {
+          "number": 5,
+          "name": "Run catalog validator regression tests",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-26T09:05:25Z",
+          "completed_at": "2026-11-26T09:05:25Z"
+        },
+        {
+          "number": 6,
+          "name": "Validate the document type catalog",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-26T09:05:25Z",
+          "completed_at": "2026-11-26T09:05:25Z"
+        },
+        {
+          "number": 11,
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-11-26T09:05:25Z",
+          "completed_at": "2026-11-26T09:05:25Z"
+        },
+        {
+          "number": 12,
+          "name": "Post Check out gpt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-26T09:05:25Z",
+          "completed_at": "2026-11-26T09:05:26Z"
+        },
+        {
+          "number": 13,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-11-26T09:05:26Z",
+          "completed_at": "2026-11-26T09:05:26Z"
+        }
+      ],
+      "log_capture": {
+        "available": true,
+        "truncated": false,
+        "bytes": 34747,
+        "path": "logs/job-139802010290.log",
+        "error": null,
+        "marker_lines": [
+          "validate-document-standards\tUNKNOWN STEP\t2026-11-26T09:05:25.7917845Z test_new_task_record_is_rolled_back_when_board_publication_fails (test_ledger.LedgerTests.test_new_task_record_is_rolled_back_when_board_publication_fails) ... ERROR",
+          "validate-document-standards\tUNKNOWN STEP\t2026-11-26T09:05:25.8253856Z test_task_board_renderer_fails_closed_when_status_table_is_missing (test_ledger.LedgerTests.test_task_board_renderer_fails_closed_when_status_table_is_missing) ... ERROR",
+          "validate-document-standards\tUNKNOWN STEP\t2026-11-26T09:05:25.8379885Z ERROR: test_new_task_record_is_rolled_back_when_board_publication_fails (test_ledger.LedgerTests.test_new_task_record_is_rolled_back_when_board_publication_fails)",
+          "validate-document-standards\tUNKNOWN STEP\t2026-11-26T09:05:25.8381612Z Traceback (most recent call last):",
+          "validate-document-standards\tUNKNOWN STEP\t2026-11-26T09:05:25.8395510Z ERROR: test_task_board_renderer_fails_closed_when_status_table_is_missing (test_ledger.LedgerTests.test_task_board_renderer_fails_closed_when_status_table_is_missing)",
+          "validate-document-standards\tUNKNOWN STEP\t2026-11-26T09:05:25.8397206Z Traceback (most recent call last):",
+          "validate-document-standards\tUNKNOWN STEP\t2026-11-26T09:05:25.8401856Z FAILED (errors=2)",
+          "validate-document-standards\tUNKNOWN STEP\t2026-11-26T09:05:25.8534991Z ##[error]Process completed with exit code 1."
+        ]
+      }
+    }
+  ],
+  "check_runs": [
+    {
+      "id": "139802010290",
+      "name": "validate-document-standards",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-11-26T09:05:18Z",
+      "completed_at": "2026-11-26T09:05:27Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45788718679/job/139802010290",
+      "app": "GitHub Actions",
+      "annotations_count": 2
+    }
+  ],
+  "annotations": [
+    {
+      "check_run_id": "139802010290",
+      "job_id": "139802010290",
+      "path": ".github",
+      "start_line": 2,
+      "end_line": 2,
+      "level": "warning",
+      "title": "",
+      "message": "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+      "raw_details": ""
+    },
+    {
+      "check_run_id": "139802010290",
+      "job_id": "139802010290",
+      "path": ".github",
+      "start_line": 75,
+      "end_line": 75,
+      "level": "failure",
+      "title": "",
+      "message": "Process completed with exit code 1.",
+      "raw_details": ""
+    }
+  ],
+  "artifacts": [],
+  "capture_errors": [],
+  "history_path": "history/427313089/45788718679-attempt-1-post_run"
+}

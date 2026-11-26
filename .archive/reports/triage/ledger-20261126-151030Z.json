@@ -1,0 +1,2012 @@
+{
+  "schema_version": "1.5.0",
+  "updated_at_utc": "2026-11-26T15:10:30Z",
+  "findings": [
+    {
+      "finding_id": "gha-a284af6ec4aa61fe9c103bef",
+      "source_family": "github_actions",
+      "category": "validation_or_test",
+      "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: validation_or_test — <timestamp> test_actions_identity_uses_workflow_job_step_and_signature (test_ledger.ledgertests.test_actions_identity_uses_work",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T09:01:17Z",
+      "last_seen_utc": "2026-11-26T10:13:33Z",
+      "occurrence_count": 11,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45785802198",
+          "observed_at_utc": "2026-11-26T09:01:17Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45785802198:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45787937573",
+          "observed_at_utc": "2026-11-26T09:01:53Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45787937573:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45790913652-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45790913652",
+          "observed_at_utc": "2026-11-26T10:13:25Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45790913652:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45791049057-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45791049057",
+          "observed_at_utc": "2026-11-26T10:13:29Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45791049057:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45792129692-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45792129692",
+          "observed_at_utc": "2026-11-26T10:13:33Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45792129692:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-090154"
+      ],
+      "task_group": "ci-020528f498f632ac"
+    },
+    {
+      "finding_id": "gha-f01eecfd82daeb1a6ae4008a",
+      "source_family": "github_actions",
+      "category": "checkout_or_action_download",
+      "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: checkout_or_action_download — validate-document-standards unknown step <timestamp> test_new_task_record_is_rolled_back_when_board_publication_fails ",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T10:12:57Z",
+      "last_seen_utc": "2026-11-26T10:12:57Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45788718679",
+          "observed_at_utc": "2026-11-26T10:12:57Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45788718679:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "ec3ba4d",
+        "resolved_at_utc": "2026-11-26T15:18:31.765Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45823182229",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T12:49:23Z"
+        },
+        "note": "Corrected the task-board test fixtures and escaped-newline handling. Hosted Diagnostics run passed the reporter and Ledger regression suites (37 reporter tests and 47 Ledger tests)."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-101512"
+      ],
+      "task_group": "ci-0b5e8d727dc64d9b"
+    },
+    {
+      "finding_id": "gha-f0819737f55322e2610a7544",
+      "source_family": "github_actions",
+      "category": "validation_or_test",
+      "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: validation_or_test — <timestamp> test_ledger (unittest.loader._failedtest.test_ledger) ... error",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T10:13:20Z",
+      "last_seen_utc": "2026-11-26T10:13:20Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45789951589-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45789951589",
+          "observed_at_utc": "2026-11-26T10:13:20Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45789951589:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-090154"
+      ],
+      "task_group": "ci-020528f498f632ac"
+    },
+    {
+      "finding_id": "gha-7993fcb8b815dfeed2652722",
+      "source_family": "github_actions",
+      "category": "validation_or_test",
+      "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: validation_or_test — <timestamp> traceback (most recent call last):",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T10:13:37Z",
+      "last_seen_utc": "2026-11-26T12:43:00Z",
+      "occurrence_count": 10,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45792688463-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45792688463",
+          "observed_at_utc": "2026-11-26T10:13:37Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45792688463:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45794626105-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45794626105",
+          "observed_at_utc": "2026-11-26T10:14:21Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45794626105:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45798032838-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45798032838",
+          "observed_at_utc": "2026-11-26T10:14:58Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45798032838:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45798459536-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45798459536",
+          "observed_at_utc": "2026-11-26T10:15:02Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45798459536:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45821860845-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45821860845",
+          "observed_at_utc": "2026-11-26T12:43:00Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45821860845:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-090154"
+      ],
+      "task_group": "ci-020528f498f632ac"
+    },
+    {
+      "finding_id": "gha-15d782beac8f33417a598c93",
+      "source_family": "github_actions",
+      "category": "publication_or_push",
+      "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: publication_or_push — <timestamp> traceback (most recent call last):",
+      "status": "resolved",
+      "severity": "high",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T10:14:42Z",
+      "last_seen_utc": "2026-11-26T10:14:54Z",
+      "occurrence_count": 3,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45795455755-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45795455755",
+          "observed_at_utc": "2026-11-26T10:14:42Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45795455755:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45795725425-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45795725425",
+          "observed_at_utc": "2026-11-26T10:14:49Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45795725425:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45797455626-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45797455626",
+          "observed_at_utc": "2026-11-26T10:14:54Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45797455626:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "a26451b",
+        "resolved_at_utc": "2026-11-26T15:18:31.765Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45823182229",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T12:49:23Z"
+        },
+        "note": "Corrected test-failure classification precedence and structured-log isolation. Hosted Diagnostics run passed the reporter and Ledger regression suites (37 reporter tests and 47 Ledger tests)."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-101512-01"
+      ],
+      "task_group": "ci-259011307849c0ca"
+    },
+    {
+      "finding_id": "gha-2d60ec5e9828ec1309dc2013",
+      "source_family": "github_actions",
+      "category": "validation_or_test",
+      "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: validation_or_test — <timestamp> test_processed_actions_paths_are_pruned_when_removed_from_active_history (test_ledger.ledgertests.test_processed_ac",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T10:15:11Z",
+      "last_seen_utc": "2026-11-26T10:15:11Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45798838831-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45798838831",
+          "observed_at_utc": "2026-11-26T10:15:11Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45798838831:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-090154"
+      ],
+      "task_group": "ci-020528f498f632ac"
+    },
+    {
+      "finding_id": "lint-tooling-2c26d8bc14fd4d4bbe314234",
+      "source_family": "lint",
+      "category": "lint_tooling",
+      "title": "Lint tooling check failed: Markdown links and heading anchors",
+      "status": "resolved",
+      "severity": "high",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T09:44:23.453799+00:00",
+      "last_seen_utc": "2026-11-26T12:49:49.848185+00:00",
+      "occurrence_count": 6,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45821860683-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45821860683",
+          "observed_at_utc": "2026-11-26T12:41:13.200045+00:00",
+          "note": "on_changed · Markdown links and heading anchors",
+          "observation_id": "lint_tooling:45821860683:1"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45794619503",
+          "observed_at_utc": "2026-11-26T09:45:25.564528+00:00",
+          "note": "on_repo · Markdown links and heading anchors",
+          "observation_id": "lint_tooling:45794619503:1"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45804845399-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45804845399",
+          "observed_at_utc": "2026-11-26T10:49:50.878588+00:00",
+          "note": "on_changed · Markdown links and heading anchors",
+          "observation_id": "lint_tooling:45804845399:1"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45814417490-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45814417490",
+          "observed_at_utc": "2026-11-26T11:53:02.254462+00:00",
+          "note": "on_changed · Markdown links and heading anchors",
+          "observation_id": "lint_tooling:45814417490:1"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45823182226-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45823182226",
+          "observed_at_utc": "2026-11-26T12:49:49.848185+00:00",
+          "note": "on_changed · Markdown links and heading anchors",
+          "observation_id": "lint_tooling:45823182226:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "6499c1ec65de33e1376671531ea770c5098e53b3",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "Markdown links and heading anchors check passed. The run scanned 2 changed Markdown sources and 20 local links with zero unresolved targets or anchors."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-124129"
+      ],
+      "task_group": "ci-ace4e198cb6445b7"
+    },
+    {
+      "finding_id": "lint-a2ab275c6b77dd5fee04cc69",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:25:10",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-f361f0da8e025b2ad8e4e144",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:25:236",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-0733dc3a8c16671792bda850",
+      "source_family": "lint",
+      "category": "semicolon",
+      "title": "semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:665:90",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-01"
+      ],
+      "task_group": "ci-97ac5148d90d96aa"
+    },
+    {
+      "finding_id": "lint-a909a403a059d36f26caf607",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:43:342",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-2622327c5814c036cce375d2",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:118:13",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-5fbc17194b22ffad4280c0ef",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:127:277",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-fef6e60a628c50ea5557879f",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 27 words (cap 25). Split it.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:209:5",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-02"
+      ],
+      "task_group": "ci-3d9410d07be9bf24"
+    },
+    {
+      "finding_id": "lint-5acc357959587a68b0f951b8",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:149:130",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-ff6c3acd0c014dc4e61c466a",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:283:84",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-f7dc64f1259416e941602253",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 40 words (cap 25). Split it.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:166:3",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-02"
+      ],
+      "task_group": "ci-3d9410d07be9bf24"
+    },
+    {
+      "finding_id": "lint-6e0df3ac815fc5850205b430",
+      "source_family": "lint",
+      "category": "present-perfect",
+      "title": "present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:172:17",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-03"
+      ],
+      "task_group": "ci-3b4261659ad682b5"
+    },
+    {
+      "finding_id": "lint-88aeab811894156e381b6f38",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 30 words (cap 25). Split it.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:186:131",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-02"
+      ],
+      "task_group": "ci-3d9410d07be9bf24"
+    },
+    {
+      "finding_id": "lint-5c822b17641bfca685187467",
+      "source_family": "lint",
+      "category": "synonym-rotation",
+      "title": "synonym-rotation: 'validate' and 'check' name the same action. Pick one and use it every time.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:39:33.378601+00:00",
+      "occurrence_count": 3,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:181:259",
+          "observation_id": "lint:45837905119:1"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45840589283",
+          "observed_at_utc": "2026-11-26T14:37:29.792977+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:216:73",
+          "observation_id": "lint:45840589283:1"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45841101397-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45841101397",
+          "observed_at_utc": "2026-11-26T14:39:33.378601+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:216:73",
+          "observation_id": "lint:45841101397:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings. The report explicitly resolves the final synonym-rotation fingerprint."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-04"
+      ],
+      "task_group": "ci-a9beca21d82a9708"
+    },
+    {
+      "finding_id": "lint-e8137e2bbd27eeeebe09cefe",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:182:45",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-f82bfd9e6673b647a6d8fc2d",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 32 words (cap 25). Split it.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:231:5",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-02"
+      ],
+      "task_group": "ci-3d9410d07be9bf24"
+    },
+    {
+      "finding_id": "lint-2879617005bdf3d23fcdebce",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:182:278",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-0f7475f061de95d077b1bfe9",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 38 words (cap 25). Split it.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:650:20",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-02"
+      ],
+      "task_group": "ci-3d9410d07be9bf24"
+    },
+    {
+      "finding_id": "lint-2b8b751eaf86badac01b9e00",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 26 words (cap 25). Split it.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:463:1",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-02"
+      ],
+      "task_group": "ci-3d9410d07be9bf24"
+    },
+    {
+      "finding_id": "lint-d322aeaf54a910f1b652245b",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:206:112",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-f0d61be6ac280ec407b4f93b",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:207:165",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-77adbdbc0fe812d1b67b5e05",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:211:342",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-3dd65725c765cdc8c75ee04a",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 28 words (cap 25). Split it.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:232:3",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-02"
+      ],
+      "task_group": "ci-3d9410d07be9bf24"
+    },
+    {
+      "finding_id": "lint-a7bf89e39efdb719560ebf21",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:241:81",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-89ce3d95585eee314fa93cfc",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:320:246",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-bb1c50eaa631694d123a7701",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:515:142",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-e4c84bbce7e4e015e5f82803",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:517:145",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-f0baecd36560346eb7c99c71",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:530:11",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-e7603e373d761a7c9ff25aff",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:533:18",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-e796b5d39f657c7dbfca408d",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:537:20",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-45700ec28d246ad5f6098f6a",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:539:30",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112"
+      ],
+      "task_group": "ci-ca4202f298c7af34"
+    },
+    {
+      "finding_id": "lint-70781a8fa973c1554931c214",
+      "source_family": "lint",
+      "category": "synonym-rotation",
+      "title": "synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:554:32",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings. The report explicitly resolves the final synonym-rotation fingerprint."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-04"
+      ],
+      "task_group": "ci-a9beca21d82a9708"
+    },
+    {
+      "finding_id": "lint-331ead622bd8b63c3dc8ec78",
+      "source_family": "lint",
+      "category": "synonym-rotation",
+      "title": "synonym-rotation: 'correct' and 'fix' name the same action. Pick one and use it every time.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:612:52",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings. The report explicitly resolves the final synonym-rotation fingerprint."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-04"
+      ],
+      "task_group": "ci-a9beca21d82a9708"
+    },
+    {
+      "finding_id": "lint-26959e3895827a98ea573e44",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 31 words (cap 25). Split it.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:615:4",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-02"
+      ],
+      "task_group": "ci-3d9410d07be9bf24"
+    },
+    {
+      "finding_id": "lint-cb5ac6fb2c2c270ac73b57e0",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 37 words (cap 25). Split it.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:632:4",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-02"
+      ],
+      "task_group": "ci-3d9410d07be9bf24"
+    },
+    {
+      "finding_id": "lint-c3aa5dc7d8225bd81a86e1b5",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 33 words (cap 25). Split it.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:634:4",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-02"
+      ],
+      "task_group": "ci-3d9410d07be9bf24"
+    },
+    {
+      "finding_id": "lint-33dd6d895441c53e43bd10a2",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 36 words (cap 25). Split it.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45837905119",
+          "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:649:20",
+          "observation_id": "lint:45837905119:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-02"
+      ],
+      "task_group": "ci-3d9410d07be9bf24"
+    },
+    {
+      "finding_id": "lint-fe0043dd1c2c55650b8f76ae",
+      "source_family": "lint",
+      "category": "synonym-rotation",
+      "title": "synonym-rotation: 'validate' and 'check' name the same action. Pick one and use it every time.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "last_seen_utc": "2026-11-26T14:39:33.378601+00:00",
+      "occurrence_count": 2,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45840589283",
+          "observed_at_utc": "2026-11-26T14:37:29.792977+00:00",
+          "note": "on_changed · workspace/task_board.md:26:61",
+          "observation_id": "lint:45840589283:1"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45841101397-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45841101397",
+          "observed_at_utc": "2026-11-26T14:39:33.378601+00:00",
+          "note": "on_changed · workspace/task_board.md:30:61",
+          "observation_id": "lint:45841101397:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "c163f4f642b5faf3c398f45e2a0805ae126f5382",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "workspace/task_board.md per-file result PASS with zero findings."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-143747"
+      ],
+      "task_group": "ci-7dfbd5dc4403acee"
+    },
+    {
+      "finding_id": "lint-388932780643d2141e1a4492",
+      "source_family": "lint",
+      "category": "semicolon",
+      "title": "semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "last_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45840589283",
+          "observed_at_utc": "2026-11-26T14:37:29.792977+00:00",
+          "note": "on_changed · workspace/draft/README.md:21:305",
+          "observation_id": "lint:45840589283:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "72e52a26c059d2b3795246916fba9d1a48c1e947",
+        "resolved_at_utc": "2026-11-26T14:51:58.858989+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45843115356",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:51:58.858989+00:00"
+        },
+        "note": "workspace/draft/README.md per-file result PASS with zero findings. The overall run failed only on a separate DRAFT-0002 finding, which later passed in run 45844123288."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-143747-01"
+      ],
+      "task_group": "ci-408b51e71141d6f6"
+    },
+    {
+      "finding_id": "lint-fa0ad26c0f4696b24c6e471f",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 28 words (cap 25). Split it.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "last_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45840589283",
+          "observed_at_utc": "2026-11-26T14:37:29.792977+00:00",
+          "note": "on_changed · workspace/draft/README.md:19:4",
+          "observation_id": "lint:45840589283:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "72e52a26c059d2b3795246916fba9d1a48c1e947",
+        "resolved_at_utc": "2026-11-26T14:51:58.858989+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45843115356",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:51:58.858989+00:00"
+        },
+        "note": "workspace/draft/README.md per-file result PASS with zero findings. The overall run failed only on a separate DRAFT-0002 finding, which later passed in run 45844123288."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-143747-02"
+      ],
+      "task_group": "ci-dabae1f55de289b8"
+    },
+    {
+      "finding_id": "lint-23958065d6cbd83c298c65e2",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "resolved",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "last_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45840589283",
+          "observed_at_utc": "2026-11-26T14:37:29.792977+00:00",
+          "note": "on_changed · workspace/draft/README.md:23:136",
+          "observation_id": "lint:45840589283:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "72e52a26c059d2b3795246916fba9d1a48c1e947",
+        "resolved_at_utc": "2026-11-26T14:51:58.858989+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45843115356",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:51:58.858989+00:00"
+        },
+        "note": "workspace/draft/README.md per-file result PASS with zero findings. The overall run failed only on a separate DRAFT-0002 finding, which later passed in run 45844123288."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-143747-03"
+      ],
+      "task_group": "ci-8ddfff1af8121755"
+    },
+    {
+      "finding_id": "gha-f04b588b537a96b00c56b6ae",
+      "source_family": "github_actions",
+      "category": "publication_or_push",
+      "title": "STE Lint Changed Documentation / Lint changed Markdown files and publish detailed evidence / Generate and publish changed-document lint evidence: publication_or_push",
+      "status": "open",
+      "severity": "high",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:51:33Z",
+      "last_seen_utc": "2026-11-26T14:51:33Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/424715662/45842593526-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45842593526",
+          "observed_at_utc": "2026-11-26T14:51:33Z",
+          "note": "Lint changed Markdown files and publish detailed evidence / Generate and publish changed-document lint evidence",
+          "observation_id": "github_actions:424715662:45842593526:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-145133"
+      ],
+      "task_group": "ci-f0a95a498ae3bd8a"
+    },
+    {
+      "finding_id": "lint-1ba75e66fd8777920c74a662",
+      "source_family": "lint",
+      "category": "synonym-rotation",
+      "title": "synonym-rotation: 'validate' and 'check' name the same action. Pick one and use it every time.",
+      "status": "resolved",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:51:58.858989+00:00",
+      "last_seen_utc": "2026-11-26T14:55:45.378956+00:00",
+      "occurrence_count": 2,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45843115356-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45843115356",
+          "observed_at_utc": "2026-11-26T14:51:58.858989+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:241:148",
+          "observation_id": "lint:45843115356:1"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45843767623-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45843767623",
+          "observed_at_utc": "2026-11-26T14:55:45.378956+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:241:148",
+          "observation_id": "lint:45843767623:1"
+        }
+      ],
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings. The report explicitly resolves the final synonym-rotation fingerprint."
+      },
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-142112-04"
+      ],
+      "task_group": "ci-a9beca21d82a9708"
+    }
+  ],
+  "ingestion_state": {
+    "bootstrap_at_utc": "2026-11-26T08:11:00Z",
+    "processed_reports": [
+      ".takeout/reports/gh_ac_reports/history/424715662/45842593526-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45785842274-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45786440074-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45786583252-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45786612277-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45787576604-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45787618873-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45789951589-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45790913652-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45791049057-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45792129692-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45792688463-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45792737046-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45793120530-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45793197760-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45794363579-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45794619449-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45794626105-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45795455755-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45795725425-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45797455626-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45798032838-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45798459536-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45798838831-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45821860845-attempt-1-post_run/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45804845399-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45808978869-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45814010116-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45814417490-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45816117222-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45816537286-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45816764437-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45817273521-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45819716980-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45821860683-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45823182226-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45823761243-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45827698968-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45831761330-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45832275683-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45841101397-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45843115356-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45843397893-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45843767623-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45844123288-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_repo/history/45837905160-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_repo/history/45846358477-attempt-1/report.json"
+    ],
+    "lint_baseline_scopes": {
+      "on_changed": true,
+      "on_repo": true
+    }
+  }
+}

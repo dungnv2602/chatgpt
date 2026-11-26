@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.1.0",
+  "scope": "on_changed",
+  "run_id": "45844123288",
+  "run_number": 817,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+  "attempt": 1,
+  "branch": "gpt",
+  "commit_sha": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+  "event": "push",
+  "workflow": "STE Lint Changed Documentation",
+  "runner_os": "Linux",
+  "execution_mode": "incremental",
+  "baseline_sha": "285355c083fbea124c356fb856b559ab38b88354",
+  "generated_at_utc": "2026-11-26T14:57:47.461697+00:00",
+  "status": "Passed",
+  "linter_source_sha": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+  "runtime": {
+    "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
+    "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
+  },
+  "files_evaluated": [
+    "workspace/task_board.md",
+    "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md"
+  ],
+  "files_evaluated_count": 2,
+  "files_failed": 0,
+  "failed_files": [],
+  "files_with_findings": 0,
+  "total_findings": 0,
+  "hard_findings": 0,
+  "advisory_findings": 0,
+  "findings_by_rule": {},
+  "records": [
+    {
+      "violations": [],
+      "count": 0,
+      "hard_count": 0,
+      "baseline": 0,
+      "words": 449,
+      "per_100_words": 0.0,
+      "path": "workspace/task_board.md",
+      "exit_code": 0
+    },
+    {
+      "violations": [],
+      "count": 0,
+      "hard_count": 0,
+      "baseline": 0,
+      "words": 9016,
+      "per_100_words": 0.0,
+      "path": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "exit_code": 0
+    }
+  ],
+  "findings": [],
+  "new_findings": 0,
+  "recurring_findings": 0,
+  "resolved_findings": [
+    {
+      "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
+      "line": 241,
+      "col": 148,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "validates",
+      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "1ba75e66fd8777920c74a662",
+      "comparison": "resolved"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Wrapper shell syntax",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Python report tooling compilation",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "Lint report regression tests",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.265s\n\nOK\n"
+    },
+    {
+      "name": "Markdown anchor regression tests",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.006s\n\nOK\n"
+    },
+    {
+      "name": "STE linter self-test",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": "selftest OK\n"
+    },
+    {
+      "name": "Markdown links and heading anchors",
+      "status": "Passed",
+      "exit_code": 0,
+      "output": "Scanned 2 changed Markdown sources (333 available as link targets) and 20 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+    }
+  ],
+  "failed_checks": []
+}
