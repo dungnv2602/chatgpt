@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T15:11:27Z",
+  "updated_at_utc": "2026-11-26T15:10:30Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -251,7 +251,7 @@
       "source_family": "lint",
       "category": "lint_tooling",
       "title": "Lint tooling check failed: Markdown links and heading anchors",
-      "status": "open",
+      "status": "resolved",
       "severity": "high",
       "owner": null,
       "first_seen_utc": "2026-11-26T09:44:23.453799+00:00",
@@ -294,7 +294,16 @@
           "observation_id": "lint_tooling:45823182226:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "6499c1ec65de33e1376671531ea770c5098e53b3",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "Markdown links and heading anchors check passed. The run scanned 2 changed Markdown sources and 20 local links with zero unresolved targets or anchors."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -308,7 +317,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -323,7 +332,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -337,7 +355,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -352,7 +370,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -366,7 +393,7 @@
       "source_family": "lint",
       "category": "semicolon",
       "title": "semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -381,7 +408,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -395,7 +431,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -410,7 +446,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -424,7 +469,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -439,7 +484,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -453,7 +507,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -468,7 +522,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -482,7 +545,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 27 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -497,7 +560,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -511,7 +583,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -526,7 +598,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -540,7 +621,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -555,7 +636,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -569,7 +659,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 40 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -584,7 +674,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -598,7 +697,7 @@
       "source_family": "lint",
       "category": "present-perfect",
       "title": "present-perfect: Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -613,7 +712,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -627,7 +735,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 30 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -642,7 +750,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -656,7 +773,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'validate' and 'check' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -685,7 +802,16 @@
           "observation_id": "lint:45841101397:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings. The report explicitly resolves the final synonym-rotation fingerprint."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -699,7 +825,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -714,7 +840,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -728,7 +863,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 32 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -743,7 +878,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -757,7 +901,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -772,7 +916,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -786,7 +939,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 38 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -801,7 +954,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -815,7 +977,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 26 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -830,7 +992,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -844,7 +1015,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -859,7 +1030,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -873,7 +1053,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -888,7 +1068,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -902,7 +1091,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -917,7 +1106,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -931,7 +1129,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 28 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -946,7 +1144,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -960,7 +1167,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -975,7 +1182,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -989,7 +1205,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -1004,7 +1220,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1018,7 +1243,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -1033,7 +1258,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1047,7 +1281,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -1062,7 +1296,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1076,7 +1319,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -1091,7 +1334,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1105,7 +1357,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -1120,7 +1372,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1134,7 +1395,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -1149,7 +1410,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1163,7 +1433,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -1178,7 +1448,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1192,7 +1471,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'verify' and 'check' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -1207,7 +1486,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings. The report explicitly resolves the final synonym-rotation fingerprint."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1221,7 +1509,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'correct' and 'fix' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -1236,7 +1524,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings. The report explicitly resolves the final synonym-rotation fingerprint."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1250,7 +1547,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 31 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -1265,7 +1562,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1279,7 +1585,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 37 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -1294,7 +1600,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1308,7 +1623,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 33 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -1323,7 +1638,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1337,7 +1661,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 36 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
@@ -1352,7 +1676,16 @@
           "observation_id": "lint:45837905119:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1366,7 +1699,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'validate' and 'check' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:37:29.792977+00:00",
@@ -1388,7 +1721,16 @@
           "observation_id": "lint:45841101397:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "c163f4f642b5faf3c398f45e2a0805ae126f5382",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "workspace/task_board.md per-file result PASS with zero findings."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1402,7 +1744,7 @@
       "source_family": "lint",
       "category": "semicolon",
       "title": "semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:37:29.792977+00:00",
@@ -1417,7 +1759,16 @@
           "observation_id": "lint:45840589283:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "72e52a26c059d2b3795246916fba9d1a48c1e947",
+        "resolved_at_utc": "2026-11-26T14:51:58.858989+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45843115356",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:51:58.858989+00:00"
+        },
+        "note": "workspace/draft/README.md per-file result PASS with zero findings. The overall run failed only on a separate DRAFT-0002 finding, which later passed in run 45844123288."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1431,7 +1782,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 28 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:37:29.792977+00:00",
@@ -1446,7 +1797,16 @@
           "observation_id": "lint:45840589283:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "72e52a26c059d2b3795246916fba9d1a48c1e947",
+        "resolved_at_utc": "2026-11-26T14:51:58.858989+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45843115356",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:51:58.858989+00:00"
+        },
+        "note": "workspace/draft/README.md per-file result PASS with zero findings. The overall run failed only on a separate DRAFT-0002 finding, which later passed in run 45844123288."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1460,7 +1820,7 @@
       "source_family": "lint",
       "category": "passive-voice",
       "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "status": "open",
+      "status": "resolved",
       "severity": "low",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:37:29.792977+00:00",
@@ -1475,7 +1835,16 @@
           "observation_id": "lint:45840589283:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "72e52a26c059d2b3795246916fba9d1a48c1e947",
+        "resolved_at_utc": "2026-11-26T14:51:58.858989+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45843115356",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:51:58.858989+00:00"
+        },
+        "note": "workspace/draft/README.md per-file result PASS with zero findings. The overall run failed only on a separate DRAFT-0002 finding, which later passed in run 45844123288."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -1518,7 +1887,7 @@
       "source_family": "lint",
       "category": "synonym-rotation",
       "title": "synonym-rotation: 'validate' and 'check' name the same action. Pick one and use it every time.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:51:58.858989+00:00",
@@ -1540,7 +1909,16 @@
           "observation_id": "lint:45843767623:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "52041ceb40792d0805ba4c2a9ca34d805441e3d4",
+        "resolved_at_utc": "2026-11-26T14:57:47.461697+00:00",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45844123288",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T14:57:47.461697+00:00"
+        },
+        "note": "DRAFT-0002 per-file result PASS with zero findings. The report explicitly resolves the final synonym-rotation fingerprint."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
