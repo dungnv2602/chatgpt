@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26:** Resume autonomous resolution of the five outstanding P0 CI/Ledger tasks. Inspect task records and exact evidence, identify root causes, implement approved fixes, and verify only through task-required hosted validation. Task IDs: 20261126-124305, 20261126-124129, 20261126-090154, 20261126-101512-01, 20261126-101512.
+- **2026-11-26:** Inspect the five active P0 task records, their linked Ledger findings, exact workflow runs and job logs, and the owner instructions. Identify the root causes and authorized fix set before editing. Tasks: [20261126-124305](../workspace/task_board.md), [20261126-124129](../workspace/task_board.md), [20261126-090154](../workspace/task_board.md), [20261126-101512-01](../workspace/task_board.md), [20261126-101512](../workspace/task_board.md).
 
 ## Open Discussions
 
@@ -13,8 +13,3 @@
 ## Reports
 
 _No reports._
-
-
-## Startup Notice — 2026-11-26
-
-- **2026-11-26:** Foundational initialization triggered by `/start`. Loading required foundational skills. Current work continues the outstanding P0 remediation. No CI snapshot or unrelated workflow repair is initiated during startup.
