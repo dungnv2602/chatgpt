@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#792](https://github.com/dungnv2602/chatgpt/actions/runs/45773890809)
-- **Run ID / attempt:** 45773890809 / 1
+- **Run:** [#793](https://github.com/dungnv2602/chatgpt/actions/runs/45774670689)
+- **Run ID / attempt:** 45774670689 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 2e2f3e1cae27d826722221327d1af6c6fd70e594
+- **Branch / commit:** gpt / e75d331c3db1f0f120cbe20066b3481643b6f3c8
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 2e2f3e1cae27d826722221327d1af6c6fd70e594
-- **Generated (UTC):** 2026-11-26T07:16:48.921963+00:00
+- **Linter source SHA:** e75d331c3db1f0f120cbe20066b3481643b6f3c8
+- **Generated (UTC):** 2026-11-26T07:21:50.805476+00:00
 
 ## 1. Executive summary
 
@@ -187,7 +187,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/the-worker/references/conversation-mode.md | FAIL | 19 | 2 | 0 | 3185 | 0.6 | 1 |
 | .agent/skills/internal-comms/examples/company-newsletter.md | FAIL | 4 | 1 | 0 | 554 | 0.7 | 1 |
 | .agent/skills/skill-creator/agents/comparator.md | FAIL | 6 | 1 | 0 | 735 | 0.8 | 1 |
-| workspace/task_board.md | PASS | 0 | 0 | 0 | 110 | 0.0 | 0 |
+| workspace/task_board.md | PASS | 0 | 0 | 0 | 121 | 0.0 | 0 |
 | .agent/skills/theme-factory/themes/desert-rose.md | PASS | 0 | 0 | 0 | 68 | 0.0 | 0 |
 | workspace/analysis/README.md | PASS | 0 | 0 | 0 | 278 | 0.0 | 0 |
 | .agent/skills/asd-ste100/README.md | PASS | 2 | 0 | 0 | 1573 | 0.1 | 0 |
@@ -268,7 +268,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.292s
+Ran 4 tests in 0.332s
 
 OK
 ~~~
@@ -281,7 +281,7 @@ OK
 ~~~text
 .....
 ----------------------------------------------------------------------
-Ran 5 tests in 0.007s
+Ran 5 tests in 0.006s
 
 OK
 ~~~
@@ -301,8 +301,9 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 214 active Markdown files (283 available as link targets) and 334 local Markdown links.
-Found 1 unresolved local Markdown targets or anchors.
+Scanned 217 active Markdown files (287 available as link targets) and 335 local Markdown links.
+Found 2 unresolved local Markdown targets or anchors.
+workspace/README.md: missing Markdown file: tasks/
 workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md: missing Markdown file: ../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md
 ~~~
 
@@ -5994,7 +5995,7 @@ No STE findings were recorded for this file.
 - **Findings:** 0
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 110
+- **Words:** 121
 - **Findings per 100 words:** 0.0
 
 No STE findings were recorded for this file.
