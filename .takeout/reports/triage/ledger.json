@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T12:04:41Z",
+  "updated_at_utc": "2026-11-26T12:06:43Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -254,6 +254,7 @@
       ".takeout/reports/gh_ac_reports/history/424715662/45808978869-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/424715662/45814010116-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/424715662/45814417490-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/424715662/45816117222-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/424743410/45794610594-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/424743410/45794619503-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/report.json",
