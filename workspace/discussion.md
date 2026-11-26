@@ -26,3 +26,6 @@ Audit reconstructed GitHub Actions skill report/archive path references and comp
 
 
 - **2026-11-26 — Catalog validator and image workflow repairs:** Corrected reconstructed roots in catalog validator logic and fixtures; aligned image workflow triggers/staging to `area/drawing/` and `area/novel/`; repaired the duplicated `.agent/` CI command path. Remote readback completed. Tests and hosted CI remain unrun.
+
+
+- **2026-11-26 — Worker and image/drawing guidance alignment:** Continued the reconstruction audit and repaired active Worker, image-processing, drawing, provenance, and novelist guidance to use `.agent/skills/`, `area/novel/`, `area/drawing/`, `.takeout/reports/`, and `.archive/` paths. Runtime intake remains `images/takeout/`. Follow-up readback corrected malformed intermediate prefixes. Full cross-reference audit remains in progress.
