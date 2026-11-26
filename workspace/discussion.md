@@ -1,6 +1,6 @@
 ## Current Step
 
-Create and execute task 20261126-021200 for the remaining repository consistency audit; track progress, scope, checks, and repairs in its task record.
+Execute task [20261126-021200](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md): trace image contracts, audit active README/skills/scripts/workflows, and repair verified discrepancies.
 
 ## Open Discussions
 
@@ -9,6 +9,8 @@ Create and execute task 20261126-021200 for the remaining repository consistency
 - **2026-11-23 — Drawing direction needed:** Session DRAWING-2026-11-23-01 is Active, but the user has not supplied a subject or visual direction.
 
 ## Reports
+
+- **2026-11-26 — Audit task started:** Created task `20261126-021200`, set it as current execution on the task board, and preliminarily traced image processor/verifier and workflow paths. Contract remains rooted at `images/takeout/`; relocated scripts are under `.agent/skills/the-worker/scripts/`. Further audit is underway. [Task record](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
 
 - **2026-11-26 — Image-document reference repair:** Updated relocated `.takeout/images/README-1.md` links to `.agent/skills/` and existing intake documentation; corrected image-processing script command paths and the provenance reference to the intake README. Read-back exposed and corrected an initial path-formatting defect. Processor destination/path contract remains under investigation; no operational destinations changed. Hosted validation not run.
 
