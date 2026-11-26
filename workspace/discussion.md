@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 15:55 UTC:** Implement the accepted ADR-0003 Option 3 in the report writer and regression suite. Inspect every repository reference to removed report views, add an on-demand Markdown renderer, and verify all retained history JSON/log bytes before planning the derived-file migration. Scope: [P0 task 20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md). Expected result: a coherent generator/test/documentation change with no changes to canonical evidence or the separate lint-report family.
+- **2026-11-26 15:58 UTC:** Pause the ADR-0003 history-layout migration at its required external-consumer safeguard. The repository search did not establish whether any external integration depends on stored report Markdown, root latest-report copies, or per-workflow indexes. Await the user's confirmation before removing or changing those paths. Active scope: [P0 task 20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md).
 
 ## Open Discussions
 
