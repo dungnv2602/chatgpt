@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-021200
 - **Created:** 2026-11-26 02:12 UTC
-- **Updated:** 2026-11-26 05:05 UTC
+- **Updated:** 2026-11-26 05:10 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -70,10 +70,11 @@ Task created and selected as current execution; the board was updated. The proce
 
 ## 9. Next Actions
 
-1. Finish the workflow trigger/permission/exclusion audit and verify script paths/callers.
-2. Review active scripts for dependency, path, and scope assumptions.
-3. Decide whether the task-board record gap can be resolved from active-path metadata without archive-content reads.
-4. Read back changed files, update the register, and report verification.
+1. Review the latest queued GitHub Actions runs and inspect post-repair results.
+2. Audit remaining active workflows, script callers, dependencies, and path assumptions.
+3. Resolve the one stale archive-retention index entry if an exact prior record can be recovered; otherwise record it as unresolved.
+4. Determine the disposition of the remaining 72 task-board links without fabricating records.
+5. Read back changed files, update the register, and report verification.
 
 ## 10. References
 
@@ -238,3 +239,14 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Verification:** Read back both changed scripts. Checked every retained baseline path against the branch tree; all exist. Static scan found no remaining legacy root references in the anchor checker or wrapper. No shell/Python execution was performed.
 - **Commits:** `fc3527af0d90e61e5ef1f0395490c8a7d9ef754e`, `0d150a5dfdad5e5b5deaca4d2ebffa7a288fde9b`, `bcc20408fc645d79e3e201f05d4f98502761cde2`, `a2221d32c3e0e07abb2fa4c8ce078b7b8ec632d4`.
 - **Next:** Continue workflow caller/dependency audit and check other active scripts for path assumptions.
+
+
+### 2026-11-26 05:10 UTC — Hosted failure analysis and exact record relocation
+
+- **Hosted evidence:** Inspected run logs from `Validate Document Standards`, `STE Lint Changed Documentation`, and `GitHub Actions Diagnostics`. Failures were: (1) `test_lint_fingerprint_deduplicates_across_scopes_and_is_idempotent` because `workspace/TASK_TEMPLATE.md` still linked to the legacy `../../reports/triage/ledger.json`; (2) archive-retention test `test_unsafe_paths_rejected` incorrectly classified the valid file path `.archive/reports/x.md` as unsafe; (3) diagnostics failed closed because the central Ledger file was missing; (4) the Markdown anchor check reported 193 unresolved targets/anchors, including known missing task links and stale active paths.
+- **Repairs:** Corrected the canonical task-template Ledger link. Removed the valid archive file path from the unsafe-path test's invalid fixture list; production validation rules were not weakened. Fixed heading slug cleanup so underscores inside code spans are preserved, and added regression tests for underscore and plus-sign anchors. Repaired active novel/workspace links to reconstructed roots.
+- **Ledger recovery:** Located the exact version 1.4.0 Ledger at legacy `reports/triage/ledger.json` in commit `5ef8258d8e42888b64c7f78feb5f9a08260bf332`. Restored the exact 561,051-character blob at `.takeout/reports/triage/ledger.json` (content SHA unchanged; commit `09adcb027c31dd20b2e61da23488be532d623e17`). This is a canonical-path relocation, not a clean reset. Updated triage README recovery guidance. Ingestion/migration awaits the diagnostics workflow.
+- **Archive relocation:** The prior committed tree at `5cdb81d16becbb86f6e5270d493f1b1ff6210bcb` contained 49 task archive files and 16 report archive files under legacy roots. Relocated all 65 missing blobs to `.archive/task/` and `.archive/reports/` using exact existing blob SHAs, preserving bytes and leaving legacy paths absent. Commit `538293819ffa473fef66ff1eb1182432cf59350d`. The 55-entry retention index now has 54 exact files present; one task entry (`20261125-023508-standardize-detailed-option-assessments-in-future-drafts.md`) has no source blob in the prior archive tree or current tree and remains unresolved. The 10 unindexed archived task files were also preserved.
+- **Active task recovery:** The prior committed tree contained 78 task records still linked in the current Proposed board section but missing from the current active directory. Restored those exact blobs to their canonical `workspace/tasks/` paths in commit `a59386e658ff9ed294b8789c9526d8520df6f1c9`. This reduced missing board targets from 150 to 72. The remaining 72 Proposed task paths are absent from the prior snapshot and current tree; representative path-history lookups returned no committed versions. Their contents were not fabricated, and board rows were left unchanged.
+- **Current verification:** Read-back confirmed the task template, test fixture, slug tests, novel/workspace link repairs, Ledger file, and relocated paths. Git tree comparison confirms 67 files under `.archive/task/` and `.archive/reports/` including placeholders, 81 files under `workspace/tasks/`, 54/55 retention targets present, and 72 board targets still missing. New Actions runs are queued/pending with no jobs yet; no post-repair hosted result is available.
+- **Next:** Inspect queued run outcomes; continue remaining workflow/script audit; investigate the single stale retention entry and 72 missing task records without inventing data.
