@@ -18,9 +18,7 @@ on:
     paths-ignore:
       - '.archive/reports/**'
       - '.takeout/reports/gh_ac_reports/history/**'
-      - '.takeout/reports/gh_ac_reports/by_workflow/**'
       - '.takeout/reports/gh_ac_reports/index.json'
-      - '.takeout/reports/gh_ac_reports/latest-gh-ac-report.*'
       - '.takeout/reports/gh_ac_reports/requests/processed/**'
       - '.takeout/reports/triage/ledger.json'
       - 'workspace/tasks/**'
