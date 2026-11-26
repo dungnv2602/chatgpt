@@ -4,21 +4,22 @@ This directory is the review surface for actionable GitHub Actions execution fai
 
 ## Review order
 
-1. Read index.json for the latest captured runs, pending run IDs, and the sweep watermark.
-2. Read latest-gh-ac-report.md for the newest captured report.
-3. Open by_workflow/<workflow-id>/index.json and latest-report.md for workflow-specific history.
-4. Read the immutable history entry for the exact run ID, attempt, and capture stage.
-5. Open captured job logs and report.json for full evidence.
-6. Follow the Actions run URL when GitHub has evidence the reporter cannot access.
+1. Read `index.json` for the latest captured runs, pending run IDs, and the sweep watermark.
+2. Read the `latest_report.history_path` entry in `index.json` to locate the newest canonical report.
+3. Use the history path to inspect `report.json`, `integrity.json`, and captured job logs.
+4. Render a human-readable Markdown view when needed:
+   - Latest report: `python3 .takeout/reports/gh_ac_reports/scripts/report.py --render-latest`
+   - Exact report: `python3 .takeout/reports/gh_ac_reports/scripts/report.py --render history/<workflow-id>/<run-id>-attempt-<attempt>-<stage>`
+   Both commands write Markdown to stdout; redirect it to a temporary file if a persistent view is required.
+5. Follow the Actions run URL when GitHub has evidence the reporter cannot access.
 
-## Evidence layout
+## Canonical evidence layout
 
-- history/<workflow-id>/<run-id>-attempt-<attempt>-<stage>/ stores immutable captures.
-- Each capture has report.md, report.json, integrity.json, and logs/job-<job-id>.log files.
-- by_workflow/<workflow-id>/ contains a workflow index and latest pointers.
-- index.json is the repository-wide index and records pending run IDs and the sweep watermark.
-- latest-gh-ac-report.md and latest-gh-ac-report.json point to the newest capture.
-- requests/pending/<request-name>.json requests a backfill for one exact run. The JSON must contain a numeric run_id. A processed request moves to requests/processed/.
+- `history/<workflow-id>/<run-id>-attempt-<attempt>-<stage>/` stores each immutable capture.
+- Each capture contains `report.json`, `integrity.json`, and `logs/job-<job-id>.log` files.
+- `index.json` is the only index and latest-report pointer. It also records pending run IDs and the sweep watermark.
+- `requests/pending/<request-name>.json` requests a backfill for one exact run. The JSON must contain a numeric `run_id`. A processed request moves to `requests/processed/`.
+- There are no stored Markdown report copies, root latest-report copies, or per-workflow indexes/latest copies. Workflow-specific views can be derived by filtering the central index on `workflow_id`.
 
 ## Capture policy
 
@@ -26,7 +27,7 @@ This directory is the review surface for actionable GitHub Actions execution fai
 - The diagnostics workflow listens for completed source workflows and runs the post-run sweep. Pending IDs discovered by an earlier push-triggered sweep are retried after the source workflow completes.
 - A report is persisted only when classification contains at least one independent error: a failed job/step, a timeout, an action-required outcome, or a classified workflow-startup/configuration failure.
 - Ordinary success, cancellation-only, skipped, neutral, and other issue-free outcomes are handled without report history.
-- Every diagnostics sweep prunes legacy history outside this retention contract and rebuilds the root and per-workflow indexes/latest pointers from retained reports. Pending run IDs are preserved for completion-time capture.
+- Every diagnostics sweep prunes legacy history outside this retention contract, removes derived report views, regenerates integrity manifests for canonical JSON and logs, and rebuilds the central index. Pending run IDs are preserved for completion-time capture.
 - A cancelled run is retained only when it contains an independent completed job or step failure. Cancellation and downstream status-propagation failures do not qualify.
 - A successful run with an independently failed non-blocking step is an error report and is retained.
 - Manual requests can select older runs, but cannot override the error-only retention rule. A successful or cancellation-only run is never forced into report history.
@@ -36,14 +37,14 @@ This directory is the review surface for actionable GitHub Actions execution fai
 
 The report preserves the source conclusion reported by GitHub. Report-generation success does not mean that the source workflow succeeded.
 
-- failure: GitHub reports failure.
-- cancelled: GitHub reports cancellation. Cancellation alone does not create a report for new runs. A cancelled run with an independent classified failure is captured; cancellation and known downstream status-propagation steps do not create issues. Historical cancellation-only captures are removed by the retention sweep.
-- timed_out: GitHub reports a timeout.
-- action_required: GitHub reports an action-required state.
-- skipped and neutral remain non-failure outcomes.
-- queued and in_progress are not completed outcomes.
-- workflow_startup_or_configuration_failure is a low-confidence classification when a failed run has no job records.
-- runner_initialization_failure is used only when a job failed without step evidence.
+- `failure`: GitHub reports failure.
+- `cancelled`: GitHub reports cancellation. Cancellation alone does not create a report for new runs. A cancelled run with an independent classified failure is captured; cancellation and known downstream status-propagation steps do not create issues. Historical cancellation-only captures are removed by the retention sweep.
+- `timed_out`: GitHub reports a timeout.
+- `action_required`: GitHub reports an action-required state.
+- `skipped` and `neutral` remain non-failure outcomes.
+- `queued` and `in_progress` are not completed outcomes.
+- `workflow_startup_or_configuration_failure` is a low-confidence classification when a failed run has no job records.
+- `runner_initialization_failure` is used only when a job failed without step evidence.
 - Explicit unittest failure markers take precedence over incidental keywords in captured output.
 - Markers include `AssertionError`, `FAIL: test_`, `ERROR: test_`, and unittest failure summaries.
 - These markers classify the step as `validation_or_test`, even when captured output includes `git push` or `checkout` text.
@@ -66,19 +67,19 @@ The collector redacts common token, authorization, password, and cloud-key patte
 
 Each source workflow runs a normal diagnostics job with job-level `continue-on-error: true`. That job checks out branch `gpt` and calls `.takeout/reports/gh_ac_reports/actions/capture`, a local composite action. This keeps report generation outside the source validation result. The separate push-triggered sweep backfills completed runs and catches failures when the finalizer does not run. It does not rely on a default-branch observer or scheduled trigger.
 
-The repository default branch is main. GitHub only starts workflow_run and schedule observers when the workflow file exists on the default branch. This implementation does not change main. A workflow that fails before any job starts is discovered on a later gpt push or by a request file. Instant capture of that case needs a default-branch observer or an external GitHub App webhook.
+The repository default branch is `main`. GitHub only starts `workflow_run` and schedule observers when the workflow file exists on the default branch. This implementation does not change `main`. A workflow that fails before any job starts is discovered on a later `gpt` push or by a request file. Instant capture of that case needs a default-branch observer or an external GitHub App webhook.
 
 When a new workflow is added, append a normal job that needs the source jobs, uses `if: always()` and job-level `continue-on-error: true`, checks out `gpt`, and calls `./.takeout/reports/gh_ac_reports/actions/capture`. The push sweep still backfills runs when the finalizer does not run.
 
 ## Relationship to lint reports
 
-Detailed lint findings, per-file metrics, fingerprints, and baselines remain in `.takeout/reports/lint_reports`. This report captures workflow, job, step, log, annotation, artifact, and publication context around a lint run. It links to the matching lint scope rather than duplicating its findings.
+Detailed lint findings, per-file metrics, fingerprints, and baselines remain in `.takeout/reports/lint_reports`. This report captures workflow, job, step, log, annotation, artifact, and publication context around a lint run. It links to the matching lint scope rather than duplicating its findings. This layout change does not modify the separate STE lint report layout.
 
 ## Integrity and history
 
-Each retained post-run error capture is immutable. The retention sweep removes pre-finalizer captures and any success-only, cancellation-only, or otherwise issue-free records, then rebuilds indexes and latest pointers. A later post-run capture does not rewrite a retained report. SHA-256 values in integrity.json cover report.md, report.json, and every captured log.
+Each retained post-run error capture is immutable. The retention sweep removes pre-finalizer captures and any success-only, cancellation-only, or otherwise issue-free records, then removes only derived Markdown/navigation copies and rebuilds the central index. Canonical `report.json` and captured log bytes remain unchanged. SHA-256 values in `integrity.json` cover `report.json` and every captured job log; the manifest is regenerated during migration and subsequent sweeps.
 
-Index latest pointers advance by source run time, attempt, and capture-stage precedence. Older captures cannot replace newer pointers. Generated reports are machine-owned.
+The central latest pointer advances by source run time, attempt, and capture-stage precedence. Markdown is rendered from canonical JSON on demand and is not committed as a report artifact. Generated evidence is machine-owned.
 
 Change the schema, template, collector, generator, regression tests, workflow integration, this guide, and the Document Type Catalog together.
 
@@ -95,11 +96,6 @@ The changed-document lint workflow uses up to five push attempts. Before each at
 The diagnostics workflow is deliberately excluded from its own run sweep to prevent recursive report generation. Its own failures are not included in the reports it creates. Inspect the diagnostics workflow's own run and job logs directly in the GitHub Actions interface. Failure of the report-only job in a source workflow is separately contained by the caller's job-level `continue-on-error: true` setting. Explicit backfill requests do not override the error-only retention rule; successful and cancellation-only runs are never retained.
 
 If a diagnostics run fails before GitHub exposes job steps or a log URL, record an evidence gap and leave pending IDs unchanged. Do not infer a source-workflow defect from an empty job record. Allow a later eligible `gpt` push to trigger another sweep; do not dispatch or poll the failed diagnostics run.
-
-## Resolution and archive
-
-The cross-family issue state is tracked in `.takeout/reports/triage/ledger.json`. A finding is resolved only after its fix commit and successful relevant validation are recorded. The successful run URL and UTC timestamp are sufficient; a full successful-run diagnostic report is not required. Use a request file only when the successful run's detailed evidence is specifically needed. Resolved report files are moved to `.archive/reports/`; the shared archive-retention workflow deletes each exact indexed file after 90 days. The archive uses the shared `.github/archive-retention-index.json`. Do not create a report archive under `.takeout/reports/` or a separate retention workflow.
-
 
 ## Bounded retry and request handling
 
