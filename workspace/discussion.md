@@ -2,7 +2,7 @@
 
 ## Current Step
 
-**2026-11-27:** Discovery, catalog, and board integration are committed. Remove overlapping batch-orchestration ownership from the GitHub Actions skill, then perform final read-back and consistency checks.
+_No active step._
 
 ## Open Discussions
 
@@ -13,11 +13,10 @@
 
 ## Reports
 
+- **2026-11-26 22:34 UTC:** Promoted CI Ledger governance to task-activated `.agent/skills/ci-ledger/SKILL.md`, simplified the triage README, added Worker-owned P0 batch orchestration, and narrowed GitHub Actions to technical remediation. Updated discovery, catalog, board, and archived the approved implementation task. Manual read-back passed. CI and official skill validation were not run or reviewed. Commits: `36afbf6`, `4ef2dce`, `5f8e356`, `9aea617`, `fefb388`, `31ed6bb`, `c43a75a`, `da2a3ea`, `2fa3593`, `e1cc292`, `e27ed64`.
+
 - **2026-11-27 05:50 UTC:** Approved progressive skill activation. `/start` now loads The Worker and Conversation Mode only. CI, document governance, technical writing, and skill authoring are task-activated. GitHub Actions is no longer universal startup-loaded. Committed and read-back verified. Commits: `764d771`, `f9a3e2f`, `11a5475`, `7bcb449`, `4ed128e`.
 
 - **2026-11-27 05:25 ICT:** Audited Ledger policy and found conflicting Worker intake instructions (Proposed/unapproved tasks vs permanent P0 Approved/In Progress) plus a CI error-prevention procedure embedded in the Ledger guide. Reconciled Worker intake with the P0 policy and moved recurrence prevention to GitHub Actions. Read-back verified. Commits: `7b94e6e`, `d5547da`, `e9ab0ba`.
 
 
-- **2026-11-27 05:20 ICT:** Consolidated CI failure-remediation ownership in the GitHub Actions skill. Added autonomous batch remediation for eligible CI-generated P0 tasks and the user-triggered results-review boundary. Removed the detailed duplicate procedure from The Worker, leaving task-management ownership there. Commits: [7755a87](https://github.com/dungnv2602/chatgpt/commit/7755a87b865ba3291add28997a6d23049850c30b), [6250e99](https://github.com/dungnv2602/chatgpt/commit/6250e9964c064ddaf5935c7edfdb126465a76427). Both skill files were read back.
-- **2026-11-26 17:02 UTC:** STE Lint Changed run [45864180906](https://github.com/dungnv2602/chatgpt/actions/runs/45864180906) reported 46 findings across ADR-0003. The Ledger grouped them into four P0 tasks. Diagnostics run 45864180758 and Validate Document Standards run 45864180724 passed.
-- **2026-11-26 16:43 UTC:** Diagnostics run [45861355013](https://github.com/dungnv2602/chat/actions/runs/45861355013) passed and retired one terminal Ledger finding after the indexed task archive push.
