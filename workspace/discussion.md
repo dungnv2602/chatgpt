@@ -2,9 +2,11 @@
 
 ## Current Step
 
-- **2026-11-26 16:10 UTC:** User directed continuation of ADR-0003 Option 3. Proceed with the approved in-repository migration: preserve every canonical report JSON byte, captured log byte, history path, and Ledger/task evidence reference; remove only derived Markdown/latest/per-workflow views; regenerate integrity manifests and the central index; add on-demand rendering and regression coverage. No external consumer was identified in the repository search. Active scope: [P0 task 20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md).
+- **2026-11-26 16:18 UTC:** Audit the ADR-0003 Confirmation criteria against the committed renderer, central-index behavior, migration tests, and repository evidence references. Verify that removed paths have no active required consumers. Preserve canonical JSON, logs, and all Ledger/task references. Active scope: [P0 task 20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md).
 
 ## Open Discussions
+
+- **2026-11-26 16:14 UTC:** Hosted Diagnostics run [45856899091](https://github.com/dungnv2602/chatgpt/actions/runs/45856899091) failed because two existing StorageTests still expected removed root latest-report JSON copies. The migration did not run. Updated those assertions to use the central index and added an end-to-end Markdown rendering test in commits 6897970 and 3ee2f73. The event-triggered validation for the corrected tests is pending. Keep P0 task 20261126-090154 open until hosted tests and migration pass.
 
 - **2026-11-26 15:46 UTC:** The shared error-only reporter/Ledger contract is hosted-validated: Diagnostics run 45823761330 passed 37 reporter and 47 Ledger tests; Document Standards run 45823761313 passed 47 Ledger and 33 catalog tests. Four findings in P0 task 20261126-090154 are resolved. Three historical Actions occurrences map to archived task 20261126-101512-01; the separate run 45788718679 maps to archived task 20261126-101512. Remaining active P0 scope: accepted ADR-0003 Option 3 migration and post-fix hosted validation for STE Lint publication task 20261126-145133.
 
