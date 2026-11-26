@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-090154
 - **Created:** 2026-11-26 09:01 UTC
-- **Updated:** 2026-11-26 09:30 UTC
+- **Updated:** 2026-11-26 09:33 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -107,3 +107,11 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Result:** The 15 errors shared one remaining cause: the renderer expected the stale Decisions placeholder `[Record approved decisions and concise rationale.]`, while the canonical template includes the additional sentence `Mark unapproved ideas as Proposed.` Updated the renderer to match the canonical template. Added regression assertions that the generated task contains the approved P0 decision text and does not retain the stale placeholder. This is a second instance of template-contract drift; the new operating-guide procedure requires future failures to receive a preventive regression and workflow update in the same remediation.
 - **References:** Run 582: https://github.com/dungnv2602/chatgpt/actions/runs/45792129692; job 139813521101; commits `73b4046` and `a366786`; `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`; `.takeout/reports/triage/README.md`.
 - **Next:** Inspect the naturally triggered hosted validation after both commits. Keep the P0 task open until all relevant tests pass; then continue exhaustive report-to-finding and finding-to-task reconciliation.
+
+
+### 2026-11-26 09:33 UTC
+
+- **Action:** Reconciled every indexed GitHub Actions report in the current post-reset reporting period against the central Ledger finding and task references.
+- **Result:** The Actions index contains eight complete `post_run` reports for this regression, across runs 560, 562, 565, 566, 567, 568, 570, and 571. Each independently classifies the same Ledger regression-test failure in `validate-document-standards / Run CI Ledger regression tests`; the three cancelled runs still contain that independent test failure and are not cancellation-only noise. The 12 other indexed captures are `pre_finalizer` and incomplete, so they are not eligible observations. The Ledger has one distinct finding, occurrence_count 8, and one task reference to this P0 task. Its five evidence rows are the configured bounded evidence window (first plus four latest), not a complete occurrence list. The report-to-finding count and finding-to-task linkage therefore reconcile for all currently eligible indexed reports.
+- **References:** `.takeout/reports/gh_ac_reports/index.json`; `.takeout/reports/triage/ledger.json`; task board `workspace/task_board.md`; eight complete reports under `.takeout/reports/gh_ac_reports/history/427313089/` for run IDs 45785802198, 45785842274, 45786440074, 45786583252, 45786612277, 45787576604, 45787618873, and 45787937573.
+- **Next:** Wait for naturally triggered hosted validation of commits `73b4046` and `a366786` under the event-driven workflow. Do not close this task until the regression suite passes; then reconcile any newly completed post-run reports and verify Current Execution/task-board publication.
