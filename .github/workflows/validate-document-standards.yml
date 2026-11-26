@@ -6,15 +6,15 @@ on:
       - gpt
     paths:
       # Check every skill-owned template, schema, and authoring rule.
-      - 'skills/**'
+      - '.agent/skills/**'
       # Enforce catalog coverage whenever any active document family changes.
       # master/ and .archive/ remain outside this inventory scan.
       - 'area/drawing/**/*.md'
       - 'images/**/*.md'
       - 'area/novel/**/*.md'
-      - 'reports/**/*.md'
+      - '.takeout/reports/**/*.md'
       # Run Ledger regression tests when its implementation or schema changes.
-      - '.takeout/reports/triage/scripts/**'
+      - '.takeout/.takeout/reports/triage/scripts/**'
       - '.takeout/reports/triage/ledger-schema.json'
       # Exclude generator-owned output so report publication cannot retrigger this workflow.
       - '!.takeout/reports/gh_ac_reports/history/**'
@@ -66,18 +66,18 @@ jobs:
           python-version: '3.x'
 
       - name: Run CI Ledger regression tests
-        run: python -m unittest discover -s .takeout/reports/triage/scripts -p 'test_ledger.py' -v
+        run: python -m unittest discover -s .takeout/.takeout/reports/triage/scripts -p 'test_ledger.py' -v
 
       - name: Run catalog validator regression tests
         run: |
           python -m unittest discover \
-            -s .agent/skills/document-standards/scripts \
+            -s .agent/.agent/skills/document-standards/scripts \
             -p 'test_validate_catalog.py' \
             -v
 
       - name: Validate the document type catalog
         run: |
-          python .agent/skills/document-standards/scripts/validate_catalog.py --root .
+          python .agent/.agent/.agent/skills/document-standards/scripts/validate_catalog.py --root .
 
   diagnostics:
     name: Capture GH Actions diagnostics
