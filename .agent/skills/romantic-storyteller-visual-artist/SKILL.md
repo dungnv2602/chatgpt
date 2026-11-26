@@ -28,13 +28,13 @@ scene.
 
 ## Authority of the Drawing Skill
 
-The Drawing Skill at `skills/drawing/SKILL.md` is authoritative for
+The Drawing Skill at `.agent/skills/drawing/SKILL.md` is authoritative for
 every visual or image-related decision. The Romantic Storyteller skill
 complements it. It never replaces, weakens, or overrides it.
 
 ### Mandatory dependency-loading order
 
-Before any visual work, retrieve and read `skills/drawing/SKILL.md` from branch `gpt`.
+Before any visual work, retrieve and read `.agent/skills/drawing/SKILL.md` from branch `gpt`.
 This applies to visual storytelling, scene design, image planning, prompting, generation, and editing.
 
 Then read every supporting reference named by the Drawing Skill. Retrieve each file from branch `gpt`.
@@ -441,7 +441,7 @@ relationship intact.
 
 This is the third tier in the skill hierarchy: Foundational → Drawing →
 Novelist. When the user says **“be the novelist”** as an instruction, follow
-the [Novelist role initialization procedure](../SESSION_START.md#novelist-role-initialization)
+the [Novelist role initialization procedure](../../SESSION_START.md#novelist-role-initialization)
 before undertaking novel work. Ensure the foundational tier has passed first,
 then ensure Drawing and its required references are loaded. Reuse any of these
 files already verified in the current conversation; do not reload them when
