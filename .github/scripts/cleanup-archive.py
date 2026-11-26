@@ -30,7 +30,7 @@ def validate_record(record: Any) -> tuple[str, datetime]:
         raise ValueError("Archive path must be a safe POSIX repository path.")
     pure = PurePosixPath(path)
     parts = pure.parts
-    if str(pure) != path or len(parts) < 3 or parts[0] != "archive" or parts[1] not in {"tasks", "reports"}:
+    if str(pure) != path or len(parts) < 3 or parts[0] != ".archive" or parts[1] not in {"task", "reports"}:
         raise ValueError(f"Invalid indexed archive path: {path!r}")
     if any(part in {"", ".", ".."} for part in parts[2:]) or parts[-1] == ".gitkeep" or path.endswith("/"):
         raise ValueError(f"Indexed path must identify an individual file: {path!r}")
@@ -66,8 +66,8 @@ def clean_due_records(index_path: Path, repository_root: Path, now: datetime) ->
             retained.append(record)
     if not due:
         return [], False
-    archive_root = repository_root / "archive"
-    for family in ("tasks", "reports"):
+    archive_root = repository_root / ".archive"
+    for family in ("task", "reports"):
         family_dir = archive_root / family
         if archive_root.is_symlink() or family_dir.is_symlink():
             raise ValueError(f"Refusing to follow symlink in {family_dir}.")
