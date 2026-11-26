@@ -48,7 +48,7 @@ Attempt records and daily drawing indexes link only to verified WebP delivery fi
 
 ## Processing and publication
 
-The [takeout processor](../scripts/process_takeout.py) and [GitHub Action](../../../.github/workflows/convert-images-to-webp.yml) own conversion and repository changes.
+The [takeout processor](../scripts/process_takeout.py) and [GitHub Action](../../../../.github/workflows/convert-images-to-webp.yml) own conversion and repository changes.
 
 The processor validates the complete batch before relocating originals. It rejects missing or unlisted sources, unsafe paths, symlinks, and destination collisions. It stages and verifies each WebP before final placement.
 
