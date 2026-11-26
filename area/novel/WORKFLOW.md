@@ -103,17 +103,17 @@ Keep illustration documentation beside its scene. Store binary image assets in o
 
 Each retained illustration has two binary files beside one another. The original PNG or JPEG is the master. The WebP file is its delivery derivative. The master is the source of truth. WebP is a separate derivative. Stable illustration IDs do not change when titles or filenames change.
 
-All user-uploaded images enter the single flat intake at ``.takeout/images/`. This rule applies to novel and non-novel images. Incoming filenames may be arbitrary. The assistant inspects each image and determines its descriptive title and destination from the conversation and project records. The assistant then writes ``.takeout/images/HANDOFF.yml`.
+All user-uploaded images enter the single flat intake at `.takeout/images/`. This rule applies to novel and non-novel images. Incoming filenames may be arbitrary. The assistant inspects each image and determines its descriptive title and destination from the conversation and project records. The assistant then writes `.takeout/images/HANDOFF.yml`.
 
 A novel-illustration entry identifies its `ILL-NNN` ID, title, exact uploaded filename, and destination directory. The destination must be inside the appropriate novel asset library. Non-novel retained images use a destination under `.takeout/images/`.
 
 The existing GitHub Action reads the hand-off. It does not infer image contents, IDs, or story destinations. It converts the supplied title to a slug. It prefixes the optional stable ID and converts PNG or JPEG to WebP.
 
-Before relocation, the Action stages each derivative under ``.takeout/images/webp/[batch-id]/attempt-NNN/`. It appends `.webp` to the exact incoming filename. For example, it converts `IMG_001.png` to `IMG_001.png.webp`.
+Before relocation, the Action stages each derivative under `.takeout/images/webp/[batch-id]/attempt-NNN/`. It appends `.webp` to the exact incoming filename. For example, it converts `IMG_001.png` to `IMG_001.png.webp`.
 
 The Action validates every staged file before it moves any original. It moves the original bytes unchanged to the named master location. It moves each staged WebP beside its master. It refuses to overwrite an existing destination.
 
-Every successful or failed attempt produces an archived hand-off, `conversion-report.csv`, and `verification-report.md`. The archive path is ``.takeout/images/history/[batch-id]/attempt-NNN/`. The report records source, staging, and final paths. It also records sizes, encoder profile and version, SHA-256 values, and verification outcomes.
+Every successful or failed attempt produces an archived hand-off, `conversion-report.csv`, and `verification-report.md`. The archive path is `.takeout/images/history/[batch-id]/attempt-NNN/`. The report records source, staging, and final paths. It also records sizes, encoder profile and version, SHA-256 values, and verification outcomes.
 
 The `history/`, `original/`, and `webp/` directories are reserved. The intake detector excludes them from future intake detection. On success, the Action moves staged files to their permanent destinations. It then removes the empty successful staging directory.
 
@@ -162,7 +162,7 @@ area/novel/
                 └── [Illustration-ID]-prompt.md
 ```
 
-The scene-local `illustrations/` folder stores documentation only. Image binaries use the central `assets/illustrations/[ARC-ID]/[SCN-ID]/` path shown above. All user uploads enter through ``.takeout/images/` and its structured hand-off. Do not upload directly into a final asset directory.
+The scene-local `illustrations/` folder stores documentation only. Image binaries use the central `assets/illustrations/[ARC-ID]/[SCN-ID]/` path shown above. All user uploads enter through `.takeout/images/` and its structured hand-off. Do not upload directly into a final asset directory.
 
 Create optional `planning/`, `characters/`, arc, scene, and illustration folders only when they contain real records or assets. Existing projects may retain their current paths. Use the standard structure for new records. Migrate old paths only when useful and safe.
 
@@ -246,7 +246,7 @@ For every planned illustration:
 5. Inspect each returned image separately against the brief. Classify each result honestly.
 6. Create or update an Illustration Note for each generated image retained or reviewed as a scene deliverable. Record visible facts separately from interpretation.
 7. Record every attempt and outcome in the Prompt Record. Include failed and partial attempts. Preserve the accepted baseline and the exact changes in later attempts.
-8. For repository retention, place the uploaded image in ``.takeout/images/`. Prepare its `HANDOFF.yml` entry with the incoming filename, descriptive title, stable illustration ID, and central asset destination. Do not rename or move the upload manually. The existing Action performs the validated master rename, WebP conversion, relocation, and verification.
+8. For repository retention, place the uploaded image in `.takeout/images/`. Prepare its `HANDOFF.yml` entry with the incoming filename, descriptive title, stable illustration ID, and central asset destination. Do not rename or move the upload manually. The existing Action performs the validated master rename, WebP conversion, relocation, and verification.
 9. Link the verified master and WebP assets, Illustration Note, Prompt Record, and scene. If an image exists only in the conversation, state that clearly. Do not invent a repository path.
 10. Update the scene's illustration index. A generated image does not create a new scene automatically.
 
