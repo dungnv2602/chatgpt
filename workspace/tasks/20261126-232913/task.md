@@ -1,10 +1,10 @@
 # Task: Implement ADR-0004 task folders and CI Ledger lifecycle
 
 ## Metadata
-- **Template version:** 1.3 (folder-based implementation task; canonical folder template is part of this task)
+- **Template version:** 2.0
 - **ID:** 20261126-232913
 - **Created:** 2026-11-26 23:29 UTC
-- **Updated:** 2026-11-26 23:29 UTC
+- **Updated:** 2026-11-26 23:31 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -80,19 +80,18 @@ Implement accepted ADR-0004 completely and restore reliable CI Ledger operation.
 ## 7. Current State
 - ADR-0004 is accepted and indexed.
 - This task is Approved, P0, In Progress, and Current Execution.
-- Six implementation subtasks are registered in this folder.
+- Six implementation subtasks are registered in this folder; subtask 01 is Done and subtasks 02–06 remain Ready.
 - The CI Ledger still has the defects identified during static audit; no remediation code has yet been changed.
 - No hosted workflow has been run or inspected for this implementation.
 
 ## 8. Remaining Work
-- All six subtasks remain incomplete.
+- Subtasks 02–06 remain incomplete.
 - Active flat task records have not yet been migrated.
 - Templates, generator, schema, skills, archive reader/writer, tests, and catalog have not yet been updated.
 - Hosted regression results remain intentionally unreviewed pending explicit user trigger.
 
 ## 9. Next Actions
-1. Implement canonical folder and subtask templates plus Worker lifecycle rules.
-2. Update Ledger task generation and task governance handoff.
+1. Update Ledger task generation and task governance handoff.
 3. Implement commit-based resolution and recurrence retention.
 4. Harden ingestion and report-index integrity.
 5. Migrate active tasks and update folder archive compatibility.

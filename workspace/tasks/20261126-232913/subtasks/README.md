@@ -6,7 +6,7 @@ Governing decision: [ADR-0004](../../../adr/0004-task-folders-subtasks-and-relia
 Each child is an independently tracked work unit with its own stable ID, type, status, acceptance criteria, evidence, and completion record. Parent completion is blocked until every required child is Done.
 
 ## Execution order
-1. [20261126-232913-01 — Task folder templates and Worker lifecycle](01-task-folder-templates-and-worker-lifecycle.md) — In Progress
+1. [20261126-232913-01 — Task folder templates and Worker lifecycle](01-task-folder-templates-and-worker-lifecycle.md) — Done
 2. [20261126-232913-02 — Ledger task generation and governance handoff](02-ledger-task-generation-and-governance.md) — Ready
 3. [20261126-232913-03 — Commit-based CI resolution and recurrence retention](03-ci-resolution-and-recurrence-retention.md) — Ready
 4. [20261126-232913-04 — Ingestion integrity and report-index hardening](04-ingestion-integrity-and-report-index-hardening.md) — Ready
