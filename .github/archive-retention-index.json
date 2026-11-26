@@ -725,6 +725,10 @@
     {
       "path": ".archive/reports/gh_ac_reports/history/427313089/45798838831-attempt-1-post_run/logs/job-139837019100.log",
       "archived_at_utc": "2026-11-26T16:55:13Z"
+    },
+    {
+      "path": ".archive/task/20261126-223106-promote-ci-ledger-skill-and-worker-batch-execution.md",
+      "archived_at_utc": "2026-11-26T22:34:07Z"
     }
   ]
 }
