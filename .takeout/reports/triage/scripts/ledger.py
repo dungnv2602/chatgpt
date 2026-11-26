@@ -136,7 +136,7 @@ def indexed_reports(root):
             attempt = row.get("attempt", 1)
             if not isinstance(attempt, int) or attempt < 1:
                 raise LedgerError("Invalid attempt in " + str(index_path))
-            base = root / "reports" / "lint_reports" / scope / "history"
+            base = root / ".takeout" / "reports" / "lint_reports" / scope / "history"
             candidates = [base / (run_id + "-attempt-" + str(attempt)) / "report.json", base / run_id / "report.json"]
             report_path = next((item for item in candidates if item.is_file()), None)
             if report_path is not None:
@@ -153,7 +153,7 @@ def indexed_reports(root):
             if not history:
                 continue
             history = safe_relative_path(history, "history/")
-            report_path = root / "reports" / "gh_ac_reports" / Path(*PurePosixPath(history).parts) / "report.json"
+            report_path = root / ".takeout" / "reports" / "gh_ac_reports" / Path(*PurePosixPath(history).parts) / "report.json"
             if report_path.is_file():
                 found.append(("github_actions", report_path.relative_to(root).as_posix(), row))
     unique = {path: (family, path, row) for family, path, row in found}
