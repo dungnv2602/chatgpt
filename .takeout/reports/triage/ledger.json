@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T09:06:13Z",
+  "updated_at_utc": "2026-11-26T09:20:07Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -79,7 +79,9 @@
       ".takeout/reports/gh_ac_reports/history/427313089/45787618873-attempt-1-pre_finalizer/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-pre_finalizer/report.json",
-      ".takeout/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-pre_finalizer/report.json"
+      ".takeout/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-pre_finalizer/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45789951589-attempt-1-pre_finalizer/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45790913652-attempt-1-pre_finalizer/report.json"
     ],
     "lint_baseline_scopes": {
       "on_changed": false,
