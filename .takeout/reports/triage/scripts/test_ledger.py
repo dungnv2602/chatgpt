@@ -304,7 +304,7 @@ class LedgerTests(unittest.TestCase):
         LEDGER.ingest(self.root)
         finding = self.read_ledger()["findings"][0]
         self.assertEqual(finding["occurrence_count"],2)
-        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*.md"))), 1)
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*/task.md"))), 1)
         self.assertEqual(finding["first_seen_utc"],"2026-11-23T07:10:00Z")
         self.assertEqual(finding["last_seen_utc"],"2026-11-23T07:20:00Z")
 
@@ -347,7 +347,7 @@ class LedgerTests(unittest.TestCase):
         unit_test_refs = [item["task_refs"][0] for item in findings if "Unit tests" in item["evidence"][0]["note"]]
         self.assertEqual(len(set(unit_test_refs)), 1)
         self.assertEqual(len(set(refs)), 2)
-        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*.md"))), 2)
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*/task.md"))), 2)
 
     def test_low_confidence_actions_error_always_creates_a_task(self):
         issue = {
@@ -360,7 +360,7 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(finding["severity"], "low")
         self.assertEqual(len(finding["task_refs"]), 1)
         self.assertEqual(result["tasks_created"], 1)
-        task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
+        task_files = list((self.root / "workspace" / "tasks").glob("*/task.md"))
         self.assertEqual(len(task_files), 1)
         self.assertIn(finding["finding_id"], task_files[0].read_text(encoding="utf-8"))
 
@@ -433,7 +433,7 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(len(finding["task_refs"]),1)
         self.assertEqual(result["tasks_created"],1)
         self.assertEqual(result["findings_created"],1)
-        task = next((self.root / "workspace" / "tasks").glob("*.md")).read_text(encoding="utf-8")
+        task = next((self.root / "workspace" / "tasks").glob("*/task.md")).read_text(encoding="utf-8")
         self.assertIn("Fix lint tooling check: Markdown links and heading anchors",task)
         self.assertIn("- **Priority:** P0",task)
         self.assertIn("- **Approval:** Pending — Worker review required",task)
@@ -466,7 +466,7 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(finding["occurrence_count"],2)
         self.assertEqual(len(finding["task_refs"]),1)
         self.assertEqual(result["tasks_created"],1)
-        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*.md"))),1)
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*/task.md"))),1)
         self.assertFalse(updated["ingestion_state"]["lint_baseline_scopes"]["on_changed"])
         self.assertFalse(updated["ingestion_state"]["lint_baseline_scopes"]["on_repo"])
 
@@ -510,8 +510,8 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(finding["occurrence_count"],2)
         self.assertEqual(len(finding["evidence"]),2)
         self.assertEqual(len(finding["task_refs"]), 1)
-        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*.md"))), 1)
-        task_text = next((self.root / "workspace" / "tasks").glob("*.md")).read_text(encoding="utf-8")
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*/task.md"))), 1)
+        task_text = next((self.root / "workspace" / "tasks").glob("*/task.md")).read_text(encoding="utf-8")
         self.assertIn("201-attempt-1-post_run/report.json", task_text)
         self.assertIn("202-attempt-1-post_run/report.json", task_text)
 
@@ -526,8 +526,8 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(second["tasks_created"], 0)
         self.assertEqual(second["tasks_updated"], 1)
         self.assertEqual({item["task_refs"][0] for item in findings}, {first_ref})
-        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*.md"))), 1)
-        task_text = next((self.root / "workspace" / "tasks").glob("*.md")).read_text(encoding="utf-8")
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*/task.md"))), 1)
+        task_text = next((self.root / "workspace" / "tasks").glob("*/task.md")).read_text(encoding="utf-8")
         self.assertIn("lint-aaaaaaaa1111", task_text)
         self.assertIn("lint-bbbbbbbb2222", task_text)
 
@@ -540,7 +540,7 @@ class LedgerTests(unittest.TestCase):
                         "blocking":True,"confidence":"high","message":"Assertion mismatch B"}
         self.add_actions("215","2026-11-23T08:00:00Z",[second_issue])
         result = LEDGER.ingest(self.root, now="2026-11-23T08:01:00Z")
-        task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
+        task_files = list((self.root / "workspace" / "tasks").glob("*/task.md"))
         self.assertEqual(len(task_files), 1)
         task_text = task_files[0].read_text(encoding="utf-8")
         self.assertIn("- **Priority:** P0", task_text)
@@ -550,7 +550,7 @@ class LedgerTests(unittest.TestCase):
         self.add_lint("on_changed", "213", "2026-11-23T07:55:00Z",
                       message="<script>alert(1)</script> [follow](javascript:run())")
         LEDGER.ingest(self.root, now="2026-11-23T07:56:00Z")
-        task = next((self.root / "workspace" / "tasks").glob("*.md")).read_text(encoding="utf-8")
+        task = next((self.root / "workspace" / "tasks").glob("*/task.md")).read_text(encoding="utf-8")
         self.assertIn("\\<script\\>", task)
         self.assertIn("\\[follow\\]", task)
         self.assertIn("untrusted evidence", task)
@@ -562,7 +562,7 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(finding["severity"], "low")
         self.assertEqual(len(finding["task_refs"]), 1)
         self.assertEqual(result["tasks_created"], 1)
-        task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
+        task_files = list((self.root / "workspace" / "tasks").glob("*/task.md"))
         self.assertEqual(len(task_files), 1)
         task_text = task_files[0].read_text(encoding="utf-8")
         self.assertIn("- **Priority:** P0", task_text)
@@ -672,7 +672,7 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(migrated["findings"][0]["task_group"], migrated["findings"][1]["task_group"])
         task_id = migrated["findings"][0]["task_refs"][0]
         self.assertEqual(migrated["findings"][1]["task_refs"], [task_id])
-        task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
+        task_files = list((self.root / "workspace" / "tasks").glob("*/task.md"))
         self.assertEqual(len(task_files), 1)
         task_text = task_files[0].read_text(encoding="utf-8")
         self.assertIn("lint-a1b2c3d4e5f6", task_text)
@@ -683,7 +683,7 @@ class LedgerTests(unittest.TestCase):
         LEDGER.ingest(self.root, now="2026-11-23T07:11:00Z")
         legacy = self.read_ledger()["findings"][0]
         self.assertEqual(legacy["task_refs"], [task_id])
-        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*.md"))), 1)
+        self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*/task.md"))), 1)
 
         self.add_lint("on_repo", "902", "2026-11-23T07:12:00Z", fingerprint="cccccccc3333")
         LEDGER.ingest(self.root, now="2026-11-23T07:13:00Z")
@@ -692,7 +692,7 @@ class LedgerTests(unittest.TestCase):
         legacy_after = next(item for item in migrated["findings"] if item["finding_id"] == "lint-a1b2c3d4e5f6")
         self.assertEqual(new_finding["task_refs"], [task_id])
         self.assertEqual(legacy_after["task_refs"], [task_id])
-        task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
+        task_files = list((self.root / "workspace" / "tasks").glob("*/task.md"))
         self.assertEqual(len(task_files), 1)
         task_text = task_files[0].read_text(encoding="utf-8")
         self.assertIn("lint-cccccccc3333", task_text)
