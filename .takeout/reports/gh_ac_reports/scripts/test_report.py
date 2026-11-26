@@ -303,10 +303,12 @@ class RunSweepPaginationTests(unittest.TestCase):
         self.assertEqual(len(result), 101)
         self.assertEqual(errors, [])
         urls = [call.args[1] for call in mocked_api.call_args_list]
-        self.assertIn("page=1", urls[0])
-        self.assertIn("page=2", urls[1])
-        self.assertEqual(urls[0].count("page="), 1)
-        self.assertEqual(urls[1].count("page="), 1)
+        from urllib.parse import parse_qs, urlparse
+        queries = [parse_qs(urlparse(url).query) for url in urls]
+        self.assertEqual(queries[0].get("page"), ["1"])
+        self.assertEqual(queries[1].get("page"), ["2"])
+        self.assertEqual(len(queries[0].get("page", [])), 1)
+        self.assertEqual(len(queries[1].get("page", [])), 1)
 
 
 class AnnotationPaginationTests(unittest.TestCase):
