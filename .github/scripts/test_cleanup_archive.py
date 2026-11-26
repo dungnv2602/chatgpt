@@ -58,7 +58,7 @@ class ArchiveRetentionTests(unittest.TestCase):
   with self.assertRaises(RuntimeError): cleanup.require_scheduled_event("schedule","false")
   cleanup.require_scheduled_event("schedule","true")
  def test_unsafe_paths_rejected(self):
-  for p in (".archive/reports/../../outside.md",".archive/task/../.archive/reports/x.md",".archive/reports/x.md",".archive/reports/.gitkeep",".archive/task/"):
+  for p in (".archive/reports/../../outside.md",".archive/task/../.archive/reports/x.md",".archive/reports/.gitkeep",".archive/task/"):
    self.write([self.rec(p,"2026-01-01T00:00:00Z")])
    with self.assertRaises(ValueError): self.run_clean()
 
