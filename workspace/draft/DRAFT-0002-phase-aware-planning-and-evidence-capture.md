@@ -489,7 +489,7 @@ Keep a findings note beside the active task while the task remains open.
 When the task closes:
 
 1. Include the relevant findings summary and source links in the final task record.
-2. Move the exact findings note to archive/tasks/YYYYMMDD-HHMMSS-findings.md with the task archive.
+2. Move the exact findings note to .archive/task/YYYYMMDD-HHMMSS-findings.md with the task archive.
 3. Register the task record and findings note as separate entries with their exact archive paths. Use the same UTC archive timestamp for both files in the existing retention index.
 4. Read back both archived files before deleting either active copy. If either archive write or read-back fails, keep both active records and reconcile the partial archive state.
 5. Keep both archive records under the existing task retention policy.
@@ -548,7 +548,7 @@ The CI Ledger remains the source of truth for CI finding lifecycle and evidence 
 | Findings template | Add a copy-ready research evidence format. | New `workspace/FINDINGS_TEMPLATE.md` | This Draft |
 | Task notes index | Define when and how to create task findings notes. | New `workspace/task-notes/README.md` | This Draft |
 | Workspace navigation | Link the optional findings format and note directory. | `workspace/README.md` | This Draft |
-| Archive contract | Define closeout for task findings notes under the existing task archive and retention policy. | `archive/README.md` | This Draft |
+| Archive contract | Define closeout for task findings notes under the existing task archive and retention policy. | `.archive/README.md` | This Draft |
 | Document catalog | Register the new template and optional task-note family. | `skills/document-standards/references/document-type-catalog.md` | This Draft |
 | CI Ledger renderer | Update exact template replacements for the new task structure. | `reports/triage/scripts/ledger.py` | This Draft |
 | CI Ledger regression tests | Verify generated tasks contain the current template structure and valid phase placeholders. | `reports/triage/scripts/test_ledger.py` | This Draft |
@@ -666,4 +666,4 @@ If the team later needs host-specific lifecycle automation, evaluate that capabi
 - Workspace navigation: `workspace/README.md`
 - Task renderer and tests: `reports/triage/scripts/ledger.py` and `reports/triage/scripts/test_ledger.py`
 - Document Type Catalog: `skills/document-standards/references/document-type-catalog.md`
-- Related accepted decision: [ADR-0001 — Establish Draft-to-ADR Governance and Repository Analysis](../../archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md). ADR-0001 governs the decision process and does not approve this proposal's substance or implementation.
+- Related accepted decision: [ADR-0001 — Establish Draft-to-ADR Governance and Repository Analysis](../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md). ADR-0001 governs the decision process and does not approve this proposal's substance or implementation.
