@@ -2,7 +2,7 @@
 name: github-actions
 description: Design, maintain, optimize, and secure GitHub Actions workflows. Use when work changes CI workflows, triggers, path filters, concurrency, incremental checks, caching, runners, permissions, artifacts, or deployment automation.
 metadata:
-  project-role: foundational
+  project-role: task-specific
   format: agentskills
 ---
 
