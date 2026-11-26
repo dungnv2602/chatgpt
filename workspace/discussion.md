@@ -2,8 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 06:44:14 UTC:** Close task `20261126-055004` per the user's instruction. Prepare the final archived task record, register its exact archive path and UTC timestamp, verify the archive, then remove the active record and move the board row to Historical. Record hosted tests as not run; do not claim test success.
-- **Active task:** [20261126-055004 — Adapt repository workflows to the refactor](tasks/20261126-055004-adapt-workflows-and-repair-refactor-breakage.md)
+_No active step._
 
 ## Open Discussions
 
@@ -11,4 +10,4 @@ _No open discussions._
 
 ## Reports
 
-_No reports._
+- **2026-11-26 06:44 UTC:** Completed the repository adaptation for the user's refactor. Updated the image processor, regression fixtures, GitHub Action, related skills and documentation, workspace navigation, and missing workspace tracking files. Preserved the absent root `README.md` and intentionally deleted paths. Targeted static path/link read-back completed; regression tests were not run at the user's direction. Task [20261126-055004](../.archive/task/20261126-055004-adapt-workflows-and-repair-refactor-breakage.md) is archived; archive commit [d610339](https://github.com/dungnv2602/chatgpt/commit/d610339cc90e5a97f0a15ca75ff7a2541ba8314e).
