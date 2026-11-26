@@ -80,7 +80,7 @@ Adapt repository workflows and documentation to the user's current refactor. Rep
 
 The root `README.md` and root `images/` directory remain absent. The workspace discussion register, task board, and active task record exist. The old image tree was relocated to `.takeout/images/`; the active hand-off file remains deleted. The processor, tests, workflow, image guides, Worker/Drawing/novel instructions, session-start paths, and catalog history rule now use the relocated layout. General shared assets use `.takeout/images/original/` and `.takeout/images/webp/`; project-specific `area/drawing/` and `area/novel/` destinations remain unchanged. The workspace ADR index no longer links to archived ADR files removed from the branch. DRAFT-0003 remains in review and is not being implemented.
 
-## 8\. Remaining Work
+## 8. Remaining Work
 
 - Await explicit user authorization before manually dispatching the hosted image-processing regression workflow. Do not run repository scripts locally or poll CI.
 - A full repository-wide link/path audit was not performed; the completed audit was limited to relevant workflow, image, navigation, and project documentation paths.
@@ -104,7 +104,7 @@ The root `README.md` and root `images/` directory remain absent. The workspace d
 - `workspace/TASK_TEMPLATE.md`
 - `workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md`
 
-## 11\. Verification
+## 11. Verification
 
 - **Check:** Repository roots, workspace tracking files, relevant README links, image intake/storage paths, workflow filters, processor paths, and regression fixtures.
 - **Method:** Read back the exact changed files from branch `gpt`; inspect exact directory listings and resolve relevant README link targets.
@@ -112,7 +112,7 @@ The root `README.md` and root `images/` directory remain absent. The workspace d
 - **Limitations:** The unit test suite was not executed and no workflow was manually dispatched; the GitHub Actions skill requires an explicit user request for manual dispatch and prohibits local execution or CI polling. No full-repository audit was performed. `.archive/README.md` was left unchanged because the archive policy marks it read-only.
 
 
-## 12\. Handoff Instructions
+## 12. Handoff Instructions
 
 Continue on branch `gpt`. Preserve the user's refactor. Do not create a root `README.md`, restore root `images/`, recreate the deleted hand-off, recreate the global image reference index, restore deleted archived ADRs, or implement DRAFT-0003. The image processor and Action now target `.takeout/images/`; shared originals and WebP derivatives are stored in `original/` and `webp/`. If the user authorizes hosted regression validation, dispatch the image workflow once and report only the result returned by the host. Do not run repository scripts locally or poll CI. Expand to a full repository-wide audit only if explicitly requested.
 
