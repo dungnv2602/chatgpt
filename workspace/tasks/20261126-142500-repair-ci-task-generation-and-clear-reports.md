@@ -161,3 +161,10 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Action:** Run 891 on commit 252168c still failed with eight Ledger errors despite fixture normalization. Re-examining `upsert_task_board_row` revealed its serializer was using literal backslash-n strings (`\\n`) as join separators and suffix, producing a one-line escaped board after the first write; subsequent status section lookup then failed.
 - **Repair:** Corrected the writer to join and terminate with actual newline characters. Commit `8d92e78`.
 - **Verification:** Commit readback confirmed the code edit. CI run 571 was queued at inspection; validation is pending.
+
+
+### 2026-11-26 — post-writer regression-test fixture isolation
+
+- **Validation:** Runs 572 and 892 passed on `8d92e78`, confirming the task-board newline serialization fix. The next Diagnostics capture then exposed two failing regression tests which depended on the Proposed section being empty, but the shared board fixture was populated by a generated task.
+- **Repair:** Tests now remove the contents of the Proposed section in their copied fixture (leaving the section intentionally malformed) so both fail-closed and rollback assertions are isolated from live task-board data. Commits `899e6a1` and `ec3ba4d` (the latter corrected newline literals in the test fixture edit).
+- **Validation:** CI runs 573/893 were pending/in progress at last check; runs 574/894 for the latest commit were pending. Await validation.
