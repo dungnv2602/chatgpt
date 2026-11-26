@@ -1,0 +1,2 @@
+
+failed to get run: HTTP 403: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 3044:1C8C72:242AC9D:716E1BF:6B07BF4E and timestamp 2026-11-26 05:10:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (https://api.github.com/repos/dungnv2602/chatgpt/actions/runs/45305320198?exclude_pull_requests=true)

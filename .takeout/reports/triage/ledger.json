@@ -1,11 +1,23 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T05:09:13Z",
+  "updated_at_utc": "2026-11-26T05:11:38Z",
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-23T23:38:33Z",
     "processed_reports": [
+      ".takeout/reports/gh_ac_reports/history/422582294/45301729064-attempt-1-post_run-capture-2/report.json",
+      ".takeout/reports/gh_ac_reports/history/422582294/45305320198-attempt-1-post_run-capture-2/report.json",
+      ".takeout/reports/gh_ac_reports/history/424715662/45301729061-attempt-1-post_run-capture-2/report.json",
+      ".takeout/reports/gh_ac_reports/history/424715662/45304735363-attempt-1-post_run-capture-2/report.json",
       ".takeout/reports/gh_ac_reports/history/424715662/45756856341-attempt-1-pre_finalizer/report.json",
+      ".takeout/reports/gh_ac_reports/history/424743410/45301729199-attempt-1-post_run-capture-2/report.json",
       ".takeout/reports/gh_ac_reports/history/424743410/45757269291-attempt-1-pre_finalizer/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45290888511-attempt-1-post_run-capture-2/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45291556980-attempt-1-post_run-capture-2/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45291707545-attempt-1-post_run-capture-2/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45291889123-attempt-1-post_run-capture-2/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45299977577-attempt-1-post_run-capture-2/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45300070738-attempt-1-post_run-capture-2/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45300893308-attempt-1-post_run-capture-2/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45753716418-attempt-1-pre_finalizer/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45753830324-attempt-1-pre_finalizer/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45753983771-attempt-1-pre_finalizer/report.json",
@@ -2136,13 +2148,20 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T06:15:41Z",
-      "last_seen_utc": "2026-11-24T06:15:41Z",
+      "last_seen_utc": "2026-11-26T05:09:49Z",
       "occurrence_count": 1,
       "evidence": [
         {
           "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45290888511-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45290888511",
           "observed_at_utc": "2026-11-24T06:15:41Z",
+          "note": "validate-document-standards / Validate the document type catalog",
+          "observation_id": "github_actions:427313089:45290888511:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45290888511-attempt-1-post_run-capture-2/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45290888511",
+          "observed_at_utc": "2026-11-26T05:09:49Z",
           "note": "validate-document-standards / Validate the document type catalog",
           "observation_id": "github_actions:427313089:45290888511:1"
         }
@@ -2165,8 +2184,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T06:15:45Z",
-      "last_seen_utc": "2026-11-24T06:16:06Z",
-      "occurrence_count": 6,
+      "last_seen_utc": "2026-11-26T05:10:12Z",
+      "occurrence_count": 11,
       "evidence": [
         {
           "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45291556980-attempt-1-post_run/report.json",
@@ -2176,30 +2195,30 @@
           "observation_id": "github_actions:427313089:45291556980:1"
         },
         {
-          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45291889123-attempt-1-post_run/report.json",
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45291889123-attempt-1-post_run-capture-2/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45291889123",
-          "observed_at_utc": "2026-11-24T06:15:52Z",
+          "observed_at_utc": "2026-11-26T05:09:58Z",
           "note": "validate-document-standards / Validate the document type catalog",
           "observation_id": "github_actions:427313089:45291889123:1"
         },
         {
-          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45299977577-attempt-1-post_run/report.json",
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45299977577-attempt-1-post_run-capture-2/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45299977577",
-          "observed_at_utc": "2026-11-24T06:15:56Z",
+          "observed_at_utc": "2026-11-26T05:10:02Z",
           "note": "validate-document-standards / Validate the document type catalog",
           "observation_id": "github_actions:427313089:45299977577:1"
         },
         {
-          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45300070738-attempt-1-post_run/report.json",
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45300070738-attempt-1-post_run-capture-2/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45300070738",
-          "observed_at_utc": "2026-11-24T06:16:03Z",
+          "observed_at_utc": "2026-11-26T05:10:08Z",
           "note": "validate-document-standards / Validate the document type catalog",
           "observation_id": "github_actions:427313089:45300070738:1"
         },
         {
-          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45300893308-attempt-1-post_run/report.json",
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45300893308-attempt-1-post_run-capture-2/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45300893308",
-          "observed_at_utc": "2026-11-24T06:16:06Z",
+          "observed_at_utc": "2026-11-26T05:10:12Z",
           "note": "validate-document-standards / Validate the document type catalog",
           "observation_id": "github_actions:427313089:45300893308:1"
         }
@@ -2222,7 +2241,7 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-24T06:16:18Z",
-      "last_seen_utc": "2026-11-24T06:17:01Z",
+      "last_seen_utc": "2026-11-26T05:10:23Z",
       "occurrence_count": 4,
       "evidence": [
         {
@@ -2252,6 +2271,13 @@
           "observed_at_utc": "2026-11-24T06:17:01Z",
           "note": "process-image-takeout / Test takeout processor",
           "observation_id": "github_actions:422582294:45309899583:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/422582294/45301729064-attempt-1-post_run-capture-2/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45301729064",
+          "observed_at_utc": "2026-11-26T05:10:23Z",
+          "note": "process-image-takeout / Test takeout processor",
+          "observation_id": "github_actions:422582294:45301729064:1"
         }
       ],
       "resolution": null,

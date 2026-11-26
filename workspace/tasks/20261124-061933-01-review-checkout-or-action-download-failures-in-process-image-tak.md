@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-061933-01
 - **Created:** 2026-11-24 06:19 UTC
-- **Updated:** 2026-11-24 06:19 UTC
+- **Updated:** 2026-11-26 05:11 UTC
 - **Priority:** P2
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -90,4 +90,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `gha-f34a95e58305415a6edff0da` | medium | Process Image Takeout and Create WebP Derivatives / process-image-takeout / Test takeout processor: checkout\_or\_action\_download — process-image-takeout unknown step \<timestamp\> traceback \(most recent call last\): | [report](../../reports/gh_ac_reports/history/422582294/45301729064-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45301729064) · [report](../../reports/gh_ac_reports/history/422582294/45305320198-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45305320198) · [report](../../reports/gh_ac_reports/history/422582294/45306543050-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45306543050) · [report](../../reports/gh_ac_reports/history/422582294/45309899583-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45309899583) |
+| `gha-f34a95e58305415a6edff0da` | medium | Process Image Takeout and Create WebP Derivatives / process-image-takeout / Test takeout processor: checkout\_or\_action\_download — process-image-takeout unknown step \<timestamp\> traceback \(most recent call last\): | [report](../../.takeout/reports/gh_ac_reports/history/422582294/45301729064-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45301729064) · [report](../../.takeout/reports/gh_ac_reports/history/422582294/45305320198-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45305320198) · [report](../../.takeout/reports/gh_ac_reports/history/422582294/45306543050-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45306543050) · [report](../../.takeout/reports/gh_ac_reports/history/422582294/45309899583-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45309899583) · [report](../../.takeout/reports/gh_ac_reports/history/422582294/45301729064-attempt-1-post_run-capture-2/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45301729064) |
