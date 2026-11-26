@@ -158,3 +158,10 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Finding:** Initialization policy, central report README, and central image README still carried unprefixed reconstructed report/archive/project paths. Document Standards Skill examples also referenced the old novel-template root.
 - **Repair:** Updated these references to `.takeout/reports/`, `.archive/reports/`, `area/drawing/`, and `area/novel/`. Repaired the active initialization policy and project-template example.
 - **Verification:** Read back the modified references. This is targeted static verification; no validator or hosted workflow run occurred.
+
+
+### 2026-11-26 — Worker and image-script reference cleanup
+
+- **Finding:** Final targeted inspection identified malformed archive spacing in Worker boundaries and extra whitespace in image-script command paths, plus plural-root terminology that conflicted with the reconstructed `area/novel/` root.
+- **Repair:** Normalized archive references, corrected command path spacing, and updated the novel-root wording.
+- **Verification:** Read back both references after edits. Script execution and CI remain unavailable under the remote-only workflow.
