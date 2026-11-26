@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-021200
 - **Created:** 2026-11-26 02:12 UTC
-- **Updated:** 2026-11-26 03:50 UTC
+- **Updated:** 2026-11-26 04:00 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -62,10 +62,10 @@ Task created and selected as current execution; the board was updated. The proce
 
 ## 8. Remaining Work
 
-- Complete the cross-reference scan of all active Markdown references under `.agent/skills/`.
 - Determine the exact scope and disposition of missing task-board record links without restoring files or reading archive contents.
 - Check the Document Type Catalog path-coverage rules against the reconstructed tree.
 - Audit remaining workflow path assumptions, triggers, permissions, exclusions, and script callers.
+- Review remaining active scripts and their dependency contracts.
 - Validate using available remote evidence; local execution and hosted CI remain unavailable.
 
 ## 9. Next Actions
@@ -199,3 +199,13 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Commits:** `166228460bc6b1c80a7e81957a1349917a053f33`, `2e6f3362556b456194fdc120f027bf902fe0b70e`, `b25a64226c54ed2b5a57fe7c4d7cdeb9984418e1`, `d8b827434fa31eff5c89da444353e792354a5a55`, `51b716381de437707e7e5a29ae5d0a1d73bbbee4`, `a9de30509fb8800c595915fa97c494cd32b435b6`.
 - **Separate finding:** The task board contains 153 links to 152 unique task records. The current `workspace/tasks/` directory contains only two task records and `.gitkeep`, leaving 150 linked task paths absent from that active directory. The workspace root has no alternate active task-record directory. No missing record was recreated, no board row was deleted, and no archive contents were read. The correct disposition needs evidence of the records' intended locations or a user decision.
 - **Next:** Continue the cross-reference scan of all remaining skill reference Markdown files. Keep the task-board record gap open.
+
+
+### 2026-11-26 04:00 UTC — Skill reference cross-link audit and repair
+
+- **Audit scope:** Read and checked local Markdown link targets across all 81 Markdown files under `.agent/skills/`, including skill definitions, references, templates, examples, and navigation files. The scan checked repository-relative path resolution. It did not validate heading anchors, external URLs, or non-Markdown path strings.
+- **Findings:** Found stale links from Drawing references to the Worker skill, from pattern indexes to the former `drawings/` root, from Novel Production Workflow references to the former project path depth, and from image-provenance guidance to the former `.github/` path depth.
+- **Repair:** Updated five files: `archive-and-delivery.md`, `patterns/failure-patterns.md`, `patterns/successful-patterns.md`, `novel-production-workflow.md`, and `image-provenance-and-webp.md`. Kept source prompt records and attempts in their current `area/drawing/` locations. Did not recreate old `drawings/` files.
+- **Verification:** Fetched all five changed files after their commits. Rechecked each local Markdown link. Internal skill targets resolved, and external targets resolved to previously confirmed current files. A template placeholder `{run_url}` was excluded as an intentional unresolved token. No repository tests or hosted Actions were run.
+- **Commits:** `e43bd45797193ee01cd200d56752cc068bf953bd`, `718e05790c46e815d828427bbc5acc4a13b041f8`, `c3341e96e578d25941489ca2e1fe53b8dec8b881`, `f88f39776b5499a53cf58e82505d633deeb29d9f`, `e9a158a10a15f5c865da4feff79e68564b91bab7`.
+- **Next:** Audit the Document Type Catalog's active/reserved/optional path rules against the reconstructed tree. The 150 missing task-board record targets remain unresolved.
