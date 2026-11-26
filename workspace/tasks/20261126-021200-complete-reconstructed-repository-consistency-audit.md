@@ -160,7 +160,7 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Verification:** Read back the modified references. This is targeted static verification; no validator or hosted workflow run occurred.
 
 
-### 2026-11-26 05:25 UTC — Full pre-deletion data recovery; previous missing-record count superseded
+### 2026-11-26 05:11 UTC — Full pre-deletion data recovery; previous missing-record count superseded
 
 - **Root cause confirmed:** Branch-specific Git history shows commit `36d0236ca5b49067b6108e5aa29194cfb56794b6` (`delete`) removed 300 tracked files and 568,927 lines. Its direct parent `53dd5e7b0bfba0d26e7e10952704cffdcc6e2b6f` contains the complete pre-deletion canonical data tree. Earlier path-history checks that omitted `sha=gpt` were incomplete; the 72 task records were in fact committed on `gpt` and deleted by that commit.
 - **Recovery:** Restored all 1,311 missing canonical blobs from the direct parent tree and updated 14 existing blobs to the exact pre-deletion versions: 1,238 `.takeout/reports/` files, 72 `workspace/tasks/` files, one `.archive/task/` file, 13 updated active task records, and the canonical Ledger. Kept post-deletion report outputs and all audit/code changes that already existed in the current tree. No legacy `archive/` directories were recreated. Commit: `99de4ef7d7a4f43499d838b299731ba5218d17ab`.
