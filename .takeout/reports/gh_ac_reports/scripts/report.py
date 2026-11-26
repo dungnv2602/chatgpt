@@ -598,20 +598,31 @@ def index_record(report):
     }
 
 
+def write_integrity_manifest(target, captured_at_utc):
+    """Hash canonical report JSON and captured logs, excluding the manifest itself."""
+    files = {
+        path.relative_to(target).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in sorted(target.rglob("*"))
+        if path.is_file() and path.name != "integrity.json"
+    }
+    save_json(target / "integrity.json", {
+        "schema_version": SCHEMA_VERSION,
+        "captured_at_utc": captured_at_utc,
+        "file_count": len(files),
+        "files": files,
+    })
+
+
 def update_indexes(root, report):
+    """Update the sole repository-wide index and its latest-report pointer."""
     record = index_record(report)
     index = load_index(root)
     if not any(item.get("history_path") == record["history_path"] for item in index["runs"]):
         index["runs"].append(record)
     index["runs"].sort(key=sort_key, reverse=True)
     index["runs"] = index["runs"][:1000]
-    latest = index["runs"][0] if index["runs"] else None
-    old = index.get("latest_report")
-    if latest and (old is None or sort_key(latest) > sort_key(old)):
-        index["latest_report"] = latest
-        source = root / latest["history_path"]
-        shutil.copyfile(source / "report.md", root / "latest-gh-ac-report.md")
-        shutil.copyfile(source / "report.json", root / "latest-gh-ac-report.json")
+    index["latest_report"] = index["runs"][0] if index["runs"] else None
+
     pending = set(str(x) for x in index.get("pending_run_ids", []))
     run_id = report["source_run"]["id"]
     if report["source_run"]["status"] != "completed":
@@ -622,24 +633,6 @@ def update_indexes(root, report):
         pending.add(run_id)
     index["pending_run_ids"] = sorted(pending, key=lambda x: int(x), reverse=True)
     save_json(root / "index.json", index)
-
-    wf_root = root / "by_workflow" / str(record["workflow_id"])
-    wf_index_path = wf_root / "index.json"
-    wf_index = json.loads(wf_index_path.read_text(encoding="utf-8")) if wf_index_path.is_file() else {
-        "schema_version": SCHEMA_VERSION, "runs": [], "latest_report": None}
-    if not any(item.get("history_path") == record["history_path"] for item in wf_index["runs"]):
-        wf_index["runs"].append(record)
-    wf_index["runs"].sort(key=sort_key, reverse=True)
-    wf_index["runs"] = wf_index["runs"][:500]
-    wf_latest = wf_index["runs"][0] if wf_index["runs"] else None
-    previous = wf_index.get("latest_report")
-    if wf_latest and (previous is None or sort_key(wf_latest) > sort_key(previous)):
-        wf_index["latest_report"] = wf_latest
-        source = root / wf_latest["history_path"]
-        wf_root.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(source / "report.md", wf_root / "latest-report.md")
-        shutil.copyfile(source / "report.json", wf_root / "latest-report.json")
-    save_json(wf_index_path, wf_index)
 
 
 def write_report(root, report, log_files):
@@ -660,16 +653,8 @@ def write_report(root, report, log_files):
         path = target / relative
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(value, encoding="utf-8")
-    (target / "report.md").write_text(render_markdown(report), encoding="utf-8")
     (target / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    hashes = {
-        path.relative_to(target).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
-        for path in sorted(target.rglob("*")) if path.is_file()
-    }
-    save_json(target / "integrity.json", {
-        "schema_version": SCHEMA_VERSION, "captured_at_utc": report["capture"]["captured_at_utc"],
-        "file_count": len(hashes), "files": hashes,
-    })
+    write_integrity_manifest(target, report["capture"]["captured_at_utc"])
     update_indexes(root, report)
     return target
 
@@ -685,10 +670,11 @@ def report_is_retained(report):
 
 
 def prune_invalid_history(root):
-    """Remove legacy captures outside the error-only post-run retention contract and rebuild indexes."""
+    """Apply error-only retention and migrate retained captures to the canonical layout."""
     history_root = root / "history"
     retained_reports = []
     removed = 0
+    migrated = 0
     if history_root.is_dir():
         for report_path in sorted(history_root.glob("*/*/report.json")):
             report = json.loads(report_path.read_text(encoding="utf-8"))
@@ -699,6 +685,11 @@ def prune_invalid_history(root):
                 removed += 1
                 continue
             retained_reports.append(report)
+            markdown_path = folder / "report.md"
+            if markdown_path.exists():
+                markdown_path.unlink()
+                migrated += 1
+            write_integrity_manifest(folder, report["capture"]["captured_at_utc"])
 
     index = load_index(root)
     records = [index_record(report) for report in retained_reports]
@@ -706,42 +697,34 @@ def prune_invalid_history(root):
     index["runs"] = records[:1000]
     index["latest_report"] = index["runs"][0] if index["runs"] else None
     save_json(root / "index.json", index)
-    if index["latest_report"]:
-        latest_dir = root / index["latest_report"]["history_path"]
-        shutil.copyfile(latest_dir / "report.md", root / "latest-gh-ac-report.md")
-        shutil.copyfile(latest_dir / "report.json", root / "latest-gh-ac-report.json")
-    else:
-        for name in ("latest-gh-ac-report.md", "latest-gh-ac-report.json"):
-            (root / name).unlink(missing_ok=True)
 
+    # Remove only derived navigation copies. Canonical history JSON and logs remain in place.
+    for name in ("latest-gh-ac-report.md", "latest-gh-ac-report.json"):
+        (root / name).unlink(missing_ok=True)
     workflow_root = root / "by_workflow"
-    if workflow_root.is_dir():
-        for child in workflow_root.iterdir():
-            if child.is_dir():
-                shutil.rmtree(child)
-            else:
-                child.unlink()
-    grouped = {}
-    for report in retained_reports:
-        grouped.setdefault(str(report["source_run"]["workflow_id"]), []).append(report)
-    for workflow_id, reports in grouped.items():
-        reports.sort(key=lambda item: sort_key(index_record(item)), reverse=True)
-        records = [index_record(item) for item in reports[:500]]
-        latest = reports[0]
-        folder = workflow_root / workflow_id
-        folder.mkdir(parents=True, exist_ok=True)
-        save_json(folder / "index.json", {
-            "schema_version": SCHEMA_VERSION, "runs": records,
-            "latest_report": records[0] if records else None,
-        })
-        shutil.copyfile(root / latest["history_path"] / "report.md", folder / "latest-report.md")
-        shutil.copyfile(root / latest["history_path"] / "report.json", folder / "latest-report.json")
+    if workflow_root.exists():
+        shutil.rmtree(workflow_root)
 
     if history_root.is_dir():
         for child in history_root.iterdir():
             if child.is_dir() and not any(child.iterdir()):
                 child.rmdir()
-    return {"removed": removed, "retained": len(retained_reports)}
+    return {"removed": removed, "retained": len(retained_reports), "migrated_markdown": migrated}
+
+
+def render_report(root, history_path):
+    """Render one canonical report JSON file as Markdown without persisting a copy."""
+    root = root.resolve()
+    relative = Path(str(history_path))
+    if relative.is_absolute() or ".." in relative.parts:
+        raise ValueError("History path must be a repository-relative history path.")
+    report_path = (root / relative / "report.json").resolve()
+    if root not in report_path.parents or not report_path.is_file():
+        raise FileNotFoundError("Canonical report JSON was not found for " + str(history_path))
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    if report.get("history_path") != relative.as_posix():
+        raise ValueError("Canonical report history_path does not match the requested path.")
+    return render_markdown(report)
 
 
 def capture_rows(index, run_id, attempt, stage):
@@ -963,11 +946,29 @@ def run_sweep(repo, root):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--mode", choices=("current", "sweep"), required=True)
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument("--mode", choices=("current", "sweep"))
+    mode.add_argument("--render", metavar="HISTORY_PATH",
+                      help="render one canonical history report to stdout")
+    mode.add_argument("--render-latest", action="store_true",
+                      help="render the report selected by index.json to stdout")
     parser.add_argument("--repo", default=os.environ.get("GITHUB_REPOSITORY"))
     parser.add_argument("--run-id", default=os.environ.get("GITHUB_RUN_ID"))
     parser.add_argument("--root", type=Path, default=ROOT)
     args = parser.parse_args()
+
+    if args.render is not None or args.render_latest:
+        history_path = args.render
+        if args.render_latest:
+            latest = load_index(args.root).get("latest_report")
+            if not latest:
+                parser.error("index.json does not contain a latest report.")
+            history_path = latest.get("history_path")
+            if not history_path:
+                parser.error("The latest-report index entry has no history_path.")
+        print(render_report(args.root, history_path), end="")
+        return
+
     if not args.repo or "/" not in args.repo:
         parser.error("GITHUB_REPOSITORY or --repo must be owner/repository")
     if args.mode == "current":
