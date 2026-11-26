@@ -35,7 +35,7 @@ Load this skill and its required references when:
 - The user requests drawing work that requires this workflow.
 - The user activates the novelist role. Drawing is a prerequisite for the novelist workflow.
 
-For `start a drawing session`, follow the cue and dependency procedure in `skills/SESSION_START.md`. If foundational initialization has not passed in the current conversation, complete it first. Reuse all verified foundational files.
+For `start a drawing session`, follow the cue and dependency procedure in `.agent/skills/SESSION_START.md`. If foundational initialization has not passed in the current conversation, complete it first. Reuse all verified foundational files.
 
 Check the per-conversation verified-load ledger before retrieving this skill or either required reference. If a path is already verified, reuse it. Load `references/style-guide.md` and `references/image-editing-protocol.md` once per conversation, not once per drawing session or role. Load other Drawing references only when their documented task triggers apply. Moving from Drawing to Novelist, or back to Drawing, does not justify reloading files already verified.
 
@@ -134,13 +134,13 @@ ink, and 3D gloss.
 
 ### Canonical record templates
 
-Use the session-brief template at `skills/the-worker/assets/session-brief-template.md`.
+Use the session-brief template at `.agent/skills/the-worker/assets/session-brief-template.md`.
 
-Use the daily index template at `skills/drawing/assets/daily-index-template.md`.
+Use the daily index template at `.agent/skills/drawing/assets/daily-index-template.md`.
 
-Use the attempt template at `skills/drawing/assets/attempt-template.md`.
+Use the attempt template at `.agent/skills/drawing/assets/attempt-template.md`.
 
-For novel illustrations, use the scene-local templates in `novels/templates/`. Do not duplicate novel prompt histories in the daily drawing index.
+For novel illustrations, use the scene-local templates in `area/novel/templates/`. Do not duplicate novel prompt histories in the daily drawing index.
 
 ### Skill-loading cadence
 
@@ -187,7 +187,7 @@ This session-level loading cadence does not reduce any per-attempt requirement b
 ### Pattern consultation checkpoint
 
 The canonical pattern library is packaged under
-`skills/drawing/references/patterns/`. Consult it as part of the drawing
+`.agent/skills/drawing/references/patterns/`. Consult it as part of the drawing
 workflow, while avoiding redundant retrievals.
 
 1. **Load once per conversation.** On the first drawing task in a new
@@ -229,11 +229,11 @@ The user's opening brief for a specific drawing session is the source of truth f
    distinguish what is explicitly specified from what remains open for creative
    choice. Do not turn unstated details into permanent locks.
 2. For non-novel/day drawing, use the session brief stored under
-   `drawings/YYYY-MM-DD/session-[NN]-brief.md`. For a named novel scene, use the
+   `area/drawing/YYYY-MM-DD/session-[NN]-brief.md`. For a named novel scene, use the
    scene-local session brief under
-   `novels/[Novel-ID]/[Arc-Folder]/[Scene-Folder]/illustrations/session-[YYYY-MM-DD]-[NN]-brief.md`.
+   `area/novel/[Novel-ID]/[Arc-Folder]/[Scene-Folder]/illustrations/session-[YYYY-MM-DD]-[NN]-brief.md`.
    The authoritative storage and verification procedure is in
-   `skills/the-worker/references/archive-records-and-image-prompts.md`.
+   `.agent/skills/the-worker/references/archive-records-and-image-prompts.md`.
 3. Record the subject/theme, scene or moment, selected mode, character
    appearance, outfit, pose, framing, environment, lighting, and mood in the
    session brief. Also record continuity requirements, locked features,
@@ -287,18 +287,18 @@ essential to the picture.
 
 ### Generated-output storage
 
-For non-novel/day drawing sessions, store repository-retained generated image outputs in the current daily session folder at `drawings/YYYY-MM-DD/images/`. Use `attempt-XX.webp` for one output from an attempt, and `attempt-XX-01.webp`, `attempt-XX-02.webp`, etc. when an attempt returns multiple images. Deliver images in the conversation as usual. When the exact output asset is stored in the repository, link it from the attempt record and daily README. Use a relative path such as `images/attempt-07.webp`. Only link assets whose attempt provenance is verified. Do not create empty image folders solely for rejected or output-less attempts. This policy applies to new retained outputs. It does not authorize migrating, moving, renaming, or deleting existing image assets. Novel-scene illustration binaries continue to use their established scene-local asset library.
+For non-novel/day drawing sessions, store repository-retained generated image outputs in the current daily session folder at `area/drawing/YYYY-MM-DD/images/`. Use `attempt-XX.webp` for one output from an attempt, and `attempt-XX-01.webp`, `attempt-XX-02.webp`, etc. when an attempt returns multiple images. Deliver images in the conversation as usual. When the exact output asset is stored in the repository, link it from the attempt record and daily README. Use a relative path such as `images/attempt-07.webp`. Only link assets whose attempt provenance is verified. Do not create empty image folders solely for rejected or output-less attempts. This policy applies to new retained outputs. It does not authorize migrating, moving, renaming, or deleting existing image assets. Novel-scene illustration binaries continue to use their established scene-local asset library.
 
 ### C. Prepare and archive the prompt
 Before every generation or edit attempt:
 1. Follow The Worker's `references/archive-records-and-image-prompts.md` and the applicable prompt-fidelity and provenance references.
 2. Read the active session-opening brief first. For a named novel scene, also
    read the relevant scene-local scene and illustration records. For non-novel
-   work, read the session brief under `drawings/YYYY-MM-DD/`. The session brief
+   work, read the session brief under `area/drawing/YYYY-MM-DD/`. The session brief
    governs visual direction. Scene records supply narrative facts only where the
    brief asks the illustration to follow or adapt them.
 3. Review the relevant daily attempt ledger at
-   `drawings/YYYY-MM-DD/README.md` and the chronological prompt history for the
+   `area/drawing/YYYY-MM-DD/README.md` and the chronological prompt history for the
    same session. If the user explicitly continues a series, review that series'
    history. Use the ledger only to locate candidate attempts. Check every
    candidate's series membership, outcome, approval, and prompt/output linkage
@@ -339,11 +339,11 @@ Before every generation or edit attempt:
 
 For every illustration belonging to a named novel scene, keep a convenient
 scene-local prompt record beside its illustration note:
-`novels/[Novel-ID]/[Arc-Folder]/[Scene-Folder]/illustrations/illustration-[NN]-prompt.md`.
+`area/novel/[Novel-ID]/[Arc-Folder]/[Scene-Folder]/illustrations/illustration-[NN]-prompt.md`.
 Create and commit this file before generation. For novel illustrations, this
 scene-local file is the authoritative prompt and attempt record. Keep all
 novel-specific prompt history inside the novel and do not duplicate it in the
-root `drawings/` folder. Link the local prompt from the illustration note and
+root `area/drawing/` folder. Link the local prompt from the illustration note and
 scene record where practical. Do not replace one
 with the other.
 
