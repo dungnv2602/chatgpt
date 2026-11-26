@@ -48,11 +48,11 @@ class MarkdownAnchorTests(unittest.TestCase):
         )
 
     def test_heading_slug_preserves_underscores_inside_code_spans(self):
-        anchors = MODULE.heading_anchors("### Step D: Log Every Test Run & Self-Healing Fix (`test_heal` Bucket)\\n")
+        anchors = MODULE.heading_anchors("### Step D: Log Every Test Run & Self-Healing Fix (`test_heal` Bucket)")
         self.assertIn("step-d-log-every-test-run--self-healing-fix-test_heal-bucket", anchors)
 
     def test_heading_slug_retains_plus_signs(self):
-        anchors = MODULE.heading_anchors("## Template H — ReAct + Stop Conditions\\n")
+        anchors = MODULE.heading_anchors("## Template H — ReAct + Stop Conditions")
         self.assertIn("template-h--react-+-stop-conditions", anchors)
 
 
