@@ -1619,7 +1619,7 @@ def main() -> int:
                 "master_path": item["master"].relative_to(root).as_posix(),
                 "webp_path": item["webp"].relative_to(root).as_posix(),
                 "manifest_path": (
-                    f"area/drawing/{item['directory'].relative_to(root).parts[1]}/manifest.csv"
+                    f"area/drawing/{item['directory'].relative_to(root).parts[2]}/manifest.csv"
                     if item.get("attempt") else ""
                 ),
                 "staging_webp_path": item.get("stage_path", ""),
@@ -1717,7 +1717,7 @@ def main() -> int:
                 "master_path": item["master"].relative_to(root).as_posix(),
                 "webp_path": item["webp"].relative_to(root).as_posix(),
                 "manifest_path": (
-                    f"area/drawing/{item['directory'].relative_to(root).parts[1]}/manifest.csv"
+                    f"area/drawing/{item['directory'].relative_to(root).parts[2]}/manifest.csv"
                     if item.get("attempt") else ""
                 ),
                 "staging_webp_path": item.get("stage_path", ""),
