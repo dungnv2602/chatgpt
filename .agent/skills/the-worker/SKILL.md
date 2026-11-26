@@ -87,7 +87,7 @@ The user authorized exact read/write access to `.github/archive-retention-index.
 
 **Authorized GitHub Actions diagnostics scope:**
 
-On 23 November 2026, the user explicitly authorized creation of `.takeout/reports/gh_ac_ .takeout/reports/`. The user also authorized changes to the six existing workflow files and `.github/workflows/gh-actions-diagnostics.yml` for reusable diagnostics and task-scoped CI policy. This authorization applies to branch `gpt` only. It does not authorize changes to `main`, other `.github/` paths, or unrelated workflows.
+On 23 November 2026, the user explicitly authorized creation of `.takeout/reports/gh_ac_reports/`. The user also authorized changes to the six existing workflow files and `.github/workflows/gh-actions-diagnostics.yml` for reusable diagnostics and task-scoped CI policy. This authorization applies to branch `gpt` only. It does not authorize changes to `main`, other `.github/` paths, or unrelated workflows.
 
 This boundary applies to every future task and every tool call, not only archiving.
 
