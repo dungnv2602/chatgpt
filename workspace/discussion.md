@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 15:58 UTC:** Pause the ADR-0003 history-layout migration at its required external-consumer safeguard. The repository search did not establish whether any external integration depends on stored report Markdown, root latest-report copies, or per-workflow indexes. Await the user's confirmation before removing or changing those paths. Active scope: [P0 task 20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md).
+- **2026-11-26 16:10 UTC:** User directed continuation of ADR-0003 Option 3. Proceed with the approved in-repository migration: preserve every canonical report JSON byte, captured log byte, history path, and Ledger/task evidence reference; remove only derived Markdown/latest/per-workflow views; regenerate integrity manifests and the central index; add on-demand rendering and regression coverage. No external consumer was identified in the repository search. Active scope: [P0 task 20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md).
 
 ## Open Discussions
 
