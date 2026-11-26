@@ -205,6 +205,24 @@ class LedgerTests(unittest.TestCase):
             )
         self.assertNotIn("| test-proposed-task |", board_path.read_text(encoding="utf-8"))
 
+    def test_new_task_record_is_rolled_back_when_board_publication_fails(self):
+        board_path = self.root / "workspace" / "task_board.md"
+        board = board_path.read_text(encoding="utf-8").replace(
+            "## Proposed\n\n_No tasks._", "## Proposed", 1
+        )
+        board_path.write_text(board, encoding="utf-8")
+        finding = {
+            "finding_id": "test-finding", "source_family": "lint", "category": "test",
+            "severity": "medium", "status": "open", "task_group": "ci-0123456789abcdef",
+            "evidence": [{"note": "docs/example.md"}], "task_refs": [],
+        }
+        with self.assertRaises(LEDGER.LedgerError):
+            LEDGER.create_or_update_worker_task(
+                self.root, finding["task_group"], [finding], "2026-11-26T08:12:00Z", {}
+            )
+        self.assertEqual(list((self.root / "workspace" / "tasks").glob("*.md")), [])
+        self.assertNotIn("test-finding", board_path.read_text(encoding="utf-8"))
+
     def test_all_lint_severities_create_and_reuse_grouped_tasks(self):
         self.add_lint("on_changed", "110", "2026-11-23T07:10:00Z",
                       fingerprint="a1b2c3d4e5f6", level="advisory",
