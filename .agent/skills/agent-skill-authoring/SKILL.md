@@ -144,7 +144,7 @@ For each new skill or material revision:
 
 ## 6. Foundational versus task-specific skills
 
-A skill's location under `skills/` does not decide whether it is foundational.
+A skill's location under `.agent/skills/` does not decide whether it is foundational.
 
 ### Foundational skill
 
@@ -153,8 +153,8 @@ A skill is foundational only when it governs baseline collaboration, repository 
 To make a skill foundational:
 
 1. Ask for explicit user direction when the classification is not already clear from the request.
-2. Add the skill to the canonical loading sequence in `skills/SESSION_START.md` only when it must load before ordinary project work.
-3. Record the dependency in `skills/INITIALIZATION_POLICY.md` when it changes the initialization contract.
+2. Add the skill to the canonical loading sequence in `.agent/SESSION_START.md` only when it must load before ordinary project work.
+3. Record the dependency in `.agent/INITIALIZATION_POLICY.md` when it changes the initialization contract.
 4. Keep activation conditional on the project's explicit initialization cues. Do not introduce automatic loading at the beginning of every conversation unless the user explicitly requests that policy.
 5. Define whether the skill is loaded once per conversation, refreshed only when changed, or consulted on demand. Avoid redundant retrievals.
 6. Check that the new dependency does not activate a specialist role or load unrelated task-specific materials.
@@ -207,7 +207,7 @@ CI review is task-scoped. Inspect the relevant workflow only in these cases:
 - The skill-authoring task changes validation or workflow configuration.
 - A known result directly blocks the task.
 
-Use `reports/gh_ac_reports/` for workflow evidence and `reports/lint_reports/` for lint findings. Track cross-family issues in `reports/triage/ledger.json`. Do not repair unrelated failures before handling a prompt. Never wait or poll. Let GitHub-hosted Actions run validation.
+Use `.takeout/reports/gh_ac_reports/` for workflow evidence and `.takeout/reports/lint_reports/` for lint findings. Track cross-family issues in `.takeout/reports/triage/ledger.json`. Do not repair unrelated failures before handling a prompt. Never wait or poll. Let GitHub-hosted Actions run validation.
 
 The linter checks only supported patterns. It cannot prove meaning or dictionary compliance.
 
