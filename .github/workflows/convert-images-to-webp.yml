@@ -47,13 +47,13 @@ jobs:
       - name: Compile takeout processor and publication verifier
         run: |
           python3 -m py_compile \
-            skills/the-worker/scripts/process_takeout.py \
-            skills/the-worker/scripts/verify_published_manifest.py
+            .agent/skills/the-worker/scripts/process_takeout.py \
+            .agent/skills/the-worker/scripts/verify_published_manifest.py
 
       - name: Test takeout processor
         run: |
           python3 -m unittest discover \
-            -s skills/the-worker/scripts \
+            -s .agent/skills/the-worker/scripts \
             -p 'test_process_takeout_unittest.py' \
             -v
 
@@ -61,7 +61,7 @@ jobs:
         id: process
         continue-on-error: true
         run: |
-          python3 skills/the-worker/scripts/process_takeout.py \
+          python3 .agent/skills/the-worker/scripts/process_takeout.py \
             --repo-root . \
             --run-id "$GITHUB_RUN_ID"
 
@@ -132,7 +132,7 @@ jobs:
 
           # This verifies the first published commit and changes Pending
           # manifest rows only after the exact remote blobs and URLs match.
-          python3 skills/the-worker/scripts/verify_published_manifest.py \
+          python3 .agent/skills/the-worker/scripts/verify_published_manifest.py \
             --repo-root . \
             --git-ref origin/gpt \
             --branch gpt
@@ -169,7 +169,7 @@ jobs:
           fi
 
           git fetch origin gpt
-          python3 skills/the-worker/scripts/verify_published_manifest.py \
+          python3 .agent/skills/the-worker/scripts/verify_published_manifest.py \
             --repo-root . \
             --git-ref origin/gpt \
             --branch gpt \
@@ -205,4 +205,4 @@ jobs:
           persist-credentials: true
 
       - name: Capture workflow diagnostics
-        uses: ./reports/gh_ac_reports/actions/capture
+        uses: ./.takeout/.takeout/reports/gh_ac_.takeout/reports/actions/capture
