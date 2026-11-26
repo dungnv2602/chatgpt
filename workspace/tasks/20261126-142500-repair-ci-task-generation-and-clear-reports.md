@@ -5,13 +5,13 @@
 - **Template version:** 1.3
 - **ID:** 20261126-142500
 - **Created:** 2026-11-26 14:25 UTC
-- **Updated:** 2026-11-26
+- **Updated:** 2026-11-26 10:44 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Paused
 - **Origin:** User
 - **Approval:** Approved
 - **Governing ADR(s):** None — CI/reporting repair; review governance boundaries before any architecture change
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** 20261126-055004; 20261126-064951
 - **Ledger group:** CI report task-generation failure and active report backlog
@@ -105,7 +105,17 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - **Verification:** Remote readback of the edits. CI rerun/revalidation is not yet observed.
 - **Next:** Review fresh CI output after these fixes; task remains In Progress.
 
+
+### 2026-11-26 10:44 UTC
+
+- **Action:** Paused this P1 task while P0 Ledger tasks remain open. Cleared its Current Execution flag.
+- **Result:** The task remains Approved and incomplete. No work or evidence was deleted. It can resume after all P0 Ledger tasks are resolved.
+- **References:** `workspace/task_board.md`; P0 tasks `20261126-101512-01`, `20261126-101512`, and `20261126-090154`.
+- **Next:** Resume only after the P0 queue is resolved. Re-check current repository state before continuing.
+
 ## 7. Current State
+
+Paused under the permanent P0-first rule. The clean-start reset and static repairs remain recorded below. No end-to-end completion or hosted validation is claimed.
 
 Explicit clean-start reset executed in commit `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`: generated active Actions and lint history, indexes/latest pointers, and report snapshots under `.archive/reports/` cleared; Actions index and lint indexes reinitialized; Ledger findings and processed state empty and lint scopes unseeded. Report scripts, schemas, templates, guides, workflow definitions, unrelated active tasks, and task archives preserved. This reset does not rewrite Git history or GitHub run records. Hosted baseline runs and task-handoff operation remain unverified.
 

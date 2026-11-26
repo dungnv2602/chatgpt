@@ -1,17 +1,17 @@
-# Task: Review checkout\_or\_action\_download failures in Validate Document Standards / validate-document-standards / Run CI Ledger
+# Task: Correct misclassified task-board test fixture errors in Validate Document Standards / validate-document-standards / Run CI Ledger regression tests
 
 ## Metadata
 
 - **Template version:** 1.3
 - **ID:** 20261126-101512
 - **Created:** 2026-11-26 10:15 UTC
-- **Updated:** 2026-11-26 10:15 UTC
+- **Updated:** 2026-11-26 10:44 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** Assistant
 - **Approval:** Approved
-- **Governing ADR(s):** Pending — Worker review required before approval
-- **Current execution:** Yes
+- **Governing ADR(s):** None — regression-test fixture correction; no architecture change
+- **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** None
 - **Ledger group:** `ci-0b5e8d727dc64d9b`
@@ -54,19 +54,26 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 - **References:** .takeout/reports/triage/ledger.json and the evidence links below.
 - **Next:** Inspect evidence, remediate, and verify before starting non-P0 work.
 
-## 7. Current State
+### 2026-11-26 10:44 UTC
 
-The Ledger recorded findings. Root cause, remediation, and validation remain to be assessed.
+- **Action:** Inspected the complete post-run report and captured log for run `45788718679`.
+- **Result:** The parent run is cancelled, but the report contains two independently completed test errors. `test_new_task_record_is_rolled_back_when_board_publication_fails` and `test_task_board_renderer_fails_closed_when_status_table_is_missing` both raise `ValueError: substring not found` while looking for an escaped `## Proposed\\n` marker. This is not a checkout or action-download failure. The log labels the test output `UNKNOWN STEP`; the reporter then falls back to the full job log and sees unrelated checkout text. Preserve this report because it contains independent failures. The classifier and log-isolation correction is queued behind the selected P0 task `20261126-101512-01`.
+- **References:** `.takeout/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-post_run/report.json`; `.takeout/reports/gh_ac_reports/history/427313089/45788718679-attempt-1-post_run/logs/job-139802010290.log`; `.takeout/reports/gh_ac_reports/scripts/report.py`.
+- **Next:** After the selected P0 task is verified, correct this fixture defect and merge the report into the correct test-failure classification without rewriting its immutable evidence.
+
+## 7. Current State
+The linked report is a complete post-run capture from a cancelled parent run. It contains two independent completed test errors. The `checkout_or_action_download` category is false because the log parser used unrelated job output after it could not match the `UNKNOWN STEP` label.
 
 ## 8. Remaining Work
-
-- Inspect linked evidence, remediate, and validate.
-- No validation or resolution is claimed until evidence is recorded.
+- Correct the test fixture's escaped-newline handling.
+- Prevent the reporter from classifying unrelated steps when the failed step label is unavailable.
+- Add regression coverage for structured logs with `UNKNOWN STEP` labels.
+- Preserve the report and task linkage until the independent test errors are fixed and hosted validation passes.
 
 ## 9. Next Actions
-
-1. Inspect linked reports and diagnostics.
-2. Remediate and verify under the standing P0 approval.
+1. Complete the selected P0 task `20261126-101512-01` first.
+2. Repair the fixture tests that search for escaped `## Proposed\\n` instead of the canonical board section.
+3. Add classifier/log-isolation regression coverage and inspect hosted validation.
 
 ## 10. References
 

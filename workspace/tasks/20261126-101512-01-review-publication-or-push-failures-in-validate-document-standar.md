@@ -1,16 +1,16 @@
-# Task: Review publication\_or\_push failures in Validate Document Standards / validate-document-standards / Run CI Ledger regress
+# Task: Correct misclassified test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regression tests
 
 ## Metadata
 
 - **Template version:** 1.3
 - **ID:** 20261126-101512-01
 - **Created:** 2026-11-26 10:15 UTC
-- **Updated:** 2026-11-26 10:15 UTC
+- **Updated:** 2026-11-26 10:44 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** Assistant
 - **Approval:** Approved
-- **Governing ADR(s):** Pending — Worker review required before approval
+- **Governing ADR(s):** None — regression-test classification correction; no architecture change
 - **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** None
@@ -54,19 +54,27 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 - **References:** .takeout/reports/triage/ledger.json and the evidence links below.
 - **Next:** Inspect evidence, remediate, and verify before starting non-P0 work.
 
-## 7. Current State
+### 2026-11-26 10:44 UTC
 
-The Ledger recorded findings. Root cause, remediation, and validation remain to be assessed.
+- **Action:** Inspected all three linked complete post-run reports and their captured job logs.
+- **Result:** Runs `45795455755`, `45795725425`, and `45797455626` contain independent failures in `Run CI Ledger regression tests`, not publication failures. The first report's log shows `test_all_ledger_publishers_share_serialized_writer_group` failing because the test expected the report collector command inside the composite capture action. The current branch test now asserts that the command is absent from the action and present in the sweep workflow. The classifier still checks publication terms before test-failure evidence, so embedded `git push` text in the assertion payload caused the wrong category. The original reports remain immutable. Hosted validation of the current classifier and test state is not established.
+- **References:** `.takeout/reports/gh_ac_reports/history/427313089/45795455755-attempt-1-post_run/report.json`; `45795725425` and `45797455626` report paths and job logs; `.takeout/reports/gh_ac_reports/scripts/report.py`; `.takeout/reports/triage/scripts/test_ledger.py`.
+- **Next:** Correct test-failure classification and log isolation. Add regression tests for embedded publication text in test output. Verify through naturally triggered hosted CI.
+
+## 7. Current State
+The three linked reports are complete post-run captures with independent test-step failures. The reporter classified them as `publication_or_push` because incidental publication text in captured assertion output takes precedence over test-failure evidence. The current branch contains the corrected publisher contract assertion, but classifier correction and hosted validation remain outstanding.
 
 ## 8. Remaining Work
-
-- Inspect linked evidence, remediate, and validate.
-- No validation or resolution is claimed until evidence is recorded.
+- Correct classification of explicit unittest failures before matching incidental publication or checkout text.
+- Prevent a structured job log with unmatched step labels from falling back to unrelated step output.
+- Add regression tests for the observed failure signatures.
+- Update the reporter guide and task/Ledger reconciliation after the fix.
+- Inspect naturally triggered hosted validation. Keep the finding and task open until the relevant checks pass.
 
 ## 9. Next Actions
-
-1. Inspect linked reports and diagnostics.
-2. Remediate and verify under the standing P0 approval.
+1. Add regression tests for explicit unittest failure signatures that include embedded `git push` text.
+2. Update `classify_text` and `step_log_text` to use direct failure evidence without unrelated log content.
+3. Read back the changes and inspect naturally triggered hosted validation.
 
 ## 10. References
 
@@ -74,11 +82,10 @@ The Ledger recorded findings. Root cause, remediation, and validation remain to 
 - The exact report paths and run URLs are listed under Ledger Findings.
 
 ## 11. Verification
-
-- **Check:** Ledger schema and finding eligibility.
-- **Method:** Validated by the ingestion process before task publication.
-- **Result:** Task handoff generated from accepted ledger findings.
-- **Limitations:** This does not verify root cause or remediation.
+- **Check:** Linked report completeness, classification, and job-log evidence.
+- **Method:** Remote readback of the three immutable report JSON files, captured job logs, reporter source, and Ledger state.
+- **Result:** Confirmed three independent test failures and a classifier precedence defect. Confirmed current branch test assertion now reflects the composite-action/workflow split.
+- **Limitations:** No repository tests were run locally. No hosted validation of the classifier correction has been observed.
 
 ## 12. Handoff Instructions
 

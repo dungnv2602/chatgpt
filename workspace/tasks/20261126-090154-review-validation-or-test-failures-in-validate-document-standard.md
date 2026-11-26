@@ -5,13 +5,13 @@
 - **Template version:** 1.3
 - **ID:** 20261126-090154
 - **Created:** 2026-11-26 09:01 UTC
-- **Updated:** 2026-11-26 10:15 UTC
+- **Updated:** 2026-11-26 10:44 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
 - **Governing ADR(s):** None — test-fixture repair; no architecture change
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** None
 - **Ledger group:** `ci-020528f498f632ac`
@@ -55,6 +55,9 @@ Review and remediate the related CI findings listed below after approval. Preser
 - **Next:** Worker review and user approval before implementation.
 
 ## 7. Current State
+
+The task remains P0, Approved, and In Progress. It is not the selected Current Execution task while `20261126-101512-01` is active.
+
 
 The Ledger recorded the findings and created this task handoff. Root cause, remediation, and validation have not been assessed.
 
