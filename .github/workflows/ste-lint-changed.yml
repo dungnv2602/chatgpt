@@ -368,8 +368,29 @@ jobs:
           git add .takeout/reports/lint_reports/on_changed
           if ! git diff --cached --quiet; then
             git commit -m "Publish changed-document lint evidence"
-            git pull --rebase origin gpt
-            git push origin "HEAD:gpt"
+            published=0
+            for attempt in 1 2 3 4 5; do
+              git fetch origin gpt
+              if ! git rebase origin/gpt; then
+                git rebase --abort || true
+                echo "::error::Could not rebase lint evidence onto gpt."
+                exit 1
+              fi
+              if git push origin "HEAD:gpt"; then
+                echo "Changed-document lint evidence published."
+                published=1
+                break
+              fi
+              git fetch origin gpt
+              if git merge-base --is-ancestor origin/gpt HEAD; then
+                echo "::error::Push failed while origin/gpt was unchanged."
+                exit 1
+              fi
+            done
+            if [[ "$published" != "1" ]]; then
+              echo "::error::Could not publish changed-document lint evidence after five attempts."
+              exit 1
+            fi
           fi
 
       - name: Preserve lint failure as workflow conclusion
