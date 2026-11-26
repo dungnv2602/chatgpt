@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-021200
 - **Created:** 2026-11-26 02:12 UTC
-- **Updated:** 2026-11-26 02:12 UTC
+- **Updated:** 2026-11-26 09:20 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -165,3 +165,11 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Finding:** Final targeted inspection identified malformed archive spacing in Worker boundaries and extra whitespace in image-script command paths, plus plural-root terminology that conflicted with the reconstructed `area/novel/` root.
 - **Repair:** Normalized archive references, corrected command path spacing, and updated the novel-root wording.
 - **Verification:** Read back both references after edits. Script execution and CI remain unavailable under the remote-only workflow.
+
+
+### 2026-11-26 — Validator fixture review and inventory-count correction
+
+- **Review:** Read the Document Standards catalog validator and regression-test file in full. Fixture paths and reconstructed root assumptions appear internally consistent on static inspection, but the suite has not been run; correctness is not established by readback alone.
+- **Finding:** The catalog's last-inventory summary claimed 1,114 in-scope Markdown files from an earlier commit. A fresh recursive tree read at `6dcc28feb94ba0fe91ad4385bff12474ba37b233` showed 676 tree entries and 242 Markdown files outside root `master/` and `.archive/`.
+- **Repair:** Updated the catalog's audit-summary paragraph to record the new tree-size observation and explicitly distinguish it from coverage validation. The earlier count is no longer presented as current.
+- **Verification:** Remote readback of the validator, test fixture, catalog, and current tree; no script execution, CI, or full rule-to-file coverage validation. The audit remains In Progress.
