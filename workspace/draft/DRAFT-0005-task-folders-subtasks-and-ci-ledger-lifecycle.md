@@ -48,6 +48,7 @@ Repository facts at branch `gpt`, commit `44ff7e7b956209266951a290fd10080418bb2e
 - The task-board writer promotes each generated P0 task to Current Execution. The last generated task can displace an older eligible task, contrary to Worker priority-and-age selection.
 - The active task archive procedure and Ledger archive reader assume one archived Markdown file per task.
 - The task generator, CI Ledger skill, Worker, GitHub Actions skill, workspace README, task template, schema, tests, and Document Type Catalog do not share one folder/subtask lifecycle contract.
+- The generator creates tasks as P0, Approved, and In Progress while setting Governing ADR(s) to Pending. This conflicts with Decision Governance, which requires an accepted ADR before an implementation task becomes Ready or In Progress. The standing P0 authorization does not override that governance gate.
 
 There are two decision conflicts:
 
@@ -67,6 +68,7 @@ Without a single lifecycle contract, the Worker, generator, Ledger schema, board
 - Track hosted validation separately from remediation completion.
 - Preserve finding identity, resolution history, and prior task links when findings recur.
 - Make ingestion errors visible as a failed operation rather than a successful partial run.
+- Prevent generated tasks from bypassing the accepted-ADR gate: a pending ADR must not be represented as an executable In Progress task.
 - Leave incomplete Actions captures unprocessed so the capture workflow can retry them.
 - Fail closed on missing indexed complete reports and unsafe report-index identifiers.
 - Preserve Worker task selection rules and Current Execution ownership.
@@ -136,7 +138,7 @@ Without a single lifecycle contract, the Worker, generator, Ledger schema, board
 
 ### Option 3 — Task folders with commit-complete CI subtasks and separate validation metadata
 
-- **Description and operating model:** Store each task in `workspace/tasks/<task-id>/task.md`. Every task folder contains `subtasks/README.md` and zero or more child records. CI remediation is a typed child record. Mark it Done only after the fix commit exists on the intended branch, the Worker verifies the commit and reads back the changed files, and the commit SHA plus concise remediation summary are recorded. Hosted validation is separate metadata with states such as pending, passed, or failed. The parent task becomes Done only when every required child subtask is Done.
+- **Description and operating model:** Store each task in `workspace/tasks/<task-id>/task.md`. Every task folder contains `subtasks/README.md` and zero or more child records. CI remediation is a typed child record. Mark it Done only after the fix commit exists on the intended branch, the Worker verifies the commit and reads back the changed files, and the commit SHA plus concise remediation summary are recorded. Hosted validation is separate metadata with states such as pending, passed, or failed. The parent task becomes Done only when every required child subtask is Done. A generated implementation task with pending Governing ADR(s) remains Proposed and is not eligible for execution; the Worker must complete decision-governance review and link an accepted ADR before moving it to Ready or In Progress.
 - **Repository and environment fit:** Matches the user's requested folder/subtask hierarchy and selected commit-based CI completion rule. Requires coordinated updates to the generator, board, schema, Worker, GitHub Actions skill, templates, tests, catalog, and archive handling.
 - **Good — strengths:** Parent outcome and child work have distinct acceptance boundaries. The CI subtask can finish when authorized remediation is committed, so independent work can continue without waiting for hosted CI. Validation remains visible and auditable without redefining task completion. The folder is a stable recovery and archive unit.
 - **Neutral — trade-offs:** A task can be Done while its hosted validation metadata is pending. Users and workers must read the two fields separately. This is intentional, not a hidden inconsistency.
@@ -190,6 +192,7 @@ The Ledger must retain terminal findings as identity/history records. It may bou
 | Incomplete capture is consumed | Medium / High | Current loop can mark ineligible captures processed | Do not mark non-final/incomplete Actions captures processed | Incomplete entries may be reconsidered on each sweep |
 | Unsafe or missing indexed report path | Medium / High | Lint run IDs are used in paths without strict numeric validation; missing files may be skipped | Validate IDs, reject traversal, and fail on missing indexed complete reports | Index producers remain a trust boundary |
 | Wrong task becomes Current Execution | Medium / Medium | Every generated P0 task overwrites the pointer | Let Worker selection preserve valid current task or choose by status and age | Concurrent publisher races remain controlled by shared writer |
+| Generated task bypasses decision governance | High / High | Generator marks tasks Approved/In Progress while Governing ADR(s) is Pending | Keep generated tasks Proposed until Worker links an accepted ADR; preserve P0 priority without bypassing the gate | Some CI work may wait for a new Draft/ADR |
 | New archive paths break retention | Medium / High | Existing archive reader assumes exact flat task files | Index each archived file, read `task.md` as parent, and retain legacy-file support | Hosted cleanup regression remains required |
 | Migration loses task history | Low / High | Moving records can break relative links | Preserve IDs/content, update relative paths, migrate only active records in approved scope, and read back every path | External links may remain outside repository search scope |
 
@@ -246,13 +249,15 @@ The implementation ADR should require observable confirmation that:
 12. Creating a new P0 task does not displace a valid current task selected by Worker priority/age rules.
 13. New folder archives and legacy single-file archives are both read correctly by the Ledger and retention workflow.
 14. The hosted Ledger regression suite and Document Type Catalog validation pass after the changes. No result is claimed until observed.
-15. The active task board, task folders, discussion register, and archive retention index agree after migration and closeout.
+15. Generated implementation tasks with pending Governing ADR(s) remain Proposed and cannot be selected for execution. The Worker links an accepted ADR before changing them to Ready or In Progress.
+16. The active task board, task folders, discussion register, and archive retention index agree after migration and closeout.
 
 ## Questions for the User
 
 1. Do you approve Option 3 and this exact scope for task folders, subtasks, commit-based CI remediation completion, recurrence retention, and ingestion-integrity repairs?
 2. Do you approve migrating all active flat task notes into folders while leaving historical archives immutable?
 3. Do you approve the rule that archived terminal findings remain in the Ledger as identity/history records so later recurrence can link to prior remediation?
+4. Do you approve the decision-governance rule that generated implementation tasks remain Proposed while Governing ADR(s) is Pending, even when they carry the standing P0 priority?
 
 ## Review and Approval
 
