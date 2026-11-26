@@ -47,6 +47,10 @@ on:
       - '.github/workflows/**'
   workflow_dispatch: {}
 
+# A newer push to the same branch supersedes the older validation run.
+# Commits on gpt are cumulative: the newest run checks the combined tree,
+# including earlier commits. The diagnostics job still preserves any completed
+# failure evidence from a superseded run before its own cancellation where possible.
 concurrency:
   group: document-standards-${{ github.ref }}
   cancel-in-progress: true
