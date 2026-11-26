@@ -1,6 +1,6 @@
 # Image Processing Scripts
 
-The Worker owns the image-intake and publication-verification tools. The scripts sit in ` .agent/ .agent/skills/the-worker/scripts/`. They support archival, integrity, rollback, and publication checks.
+The Worker owns the image-intake and publication-verification tools. The scripts sit in `.agent/skills/the-worker/scripts/`. They support archival, integrity, rollback, and publication checks.
 
 ## Files
 
@@ -20,8 +20,8 @@ Compile both production scripts:
 
 ```bash
 python3 -m py_compile \
-   .agent/ .agent/skills/the-worker/scripts/process_takeout.py \
-   .agent/ .agent/skills/the-worker/scripts/verify_published_manifest.py
+   .agent/skills/the-worker/scripts/process_takeout.py \
+   .agent/skills/the-worker/scripts/verify_published_manifest.py
 ```
 
 Run the regression suite:
@@ -36,7 +36,7 @@ python3 -m unittest discover \
 Process a ready takeout hand-off:
 
 ```bash
-python3  .agent/ .agent/skills/the-worker/scripts/process_takeout.py \
+python3  .agent/skills/the-worker/scripts/process_takeout.py \
   --repo-root . \
   --run-id "$GITHUB_RUN_ID"
 ```
@@ -44,7 +44,7 @@ python3  .agent/ .agent/skills/the-worker/scripts/process_takeout.py \
 Check published assets after the first push:
 
 ```bash
-python3  .agent/ .agent/skills/the-worker/scripts/verify_published_manifest.py \
+python3  .agent/skills/the-worker/scripts/verify_published_manifest.py \
   --repo-root . \
   --git-ref origin/gpt \
   --branch gpt
@@ -53,7 +53,7 @@ python3  .agent/ .agent/skills/the-worker/scripts/verify_published_manifest.py \
 Run the final read-only check:
 
 ```bash
-python3  .agent/ .agent/skills/the-worker/scripts/verify_published_manifest.py \
+python3  .agent/skills/the-worker/scripts/verify_published_manifest.py \
   --repo-root . \
   --git-ref origin/gpt \
   --branch gpt \
