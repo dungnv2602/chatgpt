@@ -2,7 +2,7 @@
 record_type: decision-record
 template_version: "1.1"
 id: "ADR-0004"
-status: "promotion-pending"
+status: "accepted"
 decision_date: "2026-11-27"
 decision_makers:
   - "User"
@@ -234,4 +234,4 @@ The implementation is complete only when the repository provides observable evid
 
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
-| 2026-11-27 | Promotion pending | User approved DRAFT-0005 revision 1 and its full scope. Provisional ADR created for completeness comparison and read-back. |
+| 2026-11-27 | Accepted | User approved DRAFT-0005 revision 1 and its full scope. The provisional ADR passed the source-Draft completeness comparison and read-back; ADR-0004 is now the accepted decision. |
