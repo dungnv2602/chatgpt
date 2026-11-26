@@ -1,4 +1,4 @@
-# STE Lint Changed Documentation — run 45814010116
+# STE Lint Changed Documentation — run 45814417490
 
 ## Run identity
 
@@ -6,21 +6,21 @@
 | --- | --- |
 | Workflow | STE Lint Changed Documentation |
 | Workflow path | .github/workflows/ste-lint-changed.yml |
-| Run / attempt | 45814010116 / 1 |
-| Run number | 796 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45814010116 |
+| Run / attempt | 45814417490 / 1 |
+| Run number | 797 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45814417490 |
 | Branch | gpt |
-| Commit | 8d932033921f7c3c5d6761c6851a4c799fbb1054 |
+| Commit | 488bb1e1ab83d50e40d2cc0c1a298aa0ba940f3a |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-26T11:49:25Z |
+| Created (UTC) | 2026-11-26T11:52:10Z |
 | Status at capture | completed |
 | Observed conclusion | failure |
 | Projected conclusion | Not calculated |
 | Reporter job | completed / success |
 | Capture stage | post_run |
 | Completeness | Complete |
-| Captured (UTC) | 2026-11-26T11:52:29Z |
+| Captured (UTC) | 2026-11-26T12:03:55Z |
 
 ## Executive summary
 
@@ -45,23 +45,23 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 139888911096 | Find lint baseline and select execution mode | completed | success | 3 | logs/job-139888911096.log |
-| 139888965163 | Lint changed Markdown files and publish detailed evidence | completed | failure | 14 | logs/job-139888965163.log |
+| 139890304266 | Find lint baseline and select execution mode | completed | success | 3 | logs/job-139890304266.log |
+| 139890360630 | Lint changed Markdown files and publish detailed evidence | completed | failure | 14 | logs/job-139890360630.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| validation_or_test | 139888965163 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | 2026-11-26T11:50:24.8040320Z ^[[36;1m  echo "::error::Changed-document lint failed. See .takeout/reports/lint_reports/on_changed/latest-lint-report.md."^[[0m |
+| validation_or_test | 139890360630 | 11 | Preserve lint failure as workflow conclusion | Blocking | medium | 2026-11-26T11:53:04.4623125Z ^[[36;1m  echo "::error::Changed-document lint failed. See .takeout/reports/lint_reports/on_changed/latest-lint-report.md."^[[0m |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 139888911096 | warning | .github | 46 |  | No complete tooling-valid lint baseline exists. Run one full audit. |
-| 139888965163 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 139888965163 | failure | .github | 21 |  | Process completed with exit code 1. |
-| 139888965163 | failure | .github | 20 |  | Changed-document lint failed. See .takeout/reports/lint_reports/on_changed/latest-lint-report.md. |
+| 139890304266 | warning | .github | 46 |  | No complete tooling-valid lint baseline exists. Run one full audit. |
+| 139890360630 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 139890360630 | failure | .github | 21 |  | Process completed with exit code 1. |
+| 139890360630 | failure | .github | 20 |  | Changed-document lint failed. See .takeout/reports/lint_reports/on_changed/latest-lint-report.md. |
 
 ## Artifacts
 
@@ -71,8 +71,8 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 139888911096 | Find lint baseline and select execution mode | logs/job-139888911096.log | 11723 | False | Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-26T11:49:28.8676717Z ^[[36;1m  ($report.status == "Passed" or $report.status == "Failed") and^[[0m |
-| 139888965163 | Lint changed Markdown files and publish detailed evidence | logs/job-139888965163.log | 63230 | False | Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-26T11:50:10.4659890Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-26T11:50:10.4662679Z ^[[36;1mecho "failed=$failed" &gt;&gt; "$GITHUB_OUTPUT"^[[0m, Lint changed Markdown files and publish detailed evidence	Run full technical-document lint	2026-11-26T11:50:14.8392983Z ^[[36;1m    failed=1^[[0m, Lint changed Markdown files and publish detailed evidence	Run full technical-document lint	2026-11-26T11:50:14.8393371Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Run full technical-document lint	2026-11-26T11:50:14.8393780Z ^[[36;1mecho "failed=$failed" &gt;&gt; "$GITHUB_OUTPUT"^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-26T11:50:22.8848435Z ^[[36;1m        "status": "Passed" if exit_code == 0 else "Failed",^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-26T11:50:22.8851669Z ^[[36;1m        "status": "Passed" if exit_code == 0 else "Failed",^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-26T11:50:22.8853625Z ^[[36;1mif [[ "$TOOLING_FAILED" == "1" \|\| "$FULL_FAILED" == "1" \|\| "$CHANGED_FAILED" == "1" ]]; then status="Failed"; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-26T11:50:22.8854050Z ^[[36;1mif [[ "$ANCHOR_OUTCOME" != "skipped" && "$ANCHOR_EXIT" != "0" ]]; then status="Failed"; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-26T11:50:24.8040320Z ^[[36;1m  echo "::error::Changed-document lint failed. See .takeout/reports/lint_reports/on_changed/latest-lint-report.md."^[[0m, Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-26T11:50:24.8127674Z ##[error]Changed-document lint failed. See .takeout/reports/lint_reports/on_changed/latest-lint-report.md., Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-26T11:50:24.8133519Z ##[error]Process completed with exit code 1. |
+| 139890304266 | Find lint baseline and select execution mode | logs/job-139890304266.log | 11729 | False | Find lint baseline and select execution mode	Find the latest complete lint baseline	2026-11-26T11:52:13.5338169Z ^[[36;1m  ($report.status == "Passed" or $report.status == "Failed") and^[[0m |
+| 139890360630 | Lint changed Markdown files and publish detailed evidence | logs/job-139890360630.log | 63228 | False | Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-26T11:52:48.2167490Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Validate lint and report tooling	2026-11-26T11:52:48.2173921Z ^[[36;1mecho "failed=$failed" &gt;&gt; "$GITHUB_OUTPUT"^[[0m, Lint changed Markdown files and publish detailed evidence	Run full technical-document lint	2026-11-26T11:52:52.6535591Z ^[[36;1m    failed=1^[[0m, Lint changed Markdown files and publish detailed evidence	Run full technical-document lint	2026-11-26T11:52:52.6536153Z ^[[36;1m  if [[ "$status" -ne 0 ]]; then failed=1; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Run full technical-document lint	2026-11-26T11:52:52.6536725Z ^[[36;1mecho "failed=$failed" &gt;&gt; "$GITHUB_OUTPUT"^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-26T11:53:02.1772195Z ^[[36;1m        "status": "Passed" if exit_code == 0 else "Failed",^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-26T11:53:02.1776788Z ^[[36;1m        "status": "Passed" if exit_code == 0 else "Failed",^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-26T11:53:02.1779567Z ^[[36;1mif [[ "$TOOLING_FAILED" == "1" \|\| "$FULL_FAILED" == "1" \|\| "$CHANGED_FAILED" == "1" ]]; then status="Failed"; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Generate and publish changed-document lint evidence	2026-11-26T11:53:02.1780150Z ^[[36;1mif [[ "$ANCHOR_OUTCOME" != "skipped" && "$ANCHOR_EXIT" != "0" ]]; then status="Failed"; fi^[[0m, Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-26T11:53:04.4623125Z ^[[36;1m  echo "::error::Changed-document lint failed. See .takeout/reports/lint_reports/on_changed/latest-lint-report.md."^[[0m, Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-26T11:53:04.4716595Z ##[error]Changed-document lint failed. See .takeout/reports/lint_reports/on_changed/latest-lint-report.md., Lint changed Markdown files and publish detailed evidence	Preserve lint failure as workflow conclusion	2026-11-26T11:53:04.4723154Z ##[error]Process completed with exit code 1. |
 
 ## Evidence coverage
 
