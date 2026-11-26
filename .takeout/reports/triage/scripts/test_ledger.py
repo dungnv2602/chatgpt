@@ -12,14 +12,14 @@ SPEC = importlib.util.spec_from_file_location("ci_issue_ledger", SCRIPT)
 LEDGER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(LEDGER)
 SCHEMA_SOURCE = SCRIPT.parents[1] / "ledger-schema.json"
-TASK_TEMPLATE_SOURCE = SCRIPT.parents[3] / "workspace" / "TASK_TEMPLATE.md"
-TASK_BOARD_SOURCE = SCRIPT.parents[3] / "workspace" / "task_board.md"
+TASK_TEMPLATE_SOURCE = SCRIPT.parents[4] / "workspace" / "TASK_TEMPLATE.md"
+TASK_BOARD_SOURCE = SCRIPT.parents[4] / "workspace" / "task_board.md"
 
 class LedgerTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.root = Path(self.temp.name)
-        triage = self.root / "reports" / "triage"
+        triage = self.root / ".takeout" / "reports" / "triage"
         triage.mkdir(parents=True)
         shutil.copyfile(SCHEMA_SOURCE, triage / "ledger-schema.json")
         workspace = self.root / "workspace"
@@ -31,21 +31,21 @@ class LedgerTests(unittest.TestCase):
     def tearDown(self):
         self.temp.cleanup()
 
-    def write_ledger(self, version="1.4.0", findings=None):
+    def write_ledger(self, version="1.5.0", findings=None):
         payload = {"schema_version": version, "updated_at_utc": None, "findings": findings or []}
-        if version in ("1.1.0", "1.2.0", "1.3.0", "1.4.0"):
+        if version in ("1.1.0", "1.2.0", "1.3.0", "1.4.0", "1.5.0"):
             payload["ingestion_state"] = {
                 "bootstrap_at_utc":"2026-11-23T07:00:00Z","processed_reports":[],
                 "lint_baseline_scopes":{"on_changed":True,"on_repo":True},
             }
-        path = self.root / "reports" / "triage" / "ledger.json"
+        path = self.root / ".takeout" / "reports" / "triage" / "ledger.json"
         path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
         return path
 
     def add_lint(self, scope, run_id, timestamp, fingerprint="a1b2c3d4e5f6", status="Failed",
                  level="advisory-free", file_path="docs/example.md", rule="semicolon",
                  message="Split this sentence.", comparison="new", execution_mode="full-audit-fallback"):
-        folder = self.root / "reports" / "lint_reports" / scope
+        folder = self.root / ".takeout" / "reports" / "lint_reports" / scope
         history = folder / "history" / (run_id + "-attempt-1")
         history.mkdir(parents=True, exist_ok=True)
         report_path = history / "report.json"
@@ -75,7 +75,7 @@ class LedgerTests(unittest.TestCase):
         return report_path.relative_to(self.root).as_posix()
 
     def add_actions(self, run_id, timestamp, issues, stage="post_run", completeness="Complete", conclusion="failure"):
-        history = self.root / "reports" / "gh_ac_reports" / "history" / "55" / (run_id + "-attempt-1-" + stage)
+        history = self.root / ".takeout" / "reports" / "gh_ac_reports" / "history" / "55" / (run_id + "-attempt-1-" + stage)
         history.mkdir(parents=True, exist_ok=True)
         report_path = history / "report.json"
         report = {
@@ -89,7 +89,7 @@ class LedgerTests(unittest.TestCase):
             "classification":{"issues":issues},
         }
         report_path.write_text(json.dumps(report), encoding="utf-8")
-        index_path = self.root / "reports" / "gh_ac_reports" / "index.json"
+        index_path = self.root / ".takeout" / "reports" / "gh_ac_reports" / "index.json"
         rows = json.loads(index_path.read_text())["runs"] if index_path.exists() else []
         rows.append({
             "run_id":run_id,"attempt":1,"workflow_id":55,"capture_stage":stage,
@@ -99,7 +99,46 @@ class LedgerTests(unittest.TestCase):
         return report_path.relative_to(self.root).as_posix()
 
     def read_ledger(self):
-        return json.loads((self.root / "reports" / "triage" / "ledger.json").read_text())
+        return json.loads((self.root / ".takeout" / "reports" / "triage" / "ledger.json").read_text())
+
+    def test_missing_ledger_fails_closed_without_automatic_reset(self):
+        path = self.root / ".takeout" / "reports" / "triage" / "ledger.json"
+        path.unlink()
+        with self.assertRaisesRegex(LEDGER.LedgerError, "explicit user authorization"):
+            LEDGER.ingest(self.root)
+        self.assertFalse(path.exists())
+
+    def test_legacy_report_paths_migrate_to_repository_relative_roots(self):
+        finding = {
+            "finding_id":"lint-a1b2c3d4e5f6","source_family":"lint","category":"semicolon","title":"A finding",
+            "status":"open","severity":"low","first_seen_utc":"2026-11-23T07:00:00Z",
+            "last_seen_utc":"2026-11-23T07:00:00Z","occurrence_count":1,
+            "evidence":[
+                {"report_path":"reports/lint_reports/on_repo/history/1-attempt-1/report.json",
+                 "observed_at_utc":"2026-11-23T07:00:00Z","observation_id":"lint:1:1"},
+                {"report_path":"archive/reports/triage/old-report.json",
+                 "observed_at_utc":"2026-11-23T07:01:00Z","observation_id":"lint:1:2"},
+            ],
+        }
+        legacy = {
+            "schema_version":"1.4.0","updated_at_utc":None,"findings":[finding],
+            "ingestion_state":{
+                "bootstrap_at_utc":"2026-11-23T07:00:00Z",
+                "processed_reports":["reports/lint_reports/on_repo/history/1-attempt-1/report.json"],
+                "lint_baseline_scopes":{"on_changed":True,"on_repo":True},
+            },
+        }
+        migrated = LEDGER.migrate_ledger(legacy, self.root)
+        self.assertEqual(migrated["schema_version"],"1.5.0")
+        self.assertEqual(
+            [item["report_path"] for item in migrated["findings"][0]["evidence"]],
+            [".takeout/reports/lint_reports/on_repo/history/1-attempt-1/report.json",
+             ".archive/reports/triage/old-report.json"],
+        )
+        self.assertEqual(
+            migrated["ingestion_state"]["processed_reports"],
+            [".takeout/reports/lint_reports/on_repo/history/1-attempt-1/report.json"],
+        )
 
     def test_lint_fingerprint_deduplicates_across_scopes_and_is_idempotent(self):
         self.add_lint("on_changed","100","2026-11-23T07:10:00Z")
@@ -115,6 +154,8 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(len(task_files), 1)
         self.assertIn("- **Status:** Proposed", task_files[0].read_text(encoding="utf-8"))
         self.assertIn(finding["finding_id"], task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("[report](../../.takeout/reports/lint_reports/on_changed/history/100-attempt-1/report.json)", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("../../.takeout/reports/triage/ledger.json", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Template version:** 1.3", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Governing ADR(s):** Pending — Worker review required before approval", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("1. Inspect every linked report and exact diagnostic before proposing a fix.", task_files[0].read_text(encoding="utf-8"))
@@ -218,7 +259,7 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(finding["last_seen_utc"],"2026-11-23T07:20:00Z")
 
     def test_runner_command_echo_uses_actual_step_log_signature(self):
-        report_path = "reports/gh_ac_reports/history/55/900-attempt-1-post_run/report.json"
+        report_path = ".takeout/reports/gh_ac_reports/history/55/900-attempt-1-post_run/report.json"
         report_dir = self.root / Path(report_path).parent
         log_dir = report_dir / "logs"
         log_dir.mkdir(parents=True)
@@ -354,7 +395,7 @@ class LedgerTests(unittest.TestCase):
     def test_resolved_finding_reopens_and_preserves_resolution_history(self):
         self.add_lint("on_changed","300","2026-11-23T07:10:00Z")
         LEDGER.ingest(self.root)
-        path = self.root / "reports" / "triage" / "ledger.json"
+        path = self.root / ".takeout" / "reports" / "triage" / "ledger.json"
         ledger = json.loads(path.read_text())
         resolution = {
             "fix_commit":"abcdef1234567","resolved_at_utc":"2026-11-23T07:15:00Z",
@@ -393,6 +434,7 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(updated["owner"],"Platform")
         self.assertEqual(updated["accepted_risk"],finding["accepted_risk"])
         self.assertEqual(updated["task_refs"],["20261123-100738"])
+        self.assertEqual(updated["evidence"][0]["report_path"],".takeout/reports/old/report.json")
 
     def test_non_defect_actions_and_pre_finalizer_reports_are_ignored(self):
         issues = [
@@ -425,7 +467,7 @@ class LedgerTests(unittest.TestCase):
         self.write_ledger(version="1.0.0")
         result = LEDGER.ingest(self.root)
         migrated = self.read_ledger()
-        self.assertEqual(migrated["schema_version"],"1.4.0")
+        self.assertEqual(migrated["schema_version"],"1.5.0")
         self.assertEqual(migrated["findings"],[])
         self.assertIn(path,migrated["ingestion_state"]["processed_reports"])
         self.assertEqual(migrated["findings"],[])
@@ -450,7 +492,7 @@ class LedgerTests(unittest.TestCase):
         self.write_ledger(version="1.1.0", findings=[finding, second])
         LEDGER.ingest(self.root)
         migrated = self.read_ledger()
-        self.assertEqual(migrated["schema_version"],"1.4.0")
+        self.assertEqual(migrated["schema_version"],"1.5.0")
         self.assertEqual(migrated["findings"][0]["task_group"], migrated["findings"][1]["task_group"])
         task_id = migrated["findings"][0]["task_refs"][0]
         self.assertEqual(migrated["findings"][1]["task_refs"], [task_id])
@@ -507,7 +549,7 @@ class LedgerTests(unittest.TestCase):
         path = self.add_lint("on_changed", "950", "2026-11-23T07:10:00Z")
         ledger = self.read_ledger()
         ledger["ingestion_state"]["lint_baseline_scopes"]["on_changed"] = False
-        (self.root / "reports" / "triage" / "ledger.json").write_text(json.dumps(ledger), encoding="utf-8")
+        (self.root / ".takeout" / "reports" / "triage" / "ledger.json").write_text(json.dumps(ledger), encoding="utf-8")
         result = LEDGER.ingest(self.root, now="2026-11-23T07:11:00Z")
         updated = self.read_ledger()
         self.assertTrue(updated["ingestion_state"]["lint_baseline_scopes"]["on_changed"])
@@ -520,7 +562,7 @@ class LedgerTests(unittest.TestCase):
                              execution_mode="incremental")
         ledger = self.read_ledger()
         ledger["ingestion_state"]["lint_baseline_scopes"]["on_changed"] = False
-        (self.root / "reports" / "triage" / "ledger.json").write_text(json.dumps(ledger), encoding="utf-8")
+        (self.root / ".takeout" / "reports" / "triage" / "ledger.json").write_text(json.dumps(ledger), encoding="utf-8")
         result = LEDGER.ingest(self.root, now="2026-11-23T07:06:00Z")
         updated = self.read_ledger()
         self.assertFalse(updated["ingestion_state"]["lint_baseline_scopes"]["on_changed"])
@@ -562,7 +604,7 @@ class LedgerTests(unittest.TestCase):
     def test_terminal_finding_is_retired_after_linked_task_is_archived_done(self):
         finding_id = "lint-1234567890abcdef"
         task_id = "20261123-090000"
-        archive_path = "archive/tasks/20261123-090000-example.md"
+        archive_path = ".archive/task/20261123-090000-example.md"
         task_file = self.root / archive_path
         task_file.parent.mkdir(parents=True)
         task_file.write_text(
@@ -585,7 +627,7 @@ class LedgerTests(unittest.TestCase):
 
     def test_grouped_task_waits_until_every_finding_is_terminal(self):
         task_id = "20261123-090002"
-        archive_path = "archive/tasks/20261123-090002-example.md"
+        archive_path = ".archive/task/20261123-090002-example.md"
         first = "lint-1234567890abcdef"
         second = "lint-fedcba0987654321"
         task_file = self.root / archive_path
@@ -614,7 +656,7 @@ class LedgerTests(unittest.TestCase):
     def test_open_or_cancelled_task_never_retires_a_finding(self):
         finding_id = "lint-1234567890abcdef"
         task_id = "20261123-090001"
-        archive_path = "archive/tasks/20261123-090001-example.md"
+        archive_path = ".archive/task/20261123-090001-example.md"
         task_file = self.root / archive_path
         task_file.parent.mkdir(parents=True)
         task_file.write_text(
@@ -642,17 +684,17 @@ class LedgerTests(unittest.TestCase):
         LEDGER.validate_semantics({"findings":[finding]})
 
     def test_malformed_index_fails_closed_without_changing_ledger(self):
-        index = self.root / "reports" / "lint_reports" / "on_changed" / "index.json"
+        index = self.root / ".takeout" / "reports" / "lint_reports" / "on_changed" / "index.json"
         index.parent.mkdir(parents=True,exist_ok=True)
         index.write_text("{broken",encoding="utf-8")
-        path = self.root / "reports" / "triage" / "ledger.json"
+        path = self.root / ".takeout" / "reports" / "triage" / "ledger.json"
         before = path.read_bytes()
         with self.assertRaises(LEDGER.LedgerError):
             LEDGER.ingest(self.root)
         self.assertEqual(path.read_bytes(),before)
 
     def test_unsafe_actions_history_path_is_rejected(self):
-        index = self.root / "reports" / "gh_ac_reports" / "index.json"
+        index = self.root / ".takeout" / "reports" / "gh_ac_reports" / "index.json"
         index.parent.mkdir(parents=True,exist_ok=True)
         index.write_text(json.dumps({"runs":[{"history_path":"history/../../outside"}]}),encoding="utf-8")
         with self.assertRaises(LEDGER.LedgerError):
@@ -676,7 +718,7 @@ class LedgerTests(unittest.TestCase):
             LEDGER.validate_semantics({"findings":[finding]})
 
     def test_all_ledger_publishers_share_serialized_writer_group(self):
-        root = SCRIPT.parents[3]
+        root = SCRIPT.parents[4]
         workflows = (
             ".github/workflows/archive-retention.yml",
             ".github/workflows/convert-images-to-webp.yml",
@@ -702,7 +744,7 @@ class LedgerTests(unittest.TestCase):
                     [f"{indent}queue: max", f"{indent}cancel-in-progress: false"],
                     relative,
                 )
-        action = (root / "reports/gh_ac_reports/actions/capture/action.yml").read_text(encoding="utf-8")
+        action = (root / ".takeout/reports/gh_ac_reports/actions/capture/action.yml").read_text(encoding="utf-8")
         sweep = (root / ".github/workflows/gh-actions-diagnostics.yml").read_text(encoding="utf-8")
         standards = (root / ".github/workflows/validate-document-standards.yml").read_text(encoding="utf-8")
         lint_changed = (root / ".github/workflows/ste-lint-changed.yml").read_text(encoding="utf-8")
@@ -710,10 +752,10 @@ class LedgerTests(unittest.TestCase):
         self.assertNotIn("continue-on-error: true", action)
         for relative in (".github/workflows/ste-lint-changed.yml", ".github/workflows/ste-lint-full-docs.yml", ".github/workflows/validate-document-standards.yml"):
             self.assertIn("    continue-on-error: true", (root / relative).read_text(encoding="utf-8"), relative)
-        publish_paths = "git add -A -- reports/gh_ac_reports/ reports/triage/ workspace/tasks/ workspace/task_board.md"
+        publish_paths = "git add -A -- .takeout/reports/gh_ac_reports/ .takeout/reports/triage/ workspace/tasks/ workspace/task_board.md"
         self.assertIn(publish_paths, action)
         self.assertIn(publish_paths, sweep)
-        self.assertIn("- 'reports/triage/ledger.json'", sweep)
+        self.assertIn("- '.takeout/reports/triage/ledger.json'", sweep)
         self.assertIn("- 'workspace/tasks/**'", sweep)
         self.assertIn("- 'workspace/task_board.md'", sweep)
         self.assertIn("      - '!workspace/tasks/**'", standards)
@@ -722,9 +764,9 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("      - '!workspace/task_board.md'", lint_changed)
         self.assertIn("Ingest centralized CI issues", sweep)
         ignored = sweep.split("paths-ignore:", 1)[1].split("concurrency:", 1)[0]
-        self.assertIn("archive/reports/**", ignored)
+        self.assertIn(".archive/reports/**", ignored)
         self.assertNotIn(".github/archive-retention-index.json", ignored)
-        self.assertNotIn("archive/tasks/**", ignored)
+        self.assertNotIn(".archive/task/**", ignored)
         self.assertIn("      - '!workspace/discussion.md'", standards)
         self.assertLess(
             standards.index("      - 'workspace/**/*.md'"),
@@ -738,12 +780,12 @@ class LedgerTests(unittest.TestCase):
             self.assertIn(group, content, relative)
         self.assertIn("latest-lint-report.json", lint_changed)
         self.assertNotIn("last successful lint baseline", lint_changed)
-        self.assertIn("lint_baseline_ready", (root / "reports/triage/scripts/ledger.py").read_text(encoding="utf-8"))
-        self.assertIn("retire_completed_task_findings", (root / "reports/triage/scripts/ledger.py").read_text(encoding="utf-8"))
-        self.assertIn("findings_retired", (root / "reports/triage/scripts/ledger.py").read_text(encoding="utf-8"))
+        self.assertIn("lint_baseline_ready", (root / ".takeout/reports/triage/scripts/ledger.py").read_text(encoding="utf-8"))
+        self.assertIn("retire_completed_task_findings", (root / ".takeout/reports/triage/scripts/ledger.py").read_text(encoding="utf-8"))
+        self.assertIn("findings_retired", (root / ".takeout/reports/triage/scripts/ledger.py").read_text(encoding="utf-8"))
 
     def test_atomic_write_replaces_file_without_temp_remnants(self):
-        path = self.root / "reports" / "triage" / "ledger.json"
+        path = self.root / ".takeout" / "reports" / "triage" / "ledger.json"
         LEDGER.atomic_write(path,{"schema_version":"test"})
         self.assertEqual(json.loads(path.read_text())["schema_version"],"test")
         self.assertEqual(list(path.parent.glob("ledger.json.*.tmp")),[])
