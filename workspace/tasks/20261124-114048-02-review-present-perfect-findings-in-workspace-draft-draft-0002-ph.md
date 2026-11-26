@@ -5,7 +5,7 @@
 - **Template version:** 1.2
 - **ID:** 20261124-114048-02
 - **Created:** 2026-11-24 11:40 UTC
-- **Updated:** 2026-11-25 02:33 UTC
+- **Updated:** 2026-11-26 05:09 UTC
 - **Priority:** P3
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -92,4 +92,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 |---|---|---|---|
 | `lint-7d8c8c30ca8b7156c5fd20d6` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../reports/lint_reports/on_changed/history/45386030748-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45386030748) |
 | `lint-e0f4e715b1c053931ad979c7` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../reports/lint_reports/on_changed/history/45386030748-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45386030748) |
-| `lint-6e0df3ac815fc5850205b430` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../reports/lint_reports/on_changed/history/45533487346-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45533487346) |
+| `lint-6e0df3ac815fc5850205b430` | low | present-perfect: Compound tense. Use simple past/present unless current relevance is the point \(then keep and flag\). | [report](../../.takeout/reports/lint_reports/on_changed/history/45533487346-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45533487346) · [report](../../.takeout/reports/lint_reports/on_repo/history/45757269291-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45757269291) |

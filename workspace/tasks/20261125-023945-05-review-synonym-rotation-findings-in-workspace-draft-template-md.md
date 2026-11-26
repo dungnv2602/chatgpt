@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261125-023945-05
 - **Created:** 2026-11-25 02:39 UTC
-- **Updated:** 2026-11-25 02:39 UTC
+- **Updated:** 2026-11-26 05:09 UTC
 - **Priority:** P2
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -91,4 +91,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-fcd884bb6124b09c0acad1a2` | medium | synonym-rotation: 'delete' and 'remove' name the same action. Pick one and use it every time. | [report](../../reports/lint_reports/on_changed/history/45534135323-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45534135323) |
+| `lint-fcd884bb6124b09c0acad1a2` | medium | synonym-rotation: 'delete' and 'remove' name the same action. Pick one and use it every time. | [report](../../.takeout/reports/lint_reports/on_changed/history/45534135323-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45534135323) · [report](../../.takeout/reports/lint_reports/on_repo/history/45757269291-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45757269291) |

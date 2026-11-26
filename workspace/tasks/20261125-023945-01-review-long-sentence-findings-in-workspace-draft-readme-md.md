@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261125-023945-01
 - **Created:** 2026-11-25 02:39 UTC
-- **Updated:** 2026-11-25 07:13 UTC
+- **Updated:** 2026-11-26 05:09 UTC
 - **Priority:** P2
 - **Status:** Proposed
 - **Origin:** Assistant
@@ -91,4 +91,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-fa0ad26c0f4696b24c6e471f` | medium | long-sentence: Sentence has 28 words \(cap 25\). Split it. | [report](../../reports/lint_reports/on_changed/history/45534135323-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45534135323) · [report](../../reports/lint_reports/on_changed/history/45566151970-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45566151970) |
+| `lint-fa0ad26c0f4696b24c6e471f` | medium | long-sentence: Sentence has 28 words \(cap 25\). Split it. | [report](../../.takeout/reports/lint_reports/on_changed/history/45534135323-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45534135323) · [report](../../.takeout/reports/lint_reports/on_changed/history/45566151970-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45566151970) · [report](../../.takeout/reports/lint_reports/on_repo/history/45757269291-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45757269291) |
