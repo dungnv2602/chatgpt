@@ -59,7 +59,7 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 - **Action:** Inspected the exact lint report for run [45857763911](https://github.com/dungnv2602/chatgpt/actions/runs/45857763911) and its generated task finding `lint-e2e4500a529bb5cf3751722a`.
 - **Finding:** The report identified a semicolon in the theme-specification coverage row at catalog line 123. This was a Rule 8.1 violation. It was not part of the new report-layout description.
 - **Repair:** Replaced the semicolon with a sentence boundary. The catalog path coverage and canonical authorities remain unchanged. Commit: [56510b4](https://github.com/dungnv2602/chatgpt/commit/56510b4fa78680c75bba4ffc5e483842d4b24938).
-- **Verification:** The catalog change is committed. A naturally triggered STE Lint Changed run must confirm that the finding is resolved. No lint rules were weakened.
+- **Verification:** The catalog change was committed. Follow-up STE Lint Changed run 45859253550 passed and marked this fingerprint resolved. No lint rules were weakened.
 - **Next:** Keep this task In Progress until hosted lint and Ledger reconciliation pass.
 
 ### 2026-11-26 16:21 UTC
@@ -107,4 +107,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
-| `lint-e2e4500a529bb5cf3751722a` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../.takeout/reports/lint_reports/on_changed/history/45857763911-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45857763911) |
+| `lint-e2e4500a529bb5cf3751722a` | medium | semicolon: STE bans the semicolon \(Rule 8.1\). Split into separate sentences. | [report](../../.archive/reports/lint_reports/on_changed/history/45857763911-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45857763911) |
