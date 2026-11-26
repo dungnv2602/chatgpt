@@ -749,6 +749,11 @@ class LedgerTests(unittest.TestCase):
         standards = (root / ".github/workflows/validate-document-standards.yml").read_text(encoding="utf-8")
         lint_changed = (root / ".github/workflows/ste-lint-changed.yml").read_text(encoding="utf-8")
         self.assertIn("Update central CI issue ledger", action)
+        self.assertIn("python3 -m py_compile .takeout/reports/gh_ac_reports/scripts/report.py .takeout/reports/triage/scripts/ledger.py", action)
+        self.assertIn("python3 .takeout/reports/gh_ac_reports/scripts/report.py", action)
+        self.assertIn("python3 .takeout/reports/triage/scripts/ledger.py", action)
+        self.assertNotIn("python3 reports/", action)
+        self.assertNotIn("-s reports/", action)
         self.assertNotIn("continue-on-error: true", action)
         for relative in (".github/workflows/ste-lint-changed.yml", ".github/workflows/ste-lint-full-docs.yml", ".github/workflows/validate-document-standards.yml"):
             self.assertIn("    continue-on-error: true", (root / relative).read_text(encoding="utf-8"), relative)
