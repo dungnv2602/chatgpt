@@ -82,7 +82,7 @@ def clean_heading(text: str) -> str:
     text = re.sub(r"<[^>]+>", "", text)
     code_pattern = re.escape(BACKTICK) + r"+([^" + re.escape(BACKTICK) + r"]*)" + re.escape(BACKTICK) + r"+"
     text = re.sub(code_pattern, r"\1", text)
-    text = re.sub(r"[*_~]", "", text)
+    text = re.sub(r"[*~]", "", text)
     return html.unescape(text).strip()
 
 
