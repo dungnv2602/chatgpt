@@ -154,3 +154,10 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Action:** Inspected CI runs 570 and 890 on commit 225ab37. The Ledger suite still had eight errors: the fixture normalization guard only converted escaped newline sequences when the entire file had no real newline characters, but the canonical board fixture contained mixed representations. The diagnostics backfill failed on the same task-board Proposed section errors. Collector pagination test failure was addressed earlier.
 - **Repair:** Normalize literal escaped newline sequences whenever they occur in the copied board fixture, regardless of whether actual newlines also exist. Commit: 252168c.
 - **Verification:** Remote commit recorded; hosted validation of this change pending. Do not close task until CI passes and handoff is verified.
+
+
+### 2026-11-26 — root cause isolated in board writer
+
+- **Action:** Run 891 on commit 252168c still failed with eight Ledger errors despite fixture normalization. Re-examining `upsert_task_board_row` revealed its serializer was using literal backslash-n strings (`\\n`) as join separators and suffix, producing a one-line escaped board after the first write; subsequent status section lookup then failed.
+- **Repair:** Corrected the writer to join and terminate with actual newline characters. Commit `8d92e78`.
+- **Verification:** Commit readback confirmed the code edit. CI run 571 was queued at inspection; validation is pending.
