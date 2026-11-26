@@ -113,3 +113,11 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Action:** Corrected the link in `.takeout/images/README-1.md`; updated the intake guide reference in `.agent/skills/the-worker/references/image-provenance-and-webp.md`; linked the relocated guide from `.agent/skills/drawing/references/archive-and-delivery.md`; adjusted image-related path entries in the Document Type Catalog to reconstructed `.agent/skills/` and `.takeout/images/` locations.
 - **Contract:** Kept runtime intake paths (`images/takeout/`) unchanged. No files restored from older snapshots.
 - **Verification:** Remote read-back and formatting checks pending.
+
+
+### 2026-11-26 — Report and archive reference alignment
+
+- **Finding:** Active GitHub Actions skill and report/archive documentation used legacy unprefixed `reports/` and `archive/` locations inconsistent with the reconstructed `.takeout/reports/` and `.archive/` layout.
+- **Repair:** Updated the GitHub Actions skill, archive README, and active GH Actions diagnostics, triage, and lint report README references. Operational workflow paths were not changed.
+- **Verification:** Read back the modified files from branch `gpt`; corrected an intermediate replacement error and verified the final targeted path references. No duplicate `.takeout/.takeout` or `.archive/.archive` prefixes remain in inspected documents.
+- **Limitations:** No local execution or hosted CI was run. This audit is path/reference consistency review, not a complete exhaustive proof of every link in the repository.
