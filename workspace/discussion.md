@@ -1,8 +1,9 @@
 ## Current Step
 
-_No active step._
+**2026-11-26 — Repository-wide workflow and relocation audit:** Inspect `.agent/` and related repository workflow documents for stale path references, cue conflicts, skill dependency mismatches, and relocation assumptions. Update canonical instructions to match the reconstructed layout and current workflow. Do not restore legacy files. Verify each change by read-back from branch `gpt`.
 
 ## Open Discussions
+
 
 - **2026-11-25 — DRAFT-0003 — Area, Project, and Task Architecture:** [Review DRAFT-0003 revision 1](draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md). The proposal recommends project folders with nested task folders, one global task board, task-local findings, project-level coordination, global Draft/ADR governance, and exact-file task archives. User review is required for the Area/Project/Task boundaries, task file split, selectors, resource promotion, and project closeout.
 
@@ -10,7 +11,9 @@ _No active step._
 
 - **2026-11-23 — Drawing direction needed:** Session DRAWING-2026-11-23-01 is Active, but the user has not supplied a subject or visual direction. The user must provide the subject before prompt drafting or image generation.
 
+
 ## Reports
+
 
 - **2026-11-26 — Foundational initialization completed:** Adapted initialization to the relocated `.agent/` policy and `.agent/skills/` paths. Retrieved and read The Worker, mandatory Conversation Mode reference, ASD-STE100, GitHub Actions, and Document Standards from branch `gpt`. Corrected the startup-register verification wording. No legacy files were restored. Session-start procedure references to the former root `skills/` paths remain superseded by the relocated equivalents for this reconstructed layout.
 
