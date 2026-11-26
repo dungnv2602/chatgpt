@@ -2,6 +2,7 @@
   "schema_version": "1.0.0",
   "sweep_watermark_utc": "2026-11-23T23:38:33Z",
   "pending_run_ids": [
+    "45766474796",
     "45766315607",
     "45765926257",
     "45765603889",
@@ -11,6 +12,23 @@
     "45764342789"
   ],
   "runs": [
+    {
+      "workflow_id": 427313089,
+      "workflow_name": "Validate Document Standards",
+      "run_id": "45766474796",
+      "run_number": 531,
+      "attempt": 1,
+      "capture_stage": "pre_finalizer",
+      "created_at": "2026-11-26T06:11:23Z",
+      "captured_at_utc": "2026-11-26T06:14:01Z",
+      "source_status": "in_progress",
+      "source_conclusion": null,
+      "projected_conclusion": "failure",
+      "report_status": "Incomplete",
+      "primary_category": "validation_or_test",
+      "history_path": "history/427313089/45766474796-attempt-1-pre_finalizer",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45766474796"
+    },
     {
       "workflow_id": 427313089,
       "workflow_name": "Validate Document Standards",
@@ -134,19 +152,19 @@
   "latest_report": {
     "workflow_id": 427313089,
     "workflow_name": "Validate Document Standards",
-    "run_id": "45766315607",
-    "run_number": 529,
+    "run_id": "45766474796",
+    "run_number": 531,
     "attempt": 1,
     "capture_stage": "pre_finalizer",
-    "created_at": "2026-11-26T06:10:03Z",
-    "captured_at_utc": "2026-11-26T06:12:41Z",
+    "created_at": "2026-11-26T06:11:23Z",
+    "captured_at_utc": "2026-11-26T06:14:01Z",
     "source_status": "in_progress",
     "source_conclusion": null,
     "projected_conclusion": "failure",
     "report_status": "Incomplete",
     "primary_category": "validation_or_test",
-    "history_path": "history/427313089/45766315607-attempt-1-pre_finalizer",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45766315607"
+    "history_path": "history/427313089/45766474796-attempt-1-pre_finalizer",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45766474796"
   },
   "exhausted_run_ids": []
 }
