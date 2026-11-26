@@ -4,9 +4,8 @@ on:
   workflow_dispatch:
   workflow_run:
     workflows:
-      - Archive Retention
-      - Convert Images to WebP
-      - Notification
+      - Scheduled Archive Individual Retention
+      - Process Image Takeout and Create WebP Derivatives
       - STE Lint Changed Documentation
       - STE Lint Full Technical Documentation
       - Validate Document Standards
