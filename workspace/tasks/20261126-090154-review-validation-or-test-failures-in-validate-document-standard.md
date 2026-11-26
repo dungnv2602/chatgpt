@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-090154
 - **Created:** 2026-11-26 09:01 UTC
-- **Updated:** 2026-11-26 09:36 UTC
+- **Updated:** 2026-11-26 09:40 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -123,3 +123,12 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Result:** Updated the generator to set `Current execution: Yes`, corrected the generated progress text to reflect P0 authorization, updated regression assertions for P0/In Progress/current execution/approved board metadata and the In Progress section/current pointer, and aligned the Ledger guide with the standing policy. No tests have been run locally. This is a related task-generation contract defect found during the same P0 remediation.
 - **References:** commits `46327b6`, `c7d8e62`, and `806b7bc`; `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`; `.takeout/reports/triage/README.md`.
 - **Next:** Keep this task as Current Execution. Verify the full hosted regression suite after the source, test, and guide changes have naturally run; only then proceed to final Ledger operational checks.
+
+
+### 2026-11-26 09:40 UTC
+
+- **Approval:** User explicitly approved retaining cancellation for superseded duplicate validation runs when the newer same-branch commit includes the earlier changes.
+- **Policy:** Same-workflow/same-branch concurrency may cancel the older run because the newest run validates the cumulative branch tree. Preserve any completed independent failure evidence from the cancelled run; never treat cancellation as a pass or count propagated cancellation as a separate finding.
+- **Change:** Added explanatory policy comments beside the existing `cancel-in-progress: true` concurrency configuration in `.github/workflows/validate-document-standards.yml`.
+- **Commit:** `a5a8c826720c2f928ecc23cd52ffc2406b6dc64b`.
+- **Verification:** Configuration readback confirmed the existing behavior is retained and now documents the cumulative-commit rationale. Hosted validation of this documentation-only workflow change remains pending.
