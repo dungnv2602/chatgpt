@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-090154
 - **Created:** 2026-11-26 09:01 UTC
-- **Updated:** 2026-11-26 09:40 UTC
+- **Updated:** 2026-11-26 10:00 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -132,3 +132,12 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Change:** Added explanatory policy comments beside the existing `cancel-in-progress: true` concurrency configuration in `.github/workflows/validate-document-standards.yml`.
 - **Commit:** `a5a8c826720c2f928ecc23cd52ffc2406b6dc64b`.
 - **Verification:** Configuration readback confirmed the existing behavior is retained and now documents the cumulative-commit rationale. Hosted validation of this documentation-only workflow change remains pending.
+
+### 2026-11-26 10:00 UTC
+
+- **Approval:** User approved the reporting contract: preserve completed independent job/step failures even when the parent run is cancelled; distinguish cancellation-only runs from runs containing independent failures; exclude propagated cancellation as an independent error; deduplicate repeated failures by stable finding identity. User further directed that only error reports be retained and that every error report have generated task linkage.
+- **Policy:** Persist only completed post-run reports containing independently classified errors. Do not persist success-without-errors, cancellation-only, skipped, neutral, queued, pending, or in-progress runs. A cancelled run remains reportable only when it contains an independent completed failure. Manual backfill cannot bypass this filter. Every independent Actions finding is task-eligible regardless of confidence-derived severity; repeated findings reuse stable Ledger identities and active remediation tasks.
+- **Implementation:** Removed pre-finalizer report persistence from the composite capture action; restricted capture to completed post-run metadata; made error classification the only report-retention gate, including manual requests; added completion-triggered diagnostics sweeps for source workflows; expanded Actions task eligibility to every independent finding, including low-confidence and workflow-level errors without job identity.
+- **Regression coverage:** Added tests for no issue-less failed report, no in-progress capture even under force mode, no forced successful report, low-confidence Actions task generation, and workflow-level timeout task generation. Updated the priority assertion to the standing P0 rule.
+- **Commits:** `a32d7dc` (error-only post-run capture); `6d43d6a` (all Actions findings task-eligible); `f80ca11` (remove pre-finalizer persistence); `4081e88` and `ad16f74` (completion-triggered diagnostics workflow); `2312249` and `e8ccd9a` (operating guides); `1ecfd2b` and `94d74e8` (regression tests).
+- **Verification:** Changes are committed. Hosted validation is pending; the P0 task remains open. Historical success/cancellation-only/pre-finalizer records are left immutable and are not retroactively deleted.
