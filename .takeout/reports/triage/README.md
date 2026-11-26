@@ -14,9 +14,10 @@ This priority and approval policy does not authorize destructive resets, restori
 
 - Lint findings use stable fingerprints. The same finding in both lint scopes maps to one Ledger entry.
 - Actions findings use workflow identity, job, step, category, and normalized diagnostic text.
-- A workflow conclusion alone does not create a finding. The report must contain an independently classified issue.
-- Only complete post-run Actions reports contribute findings. Pre-finalizer captures do not create issues.
-- Routine successful runs and cancellation-only runs are not captured by default. A successful run with an independently failed non-blocking step can create a finding. A cancelled run can contribute an independent failure; cancellation and downstream status propagation do not.
+- Only completed post-run Actions reports containing at least one independently classified error are retained and ingested. In-progress, queued, pending, successful-without-errors, cancellation-only, skipped, and neutral runs do not create reports or findings.
+- A successful run with an independently failed non-blocking step is an error and can create a finding. A cancelled run contributes only independently completed job/step failures; cancellation and downstream status propagation do not.
+- Workflow-level startup, timeout, or action-required errors remain eligible even when no job/step identity is available, provided the classifier supplies a diagnostic message.
+- Every independent Actions finding is task-eligible regardless of confidence-derived severity. Each error report therefore enters the Ledger and its findings are linked to generated task(s); stable identities deduplicate repeats and reuse active tasks.
 - Skipped, neutral, queued, in-progress, and unavailable states do not create findings by themselves.
 - Lint findings are task-eligible at every severity after comparison with a complete, tooling-valid baseline. Severity controls task priority, not eligibility. GitHub Actions findings retain their separate confidence/severity eligibility thresholds.
 
@@ -69,7 +70,7 @@ Humans may adjust severity when evidence supports the change. The generator pres
 
 Task creation is part of report ingestion, not a later manual review step.
 
-1. Create tasks for every newly identified lint finding, including `low` and `informational`, and for GitHub Actions findings with severity `medium`, `high`, or `critical`. Findings must have a task-eligible status. Severity controls priority, not lint task eligibility. Existing active lint findings without task references are also handed off on the next ingestion sweep; this does not rescan or backfill report history. Do not create tasks from the initial full-audit baseline or from untracked recurring baseline findings.
+1. Create tasks for every newly identified lint finding after baseline comparison and every independently classified GitHub Actions error finding, regardless of severity. Findings must have a task-eligible status. Severity informs triage but does not suppress ownership. Existing active lint findings without task references are also handed off on the next ingestion sweep; this does not rescan or backfill report history. Do not create tasks from the initial full-audit baseline or from untracked recurring baseline findings.
 2. Group lint findings by source file and rule. Group Actions findings by workflow path, job, step, and category.
 3. Render each task from `workspace/TASK_TEMPLATE.md`. Under the permanent P0 rule, every new Ledger task is Assistant-originated, P0, Approved, In Progress, and `Current execution: Yes`. Set `Governing ADR(s)` to `Pending — Worker review required before approval` where architecture review is still needed. Add one task-board row in In Progress with ADR value `Pending`, and set the Current Execution pointer to that task. Record the task ID in each finding's `task_refs`.
 4. Reuse an active task for the same remediation group. Later evidence refreshes a linked task but does not create duplicate proposals.
