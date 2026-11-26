@@ -17,7 +17,6 @@ _No tasks._
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261126-223106 | Promote CI Ledger skill and Worker P0 batch execution policy | P1 | In Progress | User | Approved | — | 2026-11-26 22:31 UTC | [Task record](tasks/20261126-223106-promote-ci-ledger-skill-and-worker-batch-execution.md) |
 
 | 20261126-170259-02 | Review semicolon findings in ADR-0003 | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 21:57 UTC | [Task record](tasks/20261126-170259-02-review-semicolon-findings-in-workspace-adr-0003-canonical-github.md) |
 | 20261126-170259-01 | Review passive voice in ADR-0003 | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 21:57 UTC | [Task record](tasks/20261126-170259-01-review-passive-voice-findings-in-workspace-adr-0003-canonical-gi.md) |
@@ -40,6 +39,7 @@ _No tasks._
 | 20261126-170259-03 | Review long sentence in ADR-0003 | P0 | Done | Assistant | Approved | Pending | 2026-11-27 05:15 UTC | [Archived task](../.archive/task/20261126-170259-03-review-long-sentence-findings-in-workspace-adr-0003-canonical-gi.md) | [5c19c16](https://github.com/dungnv2602/chatgpt/commit/5c19c163c9487bf064140fa10f4f3a7217fd4a3e) |
 
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Archived task record | Archive commit |
+| 20261126-223106 | Promote CI Ledger skill and Worker P0 batch execution policy | P1 | Done | User | Approved | — | 2026-11-26 22:34 UTC | [Archived task](../.archive/task/20261126-223106-promote-ci-ledger-skill-and-worker-batch-execution.md) | [da2a3ea](https://github.com/dungnv2602/chatgpt/commit/da2a3eacdac08be6ee944d183c9106dc097bde08) |
 |---|---|---:|---|---|---|---|---|---|---|
 | 20261126-162137 | Review semicolon findings in .agent/skills/document-standards/references/document-type-catalog.md | P0 | Done | Assistant | Approved | Pending | 2026-11-26 16:42 UTC | [Archived task](../.archive/task/20261126-162137-review-semicolon-findings-in-agent-skills-document-standards-ref.md) | [789ed33](https://github.com/dungnv2602/chatgpt/commit/789ed33bf65e79a237bc5abab29e2039ac4cd82b) |
 | 20261126-101512-01 | Resolve misclassified test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regression tests | P0 | Done | Assistant | Approved | — | 2026-11-26 15:22 UTC | [Archived task](../.archive/task/20261126-101512-01-review-publication-or-push-failures-in-validate-document-standar.md) | [18e6902](https://github.com/dungnv2602/chatgpt/commit/18e6902c98014172e2644df8b07fcee7839ed48e) |
