@@ -168,3 +168,9 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Hosted validation:** Corrected commit `21f2726` triggered Diagnostics run 45798032857 and Validate Document Standards run 45798032838. Reporter tests found incomplete fixtures missing fields consumed by `index_record`; Ledger tests found one stale task-template assertion and board fixtures targeting the wrong status sections.
 - **Fixes:** Complete retained-report fixtures with the required index fields; keep the incomplete post-run fixture valid for retry; align the task-template assertion with the canonical template; make the renderer test remove the Proposed section and the generated-task rollback test remove the In Progress section.
 - **Next:** Verify the next naturally triggered hosted run. No local test run or hosted pass is claimed.
+
+
+### 2026-11-26 10:07 UTC
+
+- **Additional fixture correction:** The two task-board regression tests had opposite status contracts: the renderer test creates a Proposed task and must remove the Proposed section; the rollback test creates a P0 In Progress task and must remove the In Progress section. Corrected each fixture to remove the section corresponding to the generated task status.
+- **Next:** Hosted validation for the updated fixtures is pending.

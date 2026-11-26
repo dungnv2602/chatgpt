@@ -192,9 +192,9 @@ class LedgerTests(unittest.TestCase):
     def test_task_board_renderer_fails_closed_when_status_table_is_missing(self):
         board_path = self.root / "workspace" / "task_board.md"
         board = board_path.read_text(encoding="utf-8")
-        in_progress_start = board.index("## In Progress\n")
-        blocked_start = board.index("## Blocked\n", in_progress_start)
-        board = board[:in_progress_start] + board[blocked_start:]
+        proposed_start = board.index("## Proposed\n")
+        ready_start = board.index("## Ready\n", proposed_start)
+        board = board[:proposed_start] + board[ready_start:]
         board_path.write_text(board, encoding="utf-8")
         task_path = self.root / "workspace" / "tasks" / "test-proposed-task.md"
         task_content = (
@@ -215,9 +215,9 @@ class LedgerTests(unittest.TestCase):
     def test_new_task_record_is_rolled_back_when_board_publication_fails(self):
         board_path = self.root / "workspace" / "task_board.md"
         board = board_path.read_text(encoding="utf-8")
-        proposed_start = board.index("## Proposed\n") + len("## Proposed\n")
-        ready_start = board.index("## Ready\n", proposed_start)
-        board = board[:proposed_start] + board[ready_start:]
+        in_progress_start = board.index("## In Progress\n")
+        blocked_start = board.index("## Blocked\n", in_progress_start)
+        board = board[:in_progress_start] + board[blocked_start:]
         board_path.write_text(board, encoding="utf-8")
         finding = {
             "finding_id": "test-finding", "source_family": "lint", "category": "test",
