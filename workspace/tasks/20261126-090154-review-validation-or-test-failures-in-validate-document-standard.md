@@ -1,4 +1,4 @@
-# Task: Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regressi
+# Task: Review CI Ledger regression-test failures in Document Standards
 
 ## Metadata
 
