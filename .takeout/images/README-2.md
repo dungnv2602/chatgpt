@@ -104,12 +104,17 @@ The Action rejects drawing-session uploads without an explicit attempt number. T
 
 The processor creates a lowercase, hyphen-separated slug from the title. It removes common diacritics. It prefixes the asset ID when the hand-off supplies one.
 
-The example item creates these files:
+The novel example creates these files:
 
 - Original master: `area/novel/Novel-02/assets/illustrations/ARC-001/SCN-001/original/ILL-001-shared-discovery.png`
 - WebP delivery file: `area/novel/Novel-02/assets/illustrations/ARC-001/SCN-001/ILL-001-shared-discovery.webp`
 
-The processor moves the original bytes to the destination's `original/` folder. It stores the WebP file in the destination root.
+For a shared asset with destination `.takeout/images`, the processor creates:
+
+- Original master: `.takeout/images/original/ILL-001-shared-discovery.png`
+- WebP delivery file: `.takeout/images/webp/ILL-001-shared-discovery.webp`
+
+The processor moves the original bytes to the destination's `original/` folder and stores the WebP file in the destination root for project-specific assets. The shared image destination uses the separate `original/` and `webp/` stores shown above.
 
 Attempt records and daily READMEs link only to the WebP file. The original master remains unchanged. The processor never overwrites an existing file.
 
