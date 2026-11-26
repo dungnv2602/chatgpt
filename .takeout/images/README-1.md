@@ -5,8 +5,8 @@ This directory supports shared image intake and retained image masters. WebP fil
 ## Destinations
 
 - General retained assets: the declared destination under `images/`.
-- Non-novel drawing outputs: `drawings/YYYY-MM-DD/images/`.
-- Novel illustrations: `novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`.
+- Non-novel drawing outputs: `area/drawing/YYYY-MM-DD/images/`.
+- Novel illustrations: `area/novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`.
 
 The Worker preserves each original byte-for-byte in the destination's `original/` folder. It stores the WebP derivative in the destination root. Do not overwrite an existing asset.
 
