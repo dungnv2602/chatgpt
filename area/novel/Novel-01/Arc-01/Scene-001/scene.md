@@ -56,7 +56,7 @@ status: complete
 
 ## 9. Illustrations
 
-Three fresh-generation outputs were delivered in the conversation and recorded in the [16 November 2026 image-prompt log](../../../../drawings/history/2026-11-16-image-prompts.md).
+Three fresh-generation outputs were delivered in the conversation and recorded in the [16 November 2026 image-prompt log](../../../../drawing/history/2026-11-16-image-prompts.md).
 
 - **Attempt 01 — Rain at the bookshop door:** One standalone establishing illustration was generated. It is a partial match; the characters' visual designs remain provisional.
 - **Attempt 02 — The book between them:** Generated as a nine-panel comic collage rather than the requested single book-handoff image; classified as missed target.
