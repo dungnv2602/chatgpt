@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T12:49:18Z",
+  "updated_at_utc": "2026-11-26T12:50:05Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -255,8 +255,8 @@
       "severity": "high",
       "owner": null,
       "first_seen_utc": "2026-11-26T09:44:23.453799+00:00",
-      "last_seen_utc": "2026-11-26T12:41:13.200045+00:00",
-      "occurrence_count": 5,
+      "last_seen_utc": "2026-11-26T12:49:49.848185+00:00",
+      "occurrence_count": 6,
       "evidence": [
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/45821860683-attempt-1/report.json",
@@ -264,13 +264,6 @@
           "observed_at_utc": "2026-11-26T12:41:13.200045+00:00",
           "note": "on_changed · Markdown links and heading anchors",
           "observation_id": "lint_tooling:45821860683:1"
-        },
-        {
-          "report_path": ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45794610594",
-          "observed_at_utc": "2026-11-26T09:44:23.453799+00:00",
-          "note": "on_repo · Markdown links and heading anchors",
-          "observation_id": "lint_tooling:45794610594:1"
         },
         {
           "report_path": ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json",
@@ -292,6 +285,13 @@
           "observed_at_utc": "2026-11-26T11:53:02.254462+00:00",
           "note": "on_changed · Markdown links and heading anchors",
           "observation_id": "lint_tooling:45814417490:1"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45823182226-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45823182226",
+          "observed_at_utc": "2026-11-26T12:49:49.848185+00:00",
+          "note": "on_changed · Markdown links and heading anchors",
+          "observation_id": "lint_tooling:45823182226:1"
         }
       ],
       "resolution": null,
@@ -390,6 +390,7 @@
       ".takeout/reports/lint_reports/on_changed/history/45817273521-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45819716980-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45821860683-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45823182226-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json"
     ],
