@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-142500
 - **Created:** 2026-11-26 14:25 UTC
-- **Updated:** 2026-11-26 15:05 UTC
+- **Updated:** 2026-11-26
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -64,21 +64,30 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - **References:** `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`; `workspace/task_board.md`.
 - **Next:** Continue static pipeline audit and readback; no tests, scripts, CI dispatch or polling.
 
+
+### 2026-11-26 — sweep pagination repair
+
+- **Action:** Static inspection found that run-sweep pagination constructed a base URL with `page=1` and then appended another page parameter for subsequent requests. Changed the collector to build the base query without a page parameter and explicitly request page 1 and subsequent pages separately. Added a regression test that checks page 1/page 2 URLs contain exactly one page parameter and expects 101 items across two mocked pages.
+- **Result:** Changes committed as `e764cfa8cb8a12d1616c777ae4256ce89fe6e969` (collector) and `9c081d05d25526720fcbe837014754e6ae6e5337` (test). Readback confirmed the changed code and test. Test was not executed.
+- **References:** `.takeout/reports/gh_ac_reports/scripts/report.py`; `.takeout/reports/gh_ac_reports/scripts/test_report.py`.
+- **Next:** Continue static audit of ingestion/publication atomicity and trigger path; no tests, scripts, dispatch, or polling.
+
 ## 7. Current State
 
 Explicit clean-start reset executed in commit `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`: generated active Actions and lint history, indexes/latest pointers, and report snapshots under `.archive/reports/` cleared; Actions index and lint indexes reinitialized; Ledger findings and processed state empty and lint scopes unseeded. Report scripts, schemas, templates, guides, workflow definitions, unrelated active tasks, and task archives preserved. This reset does not rewrite Git history or GitHub run records. Hosted baseline runs and task-handoff operation remain unverified.
 
 ## 8. Remaining Work
 
-- Continue static workflow/report ingestion audit and readback after the task-board writer repair.
+- Continue static workflow/report ingestion audit and readback after task-board and pagination repairs.
 - Confirm clean reset tree and empty active report indexes/Ledger.
 - Leave first complete tooling-valid lint audits to seed the fresh period; do not poll CI or claim hosted validation.
 
 ## 9. Next Actions
 
-1. Verify reset paths and active index/Ledger state by remote readback.
-2. Review diagnostics workflow triggering to ensure fresh-period baseline reports can be produced.
-3. Commit any trigger repair and document verification limitations.
+1. Audit remaining ingestion/publication handoff risks statically.
+2. Verify reset paths and active index/Ledger state by remote readback.
+3. Review diagnostics workflow triggering to ensure fresh-period baseline reports can be produced.
+4. Commit confirmed repairs and document verification limitations.
 
 ## 10. References
 
