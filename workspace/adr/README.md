@@ -66,5 +66,4 @@ None. All accepted ADRs have completed implementation and confirmation.
 
 ## Archived ADRs
 
-- [ADR-0002 — Retire Source Drafts After Verified ADR Promotion](../../.archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md) — Accepted. Implementation is complete. All Confirmation criteria passed.
-- [ADR-0001 — Establish Draft-to-ADR Governance and Repository Analysis](../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md) — Fully implemented and permanently archived. ADR-0002 supersedes its source-Draft preservation rule.
+No archived ADR files are present in the current branch. Do not recreate or restore records that are absent from the current repository state.
