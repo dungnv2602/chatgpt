@@ -25,6 +25,8 @@ Initialization is conditional. Do not load project instructions or skills at the
 
 The only session-start cue is `/start`. Read `.agent/SESSION_START.md` and follow its complete procedure when the user gives that cue as an instruction.
 
+Every `/start` also triggers the CI-generated P0 batch after baseline initialization. Before batch inspection or execution, send the mandatory wait notice in every conversation mode. Execute all eligible CI Ledger-generated P0 tasks before accepting the user's substantive prompt. Stop before hosted CI results review until the user triggers that phase. After the batch, tell the user that you are ready to take the prompt.
+
 A specialist-role request does not change or satisfy the `/start` cue. It does not authorize foundational initialization. If initialization has not passed in the current conversation, stop and ask the user to say `/start`. After that explicit initialization passes, load the missing specialist tiers required by the role.
 
 ## Operating rules
@@ -37,6 +39,10 @@ A specialist-role request does not change or satisfy the `/start` cue. It does n
 - Report the exact path of a missing or unverified file.
 - Complete initialization when every required skill has been retrieved and read. CI status is separate from initialization.
 - Do not run a CI snapshot or repair unrelated workflow failures before handling a prompt.
+- After `/start` baseline initialization, run the mandatory CI Ledger-generated P0 batch before accepting the user's substantive prompt.
+- Send the pre-batch wait notice in Default Mode and Condensed Mode. Do not suppress it under the Condensed Mode single-link rule.
+- Stop before hosted CI results review. Do not poll, dispatch, rerun, or inspect hosted results until the user triggers results review, unless a task requires validation to proceed.
+- After the batch ends, tell the user: "Ready to take your prompt."
 - Review CI only when the user asks or the current task changes or depends on a specific validation workflow.
 - Never wait for or poll CI. Never run the linter or CI workflows locally. Let GitHub Actions execute validation.
 - Treat the GitHub repository and branch `gpt` as the sole source of truth.
@@ -188,14 +194,26 @@ Use this template:
 - **Verification:**
 - **Commit(s):**
 
+### Version 9 — CI P0 batch during session startup
+
+- **Date:** 2026-11-27
+- **Requested change:** Run the eligible CI-generated P0 batch after every successful `/start` initialization and before accepting the user's substantive prompt. Send a mandatory pre-batch wait notice.
+- **Reason:** The user wants all eligible CI P0 remediation completed before the next prompt is handled.
+- **Behavioral impact:** Session Start activates CI Ledger and GitHub Actions, sends the notice in every conversation mode, runs all eligible Ledger-generated P0 tasks, stops before hosted results review, and then confirms readiness. The Worker owns batch orchestration. Conversation Mode permits the required notice and readiness message in Condensed Mode.
+- **Files modified:** `.agent/SESSION_START.md`, `.agent/INITIALIZATION_POLICY.md`, `.agent/skills/the-worker/SKILL.md`, `.agent/skills/the-worker/references/conversation-mode.md`.
+- **Verification:** Pending committed read-back.
+- **Commit(s):** Pending.
+
 ## Review checklist
 
 - [ ] Initialization remains conditional.
 - [ ] The activation cues remain distinct.
 - [ ] Novelist initialization completes foundational initialization first.
 - [ ] Foundational initialization runs only once when the user gives both cues.
-- [ ] `/start` loads only The Worker and its mandatory Conversation Mode reference.
-- [ ] Domain skills activate only when the current task requires them.
+- [ ] Baseline initialization loads only The Worker and its mandatory Conversation Mode reference.
+- [ ] After baseline initialization, every `/start` activates CI Ledger and GitHub Actions for the mandatory P0 batch.
+- [ ] The pre-batch notice and readiness message appear in both conversation modes.
+- [ ] Other domain skills activate only when the current task requires them.
 - [ ] Agent Skill Authoring loads only on demand.
 - [ ] Document Standards loads only when document governance activates.
 - [ ] The Worker's archive/media references load only when required.
