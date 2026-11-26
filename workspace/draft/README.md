@@ -47,4 +47,4 @@ Approval applies only to the Draft revision and scope that the user identifies. 
 
 A Draft is not authority to implement its proposal. A design task may prepare a Draft. An implementation task must reference an accepted ADR.
 
-Do not create archive/draft/ or a Promoted Drafts section. ADR-0002 does not change retention rules for rejected, withdrawn, or superseded Drafts.
+Do not create `.archive/draft/` or a Promoted Drafts section. ADR-0002 does not change retention rules for rejected, withdrawn, or superseded Drafts.
