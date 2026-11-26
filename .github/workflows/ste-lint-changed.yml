@@ -18,8 +18,11 @@ on:
       - '!.agent/skills/prompt-master/**'
       - '!.agent/skills/asd-ste100/**'
 
+# Only newer pushes to the same branch supersede older push lint runs.
+# The newer commit contains the cumulative branch state and rechecks the changes.
+# Manual runs get unique groups and never cancel an automatic push validation.
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event_name == 'push' && 'push' || github.run_id }}
   cancel-in-progress: true
 
 jobs:
