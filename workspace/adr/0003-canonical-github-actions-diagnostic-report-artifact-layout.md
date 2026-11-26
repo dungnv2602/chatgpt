@@ -151,12 +151,12 @@ The decision depends on the assumption that no required external consumer relies
 
 ### Confirmation
 
-- [ ] Every retained history folder contains canonical `report.json`, `integrity.json`, and captured logs. Their report JSON and log content hashes are unchanged by migration. Each regenerated integrity manifest validates against the retained files.
-- [ ] The generator no longer writes per-run Markdown, root latest-report copies, or per-workflow indexes/latest copies. The central index remains valid and its latest pointer selects the correct report after capture, pruning, and backfill.
-- [ ] The on-demand Markdown renderer produces a readable report from canonical JSON, with regression tests for representative reports and missing or invalid input.
-- [ ] A repository-wide reference search finds no remaining required references to removed paths, or each required consumer is migrated. All Ledger and task evidence paths continue to resolve to unchanged report JSON history paths.
-- [ ] The migration removes only derived artifacts. A changed-path review confirms that no canonical report JSON or captured log was modified or deleted.
-- [ ] The relevant naturally triggered hosted validation workflows pass on the implementation commit. Do not use manual dispatch or polling as a substitute for event-driven validation.
+- [x] Every retained history folder contains canonical `report.json`, `integrity.json`, and captured logs. Their report JSON and log content hashes are unchanged by migration. Each regenerated integrity manifest validates against the retained files. Diagnostics run 45858706596 verified all 28 manifests. The 12 report folders needed by the task were copied with their JSON, manifest, and log files read back byte-for-byte.
+- [x] The generator no longer writes per-run Markdown, root latest-report copies, or per-workflow indexes/latest copies. The central index remains valid and its latest pointer selects the correct report after capture, pruning, and backfill. The active index now contains 16 reports and its latest pointer resolves to the canonical report JSON. Hosted reporter tests passed in Diagnostics run 45858706596.
+- [x] The on-demand Markdown renderer produces a readable report from canonical JSON, with regression tests for representative reports and missing or invalid input. The end-to-end renderer and missing or invalid input tests passed in Diagnostics run 45858706596.
+- [ ] A repository-wide reference search finds no remaining required references to removed paths, or each required consumer is migrated. All Ledger and task evidence paths continue to resolve to unchanged report JSON history paths. Targeted consumer review is complete for the report guide, generator, tests, Ledger, diagnostics workflow, Document Type Catalog, and task evidence. A full read-only repository-wide reference search remains pending explicit user authorization.
+- [x] The migration removes only derived artifacts. A changed-path review confirms that no canonical report JSON or captured log was modified or deleted. Git blob comparisons confirmed all 57 pre-migration report JSON and log files were byte-identical after migration. Later task evidence archival used exact copies and preserved the original integrity manifests.
+- [x] The relevant naturally triggered hosted validation workflows pass on the implementation commit. Diagnostics runs 45858706596 and 45861355013, Validate Document Standards runs 45858726101 and 45861354992, and STE Lint Changed run 45859253550 all completed successfully. No manual dispatch was used.
 
 ## Pros and Cons of the Options
 
@@ -230,3 +230,4 @@ The decision depends on the assumption that no required external consumer relies
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
 | 2026-11-26 | Accepted | User approved DRAFT-0004 revision 1, Option 3. The complete rationale comparison and provisional ADR read-back passed. |
+| 2026-11-26 | Option 3 implementation completed; five of six confirmation criteria verified | Reporter migration, central index, on-demand renderer, evidence preservation, and naturally triggered hosted validation passed. The repository-wide reference search remains pending explicit user authorization. |
