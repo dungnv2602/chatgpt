@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 12:56 UTC** Verify archived task linkage for the three historical Actions occurrences absent from the current open Ledger totals, then confirm hosted validation after documentation commit a93492d. Shared Actions eligibility, lint tooling task generation, historical report replay, baseline gating, and one Current Execution are implemented. The current indexes contain 30 Actions and 14 lint reports, all matching Ledger processed paths; all open findings have task_refs. Diagnostics [45823761330](https://github.com/dungnv2602/chatgpt/actions/runs/45823761330) and Document Standards [45823761313](https://github.com/dungnv2602/chatgpt/actions/runs/45823761313) passed. Lint [45823761243](https://github.com/dungnv2602/chatgpt/actions/runs/45823761243) had a Failed overall conclusion but its Markdown link tooling check passed. Active task: [20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md).
+- **2026-11-26 13:09 UTC** Initialize this session and migrate legacy root `archive/` contents into `.archive/`, relocate each item to its correct archive family, remove obsolete `archive/`, repair references, and then resume the P0 task [20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md). Inventory exact legacy paths, inspect required policy/records, commit migration and link repairs, and verify the resulting paths. Do not modify immutable existing `.archive/` records except where the user's migration instruction explicitly permits relocation/reference repair.
 
 ## Open Discussions
 
