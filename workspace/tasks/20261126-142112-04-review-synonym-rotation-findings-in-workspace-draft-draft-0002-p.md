@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-142112-04
 - **Created:** 2026-11-26 14:21 UTC
-- **Updated:** 2026-11-26 14:50 UTC
+- **Updated:** 2026-11-26 14:55 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -61,13 +61,20 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 - **References:** [DRAFT-0002 remediation commit](https://github.com/dungnv2602/chatgpt/commit/c3ef2c4dc0635033c5cebaef0b7624af3b2fccb6), [source report](../../.takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json).
 - **Next:** Review the next event-driven lint report when available. Resolve this finding group only after the relevant validation passes. Do not poll CI.
 
+### 2026-11-26 14:55 UTC
+
+- **Action:** Corrected the remaining synonym-rotation diagnostic in DRAFT-0002 revision 4.
+- **Result:** Replaced the competing "validate" verb with the established "check" wording in the repository/CI option description. The revision remains in review and user approval remains pending. Commit [10d05fb](https://github.com/dungnv2602/chatgpt/commit/10d05fb67773a7c244bf8c175fe4cf0a6b000f40) was read back. Hosted lint validation remains pending.
+- **References:** [Synonym correction](https://github.com/dungnv2602/chatgpt/commit/10d05fb67773a7c244bf8c175fe4cf0a6b000f40), [report 45841101397](https://github.com/dungnv2602/chatgpt/actions/runs/45841101397).
+- **Next:** Review the next event-driven lint report for this finding group. Resolve it only after successful relevant validation.
+
 ## 7. Current State
 
 The Ledger recorded this finding group. DRAFT-0002 revision 4 contains the remediation commit. Hosted validation remains pending.
 
 ## 8. Remaining Work
 
-- Review the next event-driven lint report for this finding group.
+- Review the next event-driven lint report for this finding group after commit 10d05fb.
 - Resolve the group only after a successful relevant validation is recorded.
 
 ## 9. Next Actions
