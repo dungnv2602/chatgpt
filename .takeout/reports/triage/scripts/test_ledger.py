@@ -156,7 +156,9 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(len(finding["evidence"]),2)
         task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
         self.assertEqual(len(task_files), 1)
-        self.assertIn("- **Status:** Proposed", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("- **Priority:** P0", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("- **Status:** In Progress", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("- **Current execution:** Yes", task_files[0].read_text(encoding="utf-8"))
         self.assertIn(finding["finding_id"], task_files[0].read_text(encoding="utf-8"))
         self.assertIn("[report](../../.takeout/reports/lint_reports/on_changed/history/100-attempt-1/report.json)", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("../../.takeout/reports/triage/ledger.json", task_files[0].read_text(encoding="utf-8"))
@@ -169,7 +171,7 @@ class LedgerTests(unittest.TestCase):
         self.assertNotIn("[Record approved decisions and concise rationale.", task_files[0].read_text(encoding="utf-8"))
         self.assertNotIn("[Preserve relevant user clarifications", task_files[0].read_text(encoding="utf-8"))
         self.assertIn(f"| {finding['task_refs'][0]} |", (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8"))
-        self.assertIn("| Pending user approval | Pending |", (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8"))
+        self.assertIn("| Assistant | Approved | Pending |", (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8"))
         second = LEDGER.ingest(self.root, now="2026-11-23T07:13:00Z")
         self.assertFalse(second["changed"])
         self.assertEqual(self.read_ledger()["findings"][0]["occurrence_count"],1)
@@ -178,13 +180,14 @@ class LedgerTests(unittest.TestCase):
         self.add_lint("on_changed", "109", "2026-11-23T07:09:00Z", level="advisory")
         LEDGER.ingest(self.root, now="2026-11-23T07:10:00Z")
         board = (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8")
-        proposed_start = board.index("## Proposed")
-        paused_start = board.index("## Paused", proposed_start)
-        historical_start = board.index("## Historical", paused_start)
-        proposed_section = board[proposed_start:paused_start]
+        active_start = board.index("## In Progress")
+        blocked_start = board.index("## Blocked", active_start)
+        historical_start = board.index("## Historical", blocked_start)
+        active_section = board[active_start:blocked_start]
         historical_section = board[historical_start:]
-        self.assertIn("| 20261123-071000 |", proposed_section)
+        self.assertIn("| 20261123-071000 |", active_section)
         self.assertNotIn("| 20261123-071000 |", historical_section)
+        self.assertIn("[20261123-071000 —", board.split("## Current Execution", 1)[1].split("## ", 1)[0])
 
     def test_task_board_renderer_fails_closed_when_status_table_is_missing(self):
         board_path = self.root / "workspace" / "task_board.md"
