@@ -121,3 +121,11 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Repair:** Updated the GitHub Actions skill, archive README, and active GH Actions diagnostics, triage, and lint report README references. Operational workflow paths were not changed.
 - **Verification:** Read back the modified files from branch `gpt`; corrected an intermediate replacement error and verified the final targeted path references. No duplicate `.takeout/.takeout` or `.archive/.archive` prefixes remain in inspected documents.
 - **Limitations:** No local execution or hosted CI was run. This audit is path/reference consistency review, not a complete exhaustive proof of every link in the repository.
+
+
+### 2026-11-26 — Archive retention reconstruction repair
+
+- **Finding:** The reconstructed archive tree is `.archive/task/` and `.archive/reports/`, but the retention index, cleanup script, tests and active guides used the old `archive/tasks/` and `archive/reports/` contract.
+- **Repair:** Migrated 55 exact retention-index entries to the reconstructed paths. Updated the cleanup script's validation/root/family checks, regression-test fixtures and archive/Worker/GitHub Actions documentation. Updated session-start references for `area/novel/` and `area/drawing/` and repaired the skills index's session-start link.
+- **Verification:** Read back index and script/test contents; compared every indexed path to the current remote tree. All 55 indexed records had existing exact paths. Read-back of updated paths occurred after commits.
+- **Limitation:** Tests were not run locally or on hosted Actions; catalog-wide validation and full cross-reference audit remain incomplete.
