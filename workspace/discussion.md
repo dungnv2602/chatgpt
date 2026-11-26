@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 16:45 UTC:** Resume P0 task 20261126-090154. Verify every ADR-0003 Confirmation criterion against the current tree and hosted evidence, confirm all linked Ledger findings are terminal, and identify the exact report files needed for its historical record. Then prepare task and ADR closeout without changing unrelated drafts.
+- **2026-11-26 16:56 UTC:** Preserve the 12 unique canonical Actions report folders linked by task 20261126-090154. Archive each report JSON, integrity manifest, and captured log; verify exact read-back; register every file; then update the Ledger/task evidence links and central index before removing active copies.
 
 ## Open Discussions
 
