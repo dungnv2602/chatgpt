@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T13:46:38Z",
+  "updated_at_utc": "2026-11-26T13:57:00Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -308,7 +308,7 @@
       "source_family": "github_actions",
       "category": "validation_or_test",
       "title": "Validate Document Standards / validate-document-standards / Validate the document type catalog: validation_or_test — <timestamp> error: 3 markdown file(s) are not covered by the catalog: archive/adr/0001-establish-draft-to-adr-governance-an",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T12:42:52Z",
@@ -316,28 +316,37 @@
       "occurrence_count": 3,
       "evidence": [
         {
-          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45819717131-attempt-1-post_run/report.json",
+          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45819717131-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45819717131",
           "observed_at_utc": "2026-11-26T12:42:52Z",
           "note": "validate-document-standards / Validate the document type catalog",
           "observation_id": "github_actions:427313089:45819717131:1"
         },
         {
-          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45820848037-attempt-1-post_run/report.json",
+          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45820848037-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45820848037",
           "observed_at_utc": "2026-11-26T12:42:56Z",
           "note": "validate-document-standards / Validate the document type catalog",
           "observation_id": "github_actions:427313089:45820848037:1"
         },
         {
-          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45822163306-attempt-1-post_run/report.json",
+          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45822163306-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45822163306",
           "observed_at_utc": "2026-11-26T12:49:17Z",
           "note": "validate-document-standards / Validate the document type catalog",
           "observation_id": "github_actions:427313089:45822163306:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "b41d486cfa8b094be9d810707262878485e219bc",
+        "resolved_at_utc": "2026-11-26T13:57:00Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45832275652",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T13:46:44Z"
+        },
+        "note": "Catalog version 1.18 covers the in-scope archive paths and rejects whitespace-leading excluded patterns. The hosted catalog validator and both regression suites passed."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -351,7 +360,7 @@
       "source_family": "github_actions",
       "category": "validation_or_test",
       "title": "Validate Document Standards / validate-document-standards / Validate the document type catalog: validation_or_test — <timestamp> error: line 148: unsafe or excluded markdown coverage pattern ' .archive/adr/*.md'.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T13:21:04Z",
@@ -359,21 +368,30 @@
       "occurrence_count": 2,
       "evidence": [
         {
-          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45827698966-attempt-1-post_run/report.json",
+          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45827698966-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45827698966",
           "observed_at_utc": "2026-11-26T13:21:04Z",
           "note": "validate-document-standards / Validate the document type catalog",
           "observation_id": "github_actions:427313089:45827698966:1"
         },
         {
-          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45831497498-attempt-1-post_run/report.json",
+          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45831497498-attempt-1-post_run/report.json",
           "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45831497498",
           "observed_at_utc": "2026-11-26T13:42:49Z",
           "note": "validate-document-standards / Validate the document type catalog",
           "observation_id": "github_actions:427313089:45831497498:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "b41d486cfa8b094be9d810707262878485e219bc",
+        "resolved_at_utc": "2026-11-26T13:57:00Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45832275652",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T13:46:44Z"
+        },
+        "note": "Catalog version 1.18 covers the in-scope archive paths and rejects whitespace-leading excluded patterns. The hosted catalog validator and both regression suites passed."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -412,12 +430,7 @@
       ".takeout/reports/gh_ac_reports/history/427313089/45798032838-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45798459536-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45798838831-attempt-1-post_run/report.json",
-      ".takeout/reports/gh_ac_reports/history/427313089/45819717131-attempt-1-post_run/report.json",
-      ".takeout/reports/gh_ac_reports/history/427313089/45820848037-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45821860845-attempt-1-post_run/report.json",
-      ".takeout/reports/gh_ac_reports/history/427313089/45822163306-attempt-1-post_run/report.json",
-      ".takeout/reports/gh_ac_reports/history/427313089/45827698966-attempt-1-post_run/report.json",
-      ".takeout/reports/gh_ac_reports/history/427313089/45831497498-attempt-1-post_run/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45804845399-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45808978869-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45814010116-attempt-1/report.json",
