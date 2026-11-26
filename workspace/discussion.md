@@ -29,3 +29,6 @@ Audit reconstructed GitHub Actions skill report/archive path references and comp
 
 
 - **2026-11-26 — Worker and image/drawing guidance alignment:** Continued the reconstruction audit and repaired active Worker, image-processing, drawing, provenance, and novelist guidance to use `.agent/skills/`, `area/novel/`, `area/drawing/`, `.takeout/reports/`, and `.archive/` paths. Runtime intake remains `images/takeout/`. Follow-up readback corrected malformed intermediate prefixes. Full cross-reference audit remains in progress.
+
+
+- **2026-11-26 — Navigation and image/report guide follow-up:** Corrected the active initialization policy, report index, image index, and Document Standards Skill template path example to reconstructed `.takeout/`, `.archive/`, `area/`, and `.agent/` locations. Targeted readback completed; audit remains open.
