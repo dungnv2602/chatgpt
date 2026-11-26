@@ -18,7 +18,7 @@ status: generated
 
 ## 2. Image Reference
 - **Repository Image:** Not stored in GitHub; delivered in this conversation as `a_cozy_cinematic_café_scene_with_a_romantic_inti.png`.
-- **Archived Prompt / Attempt:** [2026-11-16 Image Prompts — Attempt 06](../../../../../drawings/history/2026-11-16-image-prompts.md#attempt-06--maya-across-the-café-table)
+- **Archived Prompt / Attempt:** [2026-11-16 Image Prompts — Attempt 06](../../../../../drawing/history/2026-11-16-image-prompts.md#attempt-06--maya-across-the-café-table)
 - **Image Status:** Fresh generation; partial visual match with continuity and prompt-execution errors.
 - **Source or Reference Image:** None attached. Fresh text-to-image generation.
 
