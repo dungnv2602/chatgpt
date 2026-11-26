@@ -22,7 +22,7 @@ Use the [Image Takeout procedure](../../../../.takeout/images/README-2.md) for t
 2. Create one hand-off item with its exact top-level source filename, descriptive title, optional repository asset_id, and repository destination. Record source_asset_id separately when the generation record exposes a platform Asset ID.
 3. Include `attempt: NN` for a destination under `area/drawing/YYYY-MM-DD/images/`. Other assets may omit it.
 4. List every top-level image upload exactly once in the ready hand-off. The repository-owned `README.md` and `HANDOFF.yml` are metadata, not uploads. The processor accepts only those exact regular files as intake metadata and rejects any other non-image file. The Action does not infer image content, title, ID, or project membership.
-5. Keep uploads directly in `.takeout/images/`. Do not place them in the reserved `history/` or `webp/` directories.
+5. Keep uploads directly in `.takeout/images/`. Do not place them in the reserved `history/`, `original/`, or `webp/` directories.
 
 Add a mandatory `conversation_record` path to every ready hand-off item. The file must be a dated conversation-integrity record and must contain the exact source filename in its `Image source mapping` table. For drawing outputs, use `area/drawing/history/YYYY-MM-DD-conversation-integrity.md`; include the attempt and a native Generation ID or recorded internal Output ID. The processor cross-checks that identity against the referenced attempt note. If an Asset ID is supplied, it must also match. A Partial or Curated record must identify unavailable material and label editorial summaries; do not invent a transcript to pass validation.
 
