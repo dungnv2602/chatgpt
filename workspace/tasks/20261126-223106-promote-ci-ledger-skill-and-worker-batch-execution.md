@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-223106
 - **Created:** 2026-11-26 22:31 UTC
-- **Updated:** 2026-11-26 22:31 UTC
+- **Updated:** 2026-11-26 22:35 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -66,6 +66,13 @@ Promote CI Ledger finding governance, intake, identity, task generation, lifecyc
 - **References:** Commits `36afbf6`, `4ef2dce`, `5f8e356`, `fefb388`, `31ed6bb`, `ddfeb09`, `535aa8e`.
 - **Next:** Verify exact contents, link integrity, and task-board state. Update the task and register.
 
+### 2026-11-26 22:35 UTC
+
+- **Action:** Read back the final skill, Worker, GitHub Actions skill, Ledger README, skill index, document catalog, board, and task record from branch `gpt`.
+- **Result:** Manual checks passed for skill metadata and scope, Ledger task handoff and lifecycle sections, Worker-owned sequencing and deferred-review boundary, GitHub Actions technical-only scope, README navigation, skill discovery, catalog entry, and board indexing. The board lists this task only under In Progress. Hosted CI and official skill validation were not run or reviewed.
+- **References:** `.agent/skills/ci-ledger/SKILL.md`, `.agent/skills/the-worker/SKILL.md`, `.agent/skills/github-actions/SKILL.md`, `.takeout/reports/triage/README.md`, `.agent/skills/README.md`, `.agent/skills/document-standards/references/document-type-catalog.md`, `workspace/task_board.md`. Commits: `36afbf6`, `4ef2dce`, `5f8e356`, `fefb388`, `31ed6bb`, `ddfeb09`, `535aa8e`, `c43a75a`, `9aea617`.
+- **Next:** Update the discussion register and retain this task pending deferred validation review.
+
 ## 7. Current State
 
 The new CI Ledger skill and Worker batch-execution procedure are committed. The triage README, skill index, and document catalog were updated. Task-board indexing was reconciled. Read-back verification is in progress.
@@ -90,10 +97,10 @@ The new CI Ledger skill and Worker batch-execution procedure are committed. The 
 
 ## 11. Verification
 
-- **Check:** Repository file read-back.
-- **Method:** GitHub API on branch `gpt`.
-- **Result:** Pending.
-- **Limitations:** Hosted validation will not be reviewed in this phase.
+- **Check:** Manual skill, policy, reference, index, catalog, and task-board consistency.
+- **Method:** Exact-path fetch and read-back through GitHub API on branch `gpt`.
+- **Result:** Passed. Read-back confirmed required sections, links, task-activated discovery, the Worker-owned batch procedure, and the board's single In Progress entry.
+- **Limitations:** The official Agent Skills validator and linter were not run. Hosted CI results remain deferred and were not inspected.
 
 ## 12. Handoff Instructions
 
