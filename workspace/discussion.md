@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 11:15 UTC** Present [DRAFT-0004 — Canonical GitHub Actions Diagnostic Report Artifact Layout](draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md), revision 1, for user review. Do not remove derived report artifacts until the user approves this exact revision and the resulting ADR is accepted.
+- **2026-11-26 11:29 UTC** Implement the user-approved error-only retention and Ledger task-linkage contract. Use one shared eligibility predicate for reporter retention and Ledger ingestion. Task failed lint tooling checks when a baseline is unavailable, without taskifying unbaselined lint findings. Enforce one Current Execution task. Do not change the report artifact layout while DRAFT-0004 awaits approval and ADR acceptance. Task: [20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md).
 
 ## Open Discussions
 
