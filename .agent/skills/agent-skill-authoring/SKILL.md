@@ -19,7 +19,7 @@ The Agent Skills open specification is the format authority:
 
 The repository `dungnv2602/chatgpt`, branch `gpt`, is the sole source of truth for project files and decisions. The external specification defines the portable skill format. It does not override user instructions, repository policy, or activation cues.
 
-Do not assume that placing a folder in `skills/` automatically makes a client load it. Format compliance, discoverability, activation, and foundational initialization are separate concerns and must each be handled explicitly.
+Do not assume that placing a folder in `.agent/skills/` automatically makes a client load it. Format compliance, discoverability, activation, and foundational initialization are separate concerns and must each be handled explicitly.
 
 ## 2. Required skill structure
 
@@ -264,7 +264,7 @@ When the official `skills-ref` validator is available, run `skills-ref check pat
 For this project:
 
 - Work only in `dungnv2602/chatgpt`, branch `gpt`.
-- Keep skill files within the approved `skills/` workspace.
+- Keep skill files within the approved `.agent/skills/` workspace.
 - Fetch the exact current file before updating it and use its current blob SHA.
 - Never overwrite existing content without inspecting it.
 - Make sequential writes to the same path.
