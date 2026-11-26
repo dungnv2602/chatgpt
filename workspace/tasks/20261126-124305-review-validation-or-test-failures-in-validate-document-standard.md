@@ -5,13 +5,13 @@
 - **Template version:** 1.3
 - **ID:** 20261126-124305
 - **Created:** 2026-11-26 12:43 UTC
-- **Updated:** 2026-11-26 12:56 UTC
+- **Updated:** 2026-11-26 13:21 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Governing ADR(s):** Pending — Worker review required before approval
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** None
 - **Ledger group:** `ci-601033e3967e71af`
@@ -98,3 +98,4 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
 | `gha-96b1feabf9ad3b16cccbc828` | medium | Validate Document Standards / validate-document-standards / Validate the document type catalog: validation\_or\_test — \<timestamp\> error: 3 markdown file\(s\) are not covered by the catalog: archive/adr/0001-establish-draft-to-adr-governance-an | [report](../../.takeout/reports/gh_ac_reports/history/427313089/45819717131-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45819717131) · [report](../../.takeout/reports/gh_ac_reports/history/427313089/45820848037-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45820848037) · [report](../../.takeout/reports/gh_ac_reports/history/427313089/45822163306-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45822163306) |
+| `gha-82bf8a9e501d0142824ad38d` | medium | Validate Document Standards / validate-document-standards / Validate the document type catalog: validation\_or\_test — \<timestamp\> error: line 148: unsafe or excluded markdown coverage pattern ' .archive/adr/\*.md'. | [report](../../.takeout/reports/gh_ac_reports/history/427313089/45827698966-attempt-1-post_run/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45827698966) |

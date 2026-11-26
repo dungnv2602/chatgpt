@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T13:18:20Z",
+  "updated_at_utc": "2026-11-26T13:21:11Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -345,6 +345,35 @@
         "20261126-124305"
       ],
       "task_group": "ci-601033e3967e71af"
+    },
+    {
+      "finding_id": "gha-82bf8a9e501d0142824ad38d",
+      "source_family": "github_actions",
+      "category": "validation_or_test",
+      "title": "Validate Document Standards / validate-document-standards / Validate the document type catalog: validation_or_test — <timestamp> error: line 148: unsafe or excluded markdown coverage pattern ' .archive/adr/*.md'.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T13:21:04Z",
+      "last_seen_utc": "2026-11-26T13:21:04Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45827698966-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45827698966",
+          "observed_at_utc": "2026-11-26T13:21:04Z",
+          "note": "validate-document-standards / Validate the document type catalog",
+          "observation_id": "github_actions:427313089:45827698966:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-124305"
+      ],
+      "task_group": "ci-601033e3967e71af"
     }
   ],
   "ingestion_state": {
@@ -380,6 +409,7 @@
       ".takeout/reports/gh_ac_reports/history/427313089/45820848037-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45821860845-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45822163306-attempt-1-post_run/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45827698966-attempt-1-post_run/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45804845399-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45808978869-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45814010116-attempt-1/report.json",
