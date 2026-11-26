@@ -10,8 +10,8 @@ The global pattern indexes contain reusable lessons extracted from the historica
 
 ## Historical prompt indexes
 
-- [Historical successful prompts](../../../../drawings/history/successful-prompts.md) — pointers to successful or user-approved authored prompts before 19 November 2026.
-- [Historical failed prompts](../../../../drawings/history/failed-prompts.md) — rejected prompts, missed targets, partial matches, and unverified edit attempts from the same period.
+- [Historical successful prompts](../../../../../area/drawing/history/successful-prompts.md) — pointers to successful or user-approved authored prompts before 19 November 2026.
+- [Historical failed prompts](../../../../../area/drawing/history/failed-prompts.md) — rejected prompts, missed targets, partial matches, and unverified edit attempts from the same period.
 
 The chronological logs remain the canonical source for full prompt wording and attempt-by-attempt outcomes. The historical indexes are navigational and do not replace or rewrite those records.
 
