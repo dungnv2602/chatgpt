@@ -2,30 +2,30 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#804](https://github.com/dungnv2602/chatgpt/actions/runs/45823182226)
-- **Run ID / attempt:** 45823182226 / 1
+- **Run:** [#805](https://github.com/dungnv2602/chatgpt/actions/runs/45823761243)
+- **Run ID / attempt:** 45823761243 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / d4fd8ddbf936e151f2d3c3753e9193875fc3fde5
+- **Branch / commit:** gpt / c299b732dbbc3395ec754b26a8b1a6c554b239af
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** d4fd8ddbf936e151f2d3c3753e9193875fc3fde5
-- **Generated (UTC):** 2026-11-26T12:49:49.848185+00:00
+- **Linter source SHA:** c299b732dbbc3395ec754b26a8b1a6c554b239af
+- **Generated (UTC):** 2026-11-26T12:53:36.330591+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 92 |
-| Files that failed | 37 |
-| Files with findings | 68 |
-| Total findings | 774 |
-| Hard findings | 322 |
-| Advisory findings | 452 |
-| New findings | 5 |
-| Recurring findings | 769 |
-| Resolved findings | 2 |
-| Failed workflow checks | 1 |
+| Files evaluated | 93 |
+| Files that failed | 38 |
+| Files with findings | 69 |
+| Total findings | 847 |
+| Hard findings | 364 |
+| Advisory findings | 483 |
+| New findings | 74 |
+| Recurring findings | 773 |
+| Resolved findings | 1 |
+| Failed workflow checks | 0 |
 
 ## 2. Execution environment
 
@@ -126,6 +126,7 @@ This list is the exact set of Markdown files passed to the linter. It does not i
 - .agent/skills/asd-ste100/assets/lint-report-template.md
 - workspace/DRAFT_TEMPLATE.md
 - .agent/skills/discernment-nudge/SKILL.md
+- archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md
 - archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md
 - workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md
 - .agent/skills/asd-ste100/references/repository-writing-policy.md
@@ -184,7 +185,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/decision-governance/SKILL.md | FAIL | 9 | 5 | 0 | 2913 | 0.3 | 1 |
 | .agent/skills/asd-ste100/references/writing-rules.md | PASS | 8 | 0 | 6 | 706 | 1.1 | 0 |
 | .agent/skills/drawing/references/series-continuity-and-iteration.md | PASS | 9 | 0 | 9 | 3262 | 0.3 | 0 |
-| .agent/skills/document-standards/references/document-type-catalog.md | FAIL | 8 | 4 | 0 | 4654 | 0.2 | 1 |
+| .agent/skills/document-standards/references/document-type-catalog.md | FAIL | 8 | 4 | 0 | 4672 | 0.2 | 1 |
 | .agent/skills/the-worker/references/archive-records-and-image-prompts.md | FAIL | 28 | 3 | 0 | 3538 | 0.8 | 1 |
 | .agent/skills/drawing/references/image-editing-protocol.md | PASS | 2 | 1 | 4 | 474 | 0.4 | 0 |
 | .agent/skills/agent-skill-authoring/SKILL.md | PASS | 15 | 0 | 6 | 2260 | 0.7 | 0 |
@@ -194,7 +195,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/the-worker/references/conversation-mode.md | FAIL | 19 | 2 | 0 | 3185 | 0.6 | 1 |
 | .agent/skills/internal-comms/examples/company-newsletter.md | FAIL | 4 | 1 | 0 | 554 | 0.7 | 1 |
 | .agent/skills/skill-creator/agents/comparator.md | FAIL | 6 | 1 | 0 | 735 | 0.8 | 1 |
-| workspace/task_board.md | FAIL | 3 | 3 | 0 | 291 | 1.0 | 1 |
+| workspace/task_board.md | FAIL | 3 | 3 | 0 | 287 | 1.0 | 1 |
 | .agent/skills/theme-factory/themes/desert-rose.md | PASS | 0 | 0 | 0 | 68 | 0.0 | 0 |
 | workspace/analysis/README.md | PASS | 0 | 0 | 0 | 278 | 0.0 | 0 |
 | .agent/skills/asd-ste100/README.md | PASS | 2 | 0 | 0 | 1573 | 0.1 | 0 |
@@ -225,6 +226,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/asd-ste100/assets/lint-report-template.md | PASS | 0 | 0 | 0 | 385 | 0.0 | 0 |
 | workspace/DRAFT_TEMPLATE.md | FAIL | 9 | 4 | 0 | 1242 | 0.7 | 1 |
 | .agent/skills/discernment-nudge/SKILL.md | FAIL | 26 | 24 | 0 | 1701 | 1.5 | 1 |
+| archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md | FAIL | 73 | 42 | 0 | 4303 | 1.7 | 1 |
 | archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md | FAIL | 8 | 2 | 0 | 1310 | 0.6 | 1 |
 | workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | FAIL | 75 | 53 | 0 | 8961 | 0.8 | 1 |
 | .agent/skills/asd-ste100/references/repository-writing-policy.md | PASS | 1 | 0 | 0 | 570 | 0.2 | 0 |
@@ -237,11 +239,11 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 397 |
-| long-sentence | 137 |
-| semicolon | 116 |
-| synonym-rotation | 56 |
-| present-perfect | 55 |
+| passive-voice | 424 |
+| semicolon | 144 |
+| long-sentence | 142 |
+| synonym-rotation | 65 |
+| present-perfect | 59 |
 | marketing-adjective | 6 |
 | phrasal-verb | 5 |
 | nominalization | 2 |
@@ -276,7 +278,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.364s
+Ran 4 tests in 0.267s
 
 OK
 ~~~
@@ -289,7 +291,7 @@ OK
 ~~~text
 .....
 ----------------------------------------------------------------------
-Ran 5 tests in 0.008s
+Ran 5 tests in 0.036s
 
 OK
 ~~~
@@ -305,14 +307,12 @@ selftest OK
 
 ### Markdown links and heading anchors
 
-- **Result:** Failed
-- **Exit code:** 1
+- **Result:** Passed
+- **Exit code:** 0
 
 ~~~text
-Scanned 223 active Markdown files (304 available as link targets) and 349 local Markdown links.
-Found 2 unresolved local Markdown targets or anchors.
-archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md
-archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md
+Scanned 225 active Markdown files (307 available as link targets) and 350 local Markdown links.
+Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
 ## 7. Baseline comparison
@@ -321,26 +321,302 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:147:143 · **new** · fingerprint: 3d0eb996eb2ac7266bac89b6
+- **synonym-rotation** · workspace/task_board.md:20:61 · **new** · fingerprint: fe0043dd1c2c55650b8f76ae
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** Validate
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:21:108 · **new** · fingerprint: 6090f60bb495dfe8bc7286cc
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are restored
-- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:148:188 · **new** · fingerprint: e1fbc1afe62a844787cdbdb0
+  - **Matched text:** is written
+- **long-sentence** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:29:52 · **new** · fingerprint: e95b86e17ad662f8876f2c1c
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:31:175 · **new** · fingerprint: 54c077fb824429e94932574c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are retained
-- **synonym-rotation** · workspace/task_board.md:21:38 · **new** · fingerprint: f8874d55207a198913c99e59
+  - **Matched text:** is finalized
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:35:13 · **new** · fingerprint: dfe83b0e131a6814f28be395
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is implemented
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:60:120 · **new** · fingerprint: 351829ba6e596c46ec9e8a3e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are defined
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:68:209 · **new** · fingerprint: 02282fec5da98793b261add9
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is justified
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:73:119 · **new** · fingerprint: cc7bb968f3c6e2f5c1f99ce1
   - **Level:** advisory-free
-  - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** check
-- **synonym-rotation** · workspace/task_board.md:23:24 · **new** · fingerprint: f3da998ac0ab93f31587c635
+  - **Message:** 'correct' and 'repair' name the same action. Pick one and use it every time.
+  - **Matched text:** correct
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:74:34 · **new** · fingerprint: f8d5ede5c48e60c013567cb9
   - **Level:** advisory-free
-  - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
-  - **Matched text:** Correct
-- **synonym-rotation** · workspace/task_board.md:34:21 · **new** · fingerprint: 7cb82e69e7844d17f868b2a2
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** Verify
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:75:53 · **new** · fingerprint: 1bcde44f9ca9a10eb2a4291b
   - **Level:** advisory-free
-  - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
-  - **Matched text:** Repair
+  - **Message:** 'use' and 'utilize' name the same action. Pick one and use it every time.
+  - **Matched text:** Use
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:86:92 · **new** · fingerprint: eb751d7d3df5370013154d43
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is authorized
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:95:584 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:95:615 · **new** · fingerprint: 61644adbf9aaa96c9e33438d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was inspected
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:96:236 · **new** · fingerprint: 54f56806512be390340e4cef
+  - **Level:** advisory-free
+  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** confirmed
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:97:53 · **new** · fingerprint: 9224f59b8bc80c138c42a30c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was edited
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:97:206 · **new** · fingerprint: a387562aff1141702021fbf7
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** were polled
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:108:28 · **new** · fingerprint: ff812fa20a75f0e41450d610
+  - **Level:** advisory-free
+  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
+  - **Matched text:** Remove
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:122:385 · **new** · fingerprint: 02ae1e925615eebe3626e2f9
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was cancelled
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:138:288 · **new** · fingerprint: 39ded71bf6e54b172cdb906d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was removed
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:139:312 · **new** · fingerprint: 62b36485af5ec315a5a76707
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was queued
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:146:213 · **new** · fingerprint: aee1276db659e13b1acfc716
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was corrected
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:149:63 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:149:118 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:149:171 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:149:201 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:150:191 · **new** · fingerprint: aa05f5375a571d47f28d48b1
+  - **Level:** advisory-free
+  - **Message:** 'begin' and 'start' name the same action. Pick one and use it every time.
+  - **Matched text:** begin
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:162:177 · **new** · fingerprint: b7dceb43245c274786d4dfc8
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is linked
+- **present-perfect** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:162:239 · **new** · fingerprint: ccf9597ce7ccda45d4c0dd51
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has been created
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:162:243 · **new** · fingerprint: f99ffc0f1be94f2a72573760
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been created
+- **long-sentence** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:168:3 · **new** · fingerprint: 39f19ab13856de393e9023cb
+  - **Level:** advisory-free
+  - **Message:** Sentence has 29 words (cap 25). Split it.
+  - **Matched text:** 29 words
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:170:429 · **new** · fingerprint: 2b0e22cba6b2b07c6d67b0be
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** validates
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:172:249 · **new** · fingerprint: 7bd1e9aa26b861273b5a1636
+  - **Level:** advisory-free
+  - **Message:** 'fix' and 'repair' name the same action. Pick one and use it every time.
+  - **Matched text:** fixed
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:65 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:138 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:227 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:303 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:426 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:491 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:521 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:557 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:598 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:636 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:179:73 · **new** · fingerprint: 7628e699b44a0243960226d3
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is checkpointed
+- **present-perfect** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:179:242 · **new** · fingerprint: b8fccc516b65d278e6df7402
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have been changed
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:179:247 · **new** · fingerprint: cf5b6ed5418dbcbdf7314bd6
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been changed
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:44 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:74 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:127 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:157 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:191 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:229 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:252 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:279 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:187:94 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:198:3 · **new** · fingerprint: 709a60d0bd0e8ac252c9d2a8
+  - **Level:** advisory-free
+  - **Message:** Sentence has 30 words (cap 25). Split it.
+  - **Matched text:** 30 words
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:200:458 · **new** · fingerprint: 5a88ebccec11614b078bb97b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been observed
+- **long-sentence** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:201:3 · **new** · fingerprint: e95b86e17ad662f8876f2c1c
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:209:102 · **new** · fingerprint: 3d68a8dc1dcc3c3609a4beb9
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was generated
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:209:202 · **new** · fingerprint: 9dd7a43e59a6944f1e02428b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** were inspected
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:210:68 · **new** · fingerprint: 0062288c09fa6a6e603c7106
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was polled
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:223:270 · **new** · fingerprint: b82c0559d790455abac501cf
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was approved
+- **present-perfect** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:227:75 · **new** · fingerprint: d24c8e853dae844fcf6ad9ff
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has been verified
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:227:79 · **new** · fingerprint: 6ed386f419e52ccbe7f943a5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been verified
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:231:14 · **new** · fingerprint: 5c2011a2ba6c225e706cb6f9
+  - **Level:** advisory-free
+  - **Message:** 'modify' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** modify
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:258:41 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:258:61 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:258:93 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:258:112 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:269:3 · **new** · fingerprint: 3e8ccd52cb6bfd69bee2440f
+  - **Level:** advisory-free
+  - **Message:** Sentence has 31 words (cap 25). Split it.
+  - **Matched text:** 31 words
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:270:127 · **new** · fingerprint: dfe83b0e131a6814f28be395
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is implemented
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:272:140 · **new** · fingerprint: a387562aff1141702021fbf7
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** were polled
+- **present-perfect** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:276:40 · **new** · fingerprint: 96b4d8058793a13a8d5a3a38
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has been moved
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:276:44 · **new** · fingerprint: 36be6385087aa676fb18b112
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been moved
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:280:21 · **new** · fingerprint: 7a9e97da8da5ecaf20d24187
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are linked
 
 ### Recurring findings
 
@@ -1936,6 +2212,14 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
+- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:147:143 · **recurring** · fingerprint: 3d0eb996eb2ac7266bac89b6
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are restored
+- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:148:188 · **recurring** · fingerprint: e1fbc1afe62a844787cdbdb0
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are retained
 - **passive-voice** · .agent/skills/the-worker/references/archive-records-and-image-prompts.md:13:64 · **recurring** · fingerprint: e5525626c1967e0a340ca6a0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -2240,6 +2524,14 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
+- **synonym-rotation** · workspace/task_board.md:23:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
+  - **Level:** advisory-free
+  - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
+  - **Matched text:** Correct
+- **synonym-rotation** · workspace/task_board.md:34:21 · **recurring** · fingerprint: 7cb82e69e7844d17f868b2a2
+  - **Level:** advisory-free
+  - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
+  - **Matched text:** Repair
 - **passive-voice** · .agent/skills/asd-ste100/README.md:26:35 · **recurring** · fingerprint: f592f42318251b648dd03dcb
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -3423,14 +3715,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### Resolved findings
 
-- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:147:143 · **resolved** · fingerprint: d54e065531122bd43e42b93b
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are allocated
-- **synonym-rotation** · workspace/task_board.md:32:21 · **resolved** · fingerprint: 6d69ad27d49d36813c14b275
+- **synonym-rotation** · workspace/task_board.md:21:38 · **resolved** · fingerprint: f8874d55207a198913c99e59
   - **Level:** advisory-free
-  - **Message:** 'repair' and 'correct' name the same action. Pick one and use it every time.
-  - **Matched text:** Repair
+  - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
+  - **Matched text:** check
 
 ## 8. Complete per-file diagnostics
 
@@ -6001,7 +6289,7 @@ No STE findings were recorded for this file.
 - **Findings:** 8
 - **Hard findings:** 4
 - **Baseline:** 0
-- **Words:** 4654
+- **Words:** 4672
 - **Findings per 100 words:** 0.2
 
 #### Complete diagnostics
@@ -6036,12 +6324,12 @@ No STE findings were recorded for this file.
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:147:143 · **new** · fingerprint: 3d0eb996eb2ac7266bac89b6
+- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:147:143 · **recurring** · fingerprint: 3d0eb996eb2ac7266bac89b6
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are restored
 
-- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:148:188 · **new** · fingerprint: e1fbc1afe62a844787cdbdb0
+- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:148:188 · **recurring** · fingerprint: e1fbc1afe62a844787cdbdb0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are retained
@@ -6551,22 +6839,22 @@ No STE findings were recorded for this file.
 - **Findings:** 3
 - **Hard findings:** 3
 - **Baseline:** 0
-- **Words:** 291
+- **Words:** 287
 - **Findings per 100 words:** 1.0
 
 #### Complete diagnostics
 
-- **synonym-rotation** · workspace/task_board.md:21:38 · **new** · fingerprint: f8874d55207a198913c99e59
+- **synonym-rotation** · workspace/task_board.md:20:61 · **new** · fingerprint: fe0043dd1c2c55650b8f76ae
   - **Level:** advisory-free
-  - **Message:** 'check' and 'validate' name the same action. Pick one and use it every time.
-  - **Matched text:** check
+  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** Validate
 
-- **synonym-rotation** · workspace/task_board.md:23:24 · **new** · fingerprint: f3da998ac0ab93f31587c635
+- **synonym-rotation** · workspace/task_board.md:23:24 · **recurring** · fingerprint: f3da998ac0ab93f31587c635
   - **Level:** advisory-free
   - **Message:** 'correct' and 'fix' name the same action. Pick one and use it every time.
   - **Matched text:** Correct
 
-- **synonym-rotation** · workspace/task_board.md:34:21 · **new** · fingerprint: 7cb82e69e7844d17f868b2a2
+- **synonym-rotation** · workspace/task_board.md:34:21 · **recurring** · fingerprint: 7cb82e69e7844d17f868b2a2
   - **Level:** advisory-free
   - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
   - **Matched text:** Repair
@@ -7980,6 +8268,384 @@ No STE findings were recorded for this file.
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
+
+
+### archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md
+
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 73
+- **Hard findings:** 42
+- **Baseline:** 0
+- **Words:** 4303
+- **Findings per 100 words:** 1.7
+
+#### Complete diagnostics
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:21:108 · **new** · fingerprint: 6090f60bb495dfe8bc7286cc
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is written
+
+- **long-sentence** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:29:52 · **new** · fingerprint: e95b86e17ad662f8876f2c1c
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:31:175 · **new** · fingerprint: 54c077fb824429e94932574c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is finalized
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:35:13 · **new** · fingerprint: dfe83b0e131a6814f28be395
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is implemented
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:60:120 · **new** · fingerprint: 351829ba6e596c46ec9e8a3e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are defined
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:68:209 · **new** · fingerprint: 02282fec5da98793b261add9
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is justified
+
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:73:119 · **new** · fingerprint: cc7bb968f3c6e2f5c1f99ce1
+  - **Level:** advisory-free
+  - **Message:** 'correct' and 'repair' name the same action. Pick one and use it every time.
+  - **Matched text:** correct
+
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:74:34 · **new** · fingerprint: f8d5ede5c48e60c013567cb9
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** Verify
+
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:75:53 · **new** · fingerprint: 1bcde44f9ca9a10eb2a4291b
+  - **Level:** advisory-free
+  - **Message:** 'use' and 'utilize' name the same action. Pick one and use it every time.
+  - **Matched text:** Use
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:86:92 · **new** · fingerprint: eb751d7d3df5370013154d43
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is authorized
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:95:584 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:95:615 · **new** · fingerprint: 61644adbf9aaa96c9e33438d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was inspected
+
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:96:236 · **new** · fingerprint: 54f56806512be390340e4cef
+  - **Level:** advisory-free
+  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** confirmed
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:97:53 · **new** · fingerprint: 9224f59b8bc80c138c42a30c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was edited
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:97:206 · **new** · fingerprint: a387562aff1141702021fbf7
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** were polled
+
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:108:28 · **new** · fingerprint: ff812fa20a75f0e41450d610
+  - **Level:** advisory-free
+  - **Message:** 'remove' and 'delete' name the same action. Pick one and use it every time.
+  - **Matched text:** Remove
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:122:385 · **new** · fingerprint: 02ae1e925615eebe3626e2f9
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was cancelled
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:138:288 · **new** · fingerprint: 39ded71bf6e54b172cdb906d
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was removed
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:139:312 · **new** · fingerprint: 62b36485af5ec315a5a76707
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was queued
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:146:213 · **new** · fingerprint: aee1276db659e13b1acfc716
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was corrected
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:149:63 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:149:118 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:149:171 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:149:201 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:150:191 · **new** · fingerprint: aa05f5375a571d47f28d48b1
+  - **Level:** advisory-free
+  - **Message:** 'begin' and 'start' name the same action. Pick one and use it every time.
+  - **Matched text:** begin
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:162:177 · **new** · fingerprint: b7dceb43245c274786d4dfc8
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is linked
+
+- **present-perfect** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:162:239 · **new** · fingerprint: ccf9597ce7ccda45d4c0dd51
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has been created
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:162:243 · **new** · fingerprint: f99ffc0f1be94f2a72573760
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been created
+
+- **long-sentence** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:168:3 · **new** · fingerprint: 39f19ab13856de393e9023cb
+  - **Level:** advisory-free
+  - **Message:** Sentence has 29 words (cap 25). Split it.
+  - **Matched text:** 29 words
+
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:170:429 · **new** · fingerprint: 2b0e22cba6b2b07c6d67b0be
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** validates
+
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:172:249 · **new** · fingerprint: 7bd1e9aa26b861273b5a1636
+  - **Level:** advisory-free
+  - **Message:** 'fix' and 'repair' name the same action. Pick one and use it every time.
+  - **Matched text:** fixed
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:65 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:138 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:227 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:303 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:426 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:491 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:521 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:557 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:598 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:173:636 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:179:73 · **new** · fingerprint: 7628e699b44a0243960226d3
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is checkpointed
+
+- **present-perfect** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:179:242 · **new** · fingerprint: b8fccc516b65d278e6df7402
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have been changed
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:179:247 · **new** · fingerprint: cf5b6ed5418dbcbdf7314bd6
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been changed
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:44 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:74 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:127 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:157 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:191 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:229 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:252 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:180:279 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:187:94 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **long-sentence** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:198:3 · **new** · fingerprint: 709a60d0bd0e8ac252c9d2a8
+  - **Level:** advisory-free
+  - **Message:** Sentence has 30 words (cap 25). Split it.
+  - **Matched text:** 30 words
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:200:458 · **new** · fingerprint: 5a88ebccec11614b078bb97b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been observed
+
+- **long-sentence** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:201:3 · **new** · fingerprint: e95b86e17ad662f8876f2c1c
+  - **Level:** advisory-free
+  - **Message:** Sentence has 26 words (cap 25). Split it.
+  - **Matched text:** 26 words
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:209:102 · **new** · fingerprint: 3d68a8dc1dcc3c3609a4beb9
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was generated
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:209:202 · **new** · fingerprint: 9dd7a43e59a6944f1e02428b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** were inspected
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:210:68 · **new** · fingerprint: 0062288c09fa6a6e603c7106
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was polled
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:223:270 · **new** · fingerprint: b82c0559d790455abac501cf
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was approved
+
+- **present-perfect** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:227:75 · **new** · fingerprint: d24c8e853dae844fcf6ad9ff
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has been verified
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:227:79 · **new** · fingerprint: 6ed386f419e52ccbe7f943a5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been verified
+
+- **synonym-rotation** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:231:14 · **new** · fingerprint: 5c2011a2ba6c225e706cb6f9
+  - **Level:** advisory-free
+  - **Message:** 'modify' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** modify
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:258:41 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:258:61 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:258:93 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:258:112 · **new** · fingerprint: 5acc69abf5f612b3317bfb71
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **long-sentence** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:269:3 · **new** · fingerprint: 3e8ccd52cb6bfd69bee2440f
+  - **Level:** advisory-free
+  - **Message:** Sentence has 31 words (cap 25). Split it.
+  - **Matched text:** 31 words
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:270:127 · **new** · fingerprint: dfe83b0e131a6814f28be395
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is implemented
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:272:140 · **new** · fingerprint: a387562aff1141702021fbf7
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** were polled
+
+- **present-perfect** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:276:40 · **new** · fingerprint: 96b4d8058793a13a8d5a3a38
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has been moved
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:276:44 · **new** · fingerprint: 36be6385087aa676fb18b112
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been moved
+
+- **passive-voice** · archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md:280:21 · **new** · fingerprint: 7a9e97da8da5ecaf20d24187
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are linked
 
 
 ### archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md

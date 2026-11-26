@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45823182226",
-  "run_number": 804,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45823182226",
+  "run_id": "45823761243",
+  "run_number": 805,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45823761243",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "d4fd8ddbf936e151f2d3c3753e9193875fc3fde5",
+  "commit_sha": "c299b732dbbc3395ec754b26a8b1a6c554b239af",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-26T12:49:49.848185+00:00",
+  "generated_at_utc": "2026-11-26T12:53:36.330591+00:00",
   "status": "Failed",
-  "linter_source_sha": "d4fd8ddbf936e151f2d3c3753e9193875fc3fde5",
+  "linter_source_sha": "c299b732dbbc3395ec754b26a8b1a6c554b239af",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -107,14 +107,15 @@
     ".agent/skills/asd-ste100/assets/lint-report-template.md",
     "workspace/DRAFT_TEMPLATE.md",
     ".agent/skills/discernment-nudge/SKILL.md",
+    "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
     "archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
     "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
     ".agent/skills/asd-ste100/references/repository-writing-policy.md",
     ".agent/skills/theme-factory/SKILL.md",
     ".agent/skills/the-worker/assets/conversation-integrity-template.md"
   ],
-  "files_evaluated_count": 92,
-  "files_failed": 37,
+  "files_evaluated_count": 93,
+  "files_failed": 38,
   "failed_files": [
     ".agent/skills/skill-creator/agents/grader.md",
     ".agent/skills/skill-creator/agents/analyzer.md",
@@ -149,21 +150,22 @@
     ".agent/skills/migrate-to-rust/references/pgo_and_telemetry_guide.md",
     "workspace/DRAFT_TEMPLATE.md",
     ".agent/skills/discernment-nudge/SKILL.md",
+    "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
     "archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
     "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
     ".agent/skills/theme-factory/SKILL.md",
     ".agent/skills/the-worker/assets/conversation-integrity-template.md"
   ],
-  "files_with_findings": 68,
-  "total_findings": 774,
-  "hard_findings": 322,
-  "advisory_findings": 452,
+  "files_with_findings": 69,
+  "total_findings": 847,
+  "hard_findings": 364,
+  "advisory_findings": 483,
   "findings_by_rule": {
-    "synonym-rotation": 56,
-    "passive-voice": 397,
-    "present-perfect": 55,
-    "semicolon": 116,
-    "long-sentence": 137,
+    "synonym-rotation": 65,
+    "passive-voice": 424,
+    "present-perfect": 59,
+    "semicolon": 144,
+    "long-sentence": 142,
     "marketing-adjective": 6,
     "phrasal-verb": 5,
     "nominalization": 2
@@ -4269,7 +4271,7 @@
       "count": 8,
       "hard_count": 4,
       "baseline": 0,
-      "words": 4654,
+      "words": 4672,
       "per_100_words": 0.2,
       "path": ".agent/skills/document-standards/references/document-type-catalog.md",
       "exit_code": 1
@@ -5060,12 +5062,12 @@
       "violations": [
         {
           "file": "workspace/task_board.md",
-          "line": 21,
-          "col": 38,
+          "line": 20,
+          "col": 61,
           "rule": "synonym-rotation",
           "level": "advisory-free",
-          "match": "check",
-          "message": "'check' and 'validate' name the same action. Pick one and use it every time."
+          "match": "Validate",
+          "message": "'validate' and 'check' name the same action. Pick one and use it every time."
         },
         {
           "file": "workspace/task_board.md",
@@ -5089,7 +5091,7 @@
       "count": 3,
       "hard_count": 3,
       "baseline": 0,
-      "words": 291,
+      "words": 287,
       "per_100_words": 1.0,
       "path": "workspace/task_board.md",
       "exit_code": 1
@@ -7247,6 +7249,674 @@
       "words": 1701,
       "per_100_words": 1.5,
       "path": ".agent/skills/discernment-nudge/SKILL.md",
+      "exit_code": 1
+    },
+    {
+      "violations": [
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 21,
+          "col": 108,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is written",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 29,
+          "col": 52,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "26 words",
+          "message": "Sentence has 26 words (cap 25). Split it."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 31,
+          "col": 175,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is finalized",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 35,
+          "col": 13,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is implemented",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 60,
+          "col": 120,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are defined",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 68,
+          "col": 209,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is justified",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 73,
+          "col": 119,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "correct",
+          "message": "'correct' and 'repair' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 74,
+          "col": 34,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "Verify",
+          "message": "'verify' and 'check' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 75,
+          "col": 53,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "Use",
+          "message": "'use' and 'utilize' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 86,
+          "col": 92,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is authorized",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 95,
+          "col": 584,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 95,
+          "col": 615,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was inspected",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 96,
+          "col": 236,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "confirmed",
+          "message": "'confirm' and 'check' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 97,
+          "col": 53,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was edited",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 97,
+          "col": 206,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "were polled",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 108,
+          "col": 28,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "Remove",
+          "message": "'remove' and 'delete' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 122,
+          "col": 385,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was cancelled",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 138,
+          "col": 288,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was removed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 139,
+          "col": 312,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was queued",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 146,
+          "col": 213,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was corrected",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 149,
+          "col": 63,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 149,
+          "col": 118,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 149,
+          "col": 171,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 149,
+          "col": 201,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 150,
+          "col": 191,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "begin",
+          "message": "'begin' and 'start' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 162,
+          "col": 177,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is linked",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 162,
+          "col": 239,
+          "rule": "present-perfect",
+          "level": "advisory",
+          "match": "has been created",
+          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 162,
+          "col": 243,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "been created",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 168,
+          "col": 3,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "29 words",
+          "message": "Sentence has 29 words (cap 25). Split it."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 170,
+          "col": 429,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "validates",
+          "message": "'validate' and 'check' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 172,
+          "col": 249,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "fixed",
+          "message": "'fix' and 'repair' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 173,
+          "col": 65,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 173,
+          "col": 138,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 173,
+          "col": 227,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 173,
+          "col": 303,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 173,
+          "col": 426,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 173,
+          "col": 491,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 173,
+          "col": 521,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 173,
+          "col": 557,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 173,
+          "col": 598,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 173,
+          "col": 636,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 179,
+          "col": 73,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is checkpointed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 179,
+          "col": 242,
+          "rule": "present-perfect",
+          "level": "advisory",
+          "match": "have been changed",
+          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 179,
+          "col": 247,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "been changed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 180,
+          "col": 44,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 180,
+          "col": 74,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 180,
+          "col": 127,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 180,
+          "col": 157,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 180,
+          "col": 191,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 180,
+          "col": 229,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 180,
+          "col": 252,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 180,
+          "col": 279,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 187,
+          "col": 94,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 198,
+          "col": 3,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "30 words",
+          "message": "Sentence has 30 words (cap 25). Split it."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 200,
+          "col": 458,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "been observed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 201,
+          "col": 3,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "26 words",
+          "message": "Sentence has 26 words (cap 25). Split it."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 209,
+          "col": 102,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was generated",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 209,
+          "col": 202,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "were inspected",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 210,
+          "col": 68,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was polled",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 223,
+          "col": 270,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "was approved",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 227,
+          "col": 75,
+          "rule": "present-perfect",
+          "level": "advisory",
+          "match": "has been verified",
+          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 227,
+          "col": 79,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "been verified",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 231,
+          "col": 14,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "modify",
+          "message": "'modify' and 'change' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 258,
+          "col": 41,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 258,
+          "col": 61,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 258,
+          "col": 93,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 258,
+          "col": 112,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 269,
+          "col": 3,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "31 words",
+          "message": "Sentence has 31 words (cap 25). Split it."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 270,
+          "col": 127,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "is implemented",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 272,
+          "col": 140,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "were polled",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 276,
+          "col": 40,
+          "rule": "present-perfect",
+          "level": "advisory",
+          "match": "has been moved",
+          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 276,
+          "col": 44,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "been moved",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+          "line": 280,
+          "col": 21,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are linked",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        }
+      ],
+      "count": 73,
+      "hard_count": 42,
+      "baseline": 0,
+      "words": 4303,
+      "per_100_words": 1.7,
+      "path": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
       "exit_code": 1
     },
     {
@@ -12512,7 +13182,7 @@
       "match": "are restored",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "3d0eb996eb2ac7266bac89b6",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": ".agent/skills/document-standards/references/document-type-catalog.md",
@@ -12523,7 +13193,7 @@
       "match": "are retained",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "e1fbc1afe62a844787cdbdb0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": ".agent/skills/the-worker/references/archive-records-and-image-prompts.md",
@@ -13363,13 +14033,13 @@
     },
     {
       "file": "workspace/task_board.md",
-      "line": 21,
-      "col": 38,
+      "line": 20,
+      "col": 61,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "check",
-      "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
-      "fingerprint": "f8874d55207a198913c99e59",
+      "match": "Validate",
+      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "fe0043dd1c2c55650b8f76ae",
       "comparison": "new"
     },
     {
@@ -13381,7 +14051,7 @@
       "match": "Correct",
       "message": "'correct' and 'fix' name the same action. Pick one and use it every time.",
       "fingerprint": "f3da998ac0ab93f31587c635",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/task_board.md",
@@ -13392,7 +14062,7 @@
       "match": "Repair",
       "message": "'repair' and 'fix' name the same action. Pick one and use it every time.",
       "fingerprint": "7cb82e69e7844d17f868b2a2",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": ".agent/skills/asd-ste100/README.md",
@@ -15639,6 +16309,809 @@
       "comparison": "recurring"
     },
     {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 21,
+      "col": 108,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is written",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "6090f60bb495dfe8bc7286cc",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 29,
+      "col": 52,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "26 words",
+      "message": "Sentence has 26 words (cap 25). Split it.",
+      "fingerprint": "e95b86e17ad662f8876f2c1c",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 31,
+      "col": 175,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is finalized",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "54c077fb824429e94932574c",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 35,
+      "col": 13,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is implemented",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "dfe83b0e131a6814f28be395",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 60,
+      "col": 120,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are defined",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "351829ba6e596c46ec9e8a3e",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 68,
+      "col": 209,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is justified",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "02282fec5da98793b261add9",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 73,
+      "col": 119,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "correct",
+      "message": "'correct' and 'repair' name the same action. Pick one and use it every time.",
+      "fingerprint": "cc7bb968f3c6e2f5c1f99ce1",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 74,
+      "col": 34,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Verify",
+      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "f8d5ede5c48e60c013567cb9",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 75,
+      "col": 53,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Use",
+      "message": "'use' and 'utilize' name the same action. Pick one and use it every time.",
+      "fingerprint": "1bcde44f9ca9a10eb2a4291b",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 86,
+      "col": 92,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is authorized",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "eb751d7d3df5370013154d43",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 95,
+      "col": 584,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 95,
+      "col": 615,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was inspected",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "61644adbf9aaa96c9e33438d",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 96,
+      "col": 236,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "confirmed",
+      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "54f56806512be390340e4cef",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 97,
+      "col": 53,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was edited",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "9224f59b8bc80c138c42a30c",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 97,
+      "col": 206,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "were polled",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "a387562aff1141702021fbf7",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 108,
+      "col": 28,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Remove",
+      "message": "'remove' and 'delete' name the same action. Pick one and use it every time.",
+      "fingerprint": "ff812fa20a75f0e41450d610",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 122,
+      "col": 385,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was cancelled",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "02ae1e925615eebe3626e2f9",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 138,
+      "col": 288,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was removed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "39ded71bf6e54b172cdb906d",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 139,
+      "col": 312,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was queued",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "62b36485af5ec315a5a76707",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 146,
+      "col": 213,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was corrected",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "aee1276db659e13b1acfc716",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 149,
+      "col": 63,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 149,
+      "col": 118,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 149,
+      "col": 171,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 149,
+      "col": 201,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 150,
+      "col": 191,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "begin",
+      "message": "'begin' and 'start' name the same action. Pick one and use it every time.",
+      "fingerprint": "aa05f5375a571d47f28d48b1",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 162,
+      "col": 177,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is linked",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "b7dceb43245c274786d4dfc8",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 162,
+      "col": 239,
+      "rule": "present-perfect",
+      "level": "advisory",
+      "match": "has been created",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "ccf9597ce7ccda45d4c0dd51",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 162,
+      "col": 243,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "been created",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "f99ffc0f1be94f2a72573760",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 168,
+      "col": 3,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "29 words",
+      "message": "Sentence has 29 words (cap 25). Split it.",
+      "fingerprint": "39f19ab13856de393e9023cb",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 170,
+      "col": 429,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "validates",
+      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "2b0e22cba6b2b07c6d67b0be",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 172,
+      "col": 249,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "fixed",
+      "message": "'fix' and 'repair' name the same action. Pick one and use it every time.",
+      "fingerprint": "7bd1e9aa26b861273b5a1636",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 173,
+      "col": 65,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 173,
+      "col": 138,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 173,
+      "col": 227,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 173,
+      "col": 303,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 173,
+      "col": 426,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 173,
+      "col": 491,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 173,
+      "col": 521,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 173,
+      "col": 557,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 173,
+      "col": 598,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 173,
+      "col": 636,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 179,
+      "col": 73,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is checkpointed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "7628e699b44a0243960226d3",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 179,
+      "col": 242,
+      "rule": "present-perfect",
+      "level": "advisory",
+      "match": "have been changed",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "b8fccc516b65d278e6df7402",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 179,
+      "col": 247,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "been changed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "cf5b6ed5418dbcbdf7314bd6",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 180,
+      "col": 44,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 180,
+      "col": 74,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 180,
+      "col": 127,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 180,
+      "col": 157,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 180,
+      "col": 191,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 180,
+      "col": 229,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 180,
+      "col": 252,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 180,
+      "col": 279,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 187,
+      "col": 94,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 198,
+      "col": 3,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "30 words",
+      "message": "Sentence has 30 words (cap 25). Split it.",
+      "fingerprint": "709a60d0bd0e8ac252c9d2a8",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 200,
+      "col": 458,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "been observed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "5a88ebccec11614b078bb97b",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 201,
+      "col": 3,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "26 words",
+      "message": "Sentence has 26 words (cap 25). Split it.",
+      "fingerprint": "e95b86e17ad662f8876f2c1c",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 209,
+      "col": 102,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was generated",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "3d68a8dc1dcc3c3609a4beb9",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 209,
+      "col": 202,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "were inspected",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "9dd7a43e59a6944f1e02428b",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 210,
+      "col": 68,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was polled",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "0062288c09fa6a6e603c7106",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 223,
+      "col": 270,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was approved",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "b82c0559d790455abac501cf",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 227,
+      "col": 75,
+      "rule": "present-perfect",
+      "level": "advisory",
+      "match": "has been verified",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "d24c8e853dae844fcf6ad9ff",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 227,
+      "col": 79,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "been verified",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "6ed386f419e52ccbe7f943a5",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 231,
+      "col": 14,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "modify",
+      "message": "'modify' and 'change' name the same action. Pick one and use it every time.",
+      "fingerprint": "5c2011a2ba6c225e706cb6f9",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 258,
+      "col": 41,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 258,
+      "col": 61,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 258,
+      "col": 93,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 258,
+      "col": 112,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "5acc69abf5f612b3317bfb71",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 269,
+      "col": 3,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "31 words",
+      "message": "Sentence has 31 words (cap 25). Split it.",
+      "fingerprint": "3e8ccd52cb6bfd69bee2440f",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 270,
+      "col": 127,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is implemented",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "dfe83b0e131a6814f28be395",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 272,
+      "col": 140,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "were polled",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "a387562aff1141702021fbf7",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 276,
+      "col": 40,
+      "rule": "present-perfect",
+      "level": "advisory",
+      "match": "has been moved",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "96b4d8058793a13a8d5a3a38",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 276,
+      "col": 44,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "been moved",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "36be6385087aa676fb18b112",
+      "comparison": "new"
+    },
+    {
+      "file": "archive/tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md",
+      "line": 280,
+      "col": 21,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are linked",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "7a9e97da8da5ecaf20d24187",
+      "comparison": "new"
+    },
+    {
       "file": "archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
       "line": 34,
       "col": 64,
@@ -16640,29 +18113,18 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 5,
-  "recurring_findings": 769,
+  "new_findings": 74,
+  "recurring_findings": 773,
   "resolved_findings": [
     {
-      "file": ".agent/skills/document-standards/references/document-type-catalog.md",
-      "line": 147,
-      "col": 143,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are allocated",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "d54e065531122bd43e42b93b",
-      "comparison": "resolved"
-    },
-    {
       "file": "workspace/task_board.md",
-      "line": 32,
-      "col": 21,
+      "line": 21,
+      "col": 38,
       "rule": "synonym-rotation",
       "level": "advisory-free",
-      "match": "Repair",
-      "message": "'repair' and 'correct' name the same action. Pick one and use it every time.",
-      "fingerprint": "6d69ad27d49d36813c14b275",
+      "match": "check",
+      "message": "'check' and 'validate' name the same action. Pick one and use it every time.",
+      "fingerprint": "f8874d55207a198913c99e59",
       "comparison": "resolved"
     }
   ],
@@ -16683,13 +18145,13 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.364s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.267s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.008s\n\nOK\n"
+      "output": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.036s\n\nOK\n"
     },
     {
       "name": "STE linter self-test",
@@ -16699,12 +18161,10 @@
     },
     {
       "name": "Markdown links and heading anchors",
-      "status": "Failed",
-      "exit_code": 1,
-      "output": "Scanned 223 active Markdown files (304 available as link targets) and 349 local Markdown links.\nFound 2 unresolved local Markdown targets or anchors.\narchive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md\narchive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md\n"
+      "status": "Passed",
+      "exit_code": 0,
+      "output": "Scanned 225 active Markdown files (307 available as link targets) and 350 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
-  "failed_checks": [
-    "Markdown links and heading anchors"
-  ]
+  "failed_checks": []
 }
