@@ -56,17 +56,17 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 
 ## 7. Current State
 
-The Ledger recorded findings. Root cause, remediation, and validation remain to be assessed.
+The long-sentence finding in ADR-0003 Implementation Scope was corrected in commit `b68ab7a239b5dc17e67b9c005b4541dc998caf2b`, after the user explicitly approved the narrow wording correction. Hosted validation remains pending.
 
 ## 8. Remaining Work
 
-- Inspect linked evidence, remediate, and validate.
-- No validation or resolution is claimed until evidence is recorded.
+- Run relevant hosted lint and verify the finding is resolved.
+- No validation or Ledger resolution is claimed until evidence is recorded.
 
 ## 9. Next Actions
 
-1. Inspect linked reports and diagnostics.
-2. Remediate and verify under the standing P0 approval.
+1. Validate the commit with relevant hosted lint.
+2. Record the successful validation and Ledger resolution before task closeout.
 
 ## 10. References
 
@@ -91,3 +91,9 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 | Finding ID | Severity | Diagnostic | Evidence |
 |---|---|---|---|
 | `lint-0dc1b5fa54679407d060b44e` | medium | long-sentence: Sentence has 32 words \(cap 25\). Split it. | [report](../../.takeout/reports/lint_reports/on_changed/history/45864180906-attempt-1/report.json) · [run](https://github.com/dungnv2602/chatgpt/actions/runs/45864180906) |
+
+### 2026-11-27 04:56 ICT
+
+- **Action:** User explicitly approved the narrow correction to the accepted ADR wording. Split the long out-of-scope list into shorter sentences without changing decision scope.
+- **Commit:** `b68ab7a239b5dc17e67b9c005b4541dc998caf2b`.
+- **Validation:** Hosted lint pending. Task remains In Progress.
