@@ -1,10 +1,27 @@
 {
   "schema_version": "1.0.0",
-  "sweep_watermark_utc": "2026-11-26T10:12:44Z",
+  "sweep_watermark_utc": "2026-11-26T10:50:48Z",
   "pending_run_ids": [
-    "45799154200"
+    "45804982562"
   ],
   "runs": [
+    {
+      "workflow_id": 424715662,
+      "workflow_name": "STE Lint Changed Documentation",
+      "run_id": "45804845399",
+      "run_number": 794,
+      "attempt": 1,
+      "capture_stage": "post_run",
+      "created_at": "2026-11-26T10:49:11Z",
+      "captured_at_utc": "2026-11-26T10:50:58Z",
+      "source_status": "completed",
+      "source_conclusion": "failure",
+      "projected_conclusion": null,
+      "report_status": "Complete",
+      "primary_category": "validation_or_test",
+      "history_path": "history/424715662/45804845399-attempt-1-post_run",
+      "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45804845399"
+    },
     {
       "workflow_id": 427313089,
       "workflow_name": "Validate Document Standards",
@@ -483,21 +500,21 @@
     }
   ],
   "latest_report": {
-    "workflow_id": 427313089,
-    "workflow_name": "Validate Document Standards",
-    "run_id": "45798838831",
-    "run_number": 608,
+    "workflow_id": 424715662,
+    "workflow_name": "STE Lint Changed Documentation",
+    "run_id": "45804845399",
+    "run_number": 794,
     "attempt": 1,
     "capture_stage": "post_run",
-    "created_at": "2026-11-26T10:10:30Z",
-    "captured_at_utc": "2026-11-26T10:15:11Z",
+    "created_at": "2026-11-26T10:49:11Z",
+    "captured_at_utc": "2026-11-26T10:50:58Z",
     "source_status": "completed",
     "source_conclusion": "failure",
     "projected_conclusion": null,
     "report_status": "Complete",
     "primary_category": "validation_or_test",
-    "history_path": "history/427313089/45798838831-attempt-1-post_run",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45798838831"
+    "history_path": "history/424715662/45804845399-attempt-1-post_run",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45804845399"
   },
   "exhausted_run_ids": []
 }
