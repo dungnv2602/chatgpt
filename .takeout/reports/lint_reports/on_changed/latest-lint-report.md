@@ -1,37 +1,37 @@
 # On Changed STE Lint Evidence Report
 
-- **Result:** Failed
+- **Result:** Passed
 - **Schema version:** 1.1.0
-- **Run:** [#816](https://github.com/dungnv2602/chatgpt/actions/runs/45843767623)
-- **Run ID / attempt:** 45843767623 / 1
+- **Run:** [#817](https://github.com/dungnv2602/chatgpt/actions/runs/45844123288)
+- **Run ID / attempt:** 45844123288 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 285355c083fbea124c356fb856b559ab38b88354
+- **Branch / commit:** gpt / 52041ceb40792d0805ba4c2a9ca34d805441e3d4
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** e2f6350b516eb8c70ce4a6014cac55240c32225a
-- **Linter source SHA:** 285355c083fbea124c356fb856b559ab38b88354
-- **Generated (UTC):** 2026-11-26T14:55:45.378956+00:00
+- **Baseline SHA:** 285355c083fbea124c356fb856b559ab38b88354
+- **Linter source SHA:** 52041ceb40792d0805ba4c2a9ca34d805441e3d4
+- **Generated (UTC):** 2026-11-26T14:57:47.461697+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
 | Files evaluated | 2 |
-| Files that failed | 1 |
-| Files with findings | 1 |
-| Total findings | 1 |
-| Hard findings | 1 |
+| Files that failed | 0 |
+| Files with findings | 0 |
+| Total findings | 0 |
+| Hard findings | 0 |
 | Advisory findings | 0 |
-| New findings | 1 |
+| New findings | 0 |
 | Recurring findings | 0 |
-| Resolved findings | 0 |
+| Resolved findings | 1 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
 
 - Runner OS: Linux
 - Python: 3.15.2
-- Platform: Linux-7.0.0-1018-aws-x86_64-with-glibc2.43
+- Platform: Linux-7.0.0-1020-azure-x86_64-with-glibc2.43
 - The JSON report records the full runtime version and every original per-file linter response.
 - The report records the commit that supplied the linter and generator code.
 
@@ -49,15 +49,13 @@ The table includes every evaluated file, including files with zero findings and 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | workspace/task_board.md | PASS | 0 | 0 | 0 | 449 | 0.0 | 0 |
-| workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | FAIL | 1 | 1 | 0 | 9016 | 0.0 | 1 |
+| workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | PASS | 0 | 0 | 0 | 9016 | 0.0 | 0 |
 
 ## 5. Findings by rule
 
 Counts include hard and advisory findings.
 
-| Rule | Findings |
-|---|---:|
-| synonym-rotation | 1 |
+No findings.
 
 ## 6. Workflow and validation checks
 
@@ -89,7 +87,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.234s
+Ran 4 tests in 0.265s
 
 OK
 ~~~
@@ -102,7 +100,7 @@ OK
 ~~~text
 .......
 ----------------------------------------------------------------------
-Ran 7 tests in 0.001s
+Ran 7 tests in 0.006s
 
 OK
 ~~~
@@ -122,7 +120,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 2 changed Markdown sources (332 available as link targets) and 20 local Markdown links.
+Scanned 2 changed Markdown sources (333 available as link targets) and 20 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -132,10 +130,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **synonym-rotation** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:241:148 · **new** · fingerprint: 1ba75e66fd8777920c74a662
-  - **Level:** advisory-free
-  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** validates
+None.
 
 ### Recurring findings
 
@@ -143,7 +138,10 @@ None.
 
 ### Resolved findings
 
-None.
+- **synonym-rotation** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:241:148 · **resolved** · fingerprint: 1ba75e66fd8777920c74a662
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** validates
 
 ## 8. Complete per-file diagnostics
 
@@ -164,20 +162,15 @@ No STE findings were recorded for this file.
 
 ### workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md
 
-- **Result:** FAIL
-- **Exit code:** 1
-- **Findings:** 1
-- **Hard findings:** 1
+- **Result:** PASS
+- **Exit code:** 0
+- **Findings:** 0
+- **Hard findings:** 0
 - **Baseline:** 0
 - **Words:** 9016
 - **Findings per 100 words:** 0.0
 
-#### Complete diagnostics
-
-- **synonym-rotation** · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:241:148 · **new** · fingerprint: 1ba75e66fd8777920c74a662
-  - **Level:** advisory-free
-  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** validates
+No STE findings were recorded for this file.
 
 ## 9. Structured evidence and integrity
 
