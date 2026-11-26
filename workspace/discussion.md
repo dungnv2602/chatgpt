@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27 05:25 ICT:** Reconcile the Ledger's permanent P0 intake policy with the Worker and GitHub Actions remediation rules, and relocate the recurrence-prevention procedure to its authoritative CI skill.
+- **2026-11-27 05:40 UTC:** Refine `/start` initialization to keep baseline session continuity while loading domain skills progressively, and align GitHub Actions skill ownership with CI-specific activation.
 
 ## Open Discussions
 
