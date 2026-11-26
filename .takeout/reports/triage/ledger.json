@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T13:57:00Z",
+  "updated_at_utc": "2026-11-26T14:12:12Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -302,103 +302,6 @@
         "20261126-124129"
       ],
       "task_group": "ci-ace4e198cb6445b7"
-    },
-    {
-      "finding_id": "gha-96b1feabf9ad3b16cccbc828",
-      "source_family": "github_actions",
-      "category": "validation_or_test",
-      "title": "Validate Document Standards / validate-document-standards / Validate the document type catalog: validation_or_test — <timestamp> error: 3 markdown file(s) are not covered by the catalog: archive/adr/0001-establish-draft-to-adr-governance-an",
-      "status": "resolved",
-      "severity": "medium",
-      "owner": null,
-      "first_seen_utc": "2026-11-26T12:42:52Z",
-      "last_seen_utc": "2026-11-26T12:49:17Z",
-      "occurrence_count": 3,
-      "evidence": [
-        {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45819717131-attempt-1-post_run/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45819717131",
-          "observed_at_utc": "2026-11-26T12:42:52Z",
-          "note": "validate-document-standards / Validate the document type catalog",
-          "observation_id": "github_actions:427313089:45819717131:1"
-        },
-        {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45820848037-attempt-1-post_run/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45820848037",
-          "observed_at_utc": "2026-11-26T12:42:56Z",
-          "note": "validate-document-standards / Validate the document type catalog",
-          "observation_id": "github_actions:427313089:45820848037:1"
-        },
-        {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45822163306-attempt-1-post_run/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45822163306",
-          "observed_at_utc": "2026-11-26T12:49:17Z",
-          "note": "validate-document-standards / Validate the document type catalog",
-          "observation_id": "github_actions:427313089:45822163306:1"
-        }
-      ],
-      "resolution": {
-        "fix_commit": "b41d486cfa8b094be9d810707262878485e219bc",
-        "resolved_at_utc": "2026-11-26T13:57:00Z",
-        "validation": {
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45832275652",
-          "conclusion": "success",
-          "validated_at_utc": "2026-11-26T13:46:44Z"
-        },
-        "note": "Catalog version 1.18 covers the in-scope archive paths and rejects whitespace-leading excluded patterns. The hosted catalog validator and both regression suites passed."
-      },
-      "resolution_history": [],
-      "duplicate_of": null,
-      "accepted_risk": null,
-      "task_refs": [
-        "20261126-124305"
-      ],
-      "task_group": "ci-601033e3967e71af"
-    },
-    {
-      "finding_id": "gha-82bf8a9e501d0142824ad38d",
-      "source_family": "github_actions",
-      "category": "validation_or_test",
-      "title": "Validate Document Standards / validate-document-standards / Validate the document type catalog: validation_or_test — <timestamp> error: line 148: unsafe or excluded markdown coverage pattern ' .archive/adr/*.md'.",
-      "status": "resolved",
-      "severity": "medium",
-      "owner": null,
-      "first_seen_utc": "2026-11-26T13:21:04Z",
-      "last_seen_utc": "2026-11-26T13:42:49Z",
-      "occurrence_count": 2,
-      "evidence": [
-        {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45827698966-attempt-1-post_run/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45827698966",
-          "observed_at_utc": "2026-11-26T13:21:04Z",
-          "note": "validate-document-standards / Validate the document type catalog",
-          "observation_id": "github_actions:427313089:45827698966:1"
-        },
-        {
-          "report_path": ".archive/reports/gh_ac_reports/history/427313089/45831497498-attempt-1-post_run/report.json",
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45831497498",
-          "observed_at_utc": "2026-11-26T13:42:49Z",
-          "note": "validate-document-standards / Validate the document type catalog",
-          "observation_id": "github_actions:427313089:45831497498:1"
-        }
-      ],
-      "resolution": {
-        "fix_commit": "b41d486cfa8b094be9d810707262878485e219bc",
-        "resolved_at_utc": "2026-11-26T13:57:00Z",
-        "validation": {
-          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45832275652",
-          "conclusion": "success",
-          "validated_at_utc": "2026-11-26T13:46:44Z"
-        },
-        "note": "Catalog version 1.18 covers the in-scope archive paths and rejects whitespace-leading excluded patterns. The hosted catalog validator and both regression suites passed."
-      },
-      "resolution_history": [],
-      "duplicate_of": null,
-      "accepted_risk": null,
-      "task_refs": [
-        "20261126-124305"
-      ],
-      "task_group": "ci-601033e3967e71af"
     }
   ],
   "ingestion_state": {
