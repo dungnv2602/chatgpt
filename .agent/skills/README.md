@@ -11,9 +11,6 @@ These skills govern baseline collaboration, cross-cutting repository work, and d
 | Skill | Responsibility |
 |---|---|
 | [the-worker](the-worker/SKILL.md) | Session continuity, task operations, collaboration modes, and discussion-register maintenance |
-| [asd-ste100](asd-ste100/SKILL.md) | Controlled-language rules for skill and technical documentation |
-| [github-actions](github-actions/SKILL.md) | GitHub Actions workflow design, optimization, security, and verification |
-| [document-standards](document-standards/SKILL.md) | Template-first document governance, canonical formats, and structural validation |
 
 The Worker's mandatory [Conversation Mode reference](the-worker/references/conversation-mode.md) defines Default Mode, Condensed Mode, and the discussion-register contract.
 
@@ -21,7 +18,7 @@ The Worker's mandatory [Conversation Mode reference](the-worker/references/conve
 
 Load specialist skills in dependency order. Do not load them during ordinary foundational initialization unless the user's task requires the next tier.
 
-1. **Foundational:** The Worker (including its mandatory Conversation Mode reference), ASD-STE100, GitHub Actions, and Document Standards.
+1. **Foundational:** The Worker (including its mandatory Conversation Mode reference).
 2. **Drawing:** The Worker's archive/media references, the Drawing skill, and its required references. Activate only after foundational initialization passes. Load only the Worker references required by the drawing or archive procedure.
 3. **Novelist:** Romantic Storyteller and active novel records. Activate only for the novelist role.
 
@@ -42,6 +39,10 @@ Load these skills only when the request or an explicit role-initiation procedure
 | [agent-skill-authoring](agent-skill-authoring/SKILL.md) | Creating, revising, checking, or integrating Agent Skills definitions |
 | [decision-governance](decision-governance/SKILL.md) | Draft approval, accepted ADRs, implementation linkage, permanent ADR archives, and repository analysis |
 | [romantic-storyteller-visual-artist](romantic-storyteller-visual-artist/SKILL.md) | Romantic narrative or visual storytelling. The Drawing skill is a prerequisite for novelist-role initialization and governs visual work. |
+| [ci-ledger](ci-ledger/SKILL.md) | Ledger ingestion, finding governance, evidence, task handoff, lifecycle, and retirement. |
+| [github-actions](github-actions/SKILL.md) | CI diagnostics, workflow changes, CI-generated remediation, recurrence prevention, and validation procedures. |
+| [asd-ste100](asd-ste100/SKILL.md) | Skill or technical documentation authoring and clarity rewrites. |
+| [document-standards](document-standards/SKILL.md) | Recurring document or structured-record governance, templates, and validation. |
 
 ## Foundational initialization
 
