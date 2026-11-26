@@ -5,7 +5,7 @@ import argparse, copy, hashlib, json, re, tempfile
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 
-SCHEMA_VERSION = "1.4.0"
+SCHEMA_VERSION = "1.5.0"
 MAX_EVIDENCE_ROWS = 5
 IGNORED_CATEGORIES = {"cancelled", "skipped", "neutral", "queued", "in_progress", "unavailable", "unknown", "not_available"}
 IGNORED_LINT_STATUSES = {"Incomplete", "Cancelled", "Superseded"}
@@ -97,6 +97,22 @@ def safe_relative_path(value, prefix):
         raise LedgerError("Unsafe report path in index: " + value)
     return value
 
+def normalize_report_path(value, allow_archived=True):
+    """Normalize legacy report references to repository-relative paths."""
+    if not isinstance(value, str) or not value.strip() or "\\" in value:
+        raise LedgerError("A ledger contains an invalid report path")
+    if value.startswith("reports/"):
+        value = ".takeout/" + value
+    elif value.startswith("archive/reports/"):
+        value = ".archive/" + value[len("archive/"):]
+    candidate = PurePosixPath(value)
+    if candidate.is_absolute() or ".." in candidate.parts:
+        raise LedgerError("Unsafe report path in ledger: " + value)
+    prefixes = (".takeout/reports/", ".archive/reports/") if allow_archived else (".takeout/reports/",)
+    if not value.startswith(prefixes):
+        raise LedgerError("Unsupported report path in ledger: " + value)
+    return candidate.as_posix()
+
 def read_json(path):
     try:
         return json.loads(path.read_text(encoding="utf-8"))
@@ -107,7 +123,7 @@ def indexed_reports(root):
     """Resolve report files only through the published family indexes."""
     found = []
     for scope in ("on_changed", "on_repo"):
-        index_path = root / "reports" / "lint_reports" / scope / "index.json"
+        index_path = root / ".takeout" / "reports" / "lint_reports" / scope / "index.json"
         if not index_path.is_file():
             continue
         index = read_json(index_path)
@@ -125,7 +141,7 @@ def indexed_reports(root):
             report_path = next((item for item in candidates if item.is_file()), None)
             if report_path is not None:
                 found.append(("lint", report_path.relative_to(root).as_posix(), row))
-    gh_index_path = root / "reports" / "gh_ac_reports" / "index.json"
+    gh_index_path = root / ".takeout" / "reports" / "gh_ac_reports" / "index.json"
     if gh_index_path.is_file():
         index = read_json(gh_index_path)
         if not isinstance(index, dict) or not isinstance(index.get("runs"), list):
@@ -149,7 +165,7 @@ def bootstrap_state(root, timestamp=None):
 
 def migrate_ledger(ledger, root):
     version = ledger.get("schema_version")
-    if version not in ("1.0.0", "1.1.0", "1.2.0", "1.3.0", SCHEMA_VERSION):
+    if version not in ("1.0.0", "1.1.0", "1.2.0", "1.3.0", "1.4.0", SCHEMA_VERSION):
         raise LedgerError("Unsupported ledger schema version: " + str(version))
     if not isinstance(ledger.get("findings"), list):
         raise LedgerError("The ledger findings field must be an array")
@@ -165,7 +181,14 @@ def migrate_ledger(ledger, root):
         evidence_rows = finding.get("evidence")
         if not isinstance(evidence_rows, list):
             raise LedgerError("finding evidence must be an array: " + str(finding.get("finding_id")))
-        finding["evidence"] = compact_evidence(evidence_rows)
+        normalized_evidence = []
+        for row in evidence_rows:
+            if isinstance(row, dict):
+                row = dict(row)
+                if "report_path" in row:
+                    row["report_path"] = normalize_report_path(row["report_path"], allow_archived=True)
+            normalized_evidence.append(row)
+        finding["evidence"] = compact_evidence(normalized_evidence)
         if "task_group" not in finding:
             group_parts = ["legacy", finding.get("finding_id", "unknown")]
             if finding.get("source_family") == "lint":
@@ -200,7 +223,9 @@ def migrate_ledger(ledger, root):
             raise LedgerError("ingestion_state.lint_baseline_scopes values must be booleans")
     if not isinstance(state["processed_reports"], list) or not all(isinstance(item, str) for item in state["processed_reports"]):
         raise LedgerError("ingestion_state.processed_reports must be an array of paths")
-    state["processed_reports"] = sorted(set(state["processed_reports"]))
+    state["processed_reports"] = sorted({
+        normalize_report_path(item, allow_archived=False) for item in state["processed_reports"]
+    })
     return ledger
 
 def normalize_signature(message):
@@ -594,7 +619,7 @@ def render_worker_task(root, task_id, title, group_id, findings, timestamp):
         "[Record approved decisions and concise rationale. Mark unapproved ideas as Proposed.]":
             "- **Approved:** Event-driven task capture by the Ledger during ingestion.\n- **Approved:** Group findings by the stable remediation key.\n- **Boundary:** This task is Proposed. Automated capture does not approve code changes or authorize automatic remediation.",
         "Record every meaningful action. Use one entry for each action or closely related set of actions.\n\n### YYYY-MM-DD HH:MM UTC\n\n- **Action:** [What was inspected, researched, changed, or verified.]\n- **Result:** [Observed result. Include failures and uncertainty.]\n- **References:** [Exact paths, commits, URLs, or source IDs.]\n- **Next:** [Next action or resulting change in task state.]":
-            "### " + created + "\n\n- **Action:** Created this Proposed task from the Ledger's event-driven ingestion.\n- **Result:** Grouped " + str(len(findings)) + " distinct finding(s) by remediation key. No remediation was performed or authorized.\n- **References:** reports/triage/ledger.json and the evidence links below.\n- **Next:** Worker review and user approval before implementation.",
+            "### " + created + "\n\n- **Action:** Created this Proposed task from the Ledger's event-driven ingestion.\n- **Result:** Grouped " + str(len(findings)) + " distinct finding(s) by remediation key. No remediation was performed or authorized.\n- **References:** .takeout/reports/triage/ledger.json and the evidence links below.\n- **Next:** Worker review and user approval before implementation.",
         "[Describe the verified state now. Distinguish completed implementation from unverified behavior.]":
             "The Ledger recorded the findings and created this task handoff. Root cause, remediation, and validation have not been assessed.",
         "[List incomplete requirements, blockers, and outstanding checks.]":
@@ -602,7 +627,7 @@ def render_worker_task(root, task_id, title, group_id, findings, timestamp):
         "1. [Exact next action.]\n2. [Following action.]":
             "1. Inspect the linked report evidence and confirm the remediation scope.\n2. Request or record approval, then remediate and verify the findings.",
         "- [Relevant repository paths.]\n- [Commit links and hashes.]\n- [External references and their relevance.]\n- [Related task IDs.]":
-            "- reports/triage/ledger.json\n- The exact report paths and run URLs are listed under Ledger Findings.",
+            "- .takeout/reports/triage/ledger.json\n- The exact report paths and run URLs are listed under Ledger Findings.",
         "- **Check:** [What was checked.]\n- **Method:** [How it was checked.]\n- **Result:** [Actual result, or Not performed.]\n- **Limitations:** [What the check does not establish.]":
             "- **Check:** Ledger schema and finding eligibility.\n- **Method:** Validated by the ingestion process before task publication.\n- **Result:** Task handoff generated from accepted ledger findings.\n- **Limitations:** This does not verify root cause or remediation.",
         "[Give the next session enough information to resume without asking the user to repeat known context. State the exact next action and any approval boundary.]":
@@ -789,7 +814,7 @@ def archived_task_index(root):
         if not isinstance(record, dict):
             continue
         archive_path = record.get("path")
-        if not isinstance(archive_path, str) or not archive_path.startswith("archive/tasks/"):
+        if not isinstance(archive_path, str) or not archive_path.startswith(".archive/task/"):
             continue
         candidate = PurePosixPath(archive_path)
         if candidate.is_absolute() or ".." in candidate.parts:
@@ -840,7 +865,14 @@ def retire_completed_task_findings(root, ledger):
 
 def ingest(root, now=None):
     root = Path(root).resolve()
-    ledger_path, schema_path = root / "reports/triage/ledger.json", root / "reports/triage/ledger-schema.json"
+    ledger_path = root / ".takeout/reports/triage/ledger.json"
+    schema_path = root / ".takeout/reports/triage/ledger-schema.json"
+    if not ledger_path.is_file():
+        raise LedgerError(
+            "The central CI Ledger is missing at " + str(ledger_path) +
+            ". Restore its exact prior state or obtain explicit user authorization for a clean-start reset; "
+            "automatic initialization is disabled."
+        )
     ledger = read_json(ledger_path)
     if not isinstance(ledger, dict):
         raise LedgerError("The ledger root must be an object")
@@ -929,7 +961,7 @@ def ingest(root, now=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--mode", choices=("ingest",), default="ingest")
-    parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[3])
+    parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[4])
     args = parser.parse_args()
     print(json.dumps(ingest(args.root), ensure_ascii=False, indent=2))
 
