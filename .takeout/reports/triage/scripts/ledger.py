@@ -679,7 +679,7 @@ def upsert_task_board_row(root, task):
     updated = parse_time(updated.replace(" UTC", "") + "Z" if updated.endswith(" UTC") else updated).strftime("%Y-%m-%d %H:%M UTC")
     filename = task["path"].name
     governing_adrs = task_metadata(content, "Governing ADR(s)")
-    adr_ids = re.findall(r"\\bADR-\\d{4}\\b", governing_adrs)
+    adr_ids = re.findall(r"\bADR-\d{4}\b", governing_adrs)
     adr_cell = ", ".join(adr_ids) if adr_ids else ("Pending" if governing_adrs.lower().startswith("pending") else "—")
     row = "| " + task_id + " | " + title + " | " + priority + " | " + status + " | " + origin + " | " + approval + " | " + markdown_cell(adr_cell) + " | " + updated + " | [Task record](tasks/" + filename + ") |"
     lines = board.splitlines()
