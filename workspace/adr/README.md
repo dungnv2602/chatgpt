@@ -62,7 +62,7 @@ Never add ADRs to .github/archive-retention-index.json. The archive retention wo
 
 ## Promotion Pending
 
-- [ADR-0001 — Canonical GitHub Actions Diagnostic Report Artifact Layout](0001-canonical-github-actions-diagnostic-report-artifact-layout.md) — Provisional record for approved DRAFT-0004 revision 1, Option 3. Not authoritative until completeness review and read-back pass.
+- [ADR-0003 — Canonical GitHub Actions Diagnostic Report Artifact Layout](0003-canonical-github-actions-diagnostic-report-artifact-layout.md) — Provisional record for approved DRAFT-0004 revision 1, Option 3. Not authoritative until completeness review and read-back pass.
 
 ## Current Accepted ADRs
 

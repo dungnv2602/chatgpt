@@ -9,7 +9,7 @@ This folder stores proposals that require a user decision.
 
 ## Promotion Pending
 
-- [DRAFT-0004 — Canonical GitHub Actions Diagnostic Report Artifact Layout](DRAFT-0004-canonical-github-actions-report-artifact-layout.md) — Revision 1 approved for Option 3. Provisional ADR-0001 is pending the completeness and read-back gate. Do not implement the artifact migration until ADR-0001 is accepted.
+- [DRAFT-0004 — Canonical GitHub Actions Diagnostic Report Artifact Layout](DRAFT-0004-canonical-github-actions-report-artifact-layout.md) — Revision 1 approved for Option 3. Provisional ADR-0003 is pending the completeness and read-back gate. Do not implement the artifact migration until ADR-0003 is accepted.
 
 ## Current Drafts
 

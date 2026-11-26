@@ -13,7 +13,7 @@ consulted: []
 informed: []
 related_drafts: []
 related_adrs: []
-resulting_adr: "ADR-0001"
+resulting_adr: "ADR-0003"
 promotion_cleanup_pending: false
 cleanup_reason: null
 ---
@@ -244,7 +244,7 @@ Rollback must restore the removed derived files from the canonical JSON reports 
 - **User decision:** Approved
 - **Approved scope:** Option 3 only: retain per-run report.json, integrity.json, and captured logs; retain the root index as the only index/latest pointer; render Markdown on demand; remove per-run report.md and root/per-workflow latest and index copies. Preserve report JSON/log bytes and history paths. Regenerate integrity manifests to cover the retained JSON and logs. No change to error-only retention, cancellation/propagation classification, Ledger identity/task generation, lint baselines, or STE lint reports.
 - **Decision date:** 2026-11-26
-- **Resulting ADR:** ADR-0001 (promotion pending)
+- **Resulting ADR:** ADR-0003 (promotion pending)
 
 ## Discussion and Revision History
 

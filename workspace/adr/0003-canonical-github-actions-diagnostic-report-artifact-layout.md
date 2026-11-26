@@ -1,7 +1,7 @@
 ---
 record_type: decision-record
 template_version: "1.1"
-id: "ADR-0001"
+id: "ADR-0003"
 status: "promotion-pending"
 decision_date: "2026-11-26"
 decision_makers:
