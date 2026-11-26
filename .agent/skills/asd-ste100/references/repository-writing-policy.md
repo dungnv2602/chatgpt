@@ -49,10 +49,10 @@ Do not run the linter or CI workflows locally. Push changes to branch `gpt` and 
 
 The repository has two lint workflows:
 
-- `.github/workflows/ste-lint-changed.yml` checks changed Markdown files outside `skills/asd-ste100/`.
-- `.github/workflows/ste-lint-full-docs.yml` checks the technical documentation when files in `skills/asd-ste100/` change. It also runs when either lint workflow file changes.
+- `.github/workflows/ste-lint-changed.yml` checks changed Markdown files outside `.agent/skills/asd-ste100/`.
+- `.github/workflows/ste-lint-full-docs.yml` checks the technical documentation when files in `.agent/skills/asd-ste100/` change. It also runs when either lint workflow file changes.
 
-Both workflows use `skills/asd-ste100/scripts/ste-lint-repository.sh`. The wrapper applies the recorded mode and per-file baseline. Use `--json` to interpret structured linter output. Use `--baseline N` only when you adopt an existing document with known findings. Record the baseline and reason. Do not raise the baseline to hide new violations.
+Both workflows use `.agent/skills/asd-ste100/scripts/ste-lint-repository.sh`. The wrapper applies the recorded mode and per-file baseline. Use `--json` to interpret structured linter output. Use `--baseline N` only when you adopt an existing document with known findings. Record the baseline and reason. Do not raise the baseline to hide new violations.
 
 The linter does not check meaning, terminology approval, modality, or all grammar rules. Review every rewrite against the source.
 
