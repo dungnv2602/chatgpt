@@ -48,9 +48,9 @@ items:
     asset_id: "ILL-001"
     source_asset_id: "platform-asset-id-if-exposed"
     title: "Shared Discovery"
-    destination_dir: "drawings/2026-11-20/images"
+    destination_dir: "area/drawing/2026-11-20/images"
     attempt: "04"
-    conversation_record: "drawings/history/2026-11-20-conversation-integrity.md"
+    conversation_record: "area/drawing/history/2026-11-20-conversation-integrity.md"
     # Include only provenance values actually captured:
     expected_sha256: "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
     output_id: "A001-O01"
@@ -77,7 +77,7 @@ The conversion report keeps these hash fields separate:
 
 The WebP hash is separate because conversion changes the bytes.
 
-For drawing-session uploads, the processor also updates `drawings/YYYY-MM-DD/manifest.csv`. It records new outputs and inventories legacy WebP files. It pairs a legacy WebP with a same-stem master in `images/original/` when one exists.
+For drawing-session uploads, the processor also updates `area/drawing/YYYY-MM-DD/manifest.csv`. It records new outputs and inventories legacy WebP files. It pairs a legacy WebP with a same-stem master in `images/original/` when one exists.
 
 The processor records the actual master hash. Publication remains Pending until the workflow checks the remote Git blobs.
 
@@ -90,7 +90,7 @@ Each item uses these fields:
 - `source` is the exact uploaded filename in this directory's top level.
 - `asset_id` is an optional repository identifier used in the stored filename. Novel illustrations use a stable `ILL-NNN` ID. `source_asset_id` records the exact platform Asset ID from the attempt or generation record and does not change the stored filename.
 - `title` is a short description based on the inspected image and its intended role.
-- `destination_dir` is a repository-relative directory under `images/`, `novels/`, or `drawings/YYYY-MM-DD/images`.
+- `destination_dir` is a repository-relative directory under `images/`, `area/novel/`, or `area/drawing/YYYY-MM-DD/images`.
 - `attempt` is mandatory for drawing-session destinations.
 - `conversation_record` is mandatory for every ready item. It must point to an existing dated conversation-integrity file with an exact row for the source filename, attempt, source Asset ID, and Generation / Output ID.
 - Drawing-session items require an attempt plus a recorded Generation ID or internal Output ID. The processor checks this identity against the referenced attempt note. If source_asset_id is supplied, it must match the attempt note's Asset ID.
@@ -106,8 +106,8 @@ The processor creates a lowercase, hyphen-separated slug from the title. It remo
 
 The example item creates these files:
 
-- Original master: `novels/Novel-02/assets/illustrations/ARC-001/SCN-001/original/ILL-001-shared-discovery.png`
-- WebP delivery file: `novels/Novel-02/assets/illustrations/ARC-001/SCN-001/ILL-001-shared-discovery.webp`
+- Original master: `area/novel/Novel-02/assets/illustrations/ARC-001/SCN-001/original/ILL-001-shared-discovery.png`
+- WebP delivery file: `area/novel/Novel-02/assets/illustrations/ARC-001/SCN-001/ILL-001-shared-discovery.webp`
 
 The processor moves the original bytes to the destination's `original/` folder. It stores the WebP file in the destination root.
 
@@ -223,7 +223,7 @@ The WebP file does not retain EXIF or XMP metadata. The original master retains 
 
 ## Drawing-session manifest
 
-For each upload with an explicit `attempt` and a destination under `drawings/YYYY-MM-DD/images`, the processor updates that session's `manifest.csv`.
+For each upload with an explicit `attempt` and a destination under `area/drawing/YYYY-MM-DD/images`, the processor updates that session's `manifest.csv`.
 
 It adds one row per output. It preserves existing rows and columns. It adds missing required columns. It also inventories top-level WebP files that lack manifest rows.
 
@@ -262,4 +262,4 @@ The README and attempt records link only to WebP delivery files. The unchanged o
 
 ## Documentation standard
 
-This file defines an operational hand-off. Apply Strict mode from the repository [ASD-STE100 policy](../../skills/asd-ste100/references/repository-writing-policy.md) when you revise it. Preserve every field, status, path, conversion rule, and verification requirement.
+This file defines an operational hand-off. Apply Strict mode from the repository [ASD-STE100 policy](../../ .agent/skills/asd-ste100/references/repository-writing-policy.md) when you revise it. Preserve every field, status, path, conversion rule, and verification requirement.
