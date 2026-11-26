@@ -2,11 +2,12 @@
 
 ## Current Step
 
-- **2026-11-26 16:25 UTC:** Inspect the naturally triggered Diagnostics and STE Lint Changed runs relevant to the ADR-0003 integrity-verification commit and catalog update. Verify manifest checks, report publication, and Ledger reconciliation. Do not dispatch, rerun, or poll CI. Active scopes: [P0 task 20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) and [P0 task 20261126-145133](tasks/20261126-145133-review-publication-or-push-failures-in-ste-lint-changed-document.md).
+- **2026-11-26 16:28 UTC:** Inspect and resolve the new P0 semicolon finding in the Document Type Catalog, created from STE Lint Changed run 45857763911. Read the exact diagnostic and task, make the narrow correction, and preserve all catalog coverage rules. Active scope: [P0 task 20261126-162137](tasks/20261126-162137-review-semicolon-findings-in-agent-skills-document-standards-ref.md).
 
 ## Open Discussions
 
-- **2026-11-26 16:22 UTC:** P0 task [20261126-145133](tasks/20261126-145133-review-publication-or-push-failures-in-ste-lint-changed-document.md) still needs a naturally triggered STE Lint Changed run after fix commit 07214aa. The run must publish its lint report successfully and the Ledger must resolve the publication finding. Do not dispatch or poll CI.
+- **2026-11-26 16:28 UTC:** New P0 task [20261126-162137](tasks/20261126-162137-review-semicolon-findings-in-agent-skills-document-standards-ref.md) was generated from a semicolon violation in the Document Type Catalog during STE Lint Changed run [45857763911](https://github.com/dungnv2602/chatgpt/actions/runs/45857763911). It is now the sole Current Execution task. Resolve the exact finding without weakening lint rules.
+- **2026-11-26 16:22 UTC:** P0 task [20261126-145133](tasks/20261126-145133-review-publication-or-push-failures-in-ste-lint-changed-document.md) has a naturally triggered post-fix run [45857763911](https://github.com/dungnv2602/chatgpt/actions/runs/45857763911). Its report publication step succeeded, but the workflow failed on a separate changed-document lint finding. The original publication finding remains open in the Ledger until a resolution record is committed.
 - **2026-11-26 15:00 UTC:** DRAFT-0002 revision 4 remains in review. Its wording corrections passed hosted lint. The decision and implementation scope remain unapproved.
 
 ## Reports
