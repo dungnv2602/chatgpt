@@ -1,6 +1,6 @@
 ## Current Step
 
-Audit active README and skill cross-references, navigation links, and Document Type Catalog path assumptions against the reconstructed tree. Retrieve exact targets before considering edits. Task: [20261126-021200](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
+Trace active task-board links against the current workspace directory layout. Identify whether missing task records have exact relocated counterparts in approved active paths. Do not restore missing files or inspect archived contents. Task: [20261126-021200](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
 
 ## Open Discussions
 
