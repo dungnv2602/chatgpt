@@ -1,12 +1,12 @@
 # Image Processing Scripts
 
-The Worker owns the image-intake and publication-verification tools. The scripts sit in `skills/the-worker/scripts/`. They support archival, integrity, rollback, and publication checks.
+The Worker owns the image-intake and publication-verification tools. The scripts sit in ` .agent/ .agent/skills/the-worker/scripts/`. They support archival, integrity, rollback, and publication checks.
 
 ## Files
 
-- `scripts/process_takeout.py` — checks one `images/takeout/` hand-off. It checks destination safety and source identity. It converts PNG and JPEG files to WebP. It stages the full batch before relocation. It updates drawing-session records and manifests. It writes success or failure reports and handles rollback.
-- `scripts/verify_published_manifest.py` — reads the pushed Git ref. It checks published master and WebP blobs, checksums, canonical WebP URLs, and drawing-session links. It then updates or checks manifest status.
-- `scripts/test_process_takeout_unittest.py` — tests the processor and publication verifier. It imports the verifier from this directory. It runs the processor by its sibling path. Keep all three files together.
+- `.agent/skills/the-worker/scripts/process_takeout.py` — checks one `images/takeout/` hand-off. It checks destination safety and source identity. It converts PNG and JPEG files to WebP. It stages the full batch before relocation. It updates drawing-session records and manifests. It writes success or failure reports and handles rollback.
+- `.agent/skills/the-worker/scripts/verify_published_manifest.py` — reads the pushed Git ref. It checks published master and WebP blobs, checksums, canonical WebP URLs, and drawing-session links. It then updates or checks manifest status.
+- `.agent/skills/the-worker/scripts/test_process_takeout_unittest.py` — tests the processor and publication verifier. It imports the verifier from this directory. It runs the processor by its sibling path. Keep all three files together.
 
 ## Dependencies
 
@@ -20,15 +20,15 @@ Compile both production scripts:
 
 ```bash
 python3 -m py_compile \
-  skills/the-worker/scripts/process_takeout.py \
-  skills/the-worker/scripts/verify_published_manifest.py
+   .agent/ .agent/skills/the-worker/scripts/process_takeout.py \
+   .agent/ .agent/skills/the-worker/scripts/verify_published_manifest.py
 ```
 
 Run the regression suite:
 
 ```bash
 python3 -m unittest discover \
-  -s skills/the-worker/scripts \
+  -s  .agent/skills/the-worker/scripts \
   -p 'test_process_takeout_unittest.py' \
   -v
 ```
@@ -36,7 +36,7 @@ python3 -m unittest discover \
 Process a ready takeout hand-off:
 
 ```bash
-python3 skills/the-worker/scripts/process_takeout.py \
+python3  .agent/ .agent/skills/the-worker/scripts/process_takeout.py \
   --repo-root . \
   --run-id "$GITHUB_RUN_ID"
 ```
@@ -44,7 +44,7 @@ python3 skills/the-worker/scripts/process_takeout.py \
 Check published assets after the first push:
 
 ```bash
-python3 skills/the-worker/scripts/verify_published_manifest.py \
+python3  .agent/ .agent/skills/the-worker/scripts/verify_published_manifest.py \
   --repo-root . \
   --git-ref origin/gpt \
   --branch gpt
@@ -53,7 +53,7 @@ python3 skills/the-worker/scripts/verify_published_manifest.py \
 Run the final read-only check:
 
 ```bash
-python3 skills/the-worker/scripts/verify_published_manifest.py \
+python3  .agent/ .agent/skills/the-worker/scripts/verify_published_manifest.py \
   --repo-root . \
   --git-ref origin/gpt \
   --branch gpt \
