@@ -7,7 +7,7 @@ Working branch: `gpt`
 
 Initialization is conditional. Do not load project instructions, skills, or references at the start of a new conversation.
 
-The only session-start cue is **`start session`**.
+The only session-start cue is **`/start`**.
 
 When the user gives this cue as an instruction, perform the foundational loading sequence below. Retrieve and read every required component before project work.
 
@@ -17,14 +17,14 @@ This file is the sole authority for session-start cues and the foundational load
 
 ### Foundational loading sequence
 
-When the user says `start session`:
+When the user says `/start`:
 
 1. Record a startup notice in `workspace/discussion.md`. Commit and read back the register before skill retrieval. In Default Mode, also state that foundational retrieval is starting and link the register. In Condensed Mode, provide only the direct register link.
-2. Retrieve and read `skills/the-worker/SKILL.md` from branch `gpt`.
-3. Retrieve and read `skills/the-worker/references/conversation-mode.md`. This is a mandatory component of The Worker.
-4. Retrieve and read `skills/asd-ste100/SKILL.md` from branch `gpt`.
-5. Retrieve and read `skills/github-actions/SKILL.md` from branch `gpt`.
-6. Retrieve and read `skills/document-standards/SKILL.md` from branch `gpt`. This is a foundational skill. Load its catalog and specific canonical assets only when the task requires them.
+2. Retrieve and read `.agent/skills/the-worker/SKILL.md` from branch `gpt`.
+3. Retrieve and read `.agent/skills/the-worker/references/conversation-mode.md`. This is a mandatory component of The Worker.
+4. Retrieve and read `.agent/skills/asd-ste100/SKILL.md` from branch `gpt`.
+5. Retrieve and read `.agent/skills/github-actions/SKILL.md` from branch `gpt`.
+6. Retrieve and read `.agent/skills/document-standards/SKILL.md` from branch `gpt`. This is a foundational skill. Load its catalog and specific canonical assets only when the task requires them.
 7. Verify that every required path was retrieved and read. Maintain the per-conversation verified-load ledger below.
 7. Do not run a CI snapshot, repair unrelated workflow failures, run local lint, or wait for CI. Review CI only when the user asks or the current task depends on a specific workflow.
 
@@ -32,7 +32,7 @@ Do not load Agent Skill Authoring during ordinary foundational initialization. L
 
 If a required component is missing or cannot be verified, report its exact path and stop foundational initialization. Do not substitute memory, previous-conversation reads, or Library copies.
 
-Do not run a CI preflight after cue-triggered skill loading. Initialization is complete when the required skills have been retrieved and read. CI status is separate and task-scoped under `skills/github-actions/SKILL.md`.
+Do not run a CI preflight after cue-triggered skill loading. Initialization is complete when the required skills have been retrieved and read. CI status is separate and task-scoped under `.agent/skills/github-actions/SKILL.md`.
 
 ## Novelist role initialization
 
@@ -72,10 +72,10 @@ The required order is:
 Before novelist work:
 
 1. Check whether foundational initialization passed in the current conversation.
-2. If it did not pass, stop novelist initialization and ask the user to say `start session`. Do not retrieve foundational or specialist skills until that explicit cue is given.
-3. Retrieve the relevant Worker references when they have not been verified in this conversation: `skills/the-worker/references/archive-records-and-image-prompts.md` and, when needed, `drawing-session-closeout.md` and `image-provenance-and-webp.md`. These define the session-brief, archive, and prompt-provenance procedures.
+2. If it did not pass, stop novelist initialization and ask the user to say `/start`. Do not retrieve foundational or specialist skills until that explicit cue is given.
+3. Retrieve the relevant Worker references when they have not been verified in this conversation: `.agent/skills/the-worker/references/archive-records-and-image-prompts.md` and, when needed, `drawing-session-closeout.md` and `image-provenance-and-webp.md`. These define the session-brief, archive, and prompt-provenance procedures.
 4. Check whether the Drawing skill and each required reference were successfully read in this conversation. Retrieve only files that are not already verified.
-5. Check whether `skills/romantic-storyteller-visual-artist/SKILL.md` was successfully read in this conversation. Retrieve it only if it is not already verified.
+5. Check whether `.agent/skills/romantic-storyteller-visual-artist/SKILL.md` was successfully read in this conversation. Retrieve it only if it is not already verified.
 6. Do not use remembered instructions, reads from another conversation, summaries, or unverified copies as substitutes.
 7. After all required novelist skills load, do not run a CI preflight. Review CI only when the requested novelist task depends on a specific workflow or the user asks for CI diagnostics.
 
@@ -187,7 +187,7 @@ If the user's instruction already includes a writing task, start that task after
 - Authorized branch: `gpt`
 - Novel records: `novels/`
 - Visual references and assets: `images/`
-- Skills: `skills/`
+- Skills: `.agent/skills/`
 - Prompt history and session records: `drawings/`
 
 Retrieve each target file before you update it. Preserve unrelated content.
@@ -202,11 +202,11 @@ This protocol is operational documentation. Apply Strict mode from the repositor
 
 ### Session and specialist execution order
 
-When the user says **`start session`**, perform foundational initialization only. Do not infer a specialist role.
+When the user says **`/start`**, perform foundational initialization only. Do not infer a specialist role.
 
 If the user also requests the novelist role, complete foundational initialization first. Then follow the novelist procedure above.
 
-If the user requests the novelist role before session initialization passes, stop and ask the user to say `start session`.
+If the user requests the novelist role before session initialization passes, stop and ask the user to say `/start`.
 
 Reuse foundational files that you verified in the current conversation. Do not treat remembered instructions or earlier reads as current-session verification.
 
@@ -217,10 +217,10 @@ The separate drawing-session cue is **`start a drawing session`**. Treat it as a
 This cue starts a new drawing session. It does not replace the foundational initialization procedure.
 
 1. Check whether foundational initialization passed in the current conversation.
-2. If it has not passed, stop drawing-session initialization and ask the user to say `start session`. Do not retrieve foundational or Drawing skills until that explicit cue is given.
+2. If it has not passed, stop drawing-session initialization and ask the user to say `/start`. Do not retrieve foundational or Drawing skills until that explicit cue is given.
 3. If foundational initialization already passed, reuse the verified foundational files. Do not load them again without a reason.
 4. Load The Worker's `references/archive-records-and-image-prompts.md` and any other required archive/media references when they are not already verified. The Worker owns the session-brief, archive, and prompt-provenance procedures used by Drawing.
-5. Retrieve and read `skills/drawing/SKILL.md` and its required references: `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`. Reuse each file if it was already verified in this conversation.
+5. Retrieve and read `.agent/skills/drawing/SKILL.md` and its required references: `.agent/skills/drawing/references/style-guide.md` and `.agent/skills/drawing/references/image-editing-protocol.md`. Reuse each file if it was already verified in this conversation.
 6. Do not run a CI preflight after the Drawing skill loads. Review CI only when the drawing task changes or depends on a specific workflow, or when the user asks for CI diagnostics.
 7. Start the drawing session under the Drawing skill. Establish its new opening brief and required session records before image generation or editing. For a named novel scene, use the scene-local illustration brief and records.
 8. Continue with any drawing task included in the same instruction. If the user only asks to start the session, establish the session and ask only for essential brief details that are not available.
@@ -233,7 +233,7 @@ Use this order whenever a task requires specialist skills:
 
 | Tier | Skills | Activation |
 |---|---|---|
-| 1. Foundational | The Worker (including its mandatory Conversation Mode reference), ASD-STE100, GitHub Actions, Document Standards | `start session` only. Specialist requests require foundational initialization to have passed already. |
+| 1. Foundational | The Worker (including its mandatory Conversation Mode reference), ASD-STE100, GitHub Actions, Document Standards | `/start` only. Specialist requests require foundational initialization to have passed already. |
 | 2. Drawing | The Worker's archive/media references, Drawing, and its required references | After foundational initialization passes: `start a drawing session`, drawing work that requires the workflow, or novelist initialization |
 | 3. Novelist | Romantic Storyteller and active novel records | `Be the novelist` |
 
@@ -255,11 +255,11 @@ Entering a higher tier does not restart lower tiers. For example, if you loaded 
 
 ### The Worker
 
-`skills/the-worker/SKILL.md` is a required foundational skill. Load it during foundational initialization.
+`.agent/skills/the-worker/SKILL.md` is a required foundational skill. Load it during foundational initialization.
 
 The Worker manages task continuity, task selection, progress, handoffs, recovery, collaboration modes, discussion-register maintenance, task archival, conversation and drawing-session records, image provenance, WebP delivery, and media workflows.
 
-Load `skills/the-worker/references/conversation-mode.md` with The Worker. This reference defines Default Mode, Condensed Mode, the discussion-register contract, and user-visible output rules. Do not load Conversation Mode as a separate skill.
+Load `.agent/skills/the-worker/references/conversation-mode.md` with The Worker. This reference defines Default Mode, Condensed Mode, the discussion-register contract, and user-visible output rules. Do not load Conversation Mode as a separate skill.
 
 ### The Worker's archive and media procedures
 
@@ -267,27 +267,27 @@ The Worker owns conversation archives, drawing-session closeout, image provenanc
 
 ### Agent Skill Authoring
 
-`skills/agent-skill-authoring/SKILL.md` is an on-demand skill. Load it when you create, revise, check, reorganize, or integrate a skill. It defines the repository's Agent Skills implementation.
+`.agent/skills/agent-skill-authoring/SKILL.md` is an on-demand skill. Load it when you create, revise, check, reorganize, or integrate a skill. It defines the repository's Agent Skills implementation.
 
 ### Document Standards
 
-`skills/document-standards/SKILL.md` is a required foundational skill. Load it during foundational initialization. It defines the template-first authoring workflow and applies to repository documents and structured records. Retrieve the Document Type Catalog and the exact templates, schemas, or validation references only when the task requires them.
+`.agent/skills/document-standards/SKILL.md` is a required foundational skill. Load it during foundational initialization. It defines the template-first authoring workflow and applies to repository documents and structured records. Retrieve the Document Type Catalog and the exact templates, schemas, or validation references only when the task requires them.
 
 ### ASD-STE100 technical writing
 
-`skills/asd-ste100/SKILL.md` is a required foundational skill. Load it during foundational initialization.
+`.agent/skills/asd-ste100/SKILL.md` is a required foundational skill. Load it during foundational initialization.
 
 Apply its repository policy to all skill documentation and technical documentation. Use Strict mode for operational instructions. Use STE-flavored mode for technical explanations and READMEs.
 
 Preserve facts, conditions, scope, modality, and technical precision. Do not apply the standard to creative writing, dialogue, marketing copy, or approved creative prompts.
 
-The repository policy is in `skills/asd-ste100/references/repository-writing-policy.md`. Load it when you create or revise technical documentation.
+The repository policy is in `.agent/skills/asd-ste100/references/repository-writing-policy.md`. Load it when you create or revise technical documentation.
 
 Neither the skill nor the linter certifies a document as fully ASD-STE100 compliant. The repository does not contain the official controlled dictionary.
 
 ### GitHub Actions workflow operations
 
-`skills/github-actions/SKILL.md` is a required foundational skill. Load it during foundational initialization.
+`.agent/skills/github-actions/SKILL.md` is a required foundational skill. Load it during foundational initialization.
 
 Use it when you create, revise, optimize, secure, or check GitHub Actions workflows. It defines workflow triggers, concurrency, incremental checks, caching, runners, permissions, artifacts, and validation.
 
@@ -299,4 +299,4 @@ Do not create, copy, upload, or synchronize project materials in ChatGPT Library
 
 If a required repository file is missing, report that fact. Do not reconstruct it from Library.
 
-The canonical project directories are `images/`, `master/`, `novels/`, `drawings/`, and `skills/`. Do not use the obsolete `ChatGPT/` wrapper path.
+The canonical project directories are `images/`, `master/`, `novels/`, `drawings/`, and `.agent/skills/`. Do not use the obsolete `ChatGPT/` wrapper path.
