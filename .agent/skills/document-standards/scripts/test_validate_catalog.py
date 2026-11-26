@@ -20,22 +20,22 @@ class CatalogValidatorTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.catalog = (
             self.root
-            / "skills/document-standards/references/document-type-catalog.md"
+            / " .agent/skills/document-standards/references/document-type-catalog.md"
         )
         self.catalog.parent.mkdir(parents=True)
-        self.write("skills/example/assets/template.md")
-        self.write("skills/example/SKILL.md")
+        self.write(" .agent/skills/example/assets/template.md")
+        self.write(" .agent/skills/example/SKILL.md")
         self.write("workspace/example.md")
-        self.write("skills/example/processor.py")
+        self.write(" .agent/skills/example/processor.py")
         self.write("images/example/README.md")
-        self.write("skills/example/test_processor.py")
-        self.write("skills/example/generator.py")
-        self.write("skills/example/test_generator.py")
-        self.write("skills/the-worker/scripts/process_takeout.py")
-        self.write("skills/the-worker/scripts/test_process_takeout_unittest.py")
+        self.write(" .agent/skills/example/test_processor.py")
+        self.write(" .agent/skills/example/generator.py")
+        self.write(" .agent/skills/example/test_generator.py")
+        self.write(" .agent/skills/the-worker/scripts/process_takeout.py")
+        self.write(" .agent/skills/the-worker/scripts/test_process_takeout_unittest.py")
         self.write("master/Example.md")
-        self.write("novels/WORKFLOW.md")
-        self.write("skills/drawing/SKILL.md")
+        self.write("area/novel/WORKFLOW.md")
+        self.write(" .agent/skills/drawing/SKILL.md")
 
     def tearDown(self):
         self.temp.cleanup()
@@ -51,14 +51,14 @@ class CatalogValidatorTests(unittest.TestCase):
             "\n## Markdown inventory coverage\n\n"
             "| Path pattern | Class | Coverage status | Canonical authority | Coverage rationale |\n"
             "|---|---|---|---|---|\n"
-            "| `skills/**/*.md` | Lightweight pattern | Active |"
-            "`skills/example/SKILL.md` | Skill fixture. |\n"
+            "| ` .agent/skills/**/*.md` | Lightweight pattern | Active |"
+            "` .agent/skills/example/SKILL.md` | Skill fixture. |\n"
             "| `workspace/*.md` | Embedded contract | Active |"
-            "`workspace/example.md` and `skills/example/SKILL.md` | Workspace fixture. |\n"
+            "`workspace/example.md` and ` .agent/skills/example/SKILL.md` | Workspace fixture. |\n"
             "| `images/**/*.md` | Embedded contract | Active |"
-            "`images/example/README.md` and `skills/example/SKILL.md` | Image fixture. |\n"
-            "| `novels/*.md` | Embedded contract | Active |"
-            "`novels/WORKFLOW.md` and `skills/example/SKILL.md` | Novel fixture. |\n"
+            "`images/example/README.md` and ` .agent/skills/example/SKILL.md` | Image fixture. |\n"
+            "| `area/novel/*.md` | Embedded contract | Active |"
+            "`area/novel/WORKFLOW.md` and ` .agent/skills/example/SKILL.md` | Novel fixture. |\n"
             + "\n".join(extra_coverage)
             + ("\n" if extra_coverage else "")
         )
@@ -69,12 +69,12 @@ class CatalogValidatorTests(unittest.TestCase):
 
     def valid_rows(self):
         return [
-            "| Example template | Template required | `skills/example/assets/template.md` | Use it. |",
-            "| Embedded example | Embedded contract | `skills/example/SKILL.md` and `workspace/example.md` | Live contract. |",
-            "| Example schema | Schema required | `skills/example/processor.py` and `images/example/README.md` | Tests: `skills/example/test_processor.py`. |",
-            "| Example generator | Generator-owned | `skills/example/generator.py` | Tests: `skills/example/test_generator.py`. |",
+            "| Example template | Template required | ` .agent/skills/example/assets/template.md` | Use it. |",
+            "| Embedded example | Embedded contract | ` .agent/skills/example/SKILL.md` and `workspace/example.md` | Live contract. |",
+            "| Example schema | Schema required | ` .agent/skills/example/processor.py` and `images/example/README.md` | Tests: ` .agent/skills/example/test_processor.py`. |",
+            "| Example generator | Generator-owned | ` .agent/skills/example/generator.py` | Tests: ` .agent/skills/example/test_generator.py`. |",
             "| Example pattern | Lightweight pattern | `master/Example.md` | Reusable pattern. |",
-            "| Example prose | Exempt | `novels/WORKFLOW.md` and `skills/drawing/SKILL.md` | Preserve creative form. |",
+            "| Example prose | Exempt | `area/novel/WORKFLOW.md` and ` .agent/skills/drawing/SKILL.md` | Preserve creative form. |",
         ]
 
     def test_valid_catalog_accepts_all_document_classes(self):
@@ -87,17 +87,17 @@ class CatalogValidatorTests(unittest.TestCase):
         self.assertGreaterEqual(reference_count, 11)
 
     def test_skill_template_must_live_in_assets(self):
-        self.write("skills/example/references/template.md")
+        self.write(" .agent/skills/example/references/template.md")
         self.set_catalog([
             "| Example template | Template required | "
-            "`skills/example/references/template.md` | Misplaced. |",
+            "` .agent/skills/example/references/template.md` | Misplaced. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("invalid template location" in error for error in errors))
         self.assertTrue(any("Misplaced skill template" in error for error in errors))
 
     def test_misplaced_named_template_is_detected_without_catalog_row(self):
-        self.write("skills/example/references/hidden-template-library.md")
+        self.write(" .agent/skills/example/references/hidden-template-library.md")
         self.set_catalog(self.valid_rows())
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any(
@@ -106,16 +106,16 @@ class CatalogValidatorTests(unittest.TestCase):
         ))
 
     def test_project_and_workspace_template_locations_are_allowed(self):
-        self.write("novels/templates/scene-template.md")
+        self.write("area/novel/templates/scene-template.md")
         self.write("workspace/TASK_TEMPLATE.md")
         self.set_catalog([
             "| Novel scene | Template required | "
-            "`novels/templates/scene-template.md` | Project-owned. |",
+            "`area/novel/templates/scene-template.md` | Project-owned. |",
             "| Workspace task | Template required | "
             "`workspace/TASK_TEMPLATE.md` | Shared workspace template. |",
         ], [
-            "| `novels/templates/*.md` | Exempt | Active |"
-            "`novels/WORKFLOW.md` | Template-source fixture. |",
+            "| `area/novel/templates/*.md` | Exempt | Active |"
+            "`area/novel/WORKFLOW.md` | Template-source fixture. |",
         ])
         errors, row_count, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
@@ -125,7 +125,7 @@ class CatalogValidatorTests(unittest.TestCase):
         rows = self.valid_rows()
         rows[0] = (
             "| Example template | Template required | "
-            "`skills/example/missing-template.md` | Use it. |"
+            "` .agent/skills/example/missing-template.md` | Use it. |"
         )
         self.set_catalog(rows)
         errors, _, _ = validate_catalog(self.root, self.catalog)
@@ -142,7 +142,7 @@ class CatalogValidatorTests(unittest.TestCase):
         rows = self.valid_rows()
         rows[0] = (
             "| Example template | Unknown class | "
-            "`skills/example/template.md` | Use it. |"
+            "` .agent/skills/example/template.md` | Use it. |"
         )
         self.set_catalog(rows)
         errors, _, _ = validate_catalog(self.root, self.catalog)
@@ -152,7 +152,7 @@ class CatalogValidatorTests(unittest.TestCase):
         rows = self.valid_rows()
         rows[2] = (
             "| Example schema | Schema required | "
-            "`skills/example/processor.py` and `images/example/README.md` | "
+            "` .agent/skills/example/processor.py` and `images/example/README.md` | "
             "No test path. |"
         )
         self.set_catalog(rows)
@@ -163,24 +163,24 @@ class CatalogValidatorTests(unittest.TestCase):
         self.write(".github/scripts/cleanup-archive.py")
         self.write(".github/archive-retention-state.json")
         self.write(".github/workflows/ste-lint-full-docs.yml")
-        self.write("reports/lint_reports/latest-lint-report.md")
-        self.write("reports/gh_ac_reports/README.md")
-        self.write("reports/triage/README.md")
+        self.write(" .takeout/reports/lint_ .takeout/reports/latest-lint-report.md")
+        self.write(" .takeout/reports/gh_ac_ .takeout/reports/README.md")
+        self.write(" .takeout/reports/triage/README.md")
         rows = [
             "| Archive state | Embedded contract | "
             "`.github/scripts/cleanup-archive.py` and `.github/archive-retention-state.json` | Script-owned state. |",
             "| Lint report | Embedded contract | "
-            "`.github/workflows/ste-lint-full-docs.yml` and `reports/lint_reports/latest-lint-report.md` | Workflow-owned report. |",
+            "`.github/workflows/ste-lint-full-docs.yml` and ` .takeout/reports/lint_ .takeout/reports/latest-lint-report.md` | Workflow-owned report. |",
             "| Workflow definition | Exempt | "
             "`.github/workflows/ste-lint-full-docs.yml` | External Actions schema. |",
         ]
         self.set_catalog(rows, [
-            "| `reports/lint_reports/*.md` | Lightweight pattern | Active |"
-            "`reports/lint_reports/latest-lint-report.md` | Lint fixture. |",
-            "| `reports/gh_ac_reports/*.md` | Lightweight pattern | Active |"
-            "`reports/gh_ac_reports/README.md` | Actions fixture. |",
-            "| `reports/triage/*.md` | Lightweight pattern | Active |"
-            "`reports/triage/README.md` | Ledger fixture. |",
+            "| ` .takeout/reports/lint_ .takeout/reports/*.md` | Lightweight pattern | Active |"
+            "` .takeout/reports/lint_ .takeout/reports/latest-lint-report.md` | Lint fixture. |",
+            "| ` .takeout/reports/gh_ac_ .takeout/reports/*.md` | Lightweight pattern | Active |"
+            "` .takeout/reports/gh_ac_ .takeout/reports/README.md` | Actions fixture. |",
+            "| ` .takeout/reports/triage/*.md` | Lightweight pattern | Active |"
+            "` .takeout/reports/triage/README.md` | Ledger fixture. |",
         ])
         errors, row_count, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
@@ -210,21 +210,21 @@ class CatalogValidatorTests(unittest.TestCase):
 
     def test_generator_owned_requires_regression_test_reference(self):
         self.set_catalog([
-            "| Generator | Generator-owned | `skills/example/generator.py` | No test reference. |",
+            "| Generator | Generator-owned | ` .agent/skills/example/generator.py` | No test reference. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("must reference a regression test" in error for error in errors))
 
     def test_generator_owned_requires_python_authority(self):
         self.set_catalog([
-            "| Generator | Generator-owned | `workspace/example.md` | Regression test: `skills/example/test_generator.py`; no Python authority. |",
+            "| Generator | Generator-owned | `workspace/example.md` | Regression test: ` .agent/skills/example/test_generator.py`; no Python authority. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("must reference its Python authority" in error for error in errors))
 
     def test_template_class_requires_named_template(self):
         self.set_catalog([
-            "| Template | Template required | `skills/example/SKILL.md` | Wrong path. |",
+            "| Template | Template required | ` .agent/skills/example/SKILL.md` | Wrong path. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("must point to a named template" in error for error in errors))
@@ -246,7 +246,7 @@ class CatalogValidatorTests(unittest.TestCase):
         self.set_catalog(self.valid_rows())
         self.replace_coverage([
             "| `workspace/*.md` | Embedded contract | Active |"
-            "`workspace/example.md` and `skills/example/SKILL.md` | Narrow fixture. |",
+            "`workspace/example.md` and ` .agent/skills/example/SKILL.md` | Narrow fixture. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("not covered by the catalog" in error for error in errors))
@@ -254,7 +254,7 @@ class CatalogValidatorTests(unittest.TestCase):
     def test_master_and_archive_markdown_are_excluded_from_coverage(self):
         self.set_catalog(self.valid_rows())
         self.write("master/new-reference.md")
-        self.write("archive/old-record.md")
+        self.write(" .archive/old-record.md")
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
 
@@ -270,7 +270,7 @@ class CatalogValidatorTests(unittest.TestCase):
     def test_reserved_coverage_pattern_allows_new_family_before_first_record(self):
         self.set_catalog(self.valid_rows(), [
             "| `drawings/new-family/*.md` | Template required | Reserved | "
-            "`skills/example/assets/template.md` | New family is registered before its first record. |",
+            "` .agent/skills/example/assets/template.md` | New family is registered before its first record. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
@@ -279,7 +279,7 @@ class CatalogValidatorTests(unittest.TestCase):
         self.write("drawings/new-family/first-record.md")
         self.set_catalog(self.valid_rows(), [
             "| `drawings/new-family/*.md` | Template required | Reserved | "
-            "`skills/example/assets/template.md` | First record now exists. |",
+            "` .agent/skills/example/assets/template.md` | First record now exists. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("Reserved Markdown coverage pattern already matches" in error for error in errors))
@@ -288,25 +288,25 @@ class CatalogValidatorTests(unittest.TestCase):
         self.write("drawings/new-family/first-record.md")
         self.set_catalog(self.valid_rows(), [
             "| `drawings/new-family/*.md` | Template required | Active | "
-            "`skills/example/assets/template.md` | First record now exists. |",
+            "` .agent/skills/example/assets/template.md` | First record now exists. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
 
     def test_optional_generator_output_pattern_allows_empty_family_after_reset(self):
         self.set_catalog(self.valid_rows(), [
-            "| `reports/lint_reports/on_*/history/**/*.md` | Generator-owned | Optional | "
-            "`skills/example/generator.py` and `skills/example/test_generator.py` | "
+            "| ` .takeout/reports/lint_ .takeout/reports/on_*/history/**/*.md` | Generator-owned | Optional | "
+            "` .agent/skills/example/generator.py` and ` .agent/skills/example/test_generator.py` | "
             "Generated lint history may be empty immediately after a clean reset. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
 
     def test_optional_generator_output_pattern_covers_files_when_present(self):
-        self.write("reports/lint_reports/on_changed/history/run-1/report.md")
+        self.write(" .takeout/reports/lint_ .takeout/reports/on_changed/history/run-1/report.md")
         self.set_catalog(self.valid_rows(), [
-            "| `reports/lint_reports/on_*/history/**/*.md` | Generator-owned | Optional | "
-            "`skills/example/generator.py` and `skills/example/test_generator.py` | "
+            "| ` .takeout/reports/lint_ .takeout/reports/on_*/history/**/*.md` | Generator-owned | Optional | "
+            "` .agent/skills/example/generator.py` and ` .agent/skills/example/test_generator.py` | "
             "Generated lint history may be empty immediately after a clean reset. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
@@ -315,18 +315,18 @@ class CatalogValidatorTests(unittest.TestCase):
     def set_takeout_history_coverage(self):
         self.set_catalog(self.valid_rows())
         self.replace_coverage([
-            "| `skills/**/*.md` | Lightweight pattern | Active |"
-            "`skills/example/SKILL.md` | Skill fixture. |",
+            "| ` .agent/skills/**/*.md` | Lightweight pattern | Active |"
+            "` .agent/skills/example/SKILL.md` | Skill fixture. |",
             "| `workspace/*.md` | Embedded contract | Active |"
-            "`workspace/example.md` and `skills/example/SKILL.md` | Workspace fixture. |",
+            "`workspace/example.md` and ` .agent/skills/example/SKILL.md` | Workspace fixture. |",
             "| `images/example/README.md` | Embedded contract | Active |"
-            "`images/example/README.md` and `skills/example/SKILL.md` | Image fixture. |",
+            "`images/example/README.md` and ` .agent/skills/example/SKILL.md` | Image fixture. |",
             "| `images/takeout/history/**/*.md` | Generator-owned | Optional |"
-            "`skills/the-worker/scripts/process_takeout.py` and "
-            "`skills/the-worker/scripts/test_process_takeout_unittest.py` | "
+            "` .agent/skills/the-worker/scripts/process_takeout.py` and "
+            "` .agent/skills/the-worker/scripts/test_process_takeout_unittest.py` | "
             "Generated verification reports may be absent after a clean reset. |",
-            "| `novels/*.md` | Embedded contract | Active |"
-            "`novels/WORKFLOW.md` and `skills/example/SKILL.md` | Novel fixture. |",
+            "| `area/novel/*.md` | Embedded contract | Active |"
+            "`area/novel/WORKFLOW.md` and ` .agent/skills/example/SKILL.md` | Novel fixture. |",
         ])
 
     def test_optional_takeout_history_coverage_allows_empty_family(self):
@@ -345,7 +345,7 @@ class CatalogValidatorTests(unittest.TestCase):
     def test_optional_coverage_is_limited_to_generator_owned_outputs(self):
         self.set_catalog(self.valid_rows(), [
             "| `drawings/new-family/*.md` | Lightweight pattern | Optional | "
-            "`skills/example/SKILL.md` | Optional is only for generated outputs. |",
+            "` .agent/skills/example/SKILL.md` | Optional is only for generated outputs. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("Optional Markdown coverage is limited" in error for error in errors))
@@ -353,7 +353,7 @@ class CatalogValidatorTests(unittest.TestCase):
     def test_unknown_coverage_status_fails(self):
         self.set_catalog(self.valid_rows(), [
             "| `drawings/new-family/*.md` | Template required | Pending | "
-            "`skills/example/assets/template.md` | Invalid state. |",
+            "` .agent/skills/example/assets/template.md` | Invalid state. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("unknown Markdown coverage status" in error for error in errors))
@@ -383,7 +383,7 @@ class CatalogValidatorTests(unittest.TestCase):
 
     def test_double_star_covers_nested_markdown(self):
         self.set_catalog(self.valid_rows())
-        self.write("skills/example/nested/guide.md")
+        self.write(" .agent/skills/example/nested/guide.md")
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
 
@@ -391,7 +391,7 @@ class CatalogValidatorTests(unittest.TestCase):
         rows = self.valid_rows()
         rows[0] = (
             "| Example template | Template required | "
-            "`skills/../archive/template.md` | Unsafe. |"
+            "` .agent/skills/../ .archive/template.md` | Unsafe. |"
         )
         self.set_catalog(rows)
         errors, _, _ = validate_catalog(self.root, self.catalog)
