@@ -65,8 +65,8 @@ class ClassificationTests(unittest.TestCase):
     def test_unittest_assertion_beats_embedded_publication_keywords(self):
         log = (
             "FAIL: test_all_ledger_publishers_share_serialized_writer_group "
-            "(test_ledger.LedgerTests) ... FAIL\\n"
-            "AssertionError: expected command not found in 'git push origin gpt'\\n"
+            "(test_ledger.LedgerTests) ... FAIL\n"
+            "AssertionError: expected command not found in 'git push origin gpt'\n"
             "FAILED (failures=1)"
         )
         category, confidence = REPORT.classify_text(
@@ -77,8 +77,8 @@ class ClassificationTests(unittest.TestCase):
 
     def test_structured_unknown_step_does_not_leak_checkout_log_lines(self):
         log = (
-            "validate-document-standards\\tUNKNOWN STEP\\tERROR: test_fixture_case ... ERROR\\n"
-            "validate-document-standards\\tCheck out gpt\\tcheckout completed"
+            "validate-document-standards\tUNKNOWN STEP\tERROR: test_fixture_case ... ERROR\n"
+            "validate-document-standards\tCheck out gpt\tcheckout completed"
         )
         step_text = REPORT.step_log_text(log, "Run CI Ledger regression tests")
         self.assertEqual(step_text, "")
