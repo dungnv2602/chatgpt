@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T12:28:02Z",
+  "updated_at_utc": "2026-11-26T12:41:29Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -245,6 +245,35 @@
         "20261126-090154"
       ],
       "task_group": "ci-020528f498f632ac"
+    },
+    {
+      "finding_id": "lint-tooling-2c26d8bc14fd4d4bbe314234",
+      "source_family": "lint",
+      "category": "lint_tooling",
+      "title": "Lint tooling check failed: Markdown links and heading anchors",
+      "status": "open",
+      "severity": "high",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T12:41:13.200045+00:00",
+      "last_seen_utc": "2026-11-26T12:41:13.200045+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45821860683-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45821860683",
+          "observed_at_utc": "2026-11-26T12:41:13.200045+00:00",
+          "note": "on_changed · Markdown links and heading anchors",
+          "observation_id": "lint_tooling:45821860683:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-124129"
+      ],
+      "task_group": "ci-ace4e198cb6445b7"
     }
   ],
   "ingestion_state": {
@@ -295,6 +324,7 @@
       ".takeout/reports/lint_reports/on_changed/history/45816764437-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45817273521-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45819716980-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45821860683-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json"
     ],
