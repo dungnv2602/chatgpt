@@ -167,7 +167,7 @@ This session-level loading cadence does not reduce any per-attempt requirement b
 
 - After every successful image-generation call, capture the returned outputs and their order.
 - Update the attempt record.
-- Prepare or update `images/takeout/HANDOFF.yml` for every returned image intended for repository retention.
+- Prepare or update `.takeout/images/HANDOFF.yml` for every returned image intended for repository retention.
 - Complete this work in the same generation closeout. Do not defer it or wait for user approval.
 - Use the exact uploaded intake filename after the user uploads the original.
 - Map it to the attempt/output only from direct generation-time association, native metadata, or a documented corroborating source.
