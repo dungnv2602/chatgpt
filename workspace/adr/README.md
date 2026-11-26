@@ -60,6 +60,10 @@ When all linked implementation tasks reach Done and the Confirmation criteria pa
 
 Never add ADRs to .github/archive-retention-index.json. The archive retention workflow must not delete ADRs. Keep the original ID and filename when you archive an ADR. Do not edit or delete an archived ADR.
 
+## Promotion Pending
+
+- [ADR-0001 — Canonical GitHub Actions Diagnostic Report Artifact Layout](0001-canonical-github-actions-diagnostic-report-artifact-layout.md) — Provisional record for approved DRAFT-0004 revision 1, Option 3. Not authoritative until completeness review and read-back pass.
+
 ## Current Accepted ADRs
 
 None. All accepted ADRs have completed implementation and confirmation.

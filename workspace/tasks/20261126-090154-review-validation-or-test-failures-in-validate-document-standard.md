@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-090154
 - **Created:** 2026-11-26 09:01 UTC
-- **Updated:** 2026-11-26 11:45 UTC
+- **Updated:** 2026-11-26 11:49 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -88,7 +88,7 @@ Review and remediate the related CI findings listed below after approval. Preser
 ### 2026-11-26 11:29 UTC
 
 - **Action:** Completed the DRAFT-0004 proposal and moved to the separately approved retention and Ledger task-linkage implementation.
-- **Result:** DRAFT-0004 revision 1 is in review. Its artifact-layout migration remains blocked until the user approves the exact revision and the resulting ADR is accepted. The next implementation step will not remove Markdown reports, latest copies, or per-workflow indexes.
+- **Result:** DRAFT-0004 revision 1, Option 3, is approved-for-adr. ADR-0001 is promotion-pending and non-authoritative. Its artifact-layout migration remains blocked until the user approves the exact revision and the resulting ADR is accepted. The next implementation step will not remove Markdown reports, latest copies, or per-workflow indexes.
 - **References:** `workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md`; `.takeout/reports/gh_ac_reports/scripts/report.py`; `.takeout/reports/triage/scripts/ledger.py`.
 - **Next:** Align reporter and Ledger issue eligibility, task failed lint tooling checks without taskifying unbaselined lint findings, and enforce one Current Execution task.
 
@@ -100,6 +100,15 @@ Review and remediate the related CI findings listed below after approval. Preser
 - **Result:** Task `20261126-090154` remains P0, Approved, In Progress, and Current Execution. DRAFT-0004 is approved for ADR promotion. No artifact-layout migration has occurred. Promotion must complete the canonical rationale comparison and provisional ADR read-back before acceptance.
 - **References:** `workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md`; `workspace/ADR_TEMPLATE.md`; `.agent/skills/decision-governance/SKILL.md`.
 - **Next:** Promote the exact approved Draft revision to provisional ADR-0003 and complete the required comparison.
+
+
+
+### 2026-11-26 11:49 UTC
+
+- **Action:** Verified DRAFT-0004 revision 1, the canonical ADR template, the decision-governance promotion rules, and the global ADR path sequence. Created the provisional ADR record.
+- **Result:** The ADR directory contained only its README, and the catalog reserved the first ADR record path. ADR-0001 is therefore the next available ID. DRAFT-0004 is now marked approved-for-adr, and ADR-0001 is promotion-pending. The Draft and ADR indexes and catalog coverage are aligned. No report artifacts were changed. The provisional ADR remains non-authoritative until a full rationale comparison and read-back pass.
+- **References:** `workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md`; `workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md`; `workspace/draft/README.md`; `workspace/adr/README.md`; `.agent/skills/document-standards/references/document-type-catalog.md`.
+- **Next:** Read back the complete provisional ADR and compare every decision-bearing section with DRAFT-0004 revision 1. Accept only if no material omission remains.
 
 ## 7. Current State
 The current history contains 29 complete post-run Actions reports. Twenty-six represent independent test failures and reconcile to six findings with three P0 tasks. Three propagation-only reports remain incorrectly retained. Three lint reports also contain the same failed Markdown-link check, but the Ledger processed them without creating a task. The existing cleanup removed pre-finalizer, success-only, and cancellation-only history. The artifact layout still contains 40 derived or redundant files. DRAFT-0004 revision 1, Option 3, is approved by the user and is entering ADR promotion. No artifact-layout cleanup has been performed.

@@ -144,7 +144,7 @@ Coverage status has three values. `Active` rules must match at least one in-scop
 | `workspace/draft/README.md` | Embedded contract | Active | `.agent/skills/decision-governance/SKILL.md` and `workspace/draft/README.md` | Draft folder navigation, status transitions, and promotion rules. |
 | `workspace/draft/DRAFT-*.md` | Template required | Active | `workspace/DRAFT_TEMPLATE.md` | One proposal record per decision. Delete the source after verified ADR promotion. Use Promotion Cleanup Pending only when deletion fails after acceptance. The first Draft is DRAFT-0001. |
 | `workspace/adr/README.md` | Embedded contract | Active | `.agent/skills/decision-governance/SKILL.md` and `workspace/adr/README.md` | Accepted ADR navigation, status, implementation, and archive rules. |
-| `workspace/adr/????-*.md` | Template required | Reserved | `workspace/ADR_TEMPLATE.md` | Reserve this narrow family while no active ADR exists. Change it to Active in the same commit that creates the next ADR record. ADR records use a four-digit global ID in the filename. The provisional promotion-pending state is temporary and non-authoritative. Only accepted records govern implementation tasks. ADR-0001 is the first decision record. |
+| `workspace/adr/????-*.md` | Template required | Active | `workspace/ADR_TEMPLATE.md` | Global four-digit ADR records. The first record is ADR-0001. Provisional promotion-pending records are non-authoritative and must pass the completeness/read-back gate before acceptance. Only accepted records govern implementation tasks. |
 
 ## Validation coverage limits
 

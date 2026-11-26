@@ -3,7 +3,7 @@ record_type: decision-draft
 template_version: "1.2"
 id: "DRAFT-0004"
 revision: 1
-status: "in-review"
+status: "approved-for-adr"
 created: "2026-11-26"
 updated: "2026-11-26"
 proposed_by: "Assistant"
@@ -13,7 +13,7 @@ consulted: []
 informed: []
 related_drafts: []
 related_adrs: []
-resulting_adr: null
+resulting_adr: "ADR-0001"
 promotion_cleanup_pending: false
 cleanup_reason: null
 ---
@@ -50,7 +50,7 @@ The count does not include canonical JSON reports, integrity manifests, captured
 
 The current layout increases commit size and creates multiple places that must stay in sync. A generated Markdown report can be rendered again from its JSON source. A per-workflow index can be derived from the repository-wide index by filtering on workflow ID. The root index already identifies the latest report.
 
-The user approved a smaller report layout in the conversation on 2026-11-26. This Draft records the exact proposal and migration boundary. No artifact-layout changes are authorized until the user approves this revision and the resulting ADR reaches accepted status.
+The user approved this exact revision and Option 3 on 2026-11-26. No artifact-layout changes are authorized until ADR-0001 reaches accepted status.
 
 ## Goals and Non-Goals
 
@@ -236,21 +236,21 @@ Rollback must restore the removed derived files from the canonical JSON reports 
 
 ## Questions for the User
 
-1. Approve Option 3 and its migration scope: keep per-run JSON, integrity, and logs. Keep the root index as the only latest pointer. Render Markdown on demand. Remove the 40 derived or redundant artifacts.
+1. No further user decision is requested. The user approved Option 3 and its stated migration scope for DRAFT-0004 revision 1.
 
 ## Review and Approval
 
 - **Revision presented:** 1
-- **User decision:** Pending
-- **Approved scope:** Not approved
-- **Decision date:** Pending
-- **Resulting ADR:** Not created
+- **User decision:** Approved
+- **Approved scope:** Option 3 only: retain per-run report.json, integrity.json, and captured logs; retain the root index as the only index/latest pointer; render Markdown on demand; remove per-run report.md and root/per-workflow latest and index copies. Preserve report JSON/log bytes and history paths. Regenerate integrity manifests to cover the retained JSON and logs. No change to error-only retention, cancellation/propagation classification, Ledger identity/task generation, lint baselines, or STE lint reports.
+- **Decision date:** 2026-11-26
+- **Resulting ADR:** ADR-0001 (promotion pending)
 
 ## Discussion and Revision History
 
 | Date | Revision | Change | User feedback / decision |
 |---|---|---|---|
-| 2026-11-26 | 1 | Initial proposal for a canonical JSON, integrity, logs, and central-index layout. | Pending |
+| 2026-11-26 | 1 | Initial proposal for a canonical JSON, integrity, logs, and central-index layout. | User approved revision 1, Option 3, for ADR promotion. |
 
 ## References and Evidence Register
 
@@ -264,7 +264,7 @@ Rollback must restore the removed derived files from the canonical JSON reports 
 | E6 | `.takeout/reports/gh_ac_reports/scripts/report.py` and `.takeout/reports/gh_ac_reports/assets/report-template.md` | Commit `f310d092` | Repository fact | The report generator can render Markdown from structured report data. | No new on-demand CLI command was tested. |
 | E7 | `.takeout/reports/triage/scripts/ledger.py`, function `finding_row` | Commit `f310d092` | Repository fact | Ledger evidence links target report paths in history, not the latest Markdown copies. | Other consumers still require a repository search. |
 | E8 | Sample history folder file sizes and root latest-copy file sizes | Commit `f310d092` | Repository fact | Demonstrates that the latest files duplicate report content. | Samples do not establish total byte savings. |
-| E9 | User approval in the current conversation | 2026-11-26 | User instruction | Confirms approval to prepare and execute the report cleanup recommendation. | This Draft still requires approval of its exact revision under repository governance. |
+| E9 | User instruction in the current conversation | 2026-11-26 | User instruction | Confirms approval of DRAFT-0004 revision 1, Option 3, and its stated migration scope. | Decision approval does not replace the ADR completeness/read-back gate or the task's execution and hosted-validation requirements. |
 
 <!--
 Draft lifecycle:
