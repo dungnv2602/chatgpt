@@ -1,0 +1,476 @@
+validate-document-standards	Set up job	﻿2026-11-26T08:46:03.8680355Z Current runner version: '2.338.2'
+validate-document-standards	Set up job	2026-11-26T08:46:03.8707235Z ##[group]Runner Image Provisioner
+validate-document-standards	Set up job	2026-11-26T08:46:03.8708152Z Hosted Compute Agent
+validate-document-standards	Set up job	2026-11-26T08:46:03.8708912Z Version: 20261111.635
+validate-document-standards	Set up job	2026-11-26T08:46:03.8709562Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+validate-document-standards	Set up job	2026-11-26T08:46:03.8710290Z Build Date: 2026-11-11T01:49:01Z
+validate-document-standards	Set up job	2026-11-26T08:46:03.8711066Z Worker ID: {74654c5d-af4c-42e3-9f50-c5686ae53fa6}
+validate-document-standards	Set up job	2026-11-26T08:46:03.8712003Z Region: westus
+validate-document-standards	Set up job	2026-11-26T08:46:03.8712616Z Cloud: Azure
+validate-document-standards	Set up job	2026-11-26T08:46:03.8713221Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-26T08:46:03.8714704Z ##[group]Operating System
+validate-document-standards	Set up job	2026-11-26T08:46:03.8715441Z Ubuntu
+validate-document-standards	Set up job	2026-11-26T08:46:03.8715986Z 26.04.1
+validate-document-standards	Set up job	2026-11-26T08:46:03.8716628Z LTS
+validate-document-standards	Set up job	2026-11-26T08:46:03.8717169Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-26T08:46:03.8717757Z ##[group]Runner Image
+validate-document-standards	Set up job	2026-11-26T08:46:03.8718422Z Image: ubuntu-26.04
+validate-document-standards	Set up job	2026-11-26T08:46:03.8719007Z Version: 20261116.202.1
+validate-document-standards	Set up job	2026-11-26T08:46:03.8720073Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.202/images/ubuntu/Ubuntu2604-Readme.md
+validate-document-standards	Set up job	2026-11-26T08:46:03.8722140Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.202
+validate-document-standards	Set up job	2026-11-26T08:46:03.8723182Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-26T08:46:03.8724270Z ##[group]GITHUB_TOKEN Permissions
+validate-document-standards	Set up job	2026-11-26T08:46:03.8726934Z Contents: read
+validate-document-standards	Set up job	2026-11-26T08:46:03.8727622Z Metadata: read
+validate-document-standards	Set up job	2026-11-26T08:46:03.8728274Z ##[endgroup]
+validate-document-standards	Set up job	2026-11-26T08:46:03.8730469Z Secret source: Actions
+validate-document-standards	Set up job	2026-11-26T08:46:03.8731926Z Cache mode: write
+validate-document-standards	Set up job	2026-11-26T08:46:03.8732798Z Prepare workflow directory
+validate-document-standards	Set up job	2026-11-26T08:46:03.9079031Z Prepare all required actions
+validate-document-standards	Set up job	2026-11-26T08:46:03.9128514Z Getting action download info
+validate-document-standards	Set up job	2026-11-26T08:46:04.2453326Z Download action repository 'actions/checkout@v7.0.1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+validate-document-standards	Set up job	2026-11-26T08:46:04.3402904Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+validate-document-standards	Set up job	2026-11-26T08:46:04.5086280Z Complete job name: validate-document-standards
+validate-document-standards	Check out gpt	﻿2026-11-26T08:46:04.5999266Z ##[group]Run actions/checkout@v7.0.1
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6000246Z with:
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6000701Z   ref: gpt
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6001134Z   fetch-depth: 1
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6001826Z   repository: dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6005480Z   token: [REDACTED]
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6005936Z   ssh-strict: true
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6006398Z   ssh-user: git
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6006861Z   persist-credentials: true
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6007375Z   clean: true
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6007837Z   sparse-checkout-cone-mode: true
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6008376Z   fetch-tags: false
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6008835Z   show-progress: true
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6009296Z   lfs: false
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6009728Z   submodules: false
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6010191Z   set-safe-directory: true
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6010703Z   allow-unsafe-pr-checkout: false
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.6011804Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.8920325Z Syncing repository: dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.8923653Z ##[group]Getting Git version info
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.8925087Z Working directory is '/home/runner/work/chatgpt/chatgpt'
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.8927018Z [command]/usr/bin/git version
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.8938512Z git version 2.56.1
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.8968840Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.8976834Z Temporarily overriding HOME='/home/runner/work/_temp/6cc00c01-c87e-47a6-8f8a-73480f1dd9cf' before making global git config changes
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.8979221Z Adding repository directory to the temporary git global config as a safe directory
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.8982466Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.9057023Z Deleting the contents of '/home/runner/work/chatgpt/chatgpt'
+validate-document-standards	Check out gpt	2026-11-26T08:46:04.9060733Z ##[group]Determining repository object format
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2448759Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2449905Z ##[group]Initializing the repository
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2458050Z [command]/usr/bin/git init /home/runner/work/chatgpt/chatgpt
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2574611Z hint: Using 'master' as the name for the initial branch. This default branch name
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2580671Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2583166Z hint: to use in all of your new repositories, which will suppress this warning,
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2585300Z hint: call:
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2586490Z hint:
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2587692Z hint: 	git config --global init.defaultBranch <name>
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2589150Z hint:
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2590504Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2592834Z hint: 'development'. The just-created branch can be renamed via this command:
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2594559Z hint:
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2595639Z hint: 	git branch -m <name>
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2596731Z hint:
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2598389Z hint: Disable this message with "git config set advice.defaultBranchName false"
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2600560Z Initialized empty Git repository in /home/runner/work/chatgpt/chatgpt/.git/
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2605360Z [command]/usr/bin/git remote add origin https://github.com/dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2677068Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2678935Z ##[group]Disabling automatic garbage collection
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2682289Z [command]/usr/bin/git config --local gc.auto 0
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2726751Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2728500Z ##[group]Setting up auth
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2729733Z Removing SSH command configuration
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2735414Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.2781465Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.3240957Z Removing HTTP extra header
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.3247403Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.3287379Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.3562173Z Removing includeIf entries pointing to credentials config files
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.3567198Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.3604787Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.3883454Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-fc524e59-9445-4418-8632-9cfba3546e29.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.3928514Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path /home/runner/work/_temp/git-credentials-fc524e59-9445-4418-8632-9cfba3546e29.config
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.3966687Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-fc524e59-9445-4418-8632-9cfba3546e29.config
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.4004251Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-fc524e59-9445-4418-8632-9cfba3546e29.config
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.4040773Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-fc524e59-9445-4418-8632-9cfba3546e29.config
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.4074249Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.4075506Z ##[group]Fetching the repository
+validate-document-standards	Check out gpt	2026-11-26T08:46:05.4081965Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/gpt*:refs/remotes/origin/gpt* +refs/tags/gpt*:refs/tags/gpt*
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.0198238Z From https://github.com/dungnv2602/chatgpt
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.0223391Z  * [new branch]      gpt        -> origin/gpt
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.0252648Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.0262144Z ##[group]Determining the checkout info
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.0264512Z [command]/usr/bin/git branch --list --remote origin/gpt
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.0266576Z   origin/gpt
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.0269565Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.0270691Z [command]/usr/bin/git sparse-checkout disable
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.0332451Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.0375573Z ##[group]Checking out the ref
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.0379006Z [command]/usr/bin/git checkout --progress --force -B gpt refs/remotes/origin/gpt
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.6869285Z Switched to a new branch 'gpt'
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.6876885Z branch 'gpt' set up to track 'origin/gpt'.
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.6920399Z ##[endgroup]
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.6987433Z [command]/usr/bin/git log -1 --format=%H
+validate-document-standards	Check out gpt	2026-11-26T08:46:09.7021257Z d6f75ac1c6a70e41e4cf2eb64bf28d40fec0184c
+validate-document-standards	Set up Python	﻿2026-11-26T08:46:09.7311794Z ##[group]Run actions/setup-python@v5
+validate-document-standards	Set up Python	2026-11-26T08:46:09.7312270Z with:
+validate-document-standards	Set up Python	2026-11-26T08:46:09.7312531Z   python-version: 3.x
+validate-document-standards	Set up Python	2026-11-26T08:46:09.7312830Z   check-latest: false
+validate-document-standards	Set up Python	2026-11-26T08:46:09.7315505Z   token: [REDACTED]
+validate-document-standards	Set up Python	2026-11-26T08:46:09.7315789Z   update-environment: true
+validate-document-standards	Set up Python	2026-11-26T08:46:09.7316091Z   allow-prereleases: false
+validate-document-standards	Set up Python	2026-11-26T08:46:09.7316377Z   freethreaded: false
+validate-document-standards	Set up Python	2026-11-26T08:46:09.7316634Z ##[endgroup]
+validate-document-standards	Set up Python	2026-11-26T08:46:09.8676592Z ##[group]Installed versions
+validate-document-standards	Set up Python	2026-11-26T08:46:09.8791480Z (node:2375) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+validate-document-standards	Set up Python	2026-11-26T08:46:09.8792922Z (Use `node --trace-deprecation ...` to show where the warning was created)
+validate-document-standards	Set up Python	2026-11-26T08:46:09.8793986Z Successfully set up CPython (3.15.2)
+validate-document-standards	Set up Python	2026-11-26T08:46:09.8794764Z ##[endgroup]
+validate-document-standards	Run CI Ledger regression tests	﻿2026-11-26T08:46:09.9160383Z ##[group]Run python -m unittest discover -s .takeout/reports/triage/scripts -p 'test_ledger.py' -v
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:09.9162496Z ^[[36;1mpython -m unittest discover -s .takeout/reports/triage/scripts -p 'test_ledger.py' -v^[[0m
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:09.9229440Z shell: /usr/bin/bash -e {0}
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:09.9230068Z env:
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:09.9230606Z   pythonLocation: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:09.9231286Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib/pkgconfig
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:09.9232033Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:09.9232477Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:09.9232901Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.2/x64
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:09.9233332Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.2/x64/lib
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:09.9233712Z ##[endgroup]
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5383377Z test_actions_identity_uses_workflow_job_step_and_signature (test_ledger.LedgerTests.test_actions_identity_uses_workflow_job_step_and_signature) ... ERROR
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5483269Z test_actions_repeat_observation_increments_once_per_run (test_ledger.LedgerTests.test_actions_repeat_observation_increments_once_per_run) ... ERROR
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5516341Z test_all_ledger_publishers_share_serialized_writer_group (test_ledger.LedgerTests.test_all_ledger_publishers_share_serialized_writer_group) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5582596Z test_all_lint_severities_create_and_reuse_grouped_tasks (test_ledger.LedgerTests.test_all_lint_severities_create_and_reuse_grouped_tasks) ... ERROR
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5609059Z test_atomic_write_replaces_file_without_temp_remnants (test_ledger.LedgerTests.test_atomic_write_replaces_file_without_temp_remnants) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5640705Z test_bootstrap_migration_does_not_backfill_existing_reports (test_ledger.LedgerTests.test_bootstrap_migration_does_not_backfill_existing_reports) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5668904Z test_cancelled_only_report_creates_no_findings (test_ledger.LedgerTests.test_cancelled_only_report_creates_no_findings) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5712561Z test_cancelled_run_keeps_independent_failure_and_ignores_cancellation_propagation (test_ledger.LedgerTests.test_cancelled_run_keeps_independent_failure_and_ignores_cancellation_propagation) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5746601Z test_curated_owner_severity_status_title_and_risk_are_preserved (test_ledger.LedgerTests.test_curated_owner_severity_status_title_and_risk_are_preserved) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5757564Z test_duplicate_status_requires_an_existing_target (test_ledger.LedgerTests.test_duplicate_status_requires_an_existing_target) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5849713Z test_evidence_is_bounded_but_occurrence_count_keeps_growing (test_ledger.LedgerTests.test_evidence_is_bounded_but_occurrence_count_keeps_growing) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5860798Z test_false_positive_requires_a_closure_note (test_ledger.LedgerTests.test_false_positive_requires_a_closure_note) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5892430Z test_first_full_lint_report_seeds_baseline_without_creating_findings (test_ledger.LedgerTests.test_first_full_lint_report_seeds_baseline_without_creating_findings) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5909948Z test_grouped_task_waits_until_every_finding_is_terminal (test_ledger.LedgerTests.test_grouped_task_waits_until_every_finding_is_terminal) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5938314Z test_incomplete_lint_report_is_not_imported (test_ledger.LedgerTests.test_incomplete_lint_report_is_not_imported) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.5987699Z test_invalid_lint_report_is_consumed_without_seeding_the_baseline (test_ledger.LedgerTests.test_invalid_lint_report_is_consumed_without_seeding_the_baseline) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6055969Z test_later_high_severity_finding_promotes_active_group_priority (test_ledger.LedgerTests.test_later_high_severity_finding_promotes_active_group_priority) ... ERROR
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6077173Z test_legacy_report_paths_migrate_to_repository_relative_roots (test_ledger.LedgerTests.test_legacy_report_paths_migrate_to_repository_relative_roots) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6096017Z test_lint_baseline_requires_every_tooling_check_but_allows_lint_findings (test_ledger.LedgerTests.test_lint_baseline_requires_every_tooling_check_but_allows_lint_findings) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6143192Z test_lint_fingerprint_deduplicates_across_scopes_and_is_idempotent (test_ledger.LedgerTests.test_lint_fingerprint_deduplicates_across_scopes_and_is_idempotent) ... FAIL
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6214312Z test_lint_new_run_increments_occurrence_and_tracks_dates (test_ledger.LedgerTests.test_lint_new_run_increments_occurrence_and_tracks_dates) ... ERROR
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6254558Z test_low_confidence_actions_findings_remain_ledger_only (test_ledger.LedgerTests.test_low_confidence_actions_findings_remain_ledger_only) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6295644Z test_low_severity_advisory_findings_create_p3_tasks (test_ledger.LedgerTests.test_low_severity_advisory_findings_create_p3_tasks) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6312878Z test_malformed_index_fails_closed_without_changing_ledger (test_ledger.LedgerTests.test_malformed_index_fails_closed_without_changing_ledger) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6339245Z test_malformed_report_is_not_marked_processed (test_ledger.LedgerTests.test_malformed_report_is_not_marked_processed) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6403499Z test_migrate_1_1_hands_off_unlinked_lint_findings_at_all_severities (test_ledger.LedgerTests.test_migrate_1_1_hands_off_unlinked_lint_findings_at_all_severities) ... ERROR
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6424507Z test_missing_ledger_fails_closed_without_automatic_reset (test_ledger.LedgerTests.test_missing_ledger_fails_closed_without_automatic_reset) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6460096Z test_non_defect_actions_and_pre_finalizer_reports_are_ignored (test_ledger.LedgerTests.test_non_defect_actions_and_pre_finalizer_reports_are_ignored) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6476656Z test_open_or_cancelled_task_never_retires_a_finding (test_ledger.LedgerTests.test_open_or_cancelled_task_never_retires_a_finding) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6536811Z test_recurring_untracked_lint_baseline_findings_do_not_create_tasks (test_ledger.LedgerTests.test_recurring_untracked_lint_baseline_findings_do_not_create_tasks) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6600826Z test_related_findings_reuse_one_active_task_across_ingestion_events (test_ledger.LedgerTests.test_related_findings_reuse_one_active_task_across_ingestion_events) ... ERROR
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6677073Z test_resolved_finding_reopens_and_preserves_resolution_history (test_ledger.LedgerTests.test_resolved_finding_reopens_and_preserves_resolution_history) ... ERROR
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6698948Z test_resolved_status_requires_fix_and_successful_validation (test_ledger.LedgerTests.test_resolved_status_requires_fix_and_successful_validation) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6715688Z test_runner_command_echo_uses_actual_step_log_signature (test_ledger.LedgerTests.test_runner_command_echo_uses_actual_step_log_signature) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6731192Z test_task_board_renderer_fails_closed_when_status_table_is_missing (test_ledger.LedgerTests.test_task_board_renderer_fails_closed_when_status_table_is_missing) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6770983Z test_task_board_rows_stay_inside_their_status_section (test_ledger.LedgerTests.test_task_board_rows_stay_inside_their_status_section) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6787967Z test_terminal_finding_is_retired_after_linked_task_is_archived_done (test_ledger.LedgerTests.test_terminal_finding_is_retired_after_linked_task_is_archived_done) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6801279Z test_unsafe_actions_history_path_is_rejected (test_ledger.LedgerTests.test_unsafe_actions_history_path_is_rejected) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6842895Z test_untrusted_diagnostic_text_is_escaped_in_worker_task (test_ledger.LedgerTests.test_untrusted_diagnostic_text_is_escaped_in_worker_task) ... ok
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6844558Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6844806Z ======================================================================
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6846295Z ERROR: test_actions_identity_uses_workflow_job_step_and_signature (test_ledger.LedgerTests.test_actions_identity_uses_workflow_job_step_and_signature)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6848551Z ----------------------------------------------------------------------
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6849380Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6858577Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 700, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6860135Z     section_index = lines.index(heading)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6860775Z ValueError: list.index(x): x not in list
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6861122Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6861454Z The above exception was the direct cause of the following exception:
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6862032Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6862155Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6862967Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/test_ledger.py", line 290, in test_actions_identity_uses_workflow_job_step_and_signature
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6863708Z     result = LEDGER.ingest(self.root)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6864281Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 947, in ingest
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6864802Z     task_result = create_worker_tasks(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6865377Z         root, ledger, now or utc_now(), task_candidates["created"] | task_candidates["updated"], task_candidates["created"], reopened_ids
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6865924Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6866422Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 771, in create_worker_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6867061Z     task_id, created, task_changed = create_or_update_worker_task(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6867440Z                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6867788Z         root, group_id, findings, timestamp, active_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6868113Z         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6868377Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6868555Z     ^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6869088Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 740, in create_or_update_worker_task
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6869688Z     upsert_task_board_row(root, task)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6869950Z     ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6870741Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 702, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6871459Z     raise LedgerError("Task board has no section for status " + status) from exc
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6872208Z ci_issue_ledger.LedgerError: Task board has no section for status Proposed
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6872530Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6872651Z ======================================================================
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6873328Z ERROR: test_actions_repeat_observation_increments_once_per_run (test_ledger.LedgerTests.test_actions_repeat_observation_increments_once_per_run)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6874020Z ----------------------------------------------------------------------
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6874384Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6874973Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 700, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6875555Z     section_index = lines.index(heading)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6875852Z ValueError: list.index(x): x not in list
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6876047Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6876233Z The above exception was the direct cause of the following exception:
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6876521Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6876630Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6877369Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/test_ledger.py", line 332, in test_actions_repeat_observation_increments_once_per_run
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6878079Z     LEDGER.ingest(self.root)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6878330Z     ~~~~~~~~~~~~~^^^^^^^^^^^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6878838Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 947, in ingest
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6879531Z     task_result = create_worker_tasks(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6880113Z         root, ledger, now or utc_now(), task_candidates["created"] | task_candidates["updated"], task_candidates["created"], reopened_ids
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6880678Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6881179Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 771, in create_worker_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6882023Z     task_id, created, task_changed = create_or_update_worker_task(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6882406Z                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6882759Z         root, group_id, findings, timestamp, active_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6883096Z         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6883375Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6883554Z     ^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6884101Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 731, in create_or_update_worker_task
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6884722Z     board_changed = upsert_task_board_row(root, task)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6885350Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 702, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6886081Z     raise LedgerError("Task board has no section for status " + status) from exc
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6886599Z ci_issue_ledger.LedgerError: Task board has no section for status Proposed
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6886912Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6887037Z ======================================================================
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6887702Z ERROR: test_all_lint_severities_create_and_reuse_grouped_tasks (test_ledger.LedgerTests.test_all_lint_severities_create_and_reuse_grouped_tasks)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6888424Z ----------------------------------------------------------------------
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6888791Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6889363Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 700, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6889943Z     section_index = lines.index(heading)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6890242Z ValueError: list.index(x): x not in list
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6890429Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6890628Z The above exception was the direct cause of the following exception:
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6891073Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6891181Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6892182Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/test_ledger.py", line 221, in test_all_lint_severities_create_and_reuse_grouped_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6892960Z     second = LEDGER.ingest(self.root, now="2026-11-23T07:13:00Z")
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6893569Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 947, in ingest
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6894085Z     task_result = create_worker_tasks(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6894773Z         root, ledger, now or utc_now(), task_candidates["created"] | task_candidates["updated"], task_candidates["created"], reopened_ids
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6895392Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6895893Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 771, in create_worker_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6896550Z     task_id, created, task_changed = create_or_update_worker_task(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6896924Z                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6897272Z         root, group_id, findings, timestamp, active_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6897599Z         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6897865Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6898045Z     ^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6898583Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 731, in create_or_update_worker_task
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6899220Z     board_changed = upsert_task_board_row(root, task)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6899836Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 702, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6900820Z     raise LedgerError("Task board has no section for status " + status) from exc
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6901338Z ci_issue_ledger.LedgerError: Task board has no section for status Proposed
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6901975Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6902105Z ======================================================================
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6902853Z ERROR: test_later_high_severity_finding_promotes_active_group_priority (test_ledger.LedgerTests.test_later_high_severity_finding_promotes_active_group_priority)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6903608Z ----------------------------------------------------------------------
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6903959Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6904556Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 700, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6905125Z     section_index = lines.index(heading)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6905419Z ValueError: list.index(x): x not in list
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6905614Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6905801Z The above exception was the direct cause of the following exception:
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6906104Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6906217Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6906958Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/test_ledger.py", line 366, in test_later_high_severity_finding_promotes_active_group_priority
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6907735Z     result = LEDGER.ingest(self.root, now="2026-11-23T08:01:00Z")
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6908327Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 947, in ingest
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6908841Z     task_result = create_worker_tasks(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6909399Z         root, ledger, now or utc_now(), task_candidates["created"] | task_candidates["updated"], task_candidates["created"], reopened_ids
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6909950Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6910442Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 771, in create_worker_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6911071Z     task_id, created, task_changed = create_or_update_worker_task(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6911438Z                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6912030Z         root, group_id, findings, timestamp, active_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6912544Z         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6912880Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6913068Z     ^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6913619Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 731, in create_or_update_worker_task
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6914247Z     board_changed = upsert_task_board_row(root, task)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6914876Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 702, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6915601Z     raise LedgerError("Task board has no section for status " + status) from exc
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6916124Z ci_issue_ledger.LedgerError: Task board has no section for status Proposed
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6916446Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6916571Z ======================================================================
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6917245Z ERROR: test_lint_new_run_increments_occurrence_and_tracks_dates (test_ledger.LedgerTests.test_lint_new_run_increments_occurrence_and_tracks_dates)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6917945Z ----------------------------------------------------------------------
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6918290Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6918861Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 700, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6919427Z     section_index = lines.index(heading)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6919721Z ValueError: list.index(x): x not in list
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6919916Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6920110Z The above exception was the direct cause of the following exception:
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6920392Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6920503Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6921211Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/test_ledger.py", line 254, in test_lint_new_run_increments_occurrence_and_tracks_dates
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6922200Z     LEDGER.ingest(self.root)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6922464Z     ~~~~~~~~~~~~~^^^^^^^^^^^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6922966Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 947, in ingest
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6923483Z     task_result = create_worker_tasks(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6924042Z         root, ledger, now or utc_now(), task_candidates["created"] | task_candidates["updated"], task_candidates["created"], reopened_ids
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6924590Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6925081Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 771, in create_worker_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6925703Z     task_id, created, task_changed = create_or_update_worker_task(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6926080Z                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6926431Z         root, group_id, findings, timestamp, active_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6926769Z         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6927040Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6927223Z     ^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6927752Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 731, in create_or_update_worker_task
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6928371Z     board_changed = upsert_task_board_row(root, task)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6928982Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 702, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6929701Z     raise LedgerError("Task board has no section for status " + status) from exc
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6930215Z ci_issue_ledger.LedgerError: Task board has no section for status Proposed
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6930518Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6930640Z ======================================================================
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6931377Z ERROR: test_migrate_1_1_hands_off_unlinked_lint_findings_at_all_severities (test_ledger.LedgerTests.test_migrate_1_1_hands_off_unlinked_lint_findings_at_all_severities)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6932280Z ----------------------------------------------------------------------
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6932771Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6933351Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 700, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6933923Z     section_index = lines.index(heading)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6934220Z ValueError: list.index(x): x not in list
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6934409Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6934605Z The above exception was the direct cause of the following exception:
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6934893Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6934996Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6935752Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/test_ledger.py", line 507, in test_migrate_1_1_hands_off_unlinked_lint_findings_at_all_severities
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6936525Z     LEDGER.ingest(self.root, now="2026-11-23T07:11:00Z")
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6936873Z     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6937407Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 947, in ingest
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6937930Z     task_result = create_worker_tasks(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6938491Z         root, ledger, now or utc_now(), task_candidates["created"] | task_candidates["updated"], task_candidates["created"], reopened_ids
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6939039Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6939525Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 771, in create_worker_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6940151Z     task_id, created, task_changed = create_or_update_worker_task(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6940521Z                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6940863Z         root, group_id, findings, timestamp, active_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6941191Z         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6941911Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6942124Z     ^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6942682Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 731, in create_or_update_worker_task
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6943319Z     board_changed = upsert_task_board_row(root, task)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6943937Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 702, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6944643Z     raise LedgerError("Task board has no section for status " + status) from exc
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6945165Z ci_issue_ledger.LedgerError: Task board has no section for status Proposed
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6945475Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6945592Z ======================================================================
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6946338Z ERROR: test_related_findings_reuse_one_active_task_across_ingestion_events (test_ledger.LedgerTests.test_related_findings_reuse_one_active_task_across_ingestion_events)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6947112Z ----------------------------------------------------------------------
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6947463Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6948034Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 700, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6948598Z     section_index = lines.index(heading)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6948890Z ValueError: list.index(x): x not in list
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6949083Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6949271Z The above exception was the direct cause of the following exception:
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6949563Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6949667Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6950432Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/test_ledger.py", line 348, in test_related_findings_reuse_one_active_task_across_ingestion_events
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6951222Z     second = LEDGER.ingest(self.root, now="2026-11-23T07:41:00Z")
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6952088Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 947, in ingest
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6952626Z     task_result = create_worker_tasks(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6953356Z         root, ledger, now or utc_now(), task_candidates["created"] | task_candidates["updated"], task_candidates["created"], reopened_ids
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6953905Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6954416Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 771, in create_worker_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6955035Z     task_id, created, task_changed = create_or_update_worker_task(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6955409Z                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6955752Z         root, group_id, findings, timestamp, active_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6956085Z         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6956355Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6956533Z     ^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6957066Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 731, in create_or_update_worker_task
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6957692Z     board_changed = upsert_task_board_row(root, task)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6958312Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 702, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6959019Z     raise LedgerError("Task board has no section for status " + status) from exc
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6959533Z ci_issue_ledger.LedgerError: Task board has no section for status Proposed
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6959844Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6959963Z ======================================================================
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6960687Z ERROR: test_resolved_finding_reopens_and_preserves_resolution_history (test_ledger.LedgerTests.test_resolved_finding_reopens_and_preserves_resolution_history)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6961430Z ----------------------------------------------------------------------
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6962007Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6962767Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 700, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6963339Z     section_index = lines.index(heading)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6963644Z ValueError: list.index(x): x not in list
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6963830Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6964098Z The above exception was the direct cause of the following exception:
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6964606Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6964784Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6966162Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/test_ledger.py", line 409, in test_resolved_finding_reopens_and_preserves_resolution_history
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6967481Z     LEDGER.ingest(self.root)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6967981Z     ~~~~~~~~~~~~~^^^^^^^^^^^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6968890Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 947, in ingest
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6969626Z     task_result = create_worker_tasks(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6970223Z         root, ledger, now or utc_now(), task_candidates["created"] | task_candidates["updated"], task_candidates["created"], reopened_ids
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6970790Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6971306Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 771, in create_worker_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6972226Z     task_id, created, task_changed = create_or_update_worker_task(
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6972615Z                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6972963Z         root, group_id, findings, timestamp, active_tasks
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6973295Z         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6973561Z     )
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6973743Z     ^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6974276Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 731, in create_or_update_worker_task
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6974892Z     board_changed = upsert_task_board_row(root, task)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6975519Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/ledger.py", line 702, in upsert_task_board_row
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6976239Z     raise LedgerError("Task board has no section for status " + status) from exc
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6976962Z ci_issue_ledger.LedgerError: Task board has no section for status Proposed
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6977284Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6977409Z ======================================================================
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6978215Z FAIL: test_lint_fingerprint_deduplicates_across_scopes_and_is_idempotent (test_ledger.LedgerTests.test_lint_fingerprint_deduplicates_across_scopes_and_is_idempotent)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6978985Z ----------------------------------------------------------------------
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6979340Z Traceback (most recent call last):
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6980109Z   File "/home/runner/work/chatgpt/chatgpt/.takeout/reports/triage/scripts/test_ledger.py", line 166, in test_lint_fingerprint_deduplicates_across_scopes_and_is_idempotent
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6981074Z     self.assertIn("| Pending | [Task record]", (self.root / "workspace" / "task_board.md").read_text(encoding="utf-8"))
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6981881Z     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6990372Z AssertionError: '| Pending | [Task record]' not found in '# Task Board\\n\\nThis file is the single index for active and retained task records. The Worker owns task status, selection, and closeout. Each task record is the authority for its scope and progress.\\n\\n## Current Execution\\n\\n[20261126-142500 — Repair CI task generation and clear active reports](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md)\\n\\n## Proposed\\n\\n| ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |\\n|---|---|---:|---|---|---|---|---|---|\\n| 20261123-071200 | Review semicolon findings in docs/example.md | P2 | Proposed | Assistant | Pending user approval | Pending | 2026-11-23 07:12 UTC | [Task record](tasks/20261123-071200-review-semicolon-findings-in-docs-example-md.md) |\\n\\n## Ready\\n\\n_No tasks._\\n\\n## In Progress\\n\\n| ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |\\n|---|---|---:|---|---|---|---|---|---|\\n| 20261126-142500 | Repair CI task generation and clear active reports | P1 | In Progress | User | Approved | — | 2026-11-26 14:50 UTC | [Task record](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md) |\\n\\n## Blocked\\n\\n_No tasks._\\n\\n## Paused\\n\\n_No tasks._\\n\\n## Historical\\n\\n| ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Archived task record | Archive commit |\\n|---|---|---:|---|---|---|---|---|---|---|\\n| 20261126-055004 | Adapt repository workflows to the refactor | P1 | Done | User | Approved | — | 2026-11-26 06:44 UTC | [Archived task](../.archive/task/20261126-055004-adapt-workflows-and-repair-refactor-breakage.md) | [d610339](https://github.com/dungnv2602/chatgpt/commit/d610339cc90e5a97f0a15ca75ff7a2541ba8314e) |\\n| 20261126-064951 | Complete the non-image repository adaptation | P1 | Done | User | Approved | — | 2026-11-26 07:12 UTC | [Archived task](../.archive/task/20261126-064951-complete-non-image-repository-adaptation.md) | [d9cb03a](https://github.com/dungnv2602/chatgpt/commit/d9cb03a61a783a9c7d47a6e36e92fba868ad8b0e) |\\n'
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6997868Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6998039Z ----------------------------------------------------------------------
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6998388Z Ran 39 tests in 0.160s
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6998535Z 
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.6998650Z FAILED (failures=1, errors=8)
+validate-document-standards	Run CI Ledger regression tests	2026-11-26T08:46:10.7010893Z ##[error]Process completed with exit code 1.
+validate-document-standards	Post Check out gpt	﻿2026-11-26T08:46:10.7178770Z Post job cleanup.
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8066065Z [command]/usr/bin/git version
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8114888Z git version 2.56.1
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8156954Z Temporarily overriding HOME='/home/runner/work/_temp/76049267-2715-4c09-9ea1-95ca4b9b72f4' before making global git config changes
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8158267Z Adding repository directory to the temporary git global config as a safe directory
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8163011Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chatgpt/chatgpt
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8200732Z Removing SSH command configuration
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8207565Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8275096Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8603387Z Removing HTTP extra header
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8604363Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8635966Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8937515Z Removing includeIf entries pointing to credentials config files
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8945100Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8972603Z includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8973577Z includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8974065Z includeif.gitdir:/github/workspace/.git.path
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8974470Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.8981399Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.9005965Z /home/runner/work/_temp/git-credentials-fc524e59-9445-4418-8632-9cfba3546e29.config
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.9016399Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-fc524e59\-9445\-4418\-8632\-9cfba3546e29\.config
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.9055921Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.9088388Z /home/runner/work/_temp/git-credentials-fc524e59-9445-4418-8632-9cfba3546e29.config
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.9099194Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/chatgpt/chatgpt/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-fc524e59\-9445\-4418\-8632\-9cfba3546e29\.config
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.9135301Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.9159314Z /github/runner_temp/git-credentials-fc524e59-9445-4418-8632-9cfba3546e29.config
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.9169233Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-fc524e59\-9445\-4418\-8632\-9cfba3546e29\.config
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.9204439Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.9228092Z /github/runner_temp/git-credentials-fc524e59-9445-4418-8632-9cfba3546e29.config
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.9236888Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-fc524e59\-9445\-4418\-8632\-9cfba3546e29\.config
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.9273019Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+validate-document-standards	Post Check out gpt	2026-11-26T08:46:10.9552355Z Removing credentials config '/home/runner/work/_temp/git-credentials-fc524e59-9445-4418-8632-9cfba3546e29.config'
+validate-document-standards	Complete job	﻿2026-11-26T08:46:10.9698746Z Cleaning up orphan processes
+validate-document-standards	Complete job	2026-11-26T08:46:11.0141139Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

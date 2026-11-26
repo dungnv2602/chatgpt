@@ -8,7 +8,9 @@ This file is the single index for active and retained task records. The Worker o
 
 ## Proposed
 
-_No tasks._
+| ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
+|---|---|---:|---|---|---|---|---|---|
+| 20261126-090154 | Review validation\_or\_test failures in Validate Document Standards / validate-document-standards / Run CI Ledger regressi | P2 | Proposed | Assistant | Pending user approval | Pending | 2026-11-26 09:01 UTC | [Task record](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) |
 
 ## Ready
 

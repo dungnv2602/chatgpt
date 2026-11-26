@@ -1,17 +1,83 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T09:00:33Z",
-  "findings": [],
+  "updated_at_utc": "2026-11-26T09:01:54Z",
+  "findings": [
+    {
+      "finding_id": "gha-a284af6ec4aa61fe9c103bef",
+      "source_family": "github_actions",
+      "category": "validation_or_test",
+      "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: validation_or_test — <timestamp> test_actions_identity_uses_workflow_job_step_and_signature (test_ledger.ledgertests.test_actions_identity_uses_work",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T09:01:17Z",
+      "last_seen_utc": "2026-11-26T09:01:53Z",
+      "occurrence_count": 8,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45785802198",
+          "observed_at_utc": "2026-11-26T09:01:17Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45785802198:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45786612277-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45786612277",
+          "observed_at_utc": "2026-11-26T09:01:41Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45786612277:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45787576604-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45787576604",
+          "observed_at_utc": "2026-11-26T09:01:45Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45787576604:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45787618873-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45787618873",
+          "observed_at_utc": "2026-11-26T09:01:50Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45787618873:1"
+        },
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45787937573",
+          "observed_at_utc": "2026-11-26T09:01:53Z",
+          "note": "validate-document-standards / Run CI Ledger regression tests",
+          "observation_id": "github_actions:427313089:45787937573:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-090154"
+      ],
+      "task_group": "ci-020528f498f632ac"
+    }
+  ],
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-26T08:11:00Z",
     "processed_reports": [
+      ".takeout/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-pre_finalizer/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45785842274-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45785842274-attempt-1-pre_finalizer/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45786440074-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45786440074-attempt-1-pre_finalizer/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45786583252-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45786583252-attempt-1-pre_finalizer/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45786612277-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45786612277-attempt-1-pre_finalizer/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45787576604-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45787576604-attempt-1-pre_finalizer/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45787618873-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45787618873-attempt-1-pre_finalizer/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45787937573-attempt-1-pre_finalizer/report.json"
     ],
     "lint_baseline_scopes": {
