@@ -180,7 +180,7 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("- **Approval:** Pending — Worker review required", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Current execution:** No", task_files[0].read_text(encoding="utf-8"))
         self.assertIn(finding["finding_id"], task_files[0].read_text(encoding="utf-8"))
-        self.assertIn("[report](../../.takeout/reports/lint_reports/on_changed/history/100-attempt-1/report.json)", task_files[0].read_text(encoding="utf-8"))
+        self.assertIn("[report](../../../.takeout/reports/lint_reports/on_changed/history/100-attempt-1/report.json)", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("../../.takeout/reports/triage/ledger.json", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Template version:** 1.3", task_files[0].read_text(encoding="utf-8"))
         self.assertIn("- **Governing ADR(s):** Pending — Worker review required before approval", task_files[0].read_text(encoding="utf-8"))
@@ -206,6 +206,7 @@ class LedgerTests(unittest.TestCase):
         proposed_section = board[proposed_start:ready_start]
         in_progress_section = board[in_progress_start:board.index("## Blocked", in_progress_start)]
         self.assertIn("| 20261123-071000 |", proposed_section)
+        self.assertIn("[Task record](tasks/20261123-071000/task.md)", proposed_section)
         self.assertNotIn("| 20261123-071000 |", in_progress_section)
         current_section = board.split("## Current Execution", 1)[1].split("\n## ", 1)[0]
         self.assertNotIn("20261123-071000", current_section)
@@ -281,6 +282,40 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("- **Priority:** P0", task_text)
         self.assertIn("lint-a1b2c3d4e5f6", task_text)
         self.assertIn("lint-b2c3d4e5f6a7", task_text)
+        self.assertEqual(task_files[0].parent.name, task_id)
+        ci_subtask = task_files[0].parent / "subtasks" / "01-ci-remediation.md"
+        self.assertTrue(ci_subtask.is_file())
+        ci_text = ci_subtask.read_text(encoding="utf-8")
+        self.assertIn("- **Type:** CI remediation", ci_text)
+        self.assertIn("- **Status:** Proposed", ci_text)
+        self.assertIn("- **Approval:** Pending — Worker review required", ci_text)
+        self.assertIn("verified intended-branch commit", ci_text)
+        self.assertIn("Hosted validation is separate metadata", ci_text)
+        self.assertTrue((task_files[0].parent / "subtasks" / "README.md").is_file())
+
+    def test_active_legacy_flat_task_is_reused_during_migration(self):
+        group_id = LEDGER.task_group_key("lint", "semicolon", "docs/example.md")
+        legacy = self.root / "workspace" / "tasks" / "20261122-010000-legacy-task.md"
+        legacy.write_text(
+            "# Task: Legacy active task\n\n"
+            "- **ID:** 20261122-010000\n"
+            "- **Priority:** P1\n"
+            "- **Status:** In Progress\n"
+            "- **Origin:** User\n"
+            "- **Approval:** Approved\n"
+            "- **Current execution:** No\n"
+            "- **Updated:** 2026-11-22 01:00 UTC\n"
+            "- **Ledger group:** " + group_id + "\n",
+            encoding="utf-8",
+        )
+        self.add_lint("on_changed", "112", "2026-11-23T07:14:00Z",
+                      fingerprint="c3d4e5f6a7b8", file_path="docs/example.md", rule="semicolon")
+        result = LEDGER.ingest(self.root, now="2026-11-23T07:15:00Z")
+        finding = self.read_ledger()["findings"][0]
+        self.assertEqual(finding["task_refs"], ["20261122-010000"])
+        self.assertEqual(result["tasks_created"], 0)
+        self.assertEqual(list((self.root / "workspace" / "tasks").glob("*/task.md")), [])
+        self.assertIn("lint-c3d4e5f6a7b8", legacy.read_text(encoding="utf-8"))
 
     def test_low_confidence_actions_findings_create_tasks(self):
         issue = {

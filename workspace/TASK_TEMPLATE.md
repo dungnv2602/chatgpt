@@ -87,7 +87,7 @@ Record every meaningful action with timestamp, action, result, references, and n
 
 Canonical child index: [subtasks/README.md](subtasks/README.md).
 
-List every required subtask. The parent cannot become Done while any required child is not Done.
+The subtask index is authoritative. The parent cannot become Done while any required child is not Done.
 
 ## 14. Ledger Findings
 
