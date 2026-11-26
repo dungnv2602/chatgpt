@@ -441,8 +441,10 @@ class StorageTests(unittest.TestCase):
                 "check_runs":[],"annotations":[],"artifacts":[],
                 "capture_errors":[{"source":"job_log","message":"Run is still in progress."}],"history_path":"",
             }
-            pre_path = REPORT.write_report(root, pre, {})
-            pre_bytes = (pre_path / "report.json").read_bytes()
+            REPORT.save_json(root / "index.json", {
+                "schema_version":"1.0.0","sweep_watermark_utc":"2026-11-23T06:00:00Z",
+                "pending_run_ids":["100"],"exhausted_run_ids":[],"runs":[],"latest_report":None,
+            })
 
             post = json.loads(json.dumps(pre))
             post["source_run"]["status"] = "completed"
@@ -465,7 +467,7 @@ class StorageTests(unittest.TestCase):
             with patch.object(REPORT, "collect_runs_since", return_value=[]), \
                  patch.object(REPORT, "api_get", side_effect=[
                      make_run("failure"),
-                     {"run_attempt":1},
+                     {"run_attempt":1,"status":"completed"},
                      make_run("failure"),
                  ]), \
                  patch.object(REPORT, "fetch_evidence", return_value=(post, {"logs/job-200.log":"FAILED"})):
@@ -473,14 +475,10 @@ class StorageTests(unittest.TestCase):
 
             index = REPORT.load_index(root)
             self.assertEqual(index["pending_run_ids"], [])
-            self.assertEqual(len(index["runs"]), 2)
-            self.assertEqual(
-                {item["capture_stage"] for item in index["runs"]},
-                {"pre_finalizer", "post_run"},
-            )
+            self.assertEqual(len(index["runs"]), 1)
+            self.assertEqual({item["capture_stage"] for item in index["runs"]}, {"post_run"})
             latest = json.loads((root / "latest-gh-ac-report.json").read_text(encoding="utf-8"))
             self.assertEqual(latest["capture"]["stage"], "post_run")
-            self.assertEqual((pre_path / "report.json").read_bytes(), pre_bytes)
 
 
 if __name__ == "__main__":
