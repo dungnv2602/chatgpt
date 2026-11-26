@@ -58,16 +58,15 @@ Complete the active-file audit of the reconstructed repository. Identify and rep
 
 ## 7. Current State
 
-Task created and selected as current execution; the board was updated. The intake processor and publication verifier are present under `.agent/skills/the-worker/scripts/`; the active workflow uses `images/takeout/`, `drawings/`, and `novels/` operational paths. The shared intake README exists at `images/takeout/README.md`, not at the legacy `.takeout/images` location. Hosted validation has not been run.
+Task created and selected as current execution; the board was updated. The processor, verifier, and tests are under `.agent/skills/the-worker/scripts/`. The intake contract uses operational `images/takeout/` paths, while the relocated repository documentation is under `.takeout/images/README-1.md` and `README-2.md`. The workflow uses the reconstructed script locations. Hosted validation has not been run.
 
 ## 8. Remaining Work
 
-- Trace the image takeout processor and publishing verifier contracts end to end.
-- Audit active README files for stale paths/navigation.
-- Audit skill path, activation, and cross-reference consistency.
-- Audit script path/dependency/caller assumptions.
-- Audit Action triggers, permissions, exclusions, and script contracts.
-- Apply targeted fixes, read back, and validate where feasible.
+- Complete a wider active README and skill cross-reference audit.
+- Check the Document Type Catalog path coverage assumptions against relocated skills.
+- Read back all repaired paths and catalog changes.
+- Audit other workflow path assumptions, triggers, permissions, and exclusions.
+- Validate using available remote evidence; local execution and hosted CI remain unavailable.
 
 ## 9. Next Actions
 
@@ -107,3 +106,10 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Result:** Operational intake contract remains rooted at `images/takeout/`; scripts are relocated under `.agent/skills/the-worker/scripts/`. The prior docs reference fix appears consistent for canonical intake README. More thorough source/README/skill/Action audit remains.
 - **References:** `workspace/task_board.md`; `images/takeout/README.md`; `.agent/skills/the-worker/scripts/process_takeout.py`; `.agent/skills/the-worker/scripts/verify_published_manifest.py`; `.github/workflows/convert-images-to-webp.yml`.
 - **Next:** Continue contract tracing and audit other active README/script references.
+
+
+### 2026-11-26 — Reconstructed path repairs
+
+- **Action:** Corrected the link in `.takeout/images/README-1.md`; updated the intake guide reference in `.agent/skills/the-worker/references/image-provenance-and-webp.md`; linked the relocated guide from `.agent/skills/drawing/references/archive-and-delivery.md`; adjusted image-related path entries in the Document Type Catalog to reconstructed `.agent/skills/` and `.takeout/images/` locations.
+- **Contract:** Kept runtime intake paths (`images/takeout/`) unchanged. No files restored from older snapshots.
+- **Verification:** Remote read-back and formatting checks pending.
