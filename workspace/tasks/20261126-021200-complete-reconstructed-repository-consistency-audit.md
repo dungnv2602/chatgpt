@@ -143,3 +143,11 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Finding:** Catalog validation logic and fixtures still used reconstructed-out root assumptions (legacy `skills/`, `novels/`, `reports/`, `archive/` scope, template placement, and validator default). The image-processing workflow triggers and staging used `drawings/` and `novels/` instead of `area/drawing/` and `area/novel/`. Document Standards CI invoked the validator through a duplicated `.agent/.agent/` path.
 - **Repair:** Updated validator root scope, exclusions, template location rules, misplaced-template scan root, and default catalog path. Adapted validator regression-test fixtures to reconstructed paths. Corrected image-workflow triggers and staging directories and repaired the validator invocation.
 - **Verification:** Read back all four modified files and inspected targeted path assumptions. The test suite and hosted Actions remain unexecuted; fixture consistency still requires further scrutiny.
+
+
+### 2026-11-26 — Worker and image/drawing guidance alignment
+
+- **Finding:** Active Worker, image-processing, drawing, provenance, and novelist guidance retained legacy roots or malformed reconstructed paths. Readback exposed malformed prefix substitutions in the Worker references; these were corrected in follow-up commits.
+- **Repair:** Remapped active references to `.agent/skills/`, `.agent/SESSION_START.md`, `area/novel/`, `area/drawing/`, `.takeout/reports/`, and `.archive/`. Kept `images/takeout/` as the intake contract and `images/` as asset root where defined. Updated active image/drawing and novel-production references.
+- **Verification:** Read back the affected files and targeted path lines. More cross-reference review is required; static remote inspection only.
+- **Limitation:** No local tests or hosted Actions run.
