@@ -9,7 +9,7 @@ Initialization is conditional. Do not load project instructions, skills, or refe
 
 The only session-start cue is **`/start`**.
 
-When the user gives this cue as an instruction, perform the foundational loading sequence below. Retrieve and read every required component before project work.
+When the user gives this cue as an instruction, perform the baseline initialization sequence below. Load only its required baseline components. Load domain skills when the requested work activates them.
 
 Ignore quoted, discussed, or hypothetical uses of the cue. Do not treat a specialist-role request as a session-start cue.
 
@@ -22,17 +22,26 @@ When the user says `/start`:
 1. Record a startup notice in `workspace/discussion.md`. Commit and read back the register before skill retrieval. In Default Mode, also state that foundational retrieval is starting and link the register. In Condensed Mode, provide only the direct register link.
 2. Retrieve and read `.agent/skills/the-worker/SKILL.md` from branch `gpt`.
 3. Retrieve and read `.agent/skills/the-worker/references/conversation-mode.md`. This is a mandatory component of The Worker.
-4. Retrieve and read `.agent/skills/asd-ste100/SKILL.md` from branch `gpt`.
-5. Retrieve and read `.agent/skills/github-actions/SKILL.md` from branch `gpt`.
-6. Retrieve and read `.agent/skills/document-standards/SKILL.md` from branch `gpt`. This is a foundational skill. Load its catalog and specific canonical assets only when the task requires them.
-7. Verify that every required path was retrieved and read. Maintain the per-conversation verified-load ledger below.
-8. Do not run a CI snapshot, repair unrelated workflow failures, run local lint, or wait for CI. Review CI only when the user asks or the current task depends on a specific workflow.
+4. Verify the two baseline components and record them in the per-conversation verified-load ledger below.
+5. Activate domain skills only when the task requires them, using the activation rules below.
+6. Do not run a CI snapshot, repair unrelated workflow failures, run local lint, or wait for CI. Review CI only when the user asks or the current task depends on a specific workflow.
 
-Do not load Agent Skill Authoring during ordinary foundational initialization. Load it only when its task-specific activation conditions apply. Document Standards is foundational; load its skill definition during initialization and retrieve its catalog entries, templates, schemas, and validator details when the task requires them. The Worker's archive and media references remain task-triggered components.
+Baseline initialization is The Worker and its mandatory Conversation Mode reference only. Load ASD-STE100 when revising technical or skill documentation. Load GitHub Actions when CI or workflow work activates it. Load Document Standards when document-format governance or a recurring document/structured-record task activates it. Load Agent Skill Authoring only when skill creation or maintenance activates it. Retrieve supporting references only when needed. The Worker's archive and media references remain task-triggered components.
 
 If a required component is missing or cannot be verified, report its exact path and stop foundational initialization. Do not substitute memory, previous-conversation reads, or Library copies.
 
 Do not run a CI preflight after cue-triggered skill loading. Initialization is complete when the required skills have been retrieved and read. CI status is separate and task-scoped under `.agent/skills/github-actions/SKILL.md`.
+
+## Domain skill activation after baseline initialization
+
+After `/start` passes, load domain skills only as the task requires:
+
+- **GitHub Actions:** CI diagnostics, workflow changes, CI-generated remediation, recurrence-prevention, and validation procedure.
+- **Document Standards:** creating, moving, materially revising, or validating recurring documents or structured records.
+- **ASD-STE100:** skill or technical-document authoring/revision, including when a domain skill requires its writing standard.
+- **Agent Skill Authoring:** skill creation, revision, integration, or validation.
+
+Do not load unrelated skills. Check the current-session verified-load ledger first and refresh only when justified.
 
 ## Novelist role initialization
 
@@ -65,7 +74,7 @@ When the user triggers this procedure:
 
 The required order is:
 
-1. **Foundational:** The Worker (including its mandatory Conversation Mode reference), ASD-STE100, GitHub Actions, and Document Standards.
+1. **Baseline:** The Worker (including its mandatory Conversation Mode reference). Load ASD-STE100, GitHub Actions, and Document Standards when their task-specific activation conditions apply.
 2. **Drawing:** The Worker's archive/media references, Drawing, and its required references.
 3. **Novelist:** Romantic Storyteller skill and the active novel's canonical records.
 
@@ -233,7 +242,8 @@ Use this order whenever a task requires specialist skills:
 
 | Tier | Skills | Activation |
 |---|---|---|
-| 1. Foundational | The Worker (including its mandatory Conversation Mode reference), ASD-STE100, GitHub Actions, Document Standards | `/start` only. Specialist requests require foundational initialization to have passed already. |
+| 1. Baseline | The Worker (including its mandatory Conversation Mode reference) | `/start` only. Specialist requests require baseline initialization to have passed already. |
+| 1a. Domain skills | ASD-STE100, GitHub Actions, Document Standards, Agent Skill Authoring | Load only when task activation conditions apply. |
 | 2. Drawing | The Worker's archive/media references, Drawing, and its required references | After foundational initialization passes: `start a drawing session`, drawing work that requires the workflow, or novelist initialization |
 | 3. Novelist | Romantic Storyteller and active novel records | `Be the novelist` |
 
@@ -255,7 +265,7 @@ Entering a higher tier does not restart lower tiers. For example, if you loaded 
 
 ### The Worker
 
-`.agent/skills/the-worker/SKILL.md` is a required foundational skill. Load it during foundational initialization.
+`.agent/skills/the-worker/SKILL.md` is the required baseline skill. Load it during `/start` initialization.
 
 The Worker manages task continuity, task selection, progress, handoffs, recovery, collaboration modes, discussion-register maintenance, task archival, conversation and drawing-session records, image provenance, WebP delivery, and media workflows.
 
@@ -271,11 +281,11 @@ The Worker owns conversation archives, drawing-session closeout, image provenanc
 
 ### Document Standards
 
-`.agent/skills/document-standards/SKILL.md` is a required foundational skill. Load it during foundational initialization. It defines the template-first authoring workflow and applies to repository documents and structured records. Retrieve the Document Type Catalog and the exact templates, schemas, or validation references only when the task requires them.
+`.agent/skills/document-standards/SKILL.md` is task-activated, not baseline-loaded. Load it when the task creates, moves, materially revises, or validates recurring documents or structured records. It defines the template-first authoring workflow. Retrieve the catalog and exact templates, schemas, or validation references only when the task requires them.
 
 ### ASD-STE100 technical writing
 
-`.agent/skills/asd-ste100/SKILL.md` is a required foundational skill. Load it during foundational initialization.
+`.agent/skills/asd-ste100/SKILL.md` is task-activated. Load it when you create or revise skill or technical documentation.
 
 Apply its repository policy to all skill documentation and technical documentation. Use Strict mode for operational instructions. Use STE-flavored mode for technical explanations and READMEs.
 
@@ -287,7 +297,7 @@ Neither the skill nor the linter certifies a document as fully ASD-STE100 compli
 
 ### GitHub Actions workflow operations
 
-`.agent/skills/github-actions/SKILL.md` is a required foundational skill. Load it during foundational initialization.
+`.agent/skills/github-actions/SKILL.md` is task-activated. Load it for CI diagnostics, workflow changes, CI-generated remediation, recurrence prevention, or workflow validation.
 
 Use it when you create, revise, optimize, secure, or check GitHub Actions workflows. It defines workflow triggers, concurrency, incremental checks, caching, runners, permissions, artifacts, and validation.
 
