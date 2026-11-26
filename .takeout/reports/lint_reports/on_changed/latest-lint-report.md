@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#783](https://github.com/dungnv2602/chatgpt/actions/runs/45771843714)
-- **Run ID / attempt:** 45771843714 / 1
+- **Run:** [#789](https://github.com/dungnv2602/chatgpt/actions/runs/45772449707)
+- **Run ID / attempt:** 45772449707 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / f21e9fe85c7aea9d5e9923859f60ce0f8d301a58
+- **Branch / commit:** gpt / 11a4821a8cdc7896f2ac1c0cc54ea45acdd4af29
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** f21e9fe85c7aea9d5e9923859f60ce0f8d301a58
-- **Generated (UTC):** 2026-11-26T06:58:35.951352+00:00
+- **Linter source SHA:** 11a4821a8cdc7896f2ac1c0cc54ea45acdd4af29
+- **Generated (UTC):** 2026-11-26T07:04:37.048314+00:00
 
 ## 1. Executive summary
 
@@ -24,14 +24,14 @@
 | Advisory findings | 420 |
 | New findings | 0 |
 | Recurring findings | 712 |
-| Resolved findings | 1 |
+| Resolved findings | 0 |
 | Failed workflow checks | 1 |
 
 ## 2. Execution environment
 
 - Runner OS: Linux
 - Python: 3.15.2
-- Platform: Linux-7.0.0-1020-azure-x86_64-with-glibc2.43
+- Platform: Linux-7.0.0-1018-aws-x86_64-with-glibc2.43
 - The JSON report records the full runtime version and every original per-file linter response.
 - The report records the commit that supplied the linter and generator code.
 
@@ -174,7 +174,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/philosophy-religion-asceticism/SKILL.md | PASS | 8 | 0 | 7 | 2387 | 0.3 | 0 |
 | .agent/skills/internal-comms/examples/general-comms.md | PASS | 1 | 0 | 0 | 85 | 1.2 | 0 |
 | .agent/skills/pdf/REFERENCE.md | PASS | 0 | 0 | 0 | 394 | 0.0 | 0 |
-| .agent/skills/decision-governance/SKILL.md | FAIL | 9 | 5 | 0 | 2916 | 0.3 | 1 |
+| .agent/skills/decision-governance/SKILL.md | FAIL | 9 | 5 | 0 | 2913 | 0.3 | 1 |
 | .agent/skills/asd-ste100/references/writing-rules.md | PASS | 8 | 0 | 6 | 706 | 1.1 | 0 |
 | .agent/skills/drawing/references/series-continuity-and-iteration.md | PASS | 9 | 0 | 9 | 3262 | 0.3 | 0 |
 | .agent/skills/document-standards/references/document-type-catalog.md | FAIL | 6 | 4 | 0 | 4596 | 0.1 | 1 |
@@ -197,7 +197,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/migrate-to-rust/SKILL.md | FAIL | 21 | 15 | 0 | 1173 | 1.8 | 1 |
 | .agent/skills/theme-factory/themes/forest-canopy.md | PASS | 0 | 0 | 0 | 68 | 0.0 | 0 |
 | .agent/skills/skill-creator/references/schemas.md | PASS | 3 | 0 | 0 | 518 | 0.6 | 0 |
-| workspace/draft/README.md | FAIL | 4 | 3 | 0 | 665 | 0.6 | 1 |
+| workspace/draft/README.md | FAIL | 4 | 3 | 0 | 664 | 0.6 | 1 |
 | workspace/TASK_TEMPLATE.md | PASS | 5 | 0 | 0 | 461 | 1.1 | 0 |
 | .agent/skills/pdf/FORMS.md | FAIL | 13 | 8 | 0 | 1195 | 1.1 | 1 |
 | .agent/skills/theme-factory/themes/arctic-frost.md | PASS | 0 | 0 | 0 | 73 | 0.0 | 0 |
@@ -216,7 +216,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/migrate-to-rust/references/pgo_and_telemetry_guide.md | FAIL | 13 | 10 | 0 | 1274 | 1.0 | 1 |
 | .agent/skills/asd-ste100/SKILL.md | PASS | 20 | 12 | 31 | 2609 | 0.8 | 0 |
 | .agent/skills/asd-ste100/assets/lint-report-template.md | PASS | 0 | 0 | 0 | 385 | 0.0 | 0 |
-| workspace/DRAFT_TEMPLATE.md | FAIL | 9 | 4 | 0 | 1243 | 0.7 | 1 |
+| workspace/DRAFT_TEMPLATE.md | FAIL | 9 | 4 | 0 | 1242 | 0.7 | 1 |
 | .agent/skills/discernment-nudge/SKILL.md | FAIL | 26 | 24 | 0 | 1701 | 1.5 | 1 |
 | workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | FAIL | 75 | 53 | 0 | 8961 | 0.8 | 1 |
 | .agent/skills/asd-ste100/references/repository-writing-policy.md | PASS | 1 | 0 | 0 | 570 | 0.2 | 0 |
@@ -268,7 +268,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.378s
+Ran 4 tests in 0.239s
 
 OK
 ~~~
@@ -281,7 +281,7 @@ OK
 ~~~text
 .....
 ----------------------------------------------------------------------
-Ran 5 tests in 0.024s
+Ran 5 tests in 0.001s
 
 OK
 ~~~
@@ -301,7 +301,7 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 208 active Markdown files (274 available as link targets) and 334 local Markdown links.
+Scanned 211 active Markdown files (278 available as link targets) and 334 local Markdown links.
 Found 1 unresolved local Markdown targets or anchors.
 workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md: missing Markdown file: ../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md
 ~~~
@@ -3167,10 +3167,7 @@ None.
 
 ### Resolved findings
 
-- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:4:447 · **resolved** · fingerprint: 8801fe8ed0c512214f0d5185
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** been run
+None.
 
 ## 8. Complete per-file diagnostics
 
@@ -5288,7 +5285,7 @@ No STE findings were recorded for this file.
 - **Findings:** 9
 - **Hard findings:** 5
 - **Baseline:** 0
-- **Words:** 2916
+- **Words:** 2913
 - **Findings per 100 words:** 0.3
 
 #### Complete diagnostics
@@ -6282,7 +6279,7 @@ No STE findings were recorded for this file.
 - **Findings:** 4
 - **Hard findings:** 3
 - **Baseline:** 0
-- **Words:** 665
+- **Words:** 664
 - **Findings per 100 words:** 0.6
 
 #### Complete diagnostics
@@ -7219,7 +7216,7 @@ No STE findings were recorded for this file.
 - **Findings:** 9
 - **Hard findings:** 4
 - **Baseline:** 0
-- **Words:** 1243
+- **Words:** 1242
 - **Findings per 100 words:** 0.7
 
 #### Complete diagnostics
