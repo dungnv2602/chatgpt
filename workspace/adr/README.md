@@ -66,4 +66,5 @@ Never add ADRs to .github/archive-retention-index.json. The archive retention wo
 
 ## Archived ADRs
 
-No archived ADR files are present in the current branch. Do not recreate or restore records that are absent from the current repository state.
+- [ADR-0002 — Retire Source Drafts After Verified ADR Promotion](../../archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md) — Accepted; implementation complete and all Confirmation criteria passed.
+- [ADR-0001 — Establish Draft-to-ADR Governance and Repository Analysis](../../archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md) — Accepted; implementation complete and all Confirmation criteria passed. ADR-0002 supersedes only its source-Draft preservation rule.
