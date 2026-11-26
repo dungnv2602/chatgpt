@@ -2,9 +2,11 @@
 
 ## Current Step
 
-- **2026-11-26 14:44 UTC:** Inspect existing hosted evidence for the error-only reporter and its regression suite. Confirm whether retention behavior passed in a completed run, then report implementation and verification separately.
+_No active step._
 
 ## Open Discussions
+
+- **2026-11-26 14:46 UTC:** Error-only Actions report filtering is implemented in the reporter and shared with Ledger ingestion, but its regression suite and end-to-end hosted task handoff are not verified. The approved task [20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md) remains Paused pending P0 work. The latest captured source run [45821860845](https://github.com/dungnv2602/chatgpt/actions/runs/45821860845) failed in the CI Ledger regression step. Do not claim the error-only reporter tests passed.
 
 - **2026-11-26 14:55 UTC:** DRAFT-0002 revision 4 remains in review. Its wording remediation is committed in [c3ef2c4](https://github.com/dungnv2602/chatgpt/commit/c3ef2c4dc0635033c5cebaef0b7624af3b2fccb6). Five associated P0 task records now link the commit. Hosted lint validation remains pending.
 - **2026-11-26 14:55 UTC:** Four new P0 tasks cover style findings in workspace/draft/README.md and workspace/task_board.md. The task board selects 20261126-143747 as current execution.
