@@ -2,7 +2,7 @@
 
 The Ledger is the Worker's event-driven active backlog for distinct lint and GitHub Actions findings. It deduplicates observations, keeps bounded evidence references, creates grouped Worker task records for actionable findings, and retires terminal findings after their linked task archives are verified. It does not execute remediation.
 
-## Finding identity and eligibility
+## Emergency priority override\n\nWhen the user instructs that Ledger-generated tasks be handled immediately, every active Ledger-generated task requiring attention is promoted to **P0**, approved for remediation under that explicit instruction, and placed ahead of all non-P0 work. The Worker must select the P0 task first, inspect its evidence, remediate, and validate before resuming lower-priority tasks. This override applies to remediation approval and priority; it does not authorize destructive resets, restoring deleted files, weakening validation, or bypassing required verification. Keep the override recorded in task metadata, the board, and the discussion register.\n\n## Finding identity and eligibility
 
 - Lint findings use stable fingerprints. The same finding in both lint scopes maps to one Ledger entry.
 - Actions findings use workflow identity, job, step, category, and normalized diagnostic text.
