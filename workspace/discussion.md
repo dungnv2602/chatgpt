@@ -2,9 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 16:18 UTC:** Audit the ADR-0003 Confirmation criteria against the committed renderer, central-index behavior, migration tests, and repository evidence references. Verify that removed paths have no active required consumers. Preserve canonical JSON, logs, and all Ledger/task references. Active scope: [P0 task 20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md).
-
-## Open Discussions
+- **2026-11-26 16:20 UTC:** Align the Document Type Catalog and diagnostics workflow path filters with the canonical report layout. Remove only obsolete Markdown-output coverage and obsolete latest/per-workflow ignore paths. Preserve the report schema and all separate STE lint report rules. Active scope: [P0 task 20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md).
 
 - **2026-11-26 16:14 UTC:** Hosted Diagnostics run [45856899091](https://github.com/dungnv2602/chatgpt/actions/runs/45856899091) failed because two existing StorageTests still expected removed root latest-report JSON copies. The migration did not run. Updated those assertions to use the central index and added an end-to-end Markdown rendering test in commits 6897970 and 3ee2f73. The event-triggered validation for the corrected tests is pending. Keep P0 task 20261126-090154 open until hosted tests and migration pass.
 
