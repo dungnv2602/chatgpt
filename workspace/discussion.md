@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26:** Inspect the five active P0 task records, their linked Ledger findings, exact workflow runs and job logs, and the owner instructions. Identify the root causes and authorized fix set before editing. Tasks: [20261126-124305](../workspace/task_board.md), [20261126-124129](../workspace/task_board.md), [20261126-090154](../workspace/task_board.md), [20261126-101512-01](../workspace/task_board.md), [20261126-101512](../workspace/task_board.md).
+- **2026-11-26:** Trace the remaining P0 findings to their canonical code and acceptance contracts. Review ADR-0003 and decision-governance, inspect the lint workflow's full-audit gate and immutable report evidence, then define the minimal change set. Active records: [20261126-124305](tasks/20261126-124305-review-validation-or-test-failures-in-validate-document-standard.md), [20261126-124129](tasks/20261126-124129-fix-lint-tooling-check-markdown-links-and-heading-anchors.md), [20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md), [20261126-101512-01](tasks/20261126-101512-01-review-publication-or-push-failures-in-validate-document-standar.md), [20261126-101512](tasks/20261126-101512-review-checkout-or-action-download-failures-in-validate-document.md).
 
 ## Open Discussions
 
