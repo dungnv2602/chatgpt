@@ -325,6 +325,34 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(len(set(refs)), 2)
         self.assertEqual(len(list((self.root / "workspace" / "tasks").glob("*.md"))), 2)
 
+    def test_low_confidence_actions_error_always_creates_a_task(self):
+        issue = {
+            "category": "validation_or_test", "job_name": "Build", "step_name": "Run checks",
+            "blocking": False, "confidence": "low", "message": "ERROR: check failed",
+        }
+        self.add_actions("202","2026-11-23T07:34:00Z",[issue])
+        result = LEDGER.ingest(self.root)
+        finding = self.read_ledger()["findings"][0]
+        self.assertEqual(finding["severity"], "low")
+        self.assertEqual(len(finding["task_refs"]), 1)
+        self.assertEqual(result["tasks_created"], 1)
+        task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
+        self.assertEqual(len(task_files), 1)
+        self.assertIn(finding["finding_id"], task_files[0].read_text(encoding="utf-8"))
+
+    def test_workflow_level_timeout_without_job_identity_creates_a_task(self):
+        issue = {
+            "category": "timeout", "job_name": None, "step_name": None,
+            "blocking": True, "confidence": "high",
+            "message": "GitHub reported a workflow-level timeout outcome.",
+        }
+        self.add_actions("205","2026-11-23T07:37:00Z",[issue])
+        result = LEDGER.ingest(self.root)
+        finding = self.read_ledger()["findings"][0]
+        self.assertEqual(result["findings_created"], 1)
+        self.assertEqual(result["tasks_created"], 1)
+        self.assertEqual(len(finding["task_refs"]), 1)
+
     def test_cancelled_run_keeps_independent_failure_and_ignores_cancellation_propagation(self):
         issues = [
             {"category":"cancelled","job_name":"Build","step_name":"Cancel remaining work",
