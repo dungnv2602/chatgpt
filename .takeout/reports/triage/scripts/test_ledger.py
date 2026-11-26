@@ -421,7 +421,7 @@ class LedgerTests(unittest.TestCase):
         task_files = list((self.root / "workspace" / "tasks").glob("*.md"))
         self.assertEqual(len(task_files), 1)
         task_text = task_files[0].read_text(encoding="utf-8")
-        self.assertIn("- **Priority:** P1", task_text)
+        self.assertIn("- **Priority:** P0", task_text)
         self.assertEqual(result["tasks_updated"], 1)
 
     def test_untrusted_diagnostic_text_is_escaped_in_worker_task(self):
