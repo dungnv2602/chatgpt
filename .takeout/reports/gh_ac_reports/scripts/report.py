@@ -653,13 +653,10 @@ def write_report(root, report, log_files):
 
 
 def report_is_actionable(report):
-    """Keep independent failures and exceptional outcomes, not routine run history."""
+    """Persist only reports containing at least one independently classified error."""
     classification = report.get("classification") or {}
     issues = classification.get("issues")
-    if isinstance(issues, list) and issues:
-        return True
-    outcome = classification.get("observed_conclusion") or classification.get("projected_conclusion")
-    return outcome in ("failure", "timed_out", "action_required")
+    return isinstance(issues, list) and bool(issues)
 
 
 def capture_rows(index, run_id, attempt, stage):
@@ -705,10 +702,14 @@ def capture_one(repo, root, run_id, stage, force=False):
     retry_state = capture_retry_state(index, run_id, attempt, stage)
     if retry_state["complete"]:
         return None
+    if stage != "post_run" or metadata.get("status") != "completed":
+        return None
     if not force and not incomplete_retry_allowed(index, run_id, attempt, stage):
         return None
     report, logs = fetch_evidence(repo, run_id, stage)
-    if not force and not report_is_actionable(report):
+    # Manual backfill may select an older run, but it never bypasses the error-only
+    # retention rule. Success, cancellation-only, and other issue-free runs are not reports.
+    if not report_is_actionable(report):
         return None
     return write_report(root, report, logs)
 
