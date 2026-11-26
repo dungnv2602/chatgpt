@@ -1,9 +1,7 @@
-## Current Step
+**Current Step**
 
-**Startup notice — 2026-11-26:** `/start` requested. Foundational retrieval for this session is beginning; the current repository task remains `20261126-021200`.
+Audit reconstructed GitHub Actions skill report/archive path references and compare them with the active reconstructed report/archive tree and workflow contracts. Task: [20261126-021200](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
 
-
-Execute task [20261126-021200](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md): trace image contracts, audit active README/skills/scripts/workflows, and repair verified discrepancies.
 
 ## Open Discussions
 
