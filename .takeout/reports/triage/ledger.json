@@ -1,13 +1,14 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T08:50:04Z",
+  "updated_at_utc": "2026-11-26T08:51:06Z",
   "findings": [],
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-26T08:11:00Z",
     "processed_reports": [
       ".takeout/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-pre_finalizer/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45785842274-attempt-1-pre_finalizer/report.json",
-      ".takeout/reports/gh_ac_reports/history/427313089/45786440074-attempt-1-pre_finalizer/report.json"
+      ".takeout/reports/gh_ac_reports/history/427313089/45786440074-attempt-1-pre_finalizer/report.json",
+      ".takeout/reports/gh_ac_reports/history/427313089/45786583252-attempt-1-pre_finalizer/report.json"
     ],
     "lint_baseline_scopes": {
       "on_changed": false,
