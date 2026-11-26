@@ -2,7 +2,7 @@
 record_type: decision-record
 template_version: "1.1"
 id: "ADR-0003"
-status: "promotion-pending"
+status: "accepted"
 decision_date: "2026-11-26"
 decision_makers:
   - "User"
@@ -24,7 +24,7 @@ review_triggers:
   - "Diagnostic evidence-retention requirements change."
 ---
 
-<!-- Promotion transaction: this record is provisional and non-authoritative until the completeness review and read-back pass. -->
+<!-- Accepted on 2026-11-26 after the approved Draft and provisional ADR passed the completeness and read-back gates. -->
 
 # Canonical GitHub Actions Diagnostic Report Artifact Layout
 
@@ -228,4 +228,4 @@ The decision depends on the assumption that no required external consumer relies
 
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
-| 2026-11-26 | Promotion pending | User approved DRAFT-0004 revision 1, Option 3. Provisional ADR created for completeness review. Not authoritative until the completeness and read-back checks pass. |
+| 2026-11-26 | Accepted | User approved DRAFT-0004 revision 1, Option 3. The complete rationale comparison and provisional ADR read-back passed. |
