@@ -64,7 +64,7 @@ This opening brief is the sole creative authority for that session. It applies t
 - In a novel session, scene and manuscript records provide narrative facts
   only to the extent the user asks the illustration to follow or adapt them.
   The session brief governs visual interpretation and design.
-- Do not create, maintain, or recreate `images/reference-index.md` or any
+- Do not create, maintain, or recreate `.takeout/images/reference-index.md` or any
   replacement repository-wide visual authority index. Session-specific image
   provenance belongs in the session brief and relevant attempt record.
 
@@ -311,7 +311,7 @@ Keep session-specific image roles and prompt/output mapping in the session brief
 
 ### When an opaque image cannot be visually inspected
 
-If an image is present in `images/` but its binary cannot be viewed, do not invent a subject description. If its name contains a reliable timestamp, you may rename it to a neutral timestamp-based filename. Preserve the original extension (for example, `archive-photo-YYYY-MM-DD-HHMMSSZ.jpg`).
+If an image is present in `.takeout/images/` but its binary cannot be viewed, do not invent a subject description. If its name contains a reliable timestamp, you may rename it to a neutral timestamp-based filename. Preserve the original extension (for example, `archive-photo-YYYY-MM-DD-HHMMSSZ.jpg`).
 
 Record that you did not inspect the pixels. State that the filename is based on time, not image content. If no reliable timestamp or identifying metadata exists, leave the file unchanged until its visual content is available. In either case, preserve the exact Git blob SHA and byte size.
 
