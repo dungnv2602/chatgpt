@@ -269,25 +269,25 @@ class CatalogValidatorTests(unittest.TestCase):
 
     def test_reserved_coverage_pattern_allows_new_family_before_first_record(self):
         self.set_catalog(self.valid_rows(), [
-            "| `drawings/new-family/*.md` | Template required | Reserved | "
+            "| `area/drawing/new-family/*.md` | Template required | Reserved | "
             "`.agent/skills/example/assets/template.md` | New family is registered before its first record. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertEqual(errors, [])
 
     def test_reserved_coverage_pattern_must_activate_with_first_record(self):
-        self.write("drawings/new-family/first-record.md")
+        self.write("area/drawing/new-family/first-record.md")
         self.set_catalog(self.valid_rows(), [
-            "| `drawings/new-family/*.md` | Template required | Reserved | "
+            "| `area/drawing/new-family/*.md` | Template required | Reserved | "
             "`.agent/skills/example/assets/template.md` | First record now exists. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
         self.assertTrue(any("Reserved Markdown coverage pattern already matches" in error for error in errors))
 
     def test_reserved_coverage_pattern_passes_after_activation(self):
-        self.write("drawings/new-family/first-record.md")
+        self.write("area/drawing/new-family/first-record.md")
         self.set_catalog(self.valid_rows(), [
-            "| `drawings/new-family/*.md` | Template required | Active | "
+            "| `area/drawing/new-family/*.md` | Template required | Active | "
             "`.agent/skills/example/assets/template.md` | First record now exists. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
@@ -344,7 +344,7 @@ class CatalogValidatorTests(unittest.TestCase):
 
     def test_optional_coverage_is_limited_to_generator_owned_outputs(self):
         self.set_catalog(self.valid_rows(), [
-            "| `drawings/new-family/*.md` | Lightweight pattern | Optional | "
+            "| `area/drawing/new-family/*.md` | Lightweight pattern | Optional | "
             "`.agent/skills/example/SKILL.md` | Optional is only for generated outputs. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
@@ -352,7 +352,7 @@ class CatalogValidatorTests(unittest.TestCase):
 
     def test_unknown_coverage_status_fails(self):
         self.set_catalog(self.valid_rows(), [
-            "| `drawings/new-family/*.md` | Template required | Pending | "
+            "| `area/drawing/new-family/*.md` | Template required | Pending | "
             "`.agent/skills/example/assets/template.md` | Invalid state. |",
         ])
         errors, _, _ = validate_catalog(self.root, self.catalog)
