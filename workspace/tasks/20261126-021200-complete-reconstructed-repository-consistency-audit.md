@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-021200
 - **Created:** 2026-11-26 02:12 UTC
-- **Updated:** 2026-11-26 05:25 UTC
+- **Updated:** 2026-11-26 05:14 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -169,3 +169,13 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Correction to 05:10 findings:** The earlier statement that 72 task records and one retention target had no recoverable source was superseded by branch-specific history and the direct pre-deletion parent tree. Those records are now restored. Only the single orphan task-board link remains unresolved.
 - **Hosted validation:** Actions runs are still queued/pending with no jobs returned; the recovery commit should trigger a fresh diagnostics run. Runtime test results remain unavailable.
 - **Next:** Inspect post-recovery Actions runs; finish the remaining workflow and script dependency audit; determine whether the orphan board row has any authoritative record outside Git history.
+
+
+### 2026-11-26 05:14 UTC — Task-board link repaired; catalog template placement corrected
+
+- **Task-board link:** The sole remaining target was a filename typo (`...draft-0001-repo.md`); the tracked file is `...draft-0001-re.md`. Corrected the board link. After the diagnostics publish, the board contains 288 unique task links and all 288 resolve. Commit: `8bedd8b9e5b4b1a28f8f7a31b94a1f1b0f9a7e6c`.
+- **Hosted test results:** The Document Standards run executed the CI Ledger regression suite (39 tests, all passed) and catalog-validator suite (32 tests, all passed). The validator then failed on `.agent/skills/migrate-to-rust/references/infographic_template.html` being misplaced under `references/`.
+- **Repair:** Moved the exact HTML blob to `.agent/skills/migrate-to-rust/assets/infographic_template.html`, updated the skill link and `telemetry.py` default template path. Readback confirms the old path is absent and new path/callers resolve. Commit: `dd293746f27013594159f9841b4ca61742d1d858`. The post-fix validator run is pending.
+- **Diagnostics state:** The current branch contains the exact pre-deletion Ledger, now 1,427,086 bytes, plus restored report histories. A later diagnostics publish commit `3c2266940b0819ad45f0c9d49ad2ceed84216dc6` added 60 report artifacts and updated the Ledger, task board, and two task records. Current tree counts: 1,395 `.takeout/reports/` files, 289 `workspace/tasks/` files, 51 `.archive/task/` files, 17 `.archive/reports/` files. All 55 retention paths and all 288 task-board links resolve.
+- **Workflow status:** The earlier diagnostics run `45757534591` failed because its checkout predated Ledger recovery and its publish/rebase step conflicted with the restored report history. Later publish activity updated the canonical Ledger and board. Post-repair `Validate Document Standards` (`45759941387`) and `STE Lint Changed Documentation` (`45759941485`) remain pending; the full technical-doc lint run is also pending. No post-template-move test result is available yet.
+- **Next:** Inspect the queued workflow outcomes, complete the remaining workflow permissions/trigger/exclusion and script dependency audit, and do not close the task until post-repair validation is available.
