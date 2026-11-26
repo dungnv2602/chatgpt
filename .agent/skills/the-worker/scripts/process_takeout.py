@@ -63,11 +63,13 @@ def destination_dir(value: Any, root: Path) -> Path:
     parts = p.parts
     if p.is_absolute() or not parts or any(x in {".", ".."} for x in parts):
         raise ProcessingError(f"Unsafe destination_dir: {value!r}")
-    if parts[0] not in {"images", "area/novel", "area/drawing"}:
-        raise ProcessingError("Destinations must be inside images/, area/novel/, or a dated drawing session's images/ folder.")
+    if parts[0] not in {"images", "area"}:
+        raise ProcessingError("Destinations must be inside images/, area/novel/, or area/drawing/.")
+    if parts[0] == "area" and (len(parts) < 2 or parts[1] not in {"novel", "drawing"}):
+        raise ProcessingError("Project destinations must be inside area/novel/ or area/drawing/.")
     if parts[0] == "images" and len(parts) > 1 and parts[1] in {"takeout", "webp", "scripts"}:
         raise ProcessingError(f"Reserved image destination: {value!r}")
-    if parts[0] == "area/drawing":
+    if parts[:2] == ("area", "drawing"):
         if len(parts) != 3 or parts[2] != "images" or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", parts[1]):
             raise ProcessingError("Drawing output destinations must be area/drawing/YYYY-MM-DD/images.")
         try:
@@ -304,7 +306,7 @@ def validate_conversation_record(value: Any, root: Path, source_name: str,
         or not relative.parts
         or any(part in {"", ".", ".."} for part in relative.parts)
         or relative.suffix.lower() != ".md"
-        or relative.parts[0] not in {"area/drawing", "area/novel", "images"}
+        or relative.parts[0] not in {"area", "images"}
     ):
         raise ProcessingError(f"{source_name}: unsafe conversation_record path: {value!r}.")
     record_path = root.joinpath(*relative.parts)
