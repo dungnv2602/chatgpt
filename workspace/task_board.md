@@ -1,6 +1,6 @@
 # Task Board
 
-This file is the single index for active and retained task records. The Worker owns task status, selection, and closeout. Each task record is the authority for its scope and progress.
+This file is the single index for active and retained task records. Each active task is a folder whose task.md is the authoritative parent record; child work is stored under subtasks/. The Worker owns task status, selection, and closeout.
 
 ## Current Execution
 

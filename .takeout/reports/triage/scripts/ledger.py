@@ -880,13 +880,16 @@ def create_or_update_worker_task(root, group_id, findings, timestamp, active_tas
             location = task_path.parent.name + "/task.md" if task_path.name == "task.md" else task_path.name
             pointer = "[" + selected_id + " — " + selected["content"].splitlines()[0].removeprefix("# Task: ").strip() + "](tasks/" + location + ")"
         existing = next((line for line in section.splitlines()[1:] if line.startswith("[")), None)
+        placeholder = "_No task selected._"
         if pointer and existing != pointer:
             if existing:
                 section = section.replace(existing, pointer, 1)
+            elif placeholder in section:
+                section = section.replace(placeholder, pointer, 1)
             else:
                 section = section.replace("## Current Execution", "## Current Execution\n\n" + pointer, 1)
         elif not pointer and existing:
-            section = section.replace(existing, "_No task selected._", 1)
+            section = section.replace(existing, placeholder, 1)
         if section != board[heading_start:section_end]:
             board = board[:heading_start] + section + board[section_end:]
             atomic_write_text(board_path, board)
