@@ -2,7 +2,7 @@
 
 ## Current Step
 
-**2026-11-27:** The CI Ledger skill, Worker batch procedure, and concise Ledger README are committed. Update skill discovery and catalog entries, correct task-board indexing, then read back and verify all changed paths.
+**2026-11-27:** Discovery, catalog, and board integration are committed. Remove overlapping batch-orchestration ownership from the GitHub Actions skill, then perform final read-back and consistency checks.
 
 ## Open Discussions
 
