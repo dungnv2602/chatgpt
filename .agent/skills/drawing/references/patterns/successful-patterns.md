@@ -1,6 +1,6 @@
 # Global Successful Drawing Patterns
 
-Reusable techniques extracted from the pre-19 November 2026 historical prompt archive. The corresponding prompt records are indexed in [Historical Successful Prompt Index](../../../../drawings/history/successful-prompts.md).
+Reusable techniques extracted from the pre-19 November 2026 historical prompt archive. The corresponding prompt records are indexed in [Historical Successful Prompt Index](../../../../../area/drawing/history/successful-prompts.md).
 
 Only patterns with traceable successful or user-approved evidence belong here. A pattern's confidence describes the reusable lesson, not the perfection of every output.
 
@@ -26,8 +26,8 @@ Unnecessary assistant-added wording and creative reinterpretation can move a new
 5. Record whether the new result actually follows the changed requirement.
 
 ### Evidence
-- [12 November 2026 — Attempt 33](../../../../drawings/history/2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode) — successful historical silk-wrap portrait direction. Two outputs were returned and later approved by the user.
-- [13 November 2026 — Attempt 04](../../../../drawings/history/2026-11-13-image-prompts.md#attempt-04--direct-reuse-of-the-proven-silk-wrap-portrait-direction) — the same authored prompt was reused verbatim in a later session. The prompt record's final user assessment is successful.
+- [12 November 2026 — Attempt 33](../../../../../area/drawing/history/2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode) — successful historical silk-wrap portrait direction. Two outputs were returned and later approved by the user.
+- [13 November 2026 — Attempt 04](../../../../../area/drawing/history/2026-11-13-image-prompts.md#attempt-04--direct-reuse-of-the-proven-silk-wrap-portrait-direction) — the same authored prompt was reused verbatim in a later session. The prompt record's final user assessment is successful.
 
 ### Limitations
 This is a controlled-reuse method, not a guarantee that every requested detail will be reproduced. Retain any technical caveats in the source record, and never assume that an earlier success authorizes changes to a current locked requirement.
@@ -59,8 +59,8 @@ For a focused portrait, specify:
 Keep the cues mutually consistent. Prefer direct descriptions of what should appear over a long list of things that must not appear.
 
 ### Evidence
-- [12 November 2026 — Attempt 33](../../../../drawings/history/2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode) — the prompt specified an adult subject with dark chestnut hair and ivory silk-wrap styling. It also specified shoulder and collarbone drape, warm light, and a blurred interior. The prompt used close upper-body framing, an affectionate gaze, and photorealistic fine-art treatment. Two outputs matched the overall portrait direction.
-- [13 November 2026 — Attempt 04](../../../../drawings/history/2026-11-13-image-prompts.md#attempt-04--direct-reuse-of-the-proven-silk-wrap-portrait-direction) — the final user assessment again marked the same positive art-direction cues as successful.
+- [12 November 2026 — Attempt 33](../../../../../area/drawing/history/2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode) — the prompt specified an adult subject with dark chestnut hair and ivory silk-wrap styling. It also specified shoulder and collarbone drape, warm light, and a blurred interior. The prompt used close upper-body framing, an affectionate gaze, and photorealistic fine-art treatment. Two outputs matched the overall portrait direction.
+- [13 November 2026 — Attempt 04](../../../../../area/drawing/history/2026-11-13-image-prompts.md#attempt-04--direct-reuse-of-the-proven-silk-wrap-portrait-direction) — the final user assessment again marked the same positive art-direction cues as successful.
 
 ### Limitations
 Positive visual specificity does not guarantee exact garment construction, identity continuity, or source-image editing. Inspect the returned image for the actual physical result. Do not infer a detail from the prompt alone.
@@ -88,7 +88,7 @@ Use direct constructions such as:
 State the essential spatial relationship before decorative setting details. For complicated contact, separate each hand or limb by actor and side.
 
 ### Evidence
-- [12 November 2026 — Attempt 04](../../../../drawings/history/2026-11-12-image-prompts.md#04--comfort-after-a-long-workday) — the prompt placed the man's head against the seated woman and described her cradling his head. The user liked the resulting comforting composition.
+- [12 November 2026 — Attempt 04](../../../../../area/drawing/history/2026-11-12-image-prompts.md#04--comfort-after-a-long-workday) — the prompt placed the man's head against the seated woman and described her cradling his head. The user liked the resulting comforting composition.
 
 ### Limitations
-This pattern is provisional and does not guarantee pose compliance. Later attempts [14–20](../../../../drawings/history/2026-11-12-image-prompts.md#14--mistaken-tea-scene-interpretation-cream-cardigan-and-navy-polo) repeatedly reversed the resting roles even after more detailed instructions. It should improve clarity, not be treated as a proven solution to persistent pose inversion.
+This pattern is provisional and does not guarantee pose compliance. Later attempts [14–20](../../../../../area/drawing/history/2026-11-12-image-prompts.md#14--mistaken-tea-scene-interpretation-cream-cardigan-and-navy-polo) repeatedly reversed the resting roles even after more detailed instructions. It should improve clarity, not be treated as a proven solution to persistent pose inversion.
