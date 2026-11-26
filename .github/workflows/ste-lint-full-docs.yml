@@ -11,8 +11,10 @@ on:
       - '!.agent/skills/asd-ste100/examples/**'
   workflow_dispatch:
 
+# Only newer pushes to the same branch supersede older push audits.
+# The newest push validates the cumulative tree; manual audits remain independent.
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event_name == 'push' && 'push' || github.run_id }}
   cancel-in-progress: true
 
 jobs:
