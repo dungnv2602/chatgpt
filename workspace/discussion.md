@@ -10,6 +10,9 @@
 
 ## Reports
 
+- **2026-11-26 09:11 UTC:** Board update readback exposed a formatting defect in the initial priority promotion: stale Proposed row remained and the In Progress insertion contained a literal newline escape. Corrected the canonical board section layout in commit `9eb223b`; readback verification pending.
+
+
 - **2026-11-26:** Inspected CI runs 887/567 and prior 886/566. Ledger regression run exposed eight errors plus one assertion failure associated with task-board fixture/layout compatibility; collector test's substring count incorrectly counted `per_page=`. Corrected canonical task-board assertion, escaped-newline fixture handling, and query parsing in pagination test. Commits: `1c4c799`, `4233ca9`, `225ab37`. Readback only; no validation rerun yet.
 - **2026-11-26 14:50 UTC:** Task 20261126-142500: clean-start reset committed; generated reports/history/latest pointers and report snapshots cleared. Indexes empty; Ledger empty with both lint baseline flags false. Diagnostics workflow gains manual entry point. No CI validation or polling.
 - **2026-11-26 07:13 UTC:** Refreshed the Document Type Catalog's latest tracked-tree inventory to 277 Markdown files outside `master/` and `.archive/`, based on branch commit `3e2a64bc91ff66f1e88b4231112aeb68dea48990`. Clarification: no tests were run directly or manually dispatched. Push-triggered CI may have started from repository commits, but its status was not checked.
