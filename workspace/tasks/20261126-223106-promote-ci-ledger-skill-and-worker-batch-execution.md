@@ -59,6 +59,13 @@ Promote CI Ledger finding governance, intake, identity, task generation, lifecyc
 - **References:** `.agent/skills/ci-ledger/SKILL.md`, `.agent/skills/the-worker/SKILL.md`, `.takeout/reports/triage/README.md`, `.agent/skills/README.md`, `.agent/skills/document-standards/references/document-type-catalog.md`.
 - **Next:** Read back all changed paths, reconcile any defects, and verify commits.
 
+### 2026-11-26 22:34 UTC
+
+- **Action:** Created `.agent/skills/ci-ledger/SKILL.md`, added Worker batch orchestration, simplified the triage README, integrated the skill index and catalog, and reconciled the board entry.
+- **Result:** Changes committed. Read-back checks confirmed core sections. A board duplicate was detected and corrected. Final exact-path verification remains.
+- **References:** Commits `36afbf6`, `4ef2dce`, `5f8e356`, `fefb388`, `31ed6bb`, `ddfeb09`, `535aa8e`.
+- **Next:** Verify exact contents, link integrity, and task-board state. Update the task and register.
+
 ## 7. Current State
 
 The new CI Ledger skill and Worker batch-execution procedure are committed. The triage README, skill index, and document catalog were updated. Task-board indexing was reconciled. Read-back verification is in progress.
