@@ -8,11 +8,12 @@ The workspace is the task-management and conversation-navigation area. The Worke
 |---|---|
 | [discussion.md](discussion.md) | Current-step brief, open discussions, and the three latest verified success reports |
 | [task_board.md](task_board.md) | Task index, priorities, states, and current execution |
-| [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Canonical task-record format |
+| [TASK_TEMPLATE.md](TASK_TEMPLATE.md) | Canonical parent task-folder record format |
+| [SUBTASK_TEMPLATE.md](SUBTASK_TEMPLATE.md) | Canonical child subtask format |
 | [DRAFT_TEMPLATE.md](DRAFT_TEMPLATE.md) | Canonical decision-draft format |
 | [ADR_TEMPLATE.md](ADR_TEMPLATE.md) | Canonical decision-record format |
 | [ANALYSIS_TEMPLATE.md](ANALYSIS_TEMPLATE.md) | Canonical repository-analysis format |
-| [tasks/](tasks/) | Active task records |
+| [tasks/](tasks/) | Active task folders; each contains task.md and subtasks/ |
 | [draft/](draft/README.md) | Proposals awaiting user review and decision |
 | [adr/](adr/README.md) | Accepted decisions awaiting implementation and confirmation |
 | [analysis/](analysis/README.md) | Evidence-based repository analysis snapshots |
@@ -49,13 +50,13 @@ Task IDs use UTC YYYYMMDD-HHMMSS. Use only the statuses Proposed, Ready, In Prog
 
 ## CI issue workflow
 
-GitHub Actions publishes diagnostic evidence into the lint and Actions report families. The event-driven Ledger creates grouped Proposed tasks for newly identified actionable findings and links them through task_refs. The Worker retains prioritization, approval, remediation, verification, and closeout.
+GitHub Actions publishes diagnostic evidence into the lint and Actions report families. The event-driven Ledger creates Proposed parent task folders with typed CI remediation subtasks for newly identified actionable findings and links stable parent Task IDs through task_refs. The Worker retains ADR review, prioritization, execution approval, remediation, verification, and parent closeout.
 
 The first complete tooling-valid full audit in each lint scope establishes a baseline without creating tasks. Later runs create tasks only for genuinely new actionable findings. Recurring untracked baseline findings do not flood the backlog. The Ledger retains at most five evidence paths per finding while preserving cumulative occurrence counts.
 
 A lint report can seed a baseline when every required tooling check passes, even when the report records lint failures. The baseline prevents recurring findings from appearing as new work.
 
-A Ledger-generated task cannot close as Done while any linked finding remains non-terminal. After the Worker archives the task as Done and indexes it, the `.archive/task/**` push triggers the normal diagnostics sweep. The Ledger then retires the terminal findings from the active backlog. The archived task and its archived report references preserve the audit history. Do not delete Ledger entries manually or run periodic retirement scans.
+A CI remediation subtask becomes Done when its intended-branch fix commit is verified and its SHA and summary are recorded; hosted validation is separate metadata. A parent task cannot close until all required subtasks are Done. The Ledger retains terminal finding identities and resolution history after task archival so recurrence can reopen the same finding and link new remediation. Do not delete terminal Ledger findings solely because a task was archived.
 
 A clean-start reset is destructive and requires explicit user authorization. It clears generated active report data, prior `.archive/reports/**` snapshots, report indexes, and the active Ledger, then establishes new unseeded lint baselines. It preserves scripts, schemas, templates, workflows, operating guides, task archives, and unrelated tasks. See .takeout/reports/triage/README.md and .archive/README.md for exact reset and closeout rules.
 

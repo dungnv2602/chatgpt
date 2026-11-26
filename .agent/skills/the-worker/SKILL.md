@@ -36,7 +36,7 @@ Use `.takeout/reports/gh_ac_reports/README.md` for workflow evidence and `.takeo
 
 CI failure remediation, including autonomous execution of CI-generated P0 batches, is governed by the [GitHub Actions skill](../github-actions/SKILL.md). The Worker retains task selection, progress records, board and task maintenance, and closeout.
 
-Mark a CI task complete only after you commit the source change, read back the repository files, and inspect the relevant hosted validation result. If hosted validation remains pending, report the change you committed and keep the task open for verification.
+Mark a CI remediation subtask Done after the fix is committed to the intended branch, the commit is verified, changed files are read back, and the SHA plus remediation summary are recorded. Hosted validation is separate metadata; do not keep the subtask open solely because validation is pending. A parent task becomes Done only after every required subtask is Done. Do not inspect hosted results until the user explicitly triggers results review.
 
 ## CI-generated P0 batch execution
 
@@ -83,7 +83,7 @@ The CI Ledger is governed by the task-activated [CI Ledger skill](../ci-ledger/S
 - Do not load project skills automatically at the start of a new conversation.
 - Follow the explicit initialization cues in .agent/SESSION_START.md.
 - Treat workspace/task_board.md as the task index.
-- Treat each task file as the authoritative record for that task.
+- Treat each task folder's task.md as the authoritative parent record; child records under subtasks/ are authoritative for their own work units.
 - Follow the user's repository, branch, workspace, and approval restrictions.
 - Do not let a task record override a newer user instruction.
 
@@ -141,8 +141,9 @@ This boundary applies to every future task and every tool call, not only archivi
 - workspace/README.md defines workspace navigation and operating rules.
 - workspace/discussion.md stores one active pre-step brief, anything awaiting user input, unresolved failures, and the three most recent successful reports in every mode. The Worker owns and maintains this file under `references/conversation-mode.md`.
 - workspace/task_board.md indexes active, ready, blocked, proposed, and historical tasks.
-- workspace/TASK_TEMPLATE.md defines the task record format.
-- workspace/tasks/ contains current task records.
+- workspace/TASK_TEMPLATE.md defines the parent task.md format for task folders.
+- workspace/SUBTASK_TEMPLATE.md defines child subtask records.
+- workspace/tasks/ contains active task folders; legacy flat task records remain only during the ADR-0004 migration.
 - workspace/draft/ contains proposals that need user review.
 - workspace/adr/ contains accepted ADRs awaiting implementation or confirmation.
 - workspace/analysis/ contains evidence-based repository analysis snapshots.
@@ -184,11 +185,11 @@ Every task must record:
 
 Use the ID format YYYYMMDD-HHMMSS in UTC. Add -01, -02, and later suffixes if IDs collide within one second.
 
-Use this filename format:
+Use this folder format:
 
-YYYYMMDD-HHMMSS-short-kebab-title.md
+`workspace/tasks/YYYYMMDD-HHMMSS-short-kebab-title/task.md`
 
-Keep assigned task IDs unchanged.
+Create `subtasks/README.md` in every task folder. Store child records under `subtasks/<NN>-short-kebab-title.md` with IDs `<parent-task-id>-NN`. Keep assigned task and subtask IDs unchanged. Do not create new flat task notes.
 
 ### 3. Apply origin and approval rules
 
@@ -341,7 +342,7 @@ The task-specific `.agent/skills/decision-governance/SKILL.md` owns Draft, ADR, 
 - Keep ADR approval separate from task execution approval.
 - Do not move an implementation task to Ready or In Progress without accepted ADR linkage.
 - Create a Draft when no accepted ADR covers the proposed work.
-- Keep grandfathered tasks unchanged. Do not mass-migrate existing task records.
+- Under accepted ADR-0004, migrate active flat task records to task folders while preserving IDs and content. Do not rewrite historical flat archives.
 - Ledger-created Proposed tasks use `Pending — Worker review required before approval` until the Worker assigns an accepted ADR or starts a Draft.
 - Keep the task board ADR column aligned with each task record.
 - Archive an ADR only after all linked tasks reach Done status and every Confirmation criterion passes.
@@ -374,17 +375,17 @@ Use `.takeout/reports/triage/ledger.json` as the active issue backlog for lint a
 
 ### Event-driven finding intake
 
-The Ledger creates and updates tasks in the same report-ingestion run. Do not add a scheduled triage loop, poll for findings, or run a separate retirement scan.
+The Ledger creates Proposed parent task folders with CI remediation subtasks in the same report-ingestion run. The Worker owns task approval, ADR linkage, selection, and execution. Do not add a scheduled triage loop, poll for findings, or run a separate retirement scan.
 
 1. **First lint baseline:** Each lint scope (`on_changed` and `on_repo`) must establish one complete, tooling-valid full-audit baseline after a clean reset. The ingestion process marks this report as processed. It does not create findings or tasks. A Failed lint conclusion can still provide a valid baseline when the report is complete and all report-tooling checks pass. Lint violations alone must not trigger repeated full-repository audits.
 2. **Recurring lint results:** After the baseline, only new lint comparisons create untracked findings. Recurring comparisons refresh findings already tracked in the Ledger but do not re-import baseline findings that were deliberately excluded from the new reporting period.
 3. **Task eligibility:** Create tasks for every new lint finding with an eligible status, including low and informational findings. Severity controls priority, not lint task eligibility. Create tasks for GitHub Actions findings only when severity is medium, high, or critical. The Ledger excludes conclusion-only, cancellation-only, routine-success, incomplete, skipped, neutral, queued, in-progress, and unavailable outcomes.
-4. **Grouping and task creation:** Group lint findings by source file and rule. Group Actions findings by workflow path, job, step, and category. Reuse one active task per coherent remediation group. The task generator must follow the permanent P0 authorization in the triage guide. Every generated task is Assistant-originated, P0, Approved, and In Progress. Set it as Current Execution and set all other active task markers to No. Add one In Progress board row and record the task ID in each covered finding's `task_refs`.
+4. **Grouping and task creation:** Group lint findings by source file and rule. Group Actions findings by workflow path, job, step, and category. Reuse one active parent task per coherent remediation group. Generate a parent folder containing task.md and a typed CI remediation subtask. Every generated task is Assistant-originated and P0 but remains Proposed with Governing ADR(s) Pending until Worker review. Do not mark it Approved or In Progress, and do not set it as Current Execution. The Worker links an accepted ADR and separately applies execution approval before moving it to Ready or In Progress. Record stable parent Task IDs in each covered finding's `task_refs`.
 5. **Recurring evidence:** Later observations refresh an existing linked finding or task. Do not create duplicates. A later ingestion run also links active lint findings that have no task references. Do not scan historical report files or create tasks for untracked recurring baseline findings.
 6. **Evidence bounds:** Keep at most five report references per finding: the first observation and the four most recent distinct report paths. Preserve cumulative occurrence count, first-seen and last-seen timestamps. Task records retain finding IDs and concise evidence links. Never copy complete logs or occurrence histories.
-7. **Resolution:** Do not set a finding to `resolved` until you record its fix commit, successful relevant hosted validation URL, and UTC timestamp. For `accepted`, record risk acceptance. For `false_positive`, add a closure note. For `duplicate`, provide a different valid finding ID. New evidence may reopen a resolved finding.
-8. **Closeout gate:** Before you archive a Ledger-generated task as Done, check that every finding in its Ledger Findings section has a terminal status. If any finding remains open or in progress, keep the task open. Do not close a grouped task partially.
-9. **Automatic Ledger retirement:** After you commit a Done task archive and add its path to `.github/archive-retention-index.json`, the resulting `.archive/task/**` push triggers the diagnostics sweep. The Ledger reads only indexed task archive paths. It retires a task's findings when all linked tasks reach Done status and every finding in each task reaches a terminal status. The task archive and report archives preserve the audit trail. Do not manually delete Ledger entries.
+7. **Resolution:** Set a remediation finding to `resolved` when the intended-branch fix commit is verified and its SHA, remediation summary, and resolved timestamp are recorded. Successful hosted validation is not required for remediation resolution. Store hosted validation separately as optional metadata (Pending, Passed, or Failed). For `accepted`, record risk acceptance. For `false_positive`, add a closure note. For `duplicate`, provide a different valid finding ID. New evidence may reopen the same finding identity while preserving the prior resolution in `resolution_history`.
+8. **Closeout gate:** A CI remediation subtask becomes Done after its own commit-based acceptance criteria pass and evidence is recorded. Before archiving the parent task as Done, check that every required subtask is Done and every linked finding has a valid terminal/resolution record. Do not close a parent while any required child remains open.
+9. **Finding history retention:** Archiving a parent task does not delete terminal findings from the Ledger. Retain finding identity, resolution history, and prior task references so recurrence can reopen the same finding and link new remediation work. Do not retire or delete terminal finding identities solely because their task was archived.
 
 The capture and sweep publishers use the shared non-cancelling `gh-ac-report-writer` concurrency group. They update report indexes, the Ledger, task files, the task board, and task references. The diagnostics sweep ignores Ledger-only and task-board-only publication to prevent recursive triggers. It must process `.archive/task/**` because task archival triggers retirement of resolved findings. The scheduled archive cleanup writer uses the same group.
 
@@ -408,20 +409,20 @@ Task closeout is a mandatory workflow transaction. The Worker owns it in every c
 
 Use only the canonical task statuses in this skill: Proposed, Ready, In Progress, Blocked, Paused, Done, and Cancelled. Do not use alternate values such as "Completed".
 
-The Worker closes a task only after it archives the record and reconciles the task board.
+The Worker closes a parent task only after every required subtask is Done, the complete task folder is archived and read back, all exact archive files are indexed, and the task board is reconciled.
 
-**Archive gate — do not mark an active record Done prematurely.** Keep the active task record In Progress and Archived: No until the archive copy exists and matches the prepared record. Prepare the final Done/Cancelled and Archived: Yes content for the archive destination. Do not commit those final metadata values to the active path. Create the archive copy first. Only after the archive path exists may you delete the active path and reconcile the board. Move the board row to Historical only after the archive commit exists, and link that exact commit. If any step remains incomplete, leave the task open and report the exact blocker. This prevents a status label from claiming an archival operation that never happened.
+**Archive gate — do not mark an active parent Done prematurely.** Keep the active parent In Progress / Archived: No until the complete folder archive exists and matches the prepared final folder. Prepare final Done/Cancelled and Archived: Yes metadata only in the archive copy. Archive the complete directory, including task.md, subtasks/README.md, and every child record. Read back every file. Register each exact archived file path and timestamp in the retention index. Only after all copies and index entries verify may you delete the active task folder and reconcile the board. Move the board row to Historical only after the archive commit exists and link that commit. If any step fails, leave the task open and report the exact blocker.
 
 When acceptance criteria are met:
 
 1. Check the final result, acceptance criteria, and supporting evidence. For Ledger-generated tasks, require terminal status and valid resolution, accepted-risk, false-positive, or duplicate evidence for every linked finding. A grouped task with any non-terminal finding cannot close as Done.
 2. Before you prepare the archive copy, move any report files that the historical record needs to `.archive/reports/`. Register each exact path and timestamp. Update the task's report links to the archive paths. Then prepare the final archive copy with status Done or Cancelled. Add its UTC archive timestamp in `YYYY-MM-DDTHH:MM:SSZ` format. Include complete verification and a final handoff. Set Archived to Yes only in that archive copy.
-3. Check whether `.archive/task/<same-filename>` already exists. If it does, read it and compare its complete content with the prepared final record. Reuse it only when the content matches. Stop if the content differs. Never overwrite an existing archive record.
-4. If the archive path does not exist, create it once. Preserve the task ID and filename. This is the only content write for that archive path.
-5. Read the exact archive path after the write. Compare its complete content with the prepared final record. Check the archive commit and changed-path metadata. If you reuse an existing copy, recover the original commit that introduced or contains that archive path from the task board or GitHub history. Never substitute a later board-update commit. Stop if the path is missing or the content differs.
-6. Add one entry to `.github/archive-retention-index.json` with the exact archive path and UTC archive timestamp from the verified record. Preserve all existing entries. Check the new entry. Do not enumerate `.archive/task/` or backfill other records.
+3. Check whether `.archive/task/<task-id>/task.md` or any expected child path already exists. Read existing exact paths and compare complete content. Reuse only exact matches; stop on differences. Never overwrite an archive record.
+4. If no archive folder exists, create the complete folder once, preserving the task ID, filenames, and child structure.
+5. Read back every archived file. Compare each with its prepared final content and verify the archive commit and changed-path metadata.
+6. Add one retention-index entry for each exact archived file path, including parent and child records, with its UTC archive timestamp. Preserve existing entries. Do not enumerate `.archive/task/` or backfill unrelated records.
 7. Treat the archive record as immutable after this verification. You may read it later when task recovery, board reconciliation, or verification requires it. Never edit, replace, rename, move, or manually delete an archived record. Only the scheduled retention workflow may delete indexed archived records.
-8. Only after archive read-back and retention-index verification succeed, delete the active record from `workspace/tasks/`. Keep the active record In Progress with Archived: No until this deletion succeeds. If deletion fails, leave the task open and reconcile the existing archive copy without rewriting it.
+8. Only after every archive file and retention-index entry verifies, delete the complete active task folder from `workspace/tasks/<task-id>/`. Keep the active parent In Progress / Archived: No until deletion succeeds. If deletion fails, leave the task open and reconcile the existing archive without rewriting it.
 9. Update `workspace/task_board.md` in the same closeout pass:
    - Delete the task from Current Execution.
    - Delete its active row from every status section.
