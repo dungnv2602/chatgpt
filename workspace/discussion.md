@@ -2,6 +2,8 @@
 
 ## Current Step
 
+- **2026-11-26:** Session startup via `/start`; foundational retrieval initiated. Continuing task 20261126-142500 (static-only pipeline audit; no tests or CI).
+
 - **2026-11-26 15:05 UTC:** Task 20261126-142500 static audit confirmed Ledger writer mismatch with canonical nine-column board and `_No tasks._` placeholders. Writer aligned and test fixture updated in commits 475b1fb, 9fb2299, and 015661b. No tests or CI. Next: static audit remaining report capture/finalization and ingestion handoff.
 
 ## Open Discussions
