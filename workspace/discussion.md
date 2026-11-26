@@ -2,15 +2,15 @@
 
 ## Current Step
 
-- **2026-11-26 14:25 UTC:** Continue repair of CI report ingestion/task-generation and report backlog under the refactored repository layout. The missing Ledger was initialized from schema 1.5.0; hosted ingestion and task handoff remain unverified. Active task: [20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md).
+- **2026-11-26 14:50 UTC:** User explicitly authorized clean-start reset instead of restoring deleted files or continuing remediation against the old backlog. Reset completed in commit `c9f4f6d`; generated active reports and snapshots cleared, indexes/Ledger reinitialized and baselines unseeded. Added `workflow_dispatch` entry point to diagnostics sweep in commit `9c4387f`. No tests or CI were manually run or polled. Active task: [20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md).
 
 ## Open Discussions
 
-- Ledger initialization removed the missing-file blocker without resetting report history. Hosted ingestion/task handoff and report retirement remain open.
+- The report period was clean-start reset under explicit authorization. Diagnostics sweep now has a manual dispatch entry point. Baseline reports and task handoff remain unverified.
 
 ## Reports
 
-- **2026-11-26 14:25 UTC:** Task 20261126-142500 continues. Latest repository lint report 206 and changed report 793 each show 712 findings with 32 failed files. Actions index contains pending/incomplete captures. Ledger initialized using canonical schema; no tests or CI manually run.
+- **2026-11-26 14:50 UTC:** Task 20261126-142500: clean-start reset committed; generated reports/history/latest pointers and report snapshots cleared. Indexes empty; Ledger empty with both lint baseline flags false. Diagnostics workflow gains manual entry point. No CI validation or polling.
 - **2026-11-26 07:13 UTC:** Refreshed the Document Type Catalog's latest tracked-tree inventory to 277 Markdown files outside `master/` and `.archive/`, based on branch commit `3e2a64bc91ff66f1e88b4231112aeb68dea48990`. Clarification: no tests were run directly or manually dispatched. Push-triggered CI may have started from repository commits, but its status was not checked.
 - **2026-11-26 07:12 UTC:** Task [20261126-064951](../.archive/task/20261126-064951-complete-non-image-repository-adaptation.md) completed and archived. The user instructed that `.archive/adr/README.md` remain unchanged, so its two dead links remain an accepted unresolved limitation. The archive was read back, its exact path and timestamp were registered in `.github/archive-retention-index.json`, the active task record was deleted, and the task board was moved to Historical. No tests or workflows were manually dispatched. Automatic push-triggered workflow status was not inspected or polled.
 - **2026-11-26 07:09 UTC:** The archived ADR index's two dead links remain unchanged by user direction. All active README relative links resolve. Reviewed all seven GitHub Actions workflows and relevant operational scripts for repository path references. Read back the four files changed in the final audit. No tests, validators, linter, or workflows were run.
