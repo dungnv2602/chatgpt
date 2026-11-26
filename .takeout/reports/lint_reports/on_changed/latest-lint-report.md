@@ -2,29 +2,29 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#854](https://github.com/dungnv2602/chatgpt/actions/runs/45910457111)
-- **Run ID / attempt:** 45910457111 / 1
+- **Run:** [#855](https://github.com/dungnv2602/chatgpt/actions/runs/45910973837)
+- **Run ID / attempt:** 45910973837 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 870f7248b0ed52c6b453d03bd4953bc947026821
+- **Branch / commit:** gpt / 87e005f15db8877567009c7adb7d3121f0414416
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** b5fe04bb56a6d499ebe0f2757160fe520c9210f9
-- **Linter source SHA:** 870f7248b0ed52c6b453d03bd4953bc947026821
-- **Generated (UTC):** 2026-11-26T23:22:19.225390+00:00
+- **Baseline SHA:** 870f7248b0ed52c6b453d03bd4953bc947026821
+- **Linter source SHA:** 87e005f15db8877567009c7adb7d3121f0414416
+- **Generated (UTC):** 2026-11-26T23:27:15.464004+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 1 |
-| Files that failed | 1 |
-| Files with findings | 1 |
-| Total findings | 79 |
-| Hard findings | 48 |
-| Advisory findings | 31 |
-| New findings | 0 |
-| Recurring findings | 79 |
-| Resolved findings | 1 |
+| Files evaluated | 4 |
+| Files that failed | 4 |
+| Files with findings | 4 |
+| Total findings | 143 |
+| Hard findings | 94 |
+| Advisory findings | 49 |
+| New findings | 67 |
+| Recurring findings | 76 |
+| Resolved findings | 0 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -39,7 +39,10 @@
 
 This list is the exact set of Markdown files passed to the linter. It does not infer coverage from a Git change summary.
 
+- workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md
 - workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md
+- workspace/adr/README.md
+- workspace/draft/README.md
 
 ## 4. Per-file result matrix
 
@@ -47,7 +50,10 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md | FAIL | 79 | 48 | 0 | 4463 | 1.8 | 1 |
+| workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md | FAIL | 61 | 44 | 0 | 2850 | 2.1 | 1 |
+| workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md | FAIL | 79 | 47 | 0 | 4470 | 1.8 | 1 |
+| workspace/adr/README.md | FAIL | 2 | 2 | 0 | 573 | 0.3 | 1 |
+| workspace/draft/README.md | FAIL | 1 | 1 | 0 | 694 | 0.1 | 1 |
 
 ## 5. Findings by rule
 
@@ -55,11 +61,11 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| semicolon | 32 |
-| passive-voice | 26 |
-| long-sentence | 12 |
+| semicolon | 67 |
+| passive-voice | 44 |
+| long-sentence | 20 |
+| synonym-rotation | 7 |
 | present-perfect | 5 |
-| synonym-rotation | 4 |
 
 ## 6. Workflow and validation checks
 
@@ -91,7 +97,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.289s
+Ran 4 tests in 0.259s
 
 OK
 ~~~
@@ -124,7 +130,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 1 changed Markdown sources (344 available as link targets) and 0 local Markdown links.
+Scanned 4 changed Markdown sources (346 available as link targets) and 9 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -134,7 +140,274 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-None.
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:32:125 · **new** · fingerprint: 23ba89c188bd721485225ac0
+  - **Level:** advisory-free
+  - **Message:** Sentence has 30 words (cap 25). Split it.
+  - **Matched text:** 30 words
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:32:205 · **new** · fingerprint: 71fd369fd4ce87f3145d3f61
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are contained
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:36:57 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:41:32 · **new** · fingerprint: 0b78e160768da5f8fc81245e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are surfaced
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:45:184 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:49:263 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:71:40 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:71:92 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:73:105 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:75:181 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:79:163 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:82:120 · **new** · fingerprint: f344f235da524619c5f3958e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are represented
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:83:107 · **new** · fingerprint: b6f783768f9aa08d96bf979c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is blocked
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:83:247 · **new** · fingerprint: 9997ef7899ffcdb243897741
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are reviewed
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:85:3 · **new** · fingerprint: 8d237e4d80507b6e1ceceb31
+  - **Level:** advisory-free
+  - **Message:** Sentence has 28 words (cap 25). Split it.
+  - **Matched text:** 28 words
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:89:177 · **new** · fingerprint: b29e4df2ee98e11a4663446d
+  - **Level:** advisory-free
+  - **Message:** Sentence has 34 words (cap 25). Split it.
+  - **Matched text:** 34 words
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:89:364 · **new** · fingerprint: 9943dcb3a220dcbe0a08ff17
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are recorded
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:89:533 · **new** · fingerprint: 3d99cf816793019bd73c4f70
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Done
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:92:131 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:94:345 · **new** · fingerprint: 6ecaad7e08b08c8dc23c4ac5
+  - **Level:** advisory-free
+  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
+  - **Matched text:** deletes
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:95:213 · **new** · fingerprint: d88c984bfabc22fedfc1df95
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+- **present-perfect** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:96:86 · **new** · fingerprint: 6a157062d0e778513b660642
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has validated
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:110:162 · **new** · fingerprint: 8d237e4d80507b6e1ceceb31
+  - **Level:** advisory-free
+  - **Message:** Sentence has 28 words (cap 25). Split it.
+  - **Matched text:** 28 words
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:120:206 · **new** · fingerprint: 579e397c39954135265f1d98
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is recorded
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:121:81 · **new** · fingerprint: 3d99cf816793019bd73c4f70
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Done
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:129:95 · **new** · fingerprint: 3d99cf816793019bd73c4f70
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Done
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:130:4 · **new** · fingerprint: 911fad1e156f4210f836f36c
+  - **Level:** advisory-free
+  - **Message:** Sentence has 36 words (cap 25). Split it.
+  - **Matched text:** 36 words
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:130:69 · **new** · fingerprint: 14114c25a67a248bad384f1b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is committed
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:130:214 · **new** · fingerprint: 9943dcb3a220dcbe0a08ff17
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are recorded
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:133:143 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:150:57 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:150:71 · **new** · fingerprint: b6f783768f9aa08d96bf979c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is blocked
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:152:75 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:155:85 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:161:100 · **new** · fingerprint: e9365b9cbb59d135219ec64e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is claimed
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:176:81 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:181:85 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:3 · **new** · fingerprint: 8529e180856bf3676ae3fab0
+  - **Level:** advisory-free
+  - **Message:** Sentence has 44 words (cap 25). Split it.
+  - **Matched text:** 44 words
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:43 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:71 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:89 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:148 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:232 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:269 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:292 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:328 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:346 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:187:3 · **new** · fingerprint: 13f3933d006440387035088b
+  - **Level:** advisory-free
+  - **Message:** Sentence has 47 words (cap 25). Split it.
+  - **Matched text:** 47 words
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:187:63 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:187:199 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:187:279 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:187:353 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:187:385 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:190:3 · **new** · fingerprint: 3d2b37a88e8f61e65de9b8fa
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:190:125 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:190:158 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:194:98 · **new** · fingerprint: 1667b4bb6e8771c9446dd6e3
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is deleted
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:194:135 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:195:133 · **new** · fingerprint: 94d4b6dd593fe428491082fb
+  - **Level:** advisory-free
+  - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
+  - **Matched text:** repairs
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:196:71 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:196:140 · **new** · fingerprint: dbe769c0dba8d9167f6f8147
+  - **Level:** advisory-free
+  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** altering
+- **long-sentence** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:266:3 · **new** · fingerprint: 5f28eccd4c78ef590e0860cb
+  - **Level:** advisory-free
+  - **Message:** Sentence has 39 words (cap 25). Split it.
+  - **Matched text:** 39 words
+- **passive-voice** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:294:150 · **new** · fingerprint: 5d319d6cb73d5677e0792bac
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is accepted
+- **passive-voice** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:294:189 · **new** · fingerprint: 9353e734a04d139bb1c54709
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is created
+- **semicolon** · workspace/adr/README.md:73:154 · **new** · fingerprint: 0927b4ce823c0e0c8d5570fa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/README.md:74:170 · **new** · fingerprint: 0927b4ce823c0e0c8d5570fa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/README.md:12:183 · **new** · fingerprint: 388932780643d2141e1a4492
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 ### Recurring findings
 
@@ -430,11 +703,7 @@ None.
   - **Level:** advisory-free
   - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
   - **Matched text:** repairs
-- **semicolon** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:266:68 · **recurring** · fingerprint: d3a49d96b2c17affd57ea894
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:274:265 · **recurring** · fingerprint: d3a49d96b2c17affd57ea894
+- **semicolon** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:274:267 · **recurring** · fingerprint: d3a49d96b2c17affd57ea894
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -446,34 +715,341 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is required
-- **present-perfect** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:294:56 · **recurring** · fingerprint: d6b185b2e5bb512468c2157a
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has approved
-- **long-sentence** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:294:196 · **recurring** · fingerprint: 555b7d1b34070e0fcefba6fe
-  - **Level:** advisory-free
-  - **Message:** Sentence has 28 words (cap 25). Split it.
-  - **Matched text:** 28 words
 
 ### Resolved findings
 
-- **long-sentence** · workspace/task_board.md:21:1 · **resolved** · fingerprint: 8647e8d8e7c0939979ecdb3d
-  - **Level:** advisory-free
-  - **Message:** Sentence has 98 words (cap 25). Split it.
-  - **Matched text:** 98 words
+None.
 
 ## 8. Complete per-file diagnostics
 
 This section includes every normalized finding with its rule, level, source location, message, matched text, fingerprint, and baseline classification. It also records file metrics and execution errors.
+
+### workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md
+
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 61
+- **Hard findings:** 44
+- **Baseline:** 0
+- **Words:** 2850
+- **Findings per 100 words:** 2.1
+
+#### Complete diagnostics
+
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:32:125 · **new** · fingerprint: 23ba89c188bd721485225ac0
+  - **Level:** advisory-free
+  - **Message:** Sentence has 30 words (cap 25). Split it.
+  - **Matched text:** 30 words
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:32:205 · **new** · fingerprint: 71fd369fd4ce87f3145d3f61
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are contained
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:36:57 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:41:32 · **new** · fingerprint: 0b78e160768da5f8fc81245e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are surfaced
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:45:184 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:49:263 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:71:40 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:71:92 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:73:105 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:75:181 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:79:163 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:82:120 · **new** · fingerprint: f344f235da524619c5f3958e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are represented
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:83:107 · **new** · fingerprint: b6f783768f9aa08d96bf979c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is blocked
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:83:247 · **new** · fingerprint: 9997ef7899ffcdb243897741
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are reviewed
+
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:85:3 · **new** · fingerprint: 8d237e4d80507b6e1ceceb31
+  - **Level:** advisory-free
+  - **Message:** Sentence has 28 words (cap 25). Split it.
+  - **Matched text:** 28 words
+
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:89:177 · **new** · fingerprint: b29e4df2ee98e11a4663446d
+  - **Level:** advisory-free
+  - **Message:** Sentence has 34 words (cap 25). Split it.
+  - **Matched text:** 34 words
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:89:364 · **new** · fingerprint: 9943dcb3a220dcbe0a08ff17
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are recorded
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:89:533 · **new** · fingerprint: 3d99cf816793019bd73c4f70
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Done
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:92:131 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:94:345 · **new** · fingerprint: 6ecaad7e08b08c8dc23c4ac5
+  - **Level:** advisory-free
+  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
+  - **Matched text:** deletes
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:95:213 · **new** · fingerprint: d88c984bfabc22fedfc1df95
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+
+- **present-perfect** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:96:86 · **new** · fingerprint: 6a157062d0e778513b660642
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has validated
+
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:110:162 · **new** · fingerprint: 8d237e4d80507b6e1ceceb31
+  - **Level:** advisory-free
+  - **Message:** Sentence has 28 words (cap 25). Split it.
+  - **Matched text:** 28 words
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:120:206 · **new** · fingerprint: 579e397c39954135265f1d98
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is recorded
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:121:81 · **new** · fingerprint: 3d99cf816793019bd73c4f70
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Done
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:129:95 · **new** · fingerprint: 3d99cf816793019bd73c4f70
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is Done
+
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:130:4 · **new** · fingerprint: 911fad1e156f4210f836f36c
+  - **Level:** advisory-free
+  - **Message:** Sentence has 36 words (cap 25). Split it.
+  - **Matched text:** 36 words
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:130:69 · **new** · fingerprint: 14114c25a67a248bad384f1b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is committed
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:130:214 · **new** · fingerprint: 9943dcb3a220dcbe0a08ff17
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are recorded
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:133:143 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:150:57 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:150:71 · **new** · fingerprint: b6f783768f9aa08d96bf979c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is blocked
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:152:75 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:155:85 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:161:100 · **new** · fingerprint: e9365b9cbb59d135219ec64e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is claimed
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:176:81 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:181:85 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:3 · **new** · fingerprint: 8529e180856bf3676ae3fab0
+  - **Level:** advisory-free
+  - **Message:** Sentence has 44 words (cap 25). Split it.
+  - **Matched text:** 44 words
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:43 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:71 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:89 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:148 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:232 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:269 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:292 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:328 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:186:346 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:187:3 · **new** · fingerprint: 13f3933d006440387035088b
+  - **Level:** advisory-free
+  - **Message:** Sentence has 47 words (cap 25). Split it.
+  - **Matched text:** 47 words
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:187:63 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:187:199 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:187:279 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:187:353 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:187:385 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **long-sentence** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:190:3 · **new** · fingerprint: 3d2b37a88e8f61e65de9b8fa
+  - **Level:** advisory-free
+  - **Message:** Sentence has 27 words (cap 25). Split it.
+  - **Matched text:** 27 words
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:190:125 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:190:158 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:194:98 · **new** · fingerprint: 1667b4bb6e8771c9446dd6e3
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is deleted
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:194:135 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:195:133 · **new** · fingerprint: 94d4b6dd593fe428491082fb
+  - **Level:** advisory-free
+  - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
+  - **Matched text:** repairs
+
+- **semicolon** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:196:71 · **new** · fingerprint: 235b8a3528fa8a066c7b86a4
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **synonym-rotation** · workspace/adr/0004-task-folders-subtasks-and-reliable-ci-ledger-lifecycle.md:196:140 · **new** · fingerprint: dbe769c0dba8d9167f6f8147
+  - **Level:** advisory-free
+  - **Message:** 'alter' and 'change' name the same action. Pick one and use it every time.
+  - **Matched text:** altering
+
 
 ### workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md
 
 - **Result:** FAIL
 - **Exit code:** 1
 - **Findings:** 79
-- **Hard findings:** 48
+- **Hard findings:** 47
 - **Baseline:** 0
-- **Words:** 4463
+- **Words:** 4470
 - **Findings per 100 words:** 1.8
 
 #### Complete diagnostics
@@ -843,12 +1419,12 @@ This section includes every normalized finding with its rule, level, source loca
   - **Message:** 'repair' and 'fix' name the same action. Pick one and use it every time.
   - **Matched text:** repairs
 
-- **semicolon** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:266:68 · **recurring** · fingerprint: d3a49d96b2c17affd57ea894
+- **long-sentence** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:266:3 · **new** · fingerprint: 5f28eccd4c78ef590e0860cb
   - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+  - **Message:** Sentence has 39 words (cap 25). Split it.
+  - **Matched text:** 39 words
 
-- **semicolon** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:274:265 · **recurring** · fingerprint: d3a49d96b2c17affd57ea894
+- **semicolon** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:274:267 · **recurring** · fingerprint: d3a49d96b2c17affd57ea894
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -863,15 +1439,56 @@ This section includes every normalized finding with its rule, level, source loca
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is required
 
-- **present-perfect** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:294:56 · **recurring** · fingerprint: d6b185b2e5bb512468c2157a
+- **passive-voice** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:294:150 · **new** · fingerprint: 5d319d6cb73d5677e0792bac
   - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has approved
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is accepted
 
-- **long-sentence** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:294:196 · **recurring** · fingerprint: 555b7d1b34070e0fcefba6fe
+- **passive-voice** · workspace/draft/DRAFT-0005-task-folders-subtasks-and-ci-ledger-lifecycle.md:294:189 · **new** · fingerprint: 9353e734a04d139bb1c54709
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is created
+
+
+### workspace/adr/README.md
+
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 2
+- **Hard findings:** 2
+- **Baseline:** 0
+- **Words:** 573
+- **Findings per 100 words:** 0.3
+
+#### Complete diagnostics
+
+- **semicolon** · workspace/adr/README.md:73:154 · **new** · fingerprint: 0927b4ce823c0e0c8d5570fa
   - **Level:** advisory-free
-  - **Message:** Sentence has 28 words (cap 25). Split it.
-  - **Matched text:** 28 words
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/README.md:74:170 · **new** · fingerprint: 0927b4ce823c0e0c8d5570fa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+
+### workspace/draft/README.md
+
+- **Result:** FAIL
+- **Exit code:** 1
+- **Findings:** 1
+- **Hard findings:** 1
+- **Baseline:** 0
+- **Words:** 694
+- **Findings per 100 words:** 0.1
+
+#### Complete diagnostics
+
+- **semicolon** · workspace/draft/README.md:12:183 · **new** · fingerprint: 388932780643d2141e1a4492
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 ## 9. Structured evidence and integrity
 
