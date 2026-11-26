@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 15:38 UTC:** Resolve the repository's active P0 tasks only. Follow the CI-generated task queue and its evidence; do not create unrelated assessments or draft work. First identify the active P0 task records and their required remediation, then implement, validate, archive, and reconcile each task as its acceptance criteria require.
+- **2026-11-26 15:40 UTC:** Inspect the active task board, workspace operating rules, report-family index, CI diagnostics guide, and triage Ledger. Identify only active P0 tasks, their approval state, linked findings, and exact remediation scope. Do not inspect or modify Drafts unless a P0 task directly requires it.
 
 ## Open Discussions
 
