@@ -72,13 +72,21 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - **References:** `.takeout/reports/gh_ac_reports/scripts/report.py`; `.takeout/reports/gh_ac_reports/scripts/test_report.py`.
 - **Next:** Continue static audit of ingestion/publication atomicity and trigger path; no tests, scripts, dispatch, or polling.
 
+
+### 2026-11-26 — reset watermark correction
+
+- **Action:** Read back the post-reset Actions index, Ledger, and both lint indexes. The Actions index contained two post-reset pre-finalizer captures, pending IDs, and a null watermark. Ledger findings were empty, both lint baselines were unseeded, and lint indexes were empty. The null watermark caused the collector to fall back to its older fixed bootstrap date, which could re-enumerate runs from before the reset.
+- **Result:** Set the Actions index watermark and the collector fallback constant to the clean-start commit time `2026-11-26T08:11:49Z` (commit `874c45ef`). Preserved the new post-reset capture records and pending IDs. Commits: `d412a72fbb1089e4677b67529de47eed7f573b82` and `ee6a21ad7582f1fc11cfec3e3729ab71ff67ec1e`. Static readback pending.
+- **References:** `.takeout/reports/gh_ac_reports/index.json`; `.takeout/reports/gh_ac_reports/scripts/report.py`; reset commit `874c45ef`.
+- **Next:** Read back both watermark changes and continue trigger/publication audit; no tests, scripts, dispatch, or polling.
+
 ## 7. Current State
 
 Explicit clean-start reset executed in commit `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`: generated active Actions and lint history, indexes/latest pointers, and report snapshots under `.archive/reports/` cleared; Actions index and lint indexes reinitialized; Ledger findings and processed state empty and lint scopes unseeded. Report scripts, schemas, templates, guides, workflow definitions, unrelated active tasks, and task archives preserved. This reset does not rewrite Git history or GitHub run records. Hosted baseline runs and task-handoff operation remain unverified.
 
 ## 8. Remaining Work
 
-- Continue static workflow/report ingestion audit and readback after task-board and pagination repairs.
+- Continue static workflow/report ingestion audit and readback after task-board, pagination, and reset-watermark repairs.
 - Confirm clean reset tree and empty active report indexes/Ledger.
 - Leave first complete tooling-valid lint audits to seed the fresh period; do not poll CI or claim hosted validation.
 
