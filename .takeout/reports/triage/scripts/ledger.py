@@ -378,9 +378,9 @@ def actions_observations(report, report_path, root):
         if step_name.casefold() in IGNORED_PROPAGATION_STEPS:
             continue
         signature = normalize_signature(diagnostic_signature(report, report_path, root, issue))
-        if category.startswith("workflow_") and not job_name and not step_name:
-            continue
-        if not job_name and not step_name and (not signature or issue.get("confidence") == "low"):
+        # Workflow-level startup/timeout failures may have no job or step.
+        # Keep them as findings when the classifier supplies a diagnostic signature.
+        if not job_name and not step_name and not signature:
             continue
         identity_data = [str(workflow_id), workflow_path, job_name, step_name, category, signature]
         identity_json = json.dumps(identity_data, ensure_ascii=False, separators=(",", ":"))
@@ -774,9 +774,10 @@ def create_worker_tasks(root, ledger, timestamp, candidate_ids, created_ids, reo
         unlinked_lint = finding.get("source_family") == "lint" and not refs
         if finding_id not in candidate_ids and not unlinked_lint:
             continue
-        # Every active lint finding is task-eligible, regardless of severity.
-        # Actions findings retain the explicit confidence/severity eligibility gate.
-        if finding.get("source_family") != "lint" and finding.get("severity") not in TASK_ELIGIBLE_SEVERITIES:
+        # Every independently classified Actions error and every eligible lint
+        # finding must have a task, regardless of confidence-derived severity.
+        # Severity remains useful for triage but never suppresses error ownership.
+        if finding.get("source_family") not in ("lint", "github_actions"):
             continue
         if finding.get("status") not in TASK_ELIGIBLE_FINDING_STATUSES:
             continue
