@@ -275,19 +275,20 @@ class CapturePolicyTests(unittest.TestCase):
 
 
 class HistoricalRetentionTests(unittest.TestCase):
-    def test_prune_removes_pre_finalizer_success_and_cancellation_only_history(self):
+    def test_prune_migrates_retained_history_and_removes_only_derived_views(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             cases = [
-                ("100", "pre_finalizer", "in_progress", "failure", True, False),
-                ("101", "post_run", "completed", "success", False, False),
-                ("102", "post_run", "completed", "cancelled", False, False),
-                ("103", "post_run", "completed", "failure", False, True),
-                ("104", "post_run", "completed", "cancelled", False, True),
+                ("100", "pre_finalizer", "in_progress", "failure", False),
+                ("101", "post_run", "completed", "success", False),
+                ("102", "post_run", "completed", "cancelled", False),
+                ("103", "post_run", "completed", "failure", True),
+                ("104", "post_run", "completed", "cancelled", True),
             ]
-            for position, (run_id, stage, status, conclusion, _, has_issue) in enumerate(cases):
+            canonical_before = {}
+            for position, (run_id, stage, status, conclusion, has_issue) in enumerate(cases):
                 folder = root / "history" / "55" / (run_id + "-attempt-1-" + stage)
-                folder.mkdir(parents=True)
+                (folder / "logs").mkdir(parents=True)
                 report = {
                     "schema_version": "1.0.0",
                     "source_run": {
@@ -310,26 +311,61 @@ class HistoricalRetentionTests(unittest.TestCase):
                     },
                     "history_path": "history/55/" + folder.name,
                 }
-                (folder / "report.json").write_text(json.dumps(report), encoding="utf-8")
+                report_bytes = (json.dumps(report, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+                log_bytes = ("immutable log " + run_id + "\n").encode("utf-8")
+                (folder / "report.json").write_bytes(report_bytes)
                 (folder / "report.md").write_text("# " + run_id, encoding="utf-8")
+                (folder / "logs" / "job-1.log").write_bytes(log_bytes)
+                canonical_before[run_id] = (report_bytes, log_bytes)
             REPORT.save_json(root / "index.json", {
                 "schema_version": "1.0.0", "pending_run_ids": ["100"], "runs": [],
                 "latest_report": None, "exhausted_run_ids": [],
             })
+            (root / "latest-gh-ac-report.md").write_text("derived", encoding="utf-8")
+            (root / "latest-gh-ac-report.json").write_text("derived", encoding="utf-8")
+            REPORT.save_json(root / "by_workflow" / "55" / "index.json", {"runs": []})
 
             result = REPORT.prune_invalid_history(root)
             index = REPORT.load_index(root)
-            self.assertEqual(result, {"removed": 3, "retained": 2})
+            self.assertEqual(result, {"removed": 3, "retained": 2, "migrated_markdown": 2})
             self.assertEqual({item["run_id"] for item in index["runs"]}, {"103", "104"})
             self.assertEqual(index["pending_run_ids"], ["100"])
             self.assertEqual(index["latest_report"]["run_id"], "104")
             self.assertFalse((root / "history/55/100-attempt-1-pre_finalizer").exists())
             self.assertFalse((root / "history/55/101-attempt-1-post_run").exists())
             self.assertFalse((root / "history/55/102-attempt-1-post_run").exists())
-            workflow_index = json.loads((root / "by_workflow/55/index.json").read_text(encoding="utf-8"))
-            self.assertEqual({item["run_id"] for item in workflow_index["runs"]}, {"103", "104"})
-            latest = json.loads((root / "latest-gh-ac-report.json").read_text(encoding="utf-8"))
-            self.assertEqual(latest["source_run"]["id"], "104")
+            self.assertFalse((root / "latest-gh-ac-report.md").exists())
+            self.assertFalse((root / "latest-gh-ac-report.json").exists())
+            self.assertFalse((root / "by_workflow").exists())
+            for run_id in ("103", "104"):
+                folder = root / "history" / "55" / (run_id + "-attempt-1-post_run")
+                self.assertEqual((folder / "report.json").read_bytes(), canonical_before[run_id][0])
+                self.assertEqual((folder / "logs" / "job-1.log").read_bytes(), canonical_before[run_id][1])
+                self.assertFalse((folder / "report.md").exists())
+                manifest = json.loads((folder / "integrity.json").read_text(encoding="utf-8"))
+                self.assertEqual(set(manifest["files"]), {"report.json", "logs/job-1.log"})
+                for relative, digest in manifest["files"].items():
+                    self.assertEqual(hashlib.sha256((folder / relative).read_bytes()).hexdigest(), digest)
+
+
+class OnDemandRenderingTests(unittest.TestCase):
+    def test_render_report_reads_canonical_json_without_creating_markdown(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            folder = root / "history" / "55" / "100-attempt-1-post_run"
+            folder.mkdir(parents=True)
+            report = {"history_path": "history/55/100-attempt-1-post_run"}
+            (folder / "report.json").write_text(json.dumps(report), encoding="utf-8")
+            with patch.object(REPORT, "render_markdown", return_value="# On demand") as renderer:
+                rendered = REPORT.render_report(root, report["history_path"])
+            self.assertEqual(rendered, "# On demand")
+            renderer.assert_called_once_with(report)
+            self.assertFalse((folder / "report.md").exists())
+
+    def test_render_report_rejects_path_traversal(self):
+        with tempfile.TemporaryDirectory() as temp:
+            with self.assertRaises(ValueError):
+                REPORT.render_report(Path(temp), "../outside")
 
 
 class RetryPolicyTests(unittest.TestCase):
