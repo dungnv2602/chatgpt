@@ -103,7 +103,7 @@ Use this order:
 4. Read every scene record indexed by those arcs.
 5. Include the latest scene and every incomplete or active scene.
 6. Read relevant illustration notes and image-prompt records when they affect continuity.
-7. For visual work involving Maya, inspect the exact reference images and project records that exist under the relevant `area/novel/` project and `.takeout/images/original/`. The former global `images/reference-index.md` is absent and must not be recreated.
+7. For visual work involving Maya, inspect the exact reference images and project records that exist under the relevant `area/novel/` project and `.takeout/images/original/`. The global image reference index is absent and must not be recreated.
 
 Follow links only within the approved repository workspace.
 
