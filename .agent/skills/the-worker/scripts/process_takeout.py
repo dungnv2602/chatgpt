@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Process one images/takeout hand-off as a verified, rollback-capable batch."""
+"""Process one .takeout/images hand-off as a verified, rollback-capable batch."""
 from __future__ import annotations
 import argparse, csv, hashlib, io, os, re, subprocess, sys, unicodedata
 from datetime import datetime, timezone
@@ -11,7 +11,7 @@ import yaml
 SUPPORTED = {".png", ".jpg", ".jpeg"}
 KNOWN_IMAGE = SUPPORTED | {".apng", ".gif", ".webp", ".bmp", ".tif", ".tiff", ".heic", ".heif", ".avif"}
 HANDOFF = "HANDOFF.yml"
-INTAKE_METADATA_FILES = {HANDOFF, "README.md"}
+INTAKE_METADATA_FILES = {HANDOFF, "README-1.md", "README-2.md", ".gitkeep"}
 EMPTY_HANDOFF = "version: 1\nstatus: empty\nitems: []\n"
 FIELDS = [
     "source_filename", "source_path", "title", "asset_id", "source_asset_id", "attempt", "destination_dir",
@@ -63,12 +63,14 @@ def destination_dir(value: Any, root: Path) -> Path:
     parts = p.parts
     if p.is_absolute() or not parts or any(x in {".", ".."} for x in parts):
         raise ProcessingError(f"Unsafe destination_dir: {value!r}")
-    if parts[0] not in {"images", "area"}:
-        raise ProcessingError("Destinations must be inside images/, area/novel/, or area/drawing/.")
-    if parts[0] == "area" and (len(parts) < 2 or parts[1] not in {"novel", "drawing"}):
-        raise ProcessingError("Project destinations must be inside area/novel/ or area/drawing/.")
-    if parts[0] == "images" and len(parts) > 1 and parts[1] in {"takeout", "webp", "scripts"}:
-        raise ProcessingError(f"Reserved image destination: {value!r}")
+    if parts[0] == ".takeout":
+        if parts != (".takeout", "images"):
+            raise ProcessingError("The only shared-image destination is .takeout/images/.")
+    elif parts[0] == "area":
+        if len(parts) < 2 or parts[1] not in {"novel", "drawing"}:
+            raise ProcessingError("Project destinations must be inside area/novel/ or area/drawing/.")
+    else:
+        raise ProcessingError("Destinations must be inside .takeout/images/, area/novel/, or area/drawing/.")
     if parts[:2] == ("area", "drawing"):
         if len(parts) != 4 or parts[3] != "images" or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", parts[2]):
             raise ProcessingError("Drawing output destinations must be area/drawing/YYYY-MM-DD/images.")
@@ -154,7 +156,7 @@ def next_unclassified_staging_folder(inbox: Path, root: Path) -> Path:
     base = inbox / "webp" / "unclassified"
     reject_symlink_components(base, root)
     if base.is_symlink() or (base.exists() and not base.is_dir()):
-        raise ProcessingError("images/takeout/webp/unclassified must be a normal directory.")
+        raise ProcessingError(".takeout/images/webp/unclassified must be a normal directory.")
     base.mkdir(parents=True, exist_ok=True)
     for number in range(1, 1000):
         candidate = base / f"attempt-{number:03d}"
@@ -168,7 +170,7 @@ def next_unclassified_staging_folder(inbox: Path, root: Path) -> Path:
 
 def attempt_folder(history: Path, batch: str, staging_root: Path | None = None) -> Path:
     if history.is_symlink() or (history.exists() and not history.is_dir()):
-        raise ProcessingError("images/takeout/history must be a normal directory.")
+        raise ProcessingError(".takeout/images/history must be a normal directory.")
     history.mkdir(parents=True, exist_ok=True)
     batch_root = history / batch
     if batch_root.is_symlink() or (batch_root.exists() and not batch_root.is_dir()):
@@ -178,7 +180,7 @@ def attempt_folder(history: Path, batch: str, staging_root: Path | None = None) 
     staging_batch_root = None
     if staging_root is not None:
         if staging_root.is_symlink() or (staging_root.exists() and not staging_root.is_dir()):
-            raise ProcessingError("images/takeout/webp must be a normal directory.")
+            raise ProcessingError(".takeout/images/webp must be a normal directory.")
         staging_root.mkdir(parents=True, exist_ok=True)
         staging_batch_root = staging_root / batch
         if staging_batch_root.is_symlink() or (staging_batch_root.exists() and not staging_batch_root.is_dir()):
@@ -226,10 +228,10 @@ def deferred_report_rows(
         source = item["source"]
         converted = conversions.get(source, {})
         rows.append({
-            "source_filename": source, "source_path": f"images/takeout/{source}",
+            "source_filename": source, "source_path": f".takeout/images/{source}",
             "title": item.get("title", ""), "asset_id": item.get("asset_id", ""),
             "source_asset_id": item.get("source_asset_id", ""), "attempt": item.get("attempt", ""),
-            "destination_dir": "images/unclassified",
+            "destination_dir": ".takeout/images/unclassified",
             "conversation_record": item.get("conversation_record", ""), "conversation_coverage": "",
             "image_id": "", "master_path": "", "webp_path": converted.get("webp_path", ""),
             "manifest_path": "", "staging_webp_path": converted.get("staging_webp_path", ""),
@@ -249,7 +251,7 @@ def deferred_report_rows(
             "status": converted.get("status", "DEFERRED_UNCLASSIFIED"),
             "error": converted.get(
                 "error",
-                "Original remains in images/takeout; no provenance-based relocation was attempted.",
+                "Original remains in .takeout/images; no provenance-based relocation was attempted.",
             ),
         })
     return rows
@@ -261,9 +263,9 @@ def failure_rows(items: list[Any], error: str, version: str) -> list[dict[str, A
         if not isinstance(item, dict):
             continue
         source = item.get("source", "")
-        deferred = item.get("destination_dir") == "images/unclassified"
+        deferred = item.get("destination_dir") == ".takeout/images/unclassified"
         rows.append({
-            "source_filename": source, "source_path": f"images/takeout/{source}" if source else "",
+            "source_filename": source, "source_path": f".takeout/images/{source}" if source else "",
             "title": item.get("title", ""), "asset_id": item.get("asset_id", ""),
             "source_asset_id": item.get("source_asset_id", ""), "attempt": item.get("attempt", ""),
             "destination_dir": item.get("destination_dir", ""),
@@ -281,7 +283,7 @@ def failure_rows(items: list[Any], error: str, version: str) -> list[dict[str, A
             "cwebp_version": version,
             "status": "DEFERRED_UNCLASSIFIED" if deferred else "FAILED",
             "error": (
-                "Preserved in images/takeout; no provenance-based relocation attempted."
+                "Preserved in .takeout/images; no provenance-based relocation attempted."
                 if deferred else error
             ),
         })
@@ -306,8 +308,8 @@ def validate_conversation_record(value: Any, root: Path, source_name: str,
         or not relative.parts
         or any(part in {"", ".", ".."} for part in relative.parts)
         or relative.suffix.lower() != ".md"
-        or relative.parts[0] not in {"area", "images"}
-        or (relative.parts[0] == "area" and (len(relative.parts) < 2 or relative.parts[1] not in {"drawing", "novel"}))
+        or relative.parts[0] != "area"
+        or (len(relative.parts) < 2 or relative.parts[1] not in {"drawing", "novel"})
     ):
         raise ProcessingError(f"{source_name}: unsafe conversation_record path: {value!r}.")
     record_path = root.joinpath(*relative.parts)
@@ -1168,10 +1170,10 @@ def main() -> int:
     parser.add_argument("--run-id", default="local")
     args = parser.parse_args()
     root = Path(args.repo_root).resolve()
-    inbox = root / "images" / "takeout"
+    inbox = root / ".takeout" / "images"
     manifest = inbox / HANDOFF
     if inbox.is_symlink():
-        print("images/takeout/ must not be a symlink.", file=sys.stderr)
+        print(".takeout/images/ must not be a symlink.", file=sys.stderr)
         return 1
     if not manifest.exists():
         print("No HANDOFF.yml; no-op. Uploaded files remain untouched.")
@@ -1239,15 +1241,15 @@ def main() -> int:
         if not isinstance(raw_items, list) or not raw_items:
             raise ProcessingError("A ready hand-off must contain at least one item.")
         if not inbox.is_dir():
-            raise ProcessingError("images/takeout/ does not exist.")
+            raise ProcessingError(".takeout/images/ does not exist.")
         version = subprocess.run(["cwebp", "-version"], capture_output=True, text=True, check=True)
         encoder_version = (version.stdout or version.stderr).strip()
 
         inbox_images: set[str] = set()
         for child in inbox.iterdir():
-            if child.name in {"history", "webp"}:
+            if child.name in {"history", "original", "webp"}:
                 if child.is_symlink() or not child.is_dir():
-                    raise ProcessingError(f"images/takeout/{child.name} must be a normal directory.")
+                    raise ProcessingError(f".takeout/images/{child.name} must be a normal directory.")
                 continue
             if child.is_symlink() or child.is_dir() or not child.is_file():
                 raise ProcessingError(f"Unexpected directory, symlink or non-file in takeout: {child.name}")
@@ -1259,7 +1261,7 @@ def main() -> int:
                     raise ProcessingError(f"Unsupported image format {suffix} for {child.name}; only PNG, JPG and JPEG are accepted. Animated images are never flattened.")
                 raise ProcessingError(f"Unexpected non-image file in takeout: {child.name}")
             inbox_images.add(child.name)
-        checks.append("Inbox is flat and contains only PNG/JPG/JPEG uploads, README.md, HANDOFF.yml, and the reserved history/ and webp/ directories.")
+        checks.append("Inbox is flat and contains only PNG/JPG/JPEG uploads, README-1.md, README-2.md, HANDOFF.yml, .gitkeep, and the reserved history/, original/, and webp/ directories.")
 
         sources: set[str] = set()
         ids: set[str] = set()
@@ -1270,7 +1272,7 @@ def main() -> int:
                 raise ProcessingError(f"items[{number - 1}] must be a mapping.")
             name = item.get("source")
             if not isinstance(name, str) or not name or Path(name).name != name or "/" in name or "\\" in name:
-                raise ProcessingError(f"Item {number}: source must be a filename directly inside images/takeout/.")
+                raise ProcessingError(f"Item {number}: source must be a filename directly inside .takeout/images/.")
             if name in sources:
                 raise ProcessingError(f"Duplicate source filename: {name}")
             sources.add(name)
@@ -1282,7 +1284,7 @@ def main() -> int:
                 raise ProcessingError(f"Unsupported source format: {name}")
             # Keep explicitly unclassified items in intake. They still count
             # toward exact batch coverage, but bypass provenance relocation.
-            if item.get("destination_dir") == "images/unclassified":
+            if item.get("destination_dir") == ".takeout/images/unclassified":
                 title = item.get("title")
                 if not isinstance(title, str) or not title.strip():
                     raise ProcessingError(f"Item {number} requires a descriptive quarantine title.")
@@ -1349,7 +1351,11 @@ def main() -> int:
             # Normalize the content type for encoder selection but preserve the
             # uploaded extension's exact spelling in the permanent master path.
             original_suffix = source.suffix
-            master, webp = directory / "original" / f"{stem}{original_suffix}", directory / f"{stem}.webp"
+            if directory.relative_to(root).as_posix() == ".takeout/images":
+                master = directory / "original" / f"{stem}{original_suffix}"
+                webp = directory / "webp" / f"{stem}.webp"
+            else:
+                master, webp = directory / "original" / f"{stem}{original_suffix}", directory / f"{stem}.webp"
             for target in (master, webp):
                 rel = target.relative_to(root).as_posix()
                 if rel in targets:
@@ -1441,7 +1447,7 @@ def main() -> int:
         if deferred_items:
             checks.append(
                 f"{len(deferred_items)} unclassified image(s) will be converted to WebP without relocation; "
-                "their original files will remain unchanged in images/takeout/: "
+                "their original files will remain unchanged in .takeout/images/: "
                 + ", ".join(item["source"] for item in deferred_items)
             )
         if any(item["hash_match"] == "MATCH" for item in prepared):
@@ -1451,7 +1457,7 @@ def main() -> int:
         if any(item["hash_match"] == "NOT_PROVIDED" for item in prepared):
             checks.append("Generation-time SHA-256 matching was unavailable for items without expected_sha256.")
         if prepared:
-            checks.append("Mapped destinations are restricted to approved images/, area/novel/, or dated area/drawing/ asset folders; duplicate and existing paths are rejected.")
+            checks.append("Mapped destinations are restricted to .takeout/images/, area/novel/, or dated area/drawing/ asset folders; duplicate and existing paths are rejected.")
         text_updates = prepare_attempt_readme_updates(prepared, root)
         if text_updates:
             checks.append("Attempt and daily README targets were prevalidated for automatic output linking.")
@@ -1548,8 +1554,8 @@ def main() -> int:
                 deferred_conversions[item["source"]] = {
                     "status": "CONVERTED_UNCLASSIFIED_NOT_RELOCATED",
                     "error": (
-                        "Original remains unchanged in images/takeout; derivative remains in "
-                        "images/takeout/webp/unclassified/."
+                        "Original remains unchanged in .takeout/images; derivative remains in "
+                        ".takeout/images/webp/unclassified/."
                     ),
                     "conversion_profile": profile,
                     "original_bytes": source.stat().st_size,
@@ -1609,7 +1615,7 @@ def main() -> int:
         rows = []
         for item in prepared:
             rows.append({
-                "source_filename": item["name"], "source_path": f"images/takeout/{item['name']}",
+                "source_filename": item["name"], "source_path": f".takeout/images/{item['name']}",
                 "title": item["title"], "asset_id": item["asset_id"],
                 "source_asset_id": item["source_asset_id"], "attempt": item["attempt"],
                 "destination_dir": item["directory"].relative_to(root).as_posix(),
