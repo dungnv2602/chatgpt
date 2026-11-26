@@ -119,7 +119,7 @@ class LedgerTests(unittest.TestCase):
         active_file.parent.mkdir(parents=True)
         active_file.write_text("{}", encoding="utf-8")
         gh_root = self.root / ".takeout" / "reports" / "gh_ac_reports"
-        gh_root.mkdir(parents=True)
+        gh_root.mkdir(parents=True, exist_ok=True)
         (gh_root / "index.json").write_text(json.dumps({
             "runs": [{"history_path": "history/55/100-attempt-1-post_run"}]
         }), encoding="utf-8")
