@@ -196,10 +196,17 @@ def verify_session_links(row: dict[str, str], blob_reader: BlobReader) -> str:
     """Verify remote daily README inventory/table and attempt-note links."""
     webp_path = (row.get("webp_path") or "").strip()
     parts = Path(webp_path).parts
-    if len(parts) != 4 or parts[0] != "area/drawing" or parts[2] != "images":
+    if (
+        len(parts) != 5
+        or parts[0] != "area"
+        or parts[1] != "drawing"
+        or parts[3] != "images"
+        or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", parts[2])
+        or Path(parts[4]).suffix.lower() != ".webp"
+    ):
         return f"Drawing WebP path is not in a dated session images folder: {webp_path}"
-    session_date = parts[1]
-    relative_link = f"images/{parts[3]}"
+    session_date = parts[2]
+    relative_link = f"images/{parts[4]}"
 
     readme_path = f"area/drawing/{session_date}/README.md"
     readme_bytes = blob_reader(readme_path)
