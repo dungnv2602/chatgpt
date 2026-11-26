@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-142500
 - **Created:** 2026-11-26 14:25 UTC
-- **Updated:** 2026-11-26 14:25 UTC
+- **Updated:** 2026-11-26 14:30 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -49,20 +49,21 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 
 ## 6. Progress Log
 
-### 2026-11-26 14:25 UTC
+### 2026-11-26 14:30 UTC
 
-- **Action:** Created task and began reviewing report intake and triage guides and current indexes.
+- **Action:** Created the missing central Ledger from the canonical schema (1.5.0), using empty findings/processed state and unseeded lint baseline scopes. Commit: `d14b12c20859326dc6c6860f67c9103f07950c27`.
+- **Result:** The ingestion blocker at the missing Ledger file is removed at the file level. This is initialization only; it is not a destructive reporting-period reset. Existing reports and indexes remain untouched. Task generation and ingestion are not yet validated.
 - **Result:** Latest repository-wide lint report at run 206 (commit f7d38e7) evaluated 88 files, with 32 failing files and 712 findings. Latest changed-scope report at run 793 (commit e75d331) used full-audit fallback and reports 712 findings. Both report indexes show repeated failures across recent runs. Actions report index contains a large pending queue and many Incomplete pre-finalizer captures, not completed post-run findings. The central Ledger path retrieval failed with NOT_FOUND, consistent with the triage guide's fail-closed behavior. Task creation did not occur as expected.
 - **References:** .takeout/reports/README.md; .takeout/reports/triage/README.md; .takeout/reports/gh_ac_reports/index.json; .takeout/reports/lint_reports/on_repo/index.json; .takeout/reports/lint_reports/on_changed/index.json.
-- **Next:** Retrieve bounded exact reports and scripts/workflows. Confirm whether report generator task publication and report file location assumptions are broken after refactor. Inspect GitHub Actions logs for task/report publication failures. Reconcile report paths before fixing findings.
+- **Next:** Continue with governed report ingestion/task handoff and reconcile actionable findings against current refactored paths. Respect the prohibition on local script/test execution and CI polling.
 
 ## 7. Current State
 
-Task created. Diagnostic evidence has been identified but not yet fully analyzed. No fixes or validations completed.
+Task created. Ledger initialization committed. Existing report evidence preserved. Ingestion, task creation, remediation, and retirement remain unverified.
 
 ## 8. Remaining Work
 
-- Diagnose and fix task-generation/handoff failure.
+- Verify hosted ingestion and diagnose/fix task-generation/handoff failure, without polling CI.
 - Inspect and triage latest lint and Actions evidence, including stale path diagnostics.
 - Repair confirmed actionable issues.
 - Ensure tasks are generated and finding task references are consistent.
@@ -71,7 +72,7 @@ Task created. Diagnostic evidence has been identified but not yet fully analyzed
 
 ## 9. Next Actions
 
-1. Inspect latest complete lint reports and diagnostic captures in bounded fashion.
+1. Continue report/task reconciliation and remediation under the current governance.
 2. Inspect task/Ledger publication scripts and relevant workflows for current-path breakage.
 3. Repair root causes, commit, and allow hosted workflows to execute.
 4. Use report evidence to continue remediation and retirement.
