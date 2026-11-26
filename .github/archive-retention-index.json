@@ -729,6 +729,10 @@
     {
       "path": ".archive/task/20261126-223106-promote-ci-ledger-skill-and-worker-batch-execution.md",
       "archived_at_utc": "2026-11-26T22:34:07Z"
+    },
+    {
+      "path": ".archive/task/20261126-224100-apply-ci-p0-batch-to-session-start.md",
+      "archived_at_utc": "2026-11-26T22:46:04Z"
     }
   ]
 }
