@@ -244,7 +244,7 @@ Use this order whenever a task requires specialist skills:
 |---|---|---|
 | 1. Baseline | The Worker (including its mandatory Conversation Mode reference) | `/start` only. Specialist requests require baseline initialization to have passed already. |
 | 1a. Domain skills | ASD-STE100, GitHub Actions, Document Standards, Agent Skill Authoring | Load only when task activation conditions apply. |
-| 2. Drawing | The Worker's archive/media references, Drawing, and its required references | After foundational initialization passes: `start a drawing session`, drawing work that requires the workflow, or novelist initialization |
+| 2. Drawing | The Worker's archive/media references, Drawing, and its required references | After baseline initialization passes: `start a drawing session`, drawing work that requires the workflow, or novelist initialization |
 | 3. Novelist | Romantic Storyteller and active novel records | `Be the novelist` |
 
 ### Per-conversation verified-load ledger
