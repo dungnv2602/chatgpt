@@ -4,7 +4,7 @@ This file is the single index for active and retained task records. The Worker o
 
 ## Current Execution
 
-[20261126-170259-02 — Review semicolon findings in ADR-0003](tasks/20261126-170259-02-review-semicolon-findings-in-workspace-adr-0003-canonical-github.md)
+[20261126-224100 — Apply CI P0 batch execution to session startup](tasks/20261126-224100-apply-ci-p0-batch-to-session-start.md)
 
 ## Proposed
 
@@ -17,6 +17,7 @@ _No tasks._
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
+| 20261126-224100 | Apply CI P0 batch execution to session startup | P1 | In Progress | User | Approved | — | 2026-11-26 22:41 UTC | [Task record](tasks/20261126-224100-apply-ci-p0-batch-to-session-start.md) |
 
 | 20261126-170259-02 | Review semicolon findings in ADR-0003 | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 21:57 UTC | [Task record](tasks/20261126-170259-02-review-semicolon-findings-in-workspace-adr-0003-canonical-github.md) |
 | 20261126-170259-01 | Review passive voice in ADR-0003 | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 21:57 UTC | [Task record](tasks/20261126-170259-01-review-passive-voice-findings-in-workspace-adr-0003-canonical-gi.md) |
