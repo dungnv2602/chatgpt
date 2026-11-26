@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T15:46:00Z",
+  "updated_at_utc": "2026-11-26T16:21:37Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -238,6 +238,35 @@
         "20261126-145133"
       ],
       "task_group": "ci-f0a95a498ae3bd8a"
+    },
+    {
+      "finding_id": "lint-e2e4500a529bb5cf3751722a",
+      "source_family": "lint",
+      "category": "semicolon",
+      "title": "semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T16:21:19.862302+00:00",
+      "last_seen_utc": "2026-11-26T16:21:19.862302+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45857763911-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45857763911",
+          "observed_at_utc": "2026-11-26T16:21:19.862302+00:00",
+          "note": "on_changed · .agent/skills/document-standards/references/document-type-catalog.md:123:145",
+          "observation_id": "lint:45857763911:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-162137"
+      ],
+      "task_group": "ci-c0a053e5e2ad23eb"
     }
   ],
   "ingestion_state": {
@@ -293,6 +322,7 @@
       ".takeout/reports/lint_reports/on_changed/history/45843397893-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45843767623-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45844123288-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45857763911-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45837905160-attempt-1/report.json",
