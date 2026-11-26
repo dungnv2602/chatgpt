@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-055004
 - **Created:** 2026-11-26 05:50 UTC
-- **Updated:** 2026-11-26 06:14 UTC
+- **Updated:** 2026-11-26 06:15 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -155,3 +155,10 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Result:** Created the corrected active task path. The prior path will be removed only after the task board and discussion links point to the verified replacement.
 - **References:** `workspace/tasks/20261126055004-adapt-workflows-and-repair-refactor-breakage.md`, `workspace/tasks/20261126-055004-adapt-workflows-and-repair-refactor-breakage.md`.
 - **Next:** Update and verify the task board and discussion links, then remove the obsolete path.
+
+### 2026-11-26 06:15 UTC
+
+- **Action:** Completed the task-ID correction by updating the board and discussion links, then deleting the superseded active filename.
+- **Result:** The corrected task record is the only active file for ID `20261126-055004`. The old path is absent. The board and discussion register point to the corrected path.
+- **References:** `workspace/tasks/20261126-055004-adapt-workflows-and-repair-refactor-breakage.md`, superseded path `workspace/tasks/20261126055004-adapt-workflows-and-repair-refactor-breakage.md`, commit `90d079e68b6c63ab22ed294055c11f1d69ab1ef4`.
+- **Next:** Complete repository path and link verification.
