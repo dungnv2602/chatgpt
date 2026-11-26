@@ -38,7 +38,7 @@ The GitHub Actions diagnostic reporter stores several views of the same report.
 - Each workflow folder under `by_workflow/` contains an index and two latest-report copies.
 - The repository-wide index already stores a `latest_report` object that points to the canonical history path.
 
-The generator renders the Markdown report from structured JSON and uses a canonical template. The Ledger links to report JSON paths, not the Markdown copies.
+The generator renders Markdown from structured JSON and uses a canonical template. The Ledger links to report JSON paths, not the Markdown copies.
 
 The inventory at commit `f310d0921a6750caf40e7e314f0a7574bae120af` contains 29 retained history folders. The root contains two latest copies. Three workflow folders each contain an index and two latest copies. The inventory therefore contains 40 derived or redundant artifacts:
 
@@ -49,9 +49,9 @@ The inventory at commit `f310d0921a6750caf40e7e314f0a7574bae120af` contains 29 r
 
 This count excludes canonical JSON reports, integrity manifests, captured logs, and the repository-wide index. It counts files, not measured byte reduction.
 
-A sample history folder contains `report.json` (7,058 bytes), `report.md` (4,167 bytes), and `integrity.json` (386 bytes), plus a logs directory. The root latest copies measure 12,937 bytes for JSON and 6,565 bytes for Markdown. These sample sizes show duplicated content. They do not establish the total storage reduction for the full inventory.
+A sample history folder contains `report.json` (7,058 bytes), `report.md` (4,167 bytes), and `integrity.json` (386 bytes), plus a logs directory. The root latest copies measured 12,937 bytes for JSON and 6,565 bytes for Markdown. These sample sizes show duplicated content. They do not establish the total storage reduction for the full inventory.
 
-The current layout increases commit size and creates several synchronization points. A generated Markdown report can be rendered again from its JSON source. A per-workflow index can be derived from the repository-wide index by filtering on workflow ID. The root index already identifies the latest report.
+The current layout increases commit size and introduces several synchronization points. A generated Markdown report can be rendered again from its JSON source. Operators can derive a per-workflow index by filtering the repository-wide index on workflow ID. The root index already identifies the latest report.
 
 The user approved DRAFT-0004 revision 1, Option 3, on 2026-11-26. This ADR records that decision. Artifact-layout changes remain prohibited until this ADR reaches accepted status.
 
@@ -78,7 +78,7 @@ The user approved DRAFT-0004 revision 1, Option 3, on 2026-11-26. This ADR recor
 - **Dependencies and operational burden:** Retains all current scripts, templates, indexes, and documentation. Operators must understand which copy is canonical.
 - **Risks and safeguards:** Copies can become stale. Rebuilding indexes mitigates drift but does not remove duplication.
 - **Evidence and confidence:** The inventory at `f310d092` confirms the file types and counts. The inventory provides high confidence for that snapshot.
-- **Limitations and unknowns:** No one measured the full byte cost. This option does not address repository growth.
+- **Limitations and unknowns:** The review did not measure the full byte cost. This option does not address repository growth.
 
 ### Option 2 — Remove latest copies only
 
@@ -86,24 +86,24 @@ The user approved DRAFT-0004 revision 1, Option 3, on 2026-11-26. This ADR recor
 - **Repository and environment fit:** This change minimally alters the existing layout. It keeps stored Markdown and workflow-specific navigation.
 - **Good — strengths:** Removes eight latest-report copies while retaining stored Markdown and workflow navigation.
 - **Neutral — trade-offs:** Operators use the central index for the latest report. Workflow indexes remain available.
-- **Bad — weaknesses:** The 29 per-run Markdown renderings and three per-workflow indexes remain in the assessment snapshot. The layout still stores several views of the same report data.
+- **Bad — weaknesses:** The assessment snapshot retains 29 per-run Markdown renderings and three per-workflow indexes. The layout still keeps several views of the same report data.
 - **Implementation and migration cost:** Update latest-copy generation, tests, and the report guide. Remove the existing eight latest copies.
 - **Dependencies and operational burden:** The central and workflow indexes remain. The generator still maintains several indexes.
-- **Risks and safeguards:** Existing references may rely on latest-copy paths. Search references and confirm Ledger links before migration.
+- **Risks and safeguards:** Existing references may depend on latest-copy paths. Search references and confirm Ledger links before migration.
 - **Evidence and confidence:** The root and workflow directory inventory confirms the eight latest copies. Confidence is high for the inspected snapshot.
 - **Limitations and unknowns:** This removes some duplication but leaves most derived report artifacts.
 
 ### Option 3 — Keep canonical JSON, integrity, logs, and one central index
 
 - **Description and operating model:** Keep `report.json`, `integrity.json`, and captured logs in each existing history folder. Keep the repository-wide `index.json` as the only index and latest-report pointer. Render Markdown from canonical JSON on demand. Remove per-run `report.md` files, root latest-report copies, and per-workflow indexes and latest copies.
-- **Repository and environment fit:** The Ledger already links to report JSON paths. The root index already contains workflow IDs and the latest-report path. The report generator already has a Markdown renderer and template.
-- **Good — strengths:** Keeps the original structured evidence, logs, and integrity checks. Removes all 40 derived or redundant artifacts in the assessment snapshot. The report JSON remains the source of truth. The root index remains the only index and latest pointer. Operators can filter workflow-specific views from the root index.
+- **Repository and environment fit:** The Ledger already links to report JSON paths. The root index already lists workflow IDs and the latest-report path. The report generator already has a Markdown renderer and template.
+- **Good — strengths:** Keeps the original structured evidence, logs, and integrity checks. Removes all 40 derived or redundant artifacts in the assessment snapshot. Report JSON remains canonical. The root index remains the only index and latest pointer. Operators can filter workflow-specific views from the root index.
 - **Neutral — trade-offs:** Operators use the root index to find reports. A Markdown view requires an on-demand render step. The generator must rebuild the index correctly.
-- **Bad — weaknesses:** Direct links to stored Markdown reports and per-workflow indexes stop working. Update the report guide and repository references. JSON is less convenient for casual reading.
+- **Bad — weaknesses:** Direct links to stored Markdown reports and per-workflow indexes no longer work. Update the report guide and repository references. JSON is less convenient for casual reading.
 - **Implementation and migration cost:** Update the writer, integrity manifest generation, index builder, on-demand rendering interface, tests, and report guide. Remove only derived files from existing history folders. Regenerate integrity manifests for the retained JSON and logs. Keep all report JSON and captured log bytes unchanged.
-- **Dependencies and operational burden:** The report generator and template remain. The generator must render Markdown on demand and rebuild the central index. It no longer maintains per-workflow copies.
-- **Risks and safeguards:** A missing renderer reduces readability. Retain and test the renderer. A bad migration could break a task link or remove evidence. Preserve paths, compare hashes, and confirm every Ledger/task reference. Regression tests for index ordering and pruning control stale latest pointers.
-- **Evidence and confidence:** The root index contains the latest pointer and workflow metadata. Ledger evidence paths target report JSON. The report guide and sample history folder show that the generator creates Markdown alongside JSON. Confidence is high for these repository facts and moderate for migration effort.
+- **Dependencies and operational burden:** The report generator and template stay in place. The generator must render Markdown on demand and rebuild the central index. It no longer maintains per-workflow copies.
+- **Risks and safeguards:** A missing renderer reduces readability. Keep and test the renderer. A bad migration could break task links or remove evidence. Preserve paths, compare hashes, and confirm every Ledger/task reference. Regression tests for index ordering and pruning control stale latest pointers.
+- **Evidence and confidence:** The root index contains the latest pointer and workflow metadata. Ledger evidence paths target report JSON. The report guide and sample history folder show that the generator creates Markdown alongside JSON. These repository facts carry high confidence. Migration effort carries moderate confidence.
 - **Limitations and unknowns:** The assessment did not complete a repository reference search or external-consumer inventory. It did not measure a migration prototype or total bytes. External consumers remain an unknown.
 
 ### Option 4 — Store reports and logs as GitHub workflow artifacts
