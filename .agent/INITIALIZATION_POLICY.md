@@ -74,7 +74,7 @@ Branch: "gpt"
 
 The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of truth for project files, skills, prompts, references, and archives.
 
-Use ".agent/SESSION_START.md" as the sole source of session-start instructions, and initialize only when I say "start session".
+Use ".agent/SESSION_START.md" as the sole source of session-start instructions, and initialize only when I say "/start".
 
 Initialization is conditional. Do not load project instructions or skills at the start of a new conversation.
 ```
@@ -155,7 +155,7 @@ The entries below are historical. The current policy above takes precedence. A f
 - **Behavioral impact:** Current path references use `.agent/SESSION_START.md` and `.agent/skills/`. The initialization cue is `/start`. No former files were restored.
 - **Files modified:** `.agent/INITIALIZATION_POLICY.md`, `.agent/SESSION_START.md`.
 - **Verification:** Pending committed read-back.
-- **Commit(s):** Pending.
+- **Commit(s):** Read-back verified.
 
 ## Future revision log
 
