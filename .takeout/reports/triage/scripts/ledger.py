@@ -188,7 +188,13 @@ def migrate_ledger(ledger, root):
                 continue
             validation = resolution_record.get("validation")
             if isinstance(validation, dict) and "status" not in validation:
-                validation["status"] = "passed" if validation.get("conclusion") == "success" else "failed"
+                conclusion = validation.get("conclusion")
+                if conclusion == "success":
+                    validation["status"] = "passed"
+                elif conclusion in ("failure", "cancelled", "timed_out", "neutral"):
+                    validation["status"] = "failed"
+                else:
+                    raise LedgerError("Legacy validation record has no recognized conclusion: " + str(finding.get("finding_id")))
         evidence_rows = finding.get("evidence")
         if not isinstance(evidence_rows, list):
             raise LedgerError("finding evidence must be an array: " + str(finding.get("finding_id")))

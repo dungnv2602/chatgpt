@@ -8,7 +8,7 @@ The CI Ledger tracks distinct findings from lint reports and GitHub Actions diag
 - **The Worker:** task selection, authorization, batch orchestration, task records, board, progress, and closeout.
 - **GitHub Actions skill:** technical CI diagnosis, remediation, recurrence prevention, workflow operations, and validation.
 - **Data:** `ledger.json`.
-- **Schema:** `ledger-schema.json` (version 1.5.0).
+- **Schema:** `ledger-schema.json` (version 1.6.0).
 - **Generator:** `scripts/ledger.py`.
 - **Regression tests:** `scripts/test_ledger.py`.
 

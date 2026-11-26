@@ -143,4 +143,4 @@ Finding status and task status remain distinct. A Proposed task does not mean re
 - Do not run repository scripts or tests locally. Use GitHub-hosted workflows when validation is required.
 - Do not poll, dispatch, or rerun workflows unless the user requests it or the task explicitly requires it. Follow the user's deferred-results-review instruction when it applies.
 - Read back every changed file and verify exact paths and committed contents.
-- The schema is `ledger-schema.json` version 1.5.0. The generator is `scripts/ledger.py`. Tests are `scripts/test_ledger.py`. Read the triage README for navigation and the report/data contract.
+- The schema is `ledger-schema.json` version 1.6.0. The generator is `scripts/ledger.py`. Tests are `scripts/test_ledger.py`. Read the triage README for navigation and the report/data contract.
