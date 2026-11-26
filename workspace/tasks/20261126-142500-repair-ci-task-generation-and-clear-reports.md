@@ -96,14 +96,23 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - **References:** `.github/workflows/ste-lint-changed.yml`; `.github/workflows/ste-lint-full-docs.yml`; `.github/workflows/validate-document-standards.yml`; `.github/workflows/gh-actions-diagnostics.yml`; `.takeout/reports/gh_ac_reports/actions/capture/action.yml`.
 - **Next:** Wait for naturally available hosted evidence under existing restrictions; keep task In Progress until report ingestion and task handoff are verified.
 
+### 2026-11-26 — CI failure inspection and fixture repairs
+
+- **Action:** Inspected completed runs after the prior checkpoint, including run 887 (diagnostics), run 567 (document standards), and the preceding run 886/run 566 pair. Retrieved job summaries and failing logs.
+- **Findings:** Ledger regression suite reported eight errors and one failure, all centered on the task-board fixture being incompatible with the canonical board publication layout/representation. The report collector regression test incorrectly counted the substring `page=` in `per_page=`, reporting a false pagination failure.
+- **Repairs:** Updated the Ledger regression assertion to expect the canonical approval and ADR columns; added fixture normalization for escaped-newline board data; rewrote the collector test to parse query parameters and assert the `page` parameter itself, rather than substring-counting `per_page`.
+- **Commits:** `1c4c799`, `4233ca9`, `225ab37`.
+- **Verification:** Remote readback of the edits. CI rerun/revalidation is not yet observed.
+- **Next:** Review fresh CI output after these fixes; task remains In Progress.
+
 ## 7. Current State
 
 Explicit clean-start reset executed in commit `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`: generated active Actions and lint history, indexes/latest pointers, and report snapshots under `.archive/reports/` cleared; Actions index and lint indexes reinitialized; Ledger findings and processed state empty and lint scopes unseeded. Report scripts, schemas, templates, guides, workflow definitions, unrelated active tasks, and task archives preserved. This reset does not rewrite Git history or GitHub run records. Hosted baseline runs and task-handoff operation remain unverified.
 
 ## 8. Remaining Work
 
-- Hosted validation and live task handoff remain unverified; no tests, scripts, CI dispatch, or polling are authorized within this task's current execution boundary.
-- The clean-start period has a valid watermark; two post-reset pre-finalizer captures remain in the active Actions index and pending queue. They are new-period evidence, not old data.
+- Hosted validation and live task handoff remain unverified; the user has since authorized CI inspection, and recent CI failures were inspected and test-fixture repairs committed. Follow-up validation remains pending.
+- The clean-start period has a valid watermark; fresh pre-finalizer captures remain in the active Actions index and pending queue. They are new-period evidence, not old data.
 - The lint indexes are empty and the Ledger findings are empty; lint baselines remain unseeded.
 - Leave first complete tooling-valid lint audits to seed the fresh period. Do not claim end-to-end task publication or completion.
 
