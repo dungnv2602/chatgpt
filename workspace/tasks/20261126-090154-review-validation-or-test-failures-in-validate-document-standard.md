@@ -5,13 +5,13 @@
 - **Template version:** 1.3
 - **ID:** 20261126-090154
 - **Created:** 2026-11-26 09:01 UTC
-- **Updated:** 2026-11-26 10:44 UTC
+- **Updated:** 2026-11-26 10:53 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
 - **Governing ADR(s):** None — test-fixture repair; no architecture change
-- **Current execution:** No
+- **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** None
 - **Ledger group:** `ci-020528f498f632ac`
@@ -54,9 +54,17 @@ Review and remediate the related CI findings listed below after approval. Preser
 - **References:** .takeout/reports/triage/ledger.json and the evidence links below.
 - **Next:** Worker review and user approval before implementation.
 
+
+### 2026-11-26 10:53 UTC
+
+- **Action:** Selected this task as the next Current Execution task after committing the classifier correction for task `20261126-101512-01`.
+- **Result:** This task remains P0, Approved, and In Progress. It is the only task with `Current execution: Yes`. Other P0 tasks remain open and unselected. The P1 task remains Paused. Hosted validation for the prior task is pending and will not be polled.
+- **References:** `workspace/task_board.md`; commits `7866f69` and `a26451b`; report index pending run `45799154200`.
+- **Next:** Reconcile canonical report retention with Ledger eligibility, task linkage, and duplicate generated report artifacts. Preserve genuine unresolved error evidence.
+
 ## 7. Current State
 
-The task remains P0, Approved, and In Progress. It is not the selected Current Execution task while `20261126-101512-01` is active.
+The task remains P0, Approved, and In Progress. It is now the selected Current Execution task while `20261126-101512-01` awaits naturally triggered hosted validation.
 
 
 The Ledger recorded the findings and created this task handoff. Root cause, remediation, and validation have not been assessed.

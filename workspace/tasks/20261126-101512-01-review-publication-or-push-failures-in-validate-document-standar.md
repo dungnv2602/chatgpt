@@ -5,13 +5,13 @@
 - **Template version:** 1.3
 - **ID:** 20261126-101512-01
 - **Created:** 2026-11-26 10:15 UTC
-- **Updated:** 2026-11-26 10:44 UTC
+- **Updated:** 2026-11-26 10:53 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Governing ADR(s):** None — regression-test classification correction; no architecture change
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** None
 - **Ledger group:** `ci-259011307849c0ca`
@@ -61,15 +61,21 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 - **References:** `.takeout/reports/gh_ac_reports/history/427313089/45795455755-attempt-1-post_run/report.json`; `45795725425` and `45797455626` report paths and job logs; `.takeout/reports/gh_ac_reports/scripts/report.py`; `.takeout/reports/triage/scripts/test_ledger.py`.
 - **Next:** Correct test-failure classification and log isolation. Add regression tests for embedded publication text in test output. Verify through naturally triggered hosted CI.
 
+
+### 2026-11-26 10:53 UTC
+
+- **Action:** Committed the classifier and log-isolation correction with regression coverage.
+- **Result:** `classify_text` now prioritizes explicit unittest failure markers before incidental category keywords. `step_log_text` no longer falls back to unrelated lines when structured logs contain no matching step label. Tests cover embedded `git push` text, `UNKNOWN STEP` labels, unstructured logs, and genuine push failures. The owner guide and Document Type Catalog now state the contract. No local tests were run. The task remains In Progress and is no longer the selected execution task while hosted validation is pending.
+- **References:** [7866f69](https://github.com/dungnv2602/chatgpt/commit/7866f6940c929675e074f403b6625219094d9031); [a26451b](https://github.com/dungnv2602/chatgpt/commit/a26451bc10cc98c283faceeab036f4ba4fe0d017); `.takeout/reports/gh_ac_reports/scripts/report.py`; `.takeout/reports/gh_ac_reports/scripts/test_report.py`; `.takeout/reports/gh_ac_reports/README.md`; `.agent/skills/document-standards/references/document-type-catalog.md`.
+- **Next:** Inspect naturally published hosted validation evidence when it becomes available. Do not dispatch or poll. Keep the task open until the relevant hosted checks pass.
+
 ## 7. Current State
-The three linked reports are complete post-run captures with independent test-step failures. The reporter classified them as `publication_or_push` because incidental publication text in captured assertion output takes precedence over test-failure evidence. The current branch contains the corrected publisher contract assertion, but classifier correction and hosted validation remain outstanding.
+The three linked reports are complete post-run captures with independent test-step failures. The reporter classified them as `publication_or_push` because incidental publication text in captured assertion output takes precedence over test-failure evidence. The classifier correction and preventive tests are committed. The latest available report predates these commits and does not validate them. The reporter index still lists pending run `45799154200`. No post-change hosted validation result is recorded.
 
 ## 8. Remaining Work
-- Correct classification of explicit unittest failures before matching incidental publication or checkout text.
-- Prevent a structured job log with unmatched step labels from falling back to unrelated step output.
-- Add regression tests for the observed failure signatures.
-- Update the reporter guide and task/Ledger reconciliation after the fix.
-- Inspect naturally triggered hosted validation. Keep the finding and task open until the relevant checks pass.
+- Inspect the naturally triggered hosted validation for commits `7866f69` and `a26451b` when the report becomes available.
+- Reconcile the existing misclassified Ledger findings without rewriting immutable reports.
+- Keep the task open until the reporter and validation workflows pass on the corrected source.
 
 ## 9. Next Actions
 1. Add regression tests for explicit unittest failure signatures that include embedded `git push` text.
