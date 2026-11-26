@@ -659,6 +659,77 @@ def report_is_actionable(report):
     return isinstance(issues, list) and bool(issues)
 
 
+def report_is_retained(report):
+    """Only completed post-run reports with independent classified errors belong in history."""
+    run = report.get("source_run") or {}
+    capture = report.get("capture") or {}
+    return (
+        capture.get("stage") == "post_run"
+        and run.get("status") == "completed"
+        and report_is_actionable(report)
+    )
+
+
+def prune_invalid_history(root):
+    """Remove legacy captures outside the error-only post-run retention contract and rebuild indexes."""
+    history_root = root / "history"
+    retained_reports = []
+    removed = 0
+    if history_root.is_dir():
+        for report_path in sorted(history_root.glob("*/*/report.json")):
+            report = read_json(report_path)
+            folder = report_path.parent
+            expected = folder.relative_to(root).as_posix()
+            if report.get("history_path") != expected or not report_is_retained(report):
+                shutil.rmtree(folder)
+                removed += 1
+                continue
+            retained_reports.append(report)
+
+    index = load_index(root)
+    records = [index_record(report) for report in retained_reports]
+    records.sort(key=sort_key, reverse=True)
+    index["runs"] = records[:1000]
+    index["latest_report"] = index["runs"][0] if index["runs"] else None
+    save_json(root / "index.json", index)
+    if index["latest_report"]:
+        latest_dir = root / index["latest_report"]["history_path"]
+        shutil.copyfile(latest_dir / "report.md", root / "latest-gh-ac-report.md")
+        shutil.copyfile(latest_dir / "report.json", root / "latest-gh-ac-report.json")
+    else:
+        for name in ("latest-gh-ac-report.md", "latest-gh-ac-report.json"):
+            (root / name).unlink(missing_ok=True)
+
+    workflow_root = root / "by_workflow"
+    if workflow_root.is_dir():
+        for child in workflow_root.iterdir():
+            if child.is_dir():
+                shutil.rmtree(child)
+            else:
+                child.unlink()
+    grouped = {}
+    for report in retained_reports:
+        grouped.setdefault(str(report["source_run"]["workflow_id"]), []).append(report)
+    for workflow_id, reports in grouped.items():
+        reports.sort(key=lambda item: sort_key(index_record(item)), reverse=True)
+        records = [index_record(item) for item in reports[:500]]
+        latest = reports[0]
+        folder = workflow_root / workflow_id
+        folder.mkdir(parents=True, exist_ok=True)
+        save_json(folder / "index.json", {
+            "schema_version": SCHEMA_VERSION, "runs": records,
+            "latest_report": records[0] if records else None,
+        })
+        shutil.copyfile(root / latest["history_path"] / "report.md", folder / "latest-report.md")
+        shutil.copyfile(root / latest["history_path"] / "report.json", folder / "latest-report.json")
+
+    if history_root.is_dir():
+        for child in history_root.iterdir():
+            if child.is_dir() and not any(child.iterdir()):
+                child.rmdir()
+    return {"removed": removed, "retained": len(retained_reports)}
+
+
 def capture_rows(index, run_id, attempt, stage):
     return [
         item for item in index.get("runs", [])
@@ -768,6 +839,7 @@ def collect_runs_since(repo, watermark, scan_started, errors):
 
 
 def run_sweep(repo, root):
+    prune_invalid_history(root)
     index = load_index(root)
     started = utc_now()
     watermark = index.get("sweep_watermark_utc") or BOOTSTRAP_WATERMARK

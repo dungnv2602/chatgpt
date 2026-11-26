@@ -217,6 +217,60 @@ class CapturePolicyTests(unittest.TestCase):
             self.assertEqual(index["pending_run_ids"], [])
 
 
+class HistoricalRetentionTests(unittest.TestCase):
+    def test_prune_removes_pre_finalizer_success_and_cancellation_only_history(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            cases = [
+                ("100", "pre_finalizer", "in_progress", "failure", True, False),
+                ("101", "post_run", "completed", "success", False, False),
+                ("102", "post_run", "completed", "cancelled", False, False),
+                ("103", "post_run", "completed", "failure", False, True),
+                ("104", "post_run", "completed", "cancelled", False, True),
+            ]
+            for position, (run_id, stage, status, conclusion, _, has_issue) in enumerate(cases):
+                folder = root / "history" / "55" / (run_id + "-attempt-1-" + stage)
+                folder.mkdir(parents=True)
+                report = {
+                    "schema_version": "1.0.0",
+                    "source_run": {
+                        "id": run_id, "number": int(run_id), "attempt": 1, "workflow_id": 55,
+                        "workflow_name": "Example", "workflow_path": ".github/workflows/example.yml",
+                        "run_url": "https://example.invalid/" + run_id, "status": status,
+                        "conclusion": conclusion, "created_at": "2026-11-23T06:%02d:00Z" % position,
+                    },
+                    "capture": {
+                        "stage": stage, "captured_at_utc": "2026-11-23T07:%02d:00Z" % position,
+                        "completeness": "Complete" if status == "completed" else "Incomplete",
+                    },
+                    "classification": {
+                        "state": conclusion, "primary_category": "validation_or_test" if has_issue else None,
+                        "issues": ([{"category": "validation_or_test"}] if has_issue else []),
+                    },
+                    "history_path": "history/55/" + folder.name,
+                }
+                (folder / "report.json").write_text(json.dumps(report), encoding="utf-8")
+                (folder / "report.md").write_text("# " + run_id, encoding="utf-8")
+            REPORT.save_json(root / "index.json", {
+                "schema_version": "1.0.0", "pending_run_ids": ["100"], "runs": [],
+                "latest_report": None, "exhausted_run_ids": [],
+            })
+
+            result = REPORT.prune_invalid_history(root)
+            index = REPORT.load_index(root)
+            self.assertEqual(result, {"removed": 3, "retained": 2})
+            self.assertEqual({item["run_id"] for item in index["runs"]}, {"103", "104"})
+            self.assertEqual(index["pending_run_ids"], ["100"])
+            self.assertEqual(index["latest_report"]["run_id"], "104")
+            self.assertFalse((root / "history/55/100-attempt-1-pre_finalizer").exists())
+            self.assertFalse((root / "history/55/101-attempt-1-post_run").exists())
+            self.assertFalse((root / "history/55/102-attempt-1-post_run").exists())
+            workflow_index = json.loads((root / "by_workflow/55/index.json").read_text(encoding="utf-8"))
+            self.assertEqual({item["run_id"] for item in workflow_index["runs"]}, {"103", "104"})
+            latest = json.loads((root / "latest-gh-ac-report.json").read_text(encoding="utf-8"))
+            self.assertEqual(latest["source_run"]["id"], "104")
+
+
 class RetryPolicyTests(unittest.TestCase):
     def test_incomplete_capture_uses_backoff_and_bounded_attempts(self):
         index = {"runs":[{
