@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-162137
 - **Created:** 2026-11-26 16:21 UTC
-- **Updated:** 2026-11-26 16:30 UTC
+- **Updated:** 2026-11-26 16:37 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -47,6 +47,13 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 
 ## 6. Progress Log
 
+### 2026-11-26 16:37 UTC
+
+- **Action:** Reviewed the naturally triggered STE Lint Changed run [45859253550](https://github.com/dungnv2602/chatgpt/actions/runs/45859253550) after fix commit [56510b4](https://github.com/dungnv2602/chatgpt/commit/56510b4fa78680c75bba4ffc5e483842d4b24938).
+- **Result:** The full workflow passed. The changed-document lint report records zero new findings and one resolved finding, with fingerprint `e2e4500a529bb5cf3751722a`. The report publication step passed and published run 819.
+- **Evidence archive:** Copied `report.json`, `report.md`, and `integrity.json` to `.archive/reports/lint_reports/on_changed/history/45857763911-attempt-1/`. Read back all three files and confirmed exact content equality. Registered each exact path and its commit timestamp in `.github/archive-retention-index.json`.
+- **Next:** Record the terminal resolution in the Ledger. Then create and verify the immutable Done task archive, delete the active task, and reconcile the board.
+
 ### 2026-11-26 16:30 UTC
 
 - **Action:** Inspected the exact lint report for run [45857763911](https://github.com/dungnv2602/chatgpt/actions/runs/45857763911) and its generated task finding `lint-e2e4500a529bb5cf3751722a`.
@@ -64,18 +71,19 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 
 ## 7. Current State
 
-The exact Rule 8.1 violation is corrected in commit 56510b4. Hosted validation and Ledger resolution remain pending.
+The exact Rule 8.1 violation is corrected in commit 56510b4. STE Lint Changed run 45859253550 passed and published a report that marks the finding resolved. The report evidence is archived and registered. Ledger terminal resolution and task closeout remain pending.
 
 ## 8. Remaining Work
 
-- Confirm the naturally triggered STE Lint Changed run resolves finding `lint-e2e4500a529bb5cf3751722a`.
-- Reconcile the finding in the Ledger, then archive this task after terminal status and archive verification.
+- Record the verified fix and hosted validation in the Ledger, with the evidence path updated to the report archive.
+- Prepare and verify the Done task archive. Register it, delete the active record, and reconcile the board.
+- Allow the natural Diagnostics sweep to retire the terminal finding.
 
 ## 9. Next Actions
 
-1. Inspect the hosted lint report after commit 56510b4.
-2. Confirm the exact finding is resolved and the Ledger is terminal.
-3. Archive the task under the Worker lifecycle procedure.
+1. Record the terminal resolution for `lint-e2e4500a529bb5cf3751722a` using fix commit 56510b4 and successful run 45859253550.
+2. Archive the task and its evidence under the Worker lifecycle procedure.
+3. Confirm natural Ledger retirement after the archive push.
 
 ## 10. References
 
@@ -84,10 +92,10 @@ The exact Rule 8.1 violation is corrected in commit 56510b4. Hosted validation a
 
 ## 11. Verification
 
-- **Check:** ASD-STE100 Rule 8.1 semicolon prohibition.
-- **Method:** Inspected the exact finding in report 45857763911 and corrected catalog line 123.
-- **Result:** The semicolon was replaced with a sentence boundary. Catalog coverage and lint rules remain unchanged.
-- **Limitations:** Hosted confirmation and Ledger resolution are pending.
+- **Check:** ASD-STE100 Rule 8.1 semicolon prohibition and changed-document report publication.
+- **Method:** Inspected report 45857763911, corrected catalog line 123 in commit 56510b4, and reviewed STE Lint Changed run 45859253550.
+- **Result:** The run passed. Its report records zero new findings and one resolved fingerprint. The publication step succeeded. The three source report files were copied to the archive and read back byte-for-byte.
+- **Limitations:** Ledger terminal resolution and task archive closeout are pending.
 
 ## 12. Handoff Instructions
 
