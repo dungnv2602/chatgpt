@@ -7,6 +7,16 @@ on:
     paths:
       # Check every skill-owned template, schema, and authoring rule.
       - '.agent/skills/**'
+      # Include the root-level initialization policy and session-start contract.
+      - '.agent/*.md'
+      # Include the image takeout guides and their supporting assets.
+      - '.takeout/images/**'
+      # Validate changes to catalog authorities, generators, schemas, and tests.
+      - '.github/scripts/**'
+      - '.github/archive-retention-*.json'
+      - '.takeout/reports/gh_ac_reports/scripts/**'
+      - '.takeout/reports/gh_ac_reports/assets/**'
+      - '.takeout/reports/gh_ac_reports/actions/**'
       # Enforce catalog coverage whenever any active document family changes.
       # master/ and .archive/ remain outside this inventory scan.
       - 'area/drawing/**/*.md'
