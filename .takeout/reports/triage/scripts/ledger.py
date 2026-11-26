@@ -610,7 +610,7 @@ def render_worker_task(root, task_id, title, group_id, findings, timestamp):
         "- **Ledger group:** None": "- **Ledger group:** " + chr(96) + group_id + chr(96),
         "[Preserve the user's original task prompt verbatim.]":
             "Automated CI Ledger capture: actionable findings were recorded during event-driven report ingestion. Task creation does not authorize remediation.",
-        "[Preserve relevant user clarifications, constraints, and approvals verbatim. Add timestamps.]":
+        "[Preserve relevant user clarifications, constraints, decisions, and approvals verbatim. Add timestamps.]":
             "- **Standing instruction:** Every CI Ledger-generated task is P0, approved for remediation, and must be resolved before non-P0 work. Event-driven ingestion, no periodic polling.",
         "[State the required outcome.]":
             "Immediately remediate the CI Ledger findings grouped below, preserving validation rules and diagnostic evidence.",
