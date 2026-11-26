@@ -2,7 +2,7 @@
 
 ## Current Step
 
-**2026-11-26 22:42 UTC — Implement approved CI P0 startup workflow.** Update Session Start, The Worker, and initialization policy. Add the mandatory pre-batch notice and automatic execution of all eligible CI Ledger-generated P0 tasks. [Task record](tasks/20261126-224100-apply-ci-p0-batch-to-session-start.md)
+**2026-11-26 22:46 UTC — Close out the approved CI P0 startup workflow change.** Finalize the task record, create and verify its archive copy, update the retention index, remove the active record, and reconcile the board. [Task record](tasks/20261126-224100-apply-ci-p0-batch-to-session-start.md)
 
 ## Open Discussions
 
