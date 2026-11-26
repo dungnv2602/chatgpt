@@ -1,7 +1,6 @@
-**Current Step**
+## Current Step
 
-Audit reconstructed GitHub Actions skill report/archive path references and compare them with the active reconstructed report/archive tree and workflow contracts. Task: [20261126-021200](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
-
+Audit the remaining image-pipeline caller and publication contracts. Compare the workflow, hand-off schema, processor, verifier, reports, and active documentation on branch `gpt`. Record only confirmed mismatches and repair them within the approved scope. Task: [20261126-021200](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
 
 ## Open Discussions
 
