@@ -21,27 +21,27 @@ case "$file" in
   .agent/INITIALIZATION_POLICY.md) baseline=4 ;;
   .agent/skills/agent-skill-authoring/SKILL.md) baseline=6 ;;
   .agent/skills/asd-ste100/SKILL.md) baseline=31 ;;
-  .agent/.agent/skills/asd-ste100/references/writing-rules.md) baseline=6 ;;
+   .agent/skills/asd-ste100/references/writing-rules.md) baseline=6 ;;
   .agent/skills/drawing/SKILL.md) baseline=24 ;;
   .agent/skills/drawing/references/archive-and-delivery.md) baseline=7 ;;
   .agent/skills/drawing/references/generation-recovery-and-provenance.md) baseline=17 ;;
   .agent/skills/drawing/references/image-editing-protocol.md) baseline=4 ;;
   .agent/skills/drawing/references/prompt-fidelity.md) baseline=15 ;;
   .agent/skills/drawing/references/series-continuity-and-iteration.md) baseline=9 ;;
-  .agent/.agent/skills/philosophy-religion-asceticism/SKILL.md) baseline=7 ;;
-  .agent/.agent/skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md) baseline=7 ;;
-  .agent/.agent/skills/philosophy-religion-asceticism/references/source-standards.md) baseline=1 ;;
+   .agent/skills/philosophy-religion-asceticism/SKILL.md) baseline=7 ;;
+   .agent/skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md) baseline=7 ;;
+   .agent/skills/philosophy-religion-asceticism/references/source-standards.md) baseline=1 ;;
 esac
 
 # STE-flavored prose does not enforce synonym rotation.
 case "$file" in
-  .takeout/images/README-1.md|.takeout/images/README-2.md|.agent/skills/asd-ste100/README.md|.agent/skills/drawing/README.md|.agent/ .agent/skills/drawing/references/patterns/*.md|.agent/skills/drawing/references/style-guide.md|.agent/.agent/skills/philosophy-religion-asceticism/README.md|.agent/.agent/skills/philosophy-religion-asceticism/CHANGELOG.md|.agent/.agent/skills/philosophy-religion-asceticism/references/*.md)
+  .takeout/images/README-1.md|.takeout/images/README-2.md|.agent/skills/asd-ste100/README.md|.agent/skills/drawing/README.md|.agent/skills/drawing/references/patterns/*.md|.agent/skills/drawing/references/style-guide.md|.agent/skills/philosophy-religion-asceticism/README.md|.agent/skills/philosophy-religion-asceticism/CHANGELOG.md|.agent/skills/philosophy-religion-asceticism/references/*.md)
     disable="synonym-rotation"
     ;;
 esac
 
 # This reference quotes the semicolon as an example of the prohibited mark.
-if [ "$file" = ".agent/.agent/skills/asd-ste100/references/writing-rules.md" ]; then
+if [ "$file" = " .agent/skills/asd-ste100/references/writing-rules.md" ]; then
   disable="synonym-rotation,semicolon"
 fi
 
