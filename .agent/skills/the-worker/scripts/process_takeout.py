@@ -307,6 +307,7 @@ def validate_conversation_record(value: Any, root: Path, source_name: str,
         or any(part in {"", ".", ".."} for part in relative.parts)
         or relative.suffix.lower() != ".md"
         or relative.parts[0] not in {"area", "images"}
+        or (relative.parts[0] == "area" and (len(relative.parts) < 2 or relative.parts[1] not in {"drawing", "novel"}))
     ):
         raise ProcessingError(f"{source_name}: unsafe conversation_record path: {value!r}.")
     record_path = root.joinpath(*relative.parts)
