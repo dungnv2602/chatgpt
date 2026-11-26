@@ -11,7 +11,7 @@
 - **Origin:** Assistant
 - **Approval:** Approved
 - **Governing ADR(s):** Pending — Worker review required before approval
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** None
 - **Ledger group:** `ci-8ddfff1af8121755`
