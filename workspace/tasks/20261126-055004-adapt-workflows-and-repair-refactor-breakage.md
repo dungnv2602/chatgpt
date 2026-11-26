@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-055004
 - **Created:** 2026-11-26 05:50 UTC
-- **Updated:** 2026-11-26 06:15 UTC
+- **Updated:** 2026-11-26 06:27 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -80,18 +80,19 @@ Adapt repository workflows and documentation to the user's current refactor. Rep
 
 The root `README.md` and root `images/` directory remain absent. The workspace discussion register, task board, and active task record exist. The old image tree was relocated to `.takeout/images/`; the active hand-off file remains deleted. The processor, tests, workflow, image guides, Worker/Drawing/novel instructions, session-start paths, and catalog history rule now use the relocated layout. General shared assets use `.takeout/images/original/` and `.takeout/images/webp/`; project-specific `area/drawing/` and `area/novel/` destinations remain unchanged. The workspace ADR index no longer links to archived ADR files removed from the branch. DRAFT-0003 remains in review and is not being implemented.
 
-## 8. Remaining Work
+## 8\. Remaining Work
 
-- Update image workflow paths to the verified `.takeout/images/` layout and preserve the deleted hand-off file.
-- Update related Worker, Drawing, and catalog references. Then read back all changed files.
-- Update relevant README files and workflow instructions where evidence shows they are stale.
-- Read back all changed files and inspect commit metadata.
+- Await explicit user authorization before manually dispatching the hosted image-processing regression workflow. Do not run repository scripts locally or poll CI.
+- A full repository-wide link/path audit was not performed; the completed audit was limited to relevant workflow, image, navigation, and project documentation paths.
+- No other file edits are pending within the verified scope.
 
-## 9. Next Actions
 
-1. Verify changed files and link targets against branch `gpt`.
-2. Inspect the image processor and regression fixtures for stale paths or inconsistencies.
-3. Inspect the commits and report validation limits.
+## 9\. Next Actions
+
+1. Await the user's decision on whether to dispatch `.github/workflows/convert-images-to-webp.yml` on branch `gpt`.
+2. If authorized, dispatch once; report only the result actually returned by the host and do not poll CI.
+3. If no dispatch is requested, retain this task as In Progress with static verification complete.
+
 
 ## 10. References
 
@@ -103,16 +104,18 @@ The root `README.md` and root `images/` directory remain absent. The workspace d
 - `workspace/TASK_TEMPLATE.md`
 - `workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md`
 
-## 11. Verification
+## 11\. Verification
 
-- **Check:** Foundational instructions, task template, catalog, and workspace navigation targets.
-- **Method:** Retrieved exact paths from branch `gpt` through the GitHub repository interface.
-- **Result:** Required foundational files were retrieved. The discussion register was created and read back. The task board and active task directory were absent at inspection.
-- **Limitations:** No repository-wide link audit has been completed. No hosted validation has been run.
+- **Check:** Repository roots, workspace tracking files, relevant README links, image intake/storage paths, workflow filters, processor paths, and regression fixtures.
+- **Method:** Read back the exact changed files from branch `gpt`; inspect exact directory listings and resolve relevant README link targets.
+- **Result:** The root `README.md`, root `images/`, and `.takeout/images/HANDOFF.yml` remain absent. `.takeout/images/original/` and `.takeout/images/webp/` exist. The active task directory contains only the correctly named task record. The board and discussion register point to it. Targeted workspace, image, skill, report, and novel README links resolve. The processor, tests, Action, session-start instructions, and relevant guides use the relocated paths. Deleted archived ADR links were removed from the active ADR index. DRAFT-0003 remains in review.
+- **Limitations:** The unit test suite was not executed and no workflow was manually dispatched; the GitHub Actions skill requires an explicit user request for manual dispatch and prohibits local execution or CI polling. No full-repository audit was performed. `.archive/README.md` was left unchanged because the archive policy marks it read-only.
 
-## 12. Handoff Instructions
 
-Continue this task on branch `gpt`. Preserve the user's refactor. Do not create a root `README.md`, restore deleted paths, or implement DRAFT-0003. Audit current links and workflow references against the live tree. Make only evidence-based repairs. Read back every changed path and inspect the resulting commits.
+## 12\. Handoff Instructions
+
+Continue on branch `gpt`. Preserve the user's refactor. Do not create a root `README.md`, restore root `images/`, recreate the deleted hand-off, recreate the global image reference index, restore deleted archived ADRs, or implement DRAFT-0003. The image processor and Action now target `.takeout/images/`; shared originals and WebP derivatives are stored in `original/` and `webp/`. If the user authorizes hosted regression validation, dispatch the image workflow once and report only the result returned by the host. Do not run repository scripts locally or poll CI. Expand to a full repository-wide audit only if explicitly requested.
+
 
 ## 13. Ledger Findings
 
@@ -125,7 +128,7 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 - **Action:** Created the task record from the current version 1.3 template and created the global task board from The Worker's embedded contract.
 - **Result:** The task record was read back. The board identifies it as current execution and lists it once under In Progress. No root README was created.
-- **References:** `workspace/tasks/20261126055004-adapt-workflows-and-repair-refactor-breakage.md`, `workspace/task_board.md`, `workspace/discussion.md`, commit `9fb66022dfa3c6141433304836c221963b92be50`, board commit `492a131c779e3de2a57503e87b0cbbc560803140`.
+- **References:** `workspace/tasks/20261126-055004-adapt-workflows-and-repair-refactor-breakage.md`, `workspace/task_board.md`, `workspace/discussion.md`, commit `9fb66022dfa3c6141433304836c221963b92be50`, board commit `492a131c779e3de2a57503e87b0cbbc560803140`.
 - **Next:** Audit relevant workspace, skill, and workflow references against the current branch.
 
 ### 2026-11-26 05:53 UTC
@@ -162,3 +165,11 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Result:** The corrected task record is the only active file for ID `20261126-055004`. The old path is absent. The board and discussion register point to the corrected path.
 - **References:** `workspace/tasks/20261126-055004-adapt-workflows-and-repair-refactor-breakage.md`, superseded path `workspace/tasks/20261126055004-adapt-workflows-and-repair-refactor-breakage.md`, commit `90d079e68b6c63ab22ed294055c11f1d69ab1ef4`.
 - **Next:** Complete repository path and link verification.
+
+### 2026-11-26 06:27 UTC
+
+- **Action:** Completed targeted read-back and link verification across the changed workflow, image, workspace, skill, report, and novel documentation paths.
+- **Result:** All targeted link destinations checked resolve. The root README, root image directory, active hand-off, and deleted ADR records remain absent. The active task ID, filename, task-board row, and discussion link agree. The task remains In Progress pending a user decision on hosted regression dispatch.
+- **References:** `workspace/README.md`, `workspace/task_board.md`, `workspace/discussion.md`, `workspace/adr/README.md`, `.takeout/images/README-1.md`, `.takeout/images/README-2.md`, `area/novel/README.md`, `area/novel/WORKFLOW.md`, `.github/workflows/convert-images-to-webp.yml`, `.agent/skills/the-worker/scripts/process_takeout.py`, `.agent/skills/the-worker/scripts/test_process_takeout_unittest.py`.
+- **Validation limits:** No local test execution, manual workflow dispatch, or CI polling was performed. No full-repository audit was performed.
+- **Next:** Await user direction on hosted regression validation.
