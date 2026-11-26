@@ -10,7 +10,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "1.4.0"
+      "const": "1.5.0"
     },
     "updated_at_utc": {
       "type": [
@@ -34,7 +34,8 @@
           "type": "array",
           "items": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "pattern": "^\\.takeout/reports/"
           },
           "uniqueItems": true
         },
@@ -150,7 +151,8 @@
               "properties": {
                 "report_path": {
                   "type": "string",
-                  "minLength": 1
+                  "minLength": 1,
+                  "pattern": "^(\\.takeout/reports/|\\.archive/reports/)"
                 },
                 "run_url": {
                   "type": [
