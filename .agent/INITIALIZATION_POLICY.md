@@ -8,14 +8,14 @@ This file records the repository's conditional initialization policy. Operationa
 
 - Repository: `dungnv2602/chatgpt`
 - Branch: `gpt`
-- Foundational initialization: `skills/SESSION_START.md`
-- Foundational collaboration and task continuity: `skills/the-worker/SKILL.md`
-- Mandatory Conversation Mode component: `skills/the-worker/references/conversation-mode.md`
-- Agent Skills format, loaded on demand: `skills/agent-skill-authoring/SKILL.md`
-- Technical writing standard: `skills/asd-ste100/SKILL.md`
-- Foundational document governance: `skills/document-standards/SKILL.md`
-- Canonical novelist procedure: the Novelist role initialization section in `skills/SESSION_START.md`
-- Drawing tier: The Worker's archive/media references and `skills/drawing/SKILL.md`, loaded for a drawing session or novelist initialization
+- Foundational initialization: `.agent/SESSION_START.md`
+- Foundational collaboration and task continuity: `.agent/skills/the-worker/SKILL.md`
+- Mandatory Conversation Mode component: `.agent/skills/the-worker/references/conversation-mode.md`
+- Agent Skills format, loaded on demand: `.agent/skills/agent-skill-authoring/SKILL.md`
+- Technical writing standard: `.agent/skills/asd-ste100/SKILL.md`
+- Foundational document governance: `.agent/skills/document-standards/SKILL.md`
+- Canonical novelist procedure: the Novelist role initialization section in `.agent/SESSION_START.md`
+- Drawing tier: The Worker's archive/media references and `.agent/skills/drawing/SKILL.md`, loaded for a drawing session or novelist initialization
 
 This file does not replace an operational skill or initiation procedure.
 
@@ -23,15 +23,15 @@ This file does not replace an operational skill or initiation procedure.
 
 Initialization is conditional. Do not load project instructions or skills at the start of a new conversation.
 
-The only session-start cue is `start session`. Read `skills/SESSION_START.md` and follow its complete procedure when the user gives that cue as an instruction.
+The only session-start cue is `/start`. Read `.agent/SESSION_START.md` and follow its complete procedure when the user gives that cue as an instruction.
 
-A specialist-role request does not change or satisfy the `start session` cue. It does not authorize foundational initialization. If initialization has not passed in the current conversation, stop and ask the user to say `start session`. After that explicit initialization passes, load the missing specialist tiers required by the role.
+A specialist-role request does not change or satisfy the `/start` cue. It does not authorize foundational initialization. If initialization has not passed in the current conversation, stop and ask the user to say `/start`. After that explicit initialization passes, load the missing specialist tiers required by the role.
 
 ## Operating rules
 
 - Do not initialize automatically.
 - Do not treat specialist-role requests as session-start cues.
-- Specialist-role requests never trigger foundational initialization. Ask for `start session` when it has not passed in the current conversation.
+- Specialist-role requests never trigger foundational initialization. Ask for `/start` when it has not passed in the current conversation.
 - Load only the files required by the session-start procedure or the requested specialist task.
 - Do not load unrelated skills or references.
 - Report the exact path of a missing or unverified file.
@@ -52,9 +52,9 @@ Foundational initialization loads these skills:
 
 Agent Skill Authoring remains on-demand. Document Standards is foundational because its template-first gate applies across repository document creation and material revision. Load its skill definition during initialization. Retrieve its catalog, templates, schemas, and validator details only when the task requires them.
 
-The Drawing tier is tier 2, not foundational. It includes the Drawing skill and its required references. Load it only after foundational initialization passes. The Worker owns the archive/media procedures used by Drawing. A drawing-session or novelist request does not trigger foundational initialization. Its required references are `skills/drawing/references/style-guide.md` and `skills/drawing/references/image-editing-protocol.md`.
+The Drawing tier is tier 2, not foundational. It includes the Drawing skill and its required references. Load it only after foundational initialization passes. The Worker owns the archive/media procedures used by Drawing. A drawing-session or novelist request does not trigger foundational initialization. Its required references are `.agent/skills/drawing/references/style-guide.md` and `.agent/skills/drawing/references/image-editing-protocol.md`.
 
-Novelist initialization is tier 3. Load `skills/romantic-storyteller-visual-artist/SKILL.md` only for the explicit novelist role request, after foundational and Drawing tiers are ready.
+Novelist initialization is tier 3. Load `.agent/skills/romantic-storyteller-visual-artist/SKILL.md` only for the explicit novelist role request, after foundational and Drawing tiers are ready.
 
 Maintain a per-conversation verified-load ledger. Retrieve and read each required skill or reference once. Reuse it when entering a higher tier or returning to a prior tier. A new conversation starts a new ledger. Refresh only when the user asks, you know or suspect a relevant repository change, or an unresolved instruction requires the current file. Do not reload an entire tier to refresh one file.
 
@@ -74,7 +74,7 @@ Branch: "gpt"
 
 The GitHub repository "dungnv2602/chatgpt", branch "gpt", is the sole source of truth for project files, skills, prompts, references, and archives.
 
-Use "skills/SESSION_START.md" as the sole source of session-start instructions, and initialize only when I say "start session".
+Use ".agent/SESSION_START.md" as the sole source of session-start instructions, and initialize only when I say "start session".
 
 Initialization is conditional. Do not load project instructions or skills at the start of a new conversation.
 ```
@@ -82,12 +82,12 @@ Initialization is conditional. Do not load project instructions or skills at the
 ## Design principles
 
 1. **On-demand loading:** Load only what the requested task requires.
-2. **Single initialization authority:** `skills/SESSION_START.md` defines foundational initialization.
+2. **Single initialization authority:** `.agent/SESSION_START.md` defines foundational initialization.
 3. **Explicit dependency:** Novelist initialization requires foundational initialization first.
-4. **No duplicate procedures:** Keep session-start and novelist initialization procedures in `skills/SESSION_START.md`.
+4. **No duplicate procedures:** Keep session-start and novelist initialization procedures in `.agent/SESSION_START.md`.
 5. **Current-session verification:** Do not use remembered files as a substitute for fresh reads when you must verify.
-6. **On-demand skill authoring:** Use `skills/agent-skill-authoring/SKILL.md` when you create or maintain skills.
-7. **Controlled technical writing:** Use `skills/asd-ste100/SKILL.md` for skill and technical documentation.
+6. **On-demand skill authoring:** Use `.agent/skills/agent-skill-authoring/SKILL.md` when you create or maintain skills.
+7. **Controlled technical writing:** Use `.agent/skills/asd-ste100/SKILL.md` for skill and technical documentation.
 
 ## Change history
 
@@ -100,7 +100,7 @@ The entries below are historical. The current policy above takes precedence. A f
 - **Dependency:** `Be the novelist` includes foundational initialization.
 - **Duplicate prevention:** Both cues trigger foundational initialization only once.
 - **Reason:** Avoid unnecessary loading while preserving specialist prerequisites.
-- **Operational files:** `skills/SESSION_START.md` and `skills/novelist-initiation/SKILL.md`.
+- **Operational files:** `.agent/SESSION_START.md` and `skills/novelist-initiation/SKILL.md`.
 
 ### Version 2 — Agent Skills format
 
@@ -145,6 +145,17 @@ The entries below are historical. The current policy above takes precedence. A f
 - **Behavioral impact:** Foundational initialization loads The Worker and its mandatory Conversation Mode reference, ASD-STE100, and GitHub Actions. Session Archiving, Agent Skill Authoring, and Document Standards load on demand.
 - **Files modified:** The Worker, Conversation Mode compatibility entry point, Session Archiving, Agent Skill Authoring, Session Start, this policy, the skills index, the document-type catalog, and the workspace index.
 - **Verification:** Pending exact read-back.
+
+
+### Version 7 — Relocated workflow paths and cue alignment
+
+- **Date:** 2026-11-26
+- **Requested change:** Adapt initialization policy to the reconstructed `.agent/` layout and the user's `/start` cue.
+- **Reason:** The former root `skills/` paths and `start session` cue conflicted with the current repository layout and user configuration.
+- **Behavioral impact:** Current path references use `.agent/SESSION_START.md` and `.agent/skills/`. The initialization cue is `/start`. No former files were restored.
+- **Files modified:** `.agent/INITIALIZATION_POLICY.md`, `.agent/SESSION_START.md`.
+- **Verification:** Pending committed read-back.
+- **Commit(s):** Pending.
 
 ## Future revision log
 
