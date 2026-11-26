@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-27 05:40 UTC:** Refine `/start` initialization to keep baseline session continuity while loading domain skills progressively, and align GitHub Actions skill ownership with CI-specific activation.
+_No active step._
 
 ## Open Discussions
 
@@ -12,6 +12,8 @@
 - **2026-11-26 15:00 UTC:** DRAFT-0002 revision 4 remains in review. Its wording corrections passed hosted lint. The decision and implementation scope remain unapproved.
 
 ## Reports
+
+- **2026-11-27 05:50 UTC:** Approved progressive skill activation. `/start` now loads The Worker and Conversation Mode only. CI, document governance, technical writing, and skill authoring are task-activated. GitHub Actions is no longer universal startup-loaded. Committed and read-back verified. Commits: `764d771`, `f9a3e2f`, `11a5475`, `7bcb449`, `4ed128e`.
 
 - **2026-11-27 05:25 ICT:** Audited Ledger policy and found conflicting Worker intake instructions (Proposed/unapproved tasks vs permanent P0 Approved/In Progress) plus a CI error-prevention procedure embedded in the Ledger guide. Reconciled Worker intake with the P0 policy and moved recurrence prevention to GitHub Actions. Read-back verified. Commits: `7b94e6e`, `d5547da`, `e9ab0ba`.
 
