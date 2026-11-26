@@ -2,9 +2,9 @@
 
 **Current standard:** 1.1  
 **Applies to:** All novel projects stored in this repository  
-**Canonical workspace:** `novels/` on branch `gpt`
+**Canonical workspace:** `area/novel/` on branch `gpt`
 
-This document governs novel planning, structure, writing, illustration, revision, and maintenance. The [workspace README](README.md) is the quick reference. The [Romantic Storyteller skill](../skills/romantic-storyteller-visual-artist/SKILL.md) defines role-specific creative and visual procedures. If this workflow conflicts with an older template, use the current Version 1.1 template.
+This document governs novel planning, structure, writing, illustration, revision, and maintenance. The [workspace README](README.md) is the quick reference. The [Romantic Storyteller skill](../../.agent/skills/romantic-storyteller-visual-artist/SKILL.md) defines role-specific creative and visual procedures. If this workflow conflicts with an older template, use the current Version 1.1 template.
 
 ## 1. Governing principles
 
@@ -99,7 +99,7 @@ Do not duplicate full scene prose in an arc or novel summary. Do not duplicate f
 
 Keep illustration documentation beside its scene. Store binary image assets in one central library per novel:
 
-`novels/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`
+`area/novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`
 
 Each retained illustration has two binary files beside one another. The original PNG or JPEG is the master. The WebP file is its delivery derivative. The master is the source of truth. WebP is a separate derivative. Stable illustration IDs do not change when titles or filenames change.
 
@@ -128,7 +128,7 @@ For every stored illustration, link the central master and WebP paths from its I
 Use one folder per novel, one folder per arc, and one folder per scene.
 
 ```text
-novels/
+area/novel/
 ├── README.md
 ├── WORKFLOW.md
 ├── templates/
@@ -190,7 +190,7 @@ Use descriptive, stable filenames and relative Markdown links. Update all inboun
 2. Create `novel.md` and `open-discussion.md` from the current templates.
 3. Record the premise, intended genre, core reader experience, main characters, central relationship, stakes, and ending direction. Record only what is known.
 4. Mark the title, setting, character details, plot mechanisms, and other undecided elements as open. Do not invent them as facts.
-5. Establish stable IDs. Link the project from `novels/README.md`.
+5. Establish stable IDs. Link the project from `area/novel/README.md`.
 
 **Foundation deliverable:** a usable novel foundation and an open-discussion register. A complete biography, world encyclopedia, or chapter plan is not required.
 
@@ -375,4 +375,4 @@ A documentation or story-record task is complete only when:
 
 ## Technical documentation standard
 
-This workflow contains operational instructions. Apply Strict mode from the repository [ASD-STE100 policy](../skills/asd-ste100/references/repository-writing-policy.md) when you revise it. Preserve novel canon, approval scope, and narrative meaning.
+This workflow contains operational instructions. Apply Strict mode from the repository [ASD-STE100 policy](../../.agent/skills/asd-ste100/references/repository-writing-policy.md) when you revise it. Preserve novel canon, approval scope, and narrative meaning.
