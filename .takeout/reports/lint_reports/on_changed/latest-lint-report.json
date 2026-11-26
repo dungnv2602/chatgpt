@@ -1,89 +1,240 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45903174690",
-  "run_number": 829,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45903174690",
+  "run_id": "45903483133",
+  "run_number": 830,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45903483133",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "881a990d09a455534a392dfcaa5b2449baac3c22",
+  "commit_sha": "e5138cc21dbadb28fb9c38bb0985436a763633aa",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "incremental",
-  "baseline_sha": "d61d47cbcab8d691a076cb7302fa7f3c50804d2f",
-  "generated_at_utc": "2026-11-26T22:12:23.752669+00:00",
+  "baseline_sha": "881a990d09a455534a392dfcaa5b2449baac3c22",
+  "generated_at_utc": "2026-11-26T22:15:06.363498+00:00",
   "status": "Failed",
-  "linter_source_sha": "881a990d09a455534a392dfcaa5b2449baac3c22",
+  "linter_source_sha": "e5138cc21dbadb28fb9c38bb0985436a763633aa",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
   },
   "files_evaluated": [
-    "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md"
+    ".agent/skills/the-worker/SKILL.md"
   ],
   "files_evaluated_count": 1,
   "files_failed": 1,
   "failed_files": [
-    "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md"
+    ".agent/skills/the-worker/SKILL.md"
   ],
   "files_with_findings": 1,
-  "total_findings": 4,
-  "hard_findings": 4,
-  "advisory_findings": 0,
+  "total_findings": 9,
+  "hard_findings": 5,
+  "advisory_findings": 4,
   "findings_by_rule": {
-    "synonym-rotation": 4
+    "passive-voice": 4,
+    "synonym-rotation": 2,
+    "semicolon": 1,
+    "long-sentence": 2
   },
   "records": [
     {
       "violations": [
         {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 90,
-          "col": 102,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Delete",
-          "message": "'delete' and 'remove' name the same action. Pick one and use it every time."
+          "file": ".agent/skills/the-worker/SKILL.md",
+          "line": 39,
+          "col": 84,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are identified",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         },
         {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 92,
-          "col": 104,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "check",
-          "message": "'check' and 'confirm' name the same action. Pick one and use it every time."
+          "file": ".agent/skills/the-worker/SKILL.md",
+          "line": 44,
+          "col": 60,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are committed",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         },
         {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 158,
-          "col": 108,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "alter",
-          "message": "'alter' and 'change' name the same action. Pick one and use it every time."
+          "file": ".agent/skills/the-worker/SKILL.md",
+          "line": 45,
+          "col": 28,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are validated",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         },
         {
-          "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-          "line": 159,
-          "col": 149,
+          "file": ".agent/skills/the-worker/SKILL.md",
+          "line": 45,
+          "col": 32,
           "rule": "synonym-rotation",
           "level": "advisory-free",
-          "match": "Validate",
-          "message": "'validate' and 'confirm' name the same action. Pick one and use it every time."
+          "match": "validated",
+          "message": "'validate' and 'check' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": ".agent/skills/the-worker/SKILL.md",
+          "line": 45,
+          "col": 173,
+          "rule": "semicolon",
+          "level": "advisory-free",
+          "match": ";",
+          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
+        },
+        {
+          "file": ".agent/skills/the-worker/SKILL.md",
+          "line": 69,
+          "col": 51,
+          "rule": "synonym-rotation",
+          "level": "advisory-free",
+          "match": "start",
+          "message": "'start' and 'initiate' name the same action. Pick one and use it every time."
+        },
+        {
+          "file": ".agent/skills/the-worker/SKILL.md",
+          "line": 280,
+          "col": 144,
+          "rule": "passive-voice",
+          "level": "advisory",
+          "match": "are authorized",
+          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
+        },
+        {
+          "file": ".agent/skills/the-worker/SKILL.md",
+          "line": 282,
+          "col": 124,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "35 words",
+          "message": "Sentence has 35 words (cap 25). Split it."
+        },
+        {
+          "file": ".agent/skills/the-worker/SKILL.md",
+          "line": 285,
+          "col": 3,
+          "rule": "long-sentence",
+          "level": "advisory-free",
+          "match": "44 words",
+          "message": "Sentence has 44 words (cap 25). Split it."
         }
       ],
-      "count": 4,
-      "hard_count": 4,
+      "count": 9,
+      "hard_count": 5,
       "baseline": 0,
-      "words": 3456,
-      "per_100_words": 0.1,
-      "path": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
+      "words": 5927,
+      "per_100_words": 0.2,
+      "path": ".agent/skills/the-worker/SKILL.md",
       "exit_code": 1
     }
   ],
   "findings": [
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 39,
+      "col": 84,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are identified",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "e1589b5207c7991dd0eac000",
+      "comparison": "new"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 44,
+      "col": 60,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are committed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "5524d0b44a548a67e3636a68",
+      "comparison": "new"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 45,
+      "col": 28,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are validated",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "b1e35b2851bbde31553d9cfc",
+      "comparison": "new"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 45,
+      "col": 32,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "validated",
+      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "d04c76628166e8796dcfc446",
+      "comparison": "new"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 45,
+      "col": 173,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "c9f0d9a4ac52efda5b4f9aea",
+      "comparison": "new"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 69,
+      "col": 51,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "start",
+      "message": "'start' and 'initiate' name the same action. Pick one and use it every time.",
+      "fingerprint": "15a39e78d06fa29daf65aba3",
+      "comparison": "new"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 280,
+      "col": 144,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are authorized",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "857e0d2fef3568ba9dff44ac",
+      "comparison": "new"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 282,
+      "col": 124,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "35 words",
+      "message": "Sentence has 35 words (cap 25). Split it.",
+      "fingerprint": "d12eb5aac33ab414d203a6d5",
+      "comparison": "new"
+    },
+    {
+      "file": ".agent/skills/the-worker/SKILL.md",
+      "line": 285,
+      "col": 3,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "44 words",
+      "message": "Sentence has 44 words (cap 25). Split it.",
+      "fingerprint": "bca5f43ed3545a47de04d134",
+      "comparison": "new"
+    }
+  ],
+  "new_findings": 9,
+  "recurring_findings": 0,
+  "resolved_findings": [
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
       "line": 90,
@@ -93,7 +244,7 @@
       "match": "Delete",
       "message": "'delete' and 'remove' name the same action. Pick one and use it every time.",
       "fingerprint": "e65e3922aa38293af2adc5e0",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -104,7 +255,7 @@
       "match": "check",
       "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
       "fingerprint": "c71ff84334a10d7dd38255c9",
-      "comparison": "new"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -115,7 +266,7 @@
       "match": "alter",
       "message": "'alter' and 'change' name the same action. Pick one and use it every time.",
       "fingerprint": "3f34a81299a3d18ae26e4279",
-      "comparison": "recurring"
+      "comparison": "resolved"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -126,76 +277,6 @@
       "match": "Validate",
       "message": "'validate' and 'confirm' name the same action. Pick one and use it every time.",
       "fingerprint": "563af8dd74cf1ba4bd074708",
-      "comparison": "recurring"
-    }
-  ],
-  "new_findings": 2,
-  "recurring_findings": 2,
-  "resolved_findings": [
-    {
-      "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-      "line": 100,
-      "col": 85,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "checks",
-      "message": "'check' and 'confirm' name the same action. Pick one and use it every time.",
-      "fingerprint": "869c8495109dea6f34af871c",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
-      "line": 193,
-      "col": 259,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'confirm' name the same action. Pick one and use it every time.",
-      "fingerprint": "f331458e480ad4445c592130",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/the-worker/SKILL.md",
-      "line": 270,
-      "col": 144,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are authorized",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "857e0d2fef3568ba9dff44ac",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/the-worker/SKILL.md",
-      "line": 272,
-      "col": 124,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "35 words",
-      "message": "Sentence has 35 words (cap 25). Split it.",
-      "fingerprint": "d12eb5aac33ab414d203a6d5",
-      "comparison": "resolved"
-    },
-    {
-      "file": ".agent/skills/the-worker/SKILL.md",
-      "line": 275,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "44 words",
-      "message": "Sentence has 44 words (cap 25). Split it.",
-      "fingerprint": "bca5f43ed3545a47de04d134",
-      "comparison": "resolved"
-    },
-    {
-      "file": "workspace/task_board.md",
-      "line": 21,
-      "col": 1,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "98 words",
-      "message": "Sentence has 98 words (cap 25). Split it.",
-      "fingerprint": "8647e8d8e7c0939979ecdb3d",
       "comparison": "resolved"
     }
   ],
@@ -216,13 +297,13 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.400s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.336s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.004s\n\nOK\n"
+      "output": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.005s\n\nOK\n"
     },
     {
       "name": "STE linter self-test",
@@ -234,7 +315,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Passed",
       "exit_code": 0,
-      "output": "Scanned 1 changed Markdown sources (332 available as link targets) and 1 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
+      "output": "Scanned 1 changed Markdown sources (333 available as link targets) and 3 local Markdown links.\nFound 0 unresolved local Markdown targets or anchors.\n"
     }
   ],
   "failed_checks": []
