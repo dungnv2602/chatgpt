@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#205](https://github.com/dungnv2602/chatgpt/actions/runs/45771434539)
-- **Run ID / attempt:** 45771434539 / 1
+- **Run:** [#206](https://github.com/dungnv2602/chatgpt/actions/runs/45773614372)
+- **Run ID / attempt:** 45773614372 / 1
 - **Workflow:** STE Lint Full Technical Documentation
-- **Branch / commit:** gpt / bcb548b39ad91b1c6d63cdcafb78c080df403713
+- **Branch / commit:** gpt / f7d38e70535b3918f978e1fd769f7e42d9fd1692
 - **Event:** push
 - **Execution mode:** repository-wide
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 4723823ab3fac22e2352d1d86ba3bd26866b2cb3
-- **Generated (UTC):** 2026-11-26T06:56:03.197198+00:00
+- **Linter source SHA:** 5fc32f2c06f77facedbed7c7cfab609ec8137d8e
+- **Generated (UTC):** 2026-11-26T07:14:16.340238+00:00
 
 ## 1. Executive summary
 
@@ -19,12 +19,12 @@
 | Files evaluated | 88 |
 | Files that failed | 32 |
 | Files with findings | 63 |
-| Total findings | 713 |
+| Total findings | 712 |
 | Hard findings | 292 |
-| Advisory findings | 421 |
+| Advisory findings | 420 |
 | New findings | 0 |
-| Recurring findings | 713 |
-| Resolved findings | 0 |
+| Recurring findings | 712 |
+| Resolved findings | 1 |
 | Failed workflow checks | 1 |
 
 ## 2. Execution environment
@@ -174,10 +174,10 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/philosophy-religion-asceticism/SKILL.md | PASS | 8 | 0 | 7 | 2387 | 0.3 | 0 |
 | .agent/skills/internal-comms/examples/general-comms.md | PASS | 1 | 0 | 0 | 85 | 1.2 | 0 |
 | .agent/skills/pdf/REFERENCE.md | PASS | 0 | 0 | 0 | 394 | 0.0 | 0 |
-| .agent/skills/decision-governance/SKILL.md | FAIL | 9 | 5 | 0 | 2916 | 0.3 | 1 |
+| .agent/skills/decision-governance/SKILL.md | FAIL | 9 | 5 | 0 | 2913 | 0.3 | 1 |
 | .agent/skills/asd-ste100/references/writing-rules.md | PASS | 8 | 0 | 6 | 706 | 1.1 | 0 |
 | .agent/skills/drawing/references/series-continuity-and-iteration.md | PASS | 9 | 0 | 9 | 3262 | 0.3 | 0 |
-| .agent/skills/document-standards/references/document-type-catalog.md | FAIL | 7 | 4 | 0 | 4592 | 0.2 | 1 |
+| .agent/skills/document-standards/references/document-type-catalog.md | FAIL | 6 | 4 | 0 | 4596 | 0.1 | 1 |
 | .agent/skills/the-worker/references/archive-records-and-image-prompts.md | FAIL | 28 | 3 | 0 | 3538 | 0.8 | 1 |
 | .agent/skills/drawing/references/image-editing-protocol.md | PASS | 2 | 1 | 4 | 474 | 0.4 | 0 |
 | .agent/skills/agent-skill-authoring/SKILL.md | PASS | 15 | 0 | 6 | 2260 | 0.7 | 0 |
@@ -197,7 +197,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/migrate-to-rust/SKILL.md | FAIL | 21 | 15 | 0 | 1173 | 1.8 | 1 |
 | .agent/skills/theme-factory/themes/forest-canopy.md | PASS | 0 | 0 | 0 | 68 | 0.0 | 0 |
 | .agent/skills/skill-creator/references/schemas.md | PASS | 3 | 0 | 0 | 518 | 0.6 | 0 |
-| workspace/draft/README.md | FAIL | 4 | 3 | 0 | 665 | 0.6 | 1 |
+| workspace/draft/README.md | FAIL | 4 | 3 | 0 | 664 | 0.6 | 1 |
 | workspace/TASK_TEMPLATE.md | PASS | 5 | 0 | 0 | 461 | 1.1 | 0 |
 | .agent/skills/pdf/FORMS.md | FAIL | 13 | 8 | 0 | 1195 | 1.1 | 1 |
 | .agent/skills/theme-factory/themes/arctic-frost.md | PASS | 0 | 0 | 0 | 73 | 0.0 | 0 |
@@ -216,7 +216,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/migrate-to-rust/references/pgo_and_telemetry_guide.md | FAIL | 13 | 10 | 0 | 1274 | 1.0 | 1 |
 | .agent/skills/asd-ste100/SKILL.md | PASS | 20 | 12 | 31 | 2609 | 0.8 | 0 |
 | .agent/skills/asd-ste100/assets/lint-report-template.md | PASS | 0 | 0 | 0 | 385 | 0.0 | 0 |
-| workspace/DRAFT_TEMPLATE.md | FAIL | 9 | 4 | 0 | 1243 | 0.7 | 1 |
+| workspace/DRAFT_TEMPLATE.md | FAIL | 9 | 4 | 0 | 1242 | 0.7 | 1 |
 | .agent/skills/discernment-nudge/SKILL.md | FAIL | 26 | 24 | 0 | 1701 | 1.5 | 1 |
 | workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | FAIL | 75 | 53 | 0 | 8961 | 0.8 | 1 |
 | .agent/skills/asd-ste100/references/repository-writing-policy.md | PASS | 1 | 0 | 0 | 570 | 0.2 | 0 |
@@ -229,7 +229,7 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 365 |
+| passive-voice | 364 |
 | long-sentence | 136 |
 | semicolon | 94 |
 | present-perfect | 56 |
@@ -268,7 +268,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.306s
+Ran 4 tests in 0.368s
 
 OK
 ~~~
@@ -281,7 +281,7 @@ OK
 ~~~text
 .....
 ----------------------------------------------------------------------
-Ran 5 tests in 0.016s
+Ran 5 tests in 0.006s
 
 OK
 ~~~
@@ -301,7 +301,7 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 206 active Markdown files (271 available as link targets) and 334 local Markdown links.
+Scanned 214 active Markdown files (282 available as link targets) and 334 local Markdown links.
 Found 1 unresolved local Markdown targets or anchors.
 workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md: missing Markdown file: ../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md
 ~~~
@@ -1688,10 +1688,6 @@ None.
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was attached
-- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:4:447 · **recurring** · fingerprint: 8801fe8ed0c512214f0d5185
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** been run
 - **long-sentence** · .agent/skills/document-standards/references/document-type-catalog.md:45:121 · **recurring** · fingerprint: 2dd7b3784611553473e6528c
   - **Level:** advisory-free
   - **Message:** Sentence has 32 words (cap 25). Split it.
@@ -3171,7 +3167,10 @@ None.
 
 ### Resolved findings
 
-None.
+- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:4:447 · **resolved** · fingerprint: 8801fe8ed0c512214f0d5185
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been run
 
 ## 8. Complete per-file diagnostics
 
@@ -5289,7 +5288,7 @@ No STE findings were recorded for this file.
 - **Findings:** 9
 - **Hard findings:** 5
 - **Baseline:** 0
-- **Words:** 2916
+- **Words:** 2913
 - **Findings per 100 words:** 0.3
 
 #### Complete diagnostics
@@ -5455,18 +5454,13 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 7
+- **Findings:** 6
 - **Hard findings:** 4
 - **Baseline:** 0
-- **Words:** 4592
-- **Findings per 100 words:** 0.2
+- **Words:** 4596
+- **Findings per 100 words:** 0.1
 
 #### Complete diagnostics
-
-- **passive-voice** · .agent/skills/document-standards/references/document-type-catalog.md:4:447 · **recurring** · fingerprint: 8801fe8ed0c512214f0d5185
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** been run
 
 - **long-sentence** · .agent/skills/document-standards/references/document-type-catalog.md:45:121 · **recurring** · fingerprint: 2dd7b3784611553473e6528c
   - **Level:** advisory-free
@@ -6288,7 +6282,7 @@ No STE findings were recorded for this file.
 - **Findings:** 4
 - **Hard findings:** 3
 - **Baseline:** 0
-- **Words:** 665
+- **Words:** 664
 - **Findings per 100 words:** 0.6
 
 #### Complete diagnostics
@@ -7225,7 +7219,7 @@ No STE findings were recorded for this file.
 - **Findings:** 9
 - **Hard findings:** 4
 - **Baseline:** 0
-- **Words:** 1243
+- **Words:** 1242
 - **Findings per 100 words:** 0.7
 
 #### Complete diagnostics
