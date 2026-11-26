@@ -10,7 +10,7 @@ Use **STE-flavored mode** for READMEs, change logs, technical explanations, and 
 
 Do not apply controlled-language rules to creative writing, dialogue, marketing copy, or approved creative prompts. Do not rewrite quoted examples that intentionally show a violation.
 
-Do not rewrite task records under `workspace/tasks/` or `archive/tasks/`. Do not rewrite `workspace/discussion.md`. These files preserve user prompts, decisions, and historical records. Exclude them from lint and active link-source scans. Keep them available as link targets.
+Do not rewrite task records under `workspace/tasks/` or `.archive/task/`. Do not rewrite `workspace/discussion.md`. These files preserve user prompts, decisions, and historical records. Exclude them from lint and active link-source scans. Keep them available as link targets.
 
 ## Writing rules
 
