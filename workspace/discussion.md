@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 16:22 UTC:** Add runtime integrity verification after manifest generation and migration. Verify every retained report JSON and captured log against its manifest, then expose the verification count in the diagnostics log. Keep canonical evidence bytes unchanged. Active scope: [P0 task 20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md).
+- **2026-11-26 16:25 UTC:** Inspect the naturally triggered Diagnostics and STE Lint Changed runs relevant to the ADR-0003 integrity-verification commit and catalog update. Verify manifest checks, report publication, and Ledger reconciliation. Do not dispatch, rerun, or poll CI. Active scopes: [P0 task 20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) and [P0 task 20261126-145133](tasks/20261126-145133-review-publication-or-push-failures-in-ste-lint-changed-document.md).
 
 ## Open Discussions
 
