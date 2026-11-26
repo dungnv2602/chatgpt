@@ -603,6 +603,24 @@ class LedgerTests(unittest.TestCase):
         self.assertIn("- **Priority:** P0", task_text)
         self.assertIn("lint-", task_text)
 
+    def test_schema_1_5_validation_migrates_to_explicit_status(self):
+        ledger = self.read_ledger()
+        ledger["schema_version"] = "1.5.0"
+        finding = {
+            "finding_id":"lint-a1b2c3d4e5f6","task_group":"ci-0123456789abcdef",
+            "source_family":"lint","category":"rule","title":"A finding","status":"resolved","severity":"low",
+            "owner":None,"first_seen_utc":"2026-11-23T07:00:00Z","last_seen_utc":"2026-11-23T07:00:00Z",
+            "occurrence_count":1,"evidence":[],
+            "resolution":{"fix_commit":"abcdef1234567","resolved_at_utc":"2026-11-23T07:15:00Z",
+                "validation":{"run_url":"https://example.invalid/actions/runs/9","conclusion":"success",
+                              "validated_at_utc":"2026-11-23T07:14:00Z"}},
+            "resolution_history":[],"duplicate_of":None,"accepted_risk":None,"task_refs":[],
+        }
+        ledger["findings"] = [finding]
+        migrated = LEDGER.migrate_ledger(ledger,self.root)
+        self.assertEqual(migrated["schema_version"],"1.6.0")
+        self.assertEqual(migrated["findings"][0]["resolution"]["validation"]["status"],"passed")
+
     def test_resolution_schema_accepts_commit_only_and_separate_validation_metadata(self):
         schema = json.loads((self.root / ".takeout" / "reports" / "triage" / "ledger-schema.json").read_text(encoding="utf-8"))
         finding = {

@@ -233,19 +233,10 @@
                     ]
                   }
                 },
-                "anyOf": [
-                  {
-                    "required": [
-                      "status"
-                    ]
-                  },
-                  {
-                    "required": [
-                      "conclusion"
-                    ]
-                  }
-                ],
-                "additionalProperties": false
+                "additionalProperties": false,
+                "required": [
+                  "status"
+                ]
               },
               "note": {
                 "type": [
@@ -319,19 +310,10 @@
                       ]
                     }
                   },
-                  "anyOf": [
-                    {
-                      "required": [
-                        "status"
-                      ]
-                    },
-                    {
-                      "required": [
-                        "conclusion"
-                      ]
-                    }
-                  ],
-                  "additionalProperties": false
+                  "additionalProperties": false,
+                  "required": [
+                    "status"
+                  ]
                 },
                 "note": {
                   "type": [

@@ -166,7 +166,7 @@ def bootstrap_state(root, timestamp=None):
 
 def migrate_ledger(ledger, root):
     version = ledger.get("schema_version")
-    if version not in ("1.0.0", "1.1.0", "1.2.0", "1.3.0", "1.4.0", SCHEMA_VERSION):
+    if version not in ("1.0.0", "1.1.0", "1.2.0", "1.3.0", "1.4.0", "1.5.0", SCHEMA_VERSION):
         raise LedgerError("Unsupported ledger schema version: " + str(version))
     if not isinstance(ledger.get("findings"), list):
         raise LedgerError("The ledger findings field must be an array")
@@ -179,6 +179,16 @@ def migrate_ledger(ledger, root):
         finding.setdefault("duplicate_of", None)
         finding.setdefault("accepted_risk", None)
         finding.setdefault("task_refs", [])
+        # Migrate the legacy success-only validation object to the explicit
+        # status field used by schema 1.6.0. Hosted validation remains optional.
+        resolution_records = [finding.get("resolution")]
+        resolution_records.extend(finding.get("resolution_history") or [])
+        for resolution_record in resolution_records:
+            if not isinstance(resolution_record, dict):
+                continue
+            validation = resolution_record.get("validation")
+            if isinstance(validation, dict) and "status" not in validation:
+                validation["status"] = "passed" if validation.get("conclusion") == "success" else "failed"
         evidence_rows = finding.get("evidence")
         if not isinstance(evidence_rows, list):
             raise LedgerError("finding evidence must be an array: " + str(finding.get("finding_id")))
