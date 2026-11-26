@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126055004
 - **Created:** 2026-11-26 05:50 UTC
-- **Updated:** 2026-11-26 05:51 UTC
+- **Updated:** 2026-11-26 05:53 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -78,18 +78,18 @@ Adapt repository workflows and documentation to the user's current refactor. Rep
 
 ## 7. Current State
 
-The root `README.md`, `workspace/task_board.md`, and the active task directory were absent from the inspected branch snapshot. The workspace README exists. The discussion register has been created and read back. DRAFT-0003 remains in review and does not authorize implementation of its proposed architecture.
+The root `README.md` and root `images/` directory are absent. The workspace discussion register, task board, and active task record now exist. The workspace navigation targets and Draft index links checked so far resolve. The ASD-STE100 policy contained one stale archive path, which now points to `.archive/task/`. The Worker and session-start instructions still name root `images/`, and image takeout guidance still contains old `images/takeout/` paths. DRAFT-0003 remains in review and does not authorize implementation of its proposed architecture.
 
 ## 8. Remaining Work
 
-- Audit workspace and relevant skill/workflow references against the current branch.
+- Inspect the current image storage layout, image workflow, and provenance procedures before changing image path references.
 - Repair stale links and path assumptions without restoring deleted files.
 - Update relevant README files and workflow instructions where evidence shows they are stale.
 - Read back all changed files and inspect commit metadata.
 
 ## 9. Next Actions
 
-1. Audit relevant repository references and navigation links.
+1. Inspect the current image storage layout, image workflow, and provenance procedures.
 2. Update only the files that contain verified stale paths or broken links.
 3. Read back all changed paths and inspect the resulting commits.
 
@@ -127,3 +127,10 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Result:** The task record was read back. The board identifies it as current execution and lists it once under In Progress. No root README was created.
 - **References:** `workspace/tasks/20261126055004-adapt-workflows-and-repair-refactor-breakage.md`, `workspace/task_board.md`, `workspace/discussion.md`, commit `9fb66022dfa3c6141433304836c221963b92be50`, board commit `492a131c779e3de2a57503e87b0cbbc560803140`.
 - **Next:** Audit relevant workspace, skill, and workflow references against the current branch.
+
+### 2026-11-26 05:53 UTC
+
+- **Action:** Audited workspace navigation links and relevant path references in the session-start, Worker, ASD-STE100, Document Standards, and GitHub Actions instructions.
+- **Result:** Workspace README targets checked resolve after task-board creation. The root `images/` directory is absent. The ASD-STE100 policy referenced obsolete `archive/tasks/` and now uses `.archive/task/`. The image intake documentation still names `images/takeout/`, so the actual image storage contract must be established before further edits.
+- **References:** `workspace/README.md`, `workspace/draft/README.md`, `.agent/SESSION_START.md`, `.agent/skills/the-worker/SKILL.md`, `.agent/skills/asd-ste100/references/repository-writing-policy.md`, `.takeout/images/README-1.md`, `.takeout/images/README-2.md`.
+- **Next:** Inspect the current image workflow, processor paths, and provenance references before changing any image destinations.
