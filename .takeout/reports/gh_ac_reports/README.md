@@ -77,7 +77,7 @@ Detailed lint findings, per-file metrics, fingerprints, and baselines remain in 
 
 ## Integrity and history
 
-Each retained post-run error capture is immutable. The retention sweep removes pre-finalizer captures and any success-only, cancellation-only, or otherwise issue-free records, then removes only derived Markdown/navigation copies and rebuilds the central index. Canonical `report.json` and captured log bytes remain unchanged. SHA-256 values in `integrity.json` cover `report.json` and every captured job log; the manifest is regenerated during migration and subsequent sweeps.
+Each retained post-run error capture is immutable. The retention sweep removes pre-finalizer captures and any success-only, cancellation-only, or otherwise issue-free records, then removes only derived Markdown/navigation copies and rebuilds the central index. Canonical `report.json` and captured log bytes remain unchanged. SHA-256 values in `integrity.json` cover `report.json` and every captured job log. The generator verifies each manifest after it writes it. Every diagnostics sweep regenerates and verifies all retained manifests before it continues. A mismatch stops the sweep and prevents publication.
 
 The central latest pointer advances by source run time, attempt, and capture-stage precedence. Markdown is rendered from canonical JSON on demand and is not committed as a report artifact. Generated evidence is machine-owned.
 
