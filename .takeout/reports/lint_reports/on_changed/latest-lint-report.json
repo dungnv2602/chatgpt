@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45819716980",
-  "run_number": 802,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45819716980",
+  "run_id": "45821860683",
+  "run_number": 803,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45821860683",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "abcbe20e42e2790d6d3a84d2c55c058c8ace6222",
+  "commit_sha": "9d20a6989a6adde069964fccd301d0eb2b2a579e",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-26T12:27:43.209250+00:00",
+  "generated_at_utc": "2026-11-26T12:41:13.200045+00:00",
   "status": "Failed",
-  "linter_source_sha": "abcbe20e42e2790d6d3a84d2c55c058c8ace6222",
+  "linter_source_sha": "9d20a6989a6adde069964fccd301d0eb2b2a579e",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -9691,7 +9691,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0927b4ce823c0e0c8d5570fa",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/adr/README.md",
@@ -9702,7 +9702,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "0927b4ce823c0e0c8d5570fa",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": ".agent/skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md",
@@ -11253,7 +11253,7 @@
       "match": "is Done",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "734ac0d54144b8de84f90ff4",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "archive/adr/0002-retire-source-drafts-after-verified-adr-promotion.md",
@@ -11264,7 +11264,7 @@
       "match": "are Done",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "7c934f9872519acfc4b13259",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": ".agent/skills/github-actions/SKILL.md",
@@ -11429,7 +11429,7 @@
       "match": "are Done",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "afbd141f811ff427dc8bb038",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "archive/adr/README.md",
@@ -11440,7 +11440,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "a1039b6ad741e18f87b285bd",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "archive/adr/README.md",
@@ -11451,7 +11451,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "a1039b6ad741e18f87b285bd",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md",
@@ -15587,7 +15587,7 @@
       "match": "is required",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "ff82c4d460290b340f70f69b",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
@@ -15598,7 +15598,7 @@
       "match": "was made",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "c2f0677bf1aa944480a3f6bf",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
@@ -15609,7 +15609,7 @@
       "match": "are implemented",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "20d107d90ccf9760095a4e15",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
@@ -15620,7 +15620,7 @@
       "match": "was retired",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "402287be8b2272487fa02958",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
@@ -15631,7 +15631,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "eee5422d3a79b68ce9ee28d7",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
@@ -15642,7 +15642,7 @@
       "match": "are committed",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "e0320262e55fde3e62f3dab0",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
@@ -15653,7 +15653,7 @@
       "match": ";",
       "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
       "fingerprint": "eee5422d3a79b68ce9ee28d7",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md",
@@ -15664,7 +15664,7 @@
       "match": "was archived",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
       "fingerprint": "78bcfbc3cefe3d330515f8fe",
-      "comparison": "new"
+      "comparison": "recurring"
     },
     {
       "file": "workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md",
@@ -16580,8 +16580,8 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 15,
-  "recurring_findings": 756,
+  "new_findings": 0,
+  "recurring_findings": 771,
   "resolved_findings": [],
   "checks": [
     {
@@ -16600,7 +16600,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.350s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.265s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -16618,7 +16618,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Failed",
       "exit_code": 1,
-      "output": "Scanned 231 active Markdown files (308 available as link targets) and 347 local Markdown links.\nFound 3 unresolved local Markdown targets or anchors.\narchive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md\narchive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md\nworkspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md: missing Markdown file: ../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md\n"
+      "output": "Scanned 232 active Markdown files (310 available as link targets) and 347 local Markdown links.\nFound 2 unresolved local Markdown targets or anchors.\narchive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md\narchive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md\n"
     }
   ],
   "failed_checks": [
