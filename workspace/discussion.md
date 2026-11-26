@@ -2,7 +2,7 @@
 
 ## Current Step
 
-_No active step._
+- **2026-11-27 05:25 ICT:** Reconcile the Ledger's permanent P0 intake policy with the Worker and GitHub Actions remediation rules, and relocate the recurrence-prevention procedure to its authoritative CI skill.
 
 ## Open Discussions
 
@@ -12,6 +12,9 @@ _No active step._
 - **2026-11-26 15:00 UTC:** DRAFT-0002 revision 4 remains in review. Its wording corrections passed hosted lint. The decision and implementation scope remain unapproved.
 
 ## Reports
+
+- **2026-11-27 05:25 ICT:** Audited Ledger policy and found conflicting Worker intake instructions (Proposed/unapproved tasks vs permanent P0 Approved/In Progress) plus a CI error-prevention procedure embedded in the Ledger guide. Reconciled Worker intake with the P0 policy and moved recurrence prevention to GitHub Actions. Read-back verified. Commits: `7b94e6e`, `d5547da`, `e9ab0ba`.
+
 
 - **2026-11-27 05:20 ICT:** Consolidated CI failure-remediation ownership in the GitHub Actions skill. Added autonomous batch remediation for eligible CI-generated P0 tasks and the user-triggered results-review boundary. Removed the detailed duplicate procedure from The Worker, leaving task-management ownership there. Commits: [7755a87](https://github.com/dungnv2602/chatgpt/commit/7755a87b865ba3291add28997a6d23049850c30b), [6250e99](https://github.com/dungnv2602/chatgpt/commit/6250e9964c064ddaf5935c7edfdb126465a76427). Both skill files were read back.
 - **2026-11-26 17:02 UTC:** STE Lint Changed run [45864180906](https://github.com/dungnv2602/chatgpt/actions/runs/45864180906) reported 46 findings across ADR-0003. The Ledger grouped them into four P0 tasks. Diagnostics run 45864180758 and Validate Document Standards run 45864180724 passed.
