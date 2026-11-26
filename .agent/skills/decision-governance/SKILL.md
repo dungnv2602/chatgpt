@@ -271,7 +271,7 @@ A Done task does not by itself prove that the repository applies an ADR correctl
 3. Set implementation status to complete only after every criterion passes.
 4. For not-required, confirm that the decision itself is in effect.
 5. Resolve linked implementation tasks before archival.
-6. Move the ADR to `.archive/adr/` with its ID and filename unchanged.
+6. Move the ADR to `. .archive/adr/` with its ID and filename unchanged.
 7. Read back the archive copy after its initial write.
 8. Keep archived ADRs immutable.
 
