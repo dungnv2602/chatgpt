@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T14:21:12Z",
+  "updated_at_utc": "2026-11-26T14:37:47Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -660,8 +660,8 @@
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T14:20:25.438732+00:00",
-      "last_seen_utc": "2026-11-26T14:20:25.438732+00:00",
-      "occurrence_count": 1,
+      "last_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "occurrence_count": 2,
       "evidence": [
         {
           "report_path": ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
@@ -669,6 +669,13 @@
           "observed_at_utc": "2026-11-26T14:20:25.438732+00:00",
           "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:181:259",
           "observation_id": "lint:45837905119:1"
+        },
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45840589283",
+          "observed_at_utc": "2026-11-26T14:37:29.792977+00:00",
+          "note": "on_changed · workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:216:73",
+          "observation_id": "lint:45840589283:1"
         }
       ],
       "resolution": null,
@@ -1346,6 +1353,122 @@
         "20261126-142112-02"
       ],
       "task_group": "ci-3d9410d07be9bf24"
+    },
+    {
+      "finding_id": "lint-fe0043dd1c2c55650b8f76ae",
+      "source_family": "lint",
+      "category": "synonym-rotation",
+      "title": "synonym-rotation: 'validate' and 'check' name the same action. Pick one and use it every time.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "last_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45840589283",
+          "observed_at_utc": "2026-11-26T14:37:29.792977+00:00",
+          "note": "on_changed · workspace/task_board.md:26:61",
+          "observation_id": "lint:45840589283:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-143747"
+      ],
+      "task_group": "ci-7dfbd5dc4403acee"
+    },
+    {
+      "finding_id": "lint-388932780643d2141e1a4492",
+      "source_family": "lint",
+      "category": "semicolon",
+      "title": "semicolon: STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "last_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45840589283",
+          "observed_at_utc": "2026-11-26T14:37:29.792977+00:00",
+          "note": "on_changed · workspace/draft/README.md:21:305",
+          "observation_id": "lint:45840589283:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-143747-01"
+      ],
+      "task_group": "ci-408b51e71141d6f6"
+    },
+    {
+      "finding_id": "lint-fa0ad26c0f4696b24c6e471f",
+      "source_family": "lint",
+      "category": "long-sentence",
+      "title": "long-sentence: Sentence has 28 words (cap 25). Split it.",
+      "status": "open",
+      "severity": "medium",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "last_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45840589283",
+          "observed_at_utc": "2026-11-26T14:37:29.792977+00:00",
+          "note": "on_changed · workspace/draft/README.md:19:4",
+          "observation_id": "lint:45840589283:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-143747-02"
+      ],
+      "task_group": "ci-dabae1f55de289b8"
+    },
+    {
+      "finding_id": "lint-23958065d6cbd83c298c65e2",
+      "source_family": "lint",
+      "category": "passive-voice",
+      "title": "passive-voice: Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "status": "open",
+      "severity": "low",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "last_seen_utc": "2026-11-26T14:37:29.792977+00:00",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45840589283",
+          "observed_at_utc": "2026-11-26T14:37:29.792977+00:00",
+          "note": "on_changed · workspace/draft/README.md:23:136",
+          "observation_id": "lint:45840589283:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-143747-03"
+      ],
+      "task_group": "ci-8ddfff1af8121755"
     }
   ],
   "ingestion_state": {
@@ -1394,6 +1517,7 @@
       ".takeout/reports/lint_reports/on_changed/history/45831761330-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45832275683-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_changed/history/45837905119-attempt-1/report.json",
+      ".takeout/reports/lint_reports/on_changed/history/45840589283-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794610594-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45794619503-attempt-1/report.json",
       ".takeout/reports/lint_reports/on_repo/history/45837905160-attempt-1/report.json"

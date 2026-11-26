@@ -4,7 +4,7 @@ This file is the single index for active and retained task records. The Worker o
 
 ## Current Execution
 
-[20261126-142112-04 — Review synonym-rotation findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md](tasks/20261126-142112-04-review-synonym-rotation-findings-in-workspace-draft-draft-0002-p.md)
+[20261126-143747-03 — Review passive-voice findings in workspace/draft/README.md](tasks/20261126-143747-03-review-passive-voice-findings-in-workspace-draft-readme-md.md)
 
 ## Proposed
 
@@ -17,7 +17,11 @@ _No tasks._
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
-| 20261126-142112-04 | Review synonym-rotation findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:21 UTC | [Task record](tasks/20261126-142112-04-review-synonym-rotation-findings-in-workspace-draft-draft-0002-p.md) |
+| 20261126-143747-03 | Review passive-voice findings in workspace/draft/README.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:37 UTC | [Task record](tasks/20261126-143747-03-review-passive-voice-findings-in-workspace-draft-readme-md.md) |
+| 20261126-143747-02 | Review long-sentence findings in workspace/draft/README.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:37 UTC | [Task record](tasks/20261126-143747-02-review-long-sentence-findings-in-workspace-draft-readme-md.md) |
+| 20261126-143747-01 | Review semicolon findings in workspace/draft/README.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:37 UTC | [Task record](tasks/20261126-143747-01-review-semicolon-findings-in-workspace-draft-readme-md.md) |
+| 20261126-143747 | Review synonym-rotation findings in workspace/task\_board.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:37 UTC | [Task record](tasks/20261126-143747-review-synonym-rotation-findings-in-workspace-task-board-md.md) |
+| 20261126-142112-04 | Review synonym-rotation findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:37 UTC | [Task record](tasks/20261126-142112-04-review-synonym-rotation-findings-in-workspace-draft-draft-0002-p.md) |
 | 20261126-142112-03 | Review present-perfect findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:21 UTC | [Task record](tasks/20261126-142112-03-review-present-perfect-findings-in-workspace-draft-draft-0002-ph.md) |
 | 20261126-142112-02 | Review long-sentence findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:21 UTC | [Task record](tasks/20261126-142112-02-review-long-sentence-findings-in-workspace-draft-draft-0002-phas.md) |
 | 20261126-142112-01 | Review semicolon findings in workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:21 UTC | [Task record](tasks/20261126-142112-01-review-semicolon-findings-in-workspace-draft-draft-0002-phase-aw.md) |
