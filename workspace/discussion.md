@@ -11,6 +11,8 @@ Audit reconstructed GitHub Actions skill report/archive path references and comp
 
 ## Reports
 
+- **2026-11-26 — Catalog and initialization navigation repair:** Remapped catalog references to `area/novel/`, `area/drawing/`, `.takeout/reports/`, and `.archive/`; corrected session-start and skill index links. Read-back was performed. Hosted validation and catalog checks remain unrun.
+
 - **2026-11-26 — Archive-retention reconstruction repair:** Remapped 55 indexed archive paths to `.archive/task/` and `.archive/reports/`; repaired script, tests, guides, and session-start path references. All 55 indexed paths matched the remote tree. Tests/hosted validation not run.
 
 - **2026-11-26 — Report/archive reference alignment:** Updated active GitHub Actions skill and report/archive documentation to reconstructed `.takeout/reports/` and `.archive/` paths. Read-back confirmed targeted references. Workflow runtime was unchanged; hosted validation was not run.
