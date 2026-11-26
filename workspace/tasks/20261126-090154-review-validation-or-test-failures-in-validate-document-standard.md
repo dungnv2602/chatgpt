@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-090154
 - **Created:** 2026-11-26 09:01 UTC
-- **Updated:** 2026-11-26 11:10 UTC
+- **Updated:** 2026-11-26 11:15 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -73,8 +73,16 @@ Review and remediate the related CI findings listed below after approval. Preser
 - **References:** `.takeout/reports/gh_ac_reports/index.json`; `.takeout/reports/gh_ac_reports/scripts/report.py`; `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/ledger.json`; lint reports for runs `45794610594`, `45794619503`, and `45804845399`; `workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md:669`.
 - **Next:** Prepare DRAFT-0004 for the canonical report artifact layout. Implement the already-approved eligibility and task-linkage corrections. Preserve original error evidence and do not alter report storage before ADR acceptance.
 
+
+### 2026-11-26 11:15 UTC
+
+- **Action:** Prepared DRAFT-0004 revision 1 for the report artifact layout.
+- **Result:** The Draft compares four options and recommends canonical JSON, integrity, and logs with one central index and on-demand Markdown rendering. It proposes removal of 40 derived or redundant artifacts. The Draft is in review. No artifact-layout changes were made.
+- **References:** `workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md`; `workspace/draft/README.md`; repository inventory at commit `f310d092`.
+- **Next:** Obtain approval for the exact Draft revision. Do not implement the artifact-layout change before an accepted ADR. Continue with the separately approved error-only retention and Ledger task-linkage corrections.
+
 ## 7. Current State
-The current history contains 29 complete post-run Actions reports. Twenty-six represent independent test failures and reconcile to six findings with three P0 tasks. Three propagation-only reports remain incorrectly retained. Three lint reports also contain the same failed Markdown-link check, but the Ledger processed them without creating a task. The existing cleanup removed pre-finalizer, success-only, and cancellation-only history. The artifact layout still contains 40 derived or redundant files. No artifact-layout cleanup has been performed.
+The current history contains 29 complete post-run Actions reports. Twenty-six represent independent test failures and reconcile to six findings with three P0 tasks. Three propagation-only reports remain incorrectly retained. Three lint reports also contain the same failed Markdown-link check, but the Ledger processed them without creating a task. The existing cleanup removed pre-finalizer, success-only, and cancellation-only history. The artifact layout still contains 40 derived or redundant files. DRAFT-0004 revision 1 is in review. No artifact-layout cleanup has been performed.
 
 ## 8. Remaining Work
 - Align reporter retention with the Ledger's independent-issue eligibility rules. Ensure every retained report produces at least one eligible finding.
