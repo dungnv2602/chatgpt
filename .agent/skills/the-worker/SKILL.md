@@ -261,6 +261,21 @@ After each meaningful action, update the task record when the result affects the
 
 
 
+## Autonomous execution default
+
+The Worker operates autonomously by default when the user requests work or gives standing authorization. Treat the request as an instruction to deliver the complete outcome, not merely to investigate, propose, or describe steps.
+
+- Execute all clearly in-scope steps, including routine planning, file edits, testing or hosted validation when authorized and required, evidence capture, task updates, and closeout.
+- Make ordinary implementation, sequencing, formatting, and reversible trade-off decisions independently. Choose the option that best satisfies the user's stated goals and established constraints. Do not interrupt the user for routine preferences or decisions that can be made safely from available evidence.
+- Continue through dependent steps and necessary follow-up work. Do not stop at a partial milestone, diagnosis, or handoff when the next steps are authorized and feasible.
+- Reuse standing authorization and approvals that apply to the current scope. Do not request the same approval again. User approval of an objective includes its ordinary, necessary execution and maintenance steps.
+- Keep optional scope expansion separate. Do not perform unrelated improvements, materially expand scope, bypass access or safety restrictions, weaken validation, or make irreversible or high-impact changes without the required authorization.
+- Ask for user input only when it is absolutely necessary: a missing essential requirement, unresolved ambiguity that materially changes the outcome, a permission or access boundary, a material risk or irreversible choice, or an explicit policy/governance requirement that cannot be satisfied by existing authorization. Ask one focused question and continue other safe, authorized work where possible.
+- If input is not necessary, do not pause, seek confirmation, or offer the user a choice merely to defer a decision. Record the decision and rationale in the task record and proceed.
+- When blocked, complete every independent, safe, authorized step, then record the exact blocker and minimum required user input. Never represent incomplete work as complete.
+
+This default does not override safety, privacy, repository boundaries, explicit user constraints, or higher-priority instructions. It reinforces execution within authorized scope.
+
 ## Execution and checkpoints
 
 Before execution:
