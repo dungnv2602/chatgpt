@@ -77,7 +77,7 @@ jobs:
 
       - name: Validate the document type catalog
         run: |
-          python .agent/.agent/skills/document-standards/scripts/validate_catalog.py --root .
+          python .agent/skills/document-standards/scripts/validate_catalog.py --root .
 
   diagnostics:
     name: Capture GH Actions diagnostics
