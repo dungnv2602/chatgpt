@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#745](https://github.com/dungnv2602/chatgpt/actions/runs/45750521112)
-- **Run ID / attempt:** 45750521112 / 1
+- **Run:** [#749](https://github.com/dungnv2602/chatgpt/actions/runs/45750919356)
+- **Run ID / attempt:** 45750919356 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 51b716381de437707e7e5a29ae5d0a1d73bbbee4
+- **Branch / commit:** gpt / e9a158a10a15f5c865da4feff79e68564b91bab7
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 51b716381de437707e7e5a29ae5d0a1d73bbbee4
-- **Generated (UTC):** 2026-11-26T03:43:53.668028+00:00
+- **Linter source SHA:** e9a158a10a15f5c865da4feff79e68564b91bab7
+- **Generated (UTC):** 2026-11-26T03:47:31.750655+00:00
 
 ## 1. Executive summary
 
@@ -31,7 +31,7 @@
 
 - Runner OS: Linux
 - Python: 3.15.2
-- Platform: Linux-7.0.0-1016-aws-x86_64-with-glibc2.43
+- Platform: Linux-7.0.0-1020-azure-x86_64-with-glibc2.43
 - The JSON report records the full runtime version and every original per-file linter response.
 - The report records the commit that supplied the linter and generator code.
 
@@ -259,7 +259,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.243s
+Ran 4 tests in 0.367s
 
 OK
 ~~~
@@ -292,38 +292,11 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 245 active Markdown files (254 available as link targets) and 635 local Markdown links.
-Found 224 unresolved local Markdown targets or anchors.
-.agent/skills/drawing/references/archive-and-delivery.md: missing Markdown file: ../the-worker/references/image-provenance-and-webp.md
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/failed-prompts.md
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/failed-prompts.md#fp-05--repeated-reversed-resting-roles-in-the-cozy-bedroom-sequence
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-12-image-prompts.md#20--concise-reuse-of-successful-after-work-pose
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-12-image-prompts.md#21--reference-guided-reconstruction-of-the-correct-after-work-pose
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/failed-prompts.md#fp-07--style-transfer-and-source-preservation-attempts
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-13-image-prompts.md#attempt-01--source-guided-silk-wrap-portrait
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-13-image-prompts.md#attempt-02--reference-attached-silk-wrap-portrait
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/failed-prompts.md#fp-07--style-transfer-and-source-preservation-attempts
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-16-image-prompts.md#attempt-03--the-book-handoff-single-scene
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-13-image-prompts.md#attempt-02--reference-attached-silk-wrap-portrait
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-13-image-prompts.md#attempt-03--modest-editorial-silk-wrap-portrait-safety-aware-revision
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/failed-prompts.md#fp-08--generic-safety-refusals-during-portrait-retries
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-16-image-prompts.md#attempt-06--maya-across-the-café-table
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-12-image-prompts.md#13--fresh-generation-in-the-preferred-cream-cardigan
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/2026-11-19/attempt-46.md
-.agent/skills/drawing/references/patterns/failure-patterns.md: missing Markdown file: ../../../../drawings/2026-11-19/attempt-45.md
-.agent/skills/drawing/references/patterns/successful-patterns.md: missing Markdown file: ../../../../drawings/history/successful-prompts.md
-.agent/skills/drawing/references/patterns/successful-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode
-.agent/skills/drawing/references/patterns/successful-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-13-image-prompts.md#attempt-04--direct-reuse-of-the-proven-silk-wrap-portrait-direction
-.agent/skills/drawing/references/patterns/successful-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-12-image-prompts.md#33--historical-silk-wrap-portrait-direction-realistic-mode
-.agent/skills/drawing/references/patterns/successful-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-13-image-prompts.md#attempt-04--direct-reuse-of-the-proven-silk-wrap-portrait-direction
-.agent/skills/drawing/references/patterns/successful-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-12-image-prompts.md#04--comfort-after-a-long-workday
-.agent/skills/drawing/references/patterns/successful-patterns.md: missing Markdown file: ../../../../drawings/history/2026-11-12-image-prompts.md#14--mistaken-tea-scene-interpretation-cream-cardigan-and-navy-polo
+Scanned 246 active Markdown files (255 available as link targets) and 635 local Markdown links.
+Found 193 unresolved local Markdown targets or anchors.
 .agent/skills/migrate-to-rust/references/pgo_and_telemetry_guide.md: missing heading anchor: #step-d-log-every-test-run--self-healing-fix-test_heal-bucket
 .agent/skills/migrate-to-rust/references/pgo_and_telemetry_guide.md: missing heading anchor: #4-profile-guided-optimization-pgo-workflow-pgo_bench-bucket
 .agent/skills/prompt-master/assets/prompt-templates.md: missing heading anchor: #template-h--react--stop-conditions
-.agent/skills/romantic-storyteller-visual-artist/references/novel-production-workflow.md: missing Markdown file: ../../../area/novel/WORKFLOW.md
-.agent/skills/romantic-storyteller-visual-artist/references/novel-production-workflow.md: missing Markdown file: ../../../area/novel/README.md
-.agent/skills/romantic-storyteller-visual-artist/references/novel-production-workflow.md: missing Markdown file: ../../../area/novel/WORKFLOW.md
 .archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md
 .archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md: missing Markdown file: ../tasks/20261124-103354-establish-draft-adr-governance-and-repo-analysis-workflow.md
 area/drawing/history/2026-11-12-conversation-integrity.md: missing Markdown file: ../images/webp/README.md
@@ -351,10 +324,6 @@ area/novel/Novel-01/Arc-01/Scene-002/illustrations/illustration-03.md: missing M
 area/novel/Novel-01/Arc-01/Scene-002/scene.md: missing Markdown file: ../../../../drawings/history/2026-11-16-image-prompts.md#attempt-04--maya-listens-across-the-book
 area/novel/Novel-01/Arc-01/Scene-002/scene.md: missing Markdown file: ../../../../drawings/history/2026-11-16-image-prompts.md#attempt-05--a-closer-listening-moment
 area/novel/Novel-01/Arc-01/Scene-002/scene.md: missing Markdown file: ../../../../drawings/history/2026-11-16-image-prompts.md#attempt-06--maya-across-the-café-table
-area/novel/README.md: missing Markdown file: ../images/takeout/README.md
-area/novel/README.md: missing Markdown file: ../skills/drawing/references/archive-and-delivery.md
-area/novel/README.md: missing Markdown file: ../skills/drawing/references/image-editing-protocol.md
-area/novel/README.md: missing Markdown file: ../skills/asd-ste100/references/repository-writing-policy.md
 area/novel/WORKFLOW.md: missing Markdown file: ../skills/romantic-storyteller-visual-artist/SKILL.md
 area/novel/WORKFLOW.md: missing Markdown file: ../skills/asd-ste100/references/repository-writing-policy.md
 area/novel/templates/scene-v1.md: missing Markdown file: relative-path
