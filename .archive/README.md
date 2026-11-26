@@ -4,7 +4,7 @@ This directory stores completed and cancelled task records and individually arch
 
 ## Structure
 
--  .archive/task/ stores immutable archived task records.
+- .archive/task/ stores immutable archived task records.
 - .archive/reports/ stores individually archived CI report files, preserving their path below the report-family root.
 - .archive/adr/ stores permanent, immutable accepted Decision Records. ADRs are excluded from 90-day retention.
 - Keep task IDs and filenames unchanged.
