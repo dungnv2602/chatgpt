@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126055004
 - **Created:** 2026-11-26 05:50 UTC
-- **Updated:** 2026-11-26 05:59 UTC
+- **Updated:** 2026-11-26 06:11 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -78,7 +78,7 @@ Adapt repository workflows and documentation to the user's current refactor. Rep
 
 ## 7. Current State
 
-The root `README.md` and root `images/` directory are absent. The workspace discussion register, task board, and active task record now exist. The workspace navigation targets and Draft index links checked so far resolve. The ASD-STE100 policy contained one stale archive path, which now points to `.archive/task/`. The Worker and session-start instructions still name root `images/`, and image takeout guidance still contains old `images/takeout/` paths. DRAFT-0003 remains in review and does not authorize implementation of its proposed architecture.
+The root `README.md` and root `images/` directory remain absent. The workspace discussion register, task board, and active task record exist. The old image tree was relocated to `.takeout/images/`; the active hand-off file remains deleted. The processor, tests, workflow, image guides, Worker/Drawing/novel instructions, session-start paths, and catalog history rule now use the relocated layout. General shared assets use `.takeout/images/original/` and `.takeout/images/webp/`; project-specific `area/drawing/` and `area/novel/` destinations remain unchanged. The workspace ADR index no longer links to archived ADR files removed from the branch. DRAFT-0003 remains in review and is not being implemented.
 
 ## 8. Remaining Work
 
@@ -89,9 +89,9 @@ The root `README.md` and root `images/` directory are absent. The workspace disc
 
 ## 9. Next Actions
 
-1. Update the image processor, tests, and GitHub Action for `.takeout/images/`.
-2. Update the related operating guides, Worker/Drawing instructions, and catalog path rule.
-3. Read back all changed paths and inspect the resulting commits.
+1. Verify changed files and link targets against branch `gpt`.
+2. Inspect the image processor and regression fixtures for stale paths or inconsistencies.
+3. Inspect the commits and report validation limits.
 
 ## 10. References
 
@@ -141,3 +141,10 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Result:** Commit `bfe9aee114f0a37d74d01302a14cabbdeaedc210` renamed the old `images/` tree to `.takeout/images/`, including `images/takeout/HANDOFF.yml` to `.takeout/images/HANDOFF.yml`. A later commit `cda73f5e945fdc37360de4d514b742129fbb2907` deliberately removed the active hand-off and added `.takeout/images/original/` and `.takeout/images/webp/`. Do not restore the deleted hand-off. The processor, Action, tests, and several guides still use the former paths.
 - **References:** Commit `bfe9aee114f0a37d74d01302a14cabbdeaedc210`, commit `cda73f5e945fdc37360de4d514b742129fbb2907`, `.takeout/images/README-1.md`, `.takeout/images/README-2.md`, `.agent/skills/the-worker/scripts/process_takeout.py`, `.agent/skills/the-worker/scripts/test_process_takeout_unittest.py`, `.github/workflows/convert-images-to-webp.yml`.
 - **Next:** Update the processor and tests to use `.takeout/images/` as intake and shared-asset root. Keep originals under `.takeout/images/original/` and WebP derivatives under `.takeout/images/webp/` for general assets. Preserve project-specific destinations.
+
+### 2026-11-26 06:11 UTC
+
+- **Action:** Adapted the image processor, regression tests, GitHub Action, image guides, Worker/Drawing/novel procedures, session-start repository roots, Document Type Catalog, workspace archive references, and ADR navigation to the current layout.
+- **Result:** The processor now uses `.takeout/images/` as intake, stores shared originals in `.takeout/images/original/`, stores shared WebP derivatives in `.takeout/images/webp/`, and preserves project-specific destinations. Tests use the relocated intake and include a shared-store case. The Action stages and publishes `.takeout/images/`. The deleted `HANDOFF.yml` was not recreated. The ADR index no longer links to removed archive files.
+- **Key commits:** Processor `aea8eb37d6ee926548ff411250a28c258d51601d`; tests `7585f6300ffb49eb2a6ff855f4b5904edaf6b76d` and `2765f537f0184ff4292d24507d29061473746473`; Action `532cac6ac76111b5a9e5813d205e6fe352c03a36`; image guides `d52e150fd062ccf738b66603848fc87e56bf5a2e`, `f6db25baa7adf749999648b7d05a73c0c8c5460e`, `edf78a40eeb72ff3ca169d46943d3319517afce7`; operating guides and catalog updated in the subsequent commits.
+- **Next:** Verify every changed path and relevant README link against branch `gpt`. Inspect processor/test path consistency and commit metadata.
