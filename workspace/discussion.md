@@ -31,3 +31,5 @@
 ` join strings instead of actual newline separators, collapsing the generated board and breaking status-section lookup. Corrected in commit `8d92e78`. Await hosted validation.
 
 - **2026-11-26:** Confirmed runs 572 and 892 passed on commit `8d92e78`. Diagnostics capture then revealed two regression tests tied to a populated Proposed section in the shared board fixture; isolated those tests by clearing the Proposed section contents in their copied fixture, correcting newline literals in follow-up commit `ec3ba4d`. Runs 573/893 and 574/894 were still pending/in progress at last check. Await validation.
+
+- **2026-11-26:** Session initialized by `/start`. Startup notice: review and remediate GitHub Actions diagnostic retention, duplicate report artifacts, Ledger reconciliation, task execution metadata, historical noise, and preventive tests/docs under the user's approval. Foundational skill retrieval follows the required sequence; no CI preflight is authorized during initialization.
