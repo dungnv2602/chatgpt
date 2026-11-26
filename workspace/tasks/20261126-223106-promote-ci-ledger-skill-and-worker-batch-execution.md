@@ -54,10 +54,10 @@ Promote CI Ledger finding governance, intake, identity, task generation, lifecyc
 
 ### 2026-11-26 22:31 UTC
 
-- **Action:** Recorded approved implementation scope after assessment.
-- **Result:** Skill ownership and Worker batch-execution placement approved. Existing README contains conflicting task-generation authorization language that will be reconciled during consolidation.
-- **References:** `.agent/skills/the-worker/SKILL.md`, `.agent/skills/github-actions/SKILL.md`, `.takeout/reports/triage/README.md`.
-- **Next:** Implement the Ledger skill, update owning references and Worker orchestration, then read back each commit.
+- **Action:** Created the CI Ledger skill and consolidated Worker batch orchestration. Simplified the triage README and integrated skill discovery and catalog references.
+- **Result:** Core policy changes are committed. Index integration and read-back verification remain.
+- **References:** `.agent/skills/ci-ledger/SKILL.md`, `.agent/skills/the-worker/SKILL.md`, `.takeout/reports/triage/README.md`, `.agent/skills/README.md`, `.agent/skills/document-standards/references/document-type-catalog.md`.
+- **Next:** Read back all changed paths, reconcile any defects, and verify commits.
 
 ## 7. Current State
 
