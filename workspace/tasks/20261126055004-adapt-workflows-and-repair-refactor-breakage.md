@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126055004
 - **Created:** 2026-11-26 05:50 UTC
-- **Updated:** 2026-11-26 05:53 UTC
+- **Updated:** 2026-11-26 05:59 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -82,15 +82,15 @@ The root `README.md` and root `images/` directory are absent. The workspace disc
 
 ## 8. Remaining Work
 
-- Inspect the current image storage layout, image workflow, and provenance procedures before changing image path references.
-- Repair stale links and path assumptions without restoring deleted files.
+- Update image workflow paths to the verified `.takeout/images/` layout and preserve the deleted hand-off file.
+- Update related Worker, Drawing, and catalog references. Then read back all changed files.
 - Update relevant README files and workflow instructions where evidence shows they are stale.
 - Read back all changed files and inspect commit metadata.
 
 ## 9. Next Actions
 
-1. Inspect the current image storage layout, image workflow, and provenance procedures.
-2. Update only the files that contain verified stale paths or broken links.
+1. Update the image processor, tests, and GitHub Action for `.takeout/images/`.
+2. Update the related operating guides, Worker/Drawing instructions, and catalog path rule.
 3. Read back all changed paths and inspect the resulting commits.
 
 ## 10. References
@@ -134,3 +134,10 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Result:** Workspace README targets checked resolve after task-board creation. The root `images/` directory is absent. The ASD-STE100 policy referenced obsolete `archive/tasks/` and now uses `.archive/task/`. The image intake documentation still names `images/takeout/`, so the actual image storage contract must be established before further edits.
 - **References:** `workspace/README.md`, `workspace/draft/README.md`, `.agent/SESSION_START.md`, `.agent/skills/the-worker/SKILL.md`, `.agent/skills/asd-ste100/references/repository-writing-policy.md`, `.takeout/images/README-1.md`, `.takeout/images/README-2.md`.
 - **Next:** Inspect the current image workflow, processor paths, and provenance references before changing any image destinations.
+
+### 2026-11-26 05:59 UTC
+
+- **Action:** Traced the image-directory relocation through the repository commit history and inspected the current storage layout, processor, workflow, and Drawing references.
+- **Result:** Commit `bfe9aee114f0a37d74d01302a14cabbdeaedc210` renamed the old `images/` tree to `.takeout/images/`, including `images/takeout/HANDOFF.yml` to `.takeout/images/HANDOFF.yml`. A later commit `cda73f5e945fdc37360de4d514b742129fbb2907` deliberately removed the active hand-off and added `.takeout/images/original/` and `.takeout/images/webp/`. Do not restore the deleted hand-off. The processor, Action, tests, and several guides still use the former paths.
+- **References:** Commit `bfe9aee114f0a37d74d01302a14cabbdeaedc210`, commit `cda73f5e945fdc37360de4d514b742129fbb2907`, `.takeout/images/README-1.md`, `.takeout/images/README-2.md`, `.agent/skills/the-worker/scripts/process_takeout.py`, `.agent/skills/the-worker/scripts/test_process_takeout_unittest.py`, `.github/workflows/convert-images-to-webp.yml`.
+- **Next:** Update the processor and tests to use `.takeout/images/` as intake and shared-asset root. Keep originals under `.takeout/images/original/` and WebP derivatives under `.takeout/images/webp/` for general assets. Preserve project-specific destinations.
