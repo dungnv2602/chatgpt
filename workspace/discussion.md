@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 12:12 UTC** Implement the shared reporter/Ledger eligibility and baseline-aware lint tooling contract. Add stable tooling findings without importing unbaselined lint findings. Fix the broken DRAFT-0002 governance link without restoring absent archive content. Enforce one Current Execution task. Active task: [20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md). ADR: [ADR-0003](adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md).
+- **2026-11-26 12:56 UTC** Verify archived task linkage for the three historical Actions occurrences absent from the current open Ledger totals, then confirm hosted validation after documentation commit a93492d. Shared Actions eligibility, lint tooling task generation, historical report replay, baseline gating, and one Current Execution are implemented. The current indexes contain 30 Actions and 14 lint reports, all matching Ledger processed paths; all open findings have task_refs. Diagnostics [45823761330](https://github.com/dungnv2602/chatgpt/actions/runs/45823761330) and Document Standards [45823761313](https://github.com/dungnv2602/chatgpt/actions/runs/45823761313) passed. Lint [45823761243](https://github.com/dungnv2602/chatgpt/actions/runs/45823761243) had a Failed overall conclusion but its Markdown link tooling check passed. Active task: [20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md).
 
 ## Open Discussions
 
