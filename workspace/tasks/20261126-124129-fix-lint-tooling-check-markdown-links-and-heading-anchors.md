@@ -47,6 +47,13 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 
 ## 6. Progress Log
 
+### 2026-11-26 14:20 UTC
+
+- **Action:** Committed the archived-ADR path correction and incremental link-check implementation.
+- **Result:** The active DRAFT-0002 link now targets the exact immutable ADR path. The changed-document workflow checks changed Markdown sources on incremental runs and all active sources on full audits. The anchor checker rejects inactive or untracked source paths. Seven anchor-check regression tests passed. In report 45837905119, the `Markdown links and heading anchors` check passed: 2 changed Markdown sources, 10 local links, and 0 unresolved targets or anchors. The overall lint report failed because it also found separate STE style issues. The Ledger generated five related P0 tasks from those style findings.
+- **References:** [Fix commit](https://github.com/dungnv2602/chatgpt/commit/6499c1ec65de33e1376671531ea770c5098e53b3), [STE Lint Changed report](https://github.com/dungnv2602/chatgpt/actions/runs/45837905119).
+- **Next:** Keep this task open until the shared lint report can be archived with the five related DRAFT-0002 style tasks. Then record the terminal Ledger finding and archive this task.
+
 ### 2026-11-26 13:58 UTC
 
 - **Action:** Reviewed all five linked lint reports, the active Draft link, the Markdown anchor checker, and both lint workflows.
@@ -63,20 +70,19 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 
 ## 7. Current State
 
-The P0 finding remains open. The linked full audits show unresolved local Markdown paths. The latest incremental run skipped the link check. The active Draft also contains a stale path to the archived ADR.
+The DRAFT-0002 archived ADR link is corrected. The incremental link/anchor check passed in report 45837905119 with zero unresolved local targets or anchors. The overall lint report failed only because it also found separate style issues. Five new P0 style tasks now share that report.
 
 ## 8. Remaining Work
 
-- Correct the DRAFT-0002 link to `.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md`.
-- Run the local link and heading-anchor check on every changed-document push, not only on full audits.
-- Add regression coverage for the workflow contract.
-- Confirm the hosted check passes. Preserve the full audit's separate STE lint findings.
+- Resolve the five linked DRAFT-0002 style tasks.
+- Archive the shared lint report only after all of its findings reach terminal status.
+- Then archive this task and reconcile the Ledger and board.
 
 ## 9. Next Actions
 
-1. Correct the active Draft link.
-2. Update the changed-document workflow and its regression coverage.
-3. Verify the naturally triggered hosted link and heading-anchor check.
+1. Complete the five related DRAFT-0002 style tasks.
+2. Preserve and archive the shared report evidence.
+3. Close this task after the Ledger and archive lifecycle complete.
 
 ## 10. References
 
@@ -89,9 +95,9 @@ The P0 finding remains open. The linked full audits show unresolved local Markdo
 ## 11. Verification
 
 - **Check:** Markdown links and heading anchors.
-- **Method:** The hosted STE lint workflow must run the actual repository link checker. The latest incremental report skipped this check, so it is not validation.
-- **Result:** Not yet passed after the latest archive-path changes.
-- **Limitations:** The STE linter findings are separate from this tooling check and must not be conflated with its result.
+- **Method:** Hosted STE Lint Changed run 45837905119 on commit `6499c1ec65de33e1376671531ea770c5098e53b3`.
+- **Result:** The named check passed. It scanned 2 changed Markdown sources, 10 local Markdown links, and found 0 unresolved targets or anchors. The Markdown anchor regression suite passed 7 tests.
+- **Limitations:** The overall lint report failed on separate STE style findings. Those findings are tracked in five P0 tasks and do not invalidate the link-check result.
 
 ## 12. Handoff Instructions
 

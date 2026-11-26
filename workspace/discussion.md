@@ -11,3 +11,4 @@
 ## Reports
 
 - **2026-11-26:** Closed catalog P0 task [20261126-124305](../.archive/task/20261126-124305-review-validation-or-test-failures-in-validate-document-standard.md). Archive commit [04043bc](https://github.com/dungnv2602/chatgpt/commit/04043bc4ae35b66b433c8c3f04b69995ce08b9b7). Hosted validation [45832275652](https://github.com/dungnv2602/chatgpt/actions/runs/45832275652) passed.
+- **2026-11-26:** Link/anchor check passed in [45837905119](https://github.com/dungnv2602/chatgpt/actions/runs/45837905119): 2 changed Markdown sources, 10 local links, 0 unresolved targets or anchors.
