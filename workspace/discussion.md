@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 16:28 UTC:** Inspect and resolve the new P0 semicolon finding in the Document Type Catalog, created from STE Lint Changed run 45857763911. Read the exact diagnostic and task, make the narrow correction, and preserve all catalog coverage rules. Active scope: [P0 task 20261126-162137](tasks/20261126-162137-review-semicolon-findings-in-agent-skills-document-standards-ref.md).
+- **2026-11-26 16:30 UTC:** Record the exact catalog semicolon correction in P0 task 20261126-162137 and synchronize its task-board timestamp. Keep the task In Progress until a naturally triggered STE Lint run confirms the finding is resolved. Preserve the finding ID and original report reference. Active scope: [P0 task 20261126-162137](tasks/20261126-162137-review-semicolon-findings-in-agent-skills-document-standards-ref.md).
 
 ## Open Discussions
 
