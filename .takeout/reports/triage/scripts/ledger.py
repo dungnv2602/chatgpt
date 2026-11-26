@@ -596,7 +596,7 @@ def render_worker_task(root, task_id, title, group_id, findings, timestamp):
     except OSError as exc:
         raise LedgerError("Cannot read canonical task template: " + str(exc)) from exc
     created = parse_time(timestamp).strftime("%Y-%m-%d %H:%M UTC")
-    priority = min((TASK_PRIORITY[item["severity"]] for item in findings), key=lambda item: int(item[1:]))
+    priority = "P0"
     replacements = {
         "# Task: [Title]": "# Task: " + markdown_cell(title),
         "- **ID:** YYYYMMDD-HHMMSS": "- **ID:** " + task_id,
@@ -613,25 +613,25 @@ def render_worker_task(root, task_id, title, group_id, findings, timestamp):
         "[Preserve relevant user clarifications, constraints, and approvals verbatim. Add timestamps.]":
             "- **Standing instruction:** Every CI Ledger-generated task is P0, approved for remediation, and must be resolved before non-P0 work. Event-driven ingestion, no periodic polling.",
         "[State the required outcome.]":
-            "Review and remediate the related CI findings listed below after approval. Preserve source validation rules and diagnostic evidence.",
+            "Immediately remediate the CI Ledger findings grouped below, preserving validation rules and diagnostic evidence.",
         "[List agreed requirements and acceptance criteria. For implementation tasks, map applicable ADR Confirmation criteria to the task acceptance criteria.]":
-            "1. Inspect every linked report and exact diagnostic before proposing a fix.\n2. Keep related findings grouped in this task.\n3. Do not weaken lint rules, test coverage, workflow conclusions, or evidence requirements.\n4. Obtain user approval before remediation when required by the Worker approval rules.\n5. Resolve ledger findings only after a fix commit and successful relevant validation are recorded.",
+            "1. Inspect every linked report and exact diagnostic.\n2. Group related findings.\n3. Preserve validation and diagnostic evidence; do not weaken rules or tests.\n4. Remediate immediately under the standing P0 approval.\n5. Resolve findings only after a fix commit and successful relevant validation are recorded.",
         "[Record approved decisions and concise rationale.]":
             "- **Standing approval:** CI Ledger-generated remediation is approved under the user\u0027s permanent P0 instruction.\n- **Priority:** P0. Resolve before non-P0 work.\n- **Approved:** Group findings by the stable remediation key.",
         "Record every meaningful action. Use one entry for each action or closely related set of actions.\n\n### YYYY-MM-DD HH:MM UTC\n\n- **Action:** [What was inspected, researched, changed, or verified.]\n- **Result:** [Observed result. Include failures and uncertainty.]\n- **References:** [Exact paths, commits, URLs, or source IDs.]\n- **Next:** [Next action or resulting change in task state.]":
             "### " + created + "\n\n- **Action:** Created this Proposed task from the Ledger's event-driven ingestion.\n- **Result:** Grouped " + str(len(findings)) + " distinct finding(s) by remediation key. No remediation was performed or authorized.\n- **References:** .takeout/reports/triage/ledger.json and the evidence links below.\n- **Next:** Worker review and user approval before implementation.",
         "[Describe the verified state now. Distinguish completed implementation from unverified behavior.]":
-            "The Ledger recorded the findings and created this task handoff. Root cause, remediation, and validation have not been assessed.",
+            "The Ledger recorded findings. Root cause, remediation, and validation remain to be assessed.",
         "[List incomplete requirements, blockers, and outstanding checks.]":
-            "- Worker must inspect linked evidence and determine whether the findings share one remediation.\n- Remediation requires approval under the Worker rules.\n- No validation or resolution has been claimed.",
+            "- Inspect linked evidence, remediate, and validate.\n- No validation or resolution is claimed until evidence is recorded.",
         "1. [Exact next action.]\n2. [Following action.]":
-            "1. Inspect the linked report evidence and confirm the remediation scope.\n2. Request or record approval, then remediate and verify the findings.",
+            "1. Inspect linked reports and diagnostics.\n2. Remediate and verify under the standing P0 approval.",
         "- [Relevant repository paths.]\n- [Commit links and hashes.]\n- [External references and their relevance.]\n- [Related task IDs.]":
             "- .takeout/reports/triage/ledger.json\n- The exact report paths and run URLs are listed under Ledger Findings.",
         "- **Check:** [What was checked.]\n- **Method:** [How it was checked.]\n- **Result:** [Actual result, or Not performed.]\n- **Limitations:** [What the check does not establish.]":
             "- **Check:** Ledger schema and finding eligibility.\n- **Method:** Validated by the ingestion process before task publication.\n- **Result:** Task handoff generated from accepted ledger findings.\n- **Limitations:** This does not verify root cause or remediation.",
         "[Give the next session enough information to resume without asking the user to repeat known context. State the exact next action and any approval boundary.]":
-            "Read the linked source reports, confirm the remediation grouping, and obtain approval before changing source files. Do not poll CI or run periodic ledger scans.",
+            "Treat this as P0, approved, and In Progress. Inspect evidence, remediate, and verify before starting non-P0 work. Do not poll CI or run periodic ledger scans.",
     }
     for old, new in replacements.items():
         if old not in content:
