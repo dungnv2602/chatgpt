@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-143747-02
 - **Created:** 2026-11-26 14:37 UTC
-- **Updated:** 2026-11-26 14:37 UTC
+- **Updated:** 2026-11-26 14:55 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** Assistant
@@ -54,19 +54,26 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 - **References:** .takeout/reports/triage/ledger.json and the evidence links below.
 - **Next:** Inspect evidence, remediate, and verify before starting non-P0 work.
 
+### 2026-11-26 14:55 UTC
+
+- **Action:** Corrected the linked README finding in commit [72e52a2](https://github.com/dungnv2602/chatgpt/commit/72e52a26c059d2b3795246916fba9d1a48c1e947).
+- **Result:** The edit removes the reported style pattern and preserves the Draft index, approval rules, and workflow meaning. The README was read back. Hosted lint validation remains pending.
+- **References:** [README remediation commit](https://github.com/dungnv2602/chatgpt/commit/72e52a26c059d2b3795246916fba9d1a48c1e947), [source report 45840589283](https://github.com/dungnv2602/chatgpt/actions/runs/45840589283).
+- **Next:** Review the next event-driven lint report for this finding group. Resolve it only after successful relevant validation.
+
 ## 7. Current State
 
-The Ledger recorded findings. Root cause, remediation, and validation remain to be assessed.
+The linked README finding has a source correction in commit 72e52a2. The file was read back. Hosted lint validation remains pending.
 
 ## 8. Remaining Work
 
-- Inspect linked evidence, remediate, and validate.
-- No validation or resolution is claimed until evidence is recorded.
+- Review the next event-driven lint report for this finding group.
+- Resolve the finding only after successful relevant validation is recorded.
 
 ## 9. Next Actions
 
-1. Inspect linked reports and diagnostics.
-2. Remediate and verify under the standing P0 approval.
+1. Review the next event-driven lint report.
+2. If the finding is absent, record validation and close the task through the archive lifecycle.
 
 ## 10. References
 
@@ -77,8 +84,8 @@ The Ledger recorded findings. Root cause, remediation, and validation remain to 
 
 - **Check:** Ledger schema and finding eligibility.
 - **Method:** Validated by the ingestion process before task publication.
-- **Result:** Task handoff generated from accepted ledger findings.
-- **Limitations:** This does not verify root cause or remediation.
+- **Result:** Task handoff generated from accepted ledger findings. The source correction is committed and read back.
+- **Limitations:** Hosted validation has not yet confirmed the finding's resolution.
 
 ## 12. Handoff Instructions
 
