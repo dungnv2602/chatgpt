@@ -202,6 +202,7 @@ Do not treat silence as approval. Do not infer a decision from an unrelated user
 - Do not send any other link in Condensed Mode.
 - Do not add labels, headings, status text, progress updates, summaries, or other chat text. The brief itself lives in `discussion.md` and must be linked before its step starts.
 - The only exception is the single response that switches into Condensed Mode. That response must contain only a brief mode acknowledgement. Starting with the next response, send only one permitted link.
+- The mandatory CI P0 batch notice and readiness message in `.agent/SESSION_START.md` are additional explicit exceptions. Send the pre-batch notice before batch inspection or execution. Send the readiness message only after the batch ends.
 - After task creation, provide the task-record link. Continue work immediately when the user has approved the task or the task does not require approval.
 - Do not ask for approval again when the user has already approved the task.
 - Task creation alone does not count as user approval.
