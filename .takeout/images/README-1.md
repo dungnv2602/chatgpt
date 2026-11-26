@@ -4,17 +4,17 @@ This directory supports shared image intake and retained image masters. WebP fil
 
 ## Destinations
 
-- General retained assets: the declared destination under `images/`.
+- General retained assets: `.takeout/images/`.
 - Non-novel drawing outputs: `area/drawing/YYYY-MM-DD/images/`.
 - Novel illustrations: `area/novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`.
 
-The Worker preserves each original byte-for-byte in the destination's `original/` folder. It stores the WebP derivative in the destination root. Do not overwrite an existing asset.
+For general assets, the processor stores the original in `.takeout/images/original/` and the WebP derivative in `.takeout/images/webp/`. For project assets, it stores the original in the destination's `original/` folder and the WebP derivative in the destination root. Do not overwrite an existing asset.
 
 ## Shared intake
 
-Send every new upload that requires repository retention to the flat `images/takeout/` intake. Do not create upload subfolders or place uploads in the reserved `history/` and `webp/` directories.
+Send every new upload that requires repository retention to the flat `.takeout/images/` intake. Do not create upload subfolders or place uploads in the reserved `history/`, `original/`, and `webp/` directories.
 
-The normal Action accepts static PNG, JPG, and JPEG files. It rejects unsupported formats and does not flatten animated images. Every mapped hand-off item must reference a dated conversation-integrity record with an exact source-mapping row. Drawing outputs must also match the attempt's recorded Generation ID or Output ID. Keep the platform source_asset_id separate from the repository asset_id used for filename prefixes. Incomplete provenance stays in intake and must not trigger relocation. An item marked `images/unclassified` is converted by the same normal Action, but its original remains in intake and its WebP remains under `takeout/webp/unclassified/`. The processor does not classify it, invent provenance, relocate it, or edit project indexes.
+The normal Action accepts static PNG, JPG, and JPEG files. It rejects unsupported formats and does not flatten animated images. Every mapped hand-off item must reference a dated conversation-integrity record with an exact source-mapping row. Drawing outputs must also match the attempt's recorded Generation ID or Output ID. Keep the platform source_asset_id separate from the repository asset_id used for filename prefixes. Incomplete provenance stays in intake and must not trigger relocation. An item marked `.takeout/images/unclassified` is converted by the same normal Action, but its original remains in intake and its WebP remains under `.takeout/images/webp/unclassified/`. The processor does not classify it, invent provenance, relocate it, or edit project indexes.
 
 ## Workflow ownership
 
