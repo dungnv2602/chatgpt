@@ -96,7 +96,7 @@ Each item uses these fields:
 - Drawing-session items require an attempt plus a recorded Generation ID or internal Output ID. The processor checks this identity against the referenced attempt note. If source_asset_id is supplied, it must match the attempt note's Asset ID.
 - A Partial or Curated conversation record is accepted only when it identifies unavailable material and labels editorial summaries. It does not claim a complete transcript.
 
-Do not use `.takeout/images/history/`, `.takeout/images/original/`, `.takeout/images/webp/`, or `.takeout/images/scripts/` as a destination. Use the exact shared root `.takeout/images` for general assets.
+Do not use `.takeout/images/history/`, `.takeout/images/original/`, or `.takeout/images/webp/` as a destination. Use the exact shared root `.takeout/images` for general assets.
 
 The Action rejects drawing-session uploads without an explicit attempt number. This rule prevents omissions from the session manifest and prompt records.
 
