@@ -1,30 +1,30 @@
 # On Changed STE Lint Evidence Report
 
-- **Result:** Failed
+- **Result:** Passed
 - **Schema version:** 1.1.0
-- **Run:** [#818](https://github.com/dungnv2602/chatgpt/actions/runs/45857763911)
-- **Run ID / attempt:** 45857763911 / 1
+- **Run:** [#819](https://github.com/dungnv2602/chatgpt/actions/runs/45859253550)
+- **Run ID / attempt:** 45859253550 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 0428feec031857cdac6347d74b171fe9f0fafb45
+- **Branch / commit:** gpt / 56510b4fa78680c75bba4ffc5e483842d4b24938
 - **Event:** push
 - **Execution mode:** incremental
-- **Baseline SHA:** 52041ceb40792d0805ba4c2a9ca34d805441e3d4
-- **Linter source SHA:** 0428feec031857cdac6347d74b171fe9f0fafb45
-- **Generated (UTC):** 2026-11-26T16:21:19.862302+00:00
+- **Baseline SHA:** 0428feec031857cdac6347d74b171fe9f0fafb45
+- **Linter source SHA:** 56510b4fa78680c75bba4ffc5e483842d4b24938
+- **Generated (UTC):** 2026-11-26T16:30:19.767217+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
 | Files evaluated | 2 |
-| Files that failed | 1 |
-| Files with findings | 1 |
-| Total findings | 1 |
-| Hard findings | 1 |
+| Files that failed | 0 |
+| Files with findings | 0 |
+| Total findings | 0 |
+| Hard findings | 0 |
 | Advisory findings | 0 |
-| New findings | 1 |
+| New findings | 0 |
 | Recurring findings | 0 |
-| Resolved findings | 0 |
+| Resolved findings | 1 |
 | Failed workflow checks | 0 |
 
 ## 2. Execution environment
@@ -48,16 +48,14 @@ The table includes every evaluated file, including files with zero findings and 
 
 | File | Result | Findings | Hard | Baseline | Words | Per 100 words | Exit |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| .agent/skills/document-standards/references/document-type-catalog.md | FAIL | 1 | 1 | 0 | 4598 | 0.0 | 1 |
-| workspace/task_board.md | PASS | 0 | 0 | 0 | 452 | 0.0 | 0 |
+| .agent/skills/document-standards/references/document-type-catalog.md | PASS | 0 | 0 | 0 | 4598 | 0.0 | 0 |
+| workspace/task_board.md | PASS | 0 | 0 | 0 | 466 | 0.0 | 0 |
 
 ## 5. Findings by rule
 
 Counts include hard and advisory findings.
 
-| Rule | Findings |
-|---|---:|
-| semicolon | 1 |
+No findings.
 
 ## 6. Workflow and validation checks
 
@@ -89,7 +87,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.302s
+Ran 4 tests in 0.330s
 
 OK
 ~~~
@@ -102,7 +100,7 @@ OK
 ~~~text
 .......
 ----------------------------------------------------------------------
-Ran 7 tests in 0.005s
+Ran 7 tests in 0.001s
 
 OK
 ~~~
@@ -122,7 +120,7 @@ selftest OK
 - **Exit code:** 0
 
 ~~~text
-Scanned 2 changed Markdown sources (320 available as link targets) and 19 local Markdown links.
+Scanned 2 changed Markdown sources (322 available as link targets) and 20 local Markdown links.
 Found 0 unresolved local Markdown targets or anchors.
 ~~~
 
@@ -132,10 +130,7 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **semicolon** · .agent/skills/document-standards/references/document-type-catalog.md:123:145 · **new** · fingerprint: e2e4500a529bb5cf3751722a
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+None.
 
 ### Recurring findings
 
@@ -143,7 +138,10 @@ None.
 
 ### Resolved findings
 
-None.
+- **semicolon** · .agent/skills/document-standards/references/document-type-catalog.md:123:145 · **resolved** · fingerprint: e2e4500a529bb5cf3751722a
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 
 ## 8. Complete per-file diagnostics
 
@@ -151,20 +149,15 @@ This section includes every normalized finding with its rule, level, source loca
 
 ### .agent/skills/document-standards/references/document-type-catalog.md
 
-- **Result:** FAIL
-- **Exit code:** 1
-- **Findings:** 1
-- **Hard findings:** 1
+- **Result:** PASS
+- **Exit code:** 0
+- **Findings:** 0
+- **Hard findings:** 0
 - **Baseline:** 0
 - **Words:** 4598
 - **Findings per 100 words:** 0.0
 
-#### Complete diagnostics
-
-- **semicolon** · .agent/skills/document-standards/references/document-type-catalog.md:123:145 · **new** · fingerprint: e2e4500a529bb5cf3751722a
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
+No STE findings were recorded for this file.
 
 
 ### workspace/task_board.md
@@ -174,7 +167,7 @@ This section includes every normalized finding with its rule, level, source loca
 - **Findings:** 0
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 452
+- **Words:** 466
 - **Findings per 100 words:** 0.0
 
 No STE findings were recorded for this file.
