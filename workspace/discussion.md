@@ -1,6 +1,6 @@
 ## Current Step
 
-Inspect post-recovery GitHub Actions runs and finish the workflow/script dependency audit. Restored 1,311 canonical data blobs from the direct pre-deletion tree, including report histories and task records. All 55 retention paths and all 288 current task-board targets resolve. The catalog template placement repair awaits post-fix validation. Task: [20261126-021200](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
+Initialize the repository session and inspect the recovery actions, deletion history, and task-board records. User requests reversal of restorations made without permission and a task board containing only DRAFT-0002 and repository reconstruction.
 
 ## Open Discussions
 - **2026-11-26 — Task-board record links:** **Resolved:** The final broken task-board link used a truncated filename (`...repo.md`); the actual tracked task file ends in `...re.md`. The link was corrected. The diagnostics publish subsequently added further generated tasks; all 288 unique task-board targets now resolve. [Audit task](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md).
