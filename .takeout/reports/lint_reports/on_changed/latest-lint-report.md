@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#752](https://github.com/dungnv2602/chatgpt/actions/runs/45752504518)
-- **Run ID / attempt:** 45752504518 / 1
+- **Run:** [#753](https://github.com/dungnv2602/chatgpt/actions/runs/45756856341)
+- **Run ID / attempt:** 45756856341 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / d39b1c32d5b5d6c2ca764f5182d179a003a0d245
+- **Branch / commit:** gpt / 5eea2cba5d5e75c7ffaf11c22d652968e6c02e32
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** d39b1c32d5b5d6c2ca764f5182d179a003a0d245
-- **Generated (UTC):** 2026-11-26T04:02:09.638309+00:00
+- **Linter source SHA:** 5eea2cba5d5e75c7ffaf11c22d652968e6c02e32
+- **Generated (UTC):** 2026-11-26T04:42:47.937179+00:00
 
 ## 1. Executive summary
 
@@ -259,7 +259,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.263s
+Ran 4 tests in 0.365s
 
 OK
 ~~~
@@ -292,7 +292,7 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 249 active Markdown files (258 available as link targets) and 635 local Markdown links.
+Scanned 258 active Markdown files (267 available as link targets) and 635 local Markdown links.
 Found 193 unresolved local Markdown targets or anchors.
 .agent/skills/migrate-to-rust/references/pgo_and_telemetry_guide.md: missing heading anchor: #step-d-log-every-test-run--self-healing-fix-test_heal-bucket
 .agent/skills/migrate-to-rust/references/pgo_and_telemetry_guide.md: missing heading anchor: #4-profile-guided-optimization-pgo-workflow-pgo_bench-bucket
