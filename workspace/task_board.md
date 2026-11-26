@@ -4,7 +4,7 @@ This file is the single index for active and retained task records. The Worker o
 
 ## Current Execution
 
-[20261126-143747 — Review synonym-rotation findings in workspace/task\_board.md](tasks/20261126-143747-review-synonym-rotation-findings-in-workspace-task-board-md.md)
+[20261126-145133 — Review publication\_or\_push failures in STE Lint Changed Documentation / Lint changed Markdown files and publish detailed](tasks/20261126-145133-review-publication-or-push-failures-in-ste-lint-changed-document.md)
 
 ## Proposed
 
@@ -17,6 +17,7 @@ _No tasks._
 ## In Progress
 | ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |
 |---|---|---:|---|---|---|---|---|---|
+| 20261126-145133 | Review publication\_or\_push failures in STE Lint Changed Documentation / Lint changed Markdown files and publish detailed | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:51 UTC | [Task record](tasks/20261126-145133-review-publication-or-push-failures-in-ste-lint-changed-document.md) |
 | 20261126-143747-03 | Review passive-voice findings in workspace/draft/README.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:37 UTC | [Task record](tasks/20261126-143747-03-review-passive-voice-findings-in-workspace-draft-readme-md.md) |
 | 20261126-143747-02 | Review long-sentence findings in workspace/draft/README.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:37 UTC | [Task record](tasks/20261126-143747-02-review-long-sentence-findings-in-workspace-draft-readme-md.md) |
 | 20261126-143747-01 | Review semicolon findings in workspace/draft/README.md | P0 | In Progress | Assistant | Approved | Pending | 2026-11-26 14:37 UTC | [Task record](tasks/20261126-143747-01-review-semicolon-findings-in-workspace-draft-readme-md.md) |

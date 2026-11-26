@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T14:39:50Z",
+  "updated_at_utc": "2026-11-26T14:51:33Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -1483,11 +1483,41 @@
         "20261126-143747-03"
       ],
       "task_group": "ci-8ddfff1af8121755"
+    },
+    {
+      "finding_id": "gha-f04b588b537a96b00c56b6ae",
+      "source_family": "github_actions",
+      "category": "publication_or_push",
+      "title": "STE Lint Changed Documentation / Lint changed Markdown files and publish detailed evidence / Generate and publish changed-document lint evidence: publication_or_push",
+      "status": "open",
+      "severity": "high",
+      "owner": null,
+      "first_seen_utc": "2026-11-26T14:51:33Z",
+      "last_seen_utc": "2026-11-26T14:51:33Z",
+      "occurrence_count": 1,
+      "evidence": [
+        {
+          "report_path": ".takeout/reports/gh_ac_reports/history/424715662/45842593526-attempt-1-post_run/report.json",
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45842593526",
+          "observed_at_utc": "2026-11-26T14:51:33Z",
+          "note": "Lint changed Markdown files and publish detailed evidence / Generate and publish changed-document lint evidence",
+          "observation_id": "github_actions:424715662:45842593526:1"
+        }
+      ],
+      "resolution": null,
+      "resolution_history": [],
+      "duplicate_of": null,
+      "accepted_risk": null,
+      "task_refs": [
+        "20261126-145133"
+      ],
+      "task_group": "ci-f0a95a498ae3bd8a"
     }
   ],
   "ingestion_state": {
     "bootstrap_at_utc": "2026-11-26T08:11:00Z",
     "processed_reports": [
+      ".takeout/reports/gh_ac_reports/history/424715662/45842593526-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45785842274-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45786440074-attempt-1-post_run/report.json",
