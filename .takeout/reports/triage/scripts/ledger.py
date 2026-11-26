@@ -674,12 +674,14 @@ def upsert_task_board_row(root, task):
     priority = task_metadata(content, "Priority")
     status = task_metadata(content, "Status")
     origin = task_metadata(content, "Origin")
-    updated = task_metadata(content, "Updated").split(" ", 1)[0]
+    approval = task_metadata(content, "Approval")
+    updated = task_metadata(content, "Updated")
+    updated = parse_time(updated.replace(" UTC", "") + "Z" if updated.endswith(" UTC") else updated).strftime("%Y-%m-%d %H:%M UTC")
     filename = task["path"].name
     governing_adrs = task_metadata(content, "Governing ADR(s)")
-    adr_ids = re.findall(r"\bADR-\d{4}\b", governing_adrs)
+    adr_ids = re.findall(r"\\bADR-\\d{4}\\b", governing_adrs)
     adr_cell = ", ".join(adr_ids) if adr_ids else ("Pending" if governing_adrs.lower().startswith("pending") else "—")
-    row = "| " + task_id + " | " + title + " | " + priority + " | " + status + " | " + origin + " | " + updated + " | " + markdown_cell(adr_cell) + " | [Task record](tasks/" + filename + ") |"
+    row = "| " + task_id + " | " + title + " | " + priority + " | " + status + " | " + origin + " | " + approval + " | " + markdown_cell(adr_cell) + " | " + updated + " | [Task record](tasks/" + filename + ") |"
     lines = board.splitlines()
     old_index = next((i for i, line in enumerate(lines) if line.startswith("| " + task_id + " |")), None)
     if old_index is not None:
@@ -698,23 +700,21 @@ def upsert_task_board_row(root, task):
             section_index = lines.index(heading)
         except ValueError as exc:
             raise LedgerError("Task board has no section for status " + status) from exc
-        section_end = next(
-            (i for i in range(section_index + 1, len(lines)) if lines[i].startswith("## ")),
-            len(lines),
-        )
-        header_index = next(
-            (i for i in range(section_index + 1, section_end) if lines[i].startswith("| ID | Task |")),
-            None,
-        )
-        if (
-            header_index is None
-            or header_index + 1 >= section_end
-            or not lines[header_index + 1].startswith("|---")
-            or lines[header_index] != "| ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |"
-        ):
+        section_end = next((i for i in range(section_index + 1, len(lines)) if lines[i].startswith("## ")), len(lines))
+        expected_header = "| ID | Title | Priority | Status | Origin | Approval | ADR(s) | Last updated | Task record |"
+        expected_separator = "|---|---|---:|---|---|---|---|---|---|"
+        header_index = next((i for i in range(section_index + 1, section_end) if lines[i].startswith("| ID |")), None)
+        if header_index is None:
+            placeholder = next((i for i in range(section_index + 1, section_end) if lines[i].strip() == "_No tasks._"), None)
+            if placeholder is not None:
+                lines[placeholder:placeholder + 1] = [expected_header, expected_separator, row]
+            else:
+                raise LedgerError("Task board table is missing or malformed under " + heading)
+        elif header_index + 1 >= section_end or lines[header_index] != expected_header or lines[header_index + 1] != expected_separator:
             raise LedgerError("Task board table is missing or malformed under " + heading)
-        lines.insert(header_index + 2, row)
-    new_board = re.sub(r"(?m)^Last updated: .*$", "Last updated: " + updated, "\n".join(lines)) + "\n"
+        else:
+            lines.insert(header_index + 2, row)
+    new_board = "\\n".join(lines) + "\\n"
     if new_board == board:
         return False
     atomic_write_text(board_path, new_board)
