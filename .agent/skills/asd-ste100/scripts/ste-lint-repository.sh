@@ -21,16 +21,16 @@ case "$file" in
   .agent/INITIALIZATION_POLICY.md) baseline=4 ;;
   .agent/skills/agent-skill-authoring/SKILL.md) baseline=6 ;;
   .agent/skills/asd-ste100/SKILL.md) baseline=31 ;;
-   .agent/skills/asd-ste100/references/writing-rules.md) baseline=6 ;;
+  .agent/skills/asd-ste100/references/writing-rules.md) baseline=6 ;;
   .agent/skills/drawing/SKILL.md) baseline=24 ;;
   .agent/skills/drawing/references/archive-and-delivery.md) baseline=7 ;;
   .agent/skills/drawing/references/generation-recovery-and-provenance.md) baseline=17 ;;
   .agent/skills/drawing/references/image-editing-protocol.md) baseline=4 ;;
   .agent/skills/drawing/references/prompt-fidelity.md) baseline=15 ;;
   .agent/skills/drawing/references/series-continuity-and-iteration.md) baseline=9 ;;
-   .agent/skills/philosophy-religion-asceticism/SKILL.md) baseline=7 ;;
-   .agent/skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md) baseline=7 ;;
-   .agent/skills/philosophy-religion-asceticism/references/source-standards.md) baseline=1 ;;
+  .agent/skills/philosophy-religion-asceticism/SKILL.md) baseline=7 ;;
+  .agent/skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md) baseline=7 ;;
+  .agent/skills/philosophy-religion-asceticism/references/source-standards.md) baseline=1 ;;
 esac
 
 # STE-flavored prose does not enforce synonym rotation.
@@ -41,7 +41,7 @@ case "$file" in
 esac
 
 # This reference quotes the semicolon as an example of the prohibited mark.
-if [ "$file" = " .agent/skills/asd-ste100/references/writing-rules.md" ]; then
+if [ "$file" = ".agent/skills/asd-ste100/references/writing-rules.md" ]; then
   disable="synonym-rotation,semicolon"
 fi
 
