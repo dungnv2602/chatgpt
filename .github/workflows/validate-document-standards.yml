@@ -20,7 +20,6 @@ on:
       # Enforce catalog coverage whenever any active document family changes.
       # master/ and .archive/ remain outside this inventory scan.
       - 'area/drawing/**/*.md'
-      - 'images/**/*.md'
       - 'area/novel/**/*.md'
       - '.takeout/reports/**/*.md'
       # Run Ledger regression tests when its implementation or schema changes.
@@ -33,8 +32,6 @@ on:
       - '!.takeout/reports/lint_reports/latest-lint-report.md'
       - '!.takeout/reports/lint_reports/on_*/history/**'
       - '!.takeout/reports/lint_reports/on_*/latest-lint-report.md'
-      # Image conversion reports are generated output, not authored documents.
-      - '!images/takeout/history/**'
       - 'workspace/**/*.md'
       - '!workspace/discussion.md'
       - '!workspace/tasks/**'
