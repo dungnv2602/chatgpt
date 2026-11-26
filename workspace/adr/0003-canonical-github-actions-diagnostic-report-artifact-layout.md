@@ -218,7 +218,7 @@ The decision depends on the assumption that no required external consumer relies
 | E9 | User instruction in this conversation | 2026-11-26 | User instruction | Approval of DRAFT-0004 revision 1, Option 3 and its stated migration scope. | Decision approval does not replace the ADR completeness gate or task execution and hosted-validation requirements. |
 
 
-- **Source Draft:** DRAFT-0004, revision 1. The source file is deleted after verified promotion. The Draft ID and revision remain as provenance.
+- **Source Draft:** DRAFT-0004, revision 1. The source Draft was deleted after the accepted ADR passed its read-back check. The Draft ID and revision remain as provenance.
 - **Approved scope:** Option 3 only, as recorded in the metadata and approved by the user on 2026-11-26.
 - **Related ADRs:** None.
 - **Evidence:** Assessment snapshot at commit `f310d0921a6750caf40e7e314f0a7574bae120af`; `.takeout/reports/gh_ac_reports/index.json`; `.takeout/reports/gh_ac_reports/scripts/report.py`; `.takeout/reports/gh_ac_reports/assets/report-template.md`; `.takeout/reports/gh_ac_reports/README.md`; `.takeout/reports/triage/scripts/ledger.py`; sample history folder and directory inventory recorded in DRAFT-0004 revision 1.

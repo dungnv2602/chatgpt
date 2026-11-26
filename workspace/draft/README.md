@@ -7,10 +7,6 @@ This folder stores proposals that require a user decision.
 - [DRAFT_TEMPLATE.md](../DRAFT_TEMPLATE.md) — canonical template for new proposals (Version 1.2; requires detailed, evidence-qualified assessments of every viable option).
 - DRAFT-*.md — one record for each distinct proposal.
 
-## Promotion Pending
-
-- [DRAFT-0004 — Canonical GitHub Actions Diagnostic Report Artifact Layout](DRAFT-0004-canonical-github-actions-report-artifact-layout.md) — Revision 1 approved for Option 3. Provisional ADR-0003 is pending the completeness and read-back gate. Do not implement the artifact migration until ADR-0003 is accepted.
-
 ## Current Drafts
 
 - [DRAFT-0002 — Phase-Aware Planning and Evidence Capture](DRAFT-0002-phase-aware-planning-and-evidence-capture.md) — Revision 3. The discussion register records approval of Option 3 with added requirements, but the Draft metadata and task record still show review-pending state. Reconcile the exact approved revision and scope before ADR promotion.
