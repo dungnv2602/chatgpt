@@ -22,21 +22,21 @@ Use the [Image Takeout procedure](../../../../.takeout/images/README-2.md) for t
 2. Create one hand-off item with its exact top-level source filename, descriptive title, optional repository asset_id, and repository destination. Record source_asset_id separately when the generation record exposes a platform Asset ID.
 3. Include `attempt: NN` for a destination under `area/drawing/YYYY-MM-DD/images/`. Other assets may omit it.
 4. List every top-level image upload exactly once in the ready hand-off. The repository-owned `README.md` and `HANDOFF.yml` are metadata, not uploads. The processor accepts only those exact regular files as intake metadata and rejects any other non-image file. The Action does not infer image content, title, ID, or project membership.
-5. Keep uploads directly in `images/takeout/`. Do not place them in the reserved `history/` or `webp/` directories.
+5. Keep uploads directly in `.takeout/images/`. Do not place them in the reserved `history/` or `webp/` directories.
 
 Add a mandatory `conversation_record` path to every ready hand-off item. The file must be a dated conversation-integrity record and must contain the exact source filename in its `Image source mapping` table. For drawing outputs, use `area/drawing/history/YYYY-MM-DD-conversation-integrity.md`; include the attempt and a native Generation ID or recorded internal Output ID. The processor cross-checks that identity against the referenced attempt note. If an Asset ID is supplied, it must also match. A Partial or Curated record must identify unavailable material and label editorial summaries; do not invent a transcript to pass validation.
 
-The processor moves each provenance-mapped original byte-for-byte into the destination's `original/` folder. It stores the WebP derivative in the destination root. Novel assets use `area/novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Other assets use their declared destination. The original retains its metadata. The WebP does not replace the master. An item whose exact destination is `images/unclassified` is converted to WebP but remains in intake; its derivative stays under `images/takeout/webp/unclassified/`. The processor preserves that item in a residual Draft hand-off after a successful batch.
+The processor moves each provenance-mapped original byte-for-byte into the destination's `original/` folder. It stores the WebP derivative in the destination root. Novel assets use `area/novel/[Novel-ID]/assets/illustrations/[ARC-ID]/[SCN-ID]/`. Other assets use their declared destination. The original retains its metadata. The WebP does not replace the master. An item whose exact destination is `.takeout/images/unclassified` is converted to WebP but remains in intake; its derivative stays under `.takeout/images/webp/unclassified/`. The processor preserves that item in a residual Draft hand-off after a successful batch.
 
 ## Unclassified image handling
 
 Use the normal Ready takeout workflow for both provenance-mapped and unclassified images. This keeps validation, conversion, reporting, and publication in one path without weakening the provenance gate.
 
-1. Keep the original image at the top level of `images/takeout/`.
+1. Keep the original image at the top level of `.takeout/images/`.
 2. Review retained provenance. Match the exact source Asset ID, Generation ID or Output ID, conversation record, attempt record, and hand-off mapping. Do not classify by appearance, filename, chronology, or resemblance.
-3. If the exact association is not established, keep the item unclassified with `destination_dir: "images/unclassified"`. Do not invent its source, attempt, prompt, asset ID, destination, or project membership.
+3. If the exact association is not established, keep the item unclassified with `destination_dir: ".takeout/images/unclassified"`. Do not invent its source, attempt, prompt, asset ID, destination, or project membership.
 4. The normal processor converts static PNG, JPG, and JPEG sources using the standard source-specific profile. It rejects animated PNG and malformed or extension-mismatched sources.
-5. It writes the derivative to `images/takeout/webp/unclassified/attempt-NNN/`. Append `.webp` to the complete source filename. It chooses the next unused attempt directory and refuses to overwrite prior derivatives.
+5. It writes the derivative to `.takeout/images/webp/unclassified/attempt-NNN/`. Append `.webp` to the complete source filename. It chooses the next unused attempt directory and refuses to overwrite prior derivatives.
 6. Verify the WebP RIFF container and declared length. Hash the source before and after conversion. Require an unchanged source hash. Record the derivative SHA-256 in the conversion report.
 7. Keep the original in intake and the derivative in the unclassified staging directory. Keep the item in the residual Draft hand-off. Do not relocate either file or edit a manifest, attempt record, daily index, or other project index.
 
