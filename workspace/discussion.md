@@ -1,8 +1,10 @@
 ## Current Step
 
-**2026-11-26 — Repository-wide workflow and relocation audit:** Inspect `.agent/` and related repository workflow documents for stale path references, cue conflicts, skill dependency mismatches, and relocation assumptions. Update canonical instructions to match the reconstructed layout and current workflow. Do not restore legacy files. Verify each change by read-back from branch `gpt`.
+_No active step._
 
 ## Open Discussions
+
+
 
 
 - **2026-11-25 — DRAFT-0003 — Area, Project, and Task Architecture:** [Review DRAFT-0003 revision 1](draft/DRAFT-0003-area-project-task-architecture-and-resource-lifecycle.md). The proposal recommends project folders with nested task folders, one global task board, task-local findings, project-level coordination, global Draft/ADR governance, and exact-file task archives. User review is required for the Area/Project/Task boundaries, task file split, selectors, resource promotion, and project closeout.
@@ -14,14 +16,8 @@
 
 ## Reports
 
+- **2026-11-26 — Relocation workflow alignment:** Updated `.agent/SESSION_START.md` and `.agent/INITIALIZATION_POLICY.md` to use relocated `.agent/skills/` paths and the `/start` cue. Corrected numbering and a relocated technical-policy link. Read-back verified. Commit `e86603fe68dde28d54ad6da2ef64d944169b7d0a`, `af7f28b97ea3ff830539f65429d97d453a72b9a1`, `e3574d2d2e5b93e2217f8dc2c041c0a5d269f420`, and `1ac87cbc30b8946376d612eff80e5e87235a0aef`.
 
 - **2026-11-26 — Foundational initialization completed:** Adapted initialization to the relocated `.agent/` policy and `.agent/skills/` paths. Retrieved and read The Worker, mandatory Conversation Mode reference, ASD-STE100, GitHub Actions, and Document Standards from branch `gpt`. Corrected the startup-register verification wording. No legacy files were restored. Session-start procedure references to the former root `skills/` paths remain superseded by the relocated equivalents for this reconstructed layout.
 
 - **2026-11-25 07:13 UTC — Companion architecture Draft prepared:** Created DRAFT-0003 revision 1, completed its four-option assessment and comparative matrix, indexed it, and read back the Draft, index, and active task record from branch gpt. Recorded the DRAFT-0002 approval-state discrepancy without changing its status. No ADR or implementation was created.
-
-- **2026-11-25 02:40 UTC — Future Draft assessment standard updated:** Updated the canonical Draft template to Version 1.2, Draft workflow, decision-governance quality gate, and Document Type Catalog. Read-back checks confirmed consistent requirements for detailed assessment of every viable option, comparative criteria/matrix, evidence provenance and limitations, and recommendation traceability. Archived task [20261125-023508](../archive/tasks/20261125-023508-standardize-detailed-option-assessments-in-future-drafts.md). DRAFT-0002 revision 3 remains in-review and unchanged. No merge to main.
-
-- **2026-11-25 02:26 UTC — DRAFT-0002 revision 3 prepared:** Completed detailed assessments of all four options, added a qualitative repository-fit matrix, refreshed the external evidence and security caveats, and retained the proposal's implementation and pilot details. The Draft and index were read back; revision 3 is in-review and awaits the user's decision. No implementation or ADR was created.
-
-
-- **2026-11-26 — Session initialization (/start):** Restarted foundational retrieval against the reconstructed repository. The canonical session-start procedure was retrieved from `skills/SESSION_START.md` at commit `3bce922cb6348e38e04ea7c2d43597af9d908fc3`. The five required foundational paths were verified against branch `gpt`; prior 404 results were stale/incorrect for the reconstructed commit.\n
