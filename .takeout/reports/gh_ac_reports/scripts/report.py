@@ -17,6 +17,10 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
+SHARED_ELIGIBILITY_PATH = Path(__file__).resolve().parents[2] / "shared"
+if str(SHARED_ELIGIBILITY_PATH) not in sys.path:
+    sys.path.insert(0, str(SHARED_ELIGIBILITY_PATH))
+from eligibility import actions_report_is_eligible, independent_actions_issues
 SCHEMA_PATH = ROOT / "assets" / "report-schema.json"
 TEMPLATE_PATH = ROOT / "assets" / "report-template.md"
 SCHEMA_VERSION = "1.0.0"
@@ -671,21 +675,13 @@ def write_report(root, report, log_files):
 
 
 def report_is_actionable(report):
-    """Persist only reports containing at least one independently classified error."""
-    classification = report.get("classification") or {}
-    issues = classification.get("issues")
-    return isinstance(issues, list) and bool(issues)
+    """Return whether a report contains an independently classified error."""
+    return bool(independent_actions_issues(report))
 
 
 def report_is_retained(report):
-    """Only completed post-run reports with independent classified errors belong in history."""
-    run = report.get("source_run") or {}
-    capture = report.get("capture") or {}
-    return (
-        capture.get("stage") == "post_run"
-        and run.get("status") == "completed"
-        and report_is_actionable(report)
-    )
+    """Retain completed post-run reports with independent errors, including incomplete retry captures."""
+    return actions_report_is_eligible(report, require_complete=False)
 
 
 def prune_invalid_history(root):
@@ -798,7 +794,7 @@ def capture_one(repo, root, run_id, stage, force=False):
     report, logs = fetch_evidence(repo, run_id, stage)
     # Manual backfill may select an older run, but it never bypasses the error-only
     # retention rule. Success, cancellation-only, and other issue-free runs are not reports.
-    if not report_is_actionable(report):
+    if not report_is_retained(report):
         return None
     return write_report(root, report, logs)
 

@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """Ingest immutable lint and GitHub Actions reports into the central issue ledger."""
 from __future__ import annotations
-import argparse, copy, hashlib, json, re, tempfile
+import argparse, copy, hashlib, json, re, sys, tempfile
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 
+SHARED_ELIGIBILITY_PATH = Path(__file__).resolve().parents[2] / "shared"
+if str(SHARED_ELIGIBILITY_PATH) not in sys.path:
+    sys.path.insert(0, str(SHARED_ELIGIBILITY_PATH))
+from eligibility import actions_report_is_eligible, independent_actions_issues
+
 SCHEMA_VERSION = "1.5.0"
 MAX_EVIDENCE_ROWS = 5
-IGNORED_CATEGORIES = {"cancelled", "skipped", "neutral", "queued", "in_progress", "unavailable", "unknown", "not_available"}
 IGNORED_LINT_STATUSES = {"Incomplete", "Cancelled", "Superseded"}
-IGNORED_PROPAGATION_STEPS = {
-    "preserve lint failure as workflow conclusion",
-    "set workflow result from audit and tooling outcomes",
-}
 LINT_BASELINE_CHECKS = (
     "Wrapper shell syntax",
     "Python report tooling compilation",
@@ -359,13 +359,13 @@ def lint_observations(report, report_path):
 
 def actions_observations(report, report_path, root):
     capture, source = report.get("capture") or {}, report.get("source_run") or {}
-    if capture.get("stage") != "post_run" or capture.get("completeness") != "Complete":
-        return []
-    if source.get("status") != "completed":
+    if not actions_report_is_eligible(report, require_complete=True):
         return []
     issues = (report.get("classification") or {}).get("issues")
     if not isinstance(issues, list):
         raise LedgerError("GitHub Actions classification issues must be an array: " + report_path)
+    if any(not isinstance(issue, dict) for issue in issues):
+        raise LedgerError("GitHub Actions issue must be an object: " + report_path)
     workflow_id = source.get("workflow_id")
     workflow_path = str(source.get("workflow_path") or "")
     workflow_name = str(source.get("workflow_name") or "Unknown workflow")
@@ -376,19 +376,13 @@ def actions_observations(report, report_path, root):
     parse_time(observed_at)
     observation_id = "github_actions:" + str(workflow_id) + ":" + run_id + ":" + str(attempt)
     result = {}
-    for issue in issues:
-        if not isinstance(issue, dict):
-            raise LedgerError("GitHub Actions issue must be an object: " + report_path)
+    for issue in independent_actions_issues(report):
         category = str(issue.get("category") or "unknown").strip().lower()
-        if category in IGNORED_CATEGORIES:
-            continue
         job_name, step_name = str(issue.get("job_name") or "").strip(), str(issue.get("step_name") or "").strip()
-        if step_name.casefold() in IGNORED_PROPAGATION_STEPS:
-            continue
         signature = normalize_signature(diagnostic_signature(report, report_path, root, issue))
         # Workflow-level startup/timeout failures may have no job or step.
         # Keep them as findings when the classifier supplies a diagnostic signature.
-        if not job_name and not step_name and not signature:
+        if not issue.get("job_id") and not job_name and not step_name and not signature:
             continue
         identity_data = [str(workflow_id), workflow_path, job_name, step_name, category, signature]
         identity_json = json.dumps(identity_data, ensure_ascii=False, separators=(",", ":"))
