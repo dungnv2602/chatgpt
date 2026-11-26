@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-142500
 - **Created:** 2026-11-26 14:25 UTC
-- **Updated:** 2026-11-26 14:50 UTC
+- **Updated:** 2026-11-26 15:05 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -57,13 +57,20 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - **References:** .takeout/reports/README.md; .takeout/reports/triage/README.md; .takeout/reports/gh_ac_reports/index.json; .takeout/reports/lint_reports/on_repo/index.json; .takeout/reports/lint_reports/on_changed/index.json.
 - **Next:** Continue with governed report ingestion/task handoff and reconcile actionable findings against current refactored paths. Respect the prohibition on local script/test execution and CI polling.
 
+### 2026-11-26 15:05 UTC
+
+- **Action:** Compared the canonical board's nine-column schema (Title, Approval, Last updated, Task record) against Ledger publication logic and regression fixture.
+- **Result:** Confirmed the Ledger writer was the defect: it targeted an obsolete eight-column layout and rejected `_No tasks._` placeholders; its test fixture also attempted to remove an obsolete table layout and therefore did not exercise malformed-board handling against the current board. Updated writer to align with the current board schema, replace an empty-section placeholder with a table and first row, retain fail-closed behavior when the section has neither valid table nor placeholder, and update the test fixture accordingly. Commits: `475b1fb`, `9fb2299`, `015661b`. Static readback only; no tests or CI.
+- **References:** `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`; `workspace/task_board.md`.
+- **Next:** Continue static pipeline audit and readback; no tests, scripts, CI dispatch or polling.
+
 ## 7. Current State
 
 Explicit clean-start reset executed in commit `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`: generated active Actions and lint history, indexes/latest pointers, and report snapshots under `.archive/reports/` cleared; Actions index and lint indexes reinitialized; Ledger findings and processed state empty and lint scopes unseeded. Report scripts, schemas, templates, guides, workflow definitions, unrelated active tasks, and task archives preserved. This reset does not rewrite Git history or GitHub run records. Hosted baseline runs and task-handoff operation remain unverified.
 
 ## 8. Remaining Work
 
-- Verify workflow trigger/handoff design by static review and repair any confirmed trigger defect.
+- Continue static workflow/report ingestion audit and readback after the task-board writer repair.
 - Confirm clean reset tree and empty active report indexes/Ledger.
 - Leave first complete tooling-valid lint audits to seed the fresh period; do not poll CI or claim hosted validation.
 
@@ -84,7 +91,7 @@ Explicit clean-start reset executed in commit `c9f4f6d92316c18574437c0c1f5cd4dfd
 
 - **Check:** Intake state and latest report indexes.
 - **Method:** Remote file retrieval via GitHub API.
-- **Result:** Partial initial inspection; latest indexes show findings and failures. Ledger file retrieval failed. Full root cause unverified.
+- **Result:** Static inspection confirmed the task-board publication schema mismatch and the writer/test fixture were repaired by remote file edits and commit readback. Reset state was readback-confirmed earlier. End-to-end ingestion remains unverified.
 - **Limitations:** No tests, lint, scripts, or workflows run. No runtime/CI validation yet.
 
 ## 12. Handoff Instructions
