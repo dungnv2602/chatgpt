@@ -32,3 +32,6 @@ Audit reconstructed GitHub Actions skill report/archive path references and comp
 
 
 - **2026-11-26 — Navigation and image/report guide follow-up:** Corrected the active initialization policy, report index, image index, and Document Standards Skill template path example to reconstructed `.takeout/`, `.archive/`, `area/`, and `.agent/` locations. Targeted readback completed; audit remains open.
+
+
+- **2026-11-26 — Worker and image-script reference cleanup:** Targeted readback exposed malformed archive spacing and command path formatting, plus stale novel-root terminology. These were corrected and committed. Further auditing remains open.
