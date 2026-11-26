@@ -4,7 +4,7 @@
 
 Store all durable novel records in the repository's `area/novel/` workspace on branch `gpt`.
 
-The governing standard is [`area/novel/WORKFLOW.md`](../../../area/novel/WORKFLOW.md). The quick reference and active templates are in [`area/novel/README.md`](../../../area/novel/README.md).
+The governing standard is [`area/novel/WORKFLOW.md`](../../../../area/novel/WORKFLOW.md). The quick reference and active templates are in [`area/novel/README.md`](../../../../area/novel/README.md).
 
 **Current format standard: Version 1.1.** Use these templates for new records and material revisions:
 
@@ -99,7 +99,7 @@ Ordinary discussion or brainstorming does not require a scene, arc, or image rec
 
 An image-only request does not automatically create a prose scene.
 
-For the full project stages, deliverable matrix, file conventions, statuses, quality gates, versioning, and definition of done, follow [`area/novel/WORKFLOW.md`](../../../area/novel/WORKFLOW.md).
+For the full project stages, deliverable matrix, file conventions, statuses, quality gates, versioning, and definition of done, follow [`area/novel/WORKFLOW.md`](../../../../area/novel/WORKFLOW.md).
 
 ## Technical documentation standard
 
