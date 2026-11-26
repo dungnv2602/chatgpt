@@ -212,8 +212,8 @@ Security claims also require precise interpretation. The external SHA-256 attest
 
 ### Option 4 — Build a repository-specific hook and script framework
 
-- **Description:** Build custom plan initialization, phase parsing, validation, task isolation, context injection, integrity checks, and completion hooks. This option has two materially different forms:
-  1. **Repository/CI validation:** GitHub Actions or repository scripts validate that committed task records contain the required fields, phase markers, links, and permitted status values.
+- **Description:** Build custom plan initialization, phase parsing, rule checks, task isolation, context injection, integrity checks, and completion hooks. This option has two materially different forms:
+  1. **Repository/CI checks:** GitHub Actions or repository scripts check that committed task records contain the required fields, phase markers, links, and permitted status values.
   2. **Live runtime integration:** Host-specific hooks read and inject task context on prompts/tool calls, attest planning state, and optionally influence when a run may stop.
 - **Good:**
   - Repository/CI validation could catch missing or malformed structure consistently. It may be a useful narrow safeguard after a stable template and repeated failure pattern exist.
