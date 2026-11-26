@@ -5,10 +5,10 @@ on:
     branches:
       - gpt
     paths:
-      - 'skills/asd-ste100/**'
+      - '.agent/skills/asd-ste100/**'
       - '.github/workflows/ste-lint-full-docs.yml'
       - '.github/workflows/ste-lint-changed.yml'
-      - '!skills/asd-ste100/examples/**'
+      - '!.agent/skills/asd-ste100/examples/**'
   workflow_dispatch:
 
 concurrency:
@@ -103,13 +103,13 @@ jobs:
             printf '%s=%s\n' "$key" "$status" >> "$GITHUB_OUTPUT"
             if [[ "$status" -ne 0 ]]; then failed=1; fi
           }
-          run_check wrapper_syntax bash -n skills/asd-ste100/scripts/ste-lint-repository.sh
+          run_check wrapper_syntax bash -n .agent/skills/asd-ste100/scripts/ste-lint-repository.sh
           run_check python_compile python3 -m py_compile \
-            skills/asd-ste100/scripts/generate_lint_report.py \
-            skills/asd-ste100/scripts/check_markdown_anchors.py
-          run_check report_tests python3 skills/asd-ste100/scripts/test_generate_lint_report.py
-          run_check anchor_tests python3 skills/asd-ste100/scripts/test_check_markdown_anchors.py
-          run_check linter_selftest python3 skills/asd-ste100/scripts/ste-lint.py --selftest
+            .agent/skills/asd-ste100/scripts/generate_lint_report.py \
+            .agent/skills/asd-ste100/scripts/check_markdown_anchors.py
+          run_check report_tests python3 .agent/skills/asd-ste100/scripts/test_generate_lint_report.py
+          run_check anchor_tests python3 .agent/skills/asd-ste100/scripts/test_check_markdown_anchors.py
+          run_check linter_selftest python3 .agent/skills/asd-ste100/scripts/ste-lint.py --selftest
           echo "failed=$failed" >> "$GITHUB_OUTPUT"
 
       - name: Run full repository-wide audit and generate structured reports
@@ -124,13 +124,13 @@ jobs:
           SELFTEST_EXIT: ${{ steps.tooling.outputs.linter_selftest_exit }}
         run: |
           set -euo pipefail
-          mkdir -p .lint-report-records reports/lint_reports/on_repo/history
+          mkdir -p .lint-report-records .takeout/reports/lint_reports/on_repo/history
           anchor_status=0
-          python3 skills/asd-ste100/scripts/check_markdown_anchors.py \
+          python3 .agent/skills/asd-ste100/scripts/check_markdown_anchors.py \
             > .lint-report-records/anchor-check.log 2>&1 || anchor_status=$?
 
           git ls-files -- '*.md' |
-            grep -vE '^(archive/|reports/|workspace/tasks/|workspace/discussion[.]md$|novels/|drawings/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' \
+            grep -vE '^(.archive/|reports/|workspace/tasks/|workspace/discussion[.]md$|area/novel/|area/drawing/|master/|skills/(romantic-storyteller-visual-artist/|prompt-master/|asd-ste100/examples/))' \
             > .lint-report-records/evaluated-files.txt || true
 
           failed=0
@@ -140,7 +140,7 @@ jobs:
             output=".lint-report-records/$key.json"
             raw="$output.raw"
             status=0
-            bash skills/asd-ste100/scripts/ste-lint-repository.sh --json "$file" > "$raw" 2>&1 || status=$?
+            bash .agent/skills/asd-ste100/scripts/ste-lint-repository.sh --json "$file" > "$raw" 2>&1 || status=$?
             if jq -e '.violations | type == "array"' "$raw" >/dev/null 2>&1; then
               jq --arg path "$file" --argjson exit_code "$status" \
                 '. + {path:$path, exit_code:$exit_code}' "$raw" > "$output"
@@ -219,9 +219,9 @@ jobs:
           else
             report_status="Passed"
           fi
-          history="reports/lint_reports/on_repo/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
+          history=".takeout/reports/lint_reports/on_repo/history/$GITHUB_RUN_ID-attempt-$GITHUB_RUN_ATTEMPT"
           generator_status=0
-          python3 skills/asd-ste100/scripts/generate_lint_report.py \
+          python3 .agent/skills/asd-ste100/scripts/generate_lint_report.py \
             --scope on_repo --records-dir .lint-report-records \
             --output-dir "$history" \
             --run-id "$GITHUB_RUN_ID" --run-number "$GITHUB_RUN_NUMBER" \
@@ -230,16 +230,16 @@ jobs:
             --commit "$GITHUB_SHA" --event "$GITHUB_EVENT_NAME" \
             --mode repository-wide --status "$report_status" \
             --checks-file .lint-report-checks.json \
-            --previous-report reports/lint_reports/on_repo/latest-lint-report.json \
+            --previous-report .takeout/reports/lint_reports/on_repo/latest-lint-report.json \
             --linter-source-sha "$(git rev-parse HEAD)" || generator_status=$?
           if [[ "$generator_status" -ne 0 ]]; then
             echo "::error::The shared lint report generator failed with exit $generator_status."
             failed=1
           else
-            cp reports/lint_reports/on_repo/latest-lint-report.md reports/lint_reports/latest-lint-report.md
+            cp .takeout/reports/lint_reports/on_repo/latest-lint-report.md .takeout/reports/lint_reports/latest-lint-report.md
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add reports/lint_reports/on_repo reports/lint_reports/latest-lint-report.md
+            git add .takeout/reports/lint_reports/on_repo .takeout/reports/lint_reports/latest-lint-report.md
             if ! git diff --cached --quiet; then
               git commit -m "Publish repository-wide lint evidence"
               git pull --rebase origin gpt
@@ -257,7 +257,7 @@ jobs:
           TOOLING_FAILED: ${{ steps.tooling.outputs.failed }}
         run: |
           if [[ "$AUDIT_OUTCOME" != "success" || "$AUDIT_FAILED" == "1" || "$TOOLING_FAILED" == "1" ]]; then
-            echo "::error::The full audit found lint or validation failures. See reports/lint_reports/on_repo/latest-lint-report.md."
+            echo "::error::The full audit found lint or validation failures. See .takeout/reports/lint_reports/on_repo/latest-lint-report.md."
             exit 1
           fi
           echo "All full-audit checks passed."
@@ -286,4 +286,4 @@ jobs:
           persist-credentials: true
 
       - name: Capture workflow diagnostics
-        uses: ./reports/gh_ac_reports/actions/capture
+        uses: ./.takeout/reports/gh_ac_reports/actions/capture
