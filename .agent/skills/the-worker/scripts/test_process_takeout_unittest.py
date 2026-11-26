@@ -782,6 +782,27 @@ class TakeoutProcessorTests(unittest.TestCase):
         self.assertEqual(leftover.read_text(encoding="utf-8"), "prior staging content")
         self.assertFalse((self.inbox / "webp/batch-with-old-staging/attempt-001").exists())
 
+    def test_shared_assets_use_separate_original_and_webp_stores(self):
+        original = b"shared-original"
+        (self.inbox / "shared.png").write_bytes(original)
+        self.manifest(
+            {
+                "source": "shared.png",
+                "title": "Shared Asset",
+                "destination_dir": ".takeout/images",
+            },
+            batch="batch-shared-assets",
+        )
+
+        result = self.run_processor()
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+        master = self.inbox / "original/ILL-001-shared-asset.png"
+        webp = self.inbox / "webp/ILL-001-shared-asset.webp"
+        self.assertEqual(master.read_bytes(), original)
+        self.assertTrue(webp.read_bytes().startswith(b"RIFF"))
+        self.assertFalse((self.inbox / "shared.png").exists())
+
     def test_destination_collision_fails_without_overwrite(self):
         (self.inbox / "photo.jpg").write_bytes(b"original-upload")
         directory = self.inbox
