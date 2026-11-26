@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26 15:48 UTC:** Implement the accepted ADR-0003 Option 3 artifact-layout migration, now that the error-only reporter/Ledger contract has passed hosted validation and the four linked findings plus historical archive reconciliation are complete. Preserve canonical report JSON, integrity manifests, logs, and evidence paths. Do not modify DRAFT-0002 or other unapproved drafts.
+- **2026-11-26 15:55 UTC:** Implement the accepted ADR-0003 Option 3 in the report writer and regression suite. Inspect every repository reference to removed report views, add an on-demand Markdown renderer, and verify all retained history JSON/log bytes before planning the derived-file migration. Scope: [P0 task 20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md). Expected result: a coherent generator/test/documentation change with no changes to canonical evidence or the separate lint-report family.
 
 ## Open Discussions
 
