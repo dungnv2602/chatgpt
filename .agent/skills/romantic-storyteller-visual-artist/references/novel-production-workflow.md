@@ -40,15 +40,15 @@ Keep both Markdown records in the scene-local `illustrations/` folder. Do not st
 
 Each retained image has an original PNG/JPEG master and a same-stem WebP derivative beside it.
 
-All new retained uploads use the single flat `images/takeout/` intake. This rule applies to novel and non-novel assets.
+All new retained uploads use the single flat `.takeout/images/` intake. This rule applies to novel and non-novel assets.
 
-Inspect the actual image. Prepare `images/takeout/HANDOFF.yml` with its original filename, descriptive title, optional stable asset ID, and destination directory.
+Inspect the actual image. Prepare `.takeout/images/HANDOFF.yml` with its original filename, descriptive title, optional stable asset ID, and destination directory.
 
-Do not rename or move the upload manually. The existing GitHub Action stages WebP derivatives under `images/takeout/webp/[batch-id]/attempt-NNN/`. It appends `.webp` to the exact incoming filename. It verifies each derivative and routes it beside its byte-identical original master.
+Do not rename or move the upload manually. The existing GitHub Action stages WebP derivatives under `.takeout/images/webp/[batch-id]/attempt-NNN/`. It appends `.webp` to the exact incoming filename. It verifies each derivative and routes it beside its byte-identical original master.
 
 Failed attempts retain the ready hand-off, source images, and successfully converted staged WebPs. Use a new attempt number for each retry. Successful attempts move WebPs to their permanent destinations and remove the empty staging folder.
 
-The Action archives the hand-off snapshot, `conversion-report.csv`, and `verification-report.md` under `images/takeout/history/[batch-id]/attempt-NNN/`. It clears the active hand-off only after it completes the required checks and archive steps.
+The Action archives the hand-off snapshot, `conversion-report.csv`, and `verification-report.md` under `.takeout/images/history/[batch-id]/attempt-NNN/`. It clears the active hand-off only after it completes the required checks and archive steps.
 
 Supporting documents do not create extra narrative levels:
 
@@ -89,7 +89,7 @@ When the user asks you to write, create, continue, revise, or expand a scene:
 6. Apply the automatic scene-illustration default. It applies to a specific scene-writing task. It does not apply to discussion, brainstorming, or outline planning. Explicit prose-only, text-only, or no-images instructions override the default. Report genuine safety or technical blockers.
 7. For each planned image, create its scene-local Illustration Prompt Record before the generation attempt. Record the exact authored prompt, references actually attached, acceptance criteria, and attempt history. Do not claim access to a compiled prompt payload that is not exposed.
 8. After generation, inspect each returned image separately. Record the actual output and assessment. Create or update an Illustration Note for each generated image retained or reviewed as a scene deliverable. Link its image asset, relevant prompt attempt, and scene.
-9. For repository retention, use the universal `images/takeout/` intake. Prepare its structured hand-off. Route novel masters and WebP files to the central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library. Link both files from the Illustration Note and scene index after the Action verifies them. Keep the Note and Prompt Record beside the scene.
+9. For repository retention, use the universal `.takeout/images/` intake. Prepare its structured hand-off. Route novel masters and WebP files to the central `assets/illustrations/[ARC-ID]/[SCN-ID]/` library. Link both files from the Illustration Note and scene index after the Action verifies them. Keep the Note and Prompt Record beside the scene.
 10. If an image exists only in the conversation, state that fact. Do not invent a repository asset path.
 11. Follow the Drawing Skill for visual mode, image references, prompt archival, generation and editing, inspection, recovery, and asset integrity.
 12. Fetch the current target file before updating it. Preserve unrelated material. Update affected parent indexes and links.
