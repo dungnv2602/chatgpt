@@ -1,31 +1,31 @@
 {
   "schema_version": "1.0.0",
   "source_run": {
-    "id": "45794610594",
-    "number": 207,
+    "id": "45794619503",
+    "number": 208,
     "attempt": 1,
     "workflow_id": 424743410,
     "workflow_name": "STE Lint Full Technical Documentation",
     "workflow_path": ".github/workflows/ste-lint-full-docs.yml",
-    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45794610594",
+    "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45794619503",
     "event": "push",
     "branch": "gpt",
-    "head_sha": "c200167d77d143abd7ac30b0fe7a9284acfc078b",
+    "head_sha": "3f6f505f904e81ec3f3b47796190e1f03ba879ff",
     "status": "in_progress",
     "conclusion": null,
-    "created_at": "2026-11-26T09:43:27Z",
-    "run_started_at": "2026-11-26T09:43:27Z",
-    "updated_at": "2026-11-26T09:45:51Z",
+    "created_at": "2026-11-26T09:43:30Z",
+    "run_started_at": "2026-11-26T09:43:30Z",
+    "updated_at": "2026-11-26T09:46:33Z",
     "actor": "dungnv2602",
     "triggering_actor": "dungnv2602",
     "head_commit_message": "fix(ci): scope superseding cancellation to push runs"
   },
   "capture": {
     "stage": "pre_finalizer",
-    "captured_at_utc": "2026-11-26T09:46:04Z",
+    "captured_at_utc": "2026-11-26T09:46:48Z",
     "completeness": "Incomplete",
     "reporter_job": {
-      "id": "139822493620",
+      "id": "139823022616",
       "name": "Capture GH Actions diagnostics",
       "status": "in_progress",
       "conclusion": null
@@ -42,7 +42,7 @@
     "issues": [
       {
         "category": "step_or_job_failure",
-        "job_id": "139821985988",
+        "job_id": "139822017968",
         "job_name": "Full audit and publish detailed evidence",
         "step_number": 6,
         "step_name": "Set workflow result from audit and tooling outcomes",
@@ -54,14 +54,14 @@
   },
   "jobs": [
     {
-      "id": "139821949631",
+      "id": "139821978343",
       "name": "Validate target branch and reject superseded push runs",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-26T09:43:29Z",
-      "completed_at": "2026-11-26T09:43:31Z",
-      "runner_name": "GitHub Actions 1000003148",
-      "runner_id": 1000003148,
+      "started_at": "2026-11-26T09:43:32Z",
+      "completed_at": "2026-11-26T09:43:34Z",
+      "runner_name": "GitHub Actions 1000003149",
+      "runner_id": 1000003149,
       "runner_group_name": "GitHub Actions",
       "runner_group_id": 0,
       "steps": [
@@ -70,44 +70,44 @@
           "name": "Set up job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T09:43:29Z",
-          "completed_at": "2026-11-26T09:43:29Z"
+          "started_at": "2026-11-26T09:43:33Z",
+          "completed_at": "2026-11-26T09:43:33Z"
         },
         {
           "number": 2,
           "name": "Validate branch and guard push runs",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T09:43:29Z",
-          "completed_at": "2026-11-26T09:43:30Z"
+          "started_at": "2026-11-26T09:43:33Z",
+          "completed_at": "2026-11-26T09:43:33Z"
         },
         {
           "number": 3,
           "name": "Complete job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T09:43:30Z",
-          "completed_at": "2026-11-26T09:43:30Z"
+          "started_at": "2026-11-26T09:43:33Z",
+          "completed_at": "2026-11-26T09:43:33Z"
         }
       ],
       "log_capture": {
         "available": false,
         "truncated": false,
         "bytes": 82,
-        "path": "logs/job-139821949631.log",
-        "error": "run 45794610594 is still in progress; logs will be available when it is complete\n",
+        "path": "logs/job-139821978343.log",
+        "error": "run 45794619503 is still in progress; logs will be available when it is complete\n",
         "marker_lines": []
       }
     },
     {
-      "id": "139821985988",
+      "id": "139822017968",
       "name": "Full audit and publish detailed evidence",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-26T09:44:02Z",
-      "completed_at": "2026-11-26T09:44:28Z",
-      "runner_name": "GitHub Actions 1000003152",
-      "runner_id": 1000003152,
+      "started_at": "2026-11-26T09:45:04Z",
+      "completed_at": "2026-11-26T09:45:28Z",
+      "runner_name": "GitHub Actions 1000003156",
+      "runner_id": 1000003156,
       "runner_group_name": "GitHub Actions",
       "runner_group_id": 0,
       "steps": [
@@ -116,112 +116,112 @@
           "name": "Set up job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T09:44:03Z",
-          "completed_at": "2026-11-26T09:44:04Z"
+          "started_at": "2026-11-26T09:45:04Z",
+          "completed_at": "2026-11-26T09:45:06Z"
         },
         {
           "number": 2,
           "name": "Check out commit",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T09:44:04Z",
-          "completed_at": "2026-11-26T09:44:09Z"
+          "started_at": "2026-11-26T09:45:06Z",
+          "completed_at": "2026-11-26T09:45:12Z"
         },
         {
           "number": 3,
           "name": "Set up Python",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T09:44:09Z",
-          "completed_at": "2026-11-26T09:44:09Z"
+          "started_at": "2026-11-26T09:45:12Z",
+          "completed_at": "2026-11-26T09:45:12Z"
         },
         {
           "number": 4,
           "name": "Validate lint and report tooling",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T09:44:09Z",
-          "completed_at": "2026-11-26T09:44:13Z"
+          "started_at": "2026-11-26T09:45:12Z",
+          "completed_at": "2026-11-26T09:45:17Z"
         },
         {
           "number": 5,
           "name": "Run full repository-wide audit and generate structured reports",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T09:44:13Z",
-          "completed_at": "2026-11-26T09:44:25Z"
+          "started_at": "2026-11-26T09:45:17Z",
+          "completed_at": "2026-11-26T09:45:27Z"
         },
         {
           "number": 6,
           "name": "Set workflow result from audit and tooling outcomes",
           "status": "completed",
           "conclusion": "failure",
-          "started_at": "2026-11-26T09:44:25Z",
-          "completed_at": "2026-11-26T09:44:25Z"
+          "started_at": "2026-11-26T09:45:27Z",
+          "completed_at": "2026-11-26T09:45:27Z"
         },
         {
           "number": 11,
           "name": "Post Set up Python",
           "status": "completed",
           "conclusion": "skipped",
-          "started_at": "2026-11-26T09:44:25Z",
-          "completed_at": "2026-11-26T09:44:25Z"
+          "started_at": "2026-11-26T09:45:27Z",
+          "completed_at": "2026-11-26T09:45:27Z"
         },
         {
           "number": 12,
           "name": "Post Check out commit",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T09:44:25Z",
-          "completed_at": "2026-11-26T09:44:26Z"
+          "started_at": "2026-11-26T09:45:27Z",
+          "completed_at": "2026-11-26T09:45:27Z"
         },
         {
           "number": 13,
           "name": "Complete job",
           "status": "completed",
           "conclusion": "success",
-          "started_at": "2026-11-26T09:44:26Z",
-          "completed_at": "2026-11-26T09:44:26Z"
+          "started_at": "2026-11-26T09:45:27Z",
+          "completed_at": "2026-11-26T09:45:27Z"
         }
       ],
       "log_capture": {
         "available": false,
         "truncated": false,
         "bytes": 82,
-        "path": "logs/job-139821985988.log",
-        "error": "run 45794610594 is still in progress; logs will be available when it is complete\n",
+        "path": "logs/job-139822017968.log",
+        "error": "run 45794619503 is still in progress; logs will be available when it is complete\n",
         "marker_lines": []
       }
     }
   ],
   "check_runs": [
     {
-      "id": "139821949631",
+      "id": "139821978343",
       "name": "Validate target branch and reject superseded push runs",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-26T09:43:29Z",
-      "completed_at": "2026-11-26T09:43:31Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45794610594/job/139821949631",
+      "started_at": "2026-11-26T09:43:32Z",
+      "completed_at": "2026-11-26T09:43:34Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45794619503/job/139821978343",
       "app": "GitHub Actions",
       "annotations_count": 1
     },
     {
-      "id": "139821985988",
+      "id": "139822017968",
       "name": "Full audit and publish detailed evidence",
       "status": "completed",
       "conclusion": "failure",
-      "started_at": "2026-11-26T09:44:02Z",
-      "completed_at": "2026-11-26T09:44:28Z",
-      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45794610594/job/139821985988",
+      "started_at": "2026-11-26T09:45:04Z",
+      "completed_at": "2026-11-26T09:45:28Z",
+      "details_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45794619503/job/139822017968",
       "app": "GitHub Actions",
       "annotations_count": 3
     }
   ],
   "annotations": [
     {
-      "check_run_id": "139821949631",
-      "job_id": "139821949631",
+      "check_run_id": "139821978343",
+      "job_id": "139821978343",
       "path": ".github",
       "start_line": 35,
       "end_line": 35,
@@ -231,8 +231,8 @@
       "raw_details": ""
     },
     {
-      "check_run_id": "139821985988",
-      "job_id": "139821985988",
+      "check_run_id": "139822017968",
+      "job_id": "139822017968",
       "path": ".github",
       "start_line": 2,
       "end_line": 2,
@@ -242,8 +242,8 @@
       "raw_details": ""
     },
     {
-      "check_run_id": "139821985988",
-      "job_id": "139821985988",
+      "check_run_id": "139822017968",
+      "job_id": "139822017968",
       "path": ".github",
       "start_line": 20,
       "end_line": 20,
@@ -253,8 +253,8 @@
       "raw_details": ""
     },
     {
-      "check_run_id": "139821985988",
-      "job_id": "139821985988",
+      "check_run_id": "139822017968",
+      "job_id": "139822017968",
       "path": ".github",
       "start_line": 19,
       "end_line": 19,
@@ -268,14 +268,14 @@
   "capture_errors": [
     {
       "source": "job_log",
-      "job_id": "139821949631",
-      "message": "run 45794610594 is still in progress; logs will be available when it is complete\n"
+      "job_id": "139821978343",
+      "message": "run 45794619503 is still in progress; logs will be available when it is complete\n"
     },
     {
       "source": "job_log",
-      "job_id": "139821985988",
-      "message": "run 45794610594 is still in progress; logs will be available when it is complete\n"
+      "job_id": "139822017968",
+      "message": "run 45794619503 is still in progress; logs will be available when it is complete\n"
     }
   ],
-  "history_path": "history/424743410/45794610594-attempt-1-pre_finalizer"
+  "history_path": "history/424743410/45794619503-attempt-1-pre_finalizer"
 }

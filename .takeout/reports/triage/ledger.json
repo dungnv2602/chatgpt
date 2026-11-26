@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T09:46:26Z",
+  "updated_at_utc": "2026-11-26T09:46:48Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -64,6 +64,7 @@
     "bootstrap_at_utc": "2026-11-26T08:11:00Z",
     "processed_reports": [
       ".takeout/reports/gh_ac_reports/history/424743410/45794610594-attempt-1-pre_finalizer/report.json",
+      ".takeout/reports/gh_ac_reports/history/424743410/45794619503-attempt-1-pre_finalizer/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-post_run/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45785802198-attempt-1-pre_finalizer/report.json",
       ".takeout/reports/gh_ac_reports/history/427313089/45785842274-attempt-1-post_run/report.json",

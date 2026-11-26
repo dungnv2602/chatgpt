@@ -1,4 +1,4 @@
-# STE Lint Full Technical Documentation — run 45794610594
+# STE Lint Full Technical Documentation — run 45794619503
 
 ## Run identity
 
@@ -6,21 +6,21 @@
 | --- | --- |
 | Workflow | STE Lint Full Technical Documentation |
 | Workflow path | .github/workflows/ste-lint-full-docs.yml |
-| Run / attempt | 45794610594 / 1 |
-| Run number | 207 |
-| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45794610594 |
+| Run / attempt | 45794619503 / 1 |
+| Run number | 208 |
+| Run URL | https://github.com/dungnv2602/chatgpt/actions/runs/45794619503 |
 | Branch | gpt |
-| Commit | c200167d77d143abd7ac30b0fe7a9284acfc078b |
+| Commit | 3f6f505f904e81ec3f3b47796190e1f03ba879ff |
 | Event | push |
 | Actor | dungnv2602 |
-| Created (UTC) | 2026-11-26T09:43:27Z |
+| Created (UTC) | 2026-11-26T09:43:30Z |
 | Status at capture | in_progress |
 | Observed conclusion | Not yet available |
 | Projected conclusion | failure |
 | Reporter job | in_progress / Pending |
 | Capture stage | pre_finalizer |
 | Completeness | Incomplete |
-| Captured (UTC) | 2026-11-26T09:46:04Z |
+| Captured (UTC) | 2026-11-26T09:46:48Z |
 
 ## Executive summary
 
@@ -45,23 +45,23 @@ The report records an actionable workflow failure or operational exception. Ordi
 
 | Job ID | Job | Status | Conclusion | Steps | Log |
 | --- | --- | --- | --- | --- | --- |
-| 139821949631 | Validate target branch and reject superseded push runs | completed | success | 3 | logs/job-139821949631.log |
-| 139821985988 | Full audit and publish detailed evidence | completed | failure | 9 | logs/job-139821985988.log |
+| 139821978343 | Validate target branch and reject superseded push runs | completed | success | 3 | logs/job-139821978343.log |
+| 139822017968 | Full audit and publish detailed evidence | completed | failure | 9 | logs/job-139822017968.log |
 
 ## Actionable step outcomes
 
 | Category | Job | Step | Name | Effect | Confidence | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| step_or_job_failure | 139821985988 | 6 | Set workflow result from audit and tooling outcomes | Blocking | low | Step conclusion: failure |
+| step_or_job_failure | 139822017968 | 6 | Set workflow result from audit and tooling outcomes | Blocking | low | Step conclusion: failure |
 
 ## Check annotations
 
 | Job | Level | Path | Line | Title | Message |
 | --- | --- | --- | --- | --- | --- |
-| 139821949631 | warning | .github | 35 |  | Could not identify the latest push run. Continue with validation. |
-| 139821985988 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
-| 139821985988 | failure | .github | 20 |  | Process completed with exit code 1. |
-| 139821985988 | failure | .github | 19 |  | The full audit found lint or validation failures. See .takeout/reports/lint_reports/on_repo/latest-lint-report.md. |
+| 139821978343 | warning | .github | 35 |  | Could not identify the latest push run. Continue with validation. |
+| 139822017968 | warning | .github | 2 |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ |
+| 139822017968 | failure | .github | 20 |  | Process completed with exit code 1. |
+| 139822017968 | failure | .github | 19 |  | The full audit found lint or validation failures. See .takeout/reports/lint_reports/on_repo/latest-lint-report.md. |
 
 ## Artifacts
 
@@ -71,8 +71,8 @@ No records were captured.
 
 | Job | Name | File | Bytes | Truncated | Markers |
 | --- | --- | --- | --- | --- | --- |
-| 139821949631 | Validate target branch and reject superseded push runs | logs/job-139821949631.log | 82 | False |  |
-| 139821985988 | Full audit and publish detailed evidence | logs/job-139821985988.log | 82 | False |  |
+| 139821978343 | Validate target branch and reject superseded push runs | logs/job-139821978343.log | 82 | False |  |
+| 139822017968 | Full audit and publish detailed evidence | logs/job-139822017968.log | 82 | False |  |
 
 ## Evidence coverage
 
@@ -80,8 +80,8 @@ One or more evidence sources were unavailable. This report is Incomplete.
 
 | Source | HTTP status | Limitation |
 | --- | --- | --- |
-| job_log | Not recorded | run 45794610594 is still in progress; logs will be available when it is complete  |
-| job_log | Not recorded | run 45794610594 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45794619503 is still in progress; logs will be available when it is complete  |
+| job_log | Not recorded | run 45794619503 is still in progress; logs will be available when it is complete  |
 
 ## Related lint evidence
 
