@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26:** CI failures inspected for [task 20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md); fixture/test repairs committed, including a follow-up mixed-newline correction. Await follow-up validation and report handoff evidence. Task remains In Progress.
+- **2026-11-26:** CI failures inspected for [task 20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md); fixture/test repairs committed, including follow-up fixture and writer corrections. Await follow-up validation and report handoff evidence. Task remains In Progress.
 
 ## Open Discussions
 
@@ -18,3 +18,5 @@
 - **2026-11-26 07:04 UTC:** Read back all 14 changed files. All active README relative links resolve. No tests, validators, linter, or workflows were run. The root `README.md` remains absent.
 
 - **2026-11-26:** Runs 570 and 890 confirmed the escaped-newline normalization guard was too restrictive for mixed newline content. Normalization now runs whenever escaped newline sequences exist. Commit `252168c`. CI validation pending.
+
+- **2026-11-26:** Run 891 still exposed a board-writer defect: the writer used escaped literal `\\n` join strings instead of actual newline separators, collapsing the generated board and breaking status-section lookup. Corrected in commit `8d92e78`. Await hosted validation.
