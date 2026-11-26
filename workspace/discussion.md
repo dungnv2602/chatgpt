@@ -13,10 +13,10 @@ _No active step._
 
 ## Reports
 
-- **2026-11-26 22:34 UTC:** Promoted CI Ledger governance to task-activated `.agent/skills/ci-ledger/SKILL.md`, simplified the triage README, added Worker-owned P0 batch orchestration, and narrowed GitHub Actions to technical remediation. Updated discovery, catalog, board, and archived the approved implementation task. Manual read-back passed. CI and official skill validation were not run or reviewed. Commits: `36afbf6`, `4ef2dce`, `5f8e356`, `9aea617`, `fefb388`, `31ed6bb`, `c43a75a`, `da2a3ea`, `2fa3593`, `e1cc292`, `e27ed64`.
 
 - **2026-11-27 05:50 UTC:** Approved progressive skill activation. `/start` now loads The Worker and Conversation Mode only. CI, document governance, technical writing, and skill authoring are task-activated. GitHub Actions is no longer universal startup-loaded. Committed and read-back verified. Commits: `764d771`, `f9a3e2f`, `11a5475`, `7bcb449`, `4ed128e`.
 
-- **2026-11-27 05:25 ICT:** Audited Ledger policy and found conflicting Worker intake instructions (Proposed/unapproved tasks vs permanent P0 Approved/In Progress) plus a CI error-prevention procedure embedded in the Ledger guide. Reconciled Worker intake with the P0 policy and moved recurrence prevention to GitHub Actions. Read-back verified. Commits: `7b94e6e`, `d5547da`, `e9ab0ba`.
+- **2026-11-26 22:34 UTC:** Promoted CI Ledger governance to task-activated `.agent/skills/ci-ledger/SKILL.md`, simplified the triage README, added Worker-owned P0 batch orchestration, and narrowed GitHub Actions to technical remediation. Updated discovery, catalog, board, and archived the approved implementation task. Manual read-back passed. CI and official skill validation were not run or reviewed. Commits: `36afbf6`, `4ef2dce`, `5f8e356`, `9aea617`, `fefb388`, `31ed6bb`, `c43a75a`, `da2a3ea`, `2fa3593`, `e1cc292`, `e27ed64`.
 
+- **2026-11-27 05:25 ICT:** Audited Ledger policy and found conflicting Worker intake instructions (Proposed/unapproved tasks vs permanent P0 Approved/In Progress) plus a CI error-prevention procedure embedded in the Ledger guide. Reconciled Worker intake with the P0 policy and moved recurrence prevention to GitHub Actions. Read-back verified. Commits: `7b94e6e`, `d5547da`, `e9ab0ba`.
 
