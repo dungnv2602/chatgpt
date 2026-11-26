@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-090154
 - **Created:** 2026-11-26 09:01 UTC
-- **Updated:** 2026-11-26 09:33 UTC
+- **Updated:** 2026-11-26 09:36 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
@@ -115,3 +115,11 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Result:** The Actions index contains eight complete `post_run` reports for this regression, across runs 560, 562, 565, 566, 567, 568, 570, and 571. Each independently classifies the same Ledger regression-test failure in `validate-document-standards / Run CI Ledger regression tests`; the three cancelled runs still contain that independent test failure and are not cancellation-only noise. The 12 other indexed captures are `pre_finalizer` and incomplete, so they are not eligible observations. The Ledger has one distinct finding, occurrence_count 8, and one task reference to this P0 task. Its five evidence rows are the configured bounded evidence window (first plus four latest), not a complete occurrence list. The report-to-finding count and finding-to-task linkage therefore reconcile for all currently eligible indexed reports.
 - **References:** `.takeout/reports/gh_ac_reports/index.json`; `.takeout/reports/triage/ledger.json`; task board `workspace/task_board.md`; eight complete reports under `.takeout/reports/gh_ac_reports/history/427313089/` for run IDs 45785802198, 45785842274, 45786440074, 45786583252, 45786612277, 45787576604, 45787618873, and 45787937573.
 - **Next:** Wait for naturally triggered hosted validation of commits `73b4046` and `a366786` under the event-driven workflow. Do not close this task until the regression suite passes; then reconcile any newly completed post-run reports and verify Current Execution/task-board publication.
+
+
+### 2026-11-26 09:36 UTC
+
+- **Action:** Audited task-generation output against the permanent P0 rule while tracing template drift. Found that the generator set P0, Approved, and In Progress but failed to override the canonical template's `Current execution: No`; its generated progress entry also incorrectly described the task as Proposed and awaiting approval. The operating guide still documented the old Proposed handoff.
+- **Result:** Updated the generator to set `Current execution: Yes`, corrected the generated progress text to reflect P0 authorization, updated regression assertions for P0/In Progress/current execution/approved board metadata and the In Progress section/current pointer, and aligned the Ledger guide with the standing policy. No tests have been run locally. This is a related task-generation contract defect found during the same P0 remediation.
+- **References:** commits `46327b6`, `c7d8e62`, and `806b7bc`; `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`; `.takeout/reports/triage/README.md`.
+- **Next:** Keep this task as Current Execution. Verify the full hosted regression suite after the source, test, and guide changes have naturally run; only then proceed to final Ledger operational checks.
