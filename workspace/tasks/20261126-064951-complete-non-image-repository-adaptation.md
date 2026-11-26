@@ -5,13 +5,13 @@
 - **Template version:** 1.3
 - **ID:** 20261126-064951
 - **Created:** 2026-11-26 06:49:51 UTC
-- **Updated:** 2026-11-26 07:04:38 UTC
+- **Updated:** 2026-11-26 07:12:00 UTC
 - **Priority:** P1
-- **Status:** In Progress
+- **Status:** Done
 - **Origin:** User
 - **Approval:** Approved
 - **Governing ADR(s):** None — repository adaptation and audit
-- **Current execution:** Yes
+- **Current execution:** No
 - **Dependencies:** None
 - **Related tasks:** 20261126-055004
 - **Ledger group:** None
@@ -83,16 +83,11 @@ The image-related adaptation was completed and archived in task `20261126-055004
 
 ## 8. Remaining Work
 
-- Complete final read-back and closeout of the non-image adaptation.
-- Preserve the two dead links in `.archive/adr/README.md` as instructed. Record this as an accepted, intentionally unresolved archive-reference issue.
-- Keep tests and workflow execution skipped.
-- Do not run tests or workflows.
+_None. The user accepted the two broken links in `.archive/adr/README.md` as intentionally unresolved and instructed that the archived index remain unchanged. Tests and workflow execution remain skipped._
 
 ## 9. Next Actions
 
-1. Read back all files changed during the final audit.
-2. Record the archived ADR index decision and remaining limitations.
-3. Complete task closeout using the existing archive and retention rules.
+_None. The task is complete and ready for archival._
 
 ## 10. References
 
@@ -112,14 +107,14 @@ The image-related adaptation was completed and archived in task `20261126-055004
 
 ## 11. Verification
 
-- **Check:** Task record creation and board/register integration.
-- **Method:** Read back exact paths from branch `gpt`.
-- **Result:** Pending.
-- **Limitations:** Tests and workflow execution are intentionally skipped. Static checks do not establish runtime behavior.
+- **Check:** Tracked-tree inventory, active README navigation, non-image workflows and operational scripts, skill definitions and references, workspace guides/templates, report navigation, and final changed-file integrity.
+- **Method:** Read the recursive Git tree from branch `gpt`; inspect all 20 `SKILL.md` definitions, all seven GitHub Actions workflows, relevant operational scripts and active navigation documents; compare repository path references with tracked paths; read back every file changed in the final audit.
+- **Result:** Static review completed. The tree contains 674 tracked files and 282 Markdown files. Of these, 273 Markdown files are outside `master/` and `.archive/`. All active README relative links resolve. Two links in `.archive/adr/README.md` remain broken by explicit user direction. Workflow path review found no other missing literal repository paths. Four final-audit files were read back successfully.
+- **Limitations:** No tests, validators, linter, or workflows were run, per user instruction. Runtime behavior and Markdown heading-anchor validation remain unverified.
 
 ## 12. Handoff Instructions
 
-Continue on branch `gpt`. The image workstream is complete and is not part of this task. Focus on non-image workflows, README files, navigation, and cross-references affected by the refactor. Do not assume every old-looking path is wrong: inspect its intended scope and actual target. Do not restore deleted files. Do not create root `README.md`. Do not change archived records. Do not run tests or dispatch workflows unless the user later changes that instruction.
+The non-image repository adaptation is complete on branch `gpt`. The image workstream remains archived under related task `20261126-055004`. Preserve the two broken links in `.archive/adr/README.md` unless the user later authorizes a reference-only correction. Do not create root `README.md`, restore deleted paths, or implement unapproved DRAFT-0003. Tests and workflows were not run.
 
 ### 2026-11-26 07:09 UTC
 
@@ -157,3 +152,12 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **Verification:** Read back all 14 changed files from branch `gpt`. Checked active README relative links against the tracked tree. The only broken README links found are the two file links in `.archive/adr/README.md`, which points to absent ADR files. The archive policy requires explicit authorization for a narrow reference-only correction. No archived content was changed.
 - **Limitations:** No tests, validators, linter, or workflows were run, per user instruction. Anchor validation and runtime behavior remain unverified.
 - **Next:** Obtain direction on the archived ADR index links, then complete final closeout.
+
+
+## 14. Final Closeout
+
+- **Final status:** Done.
+- **Outcome:** Completed the non-image repository adaptation and accepted the archived ADR index link limitation by user direction.
+- **Completed acceptance criteria:** Reviewed the tracked tree; checked active workflows, scripts, skill definitions, references, README navigation, and workspace documents; repaired confirmed stale operational paths; refreshed the Markdown inventory; read back all final changes; documented unresolved references and validation limits.
+- **Archive timestamp:** 2026-11-26T07:12:00Z.
+- **Final limitation:** Tests, validators, linter, and workflow execution were not run. No runtime success is claimed.
