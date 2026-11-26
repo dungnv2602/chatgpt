@@ -80,13 +80,21 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - **References:** `.takeout/reports/gh_ac_reports/index.json`; `.takeout/reports/gh_ac_reports/scripts/report.py`; reset commit `874c45ef`.
 - **Next:** Read back both watermark changes and continue trigger/publication audit; no tests, scripts, dispatch, or polling.
 
+
+### 2026-11-26 — task publication rollback guard
+
+- **Action:** Static review confirmed that task generation wrote the new task record before board publication. If board publication failed, the task file remained orphaned. Existing-task refresh similarly wrote changed task content before updating its board row.
+- **Result:** Added rollback behavior: delete a newly created task record when board publication fails; restore prior content for an existing task if its board update fails. Added a regression test for new-task orphan rollback using a malformed Proposed section. Commits: `918aab5f004e6283966c5e20546c5135299a5a50` (implementation) and `df690a97dc82ab5fc646bb1e1950855571183c06` (regression coverage). Readback confirmed changed code and test. Tests not run.
+- **References:** `.takeout/reports/triage/scripts/ledger.py`; `.takeout/reports/triage/scripts/test_ledger.py`.
+- **Next:** Final static audit of workflow trigger/finalizer coverage and report publication scope; update task and discussion register.
+
 ## 7. Current State
 
 Explicit clean-start reset executed in commit `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`: generated active Actions and lint history, indexes/latest pointers, and report snapshots under `.archive/reports/` cleared; Actions index and lint indexes reinitialized; Ledger findings and processed state empty and lint scopes unseeded. Report scripts, schemas, templates, guides, workflow definitions, unrelated active tasks, and task archives preserved. This reset does not rewrite Git history or GitHub run records. Hosted baseline runs and task-handoff operation remain unverified.
 
 ## 8. Remaining Work
 
-- Continue static workflow/report ingestion audit and readback after task-board, pagination, and reset-watermark repairs.
+- Continue static workflow/report ingestion audit and readback after task-board, pagination, reset-watermark, and task-publication rollback repairs.
 - Confirm clean reset tree and empty active report indexes/Ledger.
 - Leave first complete tooling-valid lint audits to seed the fresh period; do not poll CI or claim hosted validation.
 
