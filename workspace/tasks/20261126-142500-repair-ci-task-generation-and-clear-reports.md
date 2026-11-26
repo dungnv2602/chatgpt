@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-142500
 - **Created:** 2026-11-26 14:25 UTC
-- **Updated:** 2026-11-26 14:30 UTC
+- **Updated:** 2026-11-26 14:50 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -23,7 +23,7 @@
 
 ## 2. Subsequent Instructions
 
-No additional instructions.
+User clarified that no deleted user files should be restored; either remediate generated errors or clear generated reports and begin a fresh reporting period. Explicit clean-start reset authorized.
 
 ## 3. Objective
 
@@ -38,13 +38,13 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 - Generate or repair task handoff for applicable findings.
 - Resolve all actionable errors in reports, using hosted validation only.
 - Archive resolved report evidence according to the existing policy and retention index.
-- Empty the active generated report area, indexes, queues, and Ledger findings only as allowed by the existing report lifecycle policy. Do not perform a clean-start reset without explicit reset authorization. Prefer normal resolution/retirement.
+- Clear generated active reports, latest pointers, request queues, report indexes, and `.archive/reports/**` snapshots as prescribed by the reset policy; reinitialize the Ledger and unseed lint baselines.
 - Do not edit archived records. Do not create root README.md.
 - Do not run tests, lint, CI, or scripts locally. GitHub-hosted workflows are the permitted execution environment. Do not poll or wait for CI.
 
 ## 5. Decisions
 
-- Preserve existing report-period state and evidence. A full clean-start reset is not authorized.
+- Do not restore user-deleted files. A clean-start reset of generated reports is explicitly authorized; preserve scripts, schemas, templates, guides, workflow definitions, unrelated active tasks, and task archives.
 - Treat findings and task handoff according to current report/Ledger policy, after reconciling obsolete path references.
 
 ## 6. Progress Log
@@ -59,23 +59,19 @@ Repair the CI/report ingestion and task handoff so actionable diagnostics genera
 
 ## 7. Current State
 
-Task created. Ledger initialization committed. Existing report evidence preserved. Ingestion, task creation, remediation, and retirement remain unverified.
+Explicit clean-start reset executed in commit `c9f4f6d92316c18574437c0c1f5cd4dfdf7e524a`: generated active Actions and lint history, indexes/latest pointers, and report snapshots under `.archive/reports/` cleared; Actions index and lint indexes reinitialized; Ledger findings and processed state empty and lint scopes unseeded. Report scripts, schemas, templates, guides, workflow definitions, unrelated active tasks, and task archives preserved. This reset does not rewrite Git history or GitHub run records. Hosted baseline runs and task-handoff operation remain unverified.
 
 ## 8. Remaining Work
 
-- Verify hosted ingestion and diagnose/fix task-generation/handoff failure, without polling CI.
-- Inspect and triage latest lint and Actions evidence, including stale path diagnostics.
-- Repair confirmed actionable issues.
-- Ensure tasks are generated and finding task references are consistent.
-- Retire/resolve report findings and archive evidence.
-- Verify active report area is empty under normal lifecycle rules.
+- Verify workflow trigger/handoff design by static review and repair any confirmed trigger defect.
+- Confirm clean reset tree and empty active report indexes/Ledger.
+- Leave first complete tooling-valid lint audits to seed the fresh period; do not poll CI or claim hosted validation.
 
 ## 9. Next Actions
 
-1. Continue report/task reconciliation and remediation under the current governance.
-2. Inspect task/Ledger publication scripts and relevant workflows for current-path breakage.
-3. Repair root causes, commit, and allow hosted workflows to execute.
-4. Use report evidence to continue remediation and retirement.
+1. Verify reset paths and active index/Ledger state by remote readback.
+2. Review diagnostics workflow triggering to ensure fresh-period baseline reports can be produced.
+3. Commit any trigger repair and document verification limitations.
 
 ## 10. References
 
