@@ -64,7 +64,7 @@
       "source_family": "github_actions",
       "category": "checkout_or_action_download",
       "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: checkout_or_action_download — validate-document-standards unknown step <timestamp> test_new_task_record_is_rolled_back_when_board_publication_fails ",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T10:12:57Z",
@@ -79,7 +79,16 @@
           "observation_id": "github_actions:427313089:45788718679:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "ec3ba4d",
+        "resolved_at_utc": "2026-11-26T15:18:31.765Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45823182229",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T12:49:23Z"
+        },
+        "note": "Corrected the task-board test fixtures and escaped-newline handling. Hosted Diagnostics run passed the reporter and Ledger regression suites (37 reporter tests and 47 Ledger tests)."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
@@ -179,7 +188,7 @@
       "source_family": "github_actions",
       "category": "publication_or_push",
       "title": "Validate Document Standards / validate-document-standards / Run CI Ledger regression tests: publication_or_push — <timestamp> traceback (most recent call last):",
-      "status": "open",
+      "status": "resolved",
       "severity": "high",
       "owner": null,
       "first_seen_utc": "2026-11-26T10:14:42Z",
@@ -208,7 +217,16 @@
           "observation_id": "github_actions:427313089:45797455626:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "a26451b",
+        "resolved_at_utc": "2026-11-26T15:18:31.765Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45823182229",
+          "conclusion": "success",
+          "validated_at_utc": "2026-11-26T12:49:23Z"
+        },
+        "note": "Corrected test-failure classification precedence and structured-log isolation. Hosted Diagnostics run passed the reporter and Ledger regression suites (37 reporter tests and 47 Ledger tests)."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
