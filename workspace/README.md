@@ -16,8 +16,8 @@ The workspace is the task-management and conversation-navigation area. The Worke
 | [draft/](draft/README.md) | Proposals awaiting user review and decision |
 | [adr/](adr/README.md) | Accepted decisions awaiting implementation and confirmation |
 | [analysis/](analysis/README.md) | Evidence-based repository analysis snapshots |
-| [../reports/README.md](../reports/README.md) | Lint, Actions, and issue-ledger navigation |
-| [../archive/README.md](../archive/README.md) | Archive and retention policy |
+| [../.takeout/reports/README.md](../.takeout/reports/README.md) | Lint, Actions, and issue-ledger navigation |
+| [../.archive/README.md](../.archive/README.md) | Archive and retention policy |
 
 ## Draft and ADR workflow
 
@@ -33,7 +33,7 @@ If source deletion fails after acceptance, retain the Draft temporarily. Record 
 
 Only accepted ADRs can govern implementation tasks. Keep task execution approval separate from the ADR's decision approval.
 
-When all implementation tasks and the ADR's confirmation checks pass, move the ADR to archive/adr/. Keep archived ADRs permanently. Never add them to the 90-day task/report retention index.
+When all implementation tasks and the ADR's confirmation checks pass, move the ADR to `.archive/adr/`. Keep archived ADRs permanently. Never add them to the 90-day task/report retention index.
 
 The decision-governance skill owns Draft, ADR, and repository-analysis lifecycles. Load it only when a task requires decision governance. Do not add it to foundational initialization.
 
@@ -55,9 +55,9 @@ The first complete tooling-valid full audit in each lint scope establishes a bas
 
 A lint report can seed a baseline when every required tooling check passes, even when the report records lint failures. The baseline prevents recurring findings from appearing as new work.
 
-A Ledger-generated task cannot close as Done while any linked finding remains non-terminal. After the Worker archives the task as Done and indexes it, the archive/tasks/** push triggers the normal diagnostics sweep. The Ledger then retires the terminal findings from the active backlog. The archived task and its archived report references preserve the audit history. Do not delete Ledger entries manually or run periodic retirement scans.
+A Ledger-generated task cannot close as Done while any linked finding remains non-terminal. After the Worker archives the task as Done and indexes it, the `.archive/task/**` push triggers the normal diagnostics sweep. The Ledger then retires the terminal findings from the active backlog. The archived task and its archived report references preserve the audit history. Do not delete Ledger entries manually or run periodic retirement scans.
 
-A clean-start reset is destructive and requires explicit user authorization. It clears generated active report data, prior archive/reports/** snapshots, report indexes, and the active Ledger, then establishes new unseeded lint baselines. It preserves scripts, schemas, templates, workflows, operating guides, task archives, and unrelated tasks. See reports/triage/README.md and archive/README.md for exact reset and closeout rules.
+A clean-start reset is destructive and requires explicit user authorization. It clears generated active report data, prior `.archive/reports/**` snapshots, report indexes, and the active Ledger, then establishes new unseeded lint baselines. It preserves scripts, schemas, templates, workflows, operating guides, task archives, and unrelated tasks. See .takeout/reports/triage/README.md and .archive/README.md for exact reset and closeout rules.
 
 Do not run periodic triage or poll workflows. Review CI when the user asks, a known failure blocks work, or the task requires validation. A successful validation run URL and UTC timestamp provide sufficient resolution evidence. Capture a full successful-run diagnostic report only when the task needs detailed evidence.
 
