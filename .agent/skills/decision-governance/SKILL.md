@@ -14,7 +14,7 @@ This skill governs repository decision Drafts, accepted ADRs, and repository ana
 
 Load it when a task creates, revises, reviews, approves, rejects, or promotes a Draft. Load it when a task creates, updates, supersedes, confirms, or archives an ADR. Load it for repository analysis or decision-basis reviews.
 
-Do not load it during foundational initialization. Do not add it to skills/SESSION_START.md or skills/INITIALIZATION_POLICY.md.
+Do not load it during foundational initialization. Do not add it to `.agent/SESSION_START.md` or `.agent/INITIALIZATION_POLICY.md`.
 
 The Worker owns task selection, execution approval, progress, and closeout. Document Standards owns document format. This skill owns decision governance.
 
@@ -271,7 +271,7 @@ A Done task does not by itself prove that the repository applies an ADR correctl
 3. Set implementation status to complete only after every criterion passes.
 4. For not-required, confirm that the decision itself is in effect.
 5. Resolve linked implementation tasks before archival.
-6. Move the ADR to archive/adr/ with its ID and filename unchanged.
+6. Move the ADR to `.archive/adr/` with its ID and filename unchanged.
 7. Read back the archive copy after its initial write.
 8. Keep archived ADRs immutable.
 
@@ -289,7 +289,7 @@ Do not make code changes from an analysis record. Create a Draft when a finding 
 
 Perform one manual repository review each quarter. Also review after major changes, significant incidents, repeated failures, major dependency or platform changes, failed ADR confirmation, or user request. Do not schedule automated reviews in the first release. Review the cadence after two quarterly cycles.
 
-Keep completed snapshots in workspace/analysis/. Do not create archive/analysis/ in the first release.
+Keep completed snapshots in workspace/analysis/. Do not create `.archive/analysis/` in the first release.
 
 ## Discussion register and completion
 
