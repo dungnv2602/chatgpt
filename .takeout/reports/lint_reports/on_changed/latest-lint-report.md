@@ -2,15 +2,15 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#796](https://github.com/dungnv2602/chatgpt/actions/runs/45814010116)
-- **Run ID / attempt:** 45814010116 / 1
+- **Run:** [#797](https://github.com/dungnv2602/chatgpt/actions/runs/45814417490)
+- **Run ID / attempt:** 45814417490 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 8d932033921f7c3c5d6761c6851a4c799fbb1054
+- **Branch / commit:** gpt / 488bb1e1ab83d50e40d2cc0c1a298aa0ba940f3a
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 8d932033921f7c3c5d6761c6851a4c799fbb1054
-- **Generated (UTC):** 2026-11-26T11:50:22.948856+00:00
+- **Linter source SHA:** 488bb1e1ab83d50e40d2cc0c1a298aa0ba940f3a
+- **Generated (UTC):** 2026-11-26T11:53:02.254462+00:00
 
 ## 1. Executive summary
 
@@ -19,11 +19,11 @@
 | Files evaluated | 90 |
 | Files that failed | 35 |
 | Files with findings | 66 |
-| Total findings | 774 |
-| Hard findings | 320 |
-| Advisory findings | 454 |
-| New findings | 37 |
-| Recurring findings | 737 |
+| Total findings | 787 |
+| Hard findings | 323 |
+| Advisory findings | 464 |
+| New findings | 7 |
+| Recurring findings | 780 |
 | Resolved findings | 0 |
 | Failed workflow checks | 1 |
 
@@ -138,7 +138,7 @@ The table includes every evaluated file, including files with zero findings and 
 |---|---:|---:|---:|---:|---:|---:|---:|
 | .agent/skills/skill-creator/agents/grader.md | FAIL | 4 | 1 | 0 | 998 | 0.4 | 1 |
 | .agent/skills/skill-creator/agents/analyzer.md | FAIL | 4 | 1 | 0 | 1147 | 0.3 | 1 |
-| workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md | FAIL | 31 | 18 | 0 | 2529 | 1.2 | 1 |
+| workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md | FAIL | 44 | 21 | 0 | 3305 | 1.3 | 1 |
 | .agent/skills/the-worker/references/image-provenance-and-webp.md | FAIL | 15 | 7 | 0 | 1248 | 1.2 | 1 |
 | .agent/skills/drawing/SKILL.md | PASS | 26 | 3 | 24 | 4899 | 0.5 | 0 |
 | .agent/skills/doc-coauthoring/SKILL.md | FAIL | 28 | 9 | 0 | 2456 | 1.1 | 1 |
@@ -233,9 +233,9 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 397 |
+| passive-voice | 407 |
 | long-sentence | 138 |
-| semicolon | 110 |
+| semicolon | 113 |
 | synonym-rotation | 59 |
 | present-perfect | 57 |
 | marketing-adjective | 6 |
@@ -272,7 +272,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.285s
+Ran 4 tests in 0.283s
 
 OK
 ~~~
@@ -285,7 +285,7 @@ OK
 ~~~text
 .....
 ----------------------------------------------------------------------
-Ran 5 tests in 0.005s
+Ran 5 tests in 0.001s
 
 OK
 ~~~
@@ -305,7 +305,7 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 223 active Markdown files (294 available as link targets) and 342 local Markdown links.
+Scanned 224 active Markdown files (296 available as link targets) and 341 local Markdown links.
 Found 1 unresolved local Markdown targets or anchors.
 workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md: missing Markdown file: ../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md
 ~~~
@@ -316,154 +316,34 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:66:61 · **new** · fingerprint: 05b8f0a48ba23f2a9803cfad
-  - **Level:** advisory-free
-  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
-  - **Matched text:** delete
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:74:38 · **new** · fingerprint: c9ed086f99e352d7b9499f5c
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:130:46 · **new** · fingerprint: ef98172da6072b936eb51941
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:92:104 · **new** · fingerprint: df10a4db3a9f6ab598efaf2e
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:100:85 · **new** · fingerprint: d59c158ee86b4fec048fd882
-  - **Level:** advisory-free
-  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** checks
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:105:67 · **new** · fingerprint: f99589abef109ba9ef52e61d
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:105:157 · **new** · fingerprint: f99589abef109ba9ef52e61d
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:105:254 · **new** · fingerprint: 920595538c05e7394942058e
+  - **Matched text:** are stored
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:130:115 · **new** · fingerprint: 233a8b5dd544e4bf4e5d9030
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is controlled
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:106:205 · **new** · fingerprint: f663b7621c175444429c333b
+  - **Matched text:** is rendered
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:132:54 · **new** · fingerprint: 12c31f2618959aa1ec54a855
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is generated
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:107:185 · **new** · fingerprint: c84b15718b07915625aef9a0
+  - **Matched text:** is needed
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:190:37 · **new** · fingerprint: 4ec69b3e013b576b57223b46
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was measured
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:119:123 · **new** · fingerprint: 4a6ec282f33f72947223c560
+  - **Matched text:** is linked
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:199:137 · **new** · fingerprint: e61b33a072a8f880d4b69aa1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was evaluated
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:130:183 · **new** · fingerprint: 698f65eeedcc81707827fb7e
+  - **Matched text:** was tested
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:213:263 · **new** · fingerprint: c133a16a794b90d7d82a295c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is identified
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:136:70 · **new** · fingerprint: b438c056be49bcb5ae28d88c
+  - **Matched text:** were inspected
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:215:263 · **new** · fingerprint: e61b33a072a8f880d4b69aa1
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are removed
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:137:203 · **new** · fingerprint: d82b3f4c7da910aff816ce62
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is performed
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:141:149 · **new** · fingerprint: 6302c3e8493831ad7ab46f94
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are unchanged
-- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:141:213 · **new** · fingerprint: 373b975a5b915cbe803d3491
-  - **Level:** advisory-free
-  - **Message:** 'validate' and 'confirm' name the same action. Pick one and use it every time.
-  - **Matched text:** validates
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:144:125 · **new** · fingerprint: 12a695e0d8c4e3f2cc5a60df
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is migrated
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:145:130 · **new** · fingerprint: 57d497bac08263ca315ceadf
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was modified
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:165:70 · **new** · fingerprint: e393db0456838c3e43713b77
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are filtered
-- **long-sentence** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:177:3 · **new** · fingerprint: bcd959694e4a0638e603e2a4
-  - **Level:** advisory-free
-  - **Message:** Sentence has 32 words (cap 25). Split it.
-  - **Matched text:** 32 words
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:178:141 · **new** · fingerprint: f99589abef109ba9ef52e61d
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:179:38 · **new** · fingerprint: f99589abef109ba9ef52e61d
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:184:61 · **new** · fingerprint: a9a0b6c1469f9e72c0f2f420
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is deleted
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:187:89 · **new** · fingerprint: f99589abef109ba9ef52e61d
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:187:134 · **new** · fingerprint: f99589abef109ba9ef52e61d
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:187:186 · **new** · fingerprint: f99589abef109ba9ef52e61d
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:187:246 · **new** · fingerprint: f99589abef109ba9ef52e61d
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:187:290 · **new** · fingerprint: f99589abef109ba9ef52e61d
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:187:335 · **new** · fingerprint: f99589abef109ba9ef52e61d
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:188:77 · **new** · fingerprint: f99589abef109ba9ef52e61d
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:188:119 · **new** · fingerprint: f99589abef109ba9ef52e61d
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:188:177 · **new** · fingerprint: f99589abef109ba9ef52e61d
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:239:29 · **new** · fingerprint: 613d21b7ddf111ca91d4ffb5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is requested
-- **long-sentence** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:3 · **new** · fingerprint: 42971dbadc3b98adf3726e57
-  - **Level:** advisory-free
-  - **Message:** Sentence has 34 words (cap 25). Split it.
-  - **Matched text:** 34 words
-- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:99 · **new** · fingerprint: 3ca754c0bfdddcf6eabde1aa
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:155 · **new** · fingerprint: 3ca754c0bfdddcf6eabde1aa
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:182 · **new** · fingerprint: 3ca754c0bfdddcf6eabde1aa
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/draft/README.md:12:300 · **new** · fingerprint: 89d8063e2bc2ce9d9a085681
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is accepted
+  - **Matched text:** was tested
 
 ### Recurring findings
 
@@ -499,6 +379,154 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** being benchmarked
+- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:65:61 · **recurring** · fingerprint: 05b8f0a48ba23f2a9803cfad
+  - **Level:** advisory-free
+  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
+  - **Matched text:** delete
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:73:38 · **recurring** · fingerprint: c9ed086f99e352d7b9499f5c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:91:104 · **recurring** · fingerprint: df10a4db3a9f6ab598efaf2e
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
+- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:99:85 · **recurring** · fingerprint: d59c158ee86b4fec048fd882
+  - **Level:** advisory-free
+  - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** checks
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:104:67 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:104:157 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:104:254 · **recurring** · fingerprint: 920595538c05e7394942058e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is controlled
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:105:205 · **recurring** · fingerprint: f663b7621c175444429c333b
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is generated
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:106:185 · **recurring** · fingerprint: c84b15718b07915625aef9a0
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was measured
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:118:123 · **recurring** · fingerprint: 4a6ec282f33f72947223c560
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was evaluated
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:128:103 · **recurring** · fingerprint: b438c056be49bcb5ae28d88c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are removed
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:128:191 · **recurring** · fingerprint: b438c056be49bcb5ae28d88c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are removed
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:142:183 · **recurring** · fingerprint: 698f65eeedcc81707827fb7e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is identified
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:148:70 · **recurring** · fingerprint: b438c056be49bcb5ae28d88c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are removed
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:149:203 · **recurring** · fingerprint: d82b3f4c7da910aff816ce62
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is performed
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:153:149 · **recurring** · fingerprint: 6302c3e8493831ad7ab46f94
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are unchanged
+- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:153:213 · **recurring** · fingerprint: 373b975a5b915cbe803d3491
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'confirm' name the same action. Pick one and use it every time.
+  - **Matched text:** validates
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:156:125 · **recurring** · fingerprint: 12a695e0d8c4e3f2cc5a60df
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is migrated
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:157:130 · **recurring** · fingerprint: 57d497bac08263ca315ceadf
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was modified
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:177:70 · **recurring** · fingerprint: e393db0456838c3e43713b77
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are filtered
+- **long-sentence** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:189:3 · **recurring** · fingerprint: bcd959694e4a0638e603e2a4
+  - **Level:** advisory-free
+  - **Message:** Sentence has 32 words (cap 25). Split it.
+  - **Matched text:** 32 words
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:191:43 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:213:293 · **recurring** · fingerprint: c84b15718b07915625aef9a0
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was measured
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:217:139 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:217:162 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:217:188 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:217:219 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:221:61 · **recurring** · fingerprint: a9a0b6c1469f9e72c0f2f420
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is deleted
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:224:89 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:224:134 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:224:186 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:224:246 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:224:290 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:224:335 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:225:77 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:225:119 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:225:177 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 - **passive-voice** · .agent/skills/the-worker/references/image-provenance-and-webp.md:15:100 · **recurring** · fingerprint: 42ccfb93a745583fff3188b6
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -931,6 +959,26 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
   - **Matched text:** validate
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:239:29 · **recurring** · fingerprint: 613d21b7ddf111ca91d4ffb5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is requested
+- **long-sentence** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:3 · **recurring** · fingerprint: 42971dbadc3b98adf3726e57
+  - **Level:** advisory-free
+  - **Message:** Sentence has 34 words (cap 25). Split it.
+  - **Matched text:** 34 words
+- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:99 · **recurring** · fingerprint: 3ca754c0bfdddcf6eabde1aa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:155 · **recurring** · fingerprint: 3ca754c0bfdddcf6eabde1aa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:182 · **recurring** · fingerprint: 3ca754c0bfdddcf6eabde1aa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
 - **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:262:263 · **recurring** · fingerprint: c149bdff7e11f0ef00271153
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -2395,6 +2443,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
+- **passive-voice** · workspace/draft/README.md:12:300 · **recurring** · fingerprint: 89d8063e2bc2ce9d9a085681
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is accepted
 - **long-sentence** · workspace/draft/README.md:23:4 · **recurring** · fingerprint: fa0ad26c0f4696b24c6e471f
   - **Level:** advisory-free
   - **Message:** Sentence has 28 words (cap 25). Split it.
@@ -3494,165 +3546,230 @@ This section includes every normalized finding with its rule, level, source loca
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 31
-- **Hard findings:** 18
+- **Findings:** 44
+- **Hard findings:** 21
 - **Baseline:** 0
-- **Words:** 2529
-- **Findings per 100 words:** 1.2
+- **Words:** 3305
+- **Findings per 100 words:** 1.3
 
 #### Complete diagnostics
 
-- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:66:61 · **new** · fingerprint: 05b8f0a48ba23f2a9803cfad
+- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:65:61 · **recurring** · fingerprint: 05b8f0a48ba23f2a9803cfad
   - **Level:** advisory-free
   - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
   - **Matched text:** delete
 
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:74:38 · **new** · fingerprint: c9ed086f99e352d7b9499f5c
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:73:38 · **recurring** · fingerprint: c9ed086f99e352d7b9499f5c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is required
 
-- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:92:104 · **new** · fingerprint: df10a4db3a9f6ab598efaf2e
+- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:91:104 · **recurring** · fingerprint: df10a4db3a9f6ab598efaf2e
   - **Level:** advisory-free
   - **Message:** 'verify' and 'confirm' name the same action. Pick one and use it every time.
   - **Matched text:** verify
 
-- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:100:85 · **new** · fingerprint: d59c158ee86b4fec048fd882
+- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:99:85 · **recurring** · fingerprint: d59c158ee86b4fec048fd882
   - **Level:** advisory-free
   - **Message:** 'check' and 'confirm' name the same action. Pick one and use it every time.
   - **Matched text:** checks
 
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:105:67 · **new** · fingerprint: f99589abef109ba9ef52e61d
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:104:67 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:105:157 · **new** · fingerprint: f99589abef109ba9ef52e61d
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:104:157 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:105:254 · **new** · fingerprint: 920595538c05e7394942058e
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:104:254 · **recurring** · fingerprint: 920595538c05e7394942058e
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is controlled
 
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:106:205 · **new** · fingerprint: f663b7621c175444429c333b
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:105:205 · **recurring** · fingerprint: f663b7621c175444429c333b
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is generated
 
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:107:185 · **new** · fingerprint: c84b15718b07915625aef9a0
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:106:185 · **recurring** · fingerprint: c84b15718b07915625aef9a0
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was measured
 
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:119:123 · **new** · fingerprint: 4a6ec282f33f72947223c560
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:118:123 · **recurring** · fingerprint: 4a6ec282f33f72947223c560
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was evaluated
 
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:130:183 · **new** · fingerprint: 698f65eeedcc81707827fb7e
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is identified
-
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:136:70 · **new** · fingerprint: b438c056be49bcb5ae28d88c
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:128:103 · **recurring** · fingerprint: b438c056be49bcb5ae28d88c
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are removed
 
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:137:203 · **new** · fingerprint: d82b3f4c7da910aff816ce62
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:128:191 · **recurring** · fingerprint: b438c056be49bcb5ae28d88c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are removed
+
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:130:46 · **new** · fingerprint: ef98172da6072b936eb51941
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are stored
+
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:130:115 · **new** · fingerprint: 233a8b5dd544e4bf4e5d9030
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is rendered
+
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:132:54 · **new** · fingerprint: 12c31f2618959aa1ec54a855
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:142:183 · **recurring** · fingerprint: 698f65eeedcc81707827fb7e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is identified
+
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:148:70 · **recurring** · fingerprint: b438c056be49bcb5ae28d88c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are removed
+
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:149:203 · **recurring** · fingerprint: d82b3f4c7da910aff816ce62
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is performed
 
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:141:149 · **new** · fingerprint: 6302c3e8493831ad7ab46f94
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:153:149 · **recurring** · fingerprint: 6302c3e8493831ad7ab46f94
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are unchanged
 
-- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:141:213 · **new** · fingerprint: 373b975a5b915cbe803d3491
+- **synonym-rotation** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:153:213 · **recurring** · fingerprint: 373b975a5b915cbe803d3491
   - **Level:** advisory-free
   - **Message:** 'validate' and 'confirm' name the same action. Pick one and use it every time.
   - **Matched text:** validates
 
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:144:125 · **new** · fingerprint: 12a695e0d8c4e3f2cc5a60df
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:156:125 · **recurring** · fingerprint: 12a695e0d8c4e3f2cc5a60df
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is migrated
 
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:145:130 · **new** · fingerprint: 57d497bac08263ca315ceadf
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:157:130 · **recurring** · fingerprint: 57d497bac08263ca315ceadf
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** was modified
 
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:165:70 · **new** · fingerprint: e393db0456838c3e43713b77
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:177:70 · **recurring** · fingerprint: e393db0456838c3e43713b77
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** are filtered
 
-- **long-sentence** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:177:3 · **new** · fingerprint: bcd959694e4a0638e603e2a4
+- **long-sentence** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:189:3 · **recurring** · fingerprint: bcd959694e4a0638e603e2a4
   - **Level:** advisory-free
   - **Message:** Sentence has 32 words (cap 25). Split it.
   - **Matched text:** 32 words
 
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:178:141 · **new** · fingerprint: f99589abef109ba9ef52e61d
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:190:37 · **new** · fingerprint: 4ec69b3e013b576b57223b46
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is linked
+
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:191:43 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:179:38 · **new** · fingerprint: f99589abef109ba9ef52e61d
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:199:137 · **new** · fingerprint: e61b33a072a8f880d4b69aa1
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was tested
+
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:213:263 · **new** · fingerprint: c133a16a794b90d7d82a295c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** were inspected
+
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:213:293 · **recurring** · fingerprint: c84b15718b07915625aef9a0
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was measured
+
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:215:263 · **new** · fingerprint: e61b33a072a8f880d4b69aa1
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was tested
+
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:217:139 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:184:61 · **new** · fingerprint: a9a0b6c1469f9e72c0f2f420
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:217:162 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:217:188 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:217:219 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+
+- **passive-voice** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:221:61 · **recurring** · fingerprint: a9a0b6c1469f9e72c0f2f420
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is deleted
 
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:187:89 · **new** · fingerprint: f99589abef109ba9ef52e61d
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:224:89 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:187:134 · **new** · fingerprint: f99589abef109ba9ef52e61d
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:224:134 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:187:186 · **new** · fingerprint: f99589abef109ba9ef52e61d
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:224:186 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:187:246 · **new** · fingerprint: f99589abef109ba9ef52e61d
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:224:246 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:187:290 · **new** · fingerprint: f99589abef109ba9ef52e61d
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:224:290 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:187:335 · **new** · fingerprint: f99589abef109ba9ef52e61d
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:224:335 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:188:77 · **new** · fingerprint: f99589abef109ba9ef52e61d
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:225:77 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:188:119 · **new** · fingerprint: f99589abef109ba9ef52e61d
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:225:119 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:188:177 · **new** · fingerprint: f99589abef109ba9ef52e61d
+- **semicolon** · workspace/adr/0001-canonical-github-actions-diagnostic-report-artifact-layout.md:225:177 · **recurring** · fingerprint: f99589abef109ba9ef52e61d
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -4340,27 +4457,27 @@ No STE findings were recorded for this file.
   - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
   - **Matched text:** validate
 
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:239:29 · **new** · fingerprint: 613d21b7ddf111ca91d4ffb5
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:239:29 · **recurring** · fingerprint: 613d21b7ddf111ca91d4ffb5
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is requested
 
-- **long-sentence** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:3 · **new** · fingerprint: 42971dbadc3b98adf3726e57
+- **long-sentence** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:3 · **recurring** · fingerprint: 42971dbadc3b98adf3726e57
   - **Level:** advisory-free
   - **Message:** Sentence has 34 words (cap 25). Split it.
   - **Matched text:** 34 words
 
-- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:99 · **new** · fingerprint: 3ca754c0bfdddcf6eabde1aa
+- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:99 · **recurring** · fingerprint: 3ca754c0bfdddcf6eabde1aa
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:155 · **new** · fingerprint: 3ca754c0bfdddcf6eabde1aa
+- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:155 · **recurring** · fingerprint: 3ca754c0bfdddcf6eabde1aa
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:182 · **new** · fingerprint: 3ca754c0bfdddcf6eabde1aa
+- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:182 · **recurring** · fingerprint: 3ca754c0bfdddcf6eabde1aa
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
@@ -6871,7 +6988,7 @@ No STE findings were recorded for this file.
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · workspace/draft/README.md:12:300 · **new** · fingerprint: 89d8063e2bc2ce9d9a085681
+- **passive-voice** · workspace/draft/README.md:12:300 · **recurring** · fingerprint: 89d8063e2bc2ce9d9a085681
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** is accepted
