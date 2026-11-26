@@ -151,3 +151,10 @@ Resume from this record on branch `gpt`. Continue with image-processing contract
 - **Repair:** Remapped active references to `.agent/skills/`, `.agent/SESSION_START.md`, `area/novel/`, `area/drawing/`, `.takeout/reports/`, and `.archive/`. Kept `images/takeout/` as the intake contract and `images/` as asset root where defined. Updated active image/drawing and novel-production references.
 - **Verification:** Read back the affected files and targeted path lines. More cross-reference review is required; static remote inspection only.
 - **Limitation:** No local tests or hosted Actions run.
+
+
+### 2026-11-26 — Navigation and image/report guide follow-up
+
+- **Finding:** Initialization policy, central report README, and central image README still carried unprefixed reconstructed report/archive/project paths. Document Standards Skill examples also referenced the old novel-template root.
+- **Repair:** Updated these references to `.takeout/reports/`, `.archive/reports/`, `area/drawing/`, and `area/novel/`. Repaired the active initialization policy and project-template example.
+- **Verification:** Read back the modified references. This is targeted static verification; no validator or hosted workflow run occurred.
