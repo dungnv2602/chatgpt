@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26:** Final static review of diagnostics triggers, source workflow finalizers, publication scope and path filters for task [20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md). No tests, scripts, dispatch, or polling.
+- **2026-11-26:** Static repair checkpoint for [task 20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md) complete. Await naturally available hosted validation/report-ingestion evidence; no tests, scripts, dispatch, or polling. Task remains In Progress.
 
 ## Open Discussions
 
