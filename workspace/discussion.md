@@ -1,6 +1,6 @@
 ## Current Step
 
-**Repository consistency audit:** Scan `.agent/skills/`, all repository README files, scripts, and GitHub Actions workflows for path, structural, and behavioral mismatches caused by the recent repository reconstruction. Apply direct workflow adaptations where evidence supports them. Preserve historical records and avoid unrelated migrations. Inspect and read back every changed path and commit.
+_No active step._
 
 ## Open Discussions
 
@@ -15,6 +15,8 @@
 
 
 ## Reports
+
+- **2026-11-26 — Workflow path alignment audit:** Repaired path assumptions in lint and document-standards validation workflows, diagnostics reporting, and image-processing script references to `.agent/skills/`. Updated report paths to `.takeout/reports/` and archive paths to `.archive/`. Read-back performed. Hosted validation not run. Full README and script inventory review remains incomplete.
 
 - **2026-11-26 — Skills, README, scripts, and Actions audit:** Current Step set for repository-wide consistency audit of relocated skills, README files, scripts, and workflows.
 
