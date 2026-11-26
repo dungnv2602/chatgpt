@@ -8,21 +8,21 @@ on:
       # Check every skill-owned template, schema, and authoring rule.
       - 'skills/**'
       # Enforce catalog coverage whenever any active document family changes.
-      # master/ and archive/ remain outside this inventory scan.
-      - 'drawings/**/*.md'
+      # master/ and .archive/ remain outside this inventory scan.
+      - 'area/drawing/**/*.md'
       - 'images/**/*.md'
-      - 'novels/**/*.md'
+      - 'area/novel/**/*.md'
       - 'reports/**/*.md'
       # Run Ledger regression tests when its implementation or schema changes.
-      - 'reports/triage/scripts/**'
-      - 'reports/triage/ledger-schema.json'
+      - '.takeout/reports/triage/scripts/**'
+      - '.takeout/reports/triage/ledger-schema.json'
       # Exclude generator-owned output so report publication cannot retrigger this workflow.
-      - '!reports/gh_ac_reports/history/**'
-      - '!reports/gh_ac_reports/by_workflow/**'
-      - '!reports/gh_ac_reports/latest-gh-ac-report.md'
-      - '!reports/lint_reports/latest-lint-report.md'
-      - '!reports/lint_reports/on_*/history/**'
-      - '!reports/lint_reports/on_*/latest-lint-report.md'
+      - '!.takeout/reports/gh_ac_reports/history/**'
+      - '!.takeout/reports/gh_ac_reports/by_workflow/**'
+      - '!.takeout/reports/gh_ac_reports/latest-gh-ac-report.md'
+      - '!.takeout/reports/lint_reports/latest-lint-report.md'
+      - '!.takeout/reports/lint_reports/on_*/history/**'
+      - '!.takeout/reports/lint_reports/on_*/latest-lint-report.md'
       # Image conversion reports are generated output, not authored documents.
       - '!images/takeout/history/**'
       - 'workspace/**/*.md'
@@ -32,9 +32,9 @@ on:
       - '.github/**/*.md'
       - '*.md'
       # Check project-level and shared workspace templates and their owner contracts.
-      - 'novels/templates/**'
-      - 'novels/README.md'
-      - 'novels/WORKFLOW.md'
+      - 'area/novel/templates/**'
+      - 'area/novel/README.md'
+      - 'area/novel/WORKFLOW.md'
       - 'workspace/TASK_TEMPLATE.md'
       - 'workspace/README.md'
       - '.github/workflows/**'
@@ -66,18 +66,18 @@ jobs:
           python-version: '3.x'
 
       - name: Run CI Ledger regression tests
-        run: python -m unittest discover -s reports/triage/scripts -p 'test_ledger.py' -v
+        run: python -m unittest discover -s .takeout/reports/triage/scripts -p 'test_ledger.py' -v
 
       - name: Run catalog validator regression tests
         run: |
           python -m unittest discover \
-            -s skills/document-standards/scripts \
+            -s .agent/skills/document-standards/scripts \
             -p 'test_validate_catalog.py' \
             -v
 
       - name: Validate the document type catalog
         run: |
-          python skills/document-standards/scripts/validate_catalog.py --root .
+          python .agent/skills/document-standards/scripts/validate_catalog.py --root .
 
   diagnostics:
     name: Capture GH Actions diagnostics
@@ -103,4 +103,4 @@ jobs:
           persist-credentials: true
 
       - name: Capture workflow diagnostics
-        uses: ./reports/gh_ac_reports/actions/capture
+        uses: ./.takeout/reports/gh_ac_reports/actions/capture
