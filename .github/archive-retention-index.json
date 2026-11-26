@@ -565,6 +565,18 @@
     {
       "path": ".archive/reports/triage/ledger-20261126-151030Z.json",
       "archived_at_utc": "2026-11-26T15:38:13.468Z"
+    },
+    {
+      "path": ".archive/reports/lint_reports/on_changed/history/45857763911-attempt-1/report.json",
+      "archived_at_utc": "2026-11-26T16:36:58Z"
+    },
+    {
+      "path": ".archive/reports/lint_reports/on_changed/history/45857763911-attempt-1/report.md",
+      "archived_at_utc": "2026-11-26T16:37:01Z"
+    },
+    {
+      "path": ".archive/reports/lint_reports/on_changed/history/45857763911-attempt-1/integrity.json",
+      "archived_at_utc": "2026-11-26T16:37:05Z"
     }
   ]
 }
