@@ -25,7 +25,7 @@ Load specialist skills in dependency order. Do not load them during ordinary fou
 2. **Drawing:** The Worker's archive/media references, the Drawing skill, and its required references. Activate only after foundational initialization passes. Load only the Worker references required by the drawing or archive procedure.
 3. **Novelist:** Romantic Storyteller and active novel records. Activate only for the novelist role.
 
-Use the per-conversation verified-load ledger in [SESSION_START.md](SESSION_START.md). A file that was successfully retrieved and read earlier in the same conversation must be reused, not loaded again.
+Use the per-conversation verified-load ledger in [SESSION_START.md](../SESSION_START.md). A file that was successfully retrieved and read earlier in the same conversation must be reused, not loaded again.
 
 | Skill | Activation |
 |---|---|
@@ -45,7 +45,7 @@ Load these skills only when the request or an explicit role-initiation procedure
 
 ## Foundational initialization
 
-[SESSION_START.md](SESSION_START.md) is the sole authority for activation cues and foundational loading. The Worker owns the mandatory collaboration and session-continuity rules.
+[SESSION_START.md](../SESSION_START.md) is the sole authority for activation cues and foundational loading. The Worker owns the mandatory collaboration and session-continuity rules.
 
 Do not treat this index as permission to load every skill. Follow each skill's activation and dependency rules.
 
