@@ -120,7 +120,7 @@ Coverage status has three values. `Active` rules must match at least one in-scop
 | `.agent/skills/pdf/FORMS.md` | Lightweight pattern | Active | `.agent/skills/pdf/SKILL.md` | PDF form-filling instructions for the PDF skill. |
 | `.agent/skills/pdf/REFERENCE.md` | Lightweight pattern | Active | `.agent/skills/pdf/SKILL.md` | Extended PDF library and command reference. |
 | `.agent/skills/skill-creator/agents/*.md` | Embedded contract | Active | `.agent/skills/skill-creator/SKILL.md` and `.agent/skills/agent-skill-authoring/SKILL.md` | Role-specific agent instructions used by the Skill Creator workflow. |
-| `.agent/skills/theme-factory/themes/*.md` | Lightweight pattern | Active | `.agent/skills/theme-factory/SKILL.md` | Named theme specifications; preserve their color palettes and typography pairings. |
+| `.agent/skills/theme-factory/themes/*.md` | Lightweight pattern | Active | `.agent/skills/theme-factory/SKILL.md` | Named theme specifications. Preserve their color palettes and typography pairings. |
 | `.agent/skills/*/SKILL.md` | Template required | Active | `.agent/skills/agent-skill-authoring/assets/SKILL_TEMPLATE.md` | Every Agent Skill definition uses the canonical skill template for new definitions and material rewrites. |
 | `.agent/skills/*/README.md` | Lightweight pattern | Active | `.agent/skills/README.md` and `.agent/skills/asd-ste100/references/repository-writing-policy.md` | Skill-specific navigation and technical documentation. Use type-specific headings. No universal README template. |
 | `.agent/skills/*/CHANGELOG.md` | Lightweight pattern | Active | `.agent/skills/philosophy-religion-asceticism/CHANGELOG.md` | Concise version headings and change bullets. |
