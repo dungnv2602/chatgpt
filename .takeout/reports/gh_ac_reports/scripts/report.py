@@ -188,7 +188,18 @@ def capture_log(repo, run_id, job_id):
 
 
 def classify_text(text, job_name="", step_name=""):
-    value = (job_name + " " + step_name + " " + text).lower()
+    log_value = str(text or "").lower()
+    test_failure_markers = (
+        "assertionerror",
+        "fail: test_",
+        "error: test_",
+        "failed (failures=",
+        "failed (errors=",
+    )
+    if any(marker in log_value for marker in test_failure_markers):
+        return "validation_or_test", "medium"
+
+    value = (job_name + " " + step_name + " " + log_value).lower()
     rules = [
         ("permission_or_authentication", ("resource not accessible by integration", "permission denied", "insufficient permission", "http 401", "http 403", "unauthorized", "forbidden")),
         ("publication_or_push", ("non-fast-forward", "remote rejected", "protected branch", "git push", "could not publish", "push failed")),
@@ -211,15 +222,22 @@ def normalize_step(step):
 
 
 def step_log_text(log_text, step_name):
-    """Limit classification evidence to the named step in the GitHub CLI job log."""
+    """Limit structured GitHub CLI logs to the named step."""
     if not step_name:
         return str(log_text or "")
     matches = []
+    structured = False
     for line in str(log_text or "").splitlines():
         fields = line.split("\t", 2)
-        if len(fields) >= 2 and fields[1].strip() == str(step_name).strip():
-            matches.append(fields[2] if len(fields) == 3 else line)
-    return "\n".join(matches) if matches else str(log_text or "")
+        if len(fields) >= 2:
+            structured = True
+            if fields[1].strip() == str(step_name).strip():
+                matches.append(fields[2] if len(fields) == 3 else line)
+    if matches:
+        return "\n".join(matches)
+    if structured:
+        return ""
+    return str(log_text or "")
 
 
 def is_status_propagation_step(step):

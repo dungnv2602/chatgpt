@@ -44,6 +44,12 @@ The report preserves the source conclusion reported by GitHub. Report-generation
 - queued and in_progress are not completed outcomes.
 - workflow_startup_or_configuration_failure is a low-confidence classification when a failed run has no job records.
 - runner_initialization_failure is used only when a job failed without step evidence.
+- Explicit unittest failure markers take precedence over incidental keywords in captured output.
+- Markers include `AssertionError`, `FAIL: test_`, `ERROR: test_`, and unittest failure summaries.
+- These markers classify the step as `validation_or_test`, even when captured output includes `git push` or `checkout` text.
+- For structured tab-delimited logs, the reporter uses only lines that match the failed step name.
+- If no line matches, it does not reuse output from other steps.
+- For unstructured logs, it uses the available log text.
 - Other categories use job names, step names, annotations, and logs as diagnostic signals. They do not prove root cause.
 
 A step can fail while its job succeeds when the workflow allows the step to continue. The report records step and job conclusions separately.

@@ -62,6 +62,46 @@ class ClassificationTests(unittest.TestCase):
         self.assertEqual(confidence, "medium")
         self.assertNotIn("git push", step_text)
 
+    def test_unittest_assertion_beats_embedded_publication_keywords(self):
+        log = (
+            "FAIL: test_all_ledger_publishers_share_serialized_writer_group "
+            "(test_ledger.LedgerTests) ... FAIL\\n"
+            "AssertionError: expected command not found in 'git push origin gpt'\\n"
+            "FAILED (failures=1)"
+        )
+        category, confidence = REPORT.classify_text(
+            log, "validate-document-standards", "Run CI Ledger regression tests"
+        )
+        self.assertEqual(category, "validation_or_test")
+        self.assertEqual(confidence, "medium")
+
+    def test_structured_unknown_step_does_not_leak_checkout_log_lines(self):
+        log = (
+            "validate-document-standards\\tUNKNOWN STEP\\tERROR: test_fixture_case ... ERROR\\n"
+            "validate-document-standards\\tCheck out gpt\\tcheckout completed"
+        )
+        step_text = REPORT.step_log_text(log, "Run CI Ledger regression tests")
+        self.assertEqual(step_text, "")
+        result = build(
+            make_run("cancelled"),
+            [make_job("failure", "failure", name="Run CI Ledger regression tests")],
+            {"200": log},
+        )
+        self.assertEqual(result["state"], "cancelled")
+        self.assertEqual(result["issues"][0]["category"], "validation_or_test")
+
+    def test_unstructured_log_remains_available_when_step_label_is_absent(self):
+        log = "ERROR: failed operation"
+        self.assertEqual(REPORT.step_log_text(log, "Run unit tests"), log)
+
+    def test_genuine_push_failure_remains_publication_error(self):
+        category, confidence = REPORT.classify_text(
+            "remote rejected: protected branch; git push failed",
+            "Publish diagnostic evidence", "Publish evidence",
+        )
+        self.assertEqual(category, "publication_or_push")
+        self.assertEqual(confidence, "high")
+
     def test_cancelled_is_not_failure(self):
         result = build(make_run("cancelled"), [make_job("cancelled", "cancelled")])
         self.assertEqual(result["state"], "cancelled")
