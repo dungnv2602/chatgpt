@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-224100
 - **Created:** 2026-11-26 22:41 UTC
-- **Updated:** 2026-11-26 22:41 UTC
+- **Updated:** 2026-11-26 22:46 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -56,26 +56,32 @@ Update the canonical session-start procedure and its supporting policy so every 
 - **Action:** Read the current session-start procedure, initialization policy, Worker batch procedure, Conversation Mode reference, CI workflow instructions, CI task board, task template, Agent Skill Authoring skill, and ASD-STE100 writing policy.
 - **Result:** The Worker already owns P0 batch orchestration. The session-start procedure does not trigger the batch or require a pre-batch user notice.
 - **References:** .agent/SESSION_START.md, .agent/INITIALIZATION_POLICY.md, .agent/skills/the-worker/SKILL.md, .agent/skills/the-worker/references/conversation-mode.md, .agent/skills/github-actions/SKILL.md, .agent/skills/agent-skill-authoring/SKILL.md, .agent/skills/asd-ste100/SKILL.md, .agent/skills/asd-ste100/references/repository-writing-policy.md, workspace/task_board.md.
-- **Next:** Publish a committed Current Step brief, then update the three canonical instruction files.
+- **Next:** Verify the archive copy, retention index, active-record deletion, and board reconciliation.
+
+
+### 2026-11-26 22:46 UTC
+
+- **Action:** Implemented the startup batch and notice in Session Start. Added the mandatory notice and prompt gate to The Worker. Added the Condensed Mode exception. Updated the initialization policy to Version 9.
+- **Result:** All four canonical files were committed and read back. The workflow now runs eligible CI Ledger-generated P0 tasks after baseline initialization and before accepting the user's substantive prompt. It stops before hosted CI results review until the user triggers that phase.
+- **References:** .agent/SESSION_START.md, .agent/skills/the-worker/SKILL.md, .agent/skills/the-worker/references/conversation-mode.md, .agent/INITIALIZATION_POLICY.md.
+- **Commits:** b801963657b2291d42964669710815e16f2abf7c, b31bfe1a313b4fb9c15d0af09062f2df9f4fca15, 263165ec6167ac4f6e16355cb215b14e6738adb0, d9bc35f9c88a4a2b0579e1eb53d4cf24ff36851b, ab9e1350c0912a9097c814a3253817dfe3b67a73, be03f17375dc9519d9cc1e7b580185b5c25a072c, b85adbc5028420661a3c7c69c477d64c4098d29d.
+- **Next:** Complete the archive transaction and board reconciliation.
 
 ## 7. Current State
 
-The approved workflow change is not yet implemented. The existing Worker batch procedure is available for reuse.
+The approved workflow change is committed and read-back verified. Session Start now triggers the batch after baseline initialization. The Worker and Conversation Mode define the notice and prompt gate. The initialization policy records Version 9.
 
 ## 8. Remaining Work
 
-- Add the mandatory notice and automatic batch trigger to Session Start.
-- Add the user-visible notice rule to The Worker.
-- Align the initialization policy and revision history.
-- Read back all changed files and the branch head.
-- Record the result in the discussion register.
+- Complete the task archive transaction and board reconciliation.
+- Record the verified result in the discussion register.
 
 ## 9. Next Actions
 
-1. Publish the Current Step brief.
-2. Update the session-start, Worker, and initialization policy files.
-3. Read back the committed files and verify consistency.
-4. Record the verified result and handoff.
+1. Create and read back the immutable Done archive copy.
+2. Register the exact archive path and timestamp.
+3. Delete the active task record and reconcile the board.
+4. Publish the final verified report.
 
 ## 10. References
 
@@ -90,10 +96,10 @@ The approved workflow change is not yet implemented. The existing Worker batch p
 
 ## 11. Verification
 
-- **Check:** Read current canonical workflow and supporting policies.
-- **Method:** Fetch exact files from branch gpt.
-- **Result:** Read-back completed.
-- **Limitations:** No edits have been committed yet. No CI validation was run or reviewed.
+- **Check:** Verify the Session Start, Worker, Conversation Mode, initialization policy, task board, and discussion register.
+- **Method:** Fetch each exact path from branch gpt and check required phrases, trigger order, prompt gate, and deferred results-review boundary.
+- **Result:** All seven read-back checks passed. Branch head was b85adbc5028420661a3c7c69c477d64c4098d29d.
+- **Limitations:** No local lint, official skills validator, hosted CI run, or hosted CI results review was performed. These checks were not required for this task.
 
 ## 12. Handoff Instructions
 
