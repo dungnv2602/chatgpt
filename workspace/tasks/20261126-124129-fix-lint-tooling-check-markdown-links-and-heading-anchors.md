@@ -1,11 +1,11 @@
-# Task: Fix lint tooling check: Markdown links and heading anchors
+# Task: Repair Markdown link and heading-anchor linting
 
 ## Metadata
 
 - **Template version:** 1.3
 - **ID:** 20261126-124129
 - **Created:** 2026-11-26 12:41 UTC
-- **Updated:** 2026-11-26 13:58 UTC
+- **Updated:** 2026-11-26 14:55 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** Assistant
