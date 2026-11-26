@@ -5,7 +5,7 @@
 - **Template version:** 1.3
 - **ID:** 20261126-064951
 - **Created:** 2026-11-26 06:49:51 UTC
-- **Updated:** 2026-11-26 07:00:44 UTC
+- **Updated:** 2026-11-26 07:04:38 UTC
 - **Priority:** P1
 - **Status:** In Progress
 - **Origin:** User
@@ -83,10 +83,10 @@ The image-related adaptation was completed and archived in task `20261126-055004
 
 ## 8. Remaining Work
 
-- Continue the non-image path audit across skill references, project instructions, and workspace records.
-- Resolve or document any additional stale paths and broken links.
-- Verify all changed files by exact-path read-back.
-- Record static verification and limitations. Tests remain skipped.
+- Complete the final static review of active repository instructions and path references.
+- Obtain user direction on the archived ADR index's two dead file links if a reference-only correction is desired.
+- Keep the task open until the remaining link boundary is resolved or explicitly accepted.
+- Do not run tests or workflows.
 
 ## 9. Next Actions
 
@@ -138,3 +138,14 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 - **References:** `.github/workflows/validate-document-standards.yml`; `.agent/skills/asd-ste100/references/repository-writing-policy.md`; `.takeout/reports/lint_reports/README.md`; `.takeout/reports/lint_reports/on_repo/README.md`; `.agent/skills/document-standards/references/document-type-catalog.md`; `.agent/skills/agent-skill-authoring/SKILL.md`; `.agent/skills/document-standards/SKILL.md`; `.agent/skills/decision-governance/SKILL.md`.
 - **Commits:** `1f6b5a9a47c2d41cccc18a75e2d0e0c36eada0cf`, `bcb548b39ad91b1c6d63cdcafb78c080df403713`, `37edb0ef40e4f0cbafc69a1f07ae7b5446260184`, `4723823ab3fac22e2352d1d86ba3bd26866b2cb3`, `f21e9fe85c7aea9d5e9923859f60ce0f8d301a58`, `949ea8ad1d774ce9026aac553e894ce9b344f468`, `dd9daa50a17376801d6b7204839bab3e6e6f9d65`, `d61fb0f0a4d12d47932c2054af037473c5b6b99d`.
 - **Next:** Continue the remaining non-image skill and project-reference audit. Do not run tests or workflows.
+
+
+### 2026-11-26 07:04:38 UTC
+
+- **Action:** Extended the non-image audit across the active skill definitions, skill references, workspace guides, and templates.
+- **Result:** Corrected stale root paths in Agent Skill Authoring, Decision Governance, Document Standards, the workspace Analysis guide, the Draft guide, and the Draft template. Updated archive references to `.archive/analysis/` and `.archive/draft/`. The remaining scanned active skill and workspace references use current repository roots. Historical path mentions in `.agent/INITIALIZATION_POLICY.md` and user-authored files under `master/` were left unchanged because they are historical or reference material, not active operational paths.
+- **References:** `.agent/skills/agent-skill-authoring/SKILL.md`, `.agent/skills/decision-governance/SKILL.md`, `.agent/skills/document-standards/SKILL.md`, `workspace/analysis/README.md`, `workspace/draft/README.md`, `workspace/DRAFT_TEMPLATE.md`.
+- **Commits:** `949ea8ad1d774ce9026aac553e894ce9b344f468`, `dd9daa50a17376801d6b7204839bab3e6e6f9d65`, `d61fb0f0a4d12d47932c2054af037473c5b6b99d`, `a53191fc2be918f3035252f392fdfaae7a6a19aa`, `2c704ccb5e0a929073be19e2cba29a372bd60164`, `11a4821a8cdc7896f2ac1c0cc54ea45acdd4af29`.
+- **Verification:** Read back all 14 changed files from branch `gpt`. Checked active README relative links against the tracked tree. The only broken README links found are the two file links in `.archive/adr/README.md`, which points to absent ADR files. The archive policy requires explicit authorization for a narrow reference-only correction. No archived content was changed.
+- **Limitations:** No tests, validators, linter, or workflows were run, per user instruction. Anchor validation and runtime behavior remain unverified.
+- **Next:** Obtain direction on the archived ADR index links, then complete final closeout.
