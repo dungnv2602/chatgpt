@@ -1,10 +1,10 @@
 # CI Ledger data and navigation
 
-The CI Ledger tracks distinct findings from lint reports and GitHub Actions diagnostics. It stores active finding state, bounded evidence references, task links, and lifecycle metadata. The Ledger does not execute remediation.
+The CI Ledger tracks distinct findings from lint reports and GitHub Actions diagnostics. It stores active finding state, bounded evidence references, stable parent-task links, resolution history, and separate hosted-validation metadata. The Ledger does not execute remediation.
 
 ## Ownership
 
-- **CI Ledger skill:** `.agent/skills/ci-ledger/SKILL.md` — finding governance, intake, identity, eligibility, evidence, task generation and linkage, lifecycle, resolution, retirement, reset, and integrity.
+- **CI Ledger skill:** `.agent/skills/ci-ledger/SKILL.md` — finding governance, intake, identity, eligibility, evidence, task generation and linkage, lifecycle, resolution, recurrence retention, reset, and integrity.
 - **The Worker:** task selection, authorization, batch orchestration, task records, board, progress, and closeout.
 - **GitHub Actions skill:** technical CI diagnosis, remediation, recurrence prevention, workflow operations, and validation.
 - **Data:** `ledger.json`.

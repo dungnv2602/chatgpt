@@ -10,7 +10,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "1.5.0"
+      "const": "1.6.0"
     },
     "updated_at_utc": {
       "type": [
@@ -194,24 +194,57 @@
               },
               "validation": {
                 "type": "object",
-                "required": [
-                  "run_url",
-                  "conclusion",
-                  "validated_at_utc"
-                ],
                 "properties": {
+                  "status": {
+                    "enum": [
+                      "pending",
+                      "passed",
+                      "failed",
+                      "not_run"
+                    ]
+                  },
                   "run_url": {
-                    "type": "string",
-                    "minLength": 1
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "conclusion": {
-                    "const": "success"
+                    "enum": [
+                      "success",
+                      "failure",
+                      "cancelled",
+                      "timed_out",
+                      "neutral",
+                      "unknown"
+                    ]
                   },
                   "validated_at_utc": {
-                    "type": "string",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
                     "minLength": 10
+                  },
+                  "note": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   }
                 },
+                "anyOf": [
+                  {
+                    "required": [
+                      "status"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "conclusion"
+                    ]
+                  }
+                ],
                 "additionalProperties": false
               },
               "note": {
@@ -224,9 +257,9 @@
             "additionalProperties": false,
             "required": [
               "fix_commit",
-              "resolved_at_utc",
-              "validation"
-            ]
+              "resolved_at_utc"
+            ],
+            "description": "Commit-based remediation resolution. Hosted validation is optional metadata and does not gate resolved status."
           },
           "resolution_history": {
             "type": "array",
@@ -234,8 +267,7 @@
               "type": "object",
               "required": [
                 "fix_commit",
-                "resolved_at_utc",
-                "validation"
+                "resolved_at_utc"
               ],
               "properties": {
                 "fix_commit": {
@@ -248,24 +280,57 @@
                 },
                 "validation": {
                   "type": "object",
-                  "required": [
-                    "run_url",
-                    "conclusion",
-                    "validated_at_utc"
-                  ],
                   "properties": {
+                    "status": {
+                      "enum": [
+                        "pending",
+                        "passed",
+                        "failed",
+                        "not_run"
+                      ]
+                    },
                     "run_url": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "conclusion": {
-                      "const": "success"
+                      "enum": [
+                        "success",
+                        "failure",
+                        "cancelled",
+                        "timed_out",
+                        "neutral",
+                        "unknown"
+                      ]
                     },
                     "validated_at_utc": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null"
+                      ],
                       "minLength": 10
+                    },
+                    "note": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     }
                   },
+                  "anyOf": [
+                    {
+                      "required": [
+                        "status"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "conclusion"
+                      ]
+                    }
+                  ],
                   "additionalProperties": false
                 },
                 "note": {
@@ -318,7 +383,7 @@
           },
           "task_refs": {
             "type": "array",
-            "description": "Links to Ledger-generated Worker tasks or manually curated task records that address this finding.",
+            "description": "Stable parent Task IDs containing remediation work; subtask IDs are tracked within each task folder, not in this field.",
             "items": {
               "type": "string",
               "minLength": 1

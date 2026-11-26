@@ -39,7 +39,7 @@ class LedgerTests(unittest.TestCase):
 
     def write_ledger(self, version="1.5.0", findings=None):
         payload = {"schema_version": version, "updated_at_utc": None, "findings": findings or []}
-        if version in ("1.1.0", "1.2.0", "1.3.0", "1.4.0", "1.5.0"):
+        if version in ("1.1.0", "1.2.0", "1.3.0", "1.4.0", "1.5.0", "1.6.0"):
             payload["ingestion_state"] = {
                 "bootstrap_at_utc":"2026-11-23T07:00:00Z","processed_reports":[],
                 "lint_baseline_scopes":{"on_changed":True,"on_repo":True},
@@ -152,7 +152,7 @@ class LedgerTests(unittest.TestCase):
             },
         }
         migrated = LEDGER.migrate_ledger(legacy, self.root)
-        self.assertEqual(migrated["schema_version"],"1.5.0")
+        self.assertEqual(migrated["schema_version"],"1.6.0")
         self.assertEqual(
             [item["report_path"] for item in migrated["findings"][0]["evidence"]],
             [".takeout/reports/lint_reports/on_repo/history/1-attempt-1/report.json",

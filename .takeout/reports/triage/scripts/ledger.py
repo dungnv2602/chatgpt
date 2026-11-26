@@ -10,7 +10,7 @@ if str(SHARED_ELIGIBILITY_PATH) not in sys.path:
     sys.path.insert(0, str(SHARED_ELIGIBILITY_PATH))
 from eligibility import actions_report_is_eligible, independent_actions_issues
 
-SCHEMA_VERSION = "1.5.0"
+SCHEMA_VERSION = "1.6.0"
 MAX_EVIDENCE_ROWS = 5
 IGNORED_LINT_STATUSES = {"Incomplete", "Cancelled", "Superseded"}
 LINT_BASELINE_CHECKS = (
@@ -447,15 +447,14 @@ def validate_semantics(ledger):
             resolution = finding.get("resolution")
             if not isinstance(resolution, dict):
                 raise LedgerError("Resolved finding requires resolution evidence: " + finding["finding_id"])
-            commit, validation = resolution.get("fix_commit"), resolution.get("validation")
+            commit = resolution.get("fix_commit")
             if not isinstance(commit, str) or not re.fullmatch(r"[0-9a-fA-F]{7,40}", commit):
                 raise LedgerError("Resolved finding requires a valid fix commit: " + finding["finding_id"])
-            if not isinstance(validation, dict) or validation.get("conclusion") != "success":
-                raise LedgerError("Resolved finding requires successful validation evidence: " + finding["finding_id"])
-            if not resolution.get("resolved_at_utc"):
+            resolved_at = resolution.get("resolved_at_utc")
+            if not isinstance(resolved_at, str) or not resolved_at.strip():
                 raise LedgerError("Resolved finding requires a resolution timestamp: " + finding["finding_id"])
-            if not validation.get("run_url") or not validation.get("validated_at_utc"):
-                raise LedgerError("Resolved finding requires a validation URL and timestamp: " + finding["finding_id"])
+            parse_time(resolved_at)
+            # Hosted validation is optional metadata. It never gates remediation resolution.
         if status == "accepted":
             risk = finding.get("accepted_risk")
             if not isinstance(risk, dict) or not risk.get("rationale") or not risk.get("accepted_by") or not risk.get("accepted_at_utc"):
@@ -466,7 +465,6 @@ def validate_semantics(ledger):
                 raise LedgerError("Duplicate finding requires an existing, different duplicate_of ID: " + finding["finding_id"])
         if status == "false_positive" and not str(finding.get("closure_note") or "").strip():
             raise LedgerError("False-positive finding requires a closure_note: " + finding["finding_id"])
-
 def atomic_write_text(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
     temp_name = None
@@ -992,68 +990,6 @@ def lint_baseline_ready(report, scope):
     return lint_tooling_checks_passed(report)
 
 
-def archived_task_index(root):
-    """Read only exact task archive paths registered in the shared retention index."""
-    path = root / ".github" / "archive-retention-index.json"
-    if not path.is_file():
-        return {}
-    index = read_json(path)
-    if not isinstance(index, dict) or not isinstance(index.get("records"), list):
-        raise LedgerError("Invalid archive retention index while retiring Ledger findings")
-    result = {}
-    for record in index["records"]:
-        if not isinstance(record, dict):
-            continue
-        archive_path = record.get("path")
-        if not isinstance(archive_path, str) or not archive_path.startswith(".archive/task/"):
-            continue
-        candidate = PurePosixPath(archive_path)
-        if candidate.is_absolute() or ".." in candidate.parts:
-            raise LedgerError("Unsafe task archive path in retention index: " + archive_path)
-        task_path = root / Path(*candidate.parts)
-        if not task_path.is_file():
-            continue
-        content = task_path.read_text(encoding="utf-8")
-        task_id = task_metadata(content, "ID")
-        status = task_metadata(content, "Status")
-        archived = task_metadata(content, "Archived")
-        section = content.split("## 13. Ledger Findings", 1)[-1].split("\n## ", 1)[0]
-        tick = chr(96)
-        finding_ids = set()
-        for line in section.splitlines():
-            fields = line.split("|")
-            if len(fields) > 1:
-                value = fields[1].strip()
-                if len(value) >= 2 and value.startswith(tick) and value.endswith(tick):
-                    finding_ids.add(value[1:-1])
-        if task_id and status == "Done" and archived == "Yes" and finding_ids:
-            result[task_id] = finding_ids
-    return result
-
-
-def retire_completed_task_findings(root, ledger):
-    """Retire terminal findings only after every linked task is archived Done."""
-    archive = archived_task_index(root)
-    by_id = {item.get("finding_id"): item for item in ledger["findings"]}
-    terminal = {"resolved", "accepted", "false_positive", "duplicate"}
-    eligible_tasks = {}
-    for task_id, finding_ids in archive.items():
-        linked = [by_id.get(finding_id) for finding_id in finding_ids]
-        if linked and all(item is not None and item.get("status") in terminal for item in linked):
-            eligible_tasks[task_id] = finding_ids
-    retained, retired = [], []
-    for finding in ledger["findings"]:
-        refs = finding.get("task_refs") or []
-        if (finding.get("status") in terminal and refs
-                and set(refs).issubset(eligible_tasks)
-                and all(finding.get("finding_id") in eligible_tasks[task_id] for task_id in refs)):
-            retired.append(finding.get("finding_id"))
-        else:
-            retained.append(finding)
-    ledger["findings"] = retained
-    return retired
-
-
 def ingest(root, now=None):
     root = Path(root).resolve()
     ledger_path = root / ".takeout/reports/triage/ledger.json"
@@ -1160,15 +1096,14 @@ def ingest(root, now=None):
     task_result = create_worker_tasks(
         root, ledger, now or utc_now(), task_candidates["created"] | task_candidates["updated"], task_candidates["created"], reopened_ids
     )
-    retired_ids = retire_completed_task_findings(root, ledger)
-    changed = changed or task_result["changed"] or bool(retired_ids)
+    changed = changed or task_result["changed"]
     if changed:
         ledger["updated_at_utc"] = now or utc_now()
         validate_schema(ledger, schema, "$ledger")
         validate_semantics(ledger)
         atomic_write(ledger_path, ledger)
     return {**counts, **{key: value for key, value in task_result.items() if key != "changed"},
-            "findings_retired": len(retired_ids), "total_findings": len(ledger["findings"]),
+            "total_findings": len(ledger["findings"]),
             "warnings": warnings, "changed": changed}
 
 def main():
