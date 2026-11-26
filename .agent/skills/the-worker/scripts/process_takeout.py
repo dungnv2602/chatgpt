@@ -63,13 +63,13 @@ def destination_dir(value: Any, root: Path) -> Path:
     parts = p.parts
     if p.is_absolute() or not parts or any(x in {".", ".."} for x in parts):
         raise ProcessingError(f"Unsafe destination_dir: {value!r}")
-    if parts[0] not in {"images", "novels", "drawings"}:
-        raise ProcessingError("Destinations must be inside images/, novels/, or a dated drawing session's images/ folder.")
+    if parts[0] not in {"images", "area/novel", "area/drawing"}:
+        raise ProcessingError("Destinations must be inside images/, area/novel/, or a dated drawing session's images/ folder.")
     if parts[0] == "images" and len(parts) > 1 and parts[1] in {"takeout", "webp", "scripts"}:
         raise ProcessingError(f"Reserved image destination: {value!r}")
-    if parts[0] == "drawings":
+    if parts[0] == "area/drawing":
         if len(parts) != 3 or parts[2] != "images" or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", parts[1]):
-            raise ProcessingError("Drawing output destinations must be drawings/YYYY-MM-DD/images.")
+            raise ProcessingError("Drawing output destinations must be area/drawing/YYYY-MM-DD/images.")
         try:
             datetime.strptime(parts[1], "%Y-%m-%d")
         except ValueError as exc:
@@ -304,7 +304,7 @@ def validate_conversation_record(value: Any, root: Path, source_name: str,
         or not relative.parts
         or any(part in {"", ".", ".."} for part in relative.parts)
         or relative.suffix.lower() != ".md"
-        or relative.parts[0] not in {"drawings", "novels", "images"}
+        or relative.parts[0] not in {"area/drawing", "area/novel", "images"}
     ):
         raise ProcessingError(f"{source_name}: unsafe conversation_record path: {value!r}.")
     record_path = root.joinpath(*relative.parts)
@@ -412,12 +412,12 @@ def validate_conversation_record(value: Any, root: Path, source_name: str,
         )
 
     drawing_match = re.fullmatch(
-        r"drawings/(\d{4}-\d{2}-\d{2})/images",
+        r"area/drawing/(\d{4}-\d{2}-\d{2})/images",
         destination.relative_to(root).as_posix(),
     )
     if drawing_match:
         session_date = drawing_match.group(1)
-        expected_record = f"drawings/history/{session_date}-conversation-integrity.md"
+        expected_record = f"area/drawing/history/{session_date}-conversation-integrity.md"
         if value != expected_record or dated_heading.group(1) != session_date:
             raise ProcessingError(
                 f"{source_name}: drawing outputs for {session_date} require {expected_record}."
@@ -426,12 +426,12 @@ def validate_conversation_record(value: Any, root: Path, source_name: str,
             raise ProcessingError(
                 f"{source_name}: drawing outputs require attempt and native_generation_id."
             )
-        attempt_path = root / "drawings" / session_date / f"attempt-{attempt}.md"
+        attempt_path = root / "area/drawing" / session_date / f"attempt-{attempt}.md"
         reject_symlink_components(attempt_path, root)
         if attempt_path.is_symlink() or not attempt_path.is_file():
             raise ProcessingError(
                 f"{source_name}: required attempt record is missing or unsafe: "
-                f"drawings/{session_date}/attempt-{attempt}.md."
+                f"area/drawing/{session_date}/attempt-{attempt}.md."
             )
         try:
             attempt_text = attempt_path.read_text(encoding="utf-8")
@@ -466,7 +466,7 @@ def validate_conversation_record(value: Any, root: Path, source_name: str,
         if not identity_match:
             raise ProcessingError(
                 f"{source_name}: supplied source_asset_id and generation/output identity do not match "
-                f"the same output in drawings/{session_date}/attempt-{attempt}.md."
+                f"the same output in area/drawing/{session_date}/attempt-{attempt}.md."
             )
     return value, coverage
 
@@ -479,10 +479,10 @@ def prepare_attempt_readme_updates(prepared: list[dict[str, Any]], root: Path) -
         if not attempt:
             continue
         relative_directory = item["directory"].relative_to(root).as_posix()
-        match = re.fullmatch(r"drawings/(\d{4}-\d{2}-\d{2})/images", relative_directory)
+        match = re.fullmatch(r"area/drawing/(\d{4}-\d{2}-\d{2})/images", relative_directory)
         if not match:
             raise ProcessingError(
-                "An item with attempt metadata must target drawings/YYYY-MM-DD/images."
+                "An item with attempt metadata must target area/drawing/YYYY-MM-DD/images."
             )
         session_date = match.group(1)
         try:
@@ -494,7 +494,7 @@ def prepare_attempt_readme_updates(prepared: list[dict[str, Any]], root: Path) -
     # Backfill confirmed mappings already present in the daily README table
     # into attempt records. Ambiguous and unmapped outputs are left untouched.
     for session_date in {date for date, _attempt in grouped}:
-        session_dir = root / "drawings" / session_date
+        session_dir = root / "area/drawing" / session_date
         for relative_link, attempts in linked_attempt_assets(session_dir).items():
             unique_attempts = list(dict.fromkeys(attempts))
             if len(unique_attempts) == 1:
@@ -503,7 +503,7 @@ def prepare_attempt_readme_updates(prepared: list[dict[str, Any]], root: Path) -
     updates: dict[Path, str] = {}
     for (session_date, attempt), raw_links in grouped.items():
         links = list(dict.fromkeys(raw_links))
-        session_dir = root / "drawings" / session_date
+        session_dir = root / "area/drawing" / session_date
         attempt_path = session_dir / f"attempt-{attempt}.md"
         readme_path = session_dir / "README.md"
         for target_path in (attempt_path, readme_path):
@@ -608,7 +608,7 @@ def prepare_attempt_readme_updates(prepared: list[dict[str, Any]], root: Path) -
     )
     inventory_links = re.compile(r"\[[^\]]+\]\((images/[^)]+\.webp)\)")
     for session_date in session_dates:
-        session_dir = root / "drawings" / session_date
+        session_dir = root / "area/drawing" / session_date
         readme_path = session_dir / "README.md"
         readme_content = updates.get(readme_path)
         if readme_content is None:
@@ -648,7 +648,7 @@ def prepare_attempt_readme_updates(prepared: list[dict[str, Any]], root: Path) -
             new_masters = sum(
                 1 for item in prepared
                 if item["directory"].relative_to(root).as_posix()
-                == f"drawings/{session_date}/images"
+                == f"area/drawing/{session_date}/images"
             )
             master_count = len(existing_masters) + new_masters
             total_count = len(all_webps) + master_count
@@ -710,7 +710,7 @@ def prepare_attempt_readme_updates(prepared: list[dict[str, Any]], root: Path) -
         new_original_count = sum(
             1 for item in prepared
             if item["directory"].relative_to(root).as_posix()
-            == f"drawings/{session_date}/images"
+            == f"area/drawing/{session_date}/images"
         )
         original_master_count = len(original_masters) + new_original_count
         total_assets = len(all_webps) + original_master_count
@@ -857,11 +857,11 @@ def validate_session_image_links(session_dir: Path) -> None:
 
 def legacy_manifest_row(session_date: str, session_dir: Path, webp: Path,
                         links: dict[str, list[str]], original: Path | None = None) -> dict[str, str]:
-    relative_webp = f"drawings/{session_date}/{webp.relative_to(session_dir).as_posix()}"
+    relative_webp = f"area/drawing/{session_date}/{webp.relative_to(session_dir).as_posix()}"
     session_relative_webp = webp.relative_to(session_dir).as_posix()
     webp_sha = digest(webp)
     original_path = (
-        f"drawings/{session_date}/{original.relative_to(session_dir).as_posix()}"
+        f"area/drawing/{session_date}/{original.relative_to(session_dir).as_posix()}"
         if original is not None else ""
     )
     original_sha = digest(original) if original is not None else ""
@@ -916,15 +916,15 @@ def prepare_session_manifest_updates(prepared: list[dict[str, Any]], root: Path)
         if not item.get("attempt"):
             continue
         relative_directory = item["directory"].relative_to(root).as_posix()
-        match = re.fullmatch(r"drawings/(\d{4}-\d{2}-\d{2})/images", relative_directory)
+        match = re.fullmatch(r"area/drawing/(\d{4}-\d{2}-\d{2})/images", relative_directory)
         if not match:
-            raise ProcessingError("Manifest entries require drawings/YYYY-MM-DD/images destinations.")
+            raise ProcessingError("Manifest entries require area/drawing/YYYY-MM-DD/images destinations.")
         session_date = match.group(1)
         grouped.setdefault(session_date, []).append(item)
 
     updates: dict[Path, str] = {}
     for session_date, session_items in grouped.items():
-        session_dir = root / "drawings" / session_date
+        session_dir = root / "area/drawing" / session_date
         manifest_path = session_dir / "manifest.csv"
         if manifest_path.is_symlink() or (manifest_path.exists() and not manifest_path.is_file()):
             raise ProcessingError(f"Session manifest is not a regular file: {manifest_path.relative_to(root).as_posix()}")
@@ -1319,7 +1319,7 @@ def main() -> int:
             attempt_value = item.get("attempt")
             attempt_ref = ""
             is_drawing_session_asset = bool(
-                re.fullmatch(r"drawings/\d{4}-\d{2}-\d{2}/images", directory.relative_to(root).as_posix())
+                re.fullmatch(r"area/drawing/\d{4}-\d{2}-\d{2}/images", directory.relative_to(root).as_posix())
             )
             if is_drawing_session_asset and (attempt_value is None or attempt_value == ""):
                 raise ProcessingError(
@@ -1336,9 +1336,9 @@ def main() -> int:
                     raise ProcessingError(f"Item {number}: attempt must be a positive integer or digit string.")
                 if not 1 <= attempt_number <= 999:
                     raise ProcessingError(f"Item {number}: attempt must be between 1 and 999.")
-                if not re.fullmatch(r"drawings/\d{4}-\d{2}-\d{2}/images", directory.relative_to(root).as_posix()):
+                if not re.fullmatch(r"area/drawing/\d{4}-\d{2}-\d{2}/images", directory.relative_to(root).as_posix()):
                     raise ProcessingError(
-                        f"Item {number}: attempt metadata is only valid for a drawings/YYYY-MM-DD/images destination."
+                        f"Item {number}: attempt metadata is only valid for an area/drawing/YYYY-MM-DD/images destination."
                     )
                 attempt_ref = f"{attempt_number:02d}"
             reject_symlink_components(directory, root)
@@ -1448,7 +1448,7 @@ def main() -> int:
         if any(item["hash_match"] == "NOT_PROVIDED" for item in prepared):
             checks.append("Generation-time SHA-256 matching was unavailable for items without expected_sha256.")
         if prepared:
-            checks.append("Mapped destinations are restricted to approved images/, novels/, or dated drawings/ asset folders; duplicate and existing paths are rejected.")
+            checks.append("Mapped destinations are restricted to approved images/, area/novel/, or dated area/drawing/ asset folders; duplicate and existing paths are rejected.")
         text_updates = prepare_attempt_readme_updates(prepared, root)
         if text_updates:
             checks.append("Attempt and daily README targets were prevalidated for automatic output linking.")
@@ -1616,7 +1616,7 @@ def main() -> int:
                 "master_path": item["master"].relative_to(root).as_posix(),
                 "webp_path": item["webp"].relative_to(root).as_posix(),
                 "manifest_path": (
-                    f"drawings/{item['directory'].relative_to(root).parts[1]}/manifest.csv"
+                    f"area/drawing/{item['directory'].relative_to(root).parts[1]}/manifest.csv"
                     if item.get("attempt") else ""
                 ),
                 "staging_webp_path": item.get("stage_path", ""),
@@ -1714,7 +1714,7 @@ def main() -> int:
                 "master_path": item["master"].relative_to(root).as_posix(),
                 "webp_path": item["webp"].relative_to(root).as_posix(),
                 "manifest_path": (
-                    f"drawings/{item['directory'].relative_to(root).parts[1]}/manifest.csv"
+                    f"area/drawing/{item['directory'].relative_to(root).parts[1]}/manifest.csv"
                     if item.get("attempt") else ""
                 ),
                 "staging_webp_path": item.get("stage_path", ""),
