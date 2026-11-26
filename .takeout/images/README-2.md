@@ -262,4 +262,4 @@ The README and attempt records link only to WebP delivery files. The unchanged o
 
 ## Documentation standard
 
-This file defines an operational hand-off. Apply Strict mode from the repository [ASD-STE100 policy](../../ .agent/skills/asd-ste100/references/repository-writing-policy.md) when you revise it. Preserve every field, status, path, conversion rule, and verification requirement.
+This file defines an operational hand-off. Apply Strict mode from the repository [ASD-STE100 policy](../../.agent/skills/asd-ste100/references/repository-writing-policy.md) when you revise it. Preserve every field, status, path, conversion rule, and verification requirement.
