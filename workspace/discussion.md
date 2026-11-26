@@ -6,7 +6,6 @@ Promote user-approved DRAFT-0005 revision 1 to ADR-0004. Complete provisional AD
 
 ## Open Discussions
 
-- **2026-11-27:** DRAFT-0005 revision 1 was explicitly approved by the user. Promotion to ADR-0004 is in progress; implementation remains blocked until ADR acceptance and creation of the linked implementation task.
 - **2026-11-26 17:04 UTC:** Four P0 tasks from STE Lint Changed run [45864180906](https://github.com/dungnv2602/chatgpt/actions/runs/45864180906) require edits across accepted ADR-0003 rationale and evidence sections. Decision governance blocks those edits without explicit user approval. The tasks are 170259, 170259-01, 170259-02, and 170259-03. The board's Current Execution is 170259-02.
 - **2026-11-26 16:45 UTC:** P0 task [20261126-090154](tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) has five of six ADR Confirmation criteria verified. Criterion 4 requires an authorized read-only repository-wide reference search.
 - **2026-11-26 16:22 UTC:** P0 task [20261126-145133](tasks/20261126-145133-review-publication-or-push-failures-in-ste-lint-changed-document.md) has successful publication evidence in STE Lint Changed run [45859253550](https://github.com/dungnv2602/chatgpt/actions/runs/45859253550). Its original Ledger finding still needs a resolution record and task closeout.
