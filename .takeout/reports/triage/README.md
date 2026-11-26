@@ -95,7 +95,7 @@ A manual request is consumed into `requests/processed/` after one capture result
 
 Normal report rollover does not clear the Ledger or import old findings. It preserves open-finding evidence and processed state while removing old report periods from active indexes. Historical backfill requires a separate approved task.
 
-If `ledger.json` is missing, ingestion fails closed. Restore the exact prior Ledger state or obtain explicit user authorization for a clean-start reset; the generator never creates an empty Ledger automatically.
+If `ledger.json` is missing, ingestion fails closed. Restore the exact prior Ledger state at `.takeout/reports/triage/ledger.json` or obtain explicit user authorization for a clean-start reset; the generator never creates an empty Ledger automatically. When relocating an existing Ledger, preserve its exact content and let the next ingestion migrate its schema and legacy report paths. Do not create an empty placeholder.
 
 A full clean-start reset is allowed only after an explicit user instruction. It removes active generated report payloads and all prior `.archive/reports/**` content, resets the three report indexes to an empty reporting period, replaces the Ledger with no findings and no processed paths, and marks both lint baselines unseeded. It also removes report entries from the shared archive-retention index. It preserves scripts, schemas, templates, workflow definitions, operating guides, task archives, task-retention entries, and unrelated tasks.
 
