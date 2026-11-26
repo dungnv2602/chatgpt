@@ -63,7 +63,7 @@ The user approved DRAFT-0004 revision 1, Option 3, on 2026-11-26. This ADR recor
 - **Ledger compatibility — High:** Preserve existing history paths and every report JSON reference used by findings and tasks.
 - **Human readability — Medium:** Keep Markdown review available through an on-demand renderer.
 - **Consistency and maintenance — High:** Maintain one report source and one repository-wide index.
-- **Migration and rollback risk — High:** Do not alter canonical evidence. This includes replacing or removing it. Make derived views reproducible.
+- **Migration and rollback risk — High:** Keep canonical evidence unchanged, including its replacement or removal. Make derived views reproducible.
 
 ## Considered Options
 
@@ -71,7 +71,7 @@ The user approved DRAFT-0004 revision 1, Option 3, on 2026-11-26. This ADR recor
 
 - **Description and operating model:** Keep per-run JSON and Markdown files, integrity manifests, logs, root latest copies, per-workflow indexes, and per-workflow latest copies.
 - **Repository and environment fit:** This matches the current generator, report guide, and repository navigation.
-- **Good — strengths:** No migration is required. Operators can open Markdown reports directly. Each workflow has a separate index and latest view.
+- **Good — strengths:** Operators do not need to migrate. Operators can open Markdown reports directly. Each workflow has a separate index and latest view.
 - **Neutral — trade-offs:** The generator must keep several views synchronized. The root index remains the repository-wide source of report metadata.
 - **Bad — weaknesses:** The assessment snapshot retains all 40 derived or redundant artifacts. Markdown reports repeat information from JSON. Latest copies repeat history files. Per-workflow indexes repeat subsets of the root index. These copies can drift or create large commits.
 - **Implementation and migration cost:** No implementation cost. Future report captures continue to write the same copies.
@@ -89,7 +89,7 @@ The user approved DRAFT-0004 revision 1, Option 3, on 2026-11-26. This ADR recor
 - **Bad — weaknesses:** The 29 per-run Markdown renderings and three per-workflow indexes remain in the assessment snapshot. The layout still stores several views of the same report data.
 - **Implementation and migration cost:** Update latest-copy generation, tests, and the report guide. Remove the existing eight latest copies.
 - **Dependencies and operational burden:** The central and workflow indexes remain. The generator still maintains several indexes.
-- **Risks and safeguards:** Existing references may rely on latest-copy paths. Search references and check Ledger links before migration.
+- **Risks and safeguards:** Existing references may rely on latest-copy paths. Search references and confirm Ledger links before migration.
 - **Evidence and confidence:** The root and workflow directory inventory confirms the eight latest copies. Confidence is high for the inspected snapshot.
 - **Limitations and unknowns:** This removes some duplication but leaves most derived report artifacts.
 
@@ -103,8 +103,8 @@ The user approved DRAFT-0004 revision 1, Option 3, on 2026-11-26. This ADR recor
 - **Implementation and migration cost:** Update the writer, integrity manifest generation, index builder, on-demand rendering interface, tests, and report guide. Remove only derived files from existing history folders. Regenerate integrity manifests for the retained JSON and logs. Keep all report JSON and captured log bytes unchanged.
 - **Dependencies and operational burden:** The report generator and template remain. The generator must render Markdown on demand and rebuild the central index. It no longer maintains per-workflow copies.
 - **Risks and safeguards:** A missing renderer reduces readability. Retain and test the renderer. A bad migration could break a task link or remove evidence. Preserve paths, compare hashes, and confirm every Ledger/task reference. Regression tests for index ordering and pruning control stale latest pointers.
-- **Evidence and confidence:** The root index contains the latest pointer and workflow metadata. Ledger evidence paths target report JSON. The report guide and sample history folder show that Markdown is generated alongside JSON. Confidence is high for these repository facts and moderate for migration effort.
-- **Limitations and unknowns:** A complete repository reference search and external-consumer inventory were not completed in the assessment. No migration prototype or byte-level total was measured. External consumers remain an unknown.
+- **Evidence and confidence:** The root index contains the latest pointer and workflow metadata. Ledger evidence paths target report JSON. The report guide and sample history folder show that the generator creates Markdown alongside JSON. Confidence is high for these repository facts and moderate for migration effort.
+- **Limitations and unknowns:** The assessment did not complete a repository reference search or external-consumer inventory. It did not measure a migration prototype or total bytes. External consumers remain an unknown.
 
 ### Option 4 — Store reports and logs as GitHub workflow artifacts
 
@@ -116,7 +116,7 @@ The user approved DRAFT-0004 revision 1, Option 3, on 2026-11-26. This ADR recor
 - **Implementation and migration cost:** Update capture and publication workflows, artifact upload/retrieval, index schema, permissions, retention, and recovery procedures. Define a durable evidence-recovery path.
 - **Dependencies and operational burden:** Requires artifact permissions, retention settings, and an operational process to retrieve expired or inaccessible evidence.
 - **Risks and safeguards:** Evidence may become unavailable after retention expiry or permission changes. Meeting the current evidence-retention requirement would require a second durable store.
-- **Evidence and confidence:** GitHub Actions supports workflow artifacts, but no retention prototype or permission model was evaluated.
+- **Evidence and confidence:** GitHub Actions supports workflow artifacts. The assessment did not test retention or permissions.
 - **Limitations and unknowns:** Retention periods and access behavior were not tested. This option does not fit the repository's current role as the durable source of diagnostic evidence.
 
 ## Comparative Assessment
@@ -126,9 +126,9 @@ The matrix summarizes the same six decision drivers for all materially viable op
 | Criterion | Option 1: Current layout | Option 2: Remove latest copies | Option 3: Canonical JSON | Option 4: Workflow artifacts |
 |---|---|---|---|---|
 | Evidence durability and integrity | Strong. All evidence remains in the repository. | Strong. Canonical reports and logs remain. | Strong. Canonical reports, logs, and regenerated integrity manifests remain. | Weak. Evidence depends on artifact retention and access. |
-| Repository size and commit noise | Weak. All derived copies remain. | Moderate. Eight latest copies are removed. | Strong. All 40 derived or redundant artifacts in the assessment snapshot are removed. | Strong. Most evidence leaves the repository. |
+| Repository size and commit noise | Weak. All derived copies remain. | Moderate. Option 2 removes eight latest copies. | Strong. Option 3 removes all 40 derived or redundant artifacts in the assessment snapshot. | Strong. Most evidence leaves the repository. |
 | Discoverability | Strong. Several navigation views exist. | Strong. The root and workflow indexes remain. | Strong. The root index has workflow IDs and the latest pointer. | Moderate. The index links to external artifacts. |
-| Human readability | Strong. Markdown files are stored. | Strong. Per-run Markdown remains. | Moderate. Markdown is rendered on demand. | Moderate. Operators retrieve artifacts. |
+| Human readability | Strong. The repository stores Markdown files. | Strong. Option 2 retains per-run Markdown. | Moderate. The generator renders Markdown on demand. | Moderate. Operators retrieve artifacts. |
 | Consistency and maintenance | Weak. Several copies must stay synchronized. | Moderate. Workflow indexes still duplicate the root index. | Strong. One report source and one index remain. | Weak. Repository metadata and external artifact state must stay synchronized. |
 | Migration and rollback risk | Strong. No migration is needed. | Moderate. Remove latest copies and update references. | Moderate. Remove derived files and regenerate integrity manifests. | Weak. Change storage, access, retention, and recovery. |
 
@@ -146,7 +146,7 @@ The decision depends on the assumption that no required external consumer relies
 
 - **Good:** The repository keeps one structured report source per run, original logs, integrity data, and one repository-wide index. The generator no longer publishes redundant Markdown and latest/index copies.
 - **Neutral:** Operators use the central index and an on-demand render command. Workflow-specific navigation is derived by filtering the central index.
-- **Bad:** Stored Markdown links and per-workflow index/latest paths are removed. Update the report guide and repository references.
+- **Bad:** The migration removes stored Markdown links and per-workflow index/latest paths. Update the report guide and repository references.
 - **Conditional:** Human-readable reports remain available only while the renderer and template remain supported. The repository has no quantified storage-savings estimate until someone measures bytes.
 
 ### Confirmation
@@ -154,9 +154,9 @@ The decision depends on the assumption that no required external consumer relies
 - [x] Every retained history folder contains canonical `report.json`, `integrity.json`, and captured logs. Migration did not change report JSON or log content hashes. Each regenerated integrity manifest matches the retained files. Diagnostics run 45858706596 validated all 28 manifests. The task copied 12 report folders and read back their JSON, manifest, and log files byte-for-byte.
 - [x] The generator no longer writes per-run Markdown, root latest-report copies, or per-workflow indexes/latest copies. The central index remains valid and its latest pointer selects the correct report after capture, pruning, and backfill. The active index now contains 16 reports, and its latest pointer resolves to the canonical report JSON. Diagnostics run 45858706596 passed the hosted reporter tests.
 - [x] The on-demand Markdown renderer produces a readable report from canonical JSON, with regression tests for representative reports and missing or invalid input. Diagnostics run 45858706596 passed the end-to-end renderer tests and the missing or invalid input tests.
-- [ ] A repository-wide reference search finds no remaining required references to removed paths, or each required consumer is migrated. All Ledger and task evidence paths continue to resolve to unchanged report JSON history paths. Targeted consumer review is complete for the report guide, generator, tests, Ledger, diagnostics workflow, Document Type Catalog, and task evidence. The Worker had not yet searched the full repository for references.
+- [ ] Search the entire repository for required references to removed paths and migrate any remaining consumers. Confirm that Ledger and task evidence paths still resolve to unchanged report JSON history paths. Targeted consumer review covered the report guide, generator, tests, Ledger, diagnostics workflow, Document Type Catalog, and task evidence. The Worker had not yet completed a repository-wide reference search.
 - [x] The migration removes only derived artifacts. A changed-path review shows that the migration did not alter or remove canonical report JSON or captured logs. Git blob comparisons show that all 57 pre-migration report JSON and log files remained byte-identical. Later task evidence archival copied files exactly and preserved the original integrity manifests.
-- [x] The relevant naturally triggered hosted validation workflows pass on the implementation commit. Diagnostics runs 45858706596 and 45861355013, Validate Document Standards runs 45858726101 and 45861354992, and STE Lint Changed run 45859253550 all completed successfully. No manual dispatch was used.
+- [x] The relevant naturally triggered hosted validation workflows pass on the implementation commit. Diagnostics runs 45858706596 and 45861355013, Validate Document Standards runs 45858726101 and 45861354992, and STE Lint Changed run 45859253550 all passed. The Worker did not manually dispatch them.
 
 ## Pros and Cons of the Options
 
@@ -175,7 +175,7 @@ The decision depends on the assumption that no required external consumer relies
 ### Option 3 — Canonical JSON and one index
 
 - **Good:** Retains original evidence and integrity while removing all derived copies in the assessment snapshot. Maintains stable JSON paths for the Ledger.
-- **Neutral:** Markdown requires an on-demand render. Workflow views are filtered from the central index.
+- **Neutral:** Markdown requires an on-demand render. Operators filter workflow views from the central index.
 - **Bad:** Existing links to stored Markdown and per-workflow indexes must be updated.
 
 ### Option 4 — GitHub workflow artifacts
@@ -190,7 +190,7 @@ The decision depends on the assumption that no required external consumer relies
 - **Out of scope:** Changes to error-only retention, cancellation or propagation classification, Ledger finding identity, task generation, and lint baseline rules. Report JSON content, captured log content, and the separate STE lint report layout also remain out of scope. Do not move evidence to an external artifact store.
 - **Tasks:** [20261126-090154](../tasks/20261126-090154-review-validation-or-test-failures-in-validate-document-standard.md) implements the artifact-layout portion of this ADR. Its acceptance criteria map to all six Confirmation criteria. The task's separately approved error-only retention and Ledger remediation remains outside this ADR's scope.
 - **Dependencies:** Acceptance of this ADR . the existing report generator, canonical Markdown template, central index, and Ledger JSON evidence references.
-- **Migration / rollback:** Search all repository references to removed paths and check for external consumers. Update generation and rendering behavior, then migrate derived files only. Compare canonical JSON and log hashes before and after. Regenerate and verify integrity manifests and the central index. Verify every Ledger/task evidence path. Roll back by regenerating Markdown and derived index/latest views from canonical JSON and the central index. Never restore by rewriting canonical report JSON or logs.
+- **Migration / rollback:** Search all repository references to removed paths and check for external consumers. Update generation and rendering behavior, then migrate derived files only. Compare canonical JSON and log hashes before and after. Regenerate and verify integrity manifests and the central index. Confirm every Ledger/task evidence path. Roll back by regenerating Markdown and derived index/latest views from canonical JSON and the central index. Never restore by rewriting canonical report JSON or logs.
 
 ## Risks and Safeguards
 
@@ -201,7 +201,7 @@ The decision depends on the assumption that no required external consumer relies
 | An integrity manifest no longer matches retained files. | Medium / High | Current manifests include the Markdown file. | Regenerate each manifest for canonical JSON and logs. Verify every hash after migration. | A faulty migration could still omit a file. |
 | A task or Ledger link targets a removed Markdown file. | Low / High | Current Ledger evidence links target report JSON. The assessment did not search all other references. | Search task, Ledger, README, and workflow references before removal. Preserve all JSON history paths. | External links may remain. |
 | The root latest pointer becomes stale. | Low / High | The index is rebuilt from retained reports. | Test latest-pointer ordering after capture, pruning, and backfill. | A future index bug could select the wrong report. |
-| A migration deletes original evidence by mistake. | Low / Critical | The cleanup affects many history folders. | Delete only derived files. Compare report JSON and log hashes before and after. Review changed-path metadata. | A human must still review the changes. |
+| A migration removes original evidence by mistake. | Low / Critical | The cleanup affects many history folders. | Remove only derived files. Compare report JSON and log hashes before and after. Review changed-path metadata. | A human must still review the changes. |
 
 ## More Information
 ### Evidence Register
@@ -211,9 +211,9 @@ The decision depends on the assumption that no required external consumer relies
 | E1 | Repository branch `gpt`, commit `f310d0921a6750caf40e7e314f0a7574bae120af` | 2026-11-26 | Repository fact | Inventory snapshot and source version. | Later task and discussion commits did not alter the report layout. |
 | E2 | `.takeout/reports/gh_ac_reports/index.json` | Commit `f310d092`, 29 runs | Repository fact | The root index contains the run list and latest-report pointer. | This is a snapshot of the active index. |
 | E3 | `.takeout/reports/gh_ac_reports/history/427313089/45798838831-attempt-1-post_run/` | Commit `f310d092` | Repository fact | A history folder contains JSON, Markdown, integrity, and logs. | One folder sample. The report guide defines the same layout for each capture. |
-| E4 | `.takeout/reports/gh_ac_reports/` and `.takeout/reports/gh_ac_reports/by_workflow/` directory listings | Commit `f310d092`, three workflow folders | Repository fact | Root latest copies and per-workflow indexes/latest copies. | Directory names and counts were inspected. No one measured the byte total for every file. |
+| E4 | `.takeout/reports/gh_ac_reports/` and `.takeout/reports/gh_ac_reports/by_workflow/` directory listings | Commit `f310d092`, three workflow folders | Repository fact | Root latest copies and per-workflow indexes/latest copies. | The review inspected directory names and counts. No one measured the byte total for every file. |
 | E5 | `.takeout/reports/gh_ac_reports/README.md`, sections "Evidence layout", "Integrity and history", and "Review order" | Commit `f310d092` | Repository fact | The documented current layout and integrity coverage. | The guide describes current behavior. It does not prove external consumer use. |
-| E6 | `.takeout/reports/gh_ac_reports/scripts/report.py` and `.takeout/reports/gh_ac_reports/assets/report-template.md` | Commit `f310d092` | Repository fact | The report generator renders Markdown from structured report data. | No new on-demand CLI command was tested. |
+| E6 | `.takeout/reports/gh_ac_reports/scripts/report.py` and `.takeout/reports/gh_ac_reports/assets/report-template.md` | Commit `f310d092` | Repository fact | The report generator renders Markdown from structured report data. | The review did not test a new on-demand CLI command. |
 | E7 | `.takeout/reports/triage/scripts/ledger.py`, function `finding_row` | Commit `f310d092` | Repository fact | Ledger evidence links target report paths in history, not latest Markdown copies. | Other consumers still require a repository search. |
 | E8 | Sample history folder and root latest-copy file sizes | Commit `f310d092` | Repository fact | Sample sizes: report.json 7,058 bytes. report.md 4,167 bytes. integrity.json 386 bytes. root latest JSON 12,937 bytes. root latest Markdown 6,565 bytes. | Samples do not establish total byte savings. |
 | E9 | User instruction in this conversation | 2026-11-26 | User instruction | Approval of DRAFT-0004 revision 1, Option 3 and its stated migration scope. | Decision approval does not replace the ADR completeness gate or task execution and hosted-validation requirements. |
@@ -230,4 +230,4 @@ The decision depends on the assumption that no required external consumer relies
 | Date | Status / implementation change | Evidence and reason |
 |---|---|---|
 | 2026-11-26 | Accepted | User approved DRAFT-0004 revision 1, Option 3. The complete rationale comparison and provisional ADR read-back passed. |
-| 2026-11-26 | Option 3 implementation completed; five of six confirmation criteria verified | Reporter migration, central index, on-demand renderer, evidence preservation, and naturally triggered hosted validation passed. The repository-wide reference search remains pending. |
+| 2026-11-26 | Option 3 implementation complete; five of six confirmation criteria verified | Reporter migration, central index, on-demand renderer, evidence preservation, and naturally triggered hosted validation passed. The repository-wide reference search remains pending. |
