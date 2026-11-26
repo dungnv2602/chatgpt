@@ -184,7 +184,7 @@ class LedgerTests(unittest.TestCase):
         board_path = self.root / "workspace" / "task_board.md"
         board = board_path.read_text(encoding="utf-8")
         board = board.replace(
-            "## Proposed\n\n| ID | Task | Priority | Status | Origin | Updated | ADR(s) | Record |\n|---|---|---:|---|---|---|---|---|",
+            "## Proposed\n\n_No tasks._",
             "## Proposed",
             1,
         )
