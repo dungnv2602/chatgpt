@@ -112,6 +112,23 @@ class LedgerTests(unittest.TestCase):
             LEDGER.ingest(self.root)
         self.assertFalse(path.exists())
 
+    def test_processed_actions_paths_are_pruned_when_removed_from_active_history(self):
+        active = ".takeout/reports/gh_ac_reports/history/55/100-attempt-1-post_run/report.json"
+        stale = ".takeout/reports/gh_ac_reports/history/55/101-attempt-1-pre_finalizer/report.json"
+        active_file = self.root / active
+        active_file.parent.mkdir(parents=True)
+        active_file.write_text("{}", encoding="utf-8")
+        gh_root = self.root / ".takeout" / "reports" / "gh_ac_reports"
+        gh_root.mkdir(parents=True)
+        (gh_root / "index.json").write_text(json.dumps({
+            "runs": [{"history_path": "history/55/100-attempt-1-post_run"}]
+        }), encoding="utf-8")
+        ledger = self.read_ledger()
+        ledger["ingestion_state"]["processed_reports"] = [active, stale]
+        migrated = LEDGER.migrate_ledger(ledger, self.root)
+        self.assertEqual(migrated["ingestion_state"]["processed_reports"], [active])
+
+
     def test_legacy_report_paths_migrate_to_repository_relative_roots(self):
         finding = {
             "finding_id":"lint-a1b2c3d4e5f6","source_family":"lint","category":"semicolon","title":"A finding",

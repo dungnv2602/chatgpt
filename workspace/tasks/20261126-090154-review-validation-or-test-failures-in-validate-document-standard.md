@@ -174,3 +174,9 @@ _The CI Ledger maintains this section for event-driven finding links. Keep each 
 
 - **Additional fixture correction:** The two task-board regression tests had opposite status contracts: the renderer test creates a Proposed task and must remove the Proposed section; the rollback test creates a P0 In Progress task and must remove the In Progress section. Corrected each fixture to remove the section corresponding to the generated task status.
 - **Next:** Hosted validation for the updated fixtures is pending.
+
+
+### 2026-11-26 10:08 UTC
+
+- **Additional consistency guard:** Added Ledger migration logic and regression coverage so `ingestion_state.processed_reports` drops GitHub Actions history paths no longer present in the active report indexes. This keeps the Ledger's processed-path state synchronized with the history-pruning routine; lint paths and archived evidence remain unaffected.
+- **Next:** Await hosted validation of the retention and task-board fixture corrections, then verify the cleanup sweep and Ledger state together.

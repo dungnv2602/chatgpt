@@ -223,9 +223,17 @@ def migrate_ledger(ledger, root):
             raise LedgerError("ingestion_state.lint_baseline_scopes values must be booleans")
     if not isinstance(state["processed_reports"], list) or not all(isinstance(item, str) for item in state["processed_reports"]):
         raise LedgerError("ingestion_state.processed_reports must be an array of paths")
-    state["processed_reports"] = sorted({
+    normalized_processed = {
         normalize_report_path(item, allow_archived=False) for item in state["processed_reports"]
-    })
+    }
+    active_actions_paths = {
+        path for family, path, _ in indexed_reports(root) if family == "github_actions"
+    }
+    state["processed_reports"] = sorted(
+        path for path in normalized_processed
+        if not path.startswith(".takeout/reports/gh_ac_reports/history/")
+        or path in active_actions_paths
+    )
     return ledger
 
 def normalize_signature(message):
