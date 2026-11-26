@@ -5,12 +5,12 @@
 - **Template version:** 1.3
 - **ID:** 20261126-090154
 - **Created:** 2026-11-26 09:01 UTC
-- **Updated:** 2026-11-26 12:05 UTC
+- **Updated:** 2026-11-26 12:12 UTC
 - **Priority:** P0
 - **Status:** In Progress
 - **Origin:** User
 - **Approval:** Approved
-- **Governing ADR(s):** None — grandfathered remediation of the user-approved error-only retention and task-linkage policy. DRAFT-0004 / ADR-0003 governs only the separate report-artifact-layout decision.
+- **Governing ADR(s):** ADR-0003 governs the approved Option 3 artifact-layout work only. The error-only retention and Ledger task-linkage remediation remains separately user-approved grandfathered scope.
 - **Current execution:** Yes
 - **Dependencies:** None
 - **Related tasks:** None
@@ -41,6 +41,7 @@ Review and remediate the related CI findings listed below after approval. Preser
 3. Do not weaken lint rules, test coverage, workflow conclusions, or evidence requirements.
 4. This remediation is explicitly approved by the user's P0 override.
 5. Resolve ledger findings only after a fix commit and successful relevant validation are recorded.
+6. Implement accepted ADR-0003 Option 3 within its exact scope. Map all six ADR Confirmation criteria to verifiable task acceptance evidence. Preserve report JSON bytes, captured log bytes, history paths, and Ledger/task evidence references. Regenerate integrity manifests for retained JSON/log files. Keep the repository-wide index as the only index/latest pointer. Render Markdown on demand. Remove only derived Markdown/latest/per-workflow copies. Do not alter the separate error-only retention, cancellation/propagation, Ledger identity, task-generation, lint-baseline, or STE lint-report contracts as part of the artifact-layout change.
 
 ## 5. Decisions
 
@@ -128,8 +129,17 @@ Review and remediate the related CI findings listed below after approval. Preser
 - **References:** `workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md`; DRAFT-0002 references historical ADR-0001; Draft README references ADR-0002; commit `3a5c257ea7d9faf2214959119de77bde44593c51`.
 - **Next:** Read back the complete ADR-0003 and confirm the promotion gate before changing its status to accepted.
 
+
+
+### 2026-11-26 12:12 UTC
+
+- **Action:** Accepted ADR-0003 and completed source-Draft cleanup. Linked the accepted decision to this P0 task for the artifact-layout work only.
+- **Result:** ADR-0003 is accepted. DRAFT-0004 was deleted after accepted-record read-back and removed from the Draft index. The ADR README lists ADR-0003 as accepted. The task now maps all six ADR Confirmation criteria to its artifact-layout acceptance criteria. The separately approved error-only retention and Ledger remediation remains distinct. No report artifacts have been migrated.
+- **References:** `workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md`; `workspace/adr/README.md`; `workspace/draft/README.md`; commit `acc1ace03f40f44398c849d7133ed63bf66f751e`.
+- **Next:** Implement the shared reporter/Ledger eligibility and baseline-aware lint tooling behavior before beginning artifact migration.
+
 ## 7. Current State
-The current history contains 29 complete post-run Actions reports. Twenty-six represent independent test failures and reconcile to six findings with three P0 tasks. Three propagation-only reports remain incorrectly retained. Three lint reports also contain the same failed Markdown-link check, but the Ledger processed them without creating a task. The existing cleanup removed pre-finalizer, success-only, and cancellation-only history. The artifact layout still contains 40 derived or redundant files. DRAFT-0004 revision 1, Option 3, is approved by the user and is entering ADR promotion. No artifact-layout cleanup has been performed.
+The current history contains 29 complete post-run Actions reports. Twenty-six represent independent test failures and reconcile to six findings with three P0 tasks. Three propagation-only reports remain incorrectly retained. Three lint reports also contain the same failed Markdown-link check, but the Ledger processed them without creating a task. The existing cleanup removed pre-finalizer, success-only, and cancellation-only history. The artifact layout still contains 40 derived or redundant files. ADR-0003 is accepted and linked to this task for the artifact-layout work. DRAFT-0004 was deleted after accepted-record read-back. No artifact-layout cleanup has been performed.
 
 ## 8. Remaining Work
 - Align reporter retention with the Ledger's independent-issue eligibility rules. Ensure every retained report produces at least one eligible finding.
@@ -137,17 +147,17 @@ The current history contains 29 complete post-run Actions reports. Twenty-six re
 - Create stable, deduplicated Ledger findings for failed lint tooling checks when a baseline is not yet available. Do not taskify all pre-baseline lint findings.
 - Remove the three propagation-only Actions reports and their processed-report references after the eligibility correction.
 - Reconcile task-generation metadata so only one task file has `Current execution: Yes`.
-- Prepare DRAFT-0004 for the proposed report artifact layout. Do not remove report Markdown, latest copies, or per-workflow indexes until an ADR is accepted.
+- Implement accepted ADR-0003 Option 3 after the shared eligibility, lint tooling, baseline, and task-selection corrections. Do not modify canonical report JSON or captured logs. Remove only the derived artifacts in ADR-0003 scope.
 - Verify all changes through naturally triggered hosted CI. Do not dispatch or poll.
 
 ## 9. Next Actions
-1. Promote DRAFT-0004 revision 1, Option 3, to accepted ADR-0003 after the full completeness and read-back gate. Do not migrate artifacts until acceptance.
-2. Implement the shared Actions eligibility predicate and reporter/Ledger consistency tests.
-3. Make failed lint tooling checks task-eligible without taskifying unbaselined lint findings. Deduplicate the existing failed-check observations.
-4. Reconcile propagation-only reports and their processed-report references against the shared eligibility predicate. Preserve genuine error evidence and stable finding/task references.
-5. Enforce exactly one Current Execution task and P0-before-non-P0 ordering.
-6. Execute the previously approved artifact-layout migration only after ADR-0003 acceptance and only within DRAFT-0004 Option 3 scope.
-7. Verify changes through naturally triggered hosted CI. Do not dispatch or poll.
+1. Implement one shared eligibility predicate for reporter retention and Ledger ingestion. Preserve incomplete-capture retry behavior and cancellation/propagation exclusions.
+2. Add independent lint tooling-check observations that remain task-eligible without a baseline. Never taskify unbaselined lint findings.
+3. Correct the DRAFT-0002 broken governance link without restoring the absent historical ADR file. Reprocess the four indexed failed-tooling reports and verify one stable finding/task identity.
+4. Reconcile propagation-only Actions reports and processed-report references against the shared eligibility predicate. Preserve genuine error evidence and stable finding/task references.
+5. Enforce exactly one Current Execution task across active task files and the board pointer. Keep P0-before-non-P0 ordering.
+6. Implement ADR-0003 Option 3 and satisfy all six Confirmation criteria. Preserve canonical JSON/log bytes and evidence paths.
+7. Verify through naturally triggered hosted CI. Do not dispatch or poll.
 
 ## 10. References
 
