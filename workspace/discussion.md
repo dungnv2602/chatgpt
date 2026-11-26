@@ -2,7 +2,7 @@
 
 ## Current Step
 
-- **2026-11-26:** Continue [task 20261126-142500](tasks/20261126-142500-repair-ci-task-generation-and-clear-reports.md): readback-verify the clean-start watermark correction, then statically audit source-workflow trigger/finalizer coverage and publication consistency. No tests, scripts, dispatch, or polling.
+- **2026-11-26:** Static audit of task publication consistency: review task-record/board write ordering and Ledger persistence, and check whether failures can leave orphan task records or board rows. Repair only confirmed transactional defects; no tests, scripts, dispatch, or polling.
 
 ## Open Discussions
 
