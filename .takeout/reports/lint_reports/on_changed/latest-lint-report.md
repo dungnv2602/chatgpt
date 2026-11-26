@@ -2,29 +2,29 @@
 
 - **Result:** Failed
 - **Schema version:** 1.1.0
-- **Run:** [#799](https://github.com/dungnv2602/chatgpt/actions/runs/45816537286)
-- **Run ID / attempt:** 45816537286 / 1
+- **Run:** [#800](https://github.com/dungnv2602/chatgpt/actions/runs/45816764437)
+- **Run ID / attempt:** 45816764437 / 1
 - **Workflow:** STE Lint Changed Documentation
-- **Branch / commit:** gpt / 8dc231ed8ac78ec53589b416b5b88b92a7a77b12
+- **Branch / commit:** gpt / acc1ace03f40f44398c849d7133ed63bf66f751e
 - **Event:** push
 - **Execution mode:** full-audit-fallback
 - **Baseline SHA:** Not applicable
-- **Linter source SHA:** 8dc231ed8ac78ec53589b416b5b88b92a7a77b12
-- **Generated (UTC):** 2026-11-26T12:07:06.624319+00:00
+- **Linter source SHA:** acc1ace03f40f44398c849d7133ed63bf66f751e
+- **Generated (UTC):** 2026-11-26T12:08:34.789376+00:00
 
 ## 1. Executive summary
 
 | Measure | Result |
 |---|---:|
-| Files evaluated | 90 |
-| Files that failed | 35 |
-| Files with findings | 66 |
-| Total findings | 788 |
-| Hard findings | 323 |
-| Advisory findings | 465 |
-| New findings | 0 |
-| Recurring findings | 788 |
-| Resolved findings | 0 |
+| Files evaluated | 89 |
+| Files that failed | 34 |
+| Files with findings | 64 |
+| Total findings | 757 |
+| Hard findings | 314 |
+| Advisory findings | 443 |
+| New findings | 1 |
+| Recurring findings | 756 |
+| Resolved findings | 32 |
 | Failed workflow checks | 1 |
 
 ## 2. Execution environment
@@ -51,7 +51,6 @@ This list is the exact set of Markdown files passed to the linter. It does not i
 - .agent/skills/grilling/SKILL.md
 - .agent/skills/internal-comms/examples/3p-updates.md
 - .agent/skills/drawing/README.md
-- workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md
 - .agent/skills/theme-factory/themes/midnight-galaxy.md
 - .agent/skills/skill-creator/SKILL.md
 - workspace/adr/README.md
@@ -148,10 +147,9 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/grilling/SKILL.md | FAIL | 6 | 4 | 0 | 289 | 2.1 | 1 |
 | .agent/skills/internal-comms/examples/3p-updates.md | FAIL | 3 | 1 | 0 | 552 | 0.5 | 1 |
 | .agent/skills/drawing/README.md | PASS | 0 | 0 | 0 | 406 | 0.0 | 0 |
-| workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md | FAIL | 29 | 9 | 0 | 3679 | 0.8 | 1 |
 | .agent/skills/theme-factory/themes/midnight-galaxy.md | PASS | 0 | 0 | 0 | 70 | 0.0 | 0 |
 | .agent/skills/skill-creator/SKILL.md | FAIL | 49 | 43 | 0 | 4775 | 1.0 | 1 |
-| workspace/adr/README.md | PASS | 1 | 0 | 0 | 542 | 0.2 | 0 |
+| workspace/adr/README.md | PASS | 0 | 0 | 0 | 523 | 0.0 | 0 |
 | .agent/skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md | PASS | 8 | 0 | 7 | 2716 | 0.3 | 0 |
 | .agent/skills/drawing/references/patterns/README.md | PASS | 1 | 0 | 0 | 795 | 0.1 | 0 |
 | workspace/ADR_TEMPLATE.md | PASS | 0 | 0 | 0 | 349 | 0.0 | 0 |
@@ -159,7 +157,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .takeout/images/README-2.md | FAIL | 10 | 2 | 0 | 2048 | 0.5 | 1 |
 | .agent/skills/theme-factory/themes/sunset-boulevard.md | PASS | 0 | 0 | 0 | 76 | 0.0 | 0 |
 | .agent/skills/drawing/references/patterns/successful-patterns.md | PASS | 6 | 0 | 0 | 816 | 0.7 | 0 |
-| workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | FAIL | 44 | 21 | 0 | 3299 | 1.3 | 1 |
+| workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md | FAIL | 44 | 21 | 0 | 3304 | 1.3 | 1 |
 | .agent/skills/define-goal/SKILL.md | FAIL | 11 | 9 | 0 | 857 | 1.3 | 1 |
 | .agent/skills/drawing/references/generation-recovery-and-provenance.md | PASS | 19 | 0 | 17 | 2756 | 0.7 | 0 |
 | .agent/skills/internal-comms/examples/faq-answers.md | FAIL | 7 | 4 | 0 | 403 | 1.7 | 1 |
@@ -201,7 +199,7 @@ The table includes every evaluated file, including files with zero findings and 
 | .agent/skills/migrate-to-rust/SKILL.md | FAIL | 21 | 15 | 0 | 1173 | 1.8 | 1 |
 | .agent/skills/theme-factory/themes/forest-canopy.md | PASS | 0 | 0 | 0 | 68 | 0.0 | 0 |
 | .agent/skills/skill-creator/references/schemas.md | PASS | 3 | 0 | 0 | 518 | 0.6 | 0 |
-| workspace/draft/README.md | FAIL | 5 | 3 | 0 | 703 | 0.7 | 1 |
+| workspace/draft/README.md | FAIL | 4 | 3 | 0 | 664 | 0.6 | 1 |
 | workspace/TASK_TEMPLATE.md | PASS | 5 | 0 | 0 | 461 | 1.1 | 0 |
 | .agent/skills/pdf/FORMS.md | FAIL | 13 | 8 | 0 | 1195 | 1.1 | 1 |
 | .agent/skills/theme-factory/themes/arctic-frost.md | PASS | 0 | 0 | 0 | 73 | 0.0 | 0 |
@@ -233,11 +231,11 @@ Counts include hard and advisory findings.
 
 | Rule | Findings |
 |---|---:|
-| passive-voice | 408 |
-| long-sentence | 138 |
-| semicolon | 113 |
-| synonym-rotation | 59 |
-| present-perfect | 57 |
+| passive-voice | 388 |
+| long-sentence | 137 |
+| semicolon | 110 |
+| present-perfect | 55 |
+| synonym-rotation | 54 |
 | marketing-adjective | 6 |
 | phrasal-verb | 5 |
 | nominalization | 2 |
@@ -272,7 +270,7 @@ No output captured.
 ~~~text
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.266s
+Ran 4 tests in 0.300s
 
 OK
 ~~~
@@ -305,7 +303,7 @@ selftest OK
 - **Exit code:** 1
 
 ~~~text
-Scanned 226 active Markdown files (300 available as link targets) and 341 local Markdown links.
+Scanned 226 active Markdown files (301 available as link targets) and 340 local Markdown links.
 Found 1 unresolved local Markdown targets or anchors.
 workspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md: missing Markdown file: ../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md
 ~~~
@@ -316,7 +314,10 @@ Fingerprints use the file path, rule, matched text, and diagnostic message. They
 
 ### New findings
 
-None.
+- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:221:62 · **new** · fingerprint: 6b4576cd5b0f0b9ac4699130
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was deleted
 
 ### Recurring findings
 
@@ -700,122 +701,6 @@ None.
   - **Level:** advisory
   - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
   - **Matched text:** has accomplished
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:53:94 · **recurring** · fingerprint: 6a3ca54f02a4a802730f9ca5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are authorized
-- **synonym-rotation** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:74:10 · **recurring** · fingerprint: 4621903243f090d0d442ffe6
-  - **Level:** advisory-free
-  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
-  - **Matched text:** delete
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:94:40 · **recurring** · fingerprint: aff7683986114e88487d435c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was read
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:96:53 · **recurring** · fingerprint: 3bb2a0c62c2c56b04316c88e
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was measured
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:96:127 · **recurring** · fingerprint: 1df5d558934693cccf35d0d6
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was run
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:108:38 · **recurring** · fingerprint: 8b826893d914225fd2372267
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-- **synonym-rotation** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:114:54 · **recurring** · fingerprint: 95298108fd76b748bca03dda
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** confirms
-- **synonym-rotation** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:126:171 · **recurring** · fingerprint: 960c9546d4c1a937617d9ec9
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:140:191 · **recurring** · fingerprint: f098520de7d802134fc62aba
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is generated
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:141:60 · **recurring** · fingerprint: cd1449236c9dd1aba1743490
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** been searched
-- **present-perfect** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:141:168 · **recurring** · fingerprint: d82d04e70d8424a15ee6e83e
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has been run
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:141:172 · **recurring** · fingerprint: 7e254b7a28a168704806e921
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** been run
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:153:189 · **recurring** · fingerprint: 955efe9c632bf8efab3bc3ba
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was tested
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:154:82 · **recurring** · fingerprint: 1f661997372e95a64e636a9a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was evaluated
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:161:103 · **recurring** · fingerprint: 583e41a353319c3163b680f5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are removed
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:161:164 · **recurring** · fingerprint: 583e41a353319c3163b680f5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are removed
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:163:46 · **recurring** · fingerprint: bcfe97722be3638a5acddf19
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are stored
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:163:115 · **recurring** · fingerprint: 25e5831267eff41f254f0d58
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is rendered
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:165:54 · **recurring** · fingerprint: ecf6bfcbaa69571b4e5c2937
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
-- **synonym-rotation** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:222:4 · **recurring** · fingerprint: 02b1c40aaab47d42d2dc615a
-  - **Level:** advisory-free
-  - **Message:** 'obtain' and 'retrieve' name the same action. Pick one and use it every time.
-  - **Matched text:** Obtain
-- **synonym-rotation** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:233:42 · **recurring** · fingerprint: 9be8d6980a67f6a272811c40
-  - **Level:** advisory-free
-  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** validate
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:239:29 · **recurring** · fingerprint: 613d21b7ddf111ca91d4ffb5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is requested
-- **long-sentence** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:3 · **recurring** · fingerprint: 42971dbadc3b98adf3726e57
-  - **Level:** advisory-free
-  - **Message:** Sentence has 34 words (cap 25). Split it.
-  - **Matched text:** 34 words
-- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:99 · **recurring** · fingerprint: 3ca754c0bfdddcf6eabde1aa
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:155 · **recurring** · fingerprint: 3ca754c0bfdddcf6eabde1aa
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:182 · **recurring** · fingerprint: 3ca754c0bfdddcf6eabde1aa
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:262:263 · **recurring** · fingerprint: c149bdff7e11f0ef00271153
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** were inspected
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:262:293 · **recurring** · fingerprint: 3bb2a0c62c2c56b04316c88e
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was measured
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:264:263 · **recurring** · fingerprint: 955efe9c632bf8efab3bc3ba
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was tested
 - **long-sentence** · .agent/skills/skill-creator/SKILL.md:3:100 · **recurring** · fingerprint: c0128c8cbc5de6229042e665
   - **Level:** advisory-free
   - **Message:** Sentence has 37 words (cap 25). Split it.
@@ -1012,10 +897,6 @@ None.
   - **Level:** advisory-free
   - **Message:** Sentence has 26 words (cap 25). Split it.
   - **Matched text:** 26 words
-- **present-perfect** · workspace/adr/README.md:69:25 · **recurring** · fingerprint: 4cf7287eb4ee4aa665924a57
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** have completed
 - **passive-voice** · .agent/skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md:7:89 · **recurring** · fingerprint: 164d4067e1e89a1f2ae2ca64
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
@@ -1388,10 +1269,6 @@ None.
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:221:61 · **recurring** · fingerprint: c587aa896559f5f5e3647f37
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is deleted
 - **semicolon** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:224:89 · **recurring** · fingerprint: 0d416a176834b9a3c1481769
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
@@ -2448,19 +2325,15 @@ None.
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **passive-voice** · workspace/draft/README.md:12:300 · **recurring** · fingerprint: 89d8063e2bc2ce9d9a085681
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is accepted
-- **long-sentence** · workspace/draft/README.md:23:4 · **recurring** · fingerprint: fa0ad26c0f4696b24c6e471f
+- **long-sentence** · workspace/draft/README.md:19:4 · **recurring** · fingerprint: fa0ad26c0f4696b24c6e471f
   - **Level:** advisory-free
   - **Message:** Sentence has 28 words (cap 25). Split it.
   - **Matched text:** 28 words
-- **semicolon** · workspace/draft/README.md:25:305 · **recurring** · fingerprint: 388932780643d2141e1a4492
+- **semicolon** · workspace/draft/README.md:21:305 · **recurring** · fingerprint: 388932780643d2141e1a4492
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
-- **passive-voice** · workspace/draft/README.md:27:136 · **recurring** · fingerprint: 23958065d6cbd83c298c65e2
+- **passive-voice** · workspace/draft/README.md:23:136 · **recurring** · fingerprint: 23958065d6cbd83c298c65e2
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been assessed
@@ -3475,7 +3348,134 @@ None.
 
 ### Resolved findings
 
-None.
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:53:94 · **resolved** · fingerprint: 6a3ca54f02a4a802730f9ca5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are authorized
+- **synonym-rotation** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:74:10 · **resolved** · fingerprint: 4621903243f090d0d442ffe6
+  - **Level:** advisory-free
+  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
+  - **Matched text:** delete
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:94:40 · **resolved** · fingerprint: aff7683986114e88487d435c
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was read
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:96:53 · **resolved** · fingerprint: 3bb2a0c62c2c56b04316c88e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was measured
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:96:127 · **resolved** · fingerprint: 1df5d558934693cccf35d0d6
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was run
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:108:38 · **resolved** · fingerprint: 8b826893d914225fd2372267
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is required
+- **synonym-rotation** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:114:54 · **resolved** · fingerprint: 95298108fd76b748bca03dda
+  - **Level:** advisory-free
+  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** confirms
+- **synonym-rotation** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:126:171 · **resolved** · fingerprint: 960c9546d4c1a937617d9ec9
+  - **Level:** advisory-free
+  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** verify
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:140:191 · **resolved** · fingerprint: f098520de7d802134fc62aba
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is generated
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:141:60 · **resolved** · fingerprint: cd1449236c9dd1aba1743490
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been searched
+- **present-perfect** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:141:168 · **resolved** · fingerprint: d82d04e70d8424a15ee6e83e
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** has been run
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:141:172 · **resolved** · fingerprint: 7e254b7a28a168704806e921
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** been run
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:153:189 · **resolved** · fingerprint: 955efe9c632bf8efab3bc3ba
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was tested
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:154:82 · **resolved** · fingerprint: 1f661997372e95a64e636a9a
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was evaluated
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:161:103 · **resolved** · fingerprint: 583e41a353319c3163b680f5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are removed
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:161:164 · **resolved** · fingerprint: 583e41a353319c3163b680f5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are removed
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:163:46 · **resolved** · fingerprint: bcfe97722be3638a5acddf19
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** are stored
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:163:115 · **resolved** · fingerprint: 25e5831267eff41f254f0d58
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is rendered
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:165:54 · **resolved** · fingerprint: ecf6bfcbaa69571b4e5c2937
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is needed
+- **synonym-rotation** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:222:4 · **resolved** · fingerprint: 02b1c40aaab47d42d2dc615a
+  - **Level:** advisory-free
+  - **Message:** 'obtain' and 'retrieve' name the same action. Pick one and use it every time.
+  - **Matched text:** Obtain
+- **synonym-rotation** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:233:42 · **resolved** · fingerprint: 9be8d6980a67f6a272811c40
+  - **Level:** advisory-free
+  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
+  - **Matched text:** validate
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:239:29 · **resolved** · fingerprint: 613d21b7ddf111ca91d4ffb5
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is requested
+- **long-sentence** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:3 · **resolved** · fingerprint: 42971dbadc3b98adf3726e57
+  - **Level:** advisory-free
+  - **Message:** Sentence has 34 words (cap 25). Split it.
+  - **Matched text:** 34 words
+- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:99 · **resolved** · fingerprint: 3ca754c0bfdddcf6eabde1aa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:155 · **resolved** · fingerprint: 3ca754c0bfdddcf6eabde1aa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:182 · **resolved** · fingerprint: 3ca754c0bfdddcf6eabde1aa
+  - **Level:** advisory-free
+  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
+  - **Matched text:** ;
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:262:263 · **resolved** · fingerprint: c149bdff7e11f0ef00271153
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** were inspected
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:262:293 · **resolved** · fingerprint: 3bb2a0c62c2c56b04316c88e
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was measured
+- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:264:263 · **resolved** · fingerprint: 955efe9c632bf8efab3bc3ba
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** was tested
+- **present-perfect** · workspace/adr/README.md:69:25 · **resolved** · fingerprint: 4cf7287eb4ee4aa665924a57
+  - **Level:** advisory
+  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
+  - **Matched text:** have completed
+- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:221:61 · **resolved** · fingerprint: c587aa896559f5f5e3647f37
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is deleted
+- **passive-voice** · workspace/draft/README.md:12:300 · **resolved** · fingerprint: 89d8063e2bc2ce9d9a085681
+  - **Level:** advisory
+  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
+  - **Matched text:** is accepted
 
 ## 8. Complete per-file diagnostics
 
@@ -4112,164 +4112,6 @@ No STE findings were recorded for this file.
 No STE findings were recorded for this file.
 
 
-### workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md
-
-- **Result:** FAIL
-- **Exit code:** 1
-- **Findings:** 29
-- **Hard findings:** 9
-- **Baseline:** 0
-- **Words:** 3679
-- **Findings per 100 words:** 0.8
-
-#### Complete diagnostics
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:53:94 · **recurring** · fingerprint: 6a3ca54f02a4a802730f9ca5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are authorized
-
-- **synonym-rotation** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:74:10 · **recurring** · fingerprint: 4621903243f090d0d442ffe6
-  - **Level:** advisory-free
-  - **Message:** 'delete' and 'remove' name the same action. Pick one and use it every time.
-  - **Matched text:** delete
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:94:40 · **recurring** · fingerprint: aff7683986114e88487d435c
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was read
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:96:53 · **recurring** · fingerprint: 3bb2a0c62c2c56b04316c88e
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was measured
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:96:127 · **recurring** · fingerprint: 1df5d558934693cccf35d0d6
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was run
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:108:38 · **recurring** · fingerprint: 8b826893d914225fd2372267
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is required
-
-- **synonym-rotation** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:114:54 · **recurring** · fingerprint: 95298108fd76b748bca03dda
-  - **Level:** advisory-free
-  - **Message:** 'confirm' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** confirms
-
-- **synonym-rotation** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:126:171 · **recurring** · fingerprint: 960c9546d4c1a937617d9ec9
-  - **Level:** advisory-free
-  - **Message:** 'verify' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** verify
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:140:191 · **recurring** · fingerprint: f098520de7d802134fc62aba
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is generated
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:141:60 · **recurring** · fingerprint: cd1449236c9dd1aba1743490
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** been searched
-
-- **present-perfect** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:141:168 · **recurring** · fingerprint: d82d04e70d8424a15ee6e83e
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** has been run
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:141:172 · **recurring** · fingerprint: 7e254b7a28a168704806e921
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** been run
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:153:189 · **recurring** · fingerprint: 955efe9c632bf8efab3bc3ba
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was tested
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:154:82 · **recurring** · fingerprint: 1f661997372e95a64e636a9a
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was evaluated
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:161:103 · **recurring** · fingerprint: 583e41a353319c3163b680f5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are removed
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:161:164 · **recurring** · fingerprint: 583e41a353319c3163b680f5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are removed
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:163:46 · **recurring** · fingerprint: bcfe97722be3638a5acddf19
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** are stored
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:163:115 · **recurring** · fingerprint: 25e5831267eff41f254f0d58
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is rendered
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:165:54 · **recurring** · fingerprint: ecf6bfcbaa69571b4e5c2937
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is needed
-
-- **synonym-rotation** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:222:4 · **recurring** · fingerprint: 02b1c40aaab47d42d2dc615a
-  - **Level:** advisory-free
-  - **Message:** 'obtain' and 'retrieve' name the same action. Pick one and use it every time.
-  - **Matched text:** Obtain
-
-- **synonym-rotation** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:233:42 · **recurring** · fingerprint: 9be8d6980a67f6a272811c40
-  - **Level:** advisory-free
-  - **Message:** 'validate' and 'check' name the same action. Pick one and use it every time.
-  - **Matched text:** validate
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:239:29 · **recurring** · fingerprint: 613d21b7ddf111ca91d4ffb5
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is requested
-
-- **long-sentence** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:3 · **recurring** · fingerprint: 42971dbadc3b98adf3726e57
-  - **Level:** advisory-free
-  - **Message:** Sentence has 34 words (cap 25). Split it.
-  - **Matched text:** 34 words
-
-- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:99 · **recurring** · fingerprint: 3ca754c0bfdddcf6eabde1aa
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:155 · **recurring** · fingerprint: 3ca754c0bfdddcf6eabde1aa
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **semicolon** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:245:182 · **recurring** · fingerprint: 3ca754c0bfdddcf6eabde1aa
-  - **Level:** advisory-free
-  - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
-  - **Matched text:** ;
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:262:263 · **recurring** · fingerprint: c149bdff7e11f0ef00271153
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** were inspected
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:262:293 · **recurring** · fingerprint: 3bb2a0c62c2c56b04316c88e
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was measured
-
-- **passive-voice** · workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md:264:263 · **recurring** · fingerprint: 955efe9c632bf8efab3bc3ba
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** was tested
-
-
 ### .agent/skills/theme-factory/themes/midnight-galaxy.md
 
 - **Result:** PASS
@@ -4545,18 +4387,13 @@ No STE findings were recorded for this file.
 
 - **Result:** PASS
 - **Exit code:** 0
-- **Findings:** 1
+- **Findings:** 0
 - **Hard findings:** 0
 - **Baseline:** 0
-- **Words:** 542
-- **Findings per 100 words:** 0.2
+- **Words:** 523
+- **Findings per 100 words:** 0.0
 
-#### Complete diagnostics
-
-- **present-perfect** · workspace/adr/README.md:69:25 · **recurring** · fingerprint: 4cf7287eb4ee4aa665924a57
-  - **Level:** advisory
-  - **Message:** Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).
-  - **Matched text:** have completed
+No STE findings were recorded for this file.
 
 
 ### .agent/skills/philosophy-religion-asceticism/references/schopenhauer-44-week-curriculum.md
@@ -4952,7 +4789,7 @@ No STE findings were recorded for this file.
 - **Findings:** 44
 - **Hard findings:** 21
 - **Baseline:** 0
-- **Words:** 3299
+- **Words:** 3304
 - **Findings per 100 words:** 1.3
 
 #### Complete diagnostics
@@ -5127,10 +4964,10 @@ No STE findings were recorded for this file.
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:221:61 · **recurring** · fingerprint: c587aa896559f5f5e3647f37
+- **passive-voice** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:221:62 · **new** · fingerprint: 6b4576cd5b0f0b9ac4699130
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is deleted
+  - **Matched text:** was deleted
 
 - **semicolon** · workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md:224:89 · **recurring** · fingerprint: 0d416a176834b9a3c1481769
   - **Level:** advisory-free
@@ -6985,11 +6822,11 @@ No STE findings were recorded for this file.
 
 - **Result:** FAIL
 - **Exit code:** 1
-- **Findings:** 5
+- **Findings:** 4
 - **Hard findings:** 3
 - **Baseline:** 0
-- **Words:** 703
-- **Findings per 100 words:** 0.7
+- **Words:** 664
+- **Findings per 100 words:** 0.6
 
 #### Complete diagnostics
 
@@ -6998,22 +6835,17 @@ No STE findings were recorded for this file.
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · workspace/draft/README.md:12:300 · **recurring** · fingerprint: 89d8063e2bc2ce9d9a085681
-  - **Level:** advisory
-  - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
-  - **Matched text:** is accepted
-
-- **long-sentence** · workspace/draft/README.md:23:4 · **recurring** · fingerprint: fa0ad26c0f4696b24c6e471f
+- **long-sentence** · workspace/draft/README.md:19:4 · **recurring** · fingerprint: fa0ad26c0f4696b24c6e471f
   - **Level:** advisory-free
   - **Message:** Sentence has 28 words (cap 25). Split it.
   - **Matched text:** 28 words
 
-- **semicolon** · workspace/draft/README.md:25:305 · **recurring** · fingerprint: 388932780643d2141e1a4492
+- **semicolon** · workspace/draft/README.md:21:305 · **recurring** · fingerprint: 388932780643d2141e1a4492
   - **Level:** advisory-free
   - **Message:** STE bans the semicolon (Rule 8.1). Split into separate sentences.
   - **Matched text:** ;
 
-- **passive-voice** · workspace/draft/README.md:27:136 · **recurring** · fingerprint: 23958065d6cbd83c298c65e2
+- **passive-voice** · workspace/draft/README.md:23:136 · **recurring** · fingerprint: 23958065d6cbd83c298c65e2
   - **Level:** advisory
   - **Message:** Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.
   - **Matched text:** been assessed

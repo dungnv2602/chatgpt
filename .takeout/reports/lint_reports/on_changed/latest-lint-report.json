@@ -1,20 +1,20 @@
 {
   "schema_version": "1.1.0",
   "scope": "on_changed",
-  "run_id": "45816537286",
-  "run_number": 799,
-  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45816537286",
+  "run_id": "45816764437",
+  "run_number": 800,
+  "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45816764437",
   "attempt": 1,
   "branch": "gpt",
-  "commit_sha": "8dc231ed8ac78ec53589b416b5b88b92a7a77b12",
+  "commit_sha": "acc1ace03f40f44398c849d7133ed63bf66f751e",
   "event": "push",
   "workflow": "STE Lint Changed Documentation",
   "runner_os": "Linux",
   "execution_mode": "full-audit-fallback",
   "baseline_sha": null,
-  "generated_at_utc": "2026-11-26T12:07:06.624319+00:00",
+  "generated_at_utc": "2026-11-26T12:08:34.789376+00:00",
   "status": "Failed",
-  "linter_source_sha": "8dc231ed8ac78ec53589b416b5b88b92a7a77b12",
+  "linter_source_sha": "acc1ace03f40f44398c849d7133ed63bf66f751e",
   "runtime": {
     "python": "3.15.2 (main, Oct 26 2026, 14:39:36) [GCC 15.2.0]",
     "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43"
@@ -32,7 +32,6 @@
     ".agent/skills/grilling/SKILL.md",
     ".agent/skills/internal-comms/examples/3p-updates.md",
     ".agent/skills/drawing/README.md",
-    "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
     ".agent/skills/theme-factory/themes/midnight-galaxy.md",
     ".agent/skills/skill-creator/SKILL.md",
     "workspace/adr/README.md",
@@ -111,8 +110,8 @@
     ".agent/skills/theme-factory/SKILL.md",
     ".agent/skills/the-worker/assets/conversation-integrity-template.md"
   ],
-  "files_evaluated_count": 90,
-  "files_failed": 35,
+  "files_evaluated_count": 89,
+  "files_failed": 34,
   "failed_files": [
     ".agent/skills/skill-creator/agents/grader.md",
     ".agent/skills/skill-creator/agents/analyzer.md",
@@ -121,7 +120,6 @@
     ".agent/skills/internal-comms/SKILL.md",
     ".agent/skills/grilling/SKILL.md",
     ".agent/skills/internal-comms/examples/3p-updates.md",
-    "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
     ".agent/skills/skill-creator/SKILL.md",
     ".agent/skills/xlsx/SKILL.md",
     ".takeout/images/README-2.md",
@@ -150,16 +148,16 @@
     ".agent/skills/theme-factory/SKILL.md",
     ".agent/skills/the-worker/assets/conversation-integrity-template.md"
   ],
-  "files_with_findings": 66,
-  "total_findings": 788,
-  "hard_findings": 323,
-  "advisory_findings": 465,
+  "files_with_findings": 64,
+  "total_findings": 757,
+  "hard_findings": 314,
+  "advisory_findings": 443,
   "findings_by_rule": {
-    "synonym-rotation": 59,
-    "passive-voice": 408,
-    "present-perfect": 57,
-    "semicolon": 113,
-    "long-sentence": 138,
+    "synonym-rotation": 54,
+    "passive-voice": 388,
+    "present-perfect": 55,
+    "semicolon": 110,
+    "long-sentence": 137,
     "marketing-adjective": 6,
     "phrasal-verb": 5,
     "nominalization": 2
@@ -1151,278 +1149,6 @@
       "exit_code": 0
     },
     {
-      "violations": [
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 53,
-          "col": 94,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are authorized",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 74,
-          "col": 10,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "delete",
-          "message": "'delete' and 'remove' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 94,
-          "col": 40,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "was read",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 96,
-          "col": 53,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "was measured",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 96,
-          "col": 127,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "was run",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 108,
-          "col": 38,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is required",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 114,
-          "col": 54,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "confirms",
-          "message": "'confirm' and 'check' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 126,
-          "col": 171,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "verify",
-          "message": "'verify' and 'check' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 140,
-          "col": 191,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is generated",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 141,
-          "col": 60,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "been searched",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 141,
-          "col": 168,
-          "rule": "present-perfect",
-          "level": "advisory",
-          "match": "has been run",
-          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 141,
-          "col": 172,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "been run",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 153,
-          "col": 189,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "was tested",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 154,
-          "col": 82,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "was evaluated",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 161,
-          "col": 103,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are removed",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 161,
-          "col": 164,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are removed",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 163,
-          "col": 46,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "are stored",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 163,
-          "col": 115,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is rendered",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 165,
-          "col": 54,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is needed",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 222,
-          "col": 4,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "Obtain",
-          "message": "'obtain' and 'retrieve' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 233,
-          "col": 42,
-          "rule": "synonym-rotation",
-          "level": "advisory-free",
-          "match": "validate",
-          "message": "'validate' and 'check' name the same action. Pick one and use it every time."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 239,
-          "col": 29,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is requested",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 245,
-          "col": 3,
-          "rule": "long-sentence",
-          "level": "advisory-free",
-          "match": "34 words",
-          "message": "Sentence has 34 words (cap 25). Split it."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 245,
-          "col": 99,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 245,
-          "col": 155,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 245,
-          "col": 182,
-          "rule": "semicolon",
-          "level": "advisory-free",
-          "match": ";",
-          "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 262,
-          "col": 263,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "were inspected",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 262,
-          "col": 293,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "was measured",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-          "line": 264,
-          "col": 263,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "was tested",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        }
-      ],
-      "count": 29,
-      "hard_count": 9,
-      "baseline": 0,
-      "words": 3679,
-      "per_100_words": 0.8,
-      "path": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "exit_code": 1
-    },
-    {
       "violations": [],
       "count": 0,
       "hard_count": 0,
@@ -1885,22 +1611,12 @@
       "exit_code": 1
     },
     {
-      "violations": [
-        {
-          "file": "workspace/adr/README.md",
-          "line": 69,
-          "col": 25,
-          "rule": "present-perfect",
-          "level": "advisory",
-          "match": "have completed",
-          "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag)."
-        }
-      ],
-      "count": 1,
+      "violations": [],
+      "count": 0,
       "hard_count": 0,
       "baseline": 0,
-      "words": 542,
-      "per_100_words": 0.2,
+      "words": 523,
+      "per_100_words": 0.0,
       "path": "workspace/adr/README.md",
       "exit_code": 0
     },
@@ -2821,10 +2537,10 @@
         {
           "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
           "line": 221,
-          "col": 61,
+          "col": 62,
           "rule": "passive-voice",
           "level": "advisory",
-          "match": "is deleted",
+          "match": "was deleted",
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         },
         {
@@ -2912,7 +2628,7 @@
       "count": 44,
       "hard_count": 21,
       "baseline": 0,
-      "words": 3299,
+      "words": 3304,
       "per_100_words": 1.3,
       "path": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
       "exit_code": 1
@@ -5655,16 +5371,7 @@
         },
         {
           "file": "workspace/draft/README.md",
-          "line": 12,
-          "col": 300,
-          "rule": "passive-voice",
-          "level": "advisory",
-          "match": "is accepted",
-          "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
-        },
-        {
-          "file": "workspace/draft/README.md",
-          "line": 23,
+          "line": 19,
           "col": 4,
           "rule": "long-sentence",
           "level": "advisory-free",
@@ -5673,7 +5380,7 @@
         },
         {
           "file": "workspace/draft/README.md",
-          "line": 25,
+          "line": 21,
           "col": 305,
           "rule": "semicolon",
           "level": "advisory-free",
@@ -5682,7 +5389,7 @@
         },
         {
           "file": "workspace/draft/README.md",
-          "line": 27,
+          "line": 23,
           "col": 136,
           "rule": "passive-voice",
           "level": "advisory",
@@ -5690,11 +5397,11 @@
           "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant."
         }
       ],
-      "count": 5,
+      "count": 4,
       "hard_count": 3,
       "baseline": 0,
-      "words": 703,
-      "per_100_words": 0.7,
+      "words": 664,
+      "per_100_words": 0.6,
       "path": "workspace/draft/README.md",
       "exit_code": 1
     },
@@ -9271,325 +8978,6 @@
       "comparison": "recurring"
     },
     {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 53,
-      "col": 94,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are authorized",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "6a3ca54f02a4a802730f9ca5",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 74,
-      "col": 10,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "delete",
-      "message": "'delete' and 'remove' name the same action. Pick one and use it every time.",
-      "fingerprint": "4621903243f090d0d442ffe6",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 94,
-      "col": 40,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was read",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "aff7683986114e88487d435c",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 96,
-      "col": 53,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was measured",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "3bb2a0c62c2c56b04316c88e",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 96,
-      "col": 127,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was run",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "1df5d558934693cccf35d0d6",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 108,
-      "col": 38,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is required",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "8b826893d914225fd2372267",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 114,
-      "col": 54,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "confirms",
-      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "95298108fd76b748bca03dda",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 126,
-      "col": 171,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "verify",
-      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "960c9546d4c1a937617d9ec9",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 140,
-      "col": 191,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is generated",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "f098520de7d802134fc62aba",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 141,
-      "col": 60,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "been searched",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "cd1449236c9dd1aba1743490",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 141,
-      "col": 168,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "has been run",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "d82d04e70d8424a15ee6e83e",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 141,
-      "col": 172,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "been run",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "7e254b7a28a168704806e921",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 153,
-      "col": 189,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was tested",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "955efe9c632bf8efab3bc3ba",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 154,
-      "col": 82,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was evaluated",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "1f661997372e95a64e636a9a",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 161,
-      "col": 103,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are removed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "583e41a353319c3163b680f5",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 161,
-      "col": 164,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are removed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "583e41a353319c3163b680f5",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 163,
-      "col": 46,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "are stored",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "bcfe97722be3638a5acddf19",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 163,
-      "col": 115,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is rendered",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "25e5831267eff41f254f0d58",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 165,
-      "col": 54,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is needed",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "ecf6bfcbaa69571b4e5c2937",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 222,
-      "col": 4,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "Obtain",
-      "message": "'obtain' and 'retrieve' name the same action. Pick one and use it every time.",
-      "fingerprint": "02b1c40aaab47d42d2dc615a",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 233,
-      "col": 42,
-      "rule": "synonym-rotation",
-      "level": "advisory-free",
-      "match": "validate",
-      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
-      "fingerprint": "9be8d6980a67f6a272811c40",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 239,
-      "col": 29,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is requested",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "613d21b7ddf111ca91d4ffb5",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 245,
-      "col": 3,
-      "rule": "long-sentence",
-      "level": "advisory-free",
-      "match": "34 words",
-      "message": "Sentence has 34 words (cap 25). Split it.",
-      "fingerprint": "42971dbadc3b98adf3726e57",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 245,
-      "col": 99,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "3ca754c0bfdddcf6eabde1aa",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 245,
-      "col": 155,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "3ca754c0bfdddcf6eabde1aa",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 245,
-      "col": 182,
-      "rule": "semicolon",
-      "level": "advisory-free",
-      "match": ";",
-      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
-      "fingerprint": "3ca754c0bfdddcf6eabde1aa",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 262,
-      "col": 263,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "were inspected",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "c149bdff7e11f0ef00271153",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 262,
-      "col": 293,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was measured",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "3bb2a0c62c2c56b04316c88e",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
-      "line": 264,
-      "col": 263,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "was tested",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "955efe9c632bf8efab3bc3ba",
-      "comparison": "recurring"
-    },
-    {
       "file": ".agent/skills/skill-creator/SKILL.md",
       "line": 3,
       "col": 100,
@@ -10126,17 +9514,6 @@
       "match": "26 words",
       "message": "Sentence has 26 words (cap 25). Split it.",
       "fingerprint": "0144c24eee82255498c96af9",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/adr/README.md",
-      "line": 69,
-      "col": 25,
-      "rule": "present-perfect",
-      "level": "advisory",
-      "match": "have completed",
-      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
-      "fingerprint": "4cf7287eb4ee4aa665924a57",
       "comparison": "recurring"
     },
     {
@@ -11165,13 +10542,13 @@
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
       "line": 221,
-      "col": 61,
+      "col": 62,
       "rule": "passive-voice",
       "level": "advisory",
-      "match": "is deleted",
+      "match": "was deleted",
       "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "c587aa896559f5f5e3647f37",
-      "comparison": "recurring"
+      "fingerprint": "6b4576cd5b0f0b9ac4699130",
+      "comparison": "new"
     },
     {
       "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
@@ -14079,18 +13456,7 @@
     },
     {
       "file": "workspace/draft/README.md",
-      "line": 12,
-      "col": 300,
-      "rule": "passive-voice",
-      "level": "advisory",
-      "match": "is accepted",
-      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
-      "fingerprint": "89d8063e2bc2ce9d9a085681",
-      "comparison": "recurring"
-    },
-    {
-      "file": "workspace/draft/README.md",
-      "line": 23,
+      "line": 19,
       "col": 4,
       "rule": "long-sentence",
       "level": "advisory-free",
@@ -14101,7 +13467,7 @@
     },
     {
       "file": "workspace/draft/README.md",
-      "line": 25,
+      "line": 21,
       "col": 305,
       "rule": "semicolon",
       "level": "advisory-free",
@@ -14112,7 +13478,7 @@
     },
     {
       "file": "workspace/draft/README.md",
-      "line": 27,
+      "line": 23,
       "col": 136,
       "rule": "passive-voice",
       "level": "advisory",
@@ -16894,9 +16260,362 @@
       "comparison": "recurring"
     }
   ],
-  "new_findings": 0,
-  "recurring_findings": 788,
-  "resolved_findings": [],
+  "new_findings": 1,
+  "recurring_findings": 756,
+  "resolved_findings": [
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 53,
+      "col": 94,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are authorized",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "6a3ca54f02a4a802730f9ca5",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 74,
+      "col": 10,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "delete",
+      "message": "'delete' and 'remove' name the same action. Pick one and use it every time.",
+      "fingerprint": "4621903243f090d0d442ffe6",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 94,
+      "col": 40,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was read",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "aff7683986114e88487d435c",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 96,
+      "col": 53,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was measured",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "3bb2a0c62c2c56b04316c88e",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 96,
+      "col": 127,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was run",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "1df5d558934693cccf35d0d6",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 108,
+      "col": 38,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is required",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "8b826893d914225fd2372267",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 114,
+      "col": 54,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "confirms",
+      "message": "'confirm' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "95298108fd76b748bca03dda",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 126,
+      "col": 171,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "verify",
+      "message": "'verify' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "960c9546d4c1a937617d9ec9",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 140,
+      "col": 191,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is generated",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "f098520de7d802134fc62aba",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 141,
+      "col": 60,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "been searched",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "cd1449236c9dd1aba1743490",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 141,
+      "col": 168,
+      "rule": "present-perfect",
+      "level": "advisory",
+      "match": "has been run",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "d82d04e70d8424a15ee6e83e",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 141,
+      "col": 172,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "been run",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "7e254b7a28a168704806e921",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 153,
+      "col": 189,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was tested",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "955efe9c632bf8efab3bc3ba",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 154,
+      "col": 82,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was evaluated",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "1f661997372e95a64e636a9a",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 161,
+      "col": 103,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are removed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "583e41a353319c3163b680f5",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 161,
+      "col": 164,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are removed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "583e41a353319c3163b680f5",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 163,
+      "col": 46,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "are stored",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "bcfe97722be3638a5acddf19",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 163,
+      "col": 115,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is rendered",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "25e5831267eff41f254f0d58",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 165,
+      "col": 54,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is needed",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "ecf6bfcbaa69571b4e5c2937",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 222,
+      "col": 4,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "Obtain",
+      "message": "'obtain' and 'retrieve' name the same action. Pick one and use it every time.",
+      "fingerprint": "02b1c40aaab47d42d2dc615a",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 233,
+      "col": 42,
+      "rule": "synonym-rotation",
+      "level": "advisory-free",
+      "match": "validate",
+      "message": "'validate' and 'check' name the same action. Pick one and use it every time.",
+      "fingerprint": "9be8d6980a67f6a272811c40",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 239,
+      "col": 29,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is requested",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "613d21b7ddf111ca91d4ffb5",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 245,
+      "col": 3,
+      "rule": "long-sentence",
+      "level": "advisory-free",
+      "match": "34 words",
+      "message": "Sentence has 34 words (cap 25). Split it.",
+      "fingerprint": "42971dbadc3b98adf3726e57",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 245,
+      "col": 99,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "3ca754c0bfdddcf6eabde1aa",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 245,
+      "col": 155,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "3ca754c0bfdddcf6eabde1aa",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 245,
+      "col": 182,
+      "rule": "semicolon",
+      "level": "advisory-free",
+      "match": ";",
+      "message": "STE bans the semicolon (Rule 8.1). Split into separate sentences.",
+      "fingerprint": "3ca754c0bfdddcf6eabde1aa",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 262,
+      "col": 263,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "were inspected",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "c149bdff7e11f0ef00271153",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 262,
+      "col": 293,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was measured",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "3bb2a0c62c2c56b04316c88e",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/DRAFT-0004-canonical-github-actions-report-artifact-layout.md",
+      "line": 264,
+      "col": 263,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "was tested",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "955efe9c632bf8efab3bc3ba",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/adr/README.md",
+      "line": 69,
+      "col": 25,
+      "rule": "present-perfect",
+      "level": "advisory",
+      "match": "have completed",
+      "message": "Compound tense. Use simple past/present unless current relevance is the point (then keep and flag).",
+      "fingerprint": "4cf7287eb4ee4aa665924a57",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/adr/0003-canonical-github-actions-diagnostic-report-artifact-layout.md",
+      "line": 221,
+      "col": 61,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is deleted",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "c587aa896559f5f5e3647f37",
+      "comparison": "resolved"
+    },
+    {
+      "file": "workspace/draft/README.md",
+      "line": 12,
+      "col": 300,
+      "rule": "passive-voice",
+      "level": "advisory",
+      "match": "is accepted",
+      "message": "Possible passive voice. Name the actor and use an active verb, unless the actor is unknown or irrelevant.",
+      "fingerprint": "89d8063e2bc2ce9d9a085681",
+      "comparison": "resolved"
+    }
+  ],
   "checks": [
     {
       "name": "Wrapper shell syntax",
@@ -16914,7 +16633,7 @@
       "name": "Lint report regression tests",
       "status": "Passed",
       "exit_code": 0,
-      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.266s\n\nOK\n"
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.300s\n\nOK\n"
     },
     {
       "name": "Markdown anchor regression tests",
@@ -16932,7 +16651,7 @@
       "name": "Markdown links and heading anchors",
       "status": "Failed",
       "exit_code": 1,
-      "output": "Scanned 226 active Markdown files (300 available as link targets) and 341 local Markdown links.\nFound 1 unresolved local Markdown targets or anchors.\nworkspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md: missing Markdown file: ../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md\n"
+      "output": "Scanned 226 active Markdown files (301 available as link targets) and 340 local Markdown links.\nFound 1 unresolved local Markdown targets or anchors.\nworkspace/draft/DRAFT-0002-phase-aware-planning-and-evidence-capture.md: missing Markdown file: ../../.archive/adr/0001-establish-draft-to-adr-governance-and-repository-analysis.md\n"
     }
   ],
   "failed_checks": [
