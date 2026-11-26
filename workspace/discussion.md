@@ -1,5 +1,8 @@
 ## Current Step
 
+**Startup notice — 2026-11-26:** `/start` requested. Foundational retrieval for this session is beginning; the current repository task remains `20261126-021200`.
+
+
 Execute task [20261126-021200](tasks/20261126-021200-complete-reconstructed-repository-consistency-audit.md): trace image contracts, audit active README/skills/scripts/workflows, and repair verified discrepancies.
 
 ## Open Discussions
