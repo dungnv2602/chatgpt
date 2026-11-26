@@ -68,14 +68,21 @@ Immediately remediate the CI Ledger findings grouped below, preserving validatio
 - **References:** [Synonym correction](https://github.com/dungnv2602/chatgpt/commit/10d05fb67773a7c244bf8c175fe4cf0a6b000f40), [report 45841101397](https://github.com/dungnv2602/chatgpt/actions/runs/45841101397).
 - **Next:** Review the next event-driven lint report for this finding group. Resolve it only after successful relevant validation.
 
+### 2026-11-26 14:58 UTC
+
+- **Action:** Corrected the remaining DRAFT-0002 synonym finding in the comparative matrix.
+- **Result:** Replaced "automation validates" with "automation checks", matching the established verb used in the adjacent matrix row. Commit [52041ce](https://github.com/dungnv2602/chatgpt/commit/52041ceb40792d0805ba4c2a9ca34d805441e3d4) preserves revision 4 and the pending user-approval state. The source edit is committed. Hosted validation remains pending.
+- **References:** [Synonym correction](https://github.com/dungnv2602/chatgpt/commit/52041ceb40792d0805ba4c2a9ca34d805441e3d4), [prior hosted report 45843115356](https://github.com/dungnv2602/chatgpt/actions/runs/45843115356).
+- **Next:** Review the next naturally available STE lint report. Resolve this task only after DRAFT-0002 passes with no remaining findings.
+
 ## 7. Current State
 
-The Ledger recorded this finding group. DRAFT-0002 revision 4 contains the remediation commit. Hosted validation remains pending.
+DRAFT-0002 revision 4 contains the synonym corrections in commits 10d05fb and 52041ce. Report 45843115356 identified one remaining finding at line 241. Commit 52041ce corrects it. Hosted validation remains pending.
 
 ## 8. Remaining Work
 
-- Review the next event-driven lint report for this finding group after commit 10d05fb.
-- Resolve the group only after a successful relevant validation is recorded.
+- Review the next event-driven lint report after commit 52041ce.
+- Resolve the group only after DRAFT-0002 passes relevant validation with no remaining findings.
 
 ## 9. Next Actions
 
