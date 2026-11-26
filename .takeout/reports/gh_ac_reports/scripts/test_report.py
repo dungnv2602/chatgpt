@@ -327,7 +327,9 @@ class HistoricalRetentionTests(unittest.TestCase):
 
             result = REPORT.prune_invalid_history(root)
             index = REPORT.load_index(root)
-            self.assertEqual(result, {"removed": 3, "retained": 2, "migrated_markdown": 2})
+            self.assertEqual(result, {
+                "removed": 3, "retained": 2, "migrated_markdown": 2, "verified_integrity": 2,
+            })
             self.assertEqual({item["run_id"] for item in index["runs"]}, {"103", "104"})
             self.assertEqual(index["pending_run_ids"], ["100"])
             self.assertEqual(index["latest_report"]["run_id"], "104")
@@ -346,6 +348,21 @@ class HistoricalRetentionTests(unittest.TestCase):
                 self.assertEqual(set(manifest["files"]), {"report.json", "logs/job-1.log"})
                 for relative, digest in manifest["files"].items():
                     self.assertEqual(hashlib.sha256((folder / relative).read_bytes()).hexdigest(), digest)
+
+
+class IntegrityManifestTests(unittest.TestCase):
+    def test_verification_detects_changed_retained_evidence(self):
+        with tempfile.TemporaryDirectory() as temp:
+            folder = Path(temp) / "history" / "55" / "100-attempt-1-post_run"
+            (folder / "logs").mkdir(parents=True)
+            (folder / "report.json").write_text('{"run_id": "100"}\n', encoding="utf-8")
+            log = folder / "logs" / "job-1.log"
+            log.write_text("original evidence\n", encoding="utf-8")
+            REPORT.write_integrity_manifest(folder, "2026-11-23T06:01:00Z")
+            self.assertEqual(REPORT.verify_integrity_manifest(folder), 2)
+            log.write_text("changed evidence\n", encoding="utf-8")
+            with self.assertRaises(ValueError):
+                REPORT.verify_integrity_manifest(folder)
 
 
 class OnDemandRenderingTests(unittest.TestCase):
