@@ -238,7 +238,7 @@ Security claims also require precise interpretation. The external SHA-256 attest
 | Criterion | Option 1: Current workflow | Option 2: Direct three-file system | Option 3: Task-integrated plan | Option 4: Custom automation |
 |---|---|---|---|---|
 | Fit with current ChatGPT/GitHub workflow | **Strong** | **Weak** — assumes local files and host hooks | **Strong** | **Partial** — hosted checks only |
-| Single task-authority integrity | **Strong** | **Weak** unless the repository redesigns the task model | **Strong** | **Moderate** if automation validates, but does not own, task state |
+| Single task-authority integrity | **Strong** | **Weak** unless the repository redesigns the task model | **Strong** | **Moderate** if automation checks, but does not own, task state |
 | Phase structure and exit criteria | **Weak** — prose only | **Strong** on supported hosts | **Strong** with explicit Worker checkpoints | **Partial** — can check structure, not completion |
 | Research evidence capture | **Moderate** — task prose and links | **Strong** — dedicated findings file | **Strong when triggered** — optional evidence note | **Partial** — metadata checks do not synthesize evidence |
 | Recovery after context loss | **Moderate** — manual repository recovery | **Strong on compatible hosts**, but current file-only benchmark is not measured | **Moderate to strong** — same task record, manual re-read | **Partial** — CI cannot re-inject live context |
