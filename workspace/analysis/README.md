@@ -43,4 +43,4 @@ Begin with manual reviews. Do not create a scheduled workflow. Review the cadenc
 9. Create a Draft when a finding needs a new decision.
 10. Create or update a task when an accepted ADR already covers the work.
 
-Keep completed analysis records in this folder as immutable snapshots. Do not create `archive/analysis/` in the first release.
+Keep completed analysis records in this folder as immutable snapshots. Do not create `.archive/analysis/` in the first release.
