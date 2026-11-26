@@ -30,7 +30,7 @@ This directory is the review surface for actionable GitHub Actions execution fai
 - A cancelled run is retained only when it contains an independent completed job or step failure. Cancellation and downstream status-propagation failures do not qualify.
 - A successful run with an independently failed non-blocking step is an error report and is retained.
 - Manual requests can select older runs, but cannot override the error-only retention rule. A successful or cancellation-only run is never forced into report history.
-- Each retained Actions report is ingested into the Ledger. Every independent finding is task-eligible regardless of confidence-derived severity; stable finding and remediation-group identities deduplicate recurring errors and reuse active tasks.
+- Reporter retention and Ledger ingestion use the same shared independent-error predicate. The reporter may retain an incomplete post-run error capture while bounded evidence retries continue; the Ledger creates observations only after capture completeness is Complete. Each retained complete error report is ingested. Every independent finding is task-eligible regardless of confidence-derived severity; stable finding and remediation-group identities deduplicate recurring errors and reuse active tasks.
 
 ## Failure classification
 
