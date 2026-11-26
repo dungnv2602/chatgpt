@@ -110,19 +110,9 @@ A full clean-start reset is allowed only after an explicit user instruction. It 
 
 The first complete tooling-valid full audit in each lint scope after reset establishes the new baseline without task creation. Do not backfill or taskify the prior reporting period.
 
-## Error-prevention workflow after every CI/report failure
+## Remediation and recurrence prevention
 
-Every time a CI run, report capture, Ledger ingestion, task-generation step, or regression test exposes an error, the Worker must improve the workflow that allowed it—not merely patch the immediate symptom. This is a required part of the same remediation, not optional follow-up work.
-
-1. **Establish the failure precisely.** Read the immutable report and relevant hosted job/step logs. Identify the failing component, exact diagnostic, triggering change, and whether the failure is independent or only propagated cancellation/status noise.
-2. **Find the systemic cause.** Trace the failure across its source, generator, canonical template/schema, workflow caller, and documentation. Check for stale templates, stale literal expectations, duplicated contracts, and mismatched versions.
-3. **Repair the source of truth.** Update the owning implementation and any stale canonical template, schema, workflow definition, task template, or operating guide. Do not change a canonical template merely to satisfy an outdated consumer; align the consumer to the approved source of truth.
-4. **Add a preventive regression.** Add or update a test that reproduces the failure mode and proves the corrected behavior. Prefer contract-driven checks and explicit compatibility/version handling over brittle duplicated literals. Preserve fail-closed behavior for genuinely invalid or missing required content. Never weaken validation or delete a failing test to obtain a green run.
-5. **Update the operating workflow in the same remediation.** Record the newly learned prevention rule in the owning guide and, where applicable, update the task template, task generator, CI workflow, or report schema so future work follows it automatically. Keep all copies of a standing rule consistent; do not leave a stale parallel instruction.
-6. **Verify on hosted CI.** Commit the source and regression changes, then inspect the naturally triggered hosted run and its relevant job/step results. Do not run repository scripts locally, manually dispatch CI, or poll. Keep the task open until the relevant hosted validation passes.
-7. **Check for recurrence and adjacent impact.** Confirm that report capture, index publication, Ledger ingestion, task creation/linkage, and Current Execution publication still behave correctly where affected. Update the task with the failure, systemic cause, prevention added, exact paths/commit, and hosted evidence.
-
-A failure is not fully remediated until both the immediate defect and its recurrence-prevention control are committed and hosted-validated. If a failure reveals that this procedure itself is insufficient, improve this procedure too.
+Follow the authoritative remediation and recurrence-prevention procedure in the [GitHub Actions skill](../../../.agent/skills/github-actions/SKILL.md). The Ledger guide owns intake, finding identity, task generation, lifecycle, evidence, and retirement. It does not own remediation execution.
 
 ## Canonical schema and tests
 
