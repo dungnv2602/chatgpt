@@ -561,6 +561,8 @@ class StorageTests(unittest.TestCase):
             self.assertEqual(integrity["files"]["report.json"], hashlib.sha256(before).hexdigest())
             self.assertEqual(integrity["files"]["logs/job-200.log"],
                              hashlib.sha256((first / "logs/job-200.log").read_bytes()).hexdigest())
+            self.assertEqual(set(integrity["files"]), {"report.json", "logs/job-200.log"})
+            self.assertFalse((first / "report.md").exists())
             second = REPORT.write_report(root, dict(report), {"logs/job-200.log":"OTHER"})
             self.assertNotEqual(first, second)
             self.assertEqual((first / "report.json").read_bytes(), before)
@@ -585,14 +587,16 @@ class StorageTests(unittest.TestCase):
             older["source_run"]["number"]=200
             older["source_run"]["created_at"]="2026-11-23T06:00:00Z"
             REPORT.write_report(root, older, {})
-            latest = json.loads((root / "latest-gh-ac-report.json").read_text(encoding="utf-8"))
-            self.assertEqual(latest["source_run"]["id"], "300")
+            latest = REPORT.load_index(root)["latest_report"]
+            self.assertEqual(latest["run_id"], "300")
+            self.assertFalse((root / "latest-gh-ac-report.json").exists())
+            self.assertFalse((root / "by_workflow").exists())
             pre = json.loads(json.dumps(base))
             pre["capture"]["stage"]="pre_finalizer"
             pre["capture"]["captured_at_utc"]="2026-11-23T07:02:00Z"
             REPORT.write_report(root, pre, {})
-            latest = json.loads((root / "latest-gh-ac-report.json").read_text(encoding="utf-8"))
-            self.assertEqual(latest["capture"]["stage"], "post_run")
+            latest = REPORT.load_index(root)["latest_report"]
+            self.assertEqual(latest["capture_stage"], "post_run")
 
     def test_completed_pending_run_gets_post_run_capture_and_clears_pending(self):
         with tempfile.TemporaryDirectory() as temp:
@@ -652,8 +656,8 @@ class StorageTests(unittest.TestCase):
             self.assertEqual(index["pending_run_ids"], [])
             self.assertEqual(len(index["runs"]), 1)
             self.assertEqual({item["capture_stage"] for item in index["runs"]}, {"post_run"})
-            latest = json.loads((root / "latest-gh-ac-report.json").read_text(encoding="utf-8"))
-            self.assertEqual(latest["capture"]["stage"], "post_run")
+            latest = REPORT.load_index(root)["latest_report"]
+            self.assertEqual(latest["capture_stage"], "post_run")
 
 
 if __name__ == "__main__":
