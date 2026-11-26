@@ -38,3 +38,6 @@ Audit reconstructed GitHub Actions skill report/archive path references and comp
 
 
 - **2026-11-26 — Validator and inventory audit follow-up:** Reviewed the validator and regression fixtures remotely. Updated the catalog summary to replace stale inventory counts with current tree observation (676 entries; 242 in-scope Markdown paths) and clearly disclose that coverage has not been validated. Tests and hosted CI remain unrun; audit is ongoing.
+
+
+- **2026-11-26 — Image-processing contract reconstruction repair:** Found stale `drawings/` and `novels/` paths in the takeout processor, publication verifier, and regression fixtures, including component-validation logic incompatible with reconstructed roots. Remapped path contracts to `area/drawing/` and `area/novel/`, corrected date/session component checks, and updated image processing guidance. Remote readback and static checks performed; tests/CI remain unrun.
