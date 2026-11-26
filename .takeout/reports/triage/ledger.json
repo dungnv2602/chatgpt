@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at_utc": "2026-11-26T21:57:31Z",
+  "updated_at_utc": "2026-11-27T05:15:00Z",
   "findings": [
     {
       "finding_id": "gha-a284af6ec4aa61fe9c103bef",
@@ -1036,7 +1036,7 @@
       "source_family": "lint",
       "category": "long-sentence",
       "title": "long-sentence: Sentence has 32 words (cap 25). Split it.",
-      "status": "open",
+      "status": "resolved",
       "severity": "medium",
       "owner": null,
       "first_seen_utc": "2026-11-26T17:02:45.764811+00:00",
@@ -1051,7 +1051,16 @@
           "observation_id": "lint:45864180906:1"
         }
       ],
-      "resolution": null,
+      "resolution": {
+        "fix_commit": "b68ab7a239b5dc17e67b9c005b4541dc998caf2b",
+        "resolved_at_utc": "2026-11-27T05:15:00Z",
+        "validation": {
+          "run_url": "https://github.com/dungnv2602/chatgpt/actions/runs/45901511879",
+          "conclusion": "success for targeted finding; workflow overall failed on unrelated recurring findings",
+          "validated_at_utc": "2026-11-26T21:57:16Z"
+        },
+        "note": "Target fingerprint 0dc1b5fa54679407d060b44e is explicitly listed as resolved in the hosted changed-document report. Overall workflow failed due to other recurring findings in the ADR; this specific fingerprint is resolved."
+      },
       "resolution_history": [],
       "duplicate_of": null,
       "accepted_risk": null,
